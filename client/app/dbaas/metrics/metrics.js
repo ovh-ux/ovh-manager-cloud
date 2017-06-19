@@ -1,71 +1,84 @@
-angular
-    .module("managerApp")
-    .config(($stateProvider) => {
-
-        const tplPrefix = (n) => `app/dbaas/metrics/${n}.html`;
-
-    // /metrics/service/{serviceName}
-        const metricsMainState = $stateProvider.state("dbaas.metrics", {
-            url: "/metrics/service/{serviceName}",
-            templateUrl: tplPrefix("metrics"),
-            controller: "DBaasMetricsCtrl",
-            controllerAs: "$ctrl",
+angular.module("managerApp").config($stateProvider => {
+    $stateProvider
+        .state("dbaas.metrics", {
+            url: "/metrics",
+            templateUrl: "app/dbaas/metrics/metrics.html",
+            abstract: true,
             translations: ["common", "dbaas/metrics"]
-        });
-
-    // /metrics/service/{serviceName}/token
-        metricsMainState.state("dbaas.metrics.token", { // This state inherit from /metrics/service/{serviceName}
+        })
+        .state("dbaas.metrics.detail", {
+            url: "/{serviceName}",
+            views: {
+                metricsContainer: {
+                    templateUrl: "app/dbaas/metrics/metrics-detail.html",
+                    controller: "MetricsDetailCtrl",
+                    controllerAs: "MetricsDetailCtrl"
+                }
+            },
+            translations: ["common", "dbaas/metrics"]
+        })
+        .state("dbaas.metrics.detail.dashboard", {
+            url: "/dashboard",
+            views: {
+                metricsHeader: {
+                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
+                    controller: "MetricsHeaderCtrl",
+                    controllerAs: "MetricsHeaderCtrl"
+                },
+                metricsContent: {
+                    templateUrl: "app/dbaas/metrics/dashboard/metrics-dashboard.html",
+                    controller: "MetricsDashboardCtrl",
+                    controllerAs: "MetricsDashboardCtrl"
+                }
+            },
+            translations: ["common", "dbaas/metrics", "dbaas/metrics/dashboard", "dbaas/metrics/token"]
+        })
+        .state("dbaas.metrics.detail.token", {
             url: "/token",
-            templateUrl: tplPrefix("token/token"),
-            controller: "DBaasMetricsTokenCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/doc
-        metricsMainState.state("dbaas.metrics.endpoint", {
-            url: "/endpoint",
-            templateUrl: tplPrefix("endpoint/endpoint"),
-            controller: "DBaasMetricsEndpointCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/setting
-        metricsMainState.state("dbaas.metrics.setting", {
-            url: "/setting",
-            templateUrl: tplPrefix("setting/setting"),
-            controller: "DBaasMetricsSettingCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/event
-        metricsMainState.state("dbaas.metrics.event", {
-            url: "/event",
-            templateUrl: tplPrefix("event/event"),
-            controller: "DBaasMetricsEventCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/stat
-        metricsMainState.state("dbaas.metrics.stat", {
-            url: "/stat",
-            templateUrl: tplPrefix("stat/stat"),
-            controller: "DBaasMetricsStatCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/quantum
-        metricsMainState.state("dbaas.metrics.quantum", {
-            url: "/quantum",
-            templateUrl: tplPrefix("quantum/quantum"),
-            controller: "DBaasMetricsQuantumCtrl",
-            controllerAs: "$ctrl"
-        });
-
-    // /metrics/service/{serviceName}/quantum
-        metricsMainState.state("dbaas.metrics.upgrade", {
-            url: "/upgrade",
-            templateUrl: tplPrefix("upgrade/upgrade"),
-            controller: "DBaasMetricsUpgradeCtrl",
-            controllerAs: "$ctrl"
-        });
-    });
+            views: {
+                metricsHeader: {
+                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
+                    controller: "MetricsHeaderCtrl",
+                    controllerAs: "MetricsHeaderCtrl"
+                },
+                metricsContent: {
+                    templateUrl: "app/dbaas/metrics/token/metrics-token.html",
+                    controller: "MetricsTokenCtrl",
+                    controllerAs: "MetricsTokenCtrl"
+                }
+            },
+            translations: ["common", "dbaas/metrics", "dbaas/metrics/token"]
+        })
+        .state("dbaas.metrics.detail.token.add", {
+            url: "/add",
+            views: {
+                metricsHeader: {
+                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
+                    controller: "MetricsHeaderCtrl",
+                    controllerAs: "MetricsHeaderCtrl"
+                },
+                metricsSubContent: {
+                    templateUrl: "app/dbaas/metrics/token/add/metrics-token-add.html",
+                    controller: "MetricsTokenAddCtrl",
+                    controllerAs: "MetricsTokenAddCtrl"
+                }
+            },
+            translations: ["common", "dbaas/metrics", "dbaas/metrics/token", "dbaas/metrics/token/add"]
+        })
+        .state("dbaas.metrics.detail.platform", {
+            url: "/platform",
+            views: {
+                metricsHeader: {
+                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
+                    controller: "MetricsHeaderCtrl",
+                    controllerAs: "MetricsHeaderCtrl"
+                },
+                metricsContent: {
+                    templateUrl: "app/dbaas/metrics/platform/metrics-platform.html",
+                    controller: "MetricsPlatformCtrl",
+                    controllerAs: "MetricsPlatformCtrl"
+                }
+            },
+            translations: ["common", "dbaas/metrics", "dbaas/metrics/platform"]
+        })
+});

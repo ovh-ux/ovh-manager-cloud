@@ -1,0 +1,62 @@
+<h1 data-translate="metrics_token_add_token"></h1>
+
+<form name="MetricsTokenAddForm">
+    <cui-loader data-ng-show="MetricsTokenAddCtrl.loading"></cui-loader>
+    <div data-ng-hide="MetricsTokenAddCtrl.loading">
+        <hr>
+
+        <div class="oui-input-formfield">
+            <input class="oui-input" type="text" id="description" name="description" data-ng-model="MetricsTokenAddCtrl.token.description">
+            <label for="description" class="oui-label" data-translate="metrics_token_add_name"></label>
+        </div>
+        
+        <div class="oui-input-formfield">
+            <cui-radio-bar data-ng-model="MetricsTokenAddCtrl.token.permission" id="permission" name="permission">
+                <cui-radio-bar-item data-ng-repeat="permission in MetricsTokenAddCtrl.permissions" 
+                    data-text="permission.text"
+                    data-value="permission.value"></cui-radio-bar-item>
+            </cui-radio-bar>
+            <div class="oui-label" data-translate="metrics_token_add_permission"></div>
+        </div>
+
+        <div class="oui-input-formfield">
+            <div>
+                <div class="metrics-token-add__labels" data-ng-repeat="label in MetricsTokenAddCtrl.token.labels">
+                    <div class="metrics-token-add__labels-item oui-input-formfield">
+                        <input class="oui-input" type="text" data-ng-model="label.key" name="key">
+                        <label class="oui-label metrics-token-add__labels-item-label" for="key" data-translate="metrics_token_add_labels_key"></label>
+                    </div>
+                    <div class="metrics-token-add__labels-item oui-input-formfield">
+                        <input class="oui-input" type="text" data-ng-model="label.value" name="value">
+                        <label class="oui-label metrics-token-add__labels-item-label" for="value" data-translate="metrics_token_add_labels_value"></label>
+                    </div>
+                    <div class="metrics-token-add__labels-item metrics-token-add__labels-item-action">
+                        <div data-ng-show="$index == (MetricsTokenAddCtrl.token.labels.length - 1)">
+                            <button class="oui-button oui-button_secondary"
+                                data-ng-click="MetricsTokenAddCtrl.addLabel()">+</button>
+                        </div>
+                        <div data-ng-show="$index !== (MetricsTokenAddCtrl.token.labels.length - 1)">
+                            <button class="oui-button oui-button_secondary"
+                                data-ng-click="MetricsTokenAddCtrl.removeLabel($index)">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oui-label" data-translate="metrics_token_add_labels"></div>
+        </div>
+
+        <hr>
+
+        <div class="cui-form-action">
+            <button class="oui-button oui-button_secondary"
+                type="button"
+                data-translate="metrics_token_cancel"
+                data-ng-click="MetricsTokenAddCtrl.cancel()"></button>
+            <button class="oui-button oui-button_primary"
+                type="submit"
+                data-translate="metrics_token_add_confirmation"
+                data-ng-click="MetricsTokenAddCtrl.confirm()"
+                data-ng-disabled="MetricsTokenAddForm.$invalid || MetricsTokenAddCtrl.loading"></button>
+        </div>
+    </div>
+</form>

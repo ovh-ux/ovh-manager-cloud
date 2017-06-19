@@ -4,6 +4,7 @@
     class CuiMessageContainerCtrl {
         constructor ($scope) {
             this.$scope = $scope;
+            this.messages = this.messages || [];
         }
 
         $onInit () {

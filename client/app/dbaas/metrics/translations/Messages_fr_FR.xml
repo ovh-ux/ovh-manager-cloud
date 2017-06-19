@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 <!-- Menu -->
-   <translation id="metrics_token" qtlid="403164">Tokens</translation>
+   <translation id="metrics_tab_dashboard" qtlid="27643">Accueil</translation>
+   <translation id="metrics_tab_token" qtlid="403164">Tokens</translation>
+   <translation id="metrics_tab_platform">Plateformes</translation>
+
+   <translation id="metrics_guides" qtlid="300370">Guides</translation>
+   <translation id="metrics_guides_footer" qtlid="406905">Tous les guides OVH</translation>
+   <translation id="metrics_guides_first-step">Premiers pas ...</translation>
+   <translation id="metrics_guides_first-step_begin">Débuter</translation>
+   <translation id="metrics_guides_protocoles">Protocoles</translation>
+
+
    <translation id="metrics_endpoint" qtlid="403177">Accès plateforme</translation>
    <translation id="metrics_setting" qtlid="403190">Réglages</translation>
    <translation id="metrics_event" qtlid="403203">Evènements</translation>
@@ -24,45 +34,17 @@
 
    <translation id="metrics_err_service" qtlid="403346">Erreur au chargement de votre service.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Erreur au chargement de votre consommation.</translation>
-
-<!-- Page: token -->
-   <translation id="metrics_token_one" qtlid="254115">Token</translation>
-   <translation id="metrics_delete" qtlid="2414">Supprimer</translation>
-   <translation id="metrics_cancel" qtlid="37863">Annuler</translation>
-   <translation id="metrics_token_no_token" qtlid="403372">Aucun token pour cette application</translation>
-   <translation id="metrics_token_permission" qtlid="301344">Permission</translation>
-   <translation id="metrics_token_new" qtlid="403385">Nouveau token</translation>
-   <translation id="metrics_token_create" qtlid="39226">Créer</translation>
-   <translation id="metrics_token_role" qtlid="403398">Rôle</translation>
-   <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
-   <translation id="metrics_token_revoked" qtlid="186752">Révoqué</translation>
-   <translation id="metrics_token_show_revoked" qtlid="403424">afficher les révoqués</translation>
-   <translation id="metrics_token_add_labels" qtlid="403437">Ajouter des labels</translation>
+   <translation id="metrics_err_delete_token">Erreur lors de la suppression du token</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
-   <translation id="metrics_token_revoked" qtlid="403463">Token révoké</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token mis à jour</translation>
-   <translation id="metrics_token_err_get" qtlid="403489">Erreur lors de la récupération des tokens</translation>
-   <translation id="metrics_token_err_create" qtlid="403502">Erreur lors de la création du token</translation>
-   <translation id="metrics_token_err_revoke" qtlid="403515">Erreur lors de la révocation du token</translation>
-   <translation id="metrics_token_err_update" qtlid="403528">Erreur lors de la mise à jour du token</translation>
-<!-- Page: endpoint -->
-   <translation id="metrics_endpoint_howto" qtlid="403541">Bien débuter</translation>
-   <translation id="metrics_endpoint_proto" qtlid="19711">Protocole</translation>
-   <translation id="metrics_endpoint_address" qtlid="30430">Adresse</translation>
-   <translation id="metrics_endpoint_doc" qtlid="42574">Documentation</translation>
-   <translation id="metrics_endpoint_tools" qtlid="330682">Outils</translation>
-   <translation id="metrics_endpoint_intro_1" qtlid="403554">Ci-dessous se trouve la liste des protocoles supportés par la plateforme OVH Metrics.</translation>
-   <translation id="metrics_endpoint_intro_2" qtlid="403567">Chaque protocole est associé à une adresse dépendante de la région dans laquelle se trouve votre projet.</translation>
-   <translation id="metrics_endpoint_intro_3" qtlid="403580">Ces adresses vous permettent d'utiliser pleinement et de façon native chaque protocole.</translation>
-<!-- Page: setting -->
+   <translation id="metrics_token_revoked" qtlid="403463">Token révoké</translation>
+   <translation id="metrics_quota_ddp_warning_message">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+   <translation id="metrics_quota_mads_warning_message">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+
    <translation id="metrics_setting_update" qtlid="43462">Mettre à jour</translation>
    <translation id="metrics_setting_desc" qtlid="364420">Description du projet</translation>
    <translation id="metrics_setting_updated" qtlid="403593">Service mis à jour</translation>
    <translation id="metrics_setting_update_failed" qtlid="403606">Impossible de mettre à jour le service</translation>
-<!-- Page: event -->
-<!-- Page: stats -->
-<!-- Page: quantum -->
-<!-- Page: Upgrade -->
    <translation id="metrics_upgrade_title" qtlid="403619">Migrer vers un plan supérieur</translation>
    <translation id="metrics_purchase" qtlid="43558">Commander</translation>
 </translations>
