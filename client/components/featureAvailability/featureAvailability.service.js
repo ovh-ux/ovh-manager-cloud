@@ -21,6 +21,9 @@
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
                 US: ["US"],
+            },
+            expressOrder: {
+                US : ["US"],
             }
         },
         DEDICATED_CLOUD:{

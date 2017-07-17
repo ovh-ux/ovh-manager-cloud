@@ -53,4 +53,5 @@
    <translation id="cpa_error_invalid_voucher" qtlid="255350">Le voucher est invalide (erroné ou expiré).</translation>
    <translation id="cpa_error_contracts_tosign" qtlid="245844">Il y a un ou plusieurs contrats à valider.</translation>
    <translation id="cpa_error_over_quota" qtlid="295790">Vous avez atteint le nombre maximum de projets Cloud. Veuillez <a href="#/support?state=new" target="_blank">contacter le support</a> pour débloquer cette limite.</translation>
+   <translation id="cpa_redirect_express">Vous allez être redirigé sur la page de commande, <a href="{{url}}">cliquez ici</a> si vous n'êtes pas automatiquement redirigé.</translation>
 </translations>

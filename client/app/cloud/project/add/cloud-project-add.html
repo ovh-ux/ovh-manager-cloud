@@ -6,7 +6,11 @@
         <span data-translate="common_loading"></span>
     </div>
 
-    <div data-ng-if="!CloudProjectAddCtrl.loaders.init">
+    <div data-ng-if="CloudProjectAddCtrl.redirected" class="top-space-m16">
+        <div class="oui-message oui-message_info" data-translate="cpa_redirect_express" data-translate-values="{url:CloudProjectAddCtrl.redirected}"></div>
+    </div>
+
+    <div data-ng-if="!CloudProjectAddCtrl.loaders.init && !CloudProjectAddCtrl.redirected">
 
         <div class="page-header">
             <h1 data-ng-if="CloudProjectAddCtrl.data.projectsCount === 0" data-translate="cpa_title_first"></h1>
