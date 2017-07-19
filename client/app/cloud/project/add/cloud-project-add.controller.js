@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
+    function ($q, $state, $translate, $rootScope, $timeout, Toast, REDIRECT_URLS, URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
               SidebarMenu, CloudProjectSidebar) {
 
         var self = this;
@@ -216,7 +216,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 // Redirect US to express order
                 if (FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
                     window.location.href = URLS["website_order"]["cloud-resell-eu"].US;
-                    self.redirected = URLS["website_order"]["cloud-resell-eu"].US;
+                    // Wait 4s to display message only if browser failed to redirect the user
+                    return $timeout(function() { self.redirected = URLS["website_order"]["cloud-resell-eu"].US;}, 4000);
                 }
             })["finally"](function () {
                 self.loaders.init = false;
