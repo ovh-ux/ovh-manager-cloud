@@ -24,8 +24,8 @@
             };
 
             this.loaders = {
-                payment: true,
-                agreements: true,
+                payment: false,
+                agreements: false,
                 start: false
             };
 
@@ -75,11 +75,11 @@
         }
 
         init () {
-
             // Call not available for US customer
-            if (!this.FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
-                this.loaders.agreements = true;
-                this.CloudProjectAdd.getProjectInfo()
+            this.FeatureAvailabilityService.hasFeaturePromise("PROJECT","expressOrder").then((hasFeature) => {
+                if (!hasFeature) {
+                    this.loaders.agreements = true;
+                    this.CloudProjectAdd.getProjectInfo()
                     .then(projectInfo => {
                         this.data.agreements = projectInfo.agreementsToAccept;
                         this.data.order = projectInfo.orderToPay;
@@ -87,9 +87,10 @@
                     .finally(() => {
                         this.loaders.agreements = false;
                     });
-            }
+                    this.getDefaultPaymentMethod();
+                }
+            });
 
-            this.getDefaultPaymentMethod();
             this.model.voucher = this.$stateParams.voucher;
         }
 
