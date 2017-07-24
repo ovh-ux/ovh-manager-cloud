@@ -54,7 +54,8 @@ angular.module("managerApp")
     },
     "website_order": {
         "cloud-resell-eu": {
-            US: "https://www.ovh.us/order/express/#/new/express/resume?products="+encodeURIComponent("~(~(productId~%27cloud~planCode~%27project-eu~duration~%27P1M))&paymentMeanRequired=1%27))"),
+            US: (projectName) =>
+                "https://www.ovh.us/order/express/#/new/express/resume?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'"+encodeURIComponent(projectName)+")))))",
         },
         "dedicated_server": {
             US: "https://www.ovh.us/dedicated-servers/"

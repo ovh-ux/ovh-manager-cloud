@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, $timeout, Toast, REDIRECT_URLS, URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
+    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
               SidebarMenu, CloudProjectSidebar) {
 
         var self = this;
@@ -201,7 +201,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 self.data.hasDebt = result.fidelityAccount && result.fidelityAccount.balance < 0;
                 self.data.hasBill = result.bill.length > 0;
                 self.data.creditCards = result.creditCards;
-                self.data.user = result.user;
                 self.model.description = $translate.instant("cloud_menu_project_num", { num: self.data.projectsCount + 1 });
                 self.model.paymentMethod = self.model.noPaymentMethodEnum.MEAN;
             });
@@ -209,16 +208,14 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
         function init () {
             self.loaders.init = true;
+            // Redirect US to onboarding
+            if (FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
+                $state.go("iaas.pci-project-onboarding", { location : "replace" });
+                return;
+            }
             initContracts().then(initProject)["catch"](function (err) {
                 self.unknownError = true;
                 Toast.error($translate.instant("cpa_error") + (err && err.data && err.data.message ? " (" + err.data.message + ")" : ""));
-            })["then"](function (){
-                // Redirect US to express order
-                if (FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
-                    window.location.href = URLS["website_order"]["cloud-resell-eu"].US;
-                    // Wait 4s to display message only if browser failed to redirect the user
-                    return $timeout(function() { self.redirected = URLS["website_order"]["cloud-resell-eu"].US;}, 4000);
-                }
             })["finally"](function () {
                 self.loaders.init = false;
             });
