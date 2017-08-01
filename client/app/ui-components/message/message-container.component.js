@@ -4,6 +4,7 @@
     class CuiMessageContainerCtrl {
         constructor ($scope) {
             this.$scope = $scope;
+            this.messages = this.messages || [];
         }
 
         $onInit () {
@@ -53,8 +54,8 @@
                 messageOrder: groupedMessages[key][0].messageOrder,
                 type: groupedMessages[key][0].type,
                 link: groupedMessages[key][0].link,
-                dismissed: groupedMessages[key][0].dismissed //It's important to take last message's property since we always wanna show new message, 
-                                                             //even if an exact copy was dismissed before.
+                dismissed: groupedMessages[key][0].dismissed // It's important to take last message's property since we always wanna show new message,
+                                                             // even if an exact copy was dismissed before.
             }));
         }
 

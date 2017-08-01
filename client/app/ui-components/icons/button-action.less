@@ -1,44 +1,64 @@
-@button-action-background-color: #E5F6F8;
-@button-action-foreground-color: @oui-color-pacific;
-@button-action-background-color_hover: @oui-color-pacific;
-@button-action-foreground-color_hover: #FFF;
+@button-action-background-color: transparent;
+@button-action-background-border-color: rgba(0,162,191,0.09);
+@button-action-activated-zone-background-color: rgba(0,162,191,0.09);
+@button-action_hover-background-color: #00A2BF;
+
+@button-action-foreground-color: #00A2BF;
+@button-action_hover-foreground-color: #FFF;
 
 
 .cui-button-action {
-  width: 32px;
+    overflow: visible;
+    width: 32px;
 
-  &__background {
-    fill: @button-action-background-color;
-  }
-
-  &__foreground {
-    fill: @button-action-foreground-color;
-  }
-
-  &:hover {
-    .cui-button-action__background {
-      fill: @button-action-background-color;
+    &__background {
+        #oui > .animate();
+        fill: @button-action-background-color;
+        stroke: @button-action-background-border-color;
+        stroke-width: 2;
     }
 
-    .cui-button-action__foreground {
-      transform-origin: center;
-      transform: scale(1.1);
+    &__foreground {
+        #oui > .animate();
+        fill: @button-action-foreground-color;
     }
-  }
 
-  .button-container_active & {
-    .cui-button-action_active();
-  }
+    &:hover {
+        .cui-button-action__background {
+            fill: @button-action_hover-background-color;
+            stroke: none;
+        }
+
+        .cui-button-action__foreground {
+            fill: @button-action_hover-foreground-color;
+            transform-origin: center;
+        }
+    }
+
+    .button-container_active & {
+        .cui-button-action_active();
+    }
 }
 
 .cui-button-action_active() {
-  .cui-button-action__background {
-    fill: @button-action-background-color_hover;
-    fill-opacity: 1;
-  }
+    .cui-button-action__background {
+        fill: @button-action-activated-zone-background-color;
+        stroke: none;
+    }
 
-  .cui-button-action__foreground {
-    fill: @button-action-foreground-color_hover;
-  }
+    &:hover {
+        .cui-button-action__background {
+            fill: @button-action_hover-background-color;
+            stroke: none;
+        }
+    }
 }
-  
+
+// Action button embedded in oui-table
+.cui-dropdown-menu-container:hover {
+    .cui-dropdown-menu {
+        .cui-button-action {
+            .cui-button-action_active();
+        }
+    }
+}

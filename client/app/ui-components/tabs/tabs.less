@@ -1,0 +1,57 @@
+.cui-tabs {
+    list-style: none;
+    display: flex;
+    margin: 16px 0 -32px 0;
+    padding: 0;
+
+    &__tab {
+        position: relative;
+        padding: 0;
+        font-weight: 400;
+        transition: all 1000ms ease-in;
+
+        a {
+            display: block;
+            padding: 8px 24px;
+
+            color: #333;
+            text-decoration: none;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            height: 3px;
+            background-color: @UNIVERS;
+            width: 0;
+            left: 50%;
+            bottom: 0;
+        }
+
+        &_active {
+            a {
+                color: #113f6d;
+                font-weight: 700;
+            }
+
+            &:after {
+                width: 100%;
+                left: 0;
+                animation: tab-active-animation 200ms ease-in 1 forwards;
+            }
+        }
+    }
+
+    @keyframes tab-active-animation {
+        0% {
+            width: 0;
+            left: 50%;
+        }
+
+        100% {
+            width: 100%;
+            left: 0;
+        }
+    }
+}

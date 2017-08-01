@@ -1,0 +1,22 @@
+<section class="cui-page__content">
+    <cui-back-link data-state="network.iplb.detail.home"
+                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
+                   data-text="'iplb_back_home' | translate"></cui-back-link>
+    <cui-page-content-title text="'iplb_task_title' | translate"></cui-page-content-title>
+    <p data-translate="iplb_task_intro_text"></p>
+
+    <cui-loader data-ng-show="ctrl.tasks.loading"></cui-loader>
+    <oui-table data-ng-hide="ctrl.tasks.loading"
+        rows="ctrl.tasks.data">
+        <column title="'iplb_task_list_col_creation_date' | translate" property="creationDate" sortable="desc">
+            {{ $row.creationDate | momentFormat:'LLL' }}
+        </column>
+        <column title="'iplb_task_list_col_task' | translate" property="action" sortable ng-cloak></column>
+        <column title="'iplb_task_list_col_progress' | translate" property="progress" sortable
+            class="oui-table__cell_component">
+            <cui-task-progress data-task="$row"></cui-task-progress>
+        </column>
+        <column title="'iplb_task_list_col_status' | translate" property="status" sortable></column>
+        <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="ctrl.actionTemplate()"></column>
+    </oui-table>
+</section>

@@ -1,0 +1,116 @@
+@radio-button-color: black;
+@radio-button-checked-color: white;
+@radio-button-border-color: @oui-color-silver;
+@radio-button-min-width: 136px;
+@radio-button-checked-background-color: #00a2bf;
+@radio-button-text-size: 16px;
+
+@radio-button-error-border-color: #eca490;
+@radio-button-error-background-color: #f5e0da;
+@radio-button-error-color: #b04020;
+
+.cui-radio-bar {
+  font-family: "Source Sans Pro";
+  padding: 0;
+  margin: 0 0 2rem 0;
+  list-style: none;
+  display: flex;
+
+  &_wrappable {
+    flex-flow: wrap row;
+  }
+
+  &_error {
+    .cui-radio-item {
+      border: solid 1px @radio-button-error-border-color;
+      background: @radio-button-error-background-color;
+      color: @radio-button-error-color;
+
+      &__input:checked + label {
+        background: @radio-button-error-color;
+      }
+    }
+  }
+
+}
+
+.cui-radio-item {
+  @label-radius: @oui-global-base-radius - 1;
+
+  color: @radio-button-color;
+  border: 1px solid @radio-button-border-color;
+  min-width: @radio-button-min-width;
+  text-align: center;
+  margin-right: -1px;
+
+  &:first-child {
+    border-radius: @oui-global-base-radius 0 0 @oui-global-base-radius;
+    .cui-radio-item__label {
+      border-radius: @label-radius 0 0 @label-radius;
+    }
+  }
+
+  &:last-child {
+    border-radius: 0 @oui-global-base-radius @oui-global-base-radius 0;
+    .cui-radio-item__label {
+      border-radius: 0 @label-radius @label-radius 0;
+    }
+  }
+
+  &__label {
+    line-height: 3.4rem;
+    font-weight: normal;
+    font-size: @radio-button-text-size;
+    color: @oui-color-primary;
+    background-color: @oui-button-hollow-background-color;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+
+    &:disabled + label {
+      background-color: @oui-radio-label-color-disabled;
+      opacity: 0.4;
+      box-shadow: none;
+    }
+
+    &:focus + label {
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none;
+      box-shadow: 0 0 3px 1px rgba(102, 199, 214, 0.6);
+    }
+
+    &:checked + label {
+      background: @radio-button-checked-background-color;
+      color: @radio-button-checked-color;
+      font-weight: 600;
+
+      &:before {
+        content: "";
+        display: block;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: @radio-button-text-size;
+        width: @radio-button-text-size;
+        margin-right: 3px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMS4xMiAyMy42Ij48dGl0bGU+Y3JvY2hldEFydGJvYXJkIDE8L3RpdGxlPjxwYXRoIGQ9Ik0zMC42MSwyLjU2LDI4Ljc5LjYxYTEuOTQsMS45NCwwLDAsMC0yLjc0LS4xTDI0LjczLDEuNzUsMTYuODcsOS4wOCwxMS42OSwxMy45aDBsLTEuNDIsMS4zMi01LTUuNGExLjk0LDEuOTQsMCwwLDAtMi43NC0uMDlsLS4zNS4zMkwuNjEsMTEuNDhhMS45NCwxLjk0LDAsMCwwLS4xLDIuNzRsNi41Miw3TDguNywyM2ExLjk0LDEuOTQsMCwwLDAsMi43NC4xbDguMS03LjU2LDExLTEwLjIzQTEuOTQsMS45NCwwLDAsMCwzMC42MSwyLjU2WiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+      }
+    }
+  }
+}
