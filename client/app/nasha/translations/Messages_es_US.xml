@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_dashboard_loading_error" qtlid="345338">Se ha producido un error al cargar los datos del servidor NAS-HA.</translation>
+   <translation id="nasha_dashboard_update_success_enabled" qtlid="400886">El aviso de uso está activado.</translation>
+   <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">El aviso de uso está desactivado.</translation>
+   <translation id="nasha_dashboard_update_error" qtlid="345377">Se ha producido un error al modificar los datos del servidor NAS-HA.</translation>
+   <translation id="nasha_dashboard_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_dashboard_datacenter" qtlid="369321">Centro de datos</translation>
+   <translation id="nasha_dashboard_capacity" qtlid="75822">Capacité totale</translation>
+   <translation id="nasha_dashboard_capacity_delay_text" qtlid="369334">Los datos de almacenamiento no se actualizan en tiempo real.</translation>
+   <translation id="nasha_dashboard_creation_date" qtlid="26419">Date de création</translation>
+   <translation id="nasha_dashboard_expiration_date" qtlid="33010">Date d'expiration</translation>
+   <translation id="nasha_dashboard_monitoring" qtlid="31666">Monitoring</translation>
+   <translation id="nasha_partition" qtlid="120835">Partitions</translation>
+   <translation id="nasha_expired" qtlid="345390">Su servidor NAS-HA no ha sido renovado. Esto se debe a una decisión suya o a un retraso en el pago.</translation>
+   <translation id="nasha_storage_usage_type_used" qtlid="233733">Almacenamiento</translation>
+   <translation id="nasha_storage_usage_type_usedbysnapshots" qtlid="9671">Snapshot</translation>
+   <translation id="nasha_datacenter_rbx" qtlid="120414">Roubaix</translation>
+   <translation id="nasha_datacenter_bhs" qtlid="172189">Beauharnois</translation>
+   <translation id="nasha_datacenter_sbg" qtlid="172202">Estrasburgo</translation>
+   <translation id="nasha_datacenter_gra" qtlid="264192">Gravelines</translation>
+
+   <translation id="nasha_dashboard_space_usage" qtlid="400912">Aviso de uso</translation>
+   <translation id="nasha_dashboard_space_usage_help" qtlid="400925">El contacto administrador y el contacto técnico recibirán una alerta por correo electrónico cuando el NAS alcance el 90% de espacio ocupado.</translation>
+
+   <translation id="nasha_new_window" qtlid="222176">Nueva ventana</translation>
+
+   <translation id="nasha_guide_title" qtlid="300370">Guías</translation>
+   <translation id="nash_guide_footer" qtlid="406905">Todas las guías de OVH</translation>
+   <translation id="nash_guide_name" qtlid="369862">NAS-HA</translation>
+</translations>

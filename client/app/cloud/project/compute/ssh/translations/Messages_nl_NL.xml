@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Hier kunt u uw SSH-key toevoegen, waardoor u toegang tot uw servers heeft.</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Key</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Uploaden van uw SSH-keys...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">We kunnen de lijst met uw SSH-keys niet oproepen!</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH zet SSH in om versleutelde datacommunicatie tussen servers te verzekeren.  </translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Er zijn SSH clients voor elk operating system. Raadpleeg de <a href="{{ createUrl }}" target="_blank">handleiding over het creëren van SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> voor meer informatie. </translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Let op: u kunt ook <a href="{{ addUrl }}" target="_blank">extra SSH keys configureren<i class="fa fa-external-link" aria-hidden="true"></i></a> op uw instance om anderen toegang te verlenen <a href="{{ changeUrl }}" target="_blank">wijzigen van uw SSH key in geval van verlies<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Een key toevoegen</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Het toevoegen annuleren</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Deze key toevoegen</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Uw key is nu beschikbaar! </translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Geef het een naam</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Voer uw 4096 byte key in</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">U kunt deze key niet toevoegen!</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Deze naam wordt al gebruikt door een andere SSH-key. </translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Deze key is nu niet langer beschikbaar.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Wij kunnen deze key niet verwijderen!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Zoeken</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Verwijder deze key niet</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Bevestig deze verwijdering</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">U heeft nog geen SSH-key toegevoegd.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Klik op "Een key toevoegen" om dit probleem op te lossen!</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">De naam mag niet langer zijn dan 255 tekens.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">U moet een naam geven aan uw key.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">U bent vergeten uw 4096 byte key in te voeren.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">De naam van uw key mag geen nummers, kleine letters en/of hoofdletters, koppeltekens (-), underscores (_) of spaties bevatten.</translation>
+
+
+</translations>

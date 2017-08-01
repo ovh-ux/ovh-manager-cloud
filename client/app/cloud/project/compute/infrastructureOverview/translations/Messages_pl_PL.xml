@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="infra_overview_tips_title" qtlid="284620">Zarządzasz dużą liczbą serwerów i adresów IP. Interfejs był ograniczony ze względu na wydajność.</translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Dajemy do Twojej dyspozycji dedykowany interfejs www</translation>
+   <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
+   <translation id="infra_overview_tips_platform3" qtlid="284659">oraz API OpenStack. Adresami IPFO możesz również zarządzać w panelu manager.</translation>
+   <translation id="infra_overview_tips_guides1" qtlid="284672">Nie znasz jeszcze tych narzędzi? Zapoznaj się z</translation>
+   <translation id="infra_overview_tips_guides2" qtlid="284685">naszymi przewodnikami dostępnymi tutaj</translation>
+   <translation id="infra_overview_tips_redirect_complete_view" qtlid="284698">Powrót do interfejsu początkowego</translation>
+   <translation id="infra_overview_tips_never_again" qtlid="286825">Nie wyświetlaj więcej tej wiadomości.</translation>
+   <translation id="infra_overview_tips_never_again_error" qtlid="286838">Wystąpił błąd podczas zapisywania ustawień.</translation>
+</translations>

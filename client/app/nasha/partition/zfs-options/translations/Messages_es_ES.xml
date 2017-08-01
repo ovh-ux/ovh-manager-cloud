@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_zfs_title" qtlid="373649">Configuración Z File System (ZFS)</translation>
+   <translation id="nasha_partitions_zfs_atime_label" qtlid="373675">Actualización de los tiempos de acceso (atime)</translation>
+   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Desactivar</translation>
+   <translation id="nasha_partitions_zfs_atime_description" qtlid="373688">Desactiva la necesidad de que el núcleo actualice el tiempo de acceso a un archivo cada vez que sea solicitado.</translation>
+   <translation id="nasha_partitions_zfs_recordsize_label" qtlid="373701">ZFS recordsize</translation>
+   <translation id="nasha_partitions_zfs_recordsize_default" qtlid="373714">(por defecto)</translation>
+   <translation id="nasha_partitions_zfs_sync_label" qtlid="373727">Sync</translation>
+   <translation id="nasha_partitions_zfs_sync_standard" qtlid="48998">Standard</translation>
+   <translation id="nasha_partitions_zfs_sync_description_standard" qtlid="373740">Perfil seguro: Combina la estabilidad con un rendimiento adecuado. Los archivos se escriben primero y luego se limpian todos los elementos para garantizar la estabilidad de los datos.</translation>
+   <translation id="nasha_partitions_zfs_sync_always" qtlid="373753">Always</translation>
+   <translation id="nasha_partitions_zfs_sync_description_always" qtlid="373766">Perfil muy seguro: En detrimento del rendimiento, las transferencias de archivos tienen una mayor estabilidad.</translation>
+   <translation id="nasha_partitions_zfs_sync_disabled" qtlid="373779">Disabled</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled" qtlid="373792">Perfil no seguro: Rendimiento muy elevado, aunque arriesgado, ya que el ZFS ignora las peticiones de transferencias síncronas (BBDD, NFS...).</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled_warning" qtlid="373805">Los administradores solo deberían utilizar esta opción si entienden bien los riesgos.</translation>
+   <translation id="nasha_partitions_zfs_modal_success" qtlid="373818">Van a modificarse las opciones ZFS.</translation>
+   <translation id="nasha_partitions_zfs_modal_fail" qtlid="373831">Se ha producido un error al modificar las opciones ZFS.</translation>
+   <translation id="nasha_partitions_zfs_modal_loading_fail" qtlid="373844">Se ha producido un error al cargar las opciones ZFS.</translation>
+</translations>

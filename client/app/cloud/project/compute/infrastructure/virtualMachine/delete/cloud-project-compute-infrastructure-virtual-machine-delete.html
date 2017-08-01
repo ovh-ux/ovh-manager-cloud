@@ -1,0 +1,39 @@
+
+<form id="vmDeletionForm" name="vmDeletionForm" novalidate>
+
+    <div class="modal-header">
+        <h3 class="modal-title" >
+            <i class="glyphicon glyphicon-trash right-space-m8"></i>
+            {{"cpcivm_delete_title" | translate}}
+        </h3>
+    </div>
+
+    <div class="modal-body" data-ng-if="!CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
+        <p class="center red" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
+        <div data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo.length">
+            <p class="center red" data-translate="cpcivm_failover_info"></p>
+            <ul>
+                <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
+            </ul>
+        </div>
+        <p class="center" data-translate="cpcivm_delete_confirm"></p>
+    </div>
+
+    <div class="modal-body text-center" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
+        <spinner></spinner>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary pull-right"
+            data-ng-click="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.backup()">
+            <i class="glyphicon glyphicon-ok"></i>
+            <span data-translate="common_confirm"></span>
+        </button>
+        <button type="reset" class="btn btn-default pull-left"
+            data-ng-click="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.cancel()">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+
+</form>

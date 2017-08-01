@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdt_errors_init_title" qtlid="282133">Wystąpił błąd podczas pobierania informacji na temat projektu.</translation>
+   <translation id="dtpdt_errors_init_help1" qtlid="247053">Spróbuj ponownie później.</translation>
+   <translation id="dtpdt_errors_init_help2" qtlid="247066">W przeciwnym razie możesz spróbować zresetować lokalny cache:</translation>
+   <translation id="dtpdt_errors_init_help3" qtlid="295933">Jeśli problem będzie nadal występować, skontaktuj się z pomocą klikając <a href="{{url}}">tutaj</a>.</translation>
+   <translation id="dtpdt_errros_reset_cache" qtlid="247027">Zresetuj cache</translation>
+
+   <translation id="dtpdt_add_button" qtlid="301370">Dodaj klucz API</translation>
+
+   <translation id="dtpdt_region_name" qtlid="301383">Region:</translation>
+
+   <translation id="dtpdt_region_help_title" qtlid="301396">Informacje o regionie</translation>
+   <translation id="dtpdt_region_help1" qtlid="301409">Region to lokalizacja, w której są przechowywane Twoje dane oraz URL punktu dostępowego do API OpenTSDB.</translation>
+   <translation id="dtpdt_region_help2" qtlid="301422">Ten projekt jest przechowywany w {{ region }}</translation>
+   <translation id="dtpdt_region_help3" qtlid="301435">URL do API OpenTSDB:</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Aby uzyskać więcej informacji, <a href="{{ dbaasts_guide_concepts_url }}" target="_blank">sprawdź nasze przewodniki.</a></translation>
+
+
+   <translation id="dtpdt_thead_description" qtlid="9238">Opis</translation>
+   <translation id="dtpdt_thead_permissions" qtlid="6946">Uprawnienia</translation>
+   <translation id="dtpdt_thead_key" qtlid="301461">Klucz API</translation>
+   <translation id="dtpdt_thead_tags" qtlid="11519">Tagi</translation>
+   <translation id="dtpdt_thead_actions" qtlid="72809">Operacje</translation>
+   <translation id="dtpdt_action_delete" qtlid="2414">Usuń</translation>
+   <translation id="dtpdt_action_edit" qtlid="6766">Edycja</translation>
+
+   <translation id="dtpdt_no_key" qtlid="301474">Brak klucza API</translation>
+   <translation id="dtpdt_no_tag" qtlid="301487">Brak tagu</translation>
+
+   <translation id="dtpdt_modal_delete_key_title" qtlid="301500">Usunięcie klucza API</translation>
+   <translation id="dtpdt_modal_delete_key_question" qtlid="301513">Czy chcesz usunąć ten klucz API?</translation>
+   <translation id="dtpdt_key_deletion_successful" qtlid="301526">Klucz API został usunięty.</translation>
+   <translation id="dtpdt_key_deletion_error" qtlid="301539">Klucz nie mógł zostać usunięty.</translation>
+
+   <translation id="dtpdt_modal_example_key_title" qtlid="301552">Przykład wykorzystania klucza API</translation>
+
+   <translation id="dtpdt_permission_READ" qtlid="6958">Odczyt</translation>
+   <translation id="dtpdt_permission_WRITE" qtlid="301565">Zapis</translation>
+
+   <translation id="dtpdt_key_explain" qtlid="301578">Klucze API zabezpieczają dostęp do Twoich danych.</translation>
+   <translation id="dtpdt_key_explain_more_1" qtlid="301591">Każdy klucz API definiuje uprawnienia i może zawierać "tagi". Tag to para 'klucz, wartość' (na przykład: clientId=123456).</translation>
+   <translation id="dtpdt_key_explain_more_2" qtlid="301604">Tagi są automatycznie dodawane jako filtry podczas odczytu i są przypisane do danych zapisanych za pomocą klucza zawierającego te tagi.</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Aby uzyskać więcej informacji, <a href="{{ dbaasts_guide_concepts_url }}" target="_blank">sprawdź nasze przewodniki.</a></translation>
+
+   <translation id="dtpdt_key_loading_error" qtlid="301617">Wystąpił problem podczas pobierania kluczy API.</translation>
+
+   <translation id="dtpdt_modal_example_key_write_explain_begin" qtlid="301630">Wysyłanie danych odbywa się za pomocą zapytania HTTP POST do:</translation>
+   <translation id="dtpdt_modal_example_key_read_explain_begin" qtlid="301643">Odczytywanie danych odbywa się za pomocą zapytania HTTP GET do:</translation>
+   <translation id="dtpdt_modal_example_key_explain_end" qtlid="301656">z podstawowym uwierzytelnianiem za pomocą klucza API.</translation>
+   <translation id="dtpdt_modal_example_key_curl_title" qtlid="301669">Przykład linii poleceń z cURL:</translation>
+   <translation id="dtpdt_modal_example_key_more" qtlid="301682">Aby uzyskać więcej informacji, <a href="{{ dbaasts_guide_key_url }}" target="_blank">sprawdź nasze przewodniki</a>.</translation>
+
+   <translation id="dtpdt_read_permission" qtlid="6958">Odczyt</translation>
+   <translation id="dtpdt_write_permission" qtlid="301565">Zapis</translation>
+
+   <translation id="dtpdt_cancel" qtlid="37863">Anuluj</translation>
+
+   <translation id="dtpdt_init_loading" qtlid="301695">Trwa pobieranie informacji...</translation>
+   <translation id="dtpdt_init_error" qtlid="301708">Wystąpił błąd podczas pobierania klucza API.</translation>
+   <translation id="dtpdt_create_loading" qtlid="301721">Trwa tworzenie klucza...</translation>
+   <translation id="dtpdt_update_loading" qtlid="301734">Trwa modyfikowanie klucza...</translation>
+   <translation id="dtpdt_creation_successful" qtlid="301747">Klucz API został utworzony.</translation>
+   <translation id="dtpdt_creation_error" qtlid="301760">Wystąpił błąd podczas tworzenia klucza API.</translation>
+   <translation id="dtpdt_edit_successful" qtlid="301773">Klucz API został zmodyfikowany.</translation>
+   <translation id="dtpdt_edit_error" qtlid="301786">Wystąpił błąd podczas modyfikowania klucza API.</translation>
+
+</translations>

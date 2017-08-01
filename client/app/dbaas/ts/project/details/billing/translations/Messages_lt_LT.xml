@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dtpdb_loading_error" qtlid="300824">Atsiprašome, įvyko klaida įkeliant sąskaitą.</translation>
+
+   <translation id="dtpdb_bill_current_month" qtlid="300837">Suvartojimas per mėnesį <strong>{{month}} {{year}}</strong></translation>
+   <translation id="dtpdb_total_current_month" qtlid="300850">Prognozuojama mokėtina suma šiam mėnesiui:</translation>
+
+   <translation id="dtpdb_thead_description" qtlid="9238">Apibūdinimas</translation>
+   <translation id="dtpdb_thead_quantity" qtlid="37107">Kiekis</translation>
+   <translation id="dtpdb_thead_unit_price" qtlid="259961">Vieneto kaina</translation>
+   <translation id="dtpdb_thead_price" qtlid="32458">Viso</translation>
+
+   <translation id="put" qtlid="300863">PUT (įregistruoti taškai)</translation>
+   <translation id="get" qtlid="300876">GET (perskaityti taškai)</translation>
+   <translation id="10kseries" qtlid="300889">Time series (po 10 tūkst.)</translation>
+   <translation id="100Gstorage" qtlid="300902">Saugykla: 0 - 100 mlrd. taškų</translation>
+   <translation id="250Gstorage" qtlid="300915">Saugykla: 100 - 250 mlrd. taškų</translation>
+   <translation id="500Gstorage" qtlid="300928">Saugykla: 250 - 500 mlrd. taškų</translation>
+   <translation id="1000Gstorage" qtlid="300941">Saugykla: 500 - 1000 mlrd. taškų</translation>
+   <translation id="more1000Gstorage" qtlid="300954">Saugykla: daugiau nei 1000 mlrd. taškų</translation>
+
+</translations>

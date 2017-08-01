@@ -1,0 +1,66 @@
+<div class="nasha nasha-partition nasha-zfs">
+    <div class="modal-header">
+        <h3 class="modal-title" data-translate="nasha_partitions_zfs_title"></h3>
+    </div>
+    <div class="modal-body loading-spinner nasha-zfs__body_loading" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
+        <spinner></spinner>
+    </div>
+    <div class="modal-body nasha-modal-zfs nasha-zfs__body" data-ng-if="!NashaPartitionZFSOptionsCtrl.loaders">
+        <form>
+            <fieldset>
+                <div class="checkbox">
+                    <legend for="nasha-zfs-atime" data-translate="nasha_partitions_zfs_atime_label"></legend>
+                    <label for="nasha-zfs-atime">
+                        <input id="nasha-zfs-atime"
+                               type="checkbox"
+                               data-ng-model="NashaPartitionZFSOptionsCtrl.model.atime">
+                        <span class="bold nasha-zfs__label-title"
+                              data-translate="nasha_partitions_zfs_atime_disable"></span>
+                        <span data-translate="nasha_partitions_zfs_atime_description"></span>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group">
+                    <legend for="nasha-zfs-recordsize" data-translate="nasha_partitions_zfs_recordsize_label"></legend>
+                    <select id="nasha-zfs-recordsize"
+                            class="form-control"
+                            data-ng-options="recordsize.size as recordsize.label + ' ' + (recordsize.isDefault ? ('nasha_partitions_zfs_recordsize_default' | translate) : '') for recordsize in NashaPartitionZFSOptionsCtrl.enums.recordsize"
+                            data-ng-model="NashaPartitionZFSOptionsCtrl.model.recordsize">
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group">
+                    <legend data-translate="nasha_partitions_zfs_sync_label"></legend>
+                    <div class="radio">
+                        <label data-ng-repeat="sync in NashaPartitionZFSOptionsCtrl.enums.sync">
+                            <input type="radio"
+                                   name="syncs"
+                                   data-ng-model="NashaPartitionZFSOptionsCtrl.model.sync"
+                                   data-ng-value="sync.label" />
+                            <span class="bold nasha-zfs__label-title ">{{'nasha_partitions_zfs_sync_' + sync.label | translate}}</span>
+                            <span>{{'nasha_partitions_zfs_sync_description_' + sync.label | translate}}</span>
+                            <span class="bold nasha-zfs__label_warning" data-ng-if="sync.warning">{{'nasha_partitions_zfs_sync_description_' + sync.label + '_warning' | translate}}</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
+                data-ng-disabled="NashaPartitionZFSOptionsCtrl.loaders  || NashaPartitionZFSOptionsCtrl.states.saving"
+                data-ng-click="NashaPartitionZFSOptionsCtrl.applyZFSOptionsChanges()">
+            <span data-translate="common_confirm"></span>
+        </button>
+        <button type="reset" class="btn btn-default pull-left"
+                data-ng-disabled="NashaPartitionZFSOptionsCtrl.states.saving"
+                data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()">
+            <i class="fa fa-times"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+</div>

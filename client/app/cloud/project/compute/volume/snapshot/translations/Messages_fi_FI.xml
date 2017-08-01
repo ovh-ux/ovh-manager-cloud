@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcv_snapshot_add_title" qtlid="273661">Volyymin varmuuskopion luonti</translation>
+   <translation id="cpcv_snapshot_choose_name" qtlid="246819">Syötä tilannekuvan nimi</translation>
+   <translation id="cpcv_snapshot_name" qtlid="246520">Tilannekuvan nimi.</translation>
+   <translation id="cpcv_snapshot_confirm" qtlid="246858">Ota tilannekuva</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} ALV0%/GB/kk)</translation>
+   <translation id="cpcv_snapshot_name_error" qtlid="273687">Anna varmuuskopiolle kelvollinen nimi.</translation>
+   <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Valitse varmuuskopiolle lyhyempi nimi.</translation>
+   <translation id="cpcv_snapshot_creation_info" qtlid="263311">Varmuuskopioidaan...</translation>
+   <translation id="cpcv_snapshot_creation_error" qtlid="273713">Tapahtui virhe volyymin varmuuskopion luomisessa.</translation>
+   <translation id="cpcv_snapshot_error" qtlid="273726">Tapahtui virhe varmuuskopion tietojen haussa, ole hyvä ja yritä hetken kuluttua uudelleen.</translation>
+   <translation id="cpcv_snapshot_attach_warning" qtlid="273739">Levysi on kiinni instanssissa. Kaikkien tietojen takamaamiseksi kehotamme irrottamaan levyn ennen  varmuuskopioinnin suorittamista. </translation>
+</translations>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">No ha seleccionado ninguna modalidad de pago. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para seleccionar una modalidad de pago o añadir una nueva.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">Su modalidad de pago por defecto ha explirado. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para registrar una nueva modalidad de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">Su modalidad de pago por defecto expirará en menos de 30 días. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para registrar una nueva modalidad de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">Su modalidad de pago por defecto (cuenta bancaria) está pendiente de validación. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para más información.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">Se ha detectado un error en su modalidad de pago por defecto  (tarjeta de crédito). Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para efectuar las verificaciones y/o registrar una nueva modalidad de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">Se ha detectado un error en su modalidad de pago por defecto (PayPal). Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para efectuar las verificaciones y/o registrar una nueva modalidad de pago.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Usted tiene <strong>{{count}}</strong> cuenta(s) bancaria(s)pendiente(s) de validación. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para más información.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Usted tiene <strong>{{count}}</strong> tarjeta(s) de crédito en error. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para efectuar las verificaciones y/o registrar una nueva modalidad de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Usted tiene <strong>{{count}}</strong> cuenta(s) PayPal en error. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para efectuar las verificaciones y/o registrar una nueva modalidad de pago.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Su cuenta OVH tiene un saldo de <strong>{{value}}</strong> au {{date | date:'medium'}}. Acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a> para resolver la situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Usted tiene un saldo de <strong>{{value}}</strong>. Acceda a <a href="{{link}}" class="alert-link">la sección facturación</a> para resolver la situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Su cuenta OVH ha alcanzado el límite establecido por usted. Para más información, acceda a <a href="{{link}}" class="alert-link">la sección de facturación</a>.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Usted tiene <strong>{{count}}</strong> pedido(s) pendiente(s) que requiere(n) documentos. Acceda a <a href="{{link}}" class="alert-link">la sección "Mis pedidos"</a> para actualizarlo(s).</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Usted tiene <strong>{{count}}</strong> contratos pendientes de validación.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Usted tiene <strong>{{count}}</strong> pedido(s) de cambio de contacto.</translation>
+
+</translations>

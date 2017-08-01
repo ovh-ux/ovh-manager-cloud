@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dbaasts_tab_tokens" qtlid="300746">API-avaimet</translation>
+   <translation id="dbaasts_tab_quota" qtlid="6874">Kiintiö</translation>
+   <translation id="dbaasts_tab_billing" qtlid="25639">Kulutus</translation>
+   <translation id="dbaasts_tab_settings" qtlid="11747">Asetukset</translation>
+
+   <translation id="dbaasts_region" qtlid="32434">Alue</translation>
+
+   <translation id="dbaasts_ok" qtlid="31522">OK</translation>
+   <translation id="dbaasts_name" qtlid="3818">Nimi</translation>
+
+   <translation id="dtpds_name_error" qtlid="300759">Huom, nimen tulee noudattaa seuraavia ehtoja:</translation>
+   <translation id="dtpds_name_error1" qtlid="300772">- Vähintään {{min}} merkkiä</translation>
+   <translation id="dtpds_name_error2" qtlid="300785">- Enintään {{max}} merkkiä</translation>
+   <translation id="dtpds_name_error3" qtlid="300798">- Ei yhtään aksenttia sisältävää merkkiä</translation>
+   <translation id="dtpds_name_error4" qtlid="301950">- Ei yhtään erikoismerkkiä paitsi . - ja _.</translation>
+</translations>

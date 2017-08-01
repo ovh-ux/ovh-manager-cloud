@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_delete_title" qtlid="282055">Usuwanie projektu</translation>
+   <translation id="cloud_project_delete_confirm" qtlid="51979">Usuń projekt</translation>
+   <translation id="cloud_project_delete_info" qtlid="282068">W ciągu 24 godzin otrzymasz e-mail dotyczący potwierdzenia definitywnego usunięcia wszystkich zasobów projektu. Operacja ta jest nieodwracalna. Wszystkie dane zostaną natychmiast usunięte a wszyscy użytkownicy OVH i OpenStack utracą dostęp do projektu.</translation>
+   <translation id="cloud_project_delete_info_bill" qtlid="282081">Ostatnia faktura (na kwotę około {{ bill }}) dotycząca zasobów wykorzystanych na zamówienie zostanie wystawiona w ciągu 24 godzin po potwierdzeniu.</translation>
+   <translation id="cloud_project_delete_info_credits" qtlid="367436">Wraz z wystawieniem tej faktury, zasilenia i vouchery (kody) przypisane go tego projektu stracą ważność. </translation>
+   <translation id="cloud_project_delete_email_sent" qtlid="282107">W ciągu 24 godzin otrzymasz e-mail dotyczący potwierdzenia.</translation>
+
+   <translation id="cloud_project_delete_error" qtlid="282120">Wystąpił błąd podczas usuwania projektu.</translation>
+   <translation id="cloud_project_delete_error_title" qtlid="282133">Wystąpił błąd podczas pobierania informacji na temat projektu.</translation>
+   <translation id="cloud_project_delete_error_try_later" qtlid="247053">Spróbuj ponownie później.</translation>
+   <translation id="cloud_project_delete_error_refresh_cache" qtlid="247066">W przeciwnym razie możesz spróbować zresetować lokalny cache:</translation>
+   <translation id="cloud_project_delete_error_contact_support_part1" qtlid="282146">Jeśli problem się powtarza, skontaktuj się z pomocą klikając</translation>
+   <translation id="cloud_project_delete_error_contact_support_part2" qtlid="137452">tutaj</translation>
+   <translation id="cloud_project_delete_error_reset_cache" qtlid="247027">Zresetuj cache</translation>
+   <translation id="cloud_project_delete_resource_warning_title" qtlid="282159">Uwaga:</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_server" qtlid="282172">Twój serwer zostanie usunięty.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_server" qtlid="282185">Twoje {{ amountInstance }} serwery zostaną usunięte.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_volume" qtlid="282198">Twój dodatkowy dysk twardy zostanie usunięty.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_volume" qtlid="282211">Twoje {{ amountVolume }} dodatkowe dyski twarde zostaną usunięte.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_snapshot" qtlid="282224">Twój snapshot zostanie usunięty.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_snapshot" qtlid="282237">Twoje {{ amountSnapshot }} snapshoty i obrazy zostaną usunięte.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_storage" qtlid="282250">Twój kontener zostanie usunięty.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_storage" qtlid="282263">Twoje {{ amountStorage }} kontenery zostaną usunięte.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverOvh" qtlid="282276">Twój adres IP Failover OVH zostanie usunięty.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverOvh" qtlid="282289">Twoje {{ amountIpFailoverOvh }} IP Failover OVH zostaną usunięte.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverCloud" qtlid="282302">Twój adres IP Failover Cloud zostanie przeniesiony na parking.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverCloud" qtlid="282315">Twoje {{ amountIpFailoverCloud }} IP Failover Cloud zostaną usunięte.</translation>
+</translations>

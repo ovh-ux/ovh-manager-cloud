@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Alerte de dépassement</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email</translation>
+   <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Une adresse email est requise pour envoyer l'alerte.</translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">L'adresse email n'est pas valide.</translation>
+
+   <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Seuil de déclenchement</translation>
+   <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">La consommation maximum à ne pas dépasser est requise.</translation>
+
+   <translation id="cpbea_estimate_alert_add_cancel_btn" qtlid="37863">Annuler</translation>
+   <translation id="cpbea_estimate_alert_add_submit_btn" qtlid="8506">Enregistrer</translation>
+
+   <translation id="cpbea_estimate_alert_error" qtlid="270774">Oups, une erreur est survenue lors de la sauvegarde de votre alerte.</translation>
+   <translation id="cpbea_estimate_alert_success" qtlid="270761">Alerte consommation sauvegardée.</translation>
+</translations>

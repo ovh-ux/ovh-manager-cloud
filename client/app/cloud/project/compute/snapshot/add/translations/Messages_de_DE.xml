@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_snapshot_add_title" qtlid="246806">Erstellung eines Backups</translation>
+   <translation id="cpc_snapshot_add_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="cpc_snapshot_add_info" qtlid="246819">Geben Sie den Namen Ihres Backups an:</translation>
+   <translation id="cpc_snapshot_add_name_required_error" qtlid="246832">Sie müssen einen Namen für Ihr Backup vergeben.</translation>
+   <translation id="cpc_snapshot_add_name_max_error" qtlid="246845">Dieser Name ist zu lang.</translation>
+   <translation id="cpc_snapshot_add_name" qtlid="246520">Name des Backups</translation>
+   <translation id="cpc_snapshot_add_valid" qtlid="246858">Das Backup starten</translation>
+   <translation id="cpc_snapshot_add_doing" qtlid="246871">Die Backup-Anfrage wird bearbeitet...</translation>
+   <translation id="cpc_snapshot_add_success" qtlid="246884">Das Backup {{snapshotname}} wird erstellt und ist in einigen Minuten verfügbar.</translation>
+   <translation id="cpc_snapshot_add_availibility" qtlid="271270">Ihr Server wird für einige Sekunden angehalten, danach kann die Lese- und Schreib-Performance der Festplatte bis zur Fertigstellung der Sicherung verringert sein.</translation>
+   <translation id="cpc_snapshot_add_error" qtlid="246897">Das Backup dieses Servers konnte nicht gestartet werden.</translation>
+   <translation id="cpc_snapshot_add_total" qtlid="270020">({{size | bytes:2}}, also etwa {{price}} ohne MwSt / Monat)</translation>
+</translations>

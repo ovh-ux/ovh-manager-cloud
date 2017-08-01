@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_tiles_shortcut_title" qtlid="403658">Scelta rapida</translation>
+   <translation id="veeam_tiles_shortcut_label_add_storage" qtlid="403671">Aggiungi spazio di storage</translation>
+   <translation id="veeam_tiles_shortcut_label_change_offer" qtlid="403684">Upgrade dell'offerta</translation>
+
+   <translation id="veeam_tiles_configuration_title" qtlid="4406">Configurazione</translation>
+   <translation id="veeam_tiles_configuration_label_name" qtlid="3818">Nome</translation>
+   <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Offerta</translation>
+   <translation id="veeam_tiles_configuration_label_stockage_number" qtlid="403697">Numero di spazi di storage</translation>
+   <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">Numero di VM</translation>
+   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacenter</translation>
+
+   <translation id="veeam_tiles_subscription_title" qtlid="28891">Abbonamento</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Rinnovo automatico</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_renew_link" qtlid="16301">Gestisci</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_warning" qtlid="403723">Il tuo servizio verrà disattivato tra {{remainingDays}} giorni.</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_warning_link" qtlid="403684">Upgrade dell'offerta</translation>
+   <translation id="veeam_tiles_subscription_label_creation_date" qtlid="26419">Data di creazione</translation>
+
+   <translation id="veeam_message_product_disabled" qtlid="403736">L'offerta "demo" è scaduta, il tuo servizio verrà disattivato.</translation>
+</translations>

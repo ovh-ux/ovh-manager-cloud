@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_introduction_title" qtlid="344584">Rakenna oma virtuaaliräkki (vRack)</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Hallinnoi kaikkien laitteistoinfrastruktuurisi osien välistä yksityistä verkostoa kaikkialla maailmassa. <br/> vRack-teknologialla (virtuaaliräkki) voidaan yhdistää, eristää tai jakaa palvelujasi yhdessä tai useammassa yksityisessä ja suojatussa verkossa.</translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">Voit myös <a href="{{ uri }}" target="_blank">vaihtaa omistajaa</a> halutessasi.</translation>
+   <translation id="vrack_guide_link_text" qtlid="344610">Haluatko lisätietoja? Seuraa ohjettamme.</translation>
+   <translation id="vrack_change_owner_link_text" qtlid="344623">vaihda omistajaa</translation>
+   <translation id="vrack_error" qtlid="323249">Hups, virtuaaliräkkisi tietojen hakeminen ei onnistunut.</translation>
+   <translation id="vrack_add_error" qtlid="323262">Hups, tapahtui virhe palvelun lisäämisessä virtuaaliräkkiisi.</translation>
+   <translation id="vrack_remove_error" qtlid="323275">Hups, tapahtui virhe poistettaessa palvelua virtuaaliräkiltäsi.</translation>
+   <translation id="vrack_your_services" qtlid="344636">Hyväksytyt palvelusi</translation>
+   <translation id="vrack_your_vrack" qtlid="323288">Oma virtuaaliräkki</translation>
+   <translation id="vrack_help" qtlid="323301">Valitse yksi tai useampi palvelu, jonka haluat lisätä tai poistaa virtuaaliräkiltäsi:</translation>
+   <translation id="vrack_order_new_title" qtlid="323314">Muodosta oma virtuaaliräkki</translation>
+   <translation id="vrack_cloud_warning" qtlid="325185">Huom,  muiden tyyppisten tuotteiden ja pilviprojektien välinen kommunikointi ei ole vielä mahdollista. Toiminto kuitenkin aktivoidaan tulevien kuukausien aikana automaattisesti. Tällä hetkellä vain projektin sisäinen viestintä on mahdollista.</translation>
+   <translation id="vrack_cloud_name_max_length" qtlid="349281">Nimen pituus ei saa ylittää 100 merkkiä.</translation>
+   <translation id="vrack_cloud_name_pattern" qtlid="349294">Nimen täytyy alkaa kirjaimella eikä se voi sisältää välilyöntejä.</translation>
+   <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
+   <translation id="vrack_move_dialog_title" qtlid="353556">Private cloud -konesalin siirto</translation>
+   <translation id="vrack_move_dialog_intro" qtlid="353569">Olet valinnut datacenter private cloud -tyyppisen palvelun. Palvelin ei voi olla orpo ja se täytyy ehdottomasti siirtää toiseen virtuaaliräkkiin. </translation>
+   <translation id="vrack_move_dialog_warning_notice" qtlid="353582">Tästä toimenpiteestä aiheutuu noin viiden (5) minuutin palvelukatkos.</translation>
+   <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">Määränpää vRack:</translation>
+   <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Valitse vRack</translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">Hups, konesalin siirto epäonnistui.</translation>
+</translations>

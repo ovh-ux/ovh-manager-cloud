@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Lisää SSH-avain tähän kirjautuaksesi palvelimille.</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Nimi</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Avain</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">SSH-avaimia ladataan...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">SSH-avainlistaa ei pystytä hakemaan!</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH:n palvelinten välillä tapahtuvassa viestinnässä käytetään tietojen salauksessa salausprotokollaa (SSH).</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<a href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Myös <a href="{{ addUrl }}" target="_blank">ylimääräisten SSH-avainten konfigurointi<i class="fa fa-external-link" aria-hidden="true"></i></a> on mahdollista instanssissasi, jotta voit antaa pääsyoikeuksia toisille tai <a href="{{ changeUrl }}" target="_blank">muuttaa SSH-avaimen, mikäli olet kadottanut sen<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Lisää avain</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Peruuta lisäys</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Lisää avain</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Avain on nyt käytössä!</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Anna sille nimi</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Syötä 4096 bitin avaimesi</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Avainta ei pystytä lisäämään!</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Tämä nimi on jo käytössä toisella SSH-avaimella.</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Tämä avain ei ole enää käytössä.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Tätä avainta ei pystytä poistamaan!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Haku</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Älä poista tätä avainta</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Vahvista poisto</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">SSH-avainta ei ole vielä lisätty.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Napsauta "Lisää avain" tilanteen korjaamiseksi!</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">Nimen ei saa olla yli 255 merkkiä.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">Avaimelle on annettava nimi.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">Unohdit syöttää 4096 bitin avaimesi.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">Avaimen nimessä voi olla ainoastaan numeroita, pieniä ja/tai isoja kirjaimia sekä väliviiva ( - ), alaviiva ( _ ) ja välilyönti.</translation>
+
+
+</translations>

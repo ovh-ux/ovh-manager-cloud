@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_volume_addedit_add_title" qtlid="252659">Přidat pevný disk</translation>
+   <translation id="cpci_volume_addedit_edit_title" qtlid="252672">Změna pevného disku</translation>
+   <translation id="cpci_volume_addedit_restore_title" qtlid="273635">Znovuvytvoření pevného disku</translation>
+   <translation id="cpci_volume_addedit_disk_name" qtlid="252685">Název pevného disku</translation>
+
+   <translation id="cpci_volume_addedit_name_add_error_required_name" qtlid="252698">Musíte pojmenovat svůj pevný disk.</translation>
+   <translation id="cpci_volume_addedit_name_add_error_max_char" qtlid="252711">Název disku nesmí obsahovat více jak 255 znaků.</translation>
+
+   <translation id="cpci_volume_addedit_type_high-speed" qtlid="252724">Vysoký výkon</translation>
+   <translation id="cpci_volume_addedit_type_classic" qtlid="252737">Classic</translation>
+   <translation id="cpci_volume_addedit_type_choose" qtlid="252750">Zvolte typ</translation>
+
+   <translation id="cpci_volume_addedit_size_choose" qtlid="252763">Zvolte kapacitu</translation>
+   <translation id="cpci_volume_addedit_size" qtlid="252776">Kapacita disku:</translation>
+   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">La taille maximale dépend de <a ui-sref="{{ state }}">votre quota disponible</a>.</translation>
+
+   <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Načítání dostupných zón.</translation>
+   <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Zvolte umístění</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Chyba, nejsme schopní nalézt Vaši oblast.</translation>
+   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Aktualizace seznamu oblastí.</translation>
+   <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+
+   <translation id="cpci_volume_addedit_build" qtlid="37923">Přidat</translation>
+   <translation id="cpci_volume_addedit_change_now" qtlid="249107">Provést změny</translation>
+   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Provést změny</translation>
+
+   <translation id="cpci_volume_default_name" qtlid="252685">Název pevného disku</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Chyba, nejsme schopní nalézt image.</translation>
+
+   <translation id="cpci_volume_addedit_post_error" qtlid="252802">Chyba, není možné přidat pevný disk.</translation>
+   <translation id="cpci_volume_addedit_put_error" qtlid="252815">Chyba, není možné aktualizovat pevný disk.</translation>
+
+   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">Chyba, nejsme schopni načíst Vaše dostupné limity.</translation>
+   <translation id="cpci_volume_addedit_over_quota" qtlid="255391">Limit je nedostatečný.</translation>
+   <translation id="cpci_volume_addedit_over_quota2" qtlid="255404">Navýšení mého limitu.</translation>
+
+   <translation id="cpci_volume_snapshotting_end" qtlid="273648">Svazek {{ volume }} zazálohován.</translation>
+</translations>

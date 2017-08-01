@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbc_monthly_header" qtlid="364876">Jau sumokėta <small>(išankstinis apmokėjimas ir proporcingas perskaičiavimas)</small></translation>
+   <translation id="cpbc_hourly_header" qtlid="364889">Būsima sąskaita <small>(sunaudojimas pagal einamojo mėnesio duomenis)</small></translation>
+</translations>

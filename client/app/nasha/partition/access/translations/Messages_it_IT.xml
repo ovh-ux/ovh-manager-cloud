@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_access_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_access_action_add" qtlid="153857">Aggiungi un accesso</translation>
+   <translation id="nasha_access_action_add_message" qtlid="153870">Aggiungi un indirizzo IP o un Blocco RIPE</translation>
+   <translation id="nasha_access_action_add_services" qtlid="369256">I tuoi IP OVH</translation>
+   <translation id="nasha_access_action_add_placeholder" qtlid="369269">Inserisci un indirizzo IP o scegline uno tra i tuoi servizi</translation>
+   <translation id="nasha_access_back_to_partitions" qtlid="344649">Ritorna alle partizioni</translation>
+   <translation id="nasha_access_partition" qtlid="344662"><strong>Partizione: </strong>{{partitionName}}</translation>
+   <translation id="nasha_partition_access_no_data" qtlid="172449">Non sono disponibili accessi</translation>
+   <translation id="nasha_partitions_access_no_data_error" qtlid="243682">Impossibile visualizzare gli accessi</translation>
+   <translation id="nasha_partitions_access_loading_error" qtlid="344675">Si è verificato un errore durante il caricamento dei dati.</translation>
+   <translation id="nasha_access_action_add_success" qtlid="344688">L'accesso {{accessIp}} verrà creato in pochi minuti.</translation>
+   <translation id="nasha_access_action_add_failure" qtlid="344701">Si è verificato un errore durante la creazione dell'accesso {{accessIp}}.</translation>
+   <translation id="nasha_access_action_delete_title" qtlid="153922">Elimina un accesso</translation>
+   <translation id="nasha_access_action_delete_confirmation" qtlid="344714">Vuoi davvero eliminare l'accesso {{accessIp}}?</translation>
+   <translation id="nasha_access_action_delete_success" qtlid="344727">L'eliminazione dell'accesso a {{accessIp}} diventerà effettiva in pochi minuti.</translation>
+   <translation id="nasha_access_action_delete_failure" qtlid="344740">Si è verificato un errore durante l'eliminazione dell'accesso {{accessIp}}.</translation>
+   <translation id="nasha_access_action_failure" qtlid="344753">Si è verificato un errore durante la modifica degli accessi.</translation>
+   <translation id="nasha_partitions_access_readonly" qtlid="17333">Sola lettura</translation>
+   <translation id="nasha_partitions_access_readwrite" qtlid="215754">Lettura/Scrittura </translation>
+   <translation id="nasha_partitions_access_permissions" qtlid="6946">Permessi</translation>
+   <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">La modalità di sola lettura è disponibile solo in NFS.</translation>
+   <translation id="nasha_partitions_access_notice" qtlid="372154">Al momento è possibile utilizzare il NAS-HA solo tramite gli IP OVH (server dedicati/VPS/Public Cloud/Private Cloud/So you Start/Kimsufi/ADSL).</translation>
+</translations>

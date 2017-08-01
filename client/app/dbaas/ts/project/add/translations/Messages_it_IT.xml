@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpa_title" qtlid="300720">Crea un nuovo progetto PaaS Time Series</translation>
+   <translation id="dtpa_order_expl1" qtlid="300733">Il tuo DBaaS Time Series è disponibile in diversi abbonamenti e con fatturazione a consumo.</translation>
+   <translation id="dtpa_go_to_order" qtlid="158851">Apri l'ordine</translation>
+</translations>

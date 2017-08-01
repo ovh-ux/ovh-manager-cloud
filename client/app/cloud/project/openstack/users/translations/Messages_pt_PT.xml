@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="openstackusers_users_title" qtlid="245246">Openstack API e Horizon</translation>
+   <translation id="openstackusers_users_description" qtlid="245259">O cloud da OVH fornece acesso à API Openstack, ferramenta sobre a qual é baseada.</translation>
+   <translation id="openstackusers_users_description2" qtlid="245272">Para poder utilizar as API e as ferramentas propostas por Openstack, poderá gerir os seus acessos através da definição de utilizadores.</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Abrir Openstack Horizon</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Adicionar um utilizador</translation>
+
+   <translation id="openstackusers_users_userlist_error" qtlid="245298">Ocorreu um erro durante o carregamento dos utilizadores:</translation>
+   <translation id="openstackusers_users_userlist_empty" qtlid="245311">Nenhum utilizador Openstack está associado à sua conta cloud OVH.</translation>
+   <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Clique no botão em baixo para adicionar um utilizador.</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identificador</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Descrição </translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Estado</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Password</translation>
+   <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Gerar nova palavra-passe</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Anular a eliminação</translation>
+   <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Eliminar este utilizador</translation>
+   <translation id="openstackusers_users_delete_success" qtlid="245350">O utilizador {{username}} foi eliminado.</translation>
+   <translation id="openstackusers_users_delete_error" qtlid="245363">Um erro levou à interrupção da eliminação:</translation>
+   <translation id="openstackusers_users_regeneratepassword_success" qtlid="245376">A palavra-passe de {{username}} foi re-gerado.</translation>
+   <translation id="openstackusers_users_regeneratepassword_error" qtlid="245389">Um erro levou à interrupção da geração da nova palavra-passe:</translation>
+
+   <translation id="openstackusers_users_userlist_add_description" qtlid="245402">Descrição do utilizador</translation>
+   <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">Não se esqueça de descrever este utilizador.</translation>
+   <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">A sua descrição é muito longa.</translation>
+   <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Anular</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Criar este utilizador</translation>
+   <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">O novo utilizador foi criado.</translation>
+   <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">Impossível criar este utilizador:</translation>
+
+   <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Eliminar estes {{nbUsers}} utilizadores</translation>
+   <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Não eliminar os utilizadores</translation>
+   <translation id="openstackusers_users_delete_button" qtlid="7882">Eliminar este utilizador</translation>
+   <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Não eliminar este utilizador</translation>
+   <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Confirmar esta eliminação</translation>
+
+   <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Os {{nbUsers}} utilizadores selecionados estão em curso de eliminação.</translation>
+   <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Oops, não foi possível eliminar {{nbUsers}} utilizadores!</translation>
+   <translation id="openstackusers_users_delete_error_one" qtlid="245558">Oops, não foi possível eliminar um utilizador!</translation>
+
+</translations>

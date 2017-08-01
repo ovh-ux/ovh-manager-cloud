@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcipnd_create_title" qtlid="331202">Añadir una red privada</translation>
+   <translation id="cpcipnd_default_name_template" qtlid="331215">MYNETWORK</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Nombre</translation>
+   <translation id="cpcipnd_name_required_error" qtlid="331228">Es necesario indicar el nombre de la red privada.</translation>
+   <translation id="cpcipnd_name_maxlength_error" qtlid="331241">El nombre de la red privada no puede exceder los 256 caracteres.</translation>
+   <translation id="cpcipnd_vlan_create" qtlid="348347">Definir una VLAN</translation>
+   <translation id="cpcipnd_vlan_description" qtlid="348360">Usted puede definir una VLAN entre {{ min }} y {{ max }}. Útil para segmentar su vRack entre varias redes virtuales.</translation>
+   <translation id="cpcipnd_vlanId_label" qtlid="348373">ID de la VLAN:</translation>
+   <translation id="cpcipnd_vlanId_number_helper" qtlid="348386">(entre {{ min }} y {{ max }})</translation>
+   <translation id="cpcipnd_vlanId_required_error" qtlid="331267">Es necesario indicar el ID de la red privada.</translation>
+   <translation id="cpcipnd_vlanId_number_error" qtlid="331280">El ID de la red privada debe estar comprendido entre {{ min }} y {{ max }}.</translation>
+   <translation id="cpcipnd_vlanId_unique_error" qtlid="331293">Este ID ya está en uso.</translation>
+   <translation id="cpcipnd_region_label" qtlid="331306">Asociar a la región</translation>
+   <translation id="cpcipnd_region_default_option" qtlid="331319">Todas las regiones</translation>
+   <translation id="cpcipnd_regions_query_error" qtlid="331332">Lo sentimos: No se ha podido cargar la lista de regiones. {{ message }}</translation>
+   <translation id="cpcipnd_region_hint" qtlid="331345">Más información sobre las redes privadas <a href="{{ url }}" target="_blank">multirregión</a>.</translation>
+   <translation id="cpcipnd_subnet_label" qtlid="331358">Dirección de la red privada (CIDR):</translation>
+   <translation id="cpcipnd_subnet_address_required_error" qtlid="331371">Es necesario indicar la dirección.</translation>
+   <translation id="cpcipnd_subnet_address_valid_ip_address_error" qtlid="331384">El formato de dirección no es válido.</translation>
+   <translation id="cpcipnd_subnet_address_hint" qtlid="30430">Dirección </translation>
+   <translation id="cpcipnd_subnet_address_title" qtlid="331397">Dirección de subred</translation>
+   <translation id="cpcipnd_subnet_range_label" qtlid="331410">Rango:</translation>
+   <translation id="cpcipnd_subnet_mask_hint" qtlid="331423">24</translation>
+   <translation id="cpcipnd_subnet_mask_required_error" qtlid="331436">Es necesario indicar la máscara.</translation>
+   <translation id="cpcipnd_subnet_mask_number_error" qtlid="331449">La máscara no es válida.</translation>
+   <translation id="cpcipnd_subnet_mask_title" qtlid="311024">Máscara de subred</translation>
+   <translation id="cpcipnd_subnet_dhcp_label" qtlid="331462">Distribución de las direcciones:</translation>
+   <translation id="cpcipnd_subnet_dhcp_on_label" qtlid="331475">Dinámica (DHCP)</translation>
+   <translation id="cpcipnd_subnet_dhcp_off_label" qtlid="331488">Estática (manual)</translation>
+   <translation id="cpcipnd_subnet_start_label" qtlid="331501">Principio del rango (DHCP)</translation>
+   <translation id="cpcipnd_subnet_start_required_error" qtlid="331514">Es necesario realizar esta configuración.</translation>
+   <translation id="cpcipnd_subnet_start_valid_ip_address_error" qtlid="331384">El formato de dirección no es válido.</translation>
+   <translation id="cpcipnd_subnet_end_label" qtlid="331527">Fin del rango (DHCP)</translation>
+   <translation id="cpcipnd_subnet_end_required_error" qtlid="331514">Es necesario realizar esta configuración.</translation>
+   <translation id="cpcipnd_subnet_end_valid_ip_address_error" qtlid="331384">El formato de dirección no es válido.</translation>
+   <translation id="cpcipnd_save_button" qtlid="331540">Crear la red privada</translation>
+   <translation id="cpcipnd_cancel_button" qtlid="37863">Cancelar</translation>
+   <translation id="cpcipnd_fetch_regions_error" qtlid="331553">Lo sentimos: no se ha podido cargar la lista de regiones.</translation>
+   <translation id="cpcipnd_fetch_private_networks_error" qtlid="303978">Lo sentimos: no se ha podido restaurar la lista de redes privadas.</translation>
+   <translation id="cpcipnd_fetch_private_network_error" qtlid="331566">Lo sentimos: no se ha podido cargar la red privada.</translation>
+   <translation id="cpcipnd_save_error" qtlid="331579">Lo sentimos: no se ha podido guardar la red privada. {{ message }}</translation>
+   <translation id="cpcipnd_subnet_save_error" qtlid="331592">Lo sentimos: no se ha podido guardar la subred. {{ message }}</translation>
+   <translation id="cpcipnd_request_error" qtlid="331605">Lo sentimos: se ha producido un error al cargar el formulario. {{ message }}</translation>
+   <translation id="cpcipnd_common_menu_item_description" qtlid="331618">Configuración de la red privada</translation>
+   <translation id="cpcipnd_subnets_menu_item_description" qtlid="331631">Configuración de las subredes</translation>
+   <translation id="cpcipnd_subnet_api_notice" qtlid="331644">Puede personalizar sus rangos desde <a href="{{url}}" target="_blank">la API</a>.</translation>
+   <translation id="cpcipnd_subnet_gateway_label" qtlid="405525">Activar la pasarela por defecto</translation>
+</translations>

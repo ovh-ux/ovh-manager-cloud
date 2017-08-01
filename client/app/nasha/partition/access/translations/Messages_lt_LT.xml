@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_access_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_access_action_add" qtlid="153857">Sukurti prieigą</translation>
+   <translation id="nasha_access_action_add_message" qtlid="153870">Pridėti IP adresą ar RIPE bloką</translation>
+   <translation id="nasha_access_action_add_services" qtlid="369256">Jūsų IP OVH</translation>
+   <translation id="nasha_access_action_add_placeholder" qtlid="369269">Įveskite IP adresą ar pasirinkite iš turimų paslaugų sąrašo </translation>
+   <translation id="nasha_access_back_to_partitions" qtlid="344649">Grįžti prie skirsnių</translation>
+   <translation id="nasha_access_partition" qtlid="344662"><strong>Skirsnis: </strong>{{partitionName}}</translation>
+   <translation id="nasha_partition_access_no_data" qtlid="172449">Nėra jokios prieigos</translation>
+   <translation id="nasha_partitions_access_no_data_error" qtlid="243682">Neįmanoma paskelbti prieigų.</translation>
+   <translation id="nasha_partitions_access_loading_error" qtlid="344675">Įvyko klaida įkeliant duomenis.</translation>
+   <translation id="nasha_access_action_add_success" qtlid="344688">Prieiga {{accessIp}} bus sukurta po kelių minučių.</translation>
+   <translation id="nasha_access_action_add_failure" qtlid="344701">Įvyko klaida kuriant prieigą {{accessIp}}.</translation>
+   <translation id="nasha_access_action_delete_title" qtlid="153922">Pašalinti prieigą</translation>
+   <translation id="nasha_access_action_delete_confirmation" qtlid="344714">Ar tikrai norite pašalinti prieigą {{accessIp}}?</translation>
+   <translation id="nasha_access_action_delete_success" qtlid="344727">Prieigos prie {{accessIp}} pašalinimas įsigalios po kelių minučių.</translation>
+   <translation id="nasha_access_action_delete_failure" qtlid="344740">Įvyko klaida šalinant prieigą {{accessIp}}.</translation>
+   <translation id="nasha_access_action_failure" qtlid="344753">Įvyko klaida keičiant prieigą.</translation>
+   <translation id="nasha_partitions_access_readonly" qtlid="17333">Tik skaitymas</translation>
+   <translation id="nasha_partitions_access_readwrite" qtlid="215754">Skaitymas/rašymas</translation>
+   <translation id="nasha_partitions_access_permissions" qtlid="6946">Leidimai</translation>
+   <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">Režimas „tik skaitymas“ priienamas tik NFS.</translation>
+   <translation id="nasha_partitions_access_notice" qtlid="372154">Šiuo metu NAS-HA saugykla naudojama tik per OVH IP (dedikuoto serverio / VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi / ADSL).</translation>
+</translations>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_buy_title" qtlid="275882">Acquista IP Failover Cloud</translation>
+   <translation id="cpciif_buy_cloud_info" qtlid="275895">Gli indirizzi IP Failover Cloud sono trasferibili da un server all'altro all'interno di uno stesso progetto Cloud e di uno stesso continente.</translation>
+   <translation id="cpciif_buy_quantity_select" qtlid="275908">Seleziona il numero di IP Failover Cloud che vuoi ordinare:</translation>
+   <translation id="cpciif_buy_instance_select" qtlid="275921">Seleziona il server a cui associare l'IP Failover Cloud (presto sarà possibile associare questo IP Failover anche ad altri prodotti OVH):</translation>
+   <translation id="cpciif_buy_instance_select_plural" qtlid="275934">Seleziona il server a cui associare gli IP Failover Cloud (presto sarà possibile associare questi IP Failover anche ad altri prodotti OVH):</translation>
+   <translation id="cpciif_buy_country_select" qtlid="275947">Seleziona il Paese del tuo IP Failover Cloud:</translation>
+   <translation id="cpciif_buy_country_select_plural" qtlid="275960">Seleziona il Paese dei tuoi IP Failover Cloud:</translation>
+   <translation id="cpciif_buy_limit_info" qtlid="275973">La tua infrastruttura attuale ti permette di ordinare fino a {{ ips }} IP Failover Cloud.</translation>
+   <translation id="cpciif_buy_init_error" qtlid="275986">Ops! Impossibile recuperare le informazioni necessarie all'acquisto di IP Failover Cloud.</translation>
+   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Genera ordine</translation>
+   <translation id="cpciif_buy_button_infos" qtlid="269513">Spese di attivazione - Nessun rinnovo mensile</translation>
+   <translation id="cpciif_buy_error" qtlid="275999">Ops! Si è verificato un arrore durante l'acquisto di IP Failover Cloud.</translation>
+   <translation id="cpciif_buy_success" qtlid="296011">Il buono d'ordine per l'acquisto dei tuoi IP Failover Cloud è disponibile <a href="{{ url }}" target="_blank">qui <i class="fa fa-external-link"></i></a></translation>
+   <translation id="cpciif_buy_ip_na_soon" qtlid="269552">Indirizzi IP presto disponibili in Nord America</translation>
+   <translation id="cpciif_buy_services" qtlid="269565">Questo servizio include:</translation>
+   <translation id="cpciif_buy_no_instance" qtlid="301935">Non sono presenti server</translation>
+   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} + IVA)</translation>
+</translations>

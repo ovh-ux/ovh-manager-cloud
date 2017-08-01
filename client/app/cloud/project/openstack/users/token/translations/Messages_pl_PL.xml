@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_token_title" qtlid="245571">Wygeneruj token Openstack</translation>
+   <translation id="cpou_openrc_title" qtlid="261036">Pobierz plik RC OpenStack</translation>
+   <translation id="cpou_token_info" qtlid="296193">Aby wygenerować token Openstack, wpisz hasło użytkownika <b>{{ username }}</b>.</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Hasło</translation>
+   <translation id="cpou_token_error" qtlid="245597">Nie można wygenerować tokenów Openstack.</translation>
+
+   <translation id="cpou_token_title_information" qtlid="245610">Prosimy o zapisanie tych identyfikatorów. Po kolejnej aktualizacji nie będą one już dostępne.</translation>
+   <translation id="cpou_token_xauthtoken" qtlid="245623">Token Openstack pozwalający na zidentyfikowanie zapytań HTTP (X-Auth-Token) to:</translation>
+   <translation id="cpou_token_xauthtoken_guide" qtlid="296206">Zapoznaj się z przykładem zastosowania w <a href="{{ link }}" target="_blank">tym przewodniku</a>.</translation>
+   <translation id="cpou_token_catalog_region" qtlid="245636">Region</translation>
+   <translation id="cpou_token_catalog_service" qtlid="31042">Usługa</translation>
+   <translation id="cpou_token_catalog_endpoint" qtlid="245649">Endpoint</translation>
+</translations>

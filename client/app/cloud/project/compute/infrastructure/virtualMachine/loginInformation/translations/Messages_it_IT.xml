@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_login_information_title" qtlid="250927">Informazioni di login</translation>
+   <translation id="cpcivm_login_information_instance_title" qtlid="401471">Connessione all'istanza</translation>
+   <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Nel tuo terminale, esegui questo comando: <br/><code>ssh {{user}}@{{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">La prima volta che ti connetti, utilizza la console VNC per completare la configurazione di Windows. Poi, utilizza il tuo client RDP preferito, ad esempio, con Linux: <br/><code>rdesktop {{ip}}</code>&#13;
+&#13;
+</translation>
+   <translation id="cpcivm_login_information_application_title" qtlid="401588">Connessione alle applicazioni</translation>
+   <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Tipo</translation>
+   <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>
+   <translation id="cpcivm_login_information_application_label_login" qtlid="41062">Login</translation>
+   <translation id="cpcivm_login_information_application_label_password" qtlid="2270">Password</translation>
+   <translation id="cpcivm_login_information_go_to_console" qtlid="401601">Accedi alla console VNC</translation>
+   <translation id="cpcivm_login_information_application_readonly" qtlid="401614">Il tuo account non possiede i privilegi per accedere alle informazioni di connessione alle applicazioni. Per ottenere l'accesso, contatta il tuo amministratore.</translation>
+</translations>

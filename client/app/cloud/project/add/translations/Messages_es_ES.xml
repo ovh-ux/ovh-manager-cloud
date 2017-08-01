@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpa_title" qtlid="255285">Creación de un nuevo proyecto de cloud público</translation>
+   <translation id="cpa_title_first" qtlid="245662">Activación de la cuenta de cloud público</translation>
+
+   <translation id="cpa_validationPending" qtlid="245675">Su cuenta de cliente aún no puede optar al cloud público. Recibirá una notificación por correo electrónico cuando pueda acceder a este producto.</translation>
+
+   <translation id="cpa_contract_empty" qtlid="245688">Ha aceptado todos los contratos asociados a este producto.</translation>
+
+   <translation id="cpa_description" qtlid="255298">Nombre del proyecto</translation>
+   <translation id="cpa_description_num" qtlid="250069">Proyecto {{num}}</translation>
+   <translation id="cpa_description_error_min_char" qtlid="255311">El nombre del proyecto debe tener al menos 3 caracteres.</translation>
+   <translation id="cpa_description_error_max_char" qtlid="255324">El nombre del proyecto no puede superar los 255 caracteres.</translation>
+
+
+   <translation id="cpa_paymentmean" qtlid="140014">Forma de pago</translation>
+   <translation id="cpa_paymentmean_creditCard" qtlid="275817">Cargar automáticamente a mi tarjeta bancaria (recomendado).</translation>
+   <translation id="cpa_paymentmean_creditCard_info" qtlid="275830">Es necesario tener una tarjeta bancaria con tecnología 3D Secure.</translation>
+   <translation id="cpa_paymentmean_creditCard_info2" qtlid="275843">Recuerde que cada factura se cargará automáticamente a su crédito cloud y se abonará mediante su forma de pago por defecto.</translation>
+   <translation id="cpa_paymentmean_empty1" qtlid="266651">Forma de pago por defecto (recomendada).</translation>
+   <translation id="cpa_paymentmean_empty2" qtlid="266664">Cada factura se cargará automáticamente a su crédito cloud y podrá abonarse posteriormente mediante tarjeta de crédito o cuenta PayPal. </translation>
+   <translation id="cpa_paymentmean_empty_help_link" qtlid="266677">Guardar una forma de pago </translation>
+   <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Guardar una tarjeta bancaria </translation>
+
+   <translation id="cpa_paymentmean_expl" qtlid="319154">Cada proyecto cloud se factura a principios de mes (consumo por hora o por GiB del mes anterior y cuotas mensuales de las instancias del mes entrante). También se emitirá una factura por la parte restante del mes cuando inicie instancias con tarifa mensual en el transcurso del mes.</translation>
+   <translation id="cpa_paymentmean_expl2" qtlid="266703">Cada factura se cargará automáticamente a su forma de pago por defecto (una vez deducido el importe del saldo, los códigos promocionales y la cantidad que pudiera tener en su cuenta de prepago OVH).</translation>
+
+
+   <translation id="cpa_and_or" qtlid="245727">y/o</translation>
+   <translation id="cpa_voucher" qtlid="266716">Código promocional (opcional)</translation>
+
+   <translation id="catalog_version" qtlid="377467">Catálogo</translation>
+   <translation id="catalog_version_intro" qtlid="377558">Hemos actualizado el <strong>catálogo de productos de OVH</strong>. ¡Disfrute ya de la nueva oferta! El antiguo catálogo seguirá disponible por tiempo limitado. No obstante, tenga en cuenta que no es posible combinar el uso de dos catálogos en un mismo proyecto.</translation>
+   <translation id="use_new_catalog_label" qtlid="377506">Nuevo catálogo de productos</translation>
+   <translation id="use_new_catalog_descr" qtlid="377519">Nuevas instancias: B2 (uso general), C2 (CPU), R2 (RAM), S1 (Sandbox)</translation>
+   <translation id="use_old_catalog_label" qtlid="377532">Antiguo catálogo de productos</translation>
+   <translation id="use_old_catalog_descr" qtlid="377545">Atención: No podrá añadir a su proyecto instancias del nuevo catálogo si está utilizando el antiguo catálogo de productos. Antiguas instancias: EG (uso general), HG (CPU), SP (RAM), VPS-SSD (Sandbox).</translation>
+
+   <translation id="cpa_create_project" qtlid="255337">Crear el proyecto</translation>
+   <translation id="cpa_create_project_first" qtlid="245753">Activar mi cuenta cloud</translation>
+   <translation id="cpa_create_project_limited" qtlid="245766">Activar en modo limitado</translation>
+   <translation id="cpa_create_project_with_order1" qtlid="266729">Activar el proyecto mediante la compra de crédito.</translation>
+   <translation id="cpa_create_project_with_order2" qtlid="295764">Abone un primer pago de {{price}} de crédito cloud para este proyecto. Ignore esta etapa si ya dispone de una cuenta (DLP, incubadora o concurso). A continuación, cada factura se cargará automáticamente, por orden, al crédito cloud asignado al proyecto, a sus cuentas y, por último, a su cuenta de prepago OVH (con la obligación de abonar inmediatamente la posible deuda mediante cualquier forma de pago). <br/> El crédito cloud no es transferible ni reembolsable y no tiene ningún valor monetario. Si no se utiliza en un plazo de 13 meses, se pierde.</translation>
+   <translation id="cpa_create_project_with_order3" qtlid="363167">Si forma parte del programa DLP, no tiene que rellenar este campo. Se utilizará directamente la cuenta DLP antes de recurrir a otras formas de pago.</translation>
+   <translation id="cpa_create_project_limited_help1" qtlid="372141">Actualmente dispone de un servicio activo entre las gamas de VPS, servidores dedicados o Private Cloud.</translation>
+   <translation id="cpa_create_project_limited_help2" qtlid="245792">Puede activar una cuenta limitada (1 instancia, 1 vCPU) sin introducir inmediatamente una forma de pago.</translation>
+   <translation id="cpa_create_project_limited_help3" qtlid="245805">Cuando active una forma de pago más adelante, este límite desaparecerá.</translation>
+
+   <translation id="cpa_success" qtlid="295777">El proyecto se está creando. Abone la <a href="{{url}}" target="blank">orden de pedido</a> para empezar a utilizarlo. </translation>
+
+   <translation id="cpa_error" qtlid="144721">Se ha producido un error. Por favor, vuelva a intentarlo más tarde.</translation>
+   <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Es necesario introducir una forma de pago válida (activa).</translation>
+   <translation id="cpa_error_invalid_voucher" qtlid="255350">El código promocional no es válido (es incorrecto o ha expirado).</translation>
+   <translation id="cpa_error_contracts_tosign" qtlid="245844">Hay uno o más contratos pendientes de aceptar.</translation>
+   <translation id="cpa_error_over_quota" qtlid="295790">Ha alcanzado el número máximo de proyectos cloud. Por favor, <a href="#/support?state=new" target="_blank">contacte con el soporte</a> para desbloquear este límite.</translation>
+</translations>

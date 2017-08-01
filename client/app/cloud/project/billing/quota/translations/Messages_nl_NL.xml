@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">Het aantal resources voor uw Cloud project is beperkt, zodat uw resource verbruik beperkt blijft.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Als u meer resources nodig heeft, kunt u hierom verzoeken door op de onderstaande knop te klikken.</translation>
+   <translation id="cpb_quota_protect_more_btn" qtlid="251291">Mijn limieten verhogen</translation>
+   <translation id="cpb_quota_current_limit" qtlid="251304">Huidige beperkingen</translation>
+
+   <translation id="cpb_quota_add_disk" qtlid="257783">Extra disc </translation>
+   <translation id="cpb_quota_instance_unlimited" qtlid="185504">Onbeperkt</translation>
+   <translation id="cpb_quota_loading" qtlid="251317">Het laden van de quota wordt uitgevoerd</translation>
+   <translation id="cpb_quota_loading_error" qtlid="251330">We konden de lijst met de quota niet ophalen.</translation>
+   <translation id="cpb_quota_no_quota" qtlid="251343">Geen quota gevonden</translation>
+
+   <translation id="cpb_quota_restricted_account" qtlid="251356">De aanpassing van de quota is alleen mogelijk als een actieve betaalmethode wordt ingesteld op uw account.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429">Veuillez <a href="{{url}}">ajouter un moyen de paiement</a> valide, puis revenir sur cette page pour augmenter votre quota.</translation>
+   <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">Uw account beschikt nu over een actieve betaalmethode.</translation>
+   <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">De standaard quota activeren</translation>
+
+   <translation id="cpb_quota_already_unleashed" qtlid="251408">U heeft uw quota al geactiveerd.</translation>
+   <translation id="cpb_quota_unleash_error" qtlid="251421">Uw quota kon niet geactiveerd worden.</translation>
+   <translation id="cpb_quota_unleash_loading" qtlid="251434">Activering van het quota wordt uitgevoerd...</translation>
+</translations>

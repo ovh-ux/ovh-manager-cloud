@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Reiniciar en modo de rescate</translation>
+   <translation id="cpc_rescue_mode_valid" qtlid="25951">Démarrer</translation>
+   <translation id="cpc_rescue_mode_cancel" qtlid="37863">Cancelar</translation>
+   <translation id="cpc_rescue_mode_expl" qtlid="269201">¡Atención! Usted va a iniciar el servidor en modo de rescate.</translation>
+   <translation id="cpc_rescue_mode_label" qtlid="269214">Mi imagen:</translation>
+   <translation id="cpc_rescue_mode_defaut" qtlid="269227">Distribución Rescue Made-in-OVH</translation>
+   <translation id="cpc_rescue_mode_pwd_expl" qtlid="286877">Si selecciona la opción «Distribución Rescue Made-in-OVH», recibirá una contraseña temporal con la que podrá conectarse al servidor en modo de rescate. De lo contrario, podrá acceder al servidor con su llave SSH habitual, pero la huella SSH del host será distinta. El disco principal estará disponible como segundo disco no montado.  </translation>
+   <translation id="cpc_rescue_mode_success_linux" qtlid="296115">Para acceder a su servidor «{{vmName}}» en modo de rescate, utilice:<br/><code>ssh {{user}}@{{ip}}</code> con la llave SSH habitual. Atención: Solo podrá acceder al disco principal en este modo.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Para acceder a su servidor «{{vmName}}» en modo de rescate, utilice:<br/><code>ssh {{user}}@{{ip}}</code> con la contraseña temporal {{pwd}} (no volverá a recibir esta contraseña posteriormente). Atención: Solo podrá acceder al disco principal en este modo.</translation>
+   <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Para acceder a su servidor «{{vmName}}» en modo de rescate, utilice:<br/><code>rdesktop {{ip}}</code> con la llave SSH habitual. Atención: Solo podrá acceder al disco principal en este modo.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Para acceder a su servidor «{{vmName}}» en modo de rescate, utilice:<br/><code>rdesktop {{ip}}</code> con la contraseña temporal {{pwd}} (no volverá a recibir esta contraseña posteriormente). Atención: Solo podrá acceder al disco principal en este modo.</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="269305">Lo sentimos: no se ha podido reiniciar su servidor en modo de rescate.</translation>
+
+</translations>

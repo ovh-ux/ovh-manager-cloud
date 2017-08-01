@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="infra_overview_tips_title" qtlid="284620">Al parecer usted gestiona una gran cantidad de servidores y direcciones IP, por lo que hemos restringido la interfaz a fin de mejorar su rendimiento. </translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Para más comodidad, ponemos a su disposición una interfaz web dedicada</translation>
+   <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
+   <translation id="infra_overview_tips_platform3" qtlid="284659">y la API de OpenStack. Usted puede además gestionar sus direcciones IP Failover desde el manager dedicado. </translation>
+   <translation id="infra_overview_tips_guides1" qtlid="284672">¿Aún no conoce estas herramientas? Descúbralas</translation>
+   <translation id="infra_overview_tips_guides2" qtlid="284685">Guías disponibles</translation>
+   <translation id="infra_overview_tips_redirect_complete_view" qtlid="284698">Volver a la interfaz inicial</translation>
+   <translation id="infra_overview_tips_never_again" qtlid="286825">No volver a mostrar este mensaje </translation>
+   <translation id="infra_overview_tips_never_again_error" qtlid="286838">Lo sentimos: se ha producido un error al guardar sus preferencias.</translation>
+</translations>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="infra_overview_tips_title" qtlid="284620">Vous semblez gérer une quantité importante de serveurs et IPs, l'interface à été restreinte pour des questions de performances.</translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Pour plus de confort, nous mettons à votre disposition une interface web dédiée</translation>
+   <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
+   <translation id="infra_overview_tips_platform3" qtlid="284659">ainsi que l'API OpenStack. Vous retrouverez également la gestion de vos adresses IPFO dans le manager dédié.</translation>
+   <translation id="infra_overview_tips_guides1" qtlid="284672">Vous ne connaissez pas encore ces outils ? Découvrez</translation>
+   <translation id="infra_overview_tips_guides2" qtlid="284685">nos guides disponibles ici</translation>
+   <translation id="infra_overview_tips_redirect_complete_view" qtlid="284698">Revenir à l'interface d'origine</translation>
+   <translation id="infra_overview_tips_never_again" qtlid="286825">Ne plus afficher ce message</translation>
+   <translation id="infra_overview_tips_never_again_error" qtlid="286838">Oups une erreur est survenue lors de la sauvegarde de vos préférences.</translation>
+</translations>

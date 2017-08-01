@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_rights_expl" qtlid="262579">U každého cloudového projektu může administrační kontakt měnit fakturační a administrační kontakt přímo z Manažeru</translation>
+   <translation id="cpb_rights_expl2" qtlid="262592">Administrační kontakt může nastavit jiným kontaktům právo pro čtení/zápis, případně je nastavit do režimu "read only" (pouze pro čtení).</translation>
+   <translation id="cpb_rights_note" qtlid="261101">Poznámka: Kontakty s oprávněními pro čtení i zápis disponují takovými právy (např. změny v infrastruktuře nebo ve využití diskového prostoru), která mohou vyústit v dodatečné náklady. Kontakty, které mají pouze právo na čtení, nebohou na projektu provádět změny.&#13;
+Zvolená výchozí platba fakturačního kontaktu bude použita k hrazení služeb na všech účtech (tj. tam, kde je jako fakturační kontakt uveden právě tento fakturační kontakt).</translation>
+   <translation id="cpb_rights_soon" qtlid="261114">Během několika dní budete moci kontakty měnit ze Zákaznického prostoru.</translation>
+   <translation id="cpb_rights_owner" qtlid="262605">Administrační kontakt:</translation>
+   <translation id="cpb_rights_billing_contact" qtlid="261140">Fakturační kontakt:</translation>
+   <translation id="cpb_rights_modify" qtlid="37875">Změnit</translation>
+   <translation id="cpb_rights_add" qtlid="37923">Přidat</translation>
+   <translation id="cpb_rights_table_nichandle" qtlid="261153">NIC-Handle</translation>
+   <translation id="cpb_rights_table_email" qtlid="33598">E-mail</translation>
+   <translation id="cpb_rights_table_rights" qtlid="65286">Práva</translation>
+   <translation id="cpb_rights_loading" qtlid="242769">Načítání...</translation>
+   <translation id="cpb_rights_no_data" qtlid="261166">Nebyla nalezena žádná data o právech.</translation>
+   <translation id="cpb_rights_error" qtlid="261179">Nepodařilo se nám shromáždit informace o právech.</translation>
+   <translation id="cpb_rights_add_error" qtlid="261192">Nedaří se nám přidat právo.</translation>
+   <translation id="cpb_rights_remove_error" qtlid="261205">Nedaří se nám odstranit právo.</translation>
+   <translation id="cpb_contact_error_invalid" qtlid="261218">Vložený kontakt je neplatný.</translation>
+   <translation id="cpb_contact_error_other" qtlid="261231">Kontakt nelze aktualizovat.</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Pouze pro čtení</translation>
+   <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Čtení/Zápis</translation>
+   <translation id="cpb_rights_table_rights_add_success" qtlid="261244">Právo bylo přidáno.</translation>
+   <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">Právo bylo odstraněno.</translation>
+   <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Potvrdit vymazání</translation>
+   <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Zrušit vymazání</translation>
+
+</translations>

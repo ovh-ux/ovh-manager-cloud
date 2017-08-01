@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_order_loading_error" qtlid="345156">Įvyko klaida įkeliant NAS-HA sąrašą užsakymui.</translation>
+   <translation id="nasha_order_title" qtlid="345130">Užsakyti NAS-HA</translation>
+   <translation id="nasha_order_duration" qtlid="8218">Trukmė</translation>
+   <translation id="nas_order_month" qtlid="40222">mėnuo</translation>
+   <translation id="nasha_order_warning" qtlid="345169">OVH NAS-HA pasiūlymas prieinamas tik tokiu atveju, jei naudojatės bent vienu serveriu toje pačioje geografinėje zonoje.</translation>
+   <translation id="nasha_can_order_warning" qtlid="345182">Jūs neturite paslaugų, suderinamų su NAS-HA.</translation>
+   <translation id="nasha_order_step_1_configure" qtlid="345195">1. Konfigūracija</translation>
+   <translation id="nasha_order_step_2_order" qtlid="345208">2. Užsakymas</translation>
+   <translation id="nasha_order_generate_order" qtlid="186219">Kurti užsakymą</translation>
+   <translation id="nasha_order_accept_contract" qtlid="345221">Perskaičiau, supratau ir sutinku su sąlygomis, pateiktomis šiuose dokumentuose:</translation>
+   <translation id="nasha_order_nasha_1200g" qtlid="171994">NAS-HA hybrid 1,2 TB</translation>
+   <translation id="nasha_order_nasha_13200g" qtlid="172007">NAS-HA hybrid 13,2 TB</translation>
+   <translation id="nasha_order_nasha_2400g" qtlid="172020">NAS-HA hybrid 2,4 TB</translation>
+   <translation id="nasha_order_nasha_3600g" qtlid="172046">NAS-HA hybrid 3,6 TB</translation>
+   <translation id="nasha_order_nasha_7200g" qtlid="172072">NAS-HA hybrid 7,2 TB</translation>
+   <translation id="nasha_order_nashaSSD" qtlid="172085">NAS-HA 100 GB SSD</translation>
+   <translation id="nasha_order_nasha_19200g" qtlid="243445">NAS-HA hybrid 19.2 TB</translation>
+   <translation id="nasha_order_nasha_26400g" qtlid="243458">NAS-HA hybrid 26.4 TB</translation>
+   <translation id="nasha_order_name" qtlid="345234">NAS-HA tipas</translation>
+   <translation id="nasha_order_price" qtlid="345247">be PVM (1 mėn.)</translation>
+   <translation id="nasha_order_datacenter" qtlid="345260">Duomenų centro pasirinkimas</translation>
+   <translation id="nasha_order_datacenter_rbx" qtlid="120414">Rubė</translation>
+   <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
+   <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasbūras</translation>
+   <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravlinas</translation>
+   <translation id="nasha_order_validation_error" qtlid="345273">Įvyko klaida tvirtinant jūsų užsakymą.</translation>
+   <translation id="nasha_order_error" qtlid="345286">Įvyko klaida atkuriant užsakymą.</translation>
+   <translation id="nasha_order_success" qtlid="345299">Jūsų NAS-HA užsakymas Nr. <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> priimtas.</translation>
+   <translation id="nasha_order_bc_price_HT" qtlid="345312">Iš viso be PVM: <strong>{{priceHT}}</strong></translation>
+   <translation id="nasha_order_bc_price_TTC" qtlid="345325">Iš viso su PVM: <strong>{{priceTTC}}</strong></translation>
+
+   <translation id="nasha_order_guide_title" qtlid="300370">Gidai</translation>
+   <translation id="nasha_order_new_window" qtlid="222176">Naujas langas</translation>
+</translations>

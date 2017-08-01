@@ -1,0 +1,61 @@
+<section class="cda-modal">
+    <header class="modal-header">
+        <h4 class="h3" data-translate="cda_detail_edit_title"></h4>
+    </header>
+    <div class="modal-body">
+        <form id="editDetailForm" name="editDetailForm" class="ovh-form-flat clearfix cda-form">
+            <div>
+                <div class="input-group">
+                    <label for="label" data-translate="cda_detail_edit_label" class="cda-input-label"></label>
+                    <input type="text" class="form-control error-animate-shake-light"
+                        id="label" name="label"
+                        data-ng-model="CdaDetailEditCtrl.model.label"
+                        data-ng-maxLength="CdaDetailEditCtrl.options.label.maxLength"
+                        required />
+                </div>
+                <div class="text-danger" data-ng-messages="editDetailForm.label.$error" data-ng-if="editDetailForm.label.$dirty">
+                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
+                        <span data-ng-message="required" data-translate="cda_detail_edit_label_required"></span>
+                        <span data-ng-message="maxlength" data-translate="cda_detail_edit_label_maxlength" data-translate-values="{ maxlength: CdaDetailEditCtrl.options.label.maxLength }"></span>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="input-group">
+                    <label for="crushTunable" data-translate="cda_detail_edit_crushTunable" class="cda-input-label"></label>
+                    <select class="form-control error-animate-shake-light text-capitalize"
+                        id="crushTunable" name="crushTunable"
+                        data-ng-model="CdaDetailEditCtrl.model.crushTunable"
+                        data-ng-options="crushTunableValue | lowercase for crushTunableValue in CdaDetailEditCtrl.crushTunableValues"
+                        required />
+                </div>
+                <div class="text-danger" data-ng-messages="editDetailForm.crushTunable.$error" data-ng-if="editDetailForm.crushTunable.$dirty">
+                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
+                        <span data-ng-message="required" data-translate="cda_detail_edit_crushTunable_required"></span>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="btn btn-primary pull-right"
+                title="{{ ::'common_modify' | translate }}"
+                data-ng-click="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
+                data-ng-disabled="CdaDetailEditCtrl.saving || (editDetailForm.$error && !editDetailForm.$valid)"
+                form="editDetailForm">
+            <span data-translate="common_modify"></span>
+            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaDetailEditCtrl.saving"></spinner>
+        </button>
+        <button type="reset"
+                class="btn btn-default pull-right pull-right right-space-m16"
+                title="{{ ::'common_cancel' | translate }}"
+                data-ng-click="CdaDetailEditCtrl.closeModal()"
+                data-ng-disabled="CdaDetailEditCtrl.saving"
+                form="editDetailForm">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+</section>

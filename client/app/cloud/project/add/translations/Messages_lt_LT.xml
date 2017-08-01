@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpa_title" qtlid="255285">Naujo Public Cloud projekto kūrimas</translation>
+   <translation id="cpa_title_first" qtlid="245662">Mano Public Cloud paskyros aktyvavimas</translation>
+
+   <translation id="cpa_validationPending" qtlid="245675">Jūsų kliento paskyra kol kas negali būti naudojama Public Cloud. Jūs būsite informuoti el. paštu iš karto, kai tik suteiksime jums prieigą prie šio produkto.</translation>
+
+   <translation id="cpa_contract_empty" qtlid="245688">Jūs sutikote su šio produkto sutarčių sąlygomis.</translation>
+
+   <translation id="cpa_description" qtlid="255298">Projekto pavadinimas</translation>
+   <translation id="cpa_description_num" qtlid="250069">Projektas {{num}}</translation>
+   <translation id="cpa_description_error_min_char" qtlid="255311">Jūsų projekto pavadinime turi būti mažiausiai 3 simboliai.</translation>
+   <translation id="cpa_description_error_max_char" qtlid="255324">Jūsų projekto pavadinimas negali viršyti 255 simbolių.</translation>
+
+
+   <translation id="cpa_paymentmean" qtlid="140014">Mokėjimo priemonė</translation>
+   <translation id="cpa_paymentmean_creditCard" qtlid="275817">Automatiškai nurašyti lėšas nuo mano banko kortelės (rekomenduojama).</translation>
+   <translation id="cpa_paymentmean_creditCard_info" qtlid="275830">Jūsų banko kortelė turi būti 3-D Secure.</translation>
+   <translation id="cpa_paymentmean_creditCard_info2" qtlid="275843">Priminimas: mokėjimas už kiekvieną sąskaitą bus nuskaitomas automatiškai nuo jūsų cloud kredito, po to nuo susietos mokėjimo priemonės. </translation>
+   <translation id="cpa_paymentmean_empty1" qtlid="266651">Priemonė pagal nutylėjimą (rekomenduojama).</translation>
+   <translation id="cpa_paymentmean_empty2" qtlid="266664">Kiekviena sąskaita bus automatiškai apmokama naudojant Cloud kreditų sąskaitą, po to balansas bus papildomas naudojant banko kortelę, PayPal ar SEPA.</translation>
+   <translation id="cpa_paymentmean_empty_help_link" qtlid="266677">Pridėti mokėjimo priemonę</translation>
+   <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Registruoti banko kortelę</translation>
+
+   <translation id="cpa_paymentmean_expl" qtlid="319154">Atsiskaitymas už kiekvieną cloud projektą vykdomas mėnesio pradžioje (už praėjusio mėnesio naudojimą pagal valandinius įkainius ar GB ir už virtualių mašinų naudojimą kitam mėnesiui pagal mėnesinius įkainius). Renkantis mėnesinį apmokėjimą vietoje valandinio, OVH paskaičiuos skirtumą pro-rata principu už likusias dienas iki einamojo mėnesio pabaigos.</translation>
+   <translation id="cpa_paymentmean_expl2" qtlid="266703">Kiekviena sąskaita bus automatiškai apmokestinama naudojant mokėjimo priemonę pagal nutylėjimą (prieš tai bus nuskaitomi kreditai, čekių sumos ir OVH išankstinio mokėjimo paskyroje esantys taškai).</translation>
+
+
+   <translation id="cpa_and_or" qtlid="245727">ir/ar</translation>
+   <translation id="cpa_voucher" qtlid="266716">Čekis (neprivaloma)</translation>
+
+   <translation id="catalog_version" qtlid="377467">Katalogo pasirinkimas</translation>
+   <translation id="catalog_version_intro" qtlid="377558"><strong>Atnaujintas OVH produktų katalogas</strong>, pasinaudokite mūsų naujais pasiūlymais jau dabar! Ankstesnių pasiūlymų katalogas bus prieinamas ribotą laikotarpį, tačiau atkreipkite dėmesį, kad tam pačiam projektui negalima naudoti dviejų katalogų.</translation>
+   <translation id="use_new_catalog_label" qtlid="377506">Naujas produktų katalogas</translation>
+   <translation id="use_new_catalog_descr" qtlid="377519">Naujos virtualios mašinos: B2 (Bendros paskirties), C2 (CPU), R2 (RAM), S1 (Sandbox)</translation>
+   <translation id="use_old_catalog_label" qtlid="377532">Ankstesnis produktų katalogas</translation>
+   <translation id="use_old_catalog_descr" qtlid="377545">Dėmesio: jūs negalėsite pridėti virtualių mašinų iš naujo katalogo savo projektui, jeigu naudojamas ankstesnis produktų katalogas. Ankstesnės virtualios mašinos: EG (Bendros paskirties), HG (CPU), SP (RAM), VPS-SSD (Sandbox)</translation>
+
+   <translation id="cpa_create_project" qtlid="255337">Sukurti projektą</translation>
+   <translation id="cpa_create_project_first" qtlid="245753">Aktyvuoti mano Cloud paskyrą</translation>
+   <translation id="cpa_create_project_limited" qtlid="245766">Aktyvuoti ribotą paskyrą</translation>
+   <translation id="cpa_create_project_with_order1" qtlid="266729">Aktyvuoti projektą įsigyjant kreditų.</translation>
+   <translation id="cpa_create_project_with_order2" qtlid="295764">Prašome apmokėti pradinę sąskaitą už {{price}} vertės cloud kreditą šiam projektui. Apmokėjimas nebūtinas, jei jūsų projektą remia OVH. Mokėjimas už visas kitas sąskaitas bus nuskaitomas automatiškai nuo jūsų projektui priskirto cloud kredito, vėliau nuo jūsų užregistruotos mokėjimo priemonės (jei taikoma), po to nuo OVH išankstinio mokėjimo sąskaitos (jūs įsipareigojate nedelsiant apmokėti susidariusią skolą naudojant bet kurią mokėjimo priemonę).<br/>Cloud kreditas neperkeliamas, negrąžinamas ir nekeičiamas į pinigus. Per 13 mėnesių nepanaudotas kreditas bus prarastas.  </translation>
+   <translation id="cpa_create_project_with_order3" qtlid="363167">Jeigu jūs esate DLP narys, galite palikti šį lauką tuščią. Jūsų DLP paskyra bus naudojama pirmiausiai, po to kitos mokėjimo priemonės.</translation>
+   <translation id="cpa_create_project_limited_help1" qtlid="372141">Šiuo metu turite vieną galiojančią paslaugą iš: VPS, dedikuotų serverių ar Private Cloud.</translation>
+   <translation id="cpa_create_project_limited_help2" qtlid="245792">Jūs galite aktyvuoti ribotą paskyrą (1 virtuali mašina, 1 vCPU) pradžiai nenurodant mokėjimo priemonės.</translation>
+   <translation id="cpa_create_project_limited_help3" qtlid="245805">Jums aktyvavus mokėjimo priemonę, šis paskyros apribojimas bus panaikintas.</translation>
+
+   <translation id="cpa_success" qtlid="295777">Projektas kuriamas. Norėdami juo naudotis, prašome apmokėti <a href="{{url}}" target="blank">šį užsakymą</a>.</translation>
+
+   <translation id="cpa_error" qtlid="144721">Įvyko klaida. Bandykite dar kartą vėliau.</translation>
+   <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Jūs turite nurodyti galiojančią (aktyvią) mokėjimo priemonę.</translation>
+   <translation id="cpa_error_invalid_voucher" qtlid="255350">Čekis neteisingas (klaidingas arba nebegaliojantis).</translation>
+   <translation id="cpa_error_contracts_tosign" qtlid="245844">Jūs turite patvirtinti savo sitikimą su viena ar daugiau sutarčių.</translation>
+   <translation id="cpa_error_over_quota" qtlid="295790">Pasiektas maksimalus leistinas Cloud projektų kiekis. Norėdami padidinti šį limitą <a href="#/support?state=new" target="_blank">susisiekite su pagalba</a>.</translation>
+</translations>

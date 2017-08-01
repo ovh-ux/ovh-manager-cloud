@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+<!-- Menu -->
+   <translation id="metrics_token" qtlid="403164">Tokens</translation>
+   <translation id="metrics_endpoint" qtlid="403177">Acceso a la plataforma</translation>
+   <translation id="metrics_setting" qtlid="403190">Ajustes</translation>
+   <translation id="metrics_event" qtlid="403203">Eventos</translation>
+   <translation id="metrics_stat" qtlid="26671">Estadísticas</translation>
+   <translation id="metrics_quantum" qtlid="403216">Quantum</translation>
+   <translation id="metrics_more" qtlid="72641">Más</translation>
+   <translation id="metrics_upgrade" qtlid="403229">¡Mejorar!</translation>
+
+   <translation id="metrics_welcome" qtlid="403242">¡Bienvenido/a a su proyecto de Metrics!</translation>
+   <translation id="metrics_read" qtlid="6958">Lectura</translation>
+   <translation id="metrics_write" qtlid="17321">Escritura</translation>
+   <translation id="metrics_desc" qtlid="9238">Descripción</translation>
+   <translation id="metrics_series" qtlid="403255">Series</translation>
+   <translation id="metrics_mads" qtlid="403268">Series activas por mes</translation>
+   <translation id="metrics_ddp" qtlid="403281">Puntos por día</translation>
+   <translation id="metrics_ddp_short" qtlid="403294">Puntos/día</translation>
+   <translation id="metrics_retention" qtlid="403307">Retención (meses)</translation>
+   <translation id="metrics_need_upgrade" qtlid="403320">Va a alcanzar el límite de series autorizado.</translation>
+   <translation id="metrics_need_upgrade_how" qtlid="403333">Considere la posibilidad de migrar a un plan superior.</translation>
+
+   <translation id="metrics_err_service" qtlid="403346">Se ha producido un error al cargar el servicio.</translation>
+   <translation id="metrics_err_conso" qtlid="403359">Se ha producido un error al cargar el consumo.</translation>
+
+<!-- Page: token -->
+   <translation id="metrics_token_one" qtlid="254115">Token</translation>
+   <translation id="metrics_delete" qtlid="2414">Eliminar</translation>
+   <translation id="metrics_cancel" qtlid="37863">Cancelar</translation>
+   <translation id="metrics_token_no_token" qtlid="403372">No hay tokens para esta aplicación.</translation>
+   <translation id="metrics_token_permission" qtlid="301344">Permiso</translation>
+   <translation id="metrics_token_new" qtlid="403385">Nuevo token</translation>
+   <translation id="metrics_token_create" qtlid="39226">Crear</translation>
+   <translation id="metrics_token_role" qtlid="403398">Rol</translation>
+   <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
+   <translation id="metrics_token_revoked" qtlid="186752">Revocado</translation>
+   <translation id="metrics_token_show_revoked" qtlid="403424">Mostrar los revocados</translation>
+   <translation id="metrics_token_add_labels" qtlid="403437">Añadir labels</translation>
+   <translation id="metrics_token_created" qtlid="403450">Token creado</translation>
+   <translation id="metrics_token_revoked" qtlid="403463">Token revocado</translation>
+   <translation id="metrics_token_updated" qtlid="403476">Token actualizado</translation>
+   <translation id="metrics_token_err_get" qtlid="403489">Se ha producido un error al obtener los tokens.</translation>
+   <translation id="metrics_token_err_create" qtlid="403502">Se ha producido un error al crear el token.</translation>
+   <translation id="metrics_token_err_revoke" qtlid="403515">Se ha producido un error al revocar el token.</translation>
+   <translation id="metrics_token_err_update" qtlid="403528">Se ha producido un error al actualizar el token</translation>
+<!-- Page: endpoint -->
+   <translation id="metrics_endpoint_howto" qtlid="403541">Primeros pasos</translation>
+   <translation id="metrics_endpoint_proto" qtlid="19711">Protocolo</translation>
+   <translation id="metrics_endpoint_address" qtlid="30430">Dirección</translation>
+   <translation id="metrics_endpoint_doc" qtlid="42574">Documentación</translation>
+   <translation id="metrics_endpoint_tools" qtlid="330682">Herramientas</translation>
+   <translation id="metrics_endpoint_intro_1" qtlid="403554">A continuación se ofrece la lista de protocolos soportados por la plataforma OVH Metrics.</translation>
+   <translation id="metrics_endpoint_intro_2" qtlid="403567">Cada protocolo está asociado a una dirección que depende de la región en la que esté localizado el proyecto.</translation>
+   <translation id="metrics_endpoint_intro_3" qtlid="403580">Dichas direcciones permiten utilizar cada protocolo plenamente y de forma nativa.</translation>
+<!-- Page: setting -->
+   <translation id="metrics_setting_update" qtlid="43462">Actualizar</translation>
+   <translation id="metrics_setting_desc" qtlid="364420">Descripción del proyecto</translation>
+   <translation id="metrics_setting_updated" qtlid="403593">Se ha actualizado el servicio.</translation>
+   <translation id="metrics_setting_update_failed" qtlid="403606">No se ha podido actualizar el servicio.</translation>
+<!-- Page: event -->
+<!-- Page: stats -->
+<!-- Page: quantum -->
+<!-- Page: Upgrade -->
+   <translation id="metrics_upgrade_title" qtlid="403619">Migrar a un plan superior</translation>
+   <translation id="metrics_purchase" qtlid="43558">Contratar</translation>
+</translations>

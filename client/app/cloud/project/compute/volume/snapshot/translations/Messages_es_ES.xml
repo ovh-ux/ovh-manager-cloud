@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcv_snapshot_add_title" qtlid="273661">Crear un snapshot del volumen </translation>
+   <translation id="cpcv_snapshot_choose_name" qtlid="246819">Introduzca el nombre del snapshot:</translation>
+   <translation id="cpcv_snapshot_name" qtlid="246520">Nombre del snapshot</translation>
+   <translation id="cpcv_snapshot_confirm" qtlid="246858">Realizar el snapshot</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }}/mes + IVA por GiB)</translation>
+   <translation id="cpcv_snapshot_name_error" qtlid="273687">Asigne un nombre válido al snapshot.</translation>
+   <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Indique un nombre más corto para el snapshot.</translation>
+   <translation id="cpcv_snapshot_creation_info" qtlid="263311">Se está realizando el snapshot...</translation>
+   <translation id="cpcv_snapshot_creation_error" qtlid="273713">¡Vaya! Se ha producido un error al realizar el snapshot del volumen. </translation>
+   <translation id="cpcv_snapshot_error" qtlid="273726">Se ha producido un error al cargar la información del snapshot. Por favor, vuelva a intentarlo más tarde. </translation>
+   <translation id="cpcv_snapshot_attach_warning" qtlid="273739">Actualmente el disco está asociado a una instancia. Para garantizar la integridad de sus datos, le recomendamos que desvincule el disco antes de realizar el snapshot.</translation>
+</translations>

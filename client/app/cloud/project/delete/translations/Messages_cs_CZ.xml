@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_delete_title" qtlid="282055">Odstranění projektu</translation>
+   <translation id="cloud_project_delete_confirm" qtlid="51979">Mazání projektu</translation>
+   <translation id="cloud_project_delete_info" qtlid="282068">Během příštích 24 hodin Vám zašleme e-mail s potvrzením, že všechny zdroje projektu budou odstraněny. Tato akce se nedá vrátit, všechna data budou okamžitě smazána a všichni uživatelé (jak OVH, tak OpenStack) ztratí k projektu přístup.</translation>
+   <translation id="cloud_project_delete_info_bill" qtlid="282081">Konečná faktura (na částku cca {{ bill }}) na spotřebované zdroje na požádání bude vystavena do 24 hodin od potvrzení.</translation>
+   <translation id="cloud_project_delete_info_credits" qtlid="367436">A la suite de cette facture, les crédits et vouchers associés à ce projet seront définitivement perdus.</translation>
+   <translation id="cloud_project_delete_email_sent" qtlid="282107">Potvrzující e-mail Vám bude odeslán během 24 hodin.</translation>
+
+   <translation id="cloud_project_delete_error" qtlid="282120">Během odstraňování projektu došlo k chybě.</translation>
+   <translation id="cloud_project_delete_error_title" qtlid="282133">Během získávání informací o projektu došlo k chybě.</translation>
+   <translation id="cloud_project_delete_error_try_later" qtlid="247053">Zkuste to prosím později.</translation>
+   <translation id="cloud_project_delete_error_refresh_cache" qtlid="247066">Jestliže to bude nutné, můžete vždy restartovat svou místní cache:</translation>
+   <translation id="cloud_project_delete_error_contact_support_part1" qtlid="282146">Pokud bude problém přetrvávat, kontaktujte podporu kliknutím</translation>
+   <translation id="cloud_project_delete_error_contact_support_part2" qtlid="137452">zde</translation>
+   <translation id="cloud_project_delete_error_reset_cache" qtlid="247027">Reset cache</translation>
+   <translation id="cloud_project_delete_resource_warning_title" qtlid="282159">Pozor:</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_server" qtlid="282172">Server bude odstraněn.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_server" qtlid="282185">Počet Vašich odstraněných serverů: {{ amountInstance }}</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_volume" qtlid="282198">Přídavný disk bude odstraněn.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_volume" qtlid="282211">Počet Vašich odstraněných přídavných disků: {{ amountVolume }}</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_snapshot" qtlid="282224">Snapshot bude odstraněn.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_snapshot" qtlid="282237">Počet Vašich odstraněných snapshotů: {{ amountSnapshot }}</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_storage" qtlid="282250">Storage container bude odstraněn.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_storage" qtlid="282263">Počet Vašich odstraněných storage container: {{ amountStorage }}</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverOvh" qtlid="282276">IP Failover OVH bude odstraněna.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverOvh" qtlid="282289">Počet Vašich odstraněných IP Failover: {{ amountIpFailoverOvh }}</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverCloud" qtlid="282302">IP Failover Cloud bude zaparkována.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverCloud" qtlid="282315">Počet Vašich zaparkovaných IP Failover Cloud: {{ amountIpFailoverCloud }}</translation>
+</translations>

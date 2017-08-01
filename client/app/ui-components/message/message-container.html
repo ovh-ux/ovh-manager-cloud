@@ -1,0 +1,30 @@
+<div class="cui-message-container" data-ng-if="$ctrl.hasMessageToDisplay()">
+      <div data-ng-repeat="messageCategory in $ctrl.groupedMessages | orderBy: 'priority' track by messageCategory.key">
+            <oui-message data-ng-if="!$ctrl.shouldDisplayGroupedMessages(messageCategory)" 
+                  data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index"
+                  data-type="{{ messageCategory.key }}"
+                  data-dismissed="message.dismissed"
+                  data-on-dismiss="$ctrl.onDismiss(message)">
+                  <span data-ng-bind="message.text" data-ng-if="message.text"></span>
+                  <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
+                  <a role="button" 
+                        data-ng-if="message.link.text"
+                        data-ng-bind="message.link.text"
+                        data-ng-click="message.link.action()"></a>
+            </oui-message>
+            <oui-message data-ng-if="$ctrl.shouldDisplayGroupedMessages(messageCategory)" 
+                         data-type="{{ messageCategory.key }}">
+                  <span data-translate="{{ 'message_container_multiple_' + messageCategory.key }}"></span>
+                  <ul>
+                        <li data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index">
+                              <span data-ng-bind="message.text" data-ng-if="message.text"></span>
+                              <span data-ng-bind="message.textHtml" data-ng-if="message.textHtml"></span>
+                              <a role="button" 
+                                    data-ng-if="message.link.text"
+                                    data-ng-bind="message.link.text"
+                                    data-ng-click="message.link.action()"></a>
+                        </li>
+                  </ul>
+            </oui-message>
+      </div>
+</div>

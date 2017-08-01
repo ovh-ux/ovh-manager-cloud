@@ -1,0 +1,50 @@
+<form id="rescueRebootForm" name="rescueRebootForm" class="ovh-form-flat" novalidate>
+
+    <div class="modal-header">
+        <h3 class="modal-title" >
+            <i class="fa fa-power-off right-space-m8"></i>
+            {{"cpc_rescue_mode_title" | translate}}
+        </h3>
+    </div>
+
+    <div class="modal-body">
+
+        <div>
+
+            <p class="bold" data-translate="cpc_rescue_mode_expl"></p>
+
+            <p data-translate="cpc_rescue_mode_pwd_expl"></p>
+
+            <div flat-input-container class="bottom-space-m12">
+                <label for="imagename" data-translate="cpc_rescue_mode_label"></label>
+                <select class="form-control error-animate-shake-light" id="imagename" name="imagename"
+                    placeholder="{{ ::'cpc_rescue_mode_label' | translate}}"
+                    data-ng-model="VmRescueCtrl.data.selectedImage"
+                    data-ng-options="image.name for image in VmRescueCtrl.data.images"
+                    data-ng-disabled="VmRescueCtrl.loaders.images">
+                    <option value="">{{ 'cpc_rescue_mode_defaut' | translate }}</option>
+                </select>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <button type="submit" class="btn btn-primary pull-right"
+            data-ng-click="VmRescueCtrl.rescueMode(true)"
+            data-ng-disabled="VmRescueCtrl.loaders.images || VmRescueCtrl.loaders.action">
+            <i data-ng-class="VmRescueCtrl.loaders.images || VmRescueCtrl.loaders.action ? 'fa fa-circle-o-notch fa-spin' : 'fa fa-power-off'"></i>
+            <span data-translate="cpc_rescue_mode_valid"></span>
+        </button>
+
+        <button type="reset" class="btn btn-default pull-left "
+            data-ng-click="VmRescueCtrl.cancel()">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="cpc_rescue_mode_cancel"></span>
+        </button>
+
+    </div>
+
+</form>

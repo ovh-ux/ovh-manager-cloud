@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_pool_pool_definition" qtlid="354210">Tutaj może dodawać zakresy.</translation>
+   <translation id="cda_pool_permission_definition" qtlid="354223">Zakresy to "kontenery" dla danych. Dostęp do zakresów może być kontrolowany przez użytkownika. </translation>
+
+   <translation id="cda_pool_add_button_text" qtlid="354236">Dodaj zakres</translation>
+   <translation id="cda_pool_delete_button_text" qtlid="2414">Usuń</translation>
+
+   <translation id="cda_pool_table_col_poolname" qtlid="3818">Nazwa</translation>
+   <translation id="cda_pool_table_col_pooltype" qtlid="2642">Typ</translation>
+   <translation id="cda_pool_table_col_replica" qtlid="354249">Liczba kopii</translation>
+   <translation id="cda_pool_table_col_minreplica" qtlid="354262">Minimalna liczba aktywnych kopii</translation>
+   <translation id="cda_pool_table_col_backup" qtlid="354275">Backup zakresu</translation>
+   <translation id="cda_pool_table_col_actions" qtlid="72809">Operacje</translation>
+
+   <translation id="cda_pool_add_title" qtlid="354236">Dodaj zakres</translation>
+   <translation id="cda_pool_add_poolname_label" qtlid="3818">Nazwa</translation>
+
+   <translation id="cda_pool_add_poolname_required" qtlid="354288">Nazwa jest wymagana.</translation>
+   <translation id="cda_pool_add_poolname_pattern" qtlid="354301">Nazwa nie może zawierać spacji.</translation>
+   <translation id="cda_pool_add_poolname_maxlength" qtlid="354314">Maksymalna liczba znaków w nazwie: {{ maxlength }} </translation>
+   <translation id="cda_pool_add_success" qtlid="354327">Zakres został dodany.</translation>
+
+   <translation id="cda_pool_delete_title" qtlid="354340">Usuń zakres</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nazwa:</translation>
+   <translation id="cda_pool_delete_confirm" qtlid="354353">Czy chcesz usunąć ten zakres?</translation>
+   <translation id="cda_pool_delete_success" qtlid="354366">Zakres został usunięty.</translation>
+
+   <translation id="cda_pool_table_empty" qtlid="354379">Brak zakresów.</translation>
+</translations>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_tab_storage" qtlid="233733">Úložiště</translation>
+   <translation id="storage_name" qtlid="3818">Příjmení</translation>
+   <translation id="storage_type" qtlid="2642">Typ</translation>
+   <translation id="storage_actions" qtlid="72809">Akce</translation>
+   <translation id="storage_region" qtlid="32434">Okres</translation>
+   <translation id="storage_nb_files" qtlid="135853">Počet objektů</translation>
+   <translation id="storage_use_type" qtlid="242080">Typ containeru</translation>
+   <translation id="storage_use_type_public" qtlid="242093">Veřejný</translation>
+   <translation id="storage_use_type_private" qtlid="242106">Privátní</translation>
+   <translation id="storage_no_storage" qtlid="242119">Můžete si vytvořit container pro ukládání svých souborů.</translation>
+   <translation id="storage_add_more" qtlid="295803">Pro vytvoření kontejneru klikněte na <a href="#/add?type=storage">"Přidat"</a> .</translation>
+   <translation id="storage_no_storage_title" qtlid="242145">Nemáte žádné containery</translation>
+   <translation id="storage_no_files_title" qtlid="242158">Prázdný container</translation>
+   <translation id="storage_no_files" qtlid="242171">Obsah lze přidávat prostřednictvím OpenStack API nebo Zákaznického prostoru OVH</translation>
+   <translation id="storage_title" qtlid="367670">Vaše kontejnery</translation>
+   <translation id="storage_title_number" qtlid="242184">Žádné containery</translation>
+   <translation id="storage_title_number_0" qtlid="242184">Žádné containery</translation>
+   <translation id="storage_title_number_1" qtlid="242197">1 container</translation>
+   <translation id="storage_title_number_other" qtlid="242210">{{count}} containerů</translation>
+   <translation id="storage_file_name" qtlid="242223">Název souboru</translation>
+   <translation id="storage_last_modify" qtlid="92380">Poslední změna</translation>
+   <translation id="storage_file_type" qtlid="2642">Typ</translation>
+   <translation id="storage_file_region" qtlid="30802">Datacentrum</translation>
+   <translation id="storage_size" qtlid="7726">Velikost</translation>
+   <translation id="storage_delete_button" qtlid="2414">Odstranit</translation>
+   <translation id="storage_delete_pending" qtlid="146645">Odstraňování...</translation>
+
+   <translation id="storage_modal_delete_storage_title" qtlid="242236">Vymazat kontejner</translation>
+   <translation id="storage_modal_delete_object_storage_title" qtlid="242249">Vymazat object</translation>
+   <translation id="storage_modal_delete_storage" qtlid="295816">Chcete odstranit kontejner <b>{{name}}</b>? Tato operace může trvat delší dobu.</translation>
+   <translation id="storage_modal_delete_storages" qtlid="369165">Chcete odstranit kontejnery <b>{{name}}</b>? Tato operace může trvat delší dobu.</translation>
+   <translation id="storage_modal_delete_object_storage" qtlid="295829">Chcete odstranit objekt <b>{{name}}</b>?</translation>
+   <translation id="storage_delete_success" qtlid="242288">Container vymazán</translation>
+   <translation id="storage_delete_error" qtlid="376323">Kontejner se nepodařilo odstranit.</translation>
+   <translation id="storage_add_button" qtlid="242314">Vytvořit container</translation>
+   <translation id="storage_add_button_return" qtlid="4118">Zpět</translation>
+
+   <translation id="storage_load_error" qtlid="262618">Bohužel se nepodařilo stáhnout seznam Vašich kontejnerů.</translation>
+   <translation id="storage_search" qtlid="37659">Hledat</translation>
+   <translation id="storage_search_not_found" qtlid="284607">Žádný kontejner neodpovídá Vašim kritériím.</translation>
+
+   <translation id="storage_object_upload_error" qtlid="376336">Při transferu Vašich dat došlo k neočekávané chybě.</translation>
+   <translation id="storage_object_delete_error" qtlid="376349">Při odstraňování Vašich dat došlo k neočekávané chybě.</translation>
+
+   <translation id="storage_selected_count" qtlid="367540">Vybráno: {{count}</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Průvodci</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+
+</translations>

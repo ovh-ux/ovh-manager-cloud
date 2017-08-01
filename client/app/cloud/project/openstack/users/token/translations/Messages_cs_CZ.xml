@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_token_title" qtlid="245571">Vytvořit Openstack ticket</translation>
+   <translation id="cpou_openrc_title" qtlid="261036">Stažení souboru RC OpenStack</translation>
+   <translation id="cpou_token_info" qtlid="296193">Pro vygenerování tokenu Openstack zadejte heslo uživatele <b>{{ username }}</b>.</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Heslo</translation>
+   <translation id="cpou_token_error" qtlid="245597">Chyba, nebyli jsme schopní vygenerovat jednorázové heslo OpenStack.</translation>
+
+   <translation id="cpou_token_title_information" qtlid="245610">Poznamenejte si prosím toto jednorázové heslo. Později ho již nebudete moci získat.</translation>
+   <translation id="cpou_token_xauthtoken" qtlid="245623">Jednorázové heslo OpenStack, umožňující identifikovat Váš HTTP dotaz (X-Auth-Token), je:</translation>
+   <translation id="cpou_token_xauthtoken_guide" qtlid="296206">Příklad použití naleznete <a href="{{ link }}" target="_blank">v této příručce</a>.</translation>
+   <translation id="cpou_token_catalog_region" qtlid="245636">Region</translation>
+   <translation id="cpou_token_catalog_service" qtlid="31042">Služba</translation>
+   <translation id="cpou_token_catalog_endpoint" qtlid="245649">Endpoint</translation>
+</translations>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_delete_title" qtlid="282055">Verwijdering van een project</translation>
+   <translation id="cloud_project_delete_confirm" qtlid="51979">Het project verwijderen</translation>
+   <translation id="cloud_project_delete_info" qtlid="282068">In de komende 24 uur zal er een e-mail aan u worden verzonden ter bevestiging dat alle project resources permanent zullen worden verwijderd. Deze actie is blijvend, alle data zal direct verwijderd zijn en alle OVH en OpenStack gebruikers zullen de toegang tot dit project kwijt zijn. </translation>
+   <translation id="cloud_project_delete_info_bill" qtlid="282081">Binnen 24 uur na bevestiging zal er een laatste factuur (welke ongeveer {{ bill }} bedraagt) opgemaakt worden voor uw on demand verbruik. </translation>
+   <translation id="cloud_project_delete_info_credits" qtlid="367436">Nadat deze factuur is betaald zullen alle kredieten en vouchers gerelateerd aan dit project verloren gaan. </translation>
+   <translation id="cloud_project_delete_email_sent" qtlid="282107">Binnen 24 uur zult u een e-mail ter bevestiging ontvangen. </translation>
+
+   <translation id="cloud_project_delete_error" qtlid="282120">Er is een fout opgetreden tijdens het verwijderen van uw project. </translation>
+   <translation id="cloud_project_delete_error_title" qtlid="282133">Er is een fout opgetreden tijdens het ophalen van informatie over uw project. </translation>
+   <translation id="cloud_project_delete_error_try_later" qtlid="247053">Probeer het later opnieuw svp</translation>
+   <translation id="cloud_project_delete_error_refresh_cache" qtlid="247066">Indien nodig, kunt u altijd proberen uw lokale cache te resetten:</translation>
+   <translation id="cloud_project_delete_error_contact_support_part1" qtlid="282146">Als het probleem zich blijft voordoen raden wij u aan contact op te nemen met onze support door hier te klikken </translation>
+   <translation id="cloud_project_delete_error_contact_support_part2" qtlid="137452">hier</translation>
+   <translation id="cloud_project_delete_error_reset_cache" qtlid="247027">De cache resetten</translation>
+   <translation id="cloud_project_delete_resource_warning_title" qtlid="282159">Let op: </translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_server" qtlid="282172">Uw server zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_server" qtlid="282185">Uw {{ amountInstance }} servers zullen volledig worden gewist.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_volume" qtlid="282198">Uw aanvullende harde schijf zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_volume" qtlid="282211">Uw {{ amountVolume }} aanvullende harde schijven zullen volledig worden gewist.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_snapshot" qtlid="282224">Uw snapshot zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_snapshot" qtlid="282237">Uw {{ amountSnapshot }} snapshots en afbeeldingen zullen volledig worden gewist. </translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_storage" qtlid="282250">Uw storage container zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_storage" qtlid="282263">Uw {{ amountStorage }} storage containers zullen volledig worden gewist. </translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverOvh" qtlid="282276">Uw OVH failover IP zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverOvh" qtlid="282289">Uw {{ amountIpFailoverOvh }} OVH failover IP's zullen volledig worden gewist.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverCloud" qtlid="282302">Uw Cloud failover IP zal volledig worden gewist. </translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverCloud" qtlid="282315">Uw {{ amountIpFailoverCloud }} Cloud failover IP's zullen volledig worden gewist.</translation>
+</translations>

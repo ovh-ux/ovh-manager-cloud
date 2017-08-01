@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_monthly_title" qtlid="269318">Umstellung auf das monatliche Abo</translation>
+   <translation id="cpcivm_monthly_info" qtlid="269331">Reduzieren Sie den Preis um 50% durch Umstellung dieser Maschine auf das monatliche Abo (im Voraus abgerechnet).</translation>
+   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Es wird dann eine anteilige Rechnung für die verbleibenden Tage des Monats erstellt.</translation>
+   <translation id="cpcivm_monthly_success" qtlid="269357">Dieser Server wird in wenigen Augenblicken auf das monatliche Abo umgestellt.</translation>
+   <translation id="cpcivm_monthly_fail" qtlid="269370">Bei der Umstellung auf das monatliche Abo ist ein Fehler aufgetreten.</translation>
+</translations>

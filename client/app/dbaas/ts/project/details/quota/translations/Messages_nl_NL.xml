@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdq_quota_protect_explain" qtlid="301227">Ter controle van het PaaS Time Series verbruik zijn de resources van uw project beperkt.</translation>
+   <translation id="dtpdq_quota_protect_more" qtlid="301240">Si vous avez besoin de plus de ressources, vous pouvez les demander à notre équipe en cliquant sur le bouton ci-dessous.</translation>
+   <translation id="dtpdq_quota_protect_more_btn" qtlid="251291">Mijn limieten verhogen</translation>
+
+   <translation id="dtpdq_quota_loading_error" qtlid="301253">Oups, une erreur est survenue pendant le chargement des quotas.</translation>
+
+   <translation id="dtpdq_table_title" qtlid="297202">Quota's</translation>
+
+   <translation id="dtpdq_thead_description" qtlid="301266">Ressource</translation>
+   <translation id="dtpdq_thead_pourcent" qtlid="30382">Gebruik</translation>
+
+   <translation id="dtpdq_thead_mads" qtlid="301279">Séries temporelles actives par mois</translation>
+   <translation id="dtpdq_thead_ddp" qtlid="301292">Messages écrits par jour</translation>
+
+   <translation id="dtpdq_increase_support" qtlid="301305">Pour augmenter les limites sur votre projet, merci d'appeler le support.</translation>
+</translations>

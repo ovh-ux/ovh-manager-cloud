@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="add_p8_alert_success" qtlid="242626">Gratulujeme, právě jste si objednali Power8 Lab.</translation>
+   <translation id="add_instance_ssh_key_help" qtlid="295868">V rámci služby Public Cloud nepoužíváme administrátorské (root) heslo. Pro přístup ke své GNU/Linux instanci musíte přidat SSH klíč. <a target="_blank" href="https://www.ovh.com/fr/g1785.cloud">Jak vytvořit SSH klíč.</a></translation>
+   <translation id="add_instance_ssh_key_help_message" qtlid="242652">Pozor: pro dokončení vytváření Vaší instance musíte poskytnout Váš SSH klíč.</translation>
+
+   <translation id="add_instance" qtlid="242665">Virtuální server</translation>
+   <translation id="add_storage" qtlid="242678">Object container</translation>
+   <translation id="add_storage2" qtlid="246468">Přidat object container</translation>
+   <translation id="add_ssh_key" qtlid="242691">SSH klíč</translation>
+   <translation id="add_title" qtlid="37923">Přidat</translation>
+   <translation id="add_subtitle" qtlid="242704">Zvolte si komponentu, kterou byste chtěli přidat.</translation>
+
+   <translation id="add_instance" qtlid="242665">Virtuální server</translation>
+   <translation id="add_storage" qtlid="242678">Object container</translation>
+   <translation id="add_ssh" qtlid="242691">SSH klíč</translation>
+
+   <translation id="add_already_instancied_title" qtlid="242717">Limit!</translation>
+
+   <translation id="add_instance_region_step_title" qtlid="242730">Zvolte datacentrum</translation>
+   <translation id="add_instance_flavor_category_step_title" qtlid="242743">Zvolte si řadu serveru</translation>
+
+   <translation id="add_instance_flavor_step_title" qtlid="242756">Zvolte si řadu</translation>
+   <translation id="add_instance_flavor_loading" qtlid="242769">Načítání...</translation>
+   <translation id="add_instance_flavor_not_found" qtlid="242782">Tento model není aktuálně dostupný</translation>
+   <translation id="add_instance_flavor_by_hour" qtlid="242795">za hodinu</translation>
+
+   <translation id="add_instance_image_step_title" qtlid="242808">Zvolte OS</translation>
+   <translation id="add_instance_images_loading" qtlid="242769">Načítání...</translation>
+   <translation id="add_instance_images_not_found" qtlid="242821">Žádný OS není dostupný.</translation>
+
+   <translation id="add_instance_paymentMode_step_title" qtlid="242834">Zvolte platební metodu</translation>
+   <translation id="add_instance_paymentMode_loading" qtlid="242769">Načítání...</translation>
+   <translation id="add_instance_paymentMode_not_found" qtlid="242847">Žádná platební metoda není aktuálně dostupná</translation>
+   <translation id="add_instance_paymentMode_hourly" qtlid="242444">Platba po hodině</translation>
+   <translation id="add_instance_paymentMode_monthly" qtlid="233928">Fixní měsíční tarif</translation>
+   <translation id="add_instance_paymentMode_hourly_subtitle" qtlid="242860">Fakturováno na konci měsíce</translation>
+   <translation id="add_instance_paymentMode_monthly_subtitle" qtlid="242873">Okamžitě účtovaná poměrná částka </translation>
+
+   <translation id="add_instance_ssh_step_title" qtlid="242886">Zvolte svůj SSH klíč</translation>
+   <translation id="add_instance_ssh_loading" qtlid="242769">Načítání...</translation>
+   <translation id="add_instance_ssh_not_found" qtlid="242899">Aktuálně nemáte žádný SSH klíč.</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Přiřadit klíč SSH</translation>
+
+   <translation id="add_instance_name_step_title" qtlid="242912">Název Vašeho virtuálního serveru (instance)</translation>
+
+   <translation id="add_instance_go_to_the_moon" qtlid="217288">Spouštění serveru</translation>
+
+   <translation id="add_storage_region_step_title" qtlid="242730">Zvolte datacentrum</translation>
+   <translation id="add_storage_container_type_step_title" qtlid="242925">Zvolte typ konteineru</translation>
+   <translation id="add_storage_name_step_title" qtlid="242938">Název Vašeho conteineru</translation>
+   <translation id="add_build_you_own_warehouse" qtlid="242951">Vytvořit container</translation>
+
+   <translation id="add_container_name" qtlid="242964">Název conteiner</translation>
+   <translation id="add_instance_name" qtlid="242977">Název serveru</translation>
+   <translation id="add_container_image" qtlid="4394">Obrazy</translation>
+   <translation id="add_instance_choose" qtlid="186115">Zvolte...</translation>
+   <translation id="add_container_region" qtlid="30802">Datacentrum</translation>
+   <translation id="add_container_flavor" qtlid="2642">Typ</translation>
+   <translation id="add_container_ssh" qtlid="21859">Klíč SSH</translation>
+   <translation id="add_instance_new_ssh" qtlid="242990">Vytvořit SSH klíč</translation>
+   <translation id="add_container_ssh_enter" qtlid="243003">Zadejte Váš klíč</translation>
+   <translation id="add_submit" qtlid="37923">Přidat</translation>
+   <translation id="add_form_error_bad_ssh_key" qtlid="243016">Neplatný klíč</translation>
+   <translation id="add_form_error_required" qtlid="182514">Povinná pole</translation>
+   <translation id="add_container_selected_publicKey" qtlid="243029">Veřejný klíč vybrán</translation>
+   <translation id="add_loading" qtlid="8410">Načítání...</translation>
+   <translation id="selected_add_label" qtlid="243042">Co si přejete přidat?</translation>
+   <translation id="add_posting" qtlid="243055">Vytvořit server</translation>
+   <translation id="add_key_created_public" qtlid="243068">Vytvořit veřejný klíč</translation>
+   <translation id="add_key_created_finger" qtlid="192344">Typ tisku</translation>
+   <translation id="add_key_created" qtlid="243081">Byl vytvořen SSH klíč {{ name }}</translation>
+   <translation id="add_key_used" qtlid="243094">s klíčem {0}</translation>
+   <translation id="add_instance_created" qtlid="243107">Virtuální server (instance) {0} byla vytvořena</translation>
+   <translation id="add_container_selected_publicKey_create" qtlid="243120">Název SSH klíče</translation>
+   <translation id="add_key_success" qtlid="243133">SSH klíč byl přidán</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
+   <translation id="add_storage_storage_added" qtlid="243146">Storage vytvořeno</translation>
+   <translation id="add_storage_storage_added_error" qtlid="246481">Při přidávání kontejneru došlo k chybě</translation>
+   <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">SSH klíč s tímto názvem již existuje</translation>
+   <translation id="add_form_error_pattern" qtlid="149774">Neplatný formát</translation>
+   <translation id="add_already_instancied" qtlid="243172">Nemáte již možnost mí více instancí v tomto datacentru</translation>
+   <translation id="add_container_selected_flavor" qtlid="243185">Zvolený typ conteineru</translation>
+   <translation id="add_quota_ssh_title" qtlid="242717">Limit!</translation>
+   <translation id="add_quota_ssh" qtlid="243198">Není možné přidat žádný další SSH klíč</translation>
+   <translation id="ssh_key_quota_exceeded" qtlid="243211">You're not able to add any more SSH keys do tohoto projektu.</translation>
+   <translation id="add_form_error_maxlength" qtlid="243224">Tento klíč je příliš dlouhý</translation>
+
+   <translation id="labs_sandbox_success_subscribed" qtlid="243237">Lab Sandbox aktivován!</translation>
+   <translation id="code_linked_to_your_account" qtlid="243250">Tento kód byl nyní přidán k Vašemu účtu</translation>
+   <translation id="add_no_more_instances" qtlid="295881">Protože byly velmi úspěšné, nejsou instance momentálně k dispozici pro nové zákazníky. Byli jste přidáni do čekací listiny.<br /><br />Jakmile budou opět k dispozici, budeme Vás informovat.<br /><br />Děkujeme za trpělivost!</translation>
+
+   <translation id="add_storage_categories_more_info" qtlid="44536">Zjistit více</translation>
+   <translation id="add_storage_category_pcs" qtlid="135593">Public Cloud Storage</translation>
+   <translation id="add_storage_category_pca" qtlid="134631">Public Cloud Archive</translation>
+
+   <translation id="add_storage_type_static_hosting" qtlid="243276">Statický hosting</translation>
+   <translation id="add_storage_type_static_hosting_description" qtlid="367449">Rychlý přístup a vysoký výkon pro Vaše stránky. Připojujte domény a ukládejte své soubory.</translation>
+   <translation id="add_storage_type_private" qtlid="242106">Privátní</translation>
+   <translation id="add_storage_type_private_description" qtlid="367462">Fakturace, právní dokumenty, logy... Jednoduchá archivace šitá na míru Vašim potřebám.</translation>
+   <translation id="add_storage_type_public" qtlid="246494">Veřejný</translation>
+   <translation id="add_storage_type_public_description" qtlid="367475">Multimédia, binární data, e-komerce. Ukládejte neomezené množství dat.</translation>
+   <translation id="add_storage_type_cold" qtlid="376297">Cold Storage za nízkou cenu</translation>
+   <translation id="add_storage_type_cold_description" qtlid="376310">Archivujte a zabezpečujte všechny typy dat na vícero Gateways.</translation>
+
+   <translation id="add_flavour_ovh_x86_ha_xl_ram" qtlid="243289">RAM XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_sb_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_ram" qtlid="243328">RAM XL3</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_cpu" qtlid="243341">CPU XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_sb_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_ram" qtlid="243354">RAM XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_xl_cpu" qtlid="243367">CPU XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_cpu" qtlid="243380">CPU XL3</translation>
+
+   <translation id="add_instance_price_by_hour" qtlid="242795">za hodinu</translation>
+   <translation id="add_instance_price_by_month" qtlid="244794">za měsíc</translation>
+
+   <translation id="add_flavour_RAM_CPU" qtlid="243406">{{vcpu}} vCore, {{ram}} RAM, {{disk}} Block Storage</translation>
+   <translation id="add_flavour_VPS" qtlid="245077">{{vcpu}} vCore, {{ram}} RAM, {{disk}} local SSD</translation>
+   <translation id="instance_creation_success" qtlid="242548">Vytváření serveru...</translation>
+   <translation id="instance_creation_PermissionDenied" qtlid="243419">Dosáhli jste Vašeho limitu: již nejste autorizován pro vytváření instancí.</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Průvodci</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+</translations>

@@ -1,0 +1,44 @@
+@button-action-background-color: #E5F6F8;
+@button-action-foreground-color: @oui-color-pacific;
+@button-action-background-color_hover: @oui-color-pacific;
+@button-action-foreground-color_hover: #FFF;
+
+
+.cui-button-action {
+  width: 32px;
+
+  &__background {
+    fill: @button-action-background-color;
+  }
+
+  &__foreground {
+    fill: @button-action-foreground-color;
+  }
+
+  &:hover {
+    .cui-button-action__background {
+      fill: @button-action-background-color;
+    }
+
+    .cui-button-action__foreground {
+      transform-origin: center;
+      transform: scale(1.1);
+    }
+  }
+
+  .button-container_active & {
+    .cui-button-action_active();
+  }
+}
+
+.cui-button-action_active() {
+  .cui-button-action__background {
+    fill: @button-action-background-color_hover;
+    fill-opacity: 1;
+  }
+
+  .cui-button-action__foreground {
+    fill: @button-action-foreground-color_hover;
+  }
+}
+  

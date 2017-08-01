@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_dashboard_loading_error" qtlid="345338">Er is een fout opgetreden tijdens het laden van de NAS-HA informatie. </translation>
+   <translation id="nasha_dashboard_update_success_enabled" qtlid="400886">Gebruiksmeldingen zijn ingeschakeld. </translation>
+   <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">Gebruiksmeldingen zijn uitgeschakeld. </translation>
+   <translation id="nasha_dashboard_update_error" qtlid="345377">Er is een fout opgetreden tijdens het wijzigen van de NAS-HA gegevens. </translation>
+   <translation id="nasha_dashboard_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_dashboard_datacenter" qtlid="369321">Datacenter</translation>
+   <translation id="nasha_dashboard_capacity" qtlid="75822">Totale capaciteit</translation>
+   <translation id="nasha_dashboard_capacity_delay_text" qtlid="369334">Storage informatie is niet bijgewerkt in real-time.</translation>
+   <translation id="nasha_dashboard_creation_date" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="nasha_dashboard_expiration_date" qtlid="33010">Vervaldatum</translation>
+   <translation id="nasha_dashboard_monitoring" qtlid="31666">Monitoring</translation>
+   <translation id="nasha_partition" qtlid="120835">Partities</translation>
+   <translation id="nasha_expired" qtlid="345390">Uw NAS-HA is niet verlengd. Als dit niet een bewuste keuze van uw kant is geweest, dan kan er vertraging in de betaling zijn.</translation>
+   <translation id="nasha_storage_usage_type_used" qtlid="233733">Storage</translation>
+   <translation id="nasha_storage_usage_type_usedbysnapshots" qtlid="9671">Snapshot</translation>
+   <translation id="nasha_datacenter_rbx" qtlid="120414">Roubaix</translation>
+   <translation id="nasha_datacenter_bhs" qtlid="172189">Beauharnois</translation>
+   <translation id="nasha_datacenter_sbg" qtlid="172202">Straatsburg</translation>
+   <translation id="nasha_datacenter_gra" qtlid="264192">Gravelines</translation>
+
+   <translation id="nasha_dashboard_space_usage" qtlid="400912">Gebruiksmeldingen</translation>
+   <translation id="nasha_dashboard_space_usage_help" qtlid="400925">Het administratiecontact en het technische contact krijgen een melding per e-mail wanneer de NAS 90% capaciteit bereikt</translation>
+
+   <translation id="nasha_new_window" qtlid="222176">Nieuw scherm</translation>
+
+   <translation id="nasha_guide_title" qtlid="300370">Handleidingen</translation>
+   <translation id="nash_guide_footer" qtlid="406905">Alle OVH handleidingen</translation>
+   <translation id="nash_guide_name" qtlid="369862">NAS-HA</translation>
+</translations>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dbaasts_project_delete_title" qtlid="282055">Projekto trynimas</translation>
+<translation id="dbaasts_project_delete_info" qtlid="301799">Per 24 val. jums bus išsiųstas el. laiškas, patvirtinantis visų projekto resursų galutinį pašalinimą. Šis veiksmas neatkuriamas, visi duomenys bus nedelsiant ištrinti ir prarasti, visi API raktai neteks galiojimo.</translation>
+   <translation id="dbaasts_project_delete_info_bill" qtlid="301812">Sąskaita už papildomų resursų naudojimą bus suformuota per 24 val. po patvirtinimo. </translation>
+   <translation id="dbaasts_project_delete_info_credits" qtlid="301825">Po sąskaitos išsiuntimo visas jūsų nepanaudotas kreditas, susietas su šiuo projektu, bus taip pat prarastas, be kompensavimo.</translation>
+   <translation id="dbaasts_project_delete_email_sent" qtlid="282107">Patvirtinimo el. laiškas bus išsiųstas per 24 val.</translation>
+
+   <translation id="dbaasts_sidebar_edit_name_error" qtlid="301838">Klaida keičiant pavadinimą.</translation>
+</translations>

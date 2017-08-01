@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_tab_storage" qtlid="233733">Storage</translation>
+   <translation id="storage_name" qtlid="3818">Name</translation>
+   <translation id="storage_type" qtlid="2642">Typ</translation>
+   <translation id="storage_actions" qtlid="72809">Aktionen</translation>
+   <translation id="storage_region" qtlid="32434">Region</translation>
+   <translation id="storage_nb_files" qtlid="135853">Anzahl Objekte</translation>
+   <translation id="storage_use_type" qtlid="242080">Container-Typ</translation>
+   <translation id="storage_use_type_public" qtlid="242093">Öffentlich</translation>
+   <translation id="storage_use_type_private" qtlid="242106">Privat</translation>
+   <translation id="storage_no_storage" qtlid="242119">Sie können einen Container erstellen, um Ihre Daten darin zu speichern.</translation>
+   <translation id="storage_add_more" qtlid="295803">Um einen Container zu erstellen, klicken Sie auf <a href="#/add?type=storage">"Hinzufügen"</a>. </translation>
+   <translation id="storage_no_storage_title" qtlid="242145">Sie haben keine Container</translation>
+   <translation id="storage_no_files_title" qtlid="242158">Leerer Container</translation>
+   <translation id="storage_no_files" qtlid="242171">Sie können Inhalte über die OpenStack API oder Ihr Kundencenter hinzufügen </translation>
+   <translation id="storage_title" qtlid="367670">Ihre Container </translation>
+   <translation id="storage_title_number" qtlid="242184">Keine Container</translation>
+   <translation id="storage_title_number_0" qtlid="242184">Keine Container</translation>
+   <translation id="storage_title_number_1" qtlid="242197">1 Container</translation>
+   <translation id="storage_title_number_other" qtlid="242210">{{count}} Container</translation>
+   <translation id="storage_file_name" qtlid="242223">Dateiname</translation>
+   <translation id="storage_last_modify" qtlid="92380">Letzte Änderung</translation>
+   <translation id="storage_file_type" qtlid="2642">Typ</translation>
+   <translation id="storage_file_region" qtlid="30802">Rechenzentrum</translation>
+   <translation id="storage_size" qtlid="7726">Größe</translation>
+   <translation id="storage_delete_button" qtlid="2414">Löschen</translation>
+   <translation id="storage_delete_pending" qtlid="146645">Löschung wird durchgeführt</translation>
+
+   <translation id="storage_modal_delete_storage_title" qtlid="242236">Den Container löschen</translation>
+   <translation id="storage_modal_delete_object_storage_title" qtlid="242249">Das Objekt löschen</translation>
+   <translation id="storage_modal_delete_storage" qtlid="295816">Möchten Sie den Container <b>{{name}}</b> löschen? Diese Operation kann einige Zeit in Anspruch nehmen. </translation>
+   <translation id="storage_modal_delete_storages" qtlid="369165">Möchten Sie die Container <b>{{name}}</b> löschen? Diese Operation kann einige Zeit in Anspruch nehmen. </translation>
+   <translation id="storage_modal_delete_object_storage" qtlid="295829">Möchten Sie das Objekt <b>{{name}}</b> löschen? </translation>
+   <translation id="storage_delete_success" qtlid="242288">Container erfolgreich gelöscht</translation>
+   <translation id="storage_delete_error" qtlid="376323">Uups! Container konnte nicht gelöscht werden. </translation>
+   <translation id="storage_add_button" qtlid="242314">Einen Container erstellen</translation>
+   <translation id="storage_add_button_return" qtlid="4118">Zurück</translation>
+
+   <translation id="storage_load_error" qtlid="262618">Die Liste Ihrer Container konnte nicht abgerufen werden.</translation>
+   <translation id="storage_search" qtlid="37659">Suchen</translation>
+   <translation id="storage_search_not_found" qtlid="284607">Es wurde kein Ihren Suchkriterien entsprechender Container gefunden.</translation>
+
+   <translation id="storage_object_upload_error" qtlid="376336">Uups! Beim Datentransfer ist ein Fehler aufgetreten. </translation>
+   <translation id="storage_object_delete_error" qtlid="376349">Uups! Beim Löschen Ihrer Daten ist ein Fehler aufgetreten. </translation>
+
+   <translation id="storage_selected_count" qtlid="367540">{{count}} ausgewählt </translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Hilfen</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+
+</translations>

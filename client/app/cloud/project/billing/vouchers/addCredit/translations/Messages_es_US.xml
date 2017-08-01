@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_vouchers_add_credit_title" qtlid="255181">Comprar crédito para Public Cloud</translation>
+   <translation id="cpb_vouchers_add_credit_info" qtlid="264296">Seleccione el importe deseado para este proyecto. Una vez tramitada la orden de pedido, el crédito se utilizará para los planes y el consumo de las facturas de este proyecto emitidas en los próximos 12 meses. </translation>
+   <translation id="cpb_vouchers_add_credit_amount" qtlid="269981">Importe a abonar ({{ currency }}):</translation>
+   <translation id="cpb_vouchers_add_credit_required_error" qtlid="255560">Debe introducir una cantidad.</translation>
+   <translation id="cpb_vouchers_add_credit_max_error" qtlid="255573">Cantidad no válida.</translation>
+   <translation id="cpb_vouchers_add_credit_doing" qtlid="255586">Creando la orden de pedido...</translation>
+   <translation id="cpb_vouchers_add_credit_valid" qtlid="177288">Generar una orden de pedido</translation>
+   <translation id="cpb_vouchers_add_credit_cancel" qtlid="37863">Cancelar</translation>
+   <translation id="cpb_vouchers_add_credit_error" qtlid="255599">Lo sentimos: se ha producido un error al comprar el crédito.</translation>
+   <translation id="cpb_vouchers_add_credit_success" qtlid="295907">La orden de pedido de saldo por valor de {{ amount }} está disponible <a href="{{ url }}" target="_blank">ici</a>.</translation>
+
+</translations>

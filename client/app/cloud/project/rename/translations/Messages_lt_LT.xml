@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_rename_loading_error" qtlid="298584">Įvyko klaida įkeliant apibūdinimą.</translation>
+   <translation id="cloud_project_rename_error" qtlid="255155">Įvyko klaida keičiant apibūdinimą.</translation>
+   <translation id="cpb_details_project_delete" qtlid="282328">Ištrinti projektą</translation>
+   <translation id="cpb_details_project_rename_reset" qtlid="37863">Anuliuoti</translation>
+   <translation id="cpb_details_project_rename_ok" qtlid="8506">Registruoti</translation>
+   <translation id="cpb_details_project_rename" qtlid="70001">Pervadinti</translation>
+   <translation id="cpb_details_project_description" qtlid="364420">Projekto apibūdinimas</translation>
+</translations>

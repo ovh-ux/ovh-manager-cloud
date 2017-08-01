@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_volume_addedit_add_title" qtlid="252659">Dodaj dysk twardy</translation>
+   <translation id="cpci_volume_addedit_edit_title" qtlid="252672">Zmodyfikuj dysk twardy</translation>
+   <translation id="cpci_volume_addedit_restore_title" qtlid="273635">Utwórz ponownie dysk twardy</translation>
+   <translation id="cpci_volume_addedit_disk_name" qtlid="252685">Nazwa dysku twardego</translation>
+
+   <translation id="cpci_volume_addedit_name_add_error_required_name" qtlid="252698">Musisz nadać nazwę dyskowi twardemu</translation>
+   <translation id="cpci_volume_addedit_name_add_error_max_char" qtlid="252711">Nazwa dysku twardego nie może przekroczyć 255 znaków.</translation>
+
+   <translation id="cpci_volume_addedit_type_high-speed" qtlid="252724">Wysoka wydajność</translation>
+   <translation id="cpci_volume_addedit_type_classic" qtlid="252737">Klasyczny</translation>
+   <translation id="cpci_volume_addedit_type_choose" qtlid="252750">Wybierz typ</translation>
+
+   <translation id="cpci_volume_addedit_size_choose" qtlid="252763">Wybierz rozmiar</translation>
+   <translation id="cpci_volume_addedit_size" qtlid="252776">Rozmiar dysku:</translation>
+   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">Maksymalny rozmiar zależy od <a ui-sref="{{ state }}">dostępnej quoty</a>.</translation>
+
+   <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Pobieranie dostępnych stref</translation>
+   <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Wybierz lokalizację</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Nie można pobrać regionów!</translation>
+   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Aktualizuj listę regionów</translation>
+   <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+
+   <translation id="cpci_volume_addedit_build" qtlid="37923">Dodaj</translation>
+   <translation id="cpci_volume_addedit_change_now" qtlid="249107">Zastosuj zmiany</translation>
+   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Zastosuj</translation>
+
+   <translation id="cpci_volume_default_name" qtlid="252685">Nazwa dysku twardego</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Nie można pobrać obrazów!</translation>
+
+   <translation id="cpci_volume_addedit_post_error" qtlid="252802">Nie możemy dodać dysku twardego.</translation>
+   <translation id="cpci_volume_addedit_put_error" qtlid="252815">Nie możemy zaktualizować tego dysku twardego.</translation>
+
+   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">Nie możemy pobrać informacji o dostępnym limicie.</translation>
+   <translation id="cpci_volume_addedit_over_quota" qtlid="255391">Niewystarczający limit rozmiaru.</translation>
+   <translation id="cpci_volume_addedit_over_quota2" qtlid="255404">Zwiększ limit.</translation>
+
+   <translation id="cpci_volume_snapshotting_end" qtlid="273648">Kopia zapasowa woluminu {{ volume }} została wykonana.</translation>
+</translations>

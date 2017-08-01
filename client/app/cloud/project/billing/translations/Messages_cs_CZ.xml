@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_tab_details" qtlid="37527">Detaily</translation>
+   <translation id="cpb_tab_consumption" qtlid="25639">Využití</translation>
+   <translation id="cpb_tab_history" qtlid="364394">Historie</translation>
+   <translation id="cpb_tab_quota" qtlid="6874">Limit</translation>
+   <translation id="cpb_tab_rights" qtlid="261049">Kontakty a oprávnění</translation>
+   <translation id="cpb_tab_vouchers" qtlid="255220">Kredity a vouchery</translation>
+   <translation id="cpb_error_message" qtlid="364407">Při získávání informací došlo k chybě.</translation>
+</translations>

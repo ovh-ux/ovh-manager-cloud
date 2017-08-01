@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_rights_expl" qtlid="262579">Dla każdego projektu cloud kontakt administracyjny może zmienić kontakt księgowy i administracyjny w panelu klienta.</translation>
+   <translation id="cpb_rights_expl2" qtlid="262592">Kontakt administracyjny może również dodawać kontakty do zapisu/odczytu lub do samego odczytu dla tego projektu.</translation>
+   <translation id="cpb_rights_note" qtlid="261101">Informacja: Kontakty z uprawnieniami do odczytu/zapisu dysponują uprawnieniami (zmiany infrastruktury, korzystanie z przestrzeni dyskowej), które mogą generować dodatkowe koszty. Kontakty z uprawnieniami tylko do odczytu nie mogą wykonywać operacji w ramach projektu. Domyślny sposób płatności skonfigurowany przez kontakt księgowy jest używany do regulowania wszystkich faktur.</translation>
+   <translation id="cpb_rights_soon" qtlid="261114">Za kilka dni będziesz mógł zmienić te kontakty w nowym panelu klienta.</translation>
+   <translation id="cpb_rights_owner" qtlid="262605">Kontakt administracyjny:</translation>
+   <translation id="cpb_rights_billing_contact" qtlid="261140">Kontakt księgowy:</translation>
+   <translation id="cpb_rights_modify" qtlid="37875">Zmień</translation>
+   <translation id="cpb_rights_add" qtlid="37923">Dodaj</translation>
+   <translation id="cpb_rights_table_nichandle" qtlid="261153">Identyfikator klienta</translation>
+   <translation id="cpb_rights_table_email" qtlid="33598">Email</translation>
+   <translation id="cpb_rights_table_rights" qtlid="65286">Uprawnienia</translation>
+   <translation id="cpb_rights_loading" qtlid="242769">Trwa pobieranie informacji</translation>
+   <translation id="cpb_rights_no_data" qtlid="261166">Brak danych na temat uprawnień</translation>
+   <translation id="cpb_rights_error" qtlid="261179">Wystąpił problem z pobraniem informacji na temat uprawnień.</translation>
+   <translation id="cpb_rights_add_error" qtlid="261192">Wystąpił problem z przyznaniem uprawnień.</translation>
+   <translation id="cpb_rights_remove_error" qtlid="261205">Wystąpił problem z usunięciem uprawnień.</translation>
+   <translation id="cpb_contact_error_invalid" qtlid="261218">Podany kontakt jest nieprawidłowy. </translation>
+   <translation id="cpb_contact_error_other" qtlid="261231">Wystąpił problem z aktualizacją kontaktów.</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Do odczytu</translation>
+   <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Odczyt/Zapis</translation>
+   <translation id="cpb_rights_table_rights_add_success" qtlid="261244">Uprawnienia zostały przyznane.</translation>
+   <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">Uprawnienia zostały usunięte.</translation>
+   <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Potwierdź operację usunięcia</translation>
+   <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Anuluj operację usunięcia</translation>
+
+</translations>

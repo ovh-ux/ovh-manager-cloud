@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Activar un código promocional</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Comprar crédito para Public Cloud</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">En cada nueva factura, los códigos promocionales válidos para los productos asociados se pueden utilizar como modalidad de pago.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Cada factura se deducirá automáticamente de su crédito cloud (abajo), a continuación de su cuenta Digital Launch Pad y, finalmente, de su cuenta de fidelidad. Un posible saldo se liquidará mediante la modalidad de pago registrada (usted encontrará información sobre estas tres últimas modalidades de pago en la sección «Facturación» del manager). </translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">No se ha encontrado ningún código promocional.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Código promocional</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Añadir mi código promocional</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Lo sentimos, no se puede mostrar la lista de códigos promocionales.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">No se puede mostrar la lista de códigos promocionales.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Factura No. <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Código promocional asociado</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nombre</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Valor inicial</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Crédit restant</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Crédito utilizado automáticamente en su próxima factura</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Fecha de activación</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Fecha de caducidad</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Productos compatibles</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Tous</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Crédito Cloud</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">El código promocional se ha añadido correctamente.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Lo sentimos, no se ha podido añadir el código promocional. Por favor, vuelva a intentarlo.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">El código promocional no es válido o ya ha sido utilizado.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">El código promocional no es válido.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">El crédito cloud no es transferible, reembolsable, ni tiene valor monetario. Todo crédito no utilizado en 13 meses se perderá.</translation>
+
+</translations>

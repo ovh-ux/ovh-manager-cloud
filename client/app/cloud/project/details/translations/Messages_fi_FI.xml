@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Uudelleenohjataan…</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">Cloud-projekti on keskeytetty. Lisätietoja saat ottamalla yhteyttä <a href="#/support">asiakaspalveluun</a>.</translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">Sinut uudelleenohjataan automaattisesti kunhan projektisi on luotu.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Tee alkuperäisen tilauksen maksusuoritus loppuun.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Peru projektin luominen</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Hoida <a href="{{url}}" target="_blank"> alkuperäisen tilauksen</a> maksusuoritus loppuun.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Mikäli tämä sivu on näkyvissä vielä useiden minuuttien kuluttua maksusta, ole hyvä ja ota yhteyttä <a href="#/support">asiakaspalveluumme</a>.</translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Projektia poistetaan…</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">Sinut uudelleenohjataan automaattisesti kunhan projektisi on poistettu.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">Projektisi on valmis!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">Projektin luominen peruttiin onnistuneesti.</translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Projektisi on vanhentunut.</translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">Projekti on jo olemassa.</translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Tapahtui virhe perumisessa.</translation>
+</translations>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Neustart im Rescue-Modus</translation>
+   <translation id="cpc_rescue_mode_valid" qtlid="25951">Starten</translation>
+   <translation id="cpc_rescue_mode_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="cpc_rescue_mode_expl" qtlid="269201">Sie sind im Begriff, Ihren Server im Rescue-Modus zu starten.</translation>
+   <translation id="cpc_rescue_mode_label" qtlid="269214">Mein Image:</translation>
+   <translation id="cpc_rescue_mode_defaut" qtlid="269227">Rescue-Distribution "Made by OVH"</translation>
+   <translation id="cpc_rescue_mode_pwd_expl" qtlid="286877">Wenn Sie "Rescue-Distribution Made by OVH" auswählen, erhalten Sie ein temporäres Passwort für die Verbindung mit dem Server im Rescue-Modus. Andernfalls ist die Verbindung mit dem Server mit Ihrem gewohnten SSH Schlüssel möglich, dabei ändert sich jedoch der SSH Fingerprint des Hosts. Die Hauptfestplatte ist als zweite, nicht gemountete Festplatte verfügbar.</translation>
+   <translation id="cpc_rescue_mode_success_linux" qtlid="296115">Um auf Ihren Server "{{vmName}}" im Rescue-Modus zuzugreifen, verwenden Sie: <br/><code>ssh {{user}}@{{ip}}</code> mit Ihrem gewohnten SSH Key. Bitte beachten Sie: Im Rescue-Modus können Sie ausschließlich auf die Hauptfestplatte zugreifen. </translation>
+   <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Um auf Ihren Server "{{vmName}}" im Rescue-Modus zuzugreifen, verwenden Sie: <br/><code>ssh {{user}}@{{ip}}</code> mit dem temporären Passwort {{pwd}} (dieses wird Ihnen an dieser Stelle einmalig mitgeteilt). Bitte beachten Sie: Im Rescue-Modus können Sie ausschließlich auf die Hauptfestplatte zugreifen. </translation>
+   <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Um auf Ihren Server {{vmName}} im Rescue-Modus zuzugreifen, verwenden Sie: <br/><code>rdesktop {{ip}}</code> mit Ihrem gewohnten SSH Key. Bitte beachten Sie: Im Rescue-Modus können Sie ausschließlich auf die Hauptfestplatte zugreifen. </translation>
+   <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Um auf Ihren Server {{vmName}} im Rescue-Modus zuzugreifen, verwenden Sie: <br/><code>rdesktop {{ip}}</code> mit dem temporären Passwort {{pwd}} (dieses wird Ihnen an dieser Stelle einmalig mitgeteilt). Bitte beachten Sie: Im Rescue-Modus können Sie ausschließlich auf die Hauptfestplatte zugreifen. </translation>
+   <translation id="cpc_rescue_mode_error" qtlid="269305">Ihr Server konnte nicht im Rescue-Modus gestartet werden.</translation>
+
+</translations>

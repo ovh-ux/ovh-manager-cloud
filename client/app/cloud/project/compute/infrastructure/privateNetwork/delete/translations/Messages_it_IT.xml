@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_private_network_delete_title" qtlid="405538">Elimina rete privata</translation>
+   <translation id="cpci_private_network_delete_confirm" qtlid="405551">Vuoi davvero eliminare questa rete privata?</translation>
+   <translation id="cpci_private_network_delete_success" qtlid="405564">La rete privata è stata eliminata correttamente</translation>
+   <translation id="cpci_private_network_delete_error" qtlid="405577">Si è verificato un errore durante l'eliminazione della tua rete privata</translation>
+</translations>

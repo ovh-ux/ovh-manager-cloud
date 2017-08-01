@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_zfs_title" qtlid="373649">Ustawienia Z File System (ZFS)</translation>
+   <translation id="nasha_partitions_zfs_atime_label" qtlid="373675">Aktualizacja czasu dostępu (atime)</translation>
+   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Wyłącz</translation>
+   <translation id="nasha_partitions_zfs_atime_description" qtlid="373688">Wyłącza konieczność aktualizowania przez kernel czasu dostępu dla pliku przy każdym żądaniu.</translation>
+   <translation id="nasha_partitions_zfs_recordsize_label" qtlid="373701">ZFS recordsize</translation>
+   <translation id="nasha_partitions_zfs_recordsize_default" qtlid="373714">(Domyślnie)</translation>
+   <translation id="nasha_partitions_zfs_sync_label" qtlid="373727">Sync</translation>
+   <translation id="nasha_partitions_zfs_sync_standard" qtlid="48998">Standardowa</translation>
+   <translation id="nasha_partitions_zfs_sync_description_standard" qtlid="373740">Profil zabezpieczony: Łączy stabilność i właściwą wydajność. Pliki są najpierw zapisywane, następnie wszystkie elementy są czyszczone, w celu zapewnienia stabilności danych.</translation>
+   <translation id="nasha_partitions_zfs_sync_always" qtlid="373753">Always</translation>
+   <translation id="nasha_partitions_zfs_sync_description_always" qtlid="373766">Profil wysoko zabezpieczony: Transfer plików korzysta ze zwiększonej stabilności, kosztem wydajności.</translation>
+   <translation id="nasha_partitions_zfs_sync_disabled" qtlid="373779">Disabled</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled" qtlid="373792">Profil niezabezpieczony: Wydajność jest bardzo wysoka, ale profil ten jest niebezpieczny, ponieważ ZFS ignoruje synchroniczne zapytania dotyczące transferu (bazy danych, NFS,...)</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled_warning" qtlid="373805">Opcje te powinny być używane wyłącznie przez administratorów, którzy rozumieją związane z nimi ryzyko.</translation>
+   <translation id="nasha_partitions_zfs_modal_success" qtlid="373818">Zmiana opcji ZFS zostanie wykonana w ciągu kilku minut.</translation>
+   <translation id="nasha_partitions_zfs_modal_fail" qtlid="373831">Wystąpił błąd podczas modyfikowania opcji ZFS.</translation>
+   <translation id="nasha_partitions_zfs_modal_loading_fail" qtlid="373844">Wystąpił błąd podczas pobierania opcji ZFS.</translation>
+</translations>

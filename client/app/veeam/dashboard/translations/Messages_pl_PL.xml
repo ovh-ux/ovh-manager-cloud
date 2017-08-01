@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_tiles_shortcut_title" qtlid="403658">Skróty</translation>
+   <translation id="veeam_tiles_shortcut_label_add_storage" qtlid="403671">Dodaj przestrzeń dyskową</translation>
+   <translation id="veeam_tiles_shortcut_label_change_offer" qtlid="403684">Zwiększ ofertę</translation>
+
+   <translation id="veeam_tiles_configuration_title" qtlid="4406">Konfiguracja</translation>
+   <translation id="veeam_tiles_configuration_label_name" qtlid="3818">Nazwa</translation>
+   <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Oferta</translation>
+   <translation id="veeam_tiles_configuration_label_stockage_number" qtlid="403697">Liczba przestrzeni dyskowych</translation>
+   <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">Liczba VM</translation>
+   <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacenter</translation>
+
+   <translation id="veeam_tiles_subscription_title" qtlid="28891">Abonament</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Odnowienie automatyczne</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_renew_link" qtlid="16301">Zarządzanie</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_warning" qtlid="403723">Twoja usługa zostanie wyłączona za {{remainingDays}} dni.</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_warning_link" qtlid="403684">Zwiększ ofertę</translation>
+   <translation id="veeam_tiles_subscription_label_creation_date" qtlid="26419">Data utworzenia</translation>
+
+   <translation id="veeam_message_product_disabled" qtlid="403736">Twoja usługa została wyłączona, ponieważ oferta "demo" wygasła.</translation>
+</translations>

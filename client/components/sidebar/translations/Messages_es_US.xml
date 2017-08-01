@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_sidebar_error" qtlid="323434">Lo sentimos: no hemos podido inicializar el menú.</translation>
+
+   <translation id="cloud_sidebar_section_iaas" qtlid="19459">Servidores</translation>
+   <translation id="cloud_sidebar_section_paas" qtlid="323447">Plataformas y servicios</translation>
+   <translation id="cloud_sidebar_section_license" qtlid="113658">Licencias</translation>
+   <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
+   <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>
+   <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
+   <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>
+
+<!-- PCI -->
+   <translation id="cloud_sidebar_pci_infrastructure" qtlid="125552">Infraestructura</translation>
+   <translation id="cloud_sidebar_pci_object_storage" qtlid="233733">Almacenamiento</translation>
+   <translation id="cloud_sidebar_pci_manage" qtlid="323460">Gestión del proyecto</translation>
+   <translation id="cloud_sidebar_pci_openstack" qtlid="241586">Openstack</translation>
+   <translation id="cloud_sidebar_server_more" qtlid="323473">Gestionar los {{count}} servicios</translation>
+
+<!-- Time Series -->
+   <translation id="cloud_sidebar_section_metrics" qtlid="383525">Metrics</translation>
+   <translation id="cloud_sidebar_dbaasts_tokens" qtlid="300746">Claves de API</translation>
+   <translation id="cloud_sidebar_dbaasts_quota" qtlid="6874">Límite</translation>
+   <translation id="cloud_sidebar_dbaasts_billing" qtlid="25639">Consumo</translation>
+
+<!-- ORDER ACTIONS MENU -->
+   <translation id="cloud_sidebar_actions_menu_vps" qtlid="23083">VPS</translation>
+   <translation id="cloud_sidebar_actions_menu_dedicated_server" qtlid="66032">Servidor dedicado</translation>
+   <translation id="cloud_sidebar_actions_menu_cloud_project" qtlid="274369">Proyecto Cloud</translation>
+   <translation id="cloud_sidebar_actions_menu_dedicated_cloud" qtlid="20131">Private Cloud</translation>
+   <translation id="cloud_sidebar_actions_menu_ip" qtlid="323486">IP adicional</translation>
+   <translation id="cloud_sidebar_actions_menu_iplb" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cloud_sidebar_actions_menu_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_sidebar_actions_menu_licence" qtlid="21667">Licencia</translation>
+   <translation id="cloud_sidebar_actions_menu_NAS" qtlid="76782">NAS</translation>
+   <translation id="cloud_sidebar_actions_menu_NASHA" qtlid="345403">NAS-HA</translation>
+   <translation id="cloud_sidebar_actions_menu_dbaas_ts" qtlid="383525">Metrics</translation>
+   <translation id="cloud_sidebar_actions_menu_paas_cda" qtlid="355044">Cloud Disk Array</translation>
+   <translation id="cloud_sidebar_actions_menu_paas_veeam" qtlid="404113">Veeam CC</translation>
+   <translation id="cloud_sidebar_actions_menu_clouddb" qtlid="404863">CloudDB</translation>
+
+<!-- Hotfix -->
+   <translation id="sidebar_menu_order_actions" qtlid="43558">Contratar</translation>
+</translations>

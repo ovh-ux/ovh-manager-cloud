@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Přesměrovávání...</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">Váš cloudový projekt byl pozastaven. Pro více informací <a href="#/support">kontaktujte podporu</a>.</translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">Jakmile bude vytvořen Váš projekt, budete automaticky přesměrováni.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Dokončete platbu za  původní objednávku.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Zrušit vytvoření projektu</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Dokončete platbu za <a href="{{url}}" target="_blank">původní objednávku</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Pokud se tato stránka zobrazuje i několik minut po platbě, kontaktujte prosím <a href="#/support">náš zákaznický servis</a>.</translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Vymazání projektu</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">Jakmile bude Váš projekt vymazán, budete automaticky přesměrováni.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">Váš projekt je připraven!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">Vytváření projektu bylo úspěšně ukončeno.</translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Projekt expiroval.</translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">Projekt je již vytvořen.</translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Během odstraňování došlo k chybě.</translation>
+</translations>

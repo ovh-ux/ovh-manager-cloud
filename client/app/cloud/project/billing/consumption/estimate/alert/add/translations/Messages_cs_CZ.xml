@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Nastavení výstrahy</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">E-mail</translation>
+   <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Pro odeslání výstrahy je nutná e-mailová adresa.</translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">E-mailová adresa není platná.</translation>
+
+   <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Výstražný práh</translation>
+   <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">Max. spotřeba nesmí být překročena.</translation>
+
+   <translation id="cpbea_estimate_alert_add_cancel_btn" qtlid="37863">Zrušit</translation>
+   <translation id="cpbea_estimate_alert_add_submit_btn" qtlid="8506">Uložit</translation>
+
+   <translation id="cpbea_estimate_alert_error" qtlid="270774">Při ukládání výstrahy o spotřebě došlo k chybě.</translation>
+   <translation id="cpbea_estimate_alert_success" qtlid="270761">Výstraha o spotřebě uložena.</translation>
+</translations>

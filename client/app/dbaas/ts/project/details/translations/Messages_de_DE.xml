@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dbaasts_tab_tokens" qtlid="300746">API Keys</translation>
+   <translation id="dbaasts_tab_quota" qtlid="6874">Quota</translation>
+   <translation id="dbaasts_tab_billing" qtlid="25639">Verbrauch</translation>
+   <translation id="dbaasts_tab_settings" qtlid="11747">Einstellungen</translation>
+
+   <translation id="dbaasts_region" qtlid="32434">Region</translation>
+
+   <translation id="dbaasts_ok" qtlid="31522">OK</translation>
+   <translation id="dbaasts_name" qtlid="3818">Name</translation>
+
+   <translation id="dtpds_name_error" qtlid="300759">Achtung, der Name muss folgende Bedingungen erfüllen:</translation>
+   <translation id="dtpds_name_error1" qtlid="300772">- Mindestens {{min}} Zeichen</translation>
+   <translation id="dtpds_name_error2" qtlid="300785">- Höchstens {{max}} Zeichen</translation>
+   <translation id="dtpds_name_error3" qtlid="300798">- Keine Umlaute oder Zeichen mit Akzent</translation>
+   <translation id="dtpds_name_error4" qtlid="301950">- Keine Sonderzeichen mit Ausnahme von . - und _.</translation>
+</translations>

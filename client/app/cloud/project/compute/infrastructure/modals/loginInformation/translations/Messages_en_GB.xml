@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="login_information_error" qtlid="401406">Oops! We are unable to retrieve the login details.</translation>
+</translations>

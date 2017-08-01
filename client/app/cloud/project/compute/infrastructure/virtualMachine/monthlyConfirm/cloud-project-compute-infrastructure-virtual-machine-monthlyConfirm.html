@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h3 class="modal-title" >
+        <i class="fa fa-calendar right-space-m8"></i>
+        {{"cpcivm_monthly_title" | translate}}
+    </h3>
+</div>
+
+<div class="modal-body">
+    <div class="clearfix">
+        <p data-translate="cpcivm_monthly_info"></p>
+        <p class="text-warning">
+            <i class="fa fa-warning"></i>
+            <span data-translate="cpcivm_monthly_prorata_warning"></span>
+        </p>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary pull-right"
+        data-ng-disabled="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm"
+        data-ng-click="CPCIVirtualmachineMonthlyConfirm.confirm()">
+        <i class="glyphicon glyphicon-ok"></i>
+        <span data-translate="common_confirm"></span>
+        <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm"></spinner>
+    </button>
+    <button type="reset" class="btn btn-default pull-left"
+        data-ng-click="CPCIVirtualmachineMonthlyConfirm.cancel()"
+        data-ng-disabled="">
+        <i class="glyphicon glyphicon-remove"></i>
+        <span data-translate="common_cancel"></span>
+    </button>
+</div>
+

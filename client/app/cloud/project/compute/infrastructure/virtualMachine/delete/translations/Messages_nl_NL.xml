@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_delete_title" qtlid="247950">Verwijder een instance</translation>
+   <translation id="cpcivm_delete_info" qtlid="247963">Het tarief voor de lopende maand voor deze server is al gefactureerd, als het niet wordt gebruikt, zal het verloren gaan.</translation>
+   <translation id="cpcivm_failover_info" qtlid="269383">De volgende Failover IP's zullen permanent verwijderd worden:</translation>
+   <translation id="cpcivm_delete_confirm" qtlid="269396">Weet u zeker dat u deze instance wilt verwijderen? </translation>
+</translations>

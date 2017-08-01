@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdq_quota_protect_explain" qtlid="301227">Para ayudarle a controlar el consumo de su PaaS Time Series, su proyecto tiene recursos limitados.</translation>
+   <translation id="dtpdq_quota_protect_more" qtlid="301240">Si necesita más recursos, puede solicitarlos haciendo clic en el siguiente botón.</translation>
+   <translation id="dtpdq_quota_protect_more_btn" qtlid="251291">Extender los límites</translation>
+
+   <translation id="dtpdq_quota_loading_error" qtlid="301253">Se ha producido un error al cargar los consumos.</translation>
+
+   <translation id="dtpdq_table_title" qtlid="297202">Capacidad</translation>
+
+   <translation id="dtpdq_thead_description" qtlid="301266">Recurso</translation>
+   <translation id="dtpdq_thead_pourcent" qtlid="30382">Utilisation</translation>
+
+   <translation id="dtpdq_thead_mads" qtlid="301279">Series temporales activas por mes</translation>
+   <translation id="dtpdq_thead_ddp" qtlid="301292">Mensajes escritos por día</translation>
+
+   <translation id="dtpdq_increase_support" qtlid="301305">Si desea aumentar los límites del proyecto, contacte con el soporte.</translation>
+</translations>

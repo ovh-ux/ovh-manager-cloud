@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_token_title" qtlid="245571">Een Openstack token beheren</translation>
+   <translation id="cpou_openrc_title" qtlid="261036">Download het RC-bestand van OpenStack </translation>
+   <translation id="cpou_token_info" qtlid="296193">Om een OpenStack token te genereren voert u het gebruikerswachtwoord in <b>{{ username }}</b>.</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Wachtwoord</translation>
+   <translation id="cpou_token_error" qtlid="245597">We kunnen het Openstack token niet genereren.</translation>
+
+   <translation id="cpou_token_title_information" qtlid="245610">Let op deze identificatoren. Ze zullen niet beschikbaar zijn bij de volgende update.</translation>
+   <translation id="cpou_token_xauthtoken" qtlid="245623">Het Openstack token, waarmee u uw HTTP-verzoeken (X-Auth-Token) kunt identificeren, is:</translation>
+   <translation id="cpou_token_xauthtoken_guide" qtlid="296206">U kunt een voorbeeld vinden in <a href="{{ link }}" target="_blank">deze handleiding</a>.</translation>
+   <translation id="cpou_token_catalog_region" qtlid="245636">Regio</translation>
+   <translation id="cpou_token_catalog_service" qtlid="31042">Dienst</translation>
+   <translation id="cpou_token_catalog_endpoint" qtlid="245649">Endpoint</translation>
+</translations>

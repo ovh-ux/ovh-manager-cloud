@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbc_no_consumption_data" qtlid="364134">Geen verbruik voor de geselecteerde periode. </translation>
+
+   <translation id="cpbc_monthly_instance_detail_title" qtlid="19459">Servers</translation>
+   <translation id="cpbc_monthly_instance_col_name" qtlid="258782">Naam</translation>
+   <translation id="cpbc_monthly_instance_col_total" qtlid="233928">Maandelijkse facturering</translation>
+   <translation id="cpbc_monthly_instance_col_total_tooltip" qtlid="246013">Wordt aan het begin van de maand gefactureerd.</translation>
+
+   <translation id="cpbc_hourly_instance_detail_title" qtlid="19459">Servers</translation>
+   <translation id="cpbc_hourly_instance_col_name" qtlid="258782">Naam</translation>
+   <translation id="cpbc_hourly_instance_col_consumption" qtlid="25639">Verbruik</translation>
+   <translation id="cpbc_hourly_instance_col_consumption_tooltip" qtlid="245987">Wordt gefactureerd aan het begin van de volgende maand. </translation>
+   <translation id="cpbc_hourly_instance_monthly_billing_since" qtlid="246039">Inbegrepen in het maandelijkse tarief op {{since}}</translation>
+   <translation id="cpbc_hourly_instance_monthly_billing_activationPending" qtlid="246052">Integratie naar het maandelijkse tarief wordt uitgevoerd</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly_error" qtlid="250368">We konden deze instance niet integereren naar het maandelijkse tarief.</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly_price_error" qtlid="250329">We konden het vastgestelde maandelijkse tarief niet ophalen.</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly_info" qtlid="250355">Er wordt pro rata een bedrag in rekening gebracht voor de overgebleven dagen van de huidige maand</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly_button" qtlid="269955">Schakel over op een maandelijks pakket ({{price}} excl. BTW/maand)</translation>
+   <translation id="cpbc_hourly_instance_deleted" qtlid="250277">Instance verwijderd</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly" qtlid="246026">Inbegrepen in het maandelijkse tarief</translation>
+
+   <translation id="cpbc_object_storage_detail_title" qtlid="241573">Object Storage</translation>
+   <translation id="cpbc_archive_storage_detail_title" qtlid="364147">Archief verbruik</translation>
+   <translation id="cpbc_object_storage_col_location" qtlid="168237">Locatie</translation>
+   <translation id="cpbc_archive_storage_col_location" qtlid="168237">Locatie</translation>
+   <translation id="cpbc_object_storage_col_consumption" qtlid="258795">Verbruik ruimte</translation>
+   <translation id="cpbc_archive_storage_col_consumption" qtlid="258795">Verbruik ruimte</translation>
+   <translation id="cpbc_object_storage_col_output_traffic" qtlid="258808">Verbruik uitgaande trafiek</translation>
+   <translation id="cpbc_archive_storage_col_output_traffic" qtlid="258808">Verbruik uitgaande trafiek</translation>
+   <translation id="cpbc_archive_storage_col_input_traffic" qtlid="364459">Verbruik ingaand verkeer</translation>
+   <translation id="cpbc_object_storage_consumption_info_part1" qtlid="364173">U wordt gefactureerd op basis van de werkelijke opslagruimte, berekend per uur, afgerond op het hele uur.</translation>
+   <translation id="cpbc_archive_storage_consumption_info_part1" qtlid="364173">U wordt gefactureerd op basis van de werkelijke opslagruimte, berekend per uur, afgerond op het hele uur.</translation>
+   <translation id="cpbc_object_storage_consumption_info_part2" qtlid="364186">Uw verbruik is precies {{amount}} GiB uur.</translation>
+   <translation id="cpbc_archive_storage_consumption_info_part2" qtlid="364186">Uw verbruik is precies {{amount}} GiB uur.</translation>
+   <translation id="cpbc_object_storage_output_traffic_info_part1" qtlid="364199">Elke uitgaande gigabyte wordt gefactureerd (ongeacht de bestemming)</translation>
+   <translation id="cpbc_archive_storage_output_traffic_info_part1" qtlid="364199">Elke uitgaande gigabyte wordt gefactureerd (ongeacht de bestemming)</translation>
+   <translation id="cpbc_archive_storage_input_traffic_info_part1" qtlid="364212">Elke ingaande gigabyte wordt gefactureerd (ongeacht de bestemming)</translation>
+   <translation id="cpbc_object_storage_output_traffic_info_part2" qtlid="364225">. U heeft {{amount}} GiB verbruikt tijdens deze periode. Ingaand verkeerd wordt nooit gefactureerd.  </translation>
+   <translation id="cpbc_archive_storage_output_traffic_info_part2" qtlid="364238">. U heeft {{amount}} GiB verbruikt tijdens deze periode.</translation>
+   <translation id="cpbc_archive_storage_input_traffic_info_part2" qtlid="364238">. U heeft {{amount}} GiB verbruikt tijdens deze periode.</translation>
+
+   <translation id="cpbc_snapshot_detail_title" qtlid="364251">Backup opslag</translation>
+   <translation id="cpbc_snapshot_col_location" qtlid="168237">Locatie</translation>
+   <translation id="cpbc_snapshot_col_type" qtlid="2642">Type</translation>
+   <translation id="cpbc_snapshot_col_usage" qtlid="25639">Verbruik</translation>
+   <translation id="cpbc_snapshot_col_usage_tooltip" qtlid="245987">Wordt gefactureerd aan het begin van de volgende maand. </translation>
+   <translation id="cpbc_snapshot_col_usage_info_part1" qtlid="364173">U wordt gefactureerd op basis van de werkelijke opslagruimte, berekend per uur, afgerond op het hele uur.</translation>
+   <translation id="cpbc_snapshot_col_usage_info_part2" qtlid="364186">Uw verbruik is precies {{amount}} GiB uur.</translation>
+   <translation id="cpbc_snapshot_type_instance" qtlid="364277">Server afbeelding</translation>
+
+   <translation id="cpbc_volume_detail_title" qtlid="352841">Aanvullende disks</translation>
+   <translation id="cpbc_volume_col_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpbc_volume_col_consumption" qtlid="25639">Verbruik</translation>
+   <translation id="cpbc_volume_col_consumption_tooltip" qtlid="245987">Wordt gefactureerd aan het begin van de volgende maand. </translation>
+   <translation id="cpbc_volume_consumption_tooltip_part1" qtlid="364173">U wordt gefactureerd op basis van de werkelijke opslagruimte, berekend per uur, afgerond op het hele uur.</translation>
+   <translation id="cpbc_volume_consumption_tooltip_part2" qtlid="364186">Uw verbruik is precies {{amount}} GiB uur.</translation>
+
+   <translation id="cpbc_volume_location" qtlid="168237">Locatie</translation>
+   <translation id="cpbc_volume_type" qtlid="2642">Type</translation>
+   <translation id="cpbc_volume_size" qtlid="364472">Huidige diskruimte</translation>
+   <translation id="cpbc_volume_state" qtlid="8230">Status</translation>
+
+   <translation id="cpbc_server_details_popover_region" qtlid="168237">Locatie</translation>
+   <translation id="cpbc_server_details_popover_image_type" qtlid="2642">Type</translation>
+   <translation id="cpbc_server_details_popover_vm_type" qtlid="73493">Server type</translation>
+   <translation id="cpbc_server_details_popover_imagetype_linux" qtlid="102213">Linux</translation>
+   <translation id="cpbc_server_details_popover_imagetype_windows" qtlid="102237">Windows</translation>
+</translations>

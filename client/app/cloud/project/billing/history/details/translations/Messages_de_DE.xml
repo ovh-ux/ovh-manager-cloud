@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbhd_monthly_header" qtlid="363939">Monatspauschalen im {{month}} {{year}} </translation>
+   <translation id="cpbhd_hourly_header" qtlid="363952">Verbrauch on demand im {{month}} {{year}} </translation>
+   <translation id="cpbhd_bill_link" qtlid="363965">Alle Rechnungen </translation>
+   <translation id="cpbhd_bill_pdf_tooltip" qtlid="363978">Rechnung als PDF </translation>
+   <translation id="cpbhd_bill_pdf_link" qtlid="363991">Rechnung {{month}} {{year}} </translation>
+</translations>

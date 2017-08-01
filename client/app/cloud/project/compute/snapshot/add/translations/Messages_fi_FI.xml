@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_snapshot_add_title" qtlid="246806">Ota tilannekuva</translation>
+   <translation id="cpc_snapshot_add_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="cpc_snapshot_add_info" qtlid="246819">Syötä tilannekuvan nimi</translation>
+   <translation id="cpc_snapshot_add_name_required_error" qtlid="246832">Tilannekuvalla on oltava nimi.</translation>
+   <translation id="cpc_snapshot_add_name_max_error" qtlid="246845">Nimi on liian pitkä.</translation>
+   <translation id="cpc_snapshot_add_name" qtlid="246520">Tilannekuvan nimi.</translation>
+   <translation id="cpc_snapshot_add_valid" qtlid="246858">Ota tilannekuva</translation>
+   <translation id="cpc_snapshot_add_doing" qtlid="246871">Tilannekuvan ottopyyntöä käsitellään…</translation>
+   <translation id="cpc_snapshot_add_success" qtlid="246884">Tilannekuva {{snapshotname}} tullaan ottamaan ja toimenpide päättyy muutamassa minuutissa.</translation>
+   <translation id="cpc_snapshot_add_availibility" qtlid="271270">Palvelimesi toiminta keskeytetään muutamaksi sekunniksi ja luku-/kirjoitussuorituskyky on vajavainen kunnes varmuuskopio-operaatio on valmistunut.</translation>
+   <translation id="cpc_snapshot_add_error" qtlid="246897">Tästä palvelimesta ei voitu ottaa tilannekuvaa.</translation>
+   <translation id="cpc_snapshot_add_total" qtlid="270020">({{size | bytes:2}} eli noin {{price}} ALV 0 %/kk)</translation>
+</translations>

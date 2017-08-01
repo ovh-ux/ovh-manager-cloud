@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_monthly_title" qtlid="269318">Passa al forfait mensile</translation>
+   <translation id="cpcivm_monthly_info" qtlid="269331">Scegli il forfait mensile con fatturazione anticipata per questa macchina: risparmi il 50%!</translation>
+   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Ti invieremo subito una fattura del prorata per i  giorni restanti del mese.</translation>
+   <translation id="cpcivm_monthly_success" qtlid="269357">Il forfait mensile sarà applicato a questo server tra pochi minuti.</translation>
+   <translation id="cpcivm_monthly_fail" qtlid="269370">Si è verificato un errore durante il passaggio al forfait mensile.</translation>
+</translations>

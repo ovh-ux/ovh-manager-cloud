@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_delete_title" qtlid="247950">Eliminación de una instancia</translation>
+   <translation id="cpcivm_delete_info" qtlid="247963">El paquete mensual vigente para este servidor ya se ha facturado y se perderá.</translation>
+   <translation id="cpcivm_failover_info" qtlid="269383">¡Atención! Las siguientes direcciones IP failover se eliminarán definitivamente:</translation>
+   <translation id="cpcivm_delete_confirm" qtlid="269396">¿Está seguro(a) que desea eliminar la instancia?</translation>
+</translations>

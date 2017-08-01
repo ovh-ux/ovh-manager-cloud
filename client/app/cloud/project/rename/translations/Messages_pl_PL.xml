@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_rename_loading_error" qtlid="298584">Wystąpił błąd podczas pobierania opisu.</translation>
+   <translation id="cloud_project_rename_error" qtlid="255155">Wystąpił błąd podczas zmieniania opisu.</translation>
+   <translation id="cpb_details_project_delete" qtlid="282328">Usuń ten projekt</translation>
+   <translation id="cpb_details_project_rename_reset" qtlid="37863">Anuluj</translation>
+   <translation id="cpb_details_project_rename_ok" qtlid="8506">Zapisz</translation>
+   <translation id="cpb_details_project_rename" qtlid="70001">Zmień nazwę</translation>
+   <translation id="cpb_details_project_description" qtlid="364420">Opis projektu</translation>
+</translations>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_addedit_add_title" qtlid="19315">Lisää palvelin</translation>
+   <translation id="cpcivm_addedit_edit_title" qtlid="247976">Muuta palvelinta</translation>
+   <translation id="cpcivm_addedit_server_name" qtlid="242977">Palvelimen nimi</translation>
+   <translation id="cpcivm_addedit_back" qtlid="4070">Jatka</translation>
+   <translation id="cpcivm_addedit_price" qtlid="83913">Hinta</translation>
+
+   <translation id="cpcivm_addedit_name_add_error_required_name" qtlid="247989">Anna palvelimelle nimi.</translation>
+   <translation id="cpcivm_addedit_name_add_error_max_char" qtlid="248002">Palvelimen nimen ei saa ylittää 255 merkkiä.</translation>
+   <translation id="cpcivm_addedit_name_add_error_pattern_name" qtlid="248015">Käytit merkkijä, joita ei hyväksytä.</translation>
+
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd" qtlid="248028">VPS SSD</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu" qtlid="290342">Instanssi HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_hg" qtlid="290342">Instanssi HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram" qtlid="296024">HA - RAM -instanssi</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram" qtlid="296037">SSD - RAM -instanssi</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu" qtlid="290381">Instanssi SSD - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_eg" qtlid="296994">SSD - EG -instanssi</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_eg" qtlid="297007">HA - EG -instanssi</translation>
+
+   <translation id="cpci_vm_flavor_category_b2-7" qtlid="376973">B2-7</translation>
+   <translation id="cpci_vm_flavor_category_b2-7-flex" qtlid="376986">B2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-15" qtlid="376999">B2-15</translation>
+   <translation id="cpci_vm_flavor_category_b2-15-flex" qtlid="377012">B2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-30" qtlid="377025">B2-30</translation>
+   <translation id="cpci_vm_flavor_category_b2-30-flex" qtlid="377038">B2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-60" qtlid="377051">B2-60</translation>
+   <translation id="cpci_vm_flavor_category_b2-60-flex" qtlid="377064">B2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-120" qtlid="377077">B2-120</translation>
+   <translation id="cpci_vm_flavor_category_b2-120-flex" qtlid="377090">B2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_c2-7" qtlid="377103">C2-7</translation>
+   <translation id="cpci_vm_flavor_category_c2-7-flex" qtlid="377116">C2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-15" qtlid="377129">C2-15</translation>
+   <translation id="cpci_vm_flavor_category_c2-15-flex" qtlid="377142">C2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-30" qtlid="377155">C2-30</translation>
+   <translation id="cpci_vm_flavor_category_c2-30-flex" qtlid="377168">C2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-60" qtlid="377181">C2-60</translation>
+   <translation id="cpci_vm_flavor_category_c2-60-flex" qtlid="377194">C2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-120" qtlid="377207">C2-120</translation>
+   <translation id="cpci_vm_flavor_category_c2-120-flex" qtlid="377220">C2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_gpu-60" qtlid="377233">GPU-60</translation>
+   <translation id="cpci_vm_flavor_category_gpu-60-flex" qtlid="377246">GPU-60 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_r2-15" qtlid="377259">R2-15</translation>
+   <translation id="cpci_vm_flavor_category_r2-15-flex" qtlid="377272">R2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-30" qtlid="377285">R2-30</translation>
+   <translation id="cpci_vm_flavor_category_r2-30-flex" qtlid="377298">R2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-60" qtlid="377311">R2-60</translation>
+   <translation id="cpci_vm_flavor_category_r2-60-flex" qtlid="377324">R2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-120" qtlid="377337">R2-120</translation>
+   <translation id="cpci_vm_flavor_category_r2-120-flex" qtlid="377350">R2-120 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-240" qtlid="377363">R2-240</translation>
+   <translation id="cpci_vm_flavor_category_r2-240-flex" qtlid="377376">R2-240 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
+   <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
+   <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
+
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage paikallinen SSD, jaettu CPU/RAM/kaista.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikoitu HDD-levy, jaettu CPU/RAM/kaista.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Korkeakäyttöinen Storage, jaettu CPU/RAM/kaista.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu_info" qtlid="290394">Taatut resurssit, korkean käytettävyyden storage, korkea kellotaajuus/ydin.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Taatut resurssit, korkean käytettävyyden storage,  optimoitu RAM-muisti/hintasuhde.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Taatut resurssit, SSD-storage vähäisellä viiveajalla, korkea kellotaajuus/ydin.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Taatut resurssit, SSD-storage vähäisellä viiveajalla, optimoitu RAM-muisti/hintasuhde..</translation>
+   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">Tästä mallistosta ei tuotteita saatavilla.</translation>
+   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Ei saatavilla tällä alueella</translation>
+   <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Ladataan saatavia tuotteita.</translation>
+   <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">Palvelimen täytyy käynnistyä uudelleen toimenpiteen aikana! Se on siis poissa käytöstä muutamien sekuntien ajan. </translation>
+   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Valitettavasti tuotteita ei löydy!</translation>
+   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Valitettavasti tuotteiden hintoja ei löydy!</translation>
+   <translation id="cpcivm_addedit_flavor_refresh" qtlid="248158">Päivitä tuotelista</translation>
+   <translation id="cpcivm_addedit_flavor_choose" qtlid="248171">Valitse tuote</translation>
+   <translation id="cpcivm_addedit_flavor_deprecated" qtlid="251499">Tuote on vanhentunut.</translation>
+   <translation id="cpcivm_addedit_flavor_quota_vcpus" qtlid="251512">vCPU-kiintiö</translation>
+   <translation id="cpcivm_addedit_flavor_quota_ram" qtlid="251525">RAM-kiintiö</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NO_FLEX" qtlid="327003">Et voi valita joustavaa koon muutosta tässä mallissa.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_WRONG_DISK_TYPE" qtlid="327016">Sinun on siirryttävä malliin, jossa on saman tyyppinen levy.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NOT_ENOUGH_SPACE" qtlid="251538">Sinun on siirryttävä mallistoon, jossa on yhtä paljon tai enemmän levytilaa.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_VCPUS" qtlid="251551">Projektin kiintiö ei salli koneen lisäämistä, jossa on näin paljon CPU:ta.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_RAM" qtlid="251564">Projektin kiintiö ei salli koneen lisäämistä, jossa on näin paljon RAM-muistia.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_INSTANCE" qtlid="301851">Olet saavuttanut koneiden enimmäismäärän tällä alueella. </translation>
+   <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">Jos muutat instanssityyppiä, muuta myös levytilan kokoa.</translation>
+   <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Miten toimia?</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Jos haluat enemmän RAM-muistia, vaihda {{offer}} tuotteeseen.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Jos haluat lisää tehoa suorittimeen, vaihda {{offer}} tuotteeseen.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Jos haluat lisää resursseja, vaihda {{offer}} tuotteeseen.</translation>
+
+   <translation id="cpcivm_addedit_flavor_soldout_title" qtlid="91957">Ei käytettävissä</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_info" qtlid="281264">Oman menestyksensä uhri, tämän tyyppistä instanssia ei ole tällä hetkellä saatavilla.</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_choose_another" qtlid="281277">Valitse toisen tyyppinen instanssi</translation>
+
+   <translation id="cpcivm_addedit_image_unknown" qtlid="248184">Tuntematon distribuutio</translation>
+   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Unix-distribuutiot</translation>
+   <translation id="cpcivm_addedit_image_windows" qtlid="248223">Windows-distribuutiot</translation>
+   <translation id="cpcivm_addedit_image_template" qtlid="248236">Esiasennetut ympäristöt</translation>
+   <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">Varmuuskopiot (snapshot-tilannekuvat)</translation>
+   <translation id="cpcivm_addedit_image_snapshots_empty" qtlid="248262">Ei varmuuskopioita</translation>
+   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Valitettavasti varmuuskopioita ei löydy!</translation>
+   <translation id="cpcivm_addedit_image_windows_change" qtlid="250667">Palvelinta luodessa voi valita Linux- tai Windows-järjestelmän (lisenssikulut sisältyvät hintaan) tai olemassa olevan varmuuskopion. Uudelleenkäynnistettäessä on valittava saman tyyppinen varmuuskopio tai distribuutio.</translation>
+   <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Valitussa mallistossa ei ole tarpeeksi levytilaa.</translation>
+   <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Levykuva on vanhentunut.</translation>
+   <translation id="cpcivm_addedit_image_windows_incompatibility" qtlid="364654">Yksityisten virtuaalipalvelinten kanssa ei ole saatavilla Windowsia.</translation>
+   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Tärkeää tietoa: OVH vastaa ainoastaan sovelluksen asennuksesta. Sovelluksen hallinnointi ja ylläpito kuuluu asiakkaalle. </translation>
+
+   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Esiasennetut sovellukset</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} ALV 0 %/tunti tai {{monthly}} ALV 0 %/kk</translation>
+   <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/tunti</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/kuukausi</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} ALV 0 %/tunti)</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} ALV 0 %/kk)</translation>
+   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} ALV 0 %/tunti tai + {{monthly}} ALV 0 %/kk</translation>
+   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Näytä kaikki distribuutiot</translation>
+   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Suositeltu GPU</translation>
+   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Tälle mallille ei ole suositeltu mitään erityistä distribuutiota</translation>
+
+   <translation id="cpcivm_addedit_image_empty" qtlid="248340">Ei levykuvia.</translation>
+   <translation id="cpcivm_addedit_image_loading" qtlid="248353">Saatavia levykuvia ladataan.</translation>
+   <translation id="cpcivm_addedit_image_error" qtlid="248366">Levykuvia ei löydetty.</translation>
+   <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Päivitä levykuvalista</translation>
+   <translation id="cpcivm_addedit_image_choose" qtlid="248392">Valitse levykuva</translation>
+
+   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Varmuuskopiota ei voi poistaa, jos se on asennettu yhdellekin palvelimelle.</translation>
+
+   <translation id="cpcivm_addedit_region_loading" qtlid="248405">Ladataan käyttöalueita</translation>
+   <translation id="cpcivm_addedit_region_error" qtlid="248418">Käyttöalueita ei löydetty.</translation>
+   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Päivitä käyttöaluelista</translation>
+   <translation id="cpcivm_addedit_region_choose" qtlid="248444">Valitse siajinti</translation>
+
+   <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+   <translation id="cpcivm_addedit_region_zone_dedicated_new" qtlid="248470">Uusi dedikoitu laitteistoalue</translation>
+
+   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Huomio, valittu varmuuskopio on käytettävissä ainoastaan sen omalla alueella eikä sitä voi käyttää sijainnin muuttuessa.</translation>
+
+   <translation id="cpcivm_addedit_table_type" qtlid="2642">Tyyppi</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Hinta (ALV 0 %)</translation>
+   <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUt</translation>
+   <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_table_disk" qtlid="193943">Levyt</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud parhaaseen hintaan</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD -palvelimet käyttävät jaettua paikallista RAID SSD:tä ja niiden suorituskyky saattaa vaihdella hieman ajan kuluessa</translation>
+   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox-instanssit: <br/>Jaetut resurssit</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Ihaanteelisia instansseja testaukseen sekä kehitysympäristöihin. Niiden suorituskyky saattaa vaihdella hieman ajan myötä.</translation>
+   <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Taattu suorituskyky <br/>ja korkean käytettävyyden storage</translation>
+   <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Nämä virtuaalipalvelimet perustuvat CEPH-levyyn datan kolminkertaisella replikoinnilla.  Taatut resurssit (CPU, RAM, Verkko)</translation>
+   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">EG, SP ja HG-instanssit: <br/>Taattu jatkuva suorituskyky</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_old" qtlid="327042">Resurssit (CPU, RAM, Verkko)ovat taattuja. Jokainen malli on saatavilla CEPH-storagella (kolminkertainen replikointi) tai SSD:llä (paikallinen).</translation>
+   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">CPU, RAM ja yleiskäyttöön sopivat instanssit <br/>Taattu jatkuva suorituskyky</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">Resurssit (CPU, RAM, Verkko)ovat taattuja. Jokainen malli on saatavilla CEPH-storagella (kolminkertainen replikointi) tai SSD:llä (paikallinen).</translation>
+   <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Taattu suorituskyky <br/> ja paikallinen SSD-storage (no raid)</translation>
+   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Nämä virtuaalipalvelimet käyttävät ei redundoitua paikallista SSD:tä ja tarjoavat erittäin lyhyen viiveajan.  Taatut resurssit (CPU, RAM, Verkko)</translation>
+   <translation id="cpcivm_addedit_table_model" qtlid="26143">Malli</translation>
+   <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores <span class="text-nowrap"> x {{ frequency }} GHz</span></translation>
+   <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
+   <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Valitse vCoren lukumäärän mukaan</translation>
+   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Valitse RAM-muistin mukaan</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} RAM</translation>
+   <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Salli joustava koon muuttaminen</translation>
+   <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Tämän valinnan ruksaaminen pakottaa 50GB storagen, joka tarjoaa nopeampia varmuuskopioita ja mahdollisuuden alentaa luokitusta myöhemmin. </translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha_with_size" qtlid="327094">HA-lohko<br/>{{ size }}<br/> 3x Replikointi</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd_with_size" qtlid="327107">SSD Local<br/>{{ size }}<br/>Ei RAIDia</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ha" qtlid="327120">{{ size }} HA</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd_or" qtlid="327133">(tai {{ size }} SSD)</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd" qtlid="327146">{{ size }} SSD</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha" qtlid="296466">{{ size }} HA Block Storage</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd" qtlid="296479">{{ size }} Paikallinen SSD</translation>
+   <translation id="cpcivm_addedit_table_network" qtlid="25591">Verkko</translation>
+   <translation id="cpcivm_addedit_table_network_details_mega" qtlid="296492">{{ size }} Mbps Kaistanleveys</translation>
+   <translation id="cpcivm_addedit_table_network_details_giga" qtlid="296505">{{ size }} Gbps Kaistanleveys</translation>
+   <translation id="cpcivm_addedit_table_guaranteed" qtlid="296518">Taatut resurssit</translation>
+
+   <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Päivitä SSH-avaimet</translation>
+   <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">SSH-avainten päivitys.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Nimi</translation>
+   <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Avain</translation>
+   <translation id="cpcivm_addedit_script_key" qtlid="272131">Syötä asennuksen jälkeinen skripti</translation>
+   <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">SSH-avainten valinta</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Lisää avain</translation>
+   <translation id="cpcivm_addedit_sshkey_add_info" qtlid="248574">Miten toimia?</translation>
+   <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Poista</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Lisää avain</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Avain on nyt käytössä!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Avainta ei pystytä lisäämään!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Anna sille nimi</translation>
+   <translation id="cpcivm_addedit_sshkey_add_name_field" qtlid="248639">Syötä avain</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_error_required_name" qtlid="248652">Avaimelle on annettava nimi.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_max_char" qtlid="248665">Nimen ei saa olla yli 255 merkkiä.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_pattern_name" qtlid="248678">Avaimen nimessä voi olla vain numeroita, isoja ja/tai pieniä kirjaimia sekä väliviiva( - ), alaviiva ( _ ) tai välilyönti.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_required_key" qtlid="248691">Unohdit syöttää avaimen.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Lisää avain</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button_cancel" qtlid="248704">Peruuta lisäys</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Avain on nyt käytössä!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Tämä nimi on jo käytössä toisella SSH-avaimella.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Poista avain</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Poista tämä avain</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Tämä avain ei ole enää käytössä.</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Valitettavasti avaimen poisto ei onnistu!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_empty" qtlid="248782">SSH-avainta ei ole vielä lisätty.</translation>
+   <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Napsauta "Lisää avain" tilanteen korjaamiseksi!</translation>
+   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">SSH-avainlistaa ei pystytä hakemaan!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Sinulla ei ole SSH-avainta.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">OVH:n palvelinten välillä tapahtuvassa viestinnässä käytetään tietojen salauksessa salausprotokollaa (SSH).</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<a href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Ohje SSH-avainten luomiseen<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Ymmärsin!</translation>
+   <translation id="cpcivm_addedit_sshkey_help_windows_tab" qtlid="102237">Windows</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_tab" qtlid="248834">Linux ja Mac OS X</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_beforeAll" qtlid="248847">Ennen SSH-avainparin generoimista, varmista, että hallussasi on jo yksi avain.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_openbash" qtlid="248860">Avaa pääte ja syötä seuraavat komennot</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_getGoodFile" qtlid="248873">Jos näet kaksi tiedostoa, jotka on nimetty {{rsapriv}} ja {{rsapub}}, käytössäsi on jo SSH-avaimet ja voit jättää generointivaiheen välistä. Tiedostojen niminä voi myös olla {{dsapriv}} ja {{dsapub}} käytetyn salausalgoritmin mukaan.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_generateKeypair" qtlid="248886">Avainparin generoimiseksi käytä komentoa:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_options" qtlid="248899">Kahta asetusta kysytään, paikkaa, johon avaimet tallennetaan (oletusarvo on suositelty), sekä passphrase. Viimeinen ei ole pakollinen, mutta se antaa tietokoneelle lisäturvaa, mikäli joku toinen käyttää tietokonettasi.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_startingFrom" qtlid="248912">Sait kaksi avainta:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_privateKey" qtlid="248925">{{dirrsapriv}} on yksityinen avain</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_publicKey" qtlid="248938">{{dirrsapub}} on julkinen avain, joka on etäpalvelimilla</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_usePutty" qtlid="248951">Windowsissa SSH-avaimet voi generoida PuTTYgen-ohjelmistolla.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_generateKeypair" qtlid="296050">Lataa ja asenna se. Kilkkaa <code>Generate</code> ja siirrä hiiresi ikkunaan genroidaksesi entropia, jota käytetään täysin sattumanvaraisen avaimen saamisessa. </translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_saveKeypair" qtlid="248977">Kun generointi on valmis, kopioi julkinen avain tiedostoon. Tallenna yksityinen avain tietokoneellesi, sitä tarvitaan palvelimille kirjautumiseen.</translation>
+
+   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Asennuksen jälkeinen skripti</translation>
+   <translation id="cpcivm_addedit_change_flavors_title" qtlid="248990">Muuta palvelintyyppiä</translation>
+   <translation id="cpcivm_addedit_change_image_title" qtlid="249003">Muuta käyttöjärjestelmää</translation>
+   <translation id="cpcivm_addedit_change_script_title" qtlid="272144">Lisää asennuksen jälkeinen skripti</translation>
+   <translation id="cpcivm_addedit_change_region_title" qtlid="249016">Muuta sijaintia</translation>
+   <translation id="cpcivm_addedit_change_sshkey_title" qtlid="249029">Valitse SSH-avain</translation>
+
+   <translation id="cpcivm_addedit_advanced_options_title" qtlid="267796">Edistyneet lisäoptiot</translation>
+   <translation id="cpcivm_addedit_advanced_options_description" qtlid="316112">Moninainen luominen, skriptit, yksityisverkot ja affiniteetti</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Massaluonti:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Luotavien instanssien lukumäärä:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Syötä kelvollinen instanssien lukumäärä.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Tämänhetkinen <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">kiintiösi</a> sallii samanaikaisesti jopa {{max}} {{type}}tyyppisen instanssin luomisen  alueelle {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Tämänhetkinen <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">kiintiösi</a> sallii luoda vain yhden {{type}} tyyppisen instanssin alueelle{{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Liitä yksityisverkko</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Ei ole</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Hups, yksityisverkkojen listaa ei voitu hakea. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Hups, aliverkkojen listaa ei voitu hakea. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_api_guide" qtlid="316164">Lisätietoa <a href="{{ url }}" target="_blank">yksityisverkoista</a>.</translation>
+   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Hups, julkisten verkkojen listan hakeminen ei onnistunut. {{ message }}</translation>
+
+   <translation id="cpcivm_addedit_payement_hour" qtlid="249042">Tuntikulutus</translation>
+   <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Laskutetaan jakson päättyessä</translation>
+   <translation id="cpcivm_addedit_payement_month" qtlid="233928">Kuukausilaskutus</translation>
+   <translation id="cpcivm_addedit_payement_month_info" qtlid="249068">Kulutuksen mukainen maksu veloitetaan käynnistäessä</translation>
+   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Palvelin lisätään kuukausilaskutukseen hetken kuluttua. Kuluneen kuun aikana tapahtuneesta kulutuksesta laskutetaan välittömästi.</translation>
+   <translation id="cpcivm_addedit_payement_label" qtlid="272222">Säästä 50 % palvelinten hinnasta siirtymällä kiinteään kuukausilaskutukseen.</translation>
+
+   <translation id="cpcivm_addedit_run_now" qtlid="249094">Käynnistä nyt</translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Ota muutokset käyttöön</translation>
+
+   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Valitettavasti instanssia ei pystytä luomaan.</translation>
+   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Valitettavasti instanssin tietoja ei pystytä päivittämään.</translation>
+   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Valitettavasti instanssin kapasiteettia ei pystytä nostamaan.</translation>
+   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Valitettavasti instanssin uudelleenkäynnistys ei onnistu.</translation>
+   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Valitettavasti kuukausilaskutukseen siirtyminen ei onnistu.</translation>
+   <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">Nykyisellä kiintiöllä ei voi lisätä tämän tyyppistä konetta. Ota yhteys asiakaspalveluumme kiintiön nostamiseksi.</translation>
+   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">Kun kone on luoto, avaa kirjautuaksesi SSH-pääte ja syötä seuraava komento:<br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">Kun kone on luotu, käytä kirjautuaksesi haluamaasi RDP-asiakasohjelmaa esimerkiksi Linux-asemalla: <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
+
+   <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">Käytössä on {{count}} SSH-avain valitun alueen ({{region}}) ulkopuolelta.</translation>
+   <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">Käytössä on {{count}} SSH-avainta valitun alueen ({{region}})ulkopuolelta.</translation>
+
+   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Käytettävissä olevaa kiintiötä ei voitu ladata.</translation>
+   <translation id="cpcivm_addedit_save_multiple_success" qtlid="272235">Palvelimia luodaan, ne ovat pian käytettävissä.</translation>
+   <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Palvelimia luotaessa tapahtui virhe!</translation>
+   <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Olet luomassa {{nb}} instanssia.</translation>
+
+</translations>

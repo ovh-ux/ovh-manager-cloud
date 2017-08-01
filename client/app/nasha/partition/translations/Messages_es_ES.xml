@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_info_linux" qtlid="345000">- En Linux:</translation>
+   <translation id="nasha_partitions_info_windows" qtlid="345013">- En Windows:</translation>
+   <translation id="nasha_partitions_info_linux_1" qtlid="345026">Asegúrese de que el sistema de archivos de su partición se ha registrado correctamente.</translation>
+   <translation id="nasha_partitions_info_NFS" qtlid="345039">Montaje de partición NFS :</translation>
+   <translation id="nasha_partitions_info_linux_NFS" qtlid="345052">mount -t nfs {{ ip }}:/{{ name }}/NOM_PARTITION_1 /mnt/</translation>
+   <translation id="nasha_partitions_info_CIFS" qtlid="345065">Montaje de partición CIFS :</translation>
+   <translation id="nasha_partitions_info_linux_CIFS" qtlid="345078">mount -t cifs //{{ ip }}/{{ name }}_NOM_PARTITION_1 /mnt/ -ouid=nobody,gid=nogroup,password=''</translation>
+   <translation id="nasha_partitions_info_windows_CIFS" qtlid="345091">net use z: {{ip}}{{name}}_NOM_PARTITION_1</translation>
+   <translation id="nasha_partitions_no_data" qtlid="172293">No hay particiones disponibles</translation>
+   <translation id="nasha_partitions_no_data_error" qtlid="243643">No se han podido mostrar las particiones.</translation>
+   <translation id="nasha_partitions_minimum_size" qtlid="153597">(10 GB mín.)</translation>
+   <translation id="nasha_partitions_loading_error" qtlid="345104">Se ha producido un error al cambiar las particiones.</translation>
+   <translation id="nasha_partitions_loading_error" qtlid="345117">Se ha producido un error provocado por una acción en la partición {{partitionName}}.</translation>
+   <translation id="nasha_partitions_name" qtlid="3818">Apellidos</translation>
+   <translation id="nasha_partitions_name_fail" qtlid="172306">El nombre no es válido</translation>
+   <translation id="nasha_partitions_protocol" qtlid="19711">Protocolo</translation>
+   <translation id="nasha_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>
+   <translation id="nasha_partitions_protocol_NFS" qtlid="6778">NFS</translation>
+   <translation id="nasha_partitions_protocol_NFS_CIFS" qtlid="176753">NFS CIFS</translation>
+   <translation id="nasha_partitions_size" qtlid="7726">Tamaño</translation>
+   <translation id="nasha_partitions_size_in_Gb" qtlid="153623">Tamaño (en GB)</translation>
+   <translation id="nasha_partitions_action_update" qtlid="172319">Cambiar el tamaño</translation>
+   <translation id="nasha_partitions_action_change_access" qtlid="82581">Gestionar los accesos</translation>
+   <translation id="nasha_partitions_action_display_snapshot" qtlid="172332">Frecuencia de los snapshots</translation>
+   <translation id="nasha_partitions_action_display_custom_snapshot" qtlid="369178">Snapshot instantáneo</translation>
+   <translation id="nasha_partitions_action_z_file_system" qtlid="373649">Configuración Z File System (ZFS)</translation>
+   <translation id="nasha_partitions_action_add" qtlid="120919">Crear una partición</translation>
+   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Selección de un protocolo</translation>
+   <translation id="nasha_partitions_task_clusterLeclercPartitionAdd" qtlid="26791">Creación</translation>
+   <translation id="nasha_partitions_task_clusterLeclercPartitionDelete" qtlid="59699">Eliminación</translation>
+   <translation id="nasha_partitions_task_clusterLeclercPartitionUpdate" qtlid="369282">Redimensionamiento</translation>
+   <translation id="nasha_partitions_task_clusterLeclercSnapshotUpdate" qtlid="369295">Modificación de la frecuencia de los snapshots</translation>
+   <translation id="nasha_partitions_task_clusterLeclercCustomSnapCreate" qtlid="369308">Captura/Snapshot</translation>
+   <translation id="nasha_partitions_task_clusterLeclercZfsOptions" qtlid="373662">Configuración de las opciones ZFS</translation>
+</translations>

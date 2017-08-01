@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_introduction_title" qtlid="344584">Manage your vRack</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Manage the private connection of all your infrastructure components, all over the globe. <br/> vRack technology (virtual bay) enables you to connect, isolate or distribute your services within one or multiple private and secure networks. </translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">You can also <a href="{{ uri }}" target="_blank">change owner</a> if you need to. </translation>
+   <translation id="vrack_guide_link_text" qtlid="344610">For more information, see our guide.</translation>
+   <translation id="vrack_change_owner_link_text" qtlid="344623">Change the owner</translation>
+   <translation id="vrack_error" qtlid="323249">Oops, we were unable to retrieve your vRack data. </translation>
+   <translation id="vrack_add_error" qtlid="323262">Oops, there was an error while adding a service to your vRack.</translation>
+   <translation id="vrack_remove_error" qtlid="323275">Oops, there was an error while deleting a service from your vRack.</translation>
+   <translation id="vrack_your_services" qtlid="344636">Your eligible services</translation>
+   <translation id="vrack_your_vrack" qtlid="323288">Your vRack</translation>
+   <translation id="vrack_help" qtlid="323301">Select one or more services to add to or delete from your vRack:</translation>
+   <translation id="vrack_order_new_title" qtlid="323314">Create your vRack</translation>
+   <translation id="vrack_cloud_warning" qtlid="325185">Warning: communication among other product types and cloud projects isn't possible yet but it will be automatically activated within the next few months.  Only communication within the projet is possible.</translation>
+   <translation id="vrack_cloud_name_max_length" qtlid="349281">The name cannot exceed 100 characters.</translation>
+   <translation id="vrack_cloud_name_pattern" qtlid="349294">The name must start with a letter and cannot have any spaces. </translation>
+   <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
+   <translation id="vrack_move_dialog_title" qtlid="353556">Moving a Private Cloud datacenter</translation>
+   <translation id="vrack_move_dialog_intro" qtlid="353569">You selected a Private Cloud type of datacentre. This service cannot stand on its own and must be transferred to another vRack.</translation>
+   <translation id="vrack_move_dialog_warning_notice" qtlid="353582">This operation will cause a service interruption of about 5 minutes.</translation>
+   <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">Destination vRack:</translation>
+   <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Select a vRack</translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">Oops... the datacenter relocation operation for the  has failed.</translation>
+</translations>

@@ -1,0 +1,72 @@
+<section class="vrack" ng-if="VrackCtrl.serviceName" class="row">
+        <header class="vrack__header" data-ng-if="VrackCtrl.nameEditing">
+            <form name="nameForm" class="vrack__edit-form" data-ng-class="{'has-error': nameForm.name.$invalid}">
+                <input id="name"
+                       name="name"
+                       type="text"
+                       class="vrack__edit-input form-control"
+                       data-ng-value="VrackCtrl.name"
+                       data-ng-model="VrackCtrl.name"
+                       data-ng-maxLength="VrackCtrl.nameOptions.maxLength"
+                       data-ng-pattern="VrackCtrl.nameOptions.pattern">
+                </input>
+                <button class="vrack__edit-button vrack__edit-button_save btn btn-icon"
+                        type="submit" data-ng-click="VrackCtrl.saveName()"
+                        data-ng-disabled="nameForm.name.$invalid">
+                    <i class="ovh-font ovh-font-check"></i>
+                </button>
+                <button class="vrack__edit-button vrack__edit-button_cancel btn btn-icon"
+                        type="reset"
+                        data-ng-click="VrackCtrl.cancelEditName()">
+                    <i class="ovh-font ovh-font-wrong"></i>
+                </button>
+
+                <ul class="vrack__error-list vrack__error-list_in-header list-unstyled has-error" data-ng-show="nameForm.name.$invalid" data-ng-messages="nameForm.name.$error">
+                    <li class="vrack__error-item help-block" data-ng-if="nameForm.name.$error.maxlength" data-translate="vrack_cloud_name_max_length"></li>
+                    <li class="vrack__error-item help-block" data-ng-if="nameForm.name.$error.pattern" data-translate="vrack_cloud_name_pattern"></li>
+                </ul>
+            </form>
+        </header>
+
+        <header class="vrack__header" data-ng-if="!VrackCtrl.nameEditing">
+            <div>
+                <h1 class="vrack__header-title" data-ng-bind="VrackCtrl.name || VrackCtrl.serviceName"></h1>
+                <h6 class="vrack__header-sub-title" data-ng-bind="VrackCtrl.serviceName" data-ng-if="VrackCtrl.name !== ''"></h6>
+            </div>
+            <button class="vrack__edit-button btn btn-icon"
+                    type="button"
+                    data-ng-click="VrackCtrl.editName()">
+                <i class="ovh-font ovh-font-editer"></i>
+            </button>
+            <a class="vrack__header-guide-link" href="#" data-ng-if="VrackCtrl.hasVrackGuideUrl()">
+                <i class="vrack__header-guide-link-icon fa fa-lg fa-life-ring"></i>
+                {{ ::"vrack_guide_link_text" | translate }}
+            </a>
+        </header>
+
+        <section class="vrack__introduction">
+            <h2 class="vrack__section-title" data-translate="vrack_introduction_title"></h2>
+            <p class="vrack__text" data-translate="vrack_introduction_description"></p>
+            <p class="vrack__text" data-ng-if="VrackCtrl.changeOwnerUrl" 
+                                   data-translate="vrack_introduction_change_owner" 
+                                   data-translate-values="{ uri: VrackCtrl.changeOwnerUrl }"></p>
+        </section>
+
+        <section class="vrack__mapper">
+            <div class="row space-m0">
+                <div class="col-sm-12 col-md-4 col-lg-5 space-p0">
+                    <ng-include data-src="'app/vrack/partials/available.html'"
+                                data-ng-show="!VrackCtrl.loaders.init">
+                    </ng-include>
+                </div>
+                <div class="vrack__mapper-actions col-sm-12 col-md-3 col-lg-2 top-space-p16 no-space"
+                     data-ng-include="'app/vrack/partials/actions.html'">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-5 space-p0">
+                    <ng-include data-src="'app/vrack/partials/mapped.html'"
+                                data-ng-show="!VrackCtrl.loaders.init">
+                    </ng-include>
+                </div>
+            </div>
+        </section>
+</section>

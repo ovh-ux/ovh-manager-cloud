@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_vouchers_add_credit_title" qtlid="255181">Public Cloud credit kopen</translation>
+   <translation id="cpb_vouchers_add_credit_info" qtlid="264296">Kies het kredietbedrag (excl. btw) voor dit project. Als de inkooporder is aangemaakt, zal dit krediet voor het projectverbruik worden berekend tijdens de aankomende 12 maanden.</translation>
+   <translation id="cpb_vouchers_add_credit_amount" qtlid="269981">Tegoedbedrag ( excl. BTW {{ currency }} ) :</translation>
+   <translation id="cpb_vouchers_add_credit_required_error" qtlid="255560">U moet een tegoedbedrag invoeren. </translation>
+   <translation id="cpb_vouchers_add_credit_max_error" qtlid="255573">Dit bedrag is ongeldig.</translation>
+   <translation id="cpb_vouchers_add_credit_doing" qtlid="255586">Aankoop bestelling wordt gemaakt...</translation>
+   <translation id="cpb_vouchers_add_credit_valid" qtlid="177288">Een bestelling genereren</translation>
+   <translation id="cpb_vouchers_add_credit_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="cpb_vouchers_add_credit_error" qtlid="255599">Oeps, er is een fout opgetreden tijdens het kopen van het Public Cloud tegoed. </translation>
+   <translation id="cpb_vouchers_add_credit_success" qtlid="295907">De bestelbon voor uw krediet van {{ amount }} is <a href="{{ url }}" target="_blank">hier</a> beschikbaar.</translation>
+
+</translations>

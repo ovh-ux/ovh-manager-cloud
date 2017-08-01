@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcv_snapshot_add_title" qtlid="273661">Criação de uma snapshot volume</translation>
+   <translation id="cpcv_snapshot_choose_name" qtlid="246819">Introduza o nome da sua snapshot:</translation>
+   <translation id="cpcv_snapshot_name" qtlid="246520">Nome da snapshot</translation>
+   <translation id="cpcv_snapshot_confirm" qtlid="246858">Iniciar a snapshot</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} s/IVA/GB/mês)</translation>
+   <translation id="cpcv_snapshot_name_error" qtlid="273687">Queira dar um nome válido à sua snapshot.</translation>
+   <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Queira escolher um nome mais curto para a snapshot.</translation>
+   <translation id="cpcv_snapshot_creation_info" qtlid="263311">Snapshot em curso...</translation>
+   <translation id="cpcv_snapshot_creation_error" qtlid="273713">Oups! Ocorreu um erro aquando do pedido de snapshot do volume.</translation>
+   <translation id="cpcv_snapshot_error" qtlid="273726">Ocorreu um erro aquando da recuperação das informações da snapshot, queira tentar mais tarde.</translation>
+   <translation id="cpcv_snapshot_attach_warning" qtlid="273739">O seu disco está atualmente associado a uma instância. Para garantir a integridade dos seus dados, aconselhamos que desassocie o disco antes de efetuar uma snapshot.</translation>
+</translations>

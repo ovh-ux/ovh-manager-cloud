@@ -1,0 +1,23 @@
+ <div>
+    <div class="modal-header">
+        <h3 class="modal-title" data-translate="nasha_access_action_delete_title"></h3>
+    </div>
+
+    <div class="modal-body">
+        <span data-translate="nasha_access_action_delete_confirmation" data-translate-values="{accessIp: NashaPartitionAccessDeleteCtrl.toRemove.access.ip}"></span>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
+                data-ng-disabled="NashaPartitionAccessDeleteCtrl.loading"
+                data-ng-click="NashaPartitionAccessDeleteCtrl.removeAccess()">
+            <span data-translate="common_confirm"></span>
+        </button>
+        <button type="reset" class="btn btn-default pull-left"
+                data-ng-click="NashaPartitionAccessDeleteCtrl.dismiss()">
+            <i class="fa fa-times"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+</div>

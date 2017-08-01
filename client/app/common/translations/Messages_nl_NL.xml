@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="common_confirm" qtlid="31498">Bevestigen</translation>
+   <translation id="common_buy" qtlid="269591">Kopen</translation>
+   <translation id="common_required_field" qtlid="250017">Verplichte informatie</translation>
+   <translation id="common_close" qtlid="4670">Sluiten</translation>
+
+   <translation id="common_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="common_apply" qtlid="41326">Toepassen</translation>
+   <translation id="common_loading" qtlid="58256">Wordt geladen</translation>
+   <translation id="common_refresh" qtlid="250030">Vernieuwen</translation>
+   <translation id="common_pagination_page" qtlid="239246">Pagina {{currentPage}} / {{nbPages}}</translation>
+   <translation id="common_pagination_display" qtlid="69353">Weergeven</translation>
+   <translation id="common_search_placeholder" qtlid="98288">Zoeken...</translation>
+   <translation id="common_disk_bootable" qtlid="271348">Bootable disk </translation>
+   <translation id="common_renew" qtlid="118962">Verlengen</translation>
+   <translation id="common_actions" qtlid="72809">Handelingen</translation>
+   <translation id="common_action_unavailable" qtlid="404061">Deze actie is niet beschikbaar</translation>
+   <translation id="common_order" qtlid="43558">Bestellen</translation>
+   <translation id="common_validate" qtlid="26047">Bevestigen</translation>
+   <translation id="common_yes" qtlid="34776">Ja</translation>
+   <translation id="common_no" qtlid="34788">Nee</translation>
+   <translation id="common_move" qtlid="69989">Verplaatsen</translation>
+
+   <translation id="common_toggle_dropdown" qtlid="377618">Dropdown weergeven/verbergen</translation>
+   <translation id="common_new_window" qtlid="222176">Nieuw scherm</translation>
+
+   <translation id="common_menu_web" qtlid="135840">Web</translation>
+   <translation id="common_menu_labs" qtlid="383707">UX Labs</translation>
+   <translation id="common_menu_dedicated" qtlid="31738">Dedicated</translation>
+   <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
+   <translation id="common_menu_telecom" qtlid="135827">Telecom</translation>
+   <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
+   <translation id="common_menu_v3" qtlid="135931">Oud client interface</translation>
+<translation id="common_menu_portal" translate="none">MyOVH</translation>
+   <translation id="common_menu_partners" qtlid="383512">Partners</translation>
+   <translation id="common_menu_billing" qtlid="32950">Facturatie</translation>
+   <translation id="common_menu_renew" qtlid="229658">Mijn diensten</translation>
+   <translation id="common_menu_orders" qtlid="282809">Mijn bestellingen</translation>
+   <translation id="common_menu_language" qtlid="30598">Taal</translation>
+   <translation id="common_menu_account" qtlid="157642">Mijn account</translation>
+   <translation id="common_menu_changelog" qtlid="124964">Updates geschiedenis</translation>
+   <translation id="global_logout" qtlid="33658">Uitloggen</translation>
+
+   <translation id="common_menu_dedicated_servers" qtlid="256151">Dedicated servers</translation>
+   <translation id="common_menu_networks" qtlid="37299">Netwerken</translation>
+   <translation id="common_menu_vps" qtlid="23083">VPS</translation>
+   <translation id="common_menu_vdi" qtlid="303952">Cloud Desktop</translation>
+
+   <translation id="common_menu_support" qtlid="39994">Support</translation>
+   <translation id="common_menu_support_assistance" qtlid="52699">Support</translation>
+   <translation id="common_menu_support_all_guides" qtlid="260788">Alle handleidingen</translation>
+   <translation id="common_menu_support_guide" qtlid="269604">Gebruiksaanwijzing </translation>
+   <translation id="common_menu_support_new_ticket" qtlid="260801">Maak een aanvraag ter assistentie aan</translation>
+   <translation id="common_menu_support_list_ticket" qtlid="260814">Overzicht van mijn aanvragen ter assistentie</translation>
+   <translation id="common_menu_support_email_history" qtlid="260091">E-mail geschiedenis</translation>
+   <translation id="common_menu_support_telephony_contact" qtlid="260827">Telefonische assistentie</translation>
+   <translation id="common_menu_support_changelog" qtlid="124964">Updates geschiedenis</translation>
+   <translation id="changelog_loading_error" qtlid="298014">De update geschiedenis is momenteel niet beschikbaar. </translation>
+
+   <translation id="common_modify" qtlid="37875">Wijzigen</translation>
+   <translation id="common_add" qtlid="37923">Toevoegen</translation>
+   <translation id="common_remove" qtlid="323093">Verwijderen</translation>
+   <translation id="edit" qtlid="37875">Wijzigen</translation>
+   <translation id="delete" qtlid="2414">Verwijderen</translation>
+   <translation id="common_back" qtlid="4118">Terug</translation>
+   <translation id="error" qtlid="26407">Error</translation>
+   <translation id="soon" qtlid="250043">Binnenkort beschikbaar</translation>
+   <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Meer informatie</a>.</translation>
+
+   <translation id="other_menu" qtlid="265265">Andere producten</translation>
+   <translation id="cloud_menu_title" qtlid="104890">Public Cloud</translation>
+   <translation id="cloud_menu_add" qtlid="250056">Een nieuw project aanmaken</translation>
+   <translation id="cloud_menu_compute" qtlid="125552">Infrastructuur</translation>
+   <translation id="cloud_menu_storage" qtlid="233733">Storage</translation>
+   <translation id="cloud_menu_project_num" qtlid="250069">Project {{num}}</translation>
+
+   <translation id="dbaasts_menu_title" qtlid="301864">PaaS Time Series</translation>
+   <translation id="dbaasts_menu_add" qtlid="301877">Creëer een nieuw project</translation>
+   <translation id="dbaasts_menu_project_num" qtlid="250069">Project {{num}}</translation>
+
+   <translation id="vrack_menu_title" qtlid="186284">Vrack</translation>
+   <translation id="vrack_menu_add" qtlid="323106">Creëer een vRack</translation>
+   <translation id="vrack_menu_project_num" qtlid="323119">Vrack {{num}}</translation>
+   <translation id="vrack_service_type_dedicatedserver" qtlid="101913">Dedicated Server</translation>
+   <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Private Cloud</translation>
+   <translation id="vrack_service_type_dedicatedconnect" qtlid="323132">Dedicated connect</translation>
+   <translation id="vrack_service_type_legacyvrack" qtlid="323145">Legacy Vrack </translation>
+   <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
+   <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
+   <translation id="vrack_service_type_cloudproject" qtlid="274369">Cloudproject</translation>
+   <translation id="vrack_change_owner" qtlid="254882">Eigenaar wijzigen </translation>
+
+   <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} voltooide task(s)</translation>
+   <translation id="storage_promise_task_progress_error" qtlid="367527">{{count}} task(s) met foutmelding</translation>
+   <translation id="storage_promise_task_progress_todo" qtlid="367514">{{count}} te voltooien task(s) </translation>
+   <translation id="storage_promise_task_progress_error_description" qtlid="369126">Container: {{container}} - Object: {{object}}</translation>
+   <translation id="storage_promise_task_progress_error_reason" qtlid="369139">Foutmelding: {{errorReason}}</translation>
+   <translation id="storage_promise_task_progress_retry" qtlid="238193">Probeer het opnieuw</translation>
+
+   <translation id="common_country_DE" qtlid="29083">Duitsland</translation>
+   <translation id="common_country_ES" qtlid="29095">Spanje</translation>
+   <translation id="common_country_FR" qtlid="29047">Frankrijk</translation>
+   <translation id="common_country_PL" qtlid="40858">Polen</translation>
+   <translation id="common_country_UK" qtlid="29071">Groot-Brittannië</translation>
+   <translation id="common_country_IT" qtlid="40870">Italië</translation>
+   <translation id="common_country_CA" qtlid="108733">Canada</translation>
+   <translation id="common_country_US" qtlid="158279">VS</translation>
+
+   <translation id="language_de" qtlid="31618">Duits</translation>
+   <translation id="language_en" qtlid="33838">Engels</translation>
+   <translation id="language_es" qtlid="33454">Spaans</translation>
+   <translation id="language_fr" qtlid="29684">Frans</translation>
+   <translation id="language_pl" qtlid="32746">Pools</translation>
+   <translation id="language_cz" qtlid="239259">Tsjechisch</translation>
+   <translation id="language_fi" qtlid="239272">Fins</translation>
+   <translation id="language_ie" qtlid="152089">Iers</translation>
+   <translation id="language_it" qtlid="33502">Italiaans</translation>
+   <translation id="language_lt" qtlid="31222">Litouws</translation>
+   <translation id="language_nl" qtlid="33982">Nederlands</translation>
+   <translation id="language_pt" qtlid="239285">Portugees</translation>
+   <translation id="unit_size_B" qtlid="121975">B</translation>
+   <translation id="unit_size_KB" qtlid="121987">KB</translation>
+   <translation id="unit_size_MB" qtlid="48878">MB</translation>
+   <translation id="unit_size_GB" qtlid="48890">GB</translation>
+   <translation id="unit_size_TB" qtlid="70121">TB</translation>
+   <translation id="unit_size_PB" qtlid="121999">PB</translation>
+   <translation id="unit_size_EB" qtlid="122011">EB</translation>
+   <translation id="unit_size_ZB" qtlid="122023">ZB</translation>
+   <translation id="unit_size_YB" qtlid="122035">YB</translation>
+
+   <translation id="unit_size_KiB" qtlid="180252">KiB</translation>
+   <translation id="unit_size_MiB" qtlid="180265">MiB</translation>
+   <translation id="unit_size_GiB" qtlid="180278">GiB</translation>
+   <translation id="unit_size_TiB" qtlid="180291">TiB</translation>
+   <translation id="unit_size_PiB" qtlid="180304">PiB</translation>
+   <translation id="unit_size_EiB" qtlid="180317">EiB</translation>
+   <translation id="unit_size_ZiB" qtlid="180330">ZB</translation>
+   <translation id="unit_size_YiB" qtlid="180343">YB</translation>
+
+   <translation id="unit_gib" qtlid="180278">GiB</translation>
+   <translation id="unit_gb" qtlid="48890">GB</translation>
+
+   <translation id="payment_type_none" qtlid="30646">Geen</translation>
+   <translation id="payment_type_cash" qtlid="139689">Contant</translation>
+   <translation id="payment_type_chargeback" qtlid="139702">Betaling geweigerd</translation>
+   <translation id="payment_type_cheque" qtlid="139715">Cheque</translation>
+   <translation id="payment_type_creditCard" qtlid="89809">Creditcard</translation>
+   <translation id="payment_type_deposit" qtlid="139728">Storting</translation>
+   <translation id="payment_type_edinar" qtlid="139741">e-Dinar</translation>
+   <translation id="payment_type_fidelityPoints" qtlid="139754">Loyalty points</translation>
+   <translation id="payment_type_free" qtlid="130495">Gratis</translation>
+   <translation id="payment_type_ideal" qtlid="139767">iDEAL</translation>
+   <translation id="payment_type_mandat" qtlid="139780">Postorder </translation>
+   <translation id="payment_type_multibanco" qtlid="139793">Multibanco </translation>
+   <translation id="payment_type_ovhAccount" qtlid="139806">OVH-account</translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819">Postorder</translation>
+   <translation id="payment_type_paypal" qtlid="98228">Paypal</translation>
+   <translation id="payment_type_platnosci" qtlid="139832">Betalingen </translation>
+   <translation id="payment_type_refund" qtlid="139845">Tegoed</translation>
+   <translation id="payment_type_transfer" qtlid="89833">Transfer</translation>
+   <translation id="payment_type_withdrawal" qtlid="139858">Automatische incasso</translation>
+   <translation id="payment_type_bankAccount" qtlid="176911">Bankrekening</translation>
+
+   <translation id="contract_next" qtlid="17743">Volgende</translation>
+   <translation id="contract_previous" qtlid="17431">Vorig</translation>
+   <translation id="contract_download" qtlid="250082">Open het contract "{{id}}" in PDF</translation>
+   <translation id="contract_help" qtlid="180382">Scroll naar beneden naar de contracten om deze te bevestigen.</translation>
+   <translation id="contract_agree" qtlid="250095">Ik heb de voorwaarden gelezen en aanvaard</translation>
+   <translation id="contracts_agree" qtlid="194489">Ik heb de contracten gelezen en ik ga ermee akkoord </translation>
+   <translation id="contract_list_title" qtlid="180408">Er is 1 contract, dat u kunt raadplegen.</translation>
+   <translation id="contracts_list_title" qtlid="250108">Er zijn {{nbr}} contracten om door te lezen.</translation>
+
+   <translation id="unit_frequency_HZ" qtlid="147577">Hz</translation>
+   <translation id="unit_frequency_KHZ" qtlid="147590">KHz</translation>
+   <translation id="unit_frequency_MHZ" qtlid="147603">MHz</translation>
+   <translation id="unit_frequency_GHZ" qtlid="147616">GHz</translation>
+   <translation id="unit_frequency_THZ" qtlid="145722">THz</translation>
+   <translation id="unit_frequency_PHZ" qtlid="147629">PHz</translation>
+   <translation id="unit_frequency_EHZ" qtlid="147642">EHz</translation>
+   <translation id="unit_frequency_ZHZ" qtlid="147655">ZHz</translation>
+   <translation id="unit_frequency_YHZ" qtlid="147668">YHz</translation>
+
+   <translation id="januar" qtlid="38745">Januari</translation>
+   <translation id="februar" qtlid="38229">Februari</translation>
+   <translation id="march" qtlid="239298">Maart</translation>
+   <translation id="april" qtlid="38181">April</translation>
+   <translation id="may" qtlid="38421">Mei</translation>
+   <translation id="june" qtlid="38013">Juni</translation>
+   <translation id="jully" qtlid="38085">Juli</translation>
+   <translation id="august" qtlid="38961">Augustus</translation>
+   <translation id="september" qtlid="38409">September</translation>
+   <translation id="october" qtlid="39093">Oktober</translation>
+   <translation id="november" qtlid="38169">November</translation>
+   <translation id="december" qtlid="37989">December</translation>
+   <translation id="januar_short" qtlid="158500">Jan.</translation>
+   <translation id="februar_short" qtlid="158513">Feb</translation>
+   <translation id="march_short" qtlid="38985">Maart</translation>
+   <translation id="april_short" qtlid="38181">April</translation>
+   <translation id="may_short" qtlid="38421">Mei</translation>
+   <translation id="june_short" qtlid="38013">Juni</translation>
+   <translation id="jully_short" qtlid="239311">Juli</translation>
+   <translation id="august_short" qtlid="38961">Augustus</translation>
+   <translation id="september_short" qtlid="123547">Sept.</translation>
+   <translation id="october_short" qtlid="123559">Okt.</translation>
+   <translation id="november_short" qtlid="123571">Nov.</translation>
+   <translation id="december_short" qtlid="158539">Dec</translation>
+
+   <translation id="country_AD" qtlid="239324">Andorra</translation>
+   <translation id="country_AE" qtlid="239337">Verenigde Arabische Emiraten</translation>
+   <translation id="country_AF" qtlid="172683">Afghanistan</translation>
+   <translation id="country_AG" qtlid="239350">Antigua en Barbuda</translation>
+   <translation id="country_AI" qtlid="187040">Anguilla</translation>
+   <translation id="country_AL" qtlid="239363">Albanië</translation>
+   <translation id="country_AM" qtlid="239376">Armenië</translation>
+   <translation id="country_AO" qtlid="187066">Angola</translation>
+   <translation id="country_AQ" qtlid="239389">Antarctica</translation>
+   <translation id="country_AR" qtlid="239402">Argentinië</translation>
+   <translation id="country_AS" qtlid="239415">Amerikaans Samoa</translation>
+   <translation id="country_AT" qtlid="239428">Oostenrijk</translation>
+   <translation id="country_AU" qtlid="239441">Australië</translation>
+   <translation id="country_AW" qtlid="187105">Aruba</translation>
+   <translation id="country_AZ" qtlid="239454">Azerbeidzjan</translation>
+   <translation id="country_BA" qtlid="239467">Bosnië-Herzegovina</translation>
+   <translation id="country_BB" qtlid="239480">Barbados</translation>
+   <translation id="country_BD" qtlid="187157">Bangladesh</translation>
+   <translation id="country_BE" qtlid="239493">België</translation>
+   <translation id="country_BF" qtlid="187170">Burkina Faso</translation>
+   <translation id="country_BG" qtlid="239506">Bulgarije</translation>
+   <translation id="country_BH" qtlid="239519">Bahrein</translation>
+   <translation id="country_BI" qtlid="187196">Burundi</translation>
+   <translation id="country_BJ" qtlid="239532">Benin</translation>
+   <translation id="country_BL" qtlid="187222">Saint-Barthelemy</translation>
+   <translation id="country_BM" qtlid="239545">Bermuda</translation>
+   <translation id="country_BN" qtlid="239558">Brunei </translation>
+   <translation id="country_BO" qtlid="239571">Bolivië</translation>
+   <translation id="country_BQ" qtlid="239584">Bonaire, Sint Eustatius en Saba</translation>
+   <translation id="country_BR" qtlid="239597">Brazilië</translation>
+   <translation id="country_BS" qtlid="187300">Bahamas</translation>
+   <translation id="country_BT" qtlid="239610">Bhutan</translation>
+   <translation id="country_BW" qtlid="187326">Botswana</translation>
+   <translation id="country_BY" qtlid="239623">Wit-Rusland</translation>
+   <translation id="country_BZ" qtlid="187352">Belize</translation>
+   <translation id="country_CA" qtlid="108733">Canada</translation>
+   <translation id="country_CC" qtlid="239636">Cocos-eilanden (Keeling)</translation>
+   <translation id="country_CD" qtlid="239649">Democratische Republiek Congo</translation>
+   <translation id="country_CF" qtlid="239662">Centraal-Afrikaanse Republiek</translation>
+   <translation id="country_CG" qtlid="239675">Republiek Congo</translation>
+   <translation id="country_CH" qtlid="239688">Zwitserland</translation>
+   <translation id="country_CI" qtlid="239701">Ivoorkust</translation>
+   <translation id="country_CK" qtlid="239714">De Cook Eilanden</translation>
+   <translation id="country_CL" qtlid="239727">Chili</translation>
+   <translation id="country_CM" qtlid="239740">Kameroen</translation>
+   <translation id="country_CN" qtlid="239753">China</translation>
+   <translation id="country_CO" qtlid="239766">Colombia</translation>
+   <translation id="country_CR" qtlid="187495">Costa Rica</translation>
+   <translation id="country_CU" qtlid="187508">Cuba</translation>
+   <translation id="country_CV" qtlid="239779">Kaapverdië</translation>
+   <translation id="country_CW" qtlid="239792">Curacao</translation>
+   <translation id="country_CX" qtlid="239805">Christmaseiland</translation>
+   <translation id="country_CY" qtlid="239818">Cyprus</translation>
+   <translation id="country_CZ" qtlid="239831">Tsjechische Republiek</translation>
+   <translation id="country_DE" qtlid="239844">Duitsland</translation>
+   <translation id="country_DJ" qtlid="187560">Djibouti</translation>
+   <translation id="country_DK" qtlid="239857">Denemarken</translation>
+   <translation id="country_DM" qtlid="239870">Dominica</translation>
+   <translation id="country_DO" qtlid="239883">Dominicaanse Republiek</translation>
+   <translation id="country_DZ" qtlid="239896">Algerije</translation>
+   <translation id="country_EC" qtlid="239909">Ecuador</translation>
+   <translation id="country_EE" qtlid="239922">Estland</translation>
+   <translation id="country_EG" qtlid="239935">Egypte</translation>
+   <translation id="country_EH" qtlid="239948">Westelijke Sahara</translation>
+   <translation id="country_ER" qtlid="239961">Eritrea</translation>
+   <translation id="country_ES" qtlid="239974">Spanje</translation>
+   <translation id="country_ET" qtlid="239987">Ethiopië</translation>
+   <translation id="country_FI" qtlid="240000">Finland</translation>
+   <translation id="country_FJ" qtlid="240013">Fiji</translation>
+   <translation id="country_FK" qtlid="240026">Falkland Eilanden</translation>
+   <translation id="country_FM" qtlid="240039">Federated States Of Micronesia</translation>
+   <translation id="country_FO" qtlid="240052">Faröer Eilanden</translation>
+   <translation id="country_FR" qtlid="29047">Frankrijk</translation>
+   <translation id="country_GA" qtlid="187742">Gabon</translation>
+   <translation id="country_GB" qtlid="240065">Verenigd Koninkrijk</translation>
+   <translation id="country_UK" qtlid="240065">Verenigd Koninkrijk</translation>
+   <translation id="country_GD" qtlid="240078">Grenada</translation>
+   <translation id="country_GE" qtlid="240091">Georgië</translation>
+   <translation id="country_GF" qtlid="240104">Frans-Guyana</translation>
+   <translation id="country_GG" qtlid="240117">Guernsey</translation>
+   <translation id="country_GH" qtlid="187807">Ghana</translation>
+   <translation id="country_GI" qtlid="187820">Gibraltar</translation>
+   <translation id="country_GL" qtlid="240130">Groenland</translation>
+   <translation id="country_GM" qtlid="240143">Gambia</translation>
+   <translation id="country_GN" qtlid="240156">Guinea</translation>
+   <translation id="country_GP" qtlid="187872">Guadeloupe</translation>
+   <translation id="country_GQ" qtlid="240169">Equatoriaal-Guinea</translation>
+   <translation id="country_GR" qtlid="240182">Griekenland</translation>
+   <translation id="country_GT" qtlid="187911">Guatemala</translation>
+   <translation id="country_GU" qtlid="187924">Guam</translation>
+   <translation id="country_GW" qtlid="240195">Guinee-Bissau</translation>
+   <translation id="country_GY" qtlid="187950">Guyana</translation>
+   <translation id="country_HK" qtlid="94099">Hong Kong</translation>
+   <translation id="country_HN" qtlid="187976">Honduras</translation>
+   <translation id="country_HR" qtlid="240208">Kroatië</translation>
+   <translation id="country_HT" qtlid="240221">Haiti</translation>
+   <translation id="country_HU" qtlid="240234">Hongarije</translation>
+   <translation id="country_ID" qtlid="240247">Indonesië</translation>
+   <translation id="country_IE" qtlid="240260">Ierland</translation>
+   <translation id="country_IL" qtlid="240273">Israel</translation>
+   <translation id="country_IM" qtlid="240286">Eiland van Man</translation>
+   <translation id="country_IN" qtlid="240299">India</translation>
+   <translation id="country_IO" qtlid="240312">Brits Indische Oceaan Territorium</translation>
+   <translation id="country_IQ" qtlid="188067">Irak</translation>
+   <translation id="country_IR" qtlid="240325">Islamitische Republiek Iran</translation>
+   <translation id="country_IS" qtlid="240338">IJsland</translation>
+   <translation id="country_IT" qtlid="240351">Italië</translation>
+   <translation id="country_JE" qtlid="188106">Jersey</translation>
+   <translation id="country_JM" qtlid="240364">Jamaica</translation>
+   <translation id="country_JO" qtlid="240377">Jordanië</translation>
+   <translation id="country_JP" qtlid="240390">Japan</translation>
+   <translation id="country_KE" qtlid="188158">Kenya</translation>
+   <translation id="country_KG" qtlid="240403">Kirgizië</translation>
+   <translation id="country_KH" qtlid="240416">Cambodja</translation>
+   <translation id="country_KI" qtlid="188197">Kiribati</translation>
+   <translation id="country_KM" qtlid="240429">Comoren</translation>
+   <translation id="country_KN" qtlid="240442">Saint Kitts en Nevis</translation>
+   <translation id="country_KP" qtlid="240455">Democratische Volksrepubliek Korea</translation>
+   <translation id="country_KR" qtlid="240468">Republiek Korea</translation>
+   <translation id="country_KW" qtlid="240481">Koeweit</translation>
+   <translation id="country_KY" qtlid="240494">Kaaiman Eilanden</translation>
+   <translation id="country_KZ" qtlid="188288">Kazachstan</translation>
+   <translation id="country_LA" qtlid="240507">Lao Democratische Volksrepubliek</translation>
+   <translation id="country_LB" qtlid="240520">Lebanon</translation>
+   <translation id="country_LC" qtlid="240533">Saint Lucia</translation>
+   <translation id="country_LI" qtlid="188340">Liechtenstein</translation>
+   <translation id="country_LK" qtlid="188353">Sri Lanka</translation>
+   <translation id="country_LR" qtlid="240546">Liberia</translation>
+   <translation id="country_LS" qtlid="188379">Lesotho</translation>
+   <translation id="country_LT" qtlid="240559">Litouwen</translation>
+   <translation id="country_LU" qtlid="43474">Luxemburg</translation>
+   <translation id="country_LV" qtlid="240572">Letland</translation>
+   <translation id="country_LY" qtlid="240585">Libië</translation>
+   <translation id="country_MA" qtlid="240598">Marokko</translation>
+   <translation id="country_MC" qtlid="43486">Monaco</translation>
+   <translation id="country_MD" qtlid="240611">Moldavië</translation>
+   <translation id="country_ME" qtlid="240624">Montenegro</translation>
+   <translation id="country_MF" qtlid="240637">Saint-Martin</translation>
+   <translation id="country_MG" qtlid="188457">Madagascar</translation>
+   <translation id="country_MH" qtlid="240650">Marshall Islands</translation>
+   <translation id="country_MK" qtlid="240663">De Voormalige Joegoslavische Republiek Macedonië</translation>
+   <translation id="country_ML" qtlid="188483">Mali</translation>
+   <translation id="country_MM" qtlid="188496">Myanmar</translation>
+   <translation id="country_MN" qtlid="240676">Mongolië</translation>
+   <translation id="country_MO" qtlid="188522">Macao</translation>
+   <translation id="country_MP" qtlid="240689">Noordelijke Marianen</translation>
+   <translation id="country_MQ" qtlid="188548">Martinique</translation>
+   <translation id="country_MR" qtlid="240702">Mauritanië</translation>
+   <translation id="country_MS" qtlid="188574">Montserrat</translation>
+   <translation id="country_MT" qtlid="240715">Malta</translation>
+   <translation id="country_MU" qtlid="240728">Mauritius</translation>
+   <translation id="country_MV" qtlid="188587">De malediven</translation>
+   <translation id="country_MW" qtlid="188600">Malawi</translation>
+   <translation id="country_MX" qtlid="240741">Mexico</translation>
+   <translation id="country_MY" qtlid="240754">Maleisië</translation>
+   <translation id="country_MZ" qtlid="188639">Mozambique</translation>
+   <translation id="country_NA" qtlid="240767">Namibië</translation>
+   <translation id="country_NC" qtlid="240780">Nieuw-Caledonië</translation>
+   <translation id="country_NE" qtlid="188678">Niger</translation>
+   <translation id="country_NF" qtlid="240793">Norfolk Island</translation>
+   <translation id="country_NG" qtlid="240806">Nigeria</translation>
+   <translation id="country_NI" qtlid="188717">Nicaragua</translation>
+   <translation id="country_NL" qtlid="240819">Nederland</translation>
+   <translation id="country_NO" qtlid="240832">Noorwegen</translation>
+   <translation id="country_NP" qtlid="240845">Nepal</translation>
+   <translation id="country_NR" qtlid="188743">Nauru</translation>
+   <translation id="country_NU" qtlid="240858">Niue</translation>
+   <translation id="country_NZ" qtlid="240871">Nieuw Zeeland</translation>
+   <translation id="country_OM" qtlid="188782">Oman</translation>
+   <translation id="country_PA" qtlid="188795">Panama</translation>
+   <translation id="country_PE" qtlid="240884">Peru</translation>
+   <translation id="country_PF" qtlid="240897">Frans-Polynesië</translation>
+   <translation id="country_PG" qtlid="240910">Papoea-Nieuw-Guinea</translation>
+   <translation id="country_PH" qtlid="188847">Filippijnen</translation>
+   <translation id="country_PK" qtlid="188860">Pakistan</translation>
+   <translation id="country_PL" qtlid="240923">Polen</translation>
+   <translation id="country_PM" qtlid="240936">Saint-Pierre en Miquelon</translation>
+   <translation id="country_PR" qtlid="240949">Puerto Rico</translation>
+   <translation id="country_PS" qtlid="240962">Palestijnse Gebieden</translation>
+   <translation id="country_PT" qtlid="40882">Portugal</translation>
+   <translation id="country_PW" qtlid="240975">Palau</translation>
+   <translation id="country_PY" qtlid="188938">Paraguay</translation>
+   <translation id="country_QA" qtlid="188951">Qatar</translation>
+   <translation id="country_RE" qtlid="240988">Réunion</translation>
+   <translation id="country_RO" qtlid="241001">Roemenië</translation>
+   <translation id="country_RS" qtlid="241014">Servië</translation>
+   <translation id="country_RU" qtlid="241027">Russische Federatie</translation>
+   <translation id="country_RW" qtlid="189003">Rwanda</translation>
+   <translation id="country_SA" qtlid="241040">Saoedi-Arabië</translation>
+   <translation id="country_SB" qtlid="241053">Solomon Islands</translation>
+   <translation id="country_SC" qtlid="189042">Seychellen</translation>
+   <translation id="country_SD" qtlid="241066">Soedan</translation>
+   <translation id="country_SE" qtlid="241079">Zweden</translation>
+   <translation id="country_SG" qtlid="241092">Singapore</translation>
+   <translation id="country_SH" qtlid="241105">Sint-Helena, Ascension en Tristan da Cunha</translation>
+   <translation id="country_SI" qtlid="241118">Slovenië</translation>
+   <translation id="country_SJ" qtlid="241131">Svalbard And Jan Mayen</translation>
+   <translation id="country_SK" qtlid="241144">Slowakije</translation>
+   <translation id="country_SL" qtlid="189107">Sierra Leone</translation>
+   <translation id="country_SM" qtlid="241157">San Marino</translation>
+   <translation id="country_SN" qtlid="241170">Senegal</translation>
+   <translation id="country_SO" qtlid="241183">Somalië</translation>
+   <translation id="country_SR" qtlid="189146">Suriname</translation>
+   <translation id="country_SS" qtlid="241196">Zuid-Soedan</translation>
+   <translation id="country_ST" qtlid="241209">São Tomé en Príncipe</translation>
+   <translation id="country_SV" qtlid="189185">El Salvador</translation>
+   <translation id="country_SX" qtlid="241222">Sint Maarten</translation>
+   <translation id="country_SY" qtlid="241235">Syrische Arabische Republiek</translation>
+   <translation id="country_SZ" qtlid="189224">Swaziland</translation>
+   <translation id="country_TC" qtlid="241248">Turks- en Caicoseilanden</translation>
+   <translation id="country_TD" qtlid="241261">Tsjaad</translation>
+   <translation id="country_TG" qtlid="189276">Togo</translation>
+   <translation id="country_TH" qtlid="241274">Thailand</translation>
+   <translation id="country_TJ" qtlid="241287">Tadzjikistan</translation>
+   <translation id="country_TK" qtlid="189315">Tokelau</translation>
+   <translation id="country_TL" qtlid="241300">Oost-Timor</translation>
+   <translation id="country_TM" qtlid="241313">Turkmenistan</translation>
+   <translation id="country_TN" qtlid="241326">Tunesië</translation>
+   <translation id="country_TO" qtlid="189367">Tonga</translation>
+   <translation id="country_TR" qtlid="241339">Turkije</translation>
+   <translation id="country_TT" qtlid="241352">Trinidad en Tobago</translation>
+   <translation id="country_TV" qtlid="189393">Tuvalu</translation>
+   <translation id="country_TW" qtlid="241365">Taiwan</translation>
+   <translation id="country_TZ" qtlid="241378">Tanzania</translation>
+   <translation id="country_UA" qtlid="43774">Oekraïne</translation>
+   <translation id="country_UG" qtlid="241391">Oeganda</translation>
+   <translation id="country_US" qtlid="114390">United States</translation>
+   <translation id="country_UY" qtlid="189458">Uruguay</translation>
+   <translation id="country_UZ" qtlid="241404">Oezbekistan</translation>
+   <translation id="country_VA" qtlid="241417">Vaticaanstad</translation>
+   <translation id="country_VC" qtlid="241430">Saint Vincent en de Grenadines</translation>
+   <translation id="country_VE" qtlid="241443">Bolivariaanse Republiek Venezuela</translation>
+   <translation id="country_VG" qtlid="241456">Virgin Islands (British)</translation>
+   <translation id="country_VI" qtlid="241469">Virgin Islands (US)</translation>
+   <translation id="country_VN" qtlid="189549">Vietnam</translation>
+   <translation id="country_VU" qtlid="189562">Vanuatu</translation>
+   <translation id="country_WF" qtlid="241482">Wallis en Futuna</translation>
+   <translation id="country_WS" qtlid="189588">Samoa</translation>
+   <translation id="country_YE" qtlid="241495">Jemen</translation>
+   <translation id="country_YT" qtlid="189614">Mayotte</translation>
+   <translation id="country_ZA" qtlid="241508">Zuid-Afrika</translation>
+   <translation id="country_ZM" qtlid="241521">Zambia</translation>
+   <translation id="country_ZW" qtlid="189653">Zimbabwe</translation>
+
+   <translation id="region_BHS1" qtlid="261309">Amerika - Oostkust (BHS-1)</translation>
+   <translation id="region_SBG1" qtlid="241547">Frankrijk - Midden-Europa (SBG1)</translation>
+   <translation id="region_GRA1" qtlid="245051">Frankrijk - West-Europa (GRA-1)</translation>
+   <translation id="region_HZ1" qtlid="245064">Hardware Zone (HZ-1)</translation>
+
+   <translation id="ovh_account_cb_expire_alert" qtlid="294763">Uw standaard bankpas vervalt in{{nbDays}} dag(en). Ga naar <a href="{{urlBillingSection}}">het facturatiegedeelte</a> om het te updaten.</translation>
+   <translation id="ovh_account_cb_expired_alert" qtlid="294776">Uw standaard bankpas is verlopen. Ga naar <a href="{{urlBillingSection}}">het facturatiegedeelte</a> om het te updaten.</translation>
+
+   <translation id="message_container_multiple_error" qtlid="404074">De volgende fouten zijn voorgekomen</translation>
+
+   <translation id="common_term_and_contracts" qtlid="404087">Algemene voorwaarden</translation>
+   <translation id="common_term_and_contracts_accept" qtlid="404100">Ik verklaar dat ik de algemene voorwaarden heb gelezen en geaccepteerd. </translation>
+
+   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_exit" qtlid="4670">Sluiten</translation>
+</translations>

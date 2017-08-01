@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_details_permissions_list_edit_btn_back" qtlid="4118">Zpět</translation>
+   <translation id="cda_user_details_permissions_list_edit_title" qtlid="354600">Modifier les permissions</translation>
+   <translation id="cda_user_details_permissions_list_username" qtlid="41782">Jméno</translation>
+
+   <translation id="cda_user_details_permissions_list_label_permission" qtlid="6946">Práva</translation>
+   <translation id="cda_user_details_permissions_list_edit_success" qtlid="354548">Informace byly úspěšně změněny.</translation>
+
+   <translation id="cda_user_details_permissions_list_type_read" qtlid="6958">Čtení</translation>
+   <translation id="cda_user_details_permissions_list_type_write" qtlid="301565">Zápis</translation>
+   <translation id="cda_user_details_permissions_list_type_execute" qtlid="354613">Exécution</translation>
+   <translation id="cda_user_details_permissions_list_type_classRead" qtlid="354626">Classread</translation>
+   <translation id="cda_user_details_permissions_list_type_classWrite" qtlid="354639">Classwrite</translation>
+</translations>

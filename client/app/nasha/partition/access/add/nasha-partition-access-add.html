@@ -1,0 +1,73 @@
+<div class="nasha nasha-partition-access-add">
+    <div class="modal-header">
+        <h3 class="modal-title" data-translate="nasha_access_action_add"></h3>
+    </div>
+
+    <form class="form" role="form" data-ng-submit="NashaPartitionAccessAddCtrl.addAccess()" name="nashaPartitionAccessAddForm">
+        <div class="modal-body loading-spinner" data-ng-if="NashaPartitionAccessAddCtrl.loading">
+            <spinner></spinner>
+        </div>
+        <div class="modal-body" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
+            <div class="bottom-space-m12">
+                <oui-message type="info" message="{{ :: 'nasha_partitions_access_notice' | translate }}"></oui-message>
+            </div>
+            <div class="form-group">
+                <label class="nasha-partition-add-title" data-translate="nasha_access_action_add_message" for="selectAccess"></label>
+                <cloud-auto-complete data-id="selectAccess"
+                                     data-ng-model="NashaPartitionAccessAddCtrl.data.accessToAdd"
+                                     data-ng-disabled="NashaPartitionAccessAddCtrl.loading"
+                                     data-options="NashaPartitionAccessAddCtrl.data.accessAvailable"
+                                     data-group-by="description"
+                                     data-order-by="['!!description' ,'description', 'ip']"
+                                     data-display-property="ip"
+                                     data-group-description="{{ 'nasha_access_action_add_services' | translate }}"
+                                     data-placeholder="{{ 'nasha_access_action_add_placeholder' | translate }}"></cloud-auto-complete>
+            </div>
+            <div class="form-group top-space-m20">
+                <strong class="permissions" data-translate="nasha_partitions_access_permissions"></strong>
+
+                <div class="nasha-warning bottom-space-p8 top-space-p8 left-space-p12 right-space-p12 top-space-m4 bottom-space-m4"
+                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'">
+                    <img src="assets/images/icones/warning.svg" class="nasha-warning-icon" />
+                    <p class="nasha-warning-text left-space-m12 bottom-space-m0" data-translate="nasha_partitions_access_permissions_warning_cifs"></p>
+                </div>
+
+                <div class="radio">
+                    <label class="protocols-radio top-space-m4">
+                        <input type="radio"
+                               name="permission"
+                               class="permissions-labels right-space-m4"
+                               data-ng-model="NashaPartitionAccessAddCtrl.data.type"
+                               data-ng-value="'readwrite'" />
+                        {{ 'nasha_partitions_access_readwrite' | translate }}
+                    </label>
+                </div>
+                <div class="radio"
+                     data-ng-class="{ disabled: NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS' }">
+                    <label class="permissions-labels top-space-m4">
+                        <input type="radio"
+                               name="permission"
+                               class="right-space-m4"
+                               data-ng-model="NashaPartitionAccessAddCtrl.data.type"
+                               data-ng-value="'readonly'"
+                               data-ng-disabled="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'" />
+                        {{ 'nasha_partitions_access_readonly' | translate }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit"
+                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
+                    data-ng-disabled="NashaPartitionAccessAddCtrl.loading || !NashaPartitionAccessAddCtrl.data.type || !NashaPartitionAccessAddCtrl.data.accessToAdd">
+                <span data-translate="common_confirm"></span>
+            </button>
+            <button type="reset" class="btn btn-default pull-left"
+                    data-ng-click="NashaPartitionAccessAddCtrl.dismiss()">
+                <i class="fa fa-times"></i>
+                <span data-translate="common_cancel"></span>
+            </button>
+        </div>
+    </form>
+</div>

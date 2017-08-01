@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">No ha seleccionado ninguna forma de pago por defecto. Acceda a la sección <a href="{{link}}" class="alert-link">«Facturación»</a> para seleccionar o añadir una forma de pago por defecto.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">¡Su forma de pago por defecto ha expirado! Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para registrar una nueva forma de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">Su forma de pago por defecto expirará en menos de 30 días. Acceda a la sección <a href="{{link}}" class="alert-link">«Facturación»</a> para registrar una nueva forma de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">Su forma de pago por defecto (cuenta bancaria) todavía no ha sido validada. Acceda a la sección <a href="{{link}}" class="alert-link">«Facturación»</a> para más información.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">¡Se ha registrado un error en su forma de pago por defecto (tarjeta bancaria)! Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">¡Se ha registrado un error en su forma de pago por defecto (PayPal)! Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Tiene <strong>{{count}}</strong> cuenta(s) bancaria(s) pendiente de validación. Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para más información.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Se ha registrado un error en <strong>{{count}}</strong> tarjeta(s) bancaria(s). Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Se ha registrado un error en <strong>{{count}}</strong> cuenta(s) PayPal. Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para realizar las comprobaciones necesarias y/o registrar una nueva forma de pago.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Su cuenta OVH tiene un saldo negativo de <strong>{{value}}</strong> a fecha de {{date | date:'medium'}}. Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para regularizar la situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Tiene un saldo pendiente de <strong>{{value}}</strong>. Acceda a <a href="{{link}}" class="alert-link">«Facturación»</a> para regularizar la situación.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Tiene un saldo negativo de <strong>{{ dueAmount }}</strong> (incluido un importe de {{ unmaturedAmount }} no vencido). Acceda a la sección <a href="#/billing/statements" class="alert-link">«Facturación»</a> para regularizar su situación.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Su cuenta OVH ha alcanzado el umbral que usted había establecido. Para más información, acceda a <a href="{{link}}" class="alert-link">«Facturación»</a>.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Tiene <strong>{{count}}</strong> pedido(s) en espera de documentación pendiente. Acceda a <a href="{{link}}" class="alert-link">«Mis pedidos»</a> para actualizar la documentación.</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Tiene <strong>{{count}}</strong> contrato(s) pendiente(s) de validación.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Tiene <strong>{{count}}</strong> solicitud(es) de cambio de contacto.</translation>
+
+</translations>

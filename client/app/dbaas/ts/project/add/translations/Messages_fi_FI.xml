@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpa_title" qtlid="300720">Uuden PaaS Time Series -projektin luominen</translation>
+   <translation id="dtpa_order_expl1" qtlid="300733">PaaS Time Series on saatavilla tilauksesta riippuen ja käyttöön perustuvalla laskutuksella.</translation>
+   <translation id="dtpa_go_to_order" qtlid="158851">Siirry tilaukseen</translation>
+</translations>

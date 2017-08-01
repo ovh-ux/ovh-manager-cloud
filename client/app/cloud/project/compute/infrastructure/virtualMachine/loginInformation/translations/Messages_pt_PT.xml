@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_login_information_title" qtlid="250927">Informações de ligação</translation>
+   <translation id="cpcivm_login_information_instance_title" qtlid="401471">Ligação à instância</translation>
+   <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Num terminal introduza o seguinte comando:<br/><code>ssh {{user}}@{{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Lors de votre première connexion, vous devez utiliser la console VNC pour finaliser la configuration de Windows. Ensuite, utilisez votre client RDP favori, par exemple via un poste Linux&#160;:<br/><code>rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_login_information_application_title" qtlid="401588">Ligação às aplicações</translation>
+   <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Tipo</translation>
+   <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>
+   <translation id="cpcivm_login_information_application_label_login" qtlid="41062">Login</translation>
+   <translation id="cpcivm_login_information_application_label_password" qtlid="2270">Password</translation>
+   <translation id="cpcivm_login_information_go_to_console" qtlid="401601">Aceder à consola VNC</translation>
+   <translation id="cpcivm_login_information_application_readonly" qtlid="401614">A sua conta não possui os privilégios necessários para aceder às informações de ligação às aplicações. Contacte o seu administrador para poder ganhar acesso.</translation>
+</translations>

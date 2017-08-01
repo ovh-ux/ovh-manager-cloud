@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_home_details_title" qtlid="37527">Dettagli</translation>
+   <translation id="cda_home_health_title" qtlid="28519">Salute</translation>
+   <translation id="cda_home_space_title" qtlid="354392">Utilizzo dello spazio</translation>
+   <translation id="cda_home_tasks_title" qtlid="354405">Task attivi</translation>
+
+   <translation id="cda_detail_billing_state" qtlid="354418">Stato della fatturazione</translation>
+   <translation id="cda_detail_status_label_CREATING" qtlid="26227">In creazione</translation>
+   <translation id="cda_detail_status_label_INSTALLED" qtlid="108913">Pronta</translation>
+   <translation id="cda_detail_status_label_DELETING" qtlid="133929">In corso di eliminazione</translation>
+   <translation id="cda_detail_status_label_DELETED" qtlid="134514">Annullato</translation>
+   <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Operazione in corso di esecuzione</translation>
+
+   <translation id="cda_detail_status" qtlid="26443">Stato</translation>
+   <translation id="cda_detail_crush_tunables" qtlid="354431">CRUSH tunable</translation>
+   <translation id="cda_detail_service_name" qtlid="3818">Nome</translation>
+   <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
+   <translation id="cda_detail_size" qtlid="7726">Dimensione</translation>
+   <translation id="cda_detail_region" qtlid="32434">Regione</translation>
+   <translation id="cda_detail_monitor" qtlid="354444">Monitor</translation>
+   <translation id="cda_detail_create_date" qtlid="26419">Data di creazione</translation>
+   <translation id="cda_detail_update_date" qtlid="293905">Data di modifica</translation>
+   <translation id="cda_detail_version" qtlid="34210">Versione</translation>
+
+   <translation id="cda_health_status" qtlid="159098">Status del server</translation>
+   <translation id="cda_health_healthy" qtlid="354457">Salute</translation>
+   <translation id="cda_health_healthy_true" qtlid="354470">Vero</translation>
+   <translation id="cda_health_healthy_false" qtlid="354483">Falso</translation>
+
+   <translation id="cda_space_usage_used" qtlid="76758">Spazio utilizzato</translation>
+   <translation id="cda_space_usage_available" qtlid="196608">Spazio disponibile</translation>
+
+   <translation id="cda_task_table_col_id" qtlid="8194">ID</translation>
+   <translation id="cda_task_table_col_name" qtlid="3818">Nome</translation>
+   <translation id="cda_task_table_col_processing" qtlid="354496">Progressione</translation>
+   <translation id="cda_task_table_empty" qtlid="354509">Nessun task attivo.</translation>
+
+   <translation id="cda_detail_edit_title" qtlid="354522">Modifica le informazioni del cluster</translation>
+   <translation id="cda_detail_edit_label" qtlid="3818">Nome</translation>
+   <translation id="cda_detail_edit_label_required" qtlid="354288">È necessario inserire il nome.</translation>
+   <translation id="cda_detail_edit_label_maxlength" qtlid="354314">Il nome deve avere una lunghezza massima di {{ maxlength }} caratteri.</translation>
+   <translation id="cda_detail_edit_crushTunable" qtlid="354431">CRUSH tunable</translation>
+   <translation id="cda_detail_edit_crushTunable_required" qtlid="354535">È necessario completare il campo CRUSH tunable</translation>
+   <translation id="cda_detail_edit_success" qtlid="354548">Le informazioni sono state modificate correttamente.</translation>
+
+   <translation id="cda_detail_info_no_user" qtlid="400873">Per utilizzare il tuo cluster è necessario avere almeno un utente.</translation>
+   <translation id="cda_detail_info_create_user" qtlid="269721">Crea un nuovo utente</translation>
+</translations>

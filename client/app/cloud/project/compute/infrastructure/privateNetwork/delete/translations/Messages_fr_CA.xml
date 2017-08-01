@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_private_network_delete_title" qtlid="405538">Suppression d'un réseau privé</translation>
+   <translation id="cpci_private_network_delete_confirm" qtlid="405551">Êtes-vous sûr de vouloir supprimer ce réseau privé ?</translation>
+   <translation id="cpci_private_network_delete_success" qtlid="405564">Le réseau privé a été supprimé avec succès</translation>
+   <translation id="cpci_private_network_delete_error" qtlid="405577">Une erreur est survenue lors de la suppression du réseau privé</translation>
+</translations>

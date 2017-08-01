@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_tab_infra" qtlid="246910">Infrastructure.</translation>
+   <translation id="cpc_tab_snapshot" qtlid="170343">Backups</translation>
+   <translation id="cpc_tab_volume" qtlid="246923">Additional drives.</translation>
+   <translation id="cpc_tab_ssh" qtlid="104830">SSH keys</translation>
+   <translation id="cpc_tab_project" qtlid="261283">Project management and consolidation</translation>
+</translations>

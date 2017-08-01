@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_monthly_title" qtlid="269318">Overschakelen op een maandelijks pakket &#13;
+</translation>
+   <translation id="cpcivm_monthly_info" qtlid="269331">Betaal 50% minder voor deze machine wanneer u overschakelt op een maandelijks (prepaid)pakket!&#13;
+</translation>
+   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Voor de resterende dagen van de maand zal automatisch een pro rata rekening gegenereerd worden. &#13;
+</translation>
+   <translation id="cpcivm_monthly_success" qtlid="269357">De server zal binnen enkele ogenblikken aan het maandelijkse pakket worden toegevoegd. &#13;
+</translation>
+   <translation id="cpcivm_monthly_fail" qtlid="269370">Er is een fout opgetreden bij het overschakelen op maandelijkse betaling. &#13;
+</translation>
+</translations>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">Nessun metodo di pagamento predefinito è stato selezionato. Accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a> per selezionarne uno o aggiungere un nuovo metodo di pagamento.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">La tua modalità di pagamento predefinita è scaduta! Per aggiungerne una nuova, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">La tua modalità di pagamento predefinita scade tra meno di 30 giorni. Per impostarne una nuova, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">La tua modalità di pagamento predefinita (conto bancario) è in attesa di convalida. Per maggiori informazioni, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">La tua modalità di pagamento predefinita (carta bancaria) è in errore! Per effettuare una verifica o aggiungere un nuovo metodo di pagamento, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">La tua modalità di pagamento predefinita (PayPal) è in errore! Per effettuare una verifica o aggiungere un nuovo metodo di pagamento, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Sono presenti <strong>{{count}}</strong> conti bancari in attesa di convalida. Per maggiori informazioni, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409"><strong>{{count}}</strong> carte bancarie risultano in errore. Per effettuare una verifica o aggiungere un nuovo metodo di pagamento, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422"><strong>{{count}}</strong> conti PayPal risultano in errore. Per effettuare una verifica o aggiungere un nuovo metodo di pagamento, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Il tuo account OVH ha un saldo negativo di <strong>{{value}}</strong> al {{date | date:'medium'}}. Accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Hai un saldo negativo di <strong>{{value}}</strong>. Accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Il tuo account ha un saldo negativo di <strong>{{ dueAmount }}</strong> (di cui un importo di {{ unmaturedAmount }} non scaduto). Accedi alla <a href="#/billing/statements" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Il tuo conto OVH ha raggiunto la soglia massima definita. Per maggiori informazioni, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Sono presenti <strong>{{count}}</strong> ordini in attesa per cui è necessario fornire alcuni documenti. Per aggiornarli, accedi alla <a href="{{link}}" class="alert-link">sezione "I tuoi ordini"</a>.</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">È necessario convalidare <strong>{{count}}</strong> contratti.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Sono presenti <strong>{{count}}</strong> richieste di modifica di contatto.</translation>
+
+</translations>

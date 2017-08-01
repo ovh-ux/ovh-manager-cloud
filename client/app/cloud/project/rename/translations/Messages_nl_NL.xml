@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_rename_loading_error" qtlid="298584">Er is een fout opgetreden tijdens het laden van de beschrijving. </translation>
+   <translation id="cloud_project_rename_error" qtlid="255155">Error. Niet mogelijk om de beschrijving te wijzigen.</translation>
+   <translation id="cpb_details_project_delete" qtlid="282328">Verwijder dit project</translation>
+   <translation id="cpb_details_project_rename_reset" qtlid="37863">Annuleren</translation>
+   <translation id="cpb_details_project_rename_ok" qtlid="8506">Opslaan</translation>
+   <translation id="cpb_details_project_rename" qtlid="70001">Wijzigen</translation>
+   <translation id="cpb_details_project_description" qtlid="364420">Projectbeschrijving</translation>
+</translations>

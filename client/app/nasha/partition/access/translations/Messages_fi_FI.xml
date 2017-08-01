@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_access_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_access_action_add" qtlid="153857">Lisää pääsyoikeus</translation>
+   <translation id="nasha_access_action_add_message" qtlid="153870">Lisää IP-osoite tai RIPE-osoiteavaruus</translation>
+   <translation id="nasha_access_action_add_services" qtlid="369256">IP-osoitteet</translation>
+   <translation id="nasha_access_action_add_placeholder" qtlid="369269">Syötä IP-osoite tai valitse yksi omista palveluista</translation>
+   <translation id="nasha_access_back_to_partitions" qtlid="344649">Paluu osiojakoihin</translation>
+   <translation id="nasha_access_partition" qtlid="344662"><strong>Osiojako: </strong>{{partitionName}}</translation>
+   <translation id="nasha_partition_access_no_data" qtlid="172449">Pääsyoikeus ei käytettävissä</translation>
+   <translation id="nasha_partitions_access_no_data_error" qtlid="243682">Pääsyoikeuksia ei pystytä näyttämään.</translation>
+   <translation id="nasha_partitions_access_loading_error" qtlid="344675">Tapahtui virhe tietojen lataamisen yhteydessä.</translation>
+   <translation id="nasha_access_action_add_success" qtlid="344688">Yhteys {{accessIp}} luodaan hetken kuluttua.</translation>
+   <translation id="nasha_access_action_add_failure" qtlid="344701">Tapahtui virhe {{accessIp}} -yhteyden luomisen yhteydessä.</translation>
+   <translation id="nasha_access_action_delete_title" qtlid="153922">Poista pääsyoikeus</translation>
+   <translation id="nasha_access_action_delete_confirmation" qtlid="344714">Haluatko varmasti poistaa {{accessIp}} -yhteyden?</translation>
+   <translation id="nasha_access_action_delete_success" qtlid="344727">Yhteyden {{accessIp}} poisto tapahtuu hetken kuluttua. </translation>
+   <translation id="nasha_access_action_delete_failure" qtlid="344740">Tapahtui virhe {{accessIp}} -yhteyden poistamisen yhteydessä.</translation>
+   <translation id="nasha_access_action_failure" qtlid="344753">Tapahtui virhe yhteyden muokkaamisen yhteydessä.</translation>
+   <translation id="nasha_partitions_access_readonly" qtlid="17333">Vain luku</translation>
+   <translation id="nasha_partitions_access_readwrite" qtlid="215754">Luku/Kirjoitus</translation>
+   <translation id="nasha_partitions_access_permissions" qtlid="6946">Oikeudet</translation>
+   <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">Pelkkä lukutila on saatavilla ainoastaan NFS:ssä.</translation>
+   <translation id="nasha_partitions_access_notice" qtlid="372154">Tällä hetkellä NAS-HA on käytettävissä ainoastaan OVH:n IP-osoitteilla (Dedikoidut palvelimet/ VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi).</translation>
+</translations>

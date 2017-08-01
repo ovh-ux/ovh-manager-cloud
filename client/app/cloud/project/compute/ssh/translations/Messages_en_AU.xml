@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Here you can add SSH keys so that you can access your servers. </translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Name</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Key</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Loading list of SSH keys...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Oops! Unable to retrieve the list of your SSH keys.</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH uses SSH to secure encrypted data communications between servers. </translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">There are SSH clients for each operating system. See the <a href="{{ createUrl }}" target="_blank">guide on creating SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> for more information.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Please note that you can also <a href="{{ addUrl }}" target="_blank">configure additional SSH keys<i class="fa fa-external-link" aria-hidden="true"></i></a> on your instance in order to provide access to others <a href="{{ changeUrl }}" target="_blank">replacing your lost SSH key pair<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Add a key</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Stop adding this key</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Add this key</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Your key is now available.</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Give it a name</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Enter your 4096 byte key </translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Oops! Unable to add this key.</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">This name is already used for another SSH key.</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">This key is no longer available.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Oops. Unable to delete this key!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Search</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Do not delete this key</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Confirm deletion</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">You have not yet added an SSH key.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Click on "Add a key" to fix it!</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">The name must not exceed 25 characters.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">You need to name your key.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">You forgot to enter your 4096 byte key.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">Your key name may only contain figures, lower-case and/or upper-case letters, and hyphens ( - ), underscores ( _ ) and spaces.</translation>
+
+
+</translations>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdq_quota_protect_explain" qtlid="301227">PaaS Time Series resursų suvartojimo kontrolės tikslais jūsų projektui suteiktas ribotas resursų kiekis.  </translation>
+   <translation id="dtpdq_quota_protect_more" qtlid="301240">Jei reikia daugiau resursų, jūs galite pateikti tokią užklausą spausdami mygtuką žemiau.</translation>
+   <translation id="dtpdq_quota_protect_more_btn" qtlid="251291">Padidinti mano apribojimus</translation>
+
+   <translation id="dtpdq_quota_loading_error" qtlid="301253">Atsiprašome, įvyko klaida įkeliant kvotas.</translation>
+
+   <translation id="dtpdq_table_title" qtlid="297202">Kvotos</translation>
+
+   <translation id="dtpdq_thead_description" qtlid="301266">Resursas</translation>
+   <translation id="dtpdq_thead_pourcent" qtlid="30382">Naudojimas</translation>
+
+   <translation id="dtpdq_thead_mads" qtlid="301279">Galiojančios laiko serijos per mėnesį</translation>
+   <translation id="dtpdq_thead_ddp" qtlid="301292">Pranešimai parašyti per dieną</translation>
+
+   <translation id="dtpdq_increase_support" qtlid="301305">Norėdami padidinti savo projekto limitą susisiekite su pagalba.</translation>
+</translations>

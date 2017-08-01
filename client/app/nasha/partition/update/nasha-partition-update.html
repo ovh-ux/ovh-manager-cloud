@@ -1,0 +1,43 @@
+<div class="nasha-partition-update">
+    <div class="modal-header">
+        <h3 class="modal-title" data-translate="nasha_partitions_action_update"></h3>
+    </div>
+
+    <form data-ng-submit="NashaPartitionUpdateCtrl.updatePartition()" name="nashaPartitionUpdateForm">
+        <div class="modal-body">
+            <div class="top-space-m12 bottom-space-m12">
+                <strong data-translate="nasha_partitions_name"></strong>
+                <p data-ng-bind="NashaPartitionUpdateCtrl.data.partition.partitionName"></p>
+            </div>
+            <div class="form-group">
+                <label data-translate="nasha_partitions_size_in_Gb" for="inputPartitionSize"></label>
+                <span data-translate="nasha_partitions_minimum_size"></span>
+                <input type="number"
+                           class="input-medium form-control bottom-space-m12 partition-size"
+                           id="inputPartitionSize"
+                           min="10"
+                           max="{{NashaPartitionUpdateCtrl.data.nasha.zpoolSize}}"
+                           placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
+                           data-ng-change="NashaPartitionAddCtrl.checkSize()"
+                           data-ng-model="NashaPartitionUpdateCtrl.data.newSize"/>
+            </div>
+            <div class="top-space-m12 bottom-space-m12">
+                <strong data-translate="nasha_partitions_protocol"></strong>
+                <p data-ng-bind="'nasha_partitions_protocol_' + NashaPartitionUpdateCtrl.data.partition.protocol | translate"></p>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit"
+                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
+                    data-ng-disabled="!NashaPartitionUpdateCtrl.isSizeChanged() || !NashaPartitionUpdateCtrl.data.newSize || NashaPartitionUpdateCtrl.data.newSize < 10 || NashaPartitionUpdateCtrl.data.newSize > NashaPartitionUpdateCtrl.data.nasha.zpoolSize || NashaPartitionUpdateCtrl.loading">
+                <span data-translate="common_modify"></span>
+            </button>
+            <button type="reset" class="btn btn-default pull-left"
+                    data-ng-click="NashaPartitionUpdateCtrl.dismiss()">
+                <i class="fa fa-times"></i>
+                <span data-translate="common_cancel"></span>
+            </button>
+        </div>
+    </form>
+</div>

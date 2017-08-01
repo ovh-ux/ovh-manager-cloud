@@ -1,0 +1,31 @@
+<section class="cda-modal">
+    <header class="modal-header">
+        <h4 class="h3" data-translate="cda_pool_delete_title"></h4>
+    </header>
+    <div class="modal-body">
+        <p>
+            <span class="bold" data-translate="cda_pool_delete_poolname_label"></span>
+            <span data-ng-bind="CdaPoolDeleteCtrl.pool.name"></span>
+        </p>
+        <p data-translate="cda_pool_delete_confirm"></p>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="btn btn-primary pull-right"
+                title="{{ ::'delete' | translate }}"
+                data-ng-click="CdaPoolDeleteCtrl.deletePool()"
+                data-ng-disabled="CdaPoolDeleteCtrl.saving">
+            <span data-translate="delete"></span>
+            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaPoolDeleteCtrl.saving"></spinner>
+        </button>
+        <button type="button"
+                class="btn btn-default pull-right right-space-m16"
+                title="{{ ::'common_cancel' | translate }}"
+                data-ng-click="CdaPoolDeleteCtrl.closeModal()"
+                data-ng-disabled="CdaPoolDeleteCtrl.saving">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+</section>

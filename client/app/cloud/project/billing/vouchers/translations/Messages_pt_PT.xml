@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Ativar um voucher</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Adquirir um crédito cloud</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Aquando da emissão de uma nova fatura, os vouchers válidos para os produtos associados serão utilizados antes do cálculo do pagamento e do débito no seu método de pagamento.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">A cada emissão da fatura, o montante devido é debitado do seu crédito Cloud (em baixo),e depois sucessivamente da sua conta Digital LaunchPad e depois da sua conta fidelidade. O saldo que ficar em dívida será pago com a ajuda do seu método de pagamento registado (os detalhes dos 3 últimos métodos de pagamento está disponível na secção "Faturação" do seu Espaço Cliente).</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Nenhum voucher encontrado.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">O seu voucher</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Adicionar o meu voucher</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Oops, não conseguimos carregar a lista de vouchers.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Não foi possível apresentar a lista de vouchers.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Fatura n° <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Voucher associado</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nome</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Valor inicial</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Crédito actual</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Crédito que será utilizado automaticamente nas suas próximas faturas</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Data de ativação</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Data de validade</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Produtos elegíveis</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Todos</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Crédito Cloud</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">O voucher foi adicionado com sucesso.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Oops, não conseguimos adicionar este voucher. Tente mais tarde.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Este voucher já não é válido ou já foi utilizado.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Este voucher não é válido.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">O crédito cloud não é transferível ou reembolsável. Não tem qualquer valor monetário e todo o crédito não utilizado durante 13 meses será perdido.</translation>
+
+</translations>

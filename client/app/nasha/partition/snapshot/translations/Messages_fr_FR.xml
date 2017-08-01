@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Une erreur est survenue lors de la récupération des snapshots.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">La modification des fréquences de snapshot sera effective dans quelques instants.</translation>
+   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Une erreur est survenue lors de la modifications des fréquences de snapshot.</translation>
+   <translation id="nasha_snapshot_of" qtlid="344922">Snapshot de la partition {{partitionName}}</translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Fréquences des snapshots</translation>
+   <translation id="nasha_snapshot_day-1" qtlid="154091">Tous les jours</translation>
+   <translation id="nasha_snapshot_day-2" qtlid="154104">Tous les 2 jours</translation>
+   <translation id="nasha_snapshot_day-3" qtlid="154117">Tous les 3 jours</translation>
+   <translation id="nasha_snapshot_day-7" qtlid="8806">Hebdomadaire</translation>
+   <translation id="nasha_snapshot_hour-1" qtlid="8782">Toutes les heures</translation>
+   <translation id="nasha_snapshot_hour-6" qtlid="154130">Toutes les 6 heures</translation>
+   <translation id="nasha_snapshot_informations" qtlid="344948">Un snapshot est un cliché instantané. Il enregistre l'état de votre NAS-HA au moment-même de la prise du snapshot.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Les snapshots utilisent de l'espace sur votre partition pour fonctionner correctement. Aucun historique des snapshots n'est enregistré: pour une même fréquence, le dernier snapshot pris écrase le précédent.</translation>
+</translations>

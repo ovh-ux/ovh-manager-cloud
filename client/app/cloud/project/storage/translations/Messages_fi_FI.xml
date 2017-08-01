@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_tab_storage" qtlid="233733">Storage</translation>
+   <translation id="storage_name" qtlid="3818">Nimi</translation>
+   <translation id="storage_type" qtlid="2642">Tyyppi</translation>
+   <translation id="storage_actions" qtlid="72809">Toiminnot</translation>
+   <translation id="storage_region" qtlid="32434">Alue</translation>
+   <translation id="storage_nb_files" qtlid="135853">Kohteiden määrä</translation>
+   <translation id="storage_use_type" qtlid="242080">Säilön tyyppi</translation>
+   <translation id="storage_use_type_public" qtlid="242093">Julkinen</translation>
+   <translation id="storage_use_type_private" qtlid="242106">Private</translation>
+   <translation id="storage_no_storage" qtlid="242119">Voit luoda säilön tiedostojen tallentamista varten.</translation>
+   <translation id="storage_add_more" qtlid="295803">Luodaksesi säilön klikkaa <a href="#/add?type=storage">"Lisää"</a>.</translation>
+   <translation id="storage_no_storage_title" qtlid="242145">Ei säilöjä</translation>
+   <translation id="storage_no_files_title" qtlid="242158">Tyhjä säilö</translation>
+   <translation id="storage_no_files" qtlid="242171">Voit lisätä säilojä hallintapaneelin tai OpenStackin APIn kautta</translation>
+   <translation id="storage_title" qtlid="367670">Omat säilöt</translation>
+   <translation id="storage_title_number" qtlid="242184">Ei säilöjä</translation>
+   <translation id="storage_title_number_0" qtlid="242184">Ei säilöjä</translation>
+   <translation id="storage_title_number_1" qtlid="242197">1 säilö</translation>
+   <translation id="storage_title_number_other" qtlid="242210">{{count}} säilöä</translation>
+   <translation id="storage_file_name" qtlid="242223">Tiedoston nimi</translation>
+   <translation id="storage_last_modify" qtlid="92380">Viimeisin muutos</translation>
+   <translation id="storage_file_type" qtlid="2642">Tyyppi</translation>
+   <translation id="storage_file_region" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="storage_size" qtlid="7726">Koko</translation>
+   <translation id="storage_delete_button" qtlid="2414">Poista</translation>
+   <translation id="storage_delete_pending" qtlid="146645">Poistetaan…</translation>
+
+   <translation id="storage_modal_delete_storage_title" qtlid="242236">Poista säilö</translation>
+   <translation id="storage_modal_delete_object_storage_title" qtlid="242249">Poista Object</translation>
+   <translation id="storage_modal_delete_storage" qtlid="295816">Haluatko poistaa <b>{{name}}</b>-säilön? Toimenpide voi olla pitkä.</translation>
+   <translation id="storage_modal_delete_storages" qtlid="369165">Haluatko poistaa <b>{{name}}</b>-säilöt? Toimenpide voi olla pitkä.</translation>
+   <translation id="storage_modal_delete_object_storage" qtlid="295829">Haluatko poistaa objektin <b>{{name}}</b>?</translation>
+   <translation id="storage_delete_success" qtlid="242288">Säilö poistettu</translation>
+   <translation id="storage_delete_error" qtlid="376323">Huops, säilön poistaminen ei onnistu.</translation>
+   <translation id="storage_add_button" qtlid="242314">Luo säilö</translation>
+   <translation id="storage_add_button_return" qtlid="4118">Takaisin</translation>
+
+   <translation id="storage_load_error" qtlid="262618">Tapahtui virhe säilöjen listaamisen aikana.</translation>
+   <translation id="storage_search" qtlid="37659">Haku</translation>
+   <translation id="storage_search_not_found" qtlid="284607">Yksikään säilö ei vastaa hakua. </translation>
+
+   <translation id="storage_object_upload_error" qtlid="376336">Hups, tietojen siirrossa tapahtui virhe.</translation>
+   <translation id="storage_object_delete_error" qtlid="376349">Hups, tietojen poistamisessa tapahtui virhe. </translation>
+
+   <translation id="storage_selected_count" qtlid="367540">valittuna {{count}}</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Oppaat</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Kaikki OVH:n ohjeet</translation>
+
+</translations>

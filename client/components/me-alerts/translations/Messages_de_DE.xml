@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">Es wurde kein Standard-Zahlungsmittel ausgewählt. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um ein Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">Ihr hinterlegtes Zahlungsmittel ist abgelaufen. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">Ihr hinterlegtes Zahlungsmittel wird in weniger als 30 Tagen ablaufen. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">Ihr hinterlegtes Zahlungsmittel (Bankkonto) ist derzeit im Validierungsprozess. Für weitere Informationen gehen Sie bitte in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">Ihr hinterlegtes Zahlungsmittel (Kreditkarte) führt zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">Ihr hinterlegtes Zahlungsmittel (PayPal) führt zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Derzeit ist/sind <strong>{{count}}</strong> Bankkonto(s) im Validierungsprozess. Für weitere Informationen gehen Sie bitte in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Derzeit führt/führen <strong>{{count}}</strong> Kreditkarte(n) zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Derzeit führt/führen <strong>{{count}}</strong> hinterlegte(r) PayPal-Account(s) zu einer Fehlermeldung. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die Angaben zu überprüfen und/oder ein neues Zahlungsmittel Ihrer Wahl zu hinterlegen. </translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Ihr OVH-Konto weist am {{date | date:'medium'}} ein Soll von <strong>{{value}}</strong> auf. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die ausstehenden Beträge zu begleichen. </translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Sie sind derzeit mit <strong>{{value}}</strong> im Minus. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>, um die ausstehenden Beträge zu begleichen. </translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Ihr OVH Konto hat den von Ihnen festgelegten Grenzwert erreicht. Für weitere Informationen gehen Sie bitte in den Bereich <a href="{{link}}" class="alert-link">Abrechnung</a>. </translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Derzeit steht/stehen <strong>{{count}}</strong> Bestellung(en) aus, für deren weitere Bearbeitung wir noch Dokumente benötigen. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">"Meine Bestellungen"</a>, um fehlende Angaben zu ergänzen. </translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Sie müssen noch <strong>{{count}}</strong> Verträge validieren. </translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Sie haben <strong>{{count}}</strong> Anfrage(n) bezüglich einer Kontaktänderung. </translation>
+
+</translations>

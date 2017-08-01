@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcv_snapshot_add_title" qtlid="273661">Tworzenie kopii zapasowej snapshot woluminu</translation>
+   <translation id="cpcv_snapshot_choose_name" qtlid="246819">Wpisz nazwę kopii zapasowej snapshot:</translation>
+   <translation id="cpcv_snapshot_name" qtlid="246520">Nazwa kopii zapasowej snapshot</translation>
+   <translation id="cpcv_snapshot_confirm" qtlid="246858">Uruchom kopię zapasową snapshot.</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} netto/GB/m-c)</translation>
+   <translation id="cpcv_snapshot_name_error" qtlid="273687">Nadaj kopii zapasowej snapshot prawidłową nazwę.</translation>
+   <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Wybierz krótszą nazwę dla kopii zapasowej snapshot.</translation>
+   <translation id="cpcv_snapshot_creation_info" qtlid="263311">Trwa tworzenie kopii zapasowej snapshot...</translation>
+   <translation id="cpcv_snapshot_creation_error" qtlid="273713">Wystąpił błąd podczas wykonywania kopii zapasowej snapshot woluminu.</translation>
+   <translation id="cpcv_snapshot_error" qtlid="273726">Wystąpił błąd podczas pobierania informacji na temat kopii zapasowej snapshot. Spróbuj ponownie później.</translation>
+   <translation id="cpcv_snapshot_attach_warning" qtlid="273739">Twój dysk jest aktualnie przypisany do instancji. W celu zapewnienia integralności danych, zalecamy odłączenie tego dysku przed wykonaniem kopii zapasowej snapshot.</translation>
+</translations>

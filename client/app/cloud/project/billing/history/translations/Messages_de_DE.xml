@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbh_current_month" qtlid="364004">Rechnungen {{month}} {{year}} </translation>
+   <translation id="cpbh_next_month" qtlid="364017">Monat vor </translation>
+   <translation id="cpbh_previous_month" qtlid="364030">Monat zurück </translation>
+</translations>

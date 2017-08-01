@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_login_information_title" qtlid="250927">Kirjautumistiedot</translation>
+   <translation id="cpcivm_login_information_instance_title" qtlid="401471">Kirjaudu instanssiin</translation>
+   <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Syötä seuraava käsky päätteelle:<br/><code>ssh {{user}}@{{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Ensimmäisen kirjautumisen yhteydessä sinun on käytettävä VNC-pääteohjelmaa Windows-konfiguraation viimeistelemiseksi. Käytä tämän jälkeen valitsemaasi RDP-asiakaohjelmaa esimerkiksi Linux-työasemalla:<br/><code>rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_login_information_application_title" qtlid="401588">Kirjautuminen sovelluksiin</translation>
+   <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Tyyppi</translation>
+   <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>
+   <translation id="cpcivm_login_information_application_label_login" qtlid="41062">Käyttäjätunnus</translation>
+   <translation id="cpcivm_login_information_application_label_password" qtlid="2270">Salasana</translation>
+   <translation id="cpcivm_login_information_go_to_console" qtlid="401601">Kirjaudu VNC-pääteohjelmaan</translation>
+   <translation id="cpcivm_login_information_application_readonly" qtlid="401614">Tililläsi ei ole tarvittavia oikeuksia sovellusten kirjautumistietoihin pääsemiseksi. Ota yhteyttä administraattoriisi pääsyoikeuden saamiseksi. </translation>
+</translations>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="home_welcome_message" qtlid="245233">Welkom in uw OVH control panel <b>CLOUD</b>.</translation>
+   <translation id="home_welcome_message_choose_product" qtlid="123487">Selecteer een te configureren product uit de linkerkolom.</translation>
+</translations>

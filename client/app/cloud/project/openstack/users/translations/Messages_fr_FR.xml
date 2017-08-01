@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="openstackusers_users_title" qtlid="245246">Openstack API et Horizon</translation>
+   <translation id="openstackusers_users_description" qtlid="245259">Le cloud d'OVH fournit l'accès aux API Openstack, sur lequel il est basé.</translation>
+   <translation id="openstackusers_users_description2" qtlid="245272">Afin d'utiliser les API et outils proposés par Openstack, vous pouvez gérer vos accès en définissant des utilisateurs.</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Ouvrir Openstack Horizon</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Ajouter un utilisateur</translation>
+
+   <translation id="openstackusers_users_userlist_error" qtlid="245298">Une erreur s'est produite durant le chargement des utilisateurs :</translation>
+   <translation id="openstackusers_users_userlist_empty" qtlid="245311">Aucun utilisateur openstack n'est lié à votre compte cloud OVH.</translation>
+   <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Cliquez sur le bouton ci-dessus afin de rajouter un utilisateur.</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identifiant</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Description</translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">État</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Mot de passe</translation>
+   <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Regénérer le mot de passe</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Annuler la suppression</translation>
+   <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Supprimer cet utilisateur</translation>
+   <translation id="openstackusers_users_delete_success" qtlid="245350">L'utilisateur {{username}} a été supprimé.</translation>
+   <translation id="openstackusers_users_delete_error" qtlid="245363">Une erreur a interrompu la suppression :</translation>
+   <translation id="openstackusers_users_regeneratepassword_success" qtlid="245376">Le mot de passe de {{username}} a été regénéré.</translation>
+   <translation id="openstackusers_users_regeneratepassword_error" qtlid="245389">Une erreur a interrompu la regénération du mot de passe :</translation>
+
+   <translation id="openstackusers_users_userlist_add_description" qtlid="245402">Description de l'utilisateur</translation>
+   <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">N'oubliez pas d'indiquer de décrire cet utilisateur.</translation>
+   <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">Votre description est trop longue.</translation>
+   <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Annuler</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Créer cet utilisateur</translation>
+   <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">Le nouvel utilisateur a été créé.</translation>
+   <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">Impossible de créer cet utilisateur :</translation>
+
+   <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Supprimer ces {{nbUsers}} utilisateurs</translation>
+   <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Ne pas supprimer les utilisateurs</translation>
+   <translation id="openstackusers_users_delete_button" qtlid="7882">Supprimer cet utilisateur</translation>
+   <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Ne pas supprimer cet utilisateur</translation>
+   <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Confirmer cette suppression</translation>
+
+   <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Les {{nbUsers}} utilisateurs sélectionnées sont en cours de suppression.</translation>
+   <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Oups, nous n'arrivons pas à supprimer {{nbUsers}} utilisateurs !</translation>
+   <translation id="openstackusers_users_delete_error_one" qtlid="245558">Oups, nous n'arrivons pas à supprimer un utilisateur !</translation>
+
+</translations>

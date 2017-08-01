@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Aktyvuoti mano čekį</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Įsigyti cloud kreditų</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Galiojantys čekiai bus panaudoti iš karto būsimoms sąskaitoms apmokėti.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">OVH paruošus naują sąskaitą, mokėtina suma bus nuskaitoma nuo jūsų Cloud kredito (žemiau), po to nuo jūsų Digital LaunchPad paskyros (jei tai OVH remiamas projektas), po to nuo jūsų išankstinio mokėjimo sąskaitos. Skolos atveju, mokėjimas gali būti atliktas naudojant įregistruotą mokėjimo priemonę (išsami informacija apie prieinamas mokėjimo priemones pateikta jūsų valdymo sąsajos Sąskaitų skiltyje).</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Nerasta jokio čekio.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Jūsų čekis </translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Pridėti mano čekį</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Atsiprašome, nepavyko paskelbti čekių sąrašo.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Nepavyko paskelbti čekių sąrašo.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">PVM sąskaita faktūra Nr. <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Priskirtas čekis</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Pavadinimas</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Pradinė vertė</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Likęs kreditas</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Kreditas, kuris bus panaudotas automatiškai jūsų būsimoms sąskaitoms</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Aktyvavimo data </translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Galiojimo data</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Reikalavimus atitinkantys produktai</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Visi</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Cloud kreditai</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Čekis buvo pridėtas sėkmingai.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Atsiprašome, nepavyko pridėti čekio. Bandykite dar kartą.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Šis čekis nebegalioja arba jau buvo panaudotas.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Šis čekis negalioja.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Cloud kreditas neperkeliamas ir nekompensuojamas. Kreditas neturi jokios piniginės vertės. Per 13 mėnesių nepanaudotas kreditas bus prarastas.</translation>
+
+</translations>

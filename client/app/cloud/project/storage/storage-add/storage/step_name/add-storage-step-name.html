@@ -1,0 +1,34 @@
+<div data-ng-show="!quotaExceeded">
+
+    <h3 id="step_name"
+        class="counter-step"
+        data-ng-class="{ 'step-disabled': !steps.name.enable }"
+        data-translate="add_storage_name_step_title"></h3>
+
+    <div class="container" data-ng-if="steps.name.enable" data-scroll-here>
+        <div class="row step_panel storage-name-form" data-ng-show="steps.name.enable">
+
+            <input  type="text" pattern="^[^\/]*$"
+                    maxlength="256" 
+                    class="col-xs-12 form-control"
+                    required="true"
+                    data-ng-disabled="!steps.name.enable"
+                    data-ng-model="model.name"
+                />
+
+            <button class="ovh-button ovh-button_primary col-xs-12"
+                    data-ng-click="addStorage()"
+                    data-ng-disabled="!isValid() || loaders.post"
+                    data-ng-class="{
+                        'disabled': loaders.post,
+                        'bg_empty': loaders.post
+                    }">
+                    <span data-ng-hide="loaders.post" data-translate="add_build_you_own_warehouse"> </span>
+                    <span data-ng-show="loaders.post">
+                        <spinner></spinner>
+                    </span>
+            </button>
+        </div>
+    </div>
+
+</div>

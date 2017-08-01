@@ -1,0 +1,81 @@
+<h2 class="vrack__section-title" data-translate="vrack_your_vrack"></h2>
+<ul class="vrack__service-type-list">
+    <li class="vrack__service-type"
+        data-ng-init="VrackCtrl.setAccordionState('mapped', 'types', $index, true)"
+        data-ng-repeat="(serviceType, services) in VrackCtrl.data.vrackServices track by serviceType"
+        data-ng-if="VrackCtrl.hasServices(services)"
+        data-ng-class="{ 'vrack__service-type_expanded': VrackCtrl.getAccordionState('mapped', 'types', $index) }">
+        <span class="vrack__service-type-name"
+              data-ng-click="VrackCtrl.toggleAccordion('mapped', 'types', $index)">
+            <i class="vrack__service-type-icon ovh-font" data-ng-class="{
+                'ovh-font-dedicatedCloud': serviceType === 'dedicatedCloud' || serviceType === 'dedicatedCloudDatacenter',
+                'ovh-font-public-cloud': serviceType === 'cloudProject',
+                'ovh-font-ip': serviceType === 'ip',
+                'ovh-font-server': serviceType === 'dedicatedServer' || serviceType === 'dedicatedServerInterface',
+                'ovh-font-network': serviceType === 'dedicatedConnect',
+                'ovh-font-vRack': serviceType === 'legacyVrack'}">
+            </i>
+            {{ ::VrackCtrl.getDisplayName(serviceType) }}
+        </span>
+
+        <ul class="vrack__service-list" data-ng-if="!VrackCtrl.vrackService.isGroupedServiceType(serviceType)">
+            <li class="vrack__service vrack__service_selectable"
+                data-ng-repeat="service in services | orderBy: service.niceName track by service.id"
+                data-ng-click="VrackCtrl.toggleDeleteService(service.trueServiceType, service.id)"
+                data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(service.trueServiceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
+                <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
+                   data-ng-if="VrackCtrl.isPending(service.id)">
+                </i>
+                {{ ::service.niceName }}
+            </li>
+        </ul>
+
+        <ul class="vrack__service-group-list" data-ng-if="serviceType === 'dedicatedCloud'">
+            <li class="vrack__service-group"
+                data-ng-init="VrackCtrl.setAccordionState('mapped', 'dedicatedCloudNetworks', $index, true)"
+                data-ng-class="{ 'vrack__service-group_expanded': VrackCtrl.getAccordionState('mapped', 'dedicatedCloudNetworks', $index) }"
+                data-ng-repeat="service in services | orderBy: service.niceName track by service.id">
+                <span class="vrack__service-group-name"
+                      data-ng-click="VrackCtrl.toggleAccordion('mapped', 'dedicatedCloudNetworks', $index)">
+                    {{ ::service.niceName }}
+                </span>
+
+                <ul class="vrack__service-list vrack__service-list_group">
+                    <li class="vrack__service vrack__service_selectable"
+                        data-ng-click="VrackCtrl.toggleDeleteService(serviceType, service.id)"
+                        data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
+                        <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
+                           data-ng-if="VrackCtrl.isPending(service.id)">
+                        </i>
+                        {{ ::'vrack_private_cloud_vm_network_label' | translate }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="vrack__service-group-list" data-ng-if="serviceType === 'dedicatedCloudDatacenter'">
+            <li class="vrack__service-group"
+                data-ng-init="VrackCtrl.setAccordionState('mapped', 'dedicatedCloudDatacenters', $index, true)"
+                data-ng-class="{ 'vrack__service-group_expanded': VrackCtrl.getAccordionState('mapped', 'dedicatedCloudDatacenters', $index) }"
+                data-ng-repeat="(dedicatedCloud, datacenters) in services track by dedicatedCloud">
+                <span class="vrack__service-group-name"
+                      data-ng-click="VrackCtrl.toggleAccordion('mapped', 'dedicatedCloudDatacenters', $index)">
+                    {{ ::dedicatedCloud }}
+                </span>
+
+                <ul class="vrack__service-list vrack__service-list_group">
+                    <li class="vrack__service vrack__service_selectable"
+                        data-ng-click="VrackCtrl.toggleMoveService(serviceType, service.id)"
+                        data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.moving }"
+                        data-ng-repeat="service in datacenters track by service.datacenter">
+                        <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
+                           data-ng-if="VrackCtrl.isPending(service.id)">
+                        </i>
+                        {{ ::service.niceName }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+

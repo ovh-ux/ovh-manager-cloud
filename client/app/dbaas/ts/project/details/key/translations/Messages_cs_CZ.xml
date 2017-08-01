@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdt_errors_init_title" qtlid="282133">Během získávání informací o projektu došlo k chybě.</translation>
+   <translation id="dtpdt_errors_init_help1" qtlid="247053">Zkuste to prosím později.</translation>
+   <translation id="dtpdt_errors_init_help2" qtlid="247066">Jestliže to bude nutné, můžete vždy restartovat svou místní cache:</translation>
+   <translation id="dtpdt_errors_init_help3" qtlid="295933">Pokud problém přetrvává, kontaktujte podporu <a href="{{url}}">kliknutím sem</a>.</translation>
+   <translation id="dtpdt_errros_reset_cache" qtlid="247027">Reset cache</translation>
+
+   <translation id="dtpdt_add_button" qtlid="301370">Přidat klíč API</translation>
+
+   <translation id="dtpdt_region_name" qtlid="301383">Region:</translation>
+
+   <translation id="dtpdt_region_help_title" qtlid="301396">Informace o regionu</translation>
+   <translation id="dtpdt_region_help1" qtlid="301409">Region definuje umístění Vašich dat a URL přístupového bodu k API OpenTSDB.</translation>
+   <translation id="dtpdt_region_help2" qtlid="301422">Tento projekt je umístěn v regionu {{ region }}</translation>
+   <translation id="dtpdt_region_help3" qtlid="301435">OpenTSDB API URL:</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Pro více informací se podívejte na <a href="{{ tsaas_guide_concepts_url }}" target="_blank">naše příručky.</a></translation>
+
+
+   <translation id="dtpdt_thead_description" qtlid="9238">Popis</translation>
+   <translation id="dtpdt_thead_permissions" qtlid="6946">Práva</translation>
+   <translation id="dtpdt_thead_key" qtlid="301461">Klíč API</translation>
+   <translation id="dtpdt_thead_tags" qtlid="11519">Tagy</translation>
+   <translation id="dtpdt_thead_actions" qtlid="72809">Akce</translation>
+   <translation id="dtpdt_action_delete" qtlid="2414">Odstranit</translation>
+   <translation id="dtpdt_action_edit" qtlid="6766">Upravit</translation>
+
+   <translation id="dtpdt_no_key" qtlid="301474">Žádný klíč API.</translation>
+   <translation id="dtpdt_no_tag" qtlid="301487">Žádný tag</translation>
+
+   <translation id="dtpdt_modal_delete_key_title" qtlid="301500">Odstranění klíče API</translation>
+   <translation id="dtpdt_modal_delete_key_question" qtlid="301513">Opravdu chcete odstranit tento klíč API?</translation>
+   <translation id="dtpdt_key_deletion_successful" qtlid="301526">Klíč API odstraněn</translation>
+   <translation id="dtpdt_key_deletion_error" qtlid="301539">Klíč nemohl být odstraněn</translation>
+
+   <translation id="dtpdt_modal_example_key_title" qtlid="301552">Příklad použití klíče API</translation>
+
+   <translation id="dtpdt_permission_READ" qtlid="6958">Čtení</translation>
+   <translation id="dtpdt_permission_WRITE" qtlid="301565">Zápis</translation>
+
+   <translation id="dtpdt_key_explain" qtlid="301578">Klíče API zajišťují bezpečný přístup k Vašim datům time series.</translation>
+   <translation id="dtpdt_key_explain_more_1" qtlid="301591">Každý klíč API nastavuje oprávnění a může obsahovat "tagy". Tagem rozumíme párování klíč-hodnota (např.: clientId=123456).</translation>
+   <translation id="dtpdt_key_explain_more_2" qtlid="301604">Tagy jsou automaticky přidávány jako filtry při čtení a jsou připojeny ke všem datům zapsaným pomocí daného klíče.</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Pro více informací se podívejte na <a href="{{ tsaas_guide_concepts_url }}" target="_blank">naše příručky.</a></translation>
+
+   <translation id="dtpdt_key_loading_error" qtlid="301617">Během nahrávání API klíčů došlo k chybě.</translation>
+
+   <translation id="dtpdt_modal_example_key_write_explain_begin" qtlid="301630">Zasílání dat se provádí přes http request POST:</translation>
+   <translation id="dtpdt_modal_example_key_read_explain_begin" qtlid="301643">Zasílání dat se provádí přes http request GET:</translation>
+   <translation id="dtpdt_modal_example_key_explain_end" qtlid="301656">se základní autentizací pomocí klíče API.</translation>
+   <translation id="dtpdt_modal_example_key_curl_title" qtlid="301669">Příklad příkazové řádky cURL:</translation>
+   <translation id="dtpdt_modal_example_key_more" qtlid="301682">Pro více informací se obraťte na <a href="{{ tsaas_guide_key_url }}" target="_blank">naše příručky</a>.</translation>
+
+   <translation id="dtpdt_read_permission" qtlid="6958">Čtení</translation>
+   <translation id="dtpdt_write_permission" qtlid="301565">Zápis</translation>
+
+   <translation id="dtpdt_cancel" qtlid="37863">Zrušit</translation>
+
+   <translation id="dtpdt_init_loading" qtlid="301695">Nahrávání...</translation>
+   <translation id="dtpdt_init_error" qtlid="301708">Během nahrávání klíče API došlo k chybě.</translation>
+   <translation id="dtpdt_create_loading" qtlid="301721">Probíhá vytváření klíče...</translation>
+   <translation id="dtpdt_update_loading" qtlid="301734">Probíhá úprava klíče...</translation>
+   <translation id="dtpdt_creation_successful" qtlid="301747">Klíč API byl vytvořen.</translation>
+   <translation id="dtpdt_creation_error" qtlid="301760">Během vytváření klíče API došlo k chybě.</translation>
+   <translation id="dtpdt_edit_successful" qtlid="301773">Klíč API byl v pořádku změněn.</translation>
+   <translation id="dtpdt_edit_error" qtlid="301786">Během změny (úpravy) klíče API došlo k chybě.</translation>
+
+</translations>

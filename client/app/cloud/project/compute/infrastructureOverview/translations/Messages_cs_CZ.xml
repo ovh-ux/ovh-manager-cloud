@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="infra_overview_tips_title" qtlid="284620">Vypadá to, že spravujete více serverů a IP adres, rozhraní bylo z výkonových důvodů omezeno.</translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Pro větší pohodlí přinášíme dedikované webové rozhraní</translation>
+   <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
+   <translation id="infra_overview_tips_platform3" qtlid="284659">stejně jako OpenStack API. Své IP FO můžete spravovat také z dedikovaného Manažeru.</translation>
+   <translation id="infra_overview_tips_guides1" qtlid="284672">Chcete se blíže seznámit s těmito nástroji? Využijte</translation>
+   <translation id="infra_overview_tips_guides2" qtlid="284685">naše příručky k dispozici zde</translation>
+   <translation id="infra_overview_tips_redirect_complete_view" qtlid="284698">Zpět do původního rozhraní</translation>
+   <translation id="infra_overview_tips_never_again" qtlid="286825">Tuto zprávu již nezobrazovat</translation>
+   <translation id="infra_overview_tips_never_again_error" qtlid="286838">Během zálohování preferencí došlo k chybě.</translation>
+</translations>

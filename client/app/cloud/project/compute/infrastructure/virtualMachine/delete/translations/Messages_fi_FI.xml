@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_delete_title" qtlid="247950">Instanssia poistetaan</translation>
+   <translation id="cpcivm_delete_info" qtlid="247963">Olet maksanut tämän palvelimen kuukausittaisen laskun. Kaikki etukäteen maksetut päivät menetetään.</translation>
+   <translation id="cpcivm_failover_info" qtlid="269383">Seuraavat FailOver IP -osoitteet poistetaan pysyvästi:</translation>
+   <translation id="cpcivm_delete_confirm" qtlid="269396">Oletko varma, että haluat poistaa tämän instanssin?</translation>
+</translations>

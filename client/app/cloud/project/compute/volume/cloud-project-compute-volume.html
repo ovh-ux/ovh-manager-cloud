@@ -1,0 +1,477 @@
+<div class="cloud-project-compute-volume row">
+    <div class="col-xs-12">
+
+        <p class="bold"
+           data-ng-if="!CloudProjectComputeVolumeCtrl.loaders.table.volume && CloudProjectComputeVolumeCtrl.table.volume.length"
+           data-translate="cpc_volume_total_size_price"
+           data-translate-values="{
+                capacity : (CloudProjectComputeVolumeCtrl.totalResume.capacity * CloudProjectComputeVolumeCtrl.GIBIBYTE_TO_BYTE | bytes:2:'true'),
+                total : CloudProjectComputeVolumeCtrl.totalResume.price.text
+           }">
+        </p>
+
+        <button type="button" class="btn btn-primary dropdown-toggle fs14"
+                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.table.volume || CloudProjectComputeVolumeCtrl.table.volume === null"
+                data-ng-click="CloudProjectComputeVolumeCtrl.createNewVolume()"
+                write-right-required>
+            <i class="glyphicon glyphicon-plus right-space-m8"></i>
+            {{:: 'cpc_volume_search_add'|translate }}
+        </button>
+
+        <div class="clearfix top-space-m4">
+            <!-- Multi DELETE -->
+            <button type="button"
+                class="btn animate-fadeInUp-enter animate-fadeOutDown-leave"
+                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"
+                data-ng-show="CloudProjectComputeVolumeCtrl.getSelectedCount() > 0 && !CloudProjectComputeVolumeCtrl.loaders.table.volume"
+                data-ng-class="{'btn-danger' : !CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm,  'btn-default' : CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm}"
+                data-ng-click="CloudProjectComputeVolumeCtrl.toggleDeleteMultiConfirm()">
+
+                <i data-ng-hide="CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm" class="glyphicon glyphicon-trash right-space-m8"></i>
+                <span data-ng-hide="CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm">
+                    {{(CloudProjectComputeVolumeCtrl.getSelectedCount() > 1 ? 'cpc_volume_delete_button_plural' : 'cpc_volume_delete_button') | translate:{nbVolumes: CloudProjectComputeVolumeCtrl.getSelectedCount()} }}
+                </span>
+
+                <i data-ng-show="CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm" class="glyphicon glyphicon-remove right-space-m8"></i>
+                <span data-ng-show="CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm">
+                    {{(CloudProjectComputeVolumeCtrl.getSelectedCount() > 1 ? 'cpc_volume_delete_cancel_button_plural' : 'cpc_volume_delete_cancel_button') | translate:{nbVolumes: CloudProjectComputeVolumeCtrl.getSelectedCount()} }}
+                </span>
+            </button>
+
+            <button type="button"
+                class="btn btn-danger animate-fadeInLeft-enter"
+                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"
+                data-ng-click="CloudProjectComputeVolumeCtrl.deleteMultiVolume()"
+                data-ng-show="CloudProjectComputeVolumeCtrl.getSelectedCount() > 0
+                            && CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm
+                            && !CloudProjectComputeVolumeCtrl.loaders.table.volume">
+
+                <i class="glyphicon glyphicon-trash right-space-m8"></i>
+                {{'cpc_volume_delete_confirm_button' | translate}}
+                <spinner color="white" data-ng-show="CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"></spinner>
+            </button>
+
+            <!-- SEARCH -->
+            <button type="button"
+                class="btn btn-search pull-right"
+                data-ng-class="{ 'visibility-hide' : !CloudProjectComputeVolumeCtrl.table.volume.length}"
+                data-ng-click="CloudProjectComputeVolumeCtrl.toggleSearchBar()"
+                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+
+                <i data-ng-hide="CloudProjectComputeVolumeCtrl.search.open" class="fa fa-search right-space-m8"></i>
+                <i data-ng-show="CloudProjectComputeVolumeCtrl.search.open" class="fa fa-times right-space-m8"></i>
+                {{'cpc_volume_search_button' | translate}}
+            </button>
+        </div>
+
+
+
+        <!-- SEARCH FORM -->
+        <form name="searchVolumeForm"
+            novalidate
+            ng-slide-down="CloudProjectComputeVolumeCtrl.search.open && CloudProjectComputeVolumeCtrl.table.volume.length !== 0" duration="0.3"
+            data-ng-show="CloudProjectComputeVolumeCtrl.search.open && CloudProjectComputeVolumeCtrl.table.volume.length !== 0"
+            class="ovh-form-flat animate-opacity2-leave">
+
+            <div class="top-space-p4 clearfix" >
+
+                <div flat-input-container class="pull-right left-space-m12" style="width: 160px;">
+                    <label for="searchMinDisk" translate="cpc_volume_size2"></label>
+                    <div class="input-group">
+
+                        <div class="input-group-addon"><i class="fa fa-hdd-o"></i></div>
+
+                        <input type="text"
+                            class="form-control"
+                            id="searchMinDisk"
+                            name="searchMinDisk"
+                            placeholder="{{'cpc_volume_size1' | translate}}"
+                            data-ng-pattern="/^\d+$/"
+                            maxlength="255"
+                            data-ng-model="CloudProjectComputeVolumeCtrl.search.minDisk"
+                            data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+
+                        <div class="input-group-btn"
+                            data-ng-show="CloudProjectComputeVolumeCtrl.search.minDisk || searchVolumeForm.searchMinDisk.$invalid">
+                            <button class="no-style btn"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.search.minDisk = null"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div flat-input-container class="pull-right left-space-m12 right-space-m12" style="width: 160px;">
+                    <label for="searchCreationEnd" translate="cpc_volume_date_end"></label>
+
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+
+                        <input type="text"
+                            class="form-control datepicker-ui-pretty"
+                            id="searchCreationEnd"
+                            name="searchCreationEnd"
+                            placeholder="{{ 'cpc_volume_date_end' | translate}}"
+                            data-uib-datepicker-popup="shortDate"
+                            data-is-open="openedCreationEnd"
+                            data-ng-click="openedCreationEnd = true"
+                            data-ng-model="CloudProjectComputeVolumeCtrl.search.creationEnd"
+                            data-ui-validate-watch="'CloudProjectComputeVolumeCtrl.search.creationStart'"
+                            data-ui-validate="{'startBeforeEndDate' : '!$value
+                                                || !CloudProjectComputeVolumeCtrl.search.creationStart
+                                                || CloudProjectComputeVolumeCtrl.search.creationStart < $value' }"
+                            data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+
+                        <div class="input-group-btn" data-ng-show="CloudProjectComputeVolumeCtrl.search.creationEnd">
+                            <button class="no-style btn"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.search.creationEnd = null"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div flat-input-container class="pull-right left-space-m12" style="width: 160px;">
+                    <label for="searchCreationStart" translate="cpc_volume_date_start"></label>
+
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+
+                        <input type="text"
+                            class="form-control datepicker-ui-pretty"
+                            id="searchCreationStart"
+                            name="searchCreationStart"
+                            placeholder="{{ 'cpc_volume_date_start' | translate}}"
+                            data-uib-datepicker-popup="shortDate"
+                            data-is-open="openedCreationStart"
+                            data-ng-click="openedCreationStart = true"
+                            data-ui-validate-watch="'CloudProjectComputeVolumeCtrl.search.creationEnd'"
+                            data-ui-validate="{'startBeforeEndDate' : '!$value
+                                            || !CloudProjectComputeVolumeCtrl.search.creationEnd
+                                            || CloudProjectComputeVolumeCtrl.search.creationEnd > $value' }"
+                            data-ng-model="CloudProjectComputeVolumeCtrl.search.creationStart"
+                            data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+
+                        <div class="input-group-btn" data-ng-show="CloudProjectComputeVolumeCtrl.search.creationStart">
+                            <button class="no-style btn"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.search.creationStart = null"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div flat-input-container class="pull-right left-space-m12" style="width: 300px;">
+                    <label for="searchName" translate="cloud_common_name"></label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+                        <input type="text"
+                            class="form-control"
+                            id="searchName"
+                            name="searchName"
+                            placeholder="{{'cloud_common_name' | translate}}"
+                            data-ng-model="CloudProjectComputeVolumeCtrl.search.name"
+                            maxlength="255"
+                            data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+
+                        <div class="input-group-btn" data-ng-show="CloudProjectComputeVolumeCtrl.search.name">
+                            <button class="no-style btn"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.search.name = null"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- VOLUME TABLE -->
+        <div class="table-responsive-vertical shadow-z-1 top-space-m8">
+            <table class="table table-pretty table-hover table-striped table-relative">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 45px;" write-right-required>
+                            <input type="checkbox"
+                                data-ng-hide="CloudProjectComputeVolumeCtrl.loaders.table.volume || !CloudProjectComputeVolumeCtrl.table.volume.length"
+                                ovh-checkbox-table
+                                ovh-checkbox-table-ids-all="CloudProjectComputeVolumeCtrl.table.volumeFilterCheckbox"
+                                ovh-checkbox-table-ids-page="CloudProjectComputeVolumeCtrl.table.volumeFilterCheckboxPage"
+                                ovh-checkbox-table-ids-selected="CloudProjectComputeVolumeCtrl.table.selected"
+                                ovh-checkbox-table-id="id"
+                                data-ng-disabled="
+                                    CloudProjectComputeVolumeCtrl.loaders.remove.volume
+                                    || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
+                                    || CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId"
+                                />
+                        </th>
+                        <th>
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('name')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cloud_common_name"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'name'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'name' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'name' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('region')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cloud_common_region"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'region'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'region' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'region' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('type')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cloud_common_type"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'type'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'type' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'type' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <span translate="cpc_volume_attachedTo"></span>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('size')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cpc_volume_size"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'size'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'size' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'size' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('price')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cpc_volume_monthly_price"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'price'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'price' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'price' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('creationDate')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cpc_volume_creation_date"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'creationDate'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'creationDate' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'creationDate' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center">
+                            <button class="no-style"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.orderBy('status')"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
+                                <span translate="cloud_common_state"></span>
+                                <span class="table-pretty-filter"
+                                    data-ng-show="CloudProjectComputeVolumeCtrl.table.volume.length">
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by !== 'status'" class="fa fa-sort"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'status' && CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="CloudProjectComputeVolumeCtrl.order.by === 'status' && !CloudProjectComputeVolumeCtrl.order.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                        </th>
+                        <th class="text-center" style="width: 45px;" write-right-required>
+                            <button data-ng-click="CloudProjectComputeVolumeCtrl.getVolume(true)"
+                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"
+                                class="no-style">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="CloudProjectComputeVolumeCtrl.loaders.table.volume">
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <spinner></spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!CloudProjectComputeVolumeCtrl.loaders.table.volume && CloudProjectComputeVolumeCtrl.table.volume.length === 0">
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <span translate="cpc_volume_empty"></span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!CloudProjectComputeVolumeCtrl.loaders.table.volume && CloudProjectComputeVolumeCtrl.table.volume === null">
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <i class="fa fa-bug"></i>
+                            <span translate="cpc_volume_error"></span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!CloudProjectComputeVolumeCtrl.loaders.table.volume
+                                && CloudProjectComputeVolumeCtrl.table.volume.length
+                                && !CloudProjectComputeVolumeCtrl.table.volumeFilterPage.length">
+                    <tr>
+                        <td colspan="10" class="text-center">
+                            <i class="fa fa-search"></i>
+                            <span translate="cpc_volume_empty_search"></span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-hide="CloudProjectComputeVolumeCtrl.loaders.table.volume">
+                    <tr data-ng-repeat="volume in CloudProjectComputeVolumeCtrl.table.volumeFilterPage track by volume.id">
+                        <td class="text-center" write-right-required>
+                            <input type="checkbox"
+                                data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                data-ng-model="CloudProjectComputeVolumeCtrl.table.selected[volume.id]"
+                                name="{{::'ss_' + volume.id}}"
+                                id="{{::'ss_' + volume.id}}"
+                                data-ng-disabled="
+                                    CloudProjectComputeVolumeCtrl.loaders.remove.volume
+                                    || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
+                                    || volume.getStatusGroup() !== 'ACTIVE'
+                                    || volume.snapshotted
+                                    || CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId"
+                                />
+                        </td>
+                        <td data-title="{{::'cloud_common_name' | translate}}" class="word-break">
+                            <label class="cloud-volume-table" data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                for="{{::'ss_' + volume.id}}" >
+                                <span data-ng-bind="::volume.name"></span>
+                                <i data-ng-if="volume.bootable"
+                                   title="{{:: 'common_disk_bootable' | translate}}"
+                                   class="left-space-m4 ovh-font ovh-font-bootDisk inline-block"
+                                   style="margin-bottom: 2px;"
+                                   data-uib-tooltip="{{:: 'common_disk_bootable' | translate }}"></i>
+                            </label>
+                        </td>
+                        <td data-title="{{::'cloud_common_type' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}">
+                                 <span data-ng-bind="CloudProjectComputeVolumeCtrl.regionService.getTranslatedMicroRegion(volume.region)"></span>
+                            </span>
+                        </td>
+                        <td data-title="{{::'cloud_common_type' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                 data-ng-bind="::volume.type">
+                            </span>
+                        </td>
+                        <td data-title="{{::'cpc_volume_attachedTo' | translate}}" class="word-break text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                 data-ng-bind=":: volume.attachedToDetails && volume.attachedToDetails.length ? volume.attachedToDetails.join(', ') : '-'">
+                            </span>
+                        </td>
+                        <td data-title="{{::'cpc_volume_size' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                 data-ng-bind=":: (volume.size * CloudProjectComputeVolumeCtrl.GIBIBYTE_TO_BYTE) | bytes:2:'true'">
+                            </span>
+                        </td>
+                        <td data-title="{{::'cpc_volume_monthly_price' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}">
+                                <span data-ng-if="volume.gbPrices">{{ volume.calculatePrice().monthlyPrice.text }}</span>
+                            </span>
+                        </td>
+                        <td data-title="{{::'cpc_volume_creation_date' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                 data-ng-bind="::volume.creationDate | date : 'medium'">
+                            </span>
+                        </td>
+                        <td data-title="{{::'cloud_common_state' | translate}}" class="text-center">
+                            <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}"
+                                 data-ng-bind="::'cloud_common_state_' + volume.status | translate">
+                            </span>
+                        </td>
+
+                        <td data-title="" class="text-center" write-right-required>
+
+                            <div data-ng-show="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id"
+                                class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
+                                style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
+
+                                <button class="btn btn-default"
+                                    data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"
+                                    data-ng-click="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId = null">
+                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
+                                    <span translate="cpc_volume_delete_cancel_button"></span>
+                                </button>
+                                <button class="btn btn-danger"
+                                    data-ng-click="CloudProjectComputeVolumeCtrl.deleteVolume(volume)"
+                                    data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume
+                                                    || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
+                                                    || CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm">
+                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
+                                    <span translate="cpc_volume_delete_confirm_button"></span>
+                                    <spinner color="white" data-ng-show="CloudProjectComputeVolumeCtrl.loaders.remove.volume"></spinner>
+                                </button>
+                            </div>
+
+                            <div data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
+                                                'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}">
+                                <button class="no-style"
+                                    title="{{ volume.snapshotted ? 'cpc_volume_snapshotted_delete_button_info' : 'cpc_volume_delete_button' | translate}}"
+                                    data-ng-click="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId = volume.id"
+                                    data-ng-disabled="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id
+                                                    || CloudProjectComputeVolumeCtrl.loaders.remove.volume
+                                                    || volume.getStatusGroup() !== 'ACTIVE'
+                                                    || volume.snapshotted
+                                                    || CloudProjectComputeVolumeCtrl.getSelectedCount() > 0
+                                                    || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
+                                                    || CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PAGINATION TABLE -->
+        <div class="table-pretty-pagination"
+             data-ng-hide="CloudProjectComputeVolumeCtrl.loaders.table.volume
+                        || CloudProjectComputeVolumeCtrl.loaders.remove.volume
+                        || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
+                        || !CloudProjectComputeVolumeCtrl.table.volume.length"
+             data-pagination-front
+             data-items="CloudProjectComputeVolumeCtrl.table.volumeFilter"
+             data-paginated-items="CloudProjectComputeVolumeCtrl.table.volumeFilterPage"
+             data-current-page="currentPage"
+             data-nb-pages="nbPages"
+             data-items-per-page="itemsPerPage"
+             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
+             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
+    </div>
+</div>

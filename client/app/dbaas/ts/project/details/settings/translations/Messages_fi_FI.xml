@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpds_title" qtlid="300967">Projektin asetukset <strong>{{name}}</strong></translation>
+
+   <translation id="dtpds_title_unconfigured" qtlid="300980">Projektin alkukonfigurointi <strong>{{name}}</strong></translation>
+   <translation id="dtpds_title_creation" qtlid="300993">Projektin asetukset <strong>{{name}}</strong> (luominen käynnissä)</translation>
+
+   <translation id="dtpds_name" qtlid="3818">Nimi</translation>
+   <translation id="dtpds_region" qtlid="32434">Alue</translation>
+   <translation id="dtpds_choose_region" qtlid="301006">-- Valitse alue --</translation>
+   <translation id="dtpds_region_required" qtlid="301019">Valitse alue</translation>
+
+   <translation id="dtpds_init_loading_error" qtlid="301032">Projektin asetuksia ei voida ladata.</translation>
+   <translation id="dtpds_edit_project" qtlid="49754">Tallenna</translation>
+   <translation id="dtpds_project_edit_successful" qtlid="301045">Projektin muokkaus onnistui</translation>
+   <translation id="dtpds_project_edit_error" qtlid="301058">Tapahtui virhe projektin muokkauksessa.</translation>
+   <translation id="dtpds_project_created" qtlid="301071">Projekti on aktivoitu ja valmiina käyttöön.</translation>
+
+   <translation id="dtpds_delete_project" qtlid="51979">Poistetaan projektia</translation>
+   <translation id="dtpds_delete_project_action" qtlid="2414">Poista</translation>
+   <translation id="dtpds_delete_project_explication" qtlid="301084">Projektin poistaminen on peruuttamaton toiminto. Kaikki siihen liittyvät tiedostot poistetaan.</translation>
+   <translation id="dtpds_modal_delete_project_title" qtlid="282055">Projektin poistaminen</translation>
+   <translation id="dtpds_modal_delete_project_question" qtlid="301097">Haluatko varmasti poistaa projektin <strong>{{name}}</strong>?</translation>
+   <translation id="dtpds_project_deletion_successful" qtlid="301110">Projektin poisto onnistui</translation>
+
+   <translation id="dtpds_region_help" qtlid="301123">Aloittaaksesi PaaS-TimeSeries -projektin käytön valitse alue, jonne tietosi varastoidaan.</translation>
+   <translation id="dtpds_import_ra1" qtlid="301136">Oletko käyttänäyt PaaS-TS -beta-versiota Runabovella?</translation>
+   <translation id="dtpds_import_ra2" qtlid="301149">Tuo Runabove-projekti</translation>
+   <translation id="dtpds_import_ra_help" qtlid="301162">Runabove-projektin tuomiseksi, anna alla olevaan kohtaan kirjoitus<strong>tunniste</strong>.</translation>
+   <translation id="dtpds_import_ra_back" qtlid="301175">Palaa standardiprojektin konfiguraatioon</translation>
+   <translation id="dtpds_import_ra_payg" qtlid="301188">Huom: tuodaksesi Runabove beta-version projektin, luo "Pay as you go" tyyppinen projekti.</translation>
+
+   <translation id="dtpds_ra_token_id" qtlid="301201">Tunnisteen Id</translation>
+   <translation id="dtpds_ra_token_key" qtlid="301214">Tunnisteen avain</translation>
+
+</translations>

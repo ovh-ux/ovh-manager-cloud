@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Zde můžete přidat SSH klíče, abyste měl přístup ke svým serverům.</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Příjmení</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Klíč</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Načítání seznamu SSH klíčů...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Chyba, není možné získat seznam SSH klíčů.</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">Společnost OVH používá pro zajištění šifrované datové komunikace mezi servery bezpečnostní protokol SSH.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů.<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Mějte prosím na paměti, že na Vaši instanci lze <a href="{{ addUrl }}" target="_blank">nakonfigurovat dodatečné SSH klíče<i class="fa fa-external-link" aria-hidden="true"></i></a> <a href="{{ changeUrl }}" target="_blank">pro případ ztráty<i class="fa fa-external-link" aria-hidden="true"></i></a> či umožnění přístupu dalším osobám. &#13;
+&#13;
+</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Přidat klíč</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Zrušit přidávání tohoto klíče.</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Přidat tento klíč</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Váš klíč je nyní dostupný.</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Pojmenujte ho</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Vložte svůj 4096 bitový klíč</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Chyba, není možné přidat tento klíč.</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Tento název je již použit pro jiný klíč SSH.</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Tento klíč již není dostupný.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Chyba, není možné vymazat tento klíč!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Hledat</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Nemažte tento klíč</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Potvrdit vymazání</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">Zatím jste nepřidal SSH klíč.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Pro nápravu klikněte na "Přidat klíč".</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">Název nesmí přesáhnout 25 znaků.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">Je potřeba pojmenovat Váš klíč.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">Zapomněli jste vložit svůj 4096 bitový klíč.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">Název Vašeho klíče může obsahovat pouze číslice, malá a velká písmena a pomlčku ( - ), podtržítko ( _ ) a mezeru.</translation>
+
+
+</translations>

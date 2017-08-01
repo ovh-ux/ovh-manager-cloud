@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="openstackusers_users_title" qtlid="245246">Openstack API en Horizon</translation>
+   <translation id="openstackusers_users_description" qtlid="245259">De OVH cloud biedt toegang tot de OpenStack API, waarop het is gebaseerd.</translation>
+   <translation id="openstackusers_users_description2" qtlid="245272">Om de API's en tools te gebruiken, die door OpenStack worden geboden, kunt u uw toegang beheren door het definiëren van gebruikers.</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Openstack Horizon openen</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Een gebruiker toevoegen</translation>
+
+   <translation id="openstackusers_users_userlist_error" qtlid="245298">Er is een fout opgetreden tijdens het laden van de gebruikers:</translation>
+   <translation id="openstackusers_users_userlist_empty" qtlid="245311">Er is geen OpenStack gebruiker gekoppeld aan uw OVH cloud account.</translation>
+   <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Klik op de knop hierboven om een gebruiker toe te voegen.</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Gebruikersnaam</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Beschrijving</translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Status</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Wachtwoord</translation>
+   <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Het wachtwoord regenereren</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">De verwijdering annuleren</translation>
+   <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Deze gebruiker verwijderen</translation>
+   <translation id="openstackusers_users_delete_success" qtlid="245350">De gebruiker {{username}} is verwijderd.</translation>
+   <translation id="openstackusers_users_delete_error" qtlid="245363">Een fout heeft de verwijdering onderbroken:</translation>
+   <translation id="openstackusers_users_regeneratepassword_success" qtlid="245376">Het wachtwoord van {{username}} werd geregenereerd.</translation>
+   <translation id="openstackusers_users_regeneratepassword_error" qtlid="245389">Een fout heeft de regeneratie van het wachtwoord onderbroken:</translation>
+
+   <translation id="openstackusers_users_userlist_add_description" qtlid="245402">Beschrijving van de gebruiker</translation>
+   <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">Vergeet niet om aan te geven dat de gebruiker te beschrijven.</translation>
+   <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">Uw beschrijving is erg lang.</translation>
+   <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Maak deze gebruiker aan</translation>
+   <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">De nieuwe gebruiker is aangemaakt.</translation>
+   <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">Onmogelijk om deze gebruiker aan te maken:</translation>
+
+   <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Verwijder deze {{nbUsers}} gebruikers</translation>
+   <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Verwijder de gebruikers niet</translation>
+   <translation id="openstackusers_users_delete_button" qtlid="7882">Deze gebruiker verwijderen</translation>
+   <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Verwijder deze gebruiker niet</translation>
+   <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Bevestig deze verwijdering</translation>
+
+   <translation id="openstackusers_users_delete_success_plural" qtlid="245532">De {{nbUsers}} geselecteerde gebruikers worden verwijderd.</translation>
+   <translation id="openstackusers_users_delete_error_plural" qtlid="245545">We kunnen niet de {{nbUsers}} gebruikers verwijderen!</translation>
+   <translation id="openstackusers_users_delete_error_one" qtlid="245558">We kunnen een gebruiker niet verwijderen.</translation>
+
+</translations>

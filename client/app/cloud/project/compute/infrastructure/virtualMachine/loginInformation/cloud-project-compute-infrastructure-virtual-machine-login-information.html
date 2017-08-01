@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h3 class="modal-title" >
+        <i class="fa fa-key right-space-m8"></i>
+        {{"cpcivm_login_information_title" | translate}}
+    </h3>
+</div>
+
+<div class="modal-body text-center" data-ng-if="VmLoginInformationCtrl.loading" style="padding: 50px 0;">
+    <spinner size="32"></spinner>
+</div>
+
+<div class="modal-body login-information__body" data-ng-if="!VmLoginInformationCtrl.loading">
+    <h4 class="login-information__header" data-translate="cpcivm_login_information_instance_title"></h4>
+    <div class="login-information__section" data-ng-bind-html="'cpcivm_login_information_instance_info_' + (VmLoginInformationCtrl.data.image && VmLoginInformationCtrl.data.image.type || 'linux') | translate: {
+             user: VmLoginInformationCtrl.data.image.user || 'user',
+             ip: (VmLoginInformationCtrl.data.ip && VmLoginInformationCtrl.data.ip.ip) || 'X.X.X.X'
+         }"></div>
+    <h4 class="login-information__header" data-ng-if="VmLoginInformationCtrl.data.hasApplication" data-translate="cpcivm_login_information_application_title"></h4>
+    <div data-ng-if="VmLoginInformationCtrl.readOnlyError && VmLoginInformationCtrl.data.hasApplication">
+        <p data-translate="cpcivm_login_information_application_readonly"></p>
+    </div>
+    <div class="modal-body text-center" data-ng-if="VmLoginInformationCtrl.poller">
+        <spinner size="32"></spinner>
+    </div>
+    <div data-ng-repeat="app in VmLoginInformationCtrl.data.applicationInfo track by $index">
+        <div class="form-horizontal login-information__application">
+            <div class="form-group login-information__information">
+                <label class="col-sm-3 control-label login-information__information-label" data-translate="cpcivm_login_information_application_label_type"></label>
+                <div class="col-sm-9">
+                    <p class="form-control-static login-information__information-text">{{:: app.type }}</p>
+                </div>
+            </div>
+            <div class="form-group login-information__information" data-ng-if="app.url">
+                <label class="col-sm-3 control-label login-information__information-label" data-translate="cpcivm_login_information_application_label_url"></label>
+                <div class="col-sm-9">
+                    <p class="form-control-static login-information__information-text">{{:: app.url }}</p>
+                </div>
+            </div>
+            <div class="form-group login-information__information" data-ng-if="app.login">
+                <label class="col-sm-3 control-label login-information__information-label" data-translate="cpcivm_login_information_application_label_login"></label>
+                <div class="col-sm-9">
+                    <p class="form-control-static login-information__information-text">{{:: app.login }}</p>
+                </div>
+            </div>
+            <div class="form-group login-information__information" data-ng-if="app.password">
+                <label class="col-sm-3 control-label login-information__information-label" data-translate="cpcivm_login_information_application_label_password"></label>
+                <div class="col-sm-9">
+                    <p class="form-control-static login-information__information-text">{{:: app.password }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary pull-right"
+            data-ng-if="VmLoginInformationCtrl.data.isWindows"
+            data-ng-click="VmLoginInformationCtrl.goToConsole()">
+        <span data-translate="cpcivm_login_information_go_to_console">
+    </button>
+    <button type="reset" class="btn btn-default pull-right login-information__button_cancel"
+            data-ng-click="VmLoginInformationCtrl.close()">
+        <span data-translate="common_close"></span>
+    </button>
+
+</div>

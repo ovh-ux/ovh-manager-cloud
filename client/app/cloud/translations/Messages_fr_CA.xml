@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cloud_common_name" qtlid="3818">Nom</translation>
+   <translation id="cloud_common_type" qtlid="2642">Type</translation>
+   <translation id="cloud_common_volume" qtlid="255246">Espace</translation>
+   <translation id="cloud_common_consumpt" qtlid="25639">Consommation</translation>
+   <translation id="cloud_common_state" qtlid="364446">Etat</translation>
+   <translation id="cloud_common_state_available" qtlid="99920">Disponible</translation>
+   <translation id="cloud_common_state_in-use" qtlid="252893">En cours d'utilisation</translation>
+   <translation id="cloud_common_state_creating" qtlid="29647">En cours de création</translation>
+   <translation id="cloud_common_state_attaching" qtlid="252906">En cours de d'attachement</translation>
+   <translation id="cloud_common_state_deleting" qtlid="152778">En cours de suppression</translation>
+   <translation id="cloud_common_state_deleted" qtlid="134514">Supprimé</translation>
+   <translation id="cloud_common_state_extending" qtlid="258886">En cours de redimensionnement</translation>
+   <translation id="cloud_common_state_restoring-backup" qtlid="258899">En cours de restauration</translation>
+   <translation id="cloud_common_state_backing-up" qtlid="258912">En cours de sauvegarde</translation>
+   <translation id="cloud_common_state_snapshotting" qtlid="348438">En cours de snapshot</translation>
+   <translation id="cloud_common_state_error" qtlid="26407">Erreur</translation>
+
+   <translation id="cloud_common_region" qtlid="168237">Localisation</translation>
+   <translation id="cloud_common_instance" qtlid="19459">Serveurs</translation>
+   <translation id="cloud_common_core" qtlid="251213">Processeur virtuel</translation>
+   <translation id="cloud_common_ram" qtlid="31354">RAM</translation>
+   <translation id="cloud_common_disk" qtlid="25567">Disque</translation>
+
+   <translation id="cloud_common_region_SBG1" qtlid="252555">Strasbourg (SBG1)</translation>
+   <translation id="cloud_common_region_BHS1" qtlid="252568">Beauharnois (BHS1)</translation>
+   <translation id="cloud_common_region_GRA1" qtlid="252581">Gravelines (GRA1)</translation>
+   <translation id="cloud_common_region_SBG" qtlid="172202">Strasbourg</translation>
+   <translation id="cloud_common_region_SBG_micro" qtlid="363722">Strasbourg ({{ micro }})</translation>
+   <translation id="cloud_common_region_BHS" qtlid="172189">Beauharnois</translation>
+   <translation id="cloud_common_region_BHS_micro" qtlid="363735">Beauharnois ({{ micro }})</translation>
+   <translation id="cloud_common_region_GRA" qtlid="264192">Gravelines</translation>
+   <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
+   <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
+   <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
+
+   <translation id="cloud_common_region_localize" qtlid="264231">Localiser</translation>
+   <translation id="cloud_common_region_location_SBG" qtlid="264244">Europe Centrale (France)</translation>
+   <translation id="cloud_common_region_location_BHS" qtlid="264257">Amérique du Nord (Canada)</translation>
+   <translation id="cloud_common_region_location_GRA" qtlid="264270">Europe de l'Ouest (France)</translation>
+   <translation id="cloud_common_region_location_RBX" qtlid="264270">Europe de l'Ouest (France)</translation>
+
+   <translation id="browser_alert_not_supported" qtlid="405357">Votre navigateur n'est pas supporté.</translation>
+   <translation id="browser_alert_deprecated" qtlid="405370">Votre navigateur n'est pas à jour et peut contenir des failles de sécurité ou de compatibilité.</translation>
+   <translation id="browser_alert_update" qtlid="405383">Nous vous recommandons de <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">mettre à jour votre navigateur <i class="fa fa-external-link" aria-hidden="true"></i></a> afin de profiter d'une expérience optimale.</translation>
+   <translation id="browser_alert_close" qtlid="405396">Fermer cette alerte</translation>
+</translations>

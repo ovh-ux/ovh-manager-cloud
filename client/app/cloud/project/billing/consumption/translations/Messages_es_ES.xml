@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbc_tab_consumption" qtlid="364368">Mi consumo a {{date}}</translation>
+   <translation id="cpbc_tab_forecast" qtlid="364381">Estimación de mi próxima factura</translation>
+</translations>

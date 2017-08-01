@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcipnd_create_title" qtlid="331202">Přidat privátní síť</translation>
+   <translation id="cpcipnd_default_name_template" qtlid="331215">VLAN{{id}}</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Příjmení</translation>
+   <translation id="cpcipnd_name_required_error" qtlid="331228">Název privátní sítě je nezbytný.</translation>
+   <translation id="cpcipnd_name_maxlength_error" qtlid="331241">Délka názvu Vaší privátní sítě nesmí překročit 256 znaků.</translation>
+   <translation id="cpcipnd_vlan_create" qtlid="348347">Definice VLAN</translation>
+   <translation id="cpcipnd_vlan_description" qtlid="348360">Lze definovat VLAN mezi {{ min }} a {{ max }}. Užitečné pro rozdělení vRacku mezi více virtuálních sítí.</translation>
+   <translation id="cpcipnd_vlanId_label" qtlid="348373">VLAN ID:</translation>
+   <translation id="cpcipnd_vlanId_number_helper" qtlid="348386">(mezi {{ min }} a {{ max }})</translation>
+   <translation id="cpcipnd_vlanId_required_error" qtlid="331267">ID privátní sítě je nezbytné.</translation>
+   <translation id="cpcipnd_vlanId_number_error" qtlid="331280">ID privátní sítě musí být v rozsahu 1 až 4000.</translation>
+   <translation id="cpcipnd_vlanId_unique_error" qtlid="331293">Toto ID je již používáno.</translation>
+   <translation id="cpcipnd_region_label" qtlid="331306">Přiřadit region</translation>
+   <translation id="cpcipnd_region_default_option" qtlid="331319">Všechny regiony</translation>
+   <translation id="cpcipnd_regions_query_error" qtlid="331332">Nepodařilo se získat seznam regionů. {{ message }}</translation>
+   <translation id="cpcipnd_region_hint" qtlid="331345">Více informací o privátních sítích <a href="{{ url }}" target="_blank">multi-region</a>.</translation>
+   <translation id="cpcipnd_subnet_label" qtlid="331358">Adresa privátní sítě (CIDR):</translation>
+   <translation id="cpcipnd_subnet_address_required_error" qtlid="331371">Adresa je nezbytná.</translation>
+   <translation id="cpcipnd_subnet_address_valid_ip_address_error" qtlid="331384">Neplatný formát adresy.</translation>
+   <translation id="cpcipnd_subnet_address_hint" qtlid="30430">Adresa</translation>
+   <translation id="cpcipnd_subnet_address_title" qtlid="331397">Adresa podsítě</translation>
+   <translation id="cpcipnd_subnet_range_label" qtlid="331410">Rozsah:</translation>
+   <translation id="cpcipnd_subnet_mask_hint" qtlid="331423">24</translation>
+   <translation id="cpcipnd_subnet_mask_required_error" qtlid="331436">Maska je povinná.</translation>
+   <translation id="cpcipnd_subnet_mask_number_error" qtlid="331449">Neplatná maska.</translation>
+   <translation id="cpcipnd_subnet_mask_title" qtlid="311024">Maskovat podsíť</translation>
+   <translation id="cpcipnd_subnet_dhcp_label" qtlid="331462">Distribuce adres:</translation>
+   <translation id="cpcipnd_subnet_dhcp_on_label" qtlid="331475">Dynamická (DHCP)</translation>
+   <translation id="cpcipnd_subnet_dhcp_off_label" qtlid="331488">Statická (ručně)</translation>
+   <translation id="cpcipnd_subnet_start_label" qtlid="331501">Začátek rozsahu (DHCP)</translation>
+   <translation id="cpcipnd_subnet_start_required_error" qtlid="331514">Tato konfigurace je nezbytná.</translation>
+   <translation id="cpcipnd_subnet_start_valid_ip_address_error" qtlid="331384">Neplatný formát adresy.</translation>
+   <translation id="cpcipnd_subnet_end_label" qtlid="331527">Konec rozsahu (DHCP)</translation>
+   <translation id="cpcipnd_subnet_end_required_error" qtlid="331514">Tato konfigurace je nezbytná.</translation>
+   <translation id="cpcipnd_subnet_end_valid_ip_address_error" qtlid="331384">Neplatný formát adresy.</translation>
+   <translation id="cpcipnd_save_button" qtlid="331540">Vytvořit privátní síť</translation>
+   <translation id="cpcipnd_cancel_button" qtlid="37863">Zrušit</translation>
+   <translation id="cpcipnd_fetch_regions_error" qtlid="331553">Nepodařilo se získat seznam regionů.</translation>
+   <translation id="cpcipnd_fetch_private_networks_error" qtlid="303978">Nepodařilo se stáhnout seznam privátních sítí.</translation>
+   <translation id="cpcipnd_fetch_private_network_error" qtlid="331566">Nepodařilo se získat privátní síť.</translation>
+   <translation id="cpcipnd_save_error" qtlid="331579">Nebylo možné provést zálohu privátní sítě. {{ message }}</translation>
+   <translation id="cpcipnd_subnet_save_error" qtlid="331592">Nebylo možné provést zálohu podsítě. {{ message }}</translation>
+   <translation id="cpcipnd_request_error" qtlid="331605">Během načítání formuláře došlo k chybě. {{ message }}</translation>
+   <translation id="cpcipnd_common_menu_item_description" qtlid="331618">Konfigurace privátní sítě</translation>
+   <translation id="cpcipnd_subnets_menu_item_description" qtlid="331631">Konfigurace podsítě</translation>
+   <translation id="cpcipnd_subnet_api_notice" qtlid="331644">Své rozsahy si můžete upravit <a href="{{url}}" target="_blank">pomocí API.</a></translation>
+   <translation id="cpcipnd_subnet_gateway_label" qtlid="405525">Aktivovat výchozí gateway</translation>
+</translations>

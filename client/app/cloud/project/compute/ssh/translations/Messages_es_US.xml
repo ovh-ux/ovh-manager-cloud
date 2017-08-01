@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Aquí tendrá la posibilidad de añadir sus claves SSH, que permiten el acceso a sus servidores.</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Nombre</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Clé</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Cargando claves SSH...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Lo sentimos, no se ha podido recuperar su lista de claves SSH</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">La comunicación entre los servidores OVH utiliza el protocolo de seguridad (SSH) para la codificación de datos.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Existen clientes SSH para cada sistema operativo. Para más información, consulte nuestra <a href="{{ createUrl }}" target="_blank">guía<i class="fa fa-external-link" aria-hidden="true"></i></a> sobre la creación de llaves SSH.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Recuerde que también puede <a href="{{ addUrl }}" target="_blank">configurar llaves SSH adicionales<i class="fa fa-external-link" aria-hidden="true"></i></a> en su instancia para dar acceso a otras personas o <a href="{{ changeUrl }}" target="_blank">modificar su llave SSH en caso de pérdida<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Añadir clave</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Cancelar</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Añadir clave</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Clave disponible</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Nombrar clave</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Introduzca su llave de 4096 bytes.</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Lo sentimos, no se ha podido añadir la clave</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Este nombre ya ha sido utilizado para otra clave SSH.</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Esta clave ya no está disponible.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Lo sentimos, no se ha podido eliminar la clave</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Rechercher</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">No eliminar clave</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Confirmar eliminación</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">Debe añadir una clave SSH.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Haga clic en "Añadir clave" </translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">El nombre no puede exceder los 255 caracteres.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">Debe nombrar la clave.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">Ha olvidado introducir su llave de 4096 bytes.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">El nombre de la clave solo debe contener cifras, letras minúsculas y/o mayúsculas, así como los caracteres: guión ( - ), subrayado ( _ ) y espacio.</translation>
+
+
+</translations>
