@@ -11,7 +11,6 @@
                 return guide.title !== undefined && firstGuide.name !== undefined && firstGuide.url !== undefined;
             }
             return false;
-
         }
 
         /**
@@ -23,7 +22,6 @@
                 return firstSection.title !== undefined && firstSection.list !== undefined;
             }
             return false;
-
         }
     }
 

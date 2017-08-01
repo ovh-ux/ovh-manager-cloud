@@ -26,7 +26,7 @@ class CloudMessage {
             return;
         }
 
-        let stateName = `${this.$state.current.name}.`;
+        const stateName = `${this.$state.current.name}.`;
         const messageHandler = this.getMessageHandler(stateName);
 
         if (messageHandler) {
@@ -51,7 +51,7 @@ class CloudMessage {
     }
 
     flushMessages () {
-        let stateName = `${this.$state.current.name}.`;
+        const stateName = `${this.$state.current.name}.`;
         const messageHandler = this.getMessageHandler(stateName);
 
         if (messageHandler) {

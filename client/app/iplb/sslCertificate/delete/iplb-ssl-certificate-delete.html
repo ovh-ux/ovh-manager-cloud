@@ -1,0 +1,11 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerFrontendDeleteCtrl.cancel()"></cui-modal-header>
+    <cui-modal-body title="'iplb_ssl_delete_title' | translate">
+        <p data-translate="iplb_ssl_delete_question" data-translate-values="{ name: IpLoadBalancerSslCertificateDeleteCtrl.name }"></p>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerSslCertificateDeleteCtrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'iplb_ssl_delete_button' | translate"
+            data-on-click="IpLoadBalancerSslCertificateDeleteCtrl.confirm()"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

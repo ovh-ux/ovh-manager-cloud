@@ -1,0 +1,15 @@
+<section class="cui-page__content">
+    <cui-page-content-title text="'iplb_configuration_title' | translate"></cui-page-content-title>
+    <p data-translate="iplb_configuration_intro"></p>
+
+    <cui-loader data-ng-show="ctrl.loading"></cui-loader>
+    <oui-table data-ng-hide="ctrl.loading"
+        rows="ctrl.tasks"
+        on-selection-change="ctrl.onSelectionChange($selection)">
+        <column title="'iplb_configuration_datacenter' | translate" sortable></column>
+        <column title="'iplb_configuration_progress' | translate" sortable></column>
+        <column title="'iplb_configuration_status' | translate" sortable></column>
+        <column title="'iplb_configuration_action' | translate"></column>
+        <empty-placeholder>Pas de configuration à appliquer / Tout est à jour</empty-placeholder>
+    </oui-table>
+</section>

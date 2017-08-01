@@ -1,0 +1,63 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'iplb_farm_edit_probe_title' | translate">
+        <div class="oui-input-formfield"
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
+            <input type="text" id="probe_url" name="probe_url" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
+            <label for="probe_url" class="oui-label" data-translate="iplb_farm_edit_probe_url"></label>
+        </div>
+
+        <div class="oui-input-formfield"
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type != 'oco'">
+            <input type="number"
+                min="1"
+                max="65535"
+                id="probe_port"
+                name="probe_port"
+                class="oui-input"
+                data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.port" />
+            <label for="probe_port" class="oui-label" data-translate="iplb_farm_edit_probe_port"></label>
+        </div>
+
+        <div class="oui-input-formfield"
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
+            <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
+                <cui-radio-bar-item data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods"
+                    data-text="('iplb_farm_edit_probe_method_' + method) | translate"
+                    data-value="method"></cui-radio-bar-item>
+            </cui-radio-bar>
+            <label for="probe_method" class="oui-label" data-translate="iplb_farm_edit_probe_method"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+            <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
+                <cui-radio-bar-item data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.matches"
+                    data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status'"
+                    data-text="('iplb_farm_edit_probe_match_' + match) | translate"
+                    data-value="match"></cui-radio-bar-item>
+            </cui-radio-bar>
+            <label for="probe_match" class="oui-label" data-translate="iplb_farm_edit_probe_match"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+            <input type="text" id="probe_pattern" name="probe_pattern" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.pattern" />
+            <label for="probe_pattern" class="oui-label" data-translate="iplb_farm_edit_probe_pattern"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+            <input type="number"
+                min="30"
+                id="probe_interval"
+                name="probe_interval"
+                class="oui-input"
+                data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.interval" />
+            <label for="probe_interval" class="oui-label" data-translate="iplb_farm_edit_probe_interval"></label>
+        </div>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-cancel-button>
+        <cui-button data-text="'common_modal_ok' | translate"
+            data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.close()"
+            type="primary"></cui-button>
+    </cui-modal-footer>
+</cui-modal>

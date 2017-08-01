@@ -1,0 +1,18 @@
+<cui-modal>
+    <form id="IplbOfferChangeForm">  
+        <cui-modal-header data-on-dismiss="IpLoadBalancerOfferChangeCtrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'iplb_modal_offer_change_title' | translate">
+            <cui-loader data-ng-if="IpLoadBalancerOfferChangeCtrl.isModalLoading()"></cui-loader>
+            <div data-ng-if="!IpLoadBalancerOfferChangeCtrl.isModalLoading()">
+                Old offer => {{ IpLoadBalancerOfferChangeCtrl.configuration.data.offer }}
+                <cui-modal-text data-text="'EDIT SOME OFFER HERE'"></cui-modal-text>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerOfferChangeCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_edit' | translate" 
+                data-on-click="IpLoadBalancerOfferChangeCtrl.confirm()"
+                data-disabled="IplbOfferChangeForm.$invalid || IpLoadBalancerOfferChangeCtrl.isModalLoading()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

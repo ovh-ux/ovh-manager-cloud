@@ -12,6 +12,8 @@
 
         errorHandler (message) {
             return err => {
+                console.error(err);
+
                 if (message) {
                     this.CloudMessage.error(this.$translate.instant(message, err.data));
                 } else if (err.message) {

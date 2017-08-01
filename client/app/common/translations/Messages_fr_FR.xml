@@ -6,6 +6,9 @@
    <translation id="common_close" qtlid="4670">Fermer</translation>
 
    <translation id="common_cancel" qtlid="37863">Annuler</translation>
+   <translation id="common_edit">Modifier</translation>
+   <translation id="common_consult">Consulter</translation>
+   <translation id="common_manage">Gérer</translation>
    <translation id="common_apply" qtlid="41326">Appliquer</translation>
    <translation id="common_loading" qtlid="58256">Chargement</translation>
    <translation id="common_refresh" qtlid="250030">Rafraîchir</translation>
@@ -459,10 +462,22 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Votre carte bancaire par défaut est expirée. Rendez-vous dans <a href="{{urlBillingSection}}">la section facturation</a> pour la mettre à jour.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Les erreurs suivantes sont survenues</translation>
+   <translation id="common_global_error">Un erreur est survenue lors de l'opération : {{message}}</translation>
+   <translation id="common_global_success">L'opération s'est déroulée avec succès.</translation>
 
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
 
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
+
+   <translation id="common_tile_subscription">Abonnement</translation>
+   <translation id="common_tile_subscription_offer">Offre</translation>
+   <translation id="common_tile_subscription_autorenew">Renouvellement automatique</translation>
+   <translation id="common_tile_subscription_contact">Contacts</translation>
+   <translation id="common_tile_subscription_creation_date">Date de création</translation>
+
+   <translation id="common_preview_see">Voir l'aperçu</translation>
+
+   <translation id="common_table_col_action">Action</translation>
 </translations>

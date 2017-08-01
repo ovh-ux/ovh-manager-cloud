@@ -1,0 +1,15 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerNatIpDetailCtrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'iplb_modal_nat_ip_title' | translate">
+        <cui-loader data-ng-if="IpLoadBalancerNatIpDetailCtrl.isModalLoading()"></cui-loader>
+        <div data-ng-if="!IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
+            <cui-modal-text data-text="iplb_modal_nat_ip_description | translate"></cui-modal-text>
+            <cui-modal-text data-text="IpLoadBalancerNatIpDetailCtrl.ips"></cui-modal-text>
+        </div>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-button data-text="'common_modal_ok' | translate" 
+            data-on-click="IpLoadBalancerNatIpDetailCtrl.dismiss()"
+            type="primary"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

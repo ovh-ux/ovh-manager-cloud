@@ -1,0 +1,48 @@
+<div class="cui-page__content">
+    <h1 data-translate="iplb_ssl_add_title"></h1>
+
+    <form novalidate name="ctrl.form">
+        <div class="oui-input-formfield">
+          <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.ssl.displayName" />
+          <label for="displayName" class="oui-label" data-translate="iplb_ssl_edit_name"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+          <textarea class="oui-textarea"
+            data-ng-class="{ 'oui-textarea_error': ctrl.form.$submitted && ctrl.form.key.$invalid }"
+            data-ng-model="ctrl.ssl.key"
+            id="key"
+            name="key"
+            required></textarea>
+          <label for="key" class="oui-label" data-translate="iplb_ssl_edit_private_key"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+          <textarea class="oui-textarea"
+            data-ng-class="{ 'oui-textarea_error': ctrl.form.$submitted && ctrl.form.certificate.$invalid }"
+            data-ng-model="ctrl.ssl.certificate"
+            id="certificate"
+            name="certificate"
+            required></textarea>
+          <label for="certificate" class="oui-label" data-translate="iplb_ssl_edit_certificate"></label>
+        </div>
+
+        <div class="oui-input-formfield">
+          <textarea class="oui-textarea"
+            data-ng-model="ctrl.ssl.chain"
+            id="chain"
+            name="chain"></textarea>
+          <label for="chain" class="oui-label" data-translate="iplb_ssl_edit_chain"></label>
+        </div>
+
+        <div class="cui-form-actions">
+          <button type="submit"
+            class="oui-button oui-button_primary"
+            data-translate="iplb_ssl_add_confirm"
+            data-ng-click="ctrl.create()"></button>
+          <a class="oui-button oui-button_secondary"
+              data-translate="iplb_ssl_add_cancel"
+              data-ui-sref="network.iplb.detail.ssl-certificate"></a>
+        </div>
+    </form>
+</div>

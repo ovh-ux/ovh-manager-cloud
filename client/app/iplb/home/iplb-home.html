@@ -1,0 +1,72 @@
+<section class="cui-flex cui-page__content">
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_status' | translate">
+            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_usage' | translate">
+            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_graph' | translate">
+            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
+        </cui-tile>
+    </div>
+
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_infos' | translate"
+            data-loading="ctrl.information.loading">
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv4' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <cui-clipboard data-text="ctrl.information.data.ipV4"></cui-clipboard>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv6' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <cui-clipboard data-text="ctrl.information.data.ipV6"></cui-clipboard>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_infos_ip_failover' | translate"
+                data-description="ctrl.information.data.failoverIp.length"
+                data-actions="ctrl.actions.showFailoverIp">
+            </cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_infos_ip_outbound' | translate"
+                data-description="ctrl.information.data.natIp.length"
+                data-actions="ctrl.actions.showNatIp"></cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_configuration' | translate"
+            data-loading="ctrl.configuration.loading">
+            <cui-tile-item data-term="'iplb_home_tile_configuration_name' | translate"
+                data-description="ctrl.configuration.data.displayName"
+                data-actions="ctrl.actions.changeName"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_max' | translate" data-description="'PlaceHolder'"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_alert' | translate" data-description="'PlaceHolder'"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
+                data-description="ctrl.configuration.data.sslConfiguration.displayName"
+                data-actions="ctrl.actions.changeCipher"></cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_configuration_quota_datacenter' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
+                </cui-tile-definitions>
+            </cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile-subscription data-loading="ctrl.subscription.loading"
+            data-subscription-info="ctrl.subscription.data"
+            data-offer-actions="ctrl.actions.changeOffer"
+            data-autorenew-actions="ctrl.actions.manageAutorenew"
+            data-contact-actions="ctrl.actions.manageContact"></cui-tile-subscription>
+    </div>
+</section>

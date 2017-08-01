@@ -1,0 +1,11 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerServerFarmDeleteCtrl.cancel()"></cui-modal-header>
+    <cui-modal-body title="'iplb_server_delete_title' | translate">
+        <p data-translate="iplb_server_delete_question" data-translate-values="{ farm: IpLoadBalancerServerFarmDeleteCtrl.name }"></p>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerServerFarmDeleteCtrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'delete' | translate"
+            data-on-click="IpLoadBalancerServerFarmDeleteCtrl.confirm()"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

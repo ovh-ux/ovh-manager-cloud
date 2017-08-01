@@ -1,45 +1,31 @@
-<div class="oui-modal oui-modal_shadow">
-  <form name="VeeamStorageUpdateQuotaForm">
-    <div class="oui-modal__header">
-      <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
-        type="button"
-        aria-label="Exit" data-ng-click="VeeamStorageUpdateQuotaCtrl.cancel()"
-        ></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
-      <div class="oui-modal__body-text">
-        <h2 class="oui-modal__title" data-translate="veeam_storage_update_quota_title"></h2>
-        <cui-loader data-ng-show="VeeamStorageUpdateQuotaCtrl.isModalLoading()"></cui-loader>
-        <div data-ng-hide="VeeamStorageUpdateQuotaCtrl.isModalLoading()">
-          <p class="oui-modal__text" data-translate="veeam_storage_update_quota_information"
-            data-translate-value-maxquota="{{VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}}"></p>
-          <div class="oui-input-formfield">
-            <input
-              type="number"
-              min="1000"
-              max="{{VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}}"
-              step="250"
-              id="newQuota"
-              name="newQuota"
-              class="oui-input"
-              data-ng-model="VeeamStorageUpdateQuotaCtrl.newQuota"
-              required
-              novalidate />
-            <label for="newQuota" class="oui-label" data-translate="veeam_quota"></label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="oui-modal__footer">
-      <button class="oui-button oui-button_secondary"
-        type="button"
-        data-translate="veeam_storage_update_quota_cancel"
-        data-ng-click="VeeamStorageUpdateQuotaCtrl.cancel()"></button>
-      <button class="oui-button oui-button_primary"
-        type="submit"
-        data-translate="veeam_storage_update_quota_confirm"
-        data-ng-click="VeeamStorageUpdateQuotaCtrl.confirm()"
-        data-ng-disabled="VeeamStorageUpdateQuotaForm.$invalid || VeeamStorageUpdateQuotaCtrl.isModalLoading()"></button>
-    </div>
-  </form>
-</div>
+<cui-modal>
+    <form name="VeeamStorageUpdateQuotaForm">
+        <cui-modal-header data-on-dismiss="VeeamStorageUpdateQuotaCtrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'veeam_storage_update_quota_title' | translate">
+            <cui-loader data-ng-show="VeeamStorageUpdateQuotaCtrl.isModalLoading()"></cui-loader>
+            <div data-ng-hide="VeeamStorageUpdateQuotaCtrl.isModalLoading()">
+                <cui-modal-text data-text="'veeam_storage_update_quota_information' | translate: {maxquota: VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}"></cui-modal-text>
+                <div class="oui-input-formfield">
+                    <input
+                        type="number"
+                        min="1000"
+                        max="{{VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}}"
+                        step="250"
+                        id="newQuota"
+                        name="newQuota"
+                        class="oui-input"
+                        data-ng-model="VeeamStorageUpdateQuotaCtrl.newQuota"
+                        required
+                        novalidate />
+                    <label for="newQuota" class="oui-label" data-translate="veeam_quota"></label>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'veeam_storage_update_quota_cancel' | translate" data-on-click="VeeamStorageUpdateQuotaCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'veeam_storage_update_quota_confirm' | translate"
+                data-on-click="VeeamStorageUpdateQuotaCtrl.confirm()"
+                data-disabled="VeeamStorageUpdateQuotaForm.$invalid || VeeamStorageUpdateQuotaCtrl.isModalLoading()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

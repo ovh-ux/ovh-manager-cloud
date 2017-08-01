@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="iplb_configuration_title">Appliquer la configuration</translation>
+    <translation id="iplb_configuration_intro">La configuration de votre load balancer doit être appliquée explicitement dans chacun des datacentres. C’est seulement à ce moment qu’elles seront visible pour vos visiteurs. Cela permet de faire un changement complexe de configuration en une seule fois.</translation>
+
+    <translation id="iplb_configuration_datacenter">Datacentre</translation>
+    <translation id="iplb_configuration_progress">Progression</translation>
+    <translation id="iplb_configuration_status">Statut</translation>
+    <translation id="iplb_configuration_action">Action</translation>
+</translations>

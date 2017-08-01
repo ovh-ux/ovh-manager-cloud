@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="iplb_ssl_certificate_title">Certificats SSL</translation>
+    <translation id="iplb_ssl_certificate_intro_text">Les certificats configurés sont automatiquement disponible pour l’ensemble des frontends sur lesquels l’options SSL est activée.</translation>
+
+    <translation id="iplb_ssl_certificate_add">Ajouter un certificat SSL</translation>
+
+    <translation id="iplb_ssl_certificate">Certificat</translation>
+    <translation id="iplb_ssl_subject">Sujet</translation>
+    <translation id="iplb_ssl_type">Type</translation>
+    <translation id="iplb_ssl_action">Action</translation>
+    <translation id="iplb_ssl_no_certificate">Aucun certificat</translation>
+
+    <translation id="iplb_ssl_see">Voir l'aperçu</translation>
+    <translation id="iplb_ssl_update">Modifier</translation>
+    <translation id="iplb_ssl_delete">Supprimer</translation>
+
+    <translation id="iplb_ssl_list_error">Erreur lors du chargement de la liste des certificats.</translation>
+
+    <translation id="iplb_ssl_add_title">Ajouter un certificat SSL</translation>
+    <translation id="iplb_ssl_add_confirm">Ajouter</translation>
+    <translation id="iplb_ssl_add_cancel">Annuler</translation>
+    <translation id="iplb_ssl_add_success">Le certificat SSL a été créé avec succès.</translation>
+    <translation id="iplb_ssl_add_error">Une erreur est survenue lors de la création du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_edit_name">Nom (facultatif)</translation>
+    <translation id="iplb_ssl_edit_private_key">Clé privée</translation>
+    <translation id="iplb_ssl_edit_certificate">Certificat</translation>
+    <translation id="iplb_ssl_edit_chain">Chaine (facultatif)</translation>
+
+    <translation id="iplb_ssl_update_title">Modifier un certificat SSL</translation>
+    <translation id="iplb_ssl_update_confirm">Modifier</translation>
+    <translation id="iplb_ssl_update_cancel">Annuler</translation>
+    <translation id="iplb_ssl_update_nom">Nom</translation>
+    <translation id="iplb_ssl_update_success">Le certificat SSL a été modifié avec succès.</translation>
+    <translation id="iplb_ssl_update_error">Une erreur est survenue lors de la modification du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_preview_title">Aperçu du certificat SSL</translation>
+    <translation id="iplb_ssl_preview_name">Nom</translation>
+    <translation id="iplb_ssl_preview_serial">Numéro de séquence</translation>
+    <translation id="iplb_ssl_preview_subject">Sujet</translation>
+    <translation id="iplb_ssl_preview_fingerprint">Empreinte</translation>
+    <translation id="iplb_ssl_preview_type">Type</translation>
+    <translation id="iplb_ssl_preview_id">Identifiant</translation>
+
+    <translation id="iplb_ssl_delete_title">Supprimer un certificat</translation>
+    <translation id="iplb_ssl_delete_question">Êtes-vous sûr de vouloir supprimer le certificat {{name}} ?</translation>
+    <translation id="iplb_ssl_delete_button">Supprimer</translation>
+    <translation id="iplb_ssl_delete_success">Le certificat SSL a été supprimé avec succès.</translation>
+    <translation id="iplb_ssl_delete_error">Une erreur est survenue lors de la suppression du certificat SSL : {{message}}</translation>
+</translations>
