@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Einen Gutschein aktivieren</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Cloud Guthaben aufladen</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Bei jeder neuen Rechnung werden die für die jeweiligen Produkte gültigen Gutscheine vor der eigentlichen Zahlungsart verwendet.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Bei jeder Rechnungserstellung wird der Rechnungsbetrag zuerst von Ihrem unten aufgeführten Cloud Guthaben und dann von Ihren Digital LaunchPad Account beziehungsweise Ihrem Treue-Account abgezogen. Eventuell noch bestehende Außenstände werden abschließend über Ihre eingetragene Zahlungsart abgerechnet (Details zu drei letztgenannten Zahlungsarten finden Sie in Ihrem Kundencenter in der Rubrik "Abrechnung").</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Keine Gutscheine gefunden.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Ihr Gutschein</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Meinen Gutschein hinzufügen</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Die Liste der Gutscheine kann nicht angezeigt werden.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Die Liste der Gutscheine kann nicht angezeigt werden.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Rechnung Nr. <a href="{{url}}">{{billId}}</a> </translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Dazugehöriger Gutschein</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Name</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Ursprünglicher Wert</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Verbleibende Aufladung</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Automatisch für Ihre nächsten Rechnungen verwendetes Guthaben</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Aktivierungsdatum</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Gültigkeitsdatum</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Kompatible Produkte</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Alle</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Cloud Guthaben</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Der Gutschein wurde erfolgreich hinzugefügt.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Der Gutschein konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Dieser Gutschein ist nicht mehr gültig oder wurde bereits verwendet.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Dieser Gutschein ist ungültig.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Das Cloud Guthaben kann weder übertragen noch zurückerstattet werden. Es hat keinen Geldwert, und innerhalb von 13 Monaten nicht verwendetes Guthaben geht verloren.</translation>
+
+</translations>

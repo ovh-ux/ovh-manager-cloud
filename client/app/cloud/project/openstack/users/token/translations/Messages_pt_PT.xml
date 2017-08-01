@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_token_title" qtlid="245571">Gerar um token Openstack</translation>
+   <translation id="cpou_openrc_title" qtlid="261036">Fazer download do ficheiro RC OpenStack</translation>
+   <translation id="cpou_token_info" qtlid="296193">De forma a poder gerar um token Openstack, agradecemos que introduza a password do utilizador <b>{{ username }}</b>.</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Password</translation>
+   <translation id="cpou_token_error" qtlid="245597">Oops, não foi possível gerar o token Openstack.</translation>
+
+   <translation id="cpou_token_title_information" qtlid="245610">Anote estes identificadores. Eles não deixarão de estar acessíveis na próxima atualização.</translation>
+   <translation id="cpou_token_xauthtoken" qtlid="245623">O token Openstack que permite identificar os seus pedidos HTTP (X-Auth-Token) é:</translation>
+   <translation id="cpou_token_xauthtoken_guide" qtlid="296206">Encontre um exemplo de utilização neste <a href="{{ link }}" target="_blank">guia</a>.</translation>
+   <translation id="cpou_token_catalog_region" qtlid="245636">Região</translation>
+   <translation id="cpou_token_catalog_service" qtlid="31042">Serviço</translation>
+   <translation id="cpou_token_catalog_endpoint" qtlid="245649">Endpoint</translation>
+</translations>

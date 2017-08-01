@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_snapshot_demo" qtlid="246507">Aqui terá a possibilidade de fazer uma snapshot de cada servidor da sua infraestrutura. <br/> Poderá, a partir dessa snapshot, criar novos servidores de forma simples.</translation>
+
+   <translation id="cpc_snapshot_name" qtlid="258756">Nome</translation>
+   <translation id="cpc_snapshot_region" qtlid="168237">Localização</translation>
+   <translation id="cpc_snapshot_region_tooltip" qtlid="251447">Não é possível realizar uma snapshot a não ser na localização inicialmente selecionada. Em breve será possível mudar de localização.</translation>
+   <translation id="cpc_snapshot_min_disk" qtlid="251460">Espaço de disco necessário</translation>
+   <translation id="cpc_snapshot_min_disk1" qtlid="246546">Espaço máx. necessário (GiB)</translation>
+   <translation id="cpc_snapshot_min_disk2" qtlid="246559">Espaço máx. (GiB)</translation>
+   <translation id="cpc_snapshot_total2" qtlid="269994">A titulo indicativo, as suas snapshots atuais totalizam <span class="text-danger">{{size | bytes:2:'true':'GiB'}}</span>, ou seja <span class="text-danger">{{price}} s/IVA/mês</span>.</translation>
+
+   <translation id="cpc_snapshot_price" qtlid="270007">Preço s/IVA/mês</translation>
+   <translation id="cpc_snapshot_creation_date" qtlid="26419">Data de criação</translation>
+   <translation id="cpc_snapshot_type" qtlid="2642">Tipo</translation>
+   <translation id="cpc_snapshot_create_vm_button" qtlid="246572">Criar um servidor a partir desta snapshot</translation>
+   <translation id="cpc_snapshot_create_vm_button_info" qtlid="246585">Irá ser redirecionado. A interface de adição de um servidor está em curso de carregamento. Esta snapshot será automaticamente selecionada.</translation>
+   <translation id="cpc_snapshot_create_volume_button" qtlid="273492">Criar um volume a partir desta snapshot</translation>
+   <translation id="cpc_snapshot_create_volume_button_info" qtlid="273505">Será reencaminhado. A interface de restauro do disco rígido está em curso de carregamento.</translation>
+
+
+   <translation id="cpc_snapshot_date_start" qtlid="246598">Criada a partir de</translation>
+   <translation id="cpc_snapshot_date_end" qtlid="246611">Criada antes de</translation>
+
+   <translation id="cpc_snapshot_type_linux" qtlid="273518">Instância Linux</translation>
+   <translation id="cpc_snapshot_type_windows" qtlid="273531">Instância Windows</translation>
+   <translation id="cpc_snapshot_type_imagewindows" qtlid="273544">Imagem Windows</translation>
+   <translation id="cpc_snapshot_type_imagelinux" qtlid="273557">Imagem Linux</translation>
+   <translation id="cpc_snapshot_type_volume" qtlid="405616">Volume Snapshot</translation>
+   <translation id="cpc_snapshot_status" qtlid="364433">Estado</translation>
+   <translation id="cpc_snapshot_status_active" qtlid="246624">Pronta</translation>
+   <translation id="cpc_snapshot_status_queued" qtlid="246637">Snapshot agendada</translation>
+   <translation id="cpc_snapshot_status_saving" qtlid="29647">Em curso de criação</translation>
+   <translation id="cpc_snapshot_status_killed" qtlid="45508">Em erro</translation>
+   <translation id="cpc_snapshot_status_deleted" qtlid="223710">Eliminado</translation>
+   <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Em curso de eliminação</translation>
+   <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Esta snapshot não pode ser eliminado, uma vez que ele está a ser utilizado por pelo menos um servidor.</translation>
+   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Em curso de snapshot</translation>
+   <translation id="cpc_snapshot_status_creating" qtlid="29647">Em curso de criação</translation>
+   <translation id="cpc_snapshot_status_available" qtlid="246624">Pronta</translation>
+   <translation id="cpc_snapshot_status_deleting" qtlid="152778">Em curso de eliminação</translation>
+   <translation id="cpc_snapshot_status_error" qtlid="45508">Em erro</translation>
+   <translation id="cpc_snapshot_status_error_deleting" qtlid="45508">Em erro</translation>
+
+   <translation id="cpc_snapshot_empty" qtlid="246650">Ainda não criou nenhuma snapshot.</translation>
+   <translation id="cpc_snapshot_empty_search" qtlid="246663">Nenhuma snapshot corresponde aos seus critérios de pesquisa.</translation>
+   <translation id="cpc_snapshot_error" qtlid="246676">Oops, não foi possível recuperar a lista das suas snapshots.</translation>
+
+   <translation id="cpc_snapshot_search_button" qtlid="37659">Procurar</translation>
+
+   <translation id="cpc_snapshot_delete_success" qtlid="246689">Esta snapshot já não está disponível.</translation>
+   <translation id="cpc_snapshot_delete_error" qtlid="246702">Oops, não foi possível eliminar esta snapshot!</translation>
+
+   <translation id="cpc_snapshot_delete_button" qtlid="246715">Eliminar a snapshot</translation>
+   <translation id="cpc_snapshot_delete_cancel_button" qtlid="246728">Não eliminar a snapshot</translation>
+   <translation id="cpc_snapshot_delete_confirm_button" qtlid="245519">Confirmar esta eliminação</translation>
+
+   <translation id="cpc_snapshot_delete_button_plural" qtlid="246741">Eliminar as {{nbSnapshots}} snapshots</translation>
+   <translation id="cpc_snapshot_delete_cancel_button_plural" qtlid="246754">Não eliminar as snapshots</translation>
+
+   <translation id="cpc_snapshot_delete_success_plural" qtlid="246767">As {{nbSnapshots}} snapshots selecionadas deixarão de estar disponíveis. </translation>
+   <translation id="cpc_snapshot_delete_error_plural" qtlid="246780">Oops, não foi possível eliminar {{nbSnapshots}} snapshots!</translation>
+   <translation id="cpc_snapshot_delete_error_one" qtlid="246793">Oops, não foi possível eliminar uma snapshots!</translation>
+
+   <translation id="cpc_snapshot_installed_info" qtlid="266807">Instalado em apenas 1 instância.</translation>
+   <translation id="cpc_snapshot_installed_info_plural" qtlid="266820">Instalado em {{nbVms}} instâncias.</translation>
+
+
+
+</translations>

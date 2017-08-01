@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_rename_loading_error" qtlid="298584">Une erreur est survenue lors du chargement de la description.</translation>
+   <translation id="cloud_project_rename_error" qtlid="255155">Une erreur est survenue lors du changement de description.</translation>
+   <translation id="cpb_details_project_delete" qtlid="282328">Supprimer ce projet</translation>
+   <translation id="cpb_details_project_rename_reset" qtlid="37863">Annuler</translation>
+   <translation id="cpb_details_project_rename_ok" qtlid="8506">Enregistrer</translation>
+   <translation id="cpb_details_project_rename" qtlid="70001">Renommer</translation>
+   <translation id="cpb_details_project_description" qtlid="364420">Description du projet</translation>
+</translations>

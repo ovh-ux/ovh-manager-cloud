@@ -1,0 +1,22 @@
+#nasha {
+    .nasha-input() {
+        &__addon {
+            border-right-style: none;
+            padding-right: 0;
+            padding-left: 4px;
+            line-height: 0;
+        }
+
+        &__text {
+            border-left-style: none;
+            padding-left: 0px;
+        }
+    }
+}
+
+
+.nasha-custom-snapshot-add {
+    &-input {
+        #nasha > .nasha-input();
+    }
+}

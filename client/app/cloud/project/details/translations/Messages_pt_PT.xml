@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Redireção...</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">O seu projeto cloud foi suspenso. Para mais informações contacte <a href="#/support">o suporte</a>.</translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">Será automaticamente redirecionado assim que o seu projeto for criado.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Queira final o pagamento da sua nota de encomenda inicial.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Anular a criação do projeto</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Queira finalizar o pagamento da sua <a href="{{url}}" target="_blank">nota de encomenda inicial</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Se esta página continuar a ser apresentada alguns minutos após o pagamento, agradecemos que contacte <a href="#/support">o nosso serviço de aconselhamento</a>.</translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Eliminação do projeto em curso...</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">Será automaticamente redirecionado assim que o seu projeto for eliminado.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">O seu projeto está pronto!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">A criação do seu projeto foi anulado com sucesso.</translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">O seu projeto está expirado.</translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">O seu projeto já se encontra criado.</translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Ocorreu um erro aquando da anulação.</translation>
+</translations>

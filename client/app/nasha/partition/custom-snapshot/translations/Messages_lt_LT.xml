@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_custom_snapshot_of" qtlid="344922">Skirsnio {{partitionName}} momentinė kopija</translation>
+   <translation id="nasha_custom_snapshot_modal_title" qtlid="369178">Momentinė kopija (snapshot)</translation>
+   <translation id="nasha_custom_snapshot_modal_success" qtlid="369191">Momentinė kopija bus netrukus sukurta.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Įvyko klaida keičiant momentinių kopijų atlikimo dažnumą.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations" qtlid="344948">Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations_size" qtlid="369204">Momentinės kopijos naudoja vietą jūsų skirsnyje, kad teisingai veiktų.</translation>
+   <translation id="nasha_custom_snapshot_modal_label_snapshot_name" qtlid="369217">Momentinės kopijos pavadinimas</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_length" qtlid="369230">Momentinės kopijos pavadinime turi būti ne daugiau nei {{ maxlength }} simbolis(-iai)/(-ių).</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_required" qtlid="369243">Būtinas momentinės kopijos pavadinimas.</translation>
+</translations>

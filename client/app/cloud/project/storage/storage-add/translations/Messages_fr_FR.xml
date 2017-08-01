@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="add_p8_alert_success" qtlid="242626">Bravo, vous êtes inscrit au Lab Power8</translation>
+   <translation id="add_instance_ssh_key_help" qtlid="295868">Dans le Cloud public, nous n'utilisons pas de mots de passe administrateur (root). L'accès à votre instance GNU/Linux nécesite l'ajout d'une clé SSH. <a target="_blank" href="https://www.ovh.com/fr/g1785.cloud">Découvrez comment générer une clé SSH.</a></translation>
+   <translation id="add_instance_ssh_key_help_message" qtlid="242652">Attention, afin de finaliser la création de votre instance, vous devez obligatoirement fournir une clé ssh.</translation>
+
+   <translation id="add_instance" qtlid="242665">Un serveur virtuel</translation>
+   <translation id="add_storage" qtlid="242678">Un conteneur d'objets</translation>
+   <translation id="add_storage2" qtlid="246468">Ajout d'un conteneur d'objets</translation>
+   <translation id="add_ssh_key" qtlid="242691">Une clé SSH</translation>
+   <translation id="add_title" qtlid="37923">Ajouter</translation>
+   <translation id="add_subtitle" qtlid="242704">Sélectionnez l'élément que vous souhaitez ajouter.</translation>
+
+   <translation id="add_instance" qtlid="242665">Un serveur virtuel</translation>
+   <translation id="add_storage" qtlid="242678">Un conteneur d'objets</translation>
+   <translation id="add_ssh" qtlid="242691">Une clé SSH</translation>
+
+   <translation id="add_already_instancied_title" qtlid="242717">Quota !</translation>
+
+   <translation id="add_instance_region_step_title" qtlid="242730">Choisissez le datacentre</translation>
+   <translation id="add_instance_flavor_category_step_title" qtlid="242743">Choisissez la gamme de serveur</translation>
+
+   <translation id="add_instance_flavor_step_title" qtlid="242756">Choisissez la gamme</translation>
+   <translation id="add_instance_flavor_loading" qtlid="242769">Chargement en cours</translation>
+   <translation id="add_instance_flavor_not_found" qtlid="242782">Ce modèle n'est pas disponible actuellement</translation>
+   <translation id="add_instance_flavor_by_hour" qtlid="242795">par heure</translation>
+
+   <translation id="add_instance_image_step_title" qtlid="242808">Choisissez le système d'exploitation</translation>
+   <translation id="add_instance_images_loading" qtlid="242769">Chargement en cours</translation>
+   <translation id="add_instance_images_not_found" qtlid="242821">Aucun système d'exploitation disponible.</translation>
+
+   <translation id="add_instance_paymentMode_step_title" qtlid="242834">Choisissez le mode de paiement</translation>
+   <translation id="add_instance_paymentMode_loading" qtlid="242769">Chargement en cours</translation>
+   <translation id="add_instance_paymentMode_not_found" qtlid="242847">Aucun mode de paiement actuellement disponible</translation>
+   <translation id="add_instance_paymentMode_hourly" qtlid="242444">Paiement à l'heure</translation>
+   <translation id="add_instance_paymentMode_monthly" qtlid="233928">Forfait mensuel</translation>
+   <translation id="add_instance_paymentMode_hourly_subtitle" qtlid="242860">Facturé en fin de mois</translation>
+   <translation id="add_instance_paymentMode_monthly_subtitle" qtlid="242873">Prorata débité immédiatement</translation>
+
+   <translation id="add_instance_ssh_step_title" qtlid="242886">Choisissez votre clé SSH</translation>
+   <translation id="add_instance_ssh_loading" qtlid="242769">Chargement en cours</translation>
+   <translation id="add_instance_ssh_not_found" qtlid="242899">Vous n'avez actuellement aucune clé SSH.</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Ajouter une clé SSH</translation>
+
+   <translation id="add_instance_name_step_title" qtlid="242912">Donnez un nom à votre serveur virtuel (instance)</translation>
+
+   <translation id="add_instance_go_to_the_moon" qtlid="217288">Démarrer le serveur</translation>
+
+   <translation id="add_storage_region_step_title" qtlid="242730">Choisissez le datacentre</translation>
+   <translation id="add_storage_container_type_step_title" qtlid="242925">Choisissez le type de conteneur</translation>
+   <translation id="add_storage_name_step_title" qtlid="242938">Donnez un nom à votre conteneur</translation>
+   <translation id="add_build_you_own_warehouse" qtlid="242951">Créer le conteneur</translation>
+
+   <translation id="add_container_name" qtlid="242964">Nom du conteneur</translation>
+   <translation id="add_instance_name" qtlid="242977">Nom du serveur</translation>
+   <translation id="add_container_image" qtlid="4394">Image</translation>
+   <translation id="add_instance_choose" qtlid="186115">Choisir...</translation>
+   <translation id="add_container_region" qtlid="30802">Datacentre</translation>
+   <translation id="add_container_flavor" qtlid="2642">Type</translation>
+   <translation id="add_container_ssh" qtlid="21859">Clé SSH</translation>
+   <translation id="add_instance_new_ssh" qtlid="242990">Créer une clé SSH</translation>
+   <translation id="add_container_ssh_enter" qtlid="243003">Saisissez votre clé</translation>
+   <translation id="add_submit" qtlid="37923">Ajouter</translation>
+   <translation id="add_form_error_bad_ssh_key" qtlid="243016">Clé invalide</translation>
+   <translation id="add_form_error_required" qtlid="182514">Champs requis</translation>
+   <translation id="add_container_selected_publicKey" qtlid="243029">Clé publique sélectionnée</translation>
+   <translation id="add_loading" qtlid="8410">Chargement...</translation>
+   <translation id="selected_add_label" qtlid="243042">Que voulez-vous ajouter ?</translation>
+   <translation id="add_posting" qtlid="243055">Créer le serveur</translation>
+   <translation id="add_key_created_public" qtlid="243068">Créer une clé publique</translation>
+   <translation id="add_key_created_finger" qtlid="192344">Empreinte</translation>
+   <translation id="add_key_created" qtlid="243081">La clé SSH {{ name }} a été créée</translation>
+   <translation id="add_key_used" qtlid="243094">avec la clé {0}</translation>
+   <translation id="add_instance_created" qtlid="243107">Le serveur virtuel (instance) {0} a été créé</translation>
+   <translation id="add_container_selected_publicKey_create" qtlid="243120">Nom de la clé SSH</translation>
+   <translation id="add_key_success" qtlid="243133">Clé SSH ajoutée</translation>
+   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_storage_storage_added" qtlid="243146">Stockage créé</translation>
+   <translation id="add_storage_storage_added_error" qtlid="246481">Une error est survenue lors de la création du container.</translation>
+   <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Une clé SSH existe déjà avec ce nom</translation>
+   <translation id="add_form_error_pattern" qtlid="149774">Format invalide</translation>
+   <translation id="add_already_instancied" qtlid="243172">Vous ne pouvez pas avoir plus d'instance dans ce datacentre</translation>
+   <translation id="add_container_selected_flavor" qtlid="243185">Type de container selectionné</translation>
+   <translation id="add_quota_ssh_title" qtlid="242717">Quota !</translation>
+   <translation id="add_quota_ssh" qtlid="243198">Vous ne pouvez pas avoir plus de clé SSH</translation>
+   <translation id="ssh_key_quota_exceeded" qtlid="243211">Vous ne pouvez pas avoir plus de clé SSH sur ce projet !</translation>
+   <translation id="add_form_error_maxlength" qtlid="243224">Cette clé est trop longue</translation>
+
+   <translation id="labs_sandbox_success_subscribed" qtlid="243237">Lab Sandbox activé!</translation>
+   <translation id="code_linked_to_your_account" qtlid="243250">Ce code est mainetant lié à votre compte</translation>
+   <translation id="add_no_more_instances" qtlid="295881">En raison de leur succès, les instances sont temporairement indisponibles pour les nouveaux clients. Vous avez automatiquement été ajouté à la liste d'attente. <br /><br />Vous serez notifés dès leur disponibilité. <br /><br />Merci pour votre patience&#160;!</translation>
+
+   <translation id="add_storage_categories_more_info" qtlid="44536">En savoir plus</translation>
+   <translation id="add_storage_category_pcs" qtlid="135593">Public Cloud Storage</translation>
+   <translation id="add_storage_category_pca" qtlid="134631">Public Cloud Archive</translation>
+
+   <translation id="add_storage_type_static_hosting" qtlid="243276">Hébergement statique</translation>
+   <translation id="add_storage_type_static_hosting_description" qtlid="367449">Accès rapide et performant pour vos sites. Liez vos domaines et déposez vos fichiers.</translation>
+   <translation id="add_storage_type_private" qtlid="242106">Privé</translation>
+   <translation id="add_storage_type_private_description" qtlid="367462">Facturation, informations légales, logs. Archivez simplement et selon vos usages.</translation>
+   <translation id="add_storage_type_public" qtlid="246494">Public</translation>
+   <translation id="add_storage_type_public_description" qtlid="367475">Multimédia, binaires, e-commerce. Stockez une infinité de données.</translation>
+   <translation id="add_storage_type_cold" qtlid="376297">Stockage à froid, à bas prix</translation>
+   <translation id="add_storage_type_cold_description" qtlid="376310">Archiver et sécuriser tout type de données sur de multiples passerelles.</translation>
+
+   <translation id="add_flavour_ovh_x86_ha_xl_ram" qtlid="243289">RAM XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_sb_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_ram" qtlid="243328">RAM XL3</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_cpu" qtlid="243341">CPU XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_sb_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_ram" qtlid="243354">RAM XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_xl_cpu" qtlid="243367">CPU XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_cpu" qtlid="243380">CPU XL3</translation>
+
+   <translation id="add_instance_price_by_hour" qtlid="242795">par heure</translation>
+   <translation id="add_instance_price_by_month" qtlid="244794">par mois</translation>
+
+   <translation id="add_flavour_RAM_CPU" qtlid="243406">{{vcpu}} vCores, {{ram}} RAM, {{disk}} Block Storage</translation>
+   <translation id="add_flavour_VPS" qtlid="245077">{{vcpu}} vCore(s), {{ram}} RAM, {{disk}} local SSD</translation>
+   <translation id="instance_creation_success" qtlid="242548">Serveur en cours de création</translation>
+   <translation id="instance_creation_PermissionDenied" qtlid="243419">Quota dépassé : vous n'êtes pas autorisé à créer plus d'instances.</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Guides</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+</translations>

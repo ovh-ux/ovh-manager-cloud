@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_delete_title" qtlid="282055">Eliminação de um projeto</translation>
+   <translation id="cloud_project_delete_confirm" qtlid="51979">Eliminar o projeto.</translation>
+   <translation id="cloud_project_delete_info" qtlid="282068">Num prazo de 24h receberá um e-mail para validação a eliminação definitiva de todos os recursos do projeto. Esta ação é irreversível, todos os dados serão imediatamente perdidos e todos os utilizadores OVH e OpenStack perderão o acesso ao projeto.</translation>
+   <translation id="cloud_project_delete_info_bill" qtlid="282081">Uma última fatura (d'un montant d'environ {{ bill }}) correspondente aos seus consumos a pedido será editada passadas 24h da confirmação.</translation>
+   <translation id="cloud_project_delete_info_credits" qtlid="367436">Após o pagamento desta feita, todo o crédito e vouchers relacionados com este projeto serão perdidos.</translation>
+   <translation id="cloud_project_delete_email_sent" qtlid="282107">Receberá um e-mail de confirmação num prazo de 24h.</translation>
+
+   <translation id="cloud_project_delete_error" qtlid="282120">Ocorreu um erro aquando da eliminação do seu projeto.</translation>
+   <translation id="cloud_project_delete_error_title" qtlid="282133">Ocorreu um erro aquando da recuperação das informações do seu projeto.</translation>
+   <translation id="cloud_project_delete_error_try_later" qtlid="247053">Por favor, tente mais tarde.</translation>
+   <translation id="cloud_project_delete_error_refresh_cache" qtlid="247066">Em caso de falha, poderá tentar novamente o pedido, limpando a sua cache local:</translation>
+   <translation id="cloud_project_delete_error_contact_support_part1" qtlid="282146">Se o problema persistir queira contactar o nosso suporte ao clicar</translation>
+   <translation id="cloud_project_delete_error_contact_support_part2" qtlid="137452">aqui</translation>
+   <translation id="cloud_project_delete_error_reset_cache" qtlid="247027">Reinicializar a cache</translation>
+   <translation id="cloud_project_delete_resource_warning_title" qtlid="282159">Atenção:</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_server" qtlid="282172">O seu servidor será destruído.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_server" qtlid="282185">Os seus {{ amountInstance }} servidores serão destruídos.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_volume" qtlid="282198">O seu disco rígido adicional será destruído.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_volume" qtlid="282211">Os seus {{ amountVolume }} discos rígidos adicionais serão destruídos.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_snapshot" qtlid="282224">A sua snapshot será destruída.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_snapshot" qtlid="282237">As suas {{ amountSnapshot }} snapshots e imagens serão destruídas.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_storage" qtlid="282250">O seu container de armazenamento será destruído.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_storage" qtlid="282263">Os seus {{ amountStorage }} containers de armazenamento serão destruídos.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverOvh" qtlid="282276">O seu endereço IP Failover OVH será destruído.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverOvh" qtlid="282289">Os seus {{ amountIpFailoverOvh }} endereços IP Failover OVH serão destruídos.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverCloud" qtlid="282302">O seu endereço IP Failover Cloud serão migrados para Parking.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverCloud" qtlid="282315">Os seus {{ amountIpFailoverCloud }} endereços IP Failover Cloud serão destruídos.</translation>
+</translations>

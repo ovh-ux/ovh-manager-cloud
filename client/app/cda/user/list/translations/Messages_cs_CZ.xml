@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_permission_definition" qtlid="354717">Vos utilisateurs peuvent utiliser le cluster avec des permissions spécifiques par pool.</translation>
+
+   <translation id="cda_user_add_button_text" qtlid="7150">Přidat uživatele</translation>
+   <translation id="cda_user_delete_button_text" qtlid="2414">Odstranit</translation>
+   <translation id="cda_user_edit_button_text" qtlid="354730">Voir les permissions</translation>
+
+   <translation id="cda_user_table_col_username" qtlid="3818">Příjmení</translation>
+   <translation id="cda_user_table_col_key" qtlid="104326">Klíč</translation>
+   <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
+   <translation id="cda_user_table_col_actions" qtlid="72809">Akce</translation>
+
+   <translation id="cda_user_add_title" qtlid="7150">Přidat uživatele</translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Příjmení</translation>
+
+   <translation id="cda_user_add_username_required" qtlid="354288">Zadejte prosím název.</translation>
+   <translation id="cda_user_add_username_pattern" qtlid="354301">Le nom ne peut contenir d'espaces.</translation>
+   <translation id="cda_user_add_username_maxlength" qtlid="354314">Maximální počet znaků v názvu: {{ maxlength }}</translation>
+   <translation id="cda_user_add_success" qtlid="354743">Utilisateur ajouté avec succès.</translation>
+
+   <translation id="cda_user_delete_title" qtlid="7666">Odebrat uživatele</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Název:</translation>
+   <translation id="cda_user_delete_confirm" qtlid="354756">Êtes-vous certain de vouloir supprimer cet utilisateur?</translation>
+   <translation id="cda_user_delete_success" qtlid="354769">Utilisateur supprimé avec succès.</translation>
+
+
+   <translation id="cda_user_table_empty" qtlid="215741">Žádný uživatel</translation>
+</translations>

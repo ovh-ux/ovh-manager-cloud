@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Nukreipimas...</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">Jūsų Cloud projektas sustabdytas. Jei reikia papildomos informacijos, susisiekite su <a href="#/support">OVH pagalba</a>.</translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">Jūs būsite iš karto nukreipti, kai tik jūsų projektas bus sukurtas.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Prašome apmokėti savo pradinį užsakymą.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Atšaukti projekto kūrimą</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Prašome apmokėti savo <a href="{{url}}" target="_blank">pradinį užsakymą</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Jeigu šis puslapis matomas ir po atlikto apmokėjimo, prašome susisiekti su <a href="#/support">OVH pagalba</a>.</translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Projektas trinamas...</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">Jūs būsite iš karto nukreipti, kai tik jūsų projektas bus pašalintas.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">Jūsų projektas paruoštas!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">Projekto kūrimas sėkmingai atšauktas.</translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Baigėsi projekto galiojimo laikas.</translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">Projektas jau sukurtas.</translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Klaida atšaukiant.</translation>
+</translations>

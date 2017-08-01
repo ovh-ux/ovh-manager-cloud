@@ -1,0 +1,27 @@
+<div class="cloud-billing-history">
+
+    <nav class="cloud-billing-history-nav">
+        <ul class="row nav nav-tabs">
+            <li class="col-xs-2 col-md-4">
+                <button type="button" class="pull-left no-style" data-ng-click="BillingHistoryCtrl.previousMonth()">
+                    <i class="fa fa-chevron-left"></i>
+                    <h4 class="visible-md-inline visible-lg-inline" data-translate="cpbh_previous_month"></h4>
+                </button>
+            </li>
+            <li class="col-xs-8 col-md-4">
+                <div class="active">
+                    <h4 class="text-center" data-translate="cpbh_current_month" data-translate-values="BillingHistoryCtrl.getBillingDateInfo()"></h4>
+                </div>
+            </li>
+            <li class="col-xs-2 col-md-4">
+                <button type="button" class="pull-right no-style" data-ng-click="BillingHistoryCtrl.nextMonth()" data-ng-disabled="BillingHistoryCtrl.isLimitReached()">
+                    <h4 class="visible-md-inline visible-lg-inline" data-translate="cpbh_next_month"></h4>
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <div ui-view="cloudProjectHistory" class="cloud-billing-history-content-ctnr"></div>
+</div>
+

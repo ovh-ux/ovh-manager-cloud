@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_private_network_delete_title" qtlid="405538">Privénetwerk verwijderen</translation>
+   <translation id="cpci_private_network_delete_confirm" qtlid="405551">Weet u zeker dta u het privénetwerk wilt verwijderen? </translation>
+   <translation id="cpci_private_network_delete_success" qtlid="405564">Het privénetwerk is verwijderd</translation>
+   <translation id="cpci_private_network_delete_error" qtlid="405577">Er is een fout opgetreden tijdens het verwijderen van het privénetwerk</translation>
+</translations>

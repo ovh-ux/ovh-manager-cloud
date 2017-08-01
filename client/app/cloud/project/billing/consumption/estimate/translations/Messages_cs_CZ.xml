@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbe_estimate_summary_header" qtlid="364043">Za předpokladu, že Vaše spotřeba bude stejná jako 1. {{ month }}, bude Vám vystavena faktura na:</translation>
+   <translation id="cpbe_estimate_summary_renew_monthly_sub_label" qtlid="364056">Obnovení Vašich měsíčních paušálů: <strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_summary_hourly_consumption_label" qtlid="364069">Spotřeba zdrojů na vyžádání za měsíc {{ month }}: <strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_alert_header_title" qtlid="364082">Výstraha ohledně spotřeby zdrojů na vyžádání</translation>
+   <translation id="cpbe_estimate_alert_header_description" qtlid="364095">Tato výstraha je založena na extrapolaci hodnot získaných na konci každého měsíce.</translation>
+   <translation id="cpbe_estimate_alert_create" qtlid="269032">Vytvořit výstrahu</translation>
+   <translation id="cpbe_estimate_alert_edit" qtlid="364108">Upravit výstrahu</translation>
+   <translation id="cpbe_estimate_alert_delete" qtlid="286903">Smazat výstrahu</translation>
+   <translation id="cpbe_estimate_alert_delete_success" qtlid="286916">Výstraha o spotřebě byla smazána.</translation>
+   <translation id="cpbe_estimate_alert_delete_error" qtlid="286929">Během mazání výstrahy došlo k chybě.</translation>
+
+   <translation id="cpbe_estimate_alert_chart_label_now" qtlid="169719">Dnes</translation>
+   <translation id="cpbe_estimate_alert_chart_label_future" qtlid="364121">Konec měsíce</translation>
+   <translation id="cpbe_estimate_alert_chart_label_limit" qtlid="33562">Limit</translation>
+
+   <translation id="cpbe_estimate_price_error_message" qtlid="268655">Bohužel se nepodařilo získat informace o ceně.</translation>
+</translations>

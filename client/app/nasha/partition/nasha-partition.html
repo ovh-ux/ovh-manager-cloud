@@ -1,0 +1,160 @@
+<div class="top-space-m20 bottom-space-m20 nasha-partition">
+    <div>
+        <h2 class="fs20">{{'nasha_partition' | translate}}
+            <i class="fa fa-question-circle fs18 pointer"
+               data-ng-if="PartitionCtrl.data.nasha"
+               data-responsive-popover="'app/nasha/partition/nasha-partition-help.html'"
+               data-popover-placement="right"
+               data-popover-append-to-body="true"
+               data-popover-trigger="outsideClick">
+            </i>
+        </h2>
+
+        <button type="button"
+                class="btn btn-primary fs14 bottom-space-m12 top-space-m4"
+                data-ng-disabled="PartitionCtrl.loaders.table"
+                data-ng-if="PartitionCtrl.data.nasha.canCreatePartition"
+                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/add/nasha-partition-add.html', 'NashaPartitionAddCtrl')">
+            <i class="glyphicon glyphicon-plus right-space-m8"></i>
+            {{"nasha_partitions_action_add" | translate }}
+        </button>
+
+        <div class="table-responsive-vertical">
+            <table class="table table-pretty table-hover table-striped shadow-z-1">
+                <colgroup>
+                    <col width="32%"></col>
+                    <col width="25%"></col>
+                    <col width="38%"></col>
+                    <col width="15%"></col>
+                    <col width="2%"></col>
+                </colgroup>
+                <thead>
+                    <th data-translate="nasha_partitions_name" class="left-space-p12"></th>
+                    <th data-translate="nasha_partitions_protocol"></th>
+                    <th class="right" data-translate="nasha_partitions_size"></th>
+                    <th></th>
+                    <th class="center table-header">
+                        <button type="button"
+                                class="no-style pull-right table-header-action"
+                                title="{{ 'common_refresh' | translate }}"
+                                data-ng-disabled="PartitionCtrl.loaders.table"
+                                data-ng-click="PartitionCtrl.load(true)">
+                            <i class="fa fa-refresh fs14"></i>
+                        </button>
+                    </th>
+                </thead>
+
+                <tbody data-ng-if="!PartitionCtrl.loaders.table && PartitionCtrl.data.table.partitions.length === 0">
+                    <tr>
+                        <td colspan="4" class="center" data-translate="nasha_partitions_no_data"></td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-if="PartitionCtrl.loaders.table">
+                    <tr>
+                        <td colspan="4" class="text-center"><spinner data-ng-show="PartitionCtrl.loaders.table"></spinner></td>
+                    </tr>
+                </tbody>
+
+                <tbody data-ng-hide="PartitionCtrl.loaders.table">
+                    <tr data-ng-repeat="partition in PartitionCtrl.data.table.currentPartitions">
+                        <td data-title="{{ 'nasha_partitions_name' | translate }}"
+                            data-ng-bind="partition.partitionName"
+                            class="left-space-p12 vertical-middle"
+                            data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }">
+                        </td>
+                        <td data-title="{{ 'nasha_partitions_protocol' | translate }}"
+                            data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }"
+                            class="vertical-middle">
+                            <span data-ng-if="partition.protocol"
+                                  data-translate="{{'nasha_partitions_protocol_' + partition.protocol}}"></span>
+                        </td>
+                        <td
+                            data-title="{{ 'nasha_partitions_size' | translate }}"
+                            data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }"
+                            class="vertical-middle">
+                            <cloud-space-meter
+                                class="cloud-space-meter"
+                                data-ng-if="partition.use"
+                                data-usage="partition.use">
+                            </cloud-space-meter>
+                        </td>
+                        <td class="vertical-middle">
+                            <span data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"
+                                  data-translate="{{ 'nasha_partitions_task_' + PartitionCtrl.data.partitionsTasks[partition.partitionName][0].operation }}"
+                                  class="pull-right" >
+                            </span>
+                        </td>
+                        <td data-title="{{ 'common_actions' | translate }}"
+                            class="vertical-middle">
+                            <spinner data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"
+                                     class="left-space-m4"></spinner>
+                            <div data-ng-hide="PartitionCtrl.hasTaskInProgress(partition)"
+                                 class="btn-group"
+                                 dropdown data-on-toggle="toggled(open)">
+                                <button type="button"
+                                        class="no-style"
+                                        data-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="fa fa-cog fs14"></i>
+                                </button>
+
+                                <ul  data-uib-dropdown-menu class="dropdown-menu responsive-dropdown-menu pointer" role="menu">
+                                    <li data-ng-show="PartitionCtrl.data.nasha.canCreatePartition">
+                                        <button data-translate="nasha_partitions_action_update"
+                                                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/update/nasha-partition-update.html', 'NashaPartitionUpdateCtrl', partition)">
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <a class="nasha__link"
+                                           data-translate="nasha_partitions_action_change_access"
+                                           ui-sref="paas.nasha.nasha-partition-access({ partitionName: partition.partitionName })">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                                data-translate="nasha_partitions_action_display_snapshot"
+                                                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/snapshot/nasha-partition-snapshot.html', 'NashaPartitionSnapshotCtrl', partition)">
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                                data-translate="nasha_partitions_action_display_custom_snapshot"
+                                                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/custom-snapshot/add/nasha-partition-custom-snapshot-add.html', 'NashaPartitionCustomSnapshotAddCtrl', partition)">
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                                data-translate="nasha_partitions_action_z_file_system"
+                                                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/zfs-options/nasha-partition-zfs-options.html', 'NashaPartitionZFSOptionsCtrl', partition)">
+                                        </button>
+                                    </li>
+                                    <li data-ng-show="PartitionCtrl.data.nasha.canCreatePartition">
+                                        <button type="button"
+                                                data-translate="delete"
+                                                data-ng-click="PartitionCtrl.openModal('app/nasha/partition/delete/nasha-partition-delete.html', 'NashaPartitionDeleteCtrl', partition);">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- PAGINATION TABLE -->
+        <div class="table-pretty-pagination top-space-m12"
+             data-ng-hide="PartitionCtrl.loaders.table"
+             data-pagination-front
+             data-items="PartitionCtrl.data.table.partitions"
+             data-paginated-items="PartitionCtrl.data.table.currentPartitions"
+             data-current-page="currentPage"
+             data-nb-pages="nbPages"
+             data-items-per-page="itemsPerPage"
+             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
+             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"
+             data-refresh="PartitionCtrl.data.table.refresh">
+        </div>
+    </div>
+</div>
+

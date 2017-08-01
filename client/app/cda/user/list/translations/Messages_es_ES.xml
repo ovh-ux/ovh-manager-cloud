@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_permission_definition" qtlid="354717">Sus usuarios pueden utilizar el cluster con permisos específicos para cada pool.</translation>
+
+   <translation id="cda_user_add_button_text" qtlid="7150">Añadir un usuario </translation>
+   <translation id="cda_user_delete_button_text" qtlid="2414">Eliminar</translation>
+   <translation id="cda_user_edit_button_text" qtlid="354730">Ver los permisos</translation>
+
+   <translation id="cda_user_table_col_username" qtlid="3818">Apellidos</translation>
+   <translation id="cda_user_table_col_key" qtlid="104326">Llave</translation>
+   <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
+   <translation id="cda_user_table_col_actions" qtlid="72809">Acciones</translation>
+
+   <translation id="cda_user_add_title" qtlid="7150">Añadir un usuario </translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Apellidos</translation>
+
+   <translation id="cda_user_add_username_required" qtlid="354288">El nombre es obligatorio.</translation>
+   <translation id="cda_user_add_username_pattern" qtlid="354301">El nombre no puede contener espacios.</translation>
+   <translation id="cda_user_add_username_maxlength" qtlid="354314">El nombre debe tener una longitud máxima de {{ maxlength }} caracteres.</translation>
+   <translation id="cda_user_add_success" qtlid="354743">El usuario se ha añadido correctamente.</translation>
+
+   <translation id="cda_user_delete_title" qtlid="7666">Eliminar un usuario</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Nombre:</translation>
+   <translation id="cda_user_delete_confirm" qtlid="354756">¿Seguro que quiere eliminar el usuario?</translation>
+   <translation id="cda_user_delete_success" qtlid="354769">El usuario se ha eliminado correctamente.</translation>
+
+
+   <translation id="cda_user_table_empty" qtlid="215741">No hay usuarios.</translation>
+</translations>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dbaasts_project_delete_title" qtlid="282055">Löschung eines Projekts</translation>
+<translation id="dbaasts_project_delete_info" qtlid="301799">Es wird innerhalb von 24 Stunden eine E-Mail zur Validierung der vollständigen Löschung sämtlicher Ressourcen des Projekts versandt. Diese Aktion ist unwiderruflich, dabei werden sämtliche Daten vollständig gelöscht und alle API Keys verworfen.</translation>
+   <translation id="dbaasts_project_delete_info_bill" qtlid="301812">Innerhalb von 24 Stunden nach der Bestätigung erhalten Sie dann eine letzte Rechnung über Ihren on demand Verbrauch.</translation>
+   <translation id="dbaasts_project_delete_info_credits" qtlid="301825">Das nach dieser Rechnung verbleibende, Ihrem Projekt zugewiesene Guthaben geht ebenfalls verloren und kann nicht erstattet werden.</translation>
+   <translation id="dbaasts_project_delete_email_sent" qtlid="282107">Sie erhalten innerhalb von 24 Stunden eine E-Mail zur Bestätigung.</translation>
+
+   <translation id="dbaasts_sidebar_edit_name_error" qtlid="301838">Beim Laden des Namens ist ein Fehler aufgetreten.</translation>
+</translations>

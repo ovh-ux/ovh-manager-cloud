@@ -1,0 +1,43 @@
+<div data-ng-controller="RA.add.storage.stepContainerTypeCtrl as ctrl"
+     id="container_type"
+     data-scroll-here=""
+     data-ng-show="!quotaExceeded">
+
+    <h3 id="step_containerType"
+        class="counter-step"
+        data-ng-class="{ 'step-disabled': !steps.containerType.enable }"
+        data-translate="add_storage_container_type_step_title"></h3>
+
+    <section class="storage-container-type" data-ng-repeat="category in categories" data-ng-if="steps.containerType.enable" data-scroll-here>
+        <h1 class="category-title">
+            <span data-ng-bind=":: category.name"></span> 
+            <span>
+                (<a data-ng-href="{{:: category.moreInfo.url }}" target="_blank">
+                    <span data-translate="add_storage_categories_more_info"></span>
+                    <i class="fa fa-external-link"></i>
+                </a>)
+            </span>
+        </h1>
+            <ul class="row option-list list-unstyled list-inline" data-ng-show="!quotaExceeded">
+                <li class="storage-type"
+                    data-ng-repeat="option in category.options"
+                    data-ng-click="clickOnContainerType(option)"
+                    data-ng-class="{ 'selected': model.containerType.type === option.type, 'step-disabled': !steps.containerType.enable }"
+                    data-ng-if="option.visible">
+                    <flat-radio>
+                        <input type="radio" data-ng-model="model.containerType.type" data-ng-value="option.type">
+                    </flat-radio>
+                    <div class="storage-type-summary">
+                        <img class="storage-type-logo {{option.shortcut}}" data-ng-src="assets/images/add/storage/{{ option.shortcut }}.svg" />
+                        <p class="storage-type-title" data-ng-bind="option.name"></p>
+                        <p class="storage-type-description" data-ng-bind="option.description"></p>
+                    </div>
+                </li>
+            </ul>
+    </section>
+</div>
+
+<div class="callout callout-error" data-ng-show="!loaders.quota && quotaExceeded">
+    <h3 data-translate="add_already_instancied_title"></h3>
+    <p data-translate="add_already_instancied"></p>
+</div>

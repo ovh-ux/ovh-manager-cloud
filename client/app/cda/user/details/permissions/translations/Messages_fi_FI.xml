@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_details_permission_title" qtlid="354652">Luvat pooliin</translation>
+   <translation id="cda_user_details_permission_description" qtlid="354665">Luvat on määritetty Cloud Disk Array OSD:hen. Käyttäjällä on oletuksena "allow r" lupa MON'siin. MDS-oikeudet eivät ole tällä hetkellä käytössä.</translation>
+
+   <translation id="cda_user_details_permissions_edit_button_text" qtlid="354600">Muokkaa lupia</translation>
+
+   <translation id="cda_user_details_permissions_table_col_poolname" qtlid="354678">Pool</translation>
+   <translation id="cda_user_details_permissions_table_col_read" qtlid="6958">Luku</translation>
+   <translation id="cda_user_details_permissions_table_col_write" qtlid="301565">Kirjoitus</translation>
+   <translation id="cda_user_details_permissions_table_col_execute" qtlid="354613">Suoritus</translation>
+   <translation id="cda_user_details_permissions_table_col_classread" qtlid="354626">Classread -lukuoikeus</translation>
+   <translation id="cda_user_details_permissions_table_col_classwrite" qtlid="354639">Classwrite -kirjoitusoikeus</translation>
+
+   <translation id="cda_user_details_permissions_table_empty" qtlid="354691">Käyttäjällä ei ole yhtään lupaa.</translation>
+</translations>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_project_delete_title" qtlid="282055">Projektin poistaminen</translation>
+   <translation id="cloud_project_delete_confirm" qtlid="51979">Poistetaan projektia</translation>
+   <translation id="cloud_project_delete_info" qtlid="282068">Saat 24 tunnin kuluessa sähköpostiviestin, joka vahvistaa projektin kaikkien resussien lopullisen poistamisen. Toiminto on peruuttamaton, kaikki tiedostot menetetään välittömästi sekä kaikki OVH:n ja OpenStackin käyttäjät menettävät pääsyoikeutensa projektiin. </translation>
+   <translation id="cloud_project_delete_info_bill" qtlid="282081">Kulutustasi vastaava loppulasku (arvioitu summa {{ bill }}) muodostuu 24 tunnin kuluessa vahvistuksesta.</translation>
+   <translation id="cloud_project_delete_info_credits" qtlid="367436">Tämän laskun jälkeen tähän projektiin liittyvät krediitit ja lahjakortit menetetään pysyvästi.</translation>
+   <translation id="cloud_project_delete_email_sent" qtlid="282107">Saat vahvistussähköpostin 24 tunnin kuluessa.</translation>
+
+   <translation id="cloud_project_delete_error" qtlid="282120">Tapahtui virhe projektin poistamisessa.</translation>
+   <translation id="cloud_project_delete_error_title" qtlid="282133">Tapahtui virhe projektin tietojen hakemisessa.</translation>
+   <translation id="cloud_project_delete_error_try_later" qtlid="247053">Kokeile myöhemmin uudelleen.</translation>
+   <translation id="cloud_project_delete_error_refresh_cache" qtlid="247066">Mikäli tarpeen, voit aina myös tyhjentää paikallisen välimuistisi:</translation>
+   <translation id="cloud_project_delete_error_contact_support_part1" qtlid="282146">Mikäli ongelma jatkuu, ota yhteyttä asiakastukeen klikkaamalla</translation>
+   <translation id="cloud_project_delete_error_contact_support_part2" qtlid="137452">tästä</translation>
+   <translation id="cloud_project_delete_error_reset_cache" qtlid="247027">Tyhjennä välimuisti</translation>
+   <translation id="cloud_project_delete_resource_warning_title" qtlid="282159">Huomio:</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_server" qtlid="282172">Palvelimesi tuhotaan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_server" qtlid="282185">Palvelimesi {{ amountInstance }} tuhotaan.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_volume" qtlid="282198">Ylimääräinen kovalevysi tuhotaan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_volume" qtlid="282211">Ylimääräiset {{ amountVolume }} kovalevyäsi tuhotaan.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_snapshot" qtlid="282224">Snapshottisi tuhotaan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_snapshot" qtlid="282237">Snapshottisi {{ amountSnapshot }} ja kuvasi tuhotaan.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_storage" qtlid="282250">Varastointisäiliösi tuhotaan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_storage" qtlid="282263">Varastointisäiliösi{{ amountStorage }} tuhotaan.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverOvh" qtlid="282276">OVH:n Failover IP-osoitteesi tuhotaan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverOvh" qtlid="282289">OVH:N Failover IP-osoitteesi{{ amountIpFailoverOvh }} tuhotaan.</translation>
+
+   <translation id="cloud_project_delete_resource_warning_one_IPFailoverCloud" qtlid="282302">Cloud Failover IP-osoitteesi parkkeerataan.</translation>
+   <translation id="cloud_project_delete_resource_warning_many_IPFailoverCloud" qtlid="282315">Cloud Failover IP-osoitteesi{{ amountIpFailoverCloud }} tuhotaan.</translation>
+</translations>

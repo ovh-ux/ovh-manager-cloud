@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">Per una migliore gestione dei tuoi consumi Cloud, abbiamo limitato le risorse utilizzate per il tuo progetto.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Clicca sul bottone sottostante e chiedi più risorse al nostro team.</translation>
+   <translation id="cpb_quota_protect_more_btn" qtlid="251291">Modifica limiti</translation>
+   <translation id="cpb_quota_current_limit" qtlid="251304">Limiti correnti</translation>
+
+   <translation id="cpb_quota_add_disk" qtlid="257783">Disco aggiuntivo</translation>
+   <translation id="cpb_quota_instance_unlimited" qtlid="185504">Illimitato</translation>
+   <translation id="cpb_quota_loading" qtlid="251317">Modifica quota in corso...</translation>
+   <translation id="cpb_quota_loading_error" qtlid="251330">Ops! Impossibile recuperare l'elenco delle quote</translation>
+   <translation id="cpb_quota_no_quota" qtlid="251343">Non sono presenti quote</translation>
+
+   <translation id="cpb_quota_restricted_account" qtlid="251356">Quota limitata per mancanza di una modalità di pagamento attiva sul tuo account.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429"><a href="{{url}}">Aggiungi una modalità di pagamento</a> valida, poi ritorna su questa pagina per aumentare la tua quota.</translation>
+   <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">Modalità di pagamento attiva sul tuo account</translation>
+   <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">Attiva quota standard</translation>
+
+   <translation id="cpb_quota_already_unleashed" qtlid="251408">Questa quota è già attiva</translation>
+   <translation id="cpb_quota_unleash_error" qtlid="251421">Ops! Impossibile attivare la quota</translation>
+   <translation id="cpb_quota_unleash_loading" qtlid="251434">Attivazione quota in corso...</translation>
+</translations>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_monthly_title" qtlid="269318">Vaihda kuukausilaskutukseen</translation>
+   <translation id="cpcivm_monthly_info" qtlid="269331">Säästä 50 % tämän palvelimen kuukausihinnasta (maksu etukäteen).</translation>
+   <translation id="cpcivm_monthly_prorata_warning" qtlid="269344">Lasku tämän kuun käyttöpäivien osalta luodaan välittömästi.</translation>
+   <translation id="cpcivm_monthly_success" qtlid="269357">Tämä palvelin vaihdetaan kuukausilaskutukseen hetken kuluttua.</translation>
+   <translation id="cpcivm_monthly_fail" qtlid="269370">Tapahtui virhe vaihdettaessa kuukausilaskutukseen.</translation>
+</translations>

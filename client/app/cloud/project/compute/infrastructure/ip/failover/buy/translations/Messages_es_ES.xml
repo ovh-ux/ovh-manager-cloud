@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_buy_title" qtlid="275882">Comprar IP Failover Cloud</translation>
+   <translation id="cpciif_buy_cloud_info" qtlid="275895">Las direcciones IP Failover Cloud pueden moverse de un servidor a otro dentro de un mismo proyecto cloud y de un mismo continente.</translation>
+   <translation id="cpciif_buy_quantity_select" qtlid="275908">Seleccione el número de direcciones IP Failover Cloud que quiere contratar:</translation>
+   <translation id="cpciif_buy_instance_select" qtlid="275921">Seleccione el servidor al que quiere conectar la IP Failover Cloud (próximamente será posible enrutar esta IP Failover hacia otros productos de OVH):</translation>
+   <translation id="cpciif_buy_instance_select_plural" qtlid="275934">Seleccione el servidor al que que quiere conectar las IP Failover Cloud (próximamente será posible enrutar estas IP Failover hacia otros productos de OVH):</translation>
+   <translation id="cpciif_buy_country_select" qtlid="275947">Seleccione el país de la IP Failover Cloud:</translation>
+   <translation id="cpciif_buy_country_select_plural" qtlid="275960">Seleccione el país de las IP Failover Cloud:</translation>
+   <translation id="cpciif_buy_limit_info" qtlid="275973">Su infraestructura actual permite contratar hasta {{ ips }} direcciones IP Failover Cloud.</translation>
+   <translation id="cpciif_buy_init_error" qtlid="275986">¡Vaya! No se ha podido cargar la información necesaria para la comprar las direcciones IP Failover Cloud.</translation>
+   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Generar la orden de pedido</translation>
+   <translation id="cpciif_buy_button_infos" qtlid="269513">Gastos de activación (sin coste de renovación mensual)</translation>
+   <translation id="cpciif_buy_error" qtlid="275999">¡Vaya! Se ha producido un error al comprar las direcciones IP Failover Cloud. </translation>
+   <translation id="cpciif_buy_success" qtlid="296011">La orden de pedido relativa al servicio IP Failover Cloud está disponible <a href="{{ url }}" target="_blank">aquí<i class="fa fa-external-link"></i></a></translation>
+   <translation id="cpciif_buy_ip_na_soon" qtlid="269552">Direcciones IP en Norteamérica próximamente disponibles. </translation>
+   <translation id="cpciif_buy_services" qtlid="269565">El servicio incluye:</translation>
+   <translation id="cpciif_buy_no_instance" qtlid="301935">No hay ningún servidor.</translation>
+   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} + IVA)</translation>
+</translations>

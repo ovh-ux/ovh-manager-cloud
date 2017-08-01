@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_home_details_title" qtlid="37527">Details</translation>
+   <translation id="cda_home_health_title" qtlid="28519">Gezondheid</translation>
+   <translation id="cda_home_space_title" qtlid="354392">Ruimte verbruik</translation>
+   <translation id="cda_home_tasks_title" qtlid="354405">Cluster Actieve Taken</translation>
+
+   <translation id="cda_detail_billing_state" qtlid="354418">Factuurstatus</translation>
+   <translation id="cda_detail_status_label_CREATING" qtlid="26227">Wordt gecreëerd</translation>
+   <translation id="cda_detail_status_label_INSTALLED" qtlid="108913">Klaar</translation>
+   <translation id="cda_detail_status_label_DELETING" qtlid="133929">Wordt verwijderd</translation>
+   <translation id="cda_detail_status_label_DELETED" qtlid="134514">verwijderd</translation>
+   <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Taak uitvoeren</translation>
+
+   <translation id="cda_detail_status" qtlid="26443">Status</translation>
+   <translation id="cda_detail_crush_tunables" qtlid="354431">Crush tunables</translation>
+   <translation id="cda_detail_service_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
+   <translation id="cda_detail_size" qtlid="7726">Grootte</translation>
+   <translation id="cda_detail_region" qtlid="32434">Regio</translation>
+   <translation id="cda_detail_monitor" qtlid="354444">Monitor</translation>
+   <translation id="cda_detail_create_date" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="cda_detail_update_date" qtlid="293905">Wijzigingsdatum</translation>
+   <translation id="cda_detail_version" qtlid="34210">Versie</translation>
+
+   <translation id="cda_health_status" qtlid="159098">Status van de server</translation>
+   <translation id="cda_health_healthy" qtlid="354457">Probleemloos</translation>
+   <translation id="cda_health_healthy_true" qtlid="354470">Waar</translation>
+   <translation id="cda_health_healthy_false" qtlid="354483">Niet waar</translation>
+
+   <translation id="cda_space_usage_used" qtlid="76758">Gebruikte geheugenruimte</translation>
+   <translation id="cda_space_usage_available" qtlid="196608">Beschikbare ruimte</translation>
+
+   <translation id="cda_task_table_col_id" qtlid="8194">ID</translation>
+   <translation id="cda_task_table_col_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_task_table_col_processing" qtlid="354496">Voortgang</translation>
+   <translation id="cda_task_table_empty" qtlid="354509">Geen actieve taken.</translation>
+
+   <translation id="cda_detail_edit_title" qtlid="354522">Wijzig cluster details</translation>
+   <translation id="cda_detail_edit_label" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_detail_edit_label_required" qtlid="354288">U dient uw cluster te benoemen.</translation>
+   <translation id="cda_detail_edit_label_maxlength" qtlid="354314">De naam van uw cluster kan niet langer zijn dan {{ maxlength }} tekens.</translation>
+   <translation id="cda_detail_edit_crushTunable" qtlid="354431">Crush tunables</translation>
+   <translation id="cda_detail_edit_crushTunable_required" qtlid="354535">Het crush tunable veld is vereist.</translation>
+   <translation id="cda_detail_edit_success" qtlid="354548">Update voltooid. </translation>
+
+   <translation id="cda_detail_info_no_user" qtlid="400873">U moet minstens één gebruiker hebben om uw cluster te kunnen gebruiken.</translation>
+   <translation id="cda_detail_info_create_user" qtlid="269721">Creëer een nieuwe gebruiker </translation>
+</translations>

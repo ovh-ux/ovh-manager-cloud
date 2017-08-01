@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dtpdb_loading_error" qtlid="300824">Oups, ocorreu um erro aquando do carregamento da fatura.</translation>
+
+   <translation id="dtpdb_bill_current_month" qtlid="300837">Consumo do mês de <strong>{{month}} {{year}}</strong></translation>
+   <translation id="dtpdb_total_current_month" qtlid="300850">Estimativa do custo total para este mês:</translation>
+
+   <translation id="dtpdb_thead_description" qtlid="9238">Descrição </translation>
+   <translation id="dtpdb_thead_quantity" qtlid="37107">Quantidade</translation>
+   <translation id="dtpdb_thead_unit_price" qtlid="259961">Preço unitário</translation>
+   <translation id="dtpdb_thead_price" qtlid="32458">Total</translation>
+
+   <translation id="put" qtlid="300863">PUT (pontos registados)</translation>
+   <translation id="get" qtlid="300876">GET (pontos lidos)</translation>
+   <translation id="10kseries" qtlid="300889">Time series (por 10k)</translation>
+   <translation id="100Gstorage" qtlid="300902">Armazenamento: 0 a 100 Gpontos</translation>
+   <translation id="250Gstorage" qtlid="300915">Armazenamento: 100 a 250 Gpontos</translation>
+   <translation id="500Gstorage" qtlid="300928">Armazenamento: 250  500 Gpontos</translation>
+   <translation id="1000Gstorage" qtlid="300941">Armazenamento: 500 a 1000 Gpontos</translation>
+   <translation id="more1000Gstorage" qtlid="300954">Armazenamento Mais de 1000 Gpontos</translation>
+
+</translations>

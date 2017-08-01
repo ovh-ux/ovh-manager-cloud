@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">Um den Verbrauch an Cloud-Ressourcen zu begrenzen, wurden diese für Ihr Projekt limitiert.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Wenn Sie mehr Ressourcen benötigen, können Sie diese bei unserem Team anfordern, indem Sie auf den Button unten klicken.</translation>
+   <translation id="cpb_quota_protect_more_btn" qtlid="251291">Die Begrenzungen anheben</translation>
+   <translation id="cpb_quota_current_limit" qtlid="251304">Derzeitige Begrenzungen</translation>
+
+   <translation id="cpb_quota_add_disk" qtlid="257783">Zusätzliche Festplatte</translation>
+   <translation id="cpb_quota_instance_unlimited" qtlid="185504">Unbegrenzt</translation>
+   <translation id="cpb_quota_loading" qtlid="251317">Quotas werden geladen</translation>
+   <translation id="cpb_quota_loading_error" qtlid="251330">Die Quota-Liste konnte nicht geladen werden.</translation>
+   <translation id="cpb_quota_no_quota" qtlid="251343">Kein Quota gefunden</translation>
+
+   <translation id="cpb_quota_restricted_account" qtlid="251356">Die Anpassung des Quotas ist erst möglich, wenn eine aktive Zahlungsart für Ihren Account eingetragen wurde.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429">Sie müssen zunächst <a href="{{url}}">ein Zahlungsmittel hinzufügen</a> und dann auf diese Seite zurückkehren, um Ihre Quota zu erhöhen. </translation>
+   <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">Ihr Account verfügt nun über eine aktive Zahlungsart.</translation>
+   <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">Das Standard-Quota aktivieren</translation>
+
+   <translation id="cpb_quota_already_unleashed" qtlid="251408">Ihr Quota scheint bereits aktiviert worden zu sein.</translation>
+   <translation id="cpb_quota_unleash_error" qtlid="251421">Ihr Quota konnte nicht aktiviert werden.</translation>
+   <translation id="cpb_quota_unleash_loading" qtlid="251434">Aktivierung des Quotas wird durchgeführt...</translation>
+</translations>

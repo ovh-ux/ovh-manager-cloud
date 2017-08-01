@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcipnd_create_title" qtlid="331202">Privénetwerk toevoegen</translation>
+   <translation id="cpcipnd_default_name_template" qtlid="331215">VLAN{{id}}</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpcipnd_name_required_error" qtlid="331228">De naam van uw privénetwerk is verplicht. </translation>
+   <translation id="cpcipnd_name_maxlength_error" qtlid="331241">De naam van uw privénetwerk kan niet meer dan 256 tekens bevatten.</translation>
+   <translation id="cpcipnd_vlan_create" qtlid="348347">Definieer een VLAN</translation>
+   <translation id="cpcipnd_vlan_description" qtlid="348360">U kunt een VLAN definiëren tussen {{ min }} en {{ max }}. Dit is handig voor het verdelen van uw vRack tussen vele virtuele netwerken. </translation>
+   <translation id="cpcipnd_vlanId_label" qtlid="348373">VLAN ID :</translation>
+   <translation id="cpcipnd_vlanId_number_helper" qtlid="348386">(tussen{{ min }} en {{ max }})</translation>
+   <translation id="cpcipnd_vlanId_required_error" qtlid="331267">Het ID van het privénetwerk is verplicht. </translation>
+   <translation id="cpcipnd_vlanId_number_error" qtlid="331280">Het ID van het privénetwerk moet tussen de 1 en 4000 liggen.</translation>
+   <translation id="cpcipnd_vlanId_unique_error" qtlid="331293">Dit ID is al in gebruik</translation>
+   <translation id="cpcipnd_region_label" qtlid="331306">Toewijzen aan de regio</translation>
+   <translation id="cpcipnd_region_default_option" qtlid="331319">Alle regio's</translation>
+   <translation id="cpcipnd_regions_query_error" qtlid="331332">De lijst met regio's kon niet worden opgehaald.  {{ message }}</translation>
+   <translation id="cpcipnd_region_hint" qtlid="331345">Meer informatie over <a href="{{ url }}" target="_blank">transregionale privénetwerken</a>.</translation>
+   <translation id="cpcipnd_subnet_label" qtlid="331358">Adres privénetwerk (CIDR):</translation>
+   <translation id="cpcipnd_subnet_address_required_error" qtlid="331371">Het adres is verplicht. </translation>
+   <translation id="cpcipnd_subnet_address_valid_ip_address_error" qtlid="331384">Het adres-format is ongelding. </translation>
+   <translation id="cpcipnd_subnet_address_hint" qtlid="30430">Adres</translation>
+   <translation id="cpcipnd_subnet_address_title" qtlid="331397">Adres subnetwerk:</translation>
+   <translation id="cpcipnd_subnet_range_label" qtlid="331410">Bereik:</translation>
+   <translation id="cpcipnd_subnet_mask_hint" qtlid="331423">24</translation>
+   <translation id="cpcipnd_subnet_mask_required_error" qtlid="331436">Het masker is verplicht. </translation>
+   <translation id="cpcipnd_subnet_mask_number_error" qtlid="331449">Het masker is ongeldig. </translation>
+   <translation id="cpcipnd_subnet_mask_title" qtlid="311024">Subnetmasker</translation>
+   <translation id="cpcipnd_subnet_dhcp_label" qtlid="331462">Adrestoewijzing:</translation>
+   <translation id="cpcipnd_subnet_dhcp_on_label" qtlid="331475">Dynamisch (DHCP)</translation>
+   <translation id="cpcipnd_subnet_dhcp_off_label" qtlid="331488">Statisch (Manueel)</translation>
+   <translation id="cpcipnd_subnet_start_label" qtlid="331501">Aanvang van het bereik (DHCP)</translation>
+   <translation id="cpcipnd_subnet_start_required_error" qtlid="331514">Deze configuratie is verplicht. </translation>
+   <translation id="cpcipnd_subnet_start_valid_ip_address_error" qtlid="331384">Het adres-format is ongelding. </translation>
+   <translation id="cpcipnd_subnet_end_label" qtlid="331527">Einde van het bereik (DHCP)</translation>
+   <translation id="cpcipnd_subnet_end_required_error" qtlid="331514">Deze configuratie is verplicht. </translation>
+   <translation id="cpcipnd_subnet_end_valid_ip_address_error" qtlid="331384">Het adres-format is ongelding. </translation>
+   <translation id="cpcipnd_save_button" qtlid="331540">Privénetwerk aanmaken</translation>
+   <translation id="cpcipnd_cancel_button" qtlid="37863">Annuleren</translation>
+   <translation id="cpcipnd_fetch_regions_error" qtlid="331553">De lijst met regio's kon niet worden opgehaald. </translation>
+   <translation id="cpcipnd_fetch_private_networks_error" qtlid="303978">Het overzicht van privénetwerken kon niet worden opgehaald. </translation>
+   <translation id="cpcipnd_fetch_private_network_error" qtlid="331566">Het privénetwerk kon niet worden opgehaald. </translation>
+   <translation id="cpcipnd_save_error" qtlid="331579">Het privénetwerk kon niet worden opgeslagen. {{ message }}</translation>
+   <translation id="cpcipnd_subnet_save_error" qtlid="331592">Het subnetwerk kon niet worden opgeslagen. {{ message }}</translation>
+   <translation id="cpcipnd_request_error" qtlid="331605">Er is een fout opgetreden tijdens het laden van de formules. {{ message }}</translation>
+   <translation id="cpcipnd_common_menu_item_description" qtlid="331618">Configuratie van het privénetwerk</translation>
+   <translation id="cpcipnd_subnets_menu_item_description" qtlid="331631">Configuratie van het subnetwerk</translation>
+   <translation id="cpcipnd_subnet_api_notice" qtlid="331644">U kunt uw privénetwerk <a href="{{url}}" target="_blank">via de API personaliseren.</a></translation>
+   <translation id="cpcipnd_subnet_gateway_label" qtlid="405525">Standaard gateway activeren</translation>
+</translations>

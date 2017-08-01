@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_title_file" qtlid="233967">Stockage objet</translation>
+   <translation id="storage_title_file_number" qtlid="241833">Le conteneur est vide</translation>
+   <translation id="storage_title_file_number_0" qtlid="241833">Le conteneur est vide</translation>
+   <translation id="storage_title_file_number_1" qtlid="241846">Ce conteneur contient 1 objet</translation>
+   <translation id="storage_title_file_number_other" qtlid="241859">Ce conteneur contient {{count}} objets</translation>
+   <translation id="storage_details_loading" qtlid="241872">Chargement des objets</translation>
+
+   <translation id="storage_details_link_tooltip" qtlid="241885">Voir les objets</translation>
+   <translation id="storage_details_deleted_success" qtlid="241898">Objet supprimé</translation>
+   <translation id="storage_details_upload_success" qtlid="241911">Fichier uploadé</translation>
+   <translation id="storage_region" qtlid="30802">Datacentre</translation>
+
+   <translation id="storage_file_selected_count" qtlid="367540">{{count}} sélectionnés</translation>
+   <translation id="storage_object_import_files" qtlid="241924">Importer des fichiers</translation>
+   <translation id="storage_object_add_multiple" qtlid="241937">Ajouter des objets</translation>
+   <translation id="storage_modal_add_object_title" qtlid="241937">Ajouter des objets</translation>
+   <translation id="storage_add_object_prefix" qtlid="69821">Préfixe</translation>
+   <translation id="storage_object_title" qtlid="367553">Vos objets</translation>
+   <translation id="storage_nb_objects" qtlid="244768">Objets :</translation>
+   <translation id="storage_container_size" qtlid="244781">Taille du conteneur :</translation>
+   <translation id="storage_container_url" qtlid="246455">URL du conteneur :</translation>
+   <translation id="storage_container_url_info" qtlid="250849">Cette information est nécessaire pour récuperer ou manipuler vos objets via l'API. Rendez-vous dans la section [Guides du site OVH] pour plus de détails.</translation>
+   <translation id="storage_static_url" qtlid="241976">valeur de l'enregistrement CNAME/TXT :</translation>
+   <translation id="storage_gateway" qtlid="367566">Adresse du serveur pour rsync/sftp/scp :</translation>
+   <translation id="storage_gateway_username" qtlid="367579">Nom d'usager :</translation>
+   <translation id="storage_gateway_password" qtlid="367592">Mot de passe (la concaténation des champs suivant) :</translation>
+   <translation id="storage_availability_unsealing" qtlid="367605">Disponible dans : {{delay}}</translation>
+   <translation id="storage_availability_sealed" qtlid="369152">Dégeler</translation>
+   <translation id="storage_file_download" qtlid="39286">Télécharger</translation>
+   <translation id="storage_availability_unsealed" qtlid="99920">Disponible</translation>
+   <translation id="storage_file_state_sealed" qtlid="367631">Votre fichier n'est pas disponible pour un téléchargement immédiat. Veuillez cliquer pour démarrer le processus de déverouillage.</translation>
+   <translation id="storage_file_state_unsealing" qtlid="367644">Votre fichier sera disponible au téléchargement sous peu, une fois déverouillé votre fichier sera disponible pour une période de 24 heures.</translation>
+   <translation id="storage_file_state_unsealed" qtlid="367657">Votre fichier est disponible au téléchargement, il sera verrouiller d'ici 24 heures.</translation>
+   <translation id="storage_modal_how_to_add_cname_title" qtlid="241989">Liez votre nom de domaine à ce conteneur</translation>
+   <translation id="storage_modal_how_to_add_cname_text" qtlid="295842">Pour utiliser le conteneur «&#160;hébergement statique&#160;» sur un domaine ou un sous-domaine, éditez simplement la zone DNS en ajoutant un champs CNAME contenant la valeur suivante : <b>{{staticUrl}}</b></translation>
+   <translation id="storage_modal_how_to_add_cname_text2" qtlid="242015">Si vous ne pouvez pas modifier de champs CNAME, vous pouvez aussi entrer cette valeur dans un champs TXT</translation>
+   <translation id="storage_modal_how_to_add_cname_guide" qtlid="295855">Plus d'infos dans ce <a href="https://community.runabove.com/kb/en/object-storage/how-to-put-object-storage-behind-your-domain-name.html">guide</a>.</translation>
+   <translation id="storage_details_not_found" qtlid="242041">Conteneur introuvable</translation>
+   <translation id="storage_details_not_defined" qtlid="242054">Erreur lors du chargement du conteneur</translation>
+   <translation id="storage_error_occurs" qtlid="242067">Une erreur est survenue pendant le chargement de la liste des conteneurs: {{error}}</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Guides</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+</translations>

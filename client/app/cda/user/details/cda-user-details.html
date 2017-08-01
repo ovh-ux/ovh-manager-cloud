@@ -1,0 +1,14 @@
+<section class="cda-user-details">
+    <a class="btn btn-back f14 top-space-m4" data-ui-sref="paas.cda.cda-details.cda-user.cda-user-list">
+        <i class="fa fa-angle-left right-space-m8"></i>
+        {{ "cda_user_details_btn_back" | translate }}
+    </a>
+    <header>
+        <h3  ui-view="cdaUserDetailsTitle"></h3>
+        <dl class="fs14">
+            <dd data-translate="cda_user_details_username"></dd>
+            <dt data-ng-bind="CdaUserDetailsCtrl.userName"></dt>
+        </dl>
+    </header>
+    <div ui-view="cdaUserDetailsContent"></div>
+</section>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Klaida nuskaitant momentines kopijas.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">Momentinių kopijų atlikimo dažnumo keitimas įsigalios po kelių minučių.</translation>
+   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Įvyko klaida keičiant momentinių kopijų atlikimo dažnumą.</translation>
+   <translation id="nasha_snapshot_of" qtlid="344922">Skirsnio {{partitionName}} momentinė kopija</translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Momentinių kopijų atlikimo dažnumas</translation>
+   <translation id="nasha_snapshot_day-1" qtlid="154091">Kasdien</translation>
+   <translation id="nasha_snapshot_day-2" qtlid="154104">Kas 2 dienas</translation>
+   <translation id="nasha_snapshot_day-3" qtlid="154117">Kas 3 dienas</translation>
+   <translation id="nasha_snapshot_day-7" qtlid="8806">Kas savaitę</translation>
+   <translation id="nasha_snapshot_hour-1" qtlid="8782">Kas valandą</translation>
+   <translation id="nasha_snapshot_hour-6" qtlid="154130">Kas 6 valandas</translation>
+   <translation id="nasha_snapshot_informations" qtlid="344948">Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Momentinės kopijos naudoja disko vietą jūsų skirsnyje, taip užtikrinamas teisingas veikimas. Momentinių kopijų atlikimo istorija neregistruojama: esant tam pačiam dažnumui, naujausia momentinė kopija panaikina prieš tai buvusią.</translation>
+</translations>

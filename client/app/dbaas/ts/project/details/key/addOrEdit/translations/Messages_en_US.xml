@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dtpdt_key_add_title" qtlid="301318">New API key </translation>
+   <translation id="dtpdt_key_edit_title" qtlid="301331">Modify API key </translation>
+
+   <translation id="dtpdt_name" qtlid="5726">Name of key</translation>
+   <translation id="dtpdt_permission" qtlid="301344">Permission</translation>
+   <translation id="dtpdt_description" qtlid="9238">Description</translation>
+   <translation id="dtpdt_tags" qtlid="11519">Tags</translation>
+
+   <translation id="dtpdt_add_tag" qtlid="301357">Add a tag </translation>
+   <translation id="dtpdt_remove_tag" qtlid="2414">Delete</translation>
+
+   <translation id="dtpdt_tag_key" qtlid="3818">Name</translation>
+   <translation id="dtpdt_tag_value" qtlid="47548">Value</translation>
+
+   <translation id="dtpdt_add_key" qtlid="39226">Create</translation>
+   <translation id="dtpdt_edit_key" qtlid="37875">Modify</translation>
+
+</translations>

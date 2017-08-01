@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cloud_common_name" qtlid="3818">Pavadinimas</translation>
+   <translation id="cloud_common_type" qtlid="2642">Tipas</translation>
+   <translation id="cloud_common_volume" qtlid="255246">Talpa</translation>
+   <translation id="cloud_common_consumpt" qtlid="25639">Sunaudojimas</translation>
+   <translation id="cloud_common_state" qtlid="364446">Būklė</translation>
+   <translation id="cloud_common_state_available" qtlid="99920">Galimi</translation>
+   <translation id="cloud_common_state_in-use" qtlid="252893">Naudojama</translation>
+   <translation id="cloud_common_state_creating" qtlid="29647">Kuriama</translation>
+   <translation id="cloud_common_state_attaching" qtlid="252906">Pridedama</translation>
+   <translation id="cloud_common_state_deleting" qtlid="152778">Trinama</translation>
+   <translation id="cloud_common_state_deleted" qtlid="134514">Pašalinta</translation>
+   <translation id="cloud_common_state_extending" qtlid="258886">Vykdomas matmenų keitimas</translation>
+   <translation id="cloud_common_state_restoring-backup" qtlid="258899">Vykdomas atkūrimas</translation>
+   <translation id="cloud_common_state_backing-up" qtlid="258912">Atliekamas atsarginis kopijavimas</translation>
+   <translation id="cloud_common_state_snapshotting" qtlid="348438">Atliekamas momentinis kopijavimas</translation>
+   <translation id="cloud_common_state_error" qtlid="26407">Klaida</translation>
+
+   <translation id="cloud_common_region" qtlid="168237">Lokacija</translation>
+   <translation id="cloud_common_instance" qtlid="19459">Serveriai</translation>
+   <translation id="cloud_common_core" qtlid="251213">vCPU</translation>
+   <translation id="cloud_common_ram" qtlid="31354">RAM</translation>
+   <translation id="cloud_common_disk" qtlid="25567">Diskas</translation>
+
+   <translation id="cloud_common_region_SBG1" qtlid="252555">Strasbūras (SBG1)</translation>
+   <translation id="cloud_common_region_BHS1" qtlid="252568">Beauharnois (BHS1)</translation>
+   <translation id="cloud_common_region_GRA1" qtlid="252581">Gravlinas (GRA1)</translation>
+   <translation id="cloud_common_region_SBG" qtlid="172202">Strasbūras</translation>
+   <translation id="cloud_common_region_SBG_micro" qtlid="363722">Strasbūras ({{ micro }})</translation>
+   <translation id="cloud_common_region_BHS" qtlid="172189">Beauharnois</translation>
+   <translation id="cloud_common_region_BHS_micro" qtlid="363735">Beauharnois ({{ micro }})</translation>
+   <translation id="cloud_common_region_GRA" qtlid="264192">Gravlinas</translation>
+   <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravlinas ({{ micro }})</translation>
+   <translation id="cloud_common_region_RBX" qtlid="120414">Rubė</translation>
+   <translation id="cloud_common_region_RBX_micro" qtlid="403151">Rubė ({{ micro }})</translation>
+
+   <translation id="cloud_common_region_localize" qtlid="264231">Lokalizuoti</translation>
+   <translation id="cloud_common_region_location_SBG" qtlid="264244">Centrinė Europa (Prancūzija)</translation>
+   <translation id="cloud_common_region_location_BHS" qtlid="264257">Šiaurės Amerika (Kanada)</translation>
+   <translation id="cloud_common_region_location_GRA" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
+   <translation id="cloud_common_region_location_RBX" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
+
+   <translation id="browser_alert_not_supported" qtlid="405357">Jūsų naršyklė nepalaikoma.</translation>
+   <translation id="browser_alert_deprecated" qtlid="405370">Jūsų naršyklė neatnaujinta, galimos saugumo ar suderinamumo spragos.</translation>
+   <translation id="browser_alert_update" qtlid="405383">Mes rekomenduojame <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">atnaujinti naršyklę <i class="fa fa-external-link" aria-hidden="true"></i></a> jei norite pasinaudoti optimalia patirtimi.</translation>
+   <translation id="browser_alert_close" qtlid="405396">Uždaryti šį įspėjimą</translation>
+</translations>

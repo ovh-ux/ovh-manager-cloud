@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_action_update_success" qtlid="344974">Die Größe der Partition {{partitionName}} wird in Kürze aktualisiert. </translation>
+   <translation id="nasha_partitions_action_update_failure" qtlid="344987">Bei der Aktualisierung der Größe der Partition {{partitionName}} ist ein Fehler aufgetreten. </translation>
+</translations>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_login_information_title" qtlid="250927">Přístupové údaje</translation>
+   <translation id="cpcivm_login_information_instance_title" qtlid="401471">Připojení k instanci</translation>
+   <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Do terminálu zadejte následující příkaz:<br/><code>ssh {{user}}@{{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Lors de votre première connexion, vous devez utiliser la console VNC pour finaliser la configuration de Windows. Ensuite, utilisez votre client RDP favori, par exemple via un poste Linux&#160;:<br/><code>rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_login_information_application_title" qtlid="401588">Připojení k aplikacím</translation>
+   <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Typ</translation>
+   <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>
+   <translation id="cpcivm_login_information_application_label_login" qtlid="41062">Uživatelské jméno</translation>
+   <translation id="cpcivm_login_information_application_label_password" qtlid="2270">Heslo</translation>
+   <translation id="cpcivm_login_information_go_to_console" qtlid="401601">Přejít na konzoli VNC</translation>
+   <translation id="cpcivm_login_information_application_readonly" qtlid="401614">Váš účet nemá potřebná práva pro zobrazení záznamů o připojení k aplikacím. Pro získání přístupu kontaktujte svého administrátora.</translation>
+</translations>

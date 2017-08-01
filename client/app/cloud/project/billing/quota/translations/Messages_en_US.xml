@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">The number of resources for your Cloud project is limited to enable you to control your resource consumption.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">If you need more resources, you can request them from our team by clicking on the button below.</translation>
+   <translation id="cpb_quota_protect_more_btn" qtlid="251291">Increase my limits</translation>
+   <translation id="cpb_quota_current_limit" qtlid="251304">Current limits</translation>
+
+   <translation id="cpb_quota_add_disk" qtlid="257783">Additional disk</translation>
+   <translation id="cpb_quota_instance_unlimited" qtlid="185504">Unlimited</translation>
+   <translation id="cpb_quota_loading" qtlid="251317">Loading quota...</translation>
+   <translation id="cpb_quota_loading_error" qtlid="251330">Oops. We were unable to retrieve the list of quotas.</translation>
+   <translation id="cpb_quota_no_quota" qtlid="251343">No quota found</translation>
+
+   <translation id="cpb_quota_restricted_account" qtlid="251356">This quota is limited as there is currently no active payment method on your account.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429">Please <a href="{{url}}">add a valid payment method</a>, then come back to this page to increase your quota.</translation>
+   <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">There is now an active payment method on your account.</translation>
+   <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">Activate the standard quota</translation>
+
+   <translation id="cpb_quota_already_unleashed" qtlid="251408">You have already activated your quota.</translation>
+   <translation id="cpb_quota_unleash_error" qtlid="251421">Oops. We were unable to activate your quota.</translation>
+   <translation id="cpb_quota_unleash_loading" qtlid="251434">Activating quota...</translation>
+</translations>

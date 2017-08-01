@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_tab_billing" qtlid="25639">Zużycie</translation>
+   <translation id="cpc_tab_openstack_users" qtlid="241586">Openstack</translation>
+   <translation id="cpb_details_compute_error_message" qtlid="250407">Wystąpił problem z pobraniem informacji na temat infrastruktur.</translation>
+   <translation id="cpb_read_only_access_alert" qtlid="371580">Twoje konto jest dostępne w trybie tylko do odczytu. Niektóre operacje są niedostępne. Aby uzyskać dostęp do zapisu, skontaktuj się ze swoim administratorem.</translation>
+</translations>

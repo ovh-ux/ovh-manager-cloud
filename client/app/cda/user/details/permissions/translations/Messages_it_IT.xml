@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_details_permission_title" qtlid="354652">Permessi del pool</translation>
+   <translation id="cda_user_details_permission_description" qtlid="354665">I permessi vengono definiti per Cloud Disk Array OSD (Object Storage Daemon). Di default gli utenti possiedono il permesso "allow r" per il monitoraggio (MON). I permessi MDS (Metadata Server Daemon) al momento non vengono utilizzati.</translation>
+
+   <translation id="cda_user_details_permissions_edit_button_text" qtlid="354600">Modifica i permessi</translation>
+
+   <translation id="cda_user_details_permissions_table_col_poolname" qtlid="354678">Pool</translation>
+   <translation id="cda_user_details_permissions_table_col_read" qtlid="6958">Lettura</translation>
+   <translation id="cda_user_details_permissions_table_col_write" qtlid="301565">Scrittura</translation>
+   <translation id="cda_user_details_permissions_table_col_execute" qtlid="354613">Esegui</translation>
+   <translation id="cda_user_details_permissions_table_col_classread" qtlid="354626">class-read</translation>
+   <translation id="cda_user_details_permissions_table_col_classwrite" qtlid="354639">class-write</translation>
+
+   <translation id="cda_user_details_permissions_table_empty" qtlid="354691">Nessun permisso per l'utente.</translation>
+</translations>

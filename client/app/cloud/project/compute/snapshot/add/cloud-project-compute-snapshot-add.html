@@ -1,0 +1,59 @@
+<form id="snapshotCreationForm" name="snapshotCreationForm" class="ovh-form-flat" novalidate>
+
+    <div class="modal-header">
+        <h3 class="modal-title" >
+            <i class="fa fa-floppy-o right-space-m8"></i>
+            {{"cpc_snapshot_add_title" | translate}}
+        </h3>
+    </div>
+
+    <div class="modal-body">
+
+        <div data-ng-hide="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
+            <p class="bold" data-translate="cpc_snapshot_add_info"></p>
+
+            <div flat-input-container class="bottom-space-m12">
+                <label for="snapshotname" data-translate="cpc_snapshot_add_name"></label>
+                <input type="text" class="form-control error-animate-shake-light" id="snapshotname" name="snapshotname"
+                    placeholder="{{ ::'cpc_snapshot_add_name' | translate}}"
+                    data-ng-model="CloudProjectComputeSnapshotAddCtrl.snapshot.name"
+                    autoselect
+                    autofocus
+                    required
+                    ng-maxlength="255">
+            </div>
+            <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="snapshotCreationForm.snapshotname.$error" data-ng-if="snapshotCreationForm.snapshotname.$dirty">
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpc_snapshot_add_name_required_error"></span></p>
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span data-translate="cpc_snapshot_add_name_max_error"></span></p>
+            </div>
+        </div>
+        <div data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup" class="top-space-m20 bottom-space-m8">
+            <p class="center" data-translate="cpc_snapshot_add_doing"></p>
+        </div>
+        <div class="top-space-m20 bottom-space-m8 alert alert-danger ">
+            <p class="center fs10"><i class="fa fa-exclamation-circle"></i> <span data-translate="cpc_snapshot_add_availibility"></span></p>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary pull-right"
+            data-ng-disabled="snapshotCreationForm.$invalid || CloudProjectComputeSnapshotAddCtrl.loaders.backup"
+            data-ng-click="CloudProjectComputeSnapshotAddCtrl.backup()"
+            data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
+            <i class="fa fa-shopping-cart right-space-m8"></i>
+            <span data-translate="cpc_snapshot_add_valid"></span>
+            <small class="opacity6"
+                data-ng-hide="!CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.prices.length"
+                translate="cpc_snapshot_add_total"
+                translate-values="{size: CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.size*1000000000 || 0, price: CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.total.text || '?' }"></small>
+            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup"></spinner>
+        </button>
+        <button type="reset" class="btn btn-default pull-left "
+            data-ng-click="CloudProjectComputeSnapshotAddCtrl.cancel()"
+            data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="cpc_snapshot_add_cancel"></span>
+        </button>
+    </div>
+
+</form>

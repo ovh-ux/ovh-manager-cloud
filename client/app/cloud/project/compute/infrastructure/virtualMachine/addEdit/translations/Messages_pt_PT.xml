@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_addedit_add_title" qtlid="19315">Adicionar um servidor</translation>
+   <translation id="cpcivm_addedit_edit_title" qtlid="247976">Modificar o servidor</translation>
+   <translation id="cpcivm_addedit_server_name" qtlid="242977">Nome do servidor</translation>
+   <translation id="cpcivm_addedit_back" qtlid="4070">Continuar</translation>
+   <translation id="cpcivm_addedit_price" qtlid="83913">Preço</translation>
+
+   <translation id="cpcivm_addedit_name_add_error_required_name" qtlid="247989">Deverá atribuir um nome ao seu servidor.</translation>
+   <translation id="cpcivm_addedit_name_add_error_max_char" qtlid="248002">O nome do servidor deverá ter menos de 255 caracteres.</translation>
+   <translation id="cpcivm_addedit_name_add_error_pattern_name" qtlid="248015">Introduziu caracteres inválidos</translation>
+
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd" qtlid="248028">VPS SSD</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu" qtlid="290342">Instância HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_hg" qtlid="290342">Instância HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram" qtlid="296024">Instance HA - RAM</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram" qtlid="296037">Instance SSD - RAM</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu" qtlid="290381">Instância SSD - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_eg" qtlid="296994">Instância SSD - EG</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_eg" qtlid="297007">Instância HA - EG</translation>
+
+   <translation id="cpci_vm_flavor_category_b2-7" qtlid="376973">B2-7</translation>
+   <translation id="cpci_vm_flavor_category_b2-7-flex" qtlid="376986">B2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-15" qtlid="376999">B2-15</translation>
+   <translation id="cpci_vm_flavor_category_b2-15-flex" qtlid="377012">B2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-30" qtlid="377025">B2-30</translation>
+   <translation id="cpci_vm_flavor_category_b2-30-flex" qtlid="377038">B2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-60" qtlid="377051">B2-60</translation>
+   <translation id="cpci_vm_flavor_category_b2-60-flex" qtlid="377064">B2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-120" qtlid="377077">B2-120</translation>
+   <translation id="cpci_vm_flavor_category_b2-120-flex" qtlid="377090">B2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_c2-7" qtlid="377103">C2-7</translation>
+   <translation id="cpci_vm_flavor_category_c2-7-flex" qtlid="377116">C2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-15" qtlid="377129">C2-15</translation>
+   <translation id="cpci_vm_flavor_category_c2-15-flex" qtlid="377142">C2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-30" qtlid="377155">C2-30</translation>
+   <translation id="cpci_vm_flavor_category_c2-30-flex" qtlid="377168">C2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-60" qtlid="377181">C2-60</translation>
+   <translation id="cpci_vm_flavor_category_c2-60-flex" qtlid="377194">C2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-120" qtlid="377207">C2-120</translation>
+   <translation id="cpci_vm_flavor_category_c2-120-flex" qtlid="377220">C2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_gpu-60" qtlid="377233">GPU-60</translation>
+   <translation id="cpci_vm_flavor_category_gpu-60-flex" qtlid="377246">GPU-60 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_r2-15" qtlid="377259">R2-15</translation>
+   <translation id="cpci_vm_flavor_category_r2-15-flex" qtlid="377272">R2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-30" qtlid="377285">R2-30</translation>
+   <translation id="cpci_vm_flavor_category_r2-30-flex" qtlid="377298">R2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-60" qtlid="377311">R2-60</translation>
+   <translation id="cpci_vm_flavor_category_r2-60-flex" qtlid="377324">R2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-120" qtlid="377337">R2-120</translation>
+   <translation id="cpci_vm_flavor_category_r2-120-flex" qtlid="377350">R2-120 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-240" qtlid="377363">R2-240</translation>
+   <translation id="cpci_vm_flavor_category_r2-240-flex" qtlid="377376">R2-240 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
+   <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
+   <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
+
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instâncias GPU<br/>Processador gráfico de alta performance</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Armazenamento raid SSD local, CPU/RAM/largura de banda partilhados.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Disco HDD dedicado, CPU/RAM/largura de banda partilhados.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Armazenamento de alta disponibilidade , CPU/RAM/largura de banda partilhados.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu_info" qtlid="290394">Recursos garantidos, armazenamento de alta disponibilidade, frequência/core elevado.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Recursos garantidos, armazenamento de alta disponibilidade, rácio RAM/custo otimizado.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Recursos garantidos, armazenamento SSD de baixa latência, frequência/core elevado.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Recursos garantidos, armazenamento SSD de baixa latência, rácio RAM/custo otimizado.</translation>
+   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">Nenhuma oferta disponível para esta gama.</translation>
+   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Não disponíveis nessa região</translation>
+   <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Carregamento das ofertas disponíveis.</translation>
+   <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">O servidor deverá reiniciar durante a operação. Ele ficará disponível durante alguns segundos.</translation>
+   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Oops, não foi possível encontrar todas as ofertas!</translation>
+   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Oops, não foi possível carregar o preço das ofertas!</translation>
+   <translation id="cpcivm_addedit_flavor_refresh" qtlid="248158">Atualizar a lista das ofertas</translation>
+   <translation id="cpcivm_addedit_flavor_choose" qtlid="248171">Escolher o meu modelo</translation>
+   <translation id="cpcivm_addedit_flavor_deprecated" qtlid="251499">Esta oferta é obsoleta.</translation>
+   <translation id="cpcivm_addedit_flavor_quota_vcpus" qtlid="251512">Quota vCPUs</translation>
+   <translation id="cpcivm_addedit_flavor_quota_ram" qtlid="251525">Quota RAM</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NO_FLEX" qtlid="327003">Não poderá escolher a alteração do tamanho flexível para este modelo.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_WRONG_DISK_TYPE" qtlid="327016">Deve migrar para um modelo com o mesmo tipo de disco.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NOT_ENOUGH_SPACE" qtlid="251538">Deve migrar para um modelo com tanto ou mais espaço de disco quanto o necessário.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_VCPUS" qtlid="251551">A quota do seu projeto não lhe permite adicionar uma máquina com essa quantidade de recursos de CPU.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_RAM" qtlid="251564">A quota do seu projeto não lhe permite adicionar uma máquina com essa quantidade de RAM.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_INSTANCE" qtlid="301851">Atingiu a quota máxima de máquinas nesta região.</translation>
+   <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">Se modificar o tipo de instância terá de redimensionar o espaço em disco.</translation>
+   <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Como fazer?</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Para mais RAM passe à oferta {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Para um maior CPU passe à oferta {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Para mais recursos passe à oferta {{offer}}.</translation>
+
+   <translation id="cpcivm_addedit_flavor_soldout_title" qtlid="91957">Indisponível </translation>
+   <translation id="cpcivm_addedit_flavor_soldout_info" qtlid="281264">Esta instância foi vítima do seu sucesso e não está disponível.</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_choose_another" qtlid="281277">Escolha um outro tipo de instância</translation>
+
+   <translation id="cpcivm_addedit_image_unknown" qtlid="248184">Distribuição desconhecida</translation>
+   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Distribuições Unix</translation>
+   <translation id="cpcivm_addedit_image_windows" qtlid="248223">Distribuições Windows</translation>
+   <translation id="cpcivm_addedit_image_template" qtlid="248236">Ambientes pré-instalados</translation>
+   <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">As minhas snapshots</translation>
+   <translation id="cpcivm_addedit_image_snapshots_empty" qtlid="248262">Nenhuma snapshot disponível</translation>
+   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Oops, não foi possível encontrar as suas snapshots!</translation>
+   <translation id="cpcivm_addedit_image_windows_change" qtlid="250667">Aquando da criação do servidor, poderá escolher entre um sistema Linux, Windows (licença incluída) ou uma cópia existente. Na reinstalação, deverá escolher uma snapshot ou uma distribuição do mesmo tipo.</translation>
+   <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Não há espaço em disco suficiente na gama selecionada.</translation>
+   <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Esta imagem é obsoleta.</translation>
+   <translation id="cpcivm_addedit_image_windows_incompatibility" qtlid="364654">O Windows não está disponível nos servidores VPS.</translation>
+   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Informação importante: A OVH apenas assegura a instalação da aplicação. A sua gestão e manutenção é efetuada por si ou pela sua equipa técnica.</translation>
+
+   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Aplicações pré-instaladas</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} s/IVA/h. ou {{monthly}} s/IVA/mês</translation>
+   <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/hora</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/mês</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} s/IVA/h.)</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} s/IVA/mês)</translation>
+   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} s/IVA/h. ou + {{monthly}} s/IVA/mês</translation>
+   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Apresentar todas as distribuições</translation>
+   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Recomendado GPU</translation>
+   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Não há nenhuma distribuição especialmente recomendada para este modelo.</translation>
+
+   <translation id="cpcivm_addedit_image_empty" qtlid="248340">Nenhuma imagem disponível.</translation>
+   <translation id="cpcivm_addedit_image_loading" qtlid="248353">Carregamento das imagens disponíveis.</translation>
+   <translation id="cpcivm_addedit_image_error" qtlid="248366">Oops, não foi possível encontrar todas as imagens!</translation>
+   <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Atualizar a lista das imagens</translation>
+   <translation id="cpcivm_addedit_image_choose" qtlid="248392">Escolher a minha imagem</translation>
+
+   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Não pode eliminar uma snapshot se o mesmo estiver a ser utilizado por, pelo menos, um servidor.</translation>
+
+   <translation id="cpcivm_addedit_region_loading" qtlid="248405">Carregamento das zonas disponíveis.</translation>
+   <translation id="cpcivm_addedit_region_error" qtlid="248418">Oops, não foi possível encontrar todas as regiões!</translation>
+   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Atualizar a lista das regiões</translation>
+   <translation id="cpcivm_addedit_region_choose" qtlid="248444">Escolher a minha localização</translation>
+
+   <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Cloud public</translation>
+   <translation id="cpcivm_addedit_region_zone_dedicated_new" qtlid="248470">Nova "hardware zone" dedicada</translation>
+
+   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Atenção: a snapshot selecionada atualmente está apenas disponível na sua região e não poderá ser utilizada se a localização for alterada.</translation>
+
+   <translation id="cpcivm_addedit_table_type" qtlid="2642">Tipo</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Preço s/IVA</translation>
+   <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUs</translation>
+   <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_table_disk" qtlid="193943">Discos</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>o Public Cloud ao melhor preço</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Os servidores VPS SSD utilizam um RAID local SSD partilhado e as suas performances podem variar ao longo do tempo</translation>
+   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Instâncias Sandbox: <br/>Recursos partilhados</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Elas são ideias para os seus testes e ambientes de desenvolvimento e pré-produção. O seu rendimento pode  variar ligeiramente.</translation>
+   <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Performances garantidas <br/>e armazenamento de alta disponibilidade</translation>
+   <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Estes servidores virtuais são baseados num disco CEPH com tripla replicação de dados. Os recursos (CPU, RAM, Rede) são garantidos</translation>
+   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">Instâncias EG, SP e HG: <br/>Performances constantes garantidas</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_old" qtlid="327042">OS recursos (CPU, RAM, Rede) são garantidos. Cada modelo está disponível com um armazenamento CEPH (replicado 3 vezes) ou SSH (local).</translation>
+   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">Instâncias CPU, RAM e utilização gerais<br/>Performances constantes garantidas</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">OS recursos (CPU, RAM, Rede) são garantidos. Cada modelo está disponível com um armazenamento CEPH (replicado 3 vezes) ou SSH (local).</translation>
+   <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Performances garantidas <br/>e armazenamento local SSD (sem raid)</translation>
+   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Estes servidores virtuais utilizam um SSD local não redundado, oferecendo uma latência extremamente baixa. Os recursos (CPU, RAM, Rede) são garantidos</translation>
+   <translation id="cpcivm_addedit_table_model" qtlid="26143">Modelo</translation>
+   <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores <span class="text-nowrap"> x {{ frequency }} Ghz</span></translation>
+   <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
+   <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Escolher consoante o número de vCores</translation>
+   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Escolher consoante a RAM</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} RAM</translation>
+   <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Permite a alteração do tamanho flexível</translation>
+   <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Escolher esta opção força um armazenamento de 50GB, oferece snapshots mais rápidas e a possibilidade de mais tarde poder efetuar um downgrade.</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha_with_size" qtlid="327094">Block HA<br/>{{ size }}<br/>Replicação 3x</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd_with_size" qtlid="327107">SSD Local<br/>{{ size }}<br/>Sem RAID</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ha" qtlid="327120">{{ size }} HA</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd_or" qtlid="327133">(ou {{ size }} SSD)</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd" qtlid="327146">{{ size }} SSD</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha" qtlid="296466">{{ size }} HA Block Storage </translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd" qtlid="296479">{{ size }} Local SSD</translation>
+   <translation id="cpcivm_addedit_table_network" qtlid="25591">Rede</translation>
+   <translation id="cpcivm_addedit_table_network_details_mega" qtlid="296492">{{ size }} Mbps Largura de banda</translation>
+   <translation id="cpcivm_addedit_table_network_details_giga" qtlid="296505">{{ size }} Gbps Largura de banda</translation>
+   <translation id="cpcivm_addedit_table_guaranteed" qtlid="296518">Recursos garantidos</translation>
+
+   <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Atualizar as minhas chaves SSH</translation>
+   <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Carregamento das suas chaves SSH.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Nome</translation>
+   <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Chave</translation>
+   <translation id="cpcivm_addedit_script_key" qtlid="272131">Introduza o seu script de pós-instalação</translation>
+   <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Escolher a minha chave SSH</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Adicionar uma chave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_info" qtlid="248574">Como fazer?</translation>
+   <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Apagar</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Adicionar esta chave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">A sua chave está agora disponível!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Oops, não foi possível adicionar esta chave!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Atribua-lhe um nome</translation>
+   <translation id="cpcivm_addedit_sshkey_add_name_field" qtlid="248639">Introduza a sua chave</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_error_required_name" qtlid="248652">Deve atribuir um nome à chave.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_max_char" qtlid="248665">O nome não pode ter mais do que 255 caracteres.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_pattern_name" qtlid="248678">O nome da chave apenas pode conter números, letras maiúsculas e minúsculas, "hífen" ( - ), "underscore" ( _ ) e "espaço".</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_required_key" qtlid="248691">Esqueceu-se de introduzir a sua chave.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Adicionar uma chave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button_cancel" qtlid="248704">Anular a adição</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">A sua chave está agora disponível!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Este nome já está a ser usado numa outra chave SSH.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Eliminar a chave</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Anular</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Eliminar esta chave</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Esta chave já não está disponível.</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Oops, não foi possível eliminar esta chave!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_empty" qtlid="248782">Ainda não adicionou chaves SSH.</translation>
+   <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Clique em "adicionar uma chave"!</translation>
+   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Oops, não foi possível carregar a lista das suas chaves SSH!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Não dispõe de nenhuma chave SSH.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">A comunicação entre os servidores OVH utiliza o protocolo seguro (SSH) para a encriptação dos dados.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Existem clientes SSH para cada sistema operativo. Consulte-o o <a href="{{ createUrl }}" target="_blank">guia de criação das chaves SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> para saber mais.</translation>
+   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Guia de criação das chaves SSH<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Compreendi!</translation>
+   <translation id="cpcivm_addedit_sshkey_help_windows_tab" qtlid="102237">Windows</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_tab" qtlid="248834">Linux e Mac OS X</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_beforeAll" qtlid="248847">Antes de gerar um par de chaves SSH, verifique se já possui um.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_openbash" qtlid="248860">Abra o terminal e introduza</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_getGoodFile" qtlid="248873">Se vê 2 ficheiros com nome {{rsapriv}} e {{rsapub}} já dispõe de chaves SSH e poderá dispensar a etapa de geração. Os ficheiros podem também chamar-se {{dsapriv}} e {{dsapub}} conforme o algoritmo que foi utilizado.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_generateKeypair" qtlid="248886">Para gerar um par de chaves, utilize o comando:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_options" qtlid="248899">Dois parâmetros serão solicitados: o local onde registar a chave (o valor padrão é aconselhado) e uma "passphrase". Esta não é obrigatória mas, aconselhada, pois vai adicionar mais segurança no caso de alguém aceder ao seu computador.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_startingFrom" qtlid="248912">Tem agora 2 chaves:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_privateKey" qtlid="248925">{{dirrsapriv}} é a sua chave privada</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_publicKey" qtlid="248938">{{dirrsapub}} é a chave pública que estará armazenada nos servidores remotos</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_usePutty" qtlid="248951">Em Windows, poderá gerar chaves SSH com o software PuTTYgen</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_generateKeypair" qtlid="296050">Faça o download e depois instale-o. Clique em <code>Generate</code> e depois coloque o seu rato na janela para gerar a entropia utilizada para obter uma chave realmente aleatória.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_saveKeypair" qtlid="248977">Quando a aplicação terminar a execução, copie a chave pública para um ficheiro. Grave a chave privada no seu computador, terá necessidade dela para se ligar aos seus servidores.</translation>
+
+   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Script de pôs-instalação</translation>
+   <translation id="cpcivm_addedit_change_flavors_title" qtlid="248990">Modificar o tipo de servidor</translation>
+   <translation id="cpcivm_addedit_change_image_title" qtlid="249003">Modificar o SO</translation>
+   <translation id="cpcivm_addedit_change_script_title" qtlid="272144">Adicionar o script de pós-instalação</translation>
+   <translation id="cpcivm_addedit_change_region_title" qtlid="249016">Modificar a localização</translation>
+   <translation id="cpcivm_addedit_change_sshkey_title" qtlid="249029">Selecionar a chave SSH</translation>
+
+   <translation id="cpcivm_addedit_advanced_options_title" qtlid="267796">Opções avançadas</translation>
+   <translation id="cpcivm_addedit_advanced_options_description" qtlid="316112">Criação múltipla, scripts, rede privadas e afinidade</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Criação em massa:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Número de instâncias a criar:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Queira introduzir um número de instâncias válido.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">A sua <a ui-sref="iaas.pci-project.billing.quota">quota</a> atual permite-lhe criar simultaneamente até {{max}} instâncias do tipo {{type}} para a região {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">A sua <a ui-sref="iaas.pci-project.billing.quota">quota</a> atual não lhe permite criar mais do que uma instância do tipo {{type}} para a região {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Associar à rede privada</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Nenhum</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Oups, a lista das redes privadas não pôde ser recuperada. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Oups, a lista das sub-redes não pôde ser recuperada. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_api_guide" qtlid="316164">Mais detalhes sobre as <a href="{{ url }}" target="_blank">redes privadas</a>.</translation>
+   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Oups, as lista das redes públicas não pôde ser recuperada. {{ message }}</translation>
+
+   <translation id="cpcivm_addedit_payement_hour" qtlid="249042">Consumo à hora</translation>
+   <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Faturação no fim do período de uso</translation>
+   <translation id="cpcivm_addedit_payement_month" qtlid="233928">Tarifa mensal</translation>
+   <translation id="cpcivm_addedit_payement_month_info" qtlid="249068">Prorata debitado na inicialização</translation>
+   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Este servidor será integrado na faturação mensal dentro de alguns instantes. O cálculo prorata temporis para o mês em curso ser-lhe-á faturado em relação ao que foi já utilizado.</translation>
+   <translation id="cpcivm_addedit_payement_label" qtlid="272222">Economize 50% no preço dos servidores ao passar para faturação mensal.</translation>
+
+   <translation id="cpcivm_addedit_run_now" qtlid="249094">Iniciar agora</translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Aplicar as modificações</translation>
+
+   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Oops, não foi possível iniciar a instância!</translation>
+   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Oops, não foi possível atualizar as informações da instância!</translation>
+   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Oops, não foi possível aumentar a capacidade desta instância!</translation>
+   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Oops, não foi possível iniciar a reinstalação desta instância!</translation>
+   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Oops, não foi possível efetuar a reintegração no tarifário mensal!</translation>
+   <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">A sua quota atual não lhe permite adicionar este tipo de máquina. Poderá contactar a nossa equipa de suporte para aumentar a sua quota.</translation>
+   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">Após a criação da máquina, e para se ligar, abra um terminal SSH e introduza o seguinte comando:<br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">Após a criação da máquina, e para se ligar, utilize o seu cliente RDP preferido, por exemplo, e através de um computador Linux: <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
+
+   <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">Tem {{count}} chaves SSH fora da região selecionada ({{region}}).</translation>
+   <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">Tem {{count}} chaves SSH fora da região selecionada ({{region}}).</translation>
+
+   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Oups, não conseguimos carregar a sua quota disponível.</translation>
+   <translation id="cpcivm_addedit_save_multiple_success" qtlid="272235">Os seus servidores estão em curso de criação, eles serão acessíveis dentro de alguns instantes.</translation>
+   <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oups, ocorreu um erro aquando da criação dos seus servidores!</translation>
+   <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Vai criar {{nb}} instâncias.</translation>
+
+</translations>

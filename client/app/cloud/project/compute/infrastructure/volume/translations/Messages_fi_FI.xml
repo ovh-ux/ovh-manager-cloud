@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_volume_type" qtlid="2642">Tyyppi</translation>
+   <translation id="cpci_volume_gb_price_month" qtlid="319206">Hinta GB/kk (ALV0%)</translation>
+   <translation id="cpci_volume_gb_price_value_month" qtlid="319219">{{ price }} GB/kk (ALV0%)</translation>
+   <translation id="cpci_volume_price_per_month" qtlid="270254">{{ price }} ALV 0 %/kk</translation>
+</translations>

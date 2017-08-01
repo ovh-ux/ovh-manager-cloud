@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Aktywuj kod</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Zamów zasilenie konta cloud</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">W przypadku każdej nowej faktury kody ważne dla przypisanych produktów są wykorzystywane poza środkiem płatności.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Po wystawieniu faktury kwota do zapłaty jest pobierana z konta Cloud, następnie z konta Digital LaunchPad i z konta pre-paid. Saldo ujemne jest regulowane za pomocą zarejestrowanego sposobu płatności.</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Nie odnaleziono kodów.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Twój kod</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Dodaj kod</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Wystąpił problem z wyświetleniem listy kodów.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Wystąpił problem z wyświetleniem listy kodów.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Faktura nr <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Przypisany kod</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nazwa</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Wartość początkowa</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Pozostałe punkty</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Saldo wykorzystywane automatycznie dla przyszłych faktur</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Data aktywacji</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Data ważności</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Produkty spełniające wymagania</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Wszystkie</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Zasilenie konta Cloud</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Kod został dodany.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Wystąpił problem z dodaniem kodu. Spróbuj ponownie.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Ten kod jest nieważny lub został już wykorzystany.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Ten kod jest nieważny.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Zasilenie cloud to opcja, której nie można przenieść i za którą nie można wykonać zwrotu. Nie ma ona żadnej wartości pieniężnej a zasilenie nie wykorzystane przez 13 miesięcy zostanie utracone.</translation>
+
+</translations>

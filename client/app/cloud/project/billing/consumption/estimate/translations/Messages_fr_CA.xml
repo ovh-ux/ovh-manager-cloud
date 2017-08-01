@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbe_estimate_summary_header" qtlid="364043">Si votre consommation reste la même, le 1er {{ month }} vous devriez payer:</translation>
+   <translation id="cpbe_estimate_summary_renew_monthly_sub_label" qtlid="364056">Renouvellement de vos forfaits mensuels: <strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_summary_hourly_consumption_label" qtlid="364069">Consommation à la demande en {{ month }}: <strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_alert_header_title" qtlid="364082">Alerte consommation à la demande</translation>
+   <translation id="cpbe_estimate_alert_header_description" qtlid="364095">Cette alerte est basée sur la projection en fin de mois</translation>
+   <translation id="cpbe_estimate_alert_create" qtlid="269032">Créer l'alerte</translation>
+   <translation id="cpbe_estimate_alert_edit" qtlid="364108">Modifier l'alerte</translation>
+   <translation id="cpbe_estimate_alert_delete" qtlid="286903">Supprimer l'alerte</translation>
+   <translation id="cpbe_estimate_alert_delete_success" qtlid="286916">Alerte consommation supprimée.</translation>
+   <translation id="cpbe_estimate_alert_delete_error" qtlid="286929">Oups, une erreur est survenue lors de la suppression de votre alerte.</translation>
+
+   <translation id="cpbe_estimate_alert_chart_label_now" qtlid="169719">Aujourd'hui</translation>
+   <translation id="cpbe_estimate_alert_chart_label_future" qtlid="364121">Fin du mois</translation>
+   <translation id="cpbe_estimate_alert_chart_label_limit" qtlid="33562">Limite</translation>
+
+   <translation id="cpbe_estimate_price_error_message" qtlid="268655">Oups, nous n'arrivons pas à récupérer les informations concernant les prix.</translation>
+</translations>

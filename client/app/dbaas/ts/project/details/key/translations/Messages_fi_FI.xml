@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdt_errors_init_title" qtlid="282133">Tapahtui virhe projektin tietojen hakemisessa.</translation>
+   <translation id="dtpdt_errors_init_help1" qtlid="247053">Kokeile myöhemmin uudelleen.</translation>
+   <translation id="dtpdt_errors_init_help2" qtlid="247066">Mikäli tarpeen, voit aina myös tyhjentää paikallisen välimuistisi:</translation>
+   <translation id="dtpdt_errors_init_help3" qtlid="295933">Mikäli ongelma jatkuu, voit ottaa yhteyttä asiakastukeen klikkaamalla <a href="{{url}}">tästä</a>.</translation>
+   <translation id="dtpdt_errros_reset_cache" qtlid="247027">Tyhjennä välimuisti</translation>
+
+   <translation id="dtpdt_add_button" qtlid="301370">Lisää API-avain</translation>
+
+   <translation id="dtpdt_region_name" qtlid="301383">Alue:</translation>
+
+   <translation id="dtpdt_region_help_title" qtlid="301396">Alueen tiedot</translation>
+   <translation id="dtpdt_region_help1" qtlid="301409">Alue määrittää paikan, johon tietosi varastoidaan sekä API OpenTSDB:n kirjautumispisteen URL:n.</translation>
+   <translation id="dtpdt_region_help2" qtlid="301422">Projekti on varastoitu alueelle {{ region }}</translation>
+   <translation id="dtpdt_region_help3" qtlid="301435">API OpenTSDB:n URL:</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Lisätietoja löydät <a href="{{ tsaas_guide_concepts_url }}" target="_blank">oppaistamme.</a></translation>
+
+
+   <translation id="dtpdt_thead_description" qtlid="9238">Kuvaus</translation>
+   <translation id="dtpdt_thead_permissions" qtlid="6946">Oikeudet</translation>
+   <translation id="dtpdt_thead_key" qtlid="301461">API-avain</translation>
+   <translation id="dtpdt_thead_tags" qtlid="11519">Tagit</translation>
+   <translation id="dtpdt_thead_actions" qtlid="72809">Toiminnot</translation>
+   <translation id="dtpdt_action_delete" qtlid="2414">Poista</translation>
+   <translation id="dtpdt_action_edit" qtlid="6766">Muokkaa</translation>
+
+   <translation id="dtpdt_no_key" qtlid="301474">Ei yhtään API-avainta.</translation>
+   <translation id="dtpdt_no_tag" qtlid="301487">Ei yhtään tagia</translation>
+
+   <translation id="dtpdt_modal_delete_key_title" qtlid="301500">API-avaimen poisto</translation>
+   <translation id="dtpdt_modal_delete_key_question" qtlid="301513">Haluatko varmasti poistaa tämän API-avaimen?</translation>
+   <translation id="dtpdt_key_deletion_successful" qtlid="301526">API-avain poistettu</translation>
+   <translation id="dtpdt_key_deletion_error" qtlid="301539">Avainta ei voitu poistaa.</translation>
+
+   <translation id="dtpdt_modal_example_key_title" qtlid="301552">API-avaimen käyttöesimerkki</translation>
+
+   <translation id="dtpdt_permission_READ" qtlid="6958">Luku</translation>
+   <translation id="dtpdt_permission_WRITE" qtlid="301565">Kirjoitus</translation>
+
+   <translation id="dtpdt_key_explain" qtlid="301578">API-avaimet turvaavat pääsyn tietohisi tilapäisissä sarjoissa.</translation>
+   <translation id="dtpdt_key_explain_more_1" qtlid="301591">Jokainen API-avain määrittää oikeuksia, ja voi sisältää "tageja". Tag on avaimesta ja arvosta muodustuva pari (esim: clientId=123456).</translation>
+   <translation id="dtpdt_key_explain_more_2" qtlid="301604">Tagit lisätään automaattisesti lukemisen suodattimeksi ja kiinnitetään jokaiseen </translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Lisätietoja löydät <a href="{{ tsaas_guide_concepts_url }}" target="_blank">oppaistamme.</a></translation>
+
+   <translation id="dtpdt_key_loading_error" qtlid="301617">Tapahtui virhe API-avainten lataamisessa.</translation>
+
+   <translation id="dtpdt_modal_example_key_write_explain_begin" qtlid="301630">Tietojen lähetys tapahtuu HTTP POST pyynnöllä:</translation>
+   <translation id="dtpdt_modal_example_key_read_explain_begin" qtlid="301643">Tietojen luku tapahtuu pyynnöllä HTTP GET:</translation>
+   <translation id="dtpdt_modal_example_key_explain_end" qtlid="301656">Perustunnistautumisiella API-avaimen kautta.</translation>
+   <translation id="dtpdt_modal_example_key_curl_title" qtlid="301669">Esimerkki komentorivistä ja cURL:</translation>
+   <translation id="dtpdt_modal_example_key_more" qtlid="301682">Lisätietoa löydät <a href="{{ tsaas_guide_key_url }}" target="_blank">oppaistamme</a>.</translation>
+
+   <translation id="dtpdt_read_permission" qtlid="6958">Luku</translation>
+   <translation id="dtpdt_write_permission" qtlid="301565">Kirjoitus</translation>
+
+   <translation id="dtpdt_cancel" qtlid="37863">Peruuta</translation>
+
+   <translation id="dtpdt_init_loading" qtlid="301695">Ladataan...</translation>
+   <translation id="dtpdt_init_error" qtlid="301708">Tapahtui virhe API-avaimen lataamisessa</translation>
+   <translation id="dtpdt_create_loading" qtlid="301721">Luodaan avainta...</translation>
+   <translation id="dtpdt_update_loading" qtlid="301734">Muokataan avainta...</translation>
+   <translation id="dtpdt_creation_successful" qtlid="301747">API-avaimen luonti onnistui.</translation>
+   <translation id="dtpdt_creation_error" qtlid="301760">Tapahtui virhe API-avaimen luomisessa.</translation>
+   <translation id="dtpdt_edit_successful" qtlid="301773">API-avaimen muokkaus onnistui.</translation>
+   <translation id="dtpdt_edit_error" qtlid="301786">Tapahtui virhe API-avaimen muokkauksessa.</translation>
+
+</translations>

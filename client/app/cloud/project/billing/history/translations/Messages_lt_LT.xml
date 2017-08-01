@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbh_current_month" qtlid="364004">Sąskaitos: {{year}} {{month}}</translation>
+   <translation id="cpbh_next_month" qtlid="364017">Kitas mėnuo</translation>
+   <translation id="cpbh_previous_month" qtlid="364030">Ankstesnis mėnuo</translation>
+</translations>

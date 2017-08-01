@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_vnc_title" qtlid="251161">Consola VNC</translation>
+   <translation id="cpcivm_vnc_tip" qtlid="251174">Truque: Se a introdução de texto não funcionar, clique na barra azul.</translation>
+   <translation id="cpcivm_vnc_window" qtlid="92753">Abrir numa nova janela</translation>
+   <translation id="cpcivm_vnc_error" qtlid="251187">Ocorreu um erro durante a abertura da consola VNC.</translation>
+   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Para utilizar a consola VNC numa máquina com um SO GNU/Linux, deve previamente ligar-se através de SSH e configurar um utilizador com palavra-passe.</translation>
+</translations>

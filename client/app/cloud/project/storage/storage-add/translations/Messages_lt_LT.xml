@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="add_p8_alert_success" qtlid="242626">Sveikiname, jūs užsiregistravote į Power8 Lab</translation>
+   <translation id="add_instance_ssh_key_help" qtlid="295868">Public Cloud nenaudojamas administratoriaus (root) slaptažodis. Prieigai prie jūsų GNU/Linux virtualios mašinos būtina pridėti SSH raktą. <a target="_blank" href="https://www.ovh.lt/g1785.cloud">Sužinokite, kaip generuojamas SSH raktas.</a></translation>
+   <translation id="add_instance_ssh_key_help_message" qtlid="242652">Dėmesio, norėdami užbaigti kurti savo virtualią mašiną, privalote pateikti ssh raktą.</translation>
+
+   <translation id="add_instance" qtlid="242665">Virtualus serveris</translation>
+   <translation id="add_storage" qtlid="242678">Objektų konteineris</translation>
+   <translation id="add_storage2" qtlid="246468">Pridėti objektų konteinerį</translation>
+   <translation id="add_ssh_key" qtlid="242691">SSH raktas </translation>
+   <translation id="add_title" qtlid="37923">Pridėti</translation>
+   <translation id="add_subtitle" qtlid="242704">Pasirinkite elementą, kurį norite pridėti.</translation>
+
+   <translation id="add_instance" qtlid="242665">Virtualus serveris</translation>
+   <translation id="add_storage" qtlid="242678">Objektų konteineris</translation>
+   <translation id="add_ssh" qtlid="242691">SSH raktas </translation>
+
+   <translation id="add_already_instancied_title" qtlid="242717">Kvota!</translation>
+
+   <translation id="add_instance_region_step_title" qtlid="242730">Pasirinkite duomenų centrą</translation>
+   <translation id="add_instance_flavor_category_step_title" qtlid="242743">Pasirinkite serverio gamą </translation>
+
+   <translation id="add_instance_flavor_step_title" qtlid="242756">Pasirinkite gamą </translation>
+   <translation id="add_instance_flavor_loading" qtlid="242769">Duomenys kraunami </translation>
+   <translation id="add_instance_flavor_not_found" qtlid="242782">Šiuo metu šis modelis nepasiekiamas </translation>
+   <translation id="add_instance_flavor_by_hour" qtlid="242795">per valandą </translation>
+
+   <translation id="add_instance_image_step_title" qtlid="242808">Pasirinkite operacinę sistemą </translation>
+   <translation id="add_instance_images_loading" qtlid="242769">Duomenys kraunami </translation>
+   <translation id="add_instance_images_not_found" qtlid="242821">Neprieinama jokia operacinė sistema.</translation>
+
+   <translation id="add_instance_paymentMode_step_title" qtlid="242834">Pasirinkite mokėjimo priemonę</translation>
+   <translation id="add_instance_paymentMode_loading" qtlid="242769">Duomenys kraunami </translation>
+   <translation id="add_instance_paymentMode_not_found" qtlid="242847">Šiuo metu neprieinama jokia mokėjimo priemonė </translation>
+   <translation id="add_instance_paymentMode_hourly" qtlid="242444">Mokėjimas už valandas</translation>
+   <translation id="add_instance_paymentMode_monthly" qtlid="233928">Mėnesinis abonementas</translation>
+   <translation id="add_instance_paymentMode_hourly_subtitle" qtlid="242860">Apmokėjimas mėnesio pabaigoje </translation>
+   <translation id="add_instance_paymentMode_monthly_subtitle" qtlid="242873">Iš karto nuskaitomas mokėjimas už likusias einamojo mėnesio dienas</translation>
+
+   <translation id="add_instance_ssh_step_title" qtlid="242886">Pasirinkite savo SSH raktą</translation>
+   <translation id="add_instance_ssh_loading" qtlid="242769">Duomenys kraunami </translation>
+   <translation id="add_instance_ssh_not_found" qtlid="242899">Jūs neturite jokio SSH rakto.</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Pridėti SSH raktą</translation>
+
+   <translation id="add_instance_name_step_title" qtlid="242912">Priskirkite pavadinimą savo virtualiai mašinai (instance)</translation>
+
+   <translation id="add_instance_go_to_the_moon" qtlid="217288">Paleisti serverį</translation>
+
+   <translation id="add_storage_region_step_title" qtlid="242730">Pasirinkite duomenų centrą</translation>
+   <translation id="add_storage_container_type_step_title" qtlid="242925">Pasirinkite konteinerio tipą</translation>
+   <translation id="add_storage_name_step_title" qtlid="242938">Priskirkite pavadinimą savo konteineriui</translation>
+   <translation id="add_build_you_own_warehouse" qtlid="242951">Sukurti konteinerį</translation>
+
+   <translation id="add_container_name" qtlid="242964">Konteinerio pavadinimas </translation>
+   <translation id="add_instance_name" qtlid="242977">Serverio pavadinimas </translation>
+   <translation id="add_container_image" qtlid="4394">Atvaizdas</translation>
+   <translation id="add_instance_choose" qtlid="186115">Pasirinkti...</translation>
+   <translation id="add_container_region" qtlid="30802">Duomenų centras</translation>
+   <translation id="add_container_flavor" qtlid="2642">Tipas</translation>
+   <translation id="add_container_ssh" qtlid="21859">SSH raktas</translation>
+   <translation id="add_instance_new_ssh" qtlid="242990">Sukurti SSH raktą</translation>
+   <translation id="add_container_ssh_enter" qtlid="243003">Nurodykite savo raktą</translation>
+   <translation id="add_submit" qtlid="37923">Pridėti</translation>
+   <translation id="add_form_error_bad_ssh_key" qtlid="243016">Neteisingas raktas </translation>
+   <translation id="add_form_error_required" qtlid="182514">Privalomas laukas</translation>
+   <translation id="add_container_selected_publicKey" qtlid="243029">Pasirinktas viešasis raktas </translation>
+   <translation id="add_loading" qtlid="8410">Įkraunama...</translation>
+   <translation id="selected_add_label" qtlid="243042">Ką jūs norite pridėti?</translation>
+   <translation id="add_posting" qtlid="243055">Sukurti serverį</translation>
+   <translation id="add_key_created_public" qtlid="243068">Sukurti viešąjį raktą</translation>
+   <translation id="add_key_created_finger" qtlid="192344">Žymė</translation>
+   <translation id="add_key_created" qtlid="243081">SSH raktas {{ name }} sukurtas </translation>
+   <translation id="add_key_used" qtlid="243094">su raktu {0}</translation>
+   <translation id="add_instance_created" qtlid="243107">Virtuali mašina (instance) {0} sukurta</translation>
+   <translation id="add_container_selected_publicKey_create" qtlid="243120">SSH rakto pavadinimas</translation>
+   <translation id="add_key_success" qtlid="243133">Pridėtas SSH raktas</translation>
+   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_storage_storage_added" qtlid="243146">Sukurta saugykla</translation>
+   <translation id="add_storage_storage_added_error" qtlid="246481">Kuriant konteinerį įvyko klaida</translation>
+   <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Toks SSH rakto pavadinimas jau yra </translation>
+   <translation id="add_form_error_pattern" qtlid="149774">Neteisingas formatas</translation>
+   <translation id="add_already_instancied" qtlid="243172">Jūs negalite sukurti daugiau instance šiame duomenų centre</translation>
+   <translation id="add_container_selected_flavor" qtlid="243185">Pasirinktas konteinerio tipas </translation>
+   <translation id="add_quota_ssh_title" qtlid="242717">Kvota!</translation>
+   <translation id="add_quota_ssh" qtlid="243198">Jūs negalite naudoti daugiau SSH raktų</translation>
+   <translation id="ssh_key_quota_exceeded" qtlid="243211">Jūs negalite naudoti daugiau SSH raktų šiam projektui!</translation>
+   <translation id="add_form_error_maxlength" qtlid="243224">Šis raktas pernelyg ilgas </translation>
+
+   <translation id="labs_sandbox_success_subscribed" qtlid="243237">Aktyvuotas Sandbox Lab!</translation>
+   <translation id="code_linked_to_your_account" qtlid="243250">Dabar šis kodas susietas su jūsų paskyra </translation>
+   <translation id="add_no_more_instances" qtlid="295881">Šiuo metu virtualios mašinos neprieinamos naujiems klientams. Jūsų užklausa automatiškai įtraukta į laukimo sąrašą. <br /><br />Mes jus informuosime apie prieinamumą. <br /><br />Dėkojame už kantrybę!</translation>
+
+   <translation id="add_storage_categories_more_info" qtlid="44536">Daugiau informacijos</translation>
+   <translation id="add_storage_category_pcs" qtlid="135593">Public Cloud Storage</translation>
+   <translation id="add_storage_category_pca" qtlid="134631">Public Cloud Archive</translation>
+
+   <translation id="add_storage_type_static_hosting" qtlid="243276">Statinis talpinimas </translation>
+   <translation id="add_storage_type_static_hosting_description" qtlid="367449">Greita ir naši prieiga prie jūsų svetainių. Susiekite savo domenus ir įkelkite failus.</translation>
+   <translation id="add_storage_type_private" qtlid="242106">Privatus</translation>
+   <translation id="add_storage_type_private_description" qtlid="367462">Sąskaitos ir mokėjimai, teisinė informacija, sisteminiai įrašai. Archyvuokite paprastai, atsižvelgdami į naudojimą.</translation>
+   <translation id="add_storage_type_public" qtlid="246494">Viešas</translation>
+   <translation id="add_storage_type_public_description" qtlid="367475">Multimedia, binariniai duomenys, el. komercija. Talpinkite neribotą kiekį duomenų.</translation>
+   <translation id="add_storage_type_cold" qtlid="376297">Saugojimas „šaltai“, žema kaina</translation>
+   <translation id="add_storage_type_cold_description" qtlid="376310">Archyvuokite ir saugokite įvairių tipų duomenis įvairiose sąsajose.</translation>
+
+   <translation id="add_flavour_ovh_x86_ha_xl_ram" qtlid="243289">RAM XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_sb_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_ram" qtlid="243328">RAM XL3</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_cpu" qtlid="243341">CPU XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_sb_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_ram" qtlid="243354">RAM XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_xl_cpu" qtlid="243367">CPU XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_cpu" qtlid="243380">CPU XL3</translation>
+
+   <translation id="add_instance_price_by_hour" qtlid="242795">per valandą </translation>
+   <translation id="add_instance_price_by_month" qtlid="244794">per mėnesį </translation>
+
+   <translation id="add_flavour_RAM_CPU" qtlid="243406">{{vcpu}} vCores, {{ram}} RAM, {{disk}} Block Storage</translation>
+   <translation id="add_flavour_VPS" qtlid="245077">{{vcpu}} vCore(s), {{ram}} RAM, {{disk}} local SSD</translation>
+   <translation id="instance_creation_success" qtlid="242548">Serveris yra kuriamas</translation>
+   <translation id="instance_creation_PermissionDenied" qtlid="243419">Kvotos viršijimas: jūs neturite leidimo kurti daugiau virtualių mašinų.</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Gidai</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Visi OVH gidai</translation>
+</translations>

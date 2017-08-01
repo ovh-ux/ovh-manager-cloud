@@ -1,0 +1,133 @@
+<oui-message type="error"
+             ng-if="$ctrl.consumption.mads >= $ctrl.service.quota.mads">
+    <div class="flex-row">
+        <div>
+            <p data-translate="metrics_need_upgrade"></p>
+            <p data-translate="metrics_need_upgrade_how"></p>
+        </div>
+        <div>
+            <button type="button"
+                    class="ovh-button ovh-button_primary"
+                    ui-sref="dbaas.metrics.upgrade"
+                    data-translate="metrics_purchase">
+            </button>
+        </div>
+    </div>
+</oui-message>
+<div class="loader text-center" ng-if="$ctrl.serviceLoading">
+    <spinner name="bubbles-222-fff-32"></spinner>
+</div>
+<div class="metrics-view" ng-class="{'blur': $ctrl.loading}">
+    <header>
+        <metrics-logo type="$ctrl.service.type"></metrics-logo>
+        <h2 ng-if="!$ctrl.editDesc">
+            {{ $ctrl.service.region.name }} - {{ $ctrl.service.description || $ctrl.service.name }}
+            <button class="btn btn-icon" type="button" ng-click="$ctrl.editDesc = true">
+                <i class="fa fa-pencil"></i>
+            </button>
+        </h2>
+        <form class="form-inline" ng-if="$ctrl.editDesc">
+            <div class="form-group">
+                <input type="text"
+                        class="form-control"
+                        ng-model="newDescription"
+                        ng-init="newDescription = $ctrl.service.description || $ctrl.service.name">
+            </div>
+            <button class="btn" role="button" ng-click="$ctrl.editDesc = false">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <button class="btn" role="button" ng-click="$ctrl.setDescription(newDescription)">
+                <spinner name="bubbles-222-fff-32" ng-if="$ctrl.descriptionUpdating"></spinner>
+                <i class="fa fa-check" aria-hidden="true"></i>
+            </button>
+        </form>
+    </header>
+    <article class="flex-row stat-bar">
+        <metrics-chart-pie text="$ctrl.consumption.mads"
+                           text-small="'metrics_series' | translate "
+                           value="$ctrl.consumption.mads / $ctrl.service.quota.mads * 100">
+        </metrics-chart-pie>
+        <ul class="list-group col-md-3 col-xs-12">
+            <li class="list-group-item">
+                {{ 'metrics_mads' | translate  }}
+                <span class="badge pull-right">
+                    {{ $ctrl.consumption.mads || 0 }} / {{ $ctrl.service.quota.mads || 0 }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                {{ 'metrics_ddp' | translate  }}
+                <span class="badge pull-right">
+                    {{ $ctrl.consumption.ddp || 0 }} / {{ $ctrl.service.quota.ddp || 0 }}
+                </span>
+            </li>
+            <li class="list-group-item">
+                {{ 'metrics_retention' | translate  }}
+                <span class="badge pull-right">
+                    {{ $ctrl.service.quota.retention || 0 }}
+                </span>
+            </li>
+        </ul>
+        <metrics-chart-pie
+        text="$ctrl.consumption.ddp || 0"
+        text-small="'metrics_ddp_short' | translate "
+        value="$ctrl.consumption.ddp / $ctrl.service.quota.ddp * 100">
+        </metrics-chart-pie>
+    </article>
+    <responsive-tabs>
+        <responsive-tab class="dbaasts-details-tabs-item"
+                        state="dbaas.metrics.token"
+                        dropdown-title="{{ 'metrics_token' | translate  }}">
+            <i class="ovh-font ovh-font-key"></i>
+            <span data-translate="metrics_token"></span>
+        </responsive-tab>
+        <!--responsive-tab disabled="true"
+                        class="dbaasts-details-tabs-item"
+                        state="dbaas.metrics.event"
+                        dropdown-title="{{ 'metrics_event' | translate  }}">
+            <i class="ovh-font ovh-font-receipt"></i>
+            <span data-translate="metrics_event"></span>
+        </responsive-tab>
+        <responsive-tab disabled="true"
+                        class="dbaasts-details-tabs-item"
+                        state="dbaas.metrics.stat"
+                        dropdown-title="{{ 'metrics_stat' | translate  }}">
+            <i class="ovh-font ovh-font-gauge-full"></i>
+            <span data-translate="metrics_stat"></span>
+        </responsive-tab-->
+        <!--<responsive-tab state="dbaas.metrics.upgrade"
+                        dropdown-title="{{ 'metrics_upgrade' | translate  }}">
+            <i class="fa fa-rocket" aria-hidden="true" ng-class="{ 'warn': $ctrl.consumption.mads >= $ctrl.service.quota.mads}"></i>
+            <span data-translate="metrics_upgrade" ng-class="{ 'warn': $ctrl.consumption.mads >= $ctrl.service.quota.mads}"></span>
+        </responsive-tab>-->
+        <responsive-tab state="dbaas.metrics.endpoint"
+                        dropdown-title="{{ 'metrics_endpoint' | translate  }}">
+            <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            <span data-translate="metrics_endpoint"></span>
+        </responsive-tab>
+            <li class="tab pull-right" dropdown-title="{{ 'metrics_quantum' | translate  }}">
+                <a href="https://grafana.tsaas.ovh.com" target="_BLANK">
+                    <i class="ovh-font ovh-font-domain"></i>
+                    <span>Grafana</span>
+                </a>
+            </li>
+            <li class="tab pull-right" dropdown-title="{{ 'metrics_quantum' | translate  }}">
+                <a href="https://quantum.metrics.ovh.net" target="_BLANK">
+                    <i class="ovh-font ovh-font-domain"></i>
+                    <span data-translate="metrics_quantum"></span>
+                </a>
+            </li>
+        <responsive-tab-more>
+            <i class="ovh-font ovh-font-dots"></i>
+            <span data-translate="metrics_more"></span>
+        </responsive-tab-more>
+    </responsive-tabs>
+    <div ui-view class="metrics-sub-view">
+        <h2 class="welcome" data-translate="metrics_welcome"></h2>
+    </div>
+
+    <a class="ovh-button ovh-button_primary help"
+       href="https://community.ovh.com/c/mobile-hosting/data-platforms-lab"
+       target="_BLANK">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+    </a>
+</div>

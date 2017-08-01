@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Reboot in de rescue modus</translation>
+   <translation id="cpc_rescue_mode_valid" qtlid="25951">Starten</translation>
+   <translation id="cpc_rescue_mode_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="cpc_rescue_mode_expl" qtlid="269201">U staat op het punt om uw server in de veilige modus opnieuw op te starten. &#13;
+</translation>
+   <translation id="cpc_rescue_mode_label" qtlid="269214">Mijn afbeelding: </translation>
+   <translation id="cpc_rescue_mode_defaut" qtlid="269227">Made-in-OVH Rescue Distribution </translation>
+   <translation id="cpc_rescue_mode_pwd_expl" qtlid="286877">Als u rescue-pro selecteert dan zult u een tijdelijk wachtwoord ontvangen waarmee u zich kunt verbinden met de server in de rescue modus. U kunt anders ook toegang krijgen tot uw server met uw gebruikelijke SSH key, echter de SSH fingerprint van de host zal wel veranderd zijn. De main drive zal beschikbaar zijn als secondaire unmounted disk. </translation>
+   <translation id="cpc_rescue_mode_success_linux" qtlid="296115">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>ssh {{user}}@{{ip}}</code> met de gebruikelijke SSH key. Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
+   <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>ssh {{user}}@{{ip}}</code> met het tijdelijke wachtwoord {{pwd}} (deze wordt slechts eenmalig aan u verzonden). Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
+   <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>rdesktop {{ip}}</code> met de gebruikelijke SSH key. Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
+   <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>rdesktop {{ip}}</code> met het tijdelijke wachtwoord {{pwd}} (deze wordt slechts eenmalig aan u verzonden). Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
+   <translation id="cpc_rescue_mode_error" qtlid="269305">Oeps! Het is niet mogelijk om uw server in de veilige modes opnieuw op te starten.  &#13;
+</translation>
+
+</translations>

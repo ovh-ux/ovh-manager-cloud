@@ -1,0 +1,23 @@
+/* Cloud Space Meter - Progress Bar */
+@cloud-space-meter-progress-bar-background-color: white;
+@cloud-space-meter-progress-bar-border-style: solid;
+@cloud-space-meter-progress-bar-border-width: 1px;
+@cloud-space-meter-progress-bar-border-color: #ccc;
+@cloud-space-meter-progress-bar-height: 1.2rem;
+@cloud-space-meter-progress-bar-height_large: 1.8rem;
+
+.cloud-space-meter {
+    &__progress-bar {
+        height: @cloud-space-meter-progress-bar-height;
+        padding: 1px;
+        box-shadow: none;
+        background-color: @cloud-space-meter-progress-bar-background-color;
+        border-width: @cloud-space-meter-progress-bar-border-width;
+        border-style: @cloud-space-meter-progress-bar-border-style;
+        border-color: @cloud-space-meter-progress-bar-border-color;
+
+        &_large {
+            height: @cloud-space-meter-progress-bar-height_large;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_introduction_title" qtlid="344584">Zbuduj swoją infrastrukturę vRack</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Zarządzaj prywatnym połączeniem wszystkich elementów swojej infrastruktury informatycznej na całym świecie. <br/> Technologia vRack (wirtualna szafa) pozwala na łączenie, izolowanie oraz rozdzielanie usług w ramach jednej lub kilku zabezpieczonych, prywatnych sieci.</translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">Masz mozliwość <a href="{{ uri }}" target="_blank">zmiany właściciela</a>.</translation>
+   <translation id="vrack_guide_link_text" qtlid="344610">Więcej informacji znajduje się w przewodniku.</translation>
+   <translation id="vrack_change_owner_link_text" qtlid="344623">zmiana właściciela</translation>
+   <translation id="vrack_error" qtlid="323249">Wystąpił problem z pobraniem danych dotyczących usługi vRack.</translation>
+   <translation id="vrack_add_error" qtlid="323262">Wystąpił błąd podczas dodawania usługi do sieci vRack.</translation>
+   <translation id="vrack_remove_error" qtlid="323275">Wystąpił błąd podczas usuwania usługi z sieci vRack.</translation>
+   <translation id="vrack_your_services" qtlid="344636">Kompatybilne usługi</translation>
+   <translation id="vrack_your_vrack" qtlid="323288">Twój vRack</translation>
+   <translation id="vrack_help" qtlid="323301">Wybierz usługi, które chcesz dodać lub odłączyć z infrastruktury vRack:</translation>
+   <translation id="vrack_order_new_title" qtlid="323314">Zbuduj usługę vRack</translation>
+   <translation id="vrack_cloud_warning" qtlid="325185">Uwaga: Komunikacja między innymi produktami i między projektami cloud nie jest jeszcze możliwa. Zostanie ona włączona automatycznie w ciągu kolejnych miesięcy. Aktualnie możliwa jest wyłącznie komunikacja w ramach danego projektu.</translation>
+   <translation id="vrack_cloud_name_max_length" qtlid="349281">Nazwa może zawierać maksymalnie 100 znaków.</translation>
+   <translation id="vrack_cloud_name_pattern" qtlid="349294">Nazwa musi rozpoczynać się od litery i nie może zawierać spacji.</translation>
+   <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
+   <translation id="vrack_move_dialog_title" qtlid="353556">Przeniesienie centrum danych Private Cloud</translation>
+   <translation id="vrack_move_dialog_intro" qtlid="353569">Wybrałeś usługę centrum danych Private Cloud. Usługa ta musi zostać przeniesiona na inną usługę vRack.</translation>
+   <translation id="vrack_move_dialog_warning_notice" qtlid="353582">Operacja ta spowoduje około 5 minut przerwy w działaniu usługi.</translation>
+   <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">Docelowa usługa vRack:</translation>
+   <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Wybierz usługę vRack</translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">Operacja przeniesienia centrum danych nie powiodła się.</translation>
+</translations>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_pool_pool_definition" qtlid="354210">Täällä voit luoda datasäilöjä.</translation>
+   <translation id="cda_pool_permission_definition" qtlid="354223">Datasäilöt (Pools) ovat "kontteja", joihin tietosi on varastoitu. Datasäilön käyttöoikeuksia voidaan hallita käyttäjäkohtaisesti.</translation>
+
+   <translation id="cda_pool_add_button_text" qtlid="354236">Lisää datasäilö</translation>
+   <translation id="cda_pool_delete_button_text" qtlid="2414">Poista</translation>
+
+   <translation id="cda_pool_table_col_poolname" qtlid="3818">Nimi</translation>
+   <translation id="cda_pool_table_col_pooltype" qtlid="2642">Tyyppi</translation>
+   <translation id="cda_pool_table_col_replica" qtlid="354249">Jäljennösten lukumäärä</translation>
+   <translation id="cda_pool_table_col_minreplica" qtlid="354262">Aktiivisten jäljennösten lukumäärä</translation>
+   <translation id="cda_pool_table_col_backup" qtlid="354275">Backup datasäilö</translation>
+   <translation id="cda_pool_table_col_actions" qtlid="72809">Toiminnot</translation>
+
+   <translation id="cda_pool_add_title" qtlid="354236">Lisää datasäilö</translation>
+   <translation id="cda_pool_add_poolname_label" qtlid="3818">Nimi</translation>
+
+   <translation id="cda_pool_add_poolname_required" qtlid="354288">Nimi vaaditaan.</translation>
+   <translation id="cda_pool_add_poolname_pattern" qtlid="354301">Nimessä ei voi olla välilyöntejä.</translation>
+   <translation id="cda_pool_add_poolname_maxlength" qtlid="354314">Nimen on oltava enintään {{ maxlength }} merkkiä pitkä.</translation>
+   <translation id="cda_pool_add_success" qtlid="354327">Datasäilön lisäys onnistui.</translation>
+
+   <translation id="cda_pool_delete_title" qtlid="354340">Poista datasäilö</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nimi:</translation>
+   <translation id="cda_pool_delete_confirm" qtlid="354353">Haluatko varmasti poistaa tämän datasäilön</translation>
+   <translation id="cda_pool_delete_success" qtlid="354366">Datasäilön poisto onnistui.</translation>
+
+   <translation id="cda_pool_table_empty" qtlid="354379">Ei yhtään datasäilöä.</translation>
+</translations>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Restartuj do trybu rescue</translation>
+   <translation id="cpc_rescue_mode_valid" qtlid="25951">Uruchom</translation>
+   <translation id="cpc_rescue_mode_cancel" qtlid="37863">Anuluj</translation>
+   <translation id="cpc_rescue_mode_expl" qtlid="269201">Zrestartujesz swój serwer do trybu rescue.</translation>
+   <translation id="cpc_rescue_mode_label" qtlid="269214">Mój obraz:</translation>
+   <translation id="cpc_rescue_mode_defaut" qtlid="269227">Dystrybucja Rescue Made-in-OVH</translation>
+   <translation id="cpc_rescue_mode_pwd_expl" qtlid="286877">Jeśli wybierzesz "Distribution Rescue Made-in-OVH", otrzymasz tymczasowe hasło do logowania w trybie rescue. W innym przypadku Twój serwer będzie dostępny za pomocą klucza SSH, ale zmieni się oznaczenie SSH hosta. Dysk główny będzie dostępny jako drugi nie podmontowany dysk.</translation>
+   <translation id="cpc_rescue_mode_success_linux" qtlid="296115">Aby uzyskać dostęp do serwera {{vmName}} w trybie rescue, użyj: <br/><code>ssh {{user}}@{{ip}}</code> z dotychczasowym kluczem SSH. Uwaga: Tylko główny dysk jest dostępny w tym trybie.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Aby uzyskać dostęp do serwera {{vmName}} w trybie rescue, użyj: <br/><code>ssh {{user}}@{{ip}}</code> z tymczasowym hasłem {{pwd}} (hasło to nie będzie później wyświetlane). Uwaga: Tylko główny dysk jest dostępny w tym trybie.</translation>
+   <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Aby uzyskać dostęp do serwera {{vmName}} w trybie rescue, użyj: :<br/><code>rdesktop {{ip}}</code> z dotychczasowym kluczem SSH. Uwaga: Tylko główny dysk jest dostępny w tym trybie.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Aby uzyskać dostęp do serwera {{vmName}} w trybie rescue, użyj: :<br/><code>rdesktop {{ip}}</code> z tymczasowym hasłem {{pwd}} (hasło to nie będzie później wyświetlane). Uwaga: Tylko główny dysk jest dostępny w tym trybie.</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="269305">Nie możemy uruchomić Twojego serwera w trybie rescue.</translation>
+
+</translations>

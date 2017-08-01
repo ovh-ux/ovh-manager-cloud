@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Wystąpił błąd podczas pobierania snapshotów.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">Zmiana częstotliwości wykonywania snapshotów zostanie wprowadzona w ciągu kilku minut.</translation>
+   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Wystąpił błąd podczas modyfikacji częstotliwości wykonywania snapshotów.</translation>
+   <translation id="nasha_snapshot_of" qtlid="344922">Snapshot partycji {{partitionName}}</translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Częstotliwość partycji</translation>
+   <translation id="nasha_snapshot_day-1" qtlid="154091">Codziennie</translation>
+   <translation id="nasha_snapshot_day-2" qtlid="154104">Co 2 dni</translation>
+   <translation id="nasha_snapshot_day-3" qtlid="154117">Co 3 dni</translation>
+   <translation id="nasha_snapshot_day-7" qtlid="8806">Co tydzień</translation>
+   <translation id="nasha_snapshot_hour-1" qtlid="8782">Co godzinę</translation>
+   <translation id="nasha_snapshot_hour-6" qtlid="154130">Co 6 godzin</translation>
+   <translation id="nasha_snapshot_informations" qtlid="344948">Snapshot to zdjęcie. Rejestruje on stan usługi NAS-HA z danej chwili.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Snapshoty wykorzystują do prawidłowego działania przestrzeń na partycji. Historia snapshotów nie jest rejestrowana. Nowy snapshot usuwa poprzedni snapshot.</translation>
+</translations>

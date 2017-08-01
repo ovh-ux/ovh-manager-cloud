@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_title_file" qtlid="233967">Object storage</translation>
+   <translation id="storage_title_file_number" qtlid="241833">Container je prázdný</translation>
+   <translation id="storage_title_file_number_0" qtlid="241833">Container je prázdný</translation>
+   <translation id="storage_title_file_number_1" qtlid="241846">V tomto container je jeden objekt</translation>
+   <translation id="storage_title_file_number_other" qtlid="241859">V tomto container je {{count}} objektů</translation>
+   <translation id="storage_details_loading" qtlid="241872">Načítání objektů</translation>
+
+   <translation id="storage_details_link_tooltip" qtlid="241885">Zobrazit objekty</translation>
+   <translation id="storage_details_deleted_success" qtlid="241898">Objekty vymazány</translation>
+   <translation id="storage_details_upload_success" qtlid="241911">Soubor nahrán</translation>
+   <translation id="storage_region" qtlid="30802">Datacentrum</translation>
+
+   <translation id="storage_file_selected_count" qtlid="367540">Vybráno: {{count}</translation>
+   <translation id="storage_object_import_files" qtlid="241924">Import souborů</translation>
+   <translation id="storage_object_add_multiple" qtlid="241937">Přidat objekty</translation>
+   <translation id="storage_modal_add_object_title" qtlid="241937">Přidat objekty</translation>
+   <translation id="storage_add_object_prefix" qtlid="69821">Prefix</translation>
+   <translation id="storage_object_title" qtlid="367553">Vaše objekty</translation>
+   <translation id="storage_nb_objects" qtlid="244768">Objekty:</translation>
+   <translation id="storage_container_size" qtlid="244781">Velikost kontejneru:</translation>
+   <translation id="storage_container_url" qtlid="246455">URL container:</translation>
+   <translation id="storage_container_url_info" qtlid="250849">Tuto informaci je potřeba opravit, nebo změnit objects pomocí API. Pro více informací jděte do sekce s příručkami na stránkách OVH.</translation>
+   <translation id="storage_static_url" qtlid="241976">Záznam CNAME/TXT</translation>
+   <translation id="storage_gateway" qtlid="367566">Adresa serveru pro rsync/sftp/scp:</translation>
+   <translation id="storage_gateway_username" qtlid="367579">Uživatelské jméno:</translation>
+   <translation id="storage_gateway_password" qtlid="367592">Heslo (zřetězení následujících polí):</translation>
+   <translation id="storage_availability_unsealing" qtlid="367605">K dispozici v: {{delay}}</translation>
+   <translation id="storage_availability_sealed" qtlid="369152">Odblokovat</translation>
+   <translation id="storage_file_download" qtlid="39286">Stáhnout</translation>
+   <translation id="storage_availability_unsealed" qtlid="99920">Dostupný</translation>
+   <translation id="storage_file_state_sealed" qtlid="367631">Váš soubor není k dispozici pro okamžité stažení. Pro zahájení procesu odblokování klikněte prosím zde.</translation>
+   <translation id="storage_file_state_unsealing" qtlid="367644">Svůj soubor si budete moci za okamžik stáhnout. Po odblokování bude soubor k dispozici 24 hodin.</translation>
+   <translation id="storage_file_state_unsealed" qtlid="367657">Váš soubor je připraven ke stažení. Soubor bude zablokován po uplynutí 24 hodin.</translation>
+   <translation id="storage_modal_how_to_add_cname_title" qtlid="241989">Přiřadit Vaši doménu k tomuto container</translation>
+   <translation id="storage_modal_how_to_add_cname_text" qtlid="295842">Pro použití kontejneru "statický webhosting" na doméně nebo subdoméně přidejte do DNS zóny záznam CNAME obsahující hodnotu <b>{{staticUrl}}</b></translation>
+   <translation id="storage_modal_how_to_add_cname_text2" qtlid="242015">Jestliže nejste schopní změnit CNAME záznam, můžete také vložit tuto hodnotu jako TXT záznam</translation>
+   <translation id="storage_modal_how_to_add_cname_guide" qtlid="295855">Více informací v <a href="https://community.runabove.com/kb/en/object-storage/how-to-put-object-storage-behind-your-domain-name.html">této příručce</a>.</translation>
+   <translation id="storage_details_not_found" qtlid="242041">Container nebyl nalezen</translation>
+   <translation id="storage_details_not_defined" qtlid="242054">Chyba při načítání container</translation>
+   <translation id="storage_error_occurs" qtlid="242067">Při načítání seznamu container došlo k chybě: {{error}}</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Průvodci</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+</translations>

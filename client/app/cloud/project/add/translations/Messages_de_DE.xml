@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpa_title" qtlid="255285">Ein neues Public Cloud Projekt anlegen</translation>
+   <translation id="cpa_title_first" qtlid="245662">Aktivieren Sie Ihre Public Cloud</translation>
+
+   <translation id="cpa_validationPending" qtlid="245675">Ihrem Kundenkonto ist noch nicht für die Public Cloud aktiviert. Sie werden per E-Mail benachrichtigt, sobald Sie dieses Produkt nutzen können.</translation>
+
+   <translation id="cpa_contract_empty" qtlid="245688">Sie haben alle Verträge zu diesem Produkt akzeptiert.</translation>
+
+   <translation id="cpa_description" qtlid="255298">Projektname</translation>
+   <translation id="cpa_description_num" qtlid="250069">Projekt {{num}}</translation>
+   <translation id="cpa_description_error_min_char" qtlid="255311">Der Projektname muss mindestens 3 Zeichen enthalten.</translation>
+   <translation id="cpa_description_error_max_char" qtlid="255324">Der Projektname kann nicht mehr als 255 Zeichen enthalten.</translation>
+
+
+   <translation id="cpa_paymentmean" qtlid="140014">Zahlungsmittel</translation>
+   <translation id="cpa_paymentmean_creditCard" qtlid="275817">Automatisch von meiner Kreditkarte einziehen (empfohlen).</translation>
+   <translation id="cpa_paymentmean_creditCard_info" qtlid="275830">Sie müssen über eine Kreditkarte mit 3-D Secure Funktion verfügen.</translation>
+   <translation id="cpa_paymentmean_creditCard_info2" qtlid="275843">Erinnerung: Rechnungen werden automatisch von Ihrem Cloud Guthaben abgebucht und dann über Ihre eingetragene Zahlungsart abgerechnet.</translation>
+   <translation id="cpa_paymentmean_empty1" qtlid="266651">Standard-Zahlungsart (empfohlen).</translation>
+   <translation id="cpa_paymentmean_empty2" qtlid="266664">Jede Rechnung wird automatisch von Ihrem Cloud Account abgebucht und dann mit Ihrer Kreditkarte, Ihrem Paypal Account oder per SEPA-Bankeinzug von Ihrem Konto beglichen.</translation>
+   <translation id="cpa_paymentmean_empty_help_link" qtlid="266677">Eine Zahlungsart eintragen</translation>
+   <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Eine Kreditkarte eintragen</translation>
+
+   <translation id="cpa_paymentmean_expl" qtlid="319154">Jedes Cloud Projekt wird am Anfang des Monats abgerechnet (stündlicher Verbrauch oder verbrauchte GB des abgelaufenen Monats und monatliche Instanz-Abos des kommenden Monats). Beim Start der Instanzen im monatlichen Abo wird auch eine Proformarechnung erstellt.</translation>
+   <translation id="cpa_paymentmean_expl2" qtlid="266703">Jede Rechnung wird automatisch von Ihrer eingetragenen Standard-Zahlungsart abgebucht (nach Abzug eventueller Guthaben, Gutscheine und des OVH Accounts).</translation>
+
+
+   <translation id="cpa_and_or" qtlid="245727">und/oder</translation>
+   <translation id="cpa_voucher" qtlid="266716">Gutschein (optional)</translation>
+
+   <translation id="catalog_version" qtlid="377467">Auswahl </translation>
+   <translation id="catalog_version_intro" qtlid="377558">Der <strong>OVH Produktkatalog wurde erneuert!</strong> Profitieren Sie ab sofort vom neuen Angebot! Der alte Produktkatalog bleibt noch für einen kurzen Zeitraum verfügbar. Bitte beachten Sie aber, dass es nicht möglich ist, Produkte aus beiden Katalogen zu kombinieren in einem Projekt. </translation>
+   <translation id="use_new_catalog_label" qtlid="377506">Neuer Produktkatalog </translation>
+   <translation id="use_new_catalog_descr" qtlid="377519">Neue Instanzen: B2 (allgemeine Nutzung), C2 (CPU), R2 (RAM), S1 (Sandbox) </translation>
+   <translation id="use_old_catalog_label" qtlid="377532">Alter Produktkatalog </translation>
+   <translation id="use_old_catalog_descr" qtlid="377545">Achtung: Sie können Ihrem Projekt keine Instanzen aus dem neuen Produktkatalog hinzufügen, wenn Sie noch den alten Produktkatalog verwenden. Alte Instanzen: EG (allgemeine Nutzung), HG (CPU), SP (RAM), VPS-SSD (Sandbox) </translation>
+
+   <translation id="cpa_create_project" qtlid="255337">Projekt anlegen</translation>
+   <translation id="cpa_create_project_first" qtlid="245753">Meinen Cloud Account aktivieren.</translation>
+   <translation id="cpa_create_project_limited" qtlid="245766">Einen eingeschränkten Account aktivieren</translation>
+   <translation id="cpa_create_project_with_order1" qtlid="266729">Das Projekt aktivieren, indem Sie Guthaben erwerben.</translation>
+   <translation id="cpa_create_project_with_order2" qtlid="295764">Begleichen Sie die erste Rechnung in Höhe von {{price}} für Cloud-Guthaben für dieses Projekt. Dieser Schritt entfällt, wenn Sie über einen Account (z.B. DLP, Inkubator) verfügen. Anschließend werden alle fälligen Beträge von dem für dieses Projekt vorgesehenen Guthaben abgezogen, dann von Ihren Accounts und schließlich von Ihrem OVH Prepaid-Konto (bitte beachten Sie: Sie sind verpflichtet, jegliche Sollbeträge unverzüglich mit einem Zahlungsmittel Ihrer Wahl auszugleichen). <br/>Das Cloud-Guthaben ist nicht übertragbar und nicht erstattungsfähig. Es hat keinen Geldwert und nicht genutztes Guthaben verfällt nach Ablauf von 13 Monaten. </translation>
+   <translation id="cpa_create_project_with_order3" qtlid="363167">Wenn Sie am DLP Programm teilnehmen, müssen Sie hier keine Angabe machen. Ihr DLP Konto wird vor allen anderen Zahlungsmethoden verwendet. </translation>
+   <translation id="cpa_create_project_limited_help1" qtlid="372141">Sie verfügen derzeit über einen aktiven Service aus den Reihen VPS, Dedicated Server oder Private Cloud. </translation>
+   <translation id="cpa_create_project_limited_help2" qtlid="245792">Sie können ohne sofort ohne Eingabe einer Zahlungsmethode einen eingeschränkten Account (1 Instanz, 1 vCPU) aktivieren.</translation>
+   <translation id="cpa_create_project_limited_help3" qtlid="245805">Die Einschränkung wird entfernt, sobald Sie eine aktive Zahlungsmethode hinterlegt haben.</translation>
+
+   <translation id="cpa_success" qtlid="295777">Das Projekt wird erstellt. Bitte bezahlen Sie den <a href="{{url}}" target="blank">Bestellschein</a>, um das Projekt nutzen zu können. </translation>
+
+   <translation id="cpa_error" qtlid="144721">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal.</translation>
+   <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Bitte geben Sie eine gültige, aktive Zahlungsmethode ein.</translation>
+   <translation id="cpa_error_invalid_voucher" qtlid="255350">Ihr Gutschein ist leider nicht gültig. Bitte überprüfen Sie Ihre Eingabe und die Gültigkeit des Gutscheins.</translation>
+   <translation id="cpa_error_contracts_tosign" qtlid="245844">Sie müssen einen oder mehrere Verträge akzeptieren.</translation>
+   <translation id="cpa_error_over_quota" qtlid="295790">Sie haben die maximale Zahl an Cloud-Projekten erreicht. Bitte kontaktieren Sie unseren <a href="#/support?state=new" target="_blank">Support</a>, wenn Sie das Limit erhöhen möchten. </translation>
+</translations>

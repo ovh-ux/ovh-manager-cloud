@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_rights_expl" qtlid="262579">Admin-yhteyshenkilö voi vaihtaa laskutus- ja admin-yhteyshenkilö jokaisen projektin osalta hallintapaneelin kautta</translation>
+   <translation id="cpb_rights_expl2" qtlid="262592">Admin-yhteyshenkilö voi myös lisätä uusia kontakteja kirjoitus- ja luku- tai vain kirjoitusoikeuksin tälle projektille.</translation>
+   <translation id="cpb_rights_note" qtlid="261101">Huomioitavaa: yhteyshenkilöt, joilla on kirjoitus- ja lukuoikeudet, voivat luoda ylimääräisiä kuluja. Yhteyshenkilöt, joilla on ”vain luku”-tyyppiset oikeudet, eivät voi tilata lisäpalveluita projekteille. Laskutusyhteyshenkilön oletusmaksutapaa käytetään kaikkien kulujen maksamiseen.</translation>
+   <translation id="cpb_rights_soon" qtlid="261114">Voit määritellä palveluiden yhteyshenkilöitä uuden hallintapaneelin kautta muutaman viikon sisään.</translation>
+   <translation id="cpb_rights_owner" qtlid="262605">Admin-yhteyshenkilö</translation>
+   <translation id="cpb_rights_billing_contact" qtlid="261140">Laskutuskontakti:</translation>
+   <translation id="cpb_rights_modify" qtlid="37875">Muokkaa</translation>
+   <translation id="cpb_rights_add" qtlid="37923">Lisää</translation>
+   <translation id="cpb_rights_table_nichandle" qtlid="261153">Asiakastunnus</translation>
+   <translation id="cpb_rights_table_email" qtlid="33598">Sähköposti</translation>
+   <translation id="cpb_rights_table_rights" qtlid="65286">Oikeudet</translation>
+   <translation id="cpb_rights_loading" qtlid="242769">Ladataan…</translation>
+   <translation id="cpb_rights_no_data" qtlid="261166">Käyttöoikeustietoja ei löytynyt.</translation>
+   <translation id="cpb_rights_error" qtlid="261179">Käyttöoikeusinfoa ei voitu hakea.</translation>
+   <translation id="cpb_rights_add_error" qtlid="261192">Käyttöoikeutta ei voitu lisätä.</translation>
+   <translation id="cpb_rights_remove_error" qtlid="261205">Käyttöoikeutta ei voitu poistaa.</translation>
+   <translation id="cpb_contact_error_invalid" qtlid="261218">Määritetty kontakti on virheellinen.</translation>
+   <translation id="cpb_contact_error_other" qtlid="261231">Kontaktia ei voitu päivittää.</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Vain luku</translation>
+   <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Luku/kirjoitus</translation>
+   <translation id="cpb_rights_table_rights_add_success" qtlid="261244">Käyttöoikeus on lisätty.</translation>
+   <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">Käyttöoikeus on poistettu.</translation>
+   <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Vahvista poisto</translation>
+   <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Peruuta poisto</translation>
+
+</translations>

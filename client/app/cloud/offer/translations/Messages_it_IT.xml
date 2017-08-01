@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_offer_ready" qtlid="383096">Pronto per il Cloud?</translation>
+   <translation id="cloud_offer_features" qtlid="383109">Vantaggi del Public Cloud</translation>
+   <translation id="cloud_offer_explanation_1" qtlid="383122">Le istanze (server virtuali) Public Cloud combinano <strong>flessibilità</strong> e <strong>risorse garantite</strong>.</translation>
+   <translation id="cloud_offer_explanation_2" qtlid="383135">In meno di un minuto disponi di CPU, RAM, storage dedicato e accesso root, <strong>come su un server dedicato.</strong></translation>
+   <translation id="cloud_offer_explanation_3" qtlid="383148">Il Public Cloud offre una tariffazione oraria o mensile, per <strong>una gestione perfetta dei costi.</strong></translation>
+   <translation id="cloud_offer_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_offer_vrack_explanation" qtlid="383161">Connetti i tuoi server fisici e virtuali in un'unica rete privata</translation>
+   <translation id="cloud_offer_ipfo" qtlid="383174">IPFO</translation>
+   <translation id="cloud_offer_ipfo_explanation" qtlid="383187">IP geolocalizzati trasferibili fra tutte le tue macchine OVH</translation>
+   <translation id="cloud_offer_ipv6" qtlid="383200">IPv4 - IPv6 pubblici</translation>
+   <translation id="cloud_offer_ipv6_explanation" qtlid="383213">Ogni istanza Public Cloud dispone di default di un IPv4 e un IPv6 pubblici</translation>
+   <translation id="cloud_offer_upgrade" qtlid="383226">Scalabilità</translation>
+   <translation id="cloud_offer_upgrade_explanation" qtlid="383239">Ridimensiona le tue istanze in base alle tue esigenze</translation>
+   <translation id="cloud_offer_pca" qtlid="134631">Public Cloud Archive</translation>
+   <translation id="cloud_offer_pca_explanation" qtlid="383252">Lo storage a freddo alla tariffa più conveniente con accesso tramite i protocolli standard</translation>
+   <translation id="cloud_offer_snapshot" qtlid="10235">Snapshot</translation>
+   <translation id="cloud_offer_snapshot_explanation" qtlid="383265">Salva e duplica le tue istanze in 1 click</translation>
+   <translation id="cloud_offer_ssd" qtlid="7114">SSD</translation>
+   <translation id="cloud_offer_ssd_explanation" qtlid="383278">Ogni istanza dispone di storage SSD ad alte prestazioni di gamma professionale</translation>
+   <translation id="cloud_offer_volume" qtlid="383291">Volumi aggiuntivi</translation>
+   <translation id="cloud_offer_volume_explanation" qtlid="383304">Aggiungi a caldo storage high availability, replicato 3 volte</translation>
+   <translation id="cloud_offer_object_storage" qtlid="383317">Object Storage</translation>
+   <translation id="cloud_offer_object_storage_explanation" qtlid="383330">Da pochi giga a molti peta, salva i tuoi oggetti sulla nostra piattaforma Openstack SWIFT</translation>
+   <translation id="cloud_offer_api" qtlid="293112">API OVH</translation>
+   <translation id="cloud_offer_api_explanation" qtlid="383343">Automatizza la gestione della tua infrastruttura grazie alle API OVH e Openstack</translation>
+
+   <translation id="cloud_offer_project_label_1" qtlid="383356">Il tuo progetto</translation>
+   <translation id="cloud_offer_project_label_2" qtlid="383369">Assegna un nome al tuo progetto</translation>
+   <translation id="cloud_offer_project_placeholder" qtlid="106751">Il tuo progetto</translation>
+   <translation id="cloud_offer_project_explanation_1" qtlid="383382">Un progetto è un container che ti consente di gestire le tue istanze Cloud.</translation>
+   <translation id="cloud_offer_project_explanation_2" qtlid="383395">Puoi rinominare il tuo progetto in un secondo momento.</translation>
+   <translation id="cloud_offer_payment_label" qtlid="140014">Metodo di pagamento</translation>
+   <translation id="cloud_offer_payment_none" qtlid="383408">Nessun metodo di pagamento predefinito selezionato.</translation>
+   <translation id="cloud_offer_payment_explanation_1" qtlid="383421">Questo metodo di pagamento verrà utilizzato per saldare i servizi Cloud.</translation>
+   <translation id="cloud_offer_payment_explanation_2" qtlid="383434">Per gestire i tuoi metodi di pagamento, accedi alla <a href="{{url}}">sezione Fatturazione</a></translation>
+   <translation id="cloud_offer_voucher" qtlid="383447">Codice promozionale</translation>
+   <translation id="cloud_offer_voucher_placeholder" qtlid="383460">1AAA-AA11</translation>
+   <translation id="cloud_offer_agreement_label" qtlid="383473">Condizioni di utilizzo</translation>
+   <translation id="cloud_offer_agreement_accept" qtlid="383486">Accetto le <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cloud_offer_start" qtlid="383499">Avvia il tuo progetto Cloud</translation>
+</translations>

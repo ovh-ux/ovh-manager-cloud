@@ -1,0 +1,27 @@
+<div class="cloud-project-openstack">
+
+    <div class="cloud-project-openstack-content">
+
+        <div class="cloud-project-tabs-ctnr">
+            <responsive-tabs>
+                <responsive-tab
+                    class="cloud-compute-tabs-item"
+                    state="{{ ::'iaas.pci-project.openstack.users' }}"
+                    dropdown-title="{{ 'cp_openstack_tab_openstack' | translate }}">
+                    <i class="ovh-font ovh-font-openstack"></i>
+                    <span data-translate="cp_openstack_tab_openstack"></span>
+                </responsive-tab>
+                <responsive-tab-more class="cloud-compute-tabs-item">
+                    <i class="fa fa-plus"></i>
+                    <span>...</span>
+                </responsive-tab-more>
+            </responsive-tabs>
+        </div>
+
+        <!-- HERE MUST COME THE TOP CONTENT -->
+
+        <div ui-view="cloudProjectOpenstack" class="cloud-openstack-content-ctnr"></div>
+
+    </div>
+
+</div>

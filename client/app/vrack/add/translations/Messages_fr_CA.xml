@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_title" qtlid="323171">Commande de vRack</translation>
+   <translation id="vrack_subtitle" qtlid="323184">La commande de ce service est gratuite. Votre vRack sera livré en quelques minutes.</translation>
+   <translation id="vrack_validationPending" qtlid="323197">Veuillez finaliser le paiement gratuit de votre <a href="{{url}}" target='_blank'>bon de commande</a>.</translation>
+   <translation id="vrack_order_delay" qtlid="323210">Votre vRack sera disponible quelques minutes après la validation du bon de commande.</translation>
+   <translation id="vrack_order" qtlid="43558">Commander</translation>
+   <translation id="vrack_contract_empty" qtlid="245688">Vous avez accepté tous les contrats liés à ce produit.</translation>
+   <translation id="vrack_error" qtlid="148981">Une erreur est survenue.</translation>
+   <translation id="vrack_error_reason" qtlid="323223">Une erreur est survenue: {{message}}</translation>
+   <translation id="vrack_adding_success" qtlid="323236">La demande d'activation de votre vRack a bien été prise en compte et sera effective dans quelques minutes une fois la commande numéro <a href="{{data.url}}" target='_blank'>{{data.orderId}}</a> validée.</translation>
+</translations>

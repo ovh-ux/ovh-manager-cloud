@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_zfs_title" qtlid="373649">Asetukset: Z File System (ZFS)</translation>
+   <translation id="nasha_partitions_zfs_atime_label" qtlid="373675">Hakuajan päivitykset (atime)</translation>
+   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Poista käytöstä</translation>
+   <translation id="nasha_partitions_zfs_atime_description" qtlid="373688">Poistaa tarpeen, jonka mukaan kernelin täytyy päivittää tiedoston hakuaika joka kerta kun tiedostoa pyydetään. </translation>
+   <translation id="nasha_partitions_zfs_recordsize_label" qtlid="373701">ZFS recordsize</translation>
+   <translation id="nasha_partitions_zfs_recordsize_default" qtlid="373714">(Oletus)</translation>
+   <translation id="nasha_partitions_zfs_sync_label" qtlid="373727">Sync</translation>
+   <translation id="nasha_partitions_zfs_sync_standard" qtlid="48998">Standard</translation>
+   <translation id="nasha_partitions_zfs_sync_description_standard" qtlid="373740">Suojattu profiili: Yhdistää vakauden ja asianmukaisen suorituskyvyn, tiedostot kirjoitetaan ensin, jonka jälkeen kaikki elementit puhdistetaan tietojen vakauden varmistamiseksi.</translation>
+   <translation id="nasha_partitions_zfs_sync_always" qtlid="373753">Always</translation>
+   <translation id="nasha_partitions_zfs_sync_description_always" qtlid="373766">Vahvasti suojattu profiili: Suorituskyvyltään hitaampi, sillä tiedostojensiirrossa vakaus on erittäin suuri.</translation>
+   <translation id="nasha_partitions_zfs_sync_disabled" qtlid="373779">Disabled</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled" qtlid="373792">Suojaamaton profiili: Erittäin korkea suorituskyky mutta samaan aikaan vaarallinen, sillä ZFS ei huomioi synkronointuja siirtopyyntöjä. (BDD, NFS...)</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled_warning" qtlid="373805">Tämä valinta on tarkoitettu ainoastaan administraattorien käyttöön, mikäli riskit on ymmärretty hyvin.</translation>
+   <translation id="nasha_partitions_zfs_modal_success" qtlid="373818">ZFS-valintojen muokkaus tapahtuu hetken kuluttua. </translation>
+   <translation id="nasha_partitions_zfs_modal_fail" qtlid="373831">Tapahtui virhe ZFS-valintojen muokkauksessa.</translation>
+   <translation id="nasha_partitions_zfs_modal_loading_fail" qtlid="373844">Tapahtui virhe ZFS-valintojen latauksessa.</translation>
+</translations>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_rights_expl" qtlid="262579">For each cloud project, the admin contact can change the billing and admin contacts via a section dedicated to that effect in the Control Panel.</translation>
+   <translation id="cpb_rights_expl2" qtlid="262592">The admin contact can also add contacts with read-write access or read-only access for this project.</translation>
+   <translation id="cpb_rights_note" qtlid="261101">Note: Contacts in read-write mode have rights that can generate extra costs (modification of the infrastructure, storage usage). Contacts in read-only mode can't perform any actions on the project. The default payment method of the Billing contact is used for each bill.</translation>
+   <translation id="cpb_rights_soon" qtlid="261114">In a few days, you'll be able to change these contacts in your new control panel.</translation>
+   <translation id="cpb_rights_owner" qtlid="262605">Admin contact:</translation>
+   <translation id="cpb_rights_billing_contact" qtlid="261140">Billing contact:</translation>
+   <translation id="cpb_rights_modify" qtlid="37875">Modify</translation>
+   <translation id="cpb_rights_add" qtlid="37923">Add</translation>
+   <translation id="cpb_rights_table_nichandle" qtlid="261153">NIC Handle</translation>
+   <translation id="cpb_rights_table_email" qtlid="33598">Email</translation>
+   <translation id="cpb_rights_table_rights" qtlid="65286">Rights</translation>
+   <translation id="cpb_rights_loading" qtlid="242769">Loading...</translation>
+   <translation id="cpb_rights_no_data" qtlid="261166">No data about the rights was found.</translation>
+   <translation id="cpb_rights_error" qtlid="261179">Oops! We're unable to retrieve details about the rights.</translation>
+   <translation id="cpb_rights_add_error" qtlid="261192">Oups! Nous n'arrivons pas à ajouter le droit.</translation>
+   <translation id="cpb_rights_remove_error" qtlid="261205">Oops! We're unable to delete the right.</translation>
+   <translation id="cpb_contact_error_invalid" qtlid="261218">Oops! The specified contact is invalid.</translation>
+   <translation id="cpb_contact_error_other" qtlid="261231">Oops! We're unable to update the contact.</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Read only</translation>
+   <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Read/Write</translation>
+   <translation id="cpb_rights_table_rights_add_success" qtlid="261244">The right has been added.</translation>
+   <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">The right has been deleted.</translation>
+   <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Confirm deletion</translation>
+   <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Cancel deletion</translation>
+
+</translations>

@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h3 class="modal-title" >
+        <i class="fa fa-desktop right-space-m8"></i>
+        {{"cpcivm_vnc_title" | translate}}
+    </h3>
+</div>
+
+<div class="modal-body text-center" data-ng-if="VmVncCtrl.loading" style="padding: 50px 0;">
+    <spinner size="32"></spinner>
+</div>
+
+<div class="modal-body" data-ng-if="!VmVncCtrl.loading && VmVncCtrl.data.url">
+    <div class="clearfix">
+        <p class="text-info pull-left" data-translate="cpcivm_vnc_tip"></p>
+        <a class="btn btn-secondary pull-right" ng-href="{{VmVncCtrl.data.url}}" target="_blank">
+            <i class="fa fa-external-link"></i> {{ "cpcivm_vnc_window" | translate}}
+        </a>
+    </div>
+    <p class="text-warning top-space-m8" data-ng-if="VmVncCtrl.data.vm.image.type === 'linux'" data-translate="cpcivm_vnc_linuxinfo"></p>
+    <div class="embed-responsive embed-responsive-16by9 shadow-z-1 top-space-m16">
+        <iframe class="embed-responsive-item" data-ng-src="{{VmVncCtrl.data.url}}" seamless autofocus></iframe>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="reset" class="btn btn-primary pull-right"
+        data-ng-click="VmVncCtrl.close()">
+        <span data-translate="common_close"></span>
+    </button>
+</div>
+

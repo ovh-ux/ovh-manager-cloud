@@ -1,0 +1,182 @@
+<fieldset class="view-token">
+    <div class="table-responsive-vertical shadow-z-1 top-space-m8">
+        <table class="table table-pretty table-hover table-striped snapshot-table">
+            <thead>
+                <tr>
+                    <th>
+                        <span data-translate="metrics_desc"></span>
+                        (<span data-translate="metrics_token_show_revoked"></span>
+                        <input type="checkbox" ng-model="$ctrl.showRevoked">)
+                    </th>
+                    <th data-translate="metrics_token_permission"></th>
+                    <th data-translate="metrics_token_labels"></th>
+                    <th data-translate="metrics_token_one"></th>
+                    <th></th>
+                </tr>
+            </thead>
+          <tbody>
+              <tr ng-if="$ctrl.tokens.length <= 0 && !$ctrl.tokenLoading">
+                  <td colspan="5"
+                      class="text-center"
+                      data-translate="metrics_token_no_token"></td>
+              </tr>
+              <tr ng-if="$ctrl.tokenLoading">
+                <td colspan="5">
+                    <div class="text-center">
+                        <spinner name="bubbles-222-fff-32"></spinner>
+                    </div>
+                </td>
+              </tr>
+              <tr ng-repeat="token in $ctrl.tokens | metricsTokenFilter:$ctrl.showRevoked | orderBy:['permission', 'isRevoked']"
+                  ng-class="{'revoked': token.isRevoked}">
+                  <td ng-class="{'blur': token.wantToDelete}">
+                    <p ng-if="!token.edit">
+                        <span ng-bind="token.description || token.id"></span>
+                        <button class="btn btn-icon" type="button" ng-click="token.edit = true">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </p>
+                    <form class="form-inline" ng-if="token.edit">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="token.newDescription" ng-init="token.newDescription = token.description">
+                            </div>
+                        </div>
+                        <button class="btn btn-default" type="button" ng-click="$ctrl.updateTokenDescription(token, token.newDescription)">
+                            <spinner name="bubbles-222-fff-32" ng-if="token.updating"></spinner>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-default" type="button" ng-click="token.edit = false">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                  </td>
+                  <td data-title="{{ 'metrics_token_permission' | translate  }}"
+                      ng-class="{'blur': token.wantToDelete}">
+                      {{ token.permission  }}
+                  </td>
+                  <td ng-class="{'blur': token.wantToDelete}">
+                      <div class="flex-row flex-justify-start">
+                        <span class="label label-primary" ng-repeat="label in token.labels">
+                            {{ label.key }} : {{ label.value }}
+                        </span>
+                      </div>
+                  </td>
+                  <td data-title="{{ 'metrics_token_token' | translate  }}"
+                      ng-class="{'blur': token.wantToDelete}">
+                      <div class="input-group">
+                          <input class="form-control"
+                                 type="{{ token.showSecret ? 'text': 'password' }}"
+                                 readonly=""
+                                 ng-value="token.access"
+                                 onclick="this.select()"
+                                 ng-disabled="token.isRevoked">
+                          <span class="input-group-btn">
+                              <button type="button"
+                                      class="btn btn-default"
+                                      ng-click="token.showSecret = !token.showSecret"
+                                      data-toggle="button"
+                                      aria-pressed="false"
+                                      autocomplete="off">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                              </button>
+                          </span>
+                      </div>
+                  </td>
+                  <td>
+                    <div ng-show="token.wantToDelete"
+                         class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
+                         style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
+
+                        <button class="btn btn-default" ng-click="token.wantToDelete = null">
+                            <i class="glyphicon glyphicon-remove right-space-m8"></i>
+                            <span data-translate="metrics_cancel"></span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="$ctrl.delToken(token)">
+                            <i class="glyphicon glyphicon-trash right-space-m8"></i>
+                            <span data-translate="metrics_delete"></span>
+                            <spinner name="bubbles-fff-d34936-16" ng-show="token.loading"></spinner>
+                        </button>
+                    </div>
+
+                    <p class="label label-danger" ng-if="token.isRevoked" data-translate="metrics_token_revoked">
+                    </p>
+                    <button type="button"
+                      ng-show="!token.isRevoked"
+                      class="btn btn-danger"
+                      ng-class="{'blur': token.wantToDelete}"
+                      ng-click="token.wantToDelete = true"
+                      ng-disabled="token.wantToDelete">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-4 col-sm-offset-4" ng-if="!$ctrl.showCreateToken">
+        <button type="button"
+                class="ovh-button ovh-button_primary col-xs-12"
+                ng-click="$ctrl.toggleCreateToken()"
+                data-translate="metrics_token_new">
+        </button>
+    </div>
+    <article class="token-create card flex-row space-around align-start pad"
+             ng-show="$ctrl.showCreateToken" >
+        <div>
+            <label for="newTokenDesc" data-translate="metrics_desc"></label>
+            <input class="form-control" name="newTokenDesc" type="text" ng-model="$ctrl.newToken.description">
+        </div>
+        <div>
+            <label for="newTokenPermission" data-translate="metrics_token_role"></label>
+            <div class="flex-row">
+                <flat-switch>
+                    <input type="checkbox" ng-model="$ctrl.newMeta.isRead" name="newTokenPermission">
+                </flat-switch>
+                <div class="align-middle pad">
+                    {{ $ctrl.newMeta.isRead ? 'metrics_read' : 'metrics_write' | translate  }}
+                </div>
+            </div>
+        </div>
+        <div class="labels-form flex-column">
+            <label data-translate="metrics_token_labels"></label>
+            <button type="button"
+                    class="btn btn-primary"
+                    ng-click="$ctrl.toggleWantLabels()"
+                    ng-if="!$ctrl.newMeta.wantLabels"
+                    data-translate="metrics_token_add_labels">
+            </button>
+            <div class="flex-column" ng-if="$ctrl.newMeta.wantLabels">
+                <div class="flex-row label-form" ng-repeat="label in $ctrl.newToken.labels">
+                    <input class="form-control" type="text" ng-model="label.key">
+                    <input class="form-control" type="text" ng-model="label.value">
+                    <button class="btn btn-default" ng-click="$ctrl.delLabel($index)">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <div class="flex-row label-form flex-justify-start">
+                    <input class="form-control"
+                        type="text"
+                        ng-model="$ctrl.newMeta.label.key"
+                        placeholder="Key"
+                        ng-keyup="$event.keyCode == 13 ? $ctrl.addLabel() : null"
+                        metrics-focus-me="$ctrl.newMeta.labelKeyfocus">
+                    <input class="form-control"
+                        type="text"
+                        ng-model="$ctrl.newMeta.label.value"
+                        placeholder="Value"
+                        ng-keyup="$event.keyCode == 13 ? $ctrl.addLabel() : null">
+                    <button class="btn btn-default" ng-click="$ctrl.addLabel()">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="ovh-button ovh-button_primary align-self-end"
+                ng-click="$ctrl.createToken()"
+                data-translate="metrics_token_create">
+        </button>
+    </article>
+</fieldset>

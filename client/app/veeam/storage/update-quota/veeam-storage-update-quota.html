@@ -1,0 +1,45 @@
+<div class="oui-modal oui-modal_shadow">
+  <form name="VeeamStorageUpdateQuotaForm">
+    <div class="oui-modal__header">
+      <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+        type="button"
+        aria-label="Exit" data-ng-click="VeeamStorageUpdateQuotaCtrl.cancel()"
+        ></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+      <div class="oui-modal__body-text">
+        <h2 class="oui-modal__title" data-translate="veeam_storage_update_quota_title"></h2>
+        <cui-loader data-ng-show="VeeamStorageUpdateQuotaCtrl.isModalLoading()"></cui-loader>
+        <div data-ng-hide="VeeamStorageUpdateQuotaCtrl.isModalLoading()">
+          <p class="oui-modal__text" data-translate="veeam_storage_update_quota_information"
+            data-translate-value-maxquota="{{VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}}"></p>
+          <div class="oui-input-formfield">
+            <input
+              type="number"
+              min="1000"
+              max="{{VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}}"
+              step="250"
+              id="newQuota"
+              name="newQuota"
+              class="oui-input"
+              data-ng-model="VeeamStorageUpdateQuotaCtrl.newQuota"
+              required
+              novalidate />
+            <label for="newQuota" class="oui-label" data-translate="veeam_quota"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="oui-modal__footer">
+      <button class="oui-button oui-button_secondary"
+        type="button"
+        data-translate="veeam_storage_update_quota_cancel"
+        data-ng-click="VeeamStorageUpdateQuotaCtrl.cancel()"></button>
+      <button class="oui-button oui-button_primary"
+        type="submit"
+        data-translate="veeam_storage_update_quota_confirm"
+        data-ng-click="VeeamStorageUpdateQuotaCtrl.confirm()"
+        data-ng-disabled="VeeamStorageUpdateQuotaForm.$invalid || VeeamStorageUpdateQuotaCtrl.isModalLoading()"></button>
+    </div>
+  </form>
+</div>

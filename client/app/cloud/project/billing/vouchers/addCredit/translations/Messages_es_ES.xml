@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_vouchers_add_credit_title" qtlid="255181">Comprar crédito cloud</translation>
+   <translation id="cpb_vouchers_add_credit_info" qtlid="264296">Seleccione el importe que desea recargar (IVA no incluido) para este proyecto. Una vez abonada la orden de pedido, el crédito se utilizará para las cuotas fijas y el consumo de las facturas de este proyecto que se emitan en los próximos 12 meses. </translation>
+   <translation id="cpb_vouchers_add_credit_amount" qtlid="269981">Importe a recargar ({{ currency }}, IVA no incl.):</translation>
+   <translation id="cpb_vouchers_add_credit_required_error" qtlid="255560">Es necesario introducir el importe que quiere recargar.</translation>
+   <translation id="cpb_vouchers_add_credit_max_error" qtlid="255573">Este importe no es válido.</translation>
+   <translation id="cpb_vouchers_add_credit_doing" qtlid="255586">Generando la orden de pedido...</translation>
+   <translation id="cpb_vouchers_add_credit_valid" qtlid="177288">Generar una orden de pedido</translation>
+   <translation id="cpb_vouchers_add_credit_cancel" qtlid="37863">Cancelar</translation>
+   <translation id="cpb_vouchers_add_credit_error" qtlid="255599">¡Vaya! No se ha podido comprar crédito cloud.</translation>
+   <translation id="cpb_vouchers_add_credit_success" qtlid="295907">La orden de pedido de crédito por un importe de {{ amount }} está disponible <a href="{{ url }}" target="_blank">aquí</a>.</translation>
+
+</translations>

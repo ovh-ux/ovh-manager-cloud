@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_private_network_list_header_title" qtlid="331657">Redes privadas</translation>
+   <translation id="cpci_private_network_list_header_disabled_notice" qtlid="24967">Desativado</translation>
+   <translation id="cpci_private_network_list_vrack_unnamed" qtlid="69413">Sem nome</translation>
+   <translation id="cpci_private_network_list_untagged_vlan" qtlid="348399">Nenhuma VLAN</translation>
+   <translation id="cpci_private_network_activateVrack_description" qtlid="372128">Após ter ligado o projeto ao vRack, interligue os seus Servidores Dedicados, instâncias Public Cloud e Private Cloud entre todos os datacenters da OVH. Poderá criar até 4000 vLANs!</translation>
+   <translation id="cpci_private_network_activateVrack_activate" qtlid="348425">Ativar o vRack</translation>
+   <translation id="cpci_private_network_creating" qtlid="363906">Criação da rede privada em curso</translation>
+   <translation id="cpci_private_network_creating_description" qtlid="261374">Esta operação poderá levar alguns minutos</translation>
+   <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Ocorreu um erro aquando da obtenção das redes privadas.</translation>
+</translations>

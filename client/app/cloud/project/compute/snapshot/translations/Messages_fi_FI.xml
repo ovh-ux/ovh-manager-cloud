@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_snapshot_demo" qtlid="246507">Tässä voit tehdä infrastruktuurin jokaisesta palvelimesta tilannekuvan. <br/> Uusia palvelimia voi siis luoda helposti tilannekuvan perusteella.</translation>
+
+   <translation id="cpc_snapshot_name" qtlid="258756">Nimi</translation>
+   <translation id="cpc_snapshot_region" qtlid="168237">Sijainti</translation>
+   <translation id="cpc_snapshot_region_tooltip" qtlid="251447">Tilannekuva on mahdollinen ainoastaan siinä sijainnissa, jossa se on luotu. Sijainnin vaihtaminen on pian mahdollista.</translation>
+   <translation id="cpc_snapshot_min_disk" qtlid="251460">Koko</translation>
+   <translation id="cpc_snapshot_min_disk1" qtlid="246546">Tilaa enintään (GiB)</translation>
+   <translation id="cpc_snapshot_min_disk2" qtlid="246559">Tilaa enintään (GiB)</translation>
+   <translation id="cpc_snapshot_total2" qtlid="269994">Tiedoksi, nykyiset tilannekuvat ovat yhteensä <span class="text-danger">{{size | bytes:2:'true':'GiB'}}</span>, eli noin <span class="text-danger">{{price}} ALV 0 %/kk</span>.</translation>
+
+   <translation id="cpc_snapshot_price" qtlid="270007">Hinta ALV 0 %/kk</translation>
+   <translation id="cpc_snapshot_creation_date" qtlid="26419">Luontipäivä</translation>
+   <translation id="cpc_snapshot_type" qtlid="2642">Tyyppi</translation>
+   <translation id="cpc_snapshot_create_vm_button" qtlid="246572">Luo palvelin tästä tilannekuvasta</translation>
+   <translation id="cpc_snapshot_create_vm_button_info" qtlid="246585">Sinut uudelleenohjataan toiselle sivulle. Käyttöliittymää palvelimen lisäämiseksi ladataan. Tämä tilannekuva valitaan automaattisesti.</translation>
+   <translation id="cpc_snapshot_create_volume_button" qtlid="273492">Luo tilannekuvasta uusi volyymi</translation>
+   <translation id="cpc_snapshot_create_volume_button_info" qtlid="273505">Sinut on uudelleenohjattu. Ladataan käyttöliittymää kovalevyn palautukseen. </translation>
+
+
+   <translation id="cpc_snapshot_date_start" qtlid="246598">Luotu alkaen</translation>
+   <translation id="cpc_snapshot_date_end" qtlid="246611">Luotu ennen</translation>
+
+   <translation id="cpc_snapshot_type_linux" qtlid="273518">Linux-instanssi</translation>
+   <translation id="cpc_snapshot_type_windows" qtlid="273531">Windows-instanssi</translation>
+   <translation id="cpc_snapshot_type_imagewindows" qtlid="273544">Windows Image</translation>
+   <translation id="cpc_snapshot_type_imagelinux" qtlid="273557">Linux Image</translation>
+   <translation id="cpc_snapshot_type_volume" qtlid="405616">Volyymin tilannekuva</translation>
+   <translation id="cpc_snapshot_status" qtlid="364433">Tila</translation>
+   <translation id="cpc_snapshot_status_active" qtlid="246624">Valmis</translation>
+   <translation id="cpc_snapshot_status_queued" qtlid="246637">Suunniteltu tilannekuva</translation>
+   <translation id="cpc_snapshot_status_saving" qtlid="29647">Luodaan</translation>
+   <translation id="cpc_snapshot_status_killed" qtlid="45508">Virhe</translation>
+   <translation id="cpc_snapshot_status_deleted" qtlid="223710">Poistettu</translation>
+   <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Poistetaan</translation>
+   <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Tätä tilannekuvaa ei voida poistaa, sillä se on käytössä ainakin yhdellä palvelimella.</translation>
+   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Otetaan tilannekuvaa</translation>
+   <translation id="cpc_snapshot_status_creating" qtlid="29647">Luodaan</translation>
+   <translation id="cpc_snapshot_status_available" qtlid="246624">Valmis</translation>
+   <translation id="cpc_snapshot_status_deleting" qtlid="152778">Poistetaan</translation>
+   <translation id="cpc_snapshot_status_error" qtlid="45508">Virhe</translation>
+   <translation id="cpc_snapshot_status_error_deleting" qtlid="45508">Virhe</translation>
+
+   <translation id="cpc_snapshot_empty" qtlid="246650">Tilannekuvaa ei ole vielä luotu.</translation>
+   <translation id="cpc_snapshot_empty_search" qtlid="246663">Yksikään tilannekuva ei vastaa hakua.</translation>
+   <translation id="cpc_snapshot_error" qtlid="246676">Valitettavasti tilannekuvalistaa ei pystytä hakemaan.</translation>
+
+   <translation id="cpc_snapshot_search_button" qtlid="37659">Haku</translation>
+
+   <translation id="cpc_snapshot_delete_success" qtlid="246689">Tilannekuva ei ole enää käytettävissä.</translation>
+   <translation id="cpc_snapshot_delete_error" qtlid="246702">Valitettavasti tilannekuvaa ei pystytä poistamaan!</translation>
+
+   <translation id="cpc_snapshot_delete_button" qtlid="246715">Poista tilannekuva</translation>
+   <translation id="cpc_snapshot_delete_cancel_button" qtlid="246728">Älä poista tilannekuvaa</translation>
+   <translation id="cpc_snapshot_delete_confirm_button" qtlid="245519">Vahvista poisto</translation>
+
+   <translation id="cpc_snapshot_delete_button_plural" qtlid="246741">Poista {{nbSnapshots}} tilannekuvaa</translation>
+   <translation id="cpc_snapshot_delete_cancel_button_plural" qtlid="246754">Älä poista tilannekuvia</translation>
+
+   <translation id="cpc_snapshot_delete_success_plural" qtlid="246767">Valitut {{nbSnapshots}} tilannekuvat eivät ole enää käytettävissä.</translation>
+   <translation id="cpc_snapshot_delete_error_plural" qtlid="246780">Hups, {{nbSnapshots}} tilannekuvan poisto ei onnistu!</translation>
+   <translation id="cpc_snapshot_delete_error_one" qtlid="246793">Hups, tilannekuvan poisto ei onnistu!</translation>
+
+   <translation id="cpc_snapshot_installed_info" qtlid="266807">Asennettu yhdelle instanssille.</translation>
+   <translation id="cpc_snapshot_installed_info_plural" qtlid="266820">Asennettu {{nbVms}} instansseille.</translation>
+
+
+
+</translations>

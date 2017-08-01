@@ -1,0 +1,24 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title" data-translate="nasha_partitions_action_delete_title"></h3>
+    </div>
+
+    <div class="modal-body">
+        <span data-translate="nasha_partitions_delete_confirmation" data-translate-values="{partitionName: NashaPartitionDeleteCtrl.data.partition.partitionName}"></span>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button"
+                class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
+                data-ng-click="NashaPartitionDeleteCtrl.deletePartition()"
+                data-ng-disabled="NashaPartitionDeleteCtrl.loading">
+            <span data-translate="common_confirm"></span>
+        </button>
+        <button type="reset" class="btn btn-default pull-left"
+                data-ng-click="NashaPartitionDeleteCtrl.dismiss()">
+            <i class="fa fa-times"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+
+</div>

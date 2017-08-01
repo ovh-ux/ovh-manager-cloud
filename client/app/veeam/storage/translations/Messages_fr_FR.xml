@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_storage_title" qtlid="403762">Espace de stockage</translation>
+   <translation id="veeam_storage_back" qtlid="208925">Retour à l'accueil</translation>
+   <translation id="veeam_storage_add_storage" qtlid="403671">Ajouter un espace de stockage</translation>
+   <translation id="veeam_storage_search" qtlid="98288">Rechercher...</translation>
+   <translation id="veeam_storage_update_title" qtlid="37875">Modifier</translation>
+   <translation id="veeam_storage_update_quota_title" qtlid="403775">Modifier l'espace de stockage</translation>
+   <translation id="veeam_storage_update_quota_information" qtlid="403788">Définissez le quota maximum de votre espace de stockage. La valeur est comprise entre 1000 Go et {{maxquota}} Go.</translation>
+   <translation id="veeam_storage_update_quota_cancel" qtlid="37863">Annuler</translation>
+   <translation id="veeam_storage_update_quota_confirm" qtlid="37875">Modifier</translation>
+</translations>

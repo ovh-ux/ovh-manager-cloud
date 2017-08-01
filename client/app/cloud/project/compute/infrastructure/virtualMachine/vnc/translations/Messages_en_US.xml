@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_vnc_title" qtlid="251161">VNC console</translation>
+   <translation id="cpcivm_vnc_tip" qtlid="251174">Tip: If you're unable to type in the window, click on the blue bar below.</translation>
+   <translation id="cpcivm_vnc_window" qtlid="92753">Open in a new window</translation>
+   <translation id="cpcivm_vnc_error" qtlid="251187">Error: unable to open the VNC console.</translation>
+   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">To use the VNC console on the Linux machine, you must first log in via SSH and configure a user with a password.</translation>
+</translations>

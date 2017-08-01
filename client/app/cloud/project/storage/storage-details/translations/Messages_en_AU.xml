@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="storage_title_file" qtlid="233967">Object storage</translation>
+   <translation id="storage_title_file_number" qtlid="241833">The container is empty</translation>
+   <translation id="storage_title_file_number_0" qtlid="241833">The container is empty</translation>
+   <translation id="storage_title_file_number_1" qtlid="241846">There is 1 object in this container</translation>
+   <translation id="storage_title_file_number_other" qtlid="241859">There are {{count}} objects in this container</translation>
+   <translation id="storage_details_loading" qtlid="241872">Loading objects</translation>
+
+   <translation id="storage_details_link_tooltip" qtlid="241885">Display objects</translation>
+   <translation id="storage_details_deleted_success" qtlid="241898">Object deleted</translation>
+   <translation id="storage_details_upload_success" qtlid="241911">File uploaded</translation>
+   <translation id="storage_region" qtlid="30802">Datacentre</translation>
+
+   <translation id="storage_file_selected_count" qtlid="367540">{{count}} selected </translation>
+   <translation id="storage_object_import_files" qtlid="241924">Import files</translation>
+   <translation id="storage_object_add_multiple" qtlid="241937">Add objects</translation>
+   <translation id="storage_modal_add_object_title" qtlid="241937">Add objects</translation>
+   <translation id="storage_add_object_prefix" qtlid="69821">Prefix</translation>
+   <translation id="storage_object_title" qtlid="367553">Your objects </translation>
+   <translation id="storage_nb_objects" qtlid="244768">Objects:</translation>
+   <translation id="storage_container_size" qtlid="244781">Container size: </translation>
+   <translation id="storage_container_url" qtlid="246455">Container URL:</translation>
+   <translation id="storage_container_url_info" qtlid="250849">You need this information to retrieve or change objects via the API. Go to the [Guides on the OVH website] section for more details.</translation>
+   <translation id="storage_static_url" qtlid="241976">CNAME/TXT record value</translation>
+   <translation id="storage_gateway" qtlid="367566">Server address for rsync/sftp/scp:</translation>
+   <translation id="storage_gateway_username" qtlid="367579">Username: </translation>
+   <translation id="storage_gateway_password" qtlid="367592">Password (the combination of the following fields): </translation>
+   <translation id="storage_availability_unsealing" qtlid="367605">Available in: {{delay}}</translation>
+   <translation id="storage_availability_sealed" qtlid="369152">Unfreeze</translation>
+   <translation id="storage_file_download" qtlid="39286">Download</translation>
+   <translation id="storage_availability_unsealed" qtlid="99920">Available</translation>
+   <translation id="storage_file_state_sealed" qtlid="367631">Your file is not available to download immediately. Please click to begin the unlocking process. </translation>
+   <translation id="storage_file_state_unsealing" qtlid="367644">Your file will be available to download shortly, once your file is unlocked it will be available for 24 hours. </translation>
+   <translation id="storage_file_state_unsealed" qtlid="367657">Your file is available to download, it will be locked in 24 hours. </translation>
+   <translation id="storage_modal_how_to_add_cname_title" qtlid="241989">Link your domain name to this container</translation>
+   <translation id="storage_modal_how_to_add_cname_text" qtlid="295842">To use the "static hosting" container on a domain or sub-domain, just edit the DNS zone by adding a  CNAME record containing the following value: <b>{{staticUrl}}</b></translation>
+   <translation id="storage_modal_how_to_add_cname_text2" qtlid="242015">If you are unable to change the CNAME record, you may also enter this value as a TXT record</translation>
+   <translation id="storage_modal_how_to_add_cname_guide" qtlid="295855">More information in this <a href="https://community.runabove.com/kb/en/object-storage/how-to-put-object-storage-behind-your-domain-name.html">guide</a>.</translation>
+   <translation id="storage_details_not_found" qtlid="242041">Container not found</translation>
+   <translation id="storage_details_not_defined" qtlid="242054">Error loading the container</translation>
+   <translation id="storage_error_occurs" qtlid="242067">An error occurred when loading the list of containers: {{error}}</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Guides</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">All the OVH guides </translation>
+</translations>

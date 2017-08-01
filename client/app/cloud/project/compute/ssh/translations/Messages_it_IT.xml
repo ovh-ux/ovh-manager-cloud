@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Inserisci le tue chiavi SSH e accedi ai tuoi servizi</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Nome</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Chiave</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Caricamento delle chiavi SSH in corso...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Ops! Impossibile recuperare la lista delle tue chiavi SSH</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">La comunicazione tra i server OVH utilizza il protocollo sicuro SSH per la cifratura dei dati.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Esistono client SSH per tutti i sistemi operativi. Per maggiori informazioni, consulta la <a href="{{ createUrl }}" target="_blank">guida per la creazione di chiavi SSH<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Ricordati che è possibile <a href="{{ addUrl }}" target="_blank">configurare chiavi SSH aggiuntive<i class="fa fa-external-link" aria-hidden="true"></i></a> sulla tua istanza per autorizzare l’accesso ad altre persone o <a href="{{ changeUrl }}" target="_blank">modificare la chiave SSH in caso di smarrimento<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Aggiungi una chiave</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Annulla l'operazione</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Aggiungi questa chiave</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">La tua chiave è disponibile!</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Assegna un nome alla tua chiave</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Inserisci la chiave da 4096 byte.</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Ops! Impossibile aggiungere questa chiave</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Esiste già una chiave SSH con questo nome</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Questa chiave non è più disponibile</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Impossibile eliminare questa chiave!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Ricerca</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Non eliminare questa chiave</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Conferma l'operazione</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">Non hai ancora aggiunto chiavi SSH</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Clicca su "Aggiungi una chiave"!</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">Il nome deve contenere meno di 255 caratteri</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">È necessario assegnare un nome alla tua chiave</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">Hai dimenticato di inserire la chiave da 4096 byte.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">Il nome della chiave può contenere solo cifre, lettere minuscole e/o maiuscole, trattini (-), underscore (_) e spazi.</translation>
+
+
+</translations>

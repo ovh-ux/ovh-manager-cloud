@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_import_title" qtlid="275869">Tuo OVH Failover-IP:t</translation>
+   <translation id="cpciif_import_ips_error" qtlid="249211">FailOver-IP-osoitelistaa ei löydy.</translation>
+   <translation id="cpciif_import_ips_empty" qtlid="249224">Ei käytettäviä FailOver-IP-osoitteita.</translation>
+   <translation id="cpciif_import_ips" qtlid="227806">FailOver-IP</translation>
+   <translation id="cpciif_import_ips_country" qtlid="25171">Laskutusmaa</translation>
+   <translation id="cpciif_import_routedto" qtlid="249237">Liitetty palvelu</translation>
+   <translation id="cpciif_import_ips_route" qtlid="249250">Valitse yksi tai useampi tuotava FailOver-IP-osoite:</translation>
+   <translation id="cpciif_import_ips_32only" qtlid="258717">Huomio: Voit tuoda tällä erää ainoastaan IPv4-lohkoja.</translation>
+   <translation id="cpciif_import_routedto_park" qtlid="210540">IP-parkki</translation>
+
+   <translation id="cpciif_import_vms_route_of_success" qtlid="250706">FailOver-IP {{ip}} tuodaan projektiin hetken kuluttua.</translation>
+   <translation id="cpciif_import_vms_route_of_success_plural" qtlid="249289">{{nbIps}} IP:t tuodaan projektiin hetken kuluttua.</translation>
+
+   <translation id="cpciif_import_vms_route_of_error" qtlid="249302">IP-osoitetta {{ip}} ei pystytä liittämään projektiin.</translation>
+   <translation id="cpciif_import_vms_route_of_error_plural" qtlid="249315">IP-osoitteita {{ips}} ei pystytä liittämään projektiin.</translation>
+</translations>

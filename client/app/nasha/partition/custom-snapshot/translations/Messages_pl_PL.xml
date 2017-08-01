@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_custom_snapshot_of" qtlid="344922">Snapshot partycji {{partitionName}}</translation>
+   <translation id="nasha_custom_snapshot_modal_title" qtlid="369178">Snapshot natychmiastowy</translation>
+   <translation id="nasha_custom_snapshot_modal_success" qtlid="369191">Snapshot zostanie utworzony w ciągu kilku minut.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Wystąpił błąd podczas modyfikacji częstotliwości wykonywania snapshotów.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations" qtlid="344948">Snapshot to zdjęcie. Rejestruje on stan usługi NAS-HA z danej chwili.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations_size" qtlid="369204">Snapshoty wykorzystują przestrzeń na Twojej partycji do poprawnego działania.</translation>
+   <translation id="nasha_custom_snapshot_modal_label_snapshot_name" qtlid="369217">Nazwa Snapshotu</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_length" qtlid="369230">Nazwa snapshotu może mieć maksymalną długość {{ maxlength }} znaków.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_required" qtlid="369243">Wymagana jest nazwa snapshotu.</translation>
+</translations>

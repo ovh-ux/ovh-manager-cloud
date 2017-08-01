@@ -1,0 +1,13 @@
+<h1 class="veeam-header__title" data-ng-bind="VeeamDashboardHeaderCtrl.serviceName"></h1>
+<ul class="tab-menu" data-ng-show="VeeamDashboardHeaderCtrl.serviceName">
+    <li class="tab-menu__tab"
+        data-ng-class="{ 'tab-menu__tab_active': VeeamDashboardHeaderCtrl.$state.includes('paas.veeam.detail.dashboard') }">
+        <a ui-sref="paas.veeam.detail.dashboard({ serviceName: VeeamDashboardHeaderCtrl.serviceName })"
+            data-translate="veeam_tab_dashboard"></a>
+    </li>
+    <li class="tab-menu__tab"
+        data-ng-class="{ 'tab-menu__tab_active': VeeamDashboardHeaderCtrl.$state.includes('paas.veeam.detail.storage') }">
+        <a ui-sref="paas.veeam.detail.storage({ serviceName: VeeamDashboardHeaderCtrl.serviceName })"
+            data-translate="veeam_tab_storage"></a>
+    </li>
+</ul>

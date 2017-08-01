@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_update_offer_title" qtlid="403632">Zwiększ ofertę Veeam Cloud Connect</translation>
+   <translation id="veeam_update_offer_information" qtlid="403645">Abonament kosztuje <strong>{{ price }} netto/m-c</strong></translation>
+   <translation id="veeam_update_offer_cancel" qtlid="37863">Anuluj</translation>
+   <translation id="veeam_update_offer_continue" qtlid="4070">Kontynuuj</translation>
+   <translation id="veeam_update_offer_change" qtlid="69893">Zmień</translation>
+   <translation id="veeam_update_storage_add" qtlid="37923">Dodaj</translation>
+</translations>

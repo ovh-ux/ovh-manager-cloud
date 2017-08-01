@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_addedit_add_title" qtlid="19315">Įtraukti serverį</translation>
+   <translation id="cpcivm_addedit_edit_title" qtlid="247976">Redaguoti serverį</translation>
+   <translation id="cpcivm_addedit_server_name" qtlid="242977">Serverio pavadinimas </translation>
+   <translation id="cpcivm_addedit_back" qtlid="4070">Tęsti</translation>
+   <translation id="cpcivm_addedit_price" qtlid="83913">Kaina</translation>
+
+   <translation id="cpcivm_addedit_name_add_error_required_name" qtlid="247989">Jūs turite pavadinti savo serverį.</translation>
+   <translation id="cpcivm_addedit_name_add_error_max_char" qtlid="248002">Jūsų serverio pavadinimas negali viršyti 255 simbolių.</translation>
+   <translation id="cpcivm_addedit_name_add_error_pattern_name" qtlid="248015">Jūs nurodėte negaliojančius simbolius.</translation>
+
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd" qtlid="248028">VPS SSD</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu" qtlid="290342">Instance HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_hg" qtlid="290342">Instance HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram" qtlid="296024">HA - RAM Instance </translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram" qtlid="296037">SSD - RAM Instance</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu" qtlid="290381">Instance SSD - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_eg" qtlid="296994">SSD - EG Instance </translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_eg" qtlid="297007">HA - EG Instance </translation>
+
+   <translation id="cpci_vm_flavor_category_b2-7" qtlid="376973">B2-7</translation>
+   <translation id="cpci_vm_flavor_category_b2-7-flex" qtlid="376986">B2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-15" qtlid="376999">B2-15</translation>
+   <translation id="cpci_vm_flavor_category_b2-15-flex" qtlid="377012">B2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-30" qtlid="377025">B2-30</translation>
+   <translation id="cpci_vm_flavor_category_b2-30-flex" qtlid="377038">B2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-60" qtlid="377051">B2-60</translation>
+   <translation id="cpci_vm_flavor_category_b2-60-flex" qtlid="377064">B2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-120" qtlid="377077">B2-120</translation>
+   <translation id="cpci_vm_flavor_category_b2-120-flex" qtlid="377090">B2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_c2-7" qtlid="377103">C2-7</translation>
+   <translation id="cpci_vm_flavor_category_c2-7-flex" qtlid="377116">C2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-15" qtlid="377129">C2-15</translation>
+   <translation id="cpci_vm_flavor_category_c2-15-flex" qtlid="377142">C2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-30" qtlid="377155">C2-30</translation>
+   <translation id="cpci_vm_flavor_category_c2-30-flex" qtlid="377168">C2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-60" qtlid="377181">C2-60</translation>
+   <translation id="cpci_vm_flavor_category_c2-60-flex" qtlid="377194">C2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-120" qtlid="377207">C2-120</translation>
+   <translation id="cpci_vm_flavor_category_c2-120-flex" qtlid="377220">C2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_gpu-60" qtlid="377233">GPU-60</translation>
+   <translation id="cpci_vm_flavor_category_gpu-60-flex" qtlid="377246">GPU-60 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_r2-15" qtlid="377259">R2-15</translation>
+   <translation id="cpci_vm_flavor_category_r2-15-flex" qtlid="377272">R2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-30" qtlid="377285">R2-30</translation>
+   <translation id="cpci_vm_flavor_category_r2-30-flex" qtlid="377298">R2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-60" qtlid="377311">R2-60</translation>
+   <translation id="cpci_vm_flavor_category_r2-60-flex" qtlid="377324">R2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-120" qtlid="377337">R2-120</translation>
+   <translation id="cpci_vm_flavor_category_r2-120-flex" qtlid="377350">R2-120 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-240" qtlid="377363">R2-240</translation>
+   <translation id="cpci_vm_flavor_category_r2-240-flex" qtlid="377376">R2-240 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
+   <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
+   <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
+
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU virtualios mašinos<br/>Didelio našumo grafinis procesorius</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Local RAID SSD saugykla, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikuotas HDD diskas, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Aukšto pasiekiamumo saugykla, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu_info" qtlid="290394">Garantuojami resursai, aukšto pasiekiamumo saugykla, padidintas dažnis/branduoliui.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Garantuojami resursai, aukšto pasiekiamumo saugykla, optimalus RAM/kainos santykis.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Garantuojami resursai, minimalaus uždelsimo SSD saugykla, padidintas dažnis/branduoliui.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Garantuojami resursai, minimalaus uždelsimo SSD saugykla, optimalus RAM/kainos santykis.</translation>
+   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">Šiai gamai neprieinamas joks pasiūlymas.</translation>
+   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Neprieinama šiame duomenų centrų regione</translation>
+   <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Prieinamų pasiūlymų įkėlimas.</translation>
+   <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">Operacijos metu serverį reikės perkrauti! Serveris bus neprieinamas vos kelias sekundes.</translation>
+   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Atsiprašome, nepavyko rasti pasiūlymų!</translation>
+   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Atsiprašome, nepavyko rasti pasiūlymų kainų!</translation>
+   <translation id="cpcivm_addedit_flavor_refresh" qtlid="248158">Atnaujinti pasiūlymų sąrašą</translation>
+   <translation id="cpcivm_addedit_flavor_choose" qtlid="248171">Pasirinkite modelį</translation>
+   <translation id="cpcivm_addedit_flavor_deprecated" qtlid="251499">Šis pasiūlymas jau nebeaktualus.</translation>
+   <translation id="cpcivm_addedit_flavor_quota_vcpus" qtlid="251512">vCPU kvota</translation>
+   <translation id="cpcivm_addedit_flavor_quota_ram" qtlid="251525">RAM kvota</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NO_FLEX" qtlid="327003">Jūs negalite rinktis lankstaus dydžio keitimo šiam modeliui.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_WRONG_DISK_TYPE" qtlid="327016">Jūs turite migruoti į modelį su tuo paties tipo disku.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NOT_ENOUGH_SPACE" qtlid="251538">Jūs turėtumėte migruoti į modelį, kurio disko vieta atitiktų ar viršytų jūsų poreikius.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_VCPUS" qtlid="251551">Jūsų projekto kvota jums neleidžia pridėti mašinos su tokiu CPU kiekiu.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_RAM" qtlid="251564">Jūsų projekto kvota jums neleidžia pridėti mašinos su tokiu RAM kiekiu.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_INSTANCE" qtlid="301851">Pasiekėte serverių kvotos limitą šiam regionui.</translation>
+   <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">Jeigu pakeisite tipą, taip pat reikės praplėsti disko vietą.</translation>
+   <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Kaip?</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Jei reikia daugiau RAM, rinkitės pasiūlymą {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Jei reikia daugiau CPU, rinkitės pasiūlymą {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Jei reikia daugiau resursų, rinkitės pasiūlymą {{offer}}.</translation>
+
+   <translation id="cpcivm_addedit_flavor_soldout_title" qtlid="91957">Nepasiekiama</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_info" qtlid="281264">Šiuo metu tokio tipo virtuali mašina neprieinama.</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_choose_another" qtlid="281277">Rinktis kitą virtualią mašiną</translation>
+
+   <translation id="cpcivm_addedit_image_unknown" qtlid="248184">Nežinoma distribucija</translation>
+   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Unix distribucijos</translation>
+   <translation id="cpcivm_addedit_image_windows" qtlid="248223">Windows distribucijos</translation>
+   <translation id="cpcivm_addedit_image_template" qtlid="248236">Iš anksto įdiegtos aplinkos</translation>
+   <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">Mano atsarginės (momentinės) kopijos</translation>
+   <translation id="cpcivm_addedit_image_snapshots_empty" qtlid="248262">Neprieinama jokia atsarginė kopija</translation>
+   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Atsiprašome, nepavyko rasti jūsų atsarginių kopijų!</translation>
+   <translation id="cpcivm_addedit_image_windows_change" qtlid="250667">Kai kuriate serverį, jūs galite rinktis tarp Linux, Windows (licencija įskaičiuota) ar turimos atsarginės kopijos. Atlikdami pakartotinį diegimą, jūs turite rinktis tos paties tipo atsarginę kopiją ar operacinę sistemą.</translation>
+   <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Pasirinktoje gamoje nepakanka disko vietos.</translation>
+   <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Šis atvaizdas nebenaudojamas.</translation>
+   <translation id="cpcivm_addedit_image_windows_incompatibility" qtlid="364654">Windows neprieinamas su VPS.</translation>
+   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Svarbu: OVH įsipareigoja tik įdiegti programėlę. Jums tenka pareiga rūpintis programėlės valdymu bei priežiūra.</translation>
+
+   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Iš anksto įdiegtos programėlės</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} be PVM/val. arba {{monthly}} be PVM/mėn.</translation>
+   <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/val.</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/mėn.</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} be PVM/val.)</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} be PVM/mėn.)</translation>
+   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} be PVM/val. arba + {{monthly}} be PVM/mėn.</translation>
+   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Rodyti visas operacines sistemas</translation>
+   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Rekomenduojamas GPU</translation>
+   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Šiam modeliui nėra specialiai rekomenduojamų operacinių sistemų</translation>
+
+   <translation id="cpcivm_addedit_image_empty" qtlid="248340">Neprieinamas joks atvaizdas.</translation>
+   <translation id="cpcivm_addedit_image_loading" qtlid="248353">Prieinamų atvaizdų įkėlimas.</translation>
+   <translation id="cpcivm_addedit_image_error" qtlid="248366">Atsiprašome, nepavyko rasti vaizdų!</translation>
+   <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Atnaujinti atvaizdų sąrašą</translation>
+   <translation id="cpcivm_addedit_image_choose" qtlid="248392">Rinktis atvaizdą</translation>
+
+   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Atsarginė kopija negali būti pašalinta, jei ji įdiegta bent viename serveryje.</translation>
+
+   <translation id="cpcivm_addedit_region_loading" qtlid="248405">Prieinamų zonų įkėlimas.</translation>
+   <translation id="cpcivm_addedit_region_error" qtlid="248418">Atsiprašome, nerandame regionų!</translation>
+   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Atnaujinti regionų sąrašą</translation>
+   <translation id="cpcivm_addedit_region_choose" qtlid="248444">Rinktis lokaciją</translation>
+
+   <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+   <translation id="cpcivm_addedit_region_zone_dedicated_new" qtlid="248470">Nauja dedikuota harware zona </translation>
+
+   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Dėmesio: pasirinkta atsarginė kopija šiuo metu prieinama tik jai priskirtame regione ir negali būti naudojama pasikeitus lokacijai.</translation>
+
+   <translation id="cpcivm_addedit_table_type" qtlid="2642">Tipas</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Kaina be PVM</translation>
+   <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPU</translation>
+   <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_table_disk" qtlid="193943">Diskai</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6 GB</translation>
+   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Virtualios mašinos VPS-SSD: <br/>Public Cloud už geriausią kainą</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD naudojamas bendras lokalus SSD RAID, todėl šių virtualių serverių našumas gali svyruoti  </translation>
+   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox virtualios mašinos: <br/>Bendrai naudojami resursai</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Šios virtualios mašinos idealiai tinka jūsų testams ir plėtojimo aplinkoms. Jų našumas gali nežymiai pakisti su laiku.</translation>
+   <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Garantuojamas našumas <br/>ir aukšto našumo saugykla</translation>
+   <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Šie virtualūs serveriai paremti CEPH disku, jūsų duomenys replikuojami trijuose duomenų centruose. Resursai (CPU, RAM, tinklas) yra garantuojami</translation>
+   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">Virtualios mašinos EG, SP ir HG: <br/>Garantuojamas pastovus našumas</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_old" qtlid="327042">Resursai (CPU, RAM, tinklas) yra garantuojami. Kiekvienas modelis prieinamas su CEPH saugykla (replikuojama 3 kartus) ar lokalia SSD saugykla.</translation>
+   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">CPU, RAM ir bendros paskirties virtualios mašinos<br/>Garantuojamas pastovus našumas</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">Resursai (CPU, RAM, tinklas) yra garantuojami. Kiekvienas modelis prieinamas su CEPH saugykla (replikuojama 3 kartus) ar lokalia SSD saugykla.</translation>
+   <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Garantuojamas našumas <br/>ir lokali SSD saugykla (no raid)</translation>
+   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Šie virtualūs serveriai naudoja nedubliuojamus lokalius SSD diskus, užtikrinančius minimalų vėlinimą. Resursai (CPU, RAM, tinklas) yra garantuojami</translation>
+   <translation id="cpcivm_addedit_table_model" qtlid="26143">Modelis</translation>
+   <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores x {{ frequency }} GHz</translation>
+   <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
+   <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Rinktis pagal vCores skaičių</translation>
+   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Rinktis pagal RAM</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} RAM</translation>
+   <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Leisti lankstų dydžio keitimą</translation>
+   <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Pažymėjus šią parinktį automatiškai priskiriama 50 GB saugykla, suteikianti galimybę atlikti momentines kopijas greičiau ir pereiti prie žemesnio lygio modelio</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha_with_size" qtlid="327094">HA blokas<br/>{{ size }}<br/>Replikavimas 3x</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd_with_size" qtlid="327107">Local SSD<br/>{{ size }}<br/>Jokio RAID</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ha" qtlid="327120">{{ size }} HA</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd_or" qtlid="327133">(arba {{ size }} SSD)</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd" qtlid="327146">{{ size }} SSD</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha" qtlid="296466">{{ size }} HA Block Storage</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd" qtlid="296479">{{ size }} Local SSD</translation>
+   <translation id="cpcivm_addedit_table_network" qtlid="25591">Tinklas</translation>
+   <translation id="cpcivm_addedit_table_network_details_mega" qtlid="296492">{{ size }} Mbps tinklo pralaidumas</translation>
+   <translation id="cpcivm_addedit_table_network_details_giga" qtlid="296505">{{ size }} Gbps tinklo pralaidumas</translation>
+   <translation id="cpcivm_addedit_table_guaranteed" qtlid="296518">Garantuojami resursai</translation>
+
+   <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Atnaujinti mano SSH raktų sąrašą</translation>
+   <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Jūsų SSH raktų įkėlimas.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Pavadinimas</translation>
+   <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Raktas</translation>
+   <translation id="cpcivm_addedit_script_key" qtlid="272131">Įveskite savo podiegiminį scenarijų</translation>
+   <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Rinktis mano SSH raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Pridėti raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_info" qtlid="248574">Kaip?</translation>
+   <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Ištrinti</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Pridėti šį raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Jūsų raktas dabar prieinamas!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Atsiprašome, nepavyko pridėti šio rakto!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Priskirti pavadinimą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_name_field" qtlid="248639">Įveskite savo raktą</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_error_required_name" qtlid="248652">Jūs turite pavadinti savo raktą.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_max_char" qtlid="248665">Pavadinimas negali viršyti 255 simbolių.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_pattern_name" qtlid="248678">Rakto pavadinime gali būti tik skaičiai, didžiosios ir/ar mažosios raidės bei simboliai ( - ), ( _ ) ir tarpas.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_required_key" qtlid="248691">Jūs pamiršote įvesti savo raktą.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Pridėti raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button_cancel" qtlid="248704">Atšaukti pridėjimą</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Jūsų raktas dabar prieinamas!</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Šis pavadinimas jau naudojamas kitam SSH raktui.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Pašalinti raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Anuliuoti</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Pašalinti šį raktą</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Šis raktas nebeprieinamas.</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Atsiprašome, nepavyko pašalinti šio rakto!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_empty" qtlid="248782">Jūs dar nepridėjote SSH rakto.</translation>
+   <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Spauskite "Pridėti raktą", kad išspręstumėte problemą!</translation>
+   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Atsiprašome, nepavyko atkurti jūsų SSH raktų sąrašo!</translation>
+
+   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Jūs neturite SSH rakto.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">Kominikacijai tarp OVH serverių naudojamas saugus duomenų šifravimo protokolas (SSH).</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Kiekviena OS turi savo SSH klientus. Daugiau informacijos <a href="{{ createUrl }}" target="_blank">SSH raktų kūrimo gide<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">SSH raktų kūrimo gidas<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Supratau!</translation>
+   <translation id="cpcivm_addedit_sshkey_help_windows_tab" qtlid="102237">Windows</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_tab" qtlid="248834">Linux ir Mac OS X</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_beforeAll" qtlid="248847">Prieš generuodami SSH raktų porą, įsitikinkite, kad jos dar neturite.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_openbash" qtlid="248860">Atidarykite terminalą ir įeikite</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_getGoodFile" qtlid="248873">Jeigu matote du failus, pavadintus {{rsapriv}} ir {{rsapub}}, jūs jau turite SSH raktus ir galite ignoruoti generavimo etapą. Failai taip pat gali būti pavadinti {{dsapriv}} ir {{dsapub}} pagal naudojamą šifravimo algoritmą.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_generateKeypair" qtlid="248886">Norėdami sugeneruoti raktų porą, naudokite komandą:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_options" qtlid="248899">Jūs turėsite patikslinti šiuos parametrus: vietą, kurioje norite registruoti raktus (rekomenduojama vertė pagal nutylėjimą), ir slaptažodį. Pastarąjį nurodyti neprivaloma, bet patariama, kadangi tai užtikrins papildomą saugumo lygį, jei kitas asmuo turi prieigą prie jūsų kompiuterio.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_startingFrom" qtlid="248912">Jūs turite du raktus:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_privateKey" qtlid="248925">{{dirrsapriv}} yra jūsų privatus raktas</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_publicKey" qtlid="248938">{{dirrsapub}} yra viešasis raktas, kuris bus naudojamas nutolusiuose serveriuose </translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_usePutty" qtlid="248951">Jei naudojate Windows, jūs galite generuoti SSH raktus su PuTTYgen programa</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_generateKeypair" qtlid="296050">Atsisiųskite ir atlikite diegimą. Spragtelėkite <code>Generuoti</code>, užveskite pelę ant langelio ir nurodykite entropiją (nuokrypį), kuri bus naudojama atsitiktinio rakto generavimui.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_saveKeypair" qtlid="248977">Atlikus generavimą, nukopijuokite viešąjį raktą šiame faile. Išsaugokite privatų raktą savo kompiuteryje, jums jo prireiks jungiantis prie savo serverių. </translation>
+
+   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Podiegiminis scenarijus</translation>
+   <translation id="cpcivm_addedit_change_flavors_title" qtlid="248990">Redaguoti serverio tipą</translation>
+   <translation id="cpcivm_addedit_change_image_title" qtlid="249003">Redaguoti OS</translation>
+   <translation id="cpcivm_addedit_change_script_title" qtlid="272144">Pridėti podiegiminį scenarijų</translation>
+   <translation id="cpcivm_addedit_change_region_title" qtlid="249016">Redaguoti lokaciją</translation>
+   <translation id="cpcivm_addedit_change_sshkey_title" qtlid="249029">Rinktis SSH raktą</translation>
+
+   <translation id="cpcivm_addedit_advanced_options_title" qtlid="267796">Pažangios parinktys</translation>
+   <translation id="cpcivm_addedit_advanced_options_description" qtlid="316112">Įvairios paslaugos, scenarijai, privatūs tinklai</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Masinis kūrimas:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Kiek virtualių mašinų reikia sukurti:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Prašome įvesti teisingą virtualių mašinų skaičių.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Jūsų turima <a ui-sref="iaas.pci-project.billing.quota">kvota</a> jums leidžia vienu metu kurti iki {{max}} {{type}} virtualių mašinų regionui {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Jūsų turima <a ui-sref="iaas.pci-project.billing.quota">kvota</a> jums neleidžia sukurti daugiau nei vieną {{type}} virtualią mašiną regionui {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Susieti su privačiu tinklu</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Nėra</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Atsiprašome, nepavyko atkurti privačių tinklų sąrašo. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Atsiprašome, nepavyko atkurti potinklių sąrašo. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_api_guide" qtlid="316164">Išsamiau apie <a href="{{ url }}" target="_blank">privačius tinklus</a>.</translation>
+   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Atsiprašome, nepavyko atkurti viešų tinklų sąrašo. {{ message }}</translation>
+
+   <translation id="cpcivm_addedit_payement_hour" qtlid="249042">Valandinis naudojamas</translation>
+   <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Apmokėjimas laikotarpio pabaigoje</translation>
+   <translation id="cpcivm_addedit_payement_month" qtlid="233928">Mėnesinis abonementas</translation>
+   <translation id="cpcivm_addedit_payement_month_info" qtlid="249068">Jums bus išrašyta sąskaita už likusias einamojo mėnesio dienas, kai tik jūsų virtuali mašina bus paleista</translation>
+   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Šis serveris jau netrukus bus pridėtas prie mėnesinio abonemento. Jums bus išrašyta sąskaita už likusias einamojo mėnesio dienas.  </translation>
+   <translation id="cpcivm_addedit_payement_label" qtlid="272222">Sutaupykite iki 50% pasirinkę mėnesinį abonementą.</translation>
+
+   <translation id="cpcivm_addedit_run_now" qtlid="249094">Paleisti dabar </translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Taikyti keitimus</translation>
+
+   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Atsiprašome, nepavyko sukurti virtualios mašinos.</translation>
+   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Atsiprašome, nepavyko atnaujinti virtualios mašinos duomenų.</translation>
+   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Atsiprašome, nepavyko padidinti šios virtualios mašinos pajėgumų.</translation>
+   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Atsiprašome, nepavyko pakartotinai įdiegti šios virtualios mašinos.</translation>
+   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Atsiprašome, nepavyko pridėti prie mėnesinio abonemento.</translation>
+   <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">Jūsų turima kvota neleidžia pridėti šios mašinos. Jūs galite susisiekti su mūsų pagalba, jei norite padidinti šią kvotą.</translation>
+   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">Po virtualios mašinos sukūrimo, prisijungimui naudokite SSH terminalą ir įveskite komandą:<br/> <code qtlid="250888">ssh admin@{{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">Po virtualios mašinos sukūrimo, prisijungimui naudokite savo mėgstamą RDP klientą, pvz (jei Linux): <br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
+
+   <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">Už pasirinkto regiono ({{region}}) ribų jūs turite {{count}} ssh raktą.</translation>
+   <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">Už pasirinkto regiono ({{region}}) ribų jūsų turimų ssh raktų skaičius: {{count}}.</translation>
+
+   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Atsiprašome, nepavyko pakeisti jūsų kvotos.</translation>
+   <translation id="cpcivm_addedit_save_multiple_success" qtlid="272235">Jūsų serveriai kuriami ir bus pasiekiami po kelių minučių.</translation>
+   <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Atsiprašome, įvyko klaida kuriant jūsų serverius!</translation>
+   <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Bus sukurta virtualių mašinų: {{nb}}.</translation>
+
+</translations>

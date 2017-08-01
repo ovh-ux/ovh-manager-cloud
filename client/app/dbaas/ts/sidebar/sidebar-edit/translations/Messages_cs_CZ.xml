@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dbaasts_project_delete_title" qtlid="282055">Odstranění projektu</translation>
+<translation id="dbaasts_project_delete_info" qtlid="301799">Během 24 hodin Vám bude odeslán e-mail pro potvrzení, že chcete smazat všechny zdroje projektu. Tuto akci nelze vrátit, všechna data budou smazána a všechny klíče API budou zneplatněny.</translation>
+   <translation id="dbaasts_project_delete_info_bill" qtlid="301812">Konečná faktura za on-demand použití bude vystavena do 24 hodin od potvrzení.</translation>
+   <translation id="dbaasts_project_delete_info_credits" qtlid="301825">Nevyužitý kredit spojený s tímto projektem bude smazán, nelze jej refundovat.</translation>
+   <translation id="dbaasts_project_delete_email_sent" qtlid="282107">Potvrzující e-mail Vám bude odeslán během 24 hodin.</translation>
+
+   <translation id="dbaasts_sidebar_edit_name_error" qtlid="301838">Během změny jména došlo k chybě.</translation>
+</translations>

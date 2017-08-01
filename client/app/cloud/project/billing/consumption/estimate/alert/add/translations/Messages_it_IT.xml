@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Alert dei consumi</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email</translation>
+   <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Per ricevere l'alert, è necessario inserire un indirizzo email.</translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">Questo indirizzo email non è valido!</translation>
+
+   <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Soglia di attivazione</translation>
+   <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">Definisci il consumo massimo da non superare.</translation>
+
+   <translation id="cpbea_estimate_alert_add_cancel_btn" qtlid="37863">Annulla</translation>
+   <translation id="cpbea_estimate_alert_add_submit_btn" qtlid="8506">Registra</translation>
+
+   <translation id="cpbea_estimate_alert_error" qtlid="270774">Si è verificato un errore durante il salvataggio del tuo alert</translation>
+   <translation id="cpbea_estimate_alert_success" qtlid="270761">Alert consumo salvato</translation>
+</translations>

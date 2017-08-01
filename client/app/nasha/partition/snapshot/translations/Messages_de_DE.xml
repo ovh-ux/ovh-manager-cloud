@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Beim Abruf der Snapshots ist ein Fehler aufgetreten.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">La modification des fréquences de snapshot sera effective dans quelques instants.</translation>
+   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Bei der Änderung der Snapshot-Planung ist ein Fehler aufgetreten. </translation>
+   <translation id="nasha_snapshot_of" qtlid="344922">Snapshot der Partition {{partitionName}} </translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Fréquences des snapshots</translation>
+   <translation id="nasha_snapshot_day-1" qtlid="154091">Jeden Tag</translation>
+   <translation id="nasha_snapshot_day-2" qtlid="154104">Alle 2 Tage</translation>
+   <translation id="nasha_snapshot_day-3" qtlid="154117">Alle 3 Tage</translation>
+   <translation id="nasha_snapshot_day-7" qtlid="8806">Wöchentlich</translation>
+   <translation id="nasha_snapshot_hour-1" qtlid="8782">Stündlich</translation>
+   <translation id="nasha_snapshot_hour-6" qtlid="154130">Alle 6 Stunden</translation>
+   <translation id="nasha_snapshot_informations" qtlid="344948">Bei einem Snapshot handelt es sich um eine Momentaufnahme Ihres NAS-HA zum Zeitpunkt des Snapshots. </translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Les snapshots utilisent de l'espace sur votre partition pour fonctionner correctement. Aucun historique des snapshots n'est enregistré: pour une même fréquence, le dernier snapshot pris écrase le précédent.</translation>
+</translations>

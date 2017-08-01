@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_ip_ip_definition" qtlid="354782">Crea qui la tua lista di controllo degli accessi IP.</translation>
+   <translation id="cda_ip_permission_definition" qtlid="354795">Il tuo cluster accetterà solo il traffico di rete che corrisponde agli accessi creati.</translation>
+
+   <translation id="cda_ip_add_button_text" qtlid="354808">Aggiungi una lista di controllo degli accessi</translation>
+   <translation id="cda_ip_delete_button_text" qtlid="2414">Elimina</translation>
+
+   <translation id="cda_ip_table_col_network" qtlid="25615">IP</translation>
+   <translation id="cda_ip_table_col_actions" qtlid="72809">Azioni</translation>
+
+   <translation id="cda_ip_add_title" qtlid="354808">Aggiungi una lista di controllo degli accessi</translation>
+   <translation id="cda_ip_add_ip_label" qtlid="354821">IP con maschera di sottorete</translation>
+   <translation id="cda_ip_add_format" qtlid="354834">Formato: 192.168.1.0/24</translation>
+   <translation id="cda_ip_add_success" qtlid="354847">Lista di controllo degli accessi aggiunta correttamente.</translation>
+   <translation id="cda_ip_add_ip_required" qtlid="354860">È necessario indicare l'IP con maschera di sottorete.</translation>
+
+   <translation id="cda_ip_delete_title" qtlid="354873">Elimina una lista di controllo degli accessi</translation>
+   <translation id="cda_ip_delete_ip_label" qtlid="354821">IP con maschera di sottorete</translation>
+   <translation id="cda_ip_delete_confirm" qtlid="354886">Vuoi davvero eliminare questa lista di controllo degli accessi?</translation>
+   <translation id="cda_ip_delete_success" qtlid="354899">Lista di controllo degli accessi eliminata correttamente.</translation>
+
+   <translation id="cda_ip_table_empty" qtlid="354912">Nessuna lista di controllo degli accessi.</translation>
+</translations>

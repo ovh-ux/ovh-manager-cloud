@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_volume_attachedTo" qtlid="252828">Przypisany do serwera</translation>
+   <translation id="cpc_volume_size" qtlid="28159">Przestrzeń dyskowa</translation>
+   <translation id="cpc_volume_size1" qtlid="319232">Minimalna przestrzeń (GB)</translation>
+   <translation id="cpc_volume_size2" qtlid="319245">Minimalna przestrzeń dyskowa (GB)</translation>
+
+   <translation id="cpc_volume_creation_date" qtlid="26419">Data utworzenia</translation>
+   <translation id="cpc_volume_monthly_price" qtlid="270007">Cena netto/m-c</translation>
+
+   <translation id="cpc_volume_date_start" qtlid="252867">Utworzony</translation>
+   <translation id="cpc_volume_date_end" qtlid="252880">Utworzony przed</translation>
+
+   <translation id="cpc_volume_empty" qtlid="252919">Nie masz jeszcze dodatkowego dysku (wolumin).</translation>
+   <translation id="cpc_volume_empty_search" qtlid="252932">Brak woluminów odnoszących się do wyszukiwania.</translation>
+   <translation id="cpc_volume_error" qtlid="252945">Nie możemy pobrać listy woluminów.</translation>
+
+   <translation id="cpc_volume_search_button" qtlid="37659">Szukaj</translation>
+   <translation id="cpc_volume_search_add" qtlid="37923">Dodaj</translation>
+   <translation id="cpc_volume_create_volume_button_info" qtlid="257601">Zostaniesz przekierowany. Trwa ładowanie interfejsu dodawania dysku twardego.</translation>
+   <translation id="cpc_volume_delete_success" qtlid="252958">Ten wolumin nie jest teraz dostępny.</translation>
+   <translation id="cpc_volume_delete_error" qtlid="252971">Nie możemy usunąć tego woluminu.</translation>
+
+   <translation id="cpc_volume_delete_button" qtlid="252984">Usuń wolumin</translation>
+   <translation id="cpc_volume_snapshotted_delete_button_info" qtlid="273752">Ten wolumin jest związany z jedną kopią lub z kilkoma kopiami zapasowymi.</translation>
+   <translation id="cpc_volume_delete_cancel_button" qtlid="252997">Nie usuwaj woluminu</translation>
+   <translation id="cpc_volume_delete_confirm_button" qtlid="245519">Potwierdź usunięcie</translation>
+
+   <translation id="cpc_volume_delete_button_plural" qtlid="253010">Usuń {{nbVolumes}} woluminy(ów)</translation>
+   <translation id="cpc_volume_delete_cancel_button_plural" qtlid="253023">Nie usuwaj woluminów</translation>
+
+   <translation id="cpc_volume_delete_success_plural" qtlid="253036">Liczba {{nbVolumes}} wybranych woluminów jest jest teraz dostępna.</translation>
+   <translation id="cpc_volume_delete_error_plural" qtlid="253049">Nie możemy usunąć {{nbVolumes}} woluminów!</translation>
+   <translation id="cpc_volume_delete_error_one" qtlid="253062">Nie możemy usunąć woluminu!</translation>
+
+   <translation id="cpc_volume_total_size_price" qtlid="296180">Twoje aktualne woluminy zajmują <span class="text-danger">{{ capacity }}</span>, czyli około <span class="text-danger">{{ total }} netto/m-c</span>.</translation>
+
+</translations>

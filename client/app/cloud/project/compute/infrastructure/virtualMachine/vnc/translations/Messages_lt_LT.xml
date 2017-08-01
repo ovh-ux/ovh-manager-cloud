@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_vnc_title" qtlid="251161">VNC konsolė</translation>
+   <translation id="cpcivm_vnc_tip" qtlid="251174">Patarimas: jeigu negalite įvesti duomenų, spragtelėkite mėlyną juostą apačioje.</translation>
+   <translation id="cpcivm_vnc_window" qtlid="92753">Atidaryti naujame lange</translation>
+   <translation id="cpcivm_vnc_error" qtlid="251187">Įvyko klaida atidarant VNC konsolę.</translation>
+   <translation id="cpcivm_vnc_linuxinfo" qtlid="251200">Norėdami naudoti VNC konsolę Linux mašinoje, jūs visų pirma turite prie jos prisijungti per SSH ir sukonfigūruoti naudotoją su slaptažodžiu.</translation>
+</translations>

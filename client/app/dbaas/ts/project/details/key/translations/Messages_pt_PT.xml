@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpdt_errors_init_title" qtlid="282133">Ocorreu um erro aquando da recuperação das informações do seu projeto.</translation>
+   <translation id="dtpdt_errors_init_help1" qtlid="247053">Por favor, tente mais tarde.</translation>
+   <translation id="dtpdt_errors_init_help2" qtlid="247066">Em caso de falha, poderá tentar novamente o pedido, limpando a sua cache local:</translation>
+   <translation id="dtpdt_errors_init_help3" qtlid="295933">Se o problema persistir queira contactar o nosso suporte ao clicar <a href="{{url}}">aqui</a>.</translation>
+   <translation id="dtpdt_errros_reset_cache" qtlid="247027">Reinicializar a cache</translation>
+
+   <translation id="dtpdt_add_button" qtlid="301370">Adicionar uma chave da API</translation>
+
+   <translation id="dtpdt_region_name" qtlid="301383">Região</translation>
+
+   <translation id="dtpdt_region_help_title" qtlid="301396">Informações sobre a região</translation>
+   <translation id="dtpdt_region_help1" qtlid="301409">A região define a localização onde os seus dados serão armazenados bem com o URL do ponto de acesso da API OpenTSDB.</translation>
+   <translation id="dtpdt_region_help2" qtlid="301422">Este projeto é armazenado em {{ region }}</translation>
+   <translation id="dtpdt_region_help3" qtlid="301435">URL da API OpenTSDB:</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Para mais informações <a href="{{ tsaas_guide_concepts_url }}" target="_blank">consulte os nossos guias.</a></translation>
+
+
+   <translation id="dtpdt_thead_description" qtlid="9238">Descrição </translation>
+   <translation id="dtpdt_thead_permissions" qtlid="6946">Permissões </translation>
+   <translation id="dtpdt_thead_key" qtlid="301461">Chave da API</translation>
+   <translation id="dtpdt_thead_tags" qtlid="11519">Tags</translation>
+   <translation id="dtpdt_thead_actions" qtlid="72809">Ações</translation>
+   <translation id="dtpdt_action_delete" qtlid="2414">Eliminar</translation>
+   <translation id="dtpdt_action_edit" qtlid="6766">Editar</translation>
+
+   <translation id="dtpdt_no_key" qtlid="301474">Sem chave da API.</translation>
+   <translation id="dtpdt_no_tag" qtlid="301487">Nenhuma tag</translation>
+
+   <translation id="dtpdt_modal_delete_key_title" qtlid="301500">Eliminação de uma chave da API</translation>
+   <translation id="dtpdt_modal_delete_key_question" qtlid="301513">Têm a certeza de que deseja eliminar esta chave da API?</translation>
+   <translation id="dtpdt_key_deletion_successful" qtlid="301526">Chave da API eliminada</translation>
+   <translation id="dtpdt_key_deletion_error" qtlid="301539">A chave não pode ser eliminada</translation>
+
+   <translation id="dtpdt_modal_example_key_title" qtlid="301552">Exemplo de utilização da chave da API</translation>
+
+   <translation id="dtpdt_permission_READ" qtlid="6958">Leitura </translation>
+   <translation id="dtpdt_permission_WRITE" qtlid="301565">Escrita</translation>
+
+   <translation id="dtpdt_key_explain" qtlid="301578">As chaves da API tornam o acesso aos seus dados de serie temporal seguro.</translation>
+   <translation id="dtpdt_key_explain_more_1" qtlid="301591">Cada chave da API define as permissões, e pode conter eventualmente "tags". Uma tag é um conjunto de 'chave e valor' (por exemplo: clientId=123456).</translation>
+   <translation id="dtpdt_key_explain_more_2" qtlid="301604">As tags ao adicionadas automaticamente como filtro na leitura, e são associadas a cada dado escrito com a chave que possui essas tags.</translation>
+   <translation id="dtpdt_key_explain_more_3" qtlid="301448">Para mais informações <a href="{{ tsaas_guide_concepts_url }}" target="_blank">consulte os nossos guias.</a></translation>
+
+   <translation id="dtpdt_key_loading_error" qtlid="301617">Ocorreu um erro aquando do carregamento das chaves da API.</translation>
+
+   <translation id="dtpdt_modal_example_key_write_explain_begin" qtlid="301630">O envio de dados efetua-se através de um pedido HTTP POST a:</translation>
+   <translation id="dtpdt_modal_example_key_read_explain_begin" qtlid="301643">A leitura dos dados efetua-se com o pedido HTTP GET a:</translation>
+   <translation id="dtpdt_modal_example_key_explain_end" qtlid="301656">com a autenticação básica através da chave da API.</translation>
+   <translation id="dtpdt_modal_example_key_curl_title" qtlid="301669">Exemplo de linha de comandos com o cURL:</translation>
+   <translation id="dtpdt_modal_example_key_more" qtlid="301682">Para mais informações <a href="{{ tsaas_guide_key_url }}" target="_blank">consulte os nossos guias</a>.</translation>
+
+   <translation id="dtpdt_read_permission" qtlid="6958">Leitura </translation>
+   <translation id="dtpdt_write_permission" qtlid="301565">Escrita</translation>
+
+   <translation id="dtpdt_cancel" qtlid="37863">Anular</translation>
+
+   <translation id="dtpdt_init_loading" qtlid="301695">Carregamento em curso…</translation>
+   <translation id="dtpdt_init_error" qtlid="301708">Ocorreu um erro aquando do carregamento da chave da API.</translation>
+   <translation id="dtpdt_create_loading" qtlid="301721">Criação da chave em curso…</translation>
+   <translation id="dtpdt_update_loading" qtlid="301734">Modificação da chave em curso…</translation>
+   <translation id="dtpdt_creation_successful" qtlid="301747">A chave da API foi criada com sucesso.</translation>
+   <translation id="dtpdt_creation_error" qtlid="301760">Ocorreu um erro aquando da criação da chave da API.</translation>
+   <translation id="dtpdt_edit_successful" qtlid="301773">A chave da API foi modificada com sucesso.</translation>
+   <translation id="dtpdt_edit_error" qtlid="301786">Ocorreu um erro aquando da modificação da chave da API.</translation>
+
+</translations>

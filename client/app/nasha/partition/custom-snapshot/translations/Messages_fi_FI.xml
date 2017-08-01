@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_custom_snapshot_of" qtlid="344922">Levyosion {{partitionName}} tilannekuva </translation>
+   <translation id="nasha_custom_snapshot_modal_title" qtlid="369178">Välitön tilannekuva</translation>
+   <translation id="nasha_custom_snapshot_modal_success" qtlid="369191">Tilannekuva luodaan hetken kuluttua.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Tapahtui virhe tilannekuvien toistoväliä muokattaessa.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations" qtlid="344948">Tilannekuva (Snapshot) on pikakuva levystä. Se rekisteröi NAS-HA-palvelusi tilan tilannekuvan ottohetkellä. </translation>
+   <translation id="nasha_custom_snapshot_modal_informations_size" qtlid="369204">Tilannekuvat käyttävät tilaa levyosiolta toimiakseen kunnolla.</translation>
+   <translation id="nasha_custom_snapshot_modal_label_snapshot_name" qtlid="369217">Tilannekuvan nimi</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_length" qtlid="369230">Tilannekuvan nimessä voi olla enintään {{ maxlength }} merkkiä.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_required" qtlid="369243">Tilannekuvan nimi on pakollinen.</translation>
+</translations>

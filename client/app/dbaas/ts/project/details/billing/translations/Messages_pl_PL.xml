@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="dtpdb_loading_error" qtlid="300824">Wystąpił błąd podczas pobierania faktury.</translation>
+
+   <translation id="dtpdb_bill_current_month" qtlid="300837">Zasoby wykorzystane w miesiącu <strong>{{month}} {{year}}</strong></translation>
+   <translation id="dtpdb_total_current_month" qtlid="300850">Oszacowanie całkowitego kosztu za ten miesiąc:</translation>
+
+   <translation id="dtpdb_thead_description" qtlid="9238">Opis</translation>
+   <translation id="dtpdb_thead_quantity" qtlid="37107">Ilość</translation>
+   <translation id="dtpdb_thead_unit_price" qtlid="259961">Cena jednostkowa</translation>
+   <translation id="dtpdb_thead_price" qtlid="32458">Razem</translation>
+
+   <translation id="put" qtlid="300863">PUT (punkty zarejestrowane)</translation>
+   <translation id="get" qtlid="300876">GET (punkty odczytane)</translation>
+   <translation id="10kseries" qtlid="300889">Time series (na 10k)</translation>
+   <translation id="100Gstorage" qtlid="300902">Przechowywanie: 0 d 100 Gpoints</translation>
+   <translation id="250Gstorage" qtlid="300915">Przechowywanie: 100 do 250 Gpoints</translation>
+   <translation id="500Gstorage" qtlid="300928">Przechowywanie: 250 do 500 Gpoints</translation>
+   <translation id="1000Gstorage" qtlid="300941">Przechowywanie: 500 do 1000 Gpoints</translation>
+   <translation id="more1000Gstorage" qtlid="300954">Przechowywanie: ponad 1000 Gpoints</translation>
+
+</translations>

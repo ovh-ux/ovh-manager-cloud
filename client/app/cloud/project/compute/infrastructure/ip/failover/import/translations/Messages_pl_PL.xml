@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_import_title" qtlid="275869">Importuj IP Failover OVH</translation>
+   <translation id="cpciif_import_ips_error" qtlid="249211">Nie można pobrać listy Twoich IP Failover!</translation>
+   <translation id="cpciif_import_ips_empty" qtlid="249224">Brak dostępnych IP Failover</translation>
+   <translation id="cpciif_import_ips" qtlid="227806">IP Failover</translation>
+   <translation id="cpciif_import_ips_country" qtlid="25171">Kraj</translation>
+   <translation id="cpciif_import_routedto" qtlid="249237">Przypisana usługa</translation>
+   <translation id="cpciif_import_ips_route" qtlid="249250">Wybierz jedno lub kilka IP Failover, które chcesz zaimportować:</translation>
+   <translation id="cpciif_import_ips_32only" qtlid="258717">Informacja: Aktualnie można importować tylko bloki adresów IPv4.</translation>
+   <translation id="cpciif_import_routedto_park" qtlid="210540">Parking adresów IP</translation>
+
+   <translation id="cpciif_import_vms_route_of_success" qtlid="250706">IP Failover {{ip}} zostanie zaimportowane na Twój projekt w ciągu kilku minut.</translation>
+   <translation id="cpciif_import_vms_route_of_success_plural" qtlid="249289">{{nbIps}} IP zostaną zaimportowane na Twój projekt w ciągu kilku minut.</translation>
+
+   <translation id="cpciif_import_vms_route_of_error" qtlid="249302">Nie można przypisać IP {{ip}} do Twojego projektu.</translation>
+   <translation id="cpciif_import_vms_route_of_error_plural" qtlid="249315">Nie można przypisać IP {{ips}} do Twojego projektu.</translation>
+</translations>

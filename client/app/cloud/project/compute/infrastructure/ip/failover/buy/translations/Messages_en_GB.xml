@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_buy_title" qtlid="275882">Buy Cloud failover IPs</translation>
+   <translation id="cpciif_buy_cloud_info" qtlid="275895">Cloud failover IP addresses can be transferred from one server to another within the same Cloud project and the same continent. </translation>
+   <translation id="cpciif_buy_quantity_select" qtlid="275908">Select the number of Cloud failover IPs that you want to order: </translation>
+   <translation id="cpciif_buy_instance_select" qtlid="275921">Select the server to which the Cloud failover IP will be attached (You will soon be able to route this Failover IP towards other OVH products): </translation>
+   <translation id="cpciif_buy_instance_select_plural" qtlid="275934">Select the server to which the Cloud failover IP will be connected (These failover IPs will soon be routable towards other OVH products):</translation>
+   <translation id="cpciif_buy_country_select" qtlid="275947">Select the country for your Cloud failover IP:</translation>
+   <translation id="cpciif_buy_country_select_plural" qtlid="275960">Select the country for your Cloud failover IPs:</translation>
+   <translation id="cpciif_buy_limit_info" qtlid="275973">Your current infrastructure lets you order up to {{ ips }} Cloud failover IPs. </translation>
+   <translation id="cpciif_buy_init_error" qtlid="275986">Oops! We are unable to retrieve the information necessary for the purchase of Cloud failover IPs.</translation>
+   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Generate purchase order</translation>
+   <translation id="cpciif_buy_button_infos" qtlid="269513">Activation charge - No monthly renewal </translation>
+   <translation id="cpciif_buy_error" qtlid="275999">Oops! An error occured when purchasing Cloud failover IPs.</translation>
+   <translation id="cpciif_buy_success" qtlid="296011">The purchase order for your cloud failover IP is available <a href="{{ url }}" target="_blank">here <i class="fa fa-external-link"></i></a></translation>
+   <translation id="cpciif_buy_ip_na_soon" qtlid="269552">North-american IPs coming soon </translation>
+   <translation id="cpciif_buy_services" qtlid="269565">This service includes: </translation>
+   <translation id="cpciif_buy_no_instance" qtlid="301935">You do not have a server.</translation>
+   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} excl.VAT)</translation>
+</translations>

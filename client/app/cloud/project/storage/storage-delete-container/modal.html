@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 class="modal-title" >
+        {{"storage_modal_delete_storage_title" | translate}}
+    </h3>
+</div>
+
+<div class="modal-body">
+    <p class="text-info" data-translate="{{'storage_modal_delete_storage' + (plural ? 's' : '')}}" data-translate-values="{ name: name }"></p>
+</div>
+
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary pull-right"
+        data-ng-click="confirm()">
+        <i class="glyphicon glyphicon-ok"></i>
+        <span data-translate="common_confirm"></span>
+    </button>
+    <button type="reset" class="btn pull-left"
+        data-ng-click="cancel()">
+        <i class="glyphicon glyphicon-remove"></i>
+        <span data-translate="common_cancel"></span>
+    </button>
+</div>

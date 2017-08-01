@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_title" qtlid="323171">Order vRack</translation>
+   <translation id="vrack_subtitle" qtlid="323184">You can order this service for free. Your vRack will be delivered in a few minutes.</translation>
+   <translation id="vrack_validationPending" qtlid="323197">Please complete your free <a href="{{url}}" target='_blank'>purchase order</a> payment.</translation>
+   <translation id="vrack_order_delay" qtlid="323210">Your vRack will be available a few minutes after you have validated your purchase order.</translation>
+   <translation id="vrack_order" qtlid="43558">Order</translation>
+   <translation id="vrack_contract_empty" qtlid="245688">You have accepted all the contracts related to this product.</translation>
+   <translation id="vrack_error" qtlid="148981">An error occurred.</translation>
+   <translation id="vrack_error_reason" qtlid="323223">There was an error: {{message}}</translation>
+   <translation id="vrack_adding_success" qtlid="323236">The vRack activation request has been taken into account and will be effective in a few minutes once order number <a href="{{data.url}}"target='_blank'>{{data.orderId}}</a> is validated.</translation>
+</translations>

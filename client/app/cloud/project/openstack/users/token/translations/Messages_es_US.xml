@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_token_title" qtlid="245571">Crear una ficha de autenticación OpenStack</translation>
+   <translation id="cpou_openrc_title" qtlid="261036">Descargar el archivo RC de OpenStack</translation>
+   <translation id="cpou_token_info" qtlid="296193">Para generar un token Openstack, introduzca la contraseña del usuario <b>{{ username }}</b>.</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Mot de passe</translation>
+   <translation id="cpou_token_error" qtlid="245597">Lo sentimos, no se han podido crear las fichas de autenticación Openstack.</translation>
+
+   <translation id="cpou_token_title_information" qtlid="245610">Por favor, anote el nombre de usuario y la contraseña: no tendrá acceso a ellos en la próxima actualización.</translation>
+   <translation id="cpou_token_xauthtoken" qtlid="245623">La ficha de autenticación Openstack que le permite identificar sus búsquedas HTTP (X-Auth-Token) es:</translation>
+   <translation id="cpou_token_xauthtoken_guide" qtlid="296206">Encuentre un caso práctico en <a href="{{ link }}" target="_blank">esta guía</a>.</translation>
+   <translation id="cpou_token_catalog_region" qtlid="245636">Región </translation>
+   <translation id="cpou_token_catalog_service" qtlid="31042">Service</translation>
+   <translation id="cpou_token_catalog_endpoint" qtlid="245649">Endpoint</translation>
+</translations>

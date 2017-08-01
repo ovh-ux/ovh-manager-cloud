@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_delete_title" qtlid="247950">Löschung einer Instanz</translation>
+   <translation id="cpcivm_delete_info" qtlid="247963">Der laufende Monat wurde für diesen Server bereits abgerechnet und verfällt dann.</translation>
+   <translation id="cpcivm_failover_info" qtlid="269383">Folgende Failover-IPs werden endgültig gelöscht:</translation>
+   <translation id="cpcivm_delete_confirm" qtlid="269396">Sind Sie sicher, dass Sie diese Instanz löschen möchten?</translation>
+</translations>

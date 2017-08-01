@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_order_loading_error" qtlid="345156">Se ha producido un error al cargar la lista de NAS-HA disponibles para contratar.</translation>
+   <translation id="nasha_order_title" qtlid="345130">Contratar un NAS-HA</translation>
+   <translation id="nasha_order_duration" qtlid="8218">Duración</translation>
+   <translation id="nas_order_month" qtlid="40222">mes(es)</translation>
+   <translation id="nasha_order_warning" qtlid="345169">Para disfrutar de los productos NAS-HA de OVH, es necesario tener al menos un servidor en la misma zona geográfica.</translation>
+   <translation id="nasha_can_order_warning" qtlid="345182">No tiene servicios compatibles con la oferta NAS-HA.</translation>
+   <translation id="nasha_order_step_1_configure" qtlid="345195">1. Configuración</translation>
+   <translation id="nasha_order_step_2_order" qtlid="345208">2. Contratación</translation>
+   <translation id="nasha_order_generate_order" qtlid="186219">Generar la orden de pedido</translation>
+   <translation id="nasha_order_accept_contract" qtlid="345221">He leído y acepto las condiciones descritas en los siguientes documentos:</translation>
+   <translation id="nasha_order_nasha_1200g" qtlid="171994">NAS-HA híbrido 1,2 TB</translation>
+   <translation id="nasha_order_nasha_13200g" qtlid="172007">NAS-HA híbrido 13,2 TB</translation>
+   <translation id="nasha_order_nasha_2400g" qtlid="172020">NAS-HA híbrido 2,4 TB</translation>
+   <translation id="nasha_order_nasha_3600g" qtlid="172046">NAS-HA híbrido 3,6 TB</translation>
+   <translation id="nasha_order_nasha_7200g" qtlid="172072">NAS-HA híbrido 7,2 TB</translation>
+   <translation id="nasha_order_nashaSSD" qtlid="172085">NAS-HA 100 GB SSD</translation>
+   <translation id="nasha_order_nasha_19200g" qtlid="243445">NAS-HA híbrido 19,2 TB</translation>
+   <translation id="nasha_order_nasha_26400g" qtlid="243458">NAS-HA híbrido 26,4 TB</translation>
+   <translation id="nasha_order_name" qtlid="345234">Tipo de NAS-HA</translation>
+   <translation id="nasha_order_price" qtlid="345247">+ IVA (1 mes)</translation>
+   <translation id="nasha_order_datacenter" qtlid="345260">Selección del centro de datos</translation>
+   <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
+   <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
+   <translation id="nasha_order_datacenter_sbg" qtlid="172202">Estrasburgo</translation>
+   <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
+   <translation id="nasha_order_validation_error" qtlid="345273">Se ha producido un error al validar el pedido.</translation>
+   <translation id="nasha_order_error" qtlid="345286">Se ha producido un error al cargar la orden de pedido.</translation>
+   <translation id="nasha_order_success" qtlid="345299">Se ha enviado el pedido número <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> de NAS-HA.</translation>
+   <translation id="nasha_order_bc_price_HT" qtlid="345312">Precio total sin IVA: <strong>{{priceHT}}</strong></translation>
+   <translation id="nasha_order_bc_price_TTC" qtlid="345325">Precio total IVA incl.: <strong>{{priceTTC}}</strong></translation>
+
+   <translation id="nasha_order_guide_title" qtlid="300370">Guías</translation>
+   <translation id="nasha_order_new_window" qtlid="222176">Nueva ventana</translation>
+</translations>

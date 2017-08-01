@@ -1,0 +1,31 @@
+<img class="vrack__mapper-icon"
+     data-ng-show="!VrackCtrl.loaders.init"
+     src="assets/images/icones/icon_vrack-mapper-arrows.svg">
+</div>
+<button class="ovh-button ovh-button_primary ovh-button_icon"
+        data-ng-class="{
+            'hidden': !VrackCtrl.isAdding() && !VrackCtrl.isRemoving()
+        }"
+        data-ng-show="VrackCtrl.isAdding() || VrackCtrl.isRemoving()"
+        data-ng-click="VrackCtrl.isAdding() ? VrackCtrl.addSelectedServices() : VrackCtrl.deleteSelectedServices()">
+    <i class="ovh-button__icon ovh-button__icon_left fa"
+       data-ng-class="{
+            'fa-chevron-left': VrackCtrl.isRemoving(),
+            'fa-chevron-right': VrackCtrl.isAdding()
+        }">
+    </i>
+    <span class="ovh-button__text"
+          data-translate="{{ VrackCtrl.isAdding() ? 'common_add' : 'common_remove' }}">
+    </span>
+</button>
+
+<button class="ovh-button ovh-button_primary"
+    data-translate="common_move"
+    data-ng-show="VrackCtrl.isMoving()"
+    data-ng-click="VrackCtrl.moveSelectedService()">
+</button>
+
+<span class="vrack__loading-indicator" data-ng-if="VrackCtrl.loaders.init">
+    <i class="vrack__spinner vrack__spinner_mapper fa fa-fw fa-spin fa-circle-o-notch"></i>
+    <span data-translate="common_loading" class="vrack__spinner-message"></span>
+</span>

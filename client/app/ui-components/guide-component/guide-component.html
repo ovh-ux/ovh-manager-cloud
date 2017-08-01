@@ -1,0 +1,42 @@
+<cui-dropdown-menu class="cui-guide">
+  <cui-dropdown-menu-button class="cui-guide__button">
+    <ng-include src="'app/ui-components/icons/button-guide.html'"></ng-include>
+    <span class="cui-guide__button-title" data-ng-bind="$ctrl.guides.title"></span>
+  </cui-dropdown-menu-button>
+  <cui-dropdown-menu-body>
+      <ul class="cui-guide__container cui-guide__list">
+        <!-- simple list guide case -->
+        <li data-ng-if="$ctrl.hasSimpleGuide($ctrl.guides)"
+            class="cui-guide__item"
+            data-ng-repeat="guide in $ctrl.guides.list">
+          <a class="cui-guide__item-link" href="{{guide.url}}" target="_blank">
+            <span data-ng-bind="guide.name"></span>
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
+
+        </li>
+        <!-- multiple lists with header guides case -->
+        <li data-ng-if="$ctrl.hasMultipleGuide($ctrl.guides)"
+            data-ng-repeat="section in $ctrl.guides.sections">
+          <ul class="cui-guide__list">
+            <li class="cui-guide__item">
+              <h2 class="cui-guide__item-title" data-ng-bind="section.title"></h2>
+            </li>
+            <li class="cui-guide__item cui-guide__item_border" 
+                data-ng-repeat="guide in section.list">
+              <a class="cui-guide__item-link" href="{{guide.url}}" target="_blank">
+                <span data-ng-bind="guide.name"></span>
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="cui-guide__footer">
+        <a class="cui-guide__footer-link" href="http://docs.ovh.com/" target="_blank">
+          <span data-ng-bind="$ctrl.guides.footer"></span>
+          <i class="fa fa-external-link" aria-hidden="true"></i>
+        </a>
+      </div>
+  </cui-dropdown-menu-body>
+</cui-dropdown-menu>

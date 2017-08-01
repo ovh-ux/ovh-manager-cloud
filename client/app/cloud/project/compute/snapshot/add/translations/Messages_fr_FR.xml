@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_snapshot_add_title" qtlid="246806">Création d'un snapshot</translation>
+   <translation id="cpc_snapshot_add_cancel" qtlid="37863">Annuler</translation>
+   <translation id="cpc_snapshot_add_info" qtlid="246819">Saisissez le nom de votre snapshot :</translation>
+   <translation id="cpc_snapshot_add_name_required_error" qtlid="246832">Vous devez donner un nom à votre snapshot.</translation>
+   <translation id="cpc_snapshot_add_name_max_error" qtlid="246845">Ce nom est trop long.</translation>
+   <translation id="cpc_snapshot_add_name" qtlid="246520">Nom du snapshot</translation>
+   <translation id="cpc_snapshot_add_valid" qtlid="246858">Lancer le snapshot</translation>
+   <translation id="cpc_snapshot_add_doing" qtlid="246871">La demande de snapshot est en cours de traitement...</translation>
+   <translation id="cpc_snapshot_add_success" qtlid="246884">Le snapshot {{snapshotname}} va commencer et sera disponible dans quelques minutes.</translation>
+   <translation id="cpc_snapshot_add_availibility" qtlid="271270">Votre serveur sera suspendu pendant quelques secondes, puis les performances en lecture/écriture du disque pourront être affectées jusqu'à la finalisation du snapshot.</translation>
+   <translation id="cpc_snapshot_add_error" qtlid="246897">Oups, nous n'arrivons pas à lancer le snapshot de ce serveur.</translation>
+   <translation id="cpc_snapshot_add_total" qtlid="270020">({{size | bytes:2}}, soit environ {{price}} HT/mois)</translation>
+</translations>

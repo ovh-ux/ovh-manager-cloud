@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="add_p8_alert_success" qtlid="242626">U heeft zich aangemeld voor het Power8 Lab.</translation>
+   <translation id="add_instance_ssh_key_help" qtlid="295868">In Public Cloud maken we geen gebruik van administrator (root) wachtwoorden. Om toegang te krijgen tot uw GNU/Linux instance dient u een SSH key toe te voegen. <a target="_blank" href="https://www.ovh.com/fr/g1785.cloud">Ontdek hoe u een SSH key genereert.</a></translation>
+   <translation id="add_instance_ssh_key_help_message" qtlid="242652">Let op: om het aanmaken van uw instance te beëindigen, moet u een SSH-key opgeven.</translation>
+
+   <translation id="add_instance" qtlid="242665">Een virtual server</translation>
+   <translation id="add_storage" qtlid="242678">Een object container</translation>
+   <translation id="add_storage2" qtlid="246468">Het toevoegen van een object container</translation>
+   <translation id="add_ssh_key" qtlid="242691">Een SSH-key</translation>
+   <translation id="add_title" qtlid="37923">Toevoegen</translation>
+   <translation id="add_subtitle" qtlid="242704">Selecteer het element dat u wilt toevoegen.</translation>
+
+   <translation id="add_instance" qtlid="242665">Een virtual server</translation>
+   <translation id="add_storage" qtlid="242678">Een object container</translation>
+   <translation id="add_ssh" qtlid="242691">Een SSH-key</translation>
+
+   <translation id="add_already_instancied_title" qtlid="242717">Quota!</translation>
+
+   <translation id="add_instance_region_step_title" qtlid="242730">Kies het datacenter</translation>
+   <translation id="add_instance_flavor_category_step_title" qtlid="242743">Kies de server serie uit</translation>
+
+   <translation id="add_instance_flavor_step_title" qtlid="242756">Kies het type uit</translation>
+   <translation id="add_instance_flavor_loading" qtlid="242769">Laden wordt uitgevoerd</translation>
+   <translation id="add_instance_flavor_not_found" qtlid="242782">Dit model is momenteel niet beschikbaar</translation>
+   <translation id="add_instance_flavor_by_hour" qtlid="242795">per uur</translation>
+
+   <translation id="add_instance_image_step_title" qtlid="242808">Selecteer het besturingssysteem</translation>
+   <translation id="add_instance_images_loading" qtlid="242769">Laden wordt uitgevoerd</translation>
+   <translation id="add_instance_images_not_found" qtlid="242821">Geen besturingssysteem beschikbaar.</translation>
+
+   <translation id="add_instance_paymentMode_step_title" qtlid="242834">Kies de betaalmethode</translation>
+   <translation id="add_instance_paymentMode_loading" qtlid="242769">Laden wordt uitgevoerd</translation>
+   <translation id="add_instance_paymentMode_not_found" qtlid="242847">Geen betaalmethode beschikbaar</translation>
+   <translation id="add_instance_paymentMode_hourly" qtlid="242444">Betaal per uur</translation>
+   <translation id="add_instance_paymentMode_monthly" qtlid="233928">Maandelijkse facturering</translation>
+   <translation id="add_instance_paymentMode_hourly_subtitle" qtlid="242860">In rekening gebracht aan het einde van de maand</translation>
+   <translation id="add_instance_paymentMode_monthly_subtitle" qtlid="242873">Onmiddellijk pro-rata afgeschreven</translation>
+
+   <translation id="add_instance_ssh_step_title" qtlid="242886">Kies uw SSH-key</translation>
+   <translation id="add_instance_ssh_loading" qtlid="242769">Laden wordt uitgevoerd</translation>
+   <translation id="add_instance_ssh_not_found" qtlid="242899">U heeft momenteel geen SSH-key.</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Een SSH key toevoegen</translation>
+
+   <translation id="add_instance_name_step_title" qtlid="242912">Voer een naam in voor uw virtual server (instance)</translation>
+
+   <translation id="add_instance_go_to_the_moon" qtlid="217288">De server herstarten</translation>
+
+   <translation id="add_storage_region_step_title" qtlid="242730">Kies het datacenter</translation>
+   <translation id="add_storage_container_type_step_title" qtlid="242925">Kies het type container</translation>
+   <translation id="add_storage_name_step_title" qtlid="242938">Geef een naam aan uw container</translation>
+   <translation id="add_build_you_own_warehouse" qtlid="242951">Het aanmaken van de container</translation>
+
+   <translation id="add_container_name" qtlid="242964">Naam van de container</translation>
+   <translation id="add_instance_name" qtlid="242977">Naam van de server</translation>
+   <translation id="add_container_image" qtlid="4394">Afbeelding</translation>
+   <translation id="add_instance_choose" qtlid="186115">Selecteer...</translation>
+   <translation id="add_container_region" qtlid="30802">Datacenter</translation>
+   <translation id="add_container_flavor" qtlid="2642">Type</translation>
+   <translation id="add_container_ssh" qtlid="21859">SSH-keys</translation>
+   <translation id="add_instance_new_ssh" qtlid="242990">Het aanmaken van een SSH-key</translation>
+   <translation id="add_container_ssh_enter" qtlid="243003">Voer uw key in</translation>
+   <translation id="add_submit" qtlid="37923">Toevoegen</translation>
+   <translation id="add_form_error_bad_ssh_key" qtlid="243016">Ongeldige key</translation>
+   <translation id="add_form_error_required" qtlid="182514">Verplichte velden</translation>
+   <translation id="add_container_selected_publicKey" qtlid="243029">Geselecteerde public key</translation>
+   <translation id="add_loading" qtlid="8410">Aan het laden....</translation>
+   <translation id="selected_add_label" qtlid="243042">Wat wilt u toevoegen?</translation>
+   <translation id="add_posting" qtlid="243055">Het aanmaken van de server</translation>
+   <translation id="add_key_created_public" qtlid="243068">Het aanmaken van de public key</translation>
+   <translation id="add_key_created_finger" qtlid="192344">Print</translation>
+   <translation id="add_key_created" qtlid="243081">De SSH key {{ name }} is aangemaakt</translation>
+   <translation id="add_key_used" qtlid="243094">met de key {0}</translation>
+   <translation id="add_instance_created" qtlid="243107">De virtual server (instance) {0} is aangemaakt</translation>
+   <translation id="add_container_selected_publicKey_create" qtlid="243120">Naam van de SSH-key</translation>
+   <translation id="add_key_success" qtlid="243133">SSH-key toegevoegd</translation>
+   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_storage_storage_added" qtlid="243146">Storage aangemaakt</translation>
+   <translation id="add_storage_storage_added_error" qtlid="246481">Er is een fout opgetreden tijdens het aanmaken van de container.</translation>
+   <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Een SSH-key bestaat al met die naam</translation>
+   <translation id="add_form_error_pattern" qtlid="149774">Ongeldig formaat </translation>
+   <translation id="add_already_instancied" qtlid="243172">U kunt niet nog meer instances in dit datacenter aanmaken </translation>
+   <translation id="add_container_selected_flavor" qtlid="243185">Type container geselecteerd</translation>
+   <translation id="add_quota_ssh_title" qtlid="242717">Quota!</translation>
+   <translation id="add_quota_ssh" qtlid="243198">U kunt niet meer SSH-keys toevoegen</translation>
+   <translation id="ssh_key_quota_exceeded" qtlid="243211">U kunt niet meer SSH-keys aan dit project toevoegen!</translation>
+   <translation id="add_form_error_maxlength" qtlid="243224">Deze key is te lang</translation>
+
+   <translation id="labs_sandbox_success_subscribed" qtlid="243237">Lab Sandbox is geactiveerd!</translation>
+   <translation id="code_linked_to_your_account" qtlid="243250">Deze code is nu toegevoegd aan uw account</translation>
+   <translation id="add_no_more_instances" qtlid="295881">Omdat de instances so populair waren zijn ze tijdelijk niet beschikbaar. U bent automatisch toegevoegd aan de wachtlijst. <br /><br />U zult een melding ontvangen zodra ze weer beschikbaar zijn. <br /><br />Hartelijk dank voor uw geduld!</translation>
+
+   <translation id="add_storage_categories_more_info" qtlid="44536">Meer informatie over</translation>
+   <translation id="add_storage_category_pcs" qtlid="135593">Publieke Cloud Storage</translation>
+   <translation id="add_storage_category_pca" qtlid="134631">Publiek Cloud Archief</translation>
+
+   <translation id="add_storage_type_static_hosting" qtlid="243276">Static hosting</translation>
+   <translation id="add_storage_type_static_hosting_description" qtlid="367449">Snelle toegang en high performance. Koppel uw domeinen en verplaats uw bestanden. </translation>
+   <translation id="add_storage_type_private" qtlid="242106">Private</translation>
+   <translation id="add_storage_type_private_description" qtlid="367462">Facturatie. legale informatie en logs. Eenvoudige archivering op basis van uw behoeften. </translation>
+   <translation id="add_storage_type_public" qtlid="246494">Public</translation>
+   <translation id="add_storage_type_public_description" qtlid="367475">Multimedia, binary en e-commerce bestanden. Sla een onbeperkt volume aan data op. </translation>
+   <translation id="add_storage_type_cold" qtlid="376297">Cold storage, voor een lage prijs</translation>
+   <translation id="add_storage_type_cold_description" qtlid="376310">Archiveer en beveilig alle soorten data op meerdere gateways. </translation>
+
+   <translation id="add_flavour_ovh_x86_ha_xl_ram" qtlid="243289">RAM XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_sb_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_ram" qtlid="243328">RAM XL3</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_cpu" qtlid="243341">CPU XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_l" qtlid="243315">L</translation>
+   <translation id="add_flavour_ovh_x86_sb_m" qtlid="243302">M</translation>
+   <translation id="add_flavour_ovh_x86_ha_2xl_ram" qtlid="243354">RAM XL2</translation>
+   <translation id="add_flavour_ovh_x86_ha_xl_cpu" qtlid="243367">CPU XL</translation>
+   <translation id="add_flavour_ovh_x86_ha_3xl_cpu" qtlid="243380">CPU XL3</translation>
+
+   <translation id="add_instance_price_by_hour" qtlid="242795">per uur</translation>
+   <translation id="add_instance_price_by_month" qtlid="244794">per maand</translation>
+
+   <translation id="add_flavour_RAM_CPU" qtlid="243406">{{vcpu}} vCores, {{ram}} RAM, {{disk}} Block Storage</translation>
+   <translation id="add_flavour_VPS" qtlid="245077">{{vcpu}} vCore(s), {{ram}} RAM, {{disk}} lokale SSD</translation>
+   <translation id="instance_creation_success" qtlid="242548">Server wordt aangemaakt..</translation>
+   <translation id="instance_creation_PermissionDenied" qtlid="243419">Quota overschreden: he is u niet toegestaan om meer instances aan te maken.</translation>
+
+   <translation id="storage_details_guide_title" qtlid="300370">Handleidingen</translation>
+   <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
+   <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Alle OVH handleidingen</translation>
+</translations>

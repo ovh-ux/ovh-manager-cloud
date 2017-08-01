@@ -1,0 +1,50 @@
+<div>
+
+    <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
+
+    <div class="row-fluid">
+        <a class="pull-left cloud-button top-space-m12" data-ui-sref="iaas.pci-project.storage">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+            <span data-translate="common_back" translate="storage_add_button_return"></span>
+        </a>
+    </div>
+
+    <div class="col-xs-12" data-ng-show="!loaders.init">
+
+        <div class="page-header">
+            <guide-component class="pull-right" data-guides="guides"></guide-component>
+            <h2>
+                <span class="main-color" data-translate="add_title"></span>
+                <span data-ng-if="addedType.value"> {{ 'add_' + addedType.value | translate | lowercase }}</span>
+            </h2>
+        </div>
+
+        <form role="form" name="addForm" novalidate="novalidate">
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4 center add-button-item"
+                     data-ng-repeat="item in items.value"
+                     data-ng-class="{
+                        'active': addedType.value == item
+                     }">
+
+                    <div class="form-group add-button-container add-button-container-{{item}}"
+                        data-ng-class="{
+                            'active': addedType.value == item
+                        }">
+                    </div>
+
+                    <a class="btn add-button" data-ng-class="{
+                        'active' : addedType.value == item
+                    }">{{ 'add_' + item | translate}}</a>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="block" data-ng-include="'app/cloud/project/storage/storage-add/storage/add-storage.html'"></div>
+
+        </form>
+    </div>
+</div>

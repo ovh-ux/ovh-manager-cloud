@@ -1,0 +1,145 @@
+<div id="cloud-billing-details-storage" class="cloud-billing-summary-details" data-ng-if="BillingDetailsCtrl.detailsVisible.storage"
+    data-smooth-scroll-here="{ delay: 500, offset: -150 }">
+    <div class="table-responsive-vertical">
+        <table class="table table-pretty table-hover table-striped no-space">
+            <thead>
+                <th>
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('region')">
+                                <span>{{ :: 'cpb_details_compute_infra_region' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'region'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'region' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'region' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th>
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('region')">
+                                <span>{{ :: 'cpb_details_compute_infra_imagetype' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'type'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'type' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'type' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th class="text-right">
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('totalVolume.text')">
+                                <span>{{ :: 'cpb_details_compute_infra_volume_total' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'totalVolume.text'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalVolume.text' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalVolume.text' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th class="text-right">
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('totalBandwidth')">
+                                <span>{{ :: 'cpb_details_compute_infra_bandwidth_total' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'totalBandwidth'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalBandwidth' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalBandwidth' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th class="text-right">
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('incomingBandwidth')">
+                                <span>{{ :: 'cpb_details_compute_infra_bandwidth_incoming_total' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'incomingBandwidth'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'incomingBandwidth' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'incomingBandwidth' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th class="text-right">
+                    <button class="no-style" data-ng-click="BillingDetailsCtrl.sortStorageBy('totalPrice')">
+                                <span>{{ :: 'cpb_details_compute_infra_total' | translate }}</span>
+                                <span class="table-pretty-filter">
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by !== 'totalPrice'" class="fa fa-sort"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalPrice' && BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-desc"></i>
+                                    <i data-ng-show="BillingDetailsCtrl.sortStorage.by === 'totalPrice' && !BillingDetailsCtrl.sortStorage.reverse" class="fa fa-sort-asc"></i>
+                                </span>
+                            </button>
+                </th>
+                <th style="width:25px" class="text-right">
+                    <button data-ng-click="BillingDetailsCtrl.refresh()" class="no-style">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                            </button>
+                </th>
+            </thead>
+            <!-- WHEN ONE OR MORE OBJECT STORAGE -->
+            <tbody data-ng-if="BillingDetailsCtrl.datas.consumptions.currentMonth.storageAndBandwidthDetails.length > 0">
+                <tr data-ng-repeat="storage in BillingDetailsCtrl.datas.consumptions.currentMonth.storageAndBandwidthDetailsPaginated">
+                    <td data-title="{{ :: 'cpb_details_compute_infra_region' | translate }}">
+                        <span data-translate="{{ 'cloud_common_region_' + storage.region }}" data-translate-default="{{ storage.region }}"></span>
+                    </td>
+                    <td data-title="{{ :: 'cpb_details_compute_infra_type' | translate }}">
+                        <span data-translate="{{ 'cpb_details_compute_infra_type_' + storage.type }}" data-translate-default="{{ storage.type }}"></span>
+                    </td>
+                    <td class="text-right" data-title="{{ :: 'cpb_details_compute_infra_volume_total' | translate }}">
+                        <span>
+                                    {{ storage.storagePrice }}
+                                </span>
+                        <i class="fa fa-question-circle left-space-m4" data-ng-if="storage.totalVolume.text" data-uib-tooltip="{{:: BillingDetailsCtrl.getStorageVolumeInfoTooltip(storage) }}"
+                            tooltip-placement="left"></i>
+                    </td>
+                    <td class="text-right" data-title="{{ :: 'cpb_details_compute_infra_bandwidth_total' | translate }}">
+                        <span>
+                                    {{ storage.outgoingBandwithPrice }}
+                                </span>
+                        <i class="fa fa-question-circle left-space-m4" data-ng-if="storage.outgoingBandwithPrice !== '-'" data-uib-tooltip="{{:: BillingDetailsCtrl.getStorageBandwidthInfoTooltip(storage) }}"
+                            tooltip-placement="left"></i>
+                    </td>
+                    <td class="text-right" data-title="{{ :: 'cpb_details_compute_infra_bandwidth_incoming_total' | translate }}">
+                        <span>
+                                    {{ storage.incomingBandwithPrice }}
+                                </span>
+                        <i class="fa fa-question-circle left-space-m4" data-ng-if="storage.totalBandwidth.text" data-uib-tooltip="{{:: BillingDetailsCtrl.getStorageBandwidthInfoTooltip(storage) }}"
+                            tooltip-placement="left"></i>
+                    </td>
+                    <td class="text-right" data-title="{{ :: 'cpb_details_compute_infra_total' | translate }}">
+                        <span>
+                                    {{ storage.totalPrice }}
+                                </span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+
+            <!-- WHEN NO OBJECT STORAGE -->
+            <tbody data-ng-if="!BillingDetailsCtrl.loaders.consumption &&
+                                       !BillingDetailsCtrl.loaders.storage &&
+                                       BillingDetailsCtrl.datas.consumptions.currentMonth.storageAndBandwidthDetails === 0
+                                       ">
+                <tr>
+                    <td colspan="4" class="text-center">
+                        <span data-translate="cpb_details_object_storage_no_infos"></span>
+                    </td>
+                </tr>
+            </tbody>
+
+            <!-- WHEN OBJECT STORAGE ERROR -->
+            <tbody data-ng-if="BillingDetailsCtrl.datas.consumption === null">
+                <tr>
+                    <td colspan="4" class="text-center red">
+                        <i class="fa fa-bug"></i>
+                        <span data-translate="cpb_details_object_storage_error"></span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!-- PAGINATION TABLE -->
+        <div class="table-pretty-pagination top-space-m12" data-ng-hide="BillingDetailsCtrl.loaders.consumption
+                                   || BillingDetailsCtrl.loaders.storage
+                                   || BillingDetailsCtrl.datas.consumption.storageAndBandwidthDetails.length <= 5" data-pagination-front
+            data-items="BillingDetailsCtrl.datas.consumptions.currentMonth.storageAndBandwidthDetails" data-paginated-items="BillingDetailsCtrl.datas.consumptions.currentMonth.storageAndBandwidthDetailsPaginated"
+            data-current-page="currentPage" data-nb-pages="nbPages" data-items-per-page="itemsPerPage" data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
+            data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_offer_ready" qtlid="383096">Jesteś gotowy na chmurę?</translation>
+   <translation id="cloud_offer_features" qtlid="383109">Zalety usługi Public Cloud</translation>
+   <translation id="cloud_offer_explanation_1" qtlid="383122">Instancje (wirtualne serwery) Public Cloud są połączeniem <strong>elastyczności</strong> oraz <strong>gwarantowanych zasobów.</strong></translation>
+   <translation id="cloud_offer_explanation_2" qtlid="383135">W czasie krótszym niż minuta, będziesz mógł skorzystać z CPU, pamięci RAM, dedykowanej przestrzeni dyskowej, dostępu root <strong>jak na serwerze dedykowanym.</strong></translation>
+   <translation id="cloud_offer_explanation_3" qtlid="383148">Oferta Public Cloud jest rozliczana w modelu godzinowym lub miesięcznym, dzięki czemu łatwo zarządzasz <strong>kosztami projektu.</strong></translation>
+   <translation id="cloud_offer_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_offer_vrack_explanation" qtlid="383161">Podłącz swoje fizyczne i wirtualne serwery do jednej prywatnej sieci</translation>
+   <translation id="cloud_offer_ipfo" qtlid="383174">IP-FO</translation>
+   <translation id="cloud_offer_ipfo_explanation" qtlid="383187">Geolokalizowane adresy IP, które możesz przełączać pomiędzy maszynami w OVH.</translation>
+   <translation id="cloud_offer_ipv6" qtlid="383200">IPv4 - IPv6 publiczne</translation>
+   <translation id="cloud_offer_ipv6_explanation" qtlid="383213">Każda instancja Public Cloud otrzymuje domyślnie publiczny adres IPv4 oraz IPv6.</translation>
+   <translation id="cloud_offer_upgrade" qtlid="383226">Skalowalność</translation>
+   <translation id="cloud_offer_upgrade_explanation" qtlid="383239">Zmiana rozmiaru instancji zgodnie ze Twoimi potrzebami.</translation>
+   <translation id="cloud_offer_pca" qtlid="134631">Public Cloud Archive</translation>
+   <translation id="cloud_offer_pca_explanation" qtlid="383252">Przestrzeń przechowywania "na zimno" w najlepszej cenie i ze standardowymi protokołami do przesyłania danych.</translation>
+   <translation id="cloud_offer_snapshot" qtlid="10235">Snapshoty</translation>
+   <translation id="cloud_offer_snapshot_explanation" qtlid="383265">Kopie bezpieczeństwa i duplikowanie instancji jednym kliknięciem.</translation>
+   <translation id="cloud_offer_ssd" qtlid="7114">SSD</translation>
+   <translation id="cloud_offer_ssd_explanation" qtlid="383278">Przestrzeń dyskowa na profesjonalnych,  wysokowydajnych dyskach SSD dla każdej instancji.</translation>
+   <translation id="cloud_offer_volume" qtlid="383291">Dodatkowe dyski</translation>
+   <translation id="cloud_offer_volume_explanation" qtlid="383304">Przestrzeń dyskowa wysokiej wydajności z potrójną replikacją danych.</translation>
+   <translation id="cloud_offer_object_storage" qtlid="383317">Object Storage</translation>
+   <translation id="cloud_offer_object_storage_explanation" qtlid="383330">Od kilku gigabajtów do petabajtów danych do składowania, storage obiektowy na platformie Openstack SWIFT.</translation>
+   <translation id="cloud_offer_api" qtlid="293112">API</translation>
+   <translation id="cloud_offer_api_explanation" qtlid="383343">Automatyzacja wdrożenia i procesów w infrastrukturze dzięki API OVH oraz Openstack.</translation>
+
+   <translation id="cloud_offer_project_label_1" qtlid="383356">Twój projekt</translation>
+   <translation id="cloud_offer_project_label_2" qtlid="383369">Nazwij swój projekt</translation>
+   <translation id="cloud_offer_project_placeholder" qtlid="106751">Mój projekt</translation>
+   <translation id="cloud_offer_project_explanation_1" qtlid="383382">Projekt to kontener, który umożliwia zarządzanie instancjami Public Cloud.</translation>
+   <translation id="cloud_offer_project_explanation_2" qtlid="383395">Nazwę projektu możesz zmienić w każdej chwili.</translation>
+   <translation id="cloud_offer_payment_label" qtlid="140014">Sposób płatności</translation>
+   <translation id="cloud_offer_payment_none" qtlid="383408">Nie zdefiniowałej domyślnej formy płatność.</translation>
+   <translation id="cloud_offer_payment_explanation_1" qtlid="383421">Ta forma płatności będzie domyślnie wybrana dla wszystkich przyszłych usług Cloud.</translation>
+   <translation id="cloud_offer_payment_explanation_2" qtlid="383434">Twoje formy płatności są dostępne w <a href="{{url}}">sekcji Płatności</a></translation>
+   <translation id="cloud_offer_voucher" qtlid="383447">Kod promocyjny</translation>
+   <translation id="cloud_offer_voucher_placeholder" qtlid="383460">1AAA-AA11</translation>
+   <translation id="cloud_offer_agreement_label" qtlid="383473">Warunki korzystania</translation>
+   <translation id="cloud_offer_agreement_accept" qtlid="383486">Akceptuję <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cloud_offer_start" qtlid="383499">Rozpocznij projekt Cloud</translation>
+</translations>

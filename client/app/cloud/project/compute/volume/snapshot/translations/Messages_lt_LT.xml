@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcv_snapshot_add_title" qtlid="273661">Virtualaus disko atsarginės kopijos kūrimas</translation>
+   <translation id="cpcv_snapshot_choose_name" qtlid="246819">Įveskite savo atsarginės kopijos pavadinimą:</translation>
+   <translation id="cpcv_snapshot_name" qtlid="246520">Atsarginės kopijos pavadinimas </translation>
+   <translation id="cpcv_snapshot_confirm" qtlid="246858">Paleisti atsarginę kopiją</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} be PVM/GB/mėn.)</translation>
+   <translation id="cpcv_snapshot_name_error" qtlid="273687">Prašome teisingai pavadinti savo atsarginę kopiją (pavadinimas turi būti galiojantis).</translation>
+   <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Prašome pasirinkti trumpesnį pavadinimą savo atsarginei kopijai.</translation>
+   <translation id="cpcv_snapshot_creation_info" qtlid="263311">Vykdoma atsarginė kopija...</translation>
+   <translation id="cpcv_snapshot_creation_error" qtlid="273713">Atsiprašome, įvyko klaida atliekant atsarginį virtualaus disko kopijavimą.</translation>
+   <translation id="cpcv_snapshot_error" qtlid="273726">Įvyko klaida atkuriant atsarginės kopijos duomenis, prašome mėginti dar kartą vėliau.</translation>
+   <translation id="cpcv_snapshot_attach_warning" qtlid="273739">Jūsų diskas šiuo metu yra susietas su virtualia mašina. Norėdami užtikrinti jūsų duomenų vientisumą, prieš atliekant atsarginį kopijavimą, patariame atjungti šį diską.</translation>
+</translations>

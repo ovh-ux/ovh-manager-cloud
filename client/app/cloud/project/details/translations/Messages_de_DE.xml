@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Weiterleitung...</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">Ihr Cloud Projekt ist geschlossen. Falls Sie mehr Informationen benötigen, kontaktieren Sie bitte unseren <a href="#/support">Support</a>. </translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">Sie werden automatisch weitergeleitet, sobald das Projekt erstellt wurde.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Bitte führen Sie die Zahlung für Ihren ursprünglichen Bestellschein durch.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Die Erstellung des Projekts abbrechen</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Bitte führen Sie die Zahlung für Ihren <a href="{{url}}" target="_blank">ursprünglichen Bestellschein</a> durch. </translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Sollte diese Seite einige Minuten nach der Zahlung noch angezeigt werden, kontaktieren Sie bitte unseren <a href="#/support">Support</a>. </translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Projekt wird gelöscht...</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">Sie werden automatisch weitergeleitet, sobald das Projekt gelöscht wurde.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">Ihr Projekt ist bereit!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">Die Erstellung Ihres Projekts wurde abgebrochen.</translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Ihr Projekt ist abgelaufen.</translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">Ihr Projekt ist bereits erstellt.</translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Beim Abbruch ist ein Fehler aufgetreten.</translation>
+</translations>

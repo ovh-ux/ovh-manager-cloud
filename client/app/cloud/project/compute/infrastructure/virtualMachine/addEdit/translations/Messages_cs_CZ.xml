@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_addedit_add_title" qtlid="19315">Přidat server</translation>
+   <translation id="cpcivm_addedit_edit_title" qtlid="247976">Aktualizace serveru</translation>
+   <translation id="cpcivm_addedit_server_name" qtlid="242977">Název serveru</translation>
+   <translation id="cpcivm_addedit_back" qtlid="4070">Pokračovat</translation>
+   <translation id="cpcivm_addedit_price" qtlid="83913">Cena</translation>
+
+   <translation id="cpcivm_addedit_name_add_error_required_name" qtlid="247989">Svůj server musíte pojmenovat.</translation>
+   <translation id="cpcivm_addedit_name_add_error_max_char" qtlid="248002">Název Vašeho serveru nesmí přesáhnout 255 znaků.</translation>
+   <translation id="cpcivm_addedit_name_add_error_pattern_name" qtlid="248015">Zadali jste neplatné znaky.</translation>
+
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd" qtlid="248028">VPS SSD</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu" qtlid="290342">Instance HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_hg" qtlid="290342">Instance HA - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram" qtlid="296024">Instance HA - RAM</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram" qtlid="296037">Instance SSD - RAM</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu" qtlid="290381">Instance SSD - CPU</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_eg" qtlid="296994">Instance SSD - EG</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ceph_eg" qtlid="297007">Instance HA - EG</translation>
+
+   <translation id="cpci_vm_flavor_category_b2-7" qtlid="376973">B2-7</translation>
+   <translation id="cpci_vm_flavor_category_b2-7-flex" qtlid="376986">B2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-15" qtlid="376999">B2-15</translation>
+   <translation id="cpci_vm_flavor_category_b2-15-flex" qtlid="377012">B2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-30" qtlid="377025">B2-30</translation>
+   <translation id="cpci_vm_flavor_category_b2-30-flex" qtlid="377038">B2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-60" qtlid="377051">B2-60</translation>
+   <translation id="cpci_vm_flavor_category_b2-60-flex" qtlid="377064">B2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_b2-120" qtlid="377077">B2-120</translation>
+   <translation id="cpci_vm_flavor_category_b2-120-flex" qtlid="377090">B2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_c2-7" qtlid="377103">C2-7</translation>
+   <translation id="cpci_vm_flavor_category_c2-7-flex" qtlid="377116">C2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-15" qtlid="377129">C2-15</translation>
+   <translation id="cpci_vm_flavor_category_c2-15-flex" qtlid="377142">C2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-30" qtlid="377155">C2-30</translation>
+   <translation id="cpci_vm_flavor_category_c2-30-flex" qtlid="377168">C2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-60" qtlid="377181">C2-60</translation>
+   <translation id="cpci_vm_flavor_category_c2-60-flex" qtlid="377194">C2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_c2-120" qtlid="377207">C2-120</translation>
+   <translation id="cpci_vm_flavor_category_c2-120-flex" qtlid="377220">C2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_gpu-60" qtlid="377233">GPU-60</translation>
+   <translation id="cpci_vm_flavor_category_gpu-60-flex" qtlid="377246">GPU-60 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_r2-15" qtlid="377259">R2-15</translation>
+   <translation id="cpci_vm_flavor_category_r2-15-flex" qtlid="377272">R2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-30" qtlid="377285">R2-30</translation>
+   <translation id="cpci_vm_flavor_category_r2-30-flex" qtlid="377298">R2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-60" qtlid="377311">R2-60</translation>
+   <translation id="cpci_vm_flavor_category_r2-60-flex" qtlid="377324">R2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-120" qtlid="377337">R2-120</translation>
+   <translation id="cpci_vm_flavor_category_r2-120-flex" qtlid="377350">R2-120 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_r2-240" qtlid="377363">R2-240</translation>
+   <translation id="cpci_vm_flavor_category_r2-240-flex" qtlid="377376">R2-240 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
+   <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
+   <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
+
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instances GPU<br/>Grafický procesor s vysokým výkonem</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Místní SSD RAID storage, sdílené CPU/RAM/šířka pásma.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikovaný pevný disk, sdílené CPU/RAM/šířka pásma.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Vysoká dostupnost úložiště, sdílené CPU/RAM/šířka pásma.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_cpu_info" qtlid="290394">Garantované zdroje, storage HA, zvýšená frekvence/jádro.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Garantované zdroje, storage HA, optimalizovaný poměr RAM/cena.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Garantované zdroje, low latency SSD storage, optimalizovaný poměr RAM/cena.</translation>
+   <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Garantované zdroje, low latency SSD storage, optimalizovaný poměr RAM/cena.</translation>
+   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">Pro tuto řadu zde nejsou žádné služby.</translation>
+   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Není k dispozici v rámci daného regionu</translation>
+   <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Načítání dostupných služeb.</translation>
+   <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">V průběhu operace bude server restartován, takže dojde k výpadku v řádu sekund.</translation>
+   <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Chyba, nejsme schopní nalézt žádné služby.</translation>
+   <translation id="cpcivm_addedit_flavor_price_error" qtlid="248145">Chyba, nejsme schopní získat ceny.</translation>
+   <translation id="cpcivm_addedit_flavor_refresh" qtlid="248158">Aktualizovat seznam modelů</translation>
+   <translation id="cpcivm_addedit_flavor_choose" qtlid="248171">Volba modelu</translation>
+   <translation id="cpcivm_addedit_flavor_deprecated" qtlid="251499">Tento produkt je zastaralý</translation>
+   <translation id="cpcivm_addedit_flavor_quota_vcpus" qtlid="251512">Limit vCPU</translation>
+   <translation id="cpcivm_addedit_flavor_quota_ram" qtlid="251525">Limit RAM</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NO_FLEX" qtlid="327003">Pro tento model nelze zvolit proměnnou velikost.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_WRONG_DISK_TYPE" qtlid="327016">Musíte migrovat na model se stejným typem disku.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_NOT_ENOUGH_SPACE" qtlid="251538">Musíte migrovat na model se stejným, nebo větším diskovým prostorem.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_VCPUS" qtlid="251551">Vaše limity projektu Vám nedovolí přidat server s takovýmto množstvím CPU.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_RAM" qtlid="251564">Vaše limity projektu Vám nedovolí přidat server s takovýmto množstvím paměti RAM.</translation>
+   <translation id="cpcivm_addedit_flavor_disabled_QUOTA_INSTANCE" qtlid="301851">Dosáhli jste maximálního počtu strojů pro tento region.</translation>
+   <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">Pokud změníte typ instance, musíte změnit velikost diskového prostoru.</translation>
+   <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Jak?</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Pro více RAM přejděte na nabídku {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Pro více CPU přejděte na nabídku {{offer}}.</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Pro více zdrojů přejděte na nabídku {{offer}}.</translation>
+
+   <translation id="cpcivm_addedit_flavor_soldout_title" qtlid="91957">Nedostupný</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_info" qtlid="281264">Instance tohoto typu je obětí vlastního úspěchu. Momentálně vyprodáno.</translation>
+   <translation id="cpcivm_addedit_flavor_soldout_choose_another" qtlid="281277">Vyberte si jiný typ instance</translation>
+
+   <translation id="cpcivm_addedit_image_unknown" qtlid="248184">Neznámá distribuce</translation>
+   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Distribuce Unix</translation>
+   <translation id="cpcivm_addedit_image_windows" qtlid="248223">Windows distribuce</translation>
+   <translation id="cpcivm_addedit_image_template" qtlid="248236">Předinstalované prostředí</translation>
+   <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">Mé zálohy (snapshoty)</translation>
+   <translation id="cpcivm_addedit_image_snapshots_empty" qtlid="248262">Žádné dostupné snapshoty</translation>
+   <translation id="cpcivm_addedit_image_snapshot_error" qtlid="248275">Chyba, nejsme schopni nalézt Vaše snapshoty.</translation>
+   <translation id="cpcivm_addedit_image_windows_change" qtlid="250667">Když si vytváříte server, můžete si zvolit mezi Linux, Windows (licence v ceně) či nějakým existujícím snapshotem. Při reinstalaci musíte zvolit snapshot či distribuci stejného typu.</translation>
+   <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Na zvolené řadě není dostatek diskového prostoru.</translation>
+   <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Tento image je zastaralý.</translation>
+   <translation id="cpcivm_addedit_image_windows_incompatibility" qtlid="364654">Windows není k dispozici pro VPS.</translation>
+   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Důležité upozornění: společnost OVH zajišťuje pouze instalaci aplikace. Správa a údržba aplikace je výhradní záležitostí klienta.</translation>
+
+   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Předinstalované aplikace</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} bez DPH/hod. nebo {{monthly}} bez DPH/měs.</translation>
+   <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/hod.</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/měsíc</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} bez DPH/hod.)</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} bez DPH/měs.)</translation>
+   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} bez DPH/h. nebo + {{monthly}} bez DPH/měs.</translation>
+   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Zobrazit všechny distribuce</translation>
+   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Doporučeno s GPU</translation>
+   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Pro tento model není doporučována žádná specifická distribuce</translation>
+
+   <translation id="cpcivm_addedit_image_empty" qtlid="248340">Žádné dostupné image.</translation>
+   <translation id="cpcivm_addedit_image_loading" qtlid="248353">Načítání dostupných image.</translation>
+   <translation id="cpcivm_addedit_image_error" qtlid="248366">Chyba, nejsme schopní nalézt image.</translation>
+   <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Aktualizovat seznam image</translation>
+   <translation id="cpcivm_addedit_image_choose" qtlid="248392">Zvolit mé image</translation>
+
+   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Nemůžete vymazat zálohu, jestliže byla nainstalována alespoň na jednom serveru.</translation>
+
+   <translation id="cpcivm_addedit_region_loading" qtlid="248405">Načítání dostupných zón.</translation>
+   <translation id="cpcivm_addedit_region_error" qtlid="248418">Chyba, nejsme schopní nalézt Vaši oblast.</translation>
+   <translation id="cpcivm_addedit_region_refresh" qtlid="248431">Aktualizace seznamu oblastí.</translation>
+   <translation id="cpcivm_addedit_region_choose" qtlid="248444">Volba mého umístění</translation>
+
+   <translation id="cpcivm_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+   <translation id="cpcivm_addedit_region_zone_dedicated_new" qtlid="248470">Nová dedikovaná hardwarová zóna</translation>
+
+   <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Berte prosím na vědomí, že v současnosti zvolená záloha může být použita pouze v současném umístění. Jestliže se změní umístění, nebudete ji moci použít.</translation>
+
+   <translation id="cpcivm_addedit_table_type" qtlid="2642">Typ</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Cena bez DPH</translation>
+   <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPU</translation>
+   <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disky</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instance VPS-SSD: <br/>public cloud za nejlepší cenu</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD využívají lokální SSD RAID a jejich výkon může v čase kolísat</translation>
+   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instance: <br/>Sdílené zdroje</translation>
+   <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Ideální pro Vaše vývojářské či testovací prostředí. Jejich výkon může v průběhu času nepatrně kolísat.</translation>
+   <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Garantovaný výkon<br/>a úložiště s vysokou dostupností</translation>
+   <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Tyto virtuální servery jsou založeny na disku CEPH a jejich data jsou trojnásobně replikována. Zdroje (CPU, RAM, síť) jsou garantované</translation>
+   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">Instance EG, SP a HG: <br/>garance konzistentního výkonu</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_old" qtlid="327042">Zdroje (CPU, RAM, Réseau) jsou garantované. Každý model je vybaven úložištěm CEPH (třikrát replikovaným) nebo lokálním SSD.</translation>
+   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">Instance CPU, RAM a General Usage<br/>garance konzistentního výkonu</translation>
+   <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">Zdroje (CPU, RAM, Réseau) jsou garantované. Každý model je vybaven úložištěm CEPH (třikrát replikovaným) nebo lokálním SSD.</translation>
+   <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Garantovaný výkon <br/>a lokální SSD (bez RAID)</translation>
+   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Tyto virtuální servery používají lokální SSD bez redundance, jež nabízí mimořádně nízkou latenci. Zdroje (CPU, RAM, síť) jsou garantované</translation>
+   <translation id="cpcivm_addedit_table_model" qtlid="26143">Model</translation>
+   <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores <span class="text-nowrap"> x {{ frequency }} GHz</span></translation>
+   <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frekv. }} GHz</translation>
+   <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Vyberte dle počtu vCores</translation>
+   <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Vyberte dle RAM</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
+   <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} RAM</translation>
+   <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Povolení proměnné velikosti</translation>
+   <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Zaškrtnutí této volby připraví 50 GB úložiště, které nabízí rychlejší snapshoty a lze jej později downgradovat.</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha_with_size" qtlid="327094">Blok HA<br/>{{ size }}<br/>Replikace 3x</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd_with_size" qtlid="327107">Místní SSD<br/>{{ size }}<br/>bez RAID</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ha" qtlid="327120">{{ size }} HA</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd_or" qtlid="327133">(nebo {{ size }} SSD)</translation>
+   <translation id="cpcivm_addedit_table_disk_short_ssd" qtlid="327146">{{ size }} SSD</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ha" qtlid="296466">{{ size }} HA Block Storage</translation>
+   <translation id="cpcivm_addedit_table_disk_details_ssd" qtlid="296479">{{ size }} Local SSD</translation>
+   <translation id="cpcivm_addedit_table_network" qtlid="25591">Síť</translation>
+   <translation id="cpcivm_addedit_table_network_details_mega" qtlid="296492">{{ size }} Mb/s bandwidth</translation>
+   <translation id="cpcivm_addedit_table_network_details_giga" qtlid="296505">{{ size }} Gb/s bandwidth</translation>
+   <translation id="cpcivm_addedit_table_guaranteed" qtlid="296518">Garantované zdroje</translation>
+
+   <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Aktualizovat můj SSH klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Načíst Vaše SSH klíče.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Příjmení</translation>
+   <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Klíč</translation>
+   <translation id="cpcivm_addedit_script_key" qtlid="272131">Vložte post-instalační skript</translation>
+   <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Zvolit můj SSH klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Přidat klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_add_info" qtlid="248574">Jak?</translation>
+   <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Vymazat</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Přidat tento klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Váš klíč je nyní dostupný.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Chyba, není možné přidat tento klíč.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Pojmenujte ho</translation>
+   <translation id="cpcivm_addedit_sshkey_add_name_field" qtlid="248639">Zadejte Váš klíč</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_error_required_name" qtlid="248652">Je potřeba pojmenovat Váš klíč.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_max_char" qtlid="248665">Název nesmí přesáhnout 25 znaků.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_pattern_name" qtlid="248678">Název klíče může obsahovat pouze číslice, malá a velká písmena, pomlčku ( - ), podtržítko ( _ ) a mezeru.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_error_required_key" qtlid="248691">Zapomněli jste zadat název Vašeho klíče.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Přidat klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button_cancel" qtlid="248704">Zrušit přidávání tohoto klíče.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Váš klíč je nyní dostupný.</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Tento název je již použit pro jiný klíč SSH.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Vymazat klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Zrušit</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Vymazat tento klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Tento klíč již není dostupný.</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_error" qtlid="248769">Chyba, nejsme schopní vymazat tento klíč.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_empty" qtlid="248782">Zatím jste nepřidal SSH klíč.</translation>
+   <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Pro nápravu klikněte na "Přidat klíč".</translation>
+   <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Chyba, není možné získat seznam SSH klíčů.</translation>
+
+   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Nemáte žádný SSH klíč.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">Společnost OVH používá pro zajištění šifrované datové komunikace mezi servery bezpečnostní protokol SSH.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů.<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Příručka pro vytváření SSH klíčů<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Rozuměl jsem!</translation>
+   <translation id="cpcivm_addedit_sshkey_help_windows_tab" qtlid="102237">Windows</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_tab" qtlid="248834">Linux a Mac OS X</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_beforeAll" qtlid="248847">Před tím, nežli vygenerujete Vaše SSH klíče se ujistěte, že již nějaký nemáte aktivní.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_openbash" qtlid="248860">Otevřete terminál a zadejte</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_getGoodFile" qtlid="248873">Jestliže vidíte dva soubory {{rsapriv}} a {{rsapub}}, pak již máte SSH klíč a můžete tento krok přeskočit. Soubory se mohou také nazývat  {{dsapriv}} a {{dsapub}}, v závislosti na použitém šifrovacím algoritmu.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_generateKeypair" qtlid="248886">Pro vygenerování páru klíčů použijte následující příkaz:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_options" qtlid="248899">Budete dotázáni: kde chcete registrovat klíče (doporučena je implicitní hodnota) a jaký máte passphrase. Tento passphrase není povinný, ale je doporučený, protože přidává extra bezpečnostní vrstvu pro případ, že se někdo pokusí dostat na Váš počítač.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_startingFrom" qtlid="248912">Nyní máte dva klíče:</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_privateKey" qtlid="248925">{{dirrsapriv}} je privátní klíč</translation>
+   <translation id="cpcivm_addedit_sshkey_help_linuxmac_paragraph_publicKey" qtlid="248938">{{dirrsapub}} je veřejný klíč, který bude na vzdálených serverech</translation>
+
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_usePutty" qtlid="248951">Ve Windows, můžete generovat SSH klíč s aplikací PuTTYgen.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_generateKeypair" qtlid="296050">Stáhněte a nainstalujte. Klikněte na <code>Generovat</code> a pohybujte myší ve vyznačeném prostoru pro vygenerování náhodných dat, pomocí nichž se vytvoří náhodný klíč.</translation>
+   <translation id="cpcivm_addedit_sshkey_help_window_paragraph_saveKeypair" qtlid="248977">Jakmile bude vygenerovaný SSH klíč, zkopírujte veřejný klíč do souboru. Uložte privátní klíč do Vašeho počítače. Budete ho potřebovat pro připojení k Vašemu serveru.</translation>
+
+   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Po-instalační skript</translation>
+   <translation id="cpcivm_addedit_change_flavors_title" qtlid="248990">Změna typu serveru</translation>
+   <translation id="cpcivm_addedit_change_image_title" qtlid="249003">Změna OS</translation>
+   <translation id="cpcivm_addedit_change_script_title" qtlid="272144">Přidejte post-instalační skript</translation>
+   <translation id="cpcivm_addedit_change_region_title" qtlid="249016">Změna umístění</translation>
+   <translation id="cpcivm_addedit_change_sshkey_title" qtlid="249029">Zvolte SSH klíč</translation>
+
+   <translation id="cpcivm_addedit_advanced_options_title" qtlid="267796">Pokročilé možnosti</translation>
+   <translation id="cpcivm_addedit_advanced_options_description" qtlid="316112">Multi-creation, skripty, privátní sítě a afinita</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation" qtlid="272157">Hromadné vytvoření:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count" qtlid="272170">Počet instancí i vytvoření:</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_count_error" qtlid="272183">Zadejte prosím platný počet instancí.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos" qtlid="296063">Vaše <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">aktuální quota</a> umožňuje simultánní vytvoření až {{max}} instancí typu {{type}} pro region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_multiple_creation_infos_error" qtlid="296076">Vaše <a ui-sref="cloud-project.cloud-project-billing.cloud-project-billing-quota">aktuální quota</a> umožňuje vytvoření jediné instance typu {{type}} pro region {{region}}.</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_associate_label" qtlid="316125">Asociovat s privátní sítí</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_default_option" qtlid="30646">Ne</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_query_error" qtlid="316138">Nepodařilo se stáhnout seznam privátních sítí. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_subnet_query_error" qtlid="316151">Nepodařilo se stáhnout seznam podsítí. {{ message }}</translation>
+   <translation id="cpcivm_addedit_advanced_options_private_network_api_guide" qtlid="316164">Více informací o <a href="{{ url }}" target="_blank">privátních sítích</a>.</translation>
+   <translation id="cpcivm_addedit_advanced_options_public_network_query_error" qtlid="331670">Nepodařilo se získat seznam veřejných sítí. {{ message }}</translation>
+
+   <translation id="cpcivm_addedit_payement_hour" qtlid="249042">Hodinová spotřeba</translation>
+   <translation id="cpcivm_addedit_payement_hour_info" qtlid="249055">Účtováno na konci období</translation>
+   <translation id="cpcivm_addedit_payement_month" qtlid="233928">Fixní měsíční tarif</translation>
+   <translation id="cpcivm_addedit_payement_month_info" qtlid="249068">Jakmile bude Váš server spuštěn, bude Vám naúčtován počet zbývajících dní v aktuálním měsíci.</translation>
+   <translation id="cpcivm_addedit_payement_info" qtlid="251603">Pro tento server jste si zvolili měsíční platbu. Tato volba bude efektivní během několika sekund. Brzy od nás dostanete objednávku za dny, které Vám zbývají do konce aktuálního měsíce. Výpočet bude proveden přímou úměrností. </translation>
+   <translation id="cpcivm_addedit_payement_label" qtlid="272222">Ušetřete 50 % z ceny serveru přechodem na systém předplatného.</translation>
+
+   <translation id="cpcivm_addedit_run_now" qtlid="249094">Spustit nyní</translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Provést změny</translation>
+
+   <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Chyba, nebylo možné vytvořit instanci.</translation>
+   <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Chyba, nebylo možné aktualizovat informace této instance.</translation>
+   <translation id="cpcivm_edit_vm_resize_error" qtlid="249146">Chyba, nebylo možné navýšit kapacitu této instance.</translation>
+   <translation id="cpcivm_edit_vm_reinstall_error" qtlid="249159">Chyba, nebylo možné reinstalovat instanci.</translation>
+   <translation id="cpcivm_edit_vm_activeMonthlyBilling_error" qtlid="249172">Chyba, nebylo možné změnit platební model pro tento server na fixní měsíční platby.</translation>
+   <translation id="cpcivm_edit_vm_post_error_overquota" qtlid="250693">Vaše současné limity Vám zabraňují přidat tento typ serveru. Kontaktujte náš tým podpory pro zvýšení limitů.</translation>
+   <translation id="cpcivm_add_vm_login_info_linux" qtlid="296089">Po vytvoření stroje se připojte pomocí SSH a vložte příkaz:<br/><code qtlid="250888">ssh admin@{{ip}}</code></translation>
+   <translation id="cpcivm_add_vm_login_info_windows" qtlid="296102">Po vytvoření stroje se připojte pomocí vybraného RDP klienta, v Linuxu např.:<br/><code qtlid="250914">rdesktop {{ip}}</code></translation>
+
+   <translation id="cpcivm_add_ssh_key_out_region" qtlid="251616">Máte {{count}} SSH klíč mimo zvolený region ({{region}}).</translation>
+   <translation id="cpcivm_add_ssh_key_out_region_plural" qtlid="251629">Máte {{count}} SSH klíčů mimo zvolený region ({{region}}).</translation>
+
+   <translation id="cpcivm_addedit_quota_error" qtlid="255376">Chyba, nejsme schopni načíst Vaše dostupné limity.</translation>
+   <translation id="cpcivm_addedit_save_multiple_success" qtlid="272235">Vaše servery se připravují, k dispozici budou během několika okamžiků.</translation>
+   <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Během přípravy Vašich serverů došlo k chybě.</translation>
+   <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Počet instancí, které se chystáte vytvořit: {{nb}}</translation>
+
+</translations>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpds_title" qtlid="300967">Projet settings <strong>{{name}}</strong></translation>
+
+   <translation id="dtpds_title_unconfigured" qtlid="300980">Intital project configuration <strong>{{name}}</strong></translation>
+   <translation id="dtpds_title_creation" qtlid="300993">Project settings <strong>{{name}}</strong> (creating)</translation>
+
+   <translation id="dtpds_name" qtlid="3818">Name</translation>
+   <translation id="dtpds_region" qtlid="32434">State</translation>
+   <translation id="dtpds_choose_region" qtlid="301006">-- Choose a region --</translation>
+   <translation id="dtpds_region_required" qtlid="301019">Choose a region</translation>
+
+   <translation id="dtpds_init_loading_error" qtlid="301032">Unable to load project settings.</translation>
+   <translation id="dtpds_edit_project" qtlid="49754">Save</translation>
+   <translation id="dtpds_project_edit_successful" qtlid="301045">Project modified</translation>
+   <translation id="dtpds_project_edit_error" qtlid="301058">There was an error when trying to modify the project </translation>
+   <translation id="dtpds_project_created" qtlid="301071">The project is active and ready to use.</translation>
+
+   <translation id="dtpds_delete_project" qtlid="51979">Delete project</translation>
+   <translation id="dtpds_delete_project_action" qtlid="2414">Delete</translation>
+   <translation id="dtpds_delete_project_explication" qtlid="301084">Project deletion is permanent. All the data associated with this project will be deleted.</translation>
+   <translation id="dtpds_modal_delete_project_title" qtlid="282055">Deleting a project. </translation>
+   <translation id="dtpds_modal_delete_project_question" qtlid="301097">Are you sure that you want to delete the project <strong>{{name}}</strong> ?</translation>
+   <translation id="dtpds_project_deletion_successful" qtlid="301110">Project deleted </translation>
+
+   <translation id="dtpds_region_help" qtlid="301123">To start using your PaaS-TimeSeries project, please choose the region where you want to store the data. </translation>
+   <translation id="dtpds_import_ra1" qtlid="301136">Did you use PaaS-TS in beta on Runabove?</translation>
+   <translation id="dtpds_import_ra2" qtlid="301149">Import a Runabove project </translation>
+   <translation id="dtpds_import_ra_help" qtlid="301162">To import a Runabove project, please enter a <strong>write</strong> token here.</translation>
+   <translation id="dtpds_import_ra_back" qtlid="301175">Go back to the standard project configuration </translation>
+   <translation id="dtpds_import_ra_payg" qtlid="301188">Note: to import a beta project from Runabove, create a "Pay as you go" project.</translation>
+
+   <translation id="dtpds_ra_token_id" qtlid="301201">Token ID</translation>
+   <translation id="dtpds_ra_token_key" qtlid="301214">Token key </translation>
+
+</translations>

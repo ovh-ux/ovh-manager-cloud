@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_ip_ip_definition" qtlid="354782">Pode criar os seus controlos de acesso IP aqui.</translation>
+   <translation id="cda_ip_permission_definition" qtlid="354795">O seu cluster aceitará apenas o tráfego de rede em concordância com os acessos criados.</translation>
+
+   <translation id="cda_ip_add_button_text" qtlid="354808">Adicionar um controlo de acesso</translation>
+   <translation id="cda_ip_delete_button_text" qtlid="2414">Eliminar</translation>
+
+   <translation id="cda_ip_table_col_network" qtlid="25615">IP</translation>
+   <translation id="cda_ip_table_col_actions" qtlid="72809">Ações</translation>
+
+   <translation id="cda_ip_add_title" qtlid="354808">Adicionar um controlo de acesso</translation>
+   <translation id="cda_ip_add_ip_label" qtlid="354821">IP com máscara de sub-rede</translation>
+   <translation id="cda_ip_add_format" qtlid="354834">Formato: 192.168.1.0/24</translation>
+   <translation id="cda_ip_add_success" qtlid="354847">Controlo de acesso adicionado com sucesso.</translation>
+   <translation id="cda_ip_add_ip_required" qtlid="354860">O IP com uma máscara de sub-rede é obrigatório.</translation>
+
+   <translation id="cda_ip_delete_title" qtlid="354873">Eliminar um controlo de acesso</translation>
+   <translation id="cda_ip_delete_ip_label" qtlid="354821">IP com máscara de sub-rede</translation>
+   <translation id="cda_ip_delete_confirm" qtlid="354886">Têm a certeza de que deseja eliminar este controlo de acesso?</translation>
+   <translation id="cda_ip_delete_success" qtlid="354899">Controlo de acesso eliminado com sucesso.</translation>
+
+   <translation id="cda_ip_table_empty" qtlid="354912">Nenhum controlo de acesso.</translation>
+</translations>

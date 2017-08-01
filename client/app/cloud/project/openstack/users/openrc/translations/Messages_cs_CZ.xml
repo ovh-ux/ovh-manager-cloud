@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_openrc_title" qtlid="263780">Stažení souboru s konfigurací Openstack</translation>
+   <translation id="cpou_openrc_expl" qtlid="263793">Chystáte se stáhnout konfigurační soubor, který Vám umožní připojit se k rozhraní OpenStack.</translation>
+   <translation id="cpou_openrc_more" qtlid="44536">Zjistit více</translation>
+   <translation id="cpou_openrc_form_select_region" qtlid="263806">Výběr regionu, na který se použijí data ze souboru:</translation>
+   <translation id="cpou_openrc_form_select_region_placeholder" qtlid="263819">Výběr regionu</translation>
+   <translation id="cpou_openrc_getopenrc_success" qtlid="263832">Probíhá stahování souboru s konfigurací</translation>
+   <translation id="cpou_openrc_getopenrc_error" qtlid="263845">Konfigurační soubor nelze stáhnout</translation>
+</translations>

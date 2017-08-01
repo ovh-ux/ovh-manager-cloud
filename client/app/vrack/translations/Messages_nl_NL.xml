@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_introduction_title" qtlid="344584">Beheer uw vRack</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Beheer de privéverbinding van alle onderdelen van uw IT-infrastructuur overal ter wereld. <br/> De vRack technologie (virtual bay) verbindt, isoleert of verspreidt uw diensten in een of meerdere veilige privénetwerken.</translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">U kunt ook  <a href="{{ uri }}" target="_blank">de eigenaar wijzigen</a> als u wenst.</translation>
+   <translation id="vrack_guide_link_text" qtlid="344610">Meer informatie kunt u vinden in onze handleiding</translation>
+   <translation id="vrack_change_owner_link_text" qtlid="344623">Eigenaar wijzigen</translation>
+   <translation id="vrack_error" qtlid="323249">Uw vRack data kon niet worden geladen. </translation>
+   <translation id="vrack_add_error" qtlid="323262">Er is een fout opgetreden tijdens het toevoegen van een dienst aan uw vRack.</translation>
+   <translation id="vrack_remove_error" qtlid="323275">Er is een fout opgetreden tijdens het verwijderen van een dienst van uw vRack.</translation>
+   <translation id="vrack_your_services" qtlid="344636">Uw compatibele diensten</translation>
+   <translation id="vrack_your_vrack" qtlid="323288">Uw vRack</translation>
+   <translation id="vrack_help" qtlid="323301">Selecteer een of meerdere diensten om toe te voegen of te verwijderen van uw vRack:</translation>
+   <translation id="vrack_order_new_title" qtlid="323314">Creëer uw vRack</translation>
+   <translation id="vrack_cloud_warning" qtlid="325185">Waarschuwing, het is nog steeds niet mogelijk om Cloud-producten te laten communiceren met andere soorten producten. Dit is binnenkort wél mogelijk. Op dit moment is communicatie alleen mogelijk binnen hetzelfde project.</translation>
+   <translation id="vrack_cloud_name_max_length" qtlid="349281">De naam mag niet meer dan 100 tekens bevatten. </translation>
+   <translation id="vrack_cloud_name_pattern" qtlid="349294">De naam moet beginnen met een letter en kan geen spaties bevatten.</translation>
+   <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
+   <translation id="vrack_move_dialog_title" qtlid="353556">Verhuizen van een Private Cloud datacenter</translation>
+   <translation id="vrack_move_dialog_intro" qtlid="353569">U heeft een Private Cloud type datacenter geselecteerd. Deze dienst is niet zelfstandig en moet worden overgedragen naar een andere vRack. </translation>
+   <translation id="vrack_move_dialog_warning_notice" qtlid="353582">Deze procedure zal een dienstuitval van ongeveer 5 minuten teweegbrengen. </translation>
+   <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">vRack bestemming:</translation>
+   <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Selecteer een vRack</translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">De datacenter-overdracht is niet gelukt. </translation>
+</translations>

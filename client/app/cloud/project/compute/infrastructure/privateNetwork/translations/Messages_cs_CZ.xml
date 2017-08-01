@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_private_network_list_header_title" qtlid="331657">Privátní sítě</translation>
+   <translation id="cpci_private_network_list_header_disabled_notice" qtlid="24967">Neaktivní</translation>
+   <translation id="cpci_private_network_list_vrack_unnamed" qtlid="69413">Beze jména</translation>
+   <translation id="cpci_private_network_list_untagged_vlan" qtlid="348399">Žádná VLAN</translation>
+   <translation id="cpci_private_network_activateVrack_description" qtlid="372128">Po připojení projektu ke službě vRack budete své dedikované servery a instance Public/Private Cloud  moci propojit napříč všemi datacentry OVH. Můžete vytvořit více než 4 000 sítí vLAN!</translation>
+   <translation id="cpci_private_network_activateVrack_activate" qtlid="348425">Aktivovat vRack</translation>
+   <translation id="cpci_private_network_creating" qtlid="363906">Privátní síť se vytváří</translation>
+   <translation id="cpci_private_network_creating_description" qtlid="261374">Tato operace může zabrat několik minut</translation>
+   <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Při získávání informací o privátních sítích došlo k neočekávané chybě.</translation>
+</translations>

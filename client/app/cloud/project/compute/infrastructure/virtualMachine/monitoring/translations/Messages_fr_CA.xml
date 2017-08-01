@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_monitoring_loading" qtlid="276025">Chargement des graphiques.</translation>
+   <translation id="cpcivm_monitoring_title" qtlid="31666">Surveillance</translation>
+   <translation id="cpcivm_monitoring_cpu_title" qtlid="25555">Processeur</translation>
+   <translation id="cpcivm_monitoring_ram_title" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_monitoring_hd_title" qtlid="25567">Disque</translation>
+   <translation id="cpcivm_monitoring_bandwidth_title" qtlid="7510">Traffic</translation>
+   <translation id="cpcivm_monitoring_comingSoon" qtlid="250043">Bientôt disponible</translation>
+   <translation id="cpcivm_monitoring_unavailable" qtlid="91957">Indisponible</translation>
+   <translation id="cpcivm_monitoring_netLimit" qtlid="276038">Bande passante {{ netMax }} Mbps</translation>
+   <translation id="cpcivm_monitoring_more_cpu" qtlid="276051">Pour plus de CPU,</translation>
+   <translation id="cpcivm_monitoring_more_ram" qtlid="276064">Pour plus de RAM,</translation>
+   <translation id="cpcivm_monitoring_changeOffer" qtlid="276077">changer d'offre</translation>
+   <translation id="cpcivm_monitoring_upload" qtlid="148747">Téléversement</translation>
+   <translation id="cpcivm_monitoring_download" qtlid="148760">Download</translation>
+   <translation id="cpcivm_monitoring_net_limit" qtlid="276090">limite {{ trafficMax }} Mbps</translation>
+   <translation id="cpcivm_monitoring_period_lastday" qtlid="276103">Dernières 24h</translation>
+   <translation id="cpcivm_monitoring_period_lastweek" qtlid="37491">Dernière semaine</translation>
+   <translation id="cpcivm_monitoring_period_lastmonth" qtlid="37503">Dernier mois</translation>
+   <translation id="cpcivm_monitoring_period_lastyear" qtlid="276116">Dernière année</translation>
+   <translation id="cpcivm_monitoring_error" qtlid="276129">Données momentanément indisponibles.</translation>
+</translations>

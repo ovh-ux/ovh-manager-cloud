@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_volume_addedit_add_title" qtlid="252659">Een hard disk toevoegen</translation>
+   <translation id="cpci_volume_addedit_edit_title" qtlid="252672">De hard disk wijzigen</translation>
+   <translation id="cpci_volume_addedit_restore_title" qtlid="273635">Recreëer de hard disk</translation>
+   <translation id="cpci_volume_addedit_disk_name" qtlid="252685">Naam van de hard disk</translation>
+
+   <translation id="cpci_volume_addedit_name_add_error_required_name" qtlid="252698">U moet een naam geven aan uw hard disk.</translation>
+   <translation id="cpci_volume_addedit_name_add_error_max_char" qtlid="252711">De naam van uw hard disk mag niet meer dan 255 tekens bevatten.</translation>
+
+   <translation id="cpci_volume_addedit_type_high-speed" qtlid="252724">High performance</translation>
+   <translation id="cpci_volume_addedit_type_classic" qtlid="252737">Classic</translation>
+   <translation id="cpci_volume_addedit_type_choose" qtlid="252750">Het type kiezen</translation>
+
+   <translation id="cpci_volume_addedit_size_choose" qtlid="252763">De capaciteit kiezen</translation>
+   <translation id="cpci_volume_addedit_size" qtlid="252776">Capaciteit van de disk:</translation>
+   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">De maximale grootte is afhankelijk van <a ui-sref="{{ state }}">uw beschikbare quota</a>.</translation>
+
+   <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Beschikbare zones downloaden</translation>
+   <translation id="cpci_volume_addedit_region_choose" qtlid="252789">De lokalisatie kiezen</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Wij kunnen de regio's niet vinden!</translation>
+   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Het bijwerken van de lijst met regio's</translation>
+   <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+
+   <translation id="cpci_volume_addedit_build" qtlid="37923">Toevoegen</translation>
+   <translation id="cpci_volume_addedit_change_now" qtlid="249107">De wijzigingen toepassen</translation>
+   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Toepassen</translation>
+
+   <translation id="cpci_volume_default_name" qtlid="252685">Naam van de hard disk</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Wij kunnen de images niet vinden!</translation>
+
+   <translation id="cpci_volume_addedit_post_error" qtlid="252802">We kunnen de harde disk niet toevoegen.</translation>
+   <translation id="cpci_volume_addedit_put_error" qtlid="252815">We kunnen deze hard disk niet updaten.</translation>
+
+   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">we kunnen uw beschikbare quota niet uploaden.</translation>
+   <translation id="cpci_volume_addedit_over_quota" qtlid="255391">Onvoldoende quota.</translation>
+   <translation id="cpci_volume_addedit_over_quota2" qtlid="255404">Mijn quota verhogen.</translation>
+
+   <translation id="cpci_volume_snapshotting_end" qtlid="273648">Opgeslagen volume {{ volume }}.</translation>
+</translations>

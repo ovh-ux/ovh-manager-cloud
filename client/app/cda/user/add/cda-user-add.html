@@ -1,0 +1,47 @@
+<section class="cda-modal">
+    <header class="modal-header">
+        <h4 class="h3" data-translate="cda_user_add_title"></h4>
+    </header>
+    <div class="modal-body">
+        <form id="addUserForm" name="addUserForm" class="ovh-form-flat clearfix cda-form">
+            <div>
+                <div class="input-group">
+                    <label for="userName" data-translate="cda_user_add_username_label" class="cda-input-label"></label>
+                    <input type="text" class="form-control error-animate-shake-light"
+                        id="userName" name="userName"
+                        data-ng-model="CdaUserAddCtrl.model.userName"
+                        data-ng-maxLength="CdaUserAddCtrl.options.userName.maxLength"
+                        data-ng-pattern="CdaUserAddCtrl.options.userName.pattern"
+                        required />
+                </div>
+                <div class="text-danger" data-ng-messages="addUserForm.userName.$error" data-ng-if="addUserForm.userName.$dirty">
+                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
+                        <span data-ng-message="required" data-translate="cda_user_add_username_required"></span>
+                        <span data-ng-message="maxlength" data-translate="cda_user_add_username_maxlength" data-translate-values="{ maxlength: CdaUserAddCtrl.options.userName.maxLength }"></span>
+                        <span data-ng-message="pattern" data-translate="cda_user_add_username_pattern"></span>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button"
+                class="btn btn-primary pull-right"
+                title="{{ ::'common_add' | translate }}"
+                data-ng-click="addUserForm.$valid && CdaUserAddCtrl.createUser()"
+                data-ng-disabled="CdaUserAddCtrl.saving || (addUserForm.userName.$error && !addUserForm.userName.$valid)"
+                form="addUserForm">
+            <span data-translate="common_add"></span>
+            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaUserAddCtrl.saving"></spinner>
+        </button>
+        <button type="reset"
+                class="btn btn-default pull-right pull-right right-space-m16"
+                title="{{ ::'common_cancel' | translate }}"
+                data-ng-click="CdaUserAddCtrl.closeModal()"
+                data-ng-disabled="CdaUserAddCtrl.saving"
+                form="addUserForm">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+</section>

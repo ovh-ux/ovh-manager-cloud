@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="infra_overview_tips_title" qtlid="284620">Jūs valdote pakankamai daug serverių ir IP adresų, todėl valdymo sąsaja buvo apribota našumo užtikrinimo tikslais.</translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Jūsų patogumui siūlome web valdymo sąsają</translation>
+   <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
+   <translation id="infra_overview_tips_platform3" qtlid="284659">taip pat API OpenStack. IP Failover adresus galima valdyti ir kliento paskyros skiltyje Dedicated.</translation>
+   <translation id="infra_overview_tips_guides1" qtlid="284672">Šis įrankis jums dar nežinomas? Atraskite</translation>
+   <translation id="infra_overview_tips_guides2" qtlid="284685">mūsų gidai prieinami čia</translation>
+   <translation id="infra_overview_tips_redirect_complete_view" qtlid="284698">Grįžti į pradinę sąsają</translation>
+   <translation id="infra_overview_tips_never_again" qtlid="286825">Nebeskelbti šio pranešimo</translation>
+   <translation id="infra_overview_tips_never_again_error" qtlid="286838">Įvyko klaida atliekant jūsų nustatymų atsarginį kopijavimą.</translation>
+</translations>

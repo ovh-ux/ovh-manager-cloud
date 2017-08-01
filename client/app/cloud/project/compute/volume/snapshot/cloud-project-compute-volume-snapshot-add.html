@@ -1,0 +1,69 @@
+
+<form id="volumeSnapshotCreationForm" name="volumeSnapshotCreationForm" class="ovh-form-flat"
+      data-ng-submit="CloudProjectComputeVolumeSnapshotAddCtrl.confirmSnapshot()" novalidate>
+
+    <div class="modal-header">
+        <h3 class="modal-title" >
+            <i class="fa fa-floppy-o right-space-m8"></i>
+            {{:: 'cpcv_snapshot_add_title' | translate }}
+        </h3>
+    </div>
+
+    <div class="modal-body">
+
+        <spinner class="col-xs-12 text-center" name="bubbles-fff-ffcd1a-16" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init"></spinner>
+
+        <div class="bottom-space-m16" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.volume.attachedTo[0] !== 'unlinked'">
+            <span class="text-warning">
+                <i class="fa fa-warning right-space-p4"></i>
+                {{:: 'cpcv_snapshot_attach_warning' | translate }}
+            </span>
+        </div>
+
+        <div data-ng-if="!CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init && !CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.priceText">
+            <span class="red">
+                {{:: 'cpcv_snapshot_error' | translate }}
+            </span>
+        </div>
+
+        <div data-ng-if="!CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init && CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.priceText">
+            <p class="bold" data-translate="cpcv_snapshot_choose_name"></p>
+
+            <div flat-input-container class="bottom-space-m12">
+                <label for="volumeSnapshotName" data-translate="cpcv_snapshot_name"></label>
+                <input type="text" class="form-control error-animate-shake-light" id="volumeSnapshotName" name="volumeSnapshotName"
+                    placeholder="{{:: 'cpcv_snapshot_name' | translate }}"
+                    data-ng-model="CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.name"
+                    autoselect
+                    autofocus
+                    required
+                    ng-maxlength="255">
+            </div>
+            <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="volumeSnapshotCreationForm.volumeSnapshotName.$error" data-ng-if="volumeSnapshotCreationForm.volumeSnapshotName.$dirty">
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpcv_snapshot_name_error"></span></p>
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span data-translate="cpcv_snapshot_name_length_error"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit"
+            class="btn btn-primary pull-right"
+            data-ng-disabled="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init || CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot || snapshotCreationForm.$invalid || !CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.name">
+            <i class="fa fa-shopping-cart right-space-m8"></i>
+            <span data-translate="cpcv_snapshot_confirm"></span>
+            <small class="opacity6"
+                data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.priceText"
+                translate="cpcv_snapshot_monthlyPrice"
+                translate-values="{ size: CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.volume.size * 1000000000 || 0, price: CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.priceText || '?' }"></small>
+            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot"></spinner>
+        </button>
+        <button type="reset" class="btn btn-default pull-left"
+            data-ng-click="CloudProjectComputeVolumeSnapshotAddCtrl.cancel()">
+            <i class="glyphicon glyphicon-remove"></i>
+            <span data-translate="common_cancel"></span>
+        </button>
+    </div>
+
+</form>
+

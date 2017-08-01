@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Vebruikswaarschuwing</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">E-mail</translation>
+   <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Voor het verzenden van de waarschuwing is een e-mailadres nodig. </translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">Het e-mailadres is niet geldig.</translation>
+
+   <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Limiet</translation>
+   <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">Maximaal resource verbruik is vereist.</translation>
+
+   <translation id="cpbea_estimate_alert_add_cancel_btn" qtlid="37863">Annuleren</translation>
+   <translation id="cpbea_estimate_alert_add_submit_btn" qtlid="8506">Opslaan</translation>
+
+   <translation id="cpbea_estimate_alert_error" qtlid="270774">Oeps, er is een fout opgetreden tijdens het opslaan van uw waarschuwing. &#13;
+</translation>
+   <translation id="cpbea_estimate_alert_success" qtlid="270761">Verbruikswaarschuwing opgeslagen</translation>
+</translations>

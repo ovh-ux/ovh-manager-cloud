@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="dtpds_title" qtlid="300967">Parámetros del proyecto <strong>{{name}}</strong></translation>
+
+   <translation id="dtpds_title_unconfigured" qtlid="300980">Configuración inicial del proyecto <strong>{{name}}</strong></translation>
+   <translation id="dtpds_title_creation" qtlid="300993">Parámetros del proyecto <strong>{{name}}</strong> (création en cours)</translation>
+
+   <translation id="dtpds_name" qtlid="3818">Apellidos</translation>
+   <translation id="dtpds_region" qtlid="32434">Región</translation>
+   <translation id="dtpds_choose_region" qtlid="301006">-- Seleccione una región --</translation>
+   <translation id="dtpds_region_required" qtlid="301019">Seleccione una región</translation>
+
+   <translation id="dtpds_init_loading_error" qtlid="301032">No se han podido cargar los parámetros del proyecto.</translation>
+   <translation id="dtpds_edit_project" qtlid="49754">Guardar</translation>
+   <translation id="dtpds_project_edit_successful" qtlid="301045">Se ha modificado el proyecto.</translation>
+   <translation id="dtpds_project_edit_error" qtlid="301058">Se ha producido un error al modificar el proyecto.</translation>
+   <translation id="dtpds_project_created" qtlid="301071">El proyecto está activado y listo para usar.</translation>
+
+   <translation id="dtpds_delete_project" qtlid="51979">Eliminar el proyecto</translation>
+   <translation id="dtpds_delete_project_action" qtlid="2414">Eliminar</translation>
+   <translation id="dtpds_delete_project_explication" qtlid="301084">La eliminación de un proyecto es irreversible. Todos los datos asociados al proyecto se eliminarán.</translation>
+   <translation id="dtpds_modal_delete_project_title" qtlid="282055">Eliminar un proyecto</translation>
+   <translation id="dtpds_modal_delete_project_question" qtlid="301097">¿Seguro que quiere eliminar el proyecto <strong>{{name}}</strong>?</translation>
+   <translation id="dtpds_project_deletion_successful" qtlid="301110">Se ha eliminado el proyecto.</translation>
+
+   <translation id="dtpds_region_help" qtlid="301123">Para empezar a utilizar su proyecto DBaaS Time Series, seleccione la región en la que quiere que se almacenen los datos.</translation>
+   <translation id="dtpds_import_ra1" qtlid="301136">¿Ha utilizado el DBaaS Time Series en beta en RunAbove?</translation>
+   <translation id="dtpds_import_ra2" qtlid="301149">Importar un proyecto RunAbove</translation>
+   <translation id="dtpds_import_ra_help" qtlid="301162">Para importar un proyecto RunAbove, introduzca abajo un token <strong>de escritura</strong>.</translation>
+   <translation id="dtpds_import_ra_back" qtlid="301175">Volver a la configuración de un proyecto estándar</translation>
+   <translation id="dtpds_import_ra_payg" qtlid="301188">Nota: Para importar un proyecto de la versión beta de RunAbove, cree un proyecto de tipo «Pago por consumo».</translation>
+
+   <translation id="dtpds_ra_token_id" qtlid="301201">ID del token</translation>
+   <translation id="dtpds_ra_token_key" qtlid="301214">Clave del token</translation>
+
+</translations>

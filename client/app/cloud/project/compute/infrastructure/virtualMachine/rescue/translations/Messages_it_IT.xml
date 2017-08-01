@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Riavvia in modalità rescue</translation>
+   <translation id="cpc_rescue_mode_valid" qtlid="25951">Avvia</translation>
+   <translation id="cpc_rescue_mode_cancel" qtlid="37863">Annulla</translation>
+   <translation id="cpc_rescue_mode_expl" qtlid="269201">Stai per riavviare il tuo server in modalità Rescue</translation>
+   <translation id="cpc_rescue_mode_label" qtlid="269214">La tua immagine:</translation>
+   <translation id="cpc_rescue_mode_defaut" qtlid="269227">Distribuzione Rescue Made-in-OVH</translation>
+   <translation id="cpc_rescue_mode_pwd_expl" qtlid="286877">Scegliendo l'opzione "Distribuzione Rescue Made-in-OVH" riceverai una password temporanea per accedere al tuo server in modalità Rescue. Altrimenti, il tuo server sarà accessibile con la tua chiave SSH abituale ma l'impronta SSH dell'host sarà diversa. Il disco principale sarà disponibile come disco secondario non montato.</translation>
+   <translation id="cpc_rescue_mode_success_linux" qtlid="296115">Per accedere al tuo server "{{vmName}}" in modalità Rescue, utilizza <br/><code>ssh {{user}}@{{ip}}</code> con la tua chiave SSH abituale. Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Per accedere al tuo server "{{vmName}}" in modalità Rescue, utilizza <br/><code>ssh {{user}}@{{ip}}</code> con la tua password temporanea {{pwd}} (in seguito non ti sarà più comunicata). Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
+   <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Per accedere al tuo server {{vmName}} in modalità Rescue, utilizza <br/><code>rdesktop {{ip}}</code> con la tua chiave SSH abituale. Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
+   <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Per accedere al tuo server {{vmName}} in modalità Rescue, utilizza <br/><code>rdesktop {{ip}}</code> con la tua password temporanea {{pwd}} (in seguito non ti sarà più comunicata). Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="269305">Ops! Impossibile riavviare il tuo server in modalità Rescue.</translation>
+
+</translations>

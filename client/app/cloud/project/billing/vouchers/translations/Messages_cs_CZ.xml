@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Použít kupón</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Koupit Public Cloud kredit</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Platné kupóny budou použity na zaplacení Vašich nových objednávek.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Po každém vystavení faktury dojde k odečtení částky z Vašeho cloudového kreditu, potom z účtu DLP (Digital LaunchPad) a poté z Vašeho věrnostního účtu. Nakonec dojde k vyrovnání pomocí zvolené platební metody (podrobnosti o 3 platebních metodách najdete v Manažeru v sekci Fakturace).</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Nebyly nalezeny žádné kupóny.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Váš kupón</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Nahrát můj kupón.</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Chyba, není možné zobrazit seznam kupónů.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Není možné zobrazit seznam kupónů.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Faktura č. <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Připojený kupón</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Příjmení</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Počáteční hodnota</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Zbývající kredit</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Kredit použit automaticky na Vaše další účty.</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Datum aktivace</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Datum platnosti</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Kompatibilní produkty</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Vše</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Cloud credit</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Kupóny byly úspěšně nahrány.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Chyba, nejsme schopní přidat tento kupón. Zkuste to prosím znovu.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Tento kupón již není platný, nebo již byl použit.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Tento kupón je platný.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Public Cloud kredit nelze převést nebo vyplatit. Nemá žádnou peněžní hodnotu a jakýkoli kredit, který není použit v rámci 13 měsíců zanikne.</translation>
+
+</translations>

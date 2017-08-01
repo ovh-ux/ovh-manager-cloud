@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpciif_buy_title" qtlid="275882">Koop Cloud Failover IP's</translation>
+   <translation id="cpciif_buy_cloud_info" qtlid="275895">Cloud Failover IP-adressen kunnen overgedragen worden van de ene server naar de andere binnen hetzelfde Cloud project en hetzelfde continent. Binnenkort zal het mogelijk zijn om deze IP's naar andere OVH producten over te dragen. Ook zult u binnenkort adressen kunnen kopen voor een continent welke anders is dan het continent dat u voor uw account heeft.  </translation>
+   <translation id="cpciif_buy_quantity_select" qtlid="275908">Selecteer het aantal Cloud Failover IP's dat u wilt bestellen: </translation>
+   <translation id="cpciif_buy_instance_select" qtlid="275921">Selecteer de server waar de Cloud Failover IP aan zal worden gekoppeld (binnenkort zult u deze Failover IP kunnen routen naar andere OVH producten):</translation>
+   <translation id="cpciif_buy_instance_select_plural" qtlid="275934">Selecteer de server waar de Cloud Failover IP aan zal worden gekoppeld (binnenkort zult u deze Failover IP's kunnen routen naar andere OVH producten):</translation>
+   <translation id="cpciif_buy_country_select" qtlid="275947">Selecteer het land voor uw Cloud Failover IP:</translation>
+   <translation id="cpciif_buy_country_select_plural" qtlid="275960">Selecteer het land voor uw Cloud Failover IP's:</translation>
+   <translation id="cpciif_buy_limit_info" qtlid="275973">Met uw huidige infrastructuur kunt u tot {{ ips }} Cloud Failover IP's bestellen. </translation>
+   <translation id="cpciif_buy_init_error" qtlid="275986">De informatie die nodig is voor het kopen van Cloud Failover IP's kan niet worden opgehaald. </translation>
+   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Plaats een bestelling</translation>
+   <translation id="cpciif_buy_button_infos" qtlid="269513">Activatiekosten - geen maandelijkse verlenging&#13;
+&#13;
+</translation>
+   <translation id="cpciif_buy_error" qtlid="275999">Er is een fout opgetreden tijdens het bestellen van Cloud Failover IP's.</translation>
+   <translation id="cpciif_buy_success" qtlid="296011">De bestelbon van uw Cloud Failover IP is <a href="{{ url }}" target="_blank">hier <i class="fa fa-external-link"></i></a> beschikbaar</translation>
+   <translation id="cpciif_buy_ip_na_soon" qtlid="269552">Noord-Amerikaanse IP's binnenkort beschikbaar &#13;
+&#13;
+</translation>
+   <translation id="cpciif_buy_services" qtlid="269565">Deze service bevat: </translation>
+   <translation id="cpciif_buy_no_instance" qtlid="301935">U beschikt niet over een server.</translation>
+   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} excl. BTW)</translation>
+</translations>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_permission_definition" qtlid="354717">Uw gebruikers kunnen de cluster gebruiken met pool-specifieke rechten. </translation>
+
+   <translation id="cda_user_add_button_text" qtlid="7150">Een gebruiker toevoegen</translation>
+   <translation id="cda_user_delete_button_text" qtlid="2414">Verwijderen</translation>
+   <translation id="cda_user_edit_button_text" qtlid="354730">Bekijk rechten</translation>
+
+   <translation id="cda_user_table_col_username" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_user_table_col_key" qtlid="104326">Key</translation>
+   <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
+   <translation id="cda_user_table_col_actions" qtlid="72809">Handelingen</translation>
+
+   <translation id="cda_user_add_title" qtlid="7150">Een gebruiker toevoegen</translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Voor- en achternaam</translation>
+
+   <translation id="cda_user_add_username_required" qtlid="354288">U dient uw cluster te benoemen.</translation>
+   <translation id="cda_user_add_username_pattern" qtlid="354301">De naam kan geen spaties bevatten. </translation>
+   <translation id="cda_user_add_username_maxlength" qtlid="354314">De naam van uw cluster kan niet langer zijn dan {{ maxlength }} tekens.</translation>
+   <translation id="cda_user_add_success" qtlid="354743">De gebruiker is toegevoegd. </translation>
+
+   <translation id="cda_user_delete_title" qtlid="7666">Een gebruiker verwijderen</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Achternaam:</translation>
+   <translation id="cda_user_delete_confirm" qtlid="354756">Weet u zeker dat u deze gebruiker wilt verwijderen? </translation>
+   <translation id="cda_user_delete_success" qtlid="354769">De gebruiker is verwijderd. </translation>
+
+
+   <translation id="cda_user_table_empty" qtlid="215741">Geen gebruiker</translation>
+</translations>

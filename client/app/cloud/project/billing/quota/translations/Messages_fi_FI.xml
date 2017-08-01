@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">Pilven kulutuksen hallitsemiseksi projektin resursseja on rajoitettu.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Jos tarvitset lisää resursseja, napsauta oheista painiketta pyytääksesi niitä asiakaspalvelultamme.</translation>
+   <translation id="cpb_quota_protect_more_btn" qtlid="251291">Nosta rajoituksia</translation>
+   <translation id="cpb_quota_current_limit" qtlid="251304">Nykyiset rajoitukset</translation>
+
+   <translation id="cpb_quota_add_disk" qtlid="257783">Ylimääräinen levy</translation>
+   <translation id="cpb_quota_instance_unlimited" qtlid="185504">Rajoittamaton</translation>
+   <translation id="cpb_quota_loading" qtlid="251317">Kiintiöitä ladataan</translation>
+   <translation id="cpb_quota_loading_error" qtlid="251330">Kiintiölistausta ei pystytä hakemaan.</translation>
+   <translation id="cpb_quota_no_quota" qtlid="251343">Ei kiintiötä</translation>
+
+   <translation id="cpb_quota_restricted_account" qtlid="251356">Kiintiö on rajallinen, koska asiakastunnukselle ei ole rekisteröity aktiivista maksuvälinettä.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429"><a href="{{url}}">Lisää hyväksytty maksutapa </a>, palaa sitten tälle sivulle kasvattamaan kiintiötäsi. </translation>
+   <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">Asiakastunnuksella on nyt aktiivinen maksuväline.</translation>
+   <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">Aktivoi standardikiintiö</translation>
+
+   <translation id="cpb_quota_already_unleashed" qtlid="251408">Näyttää siltä, että kiintiö on jo aktivoitu.</translation>
+   <translation id="cpb_quota_unleash_error" qtlid="251421">Kiintiötä ei pystytä aktivoimaan.</translation>
+   <translation id="cpb_quota_unleash_loading" qtlid="251434">Kiintiötä aktivoidaan...</translation>
+</translations>

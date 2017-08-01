@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Attiva un voucher</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Acquista credito Cloud</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Ad ogni nuova fattura, i voucher validi per i prodotti associati vengono utilizzati prima di procedere al pagamento tramite la modalità inserita</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Per ogni fattura, verifichiamo che tu abbia un voucher o un altro tipo di credito. L'eventuale importo residuo deve essere saldato utilizzando la modalità di pagamento che hai registrato (i dettagli relativi alle modalità di pagamento sono disponibili nella sezione "Fatturazione" del tuo Spazio Cliente OVH).</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">Non sono presenti voucher </translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Il tuo voucher</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Aggiungi il tuo voucher</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Impossibile visualizzare la lista dei voucher</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Impossibile visualizzare la lista dei voucher</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Fattura n. <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Voucher associato</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nome</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Valore iniziale</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Credito residuo</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Credito utilizzato automaticamente per le tue prossime fatture</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Data di attivazione</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Data di validità</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Prodotti compatibili</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">Tutti</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Credito Cloud</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Voucher aggiunto correttamente</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Impossibile aggiungere questo voucher, ti preghiamo di riprovare</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Questo voucher non è valido o è già stato utilizzato</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Questo voucher non è valido</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Il credito Cloud non è trasferibile né rimborsabile e non ha valore monetario. Il credito non utilizzato entro 13 mesi verrà perso.</translation>
+
+</translations>

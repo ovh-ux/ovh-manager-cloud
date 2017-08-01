@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpc_ssh_demo" qtlid="249393">Sie können hier Ihre SSH Schlüssel für den Zugriff auf Ihre Server hinzufügen.</translation>
+
+   <translation id="cpc_ssh_name" qtlid="3818">Name</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Schlüssel</translation>
+
+   <translation id="cpc_ssh_loading" qtlid="249406">Laden Ihrer SSH Schlüssel...</translation>
+   <translation id="cpc_ssh_error" qtlid="248808">Die Liste Ihrer SSH Schlüssel konnte nicht abgerufen werden!</translation>
+
+   <translation id="cpc_ssh_key_explain_1" qtlid="366541">Bei der Kommunikation zwischen den OVH Servern wird das gesicherte Netzwerkprotokoll SSH zur Verschlüsselung der Daten verwendet. </translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unseren <a href="{{ createUrl }}" target="_blank">Guide zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Außerdem ist es auch möglich, auf Ihren Instanzen <a href="{{ addUrl }}" target="_blank">zusätzliche SSH-Schlüssel zu konfigurieren<i class="fa fa-external-link" aria-hidden="true"></i></a>, um anderen Personen den Zugriff zu ermöglichen, oder <a href="{{ changeUrl }}" target="_blank">den SSH-Schlüssel bei Verlust zu ändern<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+
+   <translation id="cpc_ssh_add_button" qtlid="248561">Einen Schlüssel hinzufügen</translation>
+   <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Hinzufügen abbrechen</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Diesen Schlüssel hinzufügen</translation>
+   <translation id="cpc_ssh_add_submit_success" qtlid="248600">Ihr Schlüssel ist nun verfügbar!</translation>
+   <translation id="cpc_ssh_add_name" qtlid="248626">Vergeben Sie einen Namen</translation>
+   <translation id="cpc_ssh_add_key" qtlid="366580">Geben Sie Ihren Schlüssel mit 4096 Bytes an.</translation>
+   <translation id="cpc_ssh_add_submit_error" qtlid="248613">Dieser Schlüssel konnte nicht hinzugefügt werden!</translation>
+   <translation id="cpc_ssh_add_submit_name_error" qtlid="248717">Dieser Name wird bereits für einen anderen SSH Schlüssel verwendet.</translation>
+
+
+   <translation id="cpc_ssh_delete_success" qtlid="248756">Dieser Schlüssel ist nicht mehr verfügbar.</translation>
+   <translation id="cpc_ssh_delete_error" qtlid="249419">Dieser Schlüssel konnte nicht gelöscht werden!</translation>
+
+   <translation id="cpc_ssh_search_button" qtlid="37659">Suchen</translation>
+
+   <translation id="cpc_ssh_delete_cancel" qtlid="249432">Diesen Schlüssel nicht löschen</translation>
+   <translation id="cpc_ssh_delete_submit" qtlid="245519">Die Löschung bestätigen</translation>
+
+   <translation id="cpc_ssh_empty" qtlid="248782">Sie haben noch keinen SSH Schlüssel hinzugefügt.</translation>
+   <translation id="cpc_ssh_empty_add" qtlid="248795">Klicken Sie auf "Einen Schlüssel hinzufügen", um dies jetzt zu tun!</translation>
+
+   <translation id="cpc_ssh_error_max_char" qtlid="248665">Der Name kann maximal 255 Zeichen lang sein.</translation>
+   <translation id="cpc_ssh_error_required_name" qtlid="248652">Sie müssen einen Namen für Ihren Schlüssel vergeben.</translation>
+   <translation id="cpc_ssh_error_required_key" qtlid="366593">Sie haben vergessen, Ihren Schlüssel mit 4096 Bytes anzugeben.</translation>
+   <translation id="cpc_ssh_error_pattern_name" qtlid="249445">Der Name Ihres Schlüssels darf ausschließlich aus Ziffern, Klein- und/oder Großbuchstaben sowie den Sonderzeichen Bindestrich(-), Unterstrich (_) und Leerzeichen bestehen.</translation>
+
+
+</translations>

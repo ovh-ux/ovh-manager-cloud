@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_update_offer_title" qtlid="403632">Nosta Veeam Cloud Connect -tuotteen tasoa</translation>
+   <translation id="veeam_update_offer_information" qtlid="403645">Tilauksen hinta on <strong>{{ price }} /kk</strong></translation>
+   <translation id="veeam_update_offer_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="veeam_update_offer_continue" qtlid="4070">Jatka</translation>
+   <translation id="veeam_update_offer_change" qtlid="69893">Muuta</translation>
+   <translation id="veeam_update_storage_add" qtlid="37923">Lisää</translation>
+</translations>

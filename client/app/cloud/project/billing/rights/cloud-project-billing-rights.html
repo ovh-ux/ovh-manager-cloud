@@ -1,0 +1,308 @@
+<div class="row cloud-billing-quota">
+
+    <!-- CONTACT FORMS -->
+    <div class="col-xs-12">
+        <div class="well top-space-p0 bottom-space-p4">
+            <!--<p class="bold">{{ :: 'cpb_rights_expl' | translate }}</p>-->
+            <!--<p class="text-warning">
+                <i class="fa fa-warning text-warning"></i>
+                {{:: 'cpb_rights_soon' | translate }}
+            </p>-->
+
+            <!-- OWNER CONTACT FORM -->
+            <form id="ownerContactForm" class="form-horizontal ng-pristine ng-valid-maxlength">
+                <div class="form-group top-space-m20" data-ng-class="{'has-error': ownerContactForm.ownerContactInput.$invalid}">
+                    <label class="col-sm-4 control-label ng-scope" for="ownerContactInput">
+                        {{:: 'cpb_rights_owner' | translate }}
+                    </label>
+                    <div class="col-sm-4">
+                        <div class="input-group" data-ng-if="BillingRightsCtrl.toggle.owner">
+                            <input
+                                id="ownerContactInput"
+                                name="ownerContactInput"
+                                type="text"
+                                class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength"
+                                autofocus
+                                autoselect
+                                placeholder="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}"
+                                data-ng-model="BillingRightsCtrl.contactFormData.owner"
+                                data-ng-keyup="BillingRightsCtrl.watchOwnerInput($event)"
+                                data-ng-maxlength="255">
+                            </input>
+                            <span
+                                class="input-group-addon">
+                            <button type="reset" class="no-style" data-ng-click="BillingRightsCtrl.toggleEditOwner()">
+                                <i class="fa fa-times"></i>
+                            </button>
+                            <button type="submit" class="no-style" data-ng-click="BillingRightsCtrl.validateEditOwner()">
+                                <i class="fa fa-check"></i>
+                            </button>
+                            </span>
+                        </div>
+                        <span class="ng-binding ng-scope" data-ng-if="!BillingRightsCtrl.toggle.owner" style="padding-top: 7px; display: inline-block">
+                            {{ BillingRightsCtrl.model.owner }}
+                        </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <button
+                            class="btn btn-secondary"
+                            title="{{:: 'cpb_rights_modify' | translate}}"
+                            data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
+                            data-ng-click="BillingRightsCtrl.openContacts()">
+                            <i class="fa fa-external-link right-space-m8"></i>
+                            <span data-translate="cpb_rights_modify"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- BILLING CONTACT FORM -->
+            <form id="billingContactForm" class="form-horizontal ng-pristine ng-valid-maxlength">
+                <div class="form-group" data-ng-class="{'has-error': billingContactForm.billingContactInput.$invalid}">
+                    <label class="col-sm-4 control-label ng-scope" for="billingContactInput">
+                        {{:: 'cpb_rights_billing_contact' | translate }}
+                    </label>
+                    <div class="col-sm-4">
+                        <div class="input-group" data-ng-if="BillingRightsCtrl.toggle.billing">
+                            <input
+                                id="billingContactInput"
+                                name="billingContactInput"
+                                type="text"
+                                class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength"
+                                autofocus
+                                autoselect
+                                placeholder="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}"
+                                data-ng-model="BillingRightsCtrl.contactFormData.billing"
+                                data-ng-keyup="BillingRightsCtrl.watchBillingInput($event)"
+                                data-ng-maxlength="255">
+                            </input>
+                            <div class="input-group-addon">
+                                <button type="reset" class="no-style" data-ng-click="BillingRightsCtrl.toggleEditBilling()">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                <button type="submit" class="no-style" data-ng-click="BillingRightsCtrl.validateEditBilling()">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <span class="ng-binding ng-scope" data-ng-if="!BillingRightsCtrl.toggle.billing" style="padding-top: 7px; display: inline-block">
+                            {{ BillingRightsCtrl.model.billing }}
+                        </span>
+                    </div>
+                    <div class="col-sm-4">
+                        <button
+                            class="btn btn-secondary"
+                            title="{{:: 'cpb_rights_modify' | translate}}"
+                            data-ng-disabled="!BillingRightsCtrl.canChangeContacts()"
+                            data-ng-click="BillingRightsCtrl.openContacts()">
+                            <i class="fa fa-external-link right-space-m8"></i>
+                            <span data-translate="cpb_rights_modify"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- END OF CONTACT FORMS -->
+
+
+    <div class="col-xs-12">
+
+        <p class="bold">{{ :: 'cpb_rights_expl2' | translate }}</p>
+
+    </div>
+
+    <div class="col-xs-12">
+        <!-- RIGHTS TABLE -->
+
+        <!-- ADD -->
+        <button data-ng-click="BillingRightsCtrl.showAddRight()"
+            class="btn btn-primary"
+            data-ng-disabled="BillingRightsCtrl.loader.rights || BillingRightsCtrl.data.rightIds === null"
+            data-ng-if="BillingRightsCtrl.model.isAdmin"
+            data-ng-class="{'visibility-hide' : BillingRightsCtrl.toggle.addUser}">
+            <i class="glyphicon glyphicon-plus right-space-m8"></i>
+            <span translate="common_add"></span>
+        </button>
+
+        <div class="table-responsive-vertical shadow-z-1 top-space-m8 bottom-space-m12 quota-table">
+            <table class="table table-pretty table-hover table-striped no-space billing-rights-table">
+                <thead>
+                    <tr>
+                        <th>
+                            {{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}
+                        </th>
+                        <th style="width: 25%;">
+                            {{ :: 'cpb_rights_table_rights' | translate }}
+                        </th>
+                        <th class="text-center" style="width: 25%;" data-ng-if="BillingRightsCtrl.model.isAdmin">
+                            <button data-ng-click="BillingRightsCtrl.getRights(true)"
+                                class="no-style">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody data-ng-show="BillingRightsCtrl.loader.rights">
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            <spinner></spinner>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <!-- add right fields -->
+                <tbody data-ng-show="BillingRightsCtrl.toggle.addUser" class="animate-opacity2-leave">
+
+                    <tr>
+
+                        <td colspan="3" class="no-space">
+                            <div data-ng-slide-down="BillingRightsCtrl.toggle.addUser" lazy-render duration="0.3"  >
+                                <form name="voucherFormAdd" class="form-horizontal ovh-form-flat container-fluid space-p8"
+                                    data-ng-class="{'animated fadeIn':BillingRightsCtrl.toggle.addUser, 'animated fadeOut':!BillingRightsCtrl.toggle.addUser}">
+                                    <div  class="col-md-6 no-space">
+                                        <div flat-input-container class="space-p8 vertical-top">
+                                            <input type="text"
+                                               class="form-control"
+                                               autofocus=""
+                                               placeholder="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}"
+                                               data-ng-disabled="BillingRightsCtrl.loader.addRight"
+                                               data-ng-model="BillingRightsCtrl.addRightFormData.contact" />
+                                        </div>
+                                    </div>
+
+                                    <div  class="col-md-3 no-space" >
+                                        <div flat-input-container class="space-p8">
+                                            <select id="selectRightType" name="selectRightType" class="form-control"
+                                                data-ng-disabled="BillingRightsCtrl.loader.addRight"
+                                                data-ng-model="BillingRightsCtrl.addRightFormData.type">
+                                                <option data-ng-repeat="type in ['readOnly', 'readWrite']" value="{{type}}">
+                                                    {{ ('cpb_rights_table_rights_value_' + type) | translate }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 no-space">
+
+                                        <div flat-input-container class="row-fluid space-p8 right-space-p0">
+
+                                            <div class="col-xs-6 no-space right-space-p4">
+                                                <button type="reset"
+                                                    class="btn btn-default col-xs-12"
+                                                    data-ng-disabled="!BillingRightsCtrl.model.isAdmin || BillingRightsCtrl.loader.addRight"
+                                                    data-ng-click="BillingRightsCtrl.toggle.addUser = false">
+                                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
+                                                    <span translate="common_cancel"></span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-xs-6 no-space">
+                                                <button type="submit"
+                                                    class="btn btn-primary col-xs-12"
+                                                    data-ng-disabled="!BillingRightsCtrl.model.isAdmin || !BillingRightsCtrl.addRightFormData.contact || BillingRightsCtrl.loader.addRight || BillingRightsCtrl.loader.removeRight"
+                                                    data-ng-click="BillingRightsCtrl.validateAddRight()">
+                                                    <i class="glyphicon glyphicon-ok right-space-m8"></i>
+                                                    <span translate="cpb_rights_add"></span>
+                                                    <spinner data-ng-if="BillingRightsCtrl.loader.addRight" name="bubbles-fff-ffcd1a-16"></spinner>
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <!-- list rights -->
+                <tbody data-ng-if="BillingRightsCtrl.data.rights.length > 0 && !BillingRightsCtrl.loader.rights">
+                    <tr data-ng-repeat="right in BillingRightsCtrl.data.rights">
+                        <td class="word-break center-vertical" data-title="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}">
+                            <span data-ng-class="{'opacity2-leave' : BillingRightsCtrl.removeRight.accountId === right.accountId, 'opacity2-enter' : BillingRightsCtrl.removeRight.accountId === right.accountId}" class="text-center word-break" data-ng-bind="right.accountId"></span>
+                        </td>
+                        <td class="center-vertical" data-ng-class="{'opacity2-leave' : BillingRightsCtrl.removeRight.accountId === right.accountId, 'opacity2-enter' : BillingRightsCtrl.removeRight.accountId === right.accountId}" class="text-center word-break" data-title="{{ :: 'cpb_rights_table_rights' | translate }}">
+                            <span class="text-center word-break">
+                                {{ ('cpb_rights_table_rights_value_' + right.type) | translate }}
+                            </span>
+                        </td>
+                        <td data-ng-if="BillingRightsCtrl.model.isAdmin">
+                            <div class="clearfix row-fluid">
+                                <!-- buttons -->
+                                <button type="button" class="btn btn-secondary col-xs-12"
+                                    data-ng-class="{'opacity2-leave' : BillingRightsCtrl.removeRight.accountId === right.accountId, 'opacity2-enter' : BillingRightsCtrl.removeRight.accountId === right.accountId}"
+                                    data-ng-click="BillingRightsCtrl.removeRight.accountId = right.accountId; BillingRightsCtrl.toggle.addUser = false"
+                                    data-ng-disabled="BillingRightsCtrl.loader.removeRight"
+                                    data-ng-if="BillingRightsCtrl.model.isAdmin">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                    <span translate="delete"></span>
+                                </button>
+                            </div>
+                            <div data-ng-show="BillingRightsCtrl.removeRight.accountId === right.accountId"
+                                 class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
+                                 style="left:0; position:absolute; z-index:1000; margin-top: -31px;">
+                                <button class="btn btn-default"
+                                    data-ng-click="BillingRightsCtrl.removeRight.accountId = null"
+                                    data-ng-disabled="BillingRightsCtrl.loader.removeRight || BillingRightsCtrl.loader.addRight">
+                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
+                                    <span translate="cpb_rights_table_remove_cancel"></span>
+                                </button>
+                                <button class="btn btn-danger"
+                                    data-ng-click="BillingRightsCtrl.validateRemoveRight(right.accountId)"
+                                    data-ng-disabled="BillingRightsCtrl.loader.removeRight">
+                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
+                                    <span translate="cpb_rights_table_remove_confirm"></span>
+                                    <spinner name="bubbles-fff-d34936-16" data-ng-show="BillingRightsCtrl.loader.removeRight"></spinner>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <!-- NO DATAS BODY -->
+                <tbody data-ng-if="!BillingRightsCtrl.loader.rights && BillingRightsCtrl.data.rightIds.length === 0">
+                    <tr>
+                        <td colspan="3"
+                            class="text-center">
+                            <span>{{ :: 'cpb_rights_no_data' | translate }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <!-- NO DATAS BODY -->
+                <tbody data-ng-if="!BillingRightsCtrl.loader.rights && BillingRightsCtrl.data.rightIds === null">
+                    <tr>
+                        <td colspan="3"
+                            class="text-center">
+                            <i class="fa fa-bug"></i>
+                            <span>{{ :: 'cpb_rights_error' | translate }}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+         <!-- PAGINATION TABLE -->
+        <div class="table-pretty-pagination top-space-m12"
+             data-ng-hide="VouchersCtrl.loading.init
+                            || BillingRightsCtrl.data.rightIds === null
+                            || BillingRightsCtrl.data.rightIds.length <= 5"
+             data-pagination-front
+             data-items="BillingRightsCtrl.data.rightIds"
+             data-paginated-items="BillingRightsCtrl.data.rights"
+             data-current-page="currentPage"
+             data-nb-pages="nbPages"
+             data-items-per-page="itemsPerPage"
+             data-transform-item="BillingRightsCtrl.transformItem(item)"
+             data-on-transform-item-done="BillingRightsCtrl.onTransformItemDone(items)"
+             data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
+             data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
+        </div>
+    </div>
+
+    <div class="col-xs-12" data-ng-if="!BillingRightsCtrl.loader.rights">
+        <p class="fs10">{{ :: 'cpb_rights_note' | translate }}</p>
+    </div>
+
+</div>

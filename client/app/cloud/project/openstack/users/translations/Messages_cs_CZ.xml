@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="openstackusers_users_title" qtlid="245246">Openstack API a Horizon</translation>
+   <translation id="openstackusers_users_description" qtlid="245259">OVH Cloud Vám poskytuje přístup k API, které je založeno na OpenStack API.</translation>
+   <translation id="openstackusers_users_description2" qtlid="245272">Začněte s OpenStack API a nástroji definováním, kterým uživatelům poskytnete přístup.</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Spustit OpenStack Horizon</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Přidat uživatele</translation>
+
+   <translation id="openstackusers_users_userlist_error" qtlid="245298">Při načítání uživatelů došlo k chybě:</translation>
+   <translation id="openstackusers_users_userlist_empty" qtlid="245311">Na Vašem účtu OVH Cloud nejsou žádní uživatelé OpenStack.</translation>
+   <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Pro přidání uživatele klikněte na tlačítko výše.</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identifikátor</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Popis</translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Stav</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Heslo</translation>
+   <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Reset hesla</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Zrušit vymazání</translation>
+   <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Smazat tohoto uživatele</translation>
+   <translation id="openstackusers_users_delete_success" qtlid="245350">Uživatel {{username}} byl vymazán.</translation>
+   <translation id="openstackusers_users_delete_error" qtlid="245363">Chyba zabránila vymazání:</translation>
+   <translation id="openstackusers_users_regeneratepassword_success" qtlid="245376">Heslo uživatele {{username}} bylo resetováno.</translation>
+   <translation id="openstackusers_users_regeneratepassword_error" qtlid="245389">Chyba zabránila v resetu hesla.</translation>
+
+   <translation id="openstackusers_users_userlist_add_description" qtlid="245402">Popis uživatele</translation>
+   <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">Nezapomeňte poskytnout popis pro tohoto uživatele.</translation>
+   <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">Váš popis je příliš dlouhý.</translation>
+   <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Zrušit</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Vytvořit tohoto uživatele</translation>
+   <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">Byl vytvořen nový uživatel.</translation>
+   <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">Není možné vytvořit tohoto uživatele:</translation>
+
+   <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Vymazat těchto {{nbUsers}} uživatelů</translation>
+   <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Nemazat tyto uživatele</translation>
+   <translation id="openstackusers_users_delete_button" qtlid="7882">Smazat tohoto uživatele</translation>
+   <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Nemazat tohoto uživatele</translation>
+   <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Potvrdit vymazání</translation>
+
+   <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Probíhá mazání zvolených {{nbUsers}} uživatelů.</translation>
+   <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Chyba, není možné vymazet {{nbUsers}} uživatelů.</translation>
+   <translation id="openstackusers_users_delete_error_one" qtlid="245558">Chyba, tento uživatel nemůže být vymazán.</translation>
+
+</translations>

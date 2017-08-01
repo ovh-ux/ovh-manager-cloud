@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpb_rights_expl" qtlid="262579">Para cada projeto cloud, o contacto admin pode alterar os contactos de faturação e admin através da secção dedicada para o efeito no Espaço Cliente</translation>
+   <translation id="cpb_rights_expl2" qtlid="262592">O contacto admin pode igualmente adicionar contactos de leitura/escrita ou apenas de leitura para este projeto.</translation>
+   <translation id="cpb_rights_note" qtlid="261101">NB : Os contactos com flags de leitura/escrita dispõem de permissões (modificações da infraestrutura, utilização de espaço de armazenamento) que podem originar custos suplementares. Os contactos com flags de leitura apenas não podem efetuar nenhuma ação no projeto. O meio de pagamento definido de forma padrão pelo contacto de faturação será utilizado para cada uma das faturas.</translation>
+   <translation id="cpb_rights_soon" qtlid="261114">Poderá dentro de alguns dias efetuar a alteração destes contactos na sua nova interface Espaço Cliente.</translation>
+   <translation id="cpb_rights_owner" qtlid="262605">Contacto admin:</translation>
+   <translation id="cpb_rights_billing_contact" qtlid="261140">Contacto de faturação:</translation>
+   <translation id="cpb_rights_modify" qtlid="37875">Modificar</translation>
+   <translation id="cpb_rights_add" qtlid="37923">Adicionar</translation>
+   <translation id="cpb_rights_table_nichandle" qtlid="261153">NIC-Handle</translation>
+   <translation id="cpb_rights_table_email" qtlid="33598">Email</translation>
+   <translation id="cpb_rights_table_rights" qtlid="65286">Permissões</translation>
+   <translation id="cpb_rights_loading" qtlid="242769">Carregamento em curso</translation>
+   <translation id="cpb_rights_no_data" qtlid="261166">Nenhum dado relativos às permissões foi encontrado.</translation>
+   <translation id="cpb_rights_error" qtlid="261179">Oops! Não foi possível recuperar as informações sobre as permissões.</translation>
+   <translation id="cpb_rights_add_error" qtlid="261192">Oops! Não foi possível eliminar a permissão.</translation>
+   <translation id="cpb_rights_remove_error" qtlid="261205">Oops! Não foi possível eliminar a permissão.</translation>
+   <translation id="cpb_contact_error_invalid" qtlid="261218">Oops! O contacto especificado.</translation>
+   <translation id="cpb_contact_error_other" qtlid="261231">Oops! Não foi possível atualizar o contacto.</translation>
+   <translation id="cpb_rights_table_rights_value_readOnly" qtlid="17333">Apenas de leitura</translation>
+   <translation id="cpb_rights_table_rights_value_readWrite" qtlid="146671">Leitura/Escrita</translation>
+   <translation id="cpb_rights_table_rights_add_success" qtlid="261244">A permissão foi adicionada com sucesso.</translation>
+   <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">A permissão foi eliminada com sucesso.</translation>
+   <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Confirmar a eliminação</translation>
+   <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Anular a eliminação</translation>
+
+</translations>

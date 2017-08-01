@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="openstackusers_users_title" qtlid="245246">Openstack API und Horizon</translation>
+   <translation id="openstackusers_users_description" qtlid="245259">Die OVH Cloud bietet Zugriff auf die OpenStack API, auf der sie basiert.</translation>
+   <translation id="openstackusers_users_description2" qtlid="245272">Um die von OpenStack zur Verfügung gestellte API und Werkzeuge zu nutzen können Sie Ihre Zugänge verwalten, indem Sie Benutzer dafür festlegen.</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Openstack Horizon öffnen</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Einen Benutzer hinzufügen</translation>
+
+   <translation id="openstackusers_users_userlist_error" qtlid="245298">Beim Laden der Benutzer ist ein Fehler aufgetreten:</translation>
+   <translation id="openstackusers_users_userlist_empty" qtlid="245311">Ihrem OVH Cloud Account ist kein OpenStack Benutzer zugewiesen.</translation>
+   <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Klicken Sie auf den Button oben, um einen Benutzer hinzuzufügen.</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Kennung</translation>
+   <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Beschreibung</translation>
+   <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Zustand</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Passwort</translation>
+   <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Das Passwort zurücksetzen</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Die Löschung abbrechen</translation>
+   <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Diesen Benutzer löschen</translation>
+   <translation id="openstackusers_users_delete_success" qtlid="245350">Der Benutzer {{username}} wurde gelöscht.</translation>
+   <translation id="openstackusers_users_delete_error" qtlid="245363">Bei der Löschung ist ein Fehler aufgetreten:</translation>
+   <translation id="openstackusers_users_regeneratepassword_success" qtlid="245376">Das Passwort von {{username}} wurde zurückgesetzt.</translation>
+   <translation id="openstackusers_users_regeneratepassword_error" qtlid="245389">Beim Zurücksetzen des Passworts ist ein Fehler aufgetreten:</translation>
+
+   <translation id="openstackusers_users_userlist_add_description" qtlid="245402">Beschreibung des Benutzers</translation>
+   <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">Denken Sie daran, eine Beschreibung des Benutzers anzugeben.</translation>
+   <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">Ihre Beschreibung ist zu lang.</translation>
+   <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Diesen Benutzer erstellen</translation>
+   <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">Der neue Benutzer wurde erstellt.</translation>
+   <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">Dieser Benutzer konnte nicht erstellt werden:</translation>
+
+   <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Diese {{nbUsers}} Benutzer löschen</translation>
+   <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Die Benutzer nicht löschen</translation>
+   <translation id="openstackusers_users_delete_button" qtlid="7882">Diesen Benutzer löschen</translation>
+   <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Diesen Benutzer nicht löschen</translation>
+   <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Die Löschung bestätigen</translation>
+
+   <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Die {{nbUsers}} ausgewählten Benutzer werden gelöscht.</translation>
+   <translation id="openstackusers_users_delete_error_plural" qtlid="245545">{{nbUsers}} Benutzer konnten nicht gelöscht werden!</translation>
+   <translation id="openstackusers_users_delete_error_one" qtlid="245558">Ein Benutzer konnte nicht gelöscht werden!</translation>
+
+</translations>

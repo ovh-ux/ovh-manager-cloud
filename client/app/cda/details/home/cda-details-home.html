@@ -1,0 +1,57 @@
+<div>
+    <div class="text-center" data-ng-if="CdaDetailsHomeCtrl.loading">
+        <spinner name="bubbles-222-fff-32"></spinner>
+    </div>
+    <oui-message type="info"
+                 data-ng-if="CdaDetailsHomeCtrl.datas.users.length === 0">
+        {{ ::'cda_detail_info_no_user' | translate }}
+        <a class="no-style fs16" data-ui-sref="paas.cda.cda-details.cda-user.cda-user-list"><strong>{{ ::'cda_detail_info_create_user' | translate }}</strong></a>
+    </oui-message>
+    <div class="row" data-ng-if="!CdaDetailsHomeCtrl.loading">
+        <section class="col-sm-6 col-md-4">
+            <header>
+                <h3>
+                    <span data-translate="cda_home_details_title"></span>
+                    <button type="button" class="no-style fs16" data-ng-click="CdaDetailsHomeCtrl.openEditModal()">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </h3>
+            </header>
+            <div class="well">
+                <cda-detail
+                    data-detail="CdaDetailsHomeCtrl.CdaService.currentService"
+                    data-service-id="CdaDetailsHomeCtrl.serviceName"
+                    data-crush-tunables-options="CdaDetailsHomeCtrl.datas.crushTunablesOptions"></cda-detail>
+            </div>
+        </section>
+        <div class="col-sm-6 col-md-4">
+            <section>
+                <header>
+                    <h3 data-translate="cda_home_health_title"></h3>
+                </header>
+                <div class="well">
+                    <cda-health data-detail="CdaDetailsHomeCtrl.datas.health"></cda-health>
+                </div>
+            </section>
+            <section>
+                <header>
+                    <h3 data-translate="cda_home_space_title"></h3>
+                </header>
+                <div class="well">
+                    <cda-space-usage
+                        data-total="CdaDetailsHomeCtrl.datas.totalBytes"
+                        data-available="CdaDetailsHomeCtrl.datas.availableBytes"
+                        data-used="CdaDetailsHomeCtrl.datas.usedBytes"></cda-space-usage>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="row" data-ng-if="!CdaDetailsHomeCtrl.loading">
+        <section class="col-sm-12 col-md-8">
+            <header>
+                <h3 data-translate="cda_home_tasks_title"></h3>
+            </header>
+            <cda-tasks data-tasks="CdaDetailsHomeCtrl.datas.tasks"></cda-tasks>
+        </section>
+    </div>
+</div>

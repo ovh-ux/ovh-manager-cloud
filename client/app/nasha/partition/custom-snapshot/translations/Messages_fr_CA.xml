@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_custom_snapshot_of" qtlid="344922">Image instantanée de la partition {{partitionName}}</translation>
+   <translation id="nasha_custom_snapshot_modal_title" qtlid="369178">Image instantanée</translation>
+   <translation id="nasha_custom_snapshot_modal_success" qtlid="369191">L'image instantanée sera créée dans quelques instants.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Une erreur est survenue lors de la modifications de la fréquence d'images instantanées.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations" qtlid="344948">Une image instantanée enregistre l'état de votre NAS-HA au moment-même de la prise de l'image.</translation>
+   <translation id="nasha_custom_snapshot_modal_informations_size" qtlid="369204">Les images instantanées utilisent de l'espace sur votre partition pour fonctionner correctement.</translation>
+   <translation id="nasha_custom_snapshot_modal_label_snapshot_name" qtlid="369217">Libellé de l'image instantanée</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_length" qtlid="369230">Le libellé du snapshot doit avoir une longueur maximale de {{ maxlength }} caractères.</translation>
+   <translation id="nasha_custom_snapshot_modal_fail_snapshot_name_required" qtlid="369243">Le libellé de l'image instantanée.</translation>
+</translations>

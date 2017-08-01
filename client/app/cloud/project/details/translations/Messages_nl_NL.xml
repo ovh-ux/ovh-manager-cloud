@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpd_project_redirect" qtlid="245857">Doorsturen...</translation>
+
+   <translation id="cpd_project_suspended" qtlid="263858">Uw Cloudproject is opgeheven. Voor meer informatie kunt u contact opnemen met <a href="#/support">support</a>.</translation>
+
+   <translation id="cpd_project_creating_help" qtlid="245896">U wordt doorgestuurd wanneer het project wordt gecreëerd.</translation>
+   <translation id="cpd_project_creating_havetopay" qtlid="272014">Rond aub uw betaling af om uw oorspronkelijke bestelling te bevestigen.</translation>
+   <translation id="cpd_project_creating_cancel" qtlid="281990">Annuleer projectcreatie</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Rond aub uw betaling af om uw <a href="{{url}}" target="_blank"> oorspronkelijke bestelling te bevestigen</a>.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Als deze pagina enkele minuten na betaling nog steeds te zien is, neem dan aub contact op met <a href="#/support">ons support team</a>.</translation>
+
+   <translation id="cpd_project_deleting" qtlid="245909">Het project wordt verwijderd...</translation>
+   <translation id="cpd_project_deleting_help" qtlid="245922">U zult automatisch worden doorgestuurd zodra uw project is verwijderd.</translation>
+
+   <translation id="cpd_project_created" qtlid="245935">Uw project is klaar!</translation>
+
+   <translation id="cpd_project_cancel_success" qtlid="282003">Uw projectcreatie is geannuleerd. </translation>
+   <translation id="cpd_project_cancel_error_expired_status" qtlid="282016">Uw project is verlopen. </translation>
+   <translation id="cpd_project_cancel_error_ok_status" qtlid="282029">Uw project is al gecreëerd. </translation>
+   <translation id="cpd_project_cancel_error" qtlid="282042">Er is een fout opgetreden tijdens het annuleren. </translation>
+</translations>
