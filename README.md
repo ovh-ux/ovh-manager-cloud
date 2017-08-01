@@ -1,5 +1,7 @@
 # OVH Manager Cloud
 
+![ovh-manager-cloud-banner](cloudBanner.png)
+
 > OVH Control Panel Cloud UI
 
 ## Install
