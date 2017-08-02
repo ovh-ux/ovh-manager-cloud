@@ -11,6 +11,13 @@
         background-color: @cui-tile-background-color;
         border: 1px solid @cui-tile-border-color;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+        border-radius: @cui-tile-border-radius;
+
+        &__loader {
+            float: right;
+            margin-top: rem-calc(-10);
+            margin-right: rem-calc(-5);
+        }
 
         &__title {
             margin-left: @cui-tile-item-side-spacing;
@@ -85,7 +92,6 @@
                 }
             }
 
-
             .@{dropdown-menu-selector} {
                 position: absolute;
                 right: @cui-tile-item-side-spacing;
@@ -119,6 +125,20 @@
                 list-style: none;
                 margin: 0;
                 padding: 0;
+            }
+
+            &_custom {
+                &::before {
+                    content: "";
+                    display: block;
+                    margin-bottom: @cui-tile-padding-base;
+                    height: 1px;
+                    background-color: @cui-tile-item-border-color;
+                }
+
+                &-spaced {
+                    padding: 0 @cui-tile-padding-base;
+                }
             }
         }
 

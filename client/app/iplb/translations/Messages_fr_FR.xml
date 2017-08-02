@@ -41,4 +41,7 @@
 
     <translation id="iplb_zone_select_placeholder">Sélectionner</translation>
     <translation id="iplb_zone_all">Tous (ALL)</translation>
+
+    <translation id="iplb_graph_name_conn">Connexions simultanées</translation>
+    <translation id="iplb_graph_name_reqm">Requêtes par seconde</translation>
 </translations>

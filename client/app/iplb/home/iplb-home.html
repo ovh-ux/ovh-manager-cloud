@@ -10,9 +10,26 @@
         </cui-tile>
     </div>
     <div class="cui-flex__col cui-flex__col_1">
-        <cui-tile data-title="'iplb_home_tile_graph' | translate">
-            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
-        </cui-tile>
+        <div class="cui-tile">
+            <h4 class="oui-header_4 cui-tile__title">
+                <span data-translate="iplb_home_tile_graph"></span>
+                <cui-loader class="cui-tile__loader" data-ng-show="ctrl.loadingGraph"></cui-loader>
+            </h4>
+            <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                <label class="oui-select">
+                    <select class="oui-select__input"
+                        data-ng-options="metric as ctrl.getGraphTitle(metric) for metric in ctrl.metricsList"
+                        data-ng-model="ctrl.metric"
+                        data-ng-change="ctrl.loadGraph()"></select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </label>
+                <canvas id="line2" class="chart chart-line"
+                    data-chart-data="ctrl.data"
+                    data-chart-labels="ctrl.labels"
+                    data-chart-options="ctrl.options">
+                </canvas>
+            </div>
+        </div>
     </div>
 
     <div class="cui-flex__col cui-flex__col_1">
