@@ -6,12 +6,12 @@ import config from "../../config/environment";
 
 var router = new Router();
 
-// Redirect request to a sdev instead of API
+// Redirect request to a dev instead of API
 /* jshint loopfunc:true */
-if (config.env === "development" && config.sdev && config.sdev.routes && config.sdev.routes.length) {
-    for (var i = 0, l = config.sdev.routes.length; i < l; i++) {
-        router.all(config.sdev.routes[i], proxy({
-            target: config.sdev.url,
+if (config.env === "development" && config.dev && config.dev.routes && config.dev.routes.length) {
+    for (var i = 0, l = config.dev.routes.length; i < l; i++) {
+        router.all(config.dev.routes[i], proxy({
+            target: config.dev.url,
             changeOrigin: true,
             pathRewrite: {
                 "^/api/" : "/",
@@ -20,7 +20,7 @@ if (config.env === "development" && config.sdev && config.sdev.routes && config.
                 "^/engine/apiv6/" : "/"
             },
             headers: {
-                "X-Ovh-Nic" : config.sdev.nic
+                "X-Ovh-Nic" : config.dev.nic
             },
             secure: false,
             logLevel: "debug"

@@ -43,11 +43,11 @@ var all = {
     // List of user roles
     userRoles: ["guest", "user", "admin"],
 
-    // SDEV proxy config
-    sdev : {
-        nic : "ls148374-ovh",
-        url : "https://api.ovh.com:24743/1.0",
-        routes: []  // Routes to redirect to SDEV (can be a regex (eg.: [/^\/dedicated\/server\/\w+/]) or string)
+    // DEV proxy config
+    dev : {
+        nic : process.env.DEV_NIC || '',
+        url : process.env.DEV_URL || '',
+        routes: []
     }
 
 };
