@@ -73,7 +73,8 @@
     "ovh-angular-doc-url": "^0.0.6",
     "ovh-angular-module-status": "^0.0.2",
     "ovh-angular-otrs": "^1.1.0",
-    "ovh-api-services": "^1.1.5"
+    "ovh-api-services": "^1.1.5",
+    "angular-chart.js": "^1.1.1"
   },
   "devDependencies": {
     "angular-mocks": "1.6.x",

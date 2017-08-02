@@ -1,10 +1,15 @@
 class IpLoadBalancerHomeCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, IpLoadBalancerActionService, IpLoadBalancerHomeService, REDIRECT_URLS) {
+    constructor ($stateParams, $translate, ControllerHelper,
+                 IpLoadBalancerActionService, IpLoadBalancerConstant,
+                 IpLoadBalancerHomeService, IpLoadBalancerMetricsService,
+                 REDIRECT_URLS) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerActionService = IpLoadBalancerActionService;
+        this.IpLoadBalancerConstant = IpLoadBalancerConstant;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
+        this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
         this.REDIRECT_URLS = REDIRECT_URLS;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -18,6 +23,31 @@ class IpLoadBalancerHomeCtrl {
         this.subscription.load();
 
         this.initActions();
+
+        this.metricsList = this.IpLoadBalancerConstant.graphs;
+        this.metric = this.metricsList[0];
+        this.options = {
+            scales: {
+                yAxes: [{
+                    id: "y-axis-1",
+                    type: "linear",
+                    ticks: {
+                        min: 0
+                    }
+                }]
+            },
+            elements: {
+                line: {
+                    fill: false,
+                    borderColor: "#3DD1F0",
+                    borderWidth: 4
+                },
+                point: {
+                    radius: 0
+                }
+            }
+        };
+        this.loadGraph();
     }
 
     initLoaders () {
@@ -72,6 +102,31 @@ class IpLoadBalancerHomeCtrl {
                 isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
             }
         };
+    }
+
+    loadGraph () {
+        this.loadingGraph = true;
+        this.IpLoadBalancerMetricsService.getData(this.metric, "40m-ago", null, {
+            // http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html
+            downsample: "5m-sum"
+        })
+            .then(data => {
+                if (data.length && data[0].dps) {
+                    this.data = _.values(data[0].dps);
+                    this.labels = [];
+                    this.data.forEach((value, index) => {
+                        this.labels.unshift(`${index * 5}m`);
+                    });
+                }
+            })
+            .finally(() => {
+                this.loadingGraph = false;
+            });
+
+    }
+
+    getGraphTitle (metric) {
+        return this.$translate.instant(`iplb_graph_name_${metric}`);
     }
 }
 
