@@ -14,7 +14,7 @@ router.all("/*", proxy({
         "^/engine/2api/" : "/"
     },
     headers : {
-        "X-Ovh-2api-Session" : config.sdev.nic
+        "X-Ovh-2api-Session" : config.dev.nic
     },
     secure: false,
     logLevel: "debug"
