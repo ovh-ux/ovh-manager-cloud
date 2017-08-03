@@ -42,6 +42,7 @@ class PrivateNetworkListCtrl {
     }
 
     $onInit () {
+        this.resources.privateNetwork.resetAllCache();
         if (angular.isUndefined(this.$stateParams.projectId)) {
             this.toast.error(this.$translate.instant("cpci_private_network_list_context_error"));
         } else {
