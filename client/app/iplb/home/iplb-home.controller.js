@@ -1,8 +1,9 @@
 class IpLoadBalancerHomeCtrl {
-    constructor ($stateParams, $translate, ControllerHelper,
+    constructor ($state, $stateParams, $translate, ControllerHelper,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerMetricsService,
                  REDIRECT_URLS) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
@@ -21,33 +22,31 @@ class IpLoadBalancerHomeCtrl {
         this.configuration.load();
         this.information.load();
         this.subscription.load();
+        this.iplbStatus.load();
+        this.frontendsStatus.load();
+        this.serverFarmsStatus.load();
 
         this.initActions();
+        this.initGraph();
 
-        this.metricsList = this.IpLoadBalancerConstant.graphs;
-        this.metric = this.metricsList[0];
-        this.options = {
-            scales: {
-                yAxes: [{
-                    id: "y-axis-1",
-                    type: "linear",
-                    ticks: {
-                        min: 0
-                    }
-                }]
-            },
-            elements: {
-                line: {
-                    fill: false,
-                    borderColor: "#3DD1F0",
-                    borderWidth: 4
-                },
-                point: {
-                    radius: 0
-                }
+        this.IPLBActions = [[{
+            text: this.$translate.instant("iplb_status_apply"),
+            run: () => {} //eslint-disable-line
+        }]];
+
+        this.frontendsActions = [[{
+            text: this.$translate.instant("iplb_status_details"),
+            run: () => {
+                this.$state.go("network.iplb.detail.frontends");
             }
-        };
-        this.loadGraph();
+        }]];
+
+        this.farmsActions = [[{
+            text: this.$translate.instant("iplb_status_details"),
+            run: () => {
+                this.$state.go("network.iplb.detail.server-farm");
+            }
+        }]];
     }
 
     initLoaders () {
@@ -61,6 +60,18 @@ class IpLoadBalancerHomeCtrl {
 
         this.subscription = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.getSubscription(this.serviceName)
+        });
+
+        this.iplbStatus = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerHomeService.getIPLBStatus(this.serviceName)
+        });
+
+        this.frontendsStatus = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerHomeService.getFrontendsStatus(this.serviceName)
+        });
+
+        this.serverFarmsStatus = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerHomeService.getServerFarmsStatus(this.serviceName)
         });
     }
 
@@ -102,6 +113,45 @@ class IpLoadBalancerHomeCtrl {
                 isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
             }
         };
+    }
+
+    getIPLBStatusText () {
+        return _.capitalize(_.get(this.iplbStatus, "data.state"));
+    }
+
+    getFrontendsStatusText () {
+        return this.$translate.instant("iplb_status_active_total", {
+            activeCount: this.frontendsStatus.data.enabled,
+            totalCount: this.frontendsStatus.data.total
+        });
+    }
+
+    initGraph () {
+        this.metricsList = this.IpLoadBalancerConstant.graphs;
+        this.metric = this.metricsList[0];
+        this.options = {
+            scales: {
+                yAxes: [{
+                    id: "y-axis-1",
+                    type: "linear",
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true
+                    }
+                }]
+            },
+            elements: {
+                line: {
+                    fill: false,
+                    borderColor: "#3DD1F0",
+                    borderWidth: 4
+                },
+                point: {
+                    radius: 0
+                }
+            }
+        };
+        this.loadGraph();
     }
 
     loadGraph () {

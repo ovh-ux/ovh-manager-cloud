@@ -44,4 +44,11 @@
 
     <translation id="iplb_graph_name_conn">Connexions simultanées</translation>
     <translation id="iplb_graph_name_reqm">Requêtes par seconde</translation>
+
+    <translation id="iplb_status_active">{{activeCount}} actifs</translation>
+    <translation id="iplb_status_active_total">{{activeCount}} / {{totalCount}} actifs</translation>
+    <translation id="iplb_status_working_total">{{workingCount}} / {{totalCount}} actifs</translation>
+
+    <translation id="iplb_status_apply">Appliquer la configuration</translation>
+    <translation id="iplb_status_details">Aller aux détails</translation>
 </translations>

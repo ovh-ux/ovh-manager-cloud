@@ -1,8 +1,34 @@
 <section class="cui-flex cui-page__content">
     <div class="cui-flex__col cui-flex__col_1">
-        <cui-tile data-title="'iplb_home_tile_status' | translate">
-            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
-        </cui-tile>
+        <div class="cui-tile">
+            <h4 class="oui-header_4 cui-tile__title" data-translate="iplb_home_tile_status"></h4>
+            <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                <iplb-status-card
+                    data-type="ctrl.iplbStatus.data.status"
+                    data-title="ctrl.configuration.data.displayName"
+                    data-subtitle="ctrl.iplbStatus.data.statusText"
+                    data-loading="ctrl.iplbStatus.loading"
+                    data-actions="ctrl.IPLBActions"></iplb-status-card>
+                <iplb-status-card
+                    data-type="ctrl.frontendsStatus.data.status"
+                    data-title="'Frontends'"
+                    data-subtitle="ctrl.frontendsStatus.data.statusText"
+                    data-loading="ctrl.frontendsStatus.loading"
+                    data-actions="ctrl.frontendsActions"></iplb-status-card>
+                <iplb-status-card
+                    data-type="ctrl.serverFarmsStatus.data.serverFarms.status"
+                    data-title="'Fermes de Serveurs'"
+                    data-subtitle="ctrl.serverFarmsStatus.data.serverFarms.statusText"
+                    data-loading="ctrl.serverFarmsStatus.loading"
+                    data-actions="ctrl.farmsActions">
+                    <iplb-status-card
+                        data-type="ctrl.serverFarmsStatus.data.servers.status"
+                        data-title="'Serveurs'"
+                        data-subtitle="ctrl.serverFarmsStatus.data.servers.statusText"
+                        data-loading="ctrl.serverFarmsStatus.loading"></iplb-status-card>
+                </iplb-status-card>
+            </div>
+        </div>
     </div>
     <div class="cui-flex__col cui-flex__col_1">
         <cui-tile data-title="'iplb_home_tile_usage' | translate">
