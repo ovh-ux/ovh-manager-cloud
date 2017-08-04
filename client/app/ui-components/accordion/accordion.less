@@ -42,19 +42,19 @@
             font-size: rem-calc(20);
             vertical-align: middle;
             color: @oui-color-pacific;
-            // transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         &-container {
             display: flex;
+            align-items: center;
         }
     }
 
     &__body {
-        display: none;
-        // max-height: 0;
-        // overflow: hidden;
-        // transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        max-height: 0;
+        overflow: auto;
+        transition: max-height .15s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     &__content {
@@ -79,8 +79,8 @@
         }
 
         .@{self}__body {
-            // max-height: 500px;
-            display: block;
+            max-height: 100vh;
+            transition: max-height .65s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .@{self}__button {
