@@ -65,6 +65,7 @@ class IpLoadBalancerServerEditCtrl {
                 "probe"
             ]);
         }
+        return this.server;
     }
 
     create () {
@@ -74,11 +75,11 @@ class IpLoadBalancerServerEditCtrl {
         this.saving = true;
         this.CloudMessage.flushMessages();
         return this.IpLoadBalancerServerService.create(
-                this.farmType,
-                this.$stateParams.serviceName,
-                this.$stateParams.farmId,
-                this.getCleanServer()
-            )
+            this.farmType,
+            this.$stateParams.serviceName,
+            this.$stateParams.farmId,
+            this.getCleanServer()
+        )
             .then(() => {
                 this.$state.go("network.iplb.detail.server-farm");
             })
@@ -95,12 +96,12 @@ class IpLoadBalancerServerEditCtrl {
         this.saving = true;
         this.CloudMessage.flushMessages();
         return this.IpLoadBalancerServerService.update(
-                this.farmType,
-                this.$stateParams.serviceName,
-                this.$stateParams.farmId,
-                this.server.serverId,
-                this.getCleanServer()
-            )
+            this.farmType,
+            this.$stateParams.serviceName,
+            this.$stateParams.farmId,
+            this.server.serverId,
+            this.getCleanServer()
+        )
             .then(() => {
                 this.$state.go("network.iplb.detail.server-farm");
             })

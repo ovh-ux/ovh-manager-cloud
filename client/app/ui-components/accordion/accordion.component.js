@@ -40,6 +40,8 @@ angular.module("managerApp")
                     </div>
                     <div class="cui-accordion__button-container">
                         <button type="button"
+                            aria-label="$ctrl.ariaLabel"
+                            aria-pressed="{{$ctrl.expanded}}"
                             class="cui-accordion__button"
                             data-ng-click="$ctrl.toggle()">
                             <i class="oui-icon oui-icon-chevron-down cui-accordion__button-icon" aria-hidden="true"></i>
@@ -55,6 +57,10 @@ angular.module("managerApp")
             $onInit () {
                 if (!this.expanded && this.expanded !== false) {
                     this.expanded = false;
+                }
+
+                if (!this.ariaLabel) {
+                    this.ariaLabel = "Actions";
                 }
             }
 
@@ -74,6 +80,7 @@ angular.module("managerApp")
             title: "<",
             text: "<",
             expanded: "<",
-            actions: "<"
+            actions: "<",
+            ariaLabel: "@"
         }
     }));

@@ -59,6 +59,13 @@
                 lastDropdownMenuController = null;
             }
         }
+
+        keydown ($event) {
+            if ($event.keyCode === 32) {
+                $event.preventDefault();
+                this.toggle($event);
+            }
+        }
     }
 
     angular.module("managerApp")
