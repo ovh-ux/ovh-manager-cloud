@@ -17,7 +17,7 @@ class IpLoadBalancerMetricsService {
             reqm: {
                 queries: [{
                     metric: "haproxy.stats.req_tot.rate.max",
-                    aggregator: "sum"
+                    aggregator: "max"
                 }]
             }
         };

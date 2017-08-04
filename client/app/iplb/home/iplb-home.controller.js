@@ -131,11 +131,17 @@ class IpLoadBalancerHomeCtrl {
         this.metric = this.metricsList[0];
         this.options = {
             scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }],
                 yAxes: [{
                     id: "y-axis-1",
                     type: "linear",
                     ticks: {
                         min: 0,
+                        minStep: 1,
                         beginAtZero: true
                     }
                 }]
@@ -155,10 +161,11 @@ class IpLoadBalancerHomeCtrl {
     }
 
     loadGraph () {
+        const downsampleAggregation = this.metric === "conn" ? "sum" : "max";
         this.loadingGraph = true;
         this.IpLoadBalancerMetricsService.getData(this.metric, "40m-ago", null, {
             // http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html
-            downsample: "5m-sum"
+            downsample: `5m-${downsampleAggregation}`
         })
             .then(data => {
                 if (data.length && data[0].dps) {

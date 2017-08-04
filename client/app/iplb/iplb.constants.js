@@ -4,6 +4,29 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "conn",
         "reqm"
     ],
+    graphParams: {
+        "1h-ago": {
+            downsample: "1m"
+        },
+        "3h-ago": {
+            downsample: "1m"
+        },
+        "6h-ago": {
+            downsample: "5m"
+        },
+        "12h-ago": {
+            downsample: "10m"
+        },
+        "1d-ago": {
+            downsample: "30m"
+        },
+        "2d-ago": {
+            downsample: "1h"
+        },
+        "3d-ago": {
+            downsample: "2h"
+        }
+    },
     protocols: [
         "http",
         "https",
