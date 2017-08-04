@@ -35,7 +35,10 @@
                 </label>
             </column>
             <column title="'iplb_farm_server_list_col_status' | translate" property="serverState" sortable>
-                <iplb-server-status data-server="$row"></iplb-server-status>
+                <iplb-server-status data-server="$row"
+                    tabindex="0"
+                    role="button"
+                    data-ng-click="ctrl.seeServerStatus($row)"></iplb-server-status>
             </column>
             <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="ctrl.serverActionTemplate()"></column>
             <empty-placeholder data-ng-bind="'iplb_farm_server_list_empty' | translate"></empty-placeholder>

@@ -70,7 +70,16 @@ class IpLoadBalancerServerFarmCtrl {
     }
 
     seeServerStatus (server) {
-        //  TODO : Do something.
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/iplb/server/status/iplb-server-status-detail.html",
+                controller: "IpLoadBalancerServerStatusDetailCtrl",
+                controllerAs: "IpLoadBalancerServerStatusDetailCtrl",
+                resolve: {
+                    server: () => server
+                }
+            }
+        });
     }
 
     updateServer (server) {
