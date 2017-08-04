@@ -44,4 +44,13 @@
    <translation id="iplb_server_delete_question">Êtes-vous sûr de vouloir supprimer le serveur {{server}} ?</translation>
    <translation id="iplb_server_delete_error">Une erreur est survenue lors de la suppression du serveur : {{message}}</translation>
    <translation id="iplb_server_delete_success">Le serveur a été supprimé avec succès.</translation>
+
+   <translation id="iplb_server_status_title">Statut du serveur</translation>
+   <translation id="iplb_server_status_instance">Instance {{instanceId}}</translation>
+   <translation id="iplb_server_status_status">Status</translation>
+   <translation id="iplb_server_status_check_code">Check code</translation>
+   <translation id="iplb_server_status_check_status">Check status</translation>
+   <translation id="iplb_server_status_last_check_content">Last check content</translation>
+   <translation id="iplb_server_status_check_time">Check time</translation>
+   <translation id="iplb_server_status_no_information">Aucune information</translation>
 </translations>

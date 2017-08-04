@@ -44,6 +44,7 @@
 
     <translation id="iplb_graph_name_conn">Connexions simultanées</translation>
     <translation id="iplb_graph_name_reqm">Requêtes par seconde</translation>
+    <translation id="iplb_graph_no_data">Aucune donnée pour le moment</translation>
 
     <translation id="iplb_status_active">{{activeCount}} actifs</translation>
     <translation id="iplb_status_active_total">{{activeCount}} / {{totalCount}} actifs</translation>

@@ -14,7 +14,8 @@
             data-on-change="ctrl.onProtocolChange()">
             <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
                 data-text="('iplb_frontend_add_protocol_' + protocol) | translate"
-                data-value="protocol"></cui-radio-bar-item>
+                data-value="protocol"
+                data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
           </cui-radio-bar>
           <label for="protocol" class="oui-label" data-translate="iplb_frontend_add_protocol"></label>
         </div>
@@ -111,7 +112,11 @@
             </div>
 
             <div class="oui-checkbox" data-ng-if="ctrl.type == 'http' && ctrl.frontend.ssl">
-              <input class="oui-checkbox__input" id="hsts" name="hsts" type="checkbox">
+              <input class="oui-checkbox__input"
+                id="hsts"
+                name="hsts"
+                type="checkbox"
+                data-ng-model="ctrl.frontend.hsts">
               <label class="oui-checkbox__label-container" for="hsts">
                 <span class="oui-checkbox__label" data-translate="iplb_frontend_add_hsts"></span>
                 <span class="oui-checkbox__icon">

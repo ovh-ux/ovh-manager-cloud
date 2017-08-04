@@ -50,10 +50,14 @@
                     <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                 </label>
                 <canvas id="line2" class="chart chart-line"
+                    data-ng-show="ctrl.data"
                     data-chart-data="ctrl.data"
                     data-chart-labels="ctrl.labels"
                     data-chart-options="ctrl.options">
                 </canvas>
+                <div class="iplb-no-data"
+                    data-ng-hide="ctrl.data"
+                    data-translate="iplb_graph_no_data"></div>
             </div>
         </div>
     </div>

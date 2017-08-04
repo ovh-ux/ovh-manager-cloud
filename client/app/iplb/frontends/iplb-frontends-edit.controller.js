@@ -146,6 +146,20 @@ class IpLoadBalancerFrontendsEditCtrl {
         return value && value !== "0";
     }
 
+    isProtocolDisabled (protocol) {
+        if (!this.edition) {
+            return false;
+        }
+
+        if (this.type === "http" && /http/.test(protocol)) {
+            return false;
+        } else if (this.protocol === protocol) {
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * Parse frontend object from API and send it to form.
      * @return parsed frontend object
