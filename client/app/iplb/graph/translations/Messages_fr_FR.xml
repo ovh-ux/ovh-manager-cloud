@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="iplb_ssl_graph_title">Graphiques</translation>
+    <translation id="iplb_graph_title">Graphiques</translation>
+    <translation id="iplb_graph_scape_1h-ago">1 h</translation>
+    <translation id="iplb_graph_scape_3h-ago">3 h</translation>
+    <translation id="iplb_graph_scape_6h-ago">6 h</translation>
+    <translation id="iplb_graph_scape_12h-ago">12 h</translation>
+    <translation id="iplb_graph_scape_1d-ago">1 j</translation>
+    <translation id="iplb_graph_scape_2d-ago">2 j</translation>
+    <translation id="iplb_graph_scape_3d-ago">3 j</translation>
 </translations>
