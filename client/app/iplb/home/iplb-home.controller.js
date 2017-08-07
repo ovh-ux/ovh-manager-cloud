@@ -22,6 +22,7 @@ class IpLoadBalancerHomeCtrl {
         this.configuration.load();
         this.information.load();
         this.subscription.load();
+
         this.iplbStatus.load();
         this.frontendsStatus.load();
         this.serverFarmsStatus.load();
@@ -31,7 +32,9 @@ class IpLoadBalancerHomeCtrl {
 
         this.IPLBActions = [[{
             text: this.$translate.instant("iplb_status_apply"),
-            run: () => {} //eslint-disable-line
+            run: () => {
+                this.$state.go("network.iplb.detail.configuration");
+            }
         }]];
 
         this.frontendsActions = [[{
