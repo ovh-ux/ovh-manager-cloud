@@ -1586,12 +1586,12 @@ angular.module("managerApp")
                 self.model.sshKeyId = newSshKey.id;
                 Toast.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
             });
-        }.catch(function (err) {
-            Toast.error( [$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
+        }).catch(function (err) {
+            Toast.error([$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
         }).finally(function () {
             self.loaders.sshKey.add = false;
         });
-    }
+    };
 
     self.deleteSshKey = function (keyId) {
         if (!self.loaders.sshKey.remove) {
