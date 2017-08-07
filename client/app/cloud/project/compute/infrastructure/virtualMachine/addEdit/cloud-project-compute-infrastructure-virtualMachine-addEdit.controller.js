@@ -369,7 +369,7 @@ angular.module("managerApp")
             });
 
             //filter GPU
-            if (flavorType === "g1") {
+            if (flavorType === "g1" || flavorType === "g2" || flavorType === "g3") {
                 self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], function (image) {
                     return image.type === "linux" || (flavorType ? image.flavorType === flavorType : true);
                 });

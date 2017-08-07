@@ -12,13 +12,13 @@ angular.module("managerApp")
         },
         {
             id: "other",
-            types: ["ovh.cpu", "ovh.ram", "ovh.ceph.eg", "ovh.ssd.cpu", "ovh.ssd.ram", "ovh.ssd.eg", "ovh.ceph.hg", "ovh.ssd.gpu"],
+            types: ["ovh.cpu", "ovh.ram", "ovh.ceph.eg", "ovh.ssd.cpu", "ovh.ssd.ram", "ovh.ssd.eg", "ovh.ceph.hg"],
             migrationNotAllowed: ["vps"],
             order: 1
         },
         {
             id: "gpu",
-            types: ["ovh.ssd.gpu"],
+            types: ["ovh.ssd.gpu", "ovh.ssd.gpu2", "ovh.ssd.gpu3"],
             migrationNotAllowed: ["vps"],
             order: 2
         }
@@ -34,7 +34,9 @@ angular.module("managerApp")
         "ovh.ssd.ram": 2.4,
         "ovh.ssd.cpu": 3.1,
         "ovh.ssd.eg" : 2.3,
-        "ovh.ssd.gpu": 3.1
+        "ovh.ssd.gpu": 3.1,
+        "ovh.ssd.gpu2": 3.1,
+        "ovh.ssd.gpu3": 3.1
     })
     .constant("CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES", [
         "other",
@@ -49,7 +51,9 @@ angular.module("managerApp")
         "ovh.ssd.ram" : 256,
         "ovh.ssd.eg" : 256,
         "ovh.ceph.eg" : 256,
-        "ovh.ssd.gpu" : 256
+        "ovh.ssd.gpu" : 256,
+        "ovh.ssd.gpu2" : 256,
+        "ovh.ssd.gpu3" : 256
     })
     .constant('CLOUD_GEOLOCALISATION', {
         instance : {
