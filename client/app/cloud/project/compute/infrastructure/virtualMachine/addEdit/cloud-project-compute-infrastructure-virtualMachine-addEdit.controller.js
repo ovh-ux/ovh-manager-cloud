@@ -155,10 +155,7 @@ angular.module("managerApp")
         flavors   : {},
         images    : {},
         quota     : {},
-        sshKeys   : {
-            inRegion : [],
-            outRegion : []
-        }
+        sshKeys   : [],
     };
 
     self.categoriesVmInEditionFlavor = {};
@@ -411,14 +408,15 @@ angular.module("managerApp")
     }
 
     function getDisplaySshKeys () {
-        // use of partition to split in region ssh keys and out of region ssh keys
-        var sshPartition = _.partition(self.panelsData.sshKeys, function (sshKey) {
-            return sshKey.regions && sshKey.regions.length && sshKey.regions.indexOf(self.model.region) > -1;
+
+        // Add boolean to know if sshKey is available on the selected region
+        self.displayData.sshKeys = _.map(self.panelsData.sshKeys, function (sshKey) {
+            sshKey.availableOnRegion = sshKey.regions && sshKey.regions.length && sshKey.regions.indexOf(self.model.region) > -1;
+            return sshKey;
         });
-        if (sshPartition && sshPartition.length) {
-            self.displayData.sshKeys.inRegion = sshPartition[0];
-            self.displayData.sshKeys.outRegion = sshPartition[1];
-        }
+
+        self.displayData.sshKeyAvailables = _.countBy(self.displayData.sshKeys, "availableOnRegion")["true"] || 0;
+        self.displayData.sshKeyUnavailables = self.displayData.sshKeys.length - self.displayData.sshKeyAvailables;
     }
 
     self.projectHasNoSshKeys = function () {
@@ -1574,6 +1572,26 @@ angular.module("managerApp")
             });
         }
     };
+
+    self.sshKeyAddRegion = function (sshKey) {
+        self.loaders.sshKey.add = true;
+        return CloudProjectSshKey.Lexi().save({
+            serviceName : serviceName
+        }, {
+            name        : sshKey.name,
+            publicKey   : sshKey.publicKey,
+            region      : self.model.region,
+        }).$promise.then(function (newSshKey) {
+            return self.getSshKeys(true).then(function () {
+                self.model.sshKeyId = newSshKey.id;
+                Toast.success($translate.instant('cpcivm_addedit_sshkey_add_submit_success'));
+            });
+        }.catch(function (err) {
+            Toast.error( [$translate.instant('cpcivm_addedit_sshkey_add_submit_error'), err.data.message || ''].join(' '));
+        }).finally(function () {
+            self.loaders.sshKey.add = false;
+        });
+    }
 
     self.deleteSshKey = function (keyId) {
         if (!self.loaders.sshKey.remove) {

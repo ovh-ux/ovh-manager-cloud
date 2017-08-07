@@ -1238,7 +1238,7 @@
                                 data-ng-disabled="VmAddEditCtrl.getMaximumInstanceCreationCount() <= 1"
                                 required
                                 min="1"
-                                max="{{ VmAddEditCtrl.getMaximumInstanceCreationCount() }}"></input>
+                                max="{{ VmAddEditCtrl.getMaximumInstanceCreationCount() }}" />
                             </div>
                             <p class="text-danger" data-ng-if="!vmCountForm.$valid" data-translate="cpcivm_addedit_advanced_options_multiple_creation_count_error"></p>
                             <p class="no-space text-left top-space-m16"
@@ -1437,8 +1437,9 @@
                                 </tr>
                             </tbody>
                             <tbody data-ng-hide="VmAddEditCtrl.loaders.panelsData.sshKeys">
-                                <tr data-ng-repeat="sshKey in VmAddEditCtrl.displayData.sshKeys.inRegion | orderBy:'name'"
+                                <tr data-ng-repeat="sshKey in VmAddEditCtrl.displayData.sshKeys | orderBy:'name'"
                                     data-ng-click="VmAddEditCtrl.model.sshKeyId = sshKey.id"
+                                    data-ng-show="sshKey.availableOnRegion"
                                     class="pointer">
 
                                     <td data-ng-hide="VmAddEditCtrl.sshKeyDeletedId === sshKey.id">
@@ -1448,7 +1449,7 @@
                                                     name="ssh_choice"
                                                     data-ovh-stop-event="click"
                                                     data-ng-disabled="VmAddEditCtrl.sshKeyDeletedId"
-                                                    data-ng-model="VmAddEditCtrl.model.sshKeyId">
+                                                    data-ng-model="VmAddEditCtrl.model.sshKeyId"/>
                                         </flat-radio>
                                     </td>
 
@@ -1497,14 +1498,47 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr ng-show="VmAddEditCtrl.displayData.sshKeyUnavailables">
+                                    <td colspan="3" class="text-center well well-sm low-padding">
+                                        <p class="text-center text-muted fs11 no-space"
+                                           data-ng-init="translateValues = {count : VmAddEditCtrl.displayData.sshKeyUnavailables, region : VmAddEditCtrl.regionService.getTranslatedMicroRegion(VmAddEditCtrl.vmInEdition.region)}">
+                                           {{ :: VmAddEditCtrl.displayData.sshKeys.outRegion.length > 1 ? ('cpcivm_add_ssh_key_out_region_plural' | translate:translateValues) : ('cpcivm_add_ssh_key_out_region' | translate:translateValues) }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr data-ng-repeat="sshKey in VmAddEditCtrl.displayData.sshKeys | orderBy:'name'"
+                                    data-ng-hide="sshKey.availableOnRegion"
+                                    data-ng-click="VmAddEditCtrl.sshKeyAddRegion(sshKey)"
+                                    data-uib-tooltip="{{cpcivm_addedit_sshkey_add_button | translate}}">
+                                    <td>
+                                        <flat-radio>
+                                            <input type="radio"
+                                                    value="{{::sshKey.id}}"
+                                                    name="ssh_choice"
+                                                    data-ovh-stop-event="click"
+                                                    data-ng-disabled="VmAddEditCtrl.sshKeyDeletedId"
+                                                    data-ng-model="VmAddEditCtrl.model.sshKeyId">
+                                        </flat-radio>
+                                    </td>
+
+                                    <td colspan="2" class="word-break">
+                                        <p class="no-space">
+                                            <button class="no-style" type="button"
+                                                data-ovh-stop-event="click"
+                                                data-ng-click="sshKeyFull = !sshKeyFull">
+                                                <i class="fa fa-caret-right rotate" data-ng-class="{'rotate90' : sshKeyFull}"></i>
+                                            </button>
+                                            <label for="{{::sshKey.id}}" class="no-space normal"
+                                                    data-ng-bind="::sshKey.name"></label>
+                                        </p>
+                                        <div ng-slide-down="sshKeyFull" duration="0.3" lazy-render>
+                                            <p class="no-space"
+                                                data-ng-bind="::sshKey.publicKey"></p>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
-                        <div class="well well-sm" data-ng-if="VmAddEditCtrl.displayData.sshKeys.outRegion.length">
-                            <p class="text-center text-muted fs11 no-space"
-                               data-ng-init="translateValues = {count : VmAddEditCtrl.displayData.sshKeys.outRegion.length, region : VmAddEditCtrl.regionService.getTranslatedMicroRegion(VmAddEditCtrl.vmInEdition.region)}">
-                               {{ :: VmAddEditCtrl.displayData.sshKeys.outRegion.length > 1 ? ('cpcivm_add_ssh_key_out_region_plural' | translate:translateValues) : ('cpcivm_add_ssh_key_out_region' | translate:translateValues) }}
-                            </p>
-                        </div>
                     </div>
                 </div>
 
