@@ -8,18 +8,25 @@ class IpLoadBalancerZoneService {
     getZones () {
         return this.IpLoadBalancing.Lexi().availableZones().$promise
             .then(zones => zones.filter(zone => !/private$/.test(zone))
-                .reduce((zonesMap, zoneName) => {
-                    zonesMap[zoneName] = this.RegionService.getRegion(zoneName).microRegion.text;
-                    return zonesMap;
-                }, {}))
-            .then(zones => {
-                zones.all = this.$translate.instant("iplb_zone_all");
-                zones[0] = this.$translate.instant("iplb_zone_select_placeholder");
-                return Object.keys(zones).map(zoneKey => ({
-                    id: zoneKey,
-                    name: zones[zoneKey]
-                }));
+                .filter(zone => !/^all/.test(zone))
+                .map(zone => ({
+                    id: zone,
+                    name: this.RegionService.getRegion(zone).microRegion.text
+                })));
+    }
+
+    getZonesSelectData () {
+        return this.getZones().then(zones => {
+            zones.push({
+                id: "all",
+                name: this.$translate.instant("iplb_zone_all")
             });
+            zones.unshift({
+                id: 0,
+                name: this.$translate.instant("iplb_zone_select_placeholder")
+            });
+            return zones;
+        });
     }
 
     humanizeZone (zone) {

@@ -30,7 +30,8 @@
         successHandler (message) {
             return data => {
                 if (message) {
-                    this.CloudMessage.success(this.$translate.instant(message, data.toJSON()));
+                    const jsonData = data && data.toJSON ? data.toJSON() : {};
+                    this.CloudMessage.success(this.$translate.instant(message, jsonData));
                 } else {
                     // Default success message
                     this.CloudMessage.success(this.$translate.instant(defaultSuccessMessage));

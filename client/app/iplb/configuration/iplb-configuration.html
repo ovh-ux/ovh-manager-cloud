@@ -2,14 +2,23 @@
     <cui-page-content-title text="'iplb_configuration_title' | translate"></cui-page-content-title>
     <p data-translate="iplb_configuration_intro"></p>
 
-    <cui-loader data-ng-show="ctrl.loading"></cui-loader>
-    <oui-table data-ng-hide="ctrl.loading"
-        rows="ctrl.tasks"
+    <button type="button"
+        class="oui-button oui-button_secondary"
+        data-translate="iplb_configuration_action_apply"
+        data-ng-click="ctrl.apply()"
+        data-ng-disabled="!ctrl.selectedZones.length"></button>
+
+    <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
+    <oui-table data-ng-hide="ctrl.zones.loading"
+        rows="ctrl.zones.data"
         on-selection-change="ctrl.onSelectionChange($selection)">
-        <column title="'iplb_configuration_datacenter' | translate" sortable></column>
-        <column title="'iplb_configuration_progress' | translate" sortable></column>
-        <column title="'iplb_configuration_status' | translate" sortable></column>
-        <column title="'iplb_configuration_action' | translate"></column>
+        <column title="'iplb_configuration_datacenter' | translate" property="name" sortable></column>
+        <column title="'iplb_configuration_progress' | translate"></column>
+        <column title="'iplb_configuration_status' | translate"></column>
+        <column title="'iplb_configuration_action' | translate"
+            class="oui-table__cell_action oui-table__cell_action-menu"
+            template="ctrl.actionTemplate()">
+        </column>
         <empty-placeholder>Pas de configuration à appliquer / Tout est à jour</empty-placeholder>
     </oui-table>
 </section>

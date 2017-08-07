@@ -17,7 +17,7 @@ class IpLoadBalancerFrontendsEditCtrl {
 
     initLoaders () {
         this.zones = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.IpLoadBalancerZoneService.getZones()
+            loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData()
         });
         this.farms = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerFrontendsService.getFarmsChoices(
