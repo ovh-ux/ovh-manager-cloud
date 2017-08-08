@@ -105,10 +105,6 @@
         }
     }
 
-    &__error-item {
-
-    }
-
     &__edit-button {
         font-size: 1.6rem;
     }
@@ -116,6 +112,9 @@
     &__edit-input {
         flex: 0 0 30rem;
         height: 3.6rem;
+        @media (max-width: @screen-xs) {
+            flex: 0 0 22rem;
+        }
     }
 
     &__edit-button {
@@ -138,5 +137,14 @@
         display: inline-block;
         font-size: @vrack-text-font-size;
         color: @vrack-text-font-color;
+    }
+
+    &__description {
+        font-size: @vrack-text-font-size;
+        color: @vrack-text-font-color;
+    }
+
+    &__empty-description-text {
+        margin: 3.5rem 0 1.5rem 0;
     }
 }
