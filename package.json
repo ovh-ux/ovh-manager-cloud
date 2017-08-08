@@ -57,7 +57,7 @@
     "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch-chokidar": "^1.0.0",
     "grunt-dom-munger": "^3.4.0",
     "grunt-env": "~0.4.1",
     "grunt-eslint": "^19.0.0",

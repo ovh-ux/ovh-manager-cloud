@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                 url: "https://localhost:<%= express.options.port %>"
             }
         },
-        watch: {
+        watchChokidar: {
             babel: {
                 files: ["<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js"],
                 tasks: ["newer:babel:client"]
@@ -794,7 +794,7 @@ module.exports = function (grunt) {
             "wait",
             "open",
             "karma:unitContinuous:start",
-            "watch"
+            "watchChokidar"
         ]);
     });
 
