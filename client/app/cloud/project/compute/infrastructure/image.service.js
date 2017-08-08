@@ -53,6 +53,9 @@
             } else {
                 augmentedImage.apps = false;
             }
+            if (image.flavorType) {
+                augmentedImage.flavorType = image.flavorType.split(",");
+            }
             return augmentedImage;
         }
     }
