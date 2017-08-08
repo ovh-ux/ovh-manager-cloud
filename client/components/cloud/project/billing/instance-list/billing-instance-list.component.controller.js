@@ -107,12 +107,13 @@ angular.module("managerApp")
             self.data.instanceToMonthlyPrice = null;
             self.loaders.monthlyBilling = true;
 
-            CloudPrice.Lexi().query({ flavorId: instance.flavorId }).$promise.then(function (flavor) {
-                if (flavor.instances && flavor.instances.length) {
-                    self.data.instanceToMonthlyPrice = flavor.instances[0];
-                } else {
+            CloudPrice.Lexi().query().$promise.then(function (prices) {
+                if (prices.instances && prices.instances.length) {
+                    self.data.instanceToMonthlyPrice = _.find(prices.instances, {flavorName : instance.reference});
+                }
+                if (!self.data.instanceToMonthlyPrice) {
                     self.endInstanceToMonthlyConversion();
-                    $q.reject({ data: { message: "No instances for flavor." } });
+                    return $q.reject({ data: { message: "No instances for flavor." } });
                 }
             }).catch(function (err) {
                 self.instanceToMonthly = null;

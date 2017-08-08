@@ -261,6 +261,34 @@
    <translation id="cpci_vm_flavor_category_win-g1-120" qtlid="400351">G1-120</translation>
    <translation id="cpci_vm_flavor_category_win-g1-240" qtlid="400364">G1-240</translation>
 
+   <translation id="cpci_vm_flavor_category_g2-7">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_g2-15">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_g2-30">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_g2-60">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_g2-120">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_g2-240">G2-240</translation>
+
+   <translation id="cpci_vm_flavor_category_win-g2-7">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-15">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-30">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-60">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-120">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-240">G2-240</translation>
+
+   <translation id="cpci_vm_flavor_category_g3-7">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_g3-15">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_g3-30">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_g3-60">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_g3-120">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_g3-240">G3-240</translation>
+
+   <translation id="cpci_vm_flavor_category_win-g3-7">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-15">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-30">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-60">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-120">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-240">G3-240</translation>
+
    <translation id="cpci_vm_alert_cpu" qtlid="276181">Votre cpu a atteint plus de {{percentage}} de la puissance allouée au cours des 7 derniers jours.</translation>
    <translation id="cpci_vm_alert_ram" qtlid="276194">Votre ram a atteint plus de {{percentage}} de l'espace utilisé au cours des 7 derniers jours.</translation>
 
