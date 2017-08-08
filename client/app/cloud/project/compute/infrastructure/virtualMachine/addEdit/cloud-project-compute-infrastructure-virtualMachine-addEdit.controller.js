@@ -371,7 +371,7 @@ angular.module("managerApp")
             //filter GPU
             if (flavorType === "g1" || flavorType === "g2" || flavorType === "g3") {
                 self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], function (image) {
-                    return image.type === "linux" || (flavorType ? image.flavorType === flavorType : true);
+                    return image.type === "linux" || (flavorType ? _.includes(image.flavorType, flavorType) : true);
                 });
             } else {
                 self.displayData.images[imageType] = _.filter(self.displayData.images[imageType], function (image) {
@@ -1451,6 +1451,7 @@ angular.module("managerApp")
                 } else {
                     self.panelsData.images = imagesList;            // filter on public is already done
                 }
+                self.panelsData.images = _.uniq(self.panelsData.images, "id");
                 self.panelsData.images = _.map(self.panelsData.images, CloudImageService.augmentImage);
             }).catch(function (err) {
                 self.panelsData.images = null;
