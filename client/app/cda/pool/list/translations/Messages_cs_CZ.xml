@@ -6,7 +6,7 @@
    <translation id="cda_pool_add_button_text" qtlid="354236">Ajouter un pool</translation>
    <translation id="cda_pool_delete_button_text" qtlid="2414">Odstranit</translation>
 
-   <translation id="cda_pool_table_col_poolname" qtlid="3818">Příjmení</translation>
+   <translation id="cda_pool_table_col_poolname" qtlid="3818">Jméno</translation>
    <translation id="cda_pool_table_col_pooltype" qtlid="2642">Typ</translation>
    <translation id="cda_pool_table_col_replica" qtlid="354249">Nombre de répliques</translation>
    <translation id="cda_pool_table_col_minreplica" qtlid="354262">Nombre minimal de répliques actives</translation>
@@ -14,7 +14,7 @@
    <translation id="cda_pool_table_col_actions" qtlid="72809">Akce</translation>
 
    <translation id="cda_pool_add_title" qtlid="354236">Ajouter un pool</translation>
-   <translation id="cda_pool_add_poolname_label" qtlid="3818">Příjmení</translation>
+   <translation id="cda_pool_add_poolname_label" qtlid="3818">Jméno</translation>
 
    <translation id="cda_pool_add_poolname_required" qtlid="354288">Zadejte prosím název.</translation>
    <translation id="cda_pool_add_poolname_pattern" qtlid="354301">Le nom ne peut contenir d'espaces.</translation>

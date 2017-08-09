@@ -9,7 +9,7 @@
    <translation id="dbaasts_region" qtlid="32434">Región</translation>
 
    <translation id="dbaasts_ok" qtlid="31522">OK</translation>
-   <translation id="dbaasts_name" qtlid="3818">Apellidos</translation>
+   <translation id="dbaasts_name" qtlid="3818">Nombre</translation>
 
    <translation id="dtpds_name_error" qtlid="300759">Atención: El nombre debe cumplir los siguientes criterios:</translation>
    <translation id="dtpds_name_error1" qtlid="300772">- mínimo {{min}} caracteres</translation>

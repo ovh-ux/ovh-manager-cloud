@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Käyttöehdot</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Hyväksyn <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Aloita oma pilviprojekti</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(valinnainen)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Tämän jälkeen kutakin laskua yritetään automaattisesti veloittaa ensin projektiin kohdennetusta pilvisaldosta, sitten asiakkaan OVH-tililtä ja viimeiseksi asiakkaan prepaid-tililtä (asiakkaan velvollisuus on maksaa mahdollinen avoin velka välittömästi mitä tahansa maksutapaa käyttäen).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Pilvisaldoa ei voi siirtää eikä sitä hyvitetä. Sillä ei ole rahallista arvoa ja mikäli saldoa ei ole käytetty kokonaan 13 kuukauden sisällä, käyttämätön osa menetetään.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Eikö sinulla ole tarjouskoodia?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Maksa ensimmäinen {{price}}:n suuruinen pilvisaldolasku projektia varten.</translation>
 </translations>

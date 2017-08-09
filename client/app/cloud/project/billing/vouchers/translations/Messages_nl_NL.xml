@@ -14,7 +14,7 @@
 
    <translation id="cpb_vouchers_bill_ref" qtlid="295894">Factuurnr. <a href="{{url}}">{{billId}}</a></translation>
    <translation id="cpb_vouchers_voucher_cell" qtlid="258860">De geldige voucher </translation>
-   <translation id="cpb_vouchers_name_cell" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Naam</translation>
    <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Beginsaldo</translation>
    <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Resterende krediet</translation>
    <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Het credit wordt automatisch gebruikt voor toekomstige facturen</translation>
