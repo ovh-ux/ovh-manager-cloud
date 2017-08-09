@@ -50,7 +50,7 @@
    <translation id="cpbc_snapshot_type_instance" qtlid="364277">Imagen de servidores</translation>
 
    <translation id="cpbc_volume_detail_title" qtlid="352841">Discos adicionales</translation>
-   <translation id="cpbc_volume_col_name" qtlid="3818">Apellidos</translation>
+   <translation id="cpbc_volume_col_name" qtlid="3818">Nombre</translation>
    <translation id="cpbc_volume_col_consumption" qtlid="25639">Consumo</translation>
    <translation id="cpbc_volume_col_consumption_tooltip" qtlid="245987">Facturación a principios del mes siguiente.</translation>
    <translation id="cpbc_volume_consumption_tooltip_part1" qtlid="364173">Se factura en función del espacio de almacenamiento real, medido cada hora, redondeado a la hora.</translation>

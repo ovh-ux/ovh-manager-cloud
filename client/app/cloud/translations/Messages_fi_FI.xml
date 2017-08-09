@@ -35,9 +35,12 @@
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
+   <translation id="cloud_common_region_WAW" qtlid="94039">Varsova</translation>
+   <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsova ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Sijainti</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Keski-Eurooppa (Ranska)</translation>
+   <translation id="cloud_common_region_location_WAW" qtlid="410117">Keski-Eurooppa (Puola)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Pohjois-Amerikka (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Länsi-Eurooppa (Ranska)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Länsi-Eurooppa (Ranska)</translation>

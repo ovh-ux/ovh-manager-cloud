@@ -35,9 +35,12 @@
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
+   <translation id="cloud_common_region_WAW" qtlid="94039">Varsóvia</translation>
+   <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsovie ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localização</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Central (França)</translation>
+   <translation id="cloud_common_region_location_WAW" qtlid="410117">Europe Centrale (Pologne)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">América do Norte (Canadá)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Europa Ocidental (França)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa Ocidental (França)</translation>

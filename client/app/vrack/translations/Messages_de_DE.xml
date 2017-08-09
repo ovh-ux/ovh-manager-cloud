@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="vrack_introduction_title" qtlid="344584">vRack zusammenstellen </translation>
-   <translation id="vrack_introduction_description" qtlid="405629">Gérez l'interconnexion privée de tous les composants de votre infrastructure informatique, partout dans le monde. <br/> La technologie vRack (baie virtuelle) permet de connecter, isoler ou répartir vos services au sein d'un ou plusieurs réseau privés et sécurisés.</translation>
-   <translation id="vrack_introduction_change_owner" qtlid="405642">Vous avez aussi la possibilité de <a href="{{ uri }}" target="_blank">changer de propriétaire</a> si vous le désirez.</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Verwalten Sie die private Verbindung aller Komponenten Ihrer Infrastruktur, und das überall auf der Welt. <br/> Mit der vRack Technologie (virtuelles Rack) können Sie Ihre Services in gesicherten privaten Netzwerken verbinden, isolieren oder neu aufteilen.</translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">Wenn Sie möchten, können Sie auch <a href="{{ uri }}" target="_blank">den Benutzer wechseln</a>.</translation>
    <translation id="vrack_guide_link_text" qtlid="344610">Sie möchten mehr darüber erfahren? Dann lesen Sie unsere Anleitung. </translation>
    <translation id="vrack_change_owner_link_text" qtlid="344623">Inhaber wechseln </translation>
    <translation id="vrack_error" qtlid="323249">Die Daten Ihres vRack konnten nicht abgerufen werden.</translation>
@@ -21,5 +21,5 @@
    <translation id="vrack_move_dialog_warning_notice" qtlid="353582">Diese Operation führt zu einer Service-Unterbrechung von etwa 5 Minuten. </translation>
    <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">Ziel vRack: </translation>
    <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">vRack auswählen </translation>
-   <translation id="vrack_move_dialog_request_error" qtlid="353621">Uups! Verschieben des Datacenters fehlgeschlagen. </translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">Verschieben des Datacenters fehlgeschlagen. </translation>
 </translations>

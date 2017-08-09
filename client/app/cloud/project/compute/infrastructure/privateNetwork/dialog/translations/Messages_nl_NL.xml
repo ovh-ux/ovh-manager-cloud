@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpcipnd_create_title" qtlid="331202">Privénetwerk toevoegen</translation>
    <translation id="cpcipnd_default_name_template" qtlid="331215">VLAN{{id}}</translation>
-   <translation id="cpcipnd_name_label" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Naam</translation>
    <translation id="cpcipnd_name_required_error" qtlid="331228">De naam van uw privénetwerk is verplicht. </translation>
    <translation id="cpcipnd_name_maxlength_error" qtlid="331241">De naam van uw privénetwerk kan niet meer dan 256 tekens bevatten.</translation>
    <translation id="cpcipnd_vlan_create" qtlid="348347">Definieer een VLAN</translation>

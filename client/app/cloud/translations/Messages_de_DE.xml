@@ -35,15 +35,18 @@
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }}) </translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
+   <translation id="cloud_common_region_WAW" qtlid="94039">Warschau</translation>
+   <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsovie ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalisieren</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Mitteleuropa (Frankreich)</translation>
+   <translation id="cloud_common_region_location_WAW" qtlid="410117">Europe Centrale (Pologne)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Nordamerika (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Westeuropa (Frankreich)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Westeuropa (Frankreich)</translation>
 
-   <translation id="browser_alert_not_supported" qtlid="405357">Votre navigateur n'est pas supporté.</translation>
-   <translation id="browser_alert_deprecated" qtlid="405370">Votre navigateur n'est pas à jour et peut contenir des failles de sécurité ou de compatibilité.</translation>
-   <translation id="browser_alert_update" qtlid="405383">Nous vous recommandons de <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">mettre à jour votre navigateur <i class="fa fa-external-link" aria-hidden="true"></i></a> afin de profiter d'une expérience optimale.</translation>
-   <translation id="browser_alert_close" qtlid="405396">Fermer cette alerte</translation>
+   <translation id="browser_alert_not_supported" qtlid="405357">Ihr Browser wird nicht unterstützt.</translation>
+   <translation id="browser_alert_deprecated" qtlid="405370">Ihr Browser ist nicht aktuell und könnte Sicherheitslücken enthalten oder Kompatibilitätsprobleme verursachen.</translation>
+   <translation id="browser_alert_update" qtlid="405383">Wir empfehlen Ihnen, <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">Ihren Browser zu aktualisieren<i class="fa fa-external-link" aria-hidden="true"></i></a>, damit alle Funktionen optimal funktionieren.</translation>
+   <translation id="browser_alert_close" qtlid="405396">Diese Warnung schließen</translation>
 </translations>

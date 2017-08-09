@@ -14,7 +14,7 @@
 
    <translation id="cda_detail_status" qtlid="26443">Estado</translation>
    <translation id="cda_detail_crush_tunables" qtlid="354431">CRUSH tunables</translation>
-   <translation id="cda_detail_service_name" qtlid="3818">Apellidos</translation>
+   <translation id="cda_detail_service_name" qtlid="3818">Nombre</translation>
    <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
    <translation id="cda_detail_size" qtlid="7726">Tamaño</translation>
    <translation id="cda_detail_region" qtlid="32434">Región</translation>
@@ -32,12 +32,12 @@
    <translation id="cda_space_usage_available" qtlid="196608">Espacio disponible</translation>
 
    <translation id="cda_task_table_col_id" qtlid="8194">ID</translation>
-   <translation id="cda_task_table_col_name" qtlid="3818">Apellidos</translation>
+   <translation id="cda_task_table_col_name" qtlid="3818">Nombre</translation>
    <translation id="cda_task_table_col_processing" qtlid="354496">Progreso</translation>
    <translation id="cda_task_table_empty" qtlid="354509">No hay tareas activas.</translation>
 
    <translation id="cda_detail_edit_title" qtlid="354522">Editar la información del cluster</translation>
-   <translation id="cda_detail_edit_label" qtlid="3818">Apellidos</translation>
+   <translation id="cda_detail_edit_label" qtlid="3818">Nombre</translation>
    <translation id="cda_detail_edit_label_required" qtlid="354288">El nombre es obligatorio.</translation>
    <translation id="cda_detail_edit_label_maxlength" qtlid="354314">El nombre debe tener una longitud máxima de {{ maxlength }} caracteres.</translation>
    <translation id="cda_detail_edit_crushTunable" qtlid="354431">CRUSH tunables</translation>

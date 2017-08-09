@@ -60,6 +60,7 @@
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
 
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage paikallinen SSD, jaettu CPU/RAM/kaista.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikoitu HDD-levy, jaettu CPU/RAM/kaista.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Korkeakäyttöinen Storage, jaettu CPU/RAM/kaista.</translation>
@@ -145,6 +146,8 @@
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Levyt</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud parhaaseen hintaan</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD -palvelimet käyttävät jaettua paikallista RAID SSD:tä ja niiden suorituskyky saattaa vaihdella hieman ajan kuluessa</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox-instanssit: <br/>Jaetut resurssit</translation>
