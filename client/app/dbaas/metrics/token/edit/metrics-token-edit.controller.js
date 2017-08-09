@@ -13,13 +13,15 @@
 
         confirm () {
             this.loading = true;
-            if (this.type == "name") {
-                return this.MetricService.updateToken (this.serviceName, this.tokenID, this.value)
+            if (this.type === "name") {
+                this.MetricService.updateToken(this.serviceName, this.tokenID, this.value)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(err => this.$uibModalInstance.dismiss(err))
-                    .finally(() => this.loading = false);
+                    .finally(() => {
+                        this.loading = false;
+                    });
             }
-            
+
         }
 
         cancel () {

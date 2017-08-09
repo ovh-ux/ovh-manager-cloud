@@ -8,7 +8,7 @@
             this.MetricService = MetricService;
 
             this.tokens = [];
-            this.loading;
+            this.loading = false;
         }
 
         $onInit () {
@@ -25,7 +25,7 @@
         }
 
         displayRemainingLabels (number) {
-            return '+' + number;
+            return `+${number}`;
         }
 
         showPreview (tokenID) {
@@ -42,7 +42,7 @@
             });
         }
 
-        edit (tokenID, desc) {
+        edit (tokenID, desc) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
                     templateUrl: "app/dbaas/metrics/token/edit/metrics-token-edit.html",
@@ -55,9 +55,7 @@
                         tokenID: () => tokenID
                     }
                 },
-                successHandler: result => {
-                    this.getTokens(this.serviceName);
-                }
+                successHandler: () => this.getTokens(this.serviceName)
             });
 
         }
@@ -73,9 +71,7 @@
                         tokenID: () => tokenID
                     }
                 },
-                successHandler: result => {
-                    this.getTokens(this.serviceName);
-                }
+                successHandler: () => this.getTokens(this.serviceName)
             });
         }
 

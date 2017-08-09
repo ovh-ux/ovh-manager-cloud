@@ -9,9 +9,9 @@
             this.ovhDocUrl = ovhDocUrl;
 
             this.platforms = [];
-            this.regionName;
+            this.regionName = "";
 
-            this.loading;
+            this.loading = false;
         }
 
         $onInit () {
@@ -25,9 +25,9 @@
                     this.regionName = service.data.region.name;
                     _.forEach(this.METRICS_ENDPOINTS.protos, proto => this.platforms.push(
                         {
-                            proto: proto, 
-                            address: "https://"+proto+"."+this.regionName+"."+this.METRICS_ENDPOINTS.suffix, 
-                            doc: this.getDoc("proto-"+proto)
+                            proto,
+                            address: `https://${proto}.${this.regionName}.${this.METRICS_ENDPOINTS.suffix}`,
+                            doc: this.getDoc(`proto-${proto}`)
                         }
                     ));
                     this.loading = false;

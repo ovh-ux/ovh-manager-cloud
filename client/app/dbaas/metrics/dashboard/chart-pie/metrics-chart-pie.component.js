@@ -6,7 +6,6 @@
             this.rayon = 25;
             this.offset = -25; // to start at the top
             this.ringSize = 2 * Math.PI * this.rayon;
-            this.value;
         }
 
         percentToSize (percent) {
@@ -15,15 +14,15 @@
     }
 
     angular.module("managerApp")
-    .component("metricsChartPie", {
-        templateUrl: "app/dbaas/metrics/dashboard/chart-pie/metrics-chart-pie.component.html",
-        bindings: {
-            value: "<",
-            color: "<",
-            text: "<",
-            textSmall: "<",
-            legend: "<"
-        },
-        controller: MetricsChartPieController
-    });
+        .component("metricsChartPie", {
+            templateUrl: "app/dbaas/metrics/dashboard/chart-pie/metrics-chart-pie.component.html",
+            bindings: {
+                value: "<",
+                color: "<",
+                text: "<",
+                textSmall: "<",
+                legend: "<"
+            },
+            controller: MetricsChartPieController
+        });
 })();

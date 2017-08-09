@@ -9,26 +9,29 @@
             this.serviceName = $stateParams.serviceName;
             this.MetricService = MetricService;
 
-            this.service;
+            this.service = {};
 
             this.messages = [];
-            this.messageHandler;
         }
 
         $onInit () {
             this.loadData();
             this.loadMessage();
-            this.$scope.$on("changeDescription", (event, data) => this.service.description = data);
+            this.$scope.$on("changeDescription", (event, data) => {
+                this.service.description = data;
+            });
         }
 
         loadData () {
             this.MetricService.getService(this.serviceName)
-                .then(service => this.service = service.data);
+                .then(service => {
+                    this.service = service.data;
+                });
         }
 
         loadMessage () {
             this.CloudMessage.unSubscribe("dbaas.metrics.detail");
-            this.messageHandler = this.CloudMessage.subscribe("dbaas.metrics.detail", { onMessage: () => this.refreshMessage()});
+            this.messageHandler = this.CloudMessage.subscribe("dbaas.metrics.detail", { onMessage: () => this.refreshMessage() });
         }
 
         refreshMessage () {

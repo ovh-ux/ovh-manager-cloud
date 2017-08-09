@@ -35,7 +35,7 @@
                     {
                         name: "OpenTSDB",
                         url: this.ovhDocUrl.getDocUrl("cloud/metrics/proto-opentsdb")
-                    },
+                    }
                 ]
             });
 

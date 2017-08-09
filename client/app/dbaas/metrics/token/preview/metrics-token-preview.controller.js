@@ -8,14 +8,18 @@
             this.MetricService = MetricService;
 
             this.token = {};
-            this.loading;
+            this.loading = false;
         }
 
         $onInit () {
             this.loading = true;
             this.MetricService.getToken(this.serviceName, this.tokenID)
-                .then(data => this.token = data)
-                .finally(() => this.loading = false);
+                .then(data => {
+                    this.token = data;
+                })
+                .finally(() => {
+                    this.loading = false;
+                });
         }
 
         close () {
@@ -30,10 +34,10 @@
             if (token) {
                 if (token.isRevoked) {
                     return this.$translate.instant("metrics_token_state_inactive");
-                } else {
-                    return this.$translate.instant("metrics_token_state_active");
                 }
+                return this.$translate.instant("metrics_token_state_active");
             }
+            return "";
         }
     }
 

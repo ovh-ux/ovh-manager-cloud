@@ -1,9 +1,16 @@
 angular.module("managerApp").config($stateProvider => {
+    const metricsHeader =
+        {
+            templateUrl: "app/dbaas/metrics/header/metrics-header.html",
+            controller: "MetricsHeaderCtrl",
+            controllerAs: "MetricsHeaderCtrl"
+        };
+
     $stateProvider
         .state("dbaas.metrics", {
             url: "/metrics",
             templateUrl: "app/dbaas/metrics/metrics.html",
-            abstract: true,
+            "abstract": true,
             translations: ["common", "dbaas/metrics"]
         })
         .state("dbaas.metrics.detail", {
@@ -20,11 +27,7 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.metrics.detail.dashboard", {
             url: "/dashboard",
             views: {
-                metricsHeader: {
-                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
-                    controller: "MetricsHeaderCtrl",
-                    controllerAs: "MetricsHeaderCtrl"
-                },
+                metricsHeader,
                 metricsContent: {
                     templateUrl: "app/dbaas/metrics/dashboard/metrics-dashboard.html",
                     controller: "MetricsDashboardCtrl",
@@ -36,11 +39,7 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.metrics.detail.token", {
             url: "/token",
             views: {
-                metricsHeader: {
-                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
-                    controller: "MetricsHeaderCtrl",
-                    controllerAs: "MetricsHeaderCtrl"
-                },
+                metricsHeader,
                 metricsContent: {
                     templateUrl: "app/dbaas/metrics/token/metrics-token.html",
                     controller: "MetricsTokenCtrl",
@@ -52,11 +51,7 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.metrics.detail.token.add", {
             url: "/add",
             views: {
-                metricsHeader: {
-                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
-                    controller: "MetricsHeaderCtrl",
-                    controllerAs: "MetricsHeaderCtrl"
-                },
+                metricsHeader,
                 metricsSubContent: {
                     templateUrl: "app/dbaas/metrics/token/add/metrics-token-add.html",
                     controller: "MetricsTokenAddCtrl",
@@ -68,11 +63,7 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.metrics.detail.platform", {
             url: "/platform",
             views: {
-                metricsHeader: {
-                    templateUrl: "app/dbaas/metrics/header/metrics-header.html",
-                    controller: "MetricsHeaderCtrl",
-                    controllerAs: "MetricsHeaderCtrl"
-                },
+                metricsHeader,
                 metricsContent: {
                     templateUrl: "app/dbaas/metrics/platform/metrics-platform.html",
                     controller: "MetricsPlatformCtrl",
@@ -80,5 +71,5 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/metrics", "dbaas/metrics/platform"]
-        })
+        });
 });

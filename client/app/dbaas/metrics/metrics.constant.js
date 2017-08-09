@@ -3,7 +3,7 @@ angular.module("managerApp")
         graphs: [
             {
                 name: "Quantum",
-                url: "https://quantum.metrics.ovh.net",
+                url: "https://quantum.metrics.ovh.net"
             },
             {
                 name: "Grafana",

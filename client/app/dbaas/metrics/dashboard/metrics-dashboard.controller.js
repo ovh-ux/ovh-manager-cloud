@@ -1,6 +1,6 @@
 (() => {
     class MetricsDashboardCtrl {
-        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, MetricService, METRICS_ENDPOINTS, RegionService, SidebarMenu) {
+        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, MetricService, METRICS_ENDPOINTS, RegionService, SidebarMenu) {
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.$q = $q;
@@ -29,7 +29,7 @@
             this.MetricService.getService(this.serviceName)
                 .then(service => {
                     this.usage.quota = {
-                        mads: service.data.quota.mads, 
+                        mads: service.data.quota.mads,
                         ddp: service.data.quota.ddp
                     };
                     this.configuration = {
@@ -39,17 +39,18 @@
                         datacenter: this.transformRegion(service.data.region.name)
                     };
                     this.plan.offer = service.data.offer;
-                    this.plan.autorenew;
-                    this.plan.contact;
-                    this.plan.createdAt;
                 })
-                .finally(() => this.loading.service = false);
+                .finally(() => {
+                    this.loading.service = false;
+                });
             this.MetricService.getConsumption(this.serviceName)
                 .then(cons => {
-                        this.usage.conso = {mads: cons.data.mads, ddp: cons.data.ddp};
-                        this.initMessages ();
-                    })
-                .finally(() => this.loading.consumption = false);
+                    this.usage.conso = { mads: cons.data.mads, ddp: cons.data.ddp };
+                    this.initMessages();
+                })
+                .finally(() => {
+                    this.loading.consumption = false;
+                });
 
         }
 
@@ -67,28 +68,28 @@
         }
 
         displayUsage (value, total) {
-            return value+"/"+total;   
+            return `${value}/${total}`;
         }
 
         computeColor (value, total) {
             const green = "#B0CA67";
             const yellow = "#E3CD4D";
             const red = "#B04020";
-            if (this.computeUsage(value,total) > 85) {
+            if (this.computeUsage(value, total) > 85) {
                 return red;
-            } else if (this.computeUsage(value,total) > 70) {
+            } else if (this.computeUsage(value, total) > 70) {
                 return yellow;
-            } else {
-                return green;
             }
+            return green;
+
         }
 
         transformRegion (regionCode) {
             const region = this.RegionService.getRegion(regionCode);
-            return {name : region.microRegion.text, country : region.country, flag : region.icon}
+            return { name: region.microRegion.text, country: region.country, flag: region.icon };
         }
 
-        showEditName(desc) {
+        showEditName (desc) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
                     templateUrl: "app/dbaas/metrics/dashboard/edit/metrics-dashboard-edit.html",
