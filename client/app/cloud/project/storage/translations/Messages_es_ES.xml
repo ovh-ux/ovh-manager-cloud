@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="storage_tab_storage" qtlid="233733">Almacenamiento</translation>
-   <translation id="storage_name" qtlid="3818">Apellidos</translation>
+   <translation id="storage_name" qtlid="3818">Nombre</translation>
    <translation id="storage_type" qtlid="2642">Tipo</translation>
    <translation id="storage_actions" qtlid="72809">Acciones</translation>
    <translation id="storage_region" qtlid="32434">Región</translation>

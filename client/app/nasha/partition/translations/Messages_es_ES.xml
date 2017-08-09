@@ -13,7 +13,7 @@
    <translation id="nasha_partitions_minimum_size" qtlid="153597">(10 GB mín.)</translation>
    <translation id="nasha_partitions_loading_error" qtlid="345104">Se ha producido un error al cambiar las particiones.</translation>
    <translation id="nasha_partitions_loading_error" qtlid="345117">Se ha producido un error provocado por una acción en la partición {{partitionName}}.</translation>
-   <translation id="nasha_partitions_name" qtlid="3818">Apellidos</translation>
+   <translation id="nasha_partitions_name" qtlid="3818">Nombre</translation>
    <translation id="nasha_partitions_name_fail" qtlid="172306">El nombre no es válido</translation>
    <translation id="nasha_partitions_protocol" qtlid="19711">Protocolo</translation>
    <translation id="nasha_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>

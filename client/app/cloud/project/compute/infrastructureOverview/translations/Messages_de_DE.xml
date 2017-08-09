@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="infra_overview_tips_title" qtlid="284620">Sie scheinen eine große Anzahl an Servern und IP-Adressen zu verwalten, das Interface wurde deshalb aus Performance-Gründen eingeschränkt.</translation>
-   <translation id="infra_overview_tips_platform1" qtlid="284633">Für eine komfortablere Nutzung stellen wir Ihnen ein dediziertes Web-Interface</translation>
+   <translation id="infra_overview_tips_platform1" qtlid="284633">Für eine komfortablere Nutzung stellen wir Ihnen ein dediziertes Webinterface</translation>
    <translation id="infra_overview_tips_platform2" qtlid="284646">OpenStack Horizon</translation>
    <translation id="infra_overview_tips_platform3" qtlid="284659">sowie die OpenStack API zur Verfügung. Sie finden auch die Verwaltung Ihrer Failover-IPs in dieser eigenständigen Verwaltungsoberfläche.</translation>
    <translation id="infra_overview_tips_guides1" qtlid="284672">Sie kennen diese Werkzeuge noch nicht? Entdecken Sie</translation>

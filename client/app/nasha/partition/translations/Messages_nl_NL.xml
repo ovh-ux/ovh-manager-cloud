@@ -13,7 +13,7 @@
    <translation id="nasha_partitions_minimum_size" qtlid="153597">(minimaal 10 GB)</translation>
    <translation id="nasha_partitions_loading_error" qtlid="345104">Er is een fout opgetreden tijdens het laden van de partities </translation>
    <translation id="nasha_partitions_loading_error" qtlid="345117">Er is een fout opgetreden tijdens een actie op partitie {{partitionName}}.</translation>
-   <translation id="nasha_partitions_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="nasha_partitions_name" qtlid="3818">Naam</translation>
    <translation id="nasha_partitions_name_fail" qtlid="172306">De naam is niet geldig</translation>
    <translation id="nasha_partitions_protocol" qtlid="19711">Protocol</translation>
    <translation id="nasha_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>

@@ -60,6 +60,7 @@
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
 
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instancias GPU<br/>Procesador gráfico de alto rendimiento</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">Instancias GPU<br/>Procesador gráfico de alto rendimiento</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Almacenamiento RAID SSD local; CPU, RAM y AB compartidos</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Disco HDD dedicado; CPU, RAM y AB compartidos</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Almacenamiento de alta disponibilidad; CPU, RAM y AB compartidos</translation>
@@ -145,6 +146,8 @@
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Discos</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6 GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instancias VPS-SSD: <br/>el cloud público al mejor precio</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Los VPS SSD utilizan un RAID local SSD compartido y su rendimiento puede ir variando ligeramente.</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Instancias Sandbox: <br/>recursos compartidos</translation>
@@ -181,7 +184,7 @@
    <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Actualizar las llaves SSH</translation>
    <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Cargando las llaves SSH...</translation>
 
-   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Apellidos</translation>
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Nombre</translation>
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Llave</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Introduzca su script de post-instalación</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Elegir la llave SSH</translation>

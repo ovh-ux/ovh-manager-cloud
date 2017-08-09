@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Conditions d'utilisation</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">J'accepte les <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Commencer mon projet Cloud</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(facultatif)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Ensuite, chaque facture sera automatiquement débitée du crédit cloud affecté à ce projet, puis de vos comptes, puis enfin de votre compte prépayé OVH (avec obligation de régler immédiatement votre dette éventuelle via n'importe quel moyen de paiement).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Le crédit cloud n'est pas transférable, ni remboursable. Il n'a aucune valeur monétaire et tout crédit non utilisé dans les 13 mois sera perdu.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Vous n'avez pas de code promotionnel ?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Réglez une facture initiale de {{price}} de crédit cloud pour ce projet.</translation>
 </translations>

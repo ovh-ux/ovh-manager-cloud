@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpc_ssh_demo" qtlid="249393">Hier kunt u uw SSH-key toevoegen, waardoor u toegang tot uw servers heeft.</translation>
 
-   <translation id="cpc_ssh_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpc_ssh_name" qtlid="3818">Naam</translation>
    <translation id="cpc_ssh_key" qtlid="104326">Key</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Uploaden van uw SSH-keys...</translation>

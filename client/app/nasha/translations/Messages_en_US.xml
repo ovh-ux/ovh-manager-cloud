@@ -5,7 +5,7 @@
    <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">Usage notification has been deactivated.</translation>
    <translation id="nasha_dashboard_update_error" qtlid="345377">An error occurred on modifying NAS-HA details.</translation>
    <translation id="nasha_dashboard_ip" qtlid="25615">IP</translation>
-   <translation id="nasha_dashboard_datacenter" qtlid="369321">Datacenter</translation>
+   <translation id="nasha_dashboard_datacenter" qtlid="369321">Data center</translation>
    <translation id="nasha_dashboard_capacity" qtlid="75822">Total capacity</translation>
    <translation id="nasha_dashboard_capacity_delay_text" qtlid="369334">Storage informations is not updated in real-time.</translation>
    <translation id="nasha_dashboard_creation_date" qtlid="26419">Creation date</translation>
