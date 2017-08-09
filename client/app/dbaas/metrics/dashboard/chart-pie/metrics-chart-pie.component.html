@@ -5,10 +5,10 @@
     <circle class="part"
             cx="50"
             cy="50"
-            ng-attr-r="{{ $ctrl.rayon }}"
-            ng-attr-stroke="{{ $ctrl.color || '#a7db6f' }}"
-            ng-attr-stroke-dasharray="{{ $ctrl.percentToSize($ctrl.value) + ' ' + ($ctrl.ringSize - $ctrl.percentToSize($ctrl.value)) }}"
-            ng-attr-stroke-dashoffset="{{ -1 * $ctrl.percentToSize($ctrl.offset) }}">
+            data-ng-attr-r="{{ $ctrl.rayon }}"
+            data-ng-attr-stroke="{{ $ctrl.color || '#a7db6f' }}"
+            data-ng-attr-stroke-dasharray="{{ $ctrl.percentToSize($ctrl.value) + ' ' + ($ctrl.ringSize - $ctrl.percentToSize($ctrl.value)) }}"
+            data-ng-attr-stroke-dashoffset="{{ -1 * $ctrl.percentToSize($ctrl.offset) }}">
     </circle>
     <!-- center circle background -->
     <circle cx="50" cy="50" r="43" fill="#fff"></circle>

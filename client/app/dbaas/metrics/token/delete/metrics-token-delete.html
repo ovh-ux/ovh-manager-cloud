@@ -5,14 +5,12 @@
         <p data-translate="metrics_token_delete_message"></p>
     </cui-modal-body>
     <cui-modal-footer>
-        <button class="oui-button oui-button_secondary"
-          type="button"
-          data-translate="metrics_token_cancel"
-          data-ng-click="$ctrl.cancel()"></button>
-        <button class="oui-button oui-button_primary"
-          type="submit"
-          data-translate="metrics_token_delete"
+        <cui-cancel-button 
+          data-text="'metrics_token_cancel' | translate"
+          data-ng-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button 
+          data-text="'metrics_token_delete' | translate"
           data-ng-click="$ctrl.confirm()"
-          data-ng-disabled="$ctrl.loading"></button>
+          data-ng-disabled="$ctrl.loading"></cui-submit-button>
     </cui-modal-footer>
 </cui-modal>

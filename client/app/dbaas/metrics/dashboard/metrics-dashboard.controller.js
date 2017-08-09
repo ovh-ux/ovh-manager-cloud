@@ -14,6 +14,10 @@
             this.SidebarMenu = SidebarMenu;
 
             this.loading = {};
+            this.limit = {
+                warning: 70,
+                danger: 85
+            };
             this.usage = {};
             this.configuration = {};
             this.plan = {};
@@ -55,10 +59,10 @@
         }
 
         initMessages () {
-            if (this.computeUsage(this.usage.conso.mads, this.usage.quota.mads) > 70) {
+            if (this.computeUsage(this.usage.conso.mads, this.usage.quota.mads) > this.limit.warning) {
                 this.CloudMessage.warning(this.$translate.instant("metrics_quota_mads_warning_message"));
             }
-            if (this.computeUsage(this.usage.conso.ddp, this.usage.quota.ddp) > 70) {
+            if (this.computeUsage(this.usage.conso.ddp, this.usage.quota.ddp) > this.limit.warning) {
                 this.CloudMessage.warning(this.$translate.instant("metrics_quota_ddp_warning_message"));
             }
         }
@@ -75,9 +79,9 @@
             const green = "#B0CA67";
             const yellow = "#E3CD4D";
             const red = "#B04020";
-            if (this.computeUsage(value, total) > 85) {
+            if (this.computeUsage(value, total) > this.limit.danger) {
                 return red;
-            } else if (this.computeUsage(value, total) > 70) {
+            } else if (this.computeUsage(value, total) > this.limit.warning) {
                 return yellow;
             }
             return green;
@@ -106,10 +110,7 @@
                     this.$scope.$emit("changeDescription", this.configuration.description);
 
                     const menuItem = this.SidebarMenu.getItemById(this.serviceName);
-                    if (menuItem) {
-                        menuItem.title = this.configuration.description;
-                    }
-
+                    menuItem.title = this.configuration.description;
                 }
             });
 

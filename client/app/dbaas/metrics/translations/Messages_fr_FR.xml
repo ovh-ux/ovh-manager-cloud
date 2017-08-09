@@ -37,7 +37,7 @@
    <translation id="metrics_err_delete_token">Erreur lors de la suppression du token</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token mis à jour</translation>
-   <translation id="metrics_token_revoked" qtlid="403463">Token révoké</translation>
+   <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>
    <translation id="metrics_quota_ddp_warning_message">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
    <translation id="metrics_quota_mads_warning_message">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
 

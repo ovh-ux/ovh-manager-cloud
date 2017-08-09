@@ -38,20 +38,21 @@
             this.token.labels.push({ key: null, value: null });
         }
 
-        removeLabel (index) {
+        removeLabel (label) {
+            const index = _.indexOf(this.token.labels, label);
             if (index !== -1) {
                 this.token.labels.splice(index, 1);
             }
         }
 
-        checkLabel (index) {
-            if (this.token.labels[index].key == null || this.token.labels[index].value == null) {
-                this.removeLabel(index);
+        checkLabel (label) {
+            if (label.key == null || label.value == null) {
+                this.removeLabel(label);
             }
         }
 
         checkLabels () {
-            _.forEach(this.token.labels, (element, index) => this.checkLabel(index));
+            _.forEach(this.token.labels, label => this.checkLabel(label));
         }
 
     }

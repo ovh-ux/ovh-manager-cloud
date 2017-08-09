@@ -26,10 +26,9 @@
    <translation id="metrics_token_role" qtlid="403398">Rôle</translation>
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
    <translation id="metrics_token_id">Identifiant</translation>
-   <translation id="metrics_token_revoked" qtlid="186752">Révoqué</translation>
    <translation id="metrics_token_show_preview">Afficher l'aperçu</translation>
    <translation id="metrics_token_preview_title">Affichage du token</translation>
-   <translation id="metrics_token_show_revoked" qtlid="403424">afficher les révoqués</translation>
+   <translation id="metrics_token_show_revoked" qtlid="403424">Afficher les révoqués</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Modifier</translation>
    <translation id="metrics_token_edit_title">Modifier le token</translation>
@@ -40,7 +39,7 @@
    <translation id="metrics_token_delete_title">Supprimer le token ?</translation>
    <translation id="metrics_token_delete_message">Êtes-vous sûr de vouloir supprimer le token ?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
-   <translation id="metrics_token_revoked" qtlid="403463">Token révoké</translation>
+   <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token mis à jour</translation>
    <translation id="metrics_token_err_get" qtlid="403489">Erreur lors de la récupération des tokens</translation>
    <translation id="metrics_token_err_create" qtlid="403502">Erreur lors de la création du token</translation>

@@ -37,7 +37,7 @@
                         </div>
                         <div data-ng-show="$index !== (MetricsTokenAddCtrl.token.labels.length - 1)">
                             <button class="oui-button oui-button_secondary"
-                                data-ng-click="MetricsTokenAddCtrl.removeLabel($index)">-</button>
+                                data-ng-click="MetricsTokenAddCtrl.removeLabel(label)">-</button>
                         </div>
                     </div>
                 </div>
@@ -48,15 +48,13 @@
         <hr>
 
         <div class="cui-form-action">
-            <button class="oui-button oui-button_secondary"
-                type="button"
-                data-translate="metrics_token_cancel"
-                data-ng-click="MetricsTokenAddCtrl.cancel()"></button>
-            <button class="oui-button oui-button_primary"
-                type="submit"
-                data-translate="metrics_token_add_confirmation"
+            <cui-cancel-button
+                data-text="'metrics_token_cancel' | translate"
+                data-ng-click="MetricsTokenAddCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button 
+                data-text="'metrics_token_add_confirmation' | translate"
                 data-ng-click="MetricsTokenAddCtrl.confirm()"
-                data-ng-disabled="MetricsTokenAddForm.$invalid || MetricsTokenAddCtrl.loading"></button>
+                data-ng-disabled="MetricsTokenAddForm.$invalid || MetricsTokenAddCtrl.loading"></cui-submit-button>
         </div>
     </div>
 </form>

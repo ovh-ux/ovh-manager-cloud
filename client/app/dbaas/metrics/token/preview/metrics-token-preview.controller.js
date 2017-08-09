@@ -31,13 +31,13 @@
         }
 
         getTokenState (token) {
-            if (token) {
-                if (token.isRevoked) {
-                    return this.$translate.instant("metrics_token_state_inactive");
-                }
-                return this.$translate.instant("metrics_token_state_active");
+            if (!token) {
+                return "";
             }
-            return "";
+            if (token.isRevoked) {
+                return this.$translate.instant("metrics_token_state_inactive");
+            }
+            return this.$translate.instant("metrics_token_state_active");
         }
     }
 

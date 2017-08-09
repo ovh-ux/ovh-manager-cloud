@@ -23,7 +23,7 @@
             this.MetricService.getService(this.serviceName)
                 .then(service => {
                     this.regionName = service.data.region.name;
-                    _.forEach(this.METRICS_ENDPOINTS.protos, proto => this.platforms.push(
+                    this.platforms = _.map(this.METRICS_ENDPOINTS.protos, proto => (
                         {
                             proto,
                             address: `https://${proto}.${this.regionName}.${this.METRICS_ENDPOINTS.suffix}`,
