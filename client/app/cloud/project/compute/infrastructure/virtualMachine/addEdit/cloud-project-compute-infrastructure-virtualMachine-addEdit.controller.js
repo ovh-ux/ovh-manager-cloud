@@ -1273,6 +1273,11 @@ angular.module("managerApp")
         if (diskType) {
             if (self.vmInEdition.status === "ACTIVE") {
                 var augmentedFlavor = addDetailsToFlavor(self.originalVm.flavor);
+                //It should always be impossible to switch from an existing SSD instance to a ceph instance.
+                if (augmentedFlavor.diskType === "ssd" && diskType === "ceph") {
+                    return true;
+                }
+
                 return augmentedFlavor.flex && augmentedFlavor.diskType === "ceph";
             }
             var realFlavor = self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], diskType, self.model.flex);
