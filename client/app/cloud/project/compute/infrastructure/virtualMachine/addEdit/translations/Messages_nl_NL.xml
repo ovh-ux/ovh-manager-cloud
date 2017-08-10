@@ -60,6 +60,7 @@
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
 
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Lokale SSD RAID storage, gedeelde &#13;
 CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedicated HDD disk, gedeelde CPU/RAM/Bandbreedte.</translation>
@@ -146,6 +147,8 @@ CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disks</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud tegen de beste prijs</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD gebruiken een gedeelde plaatselijke SSD RAID en hun performance kan van tijd tot tijd verschillend zijn </translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Instances Sandbox : <br/>Ressources partagées</translation>
@@ -182,7 +185,7 @@ CPU/RAM/bandbreedte.</translation>
    <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Mijn SSH-keys updaten</translation>
    <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Het uploaden van uw SSH-keys.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Naam</translation>
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Key</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Voer uw post-installatie script in</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Mijn SSH-key kiezen</translation>

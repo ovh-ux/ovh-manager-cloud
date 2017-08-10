@@ -60,6 +60,7 @@
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
 
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Local SSD RAID storage, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedicated HDD drive, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">High-availability storage, shared CPU/RAM/bandwidth.</translation>
@@ -145,6 +146,8 @@
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disks</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud for the best price</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD use a shared local SSD RAID and their performance may vary over time</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instances: <br/>Shared resources</translation>

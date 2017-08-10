@@ -40,4 +40,11 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Terms of use </translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">I accept the <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Launch your cloud project </translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(optional)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Then, when you get an invoice, it will be automatically paid in the following order: first using the cloud credit assigned to this project, then using your accounts, and then finally using your prepaid OVH account (the debt must be paid immediately via any method of payment).  &#13;
+</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Public Cloud credit may not be transferred or reimbursed. It has no monetary value and any credit not used within 13 months will be lost.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Don't have a promo code? </translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Settle an initial invoice for {{price}} of cloud credit for this project. </translation>
 </translations>

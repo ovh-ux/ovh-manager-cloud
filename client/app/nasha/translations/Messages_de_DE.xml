@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="nasha_dashboard_loading_error" qtlid="345338">Beim Laden der Informationen des NAS-HA ist ein Fehler aufgetreten. </translation>
-   <translation id="nasha_dashboard_update_success_enabled" qtlid="400886">L'avis d'utilisation est activé.</translation>
-   <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">L'avis d'utilisation est désactivé.</translation>
+   <translation id="nasha_dashboard_update_success_enabled" qtlid="400886">Gebrauchsmeldungen sind aktiviert.</translation>
+   <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">Gebrauchsmeldungen sind deaktiviert.</translation>
    <translation id="nasha_dashboard_update_error" qtlid="345377">Bei der Bearbeitung der Informationen des NAS-HA ist ein Fehler aufgetreten. </translation>
    <translation id="nasha_dashboard_ip" qtlid="25615">IP</translation>
    <translation id="nasha_dashboard_datacenter" qtlid="369321">Datacenter</translation>
@@ -20,12 +20,12 @@
    <translation id="nasha_datacenter_sbg" qtlid="172202">Straßburg</translation>
    <translation id="nasha_datacenter_gra" qtlid="264192">Gravelines</translation>
 
-   <translation id="nasha_dashboard_space_usage" qtlid="400912">Avis d'utilisation</translation>
-   <translation id="nasha_dashboard_space_usage_help" qtlid="400925">Le contact administrateur et le contact technique recevront une alerte par e-mail lorsque le NAS atteint 90% d'occupation</translation>
+   <translation id="nasha_dashboard_space_usage" qtlid="400912">Gebrauchsmeldung</translation>
+   <translation id="nasha_dashboard_space_usage_help" qtlid="400925">Der Administratorkontakt und der technische Kontakt erhalten eine Warnung per E-Mail, sobald 90 % des NAS belegt sind</translation>
 
    <translation id="nasha_new_window" qtlid="222176">Neues Fenster</translation>
 
    <translation id="nasha_guide_title" qtlid="300370">Hilfen</translation>
-   <translation id="nash_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+   <translation id="nash_guide_footer" qtlid="406905">Alle Anleitungen von OVH</translation>
    <translation id="nash_guide_name" qtlid="369862">NAS-HA</translation>
 </translations>

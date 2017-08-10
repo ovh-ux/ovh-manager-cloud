@@ -46,5 +46,5 @@
    <translation id="cpcipnd_common_menu_item_description" qtlid="331618">Konfiguration des privaten Netzwerks</translation>
    <translation id="cpcipnd_subnets_menu_item_description" qtlid="331631">Konfiguration der Subnetze</translation>
    <translation id="cpcipnd_subnet_api_notice" qtlid="331644">Sie können Ihre IP-Bereiche <a href="{{url}}" target="_blank">über die API personalisieren.</a></translation>
-   <translation id="cpcipnd_subnet_gateway_label" qtlid="405525">Activer la passerelle par défaut</translation>
+   <translation id="cpcipnd_subnet_gateway_label" qtlid="405525">Standardgateway aktivieren</translation>
 </translations>

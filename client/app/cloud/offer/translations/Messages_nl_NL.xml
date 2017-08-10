@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Voorwaarden</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Ik accepteer de <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Start mijn Cloud project</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(optioneel)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Dan, wanneer u een factuur krijgt, wordt het automatisch verrekend in de volgorde: Gebruik eerst het cloud-krediet dat aan dit project is toegewezen, gebruik vervolgens uw accounts en uiteindelijk uw prepaid OVH-account (het openstaande bedrag moet direct, via een betaalmethode naar wens, worden betaald).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Het cloud credit is niet overdraagbaar/wordt niet uitbetaald. Het heeft geen contante waarde en al het ongebruikte krediet gaat na 13 maanden verloren.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Heeft u geen promotiecode? </translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Betaal een eerste factuur voor {{price}} cloud-krediet voor dit project.</translation>
 </translations>

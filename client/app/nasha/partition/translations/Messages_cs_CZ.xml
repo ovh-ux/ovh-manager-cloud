@@ -13,7 +13,7 @@
    <translation id="nasha_partitions_minimum_size" qtlid="153597">(min 10 GB)</translation>
    <translation id="nasha_partitions_loading_error" qtlid="345104">Při nahrávání diskových oddílů došlo k chybě.</translation>
    <translation id="nasha_partitions_loading_error" qtlid="345117">Po provedení úkolu došlo k chybě na diskovém oddílu {{partitionName}}.</translation>
-   <translation id="nasha_partitions_name" qtlid="3818">Příjmení</translation>
+   <translation id="nasha_partitions_name" qtlid="3818">Jméno</translation>
    <translation id="nasha_partitions_name_fail" qtlid="172306">Název není platný</translation>
    <translation id="nasha_partitions_protocol" qtlid="19711">Protokol</translation>
    <translation id="nasha_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>

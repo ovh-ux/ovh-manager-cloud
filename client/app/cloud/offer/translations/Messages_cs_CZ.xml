@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Podmínky užití</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Přijímám <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Vytvořit projekt</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(volitelné)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Každý účet bude odečten z cloudového kreditu, alokovaného pro tento projekt. Pokud kredit nevystačí, budou prostředky strženy z Vašich účtů a nakonec z předplaceného účtu (je Vaší povinností uhradit veškeré dlužné částky bez prodlení a jakoukoliv platební metodou).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Public Cloud kredit nelze převést nebo vyplatit. Nemá žádnou peněžní hodnotu a jakýkoli kredit, který není použit v rámci 13 měsíců zanikne.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Nemáte promo kód?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Uhraďte úvodní fakturu na {{price}} cloudového creditu pro tento projekt.</translation>
 </translations>
