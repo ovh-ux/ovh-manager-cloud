@@ -14,7 +14,7 @@
 
    <translation id="cpci_volume_addedit_size_choose" qtlid="252763">Zvolte kapacitu</translation>
    <translation id="cpci_volume_addedit_size" qtlid="252776">Kapacita disku:</translation>
-   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">La taille maximale dépend de <a ui-sref="{{ state }}">votre quota disponible</a>.</translation>
+   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">Maximální velikost závisí na Vašem <a ui-sref="{{ state }}">disponibilním limitu</a>.</translation>
 
    <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Načítání dostupných zón.</translation>
    <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Zvolte umístění</translation>

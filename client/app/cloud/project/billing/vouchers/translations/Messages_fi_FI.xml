@@ -29,6 +29,6 @@
    <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Kuponki ei ole enää toimiva tai se on jo käytetty.</translation>
    <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Kuponki ei ole toimiva.</translation>
 
-   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Pilvisaldoa ei voi siirtää eikä hyvittää. Sillä ei ole rahallista arvoa. Saldo on käytettävä 13 kuukauden kuluessa, jonka jälkeen käyttämätön saldo poistuu käytöstä.</translation>
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Pilvisaldoa ei voi siirtää eikä sitä hyvitetä. Sillä ei ole rahallista arvoa ja mikäli saldoa ei ole käytetty kokonaan 13 kuukauden sisällä, käyttämätön osa menetetään.</translation>
 
 </translations>

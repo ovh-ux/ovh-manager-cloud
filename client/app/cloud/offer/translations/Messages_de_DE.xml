@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Nutzungsbedingungen</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Ich akzeptiere die <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Mein Cloud Projekt starten</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(optional) </translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Anschließend werden alle fälligen Beträge von dem für dieses Projekt vorgesehenen Guthaben abgezogen, dann von Ihren Accounts und schließlich von Ihrem OVH Prepaid-Konto (bitte beachten Sie: Sie sind verpflichtet, jegliche Sollbeträge unverzüglich mit einem Zahlungsmittel Ihrer Wahl auszugleichen).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Das Cloud Guthaben kann weder übertragen noch zurückerstattet werden. Es hat keinen Geldwert, und innerhalb von 13 Monaten nicht verwendetes Guthaben geht verloren.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Sie haben keinen Promocode?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Begleichen Sie die erste Rechnung in Höhe von {{price}} für Cloud-Guthaben für dieses Projekt.</translation>
 </translations>

@@ -15,7 +15,7 @@
    <translation id="common_disk_bootable" qtlid="271348">Bootfähige Festplatte</translation>
    <translation id="common_renew" qtlid="118962">Verlängern</translation>
    <translation id="common_actions" qtlid="72809">Aktionen</translation>
-   <translation id="common_action_unavailable" qtlid="404061">Action indisponible</translation>
+   <translation id="common_action_unavailable" qtlid="404061">Aktion nicht verfügbar</translation>
    <translation id="common_order" qtlid="43558">Bestellen</translation>
    <translation id="common_validate" qtlid="26047">Bestätigen</translation>
    <translation id="common_yes" qtlid="34776">Ja</translation>
@@ -458,10 +458,10 @@
    <translation id="ovh_account_cb_expire_alert" qtlid="294763">Ihre hinterlegte Kreditkarte wird in {{nbDays}} Tag(en) ablaufen. Bitte begeben Sie sich in den Bereich <a href="{{urlBillingSection}}">Abrechnung</a>, um Ihre Daten zu aktualisieren. </translation>
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Ihre hinterlegte Kreditkarte ist abgelaufen. Bitte begeben Sie sich in den Bereich <a href="{{urlBillingSection}}">Abrechnung</a>, um Ihre Daten zu aktualisieren. </translation>
 
-   <translation id="message_container_multiple_error" qtlid="404074">Les erreurs suivantes sont survenues</translation>
+   <translation id="message_container_multiple_error" qtlid="404074">Die folgenden Fehler sind aufgetreten</translation>
 
-   <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
-   <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
+   <translation id="common_term_and_contracts" qtlid="404087">Bedingungen und Verträge</translation>
+   <translation id="common_term_and_contracts_accept" qtlid="404100">Hiermit bestätige ich, dass ich die Bedingungen und Verträge gelesen habe und akzeptiere diese.</translation>
 
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Schließen</translation>

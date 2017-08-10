@@ -6,13 +6,13 @@
    <translation id="cda_user_delete_button_text" qtlid="2414">Verwijderen</translation>
    <translation id="cda_user_edit_button_text" qtlid="354730">Bekijk rechten</translation>
 
-   <translation id="cda_user_table_col_username" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_user_table_col_username" qtlid="3818">Naam</translation>
    <translation id="cda_user_table_col_key" qtlid="104326">Key</translation>
    <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
    <translation id="cda_user_table_col_actions" qtlid="72809">Handelingen</translation>
 
    <translation id="cda_user_add_title" qtlid="7150">Een gebruiker toevoegen</translation>
-   <translation id="cda_user_add_username_label" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Naam</translation>
 
    <translation id="cda_user_add_username_required" qtlid="354288">U dient uw cluster te benoemen.</translation>
    <translation id="cda_user_add_username_pattern" qtlid="354301">De naam kan geen spaties bevatten. </translation>

@@ -50,7 +50,7 @@
    <translation id="cpbc_snapshot_type_instance" qtlid="364277">Server afbeelding</translation>
 
    <translation id="cpbc_volume_detail_title" qtlid="352841">Aanvullende disks</translation>
-   <translation id="cpbc_volume_col_name" qtlid="3818">Voor- en achternaam</translation>
+   <translation id="cpbc_volume_col_name" qtlid="3818">Naam</translation>
    <translation id="cpbc_volume_col_consumption" qtlid="25639">Verbruik</translation>
    <translation id="cpbc_volume_col_consumption_tooltip" qtlid="245987">Wordt gefactureerd aan het begin van de volgende maand. </translation>
    <translation id="cpbc_volume_consumption_tooltip_part1" qtlid="364173">U wordt gefactureerd op basis van de werkelijke opslagruimte, berekend per uur, afgerond op het hele uur.</translation>
