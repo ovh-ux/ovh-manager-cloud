@@ -1,10 +1,12 @@
 (() => {
     class CloudOfferCtrl {
-        constructor ($q, $stateParams, CloudProjectAdd, User) {
+        constructor ($q, $stateParams, FeatureAvailabilityService, CloudProjectAdd, User, URLS) {
             this.$q = $q;
             this.$stateParams = $stateParams;
             this.CloudProjectAdd = CloudProjectAdd;
             this.User = User;
+            this.FeatureAvailabilityService = FeatureAvailabilityService;
+            this.URLS = URLS;
 
             this.data = {
                 defaultPayment: null,
@@ -22,8 +24,8 @@
             };
 
             this.loaders = {
-                payment: true,
-                agreements: true,
+                payment: false,
+                agreements: false,
                 start: false
             };
 
@@ -73,23 +75,33 @@
         }
 
         init () {
-            this.loaders.agreements = true;
+            // Call not available for US customer
+            this.FeatureAvailabilityService.hasFeaturePromise("PROJECT","expressOrder").then((hasFeature) => {
+                if (!hasFeature) {
+                    this.loaders.agreements = true;
+                    this.CloudProjectAdd.getProjectInfo()
+                    .then(projectInfo => {
+                        this.data.agreements = projectInfo.agreementsToAccept;
+                        this.data.order = projectInfo.orderToPay;
+                    })
+                    .finally(() => {
+                        this.loaders.agreements = false;
+                    });
+                    this.getDefaultPaymentMethod();
+                }
+            });
 
-            this.CloudProjectAdd.getProjectInfo()
-                .then(projectInfo => {
-                    this.data.agreements = projectInfo.agreementsToAccept;
-                    this.data.order = projectInfo.orderToPay;
-                })
-                .finally(() => {
-                    this.loaders.agreements = false;
-                });
-
-            this.getDefaultPaymentMethod();
             this.model.voucher = this.$stateParams.voucher;
         }
 
         startProject () {
             this.loaders.start = true;
+
+            // Use express order for US customers
+            if (this.FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
+                window.location.href = this.URLS["website_order"]["cloud-resell-eu"].US(this.model.projectName);
+                return;
+            }
             this.acceptAllAgreements()
                 .then(() => {
                     this.createProject();

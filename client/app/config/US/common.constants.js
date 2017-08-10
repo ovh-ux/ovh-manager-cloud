@@ -53,6 +53,10 @@ angular.module("managerApp")
         US: "https://www.ovh.us/us/support/"
     },
     "website_order": {
+        "cloud-resell-eu": {
+            US: (projectName) =>
+                "https://www.ovh.us/order/express/#/new/express/resume?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'"+encodeURIComponent(projectName)+")))))",
+        },
         "dedicated_server": {
             US: "https://www.ovh.us/dedicated-servers/"
         },

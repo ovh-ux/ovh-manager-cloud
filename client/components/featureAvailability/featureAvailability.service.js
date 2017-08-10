@@ -21,6 +21,9 @@
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
                 US: ["US"],
+            },
+            expressOrder: {
+                US : ["US"],
             }
         },
         DEDICATED_CLOUD:{
@@ -93,9 +96,10 @@
             this.TARGET = TARGET;
 
             this.locale = null;
-            this.User.Lexi().get().$promise
+            this.localePromise = this.User.Lexi().get().$promise
                 .then(user => {
                     this.locale = user.ovhSubsidiary;
+                    return user.ovhSubsidiary;
                 });
         }
 
@@ -104,6 +108,13 @@
                 return false;
             }
             return _.indexOf(featuresAvailability[product][feature][this.TARGET], locale) !== -1;
+        }
+
+        hasFeaturePromise (product, feature) {
+            var self = this;
+            return this.localePromise.then(function (locale) {
+                return self.hasFeature(product, feature, locale);
+            })
         }
 
     }

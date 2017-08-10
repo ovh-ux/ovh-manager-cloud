@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
+    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
               SidebarMenu, CloudProjectSidebar) {
 
         var self = this;
@@ -208,6 +208,11 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
         function init () {
             self.loaders.init = true;
+            // Redirect US to onboarding
+            if (FeatureAvailabilityService.hasFeature("PROJECT","expressOrder")) {
+                $state.go("iaas.pci-project-onboarding", { location : "replace" });
+                return;
+            }
             initContracts().then(initProject)["catch"](function (err) {
                 self.unknownError = true;
                 Toast.error($translate.instant("cpa_error") + (err && err.data && err.data.message ? " (" + err.data.message + ")" : ""));
