@@ -44,6 +44,6 @@
    <translation id="cda_detail_edit_crushTunable_required" qtlid="354535">Crush Tunable erforderlich. </translation>
    <translation id="cda_detail_edit_success" qtlid="354548">Die Informationen wurden erfolgreich geändert. </translation>
 
-   <translation id="cda_detail_info_no_user" qtlid="400873">Il est nécessaire d'avoir au minimum un utilisateur pour pouvoir utiliser votre cluster.</translation>
+   <translation id="cda_detail_info_no_user" qtlid="400873">Sie brauchen mindestens einen Benutzer um Ihr Cluster zu verwenden.</translation>
    <translation id="cda_detail_info_create_user" qtlid="269721">Einen neuen Benutzer erstellen</translation>
 </translations>

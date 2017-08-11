@@ -15,7 +15,7 @@
 
    <translation id="cpb_vouchers_bill_ref" qtlid="295894">Factura n.° <a href="{{url}}">{{billId}}</a></translation>
    <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Código promocional asociado</translation>
-   <translation id="cpb_vouchers_name_cell" qtlid="3818">Apellidos</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nombre</translation>
    <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Valor inicial</translation>
    <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Crédito restante</translation>
    <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Este crédito se utilizará automáticamente en las próximas facturas.</translation>
@@ -30,6 +30,6 @@
    <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">El código promocional no es válido o ya ha sido utilizado.</translation>
    <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">El código promocional no es válido.</translation>
 
-   <translation id="cpb_vouchers_credit_comment" qtlid="255207">El crédito cloud no es transferible ni reembolsable. No tiene ningún valor monetario y, si no se utiliza en 13 meses, se pierde.</translation>
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">El crédito cloud no es transferible ni reembolsable y no tiene ningún valor monetario. Si no se utiliza en un plazo de 13 meses, se pierde.</translation>
 
 </translations>

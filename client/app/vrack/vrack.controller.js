@@ -7,8 +7,11 @@ angular.module("managerApp").controller("VrackCtrl",
     self.poller = null;
     self.serviceName = null;
     self.name = null;
+    self.description = null;
     self.nameEditing = false;
+    self.descriptionEditing = false;
     self.nameOptions = { pattern: /^([a-zA-Z])\S*$/, maxLength: 100 };
+    self.descriptionOptions = { maxLength: 255 };
     self.changeOwnerUrl = null;
     self.vRackCloudRoadmapGuide = null;
     self.vrackService = VrackService;
@@ -327,6 +330,28 @@ angular.module("managerApp").controller("VrackCtrl",
             });
     };
 
+    self.editDescription = function () {
+        self.descriptionEditing = true;
+        self.descriptionBackup = self.description;
+    };
+
+    self.cancelEditDescription = function () {
+        self.descriptionEditing = false;
+        self.description = self.descriptionBackup;
+    };
+
+    self.saveDescription = function () {
+        self.descriptionEditing = false;
+        Vrack.Lexi().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
+            .catch(function (err) {
+                self.description = self.descriptionBackup;
+                Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
+            })
+            .finally(function () {
+                self.descriptionBackup = null;
+            });
+    };
+
     self.addSelectedServices = function () {
         self.loaders.adding = true;
         return $q.all(_.map(self.form.servicesToAdd, function (service) {
@@ -618,6 +643,7 @@ angular.module("managerApp").controller("VrackCtrl",
             }).$promise.then(function (resp) {
                 self.serviceName = $stateParams.vrackId;
                 self.name = resp.name;
+                self.description = resp.description;
                 setUserRelatedContent();
                 self.refreshData();
             }).catch(function (err) {

@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Warunki korzystania</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Akceptuję <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Rozpocznij projekt Cloud</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(opcjonalnie)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Następnie każda faktura będzie automatycznie opłacana z zasilenia cloud przypisanego do tego projektu. W przypadku braku środków zadłużenie należy uregulować natychmiast za pomocą wybranego sposobu płatności.</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Zasilenie cloud to opcja, której nie można przenieść i za którą nie można wykonać zwrotu. Nie ma ona żadnej wartości pieniężnej a zasilenie nie wykorzystane przez 13 miesięcy zostanie utracone.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Nie posiadasz kodu promocyjnego?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Ureguluj fakturę początkową {{price}} na zasilenie tego projektu.</translation>
 </translations>

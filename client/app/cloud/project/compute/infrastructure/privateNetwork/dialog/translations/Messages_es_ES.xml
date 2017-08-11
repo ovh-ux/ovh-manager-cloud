@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpcipnd_create_title" qtlid="331202">Añadir una red privada</translation>
    <translation id="cpcipnd_default_name_template" qtlid="331215">MYNETWORK</translation>
-   <translation id="cpcipnd_name_label" qtlid="3818">Apellidos</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Nombre</translation>
    <translation id="cpcipnd_name_required_error" qtlid="331228">Es necesario indicar el nombre de la red privada.</translation>
    <translation id="cpcipnd_name_maxlength_error" qtlid="331241">El nombre de la red privada no puede tener más de 256 caracteres.</translation>
    <translation id="cpcipnd_vlan_create" qtlid="348347">Establecer una VLAN</translation>

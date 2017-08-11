@@ -5,7 +5,7 @@
    <translation id="dtpds_title_unconfigured" qtlid="300980">Configuración inicial del proyecto <strong>{{name}}</strong></translation>
    <translation id="dtpds_title_creation" qtlid="300993">Parámetros del proyecto <strong>{{name}}</strong> (création en cours)</translation>
 
-   <translation id="dtpds_name" qtlid="3818">Apellidos</translation>
+   <translation id="dtpds_name" qtlid="3818">Nombre</translation>
    <translation id="dtpds_region" qtlid="32434">Región</translation>
    <translation id="dtpds_choose_region" qtlid="301006">-- Seleccione una región --</translation>
    <translation id="dtpds_region_required" qtlid="301019">Seleccione una región</translation>

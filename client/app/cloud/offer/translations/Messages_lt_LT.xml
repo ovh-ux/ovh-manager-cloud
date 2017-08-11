@@ -40,4 +40,10 @@
    <translation id="cloud_offer_agreement_label" qtlid="383473">Naudojimo taisyklės</translation>
    <translation id="cloud_offer_agreement_accept" qtlid="383486">Sutinku su <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
    <translation id="cloud_offer_start" qtlid="383499">Pradėti kurti mano Cloud projektą</translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(neprivaloma)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Po to, kiekviena sąskaita bus automatiškai apmokama naudojant cloud kreditą, priskirtą šiam projektui. Jei kredito suma bus nepakankama sąskaitai apmokėti, lėšos bus nuskaitomos nuo jūsų OVH kliento išankstinio mokėjimo paskyros arba naudojant kitą priskirtą mokėjimo priemonę (jūs turėsite nedelsiant apmokėti skolą, naudojant bet kokią prieinamą mokėjimo priemonę).</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Cloud kreditas neperkeliamas ir nekompensuojamas. Kreditas neturi jokios piniginės vertės. Per 13 mėnesių nepanaudotas kreditas bus prarastas.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Neturite nuolaidos kodo?</translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Prašome apmokėti pradinę {{price}} sąskaitą už cloud kreditą šiam projektui.</translation>
 </translations>

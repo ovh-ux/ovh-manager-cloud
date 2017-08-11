@@ -59,7 +59,8 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
 
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instances GPU<br/>Processeur graphique haute performance</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU Instanzen <br/>High-Performance Grafikprozessor</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU Instanzen <br/>High-Performance Grafikprozessor</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage lokale SSD, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedizierte Festplatte, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Hochverfügbares Storage, CPU/RAM/Bandbreite geteilt.</translation>
@@ -68,7 +69,7 @@
    <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Garantierte Ressourcen, SSD-Storage mit niedriger Latenz, höhere Frequenz/Core. </translation>
    <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Garantierte Ressourcen, SSD-Storage mit niedriger Latenz, optimiertes RAM-Kosten-Verhältnis. </translation>
    <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">Keine Angebote für diese Reihe verfügbar.</translation>
-   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Non disponible dans cette région</translation>
+   <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Nicht verfügbar in dieser Region</translation>
    <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Verfügbare Angebot werden geladen.</translation>
    <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">Im Rahmen dieser Operation muss der Server einen Neustart durchführen und wird deshalb für einige Sekunden nicht verfügbar sein!</translation>
    <translation id="cpcivm_addedit_flavor_error" qtlid="248132">Die Angebote konnten nicht gefunden werden!</translation>
@@ -107,18 +108,18 @@
    <translation id="cpcivm_addedit_image_disabled_NOT_ENOUGH_SPACE" qtlid="251577">Bei der ausgewählten Reihe ist nicht genug Speicherplatz verfügbar.</translation>
    <translation id="cpcivm_addedit_image_deprecated" qtlid="248197">Dieses Image ist veraltet.</translation>
    <translation id="cpcivm_addedit_image_windows_incompatibility" qtlid="364654">Windows ist für VPS nicht verfügbar. </translation>
-   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Information importante : OVH s’assure seulement de l’installation de l’application. Sa gestion et maintenance sont à réaliser par vos soins.</translation>
+   <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Wichtige Information: OVH übernimmt ausschließlich die Installation der Anwendung. Für die Verwaltung und Instandhaltung sind Sie selbst verantwortlich.</translation>
 
-   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Applications préinstallées</translation>
+   <translation id="cpcivm_addedit_image_apps" qtlid="401432">Vorinstallierte Anwendungen</translation>
    <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} ohne MwSt / Stunde oder {{monthly}} ohne MwSt / Monat</translation>
    <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/ Stunde</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/ Monat</translation>
    <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} ohne MwSt / Stunde)</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} ohne MwSt / Monat)</translation>
    <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} ohne MwSt / Stunde oder + {{monthly}} ohne MwSt / Monat</translation>
-   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Afficher toutes les distributions</translation>
-   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Recommandé GPU</translation>
-   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Aucune distribution spécialement recommandé pour ce modèle</translation>
+   <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Alle Distributionen anzeigen</translation>
+   <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Empfohlene GPU</translation>
+   <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">Für dieses Modell wird keine spezielle Distribution empfohlen</translation>
 
    <translation id="cpcivm_addedit_image_empty" qtlid="248340">Keine Images verfügbar.</translation>
    <translation id="cpcivm_addedit_image_loading" qtlid="248353">Verfügbare Images werden geladen.</translation>
@@ -144,16 +145,18 @@
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Festplatten</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
-   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6 GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS-SSD Instanzen: <br/>Public Cloud zum Bestpreis </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Die VPS SSD verwenden einen lokalen SSD RAID mit geteilten Ressourcen. Die Performance kann im Laufe der Zeit leicht variieren </translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox Instanzen: <br/>Geteilte Ressourcen </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Die optimale Lösung für Tests und Entwicklungsumgebungen. Die Performance kann im Laufe der Zeit leicht variieren. </translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Garantierte Performance <br/>und HA Storage </translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Diese virtuellen Server basieren auf CEPH mit dreifacher Datenreplikation. Die Ressourcen (CPU, RAM, Netzwerk) sind garantiert </translation>
-   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">EG, SP und HG Instanzen: <br/>Durchgehend garantierte Performance</translation>
+   <translation id="cpcivm_addedit_flavor_other_old" qtlid="327029">EG, SP und HG Instanzen: <br/>konstante Performance garantiert</translation>
    <translation id="cpcivm_addedit_flavor_other_info_old" qtlid="327042">Die Ressourcen (CPU, RAM, Netzwerk) sind garantiert, jedes Modell ist mit CEPH Storage (dreifach repliziert) oder SSD (lokal) verfügbar.</translation>
-   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">Instanzen mit Fokus CPU, RAM oder allgemeine Nutzung: <br/>Konstante Performance garantiert </translation>
+   <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">CPU, RAM und General Purpose Instanzen: <br/>konstante Performance garantiert </translation>
    <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">Die Ressourcen (CPU, RAM, Netzwerk) sind garantiert, jedes Modell ist mit CEPH Storage (dreifach repliziert) oder SSD (lokal) verfügbar.</translation>
    <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Garantierte Performance <br/>und lokaler SSD Storage (no raid) </translation>
    <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Diese virtuellen Server verwenden eine lokale SSD (nicht redundant) und bieten extrem kurze Latenzzeiten. Die Ressourcen (CPU, RAM, Netzwerk) sind garantiert </translation>
@@ -214,10 +217,10 @@
    <translation id="cpcivm_addedit_sshkey_empty_add" qtlid="248795">Klicken Sie auf "Einen Schlüssel hinzufügen", um dies jetzt zu tun!</translation>
    <translation id="cpcivm_addedit_sshkey_error" qtlid="248808">Die Liste Ihrer SSH Schlüssel konnte nicht abgerufen werden!</translation>
 
-   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Vous n'avez pas de clé SSH.</translation>
+   <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Sie haben keinen SSH-Schlüssel.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">Bei der Kommunikation zwischen den OVH Servern wird das gesicherte Netzwerkprotokoll SSH zur Verschlüsselung der Daten verwendet. </translation>
    <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unseren <a href="{{ createUrl }}" target="_blank">Guide zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
-   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Anleitung zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Ich habe verstanden!</translation>
    <translation id="cpcivm_addedit_sshkey_help_windows_tab" qtlid="102237">Windows</translation>

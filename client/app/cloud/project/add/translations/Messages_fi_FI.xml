@@ -14,44 +14,43 @@
 
 
    <translation id="cpa_paymentmean" qtlid="140014">Maksuväline</translation>
-   <translation id="cpa_paymentmean_creditCard" qtlid="275817">Automaattinen veloitus pankkikortilta(Suositus).</translation>
-   <translation id="cpa_paymentmean_creditCard_info" qtlid="275830">Sinulla täytyy olla 3-D Secure -pankkikortti.</translation>
-   <translation id="cpa_paymentmean_creditCard_info2" qtlid="275843">Huom!: jokainen lasku laskutetaan automaattisesti cloud-tilitäsi, jonka jälkeen veloitus tapahtuu oletusmaksutapaasi käyttäen.</translation>
+   <translation id="cpa_paymentmean_creditCard" qtlid="275817">Automaattinen veloitus pankkikortilta (Suositus).</translation>
+   <translation id="cpa_paymentmean_creditCard_info" qtlid="275830">Maksukortissa on oltava 3-D Secure -toiminto.</translation>
+   <translation id="cpa_paymentmean_creditCard_info2" qtlid="275843">Huom! Jokainen lasku veloitetaan automaattisesti ensin pilvisaldosta ja sitten valitsemaltasi oletusmaksutavalta.</translation>
    <translation id="cpa_paymentmean_empty1" qtlid="266651">Oletusmaksuväline (suositeltu)</translation>
-   <translation id="cpa_paymentmean_empty2" qtlid="266664">Lasku veloitetaan automaattisesti ensin pilvisaldosta ja sitten rekisteröidyltä PayPal-tililtä tai kortilta.</translation>
+   <translation id="cpa_paymentmean_empty2" qtlid="266664">Laskua yritetään automaattisesti veloittaa ensin pilvisaldosta ja sitten PayPal-tililtä tai maksukortilta.</translation>
    <translation id="cpa_paymentmean_empty_help_link" qtlid="266677">Rekisteröi maksuväline</translation>
    <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Rekisteröi pankkikortti</translation>
 
    <translation id="cpa_paymentmean_expl" qtlid="319154">Jokainen pilviprojekti laskutetaan kuun alussa (kulutus tuntia kohtia tai kuluvan kuukauden käytön (GB) mukaan sekä alkavan kuun kuukausimaksu). Kun instansseilla siirrytään kuukausilaskutukseen, muutoksesta tulee lasku muutospäivästä kuun loppuun saakka kuukausiveloituksella. </translation>
-   <translation id="cpa_paymentmean_expl2" qtlid="266703">Laskut veloitetaan automaattisesti oletusmaksuvälineeltä (laskusta vähennetään ensin mahdolliset krediitit, kupongit ja prepaid-tilin saldo).</translation>
+   <translation id="cpa_paymentmean_expl2" qtlid="266703">Laskut veloitetaan automaattisesti oletusmaksuvälineeltä (laskusta vähennetään ensin mahdollinen saldo, tarjouskupongit ja prepaid-tilin saldo).</translation>
 
 
    <translation id="cpa_and_or" qtlid="245727">ja/tai</translation>
-   <translation id="cpa_voucher" qtlid="266716">Kuponki (ei pakollinen)</translation>
+   <translation id="cpa_voucher" qtlid="266716">Tarjouskuponki (ei pakollinen)</translation>
 
    <translation id="catalog_version" qtlid="377467">Tuotevalikoiman valinta</translation>
-   <translation id="catalog_version_intro" qtlid="377558"><strong>OVH:n tuotevalikoima on päivitetty</strong>, tilaa nyt uusia tuotteitamme! Vanha tuotevalikoima on saatavillla rajoitetun ajan, huomaa kuitenkin ettei eri valikoimien tuotteita voida yhdistää samaan projektiin.</translation>
+   <translation id="catalog_version_intro" qtlid="377558"><strong>OVH:n tuotevalikoima on päivitetty</strong>, tilaa nyt uusia tuotteitamme! Vanha tuotevalikoima on saatavilla rajoitetun ajan. Huomaa kuitenkin, ettei eri valikoimien tuotteita voida yhdistää samaan projektiin.</translation>
    <translation id="use_new_catalog_label" qtlid="377506">Uusi tuotevalikoima</translation>
    <translation id="use_new_catalog_descr" qtlid="377519">Uudet instanssit: B2 (Yleiskäyttö), C2 (CPU), R2 (RAM), S1 (Sandbox)</translation>
    <translation id="use_old_catalog_label" qtlid="377532">Vanha tuotevalikoima</translation>
-   <translation id="use_old_catalog_descr" qtlid="377545">Huomio: et voi lisätä projektiisi tuotteita uudesta valikoimasta, mikäli käytät projektissa vanhan valikoiman tuotteita: Vanhat instanssit: EG (Yleiskäyttö), HG (CPU), SP (RAM), VPS-SSD (Sandbox)</translation>
+   <translation id="use_old_catalog_descr" qtlid="377545">Huom! Et voi lisätä projektiisi tuotteita uudesta valikoimasta, mikäli käytät projektissa vanhan valikoiman tuotteita. Vanhat instanssit: EG (Yleiskäyttö), HG (CPU), SP (RAM), VPS-SSD (Sandbox)</translation>
 
    <translation id="cpa_create_project" qtlid="255337">Luo projekti</translation>
    <translation id="cpa_create_project_first" qtlid="245753">Aktivoi Cloud-tili</translation>
    <translation id="cpa_create_project_limited" qtlid="245766">Aktivoi rajoitetusti</translation>
    <translation id="cpa_create_project_with_order1" qtlid="266729">Aktivoi projekti ostamalla saldoa</translation>
-   <translation id="cpa_create_project_with_order2" qtlid="295764">Maksa alkuperäinen arvoltaan {{price}}oleva lasku pilvisaldolla tässä projektissa. Tätä vaihetta ei huomioida, jos sinulla on tili (DLP, yrityshautomo tai kilpailu). Tämän jälkeen jokainen lasku veloitetaan automaattisesti projketiin liittyvältä pilvisaldolta, sitten tililtäsi ja lopuksi OVH:n prepaid-tililtä (velvoituksena maksaa mahdolliset velat välittömästi mitä tahansa maksutapaa käyttäen). <br/> Pilvisaldoa ei voi siirtää eikä sitä korvata. Sillä ei ole mitään rahallista arvoa ja kaikki 13 kuukautta käyttämättömänä oleva saldo menetetään.&#13;
- </translation>
-   <translation id="cpa_create_project_with_order3" qtlid="363167">Jos olet DLP-ohjelmassa, tämän kohdan voi jättää tyhjäksi. DLP-tiliä käytetään ensisijaisena maksuvälineenä ennen muita maksutapoja. </translation>
-   <translation id="cpa_create_project_limited_help1" qtlid="372141">Sinulla on tällä hetkellä aktiivinen virtuaalipalvelinten, dedikoitujen palvelinten tai Private Cloud -tuotteiden sarjaan kuuluva palvelu. </translation>
-   <translation id="cpa_create_project_limited_help2" qtlid="245792">Voit aktivoida rajatun tilin (yksi instanssi ja yksi vCPU) ilman maksuvälineen rekisteröintiä.</translation>
+   <translation id="cpa_create_project_with_order2" qtlid="295764">Maksa ensimmäinen {{price}}:n suuruinen pilvisaldolasku projektia varten. Tämän vaiheen yli hypätään, jos sinulla on tili (DLP, yrityshautomo tai kilpailu). Tämän jälkeen kutakin laskua yritetään automaattisesti veloittaa ensin projektiin kohdennetusta pilvisaldosta, sitten asiakkaan OVH-tililtä ja viimeiseksi asiakkaan prepaid-tililtä (asiakkaan velvollisuus on maksaa mahdollinen avoin velka välittömästi mitä tahansa maksutapaa käyttäen). <br/> Pilvisaldoa ei voi siirtää eikä sitä hyvitetä. Sillä ei ole rahallista arvoa ja mikäli saldoa ei ole käytetty kokonaan 13 kuukauden sisällä, käyttämätön osa menetetään.</translation>
+   <translation id="cpa_create_project_with_order3" qtlid="363167">Jos olet DLP-ohjelmassa, tämän kohdan voi jättää tyhjäksi. DLP-tiliä veloitetaan ennen muita maksutapoja. </translation>
+   <translation id="cpa_create_project_limited_help1" qtlid="372141">Sinulla on olemassa aktiivinen VPS, dedikoitu palvelin tai Private Cloud -palvelu. </translation>
+   <translation id="cpa_create_project_limited_help2" qtlid="245792">Voit aktivoida rajoitetun tilin (yksi instanssi ja yksi vCPU) ilman maksuvälineen rekisteröintiä.</translation>
    <translation id="cpa_create_project_limited_help3" qtlid="245805">Maksuvälineen rekisteröinti poistaa rajoituksen.</translation>
 
    <translation id="cpa_success" qtlid="295777">Projektia luodaan. Ole hyvä ja maksa <a href="{{url}}" target="blank">tilaus</a> päästäksesi käyttämään sitä.</translation>
 
-   <translation id="cpa_error" qtlid="144721">Virhe esiintyi. Yritä myöhemmin uudelleen.</translation>
+   <translation id="cpa_error" qtlid="144721">Tapahtui virhe. Yritä myöhemmin uudelleen.</translation>
    <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Syötä toimiva (aktiivinen) maksuväline.</translation>
    <translation id="cpa_error_invalid_voucher" qtlid="255350">Kuponki ei toimi (virheellinen tai vanhentunut).</translation>
    <translation id="cpa_error_contracts_tosign" qtlid="245844">Hyväksyttävänäsi on yksi sopimus tai useampia sopimuksia.</translation>
-   <translation id="cpa_error_over_quota" qtlid="295790">Olet saavuttanut pilviprojektien suurimman sallitun määrän. Ota <a href="#/support?state=new" target="_blank">yhteyttä asiakaspalveluun</a> rajoituksen purkamiseksi.</translation>
+   <translation id="cpa_error_over_quota" qtlid="295790">Olet saavuttanut pilviprojektien suurimman sallitun määrän. <a href="#/support?state=new" target="_blank"> Ota yhteyttä asiakaspalveluun</a> rajoituksen purkamiseksi.</translation>
 </translations>
