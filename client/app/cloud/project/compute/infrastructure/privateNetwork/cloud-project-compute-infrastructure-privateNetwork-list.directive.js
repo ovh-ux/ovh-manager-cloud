@@ -1,7 +1,7 @@
 angular.module("managerApp").directive("privateNetworkList", function () {
     "use strict";
 
-    var Controller = function ($rootScope, $translate, $stateParams, $state, $q, $uibModal, Toast, CloudProjectNetworkPrivate, CloudProject, REDIRECT_URLS, Vrack, CloudProjectComputeInfrastructurePrivateNetworkService) {
+    var Controller = function ($rootScope, $translate, $stateParams, $state, $q, $uibModal, Toast, CloudProjectNetworkPrivate, CloudProject, REDIRECT_URLS, Vrack, CloudProjectComputeInfrastructurePrivateNetworkService, User, URLS) {
         this.resources = {
             privateNetwork: CloudProjectNetworkPrivate.Lexi(),
             project: CloudProject.Lexi(),
@@ -61,6 +61,10 @@ angular.module("managerApp").directive("privateNetworkList", function () {
         // Loading privateNetwork first because vrack can fallback to privateNetworkList to find it's ID.
         this.fetchPrivateNetworks()
             .then(this.fetchVrack.bind(this));
+
+        User.Lexi().get().$promise.then(user => {
+            this.orderUrl = _.get(URLS.website_order, `vrack.${user.ovhSubsidiary}`);
+        });
     };
 
     Controller.prototype.fetchVrack = function () {
