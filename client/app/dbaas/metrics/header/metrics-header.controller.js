@@ -1,10 +1,11 @@
 (() => {
     class MetricsHeaderCtrl {
-        constructor ($state, $stateParams, $translate, ovhDocUrl) {
+        constructor ($state, $stateParams, $translate, METRICS_ENDPOINTS, ovhDocUrl) {
             this.$state = $state;
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
             this.$translate = $translate;
+            this.METRICS_ENDPOINTS = METRICS_ENDPOINTS;
             this.ovhDocUrl = ovhDocUrl;
 
             this.guides = {};
@@ -22,22 +23,23 @@
                 title: this.$translate.instant("metrics_guides_first-step"),
                 list: [{
                     name: this.$translate.instant("metrics_guides_first-step_begin"),
-                    url: this.ovhDocUrl.getDocUrl("cloud/metrics")
+                    url: this.ovhDocUrl.getDocUrl("cloud/metrics/manager")
                 }]
             });
             this.guides.sections.push({
                 title: this.$translate.instant("metrics_guides_protocoles"),
-                list: [
-                    {
-                        name: "Warp10",
-                        url: this.ovhDocUrl.getDocUrl("cloud/metrics/proto-warp10")
-                    },
-                    {
-                        name: "OpenTSDB",
-                        url: this.ovhDocUrl.getDocUrl("cloud/metrics/proto-opentsdb")
-                    }
-                ]
+                list: this.getProtocolDocs()
             });
+
+        }
+
+        getProtocolDoc (proto) {
+            const doc = this.ovhDocUrl.getDocUrl("cloud/metrics/using");
+            return { name: proto, url: `${doc}/#${proto}` };
+        }
+
+        getProtocolDocs () {
+            return _.map(this.METRICS_ENDPOINTS.protos, proto => this.getProtocolDoc(proto));
 
         }
 

@@ -27,15 +27,16 @@
                         {
                             proto,
                             address: `https://${proto}.${this.regionName}.${this.METRICS_ENDPOINTS.suffix}`,
-                            doc: this.getDoc(`proto-${proto}`)
+                            doc: this.getDoc(proto)
                         }
                     ));
                     this.loading = false;
                 });
         }
 
-        getDoc (part) {
-            return this.ovhDocUrl.getDocUrl(`cloud/metrics/${part || ""}`);
+        getDoc (proto) {
+            const doc = this.ovhDocUrl.getDocUrl("cloud/metrics/using");
+            return `${doc}/#${proto}`;
         }
     }
 
