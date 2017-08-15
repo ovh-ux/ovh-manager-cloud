@@ -261,33 +261,33 @@
    <translation id="cpci_vm_flavor_category_win-g1-120" qtlid="400351">G1-120</translation>
    <translation id="cpci_vm_flavor_category_win-g1-240" qtlid="400364">G1-240</translation>
 
-   <translation id="cpci_vm_flavor_category_g2-7">G2-7</translation>
-   <translation id="cpci_vm_flavor_category_g2-15">G2-15</translation>
-   <translation id="cpci_vm_flavor_category_g2-30">G2-30</translation>
-   <translation id="cpci_vm_flavor_category_g2-60">G2-60</translation>
-   <translation id="cpci_vm_flavor_category_g2-120">G2-120</translation>
-   <translation id="cpci_vm_flavor_category_g2-240">G2-240</translation>
+   <translation id="cpci_vm_flavor_category_g2-7" qtlid="414651">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_g2-15" qtlid="414664">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_g2-30" qtlid="414677">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_g2-60" qtlid="414690">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_g2-120" qtlid="414703">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_g2-240" qtlid="414716">G2-240</translation>
 
-   <translation id="cpci_vm_flavor_category_win-g2-7">G2-7</translation>
-   <translation id="cpci_vm_flavor_category_win-g2-15">G2-15</translation>
-   <translation id="cpci_vm_flavor_category_win-g2-30">G2-30</translation>
-   <translation id="cpci_vm_flavor_category_win-g2-60">G2-60</translation>
-   <translation id="cpci_vm_flavor_category_win-g2-120">G2-120</translation>
-   <translation id="cpci_vm_flavor_category_win-g2-240">G2-240</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-7" qtlid="414651">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-15" qtlid="414664">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-30" qtlid="414677">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-60" qtlid="414690">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-120" qtlid="414703">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-240" qtlid="414716">G2-240</translation>
 
-   <translation id="cpci_vm_flavor_category_g3-7">G3-7</translation>
-   <translation id="cpci_vm_flavor_category_g3-15">G3-15</translation>
-   <translation id="cpci_vm_flavor_category_g3-30">G3-30</translation>
-   <translation id="cpci_vm_flavor_category_g3-60">G3-60</translation>
-   <translation id="cpci_vm_flavor_category_g3-120">G3-120</translation>
-   <translation id="cpci_vm_flavor_category_g3-240">G3-240</translation>
+   <translation id="cpci_vm_flavor_category_g3-7" qtlid="414729">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_g3-15" qtlid="414742">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_g3-30" qtlid="414755">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_g3-60" qtlid="414768">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_g3-120" qtlid="414781">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_g3-240" qtlid="414794">G3-240</translation>
 
-   <translation id="cpci_vm_flavor_category_win-g3-7">G3-7</translation>
-   <translation id="cpci_vm_flavor_category_win-g3-15">G3-15</translation>
-   <translation id="cpci_vm_flavor_category_win-g3-30">G3-30</translation>
-   <translation id="cpci_vm_flavor_category_win-g3-60">G3-60</translation>
-   <translation id="cpci_vm_flavor_category_win-g3-120">G3-120</translation>
-   <translation id="cpci_vm_flavor_category_win-g3-240">G3-240</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-7" qtlid="414729">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-15" qtlid="414742">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-30" qtlid="414755">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-60" qtlid="414768">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-120" qtlid="414781">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-240" qtlid="414794">G3-240</translation>
 
    <translation id="cpci_vm_alert_cpu" qtlid="276181">Ihre CPU hat mehr als {{percentage}} der in den letzten 7 Tagen zugewiesenen Leistung erreicht.</translation>
    <translation id="cpci_vm_alert_ram" qtlid="276194">Ihr RAM hat mehr als {{percentage}} der in den letzten 7 Tagen zugewiesenen Menge erreicht.</translation>
