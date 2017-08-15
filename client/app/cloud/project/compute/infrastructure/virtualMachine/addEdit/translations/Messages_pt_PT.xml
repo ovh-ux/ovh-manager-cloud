@@ -146,8 +146,8 @@
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Discos</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g2">Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3">Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>o Public Cloud ao melhor preço</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Os servidores VPS SSD utilizam um RAID local SSD partilhado e as suas performances podem variar ao longo do tempo</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Instâncias Sandbox: <br/>Recursos partilhados</translation>
