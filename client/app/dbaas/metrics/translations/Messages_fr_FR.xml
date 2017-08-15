@@ -3,13 +3,13 @@
 <!-- Menu -->
    <translation id="metrics_tab_dashboard" qtlid="27643">Accueil</translation>
    <translation id="metrics_tab_token" qtlid="403164">Tokens</translation>
-   <translation id="metrics_tab_platform">Plateformes</translation>
+   <translation id="metrics_tab_platform" qtlid="123607">Plateformes</translation>
 
    <translation id="metrics_guides" qtlid="300370">Guides</translation>
    <translation id="metrics_guides_footer" qtlid="406905">Tous les guides OVH</translation>
-   <translation id="metrics_guides_first-step">Premiers pas ...</translation>
-   <translation id="metrics_guides_first-step_begin">Débuter</translation>
-   <translation id="metrics_guides_protocoles">Protocoles</translation>
+   <translation id="metrics_guides_first-step" qtlid="415753">Premiers pas ...</translation>
+   <translation id="metrics_guides_first-step_begin" qtlid="415766">Débuter</translation>
+   <translation id="metrics_guides_protocoles" qtlid="249458">Protocoles</translation>
 
 
    <translation id="metrics_endpoint" qtlid="403177">Accès plateforme</translation>
@@ -34,12 +34,12 @@
 
    <translation id="metrics_err_service" qtlid="403346">Erreur au chargement de votre service.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Erreur au chargement de votre consommation.</translation>
-   <translation id="metrics_err_delete_token">Erreur lors de la suppression du token</translation>
+   <translation id="metrics_err_delete_token" qtlid="415779">Erreur lors de la suppression du token</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token mis à jour</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>
-   <translation id="metrics_quota_ddp_warning_message">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
-   <translation id="metrics_quota_mads_warning_message">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+   <translation id="metrics_quota_mads_warning_message" qtlid="415805">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
 
    <translation id="metrics_setting_update" qtlid="43462">Mettre à jour</translation>
    <translation id="metrics_setting_desc" qtlid="364420">Description du projet</translation>

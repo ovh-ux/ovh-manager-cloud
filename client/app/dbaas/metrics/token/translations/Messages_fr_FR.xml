@@ -5,39 +5,39 @@
    <translation id="metrics_token_search" qtlid="98288">Rechercher...</translation>
 
    <translation id="metrics_table_create_date" qtlid="26419">Date de création</translation>
-   <translation id="metrics_table_expiry_date">Date d'expiration</translation>
+   <translation id="metrics_table_expiry_date" qtlid="33010">Date d'expiration</translation>
    <translation id="metrics_table_name" qtlid="3818">Nom</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
    <translation id="metrics_table_state" qtlid="33790">État</translation>
    <translation id="metrics_table_action" qtlid="56105">Action</translation>
 
-   <translation id="metrics_token_state_active">Actif</translation>
-   <translation id="metrics_token_state_inactive">Inactif</translation>
+   <translation id="metrics_token_state_active" qtlid="55133">Actif</translation>
+   <translation id="metrics_token_state_inactive" qtlid="105310">Inactif</translation>
 
-   <!-- Page: token -->
+<!-- Page: token -->
    <translation id="metrics_token_one" qtlid="254115">Token</translation>
    <translation id="metrics_token_delete" qtlid="2414">Supprimer</translation>
    <translation id="metrics_token_cancel" qtlid="37863">Annuler</translation>
-   <translation id="metrics_token_close">Fermer</translation>
+   <translation id="metrics_token_close" qtlid="4670">Fermer</translation>
    <translation id="metrics_token_no_token" qtlid="403372">Aucun token pour cette application</translation>
    <translation id="metrics_token_permission" qtlid="301344">Permission</translation>
    <translation id="metrics_token_new" qtlid="403385">Nouveau token</translation>
    <translation id="metrics_token_create" qtlid="39226">Créer</translation>
    <translation id="metrics_token_role" qtlid="403398">Rôle</translation>
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
-   <translation id="metrics_token_id">Identifiant</translation>
-   <translation id="metrics_token_show_preview">Afficher l'aperçu</translation>
-   <translation id="metrics_token_preview_title">Affichage du token</translation>
+   <translation id="metrics_token_id" qtlid="46792">Identifiant</translation>
+   <translation id="metrics_token_show_preview" qtlid="415844">Afficher l'aperçu</translation>
+   <translation id="metrics_token_preview_title" qtlid="415857">Affichage du token</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Afficher les révoqués</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Modifier</translation>
-   <translation id="metrics_token_edit_title">Modifier le token</translation>
-   <translation id="metrics_token_edit_name">Nom (facultatif)</translation>
+   <translation id="metrics_token_edit_title" qtlid="415870">Modifier le token</translation>
+   <translation id="metrics_token_edit_name" qtlid="415818">Nom (facultatif)</translation>
    <translation id="metrics_token_edit_cancel" qtlid="37863">Annuler</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Modifier</translation>
 
-   <translation id="metrics_token_delete_title">Supprimer le token ?</translation>
-   <translation id="metrics_token_delete_message">Êtes-vous sûr de vouloir supprimer le token ?</translation>
+   <translation id="metrics_token_delete_title" qtlid="415883">Supprimer le token ?</translation>
+   <translation id="metrics_token_delete_message" qtlid="415896">Êtes-vous sûr de vouloir supprimer le token ?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token mis à jour</translation>
