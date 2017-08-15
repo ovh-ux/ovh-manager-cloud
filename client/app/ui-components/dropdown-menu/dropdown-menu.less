@@ -1,15 +1,20 @@
 .cui-dropdown-menu {
-  position: relative;
+  display: inline-block;
+
+  &__body {
+    position: relative;
+  }
 
   &__button {
-    cursor: pointer;
     display: block;
     margin: auto;
+    line-height: 0;
+    cursor: pointer;
   }
 
   &__content {
     position: absolute;
-    right: 10px;
+    right: 0;
     z-index: 5;
 
     width: 280px;
@@ -30,7 +35,7 @@
         border: solid transparent;
         pointer-events: none;
         bottom: 100%;
-        right: 19px;
+        right: 15px;
       }
 
       &:before {
@@ -58,7 +63,7 @@
         border: solid transparent;
         pointer-events: none;
         top: 100%;
-        right: 19px;
+        right: 15px;
       }
 
       &:before {

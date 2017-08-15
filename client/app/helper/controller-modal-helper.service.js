@@ -20,10 +20,12 @@ class ControllerModalHelper {
                 config.errorHandler(err);
             }
         });
+
+        return modalInstance;
     }
 
     showWarningModal (config = {}) {
-        this.showModal({
+        return this.showModal({
             modalConfig: {
                 templateUrl: "app/ui-components/modal/warning-modal/warning-modal.html",
                 controller: "WarningModalController",
@@ -32,7 +34,7 @@ class ControllerModalHelper {
                     params: () => config
                 }
             }
-        });  
+        });
     }
 }
 

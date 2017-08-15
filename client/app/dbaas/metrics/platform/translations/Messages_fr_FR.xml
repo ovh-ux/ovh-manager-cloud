@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_endpoint_howto" qtlid="403541">Bien débuter</translation>
+
+   <translation id="metrics_platform_title">Plateformes</translation>
+   <translation id="metrics_platform_back" qtlid="208925">Retour à l'accueil</translation>
+   <translation id="metrics_platform_proto" qtlid="19711">Protocole</translation>
+   <translation id="metrics_platform_address" qtlid="30430">Adresse</translation>
+   <translation id="metrics_platform_doc" qtlid="42574">Documentation</translation>
+   <translation id="metrics_guide">Guide</translation>
+
+   <translation id="metrics_endpoint_tools" qtlid="330682">Outils</translation>
+   <translation id="metrics_endpoint_intro_1" qtlid="403554">Ci-dessous se trouve la liste des protocoles supportés par la plateforme OVH Metrics.</translation>
+   <translation id="metrics_endpoint_intro_2" qtlid="403567">Chaque protocole est associé à une adresse dépendante de la région dans laquelle se trouve votre projet.</translation>
+   <translation id="metrics_endpoint_intro_3" qtlid="403580">Ces adresses vous permettent d'utiliser pleinement et de façon native chaque protocole.</translation>
+</translations>
