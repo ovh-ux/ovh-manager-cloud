@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="metrics_token_add_name">Nom (facultatif)</translation>
+   <translation id="metrics_token_add_name" qtlid="415818">Nom (facultatif)</translation>
    <translation id="metrics_token_add_permission" qtlid="301344">Permission</translation>
-   <translation id="metrics_token_add_labels">Labels (facultatif)</translation>
-   <translation id="metrics_token_add_permission_read">Lecture</translation>
-   <translation id="metrics_token_add_permission_write">Écriture</translation>
+   <translation id="metrics_token_add_labels" qtlid="415831">Labels (facultatif)</translation>
+   <translation id="metrics_token_add_permission_read" qtlid="6958">Lecture</translation>
+   <translation id="metrics_token_add_permission_write" qtlid="301565">Écriture</translation>
 
    <translation id="metrics_token_add_labels" qtlid="403437">Ajouter des labels</translation>
-   <translation id="metrics_token_add_labels_key">Clé</translation>
-   <translation id="metrics_token_add_labels_value">Valeur</translation>
-   <translation id="metrics_token_add_token">Ajouter un token</translation>
+   <translation id="metrics_token_add_labels_key" qtlid="104326">Clé</translation>
+   <translation id="metrics_token_add_labels_value" qtlid="47548">Valeur</translation>
+   <translation id="metrics_token_add_token" qtlid="415519">Ajouter un token</translation>
    <translation id="metrics_token_add_confirmation" qtlid="37923">Ajouter</translation>
 </translations>
