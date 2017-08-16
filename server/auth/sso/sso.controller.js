@@ -51,10 +51,11 @@ export function auth (req, res) {
     let origin = req.headers.host;
     let protocol = req.protocol || "http";
     let headers = req.headers;
-    headers.host = "www.ovh.com";
+    headers.host = config.ssoAuth.host;
 
     proxy.post({
-        url: "https://www.ovh.com/auth/requestDevLogin/",
+        url: config.ssoAuth.devLoginUrl,
+        proxy: config.proxy ? config.proxy.host : null,
         headers: headers,
             followRedirect: false,
         gzip: true,
@@ -65,14 +66,14 @@ export function auth (req, res) {
         if (err) {
             return res.status(500);
         }
-        
+
         return res.redirect(data.data.url);
     });
 }
 
 export function checkAuth (req, res) {
     var headers = req.headers;
-    headers.host = "www.ovh.com";
+    headers.host = config.ssoAuth.host;
 
     let cookies = [];
 
@@ -83,6 +84,10 @@ export function checkAuth (req, res) {
             cookies.cookies.forEach((c) => {
 
                 let parsedCookie = cookie.parse(c);
+
+                if (parsedCookie["CA.OVH.SES"]) {
+                    res.cookie("CA.OVH.SES", parsedCookie["CA.OVH.SES"], { path: "/", httpOnly: true });
+                }
 
                 if (parsedCookie.SESSION) {
                     res.cookie("SESSION", parsedCookie.SESSION, { path: "/", httpOnly: true });

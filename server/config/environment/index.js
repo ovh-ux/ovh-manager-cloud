@@ -56,6 +56,7 @@ var zoneConfig = {
     EU: {
         ssoAuth: {
             host: "www.ovh.com",
+            devLoginUrl: "https://www.ovh.com/auth/requestDevLogin/",
             baseUrl: "https://www.ovh.com/cgi-bin/crosslogin.cgi"
         },
         apiv6: {
@@ -71,6 +72,7 @@ var zoneConfig = {
     CA: {
         ssoAuth: {
             host: "ca.ovh.com",
+            devLoginUrl: "https://ca.ovh.com/auth/requestDevLogin/",
             baseUrl: "https://ca.ovh.com/cgi-bin/crosslogin.cgi"
         },
         apiv6: {
@@ -86,6 +88,7 @@ var zoneConfig = {
     US: {
         ssoAuth: {
             host: "www.ovh.us",
+            devLoginUrl: "https://www.ovh.us/auth/requestDevLogin/",
             baseUrl: "https://www.ovh.us/cgi-bin/crosslogin.cgi"
         },
         apiv6: {
