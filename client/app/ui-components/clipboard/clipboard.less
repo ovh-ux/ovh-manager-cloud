@@ -9,7 +9,7 @@
 
 .cui-clipboard {
 	&__input {
-		padding: 6px 12px;
+		padding: 6px 48px 6px 12px;
 		width: 100%;
 
 		background-color: rgba(224, 246, 253, 0.5);
@@ -19,5 +19,19 @@
 
 		border: 1px solid @clipboard-border-color;
 		border-radius: 5px;
+	}
+
+	&__input:hover {
+		background-color: rgba(224, 246, 253, 0.9);
+	}
+
+	&__input:active {
+		border: 1px solid rgba(0,162,191,0.25);
+	}
+
+	&__icon {
+		position: absolute;
+		right: 24px;
+		top: 18px;
 	}
 }
