@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpb_tab_details" qtlid="37527">Tiedot</translation>
-   <translation id="cpb_tab_consumption" qtlid="25639">Kulutus</translation>
+   <translation id="cpb_tab_consumption" qtlid="25639">Käyttö</translation>
    <translation id="cpb_tab_history" qtlid="364394">Historiatiedot</translation>
    <translation id="cpb_tab_quota" qtlid="6874">Kiintiö</translation>
    <translation id="cpb_tab_rights" qtlid="261049">Kontaktit ja käyttöoikeudet</translation>

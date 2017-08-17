@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 <!-- Menu -->
-   <translation id="metrics_token" qtlid="403164">Tokens</translation>
+   <translation id="metrics_tab_dashboard" qtlid="27643">Home</translation>
+   <translation id="metrics_tab_token" qtlid="403164">Tokens</translation>
+   <translation id="metrics_tab_platform" qtlid="123607">Platforms</translation>
+
+   <translation id="metrics_guides" qtlid="300370">Handleidingen</translation>
+   <translation id="metrics_guides_footer" qtlid="406905">Alle OVH handleidingen</translation>
+   <translation id="metrics_guides_first-step" qtlid="415753">Eerste stappen...</translation>
+   <translation id="metrics_guides_first-step_begin" qtlid="415766">Start</translation>
+   <translation id="metrics_guides_protocoles" qtlid="249458">Protocols</translation>
+
+
    <translation id="metrics_endpoint" qtlid="403177">Platform toegang</translation>
    <translation id="metrics_setting" qtlid="403190">Instellingen</translation>
    <translation id="metrics_event" qtlid="403203">Evenementen</translation>
@@ -24,45 +34,17 @@
 
    <translation id="metrics_err_service" qtlid="403346">Er is een fout opgetreden tijdens het laden van uw dienst. </translation>
    <translation id="metrics_err_conso" qtlid="403359">Er is een fout opgetreden tijdens het laden van uw gebruik-statistieken. </translation>
-
-<!-- Page: token -->
-   <translation id="metrics_token_one" qtlid="254115">Token</translation>
-   <translation id="metrics_delete" qtlid="2414">Verwijderen</translation>
-   <translation id="metrics_cancel" qtlid="37863">Annuleren</translation>
-   <translation id="metrics_token_no_token" qtlid="403372">Er is geen token voor deze applicatie</translation>
-   <translation id="metrics_token_permission" qtlid="301344">Toestemming</translation>
-   <translation id="metrics_token_new" qtlid="403385">Nieuw token</translation>
-   <translation id="metrics_token_create" qtlid="39226">Aanmaken</translation>
-   <translation id="metrics_token_role" qtlid="403398">Functie</translation>
-   <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
-   <translation id="metrics_token_revoked" qtlid="186752">Ingetrokken</translation>
-   <translation id="metrics_token_show_revoked" qtlid="403424">toon teruggetrokken</translation>
-   <translation id="metrics_token_add_labels" qtlid="403437">Labels toevoegen</translation>
+   <translation id="metrics_err_delete_token" qtlid="415779">Er is een fout opgetreden tijdens het verwijderen van het token. </translation>
    <translation id="metrics_token_created" qtlid="403450">Token gecreëerd </translation>
-   <translation id="metrics_token_revoked" qtlid="403463">Token teruggetrokken</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token geüpdatet </translation>
-   <translation id="metrics_token_err_get" qtlid="403489">Er is een fout opgetreden tijdens het laden van de tokens</translation>
-   <translation id="metrics_token_err_create" qtlid="403502">Er is een fout opgetreden tijdens het maken van het token</translation>
-   <translation id="metrics_token_err_revoke" qtlid="403515">Er is een fout opgetreden tijdens het terugtrekken van het token</translation>
-   <translation id="metrics_token_err_update" qtlid="403528">Er is een fout opgetreden tijdens het updaten van het token</translation>
-<!-- Page: endpoint -->
-   <translation id="metrics_endpoint_howto" qtlid="403541">Aan de slag</translation>
-   <translation id="metrics_endpoint_proto" qtlid="19711">Protocol</translation>
-   <translation id="metrics_endpoint_address" qtlid="30430">Adres</translation>
-   <translation id="metrics_endpoint_doc" qtlid="42574">Documentatie</translation>
-   <translation id="metrics_endpoint_tools" qtlid="330682">Tools</translation>
-   <translation id="metrics_endpoint_intro_1" qtlid="403554">Hieronder vindt u een lijst van protocollen ondersteund door het OVH Metrics. Data Platform</translation>
-   <translation id="metrics_endpoint_intro_2" qtlid="403567">Elk protocol is gelinkt aan een adres afhankelijk van waar uw project zich bevindt. </translation>
-   <translation id="metrics_endpoint_intro_3" qtlid="403580">Met deze adressen kunt u elk protocol volledig gebruiken.</translation>
-<!-- Page: setting -->
+   <translation id="metrics_token_revoked" qtlid="403463">Token teruggetrokken</translation>
+   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">U heeft bijna uw dagelijkse limiet voor punten  bereikt. We raden u aan om uw plan te wijzigen om dataverlies te voorkomen.</translation>
+   <translation id="metrics_quota_mads_warning_message" qtlid="415805">U heeft bijna uw maandelijkse limiet bereikt voor actieve series. We raden u aan om uw plan te wijzigen om dataverlies te voorkomen.</translation>
+
    <translation id="metrics_setting_update" qtlid="43462">Update</translation>
    <translation id="metrics_setting_desc" qtlid="364420">Projectbeschrijving</translation>
    <translation id="metrics_setting_updated" qtlid="403593">Dienst geüpdatet. </translation>
    <translation id="metrics_setting_update_failed" qtlid="403606">Dienst update is niet mogelijk</translation>
-<!-- Page: event -->
-<!-- Page: stats -->
-<!-- Page: quantum -->
-<!-- Page: Upgrade -->
    <translation id="metrics_upgrade_title" qtlid="403619">Naar een hoger plan migreren</translation>
    <translation id="metrics_purchase" qtlid="43558">Bestellen</translation>
 </translations>

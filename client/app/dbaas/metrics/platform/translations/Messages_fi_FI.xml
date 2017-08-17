@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_endpoint_howto" qtlid="403541">Käytön aloitus</translation>
+
+   <translation id="metrics_platform_title" qtlid="123607">Alustat</translation>
+   <translation id="metrics_platform_back" qtlid="208925">Palaa etusivulle</translation>
+   <translation id="metrics_platform_proto" qtlid="19711">Protokolla</translation>
+   <translation id="metrics_platform_address" qtlid="30430">Osoite</translation>
+   <translation id="metrics_platform_doc" qtlid="42574">Dokumentaatio</translation>
+   <translation id="metrics_guide" qtlid="415740">Guide</translation>
+
+   <translation id="metrics_endpoint_tools" qtlid="330682">Työkalut</translation>
+   <translation id="metrics_endpoint_intro_1" qtlid="403554">Alla näät listan OVH Metrics -alustan tukemista protokollista.</translation>
+   <translation id="metrics_endpoint_intro_2" qtlid="403567">Jokainen protokolla liittyy projektisi sijainnista riippuvaan osoitteeseen.</translation>
+   <translation id="metrics_endpoint_intro_3" qtlid="403580">Näiden osoitteiden avulla voit käyttää täysin ja natiivilla tavalla jokaista protokollaa.</translation>
+</translations>
