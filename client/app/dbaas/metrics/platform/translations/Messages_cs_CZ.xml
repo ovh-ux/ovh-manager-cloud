@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_endpoint_howto" qtlid="403541">Začínáme</translation>
+
+   <translation id="metrics_platform_title" qtlid="123607">Platformy</translation>
+   <translation id="metrics_platform_back" qtlid="208925">Zpět na hlavní stránku</translation>
+   <translation id="metrics_platform_proto" qtlid="19711">Protokol</translation>
+   <translation id="metrics_platform_address" qtlid="30430">Adresa</translation>
+   <translation id="metrics_platform_doc" qtlid="42574">Dokumentace</translation>
+   <translation id="metrics_guide" qtlid="415740">Příručka</translation>
+
+   <translation id="metrics_endpoint_tools" qtlid="330682">Tools</translation>
+   <translation id="metrics_endpoint_intro_1" qtlid="403554">Níže naleznete seznam protokolů podporovaných platformou OVH Metrics.</translation>
+   <translation id="metrics_endpoint_intro_2" qtlid="403567">Ke každému protokolu je přiřazena adresa, a to v závislosti na umístění Vašeho projektu.</translation>
+   <translation id="metrics_endpoint_intro_3" qtlid="403580">Tyto adresy umožňují plné a nativní využití každého protokolu.</translation>
+</translations>
