@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="iplb_graph_title">Graphiques</translation>
+    <translation id="iplb_graph_connections_title">Connexions simultanées</translation>
+    <translation id="iplb_graph_rqpersec_title">Requêtes par seconde</translation>
+    <translation id="iplb_graph_bandwidth_title">Bande passante</translation>
     <translation id="iplb_graph_scape_1h-ago">1 h</translation>
     <translation id="iplb_graph_scape_3h-ago">3 h</translation>
     <translation id="iplb_graph_scape_6h-ago">6 h</translation>

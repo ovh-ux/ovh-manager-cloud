@@ -25,7 +25,7 @@ angular.module("managerApp", [
     "ovh-angular-toaster",
     "ovh-angular-swimming-poll",
     "oui",
-    "ovh-list-view",
+    "oui.list-view",
     "chart.js",
 
     "ovh-angular-pagination-front",
@@ -114,7 +114,20 @@ angular.module("managerApp", [
               </div>
             `);
     })
-    .run(function ($translatePartialLoader) {
+    .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration) => {
         "use strict";
         $translatePartialLoader.addPart("components");
+
+        const off = $rootScope.$on("$stateChangeSuccess", () => {
+            ouiTableConfiguration.words = {
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
+                page: $translate.instant("common_pagination_page"),
+                of: $translate.instant("common_pagination_of"),
+                results: $translate.instant("common_pagination_results"),
+                next: $translate.instant("common_pagination_next"),
+                previous: $translate.instant("common_pagination_previous")
+            };
+            off();
+        });
+
     });

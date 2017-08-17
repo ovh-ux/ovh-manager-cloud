@@ -64,5 +64,6 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "status",
         "contains",
         "matches"
-    ]
+    ],
+    portLimit: 65535
 });

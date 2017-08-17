@@ -9,7 +9,6 @@
     "jquery": "2.1.x",
     "angular": "1.6.x",
     "ovh-ui-angular": "^1.0.2",
-    "list-view": "ssh://git@stash.ovh.net:7999/uxcomponents/list-view.git#oui-table-2",
     "angular-animate": "1.6.x",
     "angular-bootstrap": "1.3.x",
     "angular-cookies": "1.6.x",
@@ -42,7 +41,7 @@
     "ng-slide-down": "1.2.x",
     "uri.js": "~1.15.0",
     "validator-js": "~3.37.0",
-    "ovh-ui-kit": "^1.0.0-alpha.11",
+    "ovh-ui-kit": "#master",
     "ovh-angular-a-disabled": "^0.1.1",
     "ng-at-internet": "^2.2.1",
     "at-internet-ui-router-plugin": "^0.1.2",
@@ -74,7 +73,8 @@
     "ovh-angular-module-status": "^0.0.2",
     "ovh-angular-otrs": "^1.1.0",
     "ovh-api-services": "^1.1.5",
-    "angular-chart.js": "^1.1.1"
+    "angular-chart.js": "^1.1.1",
+    "ovh-angular-list-view": "^0.1.0"
   },
   "devDependencies": {
     "angular-mocks": "1.6.x",

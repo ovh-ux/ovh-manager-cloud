@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="iplb_home_tile_status">Statut</translation>
+    <translation id="iplb_home_tile_status_frontends">Frontends</translation>
+    <translation id="iplb_home_tile_status_servers_farms">Fermes de serveurs</translation>
+    <translation id="iplb_home_tile_status_servers">Serveurs</translation>
+
     <translation id="iplb_home_tile_usage">Utilisation</translation>
     <translation id="iplb_home_tile_graph">Graphiques</translation>
 

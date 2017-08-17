@@ -7,7 +7,6 @@ class IpLoadBalancerNatIpService {
 
     getNatIps (serviceName) {
         return this.IpLoadBalancing.Lexi().natIp({ serviceName }).$promise
-            .then(response => response)
             .catch(this.ServiceHelper.errorHandler("iplb_nat_ip_detail_loading_error"));
     }
 }

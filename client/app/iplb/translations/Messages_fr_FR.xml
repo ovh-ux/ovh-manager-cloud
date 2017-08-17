@@ -39,6 +39,8 @@
     <translation id="iplb_farm_list_loading_error">Erreur lors du chargement des fermes de serveurs.</translation>
     <translation id="iplb_farm_server_list_loading_error">Erreur lors du chargement des serveurs de la ferme.</translation>
 
+    <translation id="iplb_ipfo_select_placeholder">Aucune</translation>
+
     <translation id="iplb_zone_select_placeholder">Sélectionner</translation>
     <translation id="iplb_zone_all">Tous (ALL)</translation>
 

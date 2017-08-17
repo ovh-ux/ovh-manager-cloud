@@ -480,4 +480,10 @@
    <translation id="common_preview_see">Voir l'aperçu</translation>
 
    <translation id="common_table_col_action">Action</translation>
+   <translation id="common_pagination_resultsperpage">Résultats par page</translation>
+   <translation id="common_pagination_page">page</translation>
+   <translation id="common_pagination_of">sur</translation>
+   <translation id="common_pagination_results">résultats</translation>
+   <translation id="common_pagination_next">Page suivante</translation>
+   <translation id="common_pagination_previous">Page précédente</translation>
 </translations>

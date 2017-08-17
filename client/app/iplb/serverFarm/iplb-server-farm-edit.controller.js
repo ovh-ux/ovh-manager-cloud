@@ -41,6 +41,7 @@ class IpLoadBalancerServerFarmEditCtrl {
             balance: "roundrobin",
             port: 80,
             ssl: false,
+            zone: 0,
             probe: {
                 type: ""
             }
@@ -52,6 +53,8 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.balances = this.IpLoadBalancerConstant.balances;
         this.stickinesses = this.IpLoadBalancerConstant.stickinesses;
         this.probeTypes = this.IpLoadBalancerConstant.probeTypes;
+
+        this.portLimit = this.IpLoadBalancerConstant.portLimit;
 
         this.zones.load();
 

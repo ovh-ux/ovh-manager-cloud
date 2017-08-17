@@ -95,10 +95,6 @@ class IpLoadBalancerHomeService {
             .catch(this.ServiceHelper.errorHandler("iplb_information_loading_error"));
     }
 
-    getStatus () {
-        //  TODO: Do something
-    }
-
     getInformations (serviceName) {
         return this.$q.all({
             configuration: this.IpLoadBalancing.Lexi().get({ serviceName }).$promise,

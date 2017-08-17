@@ -32,23 +32,17 @@ class IpLoadBalancerHomeCtrl {
 
         this.IPLBActions = [[{
             text: this.$translate.instant("iplb_status_apply"),
-            run: () => {
-                this.$state.go("network.iplb.detail.configuration");
-            }
+            run: () => this.$state.go("network.iplb.detail.configuration")
         }]];
 
         this.frontendsActions = [[{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => {
-                this.$state.go("network.iplb.detail.frontends");
-            }
+            run: () => this.$state.go("network.iplb.detail.frontends")
         }]];
 
         this.farmsActions = [[{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => {
-                this.$state.go("network.iplb.detail.server-farm");
-            }
+            run: () => this.$state.go("network.iplb.detail.server-farm")
         }]];
     }
 

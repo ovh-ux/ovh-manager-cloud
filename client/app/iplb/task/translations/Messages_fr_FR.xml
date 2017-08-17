@@ -15,4 +15,6 @@
     <translation id="iplb_task_preview_progress">Progression</translation>
     <translation id="iplb_task_preview_status">État</translation>
     <translation id="iplb_task_preview_id">Identifiant</translation>
+
+    <translation id="iplb_task_no_task">Aucune tâche en cours</translation>
 </translations>

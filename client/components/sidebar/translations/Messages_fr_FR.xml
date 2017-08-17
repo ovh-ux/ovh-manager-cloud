@@ -7,7 +7,7 @@
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licences</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
-   <translation id="cloud_sidebar_section_load_balancer">IP Loader Balancer</translation>
+   <translation id="cloud_sidebar_section_load_balancer">IP Load Balancer</translation>
    <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>

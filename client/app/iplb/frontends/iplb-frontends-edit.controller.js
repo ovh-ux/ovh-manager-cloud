@@ -1,7 +1,7 @@
 class IpLoadBalancerFrontendsEditCtrl {
     constructor ($q, $state, $stateParams, $translate, CloudMessage, ControllerHelper,
-                 IpLoadBalancerConstant, IpLoadBalancerFrontendsService,
-                 IpLoadBalancerZoneService) {
+                 IpLoadBalancerConstant, IpLoadBalancerFailoverIpService,
+                 IpLoadBalancerFrontendsService, IpLoadBalancerZoneService) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -9,6 +9,7 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
+        this.IpLoadBalancerFailoverIpService = IpLoadBalancerFailoverIpService;
         this.IpLoadBalancerFrontendsService = IpLoadBalancerFrontendsService;
         this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
 
@@ -27,6 +28,11 @@ class IpLoadBalancerFrontendsEditCtrl {
         });
         this.certificates = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerFrontendsService.getCertificatesChoices(
+                this.$stateParams.serviceName
+            )
+        });
+        this.failoverIps = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerFailoverIpService.getFailoverIpsSelectData(
                 this.$stateParams.serviceName
             )
         });
@@ -62,15 +68,15 @@ class IpLoadBalancerFrontendsEditCtrl {
 
     getFarmName (farm) {
         const farmName = farm.displayName || farm.farmId;
-        const farmType = this.$translate.instant(`iplb_frontend_add_protocol_${farm.type}`);
         if (farm.farmId > 0) {
+            const farmType = this.$translate.instant(`iplb_frontend_add_protocol_${farm.type}`);
             return `${farmName} (${farmType})`;
         }
         return farmName;
     }
 
     getCertificateName (certificate) {
-        if (certificate.id <= 0 || certificate.id === null) {
+        if (certificate.id <= 0) {
             return certificate.displayName;
         }
         return certificate.displayName ? `${certificate.displayName} (${certificate.id})` : certificate.id;
@@ -122,7 +128,8 @@ class IpLoadBalancerFrontendsEditCtrl {
 
     $onInit () {
         this.frontend = {
-            zone: "0",
+            zone: 0,
+            dedicatedIpfo: 0,
             defaultSslId: 0,
             defaultFarmId: 0,
             port: 80,
@@ -132,9 +139,11 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.protocol = "http";
         this.saving = false;
         this.protocols = this.IpLoadBalancerConstant.protocols;
+        this.portLimit = this.IpLoadBalancerConstant.portLimit;
 
         this.farms.load();
         this.zones.load();
+        this.failoverIps.load();
 
         if (this.$stateParams.frontendId) {
             this.edition = true;
@@ -217,9 +226,7 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.saving = true;
         this.CloudMessage.flushMessages();
         return this.IpLoadBalancerFrontendsService.createFrontend(this.type, this.$stateParams.serviceName, this.getCleanFrontend())
-            .then(() => {
-                this.$state.go("network.iplb.detail.frontends");
-            })
+            .then(() => this.$state.go("network.iplb.detail.frontends"))
             .finally(() => {
                 this.saving = false;
             });
@@ -232,9 +239,7 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.saving = true;
         this.CloudMessage.flushMessages();
         return this.IpLoadBalancerFrontendsService.updateFrontend(this.type, this.$stateParams.serviceName, this.frontend.frontendId, this.getCleanFrontend())
-            .then(() => {
-                this.$state.go("network.iplb.detail.frontends");
-            })
+            .then(() => this.$state.go("network.iplb.detail.frontends"))
             .finally(() => {
                 this.saving = false;
             });

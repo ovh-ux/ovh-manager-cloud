@@ -23,7 +23,7 @@
         <div class="oui-input-formfield">
           <input type="number"
             min="1"
-            max="65535"
+            max="{{ctrl.portLimit}}"
             id="port"
             name="port"
             class="oui-input"
@@ -88,7 +88,9 @@
                     <select class="oui-select__input"
                         name="dedicatedIpfo"
                         id="dedicatedIpfo"
-                        data-ng-model="ctrl.frontend.dedicatedIpfo"></select>
+                        data-ng-model="ctrl.frontend.dedicatedIpfo"
+                        data-ng-options="ip.id as ip.name for ip in ctrl.failoverIps.data"
+                        multiple></select>
                     <label for="dedicatedIpfo" class="oui-label" data-translate="iplb_frontend_add_dedicated_ip_failover"></label>
                 </div>
             </div>
