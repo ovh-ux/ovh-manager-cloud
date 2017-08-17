@@ -85,9 +85,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
                     serviceName: $scope.projectId
                 }).$promise
                 .then(function (regions) {
-                    $scope.regions = _.filter(regions, function (region) {
-                        return !/WAW/.test(region);
-                    });
+                    $scope.regions = regions;
                 })
                 .finally(function () {
                     $scope.loaders.regions = false;
