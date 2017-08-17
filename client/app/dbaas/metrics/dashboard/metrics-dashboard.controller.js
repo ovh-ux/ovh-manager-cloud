@@ -21,15 +21,18 @@
             this.usage = {};
             this.configuration = {};
             this.plan = {};
+            this.actions = {};
         }
 
         $onInit () {
             this.loading.service = true;
             this.loading.consumption = true;
+            this.loading.plan = true;
             this.initTiles();
         }
 
         initTiles () {
+            this.initActions();
             this.MetricService.getService(this.serviceName)
                 .then(service => {
                     this.usage.quota = {
@@ -55,6 +58,16 @@
                 .finally(() => {
                     this.loading.consumption = false;
                 });
+            this.MetricService.getServiceInfos(this.serviceName)
+                .then(info =>{
+                    this.plan.autorenew = moment(info.data.expiration).format("LL");
+                    this.plan.contactAdmin = info.data.contactAdmin;
+                    this.plan.contactBilling = info.data.contactBilling;
+                    this.plan.creation = moment(info.data.creation).format("LL");
+                })
+                .finally(() => {
+                    this.loading.plan = false;
+                });
 
         }
 
@@ -65,6 +78,11 @@
             if (this.computeUsage(this.usage.conso.ddp, this.usage.quota.ddp) > this.limit.warning) {
                 this.CloudMessage.warning(this.$translate.instant("metrics_quota_ddp_warning_message"));
             }
+        }
+
+        initActions () {
+            this.actions.autorenew = this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "METRICS" });
+            this.actions.contacts = this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName });
         }
 
         computeUsage (value, total) {
