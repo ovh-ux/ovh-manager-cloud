@@ -59,7 +59,7 @@
                     this.loading.consumption = false;
                 });
             this.MetricService.getServiceInfos(this.serviceName)
-                .then(info =>{
+                .then(info => {
                     this.plan.autorenew = moment(info.data.expiration).format("LL");
                     this.plan.contactAdmin = info.data.contactAdmin;
                     this.plan.contactBilling = info.data.contactBilling;
