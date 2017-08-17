@@ -7,17 +7,21 @@
      * Temporary implementation of dropdown-menu.
      */
     class CuiDropdownMenuController {
-        constructor ($scope, $rootScope, $window) {
+        constructor ($element, $scope, $rootScope, $window) {
+            this.$element = $element;
             this.$scope = $scope;
             this.$rootScope = $rootScope;
             this.$window = $window;
+        }
+
+        $postLink () {
+            this.$element.addClass("cui-dropdown-menu");
         }
 
         $onInit () {
             this.show = false;
             this.hideMenu = () => {
                 this.$rootScope.$broadcast("ouiDropdownMenu.hide");
-                this.$scope.$apply();
             };
 
             angular.element(this.$window.document).on("click", this.hideMenu);

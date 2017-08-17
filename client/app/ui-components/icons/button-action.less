@@ -41,4 +41,12 @@
     fill: @button-action-foreground-color_hover;
   }
 }
-  
+
+// Action button embedded in oui-table
+.cui-dropdown-menu-container:hover {
+  .cui-dropdown-menu {
+    .cui-button-action {
+      .cui-button-action_active();
+    }
+  }
+}

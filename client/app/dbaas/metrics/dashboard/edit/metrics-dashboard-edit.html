@@ -1,0 +1,45 @@
+<div class="oui-modal oui-modal_shadow">
+  <form name="MetricsDashboardEditForm">
+    <div class="oui-modal__header">
+      <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+        type="button"
+        aria-label="Exit" data-ng-click="$ctrl.cancel()"
+        ></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+      <div class="oui-modal__body-text">
+        <h2 class="oui-modal__title" data-translate="metrics_tiles_configuration_name"></h2>
+        <cui-loader data-ng-show="$ctrl.loading"></cui-loader>
+        <div data-ng-hide="$ctrl.loading">
+          <div data-ng-if="$ctrl.type == 'name'">
+            <hr>
+            <section>
+              <h3 data-translate="metrics_dashboard_modif_default_name"></h3>
+              <p data-ng-bind=":: $ctrl.serviceName"></p>
+            </section>
+            <hr>
+            <section>
+              <h3 data-translate="metrics_dashboard_modif_personal_name"></h3>
+              <input class="oui-input" type="text" data-ng-model="$ctrl.value">
+            </section>
+            <hr>
+          </div>
+          <div data-ng-if="$ctrl.type == 'retention'">
+            <h3 data-translate="metrics_dashboard_modif_retention"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="oui-modal__footer">
+      <button class="oui-button oui-button_secondary"
+        type="button"
+        data-translate="metrics_dashboard_modif_cancel"
+        data-ng-click="$ctrl.cancel()"></button>
+      <button class="oui-button oui-button_primary"
+        type="submit"
+        data-translate="metrics_dashboard_modif_confirm"
+        data-ng-click="$ctrl.confirm()"
+        data-ng-disabled="MetricsDashboardEditForm.$invalid || $ctrl.loading"></button>
+    </div>
+  </form>
+</div>

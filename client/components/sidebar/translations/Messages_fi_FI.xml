@@ -22,7 +22,7 @@
    <translation id="cloud_sidebar_section_metrics" qtlid="383525">Tilastot</translation>
    <translation id="cloud_sidebar_dbaasts_tokens" qtlid="300746">API-avaimet</translation>
    <translation id="cloud_sidebar_dbaasts_quota" qtlid="6874">Kiintiö</translation>
-   <translation id="cloud_sidebar_dbaasts_billing" qtlid="25639">Kulutus</translation>
+   <translation id="cloud_sidebar_dbaasts_billing" qtlid="25639">Käyttö</translation>
 
 <!-- ORDER ACTIONS MENU -->
    <translation id="cloud_sidebar_actions_menu_vps" qtlid="23083">VPS</translation>

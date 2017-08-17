@@ -151,10 +151,10 @@
    <translation id="payment_type_fidelityPoints" qtlid="139754">Kanta-asiakaspisteet</translation>
    <translation id="payment_type_free" qtlid="130495">Ilmainen</translation>
    <translation id="payment_type_ideal" qtlid="139767">iDEAL</translation>
-   <translation id="payment_type_mandat" qtlid="139780">Käteismandaatti</translation>
+   <translation id="payment_type_mandat" qtlid="139780">Käteismaksumääräys</translation>
    <translation id="payment_type_multibanco" qtlid="139793">Multibanco</translation>
    <translation id="payment_type_ovhAccount" qtlid="139806">OVH-tili</translation>
-   <translation id="payment_type_paymentMandate" qtlid="139819">Hallinnollinen mandaatti</translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819">Hallinnon maksumääräys</translation>
    <translation id="payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Hyvityslasku</translation>

@@ -1,0 +1,63 @@
+.metrics {
+  @spacing-top: 32px;
+  @spacing-side_l: 48px;
+  @labels-color: #676767;
+  @labels-button-color: #E5F6F8;
+
+  &__token {
+    padding: @spacing-top @spacing-side_l;
+
+    &-loader {
+      .oui-loader__container {
+        margin: 0 auto;
+      }
+    }
+    .oui-table {
+      font-size: 16px;
+
+      .oui-table__cell {
+        &_action {
+          width: 80px;
+          text-align: right;
+        }
+      }
+    }
+
+    .token-labels {
+      color: @labels-color;
+      background-color: @oui-color-concrete;
+      font-weight: 500;
+      padding: 2px 10px;
+      margin: 5px;
+      border-radius: 20px;
+      border: solid 1px rgba(155,155,155,0.14);
+
+      &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      &__button-container {
+        height: 10px;
+      }
+
+      &__button:hover {
+        background-color: @labels-button-color;
+      }
+    }
+
+  }
+}
+
+// need to handle change outside of .metrics less class
+.token-labels__button {
+  .button-container_active & {
+      background-color: @oui-color-pacific;
+      color: white;
+  }
+  .button-container_active &:hover {
+    background-color: @oui-color-pacific;
+    color: white;
+  }
+}

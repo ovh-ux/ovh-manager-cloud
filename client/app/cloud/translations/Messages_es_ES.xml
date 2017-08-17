@@ -36,11 +36,11 @@
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Varsovia</translation>
-   <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsovie ({{ micro }})</translation>
+   <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsovia ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizar</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa central (Francia)</translation>
-   <translation id="cloud_common_region_location_WAW" qtlid="410117">Europe Centrale (Pologne)</translation>
+   <translation id="cloud_common_region_location_WAW" qtlid="410117">Europa Central (Polonia)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Norteamérica (Canadá)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Europa occidental (Francia)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa occidental (Francia)</translation>

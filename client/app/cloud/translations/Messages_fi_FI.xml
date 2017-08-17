@@ -4,7 +4,7 @@
    <translation id="cloud_common_name" qtlid="3818">Nimi</translation>
    <translation id="cloud_common_type" qtlid="2642">Tyyppi</translation>
    <translation id="cloud_common_volume" qtlid="255246">Tila</translation>
-   <translation id="cloud_common_consumpt" qtlid="25639">Kulutus</translation>
+   <translation id="cloud_common_consumpt" qtlid="25639">Käyttö</translation>
    <translation id="cloud_common_state" qtlid="364446">Tila</translation>
    <translation id="cloud_common_state_available" qtlid="99920">Saatavilla</translation>
    <translation id="cloud_common_state_in-use" qtlid="252893">Käytössä</translation>

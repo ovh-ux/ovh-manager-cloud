@@ -1,0 +1,16 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+    <cui-modal-body title="'metrics_token_delete_title' | translate">
+        <cui-loader data-ng-show="$ctrl.loading"></cui-loader>
+        <p data-translate="metrics_token_delete_message"></p>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button 
+          data-text="'metrics_token_cancel' | translate"
+          data-ng-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button 
+          data-text="'metrics_token_delete' | translate"
+          data-ng-click="$ctrl.confirm()"
+          data-ng-disabled="$ctrl.loading"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_endpoint_howto" qtlid="403541">Rozpocznij pracę z usługą</translation>
+
+   <translation id="metrics_platform_title" qtlid="123607">Platformy</translation>
+   <translation id="metrics_platform_back" qtlid="208925">Powrót do strony głównej</translation>
+   <translation id="metrics_platform_proto" qtlid="19711">Protokół</translation>
+   <translation id="metrics_platform_address" qtlid="30430">Adres</translation>
+   <translation id="metrics_platform_doc" qtlid="42574">Dokumentacja</translation>
+   <translation id="metrics_guide" qtlid="415740">Przewodnik</translation>
+
+   <translation id="metrics_endpoint_tools" qtlid="330682">Narzędzia</translation>
+   <translation id="metrics_endpoint_intro_1" qtlid="403554">Poniżej znajduje się lista protokołów obsługiwanych przez platformę OVH Metrics.</translation>
+   <translation id="metrics_endpoint_intro_2" qtlid="403567">Każdy protokół jest przypisany do adresu zależnego od regionu, w którym znajduje się projekt.</translation>
+   <translation id="metrics_endpoint_intro_3" qtlid="403580">Adresy te pozwalają na korzystanie z każdego protokołu.</translation>
+</translations>
