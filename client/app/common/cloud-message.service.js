@@ -5,29 +5,28 @@ class CloudMessage {
         this.subscribers = {};
     }
 
-    success (message) {
-        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "success");
+    success (message, containerName) {
+        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "success", containerName);
     }
 
-    error (message) {
-        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "error");
+    error (message, containerName) {
+        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "error", containerName);
     }
 
-    warning (message) {
-        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "warning");
+    warning (message, containerName) {
+        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "warning", containerName);
     }
 
-    info (message) {
-        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "info");
+    info (message, containerName) {
+        this.logMessage(_.isPlainObject(message) ? message : { text: message }, "info", containerName);
     }
 
-    logMessage (messageHash, type) {
+    logMessage (messageHash, type, containerName) {
         if (!messageHash.text) {
             return;
         }
 
-        let stateName = `${this.$state.current.name}.`;
-        const messageHandler = this.getMessageHandler(stateName);
+        const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
             messageHandler.messages.push(_.extend({ type }, messageHash));
@@ -37,22 +36,22 @@ class CloudMessage {
         }
     }
 
-    getMessageHandler (stateName) {
+    getMessageHandler (containerName) {
+        containerName = `${containerName || this.$state.current.name}.`;
         let messageHandler = null;
         do {
-            stateName = stateName.substring(0, _.lastIndexOf(stateName, "."));
-            messageHandler = this.subscribers[stateName];
-        } while (!messageHandler && _.includes(stateName, "."));
+            containerName = containerName.substring(0, _.lastIndexOf(containerName, "."));
+            messageHandler = this.subscribers[containerName];
+        } while (!messageHandler && _.includes(containerName, "."));
         return messageHandler;
     }
 
-    getMessages (stateName) {
-        return this.subscribers[stateName].messages;
+    getMessages (containerName) {
+        return this.subscribers[containerName].messages;
     }
 
-    flushMessages () {
-        let stateName = `${this.$state.current.name}.`;
-        const messageHandler = this.getMessageHandler(stateName);
+    flushMessages (containerName) {
+        const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
             messageHandler.messages = [];
@@ -60,22 +59,22 @@ class CloudMessage {
         }
     }
 
-    unSubscribe (stateName) {
-        const subscriber = this.subscribers[stateName];
+    unSubscribe (containerName) {
+        const subscriber = this.subscribers[containerName];
         if (subscriber) {
-            this.subscribers[stateName].messages = [];
-            this.subscribers[stateName].onMessage();
+            this.subscribers[containerName].messages = [];
+            this.subscribers[containerName].onMessage();
         }
-        this.subscribers = _.omit(this.subscribers, stateName);
+        this.subscribers = _.omit(this.subscribers, containerName);
     }
 
-    subscribe (stateName, params) {
-        this.subscribers[stateName] = _.extend({
+    subscribe (containerName, params) {
+        this.subscribers[containerName] = _.extend({
             messages: [],
             onMessage: _.noop()
         }, params);
         return {
-            getMessages: () => this.getMessages(stateName)
+            getMessages: () => this.getMessages(containerName)
         };
     }
 }

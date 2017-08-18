@@ -8,6 +8,9 @@
         }
 
         $onInit () {
+            if (!this.groupedTypes) {
+                this.groupedTypes = ["error"];
+            }
             this.$scope.$watch(() => this.messages.length, () => {
                 this.refreshMessageOrder();
                 this.groupedMessages = this.getGroupedMessages();
@@ -30,6 +33,11 @@
         }
 
         getGroupedMessages () {
+            const groupedMessages = _.groupBy(this.messages, "type");
+            return this.groupMessagesByType(groupedMessages, this.groupedTypes);
+        }
+
+        groupMessagesByType (groupedMessages, types) {
             const messagePriorities = {
                 error: 1,
                 warning: 2,
@@ -37,11 +45,10 @@
                 success: 4
             };
 
-            const groupedMessages = _.groupBy(this.messages, "type");
             return _.map(_.keys(groupedMessages), key => ({
                 key,
                 values: this.extractUniqueMessage(groupedMessages[key]),
-                isGroupable: key === "error",
+                isGroupable: _.contains(types, key),
                 priority: messagePriorities[key]
             }));
         }
@@ -69,7 +76,8 @@
             templateUrl: "app/ui-components/message/message-container.html",
             controller: CuiMessageContainerCtrl,
             bindings: {
-                messages: "<"
+                messages: "<",
+                groupedTypes: "<"
             }
         });
 
