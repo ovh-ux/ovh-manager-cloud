@@ -45,6 +45,8 @@ class IpLoadBalancerServerEditCtrl {
         this.server = {
             status: "active"
         };
+        this.portLimit = this.IpLoadBalancerConstant.portLimit;
+        this.lbWeightMax = this.IpLoadBalancerConstant.lbWeightMax;
 
         this.farmTypeLoader.load();
 

@@ -19,6 +19,7 @@
    <translation id="iplb_server_edit_name">Nom (facultatif)</translation>
    <translation id="iplb_server_edit_address">Adresse IPv4</translation>
    <translation id="iplb_server_edit_port">Port</translation>
+   <translation id="iplb_server_edit_port_tip">1 à {{portMax}}</translation>
    <translation id="iplb_server_edit_advanced_options">Paramètres avancés</translation>
    <translation id="iplb_server_edit_advanced_options_info">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
    <translation id="iplb_server_edit_advanced_options_show">Afficher</translation>
@@ -26,9 +27,14 @@
    <translation id="iplb_server_edit_probe">Utiliser la sonde de disponibilité de la ferme</translation>
    <translation id="iplb_server_edit_ssl">Chiffrer les requêtes avec SSL</translation>
    <translation id="iplb_server_edit_cookie">Cookie</translation>
+   <translation id="iplb_server_edit_cookie_tip">Valeur du cookie utilisée pour le cookie stickiness</translation>
    <translation id="iplb_server_edit_chain">Chaine de certification</translation>
+   <translation id="iplb_server_edit_chain_tip">La valeur du certificat SSL intermédiaire. Allow server certificate verification (Avoid man-in-the-middle attacks)</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion">Version du protocole de PROXY</translation>
+   <translation id="iplb_server_edit_proxyProtocolVersion_tip">La version de proxyProtocol à utiliser, voir {{link}}</translation>
+   <translation id="iplb_server_edit_proxyProtocolVersion_tip_link">http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt</translation>
    <translation id="iplb_server_edit_weight">Poids de balancement</translation>
+   <translation id="iplb_server_edit_weight_tip">1 à {{lbWeightMax}}</translation>
 
    <translation id="iplb_server_edit_cancel">Annuler</translation>
    <translation id="iplb_server_add_confirm">Ajouter</translation>

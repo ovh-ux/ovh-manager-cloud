@@ -44,6 +44,7 @@
    <translation id="iplb_farm_edit_name">Nom (facultatif)</translation>
    <translation id="iplb_farm_edit_protocol">Protocole (non modifiable après la création)</translation>
    <translation id="iplb_farm_edit_port">Port</translation>
+   <translation id="iplb_farm_edit_port_tip">1 à {{portMax}}</translation>
    <translation id="iplb_farm_edit_datacenter">Datacentre</translation>
    <translation id="iplb_farm_edit_advanced_options">Paramètres avancés</translation>
    <translation id="iplb_farm_edit_advanced_options_info">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>

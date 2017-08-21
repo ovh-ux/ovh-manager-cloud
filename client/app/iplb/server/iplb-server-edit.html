@@ -3,25 +3,40 @@
     <h1 data-ng-show="ctrl.edition" data-translate="iplb_server_update_title"
         data-translate-values="{ serverId: ctrl.server.serverId }"></h1>
     <form novalidate name="ctrl.form">
-        <div class="oui-input-formfield">
-          <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.server.displayName" />
-          <label for="displayName" class="oui-label" data-translate="iplb_server_edit_name"></label>
+        <div class="oui-field">
+            <label for="displayName" class="oui-label" data-translate="iplb_server_edit_name"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.server.displayName" />
+                </div>
+            </div>
         </div>
 
-        <div class="oui-input-formfield">
-          <input type="text" id="address" name="address" class="oui-input" data-ng-model="ctrl.server.address" />
-          <label for="address" class="oui-label" data-translate="iplb_server_edit_address"></label>
+        <div class="oui-field">
+            <label for="address" class="oui-label" data-translate="iplb_server_edit_address"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="address" name="address" class="oui-input" data-ng-model="ctrl.server.address" />
+                </div>
+            </div>
         </div>
 
-        <div class="oui-input-formfield">
-          <input type="number"
-            min="1"
-            max="65535"
-            id="port"
-            name="port"
-            class="oui-input"
-            data-ng-model="ctrl.server.port"/>
-          <label for="port" class="oui-label" data-translate="iplb_server_edit_port"></label>
+        <div class="oui-field">
+            <label for="port" class="oui-label" data-translate="iplb_server_edit_port"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_1">
+                    <input type="number"
+                        min="1"
+                        max="{{ctrl.portLimit}}"
+                        id="port"
+                        name="port"
+                        class="oui-input"
+                        data-ng-model="ctrl.server.port"/>
+                </div>
+                <div class="oui-field-helper"
+                    data-translate="iplb_server_edit_port_tip"
+                    data-translate-values="{ portMax: ctrl.portLimit }"></div>
+            </div>
         </div>
 
         <cui-advanced-options data-ng-if="ctrl.farmType !== 'udp'"
@@ -29,67 +44,105 @@
             data-text="'iplb_server_edit_advanced_options_info' | translate"
             data-button-text="'iplb_server_edit_advanced_options_show' | translate"
             data-expanded="ctrl.edition">
-            <div class="oui-checkbox">
-              <input class="oui-checkbox__input" id="backup" name="backup" type="checkbox"
-                data-ng-model="ctrl.server.backup">
-              <label class="oui-checkbox__label-container" for="backup">
-                <span class="oui-checkbox__label" data-translate="iplb_server_edit_backup"></span>
-                <span class="oui-checkbox__icon">
-                  <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                </span>
-              </label>
+
+            <div class="oui-field">
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-checkbox">
+                            <input class="oui-checkbox__input" id="backup" name="backup" type="checkbox"
+                            data-ng-model="ctrl.server.backup">
+                            <label class="oui-checkbox__label-container" for="backup">
+                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_backup"></span>
+                                <span class="oui-checkbox__icon">
+                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-checkbox">
-              <input class="oui-checkbox__input" id="probe" name="probe" type="checkbox"
-                data-ng-model="ctrl.server.probe">
-              <label class="oui-checkbox__label-container" for="probe">
-                <span class="oui-checkbox__label" data-translate="iplb_server_edit_probe"></span>
-                <span class="oui-checkbox__icon">
-                  <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                </span>
-              </label>
+            <div class="oui-field">
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-checkbox">
+                            <input class="oui-checkbox__input" id="probe" name="probe" type="checkbox"
+                                data-ng-model="ctrl.server.probe">
+                            <label class="oui-checkbox__label-container" for="probe">
+                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_probe"></span>
+                                <span class="oui-checkbox__icon">
+                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-checkbox">
-              <input class="oui-checkbox__input" id="ssl" name="ssl" type="checkbox"
-                data-ng-model="ctrl.server.ssl">
-              <label class="oui-checkbox__label-container" for="ssl">
-                <span class="oui-checkbox__label" data-translate="iplb_server_edit_ssl"></span>
-                <span class="oui-checkbox__icon">
-                  <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                </span>
-              </label>
+            <div class="oui-field">
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-checkbox">
+                            <input class="oui-checkbox__input" id="ssl" name="ssl" type="checkbox"
+                                data-ng-model="ctrl.server.ssl">
+                            <label class="oui-checkbox__label-container" for="ssl">
+                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_ssl"></span>
+                                <span class="oui-checkbox__icon">
+                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-input-formfield">
-              <input type="text" id="cookie" name="cookie" class="oui-input" data-ng-model="ctrl.server.cookie" />
-              <label for="cookie" class="oui-label" data-translate="iplb_server_edit_cookie"></label>
+            <div class="oui-field">
+                <label for="cookie" class="oui-label" data-translate="iplb_server_edit_cookie"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="cookie" name="cookie" class="oui-input" data-ng-model="ctrl.server.cookie" />
+                    </div>
+                    <div class="oui-field-helper"
+                        data-translate="iplb_server_edit_cookie_tip"></div>
+                </div>
             </div>
 
-            <div class="oui-input-formfield">
-              <textarea class="oui-textarea"
+            <div class="oui-field">
+                <label for="chain" class="oui-label" data-translate="iplb_server_edit_chain"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <textarea class="oui-textarea"
                 data-ng-model="ctrl.server.chain"
                 id="chain"
                 name="chain"></textarea>
-              <label for="chain" class="oui-label" data-translate="iplb_server_edit_chain"></label>
+                    </div>
+                    <div class="oui-field-helper"
+                        data-translate="iplb_server_edit_chain_tip"></div>
+                </div>
             </div>
 
-            <div class="oui-input-formfield">
-                <input type="number"
-                    min="1"
-                    max="256"
-                    id="weight"
-                    name="weight"
-                    class="oui-input"
-                    data-ng-model="ctrl.server.weight" />
+            <div class="oui-field">
                 <label for="weight" class="oui-label" data-translate="iplb_server_edit_weight"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_1">
+                        <input type="number"
+                            min="1"
+                            max="{{ctrl.lbWeightMax}}"
+                            id="weight"
+                            name="weight"
+                            class="oui-input"
+                            data-ng-model="ctrl.server.weight" />
+                    </div>
+                    <div class="oui-field-helper"
+                        data-translate="iplb_server_edit_weight_tip"
+                        data-translate-values="{ lbWeightMax: ctrl.lbWeightMax }"></div>
+                </div>
             </div>
         </cui-advanced-options>
 
