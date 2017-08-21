@@ -39,6 +39,10 @@
       flex-grow: 1;
       margin: @margin;
 
+      .cui-tile {
+          height: 100%;
+      }
+
       &_1 {
         flex-grow: initial;
         .column-basis(3);
@@ -57,9 +61,5 @@
 
     @media (max-width: 1280px) {
         padding: @spacing-top @spacing-side_s;
-    }
-
-    .cui-tile {
-        height: 100%;
     }
 }
