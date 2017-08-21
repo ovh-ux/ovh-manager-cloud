@@ -89,6 +89,7 @@
    <translation id="iplb_farm_preview_balance">Mode de répartition</translation>
    <translation id="iplb_farm_preview_stickiness">Suivi de session</translation>
    <translation id="iplb_farm_preview_probe">Sonde</translation>
+   <translation id="iplb_farm_preview_probe_none">Aucune</translation>
    <translation id="iplb_farm_preview_id">Identifiant</translation>
    <translation id="iplb_farm_preview_probe_url">URL</translation>
    <translation id="iplb_farm_preview_probe_port">Port</translation>
