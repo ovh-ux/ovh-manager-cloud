@@ -97,11 +97,11 @@ class IpLoadBalancerHomeCtrl {
             changeOffer: {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.IpLoadBalancerActionService.offerChange(this.serviceName),
-                isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
+                isAvailable: () => false
             },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
-                href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "IP_LOADBALANCING" }),
+                href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "IP_LOADBALANCER" }),
                 isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
             },
             manageContact: {
