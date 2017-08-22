@@ -89,6 +89,13 @@ angular.module("managerApp")
             WE: "https://www.ovh.com/us/solutions/ip-load-balancing/",
             WS: "https://www.ovh.com/us/es/soluciones/ip-load-balancing/"
         },
+        vrack: {
+            AU: "https://ca.ovh.com/au/order/express/#/new/express/resume?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+            CA: "https://ca.ovh.com/en/order/express/#/new/express/resume?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+            QC: "https://ca.ovh.com/fr/order/express/#/new/express/resume?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+            WE: "https://us.ovh.com/us/order/express/#/new/express/resume?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))",
+            WS: "https://us.ovh.com/es/order/express/#/new/express/resume?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
+        },
         pcs: {
             AU: "https://www.ovh.com.au/public-cloud/storage/object-storage/",
             CA: "https://www.ovh.com/ca/en/public-cloud/storage/object-storage/",
