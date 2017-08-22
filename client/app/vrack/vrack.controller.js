@@ -559,6 +559,12 @@ angular.module("managerApp").controller("VrackCtrl",
             formattedService.trueServiceType = "dedicatedCloudDatacenter";
             break;
         case "legacyVrack":
+            formattedService = {
+                id: service,
+                niceName: service,
+                trueServiceType: "legacyVrack"
+            };
+            break;
         case "ip":
             formattedService = {
                 id: service,

@@ -1,7 +1,8 @@
 class ControllerHelper {
-    constructor (ControllerModalHelper, ControllerRequestHelper) {
+    constructor (ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
         this.request = ControllerRequestHelper;
         this.modal = ControllerModalHelper;
+        this.navigation = ControllerNavigationHelper;
     }
 }
 

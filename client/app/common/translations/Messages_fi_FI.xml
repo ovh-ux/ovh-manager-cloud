@@ -151,10 +151,10 @@
    <translation id="payment_type_fidelityPoints" qtlid="139754">Kanta-asiakaspisteet</translation>
    <translation id="payment_type_free" qtlid="130495">Ilmainen</translation>
    <translation id="payment_type_ideal" qtlid="139767">iDEAL</translation>
-   <translation id="payment_type_mandat" qtlid="139780">Käteismandaatti</translation>
+   <translation id="payment_type_mandat" qtlid="139780">Käteismaksumääräys</translation>
    <translation id="payment_type_multibanco" qtlid="139793">Multibanco</translation>
    <translation id="payment_type_ovhAccount" qtlid="139806">OVH-tili</translation>
-   <translation id="payment_type_paymentMandate" qtlid="139819">Hallinnollinen mandaatti</translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819">Hallinnon maksumääräys</translation>
    <translation id="payment_type_paypal" qtlid="98228">PayPal</translation>
    <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Hyvityslasku</translation>
@@ -195,7 +195,7 @@
    <translation id="december" qtlid="37989">joulukuu</translation>
    <translation id="januar_short" qtlid="158500">Tammi</translation>
    <translation id="februar_short" qtlid="158513">Helmi</translation>
-   <translation id="march_short" qtlid="38985">Maaliskuu</translation>
+   <translation id="march_short" qtlid="38985">maaliskuu</translation>
    <translation id="april_short" qtlid="38181">huhtikuu</translation>
    <translation id="may_short" qtlid="38421">toukokuu</translation>
    <translation id="june_short" qtlid="38013">kesäkuu</translation>

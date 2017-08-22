@@ -19,7 +19,7 @@ class DBaasTsSidebar {
                 title: project.displayName || project.serviceName,
                 icon: "graph",
                 allowSubItems: false,
-                state: "dbaas.metrics",
+                state: "dbaas.metrics.detail.dashboard",
                 stateParams: {
                     serviceName: project.serviceName
                 }
@@ -34,7 +34,6 @@ class DBaasTsSidebar {
         menuItem.addSearchKey("Monitoring");
         menuItem.addSearchKey("Time Series");
         menuItem.addSearchKey("TimeSeries");
-        menuItem.addSearchKey("Metrics");
         menuItem.addSearchKey(this.$translate.instant("cloud_sidebar_actions_menu_dbaas_ts"));
     }
 

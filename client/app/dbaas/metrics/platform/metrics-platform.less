@@ -1,0 +1,35 @@
+.metrics {
+  @spacing-top: 32px;
+  @spacing-side_l: 48px;
+
+  &__platform {
+    padding: @spacing-top @spacing-side_l;
+
+    &-loader {
+      .oui-loader__container {
+        margin: 0 auto;
+      }
+    }
+    .oui-table {
+      font-size: 16px;
+
+      .oui-table__cell {
+        &_action {
+          width: 80px;
+          text-align: right;
+        }
+
+      }
+    }
+  }
+
+  &-guidelink {
+    &__icon {
+      visibility: hidden;
+    }
+  }
+  &-guidelink:hover &-guidelink__icon {
+    visibility: visible;
+  }
+
+}

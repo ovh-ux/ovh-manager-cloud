@@ -1,0 +1,104 @@
+<div class="metrics__token" ui-view="metricsSubContent">
+    <cui-back-link data-state="dbaas.metrics.detail.dashboard"
+                   data-state-params="{ serviceName: MetricsTokenCtrl.serviceName }"
+                   data-text=" 'metrics_token_back' | translate"></cui-back-link>
+    <div class="metrics__row">
+        <h3 class="oui-header_3" data-translate="metrics_token_title"></h3>
+    </div>
+    <div class="metrics__row">
+        <a class="oui-button oui-button_secondary"
+            data-ng-disabled="MetricsTokenCtrl.actions.loading"
+            data-translate="metrics_token_new"
+            ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsTokenCtrl.serviceName })"></a>
+        <div class="pull-right">
+            <input type="search"
+                class="oui-input"
+                data-ng-model="MetricsTokenCtrl.searchText"
+                data-ng-model-options="{ debounce: 200 }"
+                data-translate-attr="{ placeholder: 'metrics_token_search' }"/>
+        </div>
+    </div>
+    <div class="metrics__row">
+        <!-- TODO use list-view -->
+        <table class="oui-table">
+            <thead class="oui-table__headers">
+                <tr>
+                    <th class="oui-table__header" data-translate="metrics_table_name"></th>
+                    <th class="oui-table__header" data-translate="metrics_token_labels"></th>
+                    <th class="oui-table__header" data-translate="metrics_table_token"></th>
+                    <th class="oui-table__header" data-translate="metrics_token_permission"></th>
+                    <th class="oui-table__header oui-table__cell_action" data-translate="metrics_table_action"></th>
+                </tr>
+            </thead>
+            <tbody class="oui-table__body metrics__token-loader" data-ng-show="MetricsTokenCtrl.loading">
+                <tr class="oui-table__row">
+                    <td colspan="5" class="oui-table__cell">
+                        <cui-loader></cui-loader>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody class="oui-table__body" data-ng-hide="MetricsTokenCtrl.loading">
+                <tr class="oui-table__row oui-dropdown-menu-container"
+                    data-ng-repeat="token in MetricsTokenCtrl.tokens | filter:MetricsTokenCtrl.searchText track by $index">
+                    <td class="oui-table__cell" data-ng-bind="token.description || token.id"></td>
+                    <td class="oui-table__cell">
+                        <span class="token-labels" data-ng-repeat="label in token.labels | orderBy : 'key'" data-ng-if="$index < 2">
+                            <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
+                        </span>
+                        <cui-dropdown-menu data-ng-if="token.labels.length > 2">
+                            <cui-dropdown-menu-button>
+                                <div class="token-labels__button-container">
+                                    <span class="token-labels token-labels__button" data-ng-bind="MetricsTokenCtrl.displayRemainingLabels(token.labels.length - 2)"></span>
+                                </div>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body class="token-labels-container">
+                                <span class="token-labels" data-ng-repeat="label in token.labels | orderBy : 'key'" data-ng-if="$index >= 2">
+                                    <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
+                                </span>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
+                        
+                    </td>
+                    <td class="oui-table__cell oui-table__cell_input">
+                        <cui-clipboard data-text="token.access"></cui-clipboard>
+                    </td>
+                    <td class="oui-table__cell" data-ng-bind="token.permission"></td>
+                    <td class="oui-table__cell oui-table__cell_action">
+                        <cui-dropdown-menu>
+                            <cui-dropdown-menu-button>
+                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body>
+                                <div class="oui-action-menu">
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="metrics_token_show_preview"
+                                            data-ng-click="MetricsTokenCtrl.showPreview(token.id)"></button>
+                                    </div>
+                                </div>
+                                <div class="oui-action-menu">
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="metrics_token_edit"
+                                            data-ng-click="MetricsTokenCtrl.edit(token.id, token.description)"></button>
+                                    </div>
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="metrics_token_delete"
+                                            data-ng-click="MetricsTokenCtrl.delete(token.id)"></button>
+                                    </div>
+                                </div>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

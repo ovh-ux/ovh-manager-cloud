@@ -1,0 +1,32 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.close()"></cui-modal-header>
+    <cui-modal-body title="'metrics_token_preview_title' | translate">
+        <dl class="preview-list preview-list_no-margin">
+            <dt class="preview-list__term" data-translate="metrics_table_create_date"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.displayDate($ctrl.token.createdAt)"></dd>
+            <dt class="preview-list__term" data-translate="metrics_table_token"></dt>
+            <dd class="preview-list__definition">
+                <textarea rows="5" data-ng-bind="$ctrl.token.access"></textarea>
+            </dd>
+            <dt class="preview-list__term" data-translate="metrics_token_permission"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.token.permission"></dd>
+            <dt class="preview-list__term" data-translate="metrics_token_labels"></dt>
+            <dd class="preview-list__definition">
+                <p data-ng-repeat="label in $ctrl.token.labels">
+                    <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
+                </p>
+            </dd>
+            <dt class="preview-list__term" data-translate="metrics_table_state"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.getTokenState($ctrl.token)"></dd>
+            <dt class="preview-list__term" data-translate="metrics_token_id"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.token.id"></dd>
+            <dt class="preview-list__term" data-translate="metrics_table_expiry_date"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.displayDate($ctrl.token.expiryAt)"></dd>
+        </dl>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-button data-type="secondary"
+          data-text="'metrics_token_close' | translate"
+          data-ng-click="$ctrl.close()"></cui-button>
+    </cui-modal-footer>
+</cui-modal>

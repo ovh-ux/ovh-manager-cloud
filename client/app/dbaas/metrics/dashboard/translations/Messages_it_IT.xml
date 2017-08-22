@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_tiles_shortcut_title" qtlid="403658">Scelta rapida</translation>
+   <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Aggiungi un token</translation>
+   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Upgrade dell'offerta</translation>
+   <translation id="metrics_tiles_tools_title" qtlid="330682">Strumenti</translation>
+
+   <translation id="metrics_tiles_usage_title" qtlid="30382">Utilizzo</translation>
+
+   <translation id="metrics_tiles_configuration_title" qtlid="4406">Configurazione</translation>
+   <translation id="metrics_tiles_configuration_name" qtlid="3818">Nome</translation>
+   <translation id="metrics_tiles_configuration_retention" qtlid="415532">Retention</translation>
+   <translation id="metrics_tiles_configuration_retention_month" qtlid="40222">mese</translation>
+   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Datacenter</translation>
+
+   <translation id="metrics_tiles_subscription_title" qtlid="28891">Abbonamento</translation>
+   <translation id="metrics_tiles_subscription_offer" qtlid="38217">Offerta</translation>
+   <translation id="metrics_tiles_subscription_priceplan_free_trial" qtlid="415545">Prova gratuita</translation>
+   <translation id="metrics_tiles_subscription_metrics-free-trial" qtlid="415545">Prova gratuita</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xxs" qtlid="415558">Abbonamento Cloud XXS</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xs" qtlid="415571">Abbonamento Cloud XS</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-s" qtlid="415584">Abbonamento Cloud S</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-m" qtlid="415597">Abbonamento Cloud M</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-l" qtlid="415610">Abbonamento Cloud L</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xl" qtlid="415623">Abbonamento Cloud XL</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-64g" qtlid="415636">Abbonamento Live 64 GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-128g" qtlid="415649">Abbonamento Live 128 GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-256g" qtlid="415662">Abbonamento Live 256 GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-512g" qtlid="415675">Abbonamento Live 512 GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-1t" qtlid="415688">Abbonamento Live 1 TB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-2t" qtlid="415701">Abbonamento Live 2 TB</translation>
+
+   <translation id="metrics_tiles_modify" qtlid="37875">Modifica</translation>
+   <translation id="metrics_dashboard_modif_cancel" qtlid="37863">Annulla</translation>
+   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modifica</translation>
+   <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nome predefinito</translation>
+   <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nome personalizzato</translation>
+   <translation id="metrics_dashboard_modif_retention" qtlid="8218">Durata</translation>
+</translations>

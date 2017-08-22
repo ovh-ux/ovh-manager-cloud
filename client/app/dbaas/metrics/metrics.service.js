@@ -1,85 +1,121 @@
-angular.module("managerApp")
-    .service("metricsService", class {
+class MetricService {
 
-        constructor (Metrics, $q) {
-            this.mainResource = Metrics;
-            this.q = $q;
-        }
+    constructor ($q, $translate, CloudMessage, Metrics) {
+        this.$q = $q;
+        this.$translate = $translate;
+        this.CloudMessage = CloudMessage;
+        this.metrics = Metrics.Service();
+    }
 
-        setService (serviceName) {
-            this.serviceName = serviceName;
-        }
+    getService (serviceName) {
+        return this.metrics.Lexi()
+            .get({
+                serviceName
+            }).$promise
+            .then(response => this.acceptResponse(response))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_service")));
+    }
 
-        getServiceName () {
-            return this.serviceName;
-        }
+    getServiceInfos (serviceName) {
+        return this.metrics.ServiceInfos().Lexi()
+            .get({
+                serviceName
+            }).$promise
+            .then(response => this.acceptResponse(response))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_service")));
+    }
 
-        getService () {
-            return this.mainResource.Service().Lexi()
+    setServiceDescription (serviceName, description) {
+        return this.metrics.Lexi()
+            .edit({
+                serviceName
+            }, {
+                description
+            }).$promise
+            .then(response => this.acceptResponse(response))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_setting_updated")));
+
+    }
+
+    getConsumption (serviceName) {
+        return this.metrics.Consumption().Lexi()
+            .get({
+                serviceName
+            }).$promise
+            .then(response => this.acceptResponse(response))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_conso")));
+    }
+
+    getTokens (serviceName) {
+        this.metrics.Token().Lexi().resetAllCache();
+        return this.metrics.Token().Lexi()
+            .query({
+                serviceName
+            })
+            .$promise
+            .then(tokenList => this.$q.all(tokenList.map(tokenID => this.metrics.Token().Lexi()
                 .get({
-                    serviceName: this.serviceName
-                }).$promise;
-        }
-
-        setServiceDescription (description) {
-            return this.mainResource.Service().Lexi()
-                .edit({
-                    serviceName: this.serviceName
-                }, {
-                    description
-                }).$promise;
-        }
-
-        getConsumption () {
-            return this.mainResource.Service().Consumption().Lexi()
-                .get({
-                    serviceName: this.serviceName
-                }).$promise;
-        }
-
-        getTokens () {
-            return this.mainResource.Service().Token().Lexi()
-                .query({
-                    serviceName: this.serviceName
-                })
-                .$promise
-                .then((tokenList) => {
-
-                    return this.q.all(tokenList.map((tokenID) => {
-                        return this.mainResource.Service().Token().Lexi()
-                            .get({
-                                serviceName: this.serviceName,
-                                tokenID
-                            });
-                    }));
-                });
-        }
-
-        addToken (token) {
-            this.mainResource.Service().Token().Lexi().resetAllCache();
-            return this.mainResource.Service().Token().Lexi()
-                .save(token)
-                .$promise;
-        }
-
-        updateToken (tokenID, description) {
-            this.mainResource.Service().Token().Lexi().resetAllCache();
-            return this.mainResource.Service().Token().Lexi()
-                .edit({
-                    serviceName: this.serviceName,
+                    serviceName,
                     tokenID
-                }, {
-                    description
-                }).$promise;
-        }
+                }).$promise)));
+    }
 
-        delToken (tokenID) {
-            this.mainResource.Service().Token().Lexi().resetAllCache();
-            return this.mainResource.Service().Token().Lexi()
-                .delete({
-                    serviceName: this.serviceName,
-                    tokenID
-                })
-                .$promise;
-        }
-    });
+    getToken (serviceName, tokenID) {
+        return this.metrics.Token().Lexi()
+            .get({
+                serviceName,
+                tokenID
+            }).$promise;
+    }
+
+    addToken (token) {
+        this.metrics.Token().Lexi().resetAllCache();
+        return this.metrics.Token().Lexi()
+            .save(token)
+            .$promise
+            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_created")))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
+    }
+
+    updateToken (serviceName, tokenID, description) {
+        this.metrics.Token().Lexi().resetAllCache();
+        return this.metrics.Token().Lexi()
+            .edit({
+                serviceName,
+                tokenID,
+                description
+            }).$promise
+            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_updated")))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
+    }
+
+    deleteToken (serviceName, tokenID) {
+        this.metrics.Token().Lexi().resetAllCache();
+        return this.metrics.Token().Lexi()
+            .delete({
+                serviceName,
+                tokenID
+            })
+            .$promise
+            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_revoked")))
+            .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_delete_token")));
+    }
+
+    acceptResponse (data, message) {
+        return this.$q.resolve({
+            status: "OK",
+            data,
+            message: this.CloudMessage.success(message)
+        });
+    }
+
+    rejectResponse (data, message) {
+        return this.$q.reject({
+            status: "ERROR",
+            data,
+            message: this.CloudMessage.error(message)
+        });
+    }
+}
+
+angular.module("managerApp").service("MetricService", MetricService);

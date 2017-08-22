@@ -5,5 +5,7 @@
 }
 
 .oui-action-menu-item {
-  #oui > .oui-action-menu-item-base();
+  @oui-button-selector: oui-button;
+
+  #oui > .oui-action-menu-item-base(@oui-button-selector);
 }

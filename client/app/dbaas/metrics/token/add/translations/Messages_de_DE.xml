@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_token_add_name" qtlid="415818">Name (optional)</translation>
+   <translation id="metrics_token_add_permission" qtlid="301344">Erlaubnis</translation>
+   <translation id="metrics_token_add_labels" qtlid="415831">Label (optional)</translation>
+   <translation id="metrics_token_add_permission_read" qtlid="6958">Lesen</translation>
+   <translation id="metrics_token_add_permission_write" qtlid="301565">Schreiben</translation>
+
+   <translation id="metrics_token_add_labels" qtlid="403437">Label hinzufügen</translation>
+   <translation id="metrics_token_add_labels_key" qtlid="104326">Schlüssel</translation>
+   <translation id="metrics_token_add_labels_value" qtlid="47548">Wert</translation>
+   <translation id="metrics_token_add_token" qtlid="415519">Token hinzufügen</translation>
+   <translation id="metrics_token_add_confirmation" qtlid="37923">Hinzufügen</translation>
+</translations>
