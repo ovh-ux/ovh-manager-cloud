@@ -1,7 +1,15 @@
 class VrackSidebar {
-    constructor ($translate, SidebarMenu) {
+    constructor ($translate, SidebarMenu, URLS, User) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
+        this.URLS = URLS;
+        this.User = User;
+
+        this.locale = null;
+        this.User.Lexi().get().$promise
+            .then(user => {
+                this.locale = user.ovhSubsidiary;
+            });
     }
 
     loadIntoSection (section, services) {
@@ -24,11 +32,18 @@ class VrackSidebar {
     }
 
     addOrder () {
+        const link = _.get(this.URLS.website_order, `vrack.${this.locale}`);
+        if (!link) {
+            return null;
+        }
+
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_vrack"),
             icon: "vRack",
-            state: "vrack-add"
-        }
+            href: link,
+            target: "_blank",
+            external: true
+        };
     }
 }
 
