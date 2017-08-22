@@ -49,7 +49,7 @@
                 <div data-ng-hide="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption">
                     <metrics-chart-pie 
                                        legend="'metrics_ddp' | translate "
-                                       text="MetricsDashboardCtrl.usage.conso.ddp | formatSi"
+                                       text="(MetricsDashboardCtrl.usage.conso.ddp | formatSi) || 0"
                                        text-small="MetricsDashboardCtrl.displayUsage(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)"
                                        value="MetricsDashboardCtrl.computeUsage(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)"
                                        color="MetricsDashboardCtrl.computeColor(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)">
