@@ -1,138 +1,180 @@
 <div class="cui-page__content">
-    <h1 data-translate="iplb_frontend_add_title"></h1>
+    <h1 data-translate="iplb_ssl_add_title"></h1>
 
     <form novalidate name="ctrl.form">
-        <div class="oui-input-formfield">
-          <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.frontend.displayName" />
-          <label for="displayName" class="oui-label" data-translate="iplb_frontend_add_name"></label>
+        <div class="oui-field">
+            <label for="displayName" class="oui-label" data-translate="iplb_ssl_order_name"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.newSsl.displayName" />
+                </div>
+            </div>
         </div>
 
-        <div class="oui-input-formfield">
-          <cui-radio-bar data-ng-model="ctrl.protocol"
-            data-on-change="ctrl.onProtocolChange()">
-            <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols" data-text="('iplb_frontend_add_protocol_' + protocol) | translate" data-value="protocol"></cui-radio-bar-item>
-          </cui-radio-bar>
-          <label for="protocol" class="oui-label" data-translate="iplb_frontend_add_protocol"></label>
+        <div class="oui-field">
+            <label class="oui-label" data-translate="iplb_ssl_order_type"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                <cui-radio-bar data-ng-model="ctrl.newSsl.type">
+                    <cui-radio-bar-item data-ng-repeat="type in ctrl.sslTypes"
+                        data-text="('iplb_ssl_order_type_' + type) | translate"
+                        data-value="type"></cui-radio-bar-item>
+                </cui-radio-bar>
+                </div>
+            </div>
         </div>
 
-        <div class="oui-input-formfield">
-          <input type="number"
-            min="1"
-            max="65535"
-            id="port"
-            name="port"
-            class="oui-input"
-            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.port.$invalid }"
-            data-ng-model="ctrl.frontend.port"
-            required />
-          <label for="port" class="oui-label" data-translate="iplb_frontend_add_port"></label>
+        <div class="oui-field">
+            <label for="fqdn" class="oui-label" data-translate="iplb_ssl_order_fqdn"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="fqdn" name="fqdn" class="oui-input" data-ng-model="ctrl.newSsl.fqdn" />
+                </div>
+                <div class="oui-field-helper"
+                    data-translate="iplb_ssl_order_fqdn_tip"></div>
+            </div>
         </div>
 
-        <div class="oui-select-formfield">
-          <div class="oui-select"
-            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }">
-            <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
-            <select class="oui-select__input"
-                name="zone"
-                id="zone"
-                data-ng-hide="ctrl.zones.loading"
-                data-ng-model="ctrl.frontend.zone"
-                data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
-                ui-validate="{ selection: 'ctrl.validateSelection($value)' }">
-            </select>
-            <label for="zone" class="oui-label" data-translate="iplb_frontend_add_datacenter"></label>
-          </div>
-        </div>
+        <cui-advanced-options data-ng-show="ctrl.newSsl.type === 'ev'"
+            data-expanded="true">
+            <h3 class="oui-header_3" data-translate="iplb_ssl_order_contact"></h3>
 
-        <div class="oui-select-formfield" data-ng-show="ctrl.farms.data.length || ctrl.farms.loading">
-          <div class="oui-select">
-            <cui-loader data-ng-show="ctrl.farms.loading"></cui-loader>
-            <select class="oui-select__input"
-                name="farm"
-                id="farm"
-                data-ng-hide="ctrl.farms.loading"
-                data-ng-model="ctrl.frontend.defaultFarmId"
-                data-ng-options="farm.farmId as ctrl.getFarmName(farm) for farm in ctrl.farms.data"
-                data-ng-change="ctrl.onFarmChange()">
-            </select>
-            <label for="farm" class="oui-label" data-translate="iplb_frontend_add_default_farm"></label>
-          </div>
-        </div>
-
-        <div class="oui-select-formfield" data-ng-if="ctrl.frontend.ssl">
-          <div class="oui-select">
-            <cui-loader data-ng-show="ctrl.certificates.loading"></cui-loader>
-            <select class="oui-select__input"
-                name="certificate"
-                id="certificate"
-                data-ng-hide="ctrl.certificates.loading"
-                data-ng-model="ctrl.frontend.defaultSslId"
-                data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data">
-            </select>
-            <label for="certificate" class="oui-label" data-translate="iplb_frontend_add_default_certificate"></label>
-          </div>
-        </div>
-
-        <cui-advanced-options data-title="'iplb_frontend_add_advanced_options' | translate"
-            data-text="'iplb_frontend_add_advanced_options_info' | translate"
-            data-button-text="'iplb_frontend_add_advanced_options_show' | translate"
-            data-expanded="ctrl.edition">
-            <div class="oui-select-formfield">
-                <div class="oui-select">
-                    <cui-loader data-ng-show="ctrl.dedicatedIp.loading"></cui-loader>
-                    <select class="oui-select__input"
-                        name="dedicatedIpfo"
-                        id="dedicatedIpfo"
-                        data-ng-model="ctrl.frontend.dedicatedIpfo"></select>
-                    <label for="dedicatedIpfo" class="oui-label" data-translate="iplb_frontend_add_dedicated_ip_failover"></label>
+            <div class="oui-field">
+                <label for="email" class="oui-label" data-translate="iplb_ssl_order_email"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="email" name="email" class="oui-input" data-ng-model="ctrl.newSsl.option.email" />
+                    </div>
                 </div>
             </div>
 
-            <div class="oui-input-formfield" data-ng-if="ctrl.type != 'udp'">
-              <input type="text" id="restrict_ip_access" name="restrict_ip_access" class="oui-input"
-                 data-ng-model="ctrl.frontend.allowedSource" />
-              <label for="restrict_ip_access" class="oui-label" data-translate="iplb_frontend_add_restrict_ip_access"></label>
+            <div class="oui-field">
+                <label for="date_of_incorporation" class="oui-label" data-translate="iplb_ssl_order_incorporation_date"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_2">
+                        <input type="text" id="date_of_incorporation" name="date_of_incorporation" class="oui-input" data-ng-model="ctrl.newSsl.option.date_of_incorporation" />
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-input-formfield" data-ng-if="ctrl.type == 'http'">
-              <input type="text" id="restrict_http_redirection" name="restrict_http_redirection" class="oui-input"
-                 data-ng-model="ctrl.frontend.redirectLocation" />
-              <label for="restrict_http_redirection" class="oui-label" data-translate="iplb_frontend_add_restrict_http_redirection"></label>
+            <div class="oui-field">
+                <label for="organizationName" class="oui-label" data-translate="iplb_ssl_order_organisation_name"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="organizationName" name="organizationName" class="oui-input" data-ng-model="ctrl.newSsl.option.organizationName" />
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-input-formfield" data-ng-if="ctrl.type == 'http'">
-              <input type="text" id="restrict_http_header" name="restrict_http_header" class="oui-input"
-                 data-ng-model="ctrl.frontend.httpHeader" />
-              <label for="restrict_http_header" class="oui-label" data-translate="iplb_frontend_add_restrict_http_header"></label>
+            <div class="oui-field">
+                <label for="organizationalUnitName" class="oui-label" data-translate="iplb_ssl_order_unit_name"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="organizationalUnitName" name="organizationalUnitName" class="oui-input" data-ng-model="ctrl.newSsl.option.organizationalUnitName" />
+                    </div>
+                </div>
             </div>
 
-            <div class="oui-checkbox" data-ng-if="ctrl.type == 'http' && ctrl.frontend.ssl">
-              <input class="oui-checkbox__input" id="hsts" name="hsts" type="checkbox">
-              <label class="oui-checkbox__label-container" for="hsts">
-                <span class="oui-checkbox__label" data-translate="iplb_frontend_add_restrict_hsts"></span>
-                <span class="oui-checkbox__icon">
-                  <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                  <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                </span>
-              </label>
+            <div class="oui-field">
+                <label for="business_category" class="oui-label" data-translate="iplb_ssl_order_business_category"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="business_category"
+                                id="business_category"
+                                data-ng-model="ctrl.newSsl.option.business_category"
+                                data-ng-options="organizationType as organizationType for organizationType in ctrl.organizationTypes"></select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <div class="oui-field">
+                <label for="streetName" class="oui-label" data-translate="iplb_ssl_order_address"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="streetName" name="streetName" class="oui-input" data-ng-model="ctrl.newSsl.option.streetName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="postalCode" class="oui-label" data-translate="iplb_ssl_order_postal_code"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_2">
+                        <input type="text" id="postalCode" name="postalCode" class="oui-input" data-ng-model="ctrl.newSsl.option.postalCode" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="stateOrProvinceName" class="oui-label" data-translate="iplb_ssl_order_state_or_province"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="stateOrProvinceName" name="stateOrProvinceName" class="oui-input" data-ng-model="ctrl.newSsl.option.stateOrProvinceName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="localityName" class="oui-label" data-translate="iplb_ssl_order_city"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="localityName" name="localityName" class="oui-input" data-ng-model="ctrl.newSsl.option.localityName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="countryName" class="oui-label" data-translate="iplb_ssl_order_country"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="countryName" name="countryName" class="oui-input" data-ng-model="ctrl.newSsl.option.countryName" />
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="oui-header_3" data-translate="iplb_ssl_order_joi"></h3>
+
+            <div class="oui-field">
+                <label for="joi_state_or_province_name" class="oui-label" data-translate="iplb_ssl_order_state_or_province"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="joi_state_or_province_name" name="joi_state_or_province_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_state_or_province_name" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="joi_locality_name" class="oui-label" data-translate="iplb_ssl_order_city"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="joi_locality_name" name="joi_locality_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_locality_name" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="joi_country_name" class="oui-label" data-translate="iplb_ssl_order_country"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="joi_country_name" name="joi_country_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_country_name" />
+                    </div>
+                </div>
+            </div>
+
         </cui-advanced-options>
 
         <div class="cui-form-actions">
           <button type="submit"
             class="oui-button oui-button_primary"
-            data-translate="iplb_frontend_update_confirm"
-            data-ng-click="ctrl.updateFrontend()"
-            data-ng-show="ctrl.edition"></button>
-          <button type="submit"
-            class="oui-button oui-button_primary"
-            data-translate="iplb_frontend_add_confirm"
-            data-ng-click="ctrl.createFrontend()"
-            data-ng-hide="ctrl.edition"></button>
+            data-translate="iplb_ssl_order_ok"
+            data-ng-click="ctrl.order()"></button>
           <a class="oui-button oui-button_secondary"
-              data-translate="iplb_frontend_add_cancel"
-              data-ui-sref="network.iplb.detail.frontends"></a>
+              data-translate="iplb_ssl_order_cancel"
+              data-ui-sref="network.iplb.detail.ssl-certificate.home"></a>
         </div>
     </form>
 </div>

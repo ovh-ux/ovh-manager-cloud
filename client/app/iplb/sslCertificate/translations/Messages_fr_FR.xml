@@ -18,6 +18,7 @@
     <translation id="iplb_ssl_list_error">Erreur lors du chargement de la liste des certificats.</translation>
 
     <translation id="iplb_ssl_add_title">Ajouter un certificat SSL</translation>
+    <translation id="iplb_ssl_order_title">Commander un certificat SSL</translation>
     <translation id="iplb_ssl_add_confirm">Ajouter</translation>
     <translation id="iplb_ssl_add_cancel">Annuler</translation>
     <translation id="iplb_ssl_add_success">Le certificat SSL a été créé avec succès.</translation>
@@ -48,4 +49,28 @@
     <translation id="iplb_ssl_delete_button">Supprimer</translation>
     <translation id="iplb_ssl_delete_success">Le certificat SSL a été supprimé avec succès.</translation>
     <translation id="iplb_ssl_delete_error">Une erreur est survenue lors de la suppression du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_order_name">Nom (facultatif)</translation>
+    <translation id="iplb_ssl_order_type">Type de certificat</translation>
+    <translation id="iplb_ssl_order_type_free">Gratuit</translation>
+    <translation id="iplb_ssl_order_type_dv">Comodo DV</translation>
+    <translation id="iplb_ssl_order_type_ev">Comodo EV</translation>
+    <translation id="iplb_ssl_order_type_free">Gratuit</translation>
+    <translation id="iplb_ssl_order_fqdn">Fully Qualified Domain Name (FQDN)</translation>
+    <translation id="iplb_ssl_order_fqdn_tip">example.com, www.example.com</translation>
+    <translation id="iplb_ssl_order_contact">Contact</translation>
+    <translation id="iplb_ssl_order_email">Adresse électronique</translation>
+    <translation id="iplb_ssl_order_business_category">Categorie d'organisation</translation>
+    <translation id="iplb_ssl_order_country">Pays</translation>
+    <translation id="iplb_ssl_order_state_or_province">Etat ou province</translation>
+    <translation id="iplb_ssl_order_incorporation_date">Date d'incorporation</translation>
+    <translation id="iplb_ssl_order_organisation_name">Nom de l'organisation</translation>
+    <translation id="iplb_ssl_order_unit_name">Nom de l'unité organisationnelle</translation>
+    <translation id="iplb_ssl_order_address">Adresse</translation>
+    <translation id="iplb_ssl_order_postal_code">Code postal</translation>
+    <translation id="iplb_ssl_order_city">Ville</translation>
+    <translation id="iplb_ssl_order_joi">Juridiction d'incorporation</translation>
+
+    <translation id="iplb_ssl_order_ok">Commander</translation>
+    <translation id="iplb_ssl_order_cancel">Annuler</translation>
 </translations>

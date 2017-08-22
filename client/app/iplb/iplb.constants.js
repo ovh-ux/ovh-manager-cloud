@@ -66,5 +66,46 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "matches"
     ],
     portLimit: 65535,
-    lbWeightMax: 256
+    lbWeightMax: 256,
+    sslTypes: [
+        "free",
+        "dv",
+        "ev"
+    ],
+    organisationTypes: [
+        "Private Organisation",
+        "Government Entity",
+        "Business Entity"
+    ],
+    sslOrders: {
+        comodoEv: {
+            planCode: "sslgateway-advanced",
+            duration: "P1M",
+            configuration: {},
+            option: [{
+                planCode: "sslgateway-ssl-ev-single",
+                configuration: {},
+                duration: "P1Y",
+                quantity: 1
+            }],
+            quantity: 1,
+            productId: "sslGateway"
+        },
+        comodoDv: {
+            planCode: "sslgateway-advanced",
+            duration: "P1M",
+            configuration: {},
+            option: [],
+            quantity: 1,
+            productId: "sslGateway"
+        },
+        free: {
+            planCode: "sslgateway-free",
+            duration: "P1M",
+            configuration: {},
+            option: [],
+            quantity: 1,
+            productId: "sslGateway"
+        }
+    }
 });

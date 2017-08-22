@@ -40,6 +40,18 @@
                 },
                 onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: ["common", "iplb", "iplb/sslCertificate"]
+            })
+            .state("network.iplb.detail.ssl-certificate.order", {
+                url: "/sslCertificate/order",
+                views: {
+                    iplbSslCertificate: {
+                        templateUrl: "app/iplb/sslCertificate/order/iplb-ssl-certificate-order.html",
+                        controller: "IpLoadBalancerSslCertificateOrderCtrl",
+                        controllerAs: "ctrl"
+                    }
+                },
+                onEnter: CloudMessage => CloudMessage.flushMessages(),
+                translations: ["common", "iplb", "iplb/sslCertificate"]
             });
     });
 })();
