@@ -6,7 +6,7 @@
             <cui-modal-text data-text="'iplb_modal_nat_ip_description' | translate"></cui-modal-text>
 
             <cui-clipboard-list data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-                <cui-clipboard data-text="ip" data-ng-repeat="ip in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index"></cui-clipboard>
+                <cui-clipboard data-label="nat.zone" data-text="nat.ip" data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index"></cui-clipboard>
             </cui-clipboard-list>
         </div>
     </cui-modal-body>

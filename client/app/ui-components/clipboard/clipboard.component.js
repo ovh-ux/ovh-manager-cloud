@@ -18,6 +18,8 @@
     angular.module("managerApp")
         .component("cuiClipboard", {
             template: `
+                <label class="cui-clipboard__label"
+                    data-ng-bind="$ctrl.label"></label>
                 <input class="cui-clipboard__input"
                     type="text"
                     data-ng-focus="$ctrl.onTextFocus($event)"
@@ -26,7 +28,8 @@
                 `,
             controller: CuiClipboardController,
             bindings: {
-                text: "<"
+                text: "<",
+                label: "<?"
             }
         })
         .component("cuiClipboardList", {
