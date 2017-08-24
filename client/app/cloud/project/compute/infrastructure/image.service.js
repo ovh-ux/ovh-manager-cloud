@@ -36,7 +36,8 @@
         "dcos",
         "openvpn",
         "vestacp",
-        "virtualmin"
+        "virtualmin",
+        "jupyter"
     ];
 
     class CloudImageService {
@@ -62,8 +63,3 @@
 
     angular.module("managerApp").service("CloudImageService", CloudImageService);
 })();
-
-
-
-
-
