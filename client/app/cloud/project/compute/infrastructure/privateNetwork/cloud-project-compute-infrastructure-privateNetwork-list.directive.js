@@ -15,6 +15,8 @@ class PrivateNetworkListCtrl {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
+        this.User = User;
+        this.URLS = URLS;
 
         this.loaders = {
             privateNetworks: {
