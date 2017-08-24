@@ -25,9 +25,10 @@
                   role="button"
                   tabindex="0"
                   data-ng-click="$ctrl.deletePrivateNetwork(network.id)">
-                <i class="fa fa-trash-o fa-2x"></i>
+                <i class="fa fa-trash-o fa-2x"
+                   data-ng-hide="$ctrl.loaders.privateNetworks.delete"></i>
                 <i class="fa fa-circle-o-notch fa-2x fa-spin"
-                   ng-if="$ctrl.loaders.deleting"></i>
+                   data-ng-show="$ctrl.loaders.privateNetworks.delete"></i>
             </span>
             <span class="private-network__property private-network__property_name" data-ng-bind="::network.name"></span>
             <span class="private-network__property private-network__property_id">{{ network.shortVlanId === '0' ? ("cpci_private_network_list_untagged_vlan" | translate) : "VLAN" + network.shortVlanId }}</span>
