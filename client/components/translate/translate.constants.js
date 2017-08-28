@@ -47,7 +47,7 @@ angular.module("managerApp").constant("LANGUAGES", {
         name: "Česky",
         key: "cs_CZ"
     }],
-    "default": "fr_FR",
+    defaultLoc: "fr_FR",
     fallback: "fr_FR",
     preferred: {
         en: {
