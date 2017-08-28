@@ -24,7 +24,14 @@
 
     &__cell_action-menu {
         width: 80px;
-        text-align: right;
+
+        .tablet({
+            width: 100%;
+
+            .cui-dropdown-menu {
+                float: right;
+            }
+        });
     }
 
     &__cell_component {
