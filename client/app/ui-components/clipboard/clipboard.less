@@ -1,5 +1,7 @@
 @clipboard-border-color: #E0F6FD;
 @cui-clipboard-color: @oui-color-primary;
+@cui-clipboard-icon-color: #00A0BF;
+@cui-clipboard-icon-error-color: #E36947;
 
 .cui-clipboard-list {
 	&__item {
@@ -8,6 +10,8 @@
 }
 
 .cui-clipboard {
+	position: relative;
+
 	&__input {
 		padding: 6px 48px 6px 12px;
 		width: 100%;
@@ -31,7 +35,16 @@
 
 	&__icon {
 		position: absolute;
-		right: 24px;
-		top: 18px;
+		right: 12px;
+		top: 9px;
+
+		.oui-icon {
+			color: @cui-clipboard-icon-color;
+			font-size: 1.6rem;
+		}
+
+		.oui-icon-copy-error {
+			color: @cui-clipboard-icon-error-color;
+		}
 	}
 }

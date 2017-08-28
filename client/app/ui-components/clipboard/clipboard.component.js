@@ -49,9 +49,9 @@
                         data-ng-focus="$ctrl.onTextFocus($event)"
                         data-ng-value="$ctrl.text"
                         readonly>
-                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'initial'"><i class="oui-icon oui-icon-help_circle aria-hidden="true"></i></span>
-                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'success'"><i class="oui-icon oui-icon-success_circle aria-hidden="true"></i></span>
-                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'error'"><i class="oui-icon oui-icon-error_circle aria-hidden="true"></i></span>
+                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'initial'"><i class="oui-icon oui-icon-copy-normal aria-hidden="true"></i></span>
+                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'success'"><i class="oui-icon oui-icon-copy-success aria-hidden="true"></i></span>
+                    <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'error'"><i class="oui-icon oui-icon-copy-error aria-hidden="true"></i></span>
                 </div>
                 `,
             controller: CuiClipboardController,
