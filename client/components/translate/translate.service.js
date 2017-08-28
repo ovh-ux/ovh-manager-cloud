@@ -4,7 +4,7 @@
  * @description Manage translations
  */
 angular.module("managerApp")
-.provider("TranslateService", function (LANGUAGES) {
+.provider("TranslateService", function (LANGUAGES, TARGET) {
     "use strict";
 
     var self = this;
@@ -36,29 +36,11 @@ angular.module("managerApp")
         var splittedLocale = locale.match(localeRegex);
 
         if (splittedLocale) {
-
             // Format the value
-            locale = splittedLocale[1].toLowerCase() + "_" + (splittedLocale[2] ? splittedLocale[2] : splittedLocale[1]).toUpperCase();
+            var language = splittedLocale[1];
+            var country = splittedLocale[2] ? splittedLocale[2] : this.preferredCountry(language);
 
-            // Check if language exist into the list
-            if (availableLangsKeys.indexOf(locale) === -1) {
-                // Not found: Try to find another country with same base language
-                var similarLanguage = _.find(availableLangsKeys, function (val) {
-                    return localeRegex.test(val) && val.match(localeRegex)[1] === splittedLocale[1];
-                });
-
-                if (similarLanguage) {
-                    // Found
-                    currentLanguage = similarLanguage;
-                } else {
-                    // Not found
-                    currentLanguage = currentLanguage || LANGUAGES["default"];
-                }
-            } else {
-                // Found
-                currentLanguage = locale;
-            }
-
+            currentLanguage = this.findLanguage(language, country);
         } else {
             // Incorrect value
             currentLanguage = currentLanguage || LANGUAGES["default"];
@@ -82,6 +64,32 @@ angular.module("managerApp")
         } else {
             return currentLanguage;
         }
+    };
+
+    this.preferredCountry = function (language) {
+        if (_.indexOf(["FR", "EN"], language.toUpperCase() > -1)) {
+            var customLanguage = _.get(LANGUAGES.preferred, `${language}.${TARGET}`);
+            if (customLanguage) {
+                return customLanguage;
+            }
+        }
+        return language;
+    };
+
+    this.findLanguage = function (language, country) {
+        var locale = `${language.toLowerCase()}_${country.toUpperCase()}`;
+        if (availableLangsKeys.indexOf(locale) > -1) {
+            return locale;
+        }
+        // Not found: Try to find another country with same base language
+        var similarLanguage = _.find(availableLangsKeys, function (val) {
+            return localeRegex.test(val) && val.match(localeRegex)[1] === language;
+        });
+        if (similarLanguage) {
+            return similarLanguage;
+        }
+        // Not found
+        return LANGUAGES.default;
     };
 
     this.$get = function () {

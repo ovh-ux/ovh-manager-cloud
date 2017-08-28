@@ -1,52 +1,64 @@
 "use strict";
 
 angular.module("managerApp").constant("LANGUAGES", {
-    "available" : [{
+    available: [{
         name: "Deutsch",
-        key : "de_DE"
+        key: "de_DE"
     }, {
         name: "English",
-        key : "en_GB"
+        key: "en_GB"
     }, {
         name: "English (Canadian)",
-        key : "en_CA"
+        key: "en_CA"
     }, {
         name: "English (United States)",
-        key : "en_US"
+        key: "en_US"
     }, {
         name: "English (Australia)",
         key: "en_AU"
     }, {
         name: "Español",
-        key : "es_ES"
+        key: "es_ES"
     }, {
         name: "Français",
-        key : "fr_FR"
+        key: "fr_FR"
     }, {
         name: "Français (Canadien)",
-        key : "fr_CA"
+        key: "fr_CA"
     },  {
         name: "Italiano",
-        key : "it_IT"
+        key: "it_IT"
     }, {
         name: "Lietuviškai",
-        key : "lt_LT"
+        key: "lt_LT"
     }, {
         name: "Nederlands",
-        key : "nl_NL"
+        key: "nl_NL"
     }, {
         name: "Polski",
-        key : "pl_PL"
+        key: "pl_PL"
     }, {
         name: "Português",
-        key : "pt_PT"
+        key: "pt_PT"
     }, {
         name: "Suomi",
-        key : "fi_FI"
+        key: "fi_FI"
     }, {
         name: "Česky",
-        key : "cs_CZ"
+        key: "cs_CZ"
     }],
-    "default"   : "fr_FR",
-    "fallback"  : "fr_FR"
+    "default": "fr_FR",
+    fallback: "fr_FR",
+    preferred: {
+        en: {
+            US: "US",
+            CA: "CA",
+            EU: "GB"
+        },
+        fr: {
+            US: "CA",
+            CA: "CA",
+            EU: "FR"
+        }
+    }
 });
