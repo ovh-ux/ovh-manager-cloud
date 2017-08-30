@@ -824,10 +824,10 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-ng-repeat="flavor in categoryObject.flavors track by flavor.id"
+                                                    <tr data-ng-repeat-start="flavor in categoryObject.flavors track by flavor.id"
                                                         data-ng-click="VmAddEditCtrl.selectFlavor(categoryObject.category, flavor)"
                                                         data-ng-mouseenter="VmAddEditCtrl.onMouseEnterFlavor(categoryObject.category, flavor)"
-                                                        data-ng-class="{'disabled opacity5': flavor.disabled || flavor.deprecated }"
+                                                        data-ng-class="{'disabled opacity5': flavor.disabled || flavor.deprecated || !flavor.available}"
                                                         class="pointer" role="button" tabindex="0" click-enter-on-keypress
                                                         data-uib-tooltip="{{:: flavor.disabled ? ('cpcivm_addedit_flavor_disabled_' + flavor.disabled | translate) : (flavor.deprecated ? ('cpcivm_addedit_flavor_deprecated' | translate) : '') }}">
                                                         <td class="text-center">
@@ -835,7 +835,7 @@
                                                                 <input type="radio" aria-hidden="true" tabindex="-1"
                                                                        name="flavorsChoice" id="{{:: flavor.shortGroupName }}"
                                                                        data-ng-value="flavor.shortGroupName"
-                                                                       data-ng-disabled="flavor.disabled"
+                                                                       data-ng-disabled="flavor.disabled || !flavor.available"
                                                                        data-ng-model="VmAddEditCtrl.displayData.shortGroupName">
                                                             </flat-radio>
                                                         </td>
@@ -875,6 +875,13 @@
                                                                   data-translate="cpcivm_addedit_flavor_monthlyPrice"
                                                                   data-translate-values="{ price: flavor.associatedLinuxFlavor.price.monthlyPrice.text || flavor.price.monthlyPrice.text || '?' }">
                                                             </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr data-ng-repeat-end 
+                                                        data-ng-if="!flavor.available" 
+                                                        data-ng-class="{'disabled opacity5': !flavor.available}">
+                                                        <td colspan="6" class="bottom-message">
+                                                            <span data-translate="cpcivm_addedit_flavor_not_available_region"></span>
                                                         </td>
                                                     </tr>
                                                 </tbody>
