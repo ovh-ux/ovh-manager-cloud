@@ -76,28 +76,31 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         });
 
         SidebarMenu.addActionsMenuOptions([{
-                title: $translate.instant("cloud_sidebar_actions_menu_ip"),
-                icon: "ip",
-                href: REDIRECT_URLS.ip,
-                target: "_parent"
-            }, {
-                title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
-                icon: "ip",
-                href: URLS.website_order.load_balancer[locale],
-                target: "_blank",
-                external: true
-            }, {
-                title: $translate.instant("cloud_sidebar_actions_menu_licence"),
-                icon: "certificate",
-                href: REDIRECT_URLS.license,
-                target: "_parent"
-            },{
+            title: $translate.instant("cloud_sidebar_actions_menu_ip"),
+            icon: "ip",
+            href: REDIRECT_URLS.ip,
+            target: "_parent"
+        }, {
+            title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
+            icon: "ip",
+            href: URLS.website_order.load_balancer[locale],
+            target: "_blank",
+            external: true
+        }, {
+            title: $translate.instant("cloud_sidebar_actions_menu_licence"),
+            icon: "certificate",
+            href: REDIRECT_URLS.license,
+            target: "_parent"
+        }]);
+
+        if (REDIRECT_URLS.orderSql) {
+            SidebarMenu.addActionsMenuOptions([{
                 title: $translate.instant("cloud_sidebar_actions_menu_clouddb"),
                 icon: "database",
                 href: REDIRECT_URLS.orderSql,
                 target: "_blank"
-            }
-        ]);
+            }]);
+        }
     }
 
     /*-----  End of ACTIONS MENU OPTIONS  ------*/
