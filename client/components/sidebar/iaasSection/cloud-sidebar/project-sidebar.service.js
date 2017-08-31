@@ -69,7 +69,6 @@ class CloudProjectSidebar {
         this.addSearchKeys(subSection);
         this.SidebarMenu.addMenuItem({
             title: this.$translate.instant("cloud_sidebar_pci_infrastructure"),
-            icon: "infrastructure",
             state: "iaas.pci-project.compute",
             stateParams: {
                 projectId: project.serviceName || project.project_id
@@ -83,7 +82,6 @@ class CloudProjectSidebar {
         }, subSection);
         this.SidebarMenu.addMenuItem({
             title: this.$translate.instant("cloud_sidebar_pci_object_storage"),
-            icon: "database",
             state: "iaas.pci-project.storage",
             stateParams: {
                 projectId: project.serviceName || project.project_id
@@ -97,7 +95,6 @@ class CloudProjectSidebar {
         }, subSection);
         this.SidebarMenu.addMenuItem({
             title: this.$translate.instant("cloud_sidebar_pci_manage"),
-            icon: "wallet",
             state: "iaas.pci-project.billing",
             stateParams: {
                 projectId: project.serviceName || project.project_id
@@ -111,7 +108,6 @@ class CloudProjectSidebar {
         }, subSection);
         this.SidebarMenu.addMenuItem({
             title: this.$translate.instant("cloud_sidebar_pci_openstack"),
-            icon: "openstack",
             state: "iaas.pci-project.openstack",
             stateParams: {
                 projectId: project.serviceName || project.project_id
