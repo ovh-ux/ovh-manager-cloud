@@ -3,7 +3,7 @@
    <translation id="nasha_custom_snapshot_of" qtlid="344922">Snapshot der Partition {{partitionName}} </translation>
    <translation id="nasha_custom_snapshot_modal_title" qtlid="369178">Snapshot </translation>
    <translation id="nasha_custom_snapshot_modal_success" qtlid="369191">Der Snapshot wird in Kürze erstellt. </translation>
-   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Bei der Änderung der Snapshot-Planung ist ein Fehler aufgetreten. </translation>
+   <translation id="nasha_custom_snapshot_modal_fail" qtlid="344909">Bei der Änderung der Snapshot-Frequenz ist ein Fehler aufgetreten. </translation>
    <translation id="nasha_custom_snapshot_modal_informations" qtlid="344948">Bei einem Snapshot handelt es sich um eine Momentaufnahme Ihres NAS-HA zum Zeitpunkt des Snapshots. </translation>
    <translation id="nasha_custom_snapshot_modal_informations_size" qtlid="369204">Um korrekt zu funktionieren, belegen die Snapshots Speicherplatz auf Ihrer Partition. </translation>
    <translation id="nasha_custom_snapshot_modal_label_snapshot_name" qtlid="369217">Name des Snapshots </translation>

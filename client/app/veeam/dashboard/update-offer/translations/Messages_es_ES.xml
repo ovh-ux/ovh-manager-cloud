@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="veeam_update_offer_title" qtlid="403632">Aumentar el plan Veeam Cloud Connect</translation>
+   <translation id="veeam_update_offer_title" qtlid="403632">Mejorar el plan Veeam Cloud Connect</translation>
    <translation id="veeam_update_offer_information" qtlid="403645">La suscripción es de <strong>{{ price }}/mes + IVA</strong></translation>
    <translation id="veeam_update_offer_cancel" qtlid="37863">Cancelar</translation>
    <translation id="veeam_update_offer_continue" qtlid="4070">Continuar</translation>
