@@ -32,6 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Rétention (mois)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Vous atteindrez bientôt la limite du nombre de série autorisé.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Pensez migrer vers une offre supérieure.</translation>
+   <translation id="metrics_contact_admin">Administrateur</translation>
+   <translation id="metrics_contact_billing">Facturation</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Erreur au chargement de votre service.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Erreur au chargement de votre consommation.</translation>
