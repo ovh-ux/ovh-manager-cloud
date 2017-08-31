@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_frontends_title">Frontends</translation>
+   <translation id="iplb_frontends_intro_text">Le Frontend est la partie de votre IP Load Balancer qui sert à exposer votre service sur Internet.</translation>
+
+   <translation id="iplb_frontends_add">Ajouter un frontend</translation>
+
+   <translation id="iplb_frontend_frontend">Frontend</translation>
+   <translation id="iplb_frontend_protocol">Protocol</translation>
+   <translation id="iplb_frontend_datacenter">Datacentre</translation>
+   <translation id="iplb_frontend_default_farm">Ferme par défaut</translation>
+   <translation id="iplb_frontend_active">Actif</translation>
+   <translation id="iplb_frontend_action">Action</translation>
+   <translation id="iplb_frontend_no_frontend">Aucun frontend</translation>
+
+   <translation id="iplb_frontend_update">Modifier</translation>
+   <translation id="iplb_frontend_delete">Supprimer</translation>
+
+   <translation id="iplb_frontend_list_error">Erreur lors du chargement de la liste des frontends.</translation>
+
+   <translation id="iplb_frontend_update_error">Une erreur est survenue lors de la modification du frontend : {{message}}</translation>
+   <translation id="iplb_frontend_update_success">Le frontend a été modifié avec succès.</translation>
+   <translation id="iplb_frontend_update_confirm">Modifier</translation>
+   <translation id="iplb_frontend_update_title">Edition du frontend {{frontendId}}</translation>
+
+   <translation id="iplb_frontend_add_error">Une erreur est survenue lors de l'ajout du frontend : {{message}}</translation>
+   <translation id="iplb_frontend_add_success">Le frontend a été créé avec succès.</translation>
+
+   <translation id="iplb_frontend_add_title">Ajouter un frontend</translation>
+   <translation id="iplb_frontend_add_name">Nom (facultatif)</translation>
+   <translation id="iplb_frontend_add_protocol">Protocole</translation>
+   <translation id="iplb_frontend_add_protocol_http">HTTP</translation>
+   <translation id="iplb_frontend_add_protocol_https">HTTPS</translation>
+   <translation id="iplb_frontend_add_protocol_tcp">TCP</translation>
+   <translation id="iplb_frontend_add_protocol_tls">TCP SSL (TLS)</translation>
+   <translation id="iplb_frontend_add_protocol_udp">UDP</translation>
+   <translation id="iplb_frontend_add_port">Port</translation>
+   <translation id="iplb_frontend_add_port_tip">1 à {{portMax}}</translation>
+   <translation id="iplb_frontend_add_datacenter">Datacentre</translation>
+   <translation id="iplb_frontend_add_default_farm">Ferme par défaut</translation>
+   <translation id="iplb_frontend_add_farm_no_farm">Aucune</translation>
+   <translation id="iplb_frontend_add_farm_add_another_choice">+ Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_frontend_add_default_certificate">Certificat SSL par défaut</translation>
+   <translation id="iplb_frontend_add_default_certificate_no_certificate">Aucun</translation>
+   <translation id="iplb_frontend_add_default_certificate_add_another_choice">+ Ajouter/Commander</translation>
+   <translation id="iplb_frontend_add_advanced_options">Paramètres avancés</translation>
+   <translation id="iplb_frontend_add_advanced_options_info">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
+   <translation id="iplb_frontend_add_advanced_options_show">Afficher</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover">Dedicated IP failover</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover_tip">La liste des adresses IPs des serveurs distants auxquels votre IP Load Balancer est connecté.</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access">Restreindre l'accèss à des IPs</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access_tip">La liste des adresses IPs clientes qui ont accès à l’IP Load Balancer (IPv4).
+Format : 1.2.3.4, 42.42.42.0/24</translation>
+   <translation id="iplb_frontend_add_http_redirection">Redirection HTTP</translation>
+   <translation id="iplb_frontend_add_http_header">Entête HTTP</translation>
+   <translation id="iplb_frontend_add_http_header_tip">%ci => client_ip, %cp => client_port</translation>
+   <translation id="iplb_frontend_add_hsts">HTTP Strict Transport Security (HSTS)</translation>
+   <translation id="iplb_frontend_add_hsts_tip">Activer le support du https strict, HTTP Strict Transport Security</translation>
+   <translation id="iplb_frontend_add_confirm">Ajouter</translation>
+   <translation id="iplb_frontend_add_cancel">Annuler</translation>
+   <translation id="iplb_frontend_add_select_placeholder">Sélectionner</translation>
+
+   <translation id="iplb_frontend_delete_title">Supprimer le frontend</translation>
+   <translation id="iplb_frontend_delete_question">Êtes-vous sûr de vouloir supprimer le frontend {{frontend}} ?</translation>
+   <translation id="iplb_frontend_delete_button">Supprimer</translation>
+   <translation id="iplb_frontend_delete_error">Une erreur est survenue lors de la suppression du frontend : {{message}}</translation>
+   <translation id="iplb_frontend_delete_success">Le frontend a été supprimé avec succès.</translation>
+
+   <translation id="iplb_frontend_preview_title">Aperçu du frontend</translation>
+   <translation id="iplb_frontend_preview_name">Nom</translation>
+   <translation id="iplb_frontend_preview_protocol">Protocole</translation>
+   <translation id="iplb_frontend_preview_port">Port</translation>
+   <translation id="iplb_frontend_preview_datacenter">Datacentre</translation>
+   <translation id="iplb_frontend_preview_default_farm">Ferme par défaut</translation>
+   <translation id="iplb_frontend_preview_default_certificate">Certificat SSL par défaut</translation>
+   <translation id="iplb_frontend_preview_dedicated_ip_failover">Dedicated IP failover</translation>
+   <translation id="iplb_frontend_preview_restrict_ip_access">Restreindre l'accès à des IPs</translation>
+   <translation id="iplb_frontend_preview_http_redirection">Redirection HTTP</translation>
+   <translation id="iplb_frontend_preview_http_header">Entête HTTP</translation>
+   <translation id="iplb_frontend_preview_hsts">HSTS</translation>
+   <translation id="iplb_frontend_preview_active">Actif</translation>
+   <translation id="iplb_frontend_preview_id">Identifiant</translation>
+
+   <translation id="iplb_frontend_toggle_success">Le frontend a été modifié avec succès.</translation>
+   <translation id="iplb_frontend_toggle_error">Une erreur est survenue lors de l'édition du frontend : {{message}}</translation>
+</translations>

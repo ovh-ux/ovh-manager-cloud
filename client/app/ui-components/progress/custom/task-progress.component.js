@@ -17,20 +17,19 @@ angular.module("managerApp")
 
                 refreshType () {
                     switch ((this.task || {}).status) {
-                    case "done":
-                        this.type = "success";
-                        break;
-                    case "error":
-                        this.type = "error";
-                        break;
-                    case "doing":
-                    case "todo":
-                    case "paused":
-                        this.type = "info";
-                        break;
-                    default:
-                        this.type = "warning";
-                        break;
+                        case "done":
+                            this.type = "success";
+                            break;
+                        case "error":
+                            this.type = "error";
+                        case "doing":
+                        case "todo":
+                        case "paused":
+                            this.type = "info";
+                            break;
+                        default:
+                            this.type = "warning";
+                            break;
                     }
                 }
             },
