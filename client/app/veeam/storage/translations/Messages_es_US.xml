@@ -2,7 +2,7 @@
 <translations>
    <translation id="veeam_storage_title" qtlid="403762">Espacio de almacenamiento</translation>
    <translation id="veeam_storage_back" qtlid="208925">Volver al inicio</translation>
-   <translation id="veeam_storage_add_storage" qtlid="403671">Añadir un espacio de almacenamiento</translation>
+   <translation id="veeam_storage_add_storage" qtlid="403671">Añadir espacio de almacenamiento</translation>
    <translation id="veeam_storage_search" qtlid="98288">Rechercher...</translation>
    <translation id="veeam_storage_update_title" qtlid="37875">Modifier</translation>
    <translation id="veeam_storage_update_quota_title" qtlid="403775">Modificar el espacio de almacenamiento</translation>
