@@ -81,7 +81,7 @@
                     url: "#/support"
                 },
                 phone: {
-                    label: this.$translate.instant("common_menu_support_telephony_contact"),
+                    label: this.$translate.instant("common_menu_support_telephony_contact")
                 },
                 billing: {
                     label: this.$translate.instant("common_menu_billing"),
@@ -168,15 +168,15 @@
                     url: frenchHomeGuide
                 });
             }
+            // add other assistance links
+            assistanceMenu.subLinks = assistanceMenu.subLinks.concat([
+                this.menuItems.newTicket,
+                this.menuItems.ticketList
+            ]);
 
             if (this.TARGET !== "US") {
                 this.menuItems.phone.url = this.URLS.support_contact[locale] || this.URLS.support_contact.FR;
-                // add other assistance links
-                assistanceMenu.subLinks = assistanceMenu.subLinks.concat([
-                    this.menuItems.newTicket,
-                    this.menuItems.ticketList,
-                    this.menuItems.phone
-                ]);
+                assistanceMenu.subLinks.push(this.menuItems.phone);
             }
             return assistanceMenu;
         }
