@@ -21,7 +21,7 @@ angular.module("managerApp")
                     <div class="cui-accordion__button-container">
                         <cui-dropdown-menu data-ng-if="$ctrl.actions.length">
                             <cui-dropdown-menu-button
-                                ng-include="'app/ui-components/icons/button-action.html'">
+                                data-ng-include="'app/ui-components/icons/button-action.html'">
                             </cui-dropdown-menu-button>
                             <cui-dropdown-menu-body>
                                 <div class="oui-action-menu"

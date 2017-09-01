@@ -102,8 +102,8 @@ angular.module("managerApp", [
                 <input class="oui-checkbox__input"
                   id="{{$name}}"
                   type="checkbox"
-                  ng-model="$value"
-                  ng-change="$onChange()">
+                  data-ng-model="$value"
+                  data-ng-change="$onChange()">
                 <label class="oui-checkbox__label-container" for="{{$name}}">
                   <span class="oui-checkbox__icon">
                     <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
