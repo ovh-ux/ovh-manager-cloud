@@ -25,7 +25,7 @@ angular.module("managerApp")
     .component("cuiModalBody", {
         template: `
             <div class="oui-modal__body" data-ng-class="{ 'oui-modal__body_no-icon': !$ctrl.icon }">
-                <i class="oui-icon oui-icon-{{ $ctrl.icon }} oui-icon_bicolor" 
+                <i class="oui-icon oui-icon-{{ $ctrl.icon }} oui-icon_bicolor"
                     aria-hidden="true"
                     data-ng-if="$ctrl.icon"></i>
                 <div class="oui-modal__body-text">

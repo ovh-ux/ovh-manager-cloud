@@ -11,6 +11,23 @@
         "arrow-parens": ["error", "as-needed"],
         "class-methods-use-this": "off",
         "lines-around-comment": "off",
-        "strict": "off"
+        "strict": "off",
+        "indent": ["error", 4, {
+            "VariableDeclarator": { "var": 1, "let": 1, "const": 1 },
+            "outerIIFEBody": 1,
+            "MemberExpression": 1,
+            "FunctionDeclaration": {
+                "parameters": "first",
+                "body": 1
+            },
+            "FunctionExpression": {
+                "parameters": "first",
+                "body": 1
+            },
+            "CallExpression": {
+                "arguments": "first"
+            },
+            "SwitchCase": 1
+        }]
     }
 }
