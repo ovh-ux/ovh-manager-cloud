@@ -21,7 +21,7 @@
                         <li data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index"
                             data-ng-if="!message.dismissed">
                               <span data-ng-bind="message.text" data-ng-if="message.text"></span>
-                              <span data-ng-bind="message.textHtml" data-ng-if="message.textHtml"></span>
+                              <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
                               <a role="button" 
                                     data-ng-if="message.link.text"
                                     data-ng-bind="message.link.text"

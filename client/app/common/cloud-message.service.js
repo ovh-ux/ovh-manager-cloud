@@ -25,7 +25,7 @@ class CloudMessage {
      * Handle the message type (error, warning, ...etc) and push the message to the messageHandler
      */
     logMessage (messageHash, type, containerName) {
-        if (!messageHash.text) {
+        if (!messageHash.text && !messageHash.textHtml) {
             return;
         }
 

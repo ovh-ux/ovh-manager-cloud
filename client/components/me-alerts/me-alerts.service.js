@@ -58,15 +58,15 @@ class MeAlertsService {
     }
 
     errorAlert (message) {
-        return this.CloudMessage.error(message, "index");
+        return this.CloudMessage.error({textHtml: message}, "index");
     }
 
     warningAlert (message) {
-        return this.CloudMessage.warning(message, "index");
+        return this.CloudMessage.warning({textHtml: message}, "index");
     }
 
     infoAlert (message) {
-        return this.CloudMessage.info(message, "index");
+        return this.CloudMessage.info({textHtml: message}, "index");
     }
 }
 

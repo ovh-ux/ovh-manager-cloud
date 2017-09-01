@@ -26,13 +26,8 @@
         }
 
         $onInit () {
-            if (!this.dismissableTypes) {
-                this.dismissableTypes = ["info", "success"];
-            }
-
-            if (!this.groupedTypes) {
-                this.groupedTypes = ["error"];
-            }
+            this.dismissableTypes = this.dismissableTypes || ["info", "success"];
+            this.groupedTypes = this.dismissableTypes || ["error"];
 
             this.$scope.$watch(() => this.messages.length, () => {
                 this.refreshValues();
