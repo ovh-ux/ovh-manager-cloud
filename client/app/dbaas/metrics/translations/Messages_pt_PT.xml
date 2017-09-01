@@ -7,8 +7,8 @@
 
    <translation id="metrics_guides" qtlid="300370">Guias</translation>
    <translation id="metrics_guides_footer" qtlid="406905">Todos os guias OVH</translation>
-   <translation id="metrics_guides_first-step" qtlid="415753">Premiers pas ...</translation>
-   <translation id="metrics_guides_first-step_begin" qtlid="415766">Débuter</translation>
+   <translation id="metrics_guides_first-step" qtlid="415753">Primeiros passos ...</translation>
+   <translation id="metrics_guides_first-step_begin" qtlid="415766">Iniciar</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protocolos</translation>
 
 
@@ -34,12 +34,12 @@
 
    <translation id="metrics_err_service" qtlid="403346">Ocorreu um erro aquando do carregamento do seu serviço.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Erro aquando do carregamento do seu consumo.</translation>
-   <translation id="metrics_err_delete_token" qtlid="415779">Erreur lors de la suppression du token</translation>
+   <translation id="metrics_err_delete_token" qtlid="415779">Erro aquando da subscrição do token</translation>
    <translation id="metrics_token_created" qtlid="403450">Token criado</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token atualizado</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token revogado</translation>
-   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
-   <translation id="metrics_quota_mads_warning_message" qtlid="415805">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">Está prestes atingir o número de pontos por dia. Recomendamos que modifique a sua oferta para que não perca dados.</translation>
+   <translation id="metrics_quota_mads_warning_message" qtlid="415805">Está prestes atingir o limite do número de séries ativadas por mês. Recomendamos que modifique a sua oferta para que não perca dados.</translation>
 
    <translation id="metrics_setting_update" qtlid="43462">Actualizar</translation>
    <translation id="metrics_setting_desc" qtlid="364420">Descrição do projeto</translation>

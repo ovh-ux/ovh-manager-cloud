@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="nasha_snapshot_loading_error" qtlid="153974">Er is een fout opgetreden tijdens het herstel van de snapshots.</translation>
-   <translation id="nasha_snapshot_set_success" qtlid="344896">La modification des fréquences de snapshot sera effective dans quelques instants.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">De wijziging van de snapshot-frequentie is over enkele minuten actief.</translation>
    <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Er is een fout opgetreden tijdens het updaten van de snapshot intervals.</translation>
    <translation id="nasha_snapshot_of" qtlid="344922">Snapshot van de partitie {{partitionName}}</translation>
-   <translation id="nasha_snapshot_frequency" qtlid="344935">Fréquences des snapshots</translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Snapshot-frequentie</translation>
    <translation id="nasha_snapshot_day-1" qtlid="154091">Elke dag</translation>
    <translation id="nasha_snapshot_day-2" qtlid="154104">Elke 2 dagen</translation>
    <translation id="nasha_snapshot_day-3" qtlid="154117">Elke 3 dagen</translation>
@@ -12,5 +12,5 @@
    <translation id="nasha_snapshot_hour-1" qtlid="8782">Ieder uur</translation>
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Elke 6 uur</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Een snapshot is een directe momentopname van de status van uw NAS-HA, precies van het moment waarop de snapshot wordt genomen.</translation>
-   <translation id="nasha_snapshot_informations_size" qtlid="344961">Les snapshots utilisent de l'espace sur votre partition pour fonctionner correctement. Aucun historique des snapshots n'est enregistré: pour une même fréquence, le dernier snapshot pris écrase le précédent.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Snapshots gebruiken ruimte op uw partitie om goed te kunnen functioneren. Er is geen snapshot-geschiedenis opgeslagen: voor snapshots van dezelfde frequentie wordt de vorige opname overschreven.</translation>
 </translations>

@@ -27,7 +27,7 @@
    <translation id="nasha_partitions_action_display_custom_snapshot" qtlid="369178">Okamžitý snapshot</translation>
    <translation id="nasha_partitions_action_z_file_system" qtlid="373649">Nastavení Z File System (ZFS)</translation>
    <translation id="nasha_partitions_action_add" qtlid="120919">Vytvořit diskový oddíl</translation>
-   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Zvolte si protokol</translation>
+   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Zvolte protokol</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionAdd" qtlid="26791">Vytvoření</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionDelete" qtlid="59699">Smazat</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionUpdate" qtlid="369282">Změnit velikost</translation>
