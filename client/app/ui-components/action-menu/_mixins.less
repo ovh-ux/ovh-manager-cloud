@@ -18,6 +18,16 @@
       border-bottom: 1px #ddd solid;
     }
 
+    &:first-child {
+        border-top-left-radius: @oui-global-base-radius - 1;
+        border-top-right-radius: @oui-global-base-radius - 1;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: @oui-global-base-radius - 1;
+        border-bottom-right-radius: @oui-global-base-radius - 1;
+    }
+
     &:before, &:after {
       .oui-action-menu-liner();
       content: "";
