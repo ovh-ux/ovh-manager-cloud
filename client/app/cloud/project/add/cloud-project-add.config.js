@@ -1,7 +1,3 @@
-"use strict";
-/**
- *  Configuration for at-internet tracking
- **/
 angular.module("managerApp")
     .config(atInternetControllerDecoratorsProvider => {
 

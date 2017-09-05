@@ -1,25 +1,23 @@
-"use strict";
+describe("Controller config: CloudProjectAddCtrl", () => {
 
-describe("Controller config: CloudProjectAddCtrl", function () {
-
-    var controller;
-    var util;
+    let controller;
+    let util;
 
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (controllerTestUtil, _atInternet_) {
+    beforeEach(inject((controllerTestUtil, _atInternet_) => {
         util = controllerTestUtil;
         spyOn(_atInternet_, "trackClick");
         controller = util.createController("CloudProjectAddCtrl");
     }));
 
-    afterEach(inject(function () {
+    afterEach(inject(() => {
         util.verifyHttpBackend();
     }));
 
-    describe("atInternet track Click on Cloud Project activation", function () {
-        it("should track click on project creation when activation is set", inject(function ($httpBackend,atInternet) {
+    describe("atInternet track Click on Cloud Project activation", () => {
+        it("should track click on project creation when activation is set", inject(($httpBackend, atInternet) => {
             controller.model = { contractsAccepted: true };
             controller.data = { agreements: [{}] };
 
@@ -31,8 +29,9 @@ describe("Controller config: CloudProjectAddCtrl", function () {
             });
         }));
     });
-    describe("atInternet track Click on Cloud Project already activated", function () {
-        it("should not track click on project creation if agreements is empty", inject(function ($httpBackend,atInternet) {
+
+    describe("atInternet track Click on Cloud Project already activated", () => {
+        it("should not track click on project creation if agreements is empty", inject(($httpBackend, atInternet) => {
             controller.model = { contractsAccepted: true };
             controller.data = { agreements: [] };
 
