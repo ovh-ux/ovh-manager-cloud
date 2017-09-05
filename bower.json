@@ -41,7 +41,7 @@
     "ng-slide-down": "1.2.x",
     "uri.js": "~1.15.0",
     "validator-js": "~3.37.0",
-    "ovh-ui-kit": "#master",
+    "ovh-ui-kit": "^1.0.0-alpha.15",
     "ovh-angular-a-disabled": "^0.1.1",
     "ng-at-internet": "^2.2.1",
     "at-internet-ui-router-plugin": "^0.1.2",
@@ -74,7 +74,7 @@
     "ovh-angular-otrs": "^1.1.0",
     "ovh-api-services": "^1.1.5",
     "angular-chart.js": "^1.1.1",
-    "ovh-angular-list-view": "^0.1.1",
+    "ovh-angular-list-view": "^0.1.5",
     "jsurl": "https://github.com/Sage/jsurl.git#v0.1.5"
   },
   "devDependencies": {

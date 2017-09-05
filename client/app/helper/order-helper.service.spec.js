@@ -16,7 +16,7 @@ describe("Service: OrderHelperService", () => {
     }));
 
     describe("transformToOrderValues", () => {
-        fit("should accept simple values", () => {
+        it("should accept simple values", () => {
             const config = { foo: "bar", baz: "qux" };
             expect(OrderHelperService.transformToOrderValues(config))
                 .toEqual([{
@@ -28,7 +28,7 @@ describe("Service: OrderHelperService", () => {
                 }]);
         });
 
-        fit("should accept arrays", () => {
+        it("should accept arrays", () => {
             const config = { foo: "bar", baz: [ "qux", "quux" ] };
             expect(OrderHelperService.transformToOrderValues(config))
                 .toEqual([{
@@ -42,13 +42,13 @@ describe("Service: OrderHelperService", () => {
     });
 
     describe("getUrlConfigPart", () => {
-        fit("should accept config with configuration object", () => {
+        it("should accept config with configuration object", () => {
             const config = { a: "a", b: "b", configuration: { foo: "bar", baz: "qux" } };
             expect(OrderHelperService.getUrlConfigPart(config))
                 .toEqual("products=~(~(a~'a~b~'b~configuration~(~(label~'foo~values~(~'bar))~(label~'baz~values~(~'qux)))))");
         });
 
-        fit("should accept config with option object", () => {
+        it("should accept config with option object", () => {
             const config = { a: "a", b: "b", option: [{
                     foo: "bar",
                     configuration: {
@@ -60,7 +60,7 @@ describe("Service: OrderHelperService", () => {
                 .toEqual("products=~(~(a~'a~b~'b~option~(~(foo~'bar~configuration~(~(label~'baz~values~(~'qux)))))))");
         });
 
-        fit("should accept config with option array", () => {
+        it("should accept config with option array", () => {
             const config = { a: "a", b: "b", option: [[{
                     label: "foo",
                     values: [ "bar" ]
@@ -73,7 +73,7 @@ describe("Service: OrderHelperService", () => {
                 .toEqual("products=~(~(a~'a~b~'b~option~(~(~(label~'foo~values~(~'bar))~(label~'baz~values~(~'qux))))))");
         });
 
-        fit("should accept extra URL parameters", () => {
+        it("should accept extra URL parameters", () => {
             const config = { a: "a", b: "b", configuration: { foo: "bar", baz: "qux" } };
             expect(OrderHelperService.getUrlConfigPart(config, {
                 productId: "test"
@@ -81,10 +81,10 @@ describe("Service: OrderHelperService", () => {
                 .toEqual("productId=test&products=~(~(a~'a~b~'b~configuration~(~(label~'foo~values~(~'bar))~(label~'baz~values~(~'qux)))))");
         });
 
-        fit("should handle spaces", () => {
+        it("should handle spaces", () => {
             const config = { a: "a", b: "b", configuration: { foo: "bar baz" } };
             expect(OrderHelperService.getUrlConfigPart(config))
                 .toEqual("products=~(~(a~'a~b~'b~configuration~(~(label~'foo~values~(~'bar*20baz)))))");
-        })
+        });
     });
 });

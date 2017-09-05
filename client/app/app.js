@@ -74,9 +74,6 @@ angular.module("managerApp", [
         // tell to the module that we consider a mobile device with at least 800px width
         responsivePopoverProvider.setMobileMediaQuery("(max-width: 800px)");
     })
-    .config(ChartJsProvider => {
-        ChartJsProvider.setOptions({ colors: ["#3DD1F0", "#00ADF9", "#DCDCDC", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"] });
-    })
     .config(ouiTableConfigurationProvider => {
         ouiTableConfigurationProvider.setCssConfig({
             tablePanel: "oui-table-panel",

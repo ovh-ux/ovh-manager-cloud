@@ -32,8 +32,6 @@ class OrderHelperService {
             products: JSURL.stringify([formattedConfig])
         }));
 
-        console.log(paramsPart);
-
         return paramsPart;
     }
 
