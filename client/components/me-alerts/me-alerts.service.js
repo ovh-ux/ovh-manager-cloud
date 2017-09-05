@@ -25,7 +25,8 @@ class MeAlertsService {
                                 }));
                             } else {
                                 this.warningAlert(this.$translate.instant("me_alerts_DEBTACCOUNT_DEBT", {
-                                    value: _.get(alert, "data.debtAccount.dueAmount.text")
+                                    value: _.get(alert, "data.debtAccount.dueAmount.text"),
+                                    link: this.REDIRECT_URLS.paymentMeans
                                 }));
                             }
                             break;
