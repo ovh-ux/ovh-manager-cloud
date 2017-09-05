@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_snapshot_loading_error" qtlid="153974">Při získávání snapshotu došlo k chybě.</translation>
-   <translation id="nasha_snapshot_set_success" qtlid="344896">La modification des fréquences de snapshot sera effective dans quelques instants.</translation>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Při načítání snapshotu došlo k chybě.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">Frekvence vytváření snapshotů bude za okamžik změněna.</translation>
    <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Při aktualizaci intervalů snapshotu došlo k neočekávané chybě.</translation>
    <translation id="nasha_snapshot_of" qtlid="344922">Snapshot oddílu {{partitionName}}</translation>
-   <translation id="nasha_snapshot_frequency" qtlid="344935">Fréquences des snapshots</translation>
+   <translation id="nasha_snapshot_frequency" qtlid="344935">Frekvence vytváření snapshotů</translation>
    <translation id="nasha_snapshot_day-1" qtlid="154091">Každý den</translation>
    <translation id="nasha_snapshot_day-2" qtlid="154104">Každé 2 dny</translation>
    <translation id="nasha_snapshot_day-3" qtlid="154117">Každé 3 hodiny</translation>
@@ -12,5 +12,5 @@
    <translation id="nasha_snapshot_hour-1" qtlid="8782">Každou hodinu</translation>
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Každých 6 hodin</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Snapshot je instantní snímek Vašeho NAS-HA. Tento snímek zaznamenává přesný stav Vašeho NAS-HA úložiště v momentu jeho pořízení.</translation>
-   <translation id="nasha_snapshot_informations_size" qtlid="344961">Les snapshots utilisent de l'espace sur votre partition pour fonctionner correctement. Aucun historique des snapshots n'est enregistré: pour une même fréquence, le dernier snapshot pris écrase le précédent.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">Pro správnou funkčnost snapshotů je na Vašem diskovém oddílu vyhrazeno speciální místo. K dispozici není žádná historie pořizování snapshotů. V případě snapshotů s totožnými intervaly platí pravidlo, že poslední pořízený snapshot přepisuje ten předcházející.</translation>
 </translations>

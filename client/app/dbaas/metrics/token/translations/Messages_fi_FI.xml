@@ -26,18 +26,18 @@
    <translation id="metrics_token_role" qtlid="403398">Rooli</translation>
    <translation id="metrics_token_labels" qtlid="403411">Viestitiedot</translation>
    <translation id="metrics_token_id" qtlid="46792">Käyttäjätunnus</translation>
-   <translation id="metrics_token_show_preview" qtlid="415844">Afficher l'aperçu</translation>
-   <translation id="metrics_token_preview_title" qtlid="415857">Affichage du token</translation>
+   <translation id="metrics_token_show_preview" qtlid="415844">Näytä esikatselu</translation>
+   <translation id="metrics_token_preview_title" qtlid="415857">Tunnisteen näyttö</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">näytä peruutukset</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Muokkaa</translation>
-   <translation id="metrics_token_edit_title" qtlid="415870">Modifier le token</translation>
-   <translation id="metrics_token_edit_name" qtlid="415818">Nom (facultatif)</translation>
+   <translation id="metrics_token_edit_title" qtlid="415870">Muokkaa tunnistetta</translation>
+   <translation id="metrics_token_edit_name" qtlid="415818">Nimi (valinnainen)</translation>
    <translation id="metrics_token_edit_cancel" qtlid="37863">Peruuta</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Muokkaa</translation>
 
-   <translation id="metrics_token_delete_title" qtlid="415883">Supprimer le token ?</translation>
-   <translation id="metrics_token_delete_message" qtlid="415896">Êtes-vous sûr de vouloir supprimer le token ?</translation>
+   <translation id="metrics_token_delete_title" qtlid="415883">Poista tunniste?</translation>
+   <translation id="metrics_token_delete_message" qtlid="415896">Haluatko varmasti poistaa tunnisteen?</translation>
    <translation id="metrics_token_created" qtlid="403450">Tunniste luotu</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Tunniste peruttu</translation>
    <translation id="metrics_token_updated" qtlid="403476">Tunniste päivitetty</translation>

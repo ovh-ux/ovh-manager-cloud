@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_order_title" qtlid="345130">Commander un NAS-HA</translation>
-   <translation id="nasha_order_validationPending" qtlid="345143">Veuillez finaliser le paiement de votre <a href="{{url}}" target='_blank'>bon de commande</a>.</translation>
+   <translation id="nasha_order_title" qtlid="345130">Objednat NAS-HA</translation>
+   <translation id="nasha_order_validationPending" qtlid="345143">Uhraďte prosím svou <a href="{{url}}" target='_blank'>objednávku</a>.</translation>
 </translations>
