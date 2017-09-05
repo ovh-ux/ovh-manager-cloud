@@ -14,7 +14,6 @@ angular.module("managerApp")
         billing: "https://www.ovh.us/manager/dedicated/index.html#/billing/history",
         ordersInProgress: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=in-progress",
         orders: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=all",
-        orderSql: "https://www.ovh.com/manager/web/#/configuration/sql_order?orderType=dbaas",
         services: "https://www.ovh.us/manager/dedicated/index.html#/billing/autoRenew",
         paymentMeans: "https://www.ovh.us/manager/dedicated/index.html#/billing/mean",
         addCreditCard: "https://www.ovh.us/manager/dedicated/index.html#/billing/mean/add?meanType=creditCard",

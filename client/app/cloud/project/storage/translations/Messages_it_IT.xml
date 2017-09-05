@@ -4,7 +4,7 @@
    <translation id="storage_name" qtlid="3818">Nome</translation>
    <translation id="storage_type" qtlid="2642">Tipo</translation>
    <translation id="storage_actions" qtlid="72809">Azioni</translation>
-   <translation id="storage_region" qtlid="32434">Regione</translation>
+   <translation id="storage_region" qtlid="32434">Provincia</translation>
    <translation id="storage_nb_files" qtlid="135853">Numero di oggetti</translation>
    <translation id="storage_use_type" qtlid="242080">Tipo di container</translation>
    <translation id="storage_use_type_public" qtlid="242093">Pubblico</translation>
