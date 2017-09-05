@@ -17,7 +17,7 @@ class VeeamSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: service.serviceName,
                 title: service.serviceName,
-                icon: "veeam",
+                icon: "ovh-font ovh-font-veeam",
                 allowSubItems: false,
                 state: "paas.veeam.detail.dashboard",
                 stateParams: {
@@ -41,7 +41,7 @@ class VeeamSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_paas_veeam"),
-            icon: "veeam",
+            icon: "ovh-font ovh-font-veeam",
             href: this.URLS.website_order.veeam[this.locale],
             target: "_blank",
             external: true

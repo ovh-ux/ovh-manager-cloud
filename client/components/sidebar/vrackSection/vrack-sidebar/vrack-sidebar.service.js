@@ -39,7 +39,7 @@ class VrackSidebar {
 
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_vrack"),
-            icon: "vRack",
+            icon: "ovh-font ovh-font-vRack",
             href: link,
             target: "_blank",
             external: true

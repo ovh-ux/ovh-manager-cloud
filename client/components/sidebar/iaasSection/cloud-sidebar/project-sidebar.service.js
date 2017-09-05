@@ -13,7 +13,7 @@ class CloudProjectSidebar {
             const subSection = this.SidebarMenu.addMenuItem({
                 id: project.serviceName,
                 title: project.displayName || project.serviceName,
-                icon: "cloud-public2",
+                icon: "ovh-font ovh-font-cloud-public2",
                 allowSubItems: true,
                 loadOnState: "iaas.pci-project",
                 loadOnStateParams: {
@@ -35,7 +35,7 @@ class CloudProjectSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_cloud_project"),
-            icon: "public-cloud",
+            icon: "ovh-font ovh-font-public-cloud",
             state: "iaas.pci-project-new"
         }
     }
@@ -46,7 +46,7 @@ class CloudProjectSidebar {
         let projectItem = this.SidebarMenu.addMenuItem({
             id: service.project_id,
             title: service.description,
-            icon: "cloud-public2",
+            icon: "ovh-font ovh-font-cloud-public2",
             allowSubItems: true,
             loadOnState: "iaas.pci-project",
             loadOnStateParams: {
