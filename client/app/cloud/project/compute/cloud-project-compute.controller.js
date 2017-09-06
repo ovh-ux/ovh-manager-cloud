@@ -1,53 +1,77 @@
-"use strict";
+class CloudProjectComputeCtrl {
+    constructor ($q, $scope, $state, $stateParams, CloudProject, CloudProjectOrchestrator, CloudUserPref, moment) {
+        this.$q = $q;
+        this.$scope = $scope;
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.CloudProject = CloudProject;
+        this.CloudProjectOrchestrator = CloudProjectOrchestrator;
+        this.CloudUserPref = CloudUserPref;
+        this.moment = moment;
+    }
 
-angular.module("managerApp").controller("CloudProjectComputeCtrl",
-    function ($q, $state, $stateParams, CloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
+    $onInit () {
+        this.serviceName = this.$stateParams.projectId;
+        this.loading = true;
+        this.infoMessageDismissed = true;
+        this.messageId = "cloud_message_pci_de1";
+        this.messageStart = "2017-09-06";
+        this.messageEnd = "2017-10-06";
 
-        var self = this;
-        var serviceName = $stateParams.projectId;
+        this.init();
+    }
 
+    getRouteContext () {
+        if (this.$state.includes("iaas.pci-project")) {
+            return "iaas.pci-project.compute";
+        }
+        return "";
+    }
+
+    init () {
         this.loading = true;
 
-        self.getRouteContext = function () {
-            if ($state.includes("iaas.pci-project")) {
-                return "iaas.pci-project.compute";
-            }
-            return '';
-        };
-
-        function init() {
-            self.loading = true;
-            return shouldRedirectToProjectOverview()
-                .then(function(redirectToOverview) {
-                    $scope.redirectToOverview = redirectToOverview;
-                })
-                ["finally"](function() {
-                    self.loading = false;
-                });
-        }
-
-        function shouldRedirectToProjectOverview() {
-            if ($stateParams.forceLargeProjectDisplay) {
-                return $q.when(false);
-            }
-
-            var hasTooMany = $q.all({
-                hasTooManyInstances: CloudProjectOrchestrator.hasTooManyInstances($stateParams.projectId),
-                hasTooManyIps: CloudProjectOrchestrator.hasTooManyIps($stateParams.projectId)
-            }).then(function(result) {
-                return result.hasTooManyInstances || result.hasTooManyIps;
+        this.CloudUserPref.get(this.messageId)
+            .then(value => {
+                this.infoMessageDismissed = value && value.markedAsRead;
             });
 
-            return CloudUserPref.get("cloud_project_" + serviceName + "_overview").then(function (params) {
-                if (params && params.hide) {
-                    return false;
-                }
-                return hasTooMany;
+        return this.shouldRedirectToProjectOverview()
+            .then(redirectToOverview => {
+                this.$scope.redirectToOverview = redirectToOverview;
+            })
+            .finally(() => {
+                this.loading = false;
             });
-        }
-
-        init();
     }
-);
 
+    shouldRedirectToProjectOverview () {
+        if (this.$stateParams.forceLargeProjectDisplay) {
+            return this.$q.when(false);
+        }
 
+        const hasTooMany = this.$q.all({
+            hasTooManyInstances: this.CloudProjectOrchestrator.hasTooManyInstances(this.$stateParams.projectId),
+            hasTooManyIps: this.CloudProjectOrchestrator.hasTooManyIps(this.$stateParams.projectId)
+        }).then(result => result.hasTooManyInstances || result.hasTooManyIps);
+
+        return this.CloudUserPref.get(`cloud_project_${this.serviceName}_overview`).then(params => {
+            if (params && params.hide) {
+                return false;
+            }
+            return hasTooMany;
+        });
+    }
+
+    dismissInfoMessage () {
+        this.infoMessageDismissed = true;
+        this.CloudUserPref.set(this.messageId, { markedAsRead: new Date() });
+    }
+
+    isInfoMessageDismissed () {
+        const now = moment();
+        return this.infoMessageDismissed || !(now.isAfter(this.messageStart) && now.isBefore(this.messageEnd));
+    }
+}
+
+angular.module("managerApp").controller("CloudProjectComputeCtrl", CloudProjectComputeCtrl);

@@ -47,6 +47,14 @@
         </div>
 
         <div class="cloud-compute-content-ctnr-responsive">
+            <div class="cloud-compute-message-container">
+                <oui-message data-ng-hide="CloudProjectComputeCtrl.isInfoMessageDismissed()"
+                    data-type="info"
+                    data-dismissed="CloudProjectComputeCtrl.isInfoMessageDismissed()"
+                    data-on-dismiss="CloudProjectComputeCtrl.dismissInfoMessage()">
+                    <span data-ng-bind-html="'cpc_message' | translate"></span>
+                </oui-message>
+            </div>
             <div ui-view="cloudProjectCompute" class="cloud-compute-content-ctnr"></div>
         </div>
 
