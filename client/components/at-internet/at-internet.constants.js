@@ -2,7 +2,19 @@
 
 angular.module("managerApp")
 .constant("TRACKING", {
-    config: {
-        level2: "1"    // 1 is Cloud project ID in AT-Internet manager
+    EU: {
+        config: {
+            level2: "1"    // 1 is Cloud project ID in AT-Internet EU manager
+        }       
+    },
+    CA: {
+        config: {
+            level2: "1"    // 1 is Cloud project ID in AT-Internet CA manager
+        }       
+    },
+    US: {
+        config: {
+            level2: "56"    // 1 is Cloud project ID in AT-Internet US manager
+        }       
     }
 });
