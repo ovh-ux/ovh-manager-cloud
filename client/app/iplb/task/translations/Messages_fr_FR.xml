@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="iplb_task_title">Tâches</translation>
+    <translation id="iplb_task_intro_text">Les tâches en cours pour votre IP Load Balancer sont automatiquement retirées de cette liste 48 h après avoir été complétées.</translation>
+
+    <translation id="iplb_task_list_col_creation_date">Date de création</translation>
+    <translation id="iplb_task_list_col_task">Tâche</translation>
+    <translation id="iplb_task_list_col_progress">Progression</translation>
+    <translation id="iplb_task_list_col_status">État</translation>
+    <translation id="iplb_task_list_col_action">Action</translation>
+
+    <translation id="iplb_task_preview_title">Aperçu de la tâche</translation>
+    <translation id="iplb_task_preview_creation_date">Date de création</translation>
+    <translation id="iplb_task_preview_task">Tâche</translation>
+    <translation id="iplb_task_preview_progress">Progression</translation>
+    <translation id="iplb_task_preview_status">État</translation>
+    <translation id="iplb_task_preview_id">Identifiant</translation>
+
+    <translation id="iplb_task_no_task">Aucune tâche en cours</translation>
+</translations>

@@ -1,0 +1,119 @@
+<section class="cui-flex cui-page__content">
+    <div class="cui-flex__col cui-flex__col_1">
+        <div class="cui-tile">
+            <h4 class="oui-header_4 cui-tile__title" data-translate="iplb_home_tile_status"></h4>
+            <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                <iplb-status-card
+                    data-type="ctrl.iplbStatus.data.status"
+                    data-title="ctrl.configuration.data.displayName"
+                    data-subtitle="ctrl.iplbStatus.data.statusText"
+                    data-loading="ctrl.iplbStatus.loading"
+                    data-actions="ctrl.IPLBActions"></iplb-status-card>
+                <iplb-status-card
+                    data-type="ctrl.frontendsStatus.data.status"
+                    data-title="'iplb_home_tile_status_frontends' | translate"
+                    data-subtitle="ctrl.frontendsStatus.data.statusText"
+                    data-loading="ctrl.frontendsStatus.loading"
+                    data-actions="ctrl.frontendsActions"></iplb-status-card>
+                <iplb-status-card
+                    data-type="ctrl.serverFarmsStatus.data.serverFarms.status"
+                    data-title="'iplb_home_tile_status_servers_farms' | translate"
+                    data-subtitle="ctrl.serverFarmsStatus.data.serverFarms.statusText"
+                    data-loading="ctrl.serverFarmsStatus.loading"
+                    data-actions="ctrl.farmsActions">
+                    <iplb-status-card
+                        data-type="ctrl.serverFarmsStatus.data.servers.status"
+                        data-title="'iplb_home_tile_status_servers' | translate"
+                        data-subtitle="ctrl.serverFarmsStatus.data.servers.statusText"
+                        data-loading="ctrl.serverFarmsStatus.loading"></iplb-status-card>
+                </iplb-status-card>
+            </div>
+        </div>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_usage' | translate">
+            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <div class="cui-tile">
+            <h4 class="oui-header_4 cui-tile__title">
+                <span data-translate="iplb_home_tile_graph"></span>
+                <cui-loader class="cui-tile__loader" data-ng-show="ctrl.loadingGraph"></cui-loader>
+            </h4>
+            <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                <label class="oui-select">
+                    <select class="oui-select__input"
+                        data-ng-options="metric as ctrl.getGraphTitle(metric) for metric in ctrl.metricsList"
+                        data-ng-model="ctrl.metric"
+                        data-ng-change="ctrl.loadGraph()"></select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </label>
+                <canvas id="line2" class="chart chart-line"
+                    data-ng-show="ctrl.data"
+                    data-chart-data="ctrl.data"
+                    data-chart-labels="ctrl.labels"
+                    data-chart-options="ctrl.options">
+                </canvas>
+                <div class="iplb-no-data"
+                    data-ng-hide="ctrl.data"
+                    data-translate="iplb_graph_no_data"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_infos' | translate"
+            data-loading="ctrl.information.loading">
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv4' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <cui-clipboard data-text="ctrl.information.data.ipV4"></cui-clipboard>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv6' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <cui-clipboard data-text="ctrl.information.data.ipV6"></cui-clipboard>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_infos_ip_failover' | translate"
+                data-description="ctrl.information.data.failoverIp.length"
+                data-actions="ctrl.actions.showFailoverIp">
+            </cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_infos_ip_outbound' | translate"
+                data-description="ctrl.information.data.natIp.length"
+                data-actions="ctrl.actions.showNatIp"></cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile data-title="'iplb_home_tile_configuration' | translate"
+            data-loading="ctrl.configuration.loading">
+            <cui-tile-item data-term="'iplb_home_tile_configuration_name' | translate"
+                data-description="ctrl.configuration.data.displayName"
+                data-actions="ctrl.actions.changeName"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_max' | translate" data-description="'PlaceHolder'"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_alert' | translate" data-description="'PlaceHolder'"></cui-tile-item>
+            <cui-tile-item data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
+                data-description="ctrl.configuration.data.sslConfiguration.displayName"
+                data-actions="ctrl.actions.changeCipher"></cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'iplb_home_tile_configuration_quota_datacenter' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
+                </cui-tile-definitions>
+            </cui-tile-item>
+        </cui-tile>
+    </div>
+    <div class="cui-flex__col cui-flex__col_1">
+        <cui-tile-subscription data-loading="ctrl.subscription.loading"
+            data-subscription-info="ctrl.subscription.data"
+            data-offer-actions="ctrl.actions.changeOffer"
+            data-autorenew-actions="ctrl.actions.manageAutorenew"
+            data-contact-actions="ctrl.actions.manageContact"></cui-tile-subscription>
+    </div>
+</section>

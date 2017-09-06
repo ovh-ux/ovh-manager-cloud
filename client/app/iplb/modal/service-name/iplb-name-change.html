@@ -1,0 +1,31 @@
+<cui-modal>
+    <form id="IplbNameChangeForm">  
+        <cui-modal-header data-on-dismiss="IpLoadBalancerNameChangeCtrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'iplb_modal_name_change_title' | translate">
+            <cui-loader data-ng-if="IpLoadBalancerNameChangeCtrl.isModalLoading()"></cui-loader>
+            <div data-ng-if="!IpLoadBalancerNameChangeCtrl.isModalLoading()">
+                <cui-modal-text data-text="'iplb_modal_name_change_service_name_label' | translate"></cui-modal-text>
+                <cui-modal-text data-text="IpLoadBalancerNameChangeCtrl.serviceName"></cui-modal-text>
+
+                <div class="oui-input-formfield">
+                    <input
+                        type="text"
+                        maxlength="{{ IpLoadBalancerNameChangeCtrl.model.displayName.maxlength }}"
+                        id="newDisplayName"
+                        name="newDisplayName"
+                        class="oui-input"
+                        data-ng-model="IpLoadBalancerNameChangeCtrl.model.displayName.value"
+                        required
+                        novalidate />
+                    <label for="newDisplayName" class="oui-label" data-translate="iplb_modal_name_change_display_name_label"></label>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerNameChangeCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_edit' | translate" 
+                data-on-click="IpLoadBalancerNameChangeCtrl.confirm()"
+                data-disabled="IplbNameChangeForm.$invalid || IpLoadBalancerNameChangeCtrl.isModalLoading()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

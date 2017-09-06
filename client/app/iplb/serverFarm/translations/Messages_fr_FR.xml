@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_farm_title">Fermes de serveurs</translation>
+   <translation id="iplb_farm_intro_text">La ferme de serveurs est la partie de votre IP Load Balancer qui sert à répartir le trafic sur les serveurs.</translation>
+
+   <translation id="iplb_farm_add">Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_farm_add_server">Ajouter un serveur</translation>
+
+   <translation id="iplb_farm_server_status_see">Voir le statut</translation>
+
+   <translation id="iplb_farm_list_accordion_title">Ferme {{farmId}}</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_single">{{serverNumber}} serveur</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_many">{{serverNumber}} serveurs</translation>
+
+   <translation id="iplb_farm_add_error">Une erreur est survenue lors de l'ajout de la ferme de serveurs : {{message}}</translation>
+   <translation id="iplb_farm_add_success">La ferme de serveurs a été créée avec succès.</translation>
+   <translation id="iplb_farm_update_error">Une erreur est survenue lors de la modification de la ferme de serveurs : {{message}}</translation>
+   <translation id="iplb_farm_update_success">La ferme de serveurs a été modifiée avec succès.</translation>
+
+   <translation id="iplb_farm_server_list_col_server">Serveur</translation>
+   <translation id="iplb_farm_server_list_col_ipv4">IPv4</translation>
+   <translation id="iplb_farm_server_list_col_active">Active</translation>
+   <translation id="iplb_farm_server_list_col_status">Status</translation>
+   <translation id="iplb_farm_server_list_empty">Aucun serveur</translation>
+
+   <translation id="iplb_farm_protocol_http">HTTP</translation>
+   <translation id="iplb_farm_protocol_https">HTTPS</translation>
+   <translation id="iplb_farm_protocol_tcp">TCP</translation>
+   <translation id="iplb_farm_protocol_tls">TCP SSL (TLS)</translation>
+   <translation id="iplb_farm_protocol_udp">UDP</translation>
+
+   <translation id="iplb_farm_balance_first">First</translation>
+   <translation id="iplb_farm_balance_leastconn">Last</translation>
+   <translation id="iplb_farm_balance_roundrobin">Round-robin</translation>
+   <translation id="iplb_farm_balance_source">Source</translation>
+   <translation id="iplb_farm_balance_uri">URI</translation>
+
+   <translation id="iplb_farm_stickiness_none">Aucun</translation>
+   <translation id="iplb_farm_stickiness_cookie">Cookie</translation>
+   <translation id="iplb_farm_stickiness_sourceIp">Source IP</translation>
+
+   <translation id="iplb_farm_add_title">Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_farm_update_title">Edition de la ferme de serveurs {{farmId}}</translation>
+   <translation id="iplb_farm_edit_name">Nom (facultatif)</translation>
+   <translation id="iplb_farm_edit_protocol">Protocole (non modifiable après la création)</translation>
+   <translation id="iplb_farm_edit_port">Port</translation>
+   <translation id="iplb_farm_edit_port_tip">1 à {{portMax}}</translation>
+   <translation id="iplb_farm_edit_datacenter">Datacentre</translation>
+   <translation id="iplb_farm_edit_advanced_options">Paramètres avancés</translation>
+   <translation id="iplb_farm_edit_advanced_options_info">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
+   <translation id="iplb_farm_edit_advanced_options_show">Afficher</translation>
+   <translation id="iplb_farm_edit_balance">Mode de répartition</translation>
+   <translation id="iplb_farm_edit_stickiness">Suivi de session</translation>
+   <translation id="iplb_farm_edit_probe">Sonde de disponibilité</translation>
+   <translation id="iplb_farm_edit_probe_title">Paramètres de la sonde</translation>
+   <translation id="iplb_farm_edit_probe_url">URL</translation>
+   <translation id="iplb_farm_edit_probe_port">Port</translation>
+   <translation id="iplb_farm_edit_probe_method">Méthode</translation>
+   <translation id="iplb_farm_edit_probe_method_">-</translation>
+   <translation id="iplb_farm_edit_probe_method_GET">GET</translation>
+   <translation id="iplb_farm_edit_probe_method_HEAD">HEAD</translation>
+   <translation id="iplb_farm_edit_probe_method_OPTIONS">OPTIONS</translation>
+   <translation id="iplb_farm_edit_probe_match">Match</translation>
+   <translation id="iplb_farm_edit_probe_match_">-</translation>
+   <translation id="iplb_farm_edit_probe_match_default">Default</translation>
+   <translation id="iplb_farm_edit_probe_match_status">Status</translation>
+   <translation id="iplb_farm_edit_probe_match_contains">Contains</translation>
+   <translation id="iplb_farm_edit_probe_match_matches">Matches</translation>
+   <translation id="iplb_farm_edit_probe_pattern">Pattern</translation>
+   <translation id="iplb_farm_edit_probe_interval">Interval</translation>
+   <translation id="iplb_farm_edit_probe_type_">Aucune</translation>
+   <translation id="iplb_farm_edit_probe_type_http">HTTP</translation>
+   <translation id="iplb_farm_edit_probe_type_mysql">MySQL</translation>
+   <translation id="iplb_farm_edit_probe_type_oco">OCO</translation>
+   <translation id="iplb_farm_edit_probe_type_pgsql">pgSQL</translation>
+   <translation id="iplb_farm_edit_probe_type_smtp">SMTP</translation>
+   <translation id="iplb_farm_edit_probe_type_tcp">TCP</translation>
+
+   <translation id="iplb_farm_edit_probe_button">Paramètres de la sonde</translation>
+
+   <translation id="iplb_farm_edit_cancel">Annuler</translation>
+   <translation id="iplb_farm_add_confirm">Ajouter</translation>
+   <translation id="iplb_farm_update_confirm">Mettre à jour</translation>
+
+   <translation id="iplb_farm_preview_title">Aperçu de la ferme de serveurs</translation>
+   <translation id="iplb_farm_preview_name">Nom</translation>
+   <translation id="iplb_farm_preview_protocol">Protocole</translation>
+   <translation id="iplb_farm_preview_port">Port</translation>
+   <translation id="iplb_farm_preview_datacenter">Datacentre</translation>
+   <translation id="iplb_farm_preview_balance">Mode de répartition</translation>
+   <translation id="iplb_farm_preview_stickiness">Suivi de session</translation>
+   <translation id="iplb_farm_preview_probe">Sonde</translation>
+   <translation id="iplb_farm_preview_probe_none">Aucune</translation>
+   <translation id="iplb_farm_preview_id">Identifiant</translation>
+   <translation id="iplb_farm_preview_probe_url">URL</translation>
+   <translation id="iplb_farm_preview_probe_port">Port</translation>
+   <translation id="iplb_farm_preview_probe_method">Méthode</translation>
+   <translation id="iplb_farm_preview_probe_match">Match</translation>
+   <translation id="iplb_farm_preview_probe_pattern">Pattern</translation>
+   <translation id="iplb_farm_preview_probe_interval">Interval</translation>
+
+   <translation id="iplb_farm_delete_title">Supprimer la ferme</translation>
+   <translation id="iplb_farm_delete_question">Êtes-vous sûr de vouloir supprimer la ferme {{farm}} ?</translation>
+   <translation id="iplb_farm_delete_error">Une erreur est survenue lors de la suppression de la ferme : {{message}}</translation>
+   <translation id="iplb_farm_delete_success">La ferme a été supprimée avec succès.</translation>
+</translations>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="iplb_ssl_certificate_title">Certificats SSL</translation>
+    <translation id="iplb_ssl_certificate_intro_text">Les certificats configurés sont automatiquement disponible pour l’ensemble des frontends sur lesquels l’options SSL est activée.</translation>
+
+    <translation id="iplb_ssl_certificate_add">Ajouter un certificat SSL</translation>
+
+    <translation id="iplb_ssl_certificate">Certificat</translation>
+    <translation id="iplb_ssl_subject">Sujet</translation>
+    <translation id="iplb_ssl_type">Type</translation>
+    <translation id="iplb_ssl_action">Action</translation>
+    <translation id="iplb_ssl_no_certificate">Aucun certificat</translation>
+
+    <translation id="iplb_ssl_see">Voir l'aperçu</translation>
+    <translation id="iplb_ssl_update">Modifier</translation>
+    <translation id="iplb_ssl_delete">Supprimer</translation>
+
+    <translation id="iplb_ssl_list_error">Erreur lors du chargement de la liste des certificats.</translation>
+
+    <translation id="iplb_ssl_add_title">Ajouter un certificat SSL</translation>
+    <translation id="iplb_ssl_order_title">Commander un certificat SSL</translation>
+    <translation id="iplb_ssl_add_confirm">Ajouter</translation>
+    <translation id="iplb_ssl_add_cancel">Annuler</translation>
+    <translation id="iplb_ssl_add_success">Le certificat SSL a été créé avec succès.</translation>
+    <translation id="iplb_ssl_add_error">Une erreur est survenue lors de la création du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_edit_name">Nom (facultatif)</translation>
+    <translation id="iplb_ssl_edit_private_key">Clé privée</translation>
+    <translation id="iplb_ssl_edit_certificate">Certificat</translation>
+    <translation id="iplb_ssl_edit_chain">Chaine (facultatif)</translation>
+
+    <translation id="iplb_ssl_update_title">Modifier un certificat SSL</translation>
+    <translation id="iplb_ssl_update_confirm">Modifier</translation>
+    <translation id="iplb_ssl_update_cancel">Annuler</translation>
+    <translation id="iplb_ssl_update_nom">Nom</translation>
+    <translation id="iplb_ssl_update_success">Le certificat SSL a été modifié avec succès.</translation>
+    <translation id="iplb_ssl_update_error">Une erreur est survenue lors de la modification du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_preview_title">Aperçu du certificat SSL</translation>
+    <translation id="iplb_ssl_preview_name">Nom</translation>
+    <translation id="iplb_ssl_preview_serial">Numéro de séquence</translation>
+    <translation id="iplb_ssl_preview_subject">Sujet</translation>
+    <translation id="iplb_ssl_preview_fingerprint">Empreinte</translation>
+    <translation id="iplb_ssl_preview_type">Type</translation>
+    <translation id="iplb_ssl_preview_id">Identifiant</translation>
+
+    <translation id="iplb_ssl_delete_title">Supprimer un certificat</translation>
+    <translation id="iplb_ssl_delete_question">Êtes-vous sûr de vouloir supprimer le certificat {{name}} ?</translation>
+    <translation id="iplb_ssl_delete_button">Supprimer</translation>
+    <translation id="iplb_ssl_delete_success">Le certificat SSL a été supprimé avec succès.</translation>
+    <translation id="iplb_ssl_delete_error">Une erreur est survenue lors de la suppression du certificat SSL : {{message}}</translation>
+
+    <translation id="iplb_ssl_order_name">Nom (facultatif)</translation>
+    <translation id="iplb_ssl_order_type">Type de certificat</translation>
+    <translation id="iplb_ssl_order_type_free">Gratuit</translation>
+    <translation id="iplb_ssl_order_type_dv">Comodo DV</translation>
+    <translation id="iplb_ssl_order_type_ev">Comodo EV</translation>
+    <translation id="iplb_ssl_order_type_free">Gratuit</translation>
+    <translation id="iplb_ssl_order_fqdn">Fully Qualified Domain Name (FQDN)</translation>
+    <translation id="iplb_ssl_order_fqdn_tip">example.com, www.example.com</translation>
+    <translation id="iplb_ssl_order_contact">Contact</translation>
+    <translation id="iplb_ssl_order_email">Adresse électronique</translation>
+    <translation id="iplb_ssl_order_business_category">Categorie d'organisation</translation>
+    <translation id="iplb_ssl_order_country">Pays</translation>
+    <translation id="iplb_ssl_order_state_or_province">Etat ou province</translation>
+    <translation id="iplb_ssl_order_incorporation_date">Date d'incorporation</translation>
+    <translation id="iplb_ssl_order_organisation_name">Nom de l'organisation</translation>
+    <translation id="iplb_ssl_order_unit_name">Nom de l'unité organisationnelle</translation>
+    <translation id="iplb_ssl_order_address">Adresse</translation>
+    <translation id="iplb_ssl_order_postal_code">Code postal</translation>
+    <translation id="iplb_ssl_order_city">Ville</translation>
+    <translation id="iplb_ssl_order_joi">Juridiction d'incorporation</translation>
+
+    <translation id="iplb_ssl_order_ok">Commander</translation>
+    <translation id="iplb_ssl_order_cancel">Annuler</translation>
+</translations>
