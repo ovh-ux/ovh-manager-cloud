@@ -22,6 +22,7 @@
             this.show = false;
             this.hideMenu = () => {
                 this.$rootScope.$broadcast("ouiDropdownMenu.hide");
+                this.$scope.$apply();
             };
 
             angular.element(this.$window.document).on("click", this.hideMenu);
@@ -56,6 +57,13 @@
             } else {
                 this.unregisterListeners();
                 lastDropdownMenuController = null;
+            }
+        }
+
+        keydown ($event) {
+            if ($event.keyCode === 32) {
+                $event.preventDefault();
+                this.toggle($event);
             }
         }
     }

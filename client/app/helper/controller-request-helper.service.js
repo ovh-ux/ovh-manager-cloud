@@ -36,7 +36,6 @@ class ControllerRequestHelper {
             if (_.isArray(initialData.data) || _.keys(initialData.data).length === 0) {
                 loader.loading = true;
             }
-
             return config.loaderFunction()
                 .then(response => {
                     loader.data = response.data || response;
