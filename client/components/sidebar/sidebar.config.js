@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, OvhApiMe, OvhApiProducts,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, OvhApiMe, OvhApiProducts,
                  FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -16,7 +16,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             iaas: SidebarService.getServices(IaasSectionSidebarService.section, products),
             paas: SidebarService.getServices(PaasSectionSidebarService.section, products),
             metrics: SidebarService.getServices(MetricsSectionSidebarService.section, products),
-            vracks: SidebarService.getServices(VrackSectionSidebarService.section, products)
+            vracks: SidebarService.getServices(VrackSectionSidebarService.section, products),
+            load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products)
         };
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
@@ -39,6 +40,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             target: "_parent"
         });
 
+        LoadBalancerSidebarService.fillSection(services.load_balancer);
         VrackSectionSidebarService.fillSection(services.vracks);
 
         if (FeatureAvailabilityService.hasFeature("DESKAAS", "sidebarMenu", locale)) {

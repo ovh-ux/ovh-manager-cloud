@@ -1,0 +1,32 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'iplb_task_preview_title' | translate">
+        <dl class="preview-list preview-list_no_margin">
+            <dt class="preview-list__term"
+                data-ng-bind="'iplb_task_preview_creation_date' | translate"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind="$ctrl.task.creationDate"></dd>
+            <dt class="preview-list__term"
+                data-ng-bind="'iplb_task_preview_task' | translate"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind="$ctrl.task.action"></dd>
+            <dt class="preview-list__term"
+                data-ng-bind="'iplb_task_preview_progress' | translate"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind="$ctrl.task.progress"></dd>
+            <dt class="preview-list__term"
+                data-ng-bind="'iplb_task_preview_status' | translate"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind="$ctrl.task.status"></dd>
+            <dt class="preview-list__term"
+                data-ng-bind="'iplb_task_preview_id' | translate"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind="$ctrl.task.id"></dd>
+        </dl>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-button data-text="'common_modal_ok' | translate"
+            data-on-click="$ctrl.dismiss()"
+            type="primary"></cui-button>
+    </cui-modal-footer>
+</cui-modal>

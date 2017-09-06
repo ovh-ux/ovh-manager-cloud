@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="iplb_home_tile_status">Statut</translation>
+    <translation id="iplb_home_tile_status_frontends">Frontends</translation>
+    <translation id="iplb_home_tile_status_servers_farms">Fermes de serveurs</translation>
+    <translation id="iplb_home_tile_status_servers">Serveurs</translation>
+
+    <translation id="iplb_home_tile_usage">Utilisation</translation>
+    <translation id="iplb_home_tile_graph">Graphiques</translation>
+
+    <translation id="iplb_home_tile_infos">Informations</translation>
+    <translation id="iplb_home_tile_infos_ipv4">IPv4</translation>
+    <translation id="iplb_home_tile_infos_ipv6">IPv6</translation>
+    <translation id="iplb_home_tile_infos_ip_failover">IP Failover</translation>
+    <translation id="iplb_home_tile_infos_ip_outbound">IPv4 de sortie</translation>
+
+    <translation id="iplb_home_tile_configuration">Configuration</translation>
+    <translation id="iplb_home_tile_configuration_name">Nom</translation>
+    <translation id="iplb_home_tile_configuration_quota_max">Quota par mois</translation>
+    <translation id="iplb_home_tile_configuration_quota_alert">Seuil de l'alerte</translation>
+    <translation id="iplb_home_tile_configuration_quota_cipher">Ciphers</translation>
+    <translation id="iplb_home_tile_configuration_quota_datacenter">Datacentre</translation>
+</translations>

@@ -1,0 +1,24 @@
+<cui-modal>
+    <form id="IplbCipherChangeForm">  
+        <cui-modal-header data-on-dismiss="IpLoadBalancerCipherChangeCtrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'iplb_modal_cipher_change_title' | translate">
+            <cui-loader data-ng-if="IpLoadBalancerCipherChangeCtrl.isModalLoading()"></cui-loader>
+            <div data-ng-if="!IpLoadBalancerCipherChangeCtrl.isModalLoading()">
+                <oui-radio-group data-value="IpLoadBalancerCipherChangeCtrl.model.cipherType.value" 
+                    data-on-change="IpLoadBalancerCipherChangeCtrl.model.cipherType.value = $event.value">
+                    <oui-radio data-label="{{ cipherType.displayName }}" 
+                        data-value="{{ cipherType.type }}" 
+                        data-ng-repeat="cipherType in IpLoadBalancerCipherChangeCtrl.cipherTypes.data track by $index">
+                        <oui-radio-description data-ng-bind="cipherType.description"></oui-radio-description>
+                    </oui-radio>
+                </oui-radio-group>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerCipherChangeCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_edit' | translate" 
+                data-on-click="IpLoadBalancerCipherChangeCtrl.confirm()"
+                data-disabled="IplbCipherChangeForm.$invalid || IpLoadBalancerCipherChangeCtrl.isModalLoading() || !IpLoadBalancerCipherChangeCtrl.model.cipherType.value"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

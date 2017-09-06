@@ -1,0 +1,23 @@
+<cui-page-header data-title-text="ctrl.menuItem.title || ctrl.serviceName" 
+                 data-subtitle-text="ctrl.menuItem.title === ctrl.serviceName ? '' : ctrl.serviceName">
+    <cui-tabs>
+        <cui-tab data-text="'iplb_tab_home' | translate"
+                data-state="network.iplb.detail.home" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'iplb_tab_frontends' | translate"
+                data-state="network.iplb.detail.frontends" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'iplb_tab_server_farm' | translate"
+                data-state="network.iplb.detail.server-farm" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'iplb_tab_ssl_certificate' | translate"
+                data-state="network.iplb.detail.ssl-certificate" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'iplb_tab_graph' | translate"
+                data-state="network.iplb.detail.graph" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'iplb_tab_task' | translate"
+                data-state="network.iplb.detail.task" 
+                data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+    </cui-tabs>
+</cui-page-header>
