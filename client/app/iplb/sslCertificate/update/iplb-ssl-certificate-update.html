@@ -1,0 +1,16 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'iplb_ssl_update_title' | translate">
+        <div class="oui-input-formfield">
+            <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="IpLoadBalancerSslCertificateUpdateCtrl.displayName" />
+            <label for="displayName" class="oui-label" data-translate="iplb_ssl_edit_name"></label>
+        </div>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-button data-text="'iplb_ssl_update_cancel' | translate"
+            data-on-click="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"
+            type="secondary"></cui-button>
+        <cui-submit-button data-text="'iplb_ssl_update_confirm' | translate"
+            data-on-click="IpLoadBalancerSslCertificateUpdateCtrl.update()"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

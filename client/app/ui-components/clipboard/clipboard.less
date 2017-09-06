@@ -19,5 +19,14 @@
 
 		border: 1px solid @clipboard-border-color;
 		border-radius: 5px;
-	}
+        &:not(:last-child) {
+            margin-bottom: rem-calc(10);
+        }
+    }
+
+    &:not(:last-child) {
+        .cui-clipboard__input {
+            margin-bottom: rem-calc(10);
+        }
+    }
 }

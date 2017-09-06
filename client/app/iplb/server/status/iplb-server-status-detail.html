@@ -1,0 +1,40 @@
+<cui-modal class="iplb">
+    <cui-modal-header data-on-dismiss="IpLoadBalancerServerStatusDetailCtrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'iplb_server_status_title' | translate">
+        <div class="iplb-no-data"
+            data-ng-hide="IpLoadBalancerServerStatusDetailCtrl.server.serverState.length"
+            data-translate="iplb_server_status_no_information"></div>
+        <h5 class="oui-header_5"
+            data-ng-repeat-start="serverState in IpLoadBalancerServerStatusDetailCtrl.server.serverState track by $index"
+            data-translate="iplb_server_status_instance"
+            data-translate-values="{ instanceId: serverState.instanceId }"></h5>
+        <dl class="preview-list preview-list_no-margin"
+            data-ng-repeat-end>
+            <dt class="preview-list__term"
+                data-translate="iplb_server_status_status"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: serverState.status || '-'"></dd>
+            <dt class="preview-list__term"
+                data-translate="iplb_server_status_check_code"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: serverState.checkCode || '-'"></dd>
+            <dt class="preview-list__term"
+                data-translate="iplb_server_status_check_status"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: serverState.checkStatus || '-'"></dd>
+            <dt class="preview-list__term"
+                data-translate="iplb_server_status_last_check_content"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: serverState.lastCheckContent || '-'"></dd>
+            <dt class="preview-list__term"
+                data-translate="iplb_server_status_check_time"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: serverState.checkTime | date:'short' || '-'"></dd>
+        </dl>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-button data-text="'common_modal_ok' | translate"
+            data-on-click="IpLoadBalancerServerStatusDetailCtrl.dismiss()"
+            type="primary"></cui-button>
+    </cui-modal-footer>
+</cui-modal>
