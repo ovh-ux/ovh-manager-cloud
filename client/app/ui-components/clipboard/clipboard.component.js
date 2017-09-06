@@ -2,13 +2,18 @@
     "use strict";
 
     class CuiClipboardController {
-        constructor ($timeout) {
+        constructor ($element, $timeout) {
+            this.$element = $element;
             this.$timeout = $timeout;
 
             this.options = {
                 action: "copy",
                 status: "initial"
             };
+        }
+
+        $postLink () {
+            this.$element.addClass("cui-clipboard");
         }
 
         onTextFocus ($event) {
@@ -43,7 +48,9 @@
     angular.module("managerApp")
         .component("cuiClipboard", {
             template: `
-                <div class="cui-clipboard">
+                <div>
+                    <label class="cui-clipboard__label"
+                        data-ng-bind="$ctrl.label"></label>
                     <input class="cui-clipboard__input"
                         type="text"
                         data-ng-focus="$ctrl.onTextFocus($event)"
@@ -56,13 +63,14 @@
                 `,
             controller: CuiClipboardController,
             bindings: {
-                text: "<"
+                text: "<",
+                label: "<?"
             }
         })
         .component("cuiClipboardList", {
             template: `
                 <div class="cui-clipboard-list">
-                    <div class="cui-clipboard-list__item">   
+                    <div class="cui-clipboard-list__item">
                         <ng-transclude></ng-transclude>
                     </div>
                 </div>
