@@ -90,7 +90,7 @@
         }
 
         displayUsage (value, total) {
-            if (!value || !total) {
+            if (!value && !total) {
                 return "0";
             }
             return `${value}/${total}`;
