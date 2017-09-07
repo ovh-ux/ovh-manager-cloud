@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaPoolListCtrl", function ($q, $stateParams, $uibModal, $translate, DedicatedCeph, Toast) {
+  .controller("CdaPoolListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, Toast) {
       "use strict";
 
       var self = this;
@@ -31,9 +31,9 @@ angular.module("managerApp")
       }
 
       function initPools () {
-          DedicatedCeph.Pool().Lexi().resetAllCache();
+          OvhApiDedicatedCeph.Pool().Lexi().resetAllCache();
 
-          return DedicatedCeph.Pool().Lexi().query({
+          return OvhApiDedicatedCeph.Pool().Lexi().query({
               serviceName: $stateParams.serviceName
           }).$promise.then(function (pools) {
               self.datas.pools = pools;
