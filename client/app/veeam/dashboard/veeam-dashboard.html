@@ -1,5 +1,5 @@
-<div class="veeam__dashboard">
-    <div class="cui-tile">
+<section class="cui-flex cui-page__content">
+    <div class="cui-tile cui-flex__col cui-flex__col_1">
         <h4 class="oui-header_4 cui-tile__title" data-translate="veeam_tiles_shortcut_title"></h4>
         <ul class="cui-tile__body cui-tile__body_list">
             <li class="cui-tile__item cui-tile__item_button">
@@ -20,110 +20,84 @@
             </li>
         </ul>
     </div>
-
-    <cui-tile class="cui-tile" data-title="'veeam_tiles_configuration_title' | translate" data-loading="VeeamDashboardCtrl.configurationInfos.loading">
-        <div class="cui-tile__body">
-            <div class="cui-tile__item">
-                <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_configuration_label_name"></dt>
-                    <dd class="cui-tile__description" data-ng-bind=":: VeeamDashboardCtrl.configurationInfos.data.serviceName"></dd>
-                </dl>
-            </div>
-            <div class="cui-tile__item oui-dropdown-menu-container">
-                <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_configuration_label_offer"></dt>
-                    <dd class="cui-tile__description" data-ng-bind=":: VeeamDashboardCtrl.configurationInfos.data.productOffer"></dd>
-                </dl>
-                <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.upgradeOffer.available">
-                    <cui-dropdown-menu-button>
-                        <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                    </cui-dropdown-menu-button>
-                    <cui-dropdown-menu-body>
-                        <div class="oui-action-menu">
-                          <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-translate="veeam_update_offer_change"
-                                data-ng-click="VeeamDashboardCtrl.changeOffer()"></button>
-                          </div>
+    <cui-tile class="cui-flex__col cui-flex__col_1" data-title="'veeam_tiles_configuration_title' | translate" data-loading="VeeamDashboardCtrl.configurationInfos.loading">
+        <cui-tile-item data-term="'veeam_tiles_configuration_label_name' | translate"
+            data-description=":: VeeamDashboardCtrl.configurationInfos.data.serviceName">
+        </cui-tile-item>
+        <cui-tile-item class="cui-dropdown-menu-container" data-term="'veeam_tiles_configuration_label_offer' | translate"
+            data-description=":: VeeamDashboardCtrl.configurationInfos.data.productOffer">
+            <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.upgradeOffer.available">
+                <cui-dropdown-menu-button>
+                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                </cui-dropdown-menu-button>
+                <cui-dropdown-menu-body>
+                    <div class="oui-action-menu">
+                        <div class="oui-action-menu__item oui-action-menu-item">
+                        <div class="oui-action-menu-item__icon"></div>
+                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                            type="button"
+                            data-translate="veeam_update_offer_change"
+                            data-ng-click="VeeamDashboardCtrl.changeOffer()"></button>
                         </div>
-                    </cui-dropdown-menu-body>
-                </cui-dropdown-menu>
-            </div>
-            <div class="cui-tile__item">
-                 <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_configuration_label_vm_count"></dt>
-                    <dd class="cui-tile__description" data-ng-bind="VeeamDashboardCtrl.configurationInfos.data.vmCount"></dd>
-                </dl>
-            </div>
-            <div class="cui-tile__item oui-dropdown-menu-container">
-                <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_configuration_label_stockage_number"></dt>
-                    <dd class="cui-tile__description" data-ng-bind="VeeamDashboardCtrl.configurationInfos.data.backupCount"></dd>
-                </dl>
-                <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.addStorage.available">
-                    <cui-dropdown-menu-button>
-                        <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                    </cui-dropdown-menu-button>
-                    <cui-dropdown-menu-body>
-                        <div class="oui-action-menu">
-                          <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-translate="veeam_update_storage_add"
-                                data-ng-click="VeeamDashboardCtrl.addStorage()"></button>
-                          </div>
+                    </div>
+                </cui-dropdown-menu-body>
+            </cui-dropdown-menu>
+        </cui-tile-item>
+        <cui-tile-item data-term="'veeam_tiles_configuration_label_vm_count' | translate"
+            data-description=":: VeeamDashboardCtrl.configurationInfos.data.vmCount">
+        </cui-tile-item>
+        <cui-tile-item class="cui-dropdown-menu-container" data-term="'veeam_tiles_configuration_label_stockage_number' | translate"
+            data-description=":: VeeamDashboardCtrl.configurationInfos.data.backupCount">
+            <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.addStorage.available">
+                <cui-dropdown-menu-button>
+                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                </cui-dropdown-menu-button>
+                <cui-dropdown-menu-body>
+                    <div class="oui-action-menu">
+                        <div class="oui-action-menu__item oui-action-menu-item">
+                        <div class="oui-action-menu-item__icon"></div>
+                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                            type="button"
+                            data-translate="veeam_update_storage_add"
+                            data-ng-click="VeeamDashboardCtrl.addStorage()"></button>
                         </div>
-                    </cui-dropdown-menu-body>
-                </cui-dropdown-menu>
-            </div>
-            <div class="cui-tile__item">
-                 <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_configuration_label_datacenter"></dt>
-                    <dd class="cui-tile__description">
-                        <i class="flag-icon {{ VeeamDashboardCtrl.configurationInfos.data.location.icon }} flag flag__icon-md"></i>
-                        <span class="cui-tile__description_vertical-sub">
-                            <span data-ng-bind=":: VeeamDashboardCtrl.configurationInfos.data.location.microRegion.text"></span> -
-                            <small data-ng-bind=":: VeeamDashboardCtrl.configurationInfos.data.location.country"></small>
-                        </span>
-                    </dd>
-                </dl>
-            </div>
-        </div>
+                    </div>
+                </cui-dropdown-menu-body>
+            </cui-dropdown-menu>
+        </cui-tile-item>
+        <cui-tile-item>
+            <cui-tile-definitions>
+                <cui-tile-definition-term data-term="'veeam_tiles_configuration_label_datacenter' | translate"></cui-tile-definition-term>
+                <cui-tile-definition-description-region data-regions="VeeamDashboardCtrl.configurationInfos.data.location.macroRegion.code"></cui-tile-definition-description-region>
+            </cui-tile-definitions>
+        </cui-tile-item>
     </cui-tile>
 
-    <cui-tile class="cui-tile" data-title="'veeam_tiles_subscription_title' | translate" data-loading="VeeamDashboardCtrl.subscriptionInfos.loading">
-        <div class="cui-tile__body">
-            <div class="cui-tile__item oui-dropdown-menu-container">
-                <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_subscription_label_renewal_date"></dt>
-                    <dd class="cui-tile__description" data-ng-bind=":: VeeamDashboardCtrl.subscriptionInfos.data.expiration | momentFormat:'LL'"></dd>
-                </dl>
-                <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.manageBilling.available">
-                    <cui-dropdown-menu-button>
-                        <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                    </cui-dropdown-menu-button>
-                    <cui-dropdown-menu-body>
-                        <div class="oui-action-menu">
-                            <div class="oui-action-menu__item oui-action-menu-item">
-                                <div class="oui-action-menu-item__icon"></div>
-                                <a class="oui-button oui-button_link oui-action-menu-item__label"
-                                    href="{{ VeeamDashboardCtrl.urls.renew }}">
-                                    <span data-translate="veeam_tiles_subscription_label_renewal_renew_link"></span>
-                                </a>
-                            </div>
+    <cui-tile class="cui-flex__col cui-flex__col_1" data-title="'veeam_tiles_subscription_title' | translate" data-loading="VeeamDashboardCtrl.subscriptionInfos.loading">
+        <cui-tile-item class="cui-dropdown-menu-container"
+            data-term="'veeam_tiles_subscription_label_renewal_date' | translate"
+            data-description=":: VeeamDashboardCtrl.subscriptionInfos.data.expiration | momentFormat:'LL'">
+            <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.manageBilling.available">
+                <cui-dropdown-menu-button>
+                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                </cui-dropdown-menu-button>
+                <cui-dropdown-menu-body>
+                    <div class="oui-action-menu">
+                        <div class="oui-action-menu__item oui-action-menu-item">
+                            <div class="oui-action-menu-item__icon"></div>
+                            <a class="oui-button oui-button_link oui-action-menu-item__label"
+                                href="{{ VeeamDashboardCtrl.urls.renew }}">
+                                <span data-translate="veeam_tiles_subscription_label_renewal_renew_link"></span>
+                            </a>
                         </div>
-                    </cui-dropdown-menu-body>
-                </cui-dropdown-menu>
-            </div>
-            <div class="cui-tile__item">
-                <dl class="cui-tile__definition">
-                    <dt class="cui-tile__term" data-translate="veeam_tiles_subscription_label_creation_date"></dt>
-                    <dd class="cui-tile__description" data-ng-bind=":: VeeamDashboardCtrl.subscriptionInfos.data.creation | momentFormat:'LL'"></dd>
-                </dl>
-            </div>
-        </div>
+                    </div>
+                </cui-dropdown-menu-body>
+            </cui-dropdown-menu>
+
+        </cui-tile-item>
+        <cui-tile-item class="cui-dropdown-menu-container"
+            data-term="'veeam_tiles_subscription_label_creation_date' | translate"
+            data-description=":: VeeamDashboardCtrl.subscriptionInfos.data.creation | momentFormat:'LL'">
+        </cui-tile-item>
     </cui-tile>
-</div>
+</section>

@@ -18,7 +18,7 @@ class VpsSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: vps.serviceName,
                 title: vps.displayName || vps.serviceName,
-                icon: "vps",
+                icon: "ovh-font ovh-font-vps",
                 target: "_parent",
                 url: this.REDIRECT_URLS.vpsPage.replace("{vps}", vps.serviceName)
             }, section);
@@ -33,7 +33,7 @@ class VpsSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_vps"),
-            icon: "server2",
+            icon: "ovh-font ovh-font-server2",
             href: this.URLS.website_order.vps[this.locale],
             target: "_blank",
             external: true

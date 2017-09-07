@@ -13,7 +13,8 @@ angular.module("managerApp")
                         <button type="button"
                             class="cui-advanced-options__button oui-button oui-button_secondary"
                             data-ng-bind="$ctrl.buttonText"
-                            data-ng-click="$ctrl.expanded = true"></button>
+                            data-ng-click="$ctrl.expanded = true"
+                            aria-labelledby="{{$ctrl.title}}"></button>
                     </div>
                 </div>
                 <div class="cui-advanced-options__content"

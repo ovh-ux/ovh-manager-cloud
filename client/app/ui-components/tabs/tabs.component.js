@@ -1,7 +1,9 @@
 angular.module("managerApp")
     .component("cuiTabs", {
         template: `
-            <ul class="cui-tabs" data-ng-transclude></ul>
+            <ul class="cui-tabs"
+                role="menubar"
+                data-ng-transclude></ul>
         `,
         transclude: true
     })
@@ -22,6 +24,7 @@ angular.module("managerApp")
         transclude: true,
         template: `
             <li class="cui-tabs__tab"
+                role="menuitem"
                 data-ng-class="{ 'cui-tabs__tab_active': $ctrl.isActive() }">
                 <ng-transclude data-ng-if="!$ctrl.state"></ng-transclude>
                 <a data-ng-if="$ctrl.state"

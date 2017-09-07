@@ -10,7 +10,7 @@ class HousingSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: housing.serviceName,
                 title: housing.displayName || housing.serviceName,
-                icon: "housing",
+                icon: "ovh-font ovh-font-housing",
                 target: "_parent",
                 url: this.REDIRECT_URLS.housing.replace("{housing}", housing.serviceName)
             }, section);

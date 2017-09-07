@@ -6,6 +6,9 @@
    <translation id="common_close" qtlid="4670">Uždaryti</translation>
 
    <translation id="common_cancel" qtlid="37863">Anuliuoti</translation>
+   <translation id="common_edit" qtlid="37875">Keisti</translation>
+   <translation id="common_consult" qtlid="339639">Tikrinti</translation>
+   <translation id="common_manage" qtlid="16301">Valdyti</translation>
    <translation id="common_apply" qtlid="41326">Taikyti</translation>
    <translation id="common_loading" qtlid="58256">Įkėlimas</translation>
    <translation id="common_refresh" qtlid="250030">Atnaujinti</translation>
@@ -459,10 +462,28 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Jūsų banko kortelė, naudojama pagal nutylėjimą, nustojo galioti. Norėdami ją atnaujinti, eikite į <a href="{{urlBillingSection}}">sąskaitų ir mokėjimų skiltį</a>.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Įvyko šios klaidos</translation>
+   <translation id="common_global_error" qtlid="433345">Klaida vykdant operaciją: {{message}}</translation>
+   <translation id="common_global_success" qtlid="433358">Operacija atlikta sėkmingai.</translation>
 
    <translation id="common_term_and_contracts" qtlid="404087">Sutarčių sąlygos</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Patvirtinu, kad sutarčių sąlygas perskaičiau, supratau, ir įsipareigoju jų laikytis.</translation>
-
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_login" qtlid="2174">Prisijungti</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Uždaryti</translation>
+
+   <translation id="common_tile_subscription" qtlid="28891">Abonementas</translation>
+   <translation id="common_tile_subscription_offer" qtlid="38217">Pasiūlymas</translation>
+   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis naujinimas</translation>
+   <translation id="common_tile_subscription_contact" qtlid="32206">Kontaktai</translation>
+   <translation id="common_tile_subscription_creation_date" qtlid="26419">Sukūrimo data</translation>
+
+   <translation id="common_preview_see" qtlid="433371">Peržiūrėti</translation>
+
+   <translation id="common_table_col_action" qtlid="56105">Veiksmas</translation>
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Rezultatai / 1 psl.</translation>
+   <translation id="common_pagination_page" qtlid="433397">puslapis</translation>
+   <translation id="common_pagination_of" qtlid="121615"></translation>
+   <translation id="common_pagination_results" qtlid="433410">rezultatai</translation>
+   <translation id="common_pagination_next" qtlid="433423">Kitas puslapis</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Ankstesnis puslapis</translation>
 </translations>
