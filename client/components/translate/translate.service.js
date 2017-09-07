@@ -3,16 +3,14 @@
  * @name managerApp.service:TranslateService
  * @description Manage translations
  */
-angular.module("managerApp")
-.provider("TranslateService", function (LANGUAGES) {
-    "use strict";
-
-    var self = this;
-    var localeRegex = /^([a-zA-Z]+)(?:[_-]([a-zA-Z]+))?$/;
-    var availableLangsKeys = _.map(LANGUAGES.available, "key");
-
-    // Current locale
-    var currentLanguage = LANGUAGES["default"];
+class TranslateServiceProvider {
+    constructor (LANGUAGES, TARGET) {
+        this.LANGUAGES = LANGUAGES;
+        this.TARGET = TARGET;
+        this.localeRegex = /^([a-zA-Z]+)(?:[_-]([a-zA-Z]+))?$/;
+        this.availableLangsKeys = _.map(this.LANGUAGES.available, "key");
+        this.currentLanguage = this.LANGUAGES.defaultLoc;
+    }
 
     /**
      * @ngdoc function
@@ -21,52 +19,29 @@ angular.module("managerApp")
      * @description Set current user locale (in localStorage)
      * @param  {String} locale - (optional) Force to set the gicen locale identifier
      */
-    this.setUserLocale = function (locale) {
-
+    setUserLocale (locale) {
         if (!locale) {
             if (localStorage["univers-selected-language"]) {
                 locale = localStorage["univers-selected-language"];
             } else if (navigator.language || navigator.userLanguage) {
                 locale = navigator.language || navigator.userLanguage;
             } else {
-                locale = LANGUAGES["default"];
+                locale = this.LANGUAGES.defaultLoc;
             }
         }
-
-        var splittedLocale = locale.match(localeRegex);
-
+        const splittedLocale = locale.match(this.localeRegex);
         if (splittedLocale) {
-
             // Format the value
-            locale = splittedLocale[1].toLowerCase() + "_" + (splittedLocale[2] ? splittedLocale[2] : splittedLocale[1]).toUpperCase();
-
-            // Check if language exist into the list
-            if (availableLangsKeys.indexOf(locale) === -1) {
-                // Not found: Try to find another country with same base language
-                var similarLanguage = _.find(availableLangsKeys, function (val) {
-                    return localeRegex.test(val) && val.match(localeRegex)[1] === splittedLocale[1];
-                });
-
-                if (similarLanguage) {
-                    // Found
-                    currentLanguage = similarLanguage;
-                } else {
-                    // Not found
-                    currentLanguage = currentLanguage || LANGUAGES["default"];
-                }
-            } else {
-                // Found
-                currentLanguage = locale;
-            }
-
+            const language = splittedLocale[1];
+            const country = splittedLocale[2] ? splittedLocale[2] : this.preferredCountry(language);
+            this.currentLanguage = this.findLanguage(language, country);
         } else {
             // Incorrect value
-            currentLanguage = currentLanguage || LANGUAGES["default"];
+            this.currentLanguage = this.currentLanguage || this.LANGUAGES.defaultLoc;
         }
-
         // Save it!
-        localStorage["univers-selected-language"] = currentLanguage;
-    };
+        localStorage["univers-selected-language"] = this.currentLanguage;
+    }
 
     /**
      * @ngdoc function
@@ -76,19 +51,45 @@ angular.module("managerApp")
      * @param  {Boolean} min - (optional) Return the base locale only
      * @return {String}      - Current locale
      */
-    this.getUserLocale = function (min) {
+    getUserLocale (min) {
         if (min) {
-            return currentLanguage.split("_")[0];
-        } else {
-            return currentLanguage;
+            return this.currentLanguage.split("_")[0];
         }
-    };
+        return this.currentLanguage;
+    }
 
-    this.$get = function () {
+
+    preferredCountry (language) {
+        if (_.indexOf(["FR", "EN"], language.toUpperCase() > -1)) {
+            const customLanguage = _.get(this.LANGUAGES.preferred, `${language}.${this.TARGET}`);
+            if (customLanguage) {
+                return customLanguage;
+            }
+        }
+        return language;
+    }
+
+    findLanguage (language, country) {
+        const locale = `${language.toLowerCase()}_${country.toUpperCase()}`;
+        if (this.availableLangsKeys.indexOf(locale) > -1) {
+            return locale;
+        }
+        // Not found: Try to find another country with same base language
+        const similarLanguage = _.find(this.availableLangsKeys, val => {
+            return this.localeRegex.test(val) && val.match(this.localeRegex)[1] === language;
+        });
+        if (similarLanguage) {
+            return similarLanguage;
+        }
+        // Not found
+        return this.LANGUAGES.defaultLoc;
+    }
+    $get () {
         return {
-            getUserLocale: self.getUserLocale,
-            setUserLocale: self.setUserLocale
+            getUserLocale: locale => this.getUserLocale(locale),
+            setUserLocale: min => this.setUserLocale(min)
         };
-    };
+    }
+}
 
-});
+angular.module("managerApp").provider("TranslateService", TranslateServiceProvider);
