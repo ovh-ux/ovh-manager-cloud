@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">Virtuali mašina (instance) {0} sukurta</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">SSH rakto pavadinimas</translation>
    <translation id="add_key_success" qtlid="243133">Pridėtas SSH raktas</translation>
-   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Sukurta saugykla</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Kuriant konteinerį įvyko klaida</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Toks SSH rakto pavadinimas jau yra </translation>
