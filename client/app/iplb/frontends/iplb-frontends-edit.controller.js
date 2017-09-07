@@ -129,7 +129,7 @@ class IpLoadBalancerFrontendsEditCtrl {
     $onInit () {
         this.frontend = {
             zone: 0,
-            dedicatedIpfo: 0,
+            dedicatedIpfo: [],
             defaultSslId: 0,
             defaultFarmId: 0,
             port: 80,

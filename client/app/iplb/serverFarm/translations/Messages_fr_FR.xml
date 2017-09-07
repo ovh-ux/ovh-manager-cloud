@@ -68,6 +68,7 @@
    <translation id="iplb_farm_edit_probe_match_matches">Matches</translation>
    <translation id="iplb_farm_edit_probe_pattern">Pattern</translation>
    <translation id="iplb_farm_edit_probe_interval">Interval</translation>
+   <translation id="iplb_farm_edit_probe_negate">Inverser</translation>
    <translation id="iplb_farm_edit_probe_type_">Aucune</translation>
    <translation id="iplb_farm_edit_probe_type_http">HTTP</translation>
    <translation id="iplb_farm_edit_probe_type_mysql">MySQL</translation>

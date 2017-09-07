@@ -40,7 +40,6 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.farm = {
             balance: "roundrobin",
             port: 80,
-            ssl: false,
             zone: 0,
             probe: {
                 type: ""
@@ -73,27 +72,22 @@ class IpLoadBalancerServerFarmEditCtrl {
             case "http":
                 this.type = "http";
                 this.farm.port = 80;
-                this.farm.ssl = false;
                 break;
             case "https":
                 this.type = "http";
                 this.farm.port = 443;
-                this.farm.ssl = true;
                 break;
             case "tcp":
                 this.type = "tcp";
                 delete this.farm.port;
-                this.farm.ssl = false;
                 break;
             case "udp":
                 this.type = "udp";
                 delete this.farm.port;
-                this.farm.ssl = false;
                 break;
             case "tls":
                 this.type = "tcp";
                 delete this.farm.port;
-                this.farm.ssl = true;
                 break;
             default: break;
         }
@@ -105,20 +99,9 @@ class IpLoadBalancerServerFarmEditCtrl {
      */
     parseFarm (farm) {
         this.type = farm.type;
-        switch (farm.type) {
-            case "http":
-                this.protocol = farm.ssl ? "https" : "http";
-                break;
-            case "tcp":
-                this.protocol = farm.ssl ? "tls" : "tcp";
-                break;
-            case "udp":
-                this.protocol = "udp";
-                break;
-            default: break;
-        }
+        this.protocol = farm.type;
         farm.port = parseInt(farm.port, 10);
-        if (!farm.probe) {
+        if (!farm.probe || (farm.probe && !farm.probe.type)) {
             farm.probe = { type: "" };
         }
         this.farm = angular.copy(farm);
