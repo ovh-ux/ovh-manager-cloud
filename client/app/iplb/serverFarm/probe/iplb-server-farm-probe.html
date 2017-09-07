@@ -39,7 +39,8 @@
             <label for="probe_match" class="oui-label" data-translate="iplb_farm_edit_probe_match"></label>
         </div>
 
-        <div class="oui-input-formfield">
+        <div class="oui-input-formfield"
+            data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match === 'default'">
             <input type="text" id="probe_pattern" name="probe_pattern" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.pattern" />
             <label for="probe_pattern" class="oui-label" data-translate="iplb_farm_edit_probe_pattern"></label>
         </div>
@@ -52,6 +53,25 @@
                 class="oui-input"
                 data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.interval" />
             <label for="probe_interval" class="oui-label" data-translate="iplb_farm_edit_probe_interval"></label>
+        </div>
+
+        <div class="oui-field">
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-checkbox">
+                        <input class="oui-checkbox__input" id="negate" name="negate" type="checkbox"
+                        data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.negate">
+                        <label class="oui-checkbox__label-container" for="negate">
+                            <span class="oui-checkbox__label" data-translate="iplb_farm_edit_probe_negate"></span>
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </cui-modal-body>
     <cui-modal-footer>
