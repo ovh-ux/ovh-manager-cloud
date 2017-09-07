@@ -7,7 +7,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
     var scope;
     var CloudProjectInstanceLexi;
     var CloudUserPref;
-    var CloudProjectIpLexi;
+    var OvhApiCloudProjectIpLexi;
     var $q;
     var CLOUD_PROJECT_OVERVIEW_THRESHOLD;
     var stateParams = {
@@ -23,7 +23,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
         $controller = _$controller_;
         scope = _$rootScope_.$new();
         $q = _$q_;
-        CloudProjectIpLexi = _CloudProjectIpLexi_;
+        OvhApiCloudProjectIpLexi = _CloudProjectIpLexi_;
         CloudUserPref = _CloudUserPref_;
         CLOUD_PROJECT_OVERVIEW_THRESHOLD = _CLOUD_PROJECT_OVERVIEW_THRESHOLD_;
         CloudProjectInstanceLexi = _CloudProjectInstanceLexi_;
@@ -61,7 +61,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                 beforeEach(function () {
                     var ipArray = [];
                     ipArray.length = CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips;
-                    spyOn(CloudProjectIpLexi, "query").and.returnValue({
+                    spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
                 });
@@ -78,7 +78,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                 beforeEach(function () {
                     var ipArray = [];
                     ipArray.length = CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips + 1;
-                    spyOn(CloudProjectIpLexi, "query").and.returnValue({
+                    spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
                 });
@@ -107,7 +107,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                 beforeEach(function () {
                     var ipArray = [];
                     ipArray.length = CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips + 1;
-                    spyOn(CloudProjectIpLexi, "query").and.returnValue({
+                    spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
                 });
@@ -136,7 +136,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                 beforeEach(function() {
                     var ipArray = [];
                     ipArray.length = CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips;
-                    spyOn(CloudProjectIpLexi, "query").and.returnValue({
+                    spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
                 });
@@ -153,7 +153,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                 beforeEach(function() {
                     var ipArray = [];
                     ipArray.length = CLOUD_PROJECT_OVERVIEW_THRESHOLD.ips + 1;
-                    spyOn(CloudProjectIpLexi, "query").and.returnValue({
+                    spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
                 });

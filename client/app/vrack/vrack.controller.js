@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("VrackCtrl",
-    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, Toast, SidebarMenu, Vrack, CloudProject, User, URLS, VrackService) {
+    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, Toast, SidebarMenu, Vrack, OvhApiCloudProject, User, URLS, VrackService) {
     "use strict";
     var self = this;
     var pollingInterval = 5000;

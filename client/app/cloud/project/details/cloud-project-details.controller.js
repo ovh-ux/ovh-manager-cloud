@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectDetailsCtrl",
-    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, CloudProject, Poller, UserOrder, Toast, $translate) {
+    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, OvhApiCloudProject, Poller, UserOrder, Toast, $translate) {
 
         var _self = this;
 
@@ -87,7 +87,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
         this.cancelProjectCreation = function () {
             _self.loaders.cancelCreation = true;
 
-            return CloudProject.Lexi().cancelCreation({
+            return OvhApiCloudProject.Lexi().cancelCreation({
                 serviceName: _self.projectId
             }, null).$promise.then(function (result) {
                 Toast.success($translate.instant("cpd_project_cancel_success"));
@@ -121,7 +121,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
          */
         function init () {
             _self.loaders.init = true;
-            return CloudProject.Lexi().get({
+            return OvhApiCloudProject.Lexi().get({
                 serviceName: _self.projectId
             }).$promise.then(function (project) {
                 return handleProjectDetails(project);

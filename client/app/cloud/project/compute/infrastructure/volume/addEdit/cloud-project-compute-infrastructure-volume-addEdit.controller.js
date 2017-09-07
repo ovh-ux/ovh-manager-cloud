@@ -1,7 +1,7 @@
 angular.module("managerApp")
   .controller("CloudProjectComputeInfrastructureVolumeAddEditCtrl",
-      function ($scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout, CloudProjectRegion, $translate,
-                Toast, $stateParams, CLOUD_VOLUME_TYPES, CloudProjectQuota, $location, atInternet, User, RegionService,
+      function ($scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout, OvhApiCloudProjectRegion, $translate,
+                Toast, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota, $location, atInternet, User, RegionService,
                 CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA) {
 
           "use strict";
@@ -92,7 +92,7 @@ angular.module("managerApp")
 
               // Load quota to get availableGygabytes and compute the maximum resize value
               self.loaders.quota = true;
-              CloudProjectQuota.Lexi().query({
+              OvhApiCloudProjectQuota.Lexi().query({
                   serviceName: serviceName
               }).$promise.then(function (quotas) {
                   if (quotas) {
@@ -202,7 +202,7 @@ angular.module("managerApp")
               if (!self.loaders.panelsData.regions) {
                   self.loaders.panelsData.regions = true;
 
-                  CloudProjectRegion.Lexi().query({
+                  OvhApiCloudProjectRegion.Lexi().query({
                       serviceName: serviceName
                   }).$promise.then(function (regionsList) {
                       self.panelsData.regions = regionsList;

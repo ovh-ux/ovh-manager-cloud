@@ -1,9 +1,9 @@
 class PrivateNetworkListCtrl {
     constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService, 
-                 CloudProjectNetworkPrivate, CloudProject, REDIRECT_URLS, Toast, User, URLS, Vrack) {
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, Toast, User, URLS, Vrack) {
         this.resources = {
-            privateNetwork: CloudProjectNetworkPrivate.Lexi(),
-            project: CloudProject.Lexi(),
+            privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
+            project: OvhApiCloudProject.Lexi(),
             aapi: Vrack.Aapi(),
             modal: $uibModal
         };

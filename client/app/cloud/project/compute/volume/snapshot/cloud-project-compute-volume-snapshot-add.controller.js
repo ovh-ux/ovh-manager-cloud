@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, Toast, $translate, $filter, $q, CloudPrice, CloudProjectComputeVolumesOrchestrator, CloudProjectVolume, User) {
+  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, Toast, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, User) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -20,7 +20,7 @@ angular.module("managerApp")
 
         function init () {
             self.loaders.init = true;
-            CloudPrice.Lexi().query().$promise.then(function (prices) {
+            OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
                 var price = _.find(prices.snapshots, function (price) {
                     return price.region === self.snapshot.volume.region;
                 });

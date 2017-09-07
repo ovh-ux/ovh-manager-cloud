@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, CloudProjectInstance, $stateParams, $q, User, CLOUD_GEOLOCALISATION, pendingImportIps) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, $q, User, CLOUD_GEOLOCALISATION, pendingImportIps) {
 
     var self = this;
 

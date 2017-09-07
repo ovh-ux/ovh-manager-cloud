@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
-    function ($state, $q, $translate, $stateParams, Toast, CloudProjectBillingService, CloudProjectUsageHistory, CloudProjectUsageCurrent, CloudProject, User, REDIRECT_URLS) {
+    function ($state, $q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, User, REDIRECT_URLS) {
         var self = this;
         self.year = null;
         self.month = null;
@@ -51,7 +51,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
         }
 
         function initConsumptionHistory () {
-            return CloudProjectUsageHistory.Lexi().query({
+            return OvhApiCloudProjectUsageHistory.Lexi().query({
                 serviceName: $stateParams.projectId,
                 from: self.previousMonth.format(),
                 to: self.monthBilling.format()
@@ -66,7 +66,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
 
         function getConsumptionDetails (periods) {
             var detailPromises = _.map(periods, function (period) {
-                return CloudProjectUsageHistory.Lexi().get({
+                return OvhApiCloudProjectUsageHistory.Lexi().get({
                     serviceName: $stateParams.projectId,
                     usageId: period.id
                 }).$promise;
@@ -78,7 +78,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
                     var hourlyDetails;
 
                     if (moment.utc().isSame(self.monthBilling, "month")) {
-                        monthlyDetails = CloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise;
+                        monthlyDetails = OvhApiCloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise;
                     } else {
                         monthlyDetails = _.find(periodDetails, function (detail) {
                             return moment.utc(detail.period.from).isSame(self.monthBilling, "month");

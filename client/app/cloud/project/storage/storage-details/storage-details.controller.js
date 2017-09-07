@@ -7,14 +7,14 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
     "$uibModal",
     "$window",
     "CLOUD_PCA_FILE_STATE",
-    "CloudProjectUser",
+    "OvhApiCloudProjectUser",
     "CloudStorageContainer",
     "CloudStorageContainerTasksRunner",
     "CloudStorageContainersConfiguration",
     "Toast",
     "ovhDocUrl",
     function ($interval, $rootScope, $scope, $stateParams, $translate, $uibModal, $window,
-        CLOUD_PCA_FILE_STATE, CloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
+        CLOUD_PCA_FILE_STATE, OvhApiCloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
         CloudStorageContainersConfiguration, Toast, ovhDocUrl) {
         "use strict";
 
@@ -358,13 +358,13 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
                 return;
             }
 
-            return CloudProjectUser.Lexi().query(request).$promise
+            return OvhApiCloudProjectUser.Lexi().query(request).$promise
                 .then(function (users) {
                     $scope.users = users;
                     if (users.length > 0) {
                         request.userId = users[0].id;
                         request.region = region;
-                        return CloudProjectUser.Aapi().openrc(request).$promise;
+                        return OvhApiCloudProjectUser.Aapi().openrc(request).$promise;
                     }
                     return null;
                 })

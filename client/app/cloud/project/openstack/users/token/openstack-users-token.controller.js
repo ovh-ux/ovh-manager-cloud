@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("CloudProjectOpenstackUsersTokenCtrl", function ($q, $uibModalInstance, $stateParams, Toast, $translate, CloudProjectUser, openstackUser, OpenstackUsersToken, URLS, User) {
+    .controller("CloudProjectOpenstackUsersTokenCtrl", function ($q, $uibModalInstance, $stateParams, Toast, $translate, OvhApiCloudProjectUser, openstackUser, OpenstackUsersToken, URLS, User) {
         var self = this;
 
         self.openstackUser = openstackUser;
@@ -33,7 +33,7 @@ angular.module("managerApp")
             if (!self.loaders.generateToken) {
                 self.loaders.generateToken = true;
                 return $q.allSettled([
-                    CloudProjectUser.Lexi().token({
+                    OvhApiCloudProjectUser.Lexi().token({
                         serviceName: self.projectId,
                         userId: self.openstackUser.id
                     }, {

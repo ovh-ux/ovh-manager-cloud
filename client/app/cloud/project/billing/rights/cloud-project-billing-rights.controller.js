@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingRightsCtrl",
-    function (Cloud, CloudProjectServiceInfos, User, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
+    function (Cloud, OvhApiCloudProjectServiceInfos, User, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -61,7 +61,7 @@ angular.module("managerApp")
         };
 
         function initContact () {
-            return CloudProjectServiceInfos.Lexi().get({
+            return OvhApiCloudProjectServiceInfos.Lexi().get({
                 serviceName: serviceName
             }).$promise.then(function (infos) {
                 self.model.owner = self.contactFormData.owner = infos.contactAdmin;
@@ -107,7 +107,7 @@ angular.module("managerApp")
         self.validateEditOwner = function () {
             // @TODO call API
             /*if (self.contactFormData.owner !== self.model.owner) {
-                CloudProjectServiceInfos.Lexi().put({
+                OvhApiCloudProjectServiceInfos.Lexi().put({
                     serviceName: serviceName
                 }, {
                     contactAdmin: self.contactFormData.owner
@@ -152,7 +152,7 @@ angular.module("managerApp")
         self.validateEditBilling = function () {
             // @TODO call API
             /*if (self.contactFormData.billing !== self.model.billing) {
-                CloudProjectServiceInfos.Lexi().put({
+                OvhApiCloudProjectServiceInfos.Lexi().put({
                     serviceName: serviceName
                 }, {
                     contactBilling: self.contactFormData.billing

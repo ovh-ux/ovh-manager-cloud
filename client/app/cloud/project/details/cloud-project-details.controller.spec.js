@@ -49,7 +49,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
             $scope: scope,
             $rootScope: $rootScope,
             $stateParams: { projectId: projectId },
-            CloudProject: CloudProjectMock,
+            OvhApiCloudProject: CloudProjectMock,
             Toast: ToastMock,
             $translate: $translateMock,
             $state: $stateMock

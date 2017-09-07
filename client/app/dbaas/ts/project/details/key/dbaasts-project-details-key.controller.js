@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl",
-function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, User, DBaasTsProject, DBaasTsProjectKey, DBaasTsRegion, DBaasTsConstants) {
+function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, User, OvhApiDBaasTsProject, DBaasTsProjectKey, OvhApiDBaasTsRegion, DBaasTsConstants) {
 
     // -- Vairables declaration --
     var self = this;
@@ -97,12 +97,12 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, User, 
     self.init = function () {
         self.loaders.init = true;
 
-        var futureProject = DBaasTsProject.Lexi().get({
+        var futureProject = OvhApiDBaasTsProject.Lexi().get({
             serviceName: serviceName
         }).$promise;
 
         // Load regions to display the project's region name and URL
-        var futureRegions = DBaasTsRegion.Lexi().query().$promise;
+        var futureRegions = OvhApiDBaasTsRegion.Lexi().query().$promise;
 
         // Load keys
         var futureKeys = DBaasTsProjectKey.Lexi().queryDetails(serviceName);
