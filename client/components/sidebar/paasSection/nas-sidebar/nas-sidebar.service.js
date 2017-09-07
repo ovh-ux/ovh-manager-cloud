@@ -10,7 +10,7 @@ class NasSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: oldNas.serviceName,
                 title: oldNas.displayName || oldNas.serviceName,
-                icon: "oldNAS",
+                icon: "ovh-font ovh-font-oldNAS",
                 target: "_parent",
                 url: this.REDIRECT_URLS.nasPage.replace("{nas}", oldNas.serviceName)
             }, section);

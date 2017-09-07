@@ -31,7 +31,7 @@ class IaasSectionSidebarService {
         const iaasMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainIaasItem",
             title: this.$translate.instant("cloud_sidebar_section_iaas"),
-            icon: "cloud-root",
+            icon: "ovh-font ovh-font-cloud-root",
             loadOnState: "iaas",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
