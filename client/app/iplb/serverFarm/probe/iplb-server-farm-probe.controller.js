@@ -29,7 +29,17 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
         }
     }
 
+    cleanProbe () {
+        if (this.farmProbe.match === "default") {
+            this.farmProbe.pattern = null;
+        }
+        if (!this.farmProbe.negate) {
+            this.farmProbe.negate = null;
+        }
+    }
+
     close () {
+        this.cleanProbe();
         this.$uibModalInstance.close(this.farmProbe);
     }
 
