@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
-    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, UserPaymentMean, Toast, OtrsPopupService, RegionService) {
+    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, Toast, OtrsPopupService, RegionService) {
 
         //---------VARIABLE DECLARATION---------
 
@@ -67,7 +67,7 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
             self.loader.unleash = false;
 
             // check default payment mean
-            initQueue.push(UserPaymentMean.Lexi().getDefaultPaymentMean().then(function (defaultPaymentMean) {
+            initQueue.push(OvhApiMePaymentMean.Lexi().getDefaultPaymentMean().then(function (defaultPaymentMean) {
                 self.datas.defaultPaymentMean = defaultPaymentMean;
             }));
 

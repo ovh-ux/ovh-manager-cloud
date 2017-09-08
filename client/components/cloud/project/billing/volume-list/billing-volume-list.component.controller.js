@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe, CloudPrice) {
+  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe, OvhApiCloudPrice) {
       var self = this;
       self.DetailsPopoverService = DetailsPopoverService;
       self.volumeConsumptionDetails = [];
@@ -76,7 +76,7 @@ angular.module("managerApp")
       }
 
       function initPrices () {
-          return CloudPrice.Lexi().query().$promise
+          return OvhApiCloudPrice.Lexi().query().$promise
               .then(function (prices) {
                   self.data.prices = prices;
               });

@@ -1,9 +1,9 @@
 class MeAlertsService {
-    constructor ($translate, $translatePartialLoader, CloudMessage, UserAlertsAapi, REDIRECT_URLS, TARGET) {
+    constructor ($translate, $translatePartialLoader, CloudMessage, OvhApiMeAlertsAapi, REDIRECT_URLS, TARGET) {
         this.$translatePartialLoader = $translatePartialLoader.addPart("../components/me-alerts");
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
-        this.UserAlertsAapi = UserAlertsAapi;
+        this.UserAlertsAapi = OvhApiMeAlertsAapi;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.TARGET = TARGET;
     }

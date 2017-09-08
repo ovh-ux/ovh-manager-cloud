@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
-    function ($q, $stateParams, $translate, OvhApiCloudProjectCredit, Toast, $uibModal, UserBill) {
+    function ($q, $stateParams, $translate, OvhApiCloudProjectCredit, Toast, $uibModal, OvhApiMeBill) {
 
         /*=================================
         =            VARIABLES            =
@@ -108,7 +108,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         ==============================================*/
 
         function futureVoucherWithPdfUrl (voucher) {
-            return UserBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
+            return OvhApiMeBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
                 voucher.pdfUrl = bill.pdfUrl;
                 return voucher;
             }, function () {

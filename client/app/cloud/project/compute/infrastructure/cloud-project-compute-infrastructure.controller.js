@@ -2,7 +2,7 @@
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
     function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
-        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, Ip, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
+        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
         OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloud, OvhApiMe,
         OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
         OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
@@ -577,7 +577,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         function updateReverseDns (ips) {
             var reverseQueue = [];
             angular.forEach(ips, function (ip) {
-                reverseQueue.push(Ip.Reverse().Lexi().getReverseDns(ip.ip, ip.block).then(function (dns) {
+                reverseQueue.push(OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block).then(function (dns) {
                     ip.reverse = dns;
                 }, function (err) {
                     // ok we choose to ignore errors here, so the application can still be used,
@@ -601,7 +601,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 return;
             }
 
-            var taskToPoll = taskObj ? taskObj.taskId : Ip.Lexi().getPendingTask(ip, 'genericMoveFloatingIp');
+            var taskToPoll = taskObj ? taskObj.taskId : OvhApiIp.Lexi().getPendingTask(ip, 'genericMoveFloatingIp');
 
             return $q.when(taskToPoll).then(function (taskId) {
 

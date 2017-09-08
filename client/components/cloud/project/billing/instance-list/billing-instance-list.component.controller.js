@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, CloudPrice) {
+  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, OvhApiCloudPrice) {
         var self = this;
         self.windowsStringPattern = "/^win-/";
         self.instanceConsumptionDetails = [];
@@ -107,7 +107,7 @@ angular.module("managerApp")
             self.data.instanceToMonthlyPrice = null;
             self.loaders.monthlyBilling = true;
 
-            CloudPrice.Lexi().query().$promise.then(function (prices) {
+            OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
                 if (prices.instances && prices.instances.length) {
                     self.data.instanceToMonthlyPrice = _.find(prices.instances, {flavorName : instance.reference});
                 }

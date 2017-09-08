@@ -1,5 +1,5 @@
 angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
-    function ($q, OvhApiCloudProjectInstance, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, CloudPrice, OvhApiCloudProjectSnapshot,
+    function ($q, OvhApiCloudProjectInstance, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudPrice, OvhApiCloudProjectSnapshot,
               OvhApiCloudProjectSshKey, CLOUD_VM_STATE, CLOUD_MONITORING, CLOUD_UNIT_CONVERSION) {
 
         'use strict';
@@ -138,7 +138,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
                     })
                 );
                 queue.push(
-                    CloudPrice.Lexi().query().$promise.then(function (flavorsPrices) {
+                    OvhApiCloudPrice.Lexi().query().$promise.then(function (flavorsPrices) {
                         self.price = _.find(flavorsPrices.instances, { flavorId: flavorId });
                     })
                 );

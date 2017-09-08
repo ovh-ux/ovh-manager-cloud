@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").factory("CloudProjectComputeInfraVrackVlanFactory",
-    function ($q, $timeout, ovhUserPref, Poller, OvhApiOrderVrack, UserOrder, OvhApiVrack, OvhApiCloudProject) {
+    function ($q, $timeout, ovhUserPref, Poller, OvhApiOrderVrack, OvhApiMeOrder, OvhApiVrack, OvhApiCloudProject) {
 
         var VlanFactory = (function () {
 

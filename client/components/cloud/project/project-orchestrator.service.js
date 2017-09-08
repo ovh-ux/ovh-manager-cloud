@@ -12,7 +12,7 @@
  */
 angular.module("managerApp").service("CloudProjectOrchestrator",
     function ($q, CloudProjectFactory, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeVolumesOrchestrator,
-              CloudProject, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
+              OvhApiCloudProject, OvhApiCloudProjectIpLexi, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
 
         var _self = this;
 
@@ -30,7 +30,7 @@ angular.module("managerApp").service("CloudProjectOrchestrator",
         };
 
         this.hasTooManyInstances = function(projectId) {
-            return CloudProject.Instance().Lexi().query({
+            return OvhApiCloudProject.Instance().Lexi().query({
                 serviceName: projectId
             }).$promise
                 .then(function (instances) {
@@ -39,7 +39,7 @@ angular.module("managerApp").service("CloudProjectOrchestrator",
         };
 
         this.hasTooManyIps = function(projectId) {
-            return CloudProjectIpLexi.query({
+            return OvhApiCloudProjectIpLexi.query({
                 serviceName: projectId
             }).$promise
                 .then(function (ips) {

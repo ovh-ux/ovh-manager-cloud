@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
 .controller("CloudProjectOpenstackUsersCtrl",
-    function (Cloud, $translate, Toast, $stateParams, Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken,
+    function (OvhApiCloud, $translate, Toast, $stateParams, Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken,
               $filter, $q, $uibModal, $window, REDIRECT_URLS, CloudProjectRightService) {
 
         var self = this;
@@ -187,7 +187,7 @@ angular.module("managerApp")
         self.postUser = function () {
             if (!self.loaders.add.user) {
                 self.loaders.add.user = true;
-                return Cloud.Project().User().Lexi().save(self.userAdd).$promise.then(function (newUser) {
+                return OvhApiCloud.Project().User().Lexi().save(self.userAdd).$promise.then(function (newUser) {
                     self.toggleAddUser();
                     self.table.selected = {};
                     self.toggle.openDeleteMultiConfirm = false;
@@ -208,7 +208,7 @@ angular.module("managerApp")
         self.regeneratePassword = function (currentUser) {
             if (!self.loaders.regeneratePassword) {
                 self.loaders.regeneratePassword = currentUser.id;
-                return Cloud.Project().User().Lexi().password({
+                return OvhApiCloud.Project().User().Lexi().password({
                     serviceName: self.projectId,
                     userId: currentUser.id
                 }).$promise.then(function (newUser) {
@@ -318,7 +318,7 @@ angular.module("managerApp")
         };
 
         function deleteUser (userId) {
-            return Cloud.Project().User().Lexi().remove({
+            return OvhApiCloud.Project().User().Lexi().remove({
                 serviceName: self.projectId,
                 userId: userId
             }).$promise;

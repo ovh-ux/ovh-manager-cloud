@@ -1,5 +1,5 @@
 angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
-    function ($q, OvhApiCloudProjectVolume, CloudPrice, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota) {
+    function ($q, OvhApiCloudProjectVolume, OvhApiCloudPrice, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota) {
 
         'use strict';
 
@@ -82,7 +82,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
         VolumeFactory.prototype.getFullInformations = function () {
             var self = this;
 
-            return CloudPrice.Lexi().query().$promise.then(function (prices) {
+            return OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
 
                 // group volume prices by region to avoid making a request to get regions list
                 var prices = _.groupBy(prices.volumes, 'region'),
