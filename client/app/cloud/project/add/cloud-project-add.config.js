@@ -6,7 +6,8 @@ angular.module("managerApp")
                 createProject (atInternet, controller) {
                     if (controller.model.contractsAccepted && controller.data.agreements.length) {
                         atInternet.trackClick({
-                            name: "AccountActivation"
+                            name: "AccountActivation",
+                            type: "action"
                         });
                     }
                 }

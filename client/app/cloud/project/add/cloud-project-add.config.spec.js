@@ -25,7 +25,8 @@ describe("Controller config: CloudProjectAddCtrl", () => {
             $httpBackend.flush();
 
             expect(atInternet.trackClick).toHaveBeenCalledWith({
-                name: "AccountActivation"
+                name: "AccountActivation",
+                type: "action"
             });
         }));
     });
