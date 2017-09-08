@@ -1,8 +1,27 @@
 class IpLoadBalancerConfigurationService {
-    constructor ($q, IpLoadBalancing, ServiceHelper) {
+    constructor ($q, IpLoadBalancing, IpLoadBalancerZoneService, ServiceHelper) {
         this.$q = $q;
         this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
         this.ServiceHelper = ServiceHelper;
+    }
+
+    getPendingChanges (serviceName) {
+        return this.IpLoadBalancing.Lexi().pendingChanges({ serviceName })
+            .$promise;
+    }
+
+    getAllZonesChanges (serviceName) {
+        return this.$q.all({
+            allZones: this.IpLoadBalancerZoneService.getZones(),
+            pendingChanges: this.getPendingChanges(serviceName)
+        })
+            .then(({ allZones, pendingChanges }) => allZones.map(zone => {
+                const pending = _.find(pendingChanges, { zone: zone.id });
+                zone.changes = pending ? pending.number : 0;
+                return zone;
+            }))
+            .catch(this.ServiceHelper.errorHandler("iplb_configuration_info_error"));
     }
 
     refresh (serviceName, zone) {

@@ -82,10 +82,6 @@ class IpLoadBalancerServerFarmCtrl {
         });
     }
 
-    updateServer (server) {
-        //  TODO : Do something.
-    }
-
     deleteServer (farm, server) {
         this.IpLoadBalancerActionService.deleteServer(
             this.$stateParams.serviceName,

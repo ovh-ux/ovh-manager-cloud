@@ -76,6 +76,7 @@
    <translation id="iplb_farm_edit_probe_type_pgsql">pgSQL</translation>
    <translation id="iplb_farm_edit_probe_type_smtp">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp">TCP</translation>
+   <translation id="iplb_farm_edit_probe_info_error">Une erreur est survenue lors de la récupération des informations pour la sonde.</translation>
 
    <translation id="iplb_farm_edit_probe_button">Paramètres de la sonde</translation>
 
