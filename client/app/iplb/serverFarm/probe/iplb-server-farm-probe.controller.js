@@ -1,7 +1,8 @@
 class IpLoadBalancerServerFarmProbeEditCtrl {
-    constructor ($uibModalInstance, IpLoadBalancerConstant, edition, farm) {
+    constructor ($uibModalInstance, IpLoadBalancerConstant, availableProbes, edition, farm) {
         this.$uibModalInstance = $uibModalInstance;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
+        this.availableProbes = availableProbes;
         this.edition = edition;
         this.farm = farm;
         this.farmProbe = this.farm.probe ? angular.copy(this.farm.probe) : {
@@ -10,6 +11,7 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
 
         this.methods = IpLoadBalancerConstant.probeMethods;
         this.matches = IpLoadBalancerConstant.probeMatches;
+        this.rules = this.getRules();
 
         if (!this.edition) {
             this.farmProbe.port = this.farm.port;
@@ -23,10 +25,36 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
                 default: break;
             }
 
+            this.farmProbe.match = "default";
+
             if (this.farmProbe.type === "oco") {
                 delete this.farmProbe.port;
             }
         }
+    }
+
+    isFieldVisible (field) {
+        if (field === "pattern") {
+            return this.farmProbe.match !== "default";
+        }
+
+        if (field === "match" && _.isArray(this.rules.matches) &&
+            this.rules.matches.length === 1) {
+            return false;
+        }
+
+        return !Object.prototype.hasOwnProperty.call(this.rules, field) ||
+            !!this.rules[field];
+    }
+
+    getMatches () {
+        return this.rules.matches;
+    }
+
+    getRules () {
+        return _.find(this.availableProbes, {
+            type: this.farmProbe.type
+        });
     }
 
     cleanProbe () {

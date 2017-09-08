@@ -1,17 +1,15 @@
 class IpLoadBalancerConfigurationCtrl {
-    constructor ($stateParams, ControllerHelper, IpLoadBalancerConfigurationService,
-                 IpLoadBalancerZoneService) {
+    constructor ($stateParams, ControllerHelper, IpLoadBalancerConfigurationService) {
         this.$stateParams = $stateParams;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
-        this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
 
         this.initLoaders();
     }
 
     initLoaders () {
         this.zones = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.IpLoadBalancerZoneService.getZones()
+            loaderFunction: () => this.IpLoadBalancerConfigurationService.getAllZonesChanges(this.$stateParams.serviceName)
         });
     }
 
@@ -40,6 +38,22 @@ class IpLoadBalancerConfigurationCtrl {
         }
 
         return null;
+    }
+
+    statusTemplate () {
+        return `
+
+            <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
+                <cui-status-icon data-type="success"></cui-status-icon>
+            </span>
+            <span data-ng-if="$row.changes === 1" translate-attr="{ title: 'iplb_configuration_changes_1' }">
+                <cui-status-icon data-type="warning"></cui-status-icon>
+            </span>
+            <span data-ng-if="$row.changes > 1" translate-attr="{ title: 'iplb_configuration_changes_count' }"
+                translate-values="{ count: $row.changes }">
+                <cui-status-icon data-type="warning"></cui-status-icon>
+            </span>
+        `;
     }
 
     actionTemplate () {
