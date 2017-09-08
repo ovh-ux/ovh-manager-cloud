@@ -8,13 +8,17 @@
         data-ng-click="ctrl.apply()"
         data-ng-disabled="!ctrl.selectedZones.length"></button>
 
+    <pre><code>
+        {{ctrl.zones.data|json}}
+    </code></pre>
+
     <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
     <oui-table data-ng-hide="ctrl.zones.loading"
         rows="ctrl.zones.data"
         on-selection-change="ctrl.onSelectionChange($selection)">
         <column title="'iplb_configuration_datacenter' | translate" property="name" sortable></column>
         <column title="'iplb_configuration_progress' | translate"></column>
-        <column title="'iplb_configuration_status' | translate"></column>
+        <column title="'iplb_configuration_status' | translate" template="ctrl.statusTemplate()" class="oui-table__cell_action"></column>
         <column title="'iplb_configuration_action' | translate"
             class="oui-table__cell_action oui-table__cell_action-menu"
             template="ctrl.actionTemplate()">

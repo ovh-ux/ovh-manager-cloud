@@ -116,6 +116,9 @@ class IpLoadBalancerServerFarmEditCtrl {
         const request = angular.copy(this.farm);
         delete request.type;
         delete request.zoneText;
+        if (!request.probe.type) {
+            delete request.probe;
+        }
         return request;
     }
 
@@ -126,6 +129,7 @@ class IpLoadBalancerServerFarmEditCtrl {
                 controller: "IpLoadBalancerServerFarmProbeEditCtrl",
                 controllerAs: "IpLoadBalancerServerFarmProbeEditCtrl",
                 resolve: {
+                    availableProbes: () => this.IpLoadBalancerServerFarmService.getAvailableFarmProbes(this.$stateParams.serviceName),
                     farm: () => this.farm,
                     edition: () => this.edition
                 }

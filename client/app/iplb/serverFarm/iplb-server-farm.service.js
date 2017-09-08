@@ -20,6 +20,12 @@ class IpLoadBalancerServerFarmService {
         };
     }
 
+    getAvailableFarmProbes (serviceName) {
+        return this.IpLoadBalancing.Lexi().availableFarmProbes({ serviceName })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("iplb_farm_edit_probe_info_error"));
+    }
+
     getServerFarms (serviceName) {
         return this.IpLoadBalancing.Farm().Lexi().query({ serviceName })
             .$promise

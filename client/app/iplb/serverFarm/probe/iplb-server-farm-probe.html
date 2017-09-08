@@ -1,6 +1,7 @@
 <cui-modal>
     <cui-modal-header data-on-dismiss="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-modal-header>
     <cui-modal-body title="'iplb_farm_edit_probe_title' | translate">
+
         <div class="oui-input-formfield"
             data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
             <input type="text" id="probe_url" name="probe_url" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.url" />
@@ -8,7 +9,7 @@
         </div>
 
         <div class="oui-input-formfield"
-            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type != 'oco'">
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('port')">
             <input type="number"
                 min="1"
                 max="65535"
@@ -20,7 +21,7 @@
         </div>
 
         <div class="oui-input-formfield"
-            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type === 'http'">
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('method')">
             <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
                 <cui-radio-bar-item data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods"
                     data-text="('iplb_farm_edit_probe_method_' + method) | translate"
@@ -29,9 +30,10 @@
             <label for="probe_method" class="oui-label" data-translate="iplb_farm_edit_probe_method"></label>
         </div>
 
-        <div class="oui-input-formfield">
+        <div class="oui-input-formfield"
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('match')">
             <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
-                <cui-radio-bar-item data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.matches"
+                <cui-radio-bar-item data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches()"
                     data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status'"
                     data-text="('iplb_farm_edit_probe_match_' + match) | translate"
                     data-value="match"></cui-radio-bar-item>
@@ -40,7 +42,7 @@
         </div>
 
         <div class="oui-input-formfield"
-            data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match === 'default'">
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('pattern')">
             <input type="text" id="probe_pattern" name="probe_pattern" class="oui-input" data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.pattern" />
             <label for="probe_pattern" class="oui-label" data-translate="iplb_farm_edit_probe_pattern"></label>
         </div>
@@ -55,7 +57,8 @@
             <label for="probe_interval" class="oui-label" data-translate="iplb_farm_edit_probe_interval"></label>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field"
+            data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('negate')">
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <div class="oui-checkbox">
