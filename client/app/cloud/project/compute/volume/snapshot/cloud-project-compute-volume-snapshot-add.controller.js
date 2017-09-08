@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, Toast, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, User) {
+  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, Toast, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
 
         var self = this;
         var serviceName = $stateParams.projectId;

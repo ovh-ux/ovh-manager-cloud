@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl.exampleUseToken",
- function (params, User, $uibModalInstance, DBaasTsConstants) {
+ function (params, OvhApiMe, $uibModalInstance, DBaasTsConstants) {
     "use strict";
 
     // -- Variables declaration
@@ -15,7 +15,7 @@ angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl.exampleUse
     // -- Init --
 
     function initGuideURL () {
-        User.Lexi().get().$promise.then(function (me) {
+        OvhApiMe.Lexi().get().$promise.then(function (me) {
           var lang = me.ovhSubsidiary;
           var guide = DBaasTsConstants.guides[permission];
           if (guide) {

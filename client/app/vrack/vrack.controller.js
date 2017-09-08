@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("VrackCtrl",
-    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, Toast, SidebarMenu, Vrack, OvhApiCloudProject, User, URLS, VrackService) {
+    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, Toast, SidebarMenu, OvhApiVrack, OvhApiCloudProject, OvhApiMe, URLS, VrackService) {
     "use strict";
     var self = this;
     var pollingInterval = 5000;
@@ -66,7 +66,7 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.getAllowedServices = function () {
-        return Vrack.Aapi().allowedServices({ serviceName: self.serviceName }).$promise
+        return OvhApiVrack.Aapi().allowedServices({ serviceName: self.serviceName }).$promise
             .then(function (allServices) {
                 allServices = _.mapValues(allServices, function (services, serviceType) {
                     if (_.isArray(services)) {
@@ -97,7 +97,7 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.getVrackServices = function () {
-        return Vrack.Aapi().services({ serviceName: self.serviceName }).$promise
+        return OvhApiVrack.Aapi().services({ serviceName: self.serviceName }).$promise
             .then(function (allServices) {
                 allServices = _.mapValues(allServices, function (services, serviceType) {
                     if (_.isArray(services)) {
@@ -131,7 +131,7 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.getPendingTasks = function () {
-        return Vrack.Lexi().tasks({
+        return OvhApiVrack.Lexi().tasks({
             serviceName: self.serviceName
         }).$promise.then(function (taskIds) {
             return $q.all(_.map(taskIds, function (id) {
@@ -151,14 +151,14 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.resetCache = function () {
-        Vrack.Lexi().resetCache();
-        Vrack.CloudProject().Lexi().resetQueryCache();
-        Vrack.DedicatedCloud().Lexi().resetQueryCache();
-        Vrack.DedicatedServer().Lexi().resetQueryCache();
-        Vrack.DedicatedServerInterface().Lexi().resetQueryCache();
-        Vrack.Ip().Lexi().resetQueryCache();
-        Vrack.LegacyVrack().Lexi().resetQueryCache();
-        Vrack.Aapi().resetAllCache();
+        OvhApiVrack.Lexi().resetCache();
+        OvhApiVrack.CloudProject().Lexi().resetQueryCache();
+        OvhApiVrack.DedicatedCloud().Lexi().resetQueryCache();
+        OvhApiVrack.DedicatedServer().Lexi().resetQueryCache();
+        OvhApiVrack.DedicatedServerInterface().Lexi().resetQueryCache();
+        OvhApiVrack.Ip().Lexi().resetQueryCache();
+        OvhApiVrack.LegacyVrack().Lexi().resetQueryCache();
+        OvhApiVrack.Aapi().resetAllCache();
     };
 
     self.moveDisplayedService = function (serviceId, allServicesSource, allServicesDestination) {
@@ -316,7 +316,7 @@ angular.module("managerApp").controller("VrackCtrl",
     self.saveName = function () {
         self.nameEditing = false;
 
-        Vrack.Lexi().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
+        OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
             .catch(function (err) {
                 self.name = self.nameBackup;
                 Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
@@ -342,7 +342,7 @@ angular.module("managerApp").controller("VrackCtrl",
 
     self.saveDescription = function () {
         self.descriptionEditing = false;
-        Vrack.Lexi().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
+        OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
             .catch(function (err) {
                 self.description = self.descriptionBackup;
                 Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
@@ -358,42 +358,42 @@ angular.module("managerApp").controller("VrackCtrl",
             var task = $q.reject("Unknown service type");
             switch (service.type) {
                 case "dedicatedServer":
-                    task = Vrack.DedicatedServer().Lexi().create({
+                    task = OvhApiVrack.DedicatedServer().Lexi().create({
                         serviceName: self.serviceName
                     }, {
                         dedicatedServer: service.id
                     }).$promise;
                     break;
                 case "dedicatedServerInterface":
-                    task = Vrack.DedicatedServerInterface().Lexi().post({
+                    task = OvhApiVrack.DedicatedServerInterface().Lexi().post({
                         serviceName: self.serviceName
                     }, {
                         dedicatedServerInterface: service.id
                     }).$promise;
                     break;
                 case "dedicatedCloud":
-                    task = Vrack.DedicatedCloud().Lexi().create({
+                    task = OvhApiVrack.DedicatedCloud().Lexi().create({
                         serviceName: self.serviceName
                     }, {
                         dedicatedCloud: service.id
                     }).$promise;
                     break;
                 case "legacyVrack":
-                    task = Vrack.LegacyVrack().Lexi().create({
+                    task = OvhApiVrack.LegacyVrack().Lexi().create({
                         serviceName: self.serviceName
                     }, {
                         legacyVrack: service.id
                     }).$promise;
                     break;
                 case "ip":
-                    task = Vrack.Ip().Lexi().create({
+                    task = OvhApiVrack.Ip().Lexi().create({
                         serviceName: self.serviceName
                     }, {
                         block: service.id
                     }).$promise;
                     break;
                 case "cloudProject":
-                    task = Vrack.CloudProject().Lexi().create({
+                    task = OvhApiVrack.CloudProject().Lexi().create({
                         serviceName: self.serviceName
                     }, {
                         project: service.id
@@ -418,37 +418,37 @@ angular.module("managerApp").controller("VrackCtrl",
             var task = $q.reject("Unknown service type");
             switch (service.type) {
                 case "dedicatedServer":
-                    task = Vrack.DedicatedServer().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedServer().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedServer: service.id
                     }).$promise;
                     break;
                 case "dedicatedServerInterface":
-                    task = Vrack.DedicatedServerInterface().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedServerInterface().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedServerInterface: service.id
                     }).$promise;
                     break;
                 case "dedicatedCloud":
-                    task = Vrack.DedicatedCloud().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedCloud().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedCloud: service.id
                     }).$promise;
                     break;
                 case "legacyVrack":
-                    task = Vrack.LegacyVrack().Lexi()["delete"]({
+                    task = OvhApiVrack.LegacyVrack().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         legacyVrack: service.id
                     }).$promise;
                     break;
                 case "ip":
-                    task = Vrack.Ip().Lexi()["delete"]({
+                    task = OvhApiVrack.Ip().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         ip: service.id
                     }).$promise;
                     break;
                 case "cloudProject":
-                    task = Vrack.CloudProject().Lexi()["delete"]({
+                    task = OvhApiVrack.CloudProject().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         project: service.id
                     }).$promise;
@@ -523,7 +523,7 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     function setUserRelatedContent () {
-        User.Lexi().get().$promise
+        OvhApiMe.Lexi().get().$promise
             .then(function (user) {
                 if (user.ovhSubsidiary === "FR") {
                     // Roadmap is only available in french
@@ -632,7 +632,7 @@ angular.module("managerApp").controller("VrackCtrl",
 
     function init () {
         if (_.isEmpty($stateParams.vrackId)) {
-            Vrack.Lexi().query().$promise
+            OvhApiVrack.Lexi().query().$promise
                 .then(function (vracks) {
                     if (_.isEmpty(vracks)) {
                         $state.go("vrack-add");
@@ -644,7 +644,7 @@ angular.module("managerApp").controller("VrackCtrl",
                 });
         } else {
             // check if the serviceName is valid before loading the services
-            Vrack.Lexi().get({
+            OvhApiVrack.Lexi().get({
                 serviceName: $stateParams.vrackId
             }).$promise.then(function (resp) {
                 self.serviceName = $stateParams.vrackId;

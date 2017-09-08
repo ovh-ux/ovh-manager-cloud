@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, OrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, User, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
 
     var self = this;
     var projectId = $stateParams.projectId;
@@ -143,7 +143,7 @@ angular.module("managerApp")
         if (self.form.instance && self.form.country && self.form.quantity) {
             self.loaders.billingInfo = true;
             self.form.contractsAccepted = false;
-            OrderCloudProjectIp.Lexi().get({
+            OvhApiOrderCloudProjectIp.Lexi().get({
                 serviceName: projectId
             }, {
                 country : self.form.country.toLowerCase(),
@@ -163,7 +163,7 @@ angular.module("managerApp")
     function buyIps () {
         self.loaders.buying = true;
 
-        OrderCloudProjectIp.Lexi().buy({
+        OvhApiOrderCloudProjectIp.Lexi().buy({
             serviceName: projectId
         }, {
             country : self.form.country.toLowerCase(),

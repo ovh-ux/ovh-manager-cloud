@@ -75,7 +75,7 @@ angular.module("managerApp")
               CloudProjectComputeInfraVrackVmFactory, OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhApiCloudPrice, OvhApiCloudProjectImage,
               OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
               RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_FLAVOR_SPECIFIC_IMAGE,
-              User, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
+              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
 
     var self = this;
     var orderBy = $filter("orderBy");
@@ -563,7 +563,7 @@ angular.module("managerApp")
             regions: self.getRegions(),
             sshKeys: self.getSshKeys(),
             hasVrack: CloudProjectComputeInfrastructureOrchestrator.hasVrack(),
-            user: User.Lexi().get().$promise
+            user: OvhApiMe.Lexi().get().$promise
         }).then(function (data) {
             self.model.name = self.vmInEdition.name;
             self.model.flavorId = self.vmInEdition.flavor ? self.vmInEdition.flavor.id : null;

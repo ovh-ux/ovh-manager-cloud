@@ -1,7 +1,7 @@
 angular.module("managerApp")
   .controller("CloudProjectComputeInfrastructureVolumeAddEditCtrl",
       function ($scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout, OvhApiCloudProjectRegion, $translate,
-                Toast, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota, $location, atInternet, User, RegionService,
+                Toast, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota, $location, atInternet, OvhApiMe, RegionService,
                 CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA) {
 
           "use strict";

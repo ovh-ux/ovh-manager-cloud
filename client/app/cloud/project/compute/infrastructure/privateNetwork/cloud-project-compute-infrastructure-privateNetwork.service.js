@@ -1,11 +1,11 @@
 class CloudProjectComputeInfrastructurePrivateNetworkService {
-    constructor ($q, $timeout, $translate, Toast, URLS, User, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
+    constructor ($q, $timeout, $translate, Toast, URLS, OvhApiMe, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
         this.$q = $q;
         this.$timeout = $timeout;
         this.$translate = $translate;
         this.Toast = Toast;
         this.URLS = URLS;
-        this.User = User;
+        this.User = OvhApiMe;
         this.Region = OvhApiCloudProjectRegion;
         this.OvhApiCloudProjectNetworkPrivate = OvhApiCloudProjectNetworkPrivate;
         this.Subnet = OvhApiCloudProjectNetworkPrivateSubnet;

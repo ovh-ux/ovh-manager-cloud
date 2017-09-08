@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingRightsCtrl",
-    function (Cloud, OvhApiCloudProjectServiceInfos, User, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
+    function (Cloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -66,7 +66,7 @@ angular.module("managerApp")
             }).$promise.then(function (infos) {
                 self.model.owner = self.contactFormData.owner = infos.contactAdmin;
                 self.model.billing = self.contactFormData.billing = infos.contactBilling;
-                return User.Lexi().get().$promise.then(function (me) {
+                return OvhApiMe.Lexi().get().$promise.then(function (me) {
                     if (me.nichandle === infos.contactAdmin) {
                         self.model.isAdmin = true;
                     }

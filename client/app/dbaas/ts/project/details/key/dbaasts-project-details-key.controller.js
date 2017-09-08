@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl",
-function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, User, OvhApiDBaasTsProject, DBaasTsProjectKey, OvhApiDBaasTsRegion, DBaasTsConstants) {
+function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApiMe, OvhApiDBaasTsProject, DBaasTsProjectKey, OvhApiDBaasTsRegion, DBaasTsConstants) {
 
     // -- Vairables declaration --
     var self = this;
@@ -131,7 +131,7 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, User, 
 
     function initGuideURL () {
         self.loaders.guide = true;
-        User.Lexi().get().$promise.then(function (me) {
+        OvhApiMe.Lexi().get().$promise.then(function (me) {
             var lang = me.ovhSubsidiary;
             self.data.guideDBaasTsConceptsURL = DBaasTsConstants.guides.concepts[lang] || DBaasTsConstants.guides.concepts.FR;
         })["finally"](function () {

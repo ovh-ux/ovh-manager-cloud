@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .service("CloudProjectBillingService", function ($q, User) {
+    .service("CloudProjectBillingService", function ($q, OvhApiMe) {
             var self = this;
 
             self.getConsumptionDetails = function (hourlyBillingInfo, monthlyBillingInfo) {
@@ -45,7 +45,7 @@ angular.module("managerApp")
                         }
                     }
                 };
-                return User.Lexi().get().$promise.then(function (me) {
+                return OvhApiMe.Lexi().get().$promise.then(function (me) {
                     self.data.totals.currencySymbol = me.currency.symbol;
                     return self.data;
                 });

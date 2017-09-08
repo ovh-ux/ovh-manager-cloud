@@ -3,7 +3,7 @@
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
     function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
         CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, Ip, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
-        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, Cloud, User,
+        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloud, OvhApiMe,
         OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
         OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
 
@@ -128,7 +128,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         }
 
         function getUser () {
-            return User.Lexi().get().$promise
+            return OvhApiMe.Lexi().get().$promise
                 .then(function(user) {
                     self.user = user;
                 });

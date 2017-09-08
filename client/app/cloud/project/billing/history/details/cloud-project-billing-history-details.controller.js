@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
-    function ($state, $q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, User, REDIRECT_URLS) {
+    function ($state, $q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
         var self = this;
         self.year = null;
         self.month = null;

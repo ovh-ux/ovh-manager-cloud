@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateAlertAddCtrl",
-    function ($uibModalInstance, $stateParams, $scope, $translate, $q, User, OvhApiCloudProjectAlerting, Toast, dataContext) {
+    function ($uibModalInstance, $stateParams, $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, Toast, dataContext) {
         var self = this;
 
         self.model = {

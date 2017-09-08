@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, $q, User, CLOUD_GEOLOCALISATION, pendingImportIps) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps) {
 
     var self = this;
 
@@ -30,7 +30,7 @@ angular.module("managerApp")
     //---------INIT---------
 
     function init () {
-        return User.Lexi().get().$promise.then(function (user) {
+        return OvhApiMe.Lexi().get().$promise.then(function (user) {
             self.datas.user = user;
             return getIpsFo(true);
         }, function (err) {
