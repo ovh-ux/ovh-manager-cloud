@@ -7,7 +7,7 @@
  *  This orchestrator is used to init and manage a Cloud Volumes list.
  */
 angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
-    function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref, CloudProjectVolume, CloudProjectVolumeSnapshot, CloudProjectComputeVolumesFactory, CloudProjectRegion, Toast) {
+    function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot, CloudProjectComputeVolumesFactory, OvhApiCloudProjectRegion, Toast) {
 
         // Warning: all values must be reset at init (see resetDatas())
         var _self = this,
@@ -37,7 +37,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
          *  Get the default volume configuration options
          */
         var getDefaultVolumeConfiguration = function () {
-            return CloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.Lexi().query({
                 serviceName: _self.volumes.serviceName
             }).$promise.then(function (regionList) {
                 // check if the default region exists
@@ -104,7 +104,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
                 if (!snapshot || !snapshot.id) {
                     return $q.reject({ data: { message: "Snapshot id cannot be found" } });
                 }
-                return CloudProjectVolume.Lexi().get({
+                return OvhApiCloudProjectVolume.Lexi().get({
                     serviceName : _self.volumes.serviceName,
                     volumeId : snapshot.volumeId
                 }).$promise;
@@ -259,7 +259,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
          * Create a snapshot of given volume.
          */
         this.snapshotVolume = function (volume, snapshotName) {
-            return CloudProjectVolumeSnapshot.Lexi().create({
+            return OvhApiCloudProjectVolumeSnapshot.Lexi().create({
                 serviceName : _self.volumes.serviceName,
                 volumeId : volume.id
             }, {
@@ -515,7 +515,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
                 /*==========  Volumes  ==========*/
 
                 initQueue.push(
-                    CloudProjectVolume.Lexi().query({
+                    OvhApiCloudProjectVolume.Lexi().query({
                         serviceName : _self.volumes.serviceName
                     }).$promise.then(function (volumes) {
                         // Group by attachedTo

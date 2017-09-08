@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").factory("CloudProjectComputeInfraVrackVlanFactory",
-    function ($q, $timeout, ovhUserPref, Poller, OrderVrack, UserOrder, Vrack, CloudProject) {
+    function ($q, $timeout, ovhUserPref, Poller, OvhApiOrderVrack, UserOrder, OvhApiVrack, OvhApiCloudProject) {
 
         var VlanFactory = (function () {
 
@@ -17,7 +17,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVlanFactory",
 
         VlanFactory.prototype.hasVrack = function () {
 
-            return CloudProject.Lexi().vrack({ serviceName: this.serviceName }).$promise
+            return OvhApiCloudProject.Lexi().vrack({ serviceName: this.serviceName }).$promise
                 .then(function () {
                     return true;
                 }, function (err) {

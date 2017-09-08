@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, User, Products,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, OvhApiMe, Products,
                  FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -112,7 +112,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     function init () {
         // set initialization promise
         var promise = $q.all({
-            user: User.Lexi().get().$promise,
+            user: OvhApiMe.Lexi().get().$promise,
             products: Products.Aapi().get({
                 universe: "cloud"
             }).$promise,

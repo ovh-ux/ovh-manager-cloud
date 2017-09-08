@@ -12,7 +12,7 @@
  */
 angular.module("managerApp").service("CloudProjectOrchestrator",
     function ($q, CloudProjectFactory, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeVolumesOrchestrator,
-              CloudProject, CloudProjectIpLexi, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
+              CloudProject, CLOUD_PROJECT_OVERVIEW_THRESHOLD) {
 
         var _self = this;
 

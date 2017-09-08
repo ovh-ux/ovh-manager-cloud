@@ -15,8 +15,8 @@ describe('CloudProjectComputeInfraVrackVmFactory factory', function () {
             expect(typeof CloudProjectComputeInfraVrackVmFactory).toBe('function');
         });
 
-        xit('should load CloudProjectInstance service', inject(function (CloudProjectInstance) {
-            expect(CloudProjectInstance).not.toBe(null);
+        xit('should load OvhApiCloudProjectInstance service', inject(function (OvhApiCloudProjectInstance) {
+            expect(OvhApiCloudProjectInstance).not.toBe(null);
         }));
 
     });

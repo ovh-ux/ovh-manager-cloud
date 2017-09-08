@@ -1,12 +1,12 @@
 angular.module("managerApp")
-    .run((atInternet, managerNavbar, NavbarService, $translate, $translatePartialLoader, $q, $uibModal, User) => {
+    .run((atInternet, managerNavbar, NavbarService, $translate, $translatePartialLoader, $q, $uibModal, OvhApiMe) => {
 
         $translatePartialLoader.addPart("common");
         $translatePartialLoader.addPart("module-otrs");
 
         $q.allSettled([
             $translate.refresh(),
-            User.Lexi().get().$promise
+            OvhApiMe.Lexi().get().$promise
         ])
             .then(resp => resp && resp[1])
             .catch(resp => resp && resp[1])

@@ -1,5 +1,5 @@
 angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory',
-    function (Ip, CloudProjectIpFailover) {
+    function (OvhApiIpReverse, OvhApiCloudProjectIpFailover) {
 
         'use strict';
 
@@ -62,7 +62,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.attach = function (vmId) {
             var self = this;
-            return CloudProjectIpFailover.Lexi().attach({
+            return OvhApiCloudProjectIpFailover.Lexi().attach({
                 serviceName : this.serviceName,
                 id          : this.id
             }, {
@@ -77,7 +77,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.detach = function () {
             var self = this;
-            return CloudProjectIpFailover.Lexi().detach({
+            return OvhApiCloudProjectIpFailover.Lexi().detach({
                 serviceName : this.serviceName,
                 id          : this.id
             }, {}).$promise.then(function (ipOptions) {
@@ -90,7 +90,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.park = function () {
             var self = this;
-            return Ip.Lexi().park({
+            return OvhApiIpReverse.Lexi().park({
                 ip : this.ip
             }, {}).$promise.then(function (ipOptions) {
                 self.status = ipOptions.status;

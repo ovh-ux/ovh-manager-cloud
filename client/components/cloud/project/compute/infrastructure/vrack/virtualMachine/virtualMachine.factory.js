@@ -1,6 +1,6 @@
 angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
-    function ($q, CloudProjectInstance, CloudProjectFlavor, CloudProjectImage, CloudPrice, CloudProjectSnapshot,
-              CloudProjectSshKey, CLOUD_VM_STATE, CLOUD_MONITORING, CLOUD_UNIT_CONVERSION) {
+    function ($q, OvhApiCloudProjectInstance, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, CloudPrice, OvhApiCloudProjectSnapshot,
+              OvhApiCloudProjectSshKey, CLOUD_VM_STATE, CLOUD_MONITORING, CLOUD_UNIT_CONVERSION) {
 
         'use strict';
 
@@ -70,7 +70,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
         VirtualMachineFactory.prototype.get = function () {
             var self = this;
 
-            return CloudProjectInstance.Lexi().get({
+            return OvhApiCloudProjectInstance.Lexi().get({
                 serviceName : this.serviceName,
                 instanceId : this.id
             }).$promise.then(function (vmOptions) {
@@ -89,21 +89,21 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
             var image = this.imageId  || (this.image && this.image.id);
             if (image) {
                 queue.push(
-                    CloudProjectImage.Lexi().query({
+                    OvhApiCloudProjectImage.Lexi().query({
                         serviceName : this.serviceName
                     }).$promise.then(function (images) {
                         self.image = _.find(images, { id: image });
 
                         // so it's a snapshot
                         if (!self.image) {
-                            return CloudProjectSnapshot.Lexi().query({
+                            return OvhApiCloudProjectSnapshot.Lexi().query({
                                 serviceName : self.serviceName
                             }).$promise.then(function (snapshots) {
                                 self.image = _.find(snapshots, { id: image });
 
                                 // so maybe image is not in list
                                 if (!self.image) {
-                                    return CloudProjectImage.Lexi().get({
+                                    return OvhApiCloudProjectImage.Lexi().get({
                                         serviceName : self.serviceName,
                                         imageId : image
                                     }).$promise.then(function (img) {
@@ -120,14 +120,14 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
             var flavorId = this.flavorId  || (this.flavor && this.flavor.id);
             if (flavorId) {
                 queue.push(
-                    CloudProjectFlavor.Lexi().query({
+                    OvhApiCloudProjectFlavor.Lexi().query({
                         serviceName : this.serviceName
                     }).$promise.then(function (flavorsList) {
                         self.flavor = _.find(flavorsList, { id: flavorId });
 
                         // if not in the list: it's a deprecated flavor: directly get it!
                         if (!self.flavor) {
-                            return CloudProjectFlavor.Lexi().get({
+                            return OvhApiCloudProjectFlavor.Lexi().get({
                                 serviceName : self.serviceName,
                                 flavorId    : flavorId
                             }).$promise.then(function (flavorDeprecated) {
@@ -146,7 +146,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
 
             // if sshKeyId
             if (this.sshKeyId) {
-                queue.push(CloudProjectSshKey.Lexi().query({
+                queue.push(OvhApiCloudProjectSshKey.Lexi().query({
                     serviceName : this.serviceName
                 }).$promise.then(function (sshKeys) {
                     self.sshKey = _.find(sshKeys, { id: self.sshKeyId });
@@ -192,7 +192,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
         VirtualMachineFactory.prototype.launchCreation = function () {
             var self = this;
 
-            return CloudProjectInstance.Lexi().save({
+            return OvhApiCloudProjectInstance.Lexi().save({
                 serviceName    : this.serviceName
             }, {
                 flavorId       : this.flavor.id,
@@ -216,7 +216,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
         VirtualMachineFactory.prototype.remove = function () {
             var self = this;
 
-            return CloudProjectInstance.Lexi().remove({
+            return OvhApiCloudProjectInstance.Lexi().remove({
                 serviceName : this.serviceName,
                 instanceId : this.id
             }).$promise.then(function () {
@@ -233,7 +233,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
                 promises = [];
 
             if (self.hasChange('name')){
-                promises.push(CloudProjectInstance.Lexi().put({
+                promises.push(OvhApiCloudProjectInstance.Lexi().put({
                         serviceName  : self.serviceName,
                         instanceId   : self.id
                     }, {
@@ -250,7 +250,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
             }
 
             if (self.hasChange('monthlyBilling')) {
-                promises.push(CloudProjectInstance.Lexi().activeMonthlyBilling({
+                promises.push(OvhApiCloudProjectInstance.Lexi().activeMonthlyBilling({
                         serviceName  : self.serviceName,
                         instanceId   : self.id
                     }).$promise.then(function (vmOptions) {
@@ -267,7 +267,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
 
             // Resize
             if (self.hasChange('flavors')) {
-                promises.push(CloudProjectInstance.Lexi().resize({
+                promises.push(OvhApiCloudProjectInstance.Lexi().resize({
                         serviceName  : self.serviceName,
                         instanceId   : self.id
                     }, {
@@ -395,7 +395,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
          */
         VirtualMachineFactory.prototype.reinstall = function (imageId) {
             var self = this;
-            return CloudProjectInstance.Lexi().reinstall({
+            return OvhApiCloudProjectInstance.Lexi().reinstall({
                 serviceName : self.serviceName,
                 instanceId  : self.id
             }, {
@@ -417,7 +417,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
         VirtualMachineFactory.prototype.rescueMode = function (enable, image) {
             var self = this;
             this.status = enable ? "RESCUING" : "UNRESCUING";
-            return CloudProjectInstance.Lexi().rescueMode({
+            return OvhApiCloudProjectInstance.Lexi().rescueMode({
                 serviceName: self.serviceName,
                 instanceId : self.id,
                 imageId    : image ? image.id : undefined,
@@ -430,7 +430,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
          */
         VirtualMachineFactory.prototype.reboot = function (type) {
             var self = this;
-            return CloudProjectInstance.Lexi().reboot({
+            return OvhApiCloudProjectInstance.Lexi().reboot({
                 serviceName : this.serviceName,
                 instanceId : this.id
             }, {
@@ -445,7 +445,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
          *  [API] Resume a virtual machine.
          */
         VirtualMachineFactory.prototype.resume = function () {
-            return CloudProjectInstance.Lexi().resume({
+            return OvhApiCloudProjectInstance.Lexi().resume({
                 serviceName : this.serviceName,
                 instanceId : this.id
             }).$promise;
@@ -456,7 +456,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
          */
         VirtualMachineFactory.prototype.backup = function (snapshotName) {
             var self = this;
-            return CloudProjectInstance.Lexi().backup({
+            return OvhApiCloudProjectInstance.Lexi().backup({
                 serviceName : this.serviceName,
                 instanceId : this.id
             }, {
@@ -559,7 +559,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
 
             CLOUD_MONITORING.vm.type.forEach(function (type) {
                 promiseToExecute.push(
-                    CloudProjectInstance.Lexi().monitoring({
+                    OvhApiCloudProjectInstance.Lexi().monitoring({
                         serviceName : self.serviceName,
                         instanceId  : self.id,
                         period      : CLOUD_MONITORING.vm.period,
