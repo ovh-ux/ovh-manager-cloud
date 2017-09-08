@@ -72,8 +72,14 @@ class OrderHelperService {
                     case "FR":
                         targetURL = "https://www.ovh.com/fr";
                         break;
+                    case "ASIA":
+                        targetURL = "https://ca.ovh.com/asia";
+                        break;
                     case "CA":
                         targetURL = "https://ca.ovh.com/en";
+                        break;
+                    case "SG":
+                        targetURL = "https://ca.ovh.com/sg";
                         break;
                     case "WS":
                         targetURL = "https://us.ovh.com/es";
