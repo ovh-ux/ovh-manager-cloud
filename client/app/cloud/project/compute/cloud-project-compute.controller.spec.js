@@ -17,16 +17,16 @@ describe("Controller: CloudProjectComputeCtrl", function () {
     // load the controller"s module
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$controller_, _$rootScope_, _CloudProjectInstanceLexi_,
-                                _$q_, _CLOUD_PROJECT_OVERVIEW_THRESHOLD_, _CloudProjectIpLexi_, _CloudUserPref_) {
+    beforeEach(inject(function (_$httpBackend_, _$controller_, _$rootScope_, _OvhApiCloudProjectInstanceLexi_,
+                                _$q_, _CLOUD_PROJECT_OVERVIEW_THRESHOLD_, _OvhApiCloudProjectIpLexi_, _CloudUserPref_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
         $q = _$q_;
-        OvhApiCloudProjectIpLexi = _CloudProjectIpLexi_;
+        OvhApiCloudProjectIpLexi = _OvhApiCloudProjectIpLexi_;
         CloudUserPref = _CloudUserPref_;
         CLOUD_PROJECT_OVERVIEW_THRESHOLD = _CLOUD_PROJECT_OVERVIEW_THRESHOLD_;
-        CloudProjectInstanceLexi = _CloudProjectInstanceLexi_;
+        CloudProjectInstanceLexi = _OvhApiCloudProjectInstanceLexi_;
 
     }));
 

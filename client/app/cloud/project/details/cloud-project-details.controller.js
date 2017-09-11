@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectDetailsCtrl",
-    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, OvhApiCloudProject, Poller, UserOrder, Toast, $translate) {
+    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, OvhApiCloudProject, Poller, OvhApiMeOrder, Toast, $translate) {
 
         var _self = this;
 
@@ -72,7 +72,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
                 return;
             case "creating":
                 if (project.orderId) {
-                    UserOrder.Lexi().get({
+                    OvhApiMeOrder.Lexi().get({
                         orderId: project.orderId
                     }).$promise.then(function (result) {
                         _self.order = result;

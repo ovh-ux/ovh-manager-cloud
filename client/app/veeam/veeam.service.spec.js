@@ -14,7 +14,7 @@ describe("Service: CloudStorageContainer", () => {
     beforeEach(inject([
         "$q",
         "$rootScope",
-        "Veeam",
+        "OvhApiVeeam",
         "VeeamService", function (
             _$q,
             _$rootScope,

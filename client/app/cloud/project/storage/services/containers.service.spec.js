@@ -18,19 +18,19 @@ describe("Service: CloudStorageContainers", function () {
         "$httpBackend",
         "$q",
         "$rootScope",
-        "CloudProjectStorageLexi",
+        "OvhApiCloudProjectStorageLexi",
         "CloudStorageContainer",
         "CloudStorageContainers", function (
             _$httpBackend,
             _$q,
             _$rootScope,
-            _cloudProjectStorageLexi,
+            _OvhApiCloudProjectStorageLexi,
             _cloudStorageContainer,
             _cloudStorageContainers) {
             $httpBackend = _$httpBackend;
             $q = _$q;
             $rootScope = _$rootScope;
-            cloudProjectStorageLexi = _cloudProjectStorageLexi;
+            cloudProjectStorageLexi = _OvhApiCloudProjectStorageLexi;
             cloudStorageContainer = _cloudStorageContainer;
             cloudStorageContainers = _cloudStorageContainers;
             setupMocks();

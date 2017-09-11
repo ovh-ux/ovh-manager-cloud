@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
 
     var self = this;
     var projectId = $stateParams.projectId;
