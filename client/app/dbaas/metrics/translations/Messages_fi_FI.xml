@@ -7,8 +7,8 @@
 
    <translation id="metrics_guides" qtlid="300370">Oppaat</translation>
    <translation id="metrics_guides_footer" qtlid="406905">Kaikki OVH:n ohjeet</translation>
-   <translation id="metrics_guides_first-step" qtlid="415753">Premiers pas ...</translation>
-   <translation id="metrics_guides_first-step_begin" qtlid="415766">Débuter</translation>
+   <translation id="metrics_guides_first-step" qtlid="415753">Ensiaskeleet...</translation>
+   <translation id="metrics_guides_first-step_begin" qtlid="415766">Aloita</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protokollat</translation>
 
 
@@ -34,12 +34,13 @@
 
    <translation id="metrics_err_service" qtlid="403346">Virhe palvelun lataamisessa.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Virhe kulutustietojesi lataamisessa.</translation>
-   <translation id="metrics_err_delete_token" qtlid="415779">Erreur lors de la suppression du token</translation>
+   <translation id="metrics_err_delete_token" qtlid="415779">Virhe tunnisteen poistossa</translation>
    <translation id="metrics_token_created" qtlid="403450">Tunniste luotu</translation>
    <translation id="metrics_token_updated" qtlid="403476">Tunniste päivitetty</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Tunniste peruttu</translation>
-   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">Vous avez presque atteint la limite du nombre de points par jour. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
-   <translation id="metrics_quota_mads_warning_message" qtlid="415805">Vous avez presque atteint la limite du nombre de séries actives par mois. Nous vous recommandons de modifier votre offre afin d'éviter de perdre des données.</translation>
+   <translation id="metrics_quota_ddp_warning_message" qtlid="415792">Olet lähellä päivittäistä pisterajaasi.&#13;
+Suosittelemme muokkaamaan palveluasi, jotta vältyt tietojen menettämiseltä.</translation>
+   <translation id="metrics_quota_mads_warning_message" qtlid="415805">Olet lähellä aktiivisten sarjojen sallittua kuukausittaista enimmäismäärää. Suosittelemme muokkaamaan palveluasi, jotta vältyt tietojen menettämiseltä.  </translation>
 
    <translation id="metrics_setting_update" qtlid="43462">Muokkaa</translation>
    <translation id="metrics_setting_desc" qtlid="364420">Projektin kuvaus</translation>

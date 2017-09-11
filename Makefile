@@ -51,6 +51,7 @@ help:
 	$(ECHO) "_____________________________"
 	$(ECHO) " -- AVAILABLE TARGETS --"
 	$(ECHO) "make clean                                                         => clean the sources"
+	$(ECHO) "make gen-certificate                                               => generate certificate"
 	$(ECHO) "make install                                                       => install deps"
 	$(ECHO) "make dev                                                           => launch the project (development)"
 	$(ECHO) "make prod                                                          => launch the project (production) - For testing purpose only"

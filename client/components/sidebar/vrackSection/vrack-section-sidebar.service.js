@@ -18,7 +18,7 @@ class VrackSectionSidebarService {
         const vrackMenuSection = this.SidebarMenu.addMenuItem({
             d: "mainVrackItem",
             title: this.$translate.instant("cloud_sidebar_section_vrack"),
-            icon: "vRack",
+            icon: "ovh-font ovh-font-vRack",
             loadOnState: "vrack",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH

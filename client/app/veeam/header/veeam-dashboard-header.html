@@ -1,13 +1,10 @@
-<h1 class="veeam-header__title" data-ng-bind="VeeamDashboardHeaderCtrl.serviceName"></h1>
-<ul class="tab-menu" data-ng-show="VeeamDashboardHeaderCtrl.serviceName">
-    <li class="tab-menu__tab"
-        data-ng-class="{ 'tab-menu__tab_active': VeeamDashboardHeaderCtrl.$state.includes('paas.veeam.detail.dashboard') }">
-        <a ui-sref="paas.veeam.detail.dashboard({ serviceName: VeeamDashboardHeaderCtrl.serviceName })"
-            data-translate="veeam_tab_dashboard"></a>
-    </li>
-    <li class="tab-menu__tab"
-        data-ng-class="{ 'tab-menu__tab_active': VeeamDashboardHeaderCtrl.$state.includes('paas.veeam.detail.storage') }">
-        <a ui-sref="paas.veeam.detail.storage({ serviceName: VeeamDashboardHeaderCtrl.serviceName })"
-            data-translate="veeam_tab_storage"></a>
-    </li>
-</ul>
+<cui-page-header data-title-text="VeeamDashboardHeaderCtrl.serviceName">
+    <cui-tabs>
+        <cui-tab data-text="'veeam_tab_dashboard' | translate"
+                data-state="paas.veeam.detail.dashboard"
+                data-state-params="{ serviceName: VeeamDashboardHeaderCtrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'veeam_tab_storage' | translate"
+                data-state="paas.veeam.detail.storage"
+                data-state-params="{ serviceName: VeeamDashboardHeaderCtrl.serviceName }"></cui-tab>
+    </cui-tabs>
+</cui-page-header>

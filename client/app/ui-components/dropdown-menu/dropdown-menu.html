@@ -1,6 +1,9 @@
 <div class="cui-dropdown-menu__body">
     <div class="cui-dropdown-menu__button"
+        role="button"
+        tabindex="0"
         data-ng-click="$ctrl.toggle($event)"
+        data-ng-keydown="$ctrl.keydown($event)"
         data-ng-class="{ 'button-container_active': $ctrl.show }"
         data-ng-transclude="button">
     </div>

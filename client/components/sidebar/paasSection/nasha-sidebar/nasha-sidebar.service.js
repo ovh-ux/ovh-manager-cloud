@@ -8,7 +8,7 @@ class NashaSidebar {
         _.forEach(services, nasha => {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: nasha.serviceName,
-                icon: "cloudnas",
+                icon: "ovh-font ovh-font-cloudnas",
                 title: nasha.displayName || nasha.serviceName,
                 allowSubItems: false,
                 state: "paas.nasha.nasha-partitions",
@@ -34,7 +34,7 @@ class NashaSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_NASHA"),
-            icon: "cloudnas",
+            icon: "ovh-font ovh-font-cloudnas",
             state: "paas.nasha-add"
         }
     }

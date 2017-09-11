@@ -20,7 +20,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
             },
             url: false,
             save: false,
-            deleting: false
+            delete: false
         };
 
         this.urls = {
@@ -71,7 +71,8 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetworks (serviceName) {
         this.loaders.privateNetwork.query = true;
-
+        this.CloudProjectNetworkPrivate.Lexi().resetCache();
+        
         return this.CloudProjectNetworkPrivate.Lexi().query({
             serviceName: serviceName
         }).$promise.catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
@@ -84,6 +85,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetwork (serviceName, id) {
         this.loaders.privateNetwork.get = true;
+        this.CloudProjectNetworkPrivate.Lexi().resetCache();
 
         return this.CloudProjectNetworkPrivate.Lexi().get({
             serviceName: serviceName,
@@ -210,13 +212,17 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     }
 
     deleteProjectNetworkPrivate (serviceName, networkId) {
-        this.loaders.deleting = true;
+        this.loaders.delete = true;
         return this.CloudProjectNetworkPrivate.Lexi().delete({
             serviceName: serviceName,
             networkId: networkId
         }).$promise.catch(error => {
             return this.$q.reject(error);
-        }).finally(() => this.loaders.deleting = false);
+        }).finally(() => this.loaders.delete = false);
+    }
+
+    isDeletePending () {
+        return this.loaders.delete === true;
     }
 }
 

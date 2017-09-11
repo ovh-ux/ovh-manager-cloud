@@ -33,7 +33,7 @@
             <div class="form-group login-information__information" data-ng-if="app.url">
                 <label class="col-sm-3 control-label login-information__information-label" data-translate="cpcivm_login_information_application_label_url"></label>
                 <div class="col-sm-9">
-                    <p class="form-control-static login-information__information-text">{{:: app.url }}</p>
+                    <a ng-href="{{ app.url }}" target="_blank" class="form-control-static login-information__information-text">{{:: app.url }}</a>
                 </div>
             </div>
             <div class="form-group login-information__information" data-ng-if="app.login">

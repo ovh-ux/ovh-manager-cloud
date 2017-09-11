@@ -191,7 +191,7 @@ angular.module("managerApp")
 
     // Contextual Urls Store.
     self.urls = {
-        vlansGuide: URLS.guides.vlans.FR.roadmap,
+        vlansGuide: null,
         vlansApiGuide: null,
         vrack: REDIRECT_URLS.vRack,
         guidesSshkeyURL: null

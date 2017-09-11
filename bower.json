@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "6.3.1",
+  "version": "6.4.1",
   "author": "OVH SAS",
   "license": "BSD-3-Clause",
   "repository": "ovh-ux/ovh-manager-cloud",
@@ -41,16 +41,16 @@
     "ng-slide-down": "1.2.x",
     "uri.js": "~1.15.0",
     "validator-js": "~3.37.0",
-    "ovh-ui-kit": "^1.0.0-alpha.11",
+    "ovh-ui-kit": "^1.0.0-alpha.15",
     "ovh-angular-a-disabled": "^0.1.1",
     "ng-at-internet": "^2.2.1",
     "at-internet-ui-router-plugin": "^0.1.2",
     "ovh-angular-toggleclass": "^1.2.1",
     "ovh-jquery-ui-draggable-ng": "^0.0.5",
-    "ovh-angular-sidebar-menu": "^3.3.9",
+    "ovh-angular-sidebar-menu": "^4.0.1",
     "ovh-angular-jquery-ui-droppable": "^0.1.1",
     "ovh-angular-manager-navbar": "^6.6.3",
-    "ovh-angular-actions-menu": "^1.0.11",
+    "ovh-angular-actions-menu": "^2.0.0",
     "ovh-angular-responsive-popover": "^4.0.1",
     "ovh-angular-jsplumb": "^3.0.5",
     "ovh-angular-checkbox-table": "^0.1.2",
@@ -72,7 +72,10 @@
     "ovh-angular-doc-url": "^0.0.6",
     "ovh-angular-module-status": "^0.0.2",
     "ovh-angular-otrs": "^1.1.0",
-    "ovh-api-services": "^1.1.5"
+    "ovh-api-services": "^1.1.5",
+    "angular-chart.js": "^1.1.1",
+    "ovh-angular-list-view": "^0.1.5",
+    "jsurl": "https://github.com/Sage/jsurl.git#v0.1.5"
   },
   "devDependencies": {
     "angular-mocks": "1.6.x",
@@ -123,6 +126,9 @@
     },
     "jsplumb": {
       "main": "dist/js/jquery.jsPlumb-1.7.4-min.js"
+    },
+    "jsurl": {
+      "main": "lib/jsurl.js"
     },
     "jquery-ui": {
       "main": [
