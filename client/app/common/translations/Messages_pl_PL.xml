@@ -462,6 +462,8 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Twoja domyślna karta bankowa wygasła. Przejdź do <a href="{{urlBillingSection}}">sekcji płatności</a>, aby ją zaktualizować.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Pojawiły się poniższe błędy</translation>
+   <translation id="message_container_multiple_warning">Informations importantes</translation>
+
    <translation id="common_global_error" qtlid="433345">Wystąpił błąd podczas operacji: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operacja przebiegła pomyślnie.</translation>
 

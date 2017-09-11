@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cloud_offer_ready" qtlid="383096">Ready for the Cloud?</translation>
+   <translation id="cloud_offer_features" qtlid="383109">Public Cloud advantages</translation>
+   <translation id="cloud_offer_explanation_1" qtlid="383122">Public Cloud instances (virtual servers) combine <strong>flexibility</strong> and <strong>guaranteed resources.</strong></translation>
+   <translation id="cloud_offer_explanation_2" qtlid="383135">In under a minute, you get CPU, RAM, dedicated storage and root access <strong>as with a dedicated server.</strong></translation>
+   <translation id="cloud_offer_explanation_3" qtlid="383148">Public Cloud is either billed hourly or monthly so you can easily handle <strong>your costs.</strong></translation>
+   <translation id="cloud_offer_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_offer_vrack_explanation" qtlid="383161">Connect your physical servers and virtual servers within the same private network</translation>
+   <translation id="cloud_offer_ipfo" qtlid="383174">FO-IP</translation>
+   <translation id="cloud_offer_ipfo_explanation" qtlid="383187">Geolocated IPs which you can switch between OVH machines </translation>
+   <translation id="cloud_offer_ipv6" qtlid="383200">Public IPv4 - IPv6 </translation>
+   <translation id="cloud_offer_ipv6_explanation" qtlid="383213">Each Public Cloud instance has a public IPv4 and a public IPv6 by default </translation>
+   <translation id="cloud_offer_upgrade" qtlid="383226">Scalability </translation>
+   <translation id="cloud_offer_upgrade_explanation" qtlid="383239">Resize your instance according to your needs </translation>
+   <translation id="cloud_offer_pca" qtlid="134631">Public Cloud Archive</translation>
+   <translation id="cloud_offer_pca_explanation" qtlid="383252">Cold storage for the best price, via the standard protocols </translation>
+   <translation id="cloud_offer_snapshot" qtlid="10235">Snapshots</translation>
+   <translation id="cloud_offer_snapshot_explanation" qtlid="383265">Back up and duplicate your instances in one click </translation>
+   <translation id="cloud_offer_ssd" qtlid="7114">SSD</translation>
+   <translation id="cloud_offer_ssd_explanation" qtlid="383278">Each instance has professional range high-performance SSD storage</translation>
+   <translation id="cloud_offer_volume" qtlid="383291">Additional volumes </translation>
+   <translation id="cloud_offer_volume_explanation" qtlid="383304">Hot add high-availability, triple replicated storage  </translation>
+   <translation id="cloud_offer_object_storage" qtlid="383317">Object Storage</translation>
+   <translation id="cloud_offer_object_storage_explanation" qtlid="383330">from a few gigabytes to several terabytes, store your objects on our SWIFT OpenStack platform </translation>
+   <translation id="cloud_offer_api" qtlid="293112">API</translation>
+   <translation id="cloud_offer_api_explanation" qtlid="383343">Automate your infrastructure management using OVH's API and OpenStack</translation>
+
+   <translation id="cloud_offer_project_label_1" qtlid="383356">Your project </translation>
+   <translation id="cloud_offer_project_label_2" qtlid="383369">Name your project </translation>
+   <translation id="cloud_offer_project_placeholder" qtlid="106751">My project</translation>
+   <translation id="cloud_offer_project_explanation_1" qtlid="383382">One project and one container which will enable you to manage your Cloud instances </translation>
+   <translation id="cloud_offer_project_explanation_2" qtlid="383395">You can rename your project later. </translation>
+   <translation id="cloud_offer_payment_label" qtlid="140014">Payment method</translation>
+   <translation id="cloud_offer_payment_none" qtlid="383408">You have not selected a default payment method. </translation>
+   <translation id="cloud_offer_payment_explanation_1" qtlid="383421">This payment method will be used for any cloud services. </translation>
+   <translation id="cloud_offer_payment_explanation_2" qtlid="383434">You can manage payment methods in the <a href="{{url}}">Billing section</a></translation>
+   <translation id="cloud_offer_voucher" qtlid="383447">Promo code </translation>
+   <translation id="cloud_offer_voucher_placeholder" qtlid="383460">1AAA-AA11</translation>
+   <translation id="cloud_offer_agreement_label" qtlid="383473">Terms of use </translation>
+   <translation id="cloud_offer_agreement_accept" qtlid="383486">I accept the <a href="{{ url }}" target="_blank">{{ name }}<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cloud_offer_start" qtlid="383499">Launch your cloud project </translation>
+
+   <translation id="cloud_offer_optional" qtlid="356264">(optional)</translation>
+   <translation id="cloud_offer_payment_order" qtlid="410065">Then, when you get an invoice, it will be automatically settled in the following order. First using the cloud credit assigned to this project, then using your accounts, and then finally using your prepaid OVH account (the debt must be settled immediately via any method of payment).  &#13;
+</translation>
+   <translation id="cloud_offer_credit_explanation" qtlid="255207">Public Cloud credit may not be transferred or reimbursed. It has no monetary value and any credit not used within 13 months will be lost.</translation>
+   <translation id="cloud_offer_no_offer" qtlid="410078">Don't have a promo code? </translation>
+   <translation id="cloud_offer_project_order" qtlid="410091">Settle an initial invoice for {{price}} of cloud credit for this project. </translation>
+</translations>

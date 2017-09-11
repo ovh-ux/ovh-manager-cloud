@@ -462,6 +462,8 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Votre carte bancaire par défaut est expirée. Rendez-vous dans <a href="{{urlBillingSection}}">la section facturation</a> pour la mettre à jour.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Les erreurs suivantes sont survenues</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Informations importantes</translation>
+
    <translation id="common_global_error" qtlid="433345">Un erreur est survenue lors de l'opération : {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">L'opération s'est déroulée avec succès.</translation>
 

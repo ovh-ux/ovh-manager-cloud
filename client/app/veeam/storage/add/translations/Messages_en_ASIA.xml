@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_storage_add_title" qtlid="403671">Add storage space</translation>
+   <translation id="veeam_storage_add_confirmation" qtlid="403749">Are you sure you want to add storage space?</translation>
+   <translation id="veeam_storage_add_confirm" qtlid="37923">Add</translation>
+   <translation id="veeam_storage_add_cancel" qtlid="37863">Cancel</translation>
+</translations>

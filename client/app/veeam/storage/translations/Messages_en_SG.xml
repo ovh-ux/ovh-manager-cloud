@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_storage_title" qtlid="403762">Storage space </translation>
+   <translation id="veeam_storage_back" qtlid="208925">Back to home page</translation>
+   <translation id="veeam_storage_add_storage" qtlid="403671">Add storage space</translation>
+   <translation id="veeam_storage_search" qtlid="98288">Searching....</translation>
+   <translation id="veeam_storage_update_title" qtlid="37875">Change</translation>
+   <translation id="veeam_storage_update_quota_title" qtlid="403775">Modify storage space</translation>
+   <translation id="veeam_storage_update_quota_information" qtlid="403788">Determine the maximum quota of your storage space. The value must be between 1000 GB and {{maxquota}} GB.</translation>
+   <translation id="veeam_storage_update_quota_cancel" qtlid="37863">Cancel</translation>
+   <translation id="veeam_storage_update_quota_confirm" qtlid="37875">Change</translation>
+</translations>

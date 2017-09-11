@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_partitions_zfs_title" qtlid="373649">Z File System (ZFS) settings</translation>
+   <translation id="nasha_partitions_zfs_atime_label" qtlid="373675">Access time update (atime)</translation>
+   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Disable</translation>
+   <translation id="nasha_partitions_zfs_atime_description" qtlid="373688">Disables the need for the kernel to update file access time every time it's requested.</translation>
+   <translation id="nasha_partitions_zfs_recordsize_label" qtlid="373701">ZFS recordsize</translation>
+   <translation id="nasha_partitions_zfs_recordsize_default" qtlid="373714">(Default)</translation>
+   <translation id="nasha_partitions_zfs_sync_label" qtlid="373727">Sync</translation>
+   <translation id="nasha_partitions_zfs_sync_standard" qtlid="48998">Standard</translation>
+   <translation id="nasha_partitions_zfs_sync_description_standard" qtlid="373740">Secured profile: combines stability with an adequate level of efficiency. First, files are written and then all elements are wiped in order to ensure data stability.</translation>
+   <translation id="nasha_partitions_zfs_sync_always" qtlid="373753">Always</translation>
+   <translation id="nasha_partitions_zfs_sync_description_always" qtlid="373766">Highly-secure profile: Your file transfers will be more stable at the expense of performance.</translation>
+   <translation id="nasha_partitions_zfs_sync_disabled" qtlid="373779">Disabled</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled" qtlid="373792">Unsecured profile: Very high-performance but dangerous option as the ZFS ignores synchronous transfer requests (BDD, NFS, etc.).</translation>
+   <translation id="nasha_partitions_zfs_sync_description_disabled_warning" qtlid="373805">Administrators should use this option only if they clearly understand the risks.</translation>
+   <translation id="nasha_partitions_zfs_modal_success" qtlid="373818">The ZFS options will be modified shortly.</translation>
+   <translation id="nasha_partitions_zfs_modal_fail" qtlid="373831">There was an error when modifying the ZFS options.</translation>
+   <translation id="nasha_partitions_zfs_modal_loading_fail" qtlid="373844">There was an error when loading the ZFS options.</translation>
+</translations>
