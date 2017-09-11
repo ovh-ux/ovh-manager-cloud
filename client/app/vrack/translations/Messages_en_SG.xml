@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="vrack_introduction_title" qtlid="344584">Manage your vRack</translation>
+   <translation id="vrack_introduction_description" qtlid="405629">Manage the private connection of all your infrastructure components, all over the globe. <br/> vRack technology (virtual bay) enables you to connect, isolate or distribute your services within one or multiple private and secure networks. </translation>
+   <translation id="vrack_introduction_change_owner" qtlid="405642">You can also <a href="{{ uri }}" target="_blank">change owner</a> if you need to. </translation>
+   <translation id="vrack_description_title" qtlid="414999">Description of your vRack</translation>
+   <translation id="vrack_guide_link_text" qtlid="344610">For more information, see our guide.</translation>
+   <translation id="vrack_change_owner_link_text" qtlid="344623">Change the owner</translation>
+   <translation id="vrack_error" qtlid="323249">Oops, we were unable to retrieve your vRack data. </translation>
+   <translation id="vrack_add_error" qtlid="323262">Oops, there was an error while adding a service to your vRack.</translation>
+   <translation id="vrack_remove_error" qtlid="323275">Oops, there was an error while deleting a service from your vRack.</translation>
+   <translation id="vrack_your_services" qtlid="344636">Your eligible services</translation>
+   <translation id="vrack_your_vrack" qtlid="323288">Your vRack</translation>
+   <translation id="vrack_help" qtlid="323301">Select one or more services to add to or delete from your vRack:</translation>
+   <translation id="vrack_order_new_title" qtlid="323314">Create your vRack</translation>
+   <translation id="vrack_cloud_warning" qtlid="325185">Warning, it is still not possible to get cloud products to communicate with other types of products. However this will be enabled over the next few months. For the moment communication is only possible inside the same project. </translation>
+   <translation id="vrack_cloud_name_max_length" qtlid="349281">Name cannot exceed {{ max }} characters.</translation>
+   <translation id="vrack_cloud_name_pattern" qtlid="349294">The name must start with a letter and cannot have any spaces. </translation>
+   <translation id="vrack_cloud_modiy_description" qtlid="415012">Edit description of this vRack</translation>
+   <translation id="vrack_cloud_modiy_name" qtlid="415025">Edit name of this vRack</translation>
+   <translation id="vrack_cloud_no_description" qtlid="415038">Add a description for this vRack</translation>
+   <translation id="vrack_cloud_no_description_title" qtlid="415051">Click to add a description for this vRack</translation>
+   <translation id="vrack_cloud_reset_description" qtlid="415064">Discard changes made to the description</translation>
+   <translation id="vrack_cloud_reset_name" qtlid="415077">Discard changes made to the name</translation>
+   <translation id="vrack_cloud_save_description" qtlid="415090">Save changes made to the description</translation>
+   <translation id="vrack_cloud_save_name" qtlid="415103">Save changes made to name</translation>
+   <translation id="vrack_cloud_description_max_length" qtlid="415116">Description cannot exceed {{ max }} characters.</translation>
+   <translation id="vrack_cloud_description_character_count" qtlid="415129">Characters used: {{ count }} / {{ max }}</translation>
+   <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
+   <translation id="vrack_move_dialog_title" qtlid="353556">Moving a Private Cloud datacentre</translation>
+   <translation id="vrack_move_dialog_intro" qtlid="353569">You selected a Private Cloud datacentre. This service cannot stand on its own and must be moved to another vRack.</translation>
+   <translation id="vrack_move_dialog_warning_notice" qtlid="353582">This operation will cause 5 minutes service disruption. </translation>
+   <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">Destination vRack:</translation>
+   <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Select a vRack</translation>
+   <translation id="vrack_move_dialog_request_error" qtlid="353621">Oops... the datacentre migration has failed.</translation>
+</translations>

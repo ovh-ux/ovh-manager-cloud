@@ -462,6 +462,8 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Jūsų banko kortelė, naudojama pagal nutylėjimą, nustojo galioti. Norėdami ją atnaujinti, eikite į <a href="{{urlBillingSection}}">sąskaitų ir mokėjimų skiltį</a>.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Įvyko šios klaidos</translation>
+   <translation id="message_container_multiple_warning">Informations importantes</translation>
+
    <translation id="common_global_error" qtlid="433345">Klaida vykdant operaciją: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operacija atlikta sėkmingai.</translation>
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_volume_addedit_add_title" qtlid="252659">Add a hard disk</translation>
+   <translation id="cpci_volume_addedit_edit_title" qtlid="252672">Change the hard disk</translation>
+   <translation id="cpci_volume_addedit_restore_title" qtlid="273635">Recreate hard disk </translation>
+   <translation id="cpci_volume_addedit_disk_name" qtlid="252685">Name of the hard disk</translation>
+
+   <translation id="cpci_volume_addedit_name_add_error_required_name" qtlid="252698">You need to name your hard disk.</translation>
+   <translation id="cpci_volume_addedit_name_add_error_max_char" qtlid="252711">The disk name must not contain more than 255 characters.</translation>
+
+   <translation id="cpci_volume_addedit_type_high-speed" qtlid="252724">High performance</translation>
+   <translation id="cpci_volume_addedit_type_classic" qtlid="252737">Classic</translation>
+   <translation id="cpci_volume_addedit_type_choose" qtlid="252750">Select type</translation>
+
+   <translation id="cpci_volume_addedit_size_choose" qtlid="252763">Select capacity</translation>
+   <translation id="cpci_volume_addedit_size" qtlid="252776">Disk capacity:</translation>
+   <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">The size limit depends on <a ui-sref="{{ state }}">your available quota</a>.</translation>
+
+   <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Loading available zones.</translation>
+   <translation id="cpci_volume_addedit_region_choose" qtlid="252789">Select location</translation>
+   <translation id="cpci_volume_addedit_region_error" qtlid="248418">Oops! We were unable to find your regions.</translation>
+   <translation id="cpci_volume_addedit_region_refresh" qtlid="248431">Update my list of regions</translation>
+   <translation id="cpci_volume_addedit_region_zone_public" qtlid="233596">Public Cloud</translation>
+
+   <translation id="cpci_volume_addedit_build" qtlid="37923">Add</translation>
+   <translation id="cpci_volume_addedit_change_now" qtlid="249107">Apply the changes</translation>
+   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Apply</translation>
+
+   <translation id="cpci_volume_default_name" qtlid="252685">Name of the hard disk</translation>
+   <translation id="cpci_volume_addedit_image_error" qtlid="248366">Oops! We were unable to find the images.</translation>
+
+   <translation id="cpci_volume_addedit_post_error" qtlid="252802">Error: unable to add the hard disk.</translation>
+   <translation id="cpci_volume_addedit_put_error" qtlid="252815">Error: unable to update the hard disk.</translation>
+
+   <translation id="cpci_volume_addedit_get_quota_error" qtlid="255376">Oops. We were unable to load your available quota.</translation>
+   <translation id="cpci_volume_addedit_over_quota" qtlid="255391">Quota is insufficient.</translation>
+   <translation id="cpci_volume_addedit_over_quota2" qtlid="255404">Increase my quota.</translation>
+
+   <translation id="cpci_volume_snapshotting_end" qtlid="273648">Backed up {{ volume }}.</translation>
+</translations>
