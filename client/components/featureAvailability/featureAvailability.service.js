@@ -51,6 +51,7 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
+                US: ["US"],
             }
         },
         licence: {
