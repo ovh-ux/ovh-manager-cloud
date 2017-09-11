@@ -14,7 +14,7 @@ angular.module("managerApp")
     },
     US: {
         config: {
-            level2: "56"    // 1 is Cloud project ID in AT-Internet US manager
+            level2: "56"    // 56 is Cloud project ID in AT-Internet US manager
         }       
     }
 });
