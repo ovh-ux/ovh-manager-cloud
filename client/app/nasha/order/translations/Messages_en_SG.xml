@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_order_title" qtlid="345130">Order an NAS-HA</translation>
+   <translation id="nasha_order_validationPending" qtlid="345143">Please finalise the payment for your <a href="{{url}}" target="_blank">purchase order</a>.</translation>
+</translations>

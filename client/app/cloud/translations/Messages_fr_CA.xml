@@ -21,7 +21,7 @@
    <translation id="cloud_common_region" qtlid="168237">Localisation</translation>
    <translation id="cloud_common_instance" qtlid="19459">Serveurs</translation>
    <translation id="cloud_common_core" qtlid="251213">Processeur virtuel</translation>
-   <translation id="cloud_common_ram" qtlid="31354">Mémoire vive</translation>
+   <translation id="cloud_common_ram" qtlid="31354">RAM</translation>
    <translation id="cloud_common_disk" qtlid="25567">Disque</translation>
 
    <translation id="cloud_common_region_SBG1" qtlid="252555">Strasbourg (SBG1)</translation>

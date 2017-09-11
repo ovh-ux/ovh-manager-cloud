@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_volume_attachedTo" qtlid="252828">Attached to the server</translation>
+   <translation id="cpc_volume_size" qtlid="28159">Disk space</translation>
+   <translation id="cpc_volume_size1" qtlid="319232">Min. space (GiB)</translation>
+   <translation id="cpc_volume_size2" qtlid="319245">Min. disk space (GiB)</translation>
+
+   <translation id="cpc_volume_creation_date" qtlid="26419">Creation date</translation>
+   <translation id="cpc_volume_monthly_price" qtlid="270007">Price excl. VAT/month</translation>
+
+   <translation id="cpc_volume_date_start" qtlid="252867">Created on</translation>
+   <translation id="cpc_volume_date_end" qtlid="252880">Created before</translation>
+
+   <translation id="cpc_volume_empty" qtlid="252919">You do not have any additional disks (volumes).</translation>
+   <translation id="cpc_volume_empty_search" qtlid="252932">No volumes match your search.</translation>
+   <translation id="cpc_volume_error" qtlid="252945">Oops! We were unable to retrieve the list of volumes.</translation>
+
+   <translation id="cpc_volume_search_button" qtlid="37659">Search</translation>
+   <translation id="cpc_volume_search_add" qtlid="37923">Add</translation>
+   <translation id="cpc_volume_create_volume_button_info" qtlid="257601">You will be redirected. The hard disk addition interface is currently loading.</translation>
+   <translation id="cpc_volume_delete_success" qtlid="252958">This volume is no longer available.</translation>
+   <translation id="cpc_volume_delete_error" qtlid="252971">Oops! We were unable to delete this volume.</translation>
+
+   <translation id="cpc_volume_delete_button" qtlid="252984">Delete the volume</translation>
+   <translation id="cpc_volume_snapshotted_delete_button_info" qtlid="273752">This volume is linked to one or more snapshots.</translation>
+   <translation id="cpc_volume_delete_cancel_button" qtlid="252997">Do not delete the volume</translation>
+   <translation id="cpc_volume_delete_confirm_button" qtlid="245519">Confirm deletion</translation>
+
+   <translation id="cpc_volume_delete_button_plural" qtlid="253010">Delete the {{nbVolumes}} volumes</translation>
+   <translation id="cpc_volume_delete_cancel_button_plural" qtlid="253023">Do not delete the volumes</translation>
+
+   <translation id="cpc_volume_delete_success_plural" qtlid="253036">The {{nbVolumes}} volumes you selected are no longer available</translation>
+   <translation id="cpc_volume_delete_error_plural" qtlid="253049">Oops! We were unable to delete the {{nbVolumes}} volumes.</translation>
+   <translation id="cpc_volume_delete_error_one" qtlid="253062">Oops! Unable to delete volume.</translation>
+
+   <translation id="cpc_volume_total_size_price" qtlid="296180">As a guide, your current volumes total <span class="text-danger">{{ capacity }}</span>, around <span class="text-danger">{{ total }} excl. VAT/month</span>.</translation>
+
+</translations>
