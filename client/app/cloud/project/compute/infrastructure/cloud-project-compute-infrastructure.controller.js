@@ -13,7 +13,8 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         var sortInterval = null;
 
         this.regionService = RegionService;
-
+        this.Cloud = Cloud;
+        
         this.jsplumbInstance = null;
         this.infra = null;
         this.volumes = null;
