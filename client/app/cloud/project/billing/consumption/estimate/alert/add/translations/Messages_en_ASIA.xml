@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Threshold alert </translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email</translation>
+   <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">An email address is required to send an alert. </translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">The email address is invalid.</translation>
+
+   <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Threshold</translation>
+   <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">The usage threshold is required. </translation>
+
+   <translation id="cpbea_estimate_alert_add_cancel_btn" qtlid="37863">Cancel</translation>
+   <translation id="cpbea_estimate_alert_add_submit_btn" qtlid="8506">Save</translation>
+
+   <translation id="cpbea_estimate_alert_error" qtlid="270774">Oops, an error occurred while saving your alert.</translation>
+   <translation id="cpbea_estimate_alert_success" qtlid="270761">Usage alert saved</translation>
+</translations>

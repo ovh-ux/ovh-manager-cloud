@@ -462,6 +462,8 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">La tua carta bancaria predefinita è scaduta. Per aggiornarla, accedi alla tua <a href="{{urlBillingSection}}">sezione "Fatturazione"</a>.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Si sono verificati i seguenti errori </translation>
+   <translation id="message_container_multiple_warning">Informations importantes</translation>
+
    <translation id="common_global_error" qtlid="433345">Un erreur est survenue lors de l'opération : {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">L'opération s'est déroulée avec succès.</translation>
 

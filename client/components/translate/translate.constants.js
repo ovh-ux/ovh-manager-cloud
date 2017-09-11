@@ -14,8 +14,14 @@ angular.module("managerApp").constant("LANGUAGES", {
         name: "English (United States)",
         key: "en_US"
     }, {
+        name: "English (Asia)",
+        key: "en_ASIA"
+    }, {
         name: "English (Australia)",
         key: "en_AU"
+    }, {
+        name: "English (Singapore)",
+        key: "en_SG"
     }, {
         name: "Español",
         key: "es_ES"

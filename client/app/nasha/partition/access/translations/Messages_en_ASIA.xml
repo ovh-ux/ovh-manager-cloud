@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="nasha_access_ip" qtlid="25615">IP</translation>
+   <translation id="nasha_access_action_add" qtlid="153857">Add an access</translation>
+   <translation id="nasha_access_action_add_message" qtlid="153870">Add an IP address or RIPE block</translation>
+   <translation id="nasha_access_action_add_services" qtlid="369256">Your OVH IPs</translation>
+   <translation id="nasha_access_action_add_placeholder" qtlid="369269">Enter an IP address or choose one from your services</translation>
+   <translation id="nasha_access_back_to_partitions" qtlid="344649">Back to partitions</translation>
+   <translation id="nasha_access_partition" qtlid="344662"><strong>Partition : </strong>{{partitionName}}</translation>
+   <translation id="nasha_partition_access_no_data" qtlid="172449">No access available</translation>
+   <translation id="nasha_partitions_access_no_data_error" qtlid="243682">Cannot display accesses.</translation>
+   <translation id="nasha_partitions_access_loading_error" qtlid="344675">An error occurred on loading the data</translation>
+   <translation id="nasha_access_action_add_success" qtlid="344688">Access {{accessIp}} will be created shortly.</translation>
+   <translation id="nasha_access_action_add_failure" qtlid="344701">An error occurred when creating access {{accessIp}}.</translation>
+   <translation id="nasha_access_action_delete_title" qtlid="153922">Delete an access</translation>
+   <translation id="nasha_access_action_delete_confirmation" qtlid="344714">Are you sure you want to delete access {{accessIp}}?</translation>
+   <translation id="nasha_access_action_delete_success" qtlid="344727">Access {{accessIp}} will be removed shortly. </translation>
+   <translation id="nasha_access_action_delete_failure" qtlid="344740">An error occurred when removing access {{accessIp}}.</translation>
+   <translation id="nasha_access_action_failure" qtlid="344753">An error occurred on changing access.</translation>
+   <translation id="nasha_partitions_access_readonly" qtlid="17333">Read only</translation>
+   <translation id="nasha_partitions_access_readwrite" qtlid="215754">Reading/writing</translation>
+   <translation id="nasha_partitions_access_permissions" qtlid="6946">Permissions</translation>
+   <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">The read-only mode is only available in NFS.</translation>
+   <translation id="nasha_partitions_access_notice" qtlid="372154">Currently you can only NAS-HA with OVH IPs (Dedicated server/VPS/Public Cloud/Private Cloud/SoYouStart/Kimsufi/ADSL).</translation>
+</translations>

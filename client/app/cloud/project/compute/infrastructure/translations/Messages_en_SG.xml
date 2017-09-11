@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpci_empty_project" qtlid="265503">You don't have a Public Cloud server yet.</translation>
+   <translation id="cpci_private_network" qtlid="246936">Private network - vRack </translation>
+   <translation id="cpci_public_network" qtlid="246949">Public network</translation>
+   <translation id="cpci_vrack" qtlid="246962">vRack</translation>
+   <translation id="cpci_internet" qtlid="246975">Internet</translation>
+
+   <translation id="cpci_public_cloud" qtlid="104890">Public Cloud</translation>
+   <translation id="cpci_private_cloud" qtlid="20131">Private Cloud</translation>
+
+   <translation id="cpci_public_cloud_soon_help" qtlid="269097">Your OVH Cloud servers will soon be able to communicate across a private network, without sending any traffic over the Internet. This service will be available in the first half of 2016.</translation>
+
+   <translation id="cpci_add_btn" qtlid="37923">Add</translation>
+   <translation id="cpci_add_server" qtlid="19315">Add a server</translation>
+   <translation id="cpci_add_ip" qtlid="25615">IP</translation>
+   <translation id="cpci_import_ip_failover" qtlid="275869">Import OVH Failover IPs</translation>
+   <translation id="cpci_buy_ip_failover" qtlid="275882">Buy Cloud failover IPs</translation>
+
+   <translation id="cpci_errors_init_title" qtlid="247040">An error occurred when retrieving details of your infrastructure.</translation>
+   <translation id="cpci_errors_init_help1" qtlid="247053">Please try again later.</translation>
+   <translation id="cpci_errors_init_help3" qtlid="295933">If the problem persists, you can contact support by clicking <a href="{{url}}">here</a>.</translation>
+
+   <translation id="cpci_uncollapse_all_vms" qtlid="250537">Display all virtual machines</translation>
+   <translation id="cpci_collapse_all_vms" qtlid="250550">Hide all virtual machines</translation>
+
+   <translation id="cloud_public_ip_v6_gateway" qtlid="377605">Gateway: {{gateway}}</translation>
+   <translation id="cloud_public_ip_loadBalancing" qtlid="247105">LBIP</translation>
+   <translation id="cloud_public_ip_failover" qtlid="186258">Failover</translation>
+   <translation id="cloud_public_ip_failover_reverse" qtlid="273583">Reverse DNS: {{ip}}</translation>
+   <translation id="cloud_public_ip_failover_reverse_loading" qtlid="8410">Loading...</translation>
+
+   <translation id="cloud_public_ip_public" qtlid="247118">Fixed</translation>
+   <translation id="cloud_public_ip_setup" qtlid="247131">Buy IPs:</translation>
+   <translation id="cloud_ip_action_change_associated_server" qtlid="247144">Modify the associated server</translation>
+   <translation id="cloud_ip_action_change_associated_servers" qtlid="247157">Modify the associated servers</translation>
+   <translation id="cloud_ip_action_change_reverse_dns" qtlid="272066">Change reverse DNS</translation>
+   <translation id="cloud_ip_action_change_activate_mitigation" qtlid="272079">Enable/Disable mitigation </translation>
+   <translation id="cloud_ip_action_change_configure_firewall" qtlid="272092">Configure the firewall </translation>
+   <translation id="cloud_ip_action_change_lb_configuration" qtlid="247170">Modify the LBIP configuration</translation>
+   <translation id="cloud_ip_action_lb_delete" qtlid="247183">Delete the LBIP</translation>
+   <translation id="cloud_ip_action_delete" qtlid="247196">Delete the IP</translation>
+   <translation id="cloud_ip_action_detach" qtlid="247209">Remove the IP from the server</translation>
+   <translation id="cloud_ip_action_park" qtlid="247222">Park your IP</translation>
+   <translation id="cloud_ip_action_sort" qtlid="257510">Sort</translation>
+   <translation id="cloud_ip_action_automatic" qtlid="257523">automatic</translation>
+   <translation id="cloud_ip_action_manual" qtlid="257536">manual</translation>
+
+   <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_UNKNOWN" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_ERROR" qtlid="289016">There has been a problem with "{{server}}" (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_DELETING" qtlid="200300">Deleting...</translation>
+   <translation id="cpci_vm_BUILD" qtlid="200287">Creating...</translation>
+   <translation id="cpci_vm_BUILDING" qtlid="200287">Creating...</translation>
+   <translation id="cpci_vm_REBUILD" qtlid="247261">Rebooting...</translation>
+   <translation id="cpci_vm_HARD_REBOOT" qtlid="247274">Cold reboot in progress...</translation>
+   <translation id="cpci_vm_MIGRATING" qtlid="247287">Migrating...</translation>
+   <translation id="cpci_vm_REBOOT" qtlid="247300">Hot reboot in progress...</translation>
+   <translation id="cpci_vm_RESIZE" qtlid="247313">Resizing your virtual machine...</translation>
+   <translation id="cpci_vm_REVERT_RESIZE" qtlid="247326">Cancelling the virtual machine resize...</translation>
+   <translation id="cpci_vm_VERIFY_RESIZE" qtlid="247339">Checking the virtual machine resize...</translation>
+   <translation id="cpci_vm_DELETED" qtlid="250563">Finalising deletion...</translation>
+   <translation id="cpci_vm_PAUSED" qtlid="289029">"{{server}}" paused (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_STOPPED" qtlid="289042">"{{server}}" stopped (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_SUSPENDED" qtlid="289055">"{{server}}" suspended (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_SHUTOFF" qtlid="289068">"{{server}}" switched off (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_RESCUE" qtlid="289081">"{{server}}" in rescue mode (ID Openstack Nova: {{id}})</translation>
+   <translation id="cpci_vm_RESCUING" qtlid="289094">Reboot in rescue mode...</translation>
+   <translation id="cpci_vm_UNRESCUING" qtlid="289107">Exit rescue mode...</translation>
+   <translation id="cpci_vm_SNAPSHOTTING" qtlid="263311">Backing up...</translation>
+   <translation id="cpci_vm_RESUMING" qtlid="200261">Activating...</translation>
+<translation id="cpci_vm_PASSWORD"/>
+<translation id="cpci_vm_RESCUED"/>
+<translation id="cpci_vm_RESIZED"/>
+<translation id="cpci_vm_SOFT_DELETED"/>
+
+   <translation id="cpci_vm_nova_id" qtlid="296869">Your Openstack Nova ID is <p>{{id}}</p></translation>
+   <translation id="cpci_vm_private_ip_list" qtlid="323158">Private IP(s): <strong>{{ privateAddresses }}</strong></translation>
+
+   <translation id="cpci_vm_loading" qtlid="247352">Loading server...</translation>
+   <translation id="cpci_vms_loading" qtlid="247365">Loading virtual machines...</translation>
+   <translation id="cpci_vm_ips_getting_error" qtlid="247378">Oops, we were unable to retrieve the list of IPs</translation>
+   <translation id="cpci_ip_delete_submit_error" qtlid="247391">Oops, we were unable to delete this IP</translation>
+   <translation id="cpci_ip_reverse_info_soon" qtlid="272105">You will soon be able to modify the reverse DNS for this continent</translation>
+
+
+   <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} excl. VAT/hour</translation>
+   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. VAT/month)</translation>
+   <translation id="cpci_price_month_btn" qtlid="270059">({{price}} ex. VAT/month)</translation>
+   <translation id="cpci_vm_private_ip" qtlid="247430">Private IP</translation>
+
+   <translation id="cpci_vm_flavor_category_ks-1" qtlid="247443">KS-1</translation>
+   <translation id="cpci_vm_flavor_category_ks-2" qtlid="247456">KS-2</translation>
+   <translation id="cpci_vm_flavor_category_vps-ssd-1" qtlid="247469">VPS-SSD-1</translation>
+   <translation id="cpci_vm_flavor_category_vps-ssd-2" qtlid="247482">VPS-SSD-2</translation>
+   <translation id="cpci_vm_flavor_category_vps-ssd-3" qtlid="247495">VPS-SSD-3</translation>
+   <translation id="cpci_vm_flavor_category_vps-ssd-4" qtlid="262631">VPS-SSD-4</translation>
+   <translation id="cpci_vm_flavor_category_eg-7" qtlid="247508">EG-7</translation>
+   <translation id="cpci_vm_flavor_category_eg-7-flex" qtlid="317178">EG-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-15" qtlid="247521">EG-15</translation>
+   <translation id="cpci_vm_flavor_category_eg-15-flex" qtlid="317191">EG-15 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-30" qtlid="247534">EG-30</translation>
+   <translation id="cpci_vm_flavor_category_eg-30-flex" qtlid="317204">EG-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-60" qtlid="247547">EG-60</translation>
+   <translation id="cpci_vm_flavor_category_eg-60-flex" qtlid="317217">EG-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-120" qtlid="247560">EG-120</translation>
+   <translation id="cpci_vm_flavor_category_eg-120-flex" qtlid="317230">EG-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-7" qtlid="288353">HG-7</translation>
+   <translation id="cpci_vm_flavor_category_hg-7-flex" qtlid="317243">HG-7 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-15" qtlid="288366">HG-15</translation>
+   <translation id="cpci_vm_flavor_category_hg-15-flex" qtlid="317256">HG-15 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-30" qtlid="288379">HG-30</translation>
+   <translation id="cpci_vm_flavor_category_hg-30-flex" qtlid="317269">HG-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-60" qtlid="288392">HG-60</translation>
+   <translation id="cpci_vm_flavor_category_hg-60-flex" qtlid="317282">HG-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-120" qtlid="288405">HG-120</translation>
+   <translation id="cpci_vm_flavor_category_hg-120-flex" qtlid="317295">HG-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-30" qtlid="247573">SP-30</translation>
+   <translation id="cpci_vm_flavor_category_sp-30-flex" qtlid="317308">SP-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-60" qtlid="247586">SP-60</translation>
+   <translation id="cpci_vm_flavor_category_sp-60-flex" qtlid="317321">SP-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-120" qtlid="247599">SP-120</translation>
+   <translation id="cpci_vm_flavor_category_sp-120-flex" qtlid="317334">SP-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-240" qtlid="247612">SP-240</translation>
+   <translation id="cpci_vm_flavor_category_sp-240-flex" qtlid="317347">SP-240 -&#160;Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-b2-7" qtlid="376973">B2-7</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-7-flex" qtlid="376986">B2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-15" qtlid="376999">B2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-15-flex" qtlid="377012">B2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-30" qtlid="377025">B2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-30-flex" qtlid="377038">B2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-60" qtlid="377051">B2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-60-flex" qtlid="377064">B2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-120" qtlid="377077">B2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-b2-120-flex" qtlid="377090">B2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-c2-7" qtlid="377103">C2-7</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-7-flex" qtlid="377116">C2-7 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-15" qtlid="377129">C2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-15-flex" qtlid="377142">C2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-30" qtlid="377155">C2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-30-flex" qtlid="377168">C2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-60" qtlid="377181">C2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-60-flex" qtlid="377194">C2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-120" qtlid="377207">C2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-c2-120-flex" qtlid="377220">C2-120 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-gpu-60" qtlid="377233">GPU-60</translation>
+   <translation id="cpci_vm_flavor_category_win-gpu-60-flex" qtlid="377246">GPU-60 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-r2-15" qtlid="377259">R2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-15-flex" qtlid="377272">R2-15 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-30" qtlid="377285">R2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-30-flex" qtlid="377298">R2-30 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-60" qtlid="377311">R2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-60-flex" qtlid="377324">R2-60 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-120" qtlid="377337">R2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-120-flex" qtlid="377350">R2-120 - Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-240" qtlid="377363">R2-240</translation>
+   <translation id="cpci_vm_flavor_category_win-r2-240-flex" qtlid="377376">R2-240 - Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_sp-30-ssd" qtlid="281290">SP-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_sp-30-ssd-flex" qtlid="317360">SP-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-60-ssd" qtlid="281303">SP-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_sp-60-ssd-flex" qtlid="317373">SP-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-120-ssd" qtlid="281316">SP-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_sp-120-ssd-flex" qtlid="317386">SP-120-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_sp-240-ssd" qtlid="281329">SP-240-SSD</translation>
+   <translation id="cpci_vm_flavor_category_sp-240-ssd-flex" qtlid="317399">SP-240-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-7-ssd" qtlid="281342">EG-7-SSD</translation>
+   <translation id="cpci_vm_flavor_category_eg-7-ssd-flex" qtlid="317412">EG-7-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-15-ssd" qtlid="281355">EG-15-SSD</translation>
+   <translation id="cpci_vm_flavor_category_eg-15-ssd-flex" qtlid="317425">EG-15-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-30-ssd" qtlid="281368">EG-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_eg-30-ssd-flex" qtlid="317438">EG-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-60-ssd" qtlid="281381">EG-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_eg-60-ssd-flex" qtlid="317451">EG-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_eg-120-ssd" qtlid="281394">EG-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_eg-120-ssd-flex" qtlid="317464">EG-120-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-7-ssd" qtlid="288418">HG-7-SSD</translation>
+   <translation id="cpci_vm_flavor_category_hg-7-ssd-flex" qtlid="317477">HG-7-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-15-ssd" qtlid="288431">HG-15-SSD</translation>
+   <translation id="cpci_vm_flavor_category_hg-15-ssd-flex" qtlid="317490">HG-15-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-30-ssd" qtlid="288444">HG-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_hg-30-ssd-flex" qtlid="317503">HG-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-60-ssd" qtlid="288457">HG-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_hg-60-ssd-flex" qtlid="317516">HG-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_hg-120-ssd" qtlid="288470">HG-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_hg-120-ssd-flex" qtlid="317529">HG-120-SSD -&#160;Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-sp-30-ssd" qtlid="281290">SP-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-30-ssd-flex" qtlid="317360">SP-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-60-ssd" qtlid="281303">SP-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-60-ssd-flex" qtlid="317373">SP-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-120-ssd" qtlid="281316">SP-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-120-ssd-flex" qtlid="317386">SP-120-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-240-ssd" qtlid="281329">SP-240-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-240-ssd-flex" qtlid="317399">SP-240-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-7-ssd" qtlid="281342">EG-7-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-7-ssd-flex" qtlid="317412">EG-7-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-15-ssd" qtlid="281355">EG-15-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-15-ssd-flex" qtlid="317425">EG-15-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-30-ssd" qtlid="281368">EG-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-30-ssd-flex" qtlid="317438">EG-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-60-ssd" qtlid="281381">EG-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-60-ssd-flex" qtlid="317451">EG-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-120-ssd" qtlid="281394">EG-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-120-ssd-flex" qtlid="317464">EG-120-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-7-ssd" qtlid="288418">HG-7-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-7-ssd-flex" qtlid="317477">HG-7-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-15-ssd" qtlid="288431">HG-15-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-15-ssd-flex" qtlid="317490">HG-15-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-30-ssd" qtlid="288444">HG-30-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-30-ssd-flex" qtlid="317503">HG-30-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-60-ssd" qtlid="288457">HG-60-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-60-ssd-flex" qtlid="317516">HG-60-SSD -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-120-ssd" qtlid="288470">HG-120-SSD</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-120-ssd-flex" qtlid="317529">HG-120-SSD -&#160;Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_win-eg-7" qtlid="247508">EG-7</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-7-flex" qtlid="317542">EG-7 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-15" qtlid="247521">EG-15</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-15-flex" qtlid="317191">EG-15 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-30" qtlid="247534">EG-30</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-30-flex" qtlid="317204">EG-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-60" qtlid="247547">EG-60</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-60-flex" qtlid="317217">EG-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-120" qtlid="247560">EG-120</translation>
+   <translation id="cpci_vm_flavor_category_win-eg-120-flex" qtlid="317230">EG-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-7" qtlid="288353">HG-7</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-7-flex" qtlid="317243">HG-7 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-15" qtlid="288366">HG-15</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-15-flex" qtlid="317256">HG-15 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-30" qtlid="288379">HG-30</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-30-flex" qtlid="317269">HG-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-60" qtlid="288392">HG-60</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-60-flex" qtlid="317282">HG-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-120" qtlid="288405">HG-120</translation>
+   <translation id="cpci_vm_flavor_category_win-hg-120-flex" qtlid="317295">HG-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-30" qtlid="247573">SP-30</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-30-flex" qtlid="317308">SP-30 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-60" qtlid="247586">SP-60</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-60-flex" qtlid="317321">SP-60 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-120" qtlid="247599">SP-120</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-120-flex" qtlid="317334">SP-120 -&#160;Flex</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-240" qtlid="247612">SP-240</translation>
+   <translation id="cpci_vm_flavor_category_win-sp-240-flex" qtlid="317347">SP-240 -&#160;Flex</translation>
+
+   <translation id="cpci_vm_flavor_category_g1-7" qtlid="400299">G1-7</translation>
+   <translation id="cpci_vm_flavor_category_g1-15" qtlid="400312">G1-15</translation>
+   <translation id="cpci_vm_flavor_category_g1-30" qtlid="400325">G1-30</translation>
+   <translation id="cpci_vm_flavor_category_g1-60" qtlid="400338">G1-60</translation>
+   <translation id="cpci_vm_flavor_category_g1-120" qtlid="400351">G1-120</translation>
+   <translation id="cpci_vm_flavor_category_g1-240" qtlid="400364">G1-240</translation>
+
+   <translation id="cpci_vm_flavor_category_win-g1-7" qtlid="400299">G1-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g1-15" qtlid="400312">G1-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g1-30" qtlid="400325">G1-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g1-60" qtlid="400338">G1-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g1-120" qtlid="400351">G1-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g1-240" qtlid="400364">G1-240</translation>
+
+   <translation id="cpci_vm_flavor_category_g2-7" qtlid="414651">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_g2-15" qtlid="414664">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_g2-30" qtlid="414677">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_g2-60" qtlid="414690">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_g2-120" qtlid="414703">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_g2-240" qtlid="414716">G2-240</translation>
+
+   <translation id="cpci_vm_flavor_category_win-g2-7" qtlid="414651">G2-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-15" qtlid="414664">G2-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-30" qtlid="414677">G2-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-60" qtlid="414690">G2-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-120" qtlid="414703">G2-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g2-240" qtlid="414716">G2-240</translation>
+
+   <translation id="cpci_vm_flavor_category_g3-7" qtlid="414729">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_g3-15" qtlid="414742">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_g3-30" qtlid="414755">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_g3-60" qtlid="414768">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_g3-120" qtlid="414781">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_g3-240" qtlid="414794">G3-240</translation>
+
+   <translation id="cpci_vm_flavor_category_win-g3-7" qtlid="414729">G3-7</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-15" qtlid="414742">G3-15</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-30" qtlid="414755">G3-30</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-60" qtlid="414768">G3-60</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-120" qtlid="414781">G3-120</translation>
+   <translation id="cpci_vm_flavor_category_win-g3-240" qtlid="414794">G3-240</translation>
+
+   <translation id="cpci_vm_alert_cpu" qtlid="276181">Your CPU has used over {{percentage}} of the power allocated in the last 7 days.</translation>
+   <translation id="cpci_vm_alert_ram" qtlid="276194">Your RAM has reached over {{percentage}} of the space used in the last 7 days.</translation>
+
+   <translation id="cpci_vm_flavor_category_ra_intel_sb_m" qtlid="243302">M</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_sb_l" qtlid="243315">L</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_ha_s" qtlid="247625">S</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_ha_m" qtlid="243302">M</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_ha_l" qtlid="243315">L</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_ssd_xl3" qtlid="247638">XL3</translation>
+   <translation id="cpci_vm_flavor_category_ra_intel_ssd_xl4" qtlid="247651">XL4</translation>
+
+   <translation id="cpci_vm_default_name" qtlid="247664">Server {{index}}</translation>
+
+   <translation id="cpci_vm_vcpus_number" qtlid="247677">{{vcpus}} vCPU</translation>
+   <translation id="cpci_vm_ram_amount" qtlid="247690">{{ram}} RAM</translation>
+   <translation id="cpci_vm_disk_amount" qtlid="247703">{{disk}}</translation>
+
+   <translation id="cpci_vm_delete_submit" qtlid="247716">Delete this server</translation>
+   <translation id="cpci_vm_delete_submit_success" qtlid="247729">This server will be deleted in a few moments.</translation>
+   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Error: unable to delete this server.</translation>
+
+   <translation id="cpci_vm_reinstall_warn" qtlid="247755">All data will be deleted!</translation>
+   <translation id="cpci_vm_reinstall_submit" qtlid="26503">Reinstall</translation>
+   <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">This server will be reinstalled in a few minutes.</translation>
+   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Error: unable to reinstall this server.</translation>
+
+   <translation id="cpci_vm_reboot_submit" qtlid="247794">Reboot this server</translation>
+   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Error: unable to reboot this server.</translation>
+   <translation id="cpci_vm_resume_submit_error" qtlid="372102">There was an error when activating this server. </translation>
+   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Oops! Unable to exit rescue mode. </translation>
+
+   <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">In order to connect to this machine, open a terminal and enter the following command :<br/><code>ssh {{user}}@{{ip}}</code>&#13;
+</translation>
+   <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">When you connect for the first time, you have to <a href="{{route}}">use the VNC console</a> to finish configuring Windows. Then, use your preferred RDP client, for example from a Linux terminal:<br/><code>rdesktop {{ip}}</code></translation>
+
+   <translation id="cpci_vm_action_monthly" qtlid="269162">Switch to monthly subscription</translation>
+   <translation id="cpci_vm_action_edit" qtlid="185452">Edit</translation>
+   <translation id="cpci_vm_action_edit_name" qtlid="70001">Rename</translation>
+   <translation id="cpci_vm_action_edit_type" qtlid="248990">Change the server type</translation>
+   <translation id="cpci_vm_action_edit_size" qtlid="266833">Modify volume size</translation>
+   <translation id="cpci_vm_action_edit_restaure" qtlid="249003">Change the OS</translation>
+   <translation id="cpci_vm_action_monitoring" qtlid="276207">Display monitoring </translation>
+
+   <translation id="cpci_vm_action_delete" qtlid="2414">Delete</translation>
+   <translation id="cpci_vm_action_reinstall" qtlid="26503">Reinstall</translation>
+   <translation id="cpci_vm_action_create_snapshot" qtlid="247820">Create a snapshot</translation>
+   <translation id="cpci_vm_action_reboot" qtlid="247833">Hot reboot (soft)</translation>
+   <translation id="cpci_vm_action_resume" qtlid="372115">Reactivate </translation>
+   <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Cold reboot (hard)</translation>
+   <translation id="cpci_vm_action_auth_info" qtlid="250927">Login information</translation>
+   <translation id="cpci_vm_action_vnc" qtlid="251161">VNC console</translation>
+   <translation id="cpci_vm_action_rescue" qtlid="168458">Reboot in rescue mode</translation>
+   <translation id="cpci_vm_action_rescue_end" qtlid="269188">Exit rescue mode</translation>
+
+   <translation id="cpci_confirm_detach_button" qtlid="107207">Detach</translation>
+   <translation id="cpci_confirm_attach_button" qtlid="247859">Attach</translation>
+
+   <translation id="cpci_confirm_detach_question" qtlid="247872">Remove IP {{ip}} from instance {{instance}}?</translation>
+   <translation id="cpci_confirm_attach_question" qtlid="247885">If you attach IP {{ip}} to instance {{futurInstanceAttach}}, it will be removed from instance {{currentInstanceAttach}}. Are you sure you want to proceed?</translation>
+   <translation id="cpci_confirm_floating_attach_question" qtlid="271296">You are about to attach the {{ip}} IP to the {{futurInstanceAttach}} instance. Are you sure you want to continue?</translation>
+
+   <translation id="cpci_ip_attach_error" qtlid="250576">We are unable to attach IP {{ip}} from instance "{{instance}}".</translation>
+   <translation id="cpci_ip_detach_error" qtlid="250589">We are unable to remove IP {{ip}} from instance "{{instance}}".</translation>
+   <translation id="cpci_ip_attach_success" qtlid="250602">IP {{ip}} will be attached to instance "{{instance}}" in a few moments.</translation>
+   <translation id="cpci_ip_attach_failover_help" qtlid="295959">You can now <a href="{{link}}" target="_blank">configure your failover IP</a>.</translation>
+   <translation id="cpci_ip_detach_success" qtlid="250615">IP {{ip}} will be removed from instance "{{instance}}" in a few moments.</translation>
+
+   <translation id="cpci_ipfo_importing" qtlid="250628">Importing...</translation>
+   <translation id="cpci_ipfo_import_success" qtlid="250641">Failover IP {{ip}} has been imported into your project.</translation>
+   <translation id="cpci_ipfo_import_error" qtlid="250654">Error: unable to import Failover IP {{ip}}. Please try again later.</translation>
+   <translation id="cpci_ipfo_attach_question" qtlid="271309">Tick the server that you what to attach the IP to{{ip}}.</translation>
+   <translation id="cpci_ipfo_attach_error" qtlid="271322">You currently have no active compatible instance with this IP's geolocation.  </translation>
+
+   <translation id="cpci_volume_number_attach_zero" qtlid="255651">No attached hard disks</translation>
+   <translation id="cpci_volume_number_attach_one" qtlid="255664">1 attached hard disk</translation>
+   <translation id="cpci_volume_number_attach_other" qtlid="255677">{{nbVolume}} attached hard disks</translation>
+
+   <translation id="cpci_volume_number_detach_zero" qtlid="255690">No attached hard disks</translation>
+   <translation id="cpci_volume_number_detach_one" qtlid="255703">1 detached hard disk</translation>
+   <translation id="cpci_volume_number_detach_other" qtlid="255716">{{nbVolume}} detached hard disks</translation>
+
+
+   <translation id="cpci_volume_add" qtlid="181175">Add a disk</translation>
+   <translation id="cpci_volume_attach" qtlid="255729">Attach it to a server</translation>
+   <translation id="cpci_volume_attach_error" qtlid="271335">You have no compatible instance that you can attach this volume to. </translation>
+   <translation id="cpci_volume_move" qtlid="247144">Modify the associated server</translation>
+   <translation id="cpci_volume_detach" qtlid="255742">Detach this disk</translation>
+   <translation id="cpci_volume_delete" qtlid="255755">Delete this disk</translation>
+   <translation id="cpci_volume_delete_error" qtlid="255768">Oops. We were unable to delete this hard disk.</translation>
+   <translation id="cpci_volume_impossible_attach" qtlid="255781">Unable to attach. Location incompatible.</translation>
+   <translation id="cpci_volume_add_from_snapshot_error" qtlid="273596">Oops, we cannot recover snapshot information.</translation>
+   <translation id="cpci_volume_snapshotted_delete_info" qtlid="295972">This disk has been backed up and there are still snapshots available. You must <a href="{{url}}">delete the disk snapshots</a> before deleting the disk. </translation>
+   <translation id="cpci_volume_snapshot_error" qtlid="273622">Oops, an error occurred when retrieving information about this volume. </translation>
+
+   <translation id="cpci_volume_action_backup" qtlid="247820">Create a snapshot</translation>
+
+   <translation id="cpci_volume_confirm_detach_question" qtlid="255794">Detach the {{volume}} hard disk from instance {{srcVm}}?</translation>
+   <translation id="cpci_volume_confirm_move_question" qtlid="255807">Detach the {{volume}} hard disk from instance {{srcVm}} to attach it to instance {{targetVm}}?</translation>
+   <translation id="cpci_volume_confirm_remove_question" qtlid="255820">Delete the {{volume}} hard disk?</translation>
+
+   <translation id="cpci_volume_moveCheckbox_question_invalid" qtlid="255833">Select the server to which you wish to add the {{volume}} hard disk.</translation>
+   <translation id="cpci_volume_moveCheckbox_question_valid" qtlid="255846">Attach the {{volume}} hard disk to instance {{targetVm}}?</translation>
+
+   <translation id="cpci_volume_confirm_move_button" qtlid="107207">Detach</translation>
+   <translation id="cpci_volume_confirm_remove_button" qtlid="255859">Delete the hard disk</translation>
+   <translation id="cpci_volume_confirm_moveCheckbox_button" qtlid="31498">Confirm</translation>
+
+   <translation id="cpci_volume_confirm_detach_error" qtlid="255872">Oops. We were unable to detach the hard disk from the instance.</translation>
+   <translation id="cpci_volume_confirm_attach_windows_info" qtlid="255885">Attention: you need to reboot your server once the operation has finished to finalise reattaching the instance.</translation>
+
+   <translation id="cpci_vrack_vlan_create_title" qtlid="293073">Private networks (vRack)</translation>
+   <translation id="cpci_vrack_vlan_more_information" qtlid="295985">&#13;
+You can use private networks after they have been linked to a vRack. (Communication between products will be made possible later). <a href="{{url}}" target="_blank">More information</a>&#13;
+</translation>
+   <translation id="cpci_vrack_create_button" qtlid="293099">Attach a vRack </translation>
+
+   <translation id="cpci_vrack_desactivated_add_tooltip" qtlid="293099">Attach a vRack </translation>
+   <translation id="cpci_vrack_activated_add_tooltip" qtlid="286955">Add a private network (vLan)</translation>
+
+   <translation id="cpci_private_network_desactivated" qtlid="287020">(deactivated)</translation>
+   <translation id="cpci_private_network_activated" qtlid="287046">(activated)</translation>
+   <translation id="cpci_private_network_query_error" qtlid="303978">Oops, the list of private networks could not be retrieved. </translation>
+
+   <translation id="cpci_vrack_vlan_api_only" qtlid="295998">At the moment you can only create private networks (VLans) in your vRack via our <a href="{{url_api}}" target="_blank">API</a>. You can also view the deployment<a href="{{url_roadmap}}" target="_blank">roadmap</a>.</translation>
+
+</translations>
