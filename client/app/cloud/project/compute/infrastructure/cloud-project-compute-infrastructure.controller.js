@@ -2,8 +2,8 @@
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
     function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
-        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
-        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloud, OvhApiMe,
+        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloud, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
+        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
         OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
         OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
 
@@ -13,7 +13,6 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         var sortInterval = null;
 
         this.regionService = RegionService;
-        this.Cloud = Cloud;
         
         this.jsplumbInstance = null;
         this.infra = null;
