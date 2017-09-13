@@ -1,9 +1,9 @@
 
 
 angular.module("managerApp").controller("CloudProjectDeleteCtrl",
-    function ($scope, $uibModalInstance, $translate, Toast, $stateParams, $q, CloudProjectInstance, CloudProjectVolume,
-              CloudProjectSnapshot, $state, CloudProjectStorage, CloudProjectIpFailover, CloudProjectIpLexi, CloudProject,
-              CloudProjectUsageCurrent, CloudProjectCredit, CloudProjectBillingService) {
+    function ($scope, $uibModalInstance, $translate, Toast, $stateParams, $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
+              OvhApiCloudProjectSnapshot, $state, OvhApiCloudProjectStorage, OvhApiCloudProjectIpFailover, OvhApiCloudProjectIpLexi, OvhApiCloudProject,
+              OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit, CloudProjectBillingService) {
         "use strict";
 
         var self = this;
@@ -64,11 +64,11 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
         };
 
         self.resetCache = function () {
-            CloudProjectInstance.Lexi().resetQueryCache();
-            CloudProjectVolume.Lexi().resetQueryCache();
-            CloudProjectSnapshot.Lexi().resetQueryCache();
-            CloudProjectIpFailover.Lexi().resetQueryCache();
-            CloudProjectIpLexi.resetQueryCache();
+            OvhApiCloudProjectInstance.Lexi().resetQueryCache();
+            OvhApiCloudProjectVolume.Lexi().resetQueryCache();
+            OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
+            OvhApiCloudProjectIpFailover.Lexi().resetQueryCache();
+            OvhApiCloudProjectIpLexi.resetQueryCache();
             self.init();
         };
 
@@ -76,12 +76,12 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
 
         function initRemainingResources () {
             return $q.all({
-                instance: CloudProjectInstance.Lexi().query({ serviceName: projectId }).$promise,
-                volume: CloudProjectVolume.Lexi().query({ serviceName: projectId }).$promise,
-                snapshot: CloudProjectSnapshot.Lexi().query({ serviceName: projectId }).$promise,
-                storage: CloudProjectStorage.Lexi().query({ projectId: projectId }).$promise,
-                ipFailoverOvh: CloudProjectIpFailover.Lexi().query({ serviceName: projectId }).$promise,
-                ipFailoverCloud: CloudProjectIpLexi.query({ serviceName: projectId }).$promise
+                instance: OvhApiCloudProjectInstance.Lexi().query({ serviceName: projectId }).$promise,
+                volume: OvhApiCloudProjectVolume.Lexi().query({ serviceName: projectId }).$promise,
+                snapshot: OvhApiCloudProjectSnapshot.Lexi().query({ serviceName: projectId }).$promise,
+                storage: OvhApiCloudProjectStorage.Lexi().query({ projectId: projectId }).$promise,
+                ipFailoverOvh: OvhApiCloudProjectIpFailover.Lexi().query({ serviceName: projectId }).$promise,
+                ipFailoverCloud: OvhApiCloudProjectIpLexi.query({ serviceName: projectId }).$promise
             }).then(function (result) {
                 self.resources = _.mapValues(result, function (arr) {
                     return arr.length;
@@ -90,7 +90,7 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
         }
 
         function getConsumption () {
-            return CloudProjectUsageCurrent.Lexi().get({
+            return OvhApiCloudProjectUsageCurrent.Lexi().get({
                 serviceName: projectId,
             }).$promise.then(function (response) {
                 return CloudProjectBillingService.getConsumptionDetails(response, response);
@@ -110,7 +110,7 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
                     (!validity.to || now.isBefore(validity.to));
             }
 
-            return CloudProjectCredit.Aapi().query({
+            return OvhApiCloudProjectCredit.Aapi().query({
                 serviceName: projectId
             }).$promise.then(function (credits) {
                 self.hasCredits = credits.some(function (credit) {
@@ -121,7 +121,7 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
 
         function deleteProject () {
             self.loaders.deleting = true;
-            return CloudProject.Lexi().delete({
+            return OvhApiCloudProject.Lexi().delete({
                 serviceName: projectId
             }).$promise.then(function () {
                 self.errors = false;

@@ -7,9 +7,9 @@ angular.module("managerApp").controller("DBaasTsSidebarEditCtrl", [
     "managerSidebarMenuItemController",
     "DBaasTsSidebarEditMediator",
     "locals",
-    "DBaasTsProject",
+    "OvhApiDBaasTsProject",
     "Toast",
-function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemController, DBaasTsSidebarEditMediator, locals, DBaasTsProject, Toast) {
+function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemController, DBaasTsSidebarEditMediator, locals, OvhApiDBaasTsProject, Toast) {
     "use strict";
 
     var self = this;
@@ -39,7 +39,7 @@ function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemContro
     $scope.saveName = function () {
         $scope.loader.save = true;
 
-        DBaasTsProject.Lexi().setup({
+        OvhApiDBaasTsProject.Lexi().setup({
             serviceName: locals.project.serviceName
         }, {
             displayName: $scope.model.name || ""
@@ -56,7 +56,7 @@ function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemContro
         })["finally"](function () {
             $scope.loader.save = false;
             DBaasTsSidebarEditMediator.stopEdition();
-            DBaasTsProject.Lexi().resetCache();
+            OvhApiDBaasTsProject.Lexi().resetCache();
         });
     };
 

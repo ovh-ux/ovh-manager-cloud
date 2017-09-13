@@ -2,11 +2,11 @@ angular.module("managerApp").service("CloudStorageContainer", [
     "$cacheFactory",
     "$http",
     "$q",
-    "CloudProjectStorage",
+    "OvhApiCloudProjectStorage",
     "CloudStorageContainersConfiguration",
     "CLOUD_PCA_FILE_STATE",
     function ($cacheFactory, $http, $q,
-            cloudProjectStorage, storageContainerConfig, CLOUD_PCA_FILE_STATE) {
+            OvhApiCloudProjectStorage, storageContainerConfig, CLOUD_PCA_FILE_STATE) {
         "use strict";
 
         var self = this;
@@ -65,7 +65,7 @@ angular.module("managerApp").service("CloudStorageContainer", [
          * @return {Promise<Object>}      object containing the list of objects
          */
         self.list = function (projectId, containerId) {
-            return cloudProjectStorage.Lexi().get({
+            return OvhApiCloudProjectStorage.Lexi().get({
                 projectId: projectId,
                 containerId: containerId
             }).$promise
@@ -86,7 +86,7 @@ angular.module("managerApp").service("CloudStorageContainer", [
             var weekDurationInMilliseconds = 6.048e+8;
             var expiration = new Date(Date.now() + weekDurationInMilliseconds);
 
-            return cloudProjectStorage.Lexi().getURL({
+            return OvhApiCloudProjectStorage.Lexi().getURL({
                     projectId: projectId,
                     containerId: containerId
                 }, {
@@ -305,7 +305,7 @@ angular.module("managerApp").service("CloudStorageContainer", [
 
             var getAccessAndTokenPromise = cacheValue ?
                 $q.resolve(cacheValue) :
-                cloudProjectStorage.Lexi().access({
+                OvhApiCloudProjectStorage.Lexi().access({
                     projectId: projectId
                 }).$promise;
 

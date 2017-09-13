@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("VrackAddCtrl",
-    function ($q, $translate, $state, $rootScope, Toast, Order, Vrack) {
+    function ($q, $translate, $state, $rootScope, Toast, OvhApiOrder, OvhApiVrack) {
 
         var self = this;
 
@@ -17,7 +17,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
         };
 
         this.getVrackContract = function () {
-            return Order.Vrack().New().Lexi().get({
+            return OvhApiOrder.Vrack().New().Lexi().get({
                 quantity: 1
             }).$promise.then(function (data) {
                 self.model.agreements = data.contracts;
@@ -28,7 +28,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
 
         this.addVrack = function () {
             self.loaders.loading = true;
-            return Order.Vrack().New().Lexi().create({
+            return OvhApiOrder.Vrack().New().Lexi().create({
                 quantity: this.model.quantityToOrder
             }).$promise.then(function (data) {
                 Toast.success($translate.instant("vrack_adding_success", { data: data }));

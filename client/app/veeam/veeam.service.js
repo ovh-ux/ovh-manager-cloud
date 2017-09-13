@@ -7,13 +7,13 @@
     };
 
     class VeeamService {
-        constructor ($interval, $q, $timeout, $translate, $filter, Veeam, RegionService) {
+        constructor ($interval, $q, $timeout, $translate, $filter, OvhApiVeeam, RegionService) {
             this.$interval = $interval;
             this.$q = $q;
             this.$timeout = $timeout;
             this.$translate = $translate;
             this.$filter = $filter;
-            this.veeam = Veeam.Lexi();
+            this.veeam = OvhApiVeeam.Lexi();
             this.RegionService = RegionService;
 
             this.unitOfWork = { };

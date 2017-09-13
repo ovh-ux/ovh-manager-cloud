@@ -1,14 +1,14 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionCurrentCtrl",
-    function ($q, $translate, $stateParams, Toast, CloudProjectBillingService, CloudProjectUsageCurrent) {
+    function ($q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
         var self = this;
         self.data = {};
 
         function init () {
             self.loading = true;
 
-            return CloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise
+            return OvhApiCloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise
                 .then(function (billingInfo) {
                     return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo);
                 })

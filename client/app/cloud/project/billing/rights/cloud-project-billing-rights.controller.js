@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingRightsCtrl",
-    function (Cloud, CloudProjectServiceInfos, User, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -61,12 +61,12 @@ angular.module("managerApp")
         };
 
         function initContact () {
-            return CloudProjectServiceInfos.Lexi().get({
+            return OvhApiCloudProjectServiceInfos.Lexi().get({
                 serviceName: serviceName
             }).$promise.then(function (infos) {
                 self.model.owner = self.contactFormData.owner = infos.contactAdmin;
                 self.model.billing = self.contactFormData.billing = infos.contactBilling;
-                return User.Lexi().get().$promise.then(function (me) {
+                return OvhApiMe.Lexi().get().$promise.then(function (me) {
                     if (me.nichandle === infos.contactAdmin) {
                         self.model.isAdmin = true;
                     }
@@ -107,7 +107,7 @@ angular.module("managerApp")
         self.validateEditOwner = function () {
             // @TODO call API
             /*if (self.contactFormData.owner !== self.model.owner) {
-                CloudProjectServiceInfos.Lexi().put({
+                OvhApiCloudProjectServiceInfos.Lexi().put({
                     serviceName: serviceName
                 }, {
                     contactAdmin: self.contactFormData.owner
@@ -152,7 +152,7 @@ angular.module("managerApp")
         self.validateEditBilling = function () {
             // @TODO call API
             /*if (self.contactFormData.billing !== self.model.billing) {
-                CloudProjectServiceInfos.Lexi().put({
+                OvhApiCloudProjectServiceInfos.Lexi().put({
                     serviceName: serviceName
                 }, {
                     contactBilling: self.contactFormData.billing
@@ -197,9 +197,9 @@ angular.module("managerApp")
         self.getRights = function (clearCache) {
             self.loader.rights = true;
             if (clearCache) {
-                Cloud.Project().Acl().Lexi().resetQueryCache();
+                OvhApiCloud.Project().Acl().Lexi().resetQueryCache();
             }
-            return Cloud.Project().Acl().Lexi().query({
+            return OvhApiCloud.Project().Acl().Lexi().query({
                 serviceName: serviceName
             }).$promise.then(function (rightIds) {
                 self.data.rightIds = rightIds;
@@ -224,7 +224,7 @@ angular.module("managerApp")
 
         self.validateAddRight = function () {
             self.loader.addRight = true;
-            return Cloud.Project().Acl().Lexi().add({
+            return OvhApiCloud.Project().Acl().Lexi().add({
                 serviceName: serviceName
             }, {
                 accountId: normalizedNic(self.addRightFormData.contact),
@@ -245,7 +245,7 @@ angular.module("managerApp")
         self.validateRemoveRight = function (accountId) {
             self.loader.removeRight = true;
             self.removeRight.accountId = accountId;
-            return Cloud.Project().Acl().Lexi().remove({
+            return OvhApiCloud.Project().Acl().Lexi().remove({
                 serviceName: serviceName,
                 accountId: accountId
             }).$promise.then(function () {
@@ -261,7 +261,7 @@ angular.module("managerApp")
 
         this.transformItem = function (accountId) {
             self.loader.rights = true;
-            return Cloud.Project().Acl().Lexi().get({
+            return OvhApiCloud.Project().Acl().Lexi().get({
                 serviceName: serviceName,
                 accountId: accountId
             }).$promise;

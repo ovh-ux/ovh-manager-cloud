@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeCtrl",
-    function ($q, $state, $stateParams, CloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
+    function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
 
         var self = this;
         var serviceName = $stateParams.projectId;

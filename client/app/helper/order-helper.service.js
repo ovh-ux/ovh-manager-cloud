@@ -1,7 +1,7 @@
 class OrderHelperService {
-    constructor ($httpParamSerializerJQLike, User) {
+    constructor ($httpParamSerializerJQLike, OvhApiMe) {
         this.$httpParamSerializerJQLike = $httpParamSerializerJQLike;
-        this.User = User;
+        this.User = OvhApiMe;
     }
 
     openExpressOrderUrl (config, urlParams = {}) {

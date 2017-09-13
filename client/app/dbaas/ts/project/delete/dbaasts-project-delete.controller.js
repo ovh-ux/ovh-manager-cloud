@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsSidebarDeleteCtrl",
-    function (locals, $state, $uibModal, Toast, $translate, DBaasTsProject) {
+    function (locals, $state, $uibModal, Toast, $translate, OvhApiDBaasTsProject) {
 
         function DeleteModalCtrl ($uibModalInstance) {
             var self = this;
@@ -10,7 +10,7 @@ angular.module("managerApp").controller("DBaasTsSidebarDeleteCtrl",
             self.confirm = function () {
                 self.loaders.deleting = true;
 
-                DBaasTsProject.Lexi().delete({
+                OvhApiDBaasTsProject.Lexi().delete({
                     serviceName: locals.project.serviceName
 
                 }).$promise.then(function () {

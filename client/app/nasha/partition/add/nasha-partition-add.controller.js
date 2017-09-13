@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stateParams, $scope, $q, $uibModalInstance, $translate, DedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stateParams, $scope, $q, $uibModalInstance, $translate, OvhApiDedicatedNasha, Toast) {
     "use strict";
     var self = this;
 
@@ -29,7 +29,7 @@ angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stat
 
     self.addPartition = function () {
         self.loading = true;
-        DedicatedNasha.Partition().Lexi().create({
+        OvhApiDedicatedNasha.Partition().Lexi().create({
             serviceName: self.nasha.serviceName
         }, {
             partitionName: self.newPartition.partitionName,
@@ -53,8 +53,8 @@ angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stat
     function init () {
         self.loading = true;
         $q.all({
-            nasha: DedicatedNasha.Lexi().get({ serviceName: $stateParams.nashaId }).$promise,
-            schema:  DedicatedNasha.Lexi().schema().$promise
+            nasha: OvhApiDedicatedNasha.Lexi().get({ serviceName: $stateParams.nashaId }).$promise,
+            schema:  OvhApiDedicatedNasha.Lexi().schema().$promise
         }).then(function (data) {
             self.protocols = data.schema.models["dedicated.storage.ProtocolEnum"].enum;
             self.nasha = data.nasha;

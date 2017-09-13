@@ -1,4 +1,4 @@
-angular.module("managerApp").directive("uniqueVlanId", function ($q, $stateParams, CloudProjectNetworkPrivate) {
+angular.module("managerApp").directive("uniqueVlanId", function ($q, $stateParams, OvhApiCloudProjectNetworkPrivate) {
     "use strict";
 
     return {
@@ -12,7 +12,7 @@ angular.module("managerApp").directive("uniqueVlanId", function ($q, $stateParam
 
                 var defer = $q.defer();
 
-                CloudProjectNetworkPrivate.Lexi().query({
+                OvhApiCloudProjectNetworkPrivate.Lexi().query({
                     serviceName: $stateParams.projectId
                 }).$promise.then(function (networks) {
                     if (_.find(networks, { vlanId: value })) {

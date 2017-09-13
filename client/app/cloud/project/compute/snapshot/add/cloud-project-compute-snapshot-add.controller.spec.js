@@ -12,7 +12,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
         $rootScope,
         $controller,
         Toast,
-        CloudProjectSnapshot,
+        OvhApiCloudProjectSnapshot,
         CloudProjectComputeInfraVrackVmFactory,
         $uibModalInstance,
         $scope;
@@ -22,7 +22,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
-        CloudProjectSnapshot = _CloudProjectSnapshot_;
+        OvhApiCloudProjectSnapshot = _CloudProjectSnapshot_;
         Toast = _Toast_;
         CloudProjectComputeInfraVrackVmFactory = _CloudProjectComputeInfraVrackVmFactory_;
         $uibModalInstance = {
@@ -36,7 +36,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
 
         spyOn(Toast, "error");
         spyOn(Toast, "success");
-        spyOn(CloudProjectSnapshot.Lexi(), "resetQueryCache");
+        spyOn(OvhApiCloudProjectSnapshot.Lexi(), "resetQueryCache");
 
         $scope = $rootScope.$new();
     }));
@@ -103,7 +103,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 expect(Toast.success.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(1);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
-                expect(CloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
             });
 
         });
@@ -123,7 +123,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 expect(Toast.error.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(0);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
-                expect(CloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
             });
 
         });

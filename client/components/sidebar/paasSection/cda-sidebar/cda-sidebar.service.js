@@ -1,7 +1,7 @@
 class CdaSidebar {
-    constructor ($translate, User, SidebarMenu, URLS) {
+    constructor ($translate, OvhApiMe, SidebarMenu, URLS) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.URLS = URLS;
 

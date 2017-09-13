@@ -1,11 +1,11 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
-    function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, CloudProject,
-        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, Ip, CloudProjectRegion, CloudProjectImage,
-        CloudProjectSnapshot, CloudProjectFlavor, CloudProjectSshKey, CloudPrice, CloudProjectComputeVolumesOrchestrator, Cloud, User,
-        CloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
-        CloudProjectVolumeSnapshot, CLOUD_MONITORING, CloudProjectNetworkPrivate, RegionService, $document) {
+    function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
+        CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloud, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
+        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
+        OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
+        OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
 
         var self = this;
         var serviceName = null;
@@ -13,7 +13,6 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         var sortInterval = null;
 
         this.regionService = RegionService;
-        this.Cloud = Cloud;
         
         this.jsplumbInstance = null;
         this.infra = null;
@@ -86,25 +85,25 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 // Pre-load required datas (all this datas will be cached)
                 return $q.all(
                     [
-                        CloudProjectRegion.Lexi().query({
+                        OvhApiCloudProjectRegion.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudProjectImage.Lexi().query({
+                        OvhApiCloudProjectImage.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudProjectSnapshot.Lexi().query({
+                        OvhApiCloudProjectSnapshot.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudProjectFlavor.Lexi().query({
+                        OvhApiCloudProjectFlavor.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudProjectSshKey.Lexi().query({
+                        OvhApiCloudProjectSshKey.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudProjectVolumeSnapshot.Lexi().query({
+                        OvhApiCloudProjectVolumeSnapshot.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        CloudPrice.Lexi().query().$promise,
+                        OvhApiCloudPrice.Lexi().query().$promise,
                         self.initRegions()
                     ]).then(function () {
                         return self.initInfra();
@@ -128,7 +127,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         }
 
         function getUser () {
-            return User.Lexi().get().$promise
+            return OvhApiMe.Lexi().get().$promise
                 .then(function(user) {
                     self.user = user;
                 });
@@ -223,7 +222,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         // Fetch all the regions
         this.initRegions = function () {
-            return CloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.Lexi().query({
                 serviceName : serviceName
             }).$promise.then(function (regionIds) {
                 return initRegionFromIds(regionIds);
@@ -233,7 +232,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         function initRegionFromIds (regionIds) {
             // build the list of GET region calls from region ids list
             var getRegions = _.map(regionIds, function (regionId) {
-                return CloudProjectRegion.Lexi().get({
+                return OvhApiCloudProjectRegion.Lexi().get({
                     serviceName : serviceName,
                        id : regionId
                 }).$promise;
@@ -577,7 +576,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         function updateReverseDns (ips) {
             var reverseQueue = [];
             angular.forEach(ips, function (ip) {
-                reverseQueue.push(Ip.Reverse().Lexi().getReverseDns(ip.ip, ip.block).then(function (dns) {
+                reverseQueue.push(OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block).then(function (dns) {
                     ip.reverse = dns;
                 }, function (err) {
                     // ok we choose to ignore errors here, so the application can still be used,
@@ -601,7 +600,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 return;
             }
 
-            var taskToPoll = taskObj ? taskObj.taskId : Ip.Lexi().getPendingTask(ip, 'genericMoveFloatingIp');
+            var taskToPoll = taskObj ? taskObj.taskId : OvhApiIp.Lexi().getPendingTask(ip, 'genericMoveFloatingIp');
 
             return $q.when(taskToPoll).then(function (taskId) {
 
@@ -1165,7 +1164,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             targetVmId : null, // use for checkbox vm
             'remove' : {
                 launchConfirm : function (volume) {
-                    CloudProjectVolumeSnapshot.Lexi().query({
+                    OvhApiCloudProjectVolumeSnapshot.Lexi().query({
                         serviceName: serviceName
                     }).$promise.then(function (snapshots) {
                         if (_.find(snapshots, { volumeId: volume.id })) {
@@ -1374,7 +1373,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
             self.loaders.privateNetworks.query = true;
 
-            return CloudProjectNetworkPrivate.Lexi().query({
+            return OvhApiCloudProjectNetworkPrivate.Lexi().query({
                 serviceName: serviceName
             }).$promise.then(function (networks) {
                 self.collections.privateNetworks = networks;

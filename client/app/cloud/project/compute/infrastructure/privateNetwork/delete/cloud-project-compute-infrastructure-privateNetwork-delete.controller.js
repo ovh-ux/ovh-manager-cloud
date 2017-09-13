@@ -1,5 +1,5 @@
 class CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl {
-    constructor($uibModalInstance, $stateParams, params, CloudProjectNetworkPrivate,
+    constructor($uibModalInstance, $stateParams, params, OvhApiCloudProjectNetworkPrivate,
                 CloudProjectComputeInfrastructurePrivateNetworkService) {
         this.service = CloudProjectComputeInfrastructurePrivateNetworkService;
         this.serviceName = $stateParams.projectId;

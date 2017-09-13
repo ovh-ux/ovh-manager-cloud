@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, Cloud, User, Vrack, $window, UserPaymentMeanCreditCard,
+    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud, OvhApiMe, OvhApiVrack, $window, OvhApiMePaymentMeanCreditCard,
               SidebarMenu, CloudProjectSidebar) {
 
         var self = this;
@@ -51,7 +51,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             if (self.model.contractsAccepted && self.data.agreements.length) {
                 var queueContracts = [];
                 angular.forEach(self.data.agreements, function (contract) {
-                    queueContracts.push(User.Agreements().Lexi().accept({
+                    queueContracts.push(OvhApiMe.Agreements().Lexi().accept({
                         id: contract.id
                     }, {}).$promise.then(function () {
                         _.remove(self.data.agreements, {
@@ -63,7 +63,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             }
 
             return $q.when(promiseContracts).then(function () {
-                return Cloud.Lexi().createProject({}, {
+                return OvhApiCloud.Lexi().createProject({}, {
                     voucher: self.model.voucher || undefined,
                     description: self.model.description || undefined,
                     catalogVersion: self.model.catalogVersion || undefined,
@@ -72,7 +72,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
                     switch (response.status) {
                     case "creating":
-                        User.Order().Lexi().get({
+                        OvhApiMe.Order().Lexi().get({
                             orderId: response.orderId
                         }).$promise.then(function (order) {
                             $window.open(order.url, "_blank");
@@ -106,7 +106,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         // Get all contracts
                         if (response.agreements && response.agreements.length) {
                             angular.forEach(response.agreements, function (contractId) {
-                                queue.push(User.Agreements().Lexi().contract({
+                                queue.push(OvhApiMe.Agreements().Lexi().contract({
                                     id: contractId
                                 }).$promise.then(function (contract) {
                                     contract.id = contractId;
@@ -169,7 +169,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         };
 
         function initUserFidelityAccount () {
-            return User.FidelityAccount().Lexi().get().$promise.then(function (account) {
+            return OvhApiMe.FidelityAccount().Lexi().get().$promise.then(function (account) {
                 return $q.when(account);
             }, function (err) {
                 return err && err.status === 404 ? $q.when(null) : $q.reject(err);
@@ -177,7 +177,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         }
 
         function initContracts () {
-            return Cloud.Project().Lexi().query().$promise.then(function (ids) {
+            return OvhApiCloud.Project().Lexi().query().$promise.then(function (ids) {
                 // we need to create the first project in order to receive contracts
                 return ids.length ? $q.when(true) : self.createProject();
             });
@@ -185,14 +185,14 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
         function initProject () {
             return $q.all({
-                projectIds:       Cloud.Project().Lexi().query().$promise,
-                price:            Cloud.Price().Lexi().query().$promise,
-                user:             User.Lexi().get().$promise,
-                defaultPayment:   User.PaymentMean().Lexi().getDefaultPaymentMean(),
-                availablePayment: User.AvailableAutomaticPaymentMeans().Lexi().get().$promise,
+                projectIds:       OvhApiCloud.Project().Lexi().query().$promise,
+                price:            OvhApiCloud.Price().Lexi().query().$promise,
+                user:             OvhApiMe.Lexi().get().$promise,
+                defaultPayment:   OvhApiMe.PaymentMean().Lexi().getDefaultPaymentMean(),
+                availablePayment: OvhApiMe.AvailableAutomaticPaymentMeans().Lexi().get().$promise,
                 fidelityAccount:  initUserFidelityAccount(),
-                bill:             User.Bill().Lexi().query().$promise,
-                creditCards:      UserPaymentMeanCreditCard.Lexi().getCreditCards()
+                bill:             OvhApiMe.Bill().Lexi().query().$promise,
+                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards()
             }).then(function (result) {
                 self.data.projectsCount = result.projectIds.length;
                 self.data.projectPrice = result.price.projectCreation;
@@ -226,8 +226,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 project_id: projectId, // jshint ignore:line
                 description: self.model.description
             });
-            Vrack.Lexi().resetCache();
-            Vrack.CloudProject().Lexi().resetQueryCache();
+            OvhApiVrack.Lexi().resetCache();
+            OvhApiVrack.CloudProject().Lexi().resetQueryCache();
         }
 
         init();

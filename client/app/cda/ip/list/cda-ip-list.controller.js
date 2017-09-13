@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaIpListCtrl", function ($q, $stateParams, $uibModal, $translate, DedicatedCeph, Toast) {
+  .controller("CdaIpListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, Toast) {
       "use strict";
 
       var self = this;
@@ -31,8 +31,8 @@ angular.module("managerApp")
       }
 
       function initIps () {
-          DedicatedCeph.Acl().Lexi().resetAllCache();
-          return DedicatedCeph.Acl().Lexi().query({
+          OvhApiDedicatedCeph.Acl().Lexi().resetAllCache();
+          return OvhApiDedicatedCeph.Acl().Lexi().query({
               serviceName: $stateParams.serviceName
           }).$promise.then(function (ips) {
               self.datas.ips = ips;

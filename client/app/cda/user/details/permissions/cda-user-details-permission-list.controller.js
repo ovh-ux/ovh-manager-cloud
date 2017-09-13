@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserDetailsPermissionListCtrl", function ($q, $stateParams, $translate, Toast, DedicatedCeph, CdaUserPermissionService) {
+  .controller("CdaUserDetailsPermissionListCtrl", function ($q, $stateParams, $translate, Toast, OvhApiDedicatedCeph, CdaUserPermissionService) {
       "use strict";
 
       var self = this;
@@ -26,9 +26,9 @@ angular.module("managerApp")
       }
 
       function initUserPermissions () {
-          DedicatedCeph.User().Pool().Lexi().resetQueryCache();
+          OvhApiDedicatedCeph.User().Pool().Lexi().resetQueryCache();
 
-          return DedicatedCeph.User().Pool().Lexi().query({
+          return OvhApiDedicatedCeph.User().Pool().Lexi().query({
               serviceName: $stateParams.serviceName,
               userName: $stateParams.userName
           }).$promise.then(function (userPermissions) {
@@ -38,9 +38,9 @@ angular.module("managerApp")
       }
 
       function initPools () {
-          DedicatedCeph.Pool().Lexi().resetQueryCache();
+          OvhApiDedicatedCeph.Pool().Lexi().resetQueryCache();
 
-          return DedicatedCeph.Pool().Lexi().query({
+          return OvhApiDedicatedCeph.Pool().Lexi().query({
               serviceName: $stateParams.serviceName
           }).$promise.then(function (pools) {
               self.datas.pools = pools;

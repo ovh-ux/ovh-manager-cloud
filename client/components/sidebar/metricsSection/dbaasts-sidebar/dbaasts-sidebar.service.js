@@ -1,7 +1,7 @@
 class DBaasTsSidebar {
-    constructor ($translate, User, SidebarMenu, DBaasTsConstants) {
+    constructor ($translate, OvhApiMe, SidebarMenu, DBaasTsConstants) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.DBaasTsConstants = DBaasTsConstants;
 

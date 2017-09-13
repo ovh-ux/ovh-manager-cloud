@@ -1,9 +1,9 @@
 class VrackSidebar {
-    constructor ($translate, SidebarMenu, URLS, User) {
+    constructor ($translate, SidebarMenu, URLS, OvhApiMe) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
         this.URLS = URLS;
-        this.User = User;
+        this.User = OvhApiMe;
 
         this.locale = null;
         this.User.Lexi().get().$promise

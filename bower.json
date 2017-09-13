@@ -70,9 +70,9 @@
     "ovh-angular-sso-auth-modal-plugin": "^1.0.15",
     "ovh-angular-swimming-poll": "^3.0.1",
     "ovh-angular-doc-url": "^0.0.6",
-    "ovh-angular-module-status": "^0.0.2",
-    "ovh-angular-otrs": "^1.1.0",
-    "ovh-api-services": "^1.1.5",
+    "ovh-angular-module-status": "^1.0.0",
+    "ovh-angular-otrs": "^3.0.0",
+    "ovh-api-services": "^2.0.1",
     "angular-chart.js": "^1.1.1",
     "ovh-angular-list-view": "^0.1.5",
     "jsurl": "https://github.com/Sage/jsurl.git#v0.1.5"

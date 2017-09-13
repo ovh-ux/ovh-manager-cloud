@@ -19,7 +19,7 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _CloudProjectUsageHistoryLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_, _CloudProjectBillLexi_, _UserBillLexi_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageHistoryLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_, _OvhApiCloudProjectBillLexi_, _OvhApiMeBillLexi_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -31,10 +31,10 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
         monthBilling = moment.utc(dateMonthBilling);
         $stateParams.year = monthBilling.year();
         $stateParams.month = monthBilling.month() + 1;
-        mockCloudProjectUsageHistoryLexi = _CloudProjectUsageHistoryLexi_;
+        mockCloudProjectUsageHistoryLexi = _OvhApiCloudProjectUsageHistoryLexi_;
         mockCloudProjectBillingService = _CloudProjectBillingService_;
-        mockCloudProjectBillLexi = _CloudProjectBillLexi_;
-        mockUserBillLexi = _UserBillLexi_;
+        mockCloudProjectBillLexi = _OvhApiCloudProjectBillLexi_;
+        mockUserBillLexi = _OvhApiMeBillLexi_;
 
         Toast = _Toast_;
         spyOn(Toast, "error");
