@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingVouchersAddcreditCtrl",
-    function ($uibModalInstance, OrderCloudProjectCredit, $stateParams, Toast, $translate, $window, User) {
+    function ($uibModalInstance, OvhApiOrderCloudProjectCredit, $stateParams, Toast, $translate, $window, OvhApiMe) {
 
         var self = this;
 
@@ -18,7 +18,7 @@ angular.module("managerApp")
 
         function getCurrency () {
             self.loaders.currency = true;
-            User.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.Lexi().get().$promise.then(function (me) {
                 self.credit.currencyCodeText = me.currency.symbol;
             })["finally"](function () {
                 self.loaders.currency = false;
@@ -27,7 +27,7 @@ angular.module("managerApp")
 
         self.addCredit = function () {
             self.loaders.addCredit = true;
-            OrderCloudProjectCredit.Lexi().save({
+            OvhApiOrderCloudProjectCredit.Lexi().save({
                 serviceName: $stateParams.projectId
             }, {
                 amount: self.credit.amount

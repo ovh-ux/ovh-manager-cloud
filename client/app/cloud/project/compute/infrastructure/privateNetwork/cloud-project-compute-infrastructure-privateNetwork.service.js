@@ -1,14 +1,14 @@
 class CloudProjectComputeInfrastructurePrivateNetworkService {
-    constructor ($q, $timeout, $translate, Toast, URLS, User, CloudProjectRegion, CloudProjectNetworkPrivate, CloudProjectNetworkPrivateSubnet) {
+    constructor ($q, $timeout, $translate, Toast, URLS, OvhApiMe, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
         this.$q = $q;
         this.$timeout = $timeout;
         this.$translate = $translate;
         this.Toast = Toast;
         this.URLS = URLS;
-        this.User = User;
-        this.Region = CloudProjectRegion;
-        this.CloudProjectNetworkPrivate = CloudProjectNetworkPrivate;
-        this.Subnet = CloudProjectNetworkPrivateSubnet;
+        this.User = OvhApiMe;
+        this.Region = OvhApiCloudProjectRegion;
+        this.OvhApiCloudProjectNetworkPrivate = OvhApiCloudProjectNetworkPrivate;
+        this.Subnet = OvhApiCloudProjectNetworkPrivateSubnet;
 
         this.loaders = {
             privateNetwork: {
@@ -71,9 +71,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetworks (serviceName) {
         this.loaders.privateNetwork.query = true;
-        this.CloudProjectNetworkPrivate.Lexi().resetCache();
+        this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
         
-        return this.CloudProjectNetworkPrivate.Lexi().query({
+        return this.OvhApiCloudProjectNetworkPrivate.Lexi().query({
             serviceName: serviceName
         }).$promise.catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
                    .finally(() => this.loaders.privateNetwork.query = false);
@@ -85,9 +85,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetwork (serviceName, id) {
         this.loaders.privateNetwork.get = true;
-        this.CloudProjectNetworkPrivate.Lexi().resetCache();
+        this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
 
-        return this.CloudProjectNetworkPrivate.Lexi().get({
+        return this.OvhApiCloudProjectNetworkPrivate.Lexi().get({
             serviceName: serviceName,
             networkId: id
         }).$promise.catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_private_network_error")))
@@ -132,7 +132,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     savePrivateNetwork (projectId, privateNetwork, onSuccess) {
         this.loaders.save = true;
 
-        return this.CloudProjectNetworkPrivate.Lexi().save(_.assign(privateNetwork, {
+        return this.OvhApiCloudProjectNetworkPrivate.Lexi().save(_.assign(privateNetwork, {
             serviceName: projectId
         })).$promise.then(network => {
             const options = {
@@ -166,7 +166,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
                 return;
             }
 
-            this.CloudProjectNetworkPrivate.Lexi().resetCache();
+            this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
 
             this.fetchPrivateNetwork(
                 options.serviceName,
@@ -213,7 +213,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     deleteProjectNetworkPrivate (serviceName, networkId) {
         this.loaders.delete = true;
-        return this.CloudProjectNetworkPrivate.Lexi().delete({
+        return this.OvhApiCloudProjectNetworkPrivate.Lexi().delete({
             serviceName: serviceName,
             networkId: networkId
         }).$promise.catch(error => {

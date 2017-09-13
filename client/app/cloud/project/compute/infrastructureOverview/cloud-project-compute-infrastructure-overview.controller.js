@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureOverviewCtrl",
-function (URLS, User, $state, $stateParams, $q, $translate, CloudUserPref, Toast) {
+function (URLS, OvhApiMe, $state, $stateParams, $q, $translate, CloudUserPref, Toast) {
     "use strict";
 
     var self = this;
@@ -13,7 +13,7 @@ function (URLS, User, $state, $stateParams, $q, $translate, CloudUserPref, Toast
     this.neverShowAgain = false;
 
     function assignGuideUrl() {
-        return User.Lexi().get().$promise
+        return OvhApiMe.Lexi().get().$promise
             .then(function(user) {
                 self.guideUrl = URLS.guides.cloud[user.ovhSubsidiary] ||
                                 URLS.guides.home[user.ovhSubsidiary] ||

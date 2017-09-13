@@ -92,8 +92,8 @@
     };
 
     class FeatureAvailabilityService {
-        constructor (User, TARGET) {
-            this.User = User;
+        constructor (OvhApiMe, TARGET) {
+            this.User = OvhApiMe;
             this.TARGET = TARGET;
 
             this.locale = null;

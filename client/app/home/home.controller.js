@@ -1,10 +1,10 @@
 "use strict";
 
 angular.module("managerApp").controller("HomeCtrl",
-    function ($state, CloudProject, CLOUD_PROJECT_STATE) {
+    function ($state, OvhApiCloudProject, CLOUD_PROJECT_STATE) {
 
         function getDisplayablesProjects() {
-            return CloudProject.Lexi().queryDetails().then(function (projects) {
+            return OvhApiCloudProject.Lexi().queryDetails().then(function (projects) {
                 _.remove(projects, { status: CLOUD_PROJECT_STATE.deleting });
                 _.remove(projects, { status: CLOUD_PROJECT_STATE.deleted });
                 _.remove(projects, { status: CLOUD_PROJECT_STATE.suspended });

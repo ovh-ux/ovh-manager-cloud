@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("IpDropdownComponentCtrl", function ($translate, $window, REDIRECT_URLS, Ip, Toast, CLOUD_GEOLOCALISATION) {
+  .controller("IpDropdownComponentCtrl", function ($translate, $window, REDIRECT_URLS, OvhApiIp, Toast, CLOUD_GEOLOCALISATION) {
       var self = this;
 
       self.failoverAttach = function (ip) {
@@ -21,7 +21,7 @@ angular.module("managerApp")
           switch (action) {
               case "reverse":
                   if (self.isIpUserSameContinent(ip)) {
-                      Ip.Lexi().resetCache();
+                      OvhApiIp.Lexi().resetCache();
                       url = ipActionUrlWithSession.replace("{action}", "reverse").replace("{ipBlock}", window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace("{ip}", ip[self.ipAccessKey]);
                   } else {
                       Toast.info($translate.instant("cpci_ip_reverse_info_soon"));

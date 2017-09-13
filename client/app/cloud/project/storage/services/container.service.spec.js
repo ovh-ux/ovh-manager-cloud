@@ -20,19 +20,19 @@ describe("Service: CloudStorageContainer", function () {
         "$httpBackend",
         "$q",
         "$rootScope",
-        "CloudProjectStorageLexi",
+        "OvhApiCloudProjectStorageLexi",
         "CloudStorageContainer",
         "CLOUD_PCA_FILE_STATE", function (
             _$httpBackend,
             _$q,
             _$rootScope,
-            _cloudProjectStorageLexi,
+            _OvhApiCloudProjectStorageLexi,
             _cloudStorageContainer,
             _CLOUD_PCA_FILE_STATE) {
             $httpBackend = _$httpBackend;
             $q = _$q;
             $rootScope = _$rootScope;
-            cloudProjectStorageLexi = _cloudProjectStorageLexi;
+            cloudProjectStorageLexi = _OvhApiCloudProjectStorageLexi;
             cloudStorageContainer = _cloudStorageContainer;
             CLOUD_PCA_FILE_STATE = _CLOUD_PCA_FILE_STATE;
             setupApiMocks();

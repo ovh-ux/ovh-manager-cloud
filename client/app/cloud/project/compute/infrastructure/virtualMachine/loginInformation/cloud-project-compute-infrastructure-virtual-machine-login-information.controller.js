@@ -1,13 +1,13 @@
 (() => {
     class CloudProjectComputeInfrastructureVirtualMachineLoginInformationCtrl {
-        constructor ($uibModalInstance, params, $q, $state, $translate, Toast, Poller, CloudProjectInstance, CloudImageService) {
+        constructor ($uibModalInstance, params, $q, $state, $translate, Toast, Poller, OvhApiCloudProjectInstance, CloudImageService) {
             this.$uibModalInstance = $uibModalInstance;
             this.$q = $q;
             this.$state = $state;
             this.$translate = $translate;
             this.Toast = Toast;
             this.Poller = Poller;
-            this.CloudProjectInstance = CloudProjectInstance;
+            this.OvhApiCloudProjectInstance = OvhApiCloudProjectInstance;
             this.CloudImageService = CloudImageService;
 
             this.loading = true;
@@ -48,7 +48,7 @@
                 this.data.image = this.CloudImageService.augmentImage(this.data.vm.image);
                 return this.$q.resolve({});
             } else {
-                return this.CloudProjectInstance.Lexi().get({
+                return this.OvhApiCloudProjectInstance.Lexi().get({
                     serviceName: this.data.vm.serviceName,
                     instanceId: this.data.vm.id
                 }).$promise

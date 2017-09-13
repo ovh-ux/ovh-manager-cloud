@@ -2,11 +2,11 @@
     "use strict";
 
     class NavbarService {
-        constructor ($translate, atInternet, User, OtrsPopupService, ssoAuthentication, TranslateService,
+        constructor ($translate, atInternet, OvhApiMe, OtrsPopupService, ssoAuthentication, TranslateService,
                      LANGUAGES, TARGET, MANAGER_URLS, REDIRECT_URLS, URLS) {
             this.$translate = $translate;
             this.atInternet = atInternet;
-            this.User = User;
+            this.User = OvhApiMe;
             this.TranslateService = TranslateService;
             this.OtrsPopupService = OtrsPopupService;
             this.ssoAuthentication = ssoAuthentication;

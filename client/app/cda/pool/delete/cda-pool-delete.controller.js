@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaPoolDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, DedicatedCeph) {
+  .controller("CdaPoolDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.deletePool = function () {
           self.saving = true;
-          DedicatedCeph.Pool().Lexi()["delete"]({
+          OvhApiDedicatedCeph.Pool().Lexi()["delete"]({
               serviceName: $stateParams.serviceName,
               poolName: self.pool.name
           }).$promise.then(function (result) {

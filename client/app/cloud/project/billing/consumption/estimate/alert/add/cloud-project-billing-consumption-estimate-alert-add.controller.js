@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateAlertAddCtrl",
-    function ($uibModalInstance, $stateParams, $scope, $translate, $q, User, CloudProjectAlerting, Toast, dataContext) {
+    function ($uibModalInstance, $stateParams, $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, Toast, dataContext) {
         var self = this;
 
         self.model = {
@@ -55,7 +55,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
         };
 
         function createAlert () {
-            return CloudProjectAlerting.Lexi().save({
+            return OvhApiCloudProjectAlerting.Lexi().save({
                 serviceName: $stateParams.projectId
             }, {
                 delay: self.alerting.defaultDelay,
@@ -67,7 +67,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
         }
 
         function editAlert (alertId) {
-            return CloudProjectAlerting.Lexi().put({
+            return OvhApiCloudProjectAlerting.Lexi().put({
                 serviceName: $stateParams.projectId,
                 alertId: alertId
             }, {

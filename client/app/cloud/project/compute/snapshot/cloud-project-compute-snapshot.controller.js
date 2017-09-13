@@ -2,8 +2,8 @@
 
 angular.module("managerApp")
   .controller("CloudProjectComputeSnapshotCtrl",
-    function (CloudPrice, CloudProjectSnapshot, CloudProjectInstance, CloudProjectVolume, CloudProjectVolumeSnapshot,
-              CloudProjectImage, $translate, Toast, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
+    function (OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
+              OvhApiCloudProjectImage, $translate, Toast, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
               $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
@@ -207,7 +207,7 @@ angular.module("managerApp")
                 notifyOnError : false
             }
         ).then(function (snapshotList) {
-            CloudProjectSnapshot.Lexi().resetQueryCache();
+            OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
             // get volume snapshots and concat new state instance snapshots
             var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
             self.table.snapshot = snapshotList.concat(volumeSnapshots);
@@ -222,7 +222,7 @@ angular.module("managerApp")
         }, function(snapshotList){
             var currentImageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
             if (currentImageSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                CloudProjectSnapshot.Lexi().resetQueryCache();
+                OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
                 var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
                 self.table.snapshot = snapshotList.concat(volumeSnapshots);
                 checkImageInstalled();
@@ -243,7 +243,7 @@ angular.module("managerApp")
                 notifyOnError : false
             }
         ).then(function (snapshotList) {
-            CloudProjectVolumeSnapshot.Lexi().resetAllCache();
+            OvhApiCloudProjectVolumeSnapshot.Lexi().resetAllCache();
             // get instance snapshots and concat new state volume snapshots
             var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
             var snapshots = checkImagesCustom (snapshotList);
@@ -258,7 +258,7 @@ angular.module("managerApp")
         }, function(snapshotList){
             var currentVolumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
             if (currentVolumeSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                CloudProjectVolumeSnapshot.Lexi().resetAllCache();
+                OvhApiCloudProjectVolumeSnapshot.Lexi().resetAllCache();
                 var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
                 var snapshots = checkImagesCustom (snapshotList);
                 self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
@@ -298,9 +298,9 @@ angular.module("managerApp")
             self.toggle.snapshotDeleteId = null;
             self.loaders.table.snapshot = true;
             if (clearCache){
-                CloudProjectSnapshot.Lexi().resetQueryCache();
-                CloudProjectInstance.Lexi().resetQueryCache(); // because with check if snapshot is installed on instances
-                CloudProjectVolume.Lexi().resetAllCache();
+                OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
+                OvhApiCloudProjectInstance.Lexi().resetQueryCache(); // because with check if snapshot is installed on instances
+                OvhApiCloudProjectVolume.Lexi().resetAllCache();
             }
 
             $q.all([getInstancePromise(), getSnapshotPromise(), getPricesPromise(), getVolumeSnapshotPromise(), getImagePromise()]).then(function (result) {
@@ -330,29 +330,29 @@ angular.module("managerApp")
     };
 
     function getInstancePromise(){
-        return CloudProjectInstance.Lexi().query({
+        return OvhApiCloudProjectInstance.Lexi().query({
                 serviceName : serviceName
             }).$promise;
     }
 
     function getSnapshotPromise(){
-        return CloudProjectSnapshot.Lexi().query({
+        return OvhApiCloudProjectSnapshot.Lexi().query({
                 serviceName : serviceName
             }).$promise;
     }
 
     function getImagePromise(){
-        return CloudProjectImage.Lexi().query({
+        return OvhApiCloudProjectImage.Lexi().query({
                 serviceName : serviceName
             }).$promise;
     }
 
     function getPricesPromise(){
-        return CloudPrice.Lexi().query().$promise;
+        return OvhApiCloudPrice.Lexi().query().$promise;
     }
 
     function getVolumeSnapshotPromise(){
-        return CloudProjectVolumeSnapshot.Lexi().query({
+        return OvhApiCloudProjectVolumeSnapshot.Lexi().query({
             serviceName : serviceName
         }).$promise.then(function (result) {
             return mapVolumeSnapshots(result);  //transform
@@ -455,14 +455,14 @@ angular.module("managerApp")
     };
 
     function deleteSnapshot (snapshotId) {
-        return CloudProjectSnapshot.Lexi().remove({
+        return OvhApiCloudProjectSnapshot.Lexi().remove({
             serviceName : serviceName,
             snapshotId: snapshotId
         }).$promise;
     }
 
     function deleteVolumeSnapshot (snapshotId) {
-        return CloudProjectVolumeSnapshot.Lexi().delete({
+        return OvhApiCloudProjectVolumeSnapshot.Lexi().delete({
             serviceName : serviceName,
             snapshotId: snapshotId
         }).$promise;

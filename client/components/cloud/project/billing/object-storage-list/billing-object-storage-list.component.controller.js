@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("BillingObjectStorageListComponentCtrl", function ($q, $filter, $translate, User, Toast) {
+    .controller("BillingObjectStorageListComponentCtrl", function ($q, $filter, $translate, OvhApiMe, Toast) {
         var self = this;
 
         self.currencySymbol = "";
@@ -22,7 +22,7 @@ angular.module("managerApp")
         };
 
         function initUserCurrency () {
-            return User.Lexi().get().$promise.then(function (me) {
+            return OvhApiMe.Lexi().get().$promise.then(function (me) {
                 self.currencySymbol = me.currency.symbol;
             });
         }

@@ -7,7 +7,7 @@
 
 
 angular.module("managerApp") .controller("CloudProjectComputeInfrastructureIpAddCtrl",
-    function ($rootScope, $scope, $timeout, $translate, $q, Cloud, CloudProjectComputeInfrastructureOrchestrator, RegionService) {
+    function ($rootScope, $scope, $timeout, $translate, $q, OvhApiCloud, CloudProjectComputeInfrastructureOrchestrator, RegionService) {
 
         var self = this;
         self.regionService = RegionService;
@@ -96,7 +96,7 @@ angular.module("managerApp") .controller("CloudProjectComputeInfrastructureIpAdd
             $rootScope.$broadcast('highlighed-element.show', 'compute,draft-ip');
             // get possible geolocs
             self.locLoader = true;
-            return Cloud.Lexi().schema().$promise.then(function (schema) {
+            return OvhApiCloud.Lexi().schema().$promise.then(function (schema) {
                 self.availableGeolocs = schema.models['ip.FloatingIpGeolocEnum']['enum'];
                 self.locLoader = false;
             });

@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("PartitionCtrl", function ($state, $rootScope, $scope, $uibModal, $q, $translate, $stateParams, DedicatedNasha, Poller, Toast) {
+angular.module("managerApp").controller("PartitionCtrl", function ($state, $rootScope, $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, Toast) {
     "use strict";
 
     var self = this;
@@ -85,7 +85,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     };
 
     function initNasha () {
-        return DedicatedNasha.Aapi().get({ serviceName: $stateParams.nashaId }).$promise.then(function (nasha) {
+        return OvhApiDedicatedNasha.Aapi().get({ serviceName: $stateParams.nashaId }).$promise.then(function (nasha) {
             self.data.nasha = nasha;
         });
     }
@@ -93,10 +93,10 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     function initPartitions (resetCache) {
         self.data.table.partitionsInCreation = [];
         if (resetCache) {
-            DedicatedNasha.Aapi().resetAllCache();
+            OvhApiDedicatedNasha.Aapi().resetAllCache();
         }
 
-        return DedicatedNasha.Aapi().partitions({ serviceName: $stateParams.nashaId }).$promise.then(function (partitions) {
+        return OvhApiDedicatedNasha.Aapi().partitions({ serviceName: $stateParams.nashaId }).$promise.then(function (partitions) {
             self.data.table.partitionIds = self.data.table.partitions = _.map(partitions, function (partition) {
                 return partition.partitionName;
             });
@@ -111,7 +111,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     }
 
     function initTasks () {
-        DedicatedNasha.Task().Lexi().resetCache();
+        OvhApiDedicatedNasha.Task().Lexi().resetCache();
 
         var tasksPromises = _.map(self.trackedTaskStatus, function (status) {
             return getTasksPromise(status);
@@ -121,7 +121,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
             return _.flatten(data);
         }).then(function (taskIds) {
             var taskPromises = _.map(taskIds, function (taskId) {
-                return DedicatedNasha.Task().Lexi().get({ serviceName: $stateParams.nashaId, taskId: taskId }).$promise;
+                return OvhApiDedicatedNasha.Task().Lexi().get({ serviceName: $stateParams.nashaId, taskId: taskId }).$promise;
             });
 
             return $q.allSettled(taskPromises);
@@ -183,7 +183,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     }
 
     function getTasksPromise (status) {
-        return DedicatedNasha.Task().Lexi().query({ serviceName: $stateParams.nashaId, status: status }).$promise;
+        return OvhApiDedicatedNasha.Task().Lexi().query({ serviceName: $stateParams.nashaId, status: status }).$promise;
     }
 
     function launchPolling (taskId) {

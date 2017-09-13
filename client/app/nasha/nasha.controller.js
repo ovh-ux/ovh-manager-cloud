@@ -1,10 +1,10 @@
 class NashaCtrl {
-    constructor ($stateParams, $translate, $state, $q, DedicatedNasha, ovhDocUrl, Toast, REDIRECT_URLS) {
+    constructor ($stateParams, $translate, $state, $q, OvhApiDedicatedNasha, ovhDocUrl, Toast, REDIRECT_URLS) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.$q = $q;
         this.$state = $state;
-        this.DedicatedNasha = DedicatedNasha;
+        this.OvhApiDedicatedNasha = OvhApiDedicatedNasha;
         this.Toast = Toast;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.ovhDocUrl = ovhDocUrl;
@@ -35,8 +35,8 @@ class NashaCtrl {
     loadNasha () {
         this.loading = true;
         this.$q.all({
-            nasha: this.DedicatedNasha.Aapi().get({ serviceName: this.$stateParams.nashaId }).$promise,
-            nashaInfo: this.DedicatedNasha.Lexi().getServiceInfos({ serviceName: this.$stateParams.nashaId }).$promise
+            nasha: this.OvhApiDedicatedNasha.Aapi().get({ serviceName: this.$stateParams.nashaId }).$promise,
+            nashaInfo: this.OvhApiDedicatedNasha.Lexi().getServiceInfos({ serviceName: this.$stateParams.nashaId }).$promise
         })
             .then(data => {
                 this.data.nasha = data.nasha;
@@ -72,7 +72,7 @@ class NashaCtrl {
         if (!this.monitoring.loading) {
             this.monitoring.enabled = state;
             this.monitoring.loading = true;
-            this.DedicatedNasha.Lexi().updateDetail({
+            this.OvhApiDedicatedNasha.Lexi().updateDetail({
                 serviceName: this.data.nasha.serviceName,
                 customName: this.data.nasha.customName,
                 monitored: state

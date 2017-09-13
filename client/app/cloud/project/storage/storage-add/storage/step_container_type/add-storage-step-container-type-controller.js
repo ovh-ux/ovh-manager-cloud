@@ -1,5 +1,5 @@
-angular.module("managerApp").controller("RA.add.storage.stepContainerTypeCtrl", ["$scope", "$translate", "URLS", "TranslateService", "User",
-    function ($scope, $translate, URLS, TranslateService, User) {
+angular.module("managerApp").controller("RA.add.storage.stepContainerTypeCtrl", ["$scope", "$translate", "URLS", "TranslateService", "OvhApiMe",
+    function ($scope, $translate, URLS, TranslateService, OvhApiMe) {
         var self = this;
         "use strict";
 
@@ -53,7 +53,7 @@ angular.module("managerApp").controller("RA.add.storage.stepContainerTypeCtrl", 
         };
 
         self.$onInit = function () {
-            User.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.Lexi().get().$promise.then(function (me) {
                 var lang = me.ovhSubsidiary;
                 _.forEach($scope.categories, category => {
                     category.moreInfo.url = URLS.website_order[category.code][lang];

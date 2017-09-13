@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserListCtrl", function ($q, $stateParams, $uibModal, $translate, DedicatedCeph, Toast, CdaService) {
+  .controller("CdaUserListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, Toast, CdaService) {
       "use strict";
 
       var self = this;

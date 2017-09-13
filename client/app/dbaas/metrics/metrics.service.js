@@ -1,10 +1,10 @@
 class MetricService {
 
-    constructor ($q, $translate, CloudMessage, Metrics) {
+    constructor ($q, $translate, CloudMessage, OvhApiMetrics) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
-        this.metrics = Metrics.Service();
+        this.metrics = OvhApiMetrics;
     }
 
     getService (serviceName) {
@@ -17,8 +17,8 @@ class MetricService {
     }
 
     getServiceInfos (serviceName) {
-        return this.metrics.ServiceInfos().Lexi()
-            .get({
+        return this.metrics.Lexi()
+            .getServiceInfos({
                 serviceName
             }).$promise
             .then(response => this.acceptResponse(response))
@@ -38,8 +38,8 @@ class MetricService {
     }
 
     getConsumption (serviceName) {
-        return this.metrics.Consumption().Lexi()
-            .get({
+        return this.metrics.Lexi()
+            .getConsumption({
                 serviceName
             }).$promise
             .then(response => this.acceptResponse(response))

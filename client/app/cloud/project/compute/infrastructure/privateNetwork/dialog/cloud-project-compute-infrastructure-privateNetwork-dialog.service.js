@@ -1,7 +1,7 @@
 class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
-    constructor ($timeout, CloudProjectNetworkPrivate, CloudProjectComputeInfrastructurePrivateNetworkService) {
+    constructor ($timeout, OvhApiCloudProjectNetworkPrivate, CloudProjectComputeInfrastructurePrivateNetworkService) {
         this.$timeout = $timeout;
-        this.CloudProjectNetworkPrivate = CloudProjectNetworkPrivate;
+        this.OvhApiCloudProjectNetworkPrivate = OvhApiCloudProjectNetworkPrivate;
         this.Service = CloudProjectComputeInfrastructurePrivateNetworkService;
     }
 
@@ -55,7 +55,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
                 return;
             }
 
-            this.CloudProjectNetworkPrivate.Lexi().resetCache();
+            this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
 
             this.fetchPrivateNetwork(
                 options.serviceName,

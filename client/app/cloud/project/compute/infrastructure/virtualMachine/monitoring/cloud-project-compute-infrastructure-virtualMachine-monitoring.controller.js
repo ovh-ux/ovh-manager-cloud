@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
 .controller("CloudProjectComputeInfrastructureVirtualMachineMonitoringCtrl",
-    function ($rootScope, $scope, $q, $timeout, CloudProjectComputeInfrastructureOrchestrator, CloudProjectInstance,
+    function ($rootScope, $scope, $q, $timeout, CloudProjectComputeInfrastructureOrchestrator, OvhApiCloudProjectInstance,
               CLOUD_MONITORING, CLOUD_UNIT_CONVERSION) {
 
         var self = this;
@@ -82,8 +82,8 @@ angular.module("managerApp")
         self.onChartPeriodChanged = function (type) {
             var period = self.selectedChartPeriod[type];
             self.loaders.monitoring[type] = true;
-            CloudProjectInstance.Lexi().resetAllCache();
-            CloudProjectInstance.Lexi().monitoring({
+            OvhApiCloudProjectInstance.Lexi().resetAllCache();
+            OvhApiCloudProjectInstance.Lexi().monitoring({
                 serviceName : self.vm.serviceName,
                 instanceId  : self.vm.id,
                 period      : period,

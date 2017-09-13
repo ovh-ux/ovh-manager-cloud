@@ -7,7 +7,7 @@
  *  This orchestrator is used to init and manage a Cloud infrastructure.
  */
 angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestrator",
-    function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref, CloudProjectComputeVolumesOrchestrator, CloudProjectComputeInfrastructureFactory, CloudProjectInstance, CloudProjectIp, Ip, CloudProjectRegion, CloudProjectFlavor, CloudProjectImage, CloudProjectSshKey) {
+    function ($q, $translate, $rootScope, $timeout, CLOUD_INSTANCE_DEFAULTS, Poller, CloudUserPref, CloudProjectComputeVolumesOrchestrator, CloudProjectComputeInfrastructureFactory, OvhApiCloudProjectInstance, OvhApiCloudProjectIp, OvhApiIp, OvhApiCloudProjectRegion, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectSshKey) {
 
         // Warning: all values must be reset at init (see resetDatas())
         var _self = this,
@@ -39,7 +39,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
          *  Get the default vm configuration options
          */
         var getDefaultVmConfiguration = function () {
-            return CloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.Lexi().query({
                 serviceName: _self.infra.serviceName
             }).$promise.then(function (regionList) {
                 // check if the default region exists
@@ -63,7 +63,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
 
             // get the flavor id
             optionsQueue.push(
-                CloudProjectFlavor.Lexi().query({
+                OvhApiCloudProjectFlavor.Lexi().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (flavors) {
                     options.flavorId = (_.find(flavors, { region : options.region, name : CLOUD_INSTANCE_DEFAULTS.flavor }) || {}).id;
@@ -72,7 +72,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
 
             // get the image id
             optionsQueue.push(
-                CloudProjectImage.Lexi().query({
+                OvhApiCloudProjectImage.Lexi().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (images) {
                     options.imageId = (_.find(images, { region : options.region, name : CLOUD_INSTANCE_DEFAULTS.image }) || {}).id;
@@ -82,7 +82,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
             // get the ssh key id - the first ssh key present in given region
             // remove this if default image becomes windows type
             optionsQueue.push(
-                CloudProjectSshKey.Lexi().query({
+                OvhApiCloudProjectSshKey.Lexi().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (sshKeys) {
                     options.sshKeyId = (_.find(sshKeys, function (sshKey) {
@@ -156,7 +156,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
          * Launch vm creation, creating multiple copies.
          */
         this.saveMultipleNewVms = function (vmBase, count) {
-            return CloudProjectInstance.Lexi().bulk({
+            return OvhApiCloudProjectInstance.Lexi().bulk({
                 serviceName    : _self.infra.serviceName
             }, {
                 flavorId       : vmBase.flavor.id,
@@ -764,7 +764,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
                 /*==========  VMs  ==========*/
 
                 initQueue.push(
-                    CloudProjectInstance.Lexi().query({
+                    OvhApiCloudProjectInstance.Lexi().query({
                         serviceName : _self.infra.serviceName
                     }).$promise.then(function (instances) {
                         _.forEach(instances, function (instance) {
@@ -787,7 +787,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
                 var ipTypes = ['failover'];
                 angular.forEach(ipTypes, function (ipType) {
                     initQueue.push(
-                        CloudProjectIp[ipType].Lexi().query({
+                        OvhApiCloudProjectIp[ipType].Lexi().query({
                             serviceName : _self.infra.serviceName
                         }).$promise.then(function (ips) {
                             angular.forEach(ips, function (ip) {
