@@ -325,8 +325,8 @@ angular.module("managerApp")
                 }
             }
 
-            if (originalCategory) {
-                var originalCategoryObject = _.find(self.displayData.categories, { "category" : category.id});
+            if (category && originalCategory) {
+                var originalCategoryObject = _.find(self.displayData.categories, { category: category.id });
                 originalCategoryObject.flavors.forEach(function(flavor) {
                     flavor.migrationNotAllowed = _.includes(originalCategory.migrationNotAllowed, category.id);
                 });
