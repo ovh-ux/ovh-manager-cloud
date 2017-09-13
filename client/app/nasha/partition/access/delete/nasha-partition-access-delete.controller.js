@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessDeleteCtrl", function ($scope, $translate, $uibModalInstance, DedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionAccessDeleteCtrl", function ($scope, $translate, $uibModalInstance, OvhApiDedicatedNasha, Toast) {
     "use strict";
 
     var self = this;
@@ -11,7 +11,7 @@ angular.module("managerApp").controller("NashaPartitionAccessDeleteCtrl", functi
 
     self.removeAccess = function () {
         self.loading = true;
-        DedicatedNasha.Partition().Access().Lexi().remove({
+        OvhApiDedicatedNasha.Partition().Access().Lexi().remove({
             serviceName: self.toRemove.serviceName,
             partitionName: self.toRemove.partitionName,
             ip: self.toRemove.access.ip

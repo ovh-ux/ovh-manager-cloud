@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">No default payment method has been selected. Please go to <a href="{{link}}" class="alert-link">the billing section</a> to select one or add a new one. </translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">Your default payment method has expired. Please go to the<a href="{{link}}" class="alert-link">billing section</a> to enter a new one.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">Your default payment method will expire in less than 30 days. Please go to the<a href="{{link}}" class="alert-link">billing section</a> to enter a new one.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">Your default payment method (bank account) is in default. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to check for any errors and/or enter a new payment method.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">Your default payment method (credit card) is in error. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to check for any errors and/or enter a new payment method.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">Your default payment method (PayPal) is in error. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to check for any errors and/or enter a new payment method.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">You have <strong>{{count}}</strong> bank account(s) awaiting validation. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to get more information.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">You have <strong>{{count}}</strong> credit card(s) in default. Please go to the <a href="{{link}}" class="alert-link">billing section </a> to check the situation and/or enter a new payment method.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">You have <strong>{{count}}</strong> PayPal account(s) in error. Please go to the <a href="{{link}}" class="alert-link">billing section </a> to check the situation and/or enter a new payment method.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Your OVH account is outstanding by <strong>{{value}}</strong> as of {{date | date:'medium'}}. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to settle the amount.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">You owe <strong>{{value}}</strong>. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to settle the amount.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">You owe <strong>{{ dueAmount }}</strong> (including an amount of {{ unmaturedAmount }} unmatured). Please go to <a href="#/billing/statements" class="alert-link">the billing section</a> to settle the amount.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Your OVH account has reached the threshold you defined. Please go to the <a href="{{link}}" class="alert-link">billing section</a> for more information.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">You have <strong>{{count}}</strong> pending order(s) requiring documents. Please go to the<a href="{{link}}" class="alert-link"> "My Orders" section</a> to do the update.</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">You have <strong>{{count}}</strong> contracts to approve.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">You have <strong>{{count}}</strong> contact change request(s).</translation>
+
+</translations>

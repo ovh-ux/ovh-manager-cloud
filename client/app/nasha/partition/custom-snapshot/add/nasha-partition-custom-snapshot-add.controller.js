@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", function ($scope, $stateParams, $translate, $uibModalInstance, DedicatedNashaPartition, Toast) {
+angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", function ($scope, $stateParams, $translate, $uibModalInstance, OvhApiDedicatedNashaPartition, Toast) {
     "use strict";
     var self = this;
 
@@ -25,7 +25,7 @@ angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", f
 
     self.addCustomSnapshot = function () {
         self.saving = true;
-        DedicatedNashaPartition.CustomSnapshot().Lexi().add({
+        OvhApiDedicatedNashaPartition.CustomSnapshot().Lexi().add({
             serviceName: $stateParams.nashaId,
             partitionName: self.data.partition.partitionName
         }, {

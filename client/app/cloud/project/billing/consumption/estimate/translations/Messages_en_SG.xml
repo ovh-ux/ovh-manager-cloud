@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpbe_estimate_summary_header" qtlid="364043">If your usage stays as it is, on the first of {{ month }} you will owe:</translation>
+   <translation id="cpbe_estimate_summary_renew_monthly_sub_label" qtlid="364056">Renewal of your monthly subscriptions:&#13;
+<strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_summary_hourly_consumption_label" qtlid="364069">On-demand usage in {{ month }}: <strong>{{ total }}</strong></translation>
+   <translation id="cpbe_estimate_alert_header_title" qtlid="364082">On-demand usage alert</translation>
+   <translation id="cpbe_estimate_alert_header_description" qtlid="364095">This alert is based on the projection at the end of the month</translation>
+   <translation id="cpbe_estimate_alert_create" qtlid="269032">Create alert</translation>
+   <translation id="cpbe_estimate_alert_edit" qtlid="364108">Change alert </translation>
+   <translation id="cpbe_estimate_alert_delete" qtlid="286903">Delete alert </translation>
+   <translation id="cpbe_estimate_alert_delete_success" qtlid="286916">Usage alert deleted.</translation>
+   <translation id="cpbe_estimate_alert_delete_error" qtlid="286929">Oops, an error occurred when deleting your alert. </translation>
+
+   <translation id="cpbe_estimate_alert_chart_label_now" qtlid="169719">Today</translation>
+   <translation id="cpbe_estimate_alert_chart_label_future" qtlid="364121">End of the month </translation>
+   <translation id="cpbe_estimate_alert_chart_label_limit" qtlid="33562">Limit</translation>
+
+   <translation id="cpbe_estimate_price_error_message" qtlid="268655">Oops, unable to retrieve price information.</translation>
+</translations>

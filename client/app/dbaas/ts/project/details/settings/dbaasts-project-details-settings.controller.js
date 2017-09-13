@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsSettingsCtrl",
-function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, Toast, DBaasTsProject, DBaasTsRegion, Poller, SidebarMenu) {
+function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, Toast, OvhApiDBaasTsProject, OvhApiDBaasTsRegion, Poller, SidebarMenu) {
 
     //---------VARIABLE DECLARATION---------
 
@@ -33,7 +33,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
             }
         }
 
-        DBaasTsProject.Lexi().setup({
+        OvhApiDBaasTsProject.Lexi().setup({
             serviceName: serviceName
         }, config).$promise.then(function () {
             // Refresh sidebar
@@ -44,7 +44,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
             Toast.info($translate.instant("dtpds_project_edit_successful"));
 
             // Reload project
-            DBaasTsProject.Lexi().resetCache();
+            OvhApiDBaasTsProject.Lexi().resetCache();
             return loadProject();
         })["catch"](function (err) {
             Toast.error([$translate.instant("dtpds_project_edit_error"), err.data && err.data.message || ""].join(" "));
@@ -56,7 +56,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
     //---------INITIALIZATION---------
 
     function loadProject () {
-        return DBaasTsProject.Lexi().get({
+        return OvhApiDBaasTsProject.Lexi().get({
             serviceName: serviceName
         }).$promise.then(function (project) {
             self.model = project;
@@ -80,7 +80,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
                 case "CREATION":
                     self.titleKey = "dtpds_title_creation";
                     // Transient state that shouldn't last more than 1 minute. Do automatic reloading
-                    DBaasTsProject.Lexi().resetCache();
+                    OvhApiDBaasTsProject.Lexi().resetCache();
                     pollUntilActive(serviceName);
                     break;
             }
@@ -94,7 +94,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
             null,
             {
                 successRule: function (project) {
-                    DBaasTsProject.Lexi().resetCache();
+                    OvhApiDBaasTsProject.Lexi().resetCache();
                     return project.status === "ACTIVE";
                 },
                 namespace: "dbaas.ts.project.creation"
@@ -120,7 +120,7 @@ function ($q, $scope, $state, $stateParams, $rootScope, $translate, $uibModal, T
             }
         });
 
-        var futureRegions = DBaasTsRegion.Lexi().query().$promise;
+        var futureRegions = OvhApiDBaasTsRegion.Lexi().query().$promise;
         var futureProject = loadProject();
 
         return $q.all([futureRegions, futureProject]).then(function (values) {

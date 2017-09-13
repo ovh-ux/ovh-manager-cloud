@@ -2,12 +2,12 @@
 <translations>
    <translation id="cpbc_no_consumption_data" qtlid="364134">No hay consumo en el período seleccionado.</translation>
 
-   <translation id="cpbc_monthly_instance_detail_title" qtlid="19459">Servidor</translation>
+   <translation id="cpbc_monthly_instance_detail_title" qtlid="19459">Servidores</translation>
    <translation id="cpbc_monthly_instance_col_name" qtlid="258782">Nombre</translation>
    <translation id="cpbc_monthly_instance_col_total" qtlid="233928">Tarifa mensual</translation>
    <translation id="cpbc_monthly_instance_col_total_tooltip" qtlid="246013">Facturación a principios del mes.</translation>
 
-   <translation id="cpbc_hourly_instance_detail_title" qtlid="19459">Servidor</translation>
+   <translation id="cpbc_hourly_instance_detail_title" qtlid="19459">Servidores</translation>
    <translation id="cpbc_hourly_instance_col_name" qtlid="258782">Nombre</translation>
    <translation id="cpbc_hourly_instance_col_consumption" qtlid="25639">Consumo</translation>
    <translation id="cpbc_hourly_instance_col_consumption_tooltip" qtlid="245987">Facturación a principios del mes siguiente.</translation>

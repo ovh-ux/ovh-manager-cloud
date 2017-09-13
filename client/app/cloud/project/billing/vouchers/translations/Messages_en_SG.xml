@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpb_vouchers_add_button" qtlid="255168">Use a voucher</translation>
+   <translation id="cpb_vouchers_add_credit_button" qtlid="255181">Buy Public Cloud credit</translation>
+   <translation id="cpb_vouchers_add_explain" qtlid="246091">Valid vouchers will be used towards the payment of new bills.</translation>
+   <translation id="cpb_vouchers_add_explain_bis" qtlid="272053">Whenever an invoice is issued, the amount owed is debited from your Cloud credit (see below), then in turn from your Digital LaunchPad account and then from your loyalty account. And lastly, your potential debit balance is paid using the payment method we have on file (details regarding those 3 payment methods are available in the "Billing" section of your control panel).</translation>
+
+   <translation id="cpb_vouchers_list_no_vouchers" qtlid="246104">No vouchers found.</translation>
+
+   <translation id="cpb_vouchers_your_voucher" qtlid="234487">Your voucher</translation>
+   <translation id="cpb_vouchers_your_voucher_add" qtlid="246117">Upload my voucher</translation>
+   <translation id="cpb_vouchers_get_error" qtlid="250446">Oops. We're unable to display list of vouchers.</translation>
+   <translation id="cpb_vouchers_table_error" qtlid="250459">Unable to display list of vouchers.</translation>
+
+   <translation id="cpb_vouchers_bill_ref" qtlid="295894">Bill n° <a href="{{url}}">{{billId}}</a></translation>
+   <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Associated voucher</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Name</translation>
+   <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Initial value</translation>
+   <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Remaining credit</translation>
+   <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Credit used automatically towards your next bills</translation>
+   <translation id="cpb_vouchers_validity_from_cell" qtlid="234461">Activation date</translation>
+   <translation id="cpb_vouchers_validity_to_cell" qtlid="246156">Validity date</translation>
+   <translation id="cpb_vouchers_products_cell" qtlid="258873">Eligible products</translation>
+   <translation id="cpb_vouchers_products_all" qtlid="69173">All</translation>
+   <translation id="cpb_vouchers_name_credit_provisionning" qtlid="282341">Cloud credit</translation>
+
+   <translation id="cpb_vouchers_add_success" qtlid="246182">Voucher successfully uploaded.</translation>
+   <translation id="cpb_vouchers_add_error" qtlid="250485">Oops. We are unable to add this voucher. Please try again.</translation>
+   <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">This voucher is no longer valid or has already been used.</translation>
+   <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">This voucher is invalid.</translation>
+
+   <translation id="cpb_vouchers_credit_comment" qtlid="255207">Public Cloud credit may not be transferred or reimbursed. It has no monetary value and any credit not used within 13 months will be lost.</translation>
+
+</translations>

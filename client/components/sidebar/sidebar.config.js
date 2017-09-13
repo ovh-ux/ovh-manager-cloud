@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, User, Products,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, OvhApiMe, OvhApiProducts,
                  FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -28,14 +28,14 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("cloud_sidebar_section_license"),
-            icon: "certificate",
+            icon: "ovh-font ovh-font-certificate",
             url: REDIRECT_URLS.license,
             target: "_parent"
         });
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("cloud_sidebar_section_ip"),
-            icon: "ip",
+            icon: "ovh-font ovh-font-ip",
             url: REDIRECT_URLS.ip,
             target: "_parent"
         });
@@ -46,7 +46,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         if (FeatureAvailabilityService.hasFeature("DESKAAS", "sidebarMenu", locale)) {
             SidebarMenu.addMenuItem({
                 title: $translate.instant("cloud_sidebar_section_cloud_desktop"),
-                icon: "cloud-desktop",
+                icon: "ovh-font ovh-font-cloud-desktop",
                 url: REDIRECT_URLS.cloudDesktop,
                 target: "_parent"
             });
@@ -79,18 +79,18 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
 
         SidebarMenu.addActionsMenuOptions([{
             title: $translate.instant("cloud_sidebar_actions_menu_ip"),
-            icon: "ip",
+            icon: "ovh-font ovh-font-ip",
             href: REDIRECT_URLS.ip,
             target: "_parent"
         }, {
             title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
-            icon: "ip",
+            icon: "ovh-font ovh-font-ip",
             href: URLS.website_order.load_balancer[locale],
             target: "_blank",
             external: true
         }, {
             title: $translate.instant("cloud_sidebar_actions_menu_licence"),
-            icon: "certificate",
+            icon: "ovh-font ovh-font-certificate",
             href: REDIRECT_URLS.license,
             target: "_parent"
         }]);
@@ -98,7 +98,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         if (REDIRECT_URLS.orderSql) {
             SidebarMenu.addActionsMenuOptions([{
                 title: $translate.instant("cloud_sidebar_actions_menu_clouddb"),
-                icon: "database",
+                icon: "ovh-font ovh-font-database",
                 href: REDIRECT_URLS.orderSql,
                 target: "_blank"
             }]);
@@ -114,8 +114,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     function init () {
         // set initialization promise
         var promise = $q.all({
-            user: User.Lexi().get().$promise,
-            products: Products.Aapi().get({
+            user: OvhApiMe.Lexi().get().$promise,
+            products: OvhApiProducts.Aapi().get({
                 universe: "cloud"
             }).$promise,
             translate: $translate.refresh()

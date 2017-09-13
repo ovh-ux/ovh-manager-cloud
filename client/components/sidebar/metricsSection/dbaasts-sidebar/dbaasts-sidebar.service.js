@@ -1,7 +1,7 @@
 class DBaasTsSidebar {
-    constructor ($translate, User, SidebarMenu, DBaasTsConstants) {
+    constructor ($translate, OvhApiMe, SidebarMenu, DBaasTsConstants) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.DBaasTsConstants = DBaasTsConstants;
 
@@ -17,7 +17,7 @@ class DBaasTsSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: project.serviceName,
                 title: project.displayName || project.serviceName,
-                icon: "graph",
+                icon: "ovh-font ovh-font-graph",
                 allowSubItems: false,
                 state: "dbaas.metrics.detail.dashboard",
                 stateParams: {
@@ -40,7 +40,7 @@ class DBaasTsSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_dbaas_ts"),
-            icon: "graph",
+            icon: "ovh-font ovh-font-graph",
             href: this.DBaasTsConstants.urls.order[this.locale],
             target: "_blank"
         }

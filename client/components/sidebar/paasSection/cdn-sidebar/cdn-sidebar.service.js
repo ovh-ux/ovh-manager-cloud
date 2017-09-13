@@ -10,7 +10,7 @@ class CdnSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: cdn.serviceName,
                 title: cdn.displayName || cdn.serviceName,
-                icon: "cdn",
+                icon: "ovh-font ovh-font-cdn",
                 target: "_parent",
                 url: this.REDIRECT_URLS.cdnPage.replace("{cdn}", cdn.serviceName)
             }, section);

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, CloudProjectImage, DetailsPopoverService, CloudProjectInstance, Toast, User, CloudPrice) {
+  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, OvhApiCloudPrice) {
         var self = this;
         self.windowsStringPattern = "/^win-/";
         self.instanceConsumptionDetails = [];
@@ -38,7 +38,7 @@ angular.module("managerApp")
         };
 
         function initInstances () {
-            return CloudProjectInstance.Lexi().query({
+            return OvhApiCloudProjectInstance.Lexi().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (instances) {
                 self.data.instances = instances;
@@ -46,7 +46,7 @@ angular.module("managerApp")
         }
 
         function initImages () {
-            return CloudProjectImage.Lexi().query({
+            return OvhApiCloudProjectImage.Lexi().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (result) {
                 self.data.images = result;
@@ -54,7 +54,7 @@ angular.module("managerApp")
         }
 
         function initUserCurrency () {
-            return User.Lexi().get().$promise.then(function (me) {
+            return OvhApiMe.Lexi().get().$promise.then(function (me) {
                 self.currencySymbol = me.currency.symbol;
             });
         }
@@ -107,7 +107,7 @@ angular.module("managerApp")
             self.data.instanceToMonthlyPrice = null;
             self.loaders.monthlyBilling = true;
 
-            CloudPrice.Lexi().query().$promise.then(function (prices) {
+            OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
                 if (prices.instances && prices.instances.length) {
                     self.data.instanceToMonthlyPrice = _.find(prices.instances, {flavorName : instance.reference});
                 }
@@ -127,7 +127,7 @@ angular.module("managerApp")
         self.confirmMonthlyPaymentActivation = function () {
             self.loaders.monthlyBilling = true;
 
-            CloudProjectInstance.Lexi().activeMonthlyBilling({
+            OvhApiCloudProjectInstance.Lexi().activeMonthlyBilling({
                 serviceName: $stateParams.projectId,
                 instanceId: self.instanceToMonthly
             }).$promise.then(function () {

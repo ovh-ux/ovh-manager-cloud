@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="veeam_update_offer_title" qtlid="403632">Upgrade the Veeam Cloud Connect solution</translation>
+   <translation id="veeam_update_offer_information" qtlid="403645">The subscription price is <strong>{{ price }} /month</strong></translation>
+   <translation id="veeam_update_offer_cancel" qtlid="37863">Cancel</translation>
+   <translation id="veeam_update_offer_continue" qtlid="4070">Continue</translation>
+   <translation id="veeam_update_offer_change" qtlid="69893">Change</translation>
+   <translation id="veeam_update_storage_add" qtlid="37923">Add</translation>
+</translations>

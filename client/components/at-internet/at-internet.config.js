@@ -15,7 +15,8 @@ angular.module("managerApp")
 .config(["$provide", function ($provide) {
     "use strict";
 
-    $provide.decorator("atInternet", function ($delegate, $q, $cookies, User, TRACKING) {
+
+    $provide.decorator("atInternet", function ($delegate, $q, $cookies, OvhApiMe, TRACKING, TARGET) {
         var delegateTrackPage = $delegate.trackPage;
         var isDefaultConfigurationSet = false;
         var trackPageRequestArgumentStack = [];
@@ -29,8 +30,8 @@ angular.module("managerApp")
             }
         };
 
-        User.Lexi().get().$promise.then(function (me) {
-            var settings = angular.copy(TRACKING.config);
+        OvhApiMe.Lexi().get().$promise.then(function (me) {
+            var settings = angular.copy(TRACKING[TARGET].config);
 
             var referrerSite = $cookies.get("OrderCloud");
             if (referrerSite) {

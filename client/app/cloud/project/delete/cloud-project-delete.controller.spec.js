@@ -59,8 +59,8 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
             $uibModalInstance: modalInstance,
             $state: $state,
             $translate: translate,
-            CloudProjectCredit: CloudProjectCreditMock,
-            CloudProjectConsumption: CloudProjectConsumptionMock
+            OvhApiCloudProjectCredit: CloudProjectCreditMock,
+            OvhApiCloudProjectConsumption: CloudProjectConsumptionMock
         });
     }
 

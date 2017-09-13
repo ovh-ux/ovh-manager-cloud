@@ -7,11 +7,11 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
     var $rootScope = null;
     var service = null;
     var cloudPriceLexiMock = null;
-    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, CloudPriceLexi) {
+    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, OvhApiCloudPriceLexi) {
         $q = _$q_;
         $rootScope = _$rootScope_;
         service = CloudProjectComputeSnapshotPriceService;
-        cloudPriceLexiMock = CloudPriceLexi;
+        cloudPriceLexiMock = OvhApiCloudPriceLexi;
     }));
 
     describe("splitSubnetIpAddresses", function () {

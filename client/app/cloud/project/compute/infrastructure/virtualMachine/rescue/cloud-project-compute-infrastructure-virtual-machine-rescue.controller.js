@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineRescueCtrl", function
-    ($scope, $translate, params, $uibModalInstance, $stateParams, CloudProjectImage, Toast,
+    ($scope, $translate, params, $uibModalInstance, $stateParams, OvhApiCloudProjectImage, Toast,
      CloudProjectComputeInfrastructureOrchestrator) {
 
     "use strict";
@@ -19,7 +19,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
     function getImages () {
         self.loaders.images = true;
 
-        CloudProjectImage.Lexi().query({
+        OvhApiCloudProjectImage.Lexi().query({
             serviceName: $stateParams.projectId,
             flavorType: self.data.vm.type,
             region: self.data.vm.region

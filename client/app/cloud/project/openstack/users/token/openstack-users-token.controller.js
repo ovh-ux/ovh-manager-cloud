@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("CloudProjectOpenstackUsersTokenCtrl", function ($q, $uibModalInstance, $stateParams, Toast, $translate, CloudProjectUser, openstackUser, OpenstackUsersToken, URLS, User) {
+    .controller("CloudProjectOpenstackUsersTokenCtrl", function ($q, $uibModalInstance, $stateParams, Toast, $translate, OvhApiCloudProjectUser, openstackUser, OpenstackUsersToken, URLS, OvhApiMe) {
         var self = this;
 
         self.openstackUser = openstackUser;
@@ -33,7 +33,7 @@ angular.module("managerApp")
             if (!self.loaders.generateToken) {
                 self.loaders.generateToken = true;
                 return $q.allSettled([
-                    CloudProjectUser.Lexi().token({
+                    OvhApiCloudProjectUser.Lexi().token({
                         serviceName: self.projectId,
                         userId: self.openstackUser.id
                     }, {
@@ -44,7 +44,7 @@ angular.module("managerApp")
                     }, function (err) {
                         Toast.error([$translate.instant("cpou_token_error"), err.data && err.data.message || ""].join(" "));
                     }),
-                    User.Lexi().get().$promise.then(function (me) {
+                    OvhApiMe.Lexi().get().$promise.then(function (me) {
                         // set guide lang
                         self.tokenGuide.lang = me.ovhSubsidiary;
                         self.tokenGuide.link = getTokenGuideUrl();

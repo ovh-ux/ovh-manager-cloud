@@ -1,9 +1,9 @@
 angular.module("managerApp").service("CloudStorageContainers", [
     "$q",
-    "CloudProjectStorage",
+    "OvhApiCloudProjectStorage",
     "CloudStorageContainersConfiguration",
     "CloudStorageContainer",
-    function ($q, cloudProjectStorage, storageContainerConfig, storageContainer) {
+    function ($q, OvhApiCloudProjectStorage, storageContainerConfig, storageContainer) {
         "use strict";
 
         var self = this;
@@ -14,7 +14,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
          * @return {Promise}
          */
         self.list = function (projectId) {
-            return cloudProjectStorage.Lexi().query({
+            return OvhApiCloudProjectStorage.Lexi().query({
                 projectId: projectId
             }).$promise
                 .then(function (containers) {
@@ -53,7 +53,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
                 data.archive = true;
             }
 
-            return cloudProjectStorage.Lexi().save({
+            return OvhApiCloudProjectStorage.Lexi().save({
                 projectId: projectId
             }, data).$promise
                 .then(function (result) {
@@ -62,7 +62,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
 
                     // Make container a static hosting
                     if (type === "static") {
-                        return cloudProjectStorage.Lexi().static({
+                        return OvhApiCloudProjectStorage.Lexi().static({
                             projectId: projectId,
                             containerId: currentContainerId
                         }).$promise;
@@ -88,7 +88,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
          * @return {Promise}
          */
         self.delete = function (projectId, containerId) {
-            return cloudProjectStorage.Lexi().get({
+            return OvhApiCloudProjectStorage.Lexi().get({
                 projectId: projectId,
                 containerId: containerId
             }).$promise
@@ -96,7 +96,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
                     if (containerData.objects.length) {
                         return $q.reject("NON_EMPTY_CONTAINER");
                     }
-                    return cloudProjectStorage.Lexi().delete({
+                    return OvhApiCloudProjectStorage.Lexi().delete({
                         projectId: projectId,
                         containerId: containerId
                     }).$promise;

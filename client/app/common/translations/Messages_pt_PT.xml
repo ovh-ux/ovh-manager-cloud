@@ -6,6 +6,9 @@
    <translation id="common_close" qtlid="4670">Encerrar</translation>
 
    <translation id="common_cancel" qtlid="37863">Anular</translation>
+   <translation id="common_edit" qtlid="37875">Modificar</translation>
+   <translation id="common_consult" qtlid="339639">Consulter</translation>
+   <translation id="common_manage" qtlid="16301">Gerir</translation>
    <translation id="common_apply" qtlid="41326">Aplicar</translation>
    <translation id="common_loading" qtlid="58256">Carregamento</translation>
    <translation id="common_refresh" qtlid="250030">Atualizar</translation>
@@ -31,7 +34,7 @@
    <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
    <translation id="common_menu_telecom" qtlid="135827">Telecom</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
-   <translation id="common_menu_v3" qtlid="135931">Anterior interface de Cliente</translation>
+   <translation id="common_menu_v3" qtlid="135931">Interface de Cliente anterior</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Parceiros</translation>
    <translation id="common_menu_billing" qtlid="32950">Faturação</translation>
@@ -459,10 +462,30 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">O seu cartão de crédito padrão expirou. Aceda <a href="{{urlBillingSection}}">à secção de faturação</a> para o atualizar.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Ocorreram os seguintes erros</translation>
+   <translation id="message_container_multiple_warning">Informations importantes</translation>
+
+   <translation id="common_global_error" qtlid="433345">ocorreu um erro durante a operação : {{message}}</translation>
+   <translation id="common_global_success" qtlid="433358">A oeração foi concretizada com sucesso</translation>
 
    <translation id="common_term_and_contracts" qtlid="404087">Termos e contratos</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Eu confirmo ter lido e aceite os termos e contratos.</translation>
-
+   <translation id="common_login" qtlid="2174">Ligar-se</translation>
    <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Encerrar</translation>
+
+   <translation id="common_tile_subscription" qtlid="28891">Subscrição</translation>
+   <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
+   <translation id="common_tile_subscription_autorenew" qtlid="98300">Renovação automática</translation>
+   <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
+   <translation id="common_tile_subscription_creation_date" qtlid="26419">Data de criação</translation>
+
+   <translation id="common_preview_see" qtlid="433371">Ver pré-visualização</translation>
+
+   <translation id="common_table_col_action" qtlid="56105">Acção</translation>
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
+   <translation id="common_pagination_page" qtlid="433397">página</translation>
+   <translation id="common_pagination_of" qtlid="121615">em</translation>
+   <translation id="common_pagination_results" qtlid="433410">resultados</translation>
+   <translation id="common_pagination_next" qtlid="433423">Página seguinte</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>
 </translations>

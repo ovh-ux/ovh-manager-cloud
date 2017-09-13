@@ -37,7 +37,7 @@
         "openvpn",
         "vestacp",
         "virtualmin",
-        "jupyter"
+        "datascience"
     ];
 
     class CloudImageService {

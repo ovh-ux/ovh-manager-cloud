@@ -1,9 +1,9 @@
 class VrackSidebar {
-    constructor ($translate, SidebarMenu, URLS, User) {
+    constructor ($translate, SidebarMenu, URLS, OvhApiMe) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
         this.URLS = URLS;
-        this.User = User;
+        this.User = OvhApiMe;
 
         this.locale = null;
         this.User.Lexi().get().$promise
@@ -39,7 +39,7 @@ class VrackSidebar {
 
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_vrack"),
-            icon: "vRack",
+            icon: "ovh-font ovh-font-vRack",
             href: link,
             target: "_blank",
             external: true

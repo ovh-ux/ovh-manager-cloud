@@ -16,14 +16,14 @@ describe("Controller: OpenstackUsersCtrl", function () {
     var OpenstackUsersToken;
     var $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _Cloud_, _Toast_, _$timeout_, _OpenstackUsersPassword_, _OpenstackUsersToken_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _OvhApiCloud_, _Toast_, _$timeout_, _OpenstackUsersPassword_, _OpenstackUsersToken_) {
 
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         $timeout = _$timeout_;
-        Cloud = _Cloud_;
+        Cloud = _OvhApiCloud_;
         Toast = _Toast_;
         PasswordService = _OpenstackUsersPassword_;
         OpenstackUsersToken = _OpenstackUsersToken_;

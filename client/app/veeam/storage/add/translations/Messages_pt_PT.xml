@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_storage_add_title" qtlid="403671">Adicionar um espaço de armazenamento</translation>
-   <translation id="veeam_storage_add_confirmation" qtlid="403749">Êtes-vous certain de vouloir ajouter un espace de stockage?</translation>
+   <translation id="veeam_storage_add_confirmation" qtlid="403749">Têm a certeza de que deseja adicionar um espaço de armazenamento?</translation>
    <translation id="veeam_storage_add_confirm" qtlid="37923">Adicionar</translation>
    <translation id="veeam_storage_add_cancel" qtlid="37863">Anular</translation>
 </translations>

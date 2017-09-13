@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaPoolAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, DedicatedCeph) {
+  .controller("CdaPoolAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.createPool = function () {
           self.saving = true;
-          return DedicatedCeph.Pool().Lexi().post({
+          return OvhApiDedicatedCeph.Pool().Lexi().post({
               serviceName: $stateParams.serviceName
           }, {
               poolName: self.model.poolName

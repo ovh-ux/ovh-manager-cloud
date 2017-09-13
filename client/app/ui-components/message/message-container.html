@@ -1,9 +1,9 @@
 <div class="cui-message-container" data-ng-if="$ctrl.hasMessageToDisplay()">
       <div data-ng-repeat="messageCategory in $ctrl.groupedMessages | orderBy: 'priority' track by messageCategory.key">
-            <oui-message data-ng-if="!$ctrl.shouldDisplayGroupedMessages(messageCategory)" 
+            <oui-message data-ng-if="!$ctrl.shouldDisplayGroupedMessages(messageCategory) && !message.dismissed" 
                   data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index"
                   data-type="{{ messageCategory.key }}"
-                  data-dismissed="message.dismissed"
+                  data-dismissable="message.dismissable"
                   data-on-dismiss="$ctrl.onDismiss(message)">
                   <span data-ng-bind="message.text" data-ng-if="message.text"></span>
                   <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
@@ -12,13 +12,16 @@
                         data-ng-bind="message.link.text"
                         data-ng-click="message.link.action()"></a>
             </oui-message>
-            <oui-message data-ng-if="$ctrl.shouldDisplayGroupedMessages(messageCategory)" 
-                         data-type="{{ messageCategory.key }}">
+            <oui-message data-ng-if="$ctrl.shouldDisplayGroupedMessages(messageCategory) && $ctrl.hasGroupMessageToDisplay(messageCategory.key)" 
+                         data-type="{{ messageCategory.key }}"
+                         data-dismissable="messageCategory.dismissable"
+                         data-on-dismiss="$ctrl.onGroupDismiss(messageCategory)">
                   <span data-translate="{{ 'message_container_multiple_' + messageCategory.key }}"></span>
                   <ul>
-                        <li data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index">
+                        <li data-ng-repeat="message in messageCategory.values | orderBy: 'messageOrder' track by $index"
+                            data-ng-if="!message.dismissed">
                               <span data-ng-bind="message.text" data-ng-if="message.text"></span>
-                              <span data-ng-bind="message.textHtml" data-ng-if="message.textHtml"></span>
+                              <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
                               <a role="button" 
                                     data-ng-if="message.link.text"
                                     data-ng-bind="message.link.text"

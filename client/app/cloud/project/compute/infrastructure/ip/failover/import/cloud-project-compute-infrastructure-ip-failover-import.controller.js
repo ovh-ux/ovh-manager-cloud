@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, Ip, $translate, Toast, CloudProjectInstance, $stateParams, $q, User, CLOUD_GEOLOCALISATION, pendingImportIps) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps) {
 
     var self = this;
 
@@ -30,7 +30,7 @@ angular.module("managerApp")
     //---------INIT---------
 
     function init () {
-        return User.Lexi().get().$promise.then(function (user) {
+        return OvhApiMe.Lexi().get().$promise.then(function (user) {
             self.datas.user = user;
             return getIpsFo(true);
         }, function (err) {
@@ -42,10 +42,10 @@ angular.module("managerApp")
         if (!self.loaders.table.ipsFo) {
             self.loaders.table.ipsFo = true;
             if (clearCache){
-                Ip.Lexi().resetQueryCache();
-                Ip.Lexi().resetCache();
+                OvhApiIp.Lexi().resetQueryCache();
+                OvhApiIp.Lexi().resetCache();
             }
-            return Ip.Lexi().query({
+            return OvhApiIp.Lexi().query({
                 type: 'failover'
             }).$promise.then(function (ips) {
                 ips = _.filter(ips, function (ip) {
@@ -70,7 +70,7 @@ angular.module("managerApp")
         self.datas.ipsFo = [];
 
         angular.forEach(ips, function (ip) {
-            queries.push(Ip.Lexi().get({
+            queries.push(OvhApiIp.Lexi().get({
                 ip: ip
             }).$promise.then(function (ip) {
                 if (!(ip.routedTo && ip.routedTo.serviceName === $scope.projectId)) {
@@ -126,7 +126,7 @@ angular.module("managerApp")
             angular.forEach(self.datas.selected, function (value, ip) {
                 lastIp = ip;
 
-                listPromise.push(Ip.Lexi().move(
+                listPromise.push(OvhApiIp.Lexi().move(
                     { ip : ip },
                     { to : $scope.projectId }
                 ).$promise.then(function (task) {

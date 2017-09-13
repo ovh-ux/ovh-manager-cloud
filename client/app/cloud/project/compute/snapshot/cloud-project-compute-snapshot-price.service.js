@@ -1,11 +1,11 @@
 angular.module("managerApp").service("CloudProjectComputeSnapshotPriceService",
-  function (CloudPrice) {
+  function (OvhApiCloudPrice) {
     "use strict";
 
     var self = this;
 
     self.getSnapshotPrice = function (snapshotSize) {
-        return CloudPrice.Lexi().query().$promise.then(function (data) {
+        return OvhApiCloudPrice.Lexi().query().$promise.then(function (data) {
             return _.map(data.snapshots, function (snapshotPrice) {
                 var total = angular.copy(snapshotPrice.monthlyPrice);
                 total.value = _.ceil(total.value * snapshotSize, 2);

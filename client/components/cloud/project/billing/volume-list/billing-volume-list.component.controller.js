@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, CloudProjectVolume, Toast, User, CloudPrice) {
+  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe, OvhApiCloudPrice) {
       var self = this;
       self.DetailsPopoverService = DetailsPopoverService;
       self.volumeConsumptionDetails = [];
@@ -10,7 +10,7 @@ angular.module("managerApp")
       self.data = {};
 
       function getVolumesDetails () {
-          return CloudProjectVolume.Lexi().query({
+          return OvhApiCloudProjectVolume.Lexi().query({
               serviceName: $stateParams.projectId
           }).$promise.then(function (volumes) {
               return volumes;
@@ -76,14 +76,14 @@ angular.module("managerApp")
       }
 
       function initPrices () {
-          return CloudPrice.Lexi().query().$promise
+          return OvhApiCloudPrice.Lexi().query().$promise
               .then(function (prices) {
                   self.data.prices = prices;
               });
       }
 
       function initUserCurrency () {
-          return User.Lexi().get().$promise.then(function (me) {
+          return OvhApiMe.Lexi().get().$promise.then(function (me) {
               self.currencySymbol = me.currency.symbol;
           });
       }

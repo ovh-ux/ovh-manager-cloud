@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_pool_pool_definition" qtlid="354210">Here is where you can create your pools.</translation>
+   <translation id="cda_pool_permission_definition" qtlid="354223">Pools are "containers" for your data. The user can manage access to the pools. </translation>
+
+   <translation id="cda_pool_add_button_text" qtlid="354236">Add a pool</translation>
+   <translation id="cda_pool_delete_button_text" qtlid="2414">Delete</translation>
+
+   <translation id="cda_pool_table_col_poolname" qtlid="3818">Name</translation>
+   <translation id="cda_pool_table_col_pooltype" qtlid="2642">Type</translation>
+   <translation id="cda_pool_table_col_replica" qtlid="354249">Number of replicas</translation>
+   <translation id="cda_pool_table_col_minreplica" qtlid="354262">Minimum active replicas</translation>
+   <translation id="cda_pool_table_col_backup" qtlid="354275">Backup pool</translation>
+   <translation id="cda_pool_table_col_actions" qtlid="72809">Actions</translation>
+
+   <translation id="cda_pool_add_title" qtlid="354236">Add a pool</translation>
+   <translation id="cda_pool_add_poolname_label" qtlid="3818">Name</translation>
+
+   <translation id="cda_pool_add_poolname_required" qtlid="354288">You must name your cluster.</translation>
+   <translation id="cda_pool_add_poolname_pattern" qtlid="354301">The name cannot contain spaces.</translation>
+   <translation id="cda_pool_add_poolname_maxlength" qtlid="354314">The name of your cluster must not exceed {{ maxlength }} characters.</translation>
+   <translation id="cda_pool_add_success" qtlid="354327">Pool successfully added.</translation>
+
+   <translation id="cda_pool_delete_title" qtlid="354340">Delete pool</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Name:</translation>
+   <translation id="cda_pool_delete_confirm" qtlid="354353">Are you sure you want to delete this pool?</translation>
+   <translation id="cda_pool_delete_success" qtlid="354366">Pool successfully deleted</translation>
+
+   <translation id="cda_pool_table_empty" qtlid="354379">No pools</translation>
+</translations>

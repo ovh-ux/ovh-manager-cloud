@@ -87,9 +87,9 @@
    <translation id="cpcivm_addedit_flavor_disabled_QUOTA_INSTANCE" qtlid="301851">Vous avez atteint le quota maximal de machines pour cette région.</translation>
    <translation id="cpcivm_addedit_flavor_guidelines" qtlid="264283">Si vous modifiez le type d'instance, vous devrez redimensionner l'espace disque.</translation>
    <translation id="cpcivm_addedit_flavor_howto" qtlid="248574">Comment faire ?</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">Mémoire vive</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_text" qtlid="276142">Pour plus de RAM passez à l'offre {{offer}}.</translation>
-   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">Processeur</translation>
+   <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu" qtlid="25555">CPU</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_cpu_text" qtlid="276155">Pour plus de CPU passez à l'offre {{offer}}.</translation>
    <translation id="cpcivm_addedit_flavor_upgradeAlert_ram_cpu_text" qtlid="276168">Pour plus de ressources passez a l'offre {{offer}}.</translation>
 
@@ -142,9 +142,9 @@
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Type</translation>
    <translation id="cpcivm_addedit_table_price" qtlid="133292">Prix HT</translation>
    <translation id="cpcivm_addedit_table_core" qtlid="248509">Processeurs virtuels</translation>
-   <translation id="cpcivm_addedit_table_ram" qtlid="31354">Mémoire vive</translation>
+   <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disques</translation>
-   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">Processeur</translation>
+   <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">Nvidia GTX 1080 Ti 11GB</translation>
@@ -165,7 +165,7 @@
    <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
    <translation id="cpcivm_addedit_table_core_pick" qtlid="319180">Choisir selon le nombre de vCores</translation>
    <translation id="cpcivm_addedit_table_ram_pick" qtlid="319193">Choisir selon la RAM</translation>
-   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">Processeur</translation>
+   <translation id="cpcivm_addedit_table_cpu" qtlid="25555">CPU</translation>
    <translation id="cpcivm_addedit_table_ram_details" qtlid="296453">{{ size }} Mémoire vive</translation>
    <translation id="cpcivm_addedit_table_flex_pick" qtlid="327068">Permettre le changement de taille flexible</translation>
    <translation id="cpcivm_addedit_table_flex_details" qtlid="327081">Cocher cette option force un stockage de 50 Go, offrant des snapshots plus rapides et la possibilité de downgrader ultérieurement</translation>

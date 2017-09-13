@@ -9,17 +9,17 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
     var $uibModal;
     var $stateParams;
     var $translate;
-    var CloudProjectAlerting;
+    var OvhApiCloudProjectAlerting;
     var Toast;
-    var CloudProjectUsageForecast;
-    var CloudProjectUsageCurrent;
+    var OvhApiCloudProjectUsageForecast;
+    var OvhApiCloudProjectUsageCurrent;
     var CloudProjectBillingService;
     var scope;
     var projectId = "id";
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _$uibModal_, _$stateParams_, _$translate_, _CloudProjectAlerting_, _Toast_, _CloudProjectUsageForecast_, _CloudProjectUsageCurrent_, _CloudProjectBillingService_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _$uibModal_, _$stateParams_, _$translate_, _OvhApiCloudProjectAlerting_, _Toast_, _OvhApiCloudProjectUsageForecast_, _OvhApiCloudProjectUsageCurrent_, _CloudProjectBillingService_) {
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
@@ -27,10 +27,10 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
         $uibModal =  _$uibModal_;
         $stateParams = _$stateParams_;
         $translate = _$translate_;
-        CloudProjectAlerting = _CloudProjectAlerting_;
+        OvhApiCloudProjectAlerting = _OvhApiCloudProjectAlerting_;
         Toast = _Toast_;
-        CloudProjectUsageForecast = _CloudProjectUsageForecast_;
-        CloudProjectUsageCurrent = _CloudProjectUsageCurrent_;
+        OvhApiCloudProjectUsageForecast = _OvhApiCloudProjectUsageForecast_;
+        OvhApiCloudProjectUsageCurrent = _OvhApiCloudProjectUsageCurrent_;
         CloudProjectBillingService = _CloudProjectBillingService_;
 
         scope = _$rootScope_.$new();
@@ -62,20 +62,20 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
                 }
             };
 
-            spyOn(CloudProjectUsageForecast.Lexi(), "get").and.returnValue({ $promise: $q.when(billinginfo) });
+            spyOn(OvhApiCloudProjectUsageForecast.Lexi(), "get").and.returnValue({ $promise: $q.when(billinginfo) });
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when(billingData));
 
             var controller = initCtrl();
             $httpBackend.flush();
 
-            expect(CloudProjectUsageForecast.Lexi().get).toHaveBeenCalledWith({ serviceName: projectId });
+            expect(OvhApiCloudProjectUsageForecast.Lexi().get).toHaveBeenCalledWith({ serviceName: projectId });
             expect(CloudProjectBillingService.getConsumptionDetails).toHaveBeenCalledWith(billinginfo, billinginfo);
             expect(controller.data.estimateTotals).toBe(billingData.totals);
             expect(controller.data.currencySymbol).toBe(billingData.totals.currencySymbol);
         });
 
         it("Should manage errors when initing forecast", function () {
-            spyOn(CloudProjectUsageForecast.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectUsageForecast.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
             spyOn(Toast, "error");
 
@@ -93,19 +93,19 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
                 }
             };
 
-            spyOn(CloudProjectUsageCurrent.Lexi(), "get").and.returnValue({ $promise: $q.when(billinginfo) });
+            spyOn(OvhApiCloudProjectUsageCurrent.Lexi(), "get").and.returnValue({ $promise: $q.when(billinginfo) });
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when(billingData));
 
             var controller = initCtrl();
             $httpBackend.flush();
 
-            expect(CloudProjectUsageCurrent.Lexi().get).toHaveBeenCalledWith({ serviceName: projectId });
+            expect(OvhApiCloudProjectUsageCurrent.Lexi().get).toHaveBeenCalledWith({ serviceName: projectId });
             expect(CloudProjectBillingService.getConsumptionDetails).toHaveBeenCalledWith(billinginfo, billinginfo);
             expect(controller.data.estimateTotals).toBe(billingData.totals);
         });
 
         it("Should manage errors when initing current", function () {
-            spyOn(CloudProjectUsageCurrent.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectUsageCurrent.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
             spyOn(Toast, "error");
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: { } }));
@@ -119,13 +119,13 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
         it("Should init alert", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: { currencySymbol: "$", hourly: { total: "hourlyTotal" } } }));
-            spyOn(CloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when(["alertId"]) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when(["alertId"]) });
             spyOn($translate, "instant").and.returnValue("label");
 
             var alert = {
                 monthlyThreshold: "monthlyThreshold"
             };
-            spyOn(CloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.when(alert) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.when(alert) });
 
             var controller = initCtrl();
             $httpBackend.flush();
@@ -146,14 +146,14 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
         it("Should init alert when getIds return an empty array", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: { currencySymbol: "$", hourly: { total: "hourlyTotal" } } }));
-            spyOn(CloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when([]) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when([]) });
             spyOn($translate, "instant").and.returnValue("label");
             spyOn(Toast, "error");
 
             var alert = {
                 monthlyThreshold: "monthlyThreshold"
             };
-            spyOn(CloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.when(alert) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.when(alert) });
 
             var controller = initCtrl();
             $httpBackend.flush();
@@ -165,7 +165,7 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
         it("Should manage error when CloudProjectAlerting.getIds return an error", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: {} }));
-            spyOn(CloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
             spyOn(Toast, "error");
 
@@ -179,8 +179,8 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
         it("Should manage error when CloudProjectAlerting.get return an error", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: {} }));
-            spyOn(CloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when(["alertId"]) });
-            spyOn(CloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when(["alertId"]) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn(Toast, "error");
 
             var controller = initCtrl();

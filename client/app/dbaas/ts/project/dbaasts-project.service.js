@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").service("DBaasTsProjectService", function (DBaasTsProject, $state) {
+angular.module("managerApp").service("DBaasTsProjectService", function (OvhApiDBaasTsProject, $state) {
 
     // This function is to be called from the "resolve" property of states requiring an active project.
     // It loads the project (from the cache, except on initial load) and if not active, redirects
@@ -12,7 +12,7 @@ angular.module("managerApp").service("DBaasTsProjectService", function (DBaasTsP
 
     this.ensureProjectIsActive = function (params) {
 
-        return DBaasTsProject.Lexi().get({
+        return OvhApiDBaasTsProject.Lexi().get({
             serviceName: params.serviceName
         }).$promise
             .then(function (project) {

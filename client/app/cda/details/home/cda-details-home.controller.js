@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaDetailsHomeCtrl", function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, DedicatedCeph, Toast, CdaService) {
+  .controller("CdaDetailsHomeCtrl", function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, OvhApiDedicatedCeph, Toast, CdaService) {
       "use strict";
 
       var self = this;
@@ -49,7 +49,7 @@ angular.module("managerApp")
       }
 
       function initHealth () {
-          return DedicatedCeph.Lexi().health({
+          return OvhApiDedicatedCeph.Lexi().health({
               serviceName: self.serviceName
           }).$promise.then(function (health) {
               self.datas.health = health;
@@ -61,7 +61,7 @@ angular.module("managerApp")
       }
 
       function initCrushTunablesOptions () {
-          return DedicatedCeph.Lexi().schema({
+          return OvhApiDedicatedCeph.Lexi().schema({
               serviceName: self.serviceName
           }).$promise.then(function (schema) {
               self.datas.crushTunablesOptions = schema.models["dedicated.ceph.clusterUpdate.crushTunablesEnum"].enum;
@@ -69,8 +69,8 @@ angular.module("managerApp")
       }
 
       function initTasks () {
-          DedicatedCeph.Task().Lexi().resetQueryCache();
-          DedicatedCeph.Task().Lexi().query({
+          OvhApiDedicatedCeph.Task().Lexi().resetQueryCache();
+          OvhApiDedicatedCeph.Task().Lexi().query({
               serviceName: self.serviceName
           }).$promise.then(function (tasks) {
               //If we passed from a state with no tasks to a state with tasks or a state with tasks to a state with no tasks we update the details.

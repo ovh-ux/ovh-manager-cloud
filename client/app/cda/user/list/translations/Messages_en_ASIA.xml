@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cda_user_permission_definition" qtlid="354717">Your users can use the cluster with pool-specific permissions.</translation>
+
+   <translation id="cda_user_add_button_text" qtlid="7150">Add user</translation>
+   <translation id="cda_user_delete_button_text" qtlid="2414">Delete</translation>
+   <translation id="cda_user_edit_button_text" qtlid="354730">See permissions</translation>
+
+   <translation id="cda_user_table_col_username" qtlid="3818">Name</translation>
+   <translation id="cda_user_table_col_key" qtlid="104326">Key</translation>
+   <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
+   <translation id="cda_user_table_col_actions" qtlid="72809">Actions</translation>
+
+   <translation id="cda_user_add_title" qtlid="7150">Add user</translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Name</translation>
+
+   <translation id="cda_user_add_username_required" qtlid="354288">You must name your cluster.</translation>
+   <translation id="cda_user_add_username_pattern" qtlid="354301">The name cannot contain spaces.</translation>
+   <translation id="cda_user_add_username_maxlength" qtlid="354314">The name of your cluster must not exceed {{ maxlength }} characters.</translation>
+   <translation id="cda_user_add_success" qtlid="354743">The user has been successfully added.</translation>
+
+   <translation id="cda_user_delete_title" qtlid="7666">Delete user</translation>
+   <translation id="cda_user_delete_username_label" qtlid="100328">Name:</translation>
+   <translation id="cda_user_delete_confirm" qtlid="354756">Are you sure you want to delete this user?</translation>
+   <translation id="cda_user_delete_success" qtlid="354769">The user has been successfully deleted.</translation>
+
+
+   <translation id="cda_user_table_empty" qtlid="215741">No user</translation>
+</translations>
