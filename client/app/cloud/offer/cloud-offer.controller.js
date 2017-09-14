@@ -1,10 +1,10 @@
 (() => {
     class CloudOfferCtrl {
-        constructor ($q, $stateParams, FeatureAvailabilityService, CloudProjectAdd, User, URLS) {
+        constructor ($q, $stateParams, FeatureAvailabilityService, CloudProjectAdd, OvhApiMe, URLS) {
             this.$q = $q;
             this.$stateParams = $stateParams;
             this.CloudProjectAdd = CloudProjectAdd;
-            this.User = User;
+            this.User = OvhApiMe;
             this.FeatureAvailabilityService = FeatureAvailabilityService;
             this.URLS = URLS;
 

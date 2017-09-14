@@ -78,9 +78,9 @@ describe("Component: InstanceList", function () {
             $scope: scope,
             $rootScope: $rootScope,
             $stateParams: { projectId: projectId },
-            CloudProjectInstance: CloudProjectInstanceMock,
-            CloudProjectImage: CloudProjectImageMock,
-            User: UserMock,
+            OvhApiCloudProjectInstance: CloudProjectInstanceMock,
+            OvhApiCloudProjectImage: CloudProjectImageMock,
+            OvhApiMe: UserMock,
             Toast: ToastMock,
             $translate: $translateMock,
         }, {

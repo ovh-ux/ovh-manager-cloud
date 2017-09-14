@@ -1,7 +1,7 @@
 class DedicatedServerSidebar {
-    constructor ($translate, User, SidebarMenu, REDIRECT_URLS, URLS) {
+    constructor ($translate, OvhApiMe, SidebarMenu, REDIRECT_URLS, URLS) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.URLS = URLS;

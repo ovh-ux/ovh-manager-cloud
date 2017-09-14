@@ -2,15 +2,15 @@
     "use strict";
 
     class CloudProjectAdd {
-        constructor ($q, $translate, $state, $window, Toast, Cloud, User, Vrack, CloudProjectSidebar) {
+        constructor ($q, $translate, $state, $window, Toast, OvhApiCloud, OvhApiMe, OvhApiVrack, CloudProjectSidebar) {
             this.$q = $q;
             this.$translate = $translate;
             this.$state = $state;
             this.$window = $window;
             this.Toast = Toast;
-            this.Cloud = Cloud;
-            this.User = User;
-            this.Vrack = Vrack;
+            this.Cloud = OvhApiCloud;
+            this.User = OvhApiMe;
+            this.Vrack = OvhApiVrack;
             this.CloudProjectSidebar = CloudProjectSidebar;
         }
 

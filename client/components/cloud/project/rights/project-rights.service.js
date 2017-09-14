@@ -1,5 +1,5 @@
 angular.module("managerApp").service("CloudProjectRightService",
-    function (Cloud, CloudProjectServiceInfos, User, $q) {
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $q) {
 
         this.userHaveReadWriteRights = function (projectId) {
             return $q.all({
@@ -15,21 +15,21 @@ angular.module("managerApp").service("CloudProjectRightService",
         };
 
         function getReadWriteAccounts (projectId) {
-            return Cloud.Project().Acl().Lexi().query({
+            return OvhApiCloud.Project().Acl().Lexi().query({
                 serviceName: projectId,
                 type: "readWrite"
             }).$promise;
         }
 
         function getCurrentUserNic () {
-            return User.Lexi().get().$promise
+            return OvhApiMe.Lexi().get().$promise
                 .then(function(user) {
                     return user.nichandle;
                 });
         }
 
         function getProjectAdminNic(projectId) {
-            return CloudProjectServiceInfos.Lexi().get({
+            return OvhApiCloudProjectServiceInfos.Lexi().get({
                 serviceName: projectId
             }).$promise
                 .then(function(project) {

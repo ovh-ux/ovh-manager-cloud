@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("NashaPartitionZFSOptionsCtrl",
-    function ($uibModalInstance, $filter, $q, $stateParams, $scope, $translate, Toast, DedicatedNasha, NashaPartitionZFSOptionsService) {
+    function ($uibModalInstance, $filter, $q, $stateParams, $scope, $translate, Toast, OvhApiDedicatedNasha, NashaPartitionZFSOptionsService) {
         "use strict";
         var self = this;
 
@@ -18,7 +18,7 @@ angular.module("managerApp").controller("NashaPartitionZFSOptionsCtrl",
 
         self.applyZFSOptionsChanges = function () {
             self.states.saving = true;
-            DedicatedNasha.Partition().Options().Lexi().save({
+            OvhApiDedicatedNasha.Partition().Options().Lexi().save({
                 serviceName: $stateParams.nashaId,
                 partitionName: self.data.partition.partitionName
             }, {

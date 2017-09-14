@@ -15,7 +15,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _CloudProjectUsageCurrentLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageCurrentLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -23,7 +23,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         $q = _$q_;
         $stateParams = _$stateParams_;
         $stateParams.projectId = projectId;
-        CloudProjectUsageCurrentLexi = _CloudProjectUsageCurrentLexi_;
+        CloudProjectUsageCurrentLexi = _OvhApiCloudProjectUsageCurrentLexi_;
         CloudProjectBillingService = _CloudProjectBillingService_;
 
         Toast = _Toast_;

@@ -31,13 +31,13 @@ describe("Controller: ProjectRightsService", function () {
         });
     }
 
-    beforeEach(inject(function (CloudProjectAclLexi, UserLexi, CloudProjectRightService, CloudProjectServiceInfosLexi, _$httpBackend_, _$q_, _$rootScope_) {
+    beforeEach(inject(function (OvhApiCloudProjectAclLexi, OvhApiMeLexi, CloudProjectRightService, OvhApiCloudProjectServiceInfosLexi, _$httpBackend_, _$q_, _$rootScope_) {
         $q = _$q_;
         $rootScope = _$rootScope_;
         var $httpBackend = _$httpBackend_;
-        CloudProjectAclLexiMock = CloudProjectAclLexi;
-        CloudProjectServiceInfosLexiMock = CloudProjectServiceInfosLexi;
-        UserLexiMock = UserLexi;
+        CloudProjectAclLexiMock = OvhApiCloudProjectAclLexi;
+        CloudProjectServiceInfosLexiMock = OvhApiCloudProjectServiceInfosLexi;
+        UserLexiMock = OvhApiMeLexi;
         projectRightsService = CloudProjectRightService;
         $httpBackend.whenGET(/translations\/Messages\w+\.json$/).respond(200, {});
         $httpBackend.whenGET("app/home/home.html").respond(200, {});

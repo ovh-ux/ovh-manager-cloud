@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function ($uibModalInstance, $stateParams, params, CloudProjectIpFailover) {
+  .controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function ($uibModalInstance, $stateParams, params, OvhApiCloudProjectIpFailover) {
         var self = this,
             serviceName = $stateParams.projectId;
 
@@ -31,7 +31,7 @@ angular.module("managerApp")
              */
             // check if the instance is routed to failover IPs
             /*self.loaders.ips = true;
-            CloudProjectIpFailover.Lexi().query({
+            OvhApiCloudProjectIpFailover.Lexi().query({
                 serviceName : serviceName
             }).$promise.then(function (ips) {
                 if (vmToDelete && vmToDelete.routedTo) {

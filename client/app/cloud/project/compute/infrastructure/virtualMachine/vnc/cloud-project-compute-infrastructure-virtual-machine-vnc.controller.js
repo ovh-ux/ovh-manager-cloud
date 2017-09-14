@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineVncCtrl", function ($uibModalInstance, params, $translate, Toast, CloudProjectInstance) {
+angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineVncCtrl", function ($uibModalInstance, params, $translate, Toast, OvhApiCloudProjectInstance) {
 
     var self = this;
     this.loading = true;
@@ -11,7 +11,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
 
     function init () {
         self.loading = true;
-        return CloudProjectInstance.Lexi().vnc({
+        return OvhApiCloudProjectInstance.Lexi().vnc({
             serviceName: self.data.vm.serviceName,
             instanceId: self.data.vm.id
         }, {}).$promise.then(function (vncInfos) {

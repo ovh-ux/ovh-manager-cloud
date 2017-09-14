@@ -19,15 +19,15 @@ describe("Component: VolumeList", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$componentController_, ssoAuthentication, _$q_, _CloudPriceLexi_, _CloudProjectVolumeLexi_, _UserLexi_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$componentController_, ssoAuthentication, _$q_, _OvhApiCloudPriceLexi_, _OvhApiCloudProjectVolumeLexi_, _OvhApiMeLexi_) {
         $httpBackend = _$httpBackend_;
         $componentController = _$componentController_;
         scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
         $q = _$q_;
-        CloudPriceLexi = _CloudPriceLexi_;
-        CloudProjectVolumeLexi = _CloudProjectVolumeLexi_;
-        UserLexi = _UserLexi_;
+        CloudPriceLexi = _OvhApiCloudPriceLexi_;
+        CloudProjectVolumeLexi = _OvhApiCloudProjectVolumeLexi_;
+        UserLexi = _OvhApiMeLexi_;
 
         ToastMock = {
             success: jasmine.createSpy("success"),

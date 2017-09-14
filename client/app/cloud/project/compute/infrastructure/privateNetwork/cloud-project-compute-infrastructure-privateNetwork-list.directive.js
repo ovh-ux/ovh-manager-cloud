@@ -1,10 +1,10 @@
 class PrivateNetworkListCtrl {
     constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService, 
-                 CloudProjectNetworkPrivate, CloudProject, REDIRECT_URLS, Toast, User, URLS, Vrack) {
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, Toast, OvhApiMe, URLS, OvhApiVrack) {
         this.resources = {
-            privateNetwork: CloudProjectNetworkPrivate.Lexi(),
-            project: CloudProject.Lexi(),
-            aapi: Vrack.Aapi(),
+            privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
+            project: OvhApiCloudProject.Lexi(),
+            aapi: OvhApiVrack.Aapi(),
             modal: $uibModal
         };
         this.toast = Toast;
@@ -15,7 +15,7 @@ class PrivateNetworkListCtrl {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
-        this.User = User;
+        this.User = OvhApiMe;
         this.URLS = URLS;
 
         this.loaders = {

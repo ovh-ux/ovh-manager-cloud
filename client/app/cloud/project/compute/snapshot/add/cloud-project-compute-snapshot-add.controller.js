@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSnapshotAddCtrl", function ($uibModalInstance, $translate, $filter, params, Toast, CloudProjectSnapshot, atInternet, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeSnapshotPriceService) {
+  .controller("CloudProjectComputeSnapshotAddCtrl", function ($uibModalInstance, $translate, $filter, params, Toast, OvhApiCloudProjectSnapshot, atInternet, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeSnapshotPriceService) {
       var self = this;
 
       self.snapshot = {
@@ -20,7 +20,7 @@ angular.module("managerApp")
 
       self.backup = function () {
           self.loaders.backup = true;
-          CloudProjectSnapshot.Lexi().resetQueryCache();
+          OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
           CloudProjectComputeInfrastructureOrchestrator.backupVm(self.snapshot.vm, self.snapshot.name).then(function () {
               Toast.success($translate.instant("cpc_snapshot_add_success", { snapshotname: self.snapshot.name }));
               $uibModalInstance.close(self.snapshot);

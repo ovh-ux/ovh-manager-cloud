@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("OpenstackUsersOpenrcCtrl", function ($scope, Cloud, Toast, $httpParamSerializer, $uibModalInstance, CONFIG_API, openstackUser, $stateParams, $translate, URLS, User, RegionService) {
+    .controller("OpenstackUsersOpenrcCtrl", function ($scope, OvhApiCloud, Toast, $httpParamSerializer, $uibModalInstance, CONFIG_API, openstackUser, $stateParams, $translate, URLS, OvhApiMe, RegionService) {
         var self = this;
 
         self.regionService = RegionService;
@@ -30,7 +30,7 @@ angular.module("managerApp")
 
         function getRegions () {
             self.loaders.regions = true;
-            return Cloud.Project().Region().Lexi().query({
+            return OvhApiCloud.Project().Region().Lexi().query({
                 serviceName: self.projectId
             }).$promise.then(function (regions) {
                 self.form.regions = regions;
@@ -44,7 +44,7 @@ angular.module("managerApp")
 
         function initGuideURL () {
             self.loaders.guide = true;
-            User.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.Lexi().get().$promise.then(function (me) {
                 var lang = me.ovhSubsidiary;
                 self.data.guideURL = URLS.guides.openstack[lang];
             })["finally"](function () {
@@ -55,7 +55,7 @@ angular.module("managerApp")
         function buildOpenrcUrl () {
             var url = [
                 (_.find(CONFIG_API.apis, {serviceType : "aapi"}) || {}).urlPrefix,
-                Cloud.Project().User().Aapi().services.openrc.url,
+                OvhApiCloud.Project().User().Aapi().services.openrc.url,
                 "?",
                 $httpParamSerializer({
                     region: self.data.region,

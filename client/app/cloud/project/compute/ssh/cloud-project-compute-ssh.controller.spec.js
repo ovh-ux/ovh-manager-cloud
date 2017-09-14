@@ -12,7 +12,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
         $rootScope,
         $controller,
         Toast,
-        CloudProjectSshKey,
+        OvhApiCloudProjectSshKey,
         $scope;
 
     beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSshKey_, _Toast_) {
@@ -20,7 +20,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
-        CloudProjectSshKey = _CloudProjectSshKey_;
+        OvhApiCloudProjectSshKey = _CloudProjectSshKey_;
         Toast = _Toast_;
 
         spyOn(Toast, "error");
@@ -137,14 +137,14 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
                 xit("should not sent POST request (name already exist)", function () {
                     CloudProjectComputeSshCtrl.sshAdd.name = dataTest.sshkeys[0].name;
 
-                    spyOn(CloudProjectSshKey, "Lexi");
+                    spyOn(OvhApiCloudProjectSshKey, "Lexi");
                     spyOn(CloudProjectComputeSshCtrl, "getSshKeys");
 
                     CloudProjectComputeSshCtrl.postSshKey();
 
                     expect(CloudProjectComputeSshCtrl.loaders.add.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.sshAdd.name).toEqual(dataTest.sshkeys[0].name);
-                    expect(CloudProjectSshKey.Lexi.calls.any()).toEqual(false);
+                    expect(OvhApiCloudProjectSshKey.Lexi.calls.any()).toEqual(false);
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.any()).toEqual(false);
                     expect(Toast.error.calls.count()).toEqual(1);
                 });

@@ -5,11 +5,11 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
     "$stateParams",
     "$timeout",
     "$translate",
-    "CloudProjectRegion",
+    "OvhApiCloudProjectRegion",
     "CloudStorageContainers",
     "Toast",
     function ($q, $scope, $state, $stateParams, $timeout, $translate,
-        CloudProjectRegion, CloudStorageContainers, Toast) {
+        OvhApiCloudProjectRegion, CloudStorageContainers, Toast) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -81,7 +81,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
             $scope.loaders.regions = true;
             $scope.regions = null;
 
-            return CloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.Lexi().query({
                     serviceName: $scope.projectId
                 }).$promise
                 .then(function (regions) {

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (CloudProjectSshKey, $scope, $translate, Toast, $stateParams, ovhDocUrl) {
+  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, Toast, $stateParams, ovhDocUrl) {
 
     var self = this,
         serviceName = $stateParams.projectId;
@@ -143,9 +143,9 @@ angular.module("managerApp")
             self.toggle.sshDeleteId = null;
             self.loaders.table.ssh = true;
             if (clearCache) {
-                CloudProjectSshKey.Lexi().resetQueryCache();
+                OvhApiCloudProjectSshKey.Lexi().resetQueryCache();
             }
-            CloudProjectSshKey.Lexi().query({
+            OvhApiCloudProjectSshKey.Lexi().query({
                 serviceName : serviceName
             }).$promise.then(function (sshList) {
                 self.table.ssh = sshList;
@@ -171,7 +171,7 @@ angular.module("managerApp")
             }
 
             self.loaders.add.ssh = true;
-            CloudProjectSshKey.Lexi().save(self.sshAdd).$promise.then(function () {
+            OvhApiCloudProjectSshKey.Lexi().save(self.sshAdd).$promise.then(function () {
                 self.toggleAddSshKey();
                 self.getSshKeys(true);
                 Toast.success($translate.instant('cpc_ssh_add_submit_success'));
@@ -186,7 +186,7 @@ angular.module("managerApp")
     self.deleteSshKey = function (sshKey) {
         if (!self.loaders.remove.ssh) {
             self.loaders.remove.ssh = true;
-            CloudProjectSshKey.Lexi().remove({serviceName : serviceName, keyId: sshKey.id}).$promise.then(function () {
+            OvhApiCloudProjectSshKey.Lexi().remove({serviceName : serviceName, keyId: sshKey.id}).$promise.then(function () {
                 self.getSshKeys(true);
                 Toast.success($translate.instant('cpc_ssh_delete_success'));
             }, function (err){

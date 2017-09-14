@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsQuotaCtrl",
-function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, DBaasTsProjectQuota, DBaasTsProject) {
+function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, OvhApiDBaasTsProjectQuota, OvhApiDBaasTsProject) {
 
     // -- Variables declaration --
 
@@ -21,13 +21,13 @@ function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, DBaasT
     function init () {
         self.loaders.init = true;
 
-        DBaasTsProject.Lexi().get({
+        OvhApiDBaasTsProject.Lexi().get({
             serviceName: serviceName
         }).$promise.then(function (project) {
 
             self.project = project;
 
-            return DBaasTsProjectQuota.Lexi().query({
+            return OvhApiDBaasTsProjectQuota.Lexi().query({
                 serviceName: serviceName
             }).$promise.then(function (quotas) {
                 self.data.quotas = quotas;
@@ -45,7 +45,7 @@ function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, DBaasT
     // --
 
     self.refresh = function () {
-        DBaasTsProjectQuota.Lexi().resetQueryCache();
+        OvhApiDBaasTsProjectQuota.Lexi().resetQueryCache();
         init();
     };
 

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
-    function ($q, $stateParams, $translate, CloudProjectCredit, Toast, $uibModal, UserBill) {
+    function ($q, $stateParams, $translate, OvhApiCloudProjectCredit, Toast, $uibModal, OvhApiMeBill) {
 
         /*=================================
         =            VARIABLES            =
@@ -40,7 +40,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         function init () {
             self.loading.init = true;
 
-            return CloudProjectCredit.Lexi().query({
+            return OvhApiCloudProjectCredit.Lexi().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (voucherIds) {
                 self.datas.voucherIds = voucherIds;
@@ -66,7 +66,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         this.addVoucher = function () {
             this.loading.add = true;
 
-            return CloudProjectCredit.Lexi().save({
+            return OvhApiCloudProjectCredit.Lexi().save({
                 serviceName: $stateParams.projectId
             }, {
                 code: self.model.voucher
@@ -108,7 +108,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         ==============================================*/
 
         function futureVoucherWithPdfUrl (voucher) {
-            return UserBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
+            return OvhApiMeBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
                 voucher.pdfUrl = bill.pdfUrl;
                 return voucher;
             }, function () {
@@ -118,7 +118,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
         this.transformItem = function (voucherId) {
             this.loading.vouchers = true;
-            return CloudProjectCredit.Lexi().get({
+            return OvhApiCloudProjectCredit.Lexi().get({
                 serviceName: $stateParams.projectId,
                 creditId: voucherId
             }).$promise.then(function (voucher) {

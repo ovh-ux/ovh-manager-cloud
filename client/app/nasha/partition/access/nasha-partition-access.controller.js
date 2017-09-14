@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($scope, $state, $stateParams, $translate, $uibModal, $q, DedicatedNasha, Poller, Toast) {
+angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($scope, $state, $stateParams, $translate, $uibModal, $q, OvhApiDedicatedNasha, Poller, Toast) {
     "use strict";
 
     var self = this;
@@ -23,12 +23,12 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
     self.load = function (resetCache) {
         self.loaders.table = true;
         if (resetCache) {
-            DedicatedNasha.Partition().Access().Lexi().resetCache();
+            OvhApiDedicatedNasha.Partition().Access().Lexi().resetCache();
         }
         $q.all({
-            nasha: DedicatedNasha.Lexi().get({ serviceName: $stateParams.nashaId }).$promise,
-            partition: DedicatedNasha.Partition().Lexi().get({ serviceName: $stateParams.nashaId, partitionName: $stateParams.partitionName }).$promise,
-            accesses: DedicatedNasha.Partition().Access().Lexi().query({ serviceName: $stateParams.nashaId, partitionName: $stateParams.partitionName }).$promise
+            nasha: OvhApiDedicatedNasha.Lexi().get({ serviceName: $stateParams.nashaId }).$promise,
+            partition: OvhApiDedicatedNasha.Partition().Lexi().get({ serviceName: $stateParams.nashaId, partitionName: $stateParams.partitionName }).$promise,
+            accesses: OvhApiDedicatedNasha.Partition().Access().Lexi().query({ serviceName: $stateParams.nashaId, partitionName: $stateParams.partitionName }).$promise
         }).then(function (data) {
             self.data.nasha = data.nasha;
             self.data.partition = data.partition;
@@ -54,7 +54,7 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
         }
 
         // if not we get the details form the api
-        return DedicatedNasha.Partition().Access().Lexi().get({
+        return OvhApiDedicatedNasha.Partition().Access().Lexi().get({
             serviceName: self.data.nasha.serviceName,
             partitionName: self.data.partition.partitionName,
             ip: accessIp

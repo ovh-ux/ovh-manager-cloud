@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaIpDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, DedicatedCeph) {
+  .controller("CdaIpDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.deleteIp = function () {
           self.saving = true;
-          DedicatedCeph.Acl().Lexi()["delete"]({
+          OvhApiDedicatedCeph.Acl().Lexi()["delete"]({
               serviceName: $stateParams.serviceName,
               aclId: self.ip.id
           }).$promise.then(function (result) {

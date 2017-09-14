@@ -10,13 +10,13 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
     var $translate;
     var $q;
     var User;
-    var CloudProjectAlerting;
+    var OvhApiCloudProjectAlerting;
     var Toast;
     var uibModalInstance;
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$stateParams_, _$translate_, _$q_, _User_, _CloudProjectAlerting_, _Toast_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$stateParams_, _$translate_, _$q_, _OvhApiMe_, _OvhApiCloudProjectAlerting_, _Toast_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -24,8 +24,8 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         $stateParams = _$stateParams_;
         $translate = _$translate_;
         $q = _$q_;
-        User = _User_;
-        CloudProjectAlerting = _CloudProjectAlerting_;
+        User = _OvhApiMe_;
+        OvhApiCloudProjectAlerting = _OvhApiCloudProjectAlerting_;
         Toast = _Toast_;
 
         uibModalInstance = {
@@ -112,7 +112,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.model.email = "mail";
             controller.model.threshold = "threshold";
 
-            spyOn(CloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.when() });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.when() });
 
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
@@ -123,7 +123,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.saveAlert();
             $httpBackend.flush();
 
-            expect(CloudProjectAlerting.Lexi().save).toHaveBeenCalledWith({ serviceName: "projectId" }, {
+            expect(OvhApiCloudProjectAlerting.Lexi().save).toHaveBeenCalledWith({ serviceName: "projectId" }, {
                 delay: 1234,
                 email: "mail",
                 monthlyThreshold: "threshold"
@@ -135,7 +135,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         it("Should handles save error correctly", function () {
             var controller = initCtrl();
 
-            spyOn(CloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
 
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);
@@ -158,7 +158,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.model.email = "mail";
             controller.model.threshold = "threshold";
 
-            spyOn(CloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.when() });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.when() });
 
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
@@ -169,7 +169,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.saveAlert();
             $httpBackend.flush();
 
-            expect(CloudProjectAlerting.Lexi().put).toHaveBeenCalledWith({ serviceName: "projectId", alertId: "alertid" }, {
+            expect(OvhApiCloudProjectAlerting.Lexi().put).toHaveBeenCalledWith({ serviceName: "projectId", alertId: "alertid" }, {
                 delay: 1234,
                 email: "mail",
                 monthlyThreshold: "threshold"
@@ -182,7 +182,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var controller = initCtrl();
 
             controller.alerting.id = "alertid";
-            spyOn(CloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
 
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);

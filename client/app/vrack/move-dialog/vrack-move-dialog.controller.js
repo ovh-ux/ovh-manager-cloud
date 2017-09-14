@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope, $q, $translate, $uibModalInstance, Toast, Vrack, VrackDedicatedCloudDatacenter) {
+angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope, $q, $translate, $uibModalInstance, Toast, OvhApiVrack, OvhApiVrackDedicatedCloudDatacenter) {
     "use strict";
 
     var self = this;
@@ -33,7 +33,7 @@ angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope,
 
         self.loaders.allowedVrack = true;
 
-        return VrackDedicatedCloudDatacenter.Lexi().allowedVrack({
+        return OvhApiVrackDedicatedCloudDatacenter.Lexi().allowedVrack({
             serviceName: self.service.vrack,
             datacenter: self.service.id
         }).$promise.then(function (allowedVracks) {
@@ -56,7 +56,7 @@ angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope,
 
         self.loaders.vracks = true;
 
-        Vrack.Aapi().query().$promise.then(function (vracks) {
+        OvhApiVrack.Aapi().query().$promise.then(function (vracks) {
             self.collections.vracks = vracks;
         }).catch(function () {
             self.collections.vracks = [];
@@ -94,7 +94,7 @@ angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope,
 
         self.loaders.move = true;
 
-        VrackDedicatedCloudDatacenter.Lexi().move({
+        OvhApiVrackDedicatedCloudDatacenter.Lexi().move({
             serviceName: self.service.vrack,
             datacenter: self.service.id
         }, {
