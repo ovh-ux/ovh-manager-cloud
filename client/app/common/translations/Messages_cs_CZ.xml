@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Vaše výchozí platební karta expirovala. Běžte prosím do <a href="{{urlBillingSection}}">fakturační sekce</a> a aktualizujte ji.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Byly zjištěny následující chyby</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Důležité informace</translation>
 
    <translation id="common_global_error" qtlid="433345">Při provádění operace došlo k chybě: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operace byla úspěšná.</translation>

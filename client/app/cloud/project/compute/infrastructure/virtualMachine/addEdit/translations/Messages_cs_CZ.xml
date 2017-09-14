@@ -147,7 +147,7 @@
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">3 x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instance VPS-SSD: <br/>public cloud za nejlepší cenu</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD využívají lokální SSD RAID a jejich výkon může v čase kolísat</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instance: <br/>Sdílené zdroje</translation>
@@ -184,7 +184,7 @@
    <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Aktualizovat můj SSH klíč</translation>
    <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Načíst Vaše SSH klíče.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Jméno</translation>
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Příjmení</translation>
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Klíč</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Vložte post-instalační skript</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Zvolit můj SSH klíč</translation>

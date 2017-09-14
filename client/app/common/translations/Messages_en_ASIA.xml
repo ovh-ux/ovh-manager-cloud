@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Your default bank card has expired. Go to <a href="{{urlBillingSection}}">the billing section</a> to update it.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">The following errors have occurred</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Important information</translation>
 
    <translation id="common_global_error" qtlid="433345">An error has occurred during the operation: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">The operation was successfully carried out.</translation>

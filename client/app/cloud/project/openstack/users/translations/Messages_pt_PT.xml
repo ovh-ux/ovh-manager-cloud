@@ -12,7 +12,7 @@
    <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identificador</translation>
    <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Descrição </translation>
    <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Estado</translation>
-   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Password</translation>
+   <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Palavra-passe</translation>
    <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Gerar nova palavra-passe</translation>
    <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Anular a eliminação</translation>
    <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Eliminar este utilizador</translation>

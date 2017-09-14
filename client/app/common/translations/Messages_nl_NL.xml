@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Uw standaard bankpas is verlopen. Ga naar <a href="{{urlBillingSection}}">het facturatiegedeelte</a> om het te updaten.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">De volgende fouten zijn voorgekomen</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Belangrijke informatie</translation>
 
    <translation id="common_global_error" qtlid="433345">Er is een fout opgetreden tijdens de procedure: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">De procedure is voltooid. </translation>

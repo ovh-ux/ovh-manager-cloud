@@ -3,7 +3,7 @@
    <translation id="cpou_token_title" qtlid="245571">Gerar um token Openstack</translation>
    <translation id="cpou_openrc_title" qtlid="261036">Fazer download do ficheiro RC OpenStack</translation>
    <translation id="cpou_token_info" qtlid="296193">De forma a poder gerar um token Openstack, agradecemos que introduza a password do utilizador <b>{{ username }}</b>.</translation>
-   <translation id="cpou_token_password_label" qtlid="2270">Password</translation>
+   <translation id="cpou_token_password_label" qtlid="2270">Palavra-passe</translation>
    <translation id="cpou_token_error" qtlid="245597">Oops, não foi possível gerar o token Openstack.</translation>
 
    <translation id="cpou_token_title_information" qtlid="245610">Anote estes identificadores. Eles não deixarão de estar acessíveis na próxima atualização.</translation>
