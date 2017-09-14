@@ -11,7 +11,12 @@
         </div>
         <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
             <p data-translate="cpci_private_network_activateVrack_description"></p>
-            <button type="button" class="ovh-button ovh-button_secondary" data-ui-sref="vrack-home" data-translate="cpci_private_network_activateVrack_activate"></button>
+            <a type="button" 
+                data-ng-show="$ctrl.orderUrl" 
+                class="ovh-button ovh-button_secondary" 
+                data-ng-href="{{ $ctrl.orderUrl }}" 
+                data-translate="cpci_private_network_activateVrack_activate"
+                target="_blank"></a>
         </div>
     </li>
     <li class="private-networks__item" data-ng-repeat="network in $ctrl.getPrivateNetworks() track by network.id" data-ng-if="$ctrl.hasVrack()">
@@ -20,9 +25,10 @@
                   role="button"
                   tabindex="0"
                   data-ng-click="$ctrl.deletePrivateNetwork(network.id)">
-                <i class="fa fa-trash-o fa-2x"></i>
+                <i class="fa fa-trash-o fa-2x"
+                   data-ng-hide="$ctrl.loaders.privateNetworks.delete"></i>
                 <i class="fa fa-circle-o-notch fa-2x fa-spin"
-                   ng-if="$ctrl.loaders.deleting"></i>
+                   data-ng-show="$ctrl.loaders.privateNetworks.delete"></i>
             </span>
             <span class="private-network__property private-network__property_name" data-ng-bind="::network.name"></span>
             <span class="private-network__property private-network__property_id">{{ network.shortVlanId === '0' ? ("cpci_private_network_list_untagged_vlan" | translate) : "VLAN" + network.shortVlanId }}</span>

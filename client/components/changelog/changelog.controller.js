@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("ChangelogCtrl", function ($uibModalInstance, User, Changelog, TARGET) {
+  .controller("ChangelogCtrl", function ($uibModalInstance, OvhApiMe, OvhApiChangelog, TARGET) {
     "use strict";
     var self = this;
 
@@ -8,11 +8,11 @@ angular.module("managerApp")
     self.content = [];
 
     function getUser () {
-        return User.Lexi().get().$promise;
+        return OvhApiMe.Lexi().get().$promise;
     }
 
     function getChangelog (country, zone) {
-        return Changelog.Aapi().query({
+        return OvhApiChangelog.Aapi().query({
             subsidiary: country,
             where: zone
         }).$promise;

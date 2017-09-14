@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, DedicatedCeph) {
+  .controller("CdaUserDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, OvhApiDedicatedCeph) {
       "use strict";
       var self = this;
 
@@ -17,7 +17,7 @@ angular.module("managerApp")
 
       self.deleteUser = function () {
           self.saving = true;
-          DedicatedCeph.User().Lexi()["delete"]({
+          OvhApiDedicatedCeph.User().Lexi()["delete"]({
               serviceName: $stateParams.serviceName,
               userName: self.user.name
           }).$promise.then(function (result) {

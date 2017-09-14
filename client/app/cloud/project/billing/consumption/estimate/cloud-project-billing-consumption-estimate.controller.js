@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateCtrl",
-    function ($q, $uibModal, $stateParams, $translate, CloudProjectAlerting, Toast, CloudProjectUsageForecast, CloudProjectUsageCurrent, CloudProjectBillingService) {
+    function ($q, $uibModal, $stateParams, $translate, OvhApiCloudProjectAlerting, Toast, OvhApiCloudProjectUsageForecast, OvhApiCloudProjectUsageCurrent, CloudProjectBillingService) {
         var self = this;
         self.loading = false;
         self.data = {
@@ -38,7 +38,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
 
         function initForecast () {
             self.loaders.forecast = true;
-            return CloudProjectUsageForecast.Lexi().get({
+            return OvhApiCloudProjectUsageForecast.Lexi().get({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (billingInfo) {
                 return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo).then(function (data) {
@@ -52,7 +52,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
 
         function initCurrent () {
             self.loaders.current = true;
-            return CloudProjectUsageCurrent.Lexi().get({
+            return OvhApiCloudProjectUsageCurrent.Lexi().get({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (billingInfo) {
                 return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo);
@@ -64,14 +64,14 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
         }
 
         function getAlertIds () {
-            CloudProjectAlerting.Lexi().resetCache();
-            return CloudProjectAlerting.Lexi().getIds({
+            OvhApiCloudProjectAlerting.Lexi().resetCache();
+            return OvhApiCloudProjectAlerting.Lexi().getIds({
                 serviceName: $stateParams.projectId
             }).$promise;
         }
 
         function getAlert (id) {
-            return CloudProjectAlerting.Lexi().get({
+            return OvhApiCloudProjectAlerting.Lexi().get({
                 serviceName: $stateParams.projectId,
                 alertId: id }).$promise
                 .catch(function () {
@@ -139,11 +139,11 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
         self.deleteAlert = function () {
             self.loaders.deleteAlert = true;
             // we query alerts to check if an alert already exists, in this case we delete it
-            CloudProjectAlerting.Lexi().getIds({
+            OvhApiCloudProjectAlerting.Lexi().getIds({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (alertIds) {
                 if (!_.isEmpty(alertIds)) {
-                    return CloudProjectAlerting.Lexi()["delete"]({
+                    return OvhApiCloudProjectAlerting.Lexi()["delete"]({
                         serviceName: $stateParams.projectId,
                         alertId: _.first(alertIds)
                     }).$promise.then(function () {

@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, DedicatedNasha, Toast, CloudAapi) {
+angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, Toast, CloudAapi) {
     "use strict";
 
     var self = this;
@@ -15,7 +15,7 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
 
     self.loadAccessList = function () {
         self.loading = true;
-        DedicatedNasha.Partition().Access().Aapi()
+        OvhApiDedicatedNasha.Partition().Access().Aapi()
         .authorizableIps({ serviceName: self.data.serviceName, partitionName: self.data.partition.partitionName }).$promise.then(function (result) {
             angular.forEach(result, function (ip) {
                 if (!ip.description) {
@@ -33,7 +33,7 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
 
     self.addAccess = function () {
         self.loading = true;
-        DedicatedNasha.Partition().Access().Lexi().add({
+        OvhApiDedicatedNasha.Partition().Access().Lexi().add({
             serviceName: self.data.serviceName,
             partitionName: self.data.partition.partitionName
         }, {

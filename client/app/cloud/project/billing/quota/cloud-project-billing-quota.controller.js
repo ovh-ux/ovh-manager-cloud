@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
-    function ($q, $stateParams, $translate, REDIRECT_URLS, CloudProject, CloudProjectQuota, UserPaymentMean, Toast, OtrsPopupService, RegionService) {
+    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, Toast, OtrsPopupService, RegionService) {
 
         //---------VARIABLE DECLARATION---------
 
@@ -42,7 +42,7 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
         this.unleashAccount = function () {
             self.loader.unleash = true;
 
-            return CloudProject.Lexi().unleash({
+            return OvhApiCloudProject.Lexi().unleash({
                 serviceName: serviceName
             }, {}).$promise.then(function () {
                 init();
@@ -67,12 +67,12 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
             self.loader.unleash = false;
 
             // check default payment mean
-            initQueue.push(UserPaymentMean.Lexi().getDefaultPaymentMean().then(function (defaultPaymentMean) {
+            initQueue.push(OvhApiMePaymentMean.Lexi().getDefaultPaymentMean().then(function (defaultPaymentMean) {
                 self.datas.defaultPaymentMean = defaultPaymentMean;
             }));
 
             // get quota
-            initQueue.push(CloudProjectQuota.Lexi().query({
+            initQueue.push(OvhApiCloudProjectQuota.Lexi().query({
                 serviceName: serviceName
             }).$promise.then(function (quotas) {
                 self.datas.quota = quotas;

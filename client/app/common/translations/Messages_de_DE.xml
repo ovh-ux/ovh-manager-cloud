@@ -6,6 +6,9 @@
    <translation id="common_close" qtlid="4670">Schließen</translation>
 
    <translation id="common_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="common_edit" qtlid="37875">Ändern</translation>
+   <translation id="common_consult" qtlid="339639">Einsehen</translation>
+   <translation id="common_manage" qtlid="16301">Verwalten</translation>
    <translation id="common_apply" qtlid="41326">Anwenden</translation>
    <translation id="common_loading" qtlid="58256">Wird geladen</translation>
    <translation id="common_refresh" qtlid="250030">Aktualisieren</translation>
@@ -459,10 +462,30 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Ihre hinterlegte Kreditkarte ist abgelaufen. Bitte begeben Sie sich in den Bereich <a href="{{urlBillingSection}}">Abrechnung</a>, um Ihre Daten zu aktualisieren. </translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Die folgenden Fehler sind aufgetreten</translation>
+   <translation id="message_container_multiple_warning">Informations importantes</translation>
+
+   <translation id="common_global_error" qtlid="433345">Bei dem Vorgang ist ein Fehler aufgetreten: {{message}}</translation>
+   <translation id="common_global_success" qtlid="433358">Der Vorgang wurde erfolgreich beendet.</translation>
 
    <translation id="common_term_and_contracts" qtlid="404087">Bedingungen und Verträge</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Hiermit bestätige ich, dass ich die Bedingungen und Verträge gelesen habe und akzeptiere diese.</translation>
-
+   <translation id="common_login" qtlid="2174">Anmelden</translation>
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Schließen</translation>
+
+   <translation id="common_tile_subscription" qtlid="28891">Abo</translation>
+   <translation id="common_tile_subscription_offer" qtlid="38217">Angebot</translation>
+   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatische Verlängerung</translation>
+   <translation id="common_tile_subscription_contact" qtlid="32206">Kontakte</translation>
+   <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
+
+   <translation id="common_preview_see" qtlid="433371">Vorschau anzeigen</translation>
+
+   <translation id="common_table_col_action" qtlid="56105">Aktion</translation>
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Ergebnisse pro Seite</translation>
+   <translation id="common_pagination_page" qtlid="433397">Seite</translation>
+   <translation id="common_pagination_of" qtlid="121615">Zeitraum:</translation>
+   <translation id="common_pagination_results" qtlid="433410">Ergebnisse</translation>
+   <translation id="common_pagination_next" qtlid="433423">Nächste Seite</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Vorherige Seite</translation>
 </translations>

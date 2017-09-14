@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="metrics_tiles_shortcut_title" qtlid="403658">Atalho</translation>
+   <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Adicionar um token</translation>
+   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Aumentar a oferta</translation>
+   <translation id="metrics_tiles_tools_title" qtlid="330682">Ferramentas</translation>
+
+   <translation id="metrics_tiles_usage_title" qtlid="30382">Utilização</translation>
+
+   <translation id="metrics_tiles_configuration_title" qtlid="4406">Configuração</translation>
+   <translation id="metrics_tiles_configuration_name" qtlid="3818">Nome</translation>
+   <translation id="metrics_tiles_configuration_retention" qtlid="415532">Retenção</translation>
+   <translation id="metrics_tiles_configuration_retention_month" qtlid="40222">mês</translation>
+   <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Datacenter</translation>
+
+   <translation id="metrics_tiles_subscription_title" qtlid="28891">Subscrição</translation>
+   <translation id="metrics_tiles_subscription_offer" qtlid="38217">Oferta</translation>
+   <translation id="metrics_tiles_subscription_priceplan_free_trial" qtlid="415545">Teste Gratuito</translation>
+   <translation id="metrics_tiles_subscription_metrics-free-trial" qtlid="415545">Teste Gratuito</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xxs" qtlid="415558">Subscrição Cloud XXS</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xs" qtlid="415571">Subscrição Cloud XS</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-s" qtlid="415584">Subscrição Cloud S</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-m" qtlid="415597">Subscrição Cloud M</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-l" qtlid="415610">Subscrição Cloud L</translation>
+   <translation id="metrics_tiles_subscription_metrics-cloud-xl" qtlid="415623">Subscrição Cloud XL</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-64g" qtlid="415636">Subscrição Live 64GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-128g" qtlid="415649">Subscrição Live 128GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-256g" qtlid="415662">Subscrição Live 256GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-512g" qtlid="415675">Subscrição Live 512GB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-1t" qtlid="415688">Subscrição Live 1TB</translation>
+   <translation id="metrics_tiles_subscription_metrics-live-2t" qtlid="415701">Subscrição Live 2TB</translation>
+
+   <translation id="metrics_tiles_modify" qtlid="37875">Modificar</translation>
+   <translation id="metrics_dashboard_modif_cancel" qtlid="37863">Anular</translation>
+   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modificar</translation>
+   <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nome padrão</translation>
+   <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nome personalizado</translation>
+   <translation id="metrics_dashboard_modif_retention" qtlid="8218">Duração</translation>
+</translations>

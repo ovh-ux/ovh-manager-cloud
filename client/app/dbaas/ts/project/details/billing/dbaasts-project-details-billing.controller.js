@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsBillingCtrl",
-function ($q, $scope, $state, $stateParams, $translate, Toast, DBaasTsProjectBilling) {
+function ($q, $scope, $state, $stateParams, $translate, Toast, OvhApiDBaasTsProjectBilling) {
 
     // -- Variables declaration --
 
@@ -23,7 +23,7 @@ function ($q, $scope, $state, $stateParams, $translate, Toast, DBaasTsProjectBil
     function init () {
         self.loaders.init = true;
 
-        DBaasTsProjectBilling.Lexi().get({
+        OvhApiDBaasTsProjectBilling.Lexi().get({
             serviceName: serviceName,
             from: getMonthYear()
         }).$promise.then(function (billing) {
@@ -43,7 +43,7 @@ function ($q, $scope, $state, $stateParams, $translate, Toast, DBaasTsProjectBil
     // --
 
     self.refresh = function () {
-        DBaasTsProjectBilling.Lexi().resetCache();
+        OvhApiDBaasTsProjectBilling.Lexi().resetCache();
         init();
     };
 

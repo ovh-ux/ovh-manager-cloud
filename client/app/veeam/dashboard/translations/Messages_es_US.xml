@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="veeam_tiles_shortcut_title" qtlid="403658">Atajos</translation>
-   <translation id="veeam_tiles_shortcut_label_add_storage" qtlid="403671">Añadir un espacio de almacenamiento</translation>
+   <translation id="veeam_tiles_shortcut_label_add_storage" qtlid="403671">Añadir espacio de almacenamiento</translation>
    <translation id="veeam_tiles_shortcut_label_change_offer" qtlid="403684">Aumentar el plan</translation>
 
    <translation id="veeam_tiles_configuration_title" qtlid="4406">Configuration</translation>

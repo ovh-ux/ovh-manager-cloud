@@ -9,7 +9,7 @@
 
    <translation id="cpbc_hourly_instance_detail_title" qtlid="19459">Palvelimet</translation>
    <translation id="cpbc_hourly_instance_col_name" qtlid="258782">Nimi</translation>
-   <translation id="cpbc_hourly_instance_col_consumption" qtlid="25639">Kulutus</translation>
+   <translation id="cpbc_hourly_instance_col_consumption" qtlid="25639">Käyttö</translation>
    <translation id="cpbc_hourly_instance_col_consumption_tooltip" qtlid="245987">Laskutetaan ensi kuun alussa.</translation>
    <translation id="cpbc_hourly_instance_monthly_billing_since" qtlid="246039">Liitetty kuukausilaskutukseen {{since}}</translation>
    <translation id="cpbc_hourly_instance_monthly_billing_activationPending" qtlid="246052">Liitetään kuukausilaskutukseen</translation>
@@ -43,7 +43,7 @@
    <translation id="cpbc_snapshot_detail_title" qtlid="364251">Varmuuskopioiden säilö</translation>
    <translation id="cpbc_snapshot_col_location" qtlid="168237">Sijainti</translation>
    <translation id="cpbc_snapshot_col_type" qtlid="2642">Tyyppi</translation>
-   <translation id="cpbc_snapshot_col_usage" qtlid="25639">Kulutus</translation>
+   <translation id="cpbc_snapshot_col_usage" qtlid="25639">Käyttö</translation>
    <translation id="cpbc_snapshot_col_usage_tooltip" qtlid="245987">Laskutetaan ensi kuun alussa.</translation>
    <translation id="cpbc_snapshot_col_usage_info_part1" qtlid="364173">Laskutus tapahtuu todellisen storagetilan perusteella tunneittain mitattuna, lähimpään tuntiin pyöristettynä.</translation>
    <translation id="cpbc_snapshot_col_usage_info_part2" qtlid="364186">Kulutuksesi on täsmälleen {{amount}} GiBTuntia.</translation>
@@ -51,7 +51,7 @@
 
    <translation id="cpbc_volume_detail_title" qtlid="352841">Lisälevyt</translation>
    <translation id="cpbc_volume_col_name" qtlid="3818">Nimi</translation>
-   <translation id="cpbc_volume_col_consumption" qtlid="25639">Kulutus</translation>
+   <translation id="cpbc_volume_col_consumption" qtlid="25639">Käyttö</translation>
    <translation id="cpbc_volume_col_consumption_tooltip" qtlid="245987">Laskutetaan ensi kuun alussa.</translation>
    <translation id="cpbc_volume_consumption_tooltip_part1" qtlid="364173">Laskutus tapahtuu todellisen storagetilan perusteella tunneittain mitattuna, lähimpään tuntiin pyöristettynä.</translation>
    <translation id="cpbc_volume_consumption_tooltip_part2" qtlid="364186">Kulutuksesi on täsmälleen {{amount}} GiBTuntia.</translation>

@@ -1,9 +1,9 @@
 class NashaAddCtrl {
-    constructor ($translate, $q, $state, Order, Toast) {
+    constructor ($translate, $q, $state, OvhApiOrder, Toast) {
         this.$translate = $translate;
         this.$q = $q;
         this.$state = $state;
-        this.Order = Order;
+        this.Order = OvhApiOrder;
         this.Toast = Toast;
 
         this.loaders = {};

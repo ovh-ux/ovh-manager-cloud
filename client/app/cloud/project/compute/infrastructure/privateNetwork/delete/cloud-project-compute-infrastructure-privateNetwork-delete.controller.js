@@ -1,14 +1,11 @@
 class CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl {
-    constructor($uibModalInstance, $stateParams, params, CloudProjectNetworkPrivate,
+    constructor($uibModalInstance, $stateParams, params, OvhApiCloudProjectNetworkPrivate,
                 CloudProjectComputeInfrastructurePrivateNetworkService) {
         this.service = CloudProjectComputeInfrastructurePrivateNetworkService;
         this.serviceName = $stateParams.projectId;
         this.networkId = params;
         this.modal = $uibModalInstance;
 
-        this.loaders = {
-            deleting : false
-        };
     }
 
     deletePrivateNetwork () {
@@ -17,7 +14,7 @@ class CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl {
 
     confirm () {
         this.modal.close();
-        this.deletePrivateNetwork();
+        return this.deletePrivateNetwork();
     };
 
     cancel () {

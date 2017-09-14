@@ -1,6 +1,24 @@
 (() => {
     "use strict";
 
+    class UniqueMessageComposite {
+        constructor (messageList) {
+            this.messageList = messageList;
+            this.text = messageList[0].text;
+            this.textHtml = messageList[0].textHtml;
+            this.messageOrder = messageList[0].messageOrder;
+            this.type = messageList[0].type;
+            this.link = messageList[0].link;
+            this.dismissable = messageList[0].dismissable;
+            this.dismissed = !_.some(this.messageList, message => !message.dismissed);
+        }
+
+        dismiss () {
+            this.dismissed = true;
+            _.forEach(this.messageList, message => { message.dismissed = true; });
+        }
+    }
+
     class CuiMessageContainerCtrl {
         constructor ($scope) {
             this.$scope = $scope;
@@ -8,28 +26,45 @@
         }
 
         $onInit () {
+            this.dismissableTypes = this.dismissableTypes || ["info", "success"];
+            this.groupedTypes = this.groupedTypes || ["error"];
+
             this.$scope.$watch(() => this.messages.length, () => {
-                this.refreshMessageOrder();
+                this.refreshValues();
                 this.groupedMessages = this.getGroupedMessages();
             });
         }
 
         shouldDisplayGroupedMessages (messageCategory) {
-            return messageCategory.values.length !== 1 && messageCategory.isGroupable;
+            return _.filter(messageCategory.values, value => !value.dismissed).length !== 1 && messageCategory.isGroupable;
         }
 
         hasMessageToDisplay () {
             return this.messages.length;
         }
 
-        refreshMessageOrder () {
+        hasGroupMessageToDisplay (type) {
+            const messageGroup = _.find(this.groupedMessages, group => group.key === type);
+            return _.some(messageGroup.values, value => !value.dismissed);
+        }
+
+        refreshValues () {
             let messageOrder = 0;
+
             _.forEachRight(this.messages, message => {
+                if (!_.contains([true, false], message.dismissed)) {
+                    message.dismissed = false;
+                }
+
+                message.dismissable = this.isDismissable(message.type);
+
                 message.messageOrder = messageOrder++;
             });
         }
 
         getGroupedMessages () {
+            const groupedMessages = _.groupBy(this.messages, "type");
+
             const messagePriorities = {
                 error: 1,
                 warning: 2,
@@ -37,30 +72,35 @@
                 success: 4
             };
 
-            const groupedMessages = _.groupBy(this.messages, "type");
             return _.map(_.keys(groupedMessages), key => ({
                 key,
                 values: this.extractUniqueMessage(groupedMessages[key]),
-                isGroupable: key === "error",
-                priority: messagePriorities[key]
+                isGroupable: this.isGroupable(key),
+                priority: messagePriorities[key],
+                dismissable: this.isDismissable(key)
             }));
+        }
+
+        isGroupable (type) {
+            return _.contains(this.groupedTypes, type);
+        }
+
+        isDismissable (type) {
+            return _.contains(this.dismissableTypes, type);
         }
 
         extractUniqueMessage (messageList) {
             const groupedMessages = _.groupBy(messageList, message => message.text || message.textHtml);
-            return _.map(_.keys(groupedMessages), key => ({
-                text: groupedMessages[key][0].text,
-                textHtml: groupedMessages[key][0].textHtml,
-                messageOrder: groupedMessages[key][0].messageOrder,
-                type: groupedMessages[key][0].type,
-                link: groupedMessages[key][0].link,
-                dismissed: groupedMessages[key][0].dismissed // It's important to take last message's property since we always wanna show new message, 
-                // even if an exact copy was dismissed before.
-            }));
+            const groupedMessagesHash = _.map(_.keys(groupedMessages), key => new UniqueMessageComposite(groupedMessages[key]));
+            return groupedMessagesHash;
         }
 
         onDismiss (message) {
-            message.dismissed = true;
+            message.dismiss();
+        }
+
+        onGroupDismiss (groupedMessages) {
+            _.forEach(groupedMessages.values, message => message.dismiss());
         }
     }
 
@@ -69,7 +109,9 @@
             templateUrl: "app/ui-components/message/message-container.html",
             controller: CuiMessageContainerCtrl,
             bindings: {
-                messages: "<"
+                messages: "<",
+                groupedTypes: "<",
+                dismissableTypes: "<"
             }
         });
 

@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($stateParams, $scope, $uibModalInstance, $translate, DedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($stateParams, $scope, $uibModalInstance, $translate, OvhApiDedicatedNasha, Toast) {
     "use strict";
     var self = this;
     self.loading = false;
@@ -21,7 +21,7 @@ angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($s
 
     self.updatePartition = function () {
         self.loading = true;
-        DedicatedNasha.Partition().Lexi().update({
+        OvhApiDedicatedNasha.Partition().Lexi().update({
             serviceName: self.data.nashaId
         }, {
             partitionName: self.data.partition.partitionName,
@@ -49,7 +49,7 @@ angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($s
     };
 
     function getTasksTodo (operation) {
-        return DedicatedNasha.Task().Lexi().query({
+        return OvhApiDedicatedNasha.Task().Lexi().query({
             operation: operation,
             serviceName: self.data.nashaId,
             status: "todo"

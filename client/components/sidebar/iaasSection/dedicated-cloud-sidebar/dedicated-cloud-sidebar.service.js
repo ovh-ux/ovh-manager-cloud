@@ -1,7 +1,7 @@
 class DedicatedCloudSidebar {
-    constructor ($translate, User, SidebarMenu, REDIRECT_URLS, URLS) {
+    constructor ($translate, OvhApiMe, SidebarMenu, REDIRECT_URLS, URLS) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.URLS = URLS;
@@ -18,7 +18,7 @@ class DedicatedCloudSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: pcc.serviceName,
                 title: pcc.displayName || pcc.serviceName,
-                icon: "dedicated-cloud2",
+                icon: "ovh-font ovh-font-dedicated-cloud2",
                 target: "_parent",
                 url: this.REDIRECT_URLS.dedicatedCloudPage.replace("{pcc}", pcc.serviceName)
             }, section);
@@ -36,7 +36,7 @@ class DedicatedCloudSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_dedicated_cloud"),
-            icon: "dedicatedCloud",
+            icon: "ovh-font ovh-font-dedicatedCloud",
             href: this.URLS.website_order.dedicated_cloud[this.locale],
             target: "_blank",
             external: true

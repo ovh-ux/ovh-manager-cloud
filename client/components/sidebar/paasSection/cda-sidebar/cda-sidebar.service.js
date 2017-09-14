@@ -1,7 +1,7 @@
 class CdaSidebar {
-    constructor ($translate, User, SidebarMenu, URLS) {
+    constructor ($translate, OvhApiMe, SidebarMenu, URLS) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.URLS = URLS;
 
@@ -17,7 +17,7 @@ class CdaSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: service.serviceName,
                 title: service.displayName || service.serviceName,
-                icon: "cloud-disk-array",
+                icon: "ovh-font ovh-font-cloud-disk-array",
                 allowSubItems: false,
                 state: "paas.cda.cda-details.cda-details-home",
                 stateParams: {
@@ -41,7 +41,7 @@ class CdaSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_paas_cda"),
-            icon: "cloud-disk-array",
+            icon: "ovh-font ovh-font-cloud-disk-array",
             href: this.URLS.website_order.cloud_disk_array[this.locale],
             target: "_blank",
             external: true

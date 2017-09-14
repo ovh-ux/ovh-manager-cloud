@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpou_openrc_title" qtlid="263780">Download an Openstack configuration file</translation>
+   <translation id="cpou_openrc_expl" qtlid="263793">You are about to download a configuration file to enable you to connect to Openstack.</translation>
+   <translation id="cpou_openrc_more" qtlid="44536">Find out more</translation>
+   <translation id="cpou_openrc_form_select_region" qtlid="263806">Select the region for this file:</translation>
+   <translation id="cpou_openrc_form_select_region_placeholder" qtlid="263819">Choose the region </translation>
+   <translation id="cpou_openrc_getopenrc_success" qtlid="263832">Downloading configuration file </translation>
+   <translation id="cpou_openrc_getopenrc_error" qtlid="263845">Oops! We cannot download the configuration file</translation>
+</translations>

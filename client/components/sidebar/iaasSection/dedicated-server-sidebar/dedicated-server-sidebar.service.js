@@ -1,7 +1,7 @@
 class DedicatedServerSidebar {
-    constructor ($translate, User, SidebarMenu, REDIRECT_URLS, URLS) {
+    constructor ($translate, OvhApiMe, SidebarMenu, REDIRECT_URLS, URLS) {
         this.$translate = $translate;
-        this.User = User;
+        this.User = OvhApiMe;
         this.SidebarMenu = SidebarMenu;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.URLS = URLS;
@@ -18,7 +18,7 @@ class DedicatedServerSidebar {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: server.serviceName,
                 title: server.displayName || server.serviceName,
-                icon: "server4",
+                icon: "ovh-font ovh-font-server4",
                 target: "_parent",
                 url: this.REDIRECT_URLS.dedicatedServersPage.replace("{server}", server.serviceName)
             }, section);
@@ -34,7 +34,7 @@ class DedicatedServerSidebar {
     addOrder () {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_dedicated_server"),
-            icon: "server",
+            icon: "ovh-font ovh-font-server",
             href: this.URLS.website_order.dedicated_server[this.locale],
             target: "_blank",
             external: true

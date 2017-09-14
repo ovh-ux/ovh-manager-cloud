@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectCtrl", function ($scope, $state, $stateParams, $rootScope, Cloud, CloudProjectRightService) {
+  .controller("CloudProjectCtrl", function ($scope, $state, $stateParams, $rootScope, OvhApiCloud, CloudProjectRightService) {
     var self = this;
     var serviceName = $stateParams.projectId;
 
@@ -27,7 +27,7 @@ angular.module("managerApp")
 
         // get current project
         if (serviceName) {
-            Cloud.Project().Lexi().get({
+            OvhApiCloud.Project().Lexi().get({
                 serviceName: serviceName
             }).$promise
                 .then(function (project) {

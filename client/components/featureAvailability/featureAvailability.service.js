@@ -1,7 +1,7 @@
 (() => {
     "use strict";
     const allEuropeanSubsidiaries = ["CZ", "DE", "ES", "FI", "FR", "GB", "IT", "LT", "NL", "PL", "PT"];
-    const allCanadianSubsidiaries = ["AU", "CA", "QC", "WE", "WS"];
+    const allCanadianSubsidiaries = ["ASIA", "AU", "CA", "QC", "SG", "WE", "WS"];
     const featuresAvailability = {
         VPS: {
             sidebarOrder: {
@@ -13,51 +13,52 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         PROJECT: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             },
             expressOrder: {
-                US : ["US"],
+                US: ["US"]
             }
         },
         DEDICATED_CLOUD:{
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         ip: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         iplb: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         VRACK: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
+                US: ["US"],
             }
         },
         licence: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         NASHA: {
@@ -91,8 +92,8 @@
     };
 
     class FeatureAvailabilityService {
-        constructor (User, TARGET) {
-            this.User = User;
+        constructor (OvhApiMe, TARGET) {
+            this.User = OvhApiMe;
             this.TARGET = TARGET;
 
             this.locale = null;
@@ -111,10 +112,7 @@
         }
 
         hasFeaturePromise (product, feature) {
-            var self = this;
-            return this.localePromise.then(function (locale) {
-                return self.hasFeature(product, feature, locale);
-            })
+            return this.localePromise.then(locale => this.hasFeature(product, feature, locale));
         }
 
     }

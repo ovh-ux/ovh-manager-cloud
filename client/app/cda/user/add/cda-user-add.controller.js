@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, DedicatedCeph) {
+  .controller("CdaUserAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.createUser = function () {
           self.saving = true;
-          return DedicatedCeph.User().Lexi().post({
+          return OvhApiDedicatedCeph.User().Lexi().post({
               serviceName: $stateParams.serviceName
           }, {
               userName: self.model.userName

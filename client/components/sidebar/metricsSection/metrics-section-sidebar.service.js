@@ -18,7 +18,7 @@ class MetricsSectionSidebarService {
         const metricsMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainMetricsItem",
             title: this.$translate.instant("cloud_sidebar_section_metrics"),
-            icon: "graph",
+            icon: "ovh-font ovh-font-graph",
             loadOnState: "dbaas",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH

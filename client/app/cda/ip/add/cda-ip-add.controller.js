@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaIpAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, DedicatedCeph) {
+  .controller("CdaIpAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -11,7 +11,7 @@ angular.module("managerApp")
 
       self.createIp = function () {
           self.saving = true;
-          return DedicatedCeph.Acl().Lexi().post({
+          return OvhApiDedicatedCeph.Acl().Lexi().post({
               serviceName: $stateParams.serviceName
           }, {
               aclList: [self.model.ip]

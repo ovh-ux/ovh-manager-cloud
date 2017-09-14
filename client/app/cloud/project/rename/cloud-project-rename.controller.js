@@ -1,5 +1,5 @@
 angular.module("managerApp")
-    .controller("CloudProjectRenameController", function ($rootScope, $q, $translate, $uibModal, Toast, CloudProject, SidebarMenu) {
+    .controller("CloudProjectRenameController", function ($rootScope, $q, $translate, $uibModal, Toast, OvhApiCloudProject, SidebarMenu) {
         "use strict";
 
         var self = this;
@@ -22,7 +22,7 @@ angular.module("managerApp")
         };
 
         function getProjectDescription () {
-            CloudProject.Lexi().get({
+            OvhApiCloudProject.Lexi().get({
                 serviceName: self.projectId
             }).$promise.then(function (data) {
                 self.model.description = data.description;
@@ -34,7 +34,7 @@ angular.module("managerApp")
         self.saveDescription = function () {
             self.loader.save = true;
 
-            CloudProject.Lexi().put({
+            OvhApiCloudProject.Lexi().put({
                 serviceName: self.projectId
             }, {
                 description: self.editing.description || ""

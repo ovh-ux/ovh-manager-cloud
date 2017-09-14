@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("DBaasTsProjectDetailsKeyAddOrEditCtrl",
-function ($q, $state, $stateParams, $translate, DBaasTsProjectKey, Toast) {
+function ($q, $state, $stateParams, $translate, OvhApiDBaasTsProjectKey, Toast) {
 
     // -- Variable declaration --
 
@@ -31,7 +31,7 @@ function ($q, $state, $stateParams, $translate, DBaasTsProjectKey, Toast) {
         // Retrieve the key in edition
         if (self.data.edition) {
             self.loaders.init = true;
-            DBaasTsProjectKey.Lexi().get({
+            OvhApiDBaasTsProjectKey.Lexi().get({
                 serviceName: serviceName,
                 keyId: keyId
             }).$promise.then(function (key) {
@@ -70,14 +70,14 @@ function ($q, $state, $stateParams, $translate, DBaasTsProjectKey, Toast) {
         if (self.data.edition) {
             successMsg = "dtpdt_edit_successful";
             errorMsg = "dtpdt_edit_error";
-            req = DBaasTsProjectKey.Lexi().update({
+            req = OvhApiDBaasTsProjectKey.Lexi().update({
                 serviceName: serviceName,
                 keyId: keyId
             }, self.model);
         } else {
             successMsg = "dtpdt_creation_successful";
             errorMsg = "dtpdt_creation_error";
-            req = DBaasTsProjectKey.Lexi().create({
+            req = OvhApiDBaasTsProjectKey.Lexi().create({
                 serviceName: serviceName
             }, self.model);
         }

@@ -2,8 +2,8 @@
 
 angular.module("managerApp")
   .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state,
-                                                         CloudProjectOrchestrator , CloudProjectVolume, CloudProjectVolumeSnapshot,
-                                                         CloudProjectInstance, Toast, RegionService, CLOUD_UNIT_CONVERSION) {
+                                                         CloudProjectOrchestrator , OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
+                                                         OvhApiCloudProjectInstance, Toast, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
         serviceName = $stateParams.projectId,
@@ -193,12 +193,12 @@ angular.module("managerApp")
             self.toggle.volumeDeleteId = null;
             self.loaders.table.volume = true;
             if (clearCache){
-                CloudProjectVolume.Lexi().resetQueryCache();
+                OvhApiCloudProjectVolume.Lexi().resetQueryCache();
             }
 
             $q.all([
                 // GET INSTANCES DETAILS
-                CloudProjectInstance.Lexi().query({
+                OvhApiCloudProjectInstance.Lexi().query({
                     serviceName : serviceName
                 }).$promise.then(function (instanceList) {
                     self.table.instance = instanceList;
@@ -210,7 +210,7 @@ angular.module("managerApp")
                     self.table.volume = getVolumeListDetailed(volumeList);
                     self.table.groupVolume = volumeList;
                 }),
-                CloudProjectVolumeSnapshot.Lexi().query({
+                OvhApiCloudProjectVolumeSnapshot.Lexi().query({
                     serviceName : serviceName
                 }).$promise.then(function (snapshotList) {
                     self.table.snapshots = snapshotList;
@@ -352,7 +352,7 @@ angular.module("managerApp")
     }
 
     function deleteVolume (volumeId) {
-        return CloudProjectVolume.Lexi().remove({serviceName : serviceName, volumeId: volumeId}).$promise;
+        return OvhApiCloudProjectVolume.Lexi().remove({serviceName : serviceName, volumeId: volumeId}).$promise;
     }
 
     init();
