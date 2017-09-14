@@ -1,9 +1,9 @@
 class IpLoadBalancerMetricsService {
-    constructor ($http, $stateParams, $translate, IpLoadBalancing, IpLoadBalancerConstant) {
+    constructor ($http, $stateParams, $translate, OvhApiIpLoadBalancing, IpLoadBalancerConstant) {
         this.$http = $http;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.url = IpLoadBalancerConstant.metricsUrl;
         this.path = "query";
 

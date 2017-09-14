@@ -1,7 +1,7 @@
 class IpLoadBalancerNatIpService {
-    constructor ($translate, IpLoadBalancing, ServiceHelper) {
+    constructor ($translate, OvhApiIpLoadBalancing, ServiceHelper) {
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.ServiceHelper = ServiceHelper;
     }
 

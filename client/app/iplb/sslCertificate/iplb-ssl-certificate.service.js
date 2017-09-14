@@ -1,8 +1,8 @@
 class IpLoadBalancerSslCertificateService {
-    constructor ($q, IpLoadBalancing, ServiceHelper) {
+    constructor ($q, OvhApiIpLoadBalancing, ServiceHelper) {
         this.$q = $q;
         this.ServiceHelper = ServiceHelper;
-        this.Ssl = IpLoadBalancing.Ssl().Lexi();
+        this.Ssl = OvhApiIpLoadBalancing.Ssl().Lexi();
     }
 
     getCertificates (serviceName) {

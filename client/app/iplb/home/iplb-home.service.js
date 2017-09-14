@@ -1,12 +1,12 @@
 class IpLoadBalancerHomeService {
-    constructor ($q, $translate, SidebarMenu, IpblServerStatusService, IpLoadBalancing,
+    constructor ($q, $translate, SidebarMenu, IpblServerStatusService, OvhApiIpLoadBalancing,
                  IpLoadBalancerCipherService, IpLoadBalancerFrontendsService,
                  IpLoadBalancerServerFarmService, RegionService, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
         this.IpblServerStatusService = IpblServerStatusService;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.IpLoadBalancerCipherService = IpLoadBalancerCipherService;
         this.IpLoadBalancerFrontendsService = IpLoadBalancerFrontendsService;
         this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
