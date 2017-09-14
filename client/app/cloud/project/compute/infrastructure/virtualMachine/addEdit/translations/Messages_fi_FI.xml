@@ -147,7 +147,7 @@
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">3 x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud parhaaseen hintaan</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD -palvelimet käyttävät jaettua paikallista RAID SSD:tä ja niiden suorituskyky saattaa vaihdella hieman ajan kuluessa</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox-instanssit: <br/>Jaetut resurssit</translation>

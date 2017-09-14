@@ -148,7 +148,7 @@
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8 GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">Nvidia GTX 1080 Ti 11 GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">3 x Nvidia GTX 1080 Ti 11 GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>il Public Cloud più competitivo&#13;
 </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">I VPS SSD utilizzano un RAID locale SSD condiviso, quindi le loro performance possono subire piccole variazioni</translation>

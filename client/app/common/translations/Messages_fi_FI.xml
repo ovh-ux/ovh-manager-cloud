@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Oletuspankkikorttisi on vanhentunut. Mene <a href="{{urlBillingSection}}">laskutusosioon</a> päivittääksesi se.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Tapahtui seuraavia virheitä</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Tärkeää tietoa</translation>
 
    <translation id="common_global_error" qtlid="433345">Toimenpiteen aikana tapahtui virhe: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Toimenpide onnistui.</translation>

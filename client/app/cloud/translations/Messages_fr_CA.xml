@@ -5,7 +5,7 @@
    <translation id="cloud_common_type" qtlid="2642">Type</translation>
    <translation id="cloud_common_volume" qtlid="255246">Espace</translation>
    <translation id="cloud_common_consumpt" qtlid="25639">Consommation</translation>
-   <translation id="cloud_common_state" qtlid="364446">Etat</translation>
+   <translation id="cloud_common_state" qtlid="364446">État</translation>
    <translation id="cloud_common_state_available" qtlid="99920">Disponible</translation>
    <translation id="cloud_common_state_in-use" qtlid="252893">En cours d'utilisation</translation>
    <translation id="cloud_common_state_creating" qtlid="29647">En cours de création</translation>
