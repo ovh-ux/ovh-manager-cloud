@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="cloud_common_name" qtlid="3818">Jméno</translation>
+   <translation id="cloud_common_name" qtlid="3818">Příjmení</translation>
    <translation id="cloud_common_type" qtlid="2642">Typ</translation>
    <translation id="cloud_common_volume" qtlid="255246">Prostor</translation>
    <translation id="cloud_common_consumpt" qtlid="25639">Využití</translation>

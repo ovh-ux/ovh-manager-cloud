@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpcipnd_create_title" qtlid="331202">Přidat privátní síť</translation>
    <translation id="cpcipnd_default_name_template" qtlid="331215">VLAN{{id}}</translation>
-   <translation id="cpcipnd_name_label" qtlid="3818">Jméno</translation>
+   <translation id="cpcipnd_name_label" qtlid="3818">Příjmení</translation>
    <translation id="cpcipnd_name_required_error" qtlid="331228">Název privátní sítě je nezbytný.</translation>
    <translation id="cpcipnd_name_maxlength_error" qtlid="331241">Délka názvu Vaší privátní sítě nesmí překročit 256 znaků.</translation>
    <translation id="cpcipnd_vlan_create" qtlid="348347">Definice VLAN</translation>

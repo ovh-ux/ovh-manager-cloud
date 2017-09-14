@@ -5,7 +5,7 @@
    <translation id="metrics_token_search" qtlid="98288">Wyszukiwanie...</translation>
 
    <translation id="metrics_table_create_date" qtlid="26419">Data utworzenia</translation>
-   <translation id="metrics_table_expiry_date" qtlid="33010">Data wygasania usługi</translation>
+   <translation id="metrics_table_expiry_date" qtlid="33010">Data wygasania</translation>
    <translation id="metrics_table_name" qtlid="3818">Nazwa</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
    <translation id="metrics_table_state" qtlid="33790">Status</translation>
