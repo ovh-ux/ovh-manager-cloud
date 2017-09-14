@@ -15,7 +15,7 @@ class LoadBalancerSidebarService {
         const iplbMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainLoadBalancerItem",
             title: this.$translate.instant("cloud_sidebar_section_load_balancer"),
-            icon: "vRack",
+            icon: "ovh-font ovh-font-vRack",
             loadOnState: "network.iplb",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
@@ -28,7 +28,7 @@ class LoadBalancerSidebarService {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: service.serviceName,
                 title: service.displayName,
-                icon: "veeam",
+                icon: "ovh-font ovh-font-veeam",
                 allowSubItems: false,
                 state: "network.iplb.detail.home",
                 stateParams: {
