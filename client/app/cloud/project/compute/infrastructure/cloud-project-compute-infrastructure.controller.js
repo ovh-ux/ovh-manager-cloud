@@ -13,6 +13,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         var sortInterval = null;
 
         this.regionService = RegionService;
+        this.Cloud = OvhApiCloud;
         
         this.jsplumbInstance = null;
         this.infra = null;
