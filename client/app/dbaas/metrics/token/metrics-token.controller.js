@@ -1,6 +1,7 @@
 (() => {
     class MetricsTokenCtrl {
-        constructor ($stateParams, $translate, ControllerHelper, MetricService) {
+        constructor ($scope, $stateParams, $translate, ControllerHelper, MetricService) {
+            this.scope = $scope;
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
             this.$translate = $translate;
@@ -22,6 +23,12 @@
                     this.tokens = data.filter(token => token.isRevoked === false);
                     this.loading = false;
                 });
+        }
+
+        onSearchText () {
+            this.scope.$broadcast("oui-table:token-table:refresh", {
+                searchText: this.searchText
+            });
         }
 
         displayRemainingLabels (number) {
@@ -47,6 +54,7 @@
                 </cui-dropdown-menu>
             `;
         }
+        
         actionTemplate () {
             return `
                 <cui-dropdown-menu>

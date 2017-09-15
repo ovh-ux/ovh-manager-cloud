@@ -50,6 +50,7 @@
                 .finally(() => {
                     this.loading.service = false;
                 });
+
             this.MetricService.getConsumption(this.serviceName)
                 .then(cons => {
                     this.usage.conso = { mads: cons.data.mads, ddp: cons.data.ddp };
@@ -58,6 +59,7 @@
                 .finally(() => {
                     this.loading.consumption = false;
                 });
+
             this.MetricService.getServiceInfos(this.serviceName)
                 .then(info => {
                     this.plan.autorenew = moment(info.data.expiration).format("LL");
@@ -68,7 +70,6 @@
                 .finally(() => {
                     this.loading.plan = false;
                 });
-
         }
 
         initMessages () {

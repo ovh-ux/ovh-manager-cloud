@@ -10,16 +10,20 @@
             data-ng-disabled="MetricsTokenCtrl.actions.loading"
             data-translate="metrics_token_new"
             ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsTokenCtrl.serviceName })"></a>
-        <!-- <div class="pull-right">
+        <div class="pull-right">
             <input type="search"
                 class="oui-input"
+                id="token-search"
+                name="token-search"
+                data-ng-change="MetricsTokenCtrl.onSearchText()"
                 data-ng-model="MetricsTokenCtrl.searchText"
-                data-ng-model-options="{ debounce: 200 }"
+                data-ng-model-options="{ debounce: 400 }"
                 data-translate-attr="{ placeholder: 'metrics_token_search' }"/>
-        </div> -->
+        </div>
     </div>
     <div class="metrics__row">
-        <oui-table rows="MetricsTokenCtrl.tokens" 
+        <oui-table id="token-table"
+                   rows="MetricsTokenCtrl.tokens" 
                    rows-loader="MetricsTokenCtrl.loading">
             <column title="'metrics_table_name' | translate" 
                     property="description"
