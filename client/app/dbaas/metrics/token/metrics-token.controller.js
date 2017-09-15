@@ -54,7 +54,7 @@
                 </cui-dropdown-menu>
             `;
         }
-        
+
         actionTemplate () {
             return `
                 <cui-dropdown-menu>
