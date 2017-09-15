@@ -5,24 +5,23 @@
     <button type="button"
         class="oui-button oui-button_secondary"
         data-translate="iplb_configuration_action_apply"
-        data-ng-click="ctrl.apply()"
+        data-ng-click="ctrl.applyChanges()"
         data-ng-disabled="!ctrl.selectedZones.length"></button>
-
-    <pre><code>
-        {{ctrl.zones.data|json}}
-    </code></pre>
 
     <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
     <oui-table data-ng-hide="ctrl.zones.loading"
         rows="ctrl.zones.data"
         on-selection-change="ctrl.onSelectionChange($selection)">
-        <column title="'iplb_configuration_datacenter' | translate" property="name" sortable></column>
-        <column title="'iplb_configuration_progress' | translate"></column>
+        <column title="'iplb_configuration_datacenter' | translate" property="name" sortable="asc"></column>
+        <column title="'iplb_configuration_progress' | translate"
+            sortable
+            class="oui-table__cell_component">
+            <cui-task-progress data-ng-show="$row.task" data-task="$row.task"></cui-task-progress>
+        </column>
         <column title="'iplb_configuration_status' | translate" template="ctrl.statusTemplate()" class="oui-table__cell_action"></column>
         <column title="'iplb_configuration_action' | translate"
             class="oui-table__cell_action oui-table__cell_action-menu"
             template="ctrl.actionTemplate()">
         </column>
-        <empty-placeholder>Pas de configuration à appliquer / Tout est à jour</empty-placeholder>
     </oui-table>
 </section>

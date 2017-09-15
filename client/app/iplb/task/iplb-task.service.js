@@ -18,8 +18,7 @@ class IpLoadBalancerTaskService {
 
     getTask (serviceName, taskId) {
         return this.IpLoadBalancing.Task().Lexi().get({ serviceName, taskId })
-            .$promise
-            .then(response => response);
+            .$promise;
     }
 }
 

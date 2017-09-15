@@ -54,4 +54,8 @@
 
     <translation id="iplb_status_apply">Appliquer la configuration</translation>
     <translation id="iplb_status_details">Aller aux détails</translation>
+
+    <translation id="iplb_utilisation_update_alert">Modifier le seuil d'alerte</translation>
+
+    <translation id="iplb_usage_loading_error">Erreur lors du chargement de la section Utilisation.</translation>
 </translations>

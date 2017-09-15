@@ -26,6 +26,7 @@ class IpLoadBalancerHomeCtrl {
         this.iplbStatus.load();
         this.frontendsStatus.load();
         this.serverFarmsStatus.load();
+        this.usage.load();
 
         this.initActions();
         this.initGraph();
@@ -69,6 +70,10 @@ class IpLoadBalancerHomeCtrl {
 
         this.serverFarmsStatus = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.getServerFarmsStatus(this.serviceName)
+        });
+
+        this.usage = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerHomeService.getUsage(this.serviceName)
         });
     }
 

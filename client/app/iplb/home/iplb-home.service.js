@@ -121,6 +121,24 @@ class IpLoadBalancerHomeService {
             .catch(this.ServiceHelper.errorHandler("iplb_configuration_loading_error"));
     }
 
+    getUsage (serviceName) {
+        return this.IpLoadBalancing.Quota().Lexi().query({ serviceName })
+            .$promise
+            .then(zones => this.$q.all(zones.map(zone => this.getUsageForZone(serviceName, zone))))
+            .then(quotas => quotas.map(quota => {
+                quota.region = this.RegionService.getRegion(quota.zone);
+                return quota;
+            }))
+            .catch(this.ServiceHelper.errorHandler("iplb_usage_loading_error"));
+    }
+
+    getUsageForZone (serviceName, zoneName) {
+        return this.IpLoadBalancing.Quota().Lexi().get({
+            serviceName,
+            zoneName
+        }).$promise;
+    }
+
     updateName (serviceName, newName) {
         return this.IpLoadBalancing.Lexi().put({ serviceName }, { displayName: newName })
             .$promise

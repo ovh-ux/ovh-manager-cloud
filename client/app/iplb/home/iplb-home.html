@@ -31,9 +31,45 @@
         </div>
     </div>
     <div class="cui-flex__col cui-flex__col_1">
-        <cui-tile data-title="'iplb_home_tile_usage' | translate">
-            <cui-tile-item data-term="'PlaceHolder'" data-description="'PlaceHolder'"></cui-tile-item>
-        </cui-tile>
+        <div class="cui-tile tile-iplb-usage">
+            <h4 class="oui-header_4 cui-tile__title" data-translate="iplb_home_tile_usage"></h4>
+            <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                <div class="iplb-usage cui-dropdown-menu-container"
+                    data-ng-repeat="quota in (ctrl.usage.data | orderBy:'zone') track by $index">
+                    <div class="iplb-usage__content">
+                        <div class="iplb-usage__region">
+                            <i class="flag-icon {{quota.region.icon}} flag flag__icon-sm cui-tile-definition-description-region__flag" data-ng-class="{ 'cui-tile-definition-description-region__flag_last': $last }"></i>
+                            <span class="iplb-usage__region-name"
+                                data-ng-bind="quota.region.microRegion.text"></span>
+                        </div>
+                        <div class="iplb-usage__graph">
+                            <iplb-bullet-chart
+                                data-text="(quota.total | bytes:2:true) + ' / ' + (quota.included | bytes:2:true)"
+                                data-value="100 * quota.total / quota.included"
+                                data-limit="100 * quota.alert / quota.included"></iplb-bullet-chart>
+                        </div>
+                    </div>
+                    <div class="iplb-usage__menu">
+                        <cui-dropdown-menu>
+                            <cui-dropdown-menu-button>
+                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body>
+                                <div class="oui-action-menu">
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="iplb_utilisation_update_alert"
+                                            data-ng-click="ctrl.updateQuotaAlert()"></button>
+                                    </div>
+                                </div>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="cui-flex__col cui-flex__col_1">
         <div class="cui-tile">

@@ -1,6 +1,8 @@
 class IpLoadBalancerConfigurationCtrl {
-    constructor ($stateParams, ControllerHelper, IpLoadBalancerConfigurationService) {
+    constructor ($q, $stateParams, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
+        this.$q = $q;
         this.$stateParams = $stateParams;
+        this.CloudPoll = CloudPoll;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
 
@@ -14,7 +16,10 @@ class IpLoadBalancerConfigurationCtrl {
     }
 
     $onInit () {
-        this.zones.load();
+        this.zones.load()
+            .then(() => {
+                this.startPolling();
+            });
 
         this.selectedZones = [];
     }
@@ -23,26 +28,48 @@ class IpLoadBalancerConfigurationCtrl {
         this.selectedZones = selection;
     }
 
-    apply (zone) {
+    applyChanges (zone) {
+        let promise = this.$q.resolve([]);
         if (zone) {
-            return this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, zone);
+            promise = this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, zone);
         }
 
         // All selected, just call the API with no zone.
         if (this.selectedZones.length === this.zones.length) {
-            return this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, null);
+            promise = this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, null);
         }
 
         if (this.selectedZones.length) {
-            return this.IpLoadBalancerConfigurationService.batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, "id"));
+            promise = this.IpLoadBalancerConfigurationService.batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, "id"));
         }
 
-        return null;
+        promise.then(tasks => {
+            if (tasks.length) {
+                this.startPolling();
+            }
+        });
+
+        return promise;
+    }
+
+    startPolling () {
+        this.stopTaskPolling();
+
+        this.poller = this.CloudPoll.pollArray({
+            items: this.zones.data,
+            pollFunction: zone => this.IpLoadBalancerConfigurationService.getZoneChanges(this.$stateParams.serviceName, zone.id),
+            stopCondition: zone => zone.task && _.includes(["done", "error"], zone.task.status) && zone.changes === 0
+        });
+    }
+
+    stopTaskPolling () {
+        if (this.poller) {
+            this.poller.kill();
+        }
     }
 
     statusTemplate () {
         return `
-
             <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
                 <cui-status-icon data-type="success"></cui-status-icon>
             </span>
@@ -69,7 +96,7 @@ class IpLoadBalancerConfigurationCtrl {
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'iplb_configuration_action_apply' | translate"
-                                data-ng-click="ctrl.apply($row.id)"></button>
+                                data-ng-click="ctrl.applyChanges($row.id)"></button>
                         </div>
                     </div>
                 </cui-dropdown-menu-body>
