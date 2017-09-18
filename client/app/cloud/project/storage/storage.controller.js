@@ -8,11 +8,11 @@ angular.module("managerApp").controller("RA.storageCtrl", [
     "CloudStorageContainer",
     "CloudStorageContainers",
     "CloudStorageContainerTasksRunner",
-    "Toast",
+    "CloudMessage",
     "ovhDocUrl",
     function ($filter, $rootScope, $scope, $stateParams, $translate, $uibModal,
         CloudStorageContainer, CloudStorageContainers, CloudStorageContainerTasksRunner,
-        Toast, ovhDocUrl) {
+        CloudMessage, ovhDocUrl) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -54,6 +54,18 @@ angular.module("managerApp").controller("RA.storageCtrl", [
             enabled: false,
             name: ""
         };
+
+        // handle messages
+        $scope.messages = [];
+
+        function refreshMessage () {
+            $scope.messages = $scope.messageHandler.getMessages();
+        }
+
+        function loadMessage () {
+            CloudMessage.unSubscribe("iaas.pci-project.storage");
+            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.storage", { onMessage: () => refreshMessage() });
+        }
 
         init();
 
@@ -248,9 +260,9 @@ angular.module("managerApp").controller("RA.storageCtrl", [
 
             function checkResult () {
                 if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-                    Toast.error($translate.instant("storage_delete_error"));
+                    CloudMessage.error($translate.instant("storage_delete_error"));
                 } else {
-                    Toast.success($translate.instant("storage_delete_success"));
+                    CloudMessage.success($translate.instant("storage_delete_success"));
                 }
             }
         }
@@ -268,7 +280,7 @@ angular.module("managerApp").controller("RA.storageCtrl", [
                     $scope.orderStorages($scope.order.by);
                 })
                 .catch(function () {
-                    Toast.error($translate.instant("storage_load_error"));
+                    CloudMessage.error($translate.instant("storage_load_error"));
                 })
                 .finally(function () {
                     $scope.loaders.storages = false;
@@ -276,6 +288,7 @@ angular.module("managerApp").controller("RA.storageCtrl", [
         }
 
         function init () {
+            loadMessage();
             resetSelectionModel();
             getStorages();
         }
