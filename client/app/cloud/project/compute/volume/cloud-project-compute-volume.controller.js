@@ -3,7 +3,7 @@
 angular.module("managerApp")
   .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state,
                                                          CloudProjectOrchestrator , OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-                                                         OvhApiCloudProjectInstance, Toast, RegionService, CLOUD_UNIT_CONVERSION) {
+                                                         OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
         serviceName = $stateParams.projectId,
@@ -223,7 +223,7 @@ angular.module("managerApp")
                 self.table.volume = null;
                 self.table.instance = null;
                 self.table.snapshots = null;
-                Toast.error( [$translate.instant('cpc_volume_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_volume_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.volume = false;
             });
@@ -242,7 +242,7 @@ angular.module("managerApp")
     }, true);
 
     self.createNewVolume = function () {
-        Toast.info($translate.instant('cpc_volume_create_volume_button_info'));
+        CloudMessage.info($translate.instant('cpc_volume_create_volume_button_info'));
         $timeout(function() {
             $state.go("iaas.pci-project.compute.infrastructure", {
                 createNewVolume: true
@@ -255,9 +255,9 @@ angular.module("managerApp")
             self.loaders.remove.volume = true;
             deleteVolume(volume.id).then(function () {
                 self.getVolume(true);
-                Toast.success($translate.instant('cpc_volume_delete_success'));
+                CloudMessage.success($translate.instant('cpc_volume_delete_success'));
             }, function (err) {
-                Toast.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.remove.volume = false;
             });
@@ -280,9 +280,9 @@ angular.module("managerApp")
 
         $q.allSettled(tabDelete).then(function (){
             if (nbSelected > 1) {
-                Toast.success($translate.instant('cpc_volume_delete_success_plural', {nbVolumes: nbSelected}));
+                CloudMessage.success($translate.instant('cpc_volume_delete_success_plural', {nbVolumes: nbSelected}));
             }else {
-                Toast.success($translate.instant('cpc_volume_delete_success'));
+                CloudMessage.success($translate.instant('cpc_volume_delete_success'));
             }
         }, function (error){
             var tabError = error.filter(function (val) {
@@ -291,9 +291,9 @@ angular.module("managerApp")
 
             self.table.autoSelected = _.pluck(tabError, 'id');
             if (tabError.length > 1) {
-                Toast.error($translate.instant('cpc_volume_delete_error_plural', {nbVolumes: tabError.length}));
+                CloudMessage.error($translate.instant('cpc_volume_delete_error_plural', {nbVolumes: tabError.length}));
             } else {
-                Toast.error($translate.instant('cpc_volume_delete_error_one'));
+                CloudMessage.error($translate.instant('cpc_volume_delete_error_one'));
             }
         })['finally'](function(){
             self.getVolume(true);

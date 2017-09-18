@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, Toast, $stateParams, ovhDocUrl) {
+  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, CloudMessage, $stateParams, ovhDocUrl) {
 
     var self = this,
         serviceName = $stateParams.projectId;
@@ -152,7 +152,7 @@ angular.module("managerApp")
                 filterSshKeys();
             }, function (err){
                 self.table.ssh = null;
-                Toast.error( [$translate.instant('cpc_ssh_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_ssh_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.ssh = false;
             });
@@ -166,7 +166,7 @@ angular.module("managerApp")
             });
 
             if (uniq) {
-                Toast.error( $translate.instant('cpc_ssh_add_submit_name_error'));
+                CloudMessage.error( $translate.instant('cpc_ssh_add_submit_name_error'));
                 return;
             }
 
@@ -174,9 +174,9 @@ angular.module("managerApp")
             OvhApiCloudProjectSshKey.Lexi().save(self.sshAdd).$promise.then(function () {
                 self.toggleAddSshKey();
                 self.getSshKeys(true);
-                Toast.success($translate.instant('cpc_ssh_add_submit_success'));
+                CloudMessage.success($translate.instant('cpc_ssh_add_submit_success'));
             }, function (err){
-                Toast.error( [$translate.instant('cpc_ssh_add_submit_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_ssh_add_submit_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.add.ssh = false;
             });
@@ -188,9 +188,9 @@ angular.module("managerApp")
             self.loaders.remove.ssh = true;
             OvhApiCloudProjectSshKey.Lexi().remove({serviceName : serviceName, keyId: sshKey.id}).$promise.then(function () {
                 self.getSshKeys(true);
-                Toast.success($translate.instant('cpc_ssh_delete_success'));
+                CloudMessage.success($translate.instant('cpc_ssh_delete_success'));
             }, function (err){
-                Toast.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.remove.ssh = false;
             });
