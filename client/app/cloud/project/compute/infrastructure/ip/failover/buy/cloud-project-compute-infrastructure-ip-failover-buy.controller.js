@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverBuyCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, OvhApiOrderCloudProjectIp, OvhApiCloudProjectFlavor, OvhApiCloudProjectIpFailover, $window, $q, atInternet, OvhApiMe, CLOUD_GEOLOCALISATION, CLOUD_IPFO_ORDER_LIMIT) {
 
     var self = this;
     var projectId = $stateParams.projectId;
@@ -99,7 +99,7 @@ angular.module("managerApp")
             self.form.instances = result;
         }, function (err) {
             self.form.instances = [];
-            Toast.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
             return $q.reject(err);
         });
     }
@@ -111,7 +111,7 @@ angular.module("managerApp")
             self.form.flavors = result;
         }, function (err) {
             self.form.flavors = [];
-            Toast.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
             return $q.reject(err);
         });
     }
@@ -124,7 +124,7 @@ angular.module("managerApp")
             self.form.failoverIps = result;
         }, function (err) {
             self.form.failoverIps = [];
-            Toast.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
             return $q.reject(err);
         });
     }
@@ -153,7 +153,7 @@ angular.module("managerApp")
                 self.datas.billingInfo = result;
             }, function (err) {
                 self.datas.billingInfo = null;
-                Toast.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.billingInfo = false;
             });
@@ -171,7 +171,7 @@ angular.module("managerApp")
             quantity : self.form.quantity
         }).$promise.then(function (result) {
             $window.open(result.url, "_blank");
-            Toast.success($translate.instant('cpciif_buy_success', {'url': result.url }), { hideAfter : false });
+            CloudMessage.success($translate.instant('cpciif_buy_success', {'url': result.url }), { hideAfter : false });
             $uibModalInstance.dismiss();
             atInternet.trackOrder({
                 name : "[IP]ipfailover[ip-failover-" + self.form.country + "]",
@@ -180,7 +180,7 @@ angular.module("managerApp")
                 quantity : self.form.quantity
             });
         }, function (err){
-            Toast.error( [$translate.instant('cpciif_buy_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpciif_buy_error'), err.data && err.data.message || ''].join(' '));
             return $q.reject(err);
         })['finally'](function () {
             self.loaders.buying = false;

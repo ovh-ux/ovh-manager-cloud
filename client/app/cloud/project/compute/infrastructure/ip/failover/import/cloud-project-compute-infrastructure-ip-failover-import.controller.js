@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, Toast, OvhApiCloudProjectInstance, $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps) {
+  .controller("CloudProjectComputeInfrastructureIpFailoverImportCtrl", function ($scope, $uibModalInstance, OvhApiIp, $translate, CloudMessage, OvhApiCloudProjectInstance, $stateParams, $q, OvhApiMe, CLOUD_GEOLOCALISATION, pendingImportIps) {
 
     var self = this;
 
@@ -34,7 +34,7 @@ angular.module("managerApp")
             self.datas.user = user;
             return getIpsFo(true);
         }, function (err) {
-            Toast.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
         });
     }
 
@@ -53,7 +53,7 @@ angular.module("managerApp")
                 });
                 return self.initIps(ips);
             }, function (err) {
-                Toast.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpciif_import_ips_error'), err.data && err.data.message || ''].join(' '));
                 self.datas.ipsFo = null;
             })['finally'](function () {
                 self.loaders.table.ipsFo = false;
@@ -144,9 +144,9 @@ angular.module("managerApp")
 
             $q.allSettled(listPromise).then(function () {
                 if (nbSelected > 1) {
-                    Toast.success($translate.instant('cpciif_import_vms_route_of_success_plural', {nbIps : nbSelected}));
+                    CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success_plural', {nbIps : nbSelected}));
                 }else {
-                    Toast.success($translate.instant('cpciif_import_vms_route_of_success', {ip : lastIp}));
+                    CloudMessage.success($translate.instant('cpciif_import_vms_route_of_success', {ip : lastIp}));
                 }
                 $uibModalInstance.close(listIpsWithTasks);
             }, function (error) {
@@ -159,10 +159,10 @@ angular.module("managerApp")
                 self.datas.autoSelected = angular.copy(ipError);
 
                 if (tabError.length > 1) {
-                    Toast.error($translate.instant('cpciif_import_vms_route_of_error_plural', {ips: ipError.toString()}));
+                    CloudMessage.error($translate.instant('cpciif_import_vms_route_of_error_plural', {ips: ipError.toString()}));
                 } else {
                     var errorIp  = tabError[0].error;
-                    Toast.error( [$translate.instant('cpciif_import_vms_route_of_error', {ip: tabError[0].ip}), errorIp.data && errorIp.data.message || ''].join(' '));
+                    CloudMessage.error( [$translate.instant('cpciif_import_vms_route_of_error', {ip: tabError[0].ip}), errorIp.data && errorIp.data.message || ''].join(' '));
                 }
 
             })['finally'](function(){
