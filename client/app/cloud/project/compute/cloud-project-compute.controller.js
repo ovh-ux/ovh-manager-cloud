@@ -5,6 +5,7 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
 
         var self = this;
         var serviceName = $stateParams.projectId;
+        this.serviceName = $stateParams.projectId;
 
         this.loading = true;
 
