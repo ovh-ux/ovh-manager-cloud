@@ -1,9 +1,9 @@
 class CloudProjectComputeInfrastructurePrivateNetworkService {
-    constructor ($q, $timeout, $translate, Toast, URLS, OvhApiMe, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
+    constructor ($q, $timeout, $translate, CloudMessage, URLS, OvhApiMe, OvhApiCloudProjectRegion, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet) {
         this.$q = $q;
         this.$timeout = $timeout;
         this.$translate = $translate;
-        this.Toast = Toast;
+        this.CloudMessage = CloudMessage;
         this.URLS = URLS;
         this.User = OvhApiMe;
         this.Region = OvhApiCloudProjectRegion;
@@ -75,7 +75,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         
         return this.OvhApiCloudProjectNetworkPrivate.Lexi().query({
             serviceName: serviceName
-        }).$promise.catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
+        }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
                    .finally(() => this.loaders.privateNetwork.query = false);
     }
 
@@ -90,7 +90,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         return this.OvhApiCloudProjectNetworkPrivate.Lexi().get({
             serviceName: serviceName,
             networkId: id
-        }).$promise.catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_private_network_error")))
+        }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_private_network_error")))
                    .finally(() => this.loaders.privateNetwork.get = false);
     }
 
@@ -104,7 +104,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         return this.Region.Lexi().query({
             serviceName: serviceName
         }).$promise
-          .catch(() => this.Toast.error(this.$translate.instant("cpcipnd_fetch_regions_error")))
+          .catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_regions_error")))
           .finally(() => this.loaders.region.query = false);
     }
 
@@ -148,12 +148,12 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
                 onSuccess(network, options);
             }, error => {
                 this.loaders.save = false;
-                this.Toast.error(this.$translate.instant("cpcipnd_poll_error", {
+                this.CloudMessage.error(this.$translate.instant("cpcipnd_poll_error", {
                     message: error.data.message || JSON.stringify(error)
                 }));
             });
         }).catch(error => {
-            this.Toast.error(this.$translate.instant("cpcipnd_save_error", {
+            this.CloudMessage.error(this.$translate.instant("cpcipnd_save_error", {
                 message: error.data.message || JSON.stringify(error)
             }));
             this.loaders.save = false;
@@ -189,7 +189,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
             networkId: networkId
         })).$promise
         .catch(error => {
-            this.Toast.error(this.$translate.instant("cpcipnd_save_error", {
+            this.CloudMessage.error(this.$translate.instant("cpcipnd_save_error", {
                 message: error.data.message || JSON.stringify(error)
             }));
         }).finally(() => this.loaders.save = false);
