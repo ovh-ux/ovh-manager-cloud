@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionCurrentCtrl",
-    function ($q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
+    function ($q, $translate, $stateParams, CloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageCurrent) {
         var self = this;
         self.data = {};
 
@@ -16,7 +16,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionCurrentCt
                     self.data =  data;
                 })
                 .catch(function (err) {
-                    Toast.error([$translate.instant("cpb_error_message"), err.data && err.data.message || ""].join(" "));
+                    CloudMessage.error([$translate.instant("cpb_error_message"), err.data && err.data.message || ""].join(" "));
                     return $q.reject(err);
                 })
                 .finally(function () {
