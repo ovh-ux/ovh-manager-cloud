@@ -1,7 +1,7 @@
 class IpLoadBalancerConfigurationService {
-    constructor ($q, IpLoadBalancing, RegionService, ServiceHelper) {
+    constructor ($q, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
         this.$q = $q;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
     }

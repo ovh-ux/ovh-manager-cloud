@@ -1,22 +1,22 @@
 class IpLoadBalancerServerFarmService {
-    constructor ($q, $translate, IpLoadBalancing, ServiceHelper, RegionService) {
+    constructor ($q, $translate, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
         this.$q = $q;
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
 
         this.Farm = {
-            all: IpLoadBalancing.Farm().Lexi(),
-            tcp: IpLoadBalancing.Farm().Tcp().Lexi(),
-            udp: IpLoadBalancing.Farm().Udp().Lexi(),
-            http: IpLoadBalancing.Farm().Http().Lexi()
+            all: this.IpLoadBalancing.Farm().Lexi(),
+            tcp: this.IpLoadBalancing.Farm().Tcp().Lexi(),
+            udp: this.IpLoadBalancing.Farm().Udp().Lexi(),
+            http: this.IpLoadBalancing.Farm().Http().Lexi()
         };
 
         this.Server = {
-            tcp: IpLoadBalancing.Farm().Tcp().Server().Lexi(),
-            udp: IpLoadBalancing.Farm().Udp().Server().Lexi(),
-            http: IpLoadBalancing.Farm().Http().Server().Lexi()
+            tcp: this.IpLoadBalancing.Farm().Tcp().Server().Lexi(),
+            udp: this.IpLoadBalancing.Farm().Udp().Server().Lexi(),
+            http: this.IpLoadBalancing.Farm().Http().Server().Lexi()
         };
     }
 

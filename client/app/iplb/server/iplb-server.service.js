@@ -1,15 +1,15 @@
 class IpLoadBalancerServerService {
-    constructor ($q, $translate, IpLoadBalancing, ServiceHelper, RegionService) {
+    constructor ($q, $translate, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
         this.$q = $q;
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
 
         this.Server = {
-            tcp: IpLoadBalancing.Farm().Tcp().Server().Lexi(),
-            udp: IpLoadBalancing.Farm().Udp().Server().Lexi(),
-            http: IpLoadBalancing.Farm().Http().Server().Lexi()
+            tcp: this.IpLoadBalancing.Farm().Tcp().Server().Lexi(),
+            udp: this.IpLoadBalancing.Farm().Udp().Server().Lexi(),
+            http: this.IpLoadBalancing.Farm().Http().Server().Lexi()
         };
     }
 

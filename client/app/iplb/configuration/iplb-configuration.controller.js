@@ -1,12 +1,15 @@
 class IpLoadBalancerConfigurationCtrl {
-    constructor ($q, $stateParams, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
+    constructor ($q, $scope, $stateParams, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
         this.$q = $q;
+        this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.CloudPoll = CloudPoll;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
 
         this.initLoaders();
+
+        this.$scope.$on("$destroy", () => this.stopTaskPolling());
     }
 
     initLoaders () {

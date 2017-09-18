@@ -1,8 +1,8 @@
 class IpLoadBalancerTaskService {
-    constructor ($q, $translate, IpLoadBalancing, ServiceHelper) {
+    constructor ($q, $translate, OvhApiIpLoadBalancing, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.ServiceHelper = ServiceHelper;
     }
 
