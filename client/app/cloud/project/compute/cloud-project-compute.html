@@ -4,7 +4,7 @@
         <spinner name="bubbles-222-fff-32"></spinner>
     </div>
     <div class="cloud-project-compute-content" data-ng-if="!CloudProjectComputeCtrl.loading">
-        <div class="cloud-compute-tabs-ctnr">
+        <!-- <div class="cloud-compute-tabs-ctnr">
             <responsive-tabs>
                 <responsive-tab
                     class="cloud-compute-tabs-item"
@@ -44,7 +44,24 @@
                     <span>...</span>
                 </responsive-tab-more>
             </responsive-tabs>
-        </div>
+        </div> -->
+        <cui-page-header data-title-text="'cpc_tab_infra' |translate" 
+                         data-subtitle-text="CloudProjectComputeCtrl.serviceName">
+            <cui-tabs>
+                <cui-tab data-text="'cpc_tab_infra'|translate" 
+                         data-state="CloudProjectComputeCtrl.getRouteContext() + '.infrastructure'"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_snapshot'|translate" 
+                         data-state="CloudProjectComputeCtrl.getRouteContext() + '.snapshot'"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_volume'|translate" 
+                         data-state="CloudProjectComputeCtrl.getRouteContext() + '.volume'"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_ssh'|translate" 
+                         data-state="CloudProjectComputeCtrl.getRouteContext() + '.ssh'"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+            </cui-tabs>
+        </cui-page-header>
 
         <div>
             <cui-message-container data-messages="CloudProjectComputeCtrl.messages"></cui-message-container>
