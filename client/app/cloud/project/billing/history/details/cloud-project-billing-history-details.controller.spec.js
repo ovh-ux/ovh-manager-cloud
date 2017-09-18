@@ -11,7 +11,7 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
     var mockCloudProjectUsageHistoryLexi;
     var mockCloudProjectBillingService;
     var mockCloudProjectBillLexi;
-    var Toast;
+    var CloudMessage;
     var projectId = "test";
     var monthBilling;
     var dateMonthBilling;
@@ -19,7 +19,7 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageHistoryLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_, _OvhApiCloudProjectBillLexi_, _OvhApiMeBillLexi_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageHistoryLexi_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_, _OvhApiCloudProjectBillLexi_, _OvhApiMeBillLexi_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -36,8 +36,8 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
         mockCloudProjectBillLexi = _OvhApiCloudProjectBillLexi_;
         mockUserBillLexi = _OvhApiMeBillLexi_;
 
-        Toast = _Toast_;
-        spyOn(Toast, "error");
+        CloudMessage = _CloudMessage_;
+        spyOn(CloudMessage, "error");
         spyOn(mockCloudProjectBillLexi, "query").and
             .returnValue({ $promise: $q.when([]) });
         spyOn(mockCloudProjectUsageHistoryLexi, "query").and
@@ -85,14 +85,14 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
             expect(mockCloudProjectBillingService.getConsumptionDetails).toHaveBeenCalledWith(undefined, usageHistory[0]);
         });
 
-        it("Should show error toast on api error", function () {
+        it("Should show error CloudMessage on api error", function () {
             mockCloudProjectUsageHistoryLexi.query.and
                 .returnValue({ $promise: $q.reject("error") });
 
             initCtrl();
             $httpBackend.flush();
 
-            expect(Toast.error).toHaveBeenCalled();
+            expect(CloudMessage.error).toHaveBeenCalled();
         });
 
         it("Should activate loading during async call", function () {
