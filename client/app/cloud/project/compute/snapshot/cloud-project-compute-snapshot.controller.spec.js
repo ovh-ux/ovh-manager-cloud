@@ -16,13 +16,13 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
         $rootScope,
         $controller,
         $timeout,
-        Toast,
+        CloudMessage,
         OvhApiCloudProjectSnapshot,
         CloudProjectOrchestrator,
         $state,
         $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _Toast_, _$timeout_, _CloudProjectOrchestrator_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _CloudMessage_, _$timeout_, _CloudProjectOrchestrator_) {
 
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
@@ -30,7 +30,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
         $controller = _$controller_;
         $timeout = _$timeout_;
         OvhApiCloudProjectSnapshot = _CloudProjectSnapshot_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         CloudProjectOrchestrator = _CloudProjectOrchestrator_;
         $state = {
             go : function(){
@@ -38,9 +38,9 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
             }
         };
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
-        spyOn(Toast, "info");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
+        spyOn(CloudMessage, "info");
         spyOn(OvhApiCloudProjectSnapshot.Lexi(), "resetQueryCache");
 
         $scope = $rootScope.$new();
@@ -203,7 +203,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
                 expect(CloudProjectOrchestrator.askToCreateInstanceFromSnapshot.calls.count()).toEqual(1);
                 expect($state.go.calls.count()).toEqual(1);
-                expect(Toast.info.calls.count()).toEqual(1);
+                expect(CloudMessage.info.calls.count()).toEqual(1);
             });
 
             //-----
@@ -262,7 +262,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
                     expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot).toBeFalsy();
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
 
             });
@@ -283,7 +283,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot).toBeFalsy();
                     expect(CloudProjectComputeSnapshotCtrl.getSnapshot.calls.any()).toEqual(false);
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
             });
 
@@ -318,7 +318,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti).toBeFalsy();
                     expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                     expect(CloudProjectComputeSnapshotCtrl.table.autoSelected).toEqual([]);
                     //expect(CloudProjectComputeSnapshotCtrl.table.selected).toEqual({});
                 });
@@ -349,7 +349,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti).toBeFalsy();
                     expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
 
                     expect(CloudProjectComputeSnapshotCtrl.table.autoSelected.length).toEqual(1);
                     //expect(CloudProjectComputeSnapshotCtrl.getSelectedCount()).toEqual(1);
@@ -394,7 +394,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
             expect(CloudProjectComputeSnapshotCtrl.search.creationStart).toBeNull();
             expect(CloudProjectComputeSnapshotCtrl.search.creationEnd).toBeNull();
 
-            expect(Toast.error.calls.count()).toEqual(1);
+            expect(CloudMessage.error.calls.count()).toEqual(1);
         });
     });
 });
