@@ -9,14 +9,14 @@ describe("Controller: OpenstackUsersCtrl", function () {
     var $rootScope;
     var $controller;
     var $timeout;
-    var Toast;
+    var CloudMessage;
     var Cloud;
     var $state;
     var PasswordService;
     var OpenstackUsersToken;
     var $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _OvhApiCloud_, _Toast_, _$timeout_, _OpenstackUsersPassword_, _OpenstackUsersToken_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _OvhApiCloud_, _CloudMessage_, _$timeout_, _OpenstackUsersPassword_, _OpenstackUsersToken_) {
 
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
@@ -24,7 +24,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
         $controller = _$controller_;
         $timeout = _$timeout_;
         Cloud = _OvhApiCloud_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         PasswordService = _OpenstackUsersPassword_;
         OpenstackUsersToken = _OpenstackUsersToken_;
         $state = {
@@ -33,9 +33,9 @@ describe("Controller: OpenstackUsersCtrl", function () {
             }
         };
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
-        spyOn(Toast, "info");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
+        spyOn(CloudMessage, "info");
         spyOn(Cloud.Project().User().Lexi(), "resetQueryCache");
 
         $scope = $rootScope.$new();
@@ -180,7 +180,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeTruthy();
                     expect(PasswordService.put).toHaveBeenCalledWith(projectId, dataTest.users[0].id, dataTest.regeneratePassword.password);
                     expect(OpenstackUsersCtrl.loaders.regeneratePassword).toBeFalsy();
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
             });
 
@@ -198,7 +198,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
 
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeTruthy();
                     expect(PasswordService.put).not.toHaveBeenCalled();
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
             });
         });
@@ -220,7 +220,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeTruthy();
                     expect(OpenstackUsersToken.put).toHaveBeenCalled();
                     expect(OpenstackUsersCtrl.loaders.generateToken).toBeFalsy();
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
             });
 
@@ -238,7 +238,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
 
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeTruthy();
                     expect(OpenstackUsersToken.put).not.toHaveBeenCalled();
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
 
             });
@@ -260,7 +260,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
 
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeFalsy();
                     expect(OpenstackUsersCtrl.loaders.remove.user).toBeFalsy();
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
 
             });
@@ -280,7 +280,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
                     expect(OpenstackUsersCtrl.loaders.remove.user).toBeFalsy();
 
                     expect(_.isEqual(OpenstackUsersCtrl.table.users[0], dataTest.users[0])).toBeTruthy();
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
             });
 
@@ -310,7 +310,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
                     $httpBackend.flush();
 
                     expect(OpenstackUsersCtrl.loaders.remove.userMulti).toBeFalsy();
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                     expect(OpenstackUsersCtrl.table.autoSelected).toEqual([]);
                 });
 
@@ -336,7 +336,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
                     $httpBackend.flush();
 
                     expect(OpenstackUsersCtrl.loaders.remove.userMulti).toBeFalsy();
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                     expect(OpenstackUsersCtrl.table.autoSelected.length).toEqual(1);
                 });
             });
@@ -369,7 +369,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
             expect(OpenstackUsersCtrl.order.by).toEqual("id");
             expect(OpenstackUsersCtrl.order.reverse).toBeTruthy();
 
-            expect(Toast.error.calls.count()).toEqual(1);
+            expect(CloudMessage.error.calls.count()).toEqual(1);
         });
     });
 });
