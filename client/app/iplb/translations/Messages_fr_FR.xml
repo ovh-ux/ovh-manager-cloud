@@ -50,7 +50,8 @@
 
     <translation id="iplb_status_active">{{activeCount}} actifs</translation>
     <translation id="iplb_status_active_total">{{activeCount}} / {{totalCount}} actifs</translation>
-    <translation id="iplb_status_working_total">{{workingCount}} / {{totalCount}} actifs</translation>
+    <translation id="iplb_status_working_total">{{workingCount}} / {{totalCount}} fonctionnels</translation>
+    <translation id="iplb_status_working_farm_total">{{workingCount}} / {{totalCount}} fonctionnelles</translation>
 
     <translation id="iplb_status_apply">Appliquer la configuration</translation>
     <translation id="iplb_status_details">Aller aux détails</translation>

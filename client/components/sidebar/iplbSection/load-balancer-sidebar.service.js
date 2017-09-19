@@ -15,7 +15,7 @@ class LoadBalancerSidebarService {
         const iplbMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainLoadBalancerItem",
             title: this.$translate.instant("cloud_sidebar_section_load_balancer"),
-            icon: "ovh-font ovh-font-vRack",
+            icon: "ovh-font ovh-font-iplb",
             loadOnState: "network.iplb",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH

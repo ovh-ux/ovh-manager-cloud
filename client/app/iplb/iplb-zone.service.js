@@ -1,7 +1,7 @@
 class IpLoadBalancerZoneService {
-    constructor ($translate, IpLoadBalancing, RegionService) {
+    constructor ($translate, OvhApiIpLoadBalancing, RegionService) {
         this.$translate = $translate;
-        this.IpLoadBalancing = IpLoadBalancing;
+        this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
     }
 

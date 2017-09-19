@@ -4,7 +4,8 @@ class IpblServerStatusService {
     }
 
     hasNoInfo (server) {
-        return !server.serverState ||
+        return !server.probe ||
+            !server.serverState ||
             server.serverState === [] ||
             _.chain(server.serverState).map(state => state.status !== "no check").some(Boolean);
     }

@@ -32,7 +32,7 @@ class IpLoadBalancerConfigurationService {
     getZoneChanges (serviceName, zone) {
         return this.$q.all({
             pendingChanges: this.getPendingChanges(serviceName),
-            tasks: this.getRefreshTasks(serviceName)
+            tasks: this.getRefreshTasks(serviceName, ["todo", "doing", "done"])
         })
             .then(({ pendingChanges, tasks }) => {
                 const pending = _.find(pendingChanges, { zone });
@@ -81,11 +81,24 @@ class IpLoadBalancerConfigurationService {
             .catch(this.ServiceHelper.errorHandler("iplb_configuration_apply_error"));
     }
 
-    getRefreshTasks (serviceName) {
-        return this.IpLoadBalancing.Task().Lexi().query({
-            serviceName,
-            action: "deployIplb"
-        })
+    getRefreshTasks (serviceName, statuses) {
+        let tasksPromise;
+
+        if (statuses) {
+            tasksPromise = this.$q.all(statuses.map(status => this.IpLoadBalancing.Task().Lexi().query({
+                serviceName,
+                action: "deployIplb",
+                status
+            })))
+                .then(tasksResults => _.flatten(tasksResults));
+        } else {
+            tasksPromise = this.IpLoadBalancing.Task().Lexi().query({
+                serviceName,
+                action: "deployIplb"
+            });
+        }
+
+        return tasksPromise
             .$promise
             .then(ids => this.$q.all(ids.map(id => this.IpLoadBalancing.Task().Lexi().get({
                 serviceName,

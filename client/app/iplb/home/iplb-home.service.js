@@ -58,22 +58,26 @@ class IpLoadBalancerHomeService {
                             }
                         });
 
-                        // Farm considered "inactive" when thay have no server.
-                        serverFarm.active = !!servers.length;
+                        // Farm considered in unknown state when no health check is set up
+                        serverFarm.unknownState = _.chain(servers).map(server => this.IpblServerStatusService.hasNoInfo(server)).some(Boolean);
+
+                        // Farm considered dysfunctional when one of the servers has bad health check
+                        serverFarm.working = !_.chain(servers).map(server => this.IpblServerStatusService.hasIssue(server)).some(Boolean);
+
                         return servers;
                     })
                 )
             ))
             .then(serverFarms => {
-                const activeFarm = _.filter(serverFarms, { active: true }).length;
+                const activeFarm = _.filter(serverFarms, { working: true }).length;
                 const totalFarm = serverFarms.length;
                 const workingServers = serversStatus.ok;
                 const totalServers = serversStatus.total;
 
                 return {
                     serverFarms: {
-                        statusText: this.$translate.instant("iplb_status_active_total", {
-                            activeCount: activeFarm,
+                        statusText: this.$translate.instant("iplb_status_working_farm_total", {
+                            workingCount: activeFarm,
                             totalCount: totalFarm
                         }),
                         status: activeFarm === totalFarm ? "success" : "warning"
