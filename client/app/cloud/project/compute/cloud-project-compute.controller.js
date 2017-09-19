@@ -4,17 +4,9 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
     function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
 
         var self = this;
-        var serviceName = $stateParams.projectId;
         this.serviceName = $stateParams.projectId;
 
         this.loading = true;
-
-        self.getRouteContext = function () {
-            if ($state.includes("iaas.pci-project")) {
-                return "iaas.pci-project.compute";
-            }
-            return '';
-        };
 
         function init() {
             self.loading = true;
@@ -39,7 +31,7 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
                 return result.hasTooManyInstances || result.hasTooManyIps;
             });
 
-            return CloudUserPref.get("cloud_project_" + serviceName + "_overview").then(function (params) {
+            return CloudUserPref.get("cloud_project_" + self.serviceName + "_overview").then(function (params) {
                 if (params && params.hide) {
                     return false;
                 }
