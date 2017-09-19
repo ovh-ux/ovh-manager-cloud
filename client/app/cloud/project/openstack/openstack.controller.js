@@ -1,8 +1,9 @@
 (() => {
     class CloudProjectOpenstackCtrl {
-    	constructor ($state, CloudMessage) {
+    	constructor ($state, CloudMessage, $stateParams) {
     		this.$state = $state;
     		this.CloudMessage = CloudMessage;
+            this.serviceName = $stateParams.projectId;
 
     		this.messages = [];
     	}
