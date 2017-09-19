@@ -72,7 +72,7 @@
 
                 <div class="row space-m0">
                     <button type="submit"
-                            class="btn btn-primary fs1 col-sm-offset-0 col-sm-4 col-xs-offset-4 col-xs-4 top-space-m20 bottom-space-m20 space-p8"
+                            class="oui-button oui-button_primary"
                             data-ng-class="{'validate-btn': NashaAddCtrl.data.orderValidated}"
                             data-translate="common_validate"
                             data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || !NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDuration || NashaAddCtrl.data.orderValidated">
@@ -118,7 +118,7 @@
                 </div>
 
                 <button type="button"
-                        class="btn btn-primary order-btn fs1 col-sm-offset-0 col-sm-4 col-xs-offset-2 col-xs-8 top-space-m20 bottom-space-m20 space-p8"
+                        class="oui-button oui-button_primary"
                         data-translate="nasha_order_generate_order"
                         data-ng-disabled="!NashaAddCtrl.contractAgree || NashaAddCtrl.loaders.loading"
                         data-ng-click="NashaAddCtrl.completeOrder()">
