@@ -24,7 +24,7 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
             CloudMessage.unSubscribe("iaas.pci-project.compute");
             this.messageHandler = CloudMessage.subscribe("iaas.pci-project.compute", { onMessage: () => self.refreshMessage() });
         }
-        
+
         function init() {
             self.loading = true;
             self.loadMessage();
