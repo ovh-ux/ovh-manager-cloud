@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", function ($scope, $stateParams, $translate, $uibModalInstance, OvhApiDedicatedNashaPartition, Toast) {
+angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", function ($scope, $stateParams, $translate, $uibModalInstance, OvhApiDedicatedNashaPartition, CloudMessage) {
     "use strict";
     var self = this;
 
@@ -32,10 +32,10 @@ angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", f
             name: self.snapshotName
         }).$promise.then(function (result) {
             $uibModalInstance.close({ partition: self.data.partition, tasks: [result.data.taskId] });
-            Toast.success($translate.instant("nasha_custom_snapshot_modal_success"));
+            CloudMessage.success($translate.instant("nasha_custom_snapshot_modal_success"));
         }).catch(function () {
             $uibModalInstance.dismiss();
-            Toast.error($translate.instant("nasha_custom_snapshot_modal_fail"));
+            CloudMessage.error($translate.instant("nasha_custom_snapshot_modal_fail"));
         }).finally(function () {
             self.saving = false;
         });
