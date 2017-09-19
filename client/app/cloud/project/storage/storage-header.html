@@ -1,23 +1,8 @@
-<!-- <div class="cloud-compute-tabs-ctnr">
-    <responsive-tabs>
-        <responsive-tab
-            class="cloud-compute-tabs-item"
-            state="{{ ::'iaas.pci-project.storage' }}"
-            dropdown-title="{{'storage_tab_storage'|translate}}">
-            <i class="ovh-font ovh-font-database storage-logo"></i>
-            <span class="storage-logo-label" data-translate="storage_tab_storage"></span>
-        </responsive-tab>
-
-        <responsive-tab-more class="cloud-compute-tabs-item">
-            <i class="fa fa-plus"></i>
-            <span>...</span>
-        </responsive-tab-more>
-
-    </responsive-tabs>
-</div> -->
-<cui-page-header data-title-text="'storage_tab_storage' |translate" >
+<cui-page-header data-cloud-project-title="projectId" 
+                 data-subtitle-text="projectId">
     <cui-tabs>
         <cui-tab data-text="'storage_tab_storage' | translate" 
-                 data-state="iaas.pci-project.storage"></cui-tab>
+                 data-state="iaas.pci-project.storage"
+                 data-state-params="{ serviceName: projectId }"></cui-tab>
     </cui-tabs>
 </cui-page-header>
