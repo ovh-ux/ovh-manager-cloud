@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
-    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, Toast, OtrsPopupService, RegionService) {
+    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, CloudMessage, OtrsPopupService, RegionService) {
 
         //---------VARIABLE DECLARATION---------
 
@@ -48,9 +48,9 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
                 init();
             }, function (err) {
                 if (err.status === 403) {
-                    Toast.error($translate.instant("cpb_quota_already_unleashed"));
+                    CloudMessage.error($translate.instant("cpb_quota_already_unleashed"));
                 } else {
-                    Toast.error($translate.instant("cpb_quota_unleash_error"));
+                    CloudMessage.error($translate.instant("cpb_quota_unleash_error"));
                 }
                 init();
             })["finally"](function () {
@@ -84,7 +84,7 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
                     self.state.isRestrictedQuota = self.datas.quota[0].maxInstances === 1 && self.datas.quota[0].maxCores === 1 && self.datas.quota[0].maxRam === 2048;
                 }
             }, function (err) {
-                Toast.error([$translate.instant("cpb_quota_loading_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_quota_loading_error"), err.data && err.data.message || ""].join(" "));
                 self.datas.quota = null;
             })["finally"](function () {
                 self.loader.quota = false;

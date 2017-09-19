@@ -10,12 +10,12 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
     var $stateParams;
     var CloudProjectUsageCurrentLexi;
     var CloudProjectBillingService;
-    var Toast;
+    var CloudMessage;
     var projectId = "test";
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageCurrentLexi_, _CloudProjectBillingService_, _$stateParams_, _Toast_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageCurrentLexi_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -26,8 +26,8 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         CloudProjectUsageCurrentLexi = _OvhApiCloudProjectUsageCurrentLexi_;
         CloudProjectBillingService = _CloudProjectBillingService_;
 
-        Toast = _Toast_;
-        spyOn(Toast, "error");
+        CloudMessage = _CloudMessage_;
+        spyOn(CloudMessage, "error");
     }));
 
     afterEach(inject(function () {
@@ -57,14 +57,14 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             expect(controller.data).toBe(detail);
         });
 
-        it("Should show error toast on api error", function () {
+        it("Should show error CloudMessage (using oui-message) on api error", function () {
             spyOn(CloudProjectUsageCurrentLexi, "get").and
                 .returnValue({ $promise: $q.reject("error") });
 
             initCtrl();
             $httpBackend.flush();
 
-            expect(Toast.error).toHaveBeenCalled();
+            expect(CloudMessage.error).toHaveBeenCalled();
         });
 
         it("Should activate loading during async call", function () {

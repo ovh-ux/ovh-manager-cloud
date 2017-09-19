@@ -1,7 +1,7 @@
 
 
 angular.module("managerApp").controller("CloudProjectDeleteCtrl",
-    function ($scope, $uibModalInstance, $translate, Toast, $stateParams, $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
+    function ($scope, $uibModalInstance, $translate, CloudMessage, $stateParams, $q, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume,
               OvhApiCloudProjectSnapshot, $state, OvhApiCloudProjectStorage, OvhApiCloudProjectIpFailover, OvhApiCloudProjectIpLexi, OvhApiCloudProject,
               OvhApiCloudProjectUsageCurrent, OvhApiCloudProjectCredit, CloudProjectBillingService) {
         "use strict";
@@ -49,10 +49,10 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
 
         self.confirm = function () {
             return deleteProject().then(function () {
-                Toast.success($translate.instant("cloud_project_delete_email_sent"));
+                CloudMessage.success($translate.instant("cloud_project_delete_email_sent"));
                 $uibModalInstance.close();
             }, function () {
-                Toast.error($translate.instant("cloud_project_delete_error"));
+                CloudMessage.error($translate.instant("cloud_project_delete_error"));
             });
         };
 

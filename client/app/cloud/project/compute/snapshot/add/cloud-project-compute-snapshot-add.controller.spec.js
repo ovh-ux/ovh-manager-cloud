@@ -11,19 +11,19 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
         $httpBackend,
         $rootScope,
         $controller,
-        Toast,
+        CloudMessage,
         OvhApiCloudProjectSnapshot,
         CloudProjectComputeInfraVrackVmFactory,
         $uibModalInstance,
         $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _Toast_, _CloudProjectComputeInfraVrackVmFactory_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _CloudMessage_, _CloudProjectComputeInfraVrackVmFactory_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         OvhApiCloudProjectSnapshot = _CloudProjectSnapshot_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         CloudProjectComputeInfraVrackVmFactory = _CloudProjectComputeInfraVrackVmFactory_;
         $uibModalInstance = {
             close : function(){
@@ -34,8 +34,8 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
             }
         };
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
         spyOn(OvhApiCloudProjectSnapshot.Lexi(), "resetQueryCache");
 
         $scope = $rootScope.$new();
@@ -100,7 +100,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 CloudProjectComputeSnapshotAddCtrl.backup();
                 $httpBackend.flush();
 
-                expect(Toast.success.calls.count()).toEqual(1);
+                expect(CloudMessage.success.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(1);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
                 expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
@@ -120,7 +120,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 CloudProjectComputeSnapshotAddCtrl.backup();
                 $httpBackend.flush();
 
-                expect(Toast.error.calls.count()).toEqual(1);
+                expect(CloudMessage.error.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(0);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
                 expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
