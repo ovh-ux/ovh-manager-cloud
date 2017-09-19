@@ -1,7 +1,8 @@
 (() => {
     class CloudProjectBillingCtrl {
-        constructor (CloudMessage) {
+        constructor (CloudMessage, $stateParams) {
             this.CloudMessage = CloudMessage;
+            this.serviceName = $stateParams.projectId;
 
             this.messages = [];
         }
