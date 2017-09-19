@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, CloudMessage) {
     "use strict";
 
     var self = this;
@@ -21,11 +21,11 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
                 if (!ip.description) {
                     //ng-options groupby won't group items with undefined group.  We have to replace null with undefined.
                     ip.description = undefined;
-                }  
+                }
             });
             self.data.accessAvailable = result;
         }).catch(function () {
-            Toast.success($translate.instant("nasha_partitions_access_loading_error"));
+            CloudMessage.success($translate.instant("nasha_partitions_access_loading_error"));
         }).finally(function () {
             self.loading = false;
         });
@@ -41,10 +41,10 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
             type: self.data.type
         }).$promise.then(function (result) {
             $uibModalInstance.close({ access: { ip: self.data.accessToAdd.ip }, task: result.data.taskId, isNew: true });
-            Toast.success($translate.instant("nasha_access_action_add_success", { accessIp: self.data.accessToAdd.ip }));
+            CloudMessage.success($translate.instant("nasha_access_action_add_success", { accessIp: self.data.accessToAdd.ip }));
         }).catch(function () {
             $uibModalInstance.dismiss();
-            Toast.error($translate.instant("nasha_access_action_add_failure", { accessIp: self.data.accessToAdd.ip }));
+            CloudMessage.error($translate.instant("nasha_access_action_add_failure", { accessIp: self.data.accessToAdd.ip }));
         }).finally(function () {
             self.loading = false;
         });
