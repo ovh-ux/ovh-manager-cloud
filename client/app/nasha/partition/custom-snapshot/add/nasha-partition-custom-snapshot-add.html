@@ -54,16 +54,16 @@
         </div>
 
         <div class="modal-footer">
-            <button type="submit"
-                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                    data-ng-disabled="!NashaPartitionCustomSnapshotAddCtrl.snapshotName || NashaPartitionCustomSnapshotAddCtrl.saving">
-                <span data-translate="common_add"></span>
+            <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-disabled="NashaPartitionCustomSnapshotAddCtrl.saving"
+                data-ng-click="NashaPartitionCustomSnapshotAddCtrl.dismiss()"
+                data-translate="common_cancel">
             </button>
-            <button type="reset" class="btn btn-default pull-left"
-                    data-ng-disabled="NashaPartitionCustomSnapshotAddCtrl.saving"
-                    data-ng-click="NashaPartitionCustomSnapshotAddCtrl.dismiss()">
-                <i class="fa fa-times"></i>
-                <span data-translate="common_cancel"></span>
+            <button type="submit"
+                class="oui-button oui-button_primary"
+                data-ng-disabled="!NashaPartitionCustomSnapshotAddCtrl.snapshotName || NashaPartitionCustomSnapshotAddCtrl.saving"
+                data-translate="common_add">
             </button>
         </div>
     </form>
