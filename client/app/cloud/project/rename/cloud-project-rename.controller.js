@@ -57,14 +57,4 @@ angular.module("managerApp")
                 self.editing.description = null;
             }
         };
-
-        self.showDeleteProjectModal = function () {
-            $uibModal.open({
-                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
-                controller: "CloudProjectDeleteCtrl",
-                controllerAs: "CloudProjectDeleteCtrl",
-                windowClass: "cloud_project-delete-modal",
-                backdropClass: "cloud_project-delete-modal-backdrop"
-            });
-        };
     });

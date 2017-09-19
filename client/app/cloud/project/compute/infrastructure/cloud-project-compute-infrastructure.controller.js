@@ -118,6 +118,16 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         };
 
+        this.showDeleteProjectModal = function () {
+            $uibModal.open({
+                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
+                controller: "CloudProjectDeleteCtrl",
+                controllerAs: "CloudProjectDeleteCtrl",
+                windowClass: "cloud_project-delete-modal",
+                backdropClass: "cloud_project-delete-modal-backdrop"
+            });
+        };
+
         function shouldDisplayInstancesRetracted() {
             return $q.all({
                 hasTooManyInstances: CloudProjectOrchestrator.hasTooManyInstances($stateParams.projectId),
