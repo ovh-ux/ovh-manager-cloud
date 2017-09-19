@@ -1,48 +1,25 @@
 <div class="cloud-project-billing">
     <div class="cloud-project-billing-content">
-        <div class="cloud-compute-tabs-ctnr">
-            <responsive-tabs>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{ :: 'iaas.pci-project.billing.consumption' }}"
-                    dropdown-title="{{ 'cpb_tab_consumption' | translate }}">
-                    <i class="ovh-font ovh-font-receipt"></i>
-                    <span translate="cpb_tab_consumption"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{ :: 'iaas.pci-project.billing.history.details' }}"
-                    dropdown-title="{{ 'cpb_tab_history' | translate }}">
-                    <i class="ovh-font ovh-font-clock"></i>
-                    <span translate="cpb_tab_history"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::'iaas.pci-project.billing.vouchers'}}"
-                    dropdown-title="{{'cpb_tab_vouchers'|translate}}">
-                    <i class="ovh-font ovh-font-ticket"></i>
-                    <span translate="cpb_tab_vouchers"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::'iaas.pci-project.billing.quota'}}"
-                    dropdown-title="{{'cpb_tab_quota'|translate}}">
-                    <i class="ovh-font ovh-font-pieChart"></i>
-                    <span translate="cpb_tab_quota"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::'iaas.pci-project.billing.rights'}}"
-                    dropdown-title="{{'cpb_tab_rights'|translate}}">
-                    <i class="ovh-font ovh-font-hosting"></i>
-                    <span translate="cpb_tab_rights"></span>
-                </responsive-tab>
-                <responsive-tab-more class="cloud-compute-tabs-item">
-                    <i class="fa fa-plus"></i>
-                    <span>...</span>
-                </responsive-tab-more>
-            </responsive-tabs>
-        </div>
+        <cui-page-header data-cloud-project-title="CloudProjectBillingCtrl.serviceName" 
+                         data-subtitle-text="CloudProjectBillingCtrl.serviceName">
+            <cui-tabs>
+                <cui-tab data-text="'cpb_tab_consumption' | translate" 
+                         data-state="iaas.pci-project.billing.consumption"
+                         data-state-params="{ serviceName: CloudProjectBillingCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpb_tab_history' | translate" 
+                         data-state="iaas.pci-project.billing.history.details"
+                         data-state-params="{ serviceName: CloudProjectBillingCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpb_tab_vouchers' | translate" 
+                         data-state="iaas.pci-project.billing.vouchers"
+                         data-state-params="{ serviceName: CloudProjectBillingCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpb_tab_quota' | translate" 
+                         data-state="iaas.pci-project.billing.quota"
+                         data-state-params="{ serviceName: CloudProjectBillingCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpb_tab_rights' | translate" 
+                         data-state="iaas.pci-project.billing.rights"
+                         data-state-params="{ serviceName: CloudProjectBillingCtrl.serviceName }"></cui-tab>
+            </cui-tabs>
+        </cui-page-header>
 
         <!-- HERE MUST COME THE TOP CONTENT -->
 
