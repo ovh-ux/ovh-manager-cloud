@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("PartitionCtrl", function ($state, $rootScope, $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, Toast) {
+angular.module("managerApp").controller("PartitionCtrl", function ($state, $rootScope, $scope, $uibModal, $q, $translate, $stateParams, OvhApiDedicatedNasha, Poller, CloudMessage) {
     "use strict";
 
     var self = this;
@@ -57,7 +57,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
                 self.data.table.refresh = !self.data.table.refresh;
             }
         }).catch(function (err) {
-            Toast.error($translate.instant("nasha_partitions_no_data_error"));
+            CloudMessage.error($translate.instant("nasha_partitions_no_data_error"));
             return $q.reject(err);
         }).finally(function () {
             self.loaders.table = false;
@@ -176,7 +176,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
                         self.data.partitionsTasks[task.partitionName].splice(taskIndex, 1);
                     }
                 }).catch(function (err) {
-                    Toast.error($translate.instant("nasha_partitions_no_data_error"));
+                    CloudMessage.error($translate.instant("nasha_partitions_no_data_error"));
                     return $q.reject(err);
                 });
             });
