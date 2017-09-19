@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">Se ha creado el servidor virtual (instancia) {0}</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">Nombre de la llave SSH</translation>
    <translation id="add_key_success" qtlid="243133">Llave SSH añadida</translation>
-   <translation id="add_ok" qtlid="224880">Aceptar</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Almacenamiento creado</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Se ha producido un error al crear el contenedor.</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Ya existe una llave SSH con ese nombre</translation>
