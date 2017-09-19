@@ -50,17 +50,17 @@
     </div>
 
     <div class="modal-footer">
-        <button type="button"
-                class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                data-ng-disabled="NashaPartitionZFSOptionsCtrl.loaders  || NashaPartitionZFSOptionsCtrl.states.saving"
-                data-ng-click="NashaPartitionZFSOptionsCtrl.applyZFSOptionsChanges()">
-            <span data-translate="common_confirm"></span>
+        <button type="reset"
+            class="oui-button oui-button_secondary"
+            data-ng-disabled="NashaPartitionZFSOptionsCtrl.states.saving"
+            data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()"
+            data-translate="common_cancel">
         </button>
-        <button type="reset" class="btn btn-default pull-left"
-                data-ng-disabled="NashaPartitionZFSOptionsCtrl.states.saving"
-                data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()">
-            <i class="fa fa-times"></i>
-            <span data-translate="common_cancel"></span>
+        <button type="button"
+            class="oui-button oui-button_primary"
+            data-ng-disabled="NashaPartitionZFSOptionsCtrl.loaders  || NashaPartitionZFSOptionsCtrl.states.saving"
+            data-ng-click="NashaPartitionZFSOptionsCtrl.applyZFSOptionsChanges()"
+            data-translate="common_confirm">
         </button>
     </div>
 </div>
