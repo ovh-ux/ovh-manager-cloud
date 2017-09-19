@@ -475,7 +475,7 @@
 
    <translation id="common_tile_subscription" qtlid="28891">Abonementas</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Pasiūlymas</translation>
-   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis naujinimas</translation>
+   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis galiojimo pratęsimas</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontaktai</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Sukūrimo data</translation>
 
