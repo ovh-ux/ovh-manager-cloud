@@ -28,7 +28,7 @@ class LoadBalancerSidebarService {
             const menuItem = this.SidebarMenu.addMenuItem({
                 id: service.serviceName,
                 title: service.displayName,
-                icon: "ovh-font ovh-font-veeam",
+                icon: "ovh-font ovh-font-iplb",
                 allowSubItems: false,
                 state: "network.iplb.detail.home",
                 stateParams: {
