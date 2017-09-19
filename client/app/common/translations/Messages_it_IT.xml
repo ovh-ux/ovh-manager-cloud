@@ -462,15 +462,15 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">La tua carta bancaria predefinita è scaduta. Per aggiornarla, accedi alla tua <a href="{{urlBillingSection}}">sezione "Fatturazione"</a>.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Si sono verificati i seguenti errori </translation>
-   <translation id="message_container_multiple_warning" qtlid="435415">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Informazioni importanti</translation>
 
-   <translation id="common_global_error" qtlid="433345">Un erreur est survenue lors de l'opération : {{message}}</translation>
-   <translation id="common_global_success" qtlid="433358">L'opération s'est déroulée avec succès.</translation>
+   <translation id="common_global_error" qtlid="433345">Si è verificato un errore durante l'operazione: {{message}}</translation>
+   <translation id="common_global_success" qtlid="433358">L'operazione è stata effettuata correttamente.</translation>
 
    <translation id="common_term_and_contracts" qtlid="404087">Condizioni contrattuali</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Confermo di aver letto e accettato le condizioni contrattuali</translation>
    <translation id="common_login" qtlid="2174">Accedi</translation>
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Chiudi</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Abbonamento</translation>
@@ -479,13 +479,13 @@
    <translation id="common_tile_subscription_contact" qtlid="32206">Contatti</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data di creazione</translation>
 
-   <translation id="common_preview_see" qtlid="433371">Voir l'aperçu</translation>
+   <translation id="common_preview_see" qtlid="433371">Visualizza l'anteprima</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Azione</translation>
-   <translation id="common_pagination_resultsperpage" qtlid="433384">Résultats par page</translation>
-   <translation id="common_pagination_page" qtlid="433397">page</translation>
+   <translation id="common_pagination_resultsperpage" qtlid="433384">Risultati per pagina</translation>
+   <translation id="common_pagination_page" qtlid="433397">pagina</translation>
    <translation id="common_pagination_of" qtlid="121615">su</translation>
-   <translation id="common_pagination_results" qtlid="433410">résultats</translation>
-   <translation id="common_pagination_next" qtlid="433423">Page suivante</translation>
-   <translation id="common_pagination_previous" qtlid="433436">Page précédente</translation>
+   <translation id="common_pagination_results" qtlid="433410">risultati</translation>
+   <translation id="common_pagination_next" qtlid="433423">Pagina successiva</translation>
+   <translation id="common_pagination_previous" qtlid="433436">Pagina precedente</translation>
 </translations>
