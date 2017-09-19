@@ -1,6 +1,9 @@
 <div id="cloud_project_storage">
-
     <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
+
+    <div>
+        <cui-message-container data-messages="messages"></cui-message-container>
+    </div>
 
     <div class="col-xs-12" data-ng-if="storages !== null">
         <div class="top-space-m20 bottom-space-m10">

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateAlertAddCtrl",
-    function ($uibModalInstance, $stateParams, $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, Toast, dataContext) {
+    function ($uibModalInstance, $stateParams, $scope, $translate, $q, OvhApiMe, OvhApiCloudProjectAlerting, CloudMessage, dataContext) {
         var self = this;
 
         self.model = {
@@ -47,7 +47,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
             this.loaders.saveAlert = true;
             (!self.alerting.id ? createAlert() : editAlert(self.alerting.id))
             .catch(function (err) {
-                Toast.error([$translate.instant("cpbea_estimate_alert_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpbea_estimate_alert_error"), err.data && err.data.message || ""].join(" "));
             }).finally(function () {
                 $uibModalInstance.close();
                 self.loaders.saveAlert  = false;
@@ -62,7 +62,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
                 email: self.model.email,
                 monthlyThreshold: self.model.threshold
             }).$promise.then(function () {
-                Toast.success($translate.instant("cpbea_estimate_alert_success"));
+                CloudMessage.success($translate.instant("cpbea_estimate_alert_success"));
             });
         }
 
@@ -76,7 +76,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
                 monthlyThreshold: self.model.threshold
             }).$promise.then(function () {
                 $uibModalInstance.close();
-                Toast.success($translate.instant("cpbea_estimate_alert_success"));
+                CloudMessage.success($translate.instant("cpbea_estimate_alert_success"));
             });
         }
 

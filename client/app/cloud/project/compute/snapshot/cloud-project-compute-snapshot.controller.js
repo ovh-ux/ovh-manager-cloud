@@ -3,7 +3,7 @@
 angular.module("managerApp")
   .controller("CloudProjectComputeSnapshotCtrl",
     function (OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-              OvhApiCloudProjectImage, $translate, Toast, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
+              OvhApiCloudProjectImage, $translate, CloudMessage, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
               $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
@@ -217,7 +217,7 @@ angular.module("managerApp")
         }, function (err) {
             if (err && err.status) {
                 self.table.snapshot = _.filter(self.table.snapshot, { type : "volume" } );
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             }
         }, function(snapshotList){
             var currentImageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
@@ -253,7 +253,7 @@ angular.module("managerApp")
         }, function (err) {
             if (err && err.status) {
                 self.table.snapshot = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             }
         }, function(snapshotList){
             var currentVolumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
@@ -322,7 +322,7 @@ angular.module("managerApp")
                 setPrice();
             }, function (err) {
                 self.table.snapshot = null;
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.snapshot = false;
             });
@@ -378,13 +378,13 @@ angular.module("managerApp")
     }
 
     self.createVmBySnapshot = function(snapshot){
-        Toast.info($translate.instant('cpc_snapshot_create_vm_button_info'));
+        CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
         $state.go('iaas.pci-project.compute.infrastructure');
     };
 
     self.createVolumeBySnapshot = function (snapshot) {
-        Toast.info($translate.instant("cpc_snapshot_create_volume_button_info"));
+        CloudMessage.info($translate.instant("cpc_snapshot_create_volume_button_info"));
         $timeout(function() {
             $state.go("iaas.pci-project.compute.infrastructure", {
                 createNewVolumeFromSnapshot: {
@@ -401,11 +401,11 @@ angular.module("managerApp")
                 deleteVolumeSnapshot(snapshot.id) : deleteSnapshot(snapshot.id);
             promiseDelete.then(function () {
                 self.getSnapshot(true);
-                Toast.success($translate.instant('cpc_snapshot_delete_success'));
+                CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
                 pollSnapshots();
                 pollVolumeSnapshots();
             }, function (err) {
-                Toast.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.remove.snapshot = false;
             });
@@ -433,9 +433,9 @@ angular.module("managerApp")
 
         $q.allSettled(tabDelete).then(function (){
             if (nbSelected > 1) {
-                Toast.success($translate.instant('cpc_snapshot_delete_success_plural', {nbSnapshots: nbSelected}));
+                CloudMessage.success($translate.instant('cpc_snapshot_delete_success_plural', {nbSnapshots: nbSelected}));
             }else {
-                Toast.success($translate.instant('cpc_snapshot_delete_success'));
+                CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
             }
         }, function (error){
             var tabError = error.filter(function (val) {
@@ -443,9 +443,9 @@ angular.module("managerApp")
             });
             self.table.autoSelected = _.pluck(tabError, 'id');
             if (tabError.length > 1) {
-                Toast.error($translate.instant('cpc_snapshot_delete_error_plural', {nbSnapshots: tabError.length}));
+                CloudMessage.error($translate.instant('cpc_snapshot_delete_error_plural', {nbSnapshots: tabError.length}));
             } else {
-                Toast.error($translate.instant('cpc_snapshot_delete_error_one'));
+                CloudMessage.error($translate.instant('cpc_snapshot_delete_error_one'));
             }
         })['finally'](function(){
             //self.table.selected = {};

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
-    function ($state, $q, $translate, $stateParams, Toast, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
+    function ($state, $q, $translate, $stateParams, CloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
         var self = this;
         self.year = null;
         self.month = null;
@@ -42,7 +42,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
 
             initConsumptionHistory()
                 .catch(function (err) {
-                    Toast.error([$translate.instant("cpb_error_message"), err.data && err.data.message || ""].join(" "));
+                    CloudMessage.error([$translate.instant("cpb_error_message"), err.data && err.data.message || ""].join(" "));
                     return $q.reject(err);
                 })
                 .finally(function () {

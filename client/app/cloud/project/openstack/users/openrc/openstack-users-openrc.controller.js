@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("OpenstackUsersOpenrcCtrl", function ($scope, OvhApiCloud, Toast, $httpParamSerializer, $uibModalInstance, CONFIG_API, openstackUser, $stateParams, $translate, URLS, OvhApiMe, RegionService) {
+    .controller("OpenstackUsersOpenrcCtrl", function ($scope, OvhApiCloud, $httpParamSerializer, $uibModalInstance, CONFIG_API, openstackUser, $stateParams, $translate, URLS, OvhApiMe, RegionService) {
         var self = this;
 
         self.regionService = RegionService;
