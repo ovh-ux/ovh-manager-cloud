@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">Il server virtuale (istanza) {0} è stato creato</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">Nome della chiave SSH</translation>
    <translation id="add_key_success" qtlid="243133">Chiave SSH aggiunta</translation>
-   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Storage creato</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Si è verificato un errore nella creazione del container</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Esiste già una chiave SSH con questo nome</translation>
