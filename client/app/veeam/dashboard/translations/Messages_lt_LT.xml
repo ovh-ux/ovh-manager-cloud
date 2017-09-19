@@ -12,7 +12,7 @@
    <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Duomenų centras</translation>
 
    <translation id="veeam_tiles_subscription_title" qtlid="28891">Abonementas</translation>
-   <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Automatinis naujinimas</translation>
+   <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Automatinis galiojimo pratęsimas</translation>
    <translation id="veeam_tiles_subscription_label_renewal_renew_link" qtlid="16301">Valdyti</translation>
    <translation id="veeam_tiles_subscription_label_renewal_warning" qtlid="403723">Jūsų paslauga bus išjungta po {{remainingDays}} d.</translation>
    <translation id="veeam_tiles_subscription_label_renewal_warning_link" qtlid="403684">Padidinti plano pajėgumą</translation>
