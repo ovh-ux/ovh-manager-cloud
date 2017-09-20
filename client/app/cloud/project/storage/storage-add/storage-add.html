@@ -1,49 +1,41 @@
-<div>
+<div class="cui-page">
 
     <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
 
-    <div class="row-fluid">
-        <a class="pull-left cloud-button top-space-m12" data-ui-sref="iaas.pci-project.storage">
-            <span class="glyphicon glyphicon-arrow-left"></span>
-            <span data-translate="common_back" translate="storage_add_button_return"></span>
-        </a>
-    </div>
+    <section class="cui-page__content">
+        <cui-back-link data-state="iaas.pci-project.storage" data-text="'storage_add_button_return' |translate"></cui-back-link>
 
-    <div class="col-xs-12" data-ng-show="!loaders.init">
+        <cui-page-content-title data-text="contentTitle"></cui-page-content-title>
 
-        <div class="page-header">
-            <h2>
-                <span class="main-color" data-translate="add_title"></span>
-                <span data-ng-if="addedType.value"> {{ 'add_' + addedType.value | translate | lowercase }}</span>
-            </h2>
-        </div>
+        <div data-ng-show="!loaders.init">
 
-        <form role="form" name="addForm" novalidate="novalidate">
+            <form role="form" name="addForm" novalidate="novalidate">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-md-6 col-lg-4 center add-button-item"
-                     data-ng-repeat="item in items.value"
-                     data-ng-class="{
-                        'active': addedType.value == item
-                     }">
-
-                    <div class="form-group add-button-container add-button-container-{{item}}"
-                        data-ng-class="{
+                    <div class="col-md-6 col-lg-4 center add-button-item"
+                         data-ng-repeat="item in items.value"
+                         data-ng-class="{
                             'active': addedType.value == item
-                        }">
+                         }">
+
+                        <div class="form-group add-button-container add-button-container-{{item}}"
+                            data-ng-class="{
+                                'active': addedType.value == item
+                            }">
+                        </div>
+
+                        <a class="btn add-button" data-ng-class="{
+                            'active' : addedType.value == item
+                        }">{{ 'add_' + item | translate}}</a>
                     </div>
-
-                    <a class="btn add-button" data-ng-class="{
-                        'active' : addedType.value == item
-                    }">{{ 'add_' + item | translate}}</a>
                 </div>
-            </div>
 
-            <br/>
+                <br/>
 
-            <div class="block" data-ng-include="'app/cloud/project/storage/storage-add/storage/add-storage.html'"></div>
+                <div class="block" data-ng-include="'app/cloud/project/storage/storage-add/storage/add-storage.html'"></div>
 
-        </form>
-    </div>
+            </form>
+        </div>
+    </section>
 </div>
