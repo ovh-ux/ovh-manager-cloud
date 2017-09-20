@@ -26,11 +26,9 @@
             <div class="form-group top-space-m20">
                 <strong class="permissions" data-translate="nasha_partitions_access_permissions"></strong>
 
-                <div class="nasha-warning bottom-space-p8 top-space-p8 left-space-p12 right-space-p12 top-space-m4 bottom-space-m4"
-                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'">
-                    <img src="assets/images/icones/warning.svg" class="nasha-warning-icon" />
-                    <p class="nasha-warning-text left-space-m12 bottom-space-m0" data-translate="nasha_partitions_access_permissions_warning_cifs"></p>
-                </div>
+                <oui-message type="warning"
+                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'"
+                    message="{{ :: 'nasha_partitions_access_permissions_warning_cifs' | translate }}"></oui-message>
 
                 <div class="radio">
                     <label class="protocols-radio top-space-m4">
@@ -58,15 +56,15 @@
         </div>
 
         <div class="modal-footer">
-            <button type="submit"
-                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                    data-ng-disabled="NashaPartitionAccessAddCtrl.loading || !NashaPartitionAccessAddCtrl.data.type || !NashaPartitionAccessAddCtrl.data.accessToAdd">
-                <span data-translate="common_confirm"></span>
+            <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-click="NashaPartitionAccessAddCtrl.dismiss()"
+                 data-translate="common_cancel">
             </button>
-            <button type="reset" class="btn btn-default pull-left"
-                    data-ng-click="NashaPartitionAccessAddCtrl.dismiss()">
-                <i class="fa fa-times"></i>
-                <span data-translate="common_cancel"></span>
+            <button type="submit"
+                class="oui-button oui-button_primary"
+                data-ng-disabled="NashaPartitionAccessAddCtrl.loading || !NashaPartitionAccessAddCtrl.data.type || !NashaPartitionAccessAddCtrl.data.accessToAdd"
+                data-translate="common_confirm">
             </button>
         </div>
     </form>

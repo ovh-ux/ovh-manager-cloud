@@ -8,16 +8,16 @@
     </div>
 
     <div class="modal-footer">
-        <button type="button"
-                class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                data-ng-click="NashaPartitionDeleteCtrl.deletePartition()"
-                data-ng-disabled="NashaPartitionDeleteCtrl.loading">
-            <span data-translate="common_confirm"></span>
+        <button type="reset"
+            class="oui-button oui-button_secondary"
+            data-ng-click="NashaPartitionDeleteCtrl.dismiss()"
+            data-translate="common_cancel">
         </button>
-        <button type="reset" class="btn btn-default pull-left"
-                data-ng-click="NashaPartitionDeleteCtrl.dismiss()">
-            <i class="fa fa-times"></i>
-            <span data-translate="common_cancel"></span>
+        <button type="button"
+            class="oui-button oui-button_primary"
+            data-ng-click="NashaPartitionDeleteCtrl.deletePartition()"
+            data-ng-disabled="NashaPartitionDeleteCtrl.loading"
+            data-translate="common_confirm">
         </button>
     </div>
 
