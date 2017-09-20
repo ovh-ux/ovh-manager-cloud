@@ -31,11 +31,11 @@
                         <label class="oui-label metrics-token-add__labels-item-label" for="value" data-translate="metrics_token_add_labels_value"></label>
                     </div>
                     <div class="metrics-token-add__labels-item metrics-token-add__labels-item-action">
-                        <div data-ng-show="$index == (MetricsTokenAddCtrl.token.labels.length - 1)">
+                        <div data-ng-show="$last">
                             <button class="oui-button oui-button_secondary"
                                 data-ng-click="MetricsTokenAddCtrl.addLabel()">+</button>
                         </div>
-                        <div data-ng-show="$index !== (MetricsTokenAddCtrl.token.labels.length - 1)">
+                        <div data-ng-show="!$last">
                             <button class="oui-button oui-button_secondary"
                                 data-ng-click="MetricsTokenAddCtrl.removeLabel(label)">-</button>
                         </div>
