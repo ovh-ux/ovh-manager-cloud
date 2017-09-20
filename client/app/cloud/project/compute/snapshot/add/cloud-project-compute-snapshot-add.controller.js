@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSnapshotAddCtrl", function ($uibModalInstance, $translate, $filter, params, Toast, OvhApiCloudProjectSnapshot, atInternet, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeSnapshotPriceService) {
+  .controller("CloudProjectComputeSnapshotAddCtrl", function ($uibModalInstance, $translate, $filter, params, CloudMessage, OvhApiCloudProjectSnapshot, atInternet, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeSnapshotPriceService) {
       var self = this;
 
       self.snapshot = {
@@ -22,7 +22,7 @@ angular.module("managerApp")
           self.loaders.backup = true;
           OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
           CloudProjectComputeInfrastructureOrchestrator.backupVm(self.snapshot.vm, self.snapshot.name).then(function () {
-              Toast.success($translate.instant("cpc_snapshot_add_success", { snapshotname: self.snapshot.name }));
+              CloudMessage.success($translate.instant("cpc_snapshot_add_success", { snapshotname: self.snapshot.name }));
               $uibModalInstance.close(self.snapshot);
               atInternet.trackOrder({
                   name: "[SNAPSHOT]" + self.snapshot.vm.flavor.groupName.replace(/[\W_]+/g, "") + "[" + self.snapshot.vm.flavor.groupName + "]",
@@ -30,7 +30,7 @@ angular.module("managerApp")
                   priceTaxFree: self.snapshotPriceStruct.total.value
               });
           }, function (err) {
-              Toast.error([$translate.instant("cpc_snapshot_add_error"), err.data && err.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("cpc_snapshot_add_error"), err.data && err.data.message || ""].join(" "));
           }).finally(function () {
               self.loaders.backup = false;
           });

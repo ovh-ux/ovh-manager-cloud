@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingVouchersAddcreditCtrl",
-    function ($uibModalInstance, OvhApiOrderCloudProjectCredit, $stateParams, Toast, $translate, $window, OvhApiMe) {
+    function ($uibModalInstance, OvhApiOrderCloudProjectCredit, $stateParams, CloudMessage, $translate, $window, OvhApiMe) {
 
         var self = this;
 
@@ -33,10 +33,10 @@ angular.module("managerApp")
                 amount: self.credit.amount
             }).$promise.then(function (result) {
                 $window.open(result.url, "_blank");
-                Toast.success($translate.instant("cpb_vouchers_add_credit_success", { amount: result.prices.withoutTax.text, url: result.url }), { hideAfter: 10 });
+                CloudMessage.success($translate.instant("cpb_vouchers_add_credit_success", { amount: result.prices.withoutTax.text, url: result.url }), { hideAfter: 10 });
                 $uibModalInstance.close();
             }, function (err) {
-                Toast.error([$translate.instant("cpb_vouchers_add_credit_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_vouchers_add_credit_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.loaders.addCredit = false;
             });

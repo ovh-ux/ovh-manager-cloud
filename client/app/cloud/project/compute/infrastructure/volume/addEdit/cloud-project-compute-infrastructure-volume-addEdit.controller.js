@@ -1,7 +1,7 @@
 angular.module("managerApp")
   .controller("CloudProjectComputeInfrastructureVolumeAddEditCtrl",
       function ($scope, CloudProjectComputeVolumesOrchestrator, $rootScope, $timeout, OvhApiCloudProjectRegion, $translate,
-                Toast, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota, $location, atInternet, OvhApiMe, RegionService,
+                CloudMessage, $stateParams, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota, $location, atInternet, OvhApiMe, RegionService,
                 CLOUD_VOLUME_MAX_SIZE, CLOUD_VOLUME_MIN_SIZE, CLOUD_VOLUME_UNLIMITED_QUOTA) {
 
           "use strict";
@@ -101,7 +101,7 @@ angular.module("managerApp")
                   }
                   editWithParam();
               }, function (err) {
-                  Toast.error([$translate.instant("cpci_volume_addedit_get_quota_error"), err.data.message || ""].join(" "));
+                  CloudMessage.error([$translate.instant("cpci_volume_addedit_get_quota_error"), err.data.message || ""].join(" "));
                   self.cancelVolume();
               })["finally"](function () {
                   self.loaders.quota = false;
@@ -208,7 +208,7 @@ angular.module("managerApp")
                       self.panelsData.regions = regionsList;
                   }, function (err) {
                       self.panelsData.regions = null;
-                      Toast.error([$translate.instant("cpci_volume_addedit_image_error"), err.data.message || ""].join(" "));
+                      CloudMessage.error([$translate.instant("cpci_volume_addedit_image_error"), err.data.message || ""].join(" "));
                   })["finally"](function () {
                       self.loaders.panelsData.regions = false;
                   });
@@ -269,7 +269,7 @@ angular.module("managerApp")
                           orderId: self.volumeInEdition.id
                       });
                   }, function (err) {
-                      Toast.error([$translate.instant("cpci_volume_addedit_post_error"), err.data && err.data.message || ""].join(" "));
+                      CloudMessage.error([$translate.instant("cpci_volume_addedit_post_error"), err.data && err.data.message || ""].join(" "));
                       self.loaders.launch = false;
                   });
               } else {
@@ -278,7 +278,7 @@ angular.module("managerApp")
                       $rootScope.$broadcast("highlighed-element.hide");
                       CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition();
                   }, function (err) {
-                      Toast.error([$translate.instant("cpci_volume_addedit_put_error"), err.data && err.data.message || ""].join(" "));
+                      CloudMessage.error([$translate.instant("cpci_volume_addedit_put_error"), err.data && err.data.message || ""].join(" "));
                       self.loaders.launch = false;
                   });
               }

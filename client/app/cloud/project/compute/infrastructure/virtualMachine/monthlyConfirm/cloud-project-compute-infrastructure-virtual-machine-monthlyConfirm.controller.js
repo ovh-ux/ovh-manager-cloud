@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm", function ($uibModalInstance, params, $translate, Toast, CloudProjectComputeInfrastructureOrchestrator) {
+angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm", function ($uibModalInstance, params, $translate, CloudMessage, CloudProjectComputeInfrastructureOrchestrator) {
 
     var self = this;
 
@@ -19,9 +19,9 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
         self.vmInEdition.monthlyBillingBoolean = true;
         self.loaders.saveVm = true;
         CloudProjectComputeInfrastructureOrchestrator.saveEditedVm(self.vmInEdition).then(function () {
-            Toast.success($translate.instant("cpcivm_monthly_success"));
+            CloudMessage.success($translate.instant("cpcivm_monthly_success"));
         }, function (err) {
-            Toast.error( [$translate.instant("cpcivm_monthly_fail"), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant("cpcivm_monthly_fail"), err.data && err.data.message || ''].join(' '));
         })["finally"](function () {
             self.loaders.saveVm = false;
             $uibModalInstance.dismiss();

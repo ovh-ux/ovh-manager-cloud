@@ -11,12 +11,12 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
     var $q;
     var User;
     var OvhApiCloudProjectAlerting;
-    var Toast;
+    var CloudMessage;
     var uibModalInstance;
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$stateParams_, _$translate_, _$q_, _OvhApiMe_, _OvhApiCloudProjectAlerting_, _Toast_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$stateParams_, _$translate_, _$q_, _OvhApiMe_, _OvhApiCloudProjectAlerting_, _CloudMessage_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -26,7 +26,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         $q = _$q_;
         User = _OvhApiMe_;
         OvhApiCloudProjectAlerting = _OvhApiCloudProjectAlerting_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
 
         uibModalInstance = {
             close: function () {},
@@ -117,7 +117,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
 
-            spyOn(Toast, "success");
+            spyOn(CloudMessage, "success");
             spyOn(uibModalInstance, "close");
 
             controller.saveAlert();
@@ -129,7 +129,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
                 monthlyThreshold: "threshold"
             });
             expect(uibModalInstance.close).toHaveBeenCalled();
-            expect(Toast.success).toHaveBeenCalledWith(successMessage);
+            expect(CloudMessage.success).toHaveBeenCalledWith(successMessage);
         });
 
         it("Should handles save error correctly", function () {
@@ -140,14 +140,14 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);
 
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
             spyOn(uibModalInstance, "close");
 
             controller.saveAlert();
             $httpBackend.flush();
 
             expect(uibModalInstance.close).toHaveBeenCalled();
-            expect(Toast.error).toHaveBeenCalledWith("error message reason");
+            expect(CloudMessage.error).toHaveBeenCalledWith("error message reason");
         });
 
         it("Should edit alert when previous alert exists", function () {
@@ -163,7 +163,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
 
-            spyOn(Toast, "success");
+            spyOn(CloudMessage, "success");
             spyOn(uibModalInstance, "close");
 
             controller.saveAlert();
@@ -175,7 +175,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
                 monthlyThreshold: "threshold"
             });
             expect(uibModalInstance.close).toHaveBeenCalled();
-            expect(Toast.success).toHaveBeenCalledWith(successMessage);
+            expect(CloudMessage.success).toHaveBeenCalledWith(successMessage);
         });
 
         it("Should handles put error correctly", function () {
@@ -187,14 +187,14 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);
 
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
             spyOn(uibModalInstance, "close");
 
             controller.saveAlert();
             $httpBackend.flush();
 
             expect(uibModalInstance.close).toHaveBeenCalled();
-            expect(Toast.error).toHaveBeenCalledWith("error message reason");
+            expect(CloudMessage.error).toHaveBeenCalledWith("error message reason");
         });
     });
 

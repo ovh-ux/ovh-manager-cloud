@@ -22,7 +22,7 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
     var $scope;
     var $q;
     var $timeout;
-    var Toast;
+    var CloudMessage;
     var $uibModal;
     var CloudProjectComputeInfraVrackVmFactory;
     var CloudProjectComputeInfrastructureOrchestrator;
@@ -30,7 +30,7 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
 
 
     beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_,
-                                _Toast_, _CloudProjectComputeInfrastructureOrchestrator_, _$uibModal_, _$state_,
+                                _CloudMessage_, _CloudProjectComputeInfrastructureOrchestrator_, _$uibModal_, _$state_,
                                 _CloudProjectComputeInfraVrackVmFactory_, _$q_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
@@ -38,15 +38,15 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
         $controller = _$controller_;
         $timeout = _$timeout_;
         $q = _$q_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         $state = _$state_;
         $uibModal = _$uibModal_;
         CloudProjectComputeInfraVrackVmFactory = _CloudProjectComputeInfraVrackVmFactory_;
 
         CloudProjectComputeInfrastructureOrchestrator = _CloudProjectComputeInfrastructureOrchestrator_;
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
 
         $scope = _$rootScope_.$new();
     }));

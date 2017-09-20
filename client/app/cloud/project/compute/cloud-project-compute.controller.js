@@ -1,20 +1,38 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeCtrl",
-    function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
+    function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudMessage, CloudProjectOrchestrator, CloudUserPref) {
 
         var self = this;
         this.serviceName = $stateParams.projectId;
 
         this.loading = true;
+        this.messages = [];
 
+        self.getRouteContext = function () {
+            if ($state.includes("iaas.pci-project")) {
+                return "iaas.pci-project.compute";
+            }
+            return '';
+        };
+
+        self.refreshMessage = function () {
+            self.messages = self.messageHandler.getMessages();
+        }
+
+        self.loadMessage = function () {
+            CloudMessage.unSubscribe("iaas.pci-project.compute");
+            this.messageHandler = CloudMessage.subscribe("iaas.pci-project.compute", { onMessage: () => self.refreshMessage() });
+        }
+        
         function init() {
             self.loading = true;
+            self.loadMessage();
             return shouldRedirectToProjectOverview()
                 .then(function(redirectToOverview) {
                     $scope.redirectToOverview = redirectToOverview;
                 })
-                ["finally"](function() {
+                .finally(function() {
                     self.loading = false;
                 });
         }

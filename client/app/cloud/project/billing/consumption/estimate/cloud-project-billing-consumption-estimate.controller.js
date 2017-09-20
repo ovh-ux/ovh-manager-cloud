@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateCtrl",
-    function ($q, $uibModal, $stateParams, $translate, OvhApiCloudProjectAlerting, Toast, OvhApiCloudProjectUsageForecast, OvhApiCloudProjectUsageCurrent, CloudProjectBillingService) {
+    function ($q, $uibModal, $stateParams, $translate, OvhApiCloudProjectAlerting, CloudMessage, OvhApiCloudProjectUsageForecast, OvhApiCloudProjectUsageCurrent, CloudProjectBillingService) {
         var self = this;
         self.loading = false;
         self.data = {
@@ -32,7 +32,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
             }).then(function () {
                 return initAlert();
             }).catch(function (err) {
-                Toast.error([$translate.instant("cpbe_estimate_price_error_message"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpbe_estimate_price_error_message"), err.data && err.data.message || ""].join(" "));
             });
         }
 
@@ -147,13 +147,13 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
                         serviceName: $stateParams.projectId,
                         alertId: _.first(alertIds)
                     }).$promise.then(function () {
-                        Toast.success($translate.instant("cpbe_estimate_alert_delete_success"));
+                        CloudMessage.success($translate.instant("cpbe_estimate_alert_delete_success"));
                     });
                 } else {
                     return $q.reject({ data: { message: "Alert not found" } });
                 }
             }).catch(function (err) {
-                Toast.error([$translate.instant("cpbe_estimate_alert_delete_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpbe_estimate_alert_delete_error"), err.data && err.data.message || ""].join(" "));
                 return $q.reject(err);
             }).finally(function () {
                 self.loaders.deleteAlert  = false;
