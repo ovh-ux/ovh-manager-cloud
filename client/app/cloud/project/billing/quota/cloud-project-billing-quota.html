@@ -38,7 +38,7 @@
             <div class="well">
 
                 <p class="bold">{{ :: 'cpb_quota_restricted_paymentmean_active' | translate }}</p>
-                <button class="btn btn-primary"
+                <button class="oui-button oui-button_primary"
                         data-ng-click="CloudProjectBillingQuotaCtrl.unleashAccount()">
                     {{ :: 'cpb_quota_restricted_unlock_button' | translate }}
                 </button>
@@ -55,7 +55,7 @@
             <p write-right-required>{{ :: 'cpb_quota_protect_more' | translate }}</p>
 
             <button type="button"
-                    class="btn btn-primary"
+                    class="oui-button oui-button_primary"
                     data-ng-disabled="!CloudProjectBillingQuotaCtrl.datas.quota || (CloudProjectBillingQuotaCtrl.datas.quota && CloudProjectBillingQuotaCtrl.datas.quota.length === 0)"
                     data-ng-click="CloudProjectBillingQuotaCtrl.openSupport()"
                     write-right-required>
