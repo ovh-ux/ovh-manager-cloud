@@ -6,7 +6,7 @@
      */
     class CuiLoaderController {
         $onInit () {
-            this.size = this.size || "s";
+            this.size = this.size || "m";
         }
     }
 
