@@ -10,24 +10,25 @@
 
             <input  type="text" pattern="^[^\/]*$"
                     maxlength="256" 
-                    class="col-xs-12 form-control"
+                    class="col-xs-12 form-control oui-input"
                     required="true"
                     data-ng-disabled="!steps.name.enable"
                     data-ng-model="model.name"
                 />
-
-            <button class="ovh-button ovh-button_primary col-xs-12"
-                    data-ng-click="addStorage()"
-                    data-ng-disabled="!isValid() || loaders.post"
-                    data-ng-class="{
-                        'disabled': loaders.post,
-                        'bg_empty': loaders.post
-                    }">
-                    <span data-ng-hide="loaders.post" data-translate="add_build_you_own_warehouse"> </span>
-                    <span data-ng-show="loaders.post">
-                        <spinner></spinner>
-                    </span>
-            </button>
+            <div class="col-xs-12 text-center">
+                <button class="oui-button oui-button_primary"
+                        data-ng-click="addStorage()"
+                        data-ng-disabled="!isValid() || loaders.post"
+                        data-ng-class="{
+                            'disabled': loaders.post,
+                            'bg_empty': loaders.post
+                        }">
+                        <span data-ng-hide="loaders.post" data-translate="add_build_you_own_warehouse"> </span>
+                        <span data-ng-show="loaders.post">
+                            <spinner></spinner>
+                        </span>
+                </button>
+            </div>
         </div>
     </div>
 
