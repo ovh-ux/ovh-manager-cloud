@@ -1,20 +1,16 @@
 <div id="cloud-project-openstack-users" class="row">
     <div class="col-xs-12">
 
-		<div class="bottom-space-m16">
-			<button data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()"
-                    class="btn btn-primary"
-                    data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.table.user ||
-                                      CloudProjectOpenstackUsersCtrl.table.users === null"
-                    data-ng-class="{
-                        'visibility-hide' : CloudProjectOpenstackUsersCtrl.toggle.openAddUser
-                    }"
-                    write-right-required>
-				<i class="glyphicon glyphicon-plus right-space-m8"></i>
-				<span translate="openstackusers_users_add_button"></span>
-			</button>
-
-        </div>
+		<button data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()"
+                class="oui-button oui-button_secondary"
+                data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.table.user ||
+                                  CloudProjectOpenstackUsersCtrl.table.users === null"
+                data-ng-class="{
+                    'visibility-hide' : CloudProjectOpenstackUsersCtrl.toggle.openAddUser
+                }"
+                write-right-required>
+			<span translate="openstackusers_users_add_button"></span>
+		</button>
 
         <!-- Multi DELETE -->
         <div class="pull-left">
@@ -60,7 +56,7 @@
         </div>
 
         <!-- OPENSTACK USERS TABLE -->
-        <div class="table-responsive-vertical shadow-z-1" style="margin-top: 50px;">
+        <div class="table-responsive-vertical shadow-z-1">
             <table class="table table-pretty table-hover table-striped" style="position:relative;">
                 <thead>
                     <tr>
@@ -196,17 +192,15 @@
                                     <div class="row-fluid">
                                         <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center">
                                             <button type="reset"
-                                                class="btn btn-default"
+                                                class="oui-button oui-button_secondary"
                                                 data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
                                                 data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()">
-                                                <i class="glyphicon glyphicon-remove right-space-m8"></i>
                                                 <span translate="openstackusers_users_userlist_add_button_cancel"></span>
                                             </button>
                                             <button type="submit"
-                                                class="btn btn-primary"
+                                                class="oui-button oui-button_primary"
                                                 data-ng-disabled="addUserForm.$invalid"
                                                 data-ng-click="CloudProjectOpenstackUsersCtrl.postUser()">
-                                                <i class="glyphicon glyphicon-ok right-space-m8"></i>
                                                 <span translate="openstackusers_users_userlist_add_button_submit"></span>
                                                 <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.add.user"></spinner>
                                             </button>
@@ -334,15 +328,13 @@
                                 class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
                                 style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
 
-                                <button class="btn btn-default"
+                                <button class="oui-button oui-button_secondary"
                                     data-ng-disabled="user.status === 'deleting'"
                                     data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null">
-                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
                                     <span translate="openstackusers_users_userlist_delete_cancel"></span>
                                 </button>
-                                <button class="btn btn-danger"
+                                <button class="oui-button oui-button_primary"
                                     data-ng-click="CloudProjectOpenstackUsersCtrl.deleteUser(user)">
-                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
                                     <span translate="openstackusers_users_userlist_delete_submit"></span>
                                     <spinner name="bubbles-fff-d34936-16" data-ng-show="user.status === 'deleting'"></spinner>
                                 </button>
