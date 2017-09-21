@@ -410,20 +410,18 @@
                                 class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
                                 style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
 
-                                <button class="btn btn-default"
+                                <button class="oui-button oui-button_secondary"
                                     type="button"
                                     data-ng-disabled="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti"
                                     data-ng-click="CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId = null">
-                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
                                     <span translate="cpc_snapshot_delete_cancel_button"></span>
                                 </button>
-                                <button class="btn btn-danger"
+                                <button class="oui-button oui-button_primary"
                                     type="button"
                                     data-ng-click="CloudProjectComputeSnapshotCtrl.deleteSnapshot(snapshot)"
                                     data-ng-disabled="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot
                                                     || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti
                                                     || CloudProjectComputeSnapshotCtrl.toggle.openDeleteMultiConfirm">
-                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
                                     <span translate="cpc_snapshot_delete_confirm_button"></span>
                                     <spinner name="bubbles-fff-d34936-16" data-ng-show="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot"></spinner>
                                 </button>
