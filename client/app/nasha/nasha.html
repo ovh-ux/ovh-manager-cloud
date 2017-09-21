@@ -11,16 +11,14 @@
 
             <cui-message-container data-messages="NashaCtrl.messages"></cui-message-container>
 
-            <div>
-                <div class="row" data-ng-include="'app/nasha/information/nasha-information.html'"></div>
-            </div>
+            <div data-ng-include="'app/nasha/information/nasha-information.html'"></div>
 
             <div data-ng-if="!NashaCtrl.loading && NashaCtrl.data.information.status !== 'expired'">
-                <div class="row" ui-view="nashaPartition"></div>
+                <div ui-view="nashaPartition"></div>
             </div>
 
             <div data-ng-if="!NashaCtrl.loaders.nasha && NashaCtrl.data.information.status !== 'expired'">
-                <div class="row" ui-view="nashaPartitionAccess"></div>
+                <div ui-view="nashaPartitionAccess"></div>
             </div>
         </div>
     </div>
