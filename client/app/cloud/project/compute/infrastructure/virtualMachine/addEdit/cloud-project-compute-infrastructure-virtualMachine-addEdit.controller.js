@@ -1395,6 +1395,14 @@ angular.module("managerApp")
             }
             augmentedFlavor.flex = /flex$/.test(flavor.name);
             augmentedFlavor.diskType = /ssd/.test(flavor.type) ? "ssd" : "ceph";
+
+            if (_.indexOf(["g1", "g2", "g3"], augmentedFlavor.shortType) > -1) {
+                if (numberType === "120") {
+                    augmentedFlavor.gpuCardCount = 3;
+                } else {
+                    augmentedFlavor.gpuCardCount = 1;
+                }
+            }
         }
         return augmentedFlavor;
     }
