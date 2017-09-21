@@ -1,30 +1,27 @@
-<div class="nasha">
-    <div class="container-fluid top-space-m16 right-space-m20 left-space-m20" data-ng-if="NashaCtrl.data.nasha.serviceName">
+<div class="nasha cui-page">
+    <div data-ng-if="NashaCtrl.data.nasha.serviceName">
+        <cui-page-header
+            data-title-text="NashaCtrl.data.nasha.serviceName"
+            data-guides="NashaCtrl.guides">
+        </cui-page-header>
 
-        <!-- init loading... -->
-        <div data-ng-if="NashaCtrl.loading" >
-            <spinner></spinner>
-            <span data-translate="common_loading"></span>
+        <div class="cui-page__content">
+            <!-- init loading... -->
+            <cui-loader data-size="l" data-ng-show="NashaCtrl.loading"></cui-loader>
+
+            <cui-message-container data-messages="NashaCtrl.messages"></cui-message-container>
+
+            <div>
+                <div class="row" data-ng-include="'app/nasha/information/nasha-information.html'"></div>
+            </div>
+
+            <div data-ng-if="!NashaCtrl.loading && NashaCtrl.data.information.status !== 'expired'">
+                <div class="row" ui-view="nashaPartition"></div>
+            </div>
+
+            <div data-ng-if="!NashaCtrl.loaders.nasha && NashaCtrl.data.information.status !== 'expired'">
+                <div class="row" ui-view="nashaPartitionAccess"></div>
+            </div>
         </div>
-
-        <div class="page-header">
-            <guide-component class="pull-right" data-guides="NashaCtrl.guides"></guide-component>
-            <h1 class="page-header__title" data-translate="{{NashaCtrl.data.nasha.serviceName}}"></h1>
-        </div>
-
-        <cui-message-container data-messages="NashaCtrl.messages"></cui-message-container>
-
-        <div class="bottom-space-m20">
-            <div class="row" data-ng-include="'app/nasha/information/nasha-information.html'"></div>
-        </div>
-
-        <div data-ng-if="!NashaCtrl.loading && NashaCtrl.data.information.status !== 'expired'">
-            <div class="row" ui-view="nashaPartition"></div>
-        </div>
-
-        <div data-ng-if="!NashaCtrl.loaders.nasha && NashaCtrl.data.information.status !== 'expired'">
-            <div class="row" ui-view="nashaPartitionAccess"></div>
-        </div>
-
     </div>
 </div>
