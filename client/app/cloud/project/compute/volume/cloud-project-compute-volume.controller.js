@@ -60,7 +60,6 @@ angular.module("managerApp")
 
     function initSearchBar () {
         self.search = {
-            open          : false,
             name          : null,
             minDisk       : null,
             creationStart : null,
@@ -112,15 +111,6 @@ angular.module("managerApp")
 
     //---------SEARCH BAR---------
 
-    self.toggleSearchBar = function () {
-        if (self.search.open) {
-            self.search.open = false;
-        } else {
-            initSearchBar(); //because if init is launch in if instead else, leave animation not work.
-            self.search.open = true;
-        }
-    };
-
     $scope.$watch('CloudProjectComputeVolumeCtrl.search', function () {
         //otherwise filterVolume launched before form validation
         $timeout(function(){
@@ -131,27 +121,24 @@ angular.module("managerApp")
     function filterVolume () {
         if ($scope.searchVolumeForm && $scope.searchVolumeForm.$valid) {
             var tab = self.table.volume;
+            tab = _.filter(self.table.volume, function (volume) {
+                var result = true;
 
-            if (self.search.open) {
-                tab = _.filter(self.table.volume, function (volume) {
-                    var result = true;
+                if (self.search.name && volume.name) {
+                    result = result && volume.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
+                }
+                if (self.search.minDisk) {
+                    result = result && self.search.minDisk <= volume.size;
+                }
+                if (self.search.creationStart) {
+                    result = result && moment(self.search.creationStart) <= moment(volume.creationDate);
+                }
+                if (self.search.creationEnd) {
+                    result = result && moment(self.search.creationEnd) > moment(volume.creationDate);
+                }
 
-                    if (self.search.name && volume.name) {
-                        result = result && volume.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-                    }
-                    if (self.search.minDisk) {
-                        result = result && self.search.minDisk <= volume.size;
-                    }
-                    if (self.search.creationStart) {
-                        result = result && moment(self.search.creationStart) <= moment(volume.creationDate);
-                    }
-                    if (self.search.creationEnd) {
-                        result = result && moment(self.search.creationEnd) > moment(volume.creationDate);
-                    }
-
-                    return result;
-                });
-            }
+                return result;
+            });
 
             self.table.volumeFilter = tab;
             self.table.volumeFilterCheckbox = _.filter(tab, function (volume) {
