@@ -101,6 +101,12 @@ module.exports = function (grunt) {
                 ],
                 tasks: ["injector:less", "less", "postcss"]
             },
+            scss: {
+                files: [
+                    "<%= yeoman.client %>/app/app.scss"
+                ],
+                tasks: ["sass", "postcss"]
+            },
             gruntfile: {
                 files: ["Gruntfile.js"]
             },
@@ -196,7 +202,7 @@ module.exports = function (grunt) {
         wiredep: {
             options: {
                 exclude: [
-                    // /bootstrap.js/,
+                    /bs4/,
                     "/json3/",
                     "/es5-shim/",
                     /font-awesome\.css/,
@@ -489,11 +495,13 @@ module.exports = function (grunt) {
             ],
             server: [
                 "newer:babel:client",
-                "less",
+                "sass",
+                "less"
             ],
             test: [
                 "newer:babel:client",
-                "less",
+                "sass",
+                "less"
             ],
             debug: {
                 tasks: [
@@ -504,6 +512,7 @@ module.exports = function (grunt) {
             },
             dist: [
                 "newer:babel:client",
+                "sass",
                 "less",
                 "imagemin"
             ]
@@ -638,7 +647,22 @@ module.exports = function (grunt) {
             },
             server: {
                 files: {
-                    ".tmp/app/app.css" : "<%= yeoman.client %>/app/app.less"
+                    ".tmp/app/app.css" : [
+                        "<%= yeoman.client %>/app/app.less",
+                        "<%= yeoman.client %>/app/app-scss.css"
+                    ]
+                }
+            }
+        },
+
+        // Compiles SCSS to CSS
+        sass: {
+            options: {
+                outputStyle: "expanded"
+            },
+            dist: {
+                files: {
+                    "client/app/app-scss.css": "client/app/app.scss"
                 }
             }
         },
