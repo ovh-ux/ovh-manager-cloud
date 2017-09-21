@@ -3,7 +3,7 @@
    <translation id="cpc_ssh_demo" qtlid="249393">Puede añadir aquí sus llaves SSH, que le permitirán acceder a sus servidores.</translation>
 
    <translation id="cpc_ssh_name" qtlid="3818">Nombre</translation>
-   <translation id="cpc_ssh_key" qtlid="104326">Llave</translation>
+   <translation id="cpc_ssh_key" qtlid="104326">Clave</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Cargando llaves SSH...</translation>
    <translation id="cpc_ssh_error" qtlid="248808">¡Vaya! No se ha podido cargar la lista de llaves SSH.</translation>

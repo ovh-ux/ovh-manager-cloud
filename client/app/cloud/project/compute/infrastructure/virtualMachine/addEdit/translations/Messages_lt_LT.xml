@@ -145,9 +145,9 @@
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Diskai</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
-   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">Nvidia GTX 1060 6 GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">3 x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6 GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Virtualios mašinos VPS-SSD: <br/>Public Cloud už geriausią kainą</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD naudojamas bendras lokalus SSD RAID, todėl šių virtualių serverių našumas gali svyruoti  </translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox virtualios mašinos: <br/>Bendrai naudojami resursai</translation>

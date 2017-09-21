@@ -7,7 +7,7 @@
    <translation id="cda_user_edit_button_text" qtlid="354730">Ver los permisos</translation>
 
    <translation id="cda_user_table_col_username" qtlid="3818">Nombre</translation>
-   <translation id="cda_user_table_col_key" qtlid="104326">Llave</translation>
+   <translation id="cda_user_table_col_key" qtlid="104326">Clave</translation>
    <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
    <translation id="cda_user_table_col_actions" qtlid="72809">Acciones</translation>
 

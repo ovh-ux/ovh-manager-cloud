@@ -7,7 +7,7 @@
    <translation id="metrics_token_add_permission_write" qtlid="301565">Escritura</translation>
 
    <translation id="metrics_token_add_labels" qtlid="403437">Añadir labels</translation>
-   <translation id="metrics_token_add_labels_key" qtlid="104326">Llave</translation>
+   <translation id="metrics_token_add_labels_key" qtlid="104326">Clave</translation>
    <translation id="metrics_token_add_labels_value" qtlid="47548">Valor</translation>
    <translation id="metrics_token_add_token" qtlid="415519">Añadir un token</translation>
    <translation id="metrics_token_add_confirmation" qtlid="37923">Añadir</translation>
