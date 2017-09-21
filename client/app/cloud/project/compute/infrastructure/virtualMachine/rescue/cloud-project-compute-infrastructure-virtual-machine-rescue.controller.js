@@ -48,12 +48,14 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
                 var pwdKey = self.data.selectedImage ? "" : "pwd_";
                 var user = self.data.selectedImage ? self.data.selectedImage.user : "admin";
                 var messageName = "cpc_rescue_mode_success_" + pwdKey + typeKey;
-                CloudMessage.success($translate.instant(messageName, {
-                    vmName: self.data.vm.name,
-                    user: user,
-                    ip: self.data.vm.ipAddresses[0].ip,
-                    pwd: result.adminPassword || ""
-                }), { hideAfter: false }).$el.addClass("toast-content-selectable");
+                CloudMessage.success({textHtml : $translate.instant(messageName, 
+                    {
+                        vmName: self.data.vm.name,
+                        user: user,
+                        ip: self.data.vm.ipAddresses[0].ip,
+                        pwd: result.adminPassword || ""
+                    })
+                });
                 $uibModalInstance.close();
             }, function (err) {
                 CloudMessage.error([$translate.instant("cpc_rescue_mode_error"), err.data && err.data.message || ""].join(" "));
