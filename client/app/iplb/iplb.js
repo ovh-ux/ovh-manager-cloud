@@ -25,6 +25,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "cloud", "iplb"]
+            translations: ["common", "cloud", "iplb", "iplb/configuration"]
         });
 });

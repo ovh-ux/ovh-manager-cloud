@@ -1,7 +1,8 @@
 class IpLoadBalancerServerService {
-    constructor ($q, $translate, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
+    constructor ($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
         this.$q = $q;
         this.$translate = $translate;
+        this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -29,6 +30,7 @@ class IpLoadBalancerServerService {
         }, server)
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_server_add_success"))
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_server_add_error"));
     }
 
@@ -40,6 +42,7 @@ class IpLoadBalancerServerService {
         }, server)
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_server_update_success"))
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_server_update_error"));
     }
 
@@ -51,6 +54,7 @@ class IpLoadBalancerServerService {
                 serverId
             }).$promise)
             .then(this.ServiceHelper.successHandler("iplb_server_delete_success"))
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_server_delete_error"));
     }
 

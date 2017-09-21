@@ -1,7 +1,8 @@
 class IpLoadBalancerServerFarmService {
-    constructor ($q, $translate, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
+    constructor ($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing, ServiceHelper, RegionService) {
         this.$q = $q;
         this.$translate = $translate;
+        this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -74,6 +75,7 @@ class IpLoadBalancerServerFarmService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_farm_add_success"))
             .then(() => this.Farm.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_farm_add_error"));
     }
 
@@ -85,6 +87,7 @@ class IpLoadBalancerServerFarmService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_farm_update_success"))
             .then(() => this.Farm.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_farm_update_error"));
     }
 
@@ -96,6 +99,7 @@ class IpLoadBalancerServerFarmService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_farm_delete_success"))
             .then(() => this.Farm.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_farm_delete_error"));
     }
 

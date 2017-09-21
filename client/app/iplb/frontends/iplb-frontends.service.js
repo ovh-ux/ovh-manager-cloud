@@ -1,7 +1,8 @@
 class IpLoadBalancerFrontendsService {
-    constructor ($q, $translate, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+    constructor ($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
+        this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -144,6 +145,7 @@ class IpLoadBalancerFrontendsService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_frontend_add_success"))
             .then(() => this.Frontend.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_frontend_add_error"));
     }
 
@@ -155,6 +157,7 @@ class IpLoadBalancerFrontendsService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_frontend_update_success"))
             .then(() => this.Frontend.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_frontend_update_error"));
     }
 
@@ -166,6 +169,7 @@ class IpLoadBalancerFrontendsService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_frontend_delete_success"))
             .then(() => this.Frontend.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_frontend_delete_error"));
     }
 
@@ -179,6 +183,7 @@ class IpLoadBalancerFrontendsService {
             .$promise
             .then(this.ServiceHelper.successHandler("iplb_frontend_toggle_success"))
             .then(() => this.Frontend.all.resetQueryCache())
+            .then(() => this.IpLoadBalancerConfigurationService.showRefreshWarning())
             .catch(this.ServiceHelper.errorHandler("iplb_frontend_toggle_error"));
     }
 }

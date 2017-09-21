@@ -1,6 +1,9 @@
 class IpLoadBalancerConfigurationService {
-    constructor ($q, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+    constructor ($q, $state, $translate, CloudMessage, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
         this.$q = $q;
+        this.$state = $state;
+        this.$translate = $translate;
+        this.CloudMessage = CloudMessage;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -89,21 +92,32 @@ class IpLoadBalancerConfigurationService {
                 serviceName,
                 action: "deployIplb",
                 status
-            })))
+            }).$promise))
                 .then(tasksResults => _.flatten(tasksResults));
         } else {
             tasksPromise = this.IpLoadBalancing.Task().Lexi().query({
                 serviceName,
                 action: "deployIplb"
-            });
+            }).$promise;
         }
 
         return tasksPromise
-            .$promise
             .then(ids => this.$q.all(ids.map(id => this.IpLoadBalancing.Task().Lexi().get({
                 serviceName,
                 taskId: id
             }).$promise)));
+    }
+
+    showRefreshWarning () {
+        this.CloudMessage.warning({
+            text: this.$translate.instant("iplb_configuration_pending_changes"),
+            link: {
+                text: this.$translate.instant("iplb_configuration_action_apply"),
+                action: () => {
+                    this.$state.go("network.iplb.detail.configuration");
+                }
+            }
+        });
     }
 }
 
