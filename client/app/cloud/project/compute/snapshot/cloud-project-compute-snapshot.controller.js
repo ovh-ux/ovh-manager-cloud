@@ -53,7 +53,6 @@ angular.module("managerApp")
 
     function initSearchBar () {
         self.search = {
-            open: false,
             name: null,
             size: null,
             creationStart: null,
@@ -130,15 +129,6 @@ angular.module("managerApp")
 
     //---------SEARCH BAR---------
 
-    self.toggleSearchBar = function () {
-        if (self.search.open) {
-            self.search.open = false;
-        } else {
-            initSearchBar(); //because if init is launch in if instead else, leave animation not work.
-            self.search.open = true;
-        }
-    };
-
     $scope.$watch('CloudProjectComputeSnapshotCtrl.search', function () {
         //otherwise filterSnapshot launched before form validation
         $timeout(function(){
@@ -149,26 +139,24 @@ angular.module("managerApp")
     function filterSnapshot () {
         if ($scope.searchSnapshotForm && $scope.searchSnapshotForm.$valid) {
             var tab = self.table.snapshot;
-            if (self.search.open) {
-                tab = _.filter(self.table.snapshot, function (snapshot) {
-                    var result = true;
+            tab = _.filter(self.table.snapshot, function (snapshot) {
+                var result = true;
 
-                    if (self.search.name && snapshot.name) {
-                        result = result && snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-                    }
-                    if (self.search.size) {
-                        result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
-                    }
-                    if (self.search.creationStart) {
-                        result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
-                    }
-                    if (self.search.creationEnd) {
-                        result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
-                    }
+                if (self.search.name && snapshot.name) {
+                    result = result && snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
+                }
+                if (self.search.size) {
+                    result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
+                }
+                if (self.search.creationStart) {
+                    result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
+                }
+                if (self.search.creationEnd) {
+                    result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
+                }
 
-                    return result;
-                });
-            }
+                return result;
+            });
 
             self.table.snapshotFilter = tab;
             self.table.snapshotFilterCheckbox = _.filter(tab, function (snapshot) {
