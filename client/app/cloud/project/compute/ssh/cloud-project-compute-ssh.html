@@ -21,7 +21,6 @@
                     data-ng-disabled="CloudProjectComputeSshCtrl.loaders.table.ssh || CloudProjectComputeSshCtrl.table.ssh === null"
                     data-ng-class="{'visibility-hide' : CloudProjectComputeSshCtrl.toggle.openAddSsh}"
                     write-right-required>
-                <i class="glyphicon glyphicon-plus right-space-m8"></i>
                 <span translate="cpc_ssh_add_button"></span>
             </button>
             <!-- SEARCH -->
@@ -163,17 +162,15 @@
                                     <div class="row-fluid">
                                         <div class="col-sm-12 bottom-space-p4 top-space-p12 text-center">
                                             <button type="reset"
-                                                class="btn btn-default"
+                                                class="oui-button oui-button_secondary"
                                                 data-ng-disabled="CloudProjectComputeSshCtrl.loaders.add.ssh"
                                                 data-ng-click="CloudProjectComputeSshCtrl.toggleAddSshKey()">
-                                                <i class="glyphicon glyphicon-remove right-space-m8"></i>
                                                 <span translate="cpc_ssh_add_button_cancel"></span>
                                             </button>
                                             <button type="submit"
-                                                class="btn btn-primary"
+                                                class="oui-button oui-button_primary"
                                                 data-ng-disabled="addSshKeyForm.$invalid"
                                                 data-ng-click="CloudProjectComputeSshCtrl.postSshKey()">
-                                                <i class="glyphicon glyphicon-ok right-space-m8"></i>
                                                 <span translate="cpc_ssh_add_button_submit"></span>
                                                 <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectComputeSshCtrl.loaders.add.ssh"></spinner>
                                             </button>
@@ -254,15 +251,13 @@
                                 class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
                                 style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
 
-                                <button class="btn btn-default"
+                                <button class="oui-button oui-button_secondary"
                                     data-ng-disabled="CloudProjectComputeSshCtrl.loaders.remove.ssh"
                                     data-ng-click="CloudProjectComputeSshCtrl.toggle.sshDeleteId = null">
-                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
                                     <span translate="cpc_ssh_delete_cancel"></span>
                                 </button>
-                                <button class="btn btn-danger"
+                                <button class="oui-button oui-button_primary"
                                     data-ng-click="CloudProjectComputeSshCtrl.deleteSshKey(ssh)">
-                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
                                     <span translate="cpc_ssh_delete_submit"></span>
                                     <spinner name="bubbles-fff-d34936-16" data-ng-show="CloudProjectComputeSshCtrl.loaders.remove.ssh"></spinner>
                                 </button>
