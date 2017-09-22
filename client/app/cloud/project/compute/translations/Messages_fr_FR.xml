@@ -5,6 +5,7 @@
    <translation id="cpc_tab_volume" qtlid="246923">Disques suppl.</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">Clés SSH</translation>
    <translation id="cpc_tab_project" qtlid="261283">Gestion et conso. du projet</translation>
+   <translation id="cpc_tab_loadbalancer">Load Balancer</translation>
    <translation id="cpc_message" qtlid="439767">Le Cloud OVH arrive en Allemagne ! <a href="http://superlienverslapage">Découvrez notre datacentre de Limburg.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Ouverture de notre nouvelle région UK1 à Londres, au Royaume-Uni !</translation>
    <translation id="cloud_message_pci_uk1_link" qtlid="439793">Découvrez ce que cela signifie pour vous</translation>

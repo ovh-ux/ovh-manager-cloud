@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cp_openstack_tab_openstack" qtlid="241586">Openstack</translation>
+   <translation id="cp_openstack_tab_iplb">IP loadbalancer</translation>
 </translations>

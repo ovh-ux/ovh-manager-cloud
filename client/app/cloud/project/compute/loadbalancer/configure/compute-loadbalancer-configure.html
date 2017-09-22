@@ -1,0 +1,127 @@
+<div id="compute-loadbalancer-configure" class="cui-page__content">
+    <cui-back-link data-state="^.loadbalancer"
+                   data-state-params="{ projectId: CloudProjectComputeLoadbalancerConfigureCtrl.$stateParams.serviceName}"
+                   data-text="'cpc_loadbalancer_back' | translate"></cui-back-link>
+    <h1 data-translate="cpc_loadbalancer_configure_title"></h1>
+    <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.loaders.loadbalancer" class="text-center">
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
+    </div>
+    <div data-ng-if="!CloudProjectComputeLoadbalancerConfigureCtrl.loaders.loadbalancer && CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer === null || CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.status === 'unavailable'"
+    data-translate="cpc_loadbalancer_error">
+    </div>
+    <div data-ng-if="!CloudProjectComputeLoadbalancerConfigureCtrl.loaders.loadbalancer && CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.status === 'unavailable'"
+    data-translate="cpc_loadbalancer_error">
+    </div>
+    <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.toggle.updatedMessage && !CloudProjectComputeLoadbalancerConfigureCtrl.tasks.data.length && !CloudProjectComputeLoadbalancerConfigureCtrl.loaders.form.redirect" data-translate="cpc_loadbalancer_configure_updated_message"
+     class="oui-message"></div>
+
+    <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.tasks.data.length" class="oui-box">
+        <h4 data-translate="cpc_loadbalancer_configure_task_waiting"></h4>
+        <div data-ng-repeat="task in CloudProjectComputeLoadbalancerConfigureCtrl.tasks.data track by $index" class="compute-loadbalancer-configure-tasks">
+            {{task.action}} : <cui-task-progress data-task="task"></cui-task-progress>
+        </div>
+    </div>
+    <form data-ng-if="!CloudProjectComputeLoadbalancerConfigureCtrl.loaders.loadbalancer && CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer !== null" data-ng-submit="CloudProjectComputeLoadbalancerConfigureCtrl.configureAndDeployLoadbalancer()">
+        <div class="oui-box" data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.status === 'custom'">
+            <a class="oui-button oui-button_secondary pull-right" data-translate="cpc_loadbalancer_configure_advanced" data-ui-sref="network.iplb.detail.frontends({'serviceName': CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancerId})"></a>
+            <p>
+                <strong data-translate="cpc_loadbalancer_key_explain_1"></strong>
+            </p>
+            <p data-translate="cpc_loadbalancer_key_explain_2">
+            </p>
+        </div>
+        <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.status !== 'custom' && CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.status !== 'unavailable'">
+            <div><a class="oui-button oui-button_secondary pull-right" data-translate="cpc_loadbalancer_configure_advanced" data-ui-sref="network.iplb.detail.frontends({'serviceName': CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancerId})"></a></div>
+            <h3 data-translate="cpc_loadbalancer_configure_loadbalancer"></h3>
+            <p class="oui-field ">
+                <span class="oui-label" data-translate="cpc_loadbalancer_configure_adresse"></span>
+                <span class="oui-label"><a data-ng-href="http://{{CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.ipv4}}">{{CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancer.ipv4}}</a></span>
+            </p>
+            <hr />
+            <h3 data-translate="cpc_loadbalancer_configure_frontend"></h3>
+            <div class="oui-field">
+                <span data-translate="cpc_loadbalancer_configure_protocole" class="oui-label"></span>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <div class="oui-list inline-block">
+                            <ul class="oui-list__items">
+                                <li class="oui-list__item oui-list__group">
+                                    <span class="oui-list__header">HTTP</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="oui-button oui-button_secondary" data-translate="cpc_loadbalancer_configure_other_protocole" data-ui-sref="network.iplb.detail.frontends({'serviceName': CloudProjectComputeLoadbalancerConfigureCtrl.loadbalancerId})"></a>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h3 data-translate="cpc_loadbalancer_configure_servers"></h3>
+            <p class="oui-box" data-translate="cpc_loadbalancer_configure_servers_condition"></p>
+            <oui-table rows="CloudProjectComputeLoadbalancerConfigureCtrl.table.server"
+                data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.table.server !== null"
+                on-row-click="CloudProjectComputeLoadbalancerConfigureCtrl.toggleServer($row.ip)">
+                <column>
+                    <div class="oui-checkbox oui-checkbox_inline" data-ng-click="$event.stopPropagation()">
+                        <input class="oui-checkbox__input"
+                            type="checkbox"
+                            name="server{{$row.ip}}"
+                            id="server{{$row.ip}}"
+                            data-ng-model="CloudProjectComputeLoadbalancerConfigureCtrl.form.servers[$row.ip]">
+                        <label class="oui-checkbox__label-container" for="server{{$row.ip}}">
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+                </column>
+                <column title="'cpc_loadbalancer_configure_server_name' | translate" property="label"></column>
+                <column title="'IP'" property="ip"></column>
+            </oui-table>
+            <div data-ng-if="!CloudProjectComputeLoadbalancerConfigureCtrl.loaders.table.server && !CloudProjectComputeLoadbalancerConfigureCtrl.table.server">
+                <i class="fa fa-bug"></i>
+                <span translate="cpc_server_error"></span>
+            </div>
+            <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.loaders.table.server" class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+            <hr />
+
+        </div>
+
+        <h3 data-translate="cpc_loadbalancer_configure_openstack"></h3>
+        <p class="oui-box" data-translate="cpc_loadbalancer_configure_openstack_explanation" data-translate-values="{guideHorizon : CloudProjectComputeLoadbalancerConfigureCtrl.guides.horizon}"></p>
+        <div class="oui-field">
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <div class="oui-checkbox oui-checkbox_inline">
+                        <input class="oui-checkbox__input"
+                            id="openstack"
+                            name="openstack"
+                            type="checkbox"
+                            data-ng-model="CloudProjectComputeLoadbalancerConfigureCtrl.form.openstack"/>
+                        <label class="oui-checkbox__label-container" for="openstack">
+                            <span class="oui-checkbox__label"
+                                data-translate="cpc_loadbalancer_configure_openstack_activation"></span>
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-if="!CloudProjectComputeLoadbalancerConfigureCtrl.loaders.form.loadbalancer && !CloudProjectComputeLoadbalancerConfigureCtrl.loaders.form.redirect" class="cui-form-actions">
+            <button class="oui-button oui-button_primary" data-translate="cpc_loadbalancer_configure_modify" type="submit" data-ng-disabled="CloudProjectComputeLoadbalancerConfigureCtrl.tasks.data.length"></button>
+            <a class="oui-button oui-button_secondary" data-translate="cpc_loadbalancer_configure_cancel" ui-sref="^.loadbalancer"></a>
+        </div>
+        <div data-ng-if="CloudProjectComputeLoadbalancerConfigureCtrl.loaders.form.loadbalancer || CloudProjectComputeLoadbalancerConfigureCtrl.loaders.form.redirect">
+            <oui-loader size="s" class="d-inline-block"></oui-loader>
+        </div>
+
+    </form>
+</div>

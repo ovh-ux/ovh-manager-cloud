@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpc_tab_infra" qtlid="246910">Infrastructure.</translation>
    <translation id="cpc_tab_snapshot" qtlid="170343">Backups</translation>
-   <translation id="cpc_tab_volume" qtlid="246923">Additional drives</translation>
+   <translation id="cpc_tab_volume" qtlid="246923">Additional drives.</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH keys</translation>
    <translation id="cpc_tab_project" qtlid="261283">Project management and consolidation</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud has arrived in Germany! <a href="http://superlienverslapage">Find out more about our Limburg data centre.</a></translation>
