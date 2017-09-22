@@ -56,6 +56,8 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
 
         };
 
+        $scope.title = $translate.instant("storage_object_title") + " : " + $scope.storage.name;
+
         $scope.computeStorageSize = function () {
             return _.sum(_.map($scope.objects, "size"));
         };
