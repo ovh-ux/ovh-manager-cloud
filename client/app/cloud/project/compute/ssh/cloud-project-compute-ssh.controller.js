@@ -75,14 +75,6 @@ angular.module("managerApp")
         }
     }
 
-    self.toggleSearchBar = function () {
-        if (!self.search.open) {
-            initSearchBar();
-        }
-
-        self.search.open = !self.search.open;
-    };
-
     function isSshKeyMatchSearchCriterias(sshKey) {
         if (self.search.name && sshKey.name) {
             return sshKey.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
@@ -93,10 +85,7 @@ angular.module("managerApp")
 
     function filterSshKeys () {
         if ($scope.searchSshKeysForm && $scope.searchSshKeysForm.$valid) {
-            var filteredKeys = self.table.ssh;
-            if (self.search.open) {
-                filteredKeys = _.filter(self.table.ssh, isSshKeyMatchSearchCriterias);
-            }
+            var filteredKeys = _.filter(self.table.ssh, isSshKeyMatchSearchCriterias);
 
             self.table.sshKeysFilter = filteredKeys;
 
