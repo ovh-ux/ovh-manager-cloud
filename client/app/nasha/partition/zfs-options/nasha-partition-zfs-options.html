@@ -1,12 +1,18 @@
-<div class="nasha nasha-partition nasha-zfs">
-    <div class="modal-header">
-        <h3 class="modal-title" data-translate="nasha_partitions_zfs_title"></h3>
-    </div>
-    <div class="modal-body loading-spinner nasha-zfs__body_loading" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
-        <spinner></spinner>
-    </div>
-    <div class="modal-body nasha-modal-zfs nasha-zfs__body" data-ng-if="!NashaPartitionZFSOptionsCtrl.loaders">
-        <form>
+<div class="oui-modal oui-modal_shadow nasha-partition nasha-zfs">
+    <form>
+        <div class="oui-modal__header">
+            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit" data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()"></button>
+        </div>
+
+        <div class="oui-modal__body oui-modal__body_no-icon loading-spinner nasha-zfs__body_loading" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
+            <spinner></spinner>
+        </div>
+
+        <div class="oui-modal__body oui-modal__body_no-icon nasha-modal-zfs nasha-zfs__body" data-ng-if="!NashaPartitionZFSOptionsCtrl.loaders">
+            <h2 class="oui-modal__title" data-translate="nasha_partitions_zfs_title"></h2>
+
             <fieldset>
                 <div class="checkbox">
                     <legend for="nasha-zfs-atime" data-translate="nasha_partitions_zfs_atime_label"></legend>
@@ -46,21 +52,21 @@
                     </div>
                 </div>
             </fieldset>
-        </form>
-    </div>
+        </div>
 
-    <div class="modal-footer">
-        <button type="reset"
-            class="oui-button oui-button_secondary"
-            data-ng-disabled="NashaPartitionZFSOptionsCtrl.states.saving"
-            data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()"
-            data-translate="common_cancel">
-        </button>
-        <button type="button"
-            class="oui-button oui-button_primary"
-            data-ng-disabled="NashaPartitionZFSOptionsCtrl.loaders  || NashaPartitionZFSOptionsCtrl.states.saving"
-            data-ng-click="NashaPartitionZFSOptionsCtrl.applyZFSOptionsChanges()"
-            data-translate="common_confirm">
-        </button>
-    </div>
+        <div class="oui-modal__footer">
+            <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-disabled="NashaPartitionZFSOptionsCtrl.states.saving"
+                data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()"
+                data-translate="common_cancel">
+            </button>
+            <button type="button"
+                class="oui-button oui-button_primary"
+                data-ng-disabled="NashaPartitionZFSOptionsCtrl.loaders  || NashaPartitionZFSOptionsCtrl.states.saving"
+                data-ng-click="NashaPartitionZFSOptionsCtrl.applyZFSOptionsChanges()"
+                data-translate="common_confirm">
+            </button>
+        </div>
+    </form>
 </div>

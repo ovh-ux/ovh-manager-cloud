@@ -1,13 +1,18 @@
-<div class="nasha nasha-partition-access-add">
-    <div class="modal-header">
-        <h3 class="modal-title" data-translate="nasha_access_action_add"></h3>
-    </div>
-
+<div class="oui-modal oui-modal_shadow nasha-partition-access-add">
     <form class="form" role="form" data-ng-submit="NashaPartitionAccessAddCtrl.addAccess()" name="nashaPartitionAccessAddForm">
-        <div class="modal-body loading-spinner" data-ng-if="NashaPartitionAccessAddCtrl.loading">
+        <div class="oui-modal__header">
+            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit" data-ng-click="NashaPartitionAccessAddCtrl.dismiss()"></button>
+        </div>
+
+
+        <div class="oui-modal__body oui-modal__body_no-icon loading-spinner" data-ng-if="NashaPartitionAccessAddCtrl.loading">
             <spinner></spinner>
         </div>
-        <div class="modal-body" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
+        <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
+            <h2 class="oui-modal__title" data-translate="nasha_access_action_add"></h2>
+
             <div class="bottom-space-m12">
                 <oui-message type="info" message="{{ :: 'nasha_partitions_access_notice' | translate }}"></oui-message>
             </div>
@@ -55,7 +60,7 @@
             </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="oui-modal__footer">
             <button type="reset"
                 class="oui-button oui-button_secondary"
                 data-ng-click="NashaPartitionAccessAddCtrl.dismiss()"
