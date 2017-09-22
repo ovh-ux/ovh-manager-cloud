@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, Toast, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
+  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -38,9 +38,9 @@ angular.module("managerApp")
             self.loaders.snapshot = true;
             CloudProjectComputeVolumesOrchestrator.snapshotVolume(self.snapshot.volume, self.snapshot.name).then(function () {
                 $uibModalInstance.close(self.snapshot);
-                Toast.info($translate.instant("cpcv_snapshot_creation_info"), { hideAfter: 3 });
+                CloudMessage.info($translate.instant("cpcv_snapshot_creation_info"), { hideAfter: 3 });
             }, function (err) {
-                Toast.error([$translate.instant("cpcv_snapshot_creation_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpcv_snapshot_creation_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.loaders.snapshot = false;
             });

@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
 .controller("CloudProjectOpenstackUsersCtrl",
-    function (OvhApiCloud, $translate, Toast, $stateParams, Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken,
+    function (OvhApiCloud, $translate, CloudMessage, $stateParams, Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken,
               $filter, $q, $uibModal, $window, REDIRECT_URLS, CloudProjectRightService) {
 
         var self = this;
@@ -154,7 +154,7 @@ angular.module("managerApp")
                 }, function (err) {
                     if (err && err.status) {
                         self.table.user = null;
-                        Toast.error([$translate.instant("openstackusers_users_userlist_error"), err.data && err.data.message || ""].join(" "));
+                        CloudMessage.error([$translate.instant("openstackusers_users_userlist_error"), err.data && err.data.message || ""].join(" "));
                     }
                 }, function (userList) {
                     updateUserList(userList);
@@ -193,12 +193,12 @@ angular.module("managerApp")
                     self.toggle.openDeleteMultiConfirm = false;
                     OpenstackUsersPassword.put(self.projectId, newUser.id, newUser.password);
                     self.getUsers();
-                    Toast.success($translate.instant("openstackusers_users_userlist_add_submit_success"));
+                    CloudMessage.success($translate.instant("openstackusers_users_userlist_add_submit_success"));
                     self.order.reverse = true;
                     self.order.by = "id";
                     return self.getUsers();
                 }, function (err) {
-                    Toast.error([$translate.instant("openstackusers_users_userlist_add_submit_error"), err.data && err.data.message || ""].join(" "));
+                    CloudMessage.error([$translate.instant("openstackusers_users_userlist_add_submit_error"), err.data && err.data.message || ""].join(" "));
                 })["finally"](function () {
                     self.loaders.add.user = false;
                 });
@@ -216,9 +216,9 @@ angular.module("managerApp")
                         return user.username === currentUser.username;
                     });
                     OpenstackUsersPassword.put(self.projectId, user.id, newUser.password);
-                    Toast.success($translate.instant("openstackusers_users_regeneratepassword_success", currentUser));
+                    CloudMessage.success($translate.instant("openstackusers_users_regeneratepassword_success", currentUser));
                 }, function (err) {
-                    Toast.error([$translate.instant("openstackusers_users_regeneratepassword_error"), err.data && err.data.message || ""].join(" "));
+                    CloudMessage.error([$translate.instant("openstackusers_users_regeneratepassword_error"), err.data && err.data.message || ""].join(" "));
                 })["finally"](function () {
                     self.loaders.regeneratePassword = false;
                 });
@@ -270,9 +270,9 @@ angular.module("managerApp")
                     if (index !== -1) {
                         self.table.users.splice(index, 1);
                     }
-                    Toast.success($translate.instant("openstackusers_users_delete_success", user));
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", user));
                 }, function (err) {
-                    Toast.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "));
+                    CloudMessage.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "));
                 })["finally"](function () {
                     self.loaders.remove.user = false;
                 });
@@ -295,9 +295,9 @@ angular.module("managerApp")
 
             $q.allSettled(tabDelete).then(function () {
                 if (nbSelected > 1) {
-                    Toast.success($translate.instant("openstackusers_users_delete_success_plural", { nbUsers: nbSelected }));
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success_plural", { nbUsers: nbSelected }));
                 }else {
-                    Toast.success($translate.instant("openstackusers_users_delete_success"));
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success"));
                 }
             }, function (error) {
                 var tabError = error.filter(function (val) {
@@ -307,9 +307,9 @@ angular.module("managerApp")
                 self.toggle.openDeleteMultiConfirm = false;
                 self.table.autoSelected = _.pluck(tabError, "id");
                 if (tabError.length > 1) {
-                    Toast.error($translate.instant("openstackusers_users_delete_error_plural", { nbUsers: tabError.length }));
+                    CloudMessage.error($translate.instant("openstackusers_users_delete_error_plural", { nbUsers: tabError.length }));
                 } else {
-                    Toast.error($translate.instant("openstackusers_users_delete_error_one"));
+                    CloudMessage.error($translate.instant("openstackusers_users_delete_error_one"));
                 }
             })["finally"](function () {
                 self.getUsers();

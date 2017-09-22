@@ -1,19 +1,21 @@
-<div id="cloud_project_storage">
-
+<div class="cui-page">
     <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
 
-    <div class="col-xs-12" data-ng-if="storages !== null">
-        <div class="top-space-m20 bottom-space-m10">
-            <a class="ovh-button ovh-button_primary"
+    <div>
+        <cui-message-container data-messages="messages"></cui-message-container>
+    </div>
+
+    <section class="cui-page__content">
+
+        <div data-ng-if="storages !== null">
+            <a class="oui-button oui-button_secondary"
                data-ui-sref="iaas.pci-project.storage.add-container"
                write-right-required>
                 {{ 'storage_add_button'|translate }}
             </a>
-            <guide-component class="pull-right" data-guides="guides"></guide-component>
         </div>
-    </div>
 
-    <div class="col-xs-12">
+
         <div>
             <cloud-search data-on-search="search" data-on-clear="showAll" class="pull-right" data-ng-if="storages.length > 0"> </cloud-search>
             <h3>
@@ -58,5 +60,6 @@
              data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
              data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
         </div>
-    </div>
+
+    </section>
 </div>

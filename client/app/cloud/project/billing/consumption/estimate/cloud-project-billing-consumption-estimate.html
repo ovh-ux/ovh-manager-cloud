@@ -26,8 +26,9 @@
             <spinner></spinner>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && !BillingConsumptionEstimateCtrl.data.alert">
+            <div class="text-center">
             <button
-                class="btn btn-primary center-block"
+                class="oui-button oui-button_primary"
                 type="button"
                 data-ng-click="BillingConsumptionEstimateCtrl.openAlertAddModal()"
                 data-ng-disabled="false"
@@ -36,6 +37,7 @@
                 <i class="fa fa-bell"></i>
                 <span translate="cpbe_estimate_alert_create"></span>
             </button>
+            </div>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && BillingConsumptionEstimateCtrl.data.alert">
             <div class="consumption-chart">

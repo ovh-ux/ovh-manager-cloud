@@ -1,13 +1,13 @@
 class PrivateNetworkListCtrl {
     constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService, 
-                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, Toast, OvhApiMe, URLS, OvhApiVrack) {
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
             aapi: OvhApiVrack.Aapi(),
             modal: $uibModal
         };
-        this.toast = Toast;
+        this.CloudMessage = CloudMessage;
         this.$translate = $translate;
         this.serviceName = null;
         this.service = CloudProjectComputeInfrastructurePrivateNetworkService;
@@ -46,7 +46,7 @@ class PrivateNetworkListCtrl {
     $onInit () {
         this.resources.privateNetwork.resetAllCache();
         if (angular.isUndefined(this.$stateParams.projectId)) {
-            this.toast.error(this.$translate.instant("cpci_private_network_list_context_error"));
+            this.CloudMessage.error(this.$translate.instant("cpci_private_network_list_context_error"));
         } else {
             this.serviceName = this.$stateParams.projectId;
         }
@@ -134,7 +134,7 @@ class PrivateNetworkListCtrl {
                 });
             }).catch(() => {
                 this.collections.privateNetworks = [];
-                this.toast.error(this.$translate.instant("cpci_private_network_list_private_network_query_error"));
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_list_private_network_query_error"));
             }).finally(() => this.loaders.privateNetworks.query = false);        
     }
 

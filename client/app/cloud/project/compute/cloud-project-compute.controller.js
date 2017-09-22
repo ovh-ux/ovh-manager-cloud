@@ -1,12 +1,13 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeCtrl",
-    function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudProjectOrchestrator, CloudUserPref) {
+    function ($q, $state, $stateParams, OvhApiCloudProject, $scope, CloudMessage, CloudProjectOrchestrator, CloudUserPref) {
 
         var self = this;
-        var serviceName = $stateParams.projectId;
+        this.serviceName = $stateParams.projectId;
 
         this.loading = true;
+        this.messages = [];
 
         self.getRouteContext = function () {
             if ($state.includes("iaas.pci-project")) {
@@ -15,13 +16,23 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
             return '';
         };
 
+        self.refreshMessage = function () {
+            self.messages = self.messageHandler.getMessages();
+        }
+
+        self.loadMessage = function () {
+            CloudMessage.unSubscribe("iaas.pci-project.compute");
+            this.messageHandler = CloudMessage.subscribe("iaas.pci-project.compute", { onMessage: () => self.refreshMessage() });
+        }
+
         function init() {
             self.loading = true;
+            self.loadMessage();
             return shouldRedirectToProjectOverview()
                 .then(function(redirectToOverview) {
                     $scope.redirectToOverview = redirectToOverview;
                 })
-                ["finally"](function() {
+                .finally(function() {
                     self.loading = false;
                 });
         }
@@ -38,7 +49,7 @@ angular.module("managerApp").controller("CloudProjectComputeCtrl",
                 return result.hasTooManyInstances || result.hasTooManyIps;
             });
 
-            return CloudUserPref.get("cloud_project_" + serviceName + "_overview").then(function (params) {
+            return CloudUserPref.get("cloud_project_" + self.serviceName + "_overview").then(function (params) {
                 if (params && params.hide) {
                     return false;
                 }

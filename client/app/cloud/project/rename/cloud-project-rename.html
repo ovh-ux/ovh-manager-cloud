@@ -1,21 +1,21 @@
 <div class="cloud-project-rename">
     <div data-ng-if="!ctrl.editing.description">
-        <h2>{{ ctrl.model.description || ctrl.projectId }}
+        <h1 class="cui-page__header__title">{{ ctrl.model.description || ctrl.projectId }}
             <button
                 class="btn"
                 type="button"
                 data-ng-click="ctrl.editing.description = ctrl.model.description"
                 write-right-required>
                 <span class="sr-only" data-translate="cpb_details_project_rename"></span>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <i class="oui-icon oui-icon-pen_line oui-icon_small" aria-hidden="true"></i>
             </button>
-        </h2>
+        </h1>
 
     </div>
     <div data-ng-if="ctrl.loader.save">
-        <h2 class="menu-title">{{ ctrl.model.description }}
+        <h1 class="cui-page__header__title">{{ ctrl.model.description }}
             <spinner name="bubbles-fff-222-16"></spinner>
-        </h2>
+        </h1>
     </div>
     <div class="pull-left">
         <form
@@ -56,12 +56,4 @@
             </div>
         </form>
     </div>
-
-    <button type="button"
-            class="btn btn-default pull-right delete-btn"
-            data-ng-click="ctrl.showDeleteProjectModal()"
-            data-ng-disabled="projectDeleted" write-right-required>
-        <i class="glyphicon glyphicon-trash right-space-m8" aria-hidden="true"></i>
-        <span data-translate="cpb_details_project_delete"></span>
-    </button>
 </div>

@@ -10,7 +10,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
     var modalInstance;
     var translate;
     var $httpBackend;
-    var ToastSpy;
+    var CloudMessageSpy;
     var $state;
     var amountResources = 6;
     var now = moment().format();
@@ -29,7 +29,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         scope = $rootScope.$new();
         translate = $translate;
         $q = _$q_;
-        ToastSpy = {
+        CloudMessageSpy = {
             success: jasmine.createSpy("ToastSuccess"),
             error: jasmine.createSpy("ToastError")
         };
@@ -55,7 +55,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         projectDeleteController = $controller("CloudProjectDeleteCtrl", {
             $stateParams: { projectId: projectId },
             $scope: scope,
-            Toast: ToastSpy,
+            CloudMessage: CloudMessageSpy,
             $uibModalInstance: modalInstance,
             $state: $state,
             $translate: translate,
@@ -163,7 +163,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
             projectDeleteController.confirm();
             $httpBackend.flush();
 
-            expect(ToastSpy.success).toHaveBeenCalled();
+            expect(CloudMessageSpy.success).toHaveBeenCalled();
         });
 
         it("should display toast error on error", function () {
@@ -173,7 +173,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
             projectDeleteController.confirm();
             $httpBackend.flush();
 
-            expect(ToastSpy.error).toHaveBeenCalled();
+            expect(CloudMessageSpy.error).toHaveBeenCalled();
         });
     });
 
