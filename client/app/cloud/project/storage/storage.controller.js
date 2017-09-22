@@ -51,7 +51,6 @@ angular.module("managerApp").controller("RA.storageCtrl", [
 
         // table searching
         $scope.filter = {
-            enabled: false,
             name: ""
         };
 
@@ -121,18 +120,6 @@ angular.module("managerApp").controller("RA.storageCtrl", [
             $scope.storagesFiltered = $scope.order.filter($scope.storagesFiltered, $scope.order.by, $scope.order.reverse);
         };
 
-        $scope.filterStorages = function () {
-            if ($scope.filter.enabled) {
-                $scope.storagesFiltered = _.filter($scope.storages, function (storage) {
-                    return storage.name && storage.name.toLowerCase().indexOf($scope.filter.name.toLowerCase()) !== -1;
-                });
-            } else {
-                $scope.storagesFiltered = $scope.storages;
-                $scope.filter.name = "";
-            }
-            $scope.orderStorages();
-        };
-
         // Selection management
         function resetSelectionModel () {
             $scope.selectionModel = {
@@ -140,32 +127,6 @@ angular.module("managerApp").controller("RA.storageCtrl", [
                 allSelected: false
             };
         }
-
-        $scope.selectAll = function () {
-            if ($scope.selectionModel.allSelected) {
-                $scope.selectionModel.selected = $scope.storagesPaginated.reduce(function (selected, storage) {
-                    selected[storage.id] = true;
-                    return selected;
-                }, {});
-            } else {
-                resetSelectionModel();
-            }
-        };
-
-        $scope.select = function () {
-            function isAllSelected () {
-                return $scope.storagesPaginated.length === Object.values($scope.selectionModel.selected).filter(function (selected) { return selected; }).length;
-            }
-            $scope.selectionModel.allSelected = isAllSelected();
-        };
-
-        $scope.selectionCount = function () {
-            return _.countBy(Object.values($scope.selectionModel.selected))[true];
-        };
-
-        $scope.manySelected = function () {
-            return $scope.selectionCount() > 1;
-        };
 
         /* Delete (a) container(s) */
         $scope["delete"] = function (container) {
@@ -181,31 +142,6 @@ angular.module("managerApp").controller("RA.storageCtrl", [
                 }
             }).result.then(function () {
                 deleteContainer(container);
-            });
-        };
-
-        $scope.deleteAll = function () {
-            var idsToDelete = Object.keys($scope.selectionModel.selected).filter(function (id) {
-                return $scope.selectionModel.selected[id];
-            });
-            var storagesToDelete = $scope.storages.filter(function (storage) {
-                return _.includes(idsToDelete, storage.id);
-            });
-            $uibModal.open({
-                templateUrl: "app/cloud/project/storage/storage-delete-container/modal.html",
-                controller: "RA.storage.deleteContainer",
-                controllerAs: "RA.storage.deleteContainer",
-                windowClass: "cloud_storage_container_delete",
-                resolve: {
-                    storage: function () {
-                        return storagesToDelete;
-                    }
-                }
-            }).result.then(function () {
-                storagesToDelete.forEach(function (storage) {
-                    deleteContainer(storage);
-                });
-                resetSelectionModel();
             });
         };
 
