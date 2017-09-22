@@ -1,96 +1,56 @@
-<table class="ovh-table">
-    <thead class="ovh-table-header">
-        <tr class="cloud-table__row cloud-table__row_actions" data-ng-class="{hidden: !manySelected(), shown: manySelected() }">
-            <th class="ovh-table__cell ovh-table__cell_actions" colspan="6">
-                <span data-translate="storage_selected_count" data-translate-values="{count: selectionCount()}"></span>
-            </th>
-            <th class="ovh-table__cell ovh-table__cell_actions">
-                <button type="button" class="no-style pull-right" data-ng-click="deleteAll()" data-translate-attr="{ title: 'storage_delete_button' }">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </button>
-            </th>
-        </tr>
+<table class="oui-table oui-table_responsive">
+    <thead class="oui-table__headers">
         <tr>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_tiny">
-                <input type="checkbox" data-ng-change="selectAll()" data-ng-model="selectionModel.allSelected">
+            <th class="oui-table__header oui-table__cell_sortable"
+                data-ng-click="orderStorages('type')"
+                data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : order.by === 'type' && order.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : order.by === 'type' && order.reverse}">
+                <span data-translate="storage_type"></span>
             </th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_small">
-                <button class="no-style"
-                    type="button"
-                    data-ng-click="orderStorages('type')">
-                    <span data-translate="storage_type"></span>
-                    <span class="table-pretty-filter"
-                        data-ng-show="storagesPaginated.length">
-                        <i data-ng-show="order.by !== 'type'" class="fa fa-sort"></i>
-                        <i data-ng-show="order.by === 'type' && order.reverse" class="fa fa-sort-desc"></i>
-                        <i data-ng-show="order.by === 'type' && !order.reverse" class="fa fa-sort-asc"></i>
-                    </span>
-                </button>
+            <th class="oui-table__header oui-table__cell_sortable"
+                data-ng-click="orderStorages('name')"
+                data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : order.by === 'name' && order.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : order.by === 'name' && order.reverse}">
+                <span data-translate="storage_name"></span>
             </th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_large">
-                <button class="no-style"
-                    type="button"
-                    data-ng-click="orderStorages('name')">
-                    <span data-translate="storage_name"></span>
-                    <span class="table-pretty-filter"
-                        data-ng-show="storagesPaginated.length">
-                        <i data-ng-show="order.by !== 'name'" class="fa fa-sort"></i>
-                        <i data-ng-show="order.by === 'name' && order.reverse" class="fa fa-sort-desc"></i>
-                        <i data-ng-show="order.by === 'name' && !order.reverse" class="fa fa-sort-asc"></i>
-                    </span>
-                </button>
+            <th class="oui-table__header oui-table__cell_sortable" data-translate="storage_nb_files"></th>
+            <th class="oui-table__header oui-table__cell_sortable"
+                data-ng-click="orderStorages('region')"
+                data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : order.by === 'region' && order.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : order.by === 'region' && order.reverse}">
+                <span data-translate="storage_region"></span>
             </th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_large" data-translate="storage_nb_files"></th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_large">
-                <button class="no-style"
-                    type="button"
-                    data-ng-click="orderStorages('region')">
-                    <span data-translate="storage_region"></span>
-                    <span class="table-pretty-filter"
-                        data-ng-show="storagesPaginated.length">
-                        <i data-ng-show="order.by !== 'region'" class="fa fa-sort"></i>
-                        <i data-ng-show="order.by === 'region' && order.reverse" class="fa fa-sort-desc"></i>
-                        <i data-ng-show="order.by === 'region' && !order.reverse" class="fa fa-sort-asc"></i>
-                    </span>
-                </button>
-            </th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_medium" data-translate="storage_size"></th>
-            <th class="ovh-table-cell ovh-table-cell_header ovh-table-cell_large" write-right-required>&#160;</th>
+            <th class="oui-table__header" data-translate="storage_size"></th>
+            <th class="oui-table__header oui-table__cell_action" write-right-required>&#160;</th>
         </tr>
     </thead>
-    <tbody class="text-center" data-ng-if="storagesPaginated.length === 0 && filter.enabled">
+    <tbody class="oui-table__body" data-ng-if="storagesPaginated.length === 0 && filter.enabled">
         <tr>
             <td colspan="6">
                 <span data-translate="storage_search_not_found" />
             </td>
         </tr>
     </tbody>
-    <tbody data-ng-if="storagesPaginated.length > 0">
-        <tr data-ng-repeat="storage in storagesPaginated track by storage.id">
-            <td class="ovh-table-cell ovh-table-cell_tiny">
-                <input type="checkbox" data-ng-model="selectionModel.selected[storage.id]" data-ng-change="select()">
-            </td>
-            <td class="ovh-table-cell ovh-table-cell_tiny" data-title="{{ 'storage_type' | translate }}">
+    <tbody data-ng-if="storagesPaginated.length > 0" class="oui-table__body">
+        <tr data-ng-repeat="storage in storagesPaginated | filter:filter.name track by storage.id" class="oui-table__row" tabindex="0">
+            <td class="oui-table__cell" data-title="{{ 'storage_type' | translate }}">
                 <img class="storage-table-type-icon" data-ng-if="storage.shortcut && storage.shortcut !== 'error'"
                         data-ng-src="assets/images/add/storage/{{ storage.shortcut }}.svg" />
                 <spinner data-ng-if="!storage.shortcut"></spinner>
                 <i class="glyphicon glyphicon-exclamation-sign" data-ng-show="storage.shortcut === 'error'" />
             </td>
-            <td class="ovh-table-cell" data-title="{{ 'storage_name' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_name' | translate }}">
                 <a class="icn-link" data-ui-sref="iaas.pci-project.storage.detail-container({ storageId: storage.id})">
                     {{ storage.name  }}
                 </a>
             </td>
-            <td class="ovh-table-cell" data-title="{{ 'storage_nb_files' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_nb_files' | translate }}">
                 {{storage.storedObjects}}
             </td>
-            <td class="ovh-table-cell" data-title="{{ 'storage_region' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_region' | translate }}">
                 {{ 'region_' + storage.region | translate }}
             </td>
-            <td class="ovh-table-cell" data-title="{{ 'storage_size' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_size' | translate }}">
                 {{storage.storedBytes | RAUnitsBits}}
             </td>
-            <td class="ovh-table-cell" data-title="{{ 'storage_actions' | translate }}" write-right-required>
+            <td class="oui-table__cell oui-table__cell_action" data-title="{{ 'storage_actions' | translate }}" write-right-required>
                 <button type="button" class="no-style pull-right" data-ng-show="storage.status != 'deleting'" data-ng-click="delete(storage)">
                     <i class="glyphicon glyphicon-trash"></i>
                 </button>
