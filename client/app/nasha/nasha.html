@@ -5,12 +5,12 @@
             data-guides="NashaCtrl.guides">
         </cui-page-header>
 
+        <!-- init loading... -->
+        <cui-loader data-size="l" data-ng-show="NashaCtrl.loading"></cui-loader>
+
+        <cui-message-container data-messages="NashaCtrl.messages"></cui-message-container>
+
         <div class="cui-page__content">
-            <!-- init loading... -->
-            <cui-loader data-size="l" data-ng-show="NashaCtrl.loading"></cui-loader>
-
-            <cui-message-container data-messages="NashaCtrl.messages"></cui-message-container>
-
             <div data-ng-include="'app/nasha/information/nasha-information.html'"></div>
 
             <div data-ng-if="!NashaCtrl.loading && NashaCtrl.data.information.status !== 'expired'">
