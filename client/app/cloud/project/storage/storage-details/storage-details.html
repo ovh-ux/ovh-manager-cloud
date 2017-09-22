@@ -7,6 +7,8 @@
             <span data-translate="common_back" translate="storage_add_button_return"></span>
         </a>
 
+        <cui-page-content-title data-text="title"></cui-page-content-title>
+
         <button type="button"
             class="oui-button oui-button_secondary"
             data-ng-click="addObjects()"
@@ -14,13 +16,6 @@
             write-right-required>
                 {{ 'storage_object_add_multiple' | translate }}
         </button>
-
-        <div>
-            <h3>
-                <span class="main-color" data-translate="storage_object_title"></span> <small> - {{storage.name }}</small>
-                <spinner data-ng-show="loaders.details"> </spinner>
-            </h3>
-        </div>
 
         <div class="container-infos rows clearfix" data-ng-if="!loaders.details && !errors.notfound && !errors.notdefined.notdefined && !errors.notfound && !errors.notdefined.notfound">
             <div class="pull-left" data-ng-if="storage.shortcut">
@@ -66,10 +61,9 @@
 
         </div>
 
-        <div class="table-responsive-vertical shadow-z-1">
-            <div data-ng-if="storage.shortcut !== 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pcs-table.html'"></div>
-            <div data-ng-if="storage.shortcut === 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pca-table.html'"></div>
-        </div>
+        <div data-ng-if="storage.shortcut !== 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pcs-table.html'"></div>
+        <div data-ng-if="storage.shortcut === 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pca-table.html'"></div>
+
         <div class="table-pretty-pagination"
              data-ng-show="!loaders.details && !errors.notfound && !errors.notdefined && objects.length > 5"
              data-pagination-front
