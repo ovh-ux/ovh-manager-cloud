@@ -1,17 +1,21 @@
-<div class="nasha nasha-partition nasha-custom-snapshot-add">
+<div class="oui-modal oui-modal_shadow nasha-partition nasha-custom-snapshot-add">
     <form class="form"
           role="form"
           data-ng-submit="NashaPartitionCustomSnapshotAddCtrl.addCustomSnapshot()"
           name="nashaCustomSnapshotAddForm">
-        <div class="modal-header">
-            <h3 class="modal-title"
-                data-translate="nasha_snapshot_of"
-                data-translate-values="{ partitionName: NashaPartitionCustomSnapshotAddCtrl.data.partition.partitionName }">
-            </h3>
+        <div class="oui-modal__header">
+            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit" data-ng-click="NashaPartitionCustomSnapshotAddCtrl.dismiss()"></button>
         </div>
 
-        <div class="modal-body">
-            <p class="fs20">
+        <div class="oui-modal__body oui-modal__body_no-icon">
+            <h2 class="oui-modal__title"
+                data-translate="nasha_snapshot_of"
+                data-translate-values="{ partitionName: NashaPartitionCustomSnapshotAddCtrl.data.partition.partitionName }">
+            </h2>
+
+            <p>
                 {{ :: 'nasha_custom_snapshot_modal_title' | translate }}
                 <i class="fa fa-question-circle fs18 left-space-m4"
                 data-uib-tooltip="{{ :: 'nasha_custom_snapshot_modal_informations' | translate }}"
@@ -53,7 +57,7 @@
             </div>
         </div>
 
-        <div class="modal-footer">
+        <div class="oui-modal__footer">
             <button type="reset"
                 class="oui-button oui-button_secondary"
                 data-ng-disabled="NashaPartitionCustomSnapshotAddCtrl.saving"
