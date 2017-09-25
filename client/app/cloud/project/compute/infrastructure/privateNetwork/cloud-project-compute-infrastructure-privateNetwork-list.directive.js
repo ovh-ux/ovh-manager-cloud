@@ -78,6 +78,7 @@ class PrivateNetworkListCtrl {
 
     deletePrivateNetwork (privateNetwork) {
         const modal = this.resources.modal.open({
+            windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/delete/cloud-project-compute-infrastructure-privateNetwork-delete.html",
             controller: "CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl",
             controllerAs: "CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl",
