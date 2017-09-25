@@ -6,6 +6,9 @@
     </div>
 
     <section class="cui-page__content">
+        <cui-page-content-title data-text="'storage_title' | translate">
+            <spinner data-ng-show="loaders.storages"></spinner>
+        </cui-page-content-title>
 
         <div data-ng-if="storages !== null">
             <a class="oui-button oui-button_secondary"
@@ -13,15 +16,13 @@
                write-right-required>
                 {{ 'storage_add_button'|translate }}
             </a>
-        </div>
-
-
-        <div>
-            <cloud-search data-on-search="search" data-on-clear="showAll" class="pull-right" data-ng-if="storages.length > 0"> </cloud-search>
-            <h3>
-                <span class="main-color" data-translate="storage_title"></span>
-                <spinner data-ng-show="loaders.storages"> </spinner>
-            </h3>
+            <div class="pull-right" data-ng-if="storages.length > 0">
+                <input type="search"
+                class="oui-input"
+                data-ng-model="filter.name"
+                data-ng-model-options="{ debounce: 200 }"
+                data-translate-attr="{ placeholder: 'storage_search' }"/>
+            </div>
         </div>
 
         <promise-task-state></promise-task-state>
@@ -45,7 +46,7 @@
             <p data-translate="storage_no_storage"></p>
         </div>
 
-        <div class="table-responsive-vertical shadow-z-1" data-ng-if="!loaders.storages &&  storages.length > 0">
+        <div data-ng-if="!loaders.storages &&  storages.length > 0">
           <div data-ng-include="'app/cloud/project/storage/storage-containers/table.html'"></div>
         </div>
 
