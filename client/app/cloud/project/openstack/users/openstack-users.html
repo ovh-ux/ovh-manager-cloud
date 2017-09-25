@@ -256,9 +256,7 @@
 
 
                     <button class="no-style"
-                        data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = user.id"
-                        data-ng-disabled="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id ||
-                                          user.status !=='ok'"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.openDeleteUser(user)"
                         title="{{'openstackusers_users_userlist_delete_submit' | translate }}">
                         <i class="fa fa-trash right-space-m8"></i>
                     </button>
