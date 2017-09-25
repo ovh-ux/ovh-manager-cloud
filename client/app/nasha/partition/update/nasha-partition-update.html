@@ -10,25 +10,40 @@
             <div class="oui-modal__body-text">
                 <h2 class="oui-modal__title" data-translate="nasha_partitions_action_update"></h2>
 
-                <div class="top-space-m12 bottom-space-m12">
-                    <strong data-translate="nasha_partitions_name"></strong>
-                    <p data-ng-bind="NashaPartitionUpdateCtrl.data.partition.partitionName"></p>
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_name"
+                         class="oui-field__label oui-label"></label>
+                    <div class="oui-field__content">
+                        <p data-ng-bind="NashaPartitionUpdateCtrl.data.partition.partitionName"></p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label data-translate="nasha_partitions_size_in_Gb" for="inputPartitionSize"></label>
-                    <span data-translate="nasha_partitions_minimum_size"></span>
-                    <input type="number"
-                               class="input-medium form-control bottom-space-m12 partition-size"
-                               id="inputPartitionSize"
-                               min="10"
-                               max="{{NashaPartitionUpdateCtrl.data.nasha.zpoolSize}}"
-                               placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
-                               data-ng-change="NashaPartitionAddCtrl.checkSize()"
-                               data-ng-model="NashaPartitionUpdateCtrl.data.newSize"/>
+
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_size_in_Gb"
+                         class="oui-field__label oui-label"
+                        for="inputPartitionSize"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_1">
+                            <input type="number"
+                                   class="oui-input"
+                                   id="inputPartitionSize"
+                                   min="10"
+                                   max="{{NashaPartitionUpdateCtrl.data.nasha.zpoolSize}}"
+                                   placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
+                                   data-ng-change="NashaPartitionAddCtrl.checkSize()"
+                                   data-ng-model="NashaPartitionUpdateCtrl.data.newSize"/>
+                        </div>
+                        <div class="oui-field-helper"
+                            data-translate="nasha_partitions_minimum_size"></div>
+                    </div>
                 </div>
-                <div class="top-space-m12 bottom-space-m12">
-                    <strong data-translate="nasha_partitions_protocol"></strong>
-                    <p data-ng-bind="'nasha_partitions_protocol_' + NashaPartitionUpdateCtrl.data.partition.protocol | translate"></p>
+
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_protocol"
+                         class="oui-field__label oui-label"></label>
+                    <div class="oui-field__content">
+                        <p data-ng-bind="'nasha_partitions_protocol_' + NashaPartitionUpdateCtrl.data.partition.protocol | translate"></p>
+                    </div>
                 </div>
             </div>
         </div>

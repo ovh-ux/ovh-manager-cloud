@@ -22,38 +22,44 @@
                 data-tooltip-placement="right"></i>
             </p>
 
-            <div class="bottom-space-m12">
-                <oui-message type="info" message="{{ :: 'nasha_custom_snapshot_modal_informations_size' | translate }}"></oui-message>
-            </div>
+            <oui-message type="info" message="{{ :: 'nasha_custom_snapshot_modal_informations_size' | translate }}"></oui-message>
 
-            <div class="top-space-m12 bottom-space-m12">
-                <div class="form-group top-space-m20">
-                    <label data-translate="nasha_custom_snapshot_modal_label_snapshot_name" for="inputSnapshotName"></label>
-                    <div class="input-group bottom-space-m12 nasha-custom-snapshot-add">
-                        <span class="input-group-addon nasha-custom-snapshot-add-input__addon"
-                              id="snap-addon"
-                              data-ng-bind="::NashaPartitionCustomSnapshotAddCtrl.data.customSnapshot.prefix"></span>
-                        <input type="text"
-                               id="inputSnapshotName"
-                               name="inputSnapshotName"
-                               class="input-medium form-control nasha-custom-snapshot-add-input__text"
-                               data-ng-model="NashaPartitionCustomSnapshotAddCtrl.snapshotName"
-                               data-ng-maxlength="NashaPartitionCustomSnapshotAddCtrl.options.snapshotName.maxLength"
-                               aria-describedby="snap-addon"
-                               required />
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': nashaCustomSnapshotAddForm.inputSnapshotName.$invalid }">
+                <label data-translate="nasha_custom_snapshot_modal_label_snapshot_name"
+                    for="inputSnapshotName"
+                    class="oui-field__label oui-label"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <div class="oui-input-group">
+                            <button class="oui-button oui-button_small-width"
+                                disabled
+                                type="button"
+                                data-ng-bind="::NashaPartitionCustomSnapshotAddCtrl.data.customSnapshot.prefix"></button>
+                            <input type="text"
+                                id="inputSnapshotName"
+                                name="inputSnapshotName"
+                                class="oui-input"
+                                data-ng-class="{ 'oui-input_error': nashaCustomSnapshotAddForm.inputSnapshotName.$invalid }"
+                                data-ng-model="NashaPartitionCustomSnapshotAddCtrl.snapshotName"
+                                data-ng-maxlength="NashaPartitionCustomSnapshotAddCtrl.options.snapshotName.maxLength"
+                                aria-describedby="snap-addon"
+                                required />
+                        </div>
                     </div>
                 </div>
-                <div class="text-danger"
-                     data-ng-messages="nashaCustomSnapshotAddForm.inputSnapshotName.$error"
-                     data-ng-if="nashaCustomSnapshotAddForm.inputSnapshotName.$dirty">
-                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave">
-                        <span data-ng-message="maxlength"
-                              data-translate="nasha_custom_snapshot_modal_fail_snapshot_name_length"
-                              data-translate-values="{ maxlength: NashaPartitionCustomSnapshotAddCtrl.options.snapshotName.maxLength }"></span>
-                        <span data-ng-message="required"
-                              data-translate="nasha_custom_snapshot_modal_fail_snapshot_name_required"></span>
-                    </p>
-                </div>
+            </div>
+
+            <div class="text-danger"
+                 data-ng-messages="nashaCustomSnapshotAddForm.inputSnapshotName.$error"
+                 data-ng-if="nashaCustomSnapshotAddForm.inputSnapshotName.$dirty">
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave">
+                    <span data-ng-message="maxlength"
+                          data-translate="nasha_custom_snapshot_modal_fail_snapshot_name_length"
+                          data-translate-values="{ maxlength: NashaPartitionCustomSnapshotAddCtrl.options.snapshotName.maxLength }"></span>
+                    <span data-ng-message="required"
+                          data-translate="nasha_custom_snapshot_modal_fail_snapshot_name_required"></span>
+                </p>
             </div>
         </div>
 
