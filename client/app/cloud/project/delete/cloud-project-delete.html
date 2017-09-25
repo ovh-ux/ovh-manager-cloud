@@ -1,17 +1,17 @@
-<div>
-    <div class="modal-header">
-        <h3 class="modal-title">
-            <span><i class="glyphicon glyphicon-trash"></i></span>
-            <span data-translate="cloud_project_delete_title"></span>
-        </h3>
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"></button>
     </div>
 
-    <div class="modal-body">
-        <spinner class="block text-center top-space-m8 bottom-space-m8"
-                 data-ng-show="CloudProjectDeleteCtrl.loaders.init">
-        </spinner>
-        <div data-ng-if="!CloudProjectDeleteCtrl.loaders.init">
-            <div class="alert alert-danger text-center" data-ng-if="CloudProjectDeleteCtrl.error">
+    <div class="oui-modal__body" data-ng-if="CloudProjectDeleteCtrl.loaders.init">
+        <spinner></spinner>
+    </div>
+    <div class="oui-modal__body" data-ng-if="!CloudProjectDeleteCtrl.loaders.init">
+        <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title" data-translate="cloud_project_delete_title"></h2>
+
+            <div class="oui-modal__text alert alert-danger text-center" data-ng-if="CloudProjectDeleteCtrl.error">
                 <p>
                     <i class="fa fa-bug"></i>
                     <span data-translate="cloud_project_delete_error_title"></span>
@@ -43,101 +43,94 @@
                 </p>
             </div>
 
-            <div data-ng-if="!CloudProjectDeleteCtrl.error">
-                <div class="text-danger row">
-                    <div class="col-md-1 no-space text-center"><i class="fa fa-warning fs20"></i></div>
-                    <div class="col-md-11">
-                        <p data-translate="cloud_project_delete_info"></p>
-                        <p data-translate="cloud_project_delete_info_bill"
-                           data-translate-values="{ bill : CloudProjectDeleteCtrl.bill }">
-                        </p>
-                        <p class="bold"
-                           data-ng-if="CloudProjectDeleteCtrl.hasCredits"
-                           data-translate="cloud_project_delete_info_credits">
-                        </p>
-                    </div>
+            <div class="oui-modal__text" data-ng-if="!CloudProjectDeleteCtrl.error">
+                <div class="text-danger">
+                    <p data-translate="cloud_project_delete_info"></p>
+                    <p data-translate="cloud_project_delete_info_bill"
+                       data-translate-values="{ bill : CloudProjectDeleteCtrl.bill }">
+                    </p>
+                    <p class="bold"
+                       data-ng-if="CloudProjectDeleteCtrl.hasCredits"
+                       data-translate="cloud_project_delete_info_credits">
+                    </p>
+                </div>
+            </div>
 
-                </div>
-                <div class="top-space-m12"
-                     data-ng-if="CloudProjectDeleteCtrl.resources.instance ||
-                                    CloudProjectDeleteCtrl.resources.volumes ||
-                                    CloudProjectDeleteCtrl.resources.snapshots ||
-                                    CloudProjectDeleteCtrl.resources.storage ||
-                                    CloudProjectDeleteCtrl.resources.ipFailoverOvh ||
-                                    CloudProjectDeleteCtrl.resources.ipFailoverCloud">
-                    <h4 data-translate="cloud_project_delete_resource_warning_title"></h4>
-                    <ul>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.instance"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.instance"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_server' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_server' | translate : {amountInstance: CloudProjectDeleteCtrl.resources.instance})
-                                    }">
-                        </li>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.volume"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.volume"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_volume' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_volume' | translate : {amountVolume: CloudProjectDeleteCtrl.resources.volume})
-                                    }">
-                        </li>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.snapshot"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.snapshot"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_snapshot' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_snapshot' | translate : {amountSnapshot: CloudProjectDeleteCtrl.resources.snapshot})
-                                    }">
-                        </li>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.storage"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.storage"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_storage' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_storage' | translate : {amountStorage: CloudProjectDeleteCtrl.resources.storage})
-                                    }">
-                        </li>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.ipFailoverOvh"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.ipFailoverOvh"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_IPFailoverOvh' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_IPFailoverOvh' | translate : {amountIpFailoverOvh: CloudProjectDeleteCtrl.resources.ipFailoverOvh})
-                                    }">
-                        </li>
-                        <li data-ng-if="CloudProjectDeleteCtrl.resources.ipFailoverCloud"
-                            data-ng-pluralize
-                            data-count="CloudProjectDeleteCtrl.resources.ipFailoverCloud"
-                            data-when="{
-                                        'one': ('cloud_project_delete_resource_warning_one_IPFailoverCloud' | translate),
-                                        'other': ('cloud_project_delete_resource_warning_many_IPFailoverCloud' | translate : {amountIpFailoverCloud: CloudProjectDeleteCtrl.resources.ipFailoverCloud})
-                                    }">
-                        </li>
-                    </ul>
-                </div>
+            <div class="oui-modal__text"
+                 data-ng-if="CloudProjectDeleteCtrl.resources.instance ||
+                                CloudProjectDeleteCtrl.resources.volumes ||
+                                CloudProjectDeleteCtrl.resources.snapshots ||
+                                CloudProjectDeleteCtrl.resources.storage ||
+                                CloudProjectDeleteCtrl.resources.ipFailoverOvh ||
+                                CloudProjectDeleteCtrl.resources.ipFailoverCloud">
+                <h4 data-translate="cloud_project_delete_resource_warning_title"></h4>
+                <ul>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.instance"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.instance"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_server' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_server' | translate : {amountInstance: CloudProjectDeleteCtrl.resources.instance})
+                                }">
+                    </li>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.volume"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.volume"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_volume' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_volume' | translate : {amountVolume: CloudProjectDeleteCtrl.resources.volume})
+                                }">
+                    </li>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.snapshot"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.snapshot"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_snapshot' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_snapshot' | translate : {amountSnapshot: CloudProjectDeleteCtrl.resources.snapshot})
+                                }">
+                    </li>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.storage"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.storage"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_storage' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_storage' | translate : {amountStorage: CloudProjectDeleteCtrl.resources.storage})
+                                }">
+                    </li>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.ipFailoverOvh"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.ipFailoverOvh"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_IPFailoverOvh' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_IPFailoverOvh' | translate : {amountIpFailoverOvh: CloudProjectDeleteCtrl.resources.ipFailoverOvh})
+                                }">
+                    </li>
+                    <li data-ng-if="CloudProjectDeleteCtrl.resources.ipFailoverCloud"
+                        data-ng-pluralize
+                        data-count="CloudProjectDeleteCtrl.resources.ipFailoverCloud"
+                        data-when="{
+                                    'one': ('cloud_project_delete_resource_warning_one_IPFailoverCloud' | translate),
+                                    'other': ('cloud_project_delete_resource_warning_many_IPFailoverCloud' | translate : {amountIpFailoverCloud: CloudProjectDeleteCtrl.resources.ipFailoverCloud})
+                                }">
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div class="modal-footer">
-        <div class="clearfix">
-            <button type="submit" class="btn btn-primary pull-right"
-                data-ng-click="CloudProjectDeleteCtrl.confirm()"
-                data-ng-disabled="CloudProjectDeleteCtrl.loaders.init ||
-                                  CloudProjectDeleteCtrl.loaders.deleting ||
-                                  CloudProjectDeleteCtrl.error">
-                <i class="glyphicon glyphicon-trash right-space-m8"></i>
-                <span data-translate="cloud_project_delete_confirm"></span>
-                <spinner data-ng-show="CloudProjectDeleteCtrl.loaders.deleting"></spinner>
-            </button>
-            <button type="reset"
-                    class="btn pull-left btn-default"
-                    data-ng-click="CloudProjectDeleteCtrl.cancel()">
-                <i class="glyphicon glyphicon-remove"></i>
-                <span data-translate="common_cancel"></span>
-            </button>
-        </div>
+    <div class="oui-modal__footer">
+        <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-click="CloudProjectDeleteCtrl.cancel()">
+            <span data-translate="common_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
+            data-ng-click="CloudProjectDeleteCtrl.confirm()"
+            data-ng-disabled="CloudProjectDeleteCtrl.loaders.init ||
+                              CloudProjectDeleteCtrl.loaders.deleting ||
+                              CloudProjectDeleteCtrl.error">
+            <span data-translate="cloud_project_delete_confirm"></span>
+            <spinner data-ng-show="CloudProjectDeleteCtrl.loaders.deleting"></spinner>
+        </button>
     </div>
 </div>
