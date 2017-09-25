@@ -1,28 +1,25 @@
 <span  data-ng-if="$ctrl.volumeConsumptionDetails.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
 
-<div data-ng-if="$ctrl.volumeConsumptionDetails.length > 0" class="table-responsive-vertical volumeList">
-    <table class="table table-pretty table-hover table-striped no-space table-relative">
-        <thead>
-            <th>
+<div data-ng-if="$ctrl.volumeConsumptionDetails.length > 0" class="volumeList">
+    <table class="oui-table oui-table_responsive">
+        <thead class="oui-table__headers">
+            <th class="oui-table__header">
                 <span data-translate="cpbc_volume_col_name"></span>
             </th>
-            <th class="text-right">
-                <span data-uib-tooltip="{{ :: 'cpbc_volume_col_consumption_tooltip' | translate }}">
-                    <span data-translate="cpbc_volume_col_consumption"></span>
-                    <i class="fa fa-question-circle pointer-help"></i>
-                </span>
+            <th class="oui-table__header text-right">
+                <span data-translate="cpbc_volume_col_consumption"></span>
             </th>
         </thead>
-        <tbody data-ng-if="$ctrl.loading">
-            <tr>
+        <tbody data-ng-if="$ctrl.loading" class="oui-table__body">
+            <tr class="oui-table__row">
                 <td colspan="2" class="text-center">
                     <spinner></spinner>
                 </td>
             </tr>
         </tbody>
-        <tbody data-ng-if="!$ctrl.loading">
-            <tr data-ng-repeat="volume in $ctrl.volumeConsumptionDetails | orderBy: 'name' track by volume.volumeId">
-                <td data-title="{{ :: 'cpbc_volume_col_name' | translate }}" class="word-break"
+        <tbody data-ng-if="!$ctrl.loading" class="oui-table__body">
+            <tr data-ng-repeat="volume in $ctrl.volumeConsumptionDetails | orderBy: 'name' track by volume.volumeId" class="oui-table__row">
+                <td data-title="{{ :: 'cpbc_volume_col_name' | translate }}" class="oui-table__cell word-break"
                     data-responsive-popover="'components/cloud/project/billing/details-popover/volume-details-popover.html'"
                     data-popover-class="details-popover"
                     data-popover-is-open="$ctrl.DetailsPopoverService.isCurrentDetails(volume)"
@@ -32,7 +29,7 @@
                     data-ng-click="$ctrl.DetailsPopoverService.setCurrentDetails(volume)">
                     <span data-ng-bind=" ::  volume.name"></span>
                 </td>
-                <td class="text-right" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
+                <td class="oui-tablle__cell text-right" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
                     <span data-ng-bind=" ::  volume.totalPrice"></span>
                     <i class="fa fa-question-circle left-space-m4"
                        data-uib-tooltip="{{ :: 'cpbc_volume_consumption_tooltip_part1' | translate }}{{ :: 'cpbc_volume_consumption_tooltip_part2' | translate : {amount: volume.amount} }}"
