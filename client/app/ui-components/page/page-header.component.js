@@ -6,6 +6,7 @@ angular.module("managerApp")
                     data-text="$ctrl.titleText"
                     data-cloud-project-title="$ctrl.cloudProjectTitle"
                     data-subtitle-text="$ctrl.subtitleText"
+                    data-information="$ctrl.information"
                     data-guides="$ctrl.guides"></cui-page-header-title>
                 <ng-transclude></ng-transclude>
             </header>
@@ -15,6 +16,7 @@ angular.module("managerApp")
             titleText: "<",
             cloudProjectTitle: "<",
             subtitleText: "<",
+            information: "<",
             guides: "<"
         }
     }).component("cuiPageHeaderTitle", {
