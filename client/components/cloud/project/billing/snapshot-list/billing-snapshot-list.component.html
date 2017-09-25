@@ -1,37 +1,34 @@
 <span  data-ng-if="$ctrl.snapshots.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
 
-<div data-ng-if="$ctrl.snapshots.length > 0" class="table-responsive-vertical snapshotList">
-    <table class="table table-pretty table-hover table-striped no-space table-relative">
-        <thead>
-            <th>
+<div data-ng-if="$ctrl.snapshots.length > 0" class="snapshotList">
+    <table class="oui-table oui-table_responsive">
+        <thead class="oui-table_headers">
+            <th class="oui-table__header">
                 <span data-translate="cpbc_snapshot_col_location"></span>
             </th>
-            <th>
+            <th class="oui-table__header">
                 <span data-translate="cpbc_snapshot_col_type"></span>
             </th>
-            <th class="text-right">
-                <span data-uib-tooltip="{{ :: 'cpbc_snapshot_col_usage_tooltip' | translate }}">
-                    <span data-translate="cpbc_snapshot_col_usage"></span>
-                    <i class="fa fa-question-circle pointer-help"></i>
-                </span>
+            <th class="oui-table__header text-right">
+                <span data-translate="cpbc_snapshot_col_usage"></span>
             </th>
         </thead>
-        <tbody data-ng-if="$ctrl.loading">
+        <tbody data-ng-if="$ctrl.loading" class="oui-table__body">
             <tr>
                 <td colspan="3" class="text-center">
                     <spinner></spinner>
                 </td>
             </tr>
         </tbody>
-        <tbody data-ng-if="!$ctrl.loading">
-             <tr data-ng-repeat="snapshot in $ctrl.snapshots | orderBy: 'region' track by snapshot.region">
-                <td data-title="{{ :: 'cpbc_snapshot_col_location' | translate }}">
+        <tbody data-ng-if="!$ctrl.loading" class="oui-table__body">
+             <tr data-ng-repeat="snapshot in $ctrl.snapshots | orderBy: 'region' track by snapshot.region" class="oui-table__row">
+                <td data-title="{{ :: 'cpbc_snapshot_col_location' | translate }}" class="oui-table__cell">
                     <span data-translate="{{ :: 'cloud_common_region_' + snapshot.region | translate }}"></span>
                 </td>
-                <td data-title="{{ :: 'cpbc_snapshot_col_type' | translate }}">
+                <td data-title="{{ :: 'cpbc_snapshot_col_type' | translate }}" class="oui-table__cell">
                     <span data-translate="cpbc_snapshot_type_instance"></span>
                 </td>
-                <td class="text-right" data-title="{{ :: 'cpbc_snapshot_col_usage' | translate }}">
+                <td class="oui-table__cell text-right" data-title="{{ :: 'cpbc_snapshot_col_usage' | translate }}">
                     <span>{{ snapshot.totalPrice.toFixed(2)  + ' ' + $ctrl.currencySymbol }}</span>
                     <i class="fa fa-question-circle left-space-m4"
                        data-uib-tooltip="{{ :: $ctrl.getSnapshotPriceInfoTooltip(snapshot) }}"
