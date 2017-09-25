@@ -227,10 +227,10 @@ angular.module("managerApp")
 
         self.downloadOpenrcFile = function (currentUser) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/openstack/users/openrc/openstack-users-openrc.html",
                 controller: "OpenstackUsersOpenrcCtrl",
                 controllerAs: "OpenstackUsersOpenrcCtrl",
-                //size: 'lg',
                 resolve: {
                     openstackUser: function () {
                         return currentUser;
@@ -240,15 +240,32 @@ angular.module("managerApp")
         };
         self.generateToken = function (currentUser) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/openstack/users/token/openstack-users-token.html",
                 controller: "CloudProjectOpenstackUsersTokenCtrl",
                 controllerAs: "CloudProjectOpenstackUsersTokenCtrl",
-                size: "lg",
                 resolve: {
                     openstackUser: function () {
                         return currentUser;
                     }
                 }
+            });
+        };
+        self.openDeleteUser = function (currentUser) {
+            $uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/openstack/users/delete/openstack-users-delete.html",
+                controller: "CloudProjectOpenStackUserDeleteCtrl",
+                controllerAs: "CloudProjectOpenStackUserDeleteCtrl",
+                resolve: {
+                    openstackUser: () => currentUser,
+                    serviceName: () => self.projectId
+                },
+                successHandler: () => {
+                    self.removeFromList(currentUser.id),
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", user))
+                },
+                errorHandler: (err) => CloudMessage.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "))
             });
         };
 
@@ -261,68 +278,12 @@ angular.module("managerApp")
             return OpenstackUsersPassword.get(self.projectId, currentUser.id);
         };
 
-        self.deleteUser = function (user) {
-            if (!self.loaders.remove.user) {
-                self.loaders.remove.user = true;
-                return deleteUser(user.id).then(function () {
-
-                    var index = _.findIndex(self.table.users, { id: user.id });
-                    if (index !== -1) {
-                        self.table.users.splice(index, 1);
-                    }
-                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", user));
-                }, function (err) {
-                    CloudMessage.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "));
-                })["finally"](function () {
-                    self.loaders.remove.user = false;
-                });
+        self.removeFromList = function () {
+            var index = _.findIndex(self.table.users, { id: user.id });
+            if (index !== -1) {
+                self.table.users.splice(index, 1);
             }
         };
-
-        self.deleteMultiUsers = function () {
-            var tabDelete = [],
-                nbSelected  = self.getSelectedCount();
-
-            self.loaders.remove.userMulti = true;
-
-            angular.forEach(self.table.selected, function (value, userId) {
-                tabDelete.push(deleteUser(userId).then(function () {
-                    return null;
-                }, function (error) {
-                    return $q.reject({ id: userId, error: error.data });
-                }));
-            });
-
-            $q.allSettled(tabDelete).then(function () {
-                if (nbSelected > 1) {
-                    CloudMessage.success($translate.instant("openstackusers_users_delete_success_plural", { nbUsers: nbSelected }));
-                }else {
-                    CloudMessage.success($translate.instant("openstackusers_users_delete_success"));
-                }
-            }, function (error) {
-                var tabError = error.filter(function (val) {
-                    return val !== null;
-                });
-
-                self.toggle.openDeleteMultiConfirm = false;
-                self.table.autoSelected = _.pluck(tabError, "id");
-                if (tabError.length > 1) {
-                    CloudMessage.error($translate.instant("openstackusers_users_delete_error_plural", { nbUsers: tabError.length }));
-                } else {
-                    CloudMessage.error($translate.instant("openstackusers_users_delete_error_one"));
-                }
-            })["finally"](function () {
-                self.getUsers();
-                self.loaders.remove.userMulti = false;
-            });
-        };
-
-        function deleteUser (userId) {
-            return OvhApiCloud.Project().User().Lexi().remove({
-                serviceName: self.projectId,
-                userId: userId
-            }).$promise;
-        }
 
         init();
 
