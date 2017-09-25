@@ -6,7 +6,6 @@ angular.module("managerApp")
                     data-text="$ctrl.titleText"
                     data-cloud-project-title="$ctrl.cloudProjectTitle"
                     data-subtitle-text="$ctrl.subtitleText"
-                    data-information="$ctrl.information"
                     data-guides="$ctrl.guides"></cui-page-header-title>
                 <ng-transclude></ng-transclude>
             </header>
@@ -16,7 +15,6 @@ angular.module("managerApp")
             titleText: "<",
             cloudProjectTitle: "<",
             subtitleText: "<",
-            information: "<",
             guides: "<"
         }
     }).component("cuiPageHeaderTitle", {
@@ -33,15 +31,11 @@ angular.module("managerApp")
             <h2 class="cui-page-header__subtitle"
                 data-ng-if="$ctrl.subtitleText"
                 data-ng-bind="$ctrl.subtitleText"></h2>
-            <p class="cui-page-header__information"
-                data-ng-if="$ctrl.information"
-                data-ng-bind="$ctrl.information"></p>
         `,
         bindings: {
             text: "<",
             cloudProjectTitle: "<",
             subtitleText: "<",
-            information: "<",
             guides: "<"
         }
     });
