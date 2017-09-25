@@ -12,40 +12,48 @@
 
         <p>
             {{ :: 'nasha_snapshot_frequency' | translate }}
-            <i class="fa fa-question-circle fs18 left-space-m4"
+            <i class="fa fa-question-circle fs18 ml-2"
                data-uib-tooltip="{{ :: 'nasha_snapshot_informations' | translate }}"
                data-tooltip-placement="right"></i>
         </p>
 
-        <div class="bottom-space-m12">
-            <oui-message type="info" message="{{ :: 'nasha_snapshot_informations_size' | translate }}"></oui-message>
-        </div>
+        <oui-message type="info" message="{{ :: 'nasha_snapshot_informations_size' | translate }}"></oui-message>
 
-        <div class="space-m12">
-        <table class="table top-space-m20">
-            <tbody data-ng-show="NashaPartitionSnapshotCtrl.loading">
-            <tr>
-                <td colspan="1" class="space-m8">
-                    <spinner></spinner>
-                </td>
-            </tr>
-            </tbody>
+        <div class="m-3">
+            <table class="table">
+                <tbody data-ng-show="NashaPartitionSnapshotCtrl.loading">
+                    <tr>
+                        <td class="text-center">
+                            <oui-loader class="d-inline-block" size="m" inline></oui-loader>
+                        </td>
+                    </tr>
+                </tbody>
 
-            <tbody data-ng-hide="NashaPartitionSnapshotCtrl.loading">
-            <tr data-ng-repeat="snapshot in NashaPartitionSnapshotCtrl.snapshotEnum">
-                <td class="top-space-p0 bottom-space-p0">
-                    <div class="checkbox left-space-p8">
-                        <input type="checkbox"
-                               id="{{ 'frequency_' + $index}}"
-                               data-ng-checked="NashaPartitionSnapshotCtrl.isScheduled(snapshot)"
-                               data-ng-click="NashaPartitionSnapshotCtrl.changeSchedule(snapshot, !NashaPartitionSnapshotCtrl.isScheduled(snapshot))">
-                        </input>
-                        <label for="{{ 'frequency_' + $index}}" class="table-data" data-translate="{{'nasha_snapshot_'+ snapshot}}"></label>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                <tbody data-ng-hide="NashaPartitionSnapshotCtrl.loading">
+                    <tr data-ng-repeat="snapshot in NashaPartitionSnapshotCtrl.snapshotEnum">
+                        <td class="py-3">
+                            <div class="oui-checkbox m-0">
+                                <input class="oui-checkbox__input"
+                                    id="{{ 'frequency_' + $index }}"
+                                    name="{{ 'frequency_' + $index }}"
+                                    type="checkbox"
+                                    data-ng-checked="NashaPartitionSnapshotCtrl.isScheduled(snapshot)"
+                                    data-ng-click="NashaPartitionSnapshotCtrl.changeSchedule(snapshot, !NashaPartitionSnapshotCtrl.isScheduled(snapshot))">
+                                <label class="oui-checkbox__label-container m-0"
+                                    for="{{ 'frequency_' + $index }}">
+                                    <span class="oui-checkbox__label"
+                                        data-translate="{{'nasha_snapshot_'+ snapshot}}"></span>
+                                    <span class="oui-checkbox__icon">
+                                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
