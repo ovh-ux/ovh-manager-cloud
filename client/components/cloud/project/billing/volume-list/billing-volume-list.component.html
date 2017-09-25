@@ -29,7 +29,7 @@
                     data-ng-click="$ctrl.DetailsPopoverService.setCurrentDetails(volume)">
                     <span data-ng-bind=" ::  volume.name"></span>
                 </td>
-                <td class="oui-tablle__cell text-right" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
+                <td class="oui-table__cell text-right" data-title="{{ :: 'cpbc_volume_col_consumption' | translate }}">
                     <span data-ng-bind=" ::  volume.totalPrice"></span>
                     <i class="fa fa-question-circle left-space-m4"
                        data-uib-tooltip="{{ :: 'cpbc_volume_consumption_tooltip_part1' | translate }}{{ :: 'cpbc_volume_consumption_tooltip_part2' | translate : {amount: volume.amount} }}"
