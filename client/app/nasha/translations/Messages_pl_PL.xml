@@ -9,7 +9,7 @@
    <translation id="nasha_dashboard_capacity" qtlid="75822">Pojemność całkowita</translation>
    <translation id="nasha_dashboard_capacity_delay_text" qtlid="369334">Aktualizacja informacji dla przestrzeni dyskowej nie jest natychmiastowa.</translation>
    <translation id="nasha_dashboard_creation_date" qtlid="26419">Data utworzenia</translation>
-   <translation id="nasha_dashboard_expiration_date" qtlid="33010">Data wygasania usługi</translation>
+   <translation id="nasha_dashboard_expiration_date" qtlid="33010">Data wygasania</translation>
    <translation id="nasha_dashboard_monitoring" qtlid="31666">Monitoring</translation>
    <translation id="nasha_partition" qtlid="120835">Partycje</translation>
    <translation id="nasha_expired" qtlid="345390">Twoja usługa NAS-HA nie została odnowiona. Może to być związane z decyzją o nie odnawianiu usługi lub z opóźnieniem w płatności.</translation>

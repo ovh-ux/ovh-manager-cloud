@@ -82,9 +82,9 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
 
     self.addAccess = function () {
         self.openModal("app/nasha/partition/access/add/nasha-partition-access-add.html", "NashaPartitionAccessAddCtrl", {
-                serviceName: self.data.nasha.serviceName,
-                partition: self.data.partition
-            });
+            serviceName: self.data.nasha.serviceName,
+            partition: self.data.partition
+        });
     };
 
     self.openModal = function (template, controller, params) {

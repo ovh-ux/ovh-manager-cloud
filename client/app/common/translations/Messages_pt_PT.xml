@@ -34,7 +34,7 @@
    <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
    <translation id="common_menu_telecom" qtlid="135827">Telecom</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
-   <translation id="common_menu_v3" qtlid="135931">Interface de Cliente anterior</translation>
+   <translation id="common_menu_v3" qtlid="135931">Interface do Cliente antiga</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Parceiros</translation>
    <translation id="common_menu_billing" qtlid="32950">Faturação</translation>
@@ -66,7 +66,7 @@
    <translation id="common_remove" qtlid="323093">Retirar</translation>
    <translation id="edit" qtlid="37875">Modificar</translation>
    <translation id="delete" qtlid="2414">Eliminar</translation>
-   <translation id="common_back" qtlid="4118">Regresso</translation>
+   <translation id="common_back" qtlid="4118">Voltar atrás</translation>
    <translation id="error" qtlid="26407">Erro</translation>
    <translation id="soon" qtlid="250043">Disponível em breve</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Mais informações</a>.</translation>
@@ -151,7 +151,7 @@
    <translation id="payment_type_creditCard" qtlid="89809">Cartão bancário</translation>
    <translation id="payment_type_deposit" qtlid="139728">Depósito</translation>
    <translation id="payment_type_edinar" qtlid="139741">e-DINAR</translation>
-   <translation id="payment_type_fidelityPoints" qtlid="139754">Pontos de fidelidade</translation>
+   <translation id="payment_type_fidelityPoints" qtlid="139754">Pontos de fidelização</translation>
    <translation id="payment_type_free" qtlid="130495">Gratuito</translation>
    <translation id="payment_type_ideal" qtlid="139767">iDEAL</translation>
    <translation id="payment_type_mandat" qtlid="139780">Mandat cash</translation>
@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">O seu cartão de crédito padrão expirou. Aceda <a href="{{urlBillingSection}}">à secção de faturação</a> para o atualizar.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Ocorreram os seguintes erros</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Informação importante</translation>
 
    <translation id="common_global_error" qtlid="433345">ocorreu um erro durante a operação : {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">A oeração foi concretizada com sucesso</translation>

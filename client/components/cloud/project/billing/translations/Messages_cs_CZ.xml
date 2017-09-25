@@ -50,7 +50,7 @@
    <translation id="cpbc_snapshot_type_instance" qtlid="364277">Image serverů</translation>
 
    <translation id="cpbc_volume_detail_title" qtlid="352841">Přídavné disky</translation>
-   <translation id="cpbc_volume_col_name" qtlid="3818">Jméno</translation>
+   <translation id="cpbc_volume_col_name" qtlid="3818">Příjmení</translation>
    <translation id="cpbc_volume_col_consumption" qtlid="25639">Využití</translation>
    <translation id="cpbc_volume_col_consumption_tooltip" qtlid="245987">Fakturace na začátku následujícího měsíce.</translation>
    <translation id="cpbc_volume_consumption_tooltip_part1" qtlid="364173">Vyúčtování je Vám vystavováno v závislosti na aktuálním využití diskového prostoru (výpočet probíhá každou hodinu a je zaokrouhlován směrem k nejbližší hodině).</translation>

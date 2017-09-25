@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Jūsų banko kortelė, naudojama pagal nutylėjimą, nustojo galioti. Norėdami ją atnaujinti, eikite į <a href="{{urlBillingSection}}">sąskaitų ir mokėjimų skiltį</a>.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Įvyko šios klaidos</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Svarbi informacija</translation>
 
    <translation id="common_global_error" qtlid="433345">Klaida vykdant operaciją: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operacija atlikta sėkmingai.</translation>
@@ -475,7 +475,7 @@
 
    <translation id="common_tile_subscription" qtlid="28891">Abonementas</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Pasiūlymas</translation>
-   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis naujinimas</translation>
+   <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis galiojimo pratęsimas</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontaktai</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Sukūrimo data</translation>
 

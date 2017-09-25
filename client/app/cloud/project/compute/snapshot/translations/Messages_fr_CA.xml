@@ -27,7 +27,7 @@
    <translation id="cpc_snapshot_type_imagewindows" qtlid="273544">Image Windows</translation>
    <translation id="cpc_snapshot_type_imagelinux" qtlid="273557">Image Linux</translation>
    <translation id="cpc_snapshot_type_volume" qtlid="405616">Volume Snapshot</translation>
-   <translation id="cpc_snapshot_status" qtlid="364433">Etat</translation>
+   <translation id="cpc_snapshot_status" qtlid="364433">État</translation>
    <translation id="cpc_snapshot_status_active" qtlid="246624">Prêt</translation>
    <translation id="cpc_snapshot_status_queued" qtlid="246637">Snapshot planifié</translation>
    <translation id="cpc_snapshot_status_saving" qtlid="29647">En cours de création</translation>

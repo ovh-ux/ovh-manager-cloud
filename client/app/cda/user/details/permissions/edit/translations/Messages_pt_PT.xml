@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cda_user_details_permissions_list_edit_btn_back" qtlid="4118">Regresso</translation>
+   <translation id="cda_user_details_permissions_list_edit_btn_back" qtlid="4118">Voltar atrás</translation>
    <translation id="cda_user_details_permissions_list_edit_title" qtlid="354600">Modificar as permissões</translation>
    <translation id="cda_user_details_permissions_list_username" qtlid="41782">Nome do utilização</translation>
 

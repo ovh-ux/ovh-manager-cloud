@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Su tarjeta bancaria por defecto ha expirado. Acceda a la sección de <a href="{{urlBillingSection}}">facturación</a> para actualizarla.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Se han producido los siguientes errores</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Información importante</translation>
 
    <translation id="common_global_error" qtlid="433345">Se ha producido un error durante la operación: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">La operación se ha realizado correctamente.</translation>
@@ -470,7 +470,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Condiciones de contratación</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">He leído y acepto las condiciones de contratación.</translation>
    <translation id="common_login" qtlid="2174">Conectar </translation>
-   <translation id="common_modal_ok" qtlid="224880">Aceptar</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Cerrar</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Suscripción</translation>

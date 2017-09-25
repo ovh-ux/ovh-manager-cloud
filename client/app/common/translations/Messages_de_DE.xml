@@ -462,7 +462,7 @@
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">Ihre hinterlegte Kreditkarte ist abgelaufen. Bitte begeben Sie sich in den Bereich <a href="{{urlBillingSection}}">Abrechnung</a>, um Ihre Daten zu aktualisieren. </translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Die folgenden Fehler sind aufgetreten</translation>
-   <translation id="message_container_multiple_warning">Informations importantes</translation>
+   <translation id="message_container_multiple_warning" qtlid="435415">Wichtige Informationen</translation>
 
    <translation id="common_global_error" qtlid="433345">Bei dem Vorgang ist ein Fehler aufgetreten: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Der Vorgang wurde erfolgreich beendet.</translation>

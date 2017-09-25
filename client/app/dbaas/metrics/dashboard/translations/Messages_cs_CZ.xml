@@ -8,7 +8,7 @@
    <translation id="metrics_tiles_usage_title" qtlid="30382">Použito</translation>
 
    <translation id="metrics_tiles_configuration_title" qtlid="4406">Konfigurace</translation>
-   <translation id="metrics_tiles_configuration_name" qtlid="3818">Jméno</translation>
+   <translation id="metrics_tiles_configuration_name" qtlid="3818">Příjmení</translation>
    <translation id="metrics_tiles_configuration_retention" qtlid="415532">Retence</translation>
    <translation id="metrics_tiles_configuration_retention_month" qtlid="40222">měsíc</translation>
    <translation id="metrics_tiles_configuration_datacenter" qtlid="30802">Datacentrum</translation>

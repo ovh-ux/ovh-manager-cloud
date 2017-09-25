@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">Serwer wirtualny (instancja) {0} został utworzony</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">Nazwa klucza SSH</translation>
    <translation id="add_key_success" qtlid="243133">Klucz SSH dodany</translation>
-   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Przestrzeń utworzona</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Wystąpił błąd podczas tworzenia kontenera.</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Klucz SSH o tej nazwie już istnieje</translation>

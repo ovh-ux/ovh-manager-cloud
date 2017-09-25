@@ -6,13 +6,13 @@
    <translation id="cda_user_delete_button_text" qtlid="2414">Odstranit</translation>
    <translation id="cda_user_edit_button_text" qtlid="354730">Voir les permissions</translation>
 
-   <translation id="cda_user_table_col_username" qtlid="3818">Jméno</translation>
+   <translation id="cda_user_table_col_username" qtlid="3818">Příjmení</translation>
    <translation id="cda_user_table_col_key" qtlid="104326">Klíč</translation>
    <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
    <translation id="cda_user_table_col_actions" qtlid="72809">Akce</translation>
 
    <translation id="cda_user_add_title" qtlid="7150">Přidat uživatele</translation>
-   <translation id="cda_user_add_username_label" qtlid="3818">Jméno</translation>
+   <translation id="cda_user_add_username_label" qtlid="3818">Příjmení</translation>
 
    <translation id="cda_user_add_username_required" qtlid="354288">Zadejte prosím název.</translation>
    <translation id="cda_user_add_username_pattern" qtlid="354301">Le nom ne peut contenir d'espaces.</translation>

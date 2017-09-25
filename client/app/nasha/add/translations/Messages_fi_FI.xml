@@ -24,7 +24,7 @@ NAS-HA -tuotteiden listan latauksessa.</translation>
    <translation id="nasha_order_datacenter" qtlid="345260">Konesalin valinta</translation>
    <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
-   <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasbourg</translation>
+   <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasburg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Tapahtui virhe tilauksen vahvistuksessa.</translation>
    <translation id="nasha_order_error" qtlid="345286">Tapahtui virhe tilauksen käsittelyn yhteydessä.</translation>
