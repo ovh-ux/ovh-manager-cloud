@@ -89,6 +89,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
         self.openAddCredit = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit.html",
                 controller: "CloudProjectBillingVouchersAddcreditCtrl",
                 controllerAs: "CloudProjectBillingVouchersAddcreditCtrl"
