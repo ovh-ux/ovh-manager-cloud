@@ -7,8 +7,10 @@
         </div>
 
 
-        <div class="oui-modal__body oui-modal__body_no-icon loading-spinner" data-ng-if="NashaPartitionAccessAddCtrl.loading">
-            <spinner></spinner>
+        <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="NashaPartitionAccessAddCtrl.loading">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
         <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
             <h2 class="oui-modal__title" data-translate="nasha_access_action_add"></h2>

@@ -6,52 +6,87 @@
                 aria-label="Exit" data-ng-click="NashaPartitionZFSOptionsCtrl.dismiss()"></button>
         </div>
 
-        <div class="oui-modal__body oui-modal__body_no-icon loading-spinner nasha-zfs__body_loading" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
-            <spinner></spinner>
+        <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
+            <div class="text-center">
+                <oui-loader class="d-inline-block" size="m" inline></oui-loader>
+            </div>
         </div>
 
         <div class="oui-modal__body oui-modal__body_no-icon nasha-modal-zfs nasha-zfs__body" data-ng-if="!NashaPartitionZFSOptionsCtrl.loaders">
             <h2 class="oui-modal__title" data-translate="nasha_partitions_zfs_title"></h2>
 
-            <fieldset>
-                <div class="checkbox">
-                    <legend for="nasha-zfs-atime" data-translate="nasha_partitions_zfs_atime_label"></legend>
-                    <label for="nasha-zfs-atime">
-                        <input id="nasha-zfs-atime"
+            <div class="oui-field">
+                <label data-translate="nasha_partitions_zfs_atime_label"
+                    for="nasha-zfs-atime"
+                    class="oui-field__label oui-label"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <div class="oui-checkbox">
+                            <input id="nasha-zfs-atime"
                                type="checkbox"
+                               class="oui-checkbox__input"
                                data-ng-model="NashaPartitionZFSOptionsCtrl.model.atime">
-                        <span class="bold nasha-zfs__label-title"
-                              data-translate="nasha_partitions_zfs_atime_disable"></span>
-                        <span data-translate="nasha_partitions_zfs_atime_description"></span>
-                    </label>
+                            <label class="oui-checkbox__label-container" for="nasha-zfs-atime">
+                                <span class="oui-checkbox__label"
+                                    data-translate="nasha_partitions_zfs_atime_disable"></span>
+                                <span class="oui-checkbox__description"
+                                    data-translate="nasha_partitions_zfs_atime_description"></span>
+                                <span class="oui-checkbox__icon">
+                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </fieldset>
-            <fieldset>
-                <div class="form-group">
-                    <legend for="nasha-zfs-recordsize" data-translate="nasha_partitions_zfs_recordsize_label"></legend>
-                    <select id="nasha-zfs-recordsize"
-                            class="form-control"
-                            data-ng-options="recordsize.size as recordsize.label + ' ' + (recordsize.isDefault ? ('nasha_partitions_zfs_recordsize_default' | translate) : '') for recordsize in NashaPartitionZFSOptionsCtrl.enums.recordsize"
-                            data-ng-model="NashaPartitionZFSOptionsCtrl.model.recordsize">
-                    </select>
-                </div>
-            </fieldset>
-            <fieldset>
-                <div class="form-group">
-                    <legend data-translate="nasha_partitions_zfs_sync_label"></legend>
-                    <div class="radio">
-                        <label data-ng-repeat="sync in NashaPartitionZFSOptionsCtrl.enums.sync">
-                            <input type="radio"
-                                   name="syncs"
-                                   data-ng-model="NashaPartitionZFSOptionsCtrl.model.sync"
-                                   data-ng-value="sync.label" />
-                            <span class="bold nasha-zfs__label-title ">{{'nasha_partitions_zfs_sync_' + sync.label | translate}}</span>
-                            <span>{{'nasha_partitions_zfs_sync_description_' + sync.label | translate}}</span>
-                            <span class="bold nasha-zfs__label_warning" data-ng-if="sync.warning">{{'nasha_partitions_zfs_sync_description_' + sync.label + '_warning' | translate}}</span>
+            </div>
+
+            <div class="oui-field">
+                <label data-translate="nasha_partitions_zfs_recordsize_label"
+                    for="nasha-zfs-recordsize"
+                    class="oui-field__label oui-label"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <label class="oui-select">
+                            <select id="nasha-zfs-recordsize"
+                                name="nasha-zfs-recordsize"
+                                class="oui-select__input"
+                                data-ng-options="recordsize.size as recordsize.label + ' ' + (recordsize.isDefault ? ('nasha_partitions_zfs_recordsize_default' | translate) : '') for recordsize in NashaPartitionZFSOptionsCtrl.enums.recordsize"
+                                data-ng-model="NashaPartitionZFSOptionsCtrl.model.recordsize">
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </label>
                     </div>
                 </div>
-            </fieldset>
+            </div>
+
+            <div class="oui-field">
+                <label data-translate="nasha_partitions_zfs_sync_label"
+                    class="oui-field__label oui-label"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <div class="oui-radio"
+                            data-ng-repeat="sync in NashaPartitionZFSOptionsCtrl.enums.sync">
+                            <input type="radio"
+                                class="oui-radio__input"
+                                id="syncs-{{sync.label}}"
+                                name="syncs"
+                                data-ng-model="NashaPartitionZFSOptionsCtrl.model.sync"
+                                data-ng-value="sync.label" />
+                            <label class="oui-radio__label-container" for="syncs-{{sync.label}}">
+                                <span class="oui-radio__label"
+                                    data-ng-bind="'nasha_partitions_zfs_sync_' + sync.label | translate"></span>
+                                <span class="oui-radio__description">
+                                    <span data-ng-bind="'nasha_partitions_zfs_sync_description_' + sync.label | translate"></span>
+                                    <span class="d-inline-block" data-ng-if="sync.warning"
+                                        data-ng-bind="'nasha_partitions_zfs_sync_description_' + sync.label + '_warning' | translate"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="oui-modal__footer">

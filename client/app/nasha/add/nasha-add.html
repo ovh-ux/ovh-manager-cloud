@@ -1,129 +1,175 @@
-<div class="nasha-add container-fluid top-space-m16 right-space-m20 left-space-m20">
+<div class="cui-page">
+    <cui-page-header
+        data-title-text="'nasha_order_title' | translate">
+        <p data-translate="nasha_order_warning"
+            data-ng-if="!NashaAddCtrl.data.completedOrder"></p>
+    </cui-page-header>
 
     <!-- init loading... -->
-    <div data-ng-if="NashaAddCtrl.loaders.init" class="top-space-p20">
-        <spinner></spinner>
-        <span data-translate="common_loading"></span>
+    <div class="text-center" data-ng-if="NashaAddCtrl.loaders.init">
+        <oui-loader size="l" class="d-inline-block"></oui-loader>
     </div>
 
-    <div data-ng-if="!NashaAddCtrl.loaders.init">
-        <div class="page-header">
-            <a class="btn no-style fs16 pull-right"
-                data-ng-href="{{ NashaAddCtrl.guideUrlNasha }}"
-                title="{{ ::('nasha_order_guide_title' | translate) + ' (' + ('nasha_order_new_window' | translate) + ')' }}"
-                data-ng-if="NashaAddCtrl.guideUrlNasha"
-                target="_blank">
-                <i class="fa fa-book fa-lg"></i>
-                <span data-translate="nasha_order_guide_title"></span>
-            </a>
-            <h1 data-translate="nasha_order_title"></h1>
-        </div>
-
-        <p data-translate="nasha_order_warning" data-ng-if="!NashaAddCtrl.data.completedOrder"></p>
+    <div class="cui-page__content" data-ng-if="!NashaAddCtrl.loaders.init">
 
         <!--Step One-->
-        <div class="page-header top-space-m20 bottom-space-m0" data-ng-if="!NashaAddCtrl.data.completedOrder">
-            <h3 class="bottom-space-m0" data-translate="nasha_order_step_1_configure"></h3>
+        <div data-ng-if="!NashaAddCtrl.data.completedOrder">
+            <h2 class="oui-header_2" data-translate="nasha_order_step_1_configure"></h3>
         </div>
 
-        <div class="row" data-ng-if="!NashaAddCtrl.data.completedOrder">
-            <form name="nashaOrderForm" class="ovh-form-flat col-md-4"
+        <div data-ng-if="!NashaAddCtrl.data.completedOrder">
+            <form name="nashaOrderForm"
                   data-ng-submit="NashaAddCtrl.validateOrder()" novalidate>
 
-                <div class="row left-space-m0 top-space-m12">
-                    <div class="col-xs-11 left-space-p0">
-                        <label class="row left-space-m0" data-translate="nasha_order_datacenter" for="selectDatacenter"></label>
-                        <select class="form-control row left-space-m0"
-                                id="selectDatacenter"
-                                data-ng-model="NashaAddCtrl.data.selectedDatacenter"
-                                data-ng-change="NashaAddCtrl.onDataCenterSelectionChanged()"
-                                data-ng-options="datacenter as ('nasha_order_datacenter_' + datacenter | translate) for datacenter in NashaAddCtrl.enums.datacenters">
-                        </select>
+                <div class="oui-field">
+                    <label class="oui-field__label oui-label"
+                        data-translate="nasha_order_datacenter"
+                        for="selectDatacenter"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <label class="oui-select">
+                                <select id="selectDatacenter"
+                                    name="select"
+                                    class="oui-select__input"
+                                    data-ng-model="NashaAddCtrl.data.selectedDatacenter"
+                                    data-ng-change="NashaAddCtrl.onDataCenterSelectionChanged()"
+                                    data-ng-options="datacenter as ('nasha_order_datacenter_' + datacenter | translate) for datacenter in NashaAddCtrl.enums.datacenters">
+                                    <option value="" data-translate="nasha_order_select_placeholder"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down"
+                                    aria-hidden="true"></i>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row left-space-m0 top-space-m12">
-                    <div class="col-xs-11 left-space-p0">
-                        <label class="row left-space-m0" data-translate="nasha_order_name" for="selectModel"></label>
-                        <select class="form-control space-m0"
-                                id="selectModel"
-                                data-ng-model="NashaAddCtrl.data.selectedModel"
-                                data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.models || !NashaAddCtrl.enums.models.length"
-                                data-ng-change="NashaAddCtrl.onModelSelectionChanged()"
-                                data-ng-options="model as ('nasha_order_nasha_' + model | translate) + ' - ' + NashaAddCtrl.data.modelsPriceInfo[model].price.text + '/' + ('nas_order_month' | translate) for model in NashaAddCtrl.enums.models">
-                        </select>
+                <div class="oui-field">
+                    <label class="oui-field__label oui-label"
+                        data-translate="nasha_order_name"
+                        for="selectModel"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <label class="oui-select">
+                                <select id="selectModel"
+                                    name="select"
+                                    class="oui-select__input"
+                                    data-ng-model="NashaAddCtrl.data.selectedModel"
+                                    data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.models || !NashaAddCtrl.enums.models.length"
+                                    data-ng-change="NashaAddCtrl.onModelSelectionChanged()"
+                                    data-ng-options="model as ('nasha_order_nasha_' + model | translate) + ' - ' + NashaAddCtrl.data.modelsPriceInfo[model].price.text + '/' + ('nas_order_month' | translate) for model in NashaAddCtrl.enums.models">
+                                    <option value="" data-translate="nasha_order_select_placeholder"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down"
+                                    aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <div class="oui-field-helper"
+                            data-ng-if="NashaAddCtrl.loaders.models">
+                            <oui-loader size="s"></oui-loader>
+                        </div>
                     </div>
-                    <spinner class="col-xs-1 top-space-m20 left-space-p0" data-ng-if="NashaAddCtrl.loaders.models"></spinner>
                 </div>
 
-                <div class="row left-space-m0 top-space-m12">
-                    <div class="col-xs-11 left-space-p0">
-                        <label data-translate="nasha_order_duration" class="row left-space-m0" for="selectDuration"></label>
-                        <select class="form-control"
-                                id="selectDuration"
-                                data-ng-model="NashaAddCtrl.data.selectedDuration"
-                                data-ng-disabled="!NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models"
-                                data-ng-change="NashaAddCtrl.data.orderValidated = false"
-                                data-ng-options="duration as duration + ' ' + ('nas_order_month' | translate) for duration in NashaAddCtrl.enums.availableDurationsForSelection">
-                        </select>
+                <div class="oui-field">
+                    <label class="oui-field__label oui-label"
+                        data-translate="nasha_order_duration"
+                        for="selectDuration"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <label class="oui-select">
+                                <select id="selectDuration"
+                                    name="select"
+                                    class="oui-select__input"
+                                    data-ng-model="NashaAddCtrl.data.selectedDuration"
+                                    data-ng-disabled="!NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models"
+                                    data-ng-change="NashaAddCtrl.data.orderValidated = false"
+                                    data-ng-options="duration as duration + ' ' + ('nas_order_month' | translate) for duration in NashaAddCtrl.enums.availableDurationsForSelection">
+                                    <option value="" data-translate="nasha_order_select_placeholder"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down"
+                                    aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <div class="oui-field-helper"
+                            data-ng-if="NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models">
+                            <oui-loader size="s"></oui-loader>
+                        </div>
                     </div>
-                    <spinner class="col-xs-1 top-space-m20 left-space-p0" data-ng-if="NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models"></spinner>
                 </div>
 
-                <div class="row space-m0">
+                <div>
                     <button type="submit"
+                            data-ng-show="!NashaAddCtrl.loaders.loading"
                             class="oui-button oui-button_primary"
                             data-ng-class="{'validate-btn': NashaAddCtrl.data.orderValidated}"
                             data-translate="common_validate"
                             data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || !NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDuration || NashaAddCtrl.data.orderValidated">
                     </button>
-                    <spinner class="top-space-m8 top-space-p20 col-xs-1" data-ng-if="NashaAddCtrl.loaders.loading"></spinner>
+                    <oui-loader size="s" inline data-ng-show="NashaAddCtrl.loaders.loading"></oui-loader>
                 </div>
             </form>
         </div>
 
         <!--Step two-->
-        <div class="page-header top-space-m20 bottom-space-m0" data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
-            <h3 class="bottom-space-m0" data-translate="nasha_order_step_2_order"></h3>
+        <div data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
+            <h2 class="oui-header_2" data-translate="nasha_order_step_2_order"></h3>
         </div>
-        <div class="row top-space-m20" data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
-            <div class="col-md-6">
 
-                <ul class="top-space-m20 left-space-p0">
-                    <li class="top-space-m8" data-ng-repeat="detail in NashaAddCtrl.data.order.details track by detail.description">
+        <div data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
+            <div class="oui-list mb-2">
+                <ul class="oui-list__items">
+                    <li class="oui-list__item"
+                        data-ng-repeat="detail in NashaAddCtrl.data.order.details track by detail.description">
                         {{detail.description + " : "}} <strong> {{detail.totalPrice.text}} </strong>
                     </li>
                 </ul>
+            </div>
 
-                <p data-translate="nasha_order_bc_price_HT" data-translate-values="{priceHT:NashaAddCtrl.data.order.prices.withoutTax.text}" class="top-space-m20"></p>
-                <p data-translate="nasha_order_bc_price_TTC" data-translate-values="{priceTTC:NashaAddCtrl.data.order.prices.withTax.text}" class="top-space-m8"></p>
+            <div class="oui-list mb-4">
+                <ul class="oui-list__items">
+                    <li class="oui-list__item"
+                        data-translate="nasha_order_bc_price_HT"
+                        data-translate-values="{priceHT:NashaAddCtrl.data.order.prices.withoutTax.text}"></li>
+                    <li class="oui-list__item"
+                        data-translate="nasha_order_bc_price_TTC"
+                        data-translate-values="{priceTTC:NashaAddCtrl.data.order.prices.withTax.text}"></li>
+                </ul>
+            </div>
 
-                <div class="top-space-m20 checkbox" data-ng-if="NashaAddCtrl.data.order.contracts">
-                    <!-- label: hack to allow checkbox selection when clicking the checkbox. -->
-                    <label class="pointer no-select left-space-p0" for="validateContract" >
-                        <flat-checkbox>
-                            <input type="checkbox" id="validateContract"
-                                name="validateContract"
-                                data-ng-model="NashaAddCtrl.contractAgree"/>
-                        </flat-checkbox>
-                        <label class="pointer left-space-m4 bottom-space-m0" for="validateContract" data-translate="nasha_order_accept_contract" style="display: inline;"></label>
-                    </label>
-                    <ul class="top-space-m12 left-space-p0">
-                        <li data-ng-repeat="contract in NashaAddCtrl.data.order.contracts track by contract.name" class="space-m8">
-                            <a target="_blank" class="nasha__link contract-link" data-ng-href="{{contract.url}}">
-                                {{contract.name}}&nbsp;<i class="contract-link-icon ovh-font ovh-font-newtab left-space-m8"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="oui-checkbox mb-1" data-ng-if="NashaAddCtrl.data.order.contracts">
+                <input class="oui-checkbox__input"
+                    id="validateContract"
+                    name="validateContract"
+                    type="checkbox"
+                    data-ng-model="NashaAddCtrl.contractAgree">
+                <label class="oui-checkbox__label-container" for="validateContract">
+                    <span class="oui-checkbox__label" data-translate="nasha_order_accept_contract"></span>
+                    <span class="oui-checkbox__icon">
+                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
+                </label>
+            </div>
 
-                <button type="button"
-                        class="oui-button oui-button_primary"
-                        data-translate="nasha_order_generate_order"
-                        data-ng-disabled="!NashaAddCtrl.contractAgree || NashaAddCtrl.loaders.loading"
-                        data-ng-click="NashaAddCtrl.completeOrder()">
-                </button>
-           </div>
+            <div class="oui-list mb-4 pl-4">
+                <ul class="oui-list__items">
+                    <li class="oui-list__item"
+                        data-ng-repeat="contract in NashaAddCtrl.data.order.contracts track by contract.name">
+                        <a target="_blank" class="nasha__link contract-link" data-ng-href="{{contract.url}}">
+                            {{contract.name}}&nbsp;<i class="contract-link-icon ovh-font ovh-font-newtab left-space-m8"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <button type="button"
+                    class="oui-button oui-button_primary"
+                    data-translate="nasha_order_generate_order"
+                    data-ng-disabled="!NashaAddCtrl.contractAgree || NashaAddCtrl.loaders.loading"
+                    data-ng-click="NashaAddCtrl.completeOrder()">
+            </button>
         </div>
     </div>
 </div>

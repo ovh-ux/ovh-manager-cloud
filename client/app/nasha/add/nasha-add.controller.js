@@ -77,7 +77,7 @@ class NashaAddCtrl {
 
     refreshDuration () {
         this.data.orderValidated = false;
-        this.data.selectedDuration = "";
+        this.data.selectedDuration = null;
         if (this.data.selectedDatacenter && this.data.selectedModel) {
             this.enums.availableDurationsForSelection = [];
             this.loaders.durations = true;
