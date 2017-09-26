@@ -31,7 +31,7 @@
    <translation id="cpc_snapshot_status_active" qtlid="246624">Listo</translation>
    <translation id="cpc_snapshot_status_queued" qtlid="246637">Snapshot planificado</translation>
    <translation id="cpc_snapshot_status_saving" qtlid="29647">En cours de création</translation>
-   <translation id="cpc_snapshot_status_killed" qtlid="45508">En erreur</translation>
+   <translation id="cpc_snapshot_status_killed" qtlid="45508">En error</translation>
    <translation id="cpc_snapshot_status_deleted" qtlid="223710">Eliminada</translation>
    <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Eliminando</translation>
    <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">No se puede eliminar el snapshot porque se está utilizando al menos en un servidor.</translation>
@@ -39,8 +39,8 @@
    <translation id="cpc_snapshot_status_creating" qtlid="29647">En cours de création</translation>
    <translation id="cpc_snapshot_status_available" qtlid="246624">Listo</translation>
    <translation id="cpc_snapshot_status_deleting" qtlid="152778">Eliminando</translation>
-   <translation id="cpc_snapshot_status_error" qtlid="45508">En erreur</translation>
-   <translation id="cpc_snapshot_status_error_deleting" qtlid="45508">En erreur</translation>
+   <translation id="cpc_snapshot_status_error" qtlid="45508">En error</translation>
+   <translation id="cpc_snapshot_status_error_deleting" qtlid="45508">En error</translation>
 
    <translation id="cpc_snapshot_empty" qtlid="246650">Aún no se ha creado el snapshot.</translation>
    <translation id="cpc_snapshot_empty_search" qtlid="246663">Ningún snapshot corresponde a su criterio de búsqueda.</translation>
