@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="announcement_summit_title">Inscrivez-vous dès aujourd'hui au OVH Summit Paris!</translation>
-   <translation id="announcement_summit_stop_showing">Ne plus afficher ce message</translation>
-   <translation id="announcement_summit_cancel">Fermer</translation>
-   <translation id="announcement_summit_register">Je participe !</translation>
+   <translation id="announcement_summit_title" qtlid="437245">Inscrivez-vous dès aujourd'hui au OVH Summit Paris!</translation>
+   <translation id="announcement_summit_stop_showing" qtlid="286825">Diese Nachricht nicht mehr anzeigen</translation>
+   <translation id="announcement_summit_cancel" qtlid="4670">Schließen</translation>
+   <translation id="announcement_summit_register" qtlid="437258">Je participe !</translation>
 </translations>
