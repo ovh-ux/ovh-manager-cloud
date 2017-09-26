@@ -7,7 +7,7 @@ angular.module("managerApp")
         templateUrl  : "app/home/home.html",
         controller   : "HomeCtrl",
         controllerAs : "HomeCtrl",
-        translations : ["common", "home"],
+        translations : ["common", "home", "home/announcement"],
         atInternet : { ignore : true }
       });
 });
