@@ -121,6 +121,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
 
         self.openAlertAddModal = function () {
             var modal = $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/billing/consumption/estimate/alert/add/cloud-project-billing-consumption-estimate-alert-add.html",
                 controller: "CloudProjectBillingConsumptionEstimateAlertAddCtrl",
                 controllerAs: "CloudProjectBillingConsumptionEstimateAlertAddCtrl",
