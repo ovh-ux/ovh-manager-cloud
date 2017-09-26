@@ -57,7 +57,9 @@ class HomeCtrl {
             },
             errorHandler: stop => {
                 if (stop) {
-                    this.CloudUserPref.set("ANNOUNCEMENT_STOP_SUMMIT2017", true)
+                    this.CloudUserPref.set("ANNOUNCEMENT_STOP_SUMMIT2017", {
+                        stop: true
+                    })
                         .then(() => {
                             this.redirectToPage();
                         });
@@ -69,17 +71,21 @@ class HomeCtrl {
     }
 
     $onInit () {
-        //If summit, showAnnouncement
         const summitEnds = moment("2017-10-18");
         const today = moment();
-        this.CloudUserPref.get("ANNOUNCEMENT_STOP_SUMMIT2017")
-            .then(stopShow => {
-                if (summitEnds > today && (_.isEmpty(stopShow) || !stopShow)) {
-                    this.showAnnouncement();
-                } else {
-                    this.redirectToPage();
-                }
-            });
+        if (summitEnds > today) {
+            this.CloudUserPref.get("ANNOUNCEMENT_STOP_SUMMIT2017")
+                .then(stopShow => {
+                    if (_.isEmpty(stopShow) || stopShow.stop === false) {
+                        this.showAnnouncement();
+                    } else {
+                        this.redirectToPage();
+                    }
+                });
+        } else {
+            this.redirectToPage();
+        }
+
     }
 }
 
