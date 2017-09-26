@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectComputeSnapshotCtrl",
-    function (OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
+    function ($uibModal, OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
               OvhApiCloudProjectImage, $translate, CloudMessage, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
               $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
@@ -382,78 +382,24 @@ angular.module("managerApp")
         }, 99);
     };
 
-    self.deleteSnapshot = function (snapshot) {
-        if (!self.loaders.remove.snapshot) {
-            self.loaders.remove.snapshot = true;
-            var promiseDelete = snapshot.type==="volume" ?
-                deleteVolumeSnapshot(snapshot.id) : deleteSnapshot(snapshot.id);
-            promiseDelete.then(function () {
+    self.openDeleteSnapshot = function (snapshot) {
+        $uibModal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/snapshot/delete/compute-snapshot-delete.html",
+            controller: "CloudProjectComputeSnapshotDeleteCtrl",
+            controllerAs: "CloudProjectComputeSnapshotDeleteCtrl",
+            resolve: {
+                serviceName: () => serviceName,
+                snapshot: () => snapshot
+            },
+            successHandler: () => {
                 self.getSnapshot(true);
                 CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
                 pollSnapshots();
                 pollVolumeSnapshots();
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.snapshot = false;
-            });
-        }
-    };
-
-    self.deleteMultiSnapshot = function () {
-        var tabDelete = [],
-            nbSelected  = self.getSelectedCount();
-
-        self.loaders.remove.snapshotMulti = true;
-
-        angular.forEach(self.table.selected, function (value, snapshotId){
-            var snapshot = _.find(self.table.snapshot, {id : snapshotId});
-            if (snapshot) {
-                var promiseDelete = snapshot.type==="volume" ?
-                    deleteVolumeSnapshot(snapshot.id) : deleteSnapshot(snapshot.id);
-                tabDelete.push(promiseDelete.then(function(){
-                    return null;
-                }, function (error){
-                    return $q.reject({id : snapshotId, error : error.data});
-                }));
-            }
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '))
         });
-
-        $q.allSettled(tabDelete).then(function (){
-            if (nbSelected > 1) {
-                CloudMessage.success($translate.instant('cpc_snapshot_delete_success_plural', {nbSnapshots: nbSelected}));
-            }else {
-                CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
-            }
-        }, function (error){
-            var tabError = error.filter(function (val) {
-                return val !== null;
-            });
-            self.table.autoSelected = _.pluck(tabError, 'id');
-            if (tabError.length > 1) {
-                CloudMessage.error($translate.instant('cpc_snapshot_delete_error_plural', {nbSnapshots: tabError.length}));
-            } else {
-                CloudMessage.error($translate.instant('cpc_snapshot_delete_error_one'));
-            }
-        })['finally'](function(){
-            //self.table.selected = {};
-            self.getSnapshot(true);
-            self.loaders.remove.snapshotMulti = false;
-        });
-    };
-
-    function deleteSnapshot (snapshotId) {
-        return OvhApiCloudProjectSnapshot.Lexi().remove({
-            serviceName : serviceName,
-            snapshotId: snapshotId
-        }).$promise;
-    }
-
-    function deleteVolumeSnapshot (snapshotId) {
-        return OvhApiCloudProjectVolumeSnapshot.Lexi().delete({
-            serviceName : serviceName,
-            snapshotId: snapshotId
-        }).$promise;
     }
 
     init();
