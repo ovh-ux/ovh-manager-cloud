@@ -53,6 +53,7 @@ class HomeCtrl {
             },
             successHandler: () => {
                 this.$window.open(this.summit.link[locale], "_blank");
+                this.redirectToPage();
             },
             errorHandler: stop => {
                 if (stop) {
