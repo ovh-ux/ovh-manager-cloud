@@ -45,19 +45,17 @@
             </div>
             <div class="text-center top-space-p20" write-right-required>
                 <button
-                    class="btn btn-primary"
+                    class="oui-button oui-button_secondary"
                     type="button"
                     data-ng-click="BillingConsumptionEstimateCtrl.openAlertAddModal()"
                     data-ng-disabled="BillingConsumptionEstimateCtrl.loaders.deleteAlert"
                     title="{{ :: cpbe_estimate_alert_edit | translate }}">
-                    <i class="fa fa-bell"></i>
                     <span translate="cpbe_estimate_alert_edit"></span>
                 </button>
-                <button class="btn btn-danger"
+                <button class="oui-button oui-button_secondary"
                         type="button"
                         data-ng-click="BillingConsumptionEstimateCtrl.deleteAlert()"
                         data-ng-disabled="BillingConsumptionEstimateCtrl.loaders.deleteAlert">
-                    <i class="fa fa-trash"></i>
                     <span data-translate="cpbe_estimate_alert_delete"></span>
                     <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></spinner>
                 </button>
