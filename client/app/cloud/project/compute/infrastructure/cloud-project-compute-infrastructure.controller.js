@@ -383,6 +383,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openMonthlyConfirmation = function (vm) {
             var modalInstance = $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm/cloud-project-compute-infrastructure-virtual-machine-monthlyConfirm.html",
                 controller: "CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm",
                 controllerAs: "CPCIVirtualmachineMonthlyConfirm",
