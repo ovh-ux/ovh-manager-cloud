@@ -356,6 +356,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openSnapshotWizard = function (vm) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html',
                 controller: 'CloudProjectComputeSnapshotAddCtrl',
                 controllerAs: 'CloudProjectComputeSnapshotAddCtrl',
