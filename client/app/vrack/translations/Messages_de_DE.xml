@@ -3,7 +3,7 @@
    <translation id="vrack_introduction_title" qtlid="344584">vRack zusammenstellen </translation>
    <translation id="vrack_introduction_description" qtlid="405629">Verwalten Sie die private Verbindung aller Komponenten Ihrer Infrastruktur, und das überall auf der Welt. <br/> Mit der vRack Technologie (virtuelles Rack) können Sie Ihre Services in gesicherten privaten Netzwerken verbinden, isolieren oder neu aufteilen.</translation>
    <translation id="vrack_introduction_change_owner" qtlid="405642">Wenn Sie möchten, können Sie auch <a href="{{ uri }}" target="_blank">den Benutzer wechseln</a>.</translation>
-   <translation id="vrack_description_title" qtlid="414999">Description de votre vRack</translation>
+   <translation id="vrack_description_title" qtlid="414999">Beschreibung Ihres vRack</translation>
    <translation id="vrack_guide_link_text" qtlid="344610">Sie möchten mehr darüber erfahren? Dann lesen Sie unsere Anleitung. </translation>
    <translation id="vrack_change_owner_link_text" qtlid="344623">Inhaber wechseln </translation>
    <translation id="vrack_error" qtlid="323249">Die Daten Ihres vRack konnten nicht abgerufen werden.</translation>
@@ -16,16 +16,16 @@
    <translation id="vrack_cloud_warning" qtlid="325185">Achtung: Derzeit ist noch keine Kommunikation zwischen den Cloud Projekten und den anderen Produkttypen möglich. Diese Funktion wird in den nächsten Monaten automatisch aktiviert. Momentan ist nur die Kommunikation innerhalb eines Projekts möglich.</translation>
    <translation id="vrack_cloud_name_max_length" qtlid="349281">Der Name darf nicht mehr als {{ max }} Zeichen umfassen. </translation>
    <translation id="vrack_cloud_name_pattern" qtlid="349294">Der Name muss mit einem Buchstaben beginnen und darf keine Leerzeichen beinhalten. </translation>
-   <translation id="vrack_cloud_modiy_description" qtlid="415012">Modifier la description de ce vRack</translation>
-   <translation id="vrack_cloud_modiy_name" qtlid="415025">Modifier le nom de ce vRack</translation>
-   <translation id="vrack_cloud_no_description" qtlid="415038">Ajouter une description à ce vRack</translation>
-   <translation id="vrack_cloud_no_description_title" qtlid="415051">Cliquer pour ajouter une description à ce vRack</translation>
-   <translation id="vrack_cloud_reset_description" qtlid="415064">Annuler la modification de la description</translation>
-   <translation id="vrack_cloud_reset_name" qtlid="415077">Annuler la modification du nom</translation>
-   <translation id="vrack_cloud_save_description" qtlid="415090">Sauvegarder la modification de la description</translation>
-   <translation id="vrack_cloud_save_name" qtlid="415103">Sauvegarder la modification du nom</translation>
-   <translation id="vrack_cloud_description_max_length" qtlid="415116">Le description ne peut excéder {{ max }} caractères.</translation>
-   <translation id="vrack_cloud_description_character_count" qtlid="415129">Caractères utilisés : {{ count }} / {{ max }}</translation>
+   <translation id="vrack_cloud_modiy_description" qtlid="415012">Beschreibung dieses vRacks bearbeiten</translation>
+   <translation id="vrack_cloud_modiy_name" qtlid="415025">Name dieses vRacks ändern</translation>
+   <translation id="vrack_cloud_no_description" qtlid="415038">Eine Beschreibung zu diesem vRack hinzufügen</translation>
+   <translation id="vrack_cloud_no_description_title" qtlid="415051">Klicken Sie hier, um eine Beschreibung zu diesem vRack hinzuzufügen</translation>
+   <translation id="vrack_cloud_reset_description" qtlid="415064">Änderung der Beschreibung abbrechen</translation>
+   <translation id="vrack_cloud_reset_name" qtlid="415077">Änderung des Namens abbrechen</translation>
+   <translation id="vrack_cloud_save_description" qtlid="415090">Änderung der Beschreibung speichern</translation>
+   <translation id="vrack_cloud_save_name" qtlid="415103">Änderung des Namens speichern</translation>
+   <translation id="vrack_cloud_description_max_length" qtlid="415116">Die Beschreibung darf nicht mehr als {{ max }} Zeichen umfassen.</translation>
+   <translation id="vrack_cloud_description_character_count" qtlid="415129">Verwendete Zeichen: {{ count }} / {{ max }}</translation>
    <translation id="vrack_private_cloud_vm_network_label" qtlid="353361">vm-network</translation>
    <translation id="vrack_move_dialog_title" qtlid="353556">Verschieben eines Private Cloud Datacenters </translation>
    <translation id="vrack_move_dialog_intro" qtlid="353569">Sie haben sich für ein Private Cloud Datacenter entschieden. Dieser Service kann jedoch nicht alleine betrieben werden und muss zwingend einem vRack zugewiesen werden. </translation>
