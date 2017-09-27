@@ -455,6 +455,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openVnc = function (vm) {
             $uibModal.open({
+                windowTopClass: 'cui-modal',
                 templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html',
                 controller   : 'CloudProjectComputeInfrastructureVirtualmachineVncCtrl',
                 controllerAs : 'VmVncCtrl',
