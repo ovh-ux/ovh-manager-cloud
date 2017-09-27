@@ -538,6 +538,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.buyIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverBuyCtrl',
                 controllerAs: 'CPCIIpFailoverBuyCtrl'
@@ -563,6 +564,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.importIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverImportCtrl',
                 controllerAs: 'CPCIIpFailoverImportCtrl',
