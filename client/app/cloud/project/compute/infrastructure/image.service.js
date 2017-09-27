@@ -1,7 +1,5 @@
 (() => {
     "use strict";
-
-    //See https://interne.ovh.net/confluence/pages/viewpage.action?pageId=45450738
     const cloudApplicationList = [
         "docker",
         "plesk",

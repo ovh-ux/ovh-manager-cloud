@@ -8,7 +8,7 @@
 
    <translation id="dtpdt_add_button" qtlid="301370">Add an API key </translation>
 
-   <translation id="dtpdt_region_name" qtlid="301383">Region: </translation>
+   <translation id="dtpdt_region_name" qtlid="301383">Province: </translation>
 
    <translation id="dtpdt_region_help_title" qtlid="301396">Information on the region</translation>
    <translation id="dtpdt_region_help1" qtlid="301409">The region defines where your data is stored as well as the URL of the access point to OpenTSDB API.</translation>

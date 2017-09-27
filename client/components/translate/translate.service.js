@@ -58,6 +58,19 @@ class TranslateServiceProvider {
         return this.currentLanguage;
     }
 
+    /**
+     * @ngdoc function
+     * @methodOf managerApp.service:TranslateService
+     * @name getGeneralLanguage
+     * @description Returns either fr or en depending on current language
+     * @return {String}      - Current locale
+     */
+    getGeneralLanguage () {
+        if (/fr/i.test(this.currentLanguage.split("_")[0])) {
+            return "fr";
+        }
+        return "en";
+    }
 
     preferredCountry (language) {
         if (_.indexOf(["FR", "EN"], language.toUpperCase() > -1)) {
@@ -87,6 +100,7 @@ class TranslateServiceProvider {
     $get () {
         return {
             getUserLocale: locale => this.getUserLocale(locale),
+            getGeneralLanguage: () => this.getGeneralLanguage(),
             setUserLocale: min => this.setUserLocale(min)
         };
     }
