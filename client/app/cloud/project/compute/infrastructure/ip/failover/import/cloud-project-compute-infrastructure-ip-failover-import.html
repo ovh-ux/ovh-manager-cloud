@@ -1,113 +1,111 @@
-<div class="modal-header">
-    <h3 class="modal-title" data-translate="cpciif_import_title"></h3>
-</div>
-
-<div class="modal-body">
-
-    <p class="bold" data-translate="cpciif_import_ips_route"></p>
-    <p class="text-info" data-translate="cpciif_import_ips_32only"></p>
-
-    <div class="table-responsive-vertical shadow-z-1 top-space-m8 bottom-space-m12" style="overflow-y: auto; max-height: 300px;">
-        <table class="table table-pretty table-hover table-striped no-space">
-            <thead>
-                <tr>
-                    <th class="text-center">
-                        <input type="checkbox"
-                            data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.ipsFo || !CPCIIpFailoverImportCtrl.datas.ipsFo.length"
-                            ovh-checkbox-table
-                            ovh-checkbox-table-ids-all="CPCIIpFailoverImportCtrl.datas.ipsFo"
-                            ovh-checkbox-table-ids-page="CPCIIpFailoverImportCtrl.datas.ipsFoDetailIds"
-                            ovh-checkbox-table-ids-selected="CPCIIpFailoverImportCtrl.datas.selected"
-                            data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo" />
-                    </th>
-                    <th>
-                        <span translate="cpciif_import_ips"></span>
-                    </th>
-                    <th>
-                        <span translate="cpciif_import_ips_country"></span>
-                    </th>
-                    <th>
-                        <span translate="cpciif_import_routedto"></span>
-                        <button data-ng-click="CPCIIpFailoverImportCtrl.refreshIpsFo()"
-                            data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo"
-                            class="no-style pull-right">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                        </button>
-                    </th>
-                </tr>
-            </thead>
-            <tbody data-ng-show="CPCIIpFailoverImportCtrl.loaders.table.ipsFo">
-                <tr>
-                    <td colspan="4" class="text-center">
-                        <spinner></spinner>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-if="!CPCIIpFailoverImportCtrl.loaders.table.ipsFo && CPCIIpFailoverImportCtrl.datas.ipsFo.length === 0">
-                <tr>
-                    <td colspan="4" class="text-center">
-                        <span translate="cpciif_import_ips_empty"></span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-if="!CPCIIpFailoverImportCtrl.loaders.table.ipsFo && CPCIIpFailoverImportCtrl.datas.ips === null">
-                <tr>
-                    <td colspan="4" class="text-center">
-                        <i class="fa fa-bug"></i>
-                        <span translate="cpciif_import_ips_error"></span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.ipsFo">
-                <tr class="pointer"
-                    data-ng-click="CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip] = !CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip]"
-                    data-ng-repeat="ipFo in CPCIIpFailoverImportCtrl.datas.ipsFoDetail">
-                    <td class="text-center">
-                        <input type="checkbox"
-                            data-ovh-stop-event="click"
-                            data-ng-model="CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip]"
-                            data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo">
-                    </td>
-                    <td data-title="{{::'cpciif_import_ips' | translate}}"
-                        class="word-break" data-ng-bind="::ipFo.ip">
-                    </td>
-                    <td data-title="{{::'cpciif_import_ips' | translate}}"
-                        class="word-break" data-ng-bind="::ipFo.country | uppercase">
-                    </td>
-                    <td data-title="{{::'cpciif_import_routedto' | translate}}"
-                        class="word-break">
-                        <span data-ng-if="ipFo.routedTo.serviceName.length" data-ng-bind="::ipFo.routedTo.serviceName"></span>
-                        <span data-ng-if="!ipFo.routedTo.serviceName.length" data-translate="cpciif_import_routedto_park" class="opacity5"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CPCIIpFailoverImportCtrl.cancel()"></button>
     </div>
 
-    <!-- PAGINATION TABLE -->
-    <div class="table-pretty-pagination"
-        data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.snapshot || CPCIIpFailoverImportCtrl.datas.ipsFo.length < 5"
-        data-pagination-front
-        data-items="CPCIIpFailoverImportCtrl.datas.ipsFo"
-        data-paginated-items="CPCIIpFailoverImportCtrl.datas.ipsFoDetail"
-        data-current-page="currentPage"
-        data-nb-pages="nbPages"
-        data-items-per-page="itemsPerPage"
-        data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
-        data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title" data-translate="cpciif_import_title"></h2>
+            <p class="oui-modal__text bold" data-translate="cpciif_import_ips_route"></p>
+            <p class="oui-modal__text text-info" data-translate="cpciif_import_ips_32only"></p>
+            <table class="oui-table oui-table_responsive">
+                <thead class="oui-table__headers">
+                    <tr>
+                        <th class="oui-table__header">
+                            <input type="checkbox"
+                                data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.ipsFo || !CPCIIpFailoverImportCtrl.datas.ipsFo.length"
+                                ovh-checkbox-table
+                                ovh-checkbox-table-ids-all="CPCIIpFailoverImportCtrl.datas.ipsFo"
+                                ovh-checkbox-table-ids-page="CPCIIpFailoverImportCtrl.datas.ipsFoDetailIds"
+                                ovh-checkbox-table-ids-selected="CPCIIpFailoverImportCtrl.datas.selected"
+                                data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo" />
+                        </th>
+                        <th class="oui-table__header">
+                            <span translate="cpciif_import_ips"></span>
+                        </th>
+                        <th class="oui-table__header">
+                            <span translate="cpciif_import_ips_country"></span>
+                        </th>
+                        <th class="oui-table__header">
+                            <span translate="cpciif_import_routedto"></span>
+                            <button data-ng-click="CPCIIpFailoverImportCtrl.refreshIpsFo()"
+                                data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo"
+                                class="no-style pull-right">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody data-ng-show="CPCIIpFailoverImportCtrl.loaders.table.ipsFo" class="oui-table__body">
+                    <tr class="oui-table__row">
+                        <td colspan="4" class="text-center">
+                            <spinner></spinner>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!CPCIIpFailoverImportCtrl.loaders.table.ipsFo && CPCIIpFailoverImportCtrl.datas.ipsFo.length === 0" class="oui-table__body">
+                    <tr class="oui-table__row">
+                        <td colspan="4" class="text-center">
+                            <span translate="cpciif_import_ips_empty"></span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-if="!CPCIIpFailoverImportCtrl.loaders.table.ipsFo && CPCIIpFailoverImportCtrl.datas.ips === null" class="oui-table__body">
+                    <tr class="oui-table__row">
+                        <td colspan="4" class="text-center">
+                            <i class="fa fa-bug"></i>
+                            <span translate="cpciif_import_ips_error"></span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.ipsFo" class="oui-table__body">
+                    <tr class="oui-table__row pointer"
+                        data-ng-click="CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip] = !CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip]"
+                        data-ng-repeat="ipFo in CPCIIpFailoverImportCtrl.datas.ipsFoDetail">
+                        <td class="oui-table__cell text-center">
+                            <input type="checkbox"
+                                data-ovh-stop-event="click"
+                                data-ng-model="CPCIIpFailoverImportCtrl.datas.selected[ipFo.ip]"
+                                data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo">
+                        </td>
+                        <td data-title="{{::'cpciif_import_ips' | translate}}"
+                            class="oui-table__cell word-break" data-ng-bind="::ipFo.ip">
+                        </td>
+                        <td data-title="{{::'cpciif_import_ips' | translate}}"
+                            class="oui-table__cell word-break" data-ng-bind="::ipFo.country | uppercase">
+                        </td>
+                        <td data-title="{{::'cpciif_import_routedto' | translate}}"
+                            class="oui-table__cell word-break">
+                            <span data-ng-if="ipFo.routedTo.serviceName.length" data-ng-bind="::ipFo.routedTo.serviceName"></span>
+                            <span data-ng-if="!ipFo.routedTo.serviceName.length" data-translate="cpciif_import_routedto_park" class="opacity5"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- PAGINATION TABLE -->
+            <div class="table-pretty-pagination"
+                data-ng-hide="CPCIIpFailoverImportCtrl.loaders.table.snapshot || CPCIIpFailoverImportCtrl.datas.ipsFo.length < 5"
+                data-pagination-front
+                data-items="CPCIIpFailoverImportCtrl.datas.ipsFo"
+                data-paginated-items="CPCIIpFailoverImportCtrl.datas.ipsFoDetail"
+                data-current-page="currentPage"
+                data-nb-pages="nbPages"
+                data-items-per-page="itemsPerPage"
+                data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
+                data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="modal-footer">
-    <button type="submit" class="btn btn-primary pull-right"
-        data-ng-disabled="!CPCIIpFailoverImportCtrl.getSelectedCount()"
-        data-ng-click="CPCIIpFailoverImportCtrl.confirm()">
-        <i class="glyphicon glyphicon-ok"></i>
-        <span data-translate="common_confirm"></span>
-    </button>
-    <button type="reset" class="btn pull-left btn-default"
-        data-ng-click="CPCIIpFailoverImportCtrl.cancel()">
-        <i class="glyphicon glyphicon-remove"></i>
-        <span data-translate="common_cancel"></span>
-    </button>
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
+            data-ng-click="CPCIIpFailoverImportCtrl.cancel()">
+            <span data-translate="common_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
+            data-ng-disabled="!CPCIIpFailoverImportCtrl.getSelectedCount()"
+            data-ng-click="CPCIIpFailoverImportCtrl.confirm()">
+            <span data-translate="common_confirm"></span>
+        </button>
+    </div>
 </div>
