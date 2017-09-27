@@ -3,7 +3,7 @@
    <translation id="common_confirm" qtlid="31498">Confirmer</translation>
    <translation id="common_buy" qtlid="269591">Contratar</translation>
    <translation id="common_required_field" qtlid="250017">Información requerida</translation>
-   <translation id="common_close" qtlid="4670">Fermer</translation>
+   <translation id="common_close" qtlid="4670">Cerrar</translation>
 
    <translation id="common_cancel" qtlid="37863">Cancelar</translation>
    <translation id="common_edit" qtlid="37875">Modifier</translation>
@@ -472,7 +472,7 @@
    <translation id="common_term_and_contracts_accept" qtlid="404100">He leído y acepto las condiciones de contratación.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
    <translation id="common_modal_ok" qtlid="224880">Ok</translation>
-   <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
+   <translation id="common_modal_exit" qtlid="4670">Cerrar</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Abonnement</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Offre</translation>

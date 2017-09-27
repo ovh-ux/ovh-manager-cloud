@@ -18,7 +18,7 @@
    <translation id="metrics_token_one" qtlid="254115">Token</translation>
    <translation id="metrics_token_delete" qtlid="2414">Eliminar</translation>
    <translation id="metrics_token_cancel" qtlid="37863">Cancelar</translation>
-   <translation id="metrics_token_close" qtlid="4670">Fermer</translation>
+   <translation id="metrics_token_close" qtlid="4670">Cerrar</translation>
    <translation id="metrics_token_no_token" qtlid="403372">No hay tokens para esta aplicación.</translation>
    <translation id="metrics_token_permission" qtlid="301344">Permiso</translation>
    <translation id="metrics_token_new" qtlid="403385">Nuevo token</translation>
