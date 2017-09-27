@@ -471,6 +471,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         self.rescueMode = function (vm, enable) {
             if (enable) {
                 $uibModal.open({
+                    windowTopClass: 'cui-modal',
                     templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html',
                     controller   : 'CloudProjectComputeInfrastructureVirtualmachineRescueCtrl',
                     controllerAs : 'VmRescueCtrl',
