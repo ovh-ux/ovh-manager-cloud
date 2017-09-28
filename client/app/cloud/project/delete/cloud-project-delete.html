@@ -1,6 +1,7 @@
 <div class="oui-modal oui-modal_shadow">
     <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"></button>
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudProjectDeleteCtrl.cancel()"></button>
     </div>
 
     <div class="oui-modal__body" data-ng-if="CloudProjectDeleteCtrl.loaders.init">
