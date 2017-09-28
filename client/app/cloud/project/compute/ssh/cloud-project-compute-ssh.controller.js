@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, $uibModal, CloudMessage, $stateParams, ovhDocUrl) {
+  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, ControllerHelper, CloudMessage, $stateParams, ovhDocUrl) {
 
     var self = this,
         serviceName = $stateParams.projectId;
@@ -173,14 +173,15 @@ angular.module("managerApp")
     };
 
     self.openDeleteSshKey = function (sshKey) {
-        $uibModal.open({
-            windowTopClass: "cui-modal",
-            templateUrl: "app/cloud/project/compute/ssh/delete/compute-ssh-delete.html",
-            controller: "CloudProjectComputeSshDeleteCtrl",
-            controllerAs: "$ctrl",
-            resolve: {
-                serviceName: () => serviceName,
-                sshKey: () => sshKey
+        ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/cloud/project/compute/ssh/delete/compute-ssh-delete.html",
+                controller: "CloudProjectComputeSshDeleteCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    sshKey: () => sshKey
+                }
             },
             successHandler: () => {
                 self.getSshKeys(true);

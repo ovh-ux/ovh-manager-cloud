@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state, $uibModal,
+  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
                                                          CloudProjectOrchestrator , OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
                                                          OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
 
@@ -238,21 +238,22 @@ angular.module("managerApp")
     };
 
     self.openDeleteVolume = function (volume) {
-        $uibModal.open({
-                windowTopClass: "cui-modal",
+        ControllerHelper.modal.showModal({
+                modalConfig: {
                 templateUrl: "app/cloud/project/compute/volume/delete/cloud-project-compute-volume-delete.html",
                 controller: "CloudProjectComputeVolumeDeleteCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
                     serviceName: () => serviceName,
                     volume: () => volume
-                },
-                successHandler: () => {
-                    self.getVolume(true);
-                    CloudMessage.success($translate.instant('cpc_volume_delete_success'));
-                },
-                errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '))
-            });
+                }
+            },
+            successHandler: () => {
+                self.getVolume(true);
+                CloudMessage.success($translate.instant('cpc_volume_delete_success'));
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '))
+        });
     };
 
     function getVolumeListDetailed (volumeList) {
