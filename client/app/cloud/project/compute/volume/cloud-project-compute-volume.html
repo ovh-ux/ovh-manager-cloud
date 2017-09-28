@@ -268,32 +268,11 @@
                     </td>
                     <td class="oui-table__cell" write-right-required>
 
-                        <div data-ng-show="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id"
-                            class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
-                            style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
-
-                            <button class="btn btn-default"
-                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti"
-                                data-ng-click="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId = null">
-                                <i class="glyphicon glyphicon-remove right-space-m8"></i>
-                                <span translate="cpc_volume_delete_cancel_button"></span>
-                            </button>
-                            <button class="btn btn-danger"
-                                data-ng-click="CloudProjectComputeVolumeCtrl.deleteVolume(volume)"
-                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume
-                                                || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti
-                                                || CloudProjectComputeVolumeCtrl.toggle.openDeleteMultiConfirm">
-                                <i class="glyphicon glyphicon-trash right-space-m8"></i>
-                                <span translate="cpc_volume_delete_confirm_button"></span>
-                                <spinner color="white" data-ng-show="CloudProjectComputeVolumeCtrl.loaders.remove.volume"></spinner>
-                            </button>
-                        </div>
-
                         <div data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
                                             'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}">
                             <button class="no-style"
                                 title="{{ volume.snapshotted ? 'cpc_volume_snapshotted_delete_button_info' : 'cpc_volume_delete_button' | translate}}"
-                                data-ng-click="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId = volume.id"
+                                data-ng-click="CloudProjectComputeVolumeCtrl.openDeleteVolume(volume)"
                                 data-ng-disabled="CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id
                                                 || CloudProjectComputeVolumeCtrl.loaders.remove.volume
                                                 || volume.getStatusGroup() !== 'ACTIVE'
