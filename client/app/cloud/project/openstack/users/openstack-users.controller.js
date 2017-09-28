@@ -3,7 +3,7 @@
 angular.module("managerApp")
 .controller("CloudProjectOpenstackUsersCtrl",
     function (OvhApiCloud, $translate, CloudMessage, $stateParams, Poller, $scope, OpenstackUsersPassword, OpenstackUsersToken,
-              $filter, $q, $uibModal, $window, REDIRECT_URLS, CloudProjectRightService) {
+              $filter, $q, ControllerHelper, $window, REDIRECT_URLS, CloudProjectRightService) {
 
         var self = this;
         var orderBy = $filter("orderBy");
@@ -21,9 +21,7 @@ angular.module("managerApp")
 
         self.toggle = {
             openAddUser: false,
-            userDeleteId: null,
             userGenerateTokenId: null,
-            openDeleteMultiConfirm: false
         };
 
         self.order = {
@@ -77,9 +75,6 @@ angular.module("managerApp")
         };
 
         $scope.$watch("CloudProjectOpenstackUsersCtrl.table.selected", function () {
-            if (!_.keys(self.table.selected).length && !_.keys(self.table.autoSelected).length) {
-                self.toggle.openDeleteMultiConfirm = false;
-            }
 
             //if some line were not removed => recheck or if polling happened.
             if (!_.isEmpty(self.table.autoSelected)) {
@@ -103,14 +98,6 @@ angular.module("managerApp")
         $scope.$watch("CloudProjectComputeSnapshotCtrl.table.usersCurrentPage", function (users) {
             self.table.selectableUsersCurrentPage = getSelectableUserList(users);
         });
-
-        self.toggleDeleteMultiConfirm = function () {
-            if (self.toggle.openDeleteMultiConfirm) {
-                self.table.selected = {};
-            }
-            self.toggle.userDeleteId = null;
-            self.toggle.openDeleteMultiConfirm = !self.toggle.openDeleteMultiConfirm;
-        };
 
         //---------ORDER---------
 
@@ -138,7 +125,6 @@ angular.module("managerApp")
         self.getUsers = function () {
             if (!self.loaders.table.user) {
                 self.table.users = [];
-                self.toggle.userDeleteId = null;
                 self.loaders.table.user = true;
 
                 return Poller.poll(
@@ -190,7 +176,6 @@ angular.module("managerApp")
                 return OvhApiCloud.Project().User().Lexi().save(self.userAdd).$promise.then(function (newUser) {
                     self.toggleAddUser();
                     self.table.selected = {};
-                    self.toggle.openDeleteMultiConfirm = false;
                     OpenstackUsersPassword.put(self.projectId, newUser.id, newUser.password);
                     self.getUsers();
                     CloudMessage.success($translate.instant("openstackusers_users_userlist_add_submit_success"));
@@ -226,44 +211,47 @@ angular.module("managerApp")
         };
 
         self.downloadOpenrcFile = function (currentUser) {
-            $uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/openstack/users/openrc/openstack-users-openrc.html",
-                controller: "OpenstackUsersOpenrcCtrl",
-                controllerAs: "OpenstackUsersOpenrcCtrl",
-                resolve: {
-                    openstackUser: function () {
-                        return currentUser;
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/openstack/users/openrc/openstack-users-openrc.html",
+                    controller: "OpenstackUsersOpenrcCtrl",
+                    controllerAs: "OpenstackUsersOpenrcCtrl",
+                    resolve: {
+                        openstackUser: function () {
+                            return currentUser;
+                        }
                     }
                 }
             });
         };
         self.generateToken = function (currentUser) {
-            $uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/openstack/users/token/openstack-users-token.html",
-                controller: "CloudProjectOpenstackUsersTokenCtrl",
-                controllerAs: "CloudProjectOpenstackUsersTokenCtrl",
-                resolve: {
-                    openstackUser: function () {
-                        return currentUser;
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/openstack/users/token/openstack-users-token.html",
+                    controller: "CloudProjectOpenstackUsersTokenCtrl",
+                    controllerAs: "CloudProjectOpenstackUsersTokenCtrl",
+                    resolve: {
+                        openstackUser: function () {
+                            return currentUser;
+                        }
                     }
                 }
             });
         };
         self.openDeleteUser = function (currentUser) {
-            $uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/openstack/users/delete/openstack-users-delete.html",
-                controller: "CloudProjectOpenStackUserDeleteCtrl",
-                controllerAs: "CloudProjectOpenStackUserDeleteCtrl",
-                resolve: {
-                    openstackUser: () => currentUser,
-                    serviceName: () => self.projectId
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/openstack/users/delete/openstack-users-delete.html",
+                    controller: "CloudProjectOpenStackUserDeleteCtrl",
+                    controllerAs: "CloudProjectOpenStackUserDeleteCtrl",
+                    resolve: {
+                        openstackUser: () => currentUser,
+                        serviceName: () => self.projectId
+                    }
                 },
                 successHandler: () => {
-                    self.removeFromList(currentUser.id),
-                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", user))
+                    self.removeFromList(currentUser);
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", currentUser));                   
                 },
                 errorHandler: (err) => CloudMessage.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "))
             });
@@ -278,7 +266,7 @@ angular.module("managerApp")
             return OpenstackUsersPassword.get(self.projectId, currentUser.id);
         };
 
-        self.removeFromList = function () {
+        self.removeFromList = function (user) {
             var index = _.findIndex(self.table.users, { id: user.id });
             if (index !== -1) {
                 self.table.users.splice(index, 1);
