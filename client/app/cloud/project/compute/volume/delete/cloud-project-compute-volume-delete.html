@@ -3,7 +3,8 @@
         <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
                 data-ng-click="$ctrl.cancel()"></button>
     </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
+    <div class="oui-modal__body">
+        <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
         <div class="oui-modal__body-text" data-ng-if="$ctrl.loaders.delete">
             <spinner></spinner>
         </div>
