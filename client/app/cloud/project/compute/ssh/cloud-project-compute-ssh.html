@@ -215,32 +215,11 @@
                     </td>
 
                     <td data-title="" class="oui-table__cell text-center" write-right-required>
-
-                        <div data-ng-show="CloudProjectComputeSshCtrl.toggle.sshDeleteId === ssh.id"
-                            class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
-                            style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
-
-                            <button class="oui-button oui-button_secondary"
-                                data-ng-disabled="CloudProjectComputeSshCtrl.loaders.remove.ssh"
-                                data-ng-click="CloudProjectComputeSshCtrl.toggle.sshDeleteId = null">
-                                <span translate="cpc_ssh_delete_cancel"></span>
-                            </button>
-                            <button class="oui-button oui-button_primary"
-                                data-ng-click="CloudProjectComputeSshCtrl.deleteSshKey(ssh)">
-                                <span translate="cpc_ssh_delete_submit"></span>
-                                <spinner name="bubbles-fff-d34936-16" data-ng-show="CloudProjectComputeSshCtrl.loaders.remove.ssh"></spinner>
-                            </button>
-                        </div>
-
-                        <div data-ng-class="{'opacity2-leave' : CloudProjectComputeSshCtrl.toggle.sshDeleteId === ssh.id,
-                                            'opacity2-enter' : CloudProjectComputeSshCtrl.toggle.sshDeleteId !== ssh.id}">
-                            <button class="no-style"
-                                data-ng-click="CloudProjectComputeSshCtrl.toggle.sshDeleteId = ssh.id"
-                                data-ng-disabled="CloudProjectComputeSshCtrl.toggle.sshDeleteId === ssh.id">
-                                <i class="glyphicon glyphicon-trash right-space-m8"></i>
-                            </button>
-                        </div>
-
+                        <button class="no-style"
+                            data-ng-click="CloudProjectComputeSshCtrl.openDeleteSshKey(ssh)"
+                            data-ng-disabled="CloudProjectComputeSshCtrl.toggle.sshDeleteId === ssh.id">
+                            <i class="glyphicon glyphicon-trash right-space-m8"></i>
+                        </button>
                     </td>
                 </tr>
             </tbody>
