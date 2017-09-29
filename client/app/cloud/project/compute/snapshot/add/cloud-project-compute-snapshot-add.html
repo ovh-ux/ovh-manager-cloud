@@ -9,6 +9,9 @@
 
         <div class="oui-modal__body-text" data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
             <p class="center" data-translate="cpc_snapshot_add_doing"></p>
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
 
         <div class="oui-modal__body-text" data-ng-if="!CloudProjectComputeSnapshotAddCtrl.loaders.backup">
@@ -48,7 +51,6 @@
             data-ng-click="CloudProjectComputeSnapshotAddCtrl.backup()"
             data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
             <span data-translate="cpc_snapshot_add_valid"></span>
-            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup"></spinner>
         </button>
     </div>
 

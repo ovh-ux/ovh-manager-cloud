@@ -81,11 +81,6 @@
                         data-ng-disabled="!ipQuantityForm.$valid || !InfrastructureIpAddEditCtrl.model.quantity">
                     <i class="fa fa-shopping-cart white right-space-m8"></i>
                     {{:: 'cpciip_add_run_now' | translate }}
-                    <!-- <small class="opacity6"
-                        data-ng-if="VmAddEditCtrl.vmInEdition.price.price.text"
-                        translate="cpcivm_addedit_flavor_price_btn"
-                        translate-values="{price: VmAddEditCtrl.vmInEdition.price.price.text }"></small>
-                    <spinner color="white" data-ng-show="InfrastructureIpAddEditCtrl.loadingCreation"></spinner> -->
                 </button>
 
                 <button class="btn pull-left" type="button" data-translate="common_cancel"
@@ -119,7 +114,7 @@
                     <!-- Loading -->
                     <p data-ng-if="InfrastructureIpAddEditCtrl.locLoader"
                        class="content-wrapper text-center">
-                        <spinner></spinner>
+                        <oui-loader size="m" class="d-inline-block"></oui-loader>
                         {{:: 'cpciip_add_geoloc_loading' | translate}}
                     </p>
 

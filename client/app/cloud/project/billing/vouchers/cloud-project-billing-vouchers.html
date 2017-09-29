@@ -65,8 +65,10 @@
                              ng-slide-down="VouchersCtrl.toggle.openAddVoucher"
                              data-lazy-render
                              data-duration="0.3">
-
-                            <form name="voucherFormAdd" class="form-horizontal ovh-form-flat">
+                            <div class="text-center" data-ng-if="VouchersCtrl.loading.add">
+                                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                            </div>
+                            <form name="voucherFormAdd" class="form-horizontal ovh-form-flat" data-ng-if="!VouchersCtrl.loading.add">
                                 <div class="row-fluid">
                                     <div class="col-xs-12 no-space">
                                         <div data-flat-input-container class="">
@@ -93,7 +95,6 @@
                                                 data-ng-disabled="!VouchersCtrl.model.voucher"
                                                 data-ng-click="VouchersCtrl.addVoucher()">
                                             <span>{{ :: 'cpb_vouchers_your_voucher_add' | translate }}</span>
-                                            <spinner data-ng-if="VouchersCtrl.loading.add"></spinner>
                                         </button>
                                     </div>
                                 </div>
@@ -144,7 +145,7 @@
                 <tr>
                     <td colspan="7"
                         class="text-center">
-                        <spinner></spinner>
+                        <oui-loader size="m" class="d-inline-block"></oui-loader>
                     </td>
                 </tr>
             </tbody>

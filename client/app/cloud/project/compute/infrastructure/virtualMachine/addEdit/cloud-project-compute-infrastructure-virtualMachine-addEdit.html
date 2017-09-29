@@ -204,7 +204,7 @@
                         <!-- loading... -->
                         <div data-ng-if="VmAddEditCtrl.loaders.panelsData.flavors"
                              class="addOrEdit-menu-loading">
-                            <spinner class="right-space-m4"></spinner>
+                            <oui-loader size="s" class="d-inline-block"></oui-loader>
                             {{:: 'cpcivm_addedit_flavor_loading' | translate}}
                         </div>
 
@@ -701,7 +701,7 @@
                                             <dt data-ng-if="categoryObject.category === 'gpu'"
                                                 data-translate="cpcivm_addedit_table_gpu"></dt>
                                             <dd data-ng-if="categoryObject.category === 'gpu'">
-                                                <div data-ng-bind="'cpcivm_addedit_table_gpu_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].shortType | translate"></div>
+                                                <div data-ng-bind="'cpcivm_addedit_table_gpu_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].shortType | translate: { cardCount: VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].gpuCardCount }"></div>
                                             </dd>
                                             <dt data-translate="cpcivm_addedit_table_disk"></dt>
                                             <dd data-ng-if="categoryObject.category === 'vps' || (categoryObject.category !== 'vps' && VmAddEditCtrl.getFlavorOfCurrentRegionAndOSType(VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category], 'ceph', false) === undefined)">
@@ -877,8 +877,8 @@
                                                             </span>
                                                         </td>
                                                     </tr>
-                                                    <tr data-ng-repeat-end 
-                                                        data-ng-if="!flavor.available" 
+                                                    <tr data-ng-repeat-end
+                                                        data-ng-if="!flavor.available"
                                                         data-ng-class="{'disabled opacity5': !flavor.available}">
                                                         <td colspan="6" class="bottom-message">
                                                             <span data-translate="cpcivm_addedit_flavor_not_available_region"></span>

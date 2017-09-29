@@ -11,7 +11,7 @@
         <!-- loading... -->
         <p data-ng-if="VmMonitoringCtrl.vm.monitoringData.loading"
            class="popover-detail-item text-center">
-            <spinner></spinner>
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
             {{:: 'cpcivm_monitoring_loading' | translate}}
         </p>
 
@@ -65,7 +65,9 @@
                             <monitoring-chart model="VmMonitoringCtrl.chartData['cpu:used']"></monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['cpu:used']">
-                            <spinner class="col-xs-12 text-center"></spinner>
+                            <div class="text-center">
+                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            </div>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="!VmMonitoringCtrl.chartData['cpu:used'] && !VmMonitoringCtrl.loaders.monitoring['cpu:used']">
                             <p class="text-warning text-center">
@@ -125,7 +127,9 @@
                             <monitoring-chart model="VmMonitoringCtrl.chartData['mem:used']"></monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['mem:used']">
-                            <spinner class="col-xs-12 text-center"></spinner>
+                            <div class="text-center">
+                                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                            </div>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="!VmMonitoringCtrl.chartData['mem:used'] && !VmMonitoringCtrl.loaders.monitoring['mem:used']">
                             <p class="text-warning text-center">
@@ -199,7 +203,9 @@
                             <monitoring-chart model="VmMonitoringCtrl.chartData['net:tx']"></monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['net:tx']">
-                            <spinner class="col-xs-12 text-center"></spinner>
+                            <div class="text-center">
+                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            </div>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="!VmMonitoringCtrl.chartData['net:tx'] && !VmMonitoringCtrl.loaders.monitoring['net:tx']">
                             <p class="text-warning text-center">
@@ -228,7 +234,9 @@
                             <monitoring-chart model="VmMonitoringCtrl.chartData['net:rx']"></monitoring-chart>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="VmMonitoringCtrl.loaders.monitoring['net:rx']">
-                            <spinner class="col-xs-12 text-center"></spinner>
+                            <div class="text-center">
+                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            </div>
                         </div>
                         <div class="row monitoring-chart monitoring-loading" data-ng-if="!VmMonitoringCtrl.chartData['net:rx'] && !VmMonitoringCtrl.loaders.monitoring['net:rx']">
                             <p class="text-warning text-center">

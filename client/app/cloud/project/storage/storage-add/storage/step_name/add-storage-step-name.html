@@ -5,29 +5,33 @@
         data-ng-class="{ 'step-disabled': !steps.name.enable }"
         data-translate="add_storage_name_step_title"></h3>
 
-    <div class="container" data-ng-if="steps.name.enable" data-scroll-here>
-        <div class="row step_panel storage-name-form" data-ng-show="steps.name.enable">
+    <div class="container" data-ng-if="loaders.post">
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+    </div>
+    <div class="container" data-ng-if="!loaders.post">
+        <div data-ng-if="steps.name.enable" data-scroll-here>
+            <div class="row step_panel storage-name-form" data-ng-show="steps.name.enable">
 
-            <input  type="text" pattern="^[^\/]*$"
-                    maxlength="256" 
-                    class="col-xs-12 form-control oui-input"
-                    required="true"
-                    data-ng-disabled="!steps.name.enable"
-                    data-ng-model="model.name"
-                />
-            <div class="col-xs-12 text-center">
-                <button class="oui-button oui-button_primary"
-                        data-ng-click="addStorage()"
-                        data-ng-disabled="!isValid() || loaders.post"
-                        data-ng-class="{
-                            'disabled': loaders.post,
-                            'bg_empty': loaders.post
-                        }">
-                        <span data-ng-hide="loaders.post" data-translate="add_build_you_own_warehouse"> </span>
-                        <span data-ng-show="loaders.post">
-                            <spinner></spinner>
-                        </span>
-                </button>
+                <input  type="text" pattern="^[^\/]*$"
+                        maxlength="256" 
+                        class="col-xs-12 form-control oui-input"
+                        required="true"
+                        data-ng-disabled="!steps.name.enable"
+                        data-ng-model="model.name"
+                    />
+                <div class="col-xs-12 text-center">
+                    <button class="oui-button oui-button_primary"
+                            data-ng-click="addStorage()"
+                            data-ng-disabled="!isValid() || loaders.post"
+                            data-ng-class="{
+                                'disabled': loaders.post,
+                                'bg_empty': loaders.post
+                            }">
+                            <span data-ng-hide="loaders.post" data-translate="add_build_you_own_warehouse"> </span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

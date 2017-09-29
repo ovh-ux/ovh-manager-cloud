@@ -6,7 +6,9 @@
     <div class="oui-modal__body">
         <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
         <div class="oui-modal__body-text" data-ng-if="$ctrl.loaders.delete">
-            <spinner></spinner>
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
         <div class="oui-modal__body-text" data-ng-if="!$ctrl.loaders.delete">
             <h2 class="oui-modal__title" data-translate="cpc_volume_delete_button"></h2>

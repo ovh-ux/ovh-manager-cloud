@@ -6,7 +6,9 @@
 
     <div class="oui-modal__body oui-modal__body_no-icon">
         <div class="oui-modal__body-text" data-ng-if="VmVncCtrl.loading">
-            <spinner size="32"></spinner>
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
         <div class="oui-modal__body-text" data-ng-if="!VmVncCtrl.loading && VmVncCtrl.data.url">
             <h2 class="oui-modal__title" data-translate="cpcivm_vnc_title"></h2>
