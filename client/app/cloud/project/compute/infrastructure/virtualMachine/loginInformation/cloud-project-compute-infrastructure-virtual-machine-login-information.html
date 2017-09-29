@@ -5,8 +5,8 @@
     </div>
 
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="VmLoginInformationCtrl.loading">
-            <spinner></spinner>
+        <div class="oui-modal__body-text text-center" data-ng-if="VmLoginInformationCtrl.loading">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
         </div>
 
         <div class="oui-modal__body-text" data-ng-if="!VmLoginInformationCtrl.loading">
@@ -22,7 +22,7 @@
                 <p class="oui-modal__text" data-translate="cpcivm_login_information_application_readonly"></p>
             </div>
             <div class="text-center" data-ng-if="VmLoginInformationCtrl.poller">
-                <spinner size="32"></spinner>
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
             </div>
             <div data-ng-repeat="app in VmLoginInformationCtrl.data.applicationInfo track by $index">
                 <div class="form-horizontal login-information__application">

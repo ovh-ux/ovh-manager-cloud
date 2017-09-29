@@ -4,7 +4,10 @@
                 data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
+        <div class="oui-modal__body-text text-center" data-ng-if="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+        <div class="oui-modal__body-text" data-ng-if="!CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
             <h2 class="oui-modal__title" data-translate="cpbea_estimate_alert_add_header_title"></h2>
             <div class="oui-modal__text">
                 <label class="oui-label" for="alertMail" data-translate="cpbea_estimate_alert_add_mail_label"></label>
@@ -54,7 +57,6 @@
                 data-ng-click="addAlertForm.$valid && CloudProjectBillingConsumptionEstimateAlertAddCtrl.saveAlert()"
                 data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
             <span data-translate="cpbea_estimate_alert_add_submit_btn"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert"></spinner>
         </button>
     </div>
 </form>

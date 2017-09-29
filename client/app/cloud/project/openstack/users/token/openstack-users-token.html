@@ -4,7 +4,12 @@
                 data-ng-click="CloudProjectOpenstackUsersTokenCtrl.cancel()"></button>
     </div>
 
-    <div class="oui-modal__body oui-modal__body_no-icon">
+    <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
         <h2 class="oui-modal__title" data-translate="cpou_token_title"></h2>
 
         <div data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens">
@@ -68,7 +73,6 @@
             data-ng-disabled="openStackUserTokenCreationForm.$invalid || CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken"
             data-ng-click="CloudProjectOpenstackUsersTokenCtrl.generate()">
             <span data-translate="common_confirm"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken"></spinner>
         </button>
 
         <div data-ng-if="CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens"

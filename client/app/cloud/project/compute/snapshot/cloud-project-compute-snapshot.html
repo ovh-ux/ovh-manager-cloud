@@ -178,7 +178,7 @@
             <tbody data-ng-show="CloudProjectComputeSnapshotCtrl.loaders.table.snapshot" class="oui-table__body">
                 <tr class="oui-table__row" tabindex="0">
                     <td colspan="9" class="text-center">
-                        <spinner></spinner>
+                        <oui-loader size="m" class="d-inline-block"></oui-loader>
                     </td>
                 </tr>
             </tbody>
@@ -258,8 +258,8 @@
                         </span>
                     </td>
                     <td data-title="{{::'cpc_snapshot_status' | translate}}" class="oui-table__cell">
-                        <span class="ip-text" data-ng-if="snapshot.status!=='active' && snapshot.status!=='available'">
-                            <spinner size="16"></spinner>
+                        <span class="ip-text text-center" data-ng-if="snapshot.status!=='active' && snapshot.status!=='available'">
+                            <oui-loader size="s" class="d-inline-block"></oui-loader>
                         </span>
                         <span data-ng-class="{'opacity2-leave' : CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId === snapshot.id,
                                             'opacity2-enter' : CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId !== snapshot.id}"
@@ -284,7 +284,7 @@
                                                 || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti
                                                 || CloudProjectComputeSnapshotCtrl.toggle.openDeleteMultiConfirm">
                                 <span translate="cpc_snapshot_delete_confirm_button"></span>
-                                <spinner name="bubbles-fff-d34936-16" data-ng-show="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot"></spinner>
+                                <oui-loader size="s" class="d-inline-block" data-nf-if="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot"></oui-loader>
                             </button>
                         </div>
 

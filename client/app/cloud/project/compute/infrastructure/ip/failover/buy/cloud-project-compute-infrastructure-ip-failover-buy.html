@@ -5,10 +5,12 @@
     </div>
 
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="CPCIIpFailoverBuyCtrl.loaders.init">
-            <spinner></spinner>
+        <div class="oui-modal__body-text" data-ng-if="CPCIIpFailoverBuyCtrl.loaders.init || CIIpFailoverBuyCtrl.loaders.buying">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
-        <div class="oui-modal__body-text" data-ng-if="!CPCIIpFailoverBuyCtrl.loaders.init">
+        <div class="oui-modal__body-text" data-ng-if="!CPCIIpFailoverBuyCtrl.loaders.init && !CIIpFailoverBuyCtrl.loaders.buying">
             <h2 class="oui-modal__title" data-translate="cpciif_buy_title"></h2>
             <div class="oui-modal__body-title" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
                 <p class="oui-modal__text">
@@ -94,7 +96,6 @@
                 data-ng-click="CPCIIpFailoverBuyCtrl.confirm()"
                 data-ng-disabled="!CPCIIpFailoverBuyCtrl.form.contractsAccepted || CPCIIpFailoverBuyCtrl.loaders.buying || !CPCIIpFailoverBuyCtrl.form.instance || !CPCIIpFailoverBuyCtrl.form.country || !CPCIIpFailoverBuyCtrl.datas.billingInfo || !(CPCIIpFailoverBuyCtrl.form.quantity >= 1)">
             <span data-translate="cpciif_buy_button_generate_bc"></span>
-            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CPCIIpFailoverBuyCtrl.loaders.buying"></spinner>
         </button>
     </div>
 </form>

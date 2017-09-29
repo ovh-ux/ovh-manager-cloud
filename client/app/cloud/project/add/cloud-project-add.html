@@ -2,7 +2,7 @@
 
     <!-- init loading... -->
     <div data-ng-if="CloudProjectAddCtrl.loaders.init" class="top-space-m16">
-        <spinner></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
         <span data-translate="common_loading"></span>
     </div>
 
@@ -192,10 +192,10 @@
                                     <!-- submit -->
                                     <div class="cpa-box-footer text-center">
                                         <button type="submit" class="btn btn-primary btn-lg"
-                                            data-ng-disabled="(CloudProjectAddCtrl.loaders.creating || (CloudProjectAddCtrl.data.agreements.length && !CloudProjectAddCtrl.model.contractsAccepted) || !CloudProjectAddCtrl.canCreateProject() || $parent.CpaDescriptionForm.$invalid)">
+                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating">
                                             {{(CloudProjectAddCtrl.data.projectsCount === 0 ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
-                                            <spinner name="bubbles-fff-ffcd1a-16" class="left-space-m4"  data-ng-if="CloudProjectAddCtrl.loaders.creating"></spinner>
                                         </button>
+                                        <oui-loader data-ng-if="CloudProjectAddCtrl.loaders.creating" size="s" class="d-inline-block"></oui-loader>
                                     </div>
 
                                 </form>

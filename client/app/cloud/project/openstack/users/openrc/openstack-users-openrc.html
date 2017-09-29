@@ -4,10 +4,12 @@
                 data-ng-click="OpenstackUsersOpenrcCtrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text text-center" data-ng-if="OpenstackUsersOpenrcCtrl.loaders.guide">
-            <spinner></spinner>
+        <div class="oui-modal__body-text" data-ng-if="OpenstackUsersOpenrcCtrl.loaders.guide || OpenstackUsersOpenrcCtrl.loaders.regions">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
-        <div class="oui-modal__body-text">
+        <div class="oui-modal__body-text" data-ng-if="!OpenstackUsersOpenrcCtrl.loaders.guide && !OpenstackUsersOpenrcCtrl.loaders.regions">
             <h3 class="oui-modal__title" data-translate="cpou_openrc_title"></h3>
             <div data-ng-if="!OpenstackUsersOpenrcCtrl.loaders.guide">
                 <p class="oui-modal__text">
@@ -47,7 +49,6 @@
             data-ng-disabled="openStackUserOpenrcCreationForm.$invalid || OpenstackUsersOpenrcCtrl.loaders.regions || !OpenstackUsersOpenrcCtrl.data.region || OpenstackUsersOpenrcCtrl.loaders.download"
             data-ng-click="OpenstackUsersOpenrcCtrl.downloadOpenrcFile()">
             <span data-translate="common_confirm"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="OpenstackUsersOpenrcCtrl.loaders.regions"></spinner>
         </button>
     </div>
 </form>
