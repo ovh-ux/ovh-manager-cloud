@@ -125,8 +125,10 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row-fluid">
+                                <div class="row-fluid" data-ng-if="CloudProjectComputeSshCtrl.loaders.add.ssh">
+                                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                </div>
+                                <div class="row-fluid" data-ng-if="!CloudProjectComputeSshCtrl.loaders.add.ssh">
                                     <div class="col-sm-12 bottom-space-p4 top-space-p12 text-center">
                                         <button type="reset"
                                             class="oui-button oui-button_secondary"
@@ -139,7 +141,6 @@
                                             data-ng-disabled="addSshKeyForm.$invalid"
                                             data-ng-click="CloudProjectComputeSshCtrl.postSshKey()">
                                             <span translate="cpc_ssh_add_button_submit"></span>
-                                            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectComputeSshCtrl.loaders.add.ssh"></spinner>
                                         </button>
                                     </div>
                                 </div>
@@ -149,7 +150,6 @@
                                         <span class="fs10"><span class="text-danger">*</span> {{ 'common_required_field' | translate }}</span>
                                     </div>
                                 </div>
-
                             </form>
 
                         </div>
@@ -159,7 +159,7 @@
             <tbody data-ng-show="CloudProjectComputeSshCtrl.loaders.table.ssh" class="oui-table__body">
                 <tr class="oui-table__row">
                     <td colspan="3" class="text-center">
-                        <spinner></spinner>
+                        <oui-loader size="m" class="d-inline-block"></oui-loader>
                     </td>
                 </tr>
             </tbody>

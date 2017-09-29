@@ -25,7 +25,9 @@
                 {{file.contentType}}
             </td>
             <td class="oui-table__cell" data-title="{{ 'storage_file_state' | translate }}" write-right-required>
-                <spinner data-ng-show="file.sealingStateLoading"></spinner>
+                <div data-ng-show="file.sealingStateLoading" class="text-center">
+                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                </div>
                 <span data-ng-hide="file.sealingStateLoading" data-ng-switch="file.retrievalState">
                     <div data-ng-switch-when="sealed">
                         <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_sealed' | translate }}" data-tooltip-trigger="mouseenter"></button>

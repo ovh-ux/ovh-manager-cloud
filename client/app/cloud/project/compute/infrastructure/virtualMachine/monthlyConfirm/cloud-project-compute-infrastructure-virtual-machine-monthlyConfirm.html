@@ -5,14 +5,19 @@
     </div>
 
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
+        <div class="oui-modal__body-text" data-ng-if="!CPCIVirtualmachineMonthlyConfirm.loaders.saveVm">
             <h2 class="oui-modal__title" data-translate="cpcivm_monthly_title"></h2>
             <p class="oui-modal__text" data-translate="cpcivm_monthly_info"></p>
             <p class="oui-modal__text">
                 <i class="fa fa-warning text-warning"></i>
                 <span class="text-warning" data-translate="cpcivm_monthly_prorata_warning"></span>
             </p>
-        </div>   
+        </div>
+        <div class="oui-modal__body-text" data-ng-if="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm">
+            <div class="text-center">
+                <oui-loader size="s" class="d-inline-block"></oui-loader>
+            </div>
+        </div>
     </div>
 
     <div class="oui-modal__footer">
@@ -24,7 +29,6 @@
             data-ng-disabled="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm"
             data-ng-click="CPCIVirtualmachineMonthlyConfirm.confirm()">
             <span data-translate="common_confirm"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm"></spinner>
         </button>
     </div>
 </div>

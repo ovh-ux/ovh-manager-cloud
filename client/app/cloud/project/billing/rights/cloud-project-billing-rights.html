@@ -140,7 +140,7 @@
             <tbody class="oui-table__body" data-ng-show="BillingRightsCtrl.loader.rights">
                 <tr>
                     <td colspan="3" class="text-center">
-                        <spinner></spinner>
+                        <oui-loader size="m" class="d-inline-block"></oui-loader>
                     </td>
                 </tr>
             </tbody>
@@ -151,7 +151,10 @@
                 <tr class="oui-table__row">
 
                     <td colspan="3" class="no-space">
-                        <div data-ng-slide-down="BillingRightsCtrl.toggle.addUser" lazy-render duration="0.3"  >
+                        <div data-ng-if="BillingRightsCtrl.loader.addRight" class="text-center">
+                            <oui-loader size="m" class="d-inline-block"></oui-loader>
+                        </div>
+                        <div data-ng-slide-down="BillingRightsCtrl.toggle.addUser" lazy-render duration="0.3" data-ng-if="!BillingRightsCtrl.loader.addRight">
                             <form name="voucherFormAdd" class="form-horizontal ovh-form-flat container-fluid space-p8"
                                 data-ng-class="{'animated fadeIn':BillingRightsCtrl.toggle.addUser, 'animated fadeOut':!BillingRightsCtrl.toggle.addUser}">
                                 <div  class="col-md-4">
@@ -165,7 +168,7 @@
                                     </div>
                                 </div>
 
-                                <div  class="col-md-3">
+                                <div class="col-md-3">
                                     <div class="space-p8">
                                         <label class="oui-select">
                                             <select id="selectRightType" name="selectRightType" class="oui-select__input form-control"
@@ -197,7 +200,6 @@
                                                 data-ng-disabled="!BillingRightsCtrl.model.isAdmin || !BillingRightsCtrl.addRightFormData.contact || BillingRightsCtrl.loader.addRight || BillingRightsCtrl.loader.removeRight"
                                                 data-ng-click="BillingRightsCtrl.validateAddRight()">
                                                 <span translate="cpb_rights_add"></span>
-                                                <spinner data-ng-if="BillingRightsCtrl.loader.addRight" name="bubbles-fff-ffcd1a-16"></spinner>
                                             </button>
                                         </div>
 
@@ -219,7 +221,10 @@
                     <td class="oui-table__cell" class="oui-table__cell" data-title="{{ :: 'cpb_rights_table_rights' | translate }}">
                         <span data-ng-bind="('cpb_rights_table_rights_value_' + right.type) | translate"></span>
                     </td>
-                    <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.model.isAdmin">
+                    <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.loader.removeRight">
+                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                    </td>
+                    <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.loader.removeRight">
                         <!-- buttons -->
                         <button type="button" class="oui-button oui-button_secondary"
                             data-ng-class="{'opacity2-leave' : BillingRightsCtrl.removeRight.accountId === right.accountId, 'opacity2-enter' : BillingRightsCtrl.removeRight.accountId === right.accountId}"
@@ -240,7 +245,6 @@
                                 data-ng-click="BillingRightsCtrl.validateRemoveRight(right.accountId)"
                                 data-ng-disabled="BillingRightsCtrl.loader.removeRight">
                                 <span translate="cpb_rights_table_remove_confirm"></span>
-                                <spinner name="bubbles-fff-d34936-16" data-ng-show="BillingRightsCtrl.loader.removeRight"></spinner>
                             </button>
                         </div>
                     </td>

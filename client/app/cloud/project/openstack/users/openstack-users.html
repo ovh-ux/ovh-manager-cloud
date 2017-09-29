@@ -74,7 +74,10 @@
                         </div>
 
                         <div class="row-fluid">
-                            <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center">
+                            <div class="text-center" data-ng-if="CloudProjectOpenstackUsersCtrl.loaders.add.user">
+                                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                            </div>
+                            <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center" data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.add.user">
                                 <button type="reset"
                                     class="oui-button oui-button_secondary"
                                     data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
@@ -86,7 +89,6 @@
                                     data-ng-disabled="addUserForm.$invalid"
                                     data-ng-click="CloudProjectOpenstackUsersCtrl.postUser()">
                                     <span translate="openstackusers_users_userlist_add_button_submit"></span>
-                                    <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.add.user"></spinner>
                                 </button>
                             </div>
                         </div>
@@ -106,7 +108,7 @@
     <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.table.user" class="oui-table__body">
         <tr>
             <td colspan="6" class="text-center">
-                <spinner></spinner>
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
             </td>
         </tr>
     </tbody>
@@ -176,7 +178,7 @@
                         data-ng-click="CloudProjectOpenstackUsersCtrl.regeneratePassword(user)"
                         write-right-required>
                         <i data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id" class="fa fa-refresh"></i>
-                        <spinner data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></spinner>
+                        <oui-loader size="s" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></oui-loader>
                     </button>
                 </div>
             </td>
@@ -209,7 +211,6 @@
                     <button class="oui-button oui-button_primary"
                         data-ng-click="CloudProjectOpenstackUsersCtrl.deleteUser(user)">
                         <span translate="openstackusers_users_userlist_delete_submit"></span>
-                        <spinner name="bubbles-fff-d34936-16" data-ng-show="user.status === 'deleting'"></spinner>
                     </button>
                 </div>
 

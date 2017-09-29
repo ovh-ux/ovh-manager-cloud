@@ -33,7 +33,9 @@
             <td class="oui-table__cell" data-title="{{ 'storage_type' | translate }}">
                 <img class="storage-table-type-icon" data-ng-if="storage.shortcut && storage.shortcut !== 'error'"
                         data-ng-src="assets/images/add/storage/{{ storage.shortcut }}.svg" />
-                <spinner data-ng-if="!storage.shortcut"></spinner>
+                <span data-ng-if="!storage.shortcut" class="text-center">
+                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                </span>
                 <i class="glyphicon glyphicon-exclamation-sign" data-ng-show="storage.shortcut === 'error'" />
             </td>
             <td class="oui-table__cell" data-title="{{ 'storage_name' | translate }}">
@@ -54,7 +56,7 @@
                 <button type="button" class="no-style pull-right" data-ng-show="storage.status != 'deleting'" data-ng-click="delete(storage)">
                     <i class="glyphicon glyphicon-trash"></i>
                 </button>
-                <spinner class="pull-right" data-ng-if="storage.status === 'deleting'"></spinner>
+                <oui-loader size="s" class="pull-right" data-ng-if="storage.status === 'deleting'"></oui-loader>
             </td>
         </tr>
     </tbody>

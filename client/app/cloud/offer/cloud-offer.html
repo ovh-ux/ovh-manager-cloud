@@ -1,5 +1,8 @@
 <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: white;"></div>
 <div class="offer">
+    <div class="text-center" data-ng-if="CloudOfferCtrl.loaders.start">
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
+    </div>
     <h1 class="text-center oui-header_1" data-translate="cloud_offer_ready"></h1>
     <div class="row two-block-page-container">
         <div class="col-md-7">
@@ -49,7 +52,9 @@
                         <p class="small" data-translate="cloud_offer_payment_order">
                         <p class="small" data-translate="cloud_offer_credit_explanation"></p>
                     </div>
-                    <spinner data-ng-if="CloudOfferCtrl.loaders.payment || CloudOfferCtrl.loaders.agreements"></spinner>
+                    <div class="text-center" data-ng-if="CloudOfferCtrl.loaders.payment || CloudOfferCtrl.loaders.agreements">
+                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                    </div>
                     <div data-ng-if="CloudOfferCtrl.data.defaultPayment">
                         <h5 class="oui-header_5" data-translate="cloud_offer_payment_label"></h5>
                         <div data-ng-switch="CloudOfferCtrl.data.defaultPayment.paymentType">
@@ -85,7 +90,6 @@
                             data-ng-disabled="CloudOfferCtrl.canStartProject()"
                             data-ng-click="CloudOfferCtrl.startProject()">
                         <span data-translate="cloud_offer_start"></span>
-                        <spinner data-ng-if="CloudOfferCtrl.loaders.start"></spinner>
                     </button>
                 </form>
             </div>

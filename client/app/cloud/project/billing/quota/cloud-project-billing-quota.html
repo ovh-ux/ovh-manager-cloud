@@ -2,18 +2,12 @@
 
     <!-- INIT LOADER -->
     <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.quota">
-
-        <spinner></spinner>
-        {{ :: 'cpb_quota_loading' | translate }}
-
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
     <!-- UNLEASH LOADER -->
     <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.unleash">
-
-        <spinner></spinner>
-        {{ :: 'cpb_quota_unleash_loading' | translate }}
-
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
     <div class="cui-page__content" data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">

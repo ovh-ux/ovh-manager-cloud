@@ -5,7 +5,7 @@
             <p data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast" class="center-block text-center">{{ BillingConsumptionEstimateCtrl.data.estimateTotals.total.toFixed(2) }} {{ BillingConsumptionEstimateCtrl.data.estimateTotals.currencySymbol }}</p>
         </header>
         <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.forecast">
-            <spinner name="bubbles-222-fff-32"></spinner>
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast">
             <p data-translate="cpbe_estimate_summary_renew_monthly_sub_label"
@@ -23,7 +23,7 @@
             <p data-translate="cpbe_estimate_alert_header_description"></p>
         </header>
         <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.alert">
-            <spinner></spinner>
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && !BillingConsumptionEstimateCtrl.data.alert">
             <div class="text-center">
@@ -44,6 +44,7 @@
                 <consumption-chart model="BillingConsumptionEstimateCtrl.consumptionChartData"></consumption-chart>
             </div>
             <div class="text-center top-space-p20" write-right-required>
+                <oui-loader size="s" class="d-inline-block" data-ng-if="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></oui-loader>
                 <button
                     class="oui-button oui-button_secondary"
                     type="button"
@@ -57,7 +58,6 @@
                         data-ng-click="BillingConsumptionEstimateCtrl.deleteAlert()"
                         data-ng-disabled="BillingConsumptionEstimateCtrl.loaders.deleteAlert">
                     <span data-translate="cpbe_estimate_alert_delete"></span>
-                    <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></spinner>
                 </button>
             </div>
         </div>

@@ -7,11 +7,13 @@
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
 
-        <div class="oui-modal__body-text" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init">
-            <spinner></spinner>
+        <div class="oui-modal__body-text" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init || CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
 
-        <div class="oui-modal__body-text" data-ng-if="!CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init">
+        <div class="oui-modal__body-text" data-ng-if="!CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init && !CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot">
             <h2 class="oui-modal__title" data-translate="cpcv_snapshot_add_title"></h2>
 
             <p class="oui-modal__text" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.volume.attachedTo[0] !== 'unlinked'">
@@ -58,7 +60,6 @@
             class="oui-button oui-button_primary"
             data-ng-disabled="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init || CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot || snapshotCreationForm.$invalid || !CloudProjectComputeVolumeSnapshotAddCtrl.snapshot.name">
             <span data-translate="cpcv_snapshot_confirm"></span>
-            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot"></spinner>
         </button>
     </div>
 </form>

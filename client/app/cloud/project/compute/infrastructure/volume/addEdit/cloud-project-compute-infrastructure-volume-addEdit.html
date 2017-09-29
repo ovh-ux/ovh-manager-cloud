@@ -129,7 +129,9 @@
                             <span data-ng-if="!VolumeAddEditCtrl.loaders.quota && VolumeAddEditCtrl.sectionCanBeModifiedInEdition('size') && !(VolumeAddEditCtrl.slider.max > VolumeAddEditCtrl.slider.min)" class="red">*</span>
 
                             <!-- loading availableGigabytes ... -->
-                            <spinner data-ng-if="VolumeAddEditCtrl.loaders.quota"></spinner>
+                            <div class="text-center" data-ng-if="VolumeAddEditCtrl.loaders.quota">
+                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            </div>
                         </div>
 
                         <!-- <div class="popover-list-item" data-ng-class="{'opacity6' : !VolumeAddEditCtrl.volumeInEdition.size}">
@@ -164,7 +166,9 @@
                         <!-- loading... -->
                         <p data-ng-if="VolumeAddEditCtrl.loaders.panelsData.regions"
                              class="addOrEdit-menu-loading">
-                            <spinner></spinner>
+                            <div class="text-center">
+                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            </div>
                             {{:: 'cpci_volume_addedit_region_loading' | translate}}
                         </p>
 
@@ -232,7 +236,9 @@
                                data-ng-if="VolumeAddEditCtrl.volumeInEdition.size"
                                translate-values="{price: VolumeAddEditCtrl.volumeInEdition.calculatePrice().monthlyPrice.text }">
                         </small>
-                        <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="VolumeAddEditCtrl.loaders.launch"></spinner>
+                        <div class="text-center" data-ng-if="VolumeAddEditCtrl.loaders.launch">
+                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                        </div>
                     </button>
                     <button class="btn btn-default" type="reset"
                             data-ng-click="VolumeAddEditCtrl.cancelVolume()"
@@ -270,7 +276,9 @@
                                data-ng-if="VolumeAddEditCtrl.volumeInEdition.size"
                                translate-values="{price: VolumeAddEditCtrl.volumeInEdition.calculatePrice().monthlyPrice.text }">
                         </small>
-                        <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="VolumeAddEditCtrl.loaders.launch"></spinner>
+                        <div class="text-center" data-ng-show="VolumeAddEditCtrl.loaders.launch">
+                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                        </div>
                     </button>
 
                     <button class="btn btn-default animate-fadeInRight-enter" type="reset"
@@ -423,7 +431,9 @@
                     <!-- loading... -->
                     <p data-ng-if="VolumeAddEditCtrl.loaders.panelsData.regions"
                        class="popover-detail-item text-center">
-                        <spinner></spinner>
+                        <div class="text-center">
+                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                        </div>
                         {{:: 'cpci_volume_addedit_region_loading' | translate}}
                     </p>
 
