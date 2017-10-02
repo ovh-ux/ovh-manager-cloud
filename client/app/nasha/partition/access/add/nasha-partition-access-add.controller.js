@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, Toast, CloudAapi) {
+angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function ($scope, $translate, $q, $uibModalInstance, OvhApiDedicatedNasha, Toast) {
     "use strict";
 
     var self = this;
