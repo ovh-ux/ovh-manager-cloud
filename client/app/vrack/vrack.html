@@ -40,8 +40,8 @@
 
         <header class="vrack__header" data-ng-if="!VrackCtrl.nameEditing">
             <div>
-                <h1 class="vrack__header-title" data-ng-bind="VrackCtrl.name || VrackCtrl.serviceName"></h1>
-                <h6 class="vrack__header-sub-title" data-ng-bind="VrackCtrl.serviceName" data-ng-if="VrackCtrl.name !== ''"></h6>
+                <h1 class="cui-page-header__title" data-ng-bind="VrackCtrl.name || VrackCtrl.serviceName"></h1>
+                <h6 class="cui-page-header__subtitle" data-ng-bind="VrackCtrl.serviceName" data-ng-if="VrackCtrl.name !== ''"></h6>
             </div>
             <button class="vrack__edit-button btn btn-icon"
                     type="button"
@@ -49,10 +49,6 @@
                     data-ng-click="VrackCtrl.editName()">
                 <i class="ovh-font ovh-font-editer" aria-hidden="true"></i>
             </button>
-            <a class="vrack__header-guide-link" href="#" data-ng-if="VrackCtrl.hasVrackGuideUrl()">
-                <i class="vrack__header-guide-link-icon fa fa-lg fa-life-ring" aria-hidden="true"></i>
-                {{ ::"vrack_guide_link_text" | translate }}
-            </a>
         </header>
 
         <section>
