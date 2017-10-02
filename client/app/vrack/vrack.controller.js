@@ -249,7 +249,8 @@ angular.module("managerApp").controller("VrackCtrl",
                     self.poller = null;
                     self.refreshData();
                 }, pollingInterval);
-            }
+            };
+            self.loaders.init = false;
         });
     };
 
@@ -631,6 +632,7 @@ angular.module("managerApp").controller("VrackCtrl",
     }
 
     function init () {
+        self.loaders.init = true;
         if (_.isEmpty($stateParams.vrackId)) {
             OvhApiVrack.Lexi().query().$promise
                 .then(function (vracks) {

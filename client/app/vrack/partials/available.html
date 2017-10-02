@@ -1,9 +1,14 @@
 <h2 class="vrack__section-title" data-translate="vrack_your_services"></h2>
 <ul class="vrack__service-type-list">
+    <li class="vrack__section-type" data-ng-if="VrackCtrl.loaders.deleting">
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+    </li>
     <li class="vrack__service-type"
         data-ng-init="VrackCtrl.setAccordionState('available', 'types', $index, true)"
         data-ng-repeat="(serviceType, services) in VrackCtrl.data.allowedServices track by serviceType"
-        data-ng-if="VrackCtrl.hasServices(services)"
+        data-ng-if="VrackCtrl.hasServices(services) && !VrackCtrl.loaders.deleting"
         data-ng-class="{ 'vrack__service-type_expanded': VrackCtrl.getAccordionState('available', 'types', $index) }">
         <span class="vrack__service-type-name"
               data-ng-click="VrackCtrl.toggleAccordion('available', 'types', $index)">
@@ -23,9 +28,6 @@
                 data-ng-repeat="service in services | orderBy: service.niceName track by service.id"
                 data-ng-click="VrackCtrl.toggleAddService(service.trueServiceType, service.id)"
                 data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(service.trueServiceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
-                <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
-                   data-ng-if="VrackCtrl.isPending(service.id)">
-                </i>
                 {{ ::service.niceName }}
             </li>
         </ul>
@@ -44,9 +46,6 @@
                     <li class="vrack__service vrack__service_selectable"
                         data-ng-click="VrackCtrl.toggleAddService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
-                        <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
-                           data-ng-if="VrackCtrl.isPending(service.id)">
-                        </i>
                         {{ ::'vrack_private_cloud_vm_network_label' | translate }}
                     </li>
                 </ul>
