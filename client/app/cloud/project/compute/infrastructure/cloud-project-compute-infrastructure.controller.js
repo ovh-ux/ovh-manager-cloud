@@ -120,11 +120,10 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.showDeleteProjectModal = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
                 controller: "CloudProjectDeleteCtrl",
-                controllerAs: "CloudProjectDeleteCtrl",
-                windowClass: "cloud_project-delete-modal",
-                backdropClass: "cloud_project-delete-modal-backdrop"
+                controllerAs: "CloudProjectDeleteCtrl"
             });
         };
 
@@ -357,6 +356,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openSnapshotWizard = function (vm) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html',
                 controller: 'CloudProjectComputeSnapshotAddCtrl',
                 controllerAs: 'CloudProjectComputeSnapshotAddCtrl',
@@ -383,6 +383,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openMonthlyConfirmation = function (vm) {
             var modalInstance = $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm/cloud-project-compute-infrastructure-virtual-machine-monthlyConfirm.html",
                 controller: "CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm",
                 controllerAs: "CPCIVirtualmachineMonthlyConfirm",
@@ -454,6 +455,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openVnc = function (vm) {
             $uibModal.open({
+                windowTopClass: 'cui-modal',
                 templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html',
                 controller   : 'CloudProjectComputeInfrastructureVirtualmachineVncCtrl',
                 controllerAs : 'VmVncCtrl',
@@ -469,6 +471,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         self.rescueMode = function (vm, enable) {
             if (enable) {
                 $uibModal.open({
+                    windowTopClass: 'cui-modal',
                     templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html',
                     controller   : 'CloudProjectComputeInfrastructureVirtualmachineRescueCtrl',
                     controllerAs : 'VmRescueCtrl',
@@ -539,6 +542,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.buyIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverBuyCtrl',
                 controllerAs: 'CPCIIpFailoverBuyCtrl'
@@ -564,6 +568,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.importIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverImportCtrl',
                 controllerAs: 'CPCIIpFailoverImportCtrl',

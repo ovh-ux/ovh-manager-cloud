@@ -1,90 +1,82 @@
-
-<form id="openStackUserTokenCreationForm" name="openStackUserTokenCreationForm" class="ovh-form-flat" novalidate>
-
-    <div class="modal-header">
-        <h3 class="modal-title" >
-            {{"cpou_token_title" | translate}}
-        </h3>
+<form id="openStackUserTokenCreationForm" name="openStackUserTokenCreationForm" class="oui-modal oui-modal_shadow" novalidate>
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudProjectOpenstackUsersTokenCtrl.cancel()"></button>
     </div>
 
-    <div class="modal-body">
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <h2 class="oui-modal__title" data-translate="cpou_token_title"></h2>
+
         <div data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens">
-            <p data-translate="cpou_token_info"
+            <p class="oui-modal__text" data-translate="cpou_token_info"
                data-translate-values="{username: CloudProjectOpenstackUsersTokenCtrl.openstackUser.username}"></p>
 
-            <div flat-input-container class="bottom-space-m12">
-                <label for="password" data-translate="cpou_token_password_label"></label>
-                <input type="password" class="form-control error-animate-shake-light" id="password" name="password"
-                    placeholder="{{ ::'cpou_token_password_label' | translate}}"
-                    data-ng-model="CloudProjectOpenstackUsersTokenCtrl.generateToken.password"
-                    autoselect
-                    autofocus
-                    required
-                    ng-maxlength="4095">
-            </div>
+            <label class="oui-label" for="password" data-translate="cpou_token_password_label"></label>
+            <input type="password" class="oui-input" id="password" name="password"
+                placeholder="{{ ::'cpou_token_password_label' | translate}}"
+                data-ng-model="CloudProjectOpenstackUsersTokenCtrl.generateToken.password"
+                data-ng-class="{'oui-input_error': openStackUserTokenCreationForm.$dirtt}"
+                autoselect
+                autofocus
+                required
+                data-ng-maxlength="4095">
         </div>
 
         <div data-ng-if="CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens">
-
-            <p>
+            <p class="oui-modal__text">
                 <span data-translate="cpou_token_xauthtoken"></span>
                 <strong>{{ CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens['X-Auth-Token'] }}</strong>
             </p>
-            <p data-ng-if="CloudProjectOpenstackUsersTokenCtrl.tokenGuide.link"
+            <p class="oui-modal__text"
+               data-ng-if="CloudProjectOpenstackUsersTokenCtrl.tokenGuide.link"
                data-translate="cpou_token_xauthtoken_guide"
                data-translate-values="{ link : CloudProjectOpenstackUsersTokenCtrl.tokenGuide.link }"></p>
 
-            <p class="text-center top-space-m20 bottom-space-m20 orange">
+            <p class="oui-modal__text orange text-center">
                 <i class="fa fa-exclamation-triangle"></i>
                 <span data-translate="cpou_token_title_information"></span>
             </p>
 
-            <table class="table table-pretty table-hover table-striped shadow-z-1">
-                <thead>
+            <table class="oui-table">
+                <thead class="oui-table__headers">
                     <tr>
-                        <th data-translate="cpou_token_catalog_region"></th>
-                        <th data-translate="cpou_token_catalog_service"></th>
-                        <th data-translate="cpou_token_catalog_endpoint"></th>
+                        <th class="oui-table__header" data-translate="cpou_token_catalog_region"></th>
+                        <th class="oui-table__header" data-translate="cpou_token_catalog_service"></th>
+                        <th class="oui-table__header" data-translate="cpou_token_catalog_endpoint"></th>
                     </tr>
                 </thead>
-                <tbody data-ng-repeat="catalog in CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens.token.catalog">
-                    <tr data-ng-repeat="endpoint in catalog.endpoints">
-                        <td>{{ endpoint.region }}</td>
-                        <td>{{ catalog.type }} </td>
-                        <td class="word-break">{{ endpoint.url }}</td>
+                <tbody class="oui-table__body" data-ng-repeat="catalog in CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens.token.catalog">
+                    <tr class="oui-table__row" data-ng-repeat="endpoint in catalog.endpoints">
+                        <td class="oui-table__cell">{{ endpoint.region }}</td>
+                        <td class="oui-table__cell">{{ catalog.type }} </td>
+                        <td class="oui-table__cell word-break">{{ endpoint.url }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-
-    <div class="modal-footer">
-
-        <button type="submit" class="btn btn-primary pull-right"
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
+            data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens"
+            data-ng-click="CloudProjectOpenstackUsersTokenCtrl.cancel()"
+            data-ng-disabled="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
+            <span data-translate="common_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
             data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens"
             data-ng-disabled="openStackUserTokenCreationForm.$invalid || CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken"
             data-ng-click="CloudProjectOpenstackUsersTokenCtrl.generate()">
-            <i class="glyphicon glyphicon-ok"></i>
             <span data-translate="common_confirm"></span>
             <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken"></spinner>
         </button>
 
-        <button type="reset" class="btn btn-default pull-left"
-            data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens"
-            data-ng-click="CloudProjectOpenstackUsersTokenCtrl.cancel()"
-            data-ng-disabled="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
-            <i class="glyphicon glyphicon-remove"></i>
-            <span data-translate="common_cancel"></span>
-        </button>
-
-
         <div data-ng-if="CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens"
-            class="text-center animate-fadeIn-enter"
             data-ng-hide="VmAddEditCtrl.vmInEdition.hasChange()">
-            <button class="btn btn-default" type="reset"
+            <button class="oui-button oui-button_secondary" type="reset"
                 data-translate="common_close"
                 data-ng-click="CloudProjectOpenstackUsersTokenCtrl.close()">
             </button>
         </div>
     </div>
+</form>

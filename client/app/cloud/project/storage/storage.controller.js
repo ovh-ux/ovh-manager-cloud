@@ -131,6 +131,7 @@ angular.module("managerApp").controller("RA.storageCtrl", [
         /* Delete (a) container(s) */
         $scope["delete"] = function (container) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/storage/storage-delete-container/modal.html",
                 controller: "RA.storage.deleteContainer",
                 controllerAs: "RA.storage.deleteContainer",

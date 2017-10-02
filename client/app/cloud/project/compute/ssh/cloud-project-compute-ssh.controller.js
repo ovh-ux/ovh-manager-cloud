@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, CloudMessage, $stateParams, ovhDocUrl) {
+  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, ControllerHelper, CloudMessage, $stateParams, ovhDocUrl) {
 
     var self = this,
         serviceName = $stateParams.projectId;
@@ -172,18 +172,23 @@ angular.module("managerApp")
         }
     };
 
-    self.deleteSshKey = function (sshKey) {
-        if (!self.loaders.remove.ssh) {
-            self.loaders.remove.ssh = true;
-            OvhApiCloudProjectSshKey.Lexi().remove({serviceName : serviceName, keyId: sshKey.id}).$promise.then(function () {
+    self.openDeleteSshKey = function (sshKey) {
+        ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/cloud/project/compute/ssh/delete/compute-ssh-delete.html",
+                controller: "CloudProjectComputeSshDeleteCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    sshKey: () => sshKey
+                }
+            },
+            successHandler: () => {
                 self.getSshKeys(true);
                 CloudMessage.success($translate.instant('cpc_ssh_delete_success'));
-            }, function (err){
-                CloudMessage.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.ssh = false;
-            });
-        }
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '))
+        });
     };
 
     init();

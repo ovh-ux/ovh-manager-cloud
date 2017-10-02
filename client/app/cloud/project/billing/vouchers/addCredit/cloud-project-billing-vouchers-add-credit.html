@@ -1,58 +1,57 @@
-
-<form id="addCreditForm" name="addCreditForm" class="ovh-form-flat" novalidate>
-
-    <div class="modal-header">
-        <h3 class="modal-title" >
-            <i class="fa fa-money right-space-m8"></i>
-            {{"cpb_vouchers_add_credit_title" | translate}}
-        </h3>
+<form class="oui-modal oui-modal_shadow" id="addCreditForm" name="addCreditForm" novalidate>
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudProjectBillingVouchersAddcreditCtrl.cancel()"></button>
     </div>
 
-    <div class="modal-body">
+    <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="CloudProjectBillingVouchersAddcreditCtrl.loaders.currency">
+        <spinner></spinner>
+    </div>
 
-        <div class="row" data-ng-if="CloudProjectBillingVouchersAddcreditCtrl.loaders.currency">
-            <spinner class="cold-xs-2 col-xs-offset-6"></spinner>
-        </div>
-        <div data-ng-if="!CloudProjectBillingVouchersAddcreditCtrl.loaders.currency">
-            <p class="bold" data-translate="cpb_vouchers_add_credit_info" ></p>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title" data-translate="cpb_vouchers_add_credit_title"></h2>
 
-            <div flat-input-container class="bottom-space-m12">
-                <label for="amount" data-translate="cpb_vouchers_add_credit_amount"
-                    translate-values="{currency: CloudProjectBillingVouchersAddcreditCtrl.credit.currencyCodeText }"></label>
-                <input type="number" class="form-control error-animate-shake-light" 
-                    id="amount" name="amount" pattern="^\d{1,8}$"
-                    placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
-                    data-ng-model="CloudProjectBillingVouchersAddcreditCtrl.credit.amount"
-                    autoselect
-                    autofocus
-                    min="1"
-                    required>
-            </div>
-            <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="addCreditForm.amount.$error" data-ng-if="addCreditForm.amount.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpb_vouchers_add_credit_required_error"></span></p>
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span data-translate="cpb_vouchers_add_credit_max_error"></span></p>
+            <p class="oui-modal__text" data-translate="cpb_vouchers_add_credit_info"></p>
+
+            <label class="oui-label" for="amount" data-translate="cpb_vouchers_add_credit_amount"
+                translate-values="{currency: CloudProjectBillingVouchersAddcreditCtrl.credit.currencyCodeText }"></label>
+            <input type="number" class="oui-input"
+                data-ng-class="{'oui-input_error' : addCreditForm.amount.$invalid}" 
+                id="amount" name="amount" pattern="^\d{1,8}$"
+                placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
+                data-ng-model="CloudProjectBillingVouchersAddcreditCtrl.credit.amount"
+                autoselect
+                autofocus
+                min="1"
+                required>
+
+            <div class="oui-modal__text" data-ng-messages="addCreditForm.amount.$error" data-ng-if="addCreditForm.amount.$dirty">
+                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" 
+                   data-ng-message="required"
+                   data-translate="cpb_vouchers_add_credit_required_error"></p>
+                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" 
+                   data-ng-message="maxlength" 
+                   data-translate="cpb_vouchers_add_credit_max_error"></p>
             </div>
         </div>
         <div data-ng-show="CloudProjectBillingVouchersAddcreditCtrl.loaders.addCredit" class="top-space-m20 bottom-space-m8">
-            <p class="center" data-translate="cpb_vouchers_add_credit_doing"></p>
+            <p class="oui-modal__text text-danger center" data-translate="cpb_vouchers_add_credit_doing"></p>
         </div>
     </div>
 
-    <div class="modal-footer">
-        <button type="submit" class="btn btn-primary pull-right"
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
+            data-ng-click="CloudProjectBillingVouchersAddcreditCtrl.cancel()"
+            data-ng-disabled="CloudProjectBillingVouchersAddcreditCtrl.loaders.addCredit" >
+            <span data-translate="cpb_vouchers_add_credit_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
             data-ng-disabled="addCreditForm.$invalid || CloudProjectBillingVouchersAddcreditCtrl.loaders.addCredit"
             data-ng-click="CloudProjectBillingVouchersAddcreditCtrl.addCredit()"
             data-ng-disabled="CloudProjectBillingVouchersAddcreditCtrl.loaders.addCredit
                 || !addCreditForm.$valid">
-            <i class="fa fa-shopping-cart right-space-m8"></i>
             <span data-translate="cpb_vouchers_add_credit_valid"></span>
         </button>
-        <button type="reset" class="btn btn-default pull-left "
-            data-ng-click="CloudProjectBillingVouchersAddcreditCtrl.cancel()"
-            data-ng-disabled="CloudProjectBillingVouchersAddcreditCtrl.loaders.addCredit" >
-            <i class="glyphicon glyphicon-remove"></i>
-            <span data-translate="cpb_vouchers_add_credit_cancel"></span>
-        </button>
     </div>
-
 </form>

@@ -182,7 +182,7 @@
             </td>
 
             <td data-title="{{::'openstackusers_users_userlist_status_cols' | translate}}"
-                class="oui-table__cell text-center">
+                class="oui-table__cell">
                 <span 	class="label"
                     data-ng-class="{
                     'opacity2-leave' 	: CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
@@ -256,9 +256,7 @@
 
 
                     <button class="no-style"
-                        data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = user.id"
-                        data-ng-disabled="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id ||
-                                          user.status !=='ok'"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.openDeleteUser(user)"
                         title="{{'openstackusers_users_userlist_delete_submit' | translate }}">
                         <i class="fa fa-trash right-space-m8"></i>
                     </button>

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state,
+  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
                                                          CloudProjectOrchestrator , OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
                                                          OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
 
@@ -237,54 +237,22 @@ angular.module("managerApp")
         }, 99);
     };
 
-    self.deleteVolume = function (volume) {
-        if (!self.loaders.remove.volume) {
-            self.loaders.remove.volume = true;
-            deleteVolume(volume.id).then(function () {
+    self.openDeleteVolume = function (volume) {
+        ControllerHelper.modal.showModal({
+                modalConfig: {
+                templateUrl: "app/cloud/project/compute/volume/delete/cloud-project-compute-volume-delete.html",
+                controller: "CloudProjectComputeVolumeDeleteCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    volume: () => volume
+                }
+            },
+            successHandler: () => {
                 self.getVolume(true);
                 CloudMessage.success($translate.instant('cpc_volume_delete_success'));
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.volume = false;
-            });
-        }
-    };
-
-    self.deleteMultiVolume = function () {
-        var tabDelete = [],
-            nbSelected  = self.getSelectedCount();
-
-        self.loaders.remove.volumeMulti = true;
-
-        angular.forEach(self.table.selected, function (value, volumeId){
-            tabDelete.push(deleteVolume(volumeId).then(function(){
-                return null;
-            }, function (error){
-                return $q.reject({id : volumeId, error : error.data});
-            }));
-        });
-
-        $q.allSettled(tabDelete).then(function (){
-            if (nbSelected > 1) {
-                CloudMessage.success($translate.instant('cpc_volume_delete_success_plural', {nbVolumes: nbSelected}));
-            }else {
-                CloudMessage.success($translate.instant('cpc_volume_delete_success'));
-            }
-        }, function (error){
-            var tabError = error.filter(function (val) {
-                return val !== null;
-            });
-
-            self.table.autoSelected = _.pluck(tabError, 'id');
-            if (tabError.length > 1) {
-                CloudMessage.error($translate.instant('cpc_volume_delete_error_plural', {nbVolumes: tabError.length}));
-            } else {
-                CloudMessage.error($translate.instant('cpc_volume_delete_error_one'));
-            }
-        })['finally'](function(){
-            self.getVolume(true);
-            self.loaders.remove.volumeMulti = false;
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '))
         });
     };
 
@@ -336,10 +304,6 @@ angular.module("managerApp")
                 self.totalResume.price.currencyCode = firstVolumePrice.monthlyPrice.currencyCode;
             }
         });
-    }
-
-    function deleteVolume (volumeId) {
-        return OvhApiCloudProjectVolume.Lexi().remove({serviceName : serviceName, volumeId: volumeId}).$promise;
     }
 
     init();

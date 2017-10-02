@@ -325,7 +325,7 @@
                             <button class="no-style"
                                 type="button"
                                 title="{{ (snapshot.isInstalledOnVm ? 'cpc_snapshot_status_cannot_delete' : 'cpc_snapshot_delete_button') | translate}}"
-                                data-ng-click="CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId = snapshot.id"
+                                data-ng-click="CloudProjectComputeSnapshotCtrl.openDeleteSnapshot(snapshot)"
                                 data-ng-disabled="CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId === snapshot.id
                                                 || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot
                                                 || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti
