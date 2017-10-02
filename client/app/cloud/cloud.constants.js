@@ -2,14 +2,14 @@
 
 angular.module("managerApp")
     .constant("CLOUD_INSTANCE_DEFAULTS", {
-        region: "GRA1",
+        region: "WAW1",
         image: "Ubuntu 16.04",
-        flavor: "sp-30-ssd"
+        flavor: "b2-30"
     })
     .constant("CLOUD_INSTANCE_DEFAULT_FALLBACK", {
-        region: "GRA1",
+        region: "WAW1",
         image: "Ubuntu 16.04",
-        flavor: "vps-ssd-1" })
+        flavor: "s1-2" })
     .constant("CLOUD_FLAVORTYPE_CATEGORY", [
         {
             id: "vps",
