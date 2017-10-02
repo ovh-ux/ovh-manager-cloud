@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("VrackCtrl",
-    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, Toast, SidebarMenu, OvhApiVrack, OvhApiCloudProject, OvhApiMe, URLS, VrackService) {
+    function ($scope, $q, $stateParams, $state, $timeout, $translate, $uibModal, CloudMessage, SidebarMenu, OvhApiVrack, OvhApiCloudProject, OvhApiMe, URLS, VrackService) {
     "use strict";
     var self = this;
     var pollingInterval = 5000;
@@ -19,6 +19,8 @@ angular.module("managerApp").controller("VrackCtrl",
     self.modals = {
         move: null
     };
+
+    self.messages = [];
 
     self.loaders = {
         init: false,
@@ -55,6 +57,14 @@ angular.module("managerApp").controller("VrackCtrl",
             }
         }
     };
+    self.refreshMessage = function () {
+        self.messages = self.messageHandler.getMessages();
+    }
+
+    self.loadMessage = function () {
+        CloudMessage.unSubscribe("vrack");
+        self.messageHandler = CloudMessage.subscribe("vrack", { onMessage: () => self.refreshMessage() });
+    }
 
     self.groupedServiceKeys = {
         dedicatedCloudDatacenter: "dedicatedCloud.niceName",
@@ -320,7 +330,7 @@ angular.module("managerApp").controller("VrackCtrl",
         OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
             .catch(function (err) {
                 self.name = self.nameBackup;
-                Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
             })
             .finally(function () {
                  var menuItem = SidebarMenu.getItemById(self.serviceName);
@@ -346,7 +356,7 @@ angular.module("managerApp").controller("VrackCtrl",
         OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
             .catch(function (err) {
                 self.description = self.descriptionBackup;
-                Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
             })
             .finally(function () {
                 self.descriptionBackup = null;
@@ -402,7 +412,7 @@ angular.module("managerApp").controller("VrackCtrl",
                     break;
             }
             return task.catch(function (err) {
-                Toast.error([$translate.instant("vrack_add_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("vrack_add_error"), err.data && err.data.message || ""].join(" "));
                 return $q.reject(err);
             });
         })).then(function () {
@@ -456,7 +466,7 @@ angular.module("managerApp").controller("VrackCtrl",
                     break;
             }
             return task.catch(function (err) {
-                Toast.error([$translate.instant("vrack_remove_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("vrack_remove_error"), err.data && err.data.message || ""].join(" "));
                 return $q.reject(err);
             });
         })).then(function () {
@@ -633,6 +643,7 @@ angular.module("managerApp").controller("VrackCtrl",
 
     function init () {
         self.loaders.init = true;
+        self.loadMessage();
         if (_.isEmpty($stateParams.vrackId)) {
             OvhApiVrack.Lexi().query().$promise
                 .then(function (vracks) {
@@ -655,7 +666,7 @@ angular.module("managerApp").controller("VrackCtrl",
                 setUserRelatedContent();
                 self.refreshData();
             }).catch(function (err) {
-                Toast.error([$translate.instant("vrack_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("vrack_error"), err.data && err.data.message || ""].join(" "));
             });
         }
     }
