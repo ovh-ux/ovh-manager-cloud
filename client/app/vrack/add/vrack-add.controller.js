@@ -6,7 +6,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
         var self = this;
 
         this.loaders = {
-            loading: true,
+            loading: false,
             validationPending: false
         };
 
@@ -43,9 +43,11 @@ angular.module("managerApp").controller("VrackAddCtrl",
 
         function init () {
             self.loaders.loading = true;
+            console.log(self.loaders.loading);
             self.getVrackContract()
             .finally(function () {
                 self.loaders.loading = false;
+                console.log(self.loaders.loading);
             });
         }
 

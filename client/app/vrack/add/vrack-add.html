@@ -2,8 +2,9 @@
 
     <!-- init loading... -->
     <div data-ng-if="VrackAddCtrl.loaders.loading" class="col-xs-10 col-xs-offset-1 col-md-11 page-margins">
-        <spinner></spinner>
-        <span data-translate="common_loading"></span>
+        <div class="text-center">
+            <oui-loader size="m"></oui-loader>
+        </div>
     </div>
 
     <div data-ng-if="!VrackAddCtrl.loaders.loading"  class="col-xs-10 col-xs-offset-1 col-md-11 page-margins">
