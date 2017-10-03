@@ -479,6 +479,7 @@ angular.module("managerApp").controller("VrackCtrl",
 
     self.moveSelectedService = function (serviceType, serviceId) {
         self.modals.move = $uibModal.open({
+            windowTopClass: "cui-modal",
             templateUrl: "app/vrack/move-dialog/vrack-move-dialog.html",
             controller: "VrackMoveDialogCtrl as ctrl",
             resolve: {
