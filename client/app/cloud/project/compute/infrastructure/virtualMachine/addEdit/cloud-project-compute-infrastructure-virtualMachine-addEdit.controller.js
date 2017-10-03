@@ -1780,7 +1780,7 @@ angular.module("managerApp")
         var newCatalog =  _.any(self.panelsData.regions, function (region) {
             return /[a-z|A-Z]{3}3/.test(region);
         });
-        if (/WAW/.test(self.model.region)) {
+        if (/(WAW)|(DE)|(UK)/.test(self.model.region)) {
             newCatalog = true;
         }
         return newCatalog ? 'new' : 'old';

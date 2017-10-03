@@ -1,64 +1,65 @@
-angular.module("managerApp").service("RegionService",
-    function ($translate, $sce) {
-        "use strict";
+class RegionService {
+    constructor ($translate) {
+        this.$translate = $translate;
+    }
 
-        var self = this;
+    getMacroRegion (region) {
+        const macro = /[\D]{2,3}/.exec(region);
+        return macro ? macro[0].toUpperCase() : "";
+    }
 
-        self.getMacroRegion = function (region) {
-            var macro = /[\D]{3}/.exec(region);
-            return macro ? macro[0].toUpperCase() : "";
+    getMacroRegionLowercase (region) {
+        const macro = this.getMacroRegion(region);
+        return macro ? macro.toLowerCase() : "";
+    }
+
+    getRegionNumber (region) {
+        const number = /[\d]+$/.exec(region);
+        return number ? number[0] : "";
+    }
+
+    getTranslatedMacroRegion (region) {
+        const translatedMacroRegion = this.$translate.instant(`cloud_common_region_${this.getMacroRegion(region)}`);
+        return translatedMacroRegion || region;
+    }
+
+    getTranslatedMicroRegion (region) {
+        const translatedMicroRegion = this.$translate.instant(`cloud_common_region_${this.getMacroRegion(region)}_micro`, {
+            micro: region
+        });
+        return translatedMicroRegion || region;
+    }
+
+    getTranslatedMicroRegionLocation (region) {
+        const translatedMicroRegionLocation = this.$translate.instant(`cloud_common_region_location_${this.getMacroRegion(region)}`);
+        return translatedMicroRegionLocation || region;
+    }
+
+    getRegionIconFlag (region) {
+        return `flag-icon-${this.getMacroRegionLowercase(region)}`;
+    }
+
+    getRegionCountry (region) {
+        const translatedMicroRegionLocation = this.getTranslatedMicroRegionLocation(region);
+        return _.trim(translatedMicroRegionLocation.split("(")[1], ")");
+    }
+
+    getRegion (region) {
+        region = region.toUpperCase();
+        return {
+            macroRegion: {
+                code: this.getMacroRegion(region),
+                text: this.getTranslatedMacroRegion(region)
+            },
+            microRegion: {
+                code: region,
+                text: this.getTranslatedMicroRegion(region)
+            },
+            location: this.getTranslatedMicroRegionLocation(region),
+            icon: this.getRegionIconFlag(region),
+            country: this.getRegionCountry(region)
         };
+    }
+}
 
-        self.getMacroRegionLowercase = function (region) {
-            var macro = self.getMacroRegion(region);
-            return macro ? macro.toLowerCase() : "";
-        };
-
-        self.getRegionNumber = function (region) {
-            var number = /[\d]+$/.exec(region);
-            return number ? number[0] : "";
-        };
-
-        self.getTranslatedMacroRegion = function (region) {
-            var translatedMacroRegion = $translate.instant("cloud_common_region_" + self.getMacroRegion(region));
-            return translatedMacroRegion ? translatedMacroRegion : region;
-        };
-
-        self.getTranslatedMicroRegion = function (region) {
-            var translatedMicroRegion = $translate.instant("cloud_common_region_" + self.getMacroRegion(region) + "_micro", {
-                micro: region
-            });
-            return translatedMicroRegion ? translatedMicroRegion : region;
-        };
-
-        self.getTranslatedMicroRegionLocation = function (region) {
-            var translatedMicroRegionLocation = $translate.instant("cloud_common_region_location_" + self.getMacroRegion(region));
-            return translatedMicroRegionLocation ? translatedMicroRegionLocation : region;
-        };
-
-        self.getRegionIconFlag = function (region) {
-            return "flag-icon-" + self.getMacroRegionLowercase(region);
-        };
-
-        self.getRegionCountry = function (region) {
-            var translatedMicroRegionLocation = self.getTranslatedMicroRegionLocation(region);
-            return _.trim(translatedMicroRegionLocation.split("(")[1], ")");
-        };
-
-        self.getRegion = function (region) {
-            region = region.toUpperCase();
-            return {
-                macroRegion: {
-                    code: self.getMacroRegion(region),
-                    text: self.getTranslatedMacroRegion(region)
-                },
-                microRegion: {
-                    code: region,
-                    text: self.getTranslatedMicroRegion(region)
-                },
-                location: self.getTranslatedMicroRegionLocation(region),
-                icon: self.getRegionIconFlag(region),
-                country: self.getRegionCountry(region)
-            };
-        }
-    });
+angular.module("managerApp").service("RegionService", RegionService);
