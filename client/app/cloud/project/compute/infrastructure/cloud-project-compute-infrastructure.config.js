@@ -7,7 +7,7 @@ angular.module("managerApp")
                         .then(projects => {
                             atInternet.trackEvent({
                                 event: `CloudProject-${projects.length}`,
-                                page: "cloud::cloud-project::compute::infrastructure"
+                                page: "cloud::iaas::pci-project::compute::infrastructure"
                             });
                         });
                 }

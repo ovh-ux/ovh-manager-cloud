@@ -26,7 +26,7 @@ angular.module("managerApp")
               $uibModalInstance.close(self.snapshot);
               atInternet.trackOrder({
                   name: "[SNAPSHOT]" + self.snapshot.vm.flavor.groupName.replace(/[\W_]+/g, "") + "[" + self.snapshot.vm.flavor.groupName + "]",
-                  page: "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                  page: "iaas::pci-project::compute::infrastructure::order",
                   priceTaxFree: self.snapshotPriceStruct.total.value
               });
           }, function (err) {

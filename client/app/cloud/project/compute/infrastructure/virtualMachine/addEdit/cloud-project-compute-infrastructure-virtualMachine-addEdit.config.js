@@ -17,7 +17,7 @@ angular.module("managerApp")
                     if (isSomeFlavorsDisabled) {
                         atInternet.trackEvent({
                             event: "over-quota-low",
-                            page: "cloud::cloud-project::compute::infrastructure::order"
+                            page: "cloud::iaas::pci-project::compute::infrastructure::order"
                         });
                     }
                 },
@@ -25,7 +25,7 @@ angular.module("managerApp")
                     if (_.includes(quotaReasons, parameters[1].disabled)) {
                         atInternet.trackEvent({
                             event: "over-quota-high",
-                            page: "cloud::cloud-project::compute::infrastructure::order"
+                            page: "cloud::iaas::pci-project::compute::infrastructure::order"
                         });
                     }
                 }
