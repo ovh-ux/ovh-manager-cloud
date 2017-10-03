@@ -86,6 +86,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
                 }).$promise
                 .then(function (regions) {
                     $scope.regions = regions;
+                    $scope.regions = _.filter($scope.regions, region => region !== "DE1");
                 })
                 .finally(function () {
                     $scope.loaders.regions = false;
