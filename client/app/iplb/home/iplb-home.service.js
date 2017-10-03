@@ -143,6 +143,16 @@ class IpLoadBalancerHomeService {
         }).$promise;
     }
 
+    updateQuota (serviceName, zoneName, alert) {
+        return this.IpLoadBalancing.Quota().Lexi().put({
+            serviceName,
+            zoneName
+        }, {
+            alert
+        }).$promise
+            .catch(this.ServiceHelper.errorHandler("iplb_utilisation_update_alert_error"));
+    }
+
     updateName (serviceName, newName) {
         return this.IpLoadBalancing.Lexi().put({ serviceName }, { displayName: newName })
             .$promise

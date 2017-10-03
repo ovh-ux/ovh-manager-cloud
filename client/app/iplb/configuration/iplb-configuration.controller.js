@@ -61,7 +61,7 @@ class IpLoadBalancerConfigurationCtrl {
         this.poller = this.CloudPoll.pollArray({
             items: this.zones.data,
             pollFunction: zone => this.IpLoadBalancerConfigurationService.getZoneChanges(this.$stateParams.serviceName, zone.id),
-            stopCondition: zone => zone.task && _.includes(["done", "error"], zone.task.status) && zone.changes === 0
+            stopCondition: zone => !zone.task || (zone.task && _.includes(["done", "error"], zone.task.status) && zone.changes === 0)
         });
     }
 

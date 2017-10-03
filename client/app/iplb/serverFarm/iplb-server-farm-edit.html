@@ -1,4 +1,7 @@
 <div class="cui-page__content">
+    <cui-back-link data-state="network.iplb.detail.server-farm"
+                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
+                   data-text="'iplb_back_home' | translate"></cui-back-link>
     <h1 data-ng-hide="ctrl.edition" data-translate="iplb_farm_add_title"></h1>
     <h1 data-ng-show="ctrl.edition" data-translate="iplb_farm_update_title"
         data-translate-values="{ farmId: ctrl.farm.farmId }"></h1>
@@ -21,7 +24,8 @@
                         data-on-change="ctrl.onProtocolChange()">
                         <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
                             data-text="('iplb_farm_protocol_' + protocol) | translate"
-                            data-value="protocol"></cui-radio-bar-item>
+                            data-value="protocol"
+                            data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
                     </cui-radio-bar>
                 </div>
             </div>
@@ -45,12 +49,13 @@
             </div>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }">
             <label for="zone" class="oui-label" data-translate="iplb_farm_edit_datacenter"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
                     <div class="oui-select"
+                        data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }"
                         data-ng-hide="ctrl.zones.loading">
                         <select class="oui-select__input"
                             name="zone"
@@ -58,7 +63,9 @@
                             data-ng-hide="ctrl.zones.loading"
                             data-ng-model="ctrl.farm.zone"
                             data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
-                            ui-validate="{ selection: 'ctrl.validateSelection($value)' }">
+                            ui-validate="{ selection: 'ctrl.validateSelection($value)' }"
+                            data-ng-disabled="ctrl.edition">
+                            <option data-translate="iplb_zone_select_placeholder"></option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>
@@ -132,7 +139,7 @@
                     data-translate="iplb_farm_add_confirm"
                     data-ng-click="ctrl.create()"
                     data-ng-hide="ctrl.edition"></button>
-                <a class="oui-button oui-button_secondary"
+                <a class="oui-button oui-button_link"
                     data-translate="iplb_farm_edit_cancel"
                     data-ui-sref="network.iplb.detail.server-farm"></a>
             </div>

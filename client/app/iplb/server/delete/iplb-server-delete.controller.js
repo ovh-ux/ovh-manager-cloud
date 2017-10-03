@@ -14,10 +14,10 @@ class IpLoadBalancerServerDeleteCtrl {
     confirm () {
         this.saving = true;
         return this.IpLoadBalancerServerService.delete(
-                this.$stateParams.serviceName,
-                this.farmId,
-                this.serverId
-            )
+            this.$stateParams.serviceName,
+            this.farmId,
+            this.serverId
+        )
             .then(response => this.$uibModalInstance.close(response))
             .catch(response => this.$uibModalInstance.dismiss(response))
             .finally(() => {

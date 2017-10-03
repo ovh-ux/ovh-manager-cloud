@@ -1,7 +1,4 @@
 <section class="cui-page__content">
-    <cui-back-link data-state="network.iplb.detail.home"
-                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
-                   data-text="'iplb_back_home' | translate"></cui-back-link>
     <cui-page-content-title text="'iplb_farm_title' | translate"></cui-page-content-title>
     <p data-translate="iplb_farm_intro_text"></p>
 
@@ -20,7 +17,7 @@
             data-translate="iplb_farm_add_server"
             data-ui-sref="network.iplb.detail.server-farm.server-add({ farmId: farm.farmId })"></a>
         <cui-loader data-ng-show="!farm.servers || farm.servers.loading"></cui-loader>
-        <oui-table data-ng-hide="!farm.servers || farm.servers.loading"
+        <oui-table data-ng-hide="!farm.servers || farm.servers.loading || !farm.servers.data.length"
             rows="farm.servers.data">
             <column title="'iplb_farm_server_list_col_server' | translate" property="serverId" sortable>
                 {{ $row.displayName || $row.serverId }}
@@ -41,7 +38,6 @@
                     data-ng-click="ctrl.seeServerStatus($row)"></iplb-server-status>
             </column>
             <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="ctrl.serverActionTemplate()"></column>
-            <empty-placeholder data-ng-bind="'iplb_farm_server_list_empty' | translate"></empty-placeholder>
         </oui-table>
     </cui-accordion>
 </section>

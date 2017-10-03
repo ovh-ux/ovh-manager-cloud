@@ -5,7 +5,7 @@
             <dt class="preview-list__term"
                 data-translate="iplb_server_preview_name"></dt>
             <dd class="preview-list__definition"
-                data-ng-bind=":: IpLoadBalancerServerPreviewCtrl.server.displayName || '-'"></dd>
+                data-ng-bind=":: IpLoadBalancerServerPreviewCtrl.server.displayName"></dd>
             <dt class="preview-list__term"
                 data-translate="iplb_server_preview_address"></dt>
             <dd class="preview-list__definition"
@@ -52,9 +52,4 @@
                 data-ng-bind=":: IpLoadBalancerServerPreviewCtrl.server.serverId"></dd>
         </dl>
     </cui-modal-body>
-    <cui-modal-footer>
-        <cui-button data-text="'common_modal_ok' | translate"
-            data-on-click="IpLoadBalancerServerPreviewCtrl.dismiss()"
-            data-type="primary"></cui-button>
-    </cui-modal-footer>
 </cui-modal>

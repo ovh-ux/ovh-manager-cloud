@@ -15,9 +15,9 @@ class IpLoadBalancerServerEditCtrl {
     initLoaders () {
         this.farmTypeLoader = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerServerService.getFarmType(
-                    this.$stateParams.serviceName,
-                    this.$stateParams.farmId
-                )
+                this.$stateParams.serviceName,
+                this.$stateParams.farmId
+            )
                 .then(type => {
                     this.farmType = type;
                 })
@@ -32,12 +32,12 @@ class IpLoadBalancerServerEditCtrl {
 
         this.apiServer = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerServerService.getServer(
-                    this.$stateParams.serviceName,
-                    this.$stateParams.farmId,
-                    this.$stateParams.serverId
-                ).then(server => {
-                    this.server = angular.copy(server);
-                })
+                this.$stateParams.serviceName,
+                this.$stateParams.farmId,
+                this.$stateParams.serverId
+            ).then(server => {
+                this.server = angular.copy(server);
+            })
         });
     }
 
@@ -67,6 +67,7 @@ class IpLoadBalancerServerEditCtrl {
                 "probe"
             ]);
         }
+        delete this.server.serverState;
         return this.server;
     }
 

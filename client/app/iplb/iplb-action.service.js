@@ -81,7 +81,7 @@ class IpLoadBalancerActionService {
                     frontend: () => frontend
                 }
             }
-        }).result;
+        });
     }
 
     deleteFarm (serviceName, farm) {
@@ -95,7 +95,7 @@ class IpLoadBalancerActionService {
                     farm: () => farm
                 }
             }
-        }).result;
+        });
     }
 
     deleteServer (serviceName, farm, server) {
@@ -110,7 +110,7 @@ class IpLoadBalancerActionService {
                     server: () => server
                 }
             }
-        }).result;
+        });
     }
 
     updateCertificate (serviceName, ssl) {
@@ -124,7 +124,7 @@ class IpLoadBalancerActionService {
                     ssl: () => ssl
                 }
             }
-        }).result;
+        });
     }
 
     deleteCertificate (serviceName, ssl) {
@@ -138,7 +138,7 @@ class IpLoadBalancerActionService {
                     ssl: () => ssl
                 }
             }
-        }).result;
+        });
     }
 }
 

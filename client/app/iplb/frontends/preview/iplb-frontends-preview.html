@@ -5,7 +5,7 @@
             <dt class="preview-list__term"
                 data-translate="iplb_frontend_preview_name"></dt>
             <dd class="preview-list__definition"
-                data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.displayName || '-'"></dd>
+                data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.displayName"></dd>
             <dt class="preview-list__term"
                 data-translate="iplb_frontend_preview_protocol"></dt>
             <dd class="preview-list__definition"
@@ -23,28 +23,44 @@
             <dd class="preview-list__definition"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.defaultFarmId"></dd>
             <dt class="preview-list__term"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.ssl"
                 data-translate="iplb_frontend_preview_default_certificate"></dt>
             <dd class="preview-list__definition"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.ssl"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.defaultSslId"></dd>
             <dt class="preview-list__term"
                 data-translate="iplb_frontend_preview_dedicated_ip_failover"></dt>
-            <dd class="preview-list__definition"
-                data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.dedicatedIpfo"></dd>
+            <dd class="preview-list__definition">
+                <div class="oui-list" data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.dedicatedIpfo.length">
+                    <ul class="oui-list__items">
+                        <li class="oui-list__item" data-ng-repeat="dedicatedIpfo in IpLoadBalancerFrontendPreviewCtrl.frontend.dedicatedIpfo"
+                            data-ng-bind="dedicatedIpfo"></li>
+                    </ul>
+                </div>
+            </dd>
             <dt class="preview-list__term"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol !== 'udp'"
                 data-translate="iplb_frontend_preview_restrict_ip_access"></dt>
             <dd class="preview-list__definition"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol !== 'udp'"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.allowedSource"></dd>
             <dt class="preview-list__term"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http'"
                 data-translate="iplb_frontend_preview_http_redirection"></dt>
             <dd class="preview-list__definition"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http'"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.redirectLocation"></dd>
             <dt class="preview-list__term"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http'"
                 data-translate="iplb_frontend_preview_http_header"></dt>
             <dd class="preview-list__definition"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http'"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.httpHeader"></dd>
             <dt class="preview-list__term"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http' && IpLoadBalancerFrontendPreviewCtrl.frontend.ssl"
                 data-translate="iplb_frontend_preview_hsts"></dt>
             <dd class="preview-list__definition"
+                data-ng-show="IpLoadBalancerFrontendPreviewCtrl.frontend.protocol === 'http' && IpLoadBalancerFrontendPreviewCtrl.frontend.ssl"
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.hsts"></dd>
             <dt class="preview-list__term"
                 data-translate="iplb_frontend_preview_active"></dt>
@@ -56,9 +72,4 @@
                 data-ng-bind="IpLoadBalancerFrontendPreviewCtrl.frontend.frontendId"></dd>
         </dl>
     </cui-modal-body>
-    <cui-modal-footer>
-        <cui-button data-text="'common_modal_ok' | translate"
-            data-on-click="IpLoadBalancerFrontendPreviewCtrl.dismiss()"
-            data-type="primary"></cui-button>
-    </cui-modal-footer>
 </cui-modal>

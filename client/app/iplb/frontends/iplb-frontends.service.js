@@ -1,8 +1,10 @@
 class IpLoadBalancerFrontendsService {
-    constructor ($q, $translate, IpLoadBalancerConfigurationService, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+    constructor ($q, $translate, IpLoadBalancerConfigurationService, IpLoadBalancerZoneService, OvhApiIpLoadBalancing,
+                 RegionService, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
+        this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -54,7 +56,16 @@ class IpLoadBalancerFrontendsService {
     }
 
     transformFrontend (frontend) {
-        frontend.region = this.RegionService.getRegion(frontend.zone);
+        if (frontend.zone === "all") {
+            frontend.region = {
+                macroRegion: {
+                    code: null,
+                    text: this.$translate.instant("iplb_zone_all")
+                }
+            };
+        } else {
+            frontend.region = this.RegionService.getRegion(frontend.zone);
+        }
         return frontend;
     }
 
@@ -97,15 +108,13 @@ class IpLoadBalancerFrontendsService {
     }
 
     getZones () {
-        return this.IpLoadBalancing.Lexi().availableZones().$promise
-            .then(zones => zones.filter(zone => !/private$/.test(zone))
-                .reduce((zonesMap, zoneName) => {
-                    zonesMap[zoneName] = this.RegionService.getRegion(zoneName).microRegion.text;
-                    return zonesMap;
-                }, {}))
+        return this.IpLoadBalancerZoneService.getIPLBZones()
+            .then(zones => zones.reduce((zonesMap, zoneName) => {
+                zonesMap[zoneName] = this.RegionService.getRegion(zoneName).microRegion.text;
+                return zonesMap;
+            }, {}))
             .then(zones => {
                 zones.all = this.$translate.instant("iplb_frontend_add_datacenter_all");
-                zones[0] = this.$translate.instant("iplb_frontend_add_select_placeholder");
                 return Object.keys(zones).map(zoneKey => ({
                     id: zoneKey,
                     name: zones[zoneKey]

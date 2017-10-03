@@ -58,9 +58,7 @@ class IpLoadBalancerTaskCtrl {
                 <cui-dropdown-menu-body>
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-eye"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'common_preview_see' | translate"

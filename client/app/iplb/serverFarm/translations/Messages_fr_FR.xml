@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_farm_title">Fermes de serveurs</translation>
-   <translation id="iplb_farm_intro_text">La ferme de serveurs est la partie de votre IP Load Balancer qui sert à répartir le trafic sur les serveurs.</translation>
+   <translation id="iplb_farm_intro_text">La ferme de serveurs est la partie de votre Load Balancer qui sert à répartir le trafic sur les serveurs.</translation>
 
    <translation id="iplb_farm_add">Ajouter une ferme de serveurs</translation>
    <translation id="iplb_farm_add_server">Ajouter un serveur</translation>
@@ -21,7 +21,6 @@
    <translation id="iplb_farm_server_list_col_ipv4">IPv4</translation>
    <translation id="iplb_farm_server_list_col_active">Active</translation>
    <translation id="iplb_farm_server_list_col_status">Status</translation>
-   <translation id="iplb_farm_server_list_empty">Aucun serveur</translation>
 
    <translation id="iplb_farm_protocol_http">HTTP</translation>
    <translation id="iplb_farm_protocol_https">HTTPS</translation>

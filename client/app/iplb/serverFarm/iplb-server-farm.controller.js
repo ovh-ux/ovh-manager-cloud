@@ -160,9 +160,7 @@ class IpLoadBalancerServerFarmCtrl {
                 <cui-dropdown-menu-body>
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-eye"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'common_preview_see' | translate"
@@ -178,9 +176,7 @@ class IpLoadBalancerServerFarmCtrl {
                     </div>
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-pen_line"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <a class="oui-button oui-button_link oui-action-menu-item__label"
                                 data-ng-bind="'common_modify' | translate"
                                 data-ui-sref="network.iplb.detail.server-farm.server-update({
@@ -189,9 +185,7 @@ class IpLoadBalancerServerFarmCtrl {
                                 })"></a>
                         </div>
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-trash_line"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'common_remove' | translate"
@@ -212,7 +206,12 @@ class IpLoadBalancerServerFarmCtrl {
             serverText = ` / ${this.$translate.instant(serverLabel, { serverNumber })}`;
         }
 
-        return this.$filter("uppercase")(farm.type) + (farm.port ? `:${farm.port}` : "") + ` / ${farm.zoneText.microRegion.text}` + serverText;
+        let zone = farm.zoneText.microRegion.text;
+        if (farm.zone === "all") {
+            zone = this.$translate.instant("iplb_zone_all");
+        }
+
+        return `${this.$filter("uppercase")(farm.type) + (farm.port ? `:${farm.port}` : "")} / ${zone}${serverText}`;
     }
 
     getFarmName (farm) {

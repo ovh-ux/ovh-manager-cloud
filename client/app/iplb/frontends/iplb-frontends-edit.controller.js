@@ -18,7 +18,9 @@ class IpLoadBalancerFrontendsEditCtrl {
 
     initLoaders () {
         this.zones = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData()
+            loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
+                this.$stateParams.serviceName
+            )
         });
         this.farms = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerFrontendsService.getFarmsChoices(
@@ -121,14 +123,31 @@ class IpLoadBalancerFrontendsEditCtrl {
     }
 
     onFarmChange () {
-        if (this.frontend.defaultFarm === -1) {
-            this.$state.go("network.iplb.detail.server-farm.add");
+        if (this.frontend.defaultFarmId === -1) {
+            this.ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/iplb/frontends/addFarm/iplb-frontends-add-farm.html",
+                    controller: "IpLoadBalancerFrontendAddFarmCtrl",
+                    controllerAs: "IpLoadBalancerFrontendAddFarmCtrl"
+                }
+            });
+        }
+    }
+
+    onCertificateChange () {
+        if (this.frontend.defaultSslId === -1) {
+            this.ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/iplb/frontends/addCertificate/iplb-frontends-add-certificate.html",
+                    controller: "IpLoadBalancerFrontendAddCertificateCtrl",
+                    controllerAs: "IpLoadBalancerFrontendAddCertificateCtrl"
+                }
+            });
         }
     }
 
     $onInit () {
         this.frontend = {
-            zone: 0,
             dedicatedIpfo: [],
             defaultSslId: 0,
             defaultFarmId: 0,
@@ -204,8 +223,10 @@ class IpLoadBalancerFrontendsEditCtrl {
         if (!request.ssl || !request.defaultSslId) {
             delete request.defaultSslId;
         }
-        if (!request.defaultFarmId) {
+        if (!request.defaultFarmId && request.defaultFarmId === 0) {
             delete request.defaultFarmId;
+        } else if (request.defaultFarmId === 0) {
+            request.defaultFarmId = null;
         }
         delete request.protocol;
         return request;

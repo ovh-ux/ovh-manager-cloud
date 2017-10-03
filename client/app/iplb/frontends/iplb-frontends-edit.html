@@ -1,4 +1,7 @@
 <div class="cui-page__content">
+    <cui-back-link data-state="network.iplb.detail.frontends"
+                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
+                   data-text="'iplb_back_home' | translate"></cui-back-link>
     <h1 data-ng-hide="ctrl.edition" data-translate="iplb_frontend_add_title"></h1>
     <h1 data-ng-show="ctrl.edition" data-translate="iplb_frontend_update_title"
         data-translate-values="{ frontendId: ctrl.frontend.frontendId }"></h1>
@@ -50,12 +53,13 @@
             </div>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }">
             <label for="zone" class="oui-label" data-translate="iplb_frontend_add_datacenter"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
                     <div class="oui-select"
+                        data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }"
                         data-ng-hide="ctrl.zones.loading">
                         <select class="oui-select__input"
                             name="zone"
@@ -63,6 +67,7 @@
                             data-ng-model="ctrl.frontend.zone"
                             data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
                             ui-validate="{ selection: 'ctrl.validateSelection($value)' }">
+                            <option data-translate="iplb_zone_select_placeholder"></option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>
@@ -103,7 +108,8 @@
                             name="certificate"
                             id="certificate"
                             data-ng-model="ctrl.frontend.defaultSslId"
-                            data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data">
+                            data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data"
+                            data-ng-change="ctrl.onCertificateChange()">
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>
@@ -136,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field" data-ng-if="ctrl.protocol !== 'udp'">
                 <label for="restrict_ip_access" class="oui-label" data-translate="iplb_frontend_add_restrict_ip_access"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
@@ -148,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="oui-field" data-ng-if="ctrl.type == 'http'">
+            <div class="oui-field" data-ng-if="ctrl.type === 'http'">
                 <label for="http_redirection" class="oui-label" data-translate="iplb_frontend_add_http_redirection"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
@@ -158,7 +164,7 @@
                 </div>
             </div>
 
-            <div class="oui-field" data-ng-if="ctrl.type == 'http'">
+            <div class="oui-field" data-ng-if="ctrl.type === 'http'">
                 <label for="http_header" class="oui-label" data-translate="iplb_frontend_add_http_header"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
@@ -170,7 +176,7 @@
                 </div>
             </div>
 
-            <div class="oui-field" data-ng-if="ctrl.type == 'http' && ctrl.frontend.ssl">
+            <div class="oui-field" data-ng-if="ctrl.type === 'http' && ctrl.frontend.ssl">
                 <div class="oui-field__content">
                     <div class="oui-field-control">
                         <div class="oui-checkbox oui-checkbox_inline">
@@ -179,10 +185,17 @@
                                 name="hsts"
                                 type="checkbox"
                                 data-ng-model="ctrl.frontend.hsts">
+                            <label class="oui-checkbox__label-container" for="hsts">
+                                <span class="oui-checkbox__label"
+                                    data-translate="iplb_frontend_add_hsts_tip"></span>
+                                <span class="oui-checkbox__icon">
+                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                </span>
+                            </label>
                         </div>
                     </div>
-                    <div class="oui-field-helper"
-                        data-translate="iplb_frontend_add_hsts_tip"></div>
                 </div>
             </div>
         </cui-advanced-options>
@@ -200,7 +213,7 @@
                     data-translate="iplb_frontend_add_confirm"
                     data-ng-click="ctrl.createFrontend()"
                     data-ng-hide="ctrl.edition"></button>
-                <a class="oui-button oui-button_secondary"
+                <a class="oui-button oui-button_link"
                     data-translate="iplb_frontend_add_cancel"
                     data-ui-sref="network.iplb.detail.frontends"></a>
             </div>

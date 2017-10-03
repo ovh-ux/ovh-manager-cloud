@@ -1,5 +1,5 @@
 class IpLoadBalancerHomeCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper,
+    constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerMetricsService,
                  REDIRECT_URLS) {
@@ -7,6 +7,7 @@ class IpLoadBalancerHomeCtrl {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
+        this.CloudMessage = CloudMessage;
         this.IpLoadBalancerActionService = IpLoadBalancerActionService;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
@@ -125,6 +126,21 @@ class IpLoadBalancerHomeCtrl {
         return this.$translate.instant("iplb_status_active_total", {
             activeCount: this.frontendsStatus.data.enabled,
             totalCount: this.frontendsStatus.data.total
+        });
+    }
+
+    updateQuotaAlert (quota) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/iplb/home/updateQuota/iplb-update-quota.html",
+                controller: "IpLoadBalancerUpdateQuotaCtrl",
+                controllerAs: "IpLoadBalancerUpdateQuotaCtrl",
+                resolve: {
+                    quota: () => quota
+                }
+            }
+        }).then(() => {
+            this.usage.load();
         });
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_frontends_title">Frontends</translation>
-   <translation id="iplb_frontends_intro_text">Le Frontend est la partie de votre IP Load Balancer qui sert à exposer votre service sur Internet.</translation>
+   <translation id="iplb_frontends_intro_text">Le Frontend est la partie de votre Load Balancer qui sert à exposer votre service sur Internet.</translation>
 
    <translation id="iplb_frontends_add">Ajouter un frontend</translation>
 
@@ -40,16 +40,20 @@
    <translation id="iplb_frontend_add_default_farm">Ferme par défaut</translation>
    <translation id="iplb_frontend_add_farm_no_farm">Aucune</translation>
    <translation id="iplb_frontend_add_farm_add_another_choice">+ Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_frontend_add_farm">Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_frontend_add_farm_text">Une fois que le présent frontend aura été créé, vous pourrez directement y ajouter une ferme de serveurs par défaut.</translation>
    <translation id="iplb_frontend_add_default_certificate">Certificat SSL par défaut</translation>
    <translation id="iplb_frontend_add_default_certificate_no_certificate">Aucun</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice">+ Ajouter/Commander</translation>
+   <translation id="iplb_frontend_add_default_certificate">Ajouter un certificat</translation>
+   <translation id="iplb_frontend_add_default_certificate_text">Il n'est pas possible d'ajouter directement un nouveau certificat. Vous pourrez l'ajouter lorsque la création de votre frontend sera terminée.</translation>
    <translation id="iplb_frontend_add_advanced_options">Paramètres avancés</translation>
    <translation id="iplb_frontend_add_advanced_options_info">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
    <translation id="iplb_frontend_add_advanced_options_show">Afficher</translation>
    <translation id="iplb_frontend_add_dedicated_ip_failover">Dedicated IP failover</translation>
-   <translation id="iplb_frontend_add_dedicated_ip_failover_tip">La liste des adresses IPs des serveurs distants auxquels votre IP Load Balancer est connecté.</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover_tip">La liste des adresses IPs des serveurs distants auxquels votre Load Balancer est connecté.</translation>
    <translation id="iplb_frontend_add_restrict_ip_access">Restreindre l'accèss à des IPs</translation>
-   <translation id="iplb_frontend_add_restrict_ip_access_tip">La liste des adresses IPs clientes qui ont accès à l’IP Load Balancer (IPv4).
+   <translation id="iplb_frontend_add_restrict_ip_access_tip">La liste des adresses IPs clientes qui ont accès au Load Balancer (IPv4).
 Format : 1.2.3.4, 42.42.42.0/24</translation>
    <translation id="iplb_frontend_add_http_redirection">Redirection HTTP</translation>
    <translation id="iplb_frontend_add_http_header">Entête HTTP</translation>

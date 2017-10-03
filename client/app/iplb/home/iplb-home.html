@@ -44,9 +44,15 @@
                         </div>
                         <div class="iplb-usage__graph">
                             <iplb-bullet-chart
-                                data-text="(quota.total | bytes:2:true) + ' / ' + (quota.included | bytes:2:true)"
+                                data-ng-if="quota.included"
+                                data-text="(quota.total | bytes:2:false) + ' / ' + (quota.included | bytes:2:false)"
                                 data-value="100 * quota.total / quota.included"
                                 data-limit="100 * quota.alert / quota.included"></iplb-bullet-chart>
+                            <iplb-bullet-chart
+                                data-ng-if="!quota.included"
+                                data-text="(quota.total | bytes:2:false) + ' / ' + ('iplb_home_tile_configuration_quota_unlimited' | translate)"
+                                data-value="100"
+                                data-limit="100 * quota.alert / quota.total"></iplb-bullet-chart>
                         </div>
                     </div>
                     <div class="iplb-usage__menu">
@@ -61,7 +67,7 @@
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
                                             data-translate="iplb_utilisation_update_alert"
-                                            data-ng-click="ctrl.updateQuotaAlert()"></button>
+                                            data-ng-click="ctrl.updateQuotaAlert(quota)"></button>
                                     </div>
                                 </div>
                             </cui-dropdown-menu-body>

@@ -16,7 +16,9 @@ class IpLoadBalancerServerFarmEditCtrl {
 
     initLoaders () {
         this.zones = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData()
+            loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
+                this.$stateParams.serviceName
+            )
         });
 
         this.apiFarm = this.ControllerHelper.request.getHashLoader({
@@ -40,7 +42,6 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.farm = {
             balance: "roundrobin",
             port: 80,
-            zone: 0,
             probe: {
                 type: ""
             }
@@ -61,6 +62,20 @@ class IpLoadBalancerServerFarmEditCtrl {
             this.edition = true;
             this.apiFarm.load();
         }
+    }
+
+    isProtocolDisabled (protocol) {
+        if (!this.edition) {
+            return false;
+        }
+
+        if (this.type === "http" && /http/.test(protocol)) {
+            return false;
+        } else if (this.protocol === protocol) {
+            return false;
+        }
+
+        return true;
     }
 
     validateSelection (value) {
@@ -134,10 +149,9 @@ class IpLoadBalancerServerFarmEditCtrl {
                     edition: () => this.edition
                 }
             }
-        }).result
-            .then(probe => {
-                _.assign(this.farm, { probe });
-            });
+        }).then(probe => {
+            _.assign(this.farm, { probe });
+        });
     }
 
     create () {
