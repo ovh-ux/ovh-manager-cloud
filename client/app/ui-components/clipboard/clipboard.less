@@ -1,5 +1,7 @@
 @clipboard-border-color: #E0F6FD;
 @cui-clipboard-color: @oui-color-primary;
+@cui-clipboard-icon-color: #00A0BF;
+@cui-clipboard-icon-error-color: #E36947;
 
 .cui-clipboard-list {
 	&__item {
@@ -8,8 +10,10 @@
 }
 
 .cui-clipboard {
+	position: relative;
+
 	&__input {
-		padding: 6px 12px;
+		padding: 6px 48px 6px 12px;
 		width: 100%;
 
 		background-color: rgba(224, 246, 253, 0.5);
@@ -19,5 +23,29 @@
 
 		border: 1px solid @clipboard-border-color;
 		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	&__input:hover {
+		background-color: rgba(224, 246, 253, 0.9);
+	}
+
+	&__input:active {
+		border: 1px solid rgba(0,162,191,0.25);
+	}
+
+	&__icon {
+		position: absolute;
+		right: 12px;
+		top: 9px;
+
+		.oui-icon {
+			color: @cui-clipboard-icon-color;
+			font-size: 1.6rem;
+		}
+
+		.oui-icon-copy-error {
+			color: @cui-clipboard-icon-error-color;
+		}
 	}
 }
