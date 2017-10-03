@@ -1,9 +1,11 @@
 <div class="metrics__platform">
-    <cui-back-link data-state="dbaas.metrics.detail.dashboard"
-                   data-state-params="{ serviceName: MetricsPlatformCtrl.serviceName }"
-                   data-text=" 'metrics_platform_back' | translate"></cui-back-link>
     <div class="metrics__row">
         <h3 class="oui-header_3" data-translate="metrics_platform_title"></h3>
+        <p>
+            <span data-translate="metrics_endpoint_intro_1"></span>
+            <span data-translate="metrics_endpoint_intro_2"></span>
+            <span data-translate="metrics_endpoint_intro_3"></span>
+        </p>
     </div>
     <div class="metrics__row">
         <oui-table rows="MetricsPlatformCtrl.platforms" 
@@ -21,7 +23,7 @@
                    href="{{ $row.doc }}"
                    target="_blank">
                     <span data-translate="metrics_guide"></span>
-                    <i class="metrics-guidelink__icon fa fa-icon fa-external-link"></i>
+                    <i class="fa fa-icon fa-external-link"></i>
                 </a>
             </column>
         </oui-table>

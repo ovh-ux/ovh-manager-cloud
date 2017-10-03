@@ -1,14 +1,13 @@
 <div class="metrics__token" ui-view="metricsSubContent">
-    <cui-back-link data-state="dbaas.metrics.detail.dashboard"
-                   data-state-params="{ serviceName: MetricsTokenCtrl.serviceName }"
-                   data-text=" 'metrics_token_back' | translate"></cui-back-link>
     <div class="metrics__row">
         <h3 class="oui-header_3" data-translate="metrics_token_title"></h3>
+        <p data-translate="metrics_token_explain"
+           data-translate-values="{guidesUrl: MetricsTokenCtrl.getGuides()}"></p>
     </div>
     <div class="metrics__row">
         <a class="oui-button oui-button_secondary"
             data-ng-disabled="MetricsTokenCtrl.actions.loading"
-            data-translate="metrics_token_new"
+            data-translate="metrics_token_add_token"
             ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsTokenCtrl.serviceName })"></a>
         <div class="pull-right">
             <input type="search"
@@ -29,7 +28,7 @@
                     property="description"
                     sortable>
                 <span data-ng-bind="$row.description || '-'"></span>
-                    </column>
+            </column>
             <column title="'metrics_token_labels' | translate" 
                     property="labels"
                     template="MetricsTokenCtrl.labelsTemplate()">
@@ -39,7 +38,9 @@
                 <cui-clipboard data-text="$row.access"></cui-clipboard>
             </column>
             <column title="'metrics_token_permission' | translate"
-                    property="permission"></column>
+                    property="permission">
+                <span data-ng-bind="'metrics_token_permission_' + $row.permission | translate"></span>
+            </column>
             <column title="'metrics_table_action' | translate"
                     template="MetricsTokenCtrl.actionTemplate()">
             </column>

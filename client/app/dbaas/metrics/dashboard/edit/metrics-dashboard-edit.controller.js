@@ -1,8 +1,10 @@
 (() => {
     class MetricsDashboardEditCtrl {
-        constructor ($uibModalInstance, metricsValue, metricsType, serviceName, MetricService) {
+        constructor ($translate, $uibModalInstance, metricsValue, metricsType, serviceName, CloudMessage, MetricService) {
+            this.$translate = $translate;
             this.$uibModalInstance = $uibModalInstance;
             this.serviceName = serviceName;
+            this.CloudMessage = CloudMessage;
             this.MetricService = MetricService;
 
             this.type = metricsType;
@@ -18,6 +20,7 @@
                     .catch(err => this.$uibModalInstance.dismiss(err))
                     .finally(() => {
                         this.loading = false;
+                        this.CloudMessage.success(this.$translate.instant("metrics_setting_name_updated"));
                     });
             }
 

@@ -8,8 +8,10 @@
             <dd class="preview-list__definition">
                 <textarea rows="3" class="preview-token" data-ng-bind="$ctrl.token.access"></textarea>
             </dd>
+            <dt class="preview-list__term" data-translate="metrics_table_name"></dt>
+            <dd class="preview-list__definition" data-ng-bind="$ctrl.token.description || '-'"></dd>
             <dt class="preview-list__term" data-translate="metrics_token_permission"></dt>
-            <dd class="preview-list__definition" data-ng-bind="$ctrl.token.permission"></dd>
+            <dd class="preview-list__definition" data-ng-bind="'metrics_token_permission_' + $ctrl.token.permission | translate"></dd>
             <dt class="preview-list__term" data-translate="metrics_token_labels"></dt>
             <dd class="preview-list__definition">
                 <div class="preview-labels" data-ng-repeat="label in $ctrl.token.labels | orderBy : 'key'">
@@ -24,9 +26,4 @@
             <dd class="preview-list__definition" data-ng-bind="$ctrl.displayDate($ctrl.token.expiryAt)"></dd>
         </dl>
     </cui-modal-body>
-    <cui-modal-footer>
-        <cui-button data-type="secondary"
-          data-text="'metrics_token_close' | translate"
-          data-ng-click="$ctrl.close()"></cui-button>
-    </cui-modal-footer>
 </cui-modal>

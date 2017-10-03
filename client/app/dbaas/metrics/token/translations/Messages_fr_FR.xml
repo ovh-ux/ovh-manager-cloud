@@ -14,13 +14,17 @@
    <translation id="metrics_token_state_active" qtlid="55133">Actif</translation>
    <translation id="metrics_token_state_inactive" qtlid="105310">Inactif</translation>
 
+   <translation id="metrics_token_explain">Les jetons sécurisent l'accès à vos données de séries temporelles. Chaque jeton définit des permissions, et peut éventuellement comporter des "labels" (couple 'clé, valeur'). Les labels sont automatiquement ajoutés comme filtre à la lecture, et attachés à chaque donnée écrite avec le jeton portant ces labels. Pour plus d'information <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
 <!-- Page: token -->
+   <translation id="metrics_token_permission_read" qtlid="6958">Lecture</translation>
+   <translation id="metrics_token_permission_write" qtlid="301565">Écriture</translation>
    <translation id="metrics_token_one" qtlid="254115">Token</translation>
    <translation id="metrics_token_delete" qtlid="2414">Supprimer</translation>
    <translation id="metrics_token_cancel" qtlid="37863">Annuler</translation>
    <translation id="metrics_token_close" qtlid="4670">Fermer</translation>
    <translation id="metrics_token_no_token" qtlid="403372">Aucun token pour cette application</translation>
    <translation id="metrics_token_permission" qtlid="301344">Permission</translation>
+   <translation id="metrics_token_add_token" qtlid="415519">Ajouter un token</translation>
    <translation id="metrics_token_new" qtlid="403385">Nouveau token</translation>
    <translation id="metrics_token_create" qtlid="39226">Créer</translation>
    <translation id="metrics_token_role" qtlid="403398">Rôle</translation>
@@ -36,7 +40,7 @@
    <translation id="metrics_token_edit_cancel" qtlid="37863">Annuler</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Modifier</translation>
 
-   <translation id="metrics_token_delete_title" qtlid="415883">Supprimer le token ?</translation>
+   <translation id="metrics_token_delete_title">Supprimer le token</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">Êtes-vous sûr de vouloir supprimer le token ?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>

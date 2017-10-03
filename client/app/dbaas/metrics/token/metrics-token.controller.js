@@ -1,12 +1,13 @@
 (() => {
     class MetricsTokenCtrl {
-        constructor ($scope, $stateParams, $translate, ControllerHelper, MetricService) {
+        constructor ($scope, $stateParams, $translate, ControllerHelper, MetricService, ovhDocUrl) {
             this.scope = $scope;
             this.$stateParams = $stateParams;
             this.serviceName = $stateParams.serviceName;
             this.$translate = $translate;
             this.ControllerHelper = ControllerHelper;
             this.MetricService = MetricService;
+            this.ovhDocUrl = ovhDocUrl;
 
             this.tokens = [];
             this.loading = false;
@@ -23,6 +24,10 @@
                     this.tokens = data.filter(token => token.isRevoked === false);
                     this.loading = false;
                 });
+        }
+
+        getGuides () {
+            return this.ovhDocUrl.getDocUrl("cloud/metrics");
         }
 
         onSearchText () {
