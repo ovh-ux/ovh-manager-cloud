@@ -4,8 +4,8 @@ angular.module("managerApp")
             AnnouncementSummitCtrl: {
                 confirm (atInternet) {
                     atInternet.trackClick({
-                        event: "Summit-2017-announcement-register",
-                        page: "cloud::home"
+                        name: "Summit-2017-announcement-register",
+                        type: "action"
                     });
                 }
             }
