@@ -37,6 +37,8 @@
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Warszawa</translation>
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Warszawa ({{ micro }})</translation>
+   <translation id="cloud_common_region_DE" qtlid="94051">Frankfurt</translation>
+   <translation id="cloud_common_region_DE_micro" qtlid="437598">Francfort ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalizacja</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Środkowa (Francja)</translation>
@@ -44,6 +46,7 @@
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Ameryka Północna (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Europa Zachodnia (Francja)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa Zachodnia (Francja)</translation>
+   <translation id="cloud_common_region_location_DE" qtlid="437611">Europe de l'Ouest (Allemagne)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Twoja przeglądarka nie jest obsługiwana.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Wersja Twojej przeglądarki jest nieaktualna i może zawierać luki związane z bezpieczeństwem lub kompatybilnością.</translation>
