@@ -20,6 +20,7 @@ angular.module("managerApp")
               CloudMessage.success($translate.instant("cda_ip_add_success"));
           }).catch(function (error) {
               CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              $uibModalInstance.dismiss();
           }).finally(function () {
               self.saving = false;
           });

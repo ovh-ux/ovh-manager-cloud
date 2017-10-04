@@ -1,46 +1,49 @@
-<section class="cda-modal">
-    <header class="modal-header">
-        <h4 class="h3" data-translate="cda_ip_add_title"></h4>
-    </header>
-    <div class="modal-body">
-        <form id="addIpForm" name="addIpForm" class="ovh-form-flat clearfix cda-form">
-            <div>
-                <div class="input-group">
-                    <label for="ip" data-translate="cda_ip_add_ip_label" class="cda-input-label"></label>
-                    <input type="text" class="form-control error-animate-shake-light"
-                        id="ip" name="ip"
-                        data-ng-model="CdaIpAddCtrl.model.ip"
-                        required />
-                </div>
-                <div>
-                    <p class="top-space-m8" data-translate="cda_ip_add_format"></p>
-                </div>
-                <div class="text-danger" data-ng-messages="addIpForm.ip.$error" data-ng-if="addIpForm.ip.$dirty">
-                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                        <span data-ng-message="required" data-translate="cda_ip_add_ip_required"></span>
-                    </p>
-                </div>
-            </div>
-        </form>
+<form id="addIpForm" name="addIpForm" class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CdaIpAddCtrl.closeModal()"></button>
     </div>
-    <div class="modal-footer">
+
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text" data-ng-if="CdaIpAddCtrl.saving">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+        </div>
+        <div class="oui-modal__body-text" data-ng-if="!CdaIpAddCtrl.saving">
+            <h2 class="oui-modal__title" data-translate="cda_ip_add_title"></h2>
+
+            <label for="ip" data-translate="cda_ip_add_ip_label" class="oui-label"></label>
+            <input type="text" class="oui-input"
+                id="ip" name="ip"
+                data-ng-model="CdaIpAddCtrl.model.ip"
+                required />
+            <div class="text-danger" data-ng-messages="addIpForm.ip.$error" data-ng-if="addIpForm.ip.$dirty">
+                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
+                    <span data-ng-message="required" data-translate="cda_ip_add_ip_required"></span>
+                </p>
+            </div>
+
+            <p class="oui-modal__text" data-translate="cda_ip_add_format"></p>
+        </div>
+    </div>
+
+    <div class="oui-modal__footer">
+        <button type="reset"
+                class="oui-button oui-button_secondary"
+                title="{{ ::'common_cancel' | translate }}"
+                data-ng-click="CdaIpAddCtrl.closeModal()"
+                data-ng-disabled="CdaIpAddCtrl.saving"
+                form="addIpForm">
+            <span data-translate="common_cancel"></span>
+        </button>
         <button type="button"
-                class="btn btn-primary pull-right"
+                class="oui-button oui-button_primary"
                 title="{{ ::'common_add' | translate }}"
                 data-ng-click="addIpForm.$valid && CdaIpAddCtrl.createIp()"
                 data-ng-disabled="CdaIpAddCtrl.saving || (addIpForm.ip.$error && !addIpForm.ip.$valid)"
                 form="addIpForm">
             <span data-translate="common_add"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaIpAddCtrl.saving"></spinner>
-        </button>
-        <button type="reset"
-                class="btn btn-default pull-right pull-right right-space-m16"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaIpAddCtrl.closeModal()"
-                data-ng-disabled="CdaIpAddCtrl.saving"
-                form="addIpForm">
-            <i class="glyphicon glyphicon-remove"></i>
-            <span data-translate="common_cancel"></span>
         </button>
     </div>
-</section>
+</form>
