@@ -7,10 +7,18 @@
                   data-on-dismiss="$ctrl.onDismiss(message)">
                   <span data-ng-bind="message.text" data-ng-if="message.text"></span>
                   <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
-                  <a role="button" 
-                        data-ng-if="message.link.text"
-                        data-ng-bind="message.link.text"
-                        data-ng-click="message.link.action()"></a>
+                  <span data-ng-switch="message.link.type">
+                      <a role="button" 
+                         data-ng-switch-when="action"
+                         data-ng-bind="message.link.text"
+                         data-ng-click="message.link.action()"></a>
+                      <a data-ng-switch-when="state"
+                         data-ng-bind="message.link.text"
+                         data-ui-sref="{{:: message.link.state}}"></a>
+                      <a data-ng-switch-default
+                         data-ng-bind="message.link.text"
+                         href="{{:: link.value}}"></a>
+                  </span>
             </oui-message>
             <oui-message data-ng-if="$ctrl.shouldDisplayGroupedMessages(messageCategory) && $ctrl.hasGroupMessageToDisplay(messageCategory.key)" 
                          data-type="{{ messageCategory.key }}"
@@ -22,10 +30,18 @@
                             data-ng-if="!message.dismissed">
                               <span data-ng-bind="message.text" data-ng-if="message.text"></span>
                               <span data-ng-bind-html="message.textHtml" data-ng-if="message.textHtml"></span>
-                              <a role="button" 
-                                    data-ng-if="message.link.text"
-                                    data-ng-bind="message.link.text"
-                                    data-ng-click="message.link.action()"></a>
+                              <span data-ng-switch="message.link.type">
+                                  <a role="button" 
+                                     data-ng-switch-when="action"
+                                     data-ng-bind="message.link.text"
+                                     data-ng-click="message.link.action()"></a>
+                                  <a data-ng-switch-when="state"
+                                     data-ng-bind="message.link.text"
+                                     data-ui-sref="{{:: message.link.state}}"></a>
+                                  <a data-ng-switch-default
+                                     data-ng-bind="message.link.text"
+                                     href="{{:: link.value}}"></a>
+                              </span>
                         </li>
                   </ul>
             </oui-message>

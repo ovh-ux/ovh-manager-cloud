@@ -51,6 +51,7 @@ angular.module("managerApp")
 
       self.openModal = function (template, controller, params) {
           var modal = $uibModal.open({
+              windowTopClass: "cui-modal",
               templateUrl: template,
               controller: controller,
               controllerAs: controller,
