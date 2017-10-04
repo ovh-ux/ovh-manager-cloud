@@ -264,7 +264,7 @@ angular.module("managerApp")
                       CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition();
                       atInternet.trackOrder({
                           name: "[VOLUME]::" + self.volumeInEdition.type.replace(/[\W_]+/g, "") + "[" + self.volumeInEdition.type + "-" + self.volumeInEdition.size + "]",
-                          page: "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                          page: "iaas::pci-project::compute::infrastructure::order",
                           priceTaxFree: self.volumeInEdition.calculatePrice().monthlyPrice.value,
                           orderId: self.volumeInEdition.id
                       });

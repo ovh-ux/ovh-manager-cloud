@@ -5,7 +5,7 @@ describe("Controller config: CloudProjectComputeInfrastructureVirtualMachineAddE
     var controller;
     var util;
 
-    var PAGE_NAME = "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order";
+    var PAGE_NAME = "cloud::iaas::pci-project::compute::infrastructure::order";
     var OVER_QUOTA_LOW = "over-quota-low";
     var OVER_QUOTA_HIGH = "over-quota-high";
 

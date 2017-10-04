@@ -798,7 +798,7 @@ angular.module("managerApp")
                     Toast.success($translate.instant("cpcivm_addedit_save_multiple_success"));
                     atInternet.trackOrder({
                         name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                        page : "iaas::pci-project::compute::infrastructure::order",
                         priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
                         quantity : self.model.vmCount,
                         orderId : self.vmInEdition.id
@@ -816,7 +816,7 @@ angular.module("managerApp")
                     CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
                     atInternet.trackOrder({
                         name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                        page : "iaas::pci-project::compute::infrastructure::order",
                         priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
                         orderId : self.vmInEdition.id
                     });
@@ -1780,7 +1780,7 @@ angular.module("managerApp")
         var newCatalog =  _.any(self.panelsData.regions, function (region) {
             return /[a-z|A-Z]{3}3/.test(region);
         });
-        if (/WAW/.test(self.model.region)) {
+        if (/(WAW)|(DE)|(UK)/.test(self.model.region)) {
             newCatalog = true;
         }
         return newCatalog ? 'new' : 'old';

@@ -8,7 +8,9 @@ angular.module("managerApp")
 
     atInternetUiRouterPluginProvider.setTrackStateChange(true);
     atInternetUiRouterPluginProvider.addStateNameFilter(function (routeName) {
-        return routeName ? routeName.replace(/\./g, "::") : "";
+        var prefix = "cloud";
+        var route = routeName ? routeName.replace(/\./g, "::") : "";
+        return `${prefix}::${route}`;
     });
 
 })

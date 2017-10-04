@@ -5,7 +5,7 @@
    <translation id="cloud_common_type" qtlid="2642">Tipas</translation>
    <translation id="cloud_common_volume" qtlid="255246">Talpa</translation>
    <translation id="cloud_common_consumpt" qtlid="25639">Sunaudojimas</translation>
-   <translation id="cloud_common_state" qtlid="364446">Būklė</translation>
+   <translation id="cloud_common_state" qtlid="364446">Būsena</translation>
    <translation id="cloud_common_state_available" qtlid="99920">Galimi</translation>
    <translation id="cloud_common_state_in-use" qtlid="252893">Naudojama</translation>
    <translation id="cloud_common_state_creating" qtlid="29647">Kuriama</translation>
@@ -37,6 +37,8 @@
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Rubė ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Varšuva</translation>
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varšuva ({{ micro }})</translation>
+   <translation id="cloud_common_region_DE" qtlid="94051">Frankfurtas</translation>
+   <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurtas ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalizuoti</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Centrinė Europa (Prancūzija)</translation>
@@ -44,6 +46,7 @@
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Šiaurės Amerika (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
+   <translation id="cloud_common_region_location_DE" qtlid="437611">Vakarų Europa (Vokietija)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Jūsų naršyklė nepalaikoma.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Jūsų naršyklė neatnaujinta, galimos saugumo ar suderinamumo spragos.</translation>
