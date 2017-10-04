@@ -15,7 +15,12 @@
 
         dismiss () {
             this.dismissed = true;
-            _.forEach(this.messageList, message => { message.dismissed = true; });
+            _.forEach(this.messageList, message => {
+                message.dismissed = true;
+                if (_.isFunction(message.dismiss)) {
+                    message.dismiss();
+                }
+            });
         }
     }
 
