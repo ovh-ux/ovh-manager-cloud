@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaDetailEditCtrl", function ($q, $uibModalInstance, $translate, $stateParams, Toast, CdaService, items) {
+  .controller("CdaDetailEditCtrl", function ($q, $uibModalInstance, $translate, $stateParams, CloudMessage, CdaService, items) {
       "use strict";
 
       var self = this;
@@ -29,9 +29,9 @@ angular.module("managerApp")
           self.saving = true;
           return CdaService.updateDetails($stateParams.serviceName, self.model.label, self.model.crushTunable).then(function () {
               $uibModalInstance.close();
-              Toast.success($translate.instant("cda_detail_edit_success"));
+              CloudMessage.success($translate.instant("cda_detail_edit_success"));
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
           }).finally(function () {
               self.saving = false;
           });

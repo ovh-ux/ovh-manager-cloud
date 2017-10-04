@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaDetailsHomeCtrl", function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, OvhApiDedicatedCeph, Toast, CdaService) {
+  .controller("CdaDetailsHomeCtrl", function ($q, $state, $stateParams, $scope, $interval, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
       "use strict";
 
       var self = this;
@@ -85,7 +85,7 @@ angular.module("managerApp")
       }
 
       function displayError (error) {
-          Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+          CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
       }
 
       self.openEditModal = function () {

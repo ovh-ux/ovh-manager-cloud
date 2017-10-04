@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, OvhApiDedicatedCeph) {
+  .controller("CdaUserDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, CloudMessage, OvhApiDedicatedCeph) {
       "use strict";
       var self = this;
 
@@ -22,9 +22,9 @@ angular.module("managerApp")
               userName: self.user.name
           }).$promise.then(function (result) {
               $uibModalInstance.close({ taskId: result.data });
-              Toast.success($translate.instant("cda_user_delete_success"));
+              CloudMessage.success($translate.instant("cda_user_delete_success"));
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
           }).finally(function () {
               self.saving = false;
           });
