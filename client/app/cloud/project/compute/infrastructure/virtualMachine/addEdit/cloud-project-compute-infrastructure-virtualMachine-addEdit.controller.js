@@ -798,7 +798,7 @@ angular.module("managerApp")
                     Toast.success($translate.instant("cpcivm_addedit_save_multiple_success"));
                     atInternet.trackOrder({
                         name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                        page : "iaas::pci-project::compute::infrastructure::order",
                         priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
                         quantity : self.model.vmCount,
                         orderId : self.vmInEdition.id
@@ -816,7 +816,7 @@ angular.module("managerApp")
                     CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
                     atInternet.trackOrder({
                         name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                        page : "iaas::pci-project::compute::infrastructure::order",
                         priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
                         orderId : self.vmInEdition.id
                     });

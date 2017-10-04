@@ -175,7 +175,7 @@ angular.module("managerApp")
             $uibModalInstance.dismiss();
             atInternet.trackOrder({
                 name : "[IP]ipfailover[ip-failover-" + self.form.country + "]",
-                page : "cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-order",
+                page : "iaas::pci-project::compute::infrastructure::order",
                 priceTaxFree : self.datas.billingInfo.prices.withoutTax.value / self.form.quantity,
                 quantity : self.form.quantity
             });

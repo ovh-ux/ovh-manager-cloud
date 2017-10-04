@@ -3,10 +3,9 @@ angular.module("managerApp")
         atInternetControllerDecoratorsProvider.decorate({
             AnnouncementSummitCtrl: {
                 confirm (atInternet) {
-                    console.log("at-internet");
-                    atInternet.trackEvent({
-                        event: "Summit-2017-announcement-register",
-                        page: "home"
+                    atInternet.trackClick({
+                        name: "Summit-2017-announcement-register",
+                        type: "action"
                     });
                 }
             }
