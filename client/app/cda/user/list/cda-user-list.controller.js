@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, Toast, CdaService) {
+  .controller("CdaUserListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
       "use strict";
 
       var self = this;
@@ -67,7 +67,7 @@ angular.module("managerApp")
       };
 
       function displayError (error) {
-          Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+          CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
       }
 
       self.isTruncatedPoolArray = function (poolArray, index) {

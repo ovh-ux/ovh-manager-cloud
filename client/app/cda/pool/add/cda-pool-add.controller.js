@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaPoolAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, OvhApiDedicatedCeph) {
+  .controller("CdaPoolAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, CloudMessage, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -24,9 +24,9 @@ angular.module("managerApp")
               poolName: self.model.poolName
           }).$promise.then(function (result) {
               $uibModalInstance.close({ poolName: self.model.poolName, taskId: result.data });
-              Toast.success($translate.instant("cda_pool_add_success"));
+              CloudMessage.success($translate.instant("cda_pool_add_success"));
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
           }).finally(function () {
               self.saving = false;
           });
