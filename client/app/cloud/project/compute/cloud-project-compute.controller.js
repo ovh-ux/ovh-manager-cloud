@@ -1,6 +1,6 @@
 class CloudProjectComputeCtrl {
     constructor ($q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudProjectOrchestrator,
-                 CloudUserPref, moment, PCI_ANNOUNCEMENTS) {
+                 CloudUserPref, OvhApiMe, moment, PCI_ANNOUNCEMENTS) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -10,6 +10,7 @@ class CloudProjectComputeCtrl {
         this.OvhApiCloudProject = OvhApiCloudProject;
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
         this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
+        this.OvhApiMe = OvhApiMe;
         this.CloudUserPref = CloudUserPref;
         this.moment = moment;
     }
@@ -32,7 +33,9 @@ class CloudProjectComputeCtrl {
     init () {
         this.loading = true;
 
-        this.loadAnnouncements();
+        this.OvhApiMe.Lexi().get().$promise.then(me => {
+            this.loadAnnouncements(me.ovhSubsidiary);
+        });
 
         return this.shouldRedirectToProjectOverview()
             .then(redirectToOverview => {
@@ -61,7 +64,7 @@ class CloudProjectComputeCtrl {
         });
     }
 
-    loadAnnouncements () {
+    loadAnnouncements (ovhSubsidiary) {
         const areDismissed = [];
         _.forEach(this.PCI_ANNOUNCEMENTS, announcement => {
             const now = moment();
@@ -72,21 +75,22 @@ class CloudProjectComputeCtrl {
             }
         });
         this.$q.all(areDismissed).then(areDismissedMessages => {
-            this.messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement));
+            this.messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
         });
     }
 
-    augmentMessage (message) {
+    augmentMessage (message, ovhSubsidiary) {
         let augmentedMessage = _.cloneDeep(message);
         augmentedMessage.dismiss = () => {
             this.dismissInfoMessage(message.messageId);
         };
         augmentedMessage.text = this.$translate.instant(message.messageId);
-        if (!message.linkURL) {
+        if (!message.linkURL || _.isEmpty(message.linkURL)) {
             return augmentedMessage;
         }
         augmentedMessage.link = {};
-        augmentedMessage.link.action = () => this.$window.open(message.linkURL, "_blank");
+        const linkURL = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
+        augmentedMessage.link.action = () => this.$window.open(linkURL, "_blank");
         if (message.hasLinkText) {
             augmentedMessage.link.text = this.$translate.instant(`${message.messageId}_link`);
         } else {
