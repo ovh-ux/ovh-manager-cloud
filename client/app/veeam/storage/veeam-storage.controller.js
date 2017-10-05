@@ -47,7 +47,7 @@
                         text: err.message,
                         type: "error"
                     })
-                });   
+                });
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),
