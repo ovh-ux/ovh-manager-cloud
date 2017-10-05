@@ -16,25 +16,25 @@
     </div>
     <div class="table-responsive-vertical">
         <table data-ng-if="!CdaIpListCtrl.loading" 
-               class="table table-pretty table-hover table-striped cda-table">
-            <thead>
+               class="oui-table oui-table_responsive">
+            <thead class="oui-table__headers">
                 <tr>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_ip_table_col_network"></span>
                     </th>
-                    <th class="cda-table-col-action"></th>
+                    <th class="oui-table__header"></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="cloud-table__row" 
+            <tbody class="oui-table__body">
+                <tr class="oui-table__row" 
                     data-ng-if="CdaIpListCtrl.datas.ips.length" 
                     data-ng-repeat="ip in CdaIpListCtrl.datas.paginatedIps track by ip.id">
-                    <td data-title="{{ 'cda_ip_table_col_network' | translate }}">
+                    <td class="oui-table__cell" data-title="{{ 'cda_ip_table_col_network' | translate }}">
                         <span data-ng-bind=" ::ip.network"></span>
                         /
                         <span data-ng-bind=" ::ip.netmask"></span>
                     </td>
-                    <td data-title="{{ 'cda_ip_table_col_actions' | translate }}">
+                    <td class="oui-table__cell oui-table__cell_action" data-title="{{ 'cda_ip_table_col_actions' | translate }}">
                         <button type="button" 
                                 class="no-style"
                                 data-ng-click="CdaIpListCtrl.openDeleteModal(ip)"
@@ -43,9 +43,10 @@
                         </button>
                     </td>
                 </tr>
-                <tr class="cloud-table__row" data-ng-if="!CdaIpListCtrl.datas.ips.length">
+                <tr class="oui-table__row" data-ng-if="!CdaIpListCtrl.datas.ips.length">
                     <td data-title="cda_ip_table_empty" 
-                        colspan="2">
+                        colspan="2"
+                        class="oui-table__cell">
                         <span data-translate="cda_ip_table_empty"></span>
                     </td>
                 </tr>
