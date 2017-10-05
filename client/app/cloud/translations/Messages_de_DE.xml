@@ -41,12 +41,12 @@
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalisieren</translation>
-   <translation id="cloud_common_region_location_SBG" qtlid="264244">Mitteleuropa (Frankreich)</translation>
+   <translation id="cloud_common_region_location_SBG" qtlid="264244">Zentraleuropa (Frankreich)</translation>
    <translation id="cloud_common_region_location_WAW" qtlid="410117">Zentraleuropa (Polen)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Nordamerika (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Westeuropa (Frankreich)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Westeuropa (Frankreich)</translation>
-   <translation id="cloud_common_region_location_DE" qtlid="437611">Osteuropa (Deutschland)</translation>
+   <translation id="cloud_common_region_location_DE" qtlid="437611">Zentraleuropa (Deutschland)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Ihr Browser wird nicht unterstützt.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Ihr Browser ist nicht aktuell und könnte Sicherheitslücken enthalten oder Kompatibilitätsprobleme verursachen.</translation>
