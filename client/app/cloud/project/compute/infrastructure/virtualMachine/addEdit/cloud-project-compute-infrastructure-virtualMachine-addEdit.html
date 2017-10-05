@@ -570,6 +570,11 @@
                                 <span translate="cpcivm_addedit_flavor_refresh"></span>
                             </button>
                         </p>
+                        <div class="pull-left text-underline"
+                             data-ng-if="VmAddEditCtrl.states.hasOldFlavors">
+                            <span>*</span>
+                            <span data-translate="cpcivm_addedit_flavor_has_old_flavors"></span>
+                        </div>
                         <!-- quota explain -->
                         <div data-ng-if="VmAddEditCtrl.panelsData.flavors.length && VmAddEditCtrl.panelsData.quota && VmAddEditCtrl.displayData.quota"
                              class="text-muted text-right bottom-space-m8 right-space-m8">
@@ -669,7 +674,10 @@
                                                 </span>
                                             </p>
                                             <dt data-translate="cpcivm_addedit_table_model"></dt>
-                                            <dd data-ng-bind-html="'cpci_vm_flavor_category_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].name | translate"></dd>
+                                            <dd>
+                                                <span data-ng-bind-html="'cpci_vm_flavor_category_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].name | translate"></span>
+                                                <span data-ng-if="VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].isOldFlavor">*</span>
+                                            </dd>
                                             <dt data-translate="cpcivm_addedit_table_cpu"></dt>
                                             <dd>
                                                 <button type="button" class="btn" data-ng-click="VmAddEditCtrl.viewFlavorsList('vcpus', categoryObject.category)">
@@ -840,7 +848,10 @@
                                                             </flat-radio>
                                                         </td>
                                                         <td class="text-center">
-                                                            <label for="{{:: flavor.shortGroupName }}" class="bold" data-ng-bind-html="'cpci_vm_flavor_category_' + flavor.shortGroupName | translate"></label>
+                                                            <label for="{{:: flavor.shortGroupName }}" class="bold">
+                                                                <span data-ng-bind="'cpci_vm_flavor_category_' + flavor.shortGroupName | translate"></span>
+                                                                <span data-ng-if="flavor.isOldFlavor">*</span>
+                                                            </label>
                                                         </td>
                                                         <td class="text-center"
                                                             data-translate="cpcivm_addedit_table_core_details_short"
