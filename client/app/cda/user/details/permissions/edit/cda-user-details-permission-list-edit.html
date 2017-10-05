@@ -1,17 +1,17 @@
 <section class="cda-user-details-permission-list-edit container-fluid top-space-m16 right-space-m20 left-space-m20">
-    <a class="btn btn-back f14 top-space-m16 bottom-space-m16" 
+    <a class="oui-button oui-button_link oui-button_icon-left" 
        data-ui-sref="paas.cda.cda-details.cda-user.cda-user-details.cda-user-details-permission-list({serviceName: CdaUserDetailsPermissionListEditCtrl.serviceName, userName: CdaUserDetailsPermissionListEditCtrl.userName})">
-        <i class="fa fa-angle-left right-space-m8"></i>
+        <i class="oui-icon oui-icon-chevron-left"></i>
         {{ "cda_user_details_permissions_list_edit_btn_back" | translate }}
     </a>
     <header>
-        <h3 data-translate="cda_user_details_permissions_list_edit_title" class="bottom-space-m16"></h3>
-        <dl class="fs14 top-space-p12">
+        <h3 data-translate="cda_user_details_permissions_list_edit_title" class="oui-header_3"></h3>
+        <dl>
             <dd data-translate="cda_user_details_permissions_list_username"></dd>
             <dt data-ng-bind="CdaUserDetailsPermissionListEditCtrl.userName"></dt>
         </dl>
     </header>
-    <div class="text-center" data-ng-if="CdaUserDetailsPermissionListEditCtrl.loading">
+    <div class="text-center" data-ng-if="CdaUserDetailsPermissionListEditCtrl.loading || CdaUserDetailsPermissionListEditCtrl.saving">
         <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <form name="PermissionsForm" 
@@ -40,11 +40,10 @@
         </div>
         <div class="top-space-p16 top-space-m16">
             <button
-                class="btn btn-primary fs14"
+                class="oui-button oui-button_primary"
                 type="submit" 
                 data-ng-disabled="PermissionsForm.$invalid || self.saving">
                 <span data-translate="common_modify"></span>
-                <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaUserDetailsPermissionListEditCtrl.saving"></spinner>
             </button>
         </div>
     </form>

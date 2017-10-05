@@ -5,10 +5,10 @@
     <div class="row" data-ng-if="!CdaDetailsHomeCtrl.loading">
         <section class="col-sm-6 col-md-4">
             <header>
-                <h3>
+                <h3 class="oui-header_3">
                     <span data-translate="cda_home_details_title"></span>
                     <button type="button" class="no-style fs16" data-ng-click="CdaDetailsHomeCtrl.openEditModal()">
-                        <i class="fa fa-pencil"></i>
+                        <i class="oui-icon oui-icon-pen_line" aria-hidden="true"></i>
                     </button>
                 </h3>
             </header>
@@ -21,7 +21,7 @@
         </section>
         <section class="col-sm-6 col-md-4">
             <header>
-                <h3 data-translate="cda_home_health_title"></h3>
+                <h3 class="oui-header_3" data-translate="cda_home_health_title"></h3>
             </header>
             <div class="well">
                 <cda-health data-detail="CdaDetailsHomeCtrl.datas.health"></cda-health>
@@ -29,7 +29,7 @@
         </section>
         <section class="col-sm-6 col-md-4">
             <header>
-                <h3 data-translate="cda_home_space_title"></h3>
+                <h3 class="oui-header_3" data-translate="cda_home_space_title"></h3>
             </header>
             <div class="well">
                 <cda-space-usage
