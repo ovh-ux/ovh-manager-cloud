@@ -12,11 +12,12 @@
    <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Počet platebních karet s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti karet a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
    <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Počet účtů PayPal s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti účtů a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Votre compte OVH est débiteur de <strong>{{value}}</strong> au {{date | date:'medium'}}. Rendez-vous dans <a href="{{link}}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Na Vašem účtu evidujeme ke dni {{date | date:'medium'}} dlužnou částku ve výši <strong>{{value}}</strong>. Pro uhrazení částky přejděte prosím do sekce <a href="{{link}}" class="alert-link">Fakturace</a>.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Váš aktuální dluh: <strong>{{value}}</strong>. Pro vyřešení této situace přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Na Vašem účtu evidujeme dlužnou částku ve výši <strong>{{ dueAmount }}</strong> (včetně doposud neuhrazené částky {{ unmaturedAmount }}). Pro vyřešení této situace přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.&#13;
+</translation>
 
-   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Votre compte OVH a atteint le seuil que vous avez défini. Rendez-vous dans <a href="{{link}}" class="alert-link">la section facturation</a> pour plus d'informations.</translation>
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Váš účet dosáhl Vámi definovaného limitu. Pro více informací přejděte prosím do sekce <a href="{{link}}" class="alert-link">Fakturace</a>.</translation>
 
    <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Počet objednávek čekajících na připojení potřebných dokumentů: <strong>{{count}}</strong>. Pro dokončení objednávek přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Mé objednávky"</a>.</translation>
    <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Počet smluv čekajících na potvrzení: <strong>{{count}}</strong>.</translation>

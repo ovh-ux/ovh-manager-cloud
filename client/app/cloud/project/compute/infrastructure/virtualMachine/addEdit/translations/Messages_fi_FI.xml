@@ -58,7 +58,7 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
    <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage paikallinen SSD, jaettu CPU/RAM/kaista.</translation>
