@@ -5,14 +5,12 @@
         <div data-ng-if="!IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
             <cui-modal-text data-text="'iplb_modal_nat_ip_description' | translate"></cui-modal-text>
 
-            <cui-clipboard-list data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-                <cui-clipboard data-label="nat.zone" data-text="nat.ip" data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index"></cui-clipboard>
-            </cui-clipboard-list>
+            <div data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
+                <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
+                    <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
+                    <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
+                </div>
+            </div>
         </div>
     </cui-modal-body>
-    <cui-modal-footer>
-        <cui-button data-text="'common_modal_ok' | translate"
-            data-on-click="IpLoadBalancerNatIpDetailCtrl.dismiss()"
-            data-type="primary"></cui-submit-button>
-    </cui-modal-footer>
 </cui-modal>

@@ -3,14 +3,12 @@
 @cui-clipboard-icon-color: #00A0BF;
 @cui-clipboard-icon-error-color: #E36947;
 
-.cui-clipboard-list {
-    &__item {
-        margin-bottom: 13px;
-    }
-}
-
 .cui-clipboard {
-    position: relative;
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
 
     &__input {
         padding: 6px 48px 6px 12px;
@@ -24,16 +22,6 @@
         border: 1px solid @clipboard-border-color;
         border-radius: 5px;
         cursor: pointer;
-
-        &:not(:last-child) {
-            margin-bottom: rem-calc(10);
-        }
-    }
-
-    &:not(:last-child) {
-        .cui-clipboard__input {
-            margin-bottom: rem-calc(10);
-        }
     }
 
     &__input:hover {
@@ -42,6 +30,10 @@
 
     &__input:active {
         border: 1px solid rgba(0,162,191,0.25);
+    }
+
+    &__input-container {
+        position: relative;
     }
 
     &__icon {
