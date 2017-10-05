@@ -42,6 +42,7 @@ describe("Controller: CloudProjectComputeCtrl", function () {
             $scope: scope,
             $stateParams: stateParams
         });
+        controller.init();
     }
 
     describe("initialization", function () {

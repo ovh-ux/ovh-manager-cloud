@@ -126,5 +126,4 @@ angular.module("managerApp", [
             };
             off();
         });
-
     });
