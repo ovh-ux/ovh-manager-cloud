@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_backup_title">Sauvegardes</translation>
+    <translation id="cloud_db_backup_intro_text">La sauvegarde de vos bases de données s'effectue automatiquement à chaque jour. Pour créer une sauvegarde à la demande, cliquez sur <i>Créer une sauvegarde</i>. Si elle n'est pas supprimée manuellement, chaque sauvegarde s'efface automatiquement 30 jours après sa création.</translation>
+    <translation id="cloud_db_backup_add">Créer une sauvegarde</translation>
+    
+    <translation id="cloud_db_backup_list_col_name">Nom</translation>
+    <translation id="cloud_db_backup_list_col_creation_date">Création</translation>
+    <translation id="cloud_db_backup_list_col_expiration_date">Expiration</translation>
+    <translation id="cloud_db_backup_list_col_database">Base de données</translation>
+    <translation id="cloud_db_backup_list_col_size">Taille</translation>
+    <translation id="cloud_db_backup_list_empty">Aucune sauvegarde</translation>
+
+    <translation id="cloud_db_backup_action_menu_download">Télécharger</translation>
+    <translation id="cloud_db_backup_action_menu_restore">Restaurer</translation>
+
+    <translation id="cloud_db_backup_delete_title">Supprimer la sauvegarde</translation>
+    <translation id="cloud_db_backup_delete_confirmation_message">Êtes-vous sûr de vouloir supprimer la sauvegarde?</translation>
+
+    <translation id="cloud_db_backup_add_label_name">Nom</translation>
+    <translation id="cloud_db_backup_add_label_database">Base de données</translation>
+</translations>

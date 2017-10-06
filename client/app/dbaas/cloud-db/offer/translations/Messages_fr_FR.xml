@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_offer_edit_title">Modifier l'offre</translation>
+
+    <translation id="cloud_db_offer_edit_col_offer">Offre</translation>
+    <translation id="cloud_db_offer_edit_col_ram">Mémoire RAM</translation>
+    <translation id="cloud_db_offer_edit_col_disk_space">Espace disque</translation>
+    <translation id="cloud_db_offer_edit_col_price">Prix</translation>
+</translations>

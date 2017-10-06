@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService, OvhApiMe, OvhApiProducts,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDbSidebarService, CloudDesktopSidebarService, OvhApiMe, OvhApiProducts,
                  FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -18,7 +18,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             metrics: SidebarService.getServices(MetricsSectionSidebarService.section, products),
             vracks: SidebarService.getServices(VrackSectionSidebarService.section, products),
             load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products),
-            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products)
+            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products),
+            cloud_db: SidebarService.getServices(CloudDbSidebarService.section, products)
         };
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
@@ -42,6 +43,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         });
 
         LoadBalancerSidebarService.fillSection(services.load_balancer);
+        CloudDbSidebarService.fillSection(services.cloud_db);
         VrackSectionSidebarService.fillSection(services.vracks);
 
         if (FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {

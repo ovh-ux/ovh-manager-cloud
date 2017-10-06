@@ -1,0 +1,53 @@
+<cui-modal>
+    <form novalidate name="$ctrl.form">  
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'cloud_db_backup_add' | translate">
+            <cui-loader data-ng-if="$ctrl.isModalLoading()"></cui-loader>
+            <div data-ng-if="!$ctrl.isModalLoading()">
+                <div class="oui-field">
+                    <label for="name" class="oui-field__label oui-label" data-translate="cloud_db_backup_add_label_name"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_3">
+                            <input type="text"
+                                data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.name.$invalid }"
+                                id="name"
+                                name="name"
+                                class="oui-input"
+                                data-ng-minlength="$ctrl.model.name.minLength"
+                                data-ng-maxlength="$ctrl.model.name.maxLength"
+                                data-ng-model="$ctrl.model.name.value"
+                                data-ng-required="$ctrl.model.name.required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-field">
+                    <label for="database" 
+                        class="oui-field__label oui-label" 
+                        data-translate="cloud_db_backup_add_label_database"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_3">
+                            <label class="oui-select">
+                                <select id="database"
+                                    data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.database.$invalid }" 
+                                    name="database"
+                                    class="oui-select__input"
+                                    data-ng-model="$ctrl.model.database.value"
+                                    ng-options="database.name as database.displayName for database in $ctrl.databases.data"
+                                    data-ng-required="$ctrl.model.database.required">
+                                    <option value="" data-translate="common_select"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_add' | translate" 
+                data-on-click="$ctrl.add()"
+                data-disabled="$ctrl.isModalLoading()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

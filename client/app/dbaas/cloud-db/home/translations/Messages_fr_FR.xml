@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_home_tile_shortcut_title">Raccourcis</translation>
+    <translation id="cloud_db_home_tile_shortcut_change_offer">Modifier l'offre</translation>
+    <translation id="cloud_db_home_tile_shortcut_create_database">Créer une base de données</translation>
+    <translation id="cloud_db_home_tile_shortcut_create_user">Créer un utilisateur</translation>
+    <translation id="cloud_db_home_tile_shortcut_create_backup">Créer une sauvegarde</translation>
+    <translation id="cloud_db_home_tile_shortcut_add_network">Autoriser un réseau</translation>
+
+    <translation id="cloud_db_home_tile_status_title">Statut</translation>
+    <translation id="cloud_db_home_tile_status_instance">Instance</translation>
+    <translation id="cloud_db_home_tile_status_instance_restart">Redémarrer</translation>
+    <translation id="cloud_db_home_tile_status_ram">Mémoire RAM</translation>
+    <translation id="cloud_db_home_tile_status_disk_space">Espace disque</translation>
+
+    <translation id="cloud_db_home_tile_access_title">Accès</translation>
+    <translation id="cloud_db_home_tile_access_host_name">Nom d'hôte</translation>
+    <translation id="cloud_db_home_tile_access_port">Port de service</translation>
+    <translation id="cloud_db_home_tile_access_connection_command_line">Commande</translation>
+
+    <translation id="cloud_db_home_tile_configuration_title">Configuration</translation>
+    <translation id="cloud_db_home_tile_configuration_name">Nom</translation>
+    <translation id="cloud_db_home_tile_configuration_type">Type</translation>
+    <translation id="cloud_db_home_tile_configuration_offer">Offre</translation>
+    <translation id="cloud_db_home_tile_configuration_advanced_parameters">Paramètres avancés</translation>
+    <translation id="cloud_db_home_tile_configuration_advanced_parameters_default">Par défaut</translation>
+    <translation id="cloud_db_home_tile_configuration_advanced_parameters_custom">Personnalisé</translation>
+    <translation id="cloud_db_home_tile_configuration_region">Région</translation>
+</translations>

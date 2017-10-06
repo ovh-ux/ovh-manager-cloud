@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_instance_add">Ajouter une instance</translation>
+
+    <translation id="cloud_db_instance_add_form_field_region">Région</translation>
+    <translation id="cloud_db_instance_add_form_field_flavor">Configuration</translation>
+    <translation id="cloud_db_instance_add_form_field_image">Image</translation>
+    <translation id="cloud_db_instance_add_form_field_name">Nom d'instance</translation>
+</translations>

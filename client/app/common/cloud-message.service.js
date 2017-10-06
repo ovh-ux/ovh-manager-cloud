@@ -1,8 +1,12 @@
 class CloudMessage {
-    constructor ($state) {
+    constructor ($rootScope, $state) {
         this.$state = $state;
         this.messages = {};
         this.subscribers = {};
+
+        $rootScope.$on("$stateChangeSuccess", () => {
+            this.flushChildMessage();
+        });
     }
 
     success (message, containerName) {
@@ -32,7 +36,7 @@ class CloudMessage {
         const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
-            messageHandler.messages.push(_.extend({ type }, messageHash));
+            messageHandler.messages.push(_.extend({ type, origin: containerName }, messageHash));
             messageHandler.onMessage();
         } else {
             console.log(`Unhandled message ${messageHash.text}`);
@@ -69,6 +73,15 @@ class CloudMessage {
 
         if (messageHandler) {
             messageHandler.messages = [];
+            messageHandler.onMessage();
+        }
+    }
+
+    flushChildMessage (containerName) {
+        const messageHandler = this.getMessageHandler(containerName);
+
+        if (messageHandler) {
+            messageHandler.messages = _.filter(messageHandler.messages, message => message.origin !== containerName);
             messageHandler.onMessage();
         }
     }

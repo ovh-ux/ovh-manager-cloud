@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_oom_title">Mémoire insuffisante</translation>
+    <translation id="cloud_db_oom_text">Si l'instance n'a plus assez de mémoire RAM à allouer aux processus (Out of Memory (OOM)), elle est automatiquement redémarrée, ce qui cause une interruption de service.</translation>
+    <translation id="cloud_db_oom_text_advice">Il est fortement recommandé d'augmenter la mémoire RAM de votre instance.</translation>
+
+    <translation id="cloud_db_oom_change_offer">Modifier l'offre</translation>
+
+    <translation id="cloud_db_offer_edit_col_date">Date</translation>
+    <translation id="cloud_db_offer_edit_col_size">Taille atteinte</translation>
+    <translation id="cloud_db_offer_edit_col_availability">Disponibilité</translation>
+    <translation id="cloud_db_oom_list_empty">Aucun manque de mémoire.</translation>
+</translations>

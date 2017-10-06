@@ -20,10 +20,7 @@
 
         $onInit () {
             this.show = false;
-            this.hideMenu = () => {
-                this.$rootScope.$broadcast("ouiDropdownMenu.hide");
-                this.$scope.$apply();
-            };
+            this.hideMenu = () => this.$rootScope.$broadcast("ouiDropdownMenu.hide");
 
             angular.element(this.$window.document).on("click", this.hideMenu);
         }

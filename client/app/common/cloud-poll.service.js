@@ -8,35 +8,38 @@ class CloudPoll {
     //  Ex => { item: [1, 2, 3], pollFunction: item => doSomething(), stopCondition: item => doSomething(), interval: 10000  }
     pollArray (opts) {
         const poller = {};
-        let continuePolling;
-        let interval = 0;
+        let items = opts.items;
         poller.pollInterval = this.$interval(() => {
-            continuePolling = false;
-            const promises = _.map(opts.items, item =>
-                this.$q.when(opts.stopCondition(item))
-                    .then(stopCondition => {
-                        if (stopCondition && interval > 0) {
-                            return this.$q.when();
-                        }
-
-                        continuePolling = true;
-                        return this.$q.when(opts.pollFunction(item));
-                    })
+            const promises = _.map(items, item =>
+                this.$q.when(opts.pollFunction(item))
                     .then(newItem => {
                         if (newItem) {
                             _.merge(item, newItem.data ? newItem.data : newItem);
                         }
+
+                        return this.$q.when(opts.stopCondition(item));
+                    }).catch(() => { // If an error is encountered, we end the polling.
+                        item = null;
+                        return true;
+                    })
+                    .then(stopCondition => {
+                        if (stopCondition) {
+                            opts.onItemDone(item);
+                        }
+
+                        return {
+                            stopping: stopCondition,
+                            item
+                        };
                     }));
 
             this.$q.all(promises)
-                .then(() => {
-                    if (!continuePolling) {
+                .then(results => {
+                    items = _.map(_.filter(results, result => !result.stopping), result => result.item);
+
+                    if (!items.length) {
                         poller.kill();
                     }
-                    interval++;
-                })
-                .catch(err => {
-                    console.log(err);
                 });
         }, opts.interval || 5000);
 
