@@ -21,15 +21,18 @@
             this.usage = {};
             this.configuration = {};
             this.plan = {};
+            this.actions = {};
         }
 
         $onInit () {
             this.loading.service = true;
             this.loading.consumption = true;
+            this.loading.plan = true;
             this.initTiles();
         }
 
         initTiles () {
+            this.initActions();
             this.MetricService.getService(this.serviceName)
                 .then(service => {
                     this.usage.quota = {
@@ -47,6 +50,7 @@
                 .finally(() => {
                     this.loading.service = false;
                 });
+
             this.MetricService.getConsumption(this.serviceName)
                 .then(cons => {
                     this.usage.conso = { mads: cons.data.mads, ddp: cons.data.ddp };
@@ -56,6 +60,16 @@
                     this.loading.consumption = false;
                 });
 
+            this.MetricService.getServiceInfos(this.serviceName)
+                .then(info => {
+                    this.plan.autorenew = moment(info.data.expiration).format("LL");
+                    this.plan.contactAdmin = info.data.contactAdmin;
+                    this.plan.contactBilling = info.data.contactBilling;
+                    this.plan.creation = moment(info.data.creation).format("LL");
+                })
+                .finally(() => {
+                    this.loading.plan = false;
+                });
         }
 
         initMessages () {
@@ -67,11 +81,19 @@
             }
         }
 
+        initActions () {
+            this.actions.autorenew = this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "METRICS" });
+            this.actions.contacts = this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName });
+        }
+
         computeUsage (value, total) {
             return value / total * 100;
         }
 
         displayUsage (value, total) {
+            if (!value && !total) {
+                return "0";
+            }
             return `${value}/${total}`;
         }
 

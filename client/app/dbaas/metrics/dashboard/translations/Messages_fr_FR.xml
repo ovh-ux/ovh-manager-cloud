@@ -36,4 +36,5 @@
    <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nom par défaut</translation>
    <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nom personnalisé</translation>
    <translation id="metrics_dashboard_modif_retention" qtlid="8218">Durée</translation>
+   <translation id="metrics_modif_name_title" qtlid="8218">Modifier le nom</translation>
 </translations>
