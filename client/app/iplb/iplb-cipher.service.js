@@ -27,7 +27,7 @@ class IpLoadBalancerCipherService {
     transformCipher (cipher) {
         return {
             type: cipher,
-            displayName: cipher ? this.$translate.instant(`iplb_modal_cipher_change_cipher_${cipher}_title`) : "-",
+            displayName: cipher ? this.$translate.instant(`iplb_modal_cipher_change_cipher_${cipher}_title`) : "",
             description: cipher ? this.$translate.instant(`iplb_modal_cipher_change_cipher_${cipher}_description`) : null
         };
     }

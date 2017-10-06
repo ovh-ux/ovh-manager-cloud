@@ -25,7 +25,8 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.farms = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerFrontendsService.getFarmsChoices(
                 this.getFarmType(),
-                this.$stateParams.serviceName
+                this.$stateParams.serviceName,
+                this.frontend.zone
             )
         });
         this.certificates = this.ControllerHelper.request.getArrayLoader({
@@ -122,28 +123,9 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.farms.load();
     }
 
-    onFarmChange () {
-        if (this.frontend.defaultFarmId === -1) {
-            this.ControllerHelper.modal.showModal({
-                modalConfig: {
-                    templateUrl: "app/iplb/frontends/addFarm/iplb-frontends-add-farm.html",
-                    controller: "IpLoadBalancerFrontendAddFarmCtrl",
-                    controllerAs: "IpLoadBalancerFrontendAddFarmCtrl"
-                }
-            });
-        }
-    }
-
-    onCertificateChange () {
-        if (this.frontend.defaultSslId === -1) {
-            this.ControllerHelper.modal.showModal({
-                modalConfig: {
-                    templateUrl: "app/iplb/frontends/addCertificate/iplb-frontends-add-certificate.html",
-                    controller: "IpLoadBalancerFrontendAddCertificateCtrl",
-                    controllerAs: "IpLoadBalancerFrontendAddCertificateCtrl"
-                }
-            });
-        }
+    onZoneChange () {
+        this.frontend.defaultFarmId = null;
+        this.farms.load();
     }
 
     $onInit () {
@@ -160,13 +142,17 @@ class IpLoadBalancerFrontendsEditCtrl {
         this.protocols = this.IpLoadBalancerConstant.protocols;
         this.portLimit = this.IpLoadBalancerConstant.portLimit;
 
-        this.farms.load();
         this.zones.load();
         this.failoverIps.load();
 
         if (this.$stateParams.frontendId) {
             this.edition = true;
-            this.apiFrontend.load();
+            this.apiFrontend.load()
+                .then(() => {
+                    this.farms.load();
+                });
+        } else {
+            this.farms.load();
         }
     }
 

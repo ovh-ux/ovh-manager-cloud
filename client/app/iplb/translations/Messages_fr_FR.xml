@@ -59,7 +59,6 @@
    <translation id="iplb_utilisation_update_alert" qtlid="439624">Modifier le seuil d'alerte</translation>
    <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Données incluses</translation>
    <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Seuil de l'alerte</translation>
-   <translation id="iplb_utilisation_update_alert_unit" qtlid="180278">Gio</translation>
    <translation id="iplb_utilisation_update_alert_error" qtlid="439650">Une erreur est survenue lors de la mise à jour du seuil d'alerte.</translation>
 
    <translation id="iplb_usage_loading_error" qtlid="439663">Erreur lors du chargement de la section Utilisation.</translation>

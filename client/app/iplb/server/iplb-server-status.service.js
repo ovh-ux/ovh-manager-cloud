@@ -1,6 +1,7 @@
 class IpblServerStatusService {
     hasIssue (server) {
-        return _.some(server.serverState || [], serverState => serverState.status === "DOWN");
+        return server.probe &&
+            _.some(server.serverState || [], serverState => serverState.status === "DOWN");
     }
 
     hasNoInfo (server) {

@@ -36,9 +36,7 @@
             <label for="port" class="oui-label" data-translate="iplb_frontend_add_port"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_1">
-                    <input type="number"
-                        min="1"
-                        max="{{ctrl.portLimit}}"
+                    <input type="text"
                         id="port"
                         name="port"
                         class="oui-input"
@@ -66,6 +64,7 @@
                             id="zone"
                             data-ng-model="ctrl.frontend.zone"
                             data-ng-options="zone.id as zone.name for zone in ctrl.zones.data"
+                            data-ng-change="ctrl.onZoneChange()"
                             ui-validate="{ selection: 'ctrl.validateSelection($value)' }">
                             <option data-translate="iplb_zone_select_placeholder"></option>
                         </select>
@@ -88,7 +87,7 @@
                             id="farm"
                             data-ng-model="ctrl.frontend.defaultFarmId"
                             data-ng-options="farm.farmId as ctrl.getFarmName(farm) for farm in ctrl.farms.data"
-                            data-ng-change="ctrl.onFarmChange()">
+                            data-ng-disabled="!ctrl.frontend.zone">
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>
@@ -108,8 +107,7 @@
                             name="certificate"
                             id="certificate"
                             data-ng-model="ctrl.frontend.defaultSslId"
-                            data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data"
-                            data-ng-change="ctrl.onCertificateChange()">
+                            data-ng-options="certificate.id as ctrl.getCertificateName(certificate) for certificate in ctrl.certificates.data">
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </div>
