@@ -45,7 +45,7 @@
    <translation id="iplb_zone_all" qtlid="439520">Tous (ALL)</translation>
 
    <translation id="iplb_graph_name_conn" qtlid="41530">Connexions simultanées</translation>
-   <translation id="iplb_graph_name_reqm" qtlid="439533">Requêtes par seconde</translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Requêtes par minute</translation>
    <translation id="iplb_graph_no_data" qtlid="439546">Aucune donnée pour le moment</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} actifs</translation>
