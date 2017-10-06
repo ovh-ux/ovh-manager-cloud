@@ -14,7 +14,7 @@
    <translation id="metrics_token_state_active" qtlid="55133">Actif</translation>
    <translation id="metrics_token_state_inactive" qtlid="105310">Inactif</translation>
 
-   <translation id="metrics_token_explain">Les tokens sécurisent l'accès à vos données de séries temporelles. Chaque token définit des permissions, et peut éventuellement comporter des "labels" (couple 'clé, valeur'). Les labels sont automatiquement ajoutés comme filtre à la lecture, et attachés à chaque donnée écrite avec le token portant ces labels. Pour plus d'information <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
+   <translation id="metrics_token_explain" qtlid="439918">Les tokens sécurisent l'accès à vos données de séries temporelles. Chaque token définit des permissions, et peut éventuellement comporter des "labels" (couple 'clé, valeur'). Les labels sont automatiquement ajoutés comme filtre à la lecture, et attachés à chaque donnée écrite avec le token portant ces labels. Pour plus d'information <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
 <!-- Page: token -->
    <translation id="metrics_token_permission_read" qtlid="6958">Lecture</translation>
    <translation id="metrics_token_permission_write" qtlid="301565">Écriture</translation>
@@ -30,8 +30,8 @@
    <translation id="metrics_token_role" qtlid="403398">Rôle</translation>
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
    <translation id="metrics_token_id" qtlid="46792">Identifiant</translation>
-   <translation id="metrics_token_show_preview">Voir l'aperçu</translation>
-   <translation id="metrics_token_preview_title">Aperçu du token</translation>
+   <translation id="metrics_token_show_preview" qtlid="433371">Voir l'aperçu</translation>
+   <translation id="metrics_token_preview_title" qtlid="439931">Aperçu du token</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Afficher les révoqués</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Modifier</translation>
@@ -40,7 +40,7 @@
    <translation id="metrics_token_edit_cancel" qtlid="37863">Annuler</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Modifier</translation>
 
-   <translation id="metrics_token_delete_title">Supprimer le token</translation>
+   <translation id="metrics_token_delete_title" qtlid="439944">Supprimer le token</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">Êtes-vous sûr de vouloir supprimer le token ?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token créé</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token révoqué</translation>
