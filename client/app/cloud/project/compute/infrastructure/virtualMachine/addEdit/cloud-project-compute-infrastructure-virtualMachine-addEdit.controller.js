@@ -186,7 +186,8 @@ angular.module("managerApp")
     // States Store.
     self.states = {
         hasVrack: false,
-        hasSetFlavor: false
+        hasSetFlavor: false,
+        hasOldFlavors: false
     };
 
     // Contextual Urls Store.
@@ -330,6 +331,11 @@ angular.module("managerApp")
                 originalCategoryObject.flavors.forEach(function(flavor) {
                     flavor.migrationNotAllowed = _.includes(originalCategory.migrationNotAllowed, category.id);
                 });
+            }
+        });
+        _.forEach(self.displayData.categories, category => {
+            if (_.some(category.flavors, "isOldFlavor")) {
+                self.states.hasOldFlavors = true;
             }
         });
         self.displayData.categories = _.sortBy(self.displayData.categories, "order");
@@ -1403,8 +1409,13 @@ angular.module("managerApp")
                     augmentedFlavor.gpuCardCount = 1;
                 }
             }
+            augmentedFlavor.isOldFlavor = isOldFlavor(flavor.name);
         }
         return augmentedFlavor;
+    }
+
+    function isOldFlavor (flavorName) {
+        return /eg|sp|hg|vps-ssd/.test(flavorName);
     }
 
     function checkFlavorCompatibility (fromFlavor, toFlavor) {
