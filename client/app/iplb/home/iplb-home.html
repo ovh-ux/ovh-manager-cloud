@@ -51,7 +51,7 @@
                             <iplb-bullet-chart
                                 data-ng-if="!quota.included"
                                 data-text="(quota.total | bytes:2:false) + ' / ' + ('iplb_home_tile_configuration_quota_unlimited' | translate)"
-                                data-value="(!quota.alert || quota.alert < quota.total) ? 0 : 100"
+                                data-value="(!quota.alert || quota.alert > quota.total) ? 0 : 100"
                                 data-limit="100 * quota.alert / quota.total"></iplb-bullet-chart>
                         </div>
                     </div>
