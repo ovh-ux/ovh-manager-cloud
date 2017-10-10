@@ -4,7 +4,7 @@ class CloudDbActionService {
     }
 
     showBackupEditModal (projectId, instanceId) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/cloud-db/backup/cloud-db-backup-edit.html",
                 controller: "CloudDbBackupEditCtrl",
@@ -30,7 +30,7 @@ class CloudDbActionService {
     }
 
     showDatabasePreviewModal (projectId, instanceId, database) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/cloud-db/database/cloud-db-database-preview.html",
                 controller: "CloudDbDatabasePreviewCtrl",
@@ -43,7 +43,7 @@ class CloudDbActionService {
     }
 
     showUserPreviewModal (projectId, instanceId, user) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/cloud-db/user/cloud-db-user-preview.html",
                 controller: "CloudDbUserPreviewCtrl",

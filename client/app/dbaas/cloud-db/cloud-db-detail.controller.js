@@ -7,8 +7,7 @@ class CloudDbDetailCtrl {
     }
 
     $onInit () {
-        this.CloudNavigation.init();
-        this.CloudNavigation.forceHistory({
+        this.CloudNavigation.init({
             state: "dbaas.cloud-db.project",
             stateParams: {
                 projectId: this.$stateParams.projectId

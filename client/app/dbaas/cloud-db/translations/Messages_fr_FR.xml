@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="cloud_db_back_home">Retour à l'accueil</translation>
+    <translation id="cloud_db_back_home">Retour</translation>
 
     <translation id="cloud_db_tab_home">Accueil</translation>
     <translation id="cloud_db_tab_graph">Graphiques</translation>

@@ -1,4 +1,7 @@
 <section class="cui-page__content">
+    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
+                   data-state-params="$ctrl.previousState.stateParams"
+                   data-text="'cloud_db_back_home' | translate"></cui-back-link>
     <cui-page-content-title text="'cloud_db_database_add' | translate"></cui-page-content-title>
     <form novalidate name="$ctrl.form">
         <div class="oui-field">
@@ -86,7 +89,7 @@
                 <cui-submit-button data-text="'common_add' | translate"
                     data-ng-if="!$ctrl.edition"
                     data-on-click="$ctrl.add()"></cui-submit-button>
-                <a class="oui-button oui-button_secondary"
+                <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
                     data-ui-sref="{{ $ctrl.previousState.sref }}"></a>
             </div>

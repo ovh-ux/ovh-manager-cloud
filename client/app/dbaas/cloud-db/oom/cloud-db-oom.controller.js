@@ -1,8 +1,9 @@
 class CloudDbOomCtrl {
-    constructor ($stateParams, $translate, CloudDbInstanceService, ControllerHelper) {
+    constructor ($stateParams, $translate, CloudDbInstanceService, CloudNavigation, ControllerHelper) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudDbInstanceService = CloudDbInstanceService;
+        this.CloudNavigation = CloudNavigation;
         this.ControllerHelper = ControllerHelper;
 
         this.projectId = this.$stateParams.projectId;
@@ -17,6 +18,7 @@ class CloudDbOomCtrl {
 
     $onInit () {
         this.ooms.load();
+        this.previousState = this.CloudNavigation.getPreviousState();
     }
 
     initActions () {

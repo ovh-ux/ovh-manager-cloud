@@ -61,9 +61,7 @@ class CloudDbUserCtrl {
                 <cui-dropdown-menu-body>
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-eye"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="$ctrl.actions.preview.text"
@@ -73,9 +71,7 @@ class CloudDbUserCtrl {
                     </div>
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-pen_line"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-disabled="!$ctrl.actions.updateUser.isAvailable()"
@@ -83,9 +79,7 @@ class CloudDbUserCtrl {
                                 data-ng-click="$ctrl.actions.updateUser.callback($row)"></button>
                         </div>
                         <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                                <i class="oui-icon oui-icon-trash_line"></i>
-                            </div>
+                            <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'common_delete' | translate"

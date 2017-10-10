@@ -32,7 +32,7 @@ class CloudDbInstanceCtrl {
     }
 
     $onInit () {
-        this.CloudNavigation.forceHistory({
+        this.CloudNavigation.init({
             state: "dbaas.cloud-db.instance.detail",
             stateParams: {
                 projectId: this.$stateParams.projectId,
