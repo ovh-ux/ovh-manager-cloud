@@ -1,0 +1,65 @@
+<div class="deskaas-modal">
+
+    <div class="white title">
+        <h1 data-translate="vdi_upgrade_title"></h1>
+    </div>
+
+    <div class="loading" data-ng-if="DeskaasUpgradeCtrl.flags.init">
+        <i class="fa fa-refresh fa-spin fa-3x"></i>
+        <h3 data-translate="common_loading"></h3>
+    </div>
+
+    <div class="modal-body">
+        <form novalidate class="upgradeForm" name="upgradeForm">
+            <b data-translate="vdi_upgrade_available"></b>
+            <table class="table-condensed table-striped col-md-12">
+                <thead>
+                <tr>
+                    <td ></td>
+                    <td class="text-center">vCPU</td>
+                    <td class="text-center">Go de m&eacute;moire</td>
+                    <td class="text-center">Go de stockage</td>
+                    <td class="text-center">GPU</td>
+                    <td class="text-center">Prix</td>
+                    <td >&nbsp;</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="ref in DeskaasUpgradeCtrl.references">
+                    <td>
+                        {{ ref.name }}
+                    </td>
+                    <td class="text-center">
+                        {{ ref.vcpu }}
+                    </td>
+                    <td class="text-center">
+                        {{ ref.ram }}
+                    </td>
+                    <td class="text-center">
+                        {{ ref.storage }}
+                    </td>
+                    <td class="text-center">
+                        {{ ref.gpu }}
+                    </td>
+                    <td class="text-center">
+                        {{ ref.priceText }}
+                    </td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-xs btn-primary" data-ng-really-click="DeskaasUpgradeCtrl.upgrade(ref)" data-ng-really-message="{{ DeskaasUpgradeCtrl.upgradeConfirmMessage(ref) }}"
+                                data-ng-really-confirm="{{ ::'ok' | translate }}" data-ng-really-cancel="{{ ::'cancel' | translate }}"
+                                data-translate="vdi_btn_popup_upgrade">
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+            data-ng-click="DeskaasUpgradeCtrl.cancel()"
+            data-translate="cancel"></button>
+
+    </div>
+
+</div>

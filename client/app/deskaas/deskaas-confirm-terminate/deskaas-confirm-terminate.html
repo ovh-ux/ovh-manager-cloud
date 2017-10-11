@@ -1,0 +1,45 @@
+<div class="deskaas-modal">
+
+    <div class="white title">
+        <h1 data-translate="vdi_cancel_title"></h1>
+    </div>
+
+    <div class="loading" data-ng-if="DeskaasConfirmTerminateCtrl.flags.init">
+        <i class="fa fa-refresh fa-spin fa-3x"></i>
+        <h3 data-translate="common_loading"></h3>
+    </div>
+
+    <div data-ng-show="!DeskaasConfirmTerminateCtrl.flags.init">
+        <form novalidate class="confirmTerminateForm" name="confirmTerminateForm">
+            <b>Token</b>
+            <input disabled="disabled" type="text" ng-model="DeskaasConfirmTerminateCtrl.values.token" class="form-control" required>
+            <br />
+            <b data-translate="vdi_confirm_cancel_reason"></b>
+            <select ng-model="DeskaasConfirmTerminateCtrl.values.reason" class="form-control" required>
+                <option value="TOO_HARD_TO_USE" data-translate="vdi_reason_hard">
+                <option selected value="TESTING_SOLUTION" data-translate="vdi_reason_testing">
+                <option value="MISSING_FEATURES" data-translate="vdi_reason_missing">
+                <option value="BAD_PERFORMANCE" data-translate="vdi_reason_performance">
+                <option value="NOT_SUITABLE" data-translate="vdi_reason_not_suitable">
+                <option value="NO_NEED_ANYMORE" data-translate="vdi_reason_need">
+                <option value="OTHER" data-translate="vdi_reason_other">
+            </select>
+            <br />
+            <b data-translate="vdi_confirm_cancel_commentary"></b>
+            <input type="text" ng-model="DeskaasConfirmTerminateCtrl.values.commentary" class="form-control" value="DeskaasDetailsCtrl.stateParams.token">
+        </form>
+    </div>
+
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary"
+            ng-click="DeskaasConfirmTerminateCtrl.ok()"
+            ng-disabled="DeskaasConfirmTerminateCtrl.flags.init || !(DeskaasConfirmTerminateCtrl.values.token && DeskaasConfirmTerminateCtrl.values.reason) || !confirmTerminateForm.$valid"
+            data-translate="ok"></button>
+        <button type="button" class="btn btn-default"
+            ng-click="DeskaasConfirmTerminateCtrl.cancel()"
+            data-translate="cancel"></button>
+
+    </div>
+
+</div>

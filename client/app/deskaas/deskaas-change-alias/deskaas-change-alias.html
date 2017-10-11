@@ -1,0 +1,40 @@
+<div class="deskaas-modal">
+
+    <div class="white title">
+        <h1 data-translate="vdi_change_alias_title"></h1>
+    </div>
+
+    <div class="loading" data-ng-if="DeskaasChangeAliasCtrl.flags.init">
+        <i class="fa fa-refresh fa-spin fa-3x"></i>
+        <h3 data-translate="common_loading"></h3>
+    </div>
+
+    <div data-ng-show="!DeskaasChangeAliasCtrl.flags.init">
+
+        <form novalidate class="changeAliasForm" name="changeAliasForm">
+
+            <div class="top-space-m8">
+                <label for="vdi-new-alias" data-translate="vdi_change_alias_label"></label>
+                <input type="text" id="vdi-new-alias"
+                    class="form-control"
+                    data-ng-model="DeskaasChangeAliasCtrl.values.newAlias"
+                    required
+                    ng-keyup="!DeskaasChangeAliasCtrl.flags.init && changeAliasForm.$valid && $event.keyCode == 13 && DeskaasChangeAliasCtrl.ok() "/>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary"
+            ng-click="DeskaasChangeAliasCtrl.ok()"
+            ng-disabled="DeskaasChangeAliasCtrl.flags.init || !changeAliasForm.$valid"
+            data-translate="ok"></button>
+        <button type="button" class="btn btn-default"
+            ng-click="DeskaasChangeAliasCtrl.cancel()"
+            data-translate="cancel"></button>
+
+    </div>
+
+</div>

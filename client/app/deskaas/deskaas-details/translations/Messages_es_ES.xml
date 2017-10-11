@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vdi_confirm_restore" qtlid="313910">¿Quiere restaurar el escritorio?</translation>
+   <translation id="vdi_restoring" qtlid="313923">El escritorio se está reiniciando.</translation>
+   <translation id="vdi_restored" qtlid="313936">Se ha restaurado el escritorio.</translation>
+   <translation id="vdi_confirm_reboot" qtlid="323768">¿Quiere reiniciar el escritorio?</translation>
+   <translation id="vdi_rebooting" qtlid="323781">El escritorio se está reiniciando.</translation>
+   <translation id="vdi_rebooted" qtlid="323794">El escritorio se ha reiniciado.</translation>
+   <translation id="vdi_confirm_reset_password" qtlid="290030">Recibirá una contraseña por correo electrónico. ¿Quiere continuar?</translation>
+   <translation id="vdi_resetting_password" qtlid="313949">Se está cambiado la contraseña. Por favor, consulte su correo.</translation>
+   <translation id="vdi_pwd_resetted" qtlid="313962">Se ha cambiado la contraseña. Por favor, consulte su correo.</translation>
+
+   <translation id="vdi_alias_changing" qtlid="323807">Se está cambiando el alias.</translation>
+   <translation id="vdi_alias_changed" qtlid="323820">Se ha cambiado el alias.</translation>
+
+   <translation id="vdi_username_changing" qtlid="323833">Se está cambiando el nombre de usuario.</translation>
+   <translation id="vdi_username_changed" qtlid="323846">Se ha cambiado el nombre de usuario.</translation>
+
+   <translation id="vdi_terminate_confirming" qtlid="370824">Se ha programado la eliminación del servicio.</translation>
+   <translation id="vdi_confirm_delete" qtlid="313975">¿Seguro que quiere eliminar el escritorio?</translation>
+   <translation id="vdi_deleting" qtlid="313988">Se está eliminando el escritorio. Le hemos enviado un mensaje por correo electrónico para confirmar la solicitud.</translation>
+   <translation id="vdi_deleted" qtlid="314001">Va a eliminarse el escritorio. Le hemos enviado un mensaje de confirmación por correo electrónico.</translation>
+   <translation id="vdi_btn_restore" qtlid="314014">Restaurar el escritorio</translation>
+   <translation id="vdi_btn_reboot" qtlid="323859">Reiniciar el escritorio</translation>
+   <translation id="vdi_btn_reset_password" qtlid="80394">Cambiar la contraseña</translation>
+   <translation id="vdi_btn_delete" qtlid="314027">Eliminar el escritorio</translation>
+   <translation id="vdi_label_username" qtlid="197024">Usuario:</translation>
+   <translation id="vdi_label_email" qtlid="116322">Correo electrónico:</translation>
+   <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
+   <translation id="vdi_label_service_name" qtlid="323872">Nombre del servicio:</translation>
+   <translation id="vdi_label_ip" qtlid="290160">IP pública de salida:</translation>
+   <translation id="vdi_label_registration_date" qtlid="290173">Abonado desde el:</translation>
+   <translation id="vdi_label_delivery_date" qtlid="290186">Entregado el:</translation>
+   <translation id="vdi_label_connection" qtlid="290199">Conexión:</translation>
+   <translation id="vdi_back_to_list" qtlid="252477">Volver a la lista</translation>
+   <translation id="vdi_alias_undefined" qtlid="126284">Indefinido</translation>
+
+   <translation id="vdi_label_os" qtlid="298630">Sistema operativo:</translation>
+   <translation id="vdi_label_vcpu" qtlid="298643">Procesadores:</translation>
+   <translation id="vdi_label_ram" qtlid="284137">RAM:</translation>
+   <translation id="vdi_label_data" qtlid="298656">Datos:</translation>
+   <translation id="vdi_label_upgrade" qtlid="298669">Mejora:</translation>
+
+   <translation id="vdi_create_alias" qtlid="143616">Crear un alias</translation>
+   <translation id="vdi_change_alias" qtlid="323885">Cambiar el alias</translation>
+   <translation id="vdi_change_username" qtlid="323898">Cambiar el nombre de usuario</translation>
+
+   <translation id="vdi_btn_upgrade" qtlid="370837">Cambiar de pack</translation>
+   <translation id="vdi_confirm_upgrade" qtlid="314053">Después de la mejora al plan <strong>{{plan}}</strong>, el coste mensual del escritorio será de <strong>{{price}}+ IVA</strong>. ¿Quiere continuar?</translation>
+   <translation id="vdi_btn_popup_upgrade" qtlid="90661">Mejorar</translation>
+   <translation id="vdi_upgrade_title" qtlid="370837">Cambiar de pack</translation>
+   <translation id="vdi_upgrade_available" qtlid="370850">Puede cambiar a uno de los siguientes packs</translation>
+
+   <translation id="vdi_upgrading" qtlid="314066">Se está mejorando el escritorio.</translation>
+   <translation id="vdi_upgraded" qtlid="314079">Se ha mejorado el escritorio.</translation>
+   <translation id="vdi_HT" qtlid="101397">+ IVA</translation>
+
+   <translation id="vdi_task_current" qtlid="195633">Tareas en curso</translation>
+   <translation id="vdi_task_id" qtlid="279015">ID</translation>
+   <translation id="vdi_task_name" qtlid="9238">Descripción</translation>
+   <translation id="vdi_task_state" qtlid="8230">Estado</translation>
+   <translation id="vdi_task_modification_date" qtlid="293905">Fecha de modificación</translation>
+   <translation id="vdi_task_name_refreshVirtualDesktop" qtlid="370863">Restauración del escritorio</translation>
+   <translation id="vdi_task_name_restartVirtualDesktop" qtlid="370876">Reinicio del escritorio</translation>
+   <translation id="vdi_task_name_removeVirtualDesktop" qtlid="370889">Eliminación del escritorio</translation>
+   <translation id="vdi_task_name_upgradeVirtualDesktop" qtlid="370902">Cambio de pack</translation>
+   <translation id="vdi_task_name_suspendVirtualDesktop" qtlid="370915">Suspensión del escritorio</translation>
+   <translation id="vdi_task_name_setAliasOnVirtualDesktop" qtlid="323690">Cambio de alias</translation>
+   <translation id="vdi_task_name_updateUsername" qtlid="370928">Actualización del usuario</translation>
+   <translation id="vdi_task_name_openVirtualDesktop" qtlid="370941">Creación del escritorio</translation>
+   <translation id="vdi_task_name_updateUserPassword" qtlid="370954">Actualización de la contraseña de usuario</translation>
+   <translation id="vdi_task_name_getConsoleAccess" qtlid="406528">Solicitud de acceso a la consola</translation>
+
+   <translation id="vdi_task_state_toCreate" qtlid="26227">Creando</translation>
+   <translation id="vdi_task_state_waitingTodo" qtlid="29467">Pendiente</translation>
+   <translation id="vdi_task_state_todo" qtlid="134605">Pendiente</translation>
+   <translation id="vdi_task_state_doing" qtlid="26383">En proceso</translation>
+   <translation id="vdi_task_state_done" qtlid="370967">Hecho</translation>
+   <translation id="vdi_task_state_error" qtlid="26407">Error</translation>
+   <translation id="vdi_task_state_fixing" qtlid="370980">Reparación</translation>
+   <translation id="vdi_task_state_canceled" qtlid="27631">Cancelado</translation>
+   <translation id="vdi_task_state_unknown" qtlid="77142">Desconocido</translation>
+   <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Pendiente de subtareas</translation>
+
+
+   <translation id="vdi_default_error" qtlid="371006">Se ha producido un error. Nuestro equipo ha sido notificado. Por favor, espere unos minutos.</translation>
+   <translation id="vdi_task_error" qtlid="371019">La tarea {{ id}} está en error. Nuestro equipo ha sido notificado. Por favor, espere unos minutos.</translation>
+
+</translations>

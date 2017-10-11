@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vdi_confirm_restore" qtlid="313910">Czy chcesz zresetować desktop?</translation>
+   <translation id="vdi_restoring" qtlid="313923">Trwa resetowanie usługi desktop.</translation>
+   <translation id="vdi_restored" qtlid="313936">Desktop został zresetowany.</translation>
+   <translation id="vdi_confirm_reboot" qtlid="323768">Czy chcesz zrestartować usługę desktop?</translation>
+   <translation id="vdi_rebooting" qtlid="323781">Trwa restart usługi desktop.</translation>
+   <translation id="vdi_rebooted" qtlid="323794">Desktop został zrestartowany.</translation>
+   <translation id="vdi_confirm_reset_password" qtlid="290030">Wygenerowane hasło zostanie przesłane na adres e-mail. Czy chcesz kontynuować?</translation>
+   <translation id="vdi_resetting_password" qtlid="313949">Trwa realizacja zmiany hasła. Sprawdź e-maile.</translation>
+   <translation id="vdi_pwd_resetted" qtlid="313962">Hasło zostało zmienione. Sprawdź e-maile.</translation>
+
+   <translation id="vdi_alias_changing" qtlid="323807">Zmiana aliasu w trakcie realizacji.</translation>
+   <translation id="vdi_alias_changed" qtlid="323820">Alias został zmieniony.</translation>
+
+   <translation id="vdi_username_changing" qtlid="323833">Zmiana nazwy użytkownika w trakcie realizacji.</translation>
+   <translation id="vdi_username_changed" qtlid="323846">Nazwa użytkownika została zmieniona.</translation>
+
+   <translation id="vdi_terminate_confirming" qtlid="370824">Zaplanowano usunięcie usługi.</translation>
+   <translation id="vdi_confirm_delete" qtlid="313975">Czy chcesz usunąć ten desktop?</translation>
+   <translation id="vdi_deleting" qtlid="313988">Trwa usuwanie usługi desktop. Otrzymasz e-mail z prośbą o potwierdzenie zlecenia.</translation>
+   <translation id="vdi_deleted" qtlid="314001">Desktop zostanie usunięty. Otrzymasz e-mail z prośbą o potwierdzenie.</translation>
+   <translation id="vdi_btn_restore" qtlid="314014">Reset usługi desktop</translation>
+   <translation id="vdi_btn_reboot" qtlid="323859">Zrestartuj desktop</translation>
+   <translation id="vdi_btn_reset_password" qtlid="80394">Zmień hasło</translation>
+   <translation id="vdi_btn_delete" qtlid="314027">Usuń desktop</translation>
+   <translation id="vdi_label_username" qtlid="197024">Użytkownik:</translation>
+   <translation id="vdi_label_email" qtlid="116322">E-mail :</translation>
+   <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
+   <translation id="vdi_label_service_name" qtlid="323872">Nazwa usługi:</translation>
+   <translation id="vdi_label_ip" qtlid="290160">Publiczne IP wyjściowe:</translation>
+   <translation id="vdi_label_registration_date" qtlid="290173">Aktywny od:</translation>
+   <translation id="vdi_label_delivery_date" qtlid="290186">Dostarczony dnia:</translation>
+   <translation id="vdi_label_connection" qtlid="290199">Połączenie:</translation>
+   <translation id="vdi_back_to_list" qtlid="252477">Powrót do listy</translation>
+   <translation id="vdi_alias_undefined" qtlid="126284">Nieokreślone</translation>
+
+   <translation id="vdi_label_os" qtlid="298630">OS:</translation>
+   <translation id="vdi_label_vcpu" qtlid="298643">Procesory:</translation>
+   <translation id="vdi_label_ram" qtlid="284137">RAM:</translation>
+   <translation id="vdi_label_data" qtlid="298656">Data:</translation>
+   <translation id="vdi_label_upgrade" qtlid="298669">Upgrade:</translation>
+
+   <translation id="vdi_create_alias" qtlid="143616">Utwórz alias</translation>
+   <translation id="vdi_change_alias" qtlid="323885">Zmień alias</translation>
+   <translation id="vdi_change_username" qtlid="323898">Zmień nazwę użytkownika</translation>
+
+   <translation id="vdi_btn_upgrade" qtlid="370837">Zmień pakiet</translation>
+   <translation id="vdi_confirm_upgrade" qtlid="314053">Po wykonaniu aktualizacji do oferty <strong>{{plan}}</strong>, miesięczny koszt usługi desktop zmieni się na <strong>{{price}}netto</strong>. Czy chcesz wykonać upgrade?</translation>
+   <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
+   <translation id="vdi_upgrade_title" qtlid="370837">Zmień pakiet</translation>
+   <translation id="vdi_upgrade_available" qtlid="370850">Możesz przejść na jeden z tych pakietów.</translation>
+
+   <translation id="vdi_upgrading" qtlid="314066">Trwa upgrade usługi desktop.</translation>
+   <translation id="vdi_upgraded" qtlid="314079">Upgrade usługi desktop został zrealizowany.</translation>
+   <translation id="vdi_HT" qtlid="101397">netto</translation>
+
+   <translation id="vdi_task_current" qtlid="195633">Zadania w trakcie</translation>
+   <translation id="vdi_task_id" qtlid="279015">Id</translation>
+   <translation id="vdi_task_name" qtlid="9238">Opis</translation>
+   <translation id="vdi_task_state" qtlid="8230">Status</translation>
+   <translation id="vdi_task_modification_date" qtlid="293905">Data modyfikacji</translation>
+   <translation id="vdi_task_name_refreshVirtualDesktop" qtlid="370863">Reset pulpitu</translation>
+   <translation id="vdi_task_name_restartVirtualDesktop" qtlid="370876">Restart pulpitu</translation>
+   <translation id="vdi_task_name_removeVirtualDesktop" qtlid="370889">Usunięcie pulpitu</translation>
+   <translation id="vdi_task_name_upgradeVirtualDesktop" qtlid="370902">Zmiana pakietu</translation>
+   <translation id="vdi_task_name_suspendVirtualDesktop" qtlid="370915">Zawieszenie pulpitu</translation>
+   <translation id="vdi_task_name_setAliasOnVirtualDesktop" qtlid="323690">Zmiana aliasu </translation>
+   <translation id="vdi_task_name_updateUsername" qtlid="370928">Aktualizacja użytkownika</translation>
+   <translation id="vdi_task_name_openVirtualDesktop" qtlid="370941">Utworzenie pulpitu</translation>
+   <translation id="vdi_task_name_updateUserPassword" qtlid="370954">Aktualizacja hasła użytkownika</translation>
+   <translation id="vdi_task_name_getConsoleAccess" qtlid="406528">Zlecenie dostępu do konsoli</translation>
+
+   <translation id="vdi_task_state_toCreate" qtlid="26227">W trakcie tworzenia</translation>
+   <translation id="vdi_task_state_waitingTodo" qtlid="29467">Oczekujące</translation>
+   <translation id="vdi_task_state_todo" qtlid="134605">Do wykonania</translation>
+   <translation id="vdi_task_state_doing" qtlid="26383">W trakcie</translation>
+   <translation id="vdi_task_state_done" qtlid="370967">Wykonane</translation>
+   <translation id="vdi_task_state_error" qtlid="26407">Błąd</translation>
+   <translation id="vdi_task_state_fixing" qtlid="370980">Naprawa</translation>
+   <translation id="vdi_task_state_canceled" qtlid="27631">Anulowany</translation>
+   <translation id="vdi_task_state_unknown" qtlid="77142">Nieznany</translation>
+   <translation id="vdi_task_state_waitingForChilds" qtlid="370993">W oczekiwaniu na podzadania.</translation>
+
+
+   <translation id="vdi_default_error" qtlid="371006">Wystąpił błąd. Nasz zespół został powiadomiony. </translation>
+   <translation id="vdi_task_error" qtlid="371019">Wystąpił błąd dla zadania {{ id}}. Nasz zespół został powiadomiony.</translation>
+
+</translations>

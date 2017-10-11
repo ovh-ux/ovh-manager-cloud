@@ -96,7 +96,9 @@
     "angular-translate-storage-cookie": "2.12.x",
     "moment": ">=2.8.0 <3.0.0",
     "ovh-common-style": "^3.2.2",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "ovh-api-services": "^2.0.1",
+    "ovh-angular-actions-menu": "^2.0.0"
   },
   "overrides": {
     "angular-strap": {
