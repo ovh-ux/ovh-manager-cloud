@@ -473,6 +473,7 @@
    <translation id="common_login" qtlid="2174">Se connecter</translation>
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
+   <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
    <translation id="common_tile_shortcut" qtlid="403658">Raccourcis</translation>
 
@@ -495,4 +496,10 @@
    <translation id="common_pagination_results" qtlid="433410">résultats</translation>
    <translation id="common_pagination_next" qtlid="433423">Page suivante</translation>
    <translation id="common_pagination_previous" qtlid="433436">Page précédente</translation>
+
+   <translation id="common_name_change_modal_title" qtlid="439892">Modifier le nom</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nom par défaut</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nom personnalisé</translation>
+
+   <translation id="common_task_list_empty" qtlid="134865">Aucune tâche en cours</translation>
 </translations>

@@ -24,17 +24,17 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         reinit: {
             text: $translate.instant("vdi_btn_restore"),
             callback: () => self.restoreService($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         restart: {
             text: $translate.instant("vdi_btn_reboot"),
             callback: () => self.rebootService($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         changePassword: {
             text: $translate.instant("vdi_btn_reset_password"),
             callback: () => self.resetPassword($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         remove: {
             text: $translate.instant("vdi_btn_delete"),
@@ -44,17 +44,17 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         accessConsole: {
             text: $translate.instant("vdi_btn_console"),
             callback: () => self.getConsole($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         changeOffer: {
             text: $translate.instant("vdi_btn_upgrade"),
             callback: () => self.upgrade($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         changeAlias: {
             text: $translate.instant("common_modify"),
             callback: () => self.changeAlias($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         }
     };
 
@@ -241,20 +241,21 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     }
 
     self.getConsole = function () {
-        var modal = $uibModal.open({
-            templateUrl     : "app/deskaas/deskaas-get-console-access/deskaas-get-console-access.html",
-            controller      : "DeskaasGetConsoleAccessCtrl",
-            controllerAs    : "DeskaasGetConsoleAccessCtrl",
-            backdrop        : "static",
-            size            : "md"
-        });
-
-        modal.result.then(function () {
-            getConsole().catch(function (err) {
-                var msg = _.get(err, "data.message", "");
-                Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+        return ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/deskaas/deskaas-get-console-access/deskaas-get-console-access.html",
+                controller: "DeskaasGetConsoleAccessCtrl",
+                controllerAs: "DeskaasGetConsoleAccessCtrl",
+                backdrop: "static",
+                size: "md"
+            }
+        })
+            .then(function () {
+                getConsole().catch(function (err) {
+                    var msg = _.get(err, "data.message", "");
+                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                });
             });
-        });
     };
 
     function getConsole () {
@@ -272,14 +273,18 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     }
 
     self.deleteService = function () {
+        return ControllerHelper.modal.showConfirmationModal({
+            titleText: $translate.instant("vdi_btn_delete"),
+            text: $translate.instant("vdi_confirm_delete")
+        })
+            .then(() => {
+                var promise = OvhApiDeskaasService.Lexi().deleteService({ serviceName: $stateParams.serviceName }, null).$promise;
 
-        var promise = OvhApiDeskaasService.Lexi().deleteService({ serviceName: $stateParams.serviceName }, null).$promise;
-
-        return handleServiceMethodCall(
-            promise,
-            $translate.instant("vdi_deleting"),
-            "deleting");
-
+                return handleServiceMethodCall(
+                    promise,
+                    $translate.instant("vdi_deleting"),
+                    "deleting");
+            });
     };
 
     self.resetPassword = function () {
@@ -289,7 +294,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
             controller      : "DeskaasChangePasswordCtrl",
             controllerAs    : "vm",
             backdrop        : "static",
-            size            : "md",
+            size            : "lg",
             resolve         : {
                 service : function () { return self.serviceName; }
             }
@@ -332,31 +337,39 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     }
 
     self.restoreService = function () {
+        return ControllerHelper.modal.showConfirmationModal({
+            titleText: $translate.instant("vdi_btn_restore"),
+            text: $translate.instant("vdi_confirm_restore")
+        })
+            .then(() => {
+                var promise = OvhApiDeskaasService.Lexi().restoreService({ serviceName: $stateParams.serviceName }, null).$promise;
 
-        var promise = OvhApiDeskaasService.Lexi().restoreService({ serviceName: $stateParams.serviceName }, null).$promise;
-
-        return handleServiceMethodCall(
-            promise,
-            $translate.instant("vdi_restoring"),
-            "restoring")
-            .then(function (response) {
-                handleTask(response.taskId);
+                return handleServiceMethodCall(
+                    promise,
+                    $translate.instant("vdi_restoring"),
+                    "restoring")
+                    .then(function (response) {
+                        handleTask(response.taskId);
+                    });
             });
-
     };
 
     self.rebootService = function () {
+        return ControllerHelper.modal.showConfirmationModal({
+            titleText: $translate.instant("vdi_btn_reboot"),
+            text: $translate.instant("vdi_confirm_reboot")
+        })
+            .then(() => {
+                var promise = OvhApiDeskaasService.Lexi().rebootService({ serviceName: $stateParams.serviceName }, null).$promise;
 
-        var promise = OvhApiDeskaasService.Lexi().rebootService({ serviceName: $stateParams.serviceName }, null).$promise;
-
-        return handleServiceMethodCall(
-            promise,
-            $translate.instant("vdi_rebooting"),
-            "rebooting")
-            .then(function (response) {
-                handleTask(response.taskId);
+                return handleServiceMethodCall(
+                    promise,
+                    $translate.instant("vdi_rebooting"),
+                    "rebooting")
+                    .then(function (response) {
+                        handleTask(response.taskId);
+                    });
             });
-
     };
 
     function upgradeService (planCode) {
@@ -475,26 +488,25 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     };
 
     self.confirmTerminate = function () {
-
-        var modal = $uibModal.open({
-            templateUrl     : "app/deskaas/deskaas-confirm-terminate/deskaas-confirm-terminate.html",
-            controller      : "DeskaasConfirmTerminateCtrl",
-            controllerAs    : "DeskaasConfirmTerminateCtrl",
-            backdrop        : "static",
-            size            : "md",
-            resolve         : {
-                service : function () { return self.serviceName; },
-                token   : function () { return $stateParams.token; }
+        return ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/deskaas/deskaas-confirm-terminate/deskaas-confirm-terminate.html",
+                controller: "DeskaasConfirmTerminateCtrl",
+                controllerAs: "DeskaasConfirmTerminateCtrl",
+                backdrop: "static",
+                size: "md",
+                resolve: {
+                    service: function () { return self.serviceName; },
+                    token: function () { return $stateParams.token; }
+                }
             }
-        });
-
-        modal.result.then(function (modalData) {
-
-            confirmTerminate(modalData).catch(function (err) {
-                var msg = _.get(err, "data.message", "");
-                Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+        })
+            .then(modalData => {
+                confirmTerminate(modalData).catch(function (err) {
+                    var msg = _.get(err, "data.message", "");
+                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                });
             });
-        });
     };
 
     function confirmTerminate (terminateParams) {

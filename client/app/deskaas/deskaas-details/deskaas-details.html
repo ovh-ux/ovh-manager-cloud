@@ -118,11 +118,13 @@
                         <column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></column>
                         <column title="'vdi_task_name' | translate" property="displayName" sortable></column>
                         <column title="'vdi_task_state' | translate" property="displayState" sortable></column>
-                        <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable></column>
+                        <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
+                            {{ $row.lastModificationDate | momentFormat:'LLL' }}
+                        </column>
                         <column title="'common_table_col_progress' | translate" property="progress" sortable class="oui-table__cell_component">
                             <cui-task-progress data-task="$row"></cui-task-progress>
                         </column>
-                        <empty-placeholder data-translate="cloud_db_project_instance_list_empty"></empty-placeholder>
+                        <empty-placeholder data-translate="common_task_list_empty"></empty-placeholder>
                     </oui-table>
                 </div>
             </div>
