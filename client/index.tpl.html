@@ -21,7 +21,17 @@
           <!-- endinjector -->
         <!-- endbuild -->
       </head>
-      <body data-ng-app="managerApp" data-ng-cloak class="ng-cloak">
+      <body
+        data-ng-app="managerApp"
+        data-ng-controller="CloudMainController as CloudMainController"
+        data-ng-cloak
+        class="ng-cloak"
+        data-ng-class="{ 'global-message-top-container': CloudMainController.expiringProject }">
+
+          <div class="global-message-top"
+            data-ng-if="CloudMainController.expiringProject"
+            data-ng-include="'app/common/cloud-project-voucher-alert.html'">
+          </div>
 
           <!-- TOP MENU -->
           <manager-navbar></manager-navbar>
@@ -34,8 +44,8 @@
 
                   <!-- CONTENT -->
                   <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-                      <div data-ng-controller="MeAlertsCtrl as $ctrl">
-                            <cui-message-container data-messages="$ctrl.messages" 
+                      <div data-ng-controller="MeAlertsCtrl as MeAlertsCtrl">
+                            <cui-message-container data-messages="MeAlertsCtrl.messages"
                             data-grouped-types="['warning','error']"
                             data-dismissable-types="['warning']"></cui-message-container>
                       </div>
