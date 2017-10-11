@@ -8,7 +8,10 @@ angular.module("managerApp")
         templateUrl  : "app/deskaas/deskaas-details/deskaas-details.html",
         controller   : "DeskaasDetailsCtrl",
         controllerAs : "DeskaasDetailsCtrl",
-        translations : ["common", "deskaas", "deskaas/deskaas-details"]
+        translations : ["common", "deskaas", "deskaas/deskaas-details"],
+        params: {
+            followTask: null
+        }
     });
 
 });

@@ -63,13 +63,13 @@
                 </li>
             </ul>
         </div>
-        <cui-tile-subscription class="cui-flex__col cui-flex__col_1" 
+        <cui-tile-subscription class="cui-flex__col cui-flex__col_1"
             data-loading="DeskaasDetailsCtrl.flags.init.serviceInfos || DeskaasDetailsCtrl.flags.init.details"
             data-subscription-info="DeskaasDetailsCtrl.services"
             data-offer-actions="$ctrl.actions.changeOffer"
             data-autorenew-actions="$ctrl.actions.manageAutorenew"
             data-contact-actions="$ctrl.actions.manageContact"></cui-tile-subscription>
-        <cui-tile class="cui-flex__col cui-flex__col_1"  
+        <cui-tile class="cui-flex__col cui-flex__col_1"
             data-title="'common_tile_infos' | translate"
             data-loading="DeskaasDetailsCtrl.flags.initializing()">
             <cui-tile-item data-term="'vdi_label_username' | translate"
@@ -121,7 +121,7 @@
                         <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
                             {{ $row.lastModificationDate | momentFormat:'LLL' }}
                         </column>
-                        <column title="'common_table_col_progress' | translate" property="progress" sortable class="oui-table__cell_component">
+                        <column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
                             <cui-task-progress data-task="$row"></cui-task-progress>
                         </column>
                         <empty-placeholder data-translate="common_task_list_empty"></empty-placeholder>

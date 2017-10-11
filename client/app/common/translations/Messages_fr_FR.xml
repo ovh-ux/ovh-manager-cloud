@@ -71,6 +71,7 @@
    <translation id="error" qtlid="26407">Erreur</translation>
    <translation id="soon" qtlid="250043">Bientôt disponible</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Plus d'informations</a>.</translation>
+   <translation id="common_progress" qtlid="354496">Progression</translation>
 
    <translation id="other_menu" qtlid="265265">Autres produits</translation>
    <translation id="cloud_menu_title" qtlid="104890">Cloud public</translation>

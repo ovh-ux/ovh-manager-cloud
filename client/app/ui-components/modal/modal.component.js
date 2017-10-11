@@ -40,7 +40,7 @@ angular.module("managerApp")
     })
     .component("cuiModalText", {
         template: `
-            <p class="oui-modal__text" data-ng-bind="$ctrl.text"></p>
+            <p class="oui-modal__text" data-ng-bind-html="$ctrl.text"></p>
         `,
         transclude: true,
         bindings: {

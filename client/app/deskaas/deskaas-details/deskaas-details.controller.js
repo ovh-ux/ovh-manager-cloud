@@ -1,6 +1,8 @@
 "use strict";
 
-angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDeskaasService, ControllerHelper, $stateParams, $scope, Toast, $translate, $state, $q, ACTIONS, $uibModal, OvhApiMe, deskaasSidebar) {
+angular.module("managerApp").controller("DeskaasDetailsCtrl",
+    function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, Toast, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
+              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES) {
 
     var self = this;
 
@@ -11,12 +13,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     self.selectedUpgrade = "";
     self.tasksHandler = null;
 
-    self.references = {
-        "clouddesktop1" : { "name": "Cloud Desktop 1", "vcpu": 1, "ram": 2, "storage": 10, "gpu": 0, "planCode": "clouddesktop1", "upgrades": ["clouddesktop2", "clouddesktop3"] },
-        "clouddesktop2" : { "name": "Cloud Desktop 2", "vcpu": 2, "ram": 4, "storage": 50, "gpu": 0, "planCode": "clouddesktop2", "upgrades": ["clouddesktop3"] },
-        "clouddesktop3" : { "name": "Cloud Desktop 3", "vcpu": 4, "ram": 16, "storage": 100, "gpu": 0, "planCode": "clouddesktop3", "upgrades": [] },
-        "clouddesktop4" : { "name": "Cloud Desktop GPU", "vcpu": 4, "ram": 16, "storage": 100, "gpu": 1, "planCode": "clouddesktop4", "upgrades": [] }
-    };
+    self.references = DESKAAS_REFERENCES;
 
     self.OrderPlanOffers = [];
 
@@ -64,7 +61,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
  +                callback: () => this.CloudDbActionService.showInstanceRestartModal(this.projectId, this.instanceId),
  +                isAvailable: () => !this.instance.loading && !this.instance.data.taskId
  +            }
-    
+
     */
 
     // Task handler
@@ -79,8 +76,8 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         this.getAllowedTasks = function () {
             if (_allowedTask.length === 0) {
                 // Get taskName from actions constant
-                Object.keys(ACTIONS).forEach(function (taskName) {
-                    _allowedTask.push(ACTIONS[taskName]);
+                Object.keys(DESKAAS_ACTIONS).forEach(function (taskName) {
+                    _allowedTask.push(DESKAAS_ACTIONS[taskName]);
                 });
             }
             return _allowedTask;
@@ -101,7 +98,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
             Object.keys(selfTask.tasks).forEach(function (key) {
                 var value = selfTask.tasks[key];
                 // We do not block if the console_access is not done
-                if (value.name !== ACTIONS.CONSOLE_ACCESS && value.state !== "done" && value.state !== "canceled") {
+                if (value.name !== DESKAAS_ACTIONS.CONSOLE_ACCESS && value.state !== "done" && value.state !== "canceled") {
                     isRunning = true;
                 }
             });
@@ -181,16 +178,8 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         can_upgrade: function () {
             var ref = [];
             // Tasks are retrieved, no upgrading and planCode and offers are retrieved
-            if (!self.flags.init.getTasks && !self.flags.upgrading && typeof(self.details.planCode) !== "undefined" && self.OrderPlanOffers.length !== 0) {
-                var curRef = self.references[self.details.planCode];
-                if (typeof(curRef) !== "undefined") {
-                    curRef.upgrades.forEach(function (upgrade) {
-                        self.references[upgrade].priceText = self.OrderPlanOffers[upgrade].priceText;
-                        ref.push(self.references[upgrade]);
-                    });
-                } else {
-                    console.log("Error: PlanCode " + self.details.planCode + " not known");
-                }
+            if (!self.flags.init.getTasks && !self.flags.upgrading && _.has(self, "details.planCode") && self.OrderPlanOffers.length !== 0) {
+                ref = DeskaasService.getUpgradeOptions(self.details.planCode);
             }
             self.upgradeOptions = ref;
             return self.upgradeOptions.length !== 0;
@@ -445,6 +434,11 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
 
     self.upgrade = function () {
 
+        $state.go("deskaas.details.upgrade", {
+            serviceName: self.serviceName,
+            references: self.upgradeOptions
+        });
+        /*
         var modal = $uibModal.open({
             templateUrl     : "app/deskaas/deskaas-upgrade/deskaas-upgrade.html",
             controller      : "DeskaasUpgradeCtrl",
@@ -461,7 +455,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
             if (_.get(modalData, "planCode", "") !== "") {
                 upgradeService(modalData.planCode);
             }
-        });
+        });*/
 
     };
 
@@ -552,7 +546,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
 
         self.flags.init.details = true;
 
-        var promise = OvhApiDeskaasService.Lexi().getDetails({ serviceName: $stateParams.serviceName }).$promise;
+        var promise = DeskaasService.getDetails($stateParams.serviceName);
 
         return handleMethodCall(
             promise,
@@ -560,7 +554,6 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
                 response.displayName = response.alias === "noAlias" ? response.serviceName : response.alias;
                 self.services.offer = _.get(self.references[response.planCode], "name");
                 self.details = response;
-                deskaasSidebar.updateItem(self.details);
             }
         )
             .finally(function () {
@@ -654,42 +647,42 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
 
         switch (taskDetails.name) {
 
-        case ACTIONS.RESTORE:
+        case DESKAAS_ACTIONS.RESTORE:
             self.flags.restoring = false;
             Toast.success($translate.instant("vdi_restored"));
             break;
 
-        case ACTIONS.REBOOT:
+        case DESKAAS_ACTIONS.REBOOT:
             self.flags.rebooting = false;
             Toast.success($translate.instant("vdi_rebooted"));
             break;
 
-        case ACTIONS.DELETE:
+        case DESKAAS_ACTIONS.DELETE:
             self.flags.deleting = false;
             Toast.success($translate.instant("vdi_deleted"));
             break;
 
-        case ACTIONS.UPGRADE:
+        case DESKAAS_ACTIONS.UPGRADE:
             self.flags.upgrading = false;
             Toast.success($translate.instant("vdi_upgraded"));
             break;
 
-        case ACTIONS.UPDATE_USER_PWD:
+        case DESKAAS_ACTIONS.UPDATE_USER_PWD:
             self.flags.resettingPassword = false;
             Toast.success($translate.instant("vdi_pwd_resetted"));
             break;
 
-        case ACTIONS.UPDATE_ALIAS:
+        case DESKAAS_ACTIONS.UPDATE_ALIAS:
             self.flags.changingAlias = false;
             Toast.success($translate.instant("vdi_alias_changed"));
             break;
 
-        case ACTIONS.UPDATE_USERNAME:
+        case DESKAAS_ACTIONS.UPDATE_USERNAME:
             self.flags.changingUsername = false;
             Toast.success($translate.instant("vdi_username_changed"));
             break;
 
-        case ACTIONS.CONSOLE_ACCESS:
+        case DESKAAS_ACTIONS.CONSOLE_ACCESS:
             Toast.success($translate.instant("vdi_console_done"));
             break;
         }
@@ -701,19 +694,19 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
 
         switch (taskName) {
 
-        case ACTIONS.RESTORE:
-        case ACTIONS.REBOOT:
-        case ACTIONS.DELETE:
-        case ACTIONS.UPDATE_USER_PWD:
+        case DESKAAS_ACTIONS.RESTORE:
+        case DESKAAS_ACTIONS.REBOOT:
+        case DESKAAS_ACTIONS.DELETE:
+        case DESKAAS_ACTIONS.UPDATE_USER_PWD:
             //do nothing
             break;
 
-        case ACTIONS.UPGRADE:
+        case DESKAAS_ACTIONS.UPGRADE:
             init(false);
             break;
 
-        case ACTIONS.UPDATE_ALIAS:
-        case ACTIONS.UPDATE_USERNAME:
+        case DESKAAS_ACTIONS.UPDATE_ALIAS:
+        case DESKAAS_ACTIONS.UPDATE_USERNAME:
             self.getDetails();
             break;
         }
@@ -733,37 +726,16 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         ]).then(function (elements) {
 
             var tasks = elements[0];
-            
+
             tasks = _.difference(tasks, elements[1]);
             tasks = _.difference(tasks, elements[2]);
-            
+
             return tasks;
-            
+
         }).then(function (runningTasks) {
             getInitTasks(runningTasks);
         });
     };
-
-    // Retrieve me
-    function getMe () {
-        return OvhApiMe.Lexi().get().$promise;
-    }
-
-    function getProductPlans (me) {
-        // Use the catalog to get Product for deskaas
-        var promise = OvhApiDeskaasService.Lexi().getProducts({ ovhSubsidiary: me.ovhSubsidiary }).$promise;
-        promise.then(function (catalog) {
-            var newOrderPlanOffers = {};
-            catalog.plans.forEach(function (catalogEntry) {
-                newOrderPlanOffers[catalogEntry.planCode] = { planCode: catalogEntry.planCode,
-                                                              priceInUcents: catalogEntry.details.pricings.default[0].priceInUcents,
-                                                              productName: catalogEntry.invoiceName,
-                                                              priceText: catalogEntry.details.pricings.default[0].price.text };
-            });
-            self.OrderPlanOffers = newOrderPlanOffers;
-        });
-        return promise;
-    }
 
     function init (initTasks) {
         self.tasksHandler = new TasksHandler();
@@ -777,21 +749,21 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         $q.all([
             self.serviceInfos().then(function () {
                 self.getDetails().then(function () {
+                    DeskaasService.getMe().then(me => {
+                        self.OrderPlanOffers = DeskaasService.fetchProductPlans(me);
+                    });
                     if (self.services.status === "ok") {
                         self.flags.init.getTasks = true;
                         self.flags.init.user = true;
                         $q.all([
                             handleCancelConfirmation(),
                             initTasks ? self.getRunningTasks() : $q.when(),
-                            self.getUser()
+                            self.getUser(),
+                            $stateParams.followTask ? handleTask($stateParams.followTask) : $q.when()
                         ]);
                     }
                 });
             }),
-            // FIXME Need the VDI api to get infos
-            getMe().then(function (me) {
-                getProductPlans(me);
-            })
         ]);
 
     }
