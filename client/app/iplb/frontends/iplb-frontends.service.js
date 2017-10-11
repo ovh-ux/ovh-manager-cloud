@@ -88,9 +88,12 @@ class IpLoadBalancerFrontendsService {
         return farm;
     }
 
-    getFarmsChoices (type, serviceName) {
+    getFarmsChoices (type, serviceName, zone) {
         return this.getFarms(type, serviceName)
             .then(farms => {
+                if (zone) {
+                    farms = _.filter(farms, { zone });
+                }
                 farms.unshift({
                     displayName: this.$translate.instant("iplb_frontend_add_farm_no_farm"),
                     farmId: null
@@ -98,10 +101,6 @@ class IpLoadBalancerFrontendsService {
                 farms.unshift({
                     displayName: this.$translate.instant("iplb_frontend_add_select_placeholder"),
                     farmId: 0
-                });
-                farms.push({
-                    displayName: this.$translate.instant("iplb_frontend_add_farm_add_another_choice"),
-                    farmId: -1
                 });
                 return farms;
             });
@@ -128,10 +127,6 @@ class IpLoadBalancerFrontendsService {
                 certificates.unshift({
                     displayName: this.$translate.instant("iplb_frontend_add_default_certificate_no_certificate"),
                     id: 0
-                });
-                certificates.push({
-                    displayName: this.$translate.instant("iplb_frontend_add_default_certificate_add_another_choice"),
-                    id: -1
                 });
                 return certificates;
             });
