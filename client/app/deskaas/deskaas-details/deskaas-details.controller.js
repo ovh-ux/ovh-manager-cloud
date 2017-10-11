@@ -39,7 +39,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         remove: {
             text: $translate.instant("vdi_btn_delete"),
             callback: () => self.deleteService($stateParams.serviceName),
-            isAvailable: () => true
+            isAvailable: () => self.flags.editable()
         },
         accessConsole: {
             text: $translate.instant("vdi_btn_console"),
