@@ -1,45 +1,68 @@
-<div class="deskaas-modal">
-
-    <div class="white title">
-        <h1 data-translate="vdi_cancel_title"></h1>
-    </div>
-
-    <div class="loading" data-ng-if="DeskaasConfirmTerminateCtrl.flags.init">
-        <i class="fa fa-refresh fa-spin fa-3x"></i>
-        <h3 data-translate="common_loading"></h3>
-    </div>
-
-    <div data-ng-show="!DeskaasConfirmTerminateCtrl.flags.init">
-        <form novalidate class="confirmTerminateForm" name="confirmTerminateForm">
-            <b>Token</b>
-            <input disabled="disabled" type="text" ng-model="DeskaasConfirmTerminateCtrl.values.token" class="form-control" required>
-            <br />
-            <b data-translate="vdi_confirm_cancel_reason"></b>
-            <select ng-model="DeskaasConfirmTerminateCtrl.values.reason" class="form-control" required>
-                <option value="TOO_HARD_TO_USE" data-translate="vdi_reason_hard">
-                <option selected value="TESTING_SOLUTION" data-translate="vdi_reason_testing">
-                <option value="MISSING_FEATURES" data-translate="vdi_reason_missing">
-                <option value="BAD_PERFORMANCE" data-translate="vdi_reason_performance">
-                <option value="NOT_SUITABLE" data-translate="vdi_reason_not_suitable">
-                <option value="NO_NEED_ANYMORE" data-translate="vdi_reason_need">
-                <option value="OTHER" data-translate="vdi_reason_other">
-            </select>
-            <br />
-            <b data-translate="vdi_confirm_cancel_commentary"></b>
-            <input type="text" ng-model="DeskaasConfirmTerminateCtrl.values.commentary" class="form-control" value="DeskaasDetailsCtrl.stateParams.token">
-        </form>
-    </div>
-
-    <div class="modal-footer">
-
-        <button type="button" class="btn btn-primary"
-            ng-click="DeskaasConfirmTerminateCtrl.ok()"
-            ng-disabled="DeskaasConfirmTerminateCtrl.flags.init || !(DeskaasConfirmTerminateCtrl.values.token && DeskaasConfirmTerminateCtrl.values.reason) || !confirmTerminateForm.$valid"
-            data-translate="ok"></button>
-        <button type="button" class="btn btn-default"
-            ng-click="DeskaasConfirmTerminateCtrl.cancel()"
-            data-translate="cancel"></button>
-
-    </div>
-
-</div>
+<cui-modal>
+    <form novalidate name="confirmTerminateForm">  
+        <cui-modal-header data-on-dismiss="DeskaasGetConsoleAccessCtrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'vdi_cancel_title' | translate">
+            <cui-loader data-ng-if="DeskaasConfirmTerminateCtrl.flags.init"></cui-loader>
+            <div data-ng-if="!DeskaasConfirmTerminateCtrl.flags.init">
+                <div class="oui-field">
+                    <label for="vdi-token" class="oui-field__label oui-label" data-ng-bind="'Token'"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <input data-ng-class="{ 'oui-input_error': form.$submitted && form.vdi-token.$invalid }"
+                                type="text"
+                                id="vdi-token"
+                                class="oui-input"
+                                data-ng-model="DeskaasConfirmTerminateCtrl.values.token"
+                                data-ng-disabled="true" 
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-field">
+                    <label for="vdi-reason" class="oui-field__label oui-label" data-translate="vdi_confirm_cancel_reason"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <label class="oui-select">
+                                <select id="vdi-reason" 
+                                    data-ng-model="DeskaasConfirmTerminateCtrl.values.reason" 
+                                    class="oui-select__input"
+                                    required>
+                                    <option value="" data-translate="common_select"></option>
+                                    <option value="TOO_HARD_TO_USE" data-translate="vdi_reason_hard">
+                                    <option selected value="TESTING_SOLUTION" data-translate="vdi_reason_testing">
+                                    <option value="MISSING_FEATURES" data-translate="vdi_reason_missing">
+                                    <option value="BAD_PERFORMANCE" data-translate="vdi_reason_performance">
+                                    <option value="NOT_SUITABLE" data-translate="vdi_reason_not_suitable">
+                                    <option value="NO_NEED_ANYMORE" data-translate="vdi_reason_need">
+                                    <option value="OTHER" data-translate="vdi_reason_other">
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-field">
+                    <label for="vdi-comment" class="oui-field__label oui-label" data-translate="vdi_confirm_cancel_commentary"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <input
+                                type="text"
+                                id="vdi-comment"
+                                class="oui-input"
+                                data-ng-model="DeskaasConfirmTerminateCtrl.values.commentary"
+                                value="DeskaasDetailsCtrl.stateParams.token"
+                                required />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_modal_cancel' | translate" 
+                data-on-click="DeskaasConfirmTerminateCtrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_modal_ok' | translate" 
+                data-disabled="DeskaasConfirmTerminateCtrl.flags.init || !(DeskaasConfirmTerminateCtrl.values.token && DeskaasConfirmTerminateCtrl.values.reason) || !confirmTerminateForm.$valid"
+                data-on-click="DeskaasConfirmTerminateCtrl.ok()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

@@ -129,40 +129,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="vdi-btns top-space-m16" data-ng-if="DeskaasDetailsCtrl.flags.actionable()">
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-really-click="DeskaasDetailsCtrl.restoreService($stateParams.serviceName)" data-ng-really-message="{{ ::'vdi_confirm_restore' | translate }}"
-                    data-ng-really-confirm="{{ ::'ok' | translate }}" data-ng-really-cancel="{{ ::'cancel' | translate }}" data-ng-disabled="!DeskaasDetailsCtrl.flags.editable()"
-                    data-translate="vdi_btn_restore"></button>
-
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-really-click="DeskaasDetailsCtrl.rebootService($stateParams.serviceName)" data-ng-really-message="{{ ::'vdi_confirm_reboot' | translate }}"
-                    data-ng-really-confirm="{{ ::'ok' | translate }}" data-ng-really-cancel="{{ ::'cancel' | translate }}"
-                    data-ng-disabled="!DeskaasDetailsCtrl.flags.editable()"
-                    data-translate="vdi_btn_reboot"></button>
-
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-click="DeskaasDetailsCtrl.resetPassword($stateParams.serviceName)"
-                    data-ng-disabled="!DeskaasDetailsCtrl.flags.editable()"
-                    data-translate="vdi_btn_reset_password"></button>
-
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-really-click="DeskaasDetailsCtrl.deleteService($stateParams.serviceName)" data-ng-really-message="{{ ::'vdi_confirm_delete' | translate }}"
-                    data-ng-really-confirm="{{ ::'ok' | translate }}" data-ng-really-cancel="{{ ::'cancel' | translate }}" data-ng-disabled="!DeskaasDetailsCtrl.flags.editable()"
-                    data-translate="vdi_btn_delete"></button>
-
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-click="DeskaasDetailsCtrl.getConsole($stateParams.serviceName)"
-                    data-ng-disabled="!DeskaasDetailsCtrl.flags.editable()"
-                    data-translate="vdi_btn_console"></button>
-
-            <button type="button" class="oui-button oui-button_secondary"
-                    data-ng-click="DeskaasDetailsCtrl.upgrade($stateParams.serviceName)"
-                    data-ng-if="DeskaasDetailsCtrl.flags.can_upgrade()"
-                    data-translate="vdi_btn_upgrade"></button>
-
-        </div>
-
     </div>
 </div>

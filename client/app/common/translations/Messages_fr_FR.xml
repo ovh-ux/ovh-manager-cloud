@@ -62,6 +62,7 @@
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
    <translation id="common_modify" qtlid="37875">Modifier</translation>
+   <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_add" qtlid="37923">Ajouter</translation>
    <translation id="common_remove" qtlid="323093">Retirer</translation>
    <translation id="edit" qtlid="37875">Modifier</translation>
