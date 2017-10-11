@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_back_home" qtlid="4118">Terug</translation>
+
+   <translation id="iplb_guides">Guides</translation>
+   <translation id="iplb_guides_title">IPLB</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">Alle OVH handleidingen</translation>
+
+   <translation id="iplb_tab_home" qtlid="27643">Home</translation>
+   <translation id="iplb_tab_frontends" qtlid="438545">Front-ends</translation>
+   <translation id="iplb_tab_server_farm" qtlid="437700">Serverclusters</translation>
+   <translation id="iplb_tab_ssl_certificate" qtlid="371307">SSL certificaten</translation>
+   <translation id="iplb_tab_graph" qtlid="5402">Graphics</translation>
+   <translation id="iplb_tab_task" qtlid="96716">Taken</translation>
+
+   <translation id="iplb_modal_failover_ip_title" qtlid="227806">Failover IP</translation>
+
+   <translation id="iplb_modal_nat_ip_title" qtlid="429459">Outbound IPv4</translation>
+   <translation id="iplb_modal_nat_ip_description" qtlid="439325">U moet de verbinding van uw servers met deze IP-adressen autoriseren. </translation>
+
+   <translation id="iplb_modal_name_change_title" qtlid="71741">De naam wijzigen</translation>
+   <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Standaard naam</translation>
+   <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Gepersonaliseerde naam</translation>
+   <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Er is een fout opgetreden tijdens het wijzigen van de naam. </translation>
+
+   <translation id="iplb_modal_cipher_change_title" qtlid="439351">Ciphers wijzigen. </translation>
+   <translation id="iplb_modal_cipher_change_loading_error" qtlid="439364">Er is een fout opgetreden tijdens het laden van de bewerkingsmodus van de ciphers. </translation>
+   <translation id="iplb_modal_cipher_change_updating_error" qtlid="439377">Er is een fout opgetreden tijdens het wijzigen van de cipher. </translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_title" qtlid="429368">Intermediair</translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_description" qtlid="439390">Clients compatibel met Android 2.3, IE 7, Java 7, Opera 5, Windows XP IE 8</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_title" qtlid="429394">Modern</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_description" qtlid="439403">Verhoogde beveiliging, maar compatibel met minder besturingssystemen. Clients compatibel met Android 5.0, Chrome 30, Edge, Firefox 27, IE 11 op Windows 7, Java 8, Opera 17, Safari 9</translation>
+
+   <translation id="iplb_modal_offer_change_title" qtlid="359761">Plan wijzigen</translation>
+
+   <translation id="iplb_information_loading_error" qtlid="439416">Er is een fout opgetreden tijdens het laden van het Informatie gedeelte. </translation>
+   <translation id="iplb_configuration_loading_error" qtlid="439429">Er is een fout opgetreden tijdens het laden van het Configuratie gedeelte.</translation>
+   <translation id="iplb_subscription_loading_error" qtlid="439442">Er is een fout opgetreden tijdens het laden van het Abonnement gedeelte. </translation>
+   <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Er is een fout opgetreden tijdens het laden van de  failover IP's.</translation>
+   <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Er is een fout opgetreden tijdens het laden van het  uitgaande IPv4 gedeelte. </translation>
+
+   <translation id="iplb_task_list_loading_error" qtlid="439481">Er is een fout opgetreden tijdens het laden van de  taken. </translation>
+   <translation id="iplb_farm_list_loading_error" qtlid="439494">Er is een fout opgetreden tijdens het laden van de  server farms. </translation>
+   <translation id="iplb_farm_server_list_loading_error" qtlid="439507">Er is een fout opgetreden tijdens het laden van de farm servers. </translation>
+
+   <translation id="iplb_ipfo_select_placeholder" qtlid="8674">Geen</translation>
+
+   <translation id="iplb_zone_select_placeholder" qtlid="17923">Selecteren</translation>
+   <translation id="iplb_zone_all" qtlid="439520">Alles (ALL)</translation>
+
+   <translation id="iplb_graph_name_conn" qtlid="41530">Gelijktijdige connecties</translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Verzoeken per minuut</translation>
+   <translation id="iplb_graph_no_data" qtlid="439546">Geen data op dit moment</translation>
+
+   <translation id="iplb_status_active" qtlid="439559">{{activeCount}} actief</translation>
+   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} actief</translation>
+   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} operationeel</translation>
+   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} operationeel</translation>
+
+   <translation id="iplb_status_apply" qtlid="284867">Configuratie instellen</translation>
+   <translation id="iplb_status_details" qtlid="439611">Details bekijken</translation>
+
+   <translation id="iplb_utilisation_update_alert" qtlid="439624">Bewerk waarschuwingsdrempel</translation>
+   <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Inbegrepen data</translation>
+   <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Waarschuwingsdrempel</translation>
+   <translation id="iplb_utilisation_update_alert_error" qtlid="439650">Er is een fout opgetreden tijdens het updaten van de waarschuwingsdrempel. </translation>
+
+   <translation id="iplb_usage_loading_error" qtlid="439663">Er is een fout opgetreden tijdens het laden van het Gebruik gedeelte. </translation>
+</translations>

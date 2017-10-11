@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_graph_title" qtlid="5402">Grafy</translation>
+   <translation id="iplb_graph_connections_title" qtlid="41530">Současných připojení</translation>
+   <translation id="iplb_graph_rqpersec_title" qtlid="439533">Požadavky za sekundu</translation>
+   <translation id="iplb_graph_bandwidth_title" qtlid="38565">Šířka pásma</translation>
+   <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1h</translation>
+   <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3h</translation>
+   <translation id="iplb_graph_scape_6h-ago" qtlid="439702">6h</translation>
+   <translation id="iplb_graph_scape_12h-ago" qtlid="439715">12h</translation>
+   <translation id="iplb_graph_scape_1d-ago" qtlid="439728">1d</translation>
+   <translation id="iplb_graph_scape_2d-ago" qtlid="439741">2d</translation>
+   <translation id="iplb_graph_scape_3d-ago" qtlid="439754">3d</translation>
+</translations>

@@ -463,6 +463,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Tapahtui seuraavia virheitä</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Tärkeää tietoa</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Tiedot</translation>
 
    <translation id="common_global_error" qtlid="433345">Toimenpiteen aikana tapahtui virhe: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Toimenpide onnistui.</translation>

@@ -10,6 +10,7 @@
    <translation id="metrics_guides_first-step" qtlid="415753">Ensiaskeleet...</translation>
    <translation id="metrics_guides_first-step_begin" qtlid="415766">Aloita</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protokollat</translation>
+   <translation id="metrics_guides_platform" qtlid="123607">Alustat</translation>
 
 
    <translation id="metrics_endpoint" qtlid="403177">Kirjaudu ohjauspaneeliin</translation>
@@ -31,6 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Säilytys (kuukausi)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Saavutat pian sarjojen sallitun enimmäismäärän. </translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Harkitse migraatiota korkeamman tason tuotteeseen.</translation>
+   <translation id="metrics_contact_admin" qtlid="43948">Admin</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Laskutus</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Virhe palvelun lataamisessa.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Virhe kulutustietojesi lataamisessa.</translation>
@@ -46,6 +49,7 @@ Suosittelemme muokkaamaan palveluasi, jotta vältyt tietojen menettämiseltä.</
    <translation id="metrics_setting_desc" qtlid="364420">Projektin kuvaus</translation>
    <translation id="metrics_setting_updated" qtlid="403593">Palvelu päivitetty</translation>
    <translation id="metrics_setting_update_failed" qtlid="403606">Palvelua ei voida päivittää</translation>
+   <translation id="metrics_setting_name_updated" qtlid="439905">Muokattu projektin nimi</translation>
    <translation id="metrics_upgrade_title" qtlid="403619">Tee migraatio korkeammalle tasolle</translation>
    <translation id="metrics_purchase" qtlid="43558">Tilaa</translation>
 </translations>

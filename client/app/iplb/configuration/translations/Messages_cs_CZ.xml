@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_configuration_title" qtlid="284867">Použít konfiguraci</translation>
+   <translation id="iplb_configuration_intro" qtlid="438896">Váš Load Balancer musí být nakonfigurován v každém datacentru zvlášť. Teprve poté budou změny v konfiguraci viditelné pro Vaše uživatele. To Vám následně umožní provádět komplexní změny v konfiguracích najednou.</translation>
+
+   <translation id="iplb_configuration_datacenter" qtlid="30802">Datacentrum</translation>
+   <translation id="iplb_configuration_progress" qtlid="354496">Postup</translation>
+   <translation id="iplb_configuration_status" qtlid="26443">Stav</translation>
+   <translation id="iplb_configuration_action" qtlid="56105">Akce</translation>
+   <translation id="iplb_configuration_action_apply" qtlid="284867">Použít konfiguraci</translation>
+   <translation id="iplb_configuration_changes_0" qtlid="72461">Žádné změny</translation>
+   <translation id="iplb_configuration_changes_1" qtlid="438909">1 změna</translation>
+   <translation id="iplb_configuration_changes_count" qtlid="438922">{{count}} změny/změn</translation>
+
+   <translation id="iplb_configuration_info_error" qtlid="438935">Při získávání informací o load balanceru došlo k následující chybě: {{message}}</translation>
+
+   <translation id="iplb_configuration_apply_success" qtlid="438948">Probíhá konfigurace load balanceru.</translation>
+   <translation id="iplb_configuration_apply_error" qtlid="438961">Při aplikaci konfigurace load balanceru došlo k následující chybě: {{message}}</translation>
+
+   <translation id="iplb_configuration_pending_changes" qtlid="438974">Konfigurace Vašeho load balanceru není aplikována ve všech datacentrech.</translation>
+</translations>

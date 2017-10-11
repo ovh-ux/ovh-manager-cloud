@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_home_tile_status" qtlid="26443">Status</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Front-facing services</translation>
+   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Server clusters</translation>
+   <translation id="iplb_home_tile_status_servers" qtlid="19459">Servers</translation>
+
+   <translation id="iplb_home_tile_usage" qtlid="30382">Use</translation>
+   <translation id="iplb_home_tile_graph" qtlid="5402">Graphics</translation>
+
+   <translation id="iplb_home_tile_infos" qtlid="26551">Information</translation>
+   <translation id="iplb_home_tile_infos_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="iplb_home_tile_infos_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="iplb_home_tile_infos_ip_failover" qtlid="227806">Failover IP</translation>
+   <translation id="iplb_home_tile_infos_ip_outbound" qtlid="429459">Outbound IPv4</translation>
+
+   <translation id="iplb_home_tile_configuration" qtlid="4406">Configuration</translation>
+   <translation id="iplb_home_tile_configuration_name" qtlid="3818">Name</translation>
+   <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota per month</translation>
+   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Alert threshold</translation>
+   <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Unlimited</translation>
+   <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Ciphers</translation>
+   <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Data centre</translation>
+</translations>

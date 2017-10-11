@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_graph_title" qtlid="5402">Wykresy</translation>
+   <translation id="iplb_graph_connections_title" qtlid="41530">Jednoczesne połączenia</translation>
+   <translation id="iplb_graph_rqpersec_title" qtlid="439533">Requêtes par seconde</translation>
+   <translation id="iplb_graph_bandwidth_title" qtlid="38565">Przepustowość</translation>
+   <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1 h</translation>
+   <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3 h</translation>
+   <translation id="iplb_graph_scape_6h-ago" qtlid="439702">6 h</translation>
+   <translation id="iplb_graph_scape_12h-ago" qtlid="439715">12 h</translation>
+   <translation id="iplb_graph_scape_1d-ago" qtlid="439728">1 j</translation>
+   <translation id="iplb_graph_scape_2d-ago" qtlid="439741">2 j</translation>
+   <translation id="iplb_graph_scape_3d-ago" qtlid="439754">3 j</translation>
+</translations>

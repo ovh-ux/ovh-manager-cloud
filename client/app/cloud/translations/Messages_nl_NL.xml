@@ -38,7 +38,7 @@
    <translation id="cloud_common_region_WAW" qtlid="94039">Warschau</translation>
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Warschau ({{ micro }})</translation>
    <translation id="cloud_common_region_DE" qtlid="94051">Frankfurt</translation>
-   <translation id="cloud_common_region_DE_micro" qtlid="437598">Francfort ({{ micro }})</translation>
+   <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokaliseren</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Midden-Europa (Frankrijk)</translation>

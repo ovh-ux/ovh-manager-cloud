@@ -463,6 +463,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Se han producido los siguientes errores</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Informaciones importantes</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Informaciones</translation>
 
    <translation id="common_global_error" qtlid="433345">Se ha producido un error durante la operación: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">La operación se ha llevado a cabo correctamente.</translation>

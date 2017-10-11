@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_farm_title" qtlid="437700">Server clusters</translation>
+   <translation id="iplb_farm_intro_text" qtlid="437713">The server farm is the part of your load balancing IP that distributes traffic between servers.</translation>
+
+   <translation id="iplb_farm_add" qtlid="437726">Add a server cluster</translation>
+   <translation id="iplb_farm_add_server" qtlid="19315">Add a server</translation>
+
+   <translation id="iplb_farm_server_status_see" qtlid="437739">See status</translation>
+
+   <translation id="iplb_farm_list_accordion_title" qtlid="437752">Farm {{farmId}}</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_single" qtlid="437765">{{serverNumber}} server</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_many" qtlid="437778">{{serverNumber}} servers</translation>
+
+   <translation id="iplb_farm_add_error" qtlid="437791">An error has occurred while adding the server farm: {{message}}</translation>
+   <translation id="iplb_farm_add_success" qtlid="437804">The server farm was successfully created.</translation>
+   <translation id="iplb_farm_update_error" qtlid="437817">An error has occurred while modifying the server farm: {{message}}</translation>
+   <translation id="iplb_farm_update_success" qtlid="437830">The server farm has been successfully modified.</translation>
+
+   <translation id="iplb_farm_server_list_col_server" qtlid="8290">Server</translation>
+   <translation id="iplb_farm_server_list_col_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="iplb_farm_server_list_col_active" qtlid="29635">Active</translation>
+   <translation id="iplb_farm_server_list_col_status" qtlid="251970">Status</translation>
+
+   <translation id="iplb_farm_protocol_http" qtlid="19639">HTTP</translation>
+   <translation id="iplb_farm_protocol_https" qtlid="60228">HTTPS</translation>
+   <translation id="iplb_farm_protocol_tcp" qtlid="141821">TCP</translation>
+   <translation id="iplb_farm_protocol_tls" qtlid="437843">SSL TCP (TLS)</translation>
+   <translation id="iplb_farm_protocol_udp" qtlid="141834">UDP</translation>
+
+   <translation id="iplb_farm_balance_first" qtlid="437856">First</translation>
+   <translation id="iplb_farm_balance_leastconn" qtlid="437869">Last</translation>
+   <translation id="iplb_farm_balance_roundrobin" qtlid="437882">Round-robin</translation>
+   <translation id="iplb_farm_balance_source" qtlid="97496">Source</translation>
+   <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
+
+   <translation id="iplb_farm_stickiness_none" qtlid="30646">None</translation>
+   <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Source IP</translation>
+
+   <translation id="iplb_farm_add_title" qtlid="437726">Add a server cluster</translation>
+   <translation id="iplb_farm_update_title" qtlid="437908">Edit the following server farm: {{farmId}}</translation>
+   <translation id="iplb_farm_edit_name" qtlid="415818">Name (optional)</translation>
+   <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocol (cannot be modified after creation)</translation>
+   <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="437934">1 to {{portMax}}, format: simple (e.g.: 80), range (e.g.: 1000-1200), multi (e.g.: 80,443)</translation>
+   <translation id="iplb_farm_edit_datacenter" qtlid="30802">Data centre</translation>
+   <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Advanced settings</translation>
+   <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">The most recent default values have been pre-set. You can modify them at any time.</translation>
+   <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Display</translation>
+   <translation id="iplb_farm_edit_balance" qtlid="430265">Distribution mode</translation>
+   <translation id="iplb_farm_edit_stickiness" qtlid="429823">Track session</translation>
+   <translation id="iplb_farm_edit_probe" qtlid="430278">Probe</translation>
+   <translation id="iplb_farm_edit_probe_title" qtlid="437960">Probe settings</translation>
+   <translation id="iplb_farm_edit_probe_url" qtlid="31402">URL</translation>
+   <translation id="iplb_farm_edit_probe_port" qtlid="9034">Port</translation>
+   <translation id="iplb_farm_edit_probe_method" qtlid="19447">Method</translation>
+   <translation id="iplb_farm_edit_probe_method_" qtlid="42370">-</translation>
+   <translation id="iplb_farm_edit_probe_method_GET" qtlid="437973">GET</translation>
+   <translation id="iplb_farm_edit_probe_method_HEAD" qtlid="437986">HEAD</translation>
+   <translation id="iplb_farm_edit_probe_method_OPTIONS" qtlid="437999">OPTIONS</translation>
+   <translation id="iplb_farm_edit_probe_match" qtlid="438012">Match</translation>
+   <translation id="iplb_farm_edit_probe_match_" qtlid="42370">-</translation>
+   <translation id="iplb_farm_edit_probe_match_default" qtlid="438025">Default</translation>
+   <translation id="iplb_farm_edit_probe_match_status" qtlid="251970">Status</translation>
+   <translation id="iplb_farm_edit_probe_match_contains" qtlid="438038">Contains</translation>
+   <translation id="iplb_farm_edit_probe_match_matches" qtlid="438051">Matches</translation>
+   <translation id="iplb_farm_edit_probe_pattern" qtlid="438064">Pattern</translation>
+   <translation id="iplb_farm_edit_probe_interval" qtlid="438077">Interval</translation>
+   <translation id="iplb_farm_edit_probe_negate" qtlid="438090">Reverse</translation>
+   <translation id="iplb_farm_edit_probe_type_" qtlid="8674">None</translation>
+   <translation id="iplb_farm_edit_probe_type_http" qtlid="19639">HTTP</translation>
+   <translation id="iplb_farm_edit_probe_type_mysql" qtlid="196894">MySQL</translation>
+   <translation id="iplb_farm_edit_probe_type_oco" qtlid="438103">OCO</translation>
+   <translation id="iplb_farm_edit_probe_type_pgsql" qtlid="438116">pgSQL</translation>
+   <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
+   <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
+   <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">An error has occurred while retrieving information for the probe.</translation>
+
+   <translation id="iplb_farm_edit_probe_button" qtlid="437960">Probe settings</translation>
+
+   <translation id="iplb_farm_edit_cancel" qtlid="37863">Cancel</translation>
+   <translation id="iplb_farm_add_confirm" qtlid="37923">Add</translation>
+   <translation id="iplb_farm_update_confirm" qtlid="43462">Update</translation>
+
+   <translation id="iplb_farm_preview_title" qtlid="438142">Overview of server farm</translation>
+   <translation id="iplb_farm_preview_name" qtlid="3818">Name</translation>
+   <translation id="iplb_farm_preview_protocol" qtlid="19711">Protocol</translation>
+   <translation id="iplb_farm_preview_port" qtlid="9034">Port</translation>
+   <translation id="iplb_farm_preview_datacenter" qtlid="30802">Data centre</translation>
+   <translation id="iplb_farm_preview_balance" qtlid="430265">Distribution mode</translation>
+   <translation id="iplb_farm_preview_stickiness" qtlid="429823">Track session</translation>
+   <translation id="iplb_farm_preview_probe" qtlid="429797">Probe</translation>
+   <translation id="iplb_farm_preview_probe_none" qtlid="8674">None</translation>
+   <translation id="iplb_farm_preview_id" qtlid="46792">ID</translation>
+   <translation id="iplb_farm_preview_probe_url" qtlid="31402">URL</translation>
+   <translation id="iplb_farm_preview_probe_port" qtlid="9034">Port</translation>
+   <translation id="iplb_farm_preview_probe_method" qtlid="19447">Method</translation>
+   <translation id="iplb_farm_preview_probe_match" qtlid="438012">Match</translation>
+   <translation id="iplb_farm_preview_probe_pattern" qtlid="438064">Pattern</translation>
+   <translation id="iplb_farm_preview_probe_interval" qtlid="438077">Interval</translation>
+
+   <translation id="iplb_farm_delete_title" qtlid="438155">Delete farm</translation>
+   <translation id="iplb_farm_delete_question" qtlid="438168">Are you sure you want to delete the following farm: {{farm}}?</translation>
+   <translation id="iplb_farm_delete_error" qtlid="438181">An error has occurred while deleting the farm: {{message}}</translation>
+   <translation id="iplb_farm_delete_success" qtlid="438194">The farm has been successfully deleted.</translation>
+</translations>

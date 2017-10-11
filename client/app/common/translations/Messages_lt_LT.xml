@@ -463,6 +463,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Įvyko šios klaidos</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Svarbi informacija</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Informacija</translation>
 
    <translation id="common_global_error" qtlid="433345">Klaida vykdant operaciją: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operacija atlikta sėkmingai.</translation>
