@@ -7,6 +7,7 @@
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licences</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_sidebar_section_load_balancer" qtlid="439819">Load Balancer</translation>
    <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>
@@ -30,7 +31,7 @@
    <translation id="cloud_sidebar_actions_menu_cloud_project" qtlid="274369">Cloud project </translation>
    <translation id="cloud_sidebar_actions_menu_dedicated_cloud" qtlid="20131">Private Cloud</translation>
    <translation id="cloud_sidebar_actions_menu_ip" qtlid="323486">Additional IP </translation>
-   <translation id="cloud_sidebar_actions_menu_iplb" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cloud_sidebar_actions_menu_iplb" qtlid="323499">Load Balancing IP</translation>
    <translation id="cloud_sidebar_actions_menu_vrack" qtlid="246962">vRack</translation>
    <translation id="cloud_sidebar_actions_menu_licence" qtlid="21667">Licence</translation>
    <translation id="cloud_sidebar_actions_menu_NAS" qtlid="76782">NAS</translation>

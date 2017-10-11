@@ -5,4 +5,10 @@
    <translation id="cpc_tab_volume" qtlid="246923">Additional drives.</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH keys</translation>
    <translation id="cpc_tab_project" qtlid="261283">Project management and resource usage</translation>
+   <translation id="cpc_message" qtlid="439767">OVH Cloud has arrived in Germany! <a href="http://superlienverslapage">Find out more about our Limburg datacentre.</a></translation>
+   <translation id="cloud_message_pci_uk1" qtlid="406143">UK</translation>
+   <translation id="cloud_message_pci_de1" qtlid="439780">We've opened a new DE1 region in Frankfurt, Germany!</translation>
+   <translation id="cloud_message_pci_de1_link" qtlid="439793">Find out how this could benefit you</translation>
+   <translation id="cloud_message_pci_g3" qtlid="439806">New: launch of our GPU G3-30 and G3-120 instances, for your data science or machine learning projects.</translation>
+   <translation id="cloud_message_pci_no_link" qtlid="76722">Find out more...</translation>
 </translations>

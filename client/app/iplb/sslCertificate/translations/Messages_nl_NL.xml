@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_ssl_certificate_title" qtlid="371307">SSL certificaten</translation>
+   <translation id="iplb_ssl_certificate_intro_text" qtlid="438987">De geconfigureerde certificaten zijn automatisch beschikbaar voor alle front-ends waarop de SSL-opties zijn geactiveerd.</translation>
+
+   <translation id="iplb_ssl_certificate_add" qtlid="420723">SSL certificaat toevoegen</translation>
+
+   <translation id="iplb_ssl_certificate" qtlid="19771">Certificaat</translation>
+   <translation id="iplb_ssl_subject" qtlid="22639">Onderwerp</translation>
+   <translation id="iplb_ssl_type" qtlid="2642">Type</translation>
+   <translation id="iplb_ssl_action" qtlid="56105">Actie</translation>
+   <translation id="iplb_ssl_no_certificate" qtlid="439000">Geen certificaat</translation>
+
+   <translation id="iplb_ssl_see" qtlid="433371">Preview bekijken</translation>
+   <translation id="iplb_ssl_update" qtlid="37875">Wijzigen</translation>
+   <translation id="iplb_ssl_delete" qtlid="2414">Verwijderen</translation>
+
+   <translation id="iplb_ssl_list_error" qtlid="439013">Er is een fout opgetreden tijdens het laden van de certificatenlijst. </translation>
+
+   <translation id="iplb_ssl_add_title" qtlid="420723">SSL certificaat toevoegen</translation>
+   <translation id="iplb_ssl_order_title" qtlid="196803">Een SSL-certificaat bestellen </translation>
+   <translation id="iplb_ssl_add_confirm" qtlid="37923">Toevoegen</translation>
+   <translation id="iplb_ssl_add_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="iplb_ssl_add_success" qtlid="439026">Het SSL certificaat is aangemaakt.</translation>
+   <translation id="iplb_ssl_add_error" qtlid="439039">Er is een fout opgetreden tijdens het aanmaken van het SSL certificaat: {{message}}</translation>
+
+   <translation id="iplb_ssl_edit_name" qtlid="415818">Naam (optioneel)</translation>
+   <translation id="iplb_ssl_edit_private_key" qtlid="19795">Private key</translation>
+   <translation id="iplb_ssl_edit_certificate" qtlid="19771">Certificaat</translation>
+   <translation id="iplb_ssl_edit_chain" qtlid="439052">Chain (optioneel)</translation>
+
+   <translation id="iplb_ssl_update_title" qtlid="439065">SSL certificaat wijzigen</translation>
+   <translation id="iplb_ssl_update_confirm" qtlid="37875">Wijzigen</translation>
+   <translation id="iplb_ssl_update_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="iplb_ssl_update_nom" qtlid="3818">Naam</translation>
+   <translation id="iplb_ssl_update_success" qtlid="439078">Het SSL certificaat is aangemaakt.</translation>
+   <translation id="iplb_ssl_update_error" qtlid="439091">Er is een fout opgetreden tijdens het bewerken van het SSL certificaat: {{message}}</translation>
+
+   <translation id="iplb_ssl_preview_title" qtlid="439104">SSL certificaat overzicht </translation>
+   <translation id="iplb_ssl_preview_name" qtlid="3818">Naam</translation>
+   <translation id="iplb_ssl_preview_serial" qtlid="429758">Sequentienummer</translation>
+   <translation id="iplb_ssl_preview_subject" qtlid="22639">Onderwerp</translation>
+   <translation id="iplb_ssl_preview_fingerprint" qtlid="192344">Print</translation>
+   <translation id="iplb_ssl_preview_type" qtlid="2642">Type</translation>
+   <translation id="iplb_ssl_preview_id" qtlid="46792">Gebruikersnaam</translation>
+
+   <translation id="iplb_ssl_delete_title" qtlid="439117">Certificaat verwijderen</translation>
+   <translation id="iplb_ssl_delete_question" qtlid="439130">Weet u zeker dat u het {{name}} certificaat wilt verwijderen?</translation>
+   <translation id="iplb_ssl_delete_button" qtlid="2414">Verwijderen</translation>
+   <translation id="iplb_ssl_delete_success" qtlid="439143">Het SSL certificaat is verwijderd. </translation>
+   <translation id="iplb_ssl_delete_error" qtlid="439156">Er is een fout opgetreden tijdens het verwijderen van uw SSL certificaat: {{message}}</translation>
+
+   <translation id="iplb_ssl_order_name" qtlid="415818">Naam (optioneel)</translation>
+   <translation id="iplb_ssl_order_type" qtlid="439169">Type certificaat</translation>
+   <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratis</translation>
+   <translation id="iplb_ssl_order_type_dv" qtlid="439182">Comodo DV</translation>
+   <translation id="iplb_ssl_order_type_ev" qtlid="439195">Comodo EV</translation>
+   <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratis</translation>
+   <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
+   <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">example.com, www.example.com</translation>
+   <translation id="iplb_ssl_order_contact" qtlid="31066">Contact</translation>
+   <translation id="iplb_ssl_order_email" qtlid="439234">E-mailadres</translation>
+   <translation id="iplb_ssl_order_business_category" qtlid="431851">Bedrijfscategorie</translation>
+   <translation id="iplb_ssl_order_country" qtlid="25171">Land</translation>
+   <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Provincie</translation>
+   <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Datum van oprichting</translation>
+   <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Bedrijfsnaam</translation>
+   <translation id="iplb_ssl_order_unit_name" qtlid="439260">Naam bedrijfseenheid</translation>
+   <translation id="iplb_ssl_order_address" qtlid="30430">Adres</translation>
+   <translation id="iplb_ssl_order_postal_code" qtlid="30346">Postcode</translation>
+   <translation id="iplb_ssl_order_city" qtlid="33310">Stad</translation>
+   <translation id="iplb_ssl_order_joi" qtlid="439273">Bedrijfsbevoegdheid</translation>
+
+   <translation id="iplb_ssl_order_ok" qtlid="43558">Bestellen</translation>
+   <translation id="iplb_ssl_order_cancel" qtlid="37863">Annuleren</translation>
+</translations>

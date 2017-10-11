@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_task_title" qtlid="96716">Tareas</translation>
+   <translation id="iplb_task_intro_text" qtlid="438519">Las tareas relativas al Load Balancer desaparecerán de esta lista automáticamente 48 horas después de haber finalizado.</translation>
+
+   <translation id="iplb_task_list_col_creation_date" qtlid="26419">Fecha de creación</translation>
+   <translation id="iplb_task_list_col_task" qtlid="61872">Tarea</translation>
+   <translation id="iplb_task_list_col_progress" qtlid="354496">Progreso</translation>
+   <translation id="iplb_task_list_col_status" qtlid="8230">Estado</translation>
+   <translation id="iplb_task_list_col_action" qtlid="56105">Acción</translation>
+
+   <translation id="iplb_task_preview_title" qtlid="438532">Vista previa de la tarea</translation>
+   <translation id="iplb_task_preview_creation_date" qtlid="26419">Fecha de creación</translation>
+   <translation id="iplb_task_preview_task" qtlid="61872">Tarea</translation>
+   <translation id="iplb_task_preview_progress" qtlid="354496">Progreso</translation>
+   <translation id="iplb_task_preview_status" qtlid="8230">Estado</translation>
+   <translation id="iplb_task_preview_id" qtlid="46792">Usuario</translation>
+
+   <translation id="iplb_task_no_task" qtlid="134865">No hay tareas en curso.</translation>
+</translations>
