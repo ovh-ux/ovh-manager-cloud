@@ -21,7 +21,7 @@
     </cui-tile>
     <cui-tile class="cui-flex__col cui-flex__col_1" 
         data-title="'cloud_db_home_tile_status_title' | translate"
-        data-loading="$ctrl.status.loading">
+        data-loading="$ctrl.status.loading || $ctrl.ooms.loading">
         <cui-tile-body>
             <cui-tile-item-status data-term="'cloud_db_home_tile_status_instance' | translate"
                 data-description="$ctrl.status.data.status.text"
@@ -30,11 +30,11 @@
             </cui-tile-item-status>
             <cui-tile-item-status data-term="'cloud_db_home_tile_status_ram' | translate"
                 data-description="$ctrl.status.data.ram.text"
-                data-type="success">
+                data-type="{{ $ctrl.ooms.data.length === 0 ? 'success' : 'warning' }}">
             </cui-tile-item-status>
             <cui-tile-item-status data-term="'cloud_db_home_tile_status_disk_space' | translate"
                 data-description="$ctrl.status.data.diskUsage.text"
-                data-type="success">
+                data-type="{{ !$ctrl.status.data.diskOverquota ? 'success' : 'error' }}">
             </cui-tile-item-status>
         </cui-tile-body>
     </cui-tile>

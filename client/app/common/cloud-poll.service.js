@@ -4,11 +4,19 @@ class CloudPoll {
         this.$interval = $interval;
     }
 
+    poll (opts) {
+        opts = _.extend({}, _.omit(opts, "item"), { items: [opts.item] });
+        return this.pollArray(opts);
+    }
+
     //  Polling opts.  Contains items to poll, pollFunction callback, stopCondition callback and interval (optional, default 5000).
     //  Ex => { item: [1, 2, 3], pollFunction: item => doSomething(), stopCondition: item => doSomething(), interval: 10000  }
     pollArray (opts) {
         const poller = {};
         let items = opts.items;
+        opts.onItemDone = opts.onItemDone ? opts.onItemDone : _.noop;
+
+        const deferred = this.$q.defer();
         poller.pollInterval = this.$interval(() => {
             const promises = _.map(items, item =>
                 this.$q.when(opts.pollFunction(item))
@@ -39,6 +47,7 @@ class CloudPoll {
 
                     if (!items.length) {
                         poller.kill();
+                        deferred.resolve();
                     }
                 });
         }, opts.interval || 5000);
@@ -46,6 +55,8 @@ class CloudPoll {
         poller.kill = () => {
             this.$interval.cancel(poller.pollInterval);
         };
+
+        poller.$promise = deferred.promise;
 
         return poller;
     }

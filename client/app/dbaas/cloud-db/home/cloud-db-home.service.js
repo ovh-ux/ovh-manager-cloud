@@ -14,7 +14,8 @@ class CloudDbHomeService {
             .then(response => ({
                 status: response.status,
                 ram: response.flavor.ram,
-                diskUsage: response.diskUsage
+                diskUsage: response.diskUsage,
+                diskOverquota: response.diskOverquota
             }))
             .catch(this.ServiceHelper.errorHandler("cloud_db_home_status_loading_error"));
     }

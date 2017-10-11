@@ -1,14 +1,19 @@
 class CloudDbDatabaseCtrl {
-    constructor ($state, $stateParams, $translate, CloudDbActionService, CloudDbDatabaseService, ControllerHelper) {
+    constructor ($state, $stateParams, $translate, CloudDbActionService, CloudDbDatabaseService, CloudDbInstanceService, ControllerHelper) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudDbActionService = CloudDbActionService;
         this.CloudDbDatabaseService = CloudDbDatabaseService;
+        this.CloudDbInstanceService = CloudDbInstanceService;
         this.ControllerHelper = ControllerHelper;
 
         this.projectId = this.$stateParams.projectId;
         this.instanceId = this.$stateParams.instanceId;
+
+        this.instance = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.CloudDbInstanceService.getInstance(this.projectId, this.instanceId, { resetCache: true })
+        });
 
         this.databases = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.CloudDbDatabaseService.getDatabases(this.projectId, this.instanceId)
@@ -17,9 +22,8 @@ class CloudDbDatabaseCtrl {
         this.actions = {
             addDatabase: {
                 text: this.$translate.instant("cloud_db_database_add"),
-                state: "dbaas.cloud-db.instance.detail.database.add",
-                stateParams: { projectId: this.projectId, instanceId: this.instanceId },
-                isAvailable: () => true
+                callback: () => this.$state.go("dbaas.cloud-db.instance.detail.database.add", { projectId: this.projectId, instanceId: this.instanceId }),
+                isAvailable: () => !this.instance.loading /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             },
             preview: {
                 text: this.$translate.instant("common_preview_see"),
@@ -33,7 +37,7 @@ class CloudDbDatabaseCtrl {
                     instanceId: this.instanceId,
                     databaseId: database.name
                 }),
-                isAvailable: () => true
+                isAvailable: () => !this.instance.loading /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             },
             deleteDatabase: {
                 text: this.$translate.instant("common_delete"),
@@ -42,13 +46,14 @@ class CloudDbDatabaseCtrl {
                     text: this.$translate.instant("cloud_db_database_delete_confirmation_message")
                 })
                     .then(() => this.CloudDbDatabaseService.deleteDatabase(this.projectId, this.instanceId, database.name))
-                    .then(() => this.databases.load()),
-                isAvailable: () => true
+                    .then(() => this.$onInit()),
+                isAvailable: () => !this.instance.loading /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             }
         };
     }
 
     $onInit () {
+        this.instance.load();
         this.databases.load();
     }
 

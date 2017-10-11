@@ -1,10 +1,11 @@
 class CloudDbBackupCtrl {
-    constructor ($scope, $stateParams, $translate, CloudDbActionService, CloudDbBackupService, CloudPoll, ControllerHelper) {
+    constructor ($scope, $stateParams, $translate, CloudDbActionService, CloudDbBackupService, CloudDbInstanceService, CloudPoll, ControllerHelper) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudDbActionService = CloudDbActionService;
         this.CloudDbBackupService = CloudDbBackupService;
+        this.CloudDbInstanceService = CloudDbInstanceService;
         this.CloudPoll = CloudPoll;
         this.ControllerHelper = ControllerHelper;
 
@@ -12,6 +13,10 @@ class CloudDbBackupCtrl {
         this.instanceId = this.$stateParams.instanceId;
 
         this.$scope.$on("$destroy", () => this.stopTaskPolling());
+
+        this.instance = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.CloudDbInstanceService.getInstance(this.projectId, this.instanceId, { resetCache: true })
+        });
 
         this.backups = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.CloudDbBackupService.getBackups(this.projectId, this.instanceId),
@@ -22,6 +27,7 @@ class CloudDbBackupCtrl {
     }
 
     $onInit () {
+        this.instance.load();
         this.backups.load();
     }
 
@@ -30,18 +36,18 @@ class CloudDbBackupCtrl {
             addBackup: {
                 text: this.$translate.instant("cloud_db_backup_add"),
                 callback: () => this.CloudDbActionService.showBackupEditModal(this.projectId, this.instanceId)
-                    .then(() => this.backups.load()),
-                isAvailable: () => true
+                    .then(() => this.$onInit()),
+                isAvailable: () => !this.instance.loading /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             },
             downloadBackup: {
                 text: this.$translate.instant("cloud_db_backup_action_menu_download"),
                 callback: backup => console.log("DO SOMETHING", backup.id),
-                isAvailable: () => true
+                isAvailable: backup => !this.instance.loading && !backup.taskId /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             },
             restoreBackup: {
                 text: this.$translate.instant("cloud_db_backup_action_menu_restore"),
                 callback: backup => this.CloudDbBackupService.restoreBackup(this.projectId, this.instanceId, backup.id),
-                isAvailable: () => true
+                isAvailable: backup => !this.instance.loading && !backup.taskId /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             },
             deleteBackup: {
                 text: this.$translate.instant("common_delete"),
@@ -52,7 +58,7 @@ class CloudDbBackupCtrl {
                     .then(() => this.CloudDbBackupService.deleteBackup(this.projectId, this.instanceId, backup.id))
                     .then(() => this.refreshBackup(backup))
                     .then(() => this.startTaskPolling()),
-                isAvailable: () => true
+                isAvailable: backup => !this.instance.loading && !backup.taskId /*|| this.instance.data.image.capabilities*/ //TODO : put condition on capabilities.  Maybe on task also.
             }
         };
     }
@@ -67,7 +73,7 @@ class CloudDbBackupCtrl {
             stopCondition: backup => !_.get(backup, "task.id") || _.includes(["done", "error"], backup.task.status),
             onItemDone: item => {
                 if (!item) {
-                    this.backups.load();
+                    this.$onInit();
                 }
             }
         });
@@ -96,7 +102,7 @@ class CloudDbBackupCtrl {
                             <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
-                                data-ng-disabled="!$ctrl.actions.downloadBackup.isAvailable()"
+                                data-ng-disabled="!$ctrl.actions.downloadBackup.isAvailable($row)"
                                 data-ng-bind="$ctrl.actions.downloadBackup.text"
                                 data-ng-click="$ctrl.actions.downloadBackup.callback(123456)"></button>
                         </div>
@@ -104,7 +110,7 @@ class CloudDbBackupCtrl {
                             <div class="oui-action-menu-item__icon"></div>
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
-                                data-ng-disabled="!$ctrl.actions.restoreBackup.isAvailable()"
+                                data-ng-disabled="!$ctrl.actions.restoreBackup.isAvailable($row)"
                                 data-ng-bind="$ctrl.actions.restoreBackup.text"
                                 data-ng-click="$ctrl.actions.restoreBackup.callback($row)"></button>
                         </div>
@@ -113,7 +119,7 @@ class CloudDbBackupCtrl {
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-ng-bind="'common_delete' | translate"
-                                data-ng-disabled="!$ctrl.actions.deleteBackup.isAvailable()"
+                                data-ng-disabled="!$ctrl.actions.deleteBackup.isAvailable($row)"
                                 data-ng-click="$ctrl.actions.deleteBackup.callback($row)"></button>
                         </div>
                     </div>

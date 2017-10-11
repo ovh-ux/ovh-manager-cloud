@@ -25,7 +25,7 @@ class CloudDbDatabaseService {
             .catch(this.ServiceHelper.errorHandler("cloud_db_database_delete_error"));
     }
 
-    getDatabase (projectId, instanceId, databaseId) {
+    getDatabase (projectId, instanceId, databaseId, config = {}) {
         return this.OvhApiCloudDbStdInstanceDatabase.Lexi().get({ projectId, instanceId, databaseId })
             .$promise
             .then(response => {
@@ -38,7 +38,13 @@ class CloudDbDatabaseService {
                 response.quotaUsed.text = this.$filter("bytes")(response.quotaUsed.value, 0, false, response.quotaUsed.unit);
                 return response;
             })
-            .catch(this.ServiceHelper.errorHandler("cloud_db_database_loading_error"));
+            .catch(error => {
+                if (!config.muteError) {
+                    return this.ServiceHelper.errorHandler("cloud_db_database_loading_error")(error);
+                }
+
+                return this.$q.reject(error);
+            });
     }
 
     getDatabases (projectId, instanceId) {

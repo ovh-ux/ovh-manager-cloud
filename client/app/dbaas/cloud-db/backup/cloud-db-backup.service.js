@@ -42,7 +42,9 @@ class CloudDbBackupService {
                 return this.$q.all({
                     backup: this.$q.when(response),
                     task: response.taskId ? this.CloudDbTaskService.getTask(projectId, response.taskId, { muteError: true }) : this.$q.when({ progress: 0 }),
-                    database: this.CloudDbDatabaseService.getDatabase(projectId, instanceId, response.databaseName)
+                    database: this.CloudDbDatabaseService
+                        .getDatabase(projectId, instanceId, response.databaseName, { muteError: true })
+                        .catch(() => this.$q.when({ displayName: response.displayName }))
                 });
             })
             .then(additionnalInfo => {
