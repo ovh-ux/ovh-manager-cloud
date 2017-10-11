@@ -797,9 +797,9 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     }
 
     function handleCancelConfirmation () {
-        /*if ($stateParams.action === "confirmTerminate") {*/
+        if ($stateParams.action === "confirmTerminate") {
             return self.confirmTerminate($stateParams.serviceName);
-      // }
+        }
     }
 
     init(true);
