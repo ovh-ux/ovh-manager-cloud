@@ -53,7 +53,9 @@ class IpLoadBalancerHomeService {
                         const activeServers = _.filter(servers, { status: "active" });
                         serversStatus.total += activeServers.length;
                         activeServers.forEach(server => {
-                            if (this.IpblServerStatusService.getStatusIcon(server) === "success") {
+                            const serverIcon = this.IpblServerStatusService.getStatusIcon(server);
+                            // From a farm, a server considered "OK" if it is ok or has no check.
+                            if (serverIcon === "success" || serverIcon === "help") {
                                 serversStatus.ok++;
                             }
                         });

@@ -31,7 +31,7 @@ class IpLoadBalancerZoneService {
             allZones: this.getZones(),
             iplbZones: this.getIPLBZones(serviceName)
         }).then(({ allZones, iplbZones }) => {
-            if (iplbZones.length >= allZones.length) {
+            if (iplbZones.length >= allZones.length || true) {
                 iplbZones.push({
                     id: "all",
                     name: this.$translate.instant("iplb_zone_all")
