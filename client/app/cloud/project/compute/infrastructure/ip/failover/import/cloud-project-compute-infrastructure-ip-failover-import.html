@@ -29,6 +29,8 @@
                         </th>
                         <th class="oui-table__header">
                             <span translate="cpciif_import_routedto"></span>
+                        </th>
+                        <th class="oui-table__header">
                             <button data-ng-click="CPCIIpFailoverImportCtrl.refreshIpsFo()"
                                 data-ng-disabled="CPCIIpFailoverImportCtrl.loaders.table.importIpsFo"
                                 class="no-style pull-right">
@@ -80,6 +82,7 @@
                             <span data-ng-if="ipFo.routedTo.serviceName.length" data-ng-bind="::ipFo.routedTo.serviceName"></span>
                             <span data-ng-if="!ipFo.routedTo.serviceName.length" data-translate="cpciif_import_routedto_park" class="opacity5"></span>
                         </td>
+                        <td class="oui-table__cell"></td>
                     </tr>
                 </tbody>
             </table>

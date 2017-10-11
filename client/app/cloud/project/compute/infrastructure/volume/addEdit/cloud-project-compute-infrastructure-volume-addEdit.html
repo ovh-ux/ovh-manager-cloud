@@ -163,15 +163,6 @@
                         data-ng-click="VolumeAddEditCtrl.openEditDetail('region')"
                         data-ng-disabled="!VolumeAddEditCtrl.sectionCanBeModifiedInEdition('region') || !!VolumeAddEditCtrl.volumeInEdition.saveForEdition">
 
-                        <!-- loading... -->
-                        <p data-ng-if="VolumeAddEditCtrl.loaders.panelsData.regions"
-                             class="addOrEdit-menu-loading">
-                            <div class="text-center">
-                                <oui-loader size="s" class="d-inline-block"></oui-loader>
-                            </div>
-                            {{:: 'cpci_volume_addedit_region_loading' | translate}}
-                        </p>
-
                         <!-- content -->
                         <div data-ng-if="!VolumeAddEditCtrl.loaders.panelsData.regions">
 
@@ -427,15 +418,6 @@
                         data-ng-if="VolumeAddEditCtrl.isSwitchMode()"
                         data-translate="cpci_volume_addedit_region_choose">
                     </h3>
-
-                    <!-- loading... -->
-                    <p data-ng-if="VolumeAddEditCtrl.loaders.panelsData.regions"
-                       class="popover-detail-item text-center">
-                        <div class="text-center">
-                            <oui-loader size="s" class="d-inline-block"></oui-loader>
-                        </div>
-                        {{:: 'cpci_volume_addedit_region_loading' | translate}}
-                    </p>
 
                     <!-- content -->
                     <div data-ng-if="!VolumeAddEditCtrl.loaders.panelsData.regions">

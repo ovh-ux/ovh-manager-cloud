@@ -10,46 +10,13 @@
            }">
         </p>
 
-        <button type="button" class="oui-button oui-button_secondary"
-                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.table.volume || CloudProjectComputeVolumeCtrl.table.volume === null"
-                data-ng-click="CloudProjectComputeVolumeCtrl.createNewVolume()"
-                write-right-required>
-            {{:: 'cpc_volume_search_add'|translate }}
-        </button>
-
         <!-- SEARCH FORM -->
         <form name="searchVolumeForm"
             novalidate
             class="ovh-form-flat animate-opacity2-leave">
 
-            <div class="clearfix">
-                <!-- <div flat-input-container class="pull-right" style="width: 160px;">
-                    <label for="searchMinDisk" translate="cpc_volume_size2"></label>
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-hdd-o"></i></div>
-
-                        <input type="text"
-                            class="form-control"
-                            id="searchMinDisk"
-                            name="searchMinDisk"
-                            placeholder="{{'cpc_volume_size1' | translate}}"
-                            data-ng-pattern="/^\d+$/"
-                            maxlength="255"
-                            data-ng-model="CloudProjectComputeVolumeCtrl.search.minDisk"
-                            data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
-
-                        <div class="input-group-btn"
-                            data-ng-show="CloudProjectComputeVolumeCtrl.search.minDisk || searchVolumeForm.searchMinDisk.$invalid">
-                            <button class="no-style btn"
-                                data-ng-click="CloudProjectComputeVolumeCtrl.search.minDisk = null"
-                                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.remove.volume || CloudProjectComputeVolumeCtrl.loaders.remove.volumeMulti">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
+            <div>
                 <div flat-input-container class="pull-right" style="width: 160px;">
-                    <label for="searchCreationEnd" translate="cpc_volume_date_end"></label>
 
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -80,7 +47,6 @@
                 </div>
 
                 <div flat-input-container class="pull-right" style="width: 160px;">
-                    <label for="searchCreationStart" translate="cpc_volume_date_start"></label>
 
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -111,7 +77,6 @@
                 </div>
 
                 <div flat-input-container class="pull-right" style="width: 300px;">
-                    <label for="searchName" translate="cloud_common_name"></label>
                     <div class="input-group">
                         <div class="input-group-addon"><i class="fa fa-search"></i></div>
 
@@ -135,6 +100,14 @@
                 </div>
             </div>
         </form>
+
+        <!-- ADD BUTTON -->
+        <button type="button" class="oui-button oui-button_secondary"
+                data-ng-disabled="CloudProjectComputeVolumeCtrl.loaders.table.volume || CloudProjectComputeVolumeCtrl.table.volume === null"
+                data-ng-click="CloudProjectComputeVolumeCtrl.createNewVolume()"
+                write-right-required>
+            {{:: 'cpc_volume_search_add'|translate }}
+        </button>
 
         <!-- VOLUME TABLE -->
         <table class="oui-table oui-table_responsive">
