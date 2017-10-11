@@ -34,13 +34,20 @@ angular.module("managerApp").controller("DeskaasCtrl", function (OvhApiDeskaasSe
         servicePromise.then(function (serviceInfo) {
             var detailsPromise = OvhApiDeskaasService.Lexi().getDetails({ serviceName: serviceId }).$promise;
             detailsPromise.then(function (details) {
+                if (details.alias != 'noAlias') {
+                    details.displayName = details.alias + ' (' + details.serviceName + ')';
+                } else {
+                    details.displayName = details.serviceName;
+                }
+
                 if (serviceInfo.status === "ok") {
                     var userPromise = OvhApiDeskaasService.Lexi().getUser({ serviceName: serviceId }).$promise;
                     userPromise.then(function (user) {
+                        user.displayName = user.name + ' (' + user.email + ')';
                         registerService(details, serviceInfo, user);
                     });
                 } else {
-                    registerService(details, serviceInfo, {});
+                    registerService(details, serviceInfo, { displayName: "-" });
                 }
             });
         });

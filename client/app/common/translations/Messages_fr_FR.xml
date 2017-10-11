@@ -474,6 +474,12 @@
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
 
+   <translation id="common_tile_shortcut" qtlid="403658">Raccourcis</translation>
+
+   <translation id="common_tile_infos" qtlid="26551">Informations</translation>
+
+   <translation id="common_tile_configuration" qtlid="4406">Configuration</translation>
+
    <translation id="common_tile_subscription" qtlid="28891">Abonnement</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Offre</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renouvellement automatique</translation>

@@ -5,76 +5,41 @@
     </cui-page-header>
 
     <div class="cui-page__content">
+        <cui-loader data-ng-show="DeskaasCtrl.flags.initializing"></cui-loader>
+            <oui-table data-ng-hide="DeskaasCtrl.flags.initializing"
+                rows="DeskaasCtrl.services">
+                <column title="'vdi_hdr_status' | translate" property="details.displayName" sortable="asc">
+                    <a data-ui-sref="deskaas.details({ serviceName: $row.details.serviceName })"
+                        data-ng-bind="$row.details.displayName">
+                    </a>
+                </column>
+                <column title="'vdi_hdr_name' | translate" property="user.displayName" sortable></column>
+                <column title="'vdi_hdr_user' | translate" property="details.ip" sortable></column>
+                <column title="'vdi_hdr_ip' | translate" property="details.url" sortable>
+                    <a data-ng-href="{{ $row.details.url }}" data-ng-bind="$row.details.url" target="_blank"></a>
+                </column>
+                <column title="'vdi_hdr_connection' | translate" property="serviceInfo.status" sortable>
+                    <span class="label"
+                            data-ng-class="{
+                                    'label-success': $row.serviceInfo.status == 'ok',
+                                    'label-warning': $row.serviceInfo.status == 'warning',
+                                    'label-danger': $row.serviceInfo.status != 'ok'
+                                    }"
+                            data-ng-bind="$row.serviceInfo.status">
+                    </span>
+                </column>
+                <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="''"></column>
+            </oui-table>
+    </div>
+</div>
 
-            <table class="oui-table">
-                <thead class="oui-table__headers">
-                    <tr>
-                        <th class="oui-table__header" scope="col" data-translate="vdi_hdr_status" class="status"></th>
-                        <th class="oui-table__header" scope="col" data-translate="vdi_hdr_name"></th>
-                        <th class="oui-table__header" scope="col" data-translate="vdi_hdr_user"></th>
-                        <th class="oui-table__header" scope="col" data-translate="vdi_hdr_ip"></th>
-                        <th class="oui-table__header" scope="col" data-translate="vdi_hdr_connection"></th>
-                        <th class="oui-table__header" scope="col" >&#160;</th>
-                    </tr>
-                </thead>
-
-                <tbody class="oui-table__body">
-                    <tr class="oui-table__row"
-                        data-ng-if="DeskaasCtrl.flags.initializing">
-                        <td colspan="6" class="oui-table__cell">
-                            <cui-loader data-size="m" data-ng-show="DeskaasCtrl.flags.initializing" class="text-center"></cui-loader>
-                        </td>
-                    </tr>
-
-                    <tr data-ng-repeat="service in paginatedServices track by service.details.serviceName"
-                        class="oui-table__row">
-                        <td ng-if="service.details.alias != 'noAlias'" class="oui-table__cell">
-                            <a data-ui-sref="deskaas.details({ serviceName: service.details.serviceName })"
-                               data-ng-bind="service.details.alias + ' (' + service.details.serviceName + ')'">
-                            </a>
-                        </td>
-                        <td ng-if="service.details.alias == 'noAlias'" class="oui-table__cell">
-                            <a data-ui-sref="deskaas.details({ serviceName: service.details.serviceName })"
-                               data-ng-bind="service.details.serviceName">
-                            </a>
-                        </td>
-                        <td data-ng-bind="service.user.name + ' (' + service.user.email + ')'" class="oui-table__cell"></td>
-                        <td data-ng-bind="service.details.ip" class="oui-table__cell"></td>
-                        <td class="oui-table__cell">
-                            <a data-ng-href="{{ service.details.url }}" data-ng-bind="service.details.url" target="_blank"></a>
-                        </td>
-                        <td class="oui-table__cell">
-                            <span class="label"
-                                  data-ng-class="{
-                                         'label-success': service.serviceInfo.status == 'ok',
-                                         'label-warning': service.serviceInfo.status == 'warning',
-                                         'label-danger': service.serviceInfo.status != 'ok'
-                                         }"
-                                  data-ng-bind="service.serviceInfo.status">
-                            </span>
-                        </td>
-                        <td class="oui-table__cell">
+<!-- 
+<td class="oui-table__cell">
                             <a data-ui-sref="deskaas.details({ serviceName: service.details.serviceName })"
                                class="btn"
                                title="{{ vdi_link_editone | translate }}">
                                 <i class="fa fa-chevron-right fa-2x action"></i>
                             </a>
                         </td>
-                    </tr>
-                </tbody>
-            </table>
 
-            <div class="table-pretty-pagination top-space-m12"
-                 data-pagination-front
-                 data-items="DeskaasCtrl.services"
-                 data-paginated-items="paginatedServices"
-                 data-current-page="currentPage"
-                 data-nb-pages="maxSize"
-                 data-items-per-page="itemsPerPage"
-                 data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-                 data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}">
-            </div>
-
-    </div>
-
-</div>
+    --> 

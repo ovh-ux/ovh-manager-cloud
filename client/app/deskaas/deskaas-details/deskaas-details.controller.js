@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDeskaasService, $stateParams, $scope, Toast, $translate, $state, $q, ACTIONS, $uibModal, OvhApiMe, deskaasSidebar) {
+angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDeskaasService, ControllerHelper, $stateParams, $scope, Toast, $translate, $state, $q, ACTIONS, $uibModal, OvhApiMe, deskaasSidebar) {
 
     var self = this;
 
@@ -20,12 +20,60 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
 
     self.OrderPlanOffers = [];
 
+    self.actions = {
+        reinit: {
+            text: $translate.instant("vdi_btn_restore"),
+            callback: () => self.restoreService($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        restart: {
+            text: $translate.instant("vdi_btn_reboot"),
+            callback: () => self.rebootService($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        changePassword: {
+            text: $translate.instant("vdi_btn_reset_password"),
+            callback: () => self.resetPassword($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        remove: {
+            text: $translate.instant("vdi_btn_delete"),
+            callback: () => self.deleteService($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        accessConsole: {
+            text: $translate.instant("vdi_btn_console"),
+            callback: () => self.getConsole($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        changeOffer: {
+            text: $translate.instant("vdi_btn_upgrade"),
+            callback: () => self.upgrade($stateParams.serviceName),
+            isAvailable: () => true
+        },
+        changeAlias: {
+            text: $translate.instant("common_modify"),
+            callback: () => self.changeAlias($stateParams.serviceName),
+            isAvailable: () => true
+        }
+    };
+
+    /*
+        restartInstance: {
+ +                text: this.$translate.instant("cloud_db_home_tile_status_instance_restart"),
+ +                callback: () => this.CloudDbActionService.showInstanceRestartModal(this.projectId, this.instanceId),
+ +                isAvailable: () => !this.instance.loading && !this.instance.data.taskId
+ +            }
+    
+    */
+
     // Task handler
     var TasksHandler = function () {
         // FIXME we do not check if some new task are created in another session
         // List of tasks to poll
         var selfTask = this;
         selfTask.tasks = {};
+        selfTask.cleanTasks = [];
         var _allowedTask = []; //use getAllowedTask to populate the array
 
         this.getAllowedTasks = function () {
@@ -60,6 +108,10 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
             return isRunning;
         };
 
+        this.getCleanTasks = function () {
+            return _.mapValues(selfTask.tasks, value => value);
+        };
+
         // Check if we have a task on error
         this.taskOnError = function () {
             var onError = false;
@@ -85,8 +137,9 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
                 taskId      : task.taskId,
                 isUserTask    : isUserTask
             };
-            task.displayState = "vdi_task_state_" + task.state;
-            task.displayName = "vdi_task_name_" + task.name;
+            task.displayState = $translate.instant("vdi_task_state_" + task.state);
+            task.displayName = $translate.instant("vdi_task_name_" + task.name);
+            task.status = task.state;
             if (selfTask.isIn(task)) {
                 // we have the task, we need to update
                 // TODO If task change from one status to error or problem we need to display a message
@@ -99,6 +152,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
                 selfTask.tasks[task.taskId].displayName = task.displayName;
                 selfTask.tasks[task.taskId].lastModificationDate = task.lastModificationDate;
                 selfTask.tasks[task.taskId].progress = task.progress;
+                selfTask.tasks[task.taskId].status = task.state;
                 // TODO remove task if status == 'done' and display a message
                 if (task.state === "done") {
                     OvhApiDeskaasService.stopPollTask($scope, opts);
@@ -113,6 +167,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
             task.poller = OvhApiDeskaasService.pollTask($scope, opts).then(selfTask.addOrUpdate, selfTask.addOrUpdate, selfTask.addOrUpdate);
             // Add a new entry in the map
             selfTask.tasks[task.taskId] = task;
+            selfTask.cleanTasks.push(task);
         };
     };
 
@@ -344,32 +399,24 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
     };
 
     self.changeAlias = function () {
-
-        var modal = $uibModal.open({
-            templateUrl     : "app/deskaas/deskaas-change-alias/deskaas-change-alias.html",
-            controller      : "DeskaasChangeAliasCtrl",
-            controllerAs    : "DeskaasChangeAliasCtrl",
-            backdrop        : "static",
-            size            : "md",
-            resolve         : {
-                service : function () { return self.serviceName; }
-            }
-        });
-
-        modal.result.then(function (modalData) {
-            changeAlias(modalData).catch(function (err) {
-                var msg = _.get(err, "data.message", "");
-                Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+        ControllerHelper.modal.showNameChangeModal({
+            serviceName: self.details.serviceName,
+            displayName: self.details.alias !== "no-alias" ? self.details.alias : ""
+        })
+            .then(newDisplayName => {
+                changeAlias(newDisplayName).catch(function (err) {
+                    const msg = _.get(err, "data.message", "");
+                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                });
             });
-        });
     };
 
-    function changeAlias (modalData) {
+    function changeAlias (newDisplayName ) {
 
         var promise;
 
-        if (modalData.newAlias) {
-            promise = OvhApiDeskaasService.Lexi().changeAlias({ serviceName: $stateParams.serviceName }, { alias: modalData.newAlias }).$promise;
+        if (newDisplayName) {
+            promise = OvhApiDeskaasService.Lexi().changeAlias({ serviceName: $stateParams.serviceName }, { alias: newDisplayName }).$promise;
         } else {
             return $q.when();
         }
@@ -498,6 +545,8 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl", function (OvhApiDe
         return handleMethodCall(
             promise,
             function (response) {
+                response.displayName = response.alias === "noAlias" ? response.serviceName : response.alias;
+                self.services.offer = _.get(self.references[response.planCode], "name");
                 self.details = response;
                 deskaasSidebar.updateItem(self.details);
             }

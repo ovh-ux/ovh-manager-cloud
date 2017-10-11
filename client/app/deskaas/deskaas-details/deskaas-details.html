@@ -1,154 +1,130 @@
 <div ui-view class="cui-page">
-
-    <cui-page-header ng-if="DeskaasDetailsCtrl.details.alias == 'noAlias'"
-                     data-title-text="('vdi_header' | translate) + ' : ' + DeskaasDetailsCtrl.details.serviceName">
+    <cui-page-header data-title-text="DeskaasDetailsCtrl.details.alias !== 'noAlias' ? DeskaasDetailsCtrl.details.alias : DeskaasDetailsCtrl.details.serviceName"
+                 data-subtitle-text="DeskaasDetailsCtrl.details.alias !== 'noAlias' ? DeskaasDetailsCtrl.details.serviceName :''">
     </cui-page-header>
 
-    <cui-page-header ng-if="DeskaasDetailsCtrl.details.alias !== 'noAlias'"
-                     data-title-text="('vdi_header' | translate) + ' : ' + DeskaasDetailsCtrl.details.alias + ' (' + DeskaasDetailsCtrl.details.serviceName + ')'">
-    </cui-page-header>
-
-    <div class="cui-page__content">
-
-        <div class="loading" data-ng-show="DeskaasDetailsCtrl.flags.taskRunning()">
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.restoring" data-translate="vdi_restoring"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.rebooting" data-translate="vdi_rebooting"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.resettingPassword" data-translate="vdi_resetting_password"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.deleting" data-translate="vdi_deleting"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.upgrading" data-translate="vdi_upgrading"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.changingAlias" data-translate="vdi_alias_changing"></h2>
-            <h2 data-ng-if="DeskaasDetailsCtrl.flags.changingUsername" data-translate="vdi_username_changing"></h2>
+    <div class="cui-page__content cui-flex">
+        <div class="cui-tile cui-flex__col cui-flex__col_1">
+            <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
+            <ul class="cui-tile__body cui-tile__body_list">
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.reinit.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.reinit.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.reinit.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.restart.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.restart.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.restart.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.changePassword.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.changePassword.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.changePassword.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.remove.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.remove.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.remove.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.accessConsole.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.accessConsole.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.accessConsole.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+                <li class="cui-tile__item cui-tile__item_button">
+                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                        type="button"
+                        data-ng-click="DeskaasDetailsCtrl.actions.changeOffer.callback()"
+                        data-ng-disabled="!DeskaasDetailsCtrl.actions.changeOffer.isAvailable()">
+                        <span data-ng-bind="DeskaasDetailsCtrl.actions.changeOffer.text"></span>
+                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
-
-        <div class="error" data-ng-if="DeskaasDetailsCtrl.flags.error()">
-            <h2>
-                <span data-translate="vdi_default_error" data-translate-values="{serviceName: DeskaasDetailsCtrl.details.serviceName}"></span>
-            </h2>
-        </div>
-
-        <div class="top-space-m8">
-            <a data-ui-sref="deskaas()" class="btn" title="{{ vdi_back_to_list | translate }}">
-                <i class="fa fa-chevron-left fa-2x action"></i>
-                <span class="h2 left-space-m8" data-translate="vdi_back_to_list"></span>
-            </a>
-        </div>
-
-        <div class="row space-p8">
-            <div class="col-xs-12 col-sm-6">
-                <table class="vdi-details">
-                    <tbody>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_alias"></th>
-                            <td rowspan="13" class="space-p20" data-ng-if="DeskaasDetailsCtrl.flags.initializing()">
-                                <h3>
-                                    <span class="fa fa-refresh fa-spin"></span>
-                                    <span data-translate="common_loading"></span>
-                                </h3>
-                            </td>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()">
-                                <span data-ng-if="DeskaasDetailsCtrl.hasValidAlias()" data-ng-bind="DeskaasDetailsCtrl.details.alias"></span>
-                                <span data-ng-if="!DeskaasDetailsCtrl.hasValidAlias()" data-translate="vdi_alias_undefined" class="data-undefined"></span>
-                            </td>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()">
-                                <button data-ng-if="DeskaasDetailsCtrl.hasValidAlias()" type="button"
-                                        class="oui-button oui-button_primary  oui-button_small-width"
-                                        data-ng-disabled="DeskaasDetailsCtrl.flags.changingAlias"
-                                        data-ng-click="DeskaasDetailsCtrl.changeAlias($stateParams.serviceName)">
-                                    <span class="fa fa-edit"></span>
-                                    <span data-translate="vdi_change_alias"></span>
-                                </button>
-                                <button data-ng-if="!DeskaasDetailsCtrl.hasValidAlias()" type="button" class="oui-button oui-button_primary  oui-button_small-width"
-                                        data-ng-disabled="DeskaasDetailsCtrl.flags.changingAlias"
-                                        data-ng-click="DeskaasDetailsCtrl.changeAlias($stateParams.serviceName)">
-                                    <span class="fa fa-edit"></span>
-                                    <span data-translate="vdi_create_alias"></span>
-                                </button>
-                                &#160;
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_username"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.user.name"></td>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()">
-                                &#160;
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_email"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.user.email"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_ip"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.ip"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_service_name"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.serviceName"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_os"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.os"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_vcpu"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.vcpu"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_ram"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_data"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_registration_date"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.services.creation"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_delivery_date"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()" data-ng-bind="DeskaasDetailsCtrl.services.creation"></td>
-                            <td>&#160;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" data-translate="vdi_label_connection"></th>
-                            <td data-ng-if="!DeskaasDetailsCtrl.flags.initializing()">
-                                <a ng-href="{{ DeskaasDetailsCtrl.details.url }}" data-ng-bind="DeskaasDetailsCtrl.details.url" target="_blank">
-                                </a>
-                            </td>
-                            <td>&#160;</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-xs-12 col-sm-6" data-ng-if="DeskaasDetailsCtrl.tasksHandler.length() > 0">
-                <h4>{{ ::'vdi_task_current' | translate }} ({{ DeskaasDetailsCtrl.tasksHandler.length() }})</h4>
-                <table class="oui-table">
-                    <thead class="oui-table__headers">
-                        <tr class="oui-table__row">
-                            <th class="oui-table__header">{{ ::'vdi_task_id' | translate }}</th>
-                            <th class="oui-table__header">{{ ::'vdi_task_name' | translate }}</th>
-                            <th class="oui-table__header">{{ ::'vdi_task_state' | translate }}</th>
-                            <th class="oui-table__header">{{ ::'vdi_task_modification_date' | translate }}</th>
-                        </tr>
-                    </thead>
-                    <tbody class="oui-table__body">
-                        <tr data-ng-repeat="(taskId, task) in DeskaasDetailsCtrl.tasksHandler.tasks track by task.taskId" class="{{ DeskaasDetailsCtrl.taskBackgroud(task) }}" class="oui-table__row">
-                            <td class="oui-table__cell">{{ task.taskId }}</td>
-                            <td class="oui-table__cell">{{ task.displayName | translate }}</td>
-                            <td class="oui-table__cell">{{ task.displayState | translate }}</td>
-                            <td class="oui-table__cell">{{ task.lastModificationDate | date : 'medium' }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <cui-tile-subscription class="cui-flex__col cui-flex__col_1" 
+            data-loading="DeskaasDetailsCtrl.flags.init.serviceInfos || DeskaasDetailsCtrl.flags.init.details"
+            data-subscription-info="DeskaasDetailsCtrl.services"
+            data-offer-actions="$ctrl.actions.changeOffer"
+            data-autorenew-actions="$ctrl.actions.manageAutorenew"
+            data-contact-actions="$ctrl.actions.manageContact"></cui-tile-subscription>
+        <cui-tile class="cui-flex__col cui-flex__col_1"  
+            data-title="'common_tile_infos' | translate"
+            data-loading="DeskaasDetailsCtrl.flags.initializing()">
+            <cui-tile-item data-term="'vdi_label_username' | translate"
+                data-description="DeskaasDetailsCtrl.user.name">
+             </cui-tile-item>
+             <cui-tile-item data-term="'vdi_label_email' | translate"
+                data-description="DeskaasDetailsCtrl.user.email">
+             </cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'vdi_label_ip' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <cui-clipboard data-text="DeskaasDetailsCtrl.details.ip"></cui-clipboard>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
+            <cui-tile-item data-term="'vdi_label_connection' | translate"
+                data-description="DeskaasDetailsCtrl.details.url">
+             </cui-tile-item>
+        </cui-tile>
+        <cui-tile class="cui-flex__col cui-flex__col_1"
+            data-title="'common_tile_configuration' | translate"
+            data-loading="DeskaasDetailsCtrl.flags.initializing()">
+            <cui-tile-item data-term="'vdi_label_alias' | translate"
+                data-description="DeskaasDetailsCtrl.details.displayName"
+                data-actions="DeskaasDetailsCtrl.actions.changeAlias">
+            </cui-tile-item>
+            <cui-tile-item data-term="'vdi_label_os' | translate"
+                data-description="DeskaasDetailsCtrl.details.os">
+            </cui-tile-item>
+            <cui-tile-item data-term="'vdi_label_vcpu' | translate"
+                data-description="DeskaasDetailsCtrl.details.vcpu">
+            </cui-tile-item>
+            <cui-tile-item data-term="'vdi_label_ram' | translate"
+                data-description="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit">
+            </cui-tile-item>
+            <cui-tile-item data-term="'vdi_label_data' | translate"
+                data-description="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit">
+            </cui-tile-item>
+        </cui-tile>
+        <div class="cui-flex__col cui-flex__col_2" style="flex-grow: 1;">
+            <div class="cui-tile">
+                <h4 class="oui-header_4 cui-tile__title" data-translate="vdi_task_current"></h4>
+                <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                    <oui-table data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
+                        <column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></column>
+                        <column title="'vdi_task_name' | translate" property="displayName" sortable></column>
+                        <column title="'vdi_task_state' | translate" property="displayState" sortable></column>
+                        <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable></column>
+                        <column title="'common_table_col_progress' | translate" property="progress" sortable class="oui-table__cell_component">
+                            <cui-task-progress data-task="$row"></cui-task-progress>
+                        </column>
+                        <empty-placeholder data-translate="cloud_db_project_instance_list_empty"></empty-placeholder>
+                    </oui-table>
+                </div>
             </div>
         </div>
 
