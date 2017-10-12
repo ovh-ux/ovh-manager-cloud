@@ -2,7 +2,7 @@
 
 angular.module("managerApp").controller("DeskaasDetailsCtrl",
     function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, Toast, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
-              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES) {
+              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu) {
 
     var self = this;
 
@@ -46,7 +46,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         changeOffer: {
             text: $translate.instant("vdi_btn_upgrade"),
             callback: () => self.upgrade($stateParams.serviceName),
-            isAvailable: () => self.flags.editable()
+            isAvailable: () => self.flags.editable() && self.flags.can_upgrade()
         },
         changeAlias: {
             text: $translate.instant("common_modify"),
@@ -403,7 +403,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
     self.changeAlias = function () {
         ControllerHelper.modal.showNameChangeModal({
             serviceName: self.details.serviceName,
-            displayName: self.details.alias !== "no-alias" ? self.details.alias : ""
+            displayName: self.details.alias !== "noAlias" ? self.details.alias : ""
         })
             .then(newDisplayName => {
                 changeAlias(newDisplayName).catch(function (err) {
@@ -707,10 +707,20 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         case DESKAAS_ACTIONS.UPDATE_ALIAS:
         case DESKAAS_ACTIONS.UPDATE_USERNAME:
-            self.getDetails();
+            self.getDetails()
+                .then(() => {
+                    self.changeMenuTitle(self.details.serviceName, self.details.alias !== "noAlias" ? self.details.alias : self.details.serviceName);
+                });
             break;
         }
 
+    }
+
+    self.changeMenuTitle = function (serviceName, displayName) {
+        const menuItem = SidebarMenu.getItemById(serviceName);
+        if (menuItem) {
+            menuItem.title = displayName;
+        }
     }
 
     self.getRunningTasks = function () {
