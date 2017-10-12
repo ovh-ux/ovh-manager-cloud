@@ -182,6 +182,9 @@ angular.module("managerApp")
             },
             cloud_disk_array: {
                 FR: "https://www.ovh.com/fr/cloud/cloud-disk-array/"
+            },
+            cloud_desktop: {
+                FR: "https://www.ovh.com/fr/cloud/cloud-desktop/"
             }
         },
         guides: {

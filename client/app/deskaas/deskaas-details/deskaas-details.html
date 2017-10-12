@@ -72,6 +72,9 @@
         <cui-tile class="cui-flex__col cui-flex__col_1"
             data-title="'common_tile_infos' | translate"
             data-loading="DeskaasDetailsCtrl.flags.initializing()">
+            <cui-tile-item data-term="'common_tile_information_status' | translate"
+                data-description="DeskaasDetailsCtrl.services.status">
+             </cui-tile-item>
             <cui-tile-item data-term="'vdi_label_username' | translate"
                 data-description="DeskaasDetailsCtrl.user.name">
              </cui-tile-item>
@@ -86,9 +89,14 @@
                     </cui-tile-definition-description>
                 </cui-tile-definitions>
             </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_connection' | translate"
-                data-description="DeskaasDetailsCtrl.details.url">
-             </cui-tile-item>
+            <cui-tile-item>
+                <cui-tile-definitions>
+                    <cui-tile-definition-term data-term="'vdi_label_connection' | translate"></cui-tile-definition-term>
+                    <cui-tile-definition-description>
+                        <a data-ng-href="{{ DeskaasDetailsCtrl.details.url }}" data-ng-bind="DeskaasDetailsCtrl.details.url" target="_blank"></a>
+                    </cui-tile-definition-description>
+                </cui-tile-definitions>
+            </cui-tile-item>
         </cui-tile>
         <cui-tile class="cui-flex__col cui-flex__col_1"
             data-title="'common_tile_configuration' | translate"

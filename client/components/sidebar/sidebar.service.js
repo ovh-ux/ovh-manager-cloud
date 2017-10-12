@@ -35,7 +35,7 @@ class SidebarService {
     getNumberOfServicesPerSection (services) {
         const count = _.flatten(services);
         return count.length;
-    };
+    }
 
     addOrder (serviceDescriptor) {
         if (_.isFunction(serviceDescriptor.provider.addOrder)) {
