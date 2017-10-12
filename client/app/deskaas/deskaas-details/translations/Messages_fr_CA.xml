@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Inconnu</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">En attente de sous-tâches</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Une erreur est survenue. Nos équipes ont été prévenues. Veuillez patienter quelques minutes.</translation>
    <translation id="vdi_task_error" qtlid="371019">La tâche {{ id}} est en erreur. Nos équipes ont été prévenues. Veuillez patienter quelques minutes.</translation>
 

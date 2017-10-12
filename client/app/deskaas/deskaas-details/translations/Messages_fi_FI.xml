@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Tuntematon</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Odottaa alitehtäviä</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Tapahtui virhe. Tiimeillemme on ilmoitettu asiasta. Ole hyvä ja odota muutama minuutti.</translation>
    <translation id="vdi_task_error" qtlid="371019">Tehtävä {{ id}} on virheellinen. Tiimeillemme on ilmoitettu asiasta. Ole hyvä ja odota muutama minuutti.</translation>
 

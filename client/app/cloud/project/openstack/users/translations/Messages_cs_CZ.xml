@@ -31,12 +31,13 @@
 
    <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Vymazat těchto {{nbUsers}} uživatelů</translation>
    <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Nemazat tyto uživatele</translation>
-   <translation id="openstackusers_users_delete_button" qtlid="7882">Smazat tohoto uživatele</translation>
+   <translation id="openstackusers_users_delete_title" qtlid="7882">Smazat tohoto uživatele</translation>
    <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Nemazat tohoto uživatele</translation>
    <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Potvrdit vymazání</translation>
 
    <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Probíhá mazání zvolených {{nbUsers}} uživatelů.</translation>
    <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Chyba, není možné vymazet {{nbUsers}} uživatelů.</translation>
    <translation id="openstackusers_users_delete_error_one" qtlid="245558">Chyba, tento uživatel nemůže být vymazán.</translation>
+   <translation id="openstackusers_user_delete_message" qtlid="354756">Êtes-vous certain de vouloir supprimer cet utilisateur?</translation>
 
 </translations>

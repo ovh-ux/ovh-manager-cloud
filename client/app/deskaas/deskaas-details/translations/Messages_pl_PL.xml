@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Nieznany</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">W oczekiwaniu na podzadania.</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Wystąpił błąd. Nasz zespół został powiadomiony. </translation>
    <translation id="vdi_task_error" qtlid="371019">Wystąpił błąd dla zadania {{ id}}. Nasz zespół został powiadomiony.</translation>
 

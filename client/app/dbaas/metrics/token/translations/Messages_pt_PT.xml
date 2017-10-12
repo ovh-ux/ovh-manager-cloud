@@ -9,12 +9,12 @@
    <translation id="metrics_table_name" qtlid="3818">Nome</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
    <translation id="metrics_table_state" qtlid="33790">Estado</translation>
-   <translation id="metrics_table_action" qtlid="56105">Acção</translation>
+   <translation id="metrics_table_action" qtlid="56105">Ação</translation>
 
    <translation id="metrics_token_state_active" qtlid="55133">Ativo</translation>
    <translation id="metrics_token_state_inactive" qtlid="105310">Inativo</translation>
 
-   <translation id="metrics_token_explain" qtlid="439918">Les tokens sécurisent l'accès à vos données de séries temporelles. Chaque token définit des permissions, et peut éventuellement comporter des "labels" (couple 'clé, valeur'). Les labels sont automatiquement ajoutés comme filtre à la lecture, et attachés à chaque donnée écrite avec le token portant ces labels. Pour plus d'information <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
+   <translation id="metrics_token_explain" qtlid="439918">Os tokens protegem o acesso aos dados de séries temporais. Cada token define as permissões e pode incluir labels ou «etiquetas» (par "chave"-"valor"). Estas etiquetas são adicionadas automaticamente como filtro durante o processo de leitura, e associadas a cada dado escrito. Para mais informação <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
 <!-- Page: token -->
    <translation id="metrics_token_permission_read" qtlid="6958">Leitura </translation>
    <translation id="metrics_token_permission_write" qtlid="301565">Escrita</translation>
@@ -31,8 +31,8 @@
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
    <translation id="metrics_token_id" qtlid="46792">Identificador</translation>
    <translation id="metrics_token_show_preview" qtlid="433371">Ver pré-visualização</translation>
-   <translation id="metrics_token_preview_title" qtlid="439931">Aperçu du token</translation>
-   <translation id="metrics_token_show_revoked" qtlid="403424">Mostrar os revogados</translation>
+   <translation id="metrics_token_preview_title" qtlid="439931">Pre-visualização do token</translation>
+   <translation id="metrics_token_show_revoked" qtlid="403424">Mostrar token revogados</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Modificar</translation>
    <translation id="metrics_token_edit_title" qtlid="415870">Modificar o token</translation>
@@ -40,13 +40,13 @@
    <translation id="metrics_token_edit_cancel" qtlid="37863">Anular</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Modificar</translation>
 
-   <translation id="metrics_token_delete_title" qtlid="439944">Supprimer le token</translation>
-   <translation id="metrics_token_delete_message" qtlid="415896">Têm a certeza de que deseja eliminar o token?</translation>
+   <translation id="metrics_token_delete_title" qtlid="439944">Eliminar o token</translation>
+   <translation id="metrics_token_delete_message" qtlid="415896">Quer mesmo eliminar o token?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token criado</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token revogado</translation>
    <translation id="metrics_token_updated" qtlid="403476">Token atualizado</translation>
-   <translation id="metrics_token_err_get" qtlid="403489">Erro aquando da recuperação dos tokens</translation>
-   <translation id="metrics_token_err_create" qtlid="403502">Erro aquando da criação do token</translation>
-   <translation id="metrics_token_err_revoke" qtlid="403515">Erro aquando da revogação do token</translation>
-   <translation id="metrics_token_err_update" qtlid="403528">Erro aquando da atualização do token</translation>
+   <translation id="metrics_token_err_get" qtlid="403489">Erro durante a recuperação dos tokens</translation>
+   <translation id="metrics_token_err_create" qtlid="403502">Erro durante a criação do token</translation>
+   <translation id="metrics_token_err_revoke" qtlid="403515">Erro durante a revogação do token</translation>
+   <translation id="metrics_token_err_update" qtlid="403528">Erro durante a atualização do token</translation>
 </translations>
