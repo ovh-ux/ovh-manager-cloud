@@ -2,8 +2,8 @@
 <translations>
    <translation id="iplb_back_home" qtlid="4118">Takaisin</translation>
 
-   <translation id="iplb_guides">Guides</translation>
-   <translation id="iplb_guides_title">IPLB</translation>
+   <translation id="iplb_guides" qtlid="300370">Oppaat</translation>
+   <translation id="iplb_guides_title" qtlid="247105">LBIP</translation>
    <translation id="iplb_guide_footer" qtlid="406905">Kaikki OVH:n ohjeet</translation>
 
    <translation id="iplb_tab_home" qtlid="27643">Etusivu</translation>

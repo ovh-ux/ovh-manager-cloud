@@ -2,8 +2,8 @@
 <translations>
    <translation id="iplb_back_home" qtlid="4118">Volver</translation>
 
-   <translation id="iplb_guides">Guides</translation>
-   <translation id="iplb_guides_title">IPLB</translation>
+   <translation id="iplb_guides" qtlid="300370">Guías</translation>
+   <translation id="iplb_guides_title" qtlid="247105">IPLB</translation>
    <translation id="iplb_guide_footer" qtlid="406905">Todas las guías de OVH</translation>
 
    <translation id="iplb_tab_home" qtlid="27643">Inicio</translation>
@@ -43,7 +43,7 @@
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Se ha producido un error al cargar las granjas de servidores.</translation>
    <translation id="iplb_farm_server_list_loading_error" qtlid="439507">Se ha producido un error al cargar los servidores de la granja.</translation>
 
-   <translation id="iplb_ipfo_select_placeholder" qtlid="8674">Ninguno </translation>
+   <translation id="iplb_ipfo_select_placeholder" qtlid="8674">Ninguno</translation>
 
    <translation id="iplb_zone_select_placeholder" qtlid="17923">Seleccionar</translation>
    <translation id="iplb_zone_all" qtlid="439520">Todos (ALL)</translation>
