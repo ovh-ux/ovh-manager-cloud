@@ -68,7 +68,7 @@
    <translation id="iplb_farm_edit_probe_pattern" qtlid="438064">Pattern</translation>
    <translation id="iplb_farm_edit_probe_interval" qtlid="438077">Interval</translation>
    <translation id="iplb_farm_edit_probe_negate" qtlid="438090">Inverser</translation>
-   <translation id="iplb_farm_edit_probe_type_" qtlid="440947">Aucune (female french to male deustch)</translation>
+   <translation id="iplb_farm_edit_probe_type_" qtlid="440947">Aucune</translation>
    <translation id="iplb_farm_edit_probe_type_http" qtlid="19639">HTTP</translation>
    <translation id="iplb_farm_edit_probe_type_mysql" qtlid="196894">MySQL</translation>
    <translation id="iplb_farm_edit_probe_type_oco" qtlid="438103">OCO</translation>
