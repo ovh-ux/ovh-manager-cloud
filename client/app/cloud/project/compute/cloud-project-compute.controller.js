@@ -101,8 +101,7 @@ class CloudProjectComputeCtrl {
             return augmentedMessage;
         }
         augmentedMessage.link = {};
-        const linkURL = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
-        augmentedMessage.link.action = () => this.$window.open(linkURL, "_blank");
+        augmentedMessage.link.value = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
         if (message.hasLinkText) {
             augmentedMessage.link.text = this.$translate.instant(`${message.messageId}_link`);
         } else {
