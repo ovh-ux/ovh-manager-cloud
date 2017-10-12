@@ -1,5 +1,5 @@
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureOverviewCtrl",
-function (URLS, OvhApiMe, $state, $stateParams, $q, $translate, CloudUserPref, Toast) {
+function (URLS, OvhApiMe, $state, $stateParams, $q, $translate, CloudUserPref, CloudMessage) {
     "use strict";
 
     var self = this;
@@ -32,7 +32,7 @@ function (URLS, OvhApiMe, $state, $stateParams, $q, $translate, CloudUserPref, T
             maybeSaveToCache = CloudUserPref.set("cloud_project_" + serviceName + "_overview", {
                 hide: true
             })["catch"](function (err) {
-                Toast.error([$translate.instant("infra_overview_tips_never_again_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("infra_overview_tips_never_again_error"), err.data && err.data.message || ""].join(" "));
             });
         }
         return maybeSaveToCache.then(function () {

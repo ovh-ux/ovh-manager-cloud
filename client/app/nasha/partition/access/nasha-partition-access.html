@@ -1,62 +1,62 @@
 <div class="top-space-m20 bottom-space-m20 nasha-partition nasha-partition-access">
     <div>
-        <a class="nasha__link btn btn-back f14 top-space-m4" ui-sref="paas.nasha.nasha-partitions">
-            <i class="fa fa-angle-left right-space-m8"></i>
-            {{ "nasha_access_back_to_partitions" | translate }}
+        <a class="oui-button oui-button_link oui-button_icon-left" ui-sref="paas.nasha.nasha-partitions">
+            <i class="oui-icon oui-icon-chevron-left" aria-hidden="true"></i>{{ "nasha_access_back_to_partitions" | translate }}
         </a>
 
         <h3 class="bottom-space-m12" data-translate="nasha_partitions_action_change_access"></h3>
 
         <h4 class="bottom-space-m8" data-translate="nasha_access_partition" data-translate-values="{partitionName: NashaPartitionAccessCtrl.data.partition.partitionName}"></h4>
 
-        <button type="button" class="btn btn-primary fs14 bottom-space-m12 top-space-m4" data-ng-disabled="NashaPartitionAccessCtrl.loaders.table" data-ng-click="NashaPartitionAccessCtrl.addAccess()">
-            <i class="glyphicon glyphicon-plus right-space-m8"></i>
-            {{ "nasha_access_action_add" | translate }}
-        </button>
+        <button type="button"
+            class="oui-button oui-button_secondary"
+            data-ng-disabled="NashaPartitionAccessCtrl.loaders.table"
+            data-ng-click="NashaPartitionAccessCtrl.addAccess()"
+            data-translate="nasha_access_action_add"></button>
 
-        <div class="table-responsive-vertical">
-            <table class="table table-pretty table-hover table-striped shadow-z-1">
-                <thead>
-                    <th data-translate="nasha_access_ip" class="left-space-p12"></th>
-                    <th data-translate="nasha_partitions_access_permissions" class="left-space-p12"></th>
-                    <th class="center table-header">
-                        <button class="no-style pull-right table-header-action"
-                                title="{{ 'common_refresh' | translate }}"
-                                data-ng-disabled="NashaPartitionAccessCtrl.loaders.table"
-                                data-ng-click="NashaPartitionAccessCtrl.load(true)">
-                            <i class="fa fa-refresh fs14"></i>
-                        </button>
-                    </th>
-                </thead>
+        <table class="oui-table">
+            <thead class="oui-table__headers">
+                <th class="oui-table__header" data-translate="nasha_access_ip" class="left-space-p12"></th>
+                <th class="oui-table__header" data-translate="nasha_partitions_access_permissions" class="left-space-p12"></th>
+                <th class="oui-table__header text-right">
+                    <button class="no-style table-header-action"
+                            title="{{ 'common_refresh' | translate }}"
+                            data-ng-disabled="NashaPartitionAccessCtrl.loaders.table"
+                            data-ng-click="NashaPartitionAccessCtrl.load(true)">
+                        <i class="fa fa-refresh fs14"></i>
+                    </button>
+                </th>
+            </thead>
 
-                <tbody class="table-body" data-ng-if="!NashaPartitionAccessCtrl.loaders.table && NashaPartitionAccessCtrl.table.accessIps.length === 0 && NashaPartitionAccessCtrl.data.addAccessInProgress.length === 0">
+            <tbody class="oui-table__body" data-ng-if="!NashaPartitionAccessCtrl.loaders.table && NashaPartitionAccessCtrl.table.accessIps.length === 0 && NashaPartitionAccessCtrl.data.addAccessInProgress.length === 0">
                 <tr>
                     <td colspan="3" class="center"><span data-translate="nasha_partition_access_no_data"></span></td>
                 </tr>
-                </tbody>
+            </tbody>
 
-                <tbody class="table-body" data-ng-if="NashaPartitionAccessCtrl.loaders.table">
+            <tbody class="oui-table__body" data-ng-if="NashaPartitionAccessCtrl.loaders.table">
                 <tr>
-                    <td colspan="3" class="text-center"><spinner data-ng-show="NashaPartitionAccessCtrl.loaders.table"></spinner></td>
+                    <td colspan="3" class="text-center">
+                        <oui-loader class="d-inline-block"></oui-loader>
+                    </td>
                 </tr>
-                </tbody>
+            </tbody>
 
-                <tbody class="table-body" data-ng-hide="NashaPartitionAccessCtrl.loaders.table">
-                <tr data-ng-repeat="access in NashaPartitionAccessCtrl.table.accessDetails">
-                    <td data-title="{{ 'nasha_access_ip' | translate }}" data-ng-bind="access.ip" class="left-space-p12"></td>
-                    <td data-title="{{ 'nasha_partitions_access_permissions' | translate }}" class="left-space-p12">
+            <tbody class="oui-table__body" data-ng-hide="NashaPartitionAccessCtrl.loaders.table">
+                <tr class="oui-table__row" data-ng-repeat="access in NashaPartitionAccessCtrl.table.accessDetails">
+                    <td class="oui-table__cell" data-title="{{ 'nasha_access_ip' | translate }}" data-ng-bind="access.ip"></td>
+                    <td class="oui-table__cell" data-title="{{ 'nasha_partitions_access_permissions' | translate }}">
                         <span data-ng-if="access.type">{{ 'nasha_partitions_access_' + access.type | translate }}</span>
                     </td>
-                    <td data-title="{{ 'common_actions' | translate }}">
-                        <spinner data-ng-show="NashaPartitionAccessCtrl.hasTaskInProgress(access)" class="left-space-m4"></spinner>
+                    <td class="oui-table__cell text-right" data-title="{{ 'common_actions' | translate }}">
+                        <oui-loader size="s" inline data-ng-show="NashaPartitionAccessCtrl.hasTaskInProgress(access)"></oui-loader>
                         <button type="button" title="{{'common_remove' | translate}}" class="no-style" data-ng-click="NashaPartitionAccessCtrl.removeAccess(access)" data-ng-hide="NashaPartitionAccessCtrl.hasTaskInProgress(access)">
                             <i class="ovh-font ovh-font-bin"></i>
                         </button>
                     </td>
                 </tr>
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
         <!-- PAGINATION TABLE -->
         <div class="table-pretty-pagination top-space-m12"
              data-ng-hide="NashaPartitionAccessCtrl.loaders.table"

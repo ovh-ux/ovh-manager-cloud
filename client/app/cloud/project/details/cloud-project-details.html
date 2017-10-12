@@ -2,7 +2,7 @@
 
     <!-- init loading... -->
     <div data-ng-if="CloudProjectDetailsCtrl.loaders.init" class="text-center" style="margin-top: 200px;">
-        <spinner size="28"></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
     <div class="col-xs-12 col-lg-10 col-lg-offset-1" style="margin-top: 150px;"
@@ -29,18 +29,18 @@
             <p class="text-muted fs10" data-translate="cpd_project_creating_bc_support"></p>
             <button type="button"
                     class="btn btn-primary"
-                    data-ng-disabled="CloudProjectDetailsCtrl.loaders.cancelCreation"
+                    data-ng-if="!CloudProjectDetailsCtrl.loaders.cancelCreation"
                     data-ng-click="CloudProjectDetailsCtrl.cancelProjectCreation()">
                 <i class="glyphicon glyphicon-remove"></i>
                 <span data-translate="cpd_project_creating_cancel"></span>
-                <spinner data-ng-if="CloudProjectDetailsCtrl.loaders.cancelCreation"></spinner>
             </button>
+            <oui-loader data-ng-if="CloudProjectDetailsCtrl.loaders.cancelCreation" size="m" class="d-inline-block"></oui-loader>
         </div>
 
         <!-- deleting -->
         <div data-ng-switch-when="deleting"
              class="text-center">
-            <spinner size="70" color="#5293D4" type="bubbles"></spinner>
+            <oui-loader size="s" class="d-inline-block"></oui-loader>
             <h2 data-translate="cpd_project_deleting"></h2>
             <p class="text-muted fs10" data-translate="cpd_project_deleting_help"></p>
         </div>

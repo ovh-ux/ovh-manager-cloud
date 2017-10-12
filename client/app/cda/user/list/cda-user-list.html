@@ -1,50 +1,51 @@
 <section>
     <header>
-        <p class="fs14" data-translate="cda_user_permission_definition"></p>
+        <p data-translate="cda_user_permission_definition"></p>
     </header>
     <div>
         <button type="button"
-                class="btn btn-primary bottom-space-m12 top-space-m4 fs14"
+                class="oui-button oui-button_secondary"
                 data-ng-click="CdaUserListCtrl.openAddModal()"
                 data-ng-if="!CdaUserListCtrl.loading">
-            <i class="glyphicon glyphicon-plus"></i>
             <span data-translate="cda_user_add_button_text"></span>
         </button>
     </div>
     <div class="text-center" data-ng-if="CdaUserListCtrl.loading">
-        <spinner name="bubbles-222-fff-32"></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <div class="table-responsive-vertical">
-        <table data-ng-if="!CdaUserListCtrl.loading" class="table table-pretty table-hover table-striped cda-table">
-            <thead>
+        <table data-ng-if="!CdaUserListCtrl.loading" class="oui-table oui-table_responsive">
+            <thead class="oui-table__headers">
                 <tr>
-                    <th class="cda-table-col-action">
+                    <th class="oui-table__header">
                         <span data-translate="cda_user_table_col_username"></span>
                     </th>
-                    <th class="cda-table-col-action">
+                    <th class="oui-table__header">
                         <span data-translate="cda_user_table_col_key"></span>
                     </th>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_user_table_col_pool"></span>
                     </th>
-                    <th class="cda-table-col-action"></th>
+                    <th class="oui-table__header"></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr data-ng-if="CdaUserListCtrl.datas.users.length" data-ng-repeat="user in CdaUserListCtrl.datas.paginatedUsers track by user.user.name">
-                    <td data-title="{{ 'cda_user_table_col_username' | translate }}">
+            <tbody class="oui-table__body">
+                <tr class="oui-table__row" data-ng-if="CdaUserListCtrl.datas.users.length" 
+                    data-ng-repeat="user in CdaUserListCtrl.datas.paginatedUsers track by user.user.name">
+                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_username' | translate }}">
                         <span data-ng-bind=" ::user.user.name"></span>
                     </td>
-                    <td data-title="{{ 'cda_user_table_col_key' | translate }}">
+                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_key' | translate }}">
                         <span data-ng-bind=" ::user.user.key"></span>
                     </td>
-                    <td data-title="{{ 'cda_user_table_col_pool' | translate }}">
+                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_pool' | translate }}">
                         <span data-ng-repeat="pool in user.pools | limitTo: CdaUserListCtrl.options.maxPoolDisplay track by pool.poolName">
                             {{ pool.poolName }}{{ !$last || CdaUserListCtrl.isTruncatedPoolArray(user.pools , $index) ? ',' : '' }}
                             <span data-ng-if="$last && CdaUserListCtrl.isTruncatedPoolArray(user.pools , $index)">...</span>
                         </span>
                     </td>
-                    <td  data-title="{{ 'cda_user_table_col_actions' | translate }}">
+                    <td data-title="{{ 'cda_user_table_col_actions' | translate }}"
+                        class="oui-table__cell oui-table__cell_action">
                         <div class="btn-group" dropdown data-on-toggle="toggled(open)">
                             <button type="button" class="no-style" data-toggle="dropdown" aria-expanded="false" data-uib-tooltip="{{:: 'cda_user_table_col_actions' | translate }}">
                                 <i class="fa fa-cog fs14"></i>
@@ -67,8 +68,9 @@
                         </div>
                     </td>
                 </tr>
-                <tr data-ng-if="!CdaUserListCtrl.datas.users.length">
-                    <td colspan="4">
+                <tr data-ng-if="!CdaUserListCtrl.datas.users.length"
+                    class="oui-table__row">
+                    <td colspan="4" class="oui-table__cell">
                         <span data-translate="cda_user_table_empty"></span>
                     </td>
                 </tr>

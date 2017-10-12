@@ -19,6 +19,23 @@
     background-color: @page-header-background-color;
     font-size: @default-font-size;
 
+    @media (max-width: 1280px) {
+      padding: @spacing-top @spacing-side_s;
+    }
+  }
+
+  &__content {
+    display: block;
+    padding: @spacing-top @spacing-side_l;
+    font-size: @default-font-size;
+
+    @media (max-width: 1280px) {
+      padding: @spacing-top @spacing-side_s;
+    }
+  }
+}
+
+.cui-page-header {
     &__title {
       margin: 0;
       color: @oui-color-sapphire;
@@ -35,19 +52,4 @@
       font-size: inherit;
       font-weight: 300;
     }
-
-    @media (max-width: 1280px) {
-      padding: @spacing-top @spacing-side_s;
-    }
-  }
-
-  &__content {
-    display: block;
-    padding: @spacing-top @spacing-side_l;
-    font-size: @default-font-size;
-
-    @media (max-width: 1280px) {
-      padding: @spacing-top @spacing-side_s;
-    }
-  }
 }

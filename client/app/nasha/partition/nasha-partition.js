@@ -12,6 +12,7 @@ angular.module("managerApp")
                         controllerAs: "PartitionCtrl"
                     }
                 },
+                onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: [
                     "common",
                     "nasha/partition",

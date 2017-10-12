@@ -1,9 +1,14 @@
 <h2 class="vrack__section-title" data-translate="vrack_your_vrack"></h2>
 <ul class="vrack__service-type-list">
+    <li class="vrack__section-type" data-ng-if="VrackCtrl.loaders.adding">
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+    </li>
     <li class="vrack__service-type"
         data-ng-init="VrackCtrl.setAccordionState('mapped', 'types', $index, true)"
         data-ng-repeat="(serviceType, services) in VrackCtrl.data.vrackServices track by serviceType"
-        data-ng-if="VrackCtrl.hasServices(services)"
+        data-ng-if="VrackCtrl.hasServices(services) && !VrackCtrl.loaders.adding"
         data-ng-class="{ 'vrack__service-type_expanded': VrackCtrl.getAccordionState('mapped', 'types', $index) }">
         <span class="vrack__service-type-name"
               data-ng-click="VrackCtrl.toggleAccordion('mapped', 'types', $index)">
@@ -18,14 +23,12 @@
             {{ ::VrackCtrl.getDisplayName(serviceType) }}
         </span>
 
+
         <ul class="vrack__service-list" data-ng-if="!VrackCtrl.vrackService.isGroupedServiceType(serviceType)">
             <li class="vrack__service vrack__service_selectable"
                 data-ng-repeat="service in services | orderBy: service.niceName track by service.id"
                 data-ng-click="VrackCtrl.toggleDeleteService(service.trueServiceType, service.id)"
                 data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(service.trueServiceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
-                <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
-                   data-ng-if="VrackCtrl.isPending(service.id)">
-                </i>
                 {{ ::service.niceName }}
             </li>
         </ul>
@@ -44,9 +47,6 @@
                     <li class="vrack__service vrack__service_selectable"
                         data-ng-click="VrackCtrl.toggleDeleteService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
-                        <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
-                           data-ng-if="VrackCtrl.isPending(service.id)">
-                        </i>
                         {{ ::'vrack_private_cloud_vm_network_label' | translate }}
                     </li>
                 </ul>
@@ -68,9 +68,6 @@
                         data-ng-click="VrackCtrl.toggleMoveService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.moving }"
                         data-ng-repeat="service in datacenters track by service.datacenter">
-                        <i class="vrack__spinner fa fa-fw fa-spin fa-circle-o-notch"
-                           data-ng-if="VrackCtrl.isPending(service.id)">
-                        </i>
                         {{ ::service.niceName }}
                     </li>
                 </ul>

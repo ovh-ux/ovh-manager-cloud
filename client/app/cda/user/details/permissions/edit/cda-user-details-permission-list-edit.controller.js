@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserDetailsPermissionListEditCtrl", function ($q, $stateParams, $translate, $state, Toast, OvhApiDedicatedCeph, CdaUserPermissionService) {
+  .controller("CdaUserDetailsPermissionListEditCtrl", function ($q, $stateParams, $translate, $state, CloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
       "use strict";
 
       var self = this;
@@ -78,7 +78,7 @@ angular.module("managerApp")
           }, {
               permissions: permissionsToSave
           }).$promise.then(function () {
-              Toast.success($translate.instant("cda_user_details_permissions_list_edit_success"));
+              CloudMessage.success($translate.instant("cda_user_details_permissions_list_edit_success"));
               $state.go(self.states.permissionList);
           }).catch(function (error) {
               displayError(error);
@@ -92,7 +92,7 @@ angular.module("managerApp")
       }
 
       function displayError (error) {
-          Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+          CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
       }
 
       init();

@@ -25,6 +25,8 @@ angular.module("managerApp").controller("RA.storageAddCtrl",
             value: "storage"
         };
 
+        $scope.contentTitle = $translate.instant("add_title") + " " + $translate.instant("add_storage").toLowerCase();
+
         $scope.$on("reload-add", function () {
             $scope.init();
         });

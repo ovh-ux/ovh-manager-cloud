@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, Toast, $stateParams, ovhDocUrl) {
+  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, ControllerHelper, CloudMessage, $stateParams, ovhDocUrl) {
 
     var self = this,
         serviceName = $stateParams.projectId;
@@ -75,14 +75,6 @@ angular.module("managerApp")
         }
     }
 
-    self.toggleSearchBar = function () {
-        if (!self.search.open) {
-            initSearchBar();
-        }
-
-        self.search.open = !self.search.open;
-    };
-
     function isSshKeyMatchSearchCriterias(sshKey) {
         if (self.search.name && sshKey.name) {
             return sshKey.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
@@ -93,10 +85,7 @@ angular.module("managerApp")
 
     function filterSshKeys () {
         if ($scope.searchSshKeysForm && $scope.searchSshKeysForm.$valid) {
-            var filteredKeys = self.table.ssh;
-            if (self.search.open) {
-                filteredKeys = _.filter(self.table.ssh, isSshKeyMatchSearchCriterias);
-            }
+            var filteredKeys = _.filter(self.table.ssh, isSshKeyMatchSearchCriterias);
 
             self.table.sshKeysFilter = filteredKeys;
 
@@ -152,7 +141,7 @@ angular.module("managerApp")
                 filterSshKeys();
             }, function (err){
                 self.table.ssh = null;
-                Toast.error( [$translate.instant('cpc_ssh_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_ssh_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.ssh = false;
             });
@@ -166,7 +155,7 @@ angular.module("managerApp")
             });
 
             if (uniq) {
-                Toast.error( $translate.instant('cpc_ssh_add_submit_name_error'));
+                CloudMessage.error( $translate.instant('cpc_ssh_add_submit_name_error'));
                 return;
             }
 
@@ -174,27 +163,32 @@ angular.module("managerApp")
             OvhApiCloudProjectSshKey.Lexi().save(self.sshAdd).$promise.then(function () {
                 self.toggleAddSshKey();
                 self.getSshKeys(true);
-                Toast.success($translate.instant('cpc_ssh_add_submit_success'));
+                CloudMessage.success($translate.instant('cpc_ssh_add_submit_success'));
             }, function (err){
-                Toast.error( [$translate.instant('cpc_ssh_add_submit_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_ssh_add_submit_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.add.ssh = false;
             });
         }
     };
 
-    self.deleteSshKey = function (sshKey) {
-        if (!self.loaders.remove.ssh) {
-            self.loaders.remove.ssh = true;
-            OvhApiCloudProjectSshKey.Lexi().remove({serviceName : serviceName, keyId: sshKey.id}).$promise.then(function () {
+    self.openDeleteSshKey = function (sshKey) {
+        ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/cloud/project/compute/ssh/delete/compute-ssh-delete.html",
+                controller: "CloudProjectComputeSshDeleteCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    sshKey: () => sshKey
+                }
+            },
+            successHandler: () => {
                 self.getSshKeys(true);
-                Toast.success($translate.instant('cpc_ssh_delete_success'));
-            }, function (err){
-                Toast.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.ssh = false;
-            });
-        }
+                CloudMessage.success($translate.instant('cpc_ssh_delete_success'));
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '))
+        });
     };
 
     init();

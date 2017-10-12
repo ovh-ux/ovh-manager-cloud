@@ -5,18 +5,6 @@
 @vrack-spinner-size: 1.6rem;
 @vrack-spinner-size_mapper: 2.2rem;
 
-/* vRack - Header - Title */
-@vrack-header-title-font-size: 3.8rem;
-@vrack-header-title-font-weight: 300;
-@vrack-header-title-font-color: #122844;
-
-@vrack-header-sub-title-font-size: 1.2rem;
-@vrack-header-sub-title-font-weight: 200;
-@vrack-header-sub-title-font-color: #122844;
-
-/* vRack - Header - Guide Link */
-@vrack-header-guide-link-font-color: #59697d;
-
 /* vRack - Section - Title */
 @vrack-section-title-font-size: 2.6rem;
 @vrack-section-title-font-weight: 300;
@@ -43,11 +31,8 @@
             text-align: center;
             font-size: @vrack-spinner-size_mapper;
             margin-top: 3rem;
+            margin-bottom: 3rem;
         }
-    }
-
-    &__spinner-message {
-        margin-top: 1rem;
     }
 
     &__header {
@@ -57,35 +42,6 @@
         background-color: @vrack-header-background-color;
         padding-bottom: 2rem;
         margin: 0;
-
-        &-title {
-            font-size: @vrack-header-title-font-size;
-            font-weight: @vrack-header-title-font-weight;
-            color: @vrack-header-title-font-color;
-            margin: 0;
-        }
-
-        &-sub-title {
-            font-size: @vrack-header-sub-title-font-size;
-            font-weight: @vrack-header-sub-title-font-weight;
-            color: @vrack-header-sub-title-font-color;
-            margin: 0;
-            display: block;
-        }
-
-        &-guide-link {
-            margin-left: auto;
-            color: @vrack-header-guide-link-font-color;
-            font-size: 1.4rem;
-        }
-
-        &-guide-link:hover {
-            text-decoration: none;
-        }
-
-        &-guide-link-icon {
-            padding-right: 0.5rem;
-        }
     }
 
     &__error-list,
@@ -107,6 +63,7 @@
 
     &__edit-button {
         font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
 
     &__edit-input {

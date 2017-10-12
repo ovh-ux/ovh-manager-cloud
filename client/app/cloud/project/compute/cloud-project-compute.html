@@ -1,50 +1,26 @@
 <div class="cloud-project-compute">
     <!-- init loading... -->
     <div data-ng-if="CloudProjectComputeCtrl.loading" class="text-center" style="margin-top: 200px;">
-        <spinner name="bubbles-222-fff-32"></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <div class="cloud-project-compute-content" data-ng-if="!CloudProjectComputeCtrl.loading">
-        <div class="cloud-compute-tabs-ctnr">
-            <responsive-tabs>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::CloudProjectComputeCtrl.getRouteContext() + '.infrastructure'}}"
-                    dropdown-title="{{'cpc_tab_infra'|translate}}"
-                    data-ng-if="!redirectToOverview">
-                    <i class="ovh-font ovh-font-infrastructure"></i>
-                    <span translate="cpc_tab_infra"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::CloudProjectComputeCtrl.getRouteContext() + '.snapshot'}}"
-                    dropdown-title="{{'cpc_tab_snapshot'|translate}}"
-                    data-ng-if="!redirectToOverview">
-                    <i class="ovh-font ovh-font-serverSave"></i>
-                    <span translate="cpc_tab_snapshot"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::CloudProjectComputeCtrl.getRouteContext() + '.volume'}}"
-                    dropdown-title="{{'cpc_tab_volume'|translate}}"
-                    title="{{:: 'cpc_tab_volume'|translate }}"
-                    data-ng-if="!redirectToOverview">
-                    <i class="ovh-font ovh-font-harddisk"></i>
-                    <span translate="cpc_tab_volume"></span>
-                </responsive-tab>
-                <responsive-tab
-                    class="cloud-compute-tabs-item"
-                    state="{{::CloudProjectComputeCtrl.getRouteContext() + '.ssh'}}"
-                    dropdown-title="{{'cpc_tab_ssh'|translate}}"
-                    data-ng-if="!redirectToOverview">
-                    <i class="ovh-font ovh-font-key"></i>
-                    <span translate="cpc_tab_ssh"></span>
-                </responsive-tab>
-                <responsive-tab-more class="cloud-compute-tabs-item">
-                    <i class="fa fa-plus"></i>
-                    <span>...</span>
-                </responsive-tab-more>
-            </responsive-tabs>
-        </div>
+        <cui-page-header data-cloud-project-title="CloudProjectComputeCtrl.serviceName"
+                         data-subtitle-text="CloudProjectComputeCtrl.serviceName">
+            <cui-tabs>
+                <cui-tab data-text="'cpc_tab_infra'|translate"
+                         data-state="iaas.pci-project.compute.infrastructure"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_snapshot'|translate"
+                         data-state="iaas.pci-project.compute.snapshot"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_volume'|translate"
+                         data-state="iaas.pci-project.compute.volume"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+                <cui-tab data-text="'cpc_tab_ssh'|translate"
+                         data-state="iaas.pci-project.compute.ssh"
+                         data-state-params="{ serviceName: CloudProjectComputeCtrl.serviceName }"></cui-tab>
+            </cui-tabs>
+        </cui-page-header>
 
         <div class="cloud-compute-content-ctnr-responsive">
             <div class="cloud-compute-message-container">

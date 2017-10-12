@@ -1,31 +1,32 @@
 <div class="table-responsive-vertical">
-    <table class="table table-pretty table-hover table-striped no-space table-relative">
-        <thead>
+    <table class="oui-table oui-table_responsive">
+        <thead class="oui-table__headers">
             <tr>
-                <th>
+                <th class="oui-table__header">
                     <span data-translate="cda_task_table_col_id"></span>
                 </th>
-                <th>
+                <th class="oui-table__header">
                     <span data-translate="cda_task_table_col_name"></span>
                 </th>
-                <th>
+                <th class="oui-table__header">
                     <span data-translate="cda_task_table_col_processing"></span>
                 </th>
             </tr>
         </thead>
-        <tbody>
-            <tr data-ng-if="$ctrl.tasks.length" data-ng-repeat="task in $ctrl.tasks track by task.id">
-                <td data-title="{{ 'cda_task_table_col_id' | translate }}">
+        <tbody class="oui-table__body">
+            <tr class="oui-table__row" data-ng-if="$ctrl.tasks.length" data-ng-repeat="task in $ctrl.tasks track by task.id">
+                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_id' | translate }}">
                     <span data-ng-bind=" ::task.id"></span>
                 </td>
-                <td data-title="{{ 'cda_task_table_col_name' | translate }}">
+                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_name' | translate }}">
                     <span data-ng-bind=" ::task.name"></span>
                 </td>
-                <td data-title="{{ 'cda_task_table_col_processing' | translate }}">
-                    <uib-progressbar value="100" class="progress-striped active">
+                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_processing' | translate }}">
+                    <div class="oui-progress oui-progress_info oui-progress_indeterminate" 
+                         role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 </td>
             </tr>
-            <tr data-ng-if="!$ctrl.tasks.length">
+            <tr class="oui-table__row" data-ng-if="!$ctrl.tasks.length">
                 <td colspan="3">
                     <span data-translate="cda_task_table_empty"></span>
                 </td>

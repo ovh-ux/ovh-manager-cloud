@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($scope, $state, $stateParams, $translate, $uibModal, $q, OvhApiDedicatedNasha, Poller, Toast) {
+angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($scope, $state, $stateParams, $translate, $uibModal, $q, OvhApiDedicatedNasha, Poller, CloudMessage) {
     "use strict";
 
     var self = this;
@@ -37,7 +37,7 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
                 self.table.refresh = !self.table.refresh;
             }
         }).catch(function (err) {
-            Toast.error($translate.instant("nasha_partitions_access_no_data_error"));
+            CloudMessage.error($translate.instant("nasha_partitions_access_no_data_error"));
             return $q.reject(err);
         }).finally(function () {
             self.loaders.table = false;

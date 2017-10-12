@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="preload_welcome" qtlid="433576">Bienvenue sur votre</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">Espace client OVH</translation>
+   
    <translation id="common_confirm" qtlid="31498">Confirmer</translation>
    <translation id="common_buy" qtlid="269591">Acheter</translation>
    <translation id="common_required_field" qtlid="250017">Information requise</translation>

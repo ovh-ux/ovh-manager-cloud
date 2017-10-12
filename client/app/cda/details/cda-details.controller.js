@@ -1,34 +1,45 @@
 angular.module("managerApp")
-  .controller("CdaDetailsCtrl", function ($q, $stateParams, $translate, ovhDocUrl, URLS, CdaService) {
-      "use strict";
+  .controller("CdaDetailsCtrl", function ($q, $stateParams, $translate, ovhDocUrl, URLS, CdaService, CloudMessage) {
+    "use strict";
 
-      var self = this;
+    var self = this;
 
-      self.CdaService = CdaService;
+    self.CdaService = CdaService;
+    self.serviceName = "";
+    self.messages = [];
 
-      self.serviceName = "";
+    self.loading = true;
 
-      self.loading = true;
-
-      self.guides = {
-          title: $translate.instant("cda_guide_title"),
-          list: [{
+    self.guides = {
+        title: $translate.instant("cda_guide_title"),
+        list: [{
                     name: $translate.instant("cda_guide_name"),
                     url: ovhDocUrl.getDocUrl("cloud/storage/ceph")
-                  }],
-          footer: $translate.instant("cda_guide_footer")
+                }],
+        footer: $translate.instant("cda_guide_footer")
 
-      }
+    }
 
-      function init () {
-          self.loading = true;
-          self.serviceName = $stateParams.serviceName;
+     self.refreshMessage = function () {
+        self.messages = self.messageHandler.getMessages();
+    }
 
-          var initQueue = [];
-          $q.allSettled(initQueue).finally(function () {
-              self.loading = false;
-          });
-      }
+    self.loadMessage = function () {
+        CloudMessage.unSubscribe("paas.cda");
+        self.messageHandler = CloudMessage.subscribe("paas.cda", { onMessage: () => self.refreshMessage() });
+    }
 
-      init();
+    function init () {
+        self.loading = true;
+        self.serviceName = $stateParams.serviceName;
+
+        self.loadMessage();
+
+        var initQueue = [];
+        $q.allSettled(initQueue).finally(function () {
+            self.loading = false;
+        });
+    }
+
+    init();
   });

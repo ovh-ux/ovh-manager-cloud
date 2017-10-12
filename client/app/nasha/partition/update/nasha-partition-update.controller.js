@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($stateParams, $scope, $uibModalInstance, $translate, OvhApiDedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($stateParams, $scope, $uibModalInstance, $translate, OvhApiDedicatedNasha, CloudMessage) {
     "use strict";
     var self = this;
     self.loading = false;
@@ -28,10 +28,10 @@ angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($s
             size: self.data.newSize
         }).$promise.then(function () {
             getTaskInTodoAndClose();
-            Toast.success($translate.instant("nasha_partitions_action_update_success", { partitionName: self.data.partition.partitionName }));
+            CloudMessage.success($translate.instant("nasha_partitions_action_update_success", { partitionName: self.data.partition.partitionName }));
         }).catch(function () {
             $uibModalInstance.dismiss();
-            Toast.error($translate.instant("nasha_partitions_action_update_failure", { partitionName: self.data.partition.partitionName }));
+            CloudMessage.error($translate.instant("nasha_partitions_action_update_failure", { partitionName: self.data.partition.partitionName }));
         }).finally(function () {
             self.loading = false;
         });

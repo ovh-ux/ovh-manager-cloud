@@ -1,18 +1,26 @@
-<div class="modal-header">
-    <h3 class="modal-title" data-translate="cpciif_buy_title"></h3>
-</div>
+<form name="sizeForm" novalidate  class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CPCIIpFailoverBuyCtrl.cancel()"></button>
+    </div>
 
-<div class="modal-body">
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text" data-ng-if="CPCIIpFailoverBuyCtrl.loaders.init || CIIpFailoverBuyCtrl.loaders.buying">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+        </div>
+        <div class="oui-modal__body-text" data-ng-if="!CPCIIpFailoverBuyCtrl.loaders.init && !CIIpFailoverBuyCtrl.loaders.buying">
+            <h2 class="oui-modal__title" data-translate="cpciif_buy_title"></h2>
+            <div class="oui-modal__body-title" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
+                <p class="oui-modal__text">
+                    <i class="fa fa-info-circle"></i>
+                    <span data-translate="cpciif_buy_cloud_info"></span>
+                </p>
 
-    <form name="sizeForm" novalidate class="ovh-form-flat" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
-        <p class="text-info bottom-space-m20">
-            <i class="fa fa-info-circle right-space-m4"></i>
-            {{ :: 'cpciif_buy_cloud_info' | translate }}
-        </p>
-        <p>{{ 'cpciif_buy_quantity_select' | translate}}</p>
-        <div flat-input-container class="input-group col-xs-12" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
-            <input type="number"
-                   class="form-control"
+                <label for="quantity" class="oui-label" data-translate="cpciif_buy_quantity_select"></label>
+                <input type="number" name="quantity" id="quantity"
+                   class="oui-input"
                    data-ng-model="CPCIIpFailoverBuyCtrl.form.quantity"
                    data-ng-model-options="{ debounce: 500 }"
                    data-ng-change="CPCIIpFailoverBuyCtrl.form.quantityChanged()"
@@ -20,85 +28,74 @@
                    data-ng-disabled="CPCIIpFailoverBuyCtrl.loaders.billingInfo"
                    min="1"
                    max="{{CPCIIpFailoverBuyCtrl.form.maxIp}}">
-            </input>
-            <p class="small top-space-m4 pull-right" data-ng-if="sizeForm.$invalid" data-translate="cpciif_buy_limit_info" data-translate-values="{ ips : CPCIIpFailoverBuyCtrl.form.maxIp}"></p>
+                <p class="oui-modal__text" data-ng-if="sizeForm.$invalid" data-translate="cpciif_buy_limit_info" data-translate-values="{ ips : CPCIIpFailoverBuyCtrl.form.maxIp}"></p>
+
+                <div class="oui-field">
+                    <label for="instance" class="oui-field__label oui-label">{{ 'cpciif_buy_instance_select' + (CPCIIpFailoverBuyCtrl.form.quantity > 1 ? '_plural' : '') | translate }}</label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <label class="oui-select">
+                                <select data-ng-options="instance.name for instance in CPCIIpFailoverBuyCtrl.form.instances"
+                                    data-ng-model="CPCIIpFailoverBuyCtrl.form.instance"
+                                    data-ng-change="CPCIIpFailoverBuyCtrl.form.instanceChanged()"
+                                    data-ng-disabled="CPCIIpFailoverBuyCtrl.loaders.billingInfo"
+                                    class="oui-select__input"
+                                    name="instance" id="instance">
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <div class="oui-field-helper text-danger"
+                             data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp <= 0 && !CPCIIpFailoverBuyCtrl.loaders.init">
+                            {{:: 'cpciif_buy_no_instance' | translate }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="oui-field" data-ng-if="CPCIIpFailoverBuyCtrl.form.instance">
+                    <label for="country" class="oui-field__label oui-label">{{ 'cpciif_buy_country_select' + (CPCIIpFailoverBuyCtrl.form.quantity > 1 ? '_plural' : '') | translate}}</label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <label class="oui-select">
+                                <select data-ng-options="country as countryTranslated(country) for country in CPCIIpFailoverBuyCtrl.form.countryEnum | orderBy:countryTranslated"
+                                    data-ng-model="CPCIIpFailoverBuyCtrl.form.country"
+                                    data-ng-change="CPCIIpFailoverBuyCtrl.form.countryChanged()"
+                                    data-ng-disabled="CPCIIpFailoverBuyCtrl.loaders.billingInfo"
+                                    class="oui-select__input">
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-modal_text" data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo"
+                     data-contracts="CPCIIpFailoverBuyCtrl.datas.billingInfo.contracts"
+                     data-full-text="false"
+                     data-contracts-validated="CPCIIpFailoverBuyCtrl.form.contractsAccepted">
+                </div>
+                <small class="opacity6"
+                   data-translate="cpciif_buy_price_tax_free"
+                   data-translate-values="{ price : CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax.text }"
+                   data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax">
+                </small>
+                <small class="opacity6"
+                       data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax">*</small>
+                <div class="oui-modal__text" data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax.text">
+                    <small>* </small><small data-translate="cpciif_buy_button_infos"></small>
+                 </div>
+            </div>
         </div>
-    </form>
-
-    <div class="top-space-m12" data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp > 0">
-        <p>{{ 'cpciif_buy_instance_select' + (CPCIIpFailoverBuyCtrl.form.quantity > 1 ? '_plural' : '') | translate }}</p>
-        <select data-ng-options="instance.name for instance in CPCIIpFailoverBuyCtrl.form.instances"
-            data-ng-model="CPCIIpFailoverBuyCtrl.form.instance"
-            data-ng-change="CPCIIpFailoverBuyCtrl.form.instanceChanged()"
-            data-ng-disabled="CPCIIpFailoverBuyCtrl.loaders.billingInfo"
-            class="form-control">
-        </select>
     </div>
 
-    <span class="text-danger"
-        data-ng-if="CPCIIpFailoverBuyCtrl.form.maxIp <= 0 && !CPCIIpFailoverBuyCtrl.loaders.init">
-        <i class="fa fa-warning right-space-m4"></i>{{:: 'cpciif_buy_no_instance' | translate }}
-    </span>
-
-    <spinner class="block text-center top-space-m8 bottom-space-m8" data-ng-show="CPCIIpFailoverBuyCtrl.loaders.init"></spinner>
-
-    <div class="top-space-m12" data-ng-if="CPCIIpFailoverBuyCtrl.form.instance">
-        <p>{{ 'cpciif_buy_country_select' + (CPCIIpFailoverBuyCtrl.form.quantity > 1 ? '_plural' : '') | translate}}</p>
-
-        <select data-ng-options="country as countryTranslated(country) for country in CPCIIpFailoverBuyCtrl.form.countryEnum | orderBy:countryTranslated"
-            data-ng-model="CPCIIpFailoverBuyCtrl.form.country"
-            data-ng-change="CPCIIpFailoverBuyCtrl.form.countryChanged()"
-            data-ng-disabled="CPCIIpFailoverBuyCtrl.loaders.billingInfo"
-            class="form-control">
-        </select>
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
+                data-ng-click="CPCIIpFailoverBuyCtrl.cancel()">
+            <span data-translate="common_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
+                data-ng-click="CPCIIpFailoverBuyCtrl.confirm()"
+                data-ng-disabled="!CPCIIpFailoverBuyCtrl.form.contractsAccepted || CPCIIpFailoverBuyCtrl.loaders.buying || !CPCIIpFailoverBuyCtrl.form.instance || !CPCIIpFailoverBuyCtrl.form.country || !CPCIIpFailoverBuyCtrl.datas.billingInfo || !(CPCIIpFailoverBuyCtrl.form.quantity >= 1)">
+            <span data-translate="cpciif_buy_button_generate_bc"></span>
+        </button>
     </div>
-
-    <spinner class="block text-center top-space-m12" data-ng-show="CPCIIpFailoverBuyCtrl.loaders.billingInfo"></spinner>
-
-    <!--<div class="top-space-m8" data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo">
-        <p>{{ 'cpciif_buy_services' | translate}}</p>
-        <ul>
-            <li data-ng-repeat="service in CPCIIpFailoverBuyCtrl.datas.billingInfo.details">
-                <span data-ng-bind="service.description" class="right-space-m8"></span>
-                <span class="bold red" data-ng-bind="service.totalPrice.text"></span><br/>
-            </li>
-        </ul>
-    </div>-->
-
-    <div class="row top-space-m20" data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo">
-        <div class="col-xs-12"
-            data-contracts="CPCIIpFailoverBuyCtrl.datas.billingInfo.contracts"
-            data-full-text="false"
-            data-contracts-validated="CPCIIpFailoverBuyCtrl.form.contractsAccepted">
-        </div>
-    </div>
-
-</div>
-
-<div class="modal-footer">
-    <div class="clearfix">
-    <button type="submit" class="btn btn-primary pull-right"
-        data-ng-click="CPCIIpFailoverBuyCtrl.confirm()"
-        data-ng-disabled="!CPCIIpFailoverBuyCtrl.form.contractsAccepted || CPCIIpFailoverBuyCtrl.loaders.buying || !CPCIIpFailoverBuyCtrl.form.instance || !CPCIIpFailoverBuyCtrl.form.country || !CPCIIpFailoverBuyCtrl.datas.billingInfo || !(CPCIIpFailoverBuyCtrl.form.quantity >= 1)">
-
-        <i class="fa fa-shopping-cart right-space-m8"></i>
-        <span data-translate="cpciif_buy_button_generate_bc"></span>
-        <small class="opacity6"
-               data-translate="cpciif_buy_price_tax_free"
-               data-translate-values="{ price : CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax.text }"
-               data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax">
-        </small>
-        <small class="opacity6"
-               data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax">*</small>
-        <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CPCIIpFailoverBuyCtrl.loaders.buying"></spinner>
-    </button>
-    <button type="reset" class="btn pull-left btn-default"
-        data-ng-click="CPCIIpFailoverBuyCtrl.cancel()">
-        <i class="glyphicon glyphicon-remove"></i>
-        <span data-translate="common_cancel"></span>
-    </button>
-</div>
-    <div class="clearfix" data-ng-if="CPCIIpFailoverBuyCtrl.datas.billingInfo.prices.withoutTax.text">
-        <small>* </small><small data-translate="cpciif_buy_button_infos"></small>
-    </div>
-</div>
+</form>

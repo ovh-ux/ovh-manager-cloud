@@ -1,4 +1,4 @@
-angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function ($stateParams, $scope, $uibModalInstance, $q, $translate, OvhApiDedicatedNasha, Toast) {
+angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function ($stateParams, $scope, $uibModalInstance, $q, $translate, OvhApiDedicatedNasha, CloudMessage) {
     "use strict";
     var self = this;
 
@@ -39,10 +39,10 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
         self.getDeleteSchedulesPromises(promises);
         $q.all(promises)
             .then(function (tasks) {
-                Toast.success($translate.instant("nasha_snapshot_set_success"));
+                CloudMessage.success($translate.instant("nasha_snapshot_set_success"));
                 $uibModalInstance.close({ partition: self.data.partition, tasks: tasks });
             }).catch(function () {
-                Toast.error($translate.instant("nasha_snapshot_set_success_fail"));
+                CloudMessage.error($translate.instant("nasha_snapshot_set_success_fail"));
                 $uibModalInstance.dismiss();
             }).finally(function () {
                 self.loading = false;
@@ -94,7 +94,7 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
             angular.copy(data, self.snapshots.before);
             angular.copy(data, self.snapshots.after);
         }).catch(function () {
-            Toast.error($translate.instant("nasha_snapshot_loading_error"));
+            CloudMessage.error($translate.instant("nasha_snapshot_loading_error"));
         }).finally(function () {
             self.loading = false;
         });

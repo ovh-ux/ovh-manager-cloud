@@ -1,61 +1,47 @@
-<table class="cloud-table" data-ng-if="objects.length > 0 && !loaders.details">
-    <thead class="cloud-table-header">
-        <tr class="cloud-table__row cloud-table__row_actions" data-ng-class="{hidden: !manySelected(), shown: manySelected() }">
-            <th class="ovh-table__cell ovh-table__cell_actions" colspan="6">
-                <span data-translate="storage_file_selected_count" data-translate-values="{count: selectionCount()}"></span>
-            </th>
-            <th class="ovh-table__cell ovh-table__cell_actions">
-                <button class="no-style" data-ng-click="deleteAll()">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </button>
-            </th>
-        </tr>
-        <tr class="cloud-table__row">
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_tiny" write-right-required>
-                <input type="checkbox" data-ng-change="selectAll()" data-ng-model="model.allSelected">
-            </th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" data-translate="storage_file_name"></th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" data-translate="storage_last_modify"></th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" data-translate="storage_size"></th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" data-translate="storage_file_type"></th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" data-translate="storage_file_download" write-right-required></th>
-            <th class="ovh-table__cell ovh-table__cell_header ovh-table__cell_large" style="width: 35px;" write-right-required>&#160;</th>
+<table class="oui-table oui-table_responsive" data-ng-if="objects.length > 0 && !loaders.details">
+    <thead class="oui-table__headers">
+        <tr>
+            <th class="oui-table__header" data-translate="storage_file_name"></th>
+            <th class="oui-table__header" data-translate="storage_last_modify"></th>
+            <th class="oui-table__header" data-translate="storage_size"></th>
+            <th class="oui-table__header" data-translate="storage_file_type"></th>
+            <th class="oui-table__header" data-translate="storage_file_download" write-right-required></th>
+            <th class="oui-table__header" write-right-required>&#160;</th>
         </tr>
     </thead>
 
-    <tbody data-ng-if="files.length > 0 && !loaders.details">
-        <tr class="cloud-table__row" data-ng-repeat="file in files track by $index">
-            <td class="ovh-table__cell ovh-table__cell_tiny" write-right-required>
-                <input type="checkbox" data-ng-model="model.selected[$index]" data-ng-change="select()">
-            </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_file_name' | translate }}">
+    <tbody data-ng-if="files.length > 0 && !loaders.details" class="oui-table__body">
+        <tr class="oui-table__row" data-ng-repeat="file in files track by $index">
+            <td class="oui-table__cell" data-title="{{ 'storage_file_name' | translate }}">
                 {{file.name}}
             </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_last_modify' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_last_modify' | translate }}">
                 {{file.lastModified | date:'medium'}}
             </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_size' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_size' | translate }}">
                 {{file.size | RAUnitsBits}}
             </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_file_type' | translate }}">
+            <td class="oui-table__cell" data-title="{{ 'storage_file_type' | translate }}">
                 {{file.contentType}}
             </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_file_state' | translate }}" write-right-required>
-                <spinner data-ng-show="file.sealingStateLoading"></spinner>
+            <td class="oui-table__cell" data-title="{{ 'storage_file_state' | translate }}" write-right-required>
+                <div data-ng-show="file.sealingStateLoading" class="text-center">
+                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                </div>
                 <span data-ng-hide="file.sealingStateLoading" data-ng-switch="file.retrievalState">
                     <div data-ng-switch-when="sealed">
                         <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_sealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
                     </div>
                     <div data-ng-switch-when="unsealing">
-                        <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealing' | translate }}" data-tooltip-trigger="mouseenter"></button>
+                        <button type="button" class="oui-button oui-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealing' | translate }}" data-tooltip-trigger="mouseenter"></button>
                     </div>
                     <div data-ng-switch-when="unsealed">
-                        <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
+                        <button type="button" class="oui-button oui-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
                     </div>
                 </span>
 
             </td>
-            <td class="ovh-table__cell" data-title="{{ 'storage_actions' | translate }}" write-right-required>
+            <td class="oui-table__cell" data-title="{{ 'storage_actions' | translate }}" write-right-required>
                 <button type="button" class="no-style" data-ng-show="file.status != 'deleting'" data-ng-click="delete(file)" data-translate-attr="{ title: 'storage_delete_button' }">
                     <i class="glyphicon glyphicon-trash"></i>
                 </button>
@@ -64,7 +50,7 @@
         </tr>
     </tbody>
 
-    <tbody data-ng-if="loaders.pager">
+    <tbody data-ng-if="loaders.pager" class="oui-table__body">
         <tr>
             <td colspan="4" data-translate="storage_details_loading"></td>
         </tr>

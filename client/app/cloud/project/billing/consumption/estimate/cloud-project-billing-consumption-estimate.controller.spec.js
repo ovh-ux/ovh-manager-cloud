@@ -10,7 +10,7 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
     var $stateParams;
     var $translate;
     var OvhApiCloudProjectAlerting;
-    var Toast;
+    var CloudMessage;
     var OvhApiCloudProjectUsageForecast;
     var OvhApiCloudProjectUsageCurrent;
     var CloudProjectBillingService;
@@ -19,7 +19,7 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _$uibModal_, _$stateParams_, _$translate_, _OvhApiCloudProjectAlerting_, _Toast_, _OvhApiCloudProjectUsageForecast_, _OvhApiCloudProjectUsageCurrent_, _CloudProjectBillingService_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _$uibModal_, _$stateParams_, _$translate_, _OvhApiCloudProjectAlerting_, _CloudMessage_, _OvhApiCloudProjectUsageForecast_, _OvhApiCloudProjectUsageCurrent_, _CloudProjectBillingService_) {
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
@@ -28,7 +28,7 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
         $stateParams = _$stateParams_;
         $translate = _$translate_;
         OvhApiCloudProjectAlerting = _OvhApiCloudProjectAlerting_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         OvhApiCloudProjectUsageForecast = _OvhApiCloudProjectUsageForecast_;
         OvhApiCloudProjectUsageCurrent = _OvhApiCloudProjectUsageCurrent_;
         CloudProjectBillingService = _CloudProjectBillingService_;
@@ -77,13 +77,13 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
         it("Should manage errors when initing forecast", function () {
             spyOn(OvhApiCloudProjectUsageForecast.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
 
             initCtrl();
             $httpBackend.flush();
 
             expect($translate.instant).toHaveBeenCalledWith("cpbe_estimate_price_error_message");
-            expect(Toast.error).toHaveBeenCalledWith("error message reason");
+            expect(CloudMessage.error).toHaveBeenCalledWith("error message reason");
         });
 
         it("Should init current", function () {
@@ -107,14 +107,14 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
         it("Should manage errors when initing current", function () {
             spyOn(OvhApiCloudProjectUsageCurrent.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: { } }));
 
             initCtrl();
             $httpBackend.flush();
 
             expect($translate.instant).toHaveBeenCalledWith("cpbe_estimate_price_error_message");
-            expect(Toast.error).toHaveBeenCalledWith("error message reason");
+            expect(CloudMessage.error).toHaveBeenCalledWith("error message reason");
         });
 
         it("Should init alert", function () {
@@ -148,7 +148,7 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: { currencySymbol: "$", hourly: { total: "hourlyTotal" } } }));
             spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when([]) });
             spyOn($translate, "instant").and.returnValue("label");
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
 
             var alert = {
                 monthlyThreshold: "monthlyThreshold"
@@ -160,20 +160,20 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
 
             expect(controller.data.alert).toBe(null);
             expect(controller.consumptionChartData).toBe(undefined);
-            expect(Toast.error).not.toHaveBeenCalled();
+            expect(CloudMessage.error).not.toHaveBeenCalled();
         });
 
         it("Should manage error when CloudProjectAlerting.getIds return an error", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: {} }));
             spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
             spyOn($translate, "instant").and.returnValue("error message");
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
 
             var controller = initCtrl();
             $httpBackend.flush();
 
             expect($translate.instant).toHaveBeenCalledWith("cpbe_estimate_price_error_message");
-            expect(Toast.error).toHaveBeenCalledWith("error message reason");
+            expect(CloudMessage.error).toHaveBeenCalledWith("error message reason");
             expect(controller.data.alert).toBe(null);
         });
 
@@ -181,14 +181,14 @@ describe("Controller: CloudProjectBillingConsumptionEstimateCtrl", function () {
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and.returnValue($q.when({ totals: {} }));
             spyOn(OvhApiCloudProjectAlerting.Lexi(), "getIds").and.returnValue({ $promise: $q.when(["alertId"]) });
             spyOn(OvhApiCloudProjectAlerting.Lexi(), "get").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
-            spyOn(Toast, "error");
+            spyOn(CloudMessage, "error");
 
             var controller = initCtrl();
             $httpBackend.flush();
 
             expect(controller.data.alert).toBe(null);
             expect(controller.consumptionChartData).toBe(undefined);
-            expect(Toast.error).not.toHaveBeenCalled();
+            expect(CloudMessage.error).not.toHaveBeenCalled();
         });
     });
 });
