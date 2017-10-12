@@ -22,9 +22,13 @@ class DeskaasUpgradeCtrl {
             return;
         }
         this.DeskaasService.getMe()
-            .then(me => this.DeskaasService.fetchProductPlans(me))
+            .then(me => {
+                this.me = me;
+                return this.DeskaasService.fetchProductPlans(me);
+            })
             .then(() => this.DeskaasService.getDetails(this.serviceName))
             .then(details => {
+                this.details = details;
                 this.references = this.DeskaasService.getUpgradeOptions(details.planCode);
             })
             .finally(() => {
@@ -33,6 +37,7 @@ class DeskaasUpgradeCtrl {
     }
 
     confirmUpgrade () {
+        this.saving = true;
         return this.ControllerHelper.modal.showConfirmationModal({
             titleText: this.$translate.instant("vdi_btn_popup_upgrade"),
             text: this.$translate.instant("vdi_confirm_upgrade", { plan: this.choice.name, price: this.choice.priceText })
@@ -44,6 +49,9 @@ class DeskaasUpgradeCtrl {
             }))
             .then(taskId => {
                 this.$state.go("deskaas.details", { serviceName: this.serviceName, followTask: taskId });
+            })
+            .finally(() => {
+                this.saving = false;
             });
     }
 

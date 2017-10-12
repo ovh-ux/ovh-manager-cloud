@@ -1,46 +1,54 @@
 <div class="cui-page">
-    <cui-page-header data-title-text="'vdi_upgrade_title' | translate"></cui-page-header>
-    <div class="vdi-upgrade__header">
-        <cui-back-link class="vdi-upgrade__header-link"
-                       data-state="deskaas.details"
-                       data-state-params="{ serviceName: DeskaasUpgradeCtrl.serviceName }">
+    <cui-page-header data-title-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.alias : DeskaasUpgradeCtrl.details.serviceName"
+                 data-subtitle-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.serviceName :''">
+    </cui-page-header>
+    <section class="cui-page__content">
+        <cui-back-link data-state="deskaas.details"
+                    data-state-params="{ serviceName: DeskaasUpgradeCtrl.serviceName }"
+                    data-text="'common_back' | translate">
         </cui-back-link>
-        <cui-page-content-title text="'vdi_upgrade_available' | translate"></cui-page-content-title>
-    </div>
+        <h1 data-ng-hide="ctrl.edition" data-translate="vdi_upgrade_available"></h1>
 
-    <div class="text-center" data-ng-if="DeskaasUpgradeCtrl.flags.init">
-        <oui-loader size="l" class="d-inline-block"></oui-loader>
-    </div>
+        <div class="text-center" data-ng-if="DeskaasUpgradeCtrl.flags.init">
+            <oui-loader size="l" class="d-inline-block"></oui-loader>
+        </div>
 
-    <div class="cui_page__content" data-ng-if="!DeskaasUpgradeCtrl.flags.init">
-        <form novalidate class="upgradeForm" name="upgradeForm">
-            <oui-radio-group class="row" on-change="DeskaasUpgradeCtrl.selectChoice($event.value)">
-                <oui-radio class="col-md-3" thumbnail data-ng-repeat="ref in DeskaasUpgradeCtrl.references" value="{{ ref }}">
-                    <oui-radio-label>{{ ref.name }}</oui-radio-label>
-                    <oui-radio-description>
-                        <dl class="dl-horizontal vdi-upgrade__list">
-                            <dt data-translate="vdi_core"></dt>
-                            <dd>{{ ref.vcpu }}</dd>
-                            <dt data-translate="vdi_ram"></dt>
-                            <dd>{{ ref.ram }}</dd>
-                            <dt data-translate="vdi_disk"></dt>
-                            <dd>{{ ref.storage }}</dd>
-                            <dt data-translate="vdi_gpu"></dt>
-                            <dd>{{ ref.gpu }}</dd>
-                            <dt data-translate="vdi_price"></dt>
-                            <dd>{{ ref.priceText }}</dd>
-                        </dl>
-                    </oui-radio-description>
-                </oui-radio>
-            </oui-radio-group>
-            <div class="row">
-                <button type="button"
-                        class="oui-button oui-button_primary vdi-upgrade__submit col-md-3"
-                        data-ng-if="DeskaasUpgradeCtrl.choice"
-                        data-ng-click="DeskaasUpgradeCtrl.confirmUpgrade()"
-                        data-translate="vdi_btn_popup_upgrade">
-                </button>
-            </div>
-        </form>
-    </div>
+        <cui-loader data-ng-if="DeskaasUpgradeCtrl.flags.init"></cui-loader>
+        <div data-ng-if="!DeskaasUpgradeCtrl.flags.init">
+            <form novalidate class="upgradeForm" name="upgradeForm">
+                <oui-radio-group class="row" on-change="DeskaasUpgradeCtrl.selectChoice($event.value)">
+                    <oui-radio class="col-md-3" thumbnail data-ng-repeat="ref in DeskaasUpgradeCtrl.references" value="{{ ref }}">
+                        <oui-radio-label>{{ ref.name }}</oui-radio-label>
+                        <oui-radio-description>
+                            <dl class="dl-horizontal vdi-upgrade__list">
+                                <dt data-translate="vdi_core"></dt>
+                                <dd>{{ ref.vcpu }}</dd>
+                                <dt data-translate="vdi_ram"></dt>
+                                <dd>{{ ref.ram }}</dd>
+                                <dt data-translate="vdi_disk"></dt>
+                                <dd>{{ ref.storage }}</dd>
+                                <dt data-translate="vdi_gpu"></dt>
+                                <dd>{{ ref.gpu }}</dd>
+                                <dt data-translate="vdi_price"></dt>
+                                <dd>{{ ref.priceText }}</dd>
+                            </dl>
+                        </oui-radio-description>
+                    </oui-radio>
+                </oui-radio-group>
+                <div class="cui-form-actions">
+                    <cui-loader data-ng-show="ctrl.saving"></cui-loader>
+                    <div data-ng-hide="ctrl.saving">
+                        <button type="button"
+                                class="oui-button oui-button_primary"
+                                data-ng-click="DeskaasUpgradeCtrl.confirmUpgrade()"
+                                data-translate="vdi_btn_popup_upgrade">
+                        </button>
+                        <a class="oui-button oui-button_link"
+                            data-translate="common_cancel"
+                            data-ui-sref="deskaas.details({ serviceName: DeskaasUpgradeCtrl.serviceName })"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>
