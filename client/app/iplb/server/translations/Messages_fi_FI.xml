@@ -29,7 +29,7 @@
    <translation id="iplb_server_edit_cookie" qtlid="223736">Eväste</translation>
    <translation id="iplb_server_edit_cookie_tip" qtlid="438298">Evästeen arvo, jota käytetään pysyväisevästeeseen (cookie stickiness)</translation>
    <translation id="iplb_server_edit_chain" qtlid="19819">Varmenneketju</translation>
-   <translation id="iplb_server_edit_chain_tip" qtlid="438311">Keskitasoisen SSL-varmenteen. Allow server certificate verification (Avoid man-in-the-middle attacks)</translation>
+   <translation id="iplb_server_edit_chain_tip" qtlid="438311">Keskitasoisen SSL-varmenteen arvo. Allow server certificate verification (Avoid man-in-the-middle attacks)</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion" qtlid="438259">PROXY-protokollan versio</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion_tip" qtlid="438324">Käytettävä proxyProtokollan versio, katso {{link}}</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion_tip_link" qtlid="438337">http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt</translation>

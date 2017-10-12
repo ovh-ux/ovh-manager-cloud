@@ -2,8 +2,8 @@
 <translations>
    <translation id="iplb_back_home" qtlid="4118">Back</translation>
 
-   <translation id="iplb_guides">Guides</translation>
-   <translation id="iplb_guides_title">IPLB</translation>
+   <translation id="iplb_guides" qtlid="300370">Guides</translation>
+   <translation id="iplb_guides_title" qtlid="247105">LBIP</translation>
    <translation id="iplb_guide_footer" qtlid="406905">All the OVH guides </translation>
 
    <translation id="iplb_tab_home" qtlid="27643">Home</translation>
@@ -24,7 +24,7 @@
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">An error has occurred changing the name.</translation>
 
    <translation id="iplb_modal_cipher_change_title" qtlid="439351">Modify the ciphers</translation>
-   <translation id="iplb_modal_cipher_change_loading_error" qtlid="439364">An error has occurred loading the modification modal for the ciphers.</translation>
+   <translation id="iplb_modal_cipher_change_loading_error" qtlid="439364">An error has occurred loading the modification modal window for the ciphers.</translation>
    <translation id="iplb_modal_cipher_change_updating_error" qtlid="439377">An error has occurred changing the cipher.</translation>
    <translation id="iplb_modal_cipher_change_cipher_intermediate_title" qtlid="429368">Intermediary</translation>
    <translation id="iplb_modal_cipher_change_cipher_intermediate_description" qtlid="439390">Clients compatible with Android 2.3, IE 7, Java 7, Opera 5, Windows XP IE 8</translation>

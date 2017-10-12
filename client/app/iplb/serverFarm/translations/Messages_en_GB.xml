@@ -34,7 +34,7 @@
    <translation id="iplb_farm_balance_source" qtlid="97496">Source</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
 
-   <translation id="iplb_farm_stickiness_none" qtlid="30646">No</translation>
+   <translation id="iplb_farm_stickiness_none" qtlid="440934">None</translation>
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Source IP</translation>
 
@@ -68,7 +68,7 @@
    <translation id="iplb_farm_edit_probe_pattern" qtlid="438064">Pattern</translation>
    <translation id="iplb_farm_edit_probe_interval" qtlid="438077">Interval</translation>
    <translation id="iplb_farm_edit_probe_negate" qtlid="438090">Reverse</translation>
-   <translation id="iplb_farm_edit_probe_type_" qtlid="8674">None</translation>
+   <translation id="iplb_farm_edit_probe_type_" qtlid="440947">None</translation>
    <translation id="iplb_farm_edit_probe_type_http" qtlid="19639">HTTP</translation>
    <translation id="iplb_farm_edit_probe_type_mysql" qtlid="196894">MySQL</translation>
    <translation id="iplb_farm_edit_probe_type_oco" qtlid="438103">OCO</translation>

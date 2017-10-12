@@ -7,15 +7,15 @@
    <translation id="cloud_common_consumpt" qtlid="25639">Consumo</translation>
    <translation id="cloud_common_state" qtlid="364446">Estado</translation>
    <translation id="cloud_common_state_available" qtlid="99920">Disponível</translation>
-   <translation id="cloud_common_state_in-use" qtlid="252893">Em curso de utilização</translation>
-   <translation id="cloud_common_state_creating" qtlid="29647">Em curso de criação</translation>
-   <translation id="cloud_common_state_attaching" qtlid="252906">Em curso de associação</translation>
-   <translation id="cloud_common_state_deleting" qtlid="152778">Em curso de eliminação</translation>
+   <translation id="cloud_common_state_in-use" qtlid="252893">Em uso</translation>
+   <translation id="cloud_common_state_creating" qtlid="29647">Criação em curso</translation>
+   <translation id="cloud_common_state_attaching" qtlid="252906">Associação em curso</translation>
+   <translation id="cloud_common_state_deleting" qtlid="152778">Eliminação em curso</translation>
    <translation id="cloud_common_state_deleted" qtlid="134514">Eliminado</translation>
    <translation id="cloud_common_state_extending" qtlid="258886">Redimensionamento em curso</translation>
    <translation id="cloud_common_state_restoring-backup" qtlid="258899">Restauro em curso</translation>
-   <translation id="cloud_common_state_backing-up" qtlid="258912">Em curso de salvaguarda</translation>
-   <translation id="cloud_common_state_snapshotting" qtlid="348438">Em curso de snapshot</translation>
+   <translation id="cloud_common_state_backing-up" qtlid="258912">Backup em curso</translation>
+   <translation id="cloud_common_state_snapshotting" qtlid="348438">Snapshot em curso</translation>
    <translation id="cloud_common_state_error" qtlid="26407">Erro</translation>
 
    <translation id="cloud_common_region" qtlid="168237">Localização</translation>
@@ -38,9 +38,9 @@
    <translation id="cloud_common_region_WAW" qtlid="94039">Varsóvia</translation>
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsóvia ({{ micro }})</translation>
    <translation id="cloud_common_region_DE" qtlid="94051">Frankfurt </translation>
-   <translation id="cloud_common_region_DE_micro" qtlid="437598">Francfort ({{ micro }})</translation>
+   <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
 
-   <translation id="cloud_common_region_localize" qtlid="264231">Localização</translation>
+   <translation id="cloud_common_region_localize" qtlid="264231">Localizar</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Central (França)</translation>
    <translation id="cloud_common_region_location_WAW" qtlid="410117">Europa Central (Polónia)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">América do Norte (Canadá)</translation>
@@ -50,6 +50,6 @@
 
    <translation id="browser_alert_not_supported" qtlid="405357">O seu browser não é suportado</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">O seu browser não está atualizado e pode conter falhas de segurança ou compatibilidade.</translation>
-   <translation id="browser_alert_update" qtlid="405383">Recomendamos que <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">atualize o seu browser <i class="fa fa-external-link" aria-hidden="true"></i></a> para que a sua experiência seja ótima.</translation>
+   <translation id="browser_alert_update" qtlid="405383">Recomendamos que <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">atualize o seu browser <i class="fa fa-external-link" aria-hidden="true"></i></a> para uma melhor experiência.</translation>
    <translation id="browser_alert_close" qtlid="405396">Fechar este alerta</translation>
 </translations>

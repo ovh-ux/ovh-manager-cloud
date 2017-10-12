@@ -38,7 +38,7 @@
    <translation id="iplb_frontend_add_port_tip" qtlid="437934">1 bis {{portMax}}, format: simple (ex: 80), range (ex: 1000-1200), multi (ex: 80,443)</translation>
    <translation id="iplb_frontend_add_datacenter" qtlid="30802">Rechenzentrum</translation>
    <translation id="iplb_frontend_add_default_farm" qtlid="429563">Standardfarm</translation>
-   <translation id="iplb_frontend_add_farm_no_farm" qtlid="8674">Keiner</translation>
+   <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Keine</translation>
    <translation id="iplb_frontend_add_farm_add_another_choice" qtlid="438675">+ Eine Serverfarm hinzufügen</translation>
    <translation id="iplb_frontend_add_farm" qtlid="437726">Eine Serverfarm hinzufügen</translation>
    <translation id="iplb_frontend_add_farm_text" qtlid="438688">Sobald das aktuelle Frontend erstellt ist, können Sie diesem eine Standard-Serverfarm hinzufügen.</translation>
