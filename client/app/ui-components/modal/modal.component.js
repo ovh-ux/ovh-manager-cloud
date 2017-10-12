@@ -25,13 +25,11 @@ angular.module("managerApp")
     .component("cuiModalBody", {
         template: `
             <div class="oui-modal__body" data-ng-class="{ 'oui-modal__body_no-icon': !$ctrl.icon }">
-                <i class="oui-icon oui-icon-{{ $ctrl.icon }} oui-icon_bicolor"
+                <i class="oui-icon oui-icon-{{ $ctrl.icon }}_circle oui-icon_bicolor"
                     aria-hidden="true"
                     data-ng-if="$ctrl.icon"></i>
-                <div class="oui-modal__body-text">
-                    <h2 class="oui-modal__title" data-ng-bind="$ctrl.title"></h2>
-                    <ng-transclude></ng-transclude>
-                </div>
+                <h2 class="oui-modal__title" data-ng-bind="$ctrl.title"></h2>
+                <div class="oui-modal__text" data-ng-transclude></div>
             </div>
         `,
         transclude: true,
@@ -42,7 +40,7 @@ angular.module("managerApp")
     })
     .component("cuiModalText", {
         template: `
-            <p class="oui-modal__text" data-ng-bind="$ctrl.text"></p>
+            <p class="oui-modal__text" data-ng-bind-html="$ctrl.text"></p>
         `,
         transclude: true,
         bindings: {
