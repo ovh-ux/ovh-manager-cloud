@@ -122,6 +122,9 @@
         </section>
 
         <section class="vrack__mapper">
+            <div class="text-center" data-ng-if="VrackCtrl.loaders.init">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
             <div class="row space-m0">
                 <div class="col-sm-12 col-md-4 col-lg-5 space-p0">
                     <ng-include data-src="'app/vrack/partials/available.html'"
