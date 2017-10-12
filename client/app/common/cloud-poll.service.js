@@ -9,12 +9,13 @@ class CloudPoll {
     pollArray (opts) {
         const poller = {};
         let continuePolling;
+        let interval = 0;
         poller.pollInterval = this.$interval(() => {
             continuePolling = false;
             const promises = _.map(opts.items, item =>
                 this.$q.when(opts.stopCondition(item))
                     .then(stopCondition => {
-                        if (stopCondition) {
+                        if (stopCondition && interval > 0) {
                             return this.$q.when();
                         }
 
@@ -22,7 +23,9 @@ class CloudPoll {
                         return this.$q.when(opts.pollFunction(item));
                     })
                     .then(newItem => {
-                        item = _.assign(item, newItem.data ? newItem.data : newItem);
+                        if (newItem) {
+                            _.merge(item, newItem.data ? newItem.data : newItem);
+                        }
                     }));
 
             this.$q.all(promises)
@@ -30,6 +33,10 @@ class CloudPoll {
                     if (!continuePolling) {
                         poller.kill();
                     }
+                    interval++;
+                })
+                .catch(err => {
+                    console.log(err);
                 });
         }, opts.interval || 5000);
 

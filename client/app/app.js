@@ -50,7 +50,6 @@ angular.module("managerApp", [
     "ovh-angular-slider",
     "ng-at-internet",
     "atInternetUiRouterPlugin",
-    "ngFlash",
     "matchmedia-ng",
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
@@ -126,5 +125,4 @@ angular.module("managerApp", [
             };
             off();
         });
-
     });

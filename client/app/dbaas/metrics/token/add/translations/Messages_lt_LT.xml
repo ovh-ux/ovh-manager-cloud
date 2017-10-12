@@ -6,7 +6,7 @@
    <translation id="metrics_token_add_permission_read" qtlid="6958">Skaitymas</translation>
    <translation id="metrics_token_add_permission_write" qtlid="301565">Rašymas</translation>
 
-   <translation id="metrics_token_add_labels" qtlid="403437">Pridėti etiketes</translation>
+   <translation id="metrics_token_add_labels_add" qtlid="403437">Pridėti etiketes</translation>
    <translation id="metrics_token_add_labels_key" qtlid="104326">Raktas</translation>
    <translation id="metrics_token_add_labels_value" qtlid="47548">Reikšmė</translation>
    <translation id="metrics_token_add_token" qtlid="415519">Pridėti kodą</translation>

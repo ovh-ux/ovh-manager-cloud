@@ -1,43 +1,31 @@
 <div class="metrics__platform">
-    <cui-back-link data-state="dbaas.metrics.detail.dashboard"
-                   data-state-params="{ serviceName: MetricsTokenCtrl.serviceName }"
-                   data-text=" 'metrics_platform_back' | translate"></cui-back-link>
     <div class="metrics__row">
         <h3 class="oui-header_3" data-translate="metrics_platform_title"></h3>
+        <p>
+            <span data-translate="metrics_endpoint_intro_1"></span>
+            <span data-translate="metrics_endpoint_intro_2"></span>
+            <span data-translate="metrics_endpoint_intro_3"></span>
+        </p>
     </div>
     <div class="metrics__row">
-        <table class="oui-table">
-            <thead class="oui-table__headers">
-                <tr>
-                    <th class="oui-table__header" data-translate="metrics_platform_proto"></th>
-                    <th class="oui-table__header" data-translate="metrics_platform_address"></th>
-                    <th class="oui-table__header" data-translate="metrics_platform_doc"></th>
-                </tr>
-            </thead>
-            <tbody class="oui-table__body metrics__platform-loader" data-ng-show="MetricsPlatformCtrl.loading">
-                <tr class="oui-table__row">
-                    <td colspan="5" class="oui-table__cell">
-                        <cui-loader></cui-loader>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="oui-table__body" data-ng-hide="MetricsPlatformCtrl.loading">
-                <tr class="oui-table__row cui-dropdown-menu-container"
-                    data-ng-repeat="platform in MetricsPlatformCtrl.platforms | filter:MetricsPlatformCtrl.searchText track by $index">
-                    <td class="oui-table__cell" data-ng-bind="platform.proto"></td>
-                    <td class="oui-table__cell">
-                        <cui-clipboard data-text="platform.address"></cui-clipboard>
-                    </td>
-                    <td class="oui-table__cell oui-table__cell_action">
-                        <a class="metrics-guidelink"
-                           href="{{ platform.doc }}"
-                           target="_blank">
-                            <span data-translate="metrics_guide"></span>
-                            <i class="metrics-guidelink__icon fa fa-icon fa-external-link"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <oui-table rows="MetricsPlatformCtrl.platforms" 
+                   rows-loader="MetricsPlatformCtrl.loading">
+            <column title="'metrics_platform_proto' | translate" 
+                    property="proto"
+                    sortable></column>
+            <column title="'metrics_platform_address' | translate" 
+                    property="address">
+                <cui-clipboard data-text="$row.address"></cui-clipboard>
+            </column>
+            <column title="'metrics_platform_doc' | translate" 
+                    property="doc">
+                <a class="metrics-guidelink"
+                   href="{{ $row.doc }}"
+                   target="_blank">
+                    <span data-translate="metrics_guide"></span>
+                    <i class="fa fa-icon fa-external-link"></i>
+                </a>
+            </column>
+        </oui-table>
     </div>
 </div>

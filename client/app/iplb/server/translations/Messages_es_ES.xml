@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_server_preview_title" qtlid="438207">Vista previa del servidor</translation>
+   <translation id="iplb_server_preview_name" qtlid="3818">Nombre</translation>
+   <translation id="iplb_server_preview_address" qtlid="79314">Dirección IPv4</translation>
+   <translation id="iplb_server_preview_port" qtlid="9034">Puerto</translation>
+   <translation id="iplb_server_preview_backup" qtlid="438220">Servidor de respaldo</translation>
+   <translation id="iplb_server_preview_probe" qtlid="438233">Utilizar la sonda de disponibilidad de la granja</translation>
+   <translation id="iplb_server_preview_ssl" qtlid="438246">Cifrar las peticiones con SSL</translation>
+   <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_server_preview_chain" qtlid="19819">Cadena de certificación</translation>
+   <translation id="iplb_server_preview_proxyProtocolVersion" qtlid="438259">Versión del protocolo de PROXY</translation>
+   <translation id="iplb_server_preview_weight" qtlid="438272">Peso de balanceo</translation>
+   <translation id="iplb_server_preview_active" qtlid="55133">Activo</translation>
+   <translation id="iplb_server_preview_id" qtlid="46792">Usuario</translation>
+
+   <translation id="iplb_server_add_title" qtlid="19315">Añadir un servidor</translation>
+   <translation id="iplb_server_update_title" qtlid="438285">Edición del servidor {{serverId}}</translation>
+   <translation id="iplb_server_edit_name" qtlid="415818">Nombre (opcional)</translation>
+   <translation id="iplb_server_edit_address" qtlid="79314">Dirección IPv4</translation>
+   <translation id="iplb_server_edit_port" qtlid="9034">Puerto</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="437934">1 a {{portMax}}</translation>
+   <translation id="iplb_server_edit_advanced_options" qtlid="39958">Parámetros avanzados</translation>
+   <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>
+   <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Ver</translation>
+   <translation id="iplb_server_edit_backup" qtlid="438220">Servidor de respaldo</translation>
+   <translation id="iplb_server_edit_probe" qtlid="438233">Utilizar la sonda de disponibilidad de la granja</translation>
+   <translation id="iplb_server_edit_ssl" qtlid="438246">Cifrar las peticiones con SSL</translation>
+   <translation id="iplb_server_edit_cookie" qtlid="223736">Cookie</translation>
+   <translation id="iplb_server_edit_cookie_tip" qtlid="438298">Valor utilizado para la persistencia («stickiness») de la cookie</translation>
+   <translation id="iplb_server_edit_chain" qtlid="19819">Cadena de certificación</translation>
+   <translation id="iplb_server_edit_chain_tip" qtlid="438311">Valor del certificado SSL intermedio. Permitir comprobación del certificado del servidor (evitar ataques «man-in-the-middle»).</translation>
+   <translation id="iplb_server_edit_proxyProtocolVersion" qtlid="438259">Versión del protocolo de PROXY</translation>
+   <translation id="iplb_server_edit_proxyProtocolVersion_tip" qtlid="438324">Versión de proxyProtocol utilizada. Ver {{link}}.</translation>
+   <translation id="iplb_server_edit_proxyProtocolVersion_tip_link" qtlid="438337">http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt</translation>
+   <translation id="iplb_server_edit_weight" qtlid="438272">Peso de balanceo</translation>
+   <translation id="iplb_server_edit_weight_tip" qtlid="438350">1 a {{lbWeightMax}}</translation>
+
+   <translation id="iplb_server_edit_cancel" qtlid="37863">Cancelar</translation>
+   <translation id="iplb_server_add_confirm" qtlid="37923">Añadir</translation>
+   <translation id="iplb_server_update_confirm" qtlid="43462">Actualizar</translation>
+
+   <translation id="iplb_server_request_error" qtlid="175205">Se ha producido un error al cargar la información.</translation>
+   <translation id="iplb_server_add_error" qtlid="437791">Se ha producido un error al añadir la granja de servidores: {{message}}.</translation>
+   <translation id="iplb_server_add_success" qtlid="438363">El servidor se ha añadido correctamente.</translation>
+   <translation id="iplb_server_update_error" qtlid="438376">Se ha producido un error al modificar el servidor: {{message}}.</translation>
+   <translation id="iplb_server_update_success" qtlid="438389">El servidor se ha modificado correctamente.</translation>
+
+   <translation id="iplb_server_delete_title" qtlid="287697">Eliminar el servidor</translation>
+   <translation id="iplb_server_delete_question" qtlid="438402">¿Seguro que quiere eliminar el servidor {{server}}?</translation>
+   <translation id="iplb_server_delete_error" qtlid="438415">Se ha producido un error al eliminar el servidor: {{message}}.</translation>
+   <translation id="iplb_server_delete_success" qtlid="438428">El servidor se ha eliminado correctamente.</translation>
+
+   <translation id="iplb_server_status_title" qtlid="159098">Estado del servidor</translation>
+   <translation id="iplb_server_status_instance" qtlid="438441">Instancia {{instanceId}}</translation>
+   <translation id="iplb_server_status_status" qtlid="251970">Estado</translation>
+   <translation id="iplb_server_status_check_code" qtlid="438454">Check code</translation>
+   <translation id="iplb_server_status_check_status" qtlid="438467">Check status</translation>
+   <translation id="iplb_server_status_last_check_content" qtlid="438480">Last check content</translation>
+   <translation id="iplb_server_status_check_time" qtlid="438493">Check time</translation>
+   <translation id="iplb_server_status_no_information" qtlid="438506">No hay información.</translation>
+</translations>

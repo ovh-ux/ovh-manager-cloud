@@ -463,6 +463,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Die folgenden Fehler sind aufgetreten</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Wichtige Informationen</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Informationen</translation>
 
    <translation id="common_global_error" qtlid="433345">Bei dem Vorgang ist ein Fehler aufgetreten: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Der Vorgang wurde erfolgreich beendet.</translation>
@@ -479,7 +480,7 @@
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakte</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
 
-   <translation id="common_preview_see" qtlid="433371">Vorschau anzeigen</translation>
+   <translation id="common_preview_see" qtlid="433371">Übersicht anzeigen</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Aktion</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Ergebnisse pro Seite</translation>

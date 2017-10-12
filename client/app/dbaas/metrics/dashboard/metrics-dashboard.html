@@ -110,12 +110,69 @@
     </cui-tile>
     
     <cui-tile data-title="'metrics_tiles_subscription_title' | translate"
-              data-loading="MetricsDashboardCtrl.loading.service">
+              data-loading="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.plan">
         <div class="cui-tile__body">
             <div class="cui-tile__item">
                 <dl class="cui-tile__definition">
                     <dt class="cui-tile__term" data-translate="metrics_tiles_subscription_offer"></dt>
                     <dd class="cui-tile__description" data-translate="metrics_tiles_subscription_{{:: MetricsDashboardCtrl.plan.offer}}"></dd>
+                </dl>
+            </div>
+            <div class="cui-tile__item">
+                <dl class="cui-tile__definition">
+                    <dt class="cui-tile__term" data-translate="common_tile_subscription_autorenew"></dt>
+                    <dd class="cui-tile__description" data-ng-bind="MetricsDashboardCtrl.plan.autorenew"></dd>
+                    <cui-dropdown-menu>
+                        <cui-dropdown-menu-button>
+                            <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                        </cui-dropdown-menu-button>
+                        <cui-dropdown-menu-body>
+                            <div class="oui-action-menu">
+                              <div class="oui-action-menu__item oui-action-menu-item">
+                                <div class="oui-action-menu-item__icon"></div>
+                                <a class="oui-button oui-button_link oui-action-menu-item__label"
+                                    target="_blank"
+                                    data-translate="common_manage"
+                                    href="{{ MetricsDashboardCtrl.actions.autorenew }}"></a>
+                              </div>
+                            </div>
+                        </cui-dropdown-menu-body>
+                    </cui-dropdown-menu>
+                </dl>
+            </div>
+            <div class="cui-tile__item">
+                <dl class="cui-tile__definition">
+                    <dt class="cui-tile__term" data-translate="common_tile_subscription_contact"></dt>
+                    <dd class="cui-tile__description">
+                        <span data-ng-bind=":: MetricsDashboardCtrl.plan.contactAdmin"></span>
+                        <small data-translate="metrics_contact_admin"></small>
+                    </dd>
+                    <dd class="cui-tile__description">
+                        <span data-ng-bind="MetricsDashboardCtrl.plan.contactBilling"></span>
+                        <small data-translate="metrics_contact_billing"></small>
+                    </dd>
+                    <cui-dropdown-menu>
+                        <cui-dropdown-menu-button>
+                            <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                        </cui-dropdown-menu-button>
+                        <cui-dropdown-menu-body>
+                            <div class="oui-action-menu">
+                              <div class="oui-action-menu__item oui-action-menu-item">
+                                <div class="oui-action-menu-item__icon"></div>
+                                <a class="oui-button oui-button_link oui-action-menu-item__label"
+                                    target="_blank"
+                                    data-translate="common_manage"
+                                    href="{{ MetricsDashboardCtrl.actions.contacts }}"></a>
+                              </div>
+                            </div>
+                        </cui-dropdown-menu-body>
+                    </cui-dropdown-menu>
+                </dl>
+            </div>
+            <div class="cui-tile__item">
+                <dl class="cui-tile__definition">
+                    <dt class="cui-tile__term" data-translate="common_tile_subscription_creation_date"></dt>
+                    <dd class="cui-tile__description" data-ng-bind="MetricsDashboardCtrl.plan.creation"></dd>
                 </dl>
             </div>
 

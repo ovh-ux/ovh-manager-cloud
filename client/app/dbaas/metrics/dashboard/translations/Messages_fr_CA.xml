@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="metrics_tiles_shortcut_title" qtlid="403658">Raccourcis</translation>
-   <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Ajouter un coupon</translation>
+   <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Ajouter un jeton</translation>
    <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Augmenter l'offre</translation>
    <translation id="metrics_tiles_tools_title" qtlid="330682">Outils</translation>
 
@@ -36,4 +36,5 @@
    <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nom par défaut</translation>
    <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nom personnalisé</translation>
    <translation id="metrics_dashboard_modif_retention" qtlid="8218">Durée</translation>
+   <translation id="metrics_modif_name_title" qtlid="439892">Modifier le nom</translation>
 </translations>

@@ -35,9 +35,9 @@ angular.module("managerApp")
                 </div>
                 <div data-ng-if="$ctrl.hasMultipleRegions()" data-ng-repeat="(key, regions) in $ctrl.regionsGroup track by $index">
                     <i class="flag-icon {{ regions[0].icon }} flag flag__icon-sm cui-tile-definition-description-region__flag"
-                        data-ng-class="{ 'cui-tile-definition-description-region__flag-last': $last }"></i>
+                        data-ng-class="{ 'cui-tile-definition-description-region__flag_last': $last }"></i>
                     <span data-ng-repeat="region in regions track by $index">
-                        <span data-ng-bind=":: region.macroRegion.code + (!$last ? ', ' : '')"></span> 
+                        <span data-ng-bind=":: region.macroRegion.code + (!$last ? ', ' : '')"></span>
                     </span>
                 </div>
             </dd>`,

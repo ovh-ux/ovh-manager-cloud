@@ -1,7 +1,7 @@
 <cui-modal>
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <form name="MetricsTokenEditForm">
-    <cui-modal-body title="'metrics_token_edit_title' | translate">
+    <cui-modal-body data-title="'metrics_token_edit_title' | translate">
         <cui-loader data-ng-show="$ctrl.loading"></cui-loader>
         <div data-ng-hide="$ctrl.loading">
             <div data-ng-if="$ctrl.type == 'name'">

@@ -46,13 +46,11 @@
         }
 
         checkLabel (label) {
-            if (label.key == null || label.value == null) {
-                this.removeLabel(label);
-            }
+            return (label.key !== null && label.value !== null);
         }
 
         checkLabels () {
-            _.forEach(this.token.labels, label => this.checkLabel(label));
+            this.token.labels = this.token.labels.filter(label => this.checkLabel(label));
         }
 
     }

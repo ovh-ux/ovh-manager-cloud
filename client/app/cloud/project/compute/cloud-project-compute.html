@@ -47,6 +47,11 @@
         </div>
 
         <div class="cloud-compute-content-ctnr-responsive">
+            <div class="cloud-compute-message-container">
+                <cui-message-container data-messages="CloudProjectComputeCtrl.messages"
+                                       data-grouped-types="['info']"
+                                       data-dismissable-types="['info']"></cui-message-container>
+            </div>
             <div ui-view="cloudProjectCompute" class="cloud-compute-content-ctnr"></div>
         </div>
 

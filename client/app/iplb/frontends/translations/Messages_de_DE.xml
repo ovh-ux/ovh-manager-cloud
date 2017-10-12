@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_frontends_title" qtlid="438545">Frontends</translation>
+   <translation id="iplb_frontends_intro_text" qtlid="438558">Das Frontend ist der Teil Ihres Loadbalancers, über den online auf Ihre Dienstleistung zugegriffen wird.</translation>
+
+   <translation id="iplb_frontends_add" qtlid="438571">Ein Frontend hinzufügen</translation>
+
+   <translation id="iplb_frontend_frontend" qtlid="429615">Frontend</translation>
+   <translation id="iplb_frontend_protocol" qtlid="9046">Protokoll</translation>
+   <translation id="iplb_frontend_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_default_farm" qtlid="429563">Standardfarm</translation>
+   <translation id="iplb_frontend_active" qtlid="55133">Aktiv</translation>
+   <translation id="iplb_frontend_action" qtlid="56105">Aktion</translation>
+   <translation id="iplb_frontend_no_frontend" qtlid="438584">Kein Frontend vorhanden</translation>
+
+   <translation id="iplb_frontend_update" qtlid="37875">Ändern</translation>
+   <translation id="iplb_frontend_delete" qtlid="2414">Löschen</translation>
+
+   <translation id="iplb_frontend_list_error" qtlid="438597">Beim Laden der Liste der Frontends ist ein Fehler aufetreten.</translation>
+
+   <translation id="iplb_frontend_update_error" qtlid="438610">Bei der Änderung des Frontends ist ein Fehler aufgetreten: {{message}}</translation>
+   <translation id="iplb_frontend_update_success" qtlid="438623">Das Frontend wurde erfolgreich geändert.</translation>
+   <translation id="iplb_frontend_update_confirm" qtlid="37875">Ändern</translation>
+   <translation id="iplb_frontend_update_title" qtlid="438636">Frontend {{frontendId}} bearbeiten</translation>
+
+   <translation id="iplb_frontend_add_error" qtlid="438649">Beim Hinzufügen des Frontends ist ein Fehler aufgetreten: {{message}}</translation>
+   <translation id="iplb_frontend_add_success" qtlid="438662">Das Frontend wurde erfolgreich erstellt.</translation>
+
+   <translation id="iplb_frontend_add_title" qtlid="438571">Ein Frontend hinzufügen</translation>
+   <translation id="iplb_frontend_add_name" qtlid="415818">Name (optional)</translation>
+   <translation id="iplb_frontend_add_protocol" qtlid="19711">Protokoll</translation>
+   <translation id="iplb_frontend_add_protocol_http" qtlid="19639">HTTP</translation>
+   <translation id="iplb_frontend_add_protocol_https" qtlid="60228">HTTPS</translation>
+   <translation id="iplb_frontend_add_protocol_tcp" qtlid="141821">TCP</translation>
+   <translation id="iplb_frontend_add_protocol_tls" qtlid="437843">SSL TCP (TLS)</translation>
+   <translation id="iplb_frontend_add_protocol_udp" qtlid="141834">UDP</translation>
+   <translation id="iplb_frontend_add_port" qtlid="9034">Port</translation>
+   <translation id="iplb_frontend_add_port_tip" qtlid="437934">1 bis {{portMax}}, format: simple (ex: 80), range (ex: 1000-1200), multi (ex: 80,443)</translation>
+   <translation id="iplb_frontend_add_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_add_default_farm" qtlid="429563">Standardfarm</translation>
+   <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Keine</translation>
+   <translation id="iplb_frontend_add_farm_add_another_choice" qtlid="438675">+ Eine Serverfarm hinzufügen</translation>
+   <translation id="iplb_frontend_add_farm" qtlid="437726">Eine Serverfarm hinzufügen</translation>
+   <translation id="iplb_frontend_add_farm_text" qtlid="438688">Sobald das aktuelle Frontend erstellt ist, können Sie diesem eine Standard-Serverfarm hinzufügen.</translation>
+   <translation id="iplb_frontend_add_default_certificate" qtlid="438701">Standard SSL Zertifikat</translation>
+   <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Keiner</translation>
+   <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Hinzufügen/Bestellen</translation>
+   <translation id="iplb_frontend_add_default_certificate" qtlid="133071">Ein Zertifikat hinzufügen</translation>
+   <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Sie können ein neues Zertifikat nicht direkt hinzufügen. Sie können es erst hinzufügen, wenn die Erstellung Ihres Frontends abgeschlossen ist.</translation>
+   <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Weitergehende Einstellungen</translation>
+   <translation id="iplb_frontend_add_advanced_options_info" qtlid="437947">Die gebräuchlichsten Standardwerte sind bereits voreingestellt. Sie können diese jederzeit ändern.</translation>
+   <translation id="iplb_frontend_add_advanced_options_show" qtlid="69353">Anzeigen</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover" qtlid="430096">Dedicated Failover IP</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover_tip" qtlid="438740">Liste der IP-Adressen entfernter Server, mit denen Ihr Loadbalancer verbunden ist.</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">Zugang auf bestimmte IPs begrenzen</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access_tip" qtlid="438766">Liste der IP-Adressen mit Zugang zum Loadbalancer (IPv4). Format: 1.2.3.4, 42.42.42.0/24</translation>
+   <translation id="iplb_frontend_add_http_redirection" qtlid="430135">HTTP-Weiterleitung</translation>
+   <translation id="iplb_frontend_add_http_header" qtlid="430122">HTTP-Header</translation>
+   <translation id="iplb_frontend_add_http_header_tip" qtlid="438779">%ci => client_ip, %cp => client_port</translation>
+   <translation id="iplb_frontend_add_hsts" qtlid="438792">HTTP Strict Transport Security (HSTS)</translation>
+   <translation id="iplb_frontend_add_hsts_tip" qtlid="438805">Unterstützung für HTTP Strict Transport Security aktivieren</translation>
+   <translation id="iplb_frontend_add_confirm" qtlid="37923">Hinzufügen</translation>
+   <translation id="iplb_frontend_add_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="iplb_frontend_add_select_placeholder" qtlid="17923">Auswählen</translation>
+
+   <translation id="iplb_frontend_delete_title" qtlid="438818">Frontend löschen</translation>
+   <translation id="iplb_frontend_delete_question" qtlid="438831">Sind Sie sicher, dass Sie das Frontend {{frontend}} löschen möchten?</translation>
+   <translation id="iplb_frontend_delete_button" qtlid="2414">Löschen</translation>
+   <translation id="iplb_frontend_delete_error" qtlid="438844">Beim Löschen des Frontends ist ein Fehler aufgetreten: {{message}}</translation>
+   <translation id="iplb_frontend_delete_success" qtlid="438857">Das Frontend wurde erfolgreich gelöscht.</translation>
+
+   <translation id="iplb_frontend_preview_title" qtlid="438870">Frontend-Übersicht</translation>
+   <translation id="iplb_frontend_preview_name" qtlid="3818">Name</translation>
+   <translation id="iplb_frontend_preview_protocol" qtlid="19711">Protokoll</translation>
+   <translation id="iplb_frontend_preview_port" qtlid="9034">Port</translation>
+   <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Rechenzentrum</translation>
+   <translation id="iplb_frontend_preview_default_farm" qtlid="429563">Standardfarm</translation>
+   <translation id="iplb_frontend_preview_default_certificate" qtlid="438701">Standard SSL Zertifikat</translation>
+   <translation id="iplb_frontend_preview_dedicated_ip_failover" qtlid="430096">Dedicated Failover IP</translation>
+   <translation id="iplb_frontend_preview_restrict_ip_access" qtlid="430109">Zugang auf bestimmte IPs begrenzen</translation>
+   <translation id="iplb_frontend_preview_http_redirection" qtlid="430135">HTTP-Weiterleitung</translation>
+   <translation id="iplb_frontend_preview_http_header" qtlid="430122">HTTP-Header</translation>
+   <translation id="iplb_frontend_preview_hsts" qtlid="429537">HSTS</translation>
+   <translation id="iplb_frontend_preview_active" qtlid="55133">Aktiv</translation>
+   <translation id="iplb_frontend_preview_id" qtlid="46792">Kennung</translation>
+
+   <translation id="iplb_frontend_toggle_success" qtlid="438623">Das Frontend wurde erfolgreich geändert.</translation>
+   <translation id="iplb_frontend_toggle_error" qtlid="438883">Bei der Bearbeitung Ihres Frontends ist ein Fehler aufgetreten: {{message}}</translation>
+</translations>

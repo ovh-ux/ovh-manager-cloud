@@ -8,6 +8,11 @@
             this.ringSize = 2 * Math.PI * this.rayon;
         }
 
+        $onInit () {
+            if (isNaN(this.text)) {
+                this.text = "0";
+            }
+        }
         percentToSize (percent) {
             return percent * this.ringSize / 100 || 0;
         }

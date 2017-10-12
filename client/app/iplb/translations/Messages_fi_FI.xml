@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_back_home" qtlid="4118">Takaisin</translation>
+
+   <translation id="iplb_guides" qtlid="300370">Oppaat</translation>
+   <translation id="iplb_guides_title" qtlid="247105">LBIP</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">Kaikki OVH:n ohjeet</translation>
+
+   <translation id="iplb_tab_home" qtlid="27643">Etusivu</translation>
+   <translation id="iplb_tab_frontends" qtlid="438545">Frontends</translation>
+   <translation id="iplb_tab_server_farm" qtlid="437700">Palvelinfarmit</translation>
+   <translation id="iplb_tab_ssl_certificate" qtlid="371307">SSL-varmenteet</translation>
+   <translation id="iplb_tab_graph" qtlid="5402">Grafiikat</translation>
+   <translation id="iplb_tab_task" qtlid="96716">Tehtävät</translation>
+
+   <translation id="iplb_modal_failover_ip_title" qtlid="227806">FailOver-IP</translation>
+
+   <translation id="iplb_modal_nat_ip_title" qtlid="429459">Lähtevä IPv4</translation>
+   <translation id="iplb_modal_nat_ip_description" qtlid="439325">Sinun täytyy antaa näille IP-osoitteille lupa yhdistää palvelimiisi.</translation>
+
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Muokkaa nimeä</translation>
+   <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Oletusnimi</translation>
+   <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Personoitu nimi</translation>
+   <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Virhe nimeä muutettaessa.</translation>
+
+   <translation id="iplb_modal_cipher_change_title" qtlid="439351">Muokkaa ciphers-algoritmeja</translation>
+   <translation id="iplb_modal_cipher_change_loading_error" qtlid="439364">Virhe ciphers-algoritmien muokkauksen moodin lataamisessa.</translation>
+   <translation id="iplb_modal_cipher_change_updating_error" qtlid="439377">Virhe cipher-algoritmin muutoksessa.</translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_title" qtlid="429368">Välituote</translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_description" qtlid="439390">Yhteensopivat asiakasohjelmat alkaen seuraavista versioista Android 2.3, IE 7, Java 7, Opera 5, Windows XP IE 8</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_title" qtlid="429394">Moderni</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_description" qtlid="439403">Korkeampi tietoturva, mutta vähemmän yhteensopivia järjestelmiä, Yhteensopivat asiakasohjelmat alkaen versioista Android 5.0, Chrome 30, Edge, Firefox 27, IE 11 on Windows 7, Java 8, Opera 17, Safari 9</translation>
+
+   <translation id="iplb_modal_offer_change_title" qtlid="359761">Muokkaa tuotetta</translation>
+
+   <translation id="iplb_information_loading_error" qtlid="439416">Virhe Tiedot-osion lataamisessa.</translation>
+   <translation id="iplb_configuration_loading_error" qtlid="439429">Virhe Konfiguraatio-osion lataamisessa.</translation>
+   <translation id="iplb_subscription_loading_error" qtlid="439442">Virhe Tilaus-osion lataamisessa.</translation>
+   <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Virhe Failover-IP -osoitteiden latauksessa.</translation>
+   <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Virhe lähtevien IPv4-osoitteiden lataamisessa.</translation>
+
+   <translation id="iplb_task_list_loading_error" qtlid="439481">Virhe tehtävien lataamisessa.</translation>
+   <translation id="iplb_farm_list_loading_error" qtlid="439494">Vihre palvelinfarmien lataamisessa.</translation>
+   <translation id="iplb_farm_server_list_loading_error" qtlid="439507">Erreur lors du chargement des serveurs de la ferme.</translation>
+
+   <translation id="iplb_ipfo_select_placeholder" qtlid="8674">Ei mitään</translation>
+
+   <translation id="iplb_zone_select_placeholder" qtlid="17923">Valitse</translation>
+   <translation id="iplb_zone_all" qtlid="439520">Kaikki (ALL)</translation>
+
+   <translation id="iplb_graph_name_conn" qtlid="41530">Samanaikaiset yhteydet</translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Pyyntöä minuuttia kohti</translation>
+   <translation id="iplb_graph_no_data" qtlid="439546">Ei tietoja tällä hetkellä</translation>
+
+   <translation id="iplb_status_active" qtlid="439559">{{activeCount}} aktiivista</translation>
+   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} aktiivista</translation>
+   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} toiminnassa</translation>
+   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} toiminnassa</translation>
+
+   <translation id="iplb_status_apply" qtlid="284867">Aseta konfiguraatio</translation>
+   <translation id="iplb_status_details" qtlid="439611">Katso tarkemmat tiedot</translation>
+
+   <translation id="iplb_utilisation_update_alert" qtlid="439624">Muokkaa hälytysrajaa</translation>
+   <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Sisältyvät tiedot</translation>
+   <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Hälytysraja</translation>
+   <translation id="iplb_utilisation_update_alert_error" qtlid="439650">Tapahtui virhe hälytysrajan päivityksessä.</translation>
+
+   <translation id="iplb_usage_loading_error" qtlid="439663">Tapahtui virhe Käyttö-osion lataamisessa.</translation>
+</translations>

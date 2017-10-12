@@ -21,7 +21,7 @@ class ControllerModalHelper {
             }
         });
 
-        return modalInstance;
+        return modalInstance.result;
     }
 
     showWarningModal (config = {}) {

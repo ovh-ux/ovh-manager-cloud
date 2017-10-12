@@ -10,6 +10,7 @@
    <translation id="metrics_guides_first-step" qtlid="415753">Premiers pas ...</translation>
    <translation id="metrics_guides_first-step_begin" qtlid="415766">Débuter</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protocoles</translation>
+   <translation id="metrics_guides_platform" qtlid="123607">Plateformes</translation>
 
 
    <translation id="metrics_endpoint" qtlid="403177">Accès plateforme</translation>
@@ -31,6 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Rétention (mois)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Vous atteindrez bientôt la limite du nombre de série autorisé.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Pensez migrer vers une offre supérieure.</translation>
+   <translation id="metrics_contact_admin" qtlid="43948">Administrateur</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Facturation</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Erreur au chargement de votre service.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Erreur au chargement de votre consommation.</translation>
@@ -45,6 +48,7 @@
    <translation id="metrics_setting_desc" qtlid="364420">Description du projet</translation>
    <translation id="metrics_setting_updated" qtlid="403593">Service mis à jour</translation>
    <translation id="metrics_setting_update_failed" qtlid="403606">Impossible de mettre à jour le service</translation>
+   <translation id="metrics_setting_name_updated" qtlid="439905">Nom du projet modifié</translation>
    <translation id="metrics_upgrade_title" qtlid="403619">Migrer vers un plan supérieur</translation>
    <translation id="metrics_purchase" qtlid="43558">Commander</translation>
 </translations>

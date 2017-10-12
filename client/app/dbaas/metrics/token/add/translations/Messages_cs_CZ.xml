@@ -6,7 +6,7 @@
    <translation id="metrics_token_add_permission_read" qtlid="6958">Čtení</translation>
    <translation id="metrics_token_add_permission_write" qtlid="301565">Zápis</translation>
 
-   <translation id="metrics_token_add_labels" qtlid="403437">Přidat štítky</translation>
+   <translation id="metrics_token_add_labels_add" qtlid="403437">Přidat štítky</translation>
    <translation id="metrics_token_add_labels_key" qtlid="104326">Klíč</translation>
    <translation id="metrics_token_add_labels_value" qtlid="47548">Hodnota</translation>
    <translation id="metrics_token_add_token" qtlid="415519">Přidat token</translation>

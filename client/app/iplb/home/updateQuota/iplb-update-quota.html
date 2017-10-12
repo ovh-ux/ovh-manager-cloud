@@ -1,0 +1,48 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="IpLoadBalancerUpdateQuotaCtrl.cancel()"></cui-modal-header>
+    <cui-modal-body title="'iplb_utilisation_update_alert' | translate">
+        <div class="oui-field">
+            <label for="included" class="oui-label" data-translate="iplb_utilisation_update_alert_included_data"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <input class="oui-input"
+                        type="text"
+                        id="included"
+                        name="included"
+                        data-ng-value="IpLoadBalancerUpdateQuotaCtrl.quota.included ? (IpLoadBalancerUpdateQuotaCtrl.quota.included | bytes:2:false) : ('iplb_home_tile_configuration_quota_unlimited' | translate)"
+                        readonly>
+                </div>
+            </div>
+        </div>
+        <div class="oui-field">
+            <label for="included" class="oui-label" data-translate="iplb_utilisation_update_alert_threshold"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <input class="oui-input"
+                        type="number"
+                        id="included"
+                        name="included"
+                        step="100"
+                        min="0"
+                        data-ng-model="IpLoadBalancerUpdateQuotaCtrl.alert">
+                </div>
+                <div class="oui-field-helper">
+                    <span data-translate="unit_size_GB"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cui-form-actions">
+            <cui-loader data-ng-show="IpLoadBalancerUpdateQuotaCtrl.saving"></cui-loader>
+            <div data-ng-hide="IpLoadBalancerUpdateQuotaCtrl.saving">
+                <button type="submit"
+                    class="oui-button oui-button_primary"
+                    data-translate="common_edit"
+                    data-ng-click="IpLoadBalancerUpdateQuotaCtrl.updateQuota()"></button>
+                <button class="oui-button oui-button_link"
+                    data-translate="common_cancel"
+                    data-ng-click="IpLoadBalancerUpdateQuotaCtrl.cancel()"></button>
+            </div>
+        </div>
+    </cui-modal-body>
+</cui-modal>
