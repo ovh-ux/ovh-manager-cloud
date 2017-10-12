@@ -30,15 +30,15 @@
    <translation id="cpc_snapshot_status" qtlid="364433">Estado</translation>
    <translation id="cpc_snapshot_status_active" qtlid="246624">Pronta</translation>
    <translation id="cpc_snapshot_status_queued" qtlid="246637">Snapshot agendada</translation>
-   <translation id="cpc_snapshot_status_saving" qtlid="29647">Em curso de criação</translation>
+   <translation id="cpc_snapshot_status_saving" qtlid="29647">Criação em curso</translation>
    <translation id="cpc_snapshot_status_killed" qtlid="45508">Em erro</translation>
    <translation id="cpc_snapshot_status_deleted" qtlid="223710">Eliminado</translation>
-   <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Em curso de eliminação</translation>
+   <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Eliminação em curso</translation>
    <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Esta snapshot não pode ser eliminado, uma vez que ele está a ser utilizado por pelo menos um servidor.</translation>
-   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Em curso de snapshot</translation>
-   <translation id="cpc_snapshot_status_creating" qtlid="29647">Em curso de criação</translation>
+   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Snapshot em curso</translation>
+   <translation id="cpc_snapshot_status_creating" qtlid="29647">Criação em curso</translation>
    <translation id="cpc_snapshot_status_available" qtlid="246624">Pronta</translation>
-   <translation id="cpc_snapshot_status_deleting" qtlid="152778">Em curso de eliminação</translation>
+   <translation id="cpc_snapshot_status_deleting" qtlid="152778">Eliminação em curso</translation>
    <translation id="cpc_snapshot_status_error" qtlid="45508">Em erro</translation>
    <translation id="cpc_snapshot_status_error_deleting" qtlid="45508">Em erro</translation>
 
