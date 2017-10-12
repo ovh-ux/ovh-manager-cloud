@@ -40,6 +40,7 @@
    <translation id="cloud_sidebar_actions_menu_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_actions_menu_paas_veeam" qtlid="404113">Veeam CC</translation>
    <translation id="cloud_sidebar_actions_menu_clouddb" qtlid="404863">CloudDB</translation>
+   <translation id="cloud_sidebar_actions_menu_clouddesktop" qtlid="303952">Cloud Desktop</translation>
 
 <!-- Hotfix -->
    <translation id="sidebar_menu_order_actions" qtlid="43558">Encomendar</translation>

@@ -37,7 +37,7 @@ class VpsSidebar {
             href: this.URLS.website_order.vps[this.locale],
             target: "_blank",
             external: true
-        }
+        };
     }
 }
 

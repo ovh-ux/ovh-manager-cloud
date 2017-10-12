@@ -34,4 +34,6 @@ NAS-HA -tuotteiden listan latauksessa.</translation>
 
    <translation id="nasha_order_guide_title" qtlid="300370">Oppaat</translation>
    <translation id="nasha_order_new_window" qtlid="222176">Uusi ikkuna</translation>
+
+   <translation id="nasha_order_select_placeholder">Sélectionnez...</translation>
 </translations>

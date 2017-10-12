@@ -8,7 +8,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
     var $rootScope;
     var $q;
     var CloudProjectMock;
-    var ToastMock;
+    var CloudMessageMock;
     var $translateMock;
     var $stateMock;
 
@@ -23,7 +23,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
         scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
         $q = _$q_;
-        ToastMock = {
+        CloudMessageMock = {
             success: jasmine.createSpy("success"),
             error: jasmine.createSpy("error")
         };
@@ -50,7 +50,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
             $rootScope: $rootScope,
             $stateParams: { projectId: projectId },
             OvhApiCloudProject: CloudProjectMock,
-            Toast: ToastMock,
+            CloudMessage: CloudMessageMock,
             $translate: $translateMock,
             $state: $stateMock
         });
@@ -79,7 +79,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
             controller.cancelProjectCreation();
             $httpBackend.flush();
 
-            expect(ToastMock.success).toHaveBeenCalled();
+            expect(CloudMessageMock.success).toHaveBeenCalled();
         });
 
         it("should redirect to home on success", function () {

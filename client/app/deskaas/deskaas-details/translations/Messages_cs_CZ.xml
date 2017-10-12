@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vdi_confirm_restore" qtlid="313910">Chcete zresetovat pracovní plochu?</translation>
+   <translation id="vdi_restoring" qtlid="313923">Probíhá reset pracovní plochy...</translation>
+   <translation id="vdi_restored" qtlid="313936">Reset byl dokončen.</translation>
+   <translation id="vdi_confirm_reboot" qtlid="323768">Chcete restartovat tento desktop?</translation>
+   <translation id="vdi_rebooting" qtlid="323781">Probíhá restart desktopu...</translation>
+   <translation id="vdi_rebooted" qtlid="323794">Desktop byl restartován.</translation>
+   <translation id="vdi_confirm_reset_password" qtlid="290030">Vygenerované heslo Vám bude zasláno e-mailem, chcete pokračovat?</translation>
+   <translation id="vdi_resetting_password" qtlid="313949">Probíhá změna hesla, zkontrolujte si prosím e-mail.</translation>
+   <translation id="vdi_pwd_resetted" qtlid="313962">Změna hesla byla dokončena, zkontrolujte si prosím e-mail.</translation>
+
+   <translation id="vdi_alias_changing" qtlid="323807">Probíhá změna aliasu...</translation>
+   <translation id="vdi_alias_changed" qtlid="323820">Změna aliasu byla dokončena.</translation>
+
+   <translation id="vdi_username_changing" qtlid="323833">Probíhá změna uživatelského jména.</translation>
+   <translation id="vdi_username_changed" qtlid="323846">Změna uživatelského jména byla dokončena.</translation>
+
+   <translation id="vdi_terminate_confirming" qtlid="370824">Zrušení služby je naplánováno.</translation>
+   <translation id="vdi_confirm_delete" qtlid="313975">Opravdu chcete odstranit tento desktop?</translation>
+   <translation id="vdi_deleting" qtlid="313988">Probíhá odstraňování desktopu. Byl Vám odeslán e-mail pro potvrzení tohoto požadavku.</translation>
+   <translation id="vdi_deleted" qtlid="314001">Desktop bude odstraněn. Byl Vám odeslán e-mail pro potvrzení tohoto požadavku.</translation>
+   <translation id="vdi_btn_restore" qtlid="314014">Reset desktopu</translation>
+   <translation id="vdi_btn_reboot" qtlid="323859">Restart desktopu</translation>
+   <translation id="vdi_btn_reset_password" qtlid="80394">Změna hesla</translation>
+   <translation id="vdi_btn_delete" qtlid="314027">Odstranění desktopu</translation>
+   <translation id="vdi_label_username" qtlid="197024">Uživatelské jméno:</translation>
+   <translation id="vdi_label_email" qtlid="116322">E-mail:</translation>
+   <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
+   <translation id="vdi_label_service_name" qtlid="323872">Název služby:</translation>
+   <translation id="vdi_label_ip" qtlid="290160">Odchozí veřejná IP:</translation>
+   <translation id="vdi_label_registration_date" qtlid="290173">Předplaceno od:</translation>
+   <translation id="vdi_label_delivery_date" qtlid="290186">Dodáno:</translation>
+   <translation id="vdi_label_connection" qtlid="290199">Spojení:</translation>
+   <translation id="vdi_back_to_list" qtlid="252477">Vrátit se na seznam</translation>
+   <translation id="vdi_alias_undefined" qtlid="126284">Nedefinováno</translation>
+
+   <translation id="vdi_label_os" qtlid="298630">OS:</translation>
+   <translation id="vdi_label_vcpu" qtlid="298643">CPU:</translation>
+   <translation id="vdi_label_ram" qtlid="284137">RAM:</translation>
+   <translation id="vdi_label_data" qtlid="298656">Data:</translation>
+   <translation id="vdi_label_upgrade" qtlid="298669">Upgrade:</translation>
+
+   <translation id="vdi_create_alias" qtlid="143616">Vytvořit alias</translation>
+   <translation id="vdi_change_alias" qtlid="323885">Změnit alias</translation>
+   <translation id="vdi_change_username" qtlid="323898">Změnit uživatelské jméno</translation>
+
+   <translation id="vdi_btn_upgrade" qtlid="370837">Změnit balíček</translation>
+   <translation id="vdi_confirm_upgrade" qtlid="314053">Poté, co upgradujete na verzi <strong>{{plan}}</strong> bude měsíční cena za tento desktop <strong>{{price}} bez DPH</strong>. Chcete provést upgrade?</translation>
+   <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
+   <translation id="vdi_upgrade_title" qtlid="370837">Změnit balíček</translation>
+   <translation id="vdi_upgrade_available" qtlid="370850">Můžete přejít na jeden z níže uvedených balíčků</translation>
+
+   <translation id="vdi_upgrading" qtlid="314066">Probíhá upgrade desktopu...</translation>
+   <translation id="vdi_upgraded" qtlid="314079">Upgrade desktopu dokončen.</translation>
+   <translation id="vdi_HT" qtlid="101397">bez DPH</translation>
+
+   <translation id="vdi_task_current" qtlid="195633">Probíhající úkol</translation>
+   <translation id="vdi_task_id" qtlid="279015">Id</translation>
+   <translation id="vdi_task_name" qtlid="9238">Popis</translation>
+   <translation id="vdi_task_state" qtlid="8230">Stav</translation>
+   <translation id="vdi_task_modification_date" qtlid="293905">Datum změny</translation>
+   <translation id="vdi_task_name_refreshVirtualDesktop" qtlid="370863">Resetování pracovní plochy</translation>
+   <translation id="vdi_task_name_restartVirtualDesktop" qtlid="370876">Restartování pracovní plochy</translation>
+   <translation id="vdi_task_name_removeVirtualDesktop" qtlid="370889">Odstranění pracovní plochy</translation>
+   <translation id="vdi_task_name_upgradeVirtualDesktop" qtlid="370902">Změna balíčku</translation>
+   <translation id="vdi_task_name_suspendVirtualDesktop" qtlid="370915">Suspenze pracovní plochy</translation>
+   <translation id="vdi_task_name_setAliasOnVirtualDesktop" qtlid="323690">Změna aliasu</translation>
+   <translation id="vdi_task_name_updateUsername" qtlid="370928">Aktualizace uživatele</translation>
+   <translation id="vdi_task_name_openVirtualDesktop" qtlid="370941">Vytvoření pracovní plochy</translation>
+   <translation id="vdi_task_name_updateUserPassword" qtlid="370954">Aktualizace uživatelského hesla</translation>
+   <translation id="vdi_task_name_getConsoleAccess" qtlid="406528">Požadavek na přístup ke konzoli</translation>
+
+   <translation id="vdi_task_state_toCreate" qtlid="26227">Vytváří se</translation>
+   <translation id="vdi_task_state_waitingTodo" qtlid="29467">Čekající</translation>
+   <translation id="vdi_task_state_todo" qtlid="134605">K provedení</translation>
+   <translation id="vdi_task_state_doing" qtlid="26383">Probíhá</translation>
+   <translation id="vdi_task_state_done" qtlid="370967">Hotovo</translation>
+   <translation id="vdi_task_state_error" qtlid="26407">Chyba</translation>
+   <translation id="vdi_task_state_fixing" qtlid="370980">Řešení problémů</translation>
+   <translation id="vdi_task_state_canceled" qtlid="27631">Zrušit</translation>
+   <translation id="vdi_task_state_unknown" qtlid="77142">Neznámý</translation>
+   <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Čeká se na podúlohy</translation>
+
+   <translation id="vdi_default_error" qtlid="371006">Omlouváme se, ale došlo k neočekávané chybě. Naše týmy byly o tomto problému okamžitě informovány. Vydržte prosím několik minut.</translation>
+   <translation id="vdi_task_error" qtlid="371019">V rámci úlohy {{ id}} došlo k chybě. Naše týmy byly o tomto problému okamžitě informovány. Vydržte prosím několik minut.</translation>
+
+</translations>

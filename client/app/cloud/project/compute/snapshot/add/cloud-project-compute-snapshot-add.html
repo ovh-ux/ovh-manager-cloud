@@ -1,58 +1,56 @@
-<form id="snapshotCreationForm" name="snapshotCreationForm" class="ovh-form-flat" novalidate>
+<form id="snapshotCreationForm" name="snapshotCreationForm" class="oui-modal oui-modal_shadow" novalidate>
 
-    <div class="modal-header">
-        <h3 class="modal-title" >
-            <i class="fa fa-floppy-o right-space-m8"></i>
-            {{"cpc_snapshot_add_title" | translate}}
-        </h3>
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudProjectComputeSnapshotAddCtrl.cancel()"></button>
     </div>
 
-    <div class="modal-body">
+    <div class="oui-modal__body oui-modal__body_no-icon">
 
-        <div data-ng-hide="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
-            <p class="bold" data-translate="cpc_snapshot_add_info"></p>
-
-            <div flat-input-container class="bottom-space-m12">
-                <label for="snapshotname" data-translate="cpc_snapshot_add_name"></label>
-                <input type="text" class="form-control error-animate-shake-light" id="snapshotname" name="snapshotname"
-                    placeholder="{{ ::'cpc_snapshot_add_name' | translate}}"
-                    data-ng-model="CloudProjectComputeSnapshotAddCtrl.snapshot.name"
-                    autoselect
-                    autofocus
-                    required
-                    ng-maxlength="255">
-            </div>
-            <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="snapshotCreationForm.snapshotname.$error" data-ng-if="snapshotCreationForm.snapshotname.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpc_snapshot_add_name_required_error"></span></p>
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span data-translate="cpc_snapshot_add_name_max_error"></span></p>
-            </div>
-        </div>
-        <div data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup" class="top-space-m20 bottom-space-m8">
+        <div class="oui-modal__body-text" data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
             <p class="center" data-translate="cpc_snapshot_add_doing"></p>
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
         </div>
-        <div class="top-space-m20 bottom-space-m8 alert alert-danger ">
-            <p class="center fs10"><i class="fa fa-exclamation-circle"></i> <span data-translate="cpc_snapshot_add_availibility"></span></p>
-        </div>
-    </div>
 
-    <div class="modal-footer">
-        <button type="submit" class="btn btn-primary pull-right"
-            data-ng-disabled="snapshotCreationForm.$invalid || CloudProjectComputeSnapshotAddCtrl.loaders.backup"
-            data-ng-click="CloudProjectComputeSnapshotAddCtrl.backup()"
-            data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
-            <i class="fa fa-shopping-cart right-space-m8"></i>
-            <span data-translate="cpc_snapshot_add_valid"></span>
-            <small class="opacity6"
+        <div class="oui-modal__body-text" data-ng-if="!CloudProjectComputeSnapshotAddCtrl.loaders.backup">
+            <h2 class="oui-modal__title" data-translate="cpc_snapshot_add_title"></h2>
+
+            <label class="oui-label" for="snapshotname" data-translate="cpc_snapshot_add_info"></label>
+            <input type="text" class="oui-input" id="snapshotname" name="snapshotname"
+                placeholder="{{ ::'cpc_snapshot_add_name' | translate}}"
+                data-ng-model="CloudProjectComputeSnapshotAddCtrl.snapshot.name"
+                autoselect
+                autofocus
+                required
+                ng-maxlength="255">
+            <div data-ng-messages="snapshotCreationForm.snapshotname.$error" data-ng-if="snapshotCreationForm.snapshotname.$dirty">
+                <p class="oui-modal__text animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpc_snapshot_add_name_required_error"></span></p>
+                <p class="oui-modal__text animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span data-translate="cpc_snapshot_add_name_max_error"></span></p>
+            </div>
+        </div>
+
+        <div class="alert alert-danger">
+            <p class="oui-modal__text text-center" data-translate="cpc_snapshot_add_availibility"></p>
+        </div>
+        <small class="opacity6"
                 data-ng-hide="!CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.prices.length"
                 translate="cpc_snapshot_add_total"
                 translate-values="{size: CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.size*1000000000 || 0, price: CloudProjectComputeSnapshotAddCtrl.snapshotPriceStruct.total.text || '?' }"></small>
-            <spinner name="bubbles-fff-ffcd1a-16"  data-ng-show="CloudProjectComputeSnapshotAddCtrl.loaders.backup"></spinner>
-        </button>
-        <button type="reset" class="btn btn-default pull-left "
+    </div>
+
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
             data-ng-click="CloudProjectComputeSnapshotAddCtrl.cancel()"
             data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
-            <i class="glyphicon glyphicon-remove"></i>
             <span data-translate="cpc_snapshot_add_cancel"></span>
+        </button>
+        <button type="submit" class="oui-button oui-button_primary"
+            data-ng-disabled="snapshotCreationForm.$invalid || CloudProjectComputeSnapshotAddCtrl.loaders.backup"
+            data-ng-click="CloudProjectComputeSnapshotAddCtrl.backup()"
+            data-ng-disabled="CloudProjectComputeSnapshotAddCtrl.loaders.backup">
+            <span data-translate="cpc_snapshot_add_valid"></span>
         </button>
     </div>
 

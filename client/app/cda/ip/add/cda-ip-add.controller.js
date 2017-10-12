@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaIpAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, Toast, OvhApiDedicatedCeph) {
+  .controller("CdaIpAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, CloudMessage, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -17,9 +17,10 @@ angular.module("managerApp")
               aclList: [self.model.ip]
           }).$promise.then(function (result) {
               $uibModalInstance.close({ taskId: result.data });
-              Toast.success($translate.instant("cda_ip_add_success"));
+              CloudMessage.success($translate.instant("cda_ip_add_success"));
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              $uibModalInstance.dismiss();
           }).finally(function () {
               self.saving = false;
           });

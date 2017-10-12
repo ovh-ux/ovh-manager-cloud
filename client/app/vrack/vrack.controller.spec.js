@@ -4,7 +4,7 @@ describe("Controller: VrackCtrl", function () {
     var $controller;
     var scope;
     var $rootScope;
-    var ToastMock;
+    var CloudMessageMock;
     var $translateMock;
     var $stateMock;
 
@@ -21,7 +21,9 @@ describe("Controller: VrackCtrl", function () {
         $controller = _$controller_;
         scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
-        ToastMock = {
+        CloudMessageMock = {
+            unSubscribe: jasmine.createSpy("unSubscribe"),
+            subscribe: jasmine.createSpy("subscribe"),
             success: jasmine.createSpy("success"),
             error: jasmine.createSpy("error")
         };
@@ -54,7 +56,7 @@ describe("Controller: VrackCtrl", function () {
         controller = $controller("VrackCtrl", {
             $scope: scope,
             $rootScope: $rootScope,
-            Toast: ToastMock,
+            CloudMessage: CloudMessageMock,
             $translate: $translateMock,
             $state: $stateMock,
             $stateParams: { vrackId: "testProject" }
@@ -109,7 +111,7 @@ describe("Controller: VrackCtrl", function () {
         });
     });
 
-    describe("Test error handling (toasts)", function () {
+    describe("Test error handling (CloudMessage)", function () {
         it("addSelectedServices error.", function () {
             $httpBackend.whenPOST(/\/vrack\/testProject\/test\/cloudProject?project=projectTest$/g).respond(418, null);
             $httpBackend.whenPOST(/\/vrack\/testProject\/cloudProject$/g).respond(418, null);
@@ -117,7 +119,7 @@ describe("Controller: VrackCtrl", function () {
             controller.form.servicesToAdd.push({ type: "cloudProject", id: "test" });
             controller.addSelectedServices();
             $httpBackend.flush();
-            expect(ToastMock.error).toHaveBeenCalled();
+            expect(CloudMessageMock.error).toHaveBeenCalled();
         });
 
         it("deleteSelectedServices error.", function () {
@@ -125,7 +127,7 @@ describe("Controller: VrackCtrl", function () {
             controller.form.servicesToDelete.push({ type: "cloudProject", id: "test" });
             controller.deleteSelectedServices();
             $httpBackend.flush();
-            expect(ToastMock.error).toHaveBeenCalled();
+            expect(CloudMessageMock.error).toHaveBeenCalled();
 
         });
     });

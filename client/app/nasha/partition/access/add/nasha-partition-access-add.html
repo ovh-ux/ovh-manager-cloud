@@ -1,13 +1,20 @@
-<div class="nasha nasha-partition-access-add">
-    <div class="modal-header">
-        <h3 class="modal-title" data-translate="nasha_access_action_add"></h3>
-    </div>
-
+<div class="oui-modal oui-modal_shadow nasha-partition-access-add">
     <form class="form" role="form" data-ng-submit="NashaPartitionAccessAddCtrl.addAccess()" name="nashaPartitionAccessAddForm">
-        <div class="modal-body loading-spinner" data-ng-if="NashaPartitionAccessAddCtrl.loading">
-            <spinner></spinner>
+        <div class="oui-modal__header">
+            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit" data-ng-click="NashaPartitionAccessAddCtrl.dismiss()"></button>
         </div>
-        <div class="modal-body" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
+
+
+        <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="NashaPartitionAccessAddCtrl.loading">
+            <div class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+        </div>
+        <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="!NashaPartitionAccessAddCtrl.loading">
+            <h2 class="oui-modal__title" data-translate="nasha_access_action_add"></h2>
+
             <div class="bottom-space-m12">
                 <oui-message type="info" message="{{ :: 'nasha_partitions_access_notice' | translate }}"></oui-message>
             </div>
@@ -26,11 +33,9 @@
             <div class="form-group top-space-m20">
                 <strong class="permissions" data-translate="nasha_partitions_access_permissions"></strong>
 
-                <div class="nasha-warning bottom-space-p8 top-space-p8 left-space-p12 right-space-p12 top-space-m4 bottom-space-m4"
-                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'">
-                    <img src="assets/images/icones/warning.svg" class="nasha-warning-icon" />
-                    <p class="nasha-warning-text left-space-m12 bottom-space-m0" data-translate="nasha_partitions_access_permissions_warning_cifs"></p>
-                </div>
+                <oui-message type="warning"
+                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'"
+                    message="{{ :: 'nasha_partitions_access_permissions_warning_cifs' | translate }}"></oui-message>
 
                 <div class="radio">
                     <label class="protocols-radio top-space-m4">
@@ -57,16 +62,16 @@
             </div>
         </div>
 
-        <div class="modal-footer">
-            <button type="submit"
-                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                    data-ng-disabled="NashaPartitionAccessAddCtrl.loading || !NashaPartitionAccessAddCtrl.data.type || !NashaPartitionAccessAddCtrl.data.accessToAdd">
-                <span data-translate="common_confirm"></span>
+        <div class="oui-modal__footer">
+            <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-click="NashaPartitionAccessAddCtrl.dismiss()"
+                 data-translate="common_cancel">
             </button>
-            <button type="reset" class="btn btn-default pull-left"
-                    data-ng-click="NashaPartitionAccessAddCtrl.dismiss()">
-                <i class="fa fa-times"></i>
-                <span data-translate="common_cancel"></span>
+            <button type="submit"
+                class="oui-button oui-button_primary"
+                data-ng-disabled="NashaPartitionAccessAddCtrl.loading || !NashaPartitionAccessAddCtrl.data.type || !NashaPartitionAccessAddCtrl.data.accessToAdd"
+                data-translate="common_confirm">
             </button>
         </div>
     </form>

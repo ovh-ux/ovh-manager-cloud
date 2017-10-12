@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="preload_welcome" qtlid="433576">Bienvenue sur votre</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">Espace client OVH</translation>
+
    <translation id="common_confirm" qtlid="31498">Confirmer</translation>
    <translation id="common_buy" qtlid="269591">Acheter</translation>
    <translation id="common_required_field" qtlid="250017">Information requise</translation>
@@ -62,6 +65,7 @@
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
    <translation id="common_modify" qtlid="37875">Modifier</translation>
+   <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_add" qtlid="37923">Ajouter</translation>
    <translation id="common_remove" qtlid="323093">Retirer</translation>
    <translation id="edit" qtlid="37875">Modifier</translation>
@@ -70,6 +74,7 @@
    <translation id="error" qtlid="26407">Erreur</translation>
    <translation id="soon" qtlid="250043">Bientôt disponible</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Plus d'informations</a>.</translation>
+   <translation id="common_progress" qtlid="354496">Progression</translation>
 
    <translation id="other_menu" qtlid="265265">Autres produits</translation>
    <translation id="cloud_menu_title" qtlid="104890">Cloud public</translation>
@@ -473,12 +478,21 @@
    <translation id="common_login" qtlid="2174">Se connecter</translation>
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
+   <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
+
+   <translation id="common_tile_shortcut" qtlid="403658">Raccourcis</translation>
+
+   <translation id="common_tile_infos" qtlid="26551">Informations</translation>
+
+   <translation id="common_tile_configuration" qtlid="4406">Configuration</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Abonnement</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Offre</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renouvellement automatique</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contacts</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Date de création</translation>
+
+   <translation id="common_tile_information_status" qtlid="26443">Statut</translation>
 
    <translation id="common_preview_see" qtlid="433371">Voir l'aperçu</translation>
 
@@ -489,4 +503,10 @@
    <translation id="common_pagination_results" qtlid="433410">résultats</translation>
    <translation id="common_pagination_next" qtlid="433423">Page suivante</translation>
    <translation id="common_pagination_previous" qtlid="433436">Page précédente</translation>
+
+   <translation id="common_name_change_modal_title" qtlid="439892">Modifier le nom</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nom par défaut</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nom personnalisé</translation>
+
+   <translation id="common_task_list_empty" qtlid="134865">Aucune tâche en cours</translation>
 </translations>

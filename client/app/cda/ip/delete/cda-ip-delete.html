@@ -1,31 +1,41 @@
-<section class="cda-modal">
-    <header class="modal-header">
-        <h4 class="h3" data-translate="cda_ip_delete_title"></h4>
-    </header>
-    <div class="modal-body">
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CdaIpDeleteCtrl.closeModal()"></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="CdaIpDeleteCtrl.saving">
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+    </div>
+    <div class="oui-modal__body" data-ng-if="!CdaIpDeleteCtrl.saving">
+    <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
+    <div class="oui-modal__body-text">
+        <h2 class="oui-modal__title" data-translate="cda_ip_delete_title"></h2>
+
         <dl>
             <dt data-translate="cda_ip_delete_ip_label"></dt>
             <dd data-ng-bind="(CdaIpDeleteCtrl.ip.network) + '/' + (CdaIpDeleteCtrl.ip.netmask)"></dd>
         </dl>
-        <p data-translate="cda_ip_delete_confirm"></p>
+        <p class="oui-modal__text">
+            <strong data-translate="cda_ip_delete_confirm"></strong>
+        </p>
     </div>
-
-    <div class="modal-footer">
+    </div>
+    <div class="oui-modal__footer">
         <button type="button"
-                class="btn btn-primary pull-right"
+                class="oui-button oui-button_secondary"
+                title="{{ ::'common_cancel' | translate }}"
+                data-ng-click="CdaIpDeleteCtrl.closeModal()"
+                data-ng-disabled="CdaIpDeleteCtrl.saving">
+            <span data-translate="common_cancel"></span>
+        </button>
+        <button type="button"
+                class="oui-button oui-button_primary"
                 title="{{ ::'delete' | translate }}"
                 data-ng-click="CdaIpDeleteCtrl.deleteIp()"
                 data-ng-disabled="CdaIpDeleteCtrl.saving">
             <span data-translate="delete"></span>
-            <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CdaIpDeleteCtrl.saving"></spinner>
-        </button>
-        <button type="button"
-                class="btn btn-default pull-right pull-right right-space-m16"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaIpDeleteCtrl.closeModal()"
-                data-ng-disabled="CdaIpDeleteCtrl.saving">
-            <i class="glyphicon glyphicon-remove"></i>
-            <span data-translate="common_cancel"></span>
         </button>
     </div>
-</section>
+</div>

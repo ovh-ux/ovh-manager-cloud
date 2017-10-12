@@ -1,6 +1,8 @@
 <!-- init loading... -->
 <div data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.init" class="text-center" style="margin-top: 200px;">
-    <spinner name="bubbles-222-fff-32"></spinner>
+    <div class="text-center">
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
+    </div>
 </div>
 <!-- error -->
 <div id="cloud-project-compute-infrastructure" class="row cloud-compute-infra" data-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.init && CloudProjectComputeInfrastructureCtrl.errors.init">
@@ -19,15 +21,12 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <cloud-project-rename data-project-id="CloudProjectComputeInfrastructureCtrl.instanceId"></cloud-project-rename>
-            </div>
-            <div class="col-xs-12">
                 <div class="btn-group cloud-compute-infra-primary-actions">
-                    <button type="button" class="btn btn-primary dropdown-toggle fs14"
+                    <button type="button" class="oui-button oui-button_dropdown dropdown-toggle"
                             data-ng-disabled="CloudProjectComputeInfrastructureCtrl.loaders.vrack"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" write-right-required>
-                        <i class="glyphicon glyphicon-plus right-space-m8"></i>
                         {{:: 'cpci_add_btn'|translate }}
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                     </button>
                     <ul class="dropdown-menu">
                         <li>
@@ -64,6 +63,12 @@
                         </li>
                     </ul>
                 </div>
+                <button type="button"
+                        class="oui-button oui-button_secondary pull-right"
+                        data-ng-click="CloudProjectComputeInfrastructureCtrl.showDeleteProjectModal()"
+                        data-ng-disabled="projectDeleted" write-right-required>
+                    <span data-translate="cpb_details_project_delete"></span>
+                </button>
             </div>
         </div>
 
@@ -166,7 +171,9 @@
                                                                     <i class="ovh-font ovh-font-harddisk"></i>
                                                                 </div>
                                                             </div>
-                                                            <spinner data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'"></spinner>
+                                                            <div data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'" class="text-center">
+                                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                            </div>
                                                         </div>
 
                                                         <div class="volume-detail-item-info">
@@ -300,7 +307,7 @@
 
                                     <!-- Loading list... -->
                                     <div class="text-center animate-fadeIn-enter" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.vrack">
-                                        <spinner name="bubbles-5293d4-fff-32"></spinner>
+                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
                                     </div>
 
                                     <div class="animate-fadeIn-enter" data-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.vrack && !CloudProjectComputeInfrastructureCtrl.infra.vrack.publicCloud.length()">
@@ -365,7 +372,9 @@
                                                             data-ng-disabled="vm.confirmLoading">
                                                         <i class="glyphicon glyphicon-trash"></i>
                                                         <span translate="cpci_vm_delete_submit"></span>
-                                                        <spinner data-ng-show="vm.confirmLoading" name="bubbles-fff-d34936-16" />
+                                                        <div data-ng-show="vm.confirmLoading" class="text-center">
+                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                        </div>
                                                     </button>
 
                                                     <!-- confirm reinstall -->
@@ -388,8 +397,10 @@
                                                                 data-ng-disabled="vm.confirmLoading">
                                                             <i class="fa fa-refresh"></i>
                                                             <span translate="cpci_vm_reinstall_submit"></span>
-                                                            <spinner data-ng-show="vm.confirmLoading" name="bubbles-fff-d34936-16" />
                                                         </button>
+                                                        <div data-ng-show="vm.confirmLoading" class="text-center">
+                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                        </div>
                                                     </div>
 
                                                     <!-- confirm reboot -->
@@ -401,8 +412,11 @@
                                                             data-ng-disabled="vm.confirmLoading">
                                                         <i class="fa fa-power-off"></i>
                                                         <span translate="cpci_vm_reboot_submit"></span>
-                                                        <spinner data-ng-show="vm.confirmLoading" name="bubbles-fff-d34936-16" />
                                                     </button>
+
+                                                    <div class="text-center" data-ng-if="vm.confirmLoading">
+                                                        <oui-loader size="m" class="d-inline-block"></oui-loader>
+                                                    </div>
 
                                                     <!-- confirm HARD reboot -->
                                                     <button class="btn btn-danger"
@@ -413,7 +427,6 @@
                                                             data-ng-disabled="vm.confirmLoading">
                                                         <i class="fa fa-power-off"></i>
                                                         <span translate="cpci_vm_reboot_submit"></span>
-                                                        <spinner data-ng-show="vm.confirmLoading" name="bubbles-fff-d34936-16" />
                                                     </button>
                                                 </div>
                                             </div>
@@ -476,7 +489,9 @@
 
                                                     <div data-ng-switch-when="PENDING"
                                                         class="vm-states vcenter">
-                                                        <spinner name="bubbles-5293d4-fff-32"></spinner>
+                                                        <div class="text-center">
+                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                        </div>
                                                         <p class="no-space text-info"
                                                            data-translate="{{:: 'cpci_vm_' + vm.status }}"></p>
                                                     </div>
@@ -536,8 +551,8 @@
                                                         data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
                                                         translate="cpci_vm_flavor_month"
                                                         translate-values="{price: vm.price.monthlyPrice.text || '?' }"></span>
-                                                    <span>
-                                                        <spinner data-ng-if="vm.monthlyBilling.status === 'activationPending'" name="bubbles-d1ad01-fff-16"></spinner>
+                                                    <span class="text-center" data-ng-if="vm.monthlyBilling.status === 'activationPending'">
+                                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
                                                     </span>
                                                 </div>
 
@@ -845,7 +860,9 @@
                                                                                     <i class="ovh-font ovh-font-harddisk"></i>
                                                                                 </div>
                                                                             </div>
-                                                                            <spinner data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'" size="16"></spinner>
+                                                                            <div class="text-center" data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'">
+                                                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                            </div>
                                                                         </div>
 
                                                                         <div class="volume-detail-item-info">
@@ -1020,7 +1037,7 @@
                                             {{ :: 'cpci_ipfo_importing' | translate }}
                                         </span>
                                         <span class="pull-right right-space-m8">
-                                            <spinner name="bubbles-222-a8e0d5-16"></spinner>
+                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
                                         </span>
                                     </div>
                                 </div>
@@ -1054,9 +1071,9 @@
                                                                         || CloudProjectComputeInfrastructureCtrl.volumeEdit.action === 'moveCheckbox'"
                                                     ip-access-key="'ip'">
                                                 </ip-dropdown>
-                                                <span class="ip-spinner" data-ng-if="ip.status !== 'ok'">
-                                                    <spinner data-ng-if="ip.type === 'failover'" name="bubbles-222-a8e0d5-16"></spinner>
-                                                    <spinner data-ng-if="ip.type !== 'failover'" name="bubbles-fff-222-16"></spinner>
+                                                <span class="ip-spinner text-center" data-ng-if="ip.status !== 'ok'">
+                                                    <oui-loader data-ng-if="ip.type === 'failover'" size="s" class="d-inline-block"></oui-loader>
+                                                    <oui-loader data-ng-if="ip.type !== 'failover'" size="s" class="d-inline-block"></oui-loader>
                                                 </span>
 
                                                 <!-- flag -->
@@ -1124,11 +1141,14 @@
 
             </div>
         </div>
-
         <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
             data-ng-if="CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit">
 
-            <div class="row">
+            <div class="text-center" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.linkActionConfirm">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+
+            <div class="row" dat-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.linkActionConfirm">
 
                 <p class="validator-text"
                    data-ng-if="CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.connection && CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.connectedIp.routedTo.length > 0"
@@ -1168,7 +1188,6 @@
                                 && (CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.connectionCurrentVmId === CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.connectionVmId))"
                         data-ng-click="CloudProjectComputeInfrastructureCtrl.ipEdit[CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.action].confirm()">
                         {{ 'cpci_confirm_' + CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit.action + '_button' | translate }}
-                        <spinner data-ng-show="CloudProjectComputeInfrastructureCtrl.loaders.linkActionConfirm"></spinner>
                     </button>
                 </div>
             </div>
@@ -1178,7 +1197,11 @@
         <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
             data-ng-if="CloudProjectComputeInfrastructureCtrl.volumeEdit.action">
 
-            <div class="row">
+            <div class="text-center" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm">
+                <oui-loader size="s" class="d-inline-block"></oui-loader>
+            </div>
+
+            <div class="row" data-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm">
 
                 <p class="validator-text"
                     data-ng-if="CloudProjectComputeInfrastructureCtrl.volumeEdit.action === 'move' && !CloudProjectComputeInfrastructureCtrl.volumeEdit.targetVm"
@@ -1241,7 +1264,6 @@
                         data-ng-disabled="CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm || CloudProjectComputeInfrastructureCtrl.volumeEdit[CloudProjectComputeInfrastructureCtrl.volumeEdit.action].isInvalid()"
                         data-ng-click="CloudProjectComputeInfrastructureCtrl.volumeEdit[CloudProjectComputeInfrastructureCtrl.volumeEdit.action].confirm(); CloudProjectComputeInfrastructureCtrl.forceRefreshLinks()">
                         {{ 'cpci_volume_confirm_' + CloudProjectComputeInfrastructureCtrl.volumeEdit.action + '_button' | translate }}
-                        <spinner data-ng-show="CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm"></spinner>
                     </button>
                 </div>
             </div>

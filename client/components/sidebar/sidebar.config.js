@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, OvhApiMe, OvhApiProducts,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService, OvhApiMe, OvhApiProducts,
                  FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -17,7 +17,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             paas: SidebarService.getServices(PaasSectionSidebarService.section, products),
             metrics: SidebarService.getServices(MetricsSectionSidebarService.section, products),
             vracks: SidebarService.getServices(VrackSectionSidebarService.section, products),
-            load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products)
+            load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products),
+            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products)
         };
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
@@ -43,13 +44,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         LoadBalancerSidebarService.fillSection(services.load_balancer);
         VrackSectionSidebarService.fillSection(services.vracks);
 
-        if (FeatureAvailabilityService.hasFeature("DESKAAS", "sidebarMenu", locale)) {
-            SidebarMenu.addMenuItem({
-                title: $translate.instant("cloud_sidebar_section_cloud_desktop"),
-                icon: "ovh-font ovh-font-cloud-desktop",
-                url: REDIRECT_URLS.cloudDesktop,
-                target: "_parent"
-            });
+        if (FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
+            CloudDesktopSidebarService.fillSection(services.cloud_desktop);
         }
     }
 
@@ -65,7 +61,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             IaasSectionSidebarService.section,
             PaasSectionSidebarService.section,
             MetricsSectionSidebarService.section,
-            VrackSectionSidebarService.section
+            VrackSectionSidebarService.section,
+            CloudDesktopSidebarService.section
         ], section => {
             _.forEach(section, product => {
                 if (FeatureAvailabilityService.hasFeature(product.type, "sidebarOrder", locale)) {

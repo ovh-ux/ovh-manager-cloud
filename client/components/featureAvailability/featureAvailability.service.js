@@ -81,10 +81,13 @@
         },
         VEEAM: {
             sidebarOrder: {
-                EU: ["FR"],
+                EU: ["FR"]
             }
         },
-        DESKAAS: {
+        CLOUD_DESKTOP: {
+            sidebarOrder: {
+                EU: ["FR"]
+            },
             sidebarMenu: {
                 EU: ["FR"]
             }

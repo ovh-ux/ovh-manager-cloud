@@ -31,12 +31,13 @@
 
    <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Verwijder deze {{nbUsers}} gebruikers</translation>
    <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Verwijder de gebruikers niet</translation>
-   <translation id="openstackusers_users_delete_button" qtlid="7882">Deze gebruiker verwijderen</translation>
+   <translation id="openstackusers_users_delete_title" qtlid="7882">Deze gebruiker verwijderen</translation>
    <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Verwijder deze gebruiker niet</translation>
    <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Bevestig deze verwijdering</translation>
 
    <translation id="openstackusers_users_delete_success_plural" qtlid="245532">De {{nbUsers}} geselecteerde gebruikers worden verwijderd.</translation>
    <translation id="openstackusers_users_delete_error_plural" qtlid="245545">We kunnen niet de {{nbUsers}} gebruikers verwijderen!</translation>
    <translation id="openstackusers_users_delete_error_one" qtlid="245558">We kunnen een gebruiker niet verwijderen.</translation>
+   <translation id="openstackusers_user_delete_message" qtlid="354756">Weet u zeker dat u deze gebruiker wilt verwijderen? </translation>
 
 </translations>

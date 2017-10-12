@@ -1,426 +1,285 @@
-<div id="cloud-project-openstack-users" class="row">
-    <div class="col-xs-12">
+<button data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()"
+        class="oui-button oui-button_secondary"
+        data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.table.user ||
+                          CloudProjectOpenstackUsersCtrl.table.users === null"
+        data-ng-class="{
+            'visibility-hide' : CloudProjectOpenstackUsersCtrl.toggle.openAddUser
+        }"
+        write-right-required>
+	<span translate="openstackusers_users_add_button"></span>
+</button>
 
-		<div class="bottom-space-m16">
-			<button data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()"
-                    class="btn btn-primary"
-                    data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.table.user ||
-                                      CloudProjectOpenstackUsersCtrl.table.users === null"
-                    data-ng-class="{
-                        'visibility-hide' : CloudProjectOpenstackUsersCtrl.toggle.openAddUser
-                    }"
-                    write-right-required>
-				<i class="glyphicon glyphicon-plus right-space-m8"></i>
-				<span translate="openstackusers_users_add_button"></span>
-			</button>
 
-        </div>
+<!-- OPENSTACK USERS TABLE -->
+<table class="oui-table oui-table_responsive">
+    <thead class="oui-table__headers">
+        <tr>
+            <th class="oui-table__header oui-table__cell_sortable"
+                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('username')"
+                data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : CloudProjectOpenstackUsersCtrl.order.by === 'username' && !CloudProjectOpenstackUsersCtrl.order.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : CloudProjectOpenstackUsersCtrl.order.by === 'username' && CloudProjectOpenstackUsersCtrl.order.reverse}">
+                <span data-translate="openstackusers_users_userlist_username_cols"></span>
+            </th>
+            <th class="oui-table__header oui-table__cell_sortable"
+                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('description')"
+                data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : CloudProjectOpenstackUsersCtrl.order.by === 'description' && !CloudProjectOpenstackUsersCtrl.order.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : CloudProjectOpenstackUsersCtrl.order.by === 'description' && CloudProjectOpenstackUsersCtrl.order.reverse}">
+                <span data-translate="openstackusers_users_userlist_description_cols"></span>
+            </th>
+            <th class="oui-table__header">
+                <span data-translate="openstackusers_users_userlist_password_cols"></span>
+            </th>
+            <th class="oui-table__header">
+                <span data-translate="openstackusers_users_userlist_status_cols"></span>
+            </th>
+            <th class="oui-table__header oui-table__cell_sortable text-center" write-right-required>
+                <button data-ng-click="CloudProjectOpenstackUsersCtrl.getUsers(true)"
+                    class="no-style pull-right"
+                    analytics-on
+                    analytics-category="ux_cloud"
+                    analytics-event="click-cloud_openstackusers:refresh">
+                    <i class="glyphicon glyphicon-refresh"></i>
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.openAddUser" class="reverse-table-striped animate-opacity2-leave" class="oui-table__body">
+        <tr class="oui-table__row" tabindex="0">
+            <td colspan="6" class="no-space">
+                <div data-ng-slide-down="CloudProjectOpenstackUsersCtrl.toggle.openAddUser" lazy-render duration="0.3">
 
-        <!-- Multi DELETE -->
-        <div class="pull-left">
-
-            <button type="button"
-                class="btn animate-fadeInUp-enter animate-fadeOutDown-leave"
-                data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti"
-                data-ng-show="CloudProjectOpenstackUsersCtrl.getSelectedCount() > 0 && !CloudProjectOpenstackUsersCtrl.loaders.table.user"
-                data-ng-class="{
-                'btn-danger' : !CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm,
-                'btn-default' : CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm
-                }"
-                data-ng-click="CloudProjectOpenstackUsersCtrl.toggleDeleteMultiConfirm()"
-                write-right-required>
-
-                <i 	data-ng-hide="CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm"
-                    class="glyphicon glyphicon-trash right-space-m8"></i>
-                <span data-ng-hide="CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm">
-                    {{(CloudProjectOpenstackUsersCtrl.getSelectedCount() > 1 ? 'openstackusers_users_delete_button_plural' : 'openstackusers_users_delete_button') | translate:{nbUsers: CloudProjectOpenstackUsersCtrl.getSelectedCount()} }}
-                </span>
-
-                <i 	data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm"
-                    class="glyphicon glyphicon-remove right-space-m8"></i>
-
-                <span data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm">
-                    {{(CloudProjectOpenstackUsersCtrl.getSelectedCount() > 1 ? 'openstackusers_users_delete_cancel_button_plural' : 'openstackusers_users_delete_cancel_button') | translate:{nbUsers: CloudProjectOpenstackUsersCtrl.getSelectedCount()} }}
-                </span>
-            </button>
-
-            <button type="button"
-                class="btn btn-danger animate-fadeInLeft-enter"
-                data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti"
-                data-ng-click="CloudProjectOpenstackUsersCtrl.deleteMultiUsers()"
-                data-ng-show="CloudProjectOpenstackUsersCtrl.getSelectedCount() > 0
-                && CloudProjectOpenstackUsersCtrl.toggle.openDeleteMultiConfirm
-                && !CloudProjectOpenstackUsersCtrl.loaders.table.user">
-
-                <i class="glyphicon glyphicon-trash right-space-m8"></i>
-                {{'openstackusers_users_delete_confirm_button' | translate}}
-                <spinner name="bubbles-fff-d34936-16" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti"></spinner>
-            </button>
-
-        </div>
-
-        <!-- OPENSTACK USERS TABLE -->
-        <div class="table-responsive-vertical shadow-z-1" style="margin-top: 50px;">
-            <table class="table table-pretty table-hover table-striped" style="position:relative;">
-                <thead>
-                    <tr>
-                        <th class="text-center" write-right-required>
-                            <input type="checkbox"
-                            data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.table.user || !CloudProjectOpenstackUsersCtrl.table.selectableUsers.length"
-                            ovh-checkbox-table
-                            ovh-checkbox-table-ids-all="CloudProjectOpenstackUsersCtrl.table.selectableUsers"
-                            ovh-checkbox-table-ids-page="CloudProjectOpenstackUsersCtrl.table.selectableUsersCurrentPage"
-                            ovh-checkbox-table-ids-selected="CloudProjectOpenstackUsersCtrl.table.selected"
-                            ovh-checkbox-table-id="id"
-                            data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.remove.user || CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti" />
-                        </th>
-                        <th>
-                            <button class="no-style"
-                                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('username')"
-                                analytics-on
-                                analytics-category="ux_cloud"
-                                analytics-event="click-cloud_openstackusers:orderByUsername"
-                                data-ng-show="CloudProjectOpenstackUsersCtrl.table.users.length">
-                                <label 	class="pointer"
-                                    for="useraddusername"
-                                    data-translate="openstackusers_users_userlist_username_cols">
-                                </label>
-                                <span class="table-pretty-filter">
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by !== 'username'" class="fa fa-sort"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'username' && CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-desc"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'username' && !CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-asc"></i>
-                                </span>
-                            </button>
-                        </th>
-                        <th>
-                            <button class="no-style"
-                                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('description')"
-                                analytics-on
-                                analytics-category="ux_cloud"
-                                analytics-event="click-cloud_openstackusers:orderByDescription"
-                                data-ng-show="CloudProjectOpenstackUsersCtrl.table.users.length">
-                                <label 	class="pointer"
-                                    for="useradddescription"
-                                    data-translate="openstackusers_users_userlist_description_cols">
-                                </label>
-                                <span 	class="animate-flash-enter text-danger"
-                                    data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.openAddUser">
-                                    *
-                                </span>
-                                <span class="table-pretty-filter">
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by !== 'description'" class="fa fa-sort"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'description' && CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-desc"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'description' && !CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-asc"></i>
-                                </span>
-                            </button>
-                        </th>
-                        <th>
-                            <button class="no-style"
-                                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('password')"
-                                analytics-on
-                                analytics-category="ux_cloud"
-                                analytics-event="click-cloud_openstackusers:orderByPassword"
-                                data-ng-show="CloudProjectOpenstackUsersCtrl.table.users.length">
-                                <label 	class="pointer"
-                                    for="useraddpassword"
-                                    data-translate="openstackusers_users_userlist_password_cols">
-                                </label>
-                                <span class="table-pretty-filter">
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by !== 'password'" class="fa fa-sort"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'password' && CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-desc"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'password' && !CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-asc"></i>
-                                </span>
-                            </button>
-                        </th>
-                        <th class="text-center">
-                            <button class="no-style"
-                                data-ng-click="CloudProjectOpenstackUsersCtrl.orderBy('status')"
-                                analytics-on
-                                analytics-category="ux_cloud"
-                                analytics-event="click-cloud_openstackusers:orderByStatus"
-                                data-ng-show="CloudProjectOpenstackUsersCtrl.table.users.length">
-                                <label 	class="pointer"
-                                    for="useraddstatus"
-                                    data-translate="openstackusers_users_userlist_status_cols">
-                                </label>
-                                <span class="table-pretty-filter">
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by !== 'status'" class="fa fa-sort"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'status' && CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-desc"></i>
-                                    <i data-ng-show="CloudProjectOpenstackUsersCtrl.order.by === 'status' && !CloudProjectOpenstackUsersCtrl.order.reverse" class="fa fa-sort-asc"></i>
-                                </span>
-                            </button>
-                        </th>
-                        <th class="text-center" style="width: 80px" write-right-required>
-                            <button data-ng-click="CloudProjectOpenstackUsersCtrl.getUsers(true)"
-                                class="no-style pull-right"
-                                analytics-on
-                                analytics-category="ux_cloud"
-                                analytics-event="click-cloud_openstackusers:refresh">
-                                <i class="glyphicon glyphicon-refresh"></i>
-                            </button>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.openAddUser" class="reverse-table-striped animate-opacity2-leave">
-                    <tr>
-                        <td colspan="6" class="no-space">
-                            <div data-ng-slide-down="CloudProjectOpenstackUsersCtrl.toggle.openAddUser" lazy-render duration="0.3">
-
-                                <form id="addUserForm" name="addUserForm" class="ovh-form-flat container-fluid no-space" novalidate>
-                                    <div class="row-fluid">
-                                        <div class="col-xs-12 no-space">
-                                            <div flat-input-container class="space-p8 vertical-top">
-                                                <input type="text"
-                                                class="form-control error-animate-shake-light"
-                                                id="useradddescription"
-                                                name="useradddescription"
-                                                placeholder="{{ ::'openstackusers_users_userlist_add_description' | translate}}"
-                                                data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
-                                                data-ng-model="CloudProjectOpenstackUsersCtrl.userAdd.description"
-                                                required autofocus
-                                                data-ng-maxlength="255"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row-fluid">
-                                        <div class="col-xs-12 no-space">
-                                            <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="addUserForm.useradddescription.$error" data-ng-if="addUserForm.useradddescription.$dirty">
-                                                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span translate="openstackusers_users_userlist_add_required_description"></span></p>
-                                                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span translate="openstackusers_users_userlist_add_maxchar_description"></span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row-fluid">
-                                        <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center">
-                                            <button type="reset"
-                                                class="btn btn-default"
-                                                data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
-                                                data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()">
-                                                <i class="glyphicon glyphicon-remove right-space-m8"></i>
-                                                <span translate="openstackusers_users_userlist_add_button_cancel"></span>
-                                            </button>
-                                            <button type="submit"
-                                                class="btn btn-primary"
-                                                data-ng-disabled="addUserForm.$invalid"
-                                                data-ng-click="CloudProjectOpenstackUsersCtrl.postUser()">
-                                                <i class="glyphicon glyphicon-ok right-space-m8"></i>
-                                                <span translate="openstackusers_users_userlist_add_button_submit"></span>
-                                                <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.add.user"></spinner>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="row-fluid">
-                                        <div class="col-xs-12 bottom-space-p8 text-center">
-                                            <span class="fs10"><span class="text-danger">*</span> {{ 'common_required_field' | translate }}</span>
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.table.user">
-                    <tr>
-                        <td colspan="6" class="text-center">
-                            <spinner></spinner>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.table.user && CloudProjectOpenstackUsersCtrl.table.users.length === 0">
-                    <tr>
-                        <td colspan="6" class="text-center">
-                            <p class="top-space-m12 bottom-space-m0" data-translate="openstackusers_users_description"></p>
-                            <p class="" data-translate="openstackusers_users_description2"></p>
-                            <p class="bottom-space-m0 bold" translate="openstackusers_users_userlist_empty_add"></p><br>
-                            <!-- <p translate="openstackusers_users_userlist_empty"></p> -->
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.table.user && CloudProjectOpenstackUsersCtrl.table.users === null">
-                    <tr>
-                        <td colspan="6" class="text-center">
-                            <i class="fa fa-bug"></i>
-                            <span translate="openstackusers_users_userlist_error"></span>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody 	data-ng-hide="self.loaders.table.user"
-                    data-ng-repeat="user in CloudProjectComputeSnapshotCtrl.table.usersCurrentPage | orderBy:CloudProjectOpenstackUsersCtrl.order.by:CloudProjectOpenstackUsersCtrl.order.reverse">
-                    <tr data-ng-class="{
-                        'generateTokenToggle': CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id
-                        }">
-                        <td class="text-center" write-right-required>
-                            <input type="checkbox"
-                            data-ng-class="{
-                            'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                            'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
-                            'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"
-                            data-ng-model="CloudProjectOpenstackUsersCtrl.table.selected[user.id]"
-                            data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null"
-                            name="{{::'ss_' + user.id}}"
-                            id="{{::'ss_' + user.id}}"
-                            data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.remove.user || CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti || user.status === 'disabled'">
-                        </td>
-
-                        <td data-title="{{ ::'openstackusers_users_userlist_username_cols' | translate}}" 	class="word-break">
-                            <span 	data-ng-class="{
-                                'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                                'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
-                                'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"
-                                data-ng-bind="::user.username">
-                            </span>
-                        </td>
-
-                        <td data-title="{{::'openstackusers_users_userlist_description_cols' | translate}}"
-                            class="word-break">
-                            <span 	data-ng-class="{
-                                'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                                'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
-                                'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"
-                                data-ng-bind="::user.description">
-                            </span>
-                        </td>
-
-                        <td data-title="{{::'openstackusers_users_userlist_password_cols' | translate}}"
-                            class="word-break">
-                            <div 	data-ng-class="{
-                                'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                                'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
-                                'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"><p class="no-space" data-ng-show="CloudProjectOpenstackUsersCtrl.getPassword(user)">{{ CloudProjectOpenstackUsersCtrl.getPassword(user) }}</p>
-                                <span data-ng-show="!CloudProjectOpenstackUsersCtrl.getPassword(user)">
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                    <i class="fa fa-circle"></i>
-                                </span>
-                                <button title="{{ 'openstackusers_users_userlist_regenerate_password' | translate }}"
-                                    class="no-style"
-                                    data-ng-if="!CloudProjectOpenstackUsersCtrl.getPassword(user)"
-                                    data-ng-disabled=" user.status === 'disabled'"
-                                    data-ng-click="CloudProjectOpenstackUsersCtrl.regeneratePassword(user)"
-                                    write-right-required>
-                                    <i data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id" class="fa fa-refresh"></i>
-                                    <spinner data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></spinner>
-                                </button>
-                            </div>
-                        </td>
-
-                        <td data-title="{{::'openstackusers_users_userlist_status_cols' | translate}}"
-                            class="word-break text-center">
-                            <span 	class="label"
-                                data-ng-class="{
-                                'opacity2-leave' 	: CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                                'opacity2-enter' 	: CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id,
-                                'label-danger'		: user.status === 'deleted' || user.status === 'deleting' || user.status === 'disabled',
-                                'label-info'		: user.status === 'creating' || user.status === 'updating',
-                                'label-success'		: user.status === 'ok'
-                                }">
-                                {{ user.status }}
-                            </span>
-                        </td>
-
-                        <td data-title="" class="text-center clearfix" write-right-required>
-
-                            <div data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id"
-                                class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
-                                style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
-
-                                <button class="btn btn-default"
-                                    data-ng-disabled="user.status === 'deleting'"
-                                    data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null">
-                                    <i class="glyphicon glyphicon-remove right-space-m8"></i>
-                                    <span translate="openstackusers_users_userlist_delete_cancel"></span>
-                                </button>
-                                <button class="btn btn-danger"
-                                    data-ng-click="CloudProjectOpenstackUsersCtrl.deleteUser(user)">
-                                    <i class="glyphicon glyphicon-trash right-space-m8"></i>
-                                    <span translate="openstackusers_users_userlist_delete_submit"></span>
-                                    <spinner name="bubbles-fff-d34936-16" data-ng-show="user.status === 'deleting'"></spinner>
-                                </button>
-                            </div>
-
-                            <div data-ng-class="{
-                                'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
-                                'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
-                                'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}" class="pull-right">
-
-                                <div class="btn-group">
-                                    <button type="button" class="no-style dropdown-toggle"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        data-ng-disabled="user.status !== 'ok'"
-                                        data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null">
-                                        <i class="fa fa-wrench"></i>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                        <button class="button"
-                                            data-ng-click="CloudProjectOpenstackUsersCtrl.openHorizon(user)"
-                                            title="{{ 'openstackusers_users_go_to_horizon_button' | translate }}">
-                                            <i class="fa fa-external-link right-space-m8"></i>
-                                            {{ 'openstackusers_users_go_to_horizon_button' | translate }}
-                                        </button>
-                                        </li>
-                                        <li>
-                                        <button class="no-style"
-                                            data-ng-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile(user)"
-                                            title="{{'cpou_openrc_title' | translate }}">
-                                            <i class="fa fa-file-code-o right-space-m8"></i>
-                                            {{'cpou_openrc_title' | translate }}
-                                        </button>
-                                        </li>
-                                        <li>
-                                        <button class="no-style"
-                                            data-ng-click="CloudProjectOpenstackUsersCtrl.generateToken(user)"
-                                            title="{{'cpou_token_title' | translate }}">
-                                            <i class="fa fa-chain right-space-m8"></i>
-                                            {{'cpou_token_title' | translate }}
-                                        </button>
-                                        </li>
-                                    </ul>
+                    <form id="addUserForm" name="addUserForm" class="ovh-form-flat container-fluid no-space" novalidate>
+                        <div class="row-fluid">
+                            <div class="col-xs-12 no-space">
+                                <div flat-input-container class="space-p8 vertical-top">
+                                    <input type="text"
+                                    class="oui-input error-animate-shake-light"
+                                    id="useradddescription"
+                                    name="useradddescription"
+                                    placeholder="{{ ::'openstackusers_users_userlist_add_description' | translate}}"
+                                    data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
+                                    data-ng-model="CloudProjectOpenstackUsersCtrl.userAdd.description"
+                                    required autofocus
+                                    data-ng-maxlength="255"
+                                    />
                                 </div>
+                            </div>
+                        </div>
 
+                        <div class="row-fluid">
+                            <div class="col-xs-12 no-space">
+                                <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="addUserForm.useradddescription.$error" data-ng-if="addUserForm.useradddescription.$dirty">
+                                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span translate="openstackusers_users_userlist_add_required_description"></span></p>
+                                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="maxlength"><span translate="openstackusers_users_userlist_add_maxchar_description"></span></p>
+                                </div>
+                            </div>
+                        </div>
 
-
-                                <button class="no-style"
-                                    data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = user.id"
-                                    data-ng-disabled="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id ||
-                                                      user.status !=='ok'"
-                                    title="{{'openstackusers_users_userlist_delete_submit' | translate }}">
-                                    <i class="fa fa-trash right-space-m8"></i>
+                        <div class="row-fluid">
+                            <div class="text-center" data-ng-if="CloudProjectOpenstackUsersCtrl.loaders.add.user">
+                                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                            </div>
+                            <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center" data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.add.user">
+                                <button type="reset"
+                                    class="oui-button oui-button_secondary"
+                                    data-ng-disabled="CloudProjectOpenstackUsersCtrl.loaders.add.user"
+                                    data-ng-click="CloudProjectOpenstackUsersCtrl.toggleAddUser()">
+                                    <span translate="openstackusers_users_userlist_add_button_cancel"></span>
+                                </button>
+                                <button type="submit"
+                                    class="oui-button oui-button_primary"
+                                    data-ng-disabled="addUserForm.$invalid"
+                                    data-ng-click="CloudProjectOpenstackUsersCtrl.postUser()">
+                                    <span translate="openstackusers_users_userlist_add_button_submit"></span>
                                 </button>
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                        </div>
 
-        <!-- PAGINATION TABLE -->
-        <div class="table-pretty-pagination"
-            data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.table.user
-            || CloudProjectOpenstackUsersCtrl.loaders.remove.user
-            || CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti
-            || CloudProjectOpenstackUsersCtrl.table.users === null
-            || CloudProjectOpenstackUsersCtrl.table.users.length <= 5"
-            data-pagination-front
-            data-items="CloudProjectOpenstackUsersCtrl.table.users"
-            data-paginated-items="CloudProjectComputeSnapshotCtrl.table.usersCurrentPage"
-            data-current-page="currentPage"
-            data-nb-pages="nbPages"
-            data-items-per-page="itemsPerPage"
-            data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-            data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
-    </div>
-</div>
-</div>
+                        <div class="row-fluid">
+                            <div class="col-xs-12 bottom-space-p8 text-center">
+                                <span class="fs10"><span class="text-danger">*</span> {{ 'common_required_field' | translate }}</span>
+                            </div>
+                        </div>
 
+                    </form>
+
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.table.user" class="oui-table__body">
+        <tr>
+            <td colspan="6" class="text-center">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </td>
+        </tr>
+    </tbody>
+    <tbody data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.table.user && CloudProjectOpenstackUsersCtrl.table.users.length === 0" class="oui-table__body">
+        <tr>
+            <td colspan="6" class="text-center">
+                <p class="top-space-m12 bottom-space-m0" data-translate="openstackusers_users_description"></p>
+                <p class="" data-translate="openstackusers_users_description2"></p>
+                <p class="bottom-space-m0 bold" translate="openstackusers_users_userlist_empty_add"></p><br>
+                <!-- <p translate="openstackusers_users_userlist_empty"></p> -->
+            </td>
+        </tr>
+    </tbody>
+    <tbody data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.table.user && CloudProjectOpenstackUsersCtrl.table.users === null" class="oui-table__body">
+        <tr>
+            <td colspan="6" class="text-center">
+                <i class="fa fa-bug"></i>
+                <span translate="openstackusers_users_userlist_error"></span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody 	data-ng-hide="self.loaders.table.user"
+        data-ng-repeat="user in CloudProjectComputeSnapshotCtrl.table.usersCurrentPage | orderBy:CloudProjectOpenstackUsersCtrl.order.by:CloudProjectOpenstackUsersCtrl.order.reverse"
+        class="oui-table__body">
+        <tr class="oui-table__row" tabindex="0"
+            data-ng-class="{
+            'generateTokenToggle': CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id
+            }">
+            <td data-title="{{ ::'openstackusers_users_userlist_username_cols' | translate}}" 	class="oui-table__cell">
+                <span 	data-ng-class="{
+                    'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
+                    'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
+                    'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"
+                    data-ng-bind="::user.username">
+                </span>
+            </td>
+
+            <td data-title="{{::'openstackusers_users_userlist_description_cols' | translate}}"
+                class="oui-table__cell">
+                <span 	data-ng-class="{
+                    'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
+                    'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
+                    'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"
+                    data-ng-bind="::user.description">
+                </span>
+            </td>
+
+            <td data-title="{{::'openstackusers_users_userlist_password_cols' | translate}}"
+                class="oui-table__cell">
+                <div 	data-ng-class="{
+                    'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
+                    'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
+                    'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}"><p class="no-space" data-ng-show="CloudProjectOpenstackUsersCtrl.getPassword(user)">{{ CloudProjectOpenstackUsersCtrl.getPassword(user) }}</p>
+                    <span data-ng-show="!CloudProjectOpenstackUsersCtrl.getPassword(user)">
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </span>
+                    <button title="{{ 'openstackusers_users_userlist_regenerate_password' | translate }}"
+                        class="no-style"
+                        data-ng-if="!CloudProjectOpenstackUsersCtrl.getPassword(user)"
+                        data-ng-disabled=" user.status === 'disabled'"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.regeneratePassword(user)"
+                        write-right-required>
+                        <i data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id" class="fa fa-refresh"></i>
+                        <oui-loader size="s" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></oui-loader>
+                    </button>
+                </div>
+            </td>
+
+            <td data-title="{{::'openstackusers_users_userlist_status_cols' | translate}}"
+                class="oui-table__cell">
+                <span 	class="label"
+                    data-ng-class="{
+                    'opacity2-leave' 	: CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
+                    'opacity2-enter' 	: CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id,
+                    'label-danger'		: user.status === 'deleted' || user.status === 'deleting' || user.status === 'disabled',
+                    'label-info'		: user.status === 'creating' || user.status === 'updating',
+                    'label-success'		: user.status === 'ok'
+                    }">
+                    {{ user.status }}
+                </span>
+            </td>
+
+            <td data-title="" class="oui-table__cell text-center" write-right-required>
+
+                <div data-ng-show="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id"
+                    class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
+                    style="left:0; position:absolute; z-index:1000; margin-top: -6px;">
+
+                    <button class="oui-button oui-button_secondary"
+                        data-ng-disabled="user.status === 'deleting'"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null">
+                        <span translate="openstackusers_users_userlist_delete_cancel"></span>
+                    </button>
+                    <button class="oui-button oui-button_primary"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.deleteUser(user)">
+                        <span translate="openstackusers_users_userlist_delete_submit"></span>
+                    </button>
+                </div>
+
+                <div data-ng-class="{
+                    'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === user.id,
+                    'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === user.id,
+                    'opacity2-enter' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId !== user.id && CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId !== user.id}" class="pull-right">
+
+                    <div class="btn-group">
+                        <button type="button" class="no-style dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            data-ng-disabled="user.status !== 'ok'"
+                            data-ng-click="CloudProjectOpenstackUsersCtrl.toggle.userDeleteId = null">
+                            <i class="fa fa-wrench"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                            <button class="button"
+                                data-ng-click="CloudProjectOpenstackUsersCtrl.openHorizon(user)"
+                                title="{{ 'openstackusers_users_go_to_horizon_button' | translate }}">
+                                <i class="fa fa-external-link right-space-m8"></i>
+                                {{ 'openstackusers_users_go_to_horizon_button' | translate }}
+                            </button>
+                            </li>
+                            <li>
+                            <button class="no-style"
+                                data-ng-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile(user)"
+                                title="{{'cpou_openrc_title' | translate }}">
+                                <i class="fa fa-file-code-o right-space-m8"></i>
+                                {{'cpou_openrc_title' | translate }}
+                            </button>
+                            </li>
+                            <li>
+                            <button class="no-style"
+                                data-ng-click="CloudProjectOpenstackUsersCtrl.generateToken(user)"
+                                title="{{'cpou_token_title' | translate }}">
+                                <i class="fa fa-chain right-space-m8"></i>
+                                {{'cpou_token_title' | translate }}
+                            </button>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <button class="no-style"
+                        data-ng-click="CloudProjectOpenstackUsersCtrl.openDeleteUser(user)"
+                        title="{{'openstackusers_users_userlist_delete_submit' | translate }}">
+                        <i class="fa fa-trash right-space-m8"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- PAGINATION TABLE -->
+<div class="table-pretty-pagination"
+    data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.table.user
+    || CloudProjectOpenstackUsersCtrl.loaders.remove.user
+    || CloudProjectOpenstackUsersCtrl.loaders.remove.userMulti
+    || CloudProjectOpenstackUsersCtrl.table.users === null
+    || CloudProjectOpenstackUsersCtrl.table.users.length <= 5"
+    data-pagination-front
+    data-items="CloudProjectOpenstackUsersCtrl.table.users"
+    data-paginated-items="CloudProjectComputeSnapshotCtrl.table.usersCurrentPage"
+    data-current-page="currentPage"
+    data-nb-pages="nbPages"
+    data-items-per-page="itemsPerPage"
+    data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
+    data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
 

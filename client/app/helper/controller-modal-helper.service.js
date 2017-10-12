@@ -1,5 +1,7 @@
 class ControllerModalHelper {
-    constructor ($uibModal) {
+    constructor ($q, $translate, $uibModal) {
+        this.$q = $q;
+        this.$translate = $translate;
         this.$uibModal = $uibModal;
         this.unhandledError = ["backdrop click", "escape key press"];
     }
@@ -10,18 +12,23 @@ class ControllerModalHelper {
         }, config.modalConfig);
         const modalInstance = this.$uibModal.open(modalConfig);
 
+        const deferred = this.$q.defer();
         modalInstance.result.then(result => {
             if (config.successHandler) {
                 config.successHandler(result);
             }
+            deferred.resolve(result);
         }).catch(err => {
             // We check for backdrop click as error.  It happens when we click a button behind the modal.  We don't want an error message for that.
-            if (!_.includes(this.unhandledError, err) && config.errorHandler) {
-                config.errorHandler(err);
+            if (!_.includes(this.unhandledError, err)) {
+                if (config.errorHandler) {
+                    config.errorHandler(err);
+                }
+                deferred.reject(err);
             }
         });
 
-        return modalInstance.result;
+        return deferred.promise;
     }
 
     showWarningModal (config = {}) {
@@ -35,6 +42,37 @@ class ControllerModalHelper {
                 }
             }
         });
+    }
+
+    showConfirmationModal (config = {}) {
+        return this.showModal({
+            modalConfig: {
+                templateUrl: "app/ui-components/modal/confirmation-modal/confirmation-modal.html",
+                controller: "ConfirmationModalController",
+                controllerAs: "$ctrl",
+                resolve: {
+                    params: () => config
+                }
+            }
+        });
+    }
+
+    showNameChangeModal (config = {}) {
+        return this.showModal({
+            modalConfig: {
+                templateUrl: "app/ui-components/modal/name-change-modal/name-change-modal.html",
+                controller: "NameChangeModalCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    params: () => config
+                }
+            }
+        });
+    }
+
+    showDeleteModal (config = {}) {
+        config.submitButtonText = this.$translate.instant("common_delete");
+        return this.showConfirmationModal(config);
     }
 }
 

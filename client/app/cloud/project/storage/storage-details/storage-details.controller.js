@@ -11,11 +11,11 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
     "CloudStorageContainer",
     "CloudStorageContainerTasksRunner",
     "CloudStorageContainersConfiguration",
-    "Toast",
+    "CloudMessage",
     "ovhDocUrl",
     function ($interval, $rootScope, $scope, $stateParams, $translate, $uibModal, $window,
         CLOUD_PCA_FILE_STATE, OvhApiCloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
-        CloudStorageContainersConfiguration, Toast, ovhDocUrl) {
+        CloudStorageContainersConfiguration, CloudMessage, ovhDocUrl) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -55,6 +55,8 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
             footer: $translate.instant("storage_details_guide_footer")
 
         };
+
+        $scope.title = $translate.instant("storage_object_title") + " : " + $scope.storage.name;
 
         $scope.computeStorageSize = function () {
             return _.sum(_.map($scope.objects, "size"));
@@ -197,7 +199,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
 
             queuePromise.then(function () {
                 if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-                    Toast.error($translate.instant("storage_object_upload_error"));
+                    CloudMessage.error($translate.instant("storage_object_upload_error"));
                 }
             });
 
@@ -239,7 +241,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
             var queuePromise = CloudStorageContainerTasksRunner.addTask("upload_" + $scope.projectId + "_" + $stateParams.storageId, createDeleteTask(elem));
             queuePromise.then(function () {
                 if (CloudStorageContainerTasksRunner.countErrorTasks()) {
-                    Toast.error($translate.instant("storage_object_delete_error"));
+                    CloudMessage.error($translate.instant("storage_object_delete_error"));
                 }
             });
             return queuePromise;

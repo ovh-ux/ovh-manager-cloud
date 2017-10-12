@@ -1,64 +1,69 @@
-<div class="cloud-project-billing-consumption-estimate-alert-add">
-    <div class="estimate-alert-add-ctnr">
-        <header>
-            <h4 class="h3 space-m0 bottom-space-m0" data-translate="cpbea_estimate_alert_add_header_title"></h4>
-            <button class="no-style"
-                    type="button"
-                    title="{{ ::'cpbea_estimate_alert_add_cancel_btn' | translate }}" 
-                    data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()">
-                <i class="glyphicon glyphicon-remove"></i>
-            </button>
-        </header>
-        <form id="addAlertForm" name="addAlertForm" class="ovh-form-flat top-space-m12 clearfix">
-            <div flat-input-container class="estimate-alert-add-form-ctnr">
-                <div class="input-group">
-                    <label for="alertMail" data-translate="cpbea_estimate_alert_add_mail_label"></label>
-                    <input type="email" class="form-control error-animate-shake-light" 
-                        id="alertMail" name="mail"
-                        data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.email"
-                        required />
-                </div>
-                <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="addAlertForm.mail.$error" data-ng-if="addAlertForm.mail.$dirty">
-                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
+<form id="addAlertForm" name="addAlertForm" class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()"></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text text-center" data-ng-if="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+        <div class="oui-modal__body-text" data-ng-if="!CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
+            <h2 class="oui-modal__title" data-translate="cpbea_estimate_alert_add_header_title"></h2>
+            <div class="oui-modal__text">
+                <label class="oui-label" for="alertMail" data-translate="cpbea_estimate_alert_add_mail_label"></label>
+                <input type="email" class="oui-input" 
+                    id="alertMail" name="mail"
+                    data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.email"
+                    required >
+                <div class="oui-modal__text" data-ng-messages="addAlertForm.mail.$error" data-ng-if="addAlertForm.mail.$dirty">
+                    <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" >
                         <span data-ng-message="required" data-translate="cpbea_estimate_alert_add_mail_required"></span>
                         <span data-ng-message="email" data-translate="cpbea_estimate_alert_add_mail_bad_format"></span>
                     </p>
                 </div>
             </div>
-            <div flat-input-container class="estimate-alert-add-form-ctnr">
-                <label for="alertThreshold" data-translate="cpbea_estimate_alert_add_threshold_label"></label>
-                <div class="input-group">
-                    <input class="form-control error-animate-shake-light" 
-                            id="alertThreshold" name="alertThreshold"
-                            type="number"
-                            data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.threshold"
-                            min="0"
-                            max="9999999"
-                            required>
-                        <div class="input-group-addon" data-ng-bind="CloudProjectBillingConsumptionEstimateAlertAddCtrl.alerting.currency"></div>
-                    </input>
-                </div>
-                <div class="left-space-p8 right-space-p8 text-danger" data-ng-messages="addAlertForm.alertThreshold.$error" data-ng-if="addAlertForm.alertThreshold.$dirty">
-                    <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpbea_estimate_alert_add_threshold_required"></span></p>
+            <div class="oui-modal__text">
+                <label class="oui-label" for="alertThreshold">
+                    <span data-translate="cpbea_estimate_alert_add_threshold_label"></span>
+                    <span>(</span>
+                    <span data-ng-bind="CloudProjectBillingConsumptionEstimateAlertAddCtrl.alerting.currency"></span>
+                    <span>)</span>
+                </label>
+                <input class="oui-input" 
+                        id="alertThreshold" name="alertThreshold"
+                        type="number"
+                        data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.threshold"
+                        min="0"
+                        max="9999999"
+                        required>
+                <div class="oui-modal_text" data-ng-messages="addAlertForm.alertThreshold.$error" data-ng-if="addAlertForm.alertThreshold.$dirty">
+                    <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required"><span data-translate="cpbea_estimate_alert_add_threshold_required"></span></p>
                 </div>
             </div>
-            <button type="submit" 
-                    class="btn btn-primary pull-right left-space-m16 top-space-m20"
-                    title="{{ ::'cpbea_estimate_alert_add_submit_btn' | translate }}"
-                    data-ng-click="addAlertForm.$valid && CloudProjectBillingConsumptionEstimateAlertAddCtrl.saveAlert()"
-                    data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
-                <i class="fa fa-bell"></i>
-                <span data-translate="cpbea_estimate_alert_add_submit_btn"></span>
-                <spinner name="bubbles-fff-ffcd1a-16" data-ng-show="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert"></spinner>
-            </button>
-            <button type="reset" 
-                    class="btn btn-default pull-right left-space-m16 top-space-m20" 
-                    title="{{ ::'cpbea_estimate_alert_add_cancel_btn' | translate }}" 
-                    data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()"
-                    data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
-                <i class="glyphicon glyphicon-remove"></i>
-                <span data-translate="cpbea_estimate_alert_add_cancel_btn"></span>
-            </button>
-        </form>
+
+        </div>
     </div>
-</div>
+    <div class="oui-modal__footer">
+        <button type="reset" 
+                class="oui-button oui-button_secondary" 
+                title="{{ ::'cpbea_estimate_alert_add_cancel_btn' | translate }}" 
+                data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()"
+                data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
+            <span data-translate="cpbea_estimate_alert_add_cancel_btn"></span>
+        </button>
+        <button type="submit" 
+                class="oui-button oui-button_primary"
+                title="{{ ::'cpbea_estimate_alert_add_submit_btn' | translate }}"
+                data-ng-click="addAlertForm.$valid && CloudProjectBillingConsumptionEstimateAlertAddCtrl.saveAlert()"
+                data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
+            <span data-translate="cpbea_estimate_alert_add_submit_btn"></span>
+        </button>
+    </div>
+</form>
+
+ 
+            
+            
+
+
+

@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingRightsCtrl",
-    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, Toast, $translate, REDIRECT_URLS, $window) {
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CloudMessage, $translate, REDIRECT_URLS, $window) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -117,9 +117,9 @@ angular.module("managerApp")
                     // error occured, reset value
                     self.contactFormData.owner = self.model.owner;
                     if (err && err.status === 400) {
-                        Toast.error($translate.instant("cpb_contact_error_invalid"));
+                        CloudMessage.error($translate.instant("cpb_contact_error_invalid"));
                     } else {
-                        Toast.error($translate.instant("cpb_contact_error_other"));
+                        CloudMessage.error($translate.instant("cpb_contact_error_other"));
                     }
                 });
             }
@@ -162,9 +162,9 @@ angular.module("managerApp")
                     // error occured, reset value
                     self.contactFormData.billing = self.model.billing;
                     if (err && err.status === 400) {
-                        Toast.error($translate.instant("cpb_contact_error_invalid"));
+                        CloudMessage.error($translate.instant("cpb_contact_error_invalid"));
                     } else {
-                        Toast.error($translate.instant("cpb_contact_error_other"));
+                        CloudMessage.error($translate.instant("cpb_contact_error_other"));
                     }
                 });
             }
@@ -205,7 +205,7 @@ angular.module("managerApp")
                 self.data.rightIds = rightIds;
             }, function (err) {
                 self.data.rightIds = null;
-                Toast.error([$translate.instant("cpb_rights_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_rights_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.loader.rights = false;
             });
@@ -231,9 +231,9 @@ angular.module("managerApp")
                 type: self.addRightFormData.type
             }).$promise.then(function () {
                 self.getRights(true);
-                Toast.success($translate.instant("cpb_rights_table_rights_add_success"));
+                CloudMessage.success($translate.instant("cpb_rights_table_rights_add_success"));
             }, function (err) {
-                Toast.error([$translate.instant("cpb_rights_add_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_rights_add_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.addRightFormData.contact = "";
                 self.addRightFormData.type = "readOnly";
@@ -250,9 +250,9 @@ angular.module("managerApp")
                 accountId: accountId
             }).$promise.then(function () {
                 self.getRights(true);
-                Toast.success($translate.instant("cpb_rights_table_rights_remove_success"));
+                CloudMessage.success($translate.instant("cpb_rights_table_rights_remove_success"));
             }, function (err) {
-                Toast.error([$translate.instant("cpb_rights_remove_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_rights_remove_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.loader.removeRight = false;
                 self.removeRight.accountId = null;

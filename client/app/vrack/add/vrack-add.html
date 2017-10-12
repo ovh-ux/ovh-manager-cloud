@@ -2,8 +2,9 @@
 
     <!-- init loading... -->
     <div data-ng-if="VrackAddCtrl.loaders.loading" class="col-xs-10 col-xs-offset-1 col-md-11 page-margins">
-        <spinner></spinner>
-        <span data-translate="common_loading"></span>
+        <div class="text-center">
+            <oui-loader size="m"></oui-loader>
+        </div>
     </div>
 
     <div data-ng-if="!VrackAddCtrl.loaders.loading"  class="col-xs-10 col-xs-offset-1 col-md-11 page-margins">
@@ -42,7 +43,7 @@
 
                     <!-- submit -->
                     <div class="row  top-space-m8 bottom-space-m16">
-                        <button type="submit" class="col-xs-offset-3 col-xs-6 col-md-4 col-md-offset-4 col-lg-2 col-lg-offset-5 top-space-m16 btn btn-primary btn-lg"
+                        <button type="submit" class="col-xs-offset-3 col-xs-6 col-md-4 col-md-offset-4 col-lg-2 col-lg-offset-5 top-space-m16 oui-button oui-button_primary"
                                 data-ng-click="VrackAddCtrl.addVrack()"
                                 data-ng-disabled="VrackAddCtrl.loaders.loading || VrackAddCtrl.loaders.validationPending || !VrackAddCtrl.model.agreements.length  || (VrackAddCtrl.model.agreements.length && !VrackAddCtrl.model.contractsAccepted)">
                             {{'vrack_order' | translate}}

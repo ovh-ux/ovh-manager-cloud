@@ -19,23 +19,23 @@ describe("Controller: CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl
         $controller,
         $scope,
         $timeout,
-        Toast,
+        CloudMessage,
         CloudProjectComputeInfrastructureOrchestrator,
         VirtualMachineFactory;
 
-    beforeEach(angular.mock.inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_, _Toast_, _CloudProjectComputeInfrastructureOrchestrator_, _CloudProjectComputeInfraVrackVmFactory_) {
+    beforeEach(angular.mock.inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_, _CloudMessage_, _CloudProjectComputeInfrastructureOrchestrator_, _CloudProjectComputeInfraVrackVmFactory_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         $timeout = _$timeout_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
         VirtualMachineFactory = _CloudProjectComputeInfraVrackVmFactory_;
 
         CloudProjectComputeInfrastructureOrchestrator = _CloudProjectComputeInfrastructureOrchestrator_;
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
 
         $scope = $rootScope.$new();
     }));

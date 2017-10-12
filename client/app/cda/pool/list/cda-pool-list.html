@@ -1,55 +1,60 @@
 <section>
     <header>
-        <p class="fs14" data-translate="cda_pool_pool_definition"></p>
-        <p class="fs14" data-translate="cda_pool_permission_definition"></p>
+        <p data-translate="cda_pool_pool_definition"></p>
+        <p data-translate="cda_pool_permission_definition"></p>
     </header>
     <div>
         <button type="button"
-                class="btn btn-primary bottom-space-m12 top-space-m4 fs14"
+                class="oui-button oui-button_secondary"
                 data-ng-click="CdaPoolListCtrl.openAddModal()"
                 data-ng-if="!CdaPoolListCtrl.loading">
-            <i class="glyphicon glyphicon-plus"></i>
             <span data-translate="cda_pool_add_button_text"></span>
         </button>
     </div>
     <div class="text-center" data-ng-if="CdaPoolListCtrl.loading">
-        <spinner name="bubbles-222-fff-32"></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <div class="table-responsive-vertical">
-        <table data-ng-if="!CdaPoolListCtrl.loading" class="table table-pretty table-hover table-striped cda-table">
-            <thead>
+        <table data-ng-if="!CdaPoolListCtrl.loading" class="oui-table oui-table_responsive">
+            <thead class="oui-table__headers">
                 <tr>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_pool_table_col_poolname"></span>
                     </th>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_pool_table_col_pooltype"></span>
                     </th>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_pool_table_col_replica"></span>
                     </th>
-                    <th>
+                    <th class="oui-table__header">
                         <span data-translate="cda_pool_table_col_minreplica"></span>
                     </th>
-                    <th class="cda-table-col-action"></th>
+                    <th class="oui-table__header"></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="oui-table__body">
                 <tr data-ng-if="CdaPoolListCtrl.datas.pools.length" 
-                    data-ng-repeat="pool in CdaPoolListCtrl.datas.paginatedPools track by pool.name">
-                    <td data-title="{{ 'cda_pool_table_col_poolname' | translate }}">
+                    data-ng-repeat="pool in CdaPoolListCtrl.datas.paginatedPools track by pool.name"
+                    class="oui-table__row">
+                    <td data-title="{{ 'cda_pool_table_col_poolname' | translate }}"
+                        class="oui-table__cell">
                         <span data-ng-bind=" ::pool.name"></span>
                     </td>
-                    <td data-title="{{ 'cda_pool_table_col_pooltype' | translate }}">
+                    <td data-title="{{ 'cda_pool_table_col_pooltype' | translate }}"
+                        class="oui-table__cell">
                         <span data-ng-bind=" ::pool.poolType"></span>
                     </td>
-                    <td data-title="{{ 'cda_pool_table_col_replica' | translate }}">
+                    <td data-title="{{ 'cda_pool_table_col_replica' | translate }}"
+                        class="oui-table__cell">
                         <span data-ng-bind=" ::pool.replicaCount"></span>
                     </td>
-                    <td data-title="{{ 'cda_pool_table_col_minreplica' | translate }}">
+                    <td data-title="{{ 'cda_pool_table_col_minreplica' | translate }}"
+                        class="oui-table__cell">
                         <span data-ng-bind=" ::pool.minActiveReplicas"></span>
                     </td>
-                    <td data-title="{{ 'cda_pool_table_col_actions' | translate }}">
+                    <td data-title="{{ 'cda_pool_table_col_actions' | translate }}"
+                        class="oui-table__cell oui-table__cell_action">
                         <button class="no-style" 
                                 type="button" 
                                 data-ng-click="CdaPoolListCtrl.openDeleteModal(pool)"
@@ -58,8 +63,10 @@
                         </button>
                     </td>
                 </tr>
-                <tr data-ng-if="!CdaPoolListCtrl.datas.pools.length">
-                    <td data-title="cda_pool_table_empty" colspan="5">
+                <tr data-ng-if="!CdaPoolListCtrl.datas.pools.length"
+                    class="oui-table__row">
+                    <td data-title="cda_pool_table_empty" colspan="5"
+                        class="oui-table__cell">
                         <span data-translate="cda_pool_table_empty"></span>
                     </td>
                 </tr>

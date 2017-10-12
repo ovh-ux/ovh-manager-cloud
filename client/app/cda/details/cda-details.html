@@ -1,37 +1,26 @@
-<responsive-tabs>
-    <responsive-tab
-        state="{{ :: 'paas.cda.cda-details.cda-details-home' }}"
-        dropdown-title="{{ 'cda_tab_home' | translate }}">
-        <span translate="cda_tab_home"></span>
-    </responsive-tab>
-    <responsive-tab
-        state="{{ :: 'paas.cda.cda-details.cda-user.cda-user-list' }}"
-        dropdown-title="{{ 'cda_tab_user' | translate }}">
-        <span translate="cda_tab_user"></span>
-    </responsive-tab>
-    <responsive-tab
-        state="{{ :: 'paas.cda.cda-details.cda-ip.cda-ip-list' }}"
-        dropdown-title="{{ 'cda_tab_ip' | translate }}">
-        <span translate="cda_tab_ip"></span>
-    </responsive-tab>
-    <responsive-tab
-        state="{{ :: 'paas.cda.cda-details.cda-pool.cda-pool-list' }}"
-        dropdown-title="{{ 'cda_tab_pool' | translate }}">
-        <span translate="cda_tab_pool"></span>
-    </responsive-tab>
-    <responsive-tab-more>
-        <span>...</span>
-    </responsive-tab-more>
-</responsive-tabs>
+<div class="cui-page">
+    <cui-page-header data-title-text="CdaDetailsCtrl.CdaService.currentService.label || CdaDetailsCtrl.serviceName" 
+                     data-subtitle-text="CdaDetailsCtrl.serviceName"
+                     data-guides="CdaDetailsCtrl.guides">
+        <cui-tabs>
+            <cui-tab data-text="'cda_tab_home' | translate" 
+                     data-state="paas.cda.cda-details.cda-details-home" 
+                     data-state-params="{ serviceName: CdaDetailsCtrl.serviceName }"></cui-tab>
+            <cui-tab data-text="'cda_tab_user' | translate" 
+                     data-state="paas.cda.cda-details.cda-user.cda-user-list" 
+                     data-state-params="{ serviceName: CdaDetailsCtrl.serviceName }"></cui-tab>
+            <cui-tab data-text="'cda_tab_ip' | translate" 
+                     data-state="paas.cda.cda-details.cda-ip.cda-ip-list" 
+                     data-state-params="{ serviceName: CdaDetailsCtrl.serviceName }"></cui-tab>
+            <cui-tab data-text="'cda_tab_pool' | translate"
+                     data-state="paas.cda.cda-details.cda-pool.cda-pool-list"
+                     data-state-params="{ serviceName: CdaDetailsCtrl.serviceName}"></cui-tab>
+        </cui-tabs>
+    </cui-page-header>
 
-<div class="container-fluid top-space-m16 right-space-m20 left-space-m20">
-    <div data-ng-if="!self.loading" class="page-header">
-        <guide-component class="pull-right" data-guides="CdaDetailsCtrl.guides"></guide-component>
-        <h1 class="ng-scope">
-            <span data-ng-if="CdaDetailsCtrl.CdaService.currentService.label" data-ng-bind="CdaDetailsCtrl.CdaService.currentService.label"></span>
-            <span data-ng-if="!CdaDetailsCtrl.CdaService.currentService.label" data-ng-bind="CdaDetailsCtrl.serviceName"></span>
-        </h1>
+    <cui-message-container data-messages="CdaDetailsCtrl.messages"></cui-message-container>
 
+    <div data-ng-if="!self.loading" class="cui-page__content">
+        <div ui-view="cdaDetailsTab"></div>
     </div>
-    <div ui-view="cdaDetailsTab"></div>
 </div>
