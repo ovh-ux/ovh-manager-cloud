@@ -47,4 +47,9 @@
    <translation id="vdi_console_task" qtlid="406554">Pedido de acesso à consola enviada</translation>
    <translation id="vdi_console_done" qtlid="406567">Vai receber um e-mail para o seu pedido de acesso à consola.</translation>
 
+   <translation id="vdi_core" qtlid="251213">vCPU</translation>
+   <translation id="vdi_ram" qtlid="31354">RAM</translation>
+   <translation id="vdi_disk" qtlid="25567">Disco</translation>
+   <translation id="vdi_gpu">GPU</translation>
+   <translation id="vdi_price">Prix</translation>
 </translations>

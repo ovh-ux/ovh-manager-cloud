@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Unbekannt</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Warten auf Subtasks</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Es ist ein Fehler aufgetreten. Unsere Teams wurden informiert. Bitte haben Sie einige Minuten Geduld.</translation>
    <translation id="vdi_task_error" qtlid="371019">Bei dem Task {{ id}} ist ein Fehler aufgetreten. Unsere Teams wurden informiert. Bitte haben Sie einige Minuten Geduld.</translation>
 

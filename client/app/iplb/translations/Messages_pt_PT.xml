@@ -19,7 +19,7 @@
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">Vous devez autoriser ces adresses IP à joindre vos serveurs.</translation>
 
    <translation id="iplb_modal_name_change_title" qtlid="71741">Modificar o nome</translation>
-   <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Nome padrão</translation>
+   <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Nome predefinido</translation>
    <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Nome personalizado</translation>
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Erreur lors du changement de nom.</translation>
 

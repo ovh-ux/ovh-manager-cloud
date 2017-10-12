@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Desconocido</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Pendiente de subtareas</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Se ha producido un error. Nuestro equipo ha sido notificado. Por favor, espere unos minutos.</translation>
    <translation id="vdi_task_error" qtlid="371019">La tarea {{ id}} está en error. Nuestro equipo ha sido notificado. Por favor, espere unos minutos.</translation>
 

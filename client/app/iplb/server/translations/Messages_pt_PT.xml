@@ -38,7 +38,7 @@
 
    <translation id="iplb_server_edit_cancel" qtlid="37863">Anular</translation>
    <translation id="iplb_server_add_confirm" qtlid="37923">Adicionar</translation>
-   <translation id="iplb_server_update_confirm" qtlid="43462">Actualizar</translation>
+   <translation id="iplb_server_update_confirm" qtlid="43462">Atualizar</translation>
 
    <translation id="iplb_server_request_error" qtlid="175205">Ocorreu um erro aquando do carregamento das suas informações.</translation>
    <translation id="iplb_server_add_error" qtlid="437791">Une erreur est survenue lors de l'ajout de la ferme de serveurs : {{message}}</translation>

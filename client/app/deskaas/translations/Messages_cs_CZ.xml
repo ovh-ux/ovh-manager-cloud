@@ -4,7 +4,7 @@
    <translation id="vdi_header" qtlid="313897">Cloud Desktop</translation>
 
    <translation id="vdi_hdr_status" qtlid="33790">Stav</translation>
-   <translation id="vdi_hdr_name" qtlid="3818">Jméno</translation>
+   <translation id="vdi_hdr_name" qtlid="3818">Příjmení</translation>
    <translation id="vdi_hdr_user" qtlid="7450">Uživatel</translation>
    <translation id="vdi_hdr_ip" qtlid="25615">IP</translation>
    <translation id="vdi_hdr_connection" qtlid="55925">Připojení</translation>
@@ -48,4 +48,9 @@
    <translation id="vdi_console_task" qtlid="406554">Požadavek na přístup ke konzoli byl odeslán</translation>
    <translation id="vdi_console_done" qtlid="406567">Na základě Vašeho požadavku pro přístup ke konzoli zanedlouho obdržíte e-mail s dalšími instrukcemi.</translation>
 
+   <translation id="vdi_core" qtlid="251213">vCPU</translation>
+   <translation id="vdi_ram" qtlid="31354">RAM</translation>
+   <translation id="vdi_disk" qtlid="25567">Disky</translation>
+   <translation id="vdi_gpu">GPU</translation>
+   <translation id="vdi_price">Prix</translation>
 </translations>

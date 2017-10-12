@@ -83,7 +83,6 @@
    <translation id="vdi_task_state_unknown" qtlid="77142">Desconhecido</translation>
    <translation id="vdi_task_state_waitingForChilds" qtlid="370993">Aguardar sub-tarefas</translation>
 
-
    <translation id="vdi_default_error" qtlid="371006">Ocorreu um erro. As nossas equipas foram prevenidas. Queira aguardar alguns minutos.</translation>
    <translation id="vdi_task_error" qtlid="371019">O trabalho {{ id}} está em erro. As nossas equipas foram prevenidas. Queira aguardar alguns minutos.</translation>
 

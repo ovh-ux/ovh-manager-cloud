@@ -19,7 +19,7 @@
    <translation id="veeam_table_storage" qtlid="403762">Espaço de armazenamento</translation>
    <translation id="veeam_table_usage" qtlid="30382">Utilização</translation>
    <translation id="veeam_table_datacenter" qtlid="403931">Datacenter de replicação</translation>
-   <translation id="veeam_table_action" qtlid="56105">Acção</translation>
+   <translation id="veeam_table_action" qtlid="56105">Ação</translation>
    <translation id="veeam_storage_list_load_error" qtlid="403944">Ocorreu um erro aquando dos espaços de armazenamento.</translation>
    <translation id="veeam_storage_update_quota_pending" qtlid="403957">A atualização da sua quota de armazenamento está em curso.</translation>
    <translation id="veeam_storage_update_quota_error" qtlid="403970">Ocorreu um erro aquando da atualização da sua quota de armazenamento.</translation>
