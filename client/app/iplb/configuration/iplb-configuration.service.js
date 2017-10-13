@@ -90,14 +90,14 @@ class IpLoadBalancerConfigurationService {
         if (statuses) {
             tasksPromise = this.$q.all(statuses.map(status => this.IpLoadBalancing.Task().Lexi().query({
                 serviceName,
-                action: "deployIplb",
+                action: "refreshIplb",
                 status
             }).$promise))
                 .then(tasksResults => _.flatten(tasksResults));
         } else {
             tasksPromise = this.IpLoadBalancing.Task().Lexi().query({
                 serviceName,
-                action: "deployIplb"
+                action: "refreshIplb"
             }).$promise;
         }
 
