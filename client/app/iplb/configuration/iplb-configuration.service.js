@@ -112,10 +112,9 @@ class IpLoadBalancerConfigurationService {
         this.CloudMessage.warning({
             text: this.$translate.instant("iplb_configuration_pending_changes"),
             link: {
+                type: "state",
                 text: this.$translate.instant("iplb_configuration_action_apply"),
-                action: () => {
-                    this.$state.go("network.iplb.detail.configuration");
-                }
+                state: "network.iplb.detail.configuration"
             }
         });
     }
