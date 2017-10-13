@@ -46,10 +46,8 @@ class IpLoadBalancerConfigurationCtrl {
             promise = this.IpLoadBalancerConfigurationService.batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, "id"));
         }
 
-        promise.then(tasks => {
-            if (tasks.length) {
-                this.startPolling();
-            }
+        promise.then(() => {
+            this.startPolling();
         });
 
         return promise;
@@ -61,7 +59,7 @@ class IpLoadBalancerConfigurationCtrl {
         this.poller = this.CloudPoll.pollArray({
             items: this.zones.data,
             pollFunction: zone => this.IpLoadBalancerConfigurationService.getZoneChanges(this.$stateParams.serviceName, zone.id),
-            stopCondition: zone => !zone.task || (zone.task && _.includes(["done", "error"], zone.task.status) && zone.changes === 0)
+            stopCondition: zone => !zone.task || (zone.task && _.includes(["done", "error"], zone.task.status) && (zone.changes === 0 || zone.task.progress === 100))
         });
     }
 
