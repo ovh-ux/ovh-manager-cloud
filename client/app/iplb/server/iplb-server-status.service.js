@@ -1,14 +1,16 @@
 class IpblServerStatusService {
     hasIssue (server) {
         return server.probe &&
-            _.some(server.serverState || [], serverState => serverState.status === "DOWN");
+            server.serverState &&
+            server.serverState.length &&
+            _.get(_.last(_.sortBy(server.serverState), "checkTime"), "status") === "DOWN";
     }
 
     hasNoInfo (server) {
         return !server.probe ||
             !server.serverState ||
-            server.serverState === [] ||
-            _.chain(server.serverState).map(state => state.status !== "no check").some(Boolean);
+            server.serverState.length === 0 ||
+            _.get(_.last(_.sortBy(server.serverState), "checkTime"), "status") === "no check";
     }
 
     getStatusIcon (server) {
