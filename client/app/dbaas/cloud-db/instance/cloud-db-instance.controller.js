@@ -11,6 +11,22 @@ class CloudDbInstanceCtrl {
         this.projectId = this.$stateParams.projectId;
         this.instanceId = this.$stateParams.instanceId;
 
+        this.initLoaders();
+    }
+
+    $onInit () {
+        this.CloudNavigation.init({
+            state: "dbaas.cloud-db.instance.detail",
+            stateParams: {
+                projectId: this.$stateParams.projectId,
+                instanceId: this.$stateParams.instanceId
+            }
+        });
+
+        this.ooms.load();
+    }
+
+    initLoaders () {
         this.ooms = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.CloudDbInstanceService.getOom(this.projectId, this.instanceId),
             successHandler: () => {
@@ -29,18 +45,6 @@ class CloudDbInstanceCtrl {
                 }
             }
         });
-    }
-
-    $onInit () {
-        this.CloudNavigation.init({
-            state: "dbaas.cloud-db.instance.detail",
-            stateParams: {
-                projectId: this.$stateParams.projectId,
-                instanceId: this.$stateParams.instanceId
-            }
-        });
-
-        this.ooms.load();
     }
 }
 

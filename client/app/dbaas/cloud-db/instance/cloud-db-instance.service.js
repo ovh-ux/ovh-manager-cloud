@@ -135,6 +135,8 @@ class CloudDbInstanceService {
         const usedText = this.$filter("bytes")(instance.diskUsed.value, 0, false, instance.diskUsed.unit);
         instance.diskUsed.text = usedText;
 
+        instance.displayName = instance.name || instance.id;
+
         instance.diskUsage = {
             used: instance.diskUsed,
             total: instance.flavor.disk,

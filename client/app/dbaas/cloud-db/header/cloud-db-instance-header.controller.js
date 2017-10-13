@@ -1,9 +1,9 @@
 class CloudDbInstanceHeaderCtrl {
-    constructor ($scope, $stateParams, ControllerHelper, CloudDbHomeService, SidebarMenu) {
+    constructor ($scope, $stateParams, ControllerHelper, CloudDbInstanceService, SidebarMenu) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.ControllerHelper = ControllerHelper;
-        this.CloudDbHomeService = CloudDbHomeService;
+        this.CloudDbInstanceService = CloudDbInstanceService;
         this.SidebarMenu = SidebarMenu;
 
         this.projectId = $stateParams.projectId;
@@ -11,9 +11,16 @@ class CloudDbInstanceHeaderCtrl {
 
         this.displayName = this.instanceId;
         //  No error handling since we don't want to break anything for a title.
-        this.configuration = this.configuration = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.CloudDbHomeService.getConfiguration(this.projectId, this.instanceId),
-            successHandler: () => { this.displayName = this.configuration.data.displayName; }
+        this.instance = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.CloudDbInstanceService.getInstance(this.projectId, this.instanceId),
+            successHandler: () => {
+                this.displayName = this.instance.data.displayName;
+
+                const capabilities = this.instance.data.image.capabilities;
+                this.showDatabaseTab = capabilities.database.creation || capabilities.database.delete || capabilities.database.update;
+                this.showUserTab = capabilities.user.creation || capabilities.user.delete || capabilities.user.update;
+                this.showBackupTab = capabilities.dump.creation || capabilities.dump.delete || capabilities.dump.update;
+            }
         });
 
         this.$scope.$on("cloudDb.instance.nameChange", () => {
@@ -22,7 +29,7 @@ class CloudDbInstanceHeaderCtrl {
     }
 
     $onInit () {
-        this.configuration.load();
+        this.instance.load();
     }
 }
 
