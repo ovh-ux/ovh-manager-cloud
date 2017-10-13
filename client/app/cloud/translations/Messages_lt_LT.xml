@@ -52,4 +52,7 @@
    <translation id="browser_alert_deprecated" qtlid="405370">Jūsų naršyklė neatnaujinta, galimos saugumo ar suderinamumo spragos.</translation>
    <translation id="browser_alert_update" qtlid="405383">Mes rekomenduojame <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">atnaujinti naršyklę <i class="fa fa-external-link" aria-hidden="true"></i></a> jei norite pasinaudoti optimalia patirtimi.</translation>
    <translation id="browser_alert_close" qtlid="405396">Uždaryti šį įspėjimą</translation>
+
+   <translation id="voucher_warning_title" qtlid="373441">Įspėjimas</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un voucher qui permet la création d'un projet cloud temporaire. Votre voucher est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
 </translations>
