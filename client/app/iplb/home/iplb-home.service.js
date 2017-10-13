@@ -60,13 +60,13 @@ class IpLoadBalancerHomeService {
                             }
                         });
 
-                        // Farm considered in unknown state when no health check is set up
-                        serverFarm.unknownState = _.chain(servers).map(server => this.IpblServerStatusService.hasNoInfo(server)).some(Boolean);
-
-                        // Farm considered dysfunctional when one of the servers has bad health check
-                        serverFarm.working = !_.chain(servers).map(server => this.IpblServerStatusService.hasIssue(server)).some(Boolean);
-
-                        return servers;
+                        return {
+                            // Farm considered in unknown state when no health check is set up
+                            unknownState: _.chain(servers).map(server => this.IpblServerStatusService.hasNoInfo(server)).some(Boolean),
+                            // Farm considered dysfunctional when one of the servers has bad health check
+                            working: servers.length > 0 && serversStatus.ok === servers.length,
+                            servers
+                        };
                     })
                 )
             ))
@@ -76,13 +76,35 @@ class IpLoadBalancerHomeService {
                 const workingServers = serversStatus.ok;
                 const totalServers = serversStatus.total;
 
+                let serversIcon;
+                if (totalServers > 0) {
+                    if (workingServers > 0) {
+                        serversIcon = workingServers === totalServers ? "success" : "warning";
+                    } else {
+                        serversIcon = "error";
+                    }
+                } else {
+                    serversIcon = "warning";
+                }
+
+                let farmIcon;
+                if (totalFarm > 0) {
+                    if (activeFarm > 0) {
+                        farmIcon = totalFarm > 0 && activeFarm === totalFarm ? "success" : "warning";
+                    } else {
+                        farmIcon = "error";
+                    }
+                } else {
+                    farmIcon = "warning";
+                }
+
                 return {
                     serverFarms: {
                         statusText: this.$translate.instant("iplb_status_working_farm_total", {
                             workingCount: activeFarm,
                             totalCount: totalFarm
                         }),
-                        status: activeFarm === totalFarm ? "success" : "warning"
+                        status: farmIcon
                     },
                     servers: {
                         statusText: [
@@ -94,7 +116,7 @@ class IpLoadBalancerHomeService {
                                 totalCount: totalServers
                             })
                         ],
-                        status: workingServers === totalServers ? "success" : "error"
+                        status: serversIcon
                     }
                 };
             })
