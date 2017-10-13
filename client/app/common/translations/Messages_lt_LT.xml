@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="preload_welcome" qtlid="433576">Sveiki atvykę į</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">OVH kliento valdymo sąsają</translation>
+
    <translation id="common_confirm" qtlid="31498">Patvirtinti</translation>
    <translation id="common_buy" qtlid="269591">Įsigyti</translation>
    <translation id="common_required_field" qtlid="250017">Privaloma informacija</translation>
@@ -62,6 +65,7 @@
    <translation id="changelog_loading_error" qtlid="298014">Šiuo metu atnaujinimų istorija neprieinama.</translation>
 
    <translation id="common_modify" qtlid="37875">Keisti</translation>
+   <translation id="common_select" qtlid="17923">Pasirinkti</translation>
    <translation id="common_add" qtlid="37923">Pridėti</translation>
    <translation id="common_remove" qtlid="323093">Pašalinti</translation>
    <translation id="edit" qtlid="37875">Keisti</translation>
@@ -70,6 +74,7 @@
    <translation id="error" qtlid="26407">Klaida</translation>
    <translation id="soon" qtlid="250043">Jau greitai </translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Plačiau</a>.</translation>
+   <translation id="common_progress" qtlid="354496">Pažanga</translation>
 
    <translation id="other_menu" qtlid="265265">Kiti produktai </translation>
    <translation id="cloud_menu_title" qtlid="104890">Public Cloud</translation>
@@ -463,6 +468,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Įvyko šios klaidos</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Svarbi informacija</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Informacija</translation>
 
    <translation id="common_global_error" qtlid="433345">Klaida vykdant operaciją: {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">Operacija atlikta sėkmingai.</translation>
@@ -472,12 +478,21 @@
    <translation id="common_login" qtlid="2174">Prisijungti</translation>
    <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Uždaryti</translation>
+   <translation id="common_modal_cancel" qtlid="37863">Anuliuoti</translation>
+
+   <translation id="common_tile_shortcut" qtlid="403658">Greitosios nuorodos</translation>
+
+   <translation id="common_tile_infos" qtlid="26551">Informacija</translation>
+
+   <translation id="common_tile_configuration" qtlid="4406">Konfigūracija</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Abonementas</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Pasiūlymas</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis galiojimo pratęsimas</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontaktai</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Sukūrimo data</translation>
+
+   <translation id="common_tile_information_status" qtlid="26443">Būsena</translation>
 
    <translation id="common_preview_see" qtlid="433371">Peržiūrėti</translation>
 
@@ -488,4 +503,10 @@
    <translation id="common_pagination_results" qtlid="433410">rezultatai</translation>
    <translation id="common_pagination_next" qtlid="433423">Kitas puslapis</translation>
    <translation id="common_pagination_previous" qtlid="433436">Ankstesnis puslapis</translation>
+
+   <translation id="common_name_change_modal_title" qtlid="439892">Keisti pavadinimą</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Numatytasis pavadinimas</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalizuotas pavadinimas</translation>
+
+   <translation id="common_task_list_empty" qtlid="134865">Neatliekama jokia užduotis</translation>
 </translations>

@@ -31,12 +31,13 @@
 
    <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Eliminar estes {{nbUsers}} utilizadores</translation>
    <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Não eliminar os utilizadores</translation>
-   <translation id="openstackusers_users_delete_button" qtlid="7882">Eliminar este utilizador</translation>
+   <translation id="openstackusers_users_delete_title" qtlid="7882">Eliminar este utilizador</translation>
    <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Não eliminar este utilizador</translation>
    <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Confirmar esta eliminação</translation>
 
    <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Os {{nbUsers}} utilizadores selecionados estão em curso de eliminação.</translation>
    <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Oops, não foi possível eliminar {{nbUsers}} utilizadores!</translation>
    <translation id="openstackusers_users_delete_error_one" qtlid="245558">Oops, não foi possível eliminar um utilizador!</translation>
+   <translation id="openstackusers_user_delete_message" qtlid="354756">Tem a certeza de que deseja eliminar este utilizador?</translation>
 
 </translations>

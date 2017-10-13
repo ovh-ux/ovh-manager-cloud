@@ -1,5 +1,5 @@
 class CloudProjectComputeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudProjectOrchestrator,
+    constructor ($q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudMessage, CloudProjectOrchestrator,
                  CloudUserPref, OvhApiMe, moment, PCI_ANNOUNCEMENTS) {
         this.$q = $q;
         this.$scope = $scope;
@@ -8,11 +8,13 @@ class CloudProjectComputeCtrl {
         this.$translate = $translate;
         this.$window = $window;
         this.OvhApiCloudProject = OvhApiCloudProject;
+        this.CloudMessage = CloudMessage;
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
         this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
         this.OvhApiMe = OvhApiMe;
         this.CloudUserPref = CloudUserPref;
         this.moment = moment;
+        this.messages = [];
     }
 
     $onInit () {
@@ -21,6 +23,16 @@ class CloudProjectComputeCtrl {
         this.infoMessageDismissed = true;
 
         this.init();
+        this.loadMessage();
+    }
+
+    loadMessage () {
+        this.CloudMessage.unSubscribe("iaas.pci-project.compute");
+        this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute", { onMessage: () => this.refreshMessage() });
+    }
+
+    refreshMessage () {
+        this.messages = this.messageHandler.getMessages();
     }
 
     getRouteContext () {
@@ -89,8 +101,7 @@ class CloudProjectComputeCtrl {
             return augmentedMessage;
         }
         augmentedMessage.link = {};
-        const linkURL = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
-        augmentedMessage.link.action = () => this.$window.open(linkURL, "_blank");
+        augmentedMessage.link.value = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
         if (message.hasLinkText) {
             augmentedMessage.link.text = this.$translate.instant(`${message.messageId}_link`);
         } else {

@@ -1,8 +1,10 @@
 class IpLoadBalancerDashboardHeaderCtrl {
-    constructor ($stateParams, ControllerHelper, IpLoadBalancerHomeService, SidebarMenu) {
+    constructor ($stateParams, $translate, ControllerHelper, IpLoadBalancerHomeService, ovhDocUrl, SidebarMenu) {
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
+        this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
 
         this.serviceName = $stateParams.serviceName;
@@ -22,6 +24,18 @@ class IpLoadBalancerDashboardHeaderCtrl {
             this.menuItem = { title: this.serviceName };
             this.configuration.load();
         }
+
+        this.initGuides();
+    }
+
+    initGuides () {
+        this.guides = {};
+        this.guides.title = this.$translate.instant("iplb_guides");
+        this.guides.list = [{
+            name: this.$translate.instant("iplb_guides_title"),
+            url: this.ovhDocUrl.getDocUrl("iplb")
+        }];
+        this.guides.footer = this.$translate.instant("iplb_guide_footer");
     }
 }
 

@@ -11,20 +11,20 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
         $httpBackend,
         $rootScope,
         $controller,
-        Toast,
+        CloudMessage,
         OvhApiCloudProjectSshKey,
         $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSshKey_, _Toast_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSshKey_, _CloudMessage_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         OvhApiCloudProjectSshKey = _CloudProjectSshKey_;
-        Toast = _Toast_;
+        CloudMessage = _CloudMessage_;
 
-        spyOn(Toast, "error");
-        spyOn(Toast, "success");
+        spyOn(CloudMessage, "error");
+        spyOn(CloudMessage, "success");
 
         $scope = $rootScope.$new();
     }));
@@ -123,7 +123,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
                     expect(CloudProjectComputeSshCtrl.loaders.add.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.sshAdd.name).toEqual("name");
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.count()).toEqual(1);
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
             });
 
@@ -146,7 +146,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
                     expect(CloudProjectComputeSshCtrl.sshAdd.name).toEqual(dataTest.sshkeys[0].name);
                     expect(OvhApiCloudProjectSshKey.Lexi.calls.any()).toEqual(false);
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.any()).toEqual(false);
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
 
                 xit("should throw an error when post ssh key", function () {
@@ -160,7 +160,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
                     expect(CloudProjectComputeSshCtrl.loaders.add.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.sshAdd.name).toEqual("name");
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.any()).toEqual(false);
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
             });
         });
@@ -184,7 +184,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
 
                     expect(CloudProjectComputeSshCtrl.loaders.remove.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.count()).toEqual(1);
-                    expect(Toast.success.calls.count()).toEqual(1);
+                    expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
             });
 
@@ -203,7 +203,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
 
                     expect(CloudProjectComputeSshCtrl.loaders.remove.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.any()).toEqual(false);
-                    expect(Toast.error.calls.count()).toEqual(1);
+                    expect(CloudMessage.error.calls.count()).toEqual(1);
                 });
             });
         });
@@ -229,7 +229,7 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
 
             expectSshAddInitState();
 
-            expect(Toast.error.calls.count()).toEqual(1);
+            expect(CloudMessage.error.calls.count()).toEqual(1);
         });
     });
 

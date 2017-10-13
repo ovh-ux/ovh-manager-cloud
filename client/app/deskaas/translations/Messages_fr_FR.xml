@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vdi_header" qtlid="313897">Cloud Desktop</translation>
+
+   <translation id="vdi_hdr_status" qtlid="33790">État</translation>
+   <translation id="vdi_hdr_name" qtlid="3818">Nom</translation>
+   <translation id="vdi_hdr_user" qtlid="7450">Utilisateur</translation>
+   <translation id="vdi_hdr_ip" qtlid="25615">IP</translation>
+   <translation id="vdi_hdr_connection" qtlid="55925">Connexion</translation>
+   <translation id="vdi_link_editone" qtlid="6766">Éditer</translation>
+
+   <translation id="vdi_pwd_title" qtlid="106427">Changement de mot de passe</translation>
+   <translation id="vdi_cancel_title" qtlid="371032">Confirmation de suppression</translation>
+   <translation id="vdi_confirm_cancel_reason" qtlid="371045">Motif de la résiliation</translation>
+   <translation id="vdi_confirm_cancel_commentary" qtlid="371058">Commentaire (optionnel)</translation>
+   <translation id="vdi_pwd_policy_length" qtlid="295322">Le mot de passe doit avoir une longueur comprise entre {{min}} et {{max}} caractères.</translation>
+   <translation id="vdi_pwd_policy_letterMandatory" qtlid="295335">Le mot de passe doit contenir au moins une lettre.</translation>
+   <translation id="vdi_pwd_policy_lowerMandatory" qtlid="295348">Le mot de passe doit contenir au moins une lettre minuscule.</translation>
+   <translation id="vdi_pwd_policy_upperMandatory" qtlid="295361">Le mot de passe doit contenir au moins une lettre majuscule.</translation>
+   <translation id="vdi_pwd_policy_digitMandatory" qtlid="295374">Le mot de passe doit contenir au moins un chiffre.</translation>
+   <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Le mot de passe doit contenir au moins un caractère spécial.</translation>
+   <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Le mot de passe ne doit pas contenir les caractères <span class="code">{{chars}}</span>.</translation>
+
+   <translation id="vdi_pwd_password_label" qtlid="295413">Entrez le nouveau mot de passe</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="295426">Laissez le système générer envoyer un mot de passe et vous l'envoyer par e-mail.</translation>
+
+   <translation id="vdi_change_alias_title" qtlid="323690">Changement d'alias</translation>
+   <translation id="vdi_change_alias_label" qtlid="323716">Entrez le nouvel alias</translation>
+
+   <translation id="vdi_change_username_title" qtlid="323742">Changement d'username</translation>
+   <translation id="vdi_change_username_policy" qtlid="323703">Doit être pas pire long, avec des caractères mais rien de trop compliqué.</translation>
+   <translation id="vdi_change_username_label" qtlid="323755">Entrez le nouvel username</translation>
+   <translation id="vdi_change_username_err_username" qtlid="323729">Doit être pas pire long, avec des caractères mais rien de trop compliqué</translation>
+
+   <translation id="vdi_reason_hard" qtlid="371071">Trop compliqué à utiliser</translation>
+   <translation id="vdi_reason_testing" qtlid="371084">Test de la solution</translation>
+   <translation id="vdi_reason_missing" qtlid="371097">Manque de fonctionnalité</translation>
+   <translation id="vdi_reason_performance" qtlid="371110">Mauvaises performances</translation>
+   <translation id="vdi_reason_not_suitable" qtlid="371123">Non adapté au besoin</translation>
+   <translation id="vdi_reason_need" qtlid="371136">Plus d'utilité</translation>
+   <translation id="vdi_reason_other" qtlid="19963">Autre</translation>
+
+   <translation id="vdi_console_title" qtlid="164844">Accéder à la console</translation>
+   <translation id="vdi_btn_console" qtlid="164844">Accéder à la console</translation>
+   <translation id="vdi_console_info" qtlid="406541"><p>Actuellement en test, n'hésitez pas à faire des retours sur l'utilisation.</p><p>Vous allez recevoir un email contenant la procédure pour vous connecter a la console de votre Cloud Desktop</p><p>Utilisez CTRL+ALT+SHIFT une fois connecté.</p></translation>
+   <translation id="vdi_console_task" qtlid="406554">Demande d'accès à la console envoyée</translation>
+   <translation id="vdi_console_done" qtlid="406567">Vous allez recevoir un mail pour votre demande d'accès à la console.</translation>
+
+   <translation id="vdi_core" qtlid="251213">vCPU</translation>
+   <translation id="vdi_ram" qtlid="31354">RAM</translation>
+   <translation id="vdi_disk" qtlid="25567">Disque</translation>
+   <translation id="vdi_gpu" qtlid="401445">GPU</translation>
+   <translation id="vdi_price" qtlid="83913">Prix</translation>
+</translations>

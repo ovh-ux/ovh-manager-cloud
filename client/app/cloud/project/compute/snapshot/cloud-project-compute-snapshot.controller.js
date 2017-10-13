@@ -2,8 +2,8 @@
 
 angular.module("managerApp")
   .controller("CloudProjectComputeSnapshotCtrl",
-    function (OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-              OvhApiCloudProjectImage, $translate, Toast, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
+    function ($uibModal, OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
+              OvhApiCloudProjectImage, $translate, CloudMessage, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
               $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
@@ -53,7 +53,6 @@ angular.module("managerApp")
 
     function initSearchBar () {
         self.search = {
-            open: false,
             name: null,
             size: null,
             creationStart: null,
@@ -130,15 +129,6 @@ angular.module("managerApp")
 
     //---------SEARCH BAR---------
 
-    self.toggleSearchBar = function () {
-        if (self.search.open) {
-            self.search.open = false;
-        } else {
-            initSearchBar(); //because if init is launch in if instead else, leave animation not work.
-            self.search.open = true;
-        }
-    };
-
     $scope.$watch('CloudProjectComputeSnapshotCtrl.search', function () {
         //otherwise filterSnapshot launched before form validation
         $timeout(function(){
@@ -149,26 +139,24 @@ angular.module("managerApp")
     function filterSnapshot () {
         if ($scope.searchSnapshotForm && $scope.searchSnapshotForm.$valid) {
             var tab = self.table.snapshot;
-            if (self.search.open) {
-                tab = _.filter(self.table.snapshot, function (snapshot) {
-                    var result = true;
+            tab = _.filter(self.table.snapshot, function (snapshot) {
+                var result = true;
 
-                    if (self.search.name && snapshot.name) {
-                        result = result && snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-                    }
-                    if (self.search.size) {
-                        result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
-                    }
-                    if (self.search.creationStart) {
-                        result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
-                    }
-                    if (self.search.creationEnd) {
-                        result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
-                    }
+                if (self.search.name && snapshot.name) {
+                    result = result && snapshot.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
+                }
+                if (self.search.size) {
+                    result = result && self.search.size >= Math.round(snapshot.size * 100) / 100;
+                }
+                if (self.search.creationStart) {
+                    result = result && moment(self.search.creationStart) <= moment(snapshot.creationDate);
+                }
+                if (self.search.creationEnd) {
+                    result = result && moment(self.search.creationEnd) > moment(snapshot.creationDate);
+                }
 
-                    return result;
-                });
-            }
+                return result;
+            });
 
             self.table.snapshotFilter = tab;
             self.table.snapshotFilterCheckbox = _.filter(tab, function (snapshot) {
@@ -217,7 +205,7 @@ angular.module("managerApp")
         }, function (err) {
             if (err && err.status) {
                 self.table.snapshot = _.filter(self.table.snapshot, { type : "volume" } );
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             }
         }, function(snapshotList){
             var currentImageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
@@ -253,7 +241,7 @@ angular.module("managerApp")
         }, function (err) {
             if (err && err.status) {
                 self.table.snapshot = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             }
         }, function(snapshotList){
             var currentVolumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
@@ -322,7 +310,7 @@ angular.module("managerApp")
                 setPrice();
             }, function (err) {
                 self.table.snapshot = null;
-                Toast.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_snapshot_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.snapshot = false;
             });
@@ -378,13 +366,13 @@ angular.module("managerApp")
     }
 
     self.createVmBySnapshot = function(snapshot){
-        Toast.info($translate.instant('cpc_snapshot_create_vm_button_info'));
+        CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
         $state.go('iaas.pci-project.compute.infrastructure');
     };
 
     self.createVolumeBySnapshot = function (snapshot) {
-        Toast.info($translate.instant("cpc_snapshot_create_volume_button_info"));
+        CloudMessage.info($translate.instant("cpc_snapshot_create_volume_button_info"));
         $timeout(function() {
             $state.go("iaas.pci-project.compute.infrastructure", {
                 createNewVolumeFromSnapshot: {
@@ -394,78 +382,24 @@ angular.module("managerApp")
         }, 99);
     };
 
-    self.deleteSnapshot = function (snapshot) {
-        if (!self.loaders.remove.snapshot) {
-            self.loaders.remove.snapshot = true;
-            var promiseDelete = snapshot.type==="volume" ?
-                deleteVolumeSnapshot(snapshot.id) : deleteSnapshot(snapshot.id);
-            promiseDelete.then(function () {
+    self.openDeleteSnapshot = function (snapshot) {
+        $uibModal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/snapshot/delete/compute-snapshot-delete.html",
+            controller: "CloudProjectComputeSnapshotDeleteCtrl",
+            controllerAs: "CloudProjectComputeSnapshotDeleteCtrl",
+            resolve: {
+                serviceName: () => serviceName,
+                snapshot: () => snapshot
+            },
+            successHandler: () => {
                 self.getSnapshot(true);
-                Toast.success($translate.instant('cpc_snapshot_delete_success'));
+                CloudMessage.success($translate.instant('cpc_snapshot_delete_success'));
                 pollSnapshots();
                 pollVolumeSnapshots();
-            }, function (err) {
-                Toast.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.snapshot = false;
-            });
-        }
-    };
-
-    self.deleteMultiSnapshot = function () {
-        var tabDelete = [],
-            nbSelected  = self.getSelectedCount();
-
-        self.loaders.remove.snapshotMulti = true;
-
-        angular.forEach(self.table.selected, function (value, snapshotId){
-            var snapshot = _.find(self.table.snapshot, {id : snapshotId});
-            if (snapshot) {
-                var promiseDelete = snapshot.type==="volume" ?
-                    deleteVolumeSnapshot(snapshot.id) : deleteSnapshot(snapshot.id);
-                tabDelete.push(promiseDelete.then(function(){
-                    return null;
-                }, function (error){
-                    return $q.reject({id : snapshotId, error : error.data});
-                }));
-            }
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_snapshot_delete_error'), err.data && err.data.message || ''].join(' '))
         });
-
-        $q.allSettled(tabDelete).then(function (){
-            if (nbSelected > 1) {
-                Toast.success($translate.instant('cpc_snapshot_delete_success_plural', {nbSnapshots: nbSelected}));
-            }else {
-                Toast.success($translate.instant('cpc_snapshot_delete_success'));
-            }
-        }, function (error){
-            var tabError = error.filter(function (val) {
-                return val !== null;
-            });
-            self.table.autoSelected = _.pluck(tabError, 'id');
-            if (tabError.length > 1) {
-                Toast.error($translate.instant('cpc_snapshot_delete_error_plural', {nbSnapshots: tabError.length}));
-            } else {
-                Toast.error($translate.instant('cpc_snapshot_delete_error_one'));
-            }
-        })['finally'](function(){
-            //self.table.selected = {};
-            self.getSnapshot(true);
-            self.loaders.remove.snapshotMulti = false;
-        });
-    };
-
-    function deleteSnapshot (snapshotId) {
-        return OvhApiCloudProjectSnapshot.Lexi().remove({
-            serviceName : serviceName,
-            snapshotId: snapshotId
-        }).$promise;
-    }
-
-    function deleteVolumeSnapshot (snapshotId) {
-        return OvhApiCloudProjectVolumeSnapshot.Lexi().delete({
-            serviceName : serviceName,
-            snapshotId: snapshotId
-        }).$promise;
     }
 
     init();

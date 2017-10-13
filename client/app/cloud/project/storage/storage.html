@@ -1,25 +1,28 @@
-<div id="cloud_project_storage">
-
+<div class="cui-page">
     <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
 
-    <div class="col-xs-12" data-ng-if="storages !== null">
-        <div class="top-space-m20 bottom-space-m10">
-            <a class="ovh-button ovh-button_primary"
+    <div>
+        <cui-message-container data-messages="messages"></cui-message-container>
+    </div>
+
+    <section class="cui-page__content">
+        <cui-page-content-title data-text="'storage_title' | translate">
+            <oui-loader size="m" data-ng-show="loaders.storages"></oui-loader>
+        </cui-page-content-title>
+
+        <div data-ng-if="storages !== null">
+            <a class="oui-button oui-button_secondary"
                data-ui-sref="iaas.pci-project.storage.add-container"
                write-right-required>
                 {{ 'storage_add_button'|translate }}
             </a>
-            <guide-component class="pull-right" data-guides="guides"></guide-component>
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div>
-            <cloud-search data-on-search="search" data-on-clear="showAll" class="pull-right" data-ng-if="storages.length > 0"> </cloud-search>
-            <h3>
-                <span class="main-color" data-translate="storage_title"></span>
-                <spinner data-ng-show="loaders.storages"> </spinner>
-            </h3>
+            <div class="pull-right" data-ng-if="storages.length > 0">
+                <input type="search"
+                class="oui-input"
+                data-ng-model="filter.name"
+                data-ng-model-options="{ debounce: 200 }"
+                data-translate-attr="{ placeholder: 'storage_search' }"/>
+            </div>
         </div>
 
         <promise-task-state></promise-task-state>
@@ -43,7 +46,7 @@
             <p data-translate="storage_no_storage"></p>
         </div>
 
-        <div class="table-responsive-vertical shadow-z-1" data-ng-if="!loaders.storages &&  storages.length > 0">
+        <div data-ng-if="!loaders.storages &&  storages.length > 0">
           <div data-ng-include="'app/cloud/project/storage/storage-containers/table.html'"></div>
         </div>
 
@@ -58,5 +61,6 @@
              data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
              data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
         </div>
-    </div>
+
+    </section>
 </div>

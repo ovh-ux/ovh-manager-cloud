@@ -1,7 +1,7 @@
 <div>
     <!-- init loading... -->
     <div data-ng-if="CloudProjectComputeInfrastructureOverviewCtrl.loaders.init" class="text-center" style="margin-top: 200px;">
-        <spinner name="bubbles-222-fff-32"></spinner>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <div class="well"
          data-ng-if="!CloudProjectComputeInfrastructureOverviewCtrl.loaders.init">
@@ -34,7 +34,9 @@
                 data-ng-click="CloudProjectComputeInfrastructureOverviewCtrl.redirectToInterface()">
             <i class="fa fa-undo right-space-m4"></i>
             <span data-translate="infra_overview_tips_redirect_complete_view"></span>
-            <spinner data-ng-if="CloudProjectComputeInfrastructureOverviewCtrl.loaders.redirect"></spinner>
+            <div data-ng-if="CloudProjectComputeInfrastructureOverviewCtrl.loaders.redirect" class="text-center">
+                <oui-loader size="s" class="d-inline-block"></oui-loader>
+            </div>
         </button>
     </div>
 </div>

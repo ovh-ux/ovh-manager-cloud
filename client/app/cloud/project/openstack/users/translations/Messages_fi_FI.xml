@@ -31,12 +31,13 @@
 
    <translation id="openstackusers_users_delete_button_plural" qtlid="245480">Poista {{nbUsers}} käyttäjää</translation>
    <translation id="openstackusers_users_delete_cancel_button_plural" qtlid="245493">Älä poista käyttäjiä</translation>
-   <translation id="openstackusers_users_delete_button" qtlid="7882">Poista tämä käyttäjä</translation>
+   <translation id="openstackusers_users_delete_title" qtlid="7882">Poista tämä käyttäjä</translation>
    <translation id="openstackusers_users_delete_cancel_button" qtlid="245506">Älä poista käyttäjää</translation>
    <translation id="openstackusers_users_delete_confirm_button" qtlid="245519">Vahvista poisto</translation>
 
    <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Valitut {{nbUsers}} käyttäjää poistetaan.</translation>
    <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Valitettavasti {{nbUsers}} käyttäjän poisto ei onnistu!</translation>
    <translation id="openstackusers_users_delete_error_one" qtlid="245558">Valitettavasti yhden käyttäjän poisto ei onnistu!</translation>
+   <translation id="openstackusers_user_delete_message" qtlid="354756">Haluatko varmasti poistaa tämän käyttäjän?</translation>
 
 </translations>

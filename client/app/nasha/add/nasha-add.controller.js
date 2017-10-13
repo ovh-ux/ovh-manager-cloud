@@ -1,10 +1,10 @@
 class NashaAddCtrl {
-    constructor ($translate, $q, $state, OvhApiOrder, Toast) {
+    constructor ($translate, $q, $state, OvhApiOrder, CloudMessage) {
         this.$translate = $translate;
         this.$q = $q;
         this.$state = $state;
         this.Order = OvhApiOrder;
-        this.Toast = Toast;
+        this.CloudMessage = CloudMessage;
 
         this.loaders = {};
         this.enums = {};
@@ -60,7 +60,7 @@ class NashaAddCtrl {
                 this.data.order = order;
             })
             .catch(err => {
-                this.Toast.error(this.$translate.instant("nasha_order_validation_error"));
+                this.CloudMessage.error(this.$translate.instant("nasha_order_validation_error"));
                 return this.$q.reject(err);
             })
             .finally(() => { this.loaders.loading = false; });
@@ -77,14 +77,14 @@ class NashaAddCtrl {
 
     refreshDuration () {
         this.data.orderValidated = false;
-        this.data.selectedDuration = "";
+        this.data.selectedDuration = null;
         if (this.data.selectedDatacenter && this.data.selectedModel) {
             this.enums.availableDurationsForSelection = [];
             this.loaders.durations = true;
             return this.getDurationsPromise(this.data.selectedModel)
                 .then(durations => { this.enums.availableDurationsForSelection = durations; })
                 .catch(err => {
-                    this.Toast.error(this.$translate.instant("nasha_order_loading_error"));
+                    this.CloudMessage.error(this.$translate.instant("nasha_order_loading_error"));
                     return this.$q.reject(err);
                 })
                 .finally(() => { this.loaders.durations = false; });
@@ -101,11 +101,11 @@ class NashaAddCtrl {
             model: this.data.selectedModel
         }).$promise
             .then(data => {
-                this.Toast.success(this.$translate.instant("nasha_order_success", { data: data }));
+                this.CloudMessage.success(this.$translate.instant("nasha_order_success", { data: data }));
                 this.data.completedOrder = data;
                 this.$state.go("paas.nasha-order-complete", { orderUrl: data.url });
             })
-            .catch(() => this.Toast.error(this.$translate.instant("nasha_order_error")))
+            .catch(() => this.CloudMessage.error(this.$translate.instant("nasha_order_error")))
             .finally(() => { this.loaders.init = false; });
     }
 

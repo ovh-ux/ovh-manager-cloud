@@ -6,7 +6,7 @@ class IpLoadBalancerUpdateQuotaCtrl {
         this.quota = Object.assign({}, quota);
 
         // Convert bytes to GiB
-        this.alert = this.quota.alert / Math.pow(1024, 3);
+        this.alert = this.quota.alert / Math.pow(1000, 3);
 
         this.saving = false;
     }
@@ -17,7 +17,7 @@ class IpLoadBalancerUpdateQuotaCtrl {
             this.$stateParams.serviceName,
             this.quota.zone,
             // Convert GiB to bytes
-            this.alert * Math.pow(1024, 3)
+            this.alert * Math.pow(1000, 3)
         ).then(result => {
             this.$uibModalInstance.close(result);
         }).catch(err => {

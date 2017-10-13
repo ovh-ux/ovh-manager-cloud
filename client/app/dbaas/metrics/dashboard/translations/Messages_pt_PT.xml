@@ -2,7 +2,7 @@
 <translations>
    <translation id="metrics_tiles_shortcut_title" qtlid="403658">Atalho</translation>
    <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Adicionar um token</translation>
-   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Aumentar a oferta</translation>
+   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Upgrade da oferta</translation>
    <translation id="metrics_tiles_tools_title" qtlid="330682">Ferramentas</translation>
 
    <translation id="metrics_tiles_usage_title" qtlid="30382">Utilização</translation>
@@ -33,7 +33,8 @@
    <translation id="metrics_tiles_modify" qtlid="37875">Modificar</translation>
    <translation id="metrics_dashboard_modif_cancel" qtlid="37863">Anular</translation>
    <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modificar</translation>
-   <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nome padrão</translation>
+   <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nome predefinido</translation>
    <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nome personalizado</translation>
    <translation id="metrics_dashboard_modif_retention" qtlid="8218">Duração</translation>
+   <translation id="metrics_modif_name_title" qtlid="439892">Alterar o nome</translation>
 </translations>

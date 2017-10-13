@@ -2,21 +2,15 @@
 
     <!-- INIT LOADER -->
     <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.quota">
-
-        <spinner></spinner>
-        {{ :: 'cpb_quota_loading' | translate }}
-
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
     <!-- UNLEASH LOADER -->
     <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.unleash">
-
-        <spinner></spinner>
-        {{ :: 'cpb_quota_unleash_loading' | translate }}
-
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
-    <div class="col-xs-12" data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">
+    <div class="cui-page__content" data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">
 
         <!-- THERE IS NO PAYMENT MEAN - SHOW A MESSAGE TO ADD IT -->
         <div data-ng-if="CloudProjectBillingQuotaCtrl.state.isRestrictedQuota && !CloudProjectBillingQuotaCtrl.datas.defaultPaymentMean">
@@ -38,7 +32,7 @@
             <div class="well">
 
                 <p class="bold">{{ :: 'cpb_quota_restricted_paymentmean_active' | translate }}</p>
-                <button class="btn btn-primary"
+                <button class="oui-button oui-button_primary"
                         data-ng-click="CloudProjectBillingQuotaCtrl.unleashAccount()">
                     {{ :: 'cpb_quota_restricted_unlock_button' | translate }}
                 </button>
@@ -55,7 +49,7 @@
             <p write-right-required>{{ :: 'cpb_quota_protect_more' | translate }}</p>
 
             <button type="button"
-                    class="btn btn-primary"
+                    class="oui-button oui-button_primary"
                     data-ng-disabled="!CloudProjectBillingQuotaCtrl.datas.quota || (CloudProjectBillingQuotaCtrl.datas.quota && CloudProjectBillingQuotaCtrl.datas.quota.length === 0)"
                     data-ng-click="CloudProjectBillingQuotaCtrl.openSupport()"
                     write-right-required>
@@ -67,95 +61,93 @@
         <!-- QUOTA TABLE -->
         <strong>{{ :: 'cpb_quota_current_limit' | translate }}</strong>
 
-        <div class="table-responsive-vertical shadow-z-1 top-space-m8 bottom-space-m12 quota-table">
-            <table class="table table-pretty table-hover table-striped no-space">
-                <thead>
-                    <tr>
-                        <th>
-                            {{ :: 'cloud_common_region' | translate }}
-                        </th>
-                        <th class="text-center">
-                            <div class="head-icon inline-block">
-                                <i class="fa fa-server inline-block"></i>
-                                <span class="inline-block">{{ :: 'cloud_common_instance' | translate }}</span>
-                            </div>
-                        </th>
-                        <th class="text-center">
-                            <div class="head-icon inline-block">
-                                <i class="ovh-font ovh-font-cloudcpu inline-block"></i>
-                                <span class="inline-block">{{ :: 'cloud_common_core' | translate }}</span>
-                            </div>
+        <table class="oui-table oui-table_responsive">
+            <thead class="oui-table__headers">
+                <tr>
+                    <th class="oui-table__header">
+                        {{ :: 'cloud_common_region' | translate }}
+                    </th>
+                    <th class="oui-table__header">
+                        <div class="head-icon inline-block">
+                            <i class="fa fa-server inline-block"></i>
+                            <span class="inline-block">{{ :: 'cloud_common_instance' | translate }}</span>
+                        </div>
+                    </th>
+                    <th class="oui-table__header">
+                        <div class="head-icon inline-block">
+                            <i class="ovh-font ovh-font-cloudcpu inline-block"></i>
+                            <span class="inline-block">{{ :: 'cloud_common_core' | translate }}</span>
+                        </div>
 
-                        </th>
-                        <th class="text-center">
-                            <div class="head-icon inline-block">
-                                <i class="ovh-font ovh-font-cloudram inline-block"></i>
-                                <span class="inline-block">{{ :: 'cloud_common_ram' | translate }}</span>
+                    </th>
+                    <th class="oui-table__header">
+                        <div class="head-icon inline-block">
+                            <i class="ovh-font ovh-font-cloudram inline-block"></i>
+                            <span class="inline-block">{{ :: 'cloud_common_ram' | translate }}</span>
+                        </div>
+                    </th>
+                    <th class="oui-table__header">
+                        <div class="head-icon inline-block">
+                            <i class="fa fa-hdd-o inline-block"></i>
+                            <span class="inline-block">{{ :: 'cpb_quota_add_disk' | translate }}</span>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-ng-if="!CloudProjectBillingQuotaCtrl.datas.quota || (CloudProjectBillingQuotaCtrl.datas.quota && CloudProjectBillingQuotaCtrl.datas.quota.length === 0)" class="oui-table__body">
+                <tr>
+                    <td colspan="5" class="text-center">
+                        {{ :: 'cpb_quota_no_quota' | translate }}
+                    </td>
+                </tr>
+            </tbody>
+            <tbody data-ng-if="CloudProjectBillingQuotaCtrl.datas.quota.length > 0" class="oui-table__body">
+                <tr data-ng-repeat="quota in CloudProjectBillingQuotaCtrl.datas.quota" class="oui-table__row">
+                    <td class="oui-table__cell" data-title="{{ :: 'cloud_common_region' | translate }}">
+                        <div class="flag-box">
+                            <div class="flag-wrapper inline-block vertical-middle">
+                                <span class="flag-icon {{ :: CloudProjectBillingQuotaCtrl.regionService.getRegionIconFlag(quota.region) }} flag"></span>
                             </div>
-                        </th>
-                        <th class="text-center">
-                            <div class="head-icon inline-block">
-                                <i class="fa fa-hdd-o inline-block"></i>
-                                <span class="inline-block">{{ :: 'cpb_quota_add_disk' | translate }}</span>
+                            <div class="flag-text inline-block left-space-m8 top-space-m8 vertical-middle">
+                                {{ :: CloudProjectBillingQuotaCtrl.regionService.getTranslatedMicroRegion(quota.region) }}
                             </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody data-ng-if="!CloudProjectBillingQuotaCtrl.datas.quota || (CloudProjectBillingQuotaCtrl.datas.quota && CloudProjectBillingQuotaCtrl.datas.quota.length === 0)">
-                    <tr>
-                        <td colspan="5" class="text-center">
-                            {{ :: 'cpb_quota_no_quota' | translate }}
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody data-ng-if="CloudProjectBillingQuotaCtrl.datas.quota.length > 0">
-                    <tr data-ng-repeat="quota in CloudProjectBillingQuotaCtrl.datas.quota">
-                        <td class="word-break" data-title="{{ :: 'cloud_common_region' | translate }}">
-                            <div class="flag-box">
-                                <div class="flag-wrapper inline-block vertical-middle">
-                                    <span class="flag-icon {{ :: CloudProjectBillingQuotaCtrl.regionService.getRegionIconFlag(quota.region) }} flag"></span>
-                                </div>
-                                <div class="flag-text inline-block left-space-m8 top-space-m8 vertical-middle">
-                                    {{ :: CloudProjectBillingQuotaCtrl.regionService.getTranslatedMicroRegion(quota.region) }}
-                                </div>
-                            </div>
-                        </td>
-                        <td class="text-center word-break" data-title="{{ :: 'cloud_common_instance' | translate }}">
-                            <span data-ng-if="quota.instance.maxInstances === -1">
-                                {{ :: quota.instance.usedInstances }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
-                            </span>
-                            <span data-ng-if="quota.instance.maxInstances !== -1">
-                                {{ :: quota.instance.usedInstances }} / {{ :: quota.instance.maxInstances }}
-                            </span>
-                        </td>
-                        <td class="text-center word-break" data-title="{{ :: 'cloud_common_core' | translate }}">
-                            <span data-ng-if="quota.instance.maxCores === -1">
-                                {{ :: quota.instance.usedCores }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
-                            </span>
-                            <span data-ng-if="quota.instance.maxCores !== -1">
-                                {{ :: quota.instance.usedCores }} / {{ :: quota.instance.maxCores }}
-                            </span>
-                        </td>
-                        <td class="text-center word-break" data-title="{{ :: 'cloud_common_ram' | translate }}">
-                            <span data-ng-if="quota.instance.maxRam === -1">
-                                {{ :: quota.instance.usedRAM > 0 ? ((quota.instance.usedRAM * 1000000) | bytes:2) : quota.instance.usedRAM }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
-                            </span>
-                            <span data-ng-if="quota.instance.maxRam !== -1">
-                                {{ :: quota.instance.usedRAM > 0 ? ((quota.instance.usedRAM * 1000000) | bytes:2) : quota.instance.usedRAM }} / {{ :: (quota.instance.maxRam * 1000000) | bytes:2 }}
-                            </span>
-                        </td>
-                        <td class="text-center word-break" data-title="{{ :: 'cloud_common_disk' | translate }}">
-                            <span data-ng-if="quota.volume.maxGigabytes === -1">
-                                {{ :: quota.volume.usedGigabytes > 0 ? ((quota.volume.usedGigabytes * 1000000000) | bytes:2) : quota.volume.usedGigabytes }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
-                            </span>
-                            <span data-ng-if="quota.volume.maxGigabytes !== -1">
-                                {{ :: quota.volume.usedGigabytes > 0 ? ((quota.volume.usedGigabytes * 1000000000) | bytes:2) : quota.volume.usedGigabytes }} / {{ :: (quota.volume.maxGigabytes * 1000000000) | bytes:2 }}
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                        </div>
+                    </td>
+                    <td class="oui-table__cell" data-title="{{ :: 'cloud_common_instance' | translate }}">
+                        <span data-ng-if="quota.instance.maxInstances === -1">
+                            {{ :: quota.instance.usedInstances }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
+                        </span>
+                        <span data-ng-if="quota.instance.maxInstances !== -1">
+                            {{ :: quota.instance.usedInstances }} / {{ :: quota.instance.maxInstances }}
+                        </span>
+                    </td>
+                    <td class="oui-table__cell" data-title="{{ :: 'cloud_common_core' | translate }}">
+                        <span data-ng-if="quota.instance.maxCores === -1">
+                            {{ :: quota.instance.usedCores }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
+                        </span>
+                        <span data-ng-if="quota.instance.maxCores !== -1">
+                            {{ :: quota.instance.usedCores }} / {{ :: quota.instance.maxCores }}
+                        </span>
+                    </td>
+                    <td class="oui-table__cell" data-title="{{ :: 'cloud_common_ram' | translate }}">
+                        <span data-ng-if="quota.instance.maxRam === -1">
+                            {{ :: quota.instance.usedRAM > 0 ? ((quota.instance.usedRAM * 1000000) | bytes:2) : quota.instance.usedRAM }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
+                        </span>
+                        <span data-ng-if="quota.instance.maxRam !== -1">
+                            {{ :: quota.instance.usedRAM > 0 ? ((quota.instance.usedRAM * 1000000) | bytes:2) : quota.instance.usedRAM }} / {{ :: (quota.instance.maxRam * 1000000) | bytes:2 }}
+                        </span>
+                    </td>
+                    <td class="oui-table__cell" data-title="{{ :: 'cloud_common_disk' | translate }}">
+                        <span data-ng-if="quota.volume.maxGigabytes === -1">
+                            {{ :: quota.volume.usedGigabytes > 0 ? ((quota.volume.usedGigabytes * 1000000000) | bytes:2) : quota.volume.usedGigabytes }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
+                        </span>
+                        <span data-ng-if="quota.volume.maxGigabytes !== -1">
+                            {{ :: quota.volume.usedGigabytes > 0 ? ((quota.volume.usedGigabytes * 1000000000) | bytes:2) : quota.volume.usedGigabytes }} / {{ :: (quota.volume.maxGigabytes * 1000000000) | bytes:2 }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
 

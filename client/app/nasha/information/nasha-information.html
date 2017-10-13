@@ -1,4 +1,4 @@
-<div class="col-xs-12 well top-space-p20 nasha">
+<div class="col-xs-12 well top-space-p20">
     <div class="row">
         <div class="col-xs-12 col-lg-7">
             <dl class="dl-horizontal">
@@ -43,15 +43,15 @@
                 <dt data-translate="nasha_dashboard_space_usage" class="bottom-space-m4"></dt>
                 <dd class="bottom-space-m8">
                     <div>
-                        <span class="pull-left right-space-m4" data-translate="common_no" data-ng-class="{'monitoring-stich-labels': NashaCtrl.monitoring.enabled}"></span>
-                        <flat-switch class="pull-left monitoring-switch">
-                            <input type="checkbox"
-                                   class="pointer"
-                                   data-ng-disabled="NashaCtrl.monitoring.loading"
-                                   data-ng-model="NashaCtrl.monitoring.enabled"
-                                   data-ng-click="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
-                        </flat-switch>
-                        <span class="pull-left left-space-m4" data-translate="common_yes" data-ng-class="{'monitoring-stich-labels': !NashaCtrl.monitoring.enabled}"></span>
+                        <label class="oui-switch pull-left">
+                            <input type="checkbox" class="oui-switch__checkbox"
+                                data-ng-disabled="NashaCtrl.monitoring.loading"
+                                data-ng-model="NashaCtrl.monitoring.enabled"
+                                data-ng-click="NashaCtrl.updateMonitoringState(NashaCtrl.monitoring.enabled)">
+                            <div class="oui-switch__slider"></div>
+                            <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
+                            <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
+                        </label>
                     </div>
                     <span>&nbsp;</span>
                     <i class="fa fa-question-circle fs18 pointer"

@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineVncCtrl", function ($uibModalInstance, params, $translate, Toast, OvhApiCloudProjectInstance) {
+angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineVncCtrl", function ($uibModalInstance, params, $translate, CloudMessage, OvhApiCloudProjectInstance) {
 
     var self = this;
     this.loading = true;
@@ -18,7 +18,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
             self.data.url = vncInfos.url;
             self.loading = false;
         }, function (err) {
-            Toast.error( [$translate.instant('cpcivm_vnc_error'), err.data && err.data.message || ''].join(' '));
+            CloudMessage.error( [$translate.instant('cpcivm_vnc_error'), err.data && err.data.message || ''].join(' '));
             $uibModalInstance.dismiss();
         });
     }

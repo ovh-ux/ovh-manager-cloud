@@ -1,0 +1,31 @@
+<cui-modal>
+    <form id="nameChangeForm">  
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'common_name_change_modal_title' | translate">
+            <cui-loader data-ng-if="$ctrl.isModalLoading()"></cui-loader>
+            <div data-ng-if="!$ctrl.isModalLoading()">
+                <cui-modal-text data-text="'common_name_change_modal_service_name_label' | translate"></cui-modal-text>
+                <cui-modal-text data-text="$ctrl.serviceName"></cui-modal-text>
+
+                <div class="oui-input-formfield">
+                    <input
+                        type="text"
+                        maxlength="{{ $ctrl.model.displayName.maxlength }}"
+                        id="newDisplayName"
+                        name="newDisplayName"
+                        class="oui-input"
+                        data-ng-model="$ctrl.model.displayName.value"
+                        required
+                        novalidate />
+                    <label for="newDisplayName" class="oui-label" data-translate="common_name_change_modal_display_name_label"></label>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_edit' | translate" 
+                data-on-click="$ctrl.confirm()"
+                data-disabled="nameChangeForm.$invalid || $ctrl.isModalLoading()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

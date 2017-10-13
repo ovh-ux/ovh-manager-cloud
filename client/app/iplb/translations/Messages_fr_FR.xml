@@ -2,6 +2,10 @@
 <translations>
    <translation id="iplb_back_home" qtlid="4118">Retour</translation>
 
+   <translation id="iplb_guides" qtlid="300370">Guides</translation>
+   <translation id="iplb_guides_title" qtlid="247105">IPLB</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">Tous les guides OVH</translation>
+
    <translation id="iplb_tab_home" qtlid="27643">Accueil</translation>
    <translation id="iplb_tab_frontends" qtlid="438545">Frontends</translation>
    <translation id="iplb_tab_server_farm" qtlid="437700">Fermes de serveurs</translation>
@@ -59,7 +63,6 @@
    <translation id="iplb_utilisation_update_alert" qtlid="439624">Modifier le seuil d'alerte</translation>
    <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Données incluses</translation>
    <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Seuil de l'alerte</translation>
-   <translation id="iplb_utilisation_update_alert_unit" qtlid="180278">Gio</translation>
    <translation id="iplb_utilisation_update_alert_error" qtlid="439650">Une erreur est survenue lors de la mise à jour du seuil d'alerte.</translation>
 
    <translation id="iplb_usage_loading_error" qtlid="439663">Erreur lors du chargement de la section Utilisation.</translation>

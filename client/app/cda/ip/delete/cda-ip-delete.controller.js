@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaIpDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, Toast, OvhApiDedicatedCeph) {
+  .controller("CdaIpDeleteCtrl", function ($uibModalInstance, $translate, $stateParams, $scope, CloudMessage, OvhApiDedicatedCeph) {
       "use strict";
 
       var self = this;
@@ -23,9 +23,9 @@ angular.module("managerApp")
               aclId: self.ip.id
           }).$promise.then(function (result) {
               $uibModalInstance.close({ taskId: result.data });
-              Toast.success($translate.instant("cda_ip_delete_success"));
+              CloudMessage.success($translate.instant("cda_ip_delete_success"));
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
           }).finally(function () {
               self.saving = false;
           });

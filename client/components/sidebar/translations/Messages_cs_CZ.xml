@@ -7,6 +7,7 @@
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licence</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_sidebar_section_load_balancer" qtlid="439819">Load Balancer</translation>
    <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>
@@ -39,6 +40,7 @@
    <translation id="cloud_sidebar_actions_menu_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_actions_menu_paas_veeam" qtlid="404113">Veeam CC</translation>
    <translation id="cloud_sidebar_actions_menu_clouddb" qtlid="404863">CloudDB</translation>
+   <translation id="cloud_sidebar_actions_menu_clouddesktop" qtlid="303952">Cloud Desktop</translation>
 
 <!-- Hotfix -->
    <translation id="sidebar_menu_order_actions" qtlid="43558">Objednat</translation>

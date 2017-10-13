@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vdi_header" qtlid="313897">Cloud Desktop</translation>
+
+   <translation id="vdi_hdr_status" qtlid="33790">Stav</translation>
+   <translation id="vdi_hdr_name" qtlid="3818">Příjmení</translation>
+   <translation id="vdi_hdr_user" qtlid="7450">Uživatel</translation>
+   <translation id="vdi_hdr_ip" qtlid="25615">IP</translation>
+   <translation id="vdi_hdr_connection" qtlid="55925">Připojení</translation>
+   <translation id="vdi_link_editone" qtlid="6766">Upravit</translation>
+
+   <translation id="vdi_pwd_title" qtlid="106427">Změna hesla</translation>
+   <translation id="vdi_cancel_title" qtlid="371032">Potvrzení vymazání</translation>
+   <translation id="vdi_confirm_cancel_reason" qtlid="371045">Důvod resetování</translation>
+   <translation id="vdi_confirm_cancel_commentary" qtlid="371058">Komentář (nepovinné)</translation>
+   <translation id="vdi_pwd_policy_length" qtlid="295322">Heslo musí mít délku od {{min}} do {{max}} znaků.</translation>
+   <translation id="vdi_pwd_policy_letterMandatory" qtlid="295335">Heslo musí obsahovat alespoň jedno písmeno.</translation>
+   <translation id="vdi_pwd_policy_lowerMandatory" qtlid="295348">Heslo musí obsahovat alespoň jedno malé písmeno.</translation>
+   <translation id="vdi_pwd_policy_upperMandatory" qtlid="295361">Heslo musí obsahovat alespoň jedno velké písmeno.</translation>
+   <translation id="vdi_pwd_policy_digitMandatory" qtlid="295374">Heslo musí obsahovat alespoň jedno číslo.</translation>
+   <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Heslo musí obsahovat alespoň jeden zvláštní znak.</translation>
+   <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Heslo nesmí obsahovat znaky <span class="code">{{chars}}</span>.</translation>
+
+   <translation id="vdi_pwd_password_label" qtlid="295413">Zadejte nové heslo.</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="295426">Nechejte systém, aby vygeneroval heslo a poté Vám jej zaslal e-mailem.</translation>
+
+   <translation id="vdi_change_alias_title" qtlid="323690">Změna aliasu</translation>
+   <translation id="vdi_change_alias_label" qtlid="323716">Zadejte nový alias</translation>
+
+   <translation id="vdi_change_username_title" qtlid="323742">Změna uživatelského jména</translation>
+   <translation id="vdi_change_username_policy" qtlid="323703">Řetězec by měl být přiměřeně dlouhý, měl by obsahovat zvláštní znaky, ale neměl by být příliš složitý.</translation>
+   <translation id="vdi_change_username_label" qtlid="323755">Zadejte nové uživatelské jméno</translation>
+   <translation id="vdi_change_username_err_username" qtlid="323729">Řetězec by měl být přiměřeně dlouhý, měl by obsahovat zvláštní znaky, ale neměl by být příliš složitý.</translation>
+
+   <translation id="vdi_reason_hard" qtlid="371071">Příliš složité na používání</translation>
+   <translation id="vdi_reason_testing" qtlid="371084">Testování služby</translation>
+   <translation id="vdi_reason_missing" qtlid="371097">Chybějící funkce</translation>
+   <translation id="vdi_reason_performance" qtlid="371110">Nízký výkon</translation>
+   <translation id="vdi_reason_not_suitable" qtlid="371123">Nevyhovující k zamýšleným účelům</translation>
+   <translation id="vdi_reason_need" qtlid="371136">Službu nepotřebuji</translation>
+   <translation id="vdi_reason_other" qtlid="19963">Jiné</translation>
+
+   <translation id="vdi_console_title" qtlid="164844">Přístup ke konzoli</translation>
+   <translation id="vdi_btn_console" qtlid="164844">Přístup ke konzoli</translation>
+   <translation id="vdi_console_info" qtlid="406541"><p>Tato služba v současné době prochází testovací fází. Vaše zpětná vazba je vítána.</p>&#13;
+<p>Zanedlouho od nás obdržíte e-mail s detailními informacemi pro připojení ke konzoli služby Cloud Desktop</p><p>Po připojení prosím stiskněte kombinaci kláves CTRL+ALT+SHIFT.</p></translation>
+   <translation id="vdi_console_task" qtlid="406554">Požadavek na přístup ke konzoli byl odeslán</translation>
+   <translation id="vdi_console_done" qtlid="406567">Na základě Vašeho požadavku pro přístup ke konzoli zanedlouho obdržíte e-mail s dalšími instrukcemi.</translation>
+
+   <translation id="vdi_core" qtlid="251213">vCPU</translation>
+   <translation id="vdi_ram" qtlid="31354">RAM</translation>
+   <translation id="vdi_disk" qtlid="25567">Disky</translation>
+   <translation id="vdi_gpu">GPU</translation>
+   <translation id="vdi_price">Prix</translation>
+</translations>

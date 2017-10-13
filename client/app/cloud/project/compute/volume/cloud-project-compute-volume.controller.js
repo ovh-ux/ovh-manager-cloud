@@ -1,9 +1,9 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state,
+  .controller("CloudProjectComputeVolumeCtrl", function ($scope, $filter, $q, $timeout, $stateParams, $translate, $state, ControllerHelper,
                                                          CloudProjectOrchestrator , OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
-                                                         OvhApiCloudProjectInstance, Toast, RegionService, CLOUD_UNIT_CONVERSION) {
+                                                         OvhApiCloudProjectInstance, CloudMessage, RegionService, CLOUD_UNIT_CONVERSION) {
 
     var self = this,
         serviceName = $stateParams.projectId,
@@ -60,7 +60,6 @@ angular.module("managerApp")
 
     function initSearchBar () {
         self.search = {
-            open          : false,
             name          : null,
             minDisk       : null,
             creationStart : null,
@@ -112,15 +111,6 @@ angular.module("managerApp")
 
     //---------SEARCH BAR---------
 
-    self.toggleSearchBar = function () {
-        if (self.search.open) {
-            self.search.open = false;
-        } else {
-            initSearchBar(); //because if init is launch in if instead else, leave animation not work.
-            self.search.open = true;
-        }
-    };
-
     $scope.$watch('CloudProjectComputeVolumeCtrl.search', function () {
         //otherwise filterVolume launched before form validation
         $timeout(function(){
@@ -131,27 +121,24 @@ angular.module("managerApp")
     function filterVolume () {
         if ($scope.searchVolumeForm && $scope.searchVolumeForm.$valid) {
             var tab = self.table.volume;
+            tab = _.filter(self.table.volume, function (volume) {
+                var result = true;
 
-            if (self.search.open) {
-                tab = _.filter(self.table.volume, function (volume) {
-                    var result = true;
+                if (self.search.name && volume.name) {
+                    result = result && volume.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
+                }
+                if (self.search.minDisk) {
+                    result = result && self.search.minDisk <= volume.size;
+                }
+                if (self.search.creationStart) {
+                    result = result && moment(self.search.creationStart) <= moment(volume.creationDate);
+                }
+                if (self.search.creationEnd) {
+                    result = result && moment(self.search.creationEnd) > moment(volume.creationDate);
+                }
 
-                    if (self.search.name && volume.name) {
-                        result = result && volume.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-                    }
-                    if (self.search.minDisk) {
-                        result = result && self.search.minDisk <= volume.size;
-                    }
-                    if (self.search.creationStart) {
-                        result = result && moment(self.search.creationStart) <= moment(volume.creationDate);
-                    }
-                    if (self.search.creationEnd) {
-                        result = result && moment(self.search.creationEnd) > moment(volume.creationDate);
-                    }
-
-                    return result;
-                });
-            }
+                return result;
+            });
 
             self.table.volumeFilter = tab;
             self.table.volumeFilterCheckbox = _.filter(tab, function (volume) {
@@ -223,7 +210,7 @@ angular.module("managerApp")
                 self.table.volume = null;
                 self.table.instance = null;
                 self.table.snapshots = null;
-                Toast.error( [$translate.instant('cpc_volume_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpc_volume_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 self.loaders.table.volume = false;
             });
@@ -242,7 +229,7 @@ angular.module("managerApp")
     }, true);
 
     self.createNewVolume = function () {
-        Toast.info($translate.instant('cpc_volume_create_volume_button_info'));
+        CloudMessage.info($translate.instant('cpc_volume_create_volume_button_info'));
         $timeout(function() {
             $state.go("iaas.pci-project.compute.infrastructure", {
                 createNewVolume: true
@@ -250,54 +237,22 @@ angular.module("managerApp")
         }, 99);
     };
 
-    self.deleteVolume = function (volume) {
-        if (!self.loaders.remove.volume) {
-            self.loaders.remove.volume = true;
-            deleteVolume(volume.id).then(function () {
+    self.openDeleteVolume = function (volume) {
+        ControllerHelper.modal.showModal({
+                modalConfig: {
+                templateUrl: "app/cloud/project/compute/volume/delete/cloud-project-compute-volume-delete.html",
+                controller: "CloudProjectComputeVolumeDeleteCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    volume: () => volume
+                }
+            },
+            successHandler: () => {
                 self.getVolume(true);
-                Toast.success($translate.instant('cpc_volume_delete_success'));
-            }, function (err) {
-                Toast.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.remove.volume = false;
-            });
-        }
-    };
-
-    self.deleteMultiVolume = function () {
-        var tabDelete = [],
-            nbSelected  = self.getSelectedCount();
-
-        self.loaders.remove.volumeMulti = true;
-
-        angular.forEach(self.table.selected, function (value, volumeId){
-            tabDelete.push(deleteVolume(volumeId).then(function(){
-                return null;
-            }, function (error){
-                return $q.reject({id : volumeId, error : error.data});
-            }));
-        });
-
-        $q.allSettled(tabDelete).then(function (){
-            if (nbSelected > 1) {
-                Toast.success($translate.instant('cpc_volume_delete_success_plural', {nbVolumes: nbSelected}));
-            }else {
-                Toast.success($translate.instant('cpc_volume_delete_success'));
-            }
-        }, function (error){
-            var tabError = error.filter(function (val) {
-                return val !== null;
-            });
-
-            self.table.autoSelected = _.pluck(tabError, 'id');
-            if (tabError.length > 1) {
-                Toast.error($translate.instant('cpc_volume_delete_error_plural', {nbVolumes: tabError.length}));
-            } else {
-                Toast.error($translate.instant('cpc_volume_delete_error_one'));
-            }
-        })['finally'](function(){
-            self.getVolume(true);
-            self.loaders.remove.volumeMulti = false;
+                CloudMessage.success($translate.instant('cpc_volume_delete_success'));
+            },
+            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_volume_delete_error'), err.data && err.data.message || ''].join(' '))
         });
     };
 
@@ -349,10 +304,6 @@ angular.module("managerApp")
                 self.totalResume.price.currencyCode = firstVolumePrice.monthlyPrice.currencyCode;
             }
         });
-    }
-
-    function deleteVolume (volumeId) {
-        return OvhApiCloudProjectVolume.Lexi().remove({serviceName : serviceName, volumeId: volumeId}).$promise;
     }
 
     init();

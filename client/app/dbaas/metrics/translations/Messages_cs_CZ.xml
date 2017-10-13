@@ -10,6 +10,7 @@
    <translation id="metrics_guides_first-step" qtlid="415753">První kroky...</translation>
    <translation id="metrics_guides_first-step_begin" qtlid="415766">Začít</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protokoly</translation>
+   <translation id="metrics_guides_platform" qtlid="123607">Platformy</translation>
 
 
    <translation id="metrics_endpoint" qtlid="403177">Přístup do platformy</translation>
@@ -31,6 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Retence (měsíc)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Brzy dosáhnete maximálního povoleného počtu sérií.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Zvažte prosím migraci na vyšší verzi služby.</translation>
+   <translation id="metrics_contact_admin" qtlid="43948">Administrátor</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Fakturace</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Při načítání služby došlo k chybě.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Při načítání Vašich statistik o využití došlo k chybě.</translation>
@@ -45,6 +48,7 @@
    <translation id="metrics_setting_desc" qtlid="364420">Popis projektu</translation>
    <translation id="metrics_setting_updated" qtlid="403593">Služba byla aktualizována</translation>
    <translation id="metrics_setting_update_failed" qtlid="403606">Službu se nepodařilo aktualizovat</translation>
+   <translation id="metrics_setting_name_updated" qtlid="439905">Název projektu byl upraven</translation>
    <translation id="metrics_upgrade_title" qtlid="403619">Migrace na vyšší verzi služby</translation>
    <translation id="metrics_purchase" qtlid="43558">Objednat</translation>
 </translations>

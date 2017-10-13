@@ -133,6 +133,8 @@ angular.module("managerApp")
 
             },
             cloud_disk_array: {
+            },
+            cloud_desktop: {
             }
         },
         guides: {

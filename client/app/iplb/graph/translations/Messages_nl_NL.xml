@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_graph_title" qtlid="5402">Graphics</translation>
+   <translation id="iplb_graph_connections_title" qtlid="41530">Gelijktijdige connecties</translation>
+   <translation id="iplb_graph_rqpersec_title" qtlid="439533">Verzoeken per minuut</translation>
+   <translation id="iplb_graph_bandwidth_title" qtlid="38565">Bandbreedte</translation>
+   <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1 ur</translation>
+   <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3 uur</translation>
+   <translation id="iplb_graph_scape_6h-ago" qtlid="439702">6 uur</translation>
+   <translation id="iplb_graph_scape_12h-ago" qtlid="439715">12 uur</translation>
+   <translation id="iplb_graph_scape_1d-ago" qtlid="439728">1 dag</translation>
+   <translation id="iplb_graph_scape_2d-ago" qtlid="439741">2 dag</translation>
+   <translation id="iplb_graph_scape_3d-ago" qtlid="439754">3 dag</translation>
+</translations>

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
-    function ($q, $stateParams, $translate, OvhApiCloudProjectCredit, Toast, $uibModal, OvhApiMeBill) {
+    function ($q, $stateParams, $translate, OvhApiCloudProjectCredit, CloudMessage, $uibModal, OvhApiMeBill) {
 
         /*=================================
         =            VARIABLES            =
@@ -46,7 +46,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
                 self.datas.voucherIds = voucherIds;
             }, function (err) {
                 self.datas.voucherIds = null;
-                Toast.error([$translate.instant("cpb_vouchers_get_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpb_vouchers_get_error"), err.data && err.data.message || ""].join(" "));
             })["finally"](function () {
                 self.loading.init = false;
             });
@@ -71,16 +71,16 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
             }, {
                 code: self.model.voucher
             }).$promise.then(function () {
-                Toast.success($translate.instant("cpb_vouchers_add_success"));
+                CloudMessage.success($translate.instant("cpb_vouchers_add_success"));
                 init();
                 self.toggleAddVoucher();
             }, function (err) {
                 if (err.status === 403) {
-                    Toast.error($translate.instant("cpb_vouchers_add_error_no_longer_valid_or_already_used"));
+                    CloudMessage.error($translate.instant("cpb_vouchers_add_error_no_longer_valid_or_already_used"));
                 } else if (err.status === 404) {
-                    Toast.error($translate.instant("cpb_vouchers_add_error_not_found"));
+                    CloudMessage.error($translate.instant("cpb_vouchers_add_error_not_found"));
                 } else {
-                    Toast.error($translate.instant("cpb_vouchers_add_error"));
+                    CloudMessage.error($translate.instant("cpb_vouchers_add_error"));
                 }
             })["finally"](function () {
                 self.loading.add = false;
@@ -89,6 +89,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
         self.openAddCredit = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/billing/vouchers/addCredit/cloud-project-billing-vouchers-add-credit.html",
                 controller: "CloudProjectBillingVouchersAddcreditCtrl",
                 controllerAs: "CloudProjectBillingVouchersAddcreditCtrl"

@@ -1,5 +1,5 @@
 angular.module("managerApp")
-    .controller("CloudProjectRenameController", function ($rootScope, $q, $translate, $uibModal, Toast, OvhApiCloudProject, SidebarMenu) {
+    .controller("CloudProjectRenameController", function ($rootScope, $q, $translate, $uibModal, CloudMessage, OvhApiCloudProject, SidebarMenu) {
         "use strict";
 
         var self = this;
@@ -27,7 +27,7 @@ angular.module("managerApp")
             }).$promise.then(function (data) {
                 self.model.description = data.description;
             }).catch(function (err) {
-                Toast.error([$translate.instant("cloud_project_rename_loading_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cloud_project_rename_loading_error"), err.data && err.data.message || ""].join(" "));
             });
         }
 
@@ -45,7 +45,7 @@ angular.module("managerApp")
                     menuItem.title = self.editing.description;
                 }
             }).catch(function (err) {
-                Toast.error([$translate.instant("cloud_project_rename_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cloud_project_rename_error"), err.data && err.data.message || ""].join(" "));
             }).finally(function () {
                 self.loader.save = false;
                 self.editing.description = null;
@@ -56,15 +56,5 @@ angular.module("managerApp")
             if ($event.keyCode === 27) { // escape key code
                 self.editing.description = null;
             }
-        };
-
-        self.showDeleteProjectModal = function () {
-            $uibModal.open({
-                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
-                controller: "CloudProjectDeleteCtrl",
-                controllerAs: "CloudProjectDeleteCtrl",
-                windowClass: "cloud_project-delete-modal",
-                backdropClass: "cloud_project-delete-modal-backdrop"
-            });
         };
     });

@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserDetailsPermissionListCtrl", function ($q, $stateParams, $translate, Toast, OvhApiDedicatedCeph, CdaUserPermissionService) {
+  .controller("CdaUserDetailsPermissionListCtrl", function ($q, $stateParams, $translate, CloudMessage, OvhApiDedicatedCeph, CdaUserPermissionService) {
       "use strict";
 
       var self = this;
@@ -53,7 +53,7 @@ angular.module("managerApp")
       }
 
       function displayError (error) {
-          Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+          CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
       }
 
       init();

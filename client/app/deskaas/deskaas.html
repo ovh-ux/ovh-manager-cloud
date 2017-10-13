@@ -1,0 +1,34 @@
+<div ui-view class="cui-page">
+    
+    <cui-page-header
+        data-title-text="'vdi_header' | translate">
+    </cui-page-header>
+
+    <div class="cui-page__content">
+        <cui-loader data-ng-show="DeskaasCtrl.flags.initializing"></cui-loader>
+            <oui-table data-ng-hide="DeskaasCtrl.flags.initializing"
+                rows="DeskaasCtrl.services">
+                <column title="'vdi_hdr_status' | translate" property="details.displayName" sortable="asc">
+                    <a data-ui-sref="deskaas.details({ serviceName: $row.details.serviceName })"
+                        data-ng-bind="$row.details.displayName">
+                    </a>
+                </column>
+                <column title="'vdi_hdr_name' | translate" property="user.displayName" sortable></column>
+                <column title="'vdi_hdr_user' | translate" property="details.ip" sortable></column>
+                <column title="'vdi_hdr_ip' | translate" property="details.url" sortable>
+                    <a data-ng-href="{{ $row.details.url }}" data-ng-bind="$row.details.url" target="_blank"></a>
+                </column>
+                <column title="'vdi_hdr_connection' | translate" property="serviceInfo.status" sortable>
+                    <span class="label"
+                            data-ng-class="{
+                                    'label-success': $row.serviceInfo.status == 'ok',
+                                    'label-warning': $row.serviceInfo.status == 'warning',
+                                    'label-danger': $row.serviceInfo.status != 'ok'
+                                    }"
+                            data-ng-bind="$row.serviceInfo.status">
+                    </span>
+                </column>
+                <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="''"></column>
+            </oui-table>
+    </div>
+</div>

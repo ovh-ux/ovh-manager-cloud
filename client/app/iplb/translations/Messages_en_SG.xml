@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_back_home" qtlid="4118">Back</translation>
+
+   <translation id="iplb_guides" qtlid="300370">Guides</translation>
+   <translation id="iplb_guides_title" qtlid="247105">LBIP</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">All the OVH guides </translation>
+
+   <translation id="iplb_tab_home" qtlid="27643">Home</translation>
+   <translation id="iplb_tab_frontends" qtlid="438545">Front-facing services</translation>
+   <translation id="iplb_tab_server_farm" qtlid="437700">Server clusters</translation>
+   <translation id="iplb_tab_ssl_certificate" qtlid="371307">SSL certificates </translation>
+   <translation id="iplb_tab_graph" qtlid="5402">Graphics</translation>
+   <translation id="iplb_tab_task" qtlid="96716">Tasks</translation>
+
+   <translation id="iplb_modal_failover_ip_title" qtlid="227806">Failover IP</translation>
+
+   <translation id="iplb_modal_nat_ip_title" qtlid="429459">Outbound IPv4</translation>
+   <translation id="iplb_modal_nat_ip_description" qtlid="439325">You must authorise connection to your servers for these IP adresses.</translation>
+
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Change the name</translation>
+   <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Default name</translation>
+   <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Custom name</translation>
+   <translation id="iplb_modal_name_change_updating_error" qtlid="439338">An error has occurred changing the name.</translation>
+
+   <translation id="iplb_modal_cipher_change_title" qtlid="439351">Modify the ciphers</translation>
+   <translation id="iplb_modal_cipher_change_loading_error" qtlid="439364">An error has occurred loading the modification modal window for the ciphers.</translation>
+   <translation id="iplb_modal_cipher_change_updating_error" qtlid="439377">An error has occurred changing the cipher.</translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_title" qtlid="429368">Intermediary</translation>
+   <translation id="iplb_modal_cipher_change_cipher_intermediate_description" qtlid="439390">Clients compatible with Android 2.3, IE 7, Java 7, Opera 5, Windows XP IE 8</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_title" qtlid="429394">Modern</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_description" qtlid="439403">Increased security but compatible with less operating systems. Clients compatible with Android 5.0, Chrome 30, Edge, Firefox 27, IE 11 on Windows 7, Java 8, Opera 17, Safari 9</translation>
+
+   <translation id="iplb_modal_offer_change_title" qtlid="359761">Modify the plan</translation>
+
+   <translation id="iplb_information_loading_error" qtlid="439416">An error has occurred loading the Information section.</translation>
+   <translation id="iplb_configuration_loading_error" qtlid="439429">An error has occurred loading the Configuration section.</translation>
+   <translation id="iplb_subscription_loading_error" qtlid="439442">An error has occurred loading the Subscription section.</translation>
+   <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">An error has occurred loading the failover IPs.</translation>
+   <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">An error has occurred loading the outgoing IPv4 section.</translation>
+
+   <translation id="iplb_task_list_loading_error" qtlid="439481">An error has occurred loading the jobs.</translation>
+   <translation id="iplb_farm_list_loading_error" qtlid="439494">An error has occurred loading the server farms.</translation>
+   <translation id="iplb_farm_server_list_loading_error" qtlid="439507">An error has occurred loading the farm servers.</translation>
+
+   <translation id="iplb_ipfo_select_placeholder" qtlid="8674">None</translation>
+
+   <translation id="iplb_zone_select_placeholder" qtlid="17923">Select</translation>
+   <translation id="iplb_zone_all" qtlid="439520">ALL</translation>
+
+   <translation id="iplb_graph_name_conn" qtlid="41530">Simultaneous connections </translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Requests per minute</translation>
+   <translation id="iplb_graph_no_data" qtlid="439546">No data for now</translation>
+
+   <translation id="iplb_status_active" qtlid="439559">{{activeCount}} active</translation>
+   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} active</translation>
+   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} functional</translation>
+   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} functional</translation>
+
+   <translation id="iplb_status_apply" qtlid="284867">Apply configuration </translation>
+   <translation id="iplb_status_details" qtlid="439611">See details</translation>
+
+   <translation id="iplb_utilisation_update_alert" qtlid="439624">Modify alert threshold</translation>
+   <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Data included</translation>
+   <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Alert threshold</translation>
+   <translation id="iplb_utilisation_update_alert_error" qtlid="439650">An error has occurred updating the alert threshold.</translation>
+
+   <translation id="iplb_usage_loading_error" qtlid="439663">An error has occurred loading the Usage section.</translation>
+</translations>

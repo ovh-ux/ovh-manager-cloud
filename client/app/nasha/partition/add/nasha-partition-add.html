@@ -1,58 +1,87 @@
-<div class="nasha-partition-add">
-    <div class="modal-header">
-        <h3 class="modal-title" data-translate="nasha_partitions_action_add"></h3>
-    </div>
-
+<div class="oui-modal oui-modal_shadow nasha-partition-add">
     <form class="form" role="form" data-ng-submit="NashaPartitionAddCtrl.addPartition()" name="nashaPartitionAddForm">
-        <div class="modal-body">
-            <div class="form-group">
-                <label data-translate="nasha_partitions_name" for="inputPartitionName"></label>
-                <input type="text"
-                       id="inputPartitionName"
-                       name="inputPartitionName"
-                       class="input-medium form-control bottom-space-m12"
-                       placeholder="{{'nasha_partitions_name' | translate}}"
-                       data-ng-pattern="NashaPartitionAddCtrl.namePattern"
-                       data-ng-model="NashaPartitionAddCtrl.newPartition.partitionName"/>
-                <span class="text-danger" data-ng-show="!nashaPartitionAddForm.inputPartitionName.$valid" data-translate="nasha_partitions_name_fail"></span>
-            </div>
-
-            <div class="form-group">
-                <label data-translate="nasha_partitions_size_in_Gb" for="inputPartitionSize"></label>
-                <span data-translate="nasha_partitions_minimum_size"></span>
-                <input type="number"
-                           class="input-medium form-control bottom-space-m12 partition-size"
-                           id="inputPartitionSize"
-                           min="10"
-                           max="{{NashaPartitionAddCtrl.nasha.zpoolSize}}"
-                           placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
-                           data-ng-change="NashaPartitionAddCtrl.checkSize()"
-                           data-ng-model="NashaPartitionAddCtrl.newPartition.size"/>
-
-            <div class="form-group">
-                <strong data-translate="nasha_partitions_protocol"></strong>
-                <div class="radio">
-                    <label class="protocols-label top-space-m4" data-ng-repeat="protocol in NashaPartitionAddCtrl.protocols">
-                        <input type="radio"
-                               name="protocols"
-                               class="protocols-radio right-space-m4"
-                               data-ng-model="NashaPartitionAddCtrl.newPartition.protocol"
-                               data-ng-value="protocol" />{{'nasha_partitions_action_add_desc_' + protocol | translate}}
-                    </label>
-                </div>
-          </div>
+        <div class="oui-modal__header">
+            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit" data-ng-click="NashaPartitionAddCtrl.dismiss()"></button>
         </div>
 
-        <div class="modal-footer">
-            <button type="submit"
-                    class="pull-right btn btn btn-primary right-space-p16 left-space-p16"
-                    data-ng-disabled="!NashaPartitionAddCtrl.isPartitionValid() || NashaPartitionAddCtrl.loading">
-                <span data-translate="common_add"></span>
+        <div class="oui-modal__body oui-modal__body_no-icon">
+            <div class="oui-modal__body-text">
+                <h2 class="oui-modal__title" data-translate="nasha_partitions_action_add"></h2>
+
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_name"
+                        for="inputPartitionName"
+                        class="oui-field__label oui-label"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <input type="text"
+                               id="inputPartitionName"
+                               name="inputPartitionName"
+                               class="oui-input"
+                               placeholder="{{'nasha_partitions_name' | translate}}"
+                               data-ng-pattern="NashaPartitionAddCtrl.namePattern"
+                               data-ng-model="NashaPartitionAddCtrl.newPartition.partitionName"/>
+                        </div>
+                        <div data-ng-show="!nashaPartitionAddForm.inputPartitionName.$valid"
+                            class="oui-field-helper text-danger"
+                            data-translate="nasha_partitions_name_fail"></div>
+                    </div>
+                </div>
+
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_size_in_Gb"
+                        for="inputPartitionSize"
+                        class="oui-field__label oui-label"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_1">
+                            <input type="number"
+                               class="oui-input"
+                               id="inputPartitionSize"
+                               min="10"
+                               max="{{NashaPartitionAddCtrl.nasha.zpoolSize}}"
+                               placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
+                               data-ng-change="NashaPartitionAddCtrl.checkSize()"
+                               data-ng-model="NashaPartitionAddCtrl.newPartition.size"/>
+                        </div>
+                        <div class="oui-field-helper"
+                            data-translate="nasha_partitions_minimum_size"></div>
+                    </div>
+                </div>
+
+                <div class="oui-field">
+                    <label data-translate="nasha_partitions_protocol"
+                        class="oui-field__label oui-label"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <div class="oui-radio" data-ng-repeat="protocol in NashaPartitionAddCtrl.protocols">
+                                <input type="radio"
+                                    class="oui-radio__input"
+                                    name="protocols"
+                                    id="protocols-{{protocol}}"
+                                    data-ng-model="NashaPartitionAddCtrl.newPartition.protocol"
+                                    data-ng-value="protocol" />
+                                <label class="oui-radio__label-container" for="protocols-{{protocol}}">
+                                    <span class="oui-radio__label">{{'nasha_partitions_action_add_desc_' + protocol | translate}}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-modal__footer">
+            <button type="reset"
+                class="oui-button oui-button_secondary"
+                data-ng-click="NashaPartitionAddCtrl.dismiss()"
+                data-translate="common_cancel">
             </button>
-            <button type="reset" class="btn btn-default pull-left"
-                    data-ng-click="NashaPartitionAddCtrl.dismiss()">
-                <i class="fa fa-times"></i>
-                <span data-translate="common_cancel"></span>
+            <button type="submit"
+                class="oui-button oui-button_primary"
+                data-ng-disabled="!NashaPartitionAddCtrl.isPartitionValid() || NashaPartitionAddCtrl.loading"
+                data-translate="common_add">
             </button>
         </div>
     </form>

@@ -1,39 +1,38 @@
-
-<form id="vmDeletionForm" name="vmDeletionForm" novalidate>
-
-    <div class="modal-header">
-        <h3 class="modal-title" >
-            <i class="glyphicon glyphicon-trash right-space-m8"></i>
-            {{"cpci_private_network_delete_title" | translate}}
-        </h3>
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
+                data-ng-click="CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl.cancel()"></button>
     </div>
+    <div class="oui-modal oui-modal__body">
+        <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
+        <form class="oui-modal__body-text" id="vmDeletionForm" name="vmDeletionForm" novalidate>
+            <h3 class="oui-modal__title" data-ng-bind="'cpci_private_network_delete_title' | translate"></h3>
 
-    <div class="modal-body" data-ng-if="!CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
-        <p class="center red" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
-        <div data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo.length">
-            <p class="center red" data-translate="cpcivm_failover_info"></p>
-            <ul>
-                <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
-            </ul>
-        </div>
-        <p class="center" data-translate="cpci_private_network_delete_confirm"></p>
+            <div class="oui-modal__text" data-ng-if="!CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
+                <p class="center red" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
+                <div data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo.length">
+                    <p class="center red" data-translate="cpcivm_failover_info"></p>
+                    <ul>
+                        <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
+                    </ul>
+                </div>
+                <p class="center" data-translate="cpci_private_network_delete_confirm"></p>
+            </div>
+
+            <div class="oui-modal__text" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+
+        </form>
     </div>
-
-    <div class="modal-body text-center" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
-        <spinner></spinner>
-    </div>
-
-    <div class="modal-footer">
-        <button type="submit" class="btn btn-primary pull-right"
-            data-ng-click="CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl.confirm()">
-            <i class="glyphicon glyphicon-ok"></i>
-            <span data-translate="common_confirm"></span>
-        </button>
-        <button type="reset" class="btn btn-default pull-left"
+    <div class="oui-modal__footer">
+        <button type="reset" class="oui-button oui-button_secondary"
             data-ng-click="CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl.cancel()">
-            <i class="glyphicon glyphicon-remove"></i>
             <span data-translate="common_cancel"></span>
         </button>
+        <button type="submit" class="oui-button oui-button_primary"
+            data-ng-click="CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl.confirm()">
+            <span data-translate="common_confirm"></span>
+        </button>
     </div>
-
-</form>
+</div>

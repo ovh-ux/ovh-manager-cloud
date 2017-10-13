@@ -1,38 +1,38 @@
 <span  data-ng-if="$ctrl.storages.length === 0" data-translate="cpbc_no_consumption_data" class="cloud-billing-resource-no-data"></span>
 
-<div data-ng-if="$ctrl.storages.length > 0" class="table-responsive-vertical objectStorageList">
-    <table class="table table-pretty table-hover table-striped no-space table-relative">
-        <thead>
-            <th>
+<div data-ng-if="$ctrl.storages.length > 0" class="objectStorageList">
+    <table class="oui-table oui-table_responsive">
+        <thead class="oui-table__headers">
+            <th class="oui-table__header">
                 <span data-translate="cpbc_object_storage_col_location"></span>
             </th>
-            <th class="text-right">
+            <th class="oui-table__header">
                 <span data-translate="cpbc_object_storage_col_consumption"></span>
             </th>
-            <th class="text-right">
+            <th class="oui-table__header">
                 <span data-translate="cpbc_object_storage_col_output_traffic"></span>
             </th>
         </thead>
-        <tbody data-ng-if="$ctrl.loading">
+        <tbody data-ng-if="$ctrl.loading" class="oui-table__body">
             <tr>
                 <td colspan="3" class="text-center">
                     <spinner></spinner>
                 </td>
             </tr>
         </tbody>
-        <tbody data-ng-if="!$ctrl.loading">
-            <tr data-ng-repeat="storage in $ctrl.storages | orderBy: 'region' track by storage.region">
-                <td data-title="{{ :: 'cpbc_object_storage_col_location' | translate }}">
+        <tbody data-ng-if="!$ctrl.loading" class="oui-table__body">
+            <tr data-ng-repeat="storage in $ctrl.storages | orderBy: 'region' track by storage.region" class="oui-table__row">
+                <td data-title="{{ :: 'cpbc_object_storage_col_location' | translate }}" class="oui-table__cell">
                     <span>{{ 'cloud_common_region_' + storage.region | translate }}</span>
                 </td>
-                <td class="text-right" data-title="{{ :: 'cpbc_object_storage_col_consumption' | translate }}">
+                <td class="oui-table__cell" data-title="{{ :: 'cpbc_object_storage_col_consumption' | translate }}">
                     <span>{{(storage.stored ? storage.stored.totalPrice : 0).toFixed(2) + ' ' + $ctrl.currencySymbol }}</span>
                     <i class="fa fa-question-circle left-space-m4"
                        data-uib-tooltip="{{ :: $ctrl.getStorageVolumeInfoTooltip(storage) }}"
                        tooltip-placement="left">
                     </i>
                 </td>
-                <td class="text-right" data-title="{{ :: 'cpbc_object_storage_col_output_traffic' | translate }}">
+                <td class="oui-table__cell text-right" data-title="{{ :: 'cpbc_object_storage_col_output_traffic' | translate }}">
                     <span>{{ storage.outgoingBandwidth.totalPrice.toFixed(2) + ' ' + $ctrl.currencySymbol }}</span>
                     <i class="fa fa-question-circle left-space-m4"
                        data-uib-tooltip="{{:: $ctrl.getStorageBandwidthInfoTooltip(storage) }}"

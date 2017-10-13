@@ -2,7 +2,7 @@
 
 angular.module("managerApp").controller("CloudProjectDetailsCtrl",
     function ($stateParams, $q, $state, $rootScope, $scope, $timeout, ControllerModalHelper,
-        OvhApiCloudProject, Poller, OvhApiMeOrder, Toast, $translate, $filter) {
+        OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate, $filter) {
 
         var _self = this;
 
@@ -111,7 +111,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
             return OvhApiCloudProject.Lexi().cancelCreation({
                 serviceName: _self.projectId
             }, null).$promise.then(function (result) {
-                Toast.success($translate.instant("cpd_project_cancel_success"));
+                CloudMessage.success($translate.instant("cpd_project_cancel_success"));
                 $rootScope.$broadcast("sidebar_refresh_cloud");
                 $state.go("home");
                 init();
@@ -119,17 +119,17 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
             }, function (err) {
                 switch (err) {
                     case _self.projectDeleteErrorsStatus.expired:
-                        Toast.error($translate.instant("cpd_project_cancel_error_expired_status"));
+                        CloudMessage.error($translate.instant("cpd_project_cancel_error_expired_status"));
                         $rootScope.$broadcast("sidebar_refresh_cloud");
                         init();
                         break;
                     case _self.projectDeleteErrorsStatus.ok:
-                        Toast.error($translate.instant("cpd_project_cancel_error_ok_status"));
+                        CloudMessage.error($translate.instant("cpd_project_cancel_error_ok_status"));
                         $rootScope.$broadcast("sidebar_refresh_cloud");
                         init();
                         break;
                     default:
-                        Toast.error($translate.instant("cpd_project_cancel_error"));
+                        CloudMessage.error($translate.instant("cpd_project_cancel_error"));
                 }
                 $q.reject(err);
             })["finally"](function () {

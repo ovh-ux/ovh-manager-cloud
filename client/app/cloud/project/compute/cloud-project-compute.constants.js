@@ -2,8 +2,8 @@ angular.module("managerApp")
     .constant("PCI_ANNOUNCEMENTS", [{
         type: "info",
         messageId: "cloud_message_pci_de1",
-        messageStart: "2017-09-06",
-        messageEnd: "2017-10-14",
+        messageStart: "2017-10-12",
+        messageEnd: "2017-10-27",
         hasLinkText: true,
         linkURL: {
             FR: "https://www.ovh.com/fr/public-cloud/instances/datacenters.xml",
@@ -13,13 +13,14 @@ angular.module("managerApp")
             DE: "https://www.ovh.de/public-cloud/instances/datacenters.xml",
             ES: "https://www.ovh.es/public-cloud/instancias/datacenters.xml",
             WS: "https://www.ovh.com/us/es/public-cloud/instancias/datacenters.xml",
-            FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml"
+            FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml",
+            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml"
         }
     }, {
         type: "info",
         messageId: "cloud_message_pci_g3",
-        messageStart: "2017-09-06",
-        messageEnd: "2017-10-14",
+        messageStart: "2017-10-12",
+        messageEnd: "2017-10-27",
         linkURL: {
             FR: "https://www.ovh.com/fr/public-cloud/instances/gpu/",
             TN: "https://www.ovh.com/tn/public-cloud/instances/gpu/",
@@ -30,6 +31,7 @@ angular.module("managerApp")
             FI: "https://www.ovh-hosting.fi/public-cloud/instances/gpu/",
             CZ: "http://www.ovh.cz/public-cloud/instances/gpu/",
             GB: "http://www.ovh.co.uk/public-cloud/instances/gpu/",
+            EN: "http://www.ovh.co.uk/public-cloud/instances/gpu/",
             IT: "http://www.ovh.it/public-cloud/instances/gpu/",
             LT: "http://www.ovh.lt/public-cloud/instances/gpu/",
             NL: "http://www.ovh.nl/public-cloud/instances/gpu/",

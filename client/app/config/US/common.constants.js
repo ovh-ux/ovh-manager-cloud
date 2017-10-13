@@ -78,6 +78,8 @@ angular.module("managerApp")
                 US: "https://www.ovh.us/cloud/cloud-disk-array/"
             },
             veeam: {
+            },
+            cloud_desktop: {
             }
         },
         guides: {

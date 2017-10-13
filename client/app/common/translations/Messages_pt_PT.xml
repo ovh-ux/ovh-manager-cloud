@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="preload_welcome" qtlid="433576">Bem-vindo à sua</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">Área de Cliente OVH</translation>
+
    <translation id="common_confirm" qtlid="31498">Confirmar</translation>
    <translation id="common_buy" qtlid="269591">Adquirir</translation>
    <translation id="common_required_field" qtlid="250017">Informação de preenchimento obrigatório</translation>
@@ -62,6 +65,7 @@
    <translation id="changelog_loading_error" qtlid="298014">O histórico das atualizações está momentaneamente indisponível.</translation>
 
    <translation id="common_modify" qtlid="37875">Modificar</translation>
+   <translation id="common_select" qtlid="17923">Seleccionar</translation>
    <translation id="common_add" qtlid="37923">Adicionar</translation>
    <translation id="common_remove" qtlid="323093">Retirar</translation>
    <translation id="edit" qtlid="37875">Modificar</translation>
@@ -70,6 +74,7 @@
    <translation id="error" qtlid="26407">Erro</translation>
    <translation id="soon" qtlid="250043">Disponível em breve</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Mais informações</a>.</translation>
+   <translation id="common_progress" qtlid="354496">Progresso</translation>
 
    <translation id="other_menu" qtlid="265265">Outros produtos</translation>
    <translation id="cloud_menu_title" qtlid="104890">Public Cloud</translation>
@@ -463,6 +468,7 @@
 
    <translation id="message_container_multiple_error" qtlid="404074">Ocorreram os seguintes erros</translation>
    <translation id="message_container_multiple_warning" qtlid="435415">Informação importante</translation>
+   <translation id="message_container_multiple_info" qtlid="26551">Informações</translation>
 
    <translation id="common_global_error" qtlid="433345">ocorreu um erro durante a operação : {{message}}</translation>
    <translation id="common_global_success" qtlid="433358">A oeração foi concretizada com sucesso</translation>
@@ -472,6 +478,13 @@
    <translation id="common_login" qtlid="2174">Ligar-se</translation>
    <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Encerrar</translation>
+   <translation id="common_modal_cancel" qtlid="37863">Anular</translation>
+
+   <translation id="common_tile_shortcut" qtlid="403658">Atalho</translation>
+
+   <translation id="common_tile_infos" qtlid="26551">Informações</translation>
+
+   <translation id="common_tile_configuration" qtlid="4406">Configuração</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Subscrição</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
@@ -479,13 +492,21 @@
    <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data de criação</translation>
 
+   <translation id="common_tile_information_status" qtlid="26443">Estado</translation>
+
    <translation id="common_preview_see" qtlid="433371">Ver pré-visualização</translation>
 
-   <translation id="common_table_col_action" qtlid="56105">Acção</translation>
+   <translation id="common_table_col_action" qtlid="56105">Ação</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
    <translation id="common_pagination_page" qtlid="433397">página</translation>
    <translation id="common_pagination_of" qtlid="121615">em</translation>
    <translation id="common_pagination_results" qtlid="433410">resultados</translation>
    <translation id="common_pagination_next" qtlid="433423">Página seguinte</translation>
    <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>
+
+   <translation id="common_name_change_modal_title" qtlid="439892">Alterar o nome</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinido</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizado</translation>
+
+   <translation id="common_task_list_empty" qtlid="134865">Nenhum trabalho está atualmente em curso</translation>
 </translations>

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
-    function ($rootScope, $scope, $q, $translate, $timeout, Toast, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
+    function ($rootScope, $scope, $q, $translate, $timeout, CloudMessage, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
         CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloud, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
         OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
         OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
@@ -116,6 +116,15 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 );
             }
 
+        };
+
+        this.showDeleteProjectModal = function () {
+            $uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
+                controller: "CloudProjectDeleteCtrl",
+                controllerAs: "CloudProjectDeleteCtrl"
+            });
         };
 
         function shouldDisplayInstancesRetracted() {
@@ -308,7 +317,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm).then(function () {
                 vm.confirm = null;
             }, function (err) {
-                Toast.error( [$translate.instant('cpci_vm_delete_submit_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpci_vm_delete_submit_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 vm.confirmLoading = false;
             });
@@ -319,7 +328,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm).then(function () {
                 vm.confirm = null;
             }, function (err) {
-                Toast.error( [$translate.instant('cpci_vm_reinstall_submit_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpci_vm_reinstall_submit_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 vm.confirmLoading = false;
             });
@@ -330,7 +339,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type).then(function () {
                 vm.confirm = null;
             }, function (err) {
-                Toast.error( [$translate.instant('cpci_vm_reboot_submit_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpci_vm_reboot_submit_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 vm.confirmLoading = false;
             });
@@ -340,13 +349,14 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             var oldStatus = vm.status;
             vm.status = "RESUMING";
             CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm).catch(function (err) {
-                Toast.error([$translate.instant("cpci_vm_resume_submit_error"), err.data && err.data.message || ""].join(" "));
+                CloudMessage.error([$translate.instant("cpci_vm_resume_submit_error"), err.data && err.data.message || ""].join(" "));
                 vm.status = oldStatus;
             });
         };
 
         self.openSnapshotWizard = function (vm) {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html',
                 controller: 'CloudProjectComputeSnapshotAddCtrl',
                 controllerAs: 'CloudProjectComputeSnapshotAddCtrl',
@@ -373,6 +383,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openMonthlyConfirmation = function (vm) {
             var modalInstance = $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm/cloud-project-compute-infrastructure-virtual-machine-monthlyConfirm.html",
                 controller: "CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm",
                 controllerAs: "CPCIVirtualmachineMonthlyConfirm",
@@ -392,7 +403,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable).then(function () {
                 vm.confirm = null;
             }, function (err) {
-                Toast.error( [$translate.instant('cpci_vm_rescue_end_error'), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error( [$translate.instant('cpci_vm_rescue_end_error'), err.data && err.data.message || ''].join(' '));
             })['finally'](function () {
                 vm.confirmLoading = false;
             });
@@ -444,6 +455,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         self.openVnc = function (vm) {
             $uibModal.open({
+                windowTopClass: 'cui-modal',
                 templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html',
                 controller   : 'CloudProjectComputeInfrastructureVirtualmachineVncCtrl',
                 controllerAs : 'VmVncCtrl',
@@ -459,6 +471,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
         self.rescueMode = function (vm, enable) {
             if (enable) {
                 $uibModal.open({
+                    windowTopClass: 'cui-modal',
                     templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html',
                     controller   : 'CloudProjectComputeInfrastructureVirtualmachineRescueCtrl',
                     controllerAs : 'VmRescueCtrl',
@@ -529,6 +542,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.buyIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverBuyCtrl',
                 controllerAs: 'CPCIIpFailoverBuyCtrl'
@@ -554,6 +568,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.importIpFailover = function () {
             $uibModal.open({
+                windowTopClass: "cui-modal",
                 templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html',
                 controller: 'CloudProjectComputeInfrastructureIpFailoverImportCtrl',
                 controllerAs: 'CPCIIpFailoverImportCtrl',
@@ -620,11 +635,11 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                     ).then(function () {
                         // On success: the IP should be in the /cloud/.../ip/failover list.
                         CloudProjectComputeInfrastructureOrchestrator.pollIps('failover');
-                        Toast.success($translate.instant('cpci_ipfo_import_success', {ip: ip}));
+                        CloudMessage.success($translate.instant('cpci_ipfo_import_success', {ip: ip}));
                     }, function (err) {
                         if (err && err.status) {
                             // On error: remove the IP from list
-                            Toast.error($translate.instant('cpci_ipfo_import_error', {ip: ip}));
+                            CloudMessage.error($translate.instant('cpci_ipfo_import_error', {ip: ip}));
                         }
                     });
                 }
@@ -936,9 +951,9 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                                 successMessage += ' ' + $translate.instant('cpci_ip_attach_failover_help',
                                     {link : URLS.guides.ip_failover[self.user.ovhSubsidiary][distribution]});
                             }
-                            Toast.success(successMessage);
+                            CloudMessage.success(successMessage);
                         }, function (err) {
-                            Toast.error( [$translate.instant('cpci_ip_attach_error', {ip : connectedIp.ip, instance : connectedVm.name}), err.data && err.data.message || ''].join(' '));
+                            CloudMessage.error( [$translate.instant('cpci_ip_attach_error', {ip : connectedIp.ip, instance : connectedVm.name}), err.data && err.data.message || ''].join(' '));
                             return $q.reject(err);
                         })['finally'](function(){
                             self.loaders.linkActionConfirm = false;
@@ -995,7 +1010,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
                             $rootScope.$broadcast('highlighed-element.show', "compute,vm-ACTIVE-" + self.model.currentLinkEdit.connectedIp.continentCode);
                         } else {
-                            Toast.error($translate.instant("cpci_ipfo_attach_error"));
+                            CloudMessage.error($translate.instant("cpci_ipfo_attach_error"));
                         }
                     }
                 },
@@ -1153,7 +1168,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             CloudProjectComputeVolumesOrchestrator.addNewVolumeFromSnapshotToList("unlinked", snapshot).then(function (volumeDraft) {
                 CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
             }, function (err) {
-                Toast.error([$translate.instant("cpci_volume_add_from_snapshot_error"), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error([$translate.instant("cpci_volume_add_from_snapshot_error"), err.data && err.data.message || ''].join(' '));
             });
         };
 
@@ -1169,14 +1184,14 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                         serviceName: serviceName
                     }).$promise.then(function (snapshots) {
                         if (_.find(snapshots, { volumeId: volume.id })) {
-                            Toast.error($translate.instant("cpci_volume_snapshotted_delete_info", { url: $state.href("iaas.pci-project.compute.snapshot")}));
+                            CloudMessage.error($translate.instant("cpci_volume_snapshotted_delete_info", { url: $state.href("iaas.pci-project.compute.snapshot")}));
                         } else {
                             self.volumeEdit.action = "remove";
                             self.volumeEdit.volume = volume;
                             $rootScope.$broadcast('highlighed-element.show', 'compute,' + volume.id);
                         }
                     }, function (err) {
-                        Toast.error([$translate.instant("cpci_volume_snapshot_error"), err.data && err.data.message || ""].join(" "));
+                        CloudMessage.error([$translate.instant("cpci_volume_snapshot_error"), err.data && err.data.message || ""].join(" "));
                     });
                 },
                 cancel : function () {
@@ -1189,7 +1204,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                         self.volumeEdit.reinit();
                         $rootScope.$broadcast('highlighed-element.hide');
                     }, function (err) {
-                        Toast.error( [$translate.instant('cpci_volume_delete_error'), err.data && err.data.message || ''].join(' '));
+                        CloudMessage.error( [$translate.instant('cpci_volume_delete_error'), err.data && err.data.message || ''].join(' '));
                     })['finally'](function () {
                         self.loaders.volumeActionConfirm = false;
                     });
@@ -1223,10 +1238,10 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                     self.loaders.volumeActionConfirm = true;
                     CloudProjectComputeVolumesOrchestrator.moveVolume(self.volumeEdit.volume.id, self.volumeEdit.targetVm ? self.volumeEdit.targetVm.id : 'unlinked').then(function () {
                         if (self.volumeEdit.targetVm && self.volumeEdit.targetVm.image && self.volumeEdit.targetVm.image.type === 'windows') {
-                            Toast.info($translate.instant('cpci_volume_confirm_attach_windows_info'));
+                            CloudMessage.info($translate.instant('cpci_volume_confirm_attach_windows_info'));
                         }
                     })['catch'](function (err) {
-                        Toast.error( [$translate.instant('cpci_volume_confirm_detach_error'), err.data && err.data.message || ''].join(' '));
+                        CloudMessage.error( [$translate.instant('cpci_volume_confirm_detach_error'), err.data && err.data.message || ''].join(' '));
                     })['finally'](function () {
                         self.loaders.volumeActionConfirm = false;
                         self.volumeEdit.reinit();
@@ -1254,7 +1269,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                             $rootScope.$broadcast('highlighed-element.show', 'compute,vm-ACTIVE-' + volume.region);
                         }, 100);
                     } else {
-                        Toast.error($translate.instant("cpci_volume_attach_error"));
+                        CloudMessage.error($translate.instant("cpci_volume_attach_error"));
                     }
                 },
                 cancel : function () {
@@ -1380,7 +1395,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 self.collections.privateNetworks = networks;
             }, function (error) {
                 self.collections.privateNetwork = [];
-                Toast.error($translate.instant("cpci_private_network_query_error", {
+                CloudMessage.error($translate.instant("cpci_private_network_query_error", {
                     message: error.data.message || ""
                 }));
             }).finally(function () {

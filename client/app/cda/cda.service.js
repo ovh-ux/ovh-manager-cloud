@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .service("CdaService", function ($q, $translate, OvhApiDedicatedCeph, SidebarMenu, Toast) {
+  .service("CdaService", function ($q, $translate, OvhApiDedicatedCeph, SidebarMenu, CloudMessage) {
       "use strict";
       var self = this;
 
@@ -19,7 +19,7 @@ angular.module("managerApp")
                   self.currentService = cda;
                   return cda;
               }).catch(function (error) {
-                  Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+                  CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
               });
           } else {
               return $q.when(self.currentService);
@@ -39,7 +39,7 @@ angular.module("managerApp")
                   self.changeMenuTitle(serviceName, self.currentService.label ? self.currentService.label : self.currentService.serviceName);
               });
           }).catch(function (error) {
-              Toast.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
           });
       };
 

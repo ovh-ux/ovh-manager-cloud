@@ -7,9 +7,9 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
     "$translate",
     "OvhApiCloudProjectRegion",
     "CloudStorageContainers",
-    "Toast",
+    "CloudMessage",
     function ($q, $scope, $state, $stateParams, $timeout, $translate,
-        OvhApiCloudProjectRegion, CloudStorageContainers, Toast) {
+        OvhApiCloudProjectRegion, CloudStorageContainers, CloudMessage) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -58,12 +58,12 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
                 )
             .then(function (resp) {
                 if (!resp || !resp.id) {
-                    Toast.error($translate.instant("add_storage_storage_added_error"));
+                    CloudMessage.error($translate.instant("add_storage_storage_added_error"));
                     return $q.reject(resp);
                 }
 
                 return $timeout(function () {
-                    Toast.success($translate.instant("add_storage_storage_added"));
+                    CloudMessage.success($translate.instant("add_storage_storage_added"));
                     $state.go("iaas.pci-project.storage.detail-container", { projectId: $scope.projectId, storageId: resp.id });
                 }, 3000)
                 .then(function () {
@@ -86,7 +86,6 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
                 }).$promise
                 .then(function (regions) {
                     $scope.regions = regions;
-                    $scope.regions = _.filter($scope.regions, region => region !== "DE1");
                 })
                 .finally(function () {
                     $scope.loaders.regions = false;
