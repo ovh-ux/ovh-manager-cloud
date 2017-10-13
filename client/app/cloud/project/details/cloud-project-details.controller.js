@@ -1,7 +1,8 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectDetailsCtrl",
-    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate) {
+    function ($stateParams, $q, $state, $rootScope, $scope, $timeout, ControllerModalHelper,
+        OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate, $filter) {
 
         var _self = this;
 
@@ -50,6 +51,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
          */
         function handleProjectDetails (project) {
             _self.project = project;
+
             switch (project.status) {
             case "ok":
                 // If it"s at initialization: go direct to the project,
@@ -61,6 +63,8 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
                 } else {
                     _self.loaders.init = false;
                     return $timeout(function () {
+                        showExpirationWarningMessage();
+                        $rootScope.$broadcast("CloudMainController:refresh");
                         return $state.go("iaas.pci-project.compute", {
                             projectId: _self.projectId,
                             createNewVm: $stateParams.createNewVm
@@ -82,6 +86,23 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
             case "deleting":
                 pollProject();
             }
+        }
+
+        function showExpirationWarningMessage () {
+            if (!_self.project.expiration) {
+                return;
+            }
+
+            $rootScope.$broadcast("CloudMainController:refresh");
+
+            const duration = moment.duration(moment(_self.project.expiration).diff(moment().utc()));
+
+            ControllerModalHelper.showWarningModal({
+                title: $translate.instant("voucher_warning_title"),
+                message: $translate.instant("voucher_warning_description", {
+                    expiration: $filter("date")(_self.project.expiration, "medium")
+                })
+            });
         }
 
         this.cancelProjectCreation = function () {

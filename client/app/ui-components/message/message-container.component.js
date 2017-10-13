@@ -27,10 +27,10 @@
     class CuiMessageContainerCtrl {
         constructor ($scope) {
             this.$scope = $scope;
-            this.messages = this.messages || [];
         }
 
         $onInit () {
+            this.messages = this.messages || [];
             this.dismissableTypes = this.dismissableTypes || ["info", "success"];
             this.groupedTypes = this.groupedTypes || ["error"];
 
