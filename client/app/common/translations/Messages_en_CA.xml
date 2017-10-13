@@ -504,6 +504,12 @@
    <translation id="common_pagination_next" qtlid="433423">Next page</translation>
    <translation id="common_pagination_previous" qtlid="433436">Previous page</translation>
 
+   <translation id="common_limited_voucher_start" qtlid="440982">There is</translation>
+   <translation id="common_limited_voucher_end" qtlid="440995">left on your project</translation>
+   <translation id="common_day_unit" qtlid="441008">days</translation>
+   <translation id="common_hour_unit" qtlid="441021">hrs</translation>
+   <translation id="common_minute_unit" qtlid="190420">min</translation>
+
    <translation id="common_name_change_modal_title" qtlid="439892">Change name</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Default name</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Customized name</translation>

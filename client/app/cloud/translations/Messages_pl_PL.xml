@@ -52,4 +52,7 @@
    <translation id="browser_alert_deprecated" qtlid="405370">Wersja Twojej przeglądarki jest nieaktualna i może zawierać luki związane z bezpieczeństwem lub kompatybilnością.</translation>
    <translation id="browser_alert_update" qtlid="405383">Zalecamy <a href="http://outdatedbrowser.com/" class="alert-link" target="_blank">zaktualizowanie przeglądarki <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="browser_alert_close" qtlid="405396">Zamknij ten alert</translation>
+
+   <translation id="voucher_warning_title" qtlid="373441">Ostrzeżenie</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un voucher qui permet la création d'un projet cloud temporaire. Votre voucher est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
 </translations>

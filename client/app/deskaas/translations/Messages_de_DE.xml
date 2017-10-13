@@ -50,6 +50,6 @@
    <translation id="vdi_core" qtlid="251213">vCPU</translation>
    <translation id="vdi_ram" qtlid="31354">RAM</translation>
    <translation id="vdi_disk" qtlid="25567">Speicherplatz</translation>
-   <translation id="vdi_gpu">GPU</translation>
-   <translation id="vdi_price">Prix</translation>
+   <translation id="vdi_gpu" qtlid="401445">GPU</translation>
+   <translation id="vdi_price" qtlid="83913">Preis</translation>
 </translations>
