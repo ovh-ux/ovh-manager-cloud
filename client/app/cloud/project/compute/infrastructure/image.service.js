@@ -35,7 +35,9 @@
         "openvpn",
         "vestacp",
         "virtualmin",
-        "datascience"
+        "datascience",
+        "deeplearning",
+        "rstudio"
     ];
 
     class CloudImageService {

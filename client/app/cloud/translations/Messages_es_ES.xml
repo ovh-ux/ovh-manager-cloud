@@ -54,5 +54,5 @@
    <translation id="browser_alert_close" qtlid="405396">Cerrar la alerta</translation>
 
    <translation id="voucher_warning_title" qtlid="373441">Aviso</translation>
-   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un voucher qui permet la création d'un projet cloud temporaire. Votre voucher est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Ha utilizado un código promocional con el que puede crear un proyecto cloud temporal. Este código es válido hasta el {{expiration}} y los recursos no se facturarán hasta esa fecha. Atención: una vez alcanzada la fecha de expiración, el proyecto y los datos asociados se eliminarán.</translation>
 </translations>
