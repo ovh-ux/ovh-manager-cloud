@@ -131,10 +131,10 @@ angular.module("managerApp")
                     result = result && self.search.minDisk <= volume.size;
                 }
                 if (self.search.creationStart) {
-                    result = result && moment(self.search.creationStart) <= moment(volume.creationDate);
+                    result = result && moment(self.search.creationStart) > moment(volume.creationDate);
                 }
                 if (self.search.creationEnd) {
-                    result = result && moment(self.search.creationEnd) > moment(volume.creationDate);
+                    result = result && moment(self.search.creationEnd) <= moment(volume.creationDate);
                 }
 
                 return result;
