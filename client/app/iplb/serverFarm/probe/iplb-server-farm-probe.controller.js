@@ -67,6 +67,10 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
     }
 
     close () {
+        if (this.form.$invalid) {
+            return;
+        }
+
         this.cleanProbe();
         this.$uibModalInstance.close(this.farmProbe);
     }
