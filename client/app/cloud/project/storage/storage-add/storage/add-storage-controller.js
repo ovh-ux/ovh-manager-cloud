@@ -35,6 +35,18 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
 
         $scope.historyStep = [];
 
+        // handle messages
+        $scope.messages = [];
+
+        function refreshMessage () {
+            $scope.messages = $scope.messageHandler.getMessages();
+        }
+
+        function loadMessage () {
+            CloudMessage.unSubscribe("iaas.pci-project.storage");
+            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.storage", { onMessage: () => refreshMessage() });
+        }
+
         $scope.loadStep = function (step) {
             $scope.steps[step].enable = true;
             $scope.historyStep.push(step);
@@ -93,6 +105,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
         }
 
         function init () {
+            loadMessage();
             return loadRegions()
                 .then(function () {
                     $scope.loadStep("region");
