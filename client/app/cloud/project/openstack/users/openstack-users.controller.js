@@ -173,7 +173,7 @@ angular.module("managerApp")
         self.postUser = function () {
             if (!self.loaders.add.user) {
                 self.loaders.add.user = true;
-                return OvhApiCloud.Project().User().Lexi().save(self.userAdd).$promise.then(function (newUser) {
+                return OvhApiCloud.Project().User().Lexi().save().$promise.then(function (newUser) {
                     self.toggleAddUser();
                     self.table.selected = {};
                     OpenstackUsersPassword.put(self.projectId, newUser.id, newUser.password);
