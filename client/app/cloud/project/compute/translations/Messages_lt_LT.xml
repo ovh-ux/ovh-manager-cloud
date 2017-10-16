@@ -5,10 +5,10 @@
    <translation id="cpc_tab_volume" qtlid="246923">Papildomi diskai</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH raktai</translation>
    <translation id="cpc_tab_project" qtlid="261283">Projekto valdymas bei resursų naudojimas</translation>
-   <translation id="cpc_message" qtlid="439767">Le Cloud OVH arrive en Allemagne ! <a href="http://superlienverslapage">Découvrez notre datacentre de Limburg.</a></translation>
+   <translation id="cpc_message" qtlid="439767">OVH Cloud atvyko į Vokietiją! <a href="http://superlienverslapage">Susipažinkite su duomenų centru Limburge.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="406143">JK</translation>
-   <translation id="cloud_message_pci_de1" qtlid="439780">Ouverture de notre nouvelle région DE1 à Francfort, en Allemagne !</translation>
-   <translation id="cloud_message_pci_de1_link" qtlid="439793">Découvrez ce que cela signifie pour vous</translation>
-   <translation id="cloud_message_pci_g3" qtlid="439806">Nouveau : lancement de nos instances GPU G3-30 et G3-120, pour vos projets de data science ou de machine learning.</translation>
+   <translation id="cloud_message_pci_de1" qtlid="439780">Naujo regiono DE1 paleidimas Frankfurte, Vokietijoje!</translation>
+   <translation id="cloud_message_pci_de1_link" qtlid="439793">Sužinokite, kokie privalumai</translation>
+   <translation id="cloud_message_pci_g3" qtlid="439806">Naujiena: GPU G3-30 ir G3-120 suteikimas data science ar machine learning aplikacijoms.</translation>
    <translation id="cloud_message_pci_no_link" qtlid="76722">Daugiau informacijos...</translation>
 </translations>

@@ -54,5 +54,6 @@
    <translation id="browser_alert_close" qtlid="405396">Sulje tämä varoitus</translation>
 
    <translation id="voucher_warning_title" qtlid="373441">Huomio</translation>
-   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un voucher qui permet la création d'un projet cloud temporaire. Votre voucher est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Olet käyttänyt lahjakortin, joka oikeuttaa tilapäisen cloud-projektin luomiseen. Lahjakortti on voimassa &#13;
+{{expiration}} asti eikä resursseista laskuteta ennen tätä päivämäärää. Huomaa, että umpeutumispäivänä projekti poistetaan ja sen tiedot katoavat.</translation>
 </translations>
