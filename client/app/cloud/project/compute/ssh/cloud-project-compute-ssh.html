@@ -16,31 +16,16 @@
         <!-- SEARCH FORM -->
         <form name="searchSshKeysForm"
               novalidate
-              class="ovh-form-flat animate-opacity2-leave pull-right">
+              class="animate-opacity2-leave pull-right">
             <div class="clearfix">
-                <div flat-input-container class="pull-right" style="width: 170px;">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                        <input type="text"
-                               class="form-control"
-                               id="searchName"
-                               name="searchName"
-                               placeholder="{{'cpc_ssh_name' | translate}}"
-                               maxlength="255"
-                               data-ng-model="CloudProjectComputeSshCtrl.search.name"
-                               data-ng-disabled="CloudProjectComputeSshCtrl.loaders.remove.ssh">
-
-                        <div class="input-group-btn"
-                             data-ng-show="CloudProjectComputeSshCtrl.search.name">
-                            <button class="no-style btn"
-                                    type="button"
-                                    data-ng-click="CloudProjectComputeSshCtrl.search.name = null"
-                                    data-ng-disabled="CloudProjectComputeSshCtrl.loaders.remove.ssh">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <input type="text"
+                       class="oui-input"
+                       id="searchName"
+                       name="searchName"
+                       placeholder="{{'cpc_ssh_name' | translate}}"
+                       maxlength="255"
+                       data-ng-model="CloudProjectComputeSshCtrl.search.name"
+                       data-ng-disabled="CloudProjectComputeSshCtrl.loaders.remove.ssh">
             </div>
         </form>
 
@@ -85,7 +70,7 @@
                                     <div class="col-sm-3 no-space">
                                         <div flat-input-container class="space-p8 vertical-top">
                                             <input type="text"
-                                                class="form-control error-animate-shake-light"
+                                                class="oui-input error-animate-shake-light"
                                                 id="sshaddname"
                                                 name="sshaddname"
                                                 placeholder="{{ ::'cpc_ssh_add_name' | translate}}"
@@ -99,7 +84,7 @@
 
                                     <div class="col-sm-9 no-space">
                                         <div flat-input-container class="space-p8">
-                                            <textarea class="form-control error-animate-shake-light vertical-resize"
+                                            <textarea class="oui-textarea error-animate-shake-light vertical-resize"
                                                 id="sshaddkey"
                                                 name="sshaddkey"
                                                 rows="3"
