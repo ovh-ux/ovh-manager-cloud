@@ -40,10 +40,10 @@ angular.module("managerApp")
                 description: self.editing.description || ""
             }).$promise.then(function () {
                 self.model.description = self.editing.description;
-                var menuItem = SidebarMenu.getItemById(self.projectId);
-                if (menuItem) {
-                    menuItem.title = self.editing.description;
-                }
+               // var menuItem = SidebarMenu.getItemById(self.projectId);
+               // if (menuItem) {
+                 //   menuItem.title = self.editing.description;
+               // }
             }).catch(function (err) {
                 CloudMessage.error([$translate.instant("cloud_project_rename_error"), err.data && err.data.message || ""].join(" "));
             }).finally(function () {
