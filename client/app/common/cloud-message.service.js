@@ -83,10 +83,8 @@ class CloudMessage {
 
         if (messageHandler) {
             const now = moment().valueOf();
-            messageHandler.messages = _.filter(messageHandler.messages, message => {
-                return message.origin === messageHandler.containerName ||
-                    (!message.forceFlush && now - 500 < message.timestamp);
-            });
+            messageHandler.messages = _.filter(messageHandler.messages, message => message.origin === messageHandler.containerName ||
+                    (!message.forceFlush && now - 500 < message.timestamp));
 
             _.forEach(messageHandler.messages, message => {
                 if (message.origin !== messageHandler.containerName) {
