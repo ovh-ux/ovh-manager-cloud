@@ -20,7 +20,7 @@ class CloudDbUserService {
     deleteUser (projectId, instanceId, userId) {
         return this.OvhApiCloudDbStdInstanceUser.Lexi().delete({ projectId, instanceId, userId })
             .$promise
-            .then(this.ServiceHelper.errorHandler("cloud_db_user_delete_success"))
+            .then(this.ServiceHelper.successHandler("cloud_db_user_delete_success"))
             .catch(this.ServiceHelper.errorHandler("cloud_db_user_delete_error"));
     }
 
