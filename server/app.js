@@ -6,13 +6,14 @@
 
 const spdy = require('spdy');
 const fs = require('fs');
-const options = {
-    key: fs.readFileSync(__dirname + '/certificate/server.key'),
-    cert:  fs.readFileSync(__dirname + '/certificate/server.crt')
-};
 
 var express = require("express");
 var config = require("./config/environment");
+
+const options = config.ssl ? {
+    key: fs.readFileSync(__dirname + '/certificate/server.key'),
+    cert:  fs.readFileSync(__dirname + '/certificate/server.crt')
+} : {};
 
 // Setup server
 var app = express();
