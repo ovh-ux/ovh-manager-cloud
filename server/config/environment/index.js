@@ -17,6 +17,9 @@ var zone = process.env.ZONE || "EU";
 var all = {
     env: process.env.NODE_ENV,
 
+    // Enable SSL (default) or not
+    ssl: process.env.SSL !== "DISABLED",
+
     // Root path of server
     root: path.normalize(__dirname + "/../../.."),
 
