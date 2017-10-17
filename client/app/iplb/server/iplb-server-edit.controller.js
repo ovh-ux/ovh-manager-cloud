@@ -76,7 +76,7 @@ class IpLoadBalancerServerEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerServerService.create(
             this.farmType,
             this.$stateParams.serviceName,
@@ -97,7 +97,7 @@ class IpLoadBalancerServerEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerServerService.update(
             this.farmType,
             this.$stateParams.serviceName,

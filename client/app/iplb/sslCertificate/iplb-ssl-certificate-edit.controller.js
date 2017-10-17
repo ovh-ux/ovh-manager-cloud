@@ -12,7 +12,7 @@ class IpLoadBalancerSslCertificateEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerSslCertificateService.create(this.$stateParams.serviceName, this.ssl)
             .then(() => {
                 this.$state.go("network.iplb.detail.ssl-certificate");

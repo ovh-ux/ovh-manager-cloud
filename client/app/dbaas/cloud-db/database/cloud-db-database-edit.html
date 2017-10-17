@@ -91,7 +91,8 @@
                     data-on-click="$ctrl.add()"></cui-submit-button>
                 <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
-                    data-ui-sref="{{ $ctrl.previousState.sref }}"></a>
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
             </div>
         </div>
     </form>

@@ -4,6 +4,8 @@ class CloudNavigation {
         this.$stateParams = $stateParams;
         this.TabsService = TabsService;
 
+        this.rootElement = undefined;
+
         $rootScope.$on("$stateChangeSuccess", (event, toState, toParams, fromState, fromParams) => {
             const correspondingState = _.find(this.history, elem => elem.state === toState.name && _.isEqual(elem.stateParams, toParams));
 
@@ -23,30 +25,20 @@ class CloudNavigation {
 
     init (rootElement) {
         this.history = [];
+        this.rootElement = undefined;
         if (rootElement) {
-            this.history.push({ state: rootElement.state, stateParams: rootElement.stateParams, sref: this.getSref(rootElement, rootElement.stateParams) });
-        }
-
-        const activeTabState = this.getActiveTabState();
-        if (activeTabState) {
-            this.history.push(activeTabState);
+            this.rootElement = rootElement;
         }
     }
 
     getPreviousState () {
-        const previousState = _.assign({}, _.last(this.history) || this.getActiveTabState());
+        const previousState = _.last(this.history) || this.getActiveTabState() || this.rootElement;
         previousState.go = () => this.$state.go(previousState.state, previousState.stateParams);
         return previousState;
     }
 
     getActiveTabState () {
-        const activeTab = this.TabsService.getActiveTab();
-
-        if (!activeTab) {
-            return undefined;
-        }
-
-        return { state: activeTab.state, stateParams: activeTab.stateParams, sref: activeTab.sref };
+        return this.TabsService.getActiveTab();
     }
 
     findInHistory (stateToFind) {

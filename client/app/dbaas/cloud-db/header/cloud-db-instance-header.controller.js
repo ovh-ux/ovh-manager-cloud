@@ -1,10 +1,11 @@
 class CloudDbInstanceHeaderCtrl {
-    constructor ($scope, $stateParams, ControllerHelper, CloudDbInstanceService, SidebarMenu) {
+    constructor ($scope, $stateParams, ControllerHelper, CloudDbInstanceService, SidebarMenu, CloudNavigation) {
         this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.ControllerHelper = ControllerHelper;
         this.CloudDbInstanceService = CloudDbInstanceService;
         this.SidebarMenu = SidebarMenu;
+        this.CloudNavigation = CloudNavigation;
 
         this.projectId = $stateParams.projectId;
         this.instanceId = $stateParams.instanceId;

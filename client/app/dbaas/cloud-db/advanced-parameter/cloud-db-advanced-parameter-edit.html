@@ -40,9 +40,10 @@
             <div data-ng-hide="$ctrl.saving">
                 <cui-submit-button data-text="'common_modify' | translate"
                     data-on-click="$ctrl.update()"></cui-submit-button>
-                <a class="oui-button oui-button_secondary"
+                <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
-                    data-ui-sref="{{ $ctrl.previousState.sref }}"></a>
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
             </div>
         </div>
     </form>

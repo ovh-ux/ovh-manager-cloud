@@ -36,7 +36,8 @@ class CloudMessage {
         const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
-            messageHandler.messages.push(_.extend({ type, origin: containerName }, messageHash));
+            // Message age defines how many flush the message went through.
+            messageHandler.messages.push(_.extend({ type, origin: containerName || this.$state.current.name, timestamp: moment().valueOf() }, messageHash));
             messageHandler.onMessage();
         } else {
             console.log(`Unhandled message ${messageHash.text}`);
@@ -81,7 +82,18 @@ class CloudMessage {
         const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
-            messageHandler.messages = _.filter(messageHandler.messages, message => message.origin !== containerName);
+            const now = moment().valueOf();
+            messageHandler.messages = _.filter(messageHandler.messages, message => {
+                return message.origin === messageHandler.containerName ||
+                    (!message.forceFlush && now - 500 < message.timestamp);
+            });
+
+            _.forEach(messageHandler.messages, message => {
+                if (message.origin !== messageHandler.containerName) {
+                    message.forceFlush = true;
+                }
+            });
+
             messageHandler.onMessage();
         }
     }
@@ -106,6 +118,7 @@ class CloudMessage {
      */
     subscribe (containerName, params) {
         this.subscribers[containerName] = _.extend({
+            containerName,
             messages: [],
             onMessage: _.noop()
         }, params);

@@ -13,7 +13,7 @@
                                 name="region" 
                                 class="oui-select__input"
                                 data-ng-model="$ctrl.model.regionName.value"
-                                ng-options="region.name as region.displayName for region in $ctrl.getSelectableRegions()"
+                                ng-options="region.<name as region.displayName for region in $ctrl.getSelectableRegions()"
                                 data-ng-required="$ctrl.model.regionName.required"
                                 data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.region.$invalid }"
                                 data-ng-change="$ctrl.onRegionChange()">
@@ -90,9 +90,10 @@
             <div data-ng-hide="$ctrl.saving">
                 <cui-submit-button data-text="'common_add' | translate"
                     data-on-click="$ctrl.add()"></cui-submit-button>
-                <a class="oui-button oui-button_secondary"
+                <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
-                    data-ui-sref="{{ $ctrl.previousState.sref }}"></a>
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
             </div>
         </div>
     </form>

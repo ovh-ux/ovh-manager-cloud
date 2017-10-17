@@ -33,8 +33,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "IpLoadBalancerServerFarmEditCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            onEnter: CloudMessage => CloudMessage.flushMessages()
+            }
         })
         .state("network.iplb.detail.server-farm.update", {
             url: "/:farmId",
@@ -44,8 +43,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "IpLoadBalancerServerFarmEditCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            onEnter: CloudMessage => CloudMessage.flushMessages()
+            }
         })
         .state("network.iplb.detail.server-farm.server-add", {
             url: "/:farmId/server/add",
@@ -55,8 +53,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "IpLoadBalancerServerEditCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            onEnter: CloudMessage => CloudMessage.flushMessages()
+            }
         })
         .state("network.iplb.detail.server-farm.server-update", {
             url: "/:farmId/server/:serverId",
@@ -66,7 +63,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "IpLoadBalancerServerEditCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            onEnter: CloudMessage => CloudMessage.flushMessages()
+            }
         });
 });

@@ -3,6 +3,7 @@ class TabsService {
         this.$state = $state;
 
         this.registeredTabs = [];
+        this.activeTab = undefined;
 
         $rootScope.$on("$stateChangeSuccess", () => {
             this.refreshActiveTab();
@@ -25,6 +26,8 @@ class TabsService {
         const existingTab = _.find(this.registeredTabs, existing => tab.state === existing.state && tab.text === existing.text);
         if (existingTab) {
             this.expandTab(tab);
+
+            //ugly.  This should be event driven.
             tab.updateActive(existingTab.active, existingTab.isActivating);
             this.registeredTabs[_.indexOf(this.registeredTabs, existingTab)] = tab;
         } else {
@@ -56,10 +59,21 @@ class TabsService {
 
             newActiveTab.updateActive(true, true);
         }
+
+        // We make sure to keep the same activeTab instance.  This way, we can watch value change to know when active tab changed.
+        if (newActiveTab && !this.activeTab) {
+            this.activeTab = {};
+        }
+
+        _.extend(this.activeTab, newActiveTab);
     }
 
     getActiveTab () {
-        return _.find(this.registeredTabs, tab => tab.active);
+        if (this.registeredTabs.length) {
+            return this.activeTab;
+        }
+
+        return undefined;
     }
 }
 

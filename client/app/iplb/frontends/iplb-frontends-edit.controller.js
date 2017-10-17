@@ -231,7 +231,7 @@ class IpLoadBalancerFrontendsEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerFrontendsService.createFrontend(this.type, this.$stateParams.serviceName, this.getCleanFrontend())
             .then(() => this.$state.go("network.iplb.detail.frontends"))
             .finally(() => {
@@ -244,7 +244,7 @@ class IpLoadBalancerFrontendsEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerFrontendsService.updateFrontend(this.type, this.$stateParams.serviceName, this.frontend.frontendId, this.getCleanFrontend())
             .then(() => this.$state.go("network.iplb.detail.frontends"))
             .finally(() => {
