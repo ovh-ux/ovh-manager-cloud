@@ -1,0 +1,14 @@
+<section class="cui-page__content">
+    <cui-page-content-title text="'cloud_db_user_title' | translate"></cui-page-content-title>
+    <cui-action-button data-action="$ctrl.actions.addUser" data-type="secondary"></cui-action-button>
+
+    <cui-loader data-ng-show="$ctrl.users.loading"></cui-loader>
+    <oui-table data-ng-hide="$ctrl.users.loading"
+        rows="$ctrl.users.data">
+        <column title="'cloud_db_user_list_col_name' | translate" property="displayName" sortable="asc"></column>
+        <column title="'cloud_db_user_list_col_password' | translate">**********</column>
+        <column title="'cloud_db_user_list_col_database' | translate" property="databases.length" sortable></column>
+        <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="$ctrl.getActionTemplate()"></column>
+        <empty-placeholder data-translate="cloud_db_user_list_empty"></empty-placeholder>
+    </oui-table>
+</section>

@@ -1,0 +1,99 @@
+<section class="cui-page__content">
+    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
+                   data-state-params="$ctrl.previousState.stateParams"
+                   data-text="'cloud_db_back_home' | translate"></cui-back-link>
+    <cui-page-content-title text="'cloud_db_database_add' | translate"></cui-page-content-title>
+    <form novalidate name="$ctrl.form">
+        <div class="oui-field">
+            <label for="name" class="oui-field__label oui-label" data-translate="cloud_db_database_edit_form_field_name"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_3">
+                    <input type="text"
+                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.name.$invalid }"
+                        id="name"
+                        name="name"
+                        class="oui-input"
+                        data-ng-minlength="$ctrl.model.name.minLength"
+                        data-ng-maxlength="$ctrl.model.name.maxLength"
+                        data-ng-model="$ctrl.model.name.value"
+                        data-ng-required="$ctrl.model.name.required" />
+                </div>
+                <div class="oui-field-helper" data-translate="cloud_db_database_edit_form_field_name_helper"></div>
+            </div>
+        </div>
+        <cui-loader data-ng-if="$ctrl.users.loading || $ctrl.grantTypes.loading"></cui-loader>
+        <div class="oui-field" 
+            data-ng-if="!$ctrl.users.loading && !$ctrl.grantTypes.loading">
+            <div class="oui-field__label oui-label" data-translate="cloud_db_database_edit_form_field_user"></div>
+            <div class="oui-field__content cui-key-value-input">
+                <div class="cui-key-value-input__container" data-ng-repeat="grant in $ctrl.model.users.value track by $index">
+                    <div class="oui-field">
+                        <label for="userName{{ $index }}" 
+                            class="oui-field__label oui-label cui-key-value-input__label" 
+                            data-translate="cloud_db_database_edit_form_field_user_name"></label>
+                        <div class="oui-field__content cui-key-value-input__field">
+                            <div class="oui-field-control oui-field-control_3">
+                                <label class="oui-select">
+                                    <select id="userName{{ $index }}" 
+                                        name="userName{{ $index }}" 
+                                        class="oui-select__input"
+                                        data-ng-model="grant.userName"
+                                        ng-options="user.name as user.displayName for user in $ctrl.getAvailableUser(grant.userName)">
+                                        <option value="" data-translate="common_select"></option>
+                                    </select>
+                                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oui-field">
+                        <label for="grantType{{ $index }}" 
+                            class="oui-field__label oui-label cui-key-value-input__label" 
+                            data-translate="cloud_db_database_edit_form_field_user_grant"></label>
+                        <div class="oui-field__content cui-key-value-input__field">
+                            <div class="oui-field-control oui-field-control_3">
+                                <label class="oui-select">
+                                    <select id="grantType{{ $index }}" 
+                                        name="grantType{{ $index }}" 
+                                        class="oui-select__input"
+                                        data-ng-model="grant.grantType"
+                                        ng-options="grantType.value as grantType.text for grantType in $ctrl.grantTypes.data">
+                                        <option value="" data-translate="common_select"></option>
+                                    </select>
+                                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-key-value-input__action">
+                        <div data-ng-show="$last" data-ng-if="$ctrl.canAddUser()">
+                            <button class="oui-button oui-button_secondary"
+                                type="button"
+                                data-ng-click="$ctrl.addUser()" >+</button>
+                        </div>
+                        <div data-ng-hide="$last">
+                            <button class="oui-button oui-button_secondary"
+                                type="button"
+                                data-ng-click="$ctrl.removeUser($index)">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cui-form-actions">
+            <cui-loader data-ng-show="$ctrl.saving"></cui-loader>
+            <div data-ng-hide="$ctrl.saving">
+                <cui-submit-button data-text="'common_modify' | translate"
+                    data-ng-if="$ctrl.edition"
+                    data-on-click="$ctrl.update()"></cui-submit-button>
+                <cui-submit-button data-text="'common_add' | translate"
+                    data-ng-if="!$ctrl.edition"
+                    data-on-click="$ctrl.add()"></cui-submit-button>
+                <a class="oui-button oui-button_link"
+                    data-translate="common_cancel"
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
+            </div>
+        </div>
+    </form>
+</section>

@@ -14,7 +14,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            onEnter: CloudMessage => CloudMessage.flushMessages(),
             translations: ["common", "iplb", "iplb/configuration"]
         });
 });

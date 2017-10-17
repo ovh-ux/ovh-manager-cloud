@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_network_title">Réseaux</translation>
+    <translation id="cloud_db_network_intro_text">Les adresses IP ci-dessous sont en mesure de se connecter à l'instance.</translation>
+    <translation id="cloud_db_network_add">Autoriser une adresse IP</translation>
+    
+    <translation id="cloud_db_network_list_col_network">Réseau</translation>
+    <translation id="cloud_db_network_list_col_ip">IP</translation>
+    <translation id="cloud_db_network_list_empty">Aucun réseau autorisé</translation>
+
+    <translation id="cloud_db_network_delete_title">Supprimer le réseau</translation>
+    <translation id="cloud_db_network_delete_confirmation_message">Êtes-vous sûr de vouloir supprimer le réseau?</translation>
+
+    <translation id="cloud_db_network_add_label_name">Nom</translation>
+    <translation id="cloud_db_network_add_label_ip">IP</translation>
+</translations>

@@ -1,0 +1,100 @@
+<section class="cui-page__content">
+    <cui-page-content-title text="'cloud_db_instance_add' | translate"></cui-page-content-title>
+    <form novalidate name="$ctrl.form">
+        <cui-loader data-ng-show="$ctrl.isLoading()"></cui-loader>
+        <div data-ng-if="!$ctrl.isLoading()">
+            <div class="oui-field">
+                <label for="region" 
+                    class="oui-field__label oui-label cui-key-value-input__label" data-translate="cloud_db_instance_add_form_field_region"></label>
+                <div class="oui-field__content cui-key-value-input__field">
+                    <div class="oui-field-control oui-field-control_3">
+                        <label class="oui-select">
+                            <select id="region" 
+                                name="region" 
+                                class="oui-select__input"
+                                data-ng-model="$ctrl.model.regionName.value"
+                                ng-options="region.<name as region.displayName for region in $ctrl.getSelectableRegions()"
+                                data-ng-required="$ctrl.model.regionName.required"
+                                data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.region.$invalid }"
+                                data-ng-change="$ctrl.onRegionChange()">
+                                <option value="" data-translate="common_select"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="oui-field">
+                <label for="flavor" 
+                    class="oui-field__label oui-label cui-key-value-input__label" data-translate="cloud_db_instance_add_form_field_flavor"></label>
+                <div class="oui-field__content cui-key-value-input__field">
+                    <div class="oui-field-control oui-field-control_3">
+                        <label class="oui-select">
+                            <select id="flavor" 
+                                name="flavor" 
+                                class="oui-select__input"
+                                data-ng-model="$ctrl.model.flavorName.value"
+                                ng-options="flavor.name as flavor.displayName for flavor in $ctrl.getSelectableFlavors()"
+                                data-ng-required="$ctrl.model.flavorName.required"
+                                data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.flavor.$invalid }"
+                                data-ng-disabled="!$ctrl.model.regionName.value">
+                                <option value="" data-translate="common_select"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="oui-field">
+                <label for="image" 
+                    class="oui-field__label oui-label cui-key-value-input__label" data-translate="cloud_db_instance_add_form_field_image"></label>
+                <div class="oui-field__content cui-key-value-input__field">
+                    <div class="oui-field-control oui-field-control_3">
+                        <label class="oui-select">
+                            <select id="image" 
+                                name="image" 
+                                class="oui-select__input"
+                                data-ng-model="$ctrl.model.imageName.value"
+                                ng-options="image.name as image.displayName for image in $ctrl.getSelectableImages()"
+                                data-ng-required="$ctrl.model.imageName.required"
+                                data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.image.$invalid }"
+                                data-ng-disabled="!$ctrl.model.regionName.value || !$ctrl.model.flavorName.value"
+                                data-ng-change="$ctrl.onImageChange()">
+                                <option value="" data-translate="common_select"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="oui-field">
+                <label for="name" class="oui-field__label oui-label" data-translate="cloud_db_instance_add_form_field_name"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_3">
+                        <input type="text"
+                            data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.name.$invalid }"
+                            id="name"
+                            name="name"
+                            class="oui-input"
+                            data-ng-minlength="$ctrl.model.name.minLength"
+                            data-ng-maxlength="$ctrl.model.name.maxLength"
+                            data-ng-model="$ctrl.model.name.value"
+                            data-ng-required="$ctrl.model.name.required" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cui-form-actions">
+            <cui-loader data-ng-show="$ctrl.saving"></cui-loader>
+            <div data-ng-hide="$ctrl.saving">
+                <cui-submit-button data-text="'common_add' | translate"
+                    data-on-click="$ctrl.add()"></cui-submit-button>
+                <a class="oui-button oui-button_link"
+                    data-translate="common_cancel"
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
+            </div>
+        </div>
+    </form>
+</section>

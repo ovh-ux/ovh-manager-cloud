@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_user_title">Utilisateurs</translation>
+    <translation id="cloud_db_user_add">Ajouter un utilisateur</translation>
+
+    <translation id="cloud_db_user_list_col_name">Nom</translation>
+    <translation id="cloud_db_user_list_col_password">Mot de passe</translation>
+    <translation id="cloud_db_user_list_col_database">Base de données liées</translation>
+    <translation id="cloud_db_user_list_empty">Aucun utilisateur</translation>
+
+    <translation id="cloud_db_user_action_menu_preview">Voir l'aperçu</translation>
+
+    <translation id="cloud_db_user_preview_title">Aperçu de l'utilisateur</translation>
+    <translation id="cloud_db_user_preview_name">Nom</translation>
+    <translation id="cloud_db_user_preview_database">Base de données</translation>
+    <translation id="cloud_db_user_preview_creation_date">Date de création</translation>
+    <translation id="cloud_db_user_preview_last_update_date">Dernière modification</translation>
+
+    <translation id="cloud_db_user_delete_title">Supprimer un utilisateur</translation>
+    <translation id="cloud_db_user_delete_confirmation_message">Êtes-vous sûr de vouloir supprimer l'utilisateur?</translation>
+
+    <translation id="cloud_db_user_edit_form_field_name">Nom d'utilisateur</translation>
+    <translation id="cloud_db_user_edit_form_field_name_helper">Doit contenir uniquement chiffres, lettres, underscores, tirets ou points</translation>
+    <translation id="cloud_db_user_edit_form_field_password">Mot de passe</translation>
+    <translation id="cloud_db_user_edit_form_field_database">Bases de données liées (falcultatif)</translation>
+    <translation id="cloud_db_user_edit_form_field_database_name">Nom</translation>
+    <translation id="cloud_db_user_edit_form_field_database_grant">Permission</translation>
+</translations>

@@ -1,0 +1,24 @@
+<section class="cui-page__content">
+    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
+                   data-state-params="$ctrl.previousState.stateParams"
+                   data-text="'cloud_db_back_home' | translate"></cui-back-link>
+    <cui-page-content-title text="'cloud_db_oom_title' | translate"></cui-page-content-title>
+    <p>
+        <span data-translate="cloud_db_oom_text"></span>
+        <b data-translate="cloud_db_oom_text_advice"></b>
+    </p>
+    <cui-action-button data-action="$ctrl.actions.changeOffer" data-type="secondary"></cui-action-button>
+
+    <cui-loader data-ng-show="$ctrl.ooms.loading"></cui-loader>
+    <oui-table data-ng-hide="$ctrl.ooms.loading"
+        rows="$ctrl.ooms.data">
+        <column title="'cloud_db_offer_edit_col_date' | translate" property="date" sortable="desc">
+            {{ $row.date | momentFormat:'LL' }}
+        </column>
+        <column title="'cloud_db_offer_edit_col_size' | translate" property="sizeReached.text" sortable></column>
+        <column title="'cloud_db_offer_edit_col_availability' | translate" property="elapsed.ms" sortable>
+            {{ $row.elapsed.text }}
+        </column>
+        <empty-placeholder data-translate="cloud_db_oom_list_empty"></empty-placeholder>
+    </oui-table>
+</section>

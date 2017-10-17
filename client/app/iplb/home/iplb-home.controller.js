@@ -92,7 +92,11 @@ class IpLoadBalancerHomeCtrl {
             },
             changeName: {
                 text: this.$translate.instant("common_edit"),
-                callback: () => this.IpLoadBalancerActionService.nameChange(this.serviceName, () => this.configuration.load()),
+                callback: () => this.ControllerHelper.modal.showNameChangeModal({
+                    serviceName: this.serviceName,
+                    displayName: this.configuration.data.displayName,
+                    onSave: newDisplayName => this.IpLoadBalancerHomeService.updateName(this.serviceName, newDisplayName).then(() => this.configuration.load())
+                }),
                 isAvailable: () => !this.configuration.loading && !this.configuration.hasErrors
             },
             changeCipher: {

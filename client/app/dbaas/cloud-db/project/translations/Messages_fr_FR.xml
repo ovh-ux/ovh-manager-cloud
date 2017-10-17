@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_project_instance_add">Ajouter une instance</translation>
+    <translation id="cloud_db_project_instance_reboot">Redémarrer</translation>
+    <translation id="cloud_db_project_instance_list_empty">Aucune instance</translation>
+    <translation id="cloud_db_project_instance_list_col_instance">Instance</translation>
+    <translation id="cloud_db_project_instance_list_col_type">Type</translation>
+    <translation id="cloud_db_project_instance_list_col_ram">Mémoire RAM</translation>
+    <translation id="cloud_db_project_instance_list_col_disk_space">Espace disque</translation>
+    <translation id="cloud_db_project_instance_list_col_status">Statut</translation>
+    <translation id="cloud_db_project_instance_delete_title">Supprimer l'instance</translation>
+    <translation id="cloud_db_project_instance_delete_confirmation_message">Êtes-vous sûr de vouloir supprimer l'instance?</translation>
+    <translation id="cloud_db_project_instance_reboot_title">Redémarrer l'instance</translation>
+    <translation id="cloud_db_project_instance_reboot_confirmation_message">Êtes-vous sûr de vouloir redémarrer l'instance?</translation>
+
+    <translation id="cloud_db_project_tile_instance_title">Instances</translation>
+    <translation id="cloud_db_project_tile_configuration_title">Configuration</translation>
+
+    <translation id="cloud_db_project_tile_configuration_name">Nom</translation>
+    <translation id="cloud_db_project_tile_configuration_instance_quota">Quota</translation>
+    <translation id="cloud_db_project_tile_configuration_instance_quota_description">{{ current }} / {{ max }} instances</translation>
+</translations>

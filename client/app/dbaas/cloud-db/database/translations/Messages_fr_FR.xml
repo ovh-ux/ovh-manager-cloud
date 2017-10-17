@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_database_title">Base de données</translation>
+    <translation id="cloud_db_database_add">Ajouter une base de données</translation>
+
+    <translation id="cloud_db_database_list_col_name">Base de données</translation>
+    <translation id="cloud_db_database_list_col_disk_space">Espace disque</translation>
+    <translation id="cloud_db_database_list_col_linked_user">Utilisateurs liés</translation>
+    <translation id="cloud_db_database_list_col_backup">Sauvegardes</translation>
+    <translation id="cloud_db_database_list_col_status">Statut</translation>
+    <translation id="cloud_db_database_list_empty">Aucune base de données</translation>
+
+    <translation id="cloud_db_database_action_menu_preview">Voir l'aperçu</translation>
+
+    <translation id="cloud_db_database_preview_title">Aperçu de la base de données</translation>
+    <translation id="cloud_db_database_preview_name">Nom</translation>
+    <translation id="cloud_db_database_preview_disk_space">Espace disque</translation>
+    <translation id="cloud_db_database_preview_user">Utilisateurs</translation>
+    <translation id="cloud_db_database_preview_extension">Extensions</translation>
+    <translation id="cloud_db_database_preview_save">Sauvegardes</translation>
+
+    <translation id="cloud_db_database_delete_title">Supprimer la base de données</translation>
+    <translation id="cloud_db_database_delete_confirmation_message">Êtes-vous sûr de vouloir supprimer la base de données?</translation>
+
+    <translation id="cloud_db_database_edit_form_field_name">Nom de base de données</translation>
+    <translation id="cloud_db_database_edit_form_field_name_helper">put something here</translation>
+    <translation id="cloud_db_database_edit_form_field_user">Utilisateurs liés (falcultatif)</translation>
+    <translation id="cloud_db_database_edit_form_field_user_name">Nom</translation>
+    <translation id="cloud_db_database_edit_form_field_user_grant">Permission</translation>
+</translations>

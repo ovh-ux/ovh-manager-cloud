@@ -1,0 +1,29 @@
+<cui-page-header data-title-text="$ctrl.displayName" 
+                 data-subtitle-text="$ctrl.displayName === $ctrl.instanceId ? '' : $ctrl.instanceId">
+    <cui-tabs>
+        <cui-tab data-text="'cloud_db_tab_home' | translate"
+                data-state="dbaas.cloud-db.instance.detail.home" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_graph' | translate"
+                data-state="dbaas.cloud-db.instance.detail.graph" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_database' | translate"
+                data-state="dbaas.cloud-db.instance.detail.database" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"
+                data-ng-if="$ctrl.showDatabaseTab"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_user' | translate"
+                data-state="dbaas.cloud-db.instance.detail.user" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"
+                data-ng-if="$ctrl.showUserTab"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_backup' | translate"
+                data-state="dbaas.cloud-db.instance.detail.backup" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"
+                data-ng-if="$ctrl.showBackupTab"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_network' | translate"
+                data-state="dbaas.cloud-db.instance.detail.network" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"></cui-tab>
+        <cui-tab data-text="'cloud_db_tab_log' | translate"
+                data-state="dbaas.cloud-db.instance.detail.log" 
+                data-state-params="{ projectId: $ctrl.projectId, instanceId: $ctrl.instanceId }"></cui-tab>
+    </cui-tabs>
+</cui-page-header>

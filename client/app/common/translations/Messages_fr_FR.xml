@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Annuler</translation>
    <translation id="common_edit" qtlid="37875">Modifier</translation>
    <translation id="common_consult" qtlid="339639">Consulter</translation>
+   <translation id="common_see_detail">Voir le détail</translation>
    <translation id="common_manage" qtlid="16301">Gérer</translation>
    <translation id="common_apply" qtlid="41326">Appliquer</translation>
    <translation id="common_loading" qtlid="58256">Chargement</translation>
@@ -38,7 +39,7 @@
    <translation id="common_menu_telecom" qtlid="135827">Télécom</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
    <translation id="common_menu_v3" qtlid="135931">Ancienne interface client</translation>
-<translation id="common_menu_portal" translate="none">MyOVH</translation>
+   <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partenaires</translation>
    <translation id="common_menu_billing" qtlid="32950">Facturation</translation>
    <translation id="common_menu_renew" qtlid="229658">Mes services</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Modifier</translation>
    <translation id="common_select" qtlid="17923">Sélectionner</translation>
    <translation id="common_add" qtlid="37923">Ajouter</translation>
+   <translation id="common_save">Sauvegarder</translation>
+   <translation id="common_delete">Supprimer</translation>
+   <translation id="common_select">Sélectionner</translation>
    <translation id="common_remove" qtlid="323093">Retirer</translation>
    <translation id="edit" qtlid="37875">Modifier</translation>
    <translation id="delete" qtlid="2414">Supprimer</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Date de création</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Statut</translation>
+   <translation id="common_name_change_modal_title">Modifier le nom</translation>
+   <translation id="common_name_change_modal_service_name_label">Nom par défaut</translation>
+   <translation id="common_name_change_modal_display_name_label">Nom personnalisé</translation>
 
    <translation id="common_preview_see" qtlid="433371">Voir l'aperçu</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
+   <translation id="common_table_col_progress" qtlid="56105">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Résultats par page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
    <translation id="common_pagination_of" qtlid="121615">sur</translation>

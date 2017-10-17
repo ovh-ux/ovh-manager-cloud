@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_back_home">Retour</translation>
+
+    <translation id="cloud_db_tab_home">Accueil</translation>
+    <translation id="cloud_db_tab_graph">Graphiques</translation>
+    <translation id="cloud_db_tab_database">Base de données</translation>
+    <translation id="cloud_db_tab_user">Utilisateurs</translation>
+    <translation id="cloud_db_tab_backup">Sauvegardes</translation>
+    <translation id="cloud_db_tab_network">IPs autorisées</translation>
+    <translation id="cloud_db_tab_log">Logs</translation>
+
+    <translation id="cloud_db_project_instance_loading_error">Erreur lors du chargement de la section Instances : {{message}}</translation>
+    <translation id="cloud_db_project_instance_add_success">L'instance sera ajouté dans quelques instants.</translation>
+    <translation id="cloud_db_project_instance_add_error">Erreur lors de l'ajout de l'instance : {{message}}</translation>
+    <translation id="cloud_db_project_instance_reboot_success">L'instance sera redémarrée dans quelques instants.</translation>
+    <translation id="cloud_db_project_instance_reboot_error">Erreur lors du redémarrage de l'instance : {{message}}</translation>
+    <translation id="cloud_db_project_instance_delete_success">L'instance sera supprimée dans quelques instants.</translation>
+    <translation id="cloud_db_project_instance_delete_error">Erreur lors de la suppression de l'instance : {{message}}</translation>
+    <translation id="cloud_db_project_instance_oom_text">Mémoire insuffisante :</translation>
+    <translation id="cloud_db_project_instance_oom_single_link_text">{{oomNumber}} redémarrage en 36 heures</translation>
+    <translation id="cloud_db_project_instance_oom_plural_link_text">{{oomNumber}} redémarrages en 36 heures</translation>
+    <translation id="cloud_db_project_configuration_loading_error">Erreur lors du chargement de la section Configuration : {{message}}</translation>
+    <translation id="cloud_db_project_subscription_loading_error">Erreur lors du chargement de la section Abonnement : {{message}}</translation>
+    <translation id="cloud_db_project_change_error">Erreur lors du changement de nom : {{message}}</translation>
+
+    <translation id="cloud_db_home_status_loading_error">Erreur lors du chargement de la section Statut : {{message}}</translation>
+    <translation id="cloud_db_home_access_loading_error">Erreur lors du chargement de la section Accès : {{message}}</translation>
+    <translation id="cloud_db_home_configuration_loading_error">Erreur lors du chargement de la section Configuration : {{message}}</translation>
+
+    <translation id="cloud_db_database_loading_error">Erreur lors du chargement de la base de données : {{message}}</translation>
+    <translation id="cloud_db_database_extension_loading_error">Erreur lors du chargement des extensions disponibles : {{message}}</translation>
+    <translation id="cloud_db_database_list_loading_error">Erreur lors du chargement des base de données : {{message}}</translation>
+    <translation id="cloud_db_database_add_success">La base de données sera ajoutée dans quelques instants.</translation>
+    <translation id="cloud_db_database_add_error">Erreur lors de l'ajout de la base de données : {{message}}</translation>
+    <translation id="cloud_db_database_update_sucess">La base de données a été modifiée avec succès.</translation>
+    <translation id="cloud_db_database_update_error">Erreur lors de la modification de la base de données : {{message}}</translation>
+    <translation id="cloud_db_database_delete_error">Erreur lors de la suppression de la base de données : {{message}}</translation>
+    <translation id="cloud_db_database_delete_success">La base de données a été supprimée avec succès.</translation>
+
+    <translation id="cloud_db_user_loading_error">Erreur lors du chargement de l'utilisateur : {{message}}</translation>
+    <translation id="cloud_db_user_list_loading_error">Erreur lors du chargement des utilisateurs : {{message}}</translation>
+    <translation id="cloud_db_user_add_success">L'utilisateur sera ajouté dans quelques instants.</translation>
+    <translation id="cloud_db_user_add_error">Erreur lors de l'ajout de l'utilisateur : {{message}}</translation>
+    <translation id="cloud_db_user_update_sucess">L'utilisateur sera modifié dans quelques instants.</translation>
+    <translation id="cloud_db_user_update_error">Erreur lors de la modification de l'utilisateur : {{message}}</translation>
+    <translation id="cloud_db_user_delete_error">Erreur lors de la suppression de l'utilisateur : {{message}}</translation>
+    <translation id="cloud_db_user_delete_success">L'utilisateur sera supprimé dans quelques instants.</translation>
+
+    <translation id="cloud_db_backup_loading_error">Erreur lors du chargement de la sauvegarde : {{message}}</translation>
+    <translation id="cloud_db_backup_list_loading_error">Erreur lors du chargement des sauvegardes : {{message}}</translation>
+    <translation id="cloud_db_backup_add_success">La sauvegarde sera créée dans quelques instants.</translation>
+    <translation id="cloud_db_backup_add_error">Erreur lors de la création de la sauvegarde : {{message}}</translation>
+    <translation id="cloud_db_backup_restore_sucess">La sauvegarde a été restaurée avec succès.</translation>
+    <translation id="cloud_db_backup_restore_error">Erreur lors de la restauration de la sauvegarde : {{message}}</translation>
+    <translation id="cloud_db_backup_delete_error">Erreur lors de la suppression de la sauvegarde : {{message}}</translation>
+    <translation id="cloud_db_backup_delete_success">La sauvegarde sera supprimée dans quelques instants.</translation>
+
+    <translation id="cloud_db_network_loading_error">Erreur lors du chargement de l'adresse IP : {{message}}</translation>
+    <translation id="cloud_db_network_list_loading_error">Erreur lors du chargement des adresses IPs : {{message}}</translation>
+    <translation id="cloud_db_network_add_success">L'accès sera créé dans quelques instants.</translation>
+    <translation id="cloud_db_network_add_error">Erreur lors de l'ajout de l'adresse IP : {{message}}</translation>
+    <translation id="cloud_db_network_update_success">L'accès sera modifié dans quelques instants.</translation>
+    <translation id="cloud_db_network_update_error">Erreur lors de la modification de l'adresse IP : {{message}}</translation>
+    <translation id="cloud_db_network_delete_success">L'accès sera supprimé dans quelques instants.</translation>
+    <translation id="cloud_db_network_delete_error">Erreur lors de la suppression du l'adresse IP : {{message}}</translation>
+
+    <translation id="cloud_db_advanced_parameter_loading_error">Erreur lors du chargement des paramètres avancés : {{message}}</translation>
+    <translation id="cloud_db_advanced_parameter_update_success">Les paramètres avancés ont été modifiés avec succès.</translation>
+    <translation id="cloud_db_advanced_parameter_update_error">Erreur lors de la sauvegarde des paramètres avancés : {{message}}</translation>
+
+    <translation id="cloud_db_instance_image_loading_error">Erreur lors du chargement de l'image : {{message}}</translation>
+    <translation id="cloud_db_instance_image_list_loading_error">Erreur lors du chargement des images disponibles : {{message}}</translation>
+
+    <translation id="cloud_db_instance_region_loading_error">Erreur lors du chargement de la région : {{message}}</translation>
+    <translation id="cloud_db_instance_region_list_loading_error">Erreur lors du chargement des régions disponibles : {{message}}</translation>
+
+    <translation id="cloud_db_instance_flavor_loading_error">Erreur lors du chargement de la configuration : {{message}}</translation>
+    <translation id="cloud_db_instance_flavor_list_loading_error">Erreur lors du chargement des configurations disponibles : {{message}}</translation>
+
+    <translation id="cloud_db_instance_task_loading_error">Erreur lors du chargement de la tâche : {{message}}</translation>
+    <translation id="cloud_db_instance_task_list_loading_error">Erreur lors du chargement des tâches : {{message}}</translation>
+
+    <translation id="cloud_db_name_change_error">Erreur lors du changement de nom : {{message}}</translation>
+    <translation id="cloud_db_project_instance_usage_text">{{ used }} / {{ total }}</translation>
+</translations>

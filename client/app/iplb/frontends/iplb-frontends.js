@@ -38,7 +38,6 @@
                         controllerAs: "ctrl"
                     }
                 },
-                onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: ["common", "iplb", "iplb/frontends"]
             })
             .state("network.iplb.detail.frontends.update", {
@@ -50,7 +49,6 @@
                         controllerAs: "ctrl"
                     }
                 },
-                onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: ["common", "iplb", "iplb/frontends"]
             });
     });

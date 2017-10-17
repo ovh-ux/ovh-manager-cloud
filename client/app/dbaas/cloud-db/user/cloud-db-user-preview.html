@@ -1,0 +1,30 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'cloud_db_user_preview_title' | translate">
+        <dl class="preview-list preview-list_no-margin">
+            <dt class="preview-list__term"
+                data-translate="cloud_db_user_preview_name"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.user.displayName"></dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_user_preview_database"></dt>
+            <dd class="preview-list__definition">
+                <ul class="preview-list__definition_list">
+                    <li data-ng-repeat="database in $ctrl.user.databases track by $index">
+                        <span data-ng-bind=":: database.databaseName"></span>
+                        <small>({{ :: database.grantType.text }})</small>
+                    </li> 
+                </ul>  
+                <span data-ng-if="!$ctrl.user.databases.length">-</span>
+            </dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_user_preview_creation_date"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.user.creationDate | momentFormat:'LL'"></dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_user_preview_last_update_date"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.user.lastUpdate | momentFormat:'LL'"></dd>
+        </dl>
+    </cui-modal-body>
+</cui-modal>

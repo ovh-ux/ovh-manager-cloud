@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cloud_db_advanced_parameter_edit_title">Modifier les paramètres avancés</translation>
+    <translation id="cloud_db_advanced_parameter_intro_text">Soyez prudent lorsque vous modifiez ces paramètres car cela peut avoir un impact sur les performances de votre instance DBaaS. Pour la plupart des cas d'utilisation, les valeurs par défaut sont les meilleures. La modification des paramètres avancés nécessitera un redémarrage de l'instance.</translation>
+</translations>

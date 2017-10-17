@@ -1,0 +1,40 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'cloud_db_database_preview_title' | translate">
+        <dl class="preview-list preview-list_no-margin">
+            <dt class="preview-list__term"
+                data-translate="cloud_db_database_preview_name"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.database.displayName"></dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_database_preview_disk_space"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.database.quotaUsed.text"></dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_database_preview_user"></dt>
+            <dd class="preview-list__definition">
+                <ul class="preview-list__definition_list">
+                    <li data-ng-repeat="user in $ctrl.database.users track by $index">
+                        <span data-ng-bind=":: user.userName"></span>
+                        <small>({{ :: user.grantType.text }})</small>
+                    </li> 
+                </ul>
+                <span data-ng-if="!$ctrl.database.users">-</span>
+            </dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_database_preview_extension"></dt>
+            <dd class="preview-list__definition">
+                <ul class="preview-list__definition_list">
+                    <li data-ng-repeat="extension in $ctrl.database.extensions track by $index">
+                        <span data-ng-bind=":: extension"></span>
+                    </li> 
+                </ul>
+                <span data-ng-if="!$ctrl.database.extensions.length">-</span>
+            </dd>
+            <dt class="preview-list__term"
+                data-translate="cloud_db_database_preview_save"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: $ctrl.database.dumpCount"></dd>
+        </dl>
+    </cui-modal-body>
+</cui-modal>

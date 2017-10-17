@@ -1,8 +1,12 @@
 class CloudMessage {
-    constructor ($state) {
+    constructor ($rootScope, $state) {
         this.$state = $state;
         this.messages = {};
         this.subscribers = {};
+
+        $rootScope.$on("$stateChangeSuccess", () => {
+            this.flushChildMessage();
+        });
     }
 
     success (message, containerName) {
@@ -32,7 +36,8 @@ class CloudMessage {
         const messageHandler = this.getMessageHandler(containerName);
 
         if (messageHandler) {
-            messageHandler.messages.push(_.extend({ type }, messageHash));
+            // Message age defines how many flush the message went through.
+            messageHandler.messages.push(_.extend({ type, origin: containerName || this.$state.current.name, timestamp: moment().valueOf() }, messageHash));
             messageHandler.onMessage();
         } else {
             console.log(`Unhandled message ${messageHash.text}`);
@@ -73,6 +78,24 @@ class CloudMessage {
         }
     }
 
+    flushChildMessage (containerName) {
+        const messageHandler = this.getMessageHandler(containerName);
+
+        if (messageHandler) {
+            const now = moment().valueOf();
+            messageHandler.messages = _.filter(messageHandler.messages, message => message.origin === messageHandler.containerName ||
+                    (!message.forceFlush && now - 500 < message.timestamp));
+
+            _.forEach(messageHandler.messages, message => {
+                if (message.origin !== messageHandler.containerName) {
+                    message.forceFlush = true;
+                }
+            });
+
+            messageHandler.onMessage();
+        }
+    }
+
     /*
      * unsubscribe to the message receiver.
      */
@@ -93,6 +116,7 @@ class CloudMessage {
      */
     subscribe (containerName, params) {
         this.subscribers[containerName] = _.extend({
+            containerName,
             messages: [],
             onMessage: _.noop()
         }, params);

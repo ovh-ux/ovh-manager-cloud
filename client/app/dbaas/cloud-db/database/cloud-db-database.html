@@ -1,0 +1,16 @@
+<section class="cui-page__content">
+    <cui-page-content-title text="'cloud_db_database_list_col_name' | translate"></cui-page-content-title>
+    <cui-action-button data-action="$ctrl.actions.addDatabase" data-type="secondary"></cui-action-button>
+
+    <cui-loader data-ng-show="$ctrl.databases.loading"></cui-loader>
+    <oui-table data-ng-hide="$ctrl.databases.loading"
+        rows="$ctrl.databases.data">
+        <column title="'cloud_db_database_list_col_name' | translate" property="displayName" sortable="asc"></column>
+        <column title="'cloud_db_database_list_col_disk_space' | translate" property="quotaUsed.text" sortable></column>
+        <column title="'cloud_db_database_list_col_linked_user' | translate" property="users.length" sortable></column>
+        <column title="'cloud_db_database_list_col_backup' | translate" property="dumpCount" sortable></column>
+        <column title="'cloud_db_database_list_col_status' | translate" property="status.text" sortable></column>
+        <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="$ctrl.getActionTemplate()"></column>
+        <empty-placeholder data-translate="cloud_db_database_list_empty"></empty-placeholder>
+    </oui-table>
+</section>

@@ -29,20 +29,6 @@ class IpLoadBalancerActionService {
         });
     }
 
-    nameChange (serviceName, successHandler) {
-        this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/iplb/modal/service-name/iplb-name-change.html",
-                controller: "IpLoadBalancerNameChangeCtrl",
-                controllerAs: "IpLoadBalancerNameChangeCtrl",
-                resolve: {
-                    serviceName: () => serviceName
-                }
-            },
-            successHandler
-        });
-    }
-
     cipherChange (serviceName, successHandler) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {

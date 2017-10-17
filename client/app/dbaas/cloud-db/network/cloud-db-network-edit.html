@@ -1,0 +1,50 @@
+<cui-modal>
+    <form novalidate name="$ctrl.form">  
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'cloud_db_network_add' | translate">
+            <cui-loader data-ng-if="$ctrl.isModalLoading()"></cui-loader>
+            <div class="oui-field">
+                <label for="name" class="oui-field__label oui-label" data-translate="cloud_db_network_add_label_name"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_3">
+                        <input type="text"
+                            data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.name.$invalid }"
+                            id="name"
+                            name="name"
+                            class="oui-input"
+                            data-ng-minlength="$ctrl.model.name.minLength"
+                            data-ng-maxlength="$ctrl.model.name.maxLength"
+                            data-ng-model="$ctrl.model.name.value"
+                            data-ng-required="$ctrl.model.name.required" />
+                    </div>
+                </div>
+            </div>
+            <div class="oui-field">
+                <label for="network" class="oui-field__label oui-label" data-translate="cloud_db_network_add_label_ip"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <input type="text"
+                            data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form.network.$invalid }"
+                            id="network"
+                            name="network"
+                            class="oui-input"
+                            data-ng-maxlength="$ctrl.model.network.maxLength"
+                            data-ng-model="$ctrl.model.network.value"
+                            data-ng-required="$ctrl.model.network.required" />
+                    </div>
+                </div>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_edit' | translate" 
+                data-on-click="$ctrl.update()"
+                data-disabled="$ctrl.isModalLoading()"
+                data-ng-if="$ctrl.isInEdition()"></cui-submit-button>
+            <cui-submit-button data-text="'common_add' | translate" 
+                data-on-click="$ctrl.add()"
+                data-disabled="$ctrl.isModalLoading()"
+                data-ng-if="!$ctrl.isInEdition()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

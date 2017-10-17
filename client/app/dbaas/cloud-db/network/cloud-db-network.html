@@ -1,0 +1,17 @@
+<section class="cui-page__content">
+    <cui-page-content-title text="'cloud_db_network_title' | translate"></cui-page-content-title>
+    <p data-translate="cloud_db_network_intro_text"></p>
+    <cui-action-button data-action="$ctrl.actions.addNetwork" data-type="secondary"></cui-action-button>
+     
+    <cui-loader data-ng-show="$ctrl.networks.loading"></cui-loader>
+    <oui-table data-ng-hide="$ctrl.networks.loading"
+        rows="$ctrl.networks.data">
+        <column title="'cloud_db_network_list_col_network' | translate" property="name" sortable="asc"></column>
+        <column title="'cloud_db_network_list_col_ip' | translate" property="network" sortable></column>
+        <column title="'common_table_col_progress' | translate" property="task.progress" sortable class="oui-table__cell_component">
+            <cui-task-progress data-task="$row.task"></cui-task-progress>
+        </column>
+        <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="$ctrl.getActionTemplate()"></column>
+        <empty-placeholder data-translate="cloud_db_network_list_empty"></empty-placeholder>
+    </oui-table>
+</section>
