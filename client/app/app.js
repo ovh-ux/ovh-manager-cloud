@@ -53,8 +53,7 @@ angular.module("managerApp", [
     "matchmedia-ng",
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
-    "ovhBrowserAlert",
-    "ovh-angular-apiv7"
+    "ovhBrowserAlert"
 ])
     .config(function ($stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) {
         "use strict";
