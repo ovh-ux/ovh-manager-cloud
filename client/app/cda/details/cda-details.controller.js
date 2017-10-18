@@ -14,7 +14,7 @@ angular.module("managerApp")
         title: $translate.instant("cda_guide_title"),
         list: [{
                     name: $translate.instant("cda_guide_name"),
-                    url: ovhDocUrl.getDocUrl("cloud/storage/ceph")
+                    url: this.ovhDocUrl.getDocUrl("storage")
                 }],
         footer: $translate.instant("cda_guide_footer")
 
