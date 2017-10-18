@@ -1,12 +1,12 @@
 (() => {
     "use strict";
-    const allEuropeanSubsidiaries = ["CZ", "DE", "ES", "FI", "FR", "GB", "IT", "LT", "NL", "PL", "PT"];
+    const allEuropeanSubsidiaries = ["CZ", "DE", "ES", "FI", "FR", "GB", "IE", "IT", "LT", "MA" ,"NL", "PL", "PT", "SN", "TN"];
     const allCanadianSubsidiaries = ["ASIA", "AU", "CA", "QC", "SG", "WE", "WS"];
     const featuresAvailability = {
         VPS: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         SERVER: {
@@ -51,7 +51,7 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
-                US: ["US"],
+                US: ["US"]
             }
         },
         licence: {
@@ -64,7 +64,7 @@
         NASHA: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         METRICS: {
