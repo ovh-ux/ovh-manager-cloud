@@ -98,7 +98,7 @@
     "ovh-common-style": "^3.2.2",
     "lodash": "~3.10.1",
     "ovh-api-services": "^2.1.6",
-    "ovh-angular-actions-menu": "^2.0.0"
+    "ovh-angular-actions-menu": "^2.0.0",
     "ng-at-internet": "feature/decorator"
   },
   "overrides": {
