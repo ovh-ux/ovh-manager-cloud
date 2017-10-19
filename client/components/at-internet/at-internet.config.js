@@ -23,14 +23,12 @@ angular.module("managerApp")
     if (referrerSite) {
         config.referrerSite = referrerSite;
     }
-
+    
     OvhApiMe.Lexi().get().$promise
         .then(me => {
             config.countryCode = me.country;
             config.currencyCode =  me.currency && me.currency.code;
-        })
-        .catch(err => console.log(err))
-        .finally(() => {
+            config.visitorId = me.customerCode;
             atInternet.setDefaults(config);
         });
 });
