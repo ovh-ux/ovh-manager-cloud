@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Le mot de passe doit contenir au moins un caractère spécial.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Le mot de passe ne doit pas contenir les caractères <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Entrez le nouveau mot de passe</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Laissez le système générer envoyer un mot de passe et vous l'envoyer par e-mail.</translation>
+   <translation id="vdi_pwd_password_label">Entrer le nouveau mot de passe</translation>
+   <translation id="vdi_pwd_password_generated">Générer un mot de passe aléatoire. Vous recevrez ce mot de passe par e-mail.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Changement d'alias</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Entrez le nouvel alias</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Accéder à la console</translation>
    <translation id="vdi_btn_console" qtlid="164844">Accéder à la console</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Actuellement en test, n'hésitez pas à faire des retours sur l'utilisation.</p><p>Vous allez recevoir un email contenant la procédure pour vous connecter a la console de votre Cloud Desktop</p><p>Utilisez CTRL+ALT+SHIFT une fois connecté.</p></translation>
+   <translation id="vdi_console_info">Vous allez recevoir un e-mail contenant la procédure à suivre pour vous connecter à la console de votre Cloud Desktop. Souhaitez-vous continuer?</translation>
    <translation id="vdi_console_task" qtlid="406554">Demande d'accès à la console envoyée</translation>
    <translation id="vdi_console_done" qtlid="406567">Vous allez recevoir un mail pour votre demande d'accès à la console.</translation>
 
