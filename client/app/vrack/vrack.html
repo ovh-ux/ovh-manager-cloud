@@ -58,7 +58,7 @@
     <div class="cui-page__content">
         <section>
             <div ng-if="VrackCtrl.description || VrackCtrl.descriptionEditing">
-                <cui-page-content-title data-text=" 'vrack_description_title' | translate"></cui-page-content-title>
+                <cui-page-content-title data-text="'vrack_description_title' | translate"></cui-page-content-title>
                 <form name="descriptionForm" data-ng-class="{'has-error': descriptionForm.description.$invalid}" ng-submit="VrackCtrl.saveDescription()">
                     <div class="form-group" ng-if="VrackCtrl.descriptionEditing">
                         <textarea id="description"
@@ -115,7 +115,7 @@
         </section>
 
         <section>
-            <cui-page-content-title data-text=" 'vrack_introduction_title' | translate"></cui-page-content-title>
+            <cui-page-content-title data-text="'vrack_introduction_title' | translate"></cui-page-content-title>
             <p data-translate="vrack_introduction_description"></p>
             <p data-ng-if="VrackCtrl.changeOwnerUrl"
                data-translate="vrack_introduction_change_owner"
