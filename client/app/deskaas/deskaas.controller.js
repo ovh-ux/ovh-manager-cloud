@@ -1,87 +1,78 @@
-"use strict";
+class DeskaasCtrl {
+    constructor ($q, $translate, OvhApiDeskaasService, CloudMessage) {
+        this.$q = $q;
+        this.$translate = $translate;
+        this.OvhApiDeskaasService = OvhApiDeskaasService;
+        this.CloudMessage = CloudMessage;
 
-angular.module("managerApp").controller("DeskaasCtrl", function (OvhApiDeskaasService, Toast, $translate, $q) {
+        this.flags = {
+            initializing: true
+        };
+        this.services = [];
+    }
 
-    var self = this;
+    $onInit () {
+        this.flags.initializing = true;
+        this.$q.all([this.getServices()]).then(() => {
+            this.flags.initializing = false;
+        });
+    }
 
-    self.flags = {
-        initializing: true
-    };
-
-    function handleMethodCall (promise, success) {
-
+    handleMethodCall (promise, success) {
         return promise
             .then(success)
-            .catch(function (err) {
-                Toast.error([$translate.instant("common_api_error"), err.data.message].join(" "));
+            .catch(err => {
+                this.CloudMessage.error([this.$translate.instant("common_api_error"), err.data.message].join(" "), "deskaas.details");
             });
     }
 
-    self.services = [];
-
-    function registerService (details, serviceInfo, user) {
-
-        self.services.push({
-            details : details,
-            serviceInfo : serviceInfo,
-            user : user
+    registerService (details, serviceInfo, user) {
+        this.services.push({
+            details,
+            serviceInfo,
+            user
         });
-
     }
 
-    function loadService (serviceId) {
-        var servicePromise = OvhApiDeskaasService.Lexi().serviceInfos({ serviceName: serviceId }).$promise;
-        servicePromise.then(function (serviceInfo) {
-            var detailsPromise = OvhApiDeskaasService.Lexi().getDetails({ serviceName: serviceId }).$promise;
-            detailsPromise.then(function (details) {
-                if (details.alias != 'noAlias') {
-                    details.displayName = details.alias + ' (' + details.serviceName + ')';
+    loadService (serviceId) {
+        const servicePromise = this.OvhApiDeskaasService.Lexi().serviceInfos({ serviceName: serviceId }).$promise;
+        servicePromise.then(serviceInfo => {
+            const detailsPromise = this.OvhApiDeskaasService.Lexi().getDetails({ serviceName: serviceId }).$promise;
+            detailsPromise.then(details => {
+                if (details.alias !== "noAlias") {
+                    details.displayName = `${details.alias} (${details.serviceName})`;
                 } else {
                     details.displayName = details.serviceName;
                 }
 
                 if (serviceInfo.status === "ok") {
-                    var userPromise = OvhApiDeskaasService.Lexi().getUser({ serviceName: serviceId }).$promise;
-                    userPromise.then(function (user) {
-                        user.displayName = user.name + ' (' + user.email + ')';
-                        registerService(details, serviceInfo, user);
+                    const userPromise = this.OvhApiDeskaasService.Lexi().getUser({ serviceName: serviceId }).$promise;
+                    userPromise.then(user => {
+                        user.displayName = `${user.name} (${user.email})`;
+                        this.registerService(details, serviceInfo, user);
                     });
                 } else {
-                    registerService(details, serviceInfo, { displayName: "-" });
+                    this.registerService(details, serviceInfo, { displayName: "-" });
                 }
             });
         });
         return servicePromise;
     }
 
-    self.getServices = function () {
+    getServices () {
+        const promise = this.OvhApiDeskaasService.Lexi().getServices().$promise;
 
-        var promise = OvhApiDeskaasService.Lexi().getServices().$promise;
-
-        return handleMethodCall(
+        return this.handleMethodCall(
             promise,
-            function (serviceIds) {
-                var promises = [];
-                serviceIds.forEach(function (serviceId) {
-                    promises.push(loadService(serviceId));
-                });
-                return $q.all(promises);
+            serviceIds => {
+                const promises = [];
+                serviceIds.forEach(serviceId => promises.push(this.loadService(serviceId)));
+                return this.$q.all(promises);
             }
         );
 
-    };
-
-    function init () {
-        self.flags.initializing = true;
-
-        $q.all([
-            self.getServices()
-        ])
-            .then(function () {
-                self.flags.initializing = false;
-            });
     }
 
-    init();
+}
 
-});
+angular.module("managerApp").controller("DeskaasCtrl", DeskaasCtrl);
