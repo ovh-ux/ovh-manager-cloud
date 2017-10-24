@@ -66,7 +66,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
         }
 
         function loadMessage () {
-            CloudMessage.unSubscribe("iaas.pci-project.storage.detailsß");
+            CloudMessage.unSubscribe("iaas.pci-project.storage.details");
             $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.storage.details", { onMessage: () => refreshMessage() });
         }
 
