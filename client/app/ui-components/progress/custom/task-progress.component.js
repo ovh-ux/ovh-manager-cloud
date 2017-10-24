@@ -1,9 +1,12 @@
 angular.module("managerApp")
     .component("cuiTaskProgress", {
         template: `
-            <cui-progress data-label="$ctrl.task.progress + '%'"
-                data-value="$ctrl.task.progress"
-                data-type="{{ $ctrl.type }}"></cui-progress>
+            <div>
+                <cui-progress data-ng-if="$ctrl.canDisplayBar()" 
+                    data-label="($ctrl.task.progress || $ctrl.task.percentage) + '%'"
+                    data-value="$ctrl.task.progress || $ctrl.task.percentage"
+                    data-type="{{ $ctrl.type }}"></cui-progress>
+            </div>
         `,
         controller:
             class CuiTaskProgressController {
@@ -11,8 +14,12 @@ angular.module("managerApp")
                     this.$scope = $scope;
                 }
 
+                canDisplayBar () {
+                    return !_.isNaN(_.get(this.task, "progress") || _.get(this.task, "percentage")) && _.get(this.task, "status");
+                }
+
                 $onInit () {
-                    this.$scope.$watch("this.task.status", () => this.refreshType());
+                    this.$scope.$watch(() => _.get(this.task, "status"), () => this.refreshType());
                 }
 
                 refreshType () {

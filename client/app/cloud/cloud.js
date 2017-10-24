@@ -25,13 +25,3 @@ angular.module("managerApp").run(function ($rootScope, $state, $stateParams) {
         }
     });
 });
-
-angular.module("managerApp").config(function ($urlRouterProvider) {
-    // Redirect /cloud to /iaas/pci
-    $urlRouterProvider.rule(function ($injector, $location) {
-        var path = $location.path();
-        if (path.match("/cloud")) {
-            return path.replace("/cloud", "/iaas/pci");
-        }
-    });
-});

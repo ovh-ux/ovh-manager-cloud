@@ -159,7 +159,7 @@ class IpLoadBalancerServerFarmEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerServerFarmService.create(this.type, this.$stateParams.serviceName, this.getCleanFarm())
             .then(() => {
                 this.$state.go("network.iplb.detail.server-farm");
@@ -174,7 +174,7 @@ class IpLoadBalancerServerFarmEditCtrl {
             return this.$q.reject();
         }
         this.saving = true;
-        this.CloudMessage.flushMessages();
+        this.CloudMessage.flushChildMessage();
         return this.IpLoadBalancerServerFarmService.update(this.type, this.$stateParams.serviceName, this.farm.farmId, this.getCleanFarm())
             .then(() => {
                 this.$state.go("network.iplb.detail.server-farm");
