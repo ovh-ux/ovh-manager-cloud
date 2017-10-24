@@ -118,7 +118,7 @@
         showEditName (desc) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
-                    templateUrl: "app/dbaas/metrics/dashboard/edit/metrics-dashboard-edit.html",
+                    templateUrl: "app/dbaas/dbaas-metrics/dashboard/edit/metrics-dashboard-edit.html",
                     controller: "MetricsDashboardEditCtrl",
                     controllerAs: "$ctrl",
                     resolve: {
