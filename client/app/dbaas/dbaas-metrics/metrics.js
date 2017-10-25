@@ -38,8 +38,20 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("dbaas.metrics.detail.token", {
             url: "/token",
+            redirectTo: "dbaas.metrics.detail.token.home",
             views: {
                 metricsHeader,
+                metricsContent: {
+                    template: `
+                        <div ui-view="metricsContent"></div>
+                    `
+                }
+            },
+            translations: ["common", "dbaas/dbaas-metrics", "dbaas/dbaas-metrics/token"]
+        })
+        .state("dbaas.metrics.detail.token.home", {
+            url: "/",
+            views: {
                 metricsContent: {
                     templateUrl: "app/dbaas/dbaas-metrics/token/metrics-token.html",
                     controller: "MetricsTokenCtrl",
@@ -51,8 +63,7 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.metrics.detail.token.add", {
             url: "/add",
             views: {
-                metricsHeader,
-                metricsSubContent: {
+                metricsContent: {
                     templateUrl: "app/dbaas/dbaas-metrics/token/add/metrics-token-add.html",
                     controller: "MetricsTokenAddCtrl",
                     controllerAs: "MetricsTokenAddCtrl"
