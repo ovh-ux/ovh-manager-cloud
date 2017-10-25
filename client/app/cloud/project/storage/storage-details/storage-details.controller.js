@@ -58,6 +58,18 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
 
         $scope.title = $translate.instant("storage_object_title") + " : " + $scope.storage.name;
 
+                // handle messages
+        $scope.messages = [];
+
+        function refreshMessage () {
+            $scope.messages = $scope.messageHandler.getMessages();
+        }
+
+        function loadMessage () {
+            CloudMessage.unSubscribe("iaas.pci-project.storage.details");
+            $scope.messageHandler = CloudMessage.subscribe("iaas.pci-project.storage.details", { onMessage: () => refreshMessage() });
+        }
+
         $scope.computeStorageSize = function () {
             return _.sum(_.map($scope.objects, "size"));
         };
@@ -453,5 +465,6 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
 
         function init () {
             getObjectList();
+            loadMessage();
         }
     }]);
