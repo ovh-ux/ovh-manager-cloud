@@ -3,7 +3,8 @@ angular.module("managerApp")
         template: `
             <cui-tile 
                 data-title="'common_tile_subscription' | translate"
-                data-loading="$ctrl.loading">
+                data-loading="$ctrl.loading"
+                class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-ng-if="$ctrl.subscriptionInfo.offer" 
                         data-term="'common_tile_subscription_offer' | translate" 

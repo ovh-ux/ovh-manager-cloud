@@ -69,35 +69,41 @@ class MetricService {
     }
 
     addToken (token) {
-        this.metrics.Token().Lexi().resetAllCache();
         return this.metrics.Token().Lexi()
             .save(token)
             .$promise
-            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_created")))
+            .then(response => {
+                this.metrics.Token().Lexi().resetAllCache();
+                return this.acceptResponse(response, this.$translate.instant("metrics_token_created"));
+            })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
     }
 
     updateToken (serviceName, tokenID, description) {
-        this.metrics.Token().Lexi().resetAllCache();
         return this.metrics.Token().Lexi()
             .edit({
                 serviceName,
                 tokenID,
                 description
             }).$promise
-            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_updated")))
+            .then(response => {
+                this.metrics.Token().Lexi().resetAllCache();
+                return this.acceptResponse(response, this.$translate.instant("metrics_token_updated"));
+            })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
     }
 
     deleteToken (serviceName, tokenID) {
-        this.metrics.Token().Lexi().resetAllCache();
         return this.metrics.Token().Lexi()
             .delete({
                 serviceName,
                 tokenID
             })
             .$promise
-            .then(response => this.acceptResponse(response, this.$translate.instant("metrics_token_revoked")))
+            .then(response => {
+                this.metrics.Token().Lexi().resetAllCache();
+                return this.acceptResponse(response, this.$translate.instant("metrics_token_revoked"));
+            })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_delete_token")));
     }
 
