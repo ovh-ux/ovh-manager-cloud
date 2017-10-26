@@ -17,7 +17,7 @@
    <translation id="cda_pool_add_poolname_label" qtlid="3818">Příjmení</translation>
 
    <translation id="cda_pool_add_poolname_required" qtlid="354288">Zadejte prosím název.</translation>
-   <translation id="cda_pool_add_poolname_pattern" qtlid="354301">Le nom ne peut contenir d'espaces.</translation>
+   <translation id="cda_pool_add_poolname_pattern" qtlid="354301">Název nesmí obsahovat mezery.</translation>
    <translation id="cda_pool_add_poolname_maxlength" qtlid="354314">Maximální počet znaků v názvu: {{ maxlength }}</translation>
    <translation id="cda_pool_add_success" qtlid="354327">Pool ajouté avec succès.</translation>
 

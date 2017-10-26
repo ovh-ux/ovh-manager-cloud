@@ -103,7 +103,7 @@
         showPreview (tokenID) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
-                    templateUrl: "app/dbaas/metrics/token/preview/metrics-token-preview.html",
+                    templateUrl: "app/dbaas/dbaas-metrics/token/preview/metrics-token-preview.html",
                     controller: "MetricsTokenPreviewCtrl",
                     controllerAs: "$ctrl",
                     resolve: {
@@ -117,7 +117,7 @@
         edit (tokenID, desc) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
-                    templateUrl: "app/dbaas/metrics/token/edit/metrics-token-edit.html",
+                    templateUrl: "app/dbaas/dbaas-metrics/token/edit/metrics-token-edit.html",
                     controller: "MetricsTokenEditCtrl",
                     controllerAs: "$ctrl",
                     resolve: {
@@ -135,7 +135,7 @@
         delete (tokenID) {
             this.ControllerHelper.modal.showModal({
                 modalConfig: {
-                    templateUrl: "app/dbaas/metrics/token/delete/metrics-token-delete.html",
+                    templateUrl: "app/dbaas/dbaas-metrics/token/delete/metrics-token-delete.html",
                     controller: "MetricsTokenDeleteCtrl",
                     controllerAs: "$ctrl",
                     resolve: {

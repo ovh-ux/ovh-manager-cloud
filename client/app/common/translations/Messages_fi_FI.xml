@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Peruuta</translation>
    <translation id="common_edit" qtlid="37875">Muokkaa</translation>
    <translation id="common_consult" qtlid="339639">Tarkastele</translation>
+   <translation id="common_see_detail" qtlid="225192">Katso tiedot</translation>
    <translation id="common_manage" qtlid="16301">Hallinnoi</translation>
    <translation id="common_apply" qtlid="41326">Vahvista</translation>
    <translation id="common_loading" qtlid="58256">Ladataan</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Muokkaa</translation>
    <translation id="common_select" qtlid="17923">Valitse</translation>
    <translation id="common_add" qtlid="37923">Lisää</translation>
+   <translation id="common_save" qtlid="49754">Tallenna</translation>
+   <translation id="common_delete" qtlid="2414">Poista</translation>
+   <translation id="common_select" qtlid="17923">Valitse</translation>
    <translation id="common_remove" qtlid="323093">Testaus</translation>
    <translation id="edit" qtlid="37875">Muokkaa</translation>
    <translation id="delete" qtlid="2414">Poista</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Luontipäivä</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Tila</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Muokkaa nimeä</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Oletusnimi</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personoitu nimi</translation>
 
    <translation id="common_preview_see" qtlid="433371">Katso näkymä</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Toiminto</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Tulosta per sivu</translation>
    <translation id="common_pagination_page" qtlid="433397">sivu</translation>
    <translation id="common_pagination_of" qtlid="121615">aikaväli</translation>

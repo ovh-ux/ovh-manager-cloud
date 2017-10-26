@@ -5,6 +5,10 @@ class CuiTileActionMenuController {
         }
     }
 
+    getActionStateParamString (action) {
+        return JSON.stringify(action.stateParams);
+    }
+
     hasAvailableAction () {
         return this.actions && _.find(this.actions, action => action.isAvailable());
     }
@@ -35,9 +39,7 @@ angular.module("managerApp")
                         </div>
                     </div>
                 </div>
-                <div class="cui-tile__body" data-ng-if="!$ctrl.loading">
-                    <ng-transclude></ng-transclude>
-                </div>
+                <div data-ng-transclude data-ng-if="!$ctrl.loading"></div>
             </div>
         `,
         controller: class CuiTileCtrl {},
@@ -49,6 +51,50 @@ angular.module("managerApp")
         bindToController: {
             title: "<",
             loading: "<"
+        }
+    }))
+    .directive("cuiTileBody", () => ({
+        template: `
+            <div class="cui-tile__body">
+                <ng-transclude></ng-transclude>
+            </div>
+        `,
+        transclude: true,
+        replace: true,
+        restrict: "E",
+        scope: true
+    }))
+    .directive("cuiTileBodyList", () => ({
+        template: `
+            <ul class="cui-tile__body cui-tile__body_list" ng-transclude>
+            </ul>
+        `,
+        transclude: true,
+        replace: true,
+        restrict: "E",
+        scope: true
+    }))
+    .directive("cuiTileBodyListItem", () => ({
+        template: `
+            <li class="cui-tile__item cui-tile__item_button">
+                <cui-tile-definitions data-ng-if="$ctrl.term">
+                    <cui-tile-definition-term data-term="$ctrl.term"></cui-tile-definition-term>
+                    <cui-tile-definition-description data-description="$ctrl.description"></cui-clipboard>
+                </cui-tile-definitions>
+                <ng-transclude></ng-transclude>
+                <cui-tile-action-menu data-ng-if="$ctrl.actions" data-actions="$ctrl.actions"></cui-tile-action-menu>
+            </li>
+        `,
+        transclude: true,
+        replace: true,
+        restrict: "E",
+        scope: true,
+        controllerAs: "$ctrl",
+        controller: class cuiTileBodyListItemController {},
+        bindToController: {
+            term: "<",
+            description: "<",
+            actions: "<"
         }
     }))
     .component("cuiTileItem", {
@@ -90,13 +136,18 @@ angular.module("managerApp")
                             <div class="oui-action-menu-item__icon"></div>
                             <a class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.href"
                                 href="{{ action.href }}"
-                                data-ng-disabled="!action.isAvailable()"
+                                data-ng-disabled="action.isAvailable && !action.isAvailable()"
                                 target="_blank">
+                                <span data-ng-bind="action.text"></span>
+                            </a>
+                            <a class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.state"
+                                data-ui-sref="{{ action.state + '(' + $ctrl.getActionStateParamString(action) + ')' }}"
+                                data-ng-disabled="action.isAvailable && !action.isAvailable()">
                                 <span data-ng-bind="action.text"></span>
                             </a>
                             <button class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.callback"
                                 type="button"
-                                data-ng-disabled="!action.isAvailable()"
+                                data-ng-disabled="action.isAvailable && !action.isAvailable()"
                                 data-ng-bind="action.text"
                                 data-ng-click="action.callback()"></button>
                         </div>
@@ -109,6 +160,45 @@ angular.module("managerApp")
             actions: "<"
         }
     })
+    .directive("cuiTileActionLink", () => ({
+        replace: true,
+        restrict: "E",
+        controllerAs: "$ctrl",
+        controller: class CuiTileDefinitionsCtrl {
+            getActionStateParamString () {
+                if (!this.action.stateParams) { return ""; }
+                return `(${JSON.stringify(this.action.stateParams)})`;
+            }
+        },
+        scope: true,
+        template: `
+            <div>
+                <button data-ng-if="$ctrl.action.callback"
+                    class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
+                    data-ng-click="$ctrl.action.callback()"
+                    data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
+                    <span data-ng-bind="$ctrl.action.text"></span>
+                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                </button>
+                <a data-ng-if="$ctrl.action.state"
+                    class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
+                    data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}"
+                    data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
+                    <span data-ng-bind="$ctrl.action.text"></span>
+                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                </a>
+                <a data-ng-if="$ctrl.action.href"
+                    class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
+                    data-ng-href="{{ $ctrl.action.href }}"
+                    data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
+                    <span data-ng-bind="$ctrl.action.text"></span>
+                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>`,
+        bindToController: {
+            action: "<"
+        }
+    }))
     .directive("cuiTileDefinitions", () => ({
         replace: true,
         restrict: "E",

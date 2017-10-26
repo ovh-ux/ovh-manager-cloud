@@ -1,68 +1,69 @@
-<section class="vrack" ng-if="VrackCtrl.serviceName" class="row">
-        <header class="vrack__header" data-ng-if="VrackCtrl.nameEditing">
-            <form name="nameForm" class="vrack__edit-form"
-                  data-ng-class="{'has-error': nameForm.name.$invalid}"
-                  data-ng-submit="VrackCtrl.saveName()">
-                <input id="name"
-                       name="name"
-                       type="text"
-                       class="vrack__edit-input form-control"
-                       data-ng-model="VrackCtrl.name"
-                       data-ng-maxLength="VrackCtrl.nameOptions.maxLength"
-                       data-ng-pattern="VrackCtrl.nameOptions.pattern">
-                </input>
-                <button class="vrack__edit-button vrack__edit-button_save btn btn-icon"
-                        type="submit"
-                        title="{{'vrack_cloud_save_name' | translate }}"
-                        data-ng-disabled="nameForm.name.$invalid">
-                    <i class="ovh-font ovh-font-check" aria-hidden="true"></i>
-                </button>
-                <button class="vrack__edit-button vrack__edit-button_cancel btn btn-icon"
-                        type="reset"
-                        title="{{'vrack_cloud_reset_name' | translate }}"
-                        data-ng-click="VrackCtrl.cancelEditName()">
-                    <i class="ovh-font ovh-font-wrong" aria-hidden="true"></i>
-                </button>
-
-                <ul class="vrack__error-list vrack__error-list_in-header list-unstyled has-error"
-                    data-ng-show="nameForm.name.$invalid"
-                    data-ng-messages="nameForm.name.$error">
-                    <li class="vrack__error-item help-block"
-                        data-ng-if="nameForm.name.$error.maxlength"
-                        data-translate="vrack_cloud_name_max_length"
-                        data-translate-values="{ max: VrackCtrl.nameOptions.maxLength}"></li>
-                    <li class="vrack__error-item help-block"
-                        data-ng-if="nameForm.name.$error.pattern"
-                        data-translate="vrack_cloud_name_pattern"></li>
-                </ul>
-            </form>
-        </header>
-
-        <header class="vrack__header" data-ng-if="!VrackCtrl.nameEditing">
-            <div>
-                <h1 class="cui-page-header__title" data-ng-bind="VrackCtrl.name || VrackCtrl.serviceName"></h1>
-                <h6 class="cui-page-header__subtitle" data-ng-bind="VrackCtrl.serviceName" data-ng-if="VrackCtrl.name !== ''"></h6>
-            </div>
-            <button class="vrack__edit-button btn btn-icon"
-                    type="button"
-                    title="{{'vrack_cloud_modiy_name' | translate }}"
-                    data-ng-click="VrackCtrl.editName()">
-                <i class="ovh-font ovh-font-editer" aria-hidden="true"></i>
+<section class="vrack" ng-if="VrackCtrl.serviceName" class="cui-page">
+    <header class="vrack__header" data-ng-if="VrackCtrl.nameEditing">
+        <form name="nameForm" class="vrack__edit-form"
+              data-ng-class="{'has-error': nameForm.name.$invalid}"
+              data-ng-submit="VrackCtrl.saveName()">
+            <input id="name"
+                   name="name"
+                   type="text"
+                   class="vrack__edit-input form-control"
+                   data-ng-model="VrackCtrl.name"
+                   data-ng-maxLength="VrackCtrl.nameOptions.maxLength"
+                   data-ng-pattern="VrackCtrl.nameOptions.pattern">
+            </input>
+            <button class="vrack__edit-button vrack__edit-button_save btn btn-icon"
+                    type="submit"
+                    title="{{'vrack_cloud_save_name' | translate }}"
+                    data-ng-disabled="nameForm.name.$invalid">
+                <i class="ovh-font ovh-font-check" aria-hidden="true"></i>
             </button>
-        </header>
+            <button class="vrack__edit-button vrack__edit-button_cancel btn btn-icon"
+                    type="reset"
+                    title="{{'vrack_cloud_reset_name' | translate }}"
+                    data-ng-click="VrackCtrl.cancelEditName()">
+                <i class="ovh-font ovh-font-wrong" aria-hidden="true"></i>
+            </button>
 
+            <ul class="vrack__error-list vrack__error-list_in-header list-unstyled has-error"
+                data-ng-show="nameForm.name.$invalid"
+                data-ng-messages="nameForm.name.$error">
+                <li class="vrack__error-item help-block"
+                    data-ng-if="nameForm.name.$error.maxlength"
+                    data-translate="vrack_cloud_name_max_length"
+                    data-translate-values="{ max: VrackCtrl.nameOptions.maxLength}"></li>
+                <li class="vrack__error-item help-block"
+                    data-ng-if="nameForm.name.$error.pattern"
+                    data-translate="vrack_cloud_name_pattern"></li>
+            </ul>
+        </form>
+    </header>
+
+    <header class="vrack__header" data-ng-if="!VrackCtrl.nameEditing">
         <div>
-            <cui-message-container data-messages="VrackCtrl.messages"></cui-message-container>
+            <h1 class="cui-page-header__title" data-ng-bind="VrackCtrl.name || VrackCtrl.serviceName"></h1>
+            <h6 class="cui-page-header__subtitle" data-ng-bind="VrackCtrl.serviceName" data-ng-if="VrackCtrl.name !== ''"></h6>
         </div>
+        <button class="vrack__edit-button btn btn-icon"
+                type="button"
+                title="{{'vrack_cloud_modiy_name' | translate }}"
+                data-ng-click="VrackCtrl.editName()">
+            <i class="oui-icon oui-icon-pen_line" aria-hidden="true"></i>
+        </button>
+    </header>
 
+    <div>
+        <cui-message-container data-messages="VrackCtrl.messages"></cui-message-container>
+    </div>
+
+    <div class="cui-page__content">
         <section>
             <div ng-if="VrackCtrl.description || VrackCtrl.descriptionEditing">
-                <h2 class="vrack__section-title" data-translate="vrack_description_title"></h2>
+                <cui-page-content-title data-text="'vrack_description_title' | translate"></cui-page-content-title>
                 <form name="descriptionForm" data-ng-class="{'has-error': descriptionForm.description.$invalid}" ng-submit="VrackCtrl.saveDescription()">
                     <div class="form-group" ng-if="VrackCtrl.descriptionEditing">
                         <textarea id="description"
                             name="description"
-                            class="form-control vertical-resize ng-touched"
+                            class="oui-textarea vertical-resize ng-touched"
                             rows="4"
                             data-ng-model="VrackCtrl.description"
                             data-ng-maxLength="VrackCtrl.descriptionOptions.maxLength">
@@ -93,12 +94,12 @@
                     </div>
                 </form>
                 <div class="form-group" ng-if="!VrackCtrl.descriptionEditing">
-                    <span class="vrack__description vrack__description ng-scope" data-ng-bind="VrackCtrl.description"></span>
+                    <span class="ng-scope" data-ng-bind="VrackCtrl.description"></span>
                     <button class="btn btn-icon"
                             type="button"
                             title="{{'vrack_cloud_modiy_description' | translate }}"
                             data-ng-click="VrackCtrl.editDescription()">
-                        <i class="ovh-font ovh-font-editer" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-pen_line" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -113,12 +114,12 @@
             </div>
         </section>
 
-        <section class="vrack__introduction">
-            <h2 class="vrack__section-title" data-translate="vrack_introduction_title"></h2>
-            <p class="vrack__text" data-translate="vrack_introduction_description"></p>
-            <p class="vrack__text" data-ng-if="VrackCtrl.changeOwnerUrl"
-                                   data-translate="vrack_introduction_change_owner"
-                                   data-translate-values="{ uri: VrackCtrl.changeOwnerUrl }"></p>
+        <section>
+            <cui-page-content-title data-text="'vrack_introduction_title' | translate"></cui-page-content-title>
+            <p data-translate="vrack_introduction_description"></p>
+            <p data-ng-if="VrackCtrl.changeOwnerUrl"
+               data-translate="vrack_introduction_change_owner"
+               data-translate-values="{ uri: VrackCtrl.changeOwnerUrl }"></p>
         </section>
 
         <section class="vrack__mapper">
@@ -141,4 +142,5 @@
                 </div>
             </div>
         </section>
+    </div>
 </section>

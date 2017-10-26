@@ -9,8 +9,8 @@
    <translation id="cpc_ssh_error" qtlid="248808">Oups, nous n'arrivons pas à récupérer la liste de vos clés SSH !</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">La communication entre les serveurs OVH utilise le protocole sécurisé (SSH) pour l’encryption des données.</translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Il existe des clients SSH pour chaque système d'exploitation. Consultez le <a href="{{ createUrl }}" target="_blank">guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> pour en savoir plus.</translation>
-   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Notez qu’il est également possible de <a href="{{ addUrl }}" target="_blank">configurer des clés SSH supplémentaires<i class="fa fa-external-link" aria-hidden="true"></i></a> sur votre instance pour donner l’accès à d'autres personnes ou de <a href="{{ changeUrl }}" target="_blank">changer sa clé SSH en cas de perte<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Il existe des clients SSH pour chaque système d'exploitation. Consultez le <a class="oui-link" href="{{ createUrl }}" target="_blank">guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> pour en savoir plus.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Notez qu’il est également possible de <a class="oui-link" href="{{ addUrl }}" target="_blank">configurer des clés SSH supplémentaires<i class="fa fa-external-link" aria-hidden="true"></i></a> sur votre instance pour donner l’accès à d'autres personnes ou de <a class="oui-link" href="{{ changeUrl }}" target="_blank">changer sa clé SSH en cas de perte<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Ajouter une clé</translation>
    <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Annuler l'ajout</translation>

@@ -20,7 +20,7 @@
 
     angular.module("managerApp")
         .component("metricsChartPie", {
-            templateUrl: "app/dbaas/metrics/dashboard/chart-pie/metrics-chart-pie.component.html",
+            templateUrl: "app/dbaas/dbaas-metrics/dashboard/chart-pie/metrics-chart-pie.component.html",
             bindings: {
                 value: "<",
                 color: "<",

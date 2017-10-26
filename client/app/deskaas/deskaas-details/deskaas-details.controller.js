@@ -1,13 +1,14 @@
 "use strict";
 
 angular.module("managerApp").controller("DeskaasDetailsCtrl",
-    function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, Toast, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
+    function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, CloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
               OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu) {
 
     var self = this;
 
     self.services = {};
     self.details = {};
+    self.messages = [];
     self.user = {};
     self.upgradeOptions = [];
     self.selectedUpgrade = "";
@@ -53,6 +54,16 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             callback: () => self.changeAlias($stateParams.serviceName),
             isAvailable: () => self.flags.editable()
         }
+    };
+
+
+    self.loadMessage = function () {
+        CloudMessage.unSubscribe("deskaas.details");
+        self.messageHandler = CloudMessage.subscribe("deskaas.details", { onMessage: () => self.refreshMessage() });
+    };
+
+    self.refreshMessage = function () {
+        self.messages = self.messageHandler.getMessages();
     };
 
     /*
@@ -208,7 +219,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             .then(success)
             .catch(function (err) {
                 var msg = _.get(err, "data.message", "");
-                Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
                 return $q.reject(err);
             });
     }
@@ -220,7 +231,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         return handleMethodCall(
             promise,
             function (response) {
-                Toast.success(successMessage);
+                CloudMessage.success(successMessage);
                 return response;
             })
             .catch(function (err) {
@@ -242,7 +253,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             .then(function () {
                 getConsole().catch(function (err) {
                     var msg = _.get(err, "data.message", "");
-                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                    CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
                 });
             });
     };
@@ -295,7 +306,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
                 .catch(function (err) {
 
                     var msg = _.get(err, "data.message", "");
-                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                    CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
 
                 });
 
@@ -408,7 +419,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             .then(newDisplayName => {
                 changeAlias(newDisplayName).catch(function (err) {
                     const msg = _.get(err, "data.message", "");
-                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                    CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
                 });
             });
     };
@@ -475,7 +486,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         modal.result.then(function (modalData) {
             changeUsername(modalData).catch(function (err) {
                 var msg = _.get(err, "data.message", "");
-                Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
             });
         });
 
@@ -498,7 +509,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             .then(modalData => {
                 confirmTerminate(modalData).catch(function (err) {
                     var msg = _.get(err, "data.message", "");
-                    Toast.error([$translate.instant("common_api_error"), msg].join(" "));
+                    CloudMessage.error([$translate.instant("common_api_error"), msg].join(" "));
                 });
             });
     };
@@ -630,9 +641,9 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
     function onTaskError (taskDetails) {
 
         if (!_.isEmpty(taskDetails)) {
-            Toast.error($translate.instant("vdi_task_error", taskDetails));
+            CloudMessage.error($translate.instant("vdi_task_error", taskDetails));
         } else {
-            Toast.error($translate.instant("common_api_error"));
+            CloudMessage.error($translate.instant("common_api_error"));
         }
 
         self.flags.restoring = false;
@@ -649,41 +660,41 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         case DESKAAS_ACTIONS.RESTORE:
             self.flags.restoring = false;
-            Toast.success($translate.instant("vdi_restored"));
+            CloudMessage.success($translate.instant("vdi_restored"));
             break;
 
         case DESKAAS_ACTIONS.REBOOT:
             self.flags.rebooting = false;
-            Toast.success($translate.instant("vdi_rebooted"));
+            CloudMessage.success($translate.instant("vdi_rebooted"));
             break;
 
         case DESKAAS_ACTIONS.DELETE:
             self.flags.deleting = false;
-            Toast.success($translate.instant("vdi_deleted"));
+            CloudMessage.success($translate.instant("vdi_deleted"));
             break;
 
         case DESKAAS_ACTIONS.UPGRADE:
             self.flags.upgrading = false;
-            Toast.success($translate.instant("vdi_upgraded"));
+            CloudMessage.success($translate.instant("vdi_upgraded"));
             break;
 
         case DESKAAS_ACTIONS.UPDATE_USER_PWD:
             self.flags.resettingPassword = false;
-            Toast.success($translate.instant("vdi_pwd_resetted"));
+            CloudMessage.success($translate.instant("vdi_pwd_resetted"));
             break;
 
         case DESKAAS_ACTIONS.UPDATE_ALIAS:
             self.flags.changingAlias = false;
-            Toast.success($translate.instant("vdi_alias_changed"));
+            CloudMessage.success($translate.instant("vdi_alias_changed"));
             break;
 
         case DESKAAS_ACTIONS.UPDATE_USERNAME:
             self.flags.changingUsername = false;
-            Toast.success($translate.instant("vdi_username_changed"));
+            CloudMessage.success($translate.instant("vdi_username_changed"));
             break;
 
         case DESKAAS_ACTIONS.CONSOLE_ACCESS:
-            Toast.success($translate.instant("vdi_console_done"));
+            CloudMessage.success($translate.instant("vdi_console_done"));
             break;
         }
 
@@ -755,6 +766,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         self.flags.init.serviceInfos = true;
         self.flags.init.details = true;
+        self.loadMessage();
 
         $q.all([
             self.serviceInfos().then(function () {

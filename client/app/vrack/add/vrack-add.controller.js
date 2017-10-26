@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("VrackAddCtrl",
-    function ($q, $translate, $state, $rootScope, Toast, OvhApiOrder, OvhApiVrack) {
+    function ($q, $translate, $state, $rootScope, CloudMessage, OvhApiOrder, OvhApiVrack) {
 
         var self = this;
 
@@ -22,7 +22,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
             }).$promise.then(function (data) {
                 self.model.agreements = data.contracts;
             }).catch(function (error) {
-                Toast.error($translate.instant("vrack_error_reason", { message: error.data.message }));
+                CloudMessage.error($translate.instant("vrack_error_reason", { message: error.data.message }));
             });
         };
 
@@ -31,11 +31,11 @@ angular.module("managerApp").controller("VrackAddCtrl",
             return OvhApiOrder.Vrack().New().Lexi().create({
                 quantity: this.model.quantityToOrder
             }).$promise.then(function (data) {
-                Toast.success($translate.instant("vrack_adding_success", { data: data }));
+                CloudMessage.success($translate.instant("vrack_adding_success", { data: data }));
                 self.model.purchaseOrderUrl = data.url;
                 self.loaders.validationPending = true;
             }).catch(function (error) {
-                Toast.error($translate.instant("vrack_error_reason", { message: error.data.message }));
+                CloudMessage.error($translate.instant("vrack_error_reason", { message: error.data.message }));
             }).finally(function () {
                 self.loaders.loading = false;
             });

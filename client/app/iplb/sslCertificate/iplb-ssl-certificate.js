@@ -38,7 +38,6 @@
                         controllerAs: "ctrl"
                     }
                 },
-                onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: ["common", "iplb", "iplb/sslCertificate"]
             })
             .state("network.iplb.detail.ssl-certificate.order", {
@@ -50,7 +49,6 @@
                         controllerAs: "ctrl"
                     }
                 },
-                onEnter: CloudMessage => CloudMessage.flushMessages(),
                 translations: ["common", "iplb", "iplb/sslCertificate"]
             });
     });

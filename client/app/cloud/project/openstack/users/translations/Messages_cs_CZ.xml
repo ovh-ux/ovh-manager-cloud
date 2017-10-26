@@ -38,6 +38,6 @@
    <translation id="openstackusers_users_delete_success_plural" qtlid="245532">Probíhá mazání zvolených {{nbUsers}} uživatelů.</translation>
    <translation id="openstackusers_users_delete_error_plural" qtlid="245545">Chyba, není možné vymazet {{nbUsers}} uživatelů.</translation>
    <translation id="openstackusers_users_delete_error_one" qtlid="245558">Chyba, tento uživatel nemůže být vymazán.</translation>
-   <translation id="openstackusers_user_delete_message" qtlid="354756">Êtes-vous certain de vouloir supprimer cet utilisateur?</translation>
+   <translation id="openstackusers_user_delete_message" qtlid="354756">Opravdu si přejete odstranit tohoto uživatele?</translation>
 
 </translations>

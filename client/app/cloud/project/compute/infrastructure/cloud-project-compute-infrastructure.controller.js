@@ -296,9 +296,10 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
              */
             if (vm.monthlyBilling && vm.monthlyBilling.status === 'ok') {
                 $uibModal.open({
+                    windowTopClass: 'cui-modal',
                     templateUrl: 'app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html',
                     controller: 'CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl',
-                    controllerAs: 'CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl',
+                    controllerAs: '$ctrl',
                     resolve: {
                         params: function () {
                             return vm;

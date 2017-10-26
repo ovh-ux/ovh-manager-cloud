@@ -1,4 +1,4 @@
-<div class="row cloud-billing-quota">
+<div class="cloud-billing-quota cui-page__content">
 
     <!-- INIT LOADER -->
     <div class="col-xs-12 text-center" data-ng-if="CloudProjectBillingQuotaCtrl.loader.quota">
@@ -10,7 +10,7 @@
         <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
 
-    <div class="cui-page__content" data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">
+    <div data-ng-if="!CloudProjectBillingQuotaCtrl.loader.quota && !CloudProjectBillingQuotaCtrl.loader.unleash">
 
         <!-- THERE IS NO PAYMENT MEAN - SHOW A MESSAGE TO ADD IT -->
         <div data-ng-if="CloudProjectBillingQuotaCtrl.state.isRestrictedQuota && !CloudProjectBillingQuotaCtrl.datas.defaultPaymentMean">

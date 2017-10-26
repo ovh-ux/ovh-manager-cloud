@@ -1,9 +1,11 @@
 (() => {
     class CloudOfferCtrl {
-        constructor ($q, $stateParams, FeatureAvailabilityService, CloudProjectAdd, OvhApiMe, URLS) {
+        constructor ($q, $stateParams, $translate, FeatureAvailabilityService, CloudProjectAdd, CloudMessage, OvhApiMe, URLS) {
             this.$q = $q;
             this.$stateParams = $stateParams;
+            this.$translate = $translate;
             this.CloudProjectAdd = CloudProjectAdd;
+            this.CloudMessage = CloudMessage;
             this.User = OvhApiMe;
             this.FeatureAvailabilityService = FeatureAvailabilityService;
             this.URLS = URLS;
@@ -13,6 +15,8 @@
                 agreementsAccepted: [],
                 agreements: []
             };
+
+            this.messages = [];
 
             this.model = {
                 voucher: null,
@@ -75,6 +79,7 @@
         }
 
         init () {
+            this.loadMessage();
             // Call not available for US customer
             this.FeatureAvailabilityService.hasFeaturePromise("PROJECT","expressOrder").then((hasFeature) => {
                 if (!hasFeature) {
@@ -92,6 +97,15 @@
             });
 
             this.model.voucher = this.$stateParams.voucher;
+        }
+
+        loadMessage () {
+            this.CloudMessage.unSubscribe("iaas.pci-project-onboarding");
+            this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project-onboarding", { onMessage: () => this.refreshMessage() });
+        }
+
+        refreshMessage () {
+            this.messages = this.messageHandler.getMessages();
         }
 
         startProject () {
@@ -128,7 +142,7 @@
             });
             return this.$q.all(agreements)
                 .catch(err => {
-                    this.Toast.error(this.$translate.instant("cpa_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""));
+                    this.CloudMessage.error(this.$translate.instant("cpa_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""));
                     this.loaders.start = false;
                 });
         }

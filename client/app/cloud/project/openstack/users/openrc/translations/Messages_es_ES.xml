@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpou_openrc_title" qtlid="263780">Descargar un archivo de configuración Openstack</translation>
+   <translation id="cpou_openrc_title" qtlid="263780">Descargar un archivo de configuración OpenStack</translation>
    <translation id="cpou_openrc_expl" qtlid="263793">Está a punto de descargar un archivo de configuración que le permitirá conectarse a OpenStack. </translation>
    <translation id="cpou_openrc_more" qtlid="44536">Más información</translation>
    <translation id="cpou_openrc_form_select_region" qtlid="263806">Seleccionar la región en la que se aplicará el archivo:</translation>

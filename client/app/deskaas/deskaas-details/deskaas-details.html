@@ -2,140 +2,158 @@
     <cui-page-header data-title-text="DeskaasDetailsCtrl.details.alias !== 'noAlias' ? DeskaasDetailsCtrl.details.alias : DeskaasDetailsCtrl.details.serviceName"
                  data-subtitle-text="DeskaasDetailsCtrl.details.alias !== 'noAlias' ? DeskaasDetailsCtrl.details.serviceName :''">
     </cui-page-header>
-
-    <div class="cui-page__content cui-flex">
-        <div class="cui-tile cui-flex__col cui-flex__col_1">
-            <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
-            <ul class="cui-tile__body cui-tile__body_list">
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.reinit.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.reinit.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.reinit.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.restart.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.restart.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.restart.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.changePassword.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.changePassword.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.changePassword.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.remove.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.remove.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.remove.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.accessConsole.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.accessConsole.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.accessConsole.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-                <li class="cui-tile__item cui-tile__item_button">
-                    <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                        type="button"
-                        data-ng-click="DeskaasDetailsCtrl.actions.changeOffer.callback()"
-                        data-ng-disabled="!DeskaasDetailsCtrl.actions.changeOffer.isAvailable()">
-                        <span data-ng-bind="DeskaasDetailsCtrl.actions.changeOffer.text"></span>
-                        <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                    </button>
-                </li>
-            </ul>
+    <div>
+        <cui-message-container data-messages="DeskaasDetailsCtrl.messages"></cui-message-container>
+    </div>
+    <section class="container-fluid cui-page__content cui-page__content-flex">
+        <div class="row d-lg-flex">
+            <div class="col-xm-12 col-md-4">
+                <div class="cui-tile h-100">
+                    <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
+                    <ul class="cui-tile__body cui-tile__body_list">
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.reinit.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.reinit.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.reinit.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.restart.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.restart.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.restart.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.changePassword.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.changePassword.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.changePassword.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.remove.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.remove.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.remove.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.accessConsole.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.accessConsole.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.accessConsole.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <li class="cui-tile__item cui-tile__item_button">
+                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                                type="button"
+                                data-ng-click="DeskaasDetailsCtrl.actions.changeOffer.callback()"
+                                data-ng-disabled="!DeskaasDetailsCtrl.actions.changeOffer.isAvailable()">
+                                <span data-ng-bind="DeskaasDetailsCtrl.actions.changeOffer.text"></span>
+                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xm-12 col-md-4">
+                <cui-tile-subscription class="h-100"
+                    data-loading="DeskaasDetailsCtrl.flags.init.serviceInfos || DeskaasDetailsCtrl.flags.init.details"
+                    data-subscription-info="DeskaasDetailsCtrl.services"
+                    data-offer-actions="$ctrl.actions.changeOffer"
+                    data-autorenew-actions="$ctrl.actions.manageAutorenew"
+                    data-contact-actions="$ctrl.actions.manageContact"></cui-tile-subscription>
+            </div>
+            <div class="col-xm-12 col-md-4">
+                <cui-tile class="h-100"
+                    data-title="'common_tile_infos' | translate"
+                    data-loading="DeskaasDetailsCtrl.flags.initializing()">
+                    <cui-tile-body>
+                        <cui-tile-item data-term="'common_tile_information_status' | translate"
+                            data-description="DeskaasDetailsCtrl.services.status">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_username' | translate"
+                            data-description="DeskaasDetailsCtrl.user.name">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_email' | translate"
+                            data-description="DeskaasDetailsCtrl.user.email">
+                        </cui-tile-item>
+                        <cui-tile-item>
+                            <cui-tile-definitions>
+                                <cui-tile-definition-term data-term="'vdi_label_ip' | translate"></cui-tile-definition-term>
+                                <cui-tile-definition-description>
+                                    <cui-clipboard data-text="DeskaasDetailsCtrl.details.ip"></cui-clipboard>
+                                </cui-tile-definition-description>
+                            </cui-tile-definitions>
+                        </cui-tile-item>
+                        <cui-tile-item>
+                            <cui-tile-definitions>
+                                <cui-tile-definition-term data-term="'vdi_label_connection' | translate"></cui-tile-definition-term>
+                                <cui-tile-definition-description>
+                                    <a data-ng-href="{{ DeskaasDetailsCtrl.details.url }}" data-ng-bind="DeskaasDetailsCtrl.details.url" target="_blank"></a>
+                                </cui-tile-definition-description>
+                            </cui-tile-definitions>
+                        </cui-tile-item>
+                    </cui-tile-body>
+                </cui-tile>
+            </div>
         </div>
-        <cui-tile-subscription class="cui-flex__col cui-flex__col_1"
-            data-loading="DeskaasDetailsCtrl.flags.init.serviceInfos || DeskaasDetailsCtrl.flags.init.details"
-            data-subscription-info="DeskaasDetailsCtrl.services"
-            data-offer-actions="$ctrl.actions.changeOffer"
-            data-autorenew-actions="$ctrl.actions.manageAutorenew"
-            data-contact-actions="$ctrl.actions.manageContact"></cui-tile-subscription>
-        <cui-tile class="cui-flex__col cui-flex__col_1"
-            data-title="'common_tile_infos' | translate"
-            data-loading="DeskaasDetailsCtrl.flags.initializing()">
-            <cui-tile-item data-term="'common_tile_information_status' | translate"
-                data-description="DeskaasDetailsCtrl.services.status">
-             </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_username' | translate"
-                data-description="DeskaasDetailsCtrl.user.name">
-             </cui-tile-item>
-             <cui-tile-item data-term="'vdi_label_email' | translate"
-                data-description="DeskaasDetailsCtrl.user.email">
-             </cui-tile-item>
-            <cui-tile-item>
-                <cui-tile-definitions>
-                    <cui-tile-definition-term data-term="'vdi_label_ip' | translate"></cui-tile-definition-term>
-                    <cui-tile-definition-description>
-                        <cui-clipboard data-text="DeskaasDetailsCtrl.details.ip"></cui-clipboard>
-                    </cui-tile-definition-description>
-                </cui-tile-definitions>
-            </cui-tile-item>
-            <cui-tile-item>
-                <cui-tile-definitions>
-                    <cui-tile-definition-term data-term="'vdi_label_connection' | translate"></cui-tile-definition-term>
-                    <cui-tile-definition-description>
-                        <a data-ng-href="{{ DeskaasDetailsCtrl.details.url }}" data-ng-bind="DeskaasDetailsCtrl.details.url" target="_blank"></a>
-                    </cui-tile-definition-description>
-                </cui-tile-definitions>
-            </cui-tile-item>
-        </cui-tile>
-        <cui-tile class="cui-flex__col cui-flex__col_1"
-            data-title="'common_tile_configuration' | translate"
-            data-loading="DeskaasDetailsCtrl.flags.initializing()">
-            <cui-tile-item data-term="'vdi_label_alias' | translate"
-                data-description="DeskaasDetailsCtrl.details.displayName"
-                data-actions="DeskaasDetailsCtrl.actions.changeAlias">
-            </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_os' | translate"
-                data-description="DeskaasDetailsCtrl.details.os">
-            </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_vcpu' | translate"
-                data-description="DeskaasDetailsCtrl.details.vcpu">
-            </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_ram' | translate"
-                data-description="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit">
-            </cui-tile-item>
-            <cui-tile-item data-term="'vdi_label_data' | translate"
-                data-description="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit">
-            </cui-tile-item>
-        </cui-tile>
-        <div class="cui-flex__col cui-flex__col_2" style="flex-grow: 1;">
-            <div class="cui-tile">
-                <h4 class="oui-header_4 cui-tile__title" data-translate="vdi_task_current"></h4>
-                <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
-                    <oui-table data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
-                        <column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></column>
-                        <column title="'vdi_task_name' | translate" property="displayName" sortable></column>
-                        <column title="'vdi_task_state' | translate" property="displayState" sortable></column>
-                        <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
-                            {{ $row.lastModificationDate | momentFormat:'LLL' }}
-                        </column>
-                        <column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
-                            <cui-task-progress data-task="$row"></cui-task-progress>
-                        </column>
-                        <empty-placeholder data-translate="common_task_list_empty"></empty-placeholder>
-                    </oui-table>
+        <div class="row d-lg-flex">
+            <div class="col-xm-12 col-md-4">
+                <cui-tile class="h-100"
+                    data-title="'common_tile_configuration' | translate"
+                    data-loading="DeskaasDetailsCtrl.flags.initializing()">
+                    <cui-tile-body>
+                        <cui-tile-item data-term="'vdi_label_alias' | translate"
+                            data-description="DeskaasDetailsCtrl.details.displayName"
+                            data-actions="DeskaasDetailsCtrl.actions.changeAlias">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_os' | translate"
+                            data-description="DeskaasDetailsCtrl.details.os">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_vcpu' | translate"
+                            data-description="DeskaasDetailsCtrl.details.vcpu">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_ram' | translate"
+                            data-description="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit">
+                        </cui-tile-item>
+                        <cui-tile-item data-term="'vdi_label_data' | translate"
+                            data-description="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit">
+                        </cui-tile-item>
+                    </cui-tile-body>
+                </cui-tile>
+            </div>
+            <div class="col-xm-12 col-md-8">
+                <div class="cui-tile h-100">
+                    <h4 class="oui-header_4 cui-tile__title" data-translate="vdi_task_current"></h4>
+                    <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+                        <oui-table data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
+                            <column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></column>
+                            <column title="'vdi_task_name' | translate" property="displayName" sortable></column>
+                            <column title="'vdi_task_state' | translate" property="displayState" sortable></column>
+                            <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
+                                {{ $row.lastModificationDate | momentFormat:'LLL' }}
+                            </column>
+                            <column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
+                                <cui-task-progress data-task="$row"></cui-task-progress>
+                            </column>
+                            <empty-placeholder data-translate="common_task_list_empty"></empty-placeholder>
+                        </oui-table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>

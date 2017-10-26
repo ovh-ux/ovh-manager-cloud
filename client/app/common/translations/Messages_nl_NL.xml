@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Annuleren</translation>
    <translation id="common_edit" qtlid="37875">Wijzigen</translation>
    <translation id="common_consult" qtlid="339639">Lezen</translation>
+   <translation id="common_see_detail" qtlid="225192">De details weergeven</translation>
    <translation id="common_manage" qtlid="16301">Beheren</translation>
    <translation id="common_apply" qtlid="41326">Toepassen</translation>
    <translation id="common_loading" qtlid="58256">Wordt geladen</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Wijzigen</translation>
    <translation id="common_select" qtlid="17923">Selecteren</translation>
    <translation id="common_add" qtlid="37923">Toevoegen</translation>
+   <translation id="common_save" qtlid="49754">Backup</translation>
+   <translation id="common_delete" qtlid="2414">Verwijderen</translation>
+   <translation id="common_select" qtlid="17923">Selecteren</translation>
    <translation id="common_remove" qtlid="323093">Verwijderen</translation>
    <translation id="edit" qtlid="37875">Wijzigen</translation>
    <translation id="delete" qtlid="2414">Verwijderen</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Aanmaakdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">De naam wijzigen</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standaard naam</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Gepersonaliseerde naam</translation>
 
    <translation id="common_preview_see" qtlid="433371">Preview bekijken</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Actie</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultaten per pagina</translation>
    <translation id="common_pagination_page" qtlid="433397">pagina</translation>
    <translation id="common_pagination_of" qtlid="121615">op</translation>
@@ -504,13 +512,13 @@
    <translation id="common_pagination_next" qtlid="433423">Volgende pagina</translation>
    <translation id="common_pagination_previous" qtlid="433436">Vorige pagina</translation>
 
-   <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
-   <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>
-   <translation id="common_day_unit" qtlid="441008">jrs</translation>
-   <translation id="common_hour_unit" qtlid="441021">hrs</translation>
+   <translation id="common_limited_voucher_start" qtlid="440982">Er zijn</translation>
+   <translation id="common_limited_voucher_end" qtlid="440995">over op uw project</translation>
+   <translation id="common_day_unit" qtlid="441008">dagen</translation>
+   <translation id="common_hour_unit" qtlid="441021">uren</translation>
    <translation id="common_minute_unit" qtlid="190420">min</translation>
 
-   <translation id="common_name_change_modal_title" qtlid="439892">Modifier le nom</translation>
+   <translation id="common_name_change_modal_title" qtlid="439892">Naam wijzigen</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standaard naam</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Gepersonaliseerde naam</translation>
 

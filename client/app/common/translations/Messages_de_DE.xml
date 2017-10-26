@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Abbrechen</translation>
    <translation id="common_edit" qtlid="37875">Ändern</translation>
    <translation id="common_consult" qtlid="339639">Einsehen</translation>
+   <translation id="common_see_detail" qtlid="225192">Details anzeigen</translation>
    <translation id="common_manage" qtlid="16301">Verwalten</translation>
    <translation id="common_apply" qtlid="41326">Anwenden</translation>
    <translation id="common_loading" qtlid="58256">Wird geladen</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Ändern</translation>
    <translation id="common_select" qtlid="17923">Auswählen</translation>
    <translation id="common_add" qtlid="37923">Hinzufügen</translation>
+   <translation id="common_save" qtlid="49754">Speichern</translation>
+   <translation id="common_delete" qtlid="2414">Löschen</translation>
+   <translation id="common_select" qtlid="17923">Auswählen</translation>
    <translation id="common_remove" qtlid="323093">Entfernen</translation>
    <translation id="edit" qtlid="37875">Ändern</translation>
    <translation id="delete" qtlid="2414">Löschen</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Den Namen ändern</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standardname</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalisierter Name</translation>
 
    <translation id="common_preview_see" qtlid="433371">Übersicht anzeigen</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Aktion</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Ergebnisse pro Seite</translation>
    <translation id="common_pagination_page" qtlid="433397">Seite</translation>
    <translation id="common_pagination_of" qtlid="121615">Zeitraum:</translation>

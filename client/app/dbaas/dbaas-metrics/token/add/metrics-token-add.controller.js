@@ -23,7 +23,7 @@
             this.loading = true;
             this.checkLabels();
             this.MetricService.addToken(this.token)
-                .then(() => this.$state.go("dbaas.metrics.detail.token", { serviceName: this.serviceName }, { reload: true }))
+                .then(() => this.$state.go("dbaas.metrics.detail.token", { serviceName: this.serviceName }))
                 .finally(() => {
                     this.loading = false;
                 });

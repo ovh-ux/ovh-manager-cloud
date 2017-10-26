@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cloud_sidebar_error" qtlid="323434">Oups, não conseguimos inicializar o menu!</translation>
+   <translation id="cloud_sidebar_error" qtlid="323434">Ups, não conseguimos inicializar o menu!</translation>
 
    <translation id="cloud_sidebar_section_iaas" qtlid="19459">Servidores</translation>
    <translation id="cloud_sidebar_section_paas" qtlid="323447">Plataformas e serviços</translation>
@@ -8,6 +8,7 @@
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
    <translation id="cloud_sidebar_section_load_balancer" qtlid="439819">Load Balancer</translation>
+   <translation id="cloud_sidebar_section_cloud_db" qtlid="404863">CloudDB</translation>
    <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>

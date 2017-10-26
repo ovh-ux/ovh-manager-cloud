@@ -8,7 +8,7 @@
    <translation id="iplb_frontend_frontend" qtlid="429615">Front-facing service</translation>
    <translation id="iplb_frontend_protocol" qtlid="9046">Protocol</translation>
    <translation id="iplb_frontend_datacenter" qtlid="30802">Data center</translation>
-   <translation id="iplb_frontend_default_farm" qtlid="429563">Close by default</translation>
+   <translation id="iplb_frontend_default_farm" qtlid="429563">Default server cluster</translation>
    <translation id="iplb_frontend_active" qtlid="55133">Active</translation>
    <translation id="iplb_frontend_action" qtlid="56105">Action</translation>
    <translation id="iplb_frontend_no_frontend" qtlid="438584">No front-facing service</translation>
@@ -37,7 +37,7 @@
    <translation id="iplb_frontend_add_port" qtlid="9034">Port</translation>
    <translation id="iplb_frontend_add_port_tip" qtlid="437934">1 to {{portMax}}, format: simple (e.g.: 80), range (e.g.: 1000-1200), multi (e.g.: 80,443)</translation>
    <translation id="iplb_frontend_add_datacenter" qtlid="30802">Data center</translation>
-   <translation id="iplb_frontend_add_default_farm" qtlid="429563">Close by default</translation>
+   <translation id="iplb_frontend_add_default_farm" qtlid="429563">Default server cluster</translation>
    <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">None</translation>
    <translation id="iplb_frontend_add_farm_add_another_choice" qtlid="438675">+ Add a server cluster</translation>
    <translation id="iplb_frontend_add_farm" qtlid="437726">Add a server cluster</translation>
@@ -74,7 +74,7 @@
    <translation id="iplb_frontend_preview_protocol" qtlid="19711">Protocol</translation>
    <translation id="iplb_frontend_preview_port" qtlid="9034">Port</translation>
    <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Data center</translation>
-   <translation id="iplb_frontend_preview_default_farm" qtlid="429563">Close by default</translation>
+   <translation id="iplb_frontend_preview_default_farm" qtlid="429563">Default server cluster</translation>
    <translation id="iplb_frontend_preview_default_certificate" qtlid="438701">Default SSL certificate</translation>
    <translation id="iplb_frontend_preview_dedicated_ip_failover" qtlid="430096">Dedicated failover IP</translation>
    <translation id="iplb_frontend_preview_restrict_ip_access" qtlid="430109">Restrict access to IPs</translation>

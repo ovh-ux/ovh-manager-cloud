@@ -116,7 +116,7 @@ class IpLoadBalancerConfigurationService {
                 text: this.$translate.instant("iplb_configuration_action_apply"),
                 state: "network.iplb.detail.configuration"
             }
-        });
+        }, "network.iplb.detail");
     }
 }
 
