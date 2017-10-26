@@ -54,5 +54,5 @@
    <translation id="browser_alert_close" qtlid="405396">Close this alert</translation>
 
    <translation id="voucher_warning_title" qtlid="373441">Warning </translation>
-   <translation id="voucher_warning_description" qtlid="440969">You used a voucher that allows you to create a temporary cloud project. Your voucher is valid until {{expiration}} and resources will not be charged before that date. Be careful, at the time of expiry, the project and all related data will be deleted.</translation>
+   <translation id="voucher_warning_description" qtlid="440969">You used a voucher that allows you to create a temporary cloud project. Your voucher is valid until {{expiration}} and resources will not be charged before that date. Please note, at the time of expiry, the project and all related data will be deleted.</translation>
 </translations>

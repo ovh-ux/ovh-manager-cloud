@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_task_title" qtlid="96716">Užduotys</translation>
-   <translation id="iplb_task_intro_text" qtlid="438519">Les tâches en cours pour votre Load Balancer sont automatiquement retirées de cette liste 48 h après avoir été complétées.</translation>
+   <translation id="iplb_task_intro_text" qtlid="438519">Vykdomos Load Balancer operacijos iš sąrašo šalinamos automatiškai, pro 48 valandų nuo užbaigimo.</translation>
 
    <translation id="iplb_task_list_col_creation_date" qtlid="26419">Sukūrimo data</translation>
    <translation id="iplb_task_list_col_task" qtlid="61872">Užduotis</translation>
@@ -9,7 +9,7 @@
    <translation id="iplb_task_list_col_status" qtlid="8230">Būsena</translation>
    <translation id="iplb_task_list_col_action" qtlid="56105">Veiksmas</translation>
 
-   <translation id="iplb_task_preview_title" qtlid="438532">Aperçu de la tâche</translation>
+   <translation id="iplb_task_preview_title" qtlid="438532">Užduoties apžvalga</translation>
    <translation id="iplb_task_preview_creation_date" qtlid="26419">Sukūrimo data</translation>
    <translation id="iplb_task_preview_task" qtlid="61872">Užduotis</translation>
    <translation id="iplb_task_preview_progress" qtlid="354496">Pažanga</translation>

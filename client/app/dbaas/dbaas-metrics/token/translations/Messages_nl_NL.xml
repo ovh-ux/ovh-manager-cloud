@@ -14,7 +14,7 @@
    <translation id="metrics_token_state_active" qtlid="55133">Actief</translation>
    <translation id="metrics_token_state_inactive" qtlid="105310">Inactief</translation>
 
-   <translation id="metrics_token_explain" qtlid="439918">Les tokens sécurisent l'accès à vos données de séries temporelles. Chaque token définit des permissions, et peut éventuellement comporter des "labels" (couple 'clé, valeur'). Les labels sont automatiquement ajoutés comme filtre à la lecture, et attachés à chaque donnée écrite avec le token portant ces labels. Pour plus d'information <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>
+   <translation id="metrics_token_explain" qtlid="439918">Tokens worden gebruikt om de toegang tot uw tijdelijke seriedata te beveiligen. Elke token definieert machtigingen en kan eventueel labels dragen ('key, value' pairing). Labels worden automatisch toegevoegd als filter tijdens het leesproces, en verbonden aan elk stuk data dat is geschreven met het teken dat deze labels draagt. Meer informatie in <a href="{{ guidesUrl }}" target="_blank">onze handleidingen.</a></translation>
 <!-- Page: token -->
    <translation id="metrics_token_permission_read" qtlid="6958">Lezen</translation>
    <translation id="metrics_token_permission_write" qtlid="301565">Schrijven</translation>
@@ -31,7 +31,7 @@
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
    <translation id="metrics_token_id" qtlid="46792">Gebruikersnaam</translation>
    <translation id="metrics_token_show_preview" qtlid="433371">Preview bekijken</translation>
-   <translation id="metrics_token_preview_title" qtlid="439931">Aperçu du token</translation>
+   <translation id="metrics_token_preview_title" qtlid="439931">Token overzicht</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Teruggetrokken tokens weergeven</translation>
 
    <translation id="metrics_token_edit" qtlid="37875">Wijzigen</translation>
@@ -40,7 +40,7 @@
    <translation id="metrics_token_edit_cancel" qtlid="37863">Annuleren</translation>
    <translation id="metrics_token_edit_confirm" qtlid="37875">Wijzigen</translation>
 
-   <translation id="metrics_token_delete_title" qtlid="439944">Supprimer le token</translation>
+   <translation id="metrics_token_delete_title" qtlid="439944">Token verwijderen</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">Weet u zeker dat u dit token wilt verwijderen?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token gecreëerd </translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token teruggetrokken</translation>

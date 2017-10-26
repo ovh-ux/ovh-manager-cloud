@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Annulla</translation>
    <translation id="common_edit" qtlid="37875">Modifica</translation>
    <translation id="common_consult" qtlid="339639">Consulta</translation>
+   <translation id="common_see_detail" qtlid="225192">Visualizza dettagli </translation>
    <translation id="common_manage" qtlid="16301">Gestisci</translation>
    <translation id="common_apply" qtlid="41326">Applica</translation>
    <translation id="common_loading" qtlid="58256">Caricamento</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Modifica</translation>
    <translation id="common_select" qtlid="17923">Seleziona</translation>
    <translation id="common_add" qtlid="37923">Aggiungi</translation>
+   <translation id="common_save" qtlid="49754">Salva</translation>
+   <translation id="common_delete" qtlid="2414">Elimina</translation>
+   <translation id="common_select" qtlid="17923">Seleziona</translation>
    <translation id="common_remove" qtlid="323093">Elimina</translation>
    <translation id="edit" qtlid="37875">Modifica</translation>
    <translation id="delete" qtlid="2414">Elimina</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data di creazione</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Stato</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Modifica il nome</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinito</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizzato</translation>
 
    <translation id="common_preview_see" qtlid="433371">Visualizza l'anteprima</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Azione</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Risultati per pagina</translation>
    <translation id="common_pagination_page" qtlid="433397">pagina</translation>
    <translation id="common_pagination_of" qtlid="121615">su</translation>

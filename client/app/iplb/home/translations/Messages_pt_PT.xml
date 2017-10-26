@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_home_tile_status" qtlid="26443">Estado</translation>
-   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Frontends</translation>
-   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Fermes de serveurs</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Frontend</translation>
+   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Server Farm</translation>
    <translation id="iplb_home_tile_status_servers" qtlid="19459">Servidores</translation>
 
    <translation id="iplb_home_tile_usage" qtlid="30382">Utilização</translation>
@@ -16,8 +16,8 @@
 
    <translation id="iplb_home_tile_configuration" qtlid="4406">Configuração</translation>
    <translation id="iplb_home_tile_configuration_name" qtlid="3818">Nome</translation>
-   <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota par mois</translation>
-   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Seuil de l'alerte</translation>
+   <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota mensal</translation>
+   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Limite de alerta</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Ilimitado</translation>
    <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Ciphers</translation>
    <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Datacenter</translation>

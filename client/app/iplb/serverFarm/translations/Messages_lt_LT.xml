@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="iplb_farm_title" qtlid="437700">Fermes de serveurs</translation>
-   <translation id="iplb_farm_intro_text" qtlid="437713">La ferme de serveurs est la partie de votre Load Balancer qui sert à répartir le trafic sur les serveurs.</translation>
+   <translation id="iplb_farm_title" qtlid="437700">Serverių grupė</translation>
+   <translation id="iplb_farm_intro_text" qtlid="437713">Serverių grupė yra jūsų Load Balancer dalis, kurioje paskirstomas srautas.</translation>
 
-   <translation id="iplb_farm_add" qtlid="437726">Ajouter une ferme de serveurs</translation>
+   <translation id="iplb_farm_add" qtlid="437726">Pridėti serverių klasterį</translation>
    <translation id="iplb_farm_add_server" qtlid="19315">Įtraukti serverį</translation>
 
-   <translation id="iplb_farm_server_status_see" qtlid="437739">Voir le statut</translation>
+   <translation id="iplb_farm_server_status_see" qtlid="437739">Žiūrėti būseną</translation>
 
-   <translation id="iplb_farm_list_accordion_title" qtlid="437752">Ferme {{farmId}}</translation>
-   <translation id="iplb_farm_list_accordion_aside_server_single" qtlid="437765">{{serverNumber}} serveur</translation>
-   <translation id="iplb_farm_list_accordion_aside_server_many" qtlid="437778">{{serverNumber}} serveurs</translation>
+   <translation id="iplb_farm_list_accordion_title" qtlid="437752">Grupė {{farmId}}</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_single" qtlid="437765">{{serverNumber}} serveris</translation>
+   <translation id="iplb_farm_list_accordion_aside_server_many" qtlid="437778">Serverių: {{serverNumber}}</translation>
 
-   <translation id="iplb_farm_add_error" qtlid="437791">Une erreur est survenue lors de l'ajout de la ferme de serveurs : {{message}}</translation>
-   <translation id="iplb_farm_add_success" qtlid="437804">La ferme de serveurs a été créée avec succès.</translation>
-   <translation id="iplb_farm_update_error" qtlid="437817">Une erreur est survenue lors de la modification de la ferme de serveurs : {{message}}</translation>
-   <translation id="iplb_farm_update_success" qtlid="437830">La ferme de serveurs a été modifiée avec succès.</translation>
+   <translation id="iplb_farm_add_error" qtlid="437791">Klaida pridedant serverių grupę: {{message}}</translation>
+   <translation id="iplb_farm_add_success" qtlid="437804">Serverių grupė sėkmingai sukurta.</translation>
+   <translation id="iplb_farm_update_error" qtlid="437817">Klaida redaguojant serverių grupę: {{message}}</translation>
+   <translation id="iplb_farm_update_success" qtlid="437830">Serverių grupė sėkmingai pakeista.</translation>
 
    <translation id="iplb_farm_server_list_col_server" qtlid="8290">Serveris</translation>
    <translation id="iplb_farm_server_list_col_ipv4" qtlid="101781">IPv4</translation>
@@ -38,20 +38,20 @@
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">IP source</translation>
 
-   <translation id="iplb_farm_add_title" qtlid="437726">Ajouter une ferme de serveurs</translation>
-   <translation id="iplb_farm_update_title" qtlid="437908">Edition de la ferme de serveurs {{farmId}}</translation>
+   <translation id="iplb_farm_add_title" qtlid="437726">Pridėti serverių klasterį</translation>
+   <translation id="iplb_farm_update_title" qtlid="437908">Serverių grupės {{farmId}} redagavimas</translation>
    <translation id="iplb_farm_edit_name" qtlid="415818">Pavadinimas (pasirinktinai)</translation>
-   <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocole (non modifiable après la création)</translation>
+   <translation id="iplb_farm_edit_protocol" qtlid="437921">Protokolas (nekeičiamas po sukūrimo)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Prievadas</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">1 à {{portMax}}</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="437934">1 - {{portMax}}</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Duomenų centras</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Pažangūs nustatymai</translation>
-   <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
+   <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Naujausios vertės pagal nutylėjimą buvo pakeistos. Jas galite redaguoti bet kuriuo metu.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Rodyti</translation>
-   <translation id="iplb_farm_edit_balance" qtlid="430265">Mode de répartition</translation>
-   <translation id="iplb_farm_edit_stickiness" qtlid="429823">Suivi de session</translation>
-   <translation id="iplb_farm_edit_probe" qtlid="430278">Sonde de disponibilité</translation>
-   <translation id="iplb_farm_edit_probe_title" qtlid="437960">Paramètres de la sonde</translation>
+   <translation id="iplb_farm_edit_balance" qtlid="430265">Paskirstymo režimas</translation>
+   <translation id="iplb_farm_edit_stickiness" qtlid="429823">Sesijos stebėjimas</translation>
+   <translation id="iplb_farm_edit_probe" qtlid="430278">Pasiekiamumo zondas</translation>
+   <translation id="iplb_farm_edit_probe_title" qtlid="437960">Zondo parametrai</translation>
    <translation id="iplb_farm_edit_probe_url" qtlid="31402">URL</translation>
    <translation id="iplb_farm_edit_probe_port" qtlid="9034">Prievadas</translation>
    <translation id="iplb_farm_edit_probe_method" qtlid="19447">Metodas</translation>
@@ -75,22 +75,22 @@
    <translation id="iplb_farm_edit_probe_type_pgsql" qtlid="438116">pgSQL</translation>
    <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
-   <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Une erreur est survenue lors de la récupération des informations pour la sonde.</translation>
+   <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Klaida gaunant zondo informaciją.</translation>
 
-   <translation id="iplb_farm_edit_probe_button" qtlid="437960">Paramètres de la sonde</translation>
+   <translation id="iplb_farm_edit_probe_button" qtlid="437960">Zondo parametrai</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Anuliuoti</translation>
    <translation id="iplb_farm_add_confirm" qtlid="37923">Pridėti</translation>
    <translation id="iplb_farm_update_confirm" qtlid="43462">Atnaujinti</translation>
 
-   <translation id="iplb_farm_preview_title" qtlid="438142">Aperçu de la ferme de serveurs</translation>
+   <translation id="iplb_farm_preview_title" qtlid="438142">Serverių grupės apžvalga</translation>
    <translation id="iplb_farm_preview_name" qtlid="3818">Pavadinimas</translation>
    <translation id="iplb_farm_preview_protocol" qtlid="19711">Protokolas</translation>
    <translation id="iplb_farm_preview_port" qtlid="9034">Prievadas</translation>
    <translation id="iplb_farm_preview_datacenter" qtlid="30802">Duomenų centras</translation>
-   <translation id="iplb_farm_preview_balance" qtlid="430265">Mode de répartition</translation>
-   <translation id="iplb_farm_preview_stickiness" qtlid="429823">Suivi de session</translation>
-   <translation id="iplb_farm_preview_probe" qtlid="429797">Sonde</translation>
+   <translation id="iplb_farm_preview_balance" qtlid="430265">Paskirstymo režimas</translation>
+   <translation id="iplb_farm_preview_stickiness" qtlid="429823">Sesijos stebėjimas</translation>
+   <translation id="iplb_farm_preview_probe" qtlid="429797">Zondas</translation>
    <translation id="iplb_farm_preview_probe_none" qtlid="8674">Tuščia</translation>
    <translation id="iplb_farm_preview_id" qtlid="46792">Identifikatorius</translation>
    <translation id="iplb_farm_preview_probe_url" qtlid="31402">URL</translation>
@@ -100,8 +100,8 @@
    <translation id="iplb_farm_preview_probe_pattern" qtlid="438064">Pattern</translation>
    <translation id="iplb_farm_preview_probe_interval" qtlid="438077">Interval</translation>
 
-   <translation id="iplb_farm_delete_title" qtlid="438155">Supprimer la ferme</translation>
-   <translation id="iplb_farm_delete_question" qtlid="438168">Êtes-vous sûr de vouloir supprimer la ferme {{farm}} ?</translation>
-   <translation id="iplb_farm_delete_error" qtlid="438181">Une erreur est survenue lors de la suppression de la ferme : {{message}}</translation>
-   <translation id="iplb_farm_delete_success" qtlid="438194">La ferme a été supprimée avec succès.</translation>
+   <translation id="iplb_farm_delete_title" qtlid="438155">Ištrinti grupę</translation>
+   <translation id="iplb_farm_delete_question" qtlid="438168">Ar tikrai norite ištrinti grupę {{farm}} ?</translation>
+   <translation id="iplb_farm_delete_error" qtlid="438181">Klaida trinant grupę: {{message}}</translation>
+   <translation id="iplb_farm_delete_success" qtlid="438194">Grupė sėkmingai ištrinta.</translation>
 </translations>

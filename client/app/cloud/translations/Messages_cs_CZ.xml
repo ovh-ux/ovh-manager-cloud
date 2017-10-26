@@ -46,7 +46,7 @@
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Severní Amerika (Kanada)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Západní Evropa (Francie)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Západní Evropa (Francie)</translation>
-   <translation id="cloud_common_region_location_DE" qtlid="437611">Střední Evropa  (Německo)</translation>
+   <translation id="cloud_common_region_location_DE" qtlid="437611">Střední Evropa (Německo)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Váš prohlížeč není podporován.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Váš prohlížeč je zastaralý a může představovat riziko po stránce kompatibility a zabezpečení.</translation>
@@ -54,5 +54,5 @@
    <translation id="browser_alert_close" qtlid="405396">Zavřít upozornění</translation>
 
    <translation id="voucher_warning_title" qtlid="373441">Varování</translation>
-   <translation id="voucher_warning_description" qtlid="440969">Vous avez utilisé un voucher qui permet la création d'un projet cloud temporaire. Votre voucher est valide jusqu'au {{expiration}} et les ressources ne vous seront pas facturées avant cette date. Attention, au moment de l'expiration, le projet sera supprimé et les données disparaîtront.</translation>
+   <translation id="voucher_warning_description" qtlid="440969">Uplatnili jste voucher pro vytvoření dočasného cloudového projektu. Váš voucher je platný do {{expiration}}. Využité zdroje Vám až do expirace voucheru nebudou účtovány. Upozornění: jakmile dojde k expiraci voucheru, bude Váš projekt odstraněn a veškerá s ním asociovaná data vymazána.</translation>
 </translations>

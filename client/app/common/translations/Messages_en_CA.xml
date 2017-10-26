@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Cancel</translation>
    <translation id="common_edit" qtlid="37875">Modify</translation>
    <translation id="common_consult" qtlid="339639">Read</translation>
+   <translation id="common_see_detail" qtlid="225192">See more information</translation>
    <translation id="common_manage" qtlid="16301">Manage</translation>
    <translation id="common_apply" qtlid="41326">Apply</translation>
    <translation id="common_loading" qtlid="58256">Loading</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Modify</translation>
    <translation id="common_select" qtlid="17923">Select</translation>
    <translation id="common_add" qtlid="37923">Add</translation>
+   <translation id="common_save" qtlid="49754">Save</translation>
+   <translation id="common_delete" qtlid="2414">Delete</translation>
+   <translation id="common_select" qtlid="17923">Select</translation>
    <translation id="common_remove" qtlid="323093">Remove </translation>
    <translation id="edit" qtlid="37875">Modify</translation>
    <translation id="delete" qtlid="2414">Delete</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Creation date</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Change the name</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Default name</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Customized name</translation>
 
    <translation id="common_preview_see" qtlid="433371">See a preview</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Results per page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
    <translation id="common_pagination_of" qtlid="121615">on</translation>
@@ -504,7 +512,7 @@
    <translation id="common_pagination_next" qtlid="433423">Next page</translation>
    <translation id="common_pagination_previous" qtlid="433436">Previous page</translation>
 
-   <translation id="common_limited_voucher_start" qtlid="440982">There is</translation>
+   <translation id="common_limited_voucher_start" qtlid="440982">There are</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">left on your project</translation>
    <translation id="common_day_unit" qtlid="441008">days</translation>
    <translation id="common_hour_unit" qtlid="441021">hrs</translation>
