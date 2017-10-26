@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Zrušit</translation>
    <translation id="common_edit" qtlid="37875">Změnit</translation>
    <translation id="common_consult" qtlid="339639">Zobrazit</translation>
+   <translation id="common_see_detail" qtlid="225192">Více informací</translation>
    <translation id="common_manage" qtlid="16301">Správa</translation>
    <translation id="common_apply" qtlid="41326">Provést změny</translation>
    <translation id="common_loading" qtlid="58256">Načítání</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Změnit</translation>
    <translation id="common_select" qtlid="17923">Zvolte</translation>
    <translation id="common_add" qtlid="37923">Přidat</translation>
+   <translation id="common_save" qtlid="49754">Záloha</translation>
+   <translation id="common_delete" qtlid="2414">Odstranit</translation>
+   <translation id="common_select" qtlid="17923">Zvolte</translation>
    <translation id="common_remove" qtlid="323093">Odstranit</translation>
    <translation id="edit" qtlid="37875">Změnit</translation>
    <translation id="delete" qtlid="2414">Odstranit</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Datum vytvoření</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Stav</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Upravit jméno</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Výchozí název</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Vlastní název</translation>
 
    <translation id="common_preview_see" qtlid="433371">Zobrazit náhled</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Akce</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Výsledky na stránku</translation>
    <translation id="common_pagination_page" qtlid="433397">stránka</translation>
    <translation id="common_pagination_of" qtlid="121615">na</translation>
@@ -504,10 +512,10 @@
    <translation id="common_pagination_next" qtlid="433423">Následující stránka</translation>
    <translation id="common_pagination_previous" qtlid="433436">Předchozí stránka</translation>
 
-   <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
-   <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>
-   <translation id="common_day_unit" qtlid="441008">jrs</translation>
-   <translation id="common_hour_unit" qtlid="441021">hrs</translation>
+   <translation id="common_limited_voucher_start" qtlid="440982">Zbývá ještě</translation>
+   <translation id="common_limited_voucher_end" qtlid="440995">z Vašeho projektu</translation>
+   <translation id="common_day_unit" qtlid="441008">dnů</translation>
+   <translation id="common_hour_unit" qtlid="441021">hodin</translation>
    <translation id="common_minute_unit" qtlid="190420">min</translation>
 
    <translation id="common_name_change_modal_title" qtlid="439892">Upravit název</translation>

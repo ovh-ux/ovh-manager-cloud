@@ -11,6 +11,7 @@
    <translation id="common_cancel" qtlid="37863">Anular</translation>
    <translation id="common_edit" qtlid="37875">Modificar</translation>
    <translation id="common_consult" qtlid="339639">Consulter</translation>
+   <translation id="common_see_detail" qtlid="225192">Ver o detalhe</translation>
    <translation id="common_manage" qtlid="16301">Gerir</translation>
    <translation id="common_apply" qtlid="41326">Aplicar</translation>
    <translation id="common_loading" qtlid="58256">Carregamento</translation>
@@ -37,7 +38,7 @@
    <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
    <translation id="common_menu_telecom" qtlid="135827">Telecom</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
-   <translation id="common_menu_v3" qtlid="135931">Interface do Cliente antiga</translation>
+   <translation id="common_menu_v3" qtlid="135931">Interface anterior</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Parceiros</translation>
    <translation id="common_menu_billing" qtlid="32950">Faturação</translation>
@@ -67,6 +68,9 @@
    <translation id="common_modify" qtlid="37875">Modificar</translation>
    <translation id="common_select" qtlid="17923">Seleccionar</translation>
    <translation id="common_add" qtlid="37923">Adicionar</translation>
+   <translation id="common_save" qtlid="49754">Fazer backup</translation>
+   <translation id="common_delete" qtlid="2414">Eliminar</translation>
+   <translation id="common_select" qtlid="17923">Seleccionar</translation>
    <translation id="common_remove" qtlid="323093">Retirar</translation>
    <translation id="edit" qtlid="37875">Modificar</translation>
    <translation id="delete" qtlid="2414">Eliminar</translation>
@@ -150,7 +154,7 @@
    <translation id="unit_gb" qtlid="48890">GB</translation>
 
    <translation id="payment_type_none" qtlid="30646">Nenhum</translation>
-   <translation id="payment_type_cash" qtlid="139689">Liquido</translation>
+   <translation id="payment_type_cash" qtlid="139689">Pagamento em dinheiro</translation>
    <translation id="payment_type_chargeback" qtlid="139702">Pagamento recusado</translation>
    <translation id="payment_type_cheque" qtlid="139715">Cheque</translation>
    <translation id="payment_type_creditCard" qtlid="89809">Cartão bancário</translation>
@@ -167,7 +171,7 @@
    <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Nota de crédito</translation>
    <translation id="payment_type_transfer" qtlid="89833">Transferência</translation>
-   <translation id="payment_type_withdrawal" qtlid="139858">Prélèvement</translation>
+   <translation id="payment_type_withdrawal" qtlid="139858">Débito direto</translation>
    <translation id="payment_type_bankAccount" qtlid="176911">Conta bancária</translation>
 
    <translation id="contract_next" qtlid="17743">Seguinte</translation>
@@ -493,10 +497,14 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data de criação</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Estado</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Modificar o nome</translation>
+   <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinido</translation>
+   <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizado</translation>
 
    <translation id="common_preview_see" qtlid="433371">Ver pré-visualização</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Ação</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
    <translation id="common_pagination_page" qtlid="433397">página</translation>
    <translation id="common_pagination_of" qtlid="121615">em</translation>
@@ -504,15 +512,15 @@
    <translation id="common_pagination_next" qtlid="433423">Página seguinte</translation>
    <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>
 
-   <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
-   <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>
-   <translation id="common_day_unit" qtlid="441008">jrs</translation>
-   <translation id="common_hour_unit" qtlid="441021">hrs</translation>
+   <translation id="common_limited_voucher_start" qtlid="440982">Restam</translation>
+   <translation id="common_limited_voucher_end" qtlid="440995">ao seu projeto</translation>
+   <translation id="common_day_unit" qtlid="441008">dias</translation>
+   <translation id="common_hour_unit" qtlid="441021">horas</translation>
    <translation id="common_minute_unit" qtlid="190420">min</translation>
 
    <translation id="common_name_change_modal_title" qtlid="439892">Alterar o nome</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinido</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizado</translation>
 
-   <translation id="common_task_list_empty" qtlid="134865">Nenhum trabalho está atualmente em curso</translation>
+   <translation id="common_task_list_empty" qtlid="134865">Nenhum tarefa em curso</translation>
 </translations>

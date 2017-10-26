@@ -3,7 +3,7 @@
    <translation id="openstackusers_users_title" qtlid="245246">API OpenStack y Horizon</translation>
    <translation id="openstackusers_users_description" qtlid="245259">El cloud de OVH permite acceder a las API OpenStack, en las que se basa.</translation>
    <translation id="openstackusers_users_description2" qtlid="245272">Para poder utilizar las API y las herramientas de OpenStack, puede gestionar sus accesos estableciendo usuarios.</translation>
-   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Abrir Openstack Horizon</translation>
+   <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Abrir OpenStack Horizon</translation>
    <translation id="openstackusers_users_add_button" qtlid="7150">Añadir un usuario </translation>
 
    <translation id="openstackusers_users_userlist_error" qtlid="245298">Se ha producido un error al cargar los usuarios:</translation>
@@ -25,7 +25,7 @@
    <translation id="openstackusers_users_userlist_add_required_description" qtlid="245415">No olvide introducir la descripción del usuario.</translation>
    <translation id="openstackusers_users_userlist_add_maxchar_description" qtlid="245428">La descripción es demasiado larga.</translation>
    <translation id="openstackusers_users_userlist_add_button_cancel" qtlid="37863">Cancelar</translation>
-   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Crear el usuario.</translation>
+   <translation id="openstackusers_users_userlist_add_button_submit" qtlid="245441">Crear el usuario</translation>
    <translation id="openstackusers_users_userlist_add_submit_success" qtlid="245454">Se ha creado el nuevo usuario.</translation>
    <translation id="openstackusers_users_userlist_add_submit_error" qtlid="245467">No se ha podido crear el usuario:</translation>
 

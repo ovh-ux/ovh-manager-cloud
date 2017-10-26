@@ -2,7 +2,7 @@
 <translations>
    <translation id="iplb_graph_title" qtlid="5402">Gráficos </translation>
    <translation id="iplb_graph_connections_title" qtlid="41530">Ligações simultâneas</translation>
-   <translation id="iplb_graph_rqpersec_title" qtlid="439533">Requêtes par seconde</translation>
+   <translation id="iplb_graph_rqpersec_title" qtlid="439533">Pedidos por segundo</translation>
    <translation id="iplb_graph_bandwidth_title" qtlid="38565">Largura de banda</translation>
    <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1 h</translation>
    <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3 h</translation>

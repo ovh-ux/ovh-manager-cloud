@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_ssl_certificate_title" qtlid="371307">SSL sertifikatai</translation>
-   <translation id="iplb_ssl_certificate_intro_text" qtlid="438987">Les certificats configurés sont automatiquement disponible pour l’ensemble des frontends sur lesquels l’options SSL est activée.</translation>
+   <translation id="iplb_ssl_certificate_intro_text" qtlid="438987">Įdiegti sertifikatai automatiškai prieinami visiems Frontend, kuriuose įjungtas SSL palaikymas.</translation>
 
-   <translation id="iplb_ssl_certificate_add" qtlid="420723">Ajouter un certificat SSL</translation>
+   <translation id="iplb_ssl_certificate_add" qtlid="420723">Pridėti SSL sertifikatą</translation>
 
    <translation id="iplb_ssl_certificate" qtlid="19771">Sertifikatas</translation>
    <translation id="iplb_ssl_subject" qtlid="22639">Tema</translation>
    <translation id="iplb_ssl_type" qtlid="2642">Tipas</translation>
    <translation id="iplb_ssl_action" qtlid="56105">Veiksmas</translation>
-   <translation id="iplb_ssl_no_certificate" qtlid="439000">Aucun certificat</translation>
+   <translation id="iplb_ssl_no_certificate" qtlid="439000">Jokio sertifikato</translation>
 
    <translation id="iplb_ssl_see" qtlid="433371">Peržiūrėti</translation>
    <translation id="iplb_ssl_update" qtlid="37875">Keisti</translation>
    <translation id="iplb_ssl_delete" qtlid="2414">Trinti</translation>
 
-   <translation id="iplb_ssl_list_error" qtlid="439013">Erreur lors du chargement de la liste des certificats.</translation>
+   <translation id="iplb_ssl_list_error" qtlid="439013">Klaida įkeliant sertifikatų sąrašą</translation>
 
-   <translation id="iplb_ssl_add_title" qtlid="420723">Ajouter un certificat SSL</translation>
+   <translation id="iplb_ssl_add_title" qtlid="420723">Pridėti SSL sertifikatą</translation>
    <translation id="iplb_ssl_order_title" qtlid="196803">Užsakyti SSL sertifikatą</translation>
    <translation id="iplb_ssl_add_confirm" qtlid="37923">Pridėti</translation>
    <translation id="iplb_ssl_add_cancel" qtlid="37863">Anuliuoti</translation>
-   <translation id="iplb_ssl_add_success" qtlid="439026">Le certificat SSL a été créé avec succès.</translation>
-   <translation id="iplb_ssl_add_error" qtlid="439039">Une erreur est survenue lors de la création du certificat SSL : {{message}}</translation>
+   <translation id="iplb_ssl_add_success" qtlid="439026">SSL sertifikatas sėkmingai sukurtas.</translation>
+   <translation id="iplb_ssl_add_error" qtlid="439039">Klaida kuriant SSL sertifikatą: {{message}}</translation>
 
    <translation id="iplb_ssl_edit_name" qtlid="415818">Pavadinimas (pasirinktinai)</translation>
    <translation id="iplb_ssl_edit_private_key" qtlid="19795">Privatus raktas</translation>
    <translation id="iplb_ssl_edit_certificate" qtlid="19771">Sertifikatas</translation>
-   <translation id="iplb_ssl_edit_chain" qtlid="439052">Chaine (facultatif)</translation>
+   <translation id="iplb_ssl_edit_chain" qtlid="439052">Chaine (prialoma)</translation>
 
-   <translation id="iplb_ssl_update_title" qtlid="439065">Modifier un certificat SSL</translation>
+   <translation id="iplb_ssl_update_title" qtlid="439065">Redaguoti SSL sertifikatą</translation>
    <translation id="iplb_ssl_update_confirm" qtlid="37875">Keisti</translation>
    <translation id="iplb_ssl_update_cancel" qtlid="37863">Anuliuoti</translation>
    <translation id="iplb_ssl_update_nom" qtlid="3818">Pavadinimas</translation>
-   <translation id="iplb_ssl_update_success" qtlid="439078">Le certificat SSL a été modifié avec succès.</translation>
-   <translation id="iplb_ssl_update_error" qtlid="439091">Une erreur est survenue lors de la modification du certificat SSL : {{message}}</translation>
+   <translation id="iplb_ssl_update_success" qtlid="439078">SSL sertifikatas sėkmingai pakeistas.</translation>
+   <translation id="iplb_ssl_update_error" qtlid="439091">Klaida keičiant SSL sertifikatą: {{message}}</translation>
 
-   <translation id="iplb_ssl_preview_title" qtlid="439104">Aperçu du certificat SSL</translation>
+   <translation id="iplb_ssl_preview_title" qtlid="439104">SSL sertifikato apžvalga</translation>
    <translation id="iplb_ssl_preview_name" qtlid="3818">Pavadinimas</translation>
-   <translation id="iplb_ssl_preview_serial" qtlid="429758">Numéro de séquence</translation>
+   <translation id="iplb_ssl_preview_serial" qtlid="429758">Eilės numeris</translation>
    <translation id="iplb_ssl_preview_subject" qtlid="22639">Tema</translation>
    <translation id="iplb_ssl_preview_fingerprint" qtlid="192344">Žymė</translation>
    <translation id="iplb_ssl_preview_type" qtlid="2642">Tipas</translation>
    <translation id="iplb_ssl_preview_id" qtlid="46792">Identifikatorius</translation>
 
-   <translation id="iplb_ssl_delete_title" qtlid="439117">Supprimer un certificat</translation>
-   <translation id="iplb_ssl_delete_question" qtlid="439130">Êtes-vous sûr de vouloir supprimer le certificat {{name}} ?</translation>
+   <translation id="iplb_ssl_delete_title" qtlid="439117">Ištrinti sertifikatą</translation>
+   <translation id="iplb_ssl_delete_question" qtlid="439130">Ar tikrai norite ištrinti sertifikatą {{name}} ?</translation>
    <translation id="iplb_ssl_delete_button" qtlid="2414">Trinti</translation>
-   <translation id="iplb_ssl_delete_success" qtlid="439143">Le certificat SSL a été supprimé avec succès.</translation>
-   <translation id="iplb_ssl_delete_error" qtlid="439156">Une erreur est survenue lors de la suppression du certificat SSL : {{message}}</translation>
+   <translation id="iplb_ssl_delete_success" qtlid="439143">SSL sertifikatas sėkmingai ištrintas.</translation>
+   <translation id="iplb_ssl_delete_error" qtlid="439156">Klaida trinant SSL sertifikatą: {{message}}</translation>
 
    <translation id="iplb_ssl_order_name" qtlid="415818">Pavadinimas (pasirinktinai)</translation>
-   <translation id="iplb_ssl_order_type" qtlid="439169">Type de certificat</translation>
+   <translation id="iplb_ssl_order_type" qtlid="439169">Sertifikato tipas</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Nemokamai</translation>
    <translation id="iplb_ssl_order_type_dv" qtlid="439182">Comodo DV</translation>
    <translation id="iplb_ssl_order_type_ev" qtlid="439195">Comodo EV</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Nemokamai</translation>
    <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
-   <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">example.com, www.example.com</translation>
+   <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">pavyzdys.com, www.pavyzdys.com</translation>
    <translation id="iplb_ssl_order_contact" qtlid="31066">Kontaktai</translation>
-   <translation id="iplb_ssl_order_email" qtlid="439234">Adresse électronique</translation>
+   <translation id="iplb_ssl_order_email" qtlid="439234">El. pašto adresas</translation>
    <translation id="iplb_ssl_order_business_category" qtlid="431851">Organizacijos tipas</translation>
    <translation id="iplb_ssl_order_country" qtlid="25171">Šalis</translation>
-   <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Etat ou province</translation>
+   <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Valstija arba regionas</translation>
    <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Įkūrimo data</translation>
    <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Organizacijos pavadinimas</translation>
-   <translation id="iplb_ssl_order_unit_name" qtlid="439260">Nom de l'unité organisationnelle</translation>
+   <translation id="iplb_ssl_order_unit_name" qtlid="439260">Organizacijos pavadinimas</translation>
    <translation id="iplb_ssl_order_address" qtlid="30430">Adresas</translation>
    <translation id="iplb_ssl_order_postal_code" qtlid="30346">Pašto kodas</translation>
    <translation id="iplb_ssl_order_city" qtlid="33310">Miestas</translation>
-   <translation id="iplb_ssl_order_joi" qtlid="439273">Juridiction d'incorporation</translation>
+   <translation id="iplb_ssl_order_joi" qtlid="439273">Inkorporacijos jurisdikcija</translation>
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Užsakyti</translation>
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Anuliuoti</translation>
