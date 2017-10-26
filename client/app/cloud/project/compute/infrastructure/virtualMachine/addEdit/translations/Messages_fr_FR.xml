@@ -219,7 +219,7 @@
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Vous n'avez pas de clé SSH.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">La communication entre les serveurs OVH utilise le protocole sécurisé (SSH) pour l’encryption des données.</translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Il existe des clients SSH pour chaque système d'exploitation. Consultez le <a href="{{ createUrl }}" target="_blank">guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> pour en savoir plus.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Il existe des clients SSH pour chaque système d'exploitation. Consultez le <a class="oui-link" href="{{ createUrl }}" target="_blank">guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a> pour en savoir plus.</translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Guide de création de clés SSH<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">J'ai compris !</translation>
