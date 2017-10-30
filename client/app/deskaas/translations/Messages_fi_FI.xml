@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Salasanan täytyy sisältää vähintään yksi erikoismerkki.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Salasana ei saa sisältää merkkejä <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Syötä uusi salasana.</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Anna järjestelmän generoida uusi salasana, joka lähetetään sinulle sähköpostitse.</translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Syötä uusi salasana</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Muodosta satunnainen salasana. Tämä salasana lähetetään sinulle sähköpostitse.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Aliaksen vaihto</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Syötä uusi alias</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Pääsy konsoliin</translation>
    <translation id="vdi_btn_console" qtlid="164844">Pääsy konsoliin</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Tällä hetkellä testausvaiheessa, anna rohkeasti arvioita käytöstä.</p><p>Saat sähköpostitse kirjautumisohjeet Cloud Desktop -konsoliisi</p><p>Paina CTRL+ALT+SHIFT kun olet kirjautunut.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">Saat sähköpostitse ohjeet, joita seuraamalla pääset kirjautumaan Cloud Desktop - konsoliisi. Haluatko jatkaa?  </translation>
    <translation id="vdi_console_task" qtlid="406554">Konsolia koskeva kirjautumispyyntö lähetetty</translation>
    <translation id="vdi_console_done" qtlid="406567">Saat sähköpostiviestin koskien kirjautumispyyntöäsi konsoliin.</translation>
 

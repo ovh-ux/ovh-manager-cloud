@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="vdi_confirm_restore" qtlid="313910">Ar iš tiesų norite nustatyti darbalauki iš naujo?</translation>
+<translation id="vdi_confirm_restore" qtlid="442652">Jūsų darbo aplinka bus perkonfigūruota pagal pradinę būseną. Jūsų C disko duomenys bus pašalinti, o jūsų programėlės turės būti įdiegtos iš naujo. Jūsų D disko duomenys bus išsaugoti. Ar norite tęsti?</translation>
    <translation id="vdi_restoring" qtlid="313923">Darbalaukis nustatomas iš naujo.</translation>
    <translation id="vdi_restored" qtlid="313936">Pakartotinis inicijavimas atliktas.</translation>
-   <translation id="vdi_confirm_reboot" qtlid="323768">Ar norite paleisti šį darbalaukį iš naujo?</translation>
+   <translation id="vdi_confirm_reboot" qtlid="442665">Jūsų darbo aplika bus perkrauta, todėl gali būti prarasti visi neišsaugoti duomenys. Ar norite tęsti? </translation>
    <translation id="vdi_rebooting" qtlid="323781">Darbalaukis yra paleidžiamas iš naujo.</translation>
    <translation id="vdi_rebooted" qtlid="323794">Darbalaukis buvo paleistas iš naujo.</translation>
    <translation id="vdi_confirm_reset_password" qtlid="290030">El. paštu gausite sugeneruotą slaptažodį, ar norite tęsti?</translation>
@@ -18,13 +18,13 @@
    <translation id="vdi_username_changed" qtlid="323846">Naudotojo keitimas buvo atliktas.</translation>
 
    <translation id="vdi_terminate_confirming" qtlid="370824">Paslaugos pašalinimas užprogramuotas.</translation>
-   <translation id="vdi_confirm_delete" qtlid="313975">Ar iš tiesų norite ištrinti šį darbalaukį?</translation>
+   <translation id="vdi_confirm_delete" qtlid="442678">Jūs nebeturite prieigos prie savo darbalaukio. Jūsų darbalaukis ir visi jame saugomi duomenys bus pašalinti. Ar norite tęsti?</translation>
    <translation id="vdi_deleting" qtlid="313988">Darbalaukis yra trinimas. Užklausos patvirtinimui jums bus išsiųstas el. laiškas.</translation>
    <translation id="vdi_deleted" qtlid="314001">Darbalaukis bus ištrintas. Užklausos patvirtinimui jums buvo išsiųstas el. laiškas.</translation>
    <translation id="vdi_btn_restore" qtlid="314014">Pakartotinai inicijuoti darbalaukį</translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Paleisti darbalaukį iš naujo</translation>
    <translation id="vdi_btn_reset_password" qtlid="80394">Keisti slaptažodį</translation>
-   <translation id="vdi_btn_delete" qtlid="314027">Pašalinti darbalaukį</translation>
+   <translation id="vdi_btn_delete" qtlid="442691">Atsisakyti darbalaukio</translation>
    <translation id="vdi_label_username" qtlid="197024">Vartotojo vardas:</translation>
    <translation id="vdi_label_email" qtlid="116322">El. paštas:</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
@@ -46,11 +46,11 @@
    <translation id="vdi_change_alias" qtlid="323885">Redaguoti alias</translation>
    <translation id="vdi_change_username" qtlid="323898">Redaguoti naudotojo vardą</translation>
 
-   <translation id="vdi_btn_upgrade" qtlid="370837">Keisti paketą</translation>
+   <translation id="vdi_btn_upgrade" qtlid="403684">Padidinti plano pajėgumą</translation>
    <translation id="vdi_confirm_upgrade" qtlid="314053">Po plano keitimo į <strong>{{plan}}</strong>, mėnesinis mokestis už šį darbalaukį bus <strong>{{price}}be PVM</strong>. Ar norite atlikti keitimą?</translation>
    <translation id="vdi_btn_popup_upgrade" qtlid="90661">Atnaujinti</translation>
-   <translation id="vdi_upgrade_title" qtlid="370837">Keisti paketą</translation>
-   <translation id="vdi_upgrade_available" qtlid="370850">Jūs galite rinktis vieną iš žemiau siūlomų paketų</translation>
+   <translation id="vdi_upgrade_title" qtlid="403684">Padidinti plano pajėgumą</translation>
+   <translation id="vdi_upgrade_available" qtlid="442704">Jūs galite rinktis vieną iš žemiau pateiktų pasiūlymų</translation>
 
    <translation id="vdi_upgrading" qtlid="314066">Vykdomas darbalaukio paslaugos keitimas.</translation>
    <translation id="vdi_upgraded" qtlid="314079">Darbalaukio paslaugos keitimas atliktas.</translation>

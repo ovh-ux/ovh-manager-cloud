@@ -39,6 +39,8 @@
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varšuva ({{ micro }})</translation>
    <translation id="cloud_common_region_DE" qtlid="94051">Frankfurtas</translation>
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurtas ({{ micro }})</translation>
+   <translation id="cloud_common_region_UK" qtlid="94015">Londonas</translation>
+   <translation id="cloud_common_region_UK_micro" qtlid="442756">Londonas ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalizuoti</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Centrinė Europa (Prancūzija)</translation>
@@ -47,6 +49,7 @@
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Vakarų Europa (Prancūzija)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Centrinė Europa (Vokietija)</translation>
+   <translation id="cloud_common_region_location_UK" qtlid="442769">Vakarų Europa (Didžioji Britanija)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Jūsų naršyklė nepalaikoma.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Jūsų naršyklė neatnaujinta, galimos saugumo ar suderinamumo spragos.</translation>

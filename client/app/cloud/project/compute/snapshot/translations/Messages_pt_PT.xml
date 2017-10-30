@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpc_snapshot_demo" qtlid="246507">Aqui terá a possibilidade de fazer uma snapshot de cada servidor da sua infraestrutura. <br/> Poderá, a partir dessa snapshot, criar novos servidores de forma simples.</translation>
+   <translation id="cpc_snapshot_demo" qtlid="246507">Aqui poderá fazer uma snapshot de cada servidor da sua infraestrutura. <br/>. Pode essa snapshot para criar novos servidores de forma simples.</translation>
 
    <translation id="cpc_snapshot_name" qtlid="258756">Nome</translation>
    <translation id="cpc_snapshot_region" qtlid="168237">Localização</translation>
@@ -14,7 +14,7 @@
    <translation id="cpc_snapshot_creation_date" qtlid="26419">Data de criação</translation>
    <translation id="cpc_snapshot_type" qtlid="2642">Tipo</translation>
    <translation id="cpc_snapshot_create_vm_button" qtlid="246572">Criar um servidor a partir desta snapshot</translation>
-   <translation id="cpc_snapshot_create_vm_button_info" qtlid="246585">Irá ser redirecionado. A interface de adição de um servidor está em curso de carregamento. Esta snapshot será automaticamente selecionada.</translation>
+   <translation id="cpc_snapshot_create_vm_button_info" qtlid="246585">Irá ser redirecionado. A interface para adicionar um servidor está a ser carregada. Esta snapshot será automaticamente selecionada.</translation>
    <translation id="cpc_snapshot_create_volume_button" qtlid="273492">Criar um volume a partir desta snapshot</translation>
    <translation id="cpc_snapshot_create_volume_button_info" qtlid="273505">Será reencaminhado. A interface de restauro do disco rígido está em curso de carregamento.</translation>
 
@@ -34,7 +34,7 @@
    <translation id="cpc_snapshot_status_killed" qtlid="45508">Em erro</translation>
    <translation id="cpc_snapshot_status_deleted" qtlid="223710">Eliminado</translation>
    <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">Eliminação em curso</translation>
-   <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Esta snapshot não pode ser eliminado, uma vez que ele está a ser utilizado por pelo menos um servidor.</translation>
+   <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Esta snapshot não pode ser eliminada; está a ser utilizada por pelo menos um servidor.</translation>
    <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Snapshot em curso</translation>
    <translation id="cpc_snapshot_status_creating" qtlid="29647">Criação em curso</translation>
    <translation id="cpc_snapshot_status_available" qtlid="246624">Pronta</translation>
@@ -62,7 +62,7 @@
    <translation id="cpc_snapshot_delete_error_plural" qtlid="246780">Oops, não foi possível eliminar {{nbSnapshots}} snapshots!</translation>
    <translation id="cpc_snapshot_delete_error_one" qtlid="246793">Oops, não foi possível eliminar uma snapshots!</translation>
 
-   <translation id="cpc_snapshot_installed_info" qtlid="266807">Instalado em apenas 1 instância.</translation>
+   <translation id="cpc_snapshot_installed_info" qtlid="266807">Instalado apenas numa instância.</translation>
    <translation id="cpc_snapshot_installed_info_plural" qtlid="266820">Instalado em {{nbVms}} instâncias.</translation>
 
 

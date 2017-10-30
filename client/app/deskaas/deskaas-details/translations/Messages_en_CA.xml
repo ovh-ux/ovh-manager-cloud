@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="vdi_confirm_restore" qtlid="313910">Do you want to reset the desktop?</translation>
+<translation id="vdi_confirm_restore" qtlid="442652">Votre espace de travail sera reconfiguré à son état initial. Les données sur votre disque C: seront supprimées et vos applications devront être réinstallées. Les données sur votre disque D: seront conservées. Souhaitez-vous continuer?</translation>
    <translation id="vdi_restoring" qtlid="313923">The desktop is being reset.</translation>
    <translation id="vdi_restored" qtlid="313936">The desktop has been reset.</translation>
-   <translation id="vdi_confirm_reboot" qtlid="323768">Do you want to restart this desktop?</translation>
+   <translation id="vdi_confirm_reboot" qtlid="442665">Votre espace de travail va redémarrer, les données non sauvegardées pourront être perdues. Souhaitez-vous continuer?</translation>
    <translation id="vdi_rebooting" qtlid="323781">The desktop is restarting </translation>
    <translation id="vdi_rebooted" qtlid="323794">The desktop has been restarted. </translation>
    <translation id="vdi_confirm_reset_password" qtlid="290030">A generated password will be emailed to you, would you like to proceed?</translation>
@@ -18,13 +18,13 @@
    <translation id="vdi_username_changed" qtlid="323846">The username has been changed. </translation>
 
    <translation id="vdi_terminate_confirming" qtlid="370824">Service deletion is planned. </translation>
-   <translation id="vdi_confirm_delete" qtlid="313975">Are you sure that you want to delete this desktop?</translation>
+   <translation id="vdi_confirm_delete" qtlid="442678">Vous ne pourrez plus à accéder à votre desktop. Il sera supprimé, ainsi que l’ensemble des données qui y sont stockées. Souhaitez-vous continuer?</translation>
    <translation id="vdi_deleting" qtlid="313988">The desktop is being deleted. You have been sent an email in order to confirm the request.</translation>
    <translation id="vdi_deleted" qtlid="314001">The desktop is going to be deleted. You will be sent a confirmation email. </translation>
    <translation id="vdi_btn_restore" qtlid="314014">Reset the desktop </translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Restart the desktop </translation>
    <translation id="vdi_btn_reset_password" qtlid="80394">Change the password</translation>
-   <translation id="vdi_btn_delete" qtlid="314027">Delete the desktop </translation>
+   <translation id="vdi_btn_delete" qtlid="442691">Résilier le desktop</translation>
    <translation id="vdi_label_username" qtlid="197024">Username:</translation>
    <translation id="vdi_label_email" qtlid="116322">Email:</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
@@ -46,11 +46,11 @@
    <translation id="vdi_change_alias" qtlid="323885">Change alias </translation>
    <translation id="vdi_change_username" qtlid="323898">Change username </translation>
 
-   <translation id="vdi_btn_upgrade" qtlid="370837">Change pack </translation>
+   <translation id="vdi_btn_upgrade" qtlid="403684">Upgrade your solution</translation>
    <translation id="vdi_confirm_upgrade" qtlid="314053">After you upgrade to the <strong>{{plan}}</strong>, the monthly cost of this desktop will be <strong>{{price}}excl. VAT</strong>. Do you want to upgrade?</translation>
    <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
-   <translation id="vdi_upgrade_title" qtlid="370837">Change pack </translation>
-   <translation id="vdi_upgrade_available" qtlid="370850">You can switch to one of the packs below </translation>
+   <translation id="vdi_upgrade_title" qtlid="403684">Upgrade your solution</translation>
+   <translation id="vdi_upgrade_available" qtlid="442704">Vous pouvez passer à l'une des offres ci-dessous</translation>
 
    <translation id="vdi_upgrading" qtlid="314066">The desktop is being upgraded. </translation>
    <translation id="vdi_upgraded" qtlid="314079">The desktop has been upgraded. </translation>

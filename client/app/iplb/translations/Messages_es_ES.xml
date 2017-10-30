@@ -49,7 +49,7 @@
    <translation id="iplb_zone_all" qtlid="439520">Todos (ALL)</translation>
 
    <translation id="iplb_graph_name_conn" qtlid="41530">Conexiones simultáneas</translation>
-   <translation id="iplb_graph_name_reqm" qtlid="439533">Peticiones por segundo</translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Peticiones por minuto</translation>
    <translation id="iplb_graph_no_data" qtlid="439546">Todavía no hay datos.</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} activos</translation>

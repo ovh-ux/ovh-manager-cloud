@@ -39,6 +39,8 @@
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varšava ({{ micro }})</translation>
    <translation id="cloud_common_region_DE" qtlid="94051">Frankfurt</translation>
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
+   <translation id="cloud_common_region_UK" qtlid="94015">Londýn</translation>
+   <translation id="cloud_common_region_UK_micro" qtlid="442756">Londres ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokalizace</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Střední Evropa (France)</translation>
@@ -47,6 +49,7 @@
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Západní Evropa (Francie)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Západní Evropa (Francie)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Střední Evropa (Německo)</translation>
+   <translation id="cloud_common_region_location_UK" qtlid="442769">Europe de l'Ouest (Grande-Bretagne)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Váš prohlížeč není podporován.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Váš prohlížeč je zastaralý a může představovat riziko po stránce kompatibility a zabezpečení.</translation>

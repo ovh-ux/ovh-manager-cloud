@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">La contraseña debe contener al menos un carácter especial.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">La contraseña no debe contener los caracteres <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Introduzca la nueva contraseña.</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Deje que el sistema genere una contraseña y se la envíe por correo electrónico.</translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Introducir la nueva contraseña</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Generar una contraseña aleatoria. Recibirá la contraseña por correo electrónico.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Cambio de alias</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Introduzca el nuevo alias</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Acceder a la consola</translation>
    <translation id="vdi_btn_console" qtlid="164844">Acceder a la consola</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Actualmente en pruebas. No dude en enviarnos sus comentarios y sugerencias.</p><p>Vamos a enviarle por correo electrónico el procedimiento para conectarse a la consola de su Cloud Desktop</p><p>Una vez se haya conectado, utilice CTRL+ALT+SHIFT.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">Recibirá un mensaje de correo electrónico con los pasos a seguir para conectarse a la consola de su Cloud Desktop. ¿Seguro que quiere continuar?</translation>
    <translation id="vdi_console_task" qtlid="406554">La solicitud de acceso a la consola se ha enviado.</translation>
    <translation id="vdi_console_done" qtlid="406567">Le hemos enviado por correo electrónico un mensaje relativo a su solicitud de acceso a la consola.</translation>
 

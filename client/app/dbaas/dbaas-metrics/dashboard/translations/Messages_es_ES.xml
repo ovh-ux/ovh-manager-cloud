@@ -2,7 +2,7 @@
 <translations>
    <translation id="metrics_tiles_shortcut_title" qtlid="403658">Atajos</translation>
    <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Añadir un token</translation>
-   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Aumentar el plan</translation>
+   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Cambiar a un plan superior</translation>
    <translation id="metrics_tiles_tools_title" qtlid="330682">Herramientas</translation>
 
    <translation id="metrics_tiles_usage_title" qtlid="30382">Uso</translation>
