@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Het wachtwoord moet tenminste één speciaal teken bevatten. </translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">De <span class="code">{{chars}}</span> tekens kunnen niet in het wachtwoord voorkomen. </translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Voer het nieuwe wachtwoord in. </translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Het systeem een wachtwoord laten genereren en naar u te e-mailen. </translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Voer het nieuwe wachtwoord in</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Genereer een willekeurig wachtwoord. U ontvangt dit wachtwoord per e-mail.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Alias wijziging</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Voer nieuwe alias in</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Toegang tot de console</translation>
    <translation id="vdi_btn_console" qtlid="164844">Toegang tot de console</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Dit is momenteel in de testfase, aarzel niet ons feedback te geven over uw gebruikservaring. </p><p> U ontvangt een e-mail met de procedure voor het verbinden van de console met uw Cloud Desktop</p><p>Gebruik CTRL + ALT + SHIFT zodra u verbonden bent.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">U zult een e-mail ontvangen met de procedure voor inloggen op uw Cloud Desktop console. Wilt u doorgaan?</translation>
    <translation id="vdi_console_task" qtlid="406554">Console toegangsverzoek verzonden</translation>
    <translation id="vdi_console_done" qtlid="406567">U zult een e-mail ontvangen voor uw console toegangsverzoek.</translation>
 

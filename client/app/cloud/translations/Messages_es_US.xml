@@ -39,6 +39,8 @@
    <translation id="cloud_common_region_WAW_micro" qtlid="410104">Varsovia ({{ micro }})</translation>
    <translation id="cloud_common_region_DE" qtlid="94051">Francfort</translation>
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
+   <translation id="cloud_common_region_UK" qtlid="94015">Londres</translation>
+   <translation id="cloud_common_region_UK_micro" qtlid="442756">Londres ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizar</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa central (Francia)</translation>
@@ -47,6 +49,7 @@
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Europa occidental (Francia)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa occidental (Francia)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Europa Occidental (Alemania)</translation>
+   <translation id="cloud_common_region_location_UK" qtlid="442769">Europe de l'Ouest (Grande-Bretagne)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Su navegador no es compatible.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Su&#160;navegador no está actualizado y puede contener fallos de seguridad o de compatibilidad.</translation>

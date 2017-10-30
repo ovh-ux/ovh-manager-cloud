@@ -25,7 +25,7 @@
    <translation id="iplb_ssl_add_error" qtlid="439039">Se ha producido un error al crear el certificado SSL: {{message}}.</translation>
 
    <translation id="iplb_ssl_edit_name" qtlid="415818">Nombre (opcional)</translation>
-   <translation id="iplb_ssl_edit_private_key" qtlid="19795">Llave privada</translation>
+   <translation id="iplb_ssl_edit_private_key" qtlid="19795">Clave privada</translation>
    <translation id="iplb_ssl_edit_certificate" qtlid="19771">Certificado</translation>
    <translation id="iplb_ssl_edit_chain" qtlid="439052">Cadena (opcional)</translation>
 

@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Das Passwort muss mindestens ein Sonderzeichen enthalten. </translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Das Passwort darf folgende Zeichen nicht enthalten <span class="code">{{chars}}</span>. </translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Geben Sie das neue Passwort ein. </translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Lassen Sie das System ein Passwort für Sie erstellen, das Ihnen anschließend per E-Mail zugesandt wird. </translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Neues Passwort eingeben</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Zufälliges Passwort generieren. Sie erhalten das Passwort per E-Mail.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Änderung des Alias</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Geben Sie den neuen Alias an</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Zugriff auf die Konsole</translation>
    <translation id="vdi_btn_console" qtlid="164844">Zugriff auf die Konsole</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Befindet sich zurzeit im Test. Sie können uns gerne Ihr Feedback zur Nutzung zusenden.</p><p>Sie erhalten eine E-Mail mit Angaben, wie Sie sich mit der Konsole Ihres Cloud Desktop verbinden.</p><p>Verwenden Sie CTRL+ALT+SHIFT, wenn Sie verbunden sind.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">Sie erhalten im Anschluss eine E-Mail mit der genauen Vorgehensweise, um sich mit der Konsole Ihres Cloud Desktop zu verbinden. Möchten sie fortfahren?</translation>
    <translation id="vdi_console_task" qtlid="406554">Zugangsanfrage zur Konsole versendet</translation>
    <translation id="vdi_console_done" qtlid="406567">Sie erhalten eine E-Mail für Ihre Zugangsanfrage zur Konsole.</translation>
 

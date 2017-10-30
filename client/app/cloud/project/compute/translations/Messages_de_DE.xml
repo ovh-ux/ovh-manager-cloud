@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpc_tab_infra" qtlid="246910">Infrastruktur</translation>
    <translation id="cpc_tab_snapshot" qtlid="170343">Snapshots</translation>
-   <translation id="cpc_tab_volume" qtlid="246923">Zus. Festplatten</translation>
+   <translation id="cpc_tab_volume" qtlid="246923">Zus Festplatten</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH Schlüssel</translation>
    <translation id="cpc_tab_project" qtlid="261283">Verwaltung und Verbrauch des Projekts</translation>
    <translation id="cpc_message" qtlid="439767">Die OVH Cloud ist jetzt auch in Deutschland verfügbar! <a href="http://superlienverslapage">Entdecken Sie unser Rechenzentrum in Limburg.</a></translation>

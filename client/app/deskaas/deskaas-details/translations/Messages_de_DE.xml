@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="vdi_confirm_restore" qtlid="313910">Möchten Sie den Desktop zurücksetzen?</translation>
+<translation id="vdi_confirm_restore" qtlid="442652">Ihr Arbeitsplatz wird auf die ursprüngliche Konfiguration zurückgesetzt. Die Daten auf Ihrem Laufwerk C: werden gelöscht und Ihre Applikationen müssen neu installiert werden. Die Daten auf Ihrem Laufwerk D: bleiben erhalten. Möchten sie trotzdem fortfahren?</translation>
    <translation id="vdi_restoring" qtlid="313923">Der Desktop wird zurückgesetzt.</translation>
    <translation id="vdi_restored" qtlid="313936">Der Desktop wurde zurückgesetzt.</translation>
-   <translation id="vdi_confirm_reboot" qtlid="323768">Möchten Sie diesen Desktop neu starten?</translation>
+   <translation id="vdi_confirm_reboot" qtlid="442665">Ihr Arbeitsplatz wird neu gestartet und nicht gespeicherte Daten gehen möglicherweise verloren. Möchten Sie trotzdem fortfahren?</translation>
    <translation id="vdi_rebooting" qtlid="323781">Der Desktop wird neu gestartet.</translation>
    <translation id="vdi_rebooted" qtlid="323794">Der Desktop wurde neu gestartet.</translation>
    <translation id="vdi_confirm_reset_password" qtlid="290030">Ihr Passwort wird Ihnen per Mail zugesandt. Möchten Sie fortfahren?</translation>
@@ -18,13 +18,13 @@
    <translation id="vdi_username_changed" qtlid="323846">Der Benutzername wurde geändert.</translation>
 
    <translation id="vdi_terminate_confirming" qtlid="370824">Die Löschung der Dienstleistung ist geplant</translation>
-   <translation id="vdi_confirm_delete" qtlid="313975">Möchten Sie diesen Desktop wirklich kündigen? </translation>
+   <translation id="vdi_confirm_delete" qtlid="442678">Sie werden nicht mehr auf Ihren Desktop zugreifen können. Ihr Desktop und alle darauf gespeicherten Daten werden gelöscht. Möchten Sie trotzdem fortfahren?</translation>
    <translation id="vdi_deleting" qtlid="313988">Der Desktop wird gelöscht, Sie erhalten in Kürze eine E-Mail zur Bestätigung der Anfrage.</translation>
    <translation id="vdi_deleted" qtlid="314001">Der Desktop wird gelöscht, es wurde eine E-Mail zur Bestätigung der Anfrage an Sie versandt.</translation>
    <translation id="vdi_btn_restore" qtlid="314014">Den Desktop zurücksetzen</translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Den Desktop neu starten</translation>
    <translation id="vdi_btn_reset_password" qtlid="80394">Das Passwort ändern</translation>
-   <translation id="vdi_btn_delete" qtlid="314027">Den Desktop kündigen </translation>
+   <translation id="vdi_btn_delete" qtlid="442691">Desktop kündigen</translation>
    <translation id="vdi_label_username" qtlid="197024">Benutzer:</translation>
    <translation id="vdi_label_email" qtlid="116322">E-Mail:</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias: </translation>
@@ -46,11 +46,11 @@
    <translation id="vdi_change_alias" qtlid="323885">Den Alias ändern</translation>
    <translation id="vdi_change_username" qtlid="323898">Den Benutzernamen ändern</translation>
 
-   <translation id="vdi_btn_upgrade" qtlid="370837">Paket ändern</translation>
+   <translation id="vdi_btn_upgrade" qtlid="403684">Angebot upgraden</translation>
    <translation id="vdi_confirm_upgrade" qtlid="314053">Nach dem Upgrade auf das <strong>{{plan}}</strong> Angebot beträgt der monatliche Preis für diesen Desktop <strong>{{price}} ohne MwSt</strong>. Möchten Sie das Upgrade durchführen?</translation>
    <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
-   <translation id="vdi_upgrade_title" qtlid="370837">Paket ändern</translation>
-   <translation id="vdi_upgrade_available" qtlid="370850">Sie können eines der untenstehenden Pakete wählen</translation>
+   <translation id="vdi_upgrade_title" qtlid="403684">Angebot upgraden</translation>
+   <translation id="vdi_upgrade_available" qtlid="442704">Sie können auf eines der untenstehenden Angebote wechseln</translation>
 
    <translation id="vdi_upgrading" qtlid="314066">Das Upgrade des Desktops wird durchgeführt.</translation>
    <translation id="vdi_upgraded" qtlid="314079">Das Upgrade des Desktops wurde durchgeführt.</translation>
