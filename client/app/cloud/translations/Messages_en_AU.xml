@@ -40,7 +40,7 @@
    <translation id="cloud_common_region_DE" qtlid="94051">Frankfurt</translation>
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
    <translation id="cloud_common_region_UK" qtlid="94015">London</translation>
-   <translation id="cloud_common_region_UK_micro" qtlid="442756">Londres ({{ micro }})</translation>
+   <translation id="cloud_common_region_UK_micro" qtlid="442756">London ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Locate</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Central Europe (France)</translation>
