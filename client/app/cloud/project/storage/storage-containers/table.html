@@ -47,7 +47,7 @@
                 {{storage.storedObjects}}
             </td>
             <td class="oui-table__cell" data-title="{{ 'storage_region' | translate }}">
-                {{ 'region_' + storage.region | translate }}
+                {{ regionService.getTranslatedMicroRegion(storage.region) }}
             </td>
             <td class="oui-table__cell" data-title="{{ 'storage_size' | translate }}">
                 {{storage.storedBytes | RAUnitsBits}}
