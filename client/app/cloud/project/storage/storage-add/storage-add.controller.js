@@ -8,15 +8,11 @@ angular.module("managerApp").controller("RA.storageAddCtrl",
         $scope.guides = {
             title: $translate.instant("storage_details_guide_title"),
             list: [
-                        {
-                            name: $translate.instant("storage_details_guide_pca"), 
-                            url: ovhDocUrl.getDocUrl("cloud/storage/pca")
-                        },
-                        {
-                            name: $translate.instant("storage_details_guide_pcs"), 
-                            url: ovhDocUrl.getDocUrl("cloud/storage/pcs")
-                        }
-                    ],
+                {
+                    name: $translate.instant("storage_details_guide"),
+                    url: ovhDocUrl.getDocUrl("storage")
+                }
+            ],
             footer: $translate.instant("storage_details_guide_footer")
 
         };

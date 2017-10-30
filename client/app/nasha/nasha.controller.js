@@ -69,7 +69,7 @@ class NashaCtrl {
         this.guides.list = [];
         this.guides.list.push({
             name: this.$translate.instant("nash_guide_name"),
-            url: this.ovhDocUrl.getDocUrl("cloud/storage/nas")
+            url: this.ovhDocUrl.getDocUrl("storage")
         });
     }
 
