@@ -13,9 +13,9 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
     "CloudStorageContainersConfiguration",
     "CloudMessage",
     "ovhDocUrl",
-    function ($interval, $rootScope, $scope, $stateParams, $translate, $uibModal, $window,
-        CLOUD_PCA_FILE_STATE, OvhApiCloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
-        CloudStorageContainersConfiguration, CloudMessage, ovhDocUrl) {
+    function ($interval, $rootScope, $scope, $stateParams, $translate, $uibModal, $window, CLOUD_PCA_FILE_STATE,
+              OvhApiCloudProjectUser, CloudStorageContainer, CloudStorageContainerTasksRunner,
+              CloudStorageContainersConfiguration, CloudMessage, ovhDocUrl) {
         "use strict";
 
         $scope.projectId = $stateParams.projectId;
@@ -38,27 +38,17 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
         $scope.objects = [];
         $scope.maxSize = 20;
         $scope.password = null;
-
-        //guides
         $scope.guides = {
             title: $translate.instant("storage_details_guide_title"),
-            list: [
-                        {
-                            name: $translate.instant("storage_details_guide_pca"), 
-                            url: ovhDocUrl.getDocUrl("cloud/storage/pca")
-                        },
-                        {
-                            name: $translate.instant("storage_details_guide_pcs"), 
-                            url: ovhDocUrl.getDocUrl("cloud/storage/pcs")
-                        }
-                    ],
+            list: [{
+                name: $translate.instant("storage_details_guide_pca"),
+                url: ovhDocUrl.getDocUrl("cloud/storage/pca")
+            }, {
+                name: $translate.instant("storage_details_guide_pcs"),
+                url: ovhDocUrl.getDocUrl("cloud/storage/pcs")
+            }],
             footer: $translate.instant("storage_details_guide_footer")
-
         };
-
-        $scope.title = $translate.instant("storage_object_title") + " : " + $scope.storage.name;
-
-                // handle messages
         $scope.messages = [];
 
         function refreshMessage () {
@@ -88,10 +78,10 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
         $scope.getPcaPassword = function () {
             var connectionInformation = $scope.connectionInformation;
             return [
-                    connectionInformation.osTenantName || "<tenant_name>",
-                    connectionInformation.osUsername || "<username>",
-                    "<password>"
-                ].join(".");
+                connectionInformation.osTenantName || "<tenant_name>",
+                connectionInformation.osUsername || "<username>",
+                "<password>"
+            ].join(".");
         };
 
         $scope.addObjects = function () {
@@ -297,6 +287,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
             return CloudStorageContainer.list($scope.projectId, $stateParams.storageId)
                 .then(function (details) {
                     storageDetails = details;
+                    $scope.title = `${$translate.instant("storage_object_title")} : ${storageDetails.name}`;
                     return CloudStorageContainer.getMetaData($scope.projectId, $stateParams.storageId);
                 })
                 .then(function (metaData) {
