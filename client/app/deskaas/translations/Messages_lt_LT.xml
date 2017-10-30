@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Slaptažodyje turi būti bent vienas specialus simbolis.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Slaptažodyje neturi būti simbolių <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Įveskite naują slaptažodį.</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Leiskite sistemai generuoti ir siųsti slaptažodį ir jums jį išsiųsti el. paštu.</translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Įvesti naują slaptažodį</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Generuoti atsitiktinį slaptažodį. Jūs gausite slaptažodį el. paštu.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Alias keitimas</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Įveskite naują alias</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Pereiti prie konsolės</translation>
    <translation id="vdi_btn_console" qtlid="164844">Pereiti prie konsolės</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Kol kas testuojama, būsime dėkingi už naudojimo atsiliepimus.</p><p>Gausite laišką su informacija, kaip prisijungti prie Cloud Desktop konsolės</p><p>Kai prisijungsite, spauskite CTRL+ALT+SHIFT.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">Jūs el. paštu gausite informaciją apie prisijungimą prie jūsų Cloud Desktop konsolės. Ar norite tęsti?</translation>
    <translation id="vdi_console_task" qtlid="406554">Prieigos prie konsolės prašymas</translation>
    <translation id="vdi_console_done" qtlid="406567">Gausite prieigos prie konsolės užsakymo el. laišką.</translation>
 

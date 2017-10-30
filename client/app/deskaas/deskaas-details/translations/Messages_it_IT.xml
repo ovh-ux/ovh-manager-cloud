@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="vdi_confirm_restore" qtlid="313910">Vuoi rimettere a nuovo il tuo desktop?</translation>
+<translation id="vdi_confirm_restore" qtlid="442652">La configurazione del tuo spazio di lavoro sarà riportata allo stato iniziale. I dati sul disco C: verranno eliminati e le applicazioni dovranno essere reinstallate. I dati sul disco D: saranno conservati. Vuoi continuare?</translation>
    <translation id="vdi_restoring" qtlid="313923">Ripristino del desktop in corso...</translation>
    <translation id="vdi_restored" qtlid="313936">Il ripristino del desktop è stato effettuato</translation>
-   <translation id="vdi_confirm_reboot" qtlid="323768">Vuoi riavviare questo desktop?</translation>
+   <translation id="vdi_confirm_reboot" qtlid="442665">Il tuo spazio di lavoro verrà riavviato, i dati non salvati potrebbero essere persi. Vuoi continuare?</translation>
    <translation id="vdi_rebooting" qtlid="323781">Riavvio del desktop in corso...</translation>
    <translation id="vdi_rebooted" qtlid="323794">Il desktop è stato riavviato</translation>
    <translation id="vdi_confirm_reset_password" qtlid="290030">Riceverai la password generata via email, vuoi continuare?</translation>
@@ -18,14 +18,13 @@
    <translation id="vdi_username_changed" qtlid="323846">La modifica dell'username è stata effettuata</translation>
 
    <translation id="vdi_terminate_confirming" qtlid="370824">L'eliminazione del servizio è stata programmata.</translation>
-   <translation id="vdi_confirm_delete" qtlid="313975">Vuoi davvero eliminare questo desktop?&#13;
-(per confermare la cancellazione del servizio, clicca sul link che riceverai via email)</translation>
+   <translation id="vdi_confirm_delete" qtlid="442678">Il tuo desktop verrà eliminato con tutti i dati ad esso associati e non sarà più possibile accedervi. Vuoi continuare?</translation>
    <translation id="vdi_deleting" qtlid="313988">Eliminazione del desktop in corso... Riceverai un'email per confermare la tua richiesta.</translation>
    <translation id="vdi_deleted" qtlid="314001">Il desktop verrà eliminato. Ti abbiamo inviato un'email di conferma</translation>
    <translation id="vdi_btn_restore" qtlid="314014">Ripristina il desktop</translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Riavvia il desktop</translation>
    <translation id="vdi_btn_reset_password" qtlid="80394">Modifica la password</translation>
-   <translation id="vdi_btn_delete" qtlid="314027">Elimina il desktop</translation>
+   <translation id="vdi_btn_delete" qtlid="442691">Disattiva il desktop</translation>
    <translation id="vdi_label_username" qtlid="197024">Nome utente:</translation>
    <translation id="vdi_label_email" qtlid="116322">E-mail :</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
@@ -47,11 +46,11 @@
    <translation id="vdi_change_alias" qtlid="323885">Modifica l'alias</translation>
    <translation id="vdi_change_username" qtlid="323898">Modifica l'username</translation>
 
-   <translation id="vdi_btn_upgrade" qtlid="370837">Cambia pack</translation>
+   <translation id="vdi_btn_upgrade" qtlid="403684">Upgrade dell'offerta</translation>
    <translation id="vdi_confirm_upgrade" qtlid="314053">Effettuando l'upgrade al piano <strong>{{plan}}</strong>, il costo mensile di questo desktop sarà di <strong>{{price}}+IVA</strong>. Vuoi effettuare l'upgrade?</translation>
    <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
-   <translation id="vdi_upgrade_title" qtlid="370837">Cambia pack</translation>
-   <translation id="vdi_upgrade_available" qtlid="370850">Puoi scegliere uno dei seguenti pack</translation>
+   <translation id="vdi_upgrade_title" qtlid="403684">Upgrade dell'offerta</translation>
+   <translation id="vdi_upgrade_available" qtlid="442704">Puoi passare a una di queste offerte:</translation>
 
    <translation id="vdi_upgrading" qtlid="314066">Upgrade del desktop in corso...</translation>
    <translation id="vdi_upgraded" qtlid="314079">L'upgrade del desktop è stata effettuato</translation>

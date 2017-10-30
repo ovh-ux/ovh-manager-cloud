@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Heslo musí obsahovat alespoň jeden zvláštní znak.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Heslo nesmí obsahovat znaky <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="295413">Zadejte nové heslo.</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="295426">Nechejte systém, aby vygeneroval heslo a poté Vám jej zaslal e-mailem.</translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Entrer le nouveau mot de passe</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Générer un mot de passe aléatoire. Vous recevrez ce mot de passe par e-mail.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Změna aliasu</translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Zadejte nový alias</translation>
@@ -43,8 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Přístup ke konzoli</translation>
    <translation id="vdi_btn_console" qtlid="164844">Přístup ke konzoli</translation>
-   <translation id="vdi_console_info" qtlid="406541"><p>Tato služba v současné době prochází testovací fází. Vaše zpětná vazba je vítána.</p>&#13;
-<p>Zanedlouho od nás obdržíte e-mail s detailními informacemi pro připojení ke konzoli služby Cloud Desktop</p><p>Po připojení prosím stiskněte kombinaci kláves CTRL+ALT+SHIFT.</p></translation>
+   <translation id="vdi_console_info" qtlid="442743">Vous allez recevoir un e-mail contenant la procédure à suivre pour vous connecter à la console de votre Cloud Desktop. Souhaitez-vous continuer?</translation>
    <translation id="vdi_console_task" qtlid="406554">Požadavek na přístup ke konzoli byl odeslán</translation>
    <translation id="vdi_console_done" qtlid="406567">Na základě Vašeho požadavku pro přístup ke konzoli zanedlouho obdržíte e-mail s dalšími instrukcemi.</translation>
 
