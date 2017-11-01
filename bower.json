@@ -62,7 +62,7 @@
     "ovh-angular-stop-event": "^0.1.0",
     "ovh-angular-user-pref": "^0.3.1",
     "ovh-angular-toaster": "^0.8.0",
-    "ovh-angular-browser-alert": "^0.0.5",
+    "ovh-angular-browser-alert": "^1.0.0",
     "ovh-angular-pagination-front": "^5.1.0",
     "ovh-angular-responsive-page-switcher": "^1.1.0",
     "ovh-angular-responsive-tabs": "^3.1.4",
