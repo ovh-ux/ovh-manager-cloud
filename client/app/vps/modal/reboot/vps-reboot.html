@@ -1,42 +1,35 @@
-<div data-ng-controller="VpsRebootCtrl">
-    <div data-wizard
-         data-wizard-on-cancel="resetAction"
-         data-wizard-on-finish="rebootVps"
-         data-wizard-hide-cancel-button="loader.loading"
-         data-wizard-title="i18n.vps_configuration_reboot_title"
-		 data-wizard-title-icon="'icon-restart-vps'"
-		 class="platforms">
-
-        <div data-wizard-step
-            data-wizard-step-on-load="loadCheck"
-            data-wizard-step-valid="!loader.loading && !loader.task">
-            <div class="row-fluid" data-ng-show="loader.loading || loader.task">
-                <div class="span12 loader"></div>
-                <p data-ng-show="!loader.task && selected.rescue && vps.netbootMode != 'RESCUE'" class="center" data-i18n-static="vps_configuration_reboot_confirmation_rescue_loading"></p>
-                <p data-ng-show="!loader.task && !selected.rescue && vps.netbootMode == 'RESCUE'" class="center" data-i18n-static="vps_configuration_reboot_confirmation_local_loading"></p>
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+    <cui-modal-body data-title="'vps_configuration_reboot_title' | translate">
+        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+            <oui-loader class="d-inline-block"></oui-loader>
+        </div>
+        <div data-ng-if="!$ctrl.loader.init && !ctrl.loader.save">
+            <div data-ng-if="$ctrl.vps.tools == 'KO'">
+                <cui-modal-text data-text="'vps_configuration_reboot_warning_tools' | translate"></cui-modal-text>
+                <cui-modal-text data-text="'vps_configuration_reboot_warning_tools2' | translate"></cui-modal-text>
             </div>
-            <div data-ng-hide="loader.loading || loader.task">
-                <p data-ng-show="vps.tools == 'KO'" class="red bold" data-i18n-static="vps_configuration_reboot_warning_tools"></p>
-                <p data-ng-show="vps.tools == 'KO'" class="red bold" data-i18n-static="vps_configuration_reboot_warning_tools2"></p>
-
-                <span class="bold blue" data-ng-bind-html="tr('vps_configuration_reboot_question', [vps.name])"></span>
-                <br/><br/>
-                <span data-i18n-static="vps_configuration_reboot_confirmation"></span>
-                <br/>
-                <span class="fs11 italic" data-ng-bind-html="i18n.vps_configuration_reboot_alert"></span>
-                <div>
-                    <br/>
-                    <label class="checkbox">
-                        <input type="checkbox" data-ng-model="selected.rescue"/>
-                        {{i18n.vps_configuration_reboot_rescue}}
-                    </label>
-                    <br/>
-                    <span class="fs11 italic" data-i18n-static="vps_configuration_reboot_rescue_info"></span>
-                </div>
+            <cui-modal-text data-text="'vps_configuration_reboot_confirmation' | translate"></cui-modal-text>
+            <p class="oui-modal__body-text italic" data-translate="vps_configuration_reboot_alert"></p>
+            <div class="oui-checkbox">
+                <input class="oui-checkbox__input" id="rescue" type="checkbox" data-ng-model="$ctrl.selected.rescue"/>
+                <label class="oui-checkbox__label-container" for="rescue">
+                    <span class="oui-checkbox__label" data-translate="vps_configuration_reboot_rescue"></span>
+                    <span class="oui-checkbox__description" data-translate="vps_configuration_reboot_rescue_info"></span>
+                    <span class="oui-checkbox__icon">
+                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
+                </label>
             </div>
 
         </div>
-
-    </div>
-
-</div>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'common_confirm' | translate" 
+            data-on-click="$ctrl.confirm()"
+            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

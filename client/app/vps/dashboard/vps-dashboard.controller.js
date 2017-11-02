@@ -1,6 +1,7 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $stateParams, CloudMessage, VpsActionService, VpsService) {
+    constructor ($filter, $scope, $stateParams, CloudMessage, VpsActionService, VpsService) {
         this.$filter = $filter;
+        this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
         this.serviceName = $stateParams.serviceName;
