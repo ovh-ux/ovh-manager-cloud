@@ -8,15 +8,14 @@ class VpsDetailCtrl {
         this.serviceName = $stateParams.serviceName;
         this.VpsService = VpsService;
 
-        this.vps = {};
-
         this.messages = [];
     }
 
     $onInit () {
         this.loadMessage();
+        this.VpsService.getSelected(true).then(vps => { this.description = vps.displayName});
         this.$scope.$on("changeDescription", (event, data) => {
-            this.vps.description = data;
+            this.description = data;
         });
     }
 
