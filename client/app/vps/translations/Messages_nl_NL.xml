@@ -145,7 +145,7 @@
    <translation id="vps_configuration_reboot_todo" qtlid="168510">Het reboot verzoek werd uitgevoerd.</translation>
    <translation id="vps_configuration_reboot_fail" qtlid="168523">Er is een fout opgetreden bij het reboot verzoek</translation>
    <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Rescue modus</translation>
-   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Bepaalde functies zijn niet beschikbaar in </b>rescue modus</b>. Om ze te herstellen dien u de plaatselijke boot herstellen te klikken op Restart your VPS. </translation>
+   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Bepaalde functies zijn niet beschikbaar in <b>rescue modus</b>. Om ze te herstellen dien u de plaatselijke boot herstellen te klikken op 'Restart your VPS'. </translation>
    <translation id="vps_configuration_reboot_rescue_warning_btn_title" qtlid="323340">Deze functie is niet beschikbaar in rescue modus. </translation>
    <translation id="vps_configuration_ipV6_info_text" qtlid="367125">Uw instance is nu gekoppeld aan een <strong>gratis IPv6</strong> ter aanvulling op de standaard IPv4.</translation>
    <translation id="vps_configuration_ipV6_address_label" qtlid="25615">IP</translation>
@@ -468,7 +468,7 @@
    <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Er is een fout opgetreden tijdens het verzoek om toegangsregels aan de back-up storage toe te voegen</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Alle beschikbare blokken zijn geautoriseerd</translation>
 
-   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">De wijziging van de toegang <b> {0} </ b> wordt uitgevoerd, maar kan een paar minuten in beslag nemen</translation>
+   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">De wijziging van de toegang <b> {0} </b> wordt uitgevoerd, maar kan een paar minuten in beslag nemen</translation>
    <translation id="vps_tab_backup_storage_set_fail" qtlid="183866">Er is een fout opgetreden bij het wijzigen van de toegang <b>{0}</b></translation>
 
    <translation id="vps_monitoring_network_netRx" qtlid="33550">Inkomende</translation>
