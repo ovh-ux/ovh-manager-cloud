@@ -25,11 +25,14 @@
 
 
         <ul class="vrack__service-list" data-ng-if="!VrackCtrl.vrackService.isGroupedServiceType(serviceType)">
-            <li class="vrack__service vrack__service_selectable"
+            <li class="vrack__service vrack__service_selectable d-flex"
                 data-ng-repeat="service in services | orderBy: service.niceName track by service.id"
                 data-ng-click="VrackCtrl.toggleDeleteService(service.trueServiceType, service.id)"
                 data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(service.trueServiceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
                 {{ ::service.niceName }}
+                <oui-loader data-size="s"
+                    data-ng-if="VrackCtrl.isPending(service.id)">
+                </oui-loader>
             </li>
         </ul>
 
@@ -44,10 +47,13 @@
                 </span>
 
                 <ul class="vrack__service-list vrack__service-list_group">
-                    <li class="vrack__service vrack__service_selectable"
+                    <li class="vrack__service vrack__service_selectable d-flex"
                         data-ng-click="VrackCtrl.toggleDeleteService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
                         {{ ::'vrack_private_cloud_vm_network_label' | translate }}
+                        <oui-loader data-size="s"
+                            data-ng-if="VrackCtrl.isPending(service.id)">
+                        </oui-loader>
                     </li>
                 </ul>
             </li>
@@ -64,11 +70,14 @@
                 </span>
 
                 <ul class="vrack__service-list vrack__service-list_group">
-                    <li class="vrack__service vrack__service_selectable"
+                    <li class="vrack__service vrack__service_selectable d-flex"
                         data-ng-click="VrackCtrl.toggleMoveService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.moving }"
                         data-ng-repeat="service in datacenters track by service.datacenter">
                         {{ ::service.niceName }}
+                        <oui-loader data-size="s"
+                            data-ng-if="VrackCtrl.isPending(service.id)">
+                        </oui-loader>
                     </li>
                 </ul>
             </li>

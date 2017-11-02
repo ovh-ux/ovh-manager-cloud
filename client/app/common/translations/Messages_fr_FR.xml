@@ -101,6 +101,7 @@
    <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Projet Cloud</translation>
+   <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Changer le propriétaire</translation>
 
    <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} tâche(s) complétée(s)</translation>
