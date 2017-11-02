@@ -28,14 +28,6 @@
    <translation id="cpb_vouchers_add_error" qtlid="250485">Oups, nous n'arrivons pas a ajouter ce voucher. Veuillez réessayer.</translation>
    <translation id="cpb_vouchers_add_error_no_longer_valid_or_already_used" qtlid="250498">Ce voucher n'est plus valide ou a déjà été utilisé.</translation>
    <translation id="cpb_vouchers_add_error_not_found" qtlid="250511">Ce voucher n'est pas valide.</translation>
-   <translation id="cpb_vouchers_add_error_missing_payment_mean">Vous devez enregistrer un moyen de paiement par défaut pour utiliser ce voucher.</translation>
-   <translation id="cpb_vouchers_add_error_already_used">Le voucher a déjà été utilisé.</translation>
-   <translation id="cpb_vouchers_add_error_expired">La date d'expiration du voucher a été dépassée.</translation>
-   <translation id="cpb_vouchers_add_error_invalid">Le voucher n'est pas valide, veuillez contacter le support.</translation>
-   <translation id="cpb_vouchers_add_error_invalid_country">Ce voucher n'est utilisable que dans certains pays.</translation>
-   <translation id="cpb_vouchers_add_error_max_usage_reached">Vous ne pouvez pas utiliser ce voucher car il a atteint sa limite d'utilisation.</translation>
-   <translation id="cpb_vouchers_add_error_only_new_customer">Ce voucher n'est utilisable que pour les nouveaux clients public cloud.</translation>
-   <translation id="cpb_vouchers_add_error_only_project_creation">Ce voucher n'est utilisable qu'à la création d'un nouveau project cloud.</translation>
 
    <translation id="cpb_vouchers_credit_comment" qtlid="255207">Le crédit cloud n'est pas transférable, ni remboursable. Il n'a aucune valeur monétaire et tout crédit non utilisé dans les 13 mois sera perdu.</translation>
 

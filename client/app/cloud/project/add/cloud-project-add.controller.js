@@ -133,8 +133,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                     switch (err.status) {
                     case 400:
                         return Toast.error($translate.instant("cpa_error_invalid_paymentmean"));
-                    case 403:
-                        return Toast.error($translate.instant("cpb_vouchers_add_" + err.data.message));
                     case 409:
                         return Toast.error($translate.instant("cpa_error_over_quota"));
                     default:

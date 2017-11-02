@@ -75,7 +75,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
                 init();
                 self.toggleAddVoucher();
             }, function (err) {
-                CloudMessage.error($translate.instant("cpb_vouchers_add_" + err.data.message));
+                CloudMessage.error($translate.instant("cpb_vouchers_add_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""))
             })["finally"](function () {
                 self.loading.add = false;
             });
