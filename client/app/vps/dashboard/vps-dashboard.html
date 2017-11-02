@@ -29,7 +29,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'common_tile_status' | translate"
+            <cui-tile data-title="'vps_dashboard_state_services' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
                     <li class="cui-tile__item cui-tile__item_button">
@@ -81,23 +81,32 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'vps_home_tile_ip' | translate"
+            <cui-tile data-title="'common_tile_ip' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item data-term="'common_ipv4' | translate">
-                        <cui-tile-definition-description>
-                            <cui-clipboard data-text="$ctrl.vps.ipv4"></cui-clipboard>
-                        </cui-tile-definition-description>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'common_ipv4' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <cui-clipboard data-text="$ctrl.vps.ipv4"></cui-clipboard>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item data-term="'common_ipv6' | translate">
-                        <cui-tile-definition-description>
-                            <cui-clipboard data-text="$ctrl.vps.ipv6"></cui-clipboard>
-                        </cui-tile-definition-description>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term  data-term="'common_ipv6' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <cui-clipboard data-text="$ctrl.vps.ipv6"></cui-clipboard>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item data-term="'vps_configuration_ipV6_gateway_label' | translate">
-                        <cui-tile-definition-description>
-                            <cui-clipboard data-text="$ctrl.vps.ipv6Gateway"></cui-clipboard>
-                        </cui-tile-definition-description>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'vps_configuration_ipV6_gateway_label' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <cui-clipboard data-text="$ctrl.vps.ipv6Gateway"></cui-clipboard>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
                     </cui-tile-item>
                     <cui-tile-item data-ng-if="$ctrl.vps.reverseDns"
                                    data-term="'vps_dashboard_reverse_dns' | translate"
@@ -112,18 +121,23 @@
 
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'vps_home_tile_config' | translate"
+            <cui-tile data-title="'common_tile_configuration' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_dashboard_initName' | translate"
-                        data-description="$ctrl.vps.name">
+                                   data-description="$ctrl.vps.name">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_dashboard_product' | translate"
+                                   data-description="$ctrl.vps.model">
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_boot' | translate"
-                        data-description="$ctrl.vps.netbootMode">
+                                   data-description="$ctrl.vps.netbootMode">
                     </cui-tile-item>
+                    <cui-tile-item data-term="'vps_dashboard_distribution' | translate"
+                                   data-description="$ctrl.vps.distribution.name">
                     <cui-tile-item>
                         <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'common_datacenter' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-term data-term="'vps_dashboard_localisation' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description-region data-regions="$ctrl.vps.location.datacentre"></cui-tile-definition-description-region>
                         </cui-tile-definitions>
                     </cui-tile-item>
@@ -132,7 +146,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-titl="vps_home_tile_options"
+            <cui-tile data-titl="common_tile_options"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 
             </cui-tile>
