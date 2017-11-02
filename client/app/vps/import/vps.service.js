@@ -174,13 +174,14 @@ angular.module("managerApp").service("VpsService", [
             p = period != null ? period : "lastday";
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.get([aapiRootPath, vps.name, "monitoring"].join("/"), { serviceType: "aapi", params: { period: p } }).then(function (data) {
-                        if (data) {
-                            monitoring = data.data;
-                        } else {
-                            $q.reject(aapiRootPath + vps.name + "/monitoring?period="  + p + " : " + "No data");
-                        }
-                    });
+                    return $http.get([aapiRootPath, vps.name, "monitoring"].join("/"), { serviceType: "aapi", params: { period: p } })
+                        .then(function (data) {
+                            if (data) {
+                                monitoring = data.data;
+                            } else {
+                                $q.reject(aapiRootPath + vps.name + "/monitoring?period="  + p + " : " + "No data");
+                            }
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -267,9 +268,10 @@ angular.module("managerApp").service("VpsService", [
             var result = null;
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "openConsoleAccess"].join("/"), { protocol: "VNCOverWebSocket" }).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsVpsProxypass, vps.name, "openConsoleAccess"].join("/"), { protocol: "VNCOverWebSocket" })
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -378,9 +380,10 @@ angular.module("managerApp").service("VpsService", [
                 if (!ips) {
                     return $q.reject("No ips");
                 } else if (vps && vps.name) {
-                    return $http.post([aapiRootPath, vps.name, "ips", "reverse"].join("/") , ips, {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([aapiRootPath, vps.name, "ips", "reverse"].join("/") , ips, {serviceType: "aapi"})
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -407,14 +410,15 @@ angular.module("managerApp").service("VpsService", [
                     var tabSummary = vpsCache.get("tabSummary_" + vpsName);
                     if (!tabSummary) {
                         vpsCache.put("tabSummary_" + vps.name, true);
-                        return $http.get([aapiRootPath, vps.name, "tabsummary"].join("/"), {serviceType: "aapi"}).then(function (response) {
-                            if (response.status < 300) {
-                                vpsCache.put("tabSummary_" + vpsName, response.data);
-                                return vpsCache.get("tabSummary_" + vpsName);
-                            } else {
-                                return $q.reject(response);
-                            }
-                        });
+                        return $http.get([aapiRootPath, vps.name, "tabsummary"].join("/"), {serviceType: "aapi"})
+                            .then(function (response) {
+                                if (response.status < 300) {
+                                    vpsCache.put("tabSummary_" + vpsName, response.data);
+                                    return vpsCache.get("tabSummary_" + vpsName);
+                                } else {
+                                    return $q.reject(response);
+                                }
+                            });
                     } else {
                         return tabSummary;
                     }
@@ -450,14 +454,15 @@ angular.module("managerApp").service("VpsService", [
                     var tabSummary = vpsCache.get("tabIps_" + vpsName);
                     if (!tabSummary) {
                         vpsCache.put("tabIps_" + vps.name, true);
-                        return $http.get([aapiRootPath, vps.name, "tabips"].join("/"), {serviceType: "aapi"}).then(function (response) {
-                            if (response.status < 300) {
-                                vpsCache.put("tabIps_" + vpsName, response.data);
-                                return vpsCache.get("tabIps_" + vpsName);
-                            } else {
-                                return $q.reject(response);
-                            }
-                        });
+                        return $http.get([aapiRootPath, vps.name, "tabips"].join("/"), {serviceType: "aapi"})
+                            .then(function (response) {
+                                if (response.status < 300) {
+                                    vpsCache.put("tabIps_" + vpsName, response.data);
+                                    return vpsCache.get("tabIps_" + vpsName);
+                                } else {
+                                    return $q.reject(response);
+                                }
+                            });
                     } else {
                         return tabSummary;
                     }
@@ -503,14 +508,15 @@ angular.module("managerApp").service("VpsService", [
                     var tabSummary = vpsCache.get(cacheKey);
                     if (!tabSummary) {
                         vpsCache.put(cacheKey, true);
-                        return $http.get([aapiRootPath, vps.name, "tabsecondarydns"].join("/"), {serviceType: "aapi"}).then(function (response) {
-                            if (response.status < 300) {
-                                vpsCache.put(cacheKey, response.data);
-                                return vpsCache.get(cacheKey);
-                            } else {
-                                return $q.reject(response);
-                            }
-                        });
+                        return $http.get([aapiRootPath, vps.name, "tabsecondarydns"].join("/"), {serviceType: "aapi"})
+                            .then(function (response) {
+                                if (response.status < 300) {
+                                    vpsCache.put(cacheKey, response.data);
+                                    return vpsCache.get(cacheKey);
+                                } else {
+                                    return $q.reject(response);
+                                }
+                            });
                     } else {
                         return tabSummary;
                     }
@@ -546,14 +552,15 @@ angular.module("managerApp").service("VpsService", [
                     var tabSummary = vpsCache.get("tabSecondaryDNS_dns_available");
                     if (!tabSummary) {
                         vpsCache.put("tabSecondaryDNS_dns_available", true);
-                        return $http.get([swsVpsProxypass, vps.name, "secondaryDnsNameServerAvailable"].join("/")).then(function (response) {
-                            if (response.status < 300) {
-                                vpsCache.put("tabSecondaryDNS_dns_available", response.data);
-                                return vpsCache.get("tabSecondaryDNS_dns_available");
-                            } else {
-                                return $q.reject(response);
-                            }
-                        });
+                        return $http.get([swsVpsProxypass, vps.name, "secondaryDnsNameServerAvailable"].join("/"))
+                            .then(function (response) {
+                                if (response.status < 300) {
+                                    vpsCache.put("tabSecondaryDNS_dns_available", response.data);
+                                    return vpsCache.get("tabSecondaryDNS_dns_available");
+                                } else {
+                                    return $q.reject(response);
+                                }
+                            });
                     } else {
                         return tabSummary;
                     }
@@ -586,9 +593,10 @@ angular.module("managerApp").service("VpsService", [
             var result = null;
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "secondaryDnsDomains"].join("/"), { domain: domain }).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsVpsProxypass, vps.name, "secondaryDnsDomains"].join("/"), { domain: domain })
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -614,9 +622,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name && domain) {
                     vpsName = vps.name;
-                    return $http["delete"]([swsVpsProxypass, vps.name, "secondaryDnsDomains", domain].join("/")).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http["delete"]([swsVpsProxypass, vps.name, "secondaryDnsDomains", domain].join("/"))
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -642,9 +651,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
-                    return $http.post([swsVpsProxypass, vps.name, "createSnapshot"].join("/"), description).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsVpsProxypass, vps.name, "createSnapshot"].join("/"), description)
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -668,9 +678,10 @@ angular.module("managerApp").service("VpsService", [
             var result = null;
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "snapshot/revert"].join("/")).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsVpsProxypass, vps.name, "snapshot/revert"].join("/"))
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -695,9 +706,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
-                    return $http["delete"]([swsVpsProxypass, vps.name, "snapshot"].join("/")).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http["delete"]([swsVpsProxypass, vps.name, "snapshot"].join("/"))
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -722,9 +734,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name && option && duration) {
                     vpsName = vps.name;
-                    return $http.post([aapiRootPath, vps.name, "order", "options"].join("/"), { option: option, duration: duration }, {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([aapiRootPath, vps.name, "order", "options"].join("/"), { option: option, duration: duration }, {serviceType: "aapi"})
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -748,9 +761,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name && option) {
                     vpsName = vps.name;
-                    return $http.get([aapiRootPath, vps.name, "options", option].join("/"), {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.get([aapiRootPath, vps.name, "options", option].join("/"), {serviceType: "aapi"})
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -811,9 +825,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name && model && duration) {
                     vpsName = vps.name;
-                    return $http.post([swsOrderProxypass, vps.name, "upgrade", duration].join("/"), { model: model }).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsOrderProxypass, vps.name, "upgrade", duration].join("/"), { model: model })
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -837,9 +852,10 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
-                    return $http.get([aapiRootPath, vps.name, "upgrade"].join("/"), {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.get([aapiRootPath, vps.name, "upgrade"].join("/"), {serviceType: "aapi"})
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -859,17 +875,19 @@ angular.module("managerApp").service("VpsService", [
          */
         this.getVeeamInfo = function () {
             return self.getSelected().then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup"].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([swsVpsProxypass, vps.name, "automatedBackup"].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
         this.getVeeamAttachedBackup = function () {
             return self.getSelected().then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/attachedBackup"].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/attachedBackup"].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
@@ -962,9 +980,10 @@ angular.module("managerApp").service("VpsService", [
          */
         this.orderVeeamOption = function (duration) {
             return this.getSelected().then(function (vps) {
-                return $http.post([swsOrderProxypass, vps.name, "automatedBackup", duration].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.post([swsOrderProxypass, vps.name, "automatedBackup", duration].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
@@ -973,9 +992,10 @@ angular.module("managerApp").service("VpsService", [
          */
         this.update = function (newValue) {
             return this.getSelected().then(function (vps) {
-                return $http.put([swsVpsProxypass, vps.name].join("/"), newValue).then(function (response) {
-                    return response.data;
-                });
+                return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
@@ -1000,9 +1020,10 @@ angular.module("managerApp").service("VpsService", [
 
         this.getBackupStorageInformation = function () {
             return this.getSelected().then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage"].join("/"), {serviceType: "aapi"}).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([aapiRootPath, vps.name, "backupStorage"].join("/"), {serviceType: "aapi"})
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
@@ -1026,9 +1047,10 @@ angular.module("managerApp").service("VpsService", [
 
         this.getBackupStorageAuthorizableBlocks = function () {
             return this.getSelected().then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage/access/authorizableBlocks"].join("/"), {serviceType: "aapi"}).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([aapiRootPath, vps.name, "backupStorage/access/authorizableBlocks"].join("/"), {serviceType: "aapi"})
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
@@ -1059,41 +1081,46 @@ angular.module("managerApp").service("VpsService", [
 
         this.deleteBackupStorageAccess = function (ipBlock) {
             return this.getSelected().then(function (vps) {
-                return $http["delete"]([swsVpsProxypass, vps.name, "backupftp", "access", encodeURIComponent(ipBlock)].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http["delete"]([swsVpsProxypass, vps.name, "backupftp", "access", encodeURIComponent(ipBlock)].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
         this.requestFtpBackupPassword = function () {
             return this.getSelected().then(function (vps) {
-                return $http.post([swsVpsProxypass, vps.name, "backupftp/password"].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.post([swsVpsProxypass, vps.name, "backupftp/password"].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
         this.getWindowsOptionDurations = function () {
             return this.getSelected().then(function (vps) {
-                return $http.get([swsOrderProxypass, vps.name, "windows"].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([swsOrderProxypass, vps.name, "windows"].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
         this.getWindowsOptionOrder = function (duration) {
             return this.getSelected().then(function (vps) {
-                return $http.get([swsOrderProxypass, vps.name, "windows", duration].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.get([swsOrderProxypass, vps.name, "windows", duration].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 
         this.postWindowsOptionOrder = function (duration) {
             return this.getSelected().then(function (vps) {
-                return $http.post([swsOrderProxypass, vps.name, "windows", duration].join("/")).then(function (response) {
-                    return response.data;
-                });
+                return $http.post([swsOrderProxypass, vps.name, "windows", duration].join("/"))
+                    .then(function (response) {
+                        return response.data;
+                    });
             });
         };
 

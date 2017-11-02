@@ -1,3 +1,154 @@
+<section class="container-fluid cui-page__content cui-page__content-flex">
 
-<cui-loader data-ng-if="$ctrl.loaders.init"></cui-loader>
+    <div class="row d-lg-flex">
+
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+            <div class="cui-tile h-100">
+                <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
+                <ul class="cui-tile__body cui-tile__body_list">
+                    <li class="cui-tile__item cui-tile__item_button">
+                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                            type="button"
+                            data-ng-click="$ctrl.setAction('password')"
+                            data-ng-disabled="$ctrl.loaders.polling">
+                            <span data-translate="vps_configuration_reinitpassword_title_button"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                    <li class="cui-tile__item cui-tile__item_button">
+                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                            type="button"
+                            data-ng-click="$ctrl.setAction('reboot')"
+                            data-ng-disabled="$ctrl.loaders.polling">
+                            <span data-translate="vps_configuration_reboot_title_button"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xm-12 col-md-4">
+            <cui-tile data-title="'common_tile_status' | translate"
+                      data-loading="$ctrl.loaders.init" class="h-100">
+                <ul class="cui-tile__body cui-tile__body_list">
+                    <li class="cui-tile__item cui-tile__item_button">
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.ping == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.ping == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_ping"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.ssh == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.ssh == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_ssh"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.http == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.http == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_http"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.https == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.https == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_https"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.dns == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.dns == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_dns"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.smtp == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.smtp == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_smtp"></span>
+                        </div>
+                        <div class="cui-tile__button">
+                            <i class="oui-icon oui-icon_bicolor"
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.tools == 'OK',
+                                                   'oui-icon-error_circle': $ctrl.vps.tools == 'KO'}"></i>
+                            <span data-translate="vps_dashboard_tools"></span>
+                        </div>
+                    </li>
+                </ul>
+            </cui-tile>
+        </div>
+
+        <div class="col-xm-12 col-md-4">
+            <cui-tile data-title="'vps_home_tile_ip' | translate"
+                      data-loading="$ctrl.loaders.init" class="h-100">
+                <cui-tile-body>
+                    <cui-tile-item data-term="'common_ipv4' | translate">
+                        <cui-tile-definition-description>
+                            <cui-clipboard data-text="$ctrl.vps.ipv4"></cui-clipboard>
+                        </cui-tile-definition-description>
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'common_ipv6' | translate">
+                        <cui-tile-definition-description>
+                            <cui-clipboard data-text="$ctrl.vps.ipv6"></cui-clipboard>
+                        </cui-tile-definition-description>
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_configuration_ipV6_gateway_label' | translate">
+                        <cui-tile-definition-description>
+                            <cui-clipboard data-text="$ctrl.vps.ipv6Gateway"></cui-clipboard>
+                        </cui-tile-definition-description>
+                    </cui-tile-item>
+                    <cui-tile-item data-ng-if="$ctrl.vps.reverseDns"
+                                   data-term="'vps_dashboard_reverse_dns' | translate"
+                                   data-description="$ctrl.vps.reverseDns"></cui-tile-item>
+                    <cui-tile-item data-term="'vps_dashboard_secondary_dns' | translate"
+                                   data-description="$ctrl.vps.secondaryDns"></cui-tile-item>
+                </cui-tile-body>
+            </cui-tile>        
+        </div>
+
+    </div>
+
+    <div class="row d-lg-flex">
+        <div class="col-xm-12 col-md-4">
+            <cui-tile data-title="'vps_home_tile_config' | translate"
+                      data-loading="$ctrl.loaders.init" class="h-100">
+                <cui-tile-body>
+                    <cui-tile-item data-term="'vps_dashboard_initName' | translate"
+                        data-description="$ctrl.vps.name">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_dashboard_boot' | translate"
+                        data-description="$ctrl.vps.netbootMode">
+                    </cui-tile-item>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'common_datacenter' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description-region data-regions="$ctrl.vps.location.datacentre"></cui-tile-definition-description-region>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                </cui-tile-body>
+            </cui-tile>        
+        </div>
+
+        <div class="col-xm-12 col-md-4">
+            <cui-tile data-titl="vps_home_tile_options"
+                      data-loading="$ctrl.loaders.init" class="h-100">
+                
+            </cui-tile>
+        </div>
+
+        <div class="col-xm-12 col-md-4">
+            <cui-tile-subscription data-loading="$ctrl.loaders.init"
+                data-subscription-info="$ctrl.vps"
+                data-offer-actions="ctrl.actions.changeOffer"
+                data-autorenew-actions="ctrl.actions.manageAutorenew"
+                data-contact-actions="ctrl.actions.manageContact"
+                class="h-100"></cui-tile-subscription>
+        </div>
+
+    </div>
+
+</section>
+
 <div data-ng-bind="$ctrl.vps"></div>
