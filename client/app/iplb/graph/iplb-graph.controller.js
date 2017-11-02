@@ -15,8 +15,9 @@ class IpLoadBalancerGraphCtrl {
         this.reqmLoader = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.getData("reqm")
         });
-        this.scales = this.IpLoadBalancerConstant.graphParams;
-        this.scale = _.keys(this.scales)[0];
+        this.offerLoader = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerMetricsService.getService(this.$stateParams.serviceName)
+        });
 
         this.initGraph();
         this.loadGraphs();
@@ -56,6 +57,23 @@ class IpLoadBalancerGraphCtrl {
     }
 
     loadGraphs () {
+        this.offerLoader.load().then(service => {
+            service.offer = "lb2";
+            let scales = this.IpLoadBalancerConstant.graphScales[service.offer];
+            if (!scales) {
+                scales = this.IpLoadBalancerConstant.graphScales.lb1;
+            }
+            this.scales = _.reduce(scales, (scales, scale) => {
+                scales[scale] = this.IpLoadBalancerConstant.graphParams[scale];
+                return scales;
+            }, {});
+            this.scale = _.keys(this.scales)[0];
+            this.connLoader.load();
+            this.reqmLoader.load();
+        });
+    }
+
+    refreshGraphs () {
         this.connLoader.load();
         this.reqmLoader.load();
     }
@@ -85,7 +103,7 @@ class IpLoadBalancerGraphCtrl {
     }
 
     onScaleChange () {
-        this.loadGraphs();
+        this.refreshGraphs();
     }
 }
 
