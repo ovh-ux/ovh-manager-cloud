@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vps_order_windows_title" qtlid="250745">Možnosti windows</translation>
+   <translation id="vps_order_windows_info" qtlid="250758">Tato možnost Vám umožni instalovat OS typu Windows na Vaše VPS.</translation>
+   <translation id="vps_order_windows_price_error" qtlid="250771">Při získávání cen došlo k chybě.</translation>
+   <translation id="vps_order_windows_order_success" qtlid="181266">Byla vytvořena objednávka <a href='{0}' target='_blank'>{1}</a>.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">Při potvrzení objednávky došlo k chybě.</translation>
+   <translation id="vps_order_windows_order_select_duration" qtlid="181214">Zvolte období:</translation>
+   <translation id="vps_order_windows_order_resume" qtlid="177496">Shrnutí Vaší objednávky</translation>
+   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Celková cena bez DPH:</translation>
+   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Celková cena s DPH:</translation>
+   <translation id="vps_order_windows_order_final_txt" qtlid="181240">Pro potvrzení objednávky klikněte na tlačítko "Schválit".</translation>
+   <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Otevře se nová záložka a budete automaticky přesměrování na platební rozhraní.</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Možnost windows</translation>
+
+   <translation id="vps_configuration_rebootVm_polling_done" qtlid="195581">Vaše VPS {0} bylo rebootováno</translation>
+   <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Při rebootu Vašeho VPS došlo k chybě</translation>
+   <translation id="vps_configuration_setNetboot_polling_done" qtlid="195581">Vaše VPS {0} bylo rebootováno</translation>
+   <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Při rebootu Vašeho VPS došlo k chybě</translation>
+   <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">Monitoring SLA byl změněn</translation>
+   <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Při změně monitoringu SLA došlo k chybě.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Bylo vygenerováno nové heslo.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Při resetování hesla došlo k chybě.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="195386">Snapshot byl úspěšně vytvořen.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Při vytváření snapshotu došlo k chybě.</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">Snapshot byl vymazán.</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Při mazání snapshotu došlo k chybě</translation>
+   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="195607">Vaše VPS {0} bylo reinstalováno</translation>
+   <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Při reinstalaci Vašeho VPS došlo k chybě</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">Snapshot byl úspěšně obnoven</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Při obnovování snapshotu došlo k chybě</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">Záloha byla obnovena</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">Při obnovování zálohy došlo k chybě</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">Záloha byla připojena</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">Při odpojování zálohy došlo k chybě</translation>
+
+   <translation id="vps_configuration_polling_fail" qtlid="195516">Probíhá úkol, který hlásí chybu. Některé funkce nebudou dostupné, dokud to nebude vyřešeno. Vyčkejte prosím několik minut.</translation>
+
+   <translation id="vps_monitoring_cpu_iowait" qtlid="208469">iowait</translation>
+   <translation id="vps_monitoring_cpu_nice" qtlid="208482">nice</translation>
+   <translation id="vps_monitoring_cpu_sys" qtlid="83733">Systém</translation>
+   <translation id="vps_monitoring_cpu_user" qtlid="7450">Uživatel</translation>
+
+   <translation id="vps_dashboard_task" qtlid="195633">Probíhající úkol</translation>
+   <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Restartováno</translation>
+   <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Reboot (rescue)</translation>
+   <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Změna SLA</translation>
+   <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Reset hesla</translation>
+   <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Vytváření snapshotu</translation>
+   <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Smazání zálohy</translation>
+   <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">Reinstalace VPS</translation>
+   <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Obnovení zálohy</translation>
+   <translation id="vps_dashboard_task_restoreVeeamBackup" qtlid="195685">Připojení zálohy</translation>
+   <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Odpojení zálohy</translation>
+   <translation id="vps_dashboard_task_openConsoleAccess" qtlid="200807">Otevírání KVM</translation>
+   <translation id="vps_dashboard_task_getConsoleUrl" qtlid="200807">Otevírání KVM</translation>
+   <translation id="vps_dashboard_task_deliverVm" qtlid="200820">Dodání VPS</translation>
+   <translation id="vps_dashboard_task_restoreVm" qtlid="363774">Připojení či obnova zálohy</translation>
+
+   <translation id="vps_dashboard_action_doing" qtlid="149787">Probíhající operace...</translation>
+   <translation id="vps_dashboard_display_name_save" qtlid="222072">Minimálně 2 znaky</translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Upravit jméno</translation>
+   <translation id="vps_dashboard_display_name_min" qtlid="222085">Operace zrušena. Jsou požadovány minimálně 2 znaky</translation>
+   <translation id="vps_dashboard_display_name_reset" qtlid="37935">Operace zrušena</translation>
+
+   <translation id="vps_dashboard_http" qtlid="122167">http</translation>
+   <translation id="vps_dashboard_http_tooltip_OK" qtlid="167925">Služba HTTP je aktivní</translation>
+   <translation id="vps_dashboard_http_tooltip_KO" qtlid="167938">Služba HTTP je neaktivní</translation>
+   <translation id="vps_dashboard_https" qtlid="128365">https</translation>
+   <translation id="vps_dashboard_https_tooltip_OK" qtlid="167951">Služba HTTPS je aktivní</translation>
+   <translation id="vps_dashboard_https_tooltip_KO" qtlid="167964">Služba HTTPS je neaktivní</translation>
+   <translation id="vps_dashboard_dns" qtlid="167977">DNS</translation>
+   <translation id="vps_dashboard_dns_tooltip_OK" qtlid="167990">Služba DNS je aktivní</translation>
+   <translation id="vps_dashboard_dns_tooltip_KO" qtlid="168003">Služba DNS je neaktivní</translation>
+   <translation id="vps_dashboard_ping" qtlid="122191">ping</translation>
+   <translation id="vps_dashboard_ping_tooltip_OK" qtlid="168016">Server odpovídá na ping</translation>
+   <translation id="vps_dashboard_ping_tooltip_KO" qtlid="168029">Server nereaguje na ping</translation>
+   <translation id="vps_dashboard_smtp" qtlid="168042">SMTP</translation>
+   <translation id="vps_dashboard_smtp_tooltip_OK" qtlid="168055">Služba SMTP je aktivní</translation>
+   <translation id="vps_dashboard_smtp_tooltip_KO" qtlid="168068">Služba SMTP je neaktivní</translation>
+   <translation id="vps_dashboard_tools" qtlid="194762">nástroje</translation>
+   <translation id="vps_dashboard_tools_tooltip_OK" qtlid="194775">VMWare Tools je aktivní</translation>
+   <translation id="vps_dashboard_tools_tooltip_KO" qtlid="194788">VMWare Tools je neaktivní</translation>
+   <translation id="vps_dashboard_ssh" qtlid="168081">SSH</translation>
+   <translation id="vps_dashboard_ssh_tooltip_OK" qtlid="168094">Služba SSH je aktivní</translation>
+   <translation id="vps_dashboard_ssh_tooltip_KO" qtlid="168107">Služba SSH je neaktivní</translation>
+   <translation id="vps_dashboard_loading_error" qtlid="168120">Během načítání informací nastala chyba.</translation>
+   <translation id="vps_dashboard_loading_error_monitoring" qtlid="168133">Při načítání informací z monitoringu došlo k chybě.</translation>
+   <translation id="vps_dashboard_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_dashboard_vcore_other" qtlid="128413">vCores</translation>
+   <translation id="vps_dashboard_disk_usage" qtlid="168146">Diskový prostor</translation>
+   <translation id="vps_dashboard_trafic_usage" qtlid="39202">Přenos dat</translation>
+   <translation id="vps_dashboard_initName" qtlid="31042">Služba</translation>
+   <translation id="vps_dashboard_boot" qtlid="151984">Boot</translation>
+   <translation id="vps_dashboard_creationDate" qtlid="168185">Vytvoření</translation>
+   <translation id="vps_dashboard_processor" qtlid="168198">Procesor</translation>
+   <translation id="vps_dashboard_RAM" qtlid="31354">RAM</translation>
+   <translation id="vps_dashboard_renew_vps" qtlid="168211">Obnovení VPS</translation>
+   <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Upgrade VPS</translation>
+   <translation id="vps_dashboard_localisation" qtlid="168237">Umístění</translation>
+   <translation id="vps_dashboard_distribution" qtlid="122359">OS/Distribuce</translation>
+   <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Není dostupný</translation>
+   <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Zobrazit příručku</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverzní DNS</translation>
+   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Není nastaven</translation>
+   <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS sekundární</translation>
+   <translation id="vps_dashboard_secondary_dns_count" qtlid="168263">Žádné nastavené domény</translation>
+   <translation id="vps_dashboard_secondary_dns_count_1" qtlid="168276">{0} doména nastavena</translation>
+   <translation id="vps_dashboard_secondary_dns_count_other" qtlid="168289">{0} domén nastaveno</translation>
+   <translation id="vps_dashboard_state_services" qtlid="167912">Stav</translation>
+   <translation id="vps_dashboard_monitoring_sla" qtlid="179537">Monitoring SLA</translation>
+   <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">IP Monitoring SLA</translation>
+   <translation id="vps_dashboard_monitoring_sla_ips_tooltip" qtlid="263663">Aby naše monitorovací nástroje správně fungovaly, autorizujte prosím své IP rozsahy ve svém firewallu.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_true" qtlid="179550">Žádost o aktivaci SLA monitoringu byla úspěšně přijata.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_true" qtlid="179563">Během požadavku o aktivaci SLA monitoringu došlo k chybě.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_false" qtlid="179576">Žádost o deaktivaci SLA monitoringu byla úspěšně přijata.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_false" qtlid="179589">Při požadavku na deaktivaci SLA monitoringu došlo k chybě.</translation>
+   <translation id="vps_configuration_renewvps_title_button" qtlid="168302">Obnovení VPS</translation>
+   <translation id="vps_configuration_renewvps_title" qtlid="168302">Obnovení VPS</translation>
+   <translation id="vps_configuration_renewvps_step1_question" qtlid="168315">Pro obnovení VPS <span class="italic">{0}</span>, musíte použít rozhraní OVH pro obnovení (mimo Zákaznický prostor Web).</translation>
+   <translation id="vps_configuration_renewvps_step1_confirmation" qtlid="168328">Pro obnovení VPS klikněte na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_renewvps_step1_information" qtlid="168341">Otevře se Vám nový panel a budete automaticky přesměrováni do rozhraní pro obnovení služeb OVH.</translation>
+   <translation id="vps_configuration_renewvps_step1_alert" qtlid="168354">Berte prosím na vědomí, že po schválení objednávky je potřeba vyčkat zhruba 2 hodiny, nežli se změna projeví v Zákaznickém prostoru Web.</translation>
+   <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Reset hesla</translation>
+   <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Reset hesla</translation>
+   <translation id="vps_configuration_reinitpassword_question" qtlid="366606">Opravdu chcete resetovat heslo k VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Pokud svůj požadavek potvrdíte, bude Váš server okamžitě rebootován do režimu "rescue". Předpokládaný čas nedostupnosti serveru: 2 minuty.</translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="366632">Upozornění: obdržíte dočasné přihlašovací údaje – resetování hesla však musíte provést sami. Postupujte prosím podle <a href="{0}" target="_blank">návodu</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_success" qtlid="327354">Nové heslo bude automaticky vygenerováno a odesláno na {0}.</translation>
+   <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">Při žádosti o reset hesla došlo k chybě.</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="366645">Resetování hesla musíte provést sami. Postupujte prosím podle <a href="{0}" target="_blank">návodu</a>.</translation>
+   <translation id="vps_configuration_reboot_title_button" qtlid="168432">Reboot mého VPS</translation>
+   <translation id="vps_configuration_reboot_title" qtlid="168432">Reboot mého VPS</translation>
+   <translation id="vps_configuration_reboot_question" qtlid="130543">Opravdu si přejete restartovat VPS <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Jestliže potvrdíte svůj požadavek, Váš server se okamžite zrestartuje.</translation>
+   <translation id="vps_configuration_reboot_warning_tools" qtlid="194801">Doporučujeme nainstalovat VMWare Tools.</translation>
+   <translation id="vps_configuration_reboot_warning_tools2" qtlid="194814">Pozor: Jestliže potřebujete provést restart a nemáte nainstalovány VMWare Tools, pak je nutné provést tvrdý restart Vašeho VPS. </translation>
+   <translation id="vps_configuration_reboot_confirmation_rescue_loading" qtlid="195737">Aktivování režimu rescue před restartem...</translation>
+   <translation id="vps_configuration_reboot_confirmation_local_loading" qtlid="195750">Aktivování místního režimu před restartem</translation>
+   <translation id="vps_configuration_reboot_rescue" qtlid="168458">Reboot do režimu rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Jestliže si zvolíte tuto možnost, bude Vám zaslán e-mail s přístupovými údaji pro připojení k Vašemu VPS.</translation>
+   <translation id="vps_configuration_reboot_alert" qtlid="171097">Nedostupnost kvůli rebootu: přibližně 2 minuty.</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="168497">VPS {0} bude rebootováno (předpokládaná doba 2 minuty)</translation>
+   <translation id="vps_configuration_reboot_todo" qtlid="168510">Žádost o reboot byla přijata.</translation>
+   <translation id="vps_configuration_reboot_fail" qtlid="168523">Během provádění žádosti o reboot došlo k chybě.</translation>
+   <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Režim rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Některé akce nelze v <b>režimu rescue</b> provádět. Pro jejich provedení je nutné server restartovat kliknutím na "Restartovat můj VPS".</translation>
+   <translation id="vps_configuration_reboot_rescue_warning_btn_title" qtlid="323340">Tuto akci nelze v režimu rescue provést.</translation>
+   <translation id="vps_configuration_ipV6_info_text" qtlid="367125">Vaše instance je nyní kromě výchozí IPv4 adresy napojena také na IPv6 adresu zdarma.</translation>
+   <translation id="vps_configuration_ipV6_address_label" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_ipV6_gateway_label" qtlid="42682">Brána</translation>
+   <translation id="vps_configuration_ipV6_guide_link_text" qtlid="367112">Zobrazit příručku</translation>
+   <translation id="vps_configuration_reboot_rescue_title" qtlid="168549">Reboot mého VPS do režimu rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_question" qtlid="168562">Opravdu chcete rebootovat VPS <span class="italic normal">{0}</span> do režimu rescue?</translation>
+   <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Jestliže žádost potvrdíte, Váš server se okamžitě rebootuje do režimu rescue. Poté od nás obdržíte e-mail s přístupovými údaji k VPS.</translation>
+   <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Pozor, jakmile bude Vaše VPS rebootováno do režimu rescue, zůstane v něm do doby, nežli provedete další reboot.</translation>
+   <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Nedostupnost kvůli rebootu: přibližně 3 minuty.</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="168614">VPS {0} bude rebootováno do režimu rescue (předpokládaná doba 3 minuty).</translation>
+   <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">Žádost o reboot do režimu rescue byla úspěšně přijata.</translation>
+   <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Během provádění žádosti o reboot došlo k chybě.</translation>
+   <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Změna Reverze DNS</translation>
+   <translation id="vps_configuration_reversedns_title" qtlid="168640">Změna Reverze DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_question" qtlid="168653">Zvolte IP k nastavení:</translation>
+   <translation id="vps_configuration_reversedns_step1_ip" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_reversedns_step2_ip" qtlid="168666">IP na VPS:</translation>
+   <translation id="vps_configuration_reversedns_step2_reverse" qtlid="168679">Současná reverze DNS:</translation>
+   <translation id="vps_configuration_reversedns_step2_newreverse" qtlid="168692">Nastavit novou reverzi DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_question" qtlid="130807">Opravdu chcete změnit reverzní DNS na VPS <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Stará reverze DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Nová reverze DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">Změny jsou uplatněny okamžitě, ale berte na vědomí, že nežli se všude plně projeví, můžete to trvat až 24 hodin.</translation>
+   <translation id="vps_configuration_reversedns_success" qtlid="168744">Reverze DNS u serveru VPS {0} byla změněna.</translation>
+   <translation id="vps_configuration_reversedns_fail" qtlid="168757">Při změně Reverze DNS došlo k chybě.</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverzní DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Reverze DNS je protiklad k tradičnímu DNS záznamu: přiřazuje doménu k IP adrese.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">Reverze DNS je částečně využívána v případě, že používáte VPS jako privátní mail server, protože mnoho mail serverů je nastaveno na zamítnutí zpráv z IP adres, které nemají nastavený reverz u DNS.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Uvedením reverze DNS zredukujete možnost, že by byl server označen jako spam.</translation>
+   <translation id="vps_configuration_reinstall_title_button" qtlid="168809">Reinstalovat VPS</translation>
+   <translation id="vps_configuration_reinstall_title" qtlid="168809">Reinstalovat VPS</translation>
+   <translation id="vps_configuration_reinstall_bitFormat" qtlid="122107">bitů</translation>
+   <translation id="vps_configuration_reinstall_step1_question" qtlid="171123">Zvolte si operační systém:</translation>
+   <translation id="vps_configuration_reinstall_step1_packages" qtlid="349255">Verze nainstalovaných balíčků:</translation>
+   <translation id="vps_configuration_reinstall_step1_packages_empty" qtlid="349268">Seznam balíčků není k dispozici.</translation>
+   <translation id="vps_configuration_reinstall_step1_os" qtlid="168835">Operační sysém</translation>
+   <translation id="vps_configuration_reinstall_step1_select_language" qtlid="171136">Zvolte si jazyk instalace:</translation>
+   <translation id="vps_configuration_reinstall_step1_select_softwares" qtlid="208495">Zvolte software k předinstalování:</translation>
+   <translation id="vps_configuration_reinstall_step1_software_DATABASE" qtlid="7870">Databáze</translation>
+   <translation id="vps_configuration_reinstall_step1_software_WEBSERVER" qtlid="194567">Webové servery</translation>
+   <translation id="vps_configuration_reinstall_step1_software_ENVIRONMENT" qtlid="28495">Prostředí</translation>
+   <translation id="vps_configuration_reinstall_step1_language" qtlid="145644">Jazyk</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key" qtlid="243487">SSH klíč k předinstalování:</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_no" qtlid="295725">Nemáte uložen žádný SSH klíč. Přístupové kódy Vám budou zaslány e-mailem.</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_help" qtlid="295738">V sekci Můj účet přidejte SSH klíč</translation>
+   <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Pro odebrání z výběru klikněte myší za současného držení CTRL.</translation>
+   <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Přeji si získat mé autentizační kódy k VPS v e-mailu.</translation>
+   <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Při načítání Vašeho SSH klíče došlo k chybě.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Při získávání dat došlo k chybě.</translation>
+   <translation id="vps_configuration_reinstall_step2_question" qtlid="130939">Opravdu si přejete reinstalovat Vaše VPS <span class="normal italic">{0}</span> s následujícím nastavením?</translation>
+   <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Operační systém:</translation>
+   <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Jazyk:</translation>
+   <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Software:</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_DEPRECATED" qtlid="194593">nedoporučeno</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_TESTING" qtlid="194606">verze testu</translation>
+   <translation id="vps_configuration_reinstall_step2_sshKeys" qtlid="243526">Předinstalovaný SSH klíč:</translation>
+   <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Předpokládaná doba reinstalace: maximálně 15 minut.</translation>
+   <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Pozor: reinstalace způsobí ztrátu všech dat!</translation>
+   <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Jestliže chcete používat operační systém Windows, zvažte zvolení této možnosti.</translation>
+   <translation id="vps_configuration_reinstall_success" qtlid="168913">VPS {0} bude reinstalováno</translation>
+   <translation id="vps_configuration_reinstall_fail" qtlid="168926">Při provádění žádosti o reinstalaci došlo k chybě.</translation>
+   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Vymazat snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Vymazat snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="168952">Opravdu chcete vymazat snapshot VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Pozor, tato akce je nevratná.</translation>
+   <translation id="vps_configuration_delete_snapshot_success" qtlid="168978">Snapshot VPS {0} bude vymazán.</translation>
+   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Při provádění žádosti o vymazání snapshotu došlo k chybě.</translation>
+   <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Vytvořit snapshot</translation>
+   <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Vytvořit snapshot</translation>
+   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="169017">Opravdu chcete udělat snaphost VPS <span class="italic normal">{0}</span>.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Popis, který bude uveden u snapshotu:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_question" qtlid="130687">Opravdu chcete udělat snapshot VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_snapshot_take_step2_description" qtlid="169043">Zvolený popis:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">Právě se chystáte vytvořit snapshot. Upozornění: v průběhu této operace bude Vaše VPS nedostupné. Předchozí snapshot bude vymazán.</translation>
+   <translation id="vps_configuration_snapshot_take_success" qtlid="169069">Bude vytvořen snapshot VPS {0}.</translation>
+   <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Při provádění žádosti o snapshot došlo k chybě.</translation>
+   <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Obnovit snapshot</translation>
+   <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Obnovit snapshot</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="130699">Opravdu chcete obnovit snapshot z data {0} na VPS <span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Pozor: tato akce způsobí, že současný stav Vašeho VPS bude vymazán a bude nahrazen stavem z doby, kdy byl pořízen snapshot Vašeho VPS. Tato akce je nevratná.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="169121">Na VPS {0} bude obnoven snapshot.</translation>
+   <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Při provádění akce obnovení snapshotu došlo k chybě.</translation>
+   <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Aktivovat možnost snapshotu</translation>
+   <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Aktivovat možnost snapshotu</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">V rámci první platby Vám bude účtována doba přímo úměrná počtu dní do dalšího data obnovení VPS.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="169173">Tato možnost stojí měsíčně <span class="bold">{0} bez DPH</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Možnost snapshot Vám umožní vytvořit bod obnovy, který se uloží pro případ pozdějšího obnovení. </translation>
+   <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Pro aktivování této možnosti klikněte na "Další".</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_question" qtlid="169212">Aktivovat možnost snapshot na VPS <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Cena bez DPH:</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Cena vč. DPH:</translation>
+   <translation id="vps_configuration_activate_snapshot_success" qtlid="169264">Možnost snapshot bude aktivována na VPS {0}.</translation>
+   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Při aktivaci snapshotu došlo k chybě.</translation>
+   <translation id="vps_configuration_desactivate_option" qtlid="48646">Zrušit</translation>
+   <translation id="vps_configuration_option_released" qtlid="284893">Neobnoveno</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Aktivace Backup Storage</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Aktivace možnosti Backup Storage</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="209879">Opravdu si přejete aktivovat možnost Backup Storage na VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="169173">Tato možnost stojí měsíčně <span class="bold">{0} bez DPH</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">V rámci první platby Vám bude účtována doba přímo úměrná počtu dní do dalšího data obnovení VPS.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Backup Storage je archivační prostor pro uložení Vašich dat, nastavení, atd.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_instruction" qtlid="209905">Pro aktivaci možnosti Backup Storage klikněte na tlačítko "Další".</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_question" qtlid="209918">Aktivace možnosti Backup Storage na VPS <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Cena bez DPH:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Cena vč. DPH:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_success" qtlid="209931">Možnost Backup Storage bude aktivována na VPS {0}.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_fail" qtlid="209944">Při aktivaci možnosti Backup Storage došlo k chybě.</translation>
+   <translation id="vps_configuration_cancel_option_title_ftpbackup" qtlid="284906">Zrušit Backup storage</translation>
+   <translation id="vps_configuration_cancel_option_title_snapshot" qtlid="284919">Zrušit Snapshot</translation>
+   <translation id="vps_configuration_cancel_option_title_veeam" qtlid="284932">Zrušit automatický Backup</translation>
+   <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Zrušit automatický Backup</translation>
+   <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Zrušit Windows</translation>
+   <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Zrušit přídavné disky</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="284971">Zrušení proběhne k datu obnovení služeb, tedy {0}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Tato akce je nezvratná, nelze ji zrušit.</translation>
+   <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">Možnost byla zrušena.</translation>
+   <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Během odstraňování možnosti došlo k chybě.</translation>
+   <translation id="vps_configuration_add_ipv4_title_button" qtlid="222098">Správa IP</translation>
+   <translation id="vps_configuration_add_ipv6_title_button" qtlid="169576">Přidat IPv6</translation>
+   <translation id="vps_configuration_monitoring_title_button" qtlid="31666">Monitoring</translation>
+   <translation id="vps_configuration_monitoring_title" qtlid="31666">Monitoring</translation>
+   <translation id="vps_configuration_monitoring_usage_proc" qtlid="169589">Využití procesoru</translation>
+   <translation id="vps_configuration_monitoring_usage_ram" qtlid="169602">Využití RAM</translation>
+   <translation id="vps_configuration_monitoring_usage_trafic" qtlid="169615">Využití přenosu dat</translation>
+   <translation id="vps_configuration_monitoring_traffic" qtlid="169628">Přenos dat VPS</translation>
+   <translation id="vps_configuration_monitoring_fail" qtlid="169641">Při načítání informací z monitoringu došlo k chybě.</translation>
+   <translation id="vps_configuration_monitoring_reset_zoom" qtlid="169654">Reset</translation>
+   <translation id="vps_configuration_period_LASTDAY" qtlid="169667">Posledních 24 hodin</translation>
+   <translation id="vps_configuration_period_LASTMONTH" qtlid="169680">Poslední měsíc</translation>
+   <translation id="vps_configuration_period_LASTWEEK" qtlid="169693">Posledních 7 dní</translation>
+   <translation id="vps_configuration_period_LASTYEAR" qtlid="169706">Posledních 12 měsíců</translation>
+   <translation id="vps_configuration_period_TODAY" qtlid="169719">Dnes</translation>
+   <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Upgrade VPS</translation>
+   <translation id="vps_configuration_upgradevps_title" qtlid="169732">Upgrade VPS</translation>
+   <translation id="vps_configuration_upgradevps_step1_question" qtlid="169745">Zvolte si model, na který chcete VPS upgradovat.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/měsíc</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="200053">Přechod na nový model je zdarma. Zobrazená cena se týká měsíčního pronájmu odpovídajícího modelu. Pro Vaši informaci je Váš aktuální měsíční tarif <span class="bold">{0}</span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Pozor! U VPS není možný downgrade. Jedinou povolenou možnosti je upgrade.</translation>
+   <translation id="vps_configuration_upgradevps_step2_question" qtlid="169771">Upgrade VPS <span class="italic normal">{0}</span> na {1}</translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="169784">Cena do {0}, dalšího data obnovení Vašeho serveru:</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Cena bez DPH:</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Cena vč. DPH:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="169797">Za Váš server bude následně účtováno <span class="red">{0} bez DPH/měsíc</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Berte prosím na vědomí, že po schválení platby bude potřeba ještě zhruba 2 hodiny trvat, nežli se tyto změny projeví v Zákaznickém prostoru Web.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Aby byl upgrade proveden, je potřeba provést reboot serveru.</translation>
+   <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Při provádění žádosti o upgrade VPS došlo k chybě.</translation>
+   <translation id="vps_configuration_upgradevps_current" qtlid="169849">Současné nastavení</translation>
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Přidat doménu</translation>
+   <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Přidat doménu na sekundární DNS</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_question" qtlid="169875">Chystáte se přidat doménu na sekundární DNS <span class="normal italic">{0}</span>.</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_domain" qtlid="103378">Doména k přidání:</translation>
+   <translation id="vps_configuration_secondarydns_add_step2_summary" qtlid="169888">Opravdu chcete přidat doménu <span class="normal italic">{0}</span> na sekundární DNS <span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Při provádění žádosti o přidání domény na sekundární DNS došlo k chybě.</translation>
+   <translation id="vps_configuration_secondarydns_add_success" qtlid="169914">Doména {0} bude přidána na sekundární DNS.</translation>
+   <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Vymazat doménu ze sekundárního DNS</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="169940">Opravdu chcete vymazat doménu <span class="normal italic">{0}</span> ze sekundárního DNS?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="169953">Při provádění požadavku na vymazání domény {0} ze sekundárního DNS došlo k chybě.</translation>
+   <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">Doména bude vymazána ze sekundárního DNS.</translation>
+   <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_new_window" qtlid="92753">Otevřít v novém okně</translation>
+   <translation id="vps_configuration_kvm_cloud_mapping_keyboard_warning" qtlid="169979">Pozor: číslice mohou být vloženy pouze pomocí numerické klávesnice. Jestliže jste k tomuto rozhraní připojeni z notebooku, který nemá numerickou klávesnici, můžete pravděpodobně použít sekundární numerickou klávesnici pomocí tlačítka "fn + ...".</translation>
+   <translation id="vps_configuration_kvm_fail" qtlid="169992">Při otevírání KVM došlo k chybě.</translation>
+   <translation id="vps_configuration_veeam_order_title_button" qtlid="170005">Aktivovat Automated Backup</translation>
+   <translation id="vps_configuration_veeam_order_title" qtlid="170018">Objednat Automated Backup</translation>
+   <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Při načítání informací došlo k chybě.</translation>
+   <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">V rámci první platby Vám bude účtována doba přímo úměrná počtu dní do dalšího data obnovení VPS.</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="170044">Služba bude placena měsíčně <span class="red bold">{0}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="170057">Objednat Automated Backup na VPS <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">K potvrzení Vašeho požadavku musíte souhlasit s podmínkami užití a poté kliknout na tlačítko "Další".</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Cena bez DPH:</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Cena vč. DPH:</translation>
+   <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Potvrzuji, že jsem se seznámil s následujícím:</translation>
+   <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Vytváření objednávky...</translation>
+   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">Objednávka byla úspěšně vytvořena.</translation>
+   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">K potvrzení objednávky prosím klikněte na tlačítko "Zaplatit".</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
+   <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Při objednávání Automated Backup došlo k chybě.</translation>
+   <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Odebrat zálohu</translation>
+   <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Odebrat zálohu</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="170109">Opravdu si přejete odpojit následující zálohu z Vašeho VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Datum vytvoření</translation>
+   <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Při odpojování zálohy z VPS došlo k chybě.</translation>
+   <translation id="vps_configuration_veeam_umount_success" qtlid="170135">Záloha bude odpojena z VPS.</translation>
+   <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Připojit zálohu</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Opravdu si přejete připojit tuto zálohu na VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Tato záloha bude dostupná přes NFS či SMB bod připojení.</translation>
+   <translation id="vps_configuration_veeam_mount_success" qtlid="170174">Žádost o připojení zálohy byla úspěšně přijata. Jakmile bude operace dokončena, bude Vám zaslán e-mail s dalšími informacemi.</translation>
+   <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Při provádění požadavku na připojení zálohy k VPS došlo k chybě.</translation>
+   <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Obnovit VPS</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="170213">Opravdu chcete reinstalovat VPS <span class="normal italic">{0}</span> pomocí následující zálohy?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Datum vytvoření</translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Změnit root heslo při obnovení</translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Není možné provést reset Vašeho hesla k VPS, jestliže nemáte nainstalovány VMware Tools. Můžete však provést reboot do režimu rescue.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Pozor! Obnovení VPS způsobí vymazání všech dat na něm.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">Obnovení zálohy může v závislosti na velikosti disku trvat až několik hodin.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_umount" qtlid="268147">Chcete-li provést obnovení, musíte nejprve odpojit aktuální zálohu.</translation>
+   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">Chcete-li připojit zálohu, musíte nejprve odpojit aktuální zálohu.</translation>
+   <translation id="vps_configuration_veeam_restore_success" qtlid="170252">Požadavek na obnovení VPS byl zaregistrován. Jakmile bude obnovení dokončeno, přijde Vám on nás e-mail.</translation>
+   <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">Při provádění žádosti o obnovení zálohy na VPS došlo k chybě.</translation>
+   <translation id="vps_tab_summary" qtlid="170278">Shrnutí možností</translation>
+   <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Backup Storage:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot:</translation>
+   <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Automated backup:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">vytvořeno:</translation>
+   <translation id="vps_tab_SUMMARY_license" qtlid="113658">Licence</translation>
+   <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Zálohy</translation>
+   <translation id="vps_tab_SUMMARY_ip_adress" qtlid="170356">Adresy IP</translation>
+   <translation id="vps_tab_SUMMARY_windows" qtlid="102237">Windows</translation>
+   <translation id="vps_tab_SUMMARY_windows_option" qtlid="285036">Licence:</translation>
+   <translation id="vps_tab_SUMMARY_ip_cloud_only" qtlid="170369">Přídavné IP adresy jsou dotupné pouze na řadě <a href="{0}" target="_blank">VPS Cloud</a>.</translation>
+   <translation id="vps_tab_SUMMARY_backups_cloud_only" qtlid="170382">Možnosti zálohování jsou dostupné pouze na řadě <a href="{0}" target="_blank">VPS Cloud</a>.</translation>
+   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">Pro tuto řadu nejsou přídavné IP adresy dostupné.</translation>
+   <translation id="vps_tab_SUMMARY_backups_not_available" qtlid="250810">Pro tuto řadu není možnost záloh dostupná.</translation>
+   <translation id="vps_tab_ip" qtlid="25615">IP</translation>
+   <translation id="vps_tab_IPS_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="vps_tab_IPS_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_DE" qtlid="29083">Německo</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_ES" qtlid="29095">Španělsko</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_FR" qtlid="29047">Francie</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_IT" qtlid="40870">Itálie</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_PL" qtlid="40858">Polsko</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_UK" qtlid="29071">Spojené království</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_US" qtlid="108396">Spojené státy</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_CA" qtlid="108733">Kanada</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_cant_order" qtlid="191915">dosáhli jste maximálního počtu IP adres, takže již není možné přidat další.</translation>
+   <translation id="vps_tab_secondary_dns" qtlid="170408">Sekundární DNS</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_empty" qtlid="170421">Na sekundárním DNS nemáte nastaveny žádné domény.</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_domain" qtlid="170434">Doména</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_ip" qtlid="167899">IP</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_date" qtlid="26419">Datum vytvoření</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_dns" qtlid="168250">DNS sekundární</translation>
+   <translation id="vps_tab_veeam" qtlid="170447">Automated Backup</translation>
+   <translation id="vps_tab_VEEAM_dashboard_cloud_only" qtlid="170460">Automated Backup je dostupný pouze na řadě <a href="{0}" target="_blank">VPS Cloud</a>.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_veeam_unavailable" qtlid="250823">Pro tuto řadu není možnost automatických záloh dostupná.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_activated" qtlid="170473">Nemáte objednanou možnost Automated Backup.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_able_to_order" qtlid="170486">Službu nemůžete objednat, protože Váš uživatelský identifikátor není autorizován k vytváření objednávek na tomto VPS.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_no_current_restore_point" qtlid="170499">V současnosti nemáte připojen žádný bod obnovy.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state" qtlid="26443">Stav</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_enabled" qtlid="170512">Připojit</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_disabled" qtlid="170538">Odpojit</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTING" qtlid="170525">Připojování...</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTED" qtlid="170512">Připojit</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_RESTORING" qtlid="170525">Připojování...</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTED" qtlid="170538">Odpojit</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTING" qtlid="170551">Odpojování...</translation>
+   <translation id="vps_tab_VEEAM_dashboard_restoring" qtlid="170564">Právě probíhá reinstalace či obnovení VPS.<br/>V současnosti není možné provádět obnovování ani připojování.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point" qtlid="170577">Zde jsou informace týkající se v současnosti připojeného bodu obnovení:</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point_creationTime" qtlid="26419">Datum vytvoření</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_smb" qtlid="170590">Samba přístup</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_nfs" qtlid="170603">NFS přístup</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_date" qtlid="26419">Datum vytvoření</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_mount" qtlid="170616">Připojování</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_restore" qtlid="170629">Obnovení</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_empty" qtlid="170642">Nemáte žádné body obnovení.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_mount" qtlid="170655">Připojit tento bod obnovení</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_restore" qtlid="170668">Obnovit mé VPS do tohoto bodu obnovení</translation>
+
+   <translation id="vps_tab_backup_storage" qtlid="180460">Backup Storage</translation>
+   <translation id="vps_tab_backup_none" qtlid="209970">Možnost Backup Storage je dostupná pouze na řadě <a href="{0}" target="_blank">VPS Cloud</a>.</translation>
+   <translation id="vps_tab_backup_not_activated" qtlid="209983">Objednali jste si možnost Backup Storage.</translation>
+   <translation id="vps_tab_backup_not_able_to_order" qtlid="170486">Službu nemůžete objednat, protože Váš uživatelský identifikátor není autorizován k vytváření objednávek na tomto VPS.</translation>
+
+
+   <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Zapomenuté heslo?</translation>
+   <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Požadavek o nové heslo</translation>
+   <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Nové heslo bude posláno na administrátorský kontakt u serveru.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Nové heslo bude odesláno na e-mail administrátora serveru.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Při resetování hesla došlo k chybě.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="184412">Opravdu si přejete resetovat heslo pro Backup Storage {0}?</translation>
+
+   <translation id="vps_tab_backup_storage_login" qtlid="46792">Identifikátor</translation>
+   <translation id="vps_tab_backup_storage_name" qtlid="3818">Příjmení</translation>
+   <translation id="vps_tab_backup_storage_usage" qtlid="30382">Použito</translation>
+   <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Není nastaven žádný přístup</translation>
+   <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
+   <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="vps_tab_backup_storage_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="vps_tab_backup_storage_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Stav</translation>
+   <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">Probíhá</translation>
+   <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Aktivní</translation>
+   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Změnit přístup</translation>
+   <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">Vymazat přístup</translation>
+   <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">Potvrdit změny</translation>
+   <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Zrušit změny</translation>
+
+   <translation id="vps_backup_storage_access_delete" qtlid="180590">Vymazat přístup</translation>
+   <translation id="vps_backup_storage_access_delete_question" qtlid="210009">Opravdu chcete vymazat přístup k IP bloku <b>{0}</b>?</translation>
+   <translation id="vps_backup_storage_access_delete_success" qtlid="210022">Vymazání přístupu na Backup Storage z bloku IP <b>{0}</b> bylo úspěšně přijato, ale zabere několik minut.</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="210035">Při pokusu o vymazání přístupu k možnosti Backup Storage z IP bloku <b>{0}</b> došlo k chybě.</translation>
+
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Při získávání autorizovaných bloků došlo k chybě</translation>
+   <translation id="vps_backup_storage_access_add_button" qtlid="153857">Přidat přístup</translation>
+   <translation id="vps_backup_storage_access_add" qtlid="180772">Přidat přístup</translation>
+   <translation id="vps_backup_storage_access_add_info" qtlid="210048">Zvolte si prosím blok IP, pro který chcete autorizovat možnost přístupu.</translation>
+   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Seznam bloků:</translation>
+   <translation id="vps_backup_storage_access_add_info2" qtlid="210061">Chystáte se přidat přístupové právo na svůj Backup Storage pro každý blok IP z následujícího seznamu:</translation>
+   <translation id="vps_backup_storage_access_add_info3" qtlid="210074">Musíte autorizovat protokol, protože IP bloky bez pravidel budou implicitně odmítnuty.</translation>
+   <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Použitá práva:</translation>
+   <translation id="vps_backup_storage_access_add_allow" qtlid="141795">Povolit</translation>
+   <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Odmítnout</translation>
+   <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Zahrnutý blok:</translation>
+   <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Autorizovat v:</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">Požadavek pro přidání přístupových pravidel na Backup Storage byl přijat, ale může trvat několik minut.</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">Některé požadavky na přidání přístupových pravidel na Backup Storage byly zaregistrovány, ale u některých se vyskytla chyba.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Při požadavku na přidání přístupových pravidel na Backup Storage došlo k chybě</translation>
+   <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Všechny dostupné bloky byly autorizovány</translation>
+
+   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">Změna přístupu <b>{0}</b> byla přijata, ale může trvat několik minut.</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="183866">Při změně přístupu <b>{0}</b> došlo k chybě</translation>
+
+   <translation id="vps_monitoring_network_netRx" qtlid="33550">Příchozí</translation>
+   <translation id="vps_monitoring_network_netTx" qtlid="30886">Odchozí</translation>
+
+   <translation id="vps_zone" qtlid="26335">Zóna</translation>
+   <translation id="vps_cluster" qtlid="232414">Cluster</translation>
+
+   <translation id="vps_tab_SUMMARY_additional_disk" qtlid="281485">Přídavné disky</translation>
+   <translation id="vps_additional_disk_add_button" qtlid="281498">Objednat přídavný disk</translation>
+   <translation id="vps_additional_disk_add_another_button" qtlid="281511">Objednat další přídavný disk</translation>
+
+   <translation id="vps_tab_additional_disk" qtlid="281524">Přídavný disk</translation>
+   <translation id="vps_tab_additional_disk_not_available" qtlid="281537">Možnost přidání disků není pro tuto řadu služeb k dispozici.</translation>
+   <translation id="vps_tab_additional_disk_count" qtlid="281550">Nemáte žádné přídavné disky.</translation>
+   <translation id="vps_tab_additional_disk_count_1" qtlid="281563">Máte jeden přídavný disk.</translation>
+   <translation id="vps_tab_additional_disk_count_other" qtlid="281576">Počet Vašich přídavných disků: {0}</translation>
+   <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
+   <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Velikost (GB)</translation>
+   <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Stav</translation>
+   <translation id="vps_tab_additional_disk_state_connected" qtlid="99944">Připojeno</translation>
+   <translation id="vps_tab_additional_disk_state_disconnected" qtlid="77154">Odpojený</translation>
+   <translation id="vps_tab_additional_disk_state_pending" qtlid="29467">Čekající</translation>
+   <translation id="vps_additional_disk_add_button_soon" qtlid="281589">V budoucnu bude možné k Vašemu VPS připojit větší počet přídavných disků.</translation>
+   <translation id="vps_tab_additional_disk_guide" qtlid="281602">Jak používat přídavný disk</translation>
+
+   <translation id="vps_order_additionnal_disk_title" qtlid="281498">Objednat přídavný disk</translation>
+   <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Vyberte velikost přídavného disku pro VPS. V OS bude vypadat jako další jednotka.</translation>
+   <translation id="vps_order_additional_disk_step2" qtlid="281628">Přídavný disk bude k VPS přidán co nejdříve; při dalším obnovení serveru se s ním bude v objednávce prodloužení automaticky počítat.</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="281641">{0} bez DPH/měs.</translation>
+   <translation id="vps_order_additional_disk_option" qtlid="281654">Volba:</translation>
+   <translation id="vps_order_additional_disk_offer_description" qtlid="281667">Volitelný přídavný disk - {0} až {1}</translation>
+   <translation id="vps_order_additional_disk_price" qtlid="181084">Cena:</translation>
+   <translation id="vps_order_additional_disk_fail" qtlid="281680">Chyba během objednávky přídavného disku</translation>
+   <translation id="vps_order_additional_disk_success" qtlid="281693">Pro dokončení instalace přídavného disku prosím uhraďte <a href='{0}' target='_blank'>objednávku {1}</a>.</translation>
+
+   <translation id="vps_additional_disk_info_fail" qtlid="281706">Chyba během stahování informací o přídavných discích</translation>
+
+   <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Během odesílání požadavku na zastavení upozorňování na automatické obnovení došlo k chybě.</translation>
+   <translation id="vps_autorenew_alert" qtlid="290602">Zjednodušte si život a přejděte na automatické obnovení. Už žádné upomínky, připomínky a pozdní obnovování!</translation>
+   <translation id="vps_autorenew_guide" qtlid="290615">Přístup k příručce</translation>
+   <translation id="vps_autorenew_activate" qtlid="98576">Aktivace automatického obnovení</translation>
+
+   <translation id="vps_move_alert" qtlid="296981">VPS mění prostor. Již brzy najdete všechny své servery (virtuální i dedikované) na jednom místě, v jednom prostoru.</translation>
+</translations>
