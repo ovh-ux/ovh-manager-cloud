@@ -1,4 +1,4 @@
-class VpsRebootCtrl {
+class VpsPasswordCtrl {
     constructor ($translate, $uibModalInstance, CloudMessage, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
@@ -11,25 +11,21 @@ class VpsRebootCtrl {
         };
         this.model = {};
         this.selected = {
-            rescue: false
+            rescue: true
         };
     }
 
     $onInit () {
         this.loader.init = true;
         this.VpsService.getTaskInError()
-            .then (tasks => { this.loadVpsRescueMode(tasks) });
+            .then(tasks => { this.hasTasks(tasks) })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loader.init = false });
     }
 
-    loadVpsRescueMode (tasks) {
-        if (!tasks || !tasks.length) {
-            this.VpsService.getSelected()
-                .then(data => { this.model = data })
-                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_fail")))
-                .finally(() => { this.loader.init = false });
-        } else {
+    hasTasks (tasks) {
+        if (taks.length) {
             this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail"));
-            this.loader.init = false;
         }
     }
 
@@ -41,8 +37,8 @@ class VpsRebootCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.reboot(this.selected.rescue)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_fail")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success")))
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_rescue_fail")))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
@@ -52,4 +48,4 @@ class VpsRebootCtrl {
 
 }
 
-angular.module("managerApp").controller("VpsRebootCtrl", VpsRebootCtrl);
+angular.module("managerApp").controller("VpsPasswordCtrl", VpsPasswordCtrl);
