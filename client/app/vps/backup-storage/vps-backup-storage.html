@@ -1,0 +1,66 @@
+<!-- Backup Storage activated -->
+<section class="container-fluid cui-page__content cui-page__content-flex" data-ng-if="$ctrl.backup.information.activated">
+
+	<button type="button"
+	        class="oui-button oui-button_secondary"
+	        data-translate="vps_backup_storage_access_add_button"
+	        data-ng-click="$ctrl.add()"></button>
+
+    <!-- information -->
+    <div data-ng-if="!$ctrl.loaders.information">
+        <div class="row">
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_name"></div>
+            <div class="span10" data-ng-bind="$ctrl.backup.information.name"></div>
+        </div>
+
+        <div class="row">
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_login"></div>
+            <div class="span10" data-ng-bind="$ctrl.backup.information.login"></div>
+        </div>
+
+        <div class="row">
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_usage"></div>
+            <div class="span10">
+                <div class="progress"
+                     data-ng-class="{'progress-success' : $ctrl.backup.information.usage.value < 51, 'progress-warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81, 'progress-danger' : $ctrl.backup.information.usage.value > 80 }"
+                     style="width:250px; float: left;">
+                    <div class="bar" data-ng-style="{'width': $ctrl.backup.information.usage.value + '%'}"></div>
+                </div>
+                <div style="margin-left: 10px; float: left;">
+                    <span data-ng-bind="$ctrl.backup.use"></span>
+                    <span data-ng-bind="('unit_size_'+ $ctrl.backup.information.quota.unit)"></span> /
+                    <span data-ng-bind="$ctrl.backup.information.quota.value"></span>
+                    <span data-ng-bind="('unit_size_'+ $ctrl.backup.information.quota.unit)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <oui-table rows="$ctrl.backup.table.list.results"
+    		   rows-loader="$ctrl.loaders.init">
+        <column title="'vps_tab_backup_storage_table_ip' | translate" property="ipBlock" sortable>
+        	<span data-ng-bind="$row.ipBlock"></span>
+        </column>
+        <column title="'vps_tab_backup_storage_table_cifs' | translate" property="cifs" sortable>
+        	<span data-ng-bind="$row.cifs"></span>
+        </column>
+        <column title="'vps_tab_backup_storage_table_ftp' | translate" property="ftp" sortable>
+        	<span data-ng-bind="$row.ftp"></span>
+        </column>
+        <column title="'vps_tab_backup_storage_table_nfs' | translate" property="nfs" sortable>
+        	<span data-ng-bind="$row.nfs"></span>
+        </column>
+        <column title="'vps_tab_backup_storage_table_status' | translate" property="status" sortable>
+            <span data-ng-bind="$ctrl.getStatus($row.isApplied)"></span>
+        </column>
+        <column title="'common_actions' | translate"
+            	class="oui-table__cell_action oui-table__cell_action-menu"
+            	template="$ctrl.actionTemplate()">
+        </column>
+    </oui-table>
+</section>
+
+<!-- Backup Storage not activated -->
+<section class="container-fluid cui-page__content cui-page__content-flex" data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.information">
+    <p data-translate="vps_tab_SUMMARY_backups_not_available"></p>
+</section>{{ $ctrl.backup.table.list.results }}<br />{{ $ctrl.backup.information }}

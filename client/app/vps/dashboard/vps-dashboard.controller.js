@@ -1,8 +1,9 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $scope, $stateParams, CloudMessage, VpsActionService, VpsService) {
+    constructor ($filter, $scope, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$scope = $scope;
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.serviceName = $stateParams.serviceName;
         this.VpsActionService = VpsActionService;
@@ -35,8 +36,7 @@ class VpsDashboardCtrl {
     $onInit () {
         this.loaders.init = true;
         this.loadData();
-        this.loadIps();
-    }
+        this.loadIps();    }
 
     loadData () {
         this.VpsService.getSelected(true)
@@ -46,9 +46,9 @@ class VpsDashboardCtrl {
                 this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
                 this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
                 if (vps.isExpired) {
-                    this.CloudMessage.warning($translate.instant("common_service_expired", [vps.name]));
+                    this.CloudMessage.warning(this.$translate.instant("common_service_expired", [vps.name]));
                 } else if (vps.messages.length > 0) {
-                    this.CloudMessage.error($translate.instant("vps_dashboard_loading_error"), vps);
+                    this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"), vps);
                 }
             })
             .catch(err => this.CloudMessage.error(err))
@@ -63,8 +63,15 @@ class VpsDashboardCtrl {
     }
 
     setAction (action) {
-        if (action == "reboot") {
-            this.VpsActionService.reboot();
+        switch (action) {
+            case "password":
+                this.VpsActionService.password();
+                break;
+            case "reboot":
+                this.VpsActionService.reboot();
+                break;
+            default:
+                return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
         }
 
     }
