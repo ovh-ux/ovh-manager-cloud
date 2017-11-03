@@ -19,7 +19,7 @@ angular.module("managerApp").config($stateProvider => {
                 vpsContainer: {
                     templateUrl: "app/vps/vps-detail.html",
                     controller: "VpsDetailCtrl",
-                    controllerAs: "VpsDetailCtrl"
+                    controllerAs: "$ctrl"
                 }
             }
         })
@@ -41,6 +41,17 @@ angular.module("managerApp").config($stateProvider => {
                 vpsContent: {
                     templateUrl: "app/vps/secondary-dns/vps-secondary-dns.html",
                     controller: "VpsSecondaryDnsCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
+        .state("iaas.vps.detail.backup-storage", {
+            url: "/backup-storage",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/backup-storage/vps-backup-storage.html",
+                    controller: "VpsBackupStorageCtrl",
                     controllerAs: "$ctrl"
                 }
             }
