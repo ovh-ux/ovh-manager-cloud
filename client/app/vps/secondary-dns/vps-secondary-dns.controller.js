@@ -1,5 +1,6 @@
 class VpsSecondaryDnsCtrl {
-    constructor (VpsActionService ,VpsService) {
+    constructor (CloudMessage, VpsActionService ,VpsService) {
+        this.CloudMessage = CloudMessage;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
 
@@ -19,7 +20,7 @@ class VpsSecondaryDnsCtrl {
         this.VpsService.getTabSecondaryDns()
             .then(data => { this.secondaryDns = data })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.init = false })
+            .finally(() => { this.loaders.init = false });
     }
 
     add () {
@@ -27,7 +28,7 @@ class VpsSecondaryDnsCtrl {
     }
 
     deleteOne (domain) {
-        this.VpsActionService().deleteSecondaryDns(domain);
+        this.VpsActionService.deleteSecondaryDns(domain);
     }
 
     actionTemplate () {
@@ -44,7 +45,7 @@ class VpsSecondaryDnsCtrl {
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-translate="common_delete"
-                                data-ng-click="$ctrl.delete($row)"></button>
+                                data-ng-click="$ctrl.deleteOne($row)"></button>
                         </div>
                     </div>
                 </cui-dropdown-menu-body>
