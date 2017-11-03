@@ -593,7 +593,7 @@ angular.module("managerApp").service("VpsService", [
             var result = null;
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "secondaryDnsDomains"].join("/"), { domain: domain })
+                    return $http["post"]([swsVpsProxypass, vps.name, "secondaryDnsDomains"].join("/"), { domain: domain })
                         .then(function (data) {
                             result = data.data;
                         });
