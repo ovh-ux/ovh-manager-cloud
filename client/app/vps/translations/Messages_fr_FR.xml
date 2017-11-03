@@ -512,4 +512,6 @@
    <translation id="vps_autorenew_activate" qtlid="98576">Activer le renouvellement automatique</translation>
 
    <translation id="vps_move_alert" qtlid="296981">Votre VPS a changé d'univers ! Retrouvez bientôt tous vos serveurs (virtuels et dédiés) dans un même grand univers.</translation>
+
+   <translation id="vps_tab_dashboard" qtlid="27643">Accueil</translation>
 </translations>
