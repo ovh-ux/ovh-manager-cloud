@@ -1,8 +1,9 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud, OvhApiMe, OvhApiVrack, $window, OvhApiMePaymentMeanCreditCard,
-              SidebarMenu, CloudProjectSidebar) {
+    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
+              OvhApiMe, OvhApiVrack, $window, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
+              CloudProjectAdd) {
 
         var self = this;
 
@@ -133,8 +134,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                     switch (err.status) {
                     case 400:
                         return Toast.error($translate.instant("cpa_error_invalid_paymentmean"));
-                    case 404:
-                        return Toast.error($translate.instant("cpa_error_invalid_voucher"));
                     case 409:
                         return Toast.error($translate.instant("cpa_error_over_quota"));
                     default:
@@ -177,10 +176,10 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         }
 
         function initContracts () {
-            return OvhApiCloud.Project().Lexi().query().$promise.then(function (ids) {
-                // we need to create the first project in order to receive contracts
-                return ids.length ? $q.when(true) : self.createProject();
-            });
+            return CloudProjectAdd.getProjectInfo()
+                .then(projectInfo => {
+                    self.data.agreements = projectInfo.agreementsToAccept;
+                });
         }
 
         function initProject () {

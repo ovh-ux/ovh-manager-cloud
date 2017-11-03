@@ -75,13 +75,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
                 init();
                 self.toggleAddVoucher();
             }, function (err) {
-                if (err.status === 403) {
-                    CloudMessage.error($translate.instant("cpb_vouchers_add_error_no_longer_valid_or_already_used"));
-                } else if (err.status === 404) {
-                    CloudMessage.error($translate.instant("cpb_vouchers_add_error_not_found"));
-                } else {
-                    CloudMessage.error($translate.instant("cpb_vouchers_add_error"));
-                }
+                CloudMessage.error($translate.instant("cpb_vouchers_add_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""))
             })["finally"](function () {
                 self.loading.add = false;
             });
