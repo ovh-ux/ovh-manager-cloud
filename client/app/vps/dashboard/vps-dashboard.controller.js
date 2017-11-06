@@ -9,6 +9,7 @@ class VpsDashboardCtrl {
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
 
+        this.summary = {};
         this.vps = {};
         this.vpsPolling = {
             rebootVm: false,
@@ -29,16 +30,19 @@ class VpsDashboardCtrl {
 
         this.loaders = {
             init: false,
+            summary: false,
             polling: false
         }
     }
 
     $onInit () {
         this.loaders.init = true;
-        this.loadData();
-        this.loadIps();    }
+        this.loadVps();
+        this.loadIps();
+        this.loadSummary();
+    }
 
-    loadData () {
+    loadVps () {
         this.VpsService.getSelected(true)
             .then(vps => {
                 this.vps = vps;
@@ -60,6 +64,14 @@ class VpsDashboardCtrl {
             this.vps.ips = ips.results;
             this.vps.ipv6Gateway = _.get(_.find(ips.results, { version: "v6" }), "gateway");
         });
+    }
+
+    loadSummary () {
+        this.loaders.summary = true;
+        this.VpsService.getTabSummary(true)
+            .then(summary => { this.summary = summary })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loaders.summary = false });
     }
 
     setAction (action) {
