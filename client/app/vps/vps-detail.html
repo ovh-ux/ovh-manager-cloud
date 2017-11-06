@@ -1,9 +1,13 @@
-<header ui-view="vpsHeader"></header>
-<div>
+<header ui-view="vpsHeader" data-ng-if="!$ctrl.loaders.init"></header>
+<div data-ng-if="!$ctrl.loaders.init">
     <div>
         <cui-message-container data-messages="$ctrl.messages"></cui-message-container>
     </div>
     <div>
         <div ui-view="vpsContent"></div>
     </div>
+</div>
+
+<div class="text-center" data-ng-if="$ctrl.loaders.init">
+	<oui-loader size="l" class="d-inline-block"></oui-loader>
 </div>
