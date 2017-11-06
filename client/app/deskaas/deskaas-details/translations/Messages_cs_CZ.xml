@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Votre espace de travail sera reconfiguré à son état initial. Les données sur votre disque C: seront supprimées et vos applications devront être réinstallées. Les données sur votre disque D: seront conservées. Souhaitez-vous continuer?</translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Vaše pracovní plocha bude navrácena do původního nastavení. Veškerá data na jednotce C: budou vymazána. Data na jednotce D: budou zachována. Přejete si pokračovat?</translation>
    <translation id="vdi_restoring" qtlid="313923">Probíhá reset pracovní plochy...</translation>
    <translation id="vdi_restored" qtlid="313936">Reset byl dokončen.</translation>
-   <translation id="vdi_confirm_reboot" qtlid="442665">Votre espace de travail va redémarrer, les données non sauvegardées pourront être perdues. Souhaitez-vous continuer?</translation>
+   <translation id="vdi_confirm_reboot" qtlid="442665">Vaše pracovní plocha se restartuje. Všechna neuložená data budou ztracena. Přejete si pokračovat?</translation>
    <translation id="vdi_rebooting" qtlid="323781">Probíhá restart desktopu...</translation>
    <translation id="vdi_rebooted" qtlid="323794">Desktop byl restartován.</translation>
    <translation id="vdi_confirm_reset_password" qtlid="290030">Vygenerované heslo Vám bude zasláno e-mailem, chcete pokračovat?</translation>
@@ -18,13 +18,13 @@
    <translation id="vdi_username_changed" qtlid="323846">Změna uživatelského jména byla dokončena.</translation>
 
    <translation id="vdi_terminate_confirming" qtlid="370824">Zrušení služby je naplánováno.</translation>
-   <translation id="vdi_confirm_delete" qtlid="442678">Vous ne pourrez plus à accéder à votre desktop. Il sera supprimé, ainsi que l’ensemble des données qui y sont stockées. Souhaitez-vous continuer?</translation>
+   <translation id="vdi_confirm_delete" qtlid="442678">Vaše pracovní plocha bude odstraněna, v důsledku čehož k ní ztratíte přístup. Společně s Vaší pracovní plochou budou odstraněna i veškerá v ní uložená data. Přejete si pokračovat?</translation>
    <translation id="vdi_deleting" qtlid="313988">Probíhá odstraňování desktopu. Byl Vám odeslán e-mail pro potvrzení tohoto požadavku.</translation>
    <translation id="vdi_deleted" qtlid="314001">Desktop bude odstraněn. Byl Vám odeslán e-mail pro potvrzení tohoto požadavku.</translation>
    <translation id="vdi_btn_restore" qtlid="314014">Reset desktopu</translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Restart desktopu</translation>
    <translation id="vdi_btn_reset_password" qtlid="80394">Změna hesla</translation>
-   <translation id="vdi_btn_delete" qtlid="442691">Résilier le desktop</translation>
+   <translation id="vdi_btn_delete" qtlid="442691">Odstranit pracovní plochu</translation>
    <translation id="vdi_label_username" qtlid="197024">Uživatelské jméno:</translation>
    <translation id="vdi_label_email" qtlid="116322">E-mail:</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias:</translation>
@@ -50,7 +50,7 @@
    <translation id="vdi_confirm_upgrade" qtlid="314053">Poté, co upgradujete na verzi <strong>{{plan}}</strong> bude měsíční cena za tento desktop <strong>{{price}} bez DPH</strong>. Chcete provést upgrade?</translation>
    <translation id="vdi_btn_popup_upgrade" qtlid="90661">Upgrade</translation>
    <translation id="vdi_upgrade_title" qtlid="403684">Přejít na vyšší nabídku</translation>
-   <translation id="vdi_upgrade_available" qtlid="442704">Vous pouvez passer à l'une des offres ci-dessous</translation>
+   <translation id="vdi_upgrade_available" qtlid="442704">Můžete přejít na některé z níže uvedených řešení</translation>
 
    <translation id="vdi_upgrading" qtlid="314066">Probíhá upgrade desktopu...</translation>
    <translation id="vdi_upgraded" qtlid="314079">Upgrade desktopu dokončen.</translation>

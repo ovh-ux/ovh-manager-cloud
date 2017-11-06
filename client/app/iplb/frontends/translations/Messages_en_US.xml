@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="iplb_frontends_title" qtlid="438545">Front-facing services</translation>
-   <translation id="iplb_frontends_intro_text" qtlid="438558">The front-facing services/ports are the part of your Load Balancing IP that make your services visible on the internet.</translation>
+   <translation id="iplb_frontends_title" qtlid="438545">Frontends</translation>
+   <translation id="iplb_frontends_intro_text" qtlid="438558">The Frontend is the part of your Load Balancer that make your services visible on the internet.</translation>
 
    <translation id="iplb_frontends_add" qtlid="438571">Add a front-facing service</translation>
 

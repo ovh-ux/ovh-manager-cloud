@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Ihr Arbeitsplatz wird auf die ursprüngliche Konfiguration zurückgesetzt. Die Daten auf Ihrem Laufwerk C: werden gelöscht und Ihre Applikationen müssen neu installiert werden. Die Daten auf Ihrem Laufwerk D: bleiben erhalten. Möchten sie trotzdem fortfahren?</translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Ihr Arbeitsplatz wird auf die ursprüngliche Konfiguration zurückgesetzt. Die Daten auf Ihrem Laufwerk C: werden gelöscht und Ihre Applikationen müssen neu installiert werden. Die Daten auf Ihrem Laufwerk D: bleiben erhalten. Möchten sie trotzdem fortfahren?</translation>
    <translation id="vdi_restoring" qtlid="313923">Der Desktop wird zurückgesetzt.</translation>
    <translation id="vdi_restored" qtlid="313936">Der Desktop wurde zurückgesetzt.</translation>
    <translation id="vdi_confirm_reboot" qtlid="442665">Ihr Arbeitsplatz wird neu gestartet und nicht gespeicherte Daten gehen möglicherweise verloren. Möchten Sie trotzdem fortfahren?</translation>
