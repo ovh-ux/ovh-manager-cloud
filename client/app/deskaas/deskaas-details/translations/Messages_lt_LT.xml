@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Jūsų darbo aplinka bus perkonfigūruota pagal pradinę būseną. Jūsų C disko duomenys bus pašalinti, o jūsų programėlės turės būti įdiegtos iš naujo. Jūsų D disko duomenys bus išsaugoti. Ar norite tęsti?</translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Jūsų darbo aplinka bus perkonfigūruota pagal pradinę būseną. Jūsų C disko duomenys bus pašalinti, o jūsų programėlės turės būti įdiegtos iš naujo. Jūsų D disko duomenys bus išsaugoti. Ar norite tęsti?</translation>
    <translation id="vdi_restoring" qtlid="313923">Darbalaukis nustatomas iš naujo.</translation>
    <translation id="vdi_restored" qtlid="313936">Pakartotinis inicijavimas atliktas.</translation>
    <translation id="vdi_confirm_reboot" qtlid="442665">Jūsų darbo aplika bus perkrauta, todėl gali būti prarasti visi neišsaugoti duomenys. Ar norite tęsti? </translation>

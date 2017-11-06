@@ -9,8 +9,8 @@
    <translation id="cpc_ssh_error" qtlid="248808">SSH-avainlistaa ei pystytä hakemaan!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">OVH:n palvelinten välillä tapahtuvassa viestinnässä käytetään tietojen salauksessa salausprotokollaa (SSH).</translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<a href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
-   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Myös <a href="{{ addUrl }}" target="_blank">ylimääräisten SSH-avainten konfigurointi<i class="fa fa-external-link" aria-hidden="true"></i></a> on mahdollista instanssissasi, jotta voit antaa pääsyoikeuksia toisille tai <a href="{{ changeUrl }}" target="_blank">muuttaa SSH-avaimen, mikäli olet kadottanut sen<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<<a class="oui-link" href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Myös <a class="oui-link" href="{{ addUrl }}" target="_blank">ylimääräisten SSH-avainten konfigurointi<i class="fa fa-external-link" aria-hidden="true"></i></a> on mahdollista instanssissasi, jotta voit antaa pääsyoikeuksia toisille tai <a class="oui-link" href="{{ changeUrl }}" target="_blank">muuttaa SSH-avaimen, mikäli olet kadottanut sen<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Lisää avain</translation>
    <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Peruuta lisäys</translation>

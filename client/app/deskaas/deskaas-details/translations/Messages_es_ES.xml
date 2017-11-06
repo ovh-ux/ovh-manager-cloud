@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Restableceremos su espacio de trabajo a la configuración inicial. Se eliminarán los datos de su disco C y deberá reinstalar sus aplicaciones. Los datos de su disco D se conservarán. ¿Seguro que quiere continuar? </translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Restableceremos su espacio de trabajo a la configuración inicial. Se eliminarán los datos de su disco C y deberá reinstalar sus aplicaciones. Los datos de su disco D se conservarán. ¿Seguro que quiere continuar? </translation>
    <translation id="vdi_restoring" qtlid="313923">El escritorio se está reiniciando.</translation>
    <translation id="vdi_restored" qtlid="313936">Se ha restaurado el escritorio.</translation>
    <translation id="vdi_confirm_reboot" qtlid="442665">Su espacio de trabajo se reiniciará. Los datos que no se hayan guardado podrían perderse. ¿Seguro que quiere continuar?</translation>

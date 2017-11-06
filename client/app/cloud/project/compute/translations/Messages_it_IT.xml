@@ -6,7 +6,8 @@
    <translation id="cpc_tab_ssh" qtlid="104830">Chiavi SSH</translation>
    <translation id="cpc_tab_project" qtlid="261283">Gestione e consumo del progetto</translation>
    <translation id="cpc_message" qtlid="439767">Il Cloud OVH arriva Germania! <a href="http://superlienverslapage">Scopri il datacenter OVH di Limburg.</a></translation>
-   <translation id="cloud_message_pci_uk1" qtlid="406143">UK</translation>
+   <translation id="cloud_message_pci_uk1" qtlid="442868">È disponibile la nuova Region UK1 a Londra, nel Regno Unito!</translation>
+   <translation id="cloud_message_pci_uk1_link" qtlid="439793">Scopri tutti i vantaggi</translation>
    <translation id="cloud_message_pci_de1" qtlid="439780">È disponibile la nuova Region DE1 a Francoforte, in Germania!</translation>
    <translation id="cloud_message_pci_de1_link" qtlid="439793">Scopri tutti i vantaggi</translation>
    <translation id="cloud_message_pci_g3" qtlid="439806">Novità: lancio delle istanze GPU G3-30 e G3-120, per i tuoi progetti di Data Science e Machine Learning.</translation>

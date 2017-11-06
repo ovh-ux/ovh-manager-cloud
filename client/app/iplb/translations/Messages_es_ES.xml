@@ -54,8 +54,8 @@
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} activos</translation>
    <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} de {{totalCount}} activos</translation>
-   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} de {{totalCount}} funcionales</translation>
-   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} de {{totalCount}} funcionales</translation>
+   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} de {{totalCount}} operativos</translation>
+   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} de {{totalCount}} operativas</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Aplicar la configuración </translation>
    <translation id="iplb_status_details" qtlid="439611">Ver el detalle</translation>
