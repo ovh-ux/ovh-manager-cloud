@@ -219,7 +219,7 @@
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Sinulla ei ole SSH-avainta.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">OVH:n palvelinten välillä tapahtuvassa viestinnässä käytetään tietojen salauksessa salausprotokollaa (SSH).</translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<a href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">SSH-asiakasohjelmia on olemassa jokaiselle käyttöjärjestelmälle. Lisätietoa löydät<<a class="oui-link" href="{{ createUrl }}" target="_blank">SSH-salausavaimen luomista käsittelevästä ohjeesta <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Ohje SSH-avainten luomiseen<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Ymmärsin!</translation>

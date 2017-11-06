@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Uw werkstation wordt opnieuw geconfigureerd naar de oorspronkelijke status. Disk C: Data wordt verwijderd en uw app wordt opnieuw geïnstalleerd. Disk D: Data wordt behouden. Wilt u doorgaan?</translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Uw werkstation wordt opnieuw geconfigureerd naar de oorspronkelijke status. Disk C: Data wordt verwijderd en uw app wordt opnieuw geïnstalleerd. Disk D: Data wordt behouden. Wilt u doorgaan?</translation>
    <translation id="vdi_restoring" qtlid="313923">De desktop wordt gereset. </translation>
    <translation id="vdi_restored" qtlid="313936">De desktop is gereset. </translation>
    <translation id="vdi_confirm_reboot" qtlid="442665">Uw werkstation wordt opnieuw gestart en niet-geregistreerde data zal verloren gaan. Wilt u doorgaan?</translation>

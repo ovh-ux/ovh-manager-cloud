@@ -16,6 +16,23 @@ angular.module("managerApp")
             FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml",
             EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml"
         }
+    },{
+        type: "info",
+        messageId: "cloud_message_pci_uk1",
+        messageStart: "2017-10-31",
+        messageEnd: "2017-11-19",
+        hasLinkText: true,
+        linkURL: {
+            FR: "https://www.ovh.com/fr/public-cloud/instances/datacenters.xml",
+            TN: "https://www.ovh.com/tn/public-cloud/instances/datacenters.xml",
+            MA: "https://www.ovh.com/ma/public-cloud/instances/datacenters.xml",
+            SN: "https://www.ovh.sn/public-cloud/instances/datacenters.xml",
+            DE: "https://www.ovh.de/public-cloud/instances/datacenters.xml",
+            ES: "https://www.ovh.es/public-cloud/instancias/datacenters.xml",
+            WS: "https://www.ovh.com/us/es/public-cloud/instancias/datacenters.xml",
+            FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml",
+            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml"
+        }
     }, {
         type: "info",
         messageId: "cloud_message_pci_g3",

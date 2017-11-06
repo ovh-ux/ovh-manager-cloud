@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-<translation id="vdi_confirm_restore" qtlid="442652">Votre espace de travail sera reconfiguré à son état initial. Les données sur votre disque C: seront supprimées et vos applications devront être réinstallées. Les données sur votre disque D: seront conservées. Souhaitez-vous continuer?</translation>
+   <translation id="vdi_confirm_restore" qtlid="442652">Votre espace de travail sera reconfiguré à son état initial. Les données sur votre disque C: seront supprimées et vos applications devront être réinstallées. Les données sur votre disque D: seront conservées. Souhaitez-vous continuer?</translation>
    <translation id="vdi_restoring" qtlid="313923">Le desktop est en cours de réinitialisation.</translation>
    <translation id="vdi_restored" qtlid="313936">La réinitialisation du desktop a été effectuée.</translation>
    <translation id="vdi_confirm_reboot" qtlid="442665">Votre espace de travail va redémarrer, les données non sauvegardées pourront être perdues. Souhaitez-vous continuer?</translation>

@@ -6,7 +6,8 @@
    <translation id="cpc_tab_ssh" qtlid="104830">SSH raktai</translation>
    <translation id="cpc_tab_project" qtlid="261283">Projekto valdymas bei resursų naudojimas</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud atvyko į Vokietiją! <a href="http://superlienverslapage">Susipažinkite su duomenų centru Limburge.</a></translation>
-   <translation id="cloud_message_pci_uk1" qtlid="406143">JK</translation>
+   <translation id="cloud_message_pci_uk1" qtlid="442868">Ouverture de notre nouvelle région UK1 à Londres, au Royaume-Uni !</translation>
+   <translation id="cloud_message_pci_uk1_link" qtlid="439793">Sužinokite, kokie privalumai</translation>
    <translation id="cloud_message_pci_de1" qtlid="439780">Naujo regiono DE1 paleidimas Frankfurte, Vokietijoje!</translation>
    <translation id="cloud_message_pci_de1_link" qtlid="439793">Sužinokite, kokie privalumai</translation>
    <translation id="cloud_message_pci_g3" qtlid="439806">Naujiena: GPU G3-30 ir G3-120 suteikimas data science ar machine learning aplikacijoms.</translation>
