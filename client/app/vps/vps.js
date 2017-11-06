@@ -55,5 +55,27 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             }
+        })
+        .state("iaas.vps.detail.veeam", {
+            url: "/veeam",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/veeam/vps-veeam.html",
+                    controller: "VpsVeeamCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
+        .state("iaas.vps.detail.additional-disk", {
+            url: "/additional-disk",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/additional-disk/vps-additional-disk.html",
+                    controller: "VpsAdditionalDiskCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
         });
 });

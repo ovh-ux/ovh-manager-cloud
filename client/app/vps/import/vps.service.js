@@ -12,9 +12,9 @@ angular.module("managerApp").service("VpsService", [
         "use strict";
 
         var aapiRootPath = "/sws/vps",
-            swsVpsProxypass = "apiv6/vps",
-            swsOrderProxypass =  "apiv6/order/vps",
-            swsPriceProxypass = "apiv6/price/vps",
+            swsVpsProxypass = "/vps",
+            swsOrderProxypass =  "/order/vps",
+            swsPriceProxypass = "/price/vps",
             vpsCache = cache("UNIVERS_WEB_VPS"),
             vpsTabVeeamCache = cache("UNIVERS_WEB_VPS_TABS_VEEAM"),
             vpsTabBackupStorageCache = cache("UNIVERS_WEB_VPS_TABS_BACKUP_STORAGE"),
@@ -148,9 +148,10 @@ angular.module("managerApp").service("VpsService", [
                     var selectedVps = vpsCache.get("vps");
                     if (!selectedVps) {
                         if (requests.vpsDetails === null) {
-                            requests.vpsDetails = $http.get([aapiRootPath, product.name,"info"].join("/"), {serviceType: "aapi"}).then(function (result) {
-                                vpsCache.put("vps", result.data);
-                            });
+                            requests.vpsDetails = $http.get([aapiRootPath, product.name,"info"].join("/"), {serviceType: "aapi"})
+                                .then(function (result) {
+                                    vpsCache.put("vps", result.data);
+                                });
                         }
                         return requests.vpsDetails;
                     } else {
@@ -205,9 +206,10 @@ angular.module("managerApp").service("VpsService", [
             var result = null;
             return this.getSelected().then(function (vps) {
                 if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "setPassword"].join("/")).then(function (data) {
-                        result = data.data;
-                    });
+                    return $http.post([swsVpsProxypass, vps.name, "setPassword"].join("/"))
+                        .then(function (data) {
+                            result = data.data;
+                        });
                 } else {
                     return $q.reject(vps);
                 }
@@ -228,9 +230,10 @@ angular.module("managerApp").service("VpsService", [
                 if (vps && vps.name) {
                     var netbootMode = rescueMode ? "rescue" : "local";
                     if (vps.netbootMode === netbootMode.toUpperCase()) {
-                        return $http.post([swsVpsProxypass, vps.name, "reboot"].join("/")).then(function (data) {
-                            result = data.data;
-                        });
+                        return $http.post([swsVpsProxypass, vps.name, "reboot"].join("/"))
+                            .then(function (data) {
+                                result = data.data;
+                            });
                     }
 
                     // The modification of netbootMode for a vps other than CLOUD 2014v1 model will make the VPS
@@ -238,13 +241,14 @@ angular.module("managerApp").service("VpsService", [
                     if ((vps.offerType === "CLOUD" && vps.version === "_2014_V_1")) {
                         // Sleep for 40 seconds because the netboot change take some seconds to apply.
                         // It's not a good solution, it's like that since the begin
-                        return $http.put([swsVpsProxypass, vps.name].join("/"), { netbootMode: netbootMode }).then( function () {
-                            return $timeout(function () {
-                                return $http.post([swsVpsProxypass, vps.name, "reboot"].join("/")).then(function (data) {
-                                    result = data.data;
-                                });
-                            }, 40000);
-                        });
+                        return $http.put([swsVpsProxypass, vps.name].join("/"), { netbootMode: netbootMode })
+                            .then(function () {
+                                return $timeout(function () {
+                                    return $http.post([swsVpsProxypass, vps.name, "reboot"].join("/")).then(function (data) {
+                                        result = data.data;
+                                    });
+                                }, 40000);
+                            });
                     } else {
                         return $http.put([swsVpsProxypass, vps.name].join("/"), { netbootMode: netbootMode });
                     }
@@ -908,7 +912,7 @@ angular.module("managerApp").service("VpsService", [
             if (forceRefresh) {
                 resetTabVeeam();
             }
-            return this.getSelected().then(function (vps) {
+            return self.getSelected().then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "automatedBackup/restorePoints"].join("/"), {
                     params: {
                         state: state

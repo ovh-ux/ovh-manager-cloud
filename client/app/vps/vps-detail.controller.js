@@ -1,5 +1,6 @@
 class VpsDetailCtrl {
-    constructor ($filter, $q, $scope, $stateParams, CloudMessage, VpsService) {
+    constructor ($filter, $q, $scope, $stateParams, $timeout, CloudMessage, VpsService) {
+        this.$timeout = $timeout;
         this.$filter = $filter;
         this.$q = $q;
         this.$scope = $scope;
