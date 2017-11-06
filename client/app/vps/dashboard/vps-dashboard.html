@@ -53,7 +53,7 @@
                         </div>
                         <div class="cui-tile__button">
                             <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ i-icon-success_circle': $ctrl.vps.https == 'OK',
+                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.https == 'OK',
                                                    'oui-icon-error_circle': $ctrl.vps.https == 'KO'}"></i>
                             <span data-translate="vps_dashboard_https"></span>
                         </div>
@@ -69,7 +69,8 @@
                                                 'oui-icon-error_circle': $ctrl.vps.smtp == 'KO'}"></i>
                             <span data-translate="vps_dashboard_smtp"></span>
                         </div>
-                        <div class="cui-tile__button">
+                        <div class="cui-tile__button"
+                             data-ng-if="$ctrl.vps.tools">
                             <i class="oui-icon oui-icon_bicolor"
                                data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.tools == 'OK',
                                                 'oui-icon-error_circle': $ctrl.vps.tools == 'KO'}"></i>
@@ -81,7 +82,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'common_tile_ip' | translate"
+            <cui-tile data-title="'vps_tab_ip' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item>
@@ -147,12 +148,32 @@
 
         <div class="col-xm-12 col-md-4">
             <cui-tile data-title="'vps_tab_summary' | translate"
-                      data-loading="$ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.loaders.summary" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
-                                   data-description="$ctrl.vps.hasBackup">
+                                   data-description="'common_disabled' | translate"
+                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated">
                     </cui-tile-item>
-
+                    <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
+                                   data-description="'common_enabled' | translate"
+                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
+                                   data-description="'common_disabled' | translate"
+                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
+                                   data-description="'common_enabled' | translate"
+                                   data-ng-if="$ctrl.summary.snapshot.optionActivated">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
+                                   data-description="'common_disabled' | translate"
+                                   data-ng-if="!$ctrl.summary.veeamActivated">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
+                                   data-description="'common_enabled' | translate"
+                                   data-ng-if="$ctrl.summary.veeamActivated">
+                    </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -170,4 +191,4 @@
 
 </section>
 
-<div data-ng-bind="$ctrl.vps"></div>
+<div data-ng-bind="$ctrl.vps"></div><div data-ng-bind="$ctrl.summary"></div>
