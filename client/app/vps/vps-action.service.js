@@ -46,6 +46,16 @@ class VpsActionService {
         });
     }
 
+    orderAdditionalDisk () {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/additional-disk/order-disk.html",
+                controller: "OrderAdditionalDiskCtrl",
+                controllerAs: "$ctrl"
+            }
+        });
+    }
+
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);
