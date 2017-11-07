@@ -1,0 +1,45 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+    <!-- step 1 -->
+    <cui-modal-body data-title="'vps_order_additionnal_disk_title' | translate"
+                    data-ng-if="$ctrl.step.one">
+        <div class="text-center" data-ng-if="$ctrl.loader.capacity">
+            <oui-loader class="d-inline-block"></oui-loader>
+        </div>
+        <div data-ng-if="!$ctrl.loader.capacity">
+            <cui-modal-text data-text="'vps_order_additional_disk_select_capacity' | translate"></cui-modal-text>
+            <div class="oui-radio" data-ng-repeat="capacity in $ctrl.capacityArray">
+                <input class="oui-radio__input" type="radio" name="capacity" 
+                       data-ng-model="$ctrl.model.capacity" id="{{capacity.size}}"
+                       data-ng-value="{{capacity.size}}">
+                <label class="oui-radio__label-container" for="{{capacity.size}}">
+                    <span class="oui-radio__label" data-ng-bind="capacity.type | additionalDiskOptions"></span>
+                    <span class="oui-radio__description" data-ng-bind="capacity.text"></span>
+                </label>
+            </div>
+        </div>
+    </cui-modal-body>
+
+    <!-- step 2 -->
+    <cui-modal-body data-title="'vps_order_additionnal_disk_title' | translate"
+                    data-ng-if="$ctrl.step.two">
+        <div class="text-center" data-ng-if="$ctrl.loader.offer">
+            <oui-loader class="d-inline-block"></oui-loader>
+        </div>
+        <div data-ng-if="!$ctrl.loader.offer">
+            <cui-modal-text data-text="'vps_configuration_reboot_confirmation' | translate"></cui-modal-text>
+            <p class="oui-modal__body-text italic" data-translate="vps_configuration_reboot_alert"></p>
+        </div>
+    </cui-modal-body>
+
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'common_next' | translate" 
+                           data-on-click="$ctrl.next()"
+                           data-disabled="$ctrl.loader.save || $ctrl.step.two"
+                           data-ng-if="$ctrl.step.one"></cui-submit-button>
+        <cui-submit-button data-text="'common_confirm' | translate" 
+            data-on-click="$ctrl.confirm()"
+            data-disabled="$ctrl.loader.save || !$ctrl.step.two"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>
