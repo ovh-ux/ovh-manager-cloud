@@ -71,7 +71,8 @@
             </div>
         </div>
 
-        <cui-advanced-options data-title="'iplb_farm_edit_advanced_options' | translate"
+        <cui-advanced-options data-ng-hide="ctrl.type === 'udp'"
+            data-title="'iplb_farm_edit_advanced_options' | translate"
             data-text="'iplb_farm_edit_advanced_options_info' | translate"
             data-button-text="'iplb_farm_edit_advanced_options_show' | translate"
             data-expanded="ctrl.edition">
@@ -94,7 +95,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control">
                         <cui-radio-bar data-ng-model="ctrl.farm.stickiness">
-                            <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.stickinesses"
+                            <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.availableStickinesses"
                                 data-text="('iplb_farm_stickiness_' + stickiness) | translate"
                                 data-value="stickiness"></cui-radio-bar-item>
                         </cui-radio-bar>

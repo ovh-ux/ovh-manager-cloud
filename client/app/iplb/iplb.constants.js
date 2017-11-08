@@ -42,6 +42,7 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "uri"
     ],
     stickinesses: [
+        "none",
         "cookie",
         "sourceIp"
     ],
