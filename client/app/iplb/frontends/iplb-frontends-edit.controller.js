@@ -214,6 +214,9 @@ class IpLoadBalancerFrontendsEditCtrl {
         } else if (request.defaultFarmId === 0) {
             request.defaultFarmId = null;
         }
+        if (this.frontend.allowedSource) {
+            request.allowedSource = this.frontend.allowedSource.split(",");
+        }
         delete request.protocol;
         return request;
     }
