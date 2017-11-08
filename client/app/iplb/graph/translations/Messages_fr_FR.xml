@@ -4,11 +4,13 @@
    <translation id="iplb_graph_connections_title" qtlid="41530">Connexions simultanées</translation>
    <translation id="iplb_graph_rqpersec_title" qtlid="439533">Requêtes par minute</translation>
    <translation id="iplb_graph_bandwidth_title" qtlid="38565">Bande passante</translation>
-   <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1 h</translation>
-   <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3 h</translation>
-   <translation id="iplb_graph_scape_6h-ago" qtlid="439702">6 h</translation>
-   <translation id="iplb_graph_scape_12h-ago" qtlid="439715">12 h</translation>
-   <translation id="iplb_graph_scape_1d-ago" qtlid="439728">1 j</translation>
-   <translation id="iplb_graph_scape_2d-ago" qtlid="439741">2 j</translation>
-   <translation id="iplb_graph_scape_3d-ago" qtlid="439754">3 j</translation>
+   <translation id="iplb_graph_scape_1h-ago" qtlid="439676">1H</translation>
+   <translation id="iplb_graph_scape_3h-ago" qtlid="439689">3H</translation>
+   <translation id="iplb_graph_scape_6h-ago" qtlid="439702">6H</translation>
+   <translation id="iplb_graph_scape_12h-ago" qtlid="439715">12H</translation>
+   <translation id="iplb_graph_scape_1d-ago" qtlid="439728">1J</translation>
+   <translation id="iplb_graph_scape_1w-ago">7J</translation>
+   <translation id="iplb_graph_scape_1n-ago">1M</translation>
+   <translation id="iplb_graph_scape_6n-ago">6M</translation>
+   <translation id="iplb_graph_scape_1y-ago">1Y</translation>
 </translations>

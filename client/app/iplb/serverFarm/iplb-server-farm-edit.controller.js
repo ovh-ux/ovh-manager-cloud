@@ -57,6 +57,7 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.portLimit = this.IpLoadBalancerConstant.portLimit;
 
         this.zones.load();
+        this.updateStickinessList();
 
         if (this.$stateParams.farmId) {
             this.edition = true;
@@ -106,6 +107,16 @@ class IpLoadBalancerServerFarmEditCtrl {
                 break;
             default: break;
         }
+
+        this.updateStickinessList();
+    }
+
+    updateStickinessList () {
+        if (this.type === "tcp") {
+            this.availableStickinesses = this.stickinesses.filter(stickiness => stickiness !== "cookie");
+        } else {
+            this.availableStickinesses = this.stickinesses;
+        }
     }
 
     /**
@@ -119,6 +130,10 @@ class IpLoadBalancerServerFarmEditCtrl {
         if (!farm.probe || (farm.probe && !farm.probe.type)) {
             farm.probe = { type: "" };
         }
+        if (!farm.stickiness) {
+            farm.stickiness = "none";
+        }
+        this.updateStickinessList();
         this.farm = angular.copy(farm);
         return farm;
     }
@@ -131,7 +146,15 @@ class IpLoadBalancerServerFarmEditCtrl {
         const request = angular.copy(this.farm);
         delete request.type;
         delete request.zoneText;
+        if (request.stickiness === "none") {
+            request.stickiness = null;
+        }
         if (!request.probe.type) {
+            delete request.probe;
+        }
+        if (this.type === "udp") {
+            delete request.balance;
+            delete request.stickiness;
             delete request.probe;
         }
         return request;
