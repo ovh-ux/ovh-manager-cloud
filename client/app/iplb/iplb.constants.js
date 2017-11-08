@@ -9,7 +9,7 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
             downsample: "1m"
         },
         "3h-ago": {
-            downsample: "1m"
+            downsample: "3m"
         },
         "6h-ago": {
             downsample: "5m"
@@ -20,12 +20,39 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "1d-ago": {
             downsample: "30m"
         },
-        "2d-ago": {
-            downsample: "1h"
+        "1w-ago": {
+            downsample: "6h"
         },
-        "3d-ago": {
-            downsample: "2h"
+        "1n-ago": {
+            downsample: "12h"
+        },
+        "6n-ago": {
+            downsample: "3d"
+        },
+        "1y-ago": {
+            downsample: "7d"
         }
+    },
+    graphScales: {
+        "lb1": [
+            "1h-ago",
+            "3h-ago",
+            "6h-ago",
+            "12h-ago",
+            "1d-ago",
+            "1w-ago",
+            "1n-ago"
+        ],
+        "lb2": [
+            "1h-ago",
+            "6h-ago",
+            "12h-ago",
+            "1d-ago",
+            "1w-ago",
+            "1n-ago",
+            "6n-ago",
+            "1y-ago"
+        ]
     },
     protocols: [
         "http",
