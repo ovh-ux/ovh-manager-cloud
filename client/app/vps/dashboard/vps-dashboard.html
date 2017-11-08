@@ -24,6 +24,15 @@
                             <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                         </button>
                     </li>
+                    <li class="cui-tile__item cui-tile__item_button">
+                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                            type="button"
+                            data-ng-click="$ctrl.setAction('reinstall')"
+                            data-ng-disabled="$ctrl.loaders.polling">
+                            <span data-translate="vps_configuration_reinstall_title_button"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -32,7 +41,7 @@
             <cui-tile data-title="'vps_dashboard_state_services' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
-                    <li class="cui-tile__item cui-tile__item_button">
+                    <li class="cui-tile__item">
                         <div class="cui-tile__button">
                             <i class="oui-icon oui-icon_bicolor"
                                data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.ping == 'OK',
@@ -174,6 +183,7 @@
                                    data-description="'common_enabled' | translate"
                                    data-ng-if="$ctrl.summary.ftpBackup.optionActivated">
                     </cui-tile-item>
+
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'common_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.snapshot.optionActivated">
@@ -182,6 +192,7 @@
                                    data-description="'common_enabled' | translate"
                                    data-ng-if="$ctrl.summary.snapshot.optionActivated">
                     </cui-tile-item>
+
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'common_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.veeamActivated">
@@ -189,6 +200,15 @@
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'common_enabled' | translate"
                                    data-ng-if="$ctrl.summary.veeamActivated">
+                    </cui-tile-item>
+
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
+                                   data-description="'common_disabled' | translate"
+                                   data-ng-if="!$ctrl.hasAdditionalDisk">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
+                                   data-description="'common_enabled' | translate"
+                                   data-ng-if="$ctrl.hasAdditionalDisk">
                     </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
@@ -207,4 +227,4 @@
 
 </section>
 
-<div data-ng-bind="$ctrl.vps"></div><div data-ng-bind="$ctrl.summary"></div>
+<div data-ng-bind="$ctrl.vps"></div><br /><div data-ng-bind="$ctrl.summary"></div>

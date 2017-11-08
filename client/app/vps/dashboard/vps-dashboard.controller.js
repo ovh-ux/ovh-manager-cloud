@@ -10,22 +10,6 @@ class VpsDashboardCtrl {
 
         this.summary = {};
         this.vps = {};
-        this.vpsPolling = {
-            rebootVm: false,
-            setNetboot: false,
-            setMonitoring: false,
-            changeRootPassword: false,
-            createSnapshot: false,
-            deleteSnapshot: false,
-            reinstallVm: false,
-            revertSnapshot: false,
-            restoreVeeamBackup: false,
-            removeVeeamBackup: false,
-            openConsoleAccess: false,
-            getConsoleUrl: false,
-            deliverVm: false,
-            restoreVm: false
-        };
 
         this.loaders = {
             init: false,
@@ -67,10 +51,17 @@ class VpsDashboardCtrl {
 
     loadSummary () {
         this.loaders.summary = true;
+        this.hasAdditionalDisk();
         this.VpsService.getTabSummary(true)
             .then(summary => { this.summary = summary })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.summary = false });
+    }
+
+    hasAdditionalDisk () {
+        this.VpsService.hasAdditionalDiskOption()
+            .then(() => { this.hasAdditionalDisk = true })
+            .catch(() => { this.hasAdditionalDisk = false });
     }
 
     showEditName (displayName) {
@@ -84,6 +75,9 @@ class VpsDashboardCtrl {
                 break;
             case "reboot":
                 this.VpsActionService.reboot();
+                break;
+            case "reinstall":
+                this.VpsActionService.reinstall();
                 break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
