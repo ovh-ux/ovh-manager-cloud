@@ -514,4 +514,8 @@
    <translation id="vps_move_alert" qtlid="296981">Votre VPS a changé d'univers ! Retrouvez bientôt tous vos serveurs (virtuels et dédiés) dans un même grand univers.</translation>
 
    <translation id="vps_tab_dashboard" qtlid="27643">Accueil</translation>
+   <translation id="vps_configuration_edit_name_title" qtlid="439892">Modifier le nom</translation>
+   <translation id="vps_setting_name_updated" qtlid="439905">Nom du projet modifié</translation>
+   <translation id="vps_default_name" qtlid="415714">Nom par défaut</translation>
+   <translation id="vps_personal_name" qtlid="415727">Nom personnalisé</translation>
 </translations>

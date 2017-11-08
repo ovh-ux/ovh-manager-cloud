@@ -127,6 +127,22 @@
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_dashboard_initName' | translate"
                                    data-description="$ctrl.vps.name">
+                        <cui-dropdown-menu>
+                            <cui-dropdown-menu-button>
+                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body>
+                                <div class="oui-action-menu">
+                                <div class="oui-action-menu__item oui-action-menu-item">
+                                    <div class="oui-action-menu-item__icon"></div>
+                                    <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                        type="button"
+                                        data-translate="common_edit"
+                                        data-ng-click="$ctrl.showEditName($ctrl.vps.displayName)"></button>
+                                </div>
+                                </div>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_product' | translate"
                                    data-description="$ctrl.vps.model">
