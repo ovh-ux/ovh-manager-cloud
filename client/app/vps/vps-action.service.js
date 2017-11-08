@@ -3,6 +3,16 @@ class VpsActionService {
         this.ControllerHelper = ControllerHelper;
     }
 
+    password () {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/password/vps-password.html",
+                controller: "VpsPasswordCtrl",
+                controllerAs: "$ctrl"
+            }
+        });
+    }
+
     reboot () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
@@ -13,14 +23,18 @@ class VpsActionService {
         });
     }
 
-    password () {
+    editName (displayName, serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vps/modal/password/vps-password.html",
-                controller: "VpsPasswordCtrl",
-                controllerAs: "$ctrl"
+                templateUrl: "app/vps/modal/edit-name/vps-edit-name.html",
+                controller: "VpsEditNameCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    displayName: () => displayName,
+                    serviceName: () => serviceName
+                }
             }
-        });
+        })
     }
 
     deleteSecondaryDns (domain) {
