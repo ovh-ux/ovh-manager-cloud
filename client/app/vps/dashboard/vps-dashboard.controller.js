@@ -1,7 +1,6 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $scope, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+    constructor ($filter, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
         this.$filter = $filter;
-        this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -72,6 +71,10 @@ class VpsDashboardCtrl {
             .then(summary => { this.summary = summary })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.summary = false });
+    }
+
+    showEditName (displayName) {
+        this.VpsActionService.editName(displayName, this.serviceName);
     }
 
     setAction (action) {
