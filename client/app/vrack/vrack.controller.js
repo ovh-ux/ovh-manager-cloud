@@ -78,6 +78,7 @@ angular.module("managerApp").controller("VrackCtrl",
     self.getAllowedServices = function () {
         return OvhApiVrack.Aapi().allowedServices({ serviceName: self.serviceName }).$promise
             .then(function (allServices) {
+                allServices.ipLoadbalancing = []; // Remove this line once IPLB is ready for vRack
                 allServices = _.mapValues(allServices, function (services, serviceType) {
                     if (_.isArray(services)) {
                         return _.map(services, function (service) {
