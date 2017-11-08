@@ -2,8 +2,8 @@ angular.module("managerApp").config($stateProvider => {
     const vpsHeader =
         {
             templateUrl: "app/vps/vps-header.html",
-            controller: "VpsDetailCtrl",
-            controllerAs: "VpsDetailCtrl"
+            controller: "VpsHeaderCtrl",
+            controllerAs: "$ctrl"
         };
 
     $stateProvider
