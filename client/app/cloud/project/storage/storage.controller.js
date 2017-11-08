@@ -118,6 +118,18 @@ angular.module("managerApp").controller("RA.storageCtrl", [
             $scope.storagesFiltered = $scope.order.filter($scope.storagesFiltered, $scope.order.by, $scope.order.reverse);
         };
 
+        $scope.filterStorages = function () {
+            if ($scope.filter.enabled) {
+                $scope.storagesFiltered = _.filter($scope.storages, function (storage) {
+                    return storage.name && storage.name.toLowerCase().indexOf($scope.filter.name.toLowerCase()) !== -1;
+                });
+            } else {
+                $scope.storagesFiltered = $scope.storages;
+                $scope.filter.name = "";
+            }
+            $scope.orderStorages();
+        };
+
         // Selection management
         function resetSelectionModel () {
             $scope.selectionModel = {
