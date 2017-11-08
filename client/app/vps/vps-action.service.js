@@ -6,7 +6,7 @@ class VpsActionService {
     password () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vps/modal/password/vps-password.html",
+                templateUrl: "app/vps/modal/shortcut/password/vps-password.html",
                 controller: "VpsPasswordCtrl",
                 controllerAs: "$ctrl"
             }
@@ -16,8 +16,18 @@ class VpsActionService {
     reboot () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vps/modal/reboot/vps-reboot.html",
+                templateUrl: "app/vps/modal/shortcut/reboot/vps-reboot.html",
                 controller: "VpsRebootCtrl",
+                controllerAs: "$ctrl"
+            }
+        });
+    }
+
+    reinstall () {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/shortcut/reinstall/vps-reinstall.html",
+                controller: "VpsReinstallCtrl",
                 controllerAs: "$ctrl"
             }
         });
