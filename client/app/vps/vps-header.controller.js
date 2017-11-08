@@ -1,6 +1,6 @@
 class VpsHeaderCtrl {
-    constructor ($scope, $stateParams, $translate, CloudMessage, VpsService) {
-        this.$scope = $scope;
+    constructor ($rootScope, $stateParams, $translate, CloudMessage, VpsService) {
+        this.$rootScope = $rootScope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -14,13 +14,13 @@ class VpsHeaderCtrl {
 
     $onInit () {
         this.loaders.init = true;
+        this.$rootScope.$on("changeDescription", (event, data) => {
+            this.description = data;
+        });
         this.VpsService.getSelected(true)
             .then(vps => { this.description = vps.displayName })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error")))
             .finally(() => { this.loaders.init = false });
-        this.$scope.$on("changeDescription", (event, data) => {
-            this.description = data;
-        });
     }
 
 }
