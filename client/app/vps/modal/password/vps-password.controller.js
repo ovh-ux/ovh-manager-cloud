@@ -24,7 +24,7 @@ class VpsPasswordCtrl {
     }
 
     hasTasks (tasks) {
-        if (taks.length) {
+        if (tasks.length) {
             this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail"));
         }
     }
