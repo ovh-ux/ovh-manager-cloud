@@ -58,7 +58,6 @@ class IpLoadBalancerGraphCtrl {
 
     loadGraphs () {
         this.offerLoader.load().then(service => {
-            service.offer = "lb2";
             let scales = this.IpLoadBalancerConstant.graphScales[service.offer];
             if (!scales) {
                 scales = this.IpLoadBalancerConstant.graphScales.lb1;
