@@ -1,19 +1,8 @@
-<div>
-    <div class="modal-header">
-        <h3 class="modal-title float-left"
-            data-translate="ovh_task_follow_modal_title">
-        </h3>
-        <button type="button"
-                class="close float-right"
-                aria-label="{{ ::'cancel' | translate }}"
-                data-ng-click="$ctrl.cancel()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-
-    <div class="modal-body">
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.dismiss()"></cui-modal-header>
+    <cui-modal-body title="'ovh_task_follow_modal_title' | translate">
         <uib-accordion>
-            <div data-ng-repeat="task in $ctrl.data.tasks track by $index"
+            <div data-ng-repeat="task in $ctrl.tasks track by $index"
                  class="panel-default"
                  data-uib-accordion-group
                  data-is-open="$ctrl.isOpenState[task.task_id]">
@@ -44,6 +33,5 @@
                 </div>
             </div>
         </uib-accordion>
-    </div>
-
-</div>
+    </cui-modal-body>
+</cui-modal>
