@@ -1,0 +1,49 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title float-left"
+            data-translate="ovh_task_follow_modal_title">
+        </h3>
+        <button type="button"
+                class="close float-right"
+                aria-label="{{ ::'cancel' | translate }}"
+                data-ng-click="$ctrl.cancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <uib-accordion>
+            <div data-ng-repeat="task in $ctrl.data.tasks track by $index"
+                 class="panel-default"
+                 data-uib-accordion-group
+                 data-is-open="$ctrl.isOpenState[task.task_id]">
+                <uib-accordion-heading>
+                    <div class="clearfix">
+                        <span class="float-left"
+                              data-ng-bind="task.item_summary">
+                        </span>
+                        <i class="float-right ovh-font"
+                           data-ng-class="{ 'ovh-font-small-arrow-down': $ctrl.isOpenState[task.task_id], 'ovh-font-small-arrow-right': !$ctrl.isOpenState[task.task_id] }">
+                        </i>
+                    </div>
+                </uib-accordion-heading>
+                <div data-ng-repeat="comment in task.comments track by $index">
+                    <p class="text-danger"
+                       data-translate="ovh_task_follow_modal_comment"
+                       data-translate-values="{ date: ((comment.date_added * 1000) | date:'medium') }">
+                    </p>
+                    <p style="white-space: pre-wrap;"
+                       data-ng-bind-html="comment.comment_text">
+                    </p>
+                    <hr style="border-color: #333;"></hr>
+                </div>
+                <div>
+                    <p style="white-space: pre-wrap;"
+                       data-ng-bind-html="task.detailed_desc">
+                    </p>
+                </div>
+            </div>
+        </uib-accordion>
+    </div>
+
+</div>
