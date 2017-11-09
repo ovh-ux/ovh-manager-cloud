@@ -13,16 +13,18 @@ class OvhTaskAlertsService {
         return this.$http.get("/ovh-tasks", {
             serviceType: "aapi"
         }).then(response => {
-            if (response.data.alert) {
-                const tasks = _.map(_.get(response, "data.tasks", []), task => {
-                    task.comments = _.map(task.comments, comment => {
-                        comment.comment_text = _.get(comment, "comment_text", "").replace(/\\'/g, "'").replace(/\\"/g, "\"");
-                        return comment;
-                    }).reverse();
-                    task.detailed_desc = _.get(task, "detailed_desc", "").replace(/\\'/g, "'").replace(/\\"/g, "\"");
-                    return task;
+            if (response.data.alerts.length) {
+                _.forEach(response.data.alerts, alert => {
+                    const tasks = _.map(_.get(response, "data.tasks", []), task => {
+                        task.comments = _.map(task.comments, comment => {
+                            comment.comment_text = _.get(comment, "comment_text", "").replace(/\\'/g, "'").replace(/\\"/g, "\"");
+                            return comment;
+                        }).reverse();
+                        task.detailed_desc = _.get(task, "detailed_desc", "").replace(/\\'/g, "'").replace(/\\"/g, "\"");
+                        return task;
+                    });
+                    this.sendAlert(alert, tasks);
                 });
-                this.sendAlert(response.data.alert, tasks);
                 return response.data;
             }
             return {};
