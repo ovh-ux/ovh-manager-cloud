@@ -45,11 +45,12 @@
                 <!-- CONTENT -->
                 <div id="content" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
                     <div data-ng-controller="MeAlertsCtrl as MeAlertsCtrl">
-                        <cui-message-container data-messages="MeAlertsCtrl.messages" 
+                        <cui-message-container data-messages="MeAlertsCtrl.messages"
                                                data-grouped-types="['warning','error']"
                                                data-dismissable-types="['warning']"></cui-message-container>
                     </div>
                     <ovh-browser-alert></ovh-browser-alert>
+                    <ovh-task-follow></ovh-task-follow>
                     <div ui-view=""></div>
                 </div>
             </div>
