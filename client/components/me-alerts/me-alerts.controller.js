@@ -1,13 +1,15 @@
-class MeAlertsCtrl {
-    constructor (CloudMessage, MeAlertsService) {
+class AlertsCtrl {
+    constructor (CloudMessage, MeAlertsService, OvhTaskAlertsService) {
         this.CloudMessage = CloudMessage;
         this.MeAlertsService = MeAlertsService;
+        this.OvhTaskAlertsService = OvhTaskAlertsService;
         this.messages = [];
     }
 
     $onInit () {
         this.loadMessage();
         this.MeAlertsService.getMessages();
+        this.OvhTaskAlertsService.getOvhTaskAlerts();
     }
 
 
@@ -21,4 +23,4 @@ class MeAlertsCtrl {
     }
 }
 
-angular.module("managerApp").controller("MeAlertsCtrl", MeAlertsCtrl);
+angular.module("managerApp").controller("AlertsCtrl", AlertsCtrl);
