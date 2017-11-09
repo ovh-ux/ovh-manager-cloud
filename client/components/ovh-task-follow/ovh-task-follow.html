@@ -1,0 +1,22 @@
+<div class="oui-message oui-message_warning"
+     role="alert"
+     style="margin-bottom: 0px !important;"
+     data-ng-if="!$ctrl.loading.init && $ctrl.data.alert">
+     <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
+    <button type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+            data-ng-click="$ctrl.close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <p class="oui-message__body">
+        <span data-ng-bind-html="$ctrl.getAlert()"></span>
+        <button type="button"
+                class="btn btn-link no-space"
+                data-ng-click="$ctrl.showFollow()"
+                data-translate="ovh_task_follow_button"
+                data-ng-if="$ctrl.data.tasks.length">
+        </button>
+    </p>
+</div>

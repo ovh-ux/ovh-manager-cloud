@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="ovh_task_follow_button">Détail de l'incident</translation>
+    <translation id="ovh_task_follow_modal_title">Suivi de l'incident</translation>
+    <translation id="ovh_task_follow_modal_comment">Dernière mise à jour : {{ date }}</translation>
+</translations>
