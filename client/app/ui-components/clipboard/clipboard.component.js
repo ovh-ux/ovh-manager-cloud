@@ -49,7 +49,7 @@
         .component("cuiClipboard", {
             template: `
                 <div class="cui-clipboard__input-container">
-                    <input class="cui-clipboard__input"
+                    <input class="cui-clipboard__input text-truncate"
                         type="text"
                         id="{{$ctrl.id}}"
                         data-ng-focus="$ctrl.onTextFocus($event)"
