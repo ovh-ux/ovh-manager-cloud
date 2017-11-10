@@ -10,11 +10,12 @@
 
             this.urls = {
                 renew: REDIRECT_URLS.renew
-                                .replace("{serviceType}", "VEEAM_CLOUD_CONNECT")
-                                .replace("{serviceName}", this.$stateParams.serviceName)
+                    .replace("{serviceType}", "VEEAM_CLOUD_CONNECT")
+                    .replace("{serviceName}", this.$stateParams.serviceName)
             };
 
             this.initLoaders();
+            this.initActions();
         }
 
         initLoaders () {
@@ -59,6 +60,26 @@
                 loaderFunction: () => this.VeeamService.getOrderableOffers(this.serviceName),
                 errorHandler
             });
+        }
+
+        initActions () {
+            this.uiActions = {
+                changeOffer: {
+                    text: this.$translate.instant("common_edit"),
+                    callback: () => this.changeOffer(),
+                    isAvailable: () => !this.actions.loading && this.actions.data.upgradeOffer.available
+                },
+                manageAutorenew: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "VEEAM_CLOUD_CONNECT" }),
+                    isAvailable: () => true
+                },
+                manageContact: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
+                    isAvailable: () => true
+                }
+            };
         }
 
         $onInit () {
