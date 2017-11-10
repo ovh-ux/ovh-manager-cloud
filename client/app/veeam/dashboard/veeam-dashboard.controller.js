@@ -93,15 +93,13 @@
                         resolve: {
                             serviceName: () => this.serviceName
                         }
-                    },
-                    successHandler: result => {
-                        this.VeeamService.startPolling(this.$stateParams.serviceName, result.data);
-                    },
-                    errorHandler: err => this.VeeamService.unitOfWork.messages.push({
+                    }
+                })
+                    .then(result => this.VeeamService.startPolling(this.$stateParams.serviceName, result.data))
+                    .catch(err => this.VeeamService.unitOfWork.messages.push({
                         text: err.message,
                         type: "error"
-                    })
-                });
+                    }));
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),
@@ -120,18 +118,16 @@
                         resolve: {
                             serviceName: () => this.serviceName
                         }
-                    },
-                    successHandler: result => {
-                        this.VeeamService.unitOfWork.messages.push({
-                            textHtml: result.message,
-                            type: "success"
-                        });
-                    },
-                    errorHandler: err => this.VeeamService.unitOfWork.messages.push({
+                    }
+                })
+                    .then(result => this.VeeamService.unitOfWork.messages.push({
+                        textHtml: result.message,
+                        type: "success"
+                    }))
+                    .catch(err => this.VeeamService.unitOfWork.messages.push({
                         text: err.message,
                         type: "error"
-                    })
-                });
+                    }));
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),
