@@ -1,18 +1,12 @@
 (() => {
     class VeeamDashboardCtrl {
-        constructor ($stateParams, $translate, VeeamService, ControllerHelper, REDIRECT_URLS) {
+        constructor ($stateParams, $translate, VeeamService, ControllerHelper) {
             this.$stateParams = $stateParams;
             this.$translate = $translate;
             this.VeeamService = VeeamService;
             this.ControllerHelper = ControllerHelper;
 
             this.serviceName = this.$stateParams.serviceName;
-
-            this.urls = {
-                renew: REDIRECT_URLS.renew
-                    .replace("{serviceType}", "VEEAM_CLOUD_CONNECT")
-                    .replace("{serviceName}", this.$stateParams.serviceName)
-            };
 
             this.initLoaders();
             this.initActions();
