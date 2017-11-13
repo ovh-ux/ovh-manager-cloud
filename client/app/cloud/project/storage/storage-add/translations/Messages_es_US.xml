@@ -8,7 +8,7 @@
    <translation id="add_storage" qtlid="242678">Un contenedor de objetos</translation>
    <translation id="add_storage2" qtlid="246468">Añadir un contenedor de objetos</translation>
    <translation id="add_ssh_key" qtlid="242691">Una llave SSH</translation>
-   <translation id="add_title" qtlid="37923">Ajouter</translation>
+   <translation id="add_title" qtlid="37923">Añadir</translation>
    <translation id="add_subtitle" qtlid="242704">Seleccione el elemento que desea añadir.</translation>
 
    <translation id="add_instance" qtlid="242665">Un servidor virtual</translation>
@@ -60,7 +60,7 @@
    <translation id="add_container_ssh" qtlid="21859">Clé SSH</translation>
    <translation id="add_instance_new_ssh" qtlid="242990">Crear una llave SSH</translation>
    <translation id="add_container_ssh_enter" qtlid="243003">Introduzca su llave</translation>
-   <translation id="add_submit" qtlid="37923">Ajouter</translation>
+   <translation id="add_submit" qtlid="37923">Añadir</translation>
    <translation id="add_form_error_bad_ssh_key" qtlid="243016">Llave no válida</translation>
    <translation id="add_form_error_required" qtlid="182514">Campo obligatorio</translation>
    <translation id="add_container_selected_publicKey" qtlid="243029">Clave pública seleccionada</translation>
