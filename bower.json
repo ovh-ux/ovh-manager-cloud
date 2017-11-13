@@ -43,7 +43,7 @@
     "validator-js": "~3.37.0",
     "ovh-ui-kit": "^1.0.0-alpha.18",
     "ovh-angular-a-disabled": "^0.1.1",
-    "ng-at-internet": "https://github.com/whispyy/ng-at-internet.git#feature/decorator",
+    "ng-at-internet": "^3.0.0",
     "at-internet-ui-router-plugin": "^0.1.2",
     "ovh-angular-toggleclass": "^1.2.1",
     "ovh-jquery-ui-draggable-ng": "^0.0.5",
@@ -99,7 +99,7 @@
     "lodash": "~3.10.1",
     "ovh-api-services": "^2.1.6",
     "ovh-angular-actions-menu": "^2.0.0",
-    "ng-at-internet": "feature/decorator"
+    "ng-at-internet": "^3.0.0"
   },
   "overrides": {
     "angular-strap": {
