@@ -8,12 +8,14 @@ class VpsDashboardCtrl {
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
 
+        this.plan = {};
         this.summary = {};
         this.vps = {};
 
         this.loaders = {
             init: false,
             summary: false,
+            plan: false,
             polling: false
         }
     }
@@ -22,6 +24,7 @@ class VpsDashboardCtrl {
         this.loaders.init = true;
         this.loadVps();
         this.loadIps();
+        this.loadPlan();
         this.loadSummary();
     }
 
@@ -58,6 +61,14 @@ class VpsDashboardCtrl {
             .finally(() => { this.loaders.summary = false });
     }
 
+    loadPlan () {
+        this.loaders.plan = true;
+        this.VpsService.getServiceInfos()
+            .then((data) => { this.plan = data })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loaders.plan = false });
+    }
+
     hasAdditionalDisk () {
         this.VpsService.hasAdditionalDiskOption()
             .then(() => { this.hasAdditionalDisk = true })
@@ -78,6 +89,9 @@ class VpsDashboardCtrl {
                 break;
             case "reinstall":
                 this.VpsActionService.reinstall();
+                break;
+            case "kvm":
+                this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM);
                 break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));

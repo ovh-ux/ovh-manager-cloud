@@ -33,6 +33,15 @@
                             <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                         </button>
                     </li>
+                    <li class="cui-tile__item cui-tile__item_button">
+                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                            type="button"
+                            data-ng-click="$ctrl.setAction('kvm')"
+                            data-ng-disabled="$ctrl.loaders.polling">
+                            <span data-translate="vps_configuration_kvm_title_button"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -124,7 +133,7 @@
                     <cui-tile-item data-term="'vps_dashboard_secondary_dns' | translate"
                                    data-description="$ctrl.vps.secondaryDns"></cui-tile-item>
                 </cui-tile-body>
-            </cui-tile>        
+            </cui-tile>
         </div>
 
     </div>
@@ -168,7 +177,7 @@
                         </cui-tile-definitions>
                     </cui-tile-item>
                 </cui-tile-body>
-            </cui-tile>        
+            </cui-tile>
         </div>
 
         <div class="col-xm-12 col-md-4">
@@ -215,8 +224,8 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile-subscription data-loading="$ctrl.loaders.init"
-                data-subscription-info="$ctrl.vps"
+            <cui-tile-subscription data-loading="$ctrl.loaders.plan"
+                data-subscription-info="$ctrl.plan"
                 data-offer-actions="ctrl.actions.changeOffer"
                 data-autorenew-actions="ctrl.actions.manageAutorenew"
                 data-contact-actions="ctrl.actions.manageContact"
