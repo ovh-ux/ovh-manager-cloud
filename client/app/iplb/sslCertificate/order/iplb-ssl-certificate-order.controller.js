@@ -33,7 +33,7 @@ class IpLoadBalancerSslCertificateOrderCtrl {
         }
 
         orderConfig.configuration = {
-            domainname: this.newSsl.displayName,
+            domainname: this.newSsl.displayName ? this.newSsl.displayName : this.newSsl.fqdn,
             backendserver: this.newSsl.fqdn
         };
 
