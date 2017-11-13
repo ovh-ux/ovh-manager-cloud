@@ -33,6 +33,20 @@ class VpsActionService {
         });
     }
 
+    kvm (serviceName, hasKVM) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/shortcut/kvm/vps-kvm.html",
+                controller: "VpsKvmCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    hasKVM: () => hasKVM
+                }
+            }
+        });
+    }
+
     editName (displayName, serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
