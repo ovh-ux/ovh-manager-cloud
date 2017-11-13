@@ -18,9 +18,18 @@ class VpsHeaderCtrl {
             this.description = data;
         });
         this.VpsService.getSelected(true)
-            .then(vps => { this.description = vps.displayName })
+            .then(vps => {
+                this.description = vps.displayName;
+                this.isInRescueMode(vps.netbootMode);
+            })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error")))
             .finally(() => { this.loaders.init = false });
+    }
+
+    isInRescueMode(netbootMode) {
+        if (netbootMode === "RESCUE"){
+            this.CloudMessage.warning(this.$translate.instant("vps_configuration_reboot_rescue_warning_text"));
+        }
     }
 
 }
