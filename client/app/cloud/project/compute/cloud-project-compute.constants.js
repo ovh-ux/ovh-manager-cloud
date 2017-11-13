@@ -14,7 +14,8 @@ angular.module("managerApp")
             ES: "https://www.ovh.es/public-cloud/instancias/datacenters.xml",
             WS: "https://www.ovh.com/us/es/public-cloud/instancias/datacenters.xml",
             FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml",
-            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml"
+            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml",
+            IT: "https://www.ovh.it/public-cloud/istanze/datacenters.xml"
         }
     },{
         type: "info",
@@ -31,7 +32,8 @@ angular.module("managerApp")
             ES: "https://www.ovh.es/public-cloud/instancias/datacenters.xml",
             WS: "https://www.ovh.com/us/es/public-cloud/instancias/datacenters.xml",
             FI: "https://www.ovh-hosting.fi/public-cloud/instances/datacenters.xml",
-            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml"
+            EN: "https://www.ovh.co.uk/public-cloud/instances/datacenters.xml",
+            IT: "https://www.ovh.it/public-cloud/istanze/datacenters.xml"
         }
     }, {
         type: "info",
