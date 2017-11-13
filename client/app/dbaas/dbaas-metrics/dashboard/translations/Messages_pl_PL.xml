@@ -2,7 +2,7 @@
 <translations>
    <translation id="metrics_tiles_shortcut_title" qtlid="403658">Skróty</translation>
    <translation id="metrics_tiles_shortcut_token_add" qtlid="415519">Dodaj token</translation>
-   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Zwiększ ofertę</translation>
+   <translation id="metrics_tiles_shortcut_change_offer" qtlid="403684">Przejdź do wyższej oferty</translation>
    <translation id="metrics_tiles_tools_title" qtlid="330682">Narzędzia</translation>
 
    <translation id="metrics_tiles_usage_title" qtlid="30382">Wykorzystanie</translation>

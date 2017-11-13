@@ -370,7 +370,10 @@
                                                                 type="button"
                                                                 data-ng-switch-when="deleteConfirmPending"
                                                                 data-ng-click="CloudProjectComputeInfrastructureCtrl.deleteVirtualMachine(vm)"
-                                                                data-ng-disabled="vm.confirmLoading">
+                                                                data-ng-disabled="vm.confirmLoading"
+                                                                data-track-on="click"
+                                                                data-track-name="VM-Delete"
+                                                                data-track-click="action">
                                                             <i class="glyphicon glyphicon-trash"></i>
                                                             <span translate="cpci_vm_delete_submit"></span>
                                                             <div data-ng-show="vm.confirmLoading" class="text-center">

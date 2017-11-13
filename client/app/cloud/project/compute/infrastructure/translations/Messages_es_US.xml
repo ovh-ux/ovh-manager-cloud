@@ -11,7 +11,7 @@
 
    <translation id="cpci_public_cloud_soon_help" qtlid="269097">Sus servidores Cloud de OVH podrán comunicarse próximamente a través de una red privada, sin conectarse a internet. Este servicio estará disponible en el primer semestre de 2016. </translation>
 
-   <translation id="cpci_add_btn" qtlid="37923">Ajouter</translation>
+   <translation id="cpci_add_btn" qtlid="37923">Añadir</translation>
    <translation id="cpci_add_server" qtlid="19315">Ajouter un serveur</translation>
    <translation id="cpci_add_ip" qtlid="25615">IP</translation>
    <translation id="cpci_import_ip_failover" qtlid="275869">Importar las IP Failover de OVH</translation>

@@ -17,7 +17,7 @@
    <translation id="cpc_volume_error" qtlid="252945">Lo sentimos: no se ha recuperado la lista de volúmenes.</translation>
 
    <translation id="cpc_volume_search_button" qtlid="37659">Rechercher</translation>
-   <translation id="cpc_volume_search_add" qtlid="37923">Ajouter</translation>
+   <translation id="cpc_volume_search_add" qtlid="37923">Añadir</translation>
    <translation id="cpc_volume_create_volume_button_info" qtlid="257601">Usted va a ser redirigido(a). Se está cargando la interfaz para añadir el disco duro.</translation>
    <translation id="cpc_volume_delete_success" qtlid="252958">Este volumen ya no esta disponible.</translation>
    <translation id="cpc_volume_delete_error" qtlid="252971">Lo sentimos: el volumen no se ha eliminado.</translation>
