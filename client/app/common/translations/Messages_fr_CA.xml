@@ -401,7 +401,7 @@
    <translation id="country_PW" qtlid="240975">Palau</translation>
    <translation id="country_PY" qtlid="188938">Paraguay</translation>
    <translation id="country_QA" qtlid="188951">Qatar</translation>
-   <translation id="country_RE" qtlid="240988">Île de la Réunion</translation>
+   <translation id="country_RE" qtlid="240988">Réunion, Île de la</translation>
    <translation id="country_RO" qtlid="241001">Roumanie</translation>
    <translation id="country_RS" qtlid="241014">Serbie</translation>
    <translation id="country_RU" qtlid="241027">Russie</translation>
@@ -480,7 +480,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">OK</translation>
+   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 

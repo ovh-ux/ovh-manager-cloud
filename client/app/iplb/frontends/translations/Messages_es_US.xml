@@ -59,7 +59,7 @@
    <translation id="iplb_frontend_add_http_header_tip" qtlid="438779">%ci => client_ip, %cp => client_port</translation>
    <translation id="iplb_frontend_add_hsts" qtlid="438792">HTTP Strict Transport Security (HSTS)</translation>
    <translation id="iplb_frontend_add_hsts_tip" qtlid="438805">Activar el soporte de HTTP Strict Transport Security</translation>
-   <translation id="iplb_frontend_add_confirm" qtlid="37923">Ajouter</translation>
+   <translation id="iplb_frontend_add_confirm" qtlid="37923">Añadir</translation>
    <translation id="iplb_frontend_add_cancel" qtlid="37863">Cancelar</translation>
    <translation id="iplb_frontend_add_select_placeholder" qtlid="17923">Sélectionner</translation>
 

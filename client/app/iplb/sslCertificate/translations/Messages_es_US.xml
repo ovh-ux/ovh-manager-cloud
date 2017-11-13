@@ -19,7 +19,7 @@
 
    <translation id="iplb_ssl_add_title" qtlid="420723">Añadir un certificado SSL</translation>
    <translation id="iplb_ssl_order_title" qtlid="196803">Contratar un certificado SSL</translation>
-   <translation id="iplb_ssl_add_confirm" qtlid="37923">Ajouter</translation>
+   <translation id="iplb_ssl_add_confirm" qtlid="37923">Añadir</translation>
    <translation id="iplb_ssl_add_cancel" qtlid="37863">Cancelar</translation>
    <translation id="iplb_ssl_add_success" qtlid="439026">El certificado SSL se ha creado correctamente.</translation>
    <translation id="iplb_ssl_add_error" qtlid="439039">Se ha producido un error al crear el certificado SSL: {{message}}.</translation>

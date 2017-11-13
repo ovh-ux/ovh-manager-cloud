@@ -22,8 +22,8 @@
    <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Hasło musi zawierać przynajmniej jednen znak specjalny.</translation>
    <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Hasło nie może zawierać znaków <span class="code">{{chars}}</span>.</translation>
 
-   <translation id="vdi_pwd_password_label" qtlid="442717">Entrer le nouveau mot de passe</translation>
-   <translation id="vdi_pwd_password_generated" qtlid="442730">Générer un mot de passe aléatoire. Vous recevrez ce mot de passe par e-mail.</translation>
+   <translation id="vdi_pwd_password_label" qtlid="442717">Wprowadź nowe hasło</translation>
+   <translation id="vdi_pwd_password_generated" qtlid="442730">Wygeneruj losowe hasło. Wygenerowane hasło zostanie wysłane do Ciebie mailem.</translation>
 
    <translation id="vdi_change_alias_title" qtlid="323690">Zmiana aliasu </translation>
    <translation id="vdi_change_alias_label" qtlid="323716">Wpisz nowy alias.</translation>
@@ -43,7 +43,7 @@
 
    <translation id="vdi_console_title" qtlid="164844">Dostęp do konsoli</translation>
    <translation id="vdi_btn_console" qtlid="164844">Dostęp do konsoli</translation>
-   <translation id="vdi_console_info" qtlid="442743">Vous allez recevoir un e-mail contenant la procédure à suivre pour vous connecter à la console de votre Cloud Desktop. Souhaitez-vous continuer?</translation>
+   <translation id="vdi_console_info" qtlid="442743">Otrzymasz wiadomość e-mail ze szczegółowymi instrukcjami dotyczącymi łączenia się z konsolą Cloud Desktop. Czy chcesz kontynuować?</translation>
    <translation id="vdi_console_task" qtlid="406554">Zlecenie dostępu do konsoli zostało wysłane.</translation>
    <translation id="vdi_console_done" qtlid="406567">Otrzymasz e-mail dotyczący zlecenia dostępu do konsoli.</translation>
 
