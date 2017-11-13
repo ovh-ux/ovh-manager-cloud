@@ -5,14 +5,83 @@
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !ctrl.loader.save">
-            <cui-modal-text data-text="'vps_configuration_reboot_confirmation' | translate"></cui-modal-text>
-            <p class="oui-modal__body-text italic" data-translate="vps_configuration_reboot_alert"></p>
+            <!-- distribution -->
+            <label for="templates" class="oui-label" data-translate="vps_configuration_reinstall_step1_question"></label>
+            <div class="oui-select">
+                <select name="templates" id="templates" class="oui-select__input"
+                        data-ng-options="template as template.name + ' (' + template.bitFormat + ' ' + ('vps_configuration_reinstall_bitFormat' | translate) +')' for template in $ctrl.templates | orderBy: 'name'"
+                        data-ng-model="$ctrl.template.value"
+                        data-ng-change="$ctrl.loadPackages($ctrl.template.value.distribution)">
+                    <option value="" data-ng-disabled="true" selected data-translate="vps_configuration_reinstall_step1_os"></option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+            </div>{{ $ctrl.template }}
+
+            <!-- available packages (info box) -->
+            <div data-ng-if="$ctrl.template.packages">
+                <label data-ng-if="$ctrl.template.value" class="blue bold packages-title" data-translate="vps_configuration_reinstall_step1_packages"></label>
+                <div class="alert alert-info" data-ng-if="!$ctrl.template.packages">
+                    <span data-ng-if="!$ctrl.template.packages.length" data-translate="vps_configuration_reinstall_step1_packages_empty"></span>
+                    <ul data-ng-if="$ctrl.template.packages.length" class="row-fluid packages">
+                        <li class="span5"
+                            data-ng-class-odd="'odd'"
+                            data-ng-class-even="'offset2'"
+                            data-ng-repeat="package in $ctrl.template.packages | orderBy: 'alias'" data-tooltip="{{package.name}}">
+                            {{package.alias}} ({{package.version}})
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- languages -->
+            <div class="blue bold" data-ng-if="$ctrl.template.value && $ctrl.template.value.availableLanguage.length > 1">
+                <label for="language" class="oui-label" data-translate="vps_configuration_reinstall_step1_select_language"></label>
+                <div class="oui-select">
+                    <select name="language" class="oui-select__input"
+                            data-ng-options="language as $ctrl.getLanguageTraduction(language) for language in $ctrl.template.value.availableLanguage | orderBy: getLanguageTraduction"
+                            data-ng-model="$ctrl.template.language" >
+                        <option value="" data-ng-disabled="true" selected data-translate="vps_configuration_reinstall_step1_language"></option>
+                    </select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <!-- ssh keys -->
+            <div data-ng-if="$ctrl.template.value && ($ctrl.template.language || $ctrl.template.value.availableLanguage.length === 0) && !$ctrl.isWindows($ctrl.template.value)">
+                <label for="sshKey" class="oui-label" data-translate="vps_configuration_reinstall_step1_select_ssh_key"></label>
+                <div class="oui-select">
+                    <!-- we need style overflow until something is set to handle multiple select-->
+                    <select name="sshkey" id="sshKey" class="oui-select__input"
+                            size="8" multiple
+                            style="overflow-y: scroll"
+                            data-ng-options="sshKey for sshKey in $ctrl.userSshKeys | orderBy"
+                            data-ng-model="$ctrl.template.sshKeys"
+                            data-ng-if="$ctrl.userSshKeys.length > 0">
+                        <option value="" selected></option>
+                    </select>
+                </div>
+                <span data-ng-if="!$ctrl.userSshKeys || $ctrl.userSshKeys.count === 0" data-translate="vps_configuration_reinstall_step1_select_ssh_key_no"></span>
+                <span data-ng-if="$ctrl.template.sshKeys && $ctrl.template.sshKeys.length > 0" data-translate="vps_configuration_reinstall_step1_unselect_ssh_key"></span>
+            </div>
+
+            <!-- send password -->
+            <div class="oui-checkbox" data-ng-if="$ctrl.template.sshKeys && $ctrl.template.sshKeys.length > 0 && !$ctrl.isWindows($ctrl.template.value)">
+                <input class="oui-checkbox__input" id="sendPassword" type="checkbox" data-ng-model="$ctrl.template.sendPassword"/>
+                <label class="oui-checkbox__label-container" for="sendPassword">
+                    <span class="oui-checkbox__label" data-translate="vps_configuration_reinstall_step1_sendPassword"></span>
+                    <span class="oui-checkbox__icon">
+                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
+                </label>
+            </div>
 
         </div>
     </cui-modal-body>
     <cui-modal-footer>
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_confirm' | translate" 
+        <cui-submit-button data-text="'common_confirm' | translate"
             data-on-click="$ctrl.confirm()"
             data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
     </cui-modal-footer>
