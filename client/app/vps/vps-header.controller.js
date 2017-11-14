@@ -1,14 +1,20 @@
 class VpsHeaderCtrl {
-    constructor ($rootScope, $stateParams, $translate, CloudMessage, VpsService) {
+    constructor ($rootScope, $stateParams, $translate, CloudMessage, Notification, STOP_NOTIFICATION_USER_PREF, VpsService) {
         this.$rootScope = $rootScope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
+        this.Notification = Notification;
+        this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
         this.serviceName = $stateParams.serviceName;
         this.VpsService = VpsService;
 
         this.loaders = {
             init: false
+        };
+        this.stopNotification = {
+            autoRenew: true,
+            ipV6: true
         };
     }
 
@@ -20,17 +26,51 @@ class VpsHeaderCtrl {
         this.VpsService.getSelected(true)
             .then(vps => {
                 this.description = vps.displayName;
-                this.isInRescueMode(vps.netbootMode);
+                this.checkMessages(vps);
             })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error")))
             .finally(() => { this.loaders.init = false });
     }
 
-    isInRescueMode(netbootMode) {
+    checkMessages (vps) {
+        this.isInRescueMode(vps.netbootMode);
+        this.checkIfStopNotification("ipV6", true, vps);
+    }
+
+    isInRescueMode (netbootMode) {
         if (netbootMode === "RESCUE"){
             this.CloudMessage.warning(this.$translate.instant("vps_configuration_reboot_rescue_warning_text"));
         }
     }
+
+    showIpV6Banner (version, ipv6) {
+        const oldVersion = _.contains(version, "2014") || _.contains(version, "2013");
+        const userAcknowledged = this.stopNotification.ipV6;
+        if (!userAcknowledged && !oldVersion && ipv6) {
+            this.CloudMessage.info({
+                textHtml: this.$translate.instant("vps_configuration_ipV6_info_text"),
+                dismissed: this.stopNotification.ipV6,
+                dismiss: () => this.stopNotificationIpV6()
+            });
+        }
+    }
+
+    checkIfStopNotification (message, isArray, vps) {
+        const item = vps.name;
+        return this.Notification.checkIfStopNotification(this.STOP_NOTIFICATION_USER_PREF[message], isArray, item)
+            .then(showNotification => {
+                this.stopNotification[message] = showNotification;
+                this.showIpV6Banner(vps.version, vps.ipv6);
+
+            })
+            .catch(() => { this.stopNotification[message] = false });
+    }
+
+    stopNotificationIpV6 () {
+        this.stopNotification.ipV6 = true;
+        this.Notification.stopNotification(this.STOP_NOTIFICATION_USER_PREF.ipV6, this.vps.name)
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_stop_bother_error")));
+    };
 
 }
 
