@@ -93,6 +93,9 @@ class VpsDashboardCtrl {
             case "kvm":
                 this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM);
                 break;
+            case "reverse-dns":
+                this.VpsActionService.reverseDns();
+                break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
         }
