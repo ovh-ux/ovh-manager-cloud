@@ -1,0 +1,69 @@
+class VpsReverseDnsCtrl {
+    constructor ($translate, $uibModalInstance, CloudMessage, VpsService) {
+        this.$translate = $translate;
+        this.$uibModalInstance = $uibModalInstance;
+        this.CloudMessage = CloudMessage;
+        this.VpsService = VpsService;
+
+        this.loader = {
+            init: false,
+            save: false
+        };
+
+        this.ips = [];
+        this.structuredData = {
+            results: []
+        };
+        this.model = {
+            value: null,
+            reverse: null
+        };
+    }
+
+    $onInit () {
+        this.loader.init = true;
+        this.VpsService.getIps()
+            .then(data => { this.ips = data.results })
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail")))
+            .finally(() => { this.loader.init = false });
+    }
+
+    prepareDnsIpsStruct ()  {
+        this.structuredData.results.push(angular.copy(this.model.value));
+        this.structuredData.results[0].reverse = this.model.reverse;
+    }
+
+    cancel () {
+        this.$uibModalInstance.dismiss();
+
+    }
+
+    confirm () {
+        this.loader.save = true;
+        this.prepareDnsIpsStruct();
+        this.VpsService.setReversesDns(this.structuredData)
+            .then(data => {
+                if (data && data.state) {
+                    switch (data.state) {
+                    case "ERROR" :
+                        this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"))
+                        break;
+                    case "PARTIAL" :
+                        break;
+                    case "OK" :
+                        this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success"))
+                        break;
+                    }
+                }
+            })
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail")))
+            .finally(() => {
+                this.loader.save = false;
+                this.$uibModalInstance.close();
+            });
+    }
+
+
+}
+
+angular.module("managerApp").controller("VpsReverseDnsCtrl", VpsReverseDnsCtrl);
