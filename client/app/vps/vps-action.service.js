@@ -47,6 +47,16 @@ class VpsActionService {
         });
     }
 
+    reverseDns () {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/shortcut/reverse-dns/vps-reverse-dns.html",
+                controller: "VpsReverseDnsCtrl",
+                controllerAs: "$ctrl"
+            }
+        });
+    }
+
     editName (displayName, serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
