@@ -1,0 +1,33 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+    <cui-modal-body data-title="'vps_configuration_reversedns_title' | translate">
+        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+            <oui-loader class="d-inline-block"></oui-loader>
+        </div>
+        <div data-ng-if="!$ctrl.loader.init && !ctrl.loader.save">
+            <label class="oui-label" data-translate="vps_configuration_reversedns_step1_question"></label>
+            <div class="oui-select">
+                <select class="oui-select__input"
+                        data-ng-options="ip as ip.ipAddress for ip in $ctrl.ips"
+                        data-ng-model="$ctrl.model.value">
+                    <option value="" data-ng-disabled="true" selected data-translate="vps_configuration_reversedns_step1_ip"></option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+            </div>{{ $ctrl.model }}
+
+
+            <div data-ng-if="$ctrl.model.value.ipAddress">
+                <label for="reverse" class="oui-label"></label>
+                <input name="reverse" id="reverse" class="oui-input"
+                       type="text" data-ng-model="$ctrl.model.reverse">
+                <cui-modal-text data-text="'vps_configuration_reversedns_step3_alert' | translate"></cui-modal-text>
+            </div>
+        </div>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'common_confirm' | translate"
+            data-on-click="$ctrl.confirm()"
+            data-disabled="!$ctrl.model.value || !$ctrl.model.reverse"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>
