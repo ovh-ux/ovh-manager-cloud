@@ -1,8 +1,9 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+    constructor ($filter, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
+        this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.serviceName = $stateParams.serviceName;
         this.VpsActionService = VpsActionService;
@@ -22,6 +23,8 @@ class VpsDashboardCtrl {
 
     $onInit () {
         this.loaders.init = true;
+        this.initActions();
+
         this.loadVps();
         this.loadIps();
         this.loadPlan();
@@ -36,7 +39,7 @@ class VpsDashboardCtrl {
                 this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
                 this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
                 if (vps.isExpired) {
-                    this.CloudMessage.warning(this.$translate.instant("common_service_expired", [vps.name]));
+                    this.CloudMessage.warning(this.$translate.instant("vps_service_expired", {vps: vps.name}));
                 } else if (vps.messages.length > 0) {
                     this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"), vps);
                 }
@@ -100,6 +103,35 @@ class VpsDashboardCtrl {
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
         }
 
+    }
+
+    initActions () {
+        this.actions = {
+            manageAutorenew: {
+                text: this.$translate.instant("common_manage"),
+                href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "VPS" }),
+                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+            },
+            manageContact: {
+                text: this.$translate.instant("common_manage"),
+                href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
+                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+            },
+            // changeOwner: {
+            //     text: this.$translate.instant("vps_change_owner"),
+            //     href: this.ControllerHelper.navigation.getUrl("changeOwner", { serviceName: this.serviceName }),
+            //     isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+            // }
+        };
+    }
+
+    switchSLA (state) {
+        this.VpsService.update({ slaMonitoring: state })
+            .then(() => {
+                this.vps.slaMonitoring = state;
+                this.CloudMessage.success(this.$translate.instant("vps_configuration_monitoring_sla_ok_" + state));
+            })
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_sla_error_" + state)));
     }
 
 }
