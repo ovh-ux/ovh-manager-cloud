@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="col-xm-12 col-md-4">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
             <cui-tile data-title="'vps_dashboard_state_services' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
@@ -108,7 +108,7 @@
             </cui-tile>
         </div>
 
-        <div class="col-xm-12 col-md-4">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
             <cui-tile data-title="'vps_tab_ip' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
@@ -160,13 +160,13 @@
                             </cui-dropdown-menu-button>
                             <cui-dropdown-menu-body>
                                 <div class="oui-action-menu">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                        type="button"
-                                        data-translate="common_edit"
-                                        data-ng-click="$ctrl.showEditName($ctrl.vps.displayName)"></button>
-                                </div>
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="common_edit"
+                                            data-ng-click="$ctrl.showEditName($ctrl.vps.displayName)"></button>
+                                    </div>
                                 </div>
                             </cui-dropdown-menu-body>
                         </cui-dropdown-menu>
@@ -191,7 +191,7 @@
 
         <div class="col-xm-12 col-md-4">
             <cui-tile data-title="'vps_tab_summary' | translate"
-                      data-loading="$ctrl.loaders.summary" class="h-100">
+                      data-loading="$ctrl.loaders.summary || $ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'common_disabled' | translate"
@@ -228,6 +228,48 @@
                                    data-description="'common_enabled' | translate"
                                    data-ng-if="$ctrl.hasAdditionalDisk">
                     </cui-tile-item>
+
+                    <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
+                                   data-description="'common_enabled' | translate"
+                                   data-ng-if="$ctrl.vps.slaMonitoring">
+                        <cui-dropdown-menu>
+                            <cui-dropdown-menu-button>
+                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body>
+                                <div class="oui-action-menu">
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="common_disable"
+                                            data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
+                                    </div>
+                                </div>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
+                                   data-description="'common_disabled' | translate"
+                                   data-ng-if="!$ctrl.vps.slaMonitoring">
+                        <cui-dropdown-menu>
+                            <cui-dropdown-menu-button>
+                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
+                            </cui-dropdown-menu-button>
+                            <cui-dropdown-menu-body>
+                                <div class="oui-action-menu">
+                                    <div class="oui-action-menu__item oui-action-menu-item">
+                                        <div class="oui-action-menu-item__icon"></div>
+                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                            type="button"
+                                            data-translate="common_enable"
+                                            data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
+                                    </div>
+                                </div>
+                            </cui-dropdown-menu-body>
+                        </cui-dropdown-menu>
+                    </cui-tile-item>
+
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -235,9 +277,9 @@
         <div class="col-xm-12 col-md-4">
             <cui-tile-subscription data-loading="$ctrl.loaders.plan"
                 data-subscription-info="$ctrl.plan"
-                data-offer-actions="ctrl.actions.changeOffer"
-                data-autorenew-actions="ctrl.actions.manageAutorenew"
-                data-contact-actions="ctrl.actions.manageContact"
+                data-offer-actions="$ctrl.actions.changeOwner"
+                data-autorenew-actions="$ctrl.actions.manageAutorenew"
+                data-contact-actions="$ctrl.actions.manageContact"
                 class="h-100"></cui-tile-subscription>
         </div>
 
@@ -245,4 +287,4 @@
 
 </section>
 
-<div data-ng-bind="$ctrl.vps"></div><br /><div data-ng-bind="$ctrl.summary"></div>
+<div data-ng-bind="$ctrl.vps"></div><br /><div data-ng-bind="$ctrl.summary"></div><br /><div data-ng-bind="$ctrl.plan"></div>

@@ -518,4 +518,7 @@
    <translation id="vps_setting_name_updated" qtlid="439905">Nom du projet modifié</translation>
    <translation id="vps_default_name" qtlid="415714">Nom par défaut</translation>
    <translation id="vps_personal_name" qtlid="415727">Nom personnalisé</translation>
+   <translation id="vps_change_owner" qtlid="254882">Changer le propriétaire</translation>
+
+   <translation id="vps_service_expired">Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.</translation>
 </translations>
