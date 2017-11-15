@@ -77,5 +77,16 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             }
+        })
+        .state("iaas.vps.detail.monitoring", {
+            url: "/monitoring",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/monitoring/vps-monitoring.html",
+                    controller: "VpsMonitoringCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
         });
 });
