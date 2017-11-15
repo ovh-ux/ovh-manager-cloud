@@ -1,0 +1,61 @@
+<section class="container-fluid cui-page__content cui-page__content-flex">
+    <div data-ng-if="$ctrl.loaders.init"
+         class="text-center">
+        <oui-loader size="l" class="d-inline-block"></oui-loader>
+    </div>
+
+    <div data-ng-if="!$ctrl.loaders.init">
+        <div class="oui-select">
+            <select class="oui-select__input"
+                    data-ng-options="period as ('vps_configuration_period_' + period | translate) for period in $ctrl.data.periods"
+                    data-ng-model="$ctrl.period"
+                    data-ng-change="$ctrl.loadMonitoring()">
+            </select>
+            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_proc"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="$ctrl.monitoring.cpu"
+                    data-chart-labels="ctrl.connLoader.data.labels"
+                    data-chart-options="$ctrl.options">
+                </canvas>
+            </div>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_ram"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="$ctrl.monitoring.ram"
+                    data-chart-labels="ctrl.connLoader.data.labels"
+                    data-chart-options="$ctrl.options">
+                </canvas>
+            </div>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_trafic"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="ctrl.connLoader.data.data"
+                    data-chart-labels="ctrl.connLoader.data.labels"
+                    data-chart-options="ctrl.options">
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<div data-ng-bind="$ctrl.data"></div>
+<div data-ng-bind="$ctrl.period"></div><br /><br /><div data-ng-bind="$ctrl.data.ram.values[0].points"></div>
