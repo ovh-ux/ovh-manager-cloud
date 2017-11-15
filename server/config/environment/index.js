@@ -47,7 +47,7 @@ var all = {
     dev : {
         nic : process.env.DEV_NIC || '',
         url : process.env.DEV_URL || '',
-        routes: [ "/cloud/createProject", "/cloud/project/47118d4b42ab482c8b0afd23f0ac7bef/credit"],
+        routes: []
     }
 
 };
