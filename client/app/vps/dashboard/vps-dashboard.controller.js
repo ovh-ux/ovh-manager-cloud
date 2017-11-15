@@ -32,7 +32,7 @@ class VpsDashboardCtrl {
     }
 
     loadVps () {
-        this.VpsService.getSelected(true)
+        this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
                 this.vps = vps;
                 const expiration = moment.utc(vps.expiration);

@@ -143,7 +143,7 @@ angular.module("managerApp").service("VpsService", [
             if (forceRefresh === true) {
                 resetCache();
             }
-            return Products.getSelectedProduct().then(function (product) {
+            return Products.getSelectedProduct(forceRefresh).then(function (product) {
                 if (product) {
                     var selectedVps = vpsCache.get("vps");
                     if (!selectedVps) {
@@ -165,6 +165,19 @@ angular.module("managerApp").service("VpsService", [
             }, function (reason) {
                 return $q.reject(reason);
             });
+        };
+
+        /*
+         * same as getSelected without using Products (it causes problem when changing vps using sidebar)
+         */
+        this.getSelectedVps = function(serviceName) {
+            return $http.get([aapiRootPath, serviceName,"info"].join("/"), {serviceType: "aapi"})
+                .then(function (result) {
+                    return result.data;
+                })
+                .catch(function (err) {
+                    return $q.reject(err);
+                });
         };
 
         /*
