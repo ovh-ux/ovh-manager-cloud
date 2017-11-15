@@ -23,7 +23,7 @@ class VpsHeaderCtrl {
         this.$rootScope.$on("changeDescription", (event, data) => {
             this.description = data;
         });
-        this.VpsService.getSelected(true)
+        this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
                 this.description = vps.displayName;
                 this.checkMessages(vps);
