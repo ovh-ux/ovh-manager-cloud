@@ -21,8 +21,8 @@
             <div class="cui-panel__body">
                 <canvas id="line" class="chart chart-line"
                     data-chart-data="$ctrl.monitoring.cpu"
-                    data-chart-labels="ctrl.connLoader.data.labels"
-                    data-chart-options="$ctrl.options">
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-options="$ctrl.option1">
                 </canvas>
             </div>
         </div>
@@ -34,8 +34,8 @@
             <div class="cui-panel__body">
                 <canvas id="line" class="chart chart-line"
                     data-chart-data="$ctrl.monitoring.ram"
-                    data-chart-labels="ctrl.connLoader.data.labels"
-                    data-chart-options="$ctrl.options">
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-options="$ctrl.option1">
                 </canvas>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <canvas id="line" class="chart chart-line"
                     data-chart-data="ctrl.connLoader.data.data"
                     data-chart-labels="ctrl.connLoader.data.labels"
-                    data-chart-options="ctrl.options">
+                    data-chart-options="ctrl.option2">
                 </canvas>
             </div>
         </div>
@@ -58,4 +58,6 @@
 
 
 <div data-ng-bind="$ctrl.data"></div>
-<div data-ng-bind="$ctrl.period"></div><br /><br /><div data-ng-bind="$ctrl.data.ram.values[0].points"></div>
+<br /><br />
+<div data-ng-bind="$ctrl.monitoring.labels"></div><br /><br />
+<div data-ng-bind="$ctrl.data.ram.values[0].points"></div>
