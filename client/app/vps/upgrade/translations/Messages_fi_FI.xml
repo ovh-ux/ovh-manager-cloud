@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vps_order_windows_title" qtlid="250745">Windows-lisäoptio</translation>
+   <translation id="vps_order_windows_info" qtlid="250758">Tämän lisäpalvelun ansiosta voit asentaa VPS:lle Windows-tyyppisen käyttöjärjestelmän.</translation>
+   <translation id="vps_order_windows_price_error" qtlid="250771">Tapahtui virhe hintoja haettaessa.</translation>
+   <translation id="vps_order_windows_order_success" qtlid="181266">Tilaus <a href='{0}' target='_blank'>{1}</a> on rekisteröity onnistuneesti.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">Tapahtui virhe luotaessa tilaustasi.</translation>
+   <translation id="vps_order_windows_order_select_duration" qtlid="181214">Valitse kesto:</translation>
+   <translation id="vps_order_windows_order_resume" qtlid="177496">Tilauksen yhteenveto</translation>
+   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Kokonaishinta (ALV 0 %):</translation>
+   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Kokonaishinta (sis. ALV):</translation>
+   <translation id="vps_order_windows_order_final_txt" qtlid="181240">Klikkaa ”Vahvista”-painiketta vahvistaaksesi tilauksesi.</translation>
+   <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Selaimeesi avautuu uusi välilehti ja ohjaudut automaattisesti maksusivulle.</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Windows-lisäoptio</translation>
+
+   <translation id="vps_configuration_rebootVm_polling_done" qtlid="195581">Virtuaalipalvelin {0} on uudelleenkäynnistetty.</translation>
+   <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Tapahtui virhe VPS:n uudelleenkäynnistystä pyydettäessä</translation>
+   <translation id="vps_configuration_setNetboot_polling_done" qtlid="195581">Virtuaalipalvelin {0} on uudelleenkäynnistetty.</translation>
+   <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Tapahtui virhe VPS:n uudelleenkäynnistystä pyydettäessä</translation>
+   <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">SLA-seurantaa on muokattu onnistuneesti</translation>
+   <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Tapahtui virhe muutettaessa SLA-seurantaa.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Uusi salasana on luotu onnistuneesti.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Tapahtui virhe luotaessa uutta salasanaa.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="195386">Tilannekuva otettiin onnistuneesti.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Tapahtui virhe otettaessa tilannekuvaa</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">Tilannekuva on poistettu</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Tapahtui virhe poistettaessa tilannekuvaa</translation>
+   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="195607">Virtuaalipalvelin {0} on uudelleenasennettu</translation>
+   <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Tapahtui virhe pyydettäessä VPS:n uudelleenasennusta</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">Tilannekuva on palautettu onnistuneesti</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Tapahtui virhe palautettaessa tilannekuvaa</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">Varmuuskopion palautus onnistui</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">Tapahtui virhe palautettaessa varmuuskopiota</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">Varmuuskopiointi on poistettu</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">Tapahtui virhe poistettaessa varmuuskopiota</translation>
+
+   <translation id="vps_configuration_polling_fail" qtlid="195516">Tehtävä on virhetilassa. Joitakin toimintoja ei voi käyttää ennen virhetilanteen selvittämistä. Ole hyvä ja odota.</translation>
+
+   <translation id="vps_monitoring_cpu_iowait" qtlid="208469">iowait</translation>
+   <translation id="vps_monitoring_cpu_nice" qtlid="208482">nice</translation>
+   <translation id="vps_monitoring_cpu_sys" qtlid="83733">Järjestelmä</translation>
+   <translation id="vps_monitoring_cpu_user" qtlid="7450">Käyttäjä</translation>
+
+   <translation id="vps_dashboard_task" qtlid="195633">Käynnissä olevat tehtävät</translation>
+   <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Uudelleenkäynnistys</translation>
+   <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Uudelleenkäynnistys (rescue)</translation>
+   <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">SLA:n muokkaus</translation>
+   <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Salasanan palauttaminen</translation>
+   <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Tilannekuvan luonti</translation>
+   <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Snapshotin poisto</translation>
+   <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">VPS:n uudelleenasennus</translation>
+   <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Snapshotin palautus</translation>
+   <translation id="vps_dashboard_task_restoreVeeamBackup" qtlid="195685">Varmuuskopion käyttö</translation>
+   <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Varmuuskopion poisto</translation>
+   <translation id="vps_dashboard_task_openConsoleAccess" qtlid="200807">KVM:n avaus</translation>
+   <translation id="vps_dashboard_task_getConsoleUrl" qtlid="200807">KVM:n avaus</translation>
+   <translation id="vps_dashboard_task_deliverVm" qtlid="200820">Virtuaalipalvelimen toimitus</translation>
+   <translation id="vps_dashboard_task_restoreVm" qtlid="363774">Varmuuskopion alustus tai palautus</translation>
+
+   <translation id="vps_dashboard_action_doing" qtlid="149787">Operaatio meneillään…</translation>
+   <translation id="vps_dashboard_display_name_save" qtlid="222072">Vähintään 2 merkkiä</translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Muokkaa nimeä</translation>
+   <translation id="vps_dashboard_display_name_min" qtlid="222085">Operaatio keskeytetty. Vähintään 2 merkkiä vaaditaan.</translation>
+   <translation id="vps_dashboard_display_name_reset" qtlid="37935">Toimenpide peruttu</translation>
+
+   <translation id="vps_dashboard_http" qtlid="122167">HTTP</translation>
+   <translation id="vps_dashboard_http_tooltip_OK" qtlid="167925">HTTP-palvelu on aktiivinen</translation>
+   <translation id="vps_dashboard_http_tooltip_KO" qtlid="167938">HTTP-palvelu ei ole aktiivinen</translation>
+   <translation id="vps_dashboard_https" qtlid="128365">HTTPS</translation>
+   <translation id="vps_dashboard_https_tooltip_OK" qtlid="167951">HTTPS-palvelu on aktiivinen</translation>
+   <translation id="vps_dashboard_https_tooltip_KO" qtlid="167964">HTTPS-palvelu ei ole aktiivinen</translation>
+   <translation id="vps_dashboard_dns" qtlid="167977">DNS</translation>
+   <translation id="vps_dashboard_dns_tooltip_OK" qtlid="167990">Nimipalvelu on aktiivinen</translation>
+   <translation id="vps_dashboard_dns_tooltip_KO" qtlid="168003">Nimipalvelu ei ole aktiivinen</translation>
+   <translation id="vps_dashboard_ping" qtlid="122191">ping</translation>
+   <translation id="vps_dashboard_ping_tooltip_OK" qtlid="168016">Palvelin vastaa ping-pyyntöihin</translation>
+   <translation id="vps_dashboard_ping_tooltip_KO" qtlid="168029">Palvelin ei vastaa ping-pyyntöihin</translation>
+   <translation id="vps_dashboard_smtp" qtlid="168042">SMTP</translation>
+   <translation id="vps_dashboard_smtp_tooltip_OK" qtlid="168055">SMTP-palvelu on aktiivinen</translation>
+   <translation id="vps_dashboard_smtp_tooltip_KO" qtlid="168068">SMTP-palvelu ei ole aktiivinen</translation>
+   <translation id="vps_dashboard_tools" qtlid="194762">tools</translation>
+   <translation id="vps_dashboard_tools_tooltip_OK" qtlid="194775">VMWare Tools on aktivoitu</translation>
+   <translation id="vps_dashboard_tools_tooltip_KO" qtlid="194788">VMWare Tools on deaktivoitu</translation>
+   <translation id="vps_dashboard_ssh" qtlid="168081">SSH</translation>
+   <translation id="vps_dashboard_ssh_tooltip_OK" qtlid="168094">SSH-palvelu on aktiivinen</translation>
+   <translation id="vps_dashboard_ssh_tooltip_KO" qtlid="168107">SSH-palvelu ei ole aktiivinen</translation>
+   <translation id="vps_dashboard_loading_error" qtlid="168120">Tapahtui virhe ladattaessa tietoja.</translation>
+   <translation id="vps_dashboard_loading_error_monitoring" qtlid="168133">Tapahtui virhe ladattaessa seurantatietoja.</translation>
+   <translation id="vps_dashboard_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_dashboard_vcore_other" qtlid="128413">vCoret</translation>
+   <translation id="vps_dashboard_disk_usage" qtlid="168146">Levytila</translation>
+   <translation id="vps_dashboard_trafic_usage" qtlid="39202">Liikenne</translation>
+   <translation id="vps_dashboard_initName" qtlid="31042">Palvelu</translation>
+   <translation id="vps_dashboard_boot" qtlid="151984">Boot</translation>
+   <translation id="vps_dashboard_creationDate" qtlid="168185">Luomispäivämäärä</translation>
+   <translation id="vps_dashboard_processor" qtlid="168198">Prosessori</translation>
+   <translation id="vps_dashboard_RAM" qtlid="31354">RAM</translation>
+   <translation id="vps_dashboard_renew_vps" qtlid="168211">VPS:n uusinta</translation>
+   <translation id="vps_dashboard_upgrade_vps" qtlid="168224">VPS:n päivitys</translation>
+   <translation id="vps_dashboard_localisation" qtlid="168237">Sijainti</translation>
+   <translation id="vps_dashboard_distribution" qtlid="122359">OS/distribuutio</translation>
+   <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Ei käytettävissä</translation>
+   <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Katso ohje</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="vps_dashboard_secondary_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
+   <translation id="vps_dashboard_secondary_dns_count" qtlid="168263">Verkkotunnuksia ei konfiguroitu</translation>
+   <translation id="vps_dashboard_secondary_dns_count_1" qtlid="168276">{0} verkkotunnus konfiguroituna</translation>
+   <translation id="vps_dashboard_secondary_dns_count_other" qtlid="168289">{0} verkkotunnusta konfiguroituna</translation>
+   <translation id="vps_dashboard_state_services" qtlid="167912">Tila</translation>
+   <translation id="vps_dashboard_monitoring_sla" qtlid="179537">SLA-monitorointi</translation>
+   <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">IP-osoitteiden monitorointi SLA</translation>
+   <translation id="vps_dashboard_monitoring_sla_ips_tooltip" qtlid="263663">Monitorointijärjestelmän toimimiseksi on nämä IP-osoiteavaruudet valtuutettava palomuurissa.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_true" qtlid="179550">SLA-monitoroinnin aktivointipyyntö on rekisteröity.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_true" qtlid="179563">Tapahtui virhe SLA-monitoroinnin aktivointipyynnössä.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_false" qtlid="179576">SLA-monitoroinnin deaktivointipyyntö on rekisteröity.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_false" qtlid="179589">Tapahtui virhe SLA-monitoroinnin deaktivointipyynnössä.</translation>
+   <translation id="vps_configuration_renewvps_title_button" qtlid="168302">VPS:n uusinta</translation>
+   <translation id="vps_configuration_renewvps_title" qtlid="168302">VPS:n uusinta</translation>
+   <translation id="vps_configuration_renewvps_step1_question" qtlid="168315">Uusiaksesi virtuaalipalvelimesi <span class="italic">{0}</span>, sinun täytyy käyttää OVH:n uusintakäyttöliittymää.</translation>
+   <translation id="vps_configuration_renewvps_step1_confirmation" qtlid="168328">Klikkaa ”Tilaa”-nappia uusiaksesi virtuaalipalvelimesi.</translation>
+   <translation id="vps_configuration_renewvps_step1_information" qtlid="168341">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_renewvps_step1_alert" qtlid="168354">Ota huomioon että viive maksamisesta tietojen päivittymiseen Web-hallintapaneeliin, on noin kaksi tuntia.</translation>
+   <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Salasanan nollaus</translation>
+   <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Salasanan nollaus</translation>
+   <translation id="vps_configuration_reinitpassword_question" qtlid="366606">Haluatko todella nollata VPS-salasanan <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Jos vahvistat pyynnön, palvelimesi käynnistyy uudestaan "Rescue"-tilassa. Uudelleen käynnistyksestä johtuvan käyttökatkoksen arvioitu kesto palvelimella: noin 2 minuuttia.</translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="366632">Huom: Saat tilapäiset tunnukset, mutta salasanan palautus on tehtävä itse. Katso <a href="{0}" target="_blank">ohjetta</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_success" qtlid="327354">Uusi salasana luodaan automaattisesti ja lähetetään osoitteeseen {0}.</translation>
+   <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">Tapahtui virhe luotaessa uutta salasanaa.</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="366645">Salasanan palautus on tehtävä itse. Katso <a href="{0}" target="_blank">ohjetta</a>.</translation>
+   <translation id="vps_configuration_reboot_title_button" qtlid="168432">Käynnistä VPS uudelleen</translation>
+   <translation id="vps_configuration_reboot_title" qtlid="168432">Käynnistä VPS uudelleen</translation>
+   <translation id="vps_configuration_reboot_question" qtlid="130543">Haluatko varmasti bootata VPS:n <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Vahvistaessasi toimenpiteen, palvelimesi uudelleenkäynnistetään välittömästi.</translation>
+   <translation id="vps_configuration_reboot_warning_tools" qtlid="194801">Suosittelemme VMware Toolsin asennusta.</translation>
+   <translation id="vps_configuration_reboot_warning_tools2" qtlid="194814">Huomioi: Mikäli uudelleenkäynnistät palvelimesi ja VMware Tools ei ole asennettuna, VPS:n ”hard reboot”&#160;on vaadittava</translation>
+   <translation id="vps_configuration_reboot_confirmation_rescue_loading" qtlid="195737">Rescue-tilan aktivointi ennen uudelleenkäynnistystä...</translation>
+   <translation id="vps_configuration_reboot_confirmation_local_loading" qtlid="195750">Paikallisen tilan aktivointi ennen uudelleenkäynnistystä...</translation>
+   <translation id="vps_configuration_reboot_rescue" qtlid="168458">Uudelleenkäynnistys pelastustilassa</translation>
+   <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Jos valitset tämän, sinulle toimitetaan sähköpostitse pääsytiedot joilla saat yhteyden virtuaalipalvelimeesi</translation>
+   <translation id="vps_configuration_reboot_alert" qtlid="171097">Käyttökatkosaika uudelleenkäynnistyksen takia: noin 2 minuuttia.</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="168497">VPS {0} uudelleenkännistetään (arvioitu aika 2 minuuttia)</translation>
+   <translation id="vps_configuration_reboot_todo" qtlid="168510">Uudelleenkäynnistyspyyntö on otettu huomioon.</translation>
+   <translation id="vps_configuration_reboot_fail" qtlid="168523">Uudelleenkäynnistystä pyydettäessä tapahtui virhe</translation>
+   <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Rescue-tila</translation>
+   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Tiettyjä toimintoja ei voida suorittaa <b> rescue-tilassa</b>. Määrittääksesi toiminnallisuudet uudelleen, sinun täytyy tehdä paikallinen uudelleenkäynnistys klikkaamalla Uudelleenkäynnistä VPS. </translation>
+   <translation id="vps_configuration_reboot_rescue_warning_btn_title" qtlid="323340">Tämä toiminto ei ole mahdollinen rescue-tilassa.</translation>
+   <translation id="vps_configuration_ipV6_info_text" qtlid="367125">Instanssiisi on nyt liitetty oletuksena olevan IPv4-protokollan lisäksi <strong>maksuton IPv6-protokolla</strong>.</translation>
+   <translation id="vps_configuration_ipV6_address_label" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_ipV6_gateway_label" qtlid="42682">Gateway</translation>
+   <translation id="vps_configuration_ipV6_guide_link_text" qtlid="367112">Katso ohje</translation>
+   <translation id="vps_configuration_reboot_rescue_title" qtlid="168549">Uudelleenkäynnistys rescue-tilaan</translation>
+   <translation id="vps_configuration_reboot_rescue_question" qtlid="168562">Haluatko varmasti uudelleenkäynnistää VPS:n <span class="italic normal">{0}</span> rescue-tilaan?</translation>
+   <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Vahvistaessasi tämän, palvelimesi uudelleenkäynnistetään rescue-tilassa välittömästi. Saat sähköpostitse pääsytiedot joiden avulla voit ottaa yhteyden virtuaalipalvelimellesi.</translation>
+   <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Ota huomioon että kun käynnistät VPS:n rescue-tilaan, palvelin pysyy aktiivisena rescue-tilassa seuraavaan normaaliin uudelleenkäynnistykseen asti.</translation>
+   <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Käyttökatkosaika uudelleenkäynnistyksen takia: noin 3 minuuttia.</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="168614">VPS {0} uudelleenkäynnistetään rescue-tilaan (arvioitu aika 3 minuuttia)</translation>
+   <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">Rescue-tilauudelleenkäynnistys on otettu huomioon.</translation>
+   <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Uudelleenkäynnistystä pyydettäessä tapahtui virhe</translation>
+   <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Reverse-DNS:n muokkaus</translation>
+   <translation id="vps_configuration_reversedns_title" qtlid="168640">Reverse-DNS:n muokkaus</translation>
+   <translation id="vps_configuration_reversedns_step1_question" qtlid="168653">Valitse konfiguroitava IP:</translation>
+   <translation id="vps_configuration_reversedns_step1_ip" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_reversedns_step2_ip" qtlid="168666">VPS:n IP:</translation>
+   <translation id="vps_configuration_reversedns_step2_reverse" qtlid="168679">Nykyinen reverse-DNS:</translation>
+   <translation id="vps_configuration_reversedns_step2_newreverse" qtlid="168692">Määrittele uusi reverse-DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_question" qtlid="130807">Haluatko varmasti muokata VPS:n <span class="italic normal">{0}</span>&#160;reverseosoitteen?</translation>
+   <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Vanha reverse-DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Uusi reverse-DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">Muutos on välitön, mutta ota huomioon propagaatioaika (muutoksien päivittymisaika) joka on maksimissaan noin 24 tuntia.</translation>
+   <translation id="vps_configuration_reversedns_success" qtlid="168744">VPS:n {0} reverse-DNS on muokattu.</translation>
+   <translation id="vps_configuration_reversedns_fail" qtlid="168757">Tapahtui virhe muokattaessa reverseosoitetta.</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Reverse-DNS on vastakohta perinteiselle DNS:lle. Se kiinnittää DNS-nimen IP-osoitteeseen.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">Reverseosoitetta tarvitaan tilanteissa missä virtuaalipalvelin toimii postipalvelimena. Monet postipalvelimet ovat konfiguroitu hylkäämään viesti joka tulee IP-osoitteesta, jolla ei ole reverseosoitetta. Reversen avulla voit näkyä myös ircissä oikein.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Määrittelemällä reversen, vähennät sitä mahdollisuutta että lähettämäsi postit tulkitaan spämmiksi.</translation>
+   <translation id="vps_configuration_reinstall_title_button" qtlid="168809">Asenna VPS uudelleen</translation>
+   <translation id="vps_configuration_reinstall_title" qtlid="168809">Asenna VPS uudelleen</translation>
+   <translation id="vps_configuration_reinstall_bitFormat" qtlid="122107">bits</translation>
+   <translation id="vps_configuration_reinstall_step1_question" qtlid="171123">Valitse käyttöjärjestelmä:</translation>
+   <translation id="vps_configuration_reinstall_step1_packages" qtlid="349255">Asennettujen pakettien versiot:</translation>
+   <translation id="vps_configuration_reinstall_step1_packages_empty" qtlid="349268">Lista paketeista, jotka eivät ole saatavilla. </translation>
+   <translation id="vps_configuration_reinstall_step1_os" qtlid="168835">Käyttöjärjestelmä</translation>
+   <translation id="vps_configuration_reinstall_step1_select_language" qtlid="171136">Valitse asennuksen kieli:</translation>
+   <translation id="vps_configuration_reinstall_step1_select_softwares" qtlid="208495">Valitse esiasennettava ohjelmisto:</translation>
+   <translation id="vps_configuration_reinstall_step1_software_DATABASE" qtlid="7870">Tietokannat</translation>
+   <translation id="vps_configuration_reinstall_step1_software_WEBSERVER" qtlid="194567">WWW-palvelimet</translation>
+   <translation id="vps_configuration_reinstall_step1_software_ENVIRONMENT" qtlid="28495">Ympäristö</translation>
+   <translation id="vps_configuration_reinstall_step1_language" qtlid="145644">Kieli</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key" qtlid="243487">Esiasennettu SSH-avain:</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_no" qtlid="295725">Et ole rekisteröinyt yhtään SSH-avainta. Saat tunnistautumiskoodit sähköpostitse.</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_help" qtlid="295738">Lisää avain osioon Oma tili</translation>
+   <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Paina Ctrl-näppäintä ja klikkaa sitten avainta poistaaksesi valinnan.</translation>
+   <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Haluan saada sähköpostilla VPS:n autentikointikoodit.</translation>
+   <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Virhe esiintyi SSH-avaimia ladattaessa.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Tapahtui virhe ladattaessa tietoja.</translation>
+   <translation id="vps_configuration_reinstall_step2_question" qtlid="130939">Haluatko varmasti uudelleenasentaa VPS:n <span class="normal italic">{0}</span> seuraavilla asetuksilla?</translation>
+   <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Käyttöjärjestelmä</translation>
+   <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Kieli:</translation>
+   <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Ohjelmisto:</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_DEPRECATED" qtlid="194593">ei suositeltu</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_TESTING" qtlid="194606">testiversio</translation>
+   <translation id="vps_configuration_reinstall_step2_sshKeys" qtlid="243526">Esiasennetut SSH-avaimet:</translation>
+   <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Uudelleenasennukseen vaadittava aika: maksimissaan 15 minuuttia.</translation>
+   <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Huomioi että uudelleenasennus poistaa kaiken datan!</translation>
+   <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Jos haluat Windows-käyttöjärjestelmän, muista ottaa se lisäoptiona.</translation>
+   <translation id="vps_configuration_reinstall_success" qtlid="168913">VPS {0} uudelleenasennetaan</translation>
+   <translation id="vps_configuration_reinstall_fail" qtlid="168926">Tapahtui virhe pyydettäessä uudelleenasennusta</translation>
+   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Poista snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Poista snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="168952">Haluatko varmasti poistaa snapshotin VPS:ltä <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Huomioi että tämä toiminto on peruuttamaton.</translation>
+   <translation id="vps_configuration_delete_snapshot_success" qtlid="168978">VPS:n {0} tilannekuva poistetaan.</translation>
+   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Tapahtui virhe pyydettäessä tilannekuvan poistoa.</translation>
+   <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Tilannekuvan otto</translation>
+   <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Tilannekuvan otto</translation>
+   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="169017">Olet ottamassa VPS:n <span class="italic normal">{0}</span> tilannekuvaa.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Tilannekuvan kuvaus:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_question" qtlid="130687">Haluatko ottaa snapshotin VPS:stä <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_snapshot_take_step2_description" qtlid="169043">Valittu kuvaus:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">Olet ottamassa tilannekuvaa, huomaa, että virtuaalipalvelin ei ole käytettävistä tämän toimenpiteen aikana ja kaikki aiemmat tilannekuvat menetetään.</translation>
+   <translation id="vps_configuration_snapshot_take_success" qtlid="169069">VPS:n {0} tilannekuva luodaan.</translation>
+   <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Tapahtui virhe pyydettäessä tilannekuvan ottoa.</translation>
+   <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Tilannekuvan palautus</translation>
+   <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Tilannekuvan palautus</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="130699">Haluatko palauttaa snapshotin jonka päiväys on {0}, VPS:lle<span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Huomioi että tämä toiminto poistaa kaikki tiedostot virtuaalipalvelimeltasi ja palauttaa sen edellisen tilannekuvan aikaiseen tilaan. Tämä toiminto on peruuttamaton.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="169121">Tilannekuva palautetaan VPS:lle {0}.</translation>
+   <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Tapahtui virhe pyydettäessä tilannekuvan palautusta.</translation>
+   <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Aktivoi tilannekuvaoptio</translation>
+   <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Aktivoi tilannekuvaoptio</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Ensimmäisen maksun yhteydessä sinua veloitetaan palvelimen uusintapäivämäärään asti.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="169173">Tämä palvelu kustantaa kuukaudessa <span class="bold">{0} (ALV. 0 %)</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Snapshot-optio mahdollistaa palautuspisteen luonnin. Tämä on toiminto, joka mahdollistaa VPS:n palautuksen tilannekuvan aikaiseen päiväykseen, mikäli tarvetta.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Ole hyvä ja klikkaa ”Seuraava” jatkaaksesi tilannekuvaoption tilausta.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_question" qtlid="169212">Tilannekuvaoption aktivointi VPS:lle <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Ole hyvä ja ota huomioon että maksun vastaanottamisen jälkeen kuluu noin kaksi tuntia siihen, että palvelu näkyy Web-hallintapaneelissa oikein.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
+   <translation id="vps_configuration_activate_snapshot_success" qtlid="169264">Tilannekuvaoptio aktivoidaan VPS:lle {0}.</translation>
+   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Tapahtui virhe aktivoitaessa snapshotia.</translation>
+   <translation id="vps_configuration_desactivate_option" qtlid="48646">Irtisano</translation>
+   <translation id="vps_configuration_option_released" qtlid="284893">Ei uusittu</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Aktivoi Backup Storage</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Aktivoi Backup Storage -optio</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="209879">Haluatko varmasti aktivoida varmuuskopiolisäpalvelun virtuaalipalvelimelle <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="169173">Tämä palvelu kustantaa kuukaudessa <span class="bold">{0} (ALV. 0 %)</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Ensimmäisen maksun yhteydessä sinua veloitetaan palvelimen uusintapäivämäärään asti.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Varmuuskopiolisäpalvelu on arkistointitila palvelimen eri tiedostoja ja asetuksia varten.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_instruction" qtlid="209905">Klikkaa ”Seuraava”-nappia aktivoidaksesi varmuuskopiolisäpalvelun.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_question" qtlid="209918">Varmuuskopiolisäpalvelun aktivointi virtuaalipalvelimelle <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Ole hyvä ja ota huomioon että maksun vastaanottamisen jälkeen kuluu noin kaksi tuntia siihen, että palvelu näkyy Web-hallintapaneelissa oikein.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
+   <translation id="vps_configuration_activate_ftpbackup_success" qtlid="209931">Varmuuskopiopalvelu aktivoidaan virtuaalipalvelimelle {0}.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_fail" qtlid="209944">Tapahtui virhe aktivoitaessa varmuuskopiolisäpalvelua.</translation>
+   <translation id="vps_configuration_cancel_option_title_ftpbackup" qtlid="284906">Peruuta storage-varmuuskopio</translation>
+   <translation id="vps_configuration_cancel_option_title_snapshot" qtlid="284919">Peruuta Snapshot-vaihtoehto</translation>
+   <translation id="vps_configuration_cancel_option_title_veeam" qtlid="284932">Peruuta automaattinen varmuuskopio</translation>
+   <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Peruuta automaattinen varmuuskopio</translation>
+   <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Peruuta Windows-vaihtoehto</translation>
+   <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Peruuta lisälevyjen vaihtoehto</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="284971">Vaihtoehdon peruminen astuu voimaan uusimispäivänä,{0}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Toiminto on lopullinen eikä sitä voi peruuttaa.</translation>
+   <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">Vaihtoehto peruutettiin.</translation>
+   <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Vaihtoehdon perumisessa tapahtui virhe.</translation>
+   <translation id="vps_configuration_add_ipv4_title_button" qtlid="222098">IP-osoitteiden hallinnointi</translation>
+   <translation id="vps_configuration_add_ipv6_title_button" qtlid="169576">Lisää IPv6</translation>
+   <translation id="vps_configuration_monitoring_title_button" qtlid="31666">Monitorointi</translation>
+   <translation id="vps_configuration_monitoring_title" qtlid="31666">Monitorointi</translation>
+   <translation id="vps_configuration_monitoring_usage_proc" qtlid="169589">Prosessorin käyttö</translation>
+   <translation id="vps_configuration_monitoring_usage_ram" qtlid="169602">Muistin käyttö</translation>
+   <translation id="vps_configuration_monitoring_usage_trafic" qtlid="169615">Liikenteen käyttö</translation>
+   <translation id="vps_configuration_monitoring_traffic" qtlid="169628">VPS:n liikenne</translation>
+   <translation id="vps_configuration_monitoring_fail" qtlid="169641">Tapahtui virhe ladattaessa seurantatietoja.</translation>
+   <translation id="vps_configuration_monitoring_reset_zoom" qtlid="169654">Nollaa</translation>
+   <translation id="vps_configuration_period_LASTDAY" qtlid="169667">Viimeiset 24 tuntia</translation>
+   <translation id="vps_configuration_period_LASTMONTH" qtlid="169680">Viimeinen kuukausi</translation>
+   <translation id="vps_configuration_period_LASTWEEK" qtlid="169693">Viimeiset 7 päivää</translation>
+   <translation id="vps_configuration_period_LASTYEAR" qtlid="169706">Viimeiset 12 kuukautta</translation>
+   <translation id="vps_configuration_period_TODAY" qtlid="169719">Tänään</translation>
+   <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">VPS:n päivitys</translation>
+   <translation id="vps_configuration_upgradevps_title" qtlid="169732">VPS:n päivitys</translation>
+   <translation id="vps_configuration_upgradevps_step1_question" qtlid="169745">Valitse haluamasi VPS-malli, johon haluat päivittää.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCoret</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/kuukausi</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="200053">Palvelun päivittäminen on täysin ilmaista. Näkyvä hinta on kuukausihinta, joka palvelusta veloitetaan. Nykyinen palvelusi kuukausihinta on <span class="bold">{0}</span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Huomio! Voit vain nostaa VPS:n tasoa. Sen lasku ei ole mahdollinen.</translation>
+   <translation id="vps_configuration_upgradevps_step2_question" qtlid="169771">VPS:n <span class="italic normal">{0}</span> päivitys malliin {1}</translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="169784">Hinta seuraavaan palvelimesi vanhentumispäivämäärään, {0} asti</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="169797">Tämän jälkeen palvelimesi hinta on <span class="red">{0}/kk ALV. 0 %</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Ota huomioon että viive maksamisesta tietojen päivittymiseen Web-hallintapaneeliin, on noin kaksi tuntia.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">VPS:n päivitystä varten palvelimen uudelleenkäynnistys on tarpeen.</translation>
+   <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Tapahtui virhe pyydettäessä VPS:n päivitystä.</translation>
+   <translation id="vps_configuration_upgradevps_current" qtlid="169849">Nykyinen konfiguraatio</translation>
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Lisää verkkotunnus</translation>
+   <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Lisää verkkotunnus toissijaiselle nimipalvelimelle</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_question" qtlid="169875">Olet lisäämässä verkkotunnusta toissijaiselle nimipalvelimelle <span class="normal italic">{0}</span>.</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_domain" qtlid="103378">Lisättävä verkkotunnus:</translation>
+   <translation id="vps_configuration_secondarydns_add_step2_summary" qtlid="169888">Haluatko varmasti lisätä verkkotunnuksen <span class="normal italic">{0}</span> toissijaiselle nimipalvelimelle <span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Tapahtui virhe pyydettäessä verkkotunnuksen lisäystä toissijaiselle nimipalvelimelle.</translation>
+   <translation id="vps_configuration_secondarydns_add_success" qtlid="169914">Verkkotunnus {0} lisätään toissijaiselle nimipalvelimelle.</translation>
+   <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Poista verkkotunnus toissijaiselta nimipalvelimelta</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="169940">Haluatko varmasti poistaa verkkotunnuksen <span class="normal italic">{0}</span> toissijaiselta nimipalvelimelta?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="169953">Tapahtui virhe pyydettäessä verkkotunnuksen {0} poistoa toissijaiselta nimipalvelimelta.</translation>
+   <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">Verkkotunnus on poistettu toissijaiselta nimipalvelimelta.</translation>
+   <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_new_window" qtlid="92753">Avaa uudessa ikkunassa</translation>
+   <translation id="vps_configuration_kvm_cloud_mapping_keyboard_warning" qtlid="169979">Huomioi että numerojen syöttö on mahdollinen vain numeronäppäimistöä käyttäen. Jos käytät hallintapaneelia läppäriltä missä ei ole numeronäppäimistöä, numerot ovat todennäköisesti saatavilla näppäinyhdistelmien kautta (yleensä muodossa ”fn + ...”).</translation>
+   <translation id="vps_configuration_kvm_fail" qtlid="169992">Tapahtui virhe avattaessa KVM:ää.</translation>
+   <translation id="vps_configuration_veeam_order_title_button" qtlid="170005">Aktivoi automaattinen varmuuskopio</translation>
+   <translation id="vps_configuration_veeam_order_title" qtlid="170018">Tilaa automaattinen varmuuskopiointi</translation>
+   <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
+   <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Ensimmäisen maksun yhteydessä sinua veloitetaan palvelimen uusintapäivämäärään asti.</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="170044">Tämän jälkeen palvelua laskutetaan kuukausittain <span class="red bold">{0}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="170057">Haluatko tilata automaattisen varmuuskopioinnin VPS:lle <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Vahvistaaksesi pyyntösi, hyväksy käyttäehdot ja klikkaa ”Seuraava"-painiketta.</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
+   <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Olen lukenut ja ymmärtänyt seuraavat ehdot:</translation>
+   <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Tilausta luodaan…</translation>
+   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">Tilaus on luotu onnistuneesti.</translation>
+   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">Vahvistaaksesi tilauksesi, klikkaa alla olevaa ”Maksa”-nappia.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Ole hyvä ja ota huomioon että maksun vastaanottamisen jälkeen kuluu noin kaksi tuntia siihen, että palvelu näkyy Web-hallintapaneelissa oikein.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Tapahtui virhe tilattaessa automaattinen varmuuskopio -palvelua.</translation>
+   <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Ota varmuuskopio pois käytöstä</translation>
+   <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Ota varmuuskopio pois käytöstä</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="170109">Haluatko varmasti poistaa seuraavan varmuuskopion VPS:ltä <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Luontipäivä</translation>
+   <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Tapahtui virhe pyydettäessä virtuaalipalvelimen varmuuskopion poistoa.</translation>
+   <translation id="vps_configuration_veeam_umount_success" qtlid="170135">Varmuuskopio poistetaan virtuaalipalvelimelta.</translation>
+   <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Ota varmuuskopio käyttöön</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Oletko varma että haluat mountata tämän varmuuskopion virtuaalipalvelimelle <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Varmuuskopio on käytettävissä NFS- ja SMB-yhteyksillä liitoskohtana.</translation>
+   <translation id="vps_configuration_veeam_mount_success" qtlid="170174">Käyttöönottopyyntö on otettu huomioon. Saat sähköpostin automaattisesti kun varmuuskopio on käytettävissä.</translation>
+   <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Tapahtui virhe pyydettäessä VPS:n varmuuskopion käyttöönoottoa.</translation>
+   <translation id="vps_configuration_veeam_restore_title" qtlid="170200">VPS:n palautus</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="170213">Haluatko varmasti palauttaa VPS:n <span class="normal italic">{0}</span> käyttäen seuraavaa varmuuskopiota?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Luontipäivä</translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Muuta root-salasanaa palauttaessa</translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">VPS:n salasanan muutos ei ole mahdollinen sillä VMware Tools ei ole asennettu. Voit kuitenkin muuttaa salasanan rescue-tilan kautta.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Huomioi että VPS:n palautus poistaa kaiken datan pysyvästi!</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">Varmuuskopion palautus voi kestää useita tunteja levyn koosta riippuen.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_umount" qtlid="268147">Jos haluat suorittaa palautuksen, nykyinen varmuuskopio on poistettava etukäteen.</translation>
+   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">Jos haluat suorittaa varmuuskopion, nykyinen varmuuskopio on poistettava etukäteen.</translation>
+   <translation id="vps_configuration_veeam_restore_success" qtlid="170252">VPS:n palautuspyyntö on otettu huomioon. Saat sähköpostin kun toimenpide on valmistunut.</translation>
+   <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">Tapahtui virhe pyydettäessä VPS:n palautusta.</translation>
+   <translation id="vps_tab_summary" qtlid="170278">Yhteenveto optioista</translation>
+   <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Varmuuskopio:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot:</translation>
+   <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Automaattinen varmuuskopio:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">luotu:</translation>
+   <translation id="vps_tab_SUMMARY_license" qtlid="113658">Lisenssit</translation>
+   <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Varmuuskopiot</translation>
+   <translation id="vps_tab_SUMMARY_ip_adress" qtlid="170356">IP-osoitteet</translation>
+   <translation id="vps_tab_SUMMARY_windows" qtlid="102237">Windows</translation>
+   <translation id="vps_tab_SUMMARY_windows_option" qtlid="285036">Lisenssi:</translation>
+   <translation id="vps_tab_SUMMARY_ip_cloud_only" qtlid="170369">Lisä-IP-osoitteet ovat saatavilla vain <a href="{0}" target="_blank">VPS Cloud</a>ille.</translation>
+   <translation id="vps_tab_SUMMARY_backups_cloud_only" qtlid="170382">Varmuuskopiointipalvelut ovat saatavilla vain <a href="{0}" target="_blank">VPS Cloud</a>ille.</translation>
+   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">Tämän sarjan koneille ei saa ylimääräisiä IP-osoitteita.</translation>
+   <translation id="vps_tab_SUMMARY_backups_not_available" qtlid="250810">Tämän sarjan koneille ei saa varmuuskopio-optiota.</translation>
+   <translation id="vps_tab_ip" qtlid="25615">IP</translation>
+   <translation id="vps_tab_IPS_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="vps_tab_IPS_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_DE" qtlid="29083">Saksa</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_ES" qtlid="29095">Espanja</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_FR" qtlid="29047">Ranska</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_IT" qtlid="40870">Italia</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_PL" qtlid="40858">Puola</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_UK" qtlid="29071">Iso-Britannia</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_US" qtlid="108396">USA</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_CA" qtlid="108733">Kanada</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_cant_order" qtlid="191915">Olet saavuttanut IP-osoitteiden enimmäiskiintiön, joten et voi tilata niitä lisää.</translation>
+   <translation id="vps_tab_secondary_dns" qtlid="170408">Toissijainen DNS</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_empty" qtlid="170421">Sinulla ei ole verkkotunnusta konfiguroituna toissijaiselle nimipalvelimelle</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_domain" qtlid="170434">Verkkotunnus</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_ip" qtlid="167899">IP</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_date" qtlid="26419">Luontipäivä</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_dns" qtlid="168250">Toissijainen nimipalvelin</translation>
+   <translation id="vps_tab_veeam" qtlid="170447">Automaattinen varmuuskopiointi</translation>
+   <translation id="vps_tab_VEEAM_dashboard_cloud_only" qtlid="170460">Automaattinen varmuuskopiointi on saatavilla vain <a href="{0}" target="_blank">VPS Cloud</a>ille.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_veeam_unavailable" qtlid="250823">Tämän sarjan koneille ei saa automaattista varmuuskopiota.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_activated" qtlid="170473">Sinulla ei ole tilattuna automaattista varmuuskopiointia</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_able_to_order" qtlid="170486">Et voi asettaa tilausta koska asiakastunnuksellasi ei ole riittäviä oikeuksia lisäpalveluiden tekemiseen tälle VPS:lle.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_no_current_restore_point" qtlid="170499">Sinulla ei ole palautuspistettä tällä hetkellä käytössä</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state" qtlid="26443">Tila</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_enabled" qtlid="170512">Käyttö</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_disabled" qtlid="170538">Poistettu</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTING" qtlid="170525">Käyttöönotto meneillään</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTED" qtlid="170512">Käyttö</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_RESTORING" qtlid="170525">Käyttöönotto meneillään</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTED" qtlid="170538">Poistettu</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTING" qtlid="170551">Poistetaan käytöstä...</translation>
+   <translation id="vps_tab_VEEAM_dashboard_restoring" qtlid="170564">VPS:n uudelleenasennus tai palautus on jo käynnissä.<br/>Palautustoimet ja muokkaus eivät ole mahdollisia samaan aikaan.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point" qtlid="170577">Yhteystiedot palautuspisteen käytöstä:</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point_creationTime" qtlid="26419">Luontipäivä</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_smb" qtlid="170590">Samba-pääsy</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_nfs" qtlid="170603">NFS-pääsy</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_date" qtlid="26419">Luontipäivä</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_mount" qtlid="170616">Mount</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_restore" qtlid="170629">Palautus</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_empty" qtlid="170642">Sinulla ei ole palautuspistettä</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_mount" qtlid="170655">Ota palautuspiste käyttöön</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_restore" qtlid="170668">Palauta VPS palautuspisteeseen</translation>
+
+   <translation id="vps_tab_backup_storage" qtlid="180460">Varmuuskopiotila</translation>
+   <translation id="vps_tab_backup_none" qtlid="209970">Varmuuskopiopalvelu on saatavilla vain <a href="{0}" target="_blank">VPS Cloudille</a>.</translation>
+   <translation id="vps_tab_backup_not_activated" qtlid="209983">Olet tilannut varmuuskopiolisäpalvelun.</translation>
+   <translation id="vps_tab_backup_not_able_to_order" qtlid="170486">Et voi asettaa tilausta koska asiakastunnuksellasi ei ole riittäviä oikeuksia lisäpalveluiden tekemiseen tälle VPS:lle.</translation>
+
+
+   <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Unohditko salasanasi?</translation>
+   <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Uusi salasana</translation>
+   <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Uusi salasana lähetetään palvelimen admin-yhteyshenkilölle</translation>
+   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Uusi salasana lähetetään palvelimen admin-asiakastunnukselle.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Tapahtui virhe nollattaessa salasanaa</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="184412">Oletko varma, että haluat nollata varmuuskopiotilan {0} salasanan?</translation>
+
+   <translation id="vps_tab_backup_storage_login" qtlid="46792">Käyttäjätunnus</translation>
+   <translation id="vps_tab_backup_storage_name" qtlid="3818">Nimi</translation>
+   <translation id="vps_tab_backup_storage_usage" qtlid="30382">Käyttö</translation>
+   <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Pääsylista ei konfiguroitu</translation>
+   <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
+   <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="vps_tab_backup_storage_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="vps_tab_backup_storage_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Tila</translation>
+   <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">Käynnissä</translation>
+   <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Aktivoitu</translation>
+   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Pääsyoikeuden muokkaus</translation>
+   <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">Poista pääsyoikeus</translation>
+   <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">Vahvista muutos</translation>
+   <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Peruuta muutos</translation>
+
+   <translation id="vps_backup_storage_access_delete" qtlid="180590">Pääsyoikeuden poisto</translation>
+   <translation id="vps_backup_storage_access_delete_question" qtlid="210009">Haluatko varmasti poistaa pääsyn IP-osoiteavaruudelle <b>{0}</b>?</translation>
+   <translation id="vps_backup_storage_access_delete_success" qtlid="210022">Pääsyoikeuden poisto varmuuskopiopalvelun osoiteavaruudelta <b>{0}</b> on rekisteröity, mutta toimenpiteessä menee muutama minuutti.</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="210035">Tapahtui virhe poistettaessa varmuuskopiopalvelun pääsyoikeutta osoiteavaruudelta <b>{0}</b></translation>
+
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Tapahtui virhe haettaessa sallittujen osoiteavaruuksien listaa</translation>
+   <translation id="vps_backup_storage_access_add_button" qtlid="153857">Lisää pääsyoikeus</translation>
+   <translation id="vps_backup_storage_access_add" qtlid="180772">Pääsyoikeuden lisäys</translation>
+   <translation id="vps_backup_storage_access_add_info" qtlid="210048">Valitse osoiteavaruus ja pääsyoptiot, joille haluat sallia pääsyn.</translation>
+   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Osoiteavaruuksien listaus:</translation>
+   <translation id="vps_backup_storage_access_add_info2" qtlid="210061">Olet lisäämässä pääsyoikeutta varmuuskopiopalvelulle jokaiselle osoitteistolle seuraavalla listalla:</translation>
+   <translation id="vps_backup_storage_access_add_info3" qtlid="210074">Sinun täytyy sallia protokolla, sillä oletuksena pääsyoikeus niille osoitteistoille joilla ei ole sääntöjä, hylätään.</translation>
+   <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Sovellettavat oikeudet:</translation>
+   <translation id="vps_backup_storage_access_add_allow" qtlid="141795">Valtuuta</translation>
+   <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Hylkää</translation>
+   <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Osoite/osoitteet:</translation>
+   <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Valtuutettu:</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">Pääsyoikeuden lisäys on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">Pyyntö varmuuskopiotilan pääsyoikeuksien lisäykselle on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin. Joitakin oikeuksia lisättäessä tuli virhe.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Tapahtui virhe pyydettäessä varmuuskopiotilan pääsyoikeuden lisäystä</translation>
+   <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Pääsyoikeus on sallittu kaikille mahdollisille osoitteille</translation>
+
+   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">Pääsyoikeuden <b>{0}</b> muokkaus on rekisteröity, mutta muutoksen voimaan astuminen kestää muutaman minuutin.</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="183866">Tapahtui virhe muokattaessa pääsyoikeutta <b>{0}</b></translation>
+
+   <translation id="vps_monitoring_network_netRx" qtlid="33550">Saapuva</translation>
+   <translation id="vps_monitoring_network_netTx" qtlid="30886">Lähtevä</translation>
+
+   <translation id="vps_zone" qtlid="26335">Alue</translation>
+   <translation id="vps_cluster" qtlid="232414">Cluster</translation>
+
+   <translation id="vps_tab_SUMMARY_additional_disk" qtlid="281485">Lisälevyt</translation>
+   <translation id="vps_additional_disk_add_button" qtlid="281498">Tilaa lisälevy</translation>
+   <translation id="vps_additional_disk_add_another_button" qtlid="281511">Tilaa toinen lisälevy</translation>
+
+   <translation id="vps_tab_additional_disk" qtlid="281524">Lisälevy</translation>
+   <translation id="vps_tab_additional_disk_not_available" qtlid="281537">Lisälevyn lisääminen ei ole mahdollista tässä mallissa. </translation>
+   <translation id="vps_tab_additional_disk_count" qtlid="281550">Sinulla ei ole lisälevyjä.</translation>
+   <translation id="vps_tab_additional_disk_count_1" qtlid="281563">Sinulla on lisälevy.</translation>
+   <translation id="vps_tab_additional_disk_count_other" qtlid="281576">Sinulla on {0} lisälevyä.</translation>
+   <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
+   <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Koko (GB)</translation>
+   <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Tila</translation>
+   <translation id="vps_tab_additional_disk_state_connected" qtlid="99944">Yhdistetty</translation>
+   <translation id="vps_tab_additional_disk_state_disconnected" qtlid="77154">Kirjautunut ulos</translation>
+   <translation id="vps_tab_additional_disk_state_pending" qtlid="29467">Odottaa</translation>
+   <translation id="vps_additional_disk_add_button_soon" qtlid="281589">Pian voit lisätä useita lisälevyjä virtuaalipalvelimeesi.</translation>
+   <translation id="vps_tab_additional_disk_guide" qtlid="281602">Miten lisälevyä käytetään</translation>
+
+   <translation id="vps_order_additionnal_disk_title" qtlid="281498">Tilaa lisälevy</translation>
+   <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Valitse virtuaalipalvelimeen lisättävän lisälevyn koko. Levy näkyy toisena kovalevynä käyttöjärjestelmässäsi.</translation>
+   <translation id="vps_order_additional_disk_step2" qtlid="281628">Lisälevy lisätään palvelimellesi virtuaalipalvelimen uusimispäivään asti, minkä jälkeen se uusitaan edellä mainitun kanssa. </translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="281641">{0} ilman ALV/kuukausi</translation>
+   <translation id="vps_order_additional_disk_option" qtlid="281654">Vaihtoehto:</translation>
+   <translation id="vps_order_additional_disk_offer_description" qtlid="281667">Lisälevy vaihtoehto - {0} {1} asti</translation>
+   <translation id="vps_order_additional_disk_price" qtlid="181084">Hinta:</translation>
+   <translation id="vps_order_additional_disk_fail" qtlid="281680">Virhe lisälevyn tilauksessa</translation>
+   <translation id="vps_order_additional_disk_success" qtlid="281693">Lisälevyn lisäyksen vahvistamiseksi maksa <a href='{0}' target='_blank'>tilaus{1}</a>.</translation>
+
+   <translation id="vps_additional_disk_info_fail" qtlid="281706">Virhe tietojen lataamisessa lisälevyille</translation>
+
+   <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Tapahtui virhe pyynnössä, ettei automaattisen uusinnan vuoksi enää häiritä. </translation>
+   <translation id="vps_autorenew_alert" qtlid="290602">Helpota elämääsi ja valitse virtuaalipalvelimeesi automaattinen uusinta! </translation>
+   <translation id="vps_autorenew_guide" qtlid="290615">Mene ohjeeseen</translation>
+   <translation id="vps_autorenew_activate" qtlid="98576">Aktivoi automaattinen uusinta</translation>
+
+   <translation id="vps_move_alert" qtlid="296981">Virtuaalipalvelimesi (VPS) vaihtoi sijaintia! Pian löydät kaikki palvelimesi (virtuaaliset ja dedikoidut) samasta paikasta.</translation>
+</translations>
