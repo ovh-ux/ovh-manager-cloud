@@ -46,9 +46,10 @@
             </div>
             <div class="cui-panel__body">
                 <canvas id="line" class="chart chart-line"
-                    data-chart-data="ctrl.connLoader.data.data"
-                    data-chart-labels="ctrl.connLoader.data.labels"
-                    data-chart-options="ctrl.option2">
+                    data-chart-data="$ctrl.monitoring.net"
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-series="$ctrl.series"
+                    data-chart-options="$ctrl.option2">
                 </canvas>
             </div>
         </div>
@@ -57,7 +58,4 @@
 </section>
 
 
-<div data-ng-bind="$ctrl.data"></div>
-<br /><br />
-<div data-ng-bind="$ctrl.monitoring.labels"></div><br /><br />
-<div data-ng-bind="$ctrl.data.ram.values[0].points"></div>
+<div data-ng-bind="$ctrl.monitoring">
