@@ -1,6 +1,7 @@
 class VpsActionService {
-    constructor (ControllerHelper) {
+    constructor (ControllerHelper, $state) {
         this.ControllerHelper = ControllerHelper;
+        this.$state = $state;
     }
 
     password (serviceName) {
@@ -81,6 +82,10 @@ class VpsActionService {
                 }
             }
         });
+    }
+
+    upgrade () {
+        this.$state.go("iaas.vps.detail.upgrade");
     }
 
     editName (displayName, serviceName) {
