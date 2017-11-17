@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="vps_order_windows_title" qtlid="250745">Windows opties</translation>
+   <translation id="vps_order_windows_info" qtlid="250758">Met deze optie kunt u een OS van het type Windows op uw VPS installeren.</translation>
+   <translation id="vps_order_windows_price_error" qtlid="250771">Er is een fout opgetreden bij het ophalen van het tarief.</translation>
+   <translation id="vps_order_windows_order_success" qtlid="181266">De bestelling met nummer <a href='{0}' target='_blank'>{1}</a> wordt uitgevoerd.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">Er is een fout opgetreden tijdens het maken van de bestelling.</translation>
+   <translation id="vps_order_windows_order_select_duration" qtlid="181214">Selecteer de looptijd:</translation>
+   <translation id="vps_order_windows_order_resume" qtlid="177496">Bestellingsoverzicht</translation>
+   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Totale prijs excl. btw:</translation>
+   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Totale prijs incl. btw:</translation>
+   <translation id="vps_order_windows_order_final_txt" qtlid="181240">Klik op "Bevestigen" om uw bestelling te bevestigen.</translation>
+   <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Een nieuwe tab wordt geopend en u wordt automatisch doorgestuurd naar de betaling interface.</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Windows optie</translation>
+
+   <translation id="vps_configuration_rebootVm_polling_done" qtlid="195581">Uw VPS {0} is opnieuw opgestart</translation>
+   <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Er is een fout opgetreden bij de herstart van uw VPS </translation>
+   <translation id="vps_configuration_setNetboot_polling_done" qtlid="195581">Uw VPS {0} is opnieuw opgestart</translation>
+   <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Er is een fout opgetreden bij de herstart van uw VPS </translation>
+   <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">De SLA monitoring werd succesvol gewijzigd</translation>
+   <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Er is een fout opgetreden bij het ​​wijzigen van de SLA monitoring.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Een nieuw wachtwoord is gegenereerd.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Er is een fout opgetreden bij het resetten van het wachtwoord.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="195386">De snapshot van de VPS {0} is aangemaakt</translation>
+   <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Er is een fout opgetreden tijdens het maken van een snapshot</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">De snapshot is verwijderd</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Er is een fout opgetreden tijdens het verwijderen van de snapshot</translation>
+   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="195607">Uw VPS {0} is opnieuw geïnstalleerd</translation>
+   <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Er is een fout opgetreden bij het opnieuw installeren van uw VPS</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">Het herstel van de snapshot werd uitgevoerd</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Er is een fout opgetreden bij het herstellen van de snapshot</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">Het herstel van de backup is uitgevoerd</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">Er is een fout opgetreden bij het ​​herstellen van de backup</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">De backup is verwijderd</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">Er is een fout opgetreden bij het verwijderen van de backup</translation>
+
+   <translation id="vps_configuration_polling_fail" qtlid="195516">Er wordt een taak in foutstatus uitgevoerd. Sommige functies zijn, totdat een correctie is uitgevoerd, niet beschikbaar. Enkele ogenblikken geduld svp.</translation>
+
+   <translation id="vps_monitoring_cpu_iowait" qtlid="208469">iowait</translation>
+   <translation id="vps_monitoring_cpu_nice" qtlid="208482">nice</translation>
+   <translation id="vps_monitoring_cpu_sys" qtlid="83733">Systeem</translation>
+   <translation id="vps_monitoring_cpu_user" qtlid="7450">Gebruiker</translation>
+
+   <translation id="vps_dashboard_task" qtlid="195633">Huidige taken</translation>
+   <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Herstart</translation>
+   <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Herstart (rescue)</translation>
+   <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Wijziging van de SLA</translation>
+   <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Resetten van het wachtwoord</translation>
+   <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Het creëren van een snapshot</translation>
+   <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Het verwijderen van een snapshot</translation>
+   <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">Het opnieuw installeren van de VPS</translation>
+   <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Het herstellen van een snapshot</translation>
+   <translation id="vps_dashboard_task_restoreVeeamBackup" qtlid="195685">Backup mounten</translation>
+   <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Backup unmounten</translation>
+   <translation id="vps_dashboard_task_openConsoleAccess" qtlid="200807">Constructie van de KVM</translation>
+   <translation id="vps_dashboard_task_getConsoleUrl" qtlid="200807">Constructie van de KVM</translation>
+   <translation id="vps_dashboard_task_deliverVm" qtlid="200820">Levering van de VPS</translation>
+   <translation id="vps_dashboard_task_restoreVm" qtlid="363774">De backup monteren of herstellen</translation>
+
+   <translation id="vps_dashboard_action_doing" qtlid="149787">Bewerking wordt uitgevoerd</translation>
+   <translation id="vps_dashboard_display_name_save" qtlid="222072">Minimaal 2 letters </translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">De naam wijzigen</translation>
+   <translation id="vps_dashboard_display_name_min" qtlid="222085">Bewerking geannuleerd. Er zijn minimaal 2 letters vereist.</translation>
+   <translation id="vps_dashboard_display_name_reset" qtlid="37935">Bewerking geannuleerd</translation>
+
+   <translation id="vps_dashboard_http" qtlid="122167">http</translation>
+   <translation id="vps_dashboard_http_tooltip_OK" qtlid="167925">De HTTP-dienst is geactiveerd</translation>
+   <translation id="vps_dashboard_http_tooltip_KO" qtlid="167938">De HTTP-dienst is gedeactiveerd</translation>
+   <translation id="vps_dashboard_https" qtlid="128365">https</translation>
+   <translation id="vps_dashboard_https_tooltip_OK" qtlid="167951">De HTTPS-dienst is geactiveerd</translation>
+   <translation id="vps_dashboard_https_tooltip_KO" qtlid="167964">De HTTPS-dienst is gedeactiveerd</translation>
+   <translation id="vps_dashboard_dns" qtlid="167977">dns</translation>
+   <translation id="vps_dashboard_dns_tooltip_OK" qtlid="167990">De DNS-dienst is geactiveerd</translation>
+   <translation id="vps_dashboard_dns_tooltip_KO" qtlid="168003">De DNS-dienst is gedeactiveerd</translation>
+   <translation id="vps_dashboard_ping" qtlid="122191">ping</translation>
+   <translation id="vps_dashboard_ping_tooltip_OK" qtlid="168016">De machine pingt</translation>
+   <translation id="vps_dashboard_ping_tooltip_KO" qtlid="168029">De machine pingt niet</translation>
+   <translation id="vps_dashboard_smtp" qtlid="168042">smtp</translation>
+   <translation id="vps_dashboard_smtp_tooltip_OK" qtlid="168055">De SMTP-dienst is geactiveerd</translation>
+   <translation id="vps_dashboard_smtp_tooltip_KO" qtlid="168068">De SMTP-dienst is gedeactiveerd</translation>
+   <translation id="vps_dashboard_tools" qtlid="194762">tools</translation>
+   <translation id="vps_dashboard_tools_tooltip_OK" qtlid="194775">VMWare tools zijn geactiveerd</translation>
+   <translation id="vps_dashboard_tools_tooltip_KO" qtlid="194788">VMWare tools zijn gedeactiveerd</translation>
+   <translation id="vps_dashboard_ssh" qtlid="168081">ssh</translation>
+   <translation id="vps_dashboard_ssh_tooltip_OK" qtlid="168094">De SSH-dienst is geactiveerd</translation>
+   <translation id="vps_dashboard_ssh_tooltip_KO" qtlid="168107">De SSH-dienst is gedeactiveerd</translation>
+   <translation id="vps_dashboard_loading_error" qtlid="168120">Er is een fout opgetreden, bij het uploaden van de gegevens. </translation>
+   <translation id="vps_dashboard_loading_error_monitoring" qtlid="168133">Er is een fout opgetreden, tijdens het laden van de monitoring-gegevens.</translation>
+   <translation id="vps_dashboard_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_dashboard_vcore_other" qtlid="128413">vCores</translation>
+   <translation id="vps_dashboard_disk_usage" qtlid="168146">Geheugenruimte</translation>
+   <translation id="vps_dashboard_trafic_usage" qtlid="39202">Dataverkeer</translation>
+   <translation id="vps_dashboard_initName" qtlid="31042">Dienst</translation>
+   <translation id="vps_dashboard_boot" qtlid="151984">Boot</translation>
+   <translation id="vps_dashboard_creationDate" qtlid="168185">Het aanmaken</translation>
+   <translation id="vps_dashboard_processor" qtlid="168198">Processor</translation>
+   <translation id="vps_dashboard_RAM" qtlid="31354">RAM</translation>
+   <translation id="vps_dashboard_renew_vps" qtlid="168211">Mijn vps verlengen</translation>
+   <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Mijn vps upgraden</translation>
+   <translation id="vps_dashboard_localisation" qtlid="168237">Locatie</translation>
+   <translation id="vps_dashboard_distribution" qtlid="122359">OS/Distributie</translation>
+   <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Niet beschikbaar</translation>
+   <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Bekijk de handleiding</translation>
+   <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Niet geconfigureerd</translation>
+   <translation id="vps_dashboard_secondary_dns" qtlid="168250">Secundaire DNS</translation>
+   <translation id="vps_dashboard_secondary_dns_count" qtlid="168263">Geen domein geconfigureerd</translation>
+   <translation id="vps_dashboard_secondary_dns_count_1" qtlid="168276">{0} domein geconfigureerd</translation>
+   <translation id="vps_dashboard_secondary_dns_count_other" qtlid="168289">{0} domeinen geconfigureerd</translation>
+   <translation id="vps_dashboard_state_services" qtlid="167912">Status</translation>
+   <translation id="vps_dashboard_monitoring_sla" qtlid="179537">SLA monitoring </translation>
+   <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">SLA monitoring IPs</translation>
+   <translation id="vps_dashboard_monitoring_sla_ips_tooltip" qtlid="263663">Voor de goede werking van onze monitoringtools, laat a.u.b. deze IP blokken toe in uw firewall.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_true" qtlid="179550">Het verzoek om de SLA monitoring te activeren is uitgevoerd.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_true" qtlid="179563">Er is een fout opgetreden bij het verzoek om de SLA monitoring te activeren.</translation>
+   <translation id="vps_configuration_monitoring_sla_ok_false" qtlid="179576">Het verzoek om de SLA monitoring te deactiveren werd succesvol uitgevoerd.</translation>
+   <translation id="vps_configuration_monitoring_sla_error_false" qtlid="179589">Er is een fout opgetreden bij het verzoek om deactivering van de SLA monitoring.</translation>
+   <translation id="vps_configuration_renewvps_title_button" qtlid="168302">Mijn VPS verlengen</translation>
+   <translation id="vps_configuration_renewvps_title" qtlid="168302">Mijn VPS verlengen</translation>
+   <translation id="vps_configuration_renewvps_step1_question" qtlid="168315">Om uw VPS te verlengen <span class="italic">{0}</span>, moet u OVH's verlengingsinterface gebruiken.</translation>
+   <translation id="vps_configuration_renewvps_step1_confirmation" qtlid="168328">Klik op "Bestellen" om uw VPS nu te verlengen.</translation>
+   <translation id="vps_configuration_renewvps_step1_information" qtlid="168341">Een nieuwe tab opent en u wordt automatisch geleid naar OVH's verlengingsinterface.</translation>
+   <translation id="vps_configuration_renewvps_step1_alert" qtlid="168354">Hou er rekening mee, dat het tot ongeveer 2 uur na de aanvaarding van uw betaling kan duren, voordat de verlenging is opgenomen in uw Web Control Panel.</translation>
+   <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Het wachtwoord resetten</translation>
+   <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Het wachtwoord resetten</translation>
+   <translation id="vps_configuration_reinitpassword_question" qtlid="366606">Weet u zeker dat u het <span class="normal italic">{0}</span>&#160;VPS wachtwoord wilt resetten?</translation>
+   <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Zodra u uw verzoek bevestigd hebt zal uw server meteen rebooten in 'Rescue'-modus. mode. Reboot downtime: ongeveer twee minuten. </translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="366632">Let op: u zult tijdelijke gegevens ontvangen maar u zult zelf het wachtwoord moeten resetten. Volg de  <a href="{0}" target="_blank">handleiding</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_success" qtlid="327354">Er zal automatisch een nieuw wachtwoord aangemaakt en verzonden worden naar {0}.</translation>
+   <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">Er is een fout opgetreden tijdens het verzoek om het wachtwoord opnieuw in te stellen.</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="366645">U dient het wachtwoord zelf te resetten. Volg de <a href="{0}" target="_blank">handleiding</a>.</translation>
+   <translation id="vps_configuration_reboot_title_button" qtlid="168432">Mijn VPS herstarten</translation>
+   <translation id="vps_configuration_reboot_title" qtlid="168432">Mijn VPS herstarten</translation>
+   <translation id="vps_configuration_reboot_question" qtlid="130543">Weet u zeker, dat u de VPS wilt herstarten <span class="italic normal">{0}</span>&#160;?</translation>
+   <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Als u uw aanvraag indient, zal de server gelijk herstarten.</translation>
+   <translation id="vps_configuration_reboot_warning_tools" qtlid="194801">Wij raden u aan om de VMWare tools te installeren.</translation>
+   <translation id="vps_configuration_reboot_warning_tools2" qtlid="194814">Let op: indien u opnieuw opstart en VMware tools is niet geïnstalleerd, zal een hard reboot van uw VPS nodig zijn.</translation>
+   <translation id="vps_configuration_reboot_confirmation_rescue_loading" qtlid="195737">Activering van de rescue modus alvorens te herstarten...</translation>
+   <translation id="vps_configuration_reboot_confirmation_local_loading" qtlid="195750">Activering van de lokale modus alvorens te herstarten...</translation>
+   <translation id="vps_configuration_reboot_rescue" qtlid="168458">Reboot in de rescue modus</translation>
+   <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Indien u deze optie kiest, ontvangt u een e-mail met de verbindinggegevens van uw VPS.</translation>
+   <translation id="vps_configuration_reboot_alert" qtlid="171097">Onbeschikbaar als gevolg van de herstart: ongeveer 2 minuten.</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="168497">De VPS {0} zal herstarten (geschatte tijd 2 minuten)</translation>
+   <translation id="vps_configuration_reboot_todo" qtlid="168510">Het reboot verzoek werd uitgevoerd.</translation>
+   <translation id="vps_configuration_reboot_fail" qtlid="168523">Er is een fout opgetreden bij het reboot verzoek</translation>
+   <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Rescue modus</translation>
+   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Bepaalde functies zijn niet beschikbaar in </b>rescue modus</b>. Om ze te herstellen dien u de plaatselijke boot herstellen te klikken op 'Restart your VPS'. </translation>
+   <translation id="vps_configuration_reboot_rescue_warning_btn_title" qtlid="323340">Deze functie is niet beschikbaar in rescue modus. </translation>
+   <translation id="vps_configuration_ipV6_info_text" qtlid="367125">Uw instance is nu gekoppeld aan een <strong>gratis IPv6</strong> ter aanvulling op de standaard IPv4.</translation>
+   <translation id="vps_configuration_ipV6_address_label" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_ipV6_gateway_label" qtlid="42682">Gateway</translation>
+   <translation id="vps_configuration_ipV6_guide_link_text" qtlid="367112">Bekijk de handleiding</translation>
+   <translation id="vps_configuration_reboot_rescue_title" qtlid="168549">Herstart mijn VPS in rescue modus</translation>
+   <translation id="vps_configuration_reboot_rescue_question" qtlid="168562">Weet u zeker dat u de VPS wilt herstarten <span class="italic normal">{0}</span> in rescue modus?</translation>
+   <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Indien u uw aanvraag bevestigt, wordt uw server omgezet in de rescue modus en direct gereboot. U ontvangt dan een e-mail met de inloggegevens van uw VPS.</translation>
+   <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Let op, wanneer uw VPS wordt gereboot, blijft de rescue modus actief tot de volgende normale reboot van uw VPS.</translation>
+   <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Onbeschikbaar als gevolg van de herstart: ongeveer 3 minuten.</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="168614">De VPS {0} wordt herstart in rescue modus (geschatte tijd 3 minuten)</translation>
+   <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">Het reboot verzoek in rescue mode wordt uitgevoerd.</translation>
+   <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Er is een fout opgetreden bij het reboot verzoek</translation>
+   <translation id="vps_configuration_reversedns_title_button" qtlid="168640">De DNS Reverse wijzigen</translation>
+   <translation id="vps_configuration_reversedns_title" qtlid="168640">De DNS Reverse wijzigen</translation>
+   <translation id="vps_configuration_reversedns_step1_question" qtlid="168653">De geselecteerde IP configureren:</translation>
+   <translation id="vps_configuration_reversedns_step1_ip" qtlid="25615">IP</translation>
+   <translation id="vps_configuration_reversedns_step2_ip" qtlid="168666">IP van de VPS:</translation>
+   <translation id="vps_configuration_reversedns_step2_reverse" qtlid="168679">Huidige reverse DNS:</translation>
+   <translation id="vps_configuration_reversedns_step2_newreverse" qtlid="168692">Een nieuwe reverse DNS instellen:</translation>
+   <translation id="vps_configuration_reversedns_step3_question" qtlid="130807">Weet u zeker dat u de reverse DNS op uw VPS wilt wijzigen <span class="italic normal">{0}</span>?</translation>
+   <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Oude reverse DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Nieuwe reverse DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">De wijziging is onmiddellijk actief, maar houd wel rekening met de propagatie-tijd (ongeveer 24 uur).</translation>
+   <translation id="vps_configuration_reversedns_success" qtlid="168744">De reverse DNS van de VPS {0} is gewijzigd.</translation>
+   <translation id="vps_configuration_reversedns_fail" qtlid="168757">Er is een fout opgetreden bij het ​​wijzigen van de reverse DNS.</translation>
+   <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">De reverse DNS is het tegenovergestelde van een klassiek DNS-record: het koppelt een domeinnaam aan een IP-adres.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">De reverse DNS is vooral nuttig, wanneer uw VPS server wordt gebruikt als private mailserver. Veel mailservers zijn ingesteld om e-mails van IP-adressen zonder reverse DNS te verwerpen.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Door het aanpassen van de reverse DNS, optimaliseert u de kans dat uw e-mails niet als spam worden beschouwd.</translation>
+   <translation id="vps_configuration_reinstall_title_button" qtlid="168809">Mijn VPS resetten</translation>
+   <translation id="vps_configuration_reinstall_title" qtlid="168809">Mijn VPS resetten</translation>
+   <translation id="vps_configuration_reinstall_bitFormat" qtlid="122107">bits</translation>
+   <translation id="vps_configuration_reinstall_step1_question" qtlid="171123">Kies uw besturingssysteem:</translation>
+   <translation id="vps_configuration_reinstall_step1_packages" qtlid="349255">Geinstalleerde pakketversies: </translation>
+   <translation id="vps_configuration_reinstall_step1_packages_empty" qtlid="349268">Pakketlijst niet beschikbaar. </translation>
+   <translation id="vps_configuration_reinstall_step1_os" qtlid="168835">Besturingssysteem</translation>
+   <translation id="vps_configuration_reinstall_step1_select_language" qtlid="171136">Selecteer de taal van de installatie:</translation>
+   <translation id="vps_configuration_reinstall_step1_select_softwares" qtlid="208495">Selecteer de software die vooraf geïnstalleerd moet worden:</translation>
+   <translation id="vps_configuration_reinstall_step1_software_DATABASE" qtlid="7870">Databases</translation>
+   <translation id="vps_configuration_reinstall_step1_software_WEBSERVER" qtlid="194567">Webservers</translation>
+   <translation id="vps_configuration_reinstall_step1_software_ENVIRONMENT" qtlid="28495">Omgeving</translation>
+   <translation id="vps_configuration_reinstall_step1_language" qtlid="145644">Taal</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key" qtlid="243487">Vooraf te installeren SSH-key(s):</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_no" qtlid="295725">U bent niet in het bezit van een SSH key. Uw authenticatiecodes zullen per e-mail aan u worden verzonden. </translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_help" qtlid="295738">Voeg een key toe via 'Mijn Account' </translation>
+   <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Druk op Ctrl en klik op een key om het te deselecteren. </translation>
+   <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Ik wil per e-mail de authenticatiecodes van mijn VPS ontvangen.</translation>
+   <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Er is een fout opgetreden tijdens het laden van uw SSH-keys.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Er is een fout opgetreden tijdens het ophalen van de gegevens.</translation>
+   <translation id="vps_configuration_reinstall_step2_question" qtlid="130939">Weet u zeker, dat u uw VPS <span class="normal italic">{0}</span> met de volgende instellingen wilt herinstalleren&#160;?</translation>
+   <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Besturingssysteem:</translation>
+   <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Taal:</translation>
+   <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Software:</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_DEPRECATED" qtlid="194593">afgeschreven</translation>
+   <translation id="vps_configuration_reinstall_step2_software_status_TESTING" qtlid="194606">testversie</translation>
+   <translation id="vps_configuration_reinstall_step2_sshKeys" qtlid="243526">Vooraf geïnstalleerde SSH-key(s):</translation>
+   <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Gemiddelde tijd voor het resetten: maximaal 15 minuten.</translation>
+   <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Let op: het resetten leidt tot het verlies van al uw gegevens!</translation>
+   <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Overweeg de optie, als u over een Windows besturingssysteem wilt beschikken.</translation>
+   <translation id="vps_configuration_reinstall_success" qtlid="168913">De VPS {0} wordt gereset</translation>
+   <translation id="vps_configuration_reinstall_fail" qtlid="168926">Er is een fout opgetreden bij de aanvraag van de reset</translation>
+   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">De Snapshot verwijderen</translation>
+   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">De Snapshot verwijderen</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="168952">Weet u zeker dat u het Snapshot van de VPS wilt verwijderen <span class="normal italic">{0}</span> ?</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Let op: deze actie is onomkeerbaar.</translation>
+   <translation id="vps_configuration_delete_snapshot_success" qtlid="168978">De Snapshot op de VPS {0} wordt verwijderd.</translation>
+   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Er is een fout opgetreden bij het ​​verzoek om het Snapshot te verwijderen.</translation>
+   <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Een Snapshot nemen</translation>
+   <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Een Snapshot nemen</translation>
+   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="169017">U wilt een snapshot van de VPS nemen <span class="italic normal">{0}</span>.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Beschrijving van de snapshot:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_question" qtlid="130687">Wilt u een snapshot van de VPS maken <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_snapshot_take_step2_description" qtlid="169043">Gekozen beschrijving</translation>
+   <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">U staat op het punt een snapshot te maken. Tijdens dit proces zult u tijdelijk geen toegang hebben tot uw VPS en alle vorige snapshots zullen verloren gaan. </translation>
+   <translation id="vps_configuration_snapshot_take_success" qtlid="169069">Er wordt een snapshot van de VPS {0} gemaakt.</translation>
+   <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Er is een fout opgetreden bij de aanvraag van de snapshot.</translation>
+   <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">De snapshot herstellen</translation>
+   <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">De snapshot herstellen</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="130699">Wilt u een snapshot op de volgende datum {0} voor de VPS terugzetten <span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Let op: met deze actie wordt de huidige versie van uw VPS verwijderd en hersteld naar de laatste snapshot. Deze actie is onomkeerbaar.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="169121">De snapshot zal worden hersteld op de VPS {0}.</translation>
+   <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Bij de aanvraag van het herstel van de snapshot is een fout opgetreden.</translation>
+   <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">De snapshot optie activeren</translation>
+   <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">De snapshot optie activeren</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Voor de eerste betaling, krijgt u een pro rata factuur tot de verlengingsdatum van uw VPS.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="169173">Deze optie zal worden gefactureerd tegen het maandelijkse tarief van <span class="bold">{0} HT</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Met de snapshot optie kunt u een herstelpunt maken. Dit is een momentopname van uw configuratie dat hersteld kan worden indien nodig.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Klik op "Volgende" om met de activering van de snapshot optie door te gaan.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_question" qtlid="169212">Activering van de snapshot optie op de VPS <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Hou er rekening mee, dat het ongeveer 2 uur na de aanvaarding van uw betaling kan duren, voordat de optie effectief wordt in uw Web Control Panel.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Prijs excl. btw:</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
+   <translation id="vps_configuration_activate_snapshot_success" qtlid="169264">De snapshot zal worden geactiveerd op de VPS {0}.</translation>
+   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Er is een fout opgetreden bij het ​​activeren van het snapshot.</translation>
+   <translation id="vps_configuration_desactivate_option" qtlid="48646">Annuleren</translation>
+   <translation id="vps_configuration_option_released" qtlid="284893">Niet verlengd</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activeer de Backup storage</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activeer de Backup storage optie</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="209879">Weet u zeker dat u de Backup Storage optie wilt activeren op de VPS <span class="normal italic">{0}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="169173">Deze optie zal worden gefactureerd tegen het maandelijkse tarief van <span class="bold">{0} HT</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Voor de eerste betaling, wordt u pro rata gefactureerd voor de resterende dagen vóór de verlengingsdatum van uw VPS.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">De Backup storage is een archiefruimte waarnaar u uw inhoud, data, instellingen en configuraties kunt overbrengen.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_instruction" qtlid="209905">Klik op "Volgende" om de Backup storage optie te activeren.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_question" qtlid="209918">Activering van de Backup storage optie op de VPS <span class="italic normal">{0}</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Hou er rekening mee, dat het ongeveer 2 uur na de aanvaarding van uw betaling kan duren, voordat de optie effectief wordt in uw Web Control Panel.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Prijs excl. btw:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_success" qtlid="209931">De Backup storage optie zal worden geactiveerd op de VPS {0}.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_fail" qtlid="209944">Er is een fout opgetreden bij het activeren van de Backup storage optie.</translation>
+   <translation id="vps_configuration_cancel_option_title_ftpbackup" qtlid="284906">Annuleer back-up opslag</translation>
+   <translation id="vps_configuration_cancel_option_title_snapshot" qtlid="284919">Annuleer Snapshot optie &#13;
+</translation>
+   <translation id="vps_configuration_cancel_option_title_veeam" qtlid="284932">Annuleer geautomatiseerde back-up </translation>
+   <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Annuleer geautomatiseerde back-up </translation>
+   <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Annuleer Windows optie</translation>
+   <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Annuleer aanvullende disks optie </translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="284971">De optie zal worden geannuleerd op de verlengdatum, {0}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Deze actie is onomkeerbaar en kan niet geannuleerd worden. </translation>
+   <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">De optie is geannuleerd. </translation>
+   <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Er is een fout opgetreden tijdens het annuleren van de optie. </translation>
+   <translation id="vps_configuration_add_ipv4_title_button" qtlid="222098">Mijn IP beheren</translation>
+   <translation id="vps_configuration_add_ipv6_title_button" qtlid="169576">IPv6 toevoegen</translation>
+   <translation id="vps_configuration_monitoring_title_button" qtlid="31666">Monitoring</translation>
+   <translation id="vps_configuration_monitoring_title" qtlid="31666">Monitoring</translation>
+   <translation id="vps_configuration_monitoring_usage_proc" qtlid="169589">Processor-gebruik</translation>
+   <translation id="vps_configuration_monitoring_usage_ram" qtlid="169602">RAM-gebruik</translation>
+   <translation id="vps_configuration_monitoring_usage_trafic" qtlid="169615">Traffic-gebruik</translation>
+   <translation id="vps_configuration_monitoring_traffic" qtlid="169628">Traffic van uw VPS</translation>
+   <translation id="vps_configuration_monitoring_fail" qtlid="169641">Er is een fout opgetreden tijdens het uploaden van de monitoring-gegevens.</translation>
+   <translation id="vps_configuration_monitoring_reset_zoom" qtlid="169654">Resetten</translation>
+   <translation id="vps_configuration_period_LASTDAY" qtlid="169667">De laatste 24 uur</translation>
+   <translation id="vps_configuration_period_LASTMONTH" qtlid="169680">De vorige maand</translation>
+   <translation id="vps_configuration_period_LASTWEEK" qtlid="169693">De laatste 7 dagen</translation>
+   <translation id="vps_configuration_period_LASTYEAR" qtlid="169706">De laatste 12 maanden</translation>
+   <translation id="vps_configuration_period_TODAY" qtlid="169719">Vandaag</translation>
+   <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Mijn VPS upgraden</translation>
+   <translation id="vps_configuration_upgradevps_title" qtlid="169732">Mijn VPS upgraden</translation>
+   <translation id="vps_configuration_upgradevps_step1_question" qtlid="169745">Selecteer het VPS-model waarnaar u wilt upgraden.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/maand</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="200053">Overgaan naar een nieuw model is volledig gratis. De prijs is het maandelijkse tarief voor elk model. Voor uw informatie, het maandelijkse tarief van uw huidige aanbod is <span class="bold">{0}</span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Let op! Het is niet mogelijk om de prestatie van uw VPS te reduceren, alleen upgrades zijn mogelijk.</translation>
+   <translation id="vps_configuration_upgradevps_step2_question" qtlid="169771">Upgrade van de VPS <span class="italic normal">{0}</span> in {1}</translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="169784">Tarief tot {0}, de volgende verlengingsdatum van uw server:</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Prijs excl. btw:</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="169797">Vervolgens, wordt uw server gefactureerd: <span class="red">{0} excl. BTW/maand</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Hou er rekening mee, dat het ongeveer 2 uur duurt na de aanvaarding van uw betaling, voordat de upgrade in uw Web Control Panel wordt getoond.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Een herstart is vereist om de prestaties van uw VPS te verhogen.</translation>
+   <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Er is een fout opgetreden tijdens de upgrade-aanvraag van uw VPS.</translation>
+   <translation id="vps_configuration_upgradevps_current" qtlid="169849">Huidige configuratie</translation>
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Een domein toevoegen</translation>
+   <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Een domein toevoegen aan de secundaire DNS</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_question" qtlid="169875">U gaat een domein toevoegen aan de secundaire DNS <span class="normal italic">{0}</span>.</translation>
+   <translation id="vps_configuration_secondarydns_add_step1_domain" qtlid="103378">Toe te voegen domein:</translation>
+   <translation id="vps_configuration_secondarydns_add_step2_summary" qtlid="169888">Wilt u het domein toevoegen <span class="normal italic">{0}</span> op de secundaire DNS <span class="normal italic">{1}</span>?</translation>
+   <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Er is een fout opgetreden tijdens de aanvraag om het domein toe te voegen op de secundaire DNS.</translation>
+   <translation id="vps_configuration_secondarydns_add_success" qtlid="169914">Het domein {0} wordt toegevoegd aan de secundaire DNS.</translation>
+   <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Een domein verwijderen van de secundaire DNS</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="169940">Wilt u het domein verwijderen <span class="normal italic">{0}</span> van de secundaire DNS?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="169953">Er is een fout opgetreden tijdens het verzoek om het domein te verwijderen {0} van de secundaire DNS.</translation>
+   <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">Het domein zal worden verwijderd van de secundaire DNS.</translation>
+   <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
+   <translation id="vps_configuration_kvm_new_window" qtlid="92753">Openen in een nieuw venster</translation>
+   <translation id="vps_configuration_kvm_cloud_mapping_keyboard_warning" qtlid="169979">Let op: het invoeren van numerieke tekens is alleen mogelijk via het numerieke toetsenblok op het toetsenbord. Indien uw notebook geen numeriek toetsenbord heeft, dan kunt u waarschijnlijk een toetsencombinatie gebruiken, meestal in de vorm "fn + ...".</translation>
+   <translation id="vps_configuration_kvm_fail" qtlid="169992">Er is een fout opgetreden bij het openen van de KVM.</translation>
+   <translation id="vps_configuration_veeam_order_title_button" qtlid="170005">De Automated Backup activeren</translation>
+   <translation id="vps_configuration_veeam_order_title" qtlid="170018">Automatische backups bestellen</translation>
+   <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Er is een fout opgetreden tijdens het downloaden van de gegevens</translation>
+   <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Voor de eerste betaling, wordt u pro rata gefactureerd voor de resterende dagen vóór de verlengingsdatum van uw VPS.</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="170044">Vervolgens zal de dienst maandelijks gefactureerd worden tegen een prijs van <span class="red bold">{0}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="170057">De automatische backup-opties voor de VPS <span class="italic normal">{0}</span> bestellen?</translation>
+   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Accepteer de gebruiksvoorwaarden om uw aanvraag te bevestigen en klik op "Volgende".</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Prijs excl. btw:</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
+   <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Ik bevestig het volgende te hebben gelezen en begrepen​​:</translation>
+   <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Bestelbon wordt aangemaakt...</translation>
+   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">De bestelbon werd aangemaakt</translation>
+   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">Klik hieronder op "Betalen", om uw bestelling te bevestigen.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Hou er rekening mee, dat het ongeveer 2 uur na de aanvaarding van uw betaling kan duren, voordat de optie effectief wordt in uw Web Control Panel.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
+   <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Er is een fout opgetreden bij de bestelling van de automatisch backup-optie.</translation>
+   <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">De backup unmounten</translation>
+   <translation id="vps_configuration_veeam_umount_title" qtlid="170096">De backup unmounten</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="170109">Wilt u de volgende backup op uw VPS <span class="normal italic">{0}</span> unmounten?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Er is een fout opgetreden bij het aanvragen van de verwijdering van de backup op uw VPS.</translation>
+   <translation id="vps_configuration_veeam_umount_success" qtlid="170135">De backup wordt ge-unmount van uw VPS.</translation>
+   <translation id="vps_configuration_veeam_mount_title" qtlid="170148">De backup mounten</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Weet u zeker dat u deze backup op de VPS wilt <span class="normal italic">{0}</span>&#160;mounten?</translation>
+   <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Deze backup zal toegankelijk worden via een NFS of SMB mount point.</translation>
+   <translation id="vps_configuration_veeam_mount_success" qtlid="170174">Het mount verzoek van de backup wordt uitgevoerd. U wordt per e-mail op de hoogte gesteld, wanneer het mounten voltooid is.</translation>
+   <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Er is een fout opgetreden tijdens het verzoek om de backup te mounten op uw VPS.</translation>
+   <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Mijn VPS herstellen</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="170213">Weet u zeker dat u uw VPS wilt herstellen <span class="normal italic">{0}</span> met de volgende backups?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Wijzig het root-wachtwoord tijdens het herstel </translation>
+   <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Het is niet mogelijk om uw VPS wachtwoord opnieuw in te stellen, als VMware tools nog niet is geïnstalleerd. Echter, u kunt dit opnieuw instellen via de rescue modus.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Let op! Het herstel van uw VPS zal de volledige verwijdering van uw huidige gegevens veroorzaken.</translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">Het herstel van de backup kan enkele uren duren, afhankelijk van de diskgrootte. </translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_umount" qtlid="268147">Als u een herstelling wilt uitvoeren dient u eerst uw back-up te ontkoppelen.</translation>
+   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">Als u uw back-up wilt koppelen dient u uw huidige back-up vooraf te ontkoppelen. </translation>
+   <translation id="vps_configuration_veeam_restore_success" qtlid="170252">Het verzoek tot herstel van de VPS wordt uitgevoerd. U ontvangt een e-mail wanneer het herstel is voltooid.</translation>
+   <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">Er is een fout opgetreden tijdens het verzoek tot herstel van de backup op uw VPS.</translation>
+   <translation id="vps_tab_summary" qtlid="170278">Overzicht van de opties</translation>
+   <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Backup storage:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot:</translation>
+   <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Automatische backups:</translation>
+   <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">uitgevoerd op:</translation>
+   <translation id="vps_tab_SUMMARY_license" qtlid="113658">Licenties </translation>
+   <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Backups </translation>
+   <translation id="vps_tab_SUMMARY_ip_adress" qtlid="170356">IP-adressen</translation>
+   <translation id="vps_tab_SUMMARY_windows" qtlid="102237">Windows</translation>
+   <translation id="vps_tab_SUMMARY_windows_option" qtlid="285036">Licentie: </translation>
+   <translation id="vps_tab_SUMMARY_ip_cloud_only" qtlid="170369">De extra IP-adressen zijn alleen beschikbaar voor het <a href="{0}" target="_blank">VPS Cloud aanbod</a>.</translation>
+   <translation id="vps_tab_SUMMARY_backups_cloud_only" qtlid="170382">De backup opties zijn slechts beschikbaar voor het <a href="{0}" target="_blank">VPS Cloud aanbod</a>.</translation>
+   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">Extra IP adressen zijn niet beschikbaar bij dit aanbod.</translation>
+   <translation id="vps_tab_SUMMARY_backups_not_available" qtlid="250810">Backup-opties zijn niet beschikbaar op dit aanbod.</translation>
+   <translation id="vps_tab_ip" qtlid="25615">IP</translation>
+   <translation id="vps_tab_IPS_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="vps_tab_IPS_ipv6" qtlid="34126">IPv6</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_DE" qtlid="29083">Duitsland</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_ES" qtlid="29095">Spanje</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_FR" qtlid="29047">Frankrijk</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_IT" qtlid="40870">Italië</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_PL" qtlid="40858">Polen</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_UK" qtlid="29071">Groot-Brittannië</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_US" qtlid="108396">Verenigde Staten</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_location_CA" qtlid="108733">Canada</translation>
+   <translation id="vps_tab_IPS_flag_tooltip_cant_order" qtlid="191915">U heeft het maximum aantal IP-adressen bereikt. Er kunnen geen verdere IP-adressen toegevoegd worden.</translation>
+   <translation id="vps_tab_secondary_dns" qtlid="170408">Secundaire DNS</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_empty" qtlid="170421">U heeft geen domein op een secundaire DNS geconfigureerd</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_domain" qtlid="170434">Domein</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_ip" qtlid="167899">IP</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_date" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="vps_tab_SECONDARY_DNS_table_dns" qtlid="168250">Secundaire DNS</translation>
+   <translation id="vps_tab_veeam" qtlid="170447">Automatische backup</translation>
+   <translation id="vps_tab_VEEAM_dashboard_cloud_only" qtlid="170460">De automatische backup is slechts beschikbaar op het <a href="{0}" target="_blank">VPS Cloud aanbod</a>.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_veeam_unavailable" qtlid="250823">Automatische backup is niet beschikbaar op dit aanbod.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_activated" qtlid="170473">U heeft geen bestelling voor de automatische backup optie gedaan.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_not_able_to_order" qtlid="170486">U kunt deze optie niet bestellen, omdat uw nichandle niet gerechtigd is om bestellingen voor deze VPS te plaatsen.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_no_current_restore_point" qtlid="170499">U heeft momenteel geen gemount herstelpunt </translation>
+   <translation id="vps_tab_VEEAM_dashboard_state" qtlid="26443">Status</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_enabled" qtlid="170512">Gemount</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_disabled" qtlid="170538">Unmount</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTING" qtlid="170525">Mounten wordt uitgevoerd</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_MOUNTED" qtlid="170512">Gemount</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_RESTORING" qtlid="170525">Mounten wordt uitgevoerd</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTED" qtlid="170538">Unmount</translation>
+   <translation id="vps_tab_VEEAM_dashboard_state_UNMOUNTING" qtlid="170551">Unmounten wordt uitgevoerd</translation>
+   <translation id="vps_tab_VEEAM_dashboard_restoring" qtlid="170564">Het opnieuw installeren of herstellen van de VPS is in volle gang.<br/>Tijdens het uitvoeren van deze actie zijn herstel of mount acties niet mogelijk.</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point" qtlid="170577">Hier is de informatie over het gemounte herstelpunt:</translation>
+   <translation id="vps_tab_VEEAM_dashboard_current_restore_point_creationTime" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_smb" qtlid="170590">Samba toegang</translation>
+   <translation id="vps_tab_VEEAM_dashboard_access_nfs" qtlid="170603">NFS toegang</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_date" qtlid="26419">Aanmaakdatum</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_mount" qtlid="170616">Mounten</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_header_restore" qtlid="170629">Herstel</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_empty" qtlid="170642">U heeft geen herstelpunt </translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_mount" qtlid="170655">Dit herstelpunt mounten</translation>
+   <translation id="vps_tab_VEEAM_dashboard_table_tooltip_restore" qtlid="170668">Mijn VPS herstellen naar dit herstelpunt</translation>
+
+   <translation id="vps_tab_backup_storage" qtlid="180460">Back-up storage</translation>
+   <translation id="vps_tab_backup_none" qtlid="209970">De Backup storage is slechts beschikbaar op de <a href="{0}" target="_blank">VPS Cloud</a>.</translation>
+   <translation id="vps_tab_backup_not_activated" qtlid="209983">U heeft geen Back-up storage besteld.</translation>
+   <translation id="vps_tab_backup_not_able_to_order" qtlid="170486">U kunt deze optie niet bestellen, omdat uw nichandle niet gerechtigd is om bestellingen voor deze VPS te plaatsen.</translation>
+
+
+   <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Wachtwoord vergeten?</translation>
+   <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Een nieuw wachtwoord aanvragen</translation>
+   <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Een nieuw wachtwoord wordt verstuurd naar de admin NIC van de server.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Een nieuw wachtwoord is verzonden naar de admin nic van de server.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Er is een fout opgetreden bij het resetten van het wachtwoord.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="184412">Weet u zeker dat u het wachtwoord voor de back-up storage {0} wilt resetten?</translation>
+
+   <translation id="vps_tab_backup_storage_login" qtlid="46792">Gebruikersnaam</translation>
+   <translation id="vps_tab_backup_storage_name" qtlid="3818">Naam</translation>
+   <translation id="vps_tab_backup_storage_usage" qtlid="30382">Gebruik</translation>
+   <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Er is geen toegang geconfigureerd</translation>
+   <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
+   <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>
+   <translation id="vps_tab_backup_storage_table_ftp" qtlid="50410">FTP</translation>
+   <translation id="vps_tab_backup_storage_table_nfs" qtlid="6778">NFS</translation>
+   <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Status</translation>
+   <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">Wordt uitgevoerd</translation>
+   <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Geactiveerd</translation>
+   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">De toegang wijzigen</translation>
+   <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">De toegang verwijderen</translation>
+   <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">De wijziging bevestigen</translation>
+   <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">De wijziging annuleren</translation>
+
+   <translation id="vps_backup_storage_access_delete" qtlid="180590">Verwijdering van een toegang</translation>
+   <translation id="vps_backup_storage_access_delete_question" qtlid="210009">Weet u zeker dat u de toegang tot het IP blok wilt verwijderen<b>{0}</b>?</translation>
+   <translation id="vps_backup_storage_access_delete_success" qtlid="210022">De verwijdering van de toegang tot de backup storage voor IP blok <b>{0}</b> wordt uitgevoerd, maar het kan een paar minuten duren.</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="210035">Er is een fout opgetreden bij de poging om de toegang tot de Backup Storage van het IP blok te verwijderen <b>{0}</b></translation>
+
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Er is een fout opgetreden bij het ophalen van de toelaatbare blokken </translation>
+   <translation id="vps_backup_storage_access_add_button" qtlid="153857">Een toegang toevoegen</translation>
+   <translation id="vps_backup_storage_access_add" qtlid="180772">Een toegang toevoegen</translation>
+   <translation id="vps_backup_storage_access_add_info" qtlid="210048">Selecteer het IP blok dat u wilt autoriseren ​​en de toegangsopties.</translation>
+   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lijst met blokken:</translation>
+   <translation id="vps_backup_storage_access_add_info2" qtlid="210061">U gaat een toegangsregel toevoegen aan uw Backup Storage voor elk IP blok op de volgende lijst:</translation>
+   <translation id="vps_backup_storage_access_add_info3" qtlid="210074">U moet een protocol autoriseren, omdat IP blokken zonder regels standaard worden geweigerd.</translation>
+   <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Toegepaste rechten:</translation>
+   <translation id="vps_backup_storage_access_add_allow" qtlid="141795">Autoriseren</translation>
+   <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Weigeren</translation>
+   <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Het betreffende blok:</translation>
+   <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Toestaan voor:</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">Het verzoek om toegangsregels aan de back-up storage toe te voegen, wordt uitgevoerd, maar kan een paar minuten in beslag nemen</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">Het verzoek om een ​​aantal toegangsregels aan de back-up storage toe te voegen, wordt uitgevoerd, maar kan een paar minuten in beslag nemen. Maar andere regels worden niet toegepast.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Er is een fout opgetreden tijdens het verzoek om toegangsregels aan de back-up storage toe te voegen</translation>
+   <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Alle beschikbare blokken zijn geautoriseerd</translation>
+
+   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">De wijziging van de toegang <b> {0} </ b> wordt uitgevoerd, maar kan een paar minuten in beslag nemen</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="183866">Er is een fout opgetreden bij het wijzigen van de toegang <b>{0}</b></translation>
+
+   <translation id="vps_monitoring_network_netRx" qtlid="33550">Inkomende</translation>
+   <translation id="vps_monitoring_network_netTx" qtlid="30886">Uitgaande</translation>
+
+   <translation id="vps_zone" qtlid="26335">Zone</translation>
+   <translation id="vps_cluster" qtlid="232414">Cluster</translation>
+
+   <translation id="vps_tab_SUMMARY_additional_disk" qtlid="281485">Aanvullende schijven</translation>
+   <translation id="vps_additional_disk_add_button" qtlid="281498">Bestel een aanvullende schijf</translation>
+   <translation id="vps_additional_disk_add_another_button" qtlid="281511">Bestel een andere aanvullende schijf</translation>
+
+   <translation id="vps_tab_additional_disk" qtlid="281524">Aanvullende schijf</translation>
+   <translation id="vps_tab_additional_disk_not_available" qtlid="281537">Het is niet mogelijk om een aanvullende schijf toe te voegen aan deze reeks. </translation>
+   <translation id="vps_tab_additional_disk_count" qtlid="281550">U beschikt niet over een aanvullende schijf. </translation>
+   <translation id="vps_tab_additional_disk_count_1" qtlid="281563">U beschikt over een aanvullende schijf.</translation>
+   <translation id="vps_tab_additional_disk_count_other" qtlid="281576">U heeft {0} aanvullende schijven. </translation>
+   <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
+   <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Grootte (GB)</translation>
+   <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Status</translation>
+   <translation id="vps_tab_additional_disk_state_connected" qtlid="99944">Verbonden</translation>
+   <translation id="vps_tab_additional_disk_state_disconnected" qtlid="77154">Verbroken</translation>
+   <translation id="vps_tab_additional_disk_state_pending" qtlid="29467">In afwachting</translation>
+   <translation id="vps_additional_disk_add_button_soon" qtlid="281589">Binnenkort zult u meerdere aanvullende schijven aan uw VPS kunnen toevoegen. </translation>
+   <translation id="vps_tab_additional_disk_guide" qtlid="281602">Gebruik van een aanvullende schijf.</translation>
+
+   <translation id="vps_order_additionnal_disk_title" qtlid="281498">Bestel een aanvullende schijf</translation>
+   <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Kies aub de grootte van de aanvullende schijf voor uw VPS. Het zal weergegeven worden als tweede harde schijf op uw operating system. </translation>
+   <translation id="vps_order_additional_disk_step2" qtlid="281628">De aanvullende schijf zal zijn toegevoegd aan uw server tot aan de verlengdatum van uw VPS, daarna wordt het ermee verlengd. </translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="281641">{0} excl.BTW/maand</translation>
+   <translation id="vps_order_additional_disk_option" qtlid="281654">Optie:</translation>
+   <translation id="vps_order_additional_disk_offer_description" qtlid="281667">Optie aanvullende schijf - {0} tot {1}</translation>
+   <translation id="vps_order_additional_disk_price" qtlid="181084">Prijs:</translation>
+   <translation id="vps_order_additional_disk_fail" qtlid="281680">Er is een fout opgetreden tijdens het bestellen van een aanvullende schijf</translation>
+   <translation id="vps_order_additional_disk_success" qtlid="281693">Om de toevoeging van uw schijf te voltooien verzoeken wij u om de <a href='{0}' target='_blank'>bestelling {1}</a> af te ronden.</translation>
+
+   <translation id="vps_additional_disk_info_fail" qtlid="281706">Er is een fout opgetreden tijdens het laden van informatie over aanvullende schijven. </translation>
+
+   <translation id="vps_autorenew_stop_bother_error" qtlid="290589">Er is een fout opgetreden bij het verzenden van het verzoek om u niet langer te informeren over automatische verlenging. </translation>
+   <translation id="vps_autorenew_alert" qtlid="290602">Maak het uzelf gemakkelijk en kies automatische verlenging voor uw VPS! Niet langer last van reminders of onnodige verwijderingen.  </translation>
+   <translation id="vps_autorenew_guide" qtlid="290615">Bekijk de handleiding </translation>
+   <translation id="vps_autorenew_activate" qtlid="98576">De automatische verlenging activeren</translation>
+
+   <translation id="vps_move_alert" qtlid="296981">Uw VPS is van sectie veranderd! Binnenkort vindt u al uw servers (virtueel en dedicated) samen in één grote sectie. </translation>
+</translations>
