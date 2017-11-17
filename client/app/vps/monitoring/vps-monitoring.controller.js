@@ -10,6 +10,12 @@ class VpsMonitoringCtrl {
             init: false
         };
         this.data = {};
+        this.monitoring = {
+            cpu: [],
+            ram: [],
+            net: [[], []],
+            labels: []
+        };
         this.period = "LASTDAY";
     }
 
@@ -20,24 +26,30 @@ class VpsMonitoringCtrl {
 
     loadMonitoring () {
         this.loaders.init = true;
-        this.monitoring = {
-            cpu: [],
-            ram: [],
-            trafic: {},
-            labels: []
-        };
+        this.reset();
         this.VpsService.getMonitoring(this.period)
             .then((data) => {
                 this.data = data;
-                this.convertData(data.cpu.values[0].points, this.monitoring.cpu);
-                this.convertData(data.ram.values[0].points, this.monitoring.ram);
+                this.humanizeData(data.cpu.values[0].points, this.monitoring.cpu);
+                this.humanizeData(data.ram.values[0].points, this.monitoring.ram);
+                this.humanizeData(data.netRx.values[0].points, this.monitoring.net[0]);
+                this.humanizeData(data.netTx.values[0].points, this.monitoring.net[1]);
                 this.generateLabels(data.cpu.values[0].points, data.cpu.pointInterval, data.cpu.pointStart, this.monitoring.labels);
             })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_fail")))
             .finally(() => { this.loaders.init = false });
     }
 
-    convertData (data, tab) {
+    reset () {
+        this.monitoring = {
+            cpu: [],
+            ram: [],
+            net: [[], []],
+            labels: []
+        };
+    }
+
+    humanizeData (data, tab) {
         _.forEach(data, element => {
             tab.push(element.y);
         });
@@ -54,6 +66,7 @@ class VpsMonitoringCtrl {
     }
 
     loadOptions () {
+        this.series = [this.$translate.instant("vps_monitoring_network_netRx"), this.$translate.instant("vps_monitoring_network_netTx")];
         this.option1 = {
             scales: {
                 xAxes: [{
@@ -89,25 +102,53 @@ class VpsMonitoringCtrl {
             }
         };
         this.option2 = {
+            legend: {
+                display: true,
+            },
             scales: {
                 xAxes: [{
-                    id: "y-axe",
-                    type: "linear",
-                    ticks: {
-                        min: 0,
-                        beginAtZero: true
+                    gridLines: {
+                        display: false
                     }
                 }],
-                yAxes: [{
-                    id: "y-axe",
-                    type: "linear",
+                yAxes: [
+                {
+                    id: 'y-axis-1',
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
                     ticks: {
                         min: 0,
                         beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "BPS"
+
                     }
-                }]
+                // },
+                // {
+                //     id: 'y-axis-2',
+                //     type: 'linear',
+                //     display: true,
+                //     position: 'right',
+                //     ticks: {
+                //         min: 0,
+                //         beginAtZero: true
+                //     },
+                //     scaleLabel: {
+                //         display: true,
+                //         labelString: "BPS"
+
+                //     }
+                }
+              ]
             },
             elements: {
+                line: {
+                    borderColor: "#00a2bf",
+                    borderWidth: 4
+                },
                 point: {
                     radius: 0
                 }
