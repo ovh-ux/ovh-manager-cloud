@@ -77,5 +77,16 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "$ctrl"
                 }
             }
+        })
+        .state("iaas.vps.detail.upgrade", {
+            url: "/upgrade",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/upgrade/vps-upgrade.html",
+                    controller: "VpsUpgradeCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
         });
 });
