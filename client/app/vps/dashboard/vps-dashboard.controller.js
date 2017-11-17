@@ -105,6 +105,9 @@ class VpsDashboardCtrl {
             case "monitoring-sla":
                 this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring);
                 break;
+            case "upgrade":
+                this.VpsActionService.upgrade();
+                break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
         }
