@@ -94,6 +94,32 @@ class VpsActionService {
         });
     }
 
+    restore (restorePoint) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/veeam/restore/vps-restore.html",
+                controller: "VpsRestoreCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    RestorePoint: () => restorePoint
+                }
+            }
+        });
+    }
+
+    mount (restorePoint) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/veeam/mount/vps-mount.html",
+                controller: "VpsMountCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    RestorePoint: () => restorePoint
+                }
+            }
+        });
+    }
+
     orderAdditionalDisk () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
