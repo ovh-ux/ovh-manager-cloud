@@ -47,6 +47,20 @@ class VpsActionService {
         });
     }
 
+    monitoringSla (serviceName, state) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/shortcut/monitoring-sla/vps-monitoring-sla.html",
+                controller: "VpsMonitoringSlaCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    state: () => state
+                }
+            }
+        });
+    }
+
     reverseDns () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
