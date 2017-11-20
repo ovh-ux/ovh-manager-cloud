@@ -66,6 +66,7 @@ class VpsMonitoringCtrl {
     }
 
     loadOptions () {
+        //this.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
         this.series = [this.$translate.instant("vps_monitoring_network_netRx"), this.$translate.instant("vps_monitoring_network_netTx")];
         this.option1 = {
             scales: {
