@@ -522,9 +522,9 @@
    <translation id="vps_dashboard_name" qtlid="3818">Nom</translation>
    <translation id="vps_status_disabled" qtlid="24967">Désactivé</translation>
    <translation id="vps_status_enabled" qtlid="30250">Activé</translation>
-   <translation id="vps_action_disable" qtlid="90973">Désactiver</translation>
-   <translation id="vps_action_enable">Activer</translation>
    <translation id="vps_dashboard_product">Modèle</translation>
+   <translation id="vps_configuration_sla_title_enable">Activer le monitoring SLA pour ce serveur ?</translation>
+   <translation id="vps_configuration_sla_title_disable">Désactiver le monitoring SLA pour ce serveur ?</translation>
 
    <translation id="vps_service_expired">Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.</translation>
 </translations>
