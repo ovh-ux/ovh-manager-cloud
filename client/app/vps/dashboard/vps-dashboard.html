@@ -110,7 +110,7 @@
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
             <cui-tile data-title="'vps_tab_ip' | translate"
-                      data-loading="$ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.loaders.init && $ctrl.loaders.ips" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item>
                         <cui-tile-definitions>
@@ -152,8 +152,8 @@
             <cui-tile data-title="'common_tile_configuration' | translate"
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item data-term="'vps_dashboard_initName' | translate"
-                                   data-description="$ctrl.vps.name">
+                    <cui-tile-item data-term="'vps_dashboard_name' | translate"
+                                   data-description="$ctrl.vps.displayName || $ctrl.vps.name">
                         <cui-dropdown-menu>
                             <cui-dropdown-menu-button>
                                 <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
@@ -194,43 +194,43 @@
                       data-loading="$ctrl.loaders.summary || $ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
-                                   data-description="'common_disabled' | translate"
+                                   data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.ftpBackup.optionActivated">
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
-                                   data-description="'common_enabled' | translate"
+                                   data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.ftpBackup.optionActivated">
                     </cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
-                                   data-description="'common_disabled' | translate"
+                                   data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.snapshot.optionActivated">
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
-                                   data-description="'common_enabled' | translate"
+                                   data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.snapshot.optionActivated">
                     </cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
-                                   data-description="'common_disabled' | translate"
+                                   data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.veeamActivated">
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
-                                   data-description="'common_enabled' | translate"
+                                   data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.veeamActivated">
                     </cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
-                                   data-description="'common_disabled' | translate"
+                                   data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.hasAdditionalDisk">
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
-                                   data-description="'common_enabled' | translate"
+                                   data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.hasAdditionalDisk">
                     </cui-tile-item>
 
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
-                                   data-description="'common_enabled' | translate"
+                                   data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.vps.slaMonitoring">
                         <cui-dropdown-menu>
                             <cui-dropdown-menu-button>
@@ -242,7 +242,7 @@
                                         <div class="oui-action-menu-item__icon"></div>
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
-                                            data-translate="common_disable"
+                                            data-translate="vps_action_disable"
                                             data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
                                     </div>
                                 </div>
@@ -250,7 +250,7 @@
                         </cui-dropdown-menu>
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
-                                   data-description="'common_disabled' | translate"
+                                   data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.vps.slaMonitoring">
                         <cui-dropdown-menu>
                             <cui-dropdown-menu-button>
@@ -262,7 +262,7 @@
                                         <div class="oui-action-menu-item__icon"></div>
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
-                                            data-translate="common_enable"
+                                            data-translate="vps_action_enable"
                                             data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
                                     </div>
                                 </div>
