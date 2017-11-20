@@ -33,8 +33,17 @@ class VpsHeaderCtrl {
     }
 
     checkMessages (vps) {
+        this.isExpired(vps);
         this.isInRescueMode(vps.netbootMode);
         this.checkIfStopNotification("ipV6", true, vps);
+    }
+
+    isExpired(vps) {
+        if (vps.isExpired) {
+            this.CloudMessage.warning(this.$translate.instant("vps_service_expired", {vps: vps.name}));
+        } else if (vps.messages.length > 0) {
+            this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"), vps);
+        }
     }
 
     isInRescueMode (netbootMode) {
