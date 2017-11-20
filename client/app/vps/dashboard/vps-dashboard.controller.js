@@ -15,6 +15,7 @@ class VpsDashboardCtrl {
 
         this.loaders = {
             init: false,
+            ip: false,
             summary: false,
             plan: false,
             polling: false
@@ -26,8 +27,6 @@ class VpsDashboardCtrl {
         this.initActions();
 
         this.loadVps();
-        this.loadIps();
-        this.loadPlan();
         this.loadSummary();
     }
 
@@ -38,20 +37,19 @@ class VpsDashboardCtrl {
                 const expiration = moment.utc(vps.expiration);
                 this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
                 this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
-                if (vps.isExpired) {
-                    this.CloudMessage.warning(this.$translate.instant("vps_service_expired", {vps: vps.name}));
-                } else if (vps.messages.length > 0) {
-                    this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"), vps);
-                }
+                this.loadIps();
+                this.loadPlan();
             })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.init = false });
     }
 
     loadIps () {
+        this.loaders.ips = true;
         this.VpsService.getIps().then(ips => {
             this.vps.ips = ips.results;
             this.vps.ipv6Gateway = _.get(_.find(ips.results, { version: "v6" }), "gateway");
+            this.loaders.ips = false;
         });
     }
 
@@ -67,7 +65,12 @@ class VpsDashboardCtrl {
     loadPlan () {
         this.loaders.plan = true;
         this.VpsService.getServiceInfos()
-            .then((data) => { this.plan = data })
+            .then((data) => {
+                this.plan = data;
+                if (!_.isEmpty(this.vps)) {
+                    this.plan.offer = this.vps.model;
+                }
+            })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.plan = false });
     }
