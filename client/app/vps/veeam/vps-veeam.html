@@ -1,2 +1,36 @@
-<div data-ng-bind="$ctrl.veeam"></div>
-<div data-ng-bind="$ctrl.veeamTab"></div>
+<!-- Veeam activated -->
+<section class="container-fluid cui-page__content cui-page__content-flex" data-ng-if="$ctrl.veeam.state !== 'disabled'">
+	<div class="text-center" data-ng-if="$ctrl.loaders.init">
+		<oui-loader class="d-inline-block" size="m"></oui-loader>
+	</div>
+
+	<!-- information -->
+	<dl data-ng-if="!$ctrl.loaders.init">
+        <dt data-translate="vps_tab_VEEAM_dashboard_state"></dt>
+        <dd class="label"
+            data-ng-class="{'label-success': $ctrl.veeam.state === 'enabled', 'label-info': $ctrl.veeam.state !== 'enabled'}"
+            data-ng-bind="('vps_tab_VEEAM_dashboard_state_' + $ctrl.veeam.state) | translate"></dd>
+
+        <dt data-ng-if="$ctrl.veeam.restorePoint"
+        	data-translate="vps_tab_VEEAM_dashboard_current_restore_point_creationTime"></dt>
+        <dd data-ng-bind="$ctrl.displayDate($ctrl.veeam.restorePoint)"></dd>
+    </dl>
+
+    <oui-table rows="$ctrl.veeamTab"
+               rows-loader="$ctrl.loaders.veeamTab">
+        <column title="'vps_tab_VEEAM_dashboard_table_header_date' | translate"
+        		template="$ctrl.dateTemplate()"
+        		sortable>
+        </column>
+        <column title="'common_actions' | translate"
+                class="oui-table__cell_action oui-table__cell_action-menu"
+                template="$ctrl.actionTemplate()">
+        </column>
+    </oui-table>
+</section>
+
+<!-- Veeam not activated -->
+<section class="container-fluid cui-page__content cui-page__content-flex" data-ng-if="!$ctrl.veeam.state == 'disabled' && !$ctrl.loaders.information">
+    <p data-translate="vps_tab_VEEAM_dashboard_not_activated"></p>
+    <p data-ng-if="!$ctrl.vps.canOrder" data-translate="vps_tab_VEEAM_dashboard_not_able_to_order"></p>
+</section>
