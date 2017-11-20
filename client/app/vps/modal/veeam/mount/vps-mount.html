@@ -4,7 +4,7 @@
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
-        <div data-ng-if="!$ctrl.loader.init && !ctrl.loader.save">
+        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
             <cui-modal-text data-text="'vps_configuration_veeam_mount_question' | translate"></cui-modal-text>
             <cui-modal-text data-text="'vps_configuration_veeam_mount_informations' | translate"></cui-modal-text>
 

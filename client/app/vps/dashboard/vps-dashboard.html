@@ -179,6 +179,17 @@
                     </cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_distribution' | translate"
                                    data-description="$ctrl.vps.distribution.name">
+                    </cui-tile-item>
+                    <cui-tile-item data-ng-if="!$ctrl.vps.isExpired">
+                        <dl class="cui-tile__definition">
+                            <dt class="cui-tile__term">
+                                <span data-translate="vps_zone"></span> (<span data-translate="vps_cluster"></span>)
+                            </dt>
+                            <dd class="cui-tile__description">
+                                <span data-ng-bind="$ctrl.vps.zone"></span> (<span data-ng-bind="$ctrl.vps.cluster"></span>)
+                            </dd>
+                        </dl>
+                    </cui-tile-item>
                     <cui-tile-item>
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_dashboard_localisation' | translate"></cui-tile-definition-term>
@@ -242,8 +253,8 @@
                                         <div class="oui-action-menu-item__icon"></div>
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
-                                            data-translate="vps_action_disable"
-                                            data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
+                                            data-translate="common_manage"
+                                            data-ng-click="$ctrl.setAction('monitoring-sla')"></button>
                                     </div>
                                 </div>
                             </cui-dropdown-menu-body>
@@ -262,8 +273,8 @@
                                         <div class="oui-action-menu-item__icon"></div>
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
-                                            data-translate="vps_action_enable"
-                                            data-ng-click="$ctrl.switchSLA(!$ctrl.vps.slaMonitoring)"></button>
+                                            data-translate="common_manage"
+                                            data-ng-click="$ctrl.setAction('monitoring-sla')"></button>
                                     </div>
                                 </div>
                             </cui-dropdown-menu-body>
