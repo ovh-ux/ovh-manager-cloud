@@ -110,7 +110,7 @@
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
             <cui-tile data-title="'vps_tab_ip' | translate"
-                      data-loading="$ctrl.loaders.init && $ctrl.loaders.ips" class="h-100">
+                      data-loading="$ctrl.loaders.init || $ctrl.loaders.ips" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item>
                         <cui-tile-definitions>
@@ -286,5 +286,3 @@
     </div>
 
 </section>
-
-<div data-ng-bind="$ctrl.vps"></div><br /><div data-ng-bind="$ctrl.summary"></div><br /><div data-ng-bind="$ctrl.plan"></div>
