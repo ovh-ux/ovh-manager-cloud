@@ -19,7 +19,7 @@ class VpsDashboardCtrl {
             summary: false,
             plan: false,
             polling: false
-        }
+        };
     }
 
     $onInit () {
@@ -119,8 +119,8 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
                 isAvailable: () => !this.plan.loading && !this.plan.hasErrors
-            },
-            // changeOwner: {
+            }// ,
+            // changeOwner: {
             //     text: this.$translate.instant("vps_change_owner"),
             //     href: this.ControllerHelper.navigation.getUrl("changeOwner", { serviceName: this.serviceName }),
             //     isAvailable: () => !this.plan.loading && !this.plan.hasErrors
