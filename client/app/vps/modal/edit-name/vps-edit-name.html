@@ -4,17 +4,17 @@
         <div class="text-center" data-ng-if="$ctrl.loader.save">
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
-        <section data-ng-if="!ctrl.loader.save">
+        <section data-ng-if="!$ctrl.loader.save">
             <h3 data-translate="vps_default_name"></h3>
             <p data-ng-bind=":: $ctrl.serviceName"></p>
-            
+
             <h3 data-translate="vps_personal_name"></h3>
             <input class="oui-input" type="text" data-ng-model="$ctrl.value.displayName">
         </section>
     </cui-modal-body>
     <cui-modal-footer>
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_confirm' | translate" 
+        <cui-submit-button data-text="'common_confirm' | translate"
             data-on-click="$ctrl.confirm()"
             data-disabled="$ctrl.loader.save"></cui-submit-button>
     </cui-modal-footer>
