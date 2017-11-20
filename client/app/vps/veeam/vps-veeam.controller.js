@@ -79,7 +79,7 @@ class VpsVeeamCtrl {
     }
 
     dateTemplate () {
-        return `<span data-ng-bind="$ctrl.displayDate($row)"></span>`
+        return `<span data-ng-bind="$ctrl.displayDate($row)"></span>`;
     }
 
     actionTemplate () {
