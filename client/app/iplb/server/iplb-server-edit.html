@@ -144,6 +144,27 @@
                         data-translate-values="{ lbWeightMax: ctrl.lbWeightMax }"></div>
                 </div>
             </div>
+
+            <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.proxyProtocolVersion.$submitted && ctrl.form.proxyProtocolVersion.$invalid }">
+                <label for="proxyProtocolVersion" class="oui-label" data-translate="iplb_server_preview_proxyProtocolVersion"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <cui-loader data-ng-show="ctrl.proxyProtocolVersions.loading"></cui-loader>
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.proxyProtocolVersion.$invalid }"
+                            data-ng-hide="ctrl.proxyProtocolVersions.loading">
+                            <select class="oui-select__input"
+                                name="proxyProtocolVersion"
+                                id="proxyProtocolVersion"
+                                data-ng-model="ctrl.server.proxyProtocolVersion"
+                                data-ng-options="proxyProtocolVersion as proxyProtocolVersion for proxyProtocolVersion in ctrl.proxyProtocolVersions.data">
+                                <option data-translate="iplb_server_preview_proxyProtocolVersion_placeholder"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </cui-advanced-options>
 
         <div class="cui-form-actions">

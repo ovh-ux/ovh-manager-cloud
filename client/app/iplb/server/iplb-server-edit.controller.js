@@ -27,7 +27,12 @@ class IpLoadBalancerServerEditCtrl {
                     }
                     return this.ServiceHelper.errorHandler("iplb_server_request_error");
                 })
+        });
 
+        this.proxyProtocolVersions = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerServerService.getProxyProtocolVersions(
+                this.$stateParams.serviceName
+            )
         });
 
         this.apiServer = this.ControllerHelper.request.getHashLoader({
@@ -49,6 +54,7 @@ class IpLoadBalancerServerEditCtrl {
         this.lbWeightMax = this.IpLoadBalancerConstant.lbWeightMax;
 
         this.farmTypeLoader.load();
+        this.proxyProtocolVersions.load();
 
         if (this.$stateParams.serverId) {
             this.edition = true;
