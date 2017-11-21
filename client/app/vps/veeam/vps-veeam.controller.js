@@ -1,5 +1,6 @@
 class VpsVeeamCtrl {
-    constructor ($stateParams, $translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+        this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.serviceName = $stateParams.serviceName;
@@ -25,7 +26,7 @@ class VpsVeeamCtrl {
 
     loadVeeamTab () {
         this.loaders.veeamTab = true;
-        this.VpsService.getTabVeeam("available", true)
+        this.VpsService.getTabVeeam(this.serviceName, "available", true)
             .then(data => { this.veeamTab = data})
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.veeamTab = false });
@@ -33,7 +34,7 @@ class VpsVeeamCtrl {
 
     loadRestorePoint () {
         this.loaders.veeamTab = true;
-        this.VpsService.getTabVeeam("restoring", false)
+        this.VpsService.getTabVeeam(this.serviceName, "restoring", false)
             .then(data => {
                 if (data.length) {
                     this.veeam.state = "MOUNTING";
@@ -46,7 +47,7 @@ class VpsVeeamCtrl {
 
     loadVeeam () {
         this.loaders.init = true;
-        this.VpsService.getVeeam()
+        this.VpsService.getVeeam(this.serviceName)
             .then(data => {
                 this.veeam = data;
                 if (data.state !== "disabled") {
@@ -71,11 +72,11 @@ class VpsVeeamCtrl {
     }
 
     restore (restorePoint) {
-        this.VpsActionService.restore(restorePoint);
+        this.VpsActionService.restore(this.serviceName, restorePoint);
     }
 
     mount (restorePoint) {
-        this.VpsActionService.mount(restorePoint);
+        this.VpsActionService.mount(this.serviceName, restorePoint);
     }
 
     dateTemplate () {
