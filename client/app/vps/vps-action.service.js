@@ -4,7 +4,7 @@ class VpsActionService {
     }
 
     password (serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/password/vps-password.html",
                 controller: "VpsPasswordCtrl",
@@ -17,7 +17,7 @@ class VpsActionService {
     }
 
     reboot (serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reboot/vps-reboot.html",
                 controller: "VpsRebootCtrl",
@@ -30,7 +30,7 @@ class VpsActionService {
     }
 
     reinstall (serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reinstall/vps-reinstall.html",
                 controller: "VpsReinstallCtrl",
@@ -43,7 +43,7 @@ class VpsActionService {
     }
 
     kvm (serviceName, hasKVM) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/kvm/vps-kvm.html",
                 controller: "VpsKvmCtrl",
@@ -57,7 +57,7 @@ class VpsActionService {
     }
 
     monitoringSla (serviceName, state) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/monitoring-sla/vps-monitoring-sla.html",
                 controller: "VpsMonitoringSlaCtrl",
@@ -71,7 +71,7 @@ class VpsActionService {
     }
 
     reverseDns (serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reverse-dns/vps-reverse-dns.html",
                 controller: "VpsReverseDnsCtrl",
@@ -84,7 +84,7 @@ class VpsActionService {
     }
 
     editName (displayName, serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/edit-name/vps-edit-name.html",
                 controller: "VpsEditNameCtrl",
@@ -94,11 +94,11 @@ class VpsActionService {
                     serviceName: () => serviceName
                 }
             }
-        })
+        });
     }
 
     deleteSecondaryDns (serviceName, domain) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/secondary-dns/delete-secondary-dns.html",
                 controller: "DeleteSecondaryDnsCtrl",
@@ -112,7 +112,7 @@ class VpsActionService {
     }
 
     addSecondaryDns (serviceName) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/secondary-dns/add-secondary-dns.html",
                 controller: "AddSecondaryDnsCtrl",
@@ -125,7 +125,7 @@ class VpsActionService {
     }
 
     restore (serviceName, restorePoint) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/veeam/restore/vps-restore.html",
                 controller: "VpsRestoreCtrl",
@@ -139,7 +139,7 @@ class VpsActionService {
     }
 
     mount (serviceName, restorePoint) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/veeam/mount/vps-mount.html",
                 controller: "VpsMountCtrl",
@@ -154,7 +154,7 @@ class VpsActionService {
     }
 
     unmount (serviceName, restorePoint) {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/veeam/mount/vps-mount.html",
                 controller: "VpsMountCtrl",
@@ -169,7 +169,7 @@ class VpsActionService {
     }
 
     orderAdditionalDisk () {
-        this.ControllerHelper.modal.showModal({
+        return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/additional-disk/order-disk.html",
                 controller: "OrderAdditionalDiskCtrl",
