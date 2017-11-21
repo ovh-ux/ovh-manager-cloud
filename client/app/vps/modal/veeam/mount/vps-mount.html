@@ -1,6 +1,7 @@
 <cui-modal>
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <cui-modal-body data-title="'vps_configuration_veeam_mount_title' | translate">
+    <!-- Mount -->
+    <cui-modal-body data-title="'vps_configuration_veeam_mount_title' | translate" data-ng-if="$ctrl.mount">
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
@@ -13,6 +14,22 @@
             </p>
         </div>
     </cui-modal-body>
+
+    <!-- Unmount -->
+    <cui-modal-body data-title="'vps_configuration_veeam_umount_title' | translate" data-ng-if="!$ctrl.mount">
+        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+            <oui-loader class="d-inline-block"></oui-loader>
+        </div>
+        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
+            <cui-modal-text data-text="'vps_configuration_veeam_umount_step1_question' | translate"></cui-modal-text>
+
+            <dl class="oui-modal__body-text">
+                <dt data-translate="vps_configuration_veeam_restore_step1_creation"></dt>
+                <dd data-ng-bind="$ctrl.displayDate($ctrl.restorePoint)"></dd>
+            </dl>
+        </div>
+    </cui-modal-body>
+
     <cui-modal-footer>
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
         <cui-submit-button data-text="'common_confirm' | translate"

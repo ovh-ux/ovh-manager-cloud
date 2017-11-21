@@ -146,7 +146,23 @@ class VpsActionService {
                 controllerAs: "$ctrl",
                 resolve: {
                     serviceName: () => serviceName,
-                    RestorePoint: () => restorePoint
+                    RestorePoint: () => restorePoint,
+                    mount: () => true
+                }
+            }
+        });
+    }
+
+    unmount (serviceName, restorePoint) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/veeam/mount/vps-mount.html",
+                controller: "VpsMountCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    RestorePoint: () => restorePoint,
+                    mount: () => false
                 }
             }
         });
