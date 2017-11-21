@@ -38,7 +38,7 @@ class VpsVeeamCtrl {
             .then(data => {
                 if (data.length) {
                     this.veeam.state = "MOUNTING";
-                    this.veeam.restorePoint = data[0];
+                    this.veeam.accessInfos.restorePoint = data[0];
                 }
             })
             .catch(err => this.CloudMessage.error(err))
@@ -77,6 +77,10 @@ class VpsVeeamCtrl {
 
     mount (restorePoint) {
         this.VpsActionService.mount(this.serviceName, restorePoint);
+    }
+
+    unmount (restorePoint) {
+        this.VpsActionService.unmount(this.serviceName, restorePoint);
     }
 
     dateTemplate () {
