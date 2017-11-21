@@ -38,9 +38,9 @@ class VpsAdditionalDiskCtrl {
 
     loadAdditionalDisks () {
         this.loaders.disk = true;
-        this.VpsService.getDisks()
+        this.VpsService.getDisks(this.serviceName)
             .then(data => {
-                const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(elem) });
+                const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(this.serviceName, elem) });
                 return this.$q.all(promises)
                     .then(data => { this.additionnalDisks = this.VpsService.showOnlyAdditionalDisk(data) });
             })
