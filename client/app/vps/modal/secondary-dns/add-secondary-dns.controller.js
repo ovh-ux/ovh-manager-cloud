@@ -1,7 +1,8 @@
 class AddSecondaryDnsCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
+        this.serviceName = serviceName;
         this.CloudMessage = CloudMessage;
         this.VpsService = VpsService;
 
@@ -19,7 +20,7 @@ class AddSecondaryDnsCtrl {
     }
 
     loadAvailableDns () {
-        this.VpsService.getSecondaryDNSAvailable()
+        this.VpsService.getSecondaryDNSAvailable(this.serviceName)
             .then(data => { this.available = data })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_add_fail")))
             .finally(() => { this.loader.init = false });
@@ -32,7 +33,7 @@ class AddSecondaryDnsCtrl {
 
     confirm () {
         this.loader.save = true;
-        this.VpsService.addSecondaryDnsDomain(this.model)
+        this.VpsService.addSecondaryDnsDomain(this.serviceName, this.model)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_secondarydns_add_success")))
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_add_fail")))
             .finally(() => {

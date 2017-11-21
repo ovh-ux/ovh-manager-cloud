@@ -92,9 +92,9 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getTaskInError = function () {
+        this.getTaskInError = function (serviceName) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.get([aapiRootPath, vps.name, "tasks/error"].join("/"), {serviceType: "aapi"}).then(function (data) {
                         result = data.data;
@@ -183,10 +183,10 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get monitoring data
          */
-        this.getMonitoring = function (period) {
+        this.getMonitoring = function (serviceName, period) {
             var monitoring = null,
             p = period != null ? period : "lastday";
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.get([aapiRootPath, vps.name, "monitoring"].join("/"), { serviceType: "aapi", params: { period: p } })
                         .then(function (data) {
@@ -215,9 +215,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * reset VPS password
          */
-        this.resetPassword = function () {
+        this.resetPassword = function (serviceName) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.post([swsVpsProxypass, vps.name, "setPassword"].join("/"))
                         .then(function (data) {
@@ -237,9 +237,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Reboot the VPS
          */
-        this.reboot = function (rescueMode) {
+        this.reboot = function (serviceName, rescueMode) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     var netbootMode = rescueMode ? "rescue" : "local";
                     if (vps.netbootMode === netbootMode.toUpperCase()) {
@@ -319,9 +319,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * return the templates list available for this VPS
          */
-        this.getTemplates = function () {
+        this.getTemplates = function (serviceName) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.get([aapiRootPath, vps.name, "templates"].join("/"), {
                         serviceType: "aapi"
@@ -341,9 +341,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Reinstall the VPS using the template identified by templateId
          */
-        this.reinstall = function (templateId, language, softIds, sshKeys, doNotSendPassword) {
+        this.reinstall = function (serviceName, templateId, language, softIds, sshKeys, doNotSendPassword) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (!templateId) {
                     return $q.reject("No templateId");
                 } else if (vps && vps.name) {
@@ -371,9 +371,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * return the ip list for this VPS
          */
-        this.getIps = function () {
+        this.getIps = function (serviceName) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.get([aapiRootPath, vps.name, "ips"].join("/"), {serviceType: "aapi"}).then(function (data) {
                         result = data.data;
@@ -416,9 +416,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get content of summary tabs
          */
-        this.getTabSummary = function (forceRefresh) {
+        this.getTabSummary = function (serviceName, forceRefresh) {
             var vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name && !vps.isExpired) {
                     vpsName = vps.name;
                     if (forceRefresh) {
@@ -561,9 +561,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get the secondary DNS available for this VPS
          */
-        this.getSecondaryDNSAvailable = function () {
+        this.getSecondaryDNSAvailable = function (serviceName) {
             var vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     var tabSummary = vpsCache.get("tabSecondaryDNS_dns_available");
@@ -606,9 +606,9 @@ angular.module("managerApp").service("VpsService", [
          * Add a domain to the secondary DNS for the VPS
          *
          */
-        this.addSecondaryDnsDomain = function (domain) {
+        this.addSecondaryDnsDomain = function (serviceName, domain) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http["post"]([swsVpsProxypass, vps.name, "secondaryDnsDomains"].join("/"), { domain: domain })
                         .then(function (data) {
@@ -634,9 +634,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * delete the domain from secondary DNS
          */
-        this.deleteSecondaryDnsDomain = function (domain) {
+        this.deleteSecondaryDnsDomain = function (serviceName, domain) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name && domain) {
                     vpsName = vps.name;
                     return $http["delete"]([swsVpsProxypass, vps.name, "secondaryDnsDomains", domain].join("/"))
@@ -890,8 +890,8 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get content of veeam tab
          */
-        this.getVeeamInfo = function () {
-            return self.getSelected().then(function (vps) {
+        this.getVeeamInfo = function (serviceName) {
+            return self.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "automatedBackup"].join("/"))
                     .then(function (response) {
                         return response.data;
@@ -899,8 +899,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getVeeamAttachedBackup = function () {
-            return self.getSelected().then(function (vps) {
+        this.getVeeamAttachedBackup = function (serviceName) {
+            return self.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "automatedBackup/attachedBackup"].join("/"))
                     .then(function (response) {
                         return response.data;
@@ -908,9 +908,9 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getVeeam = function () {
+        this.getVeeam = function (serviceName) {
             var info;
-            return $q.all([self.getVeeamInfo(), self.getVeeamAttachedBackup()])
+            return $q.all([self.getVeeamInfo(serviceName), self.getVeeamAttachedBackup(serviceName)])
                 .then(function (response) {
                     if (response.length > 1) {
                         info = response[0];
@@ -921,11 +921,11 @@ angular.module("managerApp").service("VpsService", [
                 });
         };
 
-        this.getTabVeeam = function (state, forceRefresh) {
+        this.getTabVeeam = function (serviceName, state, forceRefresh) {
             if (forceRefresh) {
                 resetTabVeeam();
             }
-            return self.getSelected().then(function (vps) {
+            return self.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "automatedBackup/restorePoints"].join("/"), {
                     params: {
                         state: state
@@ -937,8 +937,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.veeamRestorePointMount = function (restorePoint) {
-            return this.getSelected().then(function (vps) {
+        this.veeamRestorePointMount = function (serviceName, restorePoint) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.post([swsVpsProxypass, vps.name, "automatedBackup/restore"].join("/"), {
                     changePassword: false,
                     restorePoint: restorePoint,
@@ -951,8 +951,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.veeamRestorePointRestore = function (restorePoint, changePassword) {
-            return this.getSelected().then(function (vps) {
+        this.veeamRestorePointRestore = function (serviceName, restorePoint, changePassword) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.post([swsVpsProxypass, vps.name, "automatedBackup/restore"].join("/"), {
                     changePassword: changePassword,
                     restorePoint: restorePoint,
@@ -965,8 +965,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.veeamRestorePointUmount = function (restorePoint) {
-            return this.getSelected().then(function (vps) {
+        this.veeamRestorePointUmount = function (serviceName, restorePoint) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
 
                 return $http.post([swsVpsProxypass, vps.name, "automatedBackup/detachBackup"].join("/"), {
                     restorePoint: restorePoint
@@ -981,8 +981,8 @@ angular.module("managerApp").service("VpsService", [
         /**
          * Get option veeam
          */
-        this.getVeeamOption = function () {
-            return this.getSelected().then(function (vps) {
+        this.getVeeamOption = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([aapiRootPath, vps.name, "automatedBackup"].join("/"), {
                     serviceType: "aapi",
                     cache: vpsCache
@@ -1007,8 +1007,8 @@ angular.module("managerApp").service("VpsService", [
         /**
          * Update the VPS
          */
-        this.update = function (newValue) {
-            return this.getSelected().then(function (vps) {
+        this.update = function (serviceName, newValue) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                     .then(function (response) {
                         return response.data;
@@ -1035,8 +1035,8 @@ angular.module("managerApp").service("VpsService", [
 
         // BackupStorage ------------------------------------------------------------------------------------
 
-        this.getBackupStorageInformation = function () {
-            return this.getSelected().then(function (vps) {
+        this.getBackupStorageInformation = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([aapiRootPath, vps.name, "backupStorage"].join("/"), {serviceType: "aapi"})
                     .then(function (response) {
                         return response.data;
@@ -1044,11 +1044,11 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getBackupStorageTab = function (count, offset, forceRefresh) {
+        this.getBackupStorageTab = function (serviceName, count, offset, forceRefresh) {
             if (forceRefresh) {
                 vpsTabBackupStorageCache.removeAll();
             }
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([aapiRootPath, vps.name, "backupStorage/access"].join("/"), {
                     serviceType: "aapi",
                     cache: vpsTabBackupStorageCache,
@@ -1142,8 +1142,8 @@ angular.module("managerApp").service("VpsService", [
         };
 
         // Additional disks ------------------------------------------------------------------------------------
-        this.hasAdditionalDiskOption = function () {
-            return this.getSelected().then(function (vps) {
+        this.hasAdditionalDiskOption = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (!_.include(vps.availableOptions, "ADDITIONAL_DISK")) {
                     return $q.reject(additionalDiskHasNoOption);
                 }
@@ -1227,8 +1227,8 @@ angular.module("managerApp").service("VpsService", [
         };
 
         // Service info
-        this.getServiceInfos = function () {
-            return this.getSelected().then(function (vps) {
+        this.getServiceInfos = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "serviceInfos"].join("/")).then(function (response) {
                     return response.data;
                 });
