@@ -34,7 +34,7 @@ class VpsMonitoringSlaCtrl {
 
     confirm () {
         this.loader.save = true;
-        this.VpsService.update({ slaMonitoring: this.state })
+        this.VpsService.update(this.serviceName, { slaMonitoring: this.state })
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_monitoring_sla_ok_" + this.state)))
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_sla_error_" + this.state)))
             .finally(() => {

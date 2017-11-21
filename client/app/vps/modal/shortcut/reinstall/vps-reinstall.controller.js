@@ -1,10 +1,11 @@
 (() => {
     class VpsReinstallCtrl {
-        constructor ($scope, $translate, $uibModalInstance, CloudMessage, SidebarMenu, VpsReinstallService, VpsService) {
+        constructor ($scope, $translate, $uibModalInstance, CloudMessage, serviceName, SidebarMenu, VpsReinstallService, VpsService) {
             this.$scope = $scope;
             this.$translate = $translate;
             this.$uibModalInstance = $uibModalInstance;
             this.CloudMessage = CloudMessage;
+            this.serviceName = serviceName;
             this.SidebarMenu = SidebarMenu;
             this.VpsReinstallService = VpsReinstallService;
             this.VpsService = VpsService;
@@ -31,7 +32,7 @@
         $onInit ()  {
             this.loadSshKeys();
             this.loadSummary();
-            this.VpsService.getTaskInError()
+            this.VpsService.getTaskInError(this.serviceName)
                 .then(tasks => this.loadTemplate(tasks))
                 .catch(err => this.loadTemplate(err));
         }
@@ -40,7 +41,7 @@
             this.template.language = null;
             this.loaders.template = true;
             if (!tasks || !tasks.length) {
-                this.VpsService.getTemplates()
+                this.VpsService.getTemplates(this.serviceName)
                     .then(data => { this.templates = data.results })
                     .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail")))
                     .finally(() => { this.loaders.template = false });
@@ -57,7 +58,7 @@
 
         loadSummary () {
             this.loaders.summary = true;
-            this.VpsService.getTabSummary(true)
+            this.VpsService.getTabSummary(this.serviceName, true)
                 .then(summary => this.summary)
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_summary_error")))
                 .finally(() => { this.loaders.summary = false });
@@ -118,6 +119,7 @@
             }
 
             this.VpsService.reinstall(
+                    this.serviceName,
                     this.template.value.idTemplate,
                     this.getSelectedLanguage(),
                     softIds,

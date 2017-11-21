@@ -48,7 +48,7 @@ class VpsHeaderCtrl {
 
     isInRescueMode (netbootMode) {
         if (netbootMode === "RESCUE"){
-            this.CloudMessage.warning(this.$translate.instant("vps_configuration_reboot_rescue_warning_text"));
+            this.CloudMessage.warning({ textHtml: this.$translate.instant("vps_configuration_reboot_rescue_warning_text") });
         }
     }
 
