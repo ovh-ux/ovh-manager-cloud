@@ -1,0 +1,32 @@
+<div>
+    <h1 class="oui-header_1 oui-header_underline"
+        data-ng-bind-html="$ctrl.formTitle"></h1>
+    <div class="oui-loader oui-loader_m"
+         data-ng-if="!$ctrl.formLoadedCondition"
+         data-ng-attr-aria-label="{{ 'common_loading' | translate }}"
+         aria-label="{{ 'common_loading' | translate }}">
+        <div class="oui-loader__container">
+            <div class="oui-loader__image"></div>
+        </div>
+    </div>
+    <div class="oui-list_steps oui-list_separated mt-5"
+         data-ng-if="$ctrl.formLoadedCondition">
+        <ol class="oui-list__items"
+            data-ng-transclude></ol>
+    </div>
+    <div>
+        <button class="btn btn-default"
+                data-ng-click="$ctrl.formCancelledFunction()"
+                data-ng-if="$ctrl.formCancelledFunction">
+            <span data-translate="common_cancel"></span>
+        </button>
+
+        <button class="btn btn-primary"
+                data-ng-class="{ 'disabled': !stepFormValid }"
+                data-ng-disabled="$ctrl.formDisabledCondition"
+                data-ng-if="$ctrl.formCompletedCondition"
+                data-ng-click="$ctrl.formCompletedFunction()">
+            <span data-translate="common_confirm"></span>
+        </button>
+    </div>
+</div>
