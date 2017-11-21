@@ -1,5 +1,6 @@
 class VpsSecondaryDnsCtrl {
-    constructor (CloudMessage, VpsActionService ,VpsService) {
+    constructor ($stateParams, CloudMessage, VpsActionService, VpsService) {
+        this.serviceName = $stateParams.serviceName;
         this.CloudMessage = CloudMessage;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
@@ -24,11 +25,11 @@ class VpsSecondaryDnsCtrl {
     }
 
     add () {
-        this.VpsActionService.addSecondaryDns();
+        this.VpsActionService.addSecondaryDns(this.serviceName);
     }
 
     deleteOne (domain) {
-        this.VpsActionService.deleteSecondaryDns(domain);
+        this.VpsActionService.deleteSecondaryDns(this.serviceName, domain);
     }
 
     actionTemplate () {

@@ -3,32 +3,41 @@ class VpsActionService {
         this.ControllerHelper = ControllerHelper;
     }
 
-    password () {
+    password (serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/password/vps-password.html",
                 controller: "VpsPasswordCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
             }
         });
     }
 
-    reboot () {
+    reboot (serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reboot/vps-reboot.html",
                 controller: "VpsRebootCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
             }
         });
     }
 
-    reinstall () {
+    reinstall (serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reinstall/vps-reinstall.html",
                 controller: "VpsReinstallCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
             }
         });
     }
@@ -61,12 +70,15 @@ class VpsActionService {
         });
     }
 
-    reverseDns () {
+    reverseDns (serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/reverse-dns/vps-reverse-dns.html",
                 controller: "VpsReverseDnsCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
             }
         });
     }
@@ -85,49 +97,55 @@ class VpsActionService {
         })
     }
 
-    deleteSecondaryDns (domain) {
+    deleteSecondaryDns (serviceName, domain) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/secondary-dns/delete-secondary-dns.html",
                 controller: "DeleteSecondaryDnsCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
+                    serviceName: () => serviceName,
                     domain: () => domain
                 }
             }
         });
     }
 
-    addSecondaryDns () {
+    addSecondaryDns (serviceName) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/secondary-dns/add-secondary-dns.html",
                 controller: "AddSecondaryDnsCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
             }
         });
     }
 
-    restore (restorePoint) {
+    restore (serviceName, restorePoint) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/veeam/restore/vps-restore.html",
                 controller: "VpsRestoreCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
+                    serviceName: () => serviceName,
                     RestorePoint: () => restorePoint
                 }
             }
         });
     }
 
-    mount (restorePoint) {
+    mount (serviceName, restorePoint) {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/veeam/mount/vps-mount.html",
                 controller: "VpsMountCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
+                    serviceName: () => serviceName,
                     RestorePoint: () => restorePoint
                 }
             }

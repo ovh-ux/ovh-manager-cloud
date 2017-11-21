@@ -1,5 +1,6 @@
 class VpsBackupStorageCtrl {
-    constructor ($translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($stateParams ,$translate, CloudMessage, VpsActionService ,VpsService) {
+        this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.VpsActionService = VpsActionService;
@@ -20,7 +21,7 @@ class VpsBackupStorageCtrl {
 
     loadInformation () {
         this.loaders.information = true;
-        this.VpsService.getBackupStorageInformation()
+        this.VpsService.getBackupStorageInformation(this.serviceName)
             .then((backupInfo) => {
                 this.backup.information = backupInfo;
                 if (backupInfo.activated === true && backupInfo.quota) {
@@ -41,7 +42,7 @@ class VpsBackupStorageCtrl {
 
     loadBackup () {
         this.loaders.init = true;
-        this.VpsService.getBackupStorageTab()
+        this.VpsService.getBackupStorageTab(this.serviceName)
             .then(data => { this.backup.table = data })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.init = false });
@@ -54,13 +55,13 @@ class VpsBackupStorageCtrl {
         return this.$translate.instant("vps_tab_backup_storage_table_ip_disable");
     }
 
-    add () {
-        this.VpsActionService.addSecondaryDns();
-    }
+    // add () {
+    //     this.VpsActionService.orderBackupStorage(this.serviceName);
+    // }
 
-    deleteOne (domain) {
-        this.VpsActionService.deleteSecondaryDns(domain);
-    }
+    // deleteOne (backup) {
+    //     this.VpsActionService.deleteBackupStorage(this.serviceName, backup);
+    // }
 
     actionTemplate () {
         return `

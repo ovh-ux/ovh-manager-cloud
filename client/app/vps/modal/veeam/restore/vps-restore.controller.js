@@ -1,9 +1,10 @@
 class VpsRestoreCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, RestorePoint, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, RestorePoint, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.RestorePoint = RestorePoint;
+        this.serviceName = serviceName;
         this.VpsService = VpsService;
 
         this.attachedBackup = null;
@@ -18,7 +19,7 @@ class VpsRestoreCtrl {
 
     $onInit () {
         this.loader.init = true;
-        this.VpsService.getVeeamAttachedBackup()
+        this.VpsService.getVeeamAttachedBackup(this.serviceName)
             .then(data => { this.attachedBackup = data.length })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loader.init = false });
@@ -35,7 +36,7 @@ class VpsRestoreCtrl {
 
     confirm () {
         this.loader.save = true;
-        this.VpsService.veeamRestorePointRestore(this.RestorePoint, this.selected.changePassword)
+        this.VpsService.veeamRestorePointRestore(this.serviceName, this.RestorePoint, this.selected.changePassword)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_restore_success")))
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_restore_fail")))
             .finally(() => {

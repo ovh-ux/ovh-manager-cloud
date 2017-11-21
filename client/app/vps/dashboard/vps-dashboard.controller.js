@@ -46,7 +46,7 @@ class VpsDashboardCtrl {
 
     loadIps () {
         this.loaders.ips = true;
-        this.VpsService.getIps().then(ips => {
+        this.VpsService.getIps(this.serviceName).then(ips => {
             this.vps.ips = ips.results;
             this.vps.ipv6Gateway = _.get(_.find(ips.results, { version: "v6" }), "gateway");
             this.loaders.ips = false;
@@ -56,7 +56,7 @@ class VpsDashboardCtrl {
     loadSummary () {
         this.loaders.summary = true;
         this.hasAdditionalDisk();
-        this.VpsService.getTabSummary(true)
+        this.VpsService.getTabSummary(this.serviceName, true)
             .then(summary => { this.summary = summary })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.summary = false });
@@ -64,7 +64,7 @@ class VpsDashboardCtrl {
 
     loadPlan () {
         this.loaders.plan = true;
-        this.VpsService.getServiceInfos()
+        this.VpsService.getServiceInfos(this.serviceName)
             .then((data) => {
                 this.plan = data;
                 if (!_.isEmpty(this.vps)) {
@@ -76,7 +76,7 @@ class VpsDashboardCtrl {
     }
 
     hasAdditionalDisk () {
-        this.VpsService.hasAdditionalDiskOption()
+        this.VpsService.hasAdditionalDiskOption(this.serviceName)
             .then(() => { this.hasAdditionalDisk = true })
             .catch(() => { this.hasAdditionalDisk = false });
     }
@@ -88,19 +88,19 @@ class VpsDashboardCtrl {
     setAction (action) {
         switch (action) {
             case "password":
-                this.VpsActionService.password();
+                this.VpsActionService.password(this.serviceName);
                 break;
             case "reboot":
-                this.VpsActionService.reboot();
+                this.VpsActionService.reboot(this.serviceName);
                 break;
             case "reinstall":
-                this.VpsActionService.reinstall();
+                this.VpsActionService.reinstall(this.serviceName);
                 break;
             case "kvm":
                 this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM);
                 break;
             case "reverse-dns":
-                this.VpsActionService.reverseDns();
+                this.VpsActionService.reverseDns(this.serviceName);
                 break;
             case "monitoring-sla":
                 this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring);
