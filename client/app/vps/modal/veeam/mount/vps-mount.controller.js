@@ -1,8 +1,9 @@
 class VpsMountCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, RestorePoint, serviceName, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, mount, RestorePoint, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
+        this.mount = mount
         this.RestorePoint = RestorePoint;
         this.serviceName = serviceName;
         this.VpsService = VpsService;
@@ -22,6 +23,10 @@ class VpsMountCtrl {
             .finally(() => { this.loader.init = false });
     }
 
+    displayDate (date) {
+        return moment(date).format('LLL');
+    }
+
     cancel () {
         this.$uibModalInstance.dismiss();
 
@@ -29,13 +34,24 @@ class VpsMountCtrl {
 
     confirm () {
         this.loader.save = true;
-        this.VpsService.veeamRestorePointMount(this.serviceName, this.RestorePoint)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
-            .finally(() => {
-                this.loader.save = false;
-                this.$uibModalInstance.close();
-            });
+        if ($ctrl.mount) {
+            this.VpsService.veeamRestorePointMount(this.serviceName, this.RestorePoint)
+                .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
+                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
+                .finally(() => {
+                    this.loader.save = false;
+                    this.$uibModalInstance.close();
+                });
+        } else {
+            this.VpsService.veeamRestorePointUmount(this.serviceName, this.RestorePoint)
+                .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
+                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
+                .finally(() => {
+                    this.loader.save = false;
+                    this.$uibModalInstance.close();
+                });
+        }
+
     }
 
 
