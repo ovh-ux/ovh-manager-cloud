@@ -6,22 +6,29 @@ class VpsSecondaryDnsCtrl {
         this.VpsService = VpsService;
 
         this.loaders = {
-            init: false
+            init: true
         };
-        this.secondaryDns = {};
+        this.secondaryDns = [undefined];
 
     }
 
     $onInit () {
+        this.refreshSecondaryDnsList();
+    }
+
+    refreshSecondaryDnsList () {
         this.loaders.init = true;
-        this.loadSecondaryDns();
+        this.loadSecondaryDns()
+            .finally(() => { this.loaders.init = false; });
     }
 
     loadSecondaryDns () {
-        this.VpsService.getTabSecondaryDns()
-            .then(data => { this.secondaryDns = data })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.init = false });
+        return this.VpsService.getTabSecondaryDns()
+            .then(data => {
+                this.secondaryDns = data;
+                return data.list.results;
+            })
+            .catch(err => this.CloudMessage.error(err));
     }
 
     add () {
