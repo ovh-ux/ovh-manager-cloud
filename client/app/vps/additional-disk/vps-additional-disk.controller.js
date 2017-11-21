@@ -1,6 +1,7 @@
 class VpsAdditionalDiskCtrl {
-    constructor ($q, $translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($q, $stateParams, $translate, CloudMessage, VpsActionService ,VpsService) {
         this.$q = $q;
+        this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.VpsActionService = VpsActionService;
@@ -21,13 +22,13 @@ class VpsAdditionalDiskCtrl {
 
     hasAdditionalDisk () {
         this.loaders.init = true;
-        this.VpsService.hasAdditionalDiskOption()
+        this.VpsService.hasAdditionalDiskOption(this.serviceName)
             .then(() => { this.hasAdditionalDiskOption = true })
             .catch(() => {
                 this.CloudMessage.error(this.$translate.instant("vps_additional_disk_info_fail"));
                 this.hasAdditionalDiskOption = false;
             })
-            .finally(() => { 
+            .finally(() => {
                 this.loaders.init = false;
                 if (this.hasAdditionalDiskOption) {
                     this.loadAdditionalDisks();
