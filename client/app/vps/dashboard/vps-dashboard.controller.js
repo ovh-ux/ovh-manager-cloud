@@ -122,6 +122,11 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
                 isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+            },
+            manageIps: {
+                text: this.$translate.instant("vps_configuration_add_ipv4_title_button"),
+                href: this.ControllerHelper.navigation.getUrl("ip", { serviceName: this.serviceName }),
+                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
             }// ,
             // changeOwner: {
             //     text: this.$translate.instant("vps_change_owner"),
@@ -129,15 +134,6 @@ class VpsDashboardCtrl {
             //     isAvailable: () => !this.plan.loading && !this.plan.hasErrors
             // }
         };
-    }
-
-    switchSLA (state) {
-        this.VpsService.update({ slaMonitoring: state })
-            .then(() => {
-                this.vps.slaMonitoring = state;
-                this.CloudMessage.success(this.$translate.instant("vps_configuration_monitoring_sla_ok_" + state));
-            })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_sla_error_" + state)));
     }
 
 }
