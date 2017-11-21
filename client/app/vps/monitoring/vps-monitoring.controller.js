@@ -1,8 +1,9 @@
 class VpsMonitoringCtrl {
-    constructor ($q, $translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($q, $stateParams, $translate, CloudMessage, VpsActionService ,VpsService) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
+        this.serviceName = $stateParams.serviceName;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
 
@@ -27,7 +28,7 @@ class VpsMonitoringCtrl {
     loadMonitoring () {
         this.loaders.init = true;
         this.reset();
-        this.VpsService.getMonitoring(this.period)
+        this.VpsService.getMonitoring(this.serviceName, this.period)
             .then((data) => {
                 this.data = data;
                 this.humanizeData(data.cpu.values[0].points, this.monitoring.cpu);
