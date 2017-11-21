@@ -1,0 +1,26 @@
+<li class="oui-list__item oui-list__group"
+    data-ng-class="{
+        'oui-list__item_disabled': $ctrl.stepDisabledCondition,
+        'oui-list__item_complete': $ctrl.stepCompletedCondition
+    }">
+    <span class="oui-list__header">
+        <span data-ng-bind-html="$ctrl.stepTitle"></span>
+    </span>
+    <div class="oui-list__description"
+         data-ng-if="!$ctrl.stepDisabledCondition"
+         data-ng-init="$ctrl.stepInitFunction()">
+
+        <div class="oui-loader oui-loader_m"
+             data-ng-if="!$ctrl.stepLoadedCondition"
+             data-ng-attr-aria-label="{{ 'common_loading' | translate }}"
+             aria-label="{{ 'common_loading' | translate }}">
+            <div class="oui-loader__container">
+                <div class="oui-loader__image"></div>
+            </div>
+        </div>
+
+        <div data-ng-if="$ctrl.stepLoadedCondition"
+             data-ng-transclude></div>
+    </div>
+</li>
+
