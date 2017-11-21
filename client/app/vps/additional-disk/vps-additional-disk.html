@@ -1,7 +1,7 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.disk"
          class="text-center">
-        <oui-loader size="l" class="d-inline-block"></oui-loader>
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
     </div>
     <!-- Has not additional disk option -->
     <div data-ng-if="!$ctrl.hasAdditionalDiskOption && !$ctrl.loaders.init && !$ctrl.loaders.disk">
@@ -9,23 +9,23 @@
     </div>
 
     <div data-ng-if="$ctrl.hasAdditionalDiskOption && !$ctrl.loaders.disk">
-    <button type="button"
-            class="oui-button oui-button_secondary"
-            data-translate="vps_additional_disk_add_button"
-            data-ng-click="$ctrl.order()"></button>
+        <button type="button"
+                class="oui-button oui-button_secondary"
+                data-translate="vps_additional_disk_add_button"
+                data-ng-click="$ctrl.order()"></button>
 
-    <oui-table rows="$ctrl.additionnalDisks"
-               rows-loader="$ctrl.loaders.disk">
-        <column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
-            <span data-ng-bind="$row.id"></span>
-        </column>
-        <column title="'vps_tab_additional_disk_header_size' | translate" property="size" sortable>
-            <span data-ng-bind="$row.size"></span>
-        </column>
-        <column title="'vps_tab_additional_disk_header_state' | translate" property="state" sortable>
-            <span data-ng-bind="'vps_tab_additional_disk_state_' + $row.state | translate"></span>
-        </column>
-    </oui-table>
+        <oui-table rows="$ctrl.additionnalDisks"
+                   rows-loader="$ctrl.loaders.disk">
+            <column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
+                <span data-ng-bind="$row.id"></span>
+            </column>
+            <column title="'vps_tab_additional_disk_header_size' | translate" property="size" sortable>
+                <span data-ng-bind="$row.size"></span>
+            </column>
+            <column title="'vps_tab_additional_disk_header_state' | translate" property="state" sortable>
+                <span data-ng-bind="'vps_tab_additional_disk_state_' + $row.state | translate"></span>
+            </column>
+        </oui-table>
     </div>
 
 </section>
