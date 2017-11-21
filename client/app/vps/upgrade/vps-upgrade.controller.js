@@ -30,18 +30,7 @@ class VpsUpgradeCtrl {
     }
 
     loadNextStep (step) {
-        this.step = (step || this.step) + 1;
-        switch (this.step) {
-            case 1:
-                this.loadUpgradesList();
-                break;
-            case 2:
-                this.upgradeVps();
-                this.loadNextStep();
-                break;
-            default:
-                break;
-        }
+        this.step = step || this.step + 1;
     }
 
     getCurrentModel () {
