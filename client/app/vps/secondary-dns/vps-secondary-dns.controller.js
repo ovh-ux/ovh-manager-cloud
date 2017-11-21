@@ -32,11 +32,13 @@ class VpsSecondaryDnsCtrl {
     }
 
     add () {
-        this.VpsActionService.addSecondaryDns(this.serviceName);
+        this.VpsActionService.addSecondaryDns(this.serviceName)
+            .finally(() => this.refreshSecondaryDnsList());
     }
 
     deleteOne (domain) {
-        this.VpsActionService.deleteSecondaryDns(this.serviceName, domain);
+        this.VpsActionService.deleteSecondaryDns(this.serviceName, domain)
+            .finally(() => this.refreshSecondaryDnsList());
     }
 
     actionTemplate () {
