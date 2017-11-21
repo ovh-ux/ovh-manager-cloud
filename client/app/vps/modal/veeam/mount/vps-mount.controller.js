@@ -1,9 +1,10 @@
 class VpsMountCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, RestorePoint, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, RestorePoint, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.RestorePoint = RestorePoint;
+        this.serviceName = serviceName;
         this.VpsService = VpsService;
 
         this.attachedBackup = null;
@@ -15,7 +16,7 @@ class VpsMountCtrl {
 
     $onInit () {
         this.loader.init = true;
-        this.VpsService.getVeeamAttachedBackup()
+        this.VpsService.getVeeamAttachedBackup(this.serviceName)
             .then(data => { this.attachedBackup = data.length })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loader.init = false });
@@ -28,7 +29,7 @@ class VpsMountCtrl {
 
     confirm () {
         this.loader.save = true;
-        this.VpsService.veeamRestorePointMount(this.RestorePoint)
+        this.VpsService.veeamRestorePointMount(this.serviceName, this.RestorePoint)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
             .finally(() => {
