@@ -1203,16 +1203,16 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getDisks = function () {
-            return this.getSelected().then(function (vps) {
+        this.getDisks = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "disks"].join("/")).then(function (response) {
                     return response.data;
                 });
             });
         };
 
-        this.getDiskInfo = function (id) {
-            return this.getSelected().then(function (vps) {
+        this.getDiskInfo = function (serviceName, id) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "disks", id].join("/")).then(function (response) {
                     return response.data;
                 });
@@ -1235,8 +1235,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.isAutoRenewable = function () {
-            return this.getSelected().then(function (vps) {
+        this.isAutoRenewable = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return (moment(vps.expiration).diff(moment().date(), 'days') > 0);
             });
         };
