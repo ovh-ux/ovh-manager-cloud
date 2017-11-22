@@ -29,7 +29,7 @@ class VpsMonitoringCtrl {
         this.loaders.init = true;
         this.reset();
         this.VpsService.getMonitoring(this.serviceName, this.period)
-            .then((data) => {
+            .then(data => {
                 this.data = data;
                 this.humanizeData(data.cpu.values[0].points, this.monitoring.cpu);
                 this.humanizeData(data.ram.values[0].points, this.monitoring.ram);
@@ -67,7 +67,15 @@ class VpsMonitoringCtrl {
     }
 
     loadOptions () {
-        //this.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+        // this.datasetOverride =
+        // [{
+        //     yAxisID: 'y-axis-1',
+        //     borderColor: 'rgb(54, 162, 235)'
+        //  }, {
+        //     yAxisID: 'y-axis-2',
+        //     borderColor: 'rgb(255, 159, 64)'
+        // }];
+        this.colors = ['#F1C40F', '#3498DB', '#717984', '#72C02C'];
         this.series = [this.$translate.instant("vps_monitoring_network_netRx"), this.$translate.instant("vps_monitoring_network_netTx")];
         this.option1 = {
             scales: {
