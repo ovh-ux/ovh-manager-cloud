@@ -60,49 +60,13 @@
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
                     <li class="cui-tile__item">
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.ping == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.ping == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_ping"></span>
-                        </div>
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.ssh == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.ssh == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_ssh"></span>
-                        </div>
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.http == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.http == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_http"></span>
-                        </div>
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.https == 'OK',
-                                                   'oui-icon-error_circle': $ctrl.vps.https == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_https"></span>
-                        </div>
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.dns == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.dns == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_dns"></span>
-                        </div>
-                        <div class="cui-tile__button">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.smtp == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.smtp == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_smtp"></span>
-                        </div>
-                        <div class="cui-tile__button"
-                             data-ng-if="$ctrl.vps.tools">
-                            <i class="oui-icon oui-icon_bicolor"
-                               data-ng-class="{ 'oui-icon-success_circle': $ctrl.vps.tools == 'OK',
-                                                'oui-icon-error_circle': $ctrl.vps.tools == 'KO'}"></i>
-                            <span data-translate="vps_dashboard_tools"></span>
-                        </div>
+                        <vps-tile-status-item data-item="$ctrl.vps.ping" data-text="'vps_dashboard_ping' | translate" data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.ssh" data-text="'vps_dashboard_ssh' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.http" data-text="'vps_dashboard_http' | translate" data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.https" data-text="'vps_dashboard_https' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.dns" data-text="'vps_dashboard_dns' | translate" data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.smtp" data-text="'vps_dashboard_smtp' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.tools" data-text="'vps_dashboard_tools' | translate" data-striped="true"></vps-tile-status-item>
                     </li>
                 </ul>
             </cui-tile>
