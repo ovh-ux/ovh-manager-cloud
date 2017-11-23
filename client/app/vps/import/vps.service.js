@@ -1062,8 +1062,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getBackupStorageAuthorizableBlocks = function () {
-            return this.getSelected().then(function (vps) {
+        this.getBackupStorageAuthorizableBlocks = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([aapiRootPath, vps.name, "backupStorage/access/authorizableBlocks"].join("/"), {serviceType: "aapi"})
                     .then(function (response) {
                         return response.data;
@@ -1071,8 +1071,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.postBackupStorageAccess = function (ipBlocksList, ftp, nfs, cifs) {
-            return this.getSelected().then(function (vps) {
+        this.postBackupStorageAccess = function (serviceName, ipBlocksList, ftp, nfs, cifs) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.post([aapiRootPath, vps.name, "backupStorage/access/add"].join("/"), {
                     ipBlocksList: ipBlocksList,
                     ftp: ftp,
@@ -1084,8 +1084,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.putBackupStorageAccess = function (ipBlock, ftp, nfs, cifs) {
-            return this.getSelected().then(function (vps) {
+        this.putBackupStorageAccess = function (serviceName, ipBlock, ftp, nfs, cifs) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.put([swsVpsProxypass, vps.name, "backupftp", "access", encodeURIComponent(ipBlock)].join("/"), {
                     ftp: ftp,
                     nfs: nfs,
@@ -1096,8 +1096,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.deleteBackupStorageAccess = function (ipBlock) {
-            return this.getSelected().then(function (vps) {
+        this.deleteBackupStorageAccess = function (serviceName, ipBlock) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http["delete"]([swsVpsProxypass, vps.name, "backupftp", "access", encodeURIComponent(ipBlock)].join("/"))
                     .then(function (response) {
                         return response.data;
