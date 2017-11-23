@@ -15,7 +15,11 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("iaas.vps.detail", {
             url: "/{serviceName}",
+            params: {
+                displayName: null
+            },
             views: {
+                vpsHeader,
                 vpsContainer: {
                     templateUrl: "app/vps/vps-detail.html",
                     controller: "VpsDetailCtrl",
@@ -26,7 +30,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.dashboard", {
             url: "/dashboard",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/dashboard/vps-dashboard.html",
                     controller: "VpsDashboardCtrl",
@@ -37,7 +40,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.secondary-dns", {
             url: "/secondary-dns",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/secondary-dns/vps-secondary-dns.html",
                     controller: "VpsSecondaryDnsCtrl",
@@ -48,7 +50,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.backup-storage", {
             url: "/backup-storage",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/backup-storage/vps-backup-storage.html",
                     controller: "VpsBackupStorageCtrl",
@@ -59,7 +60,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.veeam", {
             url: "/veeam",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/veeam/vps-veeam.html",
                     controller: "VpsVeeamCtrl",
@@ -70,7 +70,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.additional-disk", {
             url: "/additional-disk",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/additional-disk/vps-additional-disk.html",
                     controller: "VpsAdditionalDiskCtrl",
@@ -81,7 +80,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("iaas.vps.detail.monitoring", {
             url: "/monitoring",
             views: {
-                vpsHeader,
                 vpsContent: {
                     templateUrl: "app/vps/monitoring/vps-monitoring.html",
                     controller: "VpsMonitoringCtrl",
