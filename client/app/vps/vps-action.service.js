@@ -124,6 +124,33 @@ class VpsActionService {
         });
     }
 
+    deleteBackupStorage (serviceName, access) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/backup-storage/delete-backup-storage.html",
+                controller: "DeleteBackupStorageCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    access: () => access
+                }
+            }
+        });
+    }
+
+    addBackupStorage (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/backup-storage/add-backup-storage.html",
+                controller: "AddBackupStorageCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
     restore (serviceName, restorePoint) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
