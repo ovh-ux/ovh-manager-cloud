@@ -7,8 +7,8 @@ class VpsHeaderCtrl {
         this.Notification = Notification;
         this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
         this.serviceName = $stateParams.serviceName;
+        this.description = $stateParams.displayName || $stateParams.serviceName;
         this.VpsService = VpsService;
-
         this.loaders = {
             init: false
         };
