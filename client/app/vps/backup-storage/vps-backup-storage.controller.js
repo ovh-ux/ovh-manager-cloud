@@ -55,13 +55,13 @@ class VpsBackupStorageCtrl {
         return this.$translate.instant("vps_tab_backup_storage_table_ip_disable");
     }
 
-    // add () {
-    //     this.VpsActionService.orderBackupStorage(this.serviceName);
-    // }
+    add () {
+        this.VpsActionService.addBackupStorage(this.serviceName);
+    }
 
-    // deleteOne (backup) {
-    //     this.VpsActionService.deleteBackupStorage(this.serviceName, backup);
-    // }
+    deleteOne (access) {
+        this.VpsActionService.deleteBackupStorage(this.serviceName, access);
+    }
 
     actionTemplate () {
         return `
@@ -77,7 +77,7 @@ class VpsBackupStorageCtrl {
                             <button class="oui-button oui-button_link oui-action-menu-item__label"
                                 type="button"
                                 data-translate="common_delete"
-                                data-ng-click="$ctrl.deleteOne($row)"></button>
+                                data-ng-click="$ctrl.deleteOne($row.ipBlock)"></button>
                         </div>
                     </div>
                 </cui-dropdown-menu-body>
