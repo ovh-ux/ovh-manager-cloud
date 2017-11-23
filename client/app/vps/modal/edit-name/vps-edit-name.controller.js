@@ -5,7 +5,7 @@
             this.$translate = $translate;
             this.$uibModalInstance = $uibModalInstance;
             this.CloudMessage = CloudMessage;
-            this.SidebarMenu = SidebarMenu
+            this.SidebarMenu = SidebarMenu;
             this.VpsService = VpsService;
 
             this.loaders = {
