@@ -1,15 +1,10 @@
-angular.module("managerApp").filter("pluralize", function ($translate, $log) {
+angular.module("managerApp").filter("pluralize", ($translate, $log) => {
     "use strict";
+    const exist = translateId => $translate.instant(translateId) !== translateId;
 
-    function exist (translateId) {
-        return $translate.instant(translateId) !== translateId;
-    }
+    const validateId = id => exist(id) ? id : undefined;
 
-    function validateId (id) {
-        return exist(id) ? id : undefined;
-    }
-
-    return function (translateId, counter, vars) {
+    return (translateId, counter, vars) => {
         let key;
 
         counter = parseFloat(counter);
