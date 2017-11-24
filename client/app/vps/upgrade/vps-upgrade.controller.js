@@ -1,9 +1,10 @@
 class VpsUpgradeCtrl {
-    constructor ($filter, $translate, $q, VpsService) {
+    constructor ($filter, $translate, $q, VpsService, CloudMessage) {
         this.$filter = $filter;
         this.$translate = $translate;
         this.$q = $q;
         this.Vps = VpsService;
+        this.CloudMessage = CloudMessage;
 
         this.loaders = {
             init: false
@@ -23,12 +24,6 @@ class VpsUpgradeCtrl {
         this.loadNextStep();
     }
 
-    canLoadNextStep (condition, step) {
-        if (condition) {
-            this.loadNextStep(step);
-        }
-    }
-
     loadNextStep (step) {
         this.step = step || this.step + 1;
     }
@@ -43,16 +38,16 @@ class VpsUpgradeCtrl {
             return this.Vps.upgradesList().then(data => {
                 this.upgradesList = data.results;
                 return data;
-            }).catch(data => {
-                this.resetAction();
-                return this.$q.reject(data);
+            }).catch(err => {
+                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
+                return this.$q.reject(err);
             }).finally(() => {
                 this.loaders.step1 = false;
             });
         }
     }
 
-    upgradeVps () {
+    initVpsConditions () {
         this.loaders.step2 = true;
         this.order = null;
         const modelToUpgradeTo = $.grep(this.upgradesList, e => { return e.model === this.selectedModel.model; });
@@ -63,9 +58,9 @@ class VpsUpgradeCtrl {
                 this.selectedModelForUpgrade.duration.dateFormatted = this.$filter("date")(this.selectedModelForUpgrade.duration.date, "dd/MM/yyyy");
                 this.order = data;
                 return data;
-            }).catch(data => {
-                this.resetAction();
-                return this.$q.reject(data);
+            }).catch(err => {
+                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
+                return this.$q.reject(err);
             }).finally(() => {
                 this.loaders.step2 = false;
             });
@@ -73,7 +68,6 @@ class VpsUpgradeCtrl {
     }
 
     displayBC () {
-        this.resetAction();
         window.open(
             this.order.url,
             "_blank"
