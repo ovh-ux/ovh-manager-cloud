@@ -52,10 +52,11 @@
                             </label>
                         </div>
                         <div>
-                            <div>
-                                {{ 'vps_configuration_upgradevps_step1_warning' | translate:'{ monthPrice: $ctrl.getCurrentModel().monthPrice }' }}
+                            <div data-translate="vps_configuration_upgradevps_step1_warning"
+                                 data-translate-values="{ monthPrice: $ctrl.getCurrentModel().monthPrice }">
                             </div>
-                            <small class="mt-4 font-italic" data-translate="vps_configuration_upgradevps_step1_warning2"></small>
+                            <small class="mt-4 font-italic"
+                                   data-translate="vps_configuration_upgradevps_step1_warning2"></small>
                         </div>
                     </cui-wizard-step>
 
@@ -77,8 +78,12 @@
                                      data-step-disabled="$ctrl.step < 3"
                                      data-step-completed="$ctrl.step > 3">
 
-                        <div class="orange">{{ 'vps_configuration_upgradevps_step2_question' | translate:'{ vpsName: $ctrl.vps.name, modelName: $ctrl.selectedModelForUpgrade.name}' }}</div>
-                        <div class="mt-3">{{ 'vps_configuration_upgradevps_step2_question2' | translate:'{ duration: $ctrl.selectedModelForUpgrade.duration.dateFormatted}' }}</div>
+                        <div class="orange"
+                             data-translate="vps_configuration_upgradevps_step2_question"
+                             data-translate-values="{ vpsName: $ctrl.vps.name, modelName: $ctrl.selectedModelForUpgrade.name}"></div>
+                        <div class="mt-3"
+                             data-translate="vps_configuration_upgradevps_step2_question2"
+                             data-translate-values="{ duration: $ctrl.selectedModelForUpgrade.duration.dateFormatted}"></div>
                         <dl class="dl-horizontal mt-3">
                             <dt class="bold"
                                 data-translate="vps_configuration_upgradevps_step2_totalHT"></dt>
@@ -89,8 +94,9 @@
                             <dd class="red bold"
                                 data-ng-bind="$ctrl.order.prices.withTax.text"></dd>
                         </dl>
-                        <div class="mt-3">
-                            {{ 'vps_configuration_upgradevps_step2_price_by_month' | translate:'{ monthPrice: $ctrl.selectedModelForUpgrade.monthPrice}' }}">
+                        <div class="mt-3"
+                             data-translate="vps_configuration_upgradevps_step2_price_by_month"
+                             data-translate-values="{ monthPrice: $ctrl.selectedModelForUpgrade.monthPrice}">
                         </div>
                         <div class="mt-4 orange"
                              data-translate="vps_configuration_upgradevps_step2_confirm"></div>
