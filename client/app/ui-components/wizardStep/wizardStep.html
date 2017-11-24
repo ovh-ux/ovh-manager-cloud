@@ -10,14 +10,8 @@
          data-ng-if="!$ctrl.stepDisabledCondition"
          data-ng-init="$ctrl.stepInitFunction()">
 
-        <div class="oui-loader oui-loader_m"
-             data-ng-if="!$ctrl.stepLoadedCondition"
-             data-ng-attr-aria-label="{{ 'common_loading' | translate }}"
-             aria-label="{{ 'common_loading' | translate }}">
-            <div class="oui-loader__container">
-                <div class="oui-loader__image"></div>
-            </div>
-        </div>
+        <oui-loader size="m"
+                    data-ng-if="!$ctrl.stepLoadedCondition"></oui-loader>
 
         <div data-ng-if="$ctrl.stepLoadedCondition"
              data-ng-transclude></div>
