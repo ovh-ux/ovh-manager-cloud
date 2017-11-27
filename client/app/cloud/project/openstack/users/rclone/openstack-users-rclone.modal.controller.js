@@ -1,9 +1,10 @@
 class CloudProjectOpenstackUsersRcloneModalCtrl {
-    constructor ($stateParams, $uibModalInstance, CloudProjectOpenstackUsersRcloneService, ControllerHelper) {
+    constructor ($stateParams, $uibModalInstance, CloudProjectOpenstackUsersRcloneService, ControllerHelper, openstackUser) {
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudProjectOpenstackUsersRcloneService = CloudProjectOpenstackUsersRcloneService;
         this.ControllerHelper = ControllerHelper;
+        this.openstackUser = openstackUser;
 
         this.projectId = $stateParams.projectId;
 
@@ -27,7 +28,9 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
     }
 
     confirm () {
-        this.$uibModalInstance.close();
+        this.CloudProjectOpenstackUsersRcloneService.getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
+            .then(response => this.ControllerHelper.downloadUrl(response.url))
+            .finally(() => this.$uibModalInstance.close());
     }
 
     cancel () {
