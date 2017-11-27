@@ -1,6 +1,8 @@
 class ControllerNavigationHelper {
-    constructor (REDIRECT_URLS) {
+    constructor (OvhApiMe, REDIRECT_URLS, URLS) {
+        this.OvhApiMe = OvhApiMe;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.URLS = URLS;
     }
 
     getUrl (pageId, params) {
@@ -10,6 +12,13 @@ class ControllerNavigationHelper {
         });
 
         return url;
+    }
+
+    getConstant (constantName) {
+        const path = _.get(this.URLS, constantName);
+
+        return this.OvhApiMe.Lexi().get().$promise
+            .then(me => path[me.ovhSubsidiary]);
     }
 }
 
