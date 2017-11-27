@@ -43,13 +43,13 @@ angular.module("managerApp")
                     this.$scope = $scope;
                     this.$ctrl = this.$scope && this.$scope.$ctrl;
                     this.step = this.$ctrl && this.$ctrl.step;
-
-                    this.stepLoadedCondition = this.stepLoadedCondition || true;
-                    this.stepDisabledCondition = this.stepDisabledCondition || false;
                 }
 
                 $onInit () {
                     this.$ctrl.cuiWizardFormController.createStep(this.$ctrl);
+
+                    this.stepLoadedCondition = this.stepLoadedCondition || true;
+                    this.stepDisabledCondition = this.stepDisabledCondition || true;
                 }
 
                 $onChanges () {
