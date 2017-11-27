@@ -15,6 +15,7 @@
  * - `form-on-init` : initialization function to be launched
  * - `form-loaded` _(optional)_ : condition that makes this step loaded, the aim is to display a loader if not
  * - `form-completed` : condition that makes this step completed, triggering the `form-on-complete` function
+ * - `form-on-cancel` : function which is called for cancel action
  * - `form-on-complete` : final function which is called after the wizard form completion
  **/
 
@@ -28,15 +29,49 @@ angular.module("managerApp")
             formInitFunction: "&formOnInit",
             formLoadedCondition: "<?formLoaded",
             formCompletedCondition: "<formCompleted",
-            formCancelledFunction: "<formCancelled",
+            formCancelledFunction: "&formOnCancel",
             formCompletedFunction: "&formOnComplete"
         },
         controllerAs: "$ctrl",
         transclude: true,
         controller: class cuiWizardFormController {
+
+            constructor ($scope) {
+                this.$scope = $scope;
+
+                this.$scope.$on("completeStep", (e, data) => {
+                    const stepIndex = this.steps.findIndex(x => x.id === data.id);
+                    this.steps[stepIndex].status = data.condition && "complete" || "active";
+                    if (stepIndex < (this.steps.length - 1)) {
+                        // Triggers the next step loading
+                        for (let i = stepIndex + 1; i < this.steps.length; i++) {
+                            this.steps[i].status = "disabled";
+                        }
+                        if (data.condition) {
+                            this.steps[stepIndex + 1].status = "active";
+                        }
+                    }
+                    this.formCompletedCondition = this.steps.filter(x => x.status === "complete").length === this.steps.length;
+                });
+            }
+
             $onInit () {
                 this.formDisabledCondition = this.formDisabledCondition || false;
                 this.formLoadedCondition = this.formLoadedCondition || true;
+                this.formCompletedCondition = this.formCompletedCondition || false;
+
+                this.formInitFunction();
+
+                this.steps = [];
+            }
+
+            createStep (childScope) {
+                const step = {
+                    id: childScope.$scope.$id,
+                    status: !this.steps.length ? "active" : "disabled"
+                };
+                this.steps.push(step);
+                childScope.step = step;
             }
         }
     });
