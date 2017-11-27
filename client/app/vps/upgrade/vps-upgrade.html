@@ -62,7 +62,6 @@
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step2_title' | translate }}"
                                      data-step-on-init="$ctrl.initVpsConditions()"
                                      data-step-loaded="!$ctrl.loaders.step2 && $ctrl.order"
-                                     data-step-disabled="$ctrl.step < 2"
                                      data-step-completed="$ctrl.agree.value">
                             <div data-contracts="$ctrl.order.contracts"
                                  data-ng-model="$ctrl.agree.value"
@@ -72,8 +71,7 @@
 
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step3_title' | translate }}"
                                      data-step-on-init="$ctrl.initVpsConditions()"
-                                     data-step-loaded="!$ctrl.step > 2 && $ctrl.order"
-                                     data-step-disabled="$ctrl.step < 3">
+                                     data-step-loaded="$ctrl.agree.value && $ctrl.order">
 
                         <div class="orange"
                              data-translate="vps_configuration_upgradevps_step2_question"
