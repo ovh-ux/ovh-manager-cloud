@@ -19,29 +19,48 @@
  **/
 
 angular.module("managerApp")
-    .component("cuiWizardStep", {
-        restrict: "EA",
-        templateUrl: "app/ui-components/wizardStep/wizardStep.html",
-        bindings: {
-            stepTitle: "@stepTitle",
-            stepDisabledCondition: "<?stepDisabled",
-            stepInitFunction: "&stepOnInit",
-            stepLoadedCondition: "<?stepLoaded",
-            stepCompletedCondition: "<stepCompleted",
-            stepCompletedFunction: "&stepOnComplete"
-        },
-        controllerAs: "$ctrl",
-        transclude: true,
-        controller: class cuiWizardStepController {
-            $onInit () {
-                this.stepDisabledCondition = this.stepDisabledCondition || false;
-                this.stepLoadedCondition = this.stepLoadedCondition || true;
-            }
+    .directive("cuiWizardStep", () => {
+        "use strict";
+        return {
+            restrict: "EA",
+            templateUrl: "app/ui-components/wizardStep/wizardStep.html",
+            scope: {
+                stepTitle: "@stepTitle",
+                stepDisabledCondition: "<?stepDisabled",
+                stepInitFunction: "&stepOnInit",
+                stepLoadedCondition: "<?stepLoaded",
+                stepCompletedCondition: "<stepCompleted",
+                stepCompletedFunction: "&stepOnComplete"
+            },
+            bindToController: true,
+            controllerAs: "$ctrl",
+            transclude: true,
+            require: {
+                cuiWizardFormController: "^cuiWizardForm"
+            },
+            controller: class cuiWizardStepController {
+                constructor ($scope) {
+                    this.$scope = $scope;
+                    this.$ctrl = this.$scope && this.$scope.$ctrl;
+                    this.step = this.$ctrl && this.$ctrl.step;
 
-            $onChanges () {
-                if (typeof this.stepDisabledCondition !== "undefined" && this.stepCompletedCondition) {
-                    this.stepCompletedFunction();
+                    this.stepLoadedCondition = this.stepLoadedCondition || true;
+                    this.stepDisabledCondition = this.stepDisabledCondition || false;
+                }
+
+                $onInit () {
+                    this.$ctrl.cuiWizardFormController.createStep(this.$ctrl);
+                }
+
+                $onChanges () {
+                    if (this.step && this.step.status !== "disabled") {
+                        this.$scope.$emit("completeStep", {
+                            id: this.step.id,
+                            condition: this.stepCompletedCondition
+                        });
+                        this.stepCompletedCondition && this.stepCompletedFunction();
+                    }
                 }
             }
-        }
+        };
     });
