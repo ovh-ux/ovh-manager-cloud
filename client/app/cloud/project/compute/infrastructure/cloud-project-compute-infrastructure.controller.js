@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
@@ -14,7 +15,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.regionService = RegionService;
         this.Cloud = OvhApiCloud;
-        
+
         this.jsplumbInstance = null;
         this.infra = null;
         this.volumes = null;
@@ -65,6 +66,8 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
             openUnlinkVolume : false
         };
 
+        this.openstackTerminalOpen = true;
+
         this.importedIpFailoverPending = [];   // List of pending import IPFO
 
         // ------- INIT -------
@@ -74,7 +77,6 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                 return $state.go("iaas.pci-project.compute.infrastructure-overview");
             } else {
                 this.loaders.init = true;
-
                 initDragDropHelper();
 
                 // Get type of project

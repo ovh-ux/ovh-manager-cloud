@@ -1,0 +1,39 @@
+"use strict";
+
+angular.module("managerApp")
+    .directive("hterm", hterm => ({
+        restrict: "EA",
+        scope: {
+            sendData: "=",
+            sendConfig: "=",
+            term: "="
+        },
+        link: (scope, element) => {
+            hterm.defaultStorage = new hterm.lib.Storage.Memory();
+
+            const term = new hterm.Terminal();
+            term.getPrefs().set("send-encoding", "raw");
+
+            term.onTerminalReady = function () {
+                const io = term.io.push();
+
+                io.onVTKeystroke = function (str) {
+                    scope.sendData(str);
+                };
+
+                io.sendString = io.onVTKeystroke;
+
+                io.onTerminalResize = function (columns, rows) {
+                    scope.sendConfig({
+                        columns,
+                        rows
+                    });
+                };
+
+                term.installKeyboard();
+                scope.term = term;
+            };
+            console.log("angular element", element.context);
+            term.decorate(element.context);
+        }
+    }));

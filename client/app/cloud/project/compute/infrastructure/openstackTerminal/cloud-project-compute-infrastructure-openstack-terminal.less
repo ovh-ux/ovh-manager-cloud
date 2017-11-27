@@ -1,0 +1,64 @@
+#openstackTerminal {
+    @HTERM_HEIGHT: 250px;
+    @HTERM_BAR_HEIGHT: 30px;
+    .terminal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        height: @HTERM_HEIGHT;
+        z-index: 50;
+
+        border: 1px solid darken(@TABLE_BACKGROUND_HEADER, 10%);
+
+        .header * {
+            display:inline-block;
+        }
+        .header {
+            height:@HTERM_BAR_HEIGHT;
+            cursor: pointer;
+            padding:2px;
+            padding-left: 5px;
+            border-bottom:2px solid darken(@TABLE_BACKGROUND_HEADER, 10%);
+            background-color: @TABLE_BACKGROUND_HEADER;
+            color: white;
+            .title {
+                font-size: 18px;
+            }
+            .buttons {
+                float:right;
+                button.btn {
+                    background-color: @TABLE_BACKGROUND_HEADER;
+                    padding:0px;
+                    height:25px;
+                    width:25px;
+                    border:white;
+                    color:white;
+                    boder: 1px solid white;
+                }
+            }
+        }
+        .hterm {
+            position:absolute;
+            top: @HTERM_BAR_HEIGHT;
+            bottom:0px;
+            width:100%;
+        }
+    }
+    .terminal.maximized{
+        top:44px;
+        height:inherit;
+    }
+    .terminal.minimized{
+        height:@HTERM_BAR_HEIGHT;
+        left:inherit;
+        max-width:350px;
+        width:100%;
+        .hterm {
+            height:0px;
+        }
+    }
+    .margin {
+        height:@HTERM_HEIGHT;
+    }
+}

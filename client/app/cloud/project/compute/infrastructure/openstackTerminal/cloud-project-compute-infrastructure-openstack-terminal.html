@@ -1,0 +1,26 @@
+<div id="openstackTerminal" data-ng-controller="CloudProjectComputeInfrastructureOpenstackTerminalCtrl as OpenstackTerminalCtl" >
+    <div class="margin"></div>
+    <div class="terminal col-md-offset-2 col-sm-offset-3"
+     data-ng-class="{ maximized : OpenstackTerminalCtl.maximized, minimized : OpenstackTerminalCtl.minimized }"
+     data-ng-click="OpenstackTerminalCtl.minimize()">
+        <div class="header">
+            <div class="title">
+                Openstack Terminal
+            </div>
+            <div class="buttons">
+                <button class="no-style" type="button"
+                 data-ng-if="!OpenstackTerminalCtl.minimized"
+                 data-ng-click="OpenstackTerminalCtl.minimize();$event.stopPropagation()"><i class="fa fa-window-minimize"></i></button>
+                <button class="no-style" type="button" data-ng-click="OpenstackTerminalCtl.maximize();$event.stopPropagation()"><i class="fa fa-window-maximize"></i></button>
+            </div>
+        </div>
+        <div
+            class="hterm"
+            hterm="hterm"
+            send-data="OpenstackTerminalCtl.send"
+            send-config="OpenstackTerminalCtl.setConfig"
+            term="OpenstackTerminalCtl.term"
+            >
+        </div>
+    </div>
+</div>

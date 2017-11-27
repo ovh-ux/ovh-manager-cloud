@@ -62,6 +62,14 @@
                                     {{ 'cpci_buy_ip_failover'|translate }}
                                 </button>
                             </li>
+                            <li>
+                                <button type="button" class="btn fs14"
+                                        data-ng-click="CloudProjectComputeInfrastructureCtrl.openOpenstackTerminal()"
+                                        at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-openstack-terminal' }">
+                                    <i class="fa fa-shopping-cart right-space-m8"></i>
+                                    Open Openstack Terminal
+                                </button>
+                            </li>
                         </ul>
                     </div>
                     <button type="button"
@@ -1145,6 +1153,11 @@
 
                 </div>
             </div>
+            <div class="clearfix"
+                 data-ng-include="'app/cloud/project/compute/infrastructure/openstackTerminal/cloud-project-compute-infrastructure-openstack-terminal.html'"
+                 data-ng-if="CloudProjectComputeInfrastructureCtrl.openstackTerminalOpen"
+             >
+             </div>
             <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
                 data-ng-if="CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit">
 
