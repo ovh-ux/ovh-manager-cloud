@@ -46,6 +46,7 @@
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utilisateur</translation>
 
    <translation id="vps_dashboard_task" qtlid="195633">Tâches en cours</translation>
+   <translation id="vps_dashboard_task_finish">Tâches en cours terminées</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Redémarrage</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Redémarrage (rescue)</translation>
    <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Modification du SLA</translation>

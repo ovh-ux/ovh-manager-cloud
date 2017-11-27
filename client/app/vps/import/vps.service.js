@@ -70,9 +70,9 @@ angular.module("managerApp").service("VpsService", [
             return pollPromise.promise;
         };
 
-        this.getTaskInProgress = function (type) {
+        this.getTaskInProgress = function (serviceName, type) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.get([aapiRootPath, vps.name, "tasks/uncompleted"].join("/"), {
                         serviceType: "aapi",
