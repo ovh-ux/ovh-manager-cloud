@@ -11,8 +11,7 @@
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_question' | translate }}"
                                      data-step-on-init="$ctrl.loadUpgradesList()"
                                      data-step-loaded="!$ctrl.loaders.step1"
-                                     data-step-completed="$ctrl.selectedModel.model"
-                                     data-step-on-complete="$ctrl.loadNextStep(2)">
+                                     data-step-completed="$ctrl.selectedModel.model">
                         <div class="oui-radio"
                              data-ng-repeat="upgrade in $ctrl.upgradesList track by $index">
                             <input data-ng-if="upgrade.isAvailable && !upgrade.isCurrentModel"
@@ -64,8 +63,7 @@
                                      data-step-on-init="$ctrl.initVpsConditions()"
                                      data-step-loaded="!$ctrl.loaders.step2 && $ctrl.order"
                                      data-step-disabled="$ctrl.step < 2"
-                                     data-step-completed="$ctrl.agree.value"
-                                     data-step-on-complete="$ctrl.loadNextStep(3)">
+                                     data-step-completed="$ctrl.agree.value">
                             <div data-contracts="$ctrl.order.contracts"
                                  data-ng-model="$ctrl.agree.value"
                                  data-contracts-validated
@@ -75,8 +73,7 @@
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step3_title' | translate }}"
                                      data-step-on-init="$ctrl.initVpsConditions()"
                                      data-step-loaded="!$ctrl.step > 2 && $ctrl.order"
-                                     data-step-disabled="$ctrl.step < 3"
-                                     data-step-completed="$ctrl.step > 3">
+                                     data-step-disabled="$ctrl.step < 3">
 
                         <div class="orange"
                              data-translate="vps_configuration_upgradevps_step2_question"
