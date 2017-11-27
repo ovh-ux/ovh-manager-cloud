@@ -1,13 +1,10 @@
 <li class="oui-list__item oui-list__group"
-    data-ng-class="{
-        'oui-list__item_disabled': $ctrl.stepDisabledCondition,
-        'oui-list__item_complete': $ctrl.stepCompletedCondition
-    }">
+    data-ng-class="'oui-list__item_' + $ctrl.step.status">
     <span class="oui-list__header">
         <span data-ng-bind-html="$ctrl.stepTitle"></span>
     </span>
     <div class="oui-list__description"
-         data-ng-if="!$ctrl.stepDisabledCondition"
+         data-ng-if="$ctrl.step.status !== 'disabled' || !$ctrl.stepDisabledCondition"
          data-ng-init="$ctrl.stepInitFunction()">
 
         <oui-loader size="m"
