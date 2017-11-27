@@ -1,10 +1,10 @@
 <cui-modal>
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_edit_name_title' | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.save">
+        <div class="text-center" data-ng-if="$ctrl.loaders.save">
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
-        <section data-ng-if="!$ctrl.loader.save">
+        <section data-ng-if="!$ctrl.loaders.save">
             <h3 data-translate="vps_default_name"></h3>
             <p data-ng-bind=":: $ctrl.serviceName"></p>
 
@@ -16,6 +16,6 @@
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
         <cui-submit-button data-text="'common_confirm' | translate"
             data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.save"></cui-submit-button>
+            data-disabled="$ctrl.loaders.save"></cui-submit-button>
     </cui-modal-footer>
 </cui-modal>
