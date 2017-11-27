@@ -1,10 +1,11 @@
 class VpsRebootCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService, VpsTaskService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.serviceName = serviceName;
         this.VpsService = VpsService;
+        this.VpsTaskService = VpsTaskService;
 
         this.loader = {
             init: false,
@@ -45,6 +46,7 @@ class VpsRebootCtrl {
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_fail")))
             .finally(() => {
                 this.loader.save = false;
+                this.VpsTaskService.getTasks(this.serviceName);
                 this.$uibModalInstance.close();
             });
     }
