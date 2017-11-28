@@ -248,7 +248,7 @@
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile-subscription data-loading="$ctrl.loaders.plan"
+            <cui-tile-subscription data-loading="$ctrl.loaders.init || $ctrl.loaders.plan"
                 data-subscription-info="$ctrl.plan"
                 data-offer-actions="$ctrl.actions.changeOwner"
                 data-autorenew-actions="$ctrl.actions.manageAutorenew"
