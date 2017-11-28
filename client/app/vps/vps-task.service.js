@@ -45,8 +45,7 @@ class VpsTaskService {
     }
 
     flushMessages () {
-                // -- should check msg first, bad call
-        _.forEach(this.CloudMessage.getMessages(), message => {
+        _.forEach(this.CloudMessage.getMessages("iaas.vps.detail"), message => {
             if (message.ref == "task") {
                 message.dismissed = true;
             }
