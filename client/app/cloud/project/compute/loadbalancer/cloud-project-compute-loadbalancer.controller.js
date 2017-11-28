@@ -27,6 +27,7 @@ class CloudProjectComputeLoadbalancerCtrl {
             }
         };
 
+        console.log("init controller");
     }
 
     $onInit () {
@@ -89,7 +90,7 @@ class CloudProjectComputeLoadbalancerCtrl {
                            <div class="oui-action-menu__item oui-action-menu-item" ng-if="$row.status !== 'unavailable'">
                                    <div class="oui-action-menu-item__icon"><i class="glyphicon glyphicon-edit right-space-m8"></i></div>
                                    <a class="oui-button oui-button_link oui-action-menu-item__label"
-                                      data-ui-sref="iaas.pci-project.compute.loadbalancer.configure({'loadbalancerId' : $row.serviceName})"
+                                      data-ui-sref="iaas.pci-project.compute.loadbalancerConfigure({'loadbalancerId' : $row.serviceName})"
                                       data-translate="cpc_loadbalancer_actions_configure">
                                    </a>
                             </div>

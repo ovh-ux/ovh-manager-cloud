@@ -74,7 +74,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         } else {
             validatePromise = Promise.resolve("");
         }
-        // After validation, load the loadbalancer
+
         validatePromise.then(() => this.getLoadbalancer(true));
 
         this.$scope.$on("$destroy", () => this.stopTaskPolling());
@@ -88,38 +88,19 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     }
 
     // Get cloud servers to add in the loadbalancer
-    getServers () {
+    getServerList () {
         if (this.loaders.table.server) {
             return this.$q.reject("servers already loading");
         }
         this.loaders.table.server = true;
-        return this.$q.all({
-            cloudServers: this.OvhApiCloudProject.Instance().Lexi().query({ serviceName: this.serviceName }).$promise,
-            attachedServers: this.CloudProjectComputeLoadbalancerService.getAttachedServers(this.loadbalancer)
-        }).then(({ cloudServers, attachedServers }) => {
-            this.attachedServers = {};
-            _.forEach(attachedServers, attachedServer => {
-                if (attachedServer.status === "active") {
-                    this.attachedServers[attachedServer.address] = attachedServer;
-                }
-            });
-            this.form.servers = _.mapValues(this.attachedServers, e => !!e);
-            // Generate array of object type as {ipv4, name}
-            this.table.server = this.table.server.concat(
-                _.uniq(
-                    _.union(
-                        _.flatten(_.map(cloudServers, server =>
-                            _.map(_.filter(server.ipAddresses, { type: "public", version: 4 }), adresse => ({ label: server.name, ip: adresse.ip }))
-                        )),
-                        _.map(this.attachedServers, server => ({ label: server.displayName, ip: server.address }))
-                    ),
-                    "ip"
-                )
-            );
-        }).catch(err => {
-            this.table.server = null;
-            this.CloudMessage.error([this.$translate.instant("cpc_server_error"), err.data && err.data.message || ""].join(" "));
-        }).finally(() => { this.loaders.table.server = false; });
+        return this.CloudProjectComputeLoadbalancerService.getServerList({ serviceName: this.serviceName, loadbalancer: this.loadbalancer })
+            .then(({ servers, attachedServers }) => {
+                this.attachedServers = attachedServers;
+                this.form.servers = _.mapValues(this.attachedServers, e => !!e);
+                this.table.server = servers;
+            }).catch(() => {
+                this.table.server = null;
+            }).finally(() => { this.loaders.table.server = false; });
     }
 
     configureAndDeployLoadbalancer () {
@@ -230,7 +211,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
                 this.form.openstack = true;
             }
         }).then(() => { this.loaders.loadbalancer = false; })
-            .then(() => this.getServers())
+            .then(() => this.getServerList())
             .catch(err => {
                 this.loadbalancer = null;
                 this.CloudMessage.error([this.$translate.instant("cpc_loadbalancer_error"), err.data && err.data.message || ""].join(" "));
@@ -242,7 +223,6 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     }
 
 
-    // Tasks poller
     startTaskPolling () {
         this.stopTaskPolling();
 
