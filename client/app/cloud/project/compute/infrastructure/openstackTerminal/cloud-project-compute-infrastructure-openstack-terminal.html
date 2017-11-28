@@ -2,8 +2,8 @@
     <div class="margin"></div>
     <div class="terminal col-md-offset-2 col-sm-offset-3"
      data-ng-class="{ maximized : OpenstackTerminalCtl.maximized, minimized : OpenstackTerminalCtl.minimized }"
-     data-ng-click="OpenstackTerminalCtl.minimize()">
-        <div class="header">
+     >
+        <div class="header" data-ng-click="OpenstackTerminalCtl.minimize()">
             <div class="title">
                 Openstack Terminal
             </div>
@@ -14,11 +14,29 @@
                 <button class="no-style" type="button" data-ng-click="OpenstackTerminalCtl.maximize();$event.stopPropagation()"><i class="fa fa-window-maximize"></i></button>
             </div>
         </div>
+        <div class="settings">
+            <select ng-if="!OpenstackTerminalCtl.loaders.regions"
+                class="form-control"
+                ng-options="region as region for region in OpenstackTerminalCtl.regions track by region"
+                ng-model="OpenstackTerminalCtl.region"
+                >
+            </select>
+            <oui-loader ng-show="OpenstackTerminalCtl.loaders.regions" size="s" class="d-inline-block"></oui-loader>
+            <label> Commandes :</label>
+            <button type="button" class="btn btn-primary"
+                ng-repeat="(label,action) in OpenstackTerminalCtl.actions track by label"
+                ng-click="OpenstackTerminalCtl.sendAction(action)">{{label}}</button>
+        </div>
+
+        <div class="hterm" ng-if="OpenstackTerminalCtl.loaders.websocket">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
         <div
+            ng-show="!OpenstackTerminalCtl.loaders.websocket"
             class="hterm"
             hterm="hterm"
-            send-data="OpenstackTerminalCtl.send"
-            send-config="OpenstackTerminalCtl.setConfig"
+            send-data="OpenstackTerminalCtl.send(data)"
+            send-config="OpenstackTerminalCtl.setConfig(config)"
             term="OpenstackTerminalCtl.term"
             >
         </div>

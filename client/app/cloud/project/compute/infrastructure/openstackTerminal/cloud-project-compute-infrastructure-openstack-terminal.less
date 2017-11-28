@@ -38,11 +38,34 @@
                 }
             }
         }
+        .settings {
+            background-color: @TABLE_BACKGROUND_EVEN;
+            > * {
+                display: inline;
+                width:inherit;
+            }
+            .btn {
+                padding:2px;
+                margin-top:0px;
+                margin:3px;
+                margin-top: 0px;
+            }
+            label {
+                margin-left: 5px;
+                margin-right: 2px;
+            }
+            position:absolute;
+            top : @HTERM_BAR_HEIGHT;
+            height: @HTERM_BAR_HEIGHT;
+            left:0px;
+            right:0px;
+        }
         .hterm {
             position:absolute;
-            top: @HTERM_BAR_HEIGHT;
+            top: 2 * @HTERM_BAR_HEIGHT;
             bottom:0px;
             width:100%;
+            background-color: black;
         }
     }
     .terminal.maximized{

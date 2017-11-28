@@ -4,8 +4,8 @@ angular.module("managerApp")
     .directive("hterm", hterm => ({
         restrict: "EA",
         scope: {
-            sendData: "=",
-            sendConfig: "=",
+            sendData: "&",
+            sendConfig: "&",
             term: "="
         },
         link: (scope, element) => {
@@ -18,22 +18,21 @@ angular.module("managerApp")
                 const io = term.io.push();
 
                 io.onVTKeystroke = function (str) {
-                    scope.sendData(str);
+                    scope.sendData({ data: str });
                 };
 
                 io.sendString = io.onVTKeystroke;
 
                 io.onTerminalResize = function (columns, rows) {
-                    scope.sendConfig({
+                    scope.sendConfig({ config: {
                         columns,
                         rows
-                    });
+                    } });
                 };
 
                 term.installKeyboard();
                 scope.term = term;
             };
-            console.log("angular element", element.context);
             term.decorate(element.context);
         }
     }));
