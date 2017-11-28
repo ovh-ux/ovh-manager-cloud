@@ -1,10 +1,11 @@
 class VpsDetailCtrl {
-    constructor ($filter, $scope, $stateParams, CloudMessage, CloudNavigation) {
+    constructor ($filter, $scope, $stateParams, CloudMessage, CloudNavigation, VpsTaskService) {
         this.$filter = $filter;
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
+        this.VpsTaskService = VpsTaskService;
 
         this.messages = [];
     }
@@ -17,6 +18,7 @@ class VpsDetailCtrl {
                 serviceName: this.serviceName
             }
         });
+        this.VpsTaskService.getTasks(this.serviceName);
     }
 
     loadMessage () {
