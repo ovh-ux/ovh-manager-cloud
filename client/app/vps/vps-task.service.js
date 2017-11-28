@@ -10,6 +10,16 @@ class VpsTaskService {
     }
 
     /*
+     * subscribe : reset values and get pending tasks
+     *
+     */
+    subscribe (serviceName) {
+        this.tasks = [];
+        this.firstCall = true;
+        this.getTasks(serviceName);
+    }
+
+    /*
      * getTasks : retrieve task in progress
      *
      */
@@ -25,6 +35,7 @@ class VpsTaskService {
      */
     handleTasks (serviceName, tasks) {
         _.forEach(tasks, task => {
+            this.tasks = tasks;
             this.manageMessage(task);
         });
         // refresh while there's task in progress
