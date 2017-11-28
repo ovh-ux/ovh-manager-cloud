@@ -37,7 +37,10 @@ class VpsMonitoringCtrl {
                 this.humanizeData(data.netTx.values[0].points, this.monitoring.net[1]);
                 this.generateLabels(data.cpu.values[0].points, data.cpu.pointInterval, data.cpu.pointStart, this.monitoring.labels);
             })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_fail")))
+            .catch(() => {
+                this.CloudMessage.error(this.$translate.instant("vps_configuration_monitoring_fail"));
+                this.error = true;
+            })
             .finally(() => { this.loaders.init = false });
     }
 
