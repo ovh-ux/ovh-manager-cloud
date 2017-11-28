@@ -4,7 +4,7 @@
         <oui-loader size="l" class="d-inline-block"></oui-loader>
     </div>
 
-    <div data-ng-if="!$ctrl.loaders.init">
+    <div data-ng-if="!$ctrl.loaders.init && !$ctrl.error">
         <div class="oui-select">
             <select class="oui-select__input"
                     data-ng-options="period as ('vps_configuration_period_' + period | translate) for period in $ctrl.data.periods"
