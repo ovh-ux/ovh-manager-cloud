@@ -5,7 +5,6 @@ class VpsTaskService {
         this.CloudMessage = CloudMessage;
         this.VpsService = VpsService;
 
-        this.tasks = [];
         this.firstCall = true;
     }
 
@@ -14,7 +13,6 @@ class VpsTaskService {
      *
      */
     subscribe (serviceName) {
-        this.tasks = [];
         this.firstCall = true;
         this.getTasks(serviceName);
     }
@@ -34,8 +32,8 @@ class VpsTaskService {
      *
      */
     handleTasks (serviceName, tasks) {
+        this.flushMessages();
         _.forEach(tasks, task => {
-            this.tasks = tasks;
             this.manageMessage(task);
         });
         // refresh while there's task in progress
@@ -54,17 +52,12 @@ class VpsTaskService {
 
     /*
      * manageMessage : manage message to display
-     *  - update message
-     *  - create message
      *
      */
     manageMessage (task) {
-        _.forEach(this.CloudMessage.getMessages("iaas.vps.detail"), message => {
-            if (message.class == "task" && message.id == task.id) {
-                message.dismissed = true;
-            }
-        });
-        this.createMessage(task);
+        if (task.progress !== 100) {
+            this.createMessage(task);
+        }
     }
 
     /*
