@@ -67,10 +67,6 @@ class VpsVeeamCtrl {
             .catch(err => this.CloudMessage.error(err));
     }
 
-    displayDate (date) {
-        return moment(date).format('LLL');
-    }
-
     restore (restorePoint) {
         this.VpsActionService.restore(this.serviceName, restorePoint);
     }
@@ -84,7 +80,7 @@ class VpsVeeamCtrl {
     }
 
     dateTemplate () {
-        return `<span data-ng-bind="$ctrl.displayDate($row)"></span>`;
+        return `<span data-ng-bind="$row | momentFormat:'LLL'"></span>`;
     }
 
     actionTemplate () {
