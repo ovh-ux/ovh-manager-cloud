@@ -9,13 +9,15 @@ class VpsVeeamCtrl {
 
         this.loaders = {
             init: false,
+            checkOrder: false,
             veeamTab: false
         };
         this.veeam = {};
         this.veeamTab = {};
 
         this.vps = {
-            canOrder: true
+            hasVeeam: false,
+            canOrder: false
         };
 
     }
@@ -56,14 +58,22 @@ class VpsVeeamCtrl {
                     this.checkOrder();
                 }
             })
-            .catch(err => this.CloudMessage.error(err))
+            .catch(() => {
+                this.veeam.state = "disabled";
+                this.checkOrder();
+            })
             .finally(() => { this.loaders.init = false });
     }
 
     checkOrder () {
+        this.loaders.checkOrder = true;
         this.VpsService.getSelectedVps(this.serviceName)
-            .then((vps) => {this.vps.canOrder = vps.canOrder})
-            .catch(err => this.CloudMessage.error(err));
+            .then(vps => {
+                this.vps.canOrder = vps.canOrder;
+                this.vps.hasVeeam = vps.hasVeeam;
+            })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loaders.checkOrder = false });
     }
 
     restore (restorePoint) {
