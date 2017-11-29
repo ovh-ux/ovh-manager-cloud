@@ -13,14 +13,14 @@
    <translation id="iplb_frontend_action" qtlid="56105">Action</translation>
    <translation id="iplb_frontend_no_frontend" qtlid="438584">No front-facing service</translation>
 
-   <translation id="iplb_frontend_update" qtlid="37875">Change</translation>
+   <translation id="iplb_frontend_update" qtlid="37875">Edit</translation>
    <translation id="iplb_frontend_delete" qtlid="2414">Delete</translation>
 
    <translation id="iplb_frontend_list_error" qtlid="438597">An error has occurred loading the list of front-facing services.</translation>
 
    <translation id="iplb_frontend_update_error" qtlid="438610">An error has occurred modifying the following front-facing service: {{message}}</translation>
    <translation id="iplb_frontend_update_success" qtlid="438623">The front-facing service has been successfully modified.</translation>
-   <translation id="iplb_frontend_update_confirm" qtlid="37875">Change</translation>
+   <translation id="iplb_frontend_update_confirm" qtlid="37875">Edit</translation>
    <translation id="iplb_frontend_update_title" qtlid="438636">Edit the following front-facing service: {{frontendId}}</translation>
 
    <translation id="iplb_frontend_add_error" qtlid="438649">An error has occurred adding a front-facing service: {{message}}</translation>

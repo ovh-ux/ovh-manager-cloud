@@ -18,7 +18,7 @@
    <translation id="iplb_ssl_list_error" qtlid="439013">Erro durante o acesso à lista dos certificados.</translation>
 
    <translation id="iplb_ssl_add_title" qtlid="420723">Adicionar um certificado SSL</translation>
-   <translation id="iplb_ssl_order_title" qtlid="196803">Encomenda um certificado SSL</translation>
+   <translation id="iplb_ssl_order_title" qtlid="196803">Encomendar um certificado SSL</translation>
    <translation id="iplb_ssl_add_confirm" qtlid="37923">Adicionar</translation>
    <translation id="iplb_ssl_add_cancel" qtlid="37863">Anular</translation>
    <translation id="iplb_ssl_add_success" qtlid="439026">O certificado SSL foi criado de forma correta</translation>
