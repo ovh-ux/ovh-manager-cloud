@@ -5,7 +5,7 @@
 
             <cui-wizard-form data-form-title="{{ 'vps_dashboard_upgrade_vps' | translate }}"
                              data-form-loaded="!$ctrl.loaders.init"
-                             data-form-on-cancel="$ctrl.resetAction()"
+                             data-form-on-cancel="$ctrl.cancel()"
                              data-form-on-complete="$ctrl.displayBc()">
 
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_question' | translate }}"
@@ -62,17 +62,14 @@
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step2_title' | translate }}"
                                      data-step-on-init="$ctrl.initVpsConditions()"
                                      data-step-loaded="!$ctrl.loaders.step2 && $ctrl.order"
-                                     data-step-completed="$ctrl.agree.value">
+                                     data-step-completed="$ctrl.conditionsAgree">
                             <div data-contracts="$ctrl.order.contracts"
-                                 data-ng-model="$ctrl.agree.value"
-                                 data-contracts-validated
+                                 data-contracts-validated="$ctrl.conditionsAgree"
                                  data-full-text="false"></div>
                     </cui-wizard-step>
 
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step3_title' | translate }}"
-                                     data-step-on-init="$ctrl.initVpsConditions()"
-                                     data-step-loaded="$ctrl.agree.value && $ctrl.order">
-
+                                     data-step-completed="$ctrl.conditionsAgree">
                         <div class="orange"
                              data-translate="vps_configuration_upgradevps_step2_question"
                              data-translate-values="{ vpsName: $ctrl.vps.name, modelName: $ctrl.selectedModelForUpgrade.name}"></div>
