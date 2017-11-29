@@ -62,10 +62,16 @@
 
             this.MetricService.getServiceInfos(this.serviceName)
                 .then(info => {
-                    this.plan.autorenew = moment(info.data.expiration).format("LL");
+                    this.plan.expiration = info.data.expiration;
                     this.plan.contactAdmin = info.data.contactAdmin;
                     this.plan.contactBilling = info.data.contactBilling;
-                    this.plan.creation = moment(info.data.creation).format("LL");
+                    this.plan.creation = info.data.creation;
+                    this.plan.contactTech = info.data.contactTech;
+
+                    return this.MetricService.getService(this.serviceName);
+                })
+                .then(service => {
+                    this.plan.offer = service.data.offer;
                 })
                 .finally(() => {
                     this.loading.plan = false;
@@ -82,8 +88,18 @@
         }
 
         initActions () {
-            this.actions.autorenew = this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "METRICS" });
-            this.actions.contacts = this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName });
+            this.actions = {
+                autorenew: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "METRICS" }),
+                    isAvailable: () => true
+                },
+                contacts: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
+                    isAvailable: () => true
+                }
+            };
         }
 
         computeUsage (value, total) {

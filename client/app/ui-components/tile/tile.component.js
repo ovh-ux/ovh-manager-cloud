@@ -229,7 +229,7 @@ angular.module("managerApp")
         scope: true,
         transclude: true,
         template: `
-            <dd class="cui-tile__description">
+            <dd class="cui-tile__description text-truncate">
                 <span data-ng-if="$ctrl.description !== null && $ctrl.description !== ''" data-ng-bind="$ctrl.description"></span>
                 <span data-ng-if="$ctrl.description === null || $ctrl.description === ''" data-ng-bind="'-'"></span>
                 <ng-transclude></ng-transclude>
