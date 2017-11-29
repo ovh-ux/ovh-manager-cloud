@@ -50,15 +50,23 @@ angular.module("managerApp")
 
                     this.stepLoadedCondition = this.stepLoadedCondition || true;
                     this.stepDisabledCondition = this.stepDisabledCondition || true;
+
+                    this.$scope.$watch(() => this.step.status, (newValue, oldValue) => {
+                        if (oldValue === "complete" && newValue === "active") {
+                            this.stepInitFunction();
+                        }
+                    });
                 }
 
-                $onChanges () {
+                $onChanges (changes) {
                     if (this.step && this.step.status !== "disabled") {
                         this.$scope.$emit("completeStep", {
                             id: this.step.id,
                             condition: this.stepCompletedCondition
                         });
-                        this.stepCompletedCondition && this.stepCompletedFunction();
+                        if (this.stepCompletedCondition) {
+                            this.stepCompletedFunction();
+                        }
                     }
                 }
             }

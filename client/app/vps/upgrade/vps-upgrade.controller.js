@@ -14,9 +14,6 @@ class VpsUpgradeCtrl {
         this.order = null;
         this.selectedModel = {};
         this.upgradesList = null;
-        this.agree = {
-            value: false
-        };
     }
 
     $onInit () {
@@ -48,13 +45,14 @@ class VpsUpgradeCtrl {
     }
 
     initVpsConditions () {
+        this.conditionsAgree = false;
         this.loaders.step2 = true;
         this.order = null;
         const modelToUpgradeTo = $.grep(this.upgradesList, e => { return e.model === this.selectedModel.model; });
         if (modelToUpgradeTo.length) {
             this.selectedModelForUpgrade = modelToUpgradeTo[0];
             return this.Vps.upgrade(this.selectedModelForUpgrade.model, this.selectedModelForUpgrade.duration.duration).then(data => {
-                this.agree.value = false;
+                this.conditionsAgree = false;
                 this.selectedModelForUpgrade.duration.dateFormatted = this.$filter("date")(this.selectedModelForUpgrade.duration.date, "dd/MM/yyyy");
                 this.order = data;
                 return data;
@@ -65,6 +63,10 @@ class VpsUpgradeCtrl {
                 this.loaders.step2 = false;
             });
         }
+    }
+
+    cancel () {
+        history.back();
     }
 
     displayBC () {
