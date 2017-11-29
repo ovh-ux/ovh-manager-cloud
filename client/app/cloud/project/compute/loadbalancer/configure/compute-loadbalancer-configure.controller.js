@@ -185,10 +185,12 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         }
         return configurePromise.then(() => {
             this.toggle.updatedMessage = true;
+        }).catch(err => this.CloudMessage.error([this.$translate.instant("cpc_loadbalancer_error"), err.data && err.data.message || ""].join(" "))
+        ).finally(() => {
             this.$location.hash("compute-loadbalancer-configure");
             this.$anchorScroll();
-        }).catch(err => this.CloudMessage.error([this.$translate.instant("cpc_loadbalancer_error"), err.data && err.data.message || ""].join(" "))
-        ).finally(() => { this.loaders.form.loadbalancer = false; });
+            this.loaders.form.loadbalancer = false;
+        });
     }
 
     getLoadbalancer (clearCache) {
