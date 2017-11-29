@@ -38,7 +38,6 @@ class VpsVeeamCtrl {
             .then(data => {
                 if (data.length) {
                     this.veeam.state = "MOUNTING";
-                    this.veeam.accessInfos.restorePoint = data[0];
                 }
             })
             .catch(err => this.CloudMessage.error(err))
