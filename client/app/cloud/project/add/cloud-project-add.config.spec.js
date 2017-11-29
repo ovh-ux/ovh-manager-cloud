@@ -6,10 +6,14 @@ describe("Controller config: CloudProjectAddCtrl", () => {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject((controllerTestUtil, _atInternet_) => {
+    beforeEach(inject((controllerTestUtil, _atInternet_, $httpBackend) => {
         util = controllerTestUtil;
         spyOn(_atInternet_, "trackClick");
         controller = util.createController("CloudProjectAddCtrl");
+        $httpBackend.whenGET(/api(?:v6)?\/me/).respond(200, {});
+        $httpBackend.whenPOST(/api(?:v6)?\/me/).respond(200, {});
+        $httpBackend.whenGET(/api(?:v6)?\/cloud/).respond(200, {});
+        $httpBackend.whenPOST(/api(?:v6)?\/cloud/).respond(200, {});
     }));
 
     afterEach(inject(() => {
