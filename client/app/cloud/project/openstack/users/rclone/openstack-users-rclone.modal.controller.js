@@ -28,8 +28,15 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
     }
 
     confirm () {
-        this.CloudProjectOpenstackUsersRcloneService.getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
-            .then(response => this.ControllerHelper.downloadUrl(response.url))
+        if (this.form.$invalid) {
+            return this.$q.reject();
+        }
+
+        return this.CloudProjectOpenstackUsersRcloneService.getRcloneFileInfo(this.projectId, this.openstackUser.id, this.model.region.value)
+            .then(response => this.ControllerHelper.downloadContent({
+                content: response.content,
+                fileName: "rclone.sh"
+            }))
             .finally(() => this.$uibModalInstance.close());
     }
 

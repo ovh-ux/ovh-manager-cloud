@@ -34,9 +34,12 @@ class CloudProjectOpenstackUsersRcloneService {
             url = url.replace(`:${paramName}`, replacements[paramName]);
         });
 
-        return this.$q.when({
-            url
-        });
+        return this.OvhApiCloud.Project().User().Lexi().rclone({ serviceName: projectId, userId, region }, { })
+            .$promise
+            .then(response => {
+                _.assign(response, { url });
+                return response;
+            });
     }
 }
 
