@@ -48,7 +48,9 @@ class VpsHeaderCtrl {
 
     isInRescueMode (netbootMode) {
         if (netbootMode === "RESCUE"){
-            this.CloudMessage.warning({ textHtml: this.$translate.instant("vps_configuration_reboot_rescue_warning_text") });
+            this.CloudMessage.warning({
+                textHtml: this.$translate.instant("vps_configuration_reboot_rescue_warning_text")
+            }, "iaas.vps.detail");
         }
     }
 
@@ -60,7 +62,7 @@ class VpsHeaderCtrl {
                 textHtml: this.$translate.instant("vps_configuration_ipV6_info_text"),
                 dismissed: this.stopNotification.ipV6,
                 dismiss: () => this.stopNotificationIpV6()
-            });
+            }, "iaas.vps.detail.dashboard");
         }
     }
 
