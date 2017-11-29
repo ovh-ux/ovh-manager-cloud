@@ -25,7 +25,6 @@ class VpsAdditionalDiskCtrl {
         this.VpsService.hasAdditionalDiskOption(this.serviceName)
             .then(() => { this.hasAdditionalDiskOption = true })
             .catch(() => {
-                this.CloudMessage.error(this.$translate.instant("vps_additional_disk_info_fail"));
                 this.hasAdditionalDiskOption = false;
             })
             .finally(() => {
@@ -49,6 +48,10 @@ class VpsAdditionalDiskCtrl {
                 return this.$q.reject(error);
             })
             .finally(() => { this.loaders.disk = false });
+    }
+
+    canOrder () {
+        return _.isEmpty(this.additionnalDisks);
     }
 
     order () {
