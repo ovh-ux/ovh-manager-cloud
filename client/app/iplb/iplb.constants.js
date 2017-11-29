@@ -34,7 +34,7 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         }
     },
     graphScales: {
-        "lb1": [
+        lb1: [
             "1h-ago",
             "3h-ago",
             "6h-ago",
@@ -43,7 +43,7 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
             "1w-ago",
             "1n-ago"
         ],
-        "lb2": [
+        lb2: [
             "1h-ago",
             "6h-ago",
             "12h-ago",
