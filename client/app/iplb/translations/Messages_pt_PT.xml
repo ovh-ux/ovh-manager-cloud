@@ -19,7 +19,7 @@
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">A associação destes endereços IP aos seus servidores carece de autorização&#13;
 </translation>
 
-   <translation id="iplb_modal_name_change_title" qtlid="71741">Modificar o nome</translation>
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Alterar o nome</translation>
    <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Nome predefinido</translation>
    <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Nome personalizado</translation>
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Erro durante a alteração do nome</translation>
@@ -30,7 +30,7 @@
    <translation id="iplb_modal_cipher_change_cipher_intermediate_title" qtlid="429368">Intermediário</translation>
    <translation id="iplb_modal_cipher_change_cipher_intermediate_description" qtlid="439390">Clientes compatíveis: Android 2.3, IE 7, Java 7, Opera 5, Windows XP IE 8</translation>
    <translation id="iplb_modal_cipher_change_cipher_modern_title" qtlid="429394">Moderno</translation>
-   <translation id="iplb_modal_cipher_change_cipher_modern_description" qtlid="439403">Segurança reforçada mas compatível com menos sistemas. Clinetes compatíveis: Android 5.0, Chrome 30, Edge, Firefox 27, IE 11 on Windows 7, Java 8, Opera 17, Safari 9.</translation>
+   <translation id="iplb_modal_cipher_change_cipher_modern_description" qtlid="439403">Segurança reforçada mas compatível com menos sistemas. Clientes compatíveis: Android 5.0, Chrome 30, Edge, Firefox 27, IE 11 on Windows 7, Java 8, Opera 17, Safari 9.</translation>
 
    <translation id="iplb_modal_offer_change_title" qtlid="359761">Alterar a oferta</translation>
 
@@ -58,12 +58,12 @@
    <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} funcionais</translation>
    <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} funcionais</translation>
 
-   <translation id="iplb_status_apply" qtlid="284867">Aplicar a configuração</translation>
+   <translation id="iplb_status_apply" qtlid="284867">Aplicar configuração</translation>
    <translation id="iplb_status_details" qtlid="439611">Ver detalhes</translation>
 
    <translation id="iplb_utilisation_update_alert" qtlid="439624">Alterar limite para envio de alerta</translation>
    <translation id="iplb_utilisation_update_alert_included_data" qtlid="439637">Dados incluídos</translation>
-   <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Limite de alerta</translation>
+   <translation id="iplb_utilisation_update_alert_threshold" qtlid="439299">Limite do alerta</translation>
    <translation id="iplb_utilisation_update_alert_error" qtlid="439650">Ocorreu um erro durante a atualização do limite para envio de alerta.</translation>
 
    <translation id="iplb_usage_loading_error" qtlid="439663">Erro no carregamento da secção "Utilização"</translation>

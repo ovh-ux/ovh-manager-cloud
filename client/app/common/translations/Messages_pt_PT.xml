@@ -166,7 +166,7 @@
    <translation id="payment_type_mandat" qtlid="139780">Mandat cash</translation>
    <translation id="payment_type_multibanco" qtlid="139793">Multibanco</translation>
    <translation id="payment_type_ovhAccount" qtlid="139806">Conta OVH</translation>
-   <translation id="payment_type_paymentMandate" qtlid="139819">Mandat administratif</translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819"></translation>
    <translation id="payment_type_paypal" qtlid="98228">Paypal</translation>
    <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Nota de crédito</translation>
@@ -494,10 +494,13 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renovação automática</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrador</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Faturação</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Técnico </translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data de criação</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Estado</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">Modificar o nome</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Alterar o nome</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinido</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizado</translation>
 

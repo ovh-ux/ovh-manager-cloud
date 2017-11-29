@@ -10,6 +10,7 @@
    <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_server_preview_chain" qtlid="19819">Cadena de certificación</translation>
    <translation id="iplb_server_preview_proxyProtocolVersion" qtlid="438259">Versión del protocolo de PROXY</translation>
+   <translation id="iplb_server_preview_proxyProtocolVersion_placeholder" qtlid="17923">Seleccionar</translation>
    <translation id="iplb_server_preview_weight" qtlid="438272">Peso de balanceo</translation>
    <translation id="iplb_server_preview_active" qtlid="55133">Activo</translation>
    <translation id="iplb_server_preview_id" qtlid="46792">Usuario</translation>

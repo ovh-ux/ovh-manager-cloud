@@ -31,22 +31,22 @@
    <translation id="metrics_token_labels" qtlid="403411">Labels</translation>
    <translation id="metrics_token_id" qtlid="46792">ID</translation>
    <translation id="metrics_token_show_preview" qtlid="433371">See a preview</translation>
-   <translation id="metrics_token_preview_title" qtlid="439931">Aperçu du token</translation>
+   <translation id="metrics_token_preview_title" qtlid="439931">Token preview</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Show deleted tokens </translation>
 
-   <translation id="metrics_token_edit" qtlid="37875">Change</translation>
+   <translation id="metrics_token_edit" qtlid="37875">Edit</translation>
    <translation id="metrics_token_edit_title" qtlid="415870">Edit token</translation>
    <translation id="metrics_token_edit_name" qtlid="415818">Name (optional)</translation>
    <translation id="metrics_token_edit_cancel" qtlid="37863">Cancel</translation>
-   <translation id="metrics_token_edit_confirm" qtlid="37875">Change</translation>
+   <translation id="metrics_token_edit_confirm" qtlid="37875">Edit</translation>
 
-   <translation id="metrics_token_delete_title" qtlid="439944">Supprimer le token</translation>
+   <translation id="metrics_token_delete_title" qtlid="439944">Delete token</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">Are you sure you want to delete this token?</translation>
    <translation id="metrics_token_created" qtlid="403450">Token created</translation>
    <translation id="metrics_token_revoked" qtlid="403463">Token deleted </translation>
-   <translation id="metrics_token_updated" qtlid="403476">Updated token</translation>
-   <translation id="metrics_token_err_get" qtlid="403489">An error occurred while retrieving the tokens</translation>
-   <translation id="metrics_token_err_create" qtlid="403502">An error occurred while creating the token</translation>
-   <translation id="metrics_token_err_revoke" qtlid="403515">An error occurred while revoking the token</translation>
-   <translation id="metrics_token_err_update" qtlid="403528">An error occurred while updating the token</translation>
+   <translation id="metrics_token_updated" qtlid="403476">Token updated</translation>
+   <translation id="metrics_token_err_get" qtlid="403489">An error has occurred retrieving the tokens</translation>
+   <translation id="metrics_token_err_create" qtlid="403502">An error has occurred creating the token</translation>
+   <translation id="metrics_token_err_revoke" qtlid="403515">An error has occurred revoking the token</translation>
+   <translation id="metrics_token_err_update" qtlid="403528">An error has occurred updating the token</translation>
 </translations>
