@@ -1,11 +1,12 @@
 class VpsReinstallCtrl {
-    constructor ($scope, $translate, $uibModalInstance, CloudMessage, serviceName, SidebarMenu, VpsReinstallService, VpsService) {
+    constructor ($scope, $translate, $uibModalInstance, CloudMessage, serviceName, SidebarMenu, VpsReinstallService, VpsTaskService, VpsService) {
         this.$scope = $scope;
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.serviceName = serviceName;
         this.SidebarMenu = SidebarMenu;
+        this.VpsTaskService = VpsTaskService;
         this.VpsReinstallService = VpsReinstallService;
         this.VpsService = VpsService;
 
@@ -132,6 +133,7 @@ class VpsReinstallCtrl {
             .catch(err => this.$uibModalInstance.dismiss(this.$translate.instant("vps_configuration_reinstall_fail")))
             .finally(() => {
                 this.loaders.save = false;
+                this.VpsTaskService.getTasks(this.serviceName);
                 this.CloudMessage.success(this.$translate.instant("vps_configuration_reinstall_success"));
             });
 
@@ -143,4 +145,3 @@ class VpsReinstallCtrl {
 }
 
 angular.module("managerApp").controller("VpsReinstallCtrl", VpsReinstallCtrl);
-
