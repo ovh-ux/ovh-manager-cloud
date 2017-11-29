@@ -38,16 +38,16 @@
                         resolve: {
                             serviceName: () => this.$stateParams.serviceName
                         }
-                    },
-                    successHandler: result => {
+                    }
+                })
+                    .then(result => {
                         this.VeeamService.startPolling(this.$stateParams.serviceName, result.data)
                             .then(this.storageInfos.load.bind(this));
-                    },
-                    errorHandler: err => this.VeeamService.unitOfWork.messages.push({
+                    })
+                    .catch(err => this.VeeamService.unitOfWork.messages.push({
                         text: err.message,
                         type: "error"
-                    })
-                });
+                    }));
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),
@@ -66,12 +66,12 @@
                         inventoryName: () => inventoryName,
                         serviceName: () => this.$stateParams.serviceName
                     }
-                },
-                successHandler: result => {
+                }
+            })
+                .then(result => {
                     this.VeeamService.startPolling(this.$stateParams.serviceName, result.data)
                         .then(this.storageInfos.load.bind(this));
-                }
-            });
+                });
         }
 
         $onInit () {
