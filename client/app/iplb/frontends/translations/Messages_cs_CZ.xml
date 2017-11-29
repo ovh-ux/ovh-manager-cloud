@@ -13,14 +13,14 @@
    <translation id="iplb_frontend_action" qtlid="56105">Akce</translation>
    <translation id="iplb_frontend_no_frontend" qtlid="438584">Žádný frontend</translation>
 
-   <translation id="iplb_frontend_update" qtlid="37875">Změnit</translation>
+   <translation id="iplb_frontend_update" qtlid="37875">Upravit</translation>
    <translation id="iplb_frontend_delete" qtlid="2414">Odstranit</translation>
 
    <translation id="iplb_frontend_list_error" qtlid="438597">Při načítání seznamu frontendů došlo k chybě.</translation>
 
    <translation id="iplb_frontend_update_error" qtlid="438610">Při modifikaci frontendu došlo k následující chybě: {{message}}</translation>
    <translation id="iplb_frontend_update_success" qtlid="438623">Frontend byl úspěšně upraven.</translation>
-   <translation id="iplb_frontend_update_confirm" qtlid="37875">Změnit</translation>
+   <translation id="iplb_frontend_update_confirm" qtlid="37875">Upravit</translation>
    <translation id="iplb_frontend_update_title" qtlid="438636">Modifikace frontendu {{frontendId}}</translation>
 
    <translation id="iplb_frontend_add_error" qtlid="438649">Při přidávání frontendu došlo k následující chybě: {{message}}</translation>

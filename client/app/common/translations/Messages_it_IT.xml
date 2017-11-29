@@ -494,6 +494,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Offerta</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Rinnovo automatico</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contatti</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Amministratore</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Fatturazione</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Tecnico</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data di creazione</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Stato</translation>

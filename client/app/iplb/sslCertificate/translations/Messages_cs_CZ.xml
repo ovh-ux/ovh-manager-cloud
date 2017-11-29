@@ -12,7 +12,7 @@
    <translation id="iplb_ssl_no_certificate" qtlid="439000">Žádný certifikát</translation>
 
    <translation id="iplb_ssl_see" qtlid="433371">Zobrazit náhled</translation>
-   <translation id="iplb_ssl_update" qtlid="37875">Změnit</translation>
+   <translation id="iplb_ssl_update" qtlid="37875">Upravit</translation>
    <translation id="iplb_ssl_delete" qtlid="2414">Odstranit</translation>
 
    <translation id="iplb_ssl_list_error" qtlid="439013">Při načítání seznamu certifikátů došlo k chybě.</translation>
@@ -31,7 +31,7 @@
    <translation id="iplb_ssl_edit_chain" qtlid="439052">Řetězec (volitelné)</translation>
 
    <translation id="iplb_ssl_update_title" qtlid="439065">Upravit SSL certifikát</translation>
-   <translation id="iplb_ssl_update_confirm" qtlid="37875">Změnit</translation>
+   <translation id="iplb_ssl_update_confirm" qtlid="37875">Upravit</translation>
    <translation id="iplb_ssl_update_cancel" qtlid="37863">Zrušit</translation>
    <translation id="iplb_ssl_update_nom" qtlid="3818">Příjmení</translation>
    <translation id="iplb_ssl_update_success" qtlid="439078">SSL certifikát byl úspěšně upraven.</translation>

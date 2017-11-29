@@ -494,6 +494,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Palvelu</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automaattinen uusiminen</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Yhteystiedot</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Admin</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Laskutus</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Tekninen</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Luontipäivä</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Tila</translation>

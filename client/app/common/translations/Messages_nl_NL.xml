@@ -494,6 +494,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Aanbod</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatisch verlengen</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contacten</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Beheerder</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Facturatie</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Techniek</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Aanmaakdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
