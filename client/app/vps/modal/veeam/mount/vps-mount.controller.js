@@ -30,7 +30,7 @@ class VpsMountCtrl {
 
     confirm () {
         this.loader.save = true;
-        if ($ctrl.mount) {
+        if (this.mount) {
             this.VpsService.veeamRestorePointMount(this.serviceName, this.RestorePoint)
                 .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
@@ -40,8 +40,8 @@ class VpsMountCtrl {
                 });
         } else {
             this.VpsService.veeamRestorePointUmount(this.serviceName, this.RestorePoint)
-                .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_mount_success")))
-                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_mount_fail")))
+                .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_veeam_umount_success")))
+                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_umount_fail")))
                 .finally(() => {
                     this.loader.save = false;
                     this.$uibModalInstance.close();
