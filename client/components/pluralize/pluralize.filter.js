@@ -1,5 +1,4 @@
 angular.module("managerApp").filter("pluralize", ($translate, $log) => {
-    "use strict";
     const exist = translateId => $translate.instant(translateId) !== translateId;
 
     const validateId = id => exist(id) ? id : undefined;
