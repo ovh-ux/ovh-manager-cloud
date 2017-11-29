@@ -13,6 +13,7 @@ angular.module("managerAppMock").run(function ($httpBackend) {
 
     /*----------  APIV6 MOCKS  ----------*/
     $httpBackend.whenGET(/api(?:v6)?\/me$/).respond(200, {});
+    $httpBackend.whenGET(/api(?:v6)?\/status\/task/).respond(200, {});
 
     /*----------  2API MOCKS  ----------*/
     $httpBackend.whenGET(/2api\/me\/alerts/).respond(200, []);
