@@ -171,7 +171,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
             }
             configurePromise = configurePromise.then(() =>
                 // Import and redirect to auth page
-                this.OvhApiCloudProjectIplb.Lexi().post({ serviceName: this.serviceName }, { ipLoadbalancingServiceName: this.loadbalancerId, redirection: `${this.$location.absUrl().replace(/\?.*$/, "")}?validate=%id` }).$promise
+                this.OvhApiCloudProjectIplb.Lexi().post({ serviceName: this.serviceName }, { ipLoadbalancingServiceName: this.loadbalancerId, redirection: `${this.$location.hash("").absUrl().replace(/\?.*$/, "")}?validate=%id` }).$promise
                     .then(result => {
                         this.$window.location.href = result.validationUrl;
                         this.loaders.form.redirect = true;

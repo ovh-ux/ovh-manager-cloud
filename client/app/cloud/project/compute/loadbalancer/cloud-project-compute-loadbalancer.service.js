@@ -111,7 +111,7 @@ class CloudProjectComputeLoadbalancerService {
 
             // Generate array of object type as {ipv4, name}
             // Concat all public ip of public cloud and of the loadbalancer.
-            const servers = [].concat(
+            const servers =
                 _.uniq(
                     _.union(
                         _.flatten(_.map(cloudServers, server =>
@@ -120,8 +120,7 @@ class CloudProjectComputeLoadbalancerService {
                         _.map(this.attachedServers, server => ({ label: server.displayName, ip: server.address }))
                     ),
                     "ip"
-                )
-            );
+                );
             return { servers, attachedServers: activeServers };
         }).catch(err => {
             this.CloudMessage.error([this.$translate.instant("cpc_server_error"), err.data && err.data.message || ""].join(" "));
