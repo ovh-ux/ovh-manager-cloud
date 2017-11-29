@@ -64,7 +64,7 @@ class IpLoadBalancerHomeService {
                             // Farm considered in unknown state when no health check is set up
                             unknownState: _.chain(servers).map(server => this.IpblServerStatusService.hasNoInfo(server)).some(Boolean),
                             // Farm considered dysfunctional when one of the servers has bad health check
-                            working: servers.length > 0 && serversStatus.ok === servers.length,
+                            working: serversStatus.ok === servers.length,
                             servers
                         };
                     })
