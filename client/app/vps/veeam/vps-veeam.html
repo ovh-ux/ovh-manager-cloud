@@ -15,7 +15,7 @@
             <dt data-ng-if="$ctrl.veeam.accessInfos.restorePoint"
                 data-translate="vps_tab_VEEAM_dashboard_current_restore_point_creationTime"></dt>
             <dd data-ng-if="$ctrl.veeam.accessInfos.restorePoint"
-                data-ng-bind="$ctrl.displayDate($ctrl.veeam.accessInfos.restorePoint)"></dd>
+                data-ng-bind="$ctrl.veeam.accessInfos.restorePoint | momentFormat:'LLL'"></dd>
         </dl>
 
         <button class="oui-button oui-button_secondary"
