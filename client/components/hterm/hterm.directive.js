@@ -9,9 +9,8 @@ angular.module("managerApp")
             term: "="
         },
         link: (scope, element) => {
-            hterm.defaultStorage = new hterm.lib.Storage.Memory();
 
-            const term = new hterm.Terminal();
+            const term = scope.term || new hterm.Terminal();
             term.getPrefs().set("send-encoding", "raw");
 
             term.onTerminalReady = function () {

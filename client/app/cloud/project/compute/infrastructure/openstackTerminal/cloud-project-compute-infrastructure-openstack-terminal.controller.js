@@ -1,19 +1,19 @@
 class CloudProjectComputeInfrastructureOpenstackTerminalCtrl {
-    constructor ($q, $stateParams, $translate, OvhApiCloudProjectOpenstackTerminal, OvhApiCloudProjectRegion, CloudMessage) {
+    constructor ($q, $stateParams, $translate, OvhApiCloudProjectOpenstackTerminal, CloudProjectComputeInfrastructureOpenstackTerminalService, OvhApiCloudProjectRegion, CloudMessage, ControllerHelper, hterm) {
         this.$q = $q;
         this.$translate = $translate;
         this.OvhApiCloudProjectOpenstackTerminal = OvhApiCloudProjectOpenstackTerminal;
+        this.Service = CloudProjectComputeInfrastructureOpenstackTerminalService;
         this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
         this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
 
         this.serviceName = $stateParams.projectId;
-        this.ws = null;
-        this.term = {};
-        this.regions = [];
-        this.loaders = {
-            websocket: true,
-            regions: true
-        };
+        this.term = new hterm.Terminal();
+        this.messages = [];
+        this.region = this.Service.REGION_ALL;
+        this.minimized = sessionStorage.getItem("CloudProjectComputeInfrastructureOpenstackTerminalCtrl.minimized") !== "false";
+        this.maximized = sessionStorage.getItem("CloudProjectComputeInfrastructureOpenstackTerminalCtrl.maximized") === "true";
         this.actions = {
             help: "help",
             catalog: "catalog list",
@@ -24,94 +24,54 @@ class CloudProjectComputeInfrastructureOpenstackTerminalCtrl {
             network: "network list",
             subnet: "subnet list"
         };
-        this.REGION_ALL = "All";
-        this.region = this.REGION_ALL;
-        this.init();
+
+
+        this.initLoaders();
     }
 
-    init () {
-        this.OvhApiCloudProjectOpenstackTerminal.Lexi().post({ serviceName: this.serviceName }).$promise
-            .then(openstackTerminal => this.initWebSocket(openstackTerminal.websocket))
-            .catch(err => this.displayError(err))
-            .finally(() => (this.loaders.websocket = false));
-        this.OvhApiCloudProjectRegion.Lexi().query({ serviceName: this.serviceName }).$promise
-            .then(regions => { this.regions = _.flatten([this.REGION_ALL, regions]); })
-            .catch(err => this.displayError(err))
-            .finally(() => (this.loaders.regions = false));
-        this.loaders.regions = false;
+    initLoaders () {
+        this.session = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.Service.getSession({ serviceName: this.serviceName, term: this.term })
+        });
+        this.regions = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.Service.getRegions(this.serviceName)
+        });
     }
 
-    displayError (err) {
-        this.CloudMessage.error([this.$translate.instant("cpc_openstack_terminal_error"), err.data && err.data.message || ""].join(": "));
+    $onInit () {
+
+        this.CloudMessage.unSubscribe("iaas.pci-project.compute.infrastructure");
+        this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute.infrastructure", { onMessage: () => this.refreshMessages() });
+        this.session.load();
+        this.regions.load();
     }
 
-    sendAction (action) {
-        if (this.region !== this.REGION_ALL) {
-            this.setRegion(this.region);
+    refreshMessages () {
+        this.messages = this.messageHandler.getMessages();
+    }
+
+    clickBar () {
+        if (this.minimized) {
+            this.minimized = false;
+            this.savePrefs();
         }
-        this.send(`openstack ${action}\n`);
-    }
-
-    initWebSocket (url) {
-        const self = this;
-        const promise = this.$q.defer();
-        this.ws = new WebSocket(url);
-        this.ws.onopen = function () {
-            promise.resolve();
-        };
-
-        this.ws.onmessage = function (event) {
-            const data = event.data.slice(1);
-            switch (event.data[0]) {
-                case "0":
-                    self.term.io.writeUTF8(window.atob(data));
-                    break;
-                case "1":
-                    // pong
-                    break;
-                case "2":
-                    // Object.keys(JSON.parse(data)).forEach(key => {
-                    //     console.log(`Term preferences, setting ${key} = ${preferences[key]}`);
-                    // });
-                    break;
-                case "3":
-                    // var autoReconnect = JSON.parse(data);
-                    // console.log(`Enabling term reconnect: ${autoReconnect} seconds`);
-                    break;
-                default :break;
-            }
-        };
-
-        this.ws.onclose = function () {
-            promise.reject();
-            self.closed = true;
-        };
-    }
-
-    send (data) {
-        if (this.ws) {
-            this.ws.send(`0${data}`);
-        }
-    }
-
-    setConfig (config) {
-        if (this.ws) {
-            this.ws.send(`2${JSON.stringify(config)}`);
-        }
-    }
-
-    setRegion (region) {
-        this.send(`OS_REGION_NAME=${region} `);
     }
 
     minimize () {
         this.minimized = !this.minimized;
         this.maximized = false;
+        this.savePrefs();
     }
 
     maximize () {
         this.maximized = !this.maximized;
         this.minimized = false;
+        this.savePrefs();
+    }
+
+    savePrefs () {
+        sessionStorage.setItem("CloudProjectComputeInfrastructureOpenstackTerminalCtrl.minimized", this.minimized);
+        sessionStorage.setItem("CloudProjectComputeInfrastructureOpenstackTerminalCtrl.maximized", this.maximized);
     }
 }
 

@@ -16,7 +16,6 @@
         }
         .header {
             height:@HTERM_BAR_HEIGHT;
-            cursor: pointer;
             padding:2px;
             padding-left: 5px;
             border-bottom:2px solid darken(@TABLE_BACKGROUND_HEADER, 10%);
@@ -66,6 +65,7 @@
             bottom:0px;
             width:100%;
             background-color: black;
+            color:white;
         }
     }
     .terminal.maximized{
@@ -77,6 +77,9 @@
         left:inherit;
         max-width:350px;
         width:100%;
+        .header {
+            cursor: pointer;
+        }
         .hterm {
             height:0px;
         }

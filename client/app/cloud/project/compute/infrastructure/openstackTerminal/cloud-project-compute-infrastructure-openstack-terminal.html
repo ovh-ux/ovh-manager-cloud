@@ -3,7 +3,7 @@
     <div class="terminal col-md-offset-2 col-sm-offset-3"
      data-ng-class="{ maximized : OpenstackTerminalCtl.maximized, minimized : OpenstackTerminalCtl.minimized }"
      >
-        <div class="header" data-ng-click="OpenstackTerminalCtl.minimize()">
+        <div class="header" data-ng-click="OpenstackTerminalCtl.clickBar()">
             <div class="title">
                 Openstack Terminal
             </div>
@@ -15,30 +15,34 @@
             </div>
         </div>
         <div class="settings">
-            <select ng-if="!OpenstackTerminalCtl.loaders.regions"
+            <select ng-if="!OpenstackTerminalCtl.regions.loading"
                 class="form-control"
-                ng-options="region as region for region in OpenstackTerminalCtl.regions track by region"
+                ng-options="region as region for region in OpenstackTerminalCtl.regions.data track by region"
                 ng-model="OpenstackTerminalCtl.region"
                 >
             </select>
-            <oui-loader ng-show="OpenstackTerminalCtl.loaders.regions" size="s" class="d-inline-block"></oui-loader>
+            <oui-loader ng-show="OpenstackTerminalCtl.regions.loading" size="s" class="d-inline-block"></oui-loader>
             <label> Commandes :</label>
             <button type="button" class="btn btn-primary"
                 ng-repeat="(label,action) in OpenstackTerminalCtl.actions track by label"
-                ng-click="OpenstackTerminalCtl.sendAction(action)">{{label}}</button>
+                ng-click="OpenstackTerminalCtl.Service.sendAction(action, OpenstackTerminalCtl.region)">{{label}}</button>
         </div>
 
-        <div class="hterm" ng-if="OpenstackTerminalCtl.loaders.websocket">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
-        </div>
-        <div
-            ng-show="!OpenstackTerminalCtl.loaders.websocket"
-            class="hterm"
-            hterm="hterm"
-            send-data="OpenstackTerminalCtl.send(data)"
-            send-config="OpenstackTerminalCtl.setConfig(config)"
-            term="OpenstackTerminalCtl.term"
-            >
+        <div class="hterm">
+            <div ng-if="OpenstackTerminalCtl.session.loading">
+                <oui-loader size="m" class="d-inline-block"></oui-loader>
+            </div>
+            <cui-message-container
+                data-messages="OpenstackTerminalCtl.messages">
+            </cui-message-container>
+            <div
+                ng-show="!OpenstackTerminalCtl.session.loading && !OpenstackTerminalCtl.session.hasErrors && !OpenstackTerminalCtl.regions.hasErrors"
+                hterm="hterm"
+                send-data="OpenstackTerminalCtl.Service.send(data, OpenstackTerminalCtl.region)"
+                send-config="OpenstackTerminalCtl.Service.setConfig(config)"
+                term="OpenstackTerminalCtl.term"
+                >
+            </div>
         </div>
     </div>
 </div>
