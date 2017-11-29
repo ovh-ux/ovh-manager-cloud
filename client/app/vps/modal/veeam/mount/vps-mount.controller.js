@@ -23,10 +23,6 @@ class VpsMountCtrl {
             .finally(() => { this.loader.init = false });
     }
 
-    displayDate (date) {
-        return moment(date).format('LLL');
-    }
-
     cancel () {
         this.$uibModalInstance.dismiss();
 
