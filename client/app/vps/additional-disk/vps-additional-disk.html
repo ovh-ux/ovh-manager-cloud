@@ -12,6 +12,7 @@
         <button type="button"
                 class="oui-button oui-button_secondary"
                 data-translate="vps_additional_disk_add_button"
+                data-ng-if="$ctrl.canOrder()"
                 data-ng-click="$ctrl.order()"></button>
 
         <oui-table rows="$ctrl.additionnalDisks"
