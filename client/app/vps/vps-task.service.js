@@ -36,18 +36,18 @@ class VpsTaskService {
         _.forEach(tasks, task => {
             this.manageMessage(task);
         });
-        // refresh while there's task in progress
-        this.$timeout(() => {
-            if (!_.isEmpty(tasks)) {
-                this.getTasks(serviceName);
-            } else {
-                this.flushMessages();
-                if (!this.firstCall) {
+        // refresh while there's pending task
+        if (!firstCall && !_.isEmpty(tasks)) {
+            this.$timeout(() => {
+                if (!_.isEmpty(tasks)) {
+                    this.getTasks(serviceName);
+                } else {
+                    this.flushMessages();
                     this.CloudMessage.success(this.$translate.instant("vps_dashboard_task_finish"));
                 }
-            }
-            this.firstCall = false;
-        }, 5000);
+                this.firstCall = false;
+            }, 5000);
+        }
     }
 
     /*
@@ -68,6 +68,8 @@ class VpsTaskService {
         this.CloudMessage.warning({
             id: task.id,
             class: "task",
+            progress: task.progress,
+            title: this.messageType(task.type),
             textHtml: this.template(task.type, task.progress)
         }, "iaas.vps.detail");
     }
