@@ -1,4 +1,4 @@
-<section class="container-fluid cui-page__content cui-page__content-flex">
+<section class="cui-page__content">
     <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.disk"
          class="text-center">
         <oui-loader size="l" class="d-inline-block"></oui-loader>
@@ -15,7 +15,8 @@
                 data-ng-if="$ctrl.canOrder()"
                 data-ng-click="$ctrl.order()"></button>
 
-        <oui-table rows="$ctrl.additionnalDisks"
+        <oui-table data-ng-if="!$ctrl.canOrder()"
+                   rows="$ctrl.additionnalDisks"
                    rows-loader="$ctrl.loaders.disk">
             <column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
                 <span data-ng-bind="$row.id"></span>
