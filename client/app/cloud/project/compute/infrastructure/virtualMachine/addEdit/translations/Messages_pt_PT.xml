@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpcivm_addedit_add_title" qtlid="19315">Adicionar um servidor</translation>
+   <translation id="cpcivm_addedit_add_title" qtlid="19315">Adicionar servidor</translation>
    <translation id="cpcivm_addedit_edit_title" qtlid="247976">Modificar o servidor</translation>
    <translation id="cpcivm_addedit_server_name" qtlid="242977">Nome do servidor</translation>
    <translation id="cpcivm_addedit_back" qtlid="4070">Continuar</translation>

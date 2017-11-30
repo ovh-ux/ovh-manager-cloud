@@ -5,30 +5,31 @@
    <translation id="iplb_server_preview_address" qtlid="79314">Endereço IPv4</translation>
    <translation id="iplb_server_preview_port" qtlid="9034">Porta</translation>
    <translation id="iplb_server_preview_backup" qtlid="438220">Servidor de backup</translation>
-   <translation id="iplb_server_preview_probe" qtlid="438233">Usar a sonda de disponibilidade da farm</translation>
+   <translation id="iplb_server_preview_probe" qtlid="438233">Usar a sonda de disponibilidade da Farm</translation>
    <translation id="iplb_server_preview_ssl" qtlid="438246">Encriptar pedidos com SSL</translation>
    <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_server_preview_chain" qtlid="19819">Cadeia de certificados</translation>
+   <translation id="iplb_server_preview_chain" qtlid="19819">Cadeia de certificação</translation>
    <translation id="iplb_server_preview_proxyProtocolVersion" qtlid="438259">Versão do protocolo de PROXY</translation>
+   <translation id="iplb_server_preview_proxyProtocolVersion_placeholder" qtlid="17923">Seleccionar</translation>
    <translation id="iplb_server_preview_weight" qtlid="438272">Balanceamento de carga</translation>
    <translation id="iplb_server_preview_active" qtlid="55133">Ativo</translation>
    <translation id="iplb_server_preview_id" qtlid="46792">Identificador</translation>
 
-   <translation id="iplb_server_add_title" qtlid="19315">Adicionar um servidor</translation>
+   <translation id="iplb_server_add_title" qtlid="19315">Adicionar servidor</translation>
    <translation id="iplb_server_update_title" qtlid="438285">Configuração do serveur {{serverId}}</translation>
    <translation id="iplb_server_edit_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_server_edit_address" qtlid="79314">Endereço IPv4</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_server_edit_port_tip" qtlid="437934">de 1 a {{portMax}}</translation>
-   <translation id="iplb_server_edit_advanced_options" qtlid="39958">Parâmetros avançados</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="437934">de 1 a {{portMax}}, formato: simples (ex: 80), alcance(ex: 1000-1200), multipla (ex: 80,443)</translation>
+   <translation id="iplb_server_edit_advanced_options" qtlid="39958">Configurações avançadas</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Os valores predefinidos mais habituais estão pré-configurados, mas podem ser alterados a qualquer momento.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Mostrar</translation>
    <translation id="iplb_server_edit_backup" qtlid="438220">Servidor de backup</translation>
-   <translation id="iplb_server_edit_probe" qtlid="438233">Usar a sonda de disponibilidade da farm</translation>
+   <translation id="iplb_server_edit_probe" qtlid="438233">Usar a sonda de disponibilidade da Farm</translation>
    <translation id="iplb_server_edit_ssl" qtlid="438246">Encriptar pedidos com SSL</translation>
    <translation id="iplb_server_edit_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_server_edit_cookie_tip" qtlid="438298">Valor usado para a persistência dos cookies (cookie stickiness) </translation>
-   <translation id="iplb_server_edit_chain" qtlid="19819">Cadeia de certificados</translation>
+   <translation id="iplb_server_edit_cookie_tip" qtlid="438298">Valor definido para a persistência dos cookies (cookie stickiness) </translation>
+   <translation id="iplb_server_edit_chain" qtlid="19819">Cadeia de certificação</translation>
    <translation id="iplb_server_edit_chain_tip" qtlid="438311">Valor do certificado SSL intermédio. Permite a verificação do certificado do servidor (para evitar ataques "man-in-the-middle").</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion" qtlid="438259">Versão do protocolo de PROXY</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion_tip" qtlid="438324">Versão do proxyProtocol a usar, ver{{link}}</translation>
@@ -40,8 +41,8 @@
    <translation id="iplb_server_add_confirm" qtlid="37923">Adicionar</translation>
    <translation id="iplb_server_update_confirm" qtlid="43462">Atualizar</translation>
 
-   <translation id="iplb_server_request_error" qtlid="175205">Ocorreu um erro aquando do carregamento das suas informações.</translation>
-   <translation id="iplb_server_add_error" qtlid="437791">Ocorreu um erro durante a criação da server farm: {{message}}</translation>
+   <translation id="iplb_server_request_error" qtlid="175205">Ocorreu um erro durante o carregamento das suas informações.</translation>
+   <translation id="iplb_server_add_error" qtlid="437791">Ocorreu um erro durante a criação da Server Farm: {{message}}</translation>
    <translation id="iplb_server_add_success" qtlid="438363">O servidor foi adicionado com sucesso</translation>
    <translation id="iplb_server_update_error" qtlid="438376">Ocorreu um erro durante a realização das alterações ao servidor: {{message}}</translation>
    <translation id="iplb_server_update_success" qtlid="438389">As alterações ao servidor foram efetuadas corretamente</translation>

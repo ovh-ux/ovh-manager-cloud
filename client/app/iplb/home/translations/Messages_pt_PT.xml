@@ -17,7 +17,7 @@
    <translation id="iplb_home_tile_configuration" qtlid="4406">Configuração</translation>
    <translation id="iplb_home_tile_configuration_name" qtlid="3818">Nome</translation>
    <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota mensal</translation>
-   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Limite de alerta</translation>
+   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Limite do alerta</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Ilimitado</translation>
    <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Ciphers</translation>
    <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Datacenter</translation>

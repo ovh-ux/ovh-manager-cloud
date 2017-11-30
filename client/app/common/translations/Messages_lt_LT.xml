@@ -494,6 +494,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Pasiūlymas</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatinis galiojimo pratęsimas</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontaktai</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administratorius</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Sąskaita</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Techninės ypatybės</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Sukūrimo data</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Būsena</translation>

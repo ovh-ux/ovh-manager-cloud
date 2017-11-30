@@ -24,7 +24,7 @@
 
    <translation id="cpci_volume_addedit_build" qtlid="37923">Dodaj</translation>
    <translation id="cpci_volume_addedit_change_now" qtlid="249107">Zastosuj zmiany</translation>
-   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Zastosuj</translation>
+   <translation id="cpci_volume_addedit_change_now_short" qtlid="41326">Wyślij</translation>
 
    <translation id="cpci_volume_default_name" qtlid="252685">Nazwa dysku twardego</translation>
    <translation id="cpci_volume_addedit_image_error" qtlid="248366">Nie można pobrać obrazów!</translation>

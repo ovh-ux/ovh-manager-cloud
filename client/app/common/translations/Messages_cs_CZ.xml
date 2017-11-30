@@ -9,7 +9,7 @@
    <translation id="common_close" qtlid="4670">Zavřít</translation>
 
    <translation id="common_cancel" qtlid="37863">Zrušit</translation>
-   <translation id="common_edit" qtlid="37875">Změnit</translation>
+   <translation id="common_edit" qtlid="37875">Upravit</translation>
    <translation id="common_consult" qtlid="339639">Zobrazit</translation>
    <translation id="common_see_detail" qtlid="225192">Více informací</translation>
    <translation id="common_manage" qtlid="16301">Správa</translation>
@@ -41,7 +41,7 @@
    <translation id="common_menu_v3" qtlid="135931">Starý zákaznický prostor</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partneři</translation>
-   <translation id="common_menu_billing" qtlid="32950">Fakturace</translation>
+   <translation id="common_menu_billing" qtlid="32950">Fakturační kontakt</translation>
    <translation id="common_menu_renew" qtlid="229658">Mé služby</translation>
    <translation id="common_menu_orders" qtlid="282809">Moje objednávky</translation>
    <translation id="common_menu_language" qtlid="30598">Jazyk</translation>
@@ -65,14 +65,14 @@
    <translation id="common_menu_support_changelog" qtlid="124964">Changelog</translation>
    <translation id="changelog_loading_error" qtlid="298014">Historie aktualizací není momentálně k dispozici.</translation>
 
-   <translation id="common_modify" qtlid="37875">Změnit</translation>
+   <translation id="common_modify" qtlid="37875">Upravit</translation>
    <translation id="common_select" qtlid="17923">Zvolte</translation>
    <translation id="common_add" qtlid="37923">Přidat</translation>
    <translation id="common_save" qtlid="49754">Záloha</translation>
    <translation id="common_delete" qtlid="2414">Odstranit</translation>
    <translation id="common_select" qtlid="17923">Zvolte</translation>
    <translation id="common_remove" qtlid="323093">Odstranit</translation>
-   <translation id="edit" qtlid="37875">Změnit</translation>
+   <translation id="edit" qtlid="37875">Upravit</translation>
    <translation id="delete" qtlid="2414">Odstranit</translation>
    <translation id="common_back" qtlid="4118">Zpět</translation>
    <translation id="error" qtlid="26407">Chyba</translation>
@@ -494,6 +494,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Nabídka</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatické obnovení</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakty</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrativní kontakt</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Fakturační kontakt</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Technika</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Datum vytvoření</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Stav</translation>

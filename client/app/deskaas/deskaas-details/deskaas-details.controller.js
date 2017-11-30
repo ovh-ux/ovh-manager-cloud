@@ -53,6 +53,16 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             text: $translate.instant("common_modify"),
             callback: () => self.changeAlias($stateParams.serviceName),
             isAvailable: () => self.flags.editable()
+        },
+        manageAutorenew: {
+            text: $translate.instant("common_manage"),
+            href: ControllerHelper.navigation.getUrl("renew", { serviceName: $stateParams.serviceName, serviceType: "DESKAAS" }),
+            isAvailable: () => true
+        },
+        manageContact: {
+            text: $translate.instant("common_manage"),
+            href: ControllerHelper.navigation.getUrl("contacts", { serviceName: $stateParams.serviceName }),
+            isAvailable: () => true
         }
     };
 
