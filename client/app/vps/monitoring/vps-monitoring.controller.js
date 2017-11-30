@@ -55,7 +55,11 @@ class VpsMonitoringCtrl {
 
     humanizeData (data, tab) {
         _.forEach(data, element => {
-            tab.push(element.y);
+            if (element && element.y) {
+                tab.push(element.y);
+            } else {
+                tab.push(0);
+            }
         });
     }
 
