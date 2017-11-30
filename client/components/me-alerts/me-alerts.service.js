@@ -1,16 +1,19 @@
 class MeAlertsService {
-    constructor ($translate, $translatePartialLoader, CloudMessage, OvhApiMeAlertsAapi, REDIRECT_URLS, TARGET) {
+    constructor ($translate, $translatePartialLoader, CloudMessage, OvhApiMeAlertsAapi, REDIRECT_URLS, TARGET, UNIVERSE) {
         this.$translatePartialLoader = $translatePartialLoader.addPart("../components/me-alerts");
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.UserAlertsAapi = OvhApiMeAlertsAapi;
         this.REDIRECT_URLS = REDIRECT_URLS;
         this.TARGET = TARGET;
+        this.UNIVERSE = UNIVERSE;
     }
 
     getMessages () {
         this.$translate.refresh().then(() => this.UserAlertsAapi.query({
-            target: this.TARGET
+            lang: this.$translate.preferredLanguage(),
+            target: this.TARGET,
+            universe: this.UNIVERSE
         }).$promise.then(alerts => {
             if (alerts && alerts.length) {
                 angular.forEach(alerts, alert => {
