@@ -21,5 +21,5 @@
    <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Derzeit steht/stehen <strong>{{count}}</strong> Bestellung(en) aus, für deren weitere Bearbeitung wir noch Dokumente benötigen. Bitte gehen Sie in den Bereich <a href="{{link}}" class="alert-link">"Meine Bestellungen"</a>, um fehlende Angaben zu ergänzen. </translation>
    <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Sie müssen noch <strong>{{count}}</strong> Verträge validieren. </translation>
    <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Sie haben <strong>{{count}}</strong> Anfrage(n) bezüglich einer Kontaktänderung. </translation>
-
+   <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Entscheiden Sie sich jetzt für die automatische Verlängerung <a href="{{ link }}">Ihrer Dienstleistungen</a>!</translation>
 </translations>
