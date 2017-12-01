@@ -1,7 +1,8 @@
 class ControllerNavigationHelper {
-    constructor (OvhApiMe, REDIRECT_URLS, URLS) {
+    constructor (OvhApiMe, REDIRECT_URLS, TARGET, URLS) {
         this.OvhApiMe = OvhApiMe;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.TARGET = TARGET;
         this.URLS = URLS;
     }
 
@@ -16,9 +17,10 @@ class ControllerNavigationHelper {
 
     getConstant (constantName) {
         const path = _.get(this.URLS, constantName);
+        const fallback = this.TARGET == "US" ? "US" : "FR";
 
         return this.OvhApiMe.Lexi().get().$promise
-            .then(me => path[me.ovhSubsidiary]);
+            .then(me => path[me.ovhSubsidiary] || path[fallback]);
     }
 }
 
