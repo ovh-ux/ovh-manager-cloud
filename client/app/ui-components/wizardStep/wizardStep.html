@@ -6,9 +6,10 @@
     <div class="oui-list__description"
          data-ng-if="$ctrl.step.status !== 'disabled' || !$ctrl.stepDisabledCondition"
          data-ng-init="$ctrl.stepInitFunction()">
-
-        <oui-loader size="m"
-                    data-ng-if="!$ctrl.stepLoadedCondition"></oui-loader>
+        <div class="text-center">
+            <oui-loader size="m" class="d-inline-block"
+                        data-ng-if="!$ctrl.stepLoadedCondition"></oui-loader>
+        </div>
 
         <div data-ng-if="$ctrl.stepLoadedCondition"
              data-ng-transclude></div>
