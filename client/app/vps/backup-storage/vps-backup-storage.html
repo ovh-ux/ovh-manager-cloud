@@ -1,65 +1,69 @@
 <!-- Backup Storage activated -->
-<section class="cui-page__content" data-ng-if="$ctrl.backup.information.activated">
+<section class="cui-page__content">
+    <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.information"
+         class="text-center">
+        <oui-loader size="l" class="d-inline-block"></oui-loader>
+    </div>
 
-    <!-- information -->
-    <div data-ng-if="!$ctrl.loaders.information">
-        <div class="span2 bold" data-translate="vps_tab_backup_storage_name"></div>
-        <div class="span10" data-ng-bind="$ctrl.backup.information.name"></div>
+    <!-- Backup Storage not activated -->
+    <p data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.init" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
 
-        <div class="span2 bold" data-translate="vps_tab_backup_storage_login"></div>
-        <div class="span10" data-ng-bind="$ctrl.backup.information.login"></div>
+    <div data-ng-if="$ctrl.backup.information.activated && !$ctrl.loaders.init">
+        <!-- information -->
+        <div data-ng-if="!$ctrl.loaders.information">
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_name"></div>
+            <div class="span10" data-ng-bind="$ctrl.backup.information.name"></div>
 
-        <div class="span2 bold" data-translate="vps_tab_backup_storage_usage"></div>
-        <div class="span10">
-            <div class="oui-progress"
-                 data-ng-class="{'oui-progress_success' : $ctrl.backup.information.usage.value < 51,
-                                'oui-progress_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
-                                'oui-progress_error' : $ctrl.backup.information.usage.value > 80 }"
-                 style="width:250px;">
-                 <div class="oui-progress__bar"
-                      data-ng-class="{'oui-progress__bar_success' : $ctrl.backup.information.usage.value < 51,
-                                    'oui-progress__bar_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
-                                    'oui-progress__bar_error' : $ctrl.backup.information.usage.value > 80 }"
-                      role="progressbar" style="width: {{$ctrl.backup.information.usage.value}}%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
-                    <span class="oui-progress__label">
-                        <span data-ng-bind="$ctrl.backup.use | bytes:2:false:$ctrl.backup.information.quota.unit"></span>/
-                        <span data-ng-bind="$ctrl.backup.information.quota.value | bytes:2:false:$ctrl.backup.information.quota.unit"></span>
-                    </span>
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_login"></div>
+            <div class="span10" data-ng-bind="$ctrl.backup.information.login"></div>
+
+            <div class="span2 bold" data-translate="vps_tab_backup_storage_usage"></div>
+            <div class="span10">
+                <div class="oui-progress"
+                     data-ng-class="{'oui-progress_success' : $ctrl.backup.information.usage.value < 51,
+                                    'oui-progress_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
+                                    'oui-progress_error' : $ctrl.backup.information.usage.value > 80 }"
+                     style="width:250px;">
+                     <div class="oui-progress__bar"
+                          data-ng-class="{'oui-progress__bar_success' : $ctrl.backup.information.usage.value < 51,
+                                        'oui-progress__bar_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
+                                        'oui-progress__bar_error' : $ctrl.backup.information.usage.value > 80 }"
+                          role="progressbar" style="width: {{$ctrl.backup.information.usage.value}}%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                        <span class="oui-progress__label">
+                            <span data-ng-bind="$ctrl.backup.use | bytes:2:false:$ctrl.backup.information.quota.unit"></span>/
+                            <span data-ng-bind="$ctrl.backup.information.quota.value | bytes:2:false:$ctrl.backup.information.quota.unit"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <button type="button"
+                class="oui-button oui-button_secondary"
+                data-translate="vps_backup_storage_access_add_button"
+                data-ng-click="$ctrl.add()"></button>
+
+        <oui-table rows="$ctrl.backup.table.list.results"
+                   rows-loader="$ctrl.loaders.init">
+            <column title="'vps_tab_backup_storage_table_ip' | translate" property="ipBlock" sortable>
+                <span data-ng-bind="$row.ipBlock"></span>
+            </column>
+            <column title="'vps_tab_backup_storage_table_cifs' | translate" property="cifs" sortable>
+                <span data-ng-bind="$row.cifs"></span>
+            </column>
+            <column title="'vps_tab_backup_storage_table_ftp' | translate" property="ftp" sortable>
+                <span data-ng-bind="$row.ftp"></span>
+            </column>
+            <column title="'vps_tab_backup_storage_table_nfs' | translate" property="nfs" sortable>
+                <span data-ng-bind="$row.nfs"></span>
+            </column>
+            <column title="'vps_tab_backup_storage_table_status' | translate" property="isApplied" sortable>
+                <span data-ng-bind="$ctrl.getStatus($row.isApplied)"></span>
+            </column>
+            <column title="'common_actions' | translate"
+                    class="oui-table__cell_action oui-table__cell_action-menu"
+                    template="$ctrl.actionTemplate()">
+            </column>
+        </oui-table>
     </div>
-
-    <button type="button"
-            class="oui-button oui-button_secondary"
-            data-translate="vps_backup_storage_access_add_button"
-            data-ng-click="$ctrl.add()"></button>
-
-    <oui-table rows="$ctrl.backup.table.list.results"
-               rows-loader="$ctrl.loaders.init">
-        <column title="'vps_tab_backup_storage_table_ip' | translate" property="ipBlock" sortable>
-            <span data-ng-bind="$row.ipBlock"></span>
-        </column>
-        <column title="'vps_tab_backup_storage_table_cifs' | translate" property="cifs" sortable>
-            <span data-ng-bind="$row.cifs"></span>
-        </column>
-        <column title="'vps_tab_backup_storage_table_ftp' | translate" property="ftp" sortable>
-            <span data-ng-bind="$row.ftp"></span>
-        </column>
-        <column title="'vps_tab_backup_storage_table_nfs' | translate" property="nfs" sortable>
-            <span data-ng-bind="$row.nfs"></span>
-        </column>
-        <column title="'vps_tab_backup_storage_table_status' | translate" property="isApplied" sortable>
-            <span data-ng-bind="$ctrl.getStatus($row.isApplied)"></span>
-        </column>
-        <column title="'common_actions' | translate"
-                class="oui-table__cell_action oui-table__cell_action-menu"
-                template="$ctrl.actionTemplate()">
-        </column>
-    </oui-table>
-</section>
-
-<!-- Backup Storage not activated -->
-<section class="cui-page__content" data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.information">
-    <p data-translate="vps_tab_SUMMARY_backups_not_available"></p>
 </section>
