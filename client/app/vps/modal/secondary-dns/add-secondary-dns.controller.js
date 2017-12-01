@@ -35,7 +35,7 @@ class AddSecondaryDnsCtrl {
         this.loader.save = true;
         this.VpsService.addSecondaryDnsDomain(this.serviceName, this.model)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_secondarydns_add_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_add_fail")))
+            .catch(err => this.CloudMessage.error(err.message))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
