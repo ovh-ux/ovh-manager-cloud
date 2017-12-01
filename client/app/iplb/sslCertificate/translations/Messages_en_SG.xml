@@ -12,7 +12,7 @@
    <translation id="iplb_ssl_no_certificate" qtlid="439000">No certificate</translation>
 
    <translation id="iplb_ssl_see" qtlid="433371">See a preview</translation>
-   <translation id="iplb_ssl_update" qtlid="37875">Change</translation>
+   <translation id="iplb_ssl_update" qtlid="37875">Edit</translation>
    <translation id="iplb_ssl_delete" qtlid="2414">Delete</translation>
 
    <translation id="iplb_ssl_list_error" qtlid="439013">An error has occurred downloading the certificate list.</translation>
@@ -30,7 +30,7 @@
    <translation id="iplb_ssl_edit_chain" qtlid="439052">Chain (optional)</translation>
 
    <translation id="iplb_ssl_update_title" qtlid="439065">Modify an SSL certificate</translation>
-   <translation id="iplb_ssl_update_confirm" qtlid="37875">Change</translation>
+   <translation id="iplb_ssl_update_confirm" qtlid="37875">Edit</translation>
    <translation id="iplb_ssl_update_cancel" qtlid="37863">Cancel</translation>
    <translation id="iplb_ssl_update_nom" qtlid="3818">Name</translation>
    <translation id="iplb_ssl_update_success" qtlid="439078">The SSL certificate has been successfully created.</translation>

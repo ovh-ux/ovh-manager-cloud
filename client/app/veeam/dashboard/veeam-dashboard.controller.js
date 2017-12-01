@@ -1,6 +1,6 @@
 (() => {
     class VeeamDashboardCtrl {
-        constructor ($stateParams, $translate, VeeamService, ControllerHelper, REDIRECT_URLS) {
+        constructor ($stateParams, $translate, VeeamService, ControllerHelper) {
             this.$stateParams = $stateParams;
             this.$translate = $translate;
             this.VeeamService = VeeamService;
@@ -8,13 +8,8 @@
 
             this.serviceName = this.$stateParams.serviceName;
 
-            this.urls = {
-                renew: REDIRECT_URLS.renew
-                                .replace("{serviceType}", "VEEAM_CLOUD_CONNECT")
-                                .replace("{serviceName}", this.$stateParams.serviceName)
-            };
-
             this.initLoaders();
+            this.initActions();
         }
 
         initLoaders () {
@@ -61,6 +56,26 @@
             });
         }
 
+        initActions () {
+            this.uiActions = {
+                changeOffer: {
+                    text: this.$translate.instant("common_edit"),
+                    callback: () => this.changeOffer(),
+                    isAvailable: () => !this.actions.loading && this.actions.data.upgradeOffer.available
+                },
+                manageAutorenew: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "VEEAM_CLOUD_CONNECT" }),
+                    isAvailable: () => true
+                },
+                manageContact: {
+                    text: this.$translate.instant("common_manage"),
+                    href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
+                    isAvailable: () => true
+                }
+            };
+        }
+
         $onInit () {
             this.configurationInfos.load();
             this.subscriptionInfos.load();
@@ -78,15 +93,13 @@
                         resolve: {
                             serviceName: () => this.serviceName
                         }
-                    },
-                    successHandler: result => {
-                        this.VeeamService.startPolling(this.$stateParams.serviceName, result.data);
-                    },
-                    errorHandler: err => this.VeeamService.unitOfWork.messages.push({
+                    }
+                })
+                    .then(result => this.VeeamService.startPolling(this.$stateParams.serviceName, result.data))
+                    .catch(err => this.VeeamService.unitOfWork.messages.push({
                         text: err.message,
                         type: "error"
-                    })
-                });
+                    }));
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),
@@ -105,18 +118,16 @@
                         resolve: {
                             serviceName: () => this.serviceName
                         }
-                    },
-                    successHandler: result => {
-                        this.VeeamService.unitOfWork.messages.push({
-                            textHtml: result.message,
-                            type: "success"
-                        });
-                    },
-                    errorHandler: err => this.VeeamService.unitOfWork.messages.push({
+                    }
+                })
+                    .then(result => this.VeeamService.unitOfWork.messages.push({
+                        textHtml: result.message,
+                        type: "success"
+                    }))
+                    .catch(err => this.VeeamService.unitOfWork.messages.push({
                         text: err.message,
                         type: "error"
-                    })
-                });
+                    }));
             } else {
                 this.ControllerHelper.modal.showWarningModal({
                     title: this.$translate.instant("common_action_unavailable"),

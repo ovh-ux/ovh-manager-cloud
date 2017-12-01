@@ -21,5 +21,5 @@
    <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Vous avez <strong>{{count}}</strong> commande(s) en attente pour lesquels des documents sont nécessaires. Rendez-vous dans <a href="{{link}}" class="alert-link">la section "Mes commandes"</a> pour le(s) mettre à jour.</translation>
    <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Vous avez <strong>{{count}}</strong> contrats à valider.</translation>
    <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Vous avez <strong>{{count}}</strong> demande(s) de changement de contact.</translation>
-
+   <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Optez vite pour le renouvellement automatique de <a href="{{ link }}">vos services</a>!</translation>
 </translations>

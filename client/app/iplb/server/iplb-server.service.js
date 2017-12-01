@@ -72,6 +72,13 @@ class IpLoadBalancerServerService {
                 return farm.type;
             });
     }
+
+    getProxyProtocolVersions () {
+        return this.IpLoadBalancing.Lexi().schema()
+            .$promise
+            .then(schema => schema.models["ipLoadbalancing.ProxyProtocolVersionEnum"].enum)
+            .catch(this.ServiceHelper.errorHandler("iplb_server_request_error"));
+    }
 }
 
 angular.module("managerApp")
