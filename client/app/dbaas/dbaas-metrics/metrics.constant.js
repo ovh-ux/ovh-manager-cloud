@@ -11,8 +11,9 @@ angular.module("managerApp")
             }
         ],
         protos: [
-        // 'prometheus',
-        // 'influxdb',
+            "prometheus",
+            "influxdb",
+            "graphite",
             "warp10",
             "opentsdb"
         ],
