@@ -1,15 +1,12 @@
-<!-- Backup Storage activated -->
 <section class="cui-page__content">
     <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.information"
          class="text-center">
         <oui-loader size="l" class="d-inline-block"></oui-loader>
     </div>
 
-    <!-- Backup Storage not activated -->
     <p data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.init" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
 
     <div data-ng-if="$ctrl.backup.information.activated && !$ctrl.loaders.init">
-        <!-- information -->
         <div data-ng-if="!$ctrl.loaders.information">
             <div class="span2 bold" data-translate="vps_tab_backup_storage_name"></div>
             <div class="span10" data-ng-bind="$ctrl.backup.information.name"></div>

@@ -29,7 +29,6 @@ class VpsMonitoringSlaCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -42,8 +41,6 @@ class VpsMonitoringSlaCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsMonitoringSlaCtrl", VpsMonitoringSlaCtrl);
