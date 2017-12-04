@@ -1,8 +1,9 @@
 class VpsUpgradeCtrl {
-    constructor ($filter, $translate, $q, VpsService, CloudMessage) {
+    constructor ($filter, $stateParams, $translate, $q, VpsService, CloudMessage) {
         this.$filter = $filter;
         this.$translate = $translate;
         this.$q = $q;
+        this.serviceName = $stateParams.serviceName;
         this.Vps = VpsService;
         this.CloudMessage = CloudMessage;
 
@@ -32,7 +33,7 @@ class VpsUpgradeCtrl {
     loadUpgradesList () {
         this.loaders.step1 = true;
         if (!this.upgradesList) {
-            return this.Vps.upgradesList().then(data => {
+            return this.Vps.upgradesList(this.serviceName).then(data => {
                 this.upgradesList = data.results;
                 return data;
             }).catch(err => {
@@ -51,7 +52,7 @@ class VpsUpgradeCtrl {
         const modelToUpgradeTo = $.grep(this.upgradesList, e => { return e.model === this.selectedModel.model; });
         if (modelToUpgradeTo.length) {
             this.selectedModelForUpgrade = modelToUpgradeTo[0];
-            return this.Vps.upgrade(this.selectedModelForUpgrade.model, this.selectedModelForUpgrade.duration.duration).then(data => {
+            return this.Vps.upgrade(this.serviceName, this.selectedModelForUpgrade.model, this.selectedModelForUpgrade.duration.duration).then(data => {
                 this.conditionsAgree = false;
                 this.selectedModelForUpgrade.duration.dateFormatted = this.$filter("date")(this.selectedModelForUpgrade.duration.date, "dd/MM/yyyy");
                 this.order = data;
