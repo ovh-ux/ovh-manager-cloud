@@ -40,8 +40,6 @@ class VpsRestoreCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsRestoreCtrl", VpsRestoreCtrl);

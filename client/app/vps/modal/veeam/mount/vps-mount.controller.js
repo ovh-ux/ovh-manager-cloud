@@ -49,8 +49,6 @@ class VpsMountCtrl {
         }
 
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsMountCtrl", VpsMountCtrl);

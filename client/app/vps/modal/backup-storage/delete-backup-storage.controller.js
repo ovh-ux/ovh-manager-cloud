@@ -27,8 +27,6 @@ class DeleteBackupStorageCtrl {
             })
 
     }
-
-
 }
 
 angular.module("managerApp").controller("DeleteBackupStorageCtrl", DeleteBackupStorageCtrl);
