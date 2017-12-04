@@ -32,7 +32,6 @@ class VpsPasswordCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -45,8 +44,6 @@ class VpsPasswordCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsPasswordCtrl", VpsPasswordCtrl);
