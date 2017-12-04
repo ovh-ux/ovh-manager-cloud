@@ -53,24 +53,29 @@
    <translation id="iplb_ssl_order_name" qtlid="415818">Nom (facultatif)</translation>
    <translation id="iplb_ssl_order_type" qtlid="439169">Type de certificat</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuit</translation>
-   <translation id="iplb_ssl_order_type_dv" qtlid="439182">Comodo DV</translation>
-   <translation id="iplb_ssl_order_type_ev" qtlid="439195">Comodo EV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_dv_single" qtlid="439182">Comodo DV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_ev_single" qtlid="439195">Comodo EV</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuit</translation>
    <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
    <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">example.com, www.example.com</translation>
    <translation id="iplb_ssl_order_contact" qtlid="31066">Contact</translation>
    <translation id="iplb_ssl_order_email" qtlid="439234">Adresse électronique</translation>
-   <translation id="iplb_ssl_order_business_category" qtlid="431851">Categorie d'organisation</translation>
+   <translation id="iplb_ssl_order_business_category" qtlid="431851">Catégorie d'organisation</translation>
+   <translation id="iplb_ssl_order_business_category_placeholder" qtlid="17923">Sélectionner</translation>
    <translation id="iplb_ssl_order_country" qtlid="25171">Pays</translation>
    <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Etat ou province</translation>
-   <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Date d'incorporation</translation>
+   <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Date d'enregistrement de l'organisation</translation>
    <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Nom de l'organisation</translation>
    <translation id="iplb_ssl_order_unit_name" qtlid="439260">Nom de l'unité organisationnelle</translation>
    <translation id="iplb_ssl_order_address" qtlid="30430">Adresse</translation>
    <translation id="iplb_ssl_order_postal_code" qtlid="30346">Code postal</translation>
    <translation id="iplb_ssl_order_city" qtlid="33310">Ville</translation>
-   <translation id="iplb_ssl_order_joi" qtlid="439273">Juridiction d'incorporation</translation>
+   <translation id="iplb_ssl_order_joi" qtlid="439273">Siège social</translation>
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Commander</translation>
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Annuler</translation>
+
+   <translation id="iplb_ssl_order_loading_error">Erreur lors du chargement des données de produit.</translation>
+   <translation id="iplb_ssl_order_success">Un nouveau certificat est en cours de création.</translation>
+   <translation id="iplb_ssl_order_error">Erreur lors de la création du certificat: {{message}}</translation>
 </translations>
