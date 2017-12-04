@@ -36,7 +36,6 @@ class VpsReverseDnsCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -63,8 +62,6 @@ class VpsReverseDnsCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsReverseDnsCtrl", VpsReverseDnsCtrl);

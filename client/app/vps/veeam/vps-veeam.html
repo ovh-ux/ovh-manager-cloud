@@ -5,7 +5,6 @@
 
     <div data-ng-if="!$ctrl.loaders.init">
         <div data-ng-if="$ctrl.veeam.state !== 'disabled'">
-            <!-- information -->
             <dl>
                 <dt data-translate="vps_tab_VEEAM_dashboard_state"></dt>
                 <dd class="label"
@@ -38,12 +37,9 @@
             </oui-table>
         </div>
 
-        <!-- Veeam not activated -->
         <div data-ng-if="$ctrl.veeam.state == 'disabled' && !$ctrl.loaders.checkOrder">
             <p data-ng-if="$ctrl.vps.hasVeeam && $ctrl.vps.canOrder" data-translate="vps_tab_VEEAM_dashboard_not_activated"></p>
-            <!-- Veeam not available -->
             <p data-ng-if="!$ctrl.vps.hasVeeam" data-translate="vps_tab_VEEAM_dashboard_veeam_unavailable"></p>
-            <!-- Veeam cannot be order -->
             <p data-ng-if="!$ctrl.vps.canOrder" data-translate="vps_tab_VEEAM_dashboard_not_able_to_order"></p>
         </div>
     </div>

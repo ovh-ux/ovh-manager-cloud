@@ -27,8 +27,6 @@ class DeleteSecondaryDnsCtrl {
             })
 
     }
-
-
 }
 
 angular.module("managerApp").controller("DeleteSecondaryDnsCtrl", DeleteSecondaryDnsCtrl);
