@@ -28,7 +28,6 @@ class AddSecondaryDnsCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -42,8 +41,6 @@ class AddSecondaryDnsCtrl {
             })
 
     }
-
-
 }
 
 angular.module("managerApp").controller("AddSecondaryDnsCtrl", AddSecondaryDnsCtrl);

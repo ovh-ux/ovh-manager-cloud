@@ -69,6 +69,10 @@ class VpsUpgradeCtrl {
         history.back();
     }
 
+    confirm () {
+        // action to upgrade
+    }
+
     displayBC () {
         window.open(
             this.order.url,

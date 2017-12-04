@@ -19,13 +19,13 @@ class VpsKvmCtrl {
 
     $onInit () {
         this.loader.init = true;
-        this.getKvmUrl();
+        this.kvmUrl();
         if (this.hasKVM) {
             this.loadKvm();
         }
     }
 
-    getKvmUrl () {
+    kvmUrl () {
         this.VpsService.getKVMConsoleUrl(this.serviceName)
             .then(data => {
                 this.consoleUrl = this.$sce.trustAsResourceUrl(data);
@@ -44,9 +44,7 @@ class VpsKvmCtrl {
 
     close () {
         this.$uibModalInstance.dismiss();
-
     }
-
 }
 
 angular.module("managerApp").controller("VpsKvmCtrl", VpsKvmCtrl);
