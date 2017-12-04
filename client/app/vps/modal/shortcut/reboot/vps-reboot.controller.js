@@ -36,7 +36,6 @@ class VpsRebootCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -49,8 +48,6 @@ class VpsRebootCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("VpsRebootCtrl", VpsRebootCtrl);

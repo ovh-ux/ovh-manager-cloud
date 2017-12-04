@@ -37,7 +37,6 @@ class AddBackupStorageCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -51,8 +50,6 @@ class AddBackupStorageCtrl {
             })
 
     }
-
-
 }
 
 angular.module("managerApp").controller("AddBackupStorageCtrl", AddBackupStorageCtrl);

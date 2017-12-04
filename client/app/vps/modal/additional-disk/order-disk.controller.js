@@ -68,7 +68,6 @@ class OrderAdditionalDiskCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
-
     }
 
     confirm () {
@@ -84,8 +83,6 @@ class OrderAdditionalDiskCtrl {
                 this.$uibModalInstance.close();
             });
     }
-
-
 }
 
 angular.module("managerApp").controller("OrderAdditionalDiskCtrl", OrderAdditionalDiskCtrl);

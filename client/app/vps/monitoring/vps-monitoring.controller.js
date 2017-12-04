@@ -74,14 +74,6 @@ class VpsMonitoringCtrl {
     }
 
     loadOptions () {
-        // this.datasetOverride =
-        // [{
-        //     yAxisID: 'y-axis-1',
-        //     borderColor: 'rgb(54, 162, 235)'
-        //  }, {
-        //     yAxisID: 'y-axis-2',
-        //     borderColor: 'rgb(255, 159, 64)'
-        // }];
         this.colors = ['#F1C40F', '#3498DB', '#717984', '#72C02C'];
         this.series = [this.$translate.instant("vps_monitoring_network_netRx"), this.$translate.instant("vps_monitoring_network_netTx")];
         this.option1 = {
@@ -143,21 +135,6 @@ class VpsMonitoringCtrl {
                         labelString: "BPS"
 
                     }
-                // },
-                // {
-                //     id: 'y-axis-2',
-                //     type: 'linear',
-                //     display: true,
-                //     position: 'right',
-                //     ticks: {
-                //         min: 0,
-                //         beginAtZero: true
-                //     },
-                //     scaleLabel: {
-                //         display: true,
-                //         labelString: "BPS"
-
-                //     }
                 }
               ]
             },
