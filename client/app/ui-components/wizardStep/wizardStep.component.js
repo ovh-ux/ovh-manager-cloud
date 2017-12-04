@@ -17,6 +17,38 @@
  * - `step-completed` : condition that makes this step completed, triggering the `step-on-complete` function
  * - `step-on-complete` : final function which is called after the step completion
  **/
+class cuiWizardStepController {
+    constructor ($scope) {
+        this.$scope = $scope;
+        this.$ctrl = this.$scope && this.$scope.$ctrl;
+        this.step = this.$ctrl && this.$ctrl.step;
+    }
+
+    $onInit () {
+        this.$ctrl.cuiWizardFormController.createStep(this.$ctrl);
+
+        this.stepLoadedCondition = this.stepLoadedCondition || true;
+        this.stepDisabledCondition = this.stepDisabledCondition || true;
+
+        this.$scope.$watch(() => this.step.status, (newValue, oldValue) => {
+            if (oldValue === "complete" && newValue === "active") {
+                this.stepInitFunction();
+            }
+        });
+    }
+
+    $onChanges (changes) {
+        if (this.step && this.step.status !== "disabled") {
+            this.$scope.$emit("completeStep", {
+                id: this.step.id,
+                condition: this.stepCompletedCondition
+            });
+            if (this.stepCompletedCondition) {
+                this.stepCompletedFunction();
+            }
+        }
+    }
+}
 
 angular.module("managerApp")
     .directive("cuiWizardStep", () => {
@@ -38,37 +70,6 @@ angular.module("managerApp")
             require: {
                 cuiWizardFormController: "^cuiWizardForm"
             },
-            controller: class cuiWizardStepController {
-                constructor ($scope) {
-                    this.$scope = $scope;
-                    this.$ctrl = this.$scope && this.$scope.$ctrl;
-                    this.step = this.$ctrl && this.$ctrl.step;
-                }
-
-                $onInit () {
-                    this.$ctrl.cuiWizardFormController.createStep(this.$ctrl);
-
-                    this.stepLoadedCondition = this.stepLoadedCondition || true;
-                    this.stepDisabledCondition = this.stepDisabledCondition || true;
-
-                    this.$scope.$watch(() => this.step.status, (newValue, oldValue) => {
-                        if (oldValue === "complete" && newValue === "active") {
-                            this.stepInitFunction();
-                        }
-                    });
-                }
-
-                $onChanges (changes) {
-                    if (this.step && this.step.status !== "disabled") {
-                        this.$scope.$emit("completeStep", {
-                            id: this.step.id,
-                            condition: this.stepCompletedCondition
-                        });
-                        if (this.stepCompletedCondition) {
-                            this.stepCompletedFunction();
-                        }
-                    }
-                }
-            }
+            controller: cuiWizardStepController
         };
     });
