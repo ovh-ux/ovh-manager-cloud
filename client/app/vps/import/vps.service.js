@@ -837,9 +837,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * upgrade the VPS tothe specified model
          */
-        this.upgrade = function (model, duration) {
+        this.upgrade = function (serviceName, model, duration) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name && model && duration) {
                     vpsName = vps.name;
                     return $http.post([swsOrderProxypass, vps.name, "upgrade", duration].join("/"), { model: model })
@@ -864,9 +864,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * get details for an option for the VPS
          */
-        this.upgradesList = function () {
+        this.upgradesList = function (serviceName) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     return $http.get([aapiRootPath, vps.name, "upgrade"].join("/"), {serviceType: "aapi"})
