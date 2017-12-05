@@ -5,7 +5,8 @@
 
     <div data-ng-if="!$ctrl.loaders.init">
         <div data-ng-if="$ctrl.veeam.state !== 'disabled'">
-            <dl>
+            <p data-ng-if="!$ctrl.veeam.accessInfos.restorePoint" data-translate="vps_tab_VEEAM_dashboard_no_current_restore_point"></p>
+            <dl data-ng-if="$ctrl.veeam.accessInfos.restorePoint">
                 <dt data-translate="vps_tab_VEEAM_dashboard_state"></dt>
                 <dd class="label"
                     data-ng-class="{'label-success': $ctrl.veeam.state === 'enabled', 'label-info': $ctrl.veeam.state !== 'enabled'}"
