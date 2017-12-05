@@ -18,7 +18,7 @@
                 <span data-ng-bind="$row.ipMaster"></span>
             </column>
             <column title="'vps_tab_SECONDARY_DNS_table_date' | translate" property="creationDate" sortable>
-                <span data-ng-bind="$row.creationDate"></span>
+                <span data-ng-bind="$row.creationDate | momentFormat:'LL'"></span>
             </column>
             <column title="'vps_tab_SECONDARY_DNS_table_dns' | translate" property="dns" sortable>
                 <span data-ng-bind="$row.dns"></span>
