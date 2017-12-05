@@ -12,6 +12,7 @@ class VpsHeaderCtrl {
         this.loaders = {
             init: false
         };
+        this.vps = {};
         this.stopNotification = {
             autoRenew: true,
             ipV6: true
@@ -25,6 +26,7 @@ class VpsHeaderCtrl {
         });
         this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
+                this.vps = vps;
                 this.description = vps.displayName;
                 this.checkMessages(vps);
             })
@@ -40,7 +42,7 @@ class VpsHeaderCtrl {
 
     isExpired(vps) {
         if (vps.isExpired) {
-            this.CloudMessage.warning(this.$translate.instant("vps_service_expired", {vps: vps.name}));
+            this.CloudMessage.warning(this.$translate.instant("vps_service_expired", {vps: vps.name}), "iaas.vps.detail");
         } else if (vps.messages.length > 0) {
             this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"), vps);
         }
