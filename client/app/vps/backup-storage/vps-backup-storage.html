@@ -1,10 +1,13 @@
 <section class="cui-page__content">
-    <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.information"
+    <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.information || $ctrl.loaders.vps"
          class="text-center">
         <oui-loader size="l" class="d-inline-block"></oui-loader>
     </div>
 
-    <p data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.init" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
+    <div data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.init && !$ctrl.loaders.vps">
+        <p data-ng-if="$ctrl.vps.hasBackup" data-translate="vps_tab_backup_not_activated"></p>
+        <p data-ng-if="!$ctrl.vps.hasBackup" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
+    </div>
 
     <div data-ng-if="$ctrl.backup.information.activated && !$ctrl.loaders.init">
         <div data-ng-if="!$ctrl.loaders.information">
@@ -36,7 +39,7 @@
         </div>
 
         <button type="button"
-                class="oui-button oui-button_secondary"
+                class="oui-button oui-button_secondary mt-4"
                 data-translate="vps_backup_storage_access_add_button"
                 data-ng-click="$ctrl.add()"></button>
 
