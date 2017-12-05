@@ -8,15 +8,27 @@ class VpsBackupStorageCtrl {
 
         this.loaders = {
             init: false,
-            information: false
+            information: false,
+            vps: false
         };
         this.backup = {};
+        this.vps = {};
 
     }
 
     $onInit () {
         this.loadInformation ();
         this.loadBackup();
+    }
+
+    loadVps () {
+        this.loaders.vps = true;
+        this.VpsService.getSelectedVps(this.serviceName)
+            .then(vps => {
+                this.vps = vps;
+            })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loaders.vps = false });
     }
 
     loadInformation () {
@@ -31,7 +43,9 @@ class VpsBackupStorageCtrl {
                             value: 0
                         };
                     }
-                    this.backup.use = backupInfo.usage.value * backupInfo.quota.value / 100;
+                }
+                if (!backupInfo.activated) {
+                    this.loadVps();
                 }
             })
             .catch(err => this.CloudMessage.error(err))
