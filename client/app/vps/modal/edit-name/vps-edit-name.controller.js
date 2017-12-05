@@ -19,7 +19,7 @@ class VpsEditNameCtrl {
 
     confirm () {
         this.loaders.save = true;
-        this.VpsService.updateDisplayName(this.value)
+        this.VpsService.updateDisplayName(this.serviceName, this.value)
             .then(() => {
                 this.$scope.$emit("changeDescription", this.value.displayName);
                 this.$uibModalInstance.close();
