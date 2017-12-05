@@ -1,5 +1,5 @@
 angular.module("managerApp").constant("VpsMonitoringConstant", {
-	colors : ['#F1C40F', '#3498DB', '#717984', '#72C02C'],
+    colors : ['#F1C40F', '#3498DB', '#717984', '#72C02C'],
     option1 : {
         scales: {
             xAxes: [{
