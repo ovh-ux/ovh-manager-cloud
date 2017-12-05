@@ -1,6 +1,6 @@
 <cui-page-header data-title-text="$ctrl.description || $ctrl.serviceName"
                  data-subtitle-text="$ctrl.serviceName">
-    <cui-tabs>
+    <cui-tabs data-ng-if="!$ctrl.vps.isExpired">
         <cui-tab data-text="'vps_tab_dashboard' | translate"
                  data-state="iaas.vps.detail.dashboard"
                  data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
