@@ -1019,8 +1019,8 @@ angular.module("managerApp").service("VpsService", [
         /**
          * Update the VPS display name
          */
-        this.updateDisplayName = function (newValue) {
-            return this.getSelected()
+        this.updateDisplayName = function (serviceName, newValue) {
+            return this.getSelectedVps(serviceName)
                 .then(function (vps) {
                     return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                         .then(function (response) {
