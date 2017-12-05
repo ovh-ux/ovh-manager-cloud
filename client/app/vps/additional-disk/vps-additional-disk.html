@@ -9,6 +9,7 @@
     </div>
 
     <div data-ng-if="$ctrl.hasAdditionalDiskOption && !$ctrl.loaders.disk">
+        <p data-ng-if="$ctrl.canOrder" data-translate="vps_tab_additional_disk_count"></p>
         <button type="button"
                 class="oui-button oui-button_secondary"
                 data-translate="vps_additional_disk_add_button"
