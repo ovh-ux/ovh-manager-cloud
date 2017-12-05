@@ -1,5 +1,5 @@
 class VpsBackupStorageCtrl {
-    constructor ($stateParams ,$translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($stateParams ,$translate, CloudMessage, VpsActionService, VpsService) {
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -22,7 +22,7 @@ class VpsBackupStorageCtrl {
     loadInformation () {
         this.loaders.information = true;
         this.VpsService.getBackupStorageInformation(this.serviceName)
-            .then((backupInfo) => {
+            .then(backupInfo => {
                 this.backup.information = backupInfo;
                 if (backupInfo.activated === true && backupInfo.quota) {
                     if (backupInfo.usage === 0) {
@@ -34,7 +34,7 @@ class VpsBackupStorageCtrl {
                     this.backup.use = backupInfo.usage.value * backupInfo.quota.value / 100;
                 }
             })
-            .catch((err) => { this.CloudMessage.error(err) })
+            .catch(err => this.CloudMessage.error(err))
             .finally(() => {
                 this.loaders.information = false;
             });
