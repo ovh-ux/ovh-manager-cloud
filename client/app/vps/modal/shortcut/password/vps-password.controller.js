@@ -19,15 +19,13 @@ class VpsPasswordCtrl {
     $onInit () {
         this.loader.init = true;
         this.VpsService.getTaskInError(this.serviceName)
-            .then(tasks => { this.hasTasks(tasks) })
+            .then(tasks => {
+                if (tasks.length) {
+                    this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail"));
+                }
+            })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loader.init = false });
-    }
-
-    hasTasks (tasks) {
-        if (tasks.length) {
-            this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail"));
-        }
     }
 
     cancel () {
