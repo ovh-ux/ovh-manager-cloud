@@ -12,7 +12,7 @@ angular.module("managerApp")
 
             </div>
         `,
-        controller: class VpsTileStatusItemCtrl {},
+        controller: class {},
         controllerAs: "$ctrl",
         transclude: true,
         replace: true,

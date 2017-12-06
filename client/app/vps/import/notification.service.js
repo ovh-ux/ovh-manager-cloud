@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").service("Notification", ["$q", "ovhUserPref", function ($q, ovhUserPref) {
+angular.module("managerApp").service("VpsNotificationIpv6", ["$q", "ovhUserPref", function ($q, ovhUserPref) {
     "use strict";
 
     var self = this;
