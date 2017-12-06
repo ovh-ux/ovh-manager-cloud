@@ -2,18 +2,9 @@
     <cui-back-link data-state="network.iplb.detail.ssl-certificate"
                    data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
                    data-text="'iplb_back_home' | translate"></cui-back-link>
-    <h1 data-translate="iplb_ssl_add_title"></h1>
+    <h2 class="oui-header_2" data-translate="iplb_ssl_add_title"></h2>
 
     <form novalidate name="ctrl.form">
-        <div class="oui-field">
-            <label for="displayName" class="oui-label" data-translate="iplb_ssl_order_name"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_4">
-                    <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="ctrl.newSsl.displayName" />
-                </div>
-            </div>
-        </div>
-
         <div class="oui-field">
             <label class="oui-label" data-translate="iplb_ssl_order_type"></label>
             <div class="oui-field__content">
@@ -27,157 +18,267 @@
             </div>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field"
+            data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.fqdn.$invalid }">
             <label for="fqdn" class="oui-label" data-translate="iplb_ssl_order_fqdn"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
-                    <input type="text" id="fqdn" name="fqdn" class="oui-input" data-ng-model="ctrl.newSsl.fqdn" />
+                    <input
+                        type="text"
+                        id="fqdn"
+                        name="fqdn"
+                        class="oui-input"
+                        data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.fqdn.$invalid }"
+                        data-ng-model="ctrl.newSsl.fqdn"
+                        required />
                 </div>
                 <div class="oui-field-helper"
                     data-translate="iplb_ssl_order_fqdn_tip"></div>
             </div>
         </div>
 
-        <cui-advanced-options data-ng-show="ctrl.newSsl.type === 'ev'"
-            data-expanded="true">
+        <div data-ng-if="ctrl.newSsl.type === 'iplb_ssl_ev_single'">
             <h3 class="oui-header_3" data-translate="iplb_ssl_order_contact"></h3>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.email.$invalid }">
                 <label for="email" class="oui-label" data-translate="iplb_ssl_order_email"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="email" name="email" class="oui-input" data-ng-model="ctrl.newSsl.option.email" />
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.email.$invalid }"
+                            data-ng-model="ctrl.newSsl.email"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.date_of_incorporation.$invalid }">
                 <label for="date_of_incorporation" class="oui-label" data-translate="iplb_ssl_order_incorporation_date"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_2">
-                        <input type="text" id="date_of_incorporation" name="date_of_incorporation" class="oui-input" data-ng-model="ctrl.newSsl.option.date_of_incorporation" />
+                        <input
+                            type="text"
+                            id="date_of_incorporation"
+                            name="date_of_incorporation"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.date_of_incorporation.$invalid }"
+                            data-ng-model="ctrl.newSsl.date_of_incorporation"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.organizationName.$invalid }">
                 <label for="organizationName" class="oui-label" data-translate="iplb_ssl_order_organisation_name"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="organizationName" name="organizationName" class="oui-input" data-ng-model="ctrl.newSsl.option.organizationName" />
+                        <input
+                            type="text"
+                            id="organizationName"
+                            name="organizationName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.organizationName.$invalid }"
+                            data-ng-model="ctrl.newSsl.organizationName"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.organizationalUnitName.$invalid }">
                 <label for="organizationalUnitName" class="oui-label" data-translate="iplb_ssl_order_unit_name"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="organizationalUnitName" name="organizationalUnitName" class="oui-input" data-ng-model="ctrl.newSsl.option.organizationalUnitName" />
+                        <input
+                            type="text"
+                            id="organizationalUnitName"
+                            name="organizationalUnitName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.organizationalUnitName.$invalid }"
+                            data-ng-model="ctrl.newSsl.organizationalUnitName"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.business_category.$invalid }">
                 <label for="business_category" class="oui-label" data-translate="iplb_ssl_order_business_category"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-select">
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.business_category.$invalid }">
                             <select class="oui-select__input"
                                 name="business_category"
                                 id="business_category"
-                                data-ng-model="ctrl.newSsl.option.business_category"
-                                data-ng-options="organizationType as organizationType for organizationType in ctrl.organizationTypes"></select>
+                                data-ng-model="ctrl.newSsl.business_category"
+                                data-ng-options="organizationType as organizationType for organizationType in ctrl.organizationTypes"
+                                required>
+                                <option data-translate="iplb_ssl_order_business_category_placeholder"></option>
+                            </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.streetName.$invalid }">
                 <label for="streetName" class="oui-label" data-translate="iplb_ssl_order_address"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="streetName" name="streetName" class="oui-input" data-ng-model="ctrl.newSsl.option.streetName" />
+                        <input
+                            type="text"
+                            id="streetName"
+                            name="streetName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.streetName.$invalid }"
+                            data-ng-model="ctrl.newSsl.streetName"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.postalCode.$invalid }">
                 <label for="postalCode" class="oui-label" data-translate="iplb_ssl_order_postal_code"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_2">
-                        <input type="text" id="postalCode" name="postalCode" class="oui-input" data-ng-model="ctrl.newSsl.option.postalCode" />
+                        <input
+                            type="text"
+                            id="postalCode"
+                            name="postalCode"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.postalCode.$invalid }"
+                            data-ng-model="ctrl.newSsl.postalCode"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.stateOrProvinceName.$invalid }">
                 <label for="stateOrProvinceName" class="oui-label" data-translate="iplb_ssl_order_state_or_province"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="stateOrProvinceName" name="stateOrProvinceName" class="oui-input" data-ng-model="ctrl.newSsl.option.stateOrProvinceName" />
+                        <input
+                            type="text"
+                            id="stateOrProvinceName"
+                            name="stateOrProvinceName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.stateOrProvinceName.$invalid }"
+                            data-ng-model="ctrl.newSsl.stateOrProvinceName"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.localityName.$invalid }">
                 <label for="localityName" class="oui-label" data-translate="iplb_ssl_order_city"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="localityName" name="localityName" class="oui-input" data-ng-model="ctrl.newSsl.option.localityName" />
+                        <input
+                            type="text"
+                            id="localityName"
+                            name="localityName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.localityName.$invalid }"
+                            data-ng-model="ctrl.newSsl.localityName"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.countryName.$invalid }">
                 <label for="countryName" class="oui-label" data-translate="iplb_ssl_order_country"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="countryName" name="countryName" class="oui-input" data-ng-model="ctrl.newSsl.option.countryName" />
+                        <input
+                            type="text"
+                            id="countryName"
+                            name="countryName"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.countryName.$invalid }"
+                            data-ng-model="ctrl.newSsl.countryName"
+                            required />
                     </div>
                 </div>
             </div>
 
             <h3 class="oui-header_3" data-translate="iplb_ssl_order_joi"></h3>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.joi_state_or_province_name.$invalid }">
                 <label for="joi_state_or_province_name" class="oui-label" data-translate="iplb_ssl_order_state_or_province"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="joi_state_or_province_name" name="joi_state_or_province_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_state_or_province_name" />
+                        <input
+                            type="text"
+                            id="joi_state_or_province_name"
+                            name="joi_state_or_province_name"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.joi_state_or_province_name.$invalid }"
+                            data-ng-model="ctrl.newSsl.joi_state_or_province_name"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.joi_locality_name.$invalid }">
                 <label for="joi_locality_name" class="oui-label" data-translate="iplb_ssl_order_city"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="joi_locality_name" name="joi_locality_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_locality_name" />
+                        <input
+                            type="text"
+                            id="joi_locality_name"
+                            name="joi_locality_name"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.joi_locality_name.$invalid }"
+                            data-ng-model="ctrl.newSsl.joi_locality_name"
+                            required />
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field">
+            <div class="oui-field"
+                data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.joi_country_name.$invalid }">
                 <label for="joi_country_name" class="oui-label" data-translate="iplb_ssl_order_country"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="joi_country_name" name="joi_country_name" class="oui-input" data-ng-model="ctrl.newSsl.option.joi_country_name" />
+                        <input
+                            type="text"
+                            id="joi_country_name"
+                            name="joi_country_name"
+                            class="oui-input"
+                            data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.joi_country_name.$invalid }"
+                            data-ng-model="ctrl.newSsl.joi_country_name"
+                            required />
                     </div>
                 </div>
             </div>
+        </div>
 
-        </cui-advanced-options>
-
-        <div class="cui-form-actions">
+        <div class="cui-form-actions"
+            data-ng-hide="ctrl.saving">
           <button type="submit"
             class="oui-button oui-button_primary"
             data-translate="iplb_ssl_order_ok"
-            data-ng-click="ctrl.order()"></button>
+            data-ng-click="ctrl.order()"
+            data-ng-disabled="ctrl.form.$submitted && ctrl.form.$invalid"></button>
           <a class="oui-button oui-button_link"
               data-translate="iplb_ssl_order_cancel"
               data-ui-sref="network.iplb.detail.ssl-certificate.home"></a>
         </div>
+        <oui-loader size="s" data-ng-show="ctrl.saving"></oui-loader>
     </form>
 </div>

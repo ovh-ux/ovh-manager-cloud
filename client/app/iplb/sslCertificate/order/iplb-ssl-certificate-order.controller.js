@@ -1,50 +1,102 @@
 class IpLoadBalancerSslCertificateOrderCtrl {
-    constructor ($stateParams, CloudMessage, IpLoadBalancerConstant, OrderHelperService) {
+    constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper, IpLoadBalancerConstant,
+        IpLoadBalancerSslCertificateService) {
+        this.$q = $q;
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
-        this.OrderHelperService = OrderHelperService;
+        this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
     }
 
     $onInit () {
-        this.sslTypes = this.IpLoadBalancerConstant.sslTypes;
+        this.paidOffers = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerSslCertificateService.getCertificateProducts(
+                this.$stateParams.serviceName
+            )
+                .then(offers => {
+                    this.offers = offers;
+                    this.sslTypes = _.map(offers, "planCode").map(planCode => planCode.replace(/-/g, "_"));
+
+                    // Add separate free certificate in first position.
+                    this.sslTypes.unshift("free");
+
+                    // Select first by default
+                    this.newSsl.type = this.sslTypes[0];
+                })
+        });
+
         this.organizationTypes = this.IpLoadBalancerConstant.organisationTypes;
+        this.newSsl = {};
+        this.saving = false;
 
-        this.urlJson = JSURL.parse("~(~(planCode~'sslgateway-free~duration~'P1M~configuration~(~(label~'domainname~values~(~'test))~(label~'backendserver~values~(~'1.2.3.4)))~option~(~)~quantity~1~productId~'sslGateway))");
+        this.init();
+    }
 
-        this.newSsl = {
-            type: this.sslTypes[0]
-        };
+    init () {
+        this.paidOffers.load();
     }
 
     order () {
         if (this.form.$invalid) {
             return this.$q.reject();
         }
+
+        this.planCode = this.newSsl.type.replace(/_/g, "-");
+
+        if (this.planCode === "free") {
+            return this.orderFreeCertificate();
+        }
+
+        const sslOffer = this.offers.find(offer => offer.planCode === this.planCode);
+
+        if (!sslOffer) {
+            return null;
+        }
+
+        const options = Object.assign(_.pick(sslOffer.prices[0], [
+            "duration",
+            "pricingMode"
+        ]), {
+            planCode: this.planCode,
+            quantity: 1
+        });
+
+        return this.orderPaidCertificate(options);
+    }
+
+    orderFreeCertificate () {
+        const fqdn = this.newSsl.fqdn.split(",");
+
         this.saving = true;
+        this.IpLoadBalancerSslCertificateService.orderFreeCertificate(this.$stateParams.serviceName, fqdn)
+            .then(() => this.$state.go("network.iplb.detail.ssl-certificate.home"))
+            .finally(() => {
+                this.saving = false;
+            });
+    }
 
-        let orderConfig;
-        if (this.newSsl.type === "ev") {
-            orderConfig = this.IpLoadBalancerConstant.sslOrders.comodoEv;
-        } else if (this.newSsl.type === "dv") {
-            orderConfig = this.IpLoadBalancerConstant.sslOrders.comodoDv;
-        } else if (this.newSsl.type === "free") {
-            orderConfig = this.IpLoadBalancerConstant.sslOrders.free;
+    orderPaidCertificate (options) {
+        const configuration = Object.assign({}, this.newSsl);
+
+        if (this.planCode === "iplb-ssl-ev-single") {
+            configuration.commonName = configuration.fqdn;
+            configuration.dcv_email = configuration.email;
+            configuration.country = configuration.countryName;
+            delete configuration.fqdn;
         }
 
-        orderConfig.configuration = {
-            domainname: this.newSsl.displayName ? this.newSsl.displayName : this.newSsl.fqdn,
-            backendserver: this.newSsl.fqdn
-        };
+        delete configuration.type;
 
-        if (this.newSsl.type === "ev") {
-            orderConfig.option[0].configuration = this.newSsl.option;
-            orderConfig.option[0].configuration.commonName = this.newSsl.displayName;
-            orderConfig.option[0].configuration.dcv_email = this.newSsl.option.email;
-            orderConfig.option[0].configuration.country = this.newSsl.option.countryName;
-        }
-
-        return this.OrderHelperService.openExpressOrderUrl(orderConfig);
+        this.saving = true;
+        this.IpLoadBalancerSslCertificateService.orderPaidCertificate(this.$stateParams.serviceName, options, configuration)
+            .then(result => {
+                location.href = result.url;
+            })
+            .catch(() => {
+                this.saving = false;
+            });
     }
 }
 
