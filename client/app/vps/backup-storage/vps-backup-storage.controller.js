@@ -62,13 +62,6 @@ class VpsBackupStorageCtrl {
             .finally(() => { this.loaders.init = false });
     }
 
-    getStatus (isApplied) {
-        if (isApplied) {
-            return this.$translate.instant("vps_tab_backup_storage_table_ip_enable");
-        }
-        return this.$translate.instant("vps_tab_backup_storage_table_ip_disable");
-    }
-
     add () {
         this.VpsActionService.addBackupStorage(this.serviceName)
             .then(() => this.loadBackup());
@@ -86,6 +79,14 @@ class VpsBackupStorageCtrl {
     editOne (row) {
         this.VpsActionService.editBackupStorage(this.serviceName, row)
             .then(() => this.loadBackup());
+    }
+
+    activationStatusTemplate () {
+        return `
+            <td class="center">
+                <span data-ng-show="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_enable"></span>
+                <span data-ng-hide="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_disable"></span>
+        </td>`;
     }
 
     actionTemplate () {
