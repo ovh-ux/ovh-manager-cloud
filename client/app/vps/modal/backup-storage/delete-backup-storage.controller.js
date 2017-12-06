@@ -24,8 +24,7 @@ class DeleteBackupStorageCtrl {
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
-            })
-
+            });
     }
 }
 
