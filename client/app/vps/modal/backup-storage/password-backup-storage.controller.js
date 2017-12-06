@@ -23,8 +23,7 @@ class PasswordBackupStorageCtrl {
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
-            })
-
+            });
     }
 }
 
