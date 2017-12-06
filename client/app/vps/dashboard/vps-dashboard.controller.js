@@ -23,14 +23,13 @@ class VpsDashboardCtrl {
     }
 
     $onInit () {
-        this.loaders.init = true;
         this.initActions();
-
         this.loadVps();
         this.loadSummary();
     }
 
     loadVps () {
+        this.loaders.init = true;
         this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
                 this.vps = vps;
@@ -81,10 +80,6 @@ class VpsDashboardCtrl {
             .catch(() => { this.hasAdditionalDisk = false });
     }
 
-    showEditName (displayName) {
-        this.VpsActionService.editName(displayName, this.serviceName);
-    }
-
     setAction (action) {
         switch (action) {
             case "password":
@@ -104,9 +99,6 @@ class VpsDashboardCtrl {
                 break;
             case "monitoring-sla":
                 this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring);
-                break;
-            case "upgrade":
-                this.VpsActionService.upgrade();
                 break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
@@ -130,12 +122,27 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("vps_configuration_add_ipv4_title_button"),
                 href: this.ControllerHelper.navigation.getUrl("ip", { serviceName: this.serviceName }),
                 isAvailable: () => !this.plan.loading && !this.plan.hasErrors
-            }// ,
-            // changeOwner: {
-            //     text: this.$translate.instant("vps_change_owner"),
-            //     href: this.ControllerHelper.navigation.getUrl("changeOwner", { serviceName: this.serviceName }),
-            //     isAvailable: () => !this.plan.loading && !this.plan.hasErrors
-            // }
+            },
+            monitoringSla: {
+                text: this.$translate.instant("common_manage"),
+                callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring),
+                isAvailable: () => !this.loaders.init
+            },
+            changeOwner: {
+                text: this.$translate.instant("vps_change_owner"),
+                href: this.ControllerHelper.navigation.getConstant("changeOwner"),
+                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+            },
+            upgrade: {
+                text: this.$translate.instant("vps_dashboard_upgrade_vps"),
+                state: "iaas.vps.detail.upgrade",
+                stateParams: { serviceName: this.serviceName }
+            },
+            changeName: {
+                text: this.$translate.instant("common_edit"),
+                callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.loadVps()),
+                isAvailable: () => !this.loaders.init
+            }
         };
     }
 
