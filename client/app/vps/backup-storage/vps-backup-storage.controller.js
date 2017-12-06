@@ -73,6 +73,10 @@ class VpsBackupStorageCtrl {
         this.VpsActionService.addBackupStorage(this.serviceName);
     }
 
+    resetPassword () {
+        this.VpsActionService.resetPasswordBackupStorage(this.serviceName);
+    }
+
     deleteOne (access) {
         this.VpsActionService.deleteBackupStorage(this.serviceName, access);
     }
