@@ -1,10 +1,10 @@
 class VpsHeaderCtrl {
-    constructor ($rootScope, $stateParams, $translate, CloudMessage, Notification, STOP_NOTIFICATION_USER_PREF, VpsService) {
+    constructor ($rootScope, $stateParams, $translate, CloudMessage, VpsNotificationIpv6, STOP_NOTIFICATION_USER_PREF, VpsService) {
         this.$rootScope = $rootScope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
-        this.Notification = Notification;
+        this.VpsNotificationIpv6 = VpsNotificationIpv6;
         this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
         this.serviceName = $stateParams.serviceName;
         this.description = $stateParams.displayName || $stateParams.serviceName;
@@ -70,7 +70,7 @@ class VpsHeaderCtrl {
 
     checkIfStopNotification (message, isArray, vps) {
         const item = vps.name;
-        return this.Notification.checkIfStopNotification(this.STOP_NOTIFICATION_USER_PREF[message], isArray, item)
+        return this.VpsNotificationIpv6.checkIfStopNotification(this.STOP_NOTIFICATION_USER_PREF[message], isArray, item)
             .then(showNotification => {
                 this.stopNotification[message] = showNotification;
                 this.showIpV6Banner(vps.version, vps.ipv6);
@@ -81,7 +81,7 @@ class VpsHeaderCtrl {
 
     stopNotificationIpV6 () {
         this.stopNotification.ipV6 = true;
-        this.Notification.stopNotification(this.STOP_NOTIFICATION_USER_PREF.ipV6, this.vps.name)
+        this.VpsNotificationIpv6.stopNotification(this.STOP_NOTIFICATION_USER_PREF.ipV6, this.vps.name)
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_stop_bother_error")));
     };
 
