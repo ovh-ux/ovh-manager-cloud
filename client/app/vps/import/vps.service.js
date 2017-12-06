@@ -1105,8 +1105,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.requestFtpBackupPassword = function () {
-            return this.getSelected().then(function (vps) {
+        this.requestFtpBackupPassword = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.post([swsVpsProxypass, vps.name, "backupftp/password"].join("/"))
                     .then(function (response) {
                         return response.data;
