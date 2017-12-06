@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe, OvhApiCloudPrice) {
+  .controller("BillingVolumeListComponentCtrl", function ($filter, $q, $translate, $stateParams, DetailsPopoverService, OvhApiCloudProjectVolume, Toast, OvhApiMe) {
       var self = this;
       self.DetailsPopoverService = DetailsPopoverService;
       self.volumeConsumptionDetails = [];
@@ -27,8 +27,6 @@ angular.module("managerApp")
               volumeConsumptionDetail.region = volumeConsumption.region;
               volumeConsumptionDetail.type = volumeConsumption.type;
 
-              var price = getPrice(volumeConsumption);
-              volumeConsumptionDetail.priceText = price ? price.price.text : "?";
               volumeConsumptionDetail.amount = volumeConsumption.quantity.value;
 
               var volumeDetail = _.find(allProjectVolumes, function (x) { return x.id === volumeConsumption.volumeId; });
@@ -45,17 +43,10 @@ angular.module("managerApp")
           });
       }
 
-      function getPrice (volumeConsumption) {
-          var price = _.find(self.data.prices.volumes, function (p) {
-              return p.region === volumeConsumption.region && p.volumeName === "volume." + volumeConsumption.type;
-          })
-          return price;
-      }
-
       self.$onInit = () => {
           self.loading = true;
 
-          $q.all([initUserCurrency(), initPrices()])
+          $q.all([initUserCurrency()])
               .then(function () {
                   return initVolumes();
               })
@@ -72,13 +63,6 @@ angular.module("managerApp")
           return getVolumesDetails()
               .then(function (allProjectVolumes) {
                   return updateVolumeConsumptionDetails(allProjectVolumes, self.volumes);
-              });
-      }
-
-      function initPrices () {
-          return OvhApiCloudPrice.Lexi().query().$promise
-              .then(function (prices) {
-                  self.data.prices = prices;
               });
       }
 

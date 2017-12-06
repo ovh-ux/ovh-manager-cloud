@@ -1,5 +1,6 @@
+/* jshint ignore:start*/
 angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
-    function ($q, OvhApiCloudProjectVolume, OvhApiCloudPrice, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota) {
+    function ($q, OvhApiCloudProjectVolume, OvhCloudPriceHelper, CLOUD_VOLUME_TYPES, OvhApiCloudProjectQuota) {
 
         'use strict';
 
@@ -75,55 +76,33 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
             });
         };
 
+        /* jshint ignore:end*/
         /**
          *  [API] Get additional informations about volume (price)
-         *  Create a gbPrices attribute like { 'region' : { 'volumeType' : { 'price' : {}, 'monthlyPrice' : {} }  } }
+         *  Create a volumePricesMap attribute like { 'planCode' : { 'price' : {} } }
          */
         VolumeFactory.prototype.getFullInformations = function () {
             var self = this;
-
-            return OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
-
-                // group volume prices by region to avoid making a request to get regions list
-                var prices = _.groupBy(prices.volumes, 'region'),
-                    tmpRegionTypePrice;
-
-                // init gb prices attribute
-                self.gbPrices = {};
-
-                // prices is an object with regions as keys
-                angular.forEach(prices, function (regionPrices, region) {
-                    self.gbPrices[region] = {};
-                    // try to find a price with type list
-                    angular.forEach(CLOUD_VOLUME_TYPES, function (volType) {
-                        tmpRegionTypePrice = _.find(regionPrices, {
-                            volumeName : 'volume.' + volType
-                        });
-
-                        if (tmpRegionTypePrice) {
-                            self.gbPrices[region][volType] = {
-                                price : tmpRegionTypePrice.price,
-                                monthlyPrice : tmpRegionTypePrice.monthlyPrice
-                            };
-                        }
-                    });
-                });
-            });
+            OvhCloudPriceHelper.getPrices(this.serviceName).then(response => {
+                self.volumePricesMap = response;
+            }).catch(err => console.warn(err));
         };
+        /* jshint ignore:start*/
 
         /**
          *  Calculate price with GB price and volume size
          */
         VolumeFactory.prototype.calculatePrice = function () {
+            return this.getPrice(this.region, this.type, this.size);
+        };
+
+        VolumeFactory.prototype.getPrice = function (region, type, size = 1) {
             // in case if getFullInformations is not resolved yet
-            if (this.gbPrices) {
-                var volumeRegionPrices = this.gbPrices[this.region],
-                    volumeByRegionAndTypePrice = volumeRegionPrices ? volumeRegionPrices[this.type] : null;
-
+            if (this.volumePricesMap) {
+                let volumeByRegionAndTypePrice = this.volumePricesMap[this.planCode] || this.volumePricesMap[`volume.${type}.consumption.${region}`] || this.volumePricesMap[`volume.${type}.consumption`];
                 if (volumeByRegionAndTypePrice) {
-                    var calculatedPriceValue = this.size * volumeByRegionAndTypePrice.price.value,
-                        calculatedMonthlyPriceValue = this.size * volumeByRegionAndTypePrice.monthlyPrice.value;
-
+                    var calculatedPriceValue = size * volumeByRegionAndTypePrice.priceInUcents / 100000000,
+                        calculatedMonthlyPriceValue = calculatedPriceValue * moment.duration(1,"months").asHours();
                     return {
                         price : {
                             currencyCode : volumeByRegionAndTypePrice.price.currencyCode,
@@ -131,15 +110,17 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
                             value        : calculatedPriceValue
                         },
                         monthlyPrice : {
-                            currencyCode : volumeByRegionAndTypePrice.monthlyPrice.currencyCode,
-                            text         : volumeByRegionAndTypePrice.monthlyPrice.text.replace(/\d+(?:[.,]\d+)?/, "" + calculatedMonthlyPriceValue.toFixed(2)),
+                            currencyCode : volumeByRegionAndTypePrice.price.currencyCode,
+                            text         : volumeByRegionAndTypePrice.price.text.replace(/\d+(?:[.,]\d+)?/, "" + calculatedMonthlyPriceValue.toFixed(2)),
                             value        : calculatedMonthlyPriceValue
                         }
                     };
+                } else {
+                    console.warn('No price found for region and for volume type.', region, type);
                 }
             }
 
-            console.warn('No price found for region and for volume type.', this.region, this.type);
+            console.warn('Missing prices', region, type);
             return {
                 price : {},
                 monthlyPrice : {}

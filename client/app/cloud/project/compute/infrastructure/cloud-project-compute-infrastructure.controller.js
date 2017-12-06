@@ -3,7 +3,7 @@
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
     function ($rootScope, $scope, $q, $translate, $timeout, CloudMessage, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
         CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloud, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
-        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
+        OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
         OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
         OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
 
@@ -14,7 +14,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
 
         this.regionService = RegionService;
         this.Cloud = OvhApiCloud;
-        
+
         this.jsplumbInstance = null;
         this.infra = null;
         this.volumes = null;
@@ -104,7 +104,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                         OvhApiCloudProjectVolumeSnapshot.Lexi().query({
                             serviceName: serviceName
                         }).$promise,
-                        OvhApiCloudPrice.Lexi().query().$promise,
+                        OvhCloudPriceHelper.getPrices(serviceName),
                         self.initRegions()
                     ]).then(function () {
                         return self.initInfra();

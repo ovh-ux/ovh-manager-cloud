@@ -2,7 +2,7 @@
 
 angular.module("managerApp")
   .controller("CloudProjectComputeSnapshotCtrl",
-    function ($uibModal, OvhApiCloudPrice, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
+    function ($uibModal, OvhCloudPriceHelper, OvhApiCloudProjectSnapshot, OvhApiCloudProjectInstance, OvhApiCloudProjectVolume, OvhApiCloudProjectVolumeSnapshot,
               OvhApiCloudProjectImage, $translate, CloudMessage, $scope, $filter, $q, $timeout, CloudProjectOrchestrator, $state,
               $stateParams, Poller, RegionService, CLOUD_UNIT_CONVERSION) {
 
@@ -60,29 +60,42 @@ angular.module("managerApp")
         };
     }
     self.snapshotPriceStruct = {
-        prices:[],
+        prices:null,
         size:0,
         total:{}
     };
 
 
     function setPrice(){
-        var totalSize = 0,
-        total = {};
-        angular.forEach(self.table.snapshot, function(value){
-            totalSize += value.size;
-            value.price = getPrice(value.size);
+        let totalSize = 0,
+        totalPrice = 0;
+        if (!self.table.snapshot.length) {
+            return;
+        }
+        angular.forEach(self.table.snapshot, function(snapshot){
+            totalSize += snapshot.size;
+            snapshot.price = getMonthlyPrice(snapshot.size, snapshot.planCode);
+            if (snapshot.price) {
+                totalPrice += snapshot.price.value;
+            }
         });
-        total.price = getPrice(totalSize);
         self.snapshotPriceStruct.size = totalSize;
-        self.snapshotPriceStruct.total = total;
+        // Copy from formatted price to keep currencyCode
+        self.snapshotPriceStruct.total = angular.copy(self.table.snapshot[0].price)
+        self.snapshotPriceStruct.total.value = totalPrice;
+        self.snapshotPriceStruct.total.text = self.snapshotPriceStruct.total.text.replace(/\d+(?:[.,]\d+)?/, "" + totalPrice.toFixed(2))
     }
 
-    function getPrice(size){
+    function getMonthlyPrice(size, planCode){
         // get the price for first location comming
-        var priceStruct = angular.copy(self.snapshotPriceStruct.prices[0].monthlyPrice);
+        let price = self.snapshotPriceStruct.prices[planCode];
+        if (!price) {
+            console.warn("fail to get price", self.snapshotPriceStruct);
+            return;
+        }
+        var priceStruct = angular.copy(price.price);
         // price for all size
-        priceStruct.value = priceStruct.value*size;
+        priceStruct.value = price.priceInUcents*moment.duration(1, "months").asHours()*size/100000000;
 
         priceStruct.text = priceStruct.text.replace(/\d+(?:[.,]\d+)?/, "" + priceStruct.value.toFixed(2));
 
@@ -306,7 +319,7 @@ angular.module("managerApp")
                 if (volumeSnapshotsToPoll) {
                     pollVolumeSnapshots();
                 }
-                self.snapshotPriceStruct.prices = result[2].snapshots;
+                self.snapshotPriceStruct.prices = result[2];
                 setPrice();
             }, function (err) {
                 self.table.snapshot = null;
@@ -336,7 +349,7 @@ angular.module("managerApp")
     }
 
     function getPricesPromise(){
-        return OvhApiCloudPrice.Lexi().query().$promise;
+        return OvhCloudPriceHelper.getPrices(serviceName);
     }
 
     function getVolumeSnapshotPromise(){

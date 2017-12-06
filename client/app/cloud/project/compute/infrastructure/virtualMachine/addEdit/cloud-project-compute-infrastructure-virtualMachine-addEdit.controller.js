@@ -72,7 +72,7 @@
 angular.module("managerApp")
 .controller("CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl",
     function ($scope, $stateParams, $q, $filter, $timeout, $translate, CloudMessage, $rootScope, CloudProjectComputeInfrastructureOrchestrator,
-              CloudProjectComputeInfraVrackVmFactory, OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhApiCloudPrice, OvhApiCloudProjectImage,
+              OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhCloudPriceHelper, OvhApiCloudProjectImage,
               OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
               RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_FLAVOR_SPECIFIC_IMAGE,
               OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
@@ -1070,8 +1070,8 @@ angular.module("managerApp")
                     self.cancelVm();
                     return $q.reject(err);
                 }),
-                OvhApiCloudPrice.Lexi().query().$promise.then(function (flavorsPrices) {
-                    self.panelsData.prices = flavorsPrices.instances;
+                OvhCloudPriceHelper.getPrices(serviceName).then(function (flavorsPrices) {
+                    self.panelsData.prices = flavorsPrices;
                 }, function (err) {
                     CloudMessage.error( [$translate.instant('cpcivm_addedit_flavor_price_error'), err.data.message || ''].join(' '));
                     return $q.reject(err);
@@ -1086,8 +1086,22 @@ angular.module("managerApp")
                     flavor.frequency = CLOUD_INSTANCE_CPU_FREQUENCY[flavor.type];
 
                     // add price infos
-                    flavor.price = _.find(self.panelsData.prices, { flavorId: flavor.id });
+                    const price = { price : {value : 0}, monthlyPrice : { value : 0}};
+                    _.forEach(flavor.planCodes, planCode => {
+                        const plan = self.panelsData.prices[planCode];
+                        if (!plan) {
+                            console.warn("fail to get price of planCode", planCode)
+                            return;
+                        }
+                        if (planCode.includes("monthly")) {
+                            price.monthlyPrice = plan.price;
+                        } else {
+                            price.price = plan.price;
+                        }
+                    });
 
+
+                    flavor.price = price;
                     var currentFlavorUsage = {
                         vcpus : 0,
                         ram   : 0
