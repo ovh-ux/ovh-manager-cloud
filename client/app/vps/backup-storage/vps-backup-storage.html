@@ -62,8 +62,9 @@
             <column title="'vps_tab_backup_storage_table_nfs' | translate" property="nfs" sortable>
                 <span data-ng-bind="$row.nfs"></span>
             </column>
-            <column title="'vps_tab_backup_storage_table_status' | translate" property="isApplied" sortable>
-                <span data-ng-bind="$ctrl.getStatus($row.isApplied)"></span>
+            <column title="'vps_tab_backup_storage_table_status' | translate"
+                    template="$ctrl.activationStatusTemplate()"
+                    sortable>
             </column>
             <column title="'common_actions' | translate"
                     class="oui-table__cell_action oui-table__cell_action-menu"

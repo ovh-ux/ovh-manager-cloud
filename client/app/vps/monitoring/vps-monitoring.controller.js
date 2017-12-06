@@ -71,8 +71,8 @@ class VpsMonitoringCtrl {
     loadOptions () {
         this.colors = this.VpsMonitoringConstant.colors;
         this.series = [this.$translate.instant("vps_monitoring_network_netRx"), this.$translate.instant("vps_monitoring_network_netTx")];
-        this.option1 = this.VpsMonitoringConstant.option1;
-        this.option2 = this.VpsMonitoringConstant.option2;
+        this.percentOption = this.VpsMonitoringConstant.percentOption;
+        this.bpsOption = this.VpsMonitoringConstant.bpsOption;
     }
 }
 
