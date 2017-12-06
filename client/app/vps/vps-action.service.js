@@ -151,6 +151,19 @@ class VpsActionService {
         });
     }
 
+    resetPasswordBackupStorage (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/backup-storage/password-backup-storage.html",
+                controller: "PasswordBackupStorageCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
     restore (serviceName, restorePoint) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
