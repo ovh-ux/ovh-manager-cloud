@@ -1,0 +1,40 @@
+<div id="cloud-project-compute-loadbalancer" class="cui-page__content">
+    <div data-ng-if="!CloudProjectComputeLoadbalancerCtrl.loaders.table.loadbalancer && CloudProjectComputeLoadbalancerCtrl.table.loadbalancer && !CloudProjectComputeLoadbalancerCtrl.table.loadbalancer.length"
+         class="discover">
+          <div class=""><h3 data-translate="cpc_loadbalancer_discover_title"></h3></div>
+          <div class="body">
+              <div data-translate="cpc_loadbalancer_discover_body"></div>
+              <div class="image">
+                  <img src="/assets/images/cloud/loadbalancer/loadbalancer-schema.png" alt="{{cpc_loadbalancer_discover_title | translate}}"/>
+              </div>
+              <div class="image">
+                  <a class="oui-button oui-button_primary" data-ng-href="{{CloudProjectComputeLoadbalancerCtrl.urls.website_order.load_balancer[CloudProjectComputeLoadbalancerCtrl.locale]}}" data-translate="cpc_loadbalancer_order"></a>
+              </div>
+          </div>
+    </div>
+
+    <div data-ng-if="CloudProjectComputeLoadbalancerCtrl.loaders.table.loadbalancer"
+         class="text-center">
+        <oui-loader size="m" class="d-inline-block"></oui-loader>
+    </div>
+
+    <div data-ng-if="CloudProjectComputeLoadbalancerCtrl.table.loadbalancer && CloudProjectComputeLoadbalancerCtrl.table.loadbalancer.length">
+        <a
+            class="oui-button oui-button_secondary"
+            data-ng-disabled="CloudProjectComputeLoadbalancerCtrl.loaders.table.loadbalancer"
+            data-ng-href="{{CloudProjectComputeLoadbalancerCtrl.urls.website_order.load_balancer[CloudProjectComputeLoadbalancerCtrl.locale]}}">
+            <i class="glyphicon glyphicon-plus"></i>
+            <span data-translate="cpc_loadbalancer_order"></span>
+        </a>
+
+        <oui-table rows="CloudProjectComputeLoadbalancerCtrl.table.loadbalancer">
+            <column title="'cpc_loadbalancer_name' | translate">{{$row.displayName || $row.serviceName}}</column>
+            <column title="'cpc_loadbalancer_openstack_status' | translate">{{'cpc_loadbalancer_openstack_status_'+$row.openstack | translate}}</column>
+            <column title="'cpc_loadbalancer_status' | translate">{{'cpc_loadbalancer_status_'+$row.status | translate}}</column>
+            <column title="'cpc_loadbalancer_actions' | translate" class="oui-table__cell_action oui-table__cell_action-menu"
+                    template="CloudProjectComputeLoadbalancerCtrl.actionTemplate()">
+            </column>
+        </oui-table>
+
+    </div>
+</div>
