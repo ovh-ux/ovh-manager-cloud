@@ -70,7 +70,8 @@ class VpsBackupStorageCtrl {
     }
 
     add () {
-        this.VpsActionService.addBackupStorage(this.serviceName);
+        this.VpsActionService.addBackupStorage(this.serviceName)
+            .then(() => this.loadBackup());
     }
 
     resetPassword () {
@@ -78,7 +79,13 @@ class VpsBackupStorageCtrl {
     }
 
     deleteOne (access) {
-        this.VpsActionService.deleteBackupStorage(this.serviceName, access);
+        this.VpsActionService.deleteBackupStorage(this.serviceName, access)
+            .then(() => this.loadBackup());
+    }
+
+    editOne (row) {
+        this.VpsActionService.editBackupStorage(this.serviceName, row)
+            .then(() => this.loadBackup());
     }
 
     actionTemplate () {
@@ -89,6 +96,14 @@ class VpsBackupStorageCtrl {
                 </cui-dropdown-menu-button>
                 <cui-dropdown-menu-body>
                     <div class="oui-action-menu">
+                        <div class="oui-action-menu__item oui-action-menu-item">
+                            <div class="oui-action-menu-item__icon">
+                            </div>
+                            <button class="oui-button oui-button_link oui-action-menu-item__label"
+                                type="button"
+                                data-translate="common_edit"
+                                data-ng-click="$ctrl.editOne($row)"></button>
+                        </div>
                         <div class="oui-action-menu__item oui-action-menu-item">
                             <div class="oui-action-menu-item__icon">
                             </div>

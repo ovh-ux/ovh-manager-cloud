@@ -164,6 +164,20 @@ class VpsActionService {
         });
     }
 
+    editBackupStorage (serviceName, row) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/backup-storage/edit-backup-storage.html",
+                controller: "EditBackupStorageCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    row: () => row
+                }
+            }
+        });
+    }
+
     restore (serviceName, restorePoint) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
