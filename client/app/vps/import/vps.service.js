@@ -1044,10 +1044,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getBackupStorageTab = function (serviceName, count, offset, forceRefresh) {
-            if (forceRefresh) {
-                vpsTabBackupStorageCache.removeAll();
-            }
+        this.getBackupStorageTab = function (serviceName, count, offset) {
+            vpsTabBackupStorageCache.removeAll();
             return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([aapiRootPath, vps.name, "backupStorage/access"].join("/"), {
                     serviceType: "aapi",
