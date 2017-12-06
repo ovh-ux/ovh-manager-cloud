@@ -1,6 +1,6 @@
 angular.module("managerApp").constant("VpsMonitoringConstant", {
-    colors : ['#F1C40F', '#3498DB', '#717984', '#72C02C'],
-    option1 : {
+    colors: ["#F1C40F", "#3498DB", "#717984", "#72C02C"],
+    percentOption: {
         scales: {
             xAxes: [{
                 gridLines: {
@@ -34,9 +34,9 @@ angular.module("managerApp").constant("VpsMonitoringConstant", {
             }
         }
     },
-    option2 : {
+    bpsOption: {
         legend: {
-            display: true,
+            display: true
         },
         scales: {
             xAxes: [{
@@ -45,22 +45,22 @@ angular.module("managerApp").constant("VpsMonitoringConstant", {
                 }
             }],
             yAxes: [
-            {
-                id: 'y-axis-1',
-                type: 'linear',
-                display: true,
-                position: 'left',
-                ticks: {
-                    min: 0,
-                    beginAtZero: true
-                },
-                scaleLabel: {
+                {
+                    id: "y-axis-1",
+                    type: "linear",
                     display: true,
-                    labelString: "BPS"
+                    position: "left",
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "BPS"
 
+                    }
                 }
-            }
-          ]
+            ]
         },
         elements: {
             line: {
@@ -72,4 +72,4 @@ angular.module("managerApp").constant("VpsMonitoringConstant", {
             }
         }
     }
-})
+});
