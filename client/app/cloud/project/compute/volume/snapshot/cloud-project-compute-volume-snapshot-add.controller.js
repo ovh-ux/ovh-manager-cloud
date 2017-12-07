@@ -20,8 +20,9 @@ angular.module("managerApp")
 
         function init () {
             self.loaders.init = true;
+            const volumeSnapshotConsumption = "volume.snapshot.consumption";
             OvhCloudPriceHelper.getPrices(serviceName).then(function (prices) {
-                var price = prices[`volume.snapshot.consumption.${self.snapshot.volume.region}`] || prices[`volume.snapshot.consumption`];
+                var price = prices[`${volumeSnapshotConsumption}.${self.snapshot.volume.region}`] || prices[volumeSnapshotConsumption];
                 if (price) {
                     self.snapshot.price = price.priceInUcents * self.snapshot.volume.size * moment.duration(1,"months").asHours() / 100000000;
                     self.snapshot.priceText = price.price.text.replace(/\d+(?:[.,]\d+)?/, _.round(self.snapshot.price.toString(),2));

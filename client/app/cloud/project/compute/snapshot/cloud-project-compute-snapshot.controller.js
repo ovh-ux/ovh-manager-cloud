@@ -67,8 +67,8 @@ angular.module("managerApp")
 
 
     function setPrice(){
-        let totalSize = 0,
-        totalPrice = 0;
+        let totalSize = 0;
+        let totalPrice = 0;
         if (!self.table.snapshot.length) {
             return;
         }
@@ -88,12 +88,11 @@ angular.module("managerApp")
 
     function getMonthlyPrice(size, planCode){
         // get the price for first location comming
-        let price = self.snapshotPriceStruct.prices[planCode];
+        const price = self.snapshotPriceStruct.prices[planCode];
         if (!price) {
-            console.warn("fail to get price", self.snapshotPriceStruct);
-            return;
+            return { value: 0, text: "?" };
         }
-        var priceStruct = angular.copy(price.price);
+        const priceStruct = angular.copy(price.price);
         // price for all size
         priceStruct.value = price.priceInUcents*moment.duration(1, "months").asHours()*size/100000000;
 

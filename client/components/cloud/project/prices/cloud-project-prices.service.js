@@ -15,7 +15,7 @@ class OvhCloudPriceHelper {
             .then(({ catalog, project }) => {
                 const projectPlan = _.find(catalog.plans, { planCode: project.planCode });
                 if (!projectPlan) {
-                    throw new Error({ message: "fail to get project plan" });
+                    throw new Error({ message: "Fail to get project plan" });
                 }
 
                 const pricesMap = {};

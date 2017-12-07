@@ -46,7 +46,7 @@ angular.module("managerApp")
       self.$onInit = () => {
           self.loading = true;
 
-          $q.all([initUserCurrency()])
+          initUserCurrency()
               .then(function () {
                   return initVolumes();
               })

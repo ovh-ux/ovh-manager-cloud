@@ -83,9 +83,9 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
          */
         VolumeFactory.prototype.getFullInformations = function () {
             var self = this;
-            OvhCloudPriceHelper.getPrices(this.serviceName).then(response => {
+            return OvhCloudPriceHelper.getPrices(this.serviceName).then(response => {
                 self.volumePricesMap = response;
-            }).catch(err => console.warn(err));
+            });
         };
         /* jshint ignore:start*/
 
@@ -101,8 +101,8 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
             if (this.volumePricesMap) {
                 let volumeByRegionAndTypePrice = this.volumePricesMap[this.planCode] || this.volumePricesMap[`volume.${type}.consumption.${region}`] || this.volumePricesMap[`volume.${type}.consumption`];
                 if (volumeByRegionAndTypePrice) {
-                    var calculatedPriceValue = size * volumeByRegionAndTypePrice.priceInUcents / 100000000,
-                        calculatedMonthlyPriceValue = calculatedPriceValue * moment.duration(1,"months").asHours();
+                    const calculatedPriceValue = size * volumeByRegionAndTypePrice.priceInUcents / 100000000;
+                    const calculatedMonthlyPriceValue = calculatedPriceValue * moment.duration(1,"months").asHours();
                     return {
                         price : {
                             currencyCode : volumeByRegionAndTypePrice.price.currencyCode,
@@ -115,12 +115,9 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
                             value        : calculatedMonthlyPriceValue
                         }
                     };
-                } else {
-                    console.warn('No price found for region and for volume type.', region, type);
                 }
             }
 
-            console.warn('Missing prices', region, type);
             return {
                 price : {},
                 monthlyPrice : {}
