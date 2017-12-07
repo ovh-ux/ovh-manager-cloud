@@ -1087,19 +1087,14 @@ angular.module("managerApp")
 
                     // add price infos
                     const price = { price : {value : 0}, monthlyPrice : { value : 0}};
-                    _.forEach(flavor.planCodes, planCode => {
-                        const plan = self.panelsData.prices[planCode];
-                        if (!plan) {
-                            console.warn("fail to get price of planCode", planCode)
-                            return;
-                        }
-                        if (planCode.includes("monthly")) {
-                            price.monthlyPrice = plan.price;
-                        } else {
-                            price.price = plan.price;
-                        }
-                    });
-
+                    const planHourly = self.panelsData.prices[flavor.planCodes.hourly];
+                    if (planHourly) {
+                        price.price = planHourly.price;
+                    }
+                    const planMonthly = self.panelsData.prices[flavor.planCodes.monthly];
+                    if (planMonthly) {
+                        price.monthlyPrice = planMonthly.price;
+                    }
 
                     flavor.price = price;
                     var currentFlavorUsage = {
