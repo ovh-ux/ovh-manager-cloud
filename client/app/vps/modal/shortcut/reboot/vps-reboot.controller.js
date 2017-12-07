@@ -19,7 +19,7 @@ class VpsRebootCtrl {
     $onInit () {
         this.loader.init = true;
         this.VpsService.getTaskInError(this.serviceName)
-            .then (tasks => { this.loadVpsRescueMode(tasks) });
+            .then(tasks => { this.loadVpsRescueMode(tasks); });
     }
 
     loadVpsRescueMode (tasks) {
