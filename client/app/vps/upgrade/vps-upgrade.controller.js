@@ -1,11 +1,13 @@
 class VpsUpgradeCtrl {
-    constructor ($filter, $stateParams, $translate, $q, VpsService, CloudMessage) {
+    constructor ($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation, VpsService) {
         this.$filter = $filter;
         this.$translate = $translate;
         this.$q = $q;
+        this.$window = $window;
+        this.CloudMessage = CloudMessage;
+        this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
         this.Vps = VpsService;
-        this.CloudMessage = CloudMessage;
 
         this.loaders = {
             init: false
@@ -18,6 +20,7 @@ class VpsUpgradeCtrl {
     }
 
     $onInit () {
+        this.previousState = this.CloudNavigation.getPreviousState();
         this.loaders.init = true;
         this.loadNextStep();
     }
@@ -37,8 +40,12 @@ class VpsUpgradeCtrl {
                 this.upgradesList = data.results;
                 return data;
             }).catch(err => {
-                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
-                return this.$q.reject(err);
+                if (err.message) {
+                    this.CloudMessage.error(err.message);
+                } else {
+                    this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
+                }
+                this.previousState.go();
             }).finally(() => {
                 this.loaders.step1 = false;
             });
@@ -58,8 +65,12 @@ class VpsUpgradeCtrl {
                 this.order = data;
                 return data;
             }).catch(err => {
-                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
-                return this.$q.reject(err);
+                 if (err.message) {
+                    this.CloudMessage.error(err.message);
+                } else {
+                    this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
+                }
+                this.previousState.go();
             }).finally(() => {
                 this.loaders.step2 = false;
             });
@@ -67,15 +78,16 @@ class VpsUpgradeCtrl {
     }
 
     cancel () {
-        history.back();
+        this.previousState.go();
     }
 
     confirm () {
-        // TODO: action to upgrade
+        this.displayBC();
+        this.previousState.go();
     }
 
     displayBC () {
-        window.open(
+        this.$window.open(
             this.order.url,
             "_blank"
         );

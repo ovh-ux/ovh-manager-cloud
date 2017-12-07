@@ -3,12 +3,12 @@
     <div class="row d-lg-flex">
         <div class="col-xm-12">
 
-            <cui-wizard-form data-form-title="{{ 'vps_dashboard_upgrade_vps' | translate }}"
+            <cui-wizard-form data-form-title="{{ 'vps_configuration_upgradevps_title' | translate }}"
                              data-form-loaded="!$ctrl.loaders.init"
                              data-form-on-cancel="$ctrl.cancel()"
-                             data-form-on-complete="$ctrl.displayBc()">
+                             data-form-on-complete="$ctrl.confirm()">
 
-                    <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_question' | translate }}"
+                    <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_title' | translate }}"
                                      data-step-on-init="$ctrl.loadUpgradesList()"
                                      data-step-loaded="!$ctrl.loaders.step1"
                                      data-step-completed="$ctrl.selectedModel.model">
