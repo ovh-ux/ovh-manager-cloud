@@ -3,66 +3,28 @@
     <div class="row d-lg-flex">
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
-            <div class="cui-tile h-100">
-                <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
-                <ul class="cui-tile__body cui-tile__body_list">
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            data-ng-click="$ctrl.setAction('password')"
-                            data-ng-disabled="$ctrl.loaders.polling">
-                            <span data-translate="vps_configuration_reinitpassword_title_button"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            data-ng-click="$ctrl.setAction('reboot')"
-                            data-ng-disabled="$ctrl.loaders.polling">
-                            <span data-translate="vps_configuration_reboot_title_button"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            data-ng-click="$ctrl.setAction('reinstall')"
-                            data-ng-disabled="$ctrl.loaders.polling">
-                            <span data-translate="vps_configuration_reinstall_title_button"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            data-ng-click="$ctrl.setAction('kvm')"
-                            data-ng-disabled="$ctrl.loaders.polling">
-                            <span data-translate="vps_configuration_kvm_title_button"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                            type="button"
-                            data-ng-click="$ctrl.setAction('reverse-dns')"
-                            data-ng-disabled="$ctrl.loaders.polling">
-                            <span data-translate="vps_configuration_reversedns_title_button"></span>
-                            <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </li>
-                    <li class="cui-tile__item cui-tile__item_button">
-                        <a data-ui-sref="iaas.vps.detail.upgrade">
-                            <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
-                                type="button"
-                                data-ng-disabled="$ctrl.loaders.polling">
-                                <span data-translate="vps_configuration_upgradevps_title_button"></span>
-                                <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
-                            </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <cui-tile data-title="'common_tile_shortcut' | translate" class="cui-tile h-100">
+                <cui-tile-body-list>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.resetPassword"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.reboot"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.reinstall"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.kvm"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.reverseDns"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
+                        <cui-tile-action-link data-action="$ctrl.actions.upgrade"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                </cui-tile-body-list>
+            </cui-tile>
         </div>
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
@@ -125,43 +87,16 @@
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_dashboard_name' | translate"
-                                   data-description="$ctrl.vps.displayName || $ctrl.vps.name">
-                        <cui-dropdown-menu>
-                            <cui-dropdown-menu-button>
-                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu">
-                                    <div class="oui-action-menu__item oui-action-menu-item">
-                                        <div class="oui-action-menu-item__icon"></div>
-                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                            type="button"
-                                            data-translate="common_edit"
-                                            data-ng-click="$ctrl.showEditName($ctrl.vps.displayName)"></button>
-                                    </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
-                    </cui-tile-item>
+                                   data-description="$ctrl.vps.displayName || $ctrl.vps.name"
+                                   data-actions="$ctrl.actions.changeName"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_product' | translate"
-                                   data-description="$ctrl.vps.model">
-                    </cui-tile-item>
+                                   data-description="$ctrl.vps.model"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_boot' | translate"
-                                   data-description="$ctrl.vps.netbootMode">
-                    </cui-tile-item>
+                                   data-description="$ctrl.vps.netbootMode"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_distribution' | translate"
-                                   data-description="$ctrl.vps.distribution.name">
-                    </cui-tile-item>
-                    <cui-tile-item data-ng-if="!$ctrl.vps.isExpired">
-                        <dl class="cui-tile__definition">
-                            <dt class="cui-tile__term">
-                                <span data-translate="vps_zone"></span> (<span data-translate="vps_cluster"></span>)
-                            </dt>
-                            <dd class="cui-tile__description">
-                                <span data-ng-bind="$ctrl.vps.zone"></span> (<span data-ng-bind="$ctrl.vps.cluster"></span>)
-                            </dd>
-                        </dl>
-                    </cui-tile-item>
+                                   data-description="$ctrl.vps.distribution.name"></cui-tile-item>
+                    <cui-tile-item data-term="('vps_zone' | translate)+' ('+('vps_cluster' | translate)+')'"
+                                   data-description="$ctrl.vps.zone+' ('+$ctrl.vps.cluster+')'"></cui-tile-item>
                     <cui-tile-item>
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_dashboard_localisation' | translate"></cui-tile-definition-term>
@@ -178,81 +113,36 @@
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated">
-                    </cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated">
-                    </cui-tile-item>
-
+                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated">
-                    </cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.snapshot.optionActivated">
-                    </cui-tile-item>
-
+                                   data-ng-if="$ctrl.summary.snapshot.optionActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.veeamActivated">
-                    </cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.veeamActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.veeamActivated">
-                    </cui-tile-item>
-
+                                   data-ng-if="$ctrl.summary.veeamActivated"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.hasAdditionalDisk">
-                    </cui-tile-item>
+                                   data-ng-if="!$ctrl.hasAdditionalDisk"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.hasAdditionalDisk">
-                    </cui-tile-item>
-
+                                   data-ng-if="$ctrl.hasAdditionalDisk"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.vps.slaMonitoring">
-                        <cui-dropdown-menu>
-                            <cui-dropdown-menu-button>
-                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu">
-                                    <div class="oui-action-menu__item oui-action-menu-item">
-                                        <div class="oui-action-menu-item__icon"></div>
-                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                            type="button"
-                                            data-translate="common_manage"
-                                            data-ng-click="$ctrl.setAction('monitoring-sla')"></button>
-                                    </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
-                    </cui-tile-item>
+                                   data-ng-if="$ctrl.vps.slaMonitoring"
+                                   data-actions="$ctrl.actions.monitoringSla"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.vps.slaMonitoring">
-                        <cui-dropdown-menu>
-                            <cui-dropdown-menu-button>
-                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu">
-                                    <div class="oui-action-menu__item oui-action-menu-item">
-                                        <div class="oui-action-menu-item__icon"></div>
-                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                            type="button"
-                                            data-translate="common_manage"
-                                            data-ng-click="$ctrl.setAction('monitoring-sla')"></button>
-                                    </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
-                    </cui-tile-item>
-
+                                   data-ng-if="!$ctrl.vps.slaMonitoring"
+                                   data-actions="$ctrl.actions.monitoringSla"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -260,12 +150,11 @@
         <div class="col-xm-12 col-md-4">
             <cui-tile-subscription data-loading="$ctrl.loaders.init || $ctrl.loaders.plan"
                 data-subscription-info="$ctrl.plan"
-                data-offer-actions="$ctrl.actions.changeOwner"
+                data-offer-actions="[$ctrl.actions.changeOwner, $ctrl.actions.upgrade]"
                 data-autorenew-actions="$ctrl.actions.manageAutorenew"
                 data-contact-actions="$ctrl.actions.manageContact"
                 class="h-100"></cui-tile-subscription>
         </div>
 
     </div>
-
 </section>
