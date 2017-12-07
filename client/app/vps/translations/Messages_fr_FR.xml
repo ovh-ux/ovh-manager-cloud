@@ -105,9 +105,8 @@
    <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Non configuré</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secondaire</translation>
-   <translation id="vps_dashboard_secondary_dns_count" qtlid="168263">Aucun domaine configuré</translation>
-   <translation id="vps_dashboard_secondary_dns_count_1" qtlid="168276">{0} domaine configuré</translation>
-   <translation id="vps_dashboard_secondary_dns_count_other" qtlid="168289">{0} domaines configurés</translation>
+   <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Aucun domaine configuré</translation>
+   <translation id="vps_dashboard_secondary_dns_count_x">{{ count }} domaine(s) configuré(s)</translation>
    <translation id="vps_dashboard_state_services" qtlid="167912">Statut</translation>
    <translation id="vps_dashboard_monitoring_sla" qtlid="179537">Monitoring SLA</translation>
    <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">IPs monitoring SLA</translation>
