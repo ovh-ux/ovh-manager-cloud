@@ -40,8 +40,12 @@ class VpsUpgradeCtrl {
                 this.upgradesList = data.results;
                 return data;
             }).catch(err => {
-                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
-                return this.$q.reject(err);
+                if (err.message) {
+                    this.CloudMessage.error(err.message);
+                } else {
+                    this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
+                }
+                this.previousState.go();
             }).finally(() => {
                 this.loaders.step1 = false;
             });
@@ -61,8 +65,12 @@ class VpsUpgradeCtrl {
                 this.order = data;
                 return data;
             }).catch(err => {
-                this.CloudMessage.error([this.$translate.instant("vps_upgrade_alert_error"), err.data && err.data.message || ""].join(" "));
-                return this.$q.reject(err);
+                 if (err.message) {
+                    this.CloudMessage.error(err.message);
+                } else {
+                    this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
+                }
+                this.previousState.go();
             }).finally(() => {
                 this.loaders.step2 = false;
             });
