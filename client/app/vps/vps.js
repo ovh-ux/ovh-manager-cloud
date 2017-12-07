@@ -18,6 +18,7 @@ angular.module("managerApp").config($stateProvider => {
             params: {
                 displayName: null
             },
+            redirectTo: "iaas.vps.detail.dashboard",
             views: {
                 vpsHeader,
                 vpsContainer: {
