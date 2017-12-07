@@ -83,31 +83,29 @@ class VpsDashboardCtrl {
             .catch(() => { this.hasAdditionalDisk = false });
     }
 
-    setAction (action) {
-        switch (action) {
-            case "password":
-                this.VpsActionService.password(this.serviceName);
-                break;
-            case "reboot":
-                this.VpsActionService.reboot(this.serviceName);
-                break;
-            case "reinstall":
-                this.VpsActionService.reinstall(this.serviceName);
-                break;
-            case "kvm":
-                this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM);
-                break;
-            case "reverse-dns":
-                this.VpsActionService.reverseDns(this.serviceName);
-                break;
-            default:
-                return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));
-        }
-
-    }
-
     initActions () {
         this.actions = {
+            resetPassword: {
+                text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
+                callback: () => this.VpsActionService.password(this.serviceName)
+            },
+            reboot: {
+                text: this.$translate.instant("vps_configuration_reboot_title_button"),
+                callback: () => this.VpsActionService.reboot(this.serviceName)
+            },
+            reinstall: {
+                text: this.$translate.instant("vps_configuration_reinstall_title_button"),
+                callback: () => this.VpsActionService.reinstall(this.serviceName)
+            },
+            kvm: {
+                text: this.$translate.instant("vps_configuration_kvm_title_button"),
+                callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM),
+                isAvailable: () => !this.loaders.init
+            },
+            reverseDns: {
+                text: this.$translate.instant("vps_configuration_reversedns_title_button"),
+                callback: () => this.VpsActionService.reverseDns(this.serviceName)
+            },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "VPS" }),
@@ -134,7 +132,7 @@ class VpsDashboardCtrl {
                 isAvailable: () => !this.plan.loading && !this.plan.hasErrors
             },
             upgrade: {
-                text: this.$translate.instant("vps_dashboard_upgrade_vps"),
+                text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
                 state: "iaas.vps.detail.upgrade",
                 stateParams: { serviceName: this.serviceName }
             },
