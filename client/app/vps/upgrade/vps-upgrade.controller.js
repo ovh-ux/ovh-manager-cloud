@@ -71,7 +71,7 @@ class VpsUpgradeCtrl {
     }
 
     confirm () {
-        // action to upgrade
+        // TODO: action to upgrade
     }
 
     displayBC () {
