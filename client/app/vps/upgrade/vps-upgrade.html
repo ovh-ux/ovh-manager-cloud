@@ -6,7 +6,7 @@
             <cui-wizard-form data-form-title="{{ 'vps_dashboard_upgrade_vps' | translate }}"
                              data-form-loaded="!$ctrl.loaders.init"
                              data-form-on-cancel="$ctrl.cancel()"
-                             data-form-on-complete="$ctrl.displayBc()">
+                             data-form-on-complete="$ctrl.confirm()">
 
                     <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_question' | translate }}"
                                      data-step-on-init="$ctrl.loadUpgradesList()"
