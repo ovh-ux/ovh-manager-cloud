@@ -36,6 +36,9 @@ class VpsDashboardCtrl {
                 const expiration = moment.utc(vps.expiration);
                 this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
                 this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
+                this.vps.secondaryDns = (vps.secondaryDns == 0) ?
+                    this.$translate.instant("vps_dashboard_secondary_dns_count_0") :
+                    this.$translate.instant("vps_dashboard_secondary_dns_count_x", { count: vps.secondaryDns });
                 this.loadIps();
                 this.loadPlan();
             })
@@ -96,9 +99,6 @@ class VpsDashboardCtrl {
                 break;
             case "reverse-dns":
                 this.VpsActionService.reverseDns(this.serviceName);
-                break;
-            case "monitoring-sla":
-                this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring);
                 break;
             default:
                 return this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error"));

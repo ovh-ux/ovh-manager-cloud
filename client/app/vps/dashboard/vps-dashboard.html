@@ -3,8 +3,7 @@
     <div class="row d-lg-flex">
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
-            <div class="cui-tile h-100">
-                <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
+            <cui-tile data-title="'common_tile_shortcut' | translate" class="cui-tile h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
                     <vps-tile-shortcut-item data-text="'vps_configuration_reinitpassword_title_button' | translate"
                                             data-action="$ctrl.setAction('password')"></vps-tile-shortcut-item>
@@ -26,7 +25,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </cui-tile>
         </div>
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
