@@ -25,6 +25,7 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
                     this.model.region.value = this.regions.data[0].microRegion.code;
                 }
             });
+        this.rCloneFileGuide.load();
     }
 
     confirm () {
@@ -45,12 +46,17 @@ class CloudProjectOpenstackUsersRcloneModalCtrl {
     }
 
     isModalLoading () {
-        return this.regions.loading;
+        return this.regions.loading || this.rCloneFileGuide.loading;
     }
 
     _initLoaders () {
         this.regions = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.CloudProjectOpenstackUsersRcloneService.getValidRcloneRegions(this.projectId)
+                .catch(error => this.cancel(error))
+        });
+
+        this.rCloneFileGuide = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.ControllerHelper.navigation.getConstant("guides.rCloneFile")
                 .catch(error => this.cancel(error))
         });
     }
