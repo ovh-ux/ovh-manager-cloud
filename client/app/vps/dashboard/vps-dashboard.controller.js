@@ -104,7 +104,8 @@ class VpsDashboardCtrl {
             },
             reverseDns: {
                 text: this.$translate.instant("vps_configuration_reversedns_title_button"),
-                callback: () => this.VpsActionService.reverseDns(this.serviceName)
+                callback: () => this.VpsActionService.reverseDns(this.serviceName),
+                isAvailable: () => !this.loaders.ip
             },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
