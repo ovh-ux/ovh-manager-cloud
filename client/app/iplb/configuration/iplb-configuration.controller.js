@@ -1,8 +1,9 @@
 class IpLoadBalancerConfigurationCtrl {
-    constructor ($q, $scope, $stateParams, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
+    constructor ($q, $scope, $stateParams, CloudMessage, CloudPoll, ControllerHelper, IpLoadBalancerConfigurationService) {
         this.$q = $q;
         this.$scope = $scope;
         this.$stateParams = $stateParams;
+        this.CloudMessage = CloudMessage;
         this.CloudPoll = CloudPoll;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
@@ -35,19 +36,23 @@ class IpLoadBalancerConfigurationCtrl {
         let promise = this.$q.resolve([]);
         if (zone) {
             promise = this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, zone);
-        }
-
-        // All selected, just call the API with no zone.
-        if (this.selectedZones.length === this.zones.length) {
+        } else if (this.selectedZones.length === this.zones.length) { // All selected, just call the API with no zone.
             promise = this.IpLoadBalancerConfigurationService.refresh(this.$stateParams.serviceName, null);
-        }
-
-        if (this.selectedZones.length) {
+        } else if (this.selectedZones.length) {
             promise = this.IpLoadBalancerConfigurationService.batchRefresh(this.$stateParams.serviceName, _.map(this.selectedZones, "id"));
         }
 
         promise.then(() => {
             this.startPolling();
+            if (this.poller) {
+                this.poller.$promise.then(() => {
+                    if (_.chain(this.zones.data).map("changes").sum().value() > 0) {
+                        this.CloudMessage.flushChildMessage();
+                    } else {
+                        this.CloudMessage.flushMessages();
+                    }
+                });
+            }
         });
 
         return promise;
