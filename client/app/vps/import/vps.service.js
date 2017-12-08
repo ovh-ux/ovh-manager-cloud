@@ -661,9 +661,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * create a snapshot for the VPS
          */
-        this.takeSnapshot = function (description) {
+        this.takeSnapshot = function (serviceName, description) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     return $http.post([swsVpsProxypass, vps.name, "createSnapshot"].join("/"), description)
@@ -716,9 +716,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * delete the snapshot for the VPS
          */
-        this.deleteSnapshot = function () {
+        this.deleteSnapshot = function (serviceName) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     return $http["delete"]([swsVpsProxypass, vps.name, "snapshot"].join("/"))
