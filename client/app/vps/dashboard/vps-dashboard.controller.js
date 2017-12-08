@@ -121,17 +121,17 @@ class VpsDashboardCtrl {
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("renew", { serviceName: this.serviceName, serviceType: "VPS" }),
-                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+                isAvailable: () => !this.loaders.init && !this.loaders.plan
             },
             manageContact: {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
-                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+                isAvailable: () => !this.loaders.init
             },
             manageIps: {
                 text: this.$translate.instant("vps_configuration_add_ipv4_title_button"),
                 href: this.ControllerHelper.navigation.getUrl("ip", { serviceName: this.serviceName }),
-                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+                isAvailable: () => !this.loaders.init && !this.loaders.ip
             },
             monitoringSla: {
                 text: this.$translate.instant("common_manage"),
@@ -145,7 +145,8 @@ class VpsDashboardCtrl {
             upgrade: {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
                 state: "iaas.vps.detail.upgrade",
-                stateParams: { serviceName: this.serviceName }
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
             },
             changeName: {
                 text: this.$translate.instant("common_edit"),
