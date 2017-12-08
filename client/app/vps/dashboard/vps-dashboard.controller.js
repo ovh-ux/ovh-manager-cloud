@@ -18,7 +18,8 @@ class VpsDashboardCtrl {
             ip: false,
             summary: false,
             plan: false,
-            polling: false
+            polling: false,
+            url: false
         };
     }
 
@@ -26,6 +27,7 @@ class VpsDashboardCtrl {
         this.initActions();
         this.loadVps();
         this.loadSummary();
+        this.loadUrl();
     }
 
     loadVps () {
@@ -75,6 +77,15 @@ class VpsDashboardCtrl {
             })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.plan = false });
+    }
+
+    loadUrl () {
+        this.loaders.url = true;
+        this.ControllerHelper.navigation.getConstant("changeOwner")
+            .then(url => {
+                this.actions.changeOwner.href = url;
+                this.loaders.url = false;
+            });
     }
 
     hasAdditionalDisk () {
@@ -129,8 +140,7 @@ class VpsDashboardCtrl {
             },
             changeOwner: {
                 text: this.$translate.instant("vps_change_owner"),
-                href: this.ControllerHelper.navigation.getConstant("changeOwner"),
-                isAvailable: () => !this.plan.loading && !this.plan.hasErrors
+                isAvailable: () => !this.loaders.url
             },
             upgrade: {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
