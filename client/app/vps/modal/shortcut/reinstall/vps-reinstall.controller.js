@@ -9,6 +9,7 @@ class VpsReinstallCtrl {
         this.VpsReinstallService = VpsReinstallService;
         this.VpsService = VpsService;
 
+        // TODO: check loaders used
         this.loaders = {
             save: false,
             sshKeys: false,
@@ -29,11 +30,13 @@ class VpsReinstallCtrl {
     }
 
     $onInit ()  {
-        this.loadSshKeys();
-        this.loadSummary();
+        this.loaders.init = true;
         this.VpsService.getTaskInError(this.serviceName)
             .then(tasks => this.loadTemplate(tasks))
-            .catch(err => this.loadTemplate(err));
+            .catch(err => this.loadTemplate(err))
+            .finally(() => {this.loaders.init = false});
+        this.loadSshKeys();
+        this.loadSummary();
     }
 
     loadTemplate (tasks) {
