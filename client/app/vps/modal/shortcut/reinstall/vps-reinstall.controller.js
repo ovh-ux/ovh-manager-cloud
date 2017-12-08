@@ -9,7 +9,6 @@ class VpsReinstallCtrl {
         this.VpsReinstallService = VpsReinstallService;
         this.VpsService = VpsService;
 
-        // TODO: check loaders used
         this.loaders = {
             save: false,
             sshKeys: false,
