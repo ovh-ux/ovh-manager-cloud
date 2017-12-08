@@ -46,6 +46,7 @@ class IpLoadBalancerConfigurationCtrl {
             this.startPolling();
             if (this.poller) {
                 this.poller.$promise.then(() => {
+                    // check if at least one change remains
                     if (_.chain(this.zones.data).map("changes").sum().value() > 0) {
                         this.CloudMessage.flushChildMessage();
                     } else {
