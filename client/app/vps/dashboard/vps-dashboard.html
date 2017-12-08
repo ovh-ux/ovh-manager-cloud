@@ -18,7 +18,7 @@
                         <cui-tile-action-link data-action="$ctrl.actions.kvm"></cui-tile-action-link>
                     </cui-tile-body-list-item>
                     <cui-tile-body-list-item>
-                        <cui-tile-action-link data-action="$ctrl.actions.reverseDns"></cui-tile-action-link>
+                        <cui-tile-action-link data-action="$ctrl.actions.changeOwner"></cui-tile-action-link>
                     </cui-tile-body-list-item>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="$ctrl.actions.upgrade"></cui-tile-action-link>
@@ -72,7 +72,9 @@
 
                     <cui-tile-item data-ng-if="$ctrl.vps.reverseDns"
                                    data-term="'vps_dashboard_reverse_dns' | translate"
-                                   data-description="$ctrl.vps.reverseDns"></cui-tile-item>
+                                   data-description="$ctrl.vps.reverseDns"
+                                   data-actions="$ctrl.actions.reverseDns"></cui-tile-item>
+
                     <cui-tile-item data-term="'vps_dashboard_secondary_dns' | translate"
                                    data-description="$ctrl.vps.secondaryDns"></cui-tile-item>
                 </cui-tile-body>
@@ -150,7 +152,7 @@
         <div class="col-xm-12 col-md-4">
             <cui-tile-subscription data-loading="$ctrl.loaders.init || $ctrl.loaders.plan"
                 data-subscription-info="$ctrl.plan"
-                data-offer-actions="[$ctrl.actions.changeOwner, $ctrl.actions.upgrade]"
+                data-offer-actions="$ctrl.actions.upgrade"
                 data-autorenew-actions="$ctrl.actions.manageAutorenew"
                 data-contact-actions="$ctrl.actions.manageContact"
                 class="h-100"></cui-tile-subscription>
