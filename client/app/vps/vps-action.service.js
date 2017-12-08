@@ -232,6 +232,32 @@ class VpsActionService {
         });
     }
 
+    deleteSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-delete.html",
+                controller: "VpsDeleteSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
+    takeSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-take.html",
+                controller: "VpsTakeSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);
