@@ -11,7 +11,7 @@
             </div>
             <cui-modal-text data-text="'vps_configuration_reboot_confirmation' | translate"></cui-modal-text>
             <p class="oui-modal__body-text italic" data-translate="vps_configuration_reboot_alert"></p>
-            <div class="oui-checkbox">
+            <div class="oui-checkbox" data-ng-if="$ctrl.model.netbootMode !== 'RESCUE'">
                 <input class="oui-checkbox__input" id="rescue" type="checkbox" data-ng-model="$ctrl.selected.rescue"/>
                 <label class="oui-checkbox__label-container" for="rescue">
                     <span class="oui-checkbox__label" data-translate="vps_configuration_reboot_rescue"></span>
