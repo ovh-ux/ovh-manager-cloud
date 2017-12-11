@@ -45,7 +45,7 @@
    <translation id="iplb_frontend_add_default_certificate" qtlid="438701">Certificat SSL par défaut</translation>
    <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Aucun</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Ajouter/Commander</translation>
-   <translation id="iplb_frontend_add_default_certificate" qtlid="133071">Ajouter un certificat</translation>
+   <translation id="iplb_frontend_add_default_certificate">Certificat présenté par défaut</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Il n'est pas possible d'ajouter directement un nouveau certificat. Vous pourrez l'ajouter lorsque la création de votre frontend sera terminée.</translation>
    <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Paramètres avancés</translation>
    <translation id="iplb_frontend_add_advanced_options_info" qtlid="437947">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>
