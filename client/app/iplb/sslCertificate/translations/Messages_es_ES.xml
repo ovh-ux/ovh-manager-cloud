@@ -53,14 +53,15 @@
    <translation id="iplb_ssl_order_name" qtlid="415818">Nombre (opcional)</translation>
    <translation id="iplb_ssl_order_type" qtlid="439169">Tipo de certificado</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
-   <translation id="iplb_ssl_order_type_dv" qtlid="439182">Comodo DV</translation>
-   <translation id="iplb_ssl_order_type_ev" qtlid="439195">Comodo EV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_dv_single" qtlid="439182">Comodo DV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_ev_single" qtlid="439195">Comodo EV</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
    <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
    <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">example.com, www.example.com</translation>
    <translation id="iplb_ssl_order_contact" qtlid="31066">Contacto</translation>
    <translation id="iplb_ssl_order_email" qtlid="439234">Dirección de correo electrónico</translation>
    <translation id="iplb_ssl_order_business_category" qtlid="431851">Categoría de la organización</translation>
+   <translation id="iplb_ssl_order_business_category_placeholder" qtlid="17923">Seleccionar</translation>
    <translation id="iplb_ssl_order_country" qtlid="25171">País</translation>
    <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Estado o provincia</translation>
    <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Fecha de incorporación</translation>
@@ -73,4 +74,8 @@
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Contratar</translation>
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Cancelar</translation>
+
+   <translation id="iplb_ssl_order_loading_error" qtlid="447326">Error al cargar la información del producto.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="447339">Se está creando un nuevo certificado.</translation>
+   <translation id="iplb_ssl_order_error" qtlid="447352">Error al crear el certificado: {{message}}</translation>
 </translations>
