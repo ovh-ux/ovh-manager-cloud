@@ -270,6 +270,19 @@ class VpsActionService {
             }
         });
     }
+
+    terminateSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-terminate.html",
+                controller: "VpsTerminateSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);
