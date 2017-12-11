@@ -826,7 +826,7 @@ angular.module("managerApp").service("VpsService", [
 
         // HOT FIX remove this fukin shit
         this.getPriceOptions = function (vps) {
-            return $http.get(["apiv6/price/vps/", vps.version.toLowerCase().replace(/_/g, ""), "/", vps.offerType.toLowerCase(), "/option/automatedBackup"].join(""));
+            return $http.get(["/price/vps", vps.version.toLowerCase().replace(/_/g, ""), vps.offerType.toLowerCase(), "option/automatedBackup"].join("/"));
         };
 
         this.cancelOption = function (serviceName, option) {
@@ -1010,15 +1010,15 @@ angular.module("managerApp").service("VpsService", [
         /**
          * Order the option veeam
          */
-        this.orderVeeamOption = function (duration) {
-            return this.getSelected().then(function (vps) {
-                return $http.post([swsOrderProxypass, vps.name, "automatedBackup", duration].join("/"))
-                    .then(function (response) {
-                        return response.data;
+        this.orderVeeamOption = (serviceName, duration) => {
+            return this.getSelectedVps(serviceName)
+                .then(vps => {
+                    return $http.post([aapiRootPath, vps.name, "automatedBackup", duration].join("/"), {}, {
+                        serviceType: "aapi"
                     });
-            });
+                })
+                .then(response => response.data);
         };
-
         /**
          * Update the VPS
          */
