@@ -32,8 +32,8 @@
    <translation id="metrics_retention" qtlid="403307">Retence (měsíc)</translation>
    <translation id="metrics_need_upgrade" qtlid="403320">Brzy dosáhnete maximálního povoleného počtu sérií.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Zvažte prosím migraci na vyšší verzi služby.</translation>
-   <translation id="metrics_contact_admin" qtlid="43948">Administrátor</translation>
-   <translation id="metrics_contact_billing" qtlid="32950">Fakturace</translation>
+   <translation id="metrics_contact_admin" qtlid="43948">Administrativní kontakt</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Fakturační kontakt</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Při načítání služby došlo k chybě.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Při načítání Vašich statistik o využití došlo k chybě.</translation>

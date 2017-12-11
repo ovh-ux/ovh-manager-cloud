@@ -54,7 +54,7 @@
    <translation id="common_menu_vps" qtlid="23083">VPS</translation>
    <translation id="common_menu_vdi" qtlid="303952">Cloud Desktop</translation>
 
-   <translation id="common_menu_support" qtlid="39994">Suporte</translation>
+   <translation id="common_menu_support" qtlid="39994">Apoio ao cliente</translation>
    <translation id="common_menu_support_assistance" qtlid="52699">Assistência</translation>
    <translation id="common_menu_support_all_guides" qtlid="260788">Todos os guias</translation>
    <translation id="common_menu_support_guide" qtlid="269604">Guia de utilização</translation>
@@ -101,6 +101,7 @@
    <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Projeto Cloud</translation>
+   <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Alterar o proprietário</translation>
 
    <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} trabalho(s) terminado(s)</translation>
@@ -132,7 +133,7 @@
    <translation id="language_nl" qtlid="33982">Neerlandês</translation>
    <translation id="language_pt" qtlid="239285">Português</translation>
    <translation id="unit_size_B" qtlid="121975">B</translation>
-   <translation id="unit_size_KB" qtlid="121987">ko</translation>
+   <translation id="unit_size_KB" qtlid="121987">KB</translation>
    <translation id="unit_size_MB" qtlid="48878">MB</translation>
    <translation id="unit_size_GB" qtlid="48890">GB</translation>
    <translation id="unit_size_TB" qtlid="70121">TB</translation>
@@ -166,7 +167,7 @@
    <translation id="payment_type_mandat" qtlid="139780">Mandat cash</translation>
    <translation id="payment_type_multibanco" qtlid="139793">Multibanco</translation>
    <translation id="payment_type_ovhAccount" qtlid="139806">Conta OVH</translation>
-   <translation id="payment_type_paymentMandate" qtlid="139819">Mandat administratif</translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819"></translation>
    <translation id="payment_type_paypal" qtlid="98228">Paypal</translation>
    <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Nota de crédito</translation>
@@ -177,10 +178,10 @@
    <translation id="contract_next" qtlid="17743">Seguinte</translation>
    <translation id="contract_previous" qtlid="17431">Anterior</translation>
    <translation id="contract_download" qtlid="250082">Abrir o contrato"{{id}}" na versão PDF</translation>
-   <translation id="contract_help" qtlid="180382">Deve ler os contratos até ao fim para os poder validar.</translation>
+   <translation id="contract_help" qtlid="180382">Para poder validar, deverá ler os contratos até ao fim.</translation>
    <translation id="contract_agree" qtlid="250095">Li e aceito as condições contratuais</translation>
    <translation id="contracts_agree" qtlid="194489">Li e aceito contratos e condições</translation>
-   <translation id="contract_list_title" qtlid="180408">Existe 1 contrato a consultar.</translation>
+   <translation id="contract_list_title" qtlid="180408">Existe 1 contrato para ler.</translation>
    <translation id="contracts_list_title" qtlid="250108">Há {{nbr}} contratos a consultar.</translation>
 
    <translation id="unit_frequency_HZ" qtlid="147577">Hz</translation>
@@ -329,7 +330,7 @@
    <translation id="country_JM" qtlid="240364">Jamaica</translation>
    <translation id="country_JO" qtlid="240377">Jordan</translation>
    <translation id="country_JP" qtlid="240390">Japan</translation>
-   <translation id="country_KE" qtlid="188158">Kenya</translation>
+   <translation id="country_KE" qtlid="188158">Quénia</translation>
    <translation id="country_KG" qtlid="240403">Kyrgyzstan</translation>
    <translation id="country_KH" qtlid="240416">Cambodia</translation>
    <translation id="country_KI" qtlid="188197">Kiribati</translation>
@@ -494,10 +495,13 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renovação automática</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrador</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Faturação</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Técnico </translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data de criação</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Estado</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">Modificar o nome</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Alterar o nome</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Nome predefinido</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizado</translation>
 

@@ -13,7 +13,7 @@
    <translation id="common_consult" qtlid="339639">Sprawdź</translation>
    <translation id="common_see_detail" qtlid="225192">Wyświetl szczegóły</translation>
    <translation id="common_manage" qtlid="16301">Zarządzanie</translation>
-   <translation id="common_apply" qtlid="41326">Zastosuj</translation>
+   <translation id="common_apply" qtlid="41326">Wyślij</translation>
    <translation id="common_loading" qtlid="58256">Ładowanie</translation>
    <translation id="common_refresh" qtlid="250030">Odśwież</translation>
    <translation id="common_pagination_page" qtlid="239246">Strona {{currentPage}} / {{nbPages}}</translation>
@@ -101,6 +101,7 @@
    <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Projekt Cloud</translation>
+   <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Zmiana właściciela</translation>
 
    <translation id="storage_promise_task_progress_done" qtlid="367501">Liczba wykonanych zadań: {{count}}</translation>
@@ -494,6 +495,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Odnowienie automatyczne</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakt</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrator</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Płatności</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Kontakt techniczny</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Data utworzenia</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>

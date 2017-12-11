@@ -21,5 +21,5 @@
    <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Liczba zamówień oczekujących na przesłanie dokumentów: <strong>{{count}}</strong>. Przejdź do <a href="{{link}}" class="alert-link">sekcji "Moje zamówienia"</a>, aby dokonać aktualizacji.</translation>
    <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Liczba regulaminów do zatwierdzenia: <strong>{{count}}</strong></translation>
    <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Liczba zleceń zmiany kiontaktw: <strong>{{count}}</strong></translation>
-
+   <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Optez vite pour le renouvellement automatique de <a href="{{ link }}">vos services</a>!</translation>
 </translations>

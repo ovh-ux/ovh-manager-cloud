@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="ovh_task_follow_button" qtlid="445006">Plačiau apie incidentą</translation>
+   <translation id="ovh_task_follow_modal_title" qtlid="445019">Incidento stebėjimas</translation>
+   <translation id="ovh_task_follow_modal_comment" qtlid="446583">Dernière mise à jour : {{ date }}</translation>
+</translations>

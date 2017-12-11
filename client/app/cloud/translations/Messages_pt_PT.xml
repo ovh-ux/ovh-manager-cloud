@@ -41,6 +41,8 @@
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Frankfurt ({{ micro }})</translation>
    <translation id="cloud_common_region_UK" qtlid="94015">Londres</translation>
    <translation id="cloud_common_region_UK_micro" qtlid="442756">Londres ({{ micro }})</translation>
+   <translation id="cloud_common_region_SGP" qtlid="189068">Singapura</translation>
+   <translation id="cloud_common_region_SGP_micro" qtlid="447534">Singapour ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizar</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Central (França)</translation>
@@ -50,8 +52,9 @@
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa Ocidental (França)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Europa Ocidental (Alemanha)</translation>
    <translation id="cloud_common_region_location_UK" qtlid="442769">Europa Ocidental (Grã-Bretanha)</translation>
+   <translation id="cloud_common_region_location_SGP" qtlid="447547">Asie du Sud-Est (Singapour)</translation>
 
-   <translation id="browser_alert_not_supported" qtlid="405357">O seu browser não é suportado</translation>
+   <translation id="browser_alert_not_supported" qtlid="405357">O seu browser não é compatível</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">O seu browser não está atualizado e pode ter falhas de segurança ou problemas de compatibilidade.</translation>
    <translation id="browser_alert_update" qtlid="405383">Para uma melhor experiência, recomendamos que <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">atualize o seu browser <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="browser_alert_close" qtlid="405396">Fechar este alerta</translation>

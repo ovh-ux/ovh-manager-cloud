@@ -9,7 +9,7 @@
    <translation id="common_close" qtlid="4670">Close</translation>
 
    <translation id="common_cancel" qtlid="37863">Cancel</translation>
-   <translation id="common_edit" qtlid="37875">Change</translation>
+   <translation id="common_edit" qtlid="37875">Edit</translation>
    <translation id="common_consult" qtlid="339639">Read</translation>
    <translation id="common_see_detail" qtlid="225192">See more information</translation>
    <translation id="common_manage" qtlid="16301">Manage</translation>
@@ -65,14 +65,14 @@
    <translation id="common_menu_support_changelog" qtlid="124964">Changelog</translation>
    <translation id="changelog_loading_error" qtlid="298014">The history of updates is currently unavailable.</translation>
 
-   <translation id="common_modify" qtlid="37875">Change</translation>
+   <translation id="common_modify" qtlid="37875">Edit</translation>
    <translation id="common_select" qtlid="17923">Select</translation>
    <translation id="common_add" qtlid="37923">Add</translation>
    <translation id="common_save" qtlid="49754">Save</translation>
    <translation id="common_delete" qtlid="2414">Delete</translation>
    <translation id="common_select" qtlid="17923">Select</translation>
    <translation id="common_remove" qtlid="323093">Remove </translation>
-   <translation id="edit" qtlid="37875">Change</translation>
+   <translation id="edit" qtlid="37875">Edit</translation>
    <translation id="delete" qtlid="2414">Delete</translation>
    <translation id="common_back" qtlid="4118">Back</translation>
    <translation id="error" qtlid="26407">Error</translation>
@@ -101,6 +101,7 @@
    <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Cloud project </translation>
+   <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Change the owner</translation>
 
    <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} completed task(s)</translation>
@@ -494,6 +495,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Solution </translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatic renewal</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contacts</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrator</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Billing</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Technical</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Creation date</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>

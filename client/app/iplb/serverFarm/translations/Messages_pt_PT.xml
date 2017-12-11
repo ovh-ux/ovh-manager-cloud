@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_farm_title" qtlid="437700">Server Farm</translation>
-   <translation id="iplb_farm_intro_text" qtlid="437713">A server farm é a componente do seu Load Balancer que serve para repartir o tráfego pelos servidores</translation>
+   <translation id="iplb_farm_intro_text" qtlid="437713">A Server Farm é a componente do seu Load Balancer que serve para repartir o tráfego pelos seus servidores.</translation>
 
-   <translation id="iplb_farm_add" qtlid="437726">Adicionar uma Server Farm</translation>
-   <translation id="iplb_farm_add_server" qtlid="19315">Adicionar um servidor</translation>
+   <translation id="iplb_farm_add" qtlid="437726">Adicionar Server Farm</translation>
+   <translation id="iplb_farm_add_server" qtlid="19315">Adicionar servidor</translation>
 
    <translation id="iplb_farm_server_status_see" qtlid="437739">Ver estado</translation>
 
@@ -12,10 +12,10 @@
    <translation id="iplb_farm_list_accordion_aside_server_single" qtlid="437765">{{serverNumber}} servidor</translation>
    <translation id="iplb_farm_list_accordion_aside_server_many" qtlid="437778">{{serverNumber}} servidores</translation>
 
-   <translation id="iplb_farm_add_error" qtlid="437791">Ocorreu um erro durante a criação da server farm: {{message}}</translation>
-   <translation id="iplb_farm_add_success" qtlid="437804">A server farm foi criada com sucesso</translation>
-   <translation id="iplb_farm_update_error" qtlid="437817">Ocorreu um erro no processo de alteração à server farm : {{message}}</translation>
-   <translation id="iplb_farm_update_success" qtlid="437830">Alterações à server farm efetuadas corretamente </translation>
+   <translation id="iplb_farm_add_error" qtlid="437791">Ocorreu um erro durante a criação da Server Farm: {{message}}</translation>
+   <translation id="iplb_farm_add_success" qtlid="437804">A Server Farm foi criada com sucesso</translation>
+   <translation id="iplb_farm_update_error" qtlid="437817">Ocorreu um erro no processo de alteração da Server Farm : {{message}}</translation>
+   <translation id="iplb_farm_update_success" qtlid="437830">Alterações à Server Farm efetuadas corretamente </translation>
 
    <translation id="iplb_farm_server_list_col_server" qtlid="8290">Servidor</translation>
    <translation id="iplb_farm_server_list_col_ipv4" qtlid="101781">IPv4</translation>
@@ -38,14 +38,14 @@
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Endereço IP de origem</translation>
 
-   <translation id="iplb_farm_add_title" qtlid="437726">Adicionar uma Server Farm</translation>
-   <translation id="iplb_farm_update_title" qtlid="437908">Configuração da server farm {{farmId}}</translation>
+   <translation id="iplb_farm_add_title" qtlid="437726">Adicionar Server Farm</translation>
+   <translation id="iplb_farm_update_title" qtlid="437908">Configuração da Server Farm {{farmId}}</translation>
    <translation id="iplb_farm_edit_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocolo (não alterável após criação)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">de 1 a {{portMax}}</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="437934">de 1 a {{portMax}}, formato: simples (ex: 80), alcance(ex: 1000-1200), multipla (ex: 80,443)</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
-   <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Parâmetros avançados</translation>
+   <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Configurações avançadas</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Os valores predefinidos mais habituais estão pré-configurados, mas podem ser alterados a qualquer momento.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Mostrar</translation>
    <translation id="iplb_farm_edit_balance" qtlid="430265">Modo de repartição </translation>

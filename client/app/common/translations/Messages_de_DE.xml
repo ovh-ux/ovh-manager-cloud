@@ -101,6 +101,7 @@
    <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Cloud Projekt</translation>
+   <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Loadbalancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Den Inhaber ändern</translation>
 
    <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} Task(s) abgeschlossen </translation>
@@ -494,6 +495,9 @@
    <translation id="common_tile_subscription_offer" qtlid="38217">Angebot</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatische Verlängerung</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakte</translation>
+   <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrator</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Abrechnung</translation>
+   <translation id="common_tile_subscription_contact_technical" qtlid="31750">Technisch</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
