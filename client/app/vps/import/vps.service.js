@@ -812,9 +812,9 @@ angular.module("managerApp").service("VpsService", [
             return $http.get(["apiv6/price/vps/", vps.version.toLowerCase().replace(/_/g, ""), "/", vps.offerType.toLowerCase(), "/option/automatedBackup"].join(""));
         };
 
-        this.cancelOption = function (option) {
+        this.cancelOption = function (serviceName, option) {
 
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http["delete"]([swsVpsProxypass, vps.name, "option", option].join("/"))
                     ["catch"](function (err) {
                         return err && err.data ? $q.reject(err.data) : $q.reject(err);
