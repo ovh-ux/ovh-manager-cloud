@@ -113,7 +113,7 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionActivated && !this.summary.snapshot.creationDate
             },
-            restaure: {
+            restore: {
                 text: this.$translate.instant("vps_configuration_snapshot_restore_title_button"),
                 callback: () => this.VpsActionService.restoreSnapshot(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.creationDate
