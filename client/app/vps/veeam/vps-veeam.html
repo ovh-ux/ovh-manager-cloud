@@ -40,6 +40,10 @@
 
         <div data-ng-if="$ctrl.veeam.state == 'disabled' && !$ctrl.loaders.checkOrder">
             <p data-ng-if="$ctrl.vps.hasVeeam && $ctrl.vps.canOrder" data-translate="vps_tab_VEEAM_dashboard_not_activated"></p>
+            <button class="oui-button oui-button_primary"
+                    data-translate="vps_configuration_veeam_order_title_button"
+                    data-ui-sref="iaas.vps.detail.veeam.order"
+                    data-ng-if="$ctrl.vps.hasVeeam && $ctrl.vps.canOrder"></button>
             <p data-ng-if="!$ctrl.vps.hasVeeam" data-translate="vps_tab_VEEAM_dashboard_veeam_unavailable"></p>
             <p data-ng-if="!$ctrl.vps.canOrder" data-translate="vps_tab_VEEAM_dashboard_not_able_to_order"></p>
         </div>

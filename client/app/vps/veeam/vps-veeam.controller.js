@@ -73,7 +73,7 @@ class VpsVeeamCtrl {
                 this.vps.hasVeeam = vps.hasVeeam;
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.checkOrder = false });
+            .finally(() => { this.loaders.checkOrder = false; });
     }
 
     restore (restorePoint) {
