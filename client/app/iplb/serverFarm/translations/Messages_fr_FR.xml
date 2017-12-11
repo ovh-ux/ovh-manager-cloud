@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Nom (facultatif)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocole (non modifiable après la création)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
-   <translation id="iplb_farm_edit_port_tip">Port attaché à la ferme (1 à {{portMax}}). Par défaut, hérite du port du frontend.</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port attaché à la ferme (1 à {{portMax}}). Par défaut, hérite du port du frontend.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacentre</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Paramètres avancés</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>

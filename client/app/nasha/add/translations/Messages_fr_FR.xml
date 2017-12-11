@@ -25,7 +25,7 @@
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasbourg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
-   <translation id="nasha_order_datacenter_unavailable">Dû à sa popularité, le produit est temporairement indisponible pour le datacentre {{ region }}.</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Dû à sa popularité, le produit est temporairement indisponible pour le datacentre {{ region }}.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Une erreur est survenue lors de la validation de votre commande.</translation>
    <translation id="nasha_order_error" qtlid="345286">Une erreur est survenue lors de la récupération du bon de commande.</translation>
    <translation id="nasha_order_success" qtlid="345299">La commande numéro <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> de votre NAS-HA a bien été prise en compte.</translation>
