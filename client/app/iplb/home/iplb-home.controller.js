@@ -34,17 +34,20 @@ class IpLoadBalancerHomeCtrl {
 
         this.IPLBActions = [[{
             text: this.$translate.instant("iplb_status_apply"),
-            run: () => this.$state.go("network.iplb.detail.configuration")
+            callback: () => this.$state.go("network.iplb.detail.configuration"),
+            isAvailable: () => true
         }]];
 
         this.frontendsActions = [[{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => this.$state.go("network.iplb.detail.frontends")
+            callback: () => this.$state.go("network.iplb.detail.frontends"),
+            isAvailable: () => true
         }]];
 
         this.farmsActions = [[{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => this.$state.go("network.iplb.detail.server-farm")
+            callback: () => this.$state.go("network.iplb.detail.server-farm"),
+            isAvailable: () => true
         }]];
     }
 
