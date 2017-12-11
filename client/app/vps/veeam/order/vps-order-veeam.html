@@ -1,0 +1,72 @@
+<section class="container-fluid cui-page__content cui-page__content-flex">
+
+    <div class="row d-lg-flex">
+        <div class="col-xm-12">
+
+            <cui-wizard-form data-form-title="{{ 'vps_configuration_veeam_order_title' | translate }}"
+                             data-form-loaded="true"
+                             data-form-on-cancel="$ctrl.cancel()"
+                             data-form-on-complete="$ctrl.confirm()">
+
+                <cui-wizard-step data-step-title="{{ 'vps_configuration_veeam_order_step1_question' | translate }}"
+                                 data-step-on-init="$ctrl.loadUpgradesList()"
+                                 data-step-loaded="!$ctrl.loaders.step1"
+                                 data-step-completed="model.contractsValidated">
+                    <div class="text-center" data-ng-if="!model.vps || !model.optionDetails">
+                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                    </div>
+
+                    <div data-ng-show="model.optionDetails">
+                        <dl class="dl-horizontal">
+                            <dt class="bold"
+                                data-translate="vps_configuration_veeam_order_step1_totalHT"></dt>
+                            <dd class="red bold"
+                                data-ng-bind="model.optionDetails.withoutTax"></dd>
+
+                            <dt class="bold"
+                                data-translate="vps_configuration_veeam_order_step1_totalTTC"></dt>
+                            <dd class="red bold"
+                                data-ng-bind="model.optionDetails.withTax"></dd>
+                        </dl>
+                        <div data-translate="vps_configuration_veeam_order_step1_info"></div>
+                        <div data-ng-bind-html="tr('vps_configuration_veeam_order_step1_info2', [model.optionDetails.unitaryPrice])"></div>
+                        <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
+                        <input id="contractsValidated"
+                               type="checkbox"
+                               data-ng-change="orderOption()"
+                               data-ng-model="model.contractsValidated"
+                               style="margin-top: -1px;">
+                        <label style="display: inline;"
+                               for="contractsValidated"
+                               data-translate="vps_configuration_veeam_order_step1_contracts"></label>
+                        <ul>
+                            <li data-ng-repeat="contract in model.optionDetails.contracts">
+                                <a target="_blank"
+                                   data-ng-href='{{contract.url}}'
+                                   data-ng-bind='contract.name'></a>
+                            </li>
+                        </ul>
+                        <span class="italic fs11 lh11"
+                              data-translate="vps_configuration_veeam_order_step1_info"></span>
+                    </div>
+                </cui-wizard-step>
+
+                <cui-wizard-step data-step-title="{{ 'vps_configuration_veeam_order_step2_generation_bc' | translate }}"
+                                 data-step-completed="model.gfdhkjcgsidfugh">
+                    <div class="text-center" data-ng-if="!model.url">
+                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                    </div>
+                    <div data-ng-show="model.url" class="row-fluid">
+                        <span data-translate="vps_configuration_veeam_order_step2_bc"></span>
+                        <span class="blue bold"
+                              data-translate="vps_configuration_veeam_order_step2_continue"></span>
+                        <span data-translate="vps_configuration_veeam_order_step2_explication"></span>
+                        <span class="fs11 lh11 italic"
+                              data-translate="vps_configuration_veeam_order_step2_explication2"></span>
+                    </div>
+                </cui-wizard-step>
+
+            </cui-wizard-form>
+        </div>
+    </div>
+</section>
