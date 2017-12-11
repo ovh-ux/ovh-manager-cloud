@@ -24,12 +24,12 @@ class VpsReverseDnsCtrl {
     $onInit () {
         this.loader.init = true;
         this.VpsService.getIps(this.serviceName)
-            .then(data => { this.ips = data.results })
+            .then(data => { this.ips = data.results; })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail")))
-            .finally(() => { this.loader.init = false });
+            .finally(() => { this.loader.init = false; });
     }
 
-    prepareDnsIpsStruct ()  {
+    prepareDnsIpsStruct () {
         this.structuredData.results.push(angular.copy(this.model.value));
         this.structuredData.results[0].reverse = this.model.reverse;
     }
@@ -41,20 +41,21 @@ class VpsReverseDnsCtrl {
     confirm () {
         this.loader.save = true;
         this.prepareDnsIpsStruct();
-        this.VpsService.setReversesDns(this.structuredData)
+        this.VpsService.setReversesDns(this.serviceName, this.structuredData)
             .then(data => {
                 if (data && data.state) {
+                    let messages = !_.isEmpty(data.messages) ? data.messages : [];
                     switch (data.state) {
-                    case "ERROR" :
-                        this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
-                        const messages = !_.isEmpty(data.messages) ? data.messages : [];
-                        _.forEach(messages, (message) => this.CloudMessage.error(message.message || message));
-                        break
-                    case "PARTIAL" :
-                        break;
-                    case "OK" :
-                        this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success"))
-                        break;
+                        case "ERROR" :
+                            this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
+                            messages.forEach(message => this.CloudMessage.error(message.message || message));
+                            break;
+                        case "PARTIAL" :
+                            break;
+                        case "OK" :
+                            this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success"));
+                            break;
+                        default: this.this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
                     }
                 }
             })

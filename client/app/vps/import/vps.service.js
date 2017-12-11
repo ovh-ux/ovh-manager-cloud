@@ -391,16 +391,14 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Reinstall the VPS using the template identified by templateId
          */
-        this.setReversesDns = function (ips) {
+        this.setReversesDns = function (serviceName, ips) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (!ips) {
                     return $q.reject("No ips");
                 } else if (vps && vps.name) {
                     return $http.post([aapiRootPath, vps.name, "ips", "reverse"].join("/") , ips, {serviceType: "aapi"})
-                        .then(function (data) {
-                            result = data.data;
-                        });
+                        .then(data => data.data);
                 } else {
                     return $q.reject(vps);
                 }
