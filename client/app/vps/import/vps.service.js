@@ -689,9 +689,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * restore a snapshot for the VPS
          */
-        this.restoreSnapshot = function () {
+        this.restoreSnapshot = function (serviceName) {
             var result = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     return $http.post([swsVpsProxypass, vps.name, "snapshot/revert"].join("/"))
                         .then(function (data) {
