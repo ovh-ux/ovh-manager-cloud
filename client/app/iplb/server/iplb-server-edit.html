@@ -21,16 +21,18 @@
             </div>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field"
+            data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.port.$invalid}">
             <label for="port" class="oui-label" data-translate="iplb_server_edit_port"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_1">
                     <input type="number"
                         min="1"
-                        max="{{ctrl.portLimit}}"
+                        data-ng-max="ctrl.portLimit"
                         id="port"
                         name="port"
                         class="oui-input"
+                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.port.$invalid}"
                         data-ng-model="ctrl.server.port"/>
                 </div>
                 <div class="oui-field-helper"
