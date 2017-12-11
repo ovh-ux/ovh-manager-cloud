@@ -4,6 +4,7 @@
    <translation id="cpc_tab_snapshot" qtlid="170343">Varmuuskopiot</translation>
    <translation id="cpc_tab_volume" qtlid="246923">Lisälevyt</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH-avaimet</translation>
+   <translation id="cpc_tab_loadbalancer" qtlid="323499">Kuormantasaus-IP</translation>
    <translation id="cpc_tab_project" qtlid="261283">Projektin hallinta ja kulutus</translation>
    <translation id="cpc_message" qtlid="439767">OVH:n Cloud saapuu Saksaan!  <a href="http://superlienverslapage">Tutustu Limburgin konesaliimme.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Uusi Iso-Britannian konesalimme UK1 Lontoo on nyt avattu!</translation>
