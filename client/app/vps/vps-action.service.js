@@ -258,6 +258,18 @@ class VpsActionService {
         });
     }
 
+    restoreSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-restore.html",
+                controller: "VpsRestoreSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);
