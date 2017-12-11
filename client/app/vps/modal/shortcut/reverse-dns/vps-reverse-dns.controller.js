@@ -46,17 +46,16 @@ class VpsReverseDnsCtrl {
                 if (data && data.state) {
                     let messages = !_.isEmpty(data.messages) ? data.messages : [];
                     switch (data.state) {
-                    case "ERROR" :
-                        this.$translate.instant("vps_configuration_reversedns_fail");
-                        const messages = ! _.isEmpty(data.messages) ? data.messages : [];
-                        // TODO: send this + _forEach eachtime
-                        _.forEach(messages, (message) => this.CloudMessage.error(message.message || message));
-                        break
-                    case "PARTIAL" :
-                        break;
-                    case "OK" :
-                        this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success"))
-                        break;
+                        case "ERROR" :
+                            this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
+                            messages.forEach(message => this.CloudMessage.error(message.message || message));
+                            break;
+                        case "PARTIAL" :
+                            break;
+                        case "OK" :
+                            this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success"));
+                            break;
+                        default: this.this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
                     }
                 }
             })
