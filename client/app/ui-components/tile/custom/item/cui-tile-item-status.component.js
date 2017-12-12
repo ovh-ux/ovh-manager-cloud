@@ -15,16 +15,18 @@ angular.module("managerApp")
         controllerAs: "$ctrl",
         transclude: true,
         template: `
-            <div class="cui-tile-item-status d-flex" data-ng-class="{ 'cui-dropdown-menu-container': $ctrl.actions }">
-                <div class="cui-tile__item-main" data-ng-if="$ctrl.term">
-                    <cui-tile-definitions data-ng-if="$ctrl.term">
-                        <cui-tile-term-status data-term="$ctrl.term"></cui-tile-term-status>
-                        <cui-tile-description-status data-type="{{ $ctrl.type }}" 
-                            data-description="$ctrl.description"></cui-tile-description-status>
-                    </cui-tile-definitions>
-                </div>
-                <div class="cui-tile__item-main" data-ng-if="!$ctrl.term && !$ctrl.description" data-ng-transclude></div>
-                <cui-tile-action-menu data-ng-if="$ctrl.actions" data-actions="$ctrl.actions"></cui-tile-action-menu>
+            <div class="cui-tile-item-status" data-ng-class="{ 'cui-dropdown-menu-container': $ctrl.actions }">
+                <div class="d-flex">
+                    <div class="cui-tile__item-main" data-ng-if="$ctrl.term">
+                        <cui-tile-definitions data-ng-if="$ctrl.term">
+                            <cui-tile-term-status data-term="$ctrl.term"></cui-tile-term-status>
+                            <cui-tile-description-status data-type="{{ $ctrl.type }}" 
+                                data-description="$ctrl.description"></cui-tile-description-status>
+                        </cui-tile-definitions>
+                    </div>
+                    <div class="cui-tile__item-main" data-ng-if="!$ctrl.term && !$ctrl.description" data-ng-transclude></div>
+                    <cui-tile-action-menu data-ng-if="$ctrl.actions" data-actions="$ctrl.actions"></cui-tile-action-menu>
+                </div> 
             </div>`,
         bindToController: {
             term: "<",
@@ -55,7 +57,7 @@ angular.module("managerApp")
         template: `
             <dd class="cui-tile-item-status__description text-truncate d-flex">
                 <cui-status-icon class="cui-tile-item-status__icon" data-type="{{ $ctrl.type }}"></cui-status-icon>
-                <div class="cui-tile-item-status__detail">
+                <div class="cui-tile-item-status__detail text-truncate">
                     <span data-ng-if="$ctrl.description !== null && $ctrl.description !== ''" data-ng-bind="$ctrl.description"></span>
                     <span data-ng-if="$ctrl.description === null || $ctrl.description === ''" data-ng-bind="'-'"></span>
                     <ng-transclude></ng-transclude>
