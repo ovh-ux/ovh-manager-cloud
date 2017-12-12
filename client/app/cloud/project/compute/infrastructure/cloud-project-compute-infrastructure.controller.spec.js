@@ -81,7 +81,7 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
             $httpBackend.whenGET(/\/cloud\/project\/[a-z0-9]+\/snapshot/).respond(200, dataTest.snapshot.snapshots);
             // --- @todo: region
             $httpBackend.whenGET(/\/cloud\/project\/[a-z0-9]+\/sshkey/).respond(200, dataTest.sshKey.sshkeys);
-            $httpBackend.whenGET(/\/cloud\/price/).respond(200, dataTest.price.instances);
+            $httpBackend.whenGET("/order/catalog/formatted/cloud").respond(200, []);
 
             // IPFO
             $httpBackend.whenGET(/\/ip\/[a-zA-Z\.\%0-9]+\/task/).respond(200, []);
