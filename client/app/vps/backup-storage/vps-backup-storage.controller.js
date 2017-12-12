@@ -1,5 +1,5 @@
 class VpsBackupStorageCtrl {
-    constructor ($stateParams ,$translate, CloudMessage, VpsActionService, VpsService) {
+    constructor ($stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -17,7 +17,7 @@ class VpsBackupStorageCtrl {
     }
 
     $onInit () {
-        this.loadInformation ();
+        this.loadInformation();
         this.loadBackup();
     }
 
@@ -28,7 +28,7 @@ class VpsBackupStorageCtrl {
                 this.vps = vps;
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.vps = false });
+            .finally(() => { this.loaders.vps = false; });
     }
 
     loadInformation () {
@@ -57,9 +57,9 @@ class VpsBackupStorageCtrl {
     loadBackup () {
         this.loaders.init = true;
         this.VpsService.getBackupStorageTab(this.serviceName)
-            .then(data => { this.backup.table = data })
+            .then(data => { this.backup.table = data; })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.init = false });
+            .finally(() => { this.loaders.init = false; });
     }
 
     add () {
