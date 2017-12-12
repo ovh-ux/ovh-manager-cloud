@@ -37,7 +37,7 @@ class VpsOrderSnapshotCtrl {
 
     loadOptionDetails (vps) {
         this.loaders.options = true;
-        this.VpsService.getOptionSnapshotFormated(vps)
+        this.VpsService.getOptionSnapshotFormated(this.serviceName, vps)
             .then(data => {this.model.optionDetails = data})
             .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_activate_snapshot_fail")))
             .finally(() => {this.loaders.options = false})
