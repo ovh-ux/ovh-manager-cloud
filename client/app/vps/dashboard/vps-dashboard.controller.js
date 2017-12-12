@@ -189,7 +189,7 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.loadVps()),
                 isAvailable: () => !this.loaders.init
-            },
+            }
         };
     }
 

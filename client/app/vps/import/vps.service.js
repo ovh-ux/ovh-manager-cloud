@@ -771,9 +771,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * get details for an option for the VPS
          */
-        this.getOptionDetails = function (option) {
+        this.getOptionDetails = function (serviceName, option) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name && option) {
                     vpsName = vps.name;
                     return $http.get([aapiRootPath, vps.name, "options", option].join("/"), {serviceType: "aapi"})
@@ -807,20 +807,20 @@ angular.module("managerApp").service("VpsService", [
             return $http.get(["apiv6/order/vps/", vps.name, "/snapshot"].join(""));
         };
 
-        this.getOptionSnapshotFormated = function (vps) {
+        this.getOptionSnapshotFormated = function (serviceName, vps) {
             if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
-                return this.getOptionDetails(vps).then(d => {
-                    return this.getOptionDetails2('snapshot',vps, d.data[0]).then(data => {
-                        return {
-                            unitaryPrice: data[0].data.text,
-                            withoutTax: data[1].data.prices.withoutTax.text,
-                            withTax: data[1].data.prices.withTax.text,
-                            duration: {duration: d.data[0]}
-                        }
-                    });
-                });
+                return this.getOptionSnapshot(vps)
+                    .then(d => this.getOptionDetails2('snapshot', vps, d.data[0]))
+                    .then(data => {
+                            return {
+                                unitaryPrice: data[0].data.text,
+                                withoutTax: data[1].data.prices.withoutTax.text,
+                                withTax: data[1].data.prices.withTax.text,
+                                duration: {duration: d.data[0]}
+                            }
+                        });
             } else {
-                return this.getOptionDetails('snapshot').then(data => data.results[0]);
+                return this.getOptionDetails(serviceName, 'snapshot').then(data => data.results[0]);
             }
         }
 
@@ -1127,8 +1127,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getWindowsOptionDurations = function () {
-            return this.getSelected().then(function (vps) {
+        this.getWindowsOptionDurations = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsOrderProxypass, vps.name, "windows"].join("/"))
                     .then(function (response) {
                         return response.data;
