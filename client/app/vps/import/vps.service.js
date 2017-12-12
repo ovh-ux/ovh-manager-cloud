@@ -398,7 +398,7 @@ angular.module("managerApp").service("VpsService", [
                     return $q.reject("No ips");
                 } else if (vps && vps.name) {
                     return $http.post([aapiRootPath, vps.name, "ips", "reverse"].join("/") , ips, {serviceType: "aapi"})
-                        .then(data => data.data);
+                        .then(data => {result = data.data});
                 } else {
                     return $q.reject(vps);
                 }
