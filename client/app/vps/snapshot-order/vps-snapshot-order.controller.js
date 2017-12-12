@@ -47,9 +47,9 @@ class VpsOrderSnapshotCtrl {
         if (this.model.optionDetails && this.model.contractsValidated) {
             this.VpsService.orderOption(this.serviceName, "snapshot", this.model.optionDetails.duration.duration)
                 .then(order => {this.model.url = order.url;})
-                .catch(error => this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_order_fail")));
+                .catch(error => this.CloudMessage.error(this.$translate.instant("vps_configuration_activate_snapshot_fail")));
         } else if (this.model.contractsValidated) {
-            this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_order_fail"));
+            this.CloudMessage.error(this.$translate.instant("vps_configuration_activate_snapshot_fail"));
         }
     }
 
