@@ -1,6 +1,7 @@
 class CloudProjectComputeLoadbalancerCtrl {
     constructor ($q, $translate, $stateParams, CloudProjectComputeLoadbalancerService, OvhApiCloudProjectIplb, OvhApiIpLoadBalancing, CloudMessage, OvhApiMe, URLS) {
         this.$q = $q;
+        this.$translate = $translate;
         this.CloudProjectComputeLoadbalancerService = CloudProjectComputeLoadbalancerService;
         this.OvhApiCloudProjectIplb = OvhApiCloudProjectIplb;
         this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
@@ -26,8 +27,6 @@ class CloudProjectComputeLoadbalancerCtrl {
                 loadbalancer: false
             }
         };
-
-        console.log("init controller");
     }
 
     $onInit () {

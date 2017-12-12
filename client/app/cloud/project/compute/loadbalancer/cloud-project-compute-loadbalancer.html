@@ -1,16 +1,14 @@
 <div id="cloud-project-compute-loadbalancer" class="cui-page__content">
     <div data-ng-if="!CloudProjectComputeLoadbalancerCtrl.loaders.table.loadbalancer && CloudProjectComputeLoadbalancerCtrl.table.loadbalancer && !CloudProjectComputeLoadbalancerCtrl.table.loadbalancer.length"
-         class="discover">
-          <div class=""><h3 data-translate="cpc_loadbalancer_discover_title"></h3></div>
-          <div class="body">
-              <div data-translate="cpc_loadbalancer_discover_body"></div>
-              <div class="image">
-                  <img src="/assets/images/cloud/loadbalancer/loadbalancer-schema.png" alt="{{cpc_loadbalancer_discover_title | translate}}"/>
-              </div>
-              <div class="image">
-                  <a class="oui-button oui-button_primary" data-ng-href="{{CloudProjectComputeLoadbalancerCtrl.urls.website_order.load_balancer[CloudProjectComputeLoadbalancerCtrl.locale]}}" data-translate="cpc_loadbalancer_order"></a>
-              </div>
-          </div>
+         class="discover-iplb">
+        <h3 class="oui-header_3" data-translate="cpc_loadbalancer_discover_title"></h3>
+        <p data-translate="cpc_loadbalancer_discover_body"></p>
+        <div class="discover-iplb__image">
+            <img data-ng-src="assets/images/cloud/loadbalancer/loadbalancer-schema.png" alt="{{cpc_loadbalancer_discover_title | translate}}"/>
+        </div>
+        <div class="discover-iplb__button">
+            <a class="oui-button oui-button_primary" data-ng-href="{{CloudProjectComputeLoadbalancerCtrl.urls.website_order.load_balancer[CloudProjectComputeLoadbalancerCtrl.locale]}}" data-translate="cpc_loadbalancer_order"></a>
+        </div>
     </div>
 
     <div data-ng-if="CloudProjectComputeLoadbalancerCtrl.loaders.table.loadbalancer"
