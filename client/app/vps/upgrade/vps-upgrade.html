@@ -8,100 +8,99 @@
                              data-form-on-cancel="$ctrl.cancel()"
                              data-form-on-complete="$ctrl.confirm()">
 
-                    <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_title' | translate }}"
-                                     data-step-on-init="$ctrl.loadUpgradesList()"
-                                     data-step-loaded="!$ctrl.loaders.step1"
-                                     data-step-completed="$ctrl.selectedModel.model">
-                        <div class="oui-radio"
-                             data-ng-repeat="upgrade in $ctrl.upgradesList track by $index">
-                            <input data-ng-if="upgrade.isAvailable && !upgrade.isCurrentModel"
-                                   type="radio"
-                                   class="oui-radio__input"
-                                   id="{{upgrade.model}}"
-                                   name="selectedModel"
-                                   value="{{upgrade.model}}"
-                                   data-ng-model="$ctrl.selectedModel.model"/>
-                            <label class="w-100 m-0"
-                                   data-ng-class="{ 'oui-radio__label-container': upgrade.isAvailable && !upgrade.isCurrentModel }"
-                                   for="{{upgrade.model}}">
-                                <span class="row oui-radio__label">
-                                    <i data-ng-if="upgrade.isCurrentModel"
-                                       class="oui-icon oui-icon-success_circle fs16"
-                                       style="position:absolute;left:0;top:0.2em"
-                                       aria-hidden="true"></i>
-                                    <span class="col-xs-3 col-sm-2 py-0">
-                                        {{ upgrade.vcore }} {{ 'vps_configuration_upgradevps_step1_table_vcore_' + (upgrade.vcore>1?'other':'1') | translate }}
-                                    </span>
-                                    <span class="col-xs-2 col-sm-2 py-0">
-                                        {{ upgrade.ram.value }} {{ 'unit_size_' + upgrade.ram.unit | translate }}
-                                    </span>
-                                    <span class="col-xs-3 col-sm-2 py-0">
-                                        {{ upgrade.disk.value }} {{ 'unit_size_' + upgrade.disk.unit | translate }}
-                                    </span>
-                                    <span class="col-xs-4 py-0">
-                                        <span data-ng-if="upgrade.isAvailable && !upgrade.isCurrentModel"
-                                              class="red bold">
-                                            {{ upgrade.monthPrice }} {{ 'vps_configuration_upgradevps_step1_table_price_monthly' | translate }}
-                                        </span>
-                                        <span data-ng-if="upgrade.isCurrentModel"
-                                              class="label label-info"
-                                              data-translate="vps_configuration_upgradevps_current"></span>
-                                    </span>
+                <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step1_title' | translate }}"
+                                 data-step-on-init="$ctrl.loadUpgradesList()"
+                                 data-step-loaded="!$ctrl.loaders.step1"
+                                 data-step-completed="$ctrl.selectedModel.model">
+                    <div class="oui-radio"
+                         data-ng-repeat="upgrade in $ctrl.upgradesList track by $index">
+                        <input data-ng-if="upgrade.isAvailable && !upgrade.isCurrentModel"
+                               type="radio"
+                               class="oui-radio__input"
+                               id="{{upgrade.model}}"
+                               name="selectedModel"
+                               value="{{upgrade.model}}"
+                               data-ng-model="$ctrl.selectedModel.model"/>
+                        <label class="w-100 m-0"
+                               data-ng-class="{ 'oui-radio__label-container': upgrade.isAvailable && !upgrade.isCurrentModel }"
+                               for="{{upgrade.model}}">
+                            <span class="row oui-radio__label">
+                                <i data-ng-if="upgrade.isCurrentModel"
+                                   class="oui-icon oui-icon-success_circle fs16"
+                                   style="position:absolute;left:0;top:0.2em"
+                                   aria-hidden="true"></i>
+                                <span class="col-xs-3 col-sm-2 py-0">
+                                    {{ upgrade.vcore }} {{ 'vps_configuration_upgradevps_step1_table_vcore_' + (upgrade.vcore>1?'other':'1') | translate }}
                                 </span>
-                            </label>
+                                <span class="col-xs-2 col-sm-2 py-0">
+                                    {{ upgrade.ram.value }} {{ 'unit_size_' + upgrade.ram.unit | translate }}
+                                </span>
+                                <span class="col-xs-3 col-sm-2 py-0">
+                                    {{ upgrade.disk.value }} {{ 'unit_size_' + upgrade.disk.unit | translate }}
+                                </span>
+                                <span class="col-xs-4 py-0">
+                                    <span data-ng-if="upgrade.isAvailable && !upgrade.isCurrentModel"
+                                          class="red bold">
+                                        {{ upgrade.monthPrice }} {{ 'vps_configuration_upgradevps_step1_table_price_monthly' | translate }}
+                                    </span>
+                                    <span data-ng-if="upgrade.isCurrentModel"
+                                          class="label label-info"
+                                          data-translate="vps_configuration_upgradevps_current"></span>
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div>
+                        <div data-translate="vps_configuration_upgradevps_step1_warning"
+                             data-translate-values="{ monthPrice: $ctrl.getCurrentModel().monthPrice }">
                         </div>
-                        <div>
-                            <div data-translate="vps_configuration_upgradevps_step1_warning"
-                                 data-translate-values="{ monthPrice: $ctrl.getCurrentModel().monthPrice }">
-                            </div>
-                            <small class="mt-4 font-italic"
-                                   data-translate="vps_configuration_upgradevps_step1_warning2"></small>
-                        </div>
-                    </cui-wizard-step>
+                        <small class="mt-4 font-italic"
+                               data-translate="vps_configuration_upgradevps_step1_warning2"></small>
+                    </div>
+                </cui-wizard-step>
 
-                    <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step2_title' | translate }}"
-                                     data-step-on-init="$ctrl.initVpsConditions()"
-                                     data-step-loaded="!$ctrl.loaders.step2 && $ctrl.order"
-                                     data-step-completed="$ctrl.conditionsAgree">
-                            <div data-contracts="$ctrl.order.contracts"
-                                 data-contracts-validated="$ctrl.conditionsAgree"
-                                 data-full-text="false"></div>
-                    </cui-wizard-step>
+                <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step2_title' | translate }}"
+                                 data-step-on-init="$ctrl.initVpsConditions()"
+                                 data-step-loaded="!$ctrl.loaders.step2 && $ctrl.order"
+                                 data-step-completed="$ctrl.conditionsAgree">
+                        <div data-contracts="$ctrl.order.contracts"
+                             data-contracts-validated="$ctrl.conditionsAgree"
+                             data-full-text="false"></div>
+                </cui-wizard-step>
 
-                    <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step3_title' | translate }}"
-                                     data-step-completed="$ctrl.conditionsAgree">
-                        <div class="orange"
-                             data-translate="vps_configuration_upgradevps_step2_question"
-                             data-translate-values="{ vpsName: $ctrl.vps.name, modelName: $ctrl.selectedModelForUpgrade.name}"></div>
-                        <div class="mt-3"
-                             data-translate="vps_configuration_upgradevps_step2_question2"
-                             data-translate-values="{ duration: $ctrl.selectedModelForUpgrade.duration.dateFormatted}"></div>
-                        <dl class="dl-horizontal mt-3">
-                            <dt class="bold"
-                                data-translate="vps_configuration_upgradevps_step2_totalHT"></dt>
-                            <dd class="red bold"
-                                data-ng-bind="$ctrl.order.prices.withoutTax.text"></dd>
-                            <dt class="bold"
-                                data-translate="vps_configuration_upgradevps_step2_totalTTC"></dt>
-                            <dd class="red bold"
-                                data-ng-bind="$ctrl.order.prices.withTax.text"></dd>
-                        </dl>
-                        <div class="mt-3"
-                             data-translate="vps_configuration_upgradevps_step2_price_by_month"
-                             data-translate-values="{ monthPrice: $ctrl.selectedModelForUpgrade.monthPrice}">
-                        </div>
-                        <div class="mt-4 orange"
-                             data-translate="vps_configuration_upgradevps_step2_confirm"></div>
-                        <div data-translate="vps_configuration_upgradevps_step2_explication"></div>
-                        <div class="mt-4">
-                            <small class="font-italic"
-                                   data-translate="vps_configuration_upgradevps_step2_explication2"></small>
-                        </div>
-                        <div class="mt-4 font-weight-bold"
-                             data-translate="vps_configuration_upgradevps_step2_explication3"></div>
-                    </cui-wizard-step>
-            </div>
-
+                <cui-wizard-step data-step-title="{{ 'vps_configuration_upgradevps_step3_title' | translate }}"
+                                 data-step-completed="$ctrl.conditionsAgree">
+                    <div class="orange"
+                         data-translate="vps_configuration_upgradevps_step2_question"
+                         data-translate-values="{ vpsName: $ctrl.vps.name, modelName: $ctrl.selectedModelForUpgrade.name}"></div>
+                    <div class="mt-3"
+                         data-translate="vps_configuration_upgradevps_step2_question2"
+                         data-translate-values="{ duration: $ctrl.selectedModelForUpgrade.duration.dateFormatted}"></div>
+                    <dl class="dl-horizontal mt-3">
+                        <dt class="bold"
+                            data-translate="vps_configuration_upgradevps_step2_totalHT"></dt>
+                        <dd class="red bold"
+                            data-ng-bind="$ctrl.order.prices.withoutTax.text"></dd>
+                        <dt class="bold"
+                            data-translate="vps_configuration_upgradevps_step2_totalTTC"></dt>
+                        <dd class="red bold"
+                            data-ng-bind="$ctrl.order.prices.withTax.text"></dd>
+                    </dl>
+                    <div class="mt-3"
+                         data-translate="vps_configuration_upgradevps_step2_price_by_month"
+                         data-translate-values="{ monthPrice: $ctrl.selectedModelForUpgrade.monthPrice}">
+                    </div>
+                    <div class="mt-4 orange"
+                         data-translate="vps_configuration_upgradevps_step2_confirm"></div>
+                    <div data-translate="vps_configuration_upgradevps_step2_explication"></div>
+                    <div class="mt-4">
+                        <small class="font-italic"
+                               data-translate="vps_configuration_upgradevps_step2_explication2"></small>
+                    </div>
+                    <div class="mt-4 font-weight-bold"
+                         data-translate="vps_configuration_upgradevps_step2_explication3"></div>
+                </cui-wizard-step>
+            </cui-wizard-form>
         </div>
     </div>
 
