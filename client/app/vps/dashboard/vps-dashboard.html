@@ -1,5 +1,4 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
-
     <div class="row d-lg-flex">
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
@@ -119,12 +118,16 @@
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.ftpBackup.optionActivated"></cui-tile-item>
+
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated"></cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated"
+                                   data-actions="$ctrl.snapshot.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
-                                   data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.snapshot.optionActivated"></cui-tile-item>
+                                   data-description="$ctrl.snapshotDescription"
+                                   data-ng-if="$ctrl.summary.snapshot.optionActivated"
+                                   data-actions="[$ctrl.snapshot.take, $ctrl.snapshot.restore, $ctrl.snapshot.delete, $ctrl.snapshot.terminate]"></cui-tile-item>
+
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.veeamActivated"></cui-tile-item>
