@@ -744,9 +744,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * order an option for the VPS
          */
-        this.orderOption = function (option, duration) {
+        this.orderOption = function (serviceName, option, duration) {
             var result = null, vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name && option && duration) {
                     vpsName = vps.name;
                     return $http.post([aapiRootPath, vps.name, "order", "options"].join("/"), { option: option, duration: duration }, {serviceType: "aapi"})
@@ -806,6 +806,23 @@ angular.module("managerApp").service("VpsService", [
         this.getOptionSnapshot = function (vps) {
             return $http.get(["apiv6/order/vps/", vps.name, "/snapshot"].join(""));
         };
+
+        this.getOptionSnapshotFormated = function (vps) {
+            if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
+                return this.getOptionDetails(vps).then(d => {
+                    return this.getOptionDetails2('snapshot',vps, d.data[0]).then(data => {
+                        return {
+                            unitaryPrice: data[0].data.text,
+                            withoutTax: data[1].data.prices.withoutTax.text,
+                            withTax: data[1].data.prices.withTax.text,
+                            duration: {duration: d.data[0]}
+                        }
+                    });
+                });
+            } else {
+                return this.getOptionDetails('snapshot').then(data => data.results[0]);
+            }
+        }
 
         // HOT FIX remove this fukin shit
         this.getPriceOptions = function (vps) {

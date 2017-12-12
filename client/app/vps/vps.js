@@ -88,6 +88,17 @@ angular.module("managerApp").config($stateProvider => {
                 }
             }
         })
+        .state("iaas.vps.detail.snapshot-order", {
+            url: "/snapshot-order",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/snapshot-order/vps-snapshot-order.html",
+                    controller: "VpsOrderSnapshotCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
         .state("iaas.vps.detail.upgrade", {
             url: "/upgrade",
             views: {
