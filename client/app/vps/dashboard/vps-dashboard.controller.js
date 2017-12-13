@@ -125,7 +125,7 @@ class VpsDashboardCtrl {
             },
             terminate: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
-                callback: () => this.VpsActionService.terminateSnapshot(this.serviceName),
+                callback: () => this.VpsActionService.terminateSnapshotOption(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionActivated
             }
         }
@@ -198,7 +198,7 @@ class VpsDashboardCtrl {
             },
             veeam: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
-                callback: () => {},
+                callback: () => this.VpsActionService.terminateVeeamOption(this.serviceName),
                 isAvailable: () => !this.loaders.init
             },
             terminateWindows: {
