@@ -37,7 +37,7 @@ class VpsOrderWindowsCtrl {
                 this.durations.available = durations;
                 this.loadPrices(durations);
             })
-            .catch(err => this.CloudMessage.error(err.message || err))
+            .catch(err => this.CloudMessage.error(err.data.message || err.data))
             .finally(() => {this.loaders.durations = false});
     }
 
