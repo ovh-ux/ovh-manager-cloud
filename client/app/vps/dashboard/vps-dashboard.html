@@ -22,9 +22,6 @@
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="$ctrl.actions.upgrade"></cui-tile-action-link>
                     </cui-tile-body-list-item>
-                    <cui-tile-body-list-item>
-                        <cui-tile-action-link data-action="$ctrl.actions.windowsOptions"></cui-tile-action-link>
-                    </cui-tile-body-list-item>
                 </cui-tile-body-list>
             </cui-tile>
         </div>
@@ -151,6 +148,15 @@
                                    data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.vps.slaMonitoring"
                                    data-actions="$ctrl.actions.monitoringSla"></cui-tile-item>
+
+                    <cui-tile-item data-term="'vps_order_windows_title' | translate"
+                                   data-description="'vps_status_enabled' | translate"
+                                   data-ng-if="$ctrl.summary.windowsActivated"
+                                   data-actions="$ctrl.actions.terminateWindows"></cui-tile-item>
+                    <cui-tile-item data-term="'vps_order_windows_title' | translate"
+                                   data-description="'vps_status_disabled' | translate"
+                                   data-ng-if="!$ctrl.summary.windowsActivated"
+                                   data-actions="$ctrl.actions.orderWindows"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
