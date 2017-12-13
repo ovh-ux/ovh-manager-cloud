@@ -52,10 +52,10 @@ class VpsOrderWindowsCtrl {
         });
 
         this.$q.all(queue)
-            .then(() => {
+            .catch(err => this.CloudMessage.error(err.data || this.$translate.instant("vps_order_windows_price_error")))
+            .finally(() => {
                 this.loaders.prices = false;
-            })
-            .catch(err => this.CloudMessage.error(err.data || this.$translate.instant("vps_order_windows_price_error")));
+            });
     }
 
     canValidateContracts () {
