@@ -1013,9 +1013,7 @@ angular.module("managerApp").service("VpsService", [
         this.orderVeeamOption = (serviceName, duration) => {
             return this.getSelectedVps(serviceName)
                 .then(vps => {
-                    return $http.post([aapiRootPath, vps.name, "automatedBackup", duration].join("/"), {}, {
-                        serviceType: "aapi"
-                    });
+                    return $http.post([swsOrderProxypass, vps.name, "automatedBackup", duration].join("/"), {});
                 })
                 .then(response => response.data);
         };

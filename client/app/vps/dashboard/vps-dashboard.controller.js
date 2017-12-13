@@ -133,27 +133,19 @@ class VpsDashboardCtrl {
 
     initActions () {
         this.actions = {
-            resetPassword: {
-                text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
-                callback: () => this.VpsActionService.password(this.serviceName)
+            changeName: {
+                text: this.$translate.instant("common_edit"),
+                callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.loadVps()),
+                isAvailable: () => !this.loaders.init
             },
-            reboot: {
-                text: this.$translate.instant("vps_configuration_reboot_title_button"),
-                callback: () => this.VpsActionService.reboot(this.serviceName)
-            },
-            reinstall: {
-                text: this.$translate.instant("vps_configuration_reinstall_title_button"),
-                callback: () => this.VpsActionService.reinstall(this.serviceName)
+            changeOwner: {
+                text: this.$translate.instant("vps_change_owner"),
+                isAvailable: () => !this.loaders.url
             },
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),
                 callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM),
                 isAvailable: () => !this.loaders.init
-            },
-            reverseDns: {
-                text: this.$translate.instant("vps_configuration_reversedns_title_button"),
-                callback: () => this.VpsActionService.reverseDns(this.serviceName),
-                isAvailable: () => !this.loaders.ip
             },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
@@ -175,9 +167,28 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring),
                 isAvailable: () => !this.loaders.init
             },
-            changeOwner: {
-                text: this.$translate.instant("vps_change_owner"),
-                isAvailable: () => !this.loaders.url
+            orderWindows: {
+                text: this.$translate.instant("common_order"),
+                state: "iaas.vps.detail.windows-order",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.summary && !this.summary.windowsActivated
+            },
+            reboot: {
+                text: this.$translate.instant("vps_configuration_reboot_title_button"),
+                callback: () => this.VpsActionService.reboot(this.serviceName)
+            },
+            reinstall: {
+                text: this.$translate.instant("vps_configuration_reinstall_title_button"),
+                callback: () => this.VpsActionService.reinstall(this.serviceName)
+            },
+            resetPassword: {
+                text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
+                callback: () => this.VpsActionService.password(this.serviceName)
+            },
+            reverseDns: {
+                text: this.$translate.instant("vps_configuration_reversedns_title_button"),
+                callback: () => this.VpsActionService.reverseDns(this.serviceName),
+                isAvailable: () => !this.loaders.ip
             },
             upgrade: {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
@@ -185,16 +196,10 @@ class VpsDashboardCtrl {
                 stateParams: { serviceName: this.serviceName },
                 isAvailable: () => !this.loaders.init
             },
-            changeName: {
-                text: this.$translate.instant("common_edit"),
-                callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.loadVps()),
+            veeam: {
+                text: this.$translate.instant("vps_configuration_desactivate_option"),
+                callback: () => {},
                 isAvailable: () => !this.loaders.init
-            },
-            orderWindows: {
-                text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.windows-order",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.summary && !this.summary.windowsActivated
             },
             terminateWindows: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
