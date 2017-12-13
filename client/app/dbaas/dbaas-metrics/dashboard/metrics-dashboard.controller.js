@@ -62,12 +62,7 @@
 
             this.MetricService.getServiceInfos(this.serviceName)
                 .then(info => {
-                    this.plan.expiration = info.data.expiration;
-                    this.plan.contactAdmin = info.data.contactAdmin;
-                    this.plan.contactBilling = info.data.contactBilling;
-                    this.plan.creation = info.data.creation;
-                    this.plan.contactTech = info.data.contactTech;
-
+                    this.plan = info.data;
                     return this.MetricService.getService(this.serviceName);
                 })
                 .then(service => {
