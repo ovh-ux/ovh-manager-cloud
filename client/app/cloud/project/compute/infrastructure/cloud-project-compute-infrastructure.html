@@ -42,7 +42,7 @@
                                 <button type="button" class="btn fs14"
                                         at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
                                         data-ng-click="CloudProjectComputeInfrastructureCtrl.addVolume()">
-                                    <i class="fa fa-hdd-o right-space-m8"></i>
+                                    <i class="/mofa fa-hdd-o right-space-m8"></i>
                                     {{ 'cpci_volume_add'|translate }}
                                 </button>
                             </li>
@@ -548,13 +548,9 @@
                                                             <span translate="cpci_vm_flavor_category_{{vm.flavor.name}}" translate-default="?"></span>
                                                         </div>
                                                         <span class="flavor-offer-price right-space-m12"
-                                                            data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status !== 'ok'"
-                                                            translate="cpci_vm_flavor_price"
-                                                            translate-values="{price: vm.price.price.text || '?' }"></span>
-                                                        <span class="flavor-offer-price right-space-m12"
-                                                            data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
+                                                            data-ng-if="vm.status !== 'DRAFT'"
                                                             translate="cpci_vm_flavor_month"
-                                                            translate-values="{price: vm.price.monthlyPrice.text || '?' }"></span>
+                                                            translate-values="{price: vm.price.price.text || '?' }"></span>
                                                         <span class="text-center" data-ng-if="vm.monthlyBilling.status === 'activationPending'">
                                                             <oui-loader size="s" class="d-inline-block"></oui-loader>
                                                         </span>
