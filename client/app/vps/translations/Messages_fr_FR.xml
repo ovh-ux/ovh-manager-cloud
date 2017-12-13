@@ -2,6 +2,9 @@
 <translations>
 
    <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
+   <translation id="vps_order_windows_step1_title">Selection de la durée</translation>
+   <translation id="vps_order_windows_step2_title">Acceptation des conditions d'utilisation</translation>
+   <translation id="vps_order_windows_step3_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Cette option vous permettera d'installer une OS de type windows sur votre vps.</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Une erreur est survenue lors de la récupération des prix.</translation>
    <translation id="vps_order_windows_order_success" qtlid="181266">La commande numéro <a href='{0}' target='_blank'>{1}</a> a bien été prise en compte.</translation>

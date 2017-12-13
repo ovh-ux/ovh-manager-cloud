@@ -99,6 +99,17 @@ angular.module("managerApp").config($stateProvider => {
                 }
             }
         })
+        .state("iaas.vps.detail.windows-order", {
+            url: "/windows-order",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/windows-order/vps-windows-order.html",
+                    controller: "VpsOrderWindowsCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
         .state("iaas.vps.detail.upgrade", {
             url: "/upgrade",
             views: {
