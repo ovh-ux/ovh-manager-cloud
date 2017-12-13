@@ -46,7 +46,7 @@ class VpsOrderWindowsCtrl {
         this.loaders.prices = true;
 
         _.forEach(durations, duration => {
-            queue.push(this.VpsService.getWindowsOptionOrder(duration)
+            queue.push(this.VpsService.getWindowsOptionOrder(this.serviceName, duration)
                 .then(details => { this.durations.details[duration] = details; })
             );
         });
