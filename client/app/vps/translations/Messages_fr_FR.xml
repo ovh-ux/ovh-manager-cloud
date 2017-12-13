@@ -269,7 +269,7 @@
    <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Résilier le Backup automatisé</translation>
    <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Résilier l'option Windows</translation>
    <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Résilier l'option des disques additionnels</translation>
-   <translation id="vps_configuration_cancel_option_step1_info" qtlid="284971">La résiliation de l’option entrera en vigueur à&#160;la date de renouvellement, soit le {0}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="284971">La résiliation de l’option entrera en vigueur à&#160;la date de renouvellement, soit le {{ date }}.</translation>
    <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Cette action est irréversible et ne peut être annulée.</translation>
    <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">L'option a été résiliée.</translation>
    <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Une erreur est survenue lors de la résiliation de l'option.</translation>

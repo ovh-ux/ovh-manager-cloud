@@ -271,14 +271,29 @@ class VpsActionService {
         });
     }
 
-    terminateSnapshot (serviceName) {
+    terminateSnapshotOption (serviceName) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vps/modal/snapshot/snapshot-terminate.html",
-                controller: "VpsTerminateSnapshotCtrl",
+                templateUrl: "app/vps/modal/option/vps-option-terminate.html",
+                controller: "VpsOptionTerminateCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
-                    serviceName: () => serviceName
+                    serviceName: () => serviceName,
+                    vpsOption: () => "snapshot"
+                }
+            }
+        });
+    }
+
+    terminateVeeamOption (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/option/vps-option-terminate.html",
+                controller: "VpsOptionTerminateCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName,
+                    vpsOption: () => "automatedBackup"
                 }
             }
         });
