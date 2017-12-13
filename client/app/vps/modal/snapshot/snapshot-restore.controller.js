@@ -11,6 +11,7 @@ class VpsRestoreSnapshotCtrl {
             save: false
         };
         this.summary = {};
+
     }
 
     $onInit () {
@@ -18,9 +19,8 @@ class VpsRestoreSnapshotCtrl {
         this.VpsService.getTabSummary(this.serviceName)
             .then(data => {
                 this.summary = data;
-                this.summary.snapshot.formattedCreationDate = moment(data.snapshot.creationDate).filter('LLL');
             })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_snapshot_restore_fail")))
+            .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_snapshot_restore_fail")))
             .finally(() => {
                 this.loader.init = false;
             });
@@ -34,7 +34,7 @@ class VpsRestoreSnapshotCtrl {
         this.loader.save = true;
         this.VpsService.restoreSnapshot(this.serviceName)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_snapshot_restore_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_snapshot_restore_fail")))
+            .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_snapshot_restore_fail")))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
