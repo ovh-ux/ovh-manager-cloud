@@ -19,7 +19,7 @@ class VpsOrderWindowsCtrl {
         };
 
         this.model = {
-            durations: null,
+            duration: null,
             url: null,
             contractsValidated: null
         };
@@ -47,18 +47,15 @@ class VpsOrderWindowsCtrl {
 
         _.forEach(durations, duration => {
             queue.push(this.VpsService.getWindowsOptionOrder(duration)
-                .then(details =>{ this.durations.details[duration] = details})
+                .then(details => { this.durations.details[duration] = details; })
             );
         });
 
         this.$q.all(queue)
             .then(() => {
-                if (durations && durations.length === 1) {
-                    this.model.duration = durations[0];
-                }
+                this.loaders.prices = false;
             })
-            .catch(err => this.CloudMessage.error(err.data || this.$translate.instant("vps_order_windows_price_error")))
-            .finally(() => {this.loaders.prices = false});
+            .catch(err => this.CloudMessage.error(err.data || this.$translate.instant("vps_order_windows_price_error")));
     }
 
     canValidateContracts () {
@@ -70,13 +67,9 @@ class VpsOrderWindowsCtrl {
     };
 
     orderOption () {
-        if (this.model.contractsValidated) {
-            this.VpsService.orderOption(this.serviceName, "snapshot", this.model.optionDetails.duration.duration)
-                .then(order => {this.model.url = order.url;})
-                .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_configuration_veeam_order_fail")));
-        } else if (this.model.contractsValidated) {
-            this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_order_fail"));
-        }
+        this.VpsService.postWindowsOptionOrder(this.serviceName, this.model.duration)
+            .then(order => {this.model.url = order.url;})
+            .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_configuration_veeam_order_fail")));
     }
 
     cancel () {

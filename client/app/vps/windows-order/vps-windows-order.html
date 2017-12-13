@@ -10,7 +10,7 @@
 
                 <cui-wizard-step data-step-title="{{ 'vps_order_windows_step1_title' | translate }}"
                                  data-step-on-init="$ctrl.getDurations()"
-                                 data-step-completed="$ctrl.model.durations">
+                                 data-step-completed="$ctrl.model.duration">
                     <div class="text-center" data-ng-if="$ctrl.loaders.durations || $ctrl.loaders.prices">
                         <oui-loader class="d-inline-block" size="m"></oui-loader>
                     </div>
@@ -22,12 +22,12 @@
 
                         <div class="oui-radio" data-ng-repeat="duration in $ctrl.durations.available">
                             <input class="oui-radio__input" type="radio" name="durations"
-                                   data-ng-model="$ctrl.model.durations" id="{{duration}}"
-                                   data-ng-value="{{duration}}">
+                                   data-ng-model="$ctrl.model.duration" id="{{duration}}"
+                                   data-ng-value="duration">
                             <label class="oui-radio__label-container" for="{{duration}}">
                                 <span class="oui-radio__label" data-ng-bind="duration | momentFormat:'LL'"></span>
                                 <span class="oui-radio__description">
-                                <span data-translate="vps_order_price_HT"></span>
+                                <span data-translate="vps_order_windows_order_price_HT"></span>
                                 <span data-ng-bind="$ctrl.durations.details[duration].prices.withoutTax.text"></span>
                                 </span>
                             </label>
@@ -38,64 +38,33 @@
                 <cui-wizard-step data-step-title="{{ 'vps_order_windows_step2_title' | translate }}"
                                  data-step-on-init="$ctrl.canValidateContracts()"
                                  data-step-completed="$ctrl.model.contractsValidated">
-                    <div data-ng-show="$ctrl.model.durations.available">
-
-                        <p class="red"
-                           data-translate="vps_configuration_activate_snapshot_step1_alert"
-                           data-translate-values="{ amount: $ctrl.model.optionDetails.unitaryPrice }"></p>
-                        <div data-translate="vps_configuration_activate_snapshot_step1_confirmation"></div>
-                        <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" type="checkbox"
-                                   id="contractsValidated" name="contractsValidated"
-                                   data-ng-change="$ctrl.orderOption()"
-                                   data-ng-model="$ctrl.model.contractsValidated">
-                            <label class="oui-checkbox__label-container" for="contractsValidated">
-                                <span class="oui-checkbox__label"
-                                      data-translate="vps_configuration_veeam_order_step1_contracts"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-indeterminate" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
-                        <ul>
-                            <li data-ng-repeat="contract in $ctrl.durations.details.contracts">
-                                <a target="_blank"
-                                   data-ng-href='{{contract.url}}'
-                                   data-ng-bind='contract.name'></a>
-                            </li>
-                        </ul>
-                        <span class="italic"
-                              data-translate="vps_configuration_veeam_order_step1_info"></span>
+                    <div data-ng-show="$ctrl.model.duration">
+                        <div data-contracts="$ctrl.durations.details[$ctrl.model.duration].contracts"
+                                 data-contracts-validated="$ctrl.model.contractsValidated"
+                                 data-full-text="false"></div>
                     </div>
                 </cui-wizard-step>
 
                 <cui-wizard-step data-step-title="{{ 'vps_order_windows_step3_title' | translate }}"
+                                 data-step-on-init="$ctrl.orderOption()"
                                  data-step-completed="$ctrl.model.url">
                     <div class="text-center" data-ng-if="!$ctrl.model.url">
                         <oui-loader class="d-inline-block" size="m"></oui-loader>
                     </div>
                     <dl data-ng-show="$ctrl.model.url" class="dl-horizontal">
                         <dt class="bold"
-                            data-translate="vps_configuration_activate_snapshot_step2_totalHT"></dt>
+                            data-translate="vps_order_windows_order_price_HT"></dt>
                         <dd class="red bold"
-                            data-ng-bind="$ctrl.model.optionDetails.withoutTax"></dd>
+                            data-ng-bind="$ctrl.durations.details[$ctrl.model.duration].prices.withoutTax.text"></dd>
 
                         <dt class="bold"
-                            data-translate="vps_configuration_activate_snapshot_step2_totalTTC"></dt>
+                            data-translate="vps_order_windows_order_price_TTC"></dt>
                         <dd class="red bold"
-                            data-ng-bind="$ctrl.model.optionDetails.withTax"></dd>
+                            data-ng-bind="$ctrl.durations.details[$ctrl.model.duration].prices.withTax.text"></dd>
                     </dl>
                     <div data-ng-show="$ctrl.model.url" class="row-fluid">
-                        <span data-translate="vps_configuration_veeam_order_step2_bc"></span>
-                        <span class="blue bold"
-                              data-translate="vps_configuration_veeam_order_step2_continue"></span>
-                        <span data-translate="vps_configuration_veeam_order_step2_explication"></span>
-                        <span class="fs11 lh11 italic"
-                              data-translate="vps_configuration_veeam_order_step2_explication2"></span>
+                        <p data-translate="vps_order_windows_order_final_txt"></p>
+                        <p data-translate="vps_order_windows_order_final_txt2"></p>
                     </div>
                 </cui-wizard-step>
 
