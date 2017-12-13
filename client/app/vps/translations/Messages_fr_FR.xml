@@ -2,7 +2,6 @@
 <translations>
 
    <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
-   <translation id="vps_order_price_HT" qtlid="146177">Prix total HT :</translation>
    <translation id="vps_order_windows_step1_title">Selection de la durée</translation>
    <translation id="vps_order_windows_step2_title">Acceptation des conditions d'utilisation</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Récapitulatif</translation>
