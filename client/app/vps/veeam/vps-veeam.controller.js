@@ -29,9 +29,9 @@ class VpsVeeamCtrl {
     loadVeeamTab () {
         this.loaders.veeamTab = true;
         this.VpsService.getTabVeeam(this.serviceName, "available", true)
-            .then(data => { this.veeamTab = data})
+            .then(data => { this.veeamTab = data; })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.veeamTab = false });
+            .finally(() => { this.loaders.veeamTab = false; });
     }
 
     loadRestorePoint () {
@@ -43,7 +43,7 @@ class VpsVeeamCtrl {
                 }
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.veeamTab = false });
+            .finally(() => { this.loaders.veeamTab = false; });
     }
 
     loadVeeam () {
@@ -62,7 +62,7 @@ class VpsVeeamCtrl {
                 this.veeam.state = "disabled";
                 this.checkOrder();
             })
-            .finally(() => { this.loaders.init = false });
+            .finally(() => { this.loaders.init = false; });
     }
 
     checkOrder () {
