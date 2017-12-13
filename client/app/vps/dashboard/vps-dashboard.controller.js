@@ -190,12 +190,17 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.loadVps()),
                 isAvailable: () => !this.loaders.init
             },
-            windowsOptions: {
-                text: this.$translate.instant("vps_order_windows_title"),
+            orderWindows: {
+                text: this.$translate.instant("common_order"),
                 state: "iaas.vps.detail.windows-order",
                 stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.init && !this.loaders.summary && !this.summary.windowsActivated
+                isAvailable: () => !this.loaders.summary && !this.summary.windowsActivated
             },
+            terminateWindows: {
+                text: this.$translate.instant("vps_configuration_desactivate_option"),
+                callback: () => this.VpsActionService.terminateWindows(this.serviceName),
+                isAvailable: () => !this.loaders.summary && this.summary.windowsActivated
+            }
         };
     }
 
