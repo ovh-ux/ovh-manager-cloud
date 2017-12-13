@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_guides">Guides</translation>
+    <translation id="logs_guides_title">Logs Data Platform</translation>
+    <translation id="logs_guides_footer">Tous les guides OVH</translation>
+
+    <translation id="logs_title">Logs Data Platform</translation>
+    <translation id="logs_tab_home">Accueil</translation>
+    <translation id="logs_tab_streams">Flux de données</translation>
+    <translation id="logs_tab_dashboards">Tableaux de bord</translation>
+    <translation id="logs_tab_inputs">Outils de collecte</translation>
+    <translation id="logs_tab_indices">Index</translation>
+    <translation id="logs_tab_alias">Alias</translation>
+    <translation id="logs_tab_roles">Rôles</translation>
+
+    <translation id="logs_loading_error_configuration">Erreur lors du chargement de la section Configuration.</translation>
+</translations>
