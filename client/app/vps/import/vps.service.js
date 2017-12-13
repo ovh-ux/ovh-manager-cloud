@@ -1145,8 +1145,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.postWindowsOptionOrder = function (duration) {
-            return this.getSelected().then(function (vps) {
+        this.postWindowsOptionOrder = function (serviceName, duration) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.post([swsOrderProxypass, vps.name, "windows", duration].join("/"))
                     .then(function (response) {
                         return response.data;
