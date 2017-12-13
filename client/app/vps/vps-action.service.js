@@ -283,6 +283,19 @@ class VpsActionService {
             }
         });
     }
+
+    terminateWindows (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/windows/windows-terminate.html",
+                controller: "VpsTerminateWindowsCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);
