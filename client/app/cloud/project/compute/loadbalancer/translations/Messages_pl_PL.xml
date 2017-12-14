@@ -4,7 +4,7 @@
    <translation id="cpc_loadbalancer_discover_title" qtlid="447365">Découvrez nos Load Balancers</translation>
    <translation id="cpc_loadbalancer_discover_body" qtlid="447378">Compatible Public Cloud, Private Cloud, VPS et Serveur Dédiés, l'OVH Load Balancer répartit la charge entre vos différents services dans nos datacentres. Il vous assure la mise à l'échelle de votre infrastructure face à un trafic important, une tolérance aux pannes et des temps de réponse optimisés. Le tout avec un niveau de service ayant comme objectif le Zero Downtime. Pour une gestion simplifiée, l'OVH Load Balancer est également compatible API OVH et Openstack ( sur les régions Varsovie, Francfort et Londres).</translation>
 
-   <translation id="cpc_loadbalancer_order" qtlid="447391">Commander un Load Balancer</translation>
+   <translation id="cpc_loadbalancer_order" qtlid="447391">Zamów Load Balancer</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Powrót</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">IP Load Balancer</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">Openstack</translation>
@@ -15,13 +15,13 @@
    <translation id="cpc_loadbalancer_status" qtlid="8230">Państwo</translation>
    <translation id="cpc_loadbalancer_actions" qtlid="72809">Operacje</translation>
    <translation id="cpc_loadbalancer_actions_configure" qtlid="4010">Konfiguruj</translation>
-   <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Configuration avancée</translation>
+   <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Konfiguracja zaawansowana</translation>
    <translation id="cpc_loadbalancer_status_unavailable" qtlid="91957">Niedostępne</translation>
    <translation id="cpc_loadbalancer_status_deployed" qtlid="417289">Wdrożone</translation>
    <translation id="cpc_loadbalancer_status_available" qtlid="124952">Brak konfiguracji</translation>
 
-   <translation id="cpc_loadbalancer_key_explain_1" qtlid="305837">Configuration avancée</translation>
-   <translation id="cpc_loadbalancer_key_explain_2" qtlid="447404">Le mode simplifié n'est pas disponible pour ce Load Balancer car il a été configuré de manière avancée.<br /> Vous devrez donc aller dans la page de configuration avancée pour ajouter des serveurs à votre Load Balancer.</translation>
+   <translation id="cpc_loadbalancer_key_explain_1" qtlid="305837">Konfiguracja zaawansowana</translation>
+   <translation id="cpc_loadbalancer_key_explain_2" qtlid="447404">Tryb uproszczony nie jest dostępny dla tego Load Balancera, ponieważ zastosowano konfigurację zaawansowaną. <br /> Aby dodać serwery do Twojego Load Balancera, przejdź do sekcji konfiguracja zaawansowana.</translation>
 
    <translation id="cpc_loadbalancer_configure_title" qtlid="447417">Configurer le Load Balancer</translation>
    <translation id="cpc_loadbalancer_configure_advanced" qtlid="102837">Tryb zaawansowany</translation>

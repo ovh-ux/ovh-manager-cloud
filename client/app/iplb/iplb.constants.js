@@ -93,7 +93,7 @@ angular.module("managerApp").constant("IpLoadBalancerConstant", {
         "contains",
         "matches"
     ],
-    portLimit: 65000,
+    portLimit: 49151,
     lbWeightMax: 256,
     sslTypes: [
         "free",

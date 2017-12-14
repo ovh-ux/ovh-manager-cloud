@@ -9,6 +9,7 @@ class NashaAddCtrl {
         this.loaders = {};
         this.enums = {};
         this.data = {};
+        this.messages = {};
     }
 
     $onInit () {
@@ -35,6 +36,7 @@ class NashaAddCtrl {
             modelsPriceInfo: null
         };
 
+        this.loadMessages();
         this.init();
     }
 
@@ -43,7 +45,7 @@ class NashaAddCtrl {
         this.Order.Lexi().schema()
             .$promise
             .then(data => {
-                this.enums.datacenters = data.models["dedicated.NasHAZoneEnum"].enum;
+                this.enums.datacenters = _.filter(data.models["dedicated.NasHAZoneEnum"].enum, datacenter => datacenter !== "gra");
                 this.enums.models = data.models["dedicated.NasHAOfferEnum"].enum;
 
                 this.enums.models = _.sortBy(self.enums.models, model => _.parseInt(model.slice(0, -1)));
@@ -158,6 +160,19 @@ class NashaAddCtrl {
         }).$promise
             .then(order => this.$q.when(order))
             .catch(err => this.$q.reject(err));
+    }
+
+    loadMessages () {
+        const stateName = "paas.nasha-add";
+        this.CloudMessage.unSubscribe(stateName);
+        this.messageHandler = this.CloudMessage.subscribe(stateName, {
+            onMessage: () => this.refreshMessage()
+        });
+        this.CloudMessage.info(this.$translate.instant("nasha_order_datacenter_unavailable", { region: this.$translate.instant("nasha_order_datacenter_gra") }));
+    }
+
+    refreshMessage () {
+        this.messages = this.messageHandler.getMessages();
     }
 }
 

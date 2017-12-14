@@ -42,7 +42,7 @@
    <translation id="cloud_common_region_UK" qtlid="94015">Londra</translation>
    <translation id="cloud_common_region_UK_micro" qtlid="442756">Londra ({{ micro }})</translation>
    <translation id="cloud_common_region_SGP" qtlid="189068">Singapore</translation>
-   <translation id="cloud_common_region_SGP_micro" qtlid="447534">Singapour ({{ micro }})</translation>
+   <translation id="cloud_common_region_SGP_micro" qtlid="447534">Singapore ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localizza</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Centrale (Francia)</translation>
@@ -52,7 +52,7 @@
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa Occidentale (Francia)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Europa centrale (Germania)</translation>
    <translation id="cloud_common_region_location_UK" qtlid="442769">Europa occidentale (Gran Bretagna)</translation>
-   <translation id="cloud_common_region_location_SGP" qtlid="447547">Asie du Sud-Est (Singapour)</translation>
+   <translation id="cloud_common_region_location_SGP" qtlid="447547">Sud-est asiatico (Singapore)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Il tuo browser non è supportato</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Il tuo browser non è aggiornato e potrebbe contenere bug di sicurezza o di compatibilità.</translation>

@@ -35,7 +35,7 @@
    <translation id="iplb_frontend_add_protocol_tls" qtlid="437843">TCP SSL (TLS)</translation>
    <translation id="iplb_frontend_add_protocol_udp" qtlid="141834">UDP</translation>
    <translation id="iplb_frontend_add_port" qtlid="9034">Port</translation>
-   <translation id="iplb_frontend_add_port_tip" qtlid="437934">1 à {{portMax}}</translation>
+   <translation id="iplb_frontend_add_port_tip" qtlid="448686">Ports présentés par le frontend. 1 à {{portMax}}, format : simple (ex: 80), range (ex: 1000-1200), multi (ex: 80,443).</translation>
    <translation id="iplb_frontend_add_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_frontend_add_default_farm" qtlid="429563">Ferme par défaut</translation>
    <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Brak</translation>
@@ -45,7 +45,7 @@
    <translation id="iplb_frontend_add_default_certificate" qtlid="438701">Certificat SSL par défaut</translation>
    <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Żaden</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Ajouter/Commander</translation>
-   <translation id="iplb_frontend_add_default_certificate" qtlid="133071">Dodaj certyfikat</translation>
+   <translation id="iplb_frontend_add_default_certificate" qtlid="448699">Certificat présenté par défaut</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Il n'est pas possible d'ajouter directement un nouveau certificat. Vous pourrez l'ajouter lorsque la création de votre frontend sera terminée.</translation>
    <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Zaawansowane parametry</translation>
    <translation id="iplb_frontend_add_advanced_options_info" qtlid="437947">Les valeurs par défaut les plus courantes sont préréglées. Vous pouvez les modifier à tout moment.</translation>

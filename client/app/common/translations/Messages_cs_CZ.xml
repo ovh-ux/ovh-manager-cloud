@@ -494,6 +494,7 @@
    <translation id="common_tile_subscription" qtlid="28891">Součet</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Nabídka</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatické obnovení</translation>
+   <translation id="common_tile_subscription_expiration_date" qtlid="33010">Datum expirace</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakty</translation>
    <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrativní kontakt</translation>
    <translation id="common_tile_subscription_contact_billing" qtlid="32950">Fakturační kontakt</translation>

@@ -34,7 +34,7 @@
    <translation id="iplb_farm_balance_source" qtlid="97496">Origen</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
 
-   <translation id="iplb_farm_stickiness_none" qtlid="440934">Ninguna</translation>
+   <translation id="iplb_farm_stickiness_none" qtlid="440934">Ninguno</translation>
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">IP de origen</translation>
 
@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Nombre (opcional)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocolo (no puede modificarse después de la creación)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Puerto</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">1 a {{portMax}}; formato: simple (p. ej.: 80), rango (p. ej.: 1000-1200) o múltiple (p. ej.: 80,443)</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Puerto asociado a la granja (1 a {{portMax}}). Por defecto, heredado del puerto del frontend.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Parámetros avanzados</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>
@@ -76,7 +76,6 @@
    <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Se ha producido un error al cargar la información para la sonda.</translation>
-
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Parámetros de la sonda</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Cancelar</translation>
