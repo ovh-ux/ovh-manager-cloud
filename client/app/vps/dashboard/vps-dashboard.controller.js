@@ -167,6 +167,12 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring),
                 isAvailable: () => !this.loaders.init
             },
+            orderAdditionalDiskOption: {
+                text: this.$translate.instant("common_order"),
+                state: "iaas.vps.detail.additional-disk.order",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
+            },
             orderWindows: {
                 text: this.$translate.instant("common_order"),
                 state: "iaas.vps.detail.windows-order",
@@ -199,6 +205,11 @@ class VpsDashboardCtrl {
             veeam: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
                 callback: () => this.VpsActionService.terminateVeeamOption(this.serviceName),
+                isAvailable: () => !this.loaders.init
+            },
+            terminateAdditionalDiskOption:  {
+                text: this.$translate.instant("vps_configuration_desactivate_option"),
+                callback: () => this.VpsActionService.terminateAdditionalDiskOption(this.serviceName),
                 isAvailable: () => !this.loaders.init
             },
             terminateWindows: {
