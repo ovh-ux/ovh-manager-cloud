@@ -343,17 +343,17 @@
    <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Une erreur est survenue lors de la demande de souscription à l'option Backups automatiques.</translation>
    <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Démonter le backup</translation>
    <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Démonter le backup</translation>
-   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="170109">Voulez vous démonter le backup suivant de votre VPS <span class="normal italic">{0}</span> ?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="170109">Voulez vous démonter le backup suivant de votre VPS <span class="normal italic">{{ serviceName }}</span> ?</translation>
    <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Date de création</translation>
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Une erreur est survenue lors de la demande de démontage du backup sur votre VPS.</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">Le backup va être démonté de votre VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Monter le backup</translation>
-   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{0}</span>&#160;?</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{{ date }}</span>&#160;?</translation>
    <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Ce backup deviendra alors accessible via un point de montage NFS ou SMB.</translation>
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">La demande de montage du backup a été bien prise en compte. Vous serez notifié par email lorsque le montage sera terminé.</translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Une erreur est survenue lors de la demande de montage du backup sur votre VPS.</translation>
    <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Restaurer mon VPS</translation>
-   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="170213">Souhaitez-vous réellement restaurer votre VPS <span class="normal italic">{0}</span> en utilisant le backup suivant ?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="170213">Souhaitez-vous réellement restaurer votre VPS <span class="normal italic">{{ serviceName }}</span> en utilisant le backup suivant ?</translation>
    <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Date de création</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Modifier le mot de passe root lors de la restauration</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Il est impossible de réinitialiser le mot de passe de votre VPS temps que les VMware Tools ne sont pas installés. Vous pouvez cependant le réinitialliser par le mode rescue.</translation>
