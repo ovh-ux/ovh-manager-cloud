@@ -38,14 +38,14 @@ class VpsDashboardCtrl {
                 const expiration = moment.utc(vps.expiration);
                 this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
                 this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
-                this.vps.secondaryDns = (vps.secondaryDns == 0) ?
+                this.vps.secondaryDns = (vps.secondaryDns === 0) ?
                     this.$translate.instant("vps_dashboard_secondary_dns_count_0") :
                     this.$translate.instant("vps_dashboard_secondary_dns_count_x", { count: vps.secondaryDns });
                 this.loadIps();
                 this.loadPlan();
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.init = false });
+            .finally(() => { this.loaders.init = false; });
     }
 
     loadIps () {
@@ -79,7 +79,7 @@ class VpsDashboardCtrl {
                 }
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.plan = false });
+            .finally(() => { this.loaders.plan = false; });
     }
 
     loadUrl () {
@@ -93,8 +93,8 @@ class VpsDashboardCtrl {
 
     hasAdditionalDisk () {
         this.VpsService.hasAdditionalDiskOption(this.serviceName)
-            .then(() => { this.hasAdditionalDisk = true })
-            .catch(() => { this.hasAdditionalDisk = false });
+            .then(() => { this.hasAdditionalDisk = true; })
+            .catch(() => { this.hasAdditionalDisk = false; });
     }
 
     snapshotOption () {

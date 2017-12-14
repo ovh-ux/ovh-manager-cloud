@@ -271,7 +271,7 @@ class VpsActionService {
         });
     }
 
-    terminateSnapshotOption (serviceName) {
+    _terminateOption (serviceName, optionName) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/option/vps-option-terminate.html",
@@ -279,37 +279,30 @@ class VpsActionService {
                 controllerAs: "$ctrl",
                 resolve: {
                     serviceName: () => serviceName,
-                    vpsOption: () => "snapshot"
+                    vpsOption: () => optionName
                 }
             }
         });
+    }
+
+    terminateAdditionalDiskOption (serviceName) {
+        return this._terminateOption(serviceName, "additionalDisk");
+    }
+
+    terminateFtpBackupOption (serviceName) {
+        return this._terminateOption(serviceName, "ftpbackup");
+    }
+
+    terminateSnapshotOption (serviceName) {
+        return this._terminateOption(serviceName, "snapshot");
     }
 
     terminateVeeamOption (serviceName) {
-        return this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/vps/modal/option/vps-option-terminate.html",
-                controller: "VpsOptionTerminateCtrl",
-                controllerAs: "$ctrl",
-                resolve: {
-                    serviceName: () => serviceName,
-                    vpsOption: () => "automatedBackup"
-                }
-            }
-        });
+        return this._terminateOption(serviceName, "automatedBackup");
     }
 
     terminateWindows (serviceName) {
-        return this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/vps/modal/windows/windows-terminate.html",
-                controller: "VpsTerminateWindowsCtrl",
-                controllerAs: "$ctrl",
-                resolve: {
-                    serviceName: () => serviceName
-                }
-            }
-        });
+        return this._terminateOption(serviceName, "windows");
     }
 }
 
