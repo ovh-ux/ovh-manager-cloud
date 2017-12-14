@@ -23,7 +23,7 @@ class VpsSecondaryDnsCtrl {
     }
 
     loadSecondaryDns () {
-        return this.VpsService.getTabSecondaryDns()
+        return this.VpsService.getTabSecondaryDns(this.serviceName)
             .then(data => {
                 this.secondaryDns = data;
                 return data.list.results;
