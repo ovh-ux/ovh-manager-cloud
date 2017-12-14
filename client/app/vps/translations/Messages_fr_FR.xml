@@ -502,10 +502,11 @@
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Commander un disque additionnel</translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Veuillez choisir la taille du disque additionnel pour votre VPS. Il sera visible en tant que second disque dur depuis votre système d'exploitation.</translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">Le disque additionnel sera ajouté à votre serveur jusqu'à la date de renouvellement de votre VPS, puis il sera ensuite renouvelé avec ce dernier.</translation>
-   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="281641">{0} HT/mois</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free">{{ price }} HT/mois</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option :</translation>
-   <translation id="vps_order_additional_disk_offer_description" qtlid="281667">Option Disque Additionnel - {0} jusqu'au {1}</translation>
+   <translation id="vps_order_additional_disk_offer_description">Option Disque Additionnel - {{ size }} jusqu'au {{ date }}</translation>
    <translation id="vps_order_additional_disk_price" qtlid="181084">Prix :</translation>
+   <translation id="vps_order_additional_disk_step2_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_order_additional_disk_fail" qtlid="281680">Erreur lors de la commande du disque additionnel</translation>
    <translation id="vps_order_additional_disk_success" qtlid="281693">Pour finaliser l'ajout de votre disque, veuillez régler le <a href='{0}' target='_blank'>bon de commande {1}</a>.</translation>
 

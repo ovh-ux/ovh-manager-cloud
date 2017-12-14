@@ -461,9 +461,9 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get content of ips tabs
          */
-        this.getTabIps = function () {
+        this.getTabIps = function (serviceName) {
             var vpsName = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     var tabSummary = vpsCache.get("tabIps_" + vpsName);
@@ -839,9 +839,9 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getOptionStatus = function (option) {
+        this.getOptionStatus = function (serviceName, option) {
 
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.get([swsVpsProxypass, vps.name, "option", option].join("/"))
                     .then(function (response) {
                         return response.data;
@@ -1168,8 +1168,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getAdditionalDiskPrices = function () {
-            return this.getSelected().then(function (vps) {
+        this.getAdditionalDiskPrices = function (serviceName) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 return $q.all([
                     $http.get([swsPriceProxypass, "2015v1", vps.offerType.toLowerCase(), "option", additionalDiskCapacities[0].option].join("/")),
                     $http.get([swsPriceProxypass, "2015v1", vps.offerType.toLowerCase(), "option", additionalDiskCapacities[1].option].join("/")),
@@ -1187,8 +1187,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getAllowedDuration = function (capacity) {
-            return this.getSelected().then(function (vps) {
+        this.getAllowedDuration = function (serviceName, capacity) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 var url = [swsOrderProxypass, vps.name, "additionalDisk"].join("/");
                 return $http.get(url, { params: { additionalDiskSize: capacity } }).then(function (duration) {
                     return duration.data[0];
@@ -1196,8 +1196,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.getAdditionalDiskFinalPrice = function (capacity, duration) {
-            return this.getSelected().then(function (vps) {
+        this.getAdditionalDiskFinalPrice = function (serviceName, capacity, duration) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 var url = [swsOrderProxypass, vps.name, "additionalDisk", duration].join("/");
                 return $http.get(url, { params: { additionalDiskSize: capacity } }).then(function (response) {
                     return response.data;
@@ -1205,8 +1205,8 @@ angular.module("managerApp").service("VpsService", [
             });
         };
 
-        this.postAdditionalDiskOrder = function (capacity, duration) {
-            return this.getSelected().then(function (vps) {
+        this.postAdditionalDiskOrder = function (serviceName, capacity, duration) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 var url = [swsOrderProxypass, vps.name, "additionalDisk", duration].join("/");
                 return $http.post(url, { additionalDiskSize: capacity }).then(function (response) {
                     return response.data;
