@@ -26,6 +26,7 @@ NAS-HA -tuotteiden listan latauksessa.</translation>
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasburg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Suuren suosion vuoksi tuote on tilapäisesti loppu konesalissa {{ region }}.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Tapahtui virhe tilauksen vahvistuksessa.</translation>
    <translation id="nasha_order_error" qtlid="345286">Tapahtui virhe tilauksen käsittelyn yhteydessä.</translation>
    <translation id="nasha_order_success" qtlid="345299">NAS-HA -tilaus numero <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> on rekisteröity.</translation>

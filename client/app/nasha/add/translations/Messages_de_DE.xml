@@ -25,6 +25,7 @@
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Straßburg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Aufgrund der hohen Nachfrage ist das Produkt im Rechenzentrum {{ region }} vorübergehend nicht verfügbar.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Bei der Bestätigung Ihrer Bestellung ist ein Fehler aufgetreten.</translation>
    <translation id="nasha_order_error" qtlid="345286">Beim Abrufen des Bestellscheins ist ein Fehler aufgetreten.</translation>
    <translation id="nasha_order_success" qtlid="345299">Die Bestellung Nummer <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> Ihres HA-NAS wurde erfolgreich durchgeführt.</translation>

@@ -494,6 +494,7 @@
    <translation id="common_tile_subscription" qtlid="28891">Suscripción</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Producto</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Renovación automática</translation>
+   <translation id="common_tile_subscription_expiration_date" qtlid="33010">Fecha de expiración</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Contactos</translation>
    <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrador </translation>
    <translation id="common_tile_subscription_contact_billing" qtlid="32950">Facturación</translation>

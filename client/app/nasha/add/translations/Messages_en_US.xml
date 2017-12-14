@@ -5,32 +5,33 @@
    <translation id="nasha_order_duration" qtlid="8218">Duration</translation>
    <translation id="nas_order_month" qtlid="40222">month</translation>
    <translation id="nasha_order_warning" qtlid="345169">In order to take advantage of the OVH NAS service offers, you need to have a least one server in the same geographical zone.</translation>
-   <translation id="nasha_can_order_warning" qtlid="345182">You don't have any services compatible with the NAS-HA service.</translation>
+   <translation id="nasha_can_order_warning" qtlid="345182">You don't have any services compatible with the HA-NAS service.</translation>
    <translation id="nasha_order_step_1_configure" qtlid="345195">1. Configuration</translation>
    <translation id="nasha_order_step_2_order" qtlid="345208">2. Order</translation>
    <translation id="nasha_order_generate_order" qtlid="186219">Generate purchase order</translation>
-   <translation id="nasha_order_accept_contract" qtlid="345221">I have read and accept the terms and conditions described in the following documents:</translation>
+   <translation id="nasha_order_accept_contract" qtlid="345221">I have read and accepted the terms and conditions described in the following documents:</translation>
    <translation id="nasha_order_nasha_1200g" qtlid="171994">1.2 TB hybrid NAS-HA  </translation>
    <translation id="nasha_order_nasha_13200g" qtlid="172007">13.2 TB hybrid NAS-HA</translation>
    <translation id="nasha_order_nasha_2400g" qtlid="172020">2.4 TB hybrid NAS-HA  </translation>
    <translation id="nasha_order_nasha_3600g" qtlid="172046">3.6 TB hybrid NAS-HA</translation>
    <translation id="nasha_order_nasha_7200g" qtlid="172072">NAS-HA hybrid 7.2 TB</translation>
    <translation id="nasha_order_nashaSSD" qtlid="172085">100 GB SSD NAS-HA  </translation>
-   <translation id="nasha_order_nasha_19200g" qtlid="243445">HA NAS hybrid 19.2 TB</translation>
-   <translation id="nasha_order_nasha_26400g" qtlid="243458">HA NAS hybrid 26.4 TB</translation>
-   <translation id="nasha_order_name" qtlid="345234">Type of NAS-HA</translation>
-   <translation id="nasha_order_price" qtlid="345247">Price excl. VAT (1 month)</translation>
+   <translation id="nasha_order_nasha_19200g" qtlid="243445">Hybrid HA-NAS 19.2 TB</translation>
+   <translation id="nasha_order_nasha_26400g" qtlid="243458">Hybrid HA-NAS 26.4 TB</translation>
+   <translation id="nasha_order_name" qtlid="345234">Type of HA-NAS</translation>
+   <translation id="nasha_order_price" qtlid="345247">Price ex. VAT (1 month)</translation>
    <translation id="nasha_order_datacenter" qtlid="345260">Choose your datacentre:</translation>
    <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasbourg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
-   <translation id="nasha_order_validation_error" qtlid="345273">An error occurred when validating your request.&#13;
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Due to its popularity, this product is temporarily unavailable in the {{ region }} datacentre.</translation>
+   <translation id="nasha_order_validation_error" qtlid="345273">An error has occurred validating your request.&#13;
 &#13;
 </translation>
-   <translation id="nasha_order_error" qtlid="345286">An error occurred on retrieving the purchase order.</translation>
-   <translation id="nasha_order_success" qtlid="345299">The order number <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> of your NAS-HA has been registered.</translation>
-   <translation id="nasha_order_bc_price_HT" qtlid="345312">Total price excl. VAT: <strong>{{priceHT}}</strong></translation>
+   <translation id="nasha_order_error" qtlid="345286">An error has occurred retrieving the purchase order.</translation>
+   <translation id="nasha_order_success" qtlid="345299">The order number <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> of your HA-NAS has been registered.</translation>
+   <translation id="nasha_order_bc_price_HT" qtlid="345312">Total price ex. VAT: <strong>{{priceHT}}</strong></translation>
    <translation id="nasha_order_bc_price_TTC" qtlid="345325">Total price incl. VAT: <strong>{{priceTTC}}</strong></translation>
 
    <translation id="nasha_order_guide_title" qtlid="300370">Guides</translation>
