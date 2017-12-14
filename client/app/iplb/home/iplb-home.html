@@ -1,35 +1,25 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <div class="cui-tile h-100">
-                <h4 class="oui-header_4 cui-tile__title" data-translate="iplb_home_tile_status"></h4>
-                <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
-                    <iplb-status-card
-                        data-type="ctrl.iplbStatus.data.status"
-                        data-title="ctrl.configuration.data.displayName"
-                        data-subtitle="ctrl.iplbStatus.data.statusText"
-                        data-loading="ctrl.iplbStatus.loading"
-                        data-actions="ctrl.IPLBActions"></iplb-status-card>
-                    <iplb-status-card
-                        data-type="ctrl.frontendsStatus.data.status"
-                        data-title="'iplb_home_tile_status_frontends' | translate"
-                        data-subtitle="ctrl.frontendsStatus.data.statusText"
-                        data-loading="ctrl.frontendsStatus.loading"
-                        data-actions="ctrl.frontendsActions"></iplb-status-card>
-                    <iplb-status-card
-                        data-type="ctrl.serverFarmsStatus.data.serverFarms.status"
-                        data-title="'iplb_home_tile_status_servers_farms' | translate"
-                        data-subtitle="ctrl.serverFarmsStatus.data.serverFarms.statusText"
-                        data-loading="ctrl.serverFarmsStatus.loading"
-                        data-actions="ctrl.farmsActions">
-                        <iplb-status-card
-                            data-type="ctrl.serverFarmsStatus.data.servers.status"
-                            data-title="'iplb_home_tile_status_servers' | translate"
-                            data-subtitle="ctrl.serverFarmsStatus.data.servers.statusText"
-                            data-loading="ctrl.serverFarmsStatus.loading"></iplb-status-card>
-                    </iplb-status-card>
-                </div>
-            </div>    
+            <cui-tile data-title="'iplb_home_tile_status' | translate"
+                data-loading="ctrl.iplbStatus.loading"
+                class="h-100">
+                <cui-tile-body class="cui-tile__body-no-grow">
+                    <cui-tile-item-status 
+                        data-ng-repeat="statusInfo in ctrl.iplbStatus.data | orderBy: 'weight' track by $index"
+                        data-actions="ctrl[statusInfo.itemName + 'Actions']">
+                        <cui-tile-definitions>
+                            <cui-tile-term-status data-term="statusInfo.displayName"></cui-tile-term-status>
+                            <cui-tile-description-status
+                                data-ng-repeat="(statusType, statusTypeInfo) in statusInfo.status track by $index"
+                                data-ng-if="statusTypeInfo.number"
+                                data-type="{{ statusTypeInfo.code }}">
+                                {{ statusTypeInfo.text }}
+                            </cui-tile-description-status>
+                        </cui-tile-definitions>
+                    </cui-tile-item-status>
+                </cui-tile-body>
+            </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
              <div class="cui-tile tile-iplb-usage h-100">
