@@ -10,7 +10,7 @@ angular.module("managerApp")
                         data-term="'common_tile_subscription_offer' | translate" 
                         data-description="$ctrl.subscriptionInfo.offer"
                         data-actions="$ctrl.offerActions"></cui-tile-item>
-                    <cui-tile-item data-term="'common_tile_subscription_autorenew' | translate" 
+                    <cui-tile-item data-term="$ctrl.hasAutoRenew() ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate" 
                         data-description="$ctrl.subscriptionInfo.expiration | momentFormat:'LL'"
                         data-actions="$ctrl.autorenewActions"></cui-tile-item>
                     <cui-tile-item data-actions="$ctrl.contactActions">
@@ -35,6 +35,12 @@ angular.module("managerApp")
                 </cui-tile-body>
             </cui-tile>
         `,
+        controller: class {
+            hasAutoRenew () {
+                return this.subscriptionInfo.renew.forced || this.subscriptionInfo.renew.automatic;
+            }
+        },
+        controllerAs: "$ctrl",
         bindings: {
             subscriptionInfo: "<",
             loading: "<",
