@@ -3,7 +3,7 @@ class VpsMountCtrl {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
-        this.mount = mount
+        this.mount = mount;
         this.RestorePoint = RestorePoint;
         this.serviceName = serviceName;
         this.VpsService = VpsService;
@@ -18,9 +18,9 @@ class VpsMountCtrl {
     $onInit () {
         this.loader.init = true;
         this.VpsService.getVeeamAttachedBackup(this.serviceName)
-            .then(data => { this.attachedBackup = data.length })
+            .then(data => { this.attachedBackup = data.length; })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loader.init = false });
+            .finally(() => { this.loader.init = false; });
     }
 
     cancel () {
