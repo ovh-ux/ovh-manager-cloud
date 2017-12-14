@@ -46,9 +46,9 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
             .then(function (result) {
                 var typeKey = (!self.data.selectedImage || self.data.vm.image.type === "linux") ? "linux" : "windows";
                 var pwdKey = self.data.selectedImage ? "" : "pwd_";
-                var user = self.data.selectedImage ? self.data.selectedImage.user : "admin";
+                var user = self.data.selectedImage ? self.data.selectedImage.user : "root";
                 var messageName = "cpc_rescue_mode_success_" + pwdKey + typeKey;
-                CloudMessage.success({textHtml : $translate.instant(messageName, 
+                CloudMessage.success({textHtml : $translate.instant(messageName,
                     {
                         vmName: self.data.vm.name,
                         user: user,
