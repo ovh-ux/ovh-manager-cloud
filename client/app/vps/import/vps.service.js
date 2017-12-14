@@ -505,12 +505,12 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get content of secondary DNS tab
          */
-        this.getTabSecondaryDns = function (count, offset) {
+        this.getTabSecondaryDns = function (serviceName, count, offset) {
             var vpsName = null,
                 offsetFinal = offset,
                 countFinal = count,
                 cacheKey = null;
-            return this.getSelected().then(function (vps) {
+            return this.getSelectedVps(serviceName).then(function (vps) {
                 if (vps && vps.name) {
                     vpsName = vps.name;
                     if (!count) {
