@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Nome (facoltativo)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocollo (non modificabile dopo la creazione)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">da 1 a {{portMax}}</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Porta associata alla farm (da 1 a {{portMax}}). Di défault, la farm utilizza la porta del frontend.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Opzioni avanzate</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">I valori predefiniti più comuni sono preconfigurati, ma è possibile modificarli in qualsiasi momento.</translation>
@@ -68,7 +68,7 @@
    <translation id="iplb_farm_edit_probe_pattern" qtlid="438064">Pattern</translation>
    <translation id="iplb_farm_edit_probe_interval" qtlid="438077">Interval</translation>
    <translation id="iplb_farm_edit_probe_negate" qtlid="438090">Inverser</translation>
-   <translation id="iplb_farm_edit_probe_type_" qtlid="440947">Nessuno</translation>
+   <translation id="iplb_farm_edit_probe_type_" qtlid="440947">Nessuna</translation>
    <translation id="iplb_farm_edit_probe_type_http" qtlid="19639">HTTP</translation>
    <translation id="iplb_farm_edit_probe_type_mysql" qtlid="196894">MySQL</translation>
    <translation id="iplb_farm_edit_probe_type_oco" qtlid="438103">OCO</translation>
@@ -76,7 +76,6 @@
    <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Si è verificato un errore durante il recupero delle informazioni per la sonda.</translation>
-
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Parametri della sonda</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Annulla</translation>

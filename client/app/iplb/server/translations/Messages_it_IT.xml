@@ -20,7 +20,7 @@
    <translation id="iplb_server_edit_name" qtlid="415818">Nome (facoltativo)</translation>
    <translation id="iplb_server_edit_address" qtlid="79314">Indirizzo IPv4</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_server_edit_port_tip" qtlid="437934">da 1 a {{portMax}}</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="448673">Porta associata al tuo server (da 1 a {{portMax}}). Di default, il server utilizza la porta della farm.</translation>
    <translation id="iplb_server_edit_advanced_options" qtlid="39958">Opzioni avanzate</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">I valori predefiniti più comuni sono preconfigurati, ma è possibile modificarli in qualsiasi momento.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Mostra</translation>
