@@ -6,9 +6,13 @@
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
-            <cui-modal-text data-text="'vps_configuration_veeam_mount_question' | translate:{ date: ($ctrl.RestorePoint | momentFormat:'LLL') }""></cui-modal-text>
+            <cui-modal-text data-text="'vps_configuration_veeam_mount_question' | translate:{ serviceName: $ctrl.serviceName }""></cui-modal-text>
             <cui-modal-text data-text="'vps_configuration_veeam_mount_informations' | translate"></cui-modal-text>
 
+            <dl class="oui-modal__body-text">
+                <dt data-translate="vps_configuration_veeam_restore_step1_creation"></dt>
+                <dd data-ng-bind="$ctrl.RestorePoint | momentFormat:'LLL'"></dd>
+            </dl>
             <p class="oui-modal__body-text" data-ng-if="$ctrl.attachedBackup">
                 <span class="red" data-translate="vps_configuration_veeam_mount_step1_warning_umount"></span>
             </p>

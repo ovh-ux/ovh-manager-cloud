@@ -348,7 +348,7 @@
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Une erreur est survenue lors de la demande de démontage du backup sur votre VPS.</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">Le backup va être démonté de votre VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Monter le backup</translation>
-   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{{ date }}</span>&#160;?</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="154286">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
    <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Ce backup deviendra alors accessible via un point de montage NFS ou SMB.</translation>
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">La demande de montage du backup a été bien prise en compte. Vous serez notifié par email lorsque le montage sera terminé.</translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Une erreur est survenue lors de la demande de montage du backup sur votre VPS.</translation>
