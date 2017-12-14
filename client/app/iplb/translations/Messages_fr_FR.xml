@@ -60,20 +60,20 @@
    <translation id="iplb_status_warning_service">Avertissement</translation>
    <translation id="iplb_status_help_service">Aucune information</translation>
 
-   <translation id="iplb_status_success_frontends">{{activeCount}} de {{totalCount}} actifs</translation>
-   <translation id="iplb_status_error_frontends">{{activeCount}} de {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_frontends">{{activeCount}} de {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_frontends">{{activeCount}} de {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_frontends">{{activeCount}} sur {{totalCount}} actifs</translation>
+   <translation id="iplb_status_error_frontends">{{activeCount}} sur {{totalCount}} en erreur</translation>
+   <translation id="iplb_status_warning_frontends">{{activeCount}} sur {{totalCount}} en avertissement</translation>
+   <translation id="iplb_status_help_frontends">{{activeCount}} sur {{totalCount}} sans information</translation>
 
-   <translation id="iplb_status_success_farms">{{activeCount}} de {{totalCount}} fonctionnelles</translation>
-   <translation id="iplb_status_error_farms">{{activeCount}} de {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_farms">{{activeCount}} de {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_farms">{{activeCount}} de {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_farms">{{activeCount}} sur {{totalCount}} fonctionnelles</translation>
+   <translation id="iplb_status_error_farms">{{activeCount}} sur {{totalCount}} en erreur</translation>
+   <translation id="iplb_status_warning_farms">{{activeCount}} sur {{totalCount}} en avertissement</translation>
+   <translation id="iplb_status_help_farms">{{activeCount}} sur {{totalCount}} sans information</translation>
 
-   <translation id="iplb_status_success_servers">{{activeCount}} de {{totalCount}} actifs</translation>
-   <translation id="iplb_status_error_servers">{{activeCount}} de {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_servers">{{activeCount}} de {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_servers">{{activeCount}} de {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_servers">{{activeCount}} sur {{totalCount}} actifs</translation>
+   <translation id="iplb_status_error_servers">{{activeCount}} sur {{totalCount}} en erreur</translation>
+   <translation id="iplb_status_warning_servers">{{activeCount}} sur {{totalCount}} en avertissement</translation>
+   <translation id="iplb_status_help_servers">{{activeCount}} sur {{totalCount}} sans information</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Appliquer la configuration</translation>
    <translation id="iplb_status_details" qtlid="439611">Aller au détail</translation>
