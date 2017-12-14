@@ -1,5 +1,5 @@
 class VpsAdditionalDiskCtrl {
-    constructor ($q, $stateParams, $translate, CloudMessage, VpsActionService ,VpsService) {
+    constructor ($q, $stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
         this.$q = $q;
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
@@ -52,10 +52,6 @@ class VpsAdditionalDiskCtrl {
 
     canOrder () {
         return _.isEmpty(this.additionnalDisks);
-    }
-
-    order () {
-        this.VpsActionService.orderAdditionalDisk();
     }
 
 }
