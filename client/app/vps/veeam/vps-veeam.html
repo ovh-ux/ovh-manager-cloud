@@ -25,7 +25,13 @@
                 <span data-translate="vps_configuration_veeam_umount_title_button"></span>
             </button>
 
+            <!--Show table is loading-->
+            <div class="text-center" data-ng-if="$ctrl.loaders.veeamTab">
+                <oui-loader class="d-inline-block" size="m"></oui-loader>
+            </div>
+            <!--Show table-->
             <oui-table rows="$ctrl.veeamTab"
+                       data-ng-hide="$ctrl.loaders.veeamTab"
                        rows-loader="$ctrl.loaders.veeamTab">
                 <column title="'vps_tab_VEEAM_dashboard_table_header_date' | translate"
                         template="$ctrl.dateTemplate()"
