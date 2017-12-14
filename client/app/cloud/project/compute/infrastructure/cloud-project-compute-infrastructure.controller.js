@@ -946,11 +946,13 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureCtrl",
                         return CloudProjectComputeInfrastructureOrchestrator.attachIptoVm(connectedIp, connectedVm).then(function () {
                             $rootScope.$broadcast('highlighed-element.hide');
                             self.model.currentLinkEdit = null;
-                            var successMessage = $translate.instant('cpci_ip_attach_success', {ip : connectedIp.ip, instance : connectedVm.name});
+                            var successMessage = { text: $translate.instant('cpci_ip_attach_success', {ip : connectedIp.ip, instance : connectedVm.name}) };
                             if (connectedIp.type === "failover" && connectedVm.image){
                                 var distribution = connectedVm.image.distribution || URLS.guides.ip_failover.defaultDistribution;
-                                successMessage += ' ' + $translate.instant('cpci_ip_attach_failover_help',
-                                    {link : URLS.guides.ip_failover[self.user.ovhSubsidiary][distribution]});
+                                successMessage = {
+                                    textHtml: successMessage.text + ' ' + $translate.instant('cpci_ip_attach_failover_help',
+                                        {link : URLS.guides.ip_failover[self.user.ovhSubsidiary][distribution]})
+                                };
                             }
                             CloudMessage.success(successMessage);
                         }, function (err) {
