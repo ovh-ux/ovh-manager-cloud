@@ -18,6 +18,7 @@ angular.module("managerApp").config($stateProvider => {
             params: {
                 displayName: null
             },
+            redirectTo: "iaas.vps.detail.dashboard",
             views: {
                 vpsHeader,
                 vpsContainer: {
@@ -83,6 +84,28 @@ angular.module("managerApp").config($stateProvider => {
                 vpsContent: {
                     templateUrl: "app/vps/monitoring/vps-monitoring.html",
                     controller: "VpsMonitoringCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
+        .state("iaas.vps.detail.snapshot-order", {
+            url: "/snapshot-order",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/snapshot-order/vps-snapshot-order.html",
+                    controller: "VpsOrderSnapshotCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
+        .state("iaas.vps.detail.windows-order", {
+            url: "/windows-order",
+            views: {
+                vpsHeader,
+                vpsContent: {
+                    templateUrl: "app/vps/windows-order/vps-windows-order.html",
+                    controller: "VpsOrderWindowsCtrl",
                     controllerAs: "$ctrl"
                 }
             }

@@ -2,6 +2,9 @@
 <translations>
 
    <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
+   <translation id="vps_order_windows_step1_title">Selection de la durée</translation>
+   <translation id="vps_order_windows_step2_title">Acceptation des conditions d'utilisation</translation>
+   <translation id="vps_order_windows_step3_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Cette option vous permettera d'installer une OS de type windows sur votre vps.</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Une erreur est survenue lors de la récupération des prix.</translation>
    <translation id="vps_order_windows_order_success" qtlid="181266">La commande numéro <a href='{0}' target='_blank'>{1}</a> a bien été prise en compte.</translation>
@@ -231,11 +234,12 @@
    <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Activer l'option Snapshot</translation>
    <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Activer l'option Snapshot</translation>
    <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Pour le premier paiement, vous serez facturé au prorata jusqu'à la date de renouvellement de votre VPS.</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="169173">Cette option sera facturée au tarif mensuel de <span class="bold">{0} HT</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert">Cette option sera facturée au tarif mensuel de <span class="bold">{{ amount }} HT</span></translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">L'option Snapshot vous permet de créer un point de restauration. C'est un instantané de votre configuration pouvant être restauré en cas de besoin.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Veuillez cliquer sur le bouton "Suivant" afin de poursuivre l'activation de l'option Snapshot.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_question" qtlid="169212">Activation de l'option Snapshot sur le VPS <span class="italic normal">{0}</span></translation>
    <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Afin de confirmer votre demande, veuillez procéder au règlement en cliquant sur le bouton "Commander" ci-dessous.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Web.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Prix HT :</translation>
@@ -286,12 +290,13 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Aujourd'hui</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Faire évoluer mon VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Faire évoluer mon VPS</translation>
-   <translation id="vps_configuration_upgradevps_step1_question" qtlid="169745">Veuillez sélectionner le modèle de VPS vers lequel vous souhaitez évoluer.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Veuillez sélectionner le modèle de VPS vers lequel vous souhaitez évoluer.</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
    <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ mois</translation>
    <translation id="vps_configuration_upgradevps_step1_warning" qtlid="200053">Le basculement vers un nouveau modèle est totalement gratuit. Le tarif affiché est le tarif au mois correspondant à chaque modèle. Pour information, le tarif mensuel de votre offre actuelle est de <span class="bold">{0}</span></translation>
    <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Attention ! Il vous sera par la suite impossible de diminuer la puissance de votre VPS : seules les augmentations sont possibles.</translation>
+   <translation id="vps_configuration_upgradevps_step2_title">Veuillez accepter les conditions d'utilisation.</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="169771">Upgrade du VPS <span class="italic normal">{0}</span> en {1}</translation>
    <translation id="vps_configuration_upgradevps_step2_question2" qtlid="169784">Tarif jusqu'au {0}, date du prochain renouvellement de votre serveur :</translation>
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Prix HT :</translation>
@@ -301,6 +306,7 @@
    <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'upgrade soit pris en compte dans votre Espace Client Web.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Un redémarrage sera nécessaire pour que la puissance de votre VPS soit augmentée.</translation>
+   <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Une erreur est survenue lors de la demande d'upgrade de votre VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Configuration actuelle</translation>
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Ajouter un domaine</translation>

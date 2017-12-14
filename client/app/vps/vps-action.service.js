@@ -232,6 +232,70 @@ class VpsActionService {
         });
     }
 
+    deleteSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-delete.html",
+                controller: "VpsDeleteSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
+    takeSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-take.html",
+                controller: "VpsTakeSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
+    restoreSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-restore.html",
+                controller: "VpsRestoreSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
+    terminateSnapshot (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/snapshot/snapshot-terminate.html",
+                controller: "VpsTerminateSnapshotCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
+
+    terminateWindows (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/windows/windows-terminate.html",
+                controller: "VpsTerminateWindowsCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
+                }
+            }
+        });
+    }
 }
 
 angular.module("managerApp").service("VpsActionService", VpsActionService);

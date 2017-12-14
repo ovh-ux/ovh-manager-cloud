@@ -1,10 +1,10 @@
 <cui-modal>
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_reinstall_title' | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+        <div class="text-center" data-ng-if="$ctrl.loaders.init || $ctrl.loaders.template || $ctrl.loaders.save">
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
-        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
+        <div data-ng-if="!$ctrl.loaders.init && !$ctrl.loaders.template && !$ctrl.loaders.save">
             <!-- distribution -->
             <label for="templates" class="oui-label" data-translate="vps_configuration_reinstall_step1_question"></label>
             <div class="oui-select">
@@ -83,6 +83,6 @@
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
         <cui-submit-button data-text="'common_confirm' | translate"
             data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
+            data-disabled="$ctrl.loaders.init || $ctrl.loaders.template || $ctrl.loaders.save"></cui-submit-button>
     </cui-modal-footer>
 </cui-modal>

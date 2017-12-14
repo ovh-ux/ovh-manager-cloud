@@ -1,8 +1,9 @@
 class VpsDetailCtrl {
-    constructor ($filter, $scope, $stateParams, CloudMessage) {
+    constructor ($filter, $scope, $stateParams, CloudMessage, CloudNavigation) {
         this.$filter = $filter;
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
+        this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
 
         this.messages = [];
@@ -10,6 +11,12 @@ class VpsDetailCtrl {
 
     $onInit () {
         this.loadMessage();
+        this.CloudNavigation.init({
+            state: "iaas.vps.detail",
+            stateParams: {
+                serviceName: this.serviceName
+            }
+        });
     }
 
     loadMessage () {
