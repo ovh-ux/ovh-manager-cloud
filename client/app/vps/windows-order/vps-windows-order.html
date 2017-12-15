@@ -25,7 +25,7 @@
                                    data-ng-model="$ctrl.model.duration" id="{{duration}}"
                                    data-ng-value="duration">
                             <label class="oui-radio__label-container" for="{{duration}}">
-                                <span class="oui-radio__label" data-ng-bind="duration | momentFormat:'LL'"></span>
+                                <span class="oui-radio__label" data-ng-bind="duration.split('upto-')[1] | momentFormat:'LL'"></span>
                                 <span class="oui-radio__description">
                                 <span data-translate="vps_order_windows_order_price_HT"></span>
                                 <span data-ng-bind="$ctrl.durations.details[duration].prices.withoutTax.text"></span>

@@ -135,14 +135,14 @@
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.veeamActivated"
                                    data-actions="$ctrl.actions.veeam"></cui-tile-item>
+
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.hasAdditionalDisk"
-                                   data-actions="$ctrl.actions.orderAdditionalDiskOption"></cui-tile-item>
+                                   data-ng-if="!$ctrl.hasAdditionalDisk"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.hasAdditionalDisk"
-                                   data-actions="$ctrl.actions.terminateAdditionalDiskOption"></cui-tile-item>
+                                   data-actions="[$ctrl.actions.orderAdditionalDiskOption, $ctrl.actions.terminateAdditionalDiskOption]"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.vps.slaMonitoring"
