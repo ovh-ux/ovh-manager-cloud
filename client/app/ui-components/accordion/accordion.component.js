@@ -32,7 +32,7 @@ angular.module("managerApp")
                                         <button class="oui-button oui-button_link oui-action-menu-item__label"
                                             type="button"
                                             data-ng-bind="action.text"
-                                            data-ng-click="action.run()"></button>
+                                            data-ng-click="action.callback()"></button>
                                     </div>
                                 </div>
                             </cui-dropdown-menu-body>

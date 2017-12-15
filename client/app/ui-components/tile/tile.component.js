@@ -99,12 +99,14 @@ angular.module("managerApp")
     }))
     .component("cuiTileItem", {
         template: `
-            <div data-ng-class="{ 'cui-dropdown-menu-container': $ctrl.actions }">
-                <cui-tile-definitions data-ng-if="$ctrl.term">
-                    <cui-tile-definition-term data-term="$ctrl.term"></cui-tile-definition-term>
-                    <cui-tile-definition-description data-description="$ctrl.description"></cui-clipboard>
-                </cui-tile-definitions>
-                <ng-transclude></ng-transclude>
+            <div class="d-flex" data-ng-class="{ 'cui-dropdown-menu-container': $ctrl.actions }">
+                <div class="cui-tile__item-main" data-ng-if="$ctrl.term">
+                    <cui-tile-definitions data-ng-if="$ctrl.term">
+                        <cui-tile-definition-term data-term="$ctrl.term"></cui-tile-definition-term>
+                        <cui-tile-definition-description data-description="$ctrl.description"></cui-tile-definition-description>
+                    </cui-tile-definitions>
+                </div>
+                <div class="cui-tile__item-main" data-ng-if="!$ctrl.term && !$ctrl.description" data-ng-transclude></div>
                 <cui-tile-action-menu data-ng-if="$ctrl.actions" data-actions="$ctrl.actions"></cui-tile-action-menu>
             </div>`,
         controller:
@@ -124,7 +126,13 @@ angular.module("managerApp")
             actions: "<"
         }
     })
-    .component("cuiTileActionMenu", {
+    .directive("cuiTileActionMenu", () => ({
+        replace: true,
+        restrict: "E",
+        controllerAs: "$ctrl",
+        transclude: true,
+        controller: CuiTileActionMenuController,
+        scope: true,
         template: `
             <cui-dropdown-menu data-ng-if="$ctrl.hasAvailableAction()">
                 <cui-dropdown-menu-button>
@@ -154,12 +162,10 @@ angular.module("managerApp")
                     </div>
                 </cui-dropdown-menu-body>
             </cui-dropdown-menu>`,
-        transclude: true,
-        controller: CuiTileActionMenuController,
-        bindings: {
+        bindToController: {
             actions: "<"
         }
-    })
+    }))
     .directive("cuiTileActionLink", () => ({
         replace: true,
         restrict: "E",
@@ -214,7 +220,7 @@ angular.module("managerApp")
         controller: class CuiTileDefinitionTermCtrl {},
         scope: true,
         template: `
-            <dt class="cui-tile__term" data-ng-bind="$ctrl.term"></dt>`,
+            <dt class="cui-tile__term text-truncate" data-ng-bind="$ctrl.term"></dt>`,
         bindToController: {
             term: "<"
         }

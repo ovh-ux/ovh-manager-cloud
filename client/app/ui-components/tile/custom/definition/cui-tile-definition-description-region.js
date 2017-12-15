@@ -25,7 +25,7 @@ angular.module("managerApp")
         },
         scope: true,
         template: `
-            <dd class="cui-tile__description cui-tile-definition-description-region">
+            <dd class="cui-tile__description text-truncate cui-tile-definition-description-region">
                 <div data-ng-if="!$ctrl.hasMultipleRegions()">
                     <i class="flag-icon {{ $ctrl.detailedRegions[0].icon }} flag flag__icon-sm cui-tile-definition-description-region__flag cui-tile-definition-description-region__flag-last"></i>
                     <span>

@@ -95,6 +95,11 @@
                     text: this.$translate.instant("common_manage"),
                     href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
                     isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage")
+                },
+                editName: {
+                    text: this.$translate.instant("metrics_tiles_modify"),
+                    callback: () => this.showEditName(this.configuration.description),
+                    isAvailable: () => true
                 }
             };
         }
