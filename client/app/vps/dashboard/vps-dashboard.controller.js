@@ -66,7 +66,8 @@ class VpsDashboardCtrl {
         this.VpsService.getTabSummary(this.serviceName, true)
             .then(summary => {
                 this.summary = summary;
-                this.snapshotOption();
+                this.initSnapshotActions();
+                this.initVeeamActions();
             })
             .catch(err => this.CloudMessage.error(err))
             .finally(() => { this.loaders.summary = false });
@@ -119,38 +120,60 @@ class VpsDashboardCtrl {
             .finally(() => { this.loaders.disk = false });
     }
 
-    snapshotOption () {
+    initSnapshotActions () {
         this.snapshotDescription = this.summary.snapshot.creationDate ?
             this.$translate.instant("vps_tab_SUMMARY_snapshot_creationdate") + " " + moment(this.summary.snapshot.creationDate).format("LLL") :
             this.$translate.instant("vps_status_enabled");
-        this.snapshot = {
+        this.snapshotActions = {
+            delete: {
+                text: this.$translate.instant("vps_configuration_delete_snapshot_title_button"),
+                callback: () => this.VpsActionService.deleteSnapshot(this.serviceName),
+                isAvailable: () => !this.loaders.summary && this.summary.snapshot.creationDate
+            },
             order: {
                 text: this.$translate.instant("common_order"),
                 state: "iaas.vps.detail.snapshot-order",
                 stateParams: { serviceName: this.serviceName },
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionAvailable
             },
-            take: {
-                text: this.$translate.instant("vps_configuration_snapshot_take_title_button"),
-                callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
-                isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionActivated && !this.summary.snapshot.creationDate
-            },
             restore: {
                 text: this.$translate.instant("vps_configuration_snapshot_restore_title_button"),
                 callback: () => this.VpsActionService.restoreSnapshot(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.creationDate
             },
-            delete: {
-                text: this.$translate.instant("vps_configuration_delete_snapshot_title_button"),
-                callback: () => this.VpsActionService.deleteSnapshot(this.serviceName),
-                isAvailable: () => !this.loaders.summary && this.summary.snapshot.creationDate
+            take: {
+                text: this.$translate.instant("vps_configuration_snapshot_take_title_button"),
+                callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
+                isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionActivated && !this.summary.snapshot.creationDate
             },
             terminate: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
                 callback: () => this.VpsActionService.terminateSnapshotOption(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.snapshot.optionActivated
             }
-        }
+        };
+    }
+
+    initVeeamActions () {
+        this.veeamActions = {
+            manage: {
+                text: this.$translate.instant("common_manage"),
+                state: "iaas.vps.detail.veeam",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
+            },
+            order: {
+                text: this.$translate.instant("common_order"),
+                state: "iaas.vps.detail.veeam.order",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
+            },
+            terminate: {
+                text: this.$translate.instant("vps_configuration_desactivate_option"),
+                callback: () => this.VpsActionService.terminateVeeamOption(this.serviceName),
+                isAvailable: () => !this.loaders.init
+            }
+        };
     }
 
     initActions () {
@@ -223,18 +246,7 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.reverseDns(this.serviceName),
                 isAvailable: () => !this.loaders.ip
             },
-            upgrade: {
-                text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
-                state: "iaas.vps.detail.upgrade",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.init
-            },
-            veeam: {
-                text: this.$translate.instant("vps_configuration_desactivate_option"),
-                callback: () => this.VpsActionService.terminateVeeamOption(this.serviceName),
-                isAvailable: () => !this.loaders.init
-            },
-            terminateAdditionalDiskOption:  {
+            terminateAdditionalDiskOption: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
                 callback: () => this.VpsActionService.terminateAdditionalDiskOption(this.serviceName),
                 isAvailable: () => !this.loaders.disk && !this.canOrderDisk
@@ -243,6 +255,12 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
                 callback: () => this.VpsActionService.terminateWindows(this.serviceName),
                 isAvailable: () => !this.loaders.summary && this.summary.windowsActivated
+            },
+            upgrade: {
+                text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
+                state: "iaas.vps.detail.upgrade",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
             }
         };
     }
