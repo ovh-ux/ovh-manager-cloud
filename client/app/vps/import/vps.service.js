@@ -1153,18 +1153,21 @@ angular.module("managerApp").service("VpsService", [
         };
 
         // Additional disks ------------------------------------------------------------------------------------
-        this.hasAdditionalDiskOption = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
+        this.hasAdditionalDiskOption = serviceName => {
+            return this.getSelectedVps(serviceName).then(vps => {
                 if (!_.include(vps.availableOptions, "ADDITIONAL_DISK")) {
                     return $q.reject(additionalDiskHasNoOption);
                 }
-                return $http.get([swsOrderProxypass, vps.name].join("/")).then(function (response) {
-                    if (_.include(response.data, "additionalDisk")) {
-                        return response.data;
-                    } else {
-                        return $q.reject(additionalDiskHasNoOption);
-                    }
-                });
+                return this.canOrderOption(serviceName, "additionalDisk");
+            });
+        };
+
+        this.canOrderOption = (serviceName, optionName) => {
+            return $http.get([swsOrderProxypass, serviceName].join("/")).then(response => {
+                if (_.include(response.data, optionName)) {
+                    return response.data;
+                }
+                return $q.reject(additionalDiskHasNoOption);
             });
         };
 
