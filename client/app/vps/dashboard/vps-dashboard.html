@@ -31,13 +31,24 @@
                       data-loading="$ctrl.loaders.init" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
                     <li class="cui-tile__item">
-                        <vps-tile-status-item data-item="$ctrl.vps.ping" data-text="'vps_dashboard_ping' | translate" data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.ssh" data-text="'vps_dashboard_ssh' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.http" data-text="'vps_dashboard_http' | translate" data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.https" data-text="'vps_dashboard_https' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.dns" data-text="'vps_dashboard_dns' | translate" data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.smtp" data-text="'vps_dashboard_smtp' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.tools" data-text="'vps_dashboard_tools' | translate" data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.ping"
+                                              data-text="'vps_dashboard_ping' | translate"
+                                              data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.ssh"
+                                              data-text="'vps_dashboard_ssh' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.http"
+                                              data-text="'vps_dashboard_http' | translate"
+                                              data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.https"
+                                              data-text="'vps_dashboard_https' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.dns"
+                                              data-text="'vps_dashboard_dns' | translate"
+                                              data-striped="true"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.smtp"
+                                              data-text="'vps_dashboard_smtp' | translate"></vps-tile-status-item>
+                        <vps-tile-status-item data-item="$ctrl.vps.tools"
+                                              data-text="'vps_dashboard_tools' | translate"
+                                              data-striped="true"></vps-tile-status-item>
                     </li>
                 </ul>
             </cui-tile>
@@ -121,19 +132,25 @@
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.snapshot.optionActivated"
-                                   data-actions="$ctrl.snapshot.order"></cui-tile-item>
+                                   data-actions="$ctrl.snapshotActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="$ctrl.snapshotDescription"
                                    data-ng-if="$ctrl.summary.snapshot.optionActivated"
-                                   data-actions="[$ctrl.snapshot.take, $ctrl.snapshot.restore, $ctrl.snapshot.delete, $ctrl.snapshot.terminate]"></cui-tile-item>
+                                   data-actions="[
+                                       $ctrl.snapshotActions.delete,
+                                       $ctrl.snapshotActions.restore,
+                                       $ctrl.snapshotActions.take,
+                                       $ctrl.snapshotActions.terminate
+                                   ]"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.veeamActivated"></cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.veeamActivated"
+                                   data-actions="$ctrl.veeamActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.veeamActivated"
-                                   data-actions="$ctrl.actions.veeam"></cui-tile-item>
+                                   data-actions="[$ctrl.veeamActions.manage, $ctrl.veeamActions.terminate]"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
                                    data-description="'vps_status_disabled' | translate"
@@ -142,6 +159,7 @@
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.hasAdditionalDisk"
                                    data-actions="[$ctrl.actions.orderAdditionalDiskOption, $ctrl.actions.terminateAdditionalDiskOption]"></cui-tile-item>
+
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.vps.slaMonitoring"
