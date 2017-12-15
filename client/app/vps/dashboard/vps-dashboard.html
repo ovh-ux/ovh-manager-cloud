@@ -47,26 +47,25 @@
             <cui-tile data-title="'vps_tab_ip' | translate"
                       data-loading="$ctrl.loaders.init || $ctrl.loaders.ips" class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item>
-                        <cui-tile-definitions style="max-width: 85%">
+                    <cui-tile-item data-actions="$ctrl.actions.manageIps">
+                        <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'common_ipv4' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
                                 <cui-clipboard data-text="$ctrl.vps.ipv4"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
-                        <cui-tile-definitions style="max-width: 85%">
+                        <cui-tile-definitions>
                             <cui-tile-definition-term  data-term="'common_ipv6' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
                                 <cui-clipboard data-text="$ctrl.vps.ipv6"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
-                        <cui-tile-definitions style="max-width: 85%">
+                        <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_configuration_ipV6_gateway_label' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
                                 <cui-clipboard data-text="$ctrl.vps.ipv6Gateway"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
-                        <cui-tile-action-menu data-actions="$ctrl.actions.manageIps"></cui-tile-action-menu>
                     </cui-tile-item>
 
                     <cui-tile-item data-ng-if="$ctrl.vps.reverseDns"
