@@ -64,11 +64,11 @@ class VpsOrderWindowsCtrl {
             return true;
         }
         return false;
-    };
+    }
 
     orderOption () {
         this.VpsService.postWindowsOptionOrder(this.serviceName, this.model.duration)
-            .then(order => {this.model.url = order.url;})
+            .then(order => { this.model.url = order.url; })
             .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_configuration_veeam_order_fail")));
     }
 
