@@ -810,7 +810,7 @@ angular.module("managerApp").service("VpsService", [
         this.getOptionSnapshotFormated = function (serviceName, vps) {
             if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
                 return this.getOptionSnapshot(vps)
-                    .then(d => this.getOptionDetails2('snapshot', vps, d.data[0]))
+                    .then(d => this.getOptionDetails2("snapshot", vps, d.data[0]))
                     .then(data => {
                             return {
                                 unitaryPrice: data[0].data.text,
@@ -820,9 +820,9 @@ angular.module("managerApp").service("VpsService", [
                             }
                         });
             } else {
-                return this.getOptionDetails(serviceName, 'snapshot').then(data => data.results[0]);
+                return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
             }
-        }
+        };
 
         // HOT FIX remove this fukin shit
         this.getPriceOptions = function (vps) {
