@@ -1,0 +1,1302 @@
+<div class="col-xs-12">
+    <!-- init loading... -->
+    <div class="text-center" style="margin-top: 200px;"
+         data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.init">
+        <div class="text-center">
+            <oui-loader size="l" class="d-inline-block"></oui-loader>
+        </div>
+    </div>
+
+    <!-- error -->
+    <div class="row"
+         data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.init && ComputeInfrastructureDiagramCtrl.errors.init">
+        <div class="col-xs-12">
+            <div class="alert alert-danger text-center">
+                <p class="bold">
+                    <span class="fa fa-bug" aria-hidden="true"></span>
+                    <span data-translate="cpci_errors_init_title"></span>
+                </p>
+                <p>
+                    <span data-translate="cpci_errors_init_help1"></span>
+                    <button type="button" class="btn btn-default btn-xs"
+                            data-ng-click="ComputeInfrastructureDiagramCtrl.init();">
+                        <span class="fa fa-refresh" aria-hidden="true"></span>
+                        {{'common_refresh' | translate}}
+                    </button>
+                </p>
+                <br>
+                <p data-translate="cpci_errors_init_help3" data-translate-values="{ url: '#/support' }"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"
+         data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.init && !ComputeInfrastructureDiagramCtrl.errors.init">
+
+        <div class="col-xs-6">
+            <div class="btn-group cloud-compute-infra-primary-actions">
+                <button type="button" class="oui-button oui-button_dropdown dropdown-toggle"
+                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" write-right-required>
+                    {{:: 'common_actions' | translate }}
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <button type="button" class="btn fs14"
+                            data-ng-click="ComputeInfrastructureDiagramCtrl.addVirtualMachine()"
+                            at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                            data-ng-bind=":: 'cpci_add_server' | translate">
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn fs14"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.addVolume()"
+                                data-ng-bind=":: 'cpci_volume_add' | translate">
+                        </button>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <button type="button" class="btn fs14"
+                            data-ng-click="ComputeInfrastructureDiagramCtrl.importIpFailover()"
+                            data-ng-bind=":: 'cpci_import_ip_failover' | translate">
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn fs14"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.buyIpFailover()"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
+                                data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
+                        </button>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <button type="button" class="btn fs14"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.showDeleteProjectModal()"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
+                                data-ng-disabled="projectDeleted"
+                                data-ng-bind=":: 'cpb_details_project_delete' | translate"
+                                write-right-required>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-6 text-right">
+            <div class="d-inline-block">
+                <span class="mr-3">Vue</span>
+                <ul class="d-inline-block list-inline">
+                    <li class="list-inline-item" ui-sref-active="active">
+                        <a ui-sref="iaas.pci-project.compute.infrastructure.diagram">Infrastructure</a>
+                    </li>
+                    <li class="list-inline-item" ui-sref-active="active">
+                        <a ui-sref="iaas.pci-project.compute.infrastructure.list">Liste</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row cloud-compute-infra-ctnr">
+        <div class="col-xs-12">
+
+            <div class="row" id="infra-ctnr" data-jsplumb-instance>
+
+                <!-- vRack - Private Networks -->
+                <div class="private-network-container col-xs-4 row">
+                    <private-network-list class="private-network-list col-xs-12 col-lg-10"></private-network-list>
+                </div>
+
+                <!-- vRack -->
+                <div class="col-xs-4">
+
+                    <div id="infra-vrack-ctnr">
+
+                        <!-- Public Cloud -->
+
+                        <div class="infra-vrack-public-ctnr">
+
+
+
+                            <!-- Unlink Volume -->
+                            <div class="volume-content-unlinked highlighed-element" data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                                data-highlighed-element="unlinked_volumes"
+                                data-droppable
+                                data-droppable-options="{{ComputeInfrastructureDiagramCtrl.droppableOptions.unlinked}}"
+                                data-droppable-info="{'group':'unlinkedVolumes'}"
+                                data-droppable-id="unlinked"
+                                data-ng-class="{ hasCurrentDroppableVolume : ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume}">
+
+                                <div class="volume-resume" data-ng-style="(ComputeInfrastructureDiagramCtrl.helpDisplay.openUnlinkVolume || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === 'unlinked') && {'border-bottom' : 'none'}">
+                                    <button type="button" class="vm-collapse-button no-style"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.toggleCollapsedVolumes()">
+                                        <i class="fa fa-caret-right rotate right-space-m8"
+                                            data-ng-class="{ 'rotate90': ComputeInfrastructureDiagramCtrl.helpDisplay.openUnlinkVolume }"
+                                            data-ng-if="ComputeInfrastructureDiagramCtrl.volumes.unlinked.length"></i>
+                                        <span translate="cpci_volume_number_detach_zero" data-ng-if="!ComputeInfrastructureDiagramCtrl.volumes.unlinked.length"></span>
+                                        <span translate="cpci_volume_number_detach_one" data-ng-if="ComputeInfrastructureDiagramCtrl.volumes.unlinked.length === 1"></span>
+                                        <span translate="cpci_volume_number_detach_other" data-translate-values="{nbVolume: ComputeInfrastructureDiagramCtrl.volumes.unlinked.length}" data-ng-if="ComputeInfrastructureDiagramCtrl.volumes.unlinked.length > 1"></span>
+                                        <i class="ovh-font ovh-font-add-disk pull-right"
+                                           style="margin-top: 2px;"
+                                           data-ng-if="!ComputeInfrastructureDiagramCtrl.volumes.unlinked.length"
+                                           title="{{ 'cpci_volume_add'|translate }}"
+                                           write-right-required></i>
+                                    </button>
+                                </div>
+
+                                <div class="volume-detail"
+                                    data-ng-show="(ComputeInfrastructureDiagramCtrl.helpDisplay.openUnlinkVolume || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === 'unlinked')&&
+                                    ComputeInfrastructureDiagramCtrl.volumes.unlinked.length">
+
+                                    <!-- Loop over regions -->
+                                    <ul class="volume-content-unlinked-regions">
+
+                                        <li data-ng-repeat="listedRegion in ComputeInfrastructureDiagramCtrl.getUnlinkedVolumesRegions() | orderBy:'toString()'" class="volume-detail-region">
+                                            <span class="region-label" data-ng-bind="{{::ComputeInfrastructureDiagramCtrl.regionService.getTranslatedMicroRegion(listedRegion) }}"></span>
+
+                                            <!-- Loop over volumes in current listed region -->
+                                            <ul class="volume-content-unlinked-items clearfix">
+
+                                                <li data-highlighed-element="{{volume.id}}"
+                                                    class="volume-detail-item volume-detail-item-{{volume.region}} highlighed-element"
+                                                    data-draggable
+                                                    data-draggable-id="{{volume.id}}"
+                                                    data-draggable-options="{{ComputeInfrastructureDiagramCtrl.draggableOptions.unlinked}}"
+                                                    data-draggable-info="{'volume':{{volume}}, 'srcVmId':'unlinked'}"
+                                                    data-draggable-src-cloned-class="volume-detail-item-helper"
+                                                    data-draggable-disabled="{{volume.getStatusGroup() !== 'ACTIVE'
+                                                        || volume.openDetail
+                                                        || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                        || ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                    }}"
+                                                    data-ng-repeat="volume in ComputeInfrastructureDiagramCtrl.volumes.unlinked | filter:{ region: listedRegion }"
+                                                    data-ng-class="{
+                                                        'visibility-hide' : !ComputeInfrastructureDiagramCtrl.dragDropHelper.draggingIsDoing && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.id === volume.id,
+                                                        'opacity5' : volume.getStatusGroup() === 'DRAFT'
+                                                    }">
+
+                                                    <div class="volume-detail-item-illustration"
+                                                        data-uib-tooltip="{{ volume.name + ' (' + volume.region + ')' }}" tooltip-placement="top"
+                                                        data-responsive-popover="'app/cloud/project/compute/infrastructure/volume/addEdit/cloud-project-compute-infrastructure-volume-addEdit.html'"
+                                                        data-popover-class="cloud-popover cloud-vm-popover-volume"
+                                                        data-popover-is-open="volume.openDetail"
+                                                        data-popover-enable="volume.getStatusGroup() === 'ACTIVE' || volume.getStatusGroup() === 'DRAFT'"
+                                                        data-popover-placement="right"
+                                                        data-popover-append-to-body="true"
+                                                        data-popover-trigger="none"
+                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null
+                                                            && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'
+                                                            && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume)" >
+
+                                                        <div data-ng-class="{'opacity2' : volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'}">
+                                                            <div data-ng-if="volume.type==='high-speed'" style="padding-top:1px;">
+                                                                <i class="ovh-font ovh-font-harddiskspeed"></i>
+                                                            </div>
+                                                            <div data-ng-if="volume.type==='classic'" style="padding-top:5px;">
+                                                                <i class="ovh-font ovh-font-harddisk"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'" class="text-center">
+                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="volume-detail-item-info">
+                                                        <div class="btn-group" data-uib-dropdown is-open="volume.isopen">
+                                                            <button type="button" class="no-style no-space" data-uib-dropdown-toggle
+                                                                data-ng-disabled="volume.openDetail
+                                                                    || ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                                    || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                                    || (volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT')">
+
+                                                                <i data-ng-if="volume.bootable"
+                                                                    title="{{:: 'common_disk_bootable' | translate}}"
+                                                                    class="ovh-font ovh-font-bootDisk"></i>
+                                                                <span class="vertical-middle">{{volume.size | bytes:2:true:'GiB'}}</span>
+                                                                <i class="glyphicon glyphicon-menu-down"  write-right-required></i>
+                                                            </button>
+                                                            <ul data-uib-dropdown-menu class="dropdown-menu" role="menu" write-right-required>
+                                                                <li data-ng-if="volume.getStatusGroup() !== 'DRAFT'">
+                                                                    <button type="button"
+                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit.moveCheckbox.launchConfirm(volume)">
+                                                                        <i class="fa fa-link right-space-m8"></i>
+                                                                        {{'cpci_volume_attach' | translate}}
+                                                                    </button>
+                                                                </li>
+                                                                <li data-ng-if="volume.getStatusGroup() !== 'DRAFT'" class="divider"></li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume)">
+                                                                        <i class="fa fa-edit right-space-m8"></i>
+                                                                        {{'cpci_vm_action_edit' | translate}}
+                                                                    </button>
+
+                                                                </li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume, 'NAME')">
+                                                                        <i class="fa fa-caret-right right-space-m8 left-space-m8"></i>
+                                                                        {{'cpci_vm_action_edit_name' | translate}}
+                                                                    </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume, 'SIZE')">
+                                                                        <i class="fa fa-caret-right right-space-m8 left-space-m8"></i>
+                                                                        {{'cpci_vm_action_edit_size' | translate}}
+                                                                    </button>
+                                                                </li>
+                                                                <li>
+                                                                    <button type="button"
+                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.openVolumeSnapshotWizard(volume)">
+                                                                        <i class="fa fa-floppy-o right-space-m8"></i>
+                                                                        {{'cpci_volume_action_backup' | translate}}
+                                                                    </button>
+                                                                </li>
+                                                                <li class="divider"></li>
+                                                                <li>
+                                                                    <button type="button" class="red"
+                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit.remove.launchConfirm(volume)">
+                                                                        <i class="fa fa-trash-o right-space-m8"></i>
+                                                                        {{'cpci_volume_delete' | translate}}
+                                                                    </button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="volume-detail-item"
+                                                    data-ng-show="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === 'unlinked'
+                                                        && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.srcVmId !== 'unlinked'
+                                                        && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region ===  listedRegion">
+                                                    <div>
+                                                        <div data-ng-if="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.type==='high-speed'">
+                                                            <i class="ovh-font ovh-font-harddiskspeed"></i>
+                                                        </div>
+                                                        <div data-ng-if="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.type==='classic'" style="padding-top:5px;">
+                                                            <i class="ovh-font ovh-font-harddisk"></i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="volume-detail-item-info">
+                                                        <span>{{ ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.size | bytes:2:true:'GiB' }}</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- legend for bootable disks -->
+                                        <li class="list-unstyled clearfix">
+                                            <div class="fs10 pull-right opacity7">
+                                                <i class="ovh-font ovh-font-bootDisk vertical-middle legend"></i>
+                                                <span class="left-space-m4 vertical-middle">{{:: 'common_disk_bootable' | translate }} </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="infra-vrack-public-title clearfix">
+                                <h3 class="pull-left fs16 top-space-m4 bottom-space-m4" data-translate="cpci_public_cloud"></h3>
+                                <div class="pull-right">
+
+                                    <button type="button" class="no-style no-space vertical-middle left-space-m8"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.uncollapseAll('publicCloud')"
+                                        data-uib-tooltip="{{'cpci_uncollapse_all_vms'|translate}}" tooltip-append-to-body="true">
+                                        <div class="wrap">
+                                            <div class="wrap2"></div>
+                                            <div class="wrap2"></div>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="no-style no-space vertical-middle"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.collapseAll()"
+                                        data-uib-tooltip="{{'cpci_collapse_all_vms'|translate}}" tooltip-append-to-body="true">
+                                        <div class="wrap">
+                                            <div class="wrap3"></div>
+                                            <div class="wrap3"></div>
+                                            <div class="wrap3"></div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Public Cloud: VMs list -->
+                            <div class="infra-vrack-public-content">
+
+                                <!-- Loading list... -->
+                                <div class="text-center animate-fadeIn-enter" data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.vrack">
+                                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                </div>
+
+                                <div class="animate-fadeIn-enter" data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack && !ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()">
+                                    <p data-translate="cpci_empty_project"></p>
+                                </div>
+
+
+                                <div class="public-vm-list"
+                                    data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                                    data-ui-sortable="ComputeInfrastructureDiagramCtrl.vmSortableOptions"
+                                    data-ng-model="ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.sortedKeys">
+
+                                    <!-- VM -->
+                                    <div class="cloud-vm public-cloud-vm highlighed-element {{vm.status}}"
+                                        data-ng-class="{
+                                            'collapsed': vm.collapsed,
+                                            'pointer' : (vm.status === 'DRAFT' || vm.status === 'ACTIVE')
+                                                && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'
+                                                && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null,
+                                                'sortable-disabled' : !!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                        }"
+                                        data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack && ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()"
+                                        data-ng-repeat="vmKey in ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.sortedKeys"
+                                        data-ng-init="
+                                            vm = ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.get(vmKey);
+                                        "
+                                        data-highlighed-element="vm,{{vm.id}},vm-{{vm.getStatusGroup()}},vm-{{vm.getStatusGroup()}}-{{vm.region}},vm-{{vm.getStatusGroup()}}-{{ComputeInfrastructureDiagramCtrl.getVmContinent(vm)}}"
+                                        data-droppable
+                                        data-droppable-disabled="{{ vm.getStatusGroup() !== 'ACTIVE' }}"
+                                        data-droppable-info="{'group':'linkedVolumes'}"
+                                        data-droppable-id="{{vm.id}}"
+                                        data-droppable-options="{{ { accept : ComputeInfrastructureDiagramCtrl.droppableOptions.vmUnlinked(vm) } }}"
+                                        data-instance-id="{{:: vm.id }}"
+                                        data-ng-mouseenter="ComputeInfrastructureDiagramCtrl.highlightInstanceAndPublicIP($event)"
+                                        data-ng-mouseleave="ComputeInfrastructureDiagramCtrl.removeAllFades()">
+
+                                        <!-- confirm box -->
+                                        <div data-ng-if="vm.confirm"
+                                            class="vm-pending-ctnr animate-fadeIn-enter animate-fadeOut-leave">
+
+                                            <div class="pending-overlay"></div>
+
+                                            <div class="pending-content text-center animated fadeInRight flex-row-center"
+                                                data-ng-switch="vm.confirm">
+
+                                                <!-- cancel btn -->
+                                                <button class="btn btn-default"
+                                                        type="button"
+                                                        data-ng-click="vm.confirm = null"
+                                                        data-ng-if="vm.confirm !== 'reinstallConfirmPending'"
+                                                        data-ng-disabled="vm.confirmLoading">
+                                                    <i class="glyphicon glyphicon-remove"></i>
+                                                    <span translate="common_cancel"></span>
+                                                </button>
+
+                                                <!-- confirm delete -->
+                                                <button class="btn btn-danger"
+                                                        data-autofocus
+                                                        type="button"
+                                                        data-ng-switch-when="deleteConfirmPending"
+                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.deleteVirtualMachine(vm)"
+                                                        data-ng-disabled="vm.confirmLoading"
+                                                        data-track-on="click"
+                                                        data-track-name="VM-Delete"
+                                                        data-track-click="action">
+                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                    <span translate="cpci_vm_delete_submit"></span>
+                                                    <div data-ng-show="vm.confirmLoading" class="text-center">
+                                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                    </div>
+                                                </button>
+
+                                                <!-- confirm reinstall -->
+                                                <div data-ng-switch-when="reinstallConfirmPending">
+                                                    <p class="text-danger">
+                                                        <i class="fa fa-exclamation-circle"></i>
+                                                        <span data-translate="cpci_vm_reinstall_warn"></span>
+                                                    </p>
+                                                    <button class="btn btn-default"
+                                                            type="button"
+                                                            data-ng-click="vm.confirm = null"
+                                                            data-ng-disabled="vm.confirmLoading">
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                        <span translate="common_cancel"></span>
+                                                    </button>
+                                                    <button class="btn btn-danger"
+                                                            data-autofocus
+                                                            type="button"
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.reinstallVirtualMachine(vm)"
+                                                            data-ng-disabled="vm.confirmLoading">
+                                                        <i class="fa fa-refresh"></i>
+                                                        <span translate="cpci_vm_reinstall_submit"></span>
+                                                    </button>
+                                                    <div data-ng-show="vm.confirmLoading" class="text-center">
+                                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                    </div>
+                                                </div>
+
+                                                <!-- confirm reboot -->
+                                                <button class="btn btn-danger"
+                                                        data-autofocus
+                                                        type="button"
+                                                        data-ng-switch-when="rebootConfirmPending"
+                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.rebootVirtualMachine(vm, 'soft')"
+                                                        data-ng-disabled="vm.confirmLoading">
+                                                    <i class="fa fa-power-off"></i>
+                                                    <span translate="cpci_vm_reboot_submit"></span>
+                                                </button>
+
+                                                <div class="text-center" data-ng-if="vm.confirmLoading">
+                                                    <oui-loader size="m" class="d-inline-block"></oui-loader>
+                                                </div>
+
+                                                <!-- confirm HARD reboot -->
+                                                <button class="btn btn-danger"
+                                                        data-autofocus
+                                                        type="button"
+                                                        data-ng-switch-when="rebootHardConfirmPending"
+                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.rebootVirtualMachine(vm, 'hard')"
+                                                        data-ng-disabled="vm.confirmLoading">
+                                                    <i class="fa fa-power-off"></i>
+                                                    <span translate="cpci_vm_reboot_submit"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- loadings -->
+                                        <div class="vm-pending-ctnr animate-fadeIn-enter animate-fadeOut-leave"
+                                             data-ng-if="(vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirm)">
+
+                                            <div class="pending-overlay"></div>
+
+                                            <div class="pending-content top-space-p8 bottom-space-p8"
+                                                 data-ng-class="{'vm-collapsed': vm.collapsed, 'vm-expanded': !vm.collapsed}"
+                                                 data-ng-switch="vm.getStatusGroup()">
+
+                                                <!-- dropdown -->
+                                                <div class="vm-actions-dropdown btn-group" data-uib-dropdown is-open="isOpen">
+
+                                                    <button type="button" class="no-style dropdown-toggle" data-uib-dropdown-toggle
+                                                            data-ng-disabled="vm.openDetail
+                                                            || ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                            || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'" write-right-required>
+                                                        <i class="glyphicon glyphicon-menu-down"></i>
+                                                    </button>
+
+                                                    <ul data-uib-dropdown-menu class="dropdown-menu" role="menu">
+                                                        <li data-ng-if="vm.status === 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
+                                                            <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.openVnc(vm)" >
+                                                                <i class="fa fa-desktop right-space-m8"></i>
+                                                                {{:: 'cpci_vm_action_vnc' | translate}}
+                                                            </button>
+                                                        </li>
+                                                        <li data-ng-if="vm.status === 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
+                                                            <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.stopRescueMode(vm, false)" class="red">
+                                                                <i class="fa fa-power-off right-space-m8"></i>
+                                                                {{'cpci_vm_action_rescue_end' | translate}}
+                                                            </button>
+                                                        </li>
+                                                        <li data-ng-if="vm.status === 'SUSPENDED' && vm.getStatusGroup() === 'OPENSTACK'">
+                                                            <button type="button"
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.resumeVirtualMachine(vm)">
+                                                                <i class="fa fa-power-off right-space-m8"></i>
+                                                                {{'cpci_vm_action_resume' | translate}}
+                                                            </button>
+                                                        </li>
+                                                        <li data-ng-if="vm.status !== 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
+                                                            <button type="button" data-ng-click="vm.confirm = 'rebootHardConfirmPending'" class="red">
+                                                                <i class="fa fa-power-off right-space-m8"></i>
+                                                                {{'cpci_vm_action_reboot_hard' | translate}}
+                                                            </button>
+                                                        </li>
+                                                        <li class="divider" data-ng-if="vm.getStatusGroup() === 'OPENSTACK'"></li>
+                                                        <li>
+                                                            <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.deleteConfirmPending(vm)" class="red">
+                                                                <i class="fa fa-trash-o right-space-m8"></i>
+                                                                {{'cpci_vm_action_delete' | translate}}
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div data-ng-switch-when="PENDING"
+                                                    class="vm-states vcenter">
+                                                    <div class="text-center">
+                                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                    </div>
+                                                    <p class="no-space text-info"
+                                                       data-translate="{{:: 'cpci_vm_' + vm.status }}"></p>
+                                                </div>
+                                                <div data-ng-switch-when="OPENSTACK"
+                                                     class="vm-states">
+                                                    <i class="ovh-font ovh-font-openstack text-warning"></i>
+                                                    <p class="no-space text-warning"
+                                                       data-translate="{{:: 'cpci_vm_' + vm.status }}"
+                                                       data-translate-values="{'msg': vm.status, 'server': vm.name, 'id': vm.id}"></p>
+                                                </div>
+                                                <div data-ng-switch-when="ERROR"
+                                                     class="vm-states">
+                                                    <i class="fa fa-heartbeat text-danger"></i>
+                                                    <p class="no-space text-danger"
+                                                       data-translate="cpci_vm_ERROR"
+                                                       data-translate-values="{'server': vm.name, 'id': vm.id}"></p>
+                                                </div>
+                                                <div data-ng-switch-default
+                                                     class="vm-states">
+                                                    <i class="fa fa-bug text-warning"></i>
+                                                    <p class="no-space text-warning"
+                                                       data-translate="cpci_vm_UNKNOWN_ERROR"
+                                                       data-translate-values="{'msg': vm.status, 'server': vm.name, 'id': vm.id}">
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- VM infos -->
+                                        <div class="vm-infos fade-transition"
+                                             data-ng-class="{'show-problem': (vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirm)}"
+                                             data-instance-id={{vm.id}}>
+
+                                            <div class="vm-display-actions clearfix">
+                                                <div class="vm-grip pull-left" data-ovh-stop-event="click">
+                                                    <i class="ovh-font ovh-font-grip vertical-middle opacity5"></i>
+                                                </div>
+
+                                                <button type="button" class="vm-collapse-button no-style pull-left" data-ovh-stop-event="click"
+                                                    data-ng-click="ComputeInfrastructureDiagramCtrl.toggleCollapsedState(vm)">
+                                                    <i class="fa fa-caret-down rotate" data-ng-class="{ 'rotate-90': vm.collapsed }"></i>
+                                                </button>
+                                            </div>
+
+                                            <!-- flavor -->
+                                            <div class="vm-flavor flavor-{{vm.flavor.type}} hidden-collapsed"
+                                                data-ng-if="vm.flavor.name">
+                                                <div class="flavor-offer-type right-space-m12">
+                                                    <i class="ovh-font {{vm.flavor.typeGeneric | infrastructureFlavor:'icon'}}"></i>
+                                                    <span translate="cpci_vm_flavor_category_{{vm.flavor.name}}" translate-default="?"></span>
+                                                </div>
+                                                <span class="flavor-offer-price right-space-m12"
+                                                    data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status !== 'ok'"
+                                                    translate="cpci_vm_flavor_price"
+                                                    translate-values="{price: vm.price.price.text || '?' }"></span>
+                                                <span class="flavor-offer-price right-space-m12"
+                                                    data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
+                                                    translate="cpci_vm_flavor_month"
+                                                    translate-values="{price: vm.price.monthlyPrice.text || '?' }"></span>
+                                                <span class="text-center" data-ng-if="vm.monthlyBilling.status === 'activationPending'">
+                                                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                </span>
+                                            </div>
+
+                                            <!-- dropdown -->
+                                            <div class="vm-actions-dropdown btn-group" data-uib-dropdown is-open="isOpen">
+                                                <button type="button" class="no-style dropdown-toggle" data-uib-dropdown-toggle
+                                                    data-ng-disabled="vm.openDetail || vm.openMonitoring
+                                                        || ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                        || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                        || ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm" write-right-required>
+                                                    <i class="glyphicon glyphicon-menu-down"></i>
+                                                </button>
+
+                                                <ul data-ng-if="vm.status === 'DRAFT'" data-uib-dropdown-menu class="dropdown-menu" role="menu">
+                                                    <li>
+                                                        <button type="button" data-ng-click="vm.confirm = 'deleteConfirmPending'" class="red">
+                                                            <i class="fa fa-trash-o right-space-m8"></i>
+                                                            {{'cpci_vm_action_delete' | translate}}
+                                                        </button>
+                                                    </li>
+                                                </ul>
+
+                                                <ul data-ng-if="vm.status !== 'DRAFT'"
+                                                    data-uib-dropdown-menu class="dropdown-menu" role="menu">
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.toggleVmEditionState(vm)">
+                                                            <i class="fa fa-edit right-space-m8"></i>
+                                                            {{'cpci_vm_action_edit' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button"
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.toggleVmEditionState(vm, 'NAME')">
+                                                            <i class="fa fa-caret-right left-space-m8 right-space-m8"></i>
+                                                            <span >{{'cpci_vm_action_edit_name' | translate}}</span>
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button"
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.toggleVmEditionState(vm, 'FLAVOR')">
+                                                            <i class="fa fa-caret-right left-space-m8 right-space-m8"></i>
+                                                            {{'cpci_vm_action_edit_type' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button"
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.toggleVmEditionState(vm, 'IMAGE')">
+                                                            <i class="fa fa-caret-right left-space-m8 right-space-m8"></i>
+                                                            {{'cpci_vm_action_edit_restaure' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.openVmMonitoringPanel(vm)">
+                                                            <i class="fa fa-search right-space-m8"></i>
+                                                            {{'cpci_vm_action_monitoring' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li data-ng-if="!vm.monthlyBilling">
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.openMonthlyConfirmation(vm)">
+                                                            <i class="fa fa-calendar right-space-m8"></i>
+                                                            {{'cpci_vm_action_monthly' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.openSnapshotWizard(vm)">
+                                                            <i class="fa fa-floppy-o right-space-m8"></i>
+                                                            {{'cpci_vm_action_create_snapshot' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.displayVmAuthInfo(vm)" >
+                                                            <i class="fa fa-key right-space-m8"></i>
+                                                            {{'cpci_vm_action_auth_info' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.openVnc(vm)" >
+                                                            <i class="fa fa-desktop right-space-m8"></i>
+                                                            {{'cpci_vm_action_vnc' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.rescueMode(vm, true)" class="red">
+                                                            <i class="fa fa-power-off right-space-m8"></i>
+                                                            {{'cpci_vm_action_rescue' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="vm.confirm = 'rebootConfirmPending'" class="red">
+                                                            <i class="fa fa-power-off right-space-m8"></i>
+                                                            {{'cpci_vm_action_reboot' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="vm.confirm = 'rebootHardConfirmPending'" class="red">
+                                                            <i class="fa fa-power-off right-space-m8"></i>
+                                                            {{'cpci_vm_action_reboot_hard' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <button type="button"
+                                                                data-ng-click="vm.confirm = 'reinstallConfirmPending'; vm.collapsed = false"
+                                                                class="red">
+                                                            <i class="fa fa-refresh right-space-m8"></i>
+                                                            {{'cpci_vm_action_reinstall' | translate}}
+                                                        </button>
+                                                    </li>
+                                                    <li>
+                                                        <button type="button" data-ng-click="ComputeInfrastructureDiagramCtrl.deleteConfirmPending(vm)" class="red">
+                                                            <i class="fa fa-trash-o right-space-m8"></i>
+                                                            {{'cpci_vm_action_delete' | translate}}
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="clearfix"
+                                                 data-responsive-popover="'app/cloud/project/compute/infrastructure/virtualMachine/addEdit/cloud-project-compute-infrastructure-virtualMachine-addEdit.html'"
+                                                 data-popover-class="cloud-popover cloud-vm-popover"
+                                                 data-popover-is-open="vm.openDetail"
+                                                 data-popover-enable="(vm.status === 'DRAFT' || vm.status === 'ACTIVE')
+                                                        && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null
+                                                        && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'"
+                                                 data-popover-placement="right"
+                                                 data-popover-append-to-body="true"
+                                                 data-popover-trigger="none">
+                                                <div class="has-monitoring-popover"
+                                                     data-responsive-popover="'app/cloud/project/compute/infrastructure/virtualMachine/monitoring/cloud-project-compute-infrastructure-virtualMachine-monitoring.html'"
+                                                     data-popover-class="cloud-popover cloud-vm-popover vm-monitoring-popover"
+                                                     data-popover-is-open="vm.openMonitoring"
+                                                     data-popover-placement="auto right"
+                                                     data-popover-append-to-body="true"
+                                                     data-popover-trigger="none"
+                                                     data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null
+                                                        && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'
+                                                        && ComputeInfrastructureDiagramCtrl.toggleVmEditionState(vm)">
+
+                                                    <h3 class="text-center word-wrap">
+                                                        <i class="ovh-font ovh-font-warning ovh-font-1x4"
+                                                           data-ng-if="(vm.monitoringData.cpu.needUpgrade || vm.monitoringData.cpu.needUpgrade) && vm.collapsed"
+                                                           data-ng-click="ComputeInfrastructureDiagramCtrl.openVmMonitoringPanel(vm)"
+                                                           data-popover-trigger="mouseenter"
+                                                           data-popover-template="'app/cloud/project/compute/infrastructure/popover/cloud-project-compute-infrastructure-cpu-ram.popover.html'">
+                                                        </i>
+                                                        {{ vm.name || '' }}
+                                                       <span data-ovh-stop-event="click">
+                                                            <i class="ovh-font ovh-font-question right-space-m4"
+                                                               data-uib-tooltip-html="'cpci_vm_nova_id' | translate:{id: vm.id}"
+                                                               data-tooltip-placement="top"
+                                                               data-tooltip-trigger="click outsideClick">
+                                                            </i>
+                                                        </span>
+                                                        <span class="vm-region-id" data-ng-if="vm.collapsed">{{ vm.region || '' }}</span>
+                                                        <span class="text-danger" data-ng-if="vm.status === 'DRAFT'">(draft)</span>
+                                                    </h3>
+
+                                                    <span class="vm-region"
+                                                          data-ng-if="!vm.collapsed">{{ComputeInfrastructureDiagramCtrl.getTranslatedRegion(vm.region)}}
+                                                    </span>
+
+                                                    <div class="vm-network" data-ng-if="vm.status !== 'DRAFT'">
+                                                        <div class="vm-connection-management" data-ovh-stop-event="click">
+                                                            <div class="vm-port"
+                                                                id="{{ vm.id }}"
+                                                                data-jsplumb-endpoint
+                                                                data-jsplumb-endpoint-source-options="ComputeInfrastructureDiagramCtrl.vmSourceDrawOptions"
+                                                                data-jsplumb-endpoint-target-options="ComputeInfrastructureDiagramCtrl.vmTargetDrawOptions"
+                                                                data-jsplumb-endpoint-enabled="{{ vm.status === 'ACTIVE' && !vm.openDetail && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox' && !ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.isManual }}"
+                                                                data-jsplumb-endpoint-connection-ids="{{ vm.routedTo }}">
+                                                                <div class="port-inner" write-right-required></div>
+                                                            </div>
+
+                                                            <flat-checkbox data-ng-if="
+                                                                vm.status === 'ACTIVE' && (
+                                                                    (ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.isManual
+                                                                     && ComputeInfrastructureDiagramCtrl.getVmContinent(vm) === ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.continentCode)
+                                                                    || (ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                                        && ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm.id != vm.id
+                                                                        && ComputeInfrastructureDiagramCtrl.volumeEdit.volume.region === vm.region)
+                                                                )">
+                                                                <input type="radio"
+                                                                    id="vm-connection-check-{{ vm.id }}"
+                                                                    data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.isManual"
+                                                                    name="myInputName"
+                                                                    data-ng-value="vm.id"
+                                                                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm"
+                                                                    data-ng-model="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectionVmId"
+                                                                    data-ng-change="ComputeInfrastructureDiagramCtrl.ipEdit.attach.changeRadioConnection(vm)"/>
+
+                                                                <input type="radio"
+                                                                    data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'"
+                                                                    id="vm-connection-check-{{ vm.id }}"
+                                                                    name="myInputName"
+                                                                    data-ng-value="vm"
+                                                                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm"
+                                                                    data-ng-model="ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm"/>
+                                                            </flat-checkbox>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- footer -->
+                                                <div class="vm-footer">
+                                                    <div class="vm-private-ip"
+                                                         data-ng-if="ComputeInfrastructureDiagramCtrl.hasPrivateIp(vm) && !vm.collapsed"
+                                                         data-translate="cpci_vm_private_ip_list" data-translate-values="{privateAddresses: ComputeInfrastructureDiagramCtrl.getVirtualMachinePrivateAddresses(vm).join(', ')}">
+                                                    </div>
+                                                    <div class="vm-hardware-detail hidden-collapsed clearfix has-monitoring-popover">
+                                                        <div class="vm-stat stat-core col-xs-4 text-center no-space"
+                                                             data-ng-if="vm.monitoringData.cpu.needUpgrade"
+                                                             data-ng-click="ComputeInfrastructureDiagramCtrl.openVmMonitoringPanel(vm)"
+                                                             data-popover-trigger="mouseenter"
+                                                             data-popover-popup-delay="1"
+                                                             data-popover-template="'app/cloud/project/compute/infrastructure/popover/cloud-project-compute-infrastructure-cpu.popover.html'">
+                                                            <i class="ovh-font ovh-font-warning fs14 right-space-m4"></i>
+                                                            <span data-translate="cpci_vm_vcpus_number"
+                                                                  data-translate-values="{ vcpus : vm.flavor.vcpus || '?' }">
+                                                            </span>
+                                                        </div>
+                                                        <div class="vm-stat stat-core col-xs-4 text-center"
+                                                             data-ng-if="!vm.monitoringData.cpu.needUpgrade">
+                                                            <span data-translate="cpci_vm_vcpus_number"
+                                                                  data-translate-values="{ vcpus : vm.flavor.vcpus || '?' }">
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="vm-stat stat-ram col-xs-4 text-center no-space"
+                                                             data-ng-click="ComputeInfrastructureDiagramCtrl.openVmMonitoringPanel(vm)"
+                                                             data-ng-if="vm.monitoringData.mem.needUpgrade"
+                                                             data-popover-trigger="mouseenter"
+                                                             data-popover-popup-delay="1"
+                                                             data-popover-template="'app/cloud/project/compute/infrastructure/popover/cloud-project-compute-infrastructure-ram.popover.html'">
+                                                            <i class="ovh-font ovh-font-warning fs14 right-space-m4"></i>
+                                                            <span data-translate="cpci_vm_ram_amount"
+                                                                  data-translate-values="{ ram : (vm.flavor.ram * ComputeInfrastructureDiagramCtrl.conversion.MEGABYTE_TO_BYTE | bytes) }">
+                                                            </span>
+                                                        </div>
+                                                        <div class="vm-stat stat-ram col-xs-4 text-center"
+                                                             data-ng-if="!vm.monitoringData.mem.needUpgrade">
+                                                            <span data-translate="cpci_vm_ram_amount"
+                                                                  data-translate-values="{ ram : (vm.flavor.ram * ComputeInfrastructureDiagramCtrl.conversion.MEGABYTE_TO_BYTE | bytes) }">
+                                                            </span>
+                                                        </div>
+                                                        <div class="vm-stat stat-disk col-xs-4 text-center"
+                                                            data-translate="cpci_vm_disk_amount"
+                                                            data-translate-values="{ disk : (vm.flavor.disk | bytes:2:true:'GiB') }">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="volume-content-linked"
+                                                        data-ng-class="{
+                                                            hasCurrentDroppableVolume : ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region === vm.region && vm.getStatusGroup() === 'ACTIVE',
+                                                            opacity5 : ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region !== vm.region
+                                                        }">
+
+                                                        <div class="volume-detail clearfix"
+                                                            data-ng-show="(vm.collapsedVolumes && !vm.collapsed)
+                                                                || (vm.collapsedVolumes && vm.collapsed && ComputeInfrastructureDiagramCtrl.volumes[vm.id].length)
+                                                                || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id">
+                                                            <ul class="volume-content-linked-items clearfix volume-content-linked-items-{{vm.id}}">
+
+                                                                <li data-uib-tooltip="{{ volume.name + ' (' + volume.region + ')' }}" tooltip-placement="top"
+                                                                    data-highlighed-element="{{volume.id}}"
+                                                                    class="volume-detail-item volume-detail-item-{{vm.region}} highlighed-element"
+                                                                    data-draggable
+                                                                    data-draggable-options="{{ComputeInfrastructureDiagramCtrl.draggableOptions.linked}}"
+                                                                    data-draggable-info="{'volume':{{volume}}, 'srcVmId':'{{vm.id}}'}"
+                                                                    data-draggable-id="{{volume.id}}"
+                                                                    data-draggable-src-cloned-class="volume-detail-item-helper"
+                                                                    data-draggable-disabled="{{volume.getStatusGroup() !== 'ACTIVE'
+                                                                        || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                                        || ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                                        || volume.openDetail
+                                                                        || vm.openDetail}}"
+                                                                    data-ng-repeat="volume in ComputeInfrastructureDiagramCtrl.volumes[vm.id]"
+                                                                    data-ng-class="{'visibility-hide' : !ComputeInfrastructureDiagramCtrl.dragDropHelper.draggingIsDoing && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.id === volume.id}">
+
+                                                                    <div class="volume-detail-item-illustration"
+                                                                        data-responsive-popover="'app/cloud/project/compute/infrastructure/volume/addEdit/cloud-project-compute-infrastructure-volume-addEdit.html'"
+                                                                        data-popover-class="cloud-popover cloud-vm-popover-volume"
+                                                                        data-popover-is-open="volume.openDetail"
+                                                                        data-popover-enable="
+                                                                            ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null
+                                                                            && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'
+                                                                            && (volume.getStatusGroup() === 'ACTIVE' || volume.getStatusGroup() === 'DRAFT')
+                                                                            && !vm.openDetail"
+                                                                        data-popover-placement="right"
+                                                                        data-popover-append-to-body="true"
+                                                                        data-popover-trigger="none"
+                                                                         data-ng-click="
+                                                                            ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null
+                                                                            && ComputeInfrastructureDiagramCtrl.volumeEdit.action !== 'moveCheckbox'
+                                                                            && (volume.getStatusGroup() === 'ACTIVE' || volume.getStatusGroup() === 'DRAFT')
+                                                                            && !vm.openDetail
+                                                                            && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume)">
+                                                                        <div data-ng-class="{'opacity2' : volume.getStatusGroup() !== 'ACTIVE'}">
+                                                                            <div data-ng-if="volume.type==='high-speed'">
+                                                                                <i class="ovh-font ovh-font-harddiskspeed"></i>
+                                                                            </div>
+                                                                            <div data-ng-if="volume.type==='classic'" style="padding-top:5px;">
+                                                                                <i class="ovh-font ovh-font-harddisk"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="text-center" data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'">
+                                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="volume-detail-item-info">
+                                                                        <div class="btn-group" data-uib-dropdown is-open="isopen">
+                                                                            <button type="button" class="no-style no-space" data-uib-dropdown-toggle
+                                                                                data-ng-disabled="
+                                                                                    ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                                                    || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
+                                                                                    || (volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT')
+                                                                                    || (ComputeInfrastructureDiagramCtrl.volumeEdit && ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'remove')
+                                                                                    || vm.openDetail
+                                                                                    || vm.openMonitoring
+                                                                                    || volume.openDetail
+                                                                                ">
+                                                                                <i data-ng-if="volume.bootable"
+                                                                                    title="{{:: 'common_disk_bootable' | translate}}"
+                                                                                    class="ovh-font ovh-font-bootDisk"></i>
+                                                                                <span>{{volume.size | bytes:2:true:'GiB'}}</span>
+                                                                                <i class="glyphicon glyphicon-menu-down" write-right-required></i>
+                                                                            </button>
+                                                                            <ul data-uib-dropdown-menu class="dropdown-menu" role="menu" write-right-required>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit.moveCheckbox.launchConfirm(volume, vm)">
+                                                                                        <i class="fa fa-exchange right-space-m8"></i>
+                                                                                        {{'cpci_volume_move' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit.move.launchConfirm(volume, vm)">
+                                                                                        <i class="fa fa-chain-broken right-space-m8"></i>
+                                                                                        {{'cpci_volume_detach' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="divider"></li>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume)">
+                                                                                        <i class="fa fa-edit right-space-m8"></i>
+                                                                                        {{'cpci_vm_action_edit' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume, 'NAME')">
+                                                                                        <i class="fa fa-caret-right right-space-m8 left-space-m8"></i>
+                                                                                        {{'cpci_vm_action_edit_name' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null && ComputeInfrastructureDiagramCtrl.toggleVolumeEditionState(volume, 'SIZE')">
+                                                                                        <i class="fa fa-caret-right right-space-m8 left-space-m8"></i>
+                                                                                        {{'cpci_vm_action_edit_size' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <button type="button"
+                                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.openVolumeSnapshotWizard(volume)">
+                                                                                        <i class="fa fa-floppy-o right-space-m8"></i>
+                                                                                        {{'cpci_volume_action_backup' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="divider"></li>
+                                                                                <li>
+                                                                                    <button type="button" class="red"
+                                                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit.remove.launchConfirm(volume)">
+                                                                                        <i class="fa fa-trash-o right-space-m8"></i>
+                                                                                        {{'cpci_volume_delete' | translate}}
+                                                                                    </button>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li class="volume-detail-item opacity4"
+                                                                    data-ng-show="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id
+                                                                        && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.srcVmId !== vm.id">
+                                                                    <div>
+                                                                        <div data-ng-if="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.type==='high-speed'">
+                                                                            <i class="ovh-font ovh-font-harddiskspeed"></i>
+                                                                        </div>
+                                                                        <div data-ng-if="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.type==='classic'" style="padding-top:5px;">
+                                                                            <i class="ovh-font ovh-font-harddisk"></i>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="volume-detail-item-info">
+                                                                        <span>{{ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.size | bytes:2:true:'GiB'}}</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="volume-resume" data-ng-style="(vm.collapsedVolumes || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id) && {'border-top' : 'none'}"
+                                                            data-ng-show="!vm.collapsed
+                                                                || (vm.collapsed && ComputeInfrastructureDiagramCtrl.volumes[vm.id].length)
+                                                                || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id">
+                                                            <button type="button" class="vm-collapse-button no-style"
+                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.toggleCollapsedVolumes(vm)">
+                                                                <span data-ng-hide="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region !== vm.region">
+                                                                    <i class="fa fa-caret-right rotate right-space-m8" data-ng-class="{ 'rotate-90': vm.collapsedVolumes || ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDroppableVmId === vm.id }"></i>
+                                                                    <span translate="cpci_volume_number_attach_zero" data-ng-if="!ComputeInfrastructureDiagramCtrl.volumes[vm.id].length"></span>
+                                                                    <span translate="cpci_volume_number_attach_one" data-ng-if="ComputeInfrastructureDiagramCtrl.volumes[vm.id].length === 1"></span>
+                                                                    <span translate="cpci_volume_number_attach_other" data-translate-values="{nbVolume: ComputeInfrastructureDiagramCtrl.volumes[vm.id].length}" data-ng-if="ComputeInfrastructureDiagramCtrl.volumes[vm.id].length > 1"></span>
+                                                                </span>
+                                                                <span data-ng-show="ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume && ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region !== vm.region"
+                                                                    translate="cpci_volume_impossible_attach"></span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IPs -->
+                <div class="col-xs-4 pull-right">
+
+                    <div id="infra-ips-ctnr">
+
+                        <div class="header">
+                            <h1>{{ 'cpci_public_network'|translate }} <small>- {{ 'cpci_internet'|translate }}</small></h1>
+                            <div class="public-network-hline-title"></div>
+                        </div>
+
+                        <div class="infra-ips-list-ctnr">
+
+                            <div class="ipautosort clearfix" data-ng-if="ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.sortedKeys.length > 0">
+                                <button class="pull-right no-style"
+                                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.sort.ipAutoSort"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.toggleIpSort()">{{ 'cloud_ip_action_automatic' | translate }}
+                                </button>
+                                <flat-switch class="pull-right">
+                                    <input id="autoSortInput" type="checkbox"
+                                           data-ng-click="ComputeInfrastructureDiagramCtrl.toggleIpSort()"
+                                           data-ng-checked="ComputeInfrastructureDiagramCtrl.sort.ipAutoSort">
+                                </flat-switch>
+                                <button class="pull-right no-style"
+                                        data-ng-disabled="!ComputeInfrastructureDiagramCtrl.sort.ipAutoSort"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.toggleIpSort()">{{ 'cloud_ip_action_manual' | translate }}
+                                </button>
+                                <label for="autoSortInput" class="pull-right">
+                                    {{ 'cloud_ip_action_sort' | translate }} :
+                                </label>
+                            </div>
+
+                            <!-- IPFO Import pending... -->
+                            <div class="ip ip-failover ip-failover-import no-select fade-transition"
+                                data-ng-show="ComputeInfrastructureDiagramCtrl.importedIpFailoverPending.length > 0"
+                                data-instance-id="{{:: ip.routedTo }}"
+                                data-ng-mouseenter="ComputeInfrastructureDiagramCtrl.highlightInstanceAndPublicIP($event)"
+                                data-ng-mouseleave="ComputeInfrastructureDiagramCtrl.removeAllFades()">
+
+                                <div class="ip-content clearfix animate-fadeIn-enter animate-fadeOut-leave"
+                                    data-ng-if="ComputeInfrastructureDiagramCtrl.importedIpFailoverPending.length">
+
+                                    <div class="pull-left text-right left-space-m16">
+                                        {{ComputeInfrastructureDiagramCtrl.importedIpFailoverPending.length}}x
+                                        {{ 'cloud_public_ip_failover' | translate }}
+                                    </div>
+
+                                    <!-- IP infos -->
+                                    <span class="ip-text">
+                                        {{ :: 'cpci_ipfo_importing' | translate }}
+                                    </span>
+                                    <span class="pull-right right-space-m8">
+                                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- IPS: list of IPs (sortable) -->
+                            <div class="ip-block" data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.ips"
+                                data-ui-sortable="ComputeInfrastructureDiagramCtrl.ipSortableOptions"
+                                data-ng-model="ComputeInfrastructureDiagramCtrl.infra.internet.ipList.sortedKeys">
+
+                                <!-- IP LIST -->
+                                <div data-ng-repeat="ip in ComputeInfrastructureDiagramCtrl.infra.internet.ipList.getItems() | orderBy:[ComputeInfrastructureDiagramCtrl.ipAutoSort, ComputeInfrastructureDiagramCtrl.ipSortNatural] track by ip.id">
+                                    <div class="ip highlighed-element ip-{{::ip.type}} fade-transition"
+                                         data-highlighed-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}"
+                                         data-ng-class="{'sortable-disabled': !!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit || ComputeInfrastructureDiagramCtrl.sort.ipAutoSort}"
+                                         data-instance-id="{{:: ip.routedTo }}"
+                                         data-ng-mouseenter="ComputeInfrastructureDiagramCtrl.highlightInstanceAndPublicIP($event)"
+                                         data-ng-mouseleave="ComputeInfrastructureDiagramCtrl.removeAllFades()">
+                                            <!-- IP content -->
+                                        <div class="ip-content clearfix">
+
+                                            <div class="ip-grip no-select" data-ng-if="!ComputeInfrastructureDiagramCtrl.sort.ipAutoSort">
+                                                <i class="ovh-font ovh-font-grip vertical-middle opacity5"></i>
+                                            </div>
+
+                                            <!-- dropdown ip actions -->
+                                            <ip-dropdown
+                                                data-ip="ip" data-user="ComputeInfrastructureDiagramCtrl.user"
+                                                data-infra="ComputeInfrastructureDiagramCtrl.infra"
+                                                data-on-failover-attach="ComputeInfrastructureDiagramCtrl.ipEdit.attach.button(ip)"
+                                                data-is-disabled="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit !== null
+                                                                    || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'"
+                                                ip-access-key="'ip'">
+                                            </ip-dropdown>
+                                            <span class="ip-spinner text-center" data-ng-if="ip.status !== 'ok'">
+                                                <oui-loader data-ng-if="ip.type === 'failover'" size="s" class="d-inline-block"></oui-loader>
+                                                <oui-loader data-ng-if="ip.type !== 'failover'" size="s" class="d-inline-block"></oui-loader>
+                                            </span>
+
+                                            <!-- flag -->
+                                            <span class="label ip-geoloc pull-left fs11" data-ng-if="ip.type === 'failover'">
+                                                <span class="right-space-m4">{{ :: 'cloud_public_ip_failover' | translate }} {{ ip.subType }}</span>
+                                                <span data-ng-if="ip.geoloc">{{ ip.geoloc }}</span>
+                                            </span>
+
+                                            <!-- IP infos -->
+                                            <span class="ip-text" data-ng-if="ip.ip">
+                                                <i class="fa fa-info-circle right-space-m4"
+                                                    data-ng-if="ip.reverse"
+                                                    data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse.text(ip) }}"
+                                                    data-tooltip-placement="top"></i>
+                                                {{ ip.ip }}
+                                            </span>
+
+                                            <div class="public-network-hline-ip"></div>
+                                        </div>
+
+                                        <div class="ip-connection-management">
+                                            <div class="ip-port" id="{{ ip.id }}"
+                                                data-jsplumb-endpoint
+                                                data-jsplumb-endpoint-source-options="ComputeInfrastructureDiagramCtrl.ipSourceDrawOptions"
+                                                data-jsplumb-endpoint-target-options="ComputeInfrastructureDiagramCtrl.ipTargetDrawOptions"
+                                                data-jsplumb-endpoint-connection-ids="{{ ip.routedTo }}"
+                                                data-jsplumb-endpoint-enabled="{{ ip.type !== 'public' && ip.status === 'ok' }}">
+                                                <div class="port-inner"
+                                                    data-ng-class="{ pointer : ip.status === 'ok' }"
+                                                    data-ng-hide="ip.type === 'public'"
+                                                    write-right-required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-ng-if="ip.ipV6" class="ip ipV6 highlighed-element fade-transition"
+                                         data-highlighed-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}"
+                                         data-instance-id="{{:: ip.routedTo }}">
+                                        <div class="ip-content clearfix">
+                                            <span class="ip-text" data-ng-if="ip.ip">
+                                                <i class="fa fa-info-circle right-space-m4"
+                                                    data-ng-if="ip.reverse"
+                                                    data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse.text(ip) }}"
+                                                    data-tooltip-placement="top"></i>
+                                                {{ ip.ipV6.ip }}
+                                                <i class="ovh-font ovh-font-question right-space-m4"
+                                                   data-uib-tooltip="{{:: 'cloud_public_ip_v6_gateway' | translate:{ gateway: ip.ipV6.gateway } }}"
+                                                   data-tooltip-placement="left"
+                                                   data-tooltip-trigger="click outsideClick">
+                                                </i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="public-network-vline-right"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
+        data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit">
+
+        <div class="text-center" data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm">
+            <oui-loader size="m" class="d-inline-block"></oui-loader>
+        </div>
+
+        <div class="row" dat-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm">
+
+            <p class="validator-text"
+               data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connection && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.routedTo.length > 0"
+               data-translate="cpci_confirm_attach_question"
+               data-translate-values="{ ip : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.ip, futurInstanceAttach : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedVm.name, currentInstanceAttach : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedVmCurrent.name }">
+            </p>
+
+            <p class="validator-text"
+               data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connection && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.routedTo.length === 0"
+               data-translate="cpci_confirm_floating_attach_question"
+               data-translate-values="{ ip : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.ip, futurInstanceAttach : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedVm.name}">
+            </p>
+
+            <p class="validator-text"
+               data-ng-if="!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connection"
+               data-translate="cpci_ipfo_attach_question"
+               data-translate-values="{ ip : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.ip }">
+            </p>
+
+            <p class="validator-text"
+                data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.action === 'detach'"
+                data-translate="{{'cpci_confirm_detach_question'}}"
+                data-translate-values="{ ip : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.ip, instance : ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedVm.name }">
+            </p>
+
+            <div class="col-md-4 col-md-offset-2">
+                <button class="btn btn-lg btn-action btn-default bottom-space-m4"
+                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm"
+                    data-ng-click="ComputeInfrastructureDiagramCtrl.ipEdit[ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.action].cancel()">
+                    {{ 'common_cancel' | translate }}
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-lg btn-action btn-primary"
+                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm
+                        || (ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.isManual
+                            && (ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectionCurrentVmId === ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectionVmId))"
+                    data-ng-click="ComputeInfrastructureDiagramCtrl.ipEdit[ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.action].confirm()">
+                    {{ 'cpci_confirm_' + ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.action + '_button' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
+        data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action">
+
+        <div class="text-center" data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm">
+            <oui-loader size="s" class="d-inline-block"></oui-loader>
+        </div>
+
+        <div class="row" data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm">
+
+            <p class="validator-text"
+                data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'move' && !ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm"
+                data-translate="{{'cpci_volume_confirm_detach_question'}}"
+                data-translate-values="{
+                    volume : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name,
+                    srcVm  : ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm.name
+                }">
+            </p>
+
+            <p class="validator-text"
+                data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'move' && ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm"
+                data-translate="{{'cpci_volume_confirm_move_question'}}"
+                data-translate-values="{
+                    volume   : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name,
+                    srcVm    : ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm.name,
+                    targetVm : ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm.name
+                }">
+            </p>
+
+            <p class="validator-text"
+                data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'remove'"
+                data-translate="{{'cpci_volume_confirm_remove_question'}}"
+                data-translate-values="{
+                    volume   : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name
+                }">
+            </p>
+
+            <p class="validator-text"
+                data-ng-if="ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'">
+                <span data-ng-show="ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].isInvalid()"
+                    data-translate="{{'cpci_volume_moveCheckbox_question_invalid'}}"
+                    data-translate-values="{
+                        volume   : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name
+                    }"></span>
+                <span data-ng-show="!ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].isInvalid() && ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm"
+                    data-translate="{{'cpci_volume_confirm_move_question'}}"
+                    data-translate-values="{
+                        volume   : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name,
+                        srcVm    : ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm.name,
+                        targetVm : ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm.name
+                    }"></span>
+                <span data-ng-show="!ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].isInvalid() && !ComputeInfrastructureDiagramCtrl.volumeEdit.srcVm"
+                    data-translate="{{'cpci_volume_moveCheckbox_question_valid'}}"
+                    data-translate-values="{
+                        volume   : ComputeInfrastructureDiagramCtrl.volumeEdit.volume.name,
+                        targetVm : ComputeInfrastructureDiagramCtrl.volumeEdit.targetVm.name
+                    }"></span>
+            </p>
+
+            <div class="col-md-4 col-md-offset-2">
+                <button class="btn btn-lg btn-action btn-default bottom-space-m4"
+                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm"
+                    data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].cancel()">
+                    {{ 'common_cancel' | translate }}
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-lg btn-action btn-primary"
+                    data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm || ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].isInvalid()"
+                    data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].confirm(); ComputeInfrastructureDiagramCtrl.forceRefreshLinks()">
+                    {{ 'cpci_volume_confirm_' + ComputeInfrastructureDiagramCtrl.volumeEdit.action + '_button' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view="cloudProjectInfrastructureModal"></div>
