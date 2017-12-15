@@ -37,6 +37,9 @@ class VpsOrderVeeamCtrl {
 
     $onInit () {
         this.previousState = this.CloudNavigation.getPreviousState();
+        this.VpsService.canOrderOption(this.serviceName, "automatedBackup").catch(() => {
+            this.CloudMessage.error(this.$translate.instant("vps_tab_VEEAM_dashboard_veeam_unavailable"));
+        });
     }
 
     orderOption () {
