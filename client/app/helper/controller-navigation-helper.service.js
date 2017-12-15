@@ -8,6 +8,10 @@ class ControllerNavigationHelper {
 
     getUrl (pageId, params) {
         let url = this.REDIRECT_URLS[pageId];
+        if (!url) {
+            return null;
+        }
+
         _.forEach(_.keys(params), key => {
             url = url.replace(`{${key}}`, params[key]);
         });
