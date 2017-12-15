@@ -1,6 +1,8 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+    constructor ($filter, $q, $state, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
         this.$filter = $filter;
+        this.$q = $q;
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
@@ -15,6 +17,7 @@ class VpsDashboardCtrl {
 
         this.loaders = {
             init: false,
+            disk: false,
             ip: false,
             summary: false,
             plan: false,
@@ -94,7 +97,26 @@ class VpsDashboardCtrl {
     hasAdditionalDisk () {
         this.VpsService.hasAdditionalDiskOption(this.serviceName)
             .then(() => { this.hasAdditionalDisk = true; })
-            .catch(() => { this.hasAdditionalDisk = false; });
+            .catch(() => { this.hasAdditionalDisk = false; })
+            .finally(() => this.loadAdditionalDisks());
+    }
+
+    loadAdditionalDisks () {
+        this.loaders.disk = true;
+        this.VpsService.getDisks(this.serviceName)
+            .then(data => {
+                const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(this.serviceName, elem) });
+                return this.$q.all(promises)
+                    .then(data => {
+                        this.additionnalDisks = this.VpsService.showOnlyAdditionalDisk(data);
+                        this.canOrderDisk = _.isEmpty(this.additionnalDisks);
+                    });
+            })
+            .catch(error => {
+                this.CloudMessage.error(error || this.$translate.instant("vps_additional_disk_info_fail"));
+                return this.$q.reject(error);
+            })
+            .finally(() => { this.loaders.disk = false });
     }
 
     snapshotOption () {
@@ -167,11 +189,16 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring),
                 isAvailable: () => !this.loaders.init
             },
+            // orderAdditionalDiskOption: {
+            //     text: this.$translate.instant("vps_additional_disk_add_button"),
+            //     state: "iaas.vps.detail.additional-disk.order",
+            //     stateParams: { serviceName: this.serviceName },
+            //     isAvailable: () => !this.loaders.disk && this.canOrderDisk
+            // },
             orderAdditionalDiskOption: {
-                text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.additional-disk.order",
-                stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.init
+                text: this.$translate.instant("vps_additional_disk_add_button"),
+                callback: () => this.$state.go("iaas.vps.detail.additional-disk.order"),
+                isAvailable: () => !this.loaders.disk && this.canOrderDisk
             },
             orderWindows: {
                 text: this.$translate.instant("common_order"),
@@ -210,7 +237,7 @@ class VpsDashboardCtrl {
             terminateAdditionalDiskOption:  {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
                 callback: () => this.VpsActionService.terminateAdditionalDiskOption(this.serviceName),
-                isAvailable: () => !this.loaders.init
+                isAvailable: () => !this.loaders.disk && !this.canOrderDisk
             },
             terminateWindows: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
