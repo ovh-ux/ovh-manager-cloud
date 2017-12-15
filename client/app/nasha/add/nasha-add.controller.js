@@ -168,7 +168,7 @@ class NashaAddCtrl {
         this.messageHandler = this.CloudMessage.subscribe(stateName, {
             onMessage: () => this.refreshMessage()
         });
-        this.CloudMessage.info(this.$translate.instant("nasha_order_datacenter_unavailable", { region: this.$translate.instant("nasha_order_datacenter_gra") }));
+        this.CloudMessage.info(this.$translate.instant("nasha_order_datacenter_unavailable", { region: this.$translate.instant("nasha_order_datacenter_gra"), fallback: this.$translate.instant("nasha_order_datacenter_rbx") }));
     }
 
     refreshMessage () {
