@@ -1,5 +1,5 @@
 class IpLoadBalancerHomeCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage,
+    constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerMetricsService,
                  REDIRECT_URLS) {
@@ -8,6 +8,7 @@ class IpLoadBalancerHomeCtrl {
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.IpLoadBalancerActionService = IpLoadBalancerActionService;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
@@ -117,7 +118,7 @@ class IpLoadBalancerHomeCtrl {
             manageContact: {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
-                isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
+                isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage") && !this.subscription.loading && !this.subscription.hasErrors
             }
         };
     }

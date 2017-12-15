@@ -134,18 +134,18 @@ angular.module("managerApp")
                     <div class="oui-action-menu">
                         <div class="oui-action-menu__item oui-action-menu-item" data-ng-repeat="action in $ctrl.actions track by $index">
                             <div class="oui-action-menu-item__icon"></div>
-                            <a class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.href"
+                            <a class="oui-button oui-button_link oui-action-menu-item__label" 
+                                data-ng-if="action.href && (!action.isAvailable || action.isAvailable())"
                                 href="{{ action.href }}"
-                                data-ng-disabled="action.isAvailable && !action.isAvailable()"
                                 target="_blank">
                                 <span data-ng-bind="action.text"></span>
                             </a>
-                            <a class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.state"
-                                data-ui-sref="{{ action.state + '(' + $ctrl.getActionStateParamString(action) + ')' }}"
-                                data-ng-disabled="action.isAvailable && !action.isAvailable()">
+                            <a class="oui-button oui-button_link oui-action-menu-item__label" 
+                                data-ng-if="action.state && (!action.isAvailable || action.isAvailable())"
+                                data-ui-sref="{{ action.state + '(' + $ctrl.getActionStateParamString(action) + ')' }}">
                                 <span data-ng-bind="action.text"></span>
                             </a>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.callback"
+                            <button class="oui-button oui-button_link oui-action-menu-item__label" data-ng-if="action.callback || (action.isAvailable && !action.isAvailable())"
                                 type="button"
                                 data-ng-disabled="action.isAvailable && !action.isAvailable()"
                                 data-ng-bind="action.text"
@@ -173,24 +173,22 @@ angular.module("managerApp")
         scope: true,
         template: `
             <div>
-                <button data-ng-if="$ctrl.action.callback"
+                <button data-ng-if="action.callback || (action.isAvailable && !action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
                     data-ng-click="$ctrl.action.callback()"
                     data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                 </button>
-                <a data-ng-if="$ctrl.action.state"
+                <a data-ng-if="action.state && (!action.isAvailable || action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
-                    data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}"
-                    data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
+                    data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                 </a>
-                <a data-ng-if="$ctrl.action.href"
+                <a data-ng-if="action.href && (!action.isAvailable || action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button" 
-                    data-ng-href="{{ $ctrl.action.href }}"
-                    data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
+                    data-ng-href="{{ $ctrl.action.href }}">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                 </a>

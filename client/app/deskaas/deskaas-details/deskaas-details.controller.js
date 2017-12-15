@@ -2,7 +2,7 @@
 
 angular.module("managerApp").controller("DeskaasDetailsCtrl",
     function (OvhApiDeskaasService, $stateParams, $scope, ControllerHelper, CloudMessage, $translate, $state, $q, DESKAAS_ACTIONS, $uibModal,
-              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu) {
+              OvhApiMe, deskaasSidebar, DeskaasService, DESKAAS_REFERENCES, SidebarMenu, FeatureAvailabilityService) {
 
     var self = this;
 
@@ -62,7 +62,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         manageContact: {
             text: $translate.instant("common_manage"),
             href: ControllerHelper.navigation.getUrl("contacts", { serviceName: $stateParams.serviceName }),
-            isAvailable: () => true
+            isAvailable: () => FeatureAvailabilityService.hasFeature("CONTACTS", "manage")
         }
     };
 

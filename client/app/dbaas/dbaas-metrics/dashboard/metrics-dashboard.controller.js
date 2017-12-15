@@ -1,6 +1,7 @@
 (() => {
     class MetricsDashboardCtrl {
-        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, MetricService, METRICS_ENDPOINTS, RegionService, SidebarMenu) {
+        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, FeatureAvailabilityService, MetricService, METRICS_ENDPOINTS, RegionService,
+                     SidebarMenu) {
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.$q = $q;
@@ -8,6 +9,7 @@
             this.serviceName = $stateParams.serviceName;
             this.ControllerHelper = ControllerHelper;
             this.CloudMessage = CloudMessage;
+            this.FeatureAvailabilityService = FeatureAvailabilityService;
             this.MetricService = MetricService;
             this.graphs = METRICS_ENDPOINTS.graphs;
             this.RegionService = RegionService;
@@ -92,7 +94,7 @@
                 contacts: {
                     text: this.$translate.instant("common_manage"),
                     href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
-                    isAvailable: () => true
+                    isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage")
                 }
             };
         }
