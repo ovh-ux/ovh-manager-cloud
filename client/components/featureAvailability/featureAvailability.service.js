@@ -91,6 +91,11 @@
             sidebarMenu: {
                 EU: ["FR"]
             }
+        },
+        CONTACTS: {
+            manage: {
+                EU: allEuropeanSubsidiaries
+            }
         }
     };
 
