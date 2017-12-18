@@ -810,7 +810,7 @@ angular.module("managerApp").service("VpsService", [
         this.getOptionSnapshotFormated = function (serviceName, vps) {
             if (vps.version === "_2015_V_1" && vps.offerType === "SSD") {
                 return this.getOptionSnapshot(vps)
-                    .then(d => this.getOptionDetails2('snapshot', vps, d.data[0]))
+                    .then(d => this.getOptionDetails2("snapshot", vps, d.data[0]))
                     .then(data => {
                             return {
                                 unitaryPrice: data[0].data.text,
@@ -820,9 +820,9 @@ angular.module("managerApp").service("VpsService", [
                             }
                         });
             } else {
-                return this.getOptionDetails(serviceName, 'snapshot').then(data => data.results[0]);
+                return this.getOptionDetails(serviceName, "snapshot").then(data => data.results[0]);
             }
-        }
+        };
 
         // HOT FIX remove this fukin shit
         this.getPriceOptions = function (vps) {
@@ -1153,18 +1153,21 @@ angular.module("managerApp").service("VpsService", [
         };
 
         // Additional disks ------------------------------------------------------------------------------------
-        this.hasAdditionalDiskOption = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
+        this.hasAdditionalDiskOption = serviceName => {
+            return this.getSelectedVps(serviceName).then(vps => {
                 if (!_.include(vps.availableOptions, "ADDITIONAL_DISK")) {
                     return $q.reject(additionalDiskHasNoOption);
                 }
-                return $http.get([swsOrderProxypass, vps.name].join("/")).then(function (response) {
-                    if (_.include(response.data, "additionalDisk")) {
-                        return response.data;
-                    } else {
-                        return $q.reject(additionalDiskHasNoOption);
-                    }
-                });
+                return this.canOrderOption(serviceName, "additionalDisk");
+            });
+        };
+
+        this.canOrderOption = (serviceName, optionName) => {
+            return $http.get([swsOrderProxypass, serviceName].join("/")).then(response => {
+                if (_.include(response.data, optionName)) {
+                    return response.data;
+                }
+                return $q.reject(additionalDiskHasNoOption);
             });
         };
 
