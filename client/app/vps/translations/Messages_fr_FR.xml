@@ -2,7 +2,7 @@
 <translations>
 
    <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
-   <translation id="vps_order_windows_step1_title">Selection de la durée</translation>
+   <translation id="vps_order_windows_step1_title">Sélection de la durée</translation>
    <translation id="vps_order_windows_step2_title">Acceptation des conditions d'utilisation</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Récapitulatif</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Cette option vous permettera d'installer une OS de type windows sur votre vps.</translation>
@@ -105,6 +105,8 @@
    <translation id="vps_dashboard_distribution" qtlid="122359">OS / Distribution</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Non disponible</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Voir le guide</translation>
+   <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
+   <translation id="vps_dashboard_tile_ipv6" qtlid="34126">IPv6</translation>
    <translation id="vps_dashboard_reverse_dns" qtlid="44284">Reverse DNS</translation>
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Non configuré</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secondaire</translation>
@@ -330,7 +332,7 @@
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Une erreur est survenue lors du chargement des informations</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Pour le premier paiement, vous serez facturé au prorata du nombre de jours restant avant la date de renouvellement de votre VPS.</translation>
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="170044">Ensuite, le service sera facturé mensuellement au prix de <span class="red bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="170057">Commande de l'option Backups automatisés sur le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
+   <translation id="vps_configuration_veeam_order_step1_question">Commande de l'option Backups automatisés sur le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Prix HT :</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Prix TTC :</translation>
