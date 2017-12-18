@@ -18,7 +18,7 @@ class VpsDetailCtrl {
                 serviceName: this.serviceName
             }
         });
-        this.VpsTaskService.getTasks(this.serviceName);
+        this.VpsTaskService.subscribe(this.serviceName);
     }
 
     loadMessage () {
