@@ -77,17 +77,15 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xl-6 text-right">
+        <div class="col-xs-6 text-right">
             <div class="d-inline-block">
-                <span class="mr-3">Vue</span>
-                <ul class="d-inline-block list-inline">
-                    <li class="list-inline-item" ui-sref-active="active">
-                        <a ui-sref="iaas.pci-project.compute.infrastructure.diagram">Infrastructure</a>
-                    </li>
-                    <li class="list-inline-item" ui-sref-active="active">
-                        <a ui-sref="iaas.pci-project.compute.infrastructure.list">Liste</a>
-                    </li>
-                </ul>
+                <span class="oui-label d-inline-block mt-2 mr-3">Vue</span>
+                <div class="oui-button-group">
+                    <a class="oui-button" ui-sref-active="oui-button_primary"
+                       ui-sref="iaas.pci-project.compute.infrastructure.diagram">Infrastructure</a>
+                    <a class="oui-button oui-button_secondary"
+                       ui-sref="iaas.pci-project.compute.infrastructure.list">Liste</a>
+                </div>
             </div>
         </div>
     </div>
