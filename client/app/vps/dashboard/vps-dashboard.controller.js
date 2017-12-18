@@ -1,7 +1,8 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $q, $state, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$q = $q;
+        this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -29,12 +30,14 @@ class VpsDashboardCtrl {
     $onInit () {
         this.initActions();
         this.loadVps();
-        this.loadSummary();
         this.loadUrl();
+
+        this.$scope.$on("tasks.success", () => this.loadVps());
     }
 
     loadVps () {
         this.loaders.init = true;
+        this.loadSummary();
         this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
                 this.vps = vps;
@@ -62,7 +65,7 @@ class VpsDashboardCtrl {
 
     loadSummary () {
         this.loaders.summary = true;
-        this.hasAdditionalDisk();
+        this.hasAdditionalDiskOption();
         this.VpsService.getTabSummary(this.serviceName, true)
             .then(summary => {
                 this.summary = summary;
@@ -96,7 +99,7 @@ class VpsDashboardCtrl {
             });
     }
 
-    hasAdditionalDisk () {
+    hasAdditionalDiskOption () {
         this.VpsService.hasAdditionalDiskOption(this.serviceName)
             .then(() => { this.hasAdditionalDisk = true; })
             .catch(() => { this.hasAdditionalDisk = false; })
