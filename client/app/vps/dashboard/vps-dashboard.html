@@ -120,7 +120,7 @@
 
         <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
             <cui-tile data-title="'vps_tab_summary' | translate"
-                      data-loading="$ctrl.loaders.summary || $ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.loaders.disk || $ctrl.loaders.summary || $ctrl.loaders.init" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_disabled' | translate"

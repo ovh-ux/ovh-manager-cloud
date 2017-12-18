@@ -1,7 +1,8 @@
 class VpsTaskService {
-    constructor ($http, $q, $timeout, $translate, CloudMessage) {
+    constructor ($http, $q, $rootScope, $timeout, $translate, CloudMessage) {
         this.$http = $http;
         this.$q = $q;
+        this.$rootScope = $rootScope;
 
         this.$timeout = $timeout;
         this.$translate = $translate;
@@ -79,6 +80,7 @@ class VpsTaskService {
                     this.getTasks(serviceName);
                 } else {
                     this.flushMessages();
+                    this.$rootScope.$broadcast("tasks.success");
                     this.CloudMessage.success(this.$translate.instant("vps_dashboard_task_finish"));
                 }
             }, 5000);
