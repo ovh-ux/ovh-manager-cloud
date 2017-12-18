@@ -23,16 +23,14 @@ class VpsAdditionalDiskCtrl {
     hasAdditionalDisk () {
         this.loaders.init = true;
         this.VpsService.hasAdditionalDiskOption(this.serviceName)
-            .then(() => { this.hasAdditionalDiskOption = true })
-            .catch(() => {
-                this.hasAdditionalDiskOption = false;
-            })
-            .finally(() => {
-                this.loaders.init = false;
+            .then(() => {
+                this.hasAdditionalDiskOption = true;
                 if (this.hasAdditionalDiskOption) {
                     this.loadAdditionalDisks();
                 }
-            });
+            })
+            .catch(() => { this.hasAdditionalDiskOption = false; })
+            .finally(() => { this.loaders.init = false; });
     }
 
     loadAdditionalDisks () {
