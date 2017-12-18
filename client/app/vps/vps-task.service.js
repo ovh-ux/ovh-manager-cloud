@@ -67,8 +67,13 @@ class VpsTaskService {
         _.forEach(tasks, task => {
             this.manageMessage(task);
         });
+
+        if (this.firstCall && !_.isEmpty(tasks)) {
+            this.firstCall = false;
+        }
+
         // refresh while there's pending task
-        if (!firstCall && !_.isEmpty(tasks)) {
+        if (!this.firstCall) {
             this.$timeout(() => {
                 if (!_.isEmpty(tasks)) {
                     this.getTasks(serviceName);
@@ -76,7 +81,6 @@ class VpsTaskService {
                     this.flushMessages();
                     this.CloudMessage.success(this.$translate.instant("vps_dashboard_task_finish"));
                 }
-                this.firstCall = false;
             }, 5000);
         }
     }
@@ -99,9 +103,9 @@ class VpsTaskService {
         this.CloudMessage.warning({
             id: task.id,
             class: "task",
-            progress: task.progress,
             title: this.messageType(task.type),
-            textHtml: this.template(task.type, task.progress)
+            textHtml: this.template(task.type, task.progress),
+            progress: task.progress
         }, "iaas.vps.detail");
     }
 
@@ -118,16 +122,7 @@ class VpsTaskService {
     }
 
     template (type, progress) {
-        return `
-            <p>${this.messageType(type)}</p>
-            <div class="oui-progress oui-progress_info">
-                <div class="oui-progress__bar oui-progress__bar_info" role="progressbar"
-                     aria-valuenow="${progress}" aria-valuemin="0" aria-valuemax="100"
-                     style="width: ${progress}%">
-                    <span class="oui-progress__label">${progress}%</span>
-                </div>
-            </div>
-        `;
+        return `${this.messageType(type)} (${progress}%)`;
     }
 
     messageType (type) {
