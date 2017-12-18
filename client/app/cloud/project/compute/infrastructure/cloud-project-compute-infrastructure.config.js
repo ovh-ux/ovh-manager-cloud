@@ -11,7 +11,7 @@ angular.module("managerApp")
                             });
                         });
                 }
-            },
+            }/*,
             CloudProjectComputeInfrastructureListCtrl: {
                 initInfra (atInternet, controller) {
                     controller.Cloud.Project().Lexi().query().$promise
@@ -22,6 +22,6 @@ angular.module("managerApp")
                             });
                         });
                 }
-            }
+            }*/
         });
     });

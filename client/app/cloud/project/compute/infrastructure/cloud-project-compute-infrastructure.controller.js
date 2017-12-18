@@ -2,12 +2,12 @@
     class CloudProjectComputeInfrastructureCtrl {
         constructor ($state) {
             this.$state = $state;
-
-            this.init();
         }
 
-        init () {
-            this.$state.go("iaas.pci-project.compute.infrastructure.diagram");
+        $onInit () {
+            if (this.$state.is("iaas.pci-project.compute.infrastructure")) {
+                this.$state.go("iaas.pci-project.compute.infrastructure.diagram");
+            }
         }
     }
 
