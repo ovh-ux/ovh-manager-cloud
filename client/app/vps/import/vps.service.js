@@ -8,7 +8,8 @@ angular.module("managerApp").service("VpsService", [
     "Polling",
     "additionalDisk.capacities",
     "additionalDisk.hasNoOption",
-    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption) {
+    "VpsTaskService",
+    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService) {
         "use strict";
 
         var aapiRootPath = "/sws/vps",
@@ -271,7 +272,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                $rootScope.$broadcast("vps.dashboard.refresh");
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (http) {
                 return $q.reject(http.data);

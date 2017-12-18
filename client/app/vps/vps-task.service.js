@@ -1,11 +1,42 @@
 class VpsTaskService {
-    constructor ($timeout, $translate, CloudMessage, VpsService) {
+    constructor ($http, $q, $timeout, $translate, CloudMessage) {
+        this.$http = $http;
+        this.$q = $q;
+
         this.$timeout = $timeout;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
-        this.VpsService = VpsService;
 
         this.firstCall = true;
+    }
+
+    /*
+     * imported from vps services to avoid calling this services
+     * + getSelectedVps
+     * + getTaskInPropgress
+     */
+    getSelectedVps (serviceName) {
+        return this.$http.get(["/sws/vps", serviceName,"info"].join("/"), {serviceType: "aapi"})
+            .then(result => result.data)
+            .catch(err => this.$q.reject(err));
+    }
+
+    getTaskInProgress (serviceName, type) {
+        var result = null;
+        return this.getSelectedVps(serviceName).then(vps => {
+            if (vps && vps.name) {
+                return this.$http.get(["/sws/vps", vps.name, "tasks/uncompleted"].join("/"), {
+                    serviceType: "aapi",
+                    params: {
+                        type: type
+                    }
+                }).then(data => { result = data.data; });
+            } else {
+                return this.$q.reject(vps);
+            }
+        })
+        .then(() => { return result; })
+        .catch(http => this.$q.reject(http.data));
     }
 
     /*
@@ -22,7 +53,7 @@ class VpsTaskService {
      *
      */
     getTasks (serviceName) {
-        this.VpsService.getTaskInProgress(serviceName)
+        this.getTaskInProgress(serviceName)
             .then(tasks => this.handleTasks(serviceName, tasks))
             .catch(err => this.CloudMessage(err));
     }
