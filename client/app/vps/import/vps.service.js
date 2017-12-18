@@ -228,7 +228,7 @@ angular.module("managerApp").service("VpsService", [
                     return $q.reject(vps);
                 }
             }).then(function () {
-                $rootScope.$broadcast("vps.TASK.polling", result);
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (http) {
                 return $q.reject(http.data);
@@ -362,7 +362,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                $rootScope.$broadcast("vps.dashboard.refresh", true);
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (http) {
                 return $q.reject(http.data);
@@ -676,7 +676,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache("tabSummary_" + vpsName);
-                $rootScope.$broadcast("vps.TASK.polling", result);
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -703,7 +703,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                $rootScope.$broadcast("vps.TASK.polling", result);
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -731,7 +731,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache("tabSummary_" + vpsName);
-                $rootScope.$broadcast("vps.TASK.polling", result);
+                VpsTaskService.getTasks(serviceName);
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -961,7 +961,7 @@ angular.module("managerApp").service("VpsService", [
                     type: "file"
                 }).then(function (response) {
                     resetTabVeeam();
-                    $rootScope.$broadcast("vps.TASK.polling", response.data);
+                    VpsTaskService.getTasks(serviceName);
                     return response.data;
                 });
             });
@@ -975,7 +975,7 @@ angular.module("managerApp").service("VpsService", [
                     type: "full"
                 }).then(function (response) {
                     resetTabVeeam();
-                    $rootScope.$broadcast("vps.TASK.polling", response.data);
+                    VpsTaskService.getTasks(serviceName);
                     return response.data;
                 });
             });
@@ -988,7 +988,7 @@ angular.module("managerApp").service("VpsService", [
                     restorePoint: restorePoint
                 }).then(function (response) {
                         resetTabVeeam();
-                        $rootScope.$broadcast("vps.TASK.polling", response.data);
+                        VpsTaskService.getTasks(serviceName);
                         return response.data;
                     });
             });
@@ -1025,6 +1025,7 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                     .then(function (response) {
+                        VpsTaskService.getTasks(serviceName);
                         return response.data;
                     });
             });
