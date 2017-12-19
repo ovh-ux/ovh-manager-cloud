@@ -30,7 +30,6 @@ class VpsOrderVeeamCtrl {
                     });
             })
             .catch(data => {
-                $scope.resetAction();
                 $scope.setMessage($translate.instant("vps_configuration_veeam_order_step1_loading_error"), data);
             });
     }

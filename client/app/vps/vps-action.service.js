@@ -289,7 +289,7 @@ class VpsActionService {
         return this._terminateOption(serviceName, "additionalDisk");
     }
 
-    terminateFtpBackupOption (serviceName) {
+    terminateBackupStorageOption (serviceName) {
         return this._terminateOption(serviceName, "ftpbackup");
     }
 
