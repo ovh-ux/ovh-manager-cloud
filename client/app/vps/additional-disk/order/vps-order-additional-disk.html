@@ -46,9 +46,12 @@
                             <dt data-translate="vps_order_additional_disk_option"></dt>
                             <dd data-translate="vps_order_additional_disk_offer_description"
                                 data-translate-values="{size: $ctrl.model.capacity, date: $ctrl.model.duration.split('upto-')[1] }"></dd>
-                            <dt data-translate="vps_order_additional_disk_price"></dt>
-                            <dd data-translate="vps_order_additional_disk_select_capacity_price_tax_free"
-                                data-translate-values="{price: $ctrl.offer.prices.withoutTax.text}"></dd>
+                            <dt data-translate="vps_order_additional_disk_totalHT"></dt>
+                            <dd class="red bold"
+                                data-ng-bind="$ctrl.offer.prices.withoutTax.text"></dd>
+                            <dt data-translate="vps_order_additional_disk_totalTTC"></dt>
+                            <dd class="red bold"
+                                data-ng-bind="$ctrl.offer.prices.withTax.text"></dd>
                         </dl>
                     </div>
                 </cui-wizard-step>

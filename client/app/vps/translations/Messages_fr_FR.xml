@@ -505,6 +505,8 @@
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Veuillez choisir la taille du disque additionnel pour votre VPS. Il sera visible en tant que second disque dur depuis votre système d'exploitation.</translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">Le disque additionnel sera ajouté à votre serveur jusqu'à la date de renouvellement de votre VPS, puis il sera ensuite renouvelé avec ce dernier.</translation>
    <translation id="vps_order_additional_disk_select_capacity_price_tax_free">{{ price }} HT/mois</translation>
+   <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Prix HT :</translation>
+   <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Prix TTC :</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option :</translation>
    <translation id="vps_order_additional_disk_offer_description">Option Disque Additionnel - {{ size }} jusqu'au {{ date }}</translation>
    <translation id="vps_order_additional_disk_price" qtlid="181084">Prix :</translation>
