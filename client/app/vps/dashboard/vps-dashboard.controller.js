@@ -66,6 +66,7 @@ class VpsDashboardCtrl {
         this.VpsService.getTabSummary(this.serviceName, true)
             .then(summary => {
                 this.summary = summary;
+                this.initBackupStorageActions();
                 this.initSnapshotActions();
                 this.initVeeamActions();
             })
@@ -118,6 +119,28 @@ class VpsDashboardCtrl {
                 return this.$q.reject(error);
             })
             .finally(() => { this.loaders.disk = false });
+    }
+
+    initBackupStorageActions () {
+        this.backupStorageActions = {
+            manage: {
+                text: this.$translate.instant("common_manage"),
+                state: "iaas.vps.detail.backup-storage",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
+            },
+            order: {
+                text: this.$translate.instant("common_order"),
+                state: "iaas.vps.detail.backup-storage.order",
+                stateParams: { serviceName: this.serviceName },
+                isAvailable: () => !this.loaders.init
+            },
+            terminate: {
+                text: this.$translate.instant("vps_configuration_desactivate_option"),
+                callback: () => this.VpsActionService.terminateBackupStorageOption(this.serviceName),
+                isAvailable: () => !this.loaders.init
+            }
+        };
     }
 
     initSnapshotActions () {
