@@ -87,8 +87,8 @@ var zoneConfig = {
     },
     US: {
         ssoAuth: {
-            host: "www.ovh.us",
-            devLoginUrl: "https://www.ovh.us/auth/requestDevLogin/",
+            host: "ovh.us",
+            devLoginUrl: "https://ovh.us/auth/requestDevLogin/",
             baseUrl: "https://www.ovh.us/cgi-bin/crosslogin.cgi"
         },
         apiv6: {
