@@ -5,7 +5,7 @@ angular.module("managerApp")
         messageStart: "2017-12-18",
         messageEnd: "2018-01-08",
         sources: {
-            en: "assets/images/announcement/bandwidth/EN_BANNER.png",
+            en: "assets/images/announcement/bandwidth/UK_BANNER.png",
             fr: "assets/images/announcement/bandwidth/FR_BANNER.png"
         },
         description: {
