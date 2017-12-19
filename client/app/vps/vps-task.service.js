@@ -78,6 +78,7 @@ class VpsTaskService {
         if (!this.firstCall) {
             this.$timeout(() => {
                 if (!_.isEmpty(tasks)) {
+                    this.$rootScope.$broadcast("tasks.pending");
                     this.getTasks(serviceName);
                 } else {
                     this.flushMessages();
