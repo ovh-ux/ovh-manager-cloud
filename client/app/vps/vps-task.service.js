@@ -71,6 +71,7 @@ class VpsTaskService {
 
         if (this.firstCall && !_.isEmpty(tasks)) {
             this.firstCall = false;
+            this.$rootScope.$broadcast("tasks.pending");
         }
 
         // refresh while there's pending task

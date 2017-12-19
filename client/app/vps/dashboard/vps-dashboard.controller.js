@@ -32,7 +32,11 @@ class VpsDashboardCtrl {
         this.loadVps();
         this.loadUrl();
 
-        this.$scope.$on("tasks.success", () => this.loadVps());
+        this.$scope.$on("tasks.pending", () => { this.loaders.polling = true; });
+        this.$scope.$on("tasks.success", () => {
+            this.loaders.polling = false;
+            this.loadVps();
+        });
     }
 
     loadVps () {
@@ -216,7 +220,7 @@ class VpsDashboardCtrl {
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),
                 callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM),
-                isAvailable: () => !this.loaders.init
+                isAvailable: () => !this.loaders.polling
             },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
@@ -257,15 +261,18 @@ class VpsDashboardCtrl {
             },
             reboot: {
                 text: this.$translate.instant("vps_configuration_reboot_title_button"),
-                callback: () => this.VpsActionService.reboot(this.serviceName)
+                callback: () => this.VpsActionService.reboot(this.serviceName),
+                isAvailable: () => !this.loaders.polling
             },
             reinstall: {
                 text: this.$translate.instant("vps_configuration_reinstall_title_button"),
-                callback: () => this.VpsActionService.reinstall(this.serviceName)
+                callback: () => this.VpsActionService.reinstall(this.serviceName),
+                isAvailable: () => !this.loaders.polling
             },
             resetPassword: {
                 text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
-                callback: () => this.VpsActionService.password(this.serviceName)
+                callback: () => this.VpsActionService.password(this.serviceName),
+                isAvailable: () => !this.loaders.polling
             },
             reverseDns: {
                 text: this.$translate.instant("vps_configuration_reversedns_title_button"),
@@ -286,7 +293,7 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
                 state: "iaas.vps.detail.upgrade",
                 stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.init
+                isAvailable: () => !this.loaders.polling
             }
         };
     }
