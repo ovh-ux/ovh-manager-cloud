@@ -50,10 +50,29 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("iaas.vps.detail.backup-storage", {
             url: "/backup-storage",
+            redirectTo: "iaas.vps.detail.backup-storage.list",
             views: {
                 vpsContent: {
+                    template: `<div ui-view="vpsBackupStorageContent"></div>`
+                }
+            }
+        })
+        .state("iaas.vps.detail.backup-storage.list", {
+            url: "/",
+            views: {
+                vpsBackupStorageContent: {
                     templateUrl: "app/vps/backup-storage/vps-backup-storage.html",
                     controller: "VpsBackupStorageCtrl",
+                    controllerAs: "$ctrl"
+                }
+            }
+        })
+        .state("iaas.vps.detail.backup-storage.order", {
+            url: "/order",
+            views: {
+                vpsBackupStorageContent: {
+                    templateUrl: "app/vps/backup-storage/order/vps-order-backup-storage.html",
+                    controller: "VpsOrderBackupStorageCtrl",
                     controllerAs: "$ctrl"
                 }
             }
