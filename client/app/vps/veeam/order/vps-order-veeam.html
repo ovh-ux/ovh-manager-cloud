@@ -27,7 +27,10 @@
                             <dd class="red bold"
                                 data-ng-bind="model.optionDetails.withTax"></dd>
                         </dl>
+
+                        <div data-translate="vps_configuration_veeam_order_step1_info"></div>
                         <div data-ng-bind-html="'vps_configuration_veeam_order_step1_info2' | translate:{ price: model.optionDetails.unitaryPrice }"></div>
+
                         <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
                         <input id="contractsValidated"
                                type="checkbox"
@@ -43,8 +46,6 @@
                                    data-ng-bind="contract.name"></a>
                             </li>
                         </ul>
-                        <span class="italic fs11 lh11"
-                              data-translate="vps_configuration_veeam_order_step1_info"></span>
                     </div>
                 </cui-wizard-step>
 
