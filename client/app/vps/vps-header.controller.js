@@ -29,6 +29,7 @@ class VpsHeaderCtrl {
                 this.vps = vps;
                 this.description = vps.displayName;
                 this.checkMessages(vps);
+                this.$rootScope.$on("tasks.success", () => this.checkMessages(vps));
             })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error")))
             .finally(() => { this.loaders.init = false });
