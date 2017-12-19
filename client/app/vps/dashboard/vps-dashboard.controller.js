@@ -220,7 +220,7 @@ class VpsDashboardCtrl {
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),
                 callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM),
-                isAvailable: () => !this.loaders.polling
+                isAvailable: () => !this.loaders.polling && !this.loaders.init
             },
             manageAutorenew: {
                 text: this.$translate.instant("common_manage"),
@@ -262,17 +262,17 @@ class VpsDashboardCtrl {
             reboot: {
                 text: this.$translate.instant("vps_configuration_reboot_title_button"),
                 callback: () => this.VpsActionService.reboot(this.serviceName),
-                isAvailable: () => !this.loaders.polling
+                isAvailable: () => !this.loaders.polling && !this.loaders.init
             },
             reinstall: {
                 text: this.$translate.instant("vps_configuration_reinstall_title_button"),
                 callback: () => this.VpsActionService.reinstall(this.serviceName),
-                isAvailable: () => !this.loaders.polling
+                isAvailable: () => !this.loaders.polling && !this.loaders.init
             },
             resetPassword: {
                 text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
                 callback: () => this.VpsActionService.password(this.serviceName),
-                isAvailable: () => !this.loaders.polling
+                isAvailable: () => !this.loaders.polling && !this.loaders.init
             },
             reverseDns: {
                 text: this.$translate.instant("vps_configuration_reversedns_title_button"),
@@ -293,7 +293,7 @@ class VpsDashboardCtrl {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
                 state: "iaas.vps.detail.upgrade",
                 stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.loaders.polling
+                isAvailable: () => !this.loaders.polling && !this.loaders.init
             }
         };
     }
