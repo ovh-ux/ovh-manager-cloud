@@ -9,35 +9,23 @@ class VpsTaskService {
         this.CloudMessage = CloudMessage;
 
         this.firstCall = true;
+        this.COMPLETED_TASK_PROGRESS = 100;
     }
 
     /*
      * imported from vps services to avoid calling this services
-     * + getSelectedVps
-     * + getTaskInPropgress
+     * + _getTaskInPropgress
      */
-    getSelectedVps (serviceName) {
-        return this.$http.get(["/sws/vps", serviceName,"info"].join("/"), {serviceType: "aapi"})
-            .then(result => result.data)
-            .catch(err => this.$q.reject(err));
-    }
 
-    getTaskInProgress (serviceName, type) {
-        var result = null;
-        return this.getSelectedVps(serviceName).then(vps => {
-            if (vps && vps.name) {
-                return this.$http.get(["/sws/vps", vps.name, "tasks/uncompleted"].join("/"), {
-                    serviceType: "aapi",
-                    params: {
-                        type: type
-                    }
-                }).then(data => { result = data.data; });
-            } else {
-                return this.$q.reject(vps);
+    _getTaskInProgress (serviceName, type) {
+        return this.$http.get(["/sws/vps", serviceName, "tasks/uncompleted"].join("/"), {
+            serviceType: "aapi",
+            params: {
+                type: type
             }
         })
-        .then(() => { return result; })
-        .catch(http => this.$q.reject(http.data));
+        .then(data => data.data)
+        .catch(error => this.$q.reject(error.data));
     }
 
     /*
@@ -54,7 +42,7 @@ class VpsTaskService {
      *
      */
     getTasks (serviceName) {
-        this.getTaskInProgress(serviceName)
+        this._getTaskInProgress(serviceName)
             .then(tasks => this.handleTasks(serviceName, tasks))
             .catch(err => this.CloudMessage(err));
     }
@@ -94,7 +82,7 @@ class VpsTaskService {
      *
      */
     manageMessage (task) {
-        if (task.progress !== 100) {
+        if (task.progress !== this.COMPLETED_TASK_PROGRESS) {
             this.createMessage(task);
         }
     }
