@@ -124,10 +124,12 @@
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated"></cui-tile-item>
+                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated"
+                                   data-actions="$ctrl.backupStorageActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated"></cui-tile-item>
+                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated"
+                                   data-actions="[$ctrl.backupStorageActions.manage, $ctrl.backupStorageActions.terminate]"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
