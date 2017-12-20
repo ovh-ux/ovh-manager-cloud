@@ -29,7 +29,7 @@
         <div class="col-xs-6">
             <div class="btn-group cloud-compute-infra-primary-actions">
                 <button type="button" class="oui-button oui-button_dropdown dropdown-toggle" aria-haspopup="true" aria-expanded="false"
-                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vRack"
                         data-toggle="dropdown"
                         write-right-required>
                     <span data-ng-bind=":: 'common_actions' | translate"></span>
@@ -59,7 +59,7 @@
                     </li>
                     <li>
                         <button type="button" class="btn fs14"
-                                data-ng-click="ComputeInfrastructureDiagramCtrl.buyIpFailover()"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.buyIpFailOver()"
                                 at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
                                 data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
                         </button>
@@ -110,7 +110,7 @@
                         <!-- Unlink Volume -->
                         <div class="volume-content-unlinked highlighed-element"
                              data-ng-class="{ hasCurrentDroppableVolume : ComputeInfrastructureDiagramCtrl.dragDropHelper.currentDraggedVolume}"
-                             data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                             data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vRack"
                              data-droppable
                              data-droppable-id="unlinked"
                              data-droppable-info="{'group':'unlinkedVolumes'}"
@@ -307,7 +307,7 @@
                             <div class="pull-right">
 
                                 <button type="button" class="no-style no-space vertical-middle left-space-m8"
-                                        data-ng-click="ComputeInfrastructureDiagramCtrl.uncollapseAll('publicCloud')"
+                                        data-ng-click="ComputeInfrastructureDiagramCtrl.unCollapseAll('publicCloud')"
                                         data-uib-tooltip="{{'cpci_uncollapse_all_vms'|translate}}" tooltip-append-to-body="true">
                                     <span class="wrap">
                                         <span class="wrap2"></span>
@@ -334,18 +334,18 @@
 
                             <!-- Loading list... -->
                             <div class="text-center animate-fadeIn-enter"
-                                 data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.vrack">
+                                 data-ng-if="ComputeInfrastructureDiagramCtrl.loaders.vRack">
                                 <oui-loader size="s" inline="true"></oui-loader>
                             </div>
 
                             <div class="animate-fadeIn-enter"
-                                 data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack && !ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()">
+                                 data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vRack && !ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()">
                                 <p data-translate="cpci_empty_project"></p>
                             </div>
 
 
                             <div class="public-vm-list"
-                                 data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack"
+                                 data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vRack"
                                  data-ng-model="ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.sortedKeys"
                                  data-ui-sortable="ComputeInfrastructureDiagramCtrl.vmSortableOptions">
 
@@ -358,7 +358,7 @@
                                             && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit === null,
                                         'sortable-disabled': !!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit || ComputeInfrastructureDiagramCtrl.volumeEdit.action === 'moveCheckbox'
                                     }"
-                                     data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vrack && ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()"
+                                     data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.vRack && ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()"
                                      data-ng-init="vm = ComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.get(vmKey)"
                                      data-ng-mouseenter="ComputeInfrastructureDiagramCtrl.highlightInstanceAndPublicIP($event)"
                                      data-ng-mouseleave="ComputeInfrastructureDiagramCtrl.removeAllFades()"
@@ -1115,7 +1115,7 @@
                              data-ui-sortable="ComputeInfrastructureDiagramCtrl.ipSortableOptions">
 
                             <!-- IP LIST -->
-                            <div data-ng-repeat="ip in ComputeInfrastructureDiagramCtrl.infra.internet.ipList.getItems() | orderBy:[ComputeInfrastructureDiagramCtrl.ipAutoSort, ComputeInfrastructureDiagramCtrl.ipSortNatural] track by ip.id">
+                            <div data-ng-repeat="ip in ComputeInfrastructureDiagramCtrl.infra.internet.ipList.getItems() | orderBy:[ComputeInfrastructureDiagramCtrl.ipAutoSort(), ComputeInfrastructureDiagramCtrl.ipSortNatural()] track by ip.id">
                                 <div class="ip highlighed-element ip-{{::ip.type}} fade-transition"
                                      data-ng-class="{'sortable-disabled': !!ComputeInfrastructureDiagramCtrl.model.currentLinkEdit || ComputeInfrastructureDiagramCtrl.sort.ipAutoSort}"
                                      data-highlighed-element="ip,{{ip.id}},ip-{{::ip.type}},ip-{{::ip.type}}-{{::ip.status}}-{{::ip.continentCode}}"
@@ -1160,7 +1160,7 @@
                                               data-ng-if="ip.ip">
                                             <span class="fa fa-info-circle right-space-m4"
                                                   data-ng-if="ip.reverse"
-                                                  data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse.text(ip) }}"></span>
+                                                  data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse(ip) }}"></span>
                                             <span data-ng-bind="ip.ip"></span>
                                         </span>
 
@@ -1191,7 +1191,7 @@
                                               data-ng-if="ip.ip">
                                             <span class="fa fa-info-circle right-space-m4"
                                                   data-ng-if="ip.reverse"
-                                                  data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse.text(ip) }}"></span>
+                                                  data-uib-tooltip="{{ ComputeInfrastructureDiagramCtrl.ipReverse(ip) }}"></span>
                                             <span data-ng-bind="ip.ipV6.ip"></span>
                                             <span class="ovh-font ovh-font-question right-space-m4"
                                                   data-uib-tooltip="{{:: 'cloud_public_ip_v6_gateway' | translate:{ gateway: ip.ipV6.gateway } }}"
@@ -1336,7 +1336,7 @@
             <div class="col-md-4">
                 <button type="button" class="btn btn-lg btn-action btn-primary"
                         data-ng-bind="'cpci_volume_confirm_' + ComputeInfrastructureDiagramCtrl.volumeEdit.action + '_button' | translate"
-                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].confirm(); ComputeInfrastructureDiagramCtrl.forceRefreshLinks()"
+                        data-ng-click="ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].confirm(); ComputeInfrastructureDiagramCtrl.refreshLinks()"
                         data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.volumeActionConfirm || ComputeInfrastructureDiagramCtrl.volumeEdit[ComputeInfrastructureDiagramCtrl.volumeEdit.action].isInvalid()">
                 </button>
             </div>

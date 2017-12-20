@@ -1,741 +1,938 @@
-"use strict";
+(() => {
+    class CloudProjectComputeInfrastructureDiagramCtrl {
+        constructor ($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $translate, $uibModal, $window,
+                     CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
+                     OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
+                     OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
+                     OvhApiCloudPrice, OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
+                     CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, URLS) {
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureDiagramCtrl",
-    function ($rootScope, $scope, $q, $translate, $timeout, CloudMessage, $uibModal, $stateParams, $state, Poller, CloudUserPref, OvhApiCloudProject,
-              CloudProjectOrchestrator, CloudProjectComputeInfrastructureOrchestrator, jsPlumbService, OvhApiIp, OvhApiCloud, OvhApiCloudProjectRegion, OvhApiCloudProjectImage,
-              OvhApiCloudProjectSnapshot, OvhApiCloudProjectFlavor, OvhApiCloudProjectSshKey, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiMe,
-              OvhApiCloudProjectServiceInfos, REDIRECT_URLS, URLS, CLOUD_GEOLOCALISATION, $window, CLOUD_UNIT_CONVERSION,
-              OvhApiCloudProjectVolumeSnapshot, CLOUD_MONITORING, OvhApiCloudProjectNetworkPrivate, RegionService, $document) {
+            this.$rootScope = $rootScope;
+            this.$scope = $scope;
+            this.$document = $document;
+            this.$filter = $filter;
+            this.$q = $q;
+            this.$state = $state;
+            this.$stateParams = $stateParams;
+            this.$timeout = $timeout;
+            this.$translate = $translate;
+            this.$uibModal = $uibModal;
+            this.$window = $window;
 
-        var self = this;
-        var serviceName = null;
+            this.CloudMessage = CloudMessage;
+            this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+            this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
+            this.CloudProjectOrchestrator = CloudProjectOrchestrator;
+            this.CloudUserPref = CloudUserPref;
 
-        var sortInterval = null;
+            this.Cloud = OvhApiCloud;
+            this.OvhApiCloudProject = OvhApiCloudProject;
+            this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
+            this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
+            this.OvhApiCloudProjectNetworkPrivate = OvhApiCloudProjectNetworkPrivate;
+            this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
+            this.OvhApiCloudProjectSnapshot = OvhApiCloudProjectSnapshot;
+            this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
+            this.OvhApiCloudProjectVolumeSnapshot = OvhApiCloudProjectVolumeSnapshot;
+            this.OvhApiCloudPrice = OvhApiCloudPrice;
+            this.OvhApiIp = OvhApiIp;
+            this.OvhApiMe = OvhApiMe;
 
-        this.regionService = RegionService;
-        this.Cloud = OvhApiCloud;
-
-        this.jsplumbInstance = null;
-        this.infra = null;
-        this.volumes = null;
-        this.vlans = {
-            vrackStatus : null
-        };
-        this.regions = null;
-        this.user = null;
-        this.vmMonitoringUpgradeThreshold = CLOUD_MONITORING.vm.upgradeAlertThreshold;
-        this.conversion = CLOUD_UNIT_CONVERSION;
-
-        this.collections = {
-            privateNetworks: []
-        };
-
-        this.model = {
-            currentLinkEdit : null
-        };
-
-        this.loaders = {
-            init: true,
-            vrack : false,
-            vlans : false,
-            ips: false,
-            volumes: false,
-            jsplumb : false,
-            linkActionConfirm : false,
-            volumeActionConfirm : false,
-            privateNetworks: {
-                query: false
-            }
-        };
-
-        this.sort = {
-            ipAutoSort: true,
-            ipNaturalsort: true
-        };
-
-        this.errors = {
-            init : false
-        };
-
-        this.states = {
-            sorting : false
-        };
-
-        this.helpDisplay = {
-            openUnlinkVolume : false
-        };
-
-        this.importedIpFailoverPending = [];   // List of pending import IPFO
-
-        // ------- INIT -------
-
-        this.init = function () {
-            if ($scope.redirectToOverview) {
-                return $state.go("iaas.pci-project.compute.infrastructure-overview");
-            } else {
-                this.loaders.init = true;
-
-                initDragDropHelper();
-
-                // Get type of project
-                getProjectContext();
-
-                getUser();
-                // @todo: reset cache
-
-                // Pre-load required datas (all this datas will be cached)
-                return $q.all(
-                    [
-                        OvhApiCloudProjectRegion.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudProjectImage.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudProjectSnapshot.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudProjectFlavor.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudProjectSshKey.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudProjectVolumeSnapshot.Lexi().query({
-                            serviceName: serviceName
-                        }).$promise,
-                        OvhApiCloudPrice.Lexi().query().$promise,
-                        self.initRegions()
-                    ]).then(function () {
-                    return self.initInfra();
-                }, function () {
-                    self.errors.init = true;
-                })["finally"](function () {
-                        self.loaders.init = false;
-                    }
-                );
-            }
-
-        };
-
-        this.showDeleteProjectModal = function () {
-            $uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
-                controller: "CloudProjectDeleteCtrl",
-                controllerAs: "CloudProjectDeleteCtrl"
-            });
-        };
-
-        function shouldDisplayInstancesRetracted() {
-            return $q.all({
-                hasTooManyInstances: CloudProjectOrchestrator.hasTooManyInstances($stateParams.projectId),
-                hasTooManyIps: CloudProjectOrchestrator.hasTooManyIps($stateParams.projectId)
-            }).then(function(result) {
-                return result.hasTooManyInstances || result.hasTooManyIps;
-            });
+            this.jsPlumbService = jsPlumbService;
+            this.Poller = Poller;
+            this.RegionService = RegionService;
+            this.conversion = CLOUD_UNIT_CONVERSION;
+            this.CLOUD_MONITORING = CLOUD_MONITORING;
+            this.REDIRECT_URLS = REDIRECT_URLS;
+            this.URLS = URLS;
         }
 
-        function getUser () {
-            return OvhApiMe.Lexi().get().$promise
-                .then(function(user) {
-                    self.user = user;
+        $onInit () {
+            this.serviceName = null;
+            this.sortInterval = null;
+
+            this.collections = {
+                privateNetworks: []
+            };
+            this.errors = {
+                init: false
+            };
+            this.helpDisplay = {
+                openUnlinkVolume: false
+            };
+            this.importedIpFailoverPending = []; // List of pending import IPFO
+            this.infra = null;
+            this.jsplumbInstance = null;
+            this.loaders = {
+                init: true,
+                vRack: false,
+                vlans: false,
+                ips: false,
+                volumes: false,
+                jsPlumb: false,
+                linkActionConfirm: false,
+                volumeActionConfirm: false,
+                privateNetworks: {
+                    query: false
+                }
+            };
+            this.model = {
+                currentLinkEdit: null
+            };
+            this.vlans = {
+                vRackStatus: null
+            };
+            this.regions = null;
+            this.sort = {
+                ipAutoSort: true,
+                ipNaturalSort: true
+            };
+            this.states = {
+                sorting: false
+            };
+            this.user = null;
+            this.volumes = null;
+
+            if (this.$scope.redirectToOverview) {
+                return this.$state.go("iaas.pci-project.compute.infrastructure-overview");
+            }
+
+            // Hide highligted-element on change state
+            this.$scope.$on("$stateChangeStart", () => {
+                this.$rootScope.$broadcast("highlighed-element.hide");
+            });
+
+            this.$scope.$on("compute.infrastructure.vm.status-update", (evt, newStatus, oldStatus, vm) => {
+                if (oldStatus === "BUILD" && newStatus === "ACTIVE") {
+                    this.displayVmAuthInfo(vm);
+                }
+            });
+
+            this.$scope.$on("infra.refresh.links", () => {
+                // delay the execution, on VM deletion, VMS need to be moved before we refresh or links
+                // aren't place properly
+                this.$timeout(() => {
+                    this.refreshLinks();
+                }, 1000);
+            });
+
+            this.initIpEdit();
+            this.initVolumeEdit();
+
+            // ------- JSPLUMB EVENTS -------
+
+            this.initJsPlumb();
+
+            // what to do when instance is created
+            this.$scope.$on("jsplumb.instance.created", (evt, instance) => {
+                this.jsplumbInstance = instance;
+                window.JSPLUMBINSTANCE = this.jsplumbInstance;
+            });
+
+            // what to do when a connection is made
+            this.$scope.$on("jsplumb.instance.connection", (evt, connection, source, target, instance, originalEvent) => {
+
+                const isVmSource = this.constructor.sourceIsVm(connection.source, connection.target);
+                const connectedIpId = isVmSource ? connection.targetId : connection.sourceId;
+                const connectedVmId = isVmSource ? connection.sourceId : connection.targetId;
+                const connectedIp = this.infra.internet.getIpById(connectedIpId);
+                const connectedVm = this.infra.vrack.getVmById(connectedVmId);
+
+                if (!connectedIp || !connectedVm) {
+                    return;
+                }
+
+                // Set connection style
+                connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(connectedIp.type), lineWidth: 4 });
+                connection.addClass(`_jsPlumb_connector_ip_${connectedIp.type || ""}`);
+                connection.addClass("fade-transition");
+
+                // Don't up the size when hover ip public
+                if (connectedIp.type === "public") {
+                    connection.setHoverPaintStyle({ lineWidth: 4 });
+                }
+
+                // It's a connection drawed by the user (with its mouse)
+                if (originalEvent) {
+                    const vmContinent = this.getVmContinent(connectedVm);
+                    const isValidLink = vmContinent && vmContinent === connectedIp.continentCode;
+
+                    if (isValidLink && (!this.model.currentLinkEdit || this.model.currentLinkEdit.action === "attach")) {
+
+                        // set dotted line
+                        connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(connectedIp.type), lineWidth: 8, dashstyle: "2 1" });
+
+                        if (connectedIp.type === "failover") {
+                            if (connectedIp.routedTo.length > 0) {
+                                // It's a "move" : show a confirmation
+                                const connectedVmCurrent = this.infra.vrack.getVmById(connectedIp.routedTo[0]);
+
+                                _.set(this.model, "currentLinkEdit", {
+                                    connection,
+                                    connectedIp,
+                                    connectedVm,
+                                    connectedVmCurrent,
+                                    action: "attach"
+                                });
+
+                                this.$rootScope.$broadcast("highlighed-element.show", `compute,${connectedIp.id},${connectedVmId}`);
+                                this.model.currentLinkEdit.connection.addClass("highlighed-element highlighed-element-active");
+                            } else {
+                                this.ipEdit.attach.confirm(connectedVm, connectedIp)
+                                    .catch(() => {
+                                        this.jsplumbInstance.disconnectEndpoints(connection);
+                                    });
+                            }
+                        }
+                    } else {
+                        this.jsplumbInstance.disconnectEndpoints(connection);
+                    }
+                }
+            });
+
+            // ------- END JSPLUMB EVENTS -------
+
+            // ------- JQUERY UI SORTABLE -------
+
+            this.initSortable();
+
+            // what to do when sort start
+            this.$scope.$on("ui.sortable.start", () => {
+                this.states.sorting = true;
+                this.initInterval();
+            });
+
+            // what to do when sort stop
+            this.$scope.$on("ui.sortable.stop", () => {
+                this.states.sorting = false;
+                if (this.sortInterval) {
+                    clearInterval(this.sortInterval);
+                    // redraw links for the last time and re-validate offset of non connected items
+                    this.redrawLinks(true);
+                }
+            });
+
+            // what to do when position has changed
+            this.$scope.$on("ui.sortable.update", (ngEvent, jqEvent, ui) => {
+                const $sortedElem = $(ui.item);
+                if ($sortedElem.hasClass("public-cloud-vm")) {
+                    // ------ TODO: warning: ASYNC call!!!!!!
+                    this.CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
+                } else if ($sortedElem.hasClass("ip")) {
+                    // ------ TODO: warning: ASYNC call!!!!!!
+                    this.CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
+                }
+            });
+
+            // Kill polling
+            this.$scope.$on("$destroy", () => {
+                this.CloudProjectComputeInfrastructureOrchestrator.killPollVms();
+                this.CloudProjectComputeInfrastructureOrchestrator.killPollIps();
+                this.CloudProjectComputeVolumesOrchestrator.killPollVolumes();
+                this.Poller.kill({ namespace: "cloud.infra.ips.genericMoveFloatingIp" });
+            });
+
+            // ------- JQUERY UI DRAGGABLE -------
+
+            this.initDraggable();
+
+            this.$scope.$on("draggable.start", (event, obj) => {
+                this.dragDropHelper.currentDraggedVolume = obj.draggable;
+                this.dragDropHelper.draggingIsDoing = true;
+                $(".tooltip").hide(); // force hide tooltip to avoid display bug when dragging
+            });
+
+            this.$scope.$on("draggable.stop", () => {
+                if (!this.dragDropHelper.currentDroppableVmId) {
+                    this.dragDropHelper.currentDraggedVolume = null;
+                    this.refreshLinks();
+                }
+                this.dragDropHelper.draggingIsDoing = false;
+            });
+
+            // ------- JQUERY UI DROPPABLE -------
+
+            this.initDroppable();
+
+            this.$scope.$on("droppable.over", (event, obj) => {
+                this.dragDropHelper.currentDroppableVmId = obj.droppable.droppableId;
+                this.refreshLinks();
+            });
+
+            this.$scope.$on("droppable.out", () => {
+                this.dragDropHelper.currentDroppableVmId = null;
+                this.refreshLinks();
+            });
+
+            this.$scope.$on("droppable.drop", (event, obj) => {
+                const srcVmId = _.get(this.dragDropHelper, "currentDraggedVolume.draggableInfo.srcVmId");
+                const targetVmId = obj.droppable.droppableId;
+
+                if (srcVmId === "unlinked") { // No Confirmation
+                    this.volumeEdit.volume = this.dragDropHelper.currentDraggedVolume.draggableInfo.volume; // Is not Volume factory !
+                    this.volumeEdit.targetVm = this.infra.vrack.getVmById(targetVmId);
+                    this.volumeEdit.move.confirm();
+                } else {
+                    this.volumeEdit.move.launchConfirm( // Confirmation
+                        this.dragDropHelper.currentDraggedVolume.draggableInfo.volume, // Is not Volume factory !
+                        this.infra.vrack.getVmById(srcVmId),
+                        targetVmId !== "unlinked" ? this.infra.vrack.getVmById(targetVmId) : null
+                    );
+                }
+            });
+
+            return this.init();
+        }
+
+        init () {
+            this.loaders.init = true;
+            this.initDragDropHelper();
+
+            // Get type of project
+            this.getProjectContext();
+
+            this.getUser();
+            // @todo: reset cache
+
+            // Pre-load required datas (all this datas will be cached)
+            return this.$q.all([
+                this.OvhApiCloudProjectRegion.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectImage.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectFlavor.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectSshKey.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectVolumeSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudPrice.Lexi().query().$promise,
+                this.initRegions(this.serviceName)
+            ])
+                .then(() => this.initInfra())
+                .catch(() => {
+                    this.errors.init = true;
+                }).finally(() => {
+                    this.loaders.init = false;
                 });
         }
 
-        this.initInfra = function () {
-            var initInfraQueue = [];
+        initDragDropHelper () {
+            this.dragDropHelper = {
+                draggingIsDoing: false,
+                currentDraggedVolume: null,
+                currentDroppableVmId: null
+            };
+        }
 
-            this.loaders.vrack = true;
+        getProjectContext () {
+            this.serviceName = this.$stateParams.projectId;
+            this.instanceId = this.$stateParams.projectId;
+        }
+
+        getUser () {
+            return this.OvhApiMe.Lexi().get().$promise
+                .then(user => {
+                    this.user = user;
+                });
+        }
+
+        /**
+         * Fetch all the regions
+         * @param {string} serviceName
+         */
+        initRegions (serviceName) {
+            return this.OvhApiCloudProjectRegion.Lexi().query({ serviceName }).$promise
+                .then(regionIds => this.initRegionFromIds(serviceName, regionIds));
+        }
+
+        /**
+         * Build the list of GET region calls from region ids list
+         * @param {string} serviceName
+         * @param {array} regionIds
+         */
+        initRegionFromIds (serviceName, regionIds) {
+            const getRegions = _.map(regionIds, regionId => this.OvhApiCloudProjectRegion.Lexi().get({ serviceName, id: regionId }).$promise);
+            return this.$q.all(getRegions)
+                .then(result => {
+                    this.regions = result;
+                });
+        }
+
+        initInfra () {
+            const initInfraQueue = [];
+            const serviceName = this.serviceName;
+
+            this.loaders.vRack = true;
             this.loaders.ips = true;
-            this.loaders.jsplumb = true;
-            self.loaders.vlans = true;
-            self.loaders.volumes = true;
+            this.loaders.jsPlumb = true;
+            this.loaders.vlans = true;
+            this.loaders.volumes = true;
             this.errors.init = false;
 
             this.importedIpFailoverPending = [];
 
             // Init jsPlumb
-            initInfraQueue.push(jsPlumbService.jsplumbInit()['finally'](function () {
-                self.loaders.jsplumb = false;
-                jsPlumbService.importDefaults({
-                    MaxConnections : -1
-                });
-            }));
+            initInfraQueue.push(this.jsPlumbService.jsplumbInit()
+                .finally(() => {
+                    this.loaders.jsPlumb = false;
+                    this.jsPlumbService.importDefaults({
+                        MaxConnections: -1
+                    });
+                })
+            );
 
             // Init Infra
-            initInfraQueue.push(CloudProjectOrchestrator.initInfrastructure({
-                serviceName : serviceName,
-            }).then(function (infra) {
-                self.infra = infra;
+            initInfraQueue.push(this.CloudProjectOrchestrator.initInfrastructure({ serviceName })
+                .then(infra => {
+                    this.infra = infra;
 
-                // check if there are IPFO import to poll
-                checkPendingImportIpFailover();
-                // check if IPs auto sort is enabled
-                checkIpAutoSort();
-            }).then(function () {
-                return updateReverseDns(self.infra.internet.ipList.getItems());
-            }).then(function() {
-                return shouldDisplayInstancesRetracted()
-                    .then(function(retracted) {
-                        if (retracted) {
-                            CloudProjectComputeInfrastructureOrchestrator.collapseAllVm();
-                        }
-                    });
-            }).then(function () {
-                return self.initVlan();
-            }));
+                    // check if there are IPFO import to poll
+                    this.checkPendingImportIpFailOver(serviceName);
+
+                    // check if IPs auto sort is enabled
+                    this.checkIpAutoSort(serviceName);
+                })
+                .then(() => this.updateReverseDns(this.infra.internet.ipList.getItems()))
+                .then(() => this.shouldDisplayInstancesRetracted().then(retracted => {
+                    if (retracted) {
+                        this.CloudProjectComputeInfrastructureOrchestrator.collapseAllVm();
+                    }
+                }))
+                .then(() => this.initVlan())
+            );
 
             // Init Volumes
-            initInfraQueue.push(CloudProjectOrchestrator.initVolumes({
-                serviceName : serviceName
-            }).then(function (volumes) {
-                self.volumes = volumes.volumes;
-            }));
+            initInfraQueue.push(this.CloudProjectOrchestrator.initVolumes({ serviceName })
+                .then(volumes => {
+                    this.volumes = _.get(volumes, "volumes");
+                })
+            );
 
-            return $q.all(initInfraQueue)['catch'](function () {
-                self.errors.init = true;
-            })['finally'](function () {
-                self.loaders.vrack = false;
-                self.loaders.ips = false;
-                self.loaders.volumes = false;
-                if ($stateParams.openVncWithId) {
-                    self.openVncWithId($stateParams.openVncWithId);
-                }
-                // check if we need to display the volume creation popup
-                if ($stateParams.createNewVolume) {
-                    self.addVolume();
-                } else if ($stateParams.createNewVolumeFromSnapshot.snapshot) {
-                    self.addVolumeFromSnapshot($stateParams.createNewVolumeFromSnapshot.snapshot);
-                }
+            return this.$q.all(initInfraQueue)
+                .catch(() => {
+                    this.errors.init = true;
+                })
+                .finally(() => {
+                    this.loaders.vRack = false;
+                    this.loaders.ips = false;
+                    this.loaders.volumes = false;
 
-                if ($stateParams.createNewVm) {
-                    self.addVirtualMachine();
-                }
+                    if (this.$stateParams.openVncWithId) {
+                        this.openVncWithId(this.$stateParams.openVncWithId);
+                    }
 
-                if (CLOUD_MONITORING.alertingEnabled) {
-                    // Monitoring loading must begin at the end
-                    CloudProjectComputeInfrastructureOrchestrator.loadVmMonitoringData();
-                }
-            });
-        };
+                    // check if we need to display the volume creation popup
+                    if (this.$stateParams.createNewVolume) {
+                        this.addVolume();
+                    } else if (this.$stateParams.createNewVolumeFromSnapshot.snapshot) {
+                        this.addVolumeFromSnapshot(this.$stateParams.createNewVolumeFromSnapshot.snapshot);
+                    }
 
-        this.initVlan = function () {
+                    if (this.$stateParams.createNewVm) {
+                        this.addVirtualMachine();
+                    }
 
-            return CloudProjectComputeInfrastructureOrchestrator.hasVrack()
-                .then(function (hasVrack) {
-                    self.vlans.vrackStatus = hasVrack ? "activated" : "none";
-                }).finally(function () {
-                    self.loaders.vlans = false;
+                    if (this.CLOUD_MONITORING.alertingEnabled) {
+                        // Monitoring loading must begin at the end
+                        this.CloudProjectComputeInfrastructureOrchestrator.loadVmMonitoringData();
+                    }
                 });
-        };
-
-        // Fetch all the regions
-        this.initRegions = function () {
-            return OvhApiCloudProjectRegion.Lexi().query({
-                serviceName : serviceName
-            }).$promise.then(function (regionIds) {
-                return initRegionFromIds(regionIds);
-            });
-        };
-
-        function initRegionFromIds (regionIds) {
-            // build the list of GET region calls from region ids list
-            var getRegions = _.map(regionIds, function (regionId) {
-                return OvhApiCloudProjectRegion.Lexi().get({
-                    serviceName : serviceName,
-                    id : regionId
-                }).$promise;
-            });
-            return $q.all(getRegions).then(function (result) {
-                self.regions = result;
-            });
         }
 
-        function getProjectContext () {
-            serviceName = $stateParams.projectId;
-            self.instanceId = $stateParams.projectId;
+        initVlan () {
+            return this.CloudProjectComputeInfrastructureOrchestrator.hasVrack()
+                .then(hasVrack => {
+                    _.set(this.vlans, "vRackStatus", hasVrack ? "activated" : "none");
+                })
+                .finally(() => {
+                    this.loaders.vlans = false;
+                });
         }
-
-        // Hide highligted-element on change state
-        $scope.$on('$stateChangeStart', function () {
-            $rootScope.$broadcast('highlighed-element.hide');
-        });
-
-        // Kill polling
-        $scope.$on('$destroy', function () {
-            CloudProjectComputeInfrastructureOrchestrator.killPollVms();
-            CloudProjectComputeInfrastructureOrchestrator.killPollIps();
-            CloudProjectComputeVolumesOrchestrator.killPollVolumes();
-        });
 
         // ------- END INIT -------
 
+        /**
+         * At init, check if there are IPFO importation to poll
+         * @param {string} serviceName
+         */
+        checkPendingImportIpFailOver (serviceName) {
+            // On page refresh, get pending IPFO import
+            return this.CloudUserPref.get(`cloud_project_${serviceName}_infra_ipfo_import`)
+                .then(ipfoToImport => {
+                    ipfoToImport = _.get(ipfoToImport, "ips", []);
+                    if (_.isArray(ipfoToImport) && ipfoToImport.length > 0) {
+                        _.forEach(ipfoToImport, ipfo => {
+                            this.pollImportIpFailOver(serviceName, ipfo);
+                        });
+                    }
+                });
+        }
+
+        /**
+         * Poll a given IPFO address
+         * @param {string} serviceName
+         * @param {string} ip the ip object
+         * @param taskObj (optional) task to poll
+         */
+        pollImportIpFailOver (serviceName, ip, taskObj = null) {
+            // Already polling
+            if (~this.importedIpFailoverPending.indexOf(ip)) {
+                return;
+            }
+
+            const taskToPoll = taskObj ? taskObj.taskId : this.OvhApiIp.Lexi().getPendingTask(ip, "genericMoveFloatingIp");
+
+            this.$q.when(taskToPoll)
+                .then(taskId => {
+                    if (taskId) {
+                        this.importedIpFailoverPending.push(ip);
+
+                        this.CloudUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
+                            ips: this.importedIpFailoverPending
+                        });
+
+                        return this.Poller.poll(`/ip/${encodeURIComponent(ip)}/task/${taskId}`, null, {
+                            namespace: "cloud.infra.ips.genericMoveFloatingIp"
+                        }).then(() => {
+                            // On success: the IP should be in the /cloud/.../ip/failover list.
+                            this.CloudProjectComputeInfrastructureOrchestrator.pollIps("failover");
+                            this.CloudMessage.success(this.$translate.instant("cpci_ipfo_import_success", { ip }));
+                        }).catch(err => {
+                            if (err && err.status) {
+                                // On error: remove the IP from list
+                                this.CloudMessage.error(this.$translate.instant("cpci_ipfo_import_error", { ip }));
+                            }
+                        });
+                    }
+                    return null;
+                }).then(() => {
+                    _.pull(this.importedIpFailoverPending, ip);
+                    this.CloudUserPref.set(`cloud_project_${serviceName}_infra_ipfo_import`, {
+                        ips: this.importedIpFailoverPending
+                    });
+                }).finally(() => {
+                    this.refreshLinks();
+                });
+        }
+
+        /**
+         * Check in local storage if IPs auto sort is enabled
+         * @param {string} serviceName
+         */
+        checkIpAutoSort (serviceName) {
+            this.CloudUserPref.get(`cloud_project_${serviceName}_infra_ip_autosort`)
+                .then(ipAutoSort => {
+                    if (ipAutoSort) {
+                        this.sort.ipAutoSort = ipAutoSort.enabled;
+                        this.sort.ipNaturalSort = ipAutoSort.enabled; // activate naturalSort if autoSort is enabled
+                        this.refreshLinks();
+                    }
+                });
+        }
+
+        /**
+         * Updates reverse dns of given ips.
+         */
+        updateReverseDns (ips) {
+            const reverseQueue = [];
+            _.forEach(ips, ip => {
+                reverseQueue.push(this.OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block)
+                    .then(dns => {
+                        ip.reverse = dns;
+                    })
+                    .catch(() => this.$q.when(null))
+                    // ok we choose to ignore errors here, so the application can still be used,
+                    // instead of displaying an ugly error message just because one reverse dns call failed
+                    // let's assume the reverse dns is just null
+                );
+            });
+            return this.$q.all(reverseQueue);
+        }
+
+        shouldDisplayInstancesRetracted () {
+            return this.$q.all({
+                hasTooManyInstances: this.CloudProjectOrchestrator.hasTooManyInstances(this.$stateParams.projectId),
+                hasTooManyIps: this.CloudProjectOrchestrator.hasTooManyIps(this.$stateParams.projectId)
+            }).then(result => result.hasTooManyInstances || result.hasTooManyIps);
+        }
+
+        refreshLinks () {
+            this.$timeout(() => {
+                if (this.jsplumbInstance) {
+                    this.jsplumbInstance.revalidateEverything();
+                }
+            }, 99);
+        }
+
+        openVncWithId (vmId) {
+            const completeVm = this.infra.vrack.publicCloud.get(vmId);
+            if (completeVm) {
+                this.openVnc(completeVm);
+            }
+        }
+
+        openVnc (vm) {
+            this.$uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html",
+                controller: "CloudProjectComputeInfrastructureVirtualmachineVncCtrl",
+                controllerAs: "VmVncCtrl",
+                size: "lg",
+                resolve: {
+                    params: () => vm
+                }
+            });
+        }
+
+        addVolume () {
+            this.refreshLinks();
+            this.helpDisplay.openUnlinkVolume = true;
+            this.CloudProjectComputeVolumesOrchestrator.addNewVolumeToList("unlinked")
+                .then(volumeDraft => {
+                    this.CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
+                });
+        }
+
+        addVolumeFromSnapshot (snapshot) {
+            this.refreshLinks();
+            this.helpDisplay.openUnlinkVolume = true;
+            this.CloudProjectComputeVolumesOrchestrator.addNewVolumeFromSnapshotToList("unlinked", snapshot)
+                .then(volumeDraft => {
+                    this.CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
+                })
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_volume_add_from_snapshot_error")} ${_.get(err, "data.message", "")}`);
+                });
+        }
+
+        addVirtualMachine () {
+            this.CloudProjectComputeInfrastructureOrchestrator.addNewVmToList()
+                .then(vm => {
+                    this.CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
+                });
+        }
+
         // ------- REGION ACTIONS -------
 
-        self.getVmContinent = function (vm) {
-            var region = _.find(self.regions, { name : vm.region });
-            return region ? region.continentCode : undefined;
-        };
+        getVmContinent (vm) {
+            const region = _.find(this.regions, { name: vm.region });
+            return _.get(region, "continentCode", undefined);
+        }
 
-        // ------- END REGION ACTIONS -------
+        // ------- END REGION -------
 
         // ------- VM ACTIONS -------
 
-        self.addVirtualMachine = function () {
-            CloudProjectComputeInfrastructureOrchestrator.addNewVmToList().then(function (vm) {
-                CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
+        showDeleteProjectModal () {
+            this.$uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
+                controller: "CloudProjectDeleteCtrl",
+                controllerAs: "CloudProjectDeleteCtrl"
             });
-        };
+        }
 
-        self.deleteConfirmPending = function (vm) {
-            /**
-             * We display a popover warning in two cases :
-             *  - the vm is in monthly billing
-             *  - the vm is routed to failover IPs
-             */
-            if (vm.monthlyBilling && vm.monthlyBilling.status === 'ok') {
-                $uibModal.open({
-                    windowTopClass: 'cui-modal',
-                    templateUrl: 'app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html',
-                    controller: 'CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl',
-                    controllerAs: '$ctrl',
+        deleteConfirmPending (vm) {
+            // We display a popover warning in two cases :
+            //  - the vm is in monthly billing
+            //  - the vm is routed to failover IPs
+            if (vm.monthlyBilling && vm.monthlyBilling.status === "ok") {
+                this.$uibModal.open({
+                    windowTopClass: "cui-modal",
+                    templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html",
+                    controller: "CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl",
+                    controllerAs: "$ctrl",
                     resolve: {
-                        params: function () {
-                            return vm;
-                        }
+                        params: () => vm
                     }
-                }).result.then(function () {
-                    self.deleteVirtualMachine(vm);
+                }).result.then(() => {
+                    this.deleteVirtualMachine(vm);
                 });
             } else {
-                vm.confirm = 'deleteConfirmPending';
+                vm.confirm = "deleteConfirmPending";
             }
-        };
+        }
 
-        self.deleteVirtualMachine = function (vm) {
-            vm.confirmLoading = true;
-            CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm).then(function () {
-                vm.confirm = null;
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpci_vm_delete_submit_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                vm.confirmLoading = false;
-            });
-        };
+        deleteVirtualMachine (vm) {
+            _.set(vm, "confirmLoading", true);
+            this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
+                .then(() => {
+                    _.set(vm, "confirm", null);
+                })
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_delete_submit_error")} ${_.get(err, "data.message", "")}`);
+                })
+                .finally(() => {
+                    vm.confirmLoading = false;
+                });
+        }
 
-        self.reinstallVirtualMachine = function (vm) {
-            vm.confirmLoading = true;
-            CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm).then(function () {
-                vm.confirm = null;
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpci_vm_reinstall_submit_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                vm.confirmLoading = false;
-            });
-        };
+        reinstallVirtualMachine (vm) {
+            _.set(vm, "confirmLoading", true);
+            this.CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm)
+                .then(() => {
+                    _.set(vm, "confirm", null);
+                })
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reinstall_submit_error")} ${_.get(err, "data.message", "")}`);
+                })
+                .finally(() => {
+                    vm.confirmLoading = false;
+                });
+        }
 
-        self.rebootVirtualMachine = function (vm, type) {
-            vm.confirmLoading = true;
-            CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type).then(function () {
-                vm.confirm = null;
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpci_vm_reboot_submit_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                vm.confirmLoading = false;
-            });
-        };
+        rebootVirtualMachine (vm, type) {
+            _.set(vm, "confirmLoading", true);
+            this.CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type)
+                .then(() => {
+                    _.set(vm, "confirm", null);
+                })
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reboot_submit_error")} ${_.get(err, "data.message", "")}`);
+                })
+                .finally(() => {
+                    vm.confirmLoading = false;
+                });
+        }
 
-        self.resumeVirtualMachine = function (vm) {
-            var oldStatus = vm.status;
-            vm.status = "RESUMING";
-            CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm).catch(function (err) {
-                CloudMessage.error([$translate.instant("cpci_vm_resume_submit_error"), err.data && err.data.message || ""].join(" "));
-                vm.status = oldStatus;
-            });
-        };
+        resumeVirtualMachine (vm) {
+            const oldStatus = vm.status;
+            _.set(vm, "status", "RESUMING");
+            this.CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm)
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_resume_submit_error")} ${_.get(err, "data.message", "")}`);
+                    vm.status = oldStatus;
+                });
+        }
 
-        self.openSnapshotWizard = function (vm) {
-            $uibModal.open({
+        openSnapshotWizard (vm) {
+            this.$uibModal.open({
                 windowTopClass: "cui-modal",
-                templateUrl: 'app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html',
-                controller: 'CloudProjectComputeSnapshotAddCtrl',
-                controllerAs: 'CloudProjectComputeSnapshotAddCtrl',
+                templateUrl: "app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html",
+                controller: "CloudProjectComputeSnapshotAddCtrl",
+                controllerAs: "CloudProjectComputeSnapshotAddCtrl",
                 resolve: {
-                    params: function () {
-                        return vm;
-                    }
+                    params: () => vm
                 }
             });
-        };
+        }
 
-        self.openVolumeSnapshotWizard = function (volume) {
-            $uibModal.open({
-                templateUrl: 'app/cloud/project/compute/volume/snapshot/cloud-project-compute-volume-snapshot-add.html',
-                controller: 'CloudProjectComputeVolumeSnapshotAddCtrl',
-                controllerAs: 'CloudProjectComputeVolumeSnapshotAddCtrl',
+        openVolumeSnapshotWizard (volume) {
+            this.$uibModal.open({
+                templateUrl: "app/cloud/project/compute/volume/snapshot/cloud-project-compute-volume-snapshot-add.html",
+                controller: "CloudProjectComputeVolumeSnapshotAddCtrl",
+                controllerAs: "CloudProjectComputeVolumeSnapshotAddCtrl",
                 resolve: {
-                    params: function () {
-                        return volume;
-                    }
+                    params: () => volume
                 }
             });
-        };
+        }
 
-        self.openMonthlyConfirmation = function (vm) {
-            var modalInstance = $uibModal.open({
+        openMonthlyConfirmation (vm) {
+            this.$uibModal.open({
                 windowTopClass: "cui-modal",
                 templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm/cloud-project-compute-infrastructure-virtual-machine-monthlyConfirm.html",
                 controller: "CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm",
                 controllerAs: "CPCIVirtualmachineMonthlyConfirm",
                 resolve: {
-                    params: function () {
-                        return vm;
-                    }
+                    params: () => vm
                 }
+            }).then(() => {
+                this.refreshLinks();
             });
-            modalInstance.opened.then(function () {
-                refreshLinks();
-            });
-        };
+        }
 
-        self.stopRescueMode = function (vm, enable) {
-            vm.confirmLoading = true;
-            CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable).then(function () {
-                vm.confirm = null;
-            }, function (err) {
-                CloudMessage.error( [$translate.instant('cpci_vm_rescue_end_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                vm.confirmLoading = false;
-            });
-        };
+        stopRescueMode (vm, enable) {
+            _.set(vm, "confirmLoading", true);
+            this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable)
+                .then(() => {
+                    _.set(vm, "confirm", null);
+                })
+                .catch(err => {
+                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_rescue_end_error")} ${_.get(err, "data.message", "")}`);
+                })
+                .finally(() => {
+                    vm.confirmLoading = false;
+                });
+        }
 
         // ------- END VM -------
 
         // ------- VM DISPLAY TOOLS -------
 
-        $scope.$on('compute.infrastructure.vm.status-update', function (evt, newStatus, oldStatus, vm) {
-            if (oldStatus === 'BUILD' && newStatus === 'ACTIVE') {
-                self.displayVmAuthInfo(vm);
-            }
-        });
-
-        self.toggleVmEditionState = function (vm, param) {
+        toggleVmEditionState (vm, param) {
             if (vm.openDetail) {
-                CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
-                $rootScope.$broadcast('highlighed-element.hide');
+                this.CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(true);
+                this.$rootScope.$broadcast("highlighed-element.hide");
             } else {
                 if (param) {
-                    CloudProjectComputeInfrastructureOrchestrator.setEditVmParam(param);
+                    this.CloudProjectComputeInfrastructureOrchestrator.setEditVmParam(param);
                 }
-                CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
+                this.CloudProjectComputeInfrastructureOrchestrator.turnOnVmEdition(vm);
             }
-        };
+        }
 
-        self.openVmMonitoringPanel = function (vm) {
-            CloudProjectComputeInfrastructureOrchestrator.openMonitoringPanel(vm);
-        };
+        openVmMonitoringPanel (vm) {
+            this.CloudProjectComputeInfrastructureOrchestrator.openMonitoringPanel(vm);
+        }
 
-        self.displayVmAuthInfo = function (vm) {
-            var completeVm = self.infra.vrack.publicCloud.get(vm.id);
-
-            $state.go("iaas.pci-project.compute.infrastructure.modal.login-information", {
+        displayVmAuthInfo (vm) {
+            const completeVm = this.infra.vrack.publicCloud.get(vm.id);
+            this.$state.go("iaas.pci-project.compute.infrastructure.modal.login-information", {
                 instanceId: vm.id,
-                serviceName: $stateParams.projectId,
+                serviceName: this.$stateParams.projectId,
                 ipAddresses: vm.ipAddresses,
                 image: completeVm.image
             });
-        };
+        }
 
-        self.openVncWithId = function (vmId) {
-            var completeVm = self.infra.vrack.publicCloud.get(vmId);
-            if (completeVm) {
-                self.openVnc(completeVm);
-            }
-        };
-
-        self.openVnc = function (vm) {
-            $uibModal.open({
-                windowTopClass: 'cui-modal',
-                templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html',
-                controller   : 'CloudProjectComputeInfrastructureVirtualmachineVncCtrl',
-                controllerAs : 'VmVncCtrl',
-                size         : 'lg',
-                resolve      : {
-                    params: function () {
-                        return vm;
-                    }
-                }
-            });
-        };
-
-        self.rescueMode = function (vm, enable) {
+        rescueMode (vm, enable) {
             if (enable) {
-                $uibModal.open({
-                    windowTopClass: 'cui-modal',
-                    templateUrl  : 'app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html',
-                    controller   : 'CloudProjectComputeInfrastructureVirtualmachineRescueCtrl',
-                    controllerAs : 'VmRescueCtrl',
-                    size         : 'md',
-                    resolve      : {
-                        params: function () {
-                            return vm;
-                        }
+                this.$uibModal.open({
+                    windowTopClass: "cui-modal",
+                    templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html",
+                    controller: "CloudProjectComputeInfrastructureVirtualmachineRescueCtrl",
+                    controllerAs: "VmRescueCtrl",
+                    size: "md",
+                    resolve: {
+                        params: () => vm
                     }
                 });
             }
-        };
+        }
 
-        self.collapseAll = function () {
-            CloudProjectComputeInfrastructureOrchestrator.collapseAllVm();
-            refreshLinks();
-        };
+        collapseAll () {
+            this.CloudProjectComputeInfrastructureOrchestrator.collapseAllVm();
+            this.refreshLinks();
+        }
 
-        self.uncollapseAll = function () {
-            CloudProjectComputeInfrastructureOrchestrator.uncollapseAllVm();
-            refreshLinks();
-        };
+        unCollapseAll () {
+            this.CloudProjectComputeInfrastructureOrchestrator.uncollapseAllVm();
+            this.refreshLinks();
+        }
 
-        self.toggleCollapsedState = function (vm) {
-            CloudProjectComputeInfrastructureOrchestrator.toggleVmCollapsedState(vm);
-            refreshLinks();
-        };
+        toggleCollapsedState (vm) {
+            this.CloudProjectComputeInfrastructureOrchestrator.toggleVmCollapsedState(vm);
+            this.refreshLinks();
+        }
 
-        self.toggleCollapsedVolumes = function (vm) {
+        toggleCollapsedVolumes (vm) {
             if (vm) {
-                CloudProjectComputeInfrastructureOrchestrator.toggleCollapsedVolumes(vm);
+                this.CloudProjectComputeInfrastructureOrchestrator.toggleCollapsedVolumes(vm);
             } else {
-                self.helpDisplay.openUnlinkVolume = !self.helpDisplay.openUnlinkVolume;
+                this.helpDisplay.openUnlinkVolume = !this.helpDisplay.openUnlinkVolume;
             }
-            refreshLinks();
-            if (!vm && (!self.volumes.unlinked || !self.volumes.unlinked.length)) {
-                self.addVolume();
+            this.refreshLinks();
+            if (!vm && (!this.volumes.unlinked || !this.volumes.unlinked.length)) {
+                this.addVolume();
             }
-        };
+        }
 
         // ------- END VM DISPLAY TOOLS -------
 
-
-        function refreshLinks () {
-            $timeout(function () {
-                if (self.jsplumbInstance) {
-                    self.jsplumbInstance.revalidateEverything();
-                }
-            }, 99);
-        }
-
-        $scope.$on('infra.refresh.links', function () {
-            // delay the execution, on VM deletion, VMS need to be moved before we refresh or links
-            // aren't place properly
-            $timeout(function () {
-                refreshLinks();
-
-            }, 1000);
-        });
-
-        self.forceRefreshLinks = function() {
-            refreshLinks();
-        };
-
         // ------- IPS ACTIONS -------
 
-        /*==========  IPFO BUY  ==========*/
-
-        this.buyIpFailover = function () {
-            $uibModal.open({
+        buyIpFailOver () {
+            this.$uibModal.open({
                 windowTopClass: "cui-modal",
-                templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html',
-                controller: 'CloudProjectComputeInfrastructureIpFailoverBuyCtrl',
-                controllerAs: 'CPCIIpFailoverBuyCtrl'
-            });
-        };
-
-        /*==========  IPFO IMPORT  ==========*/
-
-        /**
-         * At init, check if there are IPFO importation to poll
-         */
-        function checkPendingImportIpFailover () {
-            // On page refresh, get pending IPFO import
-            CloudUserPref.get('cloud_project_' + serviceName + '_infra_ipfo_import').then(function (ipfoToImport) {
-                ipfoToImport = ipfoToImport ? ipfoToImport.ips : [];
-                if (ipfoToImport && _.isArray(ipfoToImport) && ipfoToImport.length) {
-                    angular.forEach(ipfoToImport, function (ipfo) {
-                        pollImportIpFailover(ipfo);
-                    });
-                }
+                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html",
+                controller: "CloudProjectComputeInfrastructureIpFailoverBuyCtrl",
+                controllerAs: "CPCIIpFailoverBuyCtrl"
             });
         }
 
-        this.importIpFailover = function () {
-            $uibModal.open({
+        importIpFailover () {
+            this.$uibModal.open({
                 windowTopClass: "cui-modal",
-                templateUrl: 'app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html',
-                controller: 'CloudProjectComputeInfrastructureIpFailoverImportCtrl',
-                controllerAs: 'CPCIIpFailoverImportCtrl',
+                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html",
+                controller: "CloudProjectComputeInfrastructureIpFailoverImportCtrl",
+                controllerAs: "CPCIIpFailoverImportCtrl",
                 resolve: {
-                    pendingImportIps: function () {
-                        return angular.copy(self.importedIpFailoverPending);
-                    }
+                    pendingImportIps: () => angular.copy(this.importedIpFailoverPending)
                 }
-            }).result.then(function (listTaskslistIpsWithTasks) {
+            }).result.then(listTasksListIpsWithTasks => {
                 // Launch polling
-                angular.forEach(listTaskslistIpsWithTasks, function (ipWithTask) {
-                    pollImportIpFailover(ipWithTask.ip, ipWithTask.task);
+                _.forEach(listTasksListIpsWithTasks, ipWithTask => {
+                    this.pollImportIpFailOver(this.$stateParams.projectId, ipWithTask.ip, ipWithTask.task);
                 });
-                refreshLinks();
-            });
-        };
-
-        /**
-         * Updates reverse dns of given ips.
-         */
-        function updateReverseDns (ips) {
-            var reverseQueue = [];
-            angular.forEach(ips, function (ip) {
-                reverseQueue.push(OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block).then(function (dns) {
-                    ip.reverse = dns;
-                }, function (err) {
-                    // ok we choose to ignore errors here, so the application can still be used,
-                    // instead of displaying an ugly error message just because one reverse dns call failed
-                    // let's assume the reverse dns is just null
-                    return $q.when(null);
-                }));
-            });
-            return $q.all(reverseQueue);
-        }
-
-        /**
-         *  [/ip] Poll a given IPFO address.
-         *
-         *  ip      : the ip object
-         *  taskObj : (optional) task to poll
-         */
-        function pollImportIpFailover (ip, taskObj) {
-            // Already polling
-            if (~self.importedIpFailoverPending.indexOf(ip)) {
-                return;
-            }
-
-            var taskToPoll = taskObj ? taskObj.taskId : OvhApiIp.Lexi().getPendingTask(ip, 'genericMoveFloatingIp');
-
-            return $q.when(taskToPoll).then(function (taskId) {
-
-                if (taskId) {
-                    self.importedIpFailoverPending.push(ip);
-
-                    CloudUserPref.set("cloud_project_" + serviceName + "_infra_ipfo_import", {
-                        ips: self.importedIpFailoverPending
-                    });
-
-                    return Poller.poll('/ip/' + encodeURIComponent(ip) + '/task/' + taskId,
-                        null,
-                        {
-                            namespace: 'cloud.infra.ips.genericMoveFloatingIp'
-                        }
-                    ).then(function () {
-                        // On success: the IP should be in the /cloud/.../ip/failover list.
-                        CloudProjectComputeInfrastructureOrchestrator.pollIps('failover');
-                        CloudMessage.success($translate.instant('cpci_ipfo_import_success', {ip: ip}));
-                    }, function (err) {
-                        if (err && err.status) {
-                            // On error: remove the IP from list
-                            CloudMessage.error($translate.instant('cpci_ipfo_import_error', {ip: ip}));
-                        }
-                    });
-                }
-            }).then(function () {
-                _.pull(self.importedIpFailoverPending, ip);
-                CloudUserPref.set("cloud_project_" + serviceName + "_infra_ipfo_import", {
-                    ips: self.importedIpFailoverPending
-                });
-            })["finally"](function () {
-                refreshLinks();
+                this.refreshLinks();
             });
         }
-        $scope.$on('$destroy', function () {
-            Poller.kill({ namespace: 'cloud.infra.ips.genericMoveFloatingIp' });
-        });
 
         /**
          * Toggle automatic sorting of ips
          */
-        self.toggleIpSort = function () {
-            var autoSortEnable = !self.sort.ipAutoSort;
-            self.sort.ipAutoSort = autoSortEnable;
-            self.sort.ipNaturalSort = autoSortEnable; // activate naturalSort if autoSort is enabled
-            refreshLinks();
-            CloudUserPref.set("cloud_project_" + serviceName + "_infra_ip_autosort", {
-                "enabled" : autoSortEnable
-            });
-        };
-
-        /**
-         * Check in local storage if IPs auto sort is enabled
-         */
-        function checkIpAutoSort() {
-            CloudUserPref.get('cloud_project_' + serviceName + '_infra_ip_autosort').then(function (ipAutoSort) {
-                if (ipAutoSort) {
-                    self.sort.ipAutoSort = ipAutoSort.enabled;
-                    self.sort.ipNaturalSort = ipAutoSort.enabled; // activate naturalSort if autoSort is enabled
-                    refreshLinks();
-                }
+        toggleIpSort () {
+            const autoSortEnable = !this.sort.ipAutoSort;
+            this.sort.ipAutoSort = autoSortEnable;
+            this.sort.ipNaturalSort = autoSortEnable; // activate naturalSort if autoSort is enabled
+            this.refreshLinks();
+            this.CloudUserPref.set(`cloud_project_${this.$stateParams.projectId}_infra_ip_autosort`, {
+                enabled: autoSortEnable
             });
         }
 
         /**
          * Sort the ip in order to have the least crossing between links
          */
-        self.ipAutoSort = function (ip) {
-            // only if autosort is enabled ...
-            if (!self.sort.ipAutoSort) {
-                return _.indexOf(self.infra.internet.ipList.sortedKeys, ip.id);
-            }
-            var order = 0;
-            var routeCount = 0;
-            angular.forEach(ip.routedTo, function (route) {
-                var vmPosition = _.indexOf(self.infra.vrack.publicCloud.sortedKeys, route);
-                if (vmPosition !== -1) {
-                    order += vmPosition * 5; // arbitrary weight of 5 for a link with a vm
-                    routeCount += 1;
+        ipAutoSort () {
+            const ipAutoSort = this.sort.ipAutoSort;
+            const sortedKeys = this.infra.internet.ipList.sortedKeys;
+
+            return function (ip) {
+                // only if autoSort is enabled ...
+                if (!ipAutoSort) {
+                    return _.indexOf(sortedKeys, ip.id);
                 }
-            });
-            if (routeCount > 0) {
-                order /= routeCount; // compute our position with average order
-                if (ip.type === 'failover') {
-                    order += 1;
+                let order = 0;
+                let routeCount = 0;
+                _.forEach(ip.routedTo, route => {
+                    const vmPosition = _.indexOf(sortedKeys, route);
+                    if (vmPosition !== -1) {
+                        order += vmPosition * 5; // arbitrary weight of 5 for a link with a vm
+                        routeCount += 1;
+                    }
+                });
+
+                if (routeCount > 0) {
+                    order /= routeCount; // compute our position with average order
+                    if (ip.type === "failover") {
+                        order += 1;
+                    }
+                    return order;
                 }
-                return order;
-            }
-            return Number.MAX_VALUE; // goes to the bottom
-        };
+
+                return Number.MAX_VALUE; // goes to the bottom
+            };
+        }
 
         /**
          * Sort IPs in their natural order
          */
-        self.ipSortNatural = function (ip) {
-            // only if natural sort is activated ...
-            if (!self.sort.ipNaturalSort) {
-                return _.indexOf(self.infra.internet.ipList.sortedKeys, ip.id);
-            }
-            var ipRegex = new RegExp(/(\d+)\.(\d+)\.(\d+)\.(\d+)/);
-            if (ip && ipRegex.test(ip.ip)) { // IPv4 ...
-                var values = ipRegex.exec(ip.ip);
-                var score = 0;
-                score += parseInt(values[1], 10) * 1000000000;
-                score += parseInt(values[2], 10) * 1000000;
-                score += parseInt(values[3], 10) * 1000;
-                score += parseInt(values[4], 10);
-                return score;
-            }
-            return ip.ip;
-        };
+        ipSortNatural () {
+            const ipNaturalSort = this.sort.ipNaturalSort;
+            const sortedKeys = this.infra.internet.ipList.sortedKeys;
 
-        self.ipReverse = {
-            text : function (ip) {
-                return $translate.instant('cloud_public_ip_failover_reverse', {"ip": ip.reverse});
-            }
-        };
+            return function (ip) {
+                // only if natural sort is activated ...
+                if (!ipNaturalSort) {
+                    return _.indexOf(sortedKeys, ip.id);
+                }
+
+                const ipRegex = new RegExp(/(\d+)\.(\d+)\.(\d+)\.(\d+)/);
+                if (ip && ipRegex.test(ip.ip)) { // IPv4 ...
+                    const values = ipRegex.exec(ip.ip);
+                    let score = 0;
+                    score += parseInt(values[1], 10) * 1000000000;
+                    score += parseInt(values[2], 10) * 1000000;
+                    score += parseInt(values[3], 10) * 1000;
+                    score += parseInt(values[4], 10);
+                    return score;
+                }
+                return ip.ip;
+            };
+        }
+
+        ipReverse (ip) {
+            return this.$translate.instant("cloud_public_ip_failover_reverse", { ip: ip.reverse });
+        }
 
         // ------- END IPS  -------
 
@@ -743,18 +940,12 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureDiagra
 
         // ------- JSPLUMB TOOLS -------
 
-        function redrawLinks (revalidateEmptyEndpoints) {
-            if (self.jsplumbInstance) {
-                self.jsplumbInstance.repaintEverything(revalidateEmptyEndpoints);
-            }
+        static sourceIsVm (source, target) {
+            return $(source).hasClass("vm-port") && $(target).hasClass("ip-port");
         }
 
-        function sourceIsVm (source, target) {
-            return $(source).hasClass('vm-port') && $(target).hasClass('ip-port');
-        }
-
-        function getLinkColor (type) {
-            var defaultColor = "#a8e0d5";
+        static getLinkColor (type) {
+            const defaultColor = "#a8e0d5";
             switch (type) {
                 case "disabled":
                     return "#bbdcd5";
@@ -763,715 +954,555 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureDiagra
                 case "failover":
                     return defaultColor;
                 default:
-                    // return ;
                     return defaultColor;
+            }
+        }
+
+        redrawLinks (reValidateEmptyEndpoints) {
+            if (this.jsplumbInstance) {
+                this.jsplumbInstance.repaintEverything(reValidateEmptyEndpoints);
             }
         }
 
         // ------- JSPLUMB CONF -------
 
-        // Default options
-        var srcDrawOptionsBase = {
-            connector: ["Bezier", { curviness: 100 }],
-            connectorStyle: {
-                strokeStyle: getLinkColor(),
-                lineWidth: 4
-            }
-        };
+        initJsPlumb () {
+            // Default options
+            this.srcDrawOptionsBase = {
+                connector: ["Bezier", { curviness: 100 }],
+                connectorStyle: {
+                    strokeStyle: this.constructor.getLinkColor(),
+                    lineWidth: 4
+                }
+            };
 
-        // ------- JSPLUMB VM FUNCTION CONF -------
-
-        this.vmSourceDrawOptions = {
-            connector : srcDrawOptionsBase.connector,
-            connectorStyle : srcDrawOptionsBase.connectorStyle,
-            anchor : [0.5, 0.5, 1, 0],
-            endpoint : ['Blank', { cssClass : 'vm-source' }],
-            filter : '.port-inner',
-            dragOptions : {
-                start : function () {
-                    var id = $(this).attr("elid");
-                    var vm = self.infra.vrack.getVmById(id);
-                    if (vm) {
-                        $rootScope.$broadcast('highlighed-element.show', "compute," + vm.id + ",ip-failover-ok-" + self.getVmContinent(vm));
-                    }
-                },
-                stop : function () {
-                    var id = $(this).attr("elid");
-                    var vm = self.infra.vrack.getVmById(id);
-                    if (vm) {
-                        $rootScope.$broadcast("highlighed-element.hide", "compute," + vm.id + ",ip-failover-ok-" + self.getVmContinent(vm));
+            // ------- JSPLUMB VM FUNCTION CONF -------
+            this.vmSourceDrawOptions = {
+                connector: this.srcDrawOptionsBase.connector,
+                connectorStyle: this.srcDrawOptionsBase.connectorStyle,
+                anchor: [0.5, 0.5, 1, 0],
+                endpoint: ["Blank", { cssClass: "vm-source" }],
+                filter: ".port-inner",
+                dragOptions: {
+                    start: () => {
+                        const id = $(this).attr("elid");
+                        const vm = this.infra.vrack.getVmById(id);
+                        if (vm) {
+                            this.$rootScope.$broadcast("highlighed-element.show", `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
+                        }
+                    },
+                    stop: () => {
+                        const id = $(this).attr("elid");
+                        const vm = this.infra.vrack.getVmById(id);
+                        if (vm) {
+                            this.$rootScope.$broadcast("highlighed-element.hide", `compute,${vm.id},ip-failover-ok-${this.getVmContinent(vm)}`);
+                        }
                     }
                 }
-            }
-        };
+            };
 
-        this.vmTargetDrawOptions = {
-            anchor : [0.5, 0.5, 1, 0],
-            endpoint : ['Blank', { cssClass : 'vm-target' }],
-            dropOptions : {
-                accept : '.ip-source',
-                hoverClass : 'hover-port'
-            }
-        };
+            // ------- JSPLUMB VM FUNCTION CONF -------
+            this.vmTargetDrawOptions = {
+                anchor: [0.5, 0.5, 1, 0],
+                endpoint: ["Blank", { cssClass: "vm-target" }],
+                dropOptions: {
+                    accept: ".ip-source",
+                    hoverClass: "hover-port"
+                }
+            };
 
-        // ------- JSPLUMB IP FUNCTION CONF -------
+            // ------- JSPLUMB IP FUNCTION CONF -------
+            this.ipTargetDrawOptions = {
+                anchor: [0.5, 0.5, -1, 0],
+                endpoint: ["Blank", { cssClass: "ip-target" }],
+                dropOptions: {
+                    accept: ".vm-source",
+                    hoverClass: "hover-port"
+                }
+            };
 
-        this.ipTargetDrawOptions = {
-            anchor : [0.5, 0.5, -1, 0],
-            endpoint : ['Blank', { cssClass : 'ip-target' }],
-            dropOptions : {
-                accept : '.vm-source',
-                hoverClass : 'hover-port'
-            }
-        };
-
-        this.ipSourceDrawOptions = {
-            connector : srcDrawOptionsBase.connector,
-            connectorStyle : srcDrawOptionsBase.connectorStyle,
-            connectorHoverStyle : srcDrawOptionsBase.connectorHoverStyle,
-            // anchor : 'LeftMiddle',
-            anchor : [0.5, 0.5, -1, 0],
-            endpoint : ['Blank', { cssClass : 'ip-source' }],
-            filter : '.port-inner',
-            dragOptions : {
-                start : function () {
-                    var id = $(this).attr("elid");
-                    var ip = self.infra.internet.getIpById(id);
-                    if (ip) {
-                        $rootScope.$broadcast("highlighed-element.show", "compute," + ip.id + ",vm-ACTIVE-" + ip.continentCode);
-                    }
-                },
-                stop : function () {
-                    var id = $(this).attr("elid");
-                    var ip = self.infra.internet.getIpById(id);
-                    if (ip) {
-                        $rootScope.$broadcast("highlighed-element.hide", "compute," + ip.id + ",vm-ACTIVE-" + ip.continentCode);
+            this.ipSourceDrawOptions = {
+                connector: this.srcDrawOptionsBase.connector,
+                connectorStyle: this.srcDrawOptionsBase.connectorStyle,
+                connectorHoverStyle: this.srcDrawOptionsBase.connectorHoverStyle,
+                // anchor: "LeftMiddle",
+                anchor: [0.5, 0.5, -1, 0],
+                endpoint: ["Blank", { cssClass: "ip-source" }],
+                filter: ".port-inner",
+                dragOptions: {
+                    start: () => {
+                        const id = $(this).attr("elid");
+                        const ip = this.infra.internet.getIpById(id);
+                        if (ip) {
+                            this.$rootScope.$broadcast("highlighed-element.show", `compute,${_.get(ip, "id", "")},vm-ACTIVE-${_.get(ip, "continentCode", "")}`);
+                        }
+                    },
+                    stop: () => {
+                        const id = $(this).attr("elid");
+                        const ip = this.infra.internet.getIpById(id);
+                        if (ip) {
+                            this.$rootScope.$broadcast("highlighed-element.hide", `compute,${_.get(ip, "id", "")},vm-ACTIVE-${_.get(ip, "continentCode", "")}`);
+                        }
                     }
                 }
-            }
-        };
+            };
+        }
 
         // ******* END JSPLUMB *******
 
-        // ------- JSPLUMB EVENTS -------
+        initIpEdit () {
+            this.ipEdit = {
+                attach: {
+                    confirm: (vm, ip) => {
+                        if (!this.loaders.linkActionConfirm) {
+                            const connectedVm = vm || this.model.currentLinkEdit.connectedVm;
+                            const connectedIp = ip || this.model.currentLinkEdit.connectedIp;
 
-        // what to do when instance is created
-        $scope.$on('jsplumb.instance.created', function (evt, instance) {
-            self.jsplumbInstance = instance;
-            window.JSPLUMBINSTANCE = self.jsplumbInstance;
-        });
+                            this.loaders.linkActionConfirm = true;
 
-        // what to do when a connection is made
-        $scope.$on('jsplumb.instance.connection', function (evt, connection, source, target, instance, originalEvent) {
-
-            var isVmSource = sourceIsVm(connection.source, connection.target),
-                connectedIpId = isVmSource ? connection.targetId : connection.sourceId,
-                connectedVmId = isVmSource ? connection.sourceId : connection.targetId,
-                connectedIp = self.infra.internet.getIpById(connectedIpId),
-                connectedVm = self.infra.vrack.getVmById(connectedVmId);
-
-            if (!connectedIp || !connectedVm) {
-                return;
-            }
-
-            // Set connection style
-            connection.setPaintStyle({ strokeStyle : getLinkColor(connectedIp.type), lineWidth : 4 });
-
-            connection.addClass("_jsPlumb_connector_ip_" + connectedIp.type);
-            connection.addClass("fade-transition");
-            // Don't up the size when hover ip public
-            if (connectedIp.type === 'public') {
-                connection.setHoverPaintStyle({ lineWidth : 4 });
-            }
-
-            // It's a connection drawed by the user (with its mouse)
-            if (originalEvent) {
-
-                var vmContinent = self.getVmContinent(connectedVm);
-                var isValidLink = vmContinent && vmContinent === connectedIp.continentCode;
-
-                if (isValidLink && (!self.model.currentLinkEdit || self.model.currentLinkEdit.action === 'attach')) {
-
-                    // set dotted line
-                    connection.setPaintStyle({ strokeStyle : getLinkColor(connectedIp.type), lineWidth : 8, dashstyle : "2 1" });
-
-                    switch (connectedIp.type) {
-                        case 'failover':
-                            if (connectedIp.routedTo.length > 0) {
-                                // It's a "move" : show a confirmation
-
-                                var connectedVmCurrent = self.infra.vrack.getVmById(connectedIp.routedTo[0]);
-
-                                self.model.currentLinkEdit = {
-                                    connection         : connection,
-                                    connectedIp        : connectedIp,
-                                    connectedVm        : connectedVm,
-                                    connectedVmCurrent : connectedVmCurrent,
-                                    action             : 'attach'
-                                };
-
-                                $rootScope.$broadcast('highlighed-element.show', 'compute,' + connectedIp.id + ',' + connectedVmId);
-                                self.model.currentLinkEdit.connection.addClass('highlighed-element highlighed-element-active');
-                            } else {
-                                self.ipEdit.attach.confirm(connectedVm, connectedIp)['catch'](function(){
-                                    self.jsplumbInstance.disconnectEndpoints(connection);
+                            return this.CloudProjectComputeInfrastructureOrchestrator.attachIptoVm(connectedIp, connectedVm)
+                                .then(() => {
+                                    this.$rootScope.$broadcast("highlighed-element.hide");
+                                    this.model.currentLinkEdit = null;
+                                    let successMessage = {
+                                        text: this.$translate.instant("cpci_ip_attach_success", { ip: connectedIp.ip, instance: connectedVm.name })
+                                    };
+                                    if (connectedIp.type === "failover" && connectedVm.image) {
+                                        const distribution = connectedVm.image.distribution || this.URLS.guides.ip_failover.defaultDistribution;
+                                        successMessage = {
+                                            textHtml: `${successMessage.text} ${this.$translate.instant("cpci_ip_attach_failover_help", {
+                                                link: this.URLS.guides.ip_failover[this.user.ovhSubsidiary][distribution]
+                                            })}`
+                                        };
+                                    }
+                                    this.CloudMessage.success(successMessage);
+                                })
+                                .catch(err => {
+                                    this.CloudMessage.error(`${this.$translate.instant("cpci_ip_attach_error", { ip: connectedIp.ip, instance: connectedVm.name })} ${_.get(err, "data.message", "")}`);
+                                    return this.$q.reject(err);
+                                })
+                                .finally(() => {
+                                    this.loaders.linkActionConfirm = false;
                                 });
-                            }
-                    }
+                        }
+                        return null;
+                    },
+                    cancel: () => {
+                        if (!this.loaders.linkActionConfirm && this.model.currentLinkEdit) {
 
-                } else {
-                    self.jsplumbInstance.disconnectEndpoints(connection);
+                            // if user drawed a line: delete it
+                            if (this.model.currentLinkEdit.connection) {
+                                this.jsplumbInstance.disconnectEndpoints(this.model.currentLinkEdit.connection);
+                            }
+
+                            // for manual attach
+                            if (this.model.currentLinkEdit.connectionCurrent) {
+                                // this.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth : 8 });
+                                this.model.currentLinkEdit.connectionCurrent.removeClass("highlighed-element highlighed-element-active");
+                            }
+
+                            this.$rootScope.$broadcast("highlighed-element.hide");
+                            this.model.currentLinkEdit = null;
+                        }
+                    },
+                    button: ip => {
+                        // input radio
+                        if (ip.type === "failover") {
+
+                            // list of compatible(s) vm(s) to attach the ip
+                            const compatibleVms = _.filter(this.infra.vrack.publicCloud.items, vm => this.ipEdit.attach.canAttachIpToVm(ip, vm));
+
+                            // do we have at least one compatible vm?
+                            if (_.isArray(compatibleVms) && compatibleVms.length > 0) {
+                                _.set(this.model, "currentLinkEdit", {
+                                    connectionCurrentVmId: ip.routedTo.length > 0 ? ip.routedTo[0] : null,
+                                    connectionVmId: ip.routedTo.length > 0 ? ip.routedTo[0] : null,
+
+                                    connectionCurrent: ip.routedTo.length > 0 ? this.jsplumbInstance.getConnectionBySourceIdAndTargetId(ip.id, ip.routedTo[0]) : null,
+                                    connection: null,
+
+                                    connectedIp: ip,
+                                    connectedVmCurrent: ip.routedTo.length > 0 ? this.infra.vrack.getVmById(ip.routedTo[0]) : null,
+                                    action: "attach",
+                                    isManual: true
+                                });
+
+                                // If there are a connection already, highlight it
+                                if (this.model.currentLinkEdit.connectionCurrent) {
+                                    this.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth: 4 });
+                                    this.model.currentLinkEdit.connectionCurrent.addClass("highlighed-element highlighed-element-active");
+                                }
+
+                                this.$rootScope.$broadcast("highlighed-element.show", `compute,vm-ACTIVE-${_.get(this.model, "currentLinkEdit.connectedIp.continentCode", "")}`);
+                            } else {
+                                this.CloudMessage.error(this.$translate.instant("cpci_ipfo_attach_error"));
+                            }
+                        }
+                    },
+                    changeRadioConnection: () => {
+                        // If there are already a link: detach it
+                        if (this.model.currentLinkEdit.connection) {
+                            this.jsplumbInstance.disconnectEndpoints(this.model.currentLinkEdit.connection);
+                            this.model.currentLinkEdit.connection = null;
+                            this.model.currentLinkEdit.connectedVm = null;
+                        }
+
+                        if (this.model.currentLinkEdit.connectionCurrentVmId !== this.model.currentLinkEdit.connectionVmId) {
+                            // create connection
+                            this.model.currentLinkEdit.connection = this.jsplumbInstance.connectEndpoints(this.model.currentLinkEdit.connectedIp.id, this.model.currentLinkEdit.connectionVmId);
+                            this.model.currentLinkEdit.connectedVm = this.infra.vrack.getVmById(this.model.currentLinkEdit.connectionVmId);
+
+                            // set connection style
+                            this.model.currentLinkEdit.connection.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(this.model.currentLinkEdit.connectedIp.type), lineWidth: 8, dashstyle: "2 1" });
+                            this.model.currentLinkEdit.connection.addClass("highlighed-element highlighed-element-active");
+                        } else if (this.model.currentLinkEdit.connectionCurrent) {
+                            this.model.currentLinkEdit.connectionCurrent.setPaintStyle({ strokeStyle: this.constructor.getLinkColor(this.model.currentLinkEdit.connectedIp.type), lineWidth: 4 });
+                        }
+                    },
+                    canAttachIpToVm: (ipSource, vmDest) => {
+                        let attachable = true;
+                        attachable = attachable && ipSource && vmDest;
+                        attachable = attachable && vmDest.status === "ACTIVE";
+                        attachable = attachable && ipSource.continentCode && ipSource.continentCode === this.getVmContinent(vmDest);
+                        return attachable;
+                    }
                 }
-            }
-        });
-
-        // ------- END JSPLUMB EVENTS -------
-
-
-        /**
-         *  IP EDITION
-         *  ----------
-         *
-         *  IPFO: attach/detach, with drag&drop or manual
-         *  ...
-         */
-        this.ipEdit = {
-            'attach': {
-                'confirm': function (vm, ip) {
-                    if (!self.loaders.linkActionConfirm) {
-                        var connectedVm = vm || self.model.currentLinkEdit.connectedVm,
-                            connectedIp = ip || self.model.currentLinkEdit.connectedIp;
-
-                        self.loaders.linkActionConfirm = true;
-                        return CloudProjectComputeInfrastructureOrchestrator.attachIptoVm(connectedIp, connectedVm).then(function () {
-                            $rootScope.$broadcast('highlighed-element.hide');
-                            self.model.currentLinkEdit = null;
-                            var successMessage = { text: $translate.instant('cpci_ip_attach_success', {ip : connectedIp.ip, instance : connectedVm.name}) };
-                            if (connectedIp.type === "failover" && connectedVm.image){
-                                var distribution = connectedVm.image.distribution || URLS.guides.ip_failover.defaultDistribution;
-                                successMessage = {
-                                    textHtml: successMessage.text + ' ' + $translate.instant('cpci_ip_attach_failover_help',
-                                        {link : URLS.guides.ip_failover[self.user.ovhSubsidiary][distribution]})
-                                };
-                            }
-                            CloudMessage.success(successMessage);
-                        }, function (err) {
-                            CloudMessage.error( [$translate.instant('cpci_ip_attach_error', {ip : connectedIp.ip, instance : connectedVm.name}), err.data && err.data.message || ''].join(' '));
-                            return $q.reject(err);
-                        })['finally'](function(){
-                            self.loaders.linkActionConfirm = false;
-                        });
-                    }
-                },
-                'cancel': function () {
-                    if (!self.loaders.linkActionConfirm && self.model.currentLinkEdit) {
-
-                        // if user drawed a line: delete it
-                        if (self.model.currentLinkEdit.connection) {
-                            self.jsplumbInstance.disconnectEndpoints(self.model.currentLinkEdit.connection);
-                        }
-
-                        // for manual attach
-                        if (self.model.currentLinkEdit.connectionCurrent) {
-                            // self.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth : 8 });
-                            self.model.currentLinkEdit.connectionCurrent.removeClass('highlighed-element highlighed-element-active');
-                        }
-
-                        $rootScope.$broadcast('highlighed-element.hide');
-                        self.model.currentLinkEdit = null;
-                    }
-                },
-                'button': function (ip) {
-                    //input radio
-                    if (ip.type === "failover"){
-
-                        // list of compatible(s) vm(s) to attach the ip
-                        var compatibleVms = _.filter(self.infra.vrack.publicCloud.items, function (vm) {
-                            return self.ipEdit.attach.canAttachIpToVm(ip, vm);
-                        });
-
-                        // do we have at least one compatible vm?
-                        if (compatibleVms.length > 0) {
-                            self.model.currentLinkEdit = {
-                                connectionCurrentVmId : ip.routedTo.length > 0 ? ip.routedTo[0] : null,
-                                connectionVmId        : ip.routedTo.length > 0 ? ip.routedTo[0] : null,
-
-                                connectionCurrent     : ip.routedTo.length > 0 ? self.jsplumbInstance.getConnectionBySourceIdAndTargetId(ip.id, ip.routedTo[0]) : null,
-                                connection            : null,
-
-                                connectedIp           : ip,
-                                connectedVmCurrent    : ip.routedTo.length > 0 ? self.infra.vrack.getVmById(ip.routedTo[0]) : null,
-                                action                : 'attach',
-                                isManual              : true
-                            };
-
-                            // If there are a connection already, highlight it
-                            if (self.model.currentLinkEdit.connectionCurrent) {
-                                self.model.currentLinkEdit.connectionCurrent.setHoverPaintStyle({ lineWidth : 4 });
-                                self.model.currentLinkEdit.connectionCurrent.addClass('highlighed-element highlighed-element-active');
-                            }
-
-                            $rootScope.$broadcast('highlighed-element.show', "compute,vm-ACTIVE-" + self.model.currentLinkEdit.connectedIp.continentCode);
-                        } else {
-                            CloudMessage.error($translate.instant("cpci_ipfo_attach_error"));
-                        }
-                    }
-                },
-                'changeRadioConnection' : function () {
-
-                    // If there are already a link: detach it
-                    if (self.model.currentLinkEdit.connection) {
-                        self.jsplumbInstance.disconnectEndpoints(self.model.currentLinkEdit.connection);
-                        self.model.currentLinkEdit.connection = null;
-                        self.model.currentLinkEdit.connectedVm = null;
-                    }
-
-                    if (self.model.currentLinkEdit.connectionCurrentVmId !== self.model.currentLinkEdit.connectionVmId) {
-                        // create connection
-                        self.model.currentLinkEdit.connection = self.jsplumbInstance.connectEndpoints(self.model.currentLinkEdit.connectedIp.id, self.model.currentLinkEdit.connectionVmId);
-                        self.model.currentLinkEdit.connectedVm = self.infra.vrack.getVmById(self.model.currentLinkEdit.connectionVmId);
-
-                        // set connection style
-                        self.model.currentLinkEdit.connection.setPaintStyle({ strokeStyle : getLinkColor(self.model.currentLinkEdit.connectedIp.type), lineWidth : 8, dashstyle: "2 1" });
-                        self.model.currentLinkEdit.connection.addClass('highlighed-element highlighed-element-active');
-                    } else {
-                        if (self.model.currentLinkEdit.connectionCurrent) {
-                            self.model.currentLinkEdit.connectionCurrent.setPaintStyle({ strokeStyle : getLinkColor(self.model.currentLinkEdit.connectedIp.type), lineWidth : 4 });
-                        }
-                    }
-                },
-                'canAttachIpToVm' : function (ipSource, vmDest) {
-                    var attachable = true;
-                    attachable = attachable && ipSource && vmDest;
-                    attachable = attachable && vmDest.status === 'ACTIVE';
-                    attachable = attachable && ipSource.continentCode && ipSource.continentCode === self.getVmContinent(vmDest);
-                    return attachable;
-                }
-            }
-        };
-
-        // ------- END CONTINENT INFORMATIONS -------
+            };
+        }
 
         // ------- JQUERY UI SORTABLE -------
 
-        function initInterval () {
-            //redraw jsplumb after sort
-            sortInterval = setInterval(redrawLinks, 33);
+        initInterval () {
+            // redraw jsPlumb after sort
+            this.sortInterval = setInterval(this.redrawLinks, 33);
         }
 
-        var sortableOptions = {
-            cancel : '.sortable-disabled',
-            axis : 'y',
-            start : function () {
-                self.states.sorting = true;
-                initInterval();
-            },
-            stop : function () {
-                self.states.sorting = false;
-                if (sortInterval) {
-                    clearInterval(sortInterval);
-                    // redraw links for the last time and revalidate offset of non connected items
-                    redrawLinks(true);
+        initSortable () {
+            this.sortableOptions = {
+                cancel: ".sortable-disabled",
+                axis: "y",
+                start: () => {
+                    this.states.sorting = true;
+                    this.initInterval();
+                },
+                stop: () => {
+                    this.states.sorting = false;
+                    if (this.sortInterval) {
+                        clearInterval(this.sortInterval);
+                        // redraw links for the last time and re-validate offset of non connected items
+                        this.redrawLinks(true);
+                    }
+                },
+                update: () => {
+                    this.$timeout(() => {
+                        // deffer save to let jqUI update the array
+                        this.CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
+                    });
                 }
-            },
-            update : function () {
-                $timeout(function () {
-                    // deffer save to let jqUI update the array
-                    CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
-                });
-            }
-        };
+            };
 
-        // create vm sortable options by extending sortable options
-        this.vmSortableOptions = angular.extend({ handle : '.vm-grip' }, sortableOptions);
-        // create ip sortable options by extending sortable options
-        this.ipSortableOptions = angular.extend({ handle : '.ip-grip' }, sortableOptions);
+            // create vm sortable options by extending sortable options
+            this.vmSortableOptions = angular.extend({ handle: ".vm-grip" }, this.sortableOptions);
 
-        // what to do when sort start
-        $scope.$on('ui.sortable.start', function () {
-            self.states.sorting = true;
-            initInterval();
-        });
-
-        // what to do when sort stop
-        $scope.$on('ui.sortable.stop', function () {
-            self.states.sorting = false;
-            if (sortInterval) {
-                clearInterval(sortInterval);
-                // redraw links for the last time and revalidate offset of non connected items
-                redrawLinks(true);
-            }
-        });
-
-        // what to do when position has changed
-        $scope.$on('ui.sortable.update', function (ngEvent, jqEvent, ui) {
-            var $sortedElem = $(ui.item);
-            if ($sortedElem.hasClass('public-cloud-vm')) {
-                // ------ TODO: warning: ASYNC call!!!!!!
-                CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
-            } else if ($sortedElem.hasClass('ip')) {
-                // ------ TODO: warning: ASYNC call!!!!!!
-                CloudProjectComputeInfrastructureOrchestrator.saveToUserPref();
-            }
-        });
+            // create ip sortable options by extending sortable options
+            this.ipSortableOptions = angular.extend({ handle: ".ip-grip" }, this.sortableOptions);
+        }
 
         // ------- END JQUERY UI SORTABLE -------
 
         // ------- VOLUME DISPLAY TOOLS -------
 
-        function initDragDropHelper () {
-            self.dragDropHelper = {
-                draggingIsDoing      : false,
-                currentDraggedVolume : null,
-                currentDroppableVmId : null
+        initVolumeEdit () {
+            this.volumeEdit = {
+                action: null,
+                volume: null, // Can be factory or not !
+                srcVm: null,
+                targetVm: null,
+                targetVmId: null, // use for checkbox vm
+                remove: {
+                    launchConfirm: volume => {
+                        this.OvhApiCloudProjectVolumeSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise
+                            .then(snapshots => {
+                                if (_.find(snapshots, { volumeId: volume.id })) {
+                                    this.CloudMessage.error(this.$translate.instant("cpci_volume_snapshotted_delete_info", { url: this.$state.href("iaas.pci-project.compute.snapshot") }));
+                                } else {
+                                    this.volumeEdit.action = "remove";
+                                    this.volumeEdit.volume = volume;
+                                    this.$rootScope.$broadcast("highlighed-element.show", `compute,${volume.id}`);
+                                }
+                            })
+                            .catch(err => {
+                                this.CloudMessage.error(`${this.$translate.instant("cpci_volume_snapshot_error")} ${_.get(err, "data.message", "")}`);
+                            });
+                    },
+                    cancel: () => {
+                        this.volumeEdit.reInit();
+                        this.$rootScope.$broadcast("highlighed-element.hide");
+                    },
+                    confirm: () => {
+                        this.loaders.volumeActionConfirm = true;
+                        this.CloudProjectComputeVolumesOrchestrator.deleteVolume(this.volumeEdit.volume.id)
+                            .then(() => {
+                                this.volumeEdit.reInit();
+                                this.$rootScope.$broadcast("highlighed-element.hide");
+                            })
+                            .catch(err => {
+                                this.CloudMessage.error(`${this.$translate.instant("cpci_volume_delete_error")} ${_.get(err, "data.message", "")}`);
+                            })
+                            .finally(() => {
+                                this.loaders.volumeActionConfirm = false;
+                            });
+                    }
+                },
+                move: {
+                    launchConfirm: (volume, srcVm, targetVm) => {
+                        this.volumeEdit.action = "move";
+                        this.volumeEdit.volume = volume;
+                        this.volumeEdit.srcVm = srcVm; // use in interface
+                        this.volumeEdit.targetVm = targetVm;
+
+                        // set overlay
+                        this.$timeout(() => { // otherwise LAG
+                            this.$rootScope.$broadcast("highlighed-element.show", `compute,${targetVm ? targetVm.id : "unlinked_volumes"}`);
+                        }, 100);
+                    },
+                    cancel: () => {
+                        this.initDragDropHelper(); // :-/
+                        this.volumeEdit.reInit();
+                        this.$rootScope.$broadcast("highlighed-element.hide");
+                    },
+                    confirm: () => {
+                        // Open volumes of VM target
+                        if (this.volumeEdit.targetVm && !this.volumeEdit.targetVm.collapsedVolumes) {
+                            this.CloudProjectComputeInfrastructureOrchestrator.toggleCollapsedVolumes(this.volumeEdit.targetVm);
+                            this.refreshLinks();
+                        }
+
+                        this.initDragDropHelper(); // :-/
+                        this.loaders.volumeActionConfirm = true;
+                        this.CloudProjectComputeVolumesOrchestrator.moveVolume(this.volumeEdit.volume.id, this.volumeEdit.targetVm ? this.volumeEdit.targetVm.id : "unlinked")
+                            .then(() => {
+                                if (this.volumeEdit.targetVm && this.volumeEdit.targetVm.image && this.volumeEdit.targetVm.image.type === "windows") {
+                                    this.CloudMessage.info(this.$translate.instant("cpci_volume_confirm_attach_windows_info"));
+                                }
+                            })
+                            .catch(err => {
+                                this.CloudMessage.error(`${this.$translate.instant("cpci_volume_confirm_detach_error")} ${_.get(err, "data.message", "")}`);
+                            })
+                            .finally(() => {
+                                this.loaders.volumeActionConfirm = false;
+                                this.volumeEdit.reInit();
+                                this.$rootScope.$broadcast("highlighed-element.hide");
+                            });
+                    }
+                },
+                moveCheckbox: {
+                    launchConfirm: (volume, srcVm) => {
+                        // list of compatible(s) vm(s) to attach the volume
+                        const compatibleVms = _.filter(this.infra.vrack.publicCloud.items, vm => this.volumeEdit.canAttachVolumeToVm(volume, vm));
+
+                        // do we have at least one compatible vm?
+                        if (_.isArray(compatibleVms) && compatibleVms.length > 0) {
+                            this.volumeEdit.action = "moveCheckbox";
+                            this.volumeEdit.volume = volume;
+                            this.volumeEdit.srcVm = srcVm; // use in interface
+
+                            // set overlay
+                            this.$timeout(() => { // otherwise LAG
+                                this.$rootScope.$broadcast("highlighed-element.show", `compute,vm-ACTIVE-${volume.region}`);
+                            }, 100);
+                        } else {
+                            this.CloudMessage.error(this.$translate.instant("cpci_volume_attach_error"));
+                        }
+                    },
+                    cancel: () => {
+                        this.volumeEdit.move.cancel();
+                    },
+                    confirm: () => {
+                        this.volumeEdit.move.confirm();
+                    },
+                    isInvalid: () => !this.volumeEdit.targetVm,
+                    checkboxChange: targetVm => {
+                        this.volumeEdit.targetVm = targetVm;
+                    }
+                },
+                reInit: () => {
+                    this.volumeEdit.action = null;
+                    this.volumeEdit.volume = null;
+                    this.volumeEdit.srcVm = null;
+                    this.volumeEdit.targetVm = null;
+                },
+                canAttachVolumeToVm: (volumeSource, vmDest) => {
+                    let attachable = true;
+                    attachable = attachable && volumeSource && vmDest;
+                    attachable = attachable && vmDest.status === "ACTIVE";
+                    attachable = attachable && volumeSource.region === vmDest.region;
+                    attachable = attachable && _.first(volumeSource.attachedTo) !== vmDest.id;
+                    return attachable;
+                }
             };
         }
 
-        self.toggleVolumeEditionState = function (volume, param) {
+        toggleVolumeEditionState (volume, param) {
             if (!volume.openDetail) {
                 if (param) {
-                    CloudProjectComputeVolumesOrchestrator.setEditVolumeParam(param);
+                    this.CloudProjectComputeVolumesOrchestrator.setEditVolumeParam(param);
                 }
-                CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volume);
+                this.CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volume);
             } else {
-                CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition(true);
-                $rootScope.$broadcast('highlighed-element.hide');
+                this.CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition(true);
+                this.$rootScope.$broadcast("highlighed-element.hide");
             }
-        };
+        }
 
-        // return the list of regions in which there is at least one unlinked volume
-        self.getUnlinkedVolumesRegions = function () {
-            var _regions = [];
-            angular.forEach(self.volumes.unlinked, function (volume) {
-                _regions.push(volume.region);
+        /**
+         * return the list of regions in which there is at least one unlinked volume
+         * @returns {Array}
+         */
+        getUnlinkedVolumesRegions () {
+            const regions = [];
+            _.forEach(this.volumes.unlinked, volume => {
+                regions.push(volume.region);
             });
+
             // if we are doing a drag & drop, we add the dragged volume region to the list
             // so it will be displayed as a droppable target in the region list
-            if (self.dragDropHelper.currentDraggedVolume) {
-                _regions.push(self.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region);
+            if (this.dragDropHelper.currentDraggedVolume) {
+                regions.push(this.dragDropHelper.currentDraggedVolume.draggableInfo.volume.region);
             }
-            return _.uniq(_regions);
-        };
 
-        self.getTranslatedRegion = function (region) {
-            return region ? self.regionService.getTranslatedMicroRegion(region) : "";
-        };
+            return _.uniq(regions);
+        }
 
-        self.addVolume = function () {
-            refreshLinks();
-            self.helpDisplay.openUnlinkVolume = true;
-            CloudProjectComputeVolumesOrchestrator.addNewVolumeToList("unlinked").then(function (volumeDraft) {
-                CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
-            });
-        };
-
-        self.addVolumeFromSnapshot = function (snapshot) {
-            refreshLinks();
-            self.helpDisplay.openUnlinkVolume = true;
-            CloudProjectComputeVolumesOrchestrator.addNewVolumeFromSnapshotToList("unlinked", snapshot).then(function (volumeDraft) {
-                CloudProjectComputeVolumesOrchestrator.turnOnVolumeEdition(volumeDraft);
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpci_volume_add_from_snapshot_error"), err.data && err.data.message || ''].join(' '));
-            });
-        };
-
-        self.volumeEdit = {
-            action   : null,
-            volume   : null, // Can be factory or not !
-            srcVm    : null,
-            targetVm : null,
-            targetVmId : null, // use for checkbox vm
-            'remove' : {
-                launchConfirm : function (volume) {
-                    OvhApiCloudProjectVolumeSnapshot.Lexi().query({
-                        serviceName: serviceName
-                    }).$promise.then(function (snapshots) {
-                        if (_.find(snapshots, { volumeId: volume.id })) {
-                            CloudMessage.error($translate.instant("cpci_volume_snapshotted_delete_info", { url: $state.href("iaas.pci-project.compute.snapshot")}));
-                        } else {
-                            self.volumeEdit.action = "remove";
-                            self.volumeEdit.volume = volume;
-                            $rootScope.$broadcast('highlighed-element.show', 'compute,' + volume.id);
-                        }
-                    }, function (err) {
-                        CloudMessage.error([$translate.instant("cpci_volume_snapshot_error"), err.data && err.data.message || ""].join(" "));
-                    });
-                },
-                cancel : function () {
-                    self.volumeEdit.reinit();
-                    $rootScope.$broadcast('highlighed-element.hide');
-                },
-                confirm : function () {
-                    self.loaders.volumeActionConfirm = true;
-                    CloudProjectComputeVolumesOrchestrator.deleteVolume(self.volumeEdit.volume.id).then(function(){
-                        self.volumeEdit.reinit();
-                        $rootScope.$broadcast('highlighed-element.hide');
-                    }, function (err) {
-                        CloudMessage.error( [$translate.instant('cpci_volume_delete_error'), err.data && err.data.message || ''].join(' '));
-                    })['finally'](function () {
-                        self.loaders.volumeActionConfirm = false;
-                    });
-                }
-            },
-            'move' : {
-                launchConfirm : function (volume, srcVm, targetVm) {
-                    self.volumeEdit.action   = "move";
-                    self.volumeEdit.volume   = volume;
-                    self.volumeEdit.srcVm    = srcVm; // use in interface
-                    self.volumeEdit.targetVm = targetVm;
-
-                    // set overlay
-                    $timeout(function(){ //otherwise LAG
-                        $rootScope.$broadcast('highlighed-element.show', 'compute,' + (targetVm ?  targetVm.id : 'unlinked_volumes'));
-                    }, 100);
-                },
-                cancel : function () {
-                    initDragDropHelper(); // :-/
-                    self.volumeEdit.reinit();
-                    $rootScope.$broadcast('highlighed-element.hide');
-                },
-                confirm : function () {
-                    //Open volumes of VM target
-                    if (self.volumeEdit.targetVm && !self.volumeEdit.targetVm.collapsedVolumes) {
-                        CloudProjectComputeInfrastructureOrchestrator.toggleCollapsedVolumes(self.volumeEdit.targetVm);
-                        refreshLinks();
-                    }
-
-                    initDragDropHelper(); // :-/
-                    self.loaders.volumeActionConfirm = true;
-                    CloudProjectComputeVolumesOrchestrator.moveVolume(self.volumeEdit.volume.id, self.volumeEdit.targetVm ? self.volumeEdit.targetVm.id : 'unlinked').then(function () {
-                        if (self.volumeEdit.targetVm && self.volumeEdit.targetVm.image && self.volumeEdit.targetVm.image.type === 'windows') {
-                            CloudMessage.info($translate.instant('cpci_volume_confirm_attach_windows_info'));
-                        }
-                    })['catch'](function (err) {
-                        CloudMessage.error( [$translate.instant('cpci_volume_confirm_detach_error'), err.data && err.data.message || ''].join(' '));
-                    })['finally'](function () {
-                        self.loaders.volumeActionConfirm = false;
-                        self.volumeEdit.reinit();
-                        $rootScope.$broadcast('highlighed-element.hide');
-                    });
-                }
-            },
-            'moveCheckbox' : {
-                launchConfirm : function (volume, srcVm) {
-
-                    // list of compatible(s) vm(s) to attach the volume
-                    var compatibleVms = _.filter(self.infra.vrack.publicCloud.items, function (vm) {
-                        return self.volumeEdit.canAttachVolumeToVm(volume, vm);
-                    });
-
-                    // do we have at least one compatible vm?
-                    if (compatibleVms.length > 0) {
-                        self.volumeEdit.action = "moveCheckbox";
-                        self.volumeEdit.volume = volume;
-                        self.volumeEdit.srcVm  = srcVm; // use in interface
-
-
-                        // set overlay
-                        $timeout(function(){ //otherwise LAG
-                            $rootScope.$broadcast('highlighed-element.show', 'compute,vm-ACTIVE-' + volume.region);
-                        }, 100);
-                    } else {
-                        CloudMessage.error($translate.instant("cpci_volume_attach_error"));
-                    }
-                },
-                cancel : function () {
-                    self.volumeEdit.move.cancel();
-                },
-                confirm : function () {
-                    self.volumeEdit.move.confirm();
-                },
-                isInvalid : function () {
-                    return !self.volumeEdit.targetVm;
-                },
-                checkboxChange : function (targetVm) {
-                    self.volumeEdit.targetVm = targetVm;
-                }
-            },
-            reinit : function () {
-                self.volumeEdit.action = null;
-                self.volumeEdit.volume = null;
-                self.volumeEdit.srcVm = null;
-                self.volumeEdit.targetVm   = null;
-            },
-            'canAttachVolumeToVm' : function (volumeSource, vmDest) {
-                var attachable = true;
-                attachable = attachable && volumeSource && vmDest;
-                attachable = attachable && vmDest.status === 'ACTIVE';
-                attachable = attachable && volumeSource.region === vmDest.region;
-                attachable = attachable && _.first(volumeSource.attachedTo) !== vmDest.id;
-                return attachable;
-            }
-        };
+        getTranslatedRegion (region) {
+            return region ? this.RegionService.getTranslatedMicroRegion(region) : "";
+        }
 
         // ------- JQUERY UI DRAGGABLE -------
 
-        this.draggableOptions = {
-            unlinked : {
-                revert            : "invalid", // when not dropped, the item will revert back to its initial position
-                containment       : "#cloud-project-compute-infrastructure",
-                scroll            : true,
-                scrollSensitivity : 100,
-                appendTo          : "#cloud-project-compute-infrastructure",
-                helper            : "clone" //!important
-            },
-            linked : {
-                revert            : "invalid", // when not dropped, the item will revert back to its initial position
-                containment       : "#cloud-project-compute-infrastructure",
-                scroll            : true,
-                scrollSensitivity : 100,
-                appendTo          : "#cloud-project-compute-infrastructure",
-                helper            : "clone" //!important
-            }
-        };
-
-        $scope.$on("draggable.start", function (event, obj) {
-            // console.log(obj); // DEBUG
-            self.dragDropHelper.currentDraggedVolume = obj.draggable;
-            self.dragDropHelper.draggingIsDoing = true;
-            $(".tooltip").hide(); // force hide tooltip to avoid display bug when dragging
-        });
-
-        $scope.$on("draggable.stop", function () {
-            if (!self.dragDropHelper.currentDroppableVmId) {
-                self.dragDropHelper.currentDraggedVolume = null;
-                refreshLinks();
-            }
-            self.dragDropHelper.draggingIsDoing = false;
-        });
-
+        initDraggable () {
+            this.draggableOptions = {
+                unlinked: {
+                    revert: "invalid", // when not dropped, the item will revert back to its initial position
+                    containment: "#cloud-project-compute-infrastructure",
+                    scroll: true,
+                    scrollSensitivity: 100,
+                    appendTo: "#cloud-project-compute-infrastructure",
+                    helper: "clone" // !important
+                },
+                linked: {
+                    revert: "invalid", // when not dropped, the item will revert back to its initial position
+                    containment: "#cloud-project-compute-infrastructure",
+                    scroll: true,
+                    scrollSensitivity: 100,
+                    appendTo: "#cloud-project-compute-infrastructure",
+                    helper: "clone" // !important
+                }
+            };
+        }
 
         // ------- JQUERY UI DROPPABLE -------
 
-        this.droppableOptions = {
-            unlinked : {
-                accept : ".volume-content-linked-items > li"
-            },
-            vmUnlinked : function(vm) {
-                return ".volume-content-unlinked-items > li.volume-detail-item-" + vm.region +
-                    ", .volume-content-linked-items:not('.volume-content-linked-items-" + vm.id + "') > li.volume-detail-item-" + vm.region
-            }
-            // linked : { } //Specifique of region
-        };
+        initDroppable () {
+            this.droppableOptions = {
+                unlinked: {
+                    accept: ".volume-content-linked-items > li"
+                },
+                vmUnlinked: vm => `.volume-content-unlinked-items > li.volume-detail-item-${vm.region},
+                    .volume-content-linked-items:not('.volume-content-linked-items-${vm.id}') > li.volume-detail-item-${vm.region}`
+                // , linked: { } // Specific of region
+            };
+        }
 
-        $scope.$on("droppable.over", function (event, obj) {
-            // console.log("over", obj.droppable.droppableInfo.group, obj.droppable.droppableId); // DEBUG
-            self.dragDropHelper.currentDroppableVmId = obj.droppable.droppableId;
-            refreshLinks();
-        });
-
-        $scope.$on("droppable.out", function (/*event, obj*/) {
-            // console.log("out", obj.droppable.droppableInfo.group, obj.droppable.droppableId); // DEBUG
-            self.dragDropHelper.currentDroppableVmId = null;
-            refreshLinks();
-        });
-
-        $scope.$on("droppable.drop", function (event, obj) {
-            var srcVmId = self.dragDropHelper.currentDraggedVolume.draggableInfo.srcVmId,
-                targetVmId = obj.droppable.droppableId;
-
-            if (srcVmId === 'unlinked') { //No Confirmation
-                self.volumeEdit.volume = self.dragDropHelper.currentDraggedVolume.draggableInfo.volume; //Is not Volume factory !
-                self.volumeEdit.targetVm = self.infra.vrack.getVmById(targetVmId);
-                self.volumeEdit.move.confirm();
-            } else {
-                self.volumeEdit.move.launchConfirm( // Confirmation
-                    self.dragDropHelper.currentDraggedVolume.draggableInfo.volume, //Is not Volume factory !
-                    self.infra.vrack.getVmById(srcVmId),
-                    targetVmId !== 'unlinked' ? self.infra.vrack.getVmById(targetVmId) : null
-                );
-            }
-        });
         // ------- END VOLUME DISPLAY TOOLS -------
 
         // ------- PRIVATE NETWORKS -------
-        self.fetchPrivateNetworks = function () {
-            if (self.loaders.privateNetworks.query) {
-                return;
-            }
 
-            self.loaders.privateNetworks.query = true;
-
-            return OvhApiCloudProjectNetworkPrivate.Lexi().query({
-                serviceName: serviceName
-            }).$promise.then(function (networks) {
-                self.collections.privateNetworks = networks;
-            }, function (error) {
-                self.collections.privateNetwork = [];
-                CloudMessage.error($translate.instant("cpci_private_network_query_error", {
-                    message: error.data.message || ""
-                }));
-            }).finally(function () {
-                self.loaders.privateNetworks.query = false;
-            });
-        };
-        // ------- END PRIVATE NETWORKS -------
-
-        self.hasPrivateIp = function (vm) {
-            if (!self.vlans.vrackStatus) {
-                return false;
-            }
-
-            return !!self.getVirtualMachinePrivateAddresses(vm).length;
-        };
-
-        self.getVirtualMachinePrivateAddresses = function (vm) {
+        static getVirtualMachinePrivateAddresses (vm) {
             if (!vm || !vm.ipAddresses) {
                 return false;
             }
 
             return _.chain(vm.ipAddresses)
-                .filter(function (ip) { return ip.type === 'private'; })
-                .map(function (ip) { return ip.ip; })
+                .filter(ip => ip.type === "private")
+                .map(ip => ip.ip)
                 .value();
-        };
-
-        function anyVmEditMenuOpen () {
-            return _.any($document.find(".vm-actions-dropdown.open"));
         }
 
-        self.removeAllFades = function () {
-            if (anyVmEditMenuOpen()) {
+        fetchPrivateNetworks () {
+            if (this.loaders.privateNetworks.query) {
+                return;
+            }
+
+            this.loaders.privateNetworks.query = true;
+
+            this.OvhApiCloudProjectNetworkPrivate.Lexi().query({ serviceName: this.serviceName }).$promise
+                .then(networks => {
+                    this.collections.privateNetworks = networks;
+                })
+                .catch(err => {
+                    this.collections.privateNetwork = [];
+                    this.CloudMessage.error(this.$translate.instant("cpci_private_network_query_error", {
+                        message: _.get(err, "data.message", "")
+                    }));
+                })
+                .finally(() => {
+                    this.loaders.privateNetworks.query = false;
+                });
+        }
+
+        hasPrivateIp (vm) {
+            if (!this.vlans.vRackStatus) {
+                return false;
+            }
+
+            return !!this.constructor.getVirtualMachinePrivateAddresses(vm).length;
+        }
+
+        anyVmEditMenuOpen () {
+            return _.any(this.$document.find(".vm-actions-dropdown.open"));
+        }
+
+        removeAllFades () {
+            if (this.anyVmEditMenuOpen()) {
                 // disable the action when editing a VM.
                 return;
             }
-            var selectors = [".faded-out", ".faded-path"];
-            _.each(selectors, function (selector) {
-                var nodes = $document.find(selector);
-                _.each(nodes, function (node) {
+
+            const selectors = [".faded-out", ".faded-path"];
+            _.each(selectors, selector => {
+                const nodes = this.$document.find(selector);
+                _.each(nodes, node => {
                     $(node).toggleClass(_.rest(selector).join(""));
                 });
             });
-            self.jsplumbInstance.select().removeClass("faded-path");
-        };
+            this.jsplumbInstance.select().removeClass("faded-path");
+        }
 
-        self.highlightInstanceAndPublicIP = function (e) {
-            if (anyVmEditMenuOpen()) {
+        highlightInstanceAndPublicIP (e) {
+            if (this.anyVmEditMenuOpen()) {
                 // disable the action when editing a VM.
                 return;
             }
+
             // instanceId can be a string of an id or an array of id.
-            var currentInstanceId = $(e.currentTarget).data().instanceId;
+            let currentInstanceId = $(e.currentTarget).data().instanceId;
+
             // always work with an array for uniformity
-            if(_.isString(currentInstanceId)) {
+            if (_.isString(currentInstanceId)) {
                 currentInstanceId = [currentInstanceId];
             }
 
-
-            var instancesBox = $document.find(".public-cloud-vm");
-
-            var publicIPs = $document.find(".ip");
-
-            var plumbLink = self.jsplumbInstance.select({target: currentInstanceId});
+            const instancesBox = this.$document.find(".public-cloud-vm");
+            const publicIPs = this.$document.find(".ip");
+            const plumbLink = this.jsplumbInstance.select({ target: currentInstanceId });
 
             // instanceBox is the currently highlighed instance
-            var instanceBox = _.find(instancesBox, function (box) {
-                return _.includes(currentInstanceId, $(box).data().instanceId);
-            });
+            const instanceBox = _.find(instancesBox, box => _.includes(currentInstanceId, $(box).data().instanceId));
 
             // ips linked to the currently highlighed instance
-            var currentIps = _.filter(publicIPs, function (ip) {
-                var instanceId = $(ip).data().instanceId;
+            const currentIps = _.filter(publicIPs, ip => {
+                const instanceId = $(ip).data().instanceId;
                 return _.any(_.intersection(instanceId, currentInstanceId));
             });
 
@@ -1479,14 +1510,16 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureDiagra
             // put fade on vm-infos, does not work directly on .public-cloud-vm, because of css conflicts I guess...
             instancesBox.find(".vm-infos").addClass("faded-out");
             publicIPs.addClass("faded-out");
-            self.jsplumbInstance.select().addClass("faded-path");
+            this.jsplumbInstance.select().addClass("faded-path");
 
             // remove faded for current instance/ip/instance->ip link
             plumbLink.removeClass("faded-path");
             $(instanceBox).find(".vm-infos").removeClass("faded-out");
             $(currentIps).removeClass("faded-out");
-        };
+        }
 
-        this.init();
+        // ------- END PRIVATE NETWORKS -------
     }
-);
+
+    angular.module("managerApp").controller("CloudProjectComputeInfrastructureDiagramCtrl", CloudProjectComputeInfrastructureDiagramCtrl);
+})();
