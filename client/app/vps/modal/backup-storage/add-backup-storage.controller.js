@@ -42,7 +42,13 @@ class AddBackupStorageCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.postBackupStorageAccess(this.serviceName, this.model.ip, this.model.ftp, this.model.nfs, this.model.cifs)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_add_success")))
+            .then(data => {
+                if (data.state == "ERROR") {
+                    this.CloudMessage.error(data.messages[0].message || this.$translate.instant("vps_backup_storage_access_add_failure"));
+                } else {
+                    this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_add_success"));
+                }
+            })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_add_failure")))
             .finally(() => {
                 this.loader.save = false;
