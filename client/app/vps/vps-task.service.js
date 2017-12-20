@@ -47,9 +47,10 @@ class VpsTaskService {
      * subscribe : assign values and get pending tasks
      *
      */
-    subscribe (serviceName) {
+    subscribe (serviceName, containerName) {
         this.subscribers[serviceName] = {};
         this.subscribers[serviceName].firstCall = true;
+        this.subscribers[serviceName].containerName = containerName;
         this.getTasks(serviceName);
     }
 
@@ -68,9 +69,9 @@ class VpsTaskService {
      *
      */
     handleTasks (serviceName, tasks) {
-        this.flushMessages();
+        this.flushMessages(this.subscribers[serviceName].containerName);
         _.forEach(tasks, task => {
-            this.manageMessage(task);
+            this.manageMessage(task, this.subscribers[serviceName].containerName);
         });
 
         if (this.subscribers[serviceName].firstCall && !_.isEmpty(tasks)) {
@@ -85,7 +86,7 @@ class VpsTaskService {
                     this.$rootScope.$broadcast("tasks.pending");
                     this.getTasks(serviceName);
                 } else {
-                    this.flushMessages();
+                    this.flushMessages(this.subscribers[serviceName].containerName);
                     this.$rootScope.$broadcast("tasks.success");
                     this.CloudMessage.success(this.$translate.instant("vps_dashboard_task_finish"));
                 }
@@ -97,9 +98,9 @@ class VpsTaskService {
      * manageMessage : manage message to display
      *
      */
-    manageMessage (task) {
+    manageMessage (task, containerName) {
         if (task.progress !== this.COMPLETED_TASK_PROGRESS) {
-            this.createMessage(task);
+            this.createMessage(task, containerName);
         }
     }
 
@@ -107,22 +108,22 @@ class VpsTaskService {
      * createMessage : create a new 'task' message with HTML template
      *
      */
-    createMessage (task) {
+    createMessage (task, containerName) {
         this.CloudMessage.warning({
             id: task.id,
             class: "task",
             title: this.messageType(task.type),
             textHtml: this.template(task.type, task.progress),
             progress: task.progress
-        }, "iaas.vps.detail");
+        }, containerName);
     }
 
     /*
      * flushMessages : flush all messages that have 'task' class
      *
      */
-    flushMessages () {
-        _.forEach(this.CloudMessage.getMessages("iaas.vps.detail"), message => {
+    flushMessages (containerName) {
+        _.forEach(this.CloudMessage.getMessages(containerName), message => {
             if (message.class === "task") {
                 message.dismissed = true;
             }
