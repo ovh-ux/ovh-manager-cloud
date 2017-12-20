@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Pavadinimas (pasirinktinai)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protokolas (nekeičiamas po sukūrimo)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Prievadas</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port attaché à la ferme (1 à {{portMax}}). Par défaut, hérite du port du frontend.</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Grupės prievadas (1 - {{portMax}}). Pagal nutylėjimą, siejama su frontend prievadu.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Duomenų centras</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Pažangūs nustatymai</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Naujausios vertės pagal nutylėjimą buvo pakeistos. Jas galite redaguoti bet kuriuo metu.</translation>
