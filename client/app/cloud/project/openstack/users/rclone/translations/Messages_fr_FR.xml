@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpou_rclone_modal_title" qtlid="451058">Télécharger un fichier de configuration rClone</translation>
    <translation id="cpou_rclone_modal_explanation" qtlid="451071">Vous allez télécharger un fichier de configuration permettant de vous connecter à Rclone.</translation>
