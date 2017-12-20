@@ -8,8 +8,10 @@ class VpsTaskService {
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
 
-        this.firstCall = true;
+        this.subscribers = {};
+
         this.COMPLETED_TASK_PROGRESS = 100;
+        this.TIMER = 5000;
     }
 
     /*
@@ -29,11 +31,25 @@ class VpsTaskService {
     }
 
     /*
-     * subscribe : reset values and get pending tasks
+     * unSubscribe : reset values and terminate poller
+     *
+     */
+    unSubscribe (serviceName) {
+        _.forEach(this.subscribers, element => {
+            if (element && element.poller) {
+                this.$timeout.cancel(element.poller);
+            }
+        });
+        this.subscribers = _.omit(this.subscribers, serviceName);
+    }
+
+    /*
+     * subscribe : assign values and get pending tasks
      *
      */
     subscribe (serviceName) {
-        this.firstCall = true;
+        this.subscribers[serviceName] = {};
+        this.subscribers[serviceName].firstCall = true;
         this.getTasks(serviceName);
     }
 
@@ -57,14 +73,14 @@ class VpsTaskService {
             this.manageMessage(task);
         });
 
-        if (this.firstCall && !_.isEmpty(tasks)) {
-            this.firstCall = false;
+        if (this.subscribers[serviceName].firstCall && !_.isEmpty(tasks)) {
+            this.subscribers[serviceName].firstCall = false;
             this.$rootScope.$broadcast("tasks.pending");
         }
 
         // refresh while there's pending task
-        if (!this.firstCall) {
-            this.$timeout(() => {
+        if (!this.subscribers[serviceName].firstCall) {
+            this.subscribers[serviceName].poller = this.$timeout(() => {
                 if (!_.isEmpty(tasks)) {
                     this.$rootScope.$broadcast("tasks.pending");
                     this.getTasks(serviceName);
@@ -73,7 +89,7 @@ class VpsTaskService {
                     this.$rootScope.$broadcast("tasks.success");
                     this.CloudMessage.success(this.$translate.instant("vps_dashboard_task_finish"));
                 }
-            }, 5000);
+            }, this.TIMER);
         }
     }
 
@@ -107,7 +123,7 @@ class VpsTaskService {
      */
     flushMessages () {
         _.forEach(this.CloudMessage.getMessages("iaas.vps.detail"), message => {
-            if (message.class == "task") {
+            if (message.class === "task") {
                 message.dismissed = true;
             }
         });
