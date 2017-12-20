@@ -1004,6 +1004,8 @@ angular.module("managerApp").service("VpsService", [
                     cache: vpsCache
                 }).then(function (response) {
                     return response.data;
+                }).catch(function (error) {
+                    return error.data;
                 });
             });
         };
