@@ -66,7 +66,7 @@ angular.module("managerApp")
     })
     .constant("CLOUD_GEOLOCALISATION", {
         instance: {
-            EU: ["SBG1", "GRA1", "GRA3", "SBG3", "WAW1", "DE1"],
+            EU: ["SBG1", "GRA1", "GRA3", "SBG3", "WAW1", "DE1", "UK1"],
             CA: ["BHS1", "BHS3"]
         },
         user: {

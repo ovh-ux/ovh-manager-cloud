@@ -100,6 +100,7 @@ angular.module("managerApp")
         }, function (err) {
             self.form.instances = [];
             CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            $uibModalInstance.dismiss();
             return $q.reject(err);
         });
     }
@@ -112,6 +113,7 @@ angular.module("managerApp")
         }, function (err) {
             self.form.flavors = [];
             CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            $uibModalInstance.dismiss();
             return $q.reject(err);
         });
     }
@@ -125,6 +127,7 @@ angular.module("managerApp")
         }, function (err) {
             self.form.failoverIps = [];
             CloudMessage.error( [$translate.instant('cpciif_buy_init_error'), err.data && err.data.message || ''].join(' '));
+            $uibModalInstance.dismiss();
             return $q.reject(err);
         });
     }
@@ -153,7 +156,8 @@ angular.module("managerApp")
                 self.datas.billingInfo = result;
             }, function (err) {
                 self.datas.billingInfo = null;
-                CloudMessage.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || ''].join(' '));
+                CloudMessage.error([$translate.instant("cpciif_buy_init_error"), err.data && err.data.message || '', self.form.instance.region, self.form.country].join(' '));
+                $uibModalInstance.dismiss();
             })['finally'](function () {
                 self.loaders.billingInfo = false;
             });
@@ -181,6 +185,7 @@ angular.module("managerApp")
             });
         }, function (err){
             CloudMessage.error( [$translate.instant('cpciif_buy_error'), err.data && err.data.message || ''].join(' '));
+            $uibModalInstance.dismiss();
             return $q.reject(err);
         })['finally'](function () {
             self.loaders.buying = false;
