@@ -18,6 +18,7 @@ class VpsDetailCtrl {
                 serviceName: this.serviceName
             }
         });
+        this.VpsTaskService.unSubscribe(this.serviceName);
         this.VpsTaskService.subscribe(this.serviceName);
     }
 
