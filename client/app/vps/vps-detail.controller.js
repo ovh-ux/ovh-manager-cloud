@@ -19,7 +19,7 @@ class VpsDetailCtrl {
             }
         });
         this.VpsTaskService.unSubscribe(this.serviceName);
-        this.VpsTaskService.subscribe(this.serviceName);
+        this.VpsTaskService.subscribe(this.serviceName, "iaas.vps.detail");
     }
 
     loadMessage () {
