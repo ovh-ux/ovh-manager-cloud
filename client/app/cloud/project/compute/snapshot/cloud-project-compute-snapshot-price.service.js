@@ -3,7 +3,7 @@ class CloudProjectComputeSnapshotPriceService {
         this.OvhCloudPriceHelper = OvhCloudPriceHelper;
     }
 
-    getSnapshotPrice = function (snapshotSize, serviceName, region) {
+    getSnapshotPrice = function ({size, serviceName, region}) {
         return this.OvhCloudPriceHelper.getPrices(serviceName).then(prices => {
             let snapshotPrice = prices[`snapshot.consumption.${region}`] || prices["snapshot.consumption"];
             if (!snapshotPrice) {
@@ -16,7 +16,7 @@ class CloudProjectComputeSnapshotPriceService {
             snapshotPrice.monthlyPrice.value = snapshotPrice.priceInUcents * moment.duration(1, "months").asHours() / 100000000;
             snapshotPrice.monthlyPrice.text = snapshotPrice.monthlyPrice.text.replace(/\d+(?:[.,]\d+)?/, _.round(snapshotPrice.monthlyPrice.value.toString(),2));
 
-            snapshotPrice.totalPrice.value = snapshotPrice.monthlyPrice.value * snapshotSize;
+            snapshotPrice.totalPrice.value = snapshotPrice.monthlyPrice.value * size;
             snapshotPrice.totalPrice.text = snapshotPrice.totalPrice.text.replace(/\d+(?:[.,]\d+)?/, _.round(snapshotPrice.totalPrice.value.toString(),2));
 
             return snapshotPrice;

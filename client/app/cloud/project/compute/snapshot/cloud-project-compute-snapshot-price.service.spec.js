@@ -56,7 +56,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
             })
             spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
 
-            service.getSnapshotPrice(snapshotSize, "", "GRA1").then(function (data) {
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : "GRA1"}).then(function (data) {
                 expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",
@@ -93,7 +93,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
 
             spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
 
-            service.getSnapshotPrice(snapshotSize, "", "").then(function (data) {
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
                 expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",
@@ -129,7 +129,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
             });
             spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
 
-            service.getSnapshotPrice(snapshotSize, "", "").then(function (data) {
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
                 expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",

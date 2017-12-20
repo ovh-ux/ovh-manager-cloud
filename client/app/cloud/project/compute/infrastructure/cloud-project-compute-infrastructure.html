@@ -548,7 +548,11 @@
                                                             <span translate="cpci_vm_flavor_category_{{vm.flavor.name}}" translate-default="?"></span>
                                                         </div>
                                                         <span class="flavor-offer-price right-space-m12"
-                                                            data-ng-if="vm.status !== 'DRAFT'"
+                                                            data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status !== 'ok'"
+                                                            translate="cpci_vm_flavor_price"
+                                                            translate-values="{price: vm.price.price.text || '?' }"></span>
+                                                        <span class="flavor-offer-price right-space-m12"
+                                                            data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
                                                             translate="cpci_vm_flavor_month"
                                                             translate-values="{price: vm.price.price.text || '?' }"></span>
                                                         <span class="text-center" data-ng-if="vm.monthlyBilling.status === 'activationPending'">

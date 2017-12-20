@@ -37,7 +37,7 @@ angular.module("managerApp")
       };
 
       self.getPriceData = function () {
-          CloudProjectComputeSnapshotPriceService.getSnapshotPrice(self.snapshotPriceStruct.size, self.snapshot.vm.serviceName, self.snapshot.vm.region).then(function (data) {
+          CloudProjectComputeSnapshotPriceService.getSnapshotPrice({size : self.snapshotPriceStruct.size, serviceName : self.snapshot.vm.serviceName, region : self.snapshot.vm.region}).then(function (data) {
               self.snapshotPriceStruct.prices = [data];
               self.snapshotPriceStruct.total = data.totalPrice;
           });
