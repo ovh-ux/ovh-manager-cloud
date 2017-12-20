@@ -23,8 +23,8 @@ class CloudProjectComputeCtrl {
         this.loading = true;
         this.infoMessageDismissed = true;
 
-        this.init();
         this.loadMessage();
+        this.init();
     }
 
     loadMessage () {
@@ -88,7 +88,8 @@ class CloudProjectComputeCtrl {
             }
         });
         this.$q.all(areDismissed).then(areDismissedMessages => {
-            this.messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
+            const messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
+            _.forEach(messages, message => this.CloudMessage.info(message));
         });
     }
 
