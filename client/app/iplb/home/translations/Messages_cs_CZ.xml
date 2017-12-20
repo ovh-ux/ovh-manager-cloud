@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_home_tile_status" qtlid="26443">Stav</translation>
-   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Frontendy</translation>
-   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Farmy serverů</translation>
-   <translation id="iplb_home_tile_status_servers" qtlid="19459">Servery</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="449050">Počet frontendů: {{number}}</translation>
+   <translation id="iplb_home_tile_status_farms" qtlid="449063">Počet farem serverů: {{number}}</translation>
+   <translation id="iplb_home_tile_status_servers" qtlid="449076">Počet serverů: {{number}}</translation>
 
    <translation id="iplb_home_tile_usage" qtlid="30382">Použito</translation>
    <translation id="iplb_home_tile_graph" qtlid="5402">Grafy</translation>

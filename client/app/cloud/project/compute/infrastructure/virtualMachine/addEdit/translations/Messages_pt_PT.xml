@@ -58,7 +58,7 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Modelos Anteriores</translation>
    <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instâncias GPU<br/>Processador gráfico de alta performance</translation>
    <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">Instâncias GPU<br/>Processador gráfico de alta performance</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Armazenamento raid SSD local, CPU/RAM/largura de banda partilhados.</translation>
@@ -268,7 +268,7 @@
    <translation id="cpcivm_addedit_payement_label" qtlid="272222">Economize 50% no preço dos servidores ao passar para faturação mensal.</translation>
 
    <translation id="cpcivm_addedit_run_now" qtlid="249094">Iniciar agora</translation>
-   <translation id="cpcivm_addedit_change_now" qtlid="249107">Aplicar as modificações</translation>
+   <translation id="cpcivm_addedit_change_now" qtlid="249107">Aplicar alterações</translation>
 
    <translation id="cpcivm_edit_vm_post_error" qtlid="249120">Oops, não foi possível iniciar a instância!</translation>
    <translation id="cpcivm_edit_vm_put_error" qtlid="249133">Oops, não foi possível atualizar as informações da instância!</translation>

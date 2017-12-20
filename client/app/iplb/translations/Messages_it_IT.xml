@@ -38,6 +38,7 @@
    <translation id="iplb_subscription_loading_error" qtlid="439442">Si è verificato un errore durante il caricamento della sezione "Abbonamento".</translation>
    <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Si è verificato un errore durante il caricamento degli IP Failover.</translation>
    <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Si è verificato un errore durante il caricamento degli IPv4 di uscita.</translation>
+   <translation id="iplb_status_loading_error" qtlid="449089">Si è verificato un errore durante il caricamento della sezione "Stato".</translation>
 
    <translation id="iplb_task_list_loading_error" qtlid="439481">Si è verificato un errore durante il caricamento dei task.</translation>
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Si è verificato un errore durante il caricamento delle Server Farm.</translation>
@@ -53,9 +54,26 @@
    <translation id="iplb_graph_no_data" qtlid="439546">Al momento non sono presenti dati</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} attivi</translation>
-   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}}/{{totalCount}} attivi</translation>
-   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}}/{{totalCount}} funzionanti</translation>
-   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}}/{{totalCount}} funzionanti</translation>
+
+   <translation id="iplb_status_success_service" qtlid="433745">Ok</translation>
+   <translation id="iplb_status_error_service" qtlid="26407">Errore</translation>
+   <translation id="iplb_status_warning_service" qtlid="373441">Avviso</translation>
+   <translation id="iplb_status_help_service" qtlid="438506">Nessuna informazione</translation>
+
+   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} su {{totalCount}} attivi</translation>
+   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} su {{totalCount}} in errore</translation>
+   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} su {{totalCount}} in warning</translation>
+   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} su {{totalCount}} senza informazioni</translation>
+
+   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} su {{totalCount}} funzionanti</translation>
+   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} su {{totalCount}} in errore</translation>
+   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} su {{totalCount}} in warning</translation>
+   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} su {{totalCount}} senza informazioni</translation>
+
+   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} su {{totalCount}} attivi</translation>
+   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} su {{totalCount}} in errore</translation>
+   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} su {{totalCount}} in warning</translation>
+   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} su {{totalCount}} senza informazioni</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Applica la configurazione</translation>
    <translation id="iplb_status_details" qtlid="439611">Visualizza dettagli</translation>

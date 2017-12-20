@@ -38,6 +38,7 @@
    <translation id="iplb_subscription_loading_error" qtlid="439442">Beim Laden des Bereichs "Abo" ist ein Fehler aufgetreten.</translation>
    <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Beim Laden der Failover-IPs ist ein Fehler aufgetreten.</translation>
    <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Beim Laden der ausgehenden IPv4s ist ein Fehler aufgetreten.</translation>
+   <translation id="iplb_status_loading_error" qtlid="449089">Beim Laden des Statusbereichs ist ein Fehler aufgetreten.</translation>
 
    <translation id="iplb_task_list_loading_error" qtlid="439481">Beim Laden der Tasks ist ein Fehler aufgetreten.</translation>
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Beim Laden der Serverfarmen ist ein Fehler aufgetreten.</translation>
@@ -53,9 +54,26 @@
    <translation id="iplb_graph_no_data" qtlid="439546">Momentan sind keine Daten vorhanden</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} aktiv</translation>
-   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} aktiv</translation>
-   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} funktionsbereit</translation>
-   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} funktionsbereit</translation>
+
+   <translation id="iplb_status_success_service" qtlid="433745">OK</translation>
+   <translation id="iplb_status_error_service" qtlid="26407">Fehler</translation>
+   <translation id="iplb_status_warning_service" qtlid="373441">Achtung </translation>
+   <translation id="iplb_status_help_service" qtlid="438506">Keine Informationen</translation>
+
+   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} von {{totalCount}} aktiv</translation>
+   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} von {{totalCount}} fehlerhaft</translation>
+   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} von {{totalCount}} mit Warnung</translation>
+   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} von {{totalCount}} ohne Informationen</translation>
+
+   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} von {{totalCount}} funktionsfähig</translation>
+   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} von {{totalCount}} fehlerhaft</translation>
+   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} von {{totalCount}} mit Warnung</translation>
+   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} von {{totalCount}} ohne Informationen</translation>
+
+   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} von {{totalCount}} aktiv</translation>
+   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} von {{totalCount}} fehlerhaft</translation>
+   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} von {{totalCount}} mit Warnung</translation>
+   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} von {{totalCount}} ohne Informationen</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Die Konfiguration anwenden</translation>
    <translation id="iplb_status_details" qtlid="439611">Zu den Details</translation>

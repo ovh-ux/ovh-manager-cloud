@@ -25,7 +25,7 @@
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasbourg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
-   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Due to its popularity, this product is temporarily unavailable in the {{ region }} datacentre.</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Due to its popularity, this product is temporarily unavailable in the {{ region }} datacentre. Products with similar performance levels are available at the {{ fallback }} datacentre.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">An error has occurred validating your request.&#13;
 &#13;
 </translation>

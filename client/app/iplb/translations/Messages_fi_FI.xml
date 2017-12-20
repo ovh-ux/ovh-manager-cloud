@@ -13,7 +13,7 @@
    <translation id="iplb_tab_graph" qtlid="5402">Grafiikat</translation>
    <translation id="iplb_tab_task" qtlid="96716">Tehtävät</translation>
 
-   <translation id="iplb_modal_failover_ip_title" qtlid="227806">FailOver-IP</translation>
+   <translation id="iplb_modal_failover_ip_title" qtlid="227806">Fail-over IP</translation>
 
    <translation id="iplb_modal_nat_ip_title" qtlid="429459">Lähtevä IPv4</translation>
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">Sinun täytyy antaa näille IP-osoitteille lupa yhdistää palvelimiisi.</translation>
@@ -38,10 +38,11 @@
    <translation id="iplb_subscription_loading_error" qtlid="439442">Virhe Tilaus-osion lataamisessa.</translation>
    <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Virhe Failover-IP -osoitteiden latauksessa.</translation>
    <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Virhe lähtevien IPv4-osoitteiden lataamisessa.</translation>
+   <translation id="iplb_status_loading_error" qtlid="449089">Virhe osion Tila lataamisessa.</translation>
 
    <translation id="iplb_task_list_loading_error" qtlid="439481">Virhe tehtävien lataamisessa.</translation>
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Vihre palvelinfarmien lataamisessa.</translation>
-   <translation id="iplb_farm_server_list_loading_error" qtlid="439507">Erreur lors du chargement des serveurs de la ferme.</translation>
+   <translation id="iplb_farm_server_list_loading_error" qtlid="439507">Virhe palvelinfarmin palvelinten latauksessa.</translation>
 
    <translation id="iplb_ipfo_select_placeholder" qtlid="8674">Ei mitään</translation>
 
@@ -49,13 +50,30 @@
    <translation id="iplb_zone_all" qtlid="439520">Kaikki (ALL)</translation>
 
    <translation id="iplb_graph_name_conn" qtlid="41530">Samanaikaiset yhteydet</translation>
-   <translation id="iplb_graph_name_reqm" qtlid="439533">Pyyntöä minuuttia kohti</translation>
+   <translation id="iplb_graph_name_reqm" qtlid="439533">Kyselyä minuuttia kohti</translation>
    <translation id="iplb_graph_no_data" qtlid="439546">Ei tietoja tällä hetkellä</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} aktiivista</translation>
-   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} aktiivista</translation>
-   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} toiminnassa</translation>
-   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} toiminnassa</translation>
+
+   <translation id="iplb_status_success_service" qtlid="433745">Ok</translation>
+   <translation id="iplb_status_error_service" qtlid="26407">Virhe</translation>
+   <translation id="iplb_status_warning_service" qtlid="373441">Huomio</translation>
+   <translation id="iplb_status_help_service" qtlid="438506">Ei tietoja</translation>
+
+   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} / {{totalCount}} aktiivisena</translation>
+   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} / {{totalCount}} virhetilassa</translation>
+   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} / {{totalCount}} sisältää varoituksen</translation>
+   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} / {{totalCount}} ei tietoja</translation>
+
+   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} / {{totalCount}} toiminnassa</translation>
+   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} / {{totalCount}} virhetilassa</translation>
+   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} / {{totalCount}} sisältää varoituksen</translation>
+   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} / {{totalCount}} ei tietoja</translation>
+
+   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} / {{totalCount}} aktiivisena</translation>
+   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} / {{totalCount}} virhetilassa</translation>
+   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} / {{totalCount}} sisältää varoituksen</translation>
+   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} / {{totalCount}} ei tietoja</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Aseta konfiguraatio</translation>
    <translation id="iplb_status_details" qtlid="439611">Katso tarkemmat tiedot</translation>

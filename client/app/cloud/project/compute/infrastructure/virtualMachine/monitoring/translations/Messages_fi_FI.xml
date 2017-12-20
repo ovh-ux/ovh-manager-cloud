@@ -9,7 +9,7 @@
    <translation id="cpcivm_monitoring_comingSoon" qtlid="250043">Tulossa pian</translation>
    <translation id="cpcivm_monitoring_unavailable" qtlid="91957">Ei käytettävissä</translation>
    <translation id="cpcivm_monitoring_netLimit" qtlid="276038">Kaistanleveys {{ netMax }} Mbps</translation>
-   <translation id="cpcivm_monitoring_more_cpu" qtlid="276051">Lisätäksesi suoritintehoa,</translation>
+   <translation id="cpcivm_monitoring_more_cpu" qtlid="276051">Lisätäksesi suoritintehoa</translation>
    <translation id="cpcivm_monitoring_more_ram" qtlid="276064">Tilataksesi lisää keskusmuistia,</translation>
    <translation id="cpcivm_monitoring_changeOffer" qtlid="276077">vaihda tuotetta</translation>
    <translation id="cpcivm_monitoring_upload" qtlid="148747">Lähetys</translation>

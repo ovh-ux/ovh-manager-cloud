@@ -10,7 +10,7 @@
    <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_server_preview_chain" qtlid="19819">Cadeia de certificação</translation>
    <translation id="iplb_server_preview_proxyProtocolVersion" qtlid="438259">Versão do protocolo de PROXY</translation>
-   <translation id="iplb_server_preview_proxyProtocolVersion_placeholder" qtlid="17923">Seleccionar</translation>
+   <translation id="iplb_server_preview_proxyProtocolVersion_placeholder" qtlid="17923">Selecionar</translation>
    <translation id="iplb_server_preview_weight" qtlid="438272">Balanceamento de carga</translation>
    <translation id="iplb_server_preview_active" qtlid="55133">Ativo</translation>
    <translation id="iplb_server_preview_id" qtlid="46792">Identificador</translation>
@@ -20,7 +20,7 @@
    <translation id="iplb_server_edit_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_server_edit_address" qtlid="79314">Endereço IPv4</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_server_edit_port_tip" qtlid="448673">Port attaché à votre serveur (1 à {{portMax}}). Par défaut, hérite du port de la ferme.</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="448673">Porta associada ao seu serveur (de 1 a {{portMax}}). O servidor está pré-configurado para usar a porta da server farm</translation>
    <translation id="iplb_server_edit_advanced_options" qtlid="39958">Configurações avançadas</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Os valores predefinidos mais habituais estão pré-configurados, mas podem ser alterados a qualquer momento.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Mostrar</translation>

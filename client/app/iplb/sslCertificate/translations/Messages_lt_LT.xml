@@ -75,7 +75,7 @@
    <translation id="iplb_ssl_order_ok" qtlid="43558">Užsakyti</translation>
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Anuliuoti</translation>
 
-   <translation id="iplb_ssl_order_loading_error" qtlid="447326">Erreur lors du chargement des données de produit.</translation>
-   <translation id="iplb_ssl_order_success" qtlid="447339">Un nouveau certificat est en cours de création.</translation>
-   <translation id="iplb_ssl_order_error" qtlid="447352">Erreur lors de la création du certificat: {{message}}</translation>
+   <translation id="iplb_ssl_order_loading_error" qtlid="447326">Klaida įkeliant duomenis.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="447339">Naujas sertifikatas kuriamas.</translation>
+   <translation id="iplb_ssl_order_error" qtlid="447352">Klaida kuriant sertifikatą: {{message}}</translation>
 </translations>
