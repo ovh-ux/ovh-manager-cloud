@@ -7,4 +7,3 @@
    <translation id="cpou_rclone_modal_security_note" qtlid="451084">Pour des raisons de sécurité le fichier de configuration ne contient pas votre mot de passe. Il est donc nécessaire d'éditer le fichier de configuration pour y ajouter manuellement votre mot de passe.</translation>
    <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Erreur lors du chargement des données liées au fichier rClone : {{ message }}</translation>
 </translations>
-</translations>
