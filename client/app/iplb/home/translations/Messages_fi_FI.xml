@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_home_tile_status" qtlid="26443">Tila</translation>
-   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Frontends</translation>
-   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Palvelinfarmit</translation>
-   <translation id="iplb_home_tile_status_servers" qtlid="19459">Palvelimet</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="449050">{{number}} Frontends</translation>
+   <translation id="iplb_home_tile_status_farms" qtlid="449063">{{number}} Palvelinfarmia</translation>
+   <translation id="iplb_home_tile_status_servers" qtlid="449076">{{number}} Palvelinta</translation>
 
    <translation id="iplb_home_tile_usage" qtlid="30382">Käyttö</translation>
    <translation id="iplb_home_tile_graph" qtlid="5402">Grafiikat</translation>
@@ -11,7 +11,7 @@
    <translation id="iplb_home_tile_infos" qtlid="26551">Tiedot</translation>
    <translation id="iplb_home_tile_infos_ipv4" qtlid="101781">IPv4</translation>
    <translation id="iplb_home_tile_infos_ipv6" qtlid="34126">IPv6</translation>
-   <translation id="iplb_home_tile_infos_ip_failover" qtlid="227806">FailOver-IP</translation>
+   <translation id="iplb_home_tile_infos_ip_failover" qtlid="227806">Fail-over IP</translation>
    <translation id="iplb_home_tile_infos_ip_outbound" qtlid="429459">Lähtevä IPv4</translation>
 
    <translation id="iplb_home_tile_configuration" qtlid="4406">Konfiguraatio</translation>

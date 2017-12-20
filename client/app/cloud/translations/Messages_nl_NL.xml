@@ -43,6 +43,8 @@
    <translation id="cloud_common_region_UK_micro" qtlid="442756">Londen ({{ micro }})</translation>
    <translation id="cloud_common_region_SGP" qtlid="189068">Singapore</translation>
    <translation id="cloud_common_region_SGP_micro" qtlid="447534">Singapore ({{ micro }})</translation>
+   <translation id="cloud_common_region_SYD" qtlid="414330">Sydney</translation>
+   <translation id="cloud_common_region_SYD_micro" qtlid="449167">Sydney ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Lokaliseren</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Midden-Europa (Frankrijk)</translation>
@@ -53,6 +55,7 @@
    <translation id="cloud_common_region_location_DE" qtlid="437611">Midden-Europa (Duitsland)</translation>
    <translation id="cloud_common_region_location_UK" qtlid="442769">West-Europa (Groot-Brittanië)</translation>
    <translation id="cloud_common_region_location_SGP" qtlid="447547">Zuidoost-Azië (Singapore)</translation>
+   <translation id="cloud_common_region_location_SYD" qtlid="449180">Oceanië (Australië)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Uw browser is niet ondersteund. </translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Uw browser is niet up-to-date en kan beveiligingsproblemen of compatibiliteitsproblemen bevatten.</translation>

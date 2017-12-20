@@ -38,6 +38,7 @@
    <translation id="iplb_subscription_loading_error" qtlid="439442">Er is een fout opgetreden tijdens het laden van het Abonnement gedeelte. </translation>
    <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Er is een fout opgetreden tijdens het laden van de  failover IP's.</translation>
    <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Er is een fout opgetreden tijdens het laden van het  uitgaande IPv4 gedeelte. </translation>
+   <translation id="iplb_status_loading_error" qtlid="449089">Er in fout opgetreden tijdens het laden van het Status-gedeelte. </translation>
 
    <translation id="iplb_task_list_loading_error" qtlid="439481">Er is een fout opgetreden tijdens het laden van de  taken. </translation>
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Er is een fout opgetreden tijdens het laden van de  server farms. </translation>
@@ -53,9 +54,26 @@
    <translation id="iplb_graph_no_data" qtlid="439546">Geen data op dit moment</translation>
 
    <translation id="iplb_status_active" qtlid="439559">{{activeCount}} actief</translation>
-   <translation id="iplb_status_active_total" qtlid="439572">{{activeCount}} / {{totalCount}} actief</translation>
-   <translation id="iplb_status_working_total" qtlid="439585">{{workingCount}} / {{totalCount}} operationeel</translation>
-   <translation id="iplb_status_working_farm_total" qtlid="439598">{{workingCount}} / {{totalCount}} operationeel</translation>
+
+   <translation id="iplb_status_success_service" qtlid="433745">Ok</translation>
+   <translation id="iplb_status_error_service" qtlid="26407">Error</translation>
+   <translation id="iplb_status_warning_service" qtlid="373441">Waarschuwing</translation>
+   <translation id="iplb_status_help_service" qtlid="438506">Geen informatie</translation>
+
+   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} van {{totalCount}} actief</translation>
+   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} van {{totalCount}} met error</translation>
+   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} van {{totalCount}} met waarschuwing</translation>
+   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} van {{totalCount}} zonder informatie</translation>
+
+   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} sur {{totalCount}} fonctionnelles</translation>
+   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} van {{totalCount}} met error</translation>
+   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} van {{totalCount}} met waarschuwing</translation>
+   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} van {{totalCount}} zonder informatie</translation>
+
+   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} van {{totalCount}} actief</translation>
+   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} van {{totalCount}} met error</translation>
+   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} van {{totalCount}} met waarschuwing</translation>
+   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} van {{totalCount}} zonder informatie</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Configuratie instellen</translation>
    <translation id="iplb_status_details" qtlid="439611">Details bekijken</translation>
