@@ -1,6 +1,6 @@
 class CloudProjectComputeCtrl {
     constructor ($q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudMessage, CloudProjectOrchestrator,
-                 CloudUserPref, FeatureAvailabilityService, moment, TranslateService, PCI_ANNOUNCEMENTS) {
+                 CloudUserPref, FeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -11,12 +11,11 @@ class CloudProjectComputeCtrl {
         this.CloudMessage = CloudMessage;
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
         this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
+        this.OvhApiMe = OvhApiMe;
         this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.CloudUserPref = CloudUserPref;
-        this.TranslateService = TranslateService;
         this.moment = moment;
         this.messages = [];
-        this.ads = [];
     }
 
     $onInit () {
@@ -47,7 +46,9 @@ class CloudProjectComputeCtrl {
     init () {
         this.loading = true;
 
-        this.loadAnnouncements();
+        this.OvhApiMe.Lexi().get().$promise.then(me => {
+            this.loadAnnouncements(me.ovhSubsidiary);
+        });
 
         return this.shouldRedirectToProjectOverview()
             .then(redirectToOverview => {
@@ -76,7 +77,7 @@ class CloudProjectComputeCtrl {
         });
     }
 
-    loadAnnouncements () {
+    loadAnnouncements (ovhSubsidiary) {
         const areDismissed = [];
         _.forEach(this.PCI_ANNOUNCEMENTS, announcement => {
             const now = moment();
@@ -87,24 +88,30 @@ class CloudProjectComputeCtrl {
             }
         });
         this.$q.all(areDismissed).then(areDismissedMessages => {
-            this.ads = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement));
+            this.messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
         });
     }
 
-    augmentMessage (message) {
+    augmentMessage (message, ovhSubsidiary) {
         const augmentedMessage = _.cloneDeep(message);
-        const locale = this.TranslateService.getGeneralLanguage();
         augmentedMessage.dismiss = () => {
             this.dismissInfoMessage(message.messageId);
         };
-        augmentedMessage.src = augmentedMessage.sources[locale];
-        augmentedMessage.alt = augmentedMessage.description[locale];
+        augmentedMessage.text = this.$translate.instant(message.messageId);
+        if (!message.linkURL || _.isEmpty(message.linkURL)) {
+            return augmentedMessage;
+        }
+        augmentedMessage.link = {};
+        augmentedMessage.link.value = message.linkURL[ovhSubsidiary] || message.linkURL.EN;
+        if (message.hasLinkText) {
+            augmentedMessage.link.text = this.$translate.instant(`${message.messageId}_link`);
+        } else {
+            augmentedMessage.link.text = this.$translate.instant("cloud_message_pci_no_link");
+        }
         return augmentedMessage;
     }
 
     dismissInfoMessage (messageId) {
-        const message = _.find(this.ads, { messageId });
-        message.dismissed = true;
         this.CloudUserPref.set(messageId, { markedAsRead: new Date() });
     }
 
