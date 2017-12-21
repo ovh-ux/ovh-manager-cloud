@@ -1090,6 +1090,8 @@ angular.module("managerApp")
                     const planHourly = self.panelsData.prices[flavor.planCodes.hourly];
                     if (planHourly) {
                         price.price = planHourly.price;
+                        // Set 3 digits for hourly price
+                        price.price.text = price.price.text.replace(/\d+(?:[.,]\d+)?/, "" + price.price.value.toFixed(3));
                     }
                     const planMonthly = self.panelsData.prices[flavor.planCodes.monthly];
                     if (planMonthly) {
