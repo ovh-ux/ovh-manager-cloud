@@ -60,7 +60,7 @@
             this.helpDisplay = {
                 openUnlinkVolume: false
             };
-            this.importedIpFailoverPending = []; // List of pending import IPFO
+            this.importedIpFailoverPending = []; // List of pending import ipFO
             this.infra = null;
             this.jsplumbInstance = null;
             this.loaders = {
@@ -97,7 +97,7 @@
                 return this.$state.go("iaas.pci-project.compute.infrastructure-overview");
             }
 
-            // Hide highligted-element on change state
+            // Hide highlighted-element on change state
             this.$scope.$on("$stateChangeStart", () => {
                 this.$rootScope.$broadcast("highlighed-element.hide");
             });
@@ -119,7 +119,7 @@
             this.initIpEdit();
             this.initVolumeEdit();
 
-            // ------- JSPLUMB EVENTS -------
+            // ------- jsPLUMB EVENTS -------
 
             this.initJsPlumb();
 
@@ -152,10 +152,11 @@
                     connection.setHoverPaintStyle({ lineWidth: 4 });
                 }
 
-                // It's a connection drawed by the user (with its mouse)
+                // It's a connection drawn by the user (with its mouse)
                 if (originalEvent) {
                     const vmContinent = this.getVmContinent(connectedVm);
-                    const isValidLink = vmContinent && vmContinent === connectedIp.continentCode;
+                    const continentCode = _.get(connectedIp, "continentCode");
+                    const isValidLink = vmContinent && vmContinent === continentCode;
 
                     if (isValidLink && (!this.model.currentLinkEdit || this.model.currentLinkEdit.action === "attach")) {
 
@@ -190,7 +191,7 @@
                 }
             });
 
-            // ------- END JSPLUMB EVENTS -------
+            // ------- END jsPLUMB EVENTS -------
 
             // ------- JQUERY UI SORTABLE -------
 
@@ -294,7 +295,7 @@
             this.getUser();
             // @todo: reset cache
 
-            // Pre-load required datas (all this datas will be cached)
+            // Pre-load required data (all this data will be cached)
             return this.$q.all([
                 this.OvhApiCloudProjectRegion.Lexi().query({ serviceName: this.serviceName }).$promise,
                 this.OvhApiCloudProjectImage.Lexi().query({ serviceName: this.serviceName }).$promise,
@@ -531,18 +532,15 @@
          * Updates reverse dns of given ips.
          */
         updateReverseDns (ips) {
-            const reverseQueue = [];
-            _.forEach(ips, ip => {
-                reverseQueue.push(this.OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block)
-                    .then(dns => {
-                        ip.reverse = dns;
-                    })
-                    .catch(() => this.$q.when(null))
-                    // ok we choose to ignore errors here, so the application can still be used,
-                    // instead of displaying an ugly error message just because one reverse dns call failed
-                    // let's assume the reverse dns is just null
-                );
-            });
+            const reverseQueue = _.map(ips, ip => this.OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block)
+                .then(dns => {
+                    ip.reverse = dns;
+                })
+                .catch(() => this.$q.when(null))
+                // ok we choose to ignore errors here, so the application can still be used,
+                // instead of displaying an ugly error message just because one reverse dns call failed
+                // let's assume the reverse dns is just null);
+            );
             return this.$q.all(reverseQueue);
         }
 
@@ -632,7 +630,7 @@
         deleteConfirmPending (vm) {
             // We display a popover warning in two cases :
             //  - the vm is in monthly billing
-            //  - the vm is routed to failover IPs
+            //  - the vm is routed to failOver IPs
             if (vm.monthlyBilling && vm.monthlyBilling.status === "ok") {
                 this.$uibModal.open({
                     windowTopClass: "cui-modal",
@@ -873,18 +871,19 @@
          * Sort the ip in order to have the least crossing between links
          */
         ipAutoSort () {
-            const ipAutoSort = this.sort.ipAutoSort;
-            const sortedKeys = this.infra.internet.ipList.sortedKeys;
+            const ipAutoSort = _.get(this.sort, "ipAutoSort", false);
+            const ipListSortedKeys = _.get(this.infra, "internet.ipList.sortedKeys", []);
+            const publicCloudSortedKeys = _.get(this.infra, "vrack.publicCloud.sortedKeys", []);
 
-            return function (ip) {
+            return ip => {
                 // only if autoSort is enabled ...
                 if (!ipAutoSort) {
-                    return _.indexOf(sortedKeys, ip.id);
+                    return _.indexOf(ipListSortedKeys, ip.id);
                 }
                 let order = 0;
                 let routeCount = 0;
                 _.forEach(ip.routedTo, route => {
-                    const vmPosition = _.indexOf(sortedKeys, route);
+                    const vmPosition = _.indexOf(publicCloudSortedKeys, route);
                     if (vmPosition !== -1) {
                         order += vmPosition * 5; // arbitrary weight of 5 for a link with a vm
                         routeCount += 1;
@@ -907,13 +906,13 @@
          * Sort IPs in their natural order
          */
         ipSortNatural () {
-            const ipNaturalSort = this.sort.ipNaturalSort;
-            const sortedKeys = this.infra.internet.ipList.sortedKeys;
+            const ipNaturalSort = _.get(this.sort, "ipNaturalSort", false);
+            const ipListSortedKeys = _.get(this.infra, "internet.ipList.sortedKeys", []);
 
-            return function (ip) {
+            return ip => {
                 // only if natural sort is activated ...
                 if (!ipNaturalSort) {
-                    return _.indexOf(sortedKeys, ip.id);
+                    return _.indexOf(ipListSortedKeys, ip.id);
                 }
 
                 const ipRegex = new RegExp(/(\d+)\.(\d+)\.(\d+)\.(\d+)/);
@@ -936,9 +935,9 @@
 
         // ------- END IPS  -------
 
-        // ******* JSPLUMB *******
+        // ******* jsPLUMB *******
 
-        // ------- JSPLUMB TOOLS -------
+        // ------- jsPLUMB TOOLS -------
 
         static sourceIsVm (source, target) {
             return $(source).hasClass("vm-port") && $(target).hasClass("ip-port");
@@ -1001,7 +1000,7 @@
                 }
             };
 
-            // ------- JSPLUMB VM FUNCTION CONF -------
+            // ------- jsPLUMB VM FUNCTION CONF -------
             this.vmTargetDrawOptions = {
                 anchor: [0.5, 0.5, 1, 0],
                 endpoint: ["Blank", { cssClass: "vm-target" }],
@@ -1011,7 +1010,7 @@
                 }
             };
 
-            // ------- JSPLUMB IP FUNCTION CONF -------
+            // ------- jsPLUMB IP FUNCTION CONF -------
             this.ipTargetDrawOptions = {
                 anchor: [0.5, 0.5, -1, 0],
                 endpoint: ["Blank", { cssClass: "ip-target" }],
@@ -1048,7 +1047,7 @@
             };
         }
 
-        // ******* END JSPLUMB *******
+        // ******* END jsPLUMB *******
 
         initIpEdit () {
             this.ipEdit = {
@@ -1090,7 +1089,7 @@
                     cancel: () => {
                         if (!this.loaders.linkActionConfirm && this.model.currentLinkEdit) {
 
-                            // if user drawed a line: delete it
+                            // if user drawn a line: delete it
                             if (this.model.currentLinkEdit.connection) {
                                 this.jsplumbInstance.disconnectEndpoints(this.model.currentLinkEdit.connection);
                             }
@@ -1160,10 +1159,11 @@
                         }
                     },
                     canAttachIpToVm: (ipSource, vmDest) => {
+                        const continentCode = _.get(ipSource, "continentCode");
                         let attachable = true;
                         attachable = attachable && ipSource && vmDest;
                         attachable = attachable && vmDest.status === "ACTIVE";
-                        attachable = attachable && ipSource.continentCode && ipSource.continentCode === this.getVmContinent(vmDest);
+                        attachable = attachable && continentCode && continentCode === this.getVmContinent(vmDest);
                         return attachable;
                     }
                 }
@@ -1360,10 +1360,7 @@
          * @returns {Array}
          */
         getUnlinkedVolumesRegions () {
-            const regions = [];
-            _.forEach(this.volumes.unlinked, volume => {
-                regions.push(volume.region);
-            });
+            const regions = _.map(this.volumes.unlinked, volume => volume.region);
 
             // if we are doing a drag & drop, we add the dragged volume region to the list
             // so it will be displayed as a droppable target in the region list
@@ -1497,10 +1494,10 @@
             const publicIPs = this.$document.find(".ip");
             const plumbLink = this.jsplumbInstance.select({ target: currentInstanceId });
 
-            // instanceBox is the currently highlighed instance
+            // instanceBox is the currently highlighted instance
             const instanceBox = _.find(instancesBox, box => _.includes(currentInstanceId, $(box).data().instanceId));
 
-            // ips linked to the currently highlighed instance
+            // ips linked to the currently highlighted instance
             const currentIps = _.filter(publicIPs, ip => {
                 const instanceId = $(ip).data().instanceId;
                 return _.any(_.intersection(instanceId, currentInstanceId));
