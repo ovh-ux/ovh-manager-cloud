@@ -228,7 +228,7 @@ angular.module("managerApp").service("VpsService", [
                     return $q.reject(vps);
                 }
             }).then(function () {
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (http) {
                 return $q.reject(http.data);
@@ -272,7 +272,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (http) {
                 return $q.reject(http.data);
@@ -362,7 +362,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (http) {
                 return $q.reject(http.data);
@@ -676,7 +676,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache("tabSummary_" + vpsName);
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -703,7 +703,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache();
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -731,7 +731,7 @@ angular.module("managerApp").service("VpsService", [
                 }
             }).then(function () {
                 resetCache("tabSummary_" + vpsName);
-                VpsTaskService.getTasks(serviceName);
+                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                 return result;
             }, function (reason) {
                 if (reason && reason.data !== undefined) {
@@ -961,7 +961,7 @@ angular.module("managerApp").service("VpsService", [
                     type: "file"
                 }).then(function (response) {
                     resetTabVeeam();
-                    VpsTaskService.getTasks(serviceName);
+                    VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                     return response.data;
                 });
             });
@@ -975,7 +975,7 @@ angular.module("managerApp").service("VpsService", [
                     type: "full"
                 }).then(function (response) {
                     resetTabVeeam();
-                    VpsTaskService.getTasks(serviceName);
+                    VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                     return response.data;
                 });
             });
@@ -988,7 +988,7 @@ angular.module("managerApp").service("VpsService", [
                     restorePoint: restorePoint
                 }).then(function (response) {
                         resetTabVeeam();
-                        VpsTaskService.getTasks(serviceName);
+                        VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                         return response.data;
                     });
             });
@@ -1027,7 +1027,7 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                     .then(function (response) {
-                        VpsTaskService.getTasks(serviceName);
+                        VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                         return response.data;
                     });
             });
