@@ -15,7 +15,6 @@ class OvhPoll {
         const poller = {};
         let items = opts.items;
         opts.onItemDone = opts.onItemDone ? opts.onItemDone : _.noop;
-        opts.onItemUpdated = opts.onItemUpdated ? opts.onItemUpdated : _.noop;
         opts.stopCondition = opts.stopCondition ? opts.stopCondition : _.noop;
 
         const deferred = this.$q.defer();
@@ -25,7 +24,6 @@ class OvhPoll {
                     .then(newItem => {
                         if (newItem) {
                             _.merge(item, newItem.data ? newItem.data : newItem);
-                            opts.onItemUpdated(item);
                         }
 
                         return this.$q.when(opts.stopCondition(item));

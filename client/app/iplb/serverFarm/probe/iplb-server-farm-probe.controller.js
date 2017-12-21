@@ -13,7 +13,7 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
         this.matches = IpLoadBalancerConstant.probeMatches;
         this.rules = this.getRules();
 
-        if (!_.includes(this.getMatches, this.farm.probe.match)) {
+        if (!_.includes(this.getMatches(), this.farm.probe.match)) {
             this.farmProbe.match = null;
             this.farmProbe.pattern = null;
             this.farmProbe.negate = null;
