@@ -1,6 +1,7 @@
 class VpsDetailCtrl {
     constructor ($filter, $scope, $stateParams, CloudMessage, CloudNavigation, VpsTaskService) {
         this.$filter = $filter;
+        this.$scope = $scope;
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
@@ -18,8 +19,8 @@ class VpsDetailCtrl {
                 serviceName: this.serviceName
             }
         });
-        this.VpsTaskService.unSubscribe(this.serviceName);
-        this.VpsTaskService.subscribe(this.serviceName, "iaas.vps.detail");
+        this.VpsTaskService.initPoller(this.serviceName, "iaas.vps.detail");
+        this.$scope.$on("$destroy", () => this.VpsTaskService.stopTaskPolling());
     }
 
     loadMessage () {

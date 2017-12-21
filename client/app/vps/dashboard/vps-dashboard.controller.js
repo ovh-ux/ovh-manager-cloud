@@ -32,10 +32,16 @@ class VpsDashboardCtrl {
         this.loadVps();
         this.loadUrl();
 
-        this.$scope.$on("tasks.pending", () => { this.loaders.polling = true; });
-        this.$scope.$on("tasks.success", () => {
-            this.loaders.polling = false;
-            this.loadVps();
+        this.$scope.$on("tasks.pending", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = true;
+            }
+        });
+        this.$scope.$on("tasks.success", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = false;
+                this.loadVps();
+            }
         });
     }
 
