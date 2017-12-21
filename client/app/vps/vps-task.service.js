@@ -1,24 +1,19 @@
 class VpsTaskService {
-    constructor ($http, $q, $rootScope, $timeout, $translate, CloudMessage, ControllerHelper, OvhPoll) {
+    constructor ($http, $q, $rootScope, $translate, CloudMessage, OvhPoll) {
         this.$http = $http;
         this.$q = $q;
         this.$rootScope = $rootScope;
 
-        this.$timeout = $timeout;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
-        this.ControllerHelper = ControllerHelper;
         this.OvhPoll = OvhPoll;
 
         this.COMPLETED_TASK_PROGRESS = 100;
     }
 
     initPoller (serviceName, containerName) {
-        this.tasks = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.getPendingTasks(serviceName),
-            successHandler: () => this.startTaskPolling(serviceName, containerName)
-        });
-        this.tasks.load();
+        this.getPendingTasks(serviceName)
+            .then(tasks => this.startTaskPolling(serviceName, containerName, tasks));
     }
 
     getPendingTasks (serviceName, type) {
@@ -39,11 +34,11 @@ class VpsTaskService {
             .finally(() => this.$rootScope.$broadcast("tasks.pending", serviceName));
     }
 
-    startTaskPolling (serviceName, containerName) {
+    startTaskPolling (serviceName, containerName, tasks) {
         this.stopTaskPolling();
 
         this.poller = this.OvhPoll.pollArray({
-            items: this.tasks.data,
+            items: tasks,
             pollFunction: task => this.getTask(serviceName, task.id),
             stopCondition: task => _.includes(["done", "error"], task.state),
             onItemUpdated: task => this.manageMessage(containerName, task),
