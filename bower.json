@@ -8,8 +8,9 @@
   "dependencies": {
     "jquery": "2.1.x",
     "angular": "1.6.x",
-    "ovh-ui-angular": "^1.1.0",
+    "ovh-ui-angular": "https://github.com/ovh-ux/ovh-ui-angular.git#master",
     "angular-animate": "1.6.x",
+    "angular-aria": "^1.6.x",
     "angular-bootstrap": "1.3.x",
     "angular-cookies": "1.6.x",
     "angular-dynamic-locale": "0.1.x",
@@ -41,7 +42,7 @@
     "ng-slide-down": "1.2.x",
     "uri.js": "~1.15.0",
     "validator-js": "~3.37.0",
-    "ovh-ui-kit": "^1.0.0-alpha.18",
+    "ovh-ui-kit": "https://github.com/ovh-ux/ovh-ui-kit.git#master",
     "ovh-angular-a-disabled": "^0.1.1",
     "ng-at-internet": "^3.0.0",
     "at-internet-ui-router-plugin": "^0.1.2",
@@ -158,6 +159,9 @@
     },
     "flag-icon-css": {
       "main": ""
+    },
+    "bs4": {
+      "dependencies": []
     }
   }
 }
