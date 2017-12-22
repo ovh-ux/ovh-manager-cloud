@@ -5,7 +5,7 @@
                 data-loading="ctrl.iplbStatus.loading"
                 class="h-100">
                 <cui-tile-body class="cui-tile__body-no-grow">
-                    <cui-tile-item-status 
+                    <cui-tile-item-status
                         data-ng-repeat="statusInfo in ctrl.iplbStatus.data | orderBy: 'weight' track by $index"
                         data-actions="ctrl[statusInfo.itemName + 'Actions']">
                         <cui-tile-definitions>
@@ -47,7 +47,12 @@
                             </div>
                         </div>
                         <div class="iplb-usage__menu">
-                            <cui-dropdown-menu>
+                            <oui-action-menu compact align="end">
+                                <oui-action-menu-item text="{{ 'iplb_utilisation_update_alert' | translate }}"
+                                    on-click="ctrl.updateQuotaAlert(quota)">
+                                </oui-action-menu-item>
+                            </oui-action-menu>
+                            <!-- <cui-dropdown-menu>
                                 <cui-dropdown-menu-button>
                                     <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
                                 </cui-dropdown-menu-button>
@@ -62,11 +67,11 @@
                                         </div>
                                     </div>
                                 </cui-dropdown-menu-body>
-                            </cui-dropdown-menu>
+                            </cui-dropdown-menu> -->
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
         <div class="col-xm-12 col-md-4">
             <div class="cui-tile h-100">
@@ -125,7 +130,7 @@
                         data-description="ctrl.information.data.natIp.length"
                         data-actions="ctrl.actions.showNatIp"></cui-tile-item>
                 </cui-tile-body>
-            </cui-tile>        
+            </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
            <cui-tile data-title="'iplb_home_tile_configuration' | translate"
@@ -145,7 +150,7 @@
                         </cui-tile-definitions>
                     </cui-tile-item>
                 </cui-tile-body>
-            </cui-tile> 
+            </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
             <cui-tile-subscription data-loading="ctrl.subscription.loading"
