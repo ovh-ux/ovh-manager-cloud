@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Naam (optioneel)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocol (kan niet gewijzigd worden na de creatie)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">1 naar {{portMax}}, format: simpel (bijv.: 80), reeks (bijv.: 1000-1200), multi (bijv.: 80,443)</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port aangesloten op de farm (1 tot {{portMax}}). Gebruik standaard de front-end port.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Geavanceerde instellingen</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">De meest recente standaardwaarden zijn vooraf ingesteld. U kunt ze op elk gewenst moment wijzigen.</translation>
@@ -76,7 +76,6 @@
    <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Er is een fout opgetreden tijdens het ophalen van informatie over de probe. </translation>
-
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Probe instellingen</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Annuleren</translation>

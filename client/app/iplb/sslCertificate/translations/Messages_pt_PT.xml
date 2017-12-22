@@ -53,14 +53,15 @@
    <translation id="iplb_ssl_order_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_ssl_order_type" qtlid="439169">Tipo de certificado</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
-   <translation id="iplb_ssl_order_type_dv" qtlid="439182">Comodo DV</translation>
-   <translation id="iplb_ssl_order_type_ev" qtlid="439195">Comodo EV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_dv_single" qtlid="439182">Comodo DV</translation>
+   <translation id="iplb_ssl_order_type_iplb_ssl_ev_single" qtlid="439195">Comodo EV</translation>
    <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
    <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
    <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">exemplo.com, www.exemplo.com</translation>
    <translation id="iplb_ssl_order_contact" qtlid="31066">Contacto</translation>
    <translation id="iplb_ssl_order_email" qtlid="439234">Endereço de e-mail</translation>
    <translation id="iplb_ssl_order_business_category" qtlid="431851">Categoria da organização</translation>
+   <translation id="iplb_ssl_order_business_category_placeholder" qtlid="17923">Selecionar</translation>
    <translation id="iplb_ssl_order_country" qtlid="25171">País</translation>
    <translation id="iplb_ssl_order_state_or_province" qtlid="439247">Estado ou região</translation>
    <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Data de constituição da organização</translation>
@@ -69,8 +70,12 @@
    <translation id="iplb_ssl_order_address" qtlid="30430">Morada</translation>
    <translation id="iplb_ssl_order_postal_code" qtlid="30346">Código postal</translation>
    <translation id="iplb_ssl_order_city" qtlid="33310">Localidade</translation>
-   <translation id="iplb_ssl_order_joi" qtlid="439273">Conservatória de Registo (Juridiction d'incorporation)</translation>
+   <translation id="iplb_ssl_order_joi" qtlid="439273">Sede Social</translation>
 
    <translation id="iplb_ssl_order_ok" qtlid="43558">Encomendar</translation>
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Anular</translation>
+
+   <translation id="iplb_ssl_order_loading_error" qtlid="447326">Erro durante o carregamento dos dados do produto.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="447339">Criação de novo certificado em curso.</translation>
+   <translation id="iplb_ssl_order_error" qtlid="447352">Erro durante a criação do certificado: {{message}}</translation>
 </translations>

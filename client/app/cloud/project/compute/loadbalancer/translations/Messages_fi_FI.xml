@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_loadbalancer_discover_title" qtlid="447365">Tutustu Kuormantasaajiimme</translation>
+   <translation id="cpc_loadbalancer_discover_body" qtlid="447378">Public Cloud, Private Cloud ja VPS-tuotteiden sekä dedikoitujen palvelinten kanssa yhteensopiva Kuormantasaaja jakaa eri palveluidesi kuorman konesaleihimme. Se takaa infrastruktuurisi skaalaamisen liikenteen kasvaessa merkittävästi, rikkoutumisen eston sekä optimaaliset vastausajat. Kaikki tämä palvelutasolla, jonka tavoitteena on Zero Downtime. Yksinkertaistettua hallintaa varten OVH:n Kuormantasaaja on lisäksi yhteensopiva OVH:n API:n sekä Openstackin kanssa (Varsovan, Frankfurtin ja Lontoon alueilla).</translation>
+
+   <translation id="cpc_loadbalancer_order" qtlid="447391">Tilaa Kuormantasaaja</translation>
+   <translation id="cpc_loadbalancer_back" qtlid="4118">Takaisin</translation>
+   <translation id="cpc_loadbalancer_name" qtlid="323499">Kuormantasaus-IP</translation>
+   <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">OpenStack</translation>
+   <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Kyllä</translation>
+   <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Erääntyi</translation>
+   <translation id="cpc_loadbalancer_openstack_status_created" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="cpc_loadbalancer_openstack_status_not_imported" qtlid="124952">Ei konfiguroitu</translation>
+   <translation id="cpc_loadbalancer_status" qtlid="8230">Tila</translation>
+   <translation id="cpc_loadbalancer_actions" qtlid="72809">Toiminnot</translation>
+   <translation id="cpc_loadbalancer_actions_configure" qtlid="4010">Konfiguroi</translation>
+   <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Edistynyt konfigurointi</translation>
+   <translation id="cpc_loadbalancer_status_unavailable" qtlid="91957">Ei käytettävissä</translation>
+   <translation id="cpc_loadbalancer_status_deployed" qtlid="417289">Otettu käyttöön</translation>
+   <translation id="cpc_loadbalancer_status_available" qtlid="124952">Ei konfiguroitu</translation>
+
+   <translation id="cpc_loadbalancer_key_explain_1" qtlid="305837">Edistynyt konfigurointi</translation>
+   <translation id="cpc_loadbalancer_key_explain_2" qtlid="447404">Yksinkertaistettu tila ei ole käytettävissä tässä Kuormantasaajassa, koska se on konfiguroitu edistyneellä tavalla.<br /> Sinun täytyy siis mennä edistyneen konfiguroinnin sivulle lisätäksesi palvelmia Kuormantasaajaasi.</translation>
+
+   <translation id="cpc_loadbalancer_configure_title" qtlid="447417">Konfiguroi Kuormantasaaja</translation>
+   <translation id="cpc_loadbalancer_configure_advanced" qtlid="102837">Expert-tila</translation>
+   <translation id="cpc_loadbalancer_configure_other_protocole" qtlid="447430">Muut protokollat</translation>
+   <translation id="cpc_loadbalancer_configure_updated_message" qtlid="447443">Kuormantasaajaan konfiguraation päivitys onnistui.</translation>
+   <translation id="cpc_loadbalancer_configure_task_waiting" qtlid="447456">Kuormantasaajaa otetaan käyttöön...</translation>
+   <translation id="cpc_loadbalancer_configure_loadbalancer" qtlid="323499">Kuormantasaus-IP</translation>
+   <translation id="cpc_loadbalancer_configure_adresse" qtlid="103870">IP-osoite:</translation>
+   <translation id="cpc_loadbalancer_configure_frontend" qtlid="429615">Frontend</translation>
+   <translation id="cpc_loadbalancer_configure_protocole" qtlid="232703">Protokolla:</translation>
+   <translation id="cpc_loadbalancer_configure_servers" qtlid="19459">Palvelimet</translation>
+   <translation id="cpc_loadbalancer_configure_server_name" qtlid="8290">Palvelin</translation>
+   <translation id="cpc_loadbalancer_configure_servers_condition" qtlid="447469">Valitse vähintään yksi palvelin kuormantasaajan aktivoimiseksi.</translation>
+   <translation id="cpc_loadbalancer_configure_openstack" qtlid="241586">OpenStack</translation>
+   <translation id="cpc_loadbalancer_configure_openstack_explanation" qtlid="447482">Voit konfiguroida Kuormantasaajan suoraan Openstackin API:lla<br />Sitä varten on luotava openstack-käyttäjä <a href="{{guideHorizon}}">tämän ohjeen</a> avulla, jotta voit kirjautua CLI:hin tai Horizon-käyttöliittymään.<br />Kun olet vahvistanut tämän lisäpalvelun, sinut uudelleenohjataan uudelle tunnistautumissivulle, jossa annat Openstack-sovellukselle valtuudet käyttää OVH:n APIa.</translation>
+   <translation id="cpc_loadbalancer_configure_openstack_activation" qtlid="447495">Valtuuta Openstack-käyttäjäni tekemään muutoksia tähän Kuormantasaajaan.</translation>
+   <translation id="cpc_loadbalancer_configure_modify" qtlid="249107">Ota muutokset käyttöön</translation>
+   <translation id="cpc_loadbalancer_configure_cancel" qtlid="37863">Peruuta</translation>
+
+   <translation id="cpc_loadbalancer_error" qtlid="447508">Virhe Kuormantasaajassa</translation>
+   <translation id="cpc_server_error" qtlid="447521">Virhe palvelimissa</translation>
+
+</translations>

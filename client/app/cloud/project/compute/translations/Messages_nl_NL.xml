@@ -4,6 +4,7 @@
    <translation id="cpc_tab_snapshot" qtlid="170343">Backups</translation>
    <translation id="cpc_tab_volume" qtlid="246923">Extra disks</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH-key</translation>
+   <translation id="cpc_tab_loadbalancer" qtlid="323499">Load Balancing IP</translation>
    <translation id="cpc_tab_project" qtlid="261283">Beheer en gebruik van het project</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud is nu ook in Duitsland! <a href="http://superlienverslapage">Ontdek ons datacenter in het Duitse Limburg.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Ons nieuwe Britse UK1 datacenter in London is nu open!</translation>
@@ -12,4 +13,5 @@
    <translation id="cloud_message_pci_de1_link" qtlid="439793">Wat kan dit voor u betekenen</translation>
    <translation id="cloud_message_pci_g3" qtlid="439806">Nieuw: lancering van onze GPU G3-30 en G3-120 instances, voor uw data science of machine learning projecten.</translation>
    <translation id="cloud_message_pci_no_link" qtlid="76722">Meer informatie...</translation>
+   <translation id="cloud_message_pci_bandwitdh_xmas" qtlid="451045">From December 19th 2017 until January 8th 2018 inclusive, get up to 10 GBits/s of network bandwidth (overall) for C2-120, B2-120, R2-240 and G3-120 instances.</translation>
 </translations>

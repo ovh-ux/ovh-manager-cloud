@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_home_tile_status" qtlid="26443">Stato</translation>
-   <translation id="iplb_home_tile_status_frontends" qtlid="438545">Frontend</translation>
-   <translation id="iplb_home_tile_status_servers_farms" qtlid="437700">Server Farm</translation>
-   <translation id="iplb_home_tile_status_servers" qtlid="19459">Server</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="449050">{{number}} frontend</translation>
+   <translation id="iplb_home_tile_status_farms" qtlid="449063">{{number}} server farm</translation>
+   <translation id="iplb_home_tile_status_servers" qtlid="449076">{{number}} server</translation>
 
    <translation id="iplb_home_tile_usage" qtlid="30382">Utilizzo</translation>
    <translation id="iplb_home_tile_graph" qtlid="5402">Grafica</translation>

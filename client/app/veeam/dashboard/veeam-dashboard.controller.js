@@ -1,10 +1,11 @@
 (() => {
     class VeeamDashboardCtrl {
-        constructor ($stateParams, $translate, VeeamService, ControllerHelper) {
+        constructor ($stateParams, $translate, VeeamService, ControllerHelper, FeatureAvailabilityService) {
             this.$stateParams = $stateParams;
             this.$translate = $translate;
             this.VeeamService = VeeamService;
             this.ControllerHelper = ControllerHelper;
+            this.FeatureAvailabilityService = FeatureAvailabilityService;
 
             this.serviceName = this.$stateParams.serviceName;
 
@@ -71,7 +72,7 @@
                 manageContact: {
                     text: this.$translate.instant("common_manage"),
                     href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
-                    isAvailable: () => true
+                    isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage")
                 }
             };
         }

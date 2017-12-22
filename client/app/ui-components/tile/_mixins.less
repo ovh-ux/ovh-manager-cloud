@@ -3,7 +3,6 @@
 #oui {
     .cui-tile-base(
         @tile-selector,
-        @dropdown-menu-selector,
         @icon-selector
     ) {
         padding: @cui-tile-padding;
@@ -56,6 +55,17 @@
             position: relative;
             display: block;
 
+            &-main {
+                flex: 1;
+                overflow: hidden;
+            }
+
+            // This shouldn't have to be done.  Buttons and main container has to be wrapped by __item with a correct padding.cui-tile-base
+            // Will fix later to avoid to much changes in a single PR.
+            &-button {
+                padding: rem-calc(13) rem-calc(20);
+            }
+
             &::before {
                 content: "";
                 display: block;
@@ -96,12 +106,6 @@
                     }
                 }
             }
-
-            .@{dropdown-menu-selector} {
-                position: absolute;
-                right: @cui-tile-item-side-spacing;
-                top: @cui-tile-item-top-spacing;
-            }
         }
 
         &__definition {
@@ -126,8 +130,6 @@
         }
 
         &__body {
-            min-height: 100%;
-
             &_list {
                 list-style: none;
                 margin: 0;
@@ -146,6 +148,11 @@
                 &-spaced {
                     padding: 0 @cui-tile-padding-base;
                 }
+            }
+
+            &-no-grow {
+                overflow-y: auto; 
+                max-height: 35rem;
             }
         }
 

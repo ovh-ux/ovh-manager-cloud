@@ -9,7 +9,7 @@
    <translation id="cpciif_buy_country_select_plural" qtlid="275960">Selecione o país dos seus endereços IP Failover Cloud:</translation>
    <translation id="cpciif_buy_limit_info" qtlid="275973">A sua infraestrutura atual permite-lhe encomendar até {{ ips }} endereços IPs Failover Cloud.</translation>
    <translation id="cpciif_buy_init_error" qtlid="275986">Oups! Não conseguimos recuperar as informações necessárias à aquisição de endereços IP Failover Cloud.</translation>
-   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Gerar a nota de encomenda</translation>
+   <translation id="cpciif_buy_button_generate_bc" qtlid="186219">Gerar nota de encomenda</translation>
    <translation id="cpciif_buy_button_infos" qtlid="269513">Taxas de ativação - Sem renovação mensal</translation>
    <translation id="cpciif_buy_error" qtlid="275999">Oups! Ocorreu um erro aquando da aquisição de endereços IP Failover Cloud.</translation>
    <translation id="cpciif_buy_success" qtlid="296011">A nota de encomenda para a aquisição do endereço IP Failover Clodu está disponível <a href="{{ url }}" target="_blank">aqui <i class="fa fa-external-link"></i></a></translation>

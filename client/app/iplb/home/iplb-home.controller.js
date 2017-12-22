@@ -1,16 +1,18 @@
 class IpLoadBalancerHomeCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage,
+    constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
-                 IpLoadBalancerHomeService, IpLoadBalancerMetricsService,
+                 IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
                  REDIRECT_URLS) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.IpLoadBalancerActionService = IpLoadBalancerActionService;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
+        this.IpLoadBalancerHomeStatusService = IpLoadBalancerHomeStatusService;
         this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
         this.REDIRECT_URLS = REDIRECT_URLS;
 
@@ -25,27 +27,28 @@ class IpLoadBalancerHomeCtrl {
         this.subscription.load();
 
         this.iplbStatus.load();
-        this.frontendsStatus.load();
-        this.serverFarmsStatus.load();
         this.usage.load();
 
         this.initActions();
         this.initGraph();
 
-        this.IPLBActions = [[{
+        this.serviceActions = [{
             text: this.$translate.instant("iplb_status_apply"),
-            run: () => this.$state.go("network.iplb.detail.configuration")
-        }]];
+            callback: () => this.$state.go("network.iplb.detail.configuration"),
+            isAvailable: () => true
+        }];
 
-        this.frontendsActions = [[{
+        this.frontendsActions = [{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => this.$state.go("network.iplb.detail.frontends")
-        }]];
+            callback: () => this.$state.go("network.iplb.detail.frontends"),
+            isAvailable: () => true
+        }];
 
-        this.farmsActions = [[{
+        this.farmsActions = [{
             text: this.$translate.instant("iplb_status_details"),
-            run: () => this.$state.go("network.iplb.detail.server-farm")
-        }]];
+            callback: () => this.$state.go("network.iplb.detail.server-farm"),
+            isAvailable: () => true
+        }];
     }
 
     initLoaders () {
@@ -61,16 +64,8 @@ class IpLoadBalancerHomeCtrl {
             loaderFunction: () => this.IpLoadBalancerHomeService.getSubscription(this.serviceName)
         });
 
-        this.iplbStatus = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.IpLoadBalancerHomeService.getIPLBStatus(this.serviceName)
-        });
-
-        this.frontendsStatus = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.IpLoadBalancerHomeService.getFrontendsStatus(this.serviceName)
-        });
-
-        this.serverFarmsStatus = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.IpLoadBalancerHomeService.getServerFarmsStatus(this.serviceName)
+        this.iplbStatus = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerHomeStatusService.getIPLBStatus(this.serviceName, { toArray: true })
         });
 
         this.usage = this.ControllerHelper.request.getArrayLoader({
@@ -117,20 +112,9 @@ class IpLoadBalancerHomeCtrl {
             manageContact: {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
-                isAvailable: () => !this.subscription.loading && !this.subscription.hasErrors
+                isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage") && !this.subscription.loading && !this.subscription.hasErrors
             }
         };
-    }
-
-    getIPLBStatusText () {
-        return _.capitalize(_.get(this.iplbStatus, "data.state"));
-    }
-
-    getFrontendsStatusText () {
-        return this.$translate.instant("iplb_status_active_total", {
-            activeCount: this.frontendsStatus.data.enabled,
-            totalCount: this.frontendsStatus.data.total
-        });
     }
 
     updateQuotaAlert (quota) {

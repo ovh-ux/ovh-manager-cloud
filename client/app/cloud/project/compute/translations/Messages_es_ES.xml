@@ -4,6 +4,7 @@
    <translation id="cpc_tab_snapshot" qtlid="170343">Snapshots</translation>
    <translation id="cpc_tab_volume" qtlid="246923">Discos adicionales</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">Llaves SSH</translation>
+   <translation id="cpc_tab_loadbalancer" qtlid="323499">Load Balancer</translation>
    <translation id="cpc_tab_project" qtlid="261283">Gestión y consumo del proyecto</translation>
    <translation id="cpc_message" qtlid="439767">¡El cloud de OVH llega a Alemania! <a href="http://superlienverslapage">Descubra nuestro datacenter de Limburgo.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">¡Inauguramos nuestra nueva región UK1 en Londres, Reino Unido!</translation>
@@ -12,4 +13,5 @@
    <translation id="cloud_message_pci_de1_link" qtlid="439793">Descubra qué implica esto para usted.</translation>
    <translation id="cloud_message_pci_g3" qtlid="439806">Novedad: Lanzamiento de las instancias GPU G3-30 y G3-120, para sus proyectos de «data science» o «machine learning».</translation>
    <translation id="cloud_message_pci_no_link" qtlid="76722">Saber más...</translation>
+   <translation id="cloud_message_pci_bandwitdh_xmas" qtlid="451045">From December 19th 2017 until January 8th 2018 inclusive, get up to 10 GBits/s of network bandwidth (overall) for C2-120, B2-120, R2-240 and G3-120 instances.</translation>
 </translations>

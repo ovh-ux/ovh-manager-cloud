@@ -52,17 +52,17 @@ export function auth (req, res) {
     let protocol = req.protocol || "http";
     let headers = req.headers;
     headers.host = config.ssoAuth.host;
-
     proxy.post({
         url: config.ssoAuth.devLoginUrl,
         proxy: config.proxy ? config.proxy.host : null,
         headers: headers,
-            followRedirect: false,
+        followRedirect: false,
         gzip: true,
         json: {
             callbackUrl: `${protocol}://${origin}/auth/check`
         }
     }, (err, resp, data) => {
+
         if (err) {
             return res.status(500);
         }

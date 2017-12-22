@@ -26,50 +26,50 @@
                         <button type="button" class="oui-button oui-button_dropdown dropdown-toggle"
                                 data-ng-disabled="CloudProjectComputeInfrastructureCtrl.loaders.vrack"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" write-right-required>
-                            {{:: 'cpci_add_btn'|translate }}
+                            {{:: 'common_actions' | translate }}
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </button>
                         <ul class="dropdown-menu">
                             <li>
                                 <button type="button" class="btn fs14"
                                     data-ng-click="CloudProjectComputeInfrastructureCtrl.addVirtualMachine()"
-                                    at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }">
-                                    <i class="fa fa-server right-space-m8"></i>
-                                    {{ 'cpci_add_server'|translate }}
+                                    at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                                    data-ng-bind=":: 'cpci_add_server' | translate">
                                 </button>
                             </li>
                             <li>
                                 <button type="button" class="btn fs14"
                                         at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
-                                        data-ng-click="CloudProjectComputeInfrastructureCtrl.addVolume()">
-                                    <i class="/mofa fa-hdd-o right-space-m8"></i>
-                                    {{ 'cpci_volume_add'|translate }}
+                                        data-ng-click="CloudProjectComputeInfrastructureCtrl.addVolume()"
+                                        data-ng-bind=":: 'cpci_volume_add' | translate">
                                 </button>
                             </li>
                             <li class="divider"></li>
                             <li>
                                 <button type="button" class="btn fs14"
-                                    data-ng-click="CloudProjectComputeInfrastructureCtrl.importIpFailover()">
-                                    <i class="fa fa-arrow-down right-space-m8"></i>
-                                    {{ 'cpci_import_ip_failover'|translate }}
+                                    data-ng-click="CloudProjectComputeInfrastructureCtrl.importIpFailover()"
+                                    data-ng-bind=":: 'cpci_import_ip_failover' | translate">
                                 </button>
                             </li>
                             <li>
                                 <button type="button" class="btn fs14"
                                         data-ng-click="CloudProjectComputeInfrastructureCtrl.buyIpFailover()"
-                                        at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }">
-                                    <i class="fa fa-shopping-cart right-space-m8"></i>
-                                    {{ 'cpci_buy_ip_failover'|translate }}
+                                        at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
+                                        data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
+                                </button>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <button type="button" class="btn fs14"
+                                        data-ng-click="CloudProjectComputeInfrastructureCtrl.showDeleteProjectModal()"
+                                        at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
+                                        data-ng-disabled="projectDeleted" 
+                                        data-ng-bind=":: 'cpb_details_project_delete' | translate"
+                                        write-right-required>
                                 </button>
                             </li>
                         </ul>
                     </div>
-                    <button type="button"
-                            class="oui-button oui-button_secondary pull-right"
-                            data-ng-click="CloudProjectComputeInfrastructureCtrl.showDeleteProjectModal()"
-                            data-ng-disabled="projectDeleted" write-right-required>
-                        <span data-translate="cpb_details_project_delete"></span>
-                    </button>
                 </div>
             </div>
 

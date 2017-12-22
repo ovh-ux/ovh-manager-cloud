@@ -35,17 +35,17 @@
    <translation id="iplb_frontend_add_protocol_tls" qtlid="437843">TCP SSL (TLS)</translation>
    <translation id="iplb_frontend_add_protocol_udp" qtlid="141834">UDP</translation>
    <translation id="iplb_frontend_add_port" qtlid="9034">Port</translation>
-   <translation id="iplb_frontend_add_port_tip" qtlid="437934">1 a {{portMax}}, formato: simple (p.ej.: 80), rango (p.ej.: 1000-1200), multi (p.ej.: 80,443)</translation>
+   <translation id="iplb_frontend_add_port_tip" qtlid="448686">Puertos definidos por el frontend. 1 a {{portMax}}; formato: simple (p. ej.: 80), rango (p. ej.: 1000-1200) o múltiple (p. ej.: 80,443).</translation>
    <translation id="iplb_frontend_add_datacenter" qtlid="30802">Datacentre</translation>
    <translation id="iplb_frontend_add_default_farm" qtlid="429563">Granja por defecto</translation>
-   <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Aucune (female french to male deustch)</translation>
+   <translation id="iplb_frontend_add_farm_no_farm" qtlid="440947">Ninguno</translation>
    <translation id="iplb_frontend_add_farm_add_another_choice" qtlid="438675">+ Añadir una granja de servidores</translation>
    <translation id="iplb_frontend_add_farm" qtlid="437726">Añadir una granja de servidores</translation>
    <translation id="iplb_frontend_add_farm_text" qtlid="438688">Una vez creado el presente frontend, usted podrá añadirle directamente una granja de servidores por defecto.</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="438701">Certificado SSL por defecto</translation>
    <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">Aucun</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Añadir/Contratar</translation>
-   <translation id="iplb_frontend_add_default_certificate" qtlid="133071">Añadir un certificado</translation>
+   <translation id="iplb_frontend_add_default_certificate" qtlid="448699">Certificado definido por defecto</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">No es posible añadir directamente un nuevo certificado. Podrá añadirlo cuando la creación del frontend haya finalizado.</translation>
    <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Paramètres avancés</translation>
    <translation id="iplb_frontend_add_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>

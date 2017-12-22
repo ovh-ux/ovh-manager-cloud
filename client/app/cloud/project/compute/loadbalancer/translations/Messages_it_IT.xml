@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="cpc_loadbalancer_discover_title" qtlid="447365">Scopri i nostri Load Balancer</translation>
+   <translation id="cpc_loadbalancer_discover_body" qtlid="447378">Compatibile con Public Cloud, Private Cloud, VPS e server dedicati, l'OVH Load Balancer ripartisce il carico tra i tuoi diversi servizi nei nostri datacenter, garantendo scalabilità dell'infrastruttura in caso di traffico elevato, tolleranza ai guasti e tempi di risposta ottimizzati. Il tutto con un livello di servizio che aspira ad avere Zero Downtime. Per una gestione semplificata, l'OVH Load Balancer è compatibile anche con le API OVH e OpenStack (nelle region di Varsavia, Francoforte e Londra).</translation>
+
+   <translation id="cpc_loadbalancer_order" qtlid="447391">Ordina un Load Balancer</translation>
+   <translation id="cpc_loadbalancer_back" qtlid="4118">Ritorna</translation>
+   <translation id="cpc_loadbalancer_name" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">OpenStack</translation>
+   <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Sì</translation>
+   <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Scaduto</translation>
+   <translation id="cpc_loadbalancer_openstack_status_created" qtlid="124952">Non configurato</translation>
+   <translation id="cpc_loadbalancer_openstack_status_not_imported" qtlid="124952">Non configurato</translation>
+   <translation id="cpc_loadbalancer_status" qtlid="8230">Stato</translation>
+   <translation id="cpc_loadbalancer_actions" qtlid="72809">Azioni</translation>
+   <translation id="cpc_loadbalancer_actions_configure" qtlid="4010">Configura</translation>
+   <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Configurazione avanzata</translation>
+   <translation id="cpc_loadbalancer_status_unavailable" qtlid="91957">Non disponibile</translation>
+   <translation id="cpc_loadbalancer_status_deployed" qtlid="417289">Implementato</translation>
+   <translation id="cpc_loadbalancer_status_available" qtlid="124952">Non configurato</translation>
+
+   <translation id="cpc_loadbalancer_key_explain_1" qtlid="305837">Configurazione avanzata</translation>
+   <translation id="cpc_loadbalancer_key_explain_2" qtlid="447404">La modalità semplificata non è disponibile per questo Load Balancer perché sul servizio è attiva una configurazione avanzata.<br /> Per aggiungere server al tuo Load Balancer, accedi alla pagina di configurazione avanzata.</translation>
+
+   <translation id="cpc_loadbalancer_configure_title" qtlid="447417">Configura il Load Balancer</translation>
+   <translation id="cpc_loadbalancer_configure_advanced" qtlid="102837">Modalità avanzata</translation>
+   <translation id="cpc_loadbalancer_configure_other_protocole" qtlid="447430">Altri protocolli</translation>
+   <translation id="cpc_loadbalancer_configure_updated_message" qtlid="447443">La configurazione del Load Balancer è stata aggiornata correttamente.</translation>
+   <translation id="cpc_loadbalancer_configure_task_waiting" qtlid="447456">Implementazione del Load Balancer in corso...</translation>
+   <translation id="cpc_loadbalancer_configure_loadbalancer" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cpc_loadbalancer_configure_adresse" qtlid="103870">Indirizzo IP:</translation>
+   <translation id="cpc_loadbalancer_configure_frontend" qtlid="429615">Frontend</translation>
+   <translation id="cpc_loadbalancer_configure_protocole" qtlid="232703">Protocollo:</translation>
+   <translation id="cpc_loadbalancer_configure_servers" qtlid="19459">Server</translation>
+   <translation id="cpc_loadbalancer_configure_server_name" qtlid="8290">Server</translation>
+   <translation id="cpc_loadbalancer_configure_servers_condition" qtlid="447469">Seleziona almeno 1 server per attivare il Load Balancer.</translation>
+   <translation id="cpc_loadbalancer_configure_openstack" qtlid="241586">OpenStack</translation>
+   <translation id="cpc_loadbalancer_configure_openstack_explanation" qtlid="447482">Puoi configurare il tuo Load Balancer direttamente con l'API OpenStack.<br />Per farlo, crea un utente OpenStack seguendo gli step descritti in <a href="{{guideHorizon}}">questa guida</a> per accedere alla CLI o all'interfaccia Horizon.<br />Una volta convalidata questa opzione, verrai reindirizzato a una nuova pagina di autenticazione da cui sarà possibile autorizzare l'applicazione OpenStack a utilizzare l'API OVH.</translation>
+   <translation id="cpc_loadbalancer_configure_openstack_activation" qtlid="447495">Autorizza i miei utenti OpenStack a modificare questo Load Balancer.</translation>
+   <translation id="cpc_loadbalancer_configure_modify" qtlid="249107">Applica le modifiche</translation>
+   <translation id="cpc_loadbalancer_configure_cancel" qtlid="37863">Annulla</translation>
+
+   <translation id="cpc_loadbalancer_error" qtlid="447508">Errore del Load Balancer</translation>
+   <translation id="cpc_server_error" qtlid="447521">Errore dei server</translation>
+
+</translations>

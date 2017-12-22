@@ -1,6 +1,6 @@
 class CloudProjectComputeCtrl {
     constructor ($q, $scope, $state, $stateParams, $translate, $window, OvhApiCloudProject, CloudMessage, CloudProjectOrchestrator,
-                 CloudUserPref, OvhApiMe, moment, PCI_ANNOUNCEMENTS) {
+                 CloudUserPref, FeatureAvailabilityService, OvhApiMe, moment, PCI_ANNOUNCEMENTS) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -12,6 +12,7 @@ class CloudProjectComputeCtrl {
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
         this.PCI_ANNOUNCEMENTS = PCI_ANNOUNCEMENTS;
         this.OvhApiMe = OvhApiMe;
+        this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.CloudUserPref = CloudUserPref;
         this.moment = moment;
         this.messages = [];
@@ -22,8 +23,8 @@ class CloudProjectComputeCtrl {
         this.loading = true;
         this.infoMessageDismissed = true;
 
-        this.init();
         this.loadMessage();
+        this.init();
     }
 
     loadMessage () {
@@ -87,12 +88,13 @@ class CloudProjectComputeCtrl {
             }
         });
         this.$q.all(areDismissed).then(areDismissedMessages => {
-            this.messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
+            const messages = _.map(areDismissedMessages, announcement => this.augmentMessage(announcement, ovhSubsidiary));
+            _.forEach(messages, message => this.CloudMessage.info(message));
         });
     }
 
     augmentMessage (message, ovhSubsidiary) {
-        let augmentedMessage = _.cloneDeep(message);
+        const augmentedMessage = _.cloneDeep(message);
         augmentedMessage.dismiss = () => {
             this.dismissInfoMessage(message.messageId);
         };
