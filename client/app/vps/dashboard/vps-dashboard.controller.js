@@ -51,9 +51,6 @@ class VpsDashboardCtrl {
         this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => {
                 this.vps = vps;
-                const expiration = moment.utc(vps.expiration);
-                this.vps.expiration = moment([expiration.year(), expiration.month(), expiration.date()]).toDate();
-                this.vps.iconDistribution = vps.distribution ? "icon-" + vps.distribution.distribution : "";
                 this.vps.secondaryDns = (vps.secondaryDns === 0) ?
                     this.$translate.instant("vps_dashboard_secondary_dns_count_0") :
                     this.$translate.instant("vps_dashboard_secondary_dns_count_x", { count: vps.secondaryDns });

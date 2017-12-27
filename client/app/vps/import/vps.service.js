@@ -9,7 +9,9 @@ angular.module("managerApp").service("VpsService", [
     "additionalDisk.capacities",
     "additionalDisk.hasNoOption",
     "VpsTaskService",
-    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService) {
+    "ServiceHelper",
+    "$translate",
+    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService, ServiceHelper, $translate) {
         "use strict";
 
         var aapiRootPath = "/sws/vps",
@@ -173,12 +175,8 @@ angular.module("managerApp").service("VpsService", [
          */
         this.getSelectedVps = function(serviceName) {
             return $http.get([aapiRootPath, serviceName,"info"].join("/"), {serviceType: "aapi"})
-                .then(function (result) {
-                    return result.data;
-                })
-                .catch(function (err) {
-                    return $q.reject(err);
-                });
+                .then(result => result.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         /*
@@ -204,13 +202,7 @@ angular.module("managerApp").service("VpsService", [
                 if (monitoring !== null) {
                     return monitoring;
                 }
-            }, function (reason) {
-                if (reason.data !== undefined) {
-                    return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
-                }
-            });
+            }).catch(ServiceHelper.errorHandler("vps_configuration_monitoring_fail"));
         };
 
         /*
@@ -373,20 +365,9 @@ angular.module("managerApp").service("VpsService", [
          * return the ip list for this VPS
          */
         this.getIps = function (serviceName) {
-            var result = null;
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                if (vps && vps.name) {
-                    return $http.get([aapiRootPath, vps.name, "ips"].join("/"), {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
-                } else {
-                    return $q.reject(vps);
-                }
-            }).then(function () {
-                return result;
-            }, function (http) {
-                return $q.reject(http.data);
-            });
+            return $http.get([aapiRootPath, serviceName, "ips"].join("/"), {serviceType: "aapi"})
+                .then(data => data.data)
+                .catch(ServiceHelper.errorHandler());
         };
 
         /*
@@ -450,13 +431,7 @@ angular.module("managerApp").service("VpsService", [
                 } else {
                     return $q.reject(result);
                 }
-            }, function (reason) {
-                if (reason && reason.data !== undefined) {
-                    return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
-                }
-            });
+            }).catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         /*
@@ -1222,19 +1197,15 @@ angular.module("managerApp").service("VpsService", [
         };
 
         this.getDisks = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "disks"].join("/")).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "disks"].join("/"))
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         this.getDiskInfo = function (serviceName, id) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "disks", id].join("/")).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "disks", id].join("/"))
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         this.showOnlyAdditionalDisk = function (disks) {
@@ -1246,11 +1217,9 @@ angular.module("managerApp").service("VpsService", [
 
         // Service info
         this.getServiceInfos = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "serviceInfos"].join("/")).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "serviceInfos"].join("/"))
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         this.isAutoRenewable = function (serviceName) {
