@@ -1,7 +1,7 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div class="row d-lg-flex">
 
-        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
             <cui-tile data-title="'common_tile_shortcut' | translate" class="cui-tile h-100">
                 <cui-tile-body-list>
                     <cui-tile-body-list-item>
@@ -26,27 +26,27 @@
             </cui-tile>
         </div>
 
-        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
             <cui-tile data-title="'vps_dashboard_state_services' | translate"
-                      data-loading="$ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.vps.loading" class="h-100">
                 <ul class="cui-tile__body cui-tile__body_list">
                     <li class="cui-tile__item">
-                        <vps-tile-status-item data-item="$ctrl.vps.ping"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.ping"
                                               data-text="'vps_dashboard_ping' | translate"
                                               data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.ssh"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.ssh"
                                               data-text="'vps_dashboard_ssh' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.http"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.http"
                                               data-text="'vps_dashboard_http' | translate"
                                               data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.https"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.https"
                                               data-text="'vps_dashboard_https' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.dns"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.dns"
                                               data-text="'vps_dashboard_dns' | translate"
                                               data-striped="true"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.smtp"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.smtp"
                                               data-text="'vps_dashboard_smtp' | translate"></vps-tile-status-item>
-                        <vps-tile-status-item data-item="$ctrl.vps.tools"
+                        <vps-tile-status-item data-item="$ctrl.vps.data.tools"
                                               data-text="'vps_dashboard_tools' | translate"
                                               data-striped="true"></vps-tile-status-item>
                     </li>
@@ -54,38 +54,38 @@
             </cui-tile>
         </div>
 
-        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
             <cui-tile data-title="'vps_tab_ip' | translate"
-                      data-loading="$ctrl.loaders.init || $ctrl.loaders.ips" class="h-100">
+                      data-loading="$ctrl.vps.loading || $ctrl.loaders.ips" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-actions="$ctrl.actions.manageIps">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_dashboard_tile_ipv4' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
-                                <cui-clipboard data-text="$ctrl.vps.ipv4"></cui-clipboard>
+                                <cui-clipboard data-text="$ctrl.vps.data.ipv4"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                         <cui-tile-definitions>
                             <cui-tile-definition-term  data-term="'vps_dashboard_tile_ipv6' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
-                                <cui-clipboard data-text="$ctrl.vps.ipv6"></cui-clipboard>
+                                <cui-clipboard data-text="$ctrl.vps.data.ipv6"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_configuration_ipV6_gateway_label' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
-                                <cui-clipboard data-text="$ctrl.vps.ipv6Gateway"></cui-clipboard>
+                                <cui-clipboard data-text="$ctrl.vps.data.ipv6Gateway"></cui-clipboard>
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
 
-                    <cui-tile-item data-ng-if="$ctrl.vps.reverseDns"
+                    <cui-tile-item data-ng-if="$ctrl.vps.data.reverseDns"
                                    data-term="'vps_dashboard_reverse_dns' | translate"
-                                   data-description="$ctrl.vps.reverseDns"
+                                   data-description="$ctrl.vps.data.reverseDns"
                                    data-actions="$ctrl.actions.reverseDns"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_dashboard_secondary_dns' | translate"
-                                   data-description="$ctrl.vps.secondaryDns"></cui-tile-item>
+                                   data-description="$ctrl.vps.data.secondaryDns"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -93,51 +93,51 @@
     </div>
 
     <div class="row d-lg-flex">
-        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
             <cui-tile data-title="'common_tile_configuration' | translate"
-                      data-loading="$ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.vps.loading" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_dashboard_name' | translate"
-                                   data-description="$ctrl.vps.displayName || $ctrl.vps.name"
+                                   data-description="$ctrl.vps.data.displayName || $ctrl.vps.data.name"
                                    data-actions="$ctrl.actions.changeName"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_product' | translate"
-                                   data-description="$ctrl.vps.model"></cui-tile-item>
+                                   data-description="$ctrl.vps.data.model"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_boot' | translate"
-                                   data-description="$ctrl.vps.netbootMode"></cui-tile-item>
+                                   data-description="$ctrl.vps.data.netbootMode"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_distribution' | translate"
-                                   data-description="$ctrl.vps.distribution.name"></cui-tile-item>
+                                   data-description="$ctrl.vps.data.distribution.name"></cui-tile-item>
                     <cui-tile-item data-term="('vps_zone' | translate)+' ('+('vps_cluster' | translate)+')'"
-                                   data-description="$ctrl.vps.zone+' ('+$ctrl.vps.cluster+')'"></cui-tile-item>
+                                   data-description="$ctrl.vps.data.zone+' ('+$ctrl.vps.data.cluster+')'"></cui-tile-item>
                     <cui-tile-item>
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'vps_dashboard_localisation' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description-region data-regions="$ctrl.vps.location.datacentre"></cui-tile-definition-description-region>
+                            <cui-tile-definition-description-region data-regions="$ctrl.vps.data.location.datacentre"></cui-tile-definition-description-region>
                         </cui-tile-definitions>
                     </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
 
-        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.isExpired">
+        <div class="col-xm-12 col-md-4" data-ng-if="!$ctrl.vps.data.isExpired">
             <cui-tile data-title="'vps_tab_summary' | translate"
-                      data-loading="$ctrl.loaders.disk || $ctrl.loaders.summary || $ctrl.loaders.init" class="h-100">
+                      data-loading="$ctrl.loaders.disk || $ctrl.summary.loading || $ctrl.vps.loading" class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.ftpBackup.optionActivated"
+                                   data-ng-if="!$ctrl.summary.data.ftpBackup.optionActivated"
                                    data-actions="$ctrl.backupStorageActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_backup_storage' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.ftpBackup.optionActivated"
+                                   data-ng-if="$ctrl.summary.data.ftpBackup.optionActivated"
                                    data-actions="[$ctrl.backupStorageActions.manage, $ctrl.backupStorageActions.terminate]"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.snapshot.optionActivated"
+                                   data-ng-if="!$ctrl.summary.data.snapshot.optionActivated"
                                    data-actions="$ctrl.snapshotActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
                                    data-description="$ctrl.snapshotDescription"
-                                   data-ng-if="$ctrl.summary.snapshot.optionActivated"
+                                   data-ng-if="$ctrl.summary.data.snapshot.optionActivated"
                                    data-actions="[
                                        $ctrl.snapshotActions.delete,
                                        $ctrl.snapshotActions.restore,
@@ -147,11 +147,11 @@
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.veeamActivated"
+                                   data-ng-if="!$ctrl.summary.data.veeamActivated"
                                    data-actions="$ctrl.veeamActions.order"></cui-tile-item>
                     <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.veeamActivated"
+                                   data-ng-if="$ctrl.summary.data.veeamActivated"
                                    data-actions="[$ctrl.veeamActions.manage, $ctrl.veeamActions.terminate]"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_tab_SUMMARY_additional_disk' | translate"
@@ -164,28 +164,28 @@
 
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.vps.slaMonitoring"
+                                   data-ng-if="$ctrl.vps.data.slaMonitoring"
                                    data-actions="$ctrl.actions.monitoringSla"></cui-tile-item>
                     <cui-tile-item data-term="'vps_dashboard_monitoring_sla' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.vps.slaMonitoring"
+                                   data-ng-if="!$ctrl.vps.data.slaMonitoring"
                                    data-actions="$ctrl.actions.monitoringSla"></cui-tile-item>
 
                     <cui-tile-item data-term="'vps_order_windows_title' | translate"
                                    data-description="'vps_status_enabled' | translate"
-                                   data-ng-if="$ctrl.summary.windowsActivated"
+                                   data-ng-if="$ctrl.summary.data.windowsActivated"
                                    data-actions="$ctrl.actions.terminateWindows"></cui-tile-item>
                     <cui-tile-item data-term="'vps_order_windows_title' | translate"
                                    data-description="'vps_status_disabled' | translate"
-                                   data-ng-if="!$ctrl.summary.windowsActivated"
+                                   data-ng-if="!$ctrl.summary.data.windowsActivated"
                                    data-actions="$ctrl.actions.orderWindows"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
 
         <div class="col-xm-12 col-md-4">
-            <cui-tile-subscription data-loading="$ctrl.loaders.init || $ctrl.loaders.plan"
-                data-subscription-info="$ctrl.plan"
+            <cui-tile-subscription data-loading="$ctrl.vps.loading || $ctrl.plan.loading"
+                data-subscription-info="$ctrl.plan.data"
                 data-offer-actions="$ctrl.actions.upgrade"
                 data-autorenew-actions="$ctrl.actions.manageAutorenew"
                 data-contact-actions="$ctrl.actions.manageContact"
