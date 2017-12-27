@@ -1,70 +1,38 @@
 class VpsBackupStorageCtrl {
-    constructor ($stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+    constructor ($stateParams, ControllerHelper, VpsActionService, VpsService) {
         this.serviceName = $stateParams.serviceName;
-        this.$translate = $translate;
-        this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
+    }
 
-        this.loaders = {
-            init: false,
-            information: false,
-            vps: false
-        };
-        this.backup = {};
-        this.vps = {};
-
+    initLoaders () {
+        this.backup = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getBackupStorageTab(this.serviceName)
+        });
+        this.info = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getBackupStorageInformation(this.serviceName)
+        });
+        this.vps = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)
+        });
     }
 
     $onInit () {
-        this.loadInformation();
-        this.loadBackup();
-    }
+        this.initLoaders();
 
-    loadVps () {
-        this.loaders.vps = true;
-        this.VpsService.getSelectedVps(this.serviceName)
-            .then(vps => {
-                this.vps = vps;
-            })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.vps = false; });
-    }
-
-    loadInformation () {
-        this.loaders.information = true;
-        this.VpsService.getBackupStorageInformation(this.serviceName)
-            .then(backupInfo => {
-                this.backup.information = backupInfo;
-                if (backupInfo.activated === true && backupInfo.quota) {
-                    if (backupInfo.usage === 0) {
-                        backupInfo.usage = {
-                            unit: "%",
-                            value: 0
-                        };
-                    }
+        this.backup.load();
+        this.info.load()
+            .then(() => {
+                if (!this.info.data.activated) {
+                    this.vps.load();
                 }
-                if (!backupInfo.activated) {
-                    this.loadVps();
-                }
-            })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => {
-                this.loaders.information = false;
             });
-    }
-
-    loadBackup () {
-        this.loaders.init = true;
-        this.VpsService.getBackupStorageTab(this.serviceName)
-            .then(data => { this.backup.table = data; })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.init = false; });
     }
 
     add () {
         this.VpsActionService.addBackupStorage(this.serviceName)
-            .then(() => this.loadBackup());
+            .then(() => this.backup.load());
     }
 
     resetPassword () {
@@ -73,12 +41,12 @@ class VpsBackupStorageCtrl {
 
     deleteOne (access) {
         this.VpsActionService.deleteBackupStorage(this.serviceName, access)
-            .then(() => this.loadBackup());
+            .then(() => this.backup.load());
     }
 
     editOne (row) {
         this.VpsActionService.editBackupStorage(this.serviceName, row)
-            .then(() => this.loadBackup());
+            .then(() => this.backup.load());
     }
 
     activationStatusTemplate () {
@@ -86,7 +54,7 @@ class VpsBackupStorageCtrl {
             <td class="center">
                 <span data-ng-show="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_enable"></span>
                 <span data-ng-hide="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_disable"></span>
-        </td>`;
+            </td>`;
     }
 
     actionTemplate () {
