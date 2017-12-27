@@ -175,7 +175,12 @@ angular.module("managerApp").service("VpsService", [
          */
         this.getSelectedVps = function(serviceName) {
             return $http.get([aapiRootPath, serviceName,"info"].join("/"), {serviceType: "aapi"})
-                .then(result => result.data)
+                .then(result => {
+                    result.data.secondaryDns = (result.data.secondaryDns === 0) ?
+                        $translate.instant("vps_dashboard_secondary_dns_count_0") :
+                        $translate.instant("vps_dashboard_secondary_dns_count_x", { count: result.data.secondaryDns });
+                    return result.data;
+                })
                 .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
@@ -1217,9 +1222,14 @@ angular.module("managerApp").service("VpsService", [
 
         // Service info
         this.getServiceInfos = function (serviceName) {
-            return $http.get([swsVpsProxypass, serviceName, "serviceInfos"].join("/"))
-                .then(response => response.data)
-                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
+            return this.getSelectedVps(serviceName).then(vps => {
+                return $http.get([swsVpsProxypass, serviceName, "serviceInfos"].join("/"))
+                    .then(response => {
+                        response.data.offer = vps.model;
+                        return response.data;
+                    })
+                    .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
+            });
         };
 
         this.isAutoRenewable = function (serviceName) {
