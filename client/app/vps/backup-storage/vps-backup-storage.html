@@ -1,37 +1,37 @@
 <section class="cui-page__content">
-    <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.information || $ctrl.loaders.vps"
+    <div data-ng-if="$ctrl.backup.loading || $ctrl.info.loading || $ctrl.vps.loading"
          class="text-center">
         <oui-loader size="l" class="d-inline-block"></oui-loader>
     </div>
 
-    <div data-ng-if="!$ctrl.backup.information.activated && !$ctrl.loaders.init && !$ctrl.loaders.vps">
-        <p data-ng-if="$ctrl.vps.hasBackup" data-translate="vps_tab_backup_not_activated"></p>
-        <p data-ng-if="!$ctrl.vps.hasBackup" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
+    <div data-ng-if="!$ctrl.info.data.activated && !$ctrl.backup.loading && !$ctrl.vps.loading">
+        <p data-ng-if="$ctrl.vps.data.hasBackup" data-translate="vps_tab_backup_not_activated"></p>
+        <p data-ng-if="!$ctrl.vps.data.hasBackup" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
     </div>
 
-    <div data-ng-if="$ctrl.backup.information.activated && !$ctrl.loaders.init">
-        <div data-ng-if="!$ctrl.loaders.information">
+    <div data-ng-if="$ctrl.info.data.activated && !$ctrl.info.loading">
+        <div data-ng-if="!$ctrl.info.loading">
             <div class="span2 bold" data-translate="vps_tab_backup_storage_name"></div>
-            <div class="span10" data-ng-bind="$ctrl.backup.information.name"></div>
+            <div class="span10" data-ng-bind="$ctrl.info.data.name"></div>
 
             <div class="span2 bold" data-translate="vps_tab_backup_storage_login"></div>
-            <div class="span10" data-ng-bind="$ctrl.backup.information.login"></div>
+            <div class="span10" data-ng-bind="$ctrl.info.data.login"></div>
 
             <div class="span2 bold" data-translate="vps_tab_backup_storage_usage"></div>
             <div class="span10">
                 <div class="oui-progress"
-                     data-ng-class="{'oui-progress_success' : $ctrl.backup.information.usage.value < 51,
-                                    'oui-progress_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
-                                    'oui-progress_error' : $ctrl.backup.information.usage.value > 80 }"
+                     data-ng-class="{'oui-progress_success' : $ctrl.info.data.usage.value < 51,
+                                    'oui-progress_warning' : $ctrl.info.data.usage.value > 50 && $ctrl.info.data.usage.value < 81,
+                                    'oui-progress_error' : $ctrl.info.data.usage.value > 80 }"
                      style="width:250px;">
                      <div class="oui-progress__bar"
-                          data-ng-class="{'oui-progress__bar_success' : $ctrl.backup.information.usage.value < 51,
-                                        'oui-progress__bar_warning' : $ctrl.backup.information.usage.value > 50 && $ctrl.backup.information.usage.value < 81,
-                                        'oui-progress__bar_error' : $ctrl.backup.information.usage.value > 80 }"
-                          role="progressbar" style="width: {{$ctrl.backup.information.usage.value}}%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                          data-ng-class="{'oui-progress__bar_success' : $ctrl.info.data.usage.value < 51,
+                                        'oui-progress__bar_warning' : $ctrl.info.data.usage.value > 50 && $ctrl.info.data.usage.value < 81,
+                                        'oui-progress__bar_error' : $ctrl.info.data.usage.value > 80 }"
+                          role="progressbar" style="width: {{$ctrl.info.data.usage.value}}%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
                         <span class="oui-progress__label">
-                            <span data-ng-bind="($ctrl.backup.information.usage.value * $ctrl.backup.information.quota.value / 100) | bytes:2:false:$ctrl.backup.information.quota.unit"></span>/
-                            <span data-ng-bind="$ctrl.backup.information.quota.value | bytes:2:false:$ctrl.backup.information.quota.unit"></span>
+                            <span data-ng-bind="($ctrl.info.data.usage.value * $ctrl.info.data.quota.value / 100) | bytes:2:false:$ctrl.info.data.quota.unit"></span>/
+                            <span data-ng-bind="$ctrl.info.data.quota.value | bytes:2:false:$ctrl.info.data.quota.unit"></span>
                         </span>
                     </div>
                 </div>
@@ -48,8 +48,8 @@
                 data-translate="vps_backup_storage_access_forgot_password_button"
                 data-ng-click="$ctrl.resetPassword()"></button>
 
-        <oui-table rows="$ctrl.backup.table.list.results"
-                   rows-loader="$ctrl.loaders.init">
+        <oui-table rows="$ctrl.backup.data.list.results"
+                   rows-loader="$ctrl.backup.loading">
             <column title="'vps_tab_backup_storage_table_ip' | translate" property="ipBlock" sortable>
                 <span data-ng-bind="$row.ipBlock"></span>
             </column>

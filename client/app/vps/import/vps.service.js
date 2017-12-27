@@ -1033,28 +1033,33 @@ angular.module("managerApp").service("VpsService", [
         // BackupStorage ------------------------------------------------------------------------------------
 
         this.getBackupStorageInformation = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage"].join("/"), {serviceType: "aapi"})
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+            return $http.get([aapiRootPath, serviceName, "backupStorage"].join("/"), {serviceType: "aapi"})
+                .then(response => {
+                    let backupInfo = response.data;
+                    if (backupInfo.activated === true && backupInfo.quota) {
+                        if (backupInfo.usage === 0) {
+                            backupInfo.usage = {
+                                unit: "%",
+                                value: 0
+                            };
+                        }
+                    }
+                    return backupInfo;
+                })
+                .catch(ServiceHelper.errorHandler());
         };
 
         this.getBackupStorageTab = function (serviceName, count, offset) {
             vpsTabBackupStorageCache.removeAll();
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage/access"].join("/"), {
-                    serviceType: "aapi",
-                    cache: vpsTabBackupStorageCache,
-                    params: {
-                        count: count,
-                        offset: offset
-                    }
-                }).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([aapiRootPath, serviceName, "backupStorage/access"].join("/"), {
+                serviceType: "aapi",
+                cache: vpsTabBackupStorageCache,
+                params: {
+                    count: count,
+                    offset: offset
+                }
+            })
+            .then(response => response.data);
         };
 
         this.getBackupStorageAuthorizableBlocks = function (serviceName) {
