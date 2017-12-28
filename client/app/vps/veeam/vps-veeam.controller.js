@@ -1,8 +1,9 @@
 class VpsVeeamCtrl {
-    constructor ($stateParams, $translate, CloudMessage, VpsActionService, VpsService) {
+    constructor ($stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
         this.serviceName = $stateParams.serviceName;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
@@ -12,8 +13,6 @@ class VpsVeeamCtrl {
             checkOrder: false,
             veeamTab: false
         };
-        this.veeam = {};
-        this.veeamTab = {};
 
         this.vps = {
             hasVeeam: false,
@@ -22,58 +21,40 @@ class VpsVeeamCtrl {
 
     }
 
-    $onInit () {
-        this.loadVeeam();
+    initLoaders () {
+        this.veeam = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getVeeam(this.serviceName)
+        });
+        this.veeamTab = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getTabVeeam(this.serviceName, "available", true)
+        });
+        this.vps = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)
+        });
     }
 
-    loadVeeamTab () {
-        this.loaders.veeamTab = true;
-        this.VpsService.getTabVeeam(this.serviceName, "available", true)
-            .then(data => { this.veeamTab = data; })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.veeamTab = false; });
+    $onInit () {
+        this.initLoaders();
+        this.veeam.load().then(() => {
+            if (this.veeam.data.state !== "disabled") {
+                this.veeamTab.load();
+                this.loadRestorePoint();
+            } else {
+                this.vps.load();
+            }
+        });
     }
 
     loadRestorePoint () {
-        this.loaders.veeamTab = true;
+        this.veeamTab.loading = true;
         this.VpsService.getTabVeeam(this.serviceName, "restoring", false)
             .then(data => {
                 if (data.length) {
-                    this.veeam.state = "MOUNTING";
+                    this.veeam.data.state = "MOUNTING";
                 }
             })
             .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.veeamTab = false; });
-    }
-
-    loadVeeam () {
-        this.loaders.init = true;
-        this.VpsService.getVeeam(this.serviceName)
-            .then(data => {
-                this.veeam = data;
-                if (data.state !== "disabled") {
-                    this.loadVeeamTab();
-                    this.loadRestorePoint();
-                } else {
-                    this.checkOrder();
-                }
-            })
-            .catch(() => {
-                this.veeam.state = "disabled";
-                this.checkOrder();
-            })
-            .finally(() => { this.loaders.init = false; });
-    }
-
-    checkOrder () {
-        this.loaders.checkOrder = true;
-        this.VpsService.getSelectedVps(this.serviceName)
-            .then(vps => {
-                this.vps.canOrder = vps.canOrder;
-                this.vps.hasVeeam = vps.hasVeeam;
-            })
-            .catch(err => this.CloudMessage.error(err))
-            .finally(() => { this.loaders.checkOrder = false; });
+            .finally(() => { this.veeamTab.loading = false; });
     }
 
     restore (restorePoint) {
