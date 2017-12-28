@@ -17,9 +17,9 @@
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Option windows</translation>
 
-   <translation id="vps_configuration_rebootVm_polling_done" qtlid="195581">Votre VPS {0} a bien été redémarré</translation>
+   <translation id="vps_configuration_rebootVm_polling_done">Votre VPS a bien été redémarré</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Une erreur est survenue lors du redémarrage de votre VPS</translation>
-   <translation id="vps_configuration_setNetboot_polling_done" qtlid="195581">Votre VPS {0} a bien été redémarré</translation>
+   <translation id="vps_configuration_setNetboot_polling_done">Votre VPS a bien été redémarré</translation>
    <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Une erreur est survenue lors du redémarrage de votre VPS</translation>
    <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">Le monitoring SLA a bien été modifié</translation>
    <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Une erreur est survenue lors de modification du monitoring SLA.</translation>
@@ -122,11 +122,6 @@
    <translation id="vps_configuration_monitoring_sla_ok_false" qtlid="179576">La demande de désactivation du monitoring SLA a bien été prise en compte.</translation>
    <translation id="vps_configuration_monitoring_sla_error_false" qtlid="179589">Une erreur est survenue lors de la demande de désactivation du monitoring SLA.</translation>
    <translation id="vps_configuration_renewvps_title_button" qtlid="168302">Renouveler mon VPS</translation>
-   <translation id="vps_configuration_renewvps_title" qtlid="168302">Renouveler mon VPS</translation>
-   <translation id="vps_configuration_renewvps_step1_question" qtlid="168315">Afin de renouveler votre VPS <span class="italic">{0}</span>, vous devez utiliser l'interface de renouvellement OVH (hors de l'Espace Client Web).</translation>
-   <translation id="vps_configuration_renewvps_step1_confirmation" qtlid="168328">Cliquez sur le bouton "Commander" pour renouveler votre VPS maintenant.</translation>
-   <translation id="vps_configuration_renewvps_step1_information" qtlid="168341">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de renouvellement OVH.</translation>
-   <translation id="vps_configuration_renewvps_step1_alert" qtlid="168354">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que le renouvellement soit pris en compte dans votre Espace Client Web.</translation>
    <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Réinitialiser le Mot de Passe</translation>
    <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Réinitialiser le Mot de Passe</translation>
    <translation id="vps_configuration_reinitpassword_question" qtlid="366606">Souhaitez-vous réellement réinitialiser le mot de passe du VPS <span class="normal italic">{0}</span>&#160;?</translation>
