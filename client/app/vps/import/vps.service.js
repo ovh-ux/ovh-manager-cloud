@@ -887,33 +887,27 @@ angular.module("managerApp").service("VpsService", [
          * Get content of veeam tab
          */
         this.getVeeamInfo = function (serviceName) {
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup"].join("/"))
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "automatedBackup"].join("/"))
+                .then(response => response.data);
         };
 
         this.getVeeamAttachedBackup = function (serviceName) {
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/attachedBackup"].join("/"))
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+                return $http.get([swsVpsProxypass, serviceName, "automatedBackup/attachedBackup"].join("/"))
+                    .then(response => response.data);
         };
 
         this.getVeeam = function (serviceName) {
             var info;
             return $q.all([self.getVeeamInfo(serviceName), self.getVeeamAttachedBackup(serviceName)])
-                .then(function (response) {
+                .then(response => {
                     if (response.length > 1) {
                         info = response[0];
                         info.accessInfos = response[1][0];
                     }
-
                     return info;
+                })
+                .catch(() => {
+                    return { state: "disabled" };
                 });
         };
 
@@ -921,16 +915,12 @@ angular.module("managerApp").service("VpsService", [
             if (forceRefresh) {
                 resetTabVeeam();
             }
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/restorePoints"].join("/"), {
-                    params: {
-                        state: state
-                    },
-                    cache: vpsTabVeeamCache
-                }).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "automatedBackup/restorePoints"].join("/"), {
+                params: {
+                    state: state
+                },
+                cache: vpsTabVeeamCache
+            }).then(response => response.data);
         };
 
         this.veeamRestorePointMount = function (serviceName, restorePoint) {
