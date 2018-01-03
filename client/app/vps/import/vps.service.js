@@ -9,7 +9,9 @@ angular.module("managerApp").service("VpsService", [
     "additionalDisk.capacities",
     "additionalDisk.hasNoOption",
     "VpsTaskService",
-    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService) {
+    "ServiceHelper",
+    "$translate",
+    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService, ServiceHelper, $translate) {
         "use strict";
 
         var aapiRootPath = "/sws/vps",
@@ -173,12 +175,13 @@ angular.module("managerApp").service("VpsService", [
          */
         this.getSelectedVps = function(serviceName) {
             return $http.get([aapiRootPath, serviceName,"info"].join("/"), {serviceType: "aapi"})
-                .then(function (result) {
+                .then(result => {
+                    result.data.secondaryDns = (result.data.secondaryDns === 0) ?
+                        $translate.instant("vps_dashboard_secondary_dns_count_0") :
+                        $translate.instant("vps_dashboard_secondary_dns_count_x", { count: result.data.secondaryDns });
                     return result.data;
                 })
-                .catch(function (err) {
-                    return $q.reject(err);
-                });
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         /*
@@ -204,13 +207,7 @@ angular.module("managerApp").service("VpsService", [
                 if (monitoring !== null) {
                     return monitoring;
                 }
-            }, function (reason) {
-                if (reason.data !== undefined) {
-                    return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
-                }
-            });
+            }).catch(ServiceHelper.errorHandler("vps_configuration_monitoring_fail"));
         };
 
         /*
@@ -373,20 +370,9 @@ angular.module("managerApp").service("VpsService", [
          * return the ip list for this VPS
          */
         this.getIps = function (serviceName) {
-            var result = null;
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                if (vps && vps.name) {
-                    return $http.get([aapiRootPath, vps.name, "ips"].join("/"), {serviceType: "aapi"}).then(function (data) {
-                        result = data.data;
-                    });
-                } else {
-                    return $q.reject(vps);
-                }
-            }).then(function () {
-                return result;
-            }, function (http) {
-                return $q.reject(http.data);
-            });
+            return $http.get([aapiRootPath, serviceName, "ips"].join("/"), {serviceType: "aapi"})
+                .then(data => data.data)
+                .catch(ServiceHelper.errorHandler());
         };
 
         /*
@@ -450,13 +436,7 @@ angular.module("managerApp").service("VpsService", [
                 } else {
                     return $q.reject(result);
                 }
-            }, function (reason) {
-                if (reason && reason.data !== undefined) {
-                    return $q.reject(reason.data);
-                } else {
-                    return $q.reject(reason);
-                }
-            });
+            }).catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         /*
@@ -907,33 +887,27 @@ angular.module("managerApp").service("VpsService", [
          * Get content of veeam tab
          */
         this.getVeeamInfo = function (serviceName) {
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup"].join("/"))
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "automatedBackup"].join("/"))
+                .then(response => response.data);
         };
 
         this.getVeeamAttachedBackup = function (serviceName) {
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/attachedBackup"].join("/"))
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+                return $http.get([swsVpsProxypass, serviceName, "automatedBackup/attachedBackup"].join("/"))
+                    .then(response => response.data);
         };
 
         this.getVeeam = function (serviceName) {
             var info;
             return $q.all([self.getVeeamInfo(serviceName), self.getVeeamAttachedBackup(serviceName)])
-                .then(function (response) {
+                .then(response => {
                     if (response.length > 1) {
                         info = response[0];
                         info.accessInfos = response[1][0];
                     }
-
                     return info;
+                })
+                .catch(() => {
+                    return { state: "disabled" };
                 });
         };
 
@@ -941,16 +915,12 @@ angular.module("managerApp").service("VpsService", [
             if (forceRefresh) {
                 resetTabVeeam();
             }
-            return self.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "automatedBackup/restorePoints"].join("/"), {
-                    params: {
-                        state: state
-                    },
-                    cache: vpsTabVeeamCache
-                }).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "automatedBackup/restorePoints"].join("/"), {
+                params: {
+                    state: state
+                },
+                cache: vpsTabVeeamCache
+            }).then(response => response.data);
         };
 
         this.veeamRestorePointMount = function (serviceName, restorePoint) {
@@ -1053,28 +1023,33 @@ angular.module("managerApp").service("VpsService", [
         // BackupStorage ------------------------------------------------------------------------------------
 
         this.getBackupStorageInformation = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage"].join("/"), {serviceType: "aapi"})
-                    .then(function (response) {
-                        return response.data;
-                    });
-            });
+            return $http.get([aapiRootPath, serviceName, "backupStorage"].join("/"), {serviceType: "aapi"})
+                .then(response => {
+                    let backupInfo = response.data;
+                    if (backupInfo.activated === true && backupInfo.quota) {
+                        if (backupInfo.usage === 0) {
+                            backupInfo.usage = {
+                                unit: "%",
+                                value: 0
+                            };
+                        }
+                    }
+                    return backupInfo;
+                })
+                .catch(ServiceHelper.errorHandler());
         };
 
         this.getBackupStorageTab = function (serviceName, count, offset) {
             vpsTabBackupStorageCache.removeAll();
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([aapiRootPath, vps.name, "backupStorage/access"].join("/"), {
-                    serviceType: "aapi",
-                    cache: vpsTabBackupStorageCache,
-                    params: {
-                        count: count,
-                        offset: offset
-                    }
-                }).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([aapiRootPath, serviceName, "backupStorage/access"].join("/"), {
+                serviceType: "aapi",
+                cache: vpsTabBackupStorageCache,
+                params: {
+                    count: count,
+                    offset: offset
+                }
+            })
+            .then(response => response.data);
         };
 
         this.getBackupStorageAuthorizableBlocks = function (serviceName) {
@@ -1222,19 +1197,15 @@ angular.module("managerApp").service("VpsService", [
         };
 
         this.getDisks = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "disks"].join("/")).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "disks"].join("/"))
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         this.getDiskInfo = function (serviceName, id) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "disks", id].join("/")).then(function (response) {
-                    return response.data;
-                });
-            });
+            return $http.get([swsVpsProxypass, serviceName, "disks", id].join("/"))
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
         };
 
         this.showOnlyAdditionalDisk = function (disks) {
@@ -1246,10 +1217,13 @@ angular.module("managerApp").service("VpsService", [
 
         // Service info
         this.getServiceInfos = function (serviceName) {
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                return $http.get([swsVpsProxypass, vps.name, "serviceInfos"].join("/")).then(function (response) {
-                    return response.data;
-                });
+            return this.getSelectedVps(serviceName).then(vps => {
+                return $http.get([swsVpsProxypass, serviceName, "serviceInfos"].join("/"))
+                    .then(response => {
+                        response.data.offer = vps.model;
+                        return response.data;
+                    })
+                    .catch(ServiceHelper.errorHandler("vps_dashboard_loading_error"));
             });
         };
 

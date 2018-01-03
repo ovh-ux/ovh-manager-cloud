@@ -49,7 +49,7 @@ class AddBackupStorageCtrl {
                     this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_add_success"));
                 }
             })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_add_failure")))
+            .catch(err => this.CloudMessage.error(err || this.$translate.instant("vps_backup_storage_access_add_failure")))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
