@@ -8,7 +8,7 @@
         <div class="oui-modal__body oui-modal__body_no-icon">
             <div class="oui-modal__body-text">
                 <h2 class="oui-modal__title" data-translate="veeam_update_offer_title"></h2>
-                <cui-loader data-ng-if="VeeamUpdateOfferCtrl.isModalLoading()"></cui-loader>
+                <oui-spinner data-ng-if="VeeamUpdateOfferCtrl.isModalLoading()"></oui-spinner>
                 <div data-ng-if="!VeeamUpdateOfferCtrl.isModalLoading()">
                     <p class="oui-modal__text" data-translate="veeam_update_offer_information" data-translate-values="{ price: VeeamUpdateOfferCtrl.orderInfo.data.price.prices.withoutTax.text }"></p>
                 </div>
