@@ -2,7 +2,7 @@
 <ul class="vrack__service-type-list">
     <li class="vrack__section-type" data-ng-if="VrackCtrl.loaders.deleting">
         <div class="text-center">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
     </li>
     <li class="vrack__service-type"
@@ -30,9 +30,9 @@
                 data-ng-click="VrackCtrl.toggleAddService(service.trueServiceType, service.id)"
                 data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(service.trueServiceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
                 {{ ::service.niceName }}
-                <oui-loader data-size="s"
+                <oui-spinner data-size="s"
                     data-ng-if="VrackCtrl.isPending(service.id)">
-                </oui-loader>
+                </oui-spinner>
             </li>
         </ul>
 
@@ -51,9 +51,9 @@
                         data-ng-click="VrackCtrl.toggleAddService(serviceType, service.id)"
                         data-ng-class="{ vrack__service_selected: VrackCtrl.isSelected(serviceType, service.id), vrack__service_pending: VrackCtrl.isPending(service.id) || VrackCtrl.loaders.adding || VrackCtrl.loaders.deleting }">
                         {{ ::'vrack_private_cloud_vm_network_label' | translate }}
-                        <oui-loader data-size="s"
+                        <oui-spinner data-size="s"
                             data-ng-if="VrackCtrl.isPending(service.id)">
-                        </oui-loader>
+                        </oui-spinner>
                     </li>
                 </ul>
             </li>
