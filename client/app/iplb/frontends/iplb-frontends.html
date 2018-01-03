@@ -6,7 +6,7 @@
         data-ui-sref="network.iplb.detail.frontends.add"
         data-translate="iplb_frontend_add_title"></a>
 
-    <cui-loader data-ng-show="ctrl.loading"></cui-loader>
+    <oui-spinner data-ng-show="ctrl.loading"></oui-spinner>
     <oui-table data-ng-hide="ctrl.loading"
         rows="ctrl.frontends"
         row-loader="ctrl.loadFarm($row)">

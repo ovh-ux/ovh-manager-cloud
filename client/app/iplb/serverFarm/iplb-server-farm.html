@@ -6,7 +6,7 @@
         data-ui-sref="network.iplb.detail.server-farm.add"
         data-translate="iplb_farm_add"></a>
 
-    <cui-loader data-ng-if="ctrl.farms.loading"></cui-loader>
+    <oui-spinner data-ng-if="ctrl.farms.loading"></oui-spinner>
     <cui-accordion data-ng-if="!ctrl.farms.loading"
         data-title="ctrl.getFarmName(farm)"
         data-text="ctrl.getFarmText(farm)"
@@ -16,7 +16,7 @@
         <a class="oui-button oui-button_secondary"
             data-translate="iplb_farm_add_server"
             data-ui-sref="network.iplb.detail.server-farm.server-add({ farmId: farm.farmId })"></a>
-        <cui-loader data-ng-show="!farm.servers || farm.servers.loading"></cui-loader>
+        <oui-spinner data-ng-show="!farm.servers || farm.servers.loading"></oui-spinner>
         <oui-table data-ng-hide="!farm.servers || farm.servers.loading || !farm.servers.data.length"
             rows="farm.servers.data">
             <column title="'iplb_farm_server_list_col_server' | translate" property="serverId" sortable>
