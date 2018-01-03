@@ -12,7 +12,7 @@
         </button>
     </div>
     <div class="text-center" data-ng-if="CdaPoolListCtrl.loading">
-        <oui-loader size="m" class="d-inline-block"></oui-loader>
+        <oui-spinner></oui-spinner>
     </div>
     <div class="table-responsive-vertical">
         <table data-ng-if="!CdaPoolListCtrl.loading" class="oui-table oui-table_responsive">
@@ -34,7 +34,7 @@
                 </tr>
             </thead>
             <tbody class="oui-table__body">
-                <tr data-ng-if="CdaPoolListCtrl.datas.pools.length" 
+                <tr data-ng-if="CdaPoolListCtrl.datas.pools.length"
                     data-ng-repeat="pool in CdaPoolListCtrl.datas.paginatedPools track by pool.name"
                     class="oui-table__row">
                     <td data-title="{{ 'cda_pool_table_col_poolname' | translate }}"
@@ -55,8 +55,8 @@
                     </td>
                     <td data-title="{{ 'cda_pool_table_col_actions' | translate }}"
                         class="oui-table__cell oui-table__cell_action">
-                        <button class="no-style" 
-                                type="button" 
+                        <button class="no-style"
+                                type="button"
                                 data-ng-click="CdaPoolListCtrl.openDeleteModal(pool)"
                                 data-uib-tooltip="{{:: 'cda_pool_delete_button_text' | translate }}">
                             <i class="glyphicon glyphicon-trash"></i>

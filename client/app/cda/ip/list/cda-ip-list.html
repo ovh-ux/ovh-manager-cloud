@@ -12,10 +12,10 @@
         </button>
     </div>
     <div class="text-center" data-ng-if="CdaIpListCtrl.loading">
-        <oui-loader size="m" class="d-inline-block"></oui-loader>
+        <oui-spinner></oui-spinner>
     </div>
     <div class="table-responsive-vertical">
-        <table data-ng-if="!CdaIpListCtrl.loading" 
+        <table data-ng-if="!CdaIpListCtrl.loading"
                class="oui-table oui-table_responsive">
             <thead class="oui-table__headers">
                 <tr>
@@ -26,8 +26,8 @@
                 </tr>
             </thead>
             <tbody class="oui-table__body">
-                <tr class="oui-table__row" 
-                    data-ng-if="CdaIpListCtrl.datas.ips.length" 
+                <tr class="oui-table__row"
+                    data-ng-if="CdaIpListCtrl.datas.ips.length"
                     data-ng-repeat="ip in CdaIpListCtrl.datas.paginatedIps track by ip.id">
                     <td class="oui-table__cell" data-title="{{ 'cda_ip_table_col_network' | translate }}">
                         <span data-ng-bind=" ::ip.network"></span>
@@ -35,7 +35,7 @@
                         <span data-ng-bind=" ::ip.netmask"></span>
                     </td>
                     <td class="oui-table__cell oui-table__cell_action" data-title="{{ 'cda_ip_table_col_actions' | translate }}">
-                        <button type="button" 
+                        <button type="button"
                                 class="no-style"
                                 data-ng-click="CdaIpListCtrl.openDeleteModal(ip)"
                                 data-uib-tooltip="{{:: 'cda_ip_delete_button_text' | translate }}">
@@ -44,7 +44,7 @@
                     </td>
                 </tr>
                 <tr class="oui-table__row" data-ng-if="!CdaIpListCtrl.datas.ips.length">
-                    <td data-title="cda_ip_table_empty" 
+                    <td data-title="cda_ip_table_empty"
                         colspan="2"
                         class="oui-table__cell">
                         <span data-translate="cda_ip_table_empty"></span>
