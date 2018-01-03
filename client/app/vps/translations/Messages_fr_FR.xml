@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-
    <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
    <translation id="vps_order_windows_step1_title">Sélection de la durée</translation>
    <translation id="vps_order_windows_step2_title">Acceptation des conditions d'utilisation</translation>
