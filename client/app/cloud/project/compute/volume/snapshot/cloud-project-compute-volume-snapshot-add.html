@@ -9,7 +9,7 @@
 
         <div class="oui-modal__body-text" data-ng-if="CloudProjectComputeVolumeSnapshotAddCtrl.loaders.init || CloudProjectComputeVolumeSnapshotAddCtrl.loaders.snapshot">
             <div class="text-center">
-                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                <oui-spinner></oui-spinner>
             </div>
         </div>
 
@@ -35,7 +35,7 @@
                 autofocus
                 required
                 ng-maxlength="255">
-            <div data-ng-messages="volumeSnapshotCreationForm.volumeSnapshotName.$error" 
+            <div data-ng-messages="volumeSnapshotCreationForm.volumeSnapshotName.$error"
                  data-ng-if="volumeSnapshotCreationForm.volumeSnapshotName.$dirty">
                 <p class="oui-modal__text animate-fadeInLeft-enter animate-fadeOutRight-leave" data-ng-message="required">
                     <span class="text-danger" data-translate="cpcv_snapshot_name_error"></span>

@@ -26,7 +26,7 @@
             </td>
             <td class="oui-table__cell" data-title="{{ 'storage_file_state' | translate }}" write-right-required>
                 <div data-ng-show="file.sealingStateLoading" class="text-center">
-                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                    <oui-spinner size="s"></oui-spinner>
                 </div>
                 <span data-ng-hide="file.sealingStateLoading" data-ng-switch="file.retrievalState">
                     <div data-ng-switch-when="sealed">

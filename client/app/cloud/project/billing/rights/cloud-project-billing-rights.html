@@ -140,7 +140,7 @@
             <tbody class="oui-table__body" data-ng-show="BillingRightsCtrl.loader.rights">
                 <tr>
                     <td colspan="3" class="text-center">
-                        <oui-loader size="m" class="d-inline-block"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </td>
                 </tr>
             </tbody>
@@ -152,7 +152,7 @@
 
                     <td colspan="3" class="no-space">
                         <div data-ng-if="BillingRightsCtrl.loader.addRight" class="text-center">
-                            <oui-loader size="m" class="d-inline-block"></oui-loader>
+                            <oui-spinner></oui-spinner>
                         </div>
                         <div data-ng-slide-down="BillingRightsCtrl.toggle.addUser" lazy-render duration="0.3" data-ng-if="!BillingRightsCtrl.loader.addRight">
                             <form name="voucherFormAdd" class="form-horizontal ovh-form-flat container-fluid space-p8"
@@ -222,7 +222,7 @@
                         <span data-ng-bind="('cpb_rights_table_rights_value_' + right.type) | translate"></span>
                     </td>
                     <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.loader.removeRight">
-                        <oui-loader size="s" class="d-inline-block"></oui-loader>
+                        <oui-spinner size="s"></oui-spinner>
                     </td>
                     <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.loader.removeRight">
                         <!-- buttons -->

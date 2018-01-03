@@ -130,7 +130,7 @@
 
                             <!-- loading availableGigabytes ... -->
                             <div class="text-center" data-ng-if="VolumeAddEditCtrl.loaders.quota">
-                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                <oui-spinner size="s"></oui-spinner>
                             </div>
                         </div>
 
@@ -228,7 +228,7 @@
                                translate-values="{price: VolumeAddEditCtrl.volumeInEdition.calculatePrice().monthlyPrice.text }">
                         </small>
                         <div class="text-center" data-ng-if="VolumeAddEditCtrl.loaders.launch">
-                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            <oui-spinner size="s"></oui-spinner>
                         </div>
                     </button>
                     <button class="btn btn-default" type="reset"
@@ -268,7 +268,7 @@
                                translate-values="{price: VolumeAddEditCtrl.volumeInEdition.calculatePrice().monthlyPrice.text }">
                         </small>
                         <div class="text-center" data-ng-show="VolumeAddEditCtrl.loaders.launch">
-                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            <oui-spinner size="s"></oui-spinner>
                         </div>
                     </button>
 

@@ -7,7 +7,7 @@
     <div class="oui-modal__body oui-modal__body_no-icon">
         <div class="oui-modal__body-text" data-ng-if="VmVncCtrl.loading">
             <div class="text-center">
-                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                <oui-spinner></oui-spinner>
             </div>
         </div>
         <div class="oui-modal__body-text" data-ng-if="!VmVncCtrl.loading && VmVncCtrl.data.url">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="oui-modal__footer">
-        <a class="oui-button oui-button_link oui-button_icon-right" 
+        <a class="oui-button oui-button_link oui-button_icon-right"
            data-ng-href="{{VmVncCtrl.data.url}}" target="_blank">
             <span data-translate="cpcivm_vnc_window"></span>
             <i class="fa fa-external-link"></i>

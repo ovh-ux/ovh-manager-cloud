@@ -75,7 +75,7 @@
 
                         <div class="row-fluid">
                             <div class="text-center" data-ng-if="CloudProjectOpenstackUsersCtrl.loaders.add.user">
-                                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                                <oui-spinner></oui-spinner>
                             </div>
                             <div class="col-xs-12 bottom-space-p4 top-space-p12 text-center" data-ng-if="!CloudProjectOpenstackUsersCtrl.loaders.add.user">
                                 <button type="reset"
@@ -108,7 +108,7 @@
     <tbody data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.table.user" class="oui-table__body">
         <tr>
             <td colspan="6" class="text-center">
-                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                <oui-spinner></oui-spinner>
             </td>
         </tr>
     </tbody>
@@ -178,7 +178,7 @@
                         data-ng-click="CloudProjectOpenstackUsersCtrl.regeneratePassword(user)"
                         write-right-required>
                         <i data-ng-hide="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id" class="fa fa-refresh"></i>
-                        <oui-loader size="s" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></oui-loader>
+                        <oui-spinner size="s" data-ng-show="CloudProjectOpenstackUsersCtrl.loaders.regeneratePassword === user.id"></oui-spinner>
                     </button>
                 </div>
             </td>
