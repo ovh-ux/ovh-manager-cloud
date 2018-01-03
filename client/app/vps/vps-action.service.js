@@ -290,7 +290,7 @@ class VpsActionService {
     }
 
     terminateBackupStorageOption (serviceName) {
-        return this._terminateOption(serviceName, "ftpbackup");
+        return this._terminateOption(serviceName, "ftpBackup");
     }
 
     terminateSnapshotOption (serviceName) {
