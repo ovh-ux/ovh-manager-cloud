@@ -1,36 +1,8 @@
-<div class="table-responsive-vertical">
-    <table class="oui-table oui-table_responsive">
-        <thead class="oui-table__headers">
-            <tr>
-                <th class="oui-table__header">
-                    <span data-translate="cda_task_table_col_id"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_task_table_col_name"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_task_table_col_processing"></span>
-                </th>
-            </tr>
-        </thead>
-        <tbody class="oui-table__body">
-            <tr class="oui-table__row" data-ng-if="$ctrl.tasks.length" data-ng-repeat="task in $ctrl.tasks track by task.id">
-                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_id' | translate }}">
-                    <span data-ng-bind=" ::task.id"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_name' | translate }}">
-                    <span data-ng-bind=" ::task.name"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_task_table_col_processing' | translate }}">
-                    <div class="oui-progress oui-progress_info oui-progress_indeterminate" 
-                         role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                </td>
-            </tr>
-            <tr class="oui-table__row" data-ng-if="!$ctrl.tasks.length">
-                <td colspan="3">
-                    <span data-translate="cda_task_table_empty"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<oui-datagrid rows="$ctrl.tasks">
+    <oui-column title="'cda_task_table_col_id' | translate" property="id" sortable></oui-column>
+    <oui-column title="'cda_task_table_col_name' | translate" property="name" sortable></oui-column>
+    <oui-column title="'cda_task_table_col_processing' | translate" property="id" sortable>
+        <div class="oui-progress oui-progress_info oui-progress_indeterminate"
+             role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </oui-column>
+</oui-datagrid>
