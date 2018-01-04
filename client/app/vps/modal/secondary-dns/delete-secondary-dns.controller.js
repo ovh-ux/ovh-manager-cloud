@@ -20,7 +20,7 @@ class DeleteSecondaryDnsCtrl {
         this.loader.save = true;
         this.VpsService.deleteSecondaryDnsDomain(this.serviceName, this.domain.domain)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_secondarydns_delete_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_delete_fail")))
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_delete_fail", { domain: this.domain.domain })))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
