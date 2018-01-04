@@ -39,14 +39,15 @@
                                     type="checkbox"
                                     data-ng-checked="NashaPartitionSnapshotCtrl.isScheduled(snapshot)"
                                     data-ng-click="NashaPartitionSnapshotCtrl.changeSchedule(snapshot, !NashaPartitionSnapshotCtrl.isScheduled(snapshot))">
-                                <label class="oui-checkbox__label-container m-0"
+                                <label class="oui-checkbox__label-container"
                                     for="{{ 'frequency_' + $index }}">
-                                    <span class="oui-checkbox__label"
-                                        data-translate="{{'nasha_snapshot_'+ snapshot}}"></span>
-                                    <span class="oui-checkbox__icon">
-                                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                    <span class="oui-checkbox__label m-0" >
+                                        <span data-translate="{{'nasha_snapshot_'+ snapshot}}"></span>
+                                        <span class="oui-checkbox__icon">
+                                            <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                            <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                            <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                                        </span>
                                     </span>
                                 </label>
                             </div>

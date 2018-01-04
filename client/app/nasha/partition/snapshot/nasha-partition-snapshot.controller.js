@@ -82,6 +82,8 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
 
     function init () {
         self.loading = true;
+        self.schedule = {};
+
         OvhApiDedicatedNasha.Lexi().schema()
             .$promise.then(function (data) {
                 self.snapshotEnum = data.models["dedicated.storage.SnapshotEnum"].enum;
