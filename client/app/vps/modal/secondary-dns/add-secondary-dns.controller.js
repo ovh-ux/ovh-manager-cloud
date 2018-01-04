@@ -33,7 +33,7 @@ class AddSecondaryDnsCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.addSecondaryDnsDomain(this.serviceName, this.model)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_secondarydns_add_success")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_secondarydns_add_success", { domain: this.model })))
             .catch(err => this.CloudMessage.error(err.message))
             .finally(() => {
                 this.loader.save = false;
