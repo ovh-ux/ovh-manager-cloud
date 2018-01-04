@@ -69,7 +69,7 @@ class VpsOrderWindowsCtrl {
     orderOption () {
         this.VpsService.postWindowsOptionOrder(this.serviceName, this.model.duration)
             .then(order => { this.model.url = order.url; })
-            .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_configuration_veeam_order_fail")));
+            .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_windows_order_error")));
     }
 
     cancel () {
