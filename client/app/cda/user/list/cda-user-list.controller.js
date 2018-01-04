@@ -1,5 +1,5 @@
 angular.module("managerApp")
-  .controller("CdaUserListCtrl", function ($q, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
+  .controller("CdaUserListCtrl", function ($q, $state, $stateParams, $uibModal, $translate, OvhApiDedicatedCeph, CloudMessage, CdaService) {
       "use strict";
 
       var self = this;
@@ -66,6 +66,10 @@ angular.module("managerApp")
               initUsers();
           });
       };
+
+      self.viewPermissions = function (name) {
+          return $state.go("paas.cda.cda-details.cda-user.cda-user-details.cda-user-details-permission-list", {userName: name});
+      }
 
       function displayError (error) {
           CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));

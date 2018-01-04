@@ -13,79 +13,22 @@
     <div class="text-center" data-ng-if="CdaUserListCtrl.loading">
         <oui-spinner></oui-spinner>
     </div>
-    <div class="table-responsive-vertical">
-        <table data-ng-if="!CdaUserListCtrl.loading" class="oui-table oui-table_responsive">
-            <thead class="oui-table__headers">
-                <tr>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_user_table_col_username"></span>
-                    </th>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_user_table_col_key"></span>
-                    </th>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_user_table_col_pool"></span>
-                    </th>
-                    <th class="oui-table__header"></th>
-                </tr>
-            </thead>
-            <tbody class="oui-table__body">
-                <tr class="oui-table__row" data-ng-if="CdaUserListCtrl.datas.users.length"
-                    data-ng-repeat="user in CdaUserListCtrl.datas.paginatedUsers track by user.user.name">
-                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_username' | translate }}">
-                        <span data-ng-bind=" ::user.user.name"></span>
-                    </td>
-                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_key' | translate }}">
-                        <span data-ng-bind=" ::user.user.key"></span>
-                    </td>
-                    <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_pool' | translate }}">
-                        <span data-ng-repeat="pool in user.pools | limitTo: CdaUserListCtrl.options.maxPoolDisplay track by pool.poolName">
-                            {{ pool.poolName }}{{ !$last || CdaUserListCtrl.isTruncatedPoolArray(user.pools , $index) ? ',' : '' }}
-                            <span data-ng-if="$last && CdaUserListCtrl.isTruncatedPoolArray(user.pools , $index)">...</span>
-                        </span>
-                    </td>
-                    <td data-title="{{ 'cda_user_table_col_actions' | translate }}"
-                        class="oui-table__cell oui-table__cell_action">
-                        <div class="btn-group" dropdown data-on-toggle="toggled(open)">
-                            <button type="button" class="no-style" data-toggle="dropdown" aria-expanded="false" data-uib-tooltip="{{:: 'cda_user_table_col_actions' | translate }}">
-                                <i class="fa fa-cog fs14"></i>
-                            </button>
+    <oui-datagrid rows="CdaUserListCtrl.datas.users">
+        <oui-column title="'cda_user_table_col_username' | translate" property="user.name" sortable></oui-column>
+        <oui-column title="'cda_user_table_col_key' | translate" property="user.key" sortable></oui-column>
+        <oui-column title="'cda_user_table_col_pool' | translate" property="pools" sortable>
+            <span data-ng-repeat="pool in $row.pools | limitTo: CdaUserListCtrl.options.maxPoolDisplay track by pool.poolName">
+                        {{ pool.poolName }}{{ !$last || CdaUserListCtrl.isTruncatedPoolArray($row.pools , $index) ? ',' : '' }}
+                        <span data-ng-if="$last && CdaUserListCtrl.isTruncatedPoolArray($row.pools , $index)">...</span>
+                    </span>
+        </oui-column>
 
-                            <ul data-uib-dropdown-menu data-uib-dropdown-menu-left class="dropdown-menu dropdown-menu-right responsive-dropdown-menu pointer" role="menu">
-                                <li>
-                                    <a ui-sref="paas.cda.cda-details.cda-user.cda-user-details.cda-user-details-permission-list({userName: user.user.name})">
-                                        <i class="ovh-font ovh-font-key"></i>
-                                        <span data-translate="cda_user_edit_button_text"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <button data-ng-click="CdaUserListCtrl.openDeleteModal(user)">
-                                        <i class="glyphicon glyphicon-trash"></i>
-                                        <span data-translate="cda_user_delete_button_text"></span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr data-ng-if="!CdaUserListCtrl.datas.users.length"
-                    class="oui-table__row">
-                    <td colspan="4" class="oui-table__cell">
-                        <span data-translate="cda_user_table_empty"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="table-pretty-pagination top-space-m12"
-             data-ng-hide="CdaUserListCtrl.loading"
-             data-pagination-front
-             data-items="CdaUserListCtrl.datas.users"
-             data-paginated-items="CdaUserListCtrl.datas.paginatedUsers"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}">
-        </div>
-    </div>
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="{{'cda_user_edit_button_text' | translate}}"
+                on-click="CdaUserListCtrl.viewPermissions($row.user.name)"></oui-action-menu-item>
+            <oui-action-menu-divider></oui-action-menu-divider>
+            <oui-action-menu-item text="{{'cda_user_delete_button_text' | translate}}"
+                on-click="CdaUserListCtrl.openDeleteModal($row)"></oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
 </section>
