@@ -5,7 +5,7 @@
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!$ctrl.loader.save">
-            <cui-modal-text data-text="'vps_backup_storage_access_delete_question' | translate"></cui-modal-text>
+            <cui-modal-text data-text="'vps_backup_storage_access_delete_question' | translate: {ipBlock: $ctrl.access}"></cui-modal-text>
         </div>
     </cui-modal-body>
     <cui-modal-footer>
