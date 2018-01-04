@@ -155,7 +155,7 @@
    <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Si vous validez votre demande, votre serveur passera en mode rescue et redémarrera immédiatement. Vous recevrez alors un email contenant les informations vous permettant de vous connecter à votre VPS.</translation>
    <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Attention, lorsque votre VPS aura redémarré, le mode rescue restera activé jusqu'au prochain redémarrage normal de votre VPS.</translation>
    <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Temps d'indisponibilité dû au redémarrage&#160;: environ 3 minutes.</translation>
-   <translation id="vps_configuration_reboot_rescue_success" qtlid="168614">Le VPS {0} va redémarrer en mode rescue (temps estimé 3 minutes)</translation>
+   <translation id="vps_configuration_reboot_rescue_success">Le VPS {{serviceName}} va redémarrer en mode rescue (temps estimé 3 minutes)</translation>
    <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">La demande de redémarrage en mode rescue a bien été prise en compte.</translation>
    <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Une erreur est survenue lors de la demande de redémarrage</translation>
    <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Modifier le Reverse DNS</translation>
@@ -429,7 +429,7 @@
    <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Un nouveau mot de passe sera envoyé au nic admin du serveur.</translation>
    <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Un nouveau mot de passe vient d'être envoyé au nic admin du serveur.</translation>
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Une erreur est survenue lors de la réinitialisation de nouveau mot de passe.</translation>
-   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="184412">Etes-vous certain(e) de vouloir réinitialiser le mot de passe pour le backup storage {0} ?</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question">Etes-vous certain(e) de vouloir réinitialiser le mot de passe pour le backup storage ?</translation>
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">Identifiant</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Nom</translation>
@@ -469,8 +469,8 @@
    <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Une erreur est survenue lors de la demande d'ajout de règles d'accès au backup storage</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Tous les blocks disponibles ont reçu une autorisation</translation>
 
-   <translation id="vps_tab_backup_storage_set_success" qtlid="183853">La modification de l'accès <b>{0}</b> a bien été prise en compte mais peut prendre quelques minutes</translation>
-   <translation id="vps_tab_backup_storage_set_fail" qtlid="183866">Une erreur est survenue lors de la modification de l'accès <b>{0}</b></translation>
+   <translation id="vps_tab_backup_storage_set_success">La modification de l'accès {{access}} a bien été prise en compte mais peut prendre quelques minutes</translation>
+   <translation id="vps_tab_backup_storage_set_fail">Une erreur est survenue lors de la modification de l'accès {{access}}</translation>
 
    <translation id="vps_monitoring_network_netRx" qtlid="33550">Entrant</translation>
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Sortant</translation>
@@ -486,7 +486,6 @@
    <translation id="vps_tab_additional_disk_not_available" qtlid="281537">L'option d'ajout de disque additionnel n'est pas disponible sur cette gamme.</translation>
    <translation id="vps_tab_additional_disk_count" qtlid="281550">Vous n'avez pas de disque additionnel.</translation>
    <translation id="vps_tab_additional_disk_count_1" qtlid="281563">Vous avez un disque additionnel.</translation>
-   <translation id="vps_tab_additional_disk_count_other" qtlid="281576">Vous avez {0} disques additionnels.</translation>
    <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
    <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Taille (en Go)</translation>
    <translation id="vps_tab_additional_disk_header_state" qtlid="33790">État</translation>

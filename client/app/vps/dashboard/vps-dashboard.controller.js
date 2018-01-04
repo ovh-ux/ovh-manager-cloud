@@ -78,6 +78,7 @@ class VpsDashboardCtrl {
 
     loadAdditionalDisks () {
         this.loaders.disk = true;
+        this.hasAdditionalDisk = true;
         this.VpsService.getDisks(this.serviceName)
             .then(data => {
                 const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(this.serviceName, elem) });
@@ -124,7 +125,7 @@ class VpsDashboardCtrl {
             delete: {
                 text: this.$translate.instant("vps_configuration_delete_snapshot_title_button"),
                 callback: () => this.VpsActionService.deleteSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate && !this.loaders.polling
             },
             order: {
                 text: this.$translate.instant("common_order"),
@@ -135,12 +136,12 @@ class VpsDashboardCtrl {
             restore: {
                 text: this.$translate.instant("vps_configuration_snapshot_restore_title_button"),
                 callback: () => this.VpsActionService.restoreSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate  && !this.loaders.polling
             },
             take: {
                 text: this.$translate.instant("vps_configuration_snapshot_take_title_button"),
                 callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate  && !this.loaders.polling
             },
             terminate: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
@@ -211,8 +212,8 @@ class VpsDashboardCtrl {
             },
             monitoringSla: {
                 text: this.$translate.instant("common_manage"),
-                callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.slaMonitoring),
-                isAvailable: () => !this.vps.loading
+                callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.data.slaMonitoring),
+                isAvailable: () => !this.vps.loading && !this.loaders.polling
             },
             // orderAdditionalDiskOption: {
             //     text: this.$translate.instant("vps_additional_disk_add_button"),

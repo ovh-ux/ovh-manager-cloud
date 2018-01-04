@@ -11,7 +11,7 @@
                 <span data-translate="vps_status_enabled" data-ng-if="$ctrl.currentState"></span>
                 <span data-translate="vps_status_disabled" data-ng-if="!$ctrl.currentState"></span>
             </p>
-            <div class="oui-message oui-message_info oui-message_icon-m" role="alert" data-ng-if="$ctrl.currentState">
+            <div class="oui-message oui-message_info oui-message_icon-m" role="alert" data-ng-if="$ctrl.state">
                 <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
                 <p class="oui-message__body">
                     <span data-translate ="vps_dashboard_monitoring_sla_ips_tooltip"></span>
