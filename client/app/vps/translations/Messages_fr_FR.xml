@@ -309,13 +309,12 @@
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Ajouter un domaine</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Ajouter un domaine sur le DNS secondaire</translation>
    <translation id="vps_configuration_secondarydns_add_step1_question" qtlid="169875">Vous allez ajouter un domaine sur le DNS secondaire <span class="normal italic">{0}</span>.</translation>
-   <translation id="vps_configuration_secondarydns_add_step1_domain" qtlid="103378">Domaine à ajouter :</translation>
-   <translation id="vps_configuration_secondarydns_add_step2_summary" qtlid="169888">Voulez vous ajouter le domaine <span class="normal italic">{0}</span> sur le DNS secondaire <span class="normal italic">{1}</span> ?</translation>
+   <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domaine à ajouter :</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Une erreur est survenue lors de la demande d'ajout du domaine sur le DNS secondaire.</translation>
-   <translation id="vps_configuration_secondarydns_add_success" qtlid="169914">Le domaine {0} va être ajouté sur le DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_add_success">Le domaine {{domain}} va être ajouté sur le DNS secondaire.</translation>
    <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Supprimer un domaine du DNS secondaire</translation>
-   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="169940">Voulez vous supprimer le domaine <span class="normal italic">{0}</span> du DNS secondaire ?</translation>
-   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="169953">Une erreur est survenue lors de la demande de suppression du domaine {0} du DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question">Voulez vous supprimer le domaine <span class="normal italic">{{domain}}</span> du DNS secondaire ?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail">Une erreur est survenue lors de la demande de suppression du domaine {{domain}} du DNS secondaire.</translation>
    <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">Le domaine va être supprimé du DNS secondaire.</translation>
    <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
    <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
