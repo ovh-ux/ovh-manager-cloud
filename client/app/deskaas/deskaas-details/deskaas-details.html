@@ -139,18 +139,17 @@
                 <div class="cui-tile h-100">
                     <h4 class="oui-header_4 cui-tile__title" data-translate="vdi_task_current"></h4>
                     <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
-                        <oui-table data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
-                            <column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></column>
-                            <column title="'vdi_task_name' | translate" property="displayName" sortable></column>
-                            <column title="'vdi_task_state' | translate" property="displayState" sortable></column>
-                            <column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
+                        <oui-datagrid data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
+                            <oui-column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></oui-column>
+                            <oui-column title="'vdi_task_name' | translate" property="displayName" sortable></oui-column>
+                            <oui-column title="'vdi_task_state' | translate" property="displayState" sortable></oui-column>
+                            <oui-column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
                                 {{ $row.lastModificationDate | momentFormat:'LLL' }}
-                            </column>
-                            <column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
+                            </oui-column>
+                            <oui-column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
                                 <cui-task-progress data-task="$row"></cui-task-progress>
-                            </column>
-                            <empty-placeholder data-translate="common_task_list_empty"></empty-placeholder>
-                        </oui-table>
+                            </oui-column>
+                        </oui-datagrid>
                     </div>
                 </div>
             </div>
