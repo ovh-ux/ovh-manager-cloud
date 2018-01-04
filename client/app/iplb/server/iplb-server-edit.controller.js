@@ -48,6 +48,9 @@ class IpLoadBalancerServerEditCtrl {
 
     $onInit () {
         this.server = {
+            backup: false,
+            probe: false,
+            ssl: false,
             status: "active"
         };
         this.portLimit = this.IpLoadBalancerConstant.portLimit;

@@ -97,6 +97,7 @@ class IpLoadBalancerFrontendsEditCtrl {
                 this.type = "http";
                 this.frontend.port = 443;
                 this.frontend.ssl = true;
+                this.frontend.hsts = false;
                 break;
             case "tcp":
                 this.type = "tcp";
@@ -134,7 +135,8 @@ class IpLoadBalancerFrontendsEditCtrl {
             defaultSslId: 0,
             defaultFarmId: 0,
             port: 80,
-            ssl: false
+            ssl: false,
+            hsts: false
         };
         this.type = "http";
         this.protocol = "http";
