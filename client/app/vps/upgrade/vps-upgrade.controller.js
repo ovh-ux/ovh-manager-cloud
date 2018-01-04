@@ -70,7 +70,6 @@ class VpsUpgradeCtrl {
                 } else {
                     this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
                 }
-                this.previousState.go();
             }).finally(() => {
                 this.loaders.step2 = false;
             });

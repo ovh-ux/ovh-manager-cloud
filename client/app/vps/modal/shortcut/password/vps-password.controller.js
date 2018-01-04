@@ -35,7 +35,7 @@ class VpsPasswordCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.reboot(this.serviceName, this.selected.rescue)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success", {serviceName: this.serviceName})))
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_rescue_fail")))
             .finally(() => {
                 this.loader.save = false;

@@ -22,7 +22,7 @@ class VpsTakeSnapshotCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.takeSnapshot(this.serviceName, this.snapshot)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_snapshot_take_success")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_snapshot_take_success", {serviceName: this.serviceName})))
             .catch(err => this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_snapshot_take_fail")))
             .finally(() => {
                 this.loader.save = false;

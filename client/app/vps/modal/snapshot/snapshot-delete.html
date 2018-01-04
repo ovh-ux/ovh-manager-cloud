@@ -5,7 +5,7 @@
             <oui-loader class="d-inline-block"></oui-loader>
         </div>
         <div data-ng-if="!$ctrl.loader.save">
-            <cui-modal-text data-text="'vps_configuration_delete_snapshot_step1_question' | translate"></cui-modal-text>
+            <cui-modal-text data-text="'vps_configuration_delete_snapshot_step1_question' | translate: {serviceName: $ctrl.serviceName}"></cui-modal-text>
             <p class="oui-modal__body-text red" data-translate="vps_configuration_delete_snapshot_step1_confirmation"></p>
         </div>
     </cui-modal-body>

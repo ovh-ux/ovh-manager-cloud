@@ -132,7 +132,7 @@ class VpsReinstallCtrl {
             .catch(err => this.$uibModalInstance.dismiss(this.$translate.instant("vps_configuration_reinstall_fail")))
             .finally(() => {
                 this.loaders.save = false;
-                this.CloudMessage.success(this.$translate.instant("vps_configuration_reinstall_success"));
+                this.CloudMessage.success(this.$translate.instant("vps_configuration_reinstall_success", {serviceName: this.serviceName}));
             });
 
     }

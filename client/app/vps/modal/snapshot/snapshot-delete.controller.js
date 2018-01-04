@@ -18,8 +18,8 @@ class VpsDeleteSnapshotCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.deleteSnapshot(this.serviceName)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_delete_snapshot_success")))
-            .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_snapshot_restore_fail")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_delete_snapshot_success", {serviceName: this.serviceName})))
+            .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_delete_snapshot_fail")))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();

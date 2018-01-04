@@ -19,6 +19,7 @@ class VpsRestoreSnapshotCtrl {
         this.VpsService.getTabSummary(this.serviceName)
             .then(data => {
                 this.summary = data;
+                this.date = moment(data.snapshot.creationDate).format('LLL');
             })
             .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_snapshot_restore_fail")))
             .finally(() => {
@@ -33,7 +34,7 @@ class VpsRestoreSnapshotCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.restoreSnapshot(this.serviceName)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_snapshot_restore_success")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_snapshot_restore_success", {serviceName: this.serviceName})))
             .catch(error => this.CloudMessage.error(error.message || this.$translate.instant("vps_configuration_snapshot_restore_fail")))
             .finally(() => {
                 this.loader.save = false;
