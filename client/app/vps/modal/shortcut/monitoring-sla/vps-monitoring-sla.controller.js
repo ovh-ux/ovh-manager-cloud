@@ -17,14 +17,14 @@ class VpsMonitoringSlaCtrl {
     }
 
     $onInit () {
+        this.loader.init = true;
         if (this.currentState) {
             this.title = this.$translate.instant("vps_configuration_sla_title_disable");
-            this.loader.init = true;
-            this.VpsService.getSelectedVps(this.serviceName)
-                .then(vps => { this.vps = vps })
-                .catch(err => this.CloudMessage.error(err))
-                .finally(() => { this.loader.init = false });
         }
+        this.VpsService.getSelectedVps(this.serviceName)
+            .then(vps => { this.vps = vps })
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => { this.loader.init = false });
     }
 
     cancel () {
