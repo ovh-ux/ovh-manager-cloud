@@ -53,7 +53,7 @@ class VpsReverseDnsCtrl {
                         case "PARTIAL" :
                             break;
                         case "OK" :
-                            this.CloudMessage.success(this.$translate.instant("vps_configuration_reboot_rescue_success", {serviceName: this.serviceName}));
+                            this.CloudMessage.success(this.$translate.instant("vps_configuration_reversedns_success", {serviceName: this.serviceName}));
                             break;
                         default: this.this.CloudMessage.error(this.$translate.instant("vps_configuration_reversedns_fail"));
                     }
