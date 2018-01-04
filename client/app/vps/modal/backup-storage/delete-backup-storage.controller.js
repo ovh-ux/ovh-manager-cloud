@@ -19,8 +19,8 @@ class DeleteBackupStorageCtrl {
     confirm () {
         this.loader.save = true;
         this.VpsService.deleteBackupStorageAccess(this.serviceName, this.access)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_delete_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_delete_failure")))
+            .then(() => this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_delete_success", { ipBlock: this.access })))
+            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_delete_failure", { ipBlock: this.access })))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
