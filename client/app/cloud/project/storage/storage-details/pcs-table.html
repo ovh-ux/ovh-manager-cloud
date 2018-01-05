@@ -1,42 +1,20 @@
-<table class="oui-table oui-table_responsive" data-ng-if="objects.length > 0 && !loaders.details">
-    <thead class="oui-table__headers">
-        <tr>
-            <th class="oui-table__header" data-translate="storage_file_name"></th>
-            <th class="oui-table__header" data-translate="storage_last_modify"></th>
-            <th class="oui-table__header" data-translate="storage_size"></th>
-            <th class="oui-table__header" data-translate="storage_file_type"></th>
-            <th class="oui-table__header" data-translate="storage_file_download" write-right-required></th>
-            <th class="ovh-table__header" write-right-required>&#160;</th>
-        </tr>
-    </thead>
-    <tbody data-ng-if="files.length > 0 && !loaders.details" class="oui-table__body">
-        <tr class="oui-table__row" data-ng-repeat="file in files track by $index">
-            <td class="oui-table__cell" data-title="{{ 'storage_file_name' | translate }}">
-                {{file.name}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_last_modify' | translate }}">
-                {{file.lastModified | date:'medium'}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_size' | translate }}">
-                {{file.size | RAUnitsBits}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_file_type' | translate }}">
-                {{file.contentType}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_file_download' | translate }}" write-right-required>
-                <button class="oui-button oui-button_secondary" data-ng-click="fileDownload(file)" data-translate="storage_file_download"></button>
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_actions' | translate }}" write-right-required>
-                <button type="button" class="no-style" data-ng-show="file.status != 'deleting'" data-ng-click="delete(file)" data-translate-attr="{ title: 'storage_delete_button' }">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </button>
-                <img data-ng-show="file.status === 'deleting'" src="assets/images/loader.gif" data-translate-attr="{ alt: 'storage_delete_pending' }" width="15" />
-            </td>
-        </tr>
-    </tbody>
-    <tbody data-ng-if="loaders.pager" class="oui-table__body">
-        <tr>
-            <td colspan="4" data-translate="storage_details_loading"></td>
-        </tr>
-    </tbody>
-</table>
+<oui-datagrid rows="files">
+    <oui-column title="'storage_file_name' | translate" property="name" sortable></oui-column>
+    <oui-column title="'storage_last_modify' | translate" property="lastModified" sortable>
+        {{$row.lastModified | date:'medium'}}
+    </oui-column>
+    <oui-column title="'storage_size' | translate" property="size" sortable>
+        {{$row.size | RAUnitsBits}}
+    </oui-column>
+    <oui-column title="'storage_file_type' | translate" property="contentType" sortable></oui-column>
+    <oui-column title="'storage_file_download' | translate" property="" sortable>
+        <button class="oui-button oui-button_secondary"
+                data-ng-click="fileDownload($row)"
+                data-translate="storage_file_download"></button>
+    </oui-column>
+
+    <oui-action-menu align="end" compact>
+        <oui-action-menu-item text="{{'storage_delete_button' | translate}}"
+                              on-click="delete($row)"></oui-action-menu-item>
+    </oui-action-menu>
+</oui-datagrid>
