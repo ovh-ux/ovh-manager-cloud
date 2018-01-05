@@ -1,6 +1,7 @@
 class VpsReinstallService {
-    constructor ($http, $translate, CloudMessage, OvhApiMe) {
+    constructor ($http, $q, $translate, CloudMessage, OvhApiMe) {
         this.$http = $http;
+        this.$q = $q;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.OvhApiMe = OvhApiMe;
@@ -11,13 +12,12 @@ class VpsReinstallService {
     }
 
     getPackages (image) {
-        this.$http.get("/distribution/image/vps/"+image)
-        .then(response => { return this.filterKernel(response.data) })
-        .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_summary_error")));
+        return this.$http.get("/distribution/image/vps/"+image)
+        .then(response => response.data.packages)
+        .catch(err => this.$q.reject(err));
     }
 
-    filterKernel (data) {
-        const packages = data.packages;
+    filterKernel (packages) {
         return _.filter(packages, pkg => {
             return !_.includes((pkg.name + pkg.alias).toLowerCase(), "kernel");
         });
@@ -35,7 +35,7 @@ class VpsReinstallService {
                 });
                 return packages;
             })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_summary_error")));
+            .catch(err => this.$q.reject(err));
     }
 
 }

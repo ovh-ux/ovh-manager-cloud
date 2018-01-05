@@ -19,17 +19,23 @@
 
             <!-- available packages (info box) -->
             <div data-ng-if="$ctrl.template.packages">
-                <label data-ng-if="$ctrl.template.value" class="blue bold packages-title" data-translate="vps_configuration_reinstall_step1_packages"></label>
-                <div class="alert alert-info" data-ng-if="!$ctrl.template.packages">
-                    <span data-ng-if="!$ctrl.template.packages.length" data-translate="vps_configuration_reinstall_step1_packages_empty"></span>
-                    <ul data-ng-if="$ctrl.template.packages.length" class="row-fluid packages">
-                        <li class="span5"
-                            data-ng-class-odd="'odd'"
-                            data-ng-class-even="'offset2'"
-                            data-ng-repeat="package in $ctrl.template.packages | orderBy: 'alias'" data-tooltip="{{package.name}}">
-                            {{package.alias}} ({{package.version}})
-                        </li>
-                    </ul>
+                <div class="text-center" size="s" data-ng-if="$ctrl.loaders.packages">
+                    <oui-loader class="d-inline-block"></oui-loader>
+                </div>
+                <div data-ng-if="!$ctrl.loaders.packages">
+                    <label class="oui-label" data-translate="vps_configuration_reinstall_step1_packages"></label>
+                    <div class="alert alert-info">
+                        <span data-ng-if="$ctrl.template.packages.length === 0"
+                              data-translate="vps_configuration_reinstall_step1_packages_empty"></span>
+                        <ul data-ng-if="$ctrl.template.packages.length !== 0" class="row-fluid">
+                            <li class="span5"
+                                data-ng-class-odd="'odd'"
+                                data-ng-class-even="'offset2'"
+                                data-ng-repeat="package in $ctrl.template.packages">
+                                {{package.alias}} ({{package.version}})
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
