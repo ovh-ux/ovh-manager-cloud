@@ -199,7 +199,7 @@
    <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Attention : la réinstallation engendrera la perte de toutes vos données !</translation>
    <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Si vous souhaitez bénéficier d'un système d'exploitation windows, pensez à prendre l'option.</translation>
    <translation id="vps_configuration_reinstall_success">Le VPS {{serviceName}} va être réinstallé</translation>
-   <translation id="vps_configuration_reinstall_fail" qtlid="168926">Une erreur est survenue lors de la demande de réinstallation</translation>
+   <translation id="vps_configuration_reinstall_fail">Une erreur est survenue lors de la demande de réinstallation {{message}}</translation>
    <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Supprimer le Snapshot</translation>
    <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Supprimer le Snapshot</translation>
    <translation id="vps_configuration_delete_snapshot_step1_question">Souhaitez-vous réellement supprimer le Snapshot du VPS <span class="normal italic">{{serviceName}}</span> ?</translation>

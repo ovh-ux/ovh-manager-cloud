@@ -13,7 +13,8 @@ class VpsReinstallCtrl {
             save: false,
             sshKeys: false,
             summary: false,
-            template: false
+            template: false,
+            packages: false
         };
 
         this.summary = {};
@@ -33,7 +34,7 @@ class VpsReinstallCtrl {
         this.VpsService.getTaskInError(this.serviceName)
             .then(tasks => this.loadTemplate(tasks))
             .catch(err => this.loadTemplate(err))
-            .finally(() => {this.loaders.init = false});
+            .finally(() => { this.loaders.init = false; });
         this.loadSshKeys();
         this.loadSummary();
     }
@@ -44,8 +45,8 @@ class VpsReinstallCtrl {
         if (!tasks || !tasks.length) {
             this.VpsService.getTemplates(this.serviceName)
                 .then(data => { this.templates = data.results })
-                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail")))
-                .finally(() => { this.loaders.template = false });
+                .catch(err => this.$uibModalInstance.dismiss(this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_polling_fail"))))
+                .finally(() => { this.loaders.template = false; });
         }
     }
 
@@ -54,7 +55,7 @@ class VpsReinstallCtrl {
         this.VpsReinstallService.getSshKeys()
             .then(data => this.userSshKeys = data)
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_sshKeys_error")))
-            .finally(() => { this.loaders.sshKeys = false });
+            .finally(() => { this.loaders.sshKeys = false; });
     }
 
     loadSummary () {
@@ -62,11 +63,15 @@ class VpsReinstallCtrl {
         this.VpsService.getTabSummary(this.serviceName, true)
             .then(summary => this.summary)
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_summary_error")))
-            .finally(() => { this.loaders.summary = false });
+            .finally(() => { this.loaders.summary = false; });
     }
 
     loadPackages (distribution) {
-        this.template.packages = this.VpsReinstallService.getPackages(distribution);
+        this.loaders.packages = true;
+        this.template.packages = [];
+        this.VpsReinstallService.getPackages(distribution)
+            .then(data => { this.template.packages = data; })
+            .finally(() => { this.loaders.packages = false; });
     }
 
     getSoftwareLabel (soft) {
@@ -126,14 +131,9 @@ class VpsReinstallCtrl {
                 softIds,
                 this.template.sshKeys,
                 (this.template.sendPassword ? 0 : 1))
-            .then(() => {
-                this.$uibModalInstance.close();
-            })
-            .catch(err => this.$uibModalInstance.dismiss(this.$translate.instant("vps_configuration_reinstall_fail")))
-            .finally(() => {
-                this.loaders.save = false;
-                this.CloudMessage.success(this.$translate.instant("vps_configuration_reinstall_success", {serviceName: this.serviceName}));
-            });
+            .then(() => this.$uibModalInstance.close())
+            .catch(() => this.$uibModalInstance.dismiss())
+            .finally(() => { this.loaders.save = false; });
 
     }
 
