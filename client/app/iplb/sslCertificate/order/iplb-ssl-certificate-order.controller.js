@@ -67,8 +67,9 @@ class IpLoadBalancerSslCertificateOrderCtrl {
     }
 
     orderFreeCertificate () {
-        const fqdn = this.newSsl.fqdn.split(",");
-
+        const fqdn = this.newSsl.fqdn.split(",").map(function(item){
+            return item.trim()
+        });
         this.saving = true;
         this.IpLoadBalancerSslCertificateService.orderFreeCertificate(this.$stateParams.serviceName, fqdn)
             .then(() => this.$state.go("network.iplb.detail.ssl-certificate.home"))
