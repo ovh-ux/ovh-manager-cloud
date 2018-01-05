@@ -318,52 +318,32 @@ angular.module("managerApp").service("VpsService", [
          * return the templates list available for this VPS
          */
         this.getTemplates = function (serviceName) {
-            var result = null;
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                if (vps && vps.name) {
-                    return $http.get([aapiRootPath, vps.name, "templates"].join("/"), {
-                        serviceType: "aapi"
-                    }).then(function (data) {
-                        result = data.data;
-                    });
-                } else {
-                    $q.reject(vps);
-                }
-            }).then(function () {
-                return result;
-            }, function (http) {
-                return $q.reject(http.data);
-            });
+            return $http.get([aapiRootPath, serviceName, "templates"].join("/"), { serviceType: "aapi"})
+                .then(response => response.data)
+                .catch(ServiceHelper.errorHandler("vps_configuration_polling_fail"));
         };
 
         /*
          * Reinstall the VPS using the template identified by templateId
          */
         this.reinstall = function (serviceName, templateId, language, softIds, sshKeys, doNotSendPassword) {
-            var result = null;
-            return this.getSelectedVps(serviceName).then(function (vps) {
-                if (!templateId) {
-                    return $q.reject("No templateId");
-                } else if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "reinstall"].join("/"), {
-                        language: language,
-                        softwareId: softIds,
-                        sshKey: sshKeys,
-                        doNotSendPassword: Boolean(doNotSendPassword),
-                        templateId: templateId
-                    }).then(function (data) {
-                        result = data.data;
-                    });
-                } else {
-                    return $q.reject(vps);
-                }
-            }).then(function () {
-                resetCache();
-                VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
-                return result;
-            }, function (http) {
-                return $q.reject(http.data);
-            });
+            if (!templateId) {
+                return $q.reject("No templateId");
+            }
+            return $http.post([swsVpsProxypass, serviceName, "reinstall"].join("/"), {
+                    language: language,
+                    softwareId: softIds,
+                    sshKey: sshKeys,
+                    doNotSendPassword: Boolean(doNotSendPassword),
+                    templateId: templateId
+                })
+                .then(response => {
+                    resetCache();
+                    VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
+                    return response.data;
+                })
+                .catch(ServiceHelper.errorHandler("vps_configuration_reinstall_fail"))
+                .finally(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_reinstall_success", {serviceName: this.serviceName})));
         };
 
         /*
