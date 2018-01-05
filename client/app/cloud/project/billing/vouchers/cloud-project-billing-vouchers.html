@@ -4,7 +4,7 @@
 
         <!-- ADD BUTTON -->
         <button class="oui-button oui-button_secondary"
-                data-ng-click="VouchersCtrl.toggleAddVoucher()"
+                data-ng-click="VouchersCtrl.openAddVoucher()"
                 data-ng-disabled="VouchersCtrl.loading.init || VouchersCtrl.datas.voucherIds === null"
                 write-right-required>
             <span data-translate="cpb_vouchers_add_button"/>
@@ -21,152 +21,26 @@
         <p data-translate="cpb_vouchers_add_explain_bis" class=""></p>
 
         <!-- VOUCHERS LIST -->
-        <table class="oui-table oui-table_responsive">
-            <thead class="oui-table__headers">
-                <tr>
-                    <th class="oui-table__header oui-table__cell_sortable" tabindex="0"
-                        data-ng-click="VouchersCtrl.sortBy('description')"
-                        data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'description' && !VouchersCtrl.sort.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'description' && VouchersCtrl.sort.reverse}">
-                        <span data-translate="cpb_vouchers_name_cell"></span>
-                    </th>
-                    <th class="oui-table__header" tabindex="0">
-                        <span data-translate="cpb_vouchers_products_cell"></span>
-                    </th>
-                    <th class="oui-table__header" tabindex="0">
-                        <span data-translate="cpb_vouchers_voucher_cell"></span>
-                    </th>
-                    <th class="oui-table__header oui-table__cell_sortable" tabindex="0"
-                        data-ng-click="VouchersCtrl.sortBy('validity.from')"
-                        data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'validity.from' && !VouchersCtrl.sort.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'validity.from' && VouchersCtrl.sort.reverse}">
-                        <span data-translate="cpb_vouchers_validity_from_cell"></span>
-                    </th>
-                    <th class="oui-table__header oui-table__cell_sortable" tabindex="0"
-                        data-ng-click="VouchersCtrl.sortBy('total_credit.value')"
-                        data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'total_credit.value' && !VouchersCtrl.sort.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'total_credit.value' && VouchersCtrl.sort.reverse}">
-                        <span data-translate="cpb_vouchers_total_credit_cell"></span>
-                    </th>
-                    <th class="oui-table__header oui-table__cell_sortable" tabindex="0"
-                        data-ng-click="VouchersCtrl.sortBy('validity.to')"
-                        data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'validity.to' && !VouchersCtrl.sort.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'validity.to' && VouchersCtrl.sort.reverse}">
-                        <span data-translate="cpb_vouchers_validity_to_cell"></span>
-                    </th>
-                    <th class="oui-table__header oui-table__cell_sortable" tabindex="0"
-                        data-ng-click="VouchersCtrl.sortBy('available_credit.value')"
-                        data-ng-class="{'oui-table__cell_sortable-asc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'available_credit.value' && !VouchersCtrl.sort.reverse, 'oui-table__cell_sortable-desc oui-table__cell_sorted' : VouchersCtrl.sort.by === 'available_credit.value' && VouchersCtrl.sort.reverse}">
-                        <span data-translate="cpb_vouchers_available_credit_cell"></span>
-                    </th>
-                </tr>
-            </thead>
-            <!-- ADD VOUCHERS -->
-            <tbody data-ng-show="VouchersCtrl.toggle.openAddVoucher" class="oui-table__body">
-                <tr class="oui-table__row" tabindex="0">
-                    <td colspan="7" class="no-space">
-                        <div class="animate-fadeInDown-enter animate-fadeOutUp-leave"
-                             ng-slide-down="VouchersCtrl.toggle.openAddVoucher"
-                             data-lazy-render
-                             data-duration="0.3">
-                            <div class="text-center" data-ng-if="VouchersCtrl.loading.add">
-                                <oui-spinner></oui-spinner>
-                            </div>
-                            <form name="voucherFormAdd" class="form-horizontal" data-ng-if="!VouchersCtrl.loading.add">
-                                <div class="row-fluid">
-                                    <div class="col-xs-12 no-space">
-                                        <div data-flat-input-container class="">
-                                            <input type="text"
-                                                   class="oui-input"
-                                                   id="voucherAddValue"
-                                                   autofocus=""
-                                                   name="voucherAddValue"
-                                                   placeholder="{{ :: 'cpb_vouchers_your_voucher' | translate }}"
-                                                   data-ng-model="VouchersCtrl.model.voucher" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row-fluid top-space-m12 bottom-space-p12 clearfix">
-                                    <div class="col-xs-12 text-center">
-                                        <button type="reset"
-                                                class="oui-button oui-button_secondary"
-                                                data-ng-click="VouchersCtrl.toggleAddVoucher()"
-                                                data-ng-disabled="VouchersCtrl.loading.add">
-                                            <span>{{ :: 'common_cancel' | translate }}</span>
-                                        </button>
-                                        <button type="submit"
-                                                class="oui-button oui-button_primary"
-                                                data-ng-disabled="!VouchersCtrl.model.voucher"
-                                                data-ng-click="VouchersCtrl.addVoucher()">
-                                            <span>{{ :: 'cpb_vouchers_your_voucher_add' | translate }}</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- NO DATAS BODY -->
-            <tbody data-ng-if="!VouchersCtrl.loading.init && VouchersCtrl.datas.voucherIds.length === 0" class="oui-table__body">
-                <tr class="oui-table__row" tabindex="0">
-                    <td colspan="7"
-                        class="text-center">
-                        <span>{{ :: 'cpb_vouchers_list_no_vouchers' | translate }}</span>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- NO DATAS BODY -->
-            <tbody data-ng-if="!VouchersCtrl.loading.init && VouchersCtrl.datas.voucherIds === null" class="oui-table__body">
-                <tr class="oui-table__row" tabindex="0">
-                    <td colspan="7"
-                        class="text-center">
-                        <i class="fa fa-bug"></i>
-                        <span>{{ :: 'cpb_vouchers_table_error' | translate }}</span>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- DATAS BODY -->
-            <tbody data-ng-if="!VouchersCtrl.loading.init && VouchersCtrl.datas.vouchers.length > 0" class="oui-table__body">
-                <tr data-ng-repeat="voucher in VouchersCtrl.datas.vouchers | orderBy:VouchersCtrl.sort.by:VouchersCtrl.sort.reverse" class="oui-table__row" tabindex="0">
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_name_cell' | translate }}">
-                        {{ :: VouchersCtrl.getVoucherDisplayName(voucher) }}
-                        <div data-ng-if="voucher.pdfUrl">
-                            <span data-translate="cpb_vouchers_bill_ref" data-translate-values="{ url : voucher.pdfUrl, billId : voucher.bill }"></span>
-                        </div>
-                    </td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_products_cell' | translate }}">{{ :: voucher.products.length ? voucher.products.join(', ') : ('cpb_vouchers_products_all' | translate) }}</td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_voucher_cell' | translate }}">{{ :: voucher.voucher }}</td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_validity_from_cell' | translate }}">{{ :: voucher.validity.from | date:'medium' }}</td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_total_credit_cell' | translate }}">{{ :: voucher.total_credit.text }}</td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_validity_to_cell' | translate }}">{{ :: voucher.validity.to | date:'medium' }}</td>
-                    <td class="oui-table__cell" data-title="{{ :: 'cpb_vouchers_available_credit_cell' | translate }}">{{ :: voucher.available_credit.text }}</td>
-                </tr>
-            </tbody>
-            <!-- LOADING BODY -->
-            <tbody data-ng-if="VouchersCtrl.loading.init" class="oui-table__body">
-                <tr>
-                    <td colspan="7"
-                        class="text-center">
-                        <oui-spinner></oui-spinner>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- PAGINATION TABLE -->
-        <div class="table-pretty-pagination top-space-m12"
-             data-ng-hide="VouchersCtrl.loading.init
-                            || VouchersCtrl.datas.voucherIds === null
-                            || VouchersCtrl.datas.voucherIds.length <= 5"
-             data-pagination-front
-             data-items="VouchersCtrl.datas.voucherIds"
-             data-paginated-items="VouchersCtrl.datas.vouchers"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-transform-item="VouchersCtrl.transformItem(item)"
-             data-on-transform-item-done="VouchersCtrl.onTransformItemDone(items)"
-             data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
-             data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
-        </div>
+        <oui-datagrid rows="VouchersCtrl.datas.vouchers">
+            <oui-column title="'cpb_vouchers_name_cell' | translate" property="id" sortable>
+                {{ :: VouchersCtrl.getVoucherDisplayName($row) }}
+                <div data-ng-if="$row.pdfUrl">
+                    <span data-translate="cpb_vouchers_bill_ref" data-translate-values="{ url : $row.pdfUrl, billId : $row.bill }"></span>
+                </div>
+            </oui-column>
+            <oui-column title="'cpb_vouchers_products_cell' | translate" property="products" sortable>
+                {{ :: $row.products.length ? $row.products.join(', ') : ('cpb_vouchers_products_all' | translate) }}
+            </oui-column>
+            <oui-column title="'cpb_vouchers_voucher_cell' | translate" property="voucher" sortable></oui-column>
+            <oui-column title="'cpb_vouchers_validity_from_cell' | translate" property="validity.from" sortable>
+                {{ :: $row.validity.from | date:'medium' }}
+            </oui-column>
+            <oui-column title="'cpb_vouchers_total_credit_cell' | translate" property="total_credit.text" sortable></oui-column>
+            <oui-column title="'cpb_vouchers_validity_to_cell' | translate" property="validity.to">
+                {{ :: $row.validity.to | date:'medium' }}
+            </oui-column>
+            <oui-column title="'cpb_vouchers_available_credit_cell' | translate" property="available_credit.text" sortable></oui-column>
+        </oui-datagrid>
 
         <p data-translate="cpb_vouchers_credit_comment" class="fs10 top-space-m20"></p>
 
