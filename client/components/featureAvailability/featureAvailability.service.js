@@ -86,10 +86,11 @@
         },
         CLOUD_DESKTOP: {
             sidebarOrder: {
-                EU: ["FR"]
+                EU: allEuropeanSubsidiaries
             },
             sidebarMenu: {
-                EU: ["FR"]
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         CONTACTS: {
