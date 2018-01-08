@@ -3,7 +3,7 @@
    <translation id="cpou_openrc_title" qtlid="263780">Download configuratiegegevens voor Openstack</translation>
    <translation id="cpou_openrc_expl" qtlid="263793">U gaat configuratiegegevens downloaden waardoor u met OpenStack verbinding zult kunnen maken.</translation>
    <translation id="cpou_openrc_more" qtlid="44536">Meer informatie over</translation>
-   <translation id="cpou_openrc_form_select_region" qtlid="263806">Selecteer de regio waren deze gegevens moeten worden toegepast:</translation>
+   <translation id="cpou_openrc_form_select_region" qtlid="263806">Selecteer de regio voor dit bestand:</translation>
    <translation id="cpou_openrc_form_select_region_placeholder" qtlid="263819">Selecteer de regio</translation>
    <translation id="cpou_openrc_getopenrc_success" qtlid="263832">Het configuratiegegevens worden gedownload</translation>
    <translation id="cpou_openrc_getopenrc_error" qtlid="263845">Oeps! Het lukt ons niet om de configuratiegegevens te downloaden</translation>
