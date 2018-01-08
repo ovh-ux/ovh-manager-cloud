@@ -138,14 +138,14 @@ class IpLoadBalancerServerFarmCtrl {
             this.farmActions[farm.farmId] = [
                 [{
                     text: this.i18n.preview,
-                    run: () => this.farmPreview(farm)
+                    callback: () => this.farmPreview(farm)
                 }],
                 [{
                     text: this.i18n.update,
-                    run: () => this.update(farm)
+                    callback: () => this.update(farm)
                 }, {
                     text: this.i18n.remove,
-                    run: () => this.delete(farm)
+                    callback: () => this.delete(farm)
                 }]
             ];
         });

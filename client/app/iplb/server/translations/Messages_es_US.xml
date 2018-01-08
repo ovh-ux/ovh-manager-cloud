@@ -20,7 +20,7 @@
    <translation id="iplb_server_edit_name" qtlid="415818">Nombre (opcional)</translation>
    <translation id="iplb_server_edit_address" qtlid="79314">Adresse IPv4</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Port</translation>
-   <translation id="iplb_server_edit_port_tip" qtlid="437934">1 a {{portMax}}, formato: simple (p.ej.: 80), rango (p.ej.: 1000-1200), multi (p.ej.: 80,443)</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="448673">Puerto asociado a su servidor (1 a {{portMax}}). Por defecto, heredado del puerto de la granja.</translation>
    <translation id="iplb_server_edit_advanced_options" qtlid="39958">Paramètres avancés</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Afficher</translation>

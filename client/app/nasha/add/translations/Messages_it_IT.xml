@@ -25,6 +25,7 @@
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasburgo</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Grazie all'enorme successo, al momento il servizio non è disponibile nel datacenter {{ region }}. Per ottenere performance simili, è possibile scegliere il datacenter di {{ fallback }}.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Si è verificato un errore durante la conferma del tuo ordine.</translation>
    <translation id="nasha_order_error" qtlid="345286">Si è verificato un errore durante il recupero del buono d'ordine.</translation>
    <translation id="nasha_order_success" qtlid="345299">L'ordine n. <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> del tuo NAS-HA è stato preso in carico correttamente.</translation>

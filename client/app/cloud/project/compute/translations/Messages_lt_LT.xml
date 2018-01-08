@@ -4,6 +4,7 @@
    <translation id="cpc_tab_snapshot" qtlid="170343">Atsarginės kopijos</translation>
    <translation id="cpc_tab_volume" qtlid="246923">Papildomi diskai</translation>
    <translation id="cpc_tab_ssh" qtlid="104830">SSH raktai</translation>
+   <translation id="cpc_tab_loadbalancer" qtlid="323499">IP Load Balancer</translation>
    <translation id="cpc_tab_project" qtlid="261283">Projekto valdymas bei resursų naudojimas</translation>
    <translation id="cpc_message" qtlid="439767">OVH Cloud atvyko į Vokietiją! <a href="http://superlienverslapage">Susipažinkite su duomenų centru Limburge.</a></translation>
    <translation id="cloud_message_pci_uk1" qtlid="442868">Mūsų naujo UK1 regiono atidarymas Londone, Jungtinėje Karalystėje!</translation>
@@ -12,4 +13,5 @@
    <translation id="cloud_message_pci_de1_link" qtlid="439793">Sužinokite, kokie privalumai</translation>
    <translation id="cloud_message_pci_g3" qtlid="439806">Naujiena: GPU G3-30 ir G3-120 suteikimas data science ar machine learning aplikacijoms.</translation>
    <translation id="cloud_message_pci_no_link" qtlid="76722">Daugiau informacijos...</translation>
+   <translation id="cloud_message_pci_bandwitdh_xmas" qtlid="451045">From December 19th 2017 until January 8th 2018 inclusive, get up to 10 GBits/s of network bandwidth (overall) for C2-120, B2-120, R2-240 and G3-120 instances.</translation>
 </translations>

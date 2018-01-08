@@ -35,6 +35,9 @@ class CloudProjectComputeLoadbalancerService {
                         loadbalancer.farm = farm;
                     }
                     return loadbalancer;
+                }).catch(() => {
+                    loadbalancer.state = "broken";
+                    return loadbalancer;
                 });
             })
             .then(loadbalancer => {

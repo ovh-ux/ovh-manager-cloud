@@ -224,7 +224,21 @@ angular.module("managerApp")
                 FR: "https://www.ovh.com/fr/cloud/cloud-disk-array/"
             },
             cloud_desktop: {
-                FR: "https://www.ovh.com/fr/cloud/cloud-desktop/"
+                CZ: "https://www.ovh.cz/cloud/cloud-desktop/",
+                DE: "https://www.ovh.de/cloud/cloud-desktop/",
+                ES: "https://www.ovh.es/cloud/cloud-desktop/",
+                FI: "https://www.ovh-hosting.fi/cloud/cloud-desktop/",
+                FR: "https://www.ovh.com/fr/cloud/cloud-desktop/",
+                GB: "https://www.ovh.co.uk/cloud/cloud-desktop/",
+                IE: "https://www.ovh.ie/cloud/cloud-desktop/",
+                IT: "https://www.ovh.it/cloud/cloud-desktop/",
+                LT: "https://www.ovh.lt/cloud/cloud-desktop/",
+                MA: "https://www.ovh.ma/cloud/cloud-desktop/",
+                NL: "https://www.ovh.nl/cloud/cloud-desktop/",
+                PL: "https://www.ovh.pl/cloud/cloud-desktop/",
+                PT: "https://www.ovh.pt/cloud/cloud-desktop/",
+                SN: "https://www.ovh.sn/cloud/cloud-desktop/",
+                TN: "https://www.ovh.com/tn/cloud/cloud-desktop/"
             }
         },
         guides: {

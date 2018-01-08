@@ -20,7 +20,7 @@
    <translation id="iplb_server_edit_name" qtlid="415818">Nimi (valinnainen)</translation>
    <translation id="iplb_server_edit_address" qtlid="79314">IPv4-soite</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Portti</translation>
-   <translation id="iplb_server_edit_port_tip" qtlid="437934">1 - {{portMax}}, format : simple (ex: 80), range (ex: 1000-1200), multi (ex: 80,443)</translation>
+   <translation id="iplb_server_edit_port_tip" qtlid="448673">Palvelimeesi liitetty portti (1 - {{portMax}}). Palvelin käyttää oletuksena palvelinfarmissa käytettyä porttia.</translation>
    <translation id="iplb_server_edit_advanced_options" qtlid="39958">Lisäasetukset</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Yleisimmät oletusarvot on esimääritetty. Voit muokata niitä milloin tahansa.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Näytä</translation>

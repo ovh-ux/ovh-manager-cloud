@@ -43,7 +43,7 @@
    <translation id="iplb_farm_edit_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_farm_edit_protocol" qtlid="437921">Protocolo (não alterável após criação)</translation>
    <translation id="iplb_farm_edit_port" qtlid="9034">Porta</translation>
-   <translation id="iplb_farm_edit_port_tip" qtlid="437934">de 1 a {{portMax}}, formato: simples (ex: 80), alcance(ex: 1000-1200), multipla (ex: 80,443)</translation>
+   <translation id="iplb_farm_edit_port_tip" qtlid="448660">Porta associada à server farm (de 1 a {{portMax}}). O servidor está pré-configurado para usar a porta do frontend.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Configurações avançadas</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Os valores predefinidos mais habituais estão pré-configurados, mas podem ser alterados a qualquer momento.</translation>
@@ -76,7 +76,6 @@
    <translation id="iplb_farm_edit_probe_type_smtp" qtlid="19651">SMTP</translation>
    <translation id="iplb_farm_edit_probe_type_tcp" qtlid="141821">TCP</translation>
    <translation id="iplb_farm_edit_probe_info_error" qtlid="438129">Ocorreu um erro durante a recuperação da informação para a sonda.</translation>
-
    <translation id="iplb_farm_edit_probe_button" qtlid="437960">Parâmetros da sonda</translation>
 
    <translation id="iplb_farm_edit_cancel" qtlid="37863">Anular</translation>

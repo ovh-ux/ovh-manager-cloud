@@ -41,6 +41,10 @@
    <translation id="cloud_common_region_DE_micro" qtlid="437598">Francfort ({{ micro }})</translation>
    <translation id="cloud_common_region_UK" qtlid="94015">Londres</translation>
    <translation id="cloud_common_region_UK_micro" qtlid="442756">Londres ({{ micro }})</translation>
+   <translation id="cloud_common_region_SGP" qtlid="189068">Singapour</translation>
+   <translation id="cloud_common_region_SGP_micro" qtlid="447534">Singapour ({{ micro }})</translation>
+   <translation id="cloud_common_region_SYD" qtlid="414330">Sydney</translation>
+   <translation id="cloud_common_region_SYD_micro" qtlid="449167">Sydney ({{ micro }})</translation>
 
    <translation id="cloud_common_region_localize" qtlid="264231">Localiser</translation>
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europe Centrale (France)</translation>
@@ -50,6 +54,8 @@
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europe de l'Ouest (France)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Europe Centrale (Allemagne)</translation>
    <translation id="cloud_common_region_location_UK" qtlid="442769">Europe de l'Ouest (Grande-Bretagne)</translation>
+   <translation id="cloud_common_region_location_SGP" qtlid="447547">Asie du Sud-Est (Singapour)</translation>
+   <translation id="cloud_common_region_location_SYD" qtlid="449180">Océanie (Australie)</translation>
 
    <translation id="browser_alert_not_supported" qtlid="405357">Votre navigateur n'est pas supporté.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Votre navigateur n'est pas à jour et peut contenir des failles de sécurité ou de compatibilité.</translation>

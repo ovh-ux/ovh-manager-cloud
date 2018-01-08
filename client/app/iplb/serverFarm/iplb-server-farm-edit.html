@@ -31,14 +31,18 @@
             </div>
         </div>
 
-        <div class="oui-field">
+        <div class="oui-field"
+            data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.port.$invalid}">
             <label for="port" class="oui-label" data-translate="iplb_farm_edit_port"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_1">
-                    <input type="text"
+                    <input type="number"
                         id="port"
+                        min="1"
+                        data-ng-max="ctrl.portLimit"
                         name="port"
                         class="oui-input"
+                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.port.$invalid}"
                         data-ng-model="ctrl.farm.port"/>
                 </div>
                 <div class="oui-field-helper"
@@ -112,7 +116,7 @@
                                 name="probeType"
                                 id="probeType"
                                 data-ng-model="ctrl.farm.probe.type"
-                                data-ng-options="probe as ('iplb_farm_edit_probe_type_' + probe) | translate for probe in ctrl.probeTypes"">
+                                data-ng-options="probe as ('iplb_farm_edit_probe_type_' + probe) | translate for probe in ctrl.probeTypes">
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>

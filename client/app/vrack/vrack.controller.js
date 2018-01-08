@@ -78,7 +78,6 @@ angular.module("managerApp").controller("VrackCtrl",
     self.getAllowedServices = function () {
         return OvhApiVrack.Aapi().allowedServices({ serviceName: self.serviceName }).$promise
             .then(function (allServices) {
-                allServices.ipLoadbalancing = []; // Remove this line once IPLB is ready for vRack
                 allServices = _.mapValues(allServices, function (services, serviceType) {
                     if (_.isArray(services)) {
                         return _.map(services, function (service) {
@@ -146,7 +145,7 @@ angular.module("managerApp").controller("VrackCtrl",
             serviceName: self.serviceName
         }).$promise.then(function (taskIds) {
             return $q.all(_.map(taskIds, function (id) {
-                return Vrack.Lexi().task({
+                return OvhApiVrack.Lexi().task({
                     serviceName: self.serviceName,
                     taskId: id
                 }).$promise.then(function (task) {
@@ -164,6 +163,7 @@ angular.module("managerApp").controller("VrackCtrl",
     self.resetCache = function () {
         OvhApiVrack.Lexi().resetCache();
         OvhApiVrack.CloudProject().Lexi().resetQueryCache();
+        OvhApiVrack.IpLoadBalancing().Lexi().resetQueryCache();
         OvhApiVrack.DedicatedCloud().Lexi().resetQueryCache();
         OvhApiVrack.DedicatedServer().Lexi().resetQueryCache();
         OvhApiVrack.DedicatedServerInterface().Lexi().resetQueryCache();
@@ -411,6 +411,13 @@ angular.module("managerApp").controller("VrackCtrl",
                         project: service.id
                     }).$promise;
                     break;
+                case "ipLoadbalancing":
+                    task = OvhApiVrack.IpLoadBalancing().Lexi().create({
+                        serviceName: self.serviceName
+                    }, {
+                        ipLoadbalancing: service.id
+                    }).$promise;
+                    break;
             }
             return task.catch(function (err) {
                 CloudMessage.error([$translate.instant("vrack_add_error"), err.data && err.data.message || ""].join(" "));
@@ -463,6 +470,12 @@ angular.module("managerApp").controller("VrackCtrl",
                     task = OvhApiVrack.CloudProject().Lexi()["delete"]({
                         serviceName: self.serviceName,
                         project: service.id
+                    }).$promise;
+                    break;
+                case "ipLoadbalancing":
+                    task = OvhApiVrack.IpLoadBalancing().Lexi()["delete"]({
+                        serviceName: self.serviceName,
+                        ipLoadbalancing: service.id
                     }).$promise;
                     break;
             }
@@ -588,6 +601,9 @@ angular.module("managerApp").controller("VrackCtrl",
         case "cloudProject":
             formattedService = getCloudProjectNiceName(service);
             break;
+        case "ipLoadbalancing":
+            formattedService = getIpLoadbalancingNiceName(service);
+            break;
         default:
             formattedService = _.cloneDeep(service);
             break;
@@ -640,6 +656,19 @@ angular.module("managerApp").controller("VrackCtrl",
             formattedService.niceName = service.project_id;
         }
         formattedService.trueServiceType = "cloudProject";
+        return formattedService;
+    }
+
+    function getIpLoadbalancingNiceName (service) {
+        var formattedService = {};
+        angular.copy(service, formattedService);
+        formattedService.id = service.serviceName;
+        if (service.displayName) {
+            formattedService.niceName = service.displayName;
+        } else {
+            formattedService.niceName = service.serviceName;
+        }
+        formattedService.trueServiceType = "ipLoadbalancing";
         return formattedService;
     }
 

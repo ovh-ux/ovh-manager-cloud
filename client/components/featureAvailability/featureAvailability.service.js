@@ -1,6 +1,6 @@
 (() => {
     "use strict";
-    const allEuropeanSubsidiaries = ["CZ", "DE", "ES", "FI", "FR", "GB", "IE", "IT", "LT", "MA" ,"NL", "PL", "PT", "SN", "TN"];
+    const allEuropeanSubsidiaries = ["CZ", "DE", "ES", "FI", "FR", "GB", "IE", "IT", "LT", "MA", "NL", "PL", "PT", "SN", "TN"];
     const allCanadianSubsidiaries = ["ASIA", "AU", "CA", "QC", "SG", "WE", "WS"];
     const featuresAvailability = {
         VPS: {
@@ -26,7 +26,7 @@
                 US: ["US"]
             }
         },
-        DEDICATED_CLOUD:{
+        DEDICATED_CLOUD: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
@@ -43,7 +43,7 @@
         iplb: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
+                // CA: allCanadianSubsidiaries, TODO : to remove when iplb order prodded in CA
                 US: ["US"]
             }
         },
@@ -86,10 +86,16 @@
         },
         CLOUD_DESKTOP: {
             sidebarOrder: {
-                EU: ["FR"]
+                EU: allEuropeanSubsidiaries
             },
             sidebarMenu: {
-                EU: ["FR"]
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            }
+        },
+        CONTACTS: {
+            manage: {
+                EU: allEuropeanSubsidiaries
             }
         }
     };
@@ -108,7 +114,7 @@
         }
 
         hasFeature (product, feature, locale = this.locale) {
-            if (!_.has(featuresAvailability, [product, feature, this.TARGET ])) {
+            if (!_.has(featuresAvailability, [product, feature, this.TARGET])) {
                 return false;
             }
             return _.indexOf(featuresAvailability[product][feature][this.TARGET], locale) !== -1;

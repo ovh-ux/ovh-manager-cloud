@@ -69,39 +69,23 @@
                     data-loading="MetricsDashboardCtrl.loading.service"
                     class="h-100">
                 <div class="cui-tile__body">
-                    <div class="cui-tile__item cui-dropdown-menu-container">
-                        <dl class="cui-tile__definition">
+                    <cui-tile-item data-actions="MetricsDashboardCtrl.actions.editName">
+                        <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_name' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description data-description="MetricsDashboardCtrl.configuration.description || MetricsDashboardCtrl.configuration.name"></cui-tile-definition-description>
-                            <cui-dropdown-menu>
-                                <cui-dropdown-menu-button>
-                                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                                </cui-dropdown-menu-button>
-                                <cui-dropdown-menu-body>
-                                    <div class="oui-action-menu">
-                                    <div class="oui-action-menu__item oui-action-menu-item">
-                                        <div class="oui-action-menu-item__icon"></div>
-                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                            type="button"
-                                            data-translate="metrics_tiles_modify"
-                                            data-ng-click="MetricsDashboardCtrl.showEditName(MetricsDashboardCtrl.configuration.description)"></button>
-                                    </div>
-                                    </div>
-                                </cui-dropdown-menu-body>
-                            </cui-dropdown-menu>
-                        </dl>
-                    </div>
-                    <div class="cui-tile__item cui-dropdown-menu-container">
-                        <dl class="cui-tile__definition">
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_retention' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
                                 <span data-ng-bind=":: MetricsDashboardCtrl.configuration.retention"></span>
                                 <span data-translate="metrics_tiles_configuration_retention_month"></span>
                             </cui-tile-definition-description>
-                        </dl>
-                    </div>
-                    <div class="cui-tile__item cui-dropdown-menu-container">
-                        <dl class="cui-tile__definition">
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_datacenter' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
                                 <i class="flag-icon {{ MetricsDashboardCtrl.configuration.datacenter.flag }} flag flag__icon-sm"></i>
@@ -110,8 +94,8 @@
                                     <small data-ng-bind=":: MetricsDashboardCtrl.configuration.datacenter.country"></small>
                                 </span>
                             </cui-tile-definition-description>
-                        </dl>
-                    </div>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
 
                 </div>
             </cui-tile>
