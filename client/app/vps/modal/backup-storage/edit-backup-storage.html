@@ -45,6 +45,6 @@
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
         <cui-submit-button data-text="'common_confirm' | translate"
             data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.save"></cui-submit-button>
+            data-disabled="$ctrl.loader.save || !$ctrl.validateCheckboxes()"></cui-submit-button>
     </cui-modal-footer>
 </cui-modal>

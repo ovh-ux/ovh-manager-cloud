@@ -18,6 +18,10 @@ class EditBackupStorageCtrl {
         };
     }
 
+    validateCheckboxes () {
+        return this.model.ftp || this.model.cifs || this.model.nfs;
+    }
+
     cancel () {
         this.$uibModalInstance.dismiss();
     }
