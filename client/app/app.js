@@ -130,8 +130,11 @@ angular.module("managerApp", [
             };
 
             ouiPaginationConfiguration.translations = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                ofNResults: $translate.instant("common_pagination_ofnresults"),
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                ofNResults: $translate.instant("common_pagination_ofnresults")
+                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
                 currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount"),
                 previousPage: $translate.instant("common_pagination_previous"),
                 nextPage: $translate.instant("common_pagination_next")
