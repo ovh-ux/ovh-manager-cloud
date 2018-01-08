@@ -1,69 +1,71 @@
 <cui-modal>
-    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <cui-modal-body data-title="'vps_backup_storage_access_add' | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
-        </div>
-        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
-            <div data-ng-if="!$ctrl.isAvailable()">
-                <cui-modal-text data-text="'vps_backup_storage_access_add_no_block' | translate"></cui-modal-text>
+    <form name="VpsBackupStorageAddForm">
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body data-title="'vps_backup_storage_access_add' | translate">
+            <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+                <oui-loader class="d-inline-block"></oui-loader>
             </div>
-            <div data-ng-if="$ctrl.isAvailable()">
-                <cui-modal-text data-text="'vps_backup_storage_access_add_info' | translate"></cui-modal-text>
+            <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
+                <div data-ng-if="!$ctrl.isAvailable()">
+                    <cui-modal-text data-text="'vps_backup_storage_access_add_no_block' | translate"></cui-modal-text>
+                </div>
+                <div data-ng-if="$ctrl.isAvailable()">
+                    <cui-modal-text data-text="'vps_backup_storage_access_add_info' | translate"></cui-modal-text>
 
-                <!-- ipBlocks choice -->
-                <label for="access-ip" class="oui-label" data-translate="vps_backup_storage_access_add_ip"></label>
-                <div class="oui-select">
-                    <select name="access-ip" id="access-ip" class="oui-select__input" multiple required
-                            data-ng-options="ip for ip in $ctrl.available"
-                            data-ng-model="$ctrl.model.ip">
-                    </select>
-                    <!-- <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i> -->
-                </div>
+                    <!-- ipBlocks choice -->
+                    <label for="access-ip" class="oui-label" data-translate="vps_backup_storage_access_add_ip"></label>
+                    <div class="oui-select">
+                        <select name="access-ip" id="access-ip" class="oui-select__input" multiple required
+                                data-ng-options="ip for ip in $ctrl.available"
+                                data-ng-model="$ctrl.model.ip" required>
+                        </select>
+                        <!-- <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i> -->
+                    </div>
 
-                <!-- cifs/fps/nfs choice -->
-                <cui-modal-text data-text="'vps_backup_storage_access_add_info3' | translate"></cui-modal-text>
-                <cui-modal-text data-text="'vps_backup_storage_access_add_authorization' | translate"></cui-modal-text>
-                <div class="oui-checkbox oui-checkbox_inline">
-                    <input class="oui-checkbox__input" id="acces-cifs" type="checkbox" data-ng-model="$ctrl.model.cifs"/>
-                    <label class="oui-checkbox__label-container" for="acces-cifs">
-                        <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_cifs"></span>
-                        <span class="oui-checkbox__icon">
-                            <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                        </span>
-                    </label>
-                </div>
-                <div class="oui-checkbox oui-checkbox_inline">
-                    <input class="oui-checkbox__input" id="acces-ftp" type="checkbox" data-ng-model="$ctrl.model.ftp"/>
-                    <label class="oui-checkbox__label-container" for="acces-ftp">
-                        <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_ftp"></span>
-                        <span class="oui-checkbox__icon">
-                            <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                        </span>
-                    </label>
-                </div>
-                <div class="oui-checkbox oui-checkbox_inline">
-                    <input class="oui-checkbox__input" id="acces-nfs" type="checkbox" data-ng-model="$ctrl.model.nfs"/>
-                    <label class="oui-checkbox__label-container" for="acces-nfs">
-                        <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_nfs"></span>
-                        <span class="oui-checkbox__icon">
-                            <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                        </span>
-                    </label>
+                    <!-- cifs/fps/nfs choice -->
+                    <cui-modal-text data-text="'vps_backup_storage_access_add_info3' | translate"></cui-modal-text>
+                    <cui-modal-text data-text="'vps_backup_storage_access_add_authorization' | translate"></cui-modal-text>
+                    <div class="oui-checkbox oui-checkbox_inline">
+                        <input class="oui-checkbox__input" id="acces-cifs" type="checkbox" data-ng-model="$ctrl.model.cifs">
+                        <label class="oui-checkbox__label-container" for="acces-cifs">
+                            <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_cifs"></span>
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="oui-checkbox oui-checkbox_inline">
+                        <input class="oui-checkbox__input" id="acces-ftp" type="checkbox" data-ng-model="$ctrl.model.ftp">
+                        <label class="oui-checkbox__label-container" for="acces-ftp">
+                            <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_ftp"></span>
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="oui-checkbox oui-checkbox_inline">
+                        <input class="oui-checkbox__input" id="acces-nfs" type="checkbox" data-ng-model="$ctrl.model.nfs">
+                        <label class="oui-checkbox__label-container" for="acces-nfs">
+                            <span class="oui-checkbox__label" data-translate="vps_tab_backup_storage_table_nfs"></span>
+                            <span class="oui-checkbox__icon">
+                                <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                                <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
-    </cui-modal-body>
-    <cui-modal-footer data-ng-if="$ctrl.isAvailable()">
-        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_confirm' | translate"
-            data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
-    </cui-modal-footer>
+        </cui-modal-body>
+        <cui-modal-footer data-ng-if="$ctrl.isAvailable()">
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_confirm' | translate"
+                               data-on-click="$ctrl.confirm()"
+                               data-disabled="$ctrl.loader.init || $ctrl.loader.save || !$ctrl.validateCheckboxes()"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
 </cui-modal>
