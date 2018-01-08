@@ -3,7 +3,7 @@
    <translation id="cpou_openrc_title" qtlid="263780">Efetuar download do ficheiro de configuração Openstack</translation>
    <translation id="cpou_openrc_expl" qtlid="263793">Vai efetuar o download do ficheiro de configuração que permite a sua ligação ao Openstack.</translation>
    <translation id="cpou_openrc_more" qtlid="44536">Saber mais</translation>
-   <translation id="cpou_openrc_form_select_region" qtlid="263806">Selecionar a região na qual o ficheiro será aplicado:</translation>
+   <translation id="cpou_openrc_form_select_region" qtlid="263806">Selecionar a região para aplicar o ficheiro:</translation>
    <translation id="cpou_openrc_form_select_region_placeholder" qtlid="263819">Selecionar uma região</translation>
    <translation id="cpou_openrc_getopenrc_success" qtlid="263832">O download do ficheiro de configuração está em curso</translation>
    <translation id="cpou_openrc_getopenrc_error" qtlid="263845">Oups! Não conseguimos efetuar o download do ficheiro de configuração</translation>

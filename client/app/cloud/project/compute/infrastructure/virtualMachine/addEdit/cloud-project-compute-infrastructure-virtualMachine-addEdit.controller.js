@@ -966,7 +966,11 @@ angular.module("managerApp")
 
     $scope.$watch('VmAddEditCtrl.model.sshKeyId', function (value, oldValue) {
         if  (value) {
-            self.vmInEdition.sshKey = _.find(self.panelsData.sshKeys, { id: value });
+            var sshkey = _.find(self.panelsData.sshKeys, { id: value });
+            if (!sshkey || !sshkey.availableOnRegion) {
+                return;
+            }
+            self.vmInEdition.sshKey = sshkey
 
             if (value !== oldValue) {
                 self.backToMenu();
