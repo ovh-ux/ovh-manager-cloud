@@ -28,6 +28,10 @@ class AddBackupStorageCtrl {
         return !_.isEmpty(this.available);
     }
 
+    validateCheckboxes () {
+        return this.model.ftp || this.model.cifs || this.model.nfs;
+    }
+
     loadAvailableIpBlocks () {
         this.VpsService.getBackupStorageAuthorizableBlocks(this.serviceName)
             .then(data => { this.available = data })
