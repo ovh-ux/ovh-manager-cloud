@@ -16,7 +16,9 @@
             <h2 class="oui-modal__title" data-translate="nasha_access_action_add"></h2>
 
             <div class="bottom-space-m12">
-                <oui-message type="info" message="{{ :: 'nasha_partitions_access_notice' | translate }}"></oui-message>
+                <oui-message type="info">
+                    <span data-translate="nasha_partitions_access_notice"></span>
+                </oui-message>
             </div>
             <div class="form-group">
                 <label class="nasha-partition-add-title" data-translate="nasha_access_action_add_message" for="selectAccess"></label>
@@ -34,8 +36,9 @@
                 <strong class="permissions" data-translate="nasha_partitions_access_permissions"></strong>
 
                 <oui-message type="warning"
-                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'"
-                    message="{{ :: 'nasha_partitions_access_permissions_warning_cifs' | translate }}"></oui-message>
+                    data-ng-if="NashaPartitionAccessAddCtrl.data.partition.protocol !== 'NFS'">
+                        <span data-translate="nasha_partitions_access_permissions_warning_cifs"></span>
+                    </oui-message>
 
                 <div class="radio">
                     <label class="protocols-radio top-space-m4">
