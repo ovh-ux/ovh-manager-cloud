@@ -140,13 +140,13 @@
                     <h4 class="oui-header_4 cui-tile__title" data-translate="vdi_task_current"></h4>
                     <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
                         <oui-datagrid data-rows="DeskaasDetailsCtrl.tasksHandler.cleanTasks">
-                            <oui-column title="'vdi_task_id' | translate" property="taskId" sortable="asc"></oui-column>
-                            <oui-column title="'vdi_task_name' | translate" property="displayName" sortable></oui-column>
-                            <oui-column title="'vdi_task_state' | translate" property="displayState" sortable></oui-column>
-                            <oui-column title="'vdi_task_modification_date' | translate" property="lastModificationDate" sortable>
+                            <oui-column data-title="'vdi_task_id' | translate" data-property="taskId" data-sortable="asc"></oui-column>
+                            <oui-column data-title="'vdi_task_name' | translate" data-property="displayName" data-sortable></oui-column>
+                            <oui-column data-title="'vdi_task_state' | translate" data-property="displayState" data-sortable></oui-column>
+                            <oui-column data-title="'vdi_task_modification_date' | translate" data-property="lastModificationDate" data-sortable>
                                 {{ $row.lastModificationDate | momentFormat:'LLL' }}
                             </oui-column>
-                            <oui-column title="'common_progress' | translate" property="progress" sortable class="oui-table__cell_component">
+                            <oui-column data-title="'common_progress' | translate" data-property="progress" data-sortable class="oui-table__cell_component">
                                 <cui-task-progress data-task="$row"></cui-task-progress>
                             </oui-column>
                         </oui-datagrid>
