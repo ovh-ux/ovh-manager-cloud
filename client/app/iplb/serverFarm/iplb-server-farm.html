@@ -17,7 +17,6 @@
             data-translate="iplb_farm_add_server"
             data-ui-sref="network.iplb.detail.server-farm.server-add({ farmId: farm.farmId })"></a>
 
-        <oui-spinner data-ng-show="!farm.servers || farm.servers.loading"></oui-spinner>
         <oui-datagrid data-rows="farm.servers.data">
             <oui-column data-title="'iplb_farm_server_list_col_server' | translate" data-property="serverId" data-sortable="asc">
                 {{ $row.displayName || $row.serverId }}

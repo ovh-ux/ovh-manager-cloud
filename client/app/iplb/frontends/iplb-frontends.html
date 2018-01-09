@@ -6,7 +6,6 @@
         data-ui-sref="network.iplb.detail.frontends.add"
         data-translate="iplb_frontend_add_title"></a>
 
-    <oui-spinner data-ng-show="ctrl.loading"></oui-spinner>
     <oui-datagrid data-rows="ctrl.frontends"
         data-row-loader="ctrl.loadFarm($row)">
         <oui-column data-title="'iplb_frontend_frontend' | translate" data-property="frontendId" data-sortable="asc">
