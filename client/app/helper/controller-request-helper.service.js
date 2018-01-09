@@ -16,7 +16,7 @@ class ControllerRequestHelper {
     getArrayLoader (config) {
         const loader = {
             loading: false,
-            data: [],
+            data: undefined,
             hasErrors: false
         };
 
