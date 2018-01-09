@@ -131,11 +131,11 @@
                                    data-ng-if="$ctrl.summary.data.ftpBackup.optionActivated"
                                    data-actions="[$ctrl.backupStorageActions.manage, $ctrl.backupStorageActions.terminate]"></cui-tile-item>
 
-                    <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
+                    <cui-tile-item data-term="'vps_tab_snapshot' | translate"
                                    data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.data.snapshot.optionActivated"
                                    data-actions="$ctrl.snapshotActions.order"></cui-tile-item>
-                    <cui-tile-item data-term="'vps_tab_SUMMARY_snapshot' | translate"
+                    <cui-tile-item data-term="'vps_tab_snapshot' | translate"
                                    data-description="$ctrl.snapshotDescription"
                                    data-ng-if="$ctrl.summary.data.snapshot.optionActivated"
                                    data-actions="[
@@ -145,11 +145,11 @@
                                        $ctrl.snapshotActions.terminate
                                    ]"></cui-tile-item>
 
-                    <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
+                    <cui-tile-item data-term="'vps_tab_veeam' | translate"
                                    data-description="'vps_status_disabled' | translate"
                                    data-ng-if="!$ctrl.summary.data.veeamActivated"
                                    data-actions="$ctrl.veeamActions.order"></cui-tile-item>
-                    <cui-tile-item data-term="'vps_tab_SUMMARY_veeam' | translate"
+                    <cui-tile-item data-term="'vps_tab_veeam' | translate"
                                    data-description="'vps_status_enabled' | translate"
                                    data-ng-if="$ctrl.summary.data.veeamActivated"
                                    data-actions="[$ctrl.veeamActions.manage, $ctrl.veeamActions.terminate]"></cui-tile-item>
