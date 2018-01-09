@@ -10,10 +10,10 @@
 </button>
 
 <!-- OPENSTACK USERS TABLE -->
-<oui-datagrid rows="CloudProjectOpenstackUsersCtrl.table.users">
-    <oui-column title="'openstackusers_users_userlist_username_cols' | translate" property="username" sortable></oui-column>
-    <oui-column title="'openstackusers_users_userlist_description_cols' | translate" property="description" sortable></oui-column>
-    <oui-column title="'openstackusers_users_userlist_password_cols' | translate" property="id">
+<oui-datagrid data-rows="CloudProjectOpenstackUsersCtrl.table.users">
+    <oui-column data-title="'openstackusers_users_userlist_username_cols' | translate" data-property="username" data-sortable></oui-column>
+    <oui-column data-title="'openstackusers_users_userlist_description_cols' | translate" data-property="description" data-sortable></oui-column>
+    <oui-column data-title="'openstackusers_users_userlist_password_cols' | translate" data-property="id">
         <div data-ng-class="{
              'opacity2-leave' : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === $row.id,
              'opacity0-leave' : CloudProjectOpenstackUsersCtrl.toggle.userGenerateTokenId === $row.id,
@@ -40,7 +40,7 @@
         </div>
     </oui-column>
 
-    <oui-column title="'openstackusers_users_userlist_status_cols' | translate" property="status" sortable>
+    <oui-column data-title="'openstackusers_users_userlist_status_cols' | translate" data-property="status" data-sortable>
         <span class="label"
               data-ng-class="{
               'opacity2-leave'    : CloudProjectOpenstackUsersCtrl.toggle.userDeleteId === $row.id,
@@ -52,14 +52,14 @@
             {{ $row.status }}
         </span>
     </oui-column>
-    <oui-action-menu data-align="end" compact>
-        <oui-action-menu-item text="{{'openstackusers_users_go_to_horizon_button' | translate}}"
-                              on-click="CloudProjectOpenstackUsersCtrl.openHorizon($row)"></oui-action-menu-item>
-        <oui-action-menu-item text="{{'cpou_openrc_title' | translate}}"
-                              on-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile($row)"></oui-action-menu-item>
-        <oui-action-menu-item text="{{'cpou_token_title' | translate}}"
-                              on-click="CloudProjectOpenstackUsersCtrl.generateToken($row)"></oui-action-menu-item>
-        <oui-action-menu-item text="{{'openstackusers_users_userlist_delete_submit' | translate}}"
-                              on-click="CloudProjectOpenstackUsersCtrl.openDeleteUser($row)"></oui-action-menu-item>
+    <oui-action-menu data-align="end" data-compact>
+        <oui-action-menu-item data-text="{{'openstackusers_users_go_to_horizon_button' | translate}}"
+                              data-on-click="CloudProjectOpenstackUsersCtrl.openHorizon($row)"></oui-action-menu-item>
+        <oui-action-menu-item data-text="{{'cpou_openrc_title' | translate}}"
+                              data-on-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile($row)"></oui-action-menu-item>
+        <oui-action-menu-item data-text="{{'cpou_token_title' | translate}}"
+                              data-on-click="CloudProjectOpenstackUsersCtrl.generateToken($row)"></oui-action-menu-item>
+        <oui-action-menu-item data-text="{{'openstackusers_users_userlist_delete_submit' | translate}}"
+                              data-on-click="CloudProjectOpenstackUsersCtrl.openDeleteUser($row)"></oui-action-menu-item>
     </oui-action-menu>
 </oui-datagrid>
