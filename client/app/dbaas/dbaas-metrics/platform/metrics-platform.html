@@ -8,16 +8,16 @@
         </p>
     </div>
     <div class="metrics__row">
-        <oui-datagrid rows="MetricsPlatformCtrl.platforms">
-            <oui-column title="'metrics_platform_proto' | translate"
-                    property="proto"
-                    sortable></oui-column>
-            <oui-column title="'metrics_platform_address' | translate"
-                    property="address">
+        <oui-datagrid data-rows="MetricsPlatformCtrl.platforms">
+            <oui-column data-title="'metrics_platform_proto' | translate"
+                    data-property="proto"
+                    data-sortable="asc"></oui-column>
+            <oui-column data-title="'metrics_platform_address' | translate"
+                    data-property="address">
                 <cui-clipboard data-text="$row.address"></cui-clipboard>
             </oui-column>
-            <oui-column title="'metrics_platform_doc' | translate"
-                        property="doc">
+            <oui-column data-title="'metrics_platform_doc' | translate"
+                        data-property="doc">
                 <a class="metrics-guidelink"
                    href="{{ $row.doc }}"
                    target="_blank">
