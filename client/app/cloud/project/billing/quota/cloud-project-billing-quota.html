@@ -61,8 +61,8 @@
         <!-- QUOTA TABLE -->
         <strong>{{ :: 'cpb_quota_current_limit' | translate }}</strong>
 
-        <oui-datagrid rows="CloudProjectBillingQuotaCtrl.datas.quota">
-            <oui-column title="'cloud_common_region' | translate" property="region" sortable>
+        <oui-datagrid data-rows="CloudProjectBillingQuotaCtrl.datas.quota">
+            <oui-column data-title="'cloud_common_region' | translate" data-property="region" data-sortable="asc">
                 <div class="flag-box">
                     <div class="flag-wrapper inline-block vertical-middle">
                         <span class="flag-icon {{ :: CloudProjectBillingQuotaCtrl.regionService.getRegionIconFlag($row.region) }} flag"></span>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </oui-column>
-            <oui-column title="'cloud_common_instance' | translate" property="instance.maxInstances">
+            <oui-column data-title="'cloud_common_instance' | translate" data-property="instance.maxInstances">
                 <span data-ng-if="$row.instance.maxInstances === -1">
                     {{ :: $row.instance.usedInstances }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
                 </span>
@@ -80,7 +80,7 @@
                     {{ :: $row.instance.usedInstances }} / {{ :: $row.instance.maxInstances }}
                 </span>
             </oui-column>
-            <oui-column title="'cloud_common_core' | translate" property="instance.maxCores">
+            <oui-column data-title="'cloud_common_core' | translate" data-property="instance.maxCores">
                 <span data-ng-if="$row.instance.maxCores === -1">
                     {{ :: $row.instance.usedCores }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
                 </span>
@@ -88,7 +88,7 @@
                     {{ :: $row.instance.usedCores }} / {{ :: $row.instance.maxCores }}
                 </span>
             </oui-column>
-            <oui-column title="'cloud_common_ram' | translate" property="instance.maxRam">
+            <oui-column data-title="'cloud_common_ram' | translate" data-property="instance.maxRam">
                 <span data-ng-if="$row.instance.maxRam === -1">
                     {{ :: $row.instance.usedRAM > 0 ? (($row.instance.usedRAM * 1000000) | bytes:2) : $row.instance.usedRAM }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
                 </span>
@@ -96,7 +96,7 @@
                     {{ :: $row.instance.usedRAM > 0 ? (($row.instance.usedRAM * 1000000) | bytes:2) : $row.instance.usedRAM }} / {{ :: ($row.instance.maxRam * 1000000) | bytes:2 }}
                 </span>
             </oui-column>
-            <oui-column title="'cpb_quota_add_disk' | translate" property="volume.maxGigabytes">
+            <oui-column data-title="'cpb_quota_add_disk' | translate" data-property="volume.maxGigabytes">
                 <span data-ng-if="$row.volume.maxGigabytes === -1">
                     {{ :: $row.volume.usedGigabytes > 0 ? (($row.volume.usedGigabytes * 1000000000) | bytes:2) : $row.volume.usedGigabytes }} / {{ :: 'cpb_quota_instance_unlimited' | translate }}
                 </span>
