@@ -6,6 +6,10 @@
 
     <div data-ng-if="!$ctrl.info.data.activated && !$ctrl.backup.loading && !$ctrl.vps.loading">
         <p data-ng-if="$ctrl.vps.data.hasBackup" data-translate="vps_tab_backup_not_activated"></p>
+        <button class="oui-button oui-button_primary"
+                    data-translate="vps_configuration_activate_ftpbackup_title_button"
+                    data-ui-sref="iaas.vps.detail.backup-storage.order"
+                    data-ng-if="$ctrl.vps.data.hasBackup"></button>
         <p data-ng-if="!$ctrl.vps.data.hasBackup" data-translate="vps_tab_SUMMARY_backups_not_available"></p>
     </div>
 
