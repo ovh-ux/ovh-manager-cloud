@@ -3,19 +3,19 @@
     <p data-translate="iplb_task_intro_text"></p>
 
     <oui-spinner data-ng-show="ctrl.tasks.loading"></oui-spinner>
-    <oui-datagrid rows="ctrl.tasks.data">
-        <oui-column title="'iplb_task_list_col_creation_date' | translate" property="creationDate" sortable="desc">
+    <oui-datagrid data-rows="ctrl.tasks.data">
+        <oui-column data-title="'iplb_task_list_col_creation_date' | translate" data-property="creationDate" data-sortable="desc">
             {{ $row.creationDate | momentFormat:'LLL' }}
         </oui-column>
-        <oui-column title="'iplb_task_list_col_task' | translate" property="action" sortable ng-cloak></oui-column>
-        <oui-column title="'iplb_task_list_col_progress' | translate" property="progress" sortable
+        <oui-column data-title="'iplb_task_list_col_task' | translate" data-property="action" data-sortable ng-cloak></oui-column>
+        <oui-column data-title="'iplb_task_list_col_progress' | translate" data-property="progress" data-sortable
             class="oui-table__cell_component">
             <cui-task-progress data-task="$row"></cui-task-progress>
         </oui-column>
-        <oui-column title="'iplb_task_list_col_status' | translate" property="status" sortable></oui-column>
-        <oui-action-menu align="end" compact>
-            <oui-action-menu-item text="{{'common_preview_see' | translate}}"
-                on-click="ctrl.showTaskPreview($row)"></oui-action-menu-item>
+        <oui-column data-title="'iplb_task_list_col_status' | translate" data-property="status" data-sortable></oui-column>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{'common_preview_see' | translate}}"
+                data-on-click="ctrl.showTaskPreview($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>

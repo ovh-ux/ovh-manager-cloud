@@ -9,20 +9,20 @@
     <oui-spinner data-ng-show="ctrl.loading"></oui-spinner>
     <oui-datagrid data-rows="ctrl.frontends"
         data-row-loader="ctrl.loadFarm($row)">
-        <oui-column title="'iplb_frontend_frontend' | translate" property="frontendId" sortable>
+        <oui-column data-title="'iplb_frontend_frontend' | translate" data-property="frontendId" data-sortable="asc">
             {{ $row.displayName || $row.frontendId }}
             <span data-ng-show="$row.displayName">({{ $row.frontendId }})</span>
         </oui-column>
-        <oui-column title="'iplb_frontend_protocol' | translate" property="protocol" sortable>
+        <oui-column data-title="'iplb_frontend_protocol' | translate" data-property="protocol" data-sortable>
             {{ $row.protocol | uppercase }}
             <span data-ng-show="$row.port">: {{ $row.port }}</span>
         </oui-column>
-        <oui-column title="'iplb_frontend_datacenter' | translate" property="region.macroRegion.code" sortable>
+        <oui-column data-title="'iplb_frontend_datacenter' | translate" data-property="region.macroRegion.code" data-sortable>
             {{ $row.region.macroRegion.text }}
             {{ $row.zone !== 'all' ? ('(' + $row.region.macroRegion.code + ')') : '' }}
         </oui-column>
-        <oui-column title="'iplb_frontend_default_farm' | translate" property="defaultFarm">{{ $row.defaultFarm.displayName || $row.defaultFarm.farmId || "-" }}</oui-column>
-        <oui-column title="'iplb_frontend_active' | translate" property="disabled" sortable class="oui-table__cell_action">
+        <oui-column data-title="'iplb_frontend_default_farm' | translate" data-property="defaultFarm">{{ $row.defaultFarm.displayName || $row.defaultFarm.farmId || "-" }}</oui-column>
+        <oui-column data-title="'iplb_frontend_active' | translate" data-property="disabled" data-sortable class="oui-table__cell_action">
             <label class="oui-switch">
                 <input type="checkbox" class="oui-switch__checkbox" data-ng-checked="!$row.disabled" data-ng-click="ctrl.toggle($row)">
                 <div class="oui-switch__slider"></div>
@@ -30,14 +30,14 @@
                 <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
             </label>
         </oui-column>
-        <oui-action-menu align="end" compact>
-            <oui-action-menu-item text="{{'common_preview_see' | translate}}"
-                on-click="ctrl.preview($row)"></oui-action-menu-item>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{'common_preview_see' | translate}}"
+                data-on-click="ctrl.preview($row)"></oui-action-menu-item>
             <oui-action-menu-divider></oui-action-menu-divider>
-            <oui-action-menu-item text="{{'iplb_frontend_update' | translate}}"
-                on-click="ctrl.update($row)"></oui-action-menu-item>
-            <oui-action-menu-item text="{{'iplb_frontend_delete' | translate}}"
-                on-click="ctrl.delete($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-text="{{'iplb_frontend_update' | translate}}"
+                data-on-click="ctrl.update($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-text="{{'iplb_frontend_delete' | translate}}"
+                data-on-click="ctrl.delete($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>
