@@ -15,14 +15,14 @@
         <oui-spinner></oui-spinner>
     </div>
 
-    <oui-datagrid rows="CdaPoolListCtrl.datas.pools">
-        <oui-column title="'cda_pool_table_col_poolname' | translate" property="name" sortable></oui-column>
-        <oui-column title="'cda_pool_table_col_pooltype' | translate" property="poolType" sortable></oui-column>
-        <oui-column title="'cda_pool_table_col_replica' | translate" property="replicaCount" sortable></oui-column>
-        <oui-column title="'cda_pool_table_col_minreplica' | translate" property="minActiveReplicas" sortable></oui-column>
-        <oui-action-menu align="end" compact>
-            <oui-action-menu-item text="{{'cda_pool_delete_button_text' | translate}}"
-                on-click="CdaPoolListCtrl.openDeleteModal($row)"></oui-action-menu-item>
+    <oui-datagrid data-rows="CdaPoolListCtrl.datas.pools">
+        <oui-column data-title="'cda_pool_table_col_poolname' | translate" data-property="name" data-sortable></oui-column>
+        <oui-column data-title="'cda_pool_table_col_pooltype' | translate" data-property="poolType" data-sortable></oui-column>
+        <oui-column data-title="'cda_pool_table_col_replica' | translate" data-property="replicaCount" data-sortable></oui-column>
+        <oui-column data-title="'cda_pool_table_col_minreplica' | translate" data-property="minActiveReplicas" data-sortable></oui-column>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{'cda_pool_delete_button_text' | translate}}"
+                data-on-click="CdaPoolListCtrl.openDeleteModal($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>

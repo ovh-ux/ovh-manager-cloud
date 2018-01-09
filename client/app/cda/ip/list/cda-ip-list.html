@@ -15,13 +15,13 @@
         <oui-spinner></oui-spinner>
     </div>
 
-    <oui-datagrid rows="CdaIpListCtrl.datas.ips">
-        <oui-column title="'cda_ip_table_col_network' | translate" property="network" sortable>
+    <oui-datagrid data-rows="CdaIpListCtrl.datas.ips">
+        <oui-column data-title="'cda_ip_table_col_network' | translate" data-property="network" data-sortable>
             {{ $row.network }} / {{ $row.netmask }}
         </oui-column>
-        <oui-action-menu align="end" compact>
-            <oui-action-menu-item text="{{'cda_ip_delete_button_text' | translate}}"
-                on-click="CdaIpListCtrl.openDeleteModal($row)"></oui-action-menu-item>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{'cda_ip_delete_button_text' | translate}}"
+                data-on-click="CdaIpListCtrl.openDeleteModal($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>
