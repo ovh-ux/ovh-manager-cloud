@@ -349,7 +349,9 @@
    <translation id="vps_tab_summary" qtlid="170278">Résumé des options</translation>
    <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Backup storage :</translation>
    <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot :</translation>
+   <translation id="vps_tab_snapshot">Snapshot</translation>
    <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Backups automatisés :</translation>
+   <translation id="vps_tab_veeam" qtlid="170317">Backups automatisés</translation>
    <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">effectué le :</translation>
    <translation id="vps_tab_SUMMARY_license" qtlid="113658">Licences</translation>
    <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Sauvegardes</translation>
