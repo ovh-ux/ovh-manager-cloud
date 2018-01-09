@@ -10,14 +10,18 @@
             data-translate="nasha_snapshot_of"
             data-translate-values="{partitionName: NashaPartitionSnapshotCtrl.data.partition.partitionName}"></h2>
 
+        <oui-message data-ng-if="!NashaPartitionSnapshotCtrl.loading && !NashaPartitionSnapshotCtrl.snapshots.after.length" 
+            data-type="warning" 
+            data-message="{{ :: 'nasha_snapshot_warning_frequency' | translate }}"></oui-message>
+        <oui-message data-type="info" 
+            data-message="{{ :: 'nasha_snapshot_informations_size' | translate }}"></oui-message>
+
         <p>
             {{ :: 'nasha_snapshot_frequency' | translate }}
             <i class="fa fa-question-circle fs18 ml-2"
                data-uib-tooltip="{{ :: 'nasha_snapshot_informations' | translate }}"
                data-tooltip-placement="right"></i>
         </p>
-
-        <oui-message type="info" message="{{ :: 'nasha_snapshot_informations_size' | translate }}"></oui-message>
 
         <div class="m-3">
             <table class="table">
