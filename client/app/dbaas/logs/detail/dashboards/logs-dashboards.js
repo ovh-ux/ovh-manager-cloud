@@ -9,6 +9,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "logs", "logs/dashboards"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/dashboards"]
         });
 });
