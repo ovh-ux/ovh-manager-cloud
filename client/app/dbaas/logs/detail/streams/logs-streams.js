@@ -21,7 +21,17 @@ angular.module("managerApp").config($stateProvider => {
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
         })
-        .state("dbaas.logs.detail.streams.detail.follow", {
+        .state("dbaas.logs.detail.streams.add", {
+            url: "/add",
+            views: {
+                logsStreams: {
+                    templateUrl: "app/dbaas/logs/detail/streams/add/logs-streams-add.html",
+                    controller: "LogsStreamsAddCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/streams/add"]
+        }).state("dbaas.logs.detail.streams.detail.follow", {
             url: "/follow",
             views: {
                 logsStreamsDetail: {
@@ -30,6 +40,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams/home"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/streams/follow"]
         });
 });
