@@ -54,11 +54,12 @@ angular.module("managerApp")
 
         function buildOpenrcUrl () {
             var url = [
-                (_.find(CONFIG_API.apis, { serviceType : "aapi" }) || {}).urlPrefix,
+                (_.find(CONFIG_API.apis, {serviceType : "aapi"}) || {}).urlPrefix,
                 OvhApiCloud.Project().User().Aapi().services.openrc.url,
                 "?",
                 $httpParamSerializer({
-                    region: self.data.region
+                    region: self.data.region,
+                    download: 1
                 })
             ].join("");
 
