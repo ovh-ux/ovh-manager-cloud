@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="private_network_activate">Activer</translation>
+   <translation id="private_network_activate_new_vRack_description">Vous serez redirigé vers la commande afin d'activer le nouveau vRack. Ensuite, vous pourrez l'associer à vos services. La configuration est opérationnelle en quelques secondes.</translation>
+   <translation id="private_network_activate_title">Activer les réseaux privés</translation>
+   <translation id="private_network_activate_existing">Existant</translation>
+   <translation id="private_network_activate_new">Nouveau</translation>
+</translations>

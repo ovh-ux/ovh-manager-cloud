@@ -1,5 +1,5 @@
 class PrivateNetworkListCtrl {
-    constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService, 
+    constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
                  OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
@@ -40,7 +40,7 @@ class PrivateNetworkListCtrl {
             dialog: {
                 visible: false
             }
-        };  
+        };
     }
 
     $onInit () {
@@ -75,6 +75,33 @@ class PrivateNetworkListCtrl {
             .catch(() => this.models.vrack = null)
             .finally(() => this.loaders.vrack.get = false);
     }
+
+
+    /**
+     *
+     *
+     * @param {any} privateNetwork
+     * @memberof PrivateNetworkListCtrl
+     */
+    enableVrack (privateNetwork) {
+        const modal = this.resources.modal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/vRack/cloud-project-compute-infrastructure-privateNetwork-enable-vRack.html",
+            controller: "CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl",
+            controllerAs: "CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl",
+            resolve: {
+                params: () => privateNetwork
+            }
+        });
+        modal.result
+            .then(() => this.loaders.privateNetworks.delete = true)
+            .finally(() => {
+                this.loaders.privateNetworks.delete = false;
+                //this.deletePrivateNetworkFromList(privateNetwork);
+            }
+        );
+    }
+
 
     deletePrivateNetwork (privateNetwork) {
         const modal = this.resources.modal.open({
@@ -136,7 +163,7 @@ class PrivateNetworkListCtrl {
             }).catch(() => {
                 this.collections.privateNetworks = [];
                 this.CloudMessage.error(this.$translate.instant("cpci_private_network_list_private_network_query_error"));
-            }).finally(() => this.loaders.privateNetworks.query = false);        
+            }).finally(() => this.loaders.privateNetworks.query = false);
     }
 
     getPrivateNetworks () {

@@ -9,7 +9,7 @@
                 </a>
             </p>
         </div>
-        <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
+        <!-- <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
             <p data-translate="cpci_private_network_activateVrack_description"></p>
             <a type="button"
                 data-ng-show="$ctrl.orderUrl"
@@ -17,6 +17,15 @@
                 data-ng-href="{{ $ctrl.orderUrl }}"
                 data-translate="cpci_private_network_activateVrack_activate"
                 target="_blank"></a>
+        </div> -->
+        <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
+            <p data-translate="cpci_private_network_activateVrack_description"></p>
+            <a type="button"
+                data-ng-show="$ctrl.orderUrl"
+                class="ovh-button ovh-button_secondary"
+                data-ng-click="$ctrl.enableVrack(network.id)"
+                data-translate="cpci_private_network_activateVrack_activate">
+            </a>
         </div>
     </li>
     <li class="private-networks__item" data-ng-repeat="network in $ctrl.getPrivateNetworks() track by network.id" data-ng-if="$ctrl.hasVrack()">

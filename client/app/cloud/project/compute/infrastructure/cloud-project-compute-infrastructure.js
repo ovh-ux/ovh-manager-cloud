@@ -24,7 +24,8 @@ angular.module("managerApp")
                     editVm: null,
                     monitorVm: null
                 },
-                translations: ["common",
+                translations: [
+                    "common",
                     "cloud/project/compute/snapshot/add",
                     "cloud/project/compute/volume/snapshot",
                     "cloud/project/compute/infrastructure/ip/failover/import",
@@ -41,6 +42,7 @@ angular.module("managerApp")
                     "cloud/project/compute/infrastructure/privateNetwork",
                     "cloud/project/compute/infrastructure/privateNetwork/dialog",
                     "cloud/project/compute/infrastructure/privateNetwork/delete",
+                    "cloud/project/compute/infrastructure/privateNetwork/vRack",
                     "cloud/project/delete",
                     "cloud/project/rename",
                     "cloud/project/compute/infrastructure/openstackClient"
