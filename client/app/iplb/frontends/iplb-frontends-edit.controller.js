@@ -192,9 +192,6 @@ class IpLoadBalancerFrontendsEditCtrl {
                 break;
             default: break;
         }
-        //port can not be integer because it can be simple(80), range (1000-2000) or multi (80,443)
-        //converting it to integer will cause problem if it is range or multi
-        //frontend.port = parseInt(frontend.port, 10);
         this.frontend = angular.copy(frontend);
         return frontend;
     }
