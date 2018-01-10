@@ -86,7 +86,7 @@
                                 </h3>
                                 <h4 data-ng-if="VolumeAddEditCtrl.volumeInEdition.type"
                                     data-translate="cpci_volume_gb_price_value_month"
-                                    data-translate-values="{ price : VolumeAddEditCtrl.volumeInEdition.gbPrices[VolumeAddEditCtrl.volumeInEdition.region][VolumeAddEditCtrl.volumeInEdition.type].monthlyPrice.text }">
+                                    data-translate-values="{ price : VolumeAddEditCtrl.volumeInEdition.getPrice(VolumeAddEditCtrl.volumeInEdition.region,VolumeAddEditCtrl.volumeInEdition.type).monthlyPrice.text }">
                                 </h4>
                             </div>
                         </div>
@@ -353,7 +353,7 @@
                                     <!-- GB PRICE CELL -->
                                     <td style="width:40px;" class="text-center">
                                         <span class="inline-block top-space-m2">
-                                            {{ :: VolumeAddEditCtrl.volumeInEdition.gbPrices[VolumeAddEditCtrl.volumeInEdition.region][volumeType].monthlyPrice.text }}
+                                            {{ :: VolumeAddEditCtrl.volumeInEdition.getPrice(VolumeAddEditCtrl.volumeInEdition.region,volumeType).monthlyPrice.text }}
                                         </span>
                                     </td>
                                 </tr>

@@ -13,18 +13,16 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
         $controller,
         CloudMessage,
         OvhApiCloudProjectSnapshot,
-        CloudProjectComputeInfraVrackVmFactory,
         $uibModalInstance,
         $scope;
 
-    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _CloudMessage_, _CloudProjectComputeInfraVrackVmFactory_) {
+    beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _CloudProjectSnapshot_, _CloudMessage_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         OvhApiCloudProjectSnapshot = _CloudProjectSnapshot_;
         CloudMessage = _CloudMessage_;
-        CloudProjectComputeInfraVrackVmFactory = _CloudProjectComputeInfraVrackVmFactory_;
         $uibModalInstance = {
             close : function(){
                 return true;
@@ -55,7 +53,6 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
 
         CloudProjectComputeSnapshotAddCtrl = $controller("CloudProjectComputeSnapshotAddCtrl as CloudProjectComputeSnapshotAddCtrl", {
             $scope: $scope,
-            params : new CloudProjectComputeInfraVrackVmFactory(dataTest.instance),
             $uibModalInstance : $uibModalInstance
         });
     }
