@@ -81,6 +81,17 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
         /**
          *  [API] Get additional informations
          */
+         VirtualMachineFactory.prototype.updatePrice = function () {
+             var self = this;
+             return OvhCloudPriceHelper.getPrices(self.serviceName).then(function (prices) {
+                 self.price = prices[self.planCode];
+                 // Set 3 digits for hourly price
+                 if (!self.monthlyBillingBoolean) {
+                     self.price.price.text = self.price.price.text.replace(/\d+(?:[.,]\d+)?/, "" + self.price.price.value.toFixed(3));
+                 }
+             })
+         };
+
         VirtualMachineFactory.prototype.getFullInformations = function () {
             var queue = [],
                 self = this;
@@ -137,16 +148,8 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
                         }
                     })
                 );
-                queue.push(
-                    OvhCloudPriceHelper.getPrices(self.serviceName).then(function (prices) {
-                        self.price = prices[self.planCode];
-                        // Set 3 digits for hourly price
-                        if (!self.monthlyBillingBoolean) {
-                            self.price.price.text = self.price.price.text.replace(/\d+(?:[.,]\d+)?/, "" + self.price.price.value.toFixed(3));
-                        }
-                    })
-                );
             }
+            queue.push(self.updatePrice());
 
             // if sshKeyId
             if (this.sshKeyId) {
@@ -210,6 +213,8 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
             }).$promise.then(function (vmOptions) {
                 self.id = vmOptions.id;             // WARNING: don't forget tu replaceItem with orderedHash!
                 self.status = vmOptions.status;
+                self.planCode = vmOptions.planCode;
+                self.updatePrice();
                 return self;
             });
         };
