@@ -112,6 +112,8 @@ angular.module("managerApp")
             },
             vrack: {
             },
+            rCloneFile: {
+            },
             ssh: {
                 create: {
                     US: "https://www.ovh.us/g1769.creating_ssh_keys"

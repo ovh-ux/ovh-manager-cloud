@@ -5,6 +5,6 @@
    <translation id="cpci_openstack_client_session_closed" qtlid="450784">Your session has been interrupted.</translation>
    <translation id="cpci_openstack_client" qtlid="450797">OpenStack Client</translation>
    <translation id="cpci_openstack_client_regions" qtlid="450810">Regions:</translation>
-   <translation id="cpci_openstack_client_commands" qtlid="450823">Orders:</translation>
+   <translation id="cpci_openstack_client_commands" qtlid="450823">Commands:</translation>
    <translation id="cpci_openstack_client_select_region" qtlid="84153">Choose</translation>
 </translations>
