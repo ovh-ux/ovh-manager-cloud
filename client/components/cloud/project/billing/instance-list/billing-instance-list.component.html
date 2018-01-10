@@ -18,8 +18,8 @@
                 </td>
                 <td data-ng-if="$ctrl.showSwitchToMonthlyBillingOption || $ctrl.showAdditionalInstanceDetails"></td>
             </tr>
-        </tbody class="oui-table__body">
-        <tbody data-ng-if="!$ctrl.loaders.instanceList">
+        </tbody>
+        <tbody class="oui-table__body" data-ng-if="!$ctrl.loaders.instanceList">
             <tr data-ng-repeat="instanceConsumption in $ctrl.instanceConsumptionDetails | orderBy: 'instanceName' track by instanceConsumption.instanceId + instanceConsumption.reference" class="oui-table__row">
                 <td data-title="{{ :: $ctrl.instanceColName | translate }}" class="oui-table__cell word-break"
                     data-responsive-popover="'components/cloud/project/billing/details-popover/instance-details-popover.html'"
@@ -64,7 +64,7 @@
                                 data-ng-disabled="$ctrl.loaders.monthlyBilling">
                             <i class="fa fa-check right-space-m8"></i>
                             <span data-translate="cpbc_hourly_instance_pass_to_monthly_button"
-                                data-translate-values="{ price: $ctrl.data.instanceToMonthlyPrice.monthlyPrice.text }"></span>
+                                data-translate-values="{ price: $ctrl.data.instanceToMonthlyPrice.price.text }"></span>
                             <spinner data-ng-if="$ctrl.loaders.monthlyBilling">
                             </spinner>
                         </button>
