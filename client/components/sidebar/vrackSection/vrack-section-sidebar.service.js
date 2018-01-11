@@ -11,9 +11,24 @@ class VrackSectionSidebarService {
                 type: "VRACK"
             }
         ];
+        this.vRacks = null;
+    }
+
+    /**
+     * returns all vRacks available for current logged in user
+     *
+     * @returns array of vRack services available for current logged in user
+     * @memberof VrackSectionSidebarService
+     */
+    getVracks() {
+        return this.vRacks;
     }
 
     fillSection (services) {
+        if(services && services instanceof Array) {
+            //save vRacks belonging to logged in user to be used later
+            this.vRacks = services[0];
+        }
         // All PaaS (Platform as a Service) main item
         const vrackMenuSection = this.SidebarMenu.addMenuItem({
             d: "mainVrackItem",

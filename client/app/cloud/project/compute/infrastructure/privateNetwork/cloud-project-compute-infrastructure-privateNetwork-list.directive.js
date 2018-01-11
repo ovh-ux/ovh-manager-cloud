@@ -1,6 +1,6 @@
 class PrivateNetworkListCtrl {
-    constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
-                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack) {
+    constructor ($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack, VrackSectionSidebarService) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
@@ -41,6 +41,9 @@ class PrivateNetworkListCtrl {
                 visible: false
             }
         };
+        this.$window = $window;
+        //get vRacks for current user, shown in left side bar
+        this.vRacks = VrackSectionSidebarService.getVracks();
     }
 
     $onInit () {
@@ -78,28 +81,34 @@ class PrivateNetworkListCtrl {
 
 
     /**
+     * open UI modal to activate private network by adding a vRack
      *
-     *
-     * @param {any} privateNetwork
+     * @param {any} privateNetworkId
      * @memberof PrivateNetworkListCtrl
      */
-    enableVrack (privateNetwork) {
-        const modal = this.resources.modal.open({
-            windowTopClass: "cui-modal",
-            templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/vRack/cloud-project-compute-infrastructure-privateNetwork-enable-vRack.html",
-            controller: "CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl",
-            controllerAs: "CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl",
-            resolve: {
-                params: () => privateNetwork
-            }
-        });
-        modal.result
-            .then(() => this.loaders.privateNetworks.delete = true)
-            .finally(() => {
-                this.loaders.privateNetworks.delete = false;
-                //this.deletePrivateNetworkFromList(privateNetwork);
-            }
-        );
+    activatePrivateNetwork (privateNetworkId) {
+        var vRacks = this.vRacks;
+        if(vRacks &&
+            vRacks instanceof Array &&
+            vRacks.length > 0) {
+                // user has pre ordered vRacks
+                var orderUrl = this.orderUrl;
+                const modal = this.resources.modal.open({
+                    windowTopClass: "cui-modal",
+                    templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/activate/activate.html",
+                    controller: "ActivateCtrl",
+                    controllerAs: "ActivateCtrl",
+                    resolve: {
+                        params: () => ({
+                            orderUrl: orderUrl,
+                            vRacks: vRacks
+                        })
+                    }
+                });
+        } else {
+            // user has no vRacks, take him to order new vRack page
+            this.$window.open(this.orderUrl, '_blank');
+        }
     }
 
 

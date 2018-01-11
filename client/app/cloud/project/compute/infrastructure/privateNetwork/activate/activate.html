@@ -1,26 +1,26 @@
 <div class="oui-modal oui-modal_shadow">
     <div class="oui-modal__header">
         <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.cancel()"></button>
+                data-ng-click="ActivateCtrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
         <form class="oui-modal__body-text" id="vRackActivateForm" name="vRackActivateForm" novalidate>
-            <h3 class="oui-modal__title enable-private-network-modal-header" data-ng-bind="'private_network_activate_title' | translate"></h3>
-            <div class="radio enable-private-network-radio">
+            <h3 class="oui-modal__title activate-private-network-modal-header" data-ng-bind="'private_network_activate_title' | translate"></h3>
+            <div class="radio activate-private-network-radio">
                 <label class="full-width bottom-space-m8" data-ovh-stop-event="click" for="existingVrack">
                     <input name="activateOptions" id="existingVrack"
                         class="no-box-shadow vertical-text-bottom"
                         data-ovh-stop-event="click"
                         type="radio"
-                        data-ng-value="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.activateOptions.EXISTING"
-                        data-ng-model="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.selectedActivateOption">
+                        data-ng-value="ActivateCtrl.activateOptions.EXISTING"
+                        data-ng-model="ActivateCtrl.selectedActivateOption">
                     {{ :: "private_network_activate_existing" | translate }}
-                    <div class="enable-private-network-vRack-list">
-                        <div class="oui-select enable-private-network-select">
+                    <div class="activate-private-network-vRack-list">
+                        <div class="oui-select activate-private-network-select">
                             <select class="oui-select__input"
                                 id="vRacks" name="vRacks"
-                                data-ng-model="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.selectedVrack"
-                                data-ng-options="vRack for vRack in CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.vRacks"
+                                data-ng-model="ActivateCtrl.selectedVrack"
+                                data-ng-options="vRack.displayName for vRack in ActivateCtrl.vRacks"
                                 required />
                             <i class="oui-icon oui-icon-chevron-down"></i>
                         </div>
@@ -28,16 +28,16 @@
                 </label>
             </div>
 
-            <div class="radio enable-private-network-radio">
+            <div class="radio activate-private-network-radio">
                 <label class="full-width bottom-space-m8" data-ovh-stop-event="click" for="newVrack">
                     <input name="activateOptions" id="newVrack"
                         class="no-box-shadow vertical-text-bottom"
                         data-ovh-stop-event="click"
                         type="radio"
-                        data-ng-value="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.activateOptions.NEW"
-                        data-ng-model="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.selectedActivateOption">
+                        data-ng-value="ActivateCtrl.activateOptions.NEW"
+                        data-ng-model="ActivateCtrl.selectedActivateOption">
                     {{ :: "private_network_activate_new" | translate }}
-                    <div class="enable-private-network-new-vRack-description">
+                    <div class="activate-private-network-new-vRack-description">
                         <p>{{ :: "private_network_activate_new_vRack_description" | translate }}</p>
                     </div>
                 </label>
@@ -46,11 +46,11 @@
     </div>
     <div class="oui-modal__footer">
         <button type="reset" class="oui-button oui-button_secondary"
-            data-ng-click="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.cancel()">
+            data-ng-click="ActivateCtrl.cancel()">
             <span data-translate="common_cancel"></span>
         </button>
         <button type="submit" class="oui-button oui-button_primary"
-            data-ng-click="CloudProjectComputeInfrastructurePrivateNetworkEnablevRackCtrl.activate()">
+            data-ng-click="ActivateCtrl.activate()">
             <span data-translate="private_network_activate"></span>
         </button>
     </div>
