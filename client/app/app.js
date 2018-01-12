@@ -101,10 +101,12 @@ angular.module("managerApp", [
                   data-ng-model="$value"
                   data-ng-change="$onChange()">
                 <label class="oui-checkbox__label-container" for="{{$name}}">
-                  <span class="oui-checkbox__icon">
-                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                  <span class="oui-checkbox__label">
+                    <span class="oui-checkbox__icon">
+                      <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                      <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                      <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
                   </span>
                 </label>
               </div>
