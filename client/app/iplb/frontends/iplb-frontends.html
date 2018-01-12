@@ -20,7 +20,9 @@
             {{ $row.region.macroRegion.text }}
             {{ $row.zone !== 'all' ? ('(' + $row.region.macroRegion.code + ')') : '' }}
         </oui-column>
-        <oui-column data-title="'iplb_frontend_default_farm' | translate" data-property="defaultFarm">{{ $row.defaultFarm.displayName || $row.defaultFarm.farmId || "-" }}</oui-column>
+        <oui-column data-title="'iplb_frontend_default_farm' | translate" data-property="defaultFarm">
+            {{ $row.defaultFarm.displayName || $row.defaultFarm.farmId || "-" }}
+        </oui-column>
         <oui-column data-title="'iplb_frontend_active' | translate" data-property="disabled" data-sortable class="oui-table__cell_action">
             <label class="oui-switch">
                 <input type="checkbox" class="oui-switch__checkbox" data-ng-checked="!$row.disabled" data-ng-click="ctrl.toggle($row)">
