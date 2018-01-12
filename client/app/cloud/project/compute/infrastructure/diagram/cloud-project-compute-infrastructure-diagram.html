@@ -67,9 +67,8 @@
                     <li class="divider"></li>
                     <li>
                         <button type="button" class="btn fs14"
-                                data-ng-click="ComputeInfrastructureDiagramCtrl.showDeleteProjectModal()"
+                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.openDeleteProjectModal()"
                                 at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
-                                data-ng-disabled="projectDeleted"
                                 data-ng-bind=":: 'cpb_details_project_delete' | translate"
                                 write-right-required>
                         </button>
@@ -77,14 +76,17 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xs-6 text-right d-none">
+        <div class="col-xs-6 text-right">
             <div class="d-inline-block">
-                <span class="oui-label d-inline-block mt-2 mr-3">Vue</span>
+                <span class="oui-label d-inline-block mt-2 mr-3"
+                      data-translate="cpci_menu_view_label"></span>
                 <nav class="oui-button-group">
                     <a class="oui-button oui-button_primary"
-                       ui-sref="iaas.pci-project.compute.infrastructure.diagram()">Infrastructure</a>
+                       ui-sref="iaas.pci-project.compute.infrastructure.diagram()"
+                       data-translate="cpci_menu_view_diagram"></a>
                     <a class="oui-button oui-button_secondary"
-                       ui-sref="iaas.pci-project.compute.infrastructure.list()">Liste</a>
+                       ui-sref="iaas.pci-project.compute.infrastructure.list()"
+                       data-translate="cpci_menu_view_list"></a>
                 </nav>
             </div>
         </div>
@@ -308,7 +310,8 @@
 
                                 <button type="button" class="no-style no-space vertical-middle left-space-m8"
                                         data-ng-click="ComputeInfrastructureDiagramCtrl.unCollapseAll('publicCloud')"
-                                        data-uib-tooltip="{{'cpci_uncollapse_all_vms'|translate}}" tooltip-append-to-body="true">
+                                        data-uib-tooltip="{{'cpci_uncollapse_all_vms'|translate}}"
+                                        data-tooltip-append-to-body="true">
                                     <span class="wrap">
                                         <span class="wrap2"></span>
                                         <span class="wrap2"></span>
@@ -317,7 +320,8 @@
 
                                 <button type="button" class="no-style no-space vertical-middle"
                                         data-ng-click="ComputeInfrastructureDiagramCtrl.collapseAll()"
-                                        data-uib-tooltip="{{'cpci_collapse_all_vms'|translate}}" tooltip-append-to-body="true">
+                                        data-uib-tooltip="{{'cpci_collapse_all_vms'|translate}}"
+                                        data-tooltip-append-to-body="true">
                                     <span class="wrap">
                                         <span class="wrap3"></span>
                                         <span class="wrap3"></span>
@@ -431,8 +435,8 @@
                                             <button type="button" class="btn btn-danger"
                                                     data-autofocus
                                                     data-ng-click="ComputeInfrastructureDiagramCtrl.rebootVirtualMachine(vm, 'soft')"
-                                                    data-ng-disabled="vm.confirmLoading">
-                                                    data-ng-switch-when="rebootConfirmPending"
+                                                    data-ng-disabled="vm.confirmLoading"
+                                                    data-ng-switch-when="rebootConfirmPending">
                                                 <span class="fa fa-power-off" aria-hidden="true"></span>
                                                 <span translate="cpci_vm_reboot_submit"></span>
                                             </button>
@@ -481,7 +485,7 @@
                                                     data-uib-dropdown-menu>
                                                     <li data-ng-if="vm.status === 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
                                                         <button type="button"
-                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.openVnc(vm)">
+                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.openVnc(vm)">
                                                             <span class="fa fa-desktop right-space-m8" aria-hidden="true"></span>
                                                             <span data-ng-bind=":: 'cpci_vm_action_vnc' | translate"></span>
                                                         </button>
@@ -657,14 +661,14 @@
                                                 </li>
                                                 <li data-ng-if="!vm.monthlyBilling">
                                                     <button type="button"
-                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.openMonthlyConfirmation(vm)">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.openMonthlyConfirmation(vm)">
                                                         <span class="fa fa-calendar right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_monthly' | translate"></span>
                                                     </button>
                                                 </li>
                                                 <li>
                                                     <button type="button"
-                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.openSnapshotWizard(vm)">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.openSnapshotWizard(vm)">
                                                         <span class="fa fa-floppy-o right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_create_snapshot' | translate"></span>
                                                     </button>
@@ -679,7 +683,7 @@
                                                 </li>
                                                 <li>
                                                     <button type="button"
-                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.openVnc(vm)" >
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.openVnc(vm)" >
                                                         <span class="fa fa-desktop right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_vnc' | translate"></span>
                                                     </button>
@@ -687,7 +691,7 @@
                                                 <li class="divider"></li>
                                                 <li>
                                                     <button type="button" class="red"
-                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.rescueMode(vm, true)">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.rescueMode(vm)">
                                                         <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_rescue' | translate"></span>
                                                     </button>
@@ -1221,7 +1225,7 @@
         </div>
 
         <div class="row"
-             dat-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm">
+             data-ng-if="!ComputeInfrastructureDiagramCtrl.loaders.linkActionConfirm">
 
             <p class="validator-text"
                data-ng-if="ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connection && ComputeInfrastructureDiagramCtrl.model.currentLinkEdit.connectedIp.routedTo.length > 0"

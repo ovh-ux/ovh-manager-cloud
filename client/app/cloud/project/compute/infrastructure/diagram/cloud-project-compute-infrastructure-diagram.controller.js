@@ -1,7 +1,7 @@
 (() => {
     class CloudProjectComputeInfrastructureDiagramCtrl {
         constructor ($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $translate, $uibModal, $window,
-                     CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
+                     CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
                      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
                      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
                      OvhApiCloudPrice, OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
@@ -21,6 +21,7 @@
 
             this.CloudMessage = CloudMessage;
             this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+            this.InfrastructureService = CloudProjectComputeInfrastructureService;
             this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
             this.CloudProjectOrchestrator = CloudProjectOrchestrator;
             this.CloudUserPref = CloudUserPref;
@@ -109,6 +110,10 @@
             });
 
             this.$scope.$on("infra.refresh.links", () => {
+                this.refreshLinks();
+            });
+
+            this.$scope.$on("infra.refresh.links.delayed", () => {
                 // delay the execution, on VM deletion, VMS need to be moved before we refresh or links
                 // aren't place properly
                 this.$timeout(() => {
@@ -562,21 +567,8 @@
         openVncWithId (vmId) {
             const completeVm = this.infra.vrack.publicCloud.get(vmId);
             if (completeVm) {
-                this.openVnc(completeVm);
+                this.InfrastructureService.openVnc(completeVm);
             }
-        }
-
-        openVnc (vm) {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html",
-                controller: "CloudProjectComputeInfrastructureVirtualmachineVncCtrl",
-                controllerAs: "VmVncCtrl",
-                size: "lg",
-                resolve: {
-                    params: () => vm
-                }
-            });
         }
 
         addVolume () {
@@ -617,15 +609,6 @@
         // ------- END REGION -------
 
         // ------- VM ACTIONS -------
-
-        showDeleteProjectModal () {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
-                controller: "CloudProjectDeleteCtrl",
-                controllerAs: "CloudProjectDeleteCtrl"
-            });
-        }
 
         deleteConfirmPending (vm) {
             // We display a popover warning in two cases :
@@ -700,18 +683,6 @@
                 });
         }
 
-        openSnapshotWizard (vm) {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html",
-                controller: "CloudProjectComputeSnapshotAddCtrl",
-                controllerAs: "CloudProjectComputeSnapshotAddCtrl",
-                resolve: {
-                    params: () => vm
-                }
-            });
-        }
-
         openVolumeSnapshotWizard (volume) {
             this.$uibModal.open({
                 templateUrl: "app/cloud/project/compute/volume/snapshot/cloud-project-compute-volume-snapshot-add.html",
@@ -720,20 +691,6 @@
                 resolve: {
                     params: () => volume
                 }
-            });
-        }
-
-        openMonthlyConfirmation (vm) {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm/cloud-project-compute-infrastructure-virtual-machine-monthlyConfirm.html",
-                controller: "CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm",
-                controllerAs: "CPCIVirtualmachineMonthlyConfirm",
-                resolve: {
-                    params: () => vm
-                }
-            }).then(() => {
-                this.refreshLinks();
             });
         }
 
@@ -779,21 +736,6 @@
                 ipAddresses: vm.ipAddresses,
                 image: completeVm.image
             });
-        }
-
-        rescueMode (vm, enable) {
-            if (enable) {
-                this.$uibModal.open({
-                    windowTopClass: "cui-modal",
-                    templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html",
-                    controller: "CloudProjectComputeInfrastructureVirtualmachineRescueCtrl",
-                    controllerAs: "VmRescueCtrl",
-                    size: "md",
-                    resolve: {
-                        params: () => vm
-                    }
-                });
-            }
         }
 
         collapseAll () {

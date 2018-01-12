@@ -1,8 +1,8 @@
 angular.module("managerApp")
     .config(function ($stateProvider) {
         $stateProvider
-            .state("iaas.pci-project.compute.infrastructure.modal.login-information", {
-                parent: "iaas.pci-project.compute.infrastructure.modal",
+            .state("iaas.pci-project.compute.infrastructure.diagram.modal.login-information", {
+                parent: "iaas.pci-project.compute.infrastructure.diagram.modal",
                 url: "/loginInformation/{instanceId}",
                 views: {
                     cloudProjectInfrastructureModalContent: {

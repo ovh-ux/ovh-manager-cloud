@@ -290,7 +290,7 @@ angular.module("managerApp")
               }
               $rootScope.$broadcast("highlighed-element.hide", "compute," + self.volumeInEdition.id);
               CloudProjectComputeVolumesOrchestrator.turnOffVolumeEdition(true);
-              $rootScope.$broadcast("infra.refresh.links");
+              $rootScope.$broadcast("infra.refresh.links.delayed");
           };
 
           self.isValid = function () {

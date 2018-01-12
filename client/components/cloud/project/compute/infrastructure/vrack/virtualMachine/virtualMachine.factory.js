@@ -189,7 +189,19 @@ angular.module("managerApp").factory('CloudProjectComputeInfraVrackVmFactory',
          */
         VirtualMachineFactory.prototype.getPrivateIp = function () {
             return _.find(this.ipAddresses, function (ip) {
-                return ip.type === 'private';
+                return ip.type === "private";
+            });
+        };
+
+        VirtualMachineFactory.prototype.getPublicIpv4 = function () {
+            return _.find(this.ipAddresses, function (ip) {
+                return ip.type === "public" && ip.version === 4;
+            });
+        };
+
+        VirtualMachineFactory.prototype.getPublicIpv6 = function () {
+            return _.find(this.ipAddresses, function (ip) {
+                return ip.type === "public" && ip.version === 6;
             });
         };
 

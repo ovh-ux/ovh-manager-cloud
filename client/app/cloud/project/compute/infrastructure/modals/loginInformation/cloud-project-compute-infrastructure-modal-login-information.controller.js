@@ -28,10 +28,10 @@
 
             modal.result
                 .then((id) => {
-                    this.$state.go("iaas.pci-project.compute.infrastructure", { openVncWithId: id });
+                    this.$state.go("iaas.pci-project.compute.infrastructure.diagram", { openVncWithId: id });
                 })
                 .catch(() => {
-                    this.$state.go("iaas.pci-project.compute.infrastructure");
+                    this.$state.go("iaas.pci-project.compute.infrastructure.diagram");
                 });
         }
     }
