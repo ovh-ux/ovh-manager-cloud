@@ -10,9 +10,6 @@
             <span data-translate="cda_user_add_button_text"></span>
         </button>
     </div>
-    <div class="text-center" data-ng-if="CdaUserListCtrl.loading">
-        <oui-spinner></oui-spinner>
-    </div>
     <oui-datagrid data-rows="CdaUserListCtrl.datas.users">
         <oui-column data-title="'cda_user_table_col_username' | translate" data-property="user.name" data-sortable="asc"></oui-column>
         <oui-column data-title="'cda_user_table_col_key' | translate" data-property="user.key" data-sortable></oui-column>

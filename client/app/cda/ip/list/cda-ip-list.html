@@ -11,12 +11,8 @@
             <span data-translate="cda_ip_add_button_text"></span>
         </button>
     </div>
-    <div class="text-center" data-ng-if="CdaIpListCtrl.loading">
-        <oui-spinner></oui-spinner>
-    </div>
-
     <oui-datagrid data-rows="CdaIpListCtrl.datas.ips">
-        <oui-column data-title="'cda_ip_table_col_network' | translate" data-property="network" data-sortable>
+        <oui-column data-title="'cda_ip_table_col_network' | translate" data-property="network" data-sortable="asc">
             {{ $row.network }} / {{ $row.netmask }}
         </oui-column>
         <oui-action-menu data-align="end" data-compact>
