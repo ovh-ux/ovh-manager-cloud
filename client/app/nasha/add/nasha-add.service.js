@@ -1,8 +1,9 @@
 class NashaAddService {
-    constructor ($q, $translate, OrderHelperService, OvhApiOrder, ServiceHelper) {
+    constructor ($q, $translate, OrderHelperService, OvhApiMe, OvhApiOrder, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.OrderHelperService = OrderHelperService;
+        this.OvhApiMe = OvhApiMe;
         this.OvhApiOrder = OvhApiOrder;
         this.ServiceHelper = ServiceHelper;
     }
@@ -15,13 +16,20 @@ class NashaAddService {
     }
 
     getOffers () {
-        return this.OvhApiOrder.Cart().Product().Lexi().get({ cartId: "6f111f20-61f3-476c-b38e-58684c7ded7b", productName: "nasha" })
+        return this.OvhApiMe.Lexi().get()
             .$promise
+            .then(user => this.OvhApiOrder.Cart().Lexi().post({}, { ovhSubsidiary: user.ovhSubsidiary }).$promise)
+            .then(cart => this.OvhApiOrder.Cart().Product().Lexi().get({ cartId: cart.cartId, productName: "nasha" }).$promise.then(offers => ({ cart, offers })))
             .then(response => {
-                _.forEach(response, offer => {
+                _.forEach(response.offers, offer => {
                     offer.productName = this.$translate.instant(`nasha_order_nasha_${offer.planCode}`);
                 });
-                return response;
+
+                this.OvhApiOrder.Cart().Lexi().assign({ cartId: response.cart.cartId })
+                    .$promise
+                    .then(() => this.OvhApiOrder.Cart().Lexi().delete({ cartId: response.cart.cartId }));
+
+                return response.offers;
             })
             .catch(this.ServiceHelper.errorHandler("nasha_order_loading_error"));
     }
