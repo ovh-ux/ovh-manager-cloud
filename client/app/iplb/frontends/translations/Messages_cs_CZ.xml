@@ -72,7 +72,7 @@
    <translation id="iplb_frontend_delete_success" qtlid="438857">Frontend byl úspěšně odstraněn.</translation>
 
    <translation id="iplb_frontend_preview_title" qtlid="438870">Detaily frontendu</translation>
-   <translation id="iplb_frontend_preview_name" qtlid="3818">Příjmení</translation>
+   <translation id="iplb_frontend_preview_name" qtlid="3818">Název</translation>
    <translation id="iplb_frontend_preview_protocol" qtlid="19711">Protokol</translation>
    <translation id="iplb_frontend_preview_port" qtlid="9034">Port</translation>
    <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Datacentrum</translation>

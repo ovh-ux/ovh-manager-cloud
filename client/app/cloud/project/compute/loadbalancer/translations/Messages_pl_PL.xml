@@ -12,7 +12,7 @@
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Wygasł</translation>
    <translation id="cpc_loadbalancer_openstack_status_created" qtlid="124952">Brak konfiguracji</translation>
    <translation id="cpc_loadbalancer_openstack_status_not_imported" qtlid="124952">Brak konfiguracji</translation>
-   <translation id="cpc_loadbalancer_status" qtlid="8230">Państwo</translation>
+   <translation id="cpc_loadbalancer_status" qtlid="8230">Status</translation>
    <translation id="cpc_loadbalancer_actions" qtlid="72809">Operacje</translation>
    <translation id="cpc_loadbalancer_actions_configure" qtlid="4010">Konfiguruj</translation>
    <translation id="cpc_loadbalancer_status_custom" qtlid="305837">Konfiguracja zaawansowana</translation>
@@ -30,7 +30,7 @@
    <translation id="cpc_loadbalancer_configure_task_waiting" qtlid="447456">Uruchamianie Load Balancer w toku...</translation>
    <translation id="cpc_loadbalancer_configure_loadbalancer" qtlid="323499">IP Load Balancer</translation>
    <translation id="cpc_loadbalancer_configure_adresse" qtlid="103870">Adres IP:</translation>
-   <translation id="cpc_loadbalancer_configure_frontend" qtlid="429615">Frontend</translation>
+   <translation id="cpc_loadbalancer_configure_frontend" qtlid="429615">Front-end</translation>
    <translation id="cpc_loadbalancer_configure_protocole" qtlid="232703">Protokół:</translation>
    <translation id="cpc_loadbalancer_configure_servers" qtlid="19459">Serwery</translation>
    <translation id="cpc_loadbalancer_configure_server_name" qtlid="8290">Serwer</translation>
