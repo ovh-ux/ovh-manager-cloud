@@ -13,8 +13,9 @@
             <p data-translate="cpci_private_network_activateVrack_description"></p>
             <a type="button"
                 data-ng-show="$ctrl.orderUrl"
+                data-ng-disabled="$ctrl.loaders.vracks.get"
                 class="ovh-button ovh-button_secondary"
-                data-ng-click="$ctrl.activatePrivateNetwork(network.id)"
+                data-ng-click="$ctrl.addVRack()"
                 data-translate="cpci_private_network_activateVrack_activate">
             </a>
         </div>

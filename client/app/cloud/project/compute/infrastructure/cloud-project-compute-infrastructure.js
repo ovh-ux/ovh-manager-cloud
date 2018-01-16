@@ -42,7 +42,7 @@ angular.module("managerApp")
                     "cloud/project/compute/infrastructure/privateNetwork",
                     "cloud/project/compute/infrastructure/privateNetwork/dialog",
                     "cloud/project/compute/infrastructure/privateNetwork/delete",
-                    "cloud/project/compute/infrastructure/privateNetwork/activate",
+                    "cloud/project/compute/infrastructure/privateNetwork/addVRack",
                     "cloud/project/delete",
                     "cloud/project/rename",
                     "cloud/project/compute/infrastructure/openstackClient"

@@ -1,5 +1,5 @@
 class VrackSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, VrackSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
+    constructor ($q, $translate, SidebarMenu, SidebarService, VrackSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
         this.SidebarService = SidebarService;
@@ -11,23 +11,24 @@ class VrackSectionSidebarService {
                 type: "VRACK"
             }
         ];
-        this.vRacks = null;
+        //vRacks defer object
+        this.vRacks = $q.defer();
     }
 
     /**
-     * returns all vRacks available for current logged in user
+     * returns promise that will be resolved to list of vRacks of current user
      *
-     * @returns array of vRack services available for current logged in user
+     * @returns promise that will be resolved to an array of vRack services available for current logged in user
      * @memberof VrackSectionSidebarService
      */
     getVracks() {
-        return this.vRacks;
+        return this.vRacks.promise;
     }
 
     fillSection (services) {
-        if(services && services instanceof Array) {
+        if(services && _.isArray(services)) {
             //save vRacks belonging to logged in user to be used later
-            this.vRacks = services[0];
+            this.vRacks.resolve(services[0]);
         }
         // All PaaS (Platform as a Service) main item
         const vrackMenuSection = this.SidebarMenu.addMenuItem({

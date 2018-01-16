@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-   <translation id="private_network_activate">Activate</translation>
-   <translation id="private_network_activate_new_vRack_description">You will be redirected to order new vRack. Then you can associate it with your services. The configuration is operational in a few seconds.</translation>
-   <translation id="private_network_activate_title">Enable private networks</translation>
-   <translation id="private_network_activate_existing">Existing</translation>
-   <translation id="private_network_activate_new">New</translation>
-</translations>

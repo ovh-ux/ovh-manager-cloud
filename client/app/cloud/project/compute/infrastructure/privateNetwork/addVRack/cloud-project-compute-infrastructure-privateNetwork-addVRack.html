@@ -1,7 +1,7 @@
 <div class="oui-modal oui-modal_shadow">
     <div class="oui-modal__header">
         <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="ActivateCtrl.cancel()"></button>
+                data-ng-click="AddVRackCtrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
         <form class="oui-modal__body-text" id="vRackActivateForm" name="vRackActivateForm" novalidate>
@@ -12,15 +12,15 @@
                         class="no-box-shadow vertical-text-bottom"
                         data-ovh-stop-event="click"
                         type="radio"
-                        data-ng-value="ActivateCtrl.activateOptions.EXISTING"
-                        data-ng-model="ActivateCtrl.selectedActivateOption">
+                        data-ng-value="AddVRackCtrl.activateOptions.EXISTING"
+                        data-ng-model="AddVRackCtrl.selectedActivateOption">
                     {{ :: "private_network_activate_existing" | translate }}
                     <div class="activate-private-network-vRack-list">
                         <div class="oui-select activate-private-network-select">
                             <select class="oui-select__input"
                                 id="vRacks" name="vRacks"
-                                data-ng-model="ActivateCtrl.selectedVrack"
-                                data-ng-options="vRack.displayName for vRack in ActivateCtrl.vRacks"
+                                data-ng-model="AddVRackCtrl.selectedVrack"
+                                data-ng-options="vRack.displayName for vRack in AddVRackCtrl.vRacks"
                                 required />
                             <i class="oui-icon oui-icon-chevron-down"></i>
                         </div>
@@ -34,8 +34,8 @@
                         class="no-box-shadow vertical-text-bottom"
                         data-ovh-stop-event="click"
                         type="radio"
-                        data-ng-value="ActivateCtrl.activateOptions.NEW"
-                        data-ng-model="ActivateCtrl.selectedActivateOption">
+                        data-ng-value="AddVRackCtrl.activateOptions.NEW"
+                        data-ng-model="AddVRackCtrl.selectedActivateOption">
                     {{ :: "private_network_activate_new" | translate }}
                     <div class="activate-private-network-new-vRack-description">
                         <p>{{ :: "private_network_activate_new_vRack_description" | translate }}</p>
@@ -46,12 +46,15 @@
     </div>
     <div class="oui-modal__footer">
         <button type="reset" class="oui-button oui-button_secondary"
-            data-ng-click="ActivateCtrl.cancel()">
+            data-ng-click="AddVRackCtrl.cancel()"
+            data-ng-disabled="AddVRackCtrl.loaders.activate">
             <span data-translate="common_cancel"></span>
         </button>
         <button type="submit" class="oui-button oui-button_primary"
-            data-ng-click="ActivateCtrl.activate()">
+            data-ng-click="AddVRackCtrl.activate()"
+            data-ng-disabled="AddVRackCtrl.loaders.activate">
             <span data-translate="private_network_activate"></span>
+            <span data-ng-class="AddVRackCtrl.loaders.activate ? 'fa fa-circle-o-notch fa-spin' : ''"></span>
         </button>
     </div>
 </div>
