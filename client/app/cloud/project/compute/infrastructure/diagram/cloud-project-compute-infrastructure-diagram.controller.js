@@ -673,16 +673,6 @@
                 });
         }
 
-        resumeVirtualMachine (vm) {
-            const oldStatus = vm.status;
-            _.set(vm, "status", "RESUMING");
-            this.CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm)
-                .catch(err => {
-                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_resume_submit_error")} ${_.get(err, "data.message", "")}`);
-                    vm.status = oldStatus;
-                });
-        }
-
         openVolumeSnapshotWizard (volume) {
             this.$uibModal.open({
                 templateUrl: "app/cloud/project/compute/volume/snapshot/cloud-project-compute-volume-snapshot-add.html",
@@ -692,20 +682,6 @@
                     params: () => volume
                 }
             });
-        }
-
-        stopRescueMode (vm, enable) {
-            _.set(vm, "confirmLoading", true);
-            this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable)
-                .then(() => {
-                    _.set(vm, "confirm", null);
-                })
-                .catch(err => {
-                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_rescue_end_error")} ${_.get(err, "data.message", "")}`);
-                })
-                .finally(() => {
-                    vm.confirmLoading = false;
-                });
         }
 
         // ------- END VM -------

@@ -347,6 +347,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Redémarrer à chaud (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Réactiver</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Redémarrer à froid (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot">Vous allez redémarrer votre instance <strong>{{name}}</strong>.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Informations de connexion</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">Console VNC</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Redémarrer en mode rescue</translation>

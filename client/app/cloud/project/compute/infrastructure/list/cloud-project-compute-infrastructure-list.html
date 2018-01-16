@@ -36,201 +36,27 @@
     </div>
 </div>
 <section class="row cui-page__content">
-    <table class="oui-table oui-table_responsive">
-        <thead class="oui-table oui-table__headers">
-            <tr>
-                <th class="oui-table__header oui-table__cell_sortable" scope="col" tabindex="0"
-                    data-ng-class="{
-                        'oui-table__cell_sortable-asc oui-table__cell_sorted': ComputeInfrastructureListCtrl.order.by === 'name' && !ComputeInfrastructureListCtrl.order.reverse,
-                        'oui-table__cell_sortable-desc oui-table__cell_sorted' : ComputeInfrastructureListCtrl.order.by === 'name' && ComputeInfrastructureListCtrl.order.reverse }"
-                    data-ng-click="ComputeInfrastructureListCtrl.orderBy('name')">
-                    <span data-translate="cpci_vm_name"></span>
-                </th>
-                <th class="oui-table__header" scope="col"
-                    data-translate="cpci_vm_region">
-                </th>
-                <th class="oui-table__header" scope="col"
-                    data-translate="cpci_vm_flavor_category">
-                </th>
-                <th class="oui-table__header" scope="col">ipv4</th>
-                <th class="oui-table__header" scope="col">ipv6</th>
-                <th class="oui-table__header text-center" scope="col"
-                    data-translate="cpci_vm_hdd"></th>
-                <th class="oui-table__header" scope="col"
-                    data-translate="cpci_vm_price">
-                </th>
-                <th class="oui-table__header" scope="col"
-                    data-ng-bind=":: 'common_actions' | translate">
-                </th>
-            </tr>
-        </thead>
-
-        <tbody class="oui-table__body"
-               data-ng-if="ComputeInfrastructureListCtrl.loaders.infra || ComputeInfrastructureListCtrl.loaders.pager">
-            <tr class="oui-table__row">
-                <td class="text-center" colspan="8">
-                    <oui-loader inline="true" size="m"></oui-loader>
-                </td>
-            </tr>
-        </tbody>
-
-        <tbody class="oui-table__body"
-               data-ng-if="!ComputeInfrastructureListCtrl.loaders.pager && ComputeInfrastructureListCtrl.table.items.length > 0">
-            <tr class="oui-table__row"
-                data-ng-repeat="vm in ComputeInfrastructureListCtrl.table.itemsPaginated track by vm.id">
-                <th class="oui-table__cell" scope="row"
-                    data-ng-bind="vm.name">
-                </th>
-                <td class="oui-table__cell"
-                    data-ng-bind="ComputeInfrastructureListCtrl.RegionService.getTranslatedMicroRegion(vm.region)">
-                </td>
-                <td class="oui-table__cell"
-                    data-translate="cpci_vm_flavor_category_{{vm.flavor.name}}"
-                    data-translate-default="?">
-                </td>
-                <td class="oui-table__cell"
-                    data-ng-bind="vm.getPublicIpv4().ip">
-                </td>
-                <td class="oui-table__cell"
-                    data-ng-bind="vm.getPublicIpv6().ip">
-                </td>
-                <td class="oui-table__cell text-center">
-                    <span data-ng-bind="vm.volumes.length"
-                          data-ng-if="vm.volumes.length === 0 || vm.volumes.length > 1"></span>
-                    <span data-ng-if="vm.volumes.length === 1">
-                        <span data-ng-bind="vm.volumes[0].name"></span>
-                        (<span data-ng-bind="vm.volumes[0].size | bytes:2:true:'GiB'"></span>)
-                    </span>
-                </td>
-                <td class="oui-table__cell"
-                    data-ng-class="{'text-center': vm.monthlyBilling.status === 'activationPending'}">
-                    <span data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status !== 'ok'"
-                          data-translate="cpci_vm_flavor_price"
-                          data-translate-values="{ price: vm.price.price.text || '?' }">
-                    </span>
-                    <span data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
-                          data-translate="cpci_vm_flavor_month"
-                          data-translate-values="{ price: vm.price.monthlyPrice.text || '?' }"></span>
-                    <oui-loader size="s" inline="true"
-                                data-ng-if="vm.monthlyBilling.status === 'activationPending'"></oui-loader>
-                </td>
-                <td class="oui-table__cell">
-                    <cui-dropdown-menu>
-                        <cui-dropdown-menu-button>
-                            <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                        </cui-dropdown-menu-button>
-                        <cui-dropdown-menu-body>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status === 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_delete' | translate"
-                                            data-ng-click="vm.confirm = 'deleteConfirmPending'">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status !== 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item"
-                                     data-ng-if="!vm.monthlyBilling">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_monthly' | translate"
-                                            data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openMonthlyConfirmation(vm)">
-                                    </button>
-                                </div>
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_create_snapshot' | translate"
-                                            data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openSnapshotWizard(vm)">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status !== 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_auth_info' | translate"
-                                            data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openLoginInformations(vm)">
-                                    </button>
-                                </div>
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_vnc' | translate"
-                                            data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openVnc(vm)">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status !== 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_rescue' | translate"
-                                            data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.rescueMode(vm)">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status !== 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_reboot' | translate"
-                                            data-ng-click="vm.confirm = 'rebootConfirmPending'">
-                                    </button>
-                                </div>
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_reboot_hard' | translate"
-                                            data-ng-click="vm.confirm = 'rebootHardConfirmPending'">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="oui-action-menu"
-                                 data-ng-if="vm.status !== 'DRAFT'">
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_reinstall' | translate"
-                                            data-ng-click="vm.confirm = 'reinstallConfirmPending'">
-                                    </button>
-                                </div>
-                                <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label" type="button"
-                                            data-ng-bind="'cpci_vm_action_delete' | translate"
-                                            data-ng-click="">
-                                    </button>
-                                </div>
-                            </div>
-                        </cui-dropdown-menu-body>
-                    </cui-dropdown-menu>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="clearfix"
-         data-ng-if="ComputeInfrastructureListCtrl.table.items">
-        <div class="table-pretty-pagination"
-             data-pagination-front
-             data-items="ComputeInfrastructureListCtrl.table.items"
-             data-paginated-items="ComputeInfrastructureListCtrl.table.itemsPaginated"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-transform-item="ComputeInfrastructureListCtrl.transformItem(item)"
-             data-on-transform-item-done="ComputeInfrastructureListCtrl.onTransformItemDone(items)"
-             data-on-page-change="ComputeInfrastructureListCtrl.loaders.pager = true"
-             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"
-             data-ng-hide="ComputeInfrastructureListCtrl.loaders.infra">
-        </div>
-    </div>
+    <cui-loader data-ng-show="ComputeInfrastructureListCtrl.loaders.infra"></cui-loader>
+    <oui-table data-ng-hide="ComputeInfrastructureListCtrl.loaders.infra"
+               rows="ComputeInfrastructureListCtrl.table.items"
+               row-loader="ComputeInfrastructureListCtrl.transformItem($row)">
+        <column title="'cpci_vm_name' | translate" property="name" sortable>
+            {{ $row.name }}
+        </column>
+        <column title="'cpci_vm_region' | translate" property="region" sortable>
+            {{ ComputeInfrastructureListCtrl.RegionService.getTranslatedMicroRegion($row.region) }}
+        </column>
+        <column title="'cpci_vm_flavor_category' | translate" property="flavor">
+            <span data-translate="cpci_vm_flavor_category_{{ $row.flavor.name }}" data-translate-default="?"></span>
+        </column>
+        <column title="'ipv4'">{{ $row.getPublicIpv4().ip }}</column>
+        <column title="'ipv6'">{{ $row.getPublicIpv6().ip }}</column>
+        <column title="'cpci_vm_hdd' | translate" property="volumes">
+            {{ $row.volumes.length === 0 || $row.volumes.length > 1 ? $row.volumes.length : "" }}
+            {{ $row.volumes.length === 1 ? $row.volumes[0].name + " (" + ($row.volumes[0].size | bytes:2:true:"GiB") + ")" : "" }}
+        </column>
+        <column title="'cpci_vm_price' | translate" property="price" template="ComputeInfrastructureListCtrl.priceTemplate()"></column>
+        <column class="oui-table__cell_action oui-table__cell_action-menu" title="'common_actions' | translate" template="ComputeInfrastructureListCtrl.actionTemplate()"></column>
+        <empty-placeholder data-translate="iplb_frontend_no_frontend"></empty-placeholder>
+    </oui-table>
 </section>

@@ -1,7 +1,11 @@
 class CloudProjectComputeInfrastructureService {
-    constructor ($rootScope, $uibModal) {
+    constructor ($rootScope, $translate, $uibModal, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper) {
         this.$rootScope = $rootScope;
+        this.$translate = $translate;
         this.$uibModal = $uibModal;
+        this.CloudMessage = CloudMessage;
+        this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+        this.ControllerHelper = ControllerHelper;
     }
 
     openLoginInformations (vm) {
@@ -69,6 +73,44 @@ class CloudProjectComputeInfrastructureService {
         });
     }
 
+    rebootVirtualMachine (vm, type) {
+        return this.ControllerHelper.modal.showConfirmationModal({
+            titleText: type === "hard" ? this.$translate.instant("cpci_vm_action_reboot_hard") : this.$translate.instant("cpci_vm_action_reboot"),
+            text: this.$translate.instant("cpci_vm_confirm_reboot", { name: vm.name || "" })
+        }).then(() => this.CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type)
+            .catch(err => {
+                this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reboot_submit_error")} ${_.get(err, "data.message", "")}`);
+            })
+        );
+    }
+
+    reinstallVirtualMachine (vm) {
+        return this.ControllerHelper.modal.showConfirmationModal({
+            titleText: this.$translate.instant("cpci_vm_action_reinstall"),
+            text: this.$translate.instant("cpci_vm_reinstall_warn")
+        }).then(() => this.CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm)
+            .catch(err => {
+                this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reinstall_submit_error")} ${_.get(err, "data.message", "")}`);
+            })
+        );
+    }
+
+    removeVirtualMachine (vm) {
+        this.$uibModal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html",
+            controller: "CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl",
+            controllerAs: "$ctrl",
+            resolve: {
+                params: () => vm
+            }
+        }).result.then(() => this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
+            .catch(err => {
+                this.CloudMessage.error(`${this.$translate.instant("cpci_vm_delete_submit_error")} ${_.get(err, "data.message", "")}`);
+            })
+        );
+    }
+
     rescueMode (vm) {
         this.$uibModal.open({
             windowTopClass: "cui-modal",
@@ -80,6 +122,30 @@ class CloudProjectComputeInfrastructureService {
                 params: () => vm
             }
         });
+    }
+
+    resumeVirtualMachine (vm) {
+        const oldStatus = vm.status;
+        _.set(vm, "status", "RESUMING");
+        return this.CloudProjectComputeInfrastructureOrchestrator.resumeVm(vm)
+            .catch(err => {
+                this.CloudMessage.error(`${this.$translate.instant("cpci_vm_resume_submit_error")} ${_.get(err, "data.message", "")}`);
+                vm.status = oldStatus;
+            });
+    }
+
+    stopRescueMode (vm, enable) {
+        _.set(vm, "confirmLoading", true);
+        this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable)
+            .then(() => {
+                _.set(vm, "confirm", null);
+            })
+            .catch(err => {
+                this.CloudMessage.error(`${this.$translate.instant("cpci_vm_rescue_end_error")} ${_.get(err, "data.message", "")}`);
+            })
+            .finally(() => {
+                vm.confirmLoading = false;
+            });
     }
 }
 

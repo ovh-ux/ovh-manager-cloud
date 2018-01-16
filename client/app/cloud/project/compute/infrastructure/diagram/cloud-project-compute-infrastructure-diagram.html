@@ -492,14 +492,14 @@
                                                     </li>
                                                     <li data-ng-if="vm.status === 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
                                                         <button type="button" class="red"
-                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.stopRescueMode(vm, false)">
+                                                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.stopRescueMode(vm, false)">
                                                             <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                             <span data-ng-bind="'cpci_vm_action_rescue_end' | translate"></span>
                                                         </button>
                                                     </li>
                                                     <li data-ng-if="vm.status === 'SUSPENDED' && vm.getStatusGroup() === 'OPENSTACK'">
                                                         <button type="button"
-                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.resumeVirtualMachine(vm)">
+                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.resumeVirtualMachine(vm)">
                                                             <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                             <span data-ng-bind="'cpci_vm_action_resume' | translate"></span>
                                                         </button>
