@@ -30,6 +30,8 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
             if (this.farmProbe.type === "oco") {
                 delete this.farmProbe.port;
             }
+        } else if (this.farmProbe.negate === null) {
+            this.farmProbe.negate = false;
         }
     }
 
