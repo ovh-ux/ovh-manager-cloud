@@ -42,8 +42,9 @@ class DBaasTsSidebar {
             title: this.$translate.instant("cloud_sidebar_actions_menu_dbaas_ts"),
             icon: "ovh-font ovh-font-graph",
             href: this.DBaasTsConstants.urls.order[this.locale],
-            target: "_blank"
-        }
+            target: "_blank",
+            external: true
+        };
     }
 }
 
