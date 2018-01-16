@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpc_ssh_demo" qtlid="249393">Zde můžete přidat SSH klíče, abyste měl přístup ke svým serverům.</translation>
 
-   <translation id="cpc_ssh_name" qtlid="3818">Příjmení</translation>
+   <translation id="cpc_ssh_name" qtlid="3818">Název</translation>
    <translation id="cpc_ssh_key" qtlid="104326">Klíč</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Načítání seznamu SSH klíčů...</translation>

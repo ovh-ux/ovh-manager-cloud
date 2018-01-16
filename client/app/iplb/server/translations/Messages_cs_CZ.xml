@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_server_preview_title" qtlid="438207">Detaily serveru</translation>
-   <translation id="iplb_server_preview_name" qtlid="3818">Příjmení</translation>
+   <translation id="iplb_server_preview_name" qtlid="3818">Název</translation>
    <translation id="iplb_server_preview_address" qtlid="79314">Adresa IPv4</translation>
    <translation id="iplb_server_preview_port" qtlid="9034">Port</translation>
    <translation id="iplb_server_preview_backup" qtlid="438220">Záložní server</translation>

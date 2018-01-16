@@ -55,7 +55,7 @@
    <translation id="add_instance_name" qtlid="242977">Nazwa serwera</translation>
    <translation id="add_container_image" qtlid="4394">Obraz</translation>
    <translation id="add_instance_choose" qtlid="186115">Wybierz...</translation>
-   <translation id="add_container_region" qtlid="30802">Datacenter</translation>
+   <translation id="add_container_region" qtlid="30802">Data center</translation>
    <translation id="add_container_flavor" qtlid="2642">Typ</translation>
    <translation id="add_container_ssh" qtlid="21859">Klucz SSH</translation>
    <translation id="add_instance_new_ssh" qtlid="242990">Utwórz klucz SSH</translation>

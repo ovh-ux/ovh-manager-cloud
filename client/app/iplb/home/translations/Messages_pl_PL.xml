@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_home_tile_status" qtlid="26443">Status</translation>
-   <translation id="iplb_home_tile_status_frontends" qtlid="449050">{{number}} Frontends</translation>
-   <translation id="iplb_home_tile_status_farms" qtlid="449063">{{number}} Fermes de serveurs</translation>
-   <translation id="iplb_home_tile_status_servers" qtlid="449076">{{number}} Serveurs</translation>
+   <translation id="iplb_home_tile_status_frontends" qtlid="449050">Liczba front-endów: {{number}}</translation>
+   <translation id="iplb_home_tile_status_farms" qtlid="449063">Liczba farm serwerów: {{number}}</translation>
+   <translation id="iplb_home_tile_status_servers" qtlid="449076">Liczba serwerów: {{number}}</translation>
 
    <translation id="iplb_home_tile_usage" qtlid="30382">Wykorzystanie</translation>
    <translation id="iplb_home_tile_graph" qtlid="5402">Wykresy</translation>
@@ -16,9 +16,9 @@
 
    <translation id="iplb_home_tile_configuration" qtlid="4406">Konfiguracja</translation>
    <translation id="iplb_home_tile_configuration_name" qtlid="3818">Nazwa</translation>
-   <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota par mois</translation>
-   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Seuil de l'alerte</translation>
+   <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Limit miesięczny</translation>
+   <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Próg alertu</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Nieograniczone</translation>
    <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Ciphers</translation>
-   <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Datacenter</translation>
+   <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Data center</translation>
 </translations>

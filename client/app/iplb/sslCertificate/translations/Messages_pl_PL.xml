@@ -76,6 +76,6 @@
    <translation id="iplb_ssl_order_cancel" qtlid="37863">Anuluj</translation>
 
    <translation id="iplb_ssl_order_loading_error" qtlid="447326">Wystąpił błąd podczas ładowania informacji o produkcie.</translation>
-   <translation id="iplb_ssl_order_success" qtlid="447339">Tworzenie nowego certyfikatu w toku.</translation>
+   <translation id="iplb_ssl_order_success" qtlid="447339">Trwa tworzenie nowego certyfikatu.</translation>
    <translation id="iplb_ssl_order_error" qtlid="447352">Wystąpił błąd podczas tworzenia certyfikatu: {{message}}</translation>
 </translations>
