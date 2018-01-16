@@ -1,10 +1,10 @@
 angular.module("managerApp").config($stateProvider => {
     $stateProvider
-        .state("dbaas.logs.detail.offer.options", {
+        .state("dbaas.logs.detail.options", {
             url: "/options",
             views: {
                 logsContent: {
-                    templateUrl: "app/dbaas/logs/detail/offer/options/logs-options.html",
+                    templateUrl: "app/dbaas/logs/detail/options/logs-options.html",
                     controller: "LogsOptionsCtrl",
                     controllerAs: "ctrl"
                 }
