@@ -55,7 +55,7 @@
             <label for="zone" class="oui-label" data-translate="iplb_farm_edit_datacenter"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
-                    <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
+                    <oui-spinner data-ng-show="ctrl.zones.loading"></oui-spinner>
                     <div class="oui-select"
                         data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.zone.$invalid }"
                         data-ng-hide="ctrl.zones.loading">
@@ -130,7 +130,7 @@
         </cui-advanced-options>
 
         <div class="cui-form-actions">
-            <cui-loader data-ng-show="ctrl.saving"></cui-loader>
+            <oui-spinner data-ng-show="ctrl.saving"></oui-spinner>
             <div data-ng-hide="ctrl.saving">
                 <button type="submit"
                     class="oui-button oui-button_primary"

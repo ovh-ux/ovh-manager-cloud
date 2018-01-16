@@ -34,22 +34,6 @@
                     </cui-tile-item>
                     <cui-tile-item class="cui-dropdown-menu-container" data-term="'veeam_tiles_configuration_label_stockage_number' | translate"
                         data-description=":: VeeamDashboardCtrl.configurationInfos.data.backupCount">
-                        <cui-dropdown-menu data-ng-if="VeeamDashboardCtrl.actions.data.addStorage.available">
-                            <cui-dropdown-menu-button>
-                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu">
-                                    <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                        type="button"
-                                        data-translate="veeam_update_storage_add"
-                                        data-ng-click="VeeamDashboardCtrl.addStorage()"></button>
-                                    </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
                     </cui-tile-item>
                     <cui-tile-item>
                         <cui-tile-definitions>

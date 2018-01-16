@@ -5,13 +5,13 @@
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
         <div class="oui-modal__body-text text-center" data-ng-if="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div class="oui-modal__body-text" data-ng-if="!CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
             <h2 class="oui-modal__title" data-translate="cpbea_estimate_alert_add_header_title"></h2>
             <div class="oui-modal__text">
                 <label class="oui-label" for="alertMail" data-translate="cpbea_estimate_alert_add_mail_label"></label>
-                <input type="email" class="oui-input" 
+                <input type="email" class="oui-input"
                     id="alertMail" name="mail"
                     data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.email"
                     required >
@@ -29,7 +29,7 @@
                     <span data-ng-bind="CloudProjectBillingConsumptionEstimateAlertAddCtrl.alerting.currency"></span>
                     <span>)</span>
                 </label>
-                <input class="oui-input" 
+                <input class="oui-input"
                         id="alertThreshold" name="alertThreshold"
                         type="number"
                         data-ng-model="CloudProjectBillingConsumptionEstimateAlertAddCtrl.model.threshold"
@@ -44,14 +44,14 @@
         </div>
     </div>
     <div class="oui-modal__footer">
-        <button type="reset" 
-                class="oui-button oui-button_secondary" 
-                title="{{ ::'cpbea_estimate_alert_add_cancel_btn' | translate }}" 
+        <button type="reset"
+                class="oui-button oui-button_secondary"
+                title="{{ ::'cpbea_estimate_alert_add_cancel_btn' | translate }}"
                 data-ng-click="CloudProjectBillingConsumptionEstimateAlertAddCtrl.closeModal()"
                 data-ng-disabled="CloudProjectBillingConsumptionEstimateAlertAddCtrl.loaders.saveAlert">
             <span data-translate="cpbea_estimate_alert_add_cancel_btn"></span>
         </button>
-        <button type="submit" 
+        <button type="submit"
                 class="oui-button oui-button_primary"
                 title="{{ ::'cpbea_estimate_alert_add_submit_btn' | translate }}"
                 data-ng-click="addAlertForm.$valid && CloudProjectBillingConsumptionEstimateAlertAddCtrl.saveAlert()"
@@ -61,9 +61,9 @@
     </div>
 </form>
 
- 
-            
-            
+
+
+
 
 
 

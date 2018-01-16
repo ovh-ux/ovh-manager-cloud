@@ -86,18 +86,11 @@
                 data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('negate')">
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" id="negate" name="negate" type="checkbox"
-                            data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.negate">
-                            <label class="oui-checkbox__label-container" for="negate">
-                                <span class="oui-checkbox__label" data-translate="iplb_farm_edit_probe_negate"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            text="{{ 'iplb_farm_edit_probe_negate' | translate }}"
+                            name="negate"
+                            model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.negate">
+                        </oui-checkbox>
                     </div>
                 </div>
             </div>

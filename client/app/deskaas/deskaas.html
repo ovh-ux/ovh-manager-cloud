@@ -1,11 +1,11 @@
 <div ui-view class="cui-page">
-    
+
     <cui-page-header
         data-title-text="'vdi_header' | translate">
     </cui-page-header>
 
     <div class="cui-page__content">
-        <cui-loader data-ng-show="DeskaasCtrl.flags.initializing"></cui-loader>
+        <oui-spinner data-ng-show="DeskaasCtrl.flags.initializing"></oui-spinner>
             <oui-table data-ng-hide="DeskaasCtrl.flags.initializing"
                 rows="DeskaasCtrl.services">
                 <column title="'vdi_hdr_status' | translate" property="details.displayName" sortable="asc">

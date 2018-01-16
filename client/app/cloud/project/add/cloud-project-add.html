@@ -2,7 +2,7 @@
 
     <!-- init loading... -->
     <div data-ng-if="CloudProjectAddCtrl.loaders.init" class="top-space-m16">
-        <oui-loader size="m" class="d-inline-block"></oui-loader>
+        <oui-spinner></oui-spinner>
         <span data-translate="common_loading"></span>
     </div>
 
@@ -195,7 +195,7 @@
                                             data-ng-if="!CloudProjectAddCtrl.loaders.creating">
                                             {{(CloudProjectAddCtrl.data.projectsCount === 0 ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
                                         </button>
-                                        <oui-loader data-ng-if="CloudProjectAddCtrl.loaders.creating" size="s" class="d-inline-block"></oui-loader>
+                                        <oui-spinner data-ng-if="CloudProjectAddCtrl.loaders.creating" size="s"></oui-spinner>
                                     </div>
 
                                 </form>

@@ -52,7 +52,7 @@
                 data-ng-if="PartitionCtrl.loaders.table">
                 <tr>
                     <td colspan="5" class="text-center">
-                        <oui-loader class="d-inline-block" data-ng-show="PartitionCtrl.loaders.table"></oui-loader>
+                        <oui-spinner data-ng-show="PartitionCtrl.loaders.table"></oui-spinner>
                     </td>
                 </tr>
             </tbody>
@@ -89,7 +89,7 @@
                     </td>
                     <td data-title="{{ 'common_actions' | translate }}"
                         class="oui-table__cell">
-                        <oui-loader size="s" inline data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"></oui-loader>
+                        <oui-spinner size="s" data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"></oui-spinner>
                         <div data-ng-hide="PartitionCtrl.hasTaskInProgress(partition)"
                              class="btn-group"
                              dropdown data-on-toggle="toggled(open)">

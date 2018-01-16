@@ -110,7 +110,8 @@ angular.module("managerApp", [
               </div>
             `);
     })
-    .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration) => {
+    .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration,
+          ouiDatagridConfiguration, ouiPaginationConfiguration) => {
         "use strict";
         $translatePartialLoader.addPart("components");
 
@@ -123,7 +124,22 @@ angular.module("managerApp", [
                 next: $translate.instant("common_pagination_next"),
                 previous: $translate.instant("common_pagination_previous")
             };
+
+            ouiDatagridConfiguration.translations = {
+                emptyPlaceholder: $translate.instant("common_datagrid_nodata")
+            };
+
+            ouiPaginationConfiguration.translations = {
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                ofNResults: $translate.instant("common_pagination_ofnresults")
+                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
+                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount"),
+                previousPage: $translate.instant("common_pagination_previous"),
+                nextPage: $translate.instant("common_pagination_next")
+            };
+
             off();
         });
-
     });

@@ -2,7 +2,7 @@
 
     <!-- init loading... -->
     <div data-ng-if="CloudProjectDetailsCtrl.loaders.init" class="text-center" style="margin-top: 200px;">
-        <oui-loader size="m" class="d-inline-block"></oui-loader>
+        <oui-spinner></oui-spinner>
     </div>
 
     <div class="col-xs-12 col-lg-10 col-lg-offset-1" style="margin-top: 150px;"
@@ -34,13 +34,13 @@
                 <i class="glyphicon glyphicon-remove"></i>
                 <span data-translate="cpd_project_creating_cancel"></span>
             </button>
-            <oui-loader data-ng-if="CloudProjectDetailsCtrl.loaders.cancelCreation" size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner data-ng-if="CloudProjectDetailsCtrl.loaders.cancelCreation"></oui-spinner>
         </div>
 
         <!-- deleting -->
         <div data-ng-switch-when="deleting"
              class="text-center">
-            <oui-loader size="s" class="d-inline-block"></oui-loader>
+            <oui-spinner size="s"></oui-spinner>
             <h2 data-translate="cpd_project_deleting"></h2>
             <p class="text-muted fs10" data-translate="cpd_project_deleting_help"></p>
         </div>

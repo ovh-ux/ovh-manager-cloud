@@ -34,7 +34,7 @@
                 <img class="storage-table-type-icon" data-ng-if="storage.shortcut && storage.shortcut !== 'error'"
                         data-ng-src="assets/images/add/storage/{{ storage.shortcut }}.svg" />
                 <span data-ng-if="!storage.shortcut" class="text-center">
-                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                    <oui-spinner size="s"></oui-spinner>
                 </span>
                 <i class="glyphicon glyphicon-exclamation-sign" data-ng-show="storage.shortcut === 'error'" />
             </td>
@@ -56,7 +56,7 @@
                 <button type="button" class="no-style pull-right" data-ng-show="storage.status != 'deleting'" data-ng-click="delete(storage)">
                     <i class="glyphicon glyphicon-trash"></i>
                 </button>
-                <oui-loader size="s" class="pull-right" data-ng-if="storage.status === 'deleting'"></oui-loader>
+                <oui-spinner size="s" class="pull-right" data-ng-if="storage.status === 'deleting'"></oui-spinner>
             </td>
         </tr>
     </tbody>

@@ -11,7 +11,7 @@
         </button>
     </div>
     <div class="text-center" data-ng-if="CdaUserListCtrl.loading">
-        <oui-loader size="m" class="d-inline-block"></oui-loader>
+        <oui-spinner></oui-spinner>
     </div>
     <div class="table-responsive-vertical">
         <table data-ng-if="!CdaUserListCtrl.loading" class="oui-table oui-table_responsive">
@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody class="oui-table__body">
-                <tr class="oui-table__row" data-ng-if="CdaUserListCtrl.datas.users.length" 
+                <tr class="oui-table__row" data-ng-if="CdaUserListCtrl.datas.users.length"
                     data-ng-repeat="user in CdaUserListCtrl.datas.paginatedUsers track by user.user.name">
                     <td class="oui-table__cell" data-title="{{ 'cda_user_table_col_username' | translate }}">
                         <span data-ng-bind=" ::user.user.name"></span>
