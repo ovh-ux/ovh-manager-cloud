@@ -5,7 +5,7 @@
    <translation id="dtpds_title_unconfigured" qtlid="300980">Úvodní konfigurace projektu <strong>{{name}}</strong></translation>
    <translation id="dtpds_title_creation" qtlid="300993">Nastavení projektu <strong>{{name}}</strong> (vytváření)</translation>
 
-   <translation id="dtpds_name" qtlid="3818">Příjmení</translation>
+   <translation id="dtpds_name" qtlid="3818">Název</translation>
    <translation id="dtpds_region" qtlid="32434">Okres</translation>
    <translation id="dtpds_choose_region" qtlid="301006">-- Vyberte region --</translation>
    <translation id="dtpds_region_required" qtlid="301019">Vyberte region</translation>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpa_title" qtlid="255285">Vytvořit nový Public Cloud projekt</translation>
-   <translation id="cpa_title_first" qtlid="245662">Aktivaci Vašeho Public Cloud</translation>
+   <translation id="cpa_title_first" qtlid="245662">Aktivace Public Cloud projektu</translation>
 
    <translation id="cpa_validationPending" qtlid="245675">Váš zákaznický účet není způsobilý pro službu Public Cloud. Jakmile si budete tento produkt moci objednat, budeme Vás informovat e-mailem.</translation>
 
@@ -20,7 +20,7 @@
    <translation id="cpa_paymentmean_empty1" qtlid="266651">Výchozí platební metoda (doporučeno).</translation>
    <translation id="cpa_paymentmean_empty2" qtlid="266664">Každá faktura je automaticky strhávána z Vašeho cloudového kreditu, který posléze vyrovnáte kreditní nebo debetní kartou, PayPalem či pomocí SEPA platby.</translation>
    <translation id="cpa_paymentmean_empty_help_link" qtlid="266677">Uložení platební metody</translation>
-   <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Vložit bankovní kartu</translation>
+   <translation id="cpa_paymentmean_empty_help_3dsCreditCard_link" qtlid="275856">Přidat platební kartu</translation>
 
    <translation id="cpa_paymentmean_expl" qtlid="319154">Každý cloudový projekt se fakturuje na začátku měsíce (hodinová sazba nebo GB za minulý měsíc + měsíční paušály na další (aktuální) měsíc). Poměrná faktura bude také vystavena v případě, že spustíte instance s měsíční fakturací.</translation>
    <translation id="cpa_paymentmean_expl2" qtlid="266703">Každá faktura bude automaticky odečtena z výchozí platební metody (po odpočtu Vašich případných slev, voucherů a předplaceného účtu OVH).</translation>

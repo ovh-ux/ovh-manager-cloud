@@ -26,7 +26,7 @@
    <translation id="vdi_btn_reset_password" qtlid="80394">Changer le mot de passe</translation>
    <translation id="vdi_btn_delete" qtlid="442691">Résilier le desktop</translation>
    <translation id="vdi_label_username" qtlid="197024">Utilisateur :</translation>
-   <translation id="vdi_label_email" qtlid="116322">E-mail :</translation>
+   <translation id="vdi_label_email" qtlid="116322">Courriel:</translation>
    <translation id="vdi_label_alias" qtlid="290147">Alias :</translation>
    <translation id="vdi_label_service_name" qtlid="323872">Service name :</translation>
    <translation id="vdi_label_ip" qtlid="290160">IP publique de sortie :</translation>

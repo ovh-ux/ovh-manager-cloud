@@ -158,7 +158,7 @@
    <translation id="payment_type_cash" qtlid="139689">Hotovost</translation>
    <translation id="payment_type_chargeback" qtlid="139702">Platba zamítnuta</translation>
    <translation id="payment_type_cheque" qtlid="139715">Šek</translation>
-   <translation id="payment_type_creditCard" qtlid="89809">Kreditní karta</translation>
+   <translation id="payment_type_creditCard" qtlid="89809">Platební karta</translation>
    <translation id="payment_type_deposit" qtlid="139728">Vklad</translation>
    <translation id="payment_type_edinar" qtlid="139741">e-DINAR</translation>
    <translation id="payment_type_fidelityPoints" qtlid="139754">Věrnostní body</translation>

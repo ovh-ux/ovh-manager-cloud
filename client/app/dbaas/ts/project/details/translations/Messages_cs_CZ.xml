@@ -9,7 +9,7 @@
    <translation id="dbaasts_region" qtlid="32434">Okres</translation>
 
    <translation id="dbaasts_ok" qtlid="31522">OK</translation>
-   <translation id="dbaasts_name" qtlid="3818">Příjmení</translation>
+   <translation id="dbaasts_name" qtlid="3818">Název</translation>
 
    <translation id="dtpds_name_error" qtlid="300759">Attention, le nom doit respecter les conditions suivantes :</translation>
    <translation id="dtpds_name_error1" qtlid="300772">- Minimum {{min}} caractères</translation>
