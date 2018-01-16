@@ -193,6 +193,7 @@ class IpLoadBalancerFrontendsEditCtrl {
             default: break;
         }
         frontend.port = parseInt(frontend.port, 10);
+        frontend.allowedSource = frontend.allowedSource.join(", ");
         this.frontend = angular.copy(frontend);
         return frontend;
     }
@@ -215,7 +216,7 @@ class IpLoadBalancerFrontendsEditCtrl {
             request.defaultFarmId = null;
         }
         if (this.frontend.allowedSource) {
-            request.allowedSource = this.frontend.allowedSource.split(",");
+            request.allowedSource = _.map(this.frontend.allowedSource.split(","), source => _.trim(source));
         }
         delete request.protocol;
         return request;
