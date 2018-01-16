@@ -1,8 +1,10 @@
 "use strict";
 
 angular.module("managerApp")
-    .controller("BillingSnapshotListComponentCtrl", function ($q, $translate, $filter, OvhApiMe, Toast) {
+    .controller("BillingSnapshotListComponentCtrl", function ($q, $translate, $filter, OvhApiMe, Toast, RegionService) {
         var self = this;
+
+        self.RegionService = RegionService;
 
         self.currencySymbol = "";
 
