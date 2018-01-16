@@ -192,7 +192,6 @@ class IpLoadBalancerFrontendsEditCtrl {
                 break;
             default: break;
         }
-        frontend.port = parseInt(frontend.port, 10);
         this.frontend = angular.copy(frontend);
         return frontend;
     }
