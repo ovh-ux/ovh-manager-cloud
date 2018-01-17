@@ -11,64 +11,28 @@
 <div class="text-center" data-ng-if="CdaUserDetailsPermissionListCtrl.loading">
     <oui-spinner></oui-spinner>
 </div>
-<div class="table-responsive-vertical">
-    <table data-ng-if="!CdaUserDetailsPermissionListCtrl.loading" class="oui-table oui-table_responsive">
-        <thead class="oui-table__headers">
-            <tr>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_poolname"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_read"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_write"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_execute"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_classread"></span>
-                </th>
-                <th class="oui-table__header">
-                    <span data-translate="cda_user_details_permissions_table_col_classwrite"></span>
-                </th>
-            </tr>
-        </thead>
-        <tbody class="oui-table__body">
-            <tr data-ng-if="CdaUserDetailsPermissionListCtrl.datas.poolsDisplay.length"
-                data-ng-repeat="permission in CdaUserDetailsPermissionListCtrl.datas.poolsDisplay track by permission.poolName"
-                class="oui-table__row">
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_poolname' | translate }}">
-                    <span data-ng-bind=" ::permission.poolName"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_read' | translate }}">
-                    <i data-ng-if="permission.read" class="glyphicon glyphicon-ok-circle"></i>
-                    <span class="sr-only" data-ng-bind="permission.read"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_write' | translate }}">
-                    <i data-ng-if="permission.write" class="glyphicon glyphicon-ok-circle"></i>
-                    <span class="sr-only" data-ng-bind="permission.write"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_execute' | translate }}">
-                    <i data-ng-if="permission.execute" class="glyphicon glyphicon-ok-circle"></i>
-                    <span class="sr-only" data-ng-bind="permission.execute"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_classread' | translate }}">
-                    <i data-ng-if="permission.classRead" class="glyphicon glyphicon-ok-circle"></i>
-                    <span class="sr-only" data-ng-bind="permission.classRead"></span>
-                </td>
-                <td class="oui-table__cell" data-title="{{ 'cda_user_details_permissions_table_col_classwrite' | translate }}">
-                    <i data-ng-if="permission.classWrite" class="glyphicon glyphicon-ok-circle"></i>
-                    <span class="sr-only" data-ng-bind="permission.classWrite"></span>
-                </td>
-            </tr>
-            <tr data-ng-if="!CdaUserDetailsPermissionListCtrl.datas.poolsDisplay.length" class="oui-table__row">
-                    <td colspan="6" class="oui-table__cell">
-                        <span data-translate="cda_user_details_permissions_table_empty"></span>
-                    </td>
-                </tr>
-        </tbody>
-    </table>
-</div>
+<oui-datagrid data-rows="CdaUserDetailsPermissionListCtrl.datas.poolsDisplay">
+    <oui-column data-title="'cda_user_details_permissions_table_col_poolname' | translate" data-property="poolName" data-sortable="asc"></oui-column>
+    <oui-column data-title="'cda_user_details_permissions_table_col_read' | translate" data-property="read" data-sortable>
+        <i data-ng-if="$row.read" class="glyphicon glyphicon-ok-circle"></i>
+        <span class="sr-only" data-ng-bind="$row.read"></span>
+    </oui-column>
+    <oui-column data-title="'cda_user_details_permissions_table_col_write' | translate" data-property="write" data-sortable>
+        <i data-ng-if="$row.write" class="glyphicon glyphicon-ok-circle"></i>
+        <span class="sr-only" data-ng-bind="$row.write"></span>
+    </oui-column>
+    <oui-column data-title="'cda_user_details_permissions_table_col_execute' | translate" data-property="execute" data-sortable>
+        <i data-ng-if="$row.execute" class="glyphicon glyphicon-ok-circle"></i>
+        <span class="sr-only" data-ng-bind="$row.execute"></span>
+    </oui-column>
+    <oui-column data-title="'cda_user_details_permissions_table_col_classread' | translate" data-property="classRead" data-sortable>
+        <i data-ng-if="$row.classRead" class="glyphicon glyphicon-ok-circle"></i>
+        <span class="sr-only" data-ng-bind="$row.classRead"></span>
+    </oui-column>
+    <oui-column data-title="'cda_user_details_permissions_table_col_classwrite' | translate" data-property="classWrite" data-sortable>
+        <i data-ng-if="$row.classWrite" class="glyphicon glyphicon-ok-circle"></i>
+        <span class="sr-only" data-ng-bind="$row.classWrite"></span>
+    </oui-column>
+</oui-datagrid>
+
 <div ui-view="cdaDetails"></div>
