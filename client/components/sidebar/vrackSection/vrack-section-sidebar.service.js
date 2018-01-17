@@ -11,7 +11,7 @@ class VrackSectionSidebarService {
                 type: "VRACK"
             }
         ];
-        //vRacks defer object
+        // vRacks defer object
         this.vRacks = $q.defer();
     }
 
@@ -21,13 +21,13 @@ class VrackSectionSidebarService {
      * @returns promise that will be resolved to an array of vRack services available for current logged in user
      * @memberof VrackSectionSidebarService
      */
-    getVracks() {
+    getVracks () {
         return this.vRacks.promise;
     }
 
     fillSection (services) {
-        if(services && _.isArray(services)) {
-            //save vRacks belonging to logged in user to be used later
+        if (services && _.isArray(services)) {
+            // save vRacks belonging to logged in user to be used later
             this.vRacks.resolve(services[0]);
         }
         // All PaaS (Platform as a Service) main item

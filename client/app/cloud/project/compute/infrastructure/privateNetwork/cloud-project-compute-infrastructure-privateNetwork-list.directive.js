@@ -1,6 +1,6 @@
 class PrivateNetworkListCtrl {
     constructor ($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
-                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack, VrackSectionSidebarService) {
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack, VrackSectionSidebarService, ControllerHelper) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
@@ -17,6 +17,7 @@ class PrivateNetworkListCtrl {
         this.$stateParams = $stateParams;
         this.User = OvhApiMe;
         this.URLS = URLS;
+        this.ControllerHelper = ControllerHelper;
 
         this.loaders = {
             privateNetworks: {
@@ -46,14 +47,14 @@ class PrivateNetworkListCtrl {
             }
         };
         this.$window = $window;
-        //get vRacks for current user, shown in left side bar
+        // get vRacks for current user, shown in left side bar
         this.vRacks = [];
         VrackSectionSidebarService.getVracks()
-        .then((vRacks) => {
-            this.vRacks = vRacks;
-        }).finally(() => {
-            this.loaders.vracks.get = false;
-        });
+            .then(vRacks => {
+                this.vRacks = vRacks;
+            }).finally(() => {
+                this.loaders.vracks.get = false;
+            });
     }
 
     $onInit () {
@@ -97,35 +98,35 @@ class PrivateNetworkListCtrl {
      * @memberof PrivateNetworkListCtrl
      */
     addVRack () {
-        var vRacks = this.vRacks;
-        if(vRacks && _.isArray(vRacks) && !_.isEmpty(vRacks)) {
-                // user has pre ordered vRacks
-                var orderUrl = this.orderUrl;
-                const modal = this.resources.modal.open({
-                    windowTopClass: "cui-modal",
+        const vRacks = this.vRacks;
+        if (vRacks.length > 0) {
+            // user has pre ordered vRacks
+            const orderUrl = this.orderUrl;
+
+            this.ControllerHelper.modal.showModal({
+                modalConfig: {
                     templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/addVRack/cloud-project-compute-infrastructure-privateNetwork-addVRack.html",
                     controller: "AddVRackCtrl",
-                    controllerAs: "AddVRackCtrl",
+                    controllerAs: "$ctrl",
                     resolve: {
                         params: () => ({
-                            orderUrl: orderUrl,
-                            vRacks: vRacks
+                            orderUrl,
+                            vRacks
                         })
                     }
-                });
-                modal.result
-                    .then((vRack) => {
-                        //closed or resolved
-                        if(vRack) {
-                            this.models.vrack = vRack;
-                        }
-                    }, () => {
-                        //dismissed, show error message on UI
-                        this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
-                    });
+                }
+            }).then(vRack => {
+                // closed or resolved
+                if (vRack) {
+                    this.models.vrack = vRack;
+                }
+            }, () => {
+                // dismissed, show error message on UI
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
+            });
         } else {
             // user has no vRacks, take him to order new vRack page
-            this.$window.open(this.orderUrl, '_blank');
+            this.$window.open(this.orderUrl, "_blank");
         }
     }
 

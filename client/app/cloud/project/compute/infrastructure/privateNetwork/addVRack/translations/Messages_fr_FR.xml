@@ -5,4 +5,5 @@
    <translation id="private_network_activate_title">Activer les réseaux privés</translation>
    <translation id="private_network_activate_existing">Existant</translation>
    <translation id="private_network_activate_new">Nouveau</translation>
+   <translation id="private_network_select_placeholder">Sélectionner</translation>
 </translations>
