@@ -11,8 +11,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
         this.loading = {
             init: false,
-            vouchers: false,
-            add: false
+            vouchers: false
         };
 
         this.toggle = {
@@ -42,8 +41,10 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
             return OvhApiCloudProjectCredit.Lexi().query({
                 serviceName: $stateParams.projectId
-            }).$promise.then(function (voucherIds) {
+            }).$promise.then(voucherIds => {
                 self.datas.voucherIds = voucherIds;
+                _.forEach(voucherIds, id => self.transformItem(id)
+                    .then(voucher => self.datas.vouchers.push(voucher)));
             }, function (err) {
                 self.datas.voucherIds = null;
                 CloudMessage.error([$translate.instant("cpb_vouchers_get_error"), err.data && err.data.message || ""].join(" "));
@@ -56,29 +57,16 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
 
         /*-----  End of VARIABLES  ------*/
 
-        this.toggleAddVoucher = function () {
-            if (this.toggle.openAddVoucher) {
-                this.model.voucher = null;
-            }
-            this.toggle.openAddVoucher = !this.toggle.openAddVoucher;
-        };
-
-        this.addVoucher = function () {
-            this.loading.add = true;
-
-            return OvhApiCloudProjectCredit.Lexi().save({
-                serviceName: $stateParams.projectId
-            }, {
-                code: self.model.voucher
-            }).$promise.then(function () {
-                CloudMessage.success($translate.instant("cpb_vouchers_add_success"));
-                init();
-                self.toggleAddVoucher();
-            }, function (err) {
-                CloudMessage.error($translate.instant("cpb_vouchers_add_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""))
-            })["finally"](function () {
-                self.loading.add = false;
-            });
+        this.openAddVoucher = function () {
+            $uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/billing/vouchers/addVoucher/cloud-project-billing-vouchers-add.html",
+                controller: "CloudProjectBillingVoucherAddCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => $stateParams.projectId
+                }
+            }).result.then(() => init());
         };
 
         self.openAddCredit = function () {
@@ -98,10 +86,6 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
             }
         };
 
-        /*==============================================
-        =            PAGINATION AND SORTING            =
-        ==============================================*/
-
         function futureVoucherWithPdfUrl (voucher) {
             return OvhApiMeBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
                 voucher.pdfUrl = bill.pdfUrl;
@@ -112,31 +96,11 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         }
 
         this.transformItem = function (voucherId) {
-            this.loading.vouchers = true;
             return OvhApiCloudProjectCredit.Lexi().get({
                 serviceName: $stateParams.projectId,
                 creditId: voucherId
-            }).$promise.then(function (voucher) {
-                return voucher.bill ? futureVoucherWithPdfUrl(voucher) : voucher;
-            });
+            }).$promise.then(voucher => voucher.bill ? futureVoucherWithPdfUrl(voucher) : voucher);
         };
-
-        this.onTransformItemDone = function (vouchers) {
-            this.loading.vouchers = false;
-            this.datas.vouchers = vouchers;
-        };
-
-        this.sortBy = function (by) {
-            if (by) {
-                if (this.sort.by === by) {
-                    this.sort.reverse = !this.sort.reverse;
-                } else {
-                    this.sort.by = by;
-                }
-            }
-        };
-
-        /*-----  End of PAGINATION AND SORTING  ------*/
 
         init();
     }
