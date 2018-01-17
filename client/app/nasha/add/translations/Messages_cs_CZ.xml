@@ -20,12 +20,13 @@
    <translation id="nasha_order_nasha_26400g" qtlid="243458">NAS-HA hybrid 26,4 TB</translation>
    <translation id="nasha_order_name" qtlid="345234">Typ NAS-HA</translation>
    <translation id="nasha_order_price" qtlid="345247">Cena bez DPH (1 měsíc)</translation>
-   <translation id="nasha_order_datacenter" qtlid="345260">Zvolte datacentrum</translation>
+   <translation id="nasha_order_datacenter" qtlid="345260">Datacentrum</translation>
    <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Štrasburk</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
-   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Tento produkt aktuálně není v důsledku zvýšeného zájmu v následujícím datacentru dostupný: {{ region }}.</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Tento produkt aktuálně není v důsledku zvýšeného zájmu dostupný v následujícím datacentru: {{ region }}. V datacentru {{ fallback }} jsou k dispozici produkty s podobným výkonem.&#13;
+</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Při ověřování Vašeho požadavku došlo chybě.</translation>
    <translation id="nasha_order_error" qtlid="345286">Při načítání Vaší objednávky došlo k chybě.</translation>
    <translation id="nasha_order_success" qtlid="345299">Objednávka číslo <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> Vaší služby NAS-HA byla vytvořena.</translation>
@@ -35,5 +36,5 @@
    <translation id="nasha_order_guide_title" qtlid="300370">Průvodci</translation>
    <translation id="nasha_order_new_window" qtlid="222176">Nové okno</translation>
 
-   <translation id="nasha_order_select_placeholder" qtlid="159046">Vybírání...</translation>
+   <translation id="nasha_order_select_placeholder" qtlid="159046">Zvolte...</translation>
 </translations>

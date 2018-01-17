@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="storage_tab_storage" qtlid="233733">Úložiště</translation>
-   <translation id="storage_name" qtlid="3818">Příjmení</translation>
+   <translation id="storage_name" qtlid="3818">Název</translation>
    <translation id="storage_type" qtlid="2642">Typ</translation>
    <translation id="storage_actions" qtlid="72809">Akce</translation>
    <translation id="storage_region" qtlid="32434">Okres</translation>

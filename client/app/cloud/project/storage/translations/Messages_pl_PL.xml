@@ -22,7 +22,7 @@
    <translation id="storage_file_name" qtlid="242223">Nazwa pliku</translation>
    <translation id="storage_last_modify" qtlid="92380">Ostatnia zmiana </translation>
    <translation id="storage_file_type" qtlid="2642">Typ</translation>
-   <translation id="storage_file_region" qtlid="30802">Datacenter</translation>
+   <translation id="storage_file_region" qtlid="30802">Data center</translation>
    <translation id="storage_size" qtlid="7726">Rozmiar</translation>
    <translation id="storage_delete_button" qtlid="2414">Usuń</translation>
    <translation id="storage_delete_pending" qtlid="146645">Usuwania w trakcie</translation>

@@ -23,14 +23,13 @@ describe("Controller: CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl
         CloudProjectComputeInfrastructureOrchestrator,
         VirtualMachineFactory;
 
-    beforeEach(angular.mock.inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_, _CloudMessage_, _CloudProjectComputeInfrastructureOrchestrator_, _CloudProjectComputeInfraVrackVmFactory_) {
+    beforeEach(angular.mock.inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_, _CloudMessage_, _CloudProjectComputeInfrastructureOrchestrator_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         $controller = _$controller_;
         $timeout = _$timeout_;
         CloudMessage = _CloudMessage_;
-        VirtualMachineFactory = _CloudProjectComputeInfraVrackVmFactory_;
 
         CloudProjectComputeInfrastructureOrchestrator = _CloudProjectComputeInfrastructureOrchestrator_;
 

@@ -1,59 +1,31 @@
-<table class="oui-table oui-table_responsive" data-ng-if="objects.length > 0 && !loaders.details">
-    <thead class="oui-table__headers">
-        <tr>
-            <th class="oui-table__header" data-translate="storage_file_name"></th>
-            <th class="oui-table__header" data-translate="storage_last_modify"></th>
-            <th class="oui-table__header" data-translate="storage_size"></th>
-            <th class="oui-table__header" data-translate="storage_file_type"></th>
-            <th class="oui-table__header" data-translate="storage_file_download" write-right-required></th>
-            <th class="oui-table__header" write-right-required>&#160;</th>
-        </tr>
-    </thead>
+<oui-datagrid data-rows="files">
+    <oui-column data-title="'storage_file_name' | translate" data-property="name" data-sortable></oui-column>
+    <oui-column data-title="'storage_last_modify' | translate" data-property="lastModified" data-sortable>
+        {{$row.lastModified | date:'medium'}}
+    </oui-column>
+    <oui-column data-title="'storage_size' | translate" data-property="size" data-sortable>
+        {{$row.size | RAUnitsBits}}
+    </oui-column>
+    <oui-column data-title="'storage_file_type' | translate" data-property="contentType" sortable></oui-column>
+    <oui-column data-title="'storage_file_download' | translate" data-property="retrievalState" sortable>
+        <div data-ng-show="$row.sealingStateLoading" class="text-center">
+            <oui-spinner size="s"></oui-spinner>
+        </div>
+        <span data-ng-hide="$row.sealingStateLoading" data-ng-switch="$row.retrievalState">
+            <div data-ng-switch-when="sealed">
+                <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="$row.stateText" data-ng-click="fileDownload($row)" data-uib-tooltip="{{'storage_file_state_sealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
+            </div>
+            <div data-ng-switch-when="unsealing">
+                <button type="button" class="oui-button oui-button_secondary" data-ng-bind="$row.stateText" data-ng-click="fileDownload($row)" data-uib-tooltip="{{'storage_file_state_unsealing' | translate }}" data-tooltip-trigger="mouseenter"></button>
+            </div>
+            <div data-ng-switch-when="unsealed">
+                <button type="button" class="oui-button oui-button_secondary" data-ng-bind="$row.stateText" data-ng-click="fileDownload($row)" data-uib-tooltip="{{'storage_file_state_unsealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
+            </div>
+        </span>
+    </oui-column>
 
-    <tbody data-ng-if="files.length > 0 && !loaders.details" class="oui-table__body">
-        <tr class="oui-table__row" data-ng-repeat="file in files track by $index">
-            <td class="oui-table__cell" data-title="{{ 'storage_file_name' | translate }}">
-                {{file.name}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_last_modify' | translate }}">
-                {{file.lastModified | date:'medium'}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_size' | translate }}">
-                {{file.size | RAUnitsBits}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_file_type' | translate }}">
-                {{file.contentType}}
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_file_state' | translate }}" write-right-required>
-                <div data-ng-show="file.sealingStateLoading" class="text-center">
-                    <oui-spinner size="s"></oui-spinner>
-                </div>
-                <span data-ng-hide="file.sealingStateLoading" data-ng-switch="file.retrievalState">
-                    <div data-ng-switch-when="sealed">
-                        <button type="button" class="ovh-button ovh-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_sealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
-                    </div>
-                    <div data-ng-switch-when="unsealing">
-                        <button type="button" class="oui-button oui-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealing' | translate }}" data-tooltip-trigger="mouseenter"></button>
-                    </div>
-                    <div data-ng-switch-when="unsealed">
-                        <button type="button" class="oui-button oui-button_secondary" data-ng-bind="file.stateText" data-ng-click="fileDownload(file)" data-uib-tooltip="{{'storage_file_state_unsealed' | translate }}" data-tooltip-trigger="mouseenter"></button>
-                    </div>
-                </span>
-
-            </td>
-            <td class="oui-table__cell" data-title="{{ 'storage_actions' | translate }}" write-right-required>
-                <button type="button" class="no-style" data-ng-show="file.status != 'deleting'" data-ng-click="delete(file)" data-translate-attr="{ title: 'storage_delete_button' }">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </button>
-                <img data-ng-show="file.status === 'deleting'" src="assets/images/loader.gif" data-translate-attr="{ alt: 'storage_delete_pending' }" width="15" />
-            </td>
-        </tr>
-    </tbody>
-
-    <tbody data-ng-if="loaders.pager" class="oui-table__body">
-        <tr>
-            <td colspan="4" data-translate="storage_details_loading"></td>
-        </tr>
-    </tbody>
-
-</table>
+    <oui-action-menu data-align="end" data-compact>
+        <oui-action-menu-item data-text="{{'storage_delete_button' | translate}}"
+                              data-on-click="delete($row)"></oui-action-menu-item>
+    </oui-action-menu>
+</oui-datagrid>

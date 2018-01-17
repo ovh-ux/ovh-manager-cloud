@@ -32,11 +32,11 @@
    <translation id="common_toggle_dropdown" qtlid="377618">Wyświetl / ukryj rozwijalną listę</translation>
    <translation id="common_new_window" qtlid="222176">Nowe okno</translation>
 
-   <translation id="common_menu_web" qtlid="135840">WWW</translation>
+   <translation id="common_menu_web" qtlid="135840">Web</translation>
    <translation id="common_menu_labs" qtlid="383707">UX Labs</translation>
-   <translation id="common_menu_dedicated" qtlid="31738">Dedykowany</translation>
+   <translation id="common_menu_dedicated" qtlid="31738">Dedykowane</translation>
    <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
-   <translation id="common_menu_telecom" qtlid="135827">Telefoniczne</translation>
+   <translation id="common_menu_telecom" qtlid="135827">Telefonia</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
    <translation id="common_menu_v3" qtlid="135931">Poprzednia wersja interfejsu</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>

@@ -25,14 +25,21 @@
             <span data-translate="cpc_loadbalancer_order"></span>
         </a>
 
-        <oui-table rows="CloudProjectComputeLoadbalancerCtrl.table.loadbalancer">
-            <column title="'cpc_loadbalancer_name' | translate">{{$row.displayName || $row.serviceName}}</column>
-            <column title="'cpc_loadbalancer_openstack_status' | translate">{{'cpc_loadbalancer_openstack_status_'+$row.openstack | translate}}</column>
-            <column title="'cpc_loadbalancer_status' | translate">{{'cpc_loadbalancer_status_'+$row.status | translate}}</column>
-            <column title="'cpc_loadbalancer_actions' | translate" class="oui-table__cell_action oui-table__cell_action-menu"
-                    template="CloudProjectComputeLoadbalancerCtrl.actionTemplate()">
-            </column>
-        </oui-table>
+        <oui-datagrid rows="CloudProjectComputeLoadbalancerCtrl.table.loadbalancer">
+            <oui-column title="'cpc_loadbalancer_name' | translate">{{$row.displayName || $row.serviceName}}</oui-column>
+            <oui-column title="'cpc_loadbalancer_openstack_status' | translate">{{'cpc_loadbalancer_openstack_status_'+$row.openstack | translate}}</oui-column>
+            <oui-column title="'cpc_loadbalancer_status' | translate">{{'cpc_loadbalancer_status_'+$row.status | translate}}</oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{ 'cpc_loadbalancer_actions_configure' | translate }}"
+                    data-on-click="CloudProjectComputeLoadbalancerCtrl.goToLoadbalancerConfigure($row.serviceName)"
+                    data-ng-if="$row.status !== 'unavailable'">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'cpc_loadbalancer_configure_advanced' | translate }}"
+                    data-on-click="CloudProjectComputeLoadbalancerCtrl.goToIPLB($row.serviceName)"
+                    data-ng-if="$row.status === 'unavailable'">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
 
     </div>
 </div>

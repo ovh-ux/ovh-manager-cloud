@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpou_rclone_modal_title">Télécharger un fichier de configuration rClone</translation>
-   <translation id="cpou_rclone_modal_explanation">Vous allez télécharger un fichier de configuration permettant de vous connecter à Rclone.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text">En savoir plus</translation>
-   <translation id="cpou_rclone_modal_input_region_label">Sélectionner la région dans laquelle ce fichier s'appliquera :</translation>
-   <translation id="cpou_rclone_modal_security_note">Pour des raisons de sécurité le fichier de configuration ne contient pas votre mot de passe. Il est donc nécessaire d'éditer le fichier de configuration pour y ajouter manuellement votre mot de passe.</translation>
-   <translation id="cpou_rclone_modal_loading_error">Erreur lors du chargement des données liées au fichier rClone : {{ message }}</translation>
+   <translation id="cpou_rclone_modal_title" qtlid="451058">Scarica un file di configurazione rClone</translation>
+   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Stai per scaricare un file di configurazione che ti permetterà di connetterti a Rclone.</translation>
+   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Per saperne di più</translation>
+   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Seleziona la Region di applicazione del file:</translation>
+   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Per motivi di sicurezza, il file di configurazione non contiene la tua password. Per aggiungerla è necessario modificare il file e inserirla manualmente.</translation>
+   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Errore durante il caricamento dei datiassociati al file rClone: {{ message }}</translation>
 </translations>

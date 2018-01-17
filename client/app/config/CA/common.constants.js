@@ -233,6 +233,11 @@ angular.module("managerApp")
                 FR: {
                     roadmap: "https://www.ovh.com/fr/g2148.public_cloud_et_vrack_-_explications_et_roadmap"
                 }
+            },
+            rCloneFile: {
+                AU: "https://docs.ovh.com/au/en/storage/sync-rclone-object-storage/",
+                QC: "https://docs.ovh.com/ca/fr/storage/sync-rclone-object-storage/",
+                CA: "https://docs.ovh.com/ca/en/storage/sync-rclone-object-storage/"
             }
         }
     });

@@ -2,7 +2,7 @@
 <translations>
 
    <translation id="cpc_volume_attachedTo" qtlid="252828">Associado ao servidor</translation>
-   <translation id="cpc_volume_size" qtlid="28159">Espaço de disco</translation>
+   <translation id="cpc_volume_size" qtlid="28159">Espaço em disco</translation>
    <translation id="cpc_volume_size1" qtlid="319232">Espaço min. (GB)</translation>
    <translation id="cpc_volume_size2" qtlid="319245">Espaço de disco min (GB)</translation>
 

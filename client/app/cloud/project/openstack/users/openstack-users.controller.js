@@ -185,6 +185,22 @@ angular.module("managerApp")
                 }
             });
         };
+
+        self.downloadRcloneFile = function (currentUser) {
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/openstack/users/rclone/openstack-users-rclone.modal.html",
+                    controller: "CloudProjectOpenstackUsersRcloneModalCtrl",
+                    controllerAs: "$ctrl",
+                    resolve: {
+                        openstackUser: function () {
+                            return currentUser;
+                        }
+                    }
+                }
+            });
+        };
+
         self.generateToken = function (currentUser) {
             ControllerHelper.modal.showModal({
                 modalConfig: {
