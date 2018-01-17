@@ -40,9 +40,7 @@ class IpLoadBalancerServerEditCtrl {
                 this.$stateParams.serviceName,
                 this.$stateParams.farmId,
                 this.$stateParams.serverId
-            ).then(server => {
-                this.server = angular.copy(server);
-            })
+            ).then(server => this.parseServer(server))
         });
     }
 
@@ -63,6 +61,15 @@ class IpLoadBalancerServerEditCtrl {
             this.edition = true;
             this.apiServer.load();
         }
+    }
+
+    parseServer (server) {
+        this.server = angular.copy(server);
+        ["backup", "probe", "ssl"].forEach(property => {
+            if (this.server[property] === null) {
+                this.server[property] = false;
+            }
+        });
     }
 
     getCleanServer () {

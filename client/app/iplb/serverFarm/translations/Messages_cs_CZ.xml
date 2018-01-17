@@ -83,7 +83,7 @@
    <translation id="iplb_farm_update_confirm" qtlid="43462">Aktualizace</translation>
 
    <translation id="iplb_farm_preview_title" qtlid="438142">Detaily farmy serverů</translation>
-   <translation id="iplb_farm_preview_name" qtlid="3818">Příjmení</translation>
+   <translation id="iplb_farm_preview_name" qtlid="3818">Název</translation>
    <translation id="iplb_farm_preview_protocol" qtlid="19711">Protokol</translation>
    <translation id="iplb_farm_preview_port" qtlid="9034">Port</translation>
    <translation id="iplb_farm_preview_datacenter" qtlid="30802">Datacentrum</translation>

@@ -236,12 +236,20 @@
                             </button>
                             </li>
                             <li>
-                            <button class="no-style"
-                                data-ng-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile(user)"
-                                title="{{'cpou_openrc_title' | translate }}">
-                                <i class="fa fa-file-code-o right-space-m8"></i>
-                                {{'cpou_openrc_title' | translate }}
-                            </button>
+                                <button class="no-style"
+                                    data-ng-click="CloudProjectOpenstackUsersCtrl.downloadOpenrcFile(user)"
+                                    title="{{'cpou_openrc_title' | translate }}">
+                                    <i class="fa fa-file-code-o right-space-m8"></i>
+                                    {{'cpou_openrc_title' | translate }}
+                                </button>
+                            </li>
+                            <li>
+                                <button class="no-style"
+                                    data-ng-click="CloudProjectOpenstackUsersCtrl.downloadRcloneFile(user)"
+                                    title="{{'cpou_rclone_modal_title' | translate }}">
+                                    <i class="fa fa-file-code-o right-space-m8"></i>
+                                    {{'cpou_rclone_modal_title' | translate }}
+                                </button>
                             </li>
                             <li>
                             <button class="no-style"

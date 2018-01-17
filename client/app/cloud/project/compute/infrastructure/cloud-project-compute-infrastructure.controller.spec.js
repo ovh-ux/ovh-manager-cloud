@@ -24,14 +24,13 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
     var $timeout;
     var CloudMessage;
     var $uibModal;
-    var CloudProjectComputeInfraVrackVmFactory;
     var CloudProjectComputeInfrastructureOrchestrator;
     var $state;
 
 
     beforeEach(inject(function (_ssoAuthentication_, _$httpBackend_, _$rootScope_, _$controller_, _$timeout_,
                                 _CloudMessage_, _CloudProjectComputeInfrastructureOrchestrator_, _$uibModal_, _$state_,
-                                _CloudProjectComputeInfraVrackVmFactory_, _$q_) {
+                                _$q_) {
         ssoAuthentication = _ssoAuthentication_;
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
@@ -41,7 +40,6 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
         CloudMessage = _CloudMessage_;
         $state = _$state_;
         $uibModal = _$uibModal_;
-        CloudProjectComputeInfraVrackVmFactory = _CloudProjectComputeInfraVrackVmFactory_;
 
         CloudProjectComputeInfrastructureOrchestrator = _CloudProjectComputeInfrastructureOrchestrator_;
 
@@ -83,7 +81,7 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
             $httpBackend.whenGET(/\/cloud\/project\/[a-z0-9]+\/snapshot/).respond(200, dataTest.snapshot.snapshots);
             // --- @todo: region
             $httpBackend.whenGET(/\/cloud\/project\/[a-z0-9]+\/sshkey/).respond(200, dataTest.sshKey.sshkeys);
-            $httpBackend.whenGET(/\/cloud\/price/).respond(200, dataTest.price.instances);
+            $httpBackend.whenGET("/order/catalog/formatted/cloud").respond(200, []);
 
             // IPFO
             $httpBackend.whenGET(/\/ip\/[a-zA-Z\.\%0-9]+\/task/).respond(200, []);
@@ -111,10 +109,6 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
 
         xit('should open modal to create snapshot', function () {
             spyOn($uibModal, "open");
-
-            // CloudProjectComputeInfrastructureCtrl.openSnapshotWizard(new CloudProjectComputeInfraVrackVmFactory(dataTest.instance.instance));
-
-            // expect($uibModal.open.calls.count()).toEqual(1);
         });
 
     });

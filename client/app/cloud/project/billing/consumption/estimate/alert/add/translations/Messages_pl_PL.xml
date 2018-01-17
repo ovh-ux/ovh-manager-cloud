@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Alert dotyczący przekroczenia</translation>
-   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">E-mail</translation>
    <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Do wysyłania alertu wymagane jest podanie adresu e-mail.</translation>
    <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">Adres e-mail nie jest prawidłowy.</translation>
 

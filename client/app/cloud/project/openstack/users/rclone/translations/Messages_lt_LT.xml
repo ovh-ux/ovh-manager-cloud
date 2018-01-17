@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpou_rclone_modal_title">Télécharger un fichier de configuration rClone</translation>
-   <translation id="cpou_rclone_modal_explanation">Vous allez télécharger un fichier de configuration permettant de vous connecter à Rclone.</translation>
-   <translation id="cpou_rclone_modal_explanation_more_info_link_text">En savoir plus</translation>
-   <translation id="cpou_rclone_modal_input_region_label">Sélectionner la région dans laquelle ce fichier s'appliquera :</translation>
-   <translation id="cpou_rclone_modal_security_note">Pour des raisons de sécurité le fichier de configuration ne contient pas votre mot de passe. Il est donc nécessaire d'éditer le fichier de configuration pour y ajouter manuellement votre mot de passe.</translation>
-   <translation id="cpou_rclone_modal_loading_error">Erreur lors du chargement des données liées au fichier rClone : {{ message }}</translation>
+   <translation id="cpou_rclone_modal_title" qtlid="451058">Atsisiųsti konfigūracinį failą rClone</translation>
+   <translation id="cpou_rclone_modal_explanation" qtlid="451071">Jūs ketinate atsisiųsti konfigūracinį failą, leidžiantį prisijungti prie Rclone.</translation>
+   <translation id="cpou_rclone_modal_explanation_more_info_link_text" qtlid="44536">Daugiau informacijos</translation>
+   <translation id="cpou_rclone_modal_input_region_label" qtlid="263806">Pasirinkti regioną, kuriame bus taikomas failas:</translation>
+   <translation id="cpou_rclone_modal_security_note" qtlid="451084">Dėl saugumo priežasčių konfigūraciniame faile nėra jūsų slaptažodžio, todėl būtina pakeisti konfigūracinį failą pridedant jūsų slaptažodį rankiniu būdu.</translation>
+   <translation id="cpou_rclone_modal_loading_error" qtlid="451097">Klaida įkeliant duomenis, susietus su rClone failu: {{ message }}</translation>
 </translations>

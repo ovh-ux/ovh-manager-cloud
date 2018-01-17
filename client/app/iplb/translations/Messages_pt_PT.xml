@@ -39,7 +39,7 @@
    <translation id="iplb_subscription_loading_error" qtlid="439442">Erro no acesso à secção "Subscrição"</translation>
    <translation id="iplb_failover_ip_detail_loading_error" qtlid="439455">Erro no carregamento dos IP Failover.</translation>
    <translation id="iplb_nat_ip_detail_loading_error" qtlid="439468">Erro no carregamento dos IPv4 de saída.</translation>
-   <translation id="iplb_status_loading_error" qtlid="449089">Erreur lors du chargement de la section Statut.</translation>
+   <translation id="iplb_status_loading_error" qtlid="449089">Ocorreu um erro no carregamento da secção «Estado»</translation>
 
    <translation id="iplb_task_list_loading_error" qtlid="439481">Erro no carregamento das tarefas</translation>
    <translation id="iplb_farm_list_loading_error" qtlid="439494">Erro no carregamento das server farm</translation>
@@ -61,20 +61,20 @@
    <translation id="iplb_status_warning_service" qtlid="373441">Aviso</translation>
    <translation id="iplb_status_help_service" qtlid="438506">Nenhuma Informação disponível</translation>
 
-   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} sur {{totalCount}} actifs</translation>
-   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} sur {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} sur {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} sur {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_frontends" qtlid="449102">{{activeCount}} de {{totalCount}} ativos</translation>
+   <translation id="iplb_status_error_frontends" qtlid="449115">{{activeCount}} de {{totalCount}} em erro</translation>
+   <translation id="iplb_status_warning_frontends" qtlid="449128">{{activeCount}} de {{totalCount}} com avisos</translation>
+   <translation id="iplb_status_help_frontends" qtlid="449141">{{activeCount}} de {{totalCount}} sem informação</translation>
 
-   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} sur {{totalCount}} fonctionnelles</translation>
-   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} sur {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} sur {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} sur {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_farms" qtlid="449154">{{activeCount}} de {{totalCount}} funcionalidades</translation>
+   <translation id="iplb_status_error_farms" qtlid="449115">{{activeCount}} de {{totalCount}} em erro</translation>
+   <translation id="iplb_status_warning_farms" qtlid="449128">{{activeCount}} de {{totalCount}} com avisos</translation>
+   <translation id="iplb_status_help_farms" qtlid="449141">{{activeCount}} de {{totalCount}} sem informação</translation>
 
-   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} sur {{totalCount}} actifs</translation>
-   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} sur {{totalCount}} en erreur</translation>
-   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} sur {{totalCount}} en avertissement</translation>
-   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} sur {{totalCount}} sans information</translation>
+   <translation id="iplb_status_success_servers" qtlid="449102">{{activeCount}} de {{totalCount}} ativos</translation>
+   <translation id="iplb_status_error_servers" qtlid="449115">{{activeCount}} de {{totalCount}} em erro</translation>
+   <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} de {{totalCount}} com avisos</translation>
+   <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} de {{totalCount}} sem informação</translation>
 
    <translation id="iplb_status_apply" qtlid="284867">Aplicar configuração</translation>
    <translation id="iplb_status_details" qtlid="439611">Ver detalhes</translation>

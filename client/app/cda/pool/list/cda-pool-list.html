@@ -11,77 +11,15 @@
             <span data-translate="cda_pool_add_button_text"></span>
         </button>
     </div>
-    <div class="text-center" data-ng-if="CdaPoolListCtrl.loading">
-        <oui-spinner></oui-spinner>
-    </div>
-    <div class="table-responsive-vertical">
-        <table data-ng-if="!CdaPoolListCtrl.loading" class="oui-table oui-table_responsive">
-            <thead class="oui-table__headers">
-                <tr>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_pool_table_col_poolname"></span>
-                    </th>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_pool_table_col_pooltype"></span>
-                    </th>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_pool_table_col_replica"></span>
-                    </th>
-                    <th class="oui-table__header">
-                        <span data-translate="cda_pool_table_col_minreplica"></span>
-                    </th>
-                    <th class="oui-table__header"></th>
-                </tr>
-            </thead>
-            <tbody class="oui-table__body">
-                <tr data-ng-if="CdaPoolListCtrl.datas.pools.length"
-                    data-ng-repeat="pool in CdaPoolListCtrl.datas.paginatedPools track by pool.name"
-                    class="oui-table__row">
-                    <td data-title="{{ 'cda_pool_table_col_poolname' | translate }}"
-                        class="oui-table__cell">
-                        <span data-ng-bind=" ::pool.name"></span>
-                    </td>
-                    <td data-title="{{ 'cda_pool_table_col_pooltype' | translate }}"
-                        class="oui-table__cell">
-                        <span data-ng-bind=" ::pool.poolType"></span>
-                    </td>
-                    <td data-title="{{ 'cda_pool_table_col_replica' | translate }}"
-                        class="oui-table__cell">
-                        <span data-ng-bind=" ::pool.replicaCount"></span>
-                    </td>
-                    <td data-title="{{ 'cda_pool_table_col_minreplica' | translate }}"
-                        class="oui-table__cell">
-                        <span data-ng-bind=" ::pool.minActiveReplicas"></span>
-                    </td>
-                    <td data-title="{{ 'cda_pool_table_col_actions' | translate }}"
-                        class="oui-table__cell oui-table__cell_action">
-                        <button class="no-style"
-                                type="button"
-                                data-ng-click="CdaPoolListCtrl.openDeleteModal(pool)"
-                                data-uib-tooltip="{{:: 'cda_pool_delete_button_text' | translate }}">
-                            <i class="glyphicon glyphicon-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr data-ng-if="!CdaPoolListCtrl.datas.pools.length"
-                    class="oui-table__row">
-                    <td data-title="cda_pool_table_empty" colspan="5"
-                        class="oui-table__cell">
-                        <span data-translate="cda_pool_table_empty"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="table-pretty-pagination top-space-m12"
-             data-ng-hide="CdaPoolListCtrl.loading"
-             data-pagination-front
-             data-items="CdaPoolListCtrl.datas.pools"
-             data-paginated-items="CdaPoolListCtrl.datas.paginatedPools"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}">
-        </div>
-    </div>
+
+    <oui-datagrid data-rows="CdaPoolListCtrl.datas.pools">
+        <oui-column data-title="'cda_pool_table_col_poolname' | translate" data-property="name" data-sortable="asc"></oui-column>
+        <oui-column data-title="'cda_pool_table_col_pooltype' | translate" data-property="poolType" data-sortable></oui-column>
+        <oui-column data-title="'cda_pool_table_col_replica' | translate" data-property="replicaCount" data-sortable></oui-column>
+        <oui-column data-title="'cda_pool_table_col_minreplica' | translate" data-property="minActiveReplicas" data-sortable></oui-column>
+        <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu-item data-text="{{'cda_pool_delete_button_text' | translate}}"
+                data-on-click="CdaPoolListCtrl.openDeleteModal($row)"></oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
 </section>

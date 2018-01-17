@@ -14,7 +14,7 @@
 
    <translation id="cda_detail_status" qtlid="26443">Stav</translation>
    <translation id="cda_detail_crush_tunables" qtlid="354431">Crush tunables</translation>
-   <translation id="cda_detail_service_name" qtlid="3818">Příjmení</translation>
+   <translation id="cda_detail_service_name" qtlid="3818">Název</translation>
    <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
    <translation id="cda_detail_size" qtlid="7726">Velikost</translation>
    <translation id="cda_detail_region" qtlid="32434">Okres</translation>
@@ -32,12 +32,12 @@
    <translation id="cda_space_usage_available" qtlid="196608">Dostupný prostor</translation>
 
    <translation id="cda_task_table_col_id" qtlid="8194">ID</translation>
-   <translation id="cda_task_table_col_name" qtlid="3818">Příjmení</translation>
+   <translation id="cda_task_table_col_name" qtlid="3818">Název</translation>
    <translation id="cda_task_table_col_processing" qtlid="354496">Postup</translation>
    <translation id="cda_task_table_empty" qtlid="354509">Žádný probíhající proces</translation>
 
    <translation id="cda_detail_edit_title" qtlid="354522">Upravit informace o clusteru</translation>
-   <translation id="cda_detail_edit_label" qtlid="3818">Příjmení</translation>
+   <translation id="cda_detail_edit_label" qtlid="3818">Název</translation>
    <translation id="cda_detail_edit_label_required" qtlid="354288">Zadejte prosím název.</translation>
    <translation id="cda_detail_edit_label_maxlength" qtlid="354314">Maximální počet znaků v názvu: {{ maxlength }}</translation>
    <translation id="cda_detail_edit_crushTunable" qtlid="354431">Crush tunables</translation>

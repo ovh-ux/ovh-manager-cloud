@@ -184,7 +184,7 @@
    <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Aktualizovat můj SSH klíč</translation>
    <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Načíst Vaše SSH klíče.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Příjmení</translation>
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Název</translation>
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Klíč</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Vložte post-instalační skript</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Zvolit můj SSH klíč</translation>

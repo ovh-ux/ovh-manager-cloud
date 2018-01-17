@@ -40,7 +40,14 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
             ip: self.data.accessToAdd.ip,
             type: self.data.type
         }).$promise.then(function (result) {
-            $uibModalInstance.close({ access: { ip: self.data.accessToAdd.ip }, task: result.data.taskId, isNew: true });
+            $uibModalInstance.close({
+                access: {
+                    ip: self.data.accessToAdd.ip,
+                    type: self.data.type
+                },
+                task: result.data.taskId,
+                isNew: true
+            });
             CloudMessage.success($translate.instant("nasha_access_action_add_success", { accessIp: self.data.accessToAdd.ip }));
         }).catch(function () {
             $uibModalInstance.dismiss();

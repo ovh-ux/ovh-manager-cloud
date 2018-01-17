@@ -1,6 +1,8 @@
 <div class="cloud-project clearfix">
 
-    <oui-message ng-if="!CloudProjectCtrl.model.hasWriteRight" type="info" message="{{ :: 'cpb_read_only_access_alert' | translate }}"></oui-message>
+    <oui-message ng-if="!CloudProjectCtrl.model.hasWriteRight" type="info">
+        <span data-translate="cpb_read_only_access_alert"></span>
+    </oui-message>
 
     <div class="cloud-project-content"
          ui-view="cloudProject"
