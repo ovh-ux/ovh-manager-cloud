@@ -1,9 +1,9 @@
 <div id="cloud-project-compute-snapshot">
     <section class="cui-page__content">
 
-        <p class="bold" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.prices.length">
+        <p class="bold" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.prices">
             <span data-translate="cpc_snapshot_total2" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size"
-            translate-values="{size: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size || 0, price: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.total.price.text || '?' }"></span></p>
+            translate-values="{size: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size || 0, price: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.total.text || '?' }"></span></p>
 
         <!-- SEARCH FORM -->
         <form name="searchSnapshotForm"

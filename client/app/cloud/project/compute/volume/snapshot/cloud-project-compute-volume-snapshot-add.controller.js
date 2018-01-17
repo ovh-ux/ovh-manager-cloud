@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhApiCloudPrice, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
+  .controller("CloudProjectComputeVolumeSnapshotAddCtrl", function ($scope, $stateParams, $uibModalInstance, params, CloudMessage, $translate, $filter, $q, OvhCloudPriceHelper, CloudProjectComputeVolumesOrchestrator, OvhApiCloudProjectVolume, OvhApiMe) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -20,13 +20,12 @@ angular.module("managerApp")
 
         function init () {
             self.loaders.init = true;
-            OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
-                var price = _.find(prices.snapshots, function (price) {
-                    return price.region === self.snapshot.volume.region;
-                });
-                if (price && price.monthlyPrice) {
-                    self.snapshot.price = price.monthlyPrice.value * self.snapshot.volume.size;
-                    self.snapshot.priceText = price.monthlyPrice.text;
+            const volumeSnapshotConsumption = "volume.snapshot.consumption";
+            OvhCloudPriceHelper.getPrices(serviceName).then(function (prices) {
+                var price = prices[`${volumeSnapshotConsumption}.${self.snapshot.volume.region}`] || prices[volumeSnapshotConsumption];
+                if (price) {
+                    self.snapshot.price = price.priceInUcents * self.snapshot.volume.size * moment.duration(1,"months").asHours() / 100000000;
+                    self.snapshot.priceText = price.price.text.replace(/\d+(?:[.,]\d+)?/, _.round(self.snapshot.price.toString(),2));
                 }
                 self.snapshot.name = self.snapshot.volume.name + " " + $filter("date")(new Date(), "short");
             })["finally"](function () {
@@ -52,4 +51,3 @@ angular.module("managerApp")
 
         init();
   });
-

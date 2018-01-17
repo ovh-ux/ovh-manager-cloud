@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("VrackAddCtrl",
-    function ($q, $translate, $state, $rootScope, CloudMessage, OvhApiOrder, OvhApiVrack) {
+    function ($q, $translate, $state, $rootScope, CloudMessage, OvhApiOrder) {
 
         var self = this;
 
@@ -31,7 +31,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
             return OvhApiOrder.Vrack().New().Lexi().create({
                 quantity: this.model.quantityToOrder
             }).$promise.then(function (data) {
-                CloudMessage.success($translate.instant("vrack_adding_success", { data: data }));
+                CloudMessage.success($translate.instant("vrack_adding_success", { data: _.pick(data, ["url", "orderId"]) }));
                 self.model.purchaseOrderUrl = data.url;
                 self.loaders.validationPending = true;
             }).catch(function (error) {
@@ -43,11 +43,9 @@ angular.module("managerApp").controller("VrackAddCtrl",
 
         function init () {
             self.loaders.loading = true;
-            console.log(self.loaders.loading);
             self.getVrackContract()
             .finally(function () {
                 self.loaders.loading = false;
-                console.log(self.loaders.loading);
             });
         }
 

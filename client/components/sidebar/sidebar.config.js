@@ -97,7 +97,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
                 title: $translate.instant("cloud_sidebar_actions_menu_clouddb"),
                 icon: "ovh-font ovh-font-database",
                 href: REDIRECT_URLS.orderSql,
-                target: "_blank"
+                target: "_blank",
+                external: true
             }]);
         }
     }

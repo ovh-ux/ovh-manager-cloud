@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_order_loading_error" qtlid="345156">Ocorreu um erro durante do carregamento da lista das NAS-HA disponíveis no momento da encomenda.</translation>
-   <translation id="nasha_order_title" qtlid="345130">Encomendar uma NAS-HA</translation>
+   <translation id="nasha_order_loading_error" qtlid="345156">Ocorreu um erro durante do carregamento da lista dos NAS-HA disponíveis no momento da encomenda.</translation>
+   <translation id="nasha_order_title" qtlid="345130">Encomendar um NAS-HA</translation>
    <translation id="nasha_order_duration" qtlid="8218">Duração</translation>
    <translation id="nas_order_month" qtlid="40222">mês</translation>
    <translation id="nasha_order_warning" qtlid="345169">Para beneficiar das ofertas NAS-HA OVH, deverá dispor de um servidor na mesma zona geográfica.</translation>
@@ -25,10 +25,10 @@
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Estrasburgo</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
-   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Devido à grande procura, o produto está temporariamente indisponível para o datacenter {{ region }}.</translation>
+   <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Devido à grande procura, o produto está temporariamente indisponível no datacenter {{ region }}.</translation>
    <translation id="nasha_order_validation_error" qtlid="345273">Ocorreu um erro durante da validação da sua encomenda.</translation>
    <translation id="nasha_order_error" qtlid="345286">Ocorreu um erro no acesso à sua encomenda.</translation>
-   <translation id="nasha_order_success" qtlid="345299">A encomenda número <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> da sua NAS-HA foi devidamente registada.</translation>
+   <translation id="nasha_order_success" qtlid="345299">A encomenda número <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> do NAS-HA foi devidamente registada.</translation>
    <translation id="nasha_order_bc_price_HT" qtlid="345312">Preço total s/IVA: <strong>{{priceHT}}</strong></translation>
    <translation id="nasha_order_bc_price_TTC" qtlid="345325">Preço total c/IVA: <strong>{{priceTTC}}</strong></translation>
 

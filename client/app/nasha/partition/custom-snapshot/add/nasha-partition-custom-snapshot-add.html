@@ -22,7 +22,9 @@
                 data-tooltip-placement="right"></i>
             </p>
 
-            <oui-message type="info" message="{{ :: 'nasha_custom_snapshot_modal_informations_size' | translate }}"></oui-message>
+            <oui-message type="info">
+                <span data-translate="nasha_custom_snapshot_modal_informations_size"></span>
+            </oui-message>
 
             <div class="oui-field"
                 data-ng-class="{ 'oui-field_error': nashaCustomSnapshotAddForm.inputSnapshotName.$invalid }">

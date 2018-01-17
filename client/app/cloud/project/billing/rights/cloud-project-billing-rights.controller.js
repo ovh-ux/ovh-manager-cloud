@@ -2,7 +2,8 @@
 
 angular.module("managerApp")
   .controller("CloudProjectBillingRightsCtrl",
-    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CloudMessage, $translate, REDIRECT_URLS, $window) {
+    function (OvhApiCloud, OvhApiCloudProjectServiceInfos, OvhApiMe, $stateParams, CloudMessage,
+              ControllerHelper, $translate, REDIRECT_URLS, $window) {
 
         var self = this;
         var serviceName = $stateParams.projectId;
@@ -40,16 +41,11 @@ angular.module("managerApp")
 
         // table data
         self.data = {
-            rightIds: [],
             rights: []
         };
 
         // spinners ...
-        self.loader = {
-            rights: false,
-            addRight: false,
-            removeRight: false
-        };
+        self.loader = false;
 
         /* ==================================================
          * Initialization
@@ -103,29 +99,6 @@ angular.module("managerApp")
             }
         };
 
-        // when user validate edition of owner contact field
-        self.validateEditOwner = function () {
-            // @TODO call API
-            /*if (self.contactFormData.owner !== self.model.owner) {
-                OvhApiCloudProjectServiceInfos.Lexi().put({
-                    serviceName: serviceName
-                }, {
-                    contactAdmin: self.contactFormData.owner
-                }).$promise.then(function () {
-                    self.model.owner = self.contactFormData.owner;
-                }, function (err) {
-                    // error occured, reset value
-                    self.contactFormData.owner = self.model.owner;
-                    if (err && err.status === 400) {
-                        CloudMessage.error($translate.instant("cpb_contact_error_invalid"));
-                    } else {
-                        CloudMessage.error($translate.instant("cpb_contact_error_other"));
-                    }
-                });
-            }
-            self.toggleEditOwner();*/
-        };
-
         // watch for escape/enter keys when editing owner contact field
         self.watchOwnerInput = function (ev) {
             if (ev && ev.keyCode === 27) { // escape key
@@ -148,29 +121,6 @@ angular.module("managerApp")
             }
         };
 
-        // when user validate edition of billing contact field
-        self.validateEditBilling = function () {
-            // @TODO call API
-            /*if (self.contactFormData.billing !== self.model.billing) {
-                OvhApiCloudProjectServiceInfos.Lexi().put({
-                    serviceName: serviceName
-                }, {
-                    contactBilling: self.contactFormData.billing
-                }).$promise.then(function () {
-                    self.model.billing = self.contactFormData.billing;
-                }, function (err) {
-                    // error occured, reset value
-                    self.contactFormData.billing = self.model.billing;
-                    if (err && err.status === 400) {
-                        CloudMessage.error($translate.instant("cpb_contact_error_invalid"));
-                    } else {
-                        CloudMessage.error($translate.instant("cpb_contact_error_other"));
-                    }
-                });
-            }
-            self.toggleEditBilling();*/
-        };
-
         // watch for escape/enter keys when editing billing contact field
         self.watchBillingInput = function (ev) {
             if (ev && ev.keyCode === 27) { // escape key
@@ -186,90 +136,78 @@ angular.module("managerApp")
          */
 
         self.showAddRight = function () {
-            self.toggle.addUser = true;
-            self.addRightFormData = {
-                contact: "", // either Nic or Email depending on user country
-                type: "readOnly"
-            };
-            self.removeRight.accountId = null;
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/billing/rights/addRights/cloud-project-billing-rights-add.html",
+                    controller: "CloudProjectBillingRightsAddCtrl",
+                    controllerAs: "ctrl",
+                    resolve: {
+                        model: () => self.model
+                    }
+                }
+            })
+                .then(() => {
+                    self.getRights(true);
+                    CloudMessage.success($translate.instant("cpb_rights_table_rights_add_success"));
+                })
+                .catch(err => {
+                    CloudMessage.error([$translate.instant("cpb_rights_add_error"), err.data && err.data.message || ""].join(" "));
+                })
+                .finally(() => {
+                    self.loader = false;
+                });
         };
 
         self.getRights = function (clearCache) {
-            self.loader.rights = true;
+            self.loader = true;
             if (clearCache) {
                 OvhApiCloud.Project().Acl().Lexi().resetQueryCache();
             }
             return OvhApiCloud.Project().Acl().Lexi().query({
-                serviceName: serviceName
-            }).$promise.then(function (rightIds) {
-                self.data.rightIds = rightIds;
-            }, function (err) {
-                self.data.rightIds = null;
-                CloudMessage.error([$translate.instant("cpb_rights_error"), err.data && err.data.message || ""].join(" "));
-            })["finally"](function () {
-                self.loader.rights = false;
-            });
+                serviceName
+            }).$promise
+                .then(rightIds => {
+                    self.data.rights = rightIds.map(id => ({ accountId: id }));
+                })
+                .catch(err => {
+                    self.data.rights = [];
+                    CloudMessage.error([$translate.instant("cpb_rights_error"), err.data && err.data.message || ""].join(" "));
+                })
+                .finally(() => {
+                    self.loader = false;
+                });
         };
 
-        /**
-         * Returns the NIC with "-ovh" appended if it was not the case.
-         */
-        function normalizedNic (name) {
-            // check if the NIC is not an email (it could be the case for US users)
-            if (/[@\.]+/.test(name)) {
-                return name;
-            }
-            return _.endsWith(name, "-ovh") ? name : name + "-ovh";
-        }
+        self.removeRight = function (account) {
+            self.loader = true;
+            self.removeRight.accountId = account.accountId;
 
-        self.validateAddRight = function () {
-            self.loader.addRight = true;
-            return OvhApiCloud.Project().Acl().Lexi().add({
-                serviceName: serviceName
-            }, {
-                accountId: normalizedNic(self.addRightFormData.contact),
-                type: self.addRightFormData.type
-            }).$promise.then(function () {
-                self.getRights(true);
-                CloudMessage.success($translate.instant("cpb_rights_table_rights_add_success"));
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpb_rights_add_error"), err.data && err.data.message || ""].join(" "));
-            })["finally"](function () {
-                self.addRightFormData.contact = "";
-                self.addRightFormData.type = "readOnly";
-                self.loader.addRight = false;
-                self.toggle.addUser = false;
-            });
+            return ControllerHelper.modal.showConfirmationModal({
+                titleText: $translate.instant("cpb_rights_delete_title"),
+                text: $translate.instant("cpb_rights_delete_question", { nickname: account.accountId })
+            })
+                .then(() => OvhApiCloud.Project().Acl().Lexi().remove({
+                    serviceName,
+                    accountId: account.accountId
+                }).$promise)
+                .then(() => {
+                    self.getRights(true);
+                    CloudMessage.success($translate.instant("cpb_rights_table_rights_remove_success"));
+                })
+                .catch(err => {
+                    CloudMessage.error([$translate.instant("cpb_rights_remove_error"), err.data && err.data.message || ""].join(" "));
+                })
+                .finally(() => {
+                    self.loader = false;
+                    self.removeRight.accountId = null;
+                });
         };
 
-        self.validateRemoveRight = function (accountId) {
-            self.loader.removeRight = true;
-            self.removeRight.accountId = accountId;
-            return OvhApiCloud.Project().Acl().Lexi().remove({
-                serviceName: serviceName,
-                accountId: accountId
-            }).$promise.then(function () {
-                self.getRights(true);
-                CloudMessage.success($translate.instant("cpb_rights_table_rights_remove_success"));
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpb_rights_remove_error"), err.data && err.data.message || ""].join(" "));
-            })["finally"](function () {
-                self.loader.removeRight = false;
-                self.removeRight.accountId = null;
-            });
-        };
-
-        this.transformItem = function (accountId) {
-            self.loader.rights = true;
+        this.transformItem = function (account) {
             return OvhApiCloud.Project().Acl().Lexi().get({
-                serviceName: serviceName,
-                accountId: accountId
+                serviceName,
+                accountId: account.accountId
             }).$promise;
-        };
-
-        this.onTransformItemDone = function (rights) {
-            self.loader.rights = false;
-            this.data.rights = rights;
         };
 
         // Controller initialization

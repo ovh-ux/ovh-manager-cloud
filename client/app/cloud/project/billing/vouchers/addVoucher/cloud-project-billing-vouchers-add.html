@@ -1,0 +1,23 @@
+<cui-modal>
+    <form name="voucherFormAdd">
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+            <cui-modal-body title="'cpb_vouchers_your_voucher_add' | translate">
+            <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
+            <div data-ng-if="!$ctrl.saving">
+                <label class="oui-label" for="voucherAddValue"
+                       data-translate="cpb_vouchers_your_voucher"></label>
+                <input type="text"
+                       class="oui-input"
+                       id="voucherAddValue"
+                       name="voucherAddValue"
+                       data-ng-model="$ctrl.model.value">
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_confirm' | translate"
+                data-on-click="$ctrl.confirm()"
+                data-disabled="$ctrl.saving || !$ctrl.model.value"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>
