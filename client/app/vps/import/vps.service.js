@@ -16,9 +16,10 @@ angular.module("managerApp").service("VpsService", [
 
         var aapiRootPath = "/sws/vps",
             swsVpsProxypass = "/vps",
-            swsOrderProxypass =  "/order/vps",
+            swsOrderProxypass = "/order/vps",
             swsPriceProxypass = "/price/vps",
             vpsCache = cache("UNIVERS_WEB_VPS"),
+            vpsInfoCache = cache("VPS_INFO_CACHE"),
             vpsTabVeeamCache = cache("UNIVERS_WEB_VPS_TABS_VEEAM"),
             vpsTabBackupStorageCache = cache("UNIVERS_WEB_VPS_TABS_BACKUP_STORAGE"),
             requests = {
@@ -131,6 +132,7 @@ angular.module("managerApp").service("VpsService", [
                 vpsCache.remove(key);
             } else {
                 vpsCache.removeAll();
+                vpsInfoCache.removeAll();
                 for (var request in requests) {
                     if (requests.hasOwnProperty(request)) {
                         requests[request] = null;
@@ -174,7 +176,10 @@ angular.module("managerApp").service("VpsService", [
          * same as getSelected without using Products (it causes problem when changing vps using sidebar)
          */
         this.getSelectedVps = function(serviceName) {
-            return $http.get([aapiRootPath, serviceName,"info"].join("/"), {serviceType: "aapi"})
+            return $http.get([aapiRootPath, serviceName,"info"].join("/"), {
+                serviceType: "aapi",
+                cache: vpsInfoCache
+            })
                 .then(result => {
                     result.data.secondaryDns = (result.data.secondaryDns === 0) ?
                         $translate.instant("vps_dashboard_secondary_dns_count_0") :
@@ -977,6 +982,7 @@ angular.module("managerApp").service("VpsService", [
             return this.getSelectedVps(serviceName).then(function (vps) {
                 return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                     .then(function (response) {
+                        resetCache();
                         VpsTaskService.initPoller(serviceName, "iaas.vps.detail");
                         return response.data;
                     });
@@ -991,6 +997,7 @@ angular.module("managerApp").service("VpsService", [
                 .then(function (vps) {
                     return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
                         .then(function (response) {
+                            resetCache();
                             $rootScope.$broadcast("global_display_name_change", {
                                 serviceName: vps.name,
                                 displayName: newValue.displayName

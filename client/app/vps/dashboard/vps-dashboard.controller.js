@@ -183,7 +183,7 @@ class VpsDashboardCtrl {
         this.actions = {
             changeName: {
                 text: this.$translate.instant("common_edit"),
-                callback: () => this.VpsActionService.editName(this.vps.displayName, this.serviceName).then(() => this.vps.load()),
+                callback: () => this.VpsActionService.editName(this.vps.data.displayName, this.serviceName).then(() => this.vps.load()),
                 isAvailable: () => !this.vps.loading
             },
             changeOwner: {
