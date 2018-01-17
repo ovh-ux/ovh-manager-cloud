@@ -94,10 +94,6 @@
             this.user = null;
             this.volumes = null;
 
-            if (this.$scope.redirectToOverview) {
-                return this.$state.go("iaas.pci-project.compute.infrastructure-overview");
-            }
-
             // Hide highlighted-element on change state
             this.$scope.$on("$stateChangeStart", () => {
                 this.$rootScope.$broadcast("highlighed-element.hide");

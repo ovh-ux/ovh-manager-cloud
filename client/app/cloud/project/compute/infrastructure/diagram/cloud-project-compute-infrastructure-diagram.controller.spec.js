@@ -90,15 +90,6 @@ describe("Controller: CloudProjectComputeInfrastructureDiagramCtrl", function ()
             $httpBackend.flush();
         });
 
-        it("should redirect to project overview if '$scope.redirectToOverview' resolve to true", function() {
-            spyOn($state, "go").and.returnValue($q.when(true));
-            $scope.redirectToOverview = true;
-
-            initNewCtrl();
-
-            expect($state.go).toHaveBeenCalledWith("iaas.pci-project.compute.infrastructure-overview");
-        });
-
         xit('should initialize all datas and models with success', function () {
 
             // datas are set
