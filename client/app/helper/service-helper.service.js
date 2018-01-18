@@ -13,7 +13,7 @@
         errorHandler (message) {
             return err => {
                 if (message) {
-                    this.CloudMessage.error(this.$translate.instant(message, err.data));
+                    this.CloudMessage.error(_.isString(message) ? this.$translate.instant(message, err.data) : message);
                 } else if (err.message) {
                     this.CloudMessage.error(err.message);
                 } else {
@@ -29,7 +29,7 @@
             return data => {
                 if (message) {
                     const jsonData = data && data.toJSON ? data.toJSON() : {};
-                    this.CloudMessage.success(this.$translate.instant(message, jsonData));
+                    this.CloudMessage.success(_.isString(message) ? this.$translate.instant(message, jsonData) : message);
                 } else {
                     // Default success message
                     this.CloudMessage.success(this.$translate.instant(defaultSuccessMessage));

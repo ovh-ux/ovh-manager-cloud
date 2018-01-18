@@ -113,6 +113,22 @@ class IpLoadBalancerHomeCtrl {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
                 isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage") && !this.subscription.loading && !this.subscription.hasErrors
+            },
+            addZone: {
+                text: this.$translate.instant("common_add"),
+                state: "network.iplb.detail.zone.add",
+                stateParams: {
+                    serviceName: this.serviceName
+                },
+                isAvailable: () => true
+            },
+            deleteZone: {
+                text: this.$translate.instant("common_delete"),
+                state: "network.iplb.detail.zone.delete",
+                stateParams: {
+                    serviceName: this.serviceName
+                },
+                isAvailable: () => true
             }
         };
     }
