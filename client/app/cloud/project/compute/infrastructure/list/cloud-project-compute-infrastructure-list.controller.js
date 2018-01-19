@@ -1,14 +1,16 @@
 (() => {
     class CloudProjectComputeInfrastructureListCtrl {
-        constructor ($scope, $stateParams, $translate,
-                     CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
-                     OvhApiCloudProjectVolume, RegionService) {
+        constructor ($scope, $q, $stateParams, $translate,
+                     CloudMessage, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
+                     OvhApiCloudPrice, OvhApiCloudProjectVolume, RegionService) {
             this.$scope = $scope;
+            this.$q = $q;
             this.$stateParams = $stateParams;
             this.$translate = $translate;
             this.CloudMessage = CloudMessage;
-            this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+            this.CloudProjectOrchestrator = CloudProjectOrchestrator;
             this.InfrastructureService = CloudProjectComputeInfrastructureService;
+            this.OvhApiCloudPrice = OvhApiCloudPrice;
             this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
             this.RegionService = RegionService;
         }
@@ -17,35 +19,32 @@
             this.serviceName = this.$stateParams.projectId;
 
             this.loaders = {
-                infra: false,
-                init: true
+                infra: false
             };
 
             this.table = {
                 items: undefined
             };
 
-            return this.OvhApiCloudProjectVolume.Lexi().query({ serviceName: this.serviceName }).$promise.then(volumes => {
-                this.volumes = volumes;
-            }).finally(() => {
-                this.loaders.init = false;
-                this.initInfra();
-            });
+            return this.initInfra();
         }
 
         initInfra () {
             this.loaders.infra = true;
-            return this.CloudProjectComputeInfrastructureOrchestrator.init({ serviceName: this.serviceName }).then(infra => {
+            return this.$q.all({
+                infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
+                prices: this.OvhApiCloudPrice.Lexi().query().$promise.then(prices => (this.prices = prices)),
+                volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes")))
+            }).then(({ infra }) => {
                 this.infra = infra;
                 this.table.items = _.map(this.infra.vrack.publicCloud.items, instance => {
-                    if (this.volumes) {
-                        _.set(instance, "volumes", _.filter(this.volumes, volume => _.indexOf(volume.attachedTo, instance.id) >= 0));
-                    }
+                    _.set(instance, "price", _.find(this.prices.instances, flavor => flavor.flavorId === instance.flavor.id));
+                    _.set(instance, "volumes", _.get(this.volumes, instance.id, []));
                     return instance;
                 });
             }).catch(err => {
                 this.table.items = [];
-                this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} ${_.get(err, "data.message", "")}`);
+                this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
             }).finally(() => {
                 this.loaders.infra = false;
             });
