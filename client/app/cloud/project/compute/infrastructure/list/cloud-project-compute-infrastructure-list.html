@@ -76,6 +76,16 @@
                 <oui-spinner data-size="s" data-inline="true"
                              data-ng-if="$row.monthlyBilling.status === 'activationPending'"></oui-spinner>
             </oui-column>
+            <oui-column data-title="'cpci_vm_status' | translate" data-property="status">
+                <span class="label label-success"
+                      data-ng-if="$row.status === 'ACTIVE'">Ok</span>
+                <span class="label label-warning"
+                      data-translate="cpci_vm_status_REBOOT"
+                      data-ng-if="$row.status === 'REBOOT' || $row.status === 'HARD_REBOOT' || $row.status === 'RESCUING' || $row.status === 'UNRESCUING'"></span>
+                <span class="label label-warning"
+                      data-translate="cpci_vm_status_{{ $row.status }}"
+                      data-ng-if="$row.status === 'RESCUE' || $row.status === 'SNAPSHOTTING'"></span>
+            </oui-column>
             <oui-action-menu data-align="end" data-compact>
                 <oui-action-menu-item data-text="{{ 'cpci_vm_action_delete' | translate }}"
                                       data-on-click="$row.confirm = 'deleteConfirmPending'"
