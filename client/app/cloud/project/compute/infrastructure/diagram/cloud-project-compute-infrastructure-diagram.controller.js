@@ -702,7 +702,7 @@
 
         displayVmAuthInfo (vm) {
             const completeVm = this.infra.vrack.publicCloud.get(vm.id);
-            this.$state.go("iaas.pci-project.compute.infrastructure.modal.login-information", {
+            this.$state.go("iaas.pci-project.compute.infrastructure.diagram.modal.login-information", {
                 instanceId: vm.id,
                 serviceName: this.$stateParams.projectId,
                 ipAddresses: vm.ipAddresses,
