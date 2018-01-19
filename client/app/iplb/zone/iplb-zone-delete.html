@@ -3,18 +3,16 @@
                    data-state-params="$ctrl.previousState.stateParams"
                    data-text="'Retour'"></cui-back-link>
     <cui-page-content-title text="'iplb_zone_delete_title' | translate"></cui-page-content-title>
-    <p data-ng-if="$ctrl.zones.data.length <= 1" data-translate="iplb_zone_delete_intro_text_single"></p>
-    <p data-ng-if="$ctrl.zones.data.length > 1" data-translate="iplb_zone_delete_intro_text_plural"></p>
+    <p data-ng-if="$ctrl.zones.data.length <= 1" 
+        data-translate="iplb_zone_delete_intro_text_single" 
+        data-translate-values="{ zoneQuantity: $ctrl.zones.data.length -1 }"></p>
+    <p data-ng-if="$ctrl.zones.data.length > 1" 
+        data-translate="iplb_zone_delete_intro_text_plural"
+        data-translate-values="{ zoneQuantity: $ctrl.zones.data.length -1 }"></p>
     <form novalidate name="$ctrl.form">
-        <div>
-            <p>France</p>
-            <oui-checkbox text="Roubaix (RBX)"></oui-checkbox>
-            <oui-checkbox text="Strasbourg (SBG)"></oui-checkbox>
-        </div>
-        <div>
-            <p>Canada</p>
-            <oui-checkbox text="Beauharnois (BHS)"></oui-checkbox>
-        </div>
+        <iplb-zone-picker data-zones="$ctrl.zones"
+            data-on-selection-change="$ctrl.model.zones.value = value"></iplb-zone-picker>
+
         <div class="cui-form-actions">
             <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
             <div data-ng-if="!$ctrl.saving">

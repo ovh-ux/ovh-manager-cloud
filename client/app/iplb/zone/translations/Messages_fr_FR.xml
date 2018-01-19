@@ -4,7 +4,7 @@
    <translation id="iplb_zone_add_intro_text">Sélectionner une ou plusieurs zone de disponibilité</translation>
    <translation id="iplb_zone_add_single_success">L'ajout de la zone doit être finalisé.</translation>
    <translation id="iplb_zone_add_plural_success">L'ajout des zones doit être finalisé.</translation>
-   <translation id="iplb_zone_add_selection_error">Vous devez sélectionner au moins une zone de disponibilité</translation>
+   <translation id="iplb_zone_add_selection_error">Vous devez sélectionner au moins une zone de disponibilité.</translation>
    <translation id="iplb_zone_add_loading_error">Une erreur est survenue lors de chargement des zones : {{message}}</translation>
    <translation id="iplb_zone_add_single_error">Une erreur est survenue lors de l'ajout de la zone : {{message}}</translation>
    <translation id="iplb_zone_add_plural_error">Une erreur est survenue lors de l'ajout des zones : {{message}}</translation>
@@ -12,6 +12,11 @@
    <translation id="iplb_zone_delete_title">Supprimer une zone de disponibilité</translation>
    <translation id="iplb_zone_delete_intro_text_single">Sélectionner un maximum de {{zoneQuantity}} zone de disponibilité</translation>
    <translation id="iplb_zone_delete_intro_text_plural">Sélectionner un maximum de {{zoneQuantity}} zones de disponibilité</translation>
+   <translation id="iplb_zone_delete_single_success">La zone « {{zones}} » a été supprimée.</translation>
+   <translation id="iplb_zone_delete_plural_success">Les zones « {{zones}} » ont été supprimées.</translation>
+   <translation id="iplb_zone_delete_selection_error">Vous devez sélectionner au moins une zone de disponibilité.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error">Vous devez sélectionner un maximum de {{zoneQuantity}} zone de disponibilité</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error">Vous devez sélectionner un maximum de {{zoneQuantity}} zones de disponibilité</translation>
    <translation id="iplb_zone_delete_loading_error">Une erreur est survenue lors de chargement des zones : {{message}}</translation>
    <translation id="iplb_zone_delete_single_error">Une erreur est survenue lors de la suppression de la zone : {{message}}</translation>
    <translation id="iplb_zone_delete_plural_error">Une erreur est survenue lors de la suppression des zones : {{message}}</translation>

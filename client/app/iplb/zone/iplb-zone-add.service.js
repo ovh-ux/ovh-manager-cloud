@@ -15,8 +15,7 @@ class IpLoadBalancerZoneAddService {
 
     addZones (serviceName, zones) {
         if (zones.length === 0) {
-            this.CloudMessage.error(this.$translate.instant("iplb_zone_add_selection_error"));
-            return this.$q.reject();
+            return this.ServiceHelper.errorHandler("iplb_zone_add_selection_error")();
         }
 
         return this.$q.when()
@@ -33,7 +32,7 @@ class IpLoadBalancerZoneAddService {
                     }
                 })(response);
             })
-            .catch(this.ServiceHelper.errorHandler(this.$translate.instant(zones.length > 1 ? "iplb_zone_add_plural_error" : "iplb_zone_add_single_error")));
+            .catch(this.ServiceHelper.errorHandler(zones.length > 1 ? "iplb_zone_add_plural_error" : "iplb_zone_add_single_error"));
     }
 }
 
