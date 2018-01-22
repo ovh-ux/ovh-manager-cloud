@@ -1,7 +1,7 @@
 <section class="cui-page__content">
     <div data-ng-if="$ctrl.backup.loading || $ctrl.info.loading || $ctrl.vps.loading"
          class="text-center">
-        <oui-spinner size="l"></oui-spinner>
+        <oui-spinner data-size="l"></oui-spinner>
     </div>
 
     <div data-ng-if="!$ctrl.info.data.activated && !$ctrl.backup.loading && !$ctrl.vps.loading">
@@ -52,29 +52,29 @@
                 data-translate="vps_backup_storage_access_forgot_password_button"
                 data-ng-click="$ctrl.resetPassword()"></button>
 
-        <oui-datagrid rows="$ctrl.backup.data.list.results"
+        <oui-datagrid data-rows="$ctrl.backup.data.list.results"
                       data-ng-hide="$ctrl.backup.loading">
-            <oui-column title="'vps_tab_backup_storage_table_ip' | translate" property="ipBlock" sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_ip' | translate" data-property="ipBlock" data-sortable>
                 <span data-ng-bind="$row.ipBlock"></span>
             </oui-column>
-            <oui-column title="'vps_tab_backup_storage_table_cifs' | translate" property="cifs" sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_cifs' | translate" data-property="cifs" data-sortable>
                 <span data-ng-bind="$row.cifs"></span>
             </oui-column>
-            <oui-column title="'vps_tab_backup_storage_table_ftp' | translate" property="ftp" sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_ftp' | translate" data-property="ftp" data-sortable>
                 <span data-ng-bind="$row.ftp"></span>
             </oui-column>
-            <oui-column title="'vps_tab_backup_storage_table_nfs' | translate" property="nfs" sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_nfs' | translate" data-property="nfs" data-sortable>
                 <span data-ng-bind="$row.nfs"></span>
             </oui-column>
-            <oui-column title="'vps_tab_backup_storage_table_status' | translate" sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_status' | translate" data-sortable>
                 <span data-ng-show="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_enable"></span>
                 <span data-ng-hide="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_disable"></span>
             </oui-column>
-            <oui-action-menu align="end" compact>
-                <oui-action-menu-item text="{{'common_edit' | translate}}"
-                                      on-click="$ctrl.editOne($row)"></oui-action-menu-item>
-                <oui-action-menu-item text="{{'common_delete' | translate}}"
-                                      on-click="$ctrl.deleteOne($row.ipBlock)"></oui-action-menu-item>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{'common_edit' | translate}}"
+                                      data-on-click="$ctrl.editOne($row)"></oui-action-menu-item>
+                <oui-action-menu-item data-text="{{'common_delete' | translate}}"
+                                      data-on-click="$ctrl.deleteOne($row.ipBlock)"></oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
     </div>

@@ -1,7 +1,7 @@
 <section class="cui-page__content">
     <div data-ng-if="$ctrl.loaders.init || $ctrl.loaders.disk"
          class="text-center">
-        <oui-spinner size="l"></oui-spinner>
+        <oui-spinner data-size="l"></oui-spinner>
     </div>
 
     <div data-ng-if="!$ctrl.hasAdditionalDiskOption && !$ctrl.loaders.init && !$ctrl.loaders.disk">
@@ -16,14 +16,14 @@
                 data-ui-sref="iaas.vps.detail.additional-disk.order"></button>
 
         <oui-datagrid data-ng-if="!$ctrl.canOrder()"
-                   rows="$ctrl.additionnalDisks">
-            <oui-column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
+                      data-rows="$ctrl.additionnalDisks">
+            <oui-column data-title="'vps_tab_additional_disk_header_id' | translate" data-property="id" data-sortable>
                 <span data-ng-bind="$row.id"></span>
             </oui-column>
-            <oui-column title="'vps_tab_additional_disk_header_size' | translate" property="size" sortable>
+            <oui-column data-title="'vps_tab_additional_disk_header_size' | translate" data-property="size" data-sortable>
                 <span data-ng-bind="$row.size"></span>
             </oui-column>
-            <oui-column title="'vps_tab_additional_disk_header_state' | translate" property="state" sortable>
+            <oui-column data-title="'vps_tab_additional_disk_header_state' | translate" data-property="state" data-sortable>
                 <span data-ng-bind="'vps_tab_additional_disk_state_' + $row.state | translate"></span>
             </oui-column>
         </oui-datagrid>

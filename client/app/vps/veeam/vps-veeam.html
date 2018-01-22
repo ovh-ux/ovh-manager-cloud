@@ -1,6 +1,6 @@
 <section class="cui-page__content">
     <div class="text-center" data-ng-if="$ctrl.veeam.loading || $ctrl.vps.loading">
-        <oui-spinner size="l"></oui-spinner>
+        <oui-spinner data-size="l"></oui-spinner>
     </div>
 
     <div data-ng-if="!$ctrl.veeam.loading">
@@ -34,16 +34,16 @@
                 <oui-spinner></oui-spinner>
             </div>
             <!--Show table-->
-            <oui-datagrid rows="$ctrl.veeamTab.data"
-                       data-ng-hide="$ctrl.veeamTab.loading">
-                <oui-column title="'vps_tab_VEEAM_dashboard_table_header_date' | translate" sortable>
+            <oui-datagrid data-rows="$ctrl.veeamTab.data"
+                          data-ng-hide="$ctrl.veeamTab.loading">
+                <oui-column data-title="'vps_tab_VEEAM_dashboard_table_header_date' | translate" data-sortable>
                     <span data-ng-bind="$row | momentFormat:'LLL'"></span>
                 </oui-column>
-                <oui-action-menu align="end" compact>
-                    <oui-action-menu-item text="{{'vps_tab_VEEAM_dashboard_table_header_restore' | translate}}"
-                                          on-click="$ctrl.restore($row)"></oui-action-menu-item>
-                    <oui-action-menu-item text="{{'vps_tab_VEEAM_dashboard_table_header_mount' | translate}}"
-                                          on-click="$ctrl.mount($row)"></oui-action-menu-item>
+                <oui-action-menu data-align="end" data-compact>
+                    <oui-action-menu-item data-text="{{'vps_tab_VEEAM_dashboard_table_header_restore' | translate}}"
+                                          data-on-click="$ctrl.restore($row)"></oui-action-menu-item>
+                    <oui-action-menu-item data-text="{{'vps_tab_VEEAM_dashboard_table_header_mount' | translate}}"
+                                          data-on-click="$ctrl.mount($row)"></oui-action-menu-item>
                 </oui-action-menu>
             </oui-datagrid>
         </div>
