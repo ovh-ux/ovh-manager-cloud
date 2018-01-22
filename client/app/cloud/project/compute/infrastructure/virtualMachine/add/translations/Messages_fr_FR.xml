@@ -23,7 +23,7 @@
    <translation id="cpcivm_add_step1_sshKey_message" qtlid="482862">Les clés SSH sont obligatoires pour se connecter à votre service.<br/><a href="{{url}}" target="_blank">En savoir plus sur les clés SSH</a>.</translation>
    <translation id="cpcivm_add_step1_sshKey_licence" qtlid="482875">L'utilisation d'une image est soumise à l'acceptation préalable du Contrat de license utilisateur du fournisseur.</translation>
    <translation id="cpcivm_add_step1_sshKey_regions_title" qtlid="482888">Déploiement de la clé SSH</translation>
-   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">Votre clé SSH sera disponible sur l'ensemble des régions et des datacentres OVH.</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">Votre clé SSH sera disponible sur l'ensemble des régions et des data centers OVH.</translation>
    <translation id="cpcivm_add_distribution_linux" qtlid="102213">Linux</translation>
    <translation id="cpcivm_add_distribution_linux_other" qtlid="349728">Archlinux</translation>
    <translation id="cpcivm_add_distribution_centos" qtlid="482914">CentOS</translation>
@@ -34,14 +34,15 @@
    <translation id="cpcivm_add_distribution_ubuntu" qtlid="349715">Ubuntu</translation>
    <translation id="cpcivm_add_distribution_windows_server_2012" qtlid="482940">Windows Server 2012</translation>
    <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
-   <translation id="cpcivm_add_step2_title" qtlid="482966">Sélectionnez une région et un datacentre</translation>
+   <translation id="cpcivm_add_step2_title" qtlid="482966">Sélectionnez une région et un data center</translation>
    <translation id="cpcivm_add_step2_tab_all" qtlid="331319">Toutes les régions</translation>
    <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Choisir pour moi</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Quota d'instances atteint</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Quota de RAM atteint</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Quota de Core atteint</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Clé SSH non disponible</translation>
-   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Impossible de récupérer la liste des régions et des datacentres disponibles : {{message}}</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose">Choisir votre data center</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Impossible de récupérer la liste des régions et des data centers disponibles : {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Impossible de charger votre quota disponible : {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Sélectionnez votre instance</translation>
    <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">Usage général</translation>

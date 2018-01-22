@@ -1,23 +1,30 @@
 class CloudProjectComputeInfrastructureListCtrl {
     constructor ($scope, $q, $stateParams, $translate, $timeout,
-                 CloudMessage, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
-                 OvhApiCloudProjectVolume, OvhCloudPriceHelper, RegionService, OvhApiCloudProjectFlavor) {
+                 CloudMessage, CloudNavigation, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
+                 OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor) {
         this.$scope = $scope;
         this.$q = $q;
         this.$timeout = $timeout;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
+        this.CloudNavigation = CloudNavigation;
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
         this.InfrastructureService = CloudProjectComputeInfrastructureService;
         this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
         this.RegionService = RegionService;
-        this.OvhCloudPriceHelper = OvhCloudPriceHelper;
         this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
     }
 
     $onInit () {
         this.serviceName = this.$stateParams.projectId;
+
+        this.CloudNavigation.init({
+            state: "iaas.pci-project.compute.infrastructure.list",
+            stateParams: {
+                serviceName: this.serviceName
+            }
+        });
 
         this.loaders = {
             infra: false
@@ -50,7 +57,7 @@ class CloudProjectComputeInfrastructureListCtrl {
         });
 
         this.$scope.$on("compute.infrastructure.vm.status-update", (evt, newStatus, oldStatus, vm) => {
-           this.updateInstance(vm, vm.flavor);
+            this.updateInstance(vm, vm.flavor);
         });
 
         this.$scope.$on("compute.infrastructure.vm.monthlyBilling.status-update", (evt, newStatus, oldStatus, vm) => {
@@ -72,7 +79,7 @@ class CloudProjectComputeInfrastructureListCtrl {
             return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.v6().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
                 .then(flavor => this.updateInstance(instance, flavor))
             ))
-            .then(instances => (this.table.items = instances));
+                .then(instances => (this.table.items = instances));
         }).catch(err => {
             this.table.items = [];
             this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
@@ -82,13 +89,13 @@ class CloudProjectComputeInfrastructureListCtrl {
         });
     }
 
-    updateInstance(instance, flavor) {
+    updateInstance (instance, flavor) {
         instance.volumes = _.get(this.volumes, instance.id, []);
         instance.ipv4 = instance.getPublicIpv4();
         instance.ipv6 = instance.getPublicIpv6();
         instance.statusToTranslate = this.getStatusToTranslate(instance);
         instance.macroRegion = this.RegionService.getMacroRegion(instance.region);
-        // patch for some translations that have &#160; html entities 
+        // patch for some translations that have &#160; html entities
         instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace("&#160;", " ");
         return instance;
     }

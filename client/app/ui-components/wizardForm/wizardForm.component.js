@@ -24,7 +24,7 @@
 
         this.$scope.$on("completeStep", (e, data) => {
             const stepIndex = this.steps.findIndex(x => x.id === data.id);
-            this.steps[stepIndex].status = data.condition && "complete" || "active";
+            this.steps[stepIndex].status = data.condition && "complete" || this.steps[stepIndex].status === "complete" && "error" || "active";
             if (stepIndex < (this.steps.length - 1)) {
                 // Triggers the next step loading
                 for (let i = stepIndex + 1; i < this.steps.length; i++) {
@@ -39,7 +39,7 @@
     }
 
     $onInit () {
-        this.formDisabledCondition = this.formDisabledCondition || false;
+        this.formSubmittedCondition = this.formSubmittedCondition || false;
         this.formLoadedCondition = this.formLoadedCondition || true;
         this.formCompletedCondition = this.formCompletedCondition || false;
 
@@ -64,12 +64,13 @@ angular.module("managerApp")
         templateUrl: "app/ui-components/wizardForm/wizardForm.html",
         bindings: {
             formTitle: "@formTitle",
-            formDisabledCondition: "<?formDisabled",
             formInitFunction: "&formOnInit",
             formLoadedCondition: "<?formLoaded",
+            formSubmittedCondition: "<?formSubmitted",
             formCompletedCondition: "<formCompleted",
             formCancelledFunction: "&formOnCancel",
-            formCompletedFunction: "&formOnComplete"
+            formCompletedFunction: "&formOnComplete",
+            formCompletedText: "@formCompletedText"
         },
         controllerAs: "$ctrl",
         transclude: true,
