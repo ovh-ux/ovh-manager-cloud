@@ -61,6 +61,7 @@
             this.helpDisplay = {
                 openUnlinkVolume: false
             };
+            this.openstackClientOpen = true;
             this.importedIpFailoverPending = []; // List of pending import ipFO
             this.infra = null;
             this.jsplumbInstance = null;
