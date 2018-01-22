@@ -9,24 +9,24 @@
                 class="oui-button oui-button_secondary"
                 data-translate="vps_configuration_secondarydns_add_title_button"
                 data-ng-click="$ctrl.add()"></button>
-        <oui-table data-ng-show="!$ctrl.loaders.init"
+        <oui-datagrid data-ng-show="!$ctrl.loaders.init"
                    data-rows="$ctrl.secondaryDns.list.results">
-            <column title="'vps_tab_SECONDARY_DNS_table_domain' | translate" property="domain" sortable>
+            <oui-column title="'vps_tab_SECONDARY_DNS_table_domain' | translate" property="domain" sortable>
                 <span data-ng-bind="$row.domain"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_ip' | translate" property="ipMaster" sortable>
+            </oui-column>
+            <oui-column title="'vps_tab_SECONDARY_DNS_table_ip' | translate" property="ipMaster" sortable>
                 <span data-ng-bind="$row.ipMaster"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_date' | translate" property="creationDate" sortable>
+            </oui-column>
+            <oui-column title="'vps_tab_SECONDARY_DNS_table_date' | translate" property="creationDate" sortable>
                 <span data-ng-bind="$row.creationDate | momentFormat:'LL'"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_dns' | translate" property="dns" sortable>
+            </oui-column>
+            <oui-column title="'vps_tab_SECONDARY_DNS_table_dns' | translate" property="dns" sortable>
                 <span data-ng-bind="$row.dns"></span>
-            </column>
-            <column title="'common_actions' | translate"
-                    class="oui-table__cell_action oui-table__cell_action-menu"
-                    template="$ctrl.actionTemplate()">
-            </column>
-        </oui-table>
+            </oui-column>
+            <oui-action-menu align="end" compact>
+                <oui-action-menu-item text="{{'common_delete' | translate}}"
+                                      on-click="$ctrl.deleteOne($row)"></oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
     </div>
 </section>

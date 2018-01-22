@@ -15,18 +15,17 @@
                 data-ng-if="$ctrl.canOrder()"
                 data-ui-sref="iaas.vps.detail.additional-disk.order"></button>
 
-        <oui-table data-ng-if="!$ctrl.canOrder()"
-                   rows="$ctrl.additionnalDisks"
-                   rows-loader="$ctrl.loaders.disk">
-            <column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
+        <oui-datagrid data-ng-if="!$ctrl.canOrder()"
+                   rows="$ctrl.additionnalDisks">
+            <oui-column title="'vps_tab_additional_disk_header_id' | translate" property="id" sortable>
                 <span data-ng-bind="$row.id"></span>
-            </column>
-            <column title="'vps_tab_additional_disk_header_size' | translate" property="size" sortable>
+            </oui-column>
+            <oui-column title="'vps_tab_additional_disk_header_size' | translate" property="size" sortable>
                 <span data-ng-bind="$row.size"></span>
-            </column>
-            <column title="'vps_tab_additional_disk_header_state' | translate" property="state" sortable>
+            </oui-column>
+            <oui-column title="'vps_tab_additional_disk_header_state' | translate" property="state" sortable>
                 <span data-ng-bind="'vps_tab_additional_disk_state_' + $row.state | translate"></span>
-            </column>
-        </oui-table>
+            </oui-column>
+        </oui-datagrid>
     </div>
 </section>
