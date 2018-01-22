@@ -509,7 +509,7 @@
    <translation id="common_preview_see" qtlid="433371">Übersicht anzeigen</translation>
 
    <translation id="common_table_col_action" qtlid="56105">Aktion</translation>
-   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Fortschritt</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Ergebnisse pro Seite</translation>
    <translation id="common_pagination_page" qtlid="433397">Seite</translation>
    <translation id="common_pagination_of" qtlid="121615">Zeitraum:</translation>

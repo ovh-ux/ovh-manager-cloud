@@ -7,4 +7,5 @@
    <translation id="cpci_openstack_client_regions" qtlid="450810">Regiões:</translation>
    <translation id="cpci_openstack_client_commands" qtlid="450823">Comandos:</translation>
    <translation id="cpci_openstack_client_select_region" qtlid="84153">Escolher</translation>
+   <translation id="cpci_openstack_client_remaining_time" qtlid="453175">Tempo restante : <b>{{time}}</b></translation>
 </translations>
