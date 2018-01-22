@@ -5,7 +5,7 @@
 
    <translation id="iplb_frontends_add" qtlid="438571">Ajouter un frontend</translation>
 
-   <translation id="iplb_frontend_frontend" qtlid="429615">Service frontal</translation>
+   <translation id="iplb_frontend_frontend" qtlid="429615">Serveur frontal</translation>
    <translation id="iplb_frontend_protocol" qtlid="9046">Protocol</translation>
    <translation id="iplb_frontend_datacenter" qtlid="30802">Centre de données</translation>
    <translation id="iplb_frontend_default_farm" qtlid="429563">Ferme par défaut</translation>
