@@ -13,7 +13,7 @@
                                  data-step-loaded="!$ctrl.loaders.step1"
                                  data-step-completed="$ctrl.model.contractsValidated">
                     <div class="text-center" data-ng-if="$ctrl.loaders.init || $ctrl.loaders.options">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
 
                     <div data-ng-show="$ctrl.model.optionDetails">
@@ -54,7 +54,7 @@
                 <cui-wizard-step data-step-title="{{ 'vps_configuration_activate_snapshot_step2_title' | translate }}"
                                  data-step-completed="$ctrl.model.url">
                     <div class="text-center" data-ng-if="!$ctrl.model.url">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <dl data-ng-show="$ctrl.model.url" class="dl-horizontal">
                         <dt class="bold"

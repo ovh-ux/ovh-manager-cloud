@@ -2,7 +2,7 @@
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_snapshot_take_title' | translate">
         <div class="text-center" data-ng-if="$ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.save">
             <cui-modal-text data-text="'vps_configuration_snapshot_take_step1_question' | translate: {serviceName: $ctrl.serviceName}"></cui-modal-text>

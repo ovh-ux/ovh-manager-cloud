@@ -3,7 +3,7 @@
     <!-- Mount -->
     <cui-modal-body data-title="'vps_configuration_veeam_mount_title' | translate" data-ng-if="$ctrl.mount">
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
             <cui-modal-text data-text="'vps_configuration_veeam_mount_question' | translate:{ serviceName: $ctrl.serviceName }""></cui-modal-text>
@@ -22,7 +22,7 @@
     <!-- Unmount -->
     <cui-modal-body data-title="'vps_configuration_veeam_umount_title' | translate" data-ng-if="!$ctrl.mount">
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
             <cui-modal-text data-text="'vps_configuration_veeam_umount_step1_question' | translate:{ serviceName: $ctrl.serviceName }""></cui-modal-text>

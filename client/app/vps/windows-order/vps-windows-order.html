@@ -12,7 +12,7 @@
                                  data-step-on-init="$ctrl.getDurations()"
                                  data-step-completed="$ctrl.model.duration">
                     <div class="text-center" data-ng-if="$ctrl.loaders.durations || $ctrl.loaders.prices">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
 
                     <div data-ng-show="!$ctrl.loaders.durations && !$ctrl.loaders.prices">
@@ -49,7 +49,7 @@
                                  data-step-on-init="$ctrl.orderOption()"
                                  data-step-completed="$ctrl.model.url">
                     <div class="text-center" data-ng-if="!$ctrl.model.url">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <dl data-ng-show="$ctrl.model.url" class="dl-horizontal">
                         <dt class="bold"

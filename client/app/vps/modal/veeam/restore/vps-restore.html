@@ -2,7 +2,7 @@
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_veeam_restore_title' | translate">
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
             <cui-modal-text data-text="'vps_configuration_veeam_restore_step1_question' | translate:{ serviceName: $ctrl.serviceName }"></cui-modal-text>
@@ -11,17 +11,12 @@
                 <dd data-ng-bind="$ctrl.RestorePoint | momentFormat:'LLL'"></dd>
             </dl>
 
-            <div class="oui-checkbox">
-                <input class="oui-checkbox__input" id="rescue" type="checkbox" data-ng-model="$ctrl.selected.changePassword"/>
-                <label class="oui-checkbox__label-container" for="rescue">
-                    <span class="oui-checkbox__label" data-translate="vps_configuration_veeam_restore_step1_changepassword"></span>
-                    <span class="oui-checkbox__icon">
-                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                    </span>
-                </label>
-            </div>
+            <oui-checkbox
+                data-text="{{ 'vps_configuration_veeam_restore_step1_changepassword' | translate }}"
+                id="rescue"
+                name="rescue"
+                data-model="$ctrl.selected.changePassword">
+            </oui-checkbox>
 
             <p class="oui-modal__body-text">
                 <span class="red" data-translate="vps_configuration_veeam_restore_step1_warning"></span>

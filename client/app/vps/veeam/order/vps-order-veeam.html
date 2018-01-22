@@ -13,7 +13,7 @@
                                  data-step-loaded="!$ctrl.loaders.step1"
                                  data-step-completed="model.contractsValidated">
                     <div class="text-center" data-ng-if="!model.vps || !model.optionDetails">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
 
                     <div data-ng-show="model.optionDetails">
@@ -52,7 +52,7 @@
                 <cui-wizard-step data-step-title="{{ 'vps_configuration_veeam_order_step2_generation_bc' | translate }}"
                                  data-step-completed="model.contractsValidated">
                     <div class="text-center" data-ng-if="false">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <div class="row-fluid">
                         <div class="bottom-space-p12">

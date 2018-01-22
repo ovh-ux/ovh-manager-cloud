@@ -2,7 +2,7 @@
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_edit_name_title' | translate">
         <div class="text-center" data-ng-if="$ctrl.loaders.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <section data-ng-if="!$ctrl.loaders.save">
             <h3 data-translate="vps_default_name"></h3>
