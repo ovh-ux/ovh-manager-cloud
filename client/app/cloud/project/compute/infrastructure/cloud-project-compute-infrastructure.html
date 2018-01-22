@@ -1145,6 +1145,11 @@
 
                 </div>
             </div>
+            <div class="clearfix"
+                 data-ng-include="'app/cloud/project/compute/infrastructure/openstackClient/cloud-project-compute-infrastructure-openstack-client.html'"
+                 data-ng-if="CloudProjectComputeInfrastructureCtrl.openstackClientOpen"
+             >
+             </div>
             <div class="bottom-validator animate-fadeInUp-enter animate-fadeOutDown-leave"
                 data-ng-if="CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit">
 
