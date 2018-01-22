@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">De virtual server (instance) {0} is aangemaakt</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">Naam van de SSH-key</translation>
    <translation id="add_key_success" qtlid="243133">SSH-key toegevoegd</translation>
-   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Storage aangemaakt</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Er is een fout opgetreden tijdens het aanmaken van de container.</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Een SSH-key bestaat al met die naam</translation>

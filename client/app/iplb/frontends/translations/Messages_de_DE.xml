@@ -47,11 +47,11 @@
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Hinzufügen/Bestellen</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="448699">Standardmäßig verwendetes Zertifikat</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Sie können ein neues Zertifikat nicht direkt hinzufügen. Sie können es erst hinzufügen, wenn die Erstellung Ihres Frontends abgeschlossen ist.</translation>
-   <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Weitergehende Einstellungen</translation>
+   <translation id="iplb_frontend_add_advanced_options" qtlid="39958">Erweiterte Einstellungen</translation>
    <translation id="iplb_frontend_add_advanced_options_info" qtlid="437947">Die gebräuchlichsten Standardwerte sind bereits voreingestellt. Sie können diese jederzeit ändern.</translation>
    <translation id="iplb_frontend_add_advanced_options_show" qtlid="69353">Anzeigen</translation>
-   <translation id="iplb_frontend_add_dedicated_ip_failover" qtlid="430096">Dedicated Failover IP</translation>
-   <translation id="iplb_frontend_add_dedicated_ip_failover_tip" qtlid="438740">Liste der IP-Adressen entfernter Server, mit denen Ihr Loadbalancer verbunden ist.</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover" qtlid="430096">Dedicated Failover-IP</translation>
+   <translation id="iplb_frontend_add_dedicated_ip_failover_tip" qtlid="438740">Liste der IP-Adressen der Remote-Server, mit denen Ihr Loadbalancer verbunden ist.</translation>
    <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">Zugang auf bestimmte IPs begrenzen</translation>
    <translation id="iplb_frontend_add_restrict_ip_access_tip" qtlid="438766">Liste der IP-Adressen mit Zugang zum Loadbalancer (IPv4). Format: 1.2.3.4, 42.42.42.0/24</translation>
    <translation id="iplb_frontend_add_http_redirection" qtlid="430135">HTTP-Weiterleitung</translation>
@@ -76,7 +76,7 @@
    <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Rechenzentrum</translation>
    <translation id="iplb_frontend_preview_default_farm" qtlid="429563">Standardfarm</translation>
    <translation id="iplb_frontend_preview_default_certificate" qtlid="438701">Standard SSL Zertifikat</translation>
-   <translation id="iplb_frontend_preview_dedicated_ip_failover" qtlid="430096">Dedicated Failover IP</translation>
+   <translation id="iplb_frontend_preview_dedicated_ip_failover" qtlid="430096">Dedicated Failover-IP</translation>
    <translation id="iplb_frontend_preview_restrict_ip_access" qtlid="430109">Zugang auf bestimmte IPs begrenzen</translation>
    <translation id="iplb_frontend_preview_http_redirection" qtlid="430135">HTTP-Weiterleitung</translation>
    <translation id="iplb_frontend_preview_http_header" qtlid="430122">HTTP-Header</translation>

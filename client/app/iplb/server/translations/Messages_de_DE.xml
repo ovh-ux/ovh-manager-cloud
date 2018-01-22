@@ -4,7 +4,7 @@
    <translation id="iplb_server_preview_name" qtlid="3818">Name</translation>
    <translation id="iplb_server_preview_address" qtlid="79314">IPv4 Adresse</translation>
    <translation id="iplb_server_preview_port" qtlid="9034">Port</translation>
-   <translation id="iplb_server_preview_backup" qtlid="438220">Backupserver</translation>
+   <translation id="iplb_server_preview_backup" qtlid="438220">Backup-Server</translation>
    <translation id="iplb_server_preview_probe" qtlid="438233">Monitoring-Sonde der Farm verwenden</translation>
    <translation id="iplb_server_preview_ssl" qtlid="438246">Anfragen mit SSL verschlüsseln</translation>
    <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
@@ -21,10 +21,10 @@
    <translation id="iplb_server_edit_address" qtlid="79314">IPv4 Adresse</translation>
    <translation id="iplb_server_edit_port" qtlid="9034">Port</translation>
    <translation id="iplb_server_edit_port_tip" qtlid="448673">Mit Ihrem Server verbundener Port (1 bis {{portMax}}). Verwendet standardmäßig den Port der Farm.</translation>
-   <translation id="iplb_server_edit_advanced_options" qtlid="39958">Weitergehende Einstellungen</translation>
+   <translation id="iplb_server_edit_advanced_options" qtlid="39958">Erweiterte Einstellungen</translation>
    <translation id="iplb_server_edit_advanced_options_info" qtlid="437947">Die gebräuchlichsten Standardwerte sind bereits voreingestellt. Sie können diese jederzeit ändern.</translation>
    <translation id="iplb_server_edit_advanced_options_show" qtlid="69353">Anzeigen</translation>
-   <translation id="iplb_server_edit_backup" qtlid="438220">Backupserver</translation>
+   <translation id="iplb_server_edit_backup" qtlid="438220">Backup-Server</translation>
    <translation id="iplb_server_edit_probe" qtlid="438233">Monitoring-Sonde der Farm verwenden</translation>
    <translation id="iplb_server_edit_ssl" qtlid="438246">Anfragen mit SSL verschlüsseln</translation>
    <translation id="iplb_server_edit_cookie" qtlid="223736">Cookie</translation>
