@@ -25,3 +25,5 @@ server/certificate/server.csr
 server/certificate/server.key
 tools/
 client/app/app-scss.css
+.DS_Store
+.vscode/
