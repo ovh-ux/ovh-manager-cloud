@@ -1,5 +1,6 @@
 class VpsVeeamCtrl {
-    constructor ($stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+    constructor ($scope, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+        this.$scope = $scope;
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -11,6 +12,7 @@ class VpsVeeamCtrl {
         this.loaders = {
             init: false,
             checkOrder: false,
+            polling: false,
             veeamTab: false
         };
 
@@ -33,14 +35,29 @@ class VpsVeeamCtrl {
         });
     }
 
-    $onInit () {
-        this.initLoaders();
+    load () {
         this.veeam.load().then(() => {
             if (this.veeam.data.state !== "disabled") {
                 this.veeamTab.load();
                 this.loadRestorePoint();
             } else {
                 this.vps.load();
+            }
+        });
+    }
+
+    $onInit () {
+        this.initLoaders();
+        this.load();
+        this.$scope.$on("tasks.pending", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = true;
+            }
+        });
+        this.$scope.$on("tasks.success", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = false;
+                this.load();
             }
         });
     }

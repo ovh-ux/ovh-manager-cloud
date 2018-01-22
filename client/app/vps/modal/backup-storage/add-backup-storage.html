@@ -1,5 +1,5 @@
 <cui-modal>
-    <form name="VpsBackupStorageAddForm">
+    <form name="VpsBackupStorageAddForm" data-ng-submit="$ctrl.confirm()">
         <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
         <cui-modal-body data-title="'vps_backup_storage_access_add' | translate">
             <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
@@ -49,8 +49,7 @@
         <cui-modal-footer data-ng-if="$ctrl.isAvailable()">
             <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
             <cui-submit-button data-text="'common_confirm' | translate"
-                               data-on-click="$ctrl.confirm()"
-                               data-disabled="$ctrl.loader.init || $ctrl.loader.save || !$ctrl.validateCheckboxes()"></cui-submit-button>
+                               data-disabled="$ctrl.loader.init || $ctrl.loader.save || !$ctrl.validateCheckboxes() || VpsBackupStorageAddForm.$invalid"></cui-submit-button>
         </cui-modal-footer>
     </form>
 </cui-modal>

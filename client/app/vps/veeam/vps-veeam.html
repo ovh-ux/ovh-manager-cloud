@@ -24,7 +24,8 @@
             <button class="oui-button oui-button_secondary"
                     type="button"
                     data-ng-if="$ctrl.veeam.data.accessInfos.restorePoint"
-                    data-ng-click="$ctrl.unmount($ctrl.veeam.data.accessInfos.restorePoint)">
+                    data-ng-click="$ctrl.unmount($ctrl.veeam.data.accessInfos.restorePoint)"
+                    data-ng-diabled="$ctrl.loaders.polling">
                 <span data-translate="vps_configuration_veeam_umount_title_button"></span>
             </button>
 
