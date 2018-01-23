@@ -34,11 +34,11 @@
    <translation id="metrics_token_preview_title" qtlid="439931">Pre-visualização do token</translation>
    <translation id="metrics_token_show_revoked" qtlid="403424">Mostrar token revogados</translation>
 
-   <translation id="metrics_token_edit" qtlid="37875">Modificar</translation>
+   <translation id="metrics_token_edit" qtlid="37875">Alterar</translation>
    <translation id="metrics_token_edit_title" qtlid="415870">Modificar o token</translation>
    <translation id="metrics_token_edit_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="metrics_token_edit_cancel" qtlid="37863">Anular</translation>
-   <translation id="metrics_token_edit_confirm" qtlid="37875">Modificar</translation>
+   <translation id="metrics_token_edit_confirm" qtlid="37875">Alterar</translation>
 
    <translation id="metrics_token_delete_title" qtlid="439944">Eliminar o token</translation>
    <translation id="metrics_token_delete_message" qtlid="415896">Quer mesmo eliminar o token?</translation>
