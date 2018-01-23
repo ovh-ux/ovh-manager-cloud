@@ -1,7 +1,7 @@
 angular.module("managerApp")
     .component("iplbZonePicker", {
         template: `
-            <div data-ng-repeat="(country, zones) in $ctrl.zones.data | groupBy: 'country' | orderHashByKey track by $index">
+            <div data-ng-repeat="(country, zones) in $ctrl.zones | groupBy: 'country' | orderHashByKey track by $index">
                 <p data-ng-bind="country"></p>
                 <oui-checkbox 
                     on-change="$ctrl.onSelectionChanged(zone, modelValue)"

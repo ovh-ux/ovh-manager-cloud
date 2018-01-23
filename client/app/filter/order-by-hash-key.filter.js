@@ -1,4 +1,4 @@
-angular.module("managerApp").filter("orderHashByKey", () => _.memoize(items => {
+angular.module("managerApp").filter("orderHashByKey", () => items => {
     const sortedKeys = _.sortBy(_.keys(items), key => key);
 
     const newHash = {};
@@ -6,4 +6,4 @@ angular.module("managerApp").filter("orderHashByKey", () => _.memoize(items => {
         newHash[key] = items[key];
     });
     return newHash;
-}));
+});
