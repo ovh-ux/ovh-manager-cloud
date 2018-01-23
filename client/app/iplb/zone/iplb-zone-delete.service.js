@@ -1,14 +1,27 @@
 class IpLoadBalancerZoneDeleteService {
-    constructor ($q, $translate, CloudMessage, RegionService, ServiceHelper) {
+    constructor ($q, $translate, CloudMessage, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
+        this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
     }
 
     getDeletableZones (serviceName) {
-        return this.$q.when([this.RegionService.getRegion("RBX"), this.RegionService.getRegion("GRA"), this.RegionService.getRegion("BHS")])
+        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
+            .$promise
+            .then(response => {
+                const promises = _.map(response.zone, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().get({ serviceName, name: zone }).$promise);
+                return this.$q.all(promises);
+            })
+            .then(zones => _.map(zones, zone => _.extend({
+                name: zone.name,
+                selectable: {
+                    value: zone.state !== "released",
+                    reason: this.$translate.instant("iplb_zone_delete_unavailable_already_released")
+                }
+            }, this.RegionService.getRegion(zone.name))))
             .catch(this.ServiceHelper.errorHandler("iplb_zone_delete_loading_error"));
     }
 
@@ -19,9 +32,15 @@ class IpLoadBalancerZoneDeleteService {
                     return this.ServiceHelper.errorHandler("iplb_zone_delete_selection_error")({});
                 }
 
-                const deletableZoneCount = deletableZones.length - 1;
+                const deletableZoneCount = _.filter(deletableZones, item => item.selectable.value !== false).length - 1;
+                const messages = {
+                    tooMany: deletableZoneCount > 1 ? "iplb_zone_delete_selection_too_many_plural_error" : "iplb_zone_delete_selection_too_many_single_error",
+                    success: zones.length > 1 ? "iplb_zone_delete_plural_success" : "iplb_zone_delete_single_success",
+                    error: zones.length > 1 ? "iplb_zone_delete_plural_error" : "iplb_zone_delete_single_error"
+                };
+
                 if (zones.length > deletableZoneCount) {
-                    return this.ServiceHelper.errorHandler(deletableZoneCount > 1 ? "iplb_zone_delete_selection_too_many_plural_error" : "iplb_zone_delete_selection_too_many_single_error")({
+                    return this.ServiceHelper.errorHandler(messages.tooMany)({
                         data: {
                             zoneQuantity: deletableZoneCount
                         }
@@ -29,9 +48,10 @@ class IpLoadBalancerZoneDeleteService {
                 }
 
                 const deletedZones = _.sortBy(_.map(zones, zone => zone.microRegion.text), zone => zone).join(", ");
-                return this.$q.when()
-                    .then(() => this.ServiceHelper.successHandler(zones.length > 1 ? "iplb_zone_delete_plural_success" : "iplb_zone_delete_single_success")({ zones: deletedZones }))
-                    .catch(this.ServiceHelper.errorHandler(zones.length > 1 ? "iplb_zone_delete_plural_error" : "iplb_zone_delete_single_error"));
+                const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().delete({ serviceName, name: zone.name }).$promise);
+                return this.$q.all(promises)
+                    .then(() => this.ServiceHelper.successHandler(messages.success)({ zones: deletedZones }))
+                    .catch(this.ServiceHelper.errorHandler(messages.error));
             });
     }
 }

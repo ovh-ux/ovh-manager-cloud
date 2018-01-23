@@ -1,9 +1,10 @@
 class IpLoadBalancerZoneAddService {
-    constructor ($q, $translate, $window, CloudMessage, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
+    constructor ($q, $translate, $window, CloudMessage, OrderHelperService, OvhApiIpLoadBalancing, RegionService, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.$window = $window;
         this.CloudMessage = CloudMessage;
+        this.OrderHelperService = OrderHelperService;
         this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
         this.ServiceHelper = ServiceHelper;
@@ -21,17 +22,19 @@ class IpLoadBalancerZoneAddService {
             return this.ServiceHelper.errorHandler("iplb_zone_add_selection_error")({});
         }
 
-        return this.$q.when()
+        return this.OrderHelperService.getExpressOrderUrl(_.map(zones, zone => ({
+            productId: "ipLoadbalancing",
+            serviceName,
+            planCode: zone.planCode
+        })))
             .then(response => {
-                const orderUrl = "http://www.google.com";
-
-                this.$window.open(orderUrl, "_blank");
+                this.$window.open(response, "_blank");
 
                 return this.ServiceHelper.successHandler({
                     text: this.$translate.instant(zones.length > 1 ? "iplb_zone_add_plural_success" : "iplb_zone_add_single_success"),
                     link: {
                         text: this.$translate.instant("common_complete_order"),
-                        value: orderUrl
+                        value: response
                     }
                 })(response);
             })
