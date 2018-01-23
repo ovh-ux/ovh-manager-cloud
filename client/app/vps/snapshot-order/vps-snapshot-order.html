@@ -23,22 +23,12 @@
                            data-translate-values="{ amount: $ctrl.model.optionDetails.unitaryPrice }"></p>
                         <div data-translate="vps_configuration_activate_snapshot_step1_confirmation"></div>
                         <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" type="checkbox"
-                                   id="contractsValidated" name="contractsValidated"
-                                   data-ng-change="$ctrl.orderOption()"
-                                   data-ng-model="$ctrl.model.contractsValidated">
-                            <label class="oui-checkbox__label-container" for="contractsValidated">
-                                <span class="oui-checkbox__label"
-                                      data-translate="vps_configuration_veeam_order_step1_contracts"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-indeterminate" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            data-text="{{ 'vps_configuration_veeam_order_step1_contracts' | translate }}"
+                            id="contractsValidated"
+                            name="contractsValidated"
+                            data-model="$ctrl.model.contractsValidated">
+                        </oui-checkbox>
                         <ul>
                             <li data-ng-repeat="contract in $ctrl.model.optionDetails.contracts">
                                 <a target="_blank"
@@ -52,6 +42,7 @@
                 </cui-wizard-step>
 
                 <cui-wizard-step data-step-title="{{ 'vps_configuration_activate_snapshot_step2_title' | translate }}"
+                                 data-step-on-init="$ctrl.orderOption()"
                                  data-step-completed="$ctrl.model.url">
                     <div class="text-center" data-ng-if="!$ctrl.model.url">
                         <oui-spinner></oui-spinner>

@@ -32,13 +32,13 @@
                         <div data-ng-bind-html="'vps_configuration_veeam_order_step1_info2' | translate:{ price: model.optionDetails.unitaryPrice }"></div>
 
                         <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
-                        <input id="contractsValidated"
-                               type="checkbox"
-                               data-ng-model="model.contractsValidated"
-                               style="margin-top: -1px;">
-                        <label style="display: inline;"
-                               for="contractsValidated"
-                               data-translate="vps_configuration_veeam_order_step1_contracts"></label>
+                        <oui-checkbox
+                            data-text="{{ 'vps_configuration_veeam_order_step1_contracts' | translate }}"
+                            id="contractsValidated"
+                            name="contractsValidated"
+                            data-on-change="$ctrl.orderOption()"
+                            data-model="model.contractsValidated">
+                        </oui-checkbox>
                         <ul>
                             <li data-ng-repeat="contract in model.optionDetails.contracts">
                                 <a target="_blank"
