@@ -33,6 +33,10 @@ class IpLoadBalancerZoneDeleteCtrl {
             });
     }
 
+    getDeletableZoneCount () {
+        return _.filter(this.zones.data, zone => zone.selectable.value !== false).length;
+    }
+
     isLoading () {
         return this.saving || this.zones.loading;
     }

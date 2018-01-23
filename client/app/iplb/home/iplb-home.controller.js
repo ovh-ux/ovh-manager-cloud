@@ -2,7 +2,7 @@ class IpLoadBalancerHomeCtrl {
     constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
-                 REDIRECT_URLS) {
+                 IpLoadBalancerZoneAddService, REDIRECT_URLS) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -14,6 +14,7 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
         this.IpLoadBalancerHomeStatusService = IpLoadBalancerHomeStatusService;
         this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
+        this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
         this.REDIRECT_URLS = REDIRECT_URLS;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -28,6 +29,8 @@ class IpLoadBalancerHomeCtrl {
 
         this.iplbStatus.load();
         this.usage.load();
+
+        this.orderableZones.load();
 
         this.initActions();
         this.initGraph();
@@ -70,6 +73,10 @@ class IpLoadBalancerHomeCtrl {
 
         this.usage = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.getUsage(this.serviceName)
+        });
+
+        this.orderableZones = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName)
         });
     }
 
@@ -116,18 +123,12 @@ class IpLoadBalancerHomeCtrl {
             },
             addZone: {
                 text: this.$translate.instant("common_add"),
-                state: "network.iplb.detail.zone.add",
-                stateParams: {
-                    serviceName: this.serviceName
-                },
-                isAvailable: () => true
+                callback: () => this.$state.go("network.iplb.detail.zone.add", { serviceName: this.serviceName }),
+                isAvailable: () => !this.orderableZones.loading && this.orderableZones.data.length > 0
             },
             deleteZone: {
                 text: this.$translate.instant("common_delete"),
-                state: "network.iplb.detail.zone.delete",
-                stateParams: {
-                    serviceName: this.serviceName
-                },
+                callback: () => this.$state.go("network.iplb.detail.zone.delete", { serviceName: this.serviceName }),
                 isAvailable: () => true
             }
         };
