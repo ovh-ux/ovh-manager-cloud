@@ -1,4 +1,37 @@
-<div>
-    Streams (home)
-    Service Name: {{ ctrl.serviceName }}
-</div>
+
+<section class="cui-page__content">
+    <cui-page-content-title text="'logs_streams_title' | translate"></cui-page-content-title>
+    <p data-translate="logs_streams_description"></p>
+
+    <p>{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="logs_streams_total_used"></span>
+        (<a class="oui-button-link" ui-sref="dbaas.logs.detail.options" data-translate="logs_streams_increase_quota"></a>)
+    </p>
+
+    <a class="oui-button oui-button_secondary"
+        data-ui-sref="dbaas.logs.detail.streams.add"
+        data-translate="logs_streams_add_data_feed">
+    </a>
+
+    <oui-spinner data-ng-show="ctrl.quota.loading && ctrl.streams.loading"></oui-spinner>
+    <oui-datagrid data-ng-hide="ctrl.quota.loading && ctrl.streams.loading"
+        rows="ctrl.streams.data">
+        <oui-column title="'logs_streams_col_title' | translate" property="title" sortable="asc"></oui-column>
+        <oui-column title="'logs_streams_col_description' | translate" property="description" sortable></oui-column>
+        <oui-column title="'logs_streams_col_creation_date' | translate" property="createdAt" sortable>
+            {{ $row.createdAt | momentFormat:'L'}}
+        </oui-column>
+        <oui-column title="'logs_streams_col_archives' | translate" property="coldStorageRetention" sortable></oui-column>
+        <oui-column title="'logs_streams_col_notifications' | translate" property="" sortable>
+            <span data-ng-show="$row.notifications.length">{{ $row.notifications.length}}</span>
+            <span data-ng-hide="$row.notifications.length"> - </span>
+        </oui-column>
+        <oui-column title="'logs_streams_col_linked_option' | translate" property="optionId" sortable>
+            <i data-ng-show="$row.optionId" class="glyphicon glyphicon-ok"></i>
+            <span data-ng-hide="$row.optionId"> - </span>
+        </oui-column>
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="Edit" on-click="ctrl.edit($row)">
+            </oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
+</section>
