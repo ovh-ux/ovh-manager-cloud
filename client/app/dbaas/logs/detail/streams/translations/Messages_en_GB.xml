@@ -10,7 +10,7 @@
     <translation id="logs_streams_col_archives">Archives</translation>
     <translation id="logs_streams_col_actions">Actions</translation>
     <translation id="logs_streams_col_creation_date">Creation date</translation>
-    <translation id="logs_streams_col_notifications">Notifications</translation>
+    <translation id="logs_streams_col_notifications">Alerts</translation>
     <translation id="logs_streams_col_linked_option">Linked option</translation>
     <translation id="logs_streams_get_error">An error has occurred while retrieving data streams</translation>
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota</translation>
