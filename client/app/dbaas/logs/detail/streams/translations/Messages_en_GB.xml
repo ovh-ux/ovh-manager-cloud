@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_streams_title">Data flow</translation>
-    <translation id="logs_streams_description">The feeds allow you to direct your logs in real time to a specific category as soon as they arrive on Logs Data Platform. If you have multiple feeds, you can also: Easily classify messages based on their source, application, or origin server, and create flow-sensitive privacy levels, which will allow you to distribute your access only to authorized persons. The tokens here are write tokens that allow you to route the logs to the correct stream. In general, having different streams greatly facilitates the search for your logs. No need to exclude results from another system or application.</translation>
-    <translation id="logs_streams_total_used">streams used</translation>
+    <translation id="logs_streams_title">Data stream</translation>
+    <translation id="logs_streams_description">The data streams allow you to direct your logs in real time to a specific category as soon as they arrive on Logs Data Platform. If you have multiple streams, you can also: Easily classify messages based on their source, application, or origin server, and create flow-sensitive privacy levels, which will allow you to distribute your access only to authorized persons. The tokens here are write tokens that allow you to route the logs to the correct stream. In general, having different streams greatly facilitates the search for your logs. No need to exclude results from another system or application.</translation>
+    <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
-    <translation id="logs_streams_add_data_feed">Add a data feed</translation>
+    <translation id="logs_streams_add_data_feed">Add a data stream</translation>
     <translation id="logs_streams_col_title">Name</translation>
     <translation id="logs_streams_col_description">Description</translation>
     <translation id="logs_streams_col_archives">Archives</translation>
@@ -12,8 +12,8 @@
     <translation id="logs_streams_col_creation_date">Creation date</translation>
     <translation id="logs_streams_col_notifications">Notifications</translation>
     <translation id="logs_streams_col_linked_option">Linked option</translation>
-    <translation id="logs_streams_get_error">An error has occurred while retrieving data flows</translation>
-    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data flow quota</translation>
-    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data flow notifiations</translation>
+    <translation id="logs_streams_get_error">An error has occurred while retrieving data streams</translation>
+    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota</translation>
+    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations</translation>
     <translation id="logs_streams_no_streams">No data feeds added</translation>
 </translations>

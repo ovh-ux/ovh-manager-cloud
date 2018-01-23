@@ -2,18 +2,9 @@ class LogsStreamsService {
     constructor ($q, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.ServiceHelper = ServiceHelper;
-
-        this.LogsApiService = {
-            all: OvhApiDbaas.Logs().Lexi()
-        };
-
-        this.StreamsApiService = {
-            all: OvhApiDbaas.Logs().Stream().Lexi()
-        };
-
-        this.AccountingAapiService = {
-            all: OvhApiDbaas.Logs().Accounting().Aapi()
-        };
+        this.LogsApiService = OvhApiDbaas.Logs().Lexi();
+        this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
+        this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
     }
 
     /**
@@ -39,8 +30,7 @@ class LogsStreamsService {
     getStreamDetails (serviceName) {
         return this.getAllStreams(serviceName)
             .then(streams => {
-                const promises = streams.map(stream =>
-                    this.getStream(serviceName, stream));
+                const promises = streams.map(stream => this.getStream(serviceName, stream));
                 return this.$q.all(promises);
             });
     }
@@ -54,12 +44,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStream (serviceName, streamId) {
-        return this.StreamsApiService.all.get({
-            serviceName,
-            streamId
-        })
-            .$promise
-            .then(stream => stream);
+        return this.StreamsApiService.get({ serviceName, streamId }).$promise;
     }
 
     /**
@@ -70,8 +55,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getAllStreams (serviceName) {
-        return this.LogsApiService.all.streams({ serviceName })
-            .$promise;
+        return this.LogsApiService.streams({ serviceName }).$promise;
     }
 
     /**
@@ -83,8 +67,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getNotifications (serviceName, streamId) {
-        return this.StreamsApiService.all.notifications({ serviceName, streamId })
-            .$promise;
+        return this.StreamsApiService.notifications({ serviceName, streamId }).$promise;
     }
 
     /**
@@ -113,7 +96,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getQuota (serviceName) {
-        return this.AccountingAapiService.all.me({ serviceName }).$promise
+        return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => {
                 const quota = {
                     max: me.total.maxNbStream,
