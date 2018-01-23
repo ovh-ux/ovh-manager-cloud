@@ -16,7 +16,7 @@ class IpLoadBalancerZoneDeleteService {
         return this.getDeletableZones(serviceName)
             .then(deletableZones => {
                 if (zones.length === 0) {
-                    return this.ServiceHelper.errorHandler("iplb_zone_delete_selection_error")();
+                    return this.ServiceHelper.errorHandler("iplb_zone_delete_selection_error")({});
                 }
 
                 const deletableZoneCount = deletableZones.length - 1;

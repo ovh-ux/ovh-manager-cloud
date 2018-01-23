@@ -10,12 +10,12 @@
         data-translate="iplb_zone_delete_intro_text_plural"
         data-translate-values="{ zoneQuantity: $ctrl.zones.data.length -1 }"></p>
     <form novalidate name="$ctrl.form">
-        <iplb-zone-picker data-zones="$ctrl.zones"
+        <iplb-zone-picker data-zones="$ctrl.zones.data"
             data-on-selection-change="$ctrl.model.zones.value = value"></iplb-zone-picker>
 
         <div class="cui-form-actions">
-            <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
-            <div data-ng-if="!$ctrl.saving">
+            <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
+            <div data-ng-if="!$ctrl.isLoading()">
                 <cui-submit-button data-text="'common_delete' | translate"
                     data-on-click="$ctrl.submit()"></cui-submit-button>
                 <a class="oui-button oui-button_link"

@@ -33,6 +33,10 @@ class IpLoadBalancerZoneDeleteCtrl {
             });
     }
 
+    isLoading () {
+        return this.saving || this.zones.loading;
+    }
+
     _initLoaders () {
         this.zones = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerZoneDeleteService.getDeletableZones(this.serviceName)
