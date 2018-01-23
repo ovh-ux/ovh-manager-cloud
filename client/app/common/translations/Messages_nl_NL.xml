@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Preview bekijken</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Geen resultaat</translation>
    <translation id="common_table_col_action" qtlid="56105">Actie</translation>
    <translation id="common_table_col_progress" qtlid="442639">Voortgang</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultaten per pagina</translation>
    <translation id="common_pagination_page" qtlid="433397">pagina</translation>
    <translation id="common_pagination_of" qtlid="121615">op</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">van TOTAL_ITEMS resultaten</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Pagina CURRENT_PAGE van PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">resultaten</translation>
    <translation id="common_pagination_next" qtlid="433423">Volgende pagina</translation>
    <translation id="common_pagination_previous" qtlid="433436">Vorige pagina</translation>

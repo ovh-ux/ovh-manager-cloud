@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Zobrazit náhled</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Žádný výsledek</translation>
    <translation id="common_table_col_action" qtlid="56105">Akce</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Výsledky na stránku</translation>
    <translation id="common_pagination_page" qtlid="433397">stránka</translation>
    <translation id="common_pagination_of" qtlid="121615">na</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">sur TOTAL_ITEMS résultats</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE sur PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">výsledky</translation>
    <translation id="common_pagination_next" qtlid="433423">Následující stránka</translation>
    <translation id="common_pagination_previous" qtlid="433436">Předchozí stránka</translation>

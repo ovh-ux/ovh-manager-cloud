@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Katso näkymä</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Ei tuloksia</translation>
    <translation id="common_table_col_action" qtlid="56105">Toiminto</translation>
    <translation id="common_table_col_progress" qtlid="442639">Eteneminen</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Tulosta per sivu</translation>
    <translation id="common_pagination_page" qtlid="433397">sivu</translation>
    <translation id="common_pagination_of" qtlid="121615">aikaväli</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">/ TOTAL_ITEMS tulosta</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Sivu CURRENT_PAGE / PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">tulokset</translation>
    <translation id="common_pagination_next" qtlid="433423">Seuraava sivu</translation>
    <translation id="common_pagination_previous" qtlid="433436">Edellinen sivu</translation>

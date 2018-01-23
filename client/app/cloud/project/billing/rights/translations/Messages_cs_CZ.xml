@@ -26,5 +26,8 @@ Zvolená výchozí platba fakturačního kontaktu bude použita k hrazení služ
    <translation id="cpb_rights_table_rights_remove_success" qtlid="261257">Právo bylo odstraněno.</translation>
    <translation id="cpb_rights_table_remove_confirm" qtlid="173632">Potvrdit vymazání</translation>
    <translation id="cpb_rights_table_remove_cancel" qtlid="173645">Zrušit vymazání</translation>
+   <translation id="cpb_rights_add_title" qtlid="57836">Přidat kontakt</translation>
+   <translation id="cpb_rights_delete_title" qtlid="151152">Vymazání kontaktu</translation>
+   <translation id="cpb_rights_delete_question" qtlid="453469">Voulez-vous vraiment supprimer les droits de {{nickname}}?</translation>
 
 </translations>

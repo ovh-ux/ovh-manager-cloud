@@ -9,7 +9,7 @@
    <translation id="common_close" qtlid="4670">Encerrar</translation>
 
    <translation id="common_cancel" qtlid="37863">Anular</translation>
-   <translation id="common_edit" qtlid="37875">Modificar</translation>
+   <translation id="common_edit" qtlid="37875">Alterar</translation>
    <translation id="common_consult" qtlid="339639">Consulter</translation>
    <translation id="common_see_detail" qtlid="225192">Ver o detalhe</translation>
    <translation id="common_manage" qtlid="16301">Gerir</translation>
@@ -65,14 +65,14 @@
    <translation id="common_menu_support_changelog" qtlid="124964">Histórico das atualizações</translation>
    <translation id="changelog_loading_error" qtlid="298014">O histórico das atualizações está momentaneamente indisponível.</translation>
 
-   <translation id="common_modify" qtlid="37875">Modificar</translation>
+   <translation id="common_modify" qtlid="37875">Alterar</translation>
    <translation id="common_select" qtlid="17923">Selecionar</translation>
    <translation id="common_add" qtlid="37923">Adicionar</translation>
    <translation id="common_save" qtlid="49754">Fazer backup</translation>
    <translation id="common_delete" qtlid="2414">Eliminar</translation>
    <translation id="common_select" qtlid="17923">Selecionar</translation>
    <translation id="common_remove" qtlid="323093">Retirar</translation>
-   <translation id="edit" qtlid="37875">Modificar</translation>
+   <translation id="edit" qtlid="37875">Alterar</translation>
    <translation id="delete" qtlid="2414">Eliminar</translation>
    <translation id="common_back" qtlid="4118">Voltar atrás</translation>
    <translation id="error" qtlid="26407">Erro</translation>
@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Ver pré-visualização</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Nenhum resultado encontrado</translation>
    <translation id="common_table_col_action" qtlid="56105">Ação</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progresso</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
    <translation id="common_pagination_page" qtlid="433397">página</translation>
    <translation id="common_pagination_of" qtlid="121615">em</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">sur TOTAL_ITEMS résultats</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE sur PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">resultados</translation>
    <translation id="common_pagination_next" qtlid="433423">Página seguinte</translation>
    <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>

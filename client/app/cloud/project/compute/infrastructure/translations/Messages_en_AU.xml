@@ -85,7 +85,7 @@
 
 
    <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} excl. GST/hour</translation>
-   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. GST/month)</translation>
+   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. GST/month</translation>
    <translation id="cpci_price_month_btn" qtlid="270059">({{price}} excl. GST/month)</translation>
    <translation id="cpci_vm_private_ip" qtlid="247430">Private IP</translation>
 
