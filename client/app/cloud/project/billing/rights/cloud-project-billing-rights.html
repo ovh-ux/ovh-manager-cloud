@@ -118,176 +118,20 @@
             <span translate="common_add"></span>
         </button>
 
-
-        <table class="oui-table oui-table_responsive">
-            <thead class="oui-table_headers">
-                <tr>
-                    <th class="oui-table__header">
-                        {{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}
-                    </th>
-                    <th class="oui-table__header">
-                        {{ :: 'cpb_rights_table_rights' | translate }}
-                    </th>
-                    <th class="oui-table__header text-center" data-ng-if="BillingRightsCtrl.model.isAdmin">
-                        <button data-ng-click="BillingRightsCtrl.getRights(true)"
-                            class="no-style">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                        </button>
-                    </th>
-                </tr>
-            </thead>
-
-            <tbody class="oui-table__body" data-ng-show="BillingRightsCtrl.loader.rights">
-                <tr>
-                    <td colspan="3" class="text-center">
-                        <oui-loader size="m" class="d-inline-block"></oui-loader>
-                    </td>
-                </tr>
-            </tbody>
-
-            <!-- add right fields -->
-            <tbody data-ng-show="BillingRightsCtrl.toggle.addUser" class="oui-table__body animate-opacity2-leave">
-
-                <tr class="oui-table__row">
-
-                    <td colspan="3" class="no-space">
-                        <div data-ng-if="BillingRightsCtrl.loader.addRight" class="text-center">
-                            <oui-loader size="m" class="d-inline-block"></oui-loader>
-                        </div>
-                        <div data-ng-slide-down="BillingRightsCtrl.toggle.addUser" lazy-render duration="0.3" data-ng-if="!BillingRightsCtrl.loader.addRight">
-                            <form name="voucherFormAdd" class="form-horizontal ovh-form-flat container-fluid space-p8"
-                                data-ng-class="{'animated fadeIn':BillingRightsCtrl.toggle.addUser, 'animated fadeOut':!BillingRightsCtrl.toggle.addUser}">
-                                <div  class="col-md-4">
-                                    <div class="space-p8 vertical-top">
-                                        <input type="text"
-                                           class="oui-input form-control"
-                                           autofocus=""
-                                           placeholder="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}"
-                                           data-ng-disabled="BillingRightsCtrl.loader.addRight"
-                                           data-ng-model="BillingRightsCtrl.addRightFormData.contact" />
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="space-p8">
-                                        <label class="oui-select">
-                                            <select id="selectRightType" name="selectRightType" class="oui-select__input form-control"
-                                                data-ng-disabled="BillingRightsCtrl.loader.addRight"
-                                                data-ng-model="BillingRightsCtrl.addRightFormData.type">
-                                                <option data-ng-repeat="type in ['readOnly', 'readWrite']" value="{{type}}">
-                                                    {{ ('cpb_rights_table_rights_value_' + type) | translate }}
-                                                </option>
-                                            </select>
-                                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-5">
-                                    <div class="row-fluid space-p8 right-space-p0">
-                                        <div class="col-xs-6 right-space-p4">
-                                            <button type="reset"
-                                                class="oui-button oui-button_secondary"
-                                                data-ng-disabled="!BillingRightsCtrl.model.isAdmin || BillingRightsCtrl.loader.addRight"
-                                                data-ng-click="BillingRightsCtrl.toggle.addUser = false">
-                                                <span translate="common_cancel"></span>
-                                            </button>
-                                        </div>
-
-                                        <div class="col-xs-6">
-                                            <button type="submit"
-                                                class="oui-button oui-button_primary"
-                                                data-ng-disabled="!BillingRightsCtrl.model.isAdmin || !BillingRightsCtrl.addRightFormData.contact || BillingRightsCtrl.loader.addRight || BillingRightsCtrl.loader.removeRight"
-                                                data-ng-click="BillingRightsCtrl.validateAddRight()">
-                                                <span translate="cpb_rights_add"></span>
-                                            </button>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-
-            <!-- list rights -->
-            <tbody class="oui-table__body" data-ng-if="BillingRightsCtrl.data.rights.length > 0 && !BillingRightsCtrl.loader.rights">
-                <tr class="oui-table__row" data-ng-repeat="right in BillingRightsCtrl.data.rights">
-                    <td class="oui-table__cell" data-title="{{BillingRightsCtrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate}}">
-                        <span data-ng-bind="right.accountId"></span>
-                    </td>
-                    <td class="oui-table__cell" class="oui-table__cell" data-title="{{ :: 'cpb_rights_table_rights' | translate }}">
-                        <span data-ng-bind="('cpb_rights_table_rights_value_' + right.type) | translate"></span>
-                    </td>
-                    <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.loader.removeRight">
-                        <oui-loader size="s" class="d-inline-block"></oui-loader>
-                    </td>
-                    <td class="oui-table__cell oui-table__cell_action text-center" data-ng-if="BillingRightsCtrl.model.isAdmin && !BillingRightsCtrl.loader.removeRight">
-                        <!-- buttons -->
-                        <button type="button" class="oui-button oui-button_secondary"
-                            data-ng-class="{'opacity2-leave' : BillingRightsCtrl.removeRight.accountId === right.accountId, 'opacity2-enter' : BillingRightsCtrl.removeRight.accountId === right.accountId}"
-                            data-ng-click="BillingRightsCtrl.removeRight.accountId = right.accountId; BillingRightsCtrl.toggle.addUser = false"
-                            data-ng-disabled="BillingRightsCtrl.loader.removeRight"
-                            data-ng-if="BillingRightsCtrl.model.isAdmin">
-                            <span translate="delete"></span>
-                        </button>
-                        <div data-ng-show="BillingRightsCtrl.removeRight.accountId === right.accountId"
-                             class="text-center animate-fadeInRight-enter animate-fadeOutLeft-leave full-width"
-                             style="position:absolute; z-index:1000; margin-top: -32px;">
-                            <button class="oui-button oui-button_secondary"
-                                data-ng-click="BillingRightsCtrl.removeRight.accountId = null"
-                                data-ng-disabled="BillingRightsCtrl.loader.removeRight || BillingRightsCtrl.loader.addRight">
-                                <span translate="cpb_rights_table_remove_cancel"></span>
-                            </button>
-                            <button class="oui-button oui-button_primary"
-                                data-ng-click="BillingRightsCtrl.validateRemoveRight(right.accountId)"
-                                data-ng-disabled="BillingRightsCtrl.loader.removeRight">
-                                <span translate="cpb_rights_table_remove_confirm"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- NO DATAS BODY -->
-            <tbody class="oui-table__body" data-ng-if="!BillingRightsCtrl.loader.rights && BillingRightsCtrl.data.rightIds.length === 0">
-                <tr class="oui-table__row">
-                    <td colspan="3"
-                        class="oui-table__cell text-center">
-                        <span>{{ :: 'cpb_rights_no_data' | translate }}</span>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- NO DATAS BODY -->
-            <tbody class="oui-table__body" data-ng-if="!BillingRightsCtrl.loader.rights && BillingRightsCtrl.data.rightIds === null">
-                <tr class="oui-table__row">
-                    <td colspan="3"
-                        class="oui-table__cell text-center">
-                        <i class="fa fa-bug"></i>
-                        <span>{{ :: 'cpb_rights_error' | translate }}</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-         <!-- PAGINATION TABLE -->
-        <div class="table-pretty-pagination top-space-m12"
-             data-ng-hide="VouchersCtrl.loading.init
-                            || BillingRightsCtrl.data.rightIds === null
-                            || BillingRightsCtrl.data.rightIds.length <= 5"
-             data-pagination-front
-             data-items="BillingRightsCtrl.data.rightIds"
-             data-paginated-items="BillingRightsCtrl.data.rights"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-transform-item="BillingRightsCtrl.transformItem(item)"
-             data-on-transform-item-done="BillingRightsCtrl.onTransformItemDone(items)"
-             data-page-placeholder="{{'common_pagination_page' | translate: {currentPage:currentPage, nbPages:nbPages} }}"
-             data-item-per-page-placeholder="{{'common_pagination_display' | translate}}">
-        </div>
-    </div>
+        <oui-datagrid data-rows="BillingRightsCtrl.data.rights"
+            data-row-loader="BillingRightsCtrl.transformItem($row)">
+            <oui-column data-property="accountId"
+                data-title="'cpb_rights_table_nichandle' | translate"></oui-column>
+            <oui-column data-property="type"
+                data-title="'cpb_rights_table_rights' | translate">
+                <span data-ng-bind="('cpb_rights_table_rights_value_' + $row.type) | translate"></span>
+            </oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item text="{{'delete' | translate}}"
+                    data-on-click="BillingRightsCtrl.removeRight($row)">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
 
     <div class="col-xs-12" data-ng-if="!BillingRightsCtrl.loader.rights">
         <p class="fs10">{{ :: 'cpb_rights_note' | translate }}</p>

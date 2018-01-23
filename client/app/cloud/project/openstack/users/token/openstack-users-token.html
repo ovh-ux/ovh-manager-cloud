@@ -6,7 +6,7 @@
 
     <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
         <div class="text-center">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="!CloudProjectOpenstackUsersTokenCtrl.loaders.generateToken">
@@ -42,19 +42,19 @@
                 <span data-translate="cpou_token_title_information"></span>
             </p>
 
-            <table class="oui-table">
-                <thead class="oui-table__headers">
+            <table class="oui-datagrid">
+                <thead class="oui-datagrid__headers">
                     <tr>
-                        <th class="oui-table__header" data-translate="cpou_token_catalog_region"></th>
-                        <th class="oui-table__header" data-translate="cpou_token_catalog_service"></th>
-                        <th class="oui-table__header" data-translate="cpou_token_catalog_endpoint"></th>
+                        <th class="oui-datagrid__header" data-translate="cpou_token_catalog_region"></th>
+                        <th class="oui-datagrid__header" data-translate="cpou_token_catalog_service"></th>
+                        <th class="oui-datagrid__header" data-translate="cpou_token_catalog_endpoint"></th>
                     </tr>
                 </thead>
-                <tbody class="oui-table__body" data-ng-repeat="catalog in CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens.token.catalog">
-                    <tr class="oui-table__row" data-ng-repeat="endpoint in catalog.endpoints">
-                        <td class="oui-table__cell">{{ endpoint.region }}</td>
-                        <td class="oui-table__cell">{{ catalog.type }} </td>
-                        <td class="oui-table__cell word-break">{{ endpoint.url }}</td>
+                <tbody class="oui-datagrid__body" data-ng-repeat="catalog in CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens.token.catalog">
+                    <tr class="oui-datagrid__row" data-ng-repeat="endpoint in catalog.endpoints">
+                        <td class="oui-datagrid__cell">{{ endpoint.region }}</td>
+                        <td class="oui-datagrid__cell">{{ catalog.type }} </td>
+                        <td class="oui-datagrid__cell text-wrap word-break">{{ endpoint.url }}</td>
                     </tr>
                 </tbody>
             </table>

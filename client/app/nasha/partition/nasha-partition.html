@@ -17,144 +17,50 @@
             data-ng-click="PartitionCtrl.openModal('app/nasha/partition/add/nasha-partition-add.html', 'NashaPartitionAddCtrl')"
             data-translate="nasha_partitions_action_add"></button>
 
-        <table class="oui-table">
-            <colgroup>
-                <col width="32%"></col>
-                <col width="25%"></col>
-                <col width="38%"></col>
-                <col width="15%"></col>
-                <col width="2%"></col>
-            </colgroup>
-            <thead class="oui-table__headers">
-                <th class="oui-table__header" data-translate="nasha_partitions_name" class="left-space-p12"></th>
-                <th class="oui-table__header" data-translate="nasha_partitions_protocol"></th>
-                <th class="oui-table__header" data-translate="nasha_partitions_size"></th>
-                <th class="oui-table__header"></th>
-                <th class="oui-table__header">
-                    <button type="button"
-                            class="no-style pull-right table-header-action"
-                            title="{{ 'common_refresh' | translate }}"
-                            data-ng-disabled="PartitionCtrl.loaders.table"
-                            data-ng-click="PartitionCtrl.load(true)">
-                        <i class="fa fa-refresh fs14"></i>
-                    </button>
-                </th>
-            </thead>
+        <oui-datagrid data-rows="PartitionCtrl.data.table.partitions">
+            <oui-column data-property="partitionName"
+                data-title="'nasha_partitions_name' | translate"
+                data-sortable="asc"></oui-column>
+            <oui-column data-property="protocol"
+                data-title="'nasha_partitions_protocol' | translate"
+                data-sortable>
+                <span data-ng-if="$row.protocol"
+                    data-translate="{{'nasha_partitions_protocol_' + $row.protocol}}"></span>
+            </oui-column>
+            <oui-column data-property="use"
+                data-title="'nasha_partitions_size' | translate">
+                <cloud-space-meter
+                    class="cloud-space-meter"
+                    data-ng-if="$row.use"
+                    data-usage="$row.use">
+                </cloud-space-meter>
+            </oui-column>
+            <oui-column>
+                <oui-spinner data-size="s" data-ng-show="PartitionCtrl.hasTaskInProgress($row)"></oui-spinner>
+            </oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{ 'nasha_partitions_action_update' | translate }}"
+                    data-on-click="PartitionCtrl.openModal('app/nasha/partition/update/nasha-partition-update.html', 'NashaPartitionUpdateCtrl', $row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'nasha_partitions_action_change_access' | translate }}"
+                    data-on-click="PartitionCtrl.goToNashaPartitionAccess($row.partitionName)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'nasha_partitions_action_display_snapshot' | translate }}"
+                    data-on-click="PartitionCtrl.openModal('app/nasha/partition/snapshot/nasha-partition-snapshot.html', 'NashaPartitionSnapshotCtrl', $row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'nasha_partitions_action_display_custom_snapshot' | translate }}"
+                    data-on-click="PartitionCtrl.openModal('app/nasha/partition/custom-snapshot/add/nasha-partition-custom-snapshot-add.html', 'NashaPartitionCustomSnapshotAddCtrl', $row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'nasha_partitions_action_z_file_system' | translate }}"
+                    data-on-click="PartitionCtrl.openModal('app/nasha/partition/zfs-options/nasha-partition-zfs-options.html', 'NashaPartitionZFSOptionsCtrl', $row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-ng-show="PartitionCtrl.data.nasha.canCreatePartition"
+                    data-text="{{ 'delete' | translate }}"
+                    data-on-click="PartitionCtrl.openModal('app/nasha/partition/delete/nasha-partition-delete.html', 'NashaPartitionDeleteCtrl', $row)">
+                </oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
 
-            <tbody class="oui-table__body"
-                data-ng-if="!PartitionCtrl.loaders.table && PartitionCtrl.data.table.partitions.length === 0">
-                <tr>
-                    <td colspan="5" class="center" data-translate="nasha_partitions_no_data"></td>
-                </tr>
-            </tbody>
-
-            <tbody class="oui-table__body"
-                data-ng-if="PartitionCtrl.loaders.table">
-                <tr>
-                    <td colspan="5" class="text-center">
-                        <oui-loader class="d-inline-block" data-ng-show="PartitionCtrl.loaders.table"></oui-loader>
-                    </td>
-                </tr>
-            </tbody>
-
-            <tbody class="oui-table__body"
-                data-ng-hide="PartitionCtrl.loaders.table">
-                <tr class="oui-table__row" data-ng-repeat="partition in PartitionCtrl.data.table.currentPartitions">
-                    <td data-title="{{ 'nasha_partitions_name' | translate }}"
-                        data-ng-bind="partition.partitionName"
-                        class="oui-table__cell"
-                        data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }">
-                    </td>
-                    <td data-title="{{ 'nasha_partitions_protocol' | translate }}"
-                        data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }"
-                        class="oui-table__cell">
-                        <span data-ng-if="partition.protocol"
-                              data-translate="{{'nasha_partitions_protocol_' + partition.protocol}}"></span>
-                    </td>
-                    <td
-                        data-title="{{ 'nasha_partitions_size' | translate }}"
-                        data-ng-class="{ 'task-progress' : PartitionCtrl.hasTaskInProgress(partition) }"
-                        class="oui-table__cell">
-                        <cloud-space-meter
-                            class="cloud-space-meter"
-                            data-ng-if="partition.use"
-                            data-usage="partition.use">
-                        </cloud-space-meter>
-                    </td>
-                    <td class="oui-table__cell">
-                        <span data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"
-                              data-translate="{{ 'nasha_partitions_task_' + PartitionCtrl.data.partitionsTasks[partition.partitionName][0].operation }}"
-                              class="pull-right" >
-                        </span>
-                    </td>
-                    <td data-title="{{ 'common_actions' | translate }}"
-                        class="oui-table__cell">
-                        <oui-loader size="s" inline data-ng-show="PartitionCtrl.hasTaskInProgress(partition)"></oui-loader>
-                        <div data-ng-hide="PartitionCtrl.hasTaskInProgress(partition)"
-                             class="btn-group"
-                             dropdown data-on-toggle="toggled(open)">
-                            <button type="button"
-                                    class="no-style"
-                                    data-toggle="dropdown"
-                                    aria-expanded="false">
-                                <i class="fa fa-cog fs14"></i>
-                            </button>
-
-                            <ul  data-uib-dropdown-menu class="dropdown-menu responsive-dropdown-menu pointer" role="menu">
-                                <li data-ng-show="PartitionCtrl.data.nasha.canCreatePartition">
-                                    <button data-translate="nasha_partitions_action_update"
-                                            data-ng-click="PartitionCtrl.openModal('app/nasha/partition/update/nasha-partition-update.html', 'NashaPartitionUpdateCtrl', partition)">
-                                    </button>
-                                </li>
-                                <li>
-                                    <a class="nasha__link"
-                                       data-translate="nasha_partitions_action_change_access"
-                                       ui-sref="paas.nasha.nasha-partition-access({ partitionName: partition.partitionName })">
-                                    </a>
-                                </li>
-                                <li>
-                                    <button type="button"
-                                            data-translate="nasha_partitions_action_display_snapshot"
-                                            data-ng-click="PartitionCtrl.openModal('app/nasha/partition/snapshot/nasha-partition-snapshot.html', 'NashaPartitionSnapshotCtrl', partition)">
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button"
-                                            data-translate="nasha_partitions_action_display_custom_snapshot"
-                                            data-ng-click="PartitionCtrl.openModal('app/nasha/partition/custom-snapshot/add/nasha-partition-custom-snapshot-add.html', 'NashaPartitionCustomSnapshotAddCtrl', partition)">
-                                    </button>
-                                </li>
-                                <li>
-                                    <button type="button"
-                                            data-translate="nasha_partitions_action_z_file_system"
-                                            data-ng-click="PartitionCtrl.openModal('app/nasha/partition/zfs-options/nasha-partition-zfs-options.html', 'NashaPartitionZFSOptionsCtrl', partition)">
-                                    </button>
-                                </li>
-                                <li data-ng-show="PartitionCtrl.data.nasha.canCreatePartition">
-                                    <button type="button"
-                                            data-translate="delete"
-                                            data-ng-click="PartitionCtrl.openModal('app/nasha/partition/delete/nasha-partition-delete.html', 'NashaPartitionDeleteCtrl', partition);">
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- PAGINATION TABLE -->
-        <div class="table-pretty-pagination top-space-m12"
-             data-ng-hide="PartitionCtrl.loaders.table"
-             data-pagination-front
-             data-items="PartitionCtrl.data.table.partitions"
-             data-paginated-items="PartitionCtrl.data.table.currentPartitions"
-             data-current-page="currentPage"
-             data-nb-pages="nbPages"
-             data-items-per-page="itemsPerPage"
-             data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-             data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"
-             data-refresh="PartitionCtrl.data.table.refresh">
-        </div>
     </div>
 </div>
 

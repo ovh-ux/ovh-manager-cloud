@@ -10,8 +10,9 @@
             <div class="oui-modal__body-text">
                 <h2 class="oui-modal__title" data-translate="announcement_summit_title"></h2>
                 <img class="summit__banner" data-ng-src="assets/images/announcement/summit/summit_2017_{{AnnouncementSummitCtrl.locale}}.png">
-                <oui-checkbox class="summit__checkbox" on-change="AnnouncementSummitCtrl.stopShowing($event.value)">
-                    <oui-checkbox-label data-translate="announcement_summit_stop_showing"></oui-checkbox-label>
+                <oui-checkbox
+                    text="{{ 'announcement_summit_stop_showing' | translate }}"
+                    on-change="AnnouncementSummitCtrl.stopShowing(modelValue)">
                 </oui-checkbox>
             </div>
         </div>

@@ -8,7 +8,7 @@
 
         <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="NashaPartitionZFSOptionsCtrl.loaders">
             <div class="text-center">
-                <oui-loader class="d-inline-block" size="m" inline></oui-loader>
+                <oui-spinner></oui-spinner>
             </div>
         </div>
 
@@ -21,23 +21,13 @@
                     class="oui-field__label oui-label"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control">
-                        <div class="oui-checkbox">
-                            <input id="nasha-zfs-atime"
-                               type="checkbox"
-                               class="oui-checkbox__input"
-                               data-ng-model="NashaPartitionZFSOptionsCtrl.model.atime">
-                            <label class="oui-checkbox__label-container" for="nasha-zfs-atime">
-                                <span class="oui-checkbox__label"
-                                    data-translate="nasha_partitions_zfs_atime_disable"></span>
-                                <span class="oui-checkbox__description"
-                                    data-translate="nasha_partitions_zfs_atime_description"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            text="{{ 'nasha_partitions_zfs_atime_disable' | translate }}"
+                            description="{{ 'nasha_partitions_zfs_atime_description' | translate  }}"
+                            id="nasha-zfs-atime"
+                            name="nasha-zfs-atime"
+                            model="NashaPartitionZFSOptionsCtrl.model.atime">
+                        </oui-checkbox>
                     </div>
                 </div>
             </div>

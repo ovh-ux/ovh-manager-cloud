@@ -8,7 +8,7 @@
         data-ng-click="ctrl.applyChanges()"
         data-ng-disabled="!ctrl.selectedZones.length"></button>
 
-    <cui-loader data-ng-show="ctrl.zones.loading"></cui-loader>
+    <oui-spinner data-ng-show="ctrl.zones.loading"></oui-spinner>
     <oui-table data-ng-hide="ctrl.zones.loading"
         rows="ctrl.zones.data"
         on-selection-change="ctrl.onSelectionChange($selection)">

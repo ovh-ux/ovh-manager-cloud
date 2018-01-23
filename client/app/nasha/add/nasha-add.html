@@ -10,7 +10,7 @@
 
     <div class="cui-page__content">
         <div class="text-center" data-ng-if="NashaAddCtrl.loaders.init">
-            <oui-loader size="l" class="d-inline-block"></oui-loader>
+            <oui-spinner size="l"></oui-spinner>
         </div>
 
         <div data-ng-if="!NashaAddCtrl.loaders.init">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="oui-field-helper"
                                 data-ng-if="NashaAddCtrl.loaders.models">
-                                <oui-loader size="s"></oui-loader>
+                                <oui-spinner size="s"></oui-spinner>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             </div>
                             <div class="oui-field-helper"
                                 data-ng-if="NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models">
-                                <oui-loader size="s"></oui-loader>
+                                <oui-spinner size="s"></oui-spinner>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                                 data-translate="common_validate"
                                 data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || !NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDuration || NashaAddCtrl.data.orderValidated">
                         </button>
-                        <oui-loader size="s" inline data-ng-show="NashaAddCtrl.loaders.loading"></oui-loader>
+                        <oui-spinner size="s" inline data-ng-show="NashaAddCtrl.loaders.loading"></oui-spinner>
                     </div>
                 </form>
             </div>
@@ -138,20 +138,13 @@
                     </ul>
                 </div>
 
-                <div class="oui-checkbox mb-1" data-ng-if="NashaAddCtrl.data.order.contracts">
-                    <input class="oui-checkbox__input"
+                <div class="mb-1" data-ng-if="NashaAddCtrl.data.order.contracts">
+                    <oui-checkbox
+                        text="{{ 'nasha_order_accept_contract' | translate }}"
                         id="validateContract"
                         name="validateContract"
-                        type="checkbox"
-                        data-ng-model="NashaAddCtrl.contractAgree">
-                    <label class="oui-checkbox__label-container" for="validateContract">
-                        <span class="oui-checkbox__label" data-translate="nasha_order_accept_contract"></span>
-                        <span class="oui-checkbox__icon">
-                            <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                            <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                        </span>
-                    </label>
+                        model="NashaAddCtrl.contractAgree">
+                    </oui-checkbox>
                 </div>
 
                 <div class="oui-list mb-4 pl-4">

@@ -50,18 +50,11 @@
             <div class="oui-field">
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" id="backup" name="backup" type="checkbox"
-                            data-ng-model="ctrl.server.backup">
-                            <label class="oui-checkbox__label-container" for="backup">
-                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_backup"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            text="{{ 'iplb_server_edit_backup' | translate }}"
+                            name="backup"
+                            model="ctrl.server.backup">
+                        </oui-checkbox>
                     </div>
                 </div>
             </div>
@@ -69,18 +62,11 @@
             <div class="oui-field">
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" id="probe" name="probe" type="checkbox"
-                                data-ng-model="ctrl.server.probe">
-                            <label class="oui-checkbox__label-container" for="probe">
-                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_probe"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            text="{{ 'iplb_server_edit_probe' | translate }}"
+                            name="probe"
+                            model="ctrl.server.probe">
+                        </oui-checkbox>
                     </div>
                 </div>
             </div>
@@ -88,18 +74,11 @@
             <div class="oui-field">
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-checkbox">
-                            <input class="oui-checkbox__input" id="ssl" name="ssl" type="checkbox"
-                                data-ng-model="ctrl.server.ssl">
-                            <label class="oui-checkbox__label-container" for="ssl">
-                                <span class="oui-checkbox__label" data-translate="iplb_server_edit_ssl"></span>
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </label>
-                        </div>
+                        <oui-checkbox
+                            text="{{ 'iplb_server_edit_ssl' | translate }}"
+                            name="ssl"
+                            model="ctrl.server.ssl">
+                        </oui-checkbox>
                     </div>
                 </div>
             </div>
@@ -151,7 +130,7 @@
                 <label for="proxyProtocolVersion" class="oui-label" data-translate="iplb_server_preview_proxyProtocolVersion"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <cui-loader data-ng-show="ctrl.proxyProtocolVersions.loading"></cui-loader>
+                        <oui-spinner data-ng-show="ctrl.proxyProtocolVersions.loading"></oui-spinner>
                         <div class="oui-select"
                             data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.proxyProtocolVersion.$invalid }"
                             data-ng-hide="ctrl.proxyProtocolVersions.loading">
@@ -170,7 +149,7 @@
         </cui-advanced-options>
 
         <div class="cui-form-actions">
-            <cui-loader data-ng-show="ctrl.saving"></cui-loader>
+            <oui-spinner data-ng-show="ctrl.saving"></oui-spinner>
             <div data-ng-hide="ctrl.saving">
                 <button type="submit"
                     class="oui-button oui-button_primary"

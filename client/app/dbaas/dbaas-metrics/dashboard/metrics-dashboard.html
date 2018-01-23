@@ -17,7 +17,7 @@
                 <ul class="cui-tile__body cui-tile__body_list">
                     <li class="cui-tile__item" data-ng-repeat="graph in MetricsDashboardCtrl.graphs">
                         <a class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button cui-tile__button_link"
-                            type="button" 
+                            type="button"
                             href="{{graph.url}}"
                             target="_blank">
                             <span class="text-link" data-ng-bind="graph.name"></span>
@@ -33,10 +33,10 @@
                 <div class="chart-pie">
                     <div class="chart-pie-container">
                         <div data-ng-show="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption" class="chart-pie-loader">
-                            <cui-loader></cui-loader>
+                            <oui-spinner></oui-spinner>
                         </div>
                         <div data-ng-hide="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption">
-                            <metrics-chart-pie 
+                            <metrics-chart-pie
                                             legend="'metrics_mads' | translate "
                                             text="MetricsDashboardCtrl.usage.conso.mads | formatSi"
                                             text-small="MetricsDashboardCtrl.displayUsage(MetricsDashboardCtrl.usage.conso.mads, MetricsDashboardCtrl.usage.quota.mads)"
@@ -47,10 +47,10 @@
                     </div>
                     <div class="chart-pie-container">
                         <div data-ng-show="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption" class="chart-pie-loader">
-                            <cui-loader></cui-loader>
+                            <oui-spinner></oui-spinner>
                         </div>
                         <div data-ng-hide="MetricsDashboardCtrl.loading.service && MetricsDashboardCtrl.loading.consumption">
-                            <metrics-chart-pie 
+                            <metrics-chart-pie
                                             legend="'metrics_ddp' | translate "
                                             text="MetricsDashboardCtrl.usage.conso.ddp | formatSi"
                                             text-small="MetricsDashboardCtrl.displayUsage(MetricsDashboardCtrl.usage.conso.ddp, MetricsDashboardCtrl.usage.quota.ddp)"

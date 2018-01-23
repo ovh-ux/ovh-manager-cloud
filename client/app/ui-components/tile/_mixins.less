@@ -63,6 +63,7 @@
             // This shouldn't have to be done.  Buttons and main container has to be wrapped by __item with a correct padding.cui-tile-base
             // Will fix later to avoid to much changes in a single PR.
             &-button {
+                display: block;
                 padding: rem-calc(13) rem-calc(20);
             }
 
@@ -151,7 +152,7 @@
             }
 
             &-no-grow {
-                overflow-y: auto; 
+                overflow-y: auto;
                 max-height: 35rem;
             }
         }

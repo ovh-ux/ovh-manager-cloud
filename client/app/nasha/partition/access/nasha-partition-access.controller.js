@@ -12,7 +12,6 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
 
     self.table = {
         accessIps: [],
-        accessDetails: [],
         refresh: false
     };
 
@@ -32,7 +31,9 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
         }).then(function (data) {
             self.data.nasha = data.nasha;
             self.data.partition = data.partition;
-            self.table.accessIps = data.accesses;
+            self.table.accessIps = data.accesses.map(ip => ({
+                ip
+            }));
             if (resetCache) {
                 self.table.refresh = !self.table.refresh;
             }
@@ -63,13 +64,8 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
         });
     };
 
-    self.transformItem = function (accessIp) {
-        self.loaders.table = true;
-        return self.getAccessForIp(accessIp);
-    };
-
-    self.onTransformItemDone = function () {
-        self.loaders.table = false;
+    self.transformItem = function (access) {
+        return self.getAccessForIp(access.ip);
     };
 
     self.removeAccess = function (access) {
@@ -101,7 +97,7 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
 
         modal.result.then(function (data) {
             if (data.isNew) {
-                self.table.accessDetails.push(data.access);
+                self.table.accessIps.push(data.access);
                 self.data.addAccessInProgress.push(data.access);
             }
             self.data.taskForAccess.push({ task: data.task, access: data.access });

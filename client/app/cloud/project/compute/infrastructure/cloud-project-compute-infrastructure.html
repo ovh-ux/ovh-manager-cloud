@@ -2,7 +2,7 @@
     <!-- init loading... -->
     <div data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.init" class="text-center" style="margin-top: 200px;">
         <div class="text-center">
-            <oui-loader size="l" class="d-inline-block"></oui-loader>
+            <oui-spinner size="l"></oui-spinner>
         </div>
     </div>
     <!-- error -->
@@ -63,7 +63,7 @@
                                 <button type="button" class="btn fs14"
                                         data-ng-click="CloudProjectComputeInfrastructureCtrl.showDeleteProjectModal()"
                                         at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
-                                        data-ng-disabled="projectDeleted" 
+                                        data-ng-disabled="projectDeleted"
                                         data-ng-bind=":: 'cpb_details_project_delete' | translate"
                                         write-right-required>
                                 </button>
@@ -173,7 +173,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'" class="text-center">
-                                                                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                    <oui-spinner size="s"></oui-spinner>
                                                                 </div>
                                                             </div>
 
@@ -308,7 +308,7 @@
 
                                         <!-- Loading list... -->
                                         <div class="text-center animate-fadeIn-enter" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.vrack">
-                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                            <oui-spinner size="s"></oui-spinner>
                                         </div>
 
                                         <div class="animate-fadeIn-enter" data-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.vrack && !CloudProjectComputeInfrastructureCtrl.infra.vrack.publicCloud.length()">
@@ -377,7 +377,7 @@
                                                             <i class="glyphicon glyphicon-trash"></i>
                                                             <span translate="cpci_vm_delete_submit"></span>
                                                             <div data-ng-show="vm.confirmLoading" class="text-center">
-                                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                <oui-spinner size="s"></oui-spinner>
                                                             </div>
                                                         </button>
 
@@ -403,7 +403,7 @@
                                                                 <span translate="cpci_vm_reinstall_submit"></span>
                                                             </button>
                                                             <div data-ng-show="vm.confirmLoading" class="text-center">
-                                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                <oui-spinner size="s"></oui-spinner>
                                                             </div>
                                                         </div>
 
@@ -419,7 +419,7 @@
                                                         </button>
 
                                                         <div class="text-center" data-ng-if="vm.confirmLoading">
-                                                            <oui-loader size="m" class="d-inline-block"></oui-loader>
+                                                            <oui-spinner></oui-spinner>
                                                         </div>
 
                                                         <!-- confirm HARD reboot -->
@@ -494,7 +494,7 @@
                                                         <div data-ng-switch-when="PENDING"
                                                             class="vm-states vcenter">
                                                             <div class="text-center">
-                                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                <oui-spinner size="s"></oui-spinner>
                                                             </div>
                                                             <p class="no-space text-info"
                                                                data-translate="{{:: 'cpci_vm_' + vm.status }}"></p>
@@ -556,7 +556,7 @@
                                                             translate="cpci_vm_flavor_month"
                                                             translate-values="{price: vm.price.price.text || '?' }"></span>
                                                         <span class="text-center" data-ng-if="vm.monthlyBilling.status === 'activationPending'">
-                                                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                            <oui-spinner size="s"></oui-spinner>
                                                         </span>
                                                     </div>
 
@@ -865,7 +865,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="text-center" data-ng-if="volume.getStatusGroup() !== 'ACTIVE' && volume.getStatusGroup() !== 'DRAFT'">
-                                                                                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                                                    <oui-spinner size="s"></oui-spinner>
                                                                                 </div>
                                                                             </div>
 
@@ -1041,7 +1041,7 @@
                                                 {{ :: 'cpci_ipfo_importing' | translate }}
                                             </span>
                                             <span class="pull-right right-space-m8">
-                                                <oui-loader size="s" class="d-inline-block"></oui-loader>
+                                                <oui-spinner size="s"></oui-spinner>
                                             </span>
                                         </div>
                                     </div>
@@ -1076,8 +1076,8 @@
                                                         ip-access-key="'ip'">
                                                     </ip-dropdown>
                                                     <span class="ip-spinner text-center" data-ng-if="ip.status !== 'ok'">
-                                                        <oui-loader data-ng-if="ip.type === 'failover'" size="s" class="d-inline-block"></oui-loader>
-                                                        <oui-loader data-ng-if="ip.type !== 'failover'" size="s" class="d-inline-block"></oui-loader>
+                                                        <oui-spinner data-ng-if="ip.type === 'failover'" size="s"></oui-spinner>
+                                                        <oui-spinner data-ng-if="ip.type !== 'failover'" size="s"></oui-spinner>
                                                     </span>
 
                                                     <!-- flag -->
@@ -1154,7 +1154,7 @@
                 data-ng-if="CloudProjectComputeInfrastructureCtrl.model.currentLinkEdit">
 
                 <div class="text-center" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.linkActionConfirm">
-                    <oui-loader size="m" class="d-inline-block"></oui-loader>
+                    <oui-spinner></oui-spinner>
                 </div>
 
                 <div class="row" dat-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.linkActionConfirm">
@@ -1207,7 +1207,7 @@
                 data-ng-if="CloudProjectComputeInfrastructureCtrl.volumeEdit.action">
 
                 <div class="text-center" data-ng-if="CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm">
-                    <oui-loader size="s" class="d-inline-block"></oui-loader>
+                    <oui-spinner size="s"></oui-spinner>
                 </div>
 
                 <div class="row" data-ng-if="!CloudProjectComputeInfrastructureCtrl.loaders.volumeActionConfirm">

@@ -6,7 +6,7 @@
         data-ui-sref="network.iplb.detail.server-farm.add"
         data-translate="iplb_farm_add"></a>
 
-    <cui-loader data-ng-if="ctrl.farms.loading"></cui-loader>
+    <oui-spinner data-ng-if="ctrl.farms.loading"></oui-spinner>
     <cui-accordion data-ng-if="!ctrl.farms.loading"
         data-title="ctrl.getFarmName(farm)"
         data-text="ctrl.getFarmText(farm)"
@@ -16,28 +16,37 @@
         <a class="oui-button oui-button_secondary"
             data-translate="iplb_farm_add_server"
             data-ui-sref="network.iplb.detail.server-farm.server-add({ farmId: farm.farmId })"></a>
-        <cui-loader data-ng-show="!farm.servers || farm.servers.loading"></cui-loader>
-        <oui-table data-ng-hide="!farm.servers || farm.servers.loading || !farm.servers.data.length"
-            rows="farm.servers.data">
-            <column title="'iplb_farm_server_list_col_server' | translate" property="serverId" sortable>
+
+        <oui-datagrid data-rows="farm.servers.data">
+            <oui-column data-title="'iplb_farm_server_list_col_server' | translate" data-property="serverId" data-sortable="asc">
                 {{ $row.displayName || $row.serverId }}
-            </column>
-            <column title="'iplb_farm_server_list_col_ipv4' | translate" property="address" sortable></column>
-            <column title="'iplb_farm_server_list_col_active' | translate" property="status" sortable class="oui-table__cell_action">
+            </oui-column>
+            <oui-column data-title="'iplb_farm_server_list_col_ipv4' | translate" data-property="address" data-sortable></oui-column>
+            <oui-column data-title="'iplb_farm_server_list_col_active' | translate" data-property="status" data-sortable class="oui-table__cell_action">
                 <label class="oui-switch">
                     <input type="checkbox" class="oui-switch__checkbox" data-ng-checked="$row.status === 'active'" data-ng-click="ctrl.toggle(farm, $row)">
                     <div class="oui-switch__slider"></div>
                     <i class="oui-icon oui-icon-success" aria-hidden="true"></i>
                     <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
                 </label>
-            </column>
-            <column title="'iplb_farm_server_list_col_status' | translate" property="serverState" sortable>
+            </oui-column>
+            <oui-column data-title="'iplb_farm_server_list_col_status' | translate" data-property="serverState" data-sortable>
                 <iplb-server-status data-server="$row"
                     tabindex="0"
                     role="button"
                     data-ng-click="ctrl.seeServerStatus($row)"></iplb-server-status>
-            </column>
-            <column title="'common_table_col_action' | translate" class="oui-table__cell_action oui-table__cell_action-menu" template="ctrl.serverActionTemplate()"></column>
-        </oui-table>
+            </oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{'common_preview_see' | translate}}"
+                    data-on-click="ctrl.seeServerPreview($row)"></oui-action-menu-item>
+                <oui-action-menu-item data-text="{{'iplb_farm_server_status_see' | translate}}"
+                    data-on-click="ctrl.seeServerStatus($row)"></oui-action-menu-item>
+                <oui-action-menu-divider></oui-action-menu-divider>
+                <oui-action-menu-item data-text="{{'common_modify' | translate}}"
+                    data-on-click="ctrl.updateServer(farm.farmId, $row.serverId)"></oui-action-menu-item>
+                <oui-action-menu-item data-text="{{'common_remove' | translate}}"
+                    data-on-click="ctrl.deleteServer($row)"></oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
     </cui-accordion>
 </section>

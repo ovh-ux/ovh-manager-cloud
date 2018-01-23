@@ -5,7 +5,7 @@
             <p data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast" class="center-block text-center">{{ BillingConsumptionEstimateCtrl.data.estimateTotals.total.toFixed(2) }} {{ BillingConsumptionEstimateCtrl.data.estimateTotals.currencySymbol }}</p>
         </header>
         <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.forecast">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.forecast">
             <p data-translate="cpbe_estimate_summary_renew_monthly_sub_label"
@@ -23,7 +23,7 @@
             <p data-translate="cpbe_estimate_alert_header_description"></p>
         </header>
         <div class="text-center" data-ng-show="BillingConsumptionEstimateCtrl.loaders.alert">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!BillingConsumptionEstimateCtrl.loaders.alert && !BillingConsumptionEstimateCtrl.data.alert">
             <div class="text-center">
@@ -44,7 +44,8 @@
                 <consumption-chart model="BillingConsumptionEstimateCtrl.consumptionChartData"></consumption-chart>
             </div>
             <div class="text-center top-space-p20" write-right-required>
-                <oui-loader size="s" class="d-inline-block" data-ng-if="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></oui-loader>
+                <oui-spinner size="s"
+                    data-ng-if="BillingConsumptionEstimateCtrl.loaders.deleteAlert"></oui-spinner>
                 <button
                     class="oui-button oui-button_secondary"
                     type="button"
