@@ -91,7 +91,7 @@
                                 data-translate="common_validate"
                                 data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || !NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDuration || NashaAddCtrl.data.orderValidated">
                         </button>
-                        <oui-spinner size="s"></oui-spinner>
+                        <oui-spinner data-ng-show="NashaAddCtrl.isLoadingOfferData()" size="s"></oui-spinner>
                     </div>
                 </form>
             </div>
