@@ -7,6 +7,13 @@ class LogsOptionsService {
         this.LogOptionConstant = LogOptionConstant;
     }
 
+    /**
+     * returns the list of options available for selection
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to an array of options objects
+     * @memberof LogsOptionsService
+     */
     getOptions (serviceName) {
         return this.OvhApiOrderCartServiceOption.Lexi().get({
             productName: "logs",
@@ -25,10 +32,24 @@ class LogsOptionsService {
             .catch(this.ServiceHelper.errorHandler("logs_options_options_loading_error"));
     }
 
+    /**
+     * returns the total price according to the quantity selected for each option
+     *
+     * @param {any} options
+     * @returns the total price of the selected options
+     * @memberof LogsOptionsService
+     */
     getTotalPrice (options) {
         return _.reduce(options, (total, option) => total + option.quantity * option.price, 0).toFixed(2);
     }
 
+    /**
+     * returns the list of options that have been subscribed in the service
+     *
+     * @param {any} serviceName
+     * @returns promise that resolves with the array of options which have been subscribed
+     * @memberof LogsOptionsService
+     */
     getSubscribedOptions (serviceName) {
         const self = this;
         return this.OvhApiDbaasLogs.Accounting().Aapi().me({
@@ -51,10 +72,24 @@ class LogsOptionsService {
             .catch(this.ServiceHelper.errorHandler("logs_options_current_options_loading_error"));
     }
 
+    /**
+     * returns the list of options that have to be ordered (quantity > 0)
+     *
+     * @param {any} serviceName
+     * @returns the list of options to be ordered
+     * @memberof LogsOptionsService
+     */
     getOptionsToOrder (options) {
         return _.filter(options, option => option.quantity > 0);
     }
 
+    /**
+     * returns the order url that can be used to order the options
+     *
+     * @param {any} serviceName
+     * @returns the order url. This url has the selected options as arguments
+     * @memberof LogsOptionsService
+     */
     getOrderURL (options, serviceName) {
         const products = this.getOptionsToOrder(options)
             .map(option => ({
