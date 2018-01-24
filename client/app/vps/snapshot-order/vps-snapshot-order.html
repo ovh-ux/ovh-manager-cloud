@@ -12,7 +12,7 @@
                                  data-step-on-init="$ctrl.loadVps()"
                                  data-step-loaded="!$ctrl.loaders.step1"
                                  data-step-completed="$ctrl.model.contractsValidated">
-                    <div class="text-center" data-ng-if="$ctrl.loaders.init || $ctrl.loaders.options">
+                    <div class="text-center" data-ng-if="!$ctrl.model.optionDetails">
                         <oui-spinner></oui-spinner>
                     </div>
 
