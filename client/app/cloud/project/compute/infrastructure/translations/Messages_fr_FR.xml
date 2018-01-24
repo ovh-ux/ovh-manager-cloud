@@ -56,6 +56,7 @@
    <translation id="cpci_vm_price">Prix</translation>
    <translation id="cpci_vm_hdd">Disque dur attaché</translation>
    <translation id="cpci_vm_status">Statut</translation>
+   <translation id="cpci_vm_status_ERROR">En erreur</translation>
    <translation id="cpci_vm_status_REBOOT">Redémarrage</translation>
    <translation id="cpci_vm_status_RESCUE">Rescue</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING">Snapshot</translation>

@@ -33,12 +33,12 @@
             this.loaders.infra = true;
             return this.$q.all({
                 infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
-                prices: this.OvhApiCloudPrice.Lexi().query().$promise.then(prices => (this.prices = prices)),
+                prices: this.OvhApiCloudPrice.Lexi().query().$promise.then(prices => (this.prices = prices)).catch(this.prices = {}),
                 volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes")))
             }).then(({ infra }) => {
                 this.infra = infra;
                 this.table.items = _.map(this.infra.vrack.publicCloud.items, instance => {
-                    _.set(instance, "price", _.find(this.prices.instances, flavor => flavor.flavorId === instance.flavor.id));
+                    _.set(instance, "price", _.find(this.prices.instances, flavor => flavor.flavorId === _.get(instance, "flavor.id")));
                     _.set(instance, "volumes", _.get(this.volumes, instance.id, []));
                     return instance;
                 });

@@ -642,34 +642,6 @@
                 });
         }
 
-        reinstallVirtualMachine (vm) {
-            _.set(vm, "confirmLoading", true);
-            this.CloudProjectComputeInfrastructureOrchestrator.reinstallVm(vm)
-                .then(() => {
-                    _.set(vm, "confirm", null);
-                })
-                .catch(err => {
-                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reinstall_submit_error")} ${_.get(err, "data.message", "")}`);
-                })
-                .finally(() => {
-                    vm.confirmLoading = false;
-                });
-        }
-
-        rebootVirtualMachine (vm, type) {
-            _.set(vm, "confirmLoading", true);
-            this.CloudProjectComputeInfrastructureOrchestrator.rebootVm(vm, type)
-                .then(() => {
-                    _.set(vm, "confirm", null);
-                })
-                .catch(err => {
-                    this.CloudMessage.error(`${this.$translate.instant("cpci_vm_reboot_submit_error")} ${_.get(err, "data.message", "")}`);
-                })
-                .finally(() => {
-                    vm.confirmLoading = false;
-                });
-        }
-
         openVolumeSnapshotWizard (volume) {
             this.$uibModal.open({
                 templateUrl: "app/cloud/project/compute/volume/snapshot/cloud-project-compute-volume-snapshot-add.html",
@@ -703,12 +675,7 @@
 
         displayVmAuthInfo (vm) {
             const completeVm = this.infra.vrack.publicCloud.get(vm.id);
-            this.$state.go("iaas.pci-project.compute.infrastructure.diagram.modal.login-information", {
-                instanceId: vm.id,
-                serviceName: this.$stateParams.projectId,
-                ipAddresses: vm.ipAddresses,
-                image: completeVm.image
-            });
+            this.InfrastructureService.openLoginInformations(completeVm);
         }
 
         collapseAll () {

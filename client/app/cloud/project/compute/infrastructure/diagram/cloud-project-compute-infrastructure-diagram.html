@@ -387,8 +387,7 @@
                                             <!-- cancel btn -->
                                             <button type="button" class="btn btn-default"
                                                     data-ng-click="vm.confirm = null"
-                                                    data-ng-disabled="vm.confirmLoading"
-                                                    data-ng-if="vm.confirm !== 'reinstallConfirmPending'">
+                                                    data-ng-disabled="vm.confirmLoading">
                                                 <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
                                                 <span translate="common_cancel"></span>
                                             </button>
@@ -408,52 +407,9 @@
                                                              data-ng-show="vm.confirmLoading"></oui-spinner>
                                             </button>
 
-                                            <!-- confirm reinstall -->
-                                            <div data-ng-switch-when="reinstallConfirmPending">
-                                                <p class="text-danger">
-                                                    <span class="fa fa-exclamation-circle" aria-hidden="true"></span>
-                                                    <span data-translate="cpci_vm_reinstall_warn"></span>
-                                                </p>
-                                                <button type="button" class="btn btn-default"
-                                                        data-ng-click="vm.confirm = null"
-                                                        data-ng-disabled="vm.confirmLoading">
-                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                    <span translate="common_cancel"></span>
-                                                </button>
-                                                <button type="button" class="btn btn-danger"
-                                                        data-autofocus
-                                                        data-ng-click="ComputeInfrastructureDiagramCtrl.reinstallVirtualMachine(vm)"
-                                                        data-ng-disabled="vm.confirmLoading">
-                                                    <span class="fa fa-refresh" aria-hidden="true"></span>
-                                                    <span translate="cpci_vm_reinstall_submit"></span>
-                                                    <oui-spinner size="s" inline="true"
-                                                                 data-ng-show="vm.confirmLoading"></oui-spinner>
-                                                </button>
-                                            </div>
-
-                                            <!-- confirm reboot -->
-                                            <button type="button" class="btn btn-danger"
-                                                    data-autofocus
-                                                    data-ng-click="ComputeInfrastructureDiagramCtrl.rebootVirtualMachine(vm, 'soft')"
-                                                    data-ng-disabled="vm.confirmLoading"
-                                                    data-ng-switch-when="rebootConfirmPending">
-                                                <span class="fa fa-power-off" aria-hidden="true"></span>
-                                                <span translate="cpci_vm_reboot_submit"></span>
-                                            </button>
-
                                             <div class="text-center" data-ng-if="vm.confirmLoading">
                                                 <oui-spinner size="m" inline="true"></oui-spinner>
                                             </div>
-
-                                            <!-- confirm HARD reboot -->
-                                            <button type="button" class="btn btn-danger"
-                                                    data-autofocus
-                                                    data-ng-click="ComputeInfrastructureDiagramCtrl.rebootVirtualMachine(vm, 'hard')"
-                                                    data-ng-disabled="vm.confirmLoading"
-                                                    data-ng-switch-when="rebootHardConfirmPending">
-                                                <span class="fa fa-power-off" aria-hidden="true"></span>
-                                                <span translate="cpci_vm_reboot_submit"></span>
-                                            </button>
                                         </div>
                                     </div>
 
@@ -699,14 +655,14 @@
                                                 <li class="divider"></li>
                                                 <li>
                                                     <button type="button" class="red"
-                                                            data-ng-click="vm.confirm = 'rebootConfirmPending'">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.rebootVirtualMachine(vm, 'soft')">
                                                         <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_reboot' | translate"></span>
                                                     </button>
                                                 </li>
                                                 <li>
                                                     <button type="button" class="red"
-                                                            data-ng-click="vm.confirm = 'rebootHardConfirmPending'">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.rebootVirtualMachine(vm, 'hard')">
                                                         <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_reboot_hard' | translate"></span>
                                                     </button>
@@ -714,7 +670,7 @@
                                                 <li class="divider"></li>
                                                 <li>
                                                     <button type="button" class="red"
-                                                            data-ng-click="vm.confirm = 'reinstallConfirmPending'; vm.collapsed = false">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.reinstallVirtualMachine(vm); vm.collapsed = false">
                                                         <span class="fa fa-refresh right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_reinstall' | translate"></span>
                                                     </button>
