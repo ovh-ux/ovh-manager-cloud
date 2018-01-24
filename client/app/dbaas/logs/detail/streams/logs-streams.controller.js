@@ -1,7 +1,6 @@
 class LogsStreamsCtrl {
     constructor ($stateParams) {
         this.$stateParams = $stateParams;
-        this.serviceName = this.$stateParams.serviceName;
     }
 }
 

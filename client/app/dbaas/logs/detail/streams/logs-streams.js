@@ -2,10 +2,22 @@ angular.module("managerApp").config($stateProvider => {
     $stateProvider
         .state("dbaas.logs.detail.streams", {
             url: "/streams",
+            redirectTo: "dbaas.logs.detail.streams.home",
             views: {
                 logsContent: {
                     templateUrl: "app/dbaas/logs/detail/streams/logs-streams.html",
                     controller: "LogsStreamsCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+        })
+        .state("dbaas.logs.detail.streams.home", {
+            url: "/home",
+            views: {
+                logsStreams: {
+                    templateUrl: "app/dbaas/logs/detail/streams/home/logs-streams-home.html",
+                    controller: "LogsStreamsHomeCtrl",
                     controllerAs: "ctrl"
                 }
             },
@@ -23,6 +35,17 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("dbaas.logs.detail.streams.add", {
             url: "/add",
+            views: {
+                logsStreams: {
+                    templateUrl: "app/dbaas/logs/detail/streams/add/logs-streams-add.html",
+                    controller: "LogsStreamsAddCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/streams/add"]
+        })
+        .state("dbaas.logs.detail.streams.edit", {
+            url: "/:streamId",
             views: {
                 logsStreams: {
                     templateUrl: "app/dbaas/logs/detail/streams/add/logs-streams-add.html",
@@ -52,6 +75,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams/archives"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams"]
         });
 });

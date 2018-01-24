@@ -7,6 +7,6 @@ angular.module("managerApp").config($stateProvider => {
                     templateUrl: "app/dbaas/logs/logs.html"
                 }
             },
-            translations: ["common", "dbaas/logs"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams"]
         });
 });
