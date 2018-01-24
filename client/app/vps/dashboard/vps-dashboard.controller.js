@@ -210,10 +210,20 @@ class VpsDashboardCtrl {
                 href: this.ControllerHelper.navigation.getUrl("ip", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading && !this.loaders.ip
             },
-            monitoringSla: {
+            displayIps: {
+                text: this.$translate.instant("vps_dashboard_ips_additional"),
+                callback: () => this.VpsActionService.displayIps(this.serviceName),
+                isAvailable: () => !this.vps.loading && !this.loaders.ip
+            },
+            manageSla: {
                 text: this.$translate.instant("common_manage"),
                 callback: () => this.VpsActionService.monitoringSla(this.serviceName, !this.vps.data.slaMonitoring),
                 isAvailable: () => !this.vps.loading && !this.loaders.polling
+            },
+            viewIpSla: {
+                text: this.$translate.instant("vps_dashboard_monitoring_sla_ips"),
+                callback: () => this.VpsActionService.monitoringSla(this.serviceName, true, true),
+                isAvailable: () => !this.vps.loading
             },
             // orderAdditionalDiskOption: {
             //     text: this.$translate.instant("vps_additional_disk_add_button"),
@@ -242,9 +252,9 @@ class VpsDashboardCtrl {
                 callback: () => this.VpsActionService.reinstall(this.serviceName),
                 isAvailable: () => !this.loaders.polling && !this.vps.loading
             },
-            resetPassword: {
-                text: this.$translate.instant("vps_configuration_reinitpassword_title_button"),
-                callback: () => this.VpsActionService.password(this.serviceName),
+            rebootRescue: {
+                text: this.$translate.instant("vps_configuration_reboot_rescue"),
+                callback: () => this.VpsActionService.rescue(this.serviceName),
                 isAvailable: () => !this.loaders.polling && !this.vps.loading
             },
             reverseDns: {
