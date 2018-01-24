@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_options_options_loading_error">Error loading options</translation>
+    <translation id="logs_options_current_options_loading_error">Error loading current options</translation>
+
+    <translation id="log_options_title">Add Options</translation>
+    <translation id="log_options_current_title">You are currently subscribed to the following options:</translation>
+    <translation id="log_options_intro_text">When purchasing data feeds, aliases and dashboards, you have user roles offered (eg 5 streams = 5 roles).</translation>
+    <translation id="log_options_type">Option type</translation>
+    <translation id="log_options_details">Details</translation>
+    <translation id="log_options_add">Add</translation>
+    <translation id="log_options_price">Price/month</translation>
+
+    <translation id="logs-input-2-type">Collection tool</translation>
+    <translation id="logs-input-4-type">Collection tool</translation>
+    <translation id="logs-input-8-type">Collection tool</translation>
+    <translation id="logs-dashboard-5-type">Dashboard</translation>
+    <translation id="logs-stream-5-type">Data stream</translation>
+    <translation id="logs-kibana-1-type">Kibana Pack</translation>
+    <translation id="logs-alias-5-type">Alias ​​Elasticsearch</translation>
+    <translation id="logs-index-1-type">Elasticsearch Index of 25 GiB</translation>
+    <translation id="logs-index-2-type">Elasticsearch Index of 50 GiB</translation>
+    <translation id="logs-index-4-type">Elasticsearch Index of 100 GiB</translation>
+    <translation id="logs-index-8-type">Elasticsearch Index of 200 GiB</translation>
+
+    <translation id="logs-input-2-detail">2 instances</translation>
+    <translation id="logs-input-4-detail">4 instances</translation>
+    <translation id="logs-input-8-detail">8 instances</translation>
+    <translation id="logs-dashboard-5-detail">Pack of 5</translation>
+    <translation id="logs-stream-5-detail">Pack of 5</translation>
+    <translation id="logs-kibana-1-detail">1 alias and 1 index of 500 MB</translation>
+    <translation id="logs-alias-5-detail">Pack of 5</translation>
+    <translation id="logs-index-1-detail">1 shard</translation>
+    <translation id="logs-index-2-detail">2 shard</translation>
+    <translation id="logs-index-4-detail">4 shard</translation>
+    <translation id="logs-index-8-detail">8 shard</translation>
+
+    <translation id="log_options_order">Order</translation>
+    <translation id="log_options_cancel">Cancel</translation>
+    <translation id="log_options_total">Total</translation>
+</translations>
