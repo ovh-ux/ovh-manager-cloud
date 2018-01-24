@@ -1,7 +1,7 @@
 <section class="cui-page__content">
     <cui-back-link data-state="{{ $ctrl.previousState.state }}"
                    data-state-params="$ctrl.previousState.stateParams"
-                   data-text="'Retour'"></cui-back-link>
+                   data-text="'common_back' | translate"></cui-back-link>
     <cui-page-content-title text="'iplb_zone_delete_title' | translate"></cui-page-content-title>
     <p data-ng-if="$ctrl.getDeletableZoneCount() === 1" 
         data-translate="iplb_zone_delete_intro_text_single" 
