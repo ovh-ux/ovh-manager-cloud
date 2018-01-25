@@ -481,7 +481,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Käyttöehdot ja sopimukset</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Vakuutan, että olen tututustunut käyttöehtoihin ja sopimuksiin ja hyväksyn ne.</translation>
    <translation id="common_login" qtlid="2174">Kirjaudu</translation>
-   <translation id="common_modal_ok" qtlid="224880">OK</translation>
+   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Sulje</translation>
    <translation id="common_modal_cancel" qtlid="37863">Peruuta</translation>
 
@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Katso näkymä</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Ei tuloksia</translation>
    <translation id="common_table_col_action" qtlid="56105">Toiminto</translation>
    <translation id="common_table_col_progress" qtlid="442639">Eteneminen</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Tulosta per sivu</translation>
    <translation id="common_pagination_page" qtlid="433397">sivu</translation>
    <translation id="common_pagination_of" qtlid="121615">aikaväli</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">/ TOTAL_ITEMS tulosta</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Sivu CURRENT_PAGE / PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">tulokset</translation>
    <translation id="common_pagination_next" qtlid="433423">Seuraava sivu</translation>
    <translation id="common_pagination_previous" qtlid="433436">Edellinen sivu</translation>

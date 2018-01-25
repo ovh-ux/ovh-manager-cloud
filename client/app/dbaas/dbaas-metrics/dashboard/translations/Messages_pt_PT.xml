@@ -30,9 +30,9 @@
    <translation id="metrics_tiles_subscription_metrics-live-1t" qtlid="415688">Subscrição Live 1TB</translation>
    <translation id="metrics_tiles_subscription_metrics-live-2t" qtlid="415701">Subscrição Live 2TB</translation>
 
-   <translation id="metrics_tiles_modify" qtlid="37875">Modificar</translation>
+   <translation id="metrics_tiles_modify" qtlid="37875">Alterar</translation>
    <translation id="metrics_dashboard_modif_cancel" qtlid="37863">Anular</translation>
-   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Modificar</translation>
+   <translation id="metrics_dashboard_modif_confirm" qtlid="37875">Alterar</translation>
    <translation id="metrics_dashboard_modif_default_name" qtlid="415714">Nome predefinido</translation>
    <translation id="metrics_dashboard_modif_personal_name" qtlid="415727">Nome personalizado</translation>
    <translation id="metrics_dashboard_modif_retention" qtlid="8218">Duração</translation>

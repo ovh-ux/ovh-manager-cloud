@@ -3,7 +3,7 @@
    <translation id="cpcivm_login_information_title" qtlid="250927">Informations de connexion</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Connexion à l'instance</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Dans un terminal, saisir la commande suivante&#160;:<br/><code>ssh {{user}}@{{ip}}</code></translation>
-   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Lors de votre première connexion, vous devez utiliser la console VNC pour finaliser la configuration de Windows. Ensuite, utilisez votre client RDP favori, par exemple via un poste Linux&#160;:<br/><code>rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="453482">Lors de votre première connexion, vous devez utiliser la console VNC pour finaliser la configuration de Windows. Ensuite, utilisez votre client RDP favori, par exemple via un poste Linux:</translation>
    <translation id="cpcivm_login_information_application_title" qtlid="401588">Connexion aux applications</translation>
    <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Type</translation>
    <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>

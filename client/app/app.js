@@ -132,12 +132,12 @@ angular.module("managerApp", [
             };
 
             ouiPaginationConfiguration.translations = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage")
-                    .replace("CURRENT_PAGE", "{{currentPage}}")
-                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
                 ofNResults: $translate.instant("common_pagination_ofnresults")
                     .replace("TOTAL_ITEMS", "{{totalItems}}"),
-                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount"),
+                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
                 previousPage: $translate.instant("common_pagination_previous"),
                 nextPage: $translate.instant("common_pagination_next")
             };

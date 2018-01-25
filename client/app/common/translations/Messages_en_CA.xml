@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">See a preview</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">No result</translation>
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Results per page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
    <translation id="common_pagination_of" qtlid="121615">on</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">out of TOTAL_ITEMS results</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE out of PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">results</translation>
    <translation id="common_pagination_next" qtlid="433423">Next page</translation>
    <translation id="common_pagination_previous" qtlid="433436">Previous page</translation>

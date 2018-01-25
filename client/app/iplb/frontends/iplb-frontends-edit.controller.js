@@ -194,8 +194,11 @@ class IpLoadBalancerFrontendsEditCtrl {
                 break;
             default: break;
         }
-        frontend.port = parseInt(frontend.port, 10);
-        frontend.allowedSource = frontend.allowedSource.join(", ");
+
+        if (_.has(frontend, "allowedSource.length")) {
+            frontend.allowedSource = frontend.allowedSource.join(", ");
+        }
+
         this.frontend = angular.copy(frontend);
         return frontend;
     }

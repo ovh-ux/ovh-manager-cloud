@@ -45,7 +45,12 @@
         displayLoginInfo () {
             const user = this.data.image.user || "user";
             const ip = (this.data.ip && this.data.ip.ip) || 'X.X.X.X';
-            return `ssh ${user}@${ip}`;
+
+            if (!this.data.isWindows) {
+                return `ssh ${user}@${ip}`;
+            }
+
+            return `rdesktop ${ip}`;
         }
 
         getLoginInfo () {
