@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - npm install -g grunt bower
+install:
+  - make install
+script:
+  - make test
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/bower
