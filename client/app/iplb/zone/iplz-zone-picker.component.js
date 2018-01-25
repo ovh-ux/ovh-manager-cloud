@@ -6,7 +6,7 @@ angular.module("managerApp")
                 <oui-checkbox 
                     on-change="$ctrl.onSelectionChanged(zone, modelValue)"
                     data-disabled="zone.selectable.value === false"
-                    data-description="{{ zone.selectable.value === false ? zone.selectable.reason : '' }}"
+                    data-description="{{ zone.selectable.reason }}"
                     data-ng-repeat="zone in zones | orderBy: 'microRegion.text' track by $index" 
                     text="{{ zone.microRegion.text }}"></oui-checkbox>
             </div>`,
