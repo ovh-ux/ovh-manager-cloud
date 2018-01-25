@@ -1,9 +1,9 @@
 <div id="cloud-project-compute-snapshot">
     <section class="cui-page__content">
 
-        <p class="bold" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.prices.length">
+        <p class="bold" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.prices">
             <span data-translate="cpc_snapshot_total2" data-ng-if="CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size"
-            translate-values="{size: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size || 0, price: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.total.price.text || '?' }"></span></p>
+            translate-values="{size: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.size || 0, price: CloudProjectComputeSnapshotCtrl.snapshotPriceStruct.total.text || '?' }"></span></p>
 
         <!-- SEARCH FORM -->
         <form name="searchSnapshotForm"
@@ -176,7 +176,7 @@
             <tbody data-ng-show="CloudProjectComputeSnapshotCtrl.loaders.table.snapshot" class="oui-table__body">
                 <tr class="oui-table__row" tabindex="0">
                     <td colspan="9" class="text-center">
-                        <oui-loader size="m" class="d-inline-block"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </td>
                 </tr>
             </tbody>
@@ -257,7 +257,7 @@
                     </td>
                     <td data-title="{{::'cpc_snapshot_status' | translate}}" class="oui-table__cell">
                         <span class="ip-text text-center" data-ng-if="snapshot.status!=='active' && snapshot.status!=='available'">
-                            <oui-loader size="s" class="d-inline-block"></oui-loader>
+                            <oui-spinner size="s"></oui-spinner>
                         </span>
                         <span data-ng-class="{'opacity2-leave' : CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId === snapshot.id,
                                             'opacity2-enter' : CloudProjectComputeSnapshotCtrl.toggle.snapshotDeleteId !== snapshot.id}"
@@ -282,7 +282,7 @@
                                                 || CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti
                                                 || CloudProjectComputeSnapshotCtrl.toggle.openDeleteMultiConfirm">
                                 <span translate="cpc_snapshot_delete_confirm_button"></span>
-                                <oui-loader size="s" class="d-inline-block" data-nf-if="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot"></oui-loader>
+                                <oui-spinner size="s" data-nf-if="CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot"></oui-spinner>
                             </button>
                         </div>
 

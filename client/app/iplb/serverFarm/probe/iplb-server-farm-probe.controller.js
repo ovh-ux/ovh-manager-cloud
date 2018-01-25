@@ -13,6 +13,12 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
         this.matches = IpLoadBalancerConstant.probeMatches;
         this.rules = this.getRules();
 
+        if (!_.includes(this.getMatches(), this.farm.probe.match)) {
+            this.farmProbe.match = null;
+            this.farmProbe.pattern = null;
+            this.farmProbe.negate = null;
+        }
+
         if (!this.edition) {
             this.farmProbe.port = this.farm.port;
             this.farmProbe.interval = 30;
@@ -30,6 +36,8 @@ class IpLoadBalancerServerFarmProbeEditCtrl {
             if (this.farmProbe.type === "oco") {
                 delete this.farmProbe.port;
             }
+        } else if (this.farmProbe.negate === null) {
+            this.farmProbe.negate = false;
         }
     }
 

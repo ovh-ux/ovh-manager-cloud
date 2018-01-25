@@ -66,6 +66,10 @@ class IpLoadBalancerFrontendsService {
         } else {
             frontend.region = this.RegionService.getRegion(frontend.zone);
         }
+
+        // Needed to trigger row loading with datagrid.
+        delete frontend.$promise;
+
         return frontend;
     }
 

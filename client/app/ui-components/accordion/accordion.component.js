@@ -19,24 +19,17 @@ angular.module("managerApp")
                         <div class="cui-accordion__header-subtitle" data-ng-bind="$ctrl.text"></div>
                     </div>
                     <div class="cui-accordion__button-container">
-                        <cui-dropdown-menu data-ng-if="$ctrl.actions.length">
-                            <cui-dropdown-menu-button
-                                data-ng-include="'app/ui-components/icons/button-action.html'">
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu"
-                                    data-ng-repeat="actionGroup in $ctrl.actions track by $index">
-                                    <div class="oui-action-menu__item oui-action-menu-item"
-                                        data-ng-repeat="action in actionGroup track by $index">
-                                        <div class="oui-action-menu-item__icon"></div>
-                                        <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                            type="button"
-                                            data-ng-bind="action.text"
-                                            data-ng-click="action.callback()"></button>
-                                    </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
+                        <oui-action-menu data-ng-if="$ctrl.actions.length"
+                            compact data-align="end">
+                            <div data-ng-repeat="actionGroup in $ctrl.actions track by $index">
+                                <oui-action-menu-item data-ng-repeat="action in actionGroup track by $index"
+                                    text="{{ action.text }}"
+                                    on-click="action.callback()">
+                                </oui-action-menu-item>
+                                <oui-action-menu-divider ng-if="!$last"></oui-action-menu-divider>
+                            </div>
+                        </oui-action-menu>
+
                     </div>
                     <div class="cui-accordion__button-container">
                         <button type="button"

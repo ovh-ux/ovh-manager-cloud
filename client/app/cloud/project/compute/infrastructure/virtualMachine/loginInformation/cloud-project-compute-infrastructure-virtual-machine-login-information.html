@@ -4,25 +4,28 @@
                 data-ng-click="VmLoginInformationCtrl.close()"></button>
     </div>
 
-    <div class="oui-modal__body oui-modal__body_no-icon">
+    <div class="oui-modal__body oui-modal__body_no-icon cloud-connexion-info">
         <div class="oui-modal__body-text text-center" data-ng-if="VmLoginInformationCtrl.loading">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
 
         <div class="oui-modal__body-text" data-ng-if="!VmLoginInformationCtrl.loading">
             <h2 class="oui-modal__title" data-translate="cpcivm_login_information_title"></h2>
             <p class="oui-modal__text" data-translate="cpcivm_login_information_instance_title"></p>
+            <p class="oui-modal__text" 
+                data-ng-if="VmLoginInformationCtrl.data.isWindows" 
+                data-translate="cpcivm_login_information_instance_info_windows"></p>
 
             <cui-clipboard data-text="VmLoginInformationCtrl.displayLoginInfo()"></cui-clipboard>
         </div>
 
-        <div class="oui-modal__body-text" data-ng-if="!VmLoginInformationCtrl.loading">
+        <div class="oui-modal__body-text cloud-connexion-info__application" data-ng-if="!VmLoginInformationCtrl.loading">
             <h2 class="oui-modal__title" data-ng-if="VmLoginInformationCtrl.data.hasApplication" data-translate="cpcivm_login_information_application_title"></h2>
             <div data-ng-if="VmLoginInformationCtrl.readOnlyError && VmLoginInformationCtrl.data.hasApplication">
                 <p class="oui-modal__text" data-translate="cpcivm_login_information_application_readonly"></p>
             </div>
             <div class="text-center" data-ng-if="VmLoginInformationCtrl.poller">
-                <oui-loader size="m" class="d-inline-block"></oui-loader>
+                <oui-spinner></oui-spinner>
             </div>
             <div data-ng-repeat="app in VmLoginInformationCtrl.data.applicationInfo track by $index">
                 <div class="form-horizontal login-information__application">

@@ -6,7 +6,7 @@
 
     <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="CloudProjectBillingVouchersAddcreditCtrl.loaders.currency">
         <div class="text-center">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
     </div>
 
@@ -19,7 +19,7 @@
             <label class="oui-label" for="amount" data-translate="cpb_vouchers_add_credit_amount"
                 translate-values="{currency: CloudProjectBillingVouchersAddcreditCtrl.credit.currencyCodeText }"></label>
             <input type="number" class="oui-input"
-                data-ng-class="{'oui-input_error' : addCreditForm.amount.$invalid}" 
+                data-ng-class="{'oui-input_error' : addCreditForm.amount.$invalid}"
                 id="amount" name="amount" pattern="^\d{1,8}$"
                 placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
                 data-ng-model="CloudProjectBillingVouchersAddcreditCtrl.credit.amount"
@@ -29,11 +29,11 @@
                 required>
 
             <div class="oui-modal__text" data-ng-messages="addCreditForm.amount.$error" data-ng-if="addCreditForm.amount.$dirty">
-                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" 
+                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave"
                    data-ng-message="required"
                    data-translate="cpb_vouchers_add_credit_required_error"></p>
-                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave" 
-                   data-ng-message="maxlength" 
+                <p class="text-danger animate-fadeInLeft-enter animate-fadeOutRight-leave"
+                   data-ng-message="maxlength"
                    data-translate="cpb_vouchers_add_credit_max_error"></p>
             </div>
         </div>

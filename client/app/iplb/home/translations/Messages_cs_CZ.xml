@@ -15,7 +15,7 @@
    <translation id="iplb_home_tile_infos_ip_outbound" qtlid="429459">Odchozí IPv4</translation>
 
    <translation id="iplb_home_tile_configuration" qtlid="4406">Konfigurace</translation>
-   <translation id="iplb_home_tile_configuration_name" qtlid="3818">Příjmení</translation>
+   <translation id="iplb_home_tile_configuration_name" qtlid="3818">Název</translation>
    <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Měsíční kvóta</translation>
    <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Limit upozornění</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Neomezeno</translation>

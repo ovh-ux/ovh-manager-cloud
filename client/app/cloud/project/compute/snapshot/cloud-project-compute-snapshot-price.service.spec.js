@@ -6,43 +6,75 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
     var $q = null;
     var $rootScope = null;
     var service = null;
-    var cloudPriceLexiMock = null;
-    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, OvhApiCloudPriceLexi) {
+    var orderCatalogFormattedLexi = null;
+    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, OvhApiOrderCatalogFormattedLexi, OvhApiCloudProjectLexi, OvhApiMeLexi) {
         $q = _$q_;
         $rootScope = _$rootScope_;
+        orderCatalogFormattedLexi = OvhApiOrderCatalogFormattedLexi;
         service = CloudProjectComputeSnapshotPriceService;
-        cloudPriceLexiMock = OvhApiCloudPriceLexi;
+        spyOn(OvhApiMeLexi, "get").and.returnValue({ $promise: $q.when({ country: "FR" })});
+        spyOn(OvhApiCloudProjectLexi, "get").and.returnValue({ $promise: $q.when({ planCode: "project" }) });
     }));
+
+    function mockPriceData(priceData) {
+        return {
+            plans: [
+                {
+                    planCode: "project",
+                    addonsFamily : [
+                        {
+                            family: "snapshot",
+                            addons: [
+                                {
+                                    plan: {
+                                        planCode : "snapshot.consumption",
+                                        details: {
+                                            pricings : {
+                                                default : [priceData]
+                                            }
+                                        },
+                                    }
+                                }
+                            ],
+                        }
+                    ],
+                }
+            ]
+        };
+    }
 
     describe("splitSubnetIpAddresses", function () {
         it("should return correct data for snapshot size 1", function () {
             var snapshotSize = 1;
-            var priceData = {
-                snapshots: [{
-                    region: "GRA1",
-                    monthlyPrice: {
-                        currencyCode: "EUR",
-                        text: "0.01 €",
-                        value: 0.01
-                    }
-                }]
-            };
-            spyOn(cloudPriceLexiMock, "query").and.returnValue({ $promise: $q.when(priceData) });
+            var priceData = mockPriceData({
+                price: {
+                    currencyCode: "EUR",
+                    text: "0.00 €",
+                    value: 0.00
+                },
+                priceInUcents : 1388,
+            })
+            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
 
-            service.getSnapshotPrice(snapshotSize).then(function (data) {
-                expect(data).toEqual([{
-                    region: "GRA1",
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : "GRA1"}).then(function (data) {
+                expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",
                         text: "0.01 €",
-                        value: 0.01
+                        value: data.monthlyPrice.value,
                     },
                     totalPrice: {
                         currencyCode: "EUR",
                         text: "0.01 €",
-                        value: 0.01
-                    }
-                }]);
+                        value: data.totalPrice.value,
+                    },
+                    price: {
+                        currencyCode: "EUR",
+                        text: "0.00 €",
+                        value: 0.00
+                    },
+                    priceInUcents: 1388,
+                });
             });
 
             $rootScope.$apply();
@@ -50,32 +82,36 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
 
         it("should return correct data for snapshot size 12", function () {
             var snapshotSize = 12;
-            var priceData = {
-                snapshots: [{
-                    region: "GRA2",
-                    monthlyPrice: {
-                        currencyCode: "EUR",
-                        text: "0.01 €",
-                        value: 0.01
-                    }
-                }]
-            };
-            spyOn(cloudPriceLexiMock, "query").and.returnValue({ $promise: $q.when(priceData) });
+            var priceData = mockPriceData({
+                price: {
+                    currencyCode: "EUR",
+                    text: "0.00 €",
+                    value: 0.00
+                },
+                priceInUcents : 1388,
+            });
 
-            service.getSnapshotPrice(snapshotSize).then(function (data) {
-                expect(data).toEqual([{
-                    region: "GRA2",
+            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
+
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
+                expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",
                         text: "0.01 €",
-                        value: 0.01
+                        value: data.monthlyPrice.value,
                     },
                     totalPrice: {
                         currencyCode: "EUR",
                         text: "0.12 €",
-                        value: 0.12
-                    }
-                }]);
+                        value: data.totalPrice.value,
+                    },
+                    price: {
+                        currencyCode: "EUR",
+                        text: "0.00 €",
+                        value: 0.00
+                    },
+                    priceInUcents: 1388
+                });
             });
 
             $rootScope.$apply();
@@ -83,32 +119,35 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
 
         it("should round correctly at 2 digits", function () {
             var snapshotSize = 10;
-            var priceData = {
-                snapshots: [{
-                    region: "GRA3",
-                    monthlyPrice: {
-                        currencyCode: "EUR",
-                        text: "0.333333 €",
-                        value: 0.333333
-                    }
-                }]
-            };
-            spyOn(cloudPriceLexiMock, "query").and.returnValue({ $promise: $q.when(priceData) });
+            var priceData = mockPriceData({
+                price: {
+                    currencyCode: "EUR",
+                    text: "0.00 €",
+                    value: 0.00
+                },
+                priceInUcents : 46388,
+            });
+            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
 
-            service.getSnapshotPrice(snapshotSize).then(function (data) {
-                expect(data).toEqual([{
-                    region: "GRA3",
+            service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
+                expect(data).toEqual({
                     monthlyPrice: {
                         currencyCode: "EUR",
-                        text: "0.333333 €",
-                        value: 0.333333
+                        text: "0.33 €",
+                        value: data.monthlyPrice.value,
                     },
                     totalPrice: {
                         currencyCode: "EUR",
                         text: "3.34 €",
-                        value: 3.34
-                    }
-                }]);
+                        value: data.totalPrice.value,
+                    },
+                    price: {
+                        currencyCode: "EUR",
+                        text: "0.00 €",
+                        value: 0.00
+                    },
+                    priceInUcents: 46388
+                });
             });
 
             $rootScope.$apply();

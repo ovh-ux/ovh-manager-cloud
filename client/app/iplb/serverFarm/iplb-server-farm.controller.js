@@ -110,6 +110,13 @@ class IpLoadBalancerServerFarmCtrl {
         });
     }
 
+    updateServer (farmId, serverId) {
+        this.$state.go("network.iplb.detail.server-farm.server-update", {
+            farmId,
+            serverId
+        });
+    }
+
     delete (farm) {
         this.IpLoadBalancerActionService.deleteFarm(
             this.$stateParams.serviceName,
@@ -149,51 +156,6 @@ class IpLoadBalancerServerFarmCtrl {
                 }]
             ];
         });
-    }
-
-    serverActionTemplate () {
-        return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'common_preview_see' | translate"
-                                data-ng-click="ctrl.seeServerPreview($row)"></button>
-                        </div>
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_farm_server_status_see' | translate"
-                                data-ng-click="ctrl.seeServerStatus($row)"></button>
-                        </div>
-                    </div>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <a class="oui-button oui-button_link oui-action-menu-item__label"
-                                data-ng-bind="'common_modify' | translate"
-                                data-ui-sref="network.iplb.detail.server-farm.server-update({
-                                    farmId: farm.farmId,
-                                    serverId: $row.serverId
-                                })"></a>
-                        </div>
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'common_remove' | translate"
-                                data-ng-click="ctrl.deleteServer(farm, $row)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>`;
     }
 
     getFarmText (farm) {

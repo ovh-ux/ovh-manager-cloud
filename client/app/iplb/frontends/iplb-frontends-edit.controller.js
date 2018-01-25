@@ -97,6 +97,7 @@ class IpLoadBalancerFrontendsEditCtrl {
                 this.type = "http";
                 this.frontend.port = 443;
                 this.frontend.ssl = true;
+                this.frontend.hsts = false;
                 break;
             case "tcp":
                 this.type = "tcp";
@@ -134,7 +135,8 @@ class IpLoadBalancerFrontendsEditCtrl {
             defaultSslId: 0,
             defaultFarmId: 0,
             port: 80,
-            ssl: false
+            ssl: false,
+            hsts: false
         };
         this.type = "http";
         this.protocol = "http";
@@ -192,7 +194,11 @@ class IpLoadBalancerFrontendsEditCtrl {
                 break;
             default: break;
         }
-        frontend.port = parseInt(frontend.port, 10);
+
+        if (_.has(frontend, "allowedSource.length")) {
+            frontend.allowedSource = frontend.allowedSource.join(", ");
+        }
+
         this.frontend = angular.copy(frontend);
         return frontend;
     }
@@ -215,7 +221,7 @@ class IpLoadBalancerFrontendsEditCtrl {
             request.defaultFarmId = null;
         }
         if (this.frontend.allowedSource) {
-            request.allowedSource = this.frontend.allowedSource.split(",");
+            request.allowedSource = _.map(this.frontend.allowedSource.split(","), source => _.trim(source));
         }
         delete request.protocol;
         return request;

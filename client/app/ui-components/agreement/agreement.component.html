@@ -11,18 +11,20 @@
     </div>
     <div class="oui-checkbox">
         <p>
-            <input class="oui-checkbox__input" 
-                id="chkAgreements" 
-                name="chkAgreements" 
+            <input class="oui-checkbox__input"
+                id="chkAgreements"
+                name="chkAgreements"
                 type="checkbox"
                 data-ng-model="$ctrl.checked"
                 data-ng-change="$ctrl.onCheck({value: $ctrl.checked})">
             <label class="oui-checkbox__label-container" for="chkAgreements">
-                <span class="oui-checkbox__label" data-ng-bind=":: $ctrl.checkboxText"></span>
-                <span class="oui-checkbox__icon">
-                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                <span class="oui-checkbox__label">
+                    <span data-ng-bind=":: $ctrl.checkboxText"></span>
+                    <span class="oui-checkbox__icon">
+                        <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                        <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
                 </span>
             </label>
         </p>

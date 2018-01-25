@@ -8,7 +8,7 @@
     </div>
 
     <form name="MetricsTokenAddForm">
-        <cui-loader data-ng-show="MetricsTokenAddCtrl.loading"></cui-loader>
+        <oui-spinner data-ng-show="MetricsTokenAddCtrl.loading"></oui-spinner>
         <div data-ng-hide="MetricsTokenAddCtrl.loading">
             <hr>
 
@@ -16,7 +16,7 @@
                 <label for="description" class="oui-field__label oui-label" data-translate="metrics_token_add_name"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
-                        <input class="oui-input" type="text" id="description" name="description" 
+                        <input class="oui-input" type="text" id="description" name="description"
                             data-ng-model="MetricsTokenAddCtrl.token.description">
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 <label for="permission" class="oui-field__label oui-label" data-translate="metrics_token_add_permission"></label>
                 <div class="oui-field__content">
                     <cui-radio-bar data-ng-model="MetricsTokenAddCtrl.token.permission" id="permission" name="permission">
-                        <cui-radio-bar-item data-ng-repeat="permission in MetricsTokenAddCtrl.permissions" 
+                        <cui-radio-bar-item data-ng-repeat="permission in MetricsTokenAddCtrl.permissions"
                             data-text="permission.text"
                             data-value="permission.value"></cui-radio-bar-item>
                     </cui-radio-bar>
@@ -63,7 +63,7 @@
             <hr>
 
             <div class="cui-form-action metrics-token-add__footer">
-                <cui-submit-button 
+                <cui-submit-button
                     data-text="'metrics_token_add_confirmation' | translate"
                     data-ng-click="MetricsTokenAddCtrl.confirm()"
                     data-ng-disabled="MetricsTokenAddForm.$invalid || MetricsTokenAddCtrl.loading"></cui-submit-button>

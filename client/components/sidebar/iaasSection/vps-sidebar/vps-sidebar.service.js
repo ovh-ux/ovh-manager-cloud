@@ -19,8 +19,16 @@ class VpsSidebar {
                 id: vps.serviceName,
                 title: vps.displayName || vps.serviceName,
                 icon: "ovh-font ovh-font-vps",
-                target: "_parent",
-                url: this.REDIRECT_URLS.vpsPage.replace("{vps}", vps.serviceName)
+                state: "iaas.vps.detail.dashboard",
+                stateParams: {
+                    displayName: vps.displayName,
+                    serviceName: vps.serviceName
+                },
+                loadOnState: "iaas.vps.detail",
+                loadOnStateParams: {
+                    displayName: vps.displayName,
+                    serviceName: vps.serviceName
+                }
             }, section);
             this.addSearchKeys(menuItem);
         });

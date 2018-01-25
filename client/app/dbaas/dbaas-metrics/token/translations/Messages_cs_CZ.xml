@@ -6,7 +6,7 @@
 
    <translation id="metrics_table_create_date" qtlid="26419">Datum vytvoření</translation>
    <translation id="metrics_table_expiry_date" qtlid="33010">Datum expirace</translation>
-   <translation id="metrics_table_name" qtlid="3818">Příjmení</translation>
+   <translation id="metrics_table_name" qtlid="3818">Název</translation>
    <translation id="metrics_table_token" qtlid="254115">Jednorázový kód</translation>
    <translation id="metrics_table_state" qtlid="33790">Stav</translation>
    <translation id="metrics_table_action" qtlid="56105">Akce</translation>

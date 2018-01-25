@@ -158,7 +158,7 @@
             <tbody data-ng-show="CloudProjectComputeVolumeCtrl.loaders.table.volume" class="oui-table__body">
                 <tr>
                     <td colspan="10" class="text-center">
-                        <oui-loader size="m" class="d-inline-block"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </td>
                 </tr>
             </tbody>
@@ -230,7 +230,7 @@
                     <td data-title="{{::'cpc_volume_monthly_price' | translate}}" class="oui-table__cell">
                         <span data-ng-class="{'opacity2-leave' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId === volume.id,
                                             'opacity2-enter' : CloudProjectComputeVolumeCtrl.toggle.volumeDeleteId !== volume.id}">
-                            <span data-ng-if="volume.gbPrices">{{ volume.calculatePrice().monthlyPrice.text }}</span>
+                            <span data-ng-if="volume.volumePricesMap">{{ volume.calculatePrice().monthlyPrice.text }}</span>
                         </span>
                     </td>
                     <td data-title="{{::'cpc_volume_creation_date' | translate}}" class="oui-table__cell">

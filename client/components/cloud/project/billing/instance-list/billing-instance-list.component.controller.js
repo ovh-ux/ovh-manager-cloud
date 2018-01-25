@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, OvhApiCloudPrice) {
+  .controller("BillingInstanceListComponentCtrl", function ($stateParams, $q, $translate, OvhApiCloudProjectImage, DetailsPopoverService, OvhApiCloudProjectInstance, Toast, OvhApiMe, OvhCloudPriceHelper) {
         var self = this;
         self.windowsStringPattern = "/^win-/";
         self.instanceConsumptionDetails = [];
@@ -82,7 +82,7 @@ angular.module("managerApp")
                 instanceConsumptionDetail.isDeleted = false;
                 instanceConsumptionDetail.instanceName = instance.name;
                 instanceConsumptionDetail.monthlyBilling = instance.monthlyBilling;
-
+                instanceConsumptionDetail.planCode = instance.planCode;
                 var imageData = _.find(self.data.images, { id: instance.imageId });
                 if (imageData) {
                     instanceConsumptionDetail.imageType = imageData.type;
@@ -107,14 +107,13 @@ angular.module("managerApp")
             self.data.instanceToMonthlyPrice = null;
             self.loaders.monthlyBilling = true;
 
-            OvhApiCloudPrice.Lexi().query().$promise.then(function (prices) {
-                if (prices.instances && prices.instances.length) {
-                    self.data.instanceToMonthlyPrice = _.find(prices.instances, {flavorName : instance.reference});
-                }
-                if (!self.data.instanceToMonthlyPrice) {
+            OvhCloudPriceHelper.getPrices($stateParams.projectId).then(function (prices) {
+                let monthlyPrice = prices[instance.planCode && instance.planCode.replace("consumption","monthly")];
+                if (!monthlyPrice) {
                     self.endInstanceToMonthlyConversion();
-                    return $q.reject({ data: { message: "No instances for flavor." } });
+                    return $q.reject({ data: { message: "No monthly price for this instance" } });
                 }
+                self.data.instanceToMonthlyPrice = monthlyPrice;
             }).catch(function (err) {
                 self.instanceToMonthly = null;
                 Toast.error([$translate.instant("cpbc_hourly_instance_pass_to_monthly_price_error"), err.data && err.data.message || ""].join(" "));

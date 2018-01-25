@@ -149,15 +149,48 @@ class IpLoadBalancerServerFarmEditCtrl {
         if (request.stickiness === "none") {
             request.stickiness = null;
         }
-        if (!request.probe.type) {
-            delete request.probe;
-        }
+
+        request.probe = this.getCleanProbe();
+
         if (this.type === "udp") {
             delete request.balance;
             delete request.stickiness;
             delete request.probe;
         }
         return request;
+    }
+
+    getCleanProbe () {
+        const request = angular.copy(this.farm);
+        const pickList = ["type", "pattern", "interval", "negate"];
+        switch (request.probe.type) {
+            case "http":
+                pickList.push("url");
+                pickList.push("port");
+                pickList.push("method");
+                pickList.push("match");
+                break;
+            case "mysql":
+            case "pgsql":
+            case "smtp":
+                pickList.push("port");
+                break;
+            case "tcp":
+                pickList.push("port");
+                if (_.includes(["default", "contains", "matches"], request.probe.match)) {
+                    pickList.push("match");
+                } else {
+                    request.probe.pattern = "";
+                    request.probe.negate = null;
+                }
+                break;
+            case "oco":
+                break;
+            default:
+                request.probe = {};
+        }
+
+        return _.pick(request.probe, pickList);
     }
 
     editProbe () {

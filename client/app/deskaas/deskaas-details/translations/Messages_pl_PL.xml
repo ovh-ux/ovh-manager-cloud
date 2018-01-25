@@ -59,7 +59,7 @@
    <translation id="vdi_task_current" qtlid="195633">Zadania w trakcie</translation>
    <translation id="vdi_task_id" qtlid="279015">Id</translation>
    <translation id="vdi_task_name" qtlid="9238">Opis</translation>
-   <translation id="vdi_task_state" qtlid="8230">Państwo</translation>
+   <translation id="vdi_task_state" qtlid="8230">Status</translation>
    <translation id="vdi_task_modification_date" qtlid="293905">Data modyfikacji</translation>
    <translation id="vdi_task_name_refreshVirtualDesktop" qtlid="370863">Reset pulpitu</translation>
    <translation id="vdi_task_name_restartVirtualDesktop" qtlid="370876">Restart pulpitu</translation>
@@ -75,7 +75,7 @@
    <translation id="vdi_task_state_toCreate" qtlid="26227">W trakcie tworzenia</translation>
    <translation id="vdi_task_state_waitingTodo" qtlid="29467">Oczekujące</translation>
    <translation id="vdi_task_state_todo" qtlid="134605">Do wykonania</translation>
-   <translation id="vdi_task_state_doing" qtlid="26383">W trakcie</translation>
+   <translation id="vdi_task_state_doing" qtlid="26383">W toku</translation>
    <translation id="vdi_task_state_done" qtlid="370967">Wykonane</translation>
    <translation id="vdi_task_state_error" qtlid="26407">Błąd</translation>
    <translation id="vdi_task_state_fixing" qtlid="370980">Naprawa</translation>

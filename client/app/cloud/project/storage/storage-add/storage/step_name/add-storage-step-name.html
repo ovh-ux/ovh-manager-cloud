@@ -7,7 +7,7 @@
 
     <div class="container" data-ng-if="loaders.post">
         <div class="text-center">
-            <oui-loader size="m" class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
     </div>
     <div class="container" data-ng-if="!loaders.post">
@@ -15,7 +15,7 @@
             <div class="row step_panel storage-name-form" data-ng-show="steps.name.enable">
 
                 <input  type="text" pattern="^[^\/]*$"
-                        maxlength="256" 
+                        maxlength="256"
                         class="col-xs-12 form-control oui-input"
                         required="true"
                         data-ng-disabled="!steps.name.enable"
