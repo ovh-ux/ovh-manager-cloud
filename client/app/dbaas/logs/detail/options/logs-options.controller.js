@@ -1,8 +1,8 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsOptionsService, CurrencyService) {
+    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService) {
         this.$stateParams = $stateParams;
+        this.$window = $window;
         this.ControllerHelper = ControllerHelper;
-        this.CloudMessage = CloudMessage;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
 
@@ -12,18 +12,8 @@ class LogsOptionsCtrl {
     }
 
     $onInit () {
-        this._loadMessages();
         this.options.load();
         this.currentOptions.load();
-    }
-
-    /**
-     * refreshes the messages
-     *
-     * @memberof LogsOptionsCtrl
-     */
-    refreshMessage () {
-        this.messages = this.messageHandler.getMessages();
     }
 
     /**
@@ -41,26 +31,13 @@ class LogsOptionsCtrl {
     }
 
     /**
-     * loads the messages for the current state
-     *
-     * @memberof LogsOptionsCtrl
-     */
-    _loadMessages () {
-        const stateName = "dbaas.logs.detail.options";
-        this.CloudMessage.unSubscribe(stateName);
-        this.messageHandler = this.CloudMessage.subscribe(stateName, {
-            onMessage: () => this.refreshMessage()
-        });
-    }
-
-    /**
      * returns the total price for all the selected options
      *
      * @returns the total price
      * @memberof LogsOptionsCtrl
      */
     getTotalPrice () {
-        return this.LogsOptionsService.getTotalPrice(this.options.data);
+        return _.reduce(this.options.data, (total, option) => total + option.quantity * option.price, 0).toFixed(2);
     }
 
     /**
@@ -89,7 +66,7 @@ class LogsOptionsCtrl {
      * @memberof LogsOptionsCtrl
      */
     cancel () {
-        history.back();
+        this.$window.history.back();
     }
 
     /**
@@ -98,7 +75,7 @@ class LogsOptionsCtrl {
      * @memberof LogsOptionsCtrl
      */
     order () {
-        window.open(this.LogsOptionsService.getOrderURL(this.options.data, this.serviceName));
+        this.$window.open(this.LogsOptionsService.getOrderURL(this.options.data, this.serviceName));
     }
 }
 

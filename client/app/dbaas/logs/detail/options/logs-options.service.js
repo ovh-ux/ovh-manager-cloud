@@ -1,10 +1,26 @@
 class LogsOptionsService {
-    constructor ($translate, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogOptionConstant) {
+    constructor ($translate, $window, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogOptionConstant) {
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
         this.ServiceHelper = ServiceHelper;
         this.$translate = $translate;
+        this.$window = $window;
         this.OvhApiDbaasLogs = OvhApiDbaasLogs;
         this.LogOptionConstant = LogOptionConstant;
+    }
+
+    /**
+     * returns the transformed option. Meant to be used for the available options
+     *
+     * @param {any} option
+     * @returns the transformed option
+     * @memberof LogsOptionsService
+     */
+    transformOption (option) {
+        option.quantity = 0;
+        option.price = option.prices[0].price.value;
+        option.priceText = option.prices[0].price.text;
+        option.type = this.$translate.instant(`${option.planCode}-type`);
+        option.detail = this.$translate.instant(`${option.planCode}-detail`);
     }
 
     /**
@@ -15,32 +31,33 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOptions (serviceName) {
+        const transformOption = this.transformOption.bind(this);
         return this.OvhApiOrderCartServiceOption.Lexi().get({
-            productName: "logs",
+            productName: this.LogOptionConstant.productName,
             serviceName
         }).$promise
             .then(response => {
-                _.map(response, option => {
-                    option.quantity = 0;
-                    option.price = option.prices[0].price.value;
-                    option.priceText = option.prices[0].price.text;
-                    option.type = this.$translate.instant(`${option.planCode}-type`);
-                    option.detail = this.$translate.instant(`${option.planCode}-detail`);
-                });
+                _.map(response, option => transformOption(option));
                 return response;
             })
             .catch(this.ServiceHelper.errorHandler("logs_options_options_loading_error"));
     }
 
     /**
-     * returns the total price according to the quantity selected for each option
+     * returns the transformed option, which has the count for each of the options.
+     * Meant to be used for the subscribed options
      *
-     * @param {any} options
-     * @returns the total price of the selected options
+     * @param {any} option
+     * @param {any} optionsCountMap
+     * @returns the transformed option
      * @memberof LogsOptionsService
      */
-    getTotalPrice (options) {
-        return _.reduce(options, (total, option) => total + option.quantity * option.price, 0).toFixed(2);
+    transformSubscribedOption (option, optionsCountMap) {
+        const optionConfig = {};
+        optionConfig.type = this.$translate.instant(`${option}-type`);
+        optionConfig.detail = this.$translate.instant(`${option}-detail`);
+        optionConfig.quantity = optionsCountMap[option];
+        return optionConfig;
     }
 
     /**
@@ -51,7 +68,7 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getSubscribedOptions (serviceName) {
-        const self = this;
+        const transformSubscribedOption = this.transformSubscribedOption.bind(this);
         return this.OvhApiDbaasLogs.Accounting().Aapi().me({
             serviceName
         }).$promise
@@ -61,13 +78,7 @@ class LogsOptionsService {
                     return optionsMap;
                 }, {});
 
-                return _.map(_.keys(optionsCountMap), option => {
-                    const optionConfig = {};
-                    optionConfig.type = self.$translate.instant(`${option}-type`);
-                    optionConfig.detail = self.$translate.instant(`${option}-detail`);
-                    optionConfig.quantity = optionsCountMap[option];
-                    return optionConfig;
-                });
+                return _.map(_.keys(optionsCountMap), option => transformSubscribedOption(option, optionsCountMap));
             })
             .catch(this.ServiceHelper.errorHandler("logs_options_current_options_loading_error"));
     }
@@ -84,6 +95,21 @@ class LogsOptionsService {
     }
 
     /**
+     * returns the transformed option. Meant to be used to construct the order URL
+     *
+     * @param {any} option
+     * @returns the transformed option
+     * @memberof LogsOptionsService
+     */
+    transformOptionForOrder (option, serviceName) {
+        return {
+            planCode: option.planCode,
+            quantity: option.quantity,
+            serviceName,
+            productId: this.LogOptionConstant.productName
+        };
+    }
+    /**
      * returns the order url that can be used to order the options
      *
      * @param {any} serviceName
@@ -91,23 +117,19 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOrderURL (options, serviceName) {
+        const transformOptionForOrder = this.transformOptionForOrder.bind(this);
         const products = this.getOptionsToOrder(options)
-            .map(option => ({
-                planCode: option.planCode,
-                quantity: option.quantity,
-                serviceName,
-                productId: "logs"
-            }));
+            .map(option => transformOptionForOrder(option, serviceName));
 
         let orderBaseUrl;
-        if (window.location.host === this.LogOptionConstant.USHost) {
+        if (this.$window.location.host === this.LogOptionConstant.USHost) {
             orderBaseUrl = this.LogOptionConstant.orderBaseURL.US;
         }
         orderBaseUrl = orderBaseUrl || this.LogOptionConstant.orderBaseURL.restOfWorld;
 
         return "{orderBaseUrl}?products={products}"
             .replace("{orderBaseUrl}", orderBaseUrl)
-            .replace("{products}", window.JSURL.stringify(products));
+            .replace("{products}", JSURL.stringify(products));
     }
 }
 

@@ -1,8 +1,4 @@
-.log-options {
-    .current-options-box {
-        margin-bottom: 4rem;
-    }
-    
+.log-options {    
     .log_options_back_button {
         button {
             padding-top: 1.2rem;
@@ -33,5 +29,15 @@
         .oui-input-group {
             margin: 0rem;
         }
+    }
+
+    // ToDo: Remove once the components supports hiding the paging information
+    oui-pagination {
+        display: none;
+    }
+
+    .oui-datagrid th:nth-child(4), .oui-datagrid td:nth-child(4) {
+        text-align: right;
+        padding-right: 0rem;
     }
 }
