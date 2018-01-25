@@ -37,7 +37,7 @@ class LogsOptionsService {
             serviceName
         }).$promise
             .then(response => {
-                _.map(response, option => transformOption(option));
+                _.each(response, option => transformOption(option));
                 return response;
             })
             .catch(this.ServiceHelper.errorHandler("logs_options_options_loading_error"));
@@ -110,26 +110,17 @@ class LogsOptionsService {
         };
     }
     /**
-     * returns the order url that can be used to order the options
+     * returns the options configuration using which the order url can be constructed
      *
+     * @param {any} options
      * @param {any} serviceName
-     * @returns the order url. This url has the selected options as arguments
+     * @returns returns the options configuration to be used to construct the order url
      * @memberof LogsOptionsService
      */
-    getOrderURL (options, serviceName) {
+    getOrderConfiguration (options, serviceName) {
         const transformOptionForOrder = this.transformOptionForOrder.bind(this);
-        const products = this.getOptionsToOrder(options)
-            .map(option => transformOptionForOrder(option, serviceName));
-
-        let orderBaseUrl;
-        if (this.$window.location.host === this.LogOptionConstant.USHost) {
-            orderBaseUrl = this.LogOptionConstant.orderBaseURL.US;
-        }
-        orderBaseUrl = orderBaseUrl || this.LogOptionConstant.orderBaseURL.restOfWorld;
-
-        return "{orderBaseUrl}?products={products}"
-            .replace("{orderBaseUrl}", orderBaseUrl)
-            .replace("{products}", JSURL.stringify(products));
+        const optionsToOrder = this.getOptionsToOrder(options);
+        return _.map(optionsToOrder, option => transformOptionForOrder(option, serviceName));
     }
 }
 
