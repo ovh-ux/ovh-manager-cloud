@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_options_options_loading_error">Erreur lors du chargement des options</translation>
-    <translation id="logs_options_current_options_loading_error">Erreur lors du chargement des options actuelles</translation>
+    <translation id="logs_options_options_loading_error">Erreur lors du chargement des options: {{message}}</translation>
+    <translation id="logs_options_current_options_loading_error">Erreur lors du chargement des options actuelles: {{message}}</translation>
 
     <translation id="log_options_title">Ajouter des options</translation>
     <translation id="log_options_current_title">Vous disposez actuellement des options suivantes:</translation>

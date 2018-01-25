@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_options_options_loading_error">Error loading options</translation>
-    <translation id="logs_options_current_options_loading_error">Error loading current options</translation>
+    <translation id="logs_options_options_loading_error">Error loading options: {{message}}</translation>
+    <translation id="logs_options_current_options_loading_error">Error loading current options: {{message}}</translation>
 
     <translation id="log_options_title">Add Options</translation>
     <translation id="log_options_current_title">You are currently subscribed to the following options:</translation>
