@@ -1,27 +1,25 @@
 <div class="cui-page">
     <cui-page-header
         data-title-text="'nasha_order_title' | translate">
-        <p data-translate="nasha_order_warning"
-            data-ng-if="!NashaAddCtrl.data.completedOrder"></p>
     </cui-page-header>
 
     <!-- init loading... -->
-    <cui-message-container data-ng-if="!NashaAddCtrl.loaders.init" data-messages="NashaAddCtrl.messages"></cui-message-container>
+    <cui-message-container data-ng-if="!NashaAddCtrl.isLoadingOfferData()" data-messages="NashaAddCtrl.messages"></cui-message-container>
 
     <div class="cui-page__content">
-        <div class="text-center" data-ng-if="NashaAddCtrl.loaders.init">
+        <div class="text-center" data-ng-if="NashaAddCtrl.isLoadingOfferData()">
             <oui-spinner size="l"></oui-spinner>
         </div>
 
-        <div data-ng-if="!NashaAddCtrl.loaders.init">
+        <div data-ng-if="!NashaAddCtrl.isLoadingOfferData()">
             <!--Step One-->
-            <div data-ng-if="!NashaAddCtrl.data.completedOrder">
+            <div>
                 <h2 class="oui-header_2" data-translate="nasha_order_step_1_configure"></h3>
             </div>
 
-            <div data-ng-if="!NashaAddCtrl.data.completedOrder">
+            <div>
                 <form name="nashaOrderForm"
-                    data-ng-submit="NashaAddCtrl.validateOrder()" novalidate>
+                    data-ng-submit="NashaAddCtrl.order()" novalidate>
 
                     <div class="oui-field">
                         <label class="oui-field__label oui-label"
@@ -34,8 +32,7 @@
                                         name="select"
                                         class="oui-select__input"
                                         data-ng-model="NashaAddCtrl.data.selectedDatacenter"
-                                        data-ng-change="NashaAddCtrl.onDataCenterSelectionChanged()"
-                                        data-ng-options="datacenter as ('nasha_order_datacenter_' + datacenter | translate) for datacenter in NashaAddCtrl.enums.datacenters">
+                                        data-ng-options="datacenter as ('nasha_order_datacenter_' + datacenter | translate) for datacenter in NashaAddCtrl.datacenters.data">
                                         <option value="" data-translate="nasha_order_select_placeholder"></option>
                                     </select>
                                     <i class="oui-icon oui-icon-chevron-down"
@@ -56,18 +53,12 @@
                                         name="select"
                                         class="oui-select__input"
                                         data-ng-model="NashaAddCtrl.data.selectedModel"
-                                        data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.models || !NashaAddCtrl.enums.models.length"
-                                        data-ng-change="NashaAddCtrl.onModelSelectionChanged()"
-                                        data-ng-options="model as ('nasha_order_nasha_' + model | translate) + ' - ' + NashaAddCtrl.data.modelsPriceInfo[model].price.text + '/' + ('nas_order_month' | translate) for model in NashaAddCtrl.enums.models">
+                                        data-ng-options="offer.planCode as offer.productName + ' - ' + offer.prices[0].price.text + '/' + ('nas_order_month' | translate) for offer in NashaAddCtrl.offers.data | orderBy: 'prices[0].priceInUcents'">
                                         <option value="" data-translate="nasha_order_select_placeholder"></option>
                                     </select>
                                     <i class="oui-icon oui-icon-chevron-down"
                                         aria-hidden="true"></i>
                                 </label>
-                            </div>
-                            <div class="oui-field-helper"
-                                data-ng-if="NashaAddCtrl.loaders.models">
-                                <oui-spinner size="s"></oui-spinner>
                             </div>
                         </div>
                     </div>
@@ -83,88 +74,26 @@
                                         name="select"
                                         class="oui-select__input"
                                         data-ng-model="NashaAddCtrl.data.selectedDuration"
-                                        data-ng-disabled="!NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDatacenter || NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models"
-                                        data-ng-change="NashaAddCtrl.data.orderValidated = false"
-                                        data-ng-options="duration as duration + ' ' + ('nas_order_month' | translate) for duration in NashaAddCtrl.enums.availableDurationsForSelection">
+                                        data-ng-options="duration.value as duration.text for duration in NashaAddCtrl.durations.data | orderBy : 'value'">
                                         <option value="" data-translate="nasha_order_select_placeholder"></option>
                                     </select>
                                     <i class="oui-icon oui-icon-chevron-down"
                                         aria-hidden="true"></i>
                                 </label>
                             </div>
-                            <div class="oui-field-helper"
-                                data-ng-if="NashaAddCtrl.loaders.durations || NashaAddCtrl.loaders.models">
-                                <oui-spinner size="s"></oui-spinner>
-                            </div>
                         </div>
                     </div>
 
                     <div>
                         <button type="submit"
-                                data-ng-show="!NashaAddCtrl.loaders.loading"
+                                data-ng-show="!NashaAddCtrl.isLoadingOfferData()"
                                 class="oui-button oui-button_primary"
-                                data-ng-class="{'validate-btn': NashaAddCtrl.data.orderValidated}"
                                 data-translate="common_validate"
                                 data-ng-disabled="!NashaAddCtrl.data.selectedDatacenter || !NashaAddCtrl.data.selectedModel || !NashaAddCtrl.data.selectedDuration || NashaAddCtrl.data.orderValidated">
                         </button>
-                        <oui-spinner size="s" inline data-ng-show="NashaAddCtrl.loaders.loading"></oui-spinner>
+                        <oui-spinner data-ng-show="NashaAddCtrl.isLoadingOfferData()" size="s"></oui-spinner>
                     </div>
                 </form>
-            </div>
-
-            <!--Step two-->
-            <div data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
-                <h2 class="oui-header_2" data-translate="nasha_order_step_2_order"></h3>
-            </div>
-
-            <div data-ng-if="NashaAddCtrl.data.orderValidated && !NashaAddCtrl.data.completedOrder">
-                <div class="oui-list mb-2">
-                    <ul class="oui-list__items">
-                        <li class="oui-list__item"
-                            data-ng-repeat="detail in NashaAddCtrl.data.order.details track by detail.description">
-                            {{detail.description + " : "}} <strong> {{detail.totalPrice.text}} </strong>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="oui-list mb-4">
-                    <ul class="oui-list__items">
-                        <li class="oui-list__item"
-                            data-translate="nasha_order_bc_price_HT"
-                            data-translate-values="{priceHT:NashaAddCtrl.data.order.prices.withoutTax.text}"></li>
-                        <li class="oui-list__item"
-                            data-translate="nasha_order_bc_price_TTC"
-                            data-translate-values="{priceTTC:NashaAddCtrl.data.order.prices.withTax.text}"></li>
-                    </ul>
-                </div>
-
-                <div class="mb-1" data-ng-if="NashaAddCtrl.data.order.contracts">
-                    <oui-checkbox
-                        text="{{ 'nasha_order_accept_contract' | translate }}"
-                        id="validateContract"
-                        name="validateContract"
-                        model="NashaAddCtrl.contractAgree">
-                    </oui-checkbox>
-                </div>
-
-                <div class="oui-list mb-4 pl-4">
-                    <ul class="oui-list__items">
-                        <li class="oui-list__item"
-                            data-ng-repeat="contract in NashaAddCtrl.data.order.contracts track by contract.name">
-                            <a target="_blank" class="nasha__link contract-link" data-ng-href="{{contract.url}}">
-                                {{contract.name}}&nbsp;<i class="contract-link-icon ovh-font ovh-font-newtab left-space-m8"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-
-                <button type="button"
-                        class="oui-button oui-button_primary"
-                        data-translate="nasha_order_generate_order"
-                        data-ng-disabled="!NashaAddCtrl.contractAgree || NashaAddCtrl.loaders.loading"
-                        data-ng-click="NashaAddCtrl.completeOrder()">
-                </button>
             </div>
         </div>
     </div>
