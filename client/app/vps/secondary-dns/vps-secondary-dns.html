@@ -1,7 +1,7 @@
 <section class="cui-page__content">
     <div data-ng-if="$ctrl.loaders.init"
          class="text-center">
-        <oui-loader size="l" class="d-inline-block"></oui-loader>
+        <oui-spinner data-size="l"></oui-spinner>
     </div>
 
     <div data-ng-if="!$ctrl.loaders.init">
@@ -9,24 +9,18 @@
                 class="oui-button oui-button_secondary"
                 data-translate="vps_configuration_secondarydns_add_title_button"
                 data-ng-click="$ctrl.add()"></button>
-        <oui-table data-ng-show="!$ctrl.loaders.init"
-                   data-rows="$ctrl.secondaryDns.list.results">
-            <column title="'vps_tab_SECONDARY_DNS_table_domain' | translate" property="domain" sortable>
-                <span data-ng-bind="$row.domain"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_ip' | translate" property="ipMaster" sortable>
-                <span data-ng-bind="$row.ipMaster"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_date' | translate" property="creationDate" sortable>
+        <oui-datagrid data-ng-show="!$ctrl.loaders.init"
+                      data-rows="$ctrl.secondaryDns.list.results">
+            <oui-column data-title="'vps_tab_SECONDARY_DNS_table_domain' | translate" data-property="domain" data-sortable></oui-column>
+            <oui-column data-title="'vps_tab_SECONDARY_DNS_table_ip' | translate" data-property="ipMaster" data-sortable></oui-column>
+            <oui-column data-title="'vps_tab_SECONDARY_DNS_table_date' | translate" data-property="creationDate" data-sortable>
                 <span data-ng-bind="$row.creationDate | momentFormat:'LL'"></span>
-            </column>
-            <column title="'vps_tab_SECONDARY_DNS_table_dns' | translate" property="dns" sortable>
-                <span data-ng-bind="$row.dns"></span>
-            </column>
-            <column title="'common_actions' | translate"
-                    class="oui-table__cell_action oui-table__cell_action-menu"
-                    template="$ctrl.actionTemplate()">
-            </column>
-        </oui-table>
+            </oui-column>
+            <oui-column data-title="'vps_tab_SECONDARY_DNS_table_dns' | translate" data-property="dns" data-sortable></oui-column>
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item data-text="{{'common_delete' | translate}}"
+                                      data-on-click="$ctrl.deleteOne($row)"></oui-action-menu-item>
+            </oui-action-menu>
+        </oui-datagrid>
     </div>
 </section>

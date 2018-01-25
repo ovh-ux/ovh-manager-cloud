@@ -114,7 +114,7 @@ class VpsReinstallCtrl {
         this.loaders.save = true;
         const softIds = [];
 
-        if(this.template.database){
+        if(this.template.database) {
             softIds.push($scope.selectedTemplate.database.id);
         }
         if(this.template.webserver) {

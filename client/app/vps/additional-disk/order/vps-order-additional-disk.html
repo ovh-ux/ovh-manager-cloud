@@ -13,7 +13,7 @@
                                  data-step-loaded="!$ctrl.loaders.capacity"
                                  data-step-completed="$ctrl.model.capacity">
                     <div class="text-center" data-ng-if="$ctrl.loaders.capacity">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <div data-ng-if="!$ctrl.loaders.capacity">
                         <p data-translate="vps_order_additional_disk_select_capacity"></p>
@@ -38,7 +38,7 @@
                                  data-step-loaded="!$ctrl.loaders.offer"
                                  data-step-completed="!$ctrl.loaders.offer">
                     <div class="text-center" data-ng-if="$ctrl.loaders.offer || $ctrl.loaders.order">
-                        <oui-loader class="d-inline-block" size="m"></oui-loader>
+                        <oui-spinner></oui-spinner>
                     </div>
                     <div data-ng-if="!$ctrl.loaders.offer && !$ctrl.loaders.order">
                         <p data-translate="vps_order_additional_disk_step2"></p>

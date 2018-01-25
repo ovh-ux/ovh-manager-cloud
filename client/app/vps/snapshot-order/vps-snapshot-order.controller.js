@@ -16,7 +16,7 @@ class VpsOrderSnapshotCtrl {
             vps: null,
             optionDetails: null,
             url: null,
-            contractsValidated: null
+            contractsValidated: false
         };
     }
 

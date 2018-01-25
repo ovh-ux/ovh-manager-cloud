@@ -1,5 +1,6 @@
 class VpsVeeamCtrl {
-    constructor ($stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+    constructor ($scope, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+        this.$scope = $scope;
         this.serviceName = $stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -11,6 +12,7 @@ class VpsVeeamCtrl {
         this.loaders = {
             init: false,
             checkOrder: false,
+            polling: false,
             veeamTab: false
         };
 
@@ -33,14 +35,29 @@ class VpsVeeamCtrl {
         });
     }
 
-    $onInit () {
-        this.initLoaders();
+    load () {
         this.veeam.load().then(() => {
             if (this.veeam.data.state !== "disabled") {
                 this.veeamTab.load();
                 this.loadRestorePoint();
             } else {
                 this.vps.load();
+            }
+        });
+    }
+
+    $onInit () {
+        this.initLoaders();
+        this.load();
+        this.$scope.$on("tasks.pending", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = true;
+            }
+        });
+        this.$scope.$on("tasks.success", (event, opt) => {
+            if (opt === this.serviceName) {
+                this.loaders.polling = false;
+                this.load();
             }
         });
     }
@@ -67,40 +84,6 @@ class VpsVeeamCtrl {
 
     unmount (restorePoint) {
         this.VpsActionService.unmount(this.serviceName, restorePoint);
-    }
-
-    dateTemplate () {
-        return `<span data-ng-bind="$row | momentFormat:'LLL'"></span>`;
-    }
-
-    actionTemplate () {
-        return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                            </div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-translate="vps_tab_VEEAM_dashboard_table_header_restore"
-                                data-ng-click="$ctrl.restore($row)"></button>
-                        </div>
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon">
-                            </div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-translate="vps_tab_VEEAM_dashboard_table_header_mount"
-                                data-ng-click="$ctrl.mount($row)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>
-        `;
     }
 
 }

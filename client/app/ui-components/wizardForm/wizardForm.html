@@ -1,8 +1,7 @@
 <form>
     <h1 class="oui-header_1 oui-header_underline"
         data-ng-bind-html="$ctrl.formTitle"></h1>
-    <oui-loader size="m"
-                data-ng-if="!$ctrl.formLoadedCondition"></oui-loader>
+    <oui-spinner data-ng-if="!$ctrl.formLoadedCondition"></oui-spinner>
     <div class="oui-list_steps oui-list_separated mt-5"
          data-ng-if="$ctrl.formLoadedCondition">
         <ol class="oui-list__items"

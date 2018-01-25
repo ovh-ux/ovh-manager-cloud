@@ -2,7 +2,7 @@
     <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
     <cui-modal-body data-title="'vps_configuration_reversedns_title' | translate">
         <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-loader class="d-inline-block"></oui-loader>
+            <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
             <label class="oui-label" data-translate="vps_configuration_reversedns_step1_question"></label>
