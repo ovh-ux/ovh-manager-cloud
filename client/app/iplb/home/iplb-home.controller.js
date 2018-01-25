@@ -2,7 +2,7 @@ class IpLoadBalancerHomeCtrl {
     constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
-                 IpLoadBalancerZoneAddService, REDIRECT_URLS) {
+                 IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService, REDIRECT_URLS) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -15,6 +15,7 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerHomeStatusService = IpLoadBalancerHomeStatusService;
         this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
         this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
+        this.IpLoadBalancerZoneDeleteService = IpLoadBalancerZoneDeleteService;
         this.REDIRECT_URLS = REDIRECT_URLS;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -31,6 +32,7 @@ class IpLoadBalancerHomeCtrl {
         this.usage.load();
 
         this.orderableZones.load();
+        this.deletableZones.load();
 
         this.initActions();
         this.initGraph();
@@ -77,6 +79,10 @@ class IpLoadBalancerHomeCtrl {
 
         this.orderableZones = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName)
+        });
+
+        this.deletableZones = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerZoneDeleteService.getDeletableZones(this.serviceName)
         });
     }
 
@@ -129,7 +135,7 @@ class IpLoadBalancerHomeCtrl {
             deleteZone: {
                 text: this.$translate.instant("common_delete"),
                 callback: () => this.$state.go("network.iplb.detail.zone.delete", { serviceName: this.serviceName }),
-                isAvailable: () => true
+                isAvailable: () => !this.deletableZones.loading && _.filter(this.deletableZones.data, zone => zone.selectable.value !== false).length - 1 >= 1
             }
         };
     }
