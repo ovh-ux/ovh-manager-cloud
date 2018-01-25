@@ -102,7 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Upgrader mon vps</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Localisation</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS / Distribution</translation>
-   <translation id="vps_dashboard_ips_additional">Voir les IPs additionnelles</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">Voir les IPs additionnelles</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Non disponible</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Voir le guide</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
