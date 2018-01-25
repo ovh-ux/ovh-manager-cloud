@@ -1,0 +1,23 @@
+<cui-page-header data-title-text="$ctrl.description || $ctrl.serviceName"
+                 data-subtitle-text="$ctrl.serviceName">
+    <cui-tabs data-ng-if="!$ctrl.vps.isExpired">
+        <cui-tab data-text="'vps_tab_dashboard' | translate"
+                 data-state="iaas.vps.detail.dashboard"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'vps_tab_secondary_dns' | translate"
+                 data-state="iaas.vps.detail.secondary-dns"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'vps_tab_backup_storage' | translate"
+                 data-state="iaas.vps.detail.backup-storage"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'vps_tab_veeam' | translate"
+                 data-state="iaas.vps.detail.veeam"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'vps_tab_additional_disk' | translate"
+                 data-state="iaas.vps.detail.additional-disk"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'vps_configuration_monitoring_title' | translate"
+                 data-state="iaas.vps.detail.monitoring"
+                 data-state-params="{ serviceName: $ctrl.serviceName }"></cui-tab>
+    </cui-tabs>
+</cui-page-header>
