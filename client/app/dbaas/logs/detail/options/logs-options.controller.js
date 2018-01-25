@@ -1,10 +1,11 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService) {
+    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService, OrderHelperService) {
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
+        this.OrderHelperService = OrderHelperService;
 
         this.serviceName = this.$stateParams.serviceName;
         this.messages = {};
@@ -70,12 +71,14 @@ class LogsOptionsCtrl {
     }
 
     /**
-     * opens the order page in a new window for the selected options
+     * opens the order page for the selected options
      *
      * @memberof LogsOptionsCtrl
      */
     order () {
-        this.$window.open(this.LogsOptionsService.getOrderURL(this.options.data, this.serviceName));
+        this.OrderHelperService.openExpressOrderUrl(
+            this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName)
+        );
     }
 }
 
