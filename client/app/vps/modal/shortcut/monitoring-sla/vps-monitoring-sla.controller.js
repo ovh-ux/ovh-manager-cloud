@@ -1,9 +1,10 @@
 class VpsMonitoringSlaCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, state, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, preview, serviceName, state, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.serviceName = serviceName;
+        this.preview = preview;
         this.state = state;
         this.VpsService = VpsService;
 
@@ -20,6 +21,9 @@ class VpsMonitoringSlaCtrl {
         this.loader.init = true;
         if (this.currentState) {
             this.title = this.$translate.instant("vps_configuration_sla_title_disable");
+        }
+        if (this.preview) {
+            this.title = this.$translate.instant("vps_dashboard_monitoring_sla_ips");
         }
         this.VpsService.getSelectedVps(this.serviceName)
             .then(vps => { this.vps = vps })

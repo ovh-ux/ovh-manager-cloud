@@ -3,7 +3,7 @@ class VpsActionService {
         this.ControllerHelper = ControllerHelper;
     }
 
-    password (serviceName) {
+    rescue (serviceName) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/password/vps-password.html",
@@ -56,7 +56,7 @@ class VpsActionService {
         });
     }
 
-    monitoringSla (serviceName, state) {
+    monitoringSla (serviceName, state, preview) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/monitoring-sla/vps-monitoring-sla.html",
@@ -64,7 +64,21 @@ class VpsActionService {
                 controllerAs: "$ctrl",
                 resolve: {
                     serviceName: () => serviceName,
+                    preview: () => preview || false,
                     state: () => state
+                }
+            }
+        });
+    }
+
+    displayIps (serviceName) {
+        return this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/vps/modal/shortcut/display-ips/vps-display-ips.html",
+                controller: "VpsDisplayIpsCtrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    serviceName: () => serviceName
                 }
             }
         });
