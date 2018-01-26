@@ -1,5 +1,5 @@
 <div class="cui-page__content log-options">
-    <oui-back-button class="log_options_back_button"></oui-back-button>
+    <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="log_options_title"></span>    
     <h6 class="oui-header_6" data-translate="log_options_current_title"></h6>
     
@@ -21,13 +21,13 @@
     <p class="oui-paragraph" data-translate="log_options_intro_text"></p>
 
     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
-    <oui-datagrid data-ng-hide="ctrl.options.loading" rows="ctrl.options.data" page-size="15">
+    <oui-datagrid data-ng-hide="ctrl.options.loading" rows="ctrl.options.data" page-size="15" class="datagrid-without-pagination">
         <oui-column title="'log_options_type' | translate" property="type" sortable="asc"></oui-column>
         <oui-column title="'log_options_details' | translate" property="detail" sortable></oui-column>
         <oui-column title="'log_options_add' | translate" property="quantity">
             <oui-numeric
                 data-ng-attr-id="{{ $row.planCode }}"
-                class="log-quantity"
+                class="numeric_without_bottom_margin"
                 model="$row.quantity"
                 min="0">
             </oui-numeric>
