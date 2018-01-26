@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - npm install -g grunt bower
+install:
+  - make install
+script:
+  - make test
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/bower
+notifications:
+  webhooks:
+    urls:
+      - https://discordapp.com/api/webhooks/406259303289454592/mXSF4QxzMaKMB2kVd_RUAKo-dLDam9DxzQ1GBbW2fpWE891XYogK4asw_Q43PScVS8Y_
