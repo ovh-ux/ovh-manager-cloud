@@ -6,7 +6,6 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
         this.OvhApiCloudProjectRegion = OvhApiCloudProjectRegion;
         this.CloudMessage = CloudMessage;
         this.ServiceHelper = ServiceHelper;
-
         this.ws = null;
     }
 
@@ -71,18 +70,18 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
             if (this.success) {
                 return;
             }
-            if (!this.retry) {
+            if (!this.retry && moment(this.session.expires).isAfter()) {
                 this.retry = true;
                 this.initWebSocket(session, term);
                 return;
             }
-            defer.reject();
             this.ServiceHelper.errorHandler("cpci_openstack_client_session_closed")({data : "Expired Session"});
+            defer.reject();
         };
 
         this.ws.onerror = err => {
-            defer.reject(err);
             this.ServiceHelper.errorHandler("cpci_openstack_client_session_error")(err);
+            defer.reject(err);
         }
 
         return defer.promise;
