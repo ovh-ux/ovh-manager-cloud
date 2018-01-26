@@ -29,6 +29,7 @@ class VpsVeeamCtrl {
         });
         this.veeamTab = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getTabVeeam(this.serviceName, "available", true)
+                .then(data => data.map(id => ({id: id})))
         });
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName)

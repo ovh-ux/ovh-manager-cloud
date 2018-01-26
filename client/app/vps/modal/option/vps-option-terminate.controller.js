@@ -39,7 +39,7 @@ class VpsOptionTerminateCtrl {
         this.loader.save = true;
         this.VpsService.cancelOption(this.serviceName, this.vpsOption)
             .then(() => this.CloudMessage.success(this.$translate.instant("vps_configuration_cancel_option_cancel_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
+            .catch(err => this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
             .finally(() => {
                 this.loader.save = false;
                 this.$uibModalInstance.close();
