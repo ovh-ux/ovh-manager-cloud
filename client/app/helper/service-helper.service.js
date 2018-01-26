@@ -10,29 +10,29 @@
         }
 
 
-        errorHandler (message) {
+        errorHandler (message, containerName) {
             return err => {
                 if (message) {
-                    this.CloudMessage.error(this.$translate.instant(message, err.data));
+                    this.CloudMessage.error(this.$translate.instant(message, err.data), containerName);
                 } else if (err.message) {
-                    this.CloudMessage.error(err.message);
+                    this.CloudMessage.error(err.message, containerName);
                 } else {
                     // Default error message
-                    this.CloudMessage.error(this.$translate.instant(defaultErrorMessage));
+                    this.CloudMessage.error(this.$translate.instant(defaultErrorMessage), containerName);
                 }
 
                 return this.$q.reject(err);
             };
         }
 
-        successHandler (message) {
+        successHandler (message, containerName) {
             return data => {
                 if (message) {
                     const jsonData = data && data.toJSON ? data.toJSON() : {};
-                    this.CloudMessage.success(this.$translate.instant(message, jsonData));
+                    this.CloudMessage.success(this.$translate.instant(message, jsonData), containerName);
                 } else {
                     // Default success message
-                    this.CloudMessage.success(this.$translate.instant(defaultSuccessMessage));
+                    this.CloudMessage.success(this.$translate.instant(defaultSuccessMessage), containerName);
                 }
 
                 return data;
