@@ -1,17 +1,13 @@
 class LogsStreamsHomeCtrl {
-    constructor ($state, $stateParams, LogsStreamsService, ControllerHelper) {
+    constructor ($state, $stateParams, LogsStreamsService, ControllerHelper, CloudMessage) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.LogsStreamsService = LogsStreamsService;
         this.ControllerHelper = ControllerHelper;
+        this.CloudMessage = CloudMessage;
 
         this.initLoaders();
-    }
-
-    $onInit () {
-        this.quota.load();
-        this.streams.load();
     }
 
     /**
@@ -26,6 +22,18 @@ class LogsStreamsHomeCtrl {
         this.streams = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName)
         });
+        this.quota.load();
+        this.streams.load();
+    }
+
+    /**
+     * create stream
+     *
+     * @memberof LogsStreamsHomeCtrl
+     */
+    create () {
+        this.LogsStreamsService.createStream(this.serviceName)
+            .then(() => this.initLoaders());
     }
 
     /**
@@ -39,6 +47,22 @@ class LogsStreamsHomeCtrl {
             serviceName: this.serviceName,
             streamId: stream.streamId
         });
+    }
+
+    /**
+     * delete stream
+     *
+     * @param {any} stream to delete
+     * @memberof LogsStreamsHomeCtrl
+     */
+    delete (stream) {
+        this.CloudMessage.flushChildMessage();
+        this.delete = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () =>
+                this.LogsStreamsService.deleteStream(this.serviceName, stream)
+                    .then(() => this.initLoaders())
+        });
+        this.delete.load();
     }
 }
 

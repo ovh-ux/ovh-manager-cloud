@@ -28,7 +28,7 @@ angular.module("managerApp").config($stateProvider => {
             "abstract": true,
             views: {
                 logsStreams: {
-                    template: '<div ui-view="logsStreamsDetail"></div>',
+                    template: '<div ui-view="logsStreamsDetail"></div>'
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
@@ -75,6 +75,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams"]
+            translations: ["common", "dbaas/logs"]
         });
 });
