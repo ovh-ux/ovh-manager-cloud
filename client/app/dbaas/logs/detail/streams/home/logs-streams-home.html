@@ -4,20 +4,25 @@
     <p data-translate="logs_streams_description"></p>
 
     <p>{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="logs_streams_total_used"></span>
-        (<a class="oui-button-link" ui-sref="dbaas.logs.detail.options" data-translate="logs_streams_increase_quota"></a>)
+        (<button role="link" class="oui-link oui-button-link"
+            ui-sref="dbaas.logs.detail.options"
+            data-translate="logs_streams_increase_quota"
+            data-ng-disabled="ctrl.delete.loading">
+        </button>)
     </p>
 
-    <a class="oui-button oui-button_secondary"
-        data-ui-sref="dbaas.logs.detail.streams.add">
+    <button type="button" class="oui-button oui-button_secondary"
+        data-ui-sref="dbaas.logs.detail.streams.add"
+        data-ng-disabled="ctrl.delete.loading">
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_streams_add_data_feed' | translate }}
-    </a>
+    </button>
 
-    <oui-spinner data-ng-show="ctrl.quota.loading && ctrl.streams.loading"></oui-spinner>
-    <oui-datagrid data-ng-hide="ctrl.quota.loading && ctrl.streams.loading"
+    <oui-spinner data-ng-show="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"></oui-spinner>
+    <oui-datagrid data-ng-hide="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"
         rows="ctrl.streams.data">
         <oui-column title="'logs_streams_col_title' | translate" property="title" sortable="asc"></oui-column>
         <oui-column title="'logs_streams_col_description' | translate" property="description" sortable></oui-column>
-        <oui-column title="'logs_streams_col_creation_date' | translate" property="createdAt" sortable>
+        <oui-column title="'logs_streams_col_creation_date' | translate" property="createdAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title="'logs_streams_col_archives' | translate" property="coldStorageRetention" sortable></oui-column>
@@ -31,6 +36,7 @@
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.delete($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>

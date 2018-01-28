@@ -1,10 +1,55 @@
 class LogsStreamsService {
-    constructor ($q, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, OvhApiDbaas, ServiceHelper, CloudPoll, $translate) {
         this.$q = $q;
         this.ServiceHelper = ServiceHelper;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.CloudPoll = CloudPoll;
+        this.$translate = $translate;
+
+        this.initializeData();
+    }
+
+    initializeData () {
+        this.compressionAlgorithms = [
+            {
+                value: "GZIP",
+                name: this.$translate.instant("logs_stream_compression_gzip")
+            },
+            {
+                value: "DEFLATED",
+                name: this.$translate.instant("logs_stream_compression_zip")
+            },
+            {
+                value: "LZMA",
+                name: this.$translate.instant("logs_stream_compression_lzma")
+            },
+            {
+                value: "ZSTD",
+                name: this.$translate.instant("logs_stream_compression_zstd")
+            }
+        ];
+
+        this.storageDurations = [
+            {
+                value: 1,
+                name: this.$translate.instant("logs_stream_retention_1y")
+            },
+            {
+                value: 2,
+                name: this.$translate.instant("logs_stream_retention_2y")
+            },
+            {
+                value: 5,
+                name: this.$translate.instant("logs_stream_retention_5y")
+            },
+            {
+                value: 10,
+                name: this.$translate.instant("logs_stream_retention_10y")
+            }
+        ];
     }
 
     /**
@@ -44,7 +89,41 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStream (serviceName, streamId) {
-        return this.StreamsApiService.get({ serviceName, streamId }).$promise;
+        return this.StreamsApiService.get({ serviceName, streamId })
+            .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
+    }
+
+    deleteStream (serviceName, stream) {
+        return this.StreamsApiService.delete({ serviceName, streamId: stream.streamId }, stream)
+            .$promise
+            .then(operation => {
+                this.resetAllCache();
+                return this.handleSuccess(serviceName, operation.data, "logs_stream_delete_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_stream_delete_error"));
+    }
+
+    createStream (serviceName, stream) {
+        return this.StreamsApiService.create({ serviceName }, stream)
+            .$promise
+            .then(operation => {
+                this.resetAllCache();
+                return this.handleSuccess(serviceName, operation.data, "logs_stream_create_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_stream_create_error"));
+    }
+
+    updateStream (serviceName, stream) {
+        return this.StreamsApiService.update({ serviceName, streamId: stream.streamId }, stream)
+            .$promise
+            .then(operation => this.handleSuccess(serviceName, operation.data, "logs_stream_update_success"))
+            .catch(this.ServiceHelper.errorHandler("logs_stream_update_error"));
+    }
+
+    handleSuccess (serviceName, operation, successMessage) {
+        this.poller = this.pollOperation(serviceName, operation);
+        return this.poller.$promise
+            .then(this.ServiceHelper.successHandler(successMessage));
     }
 
     /**
@@ -71,6 +150,33 @@ class LogsStreamsService {
     }
 
     /**
+     * returns objecy containing total number of streams and total number of streams used
+     *
+     * @param {any} serviceName
+     * @returns quota object containing V (total number streams) and configured (number of streams used)
+     * @memberof LogsStreamsService
+     */
+    getQuota (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => {
+                const quota = {
+                    max: me.total.maxNbStream,
+                    configured: me.total.curNbStream,
+                    currentUsage: me.total.curNbStream * 100 / me.total.maxNbStream
+                };
+                return quota;
+            }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
+    }
+
+    getCompressionAlgorithms () {
+        return this.compressionAlgorithms;
+    }
+
+    getStorageDurations () {
+        return this.storageDurations;
+    }
+
+    /**
      * asynchronously gets notifications of a stream
      *
      * @param {any} serviceName
@@ -88,23 +194,26 @@ class LogsStreamsService {
         return stream;
     }
 
-    /**
-     * returns objecy containing total number of streams and total number of streams used
-     *
-     * @param {any} serviceName
-     * @returns quota object containing V (total number streams) and configured (number of streams used)
-     * @memberof LogsStreamsService
-     */
-    getQuota (serviceName) {
-        return this.AccountingAapiService.me({ serviceName }).$promise
-            .then(me => {
-                const quota = {
-                    max: me.total.maxNbStream,
-                    configured: me.total.curNbStream,
-                    currentUsage: me.total.curNbStream * 100 / me.total.maxNbStream
-                };
-                return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
+    killPollar () {
+        if (this.poller) {
+            this.poller.kill();
+        }
+    }
+
+    resetAllCache () {
+        this.LogsApiService.resetAllCache();
+        this.StreamsApiService.resetAllCache();
+        this.AccountingAapiService.resetAllCache();
+    }
+
+    pollOperation (serviceName, operation) {
+        this.killPollar();
+        const pollar = this.CloudPoll.poll({
+            item: operation,
+            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
+            stopCondition: opn => opn.state === "FAILURE" || opn.state === "SUCCESS"
+        });
+        return pollar;
     }
 }
 
