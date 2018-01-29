@@ -1,7 +1,8 @@
 class LogsStreamsHomeCtrl {
-    constructor ($state, $stateParams, LogsStreamsService, ControllerHelper, CloudMessage) {
+    constructor ($state, $stateParams, $translate, LogsStreamsService, ControllerHelper, CloudMessage) {
         this.$state = $state;
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.serviceName = this.$stateParams.serviceName;
         this.LogsStreamsService = LogsStreamsService;
         this.ControllerHelper = ControllerHelper;
@@ -50,13 +51,26 @@ class LogsStreamsHomeCtrl {
     }
 
     /**
+     * show delete stream confirmation modal
+     *
+     * @param {any} stream to delete
+     * @memberof LogsStreamsHomeCtrl
+     */
+    showDeleteConfirm (stream) {
+        this.CloudMessage.flushChildMessage();
+        return this.ControllerHelper.modal.showDeleteModal({
+            titleText: this.$translate.instant("logs_stream_delete_title"),
+            text: this.$translate.instant("logs_stream_delete_message", { stream: stream.title })
+        }).then(this.delete(stream));
+    }
+
+    /**
      * delete stream
      *
      * @param {any} stream to delete
      * @memberof LogsStreamsHomeCtrl
      */
     delete (stream) {
-        this.CloudMessage.flushChildMessage();
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsStreamsService.deleteStream(this.serviceName, stream)

@@ -1,10 +1,10 @@
 <div class="cui-page__content">
     <oui-back-button data-state="dbaas.logs.detail.streams"
+                    class="back_button_inline_text"
                     data-state-params="{ serviceName: ctrl.serviceName}">
-        <h2>{{ ::'logs_streams_update_title' | translate }}</h2>
     </oui-back-button>
-
-
+    <span data-ng-show="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_update_title"></span>
+    <span data-ng-hide="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_add_data_feed"></span>
 
     <form novalidate name="ctrl.form">
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
@@ -33,7 +33,8 @@
 
         <div class="oui-field">
             <label for="stream_option" class="oui-label" data-translate="logs_streams_select_options_title"></label>
-            <div class="oui-field__content">
+            <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+            <div data-ng-hide="ctrl.options.loading" class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
                     <div class="oui-select"
@@ -42,7 +43,7 @@
                             name="stream_option"
                             id="stream_option"
                             data-ng-model="ctrl.stream.data.optionId"
-                            data-ng-options="option.optionId as option.title for option in ctrl.options.data">
+                            data-ng-options="option.optionId as option.type+', '+option.detail for option in ctrl.options.data">
                             <option data-translate="logs_streams_select_options_placeholder"></option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>

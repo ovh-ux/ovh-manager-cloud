@@ -20,6 +20,11 @@ class LogsStreamsAddCtrl {
      * @memberof LogsStreamsHomeCtrl
      */
     initLoaders () {
+        this.options = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsStreamsService.getSubscribedOptions(this.serviceName)
+        });
+        this.options.load();
+
         if (this.$stateParams.streamId) {
             this.isEdit = true;
             this.stream = this.ControllerHelper.request.getHashLoader({
@@ -40,6 +45,11 @@ class LogsStreamsAddCtrl {
         }
     }
 
+    /**
+     * update stream
+     *
+     * @memberof LogsStreamsHomeCtrl
+     */
     updateStream () {
         if (this.form.$invalid) {
             return this.$q.reject();
@@ -50,10 +60,14 @@ class LogsStreamsAddCtrl {
                 this.LogsStreamsService.updateStream(this.$stateParams.serviceName, this.stream.data)
                     .then(() => this.$state.go("dbaas.logs.detail.streams"))
         });
-        this.saving.load();
-        return this.saving;
+        return this.saving.load();
     }
 
+    /**
+     * create new stream
+     *
+     * @memberof LogsStreamsHomeCtrl
+     */
     createStream () {
         if (this.form.$invalid) {
             return this.$q.reject();
@@ -64,8 +78,7 @@ class LogsStreamsAddCtrl {
                 this.LogsStreamsService.createStream(this.$stateParams.serviceName, this.stream.data)
                     .then(() => this.$state.go("dbaas.logs.detail.streams"))
         });
-        this.saving.load();
-        return this.saving;
+        return this.saving.load();
     }
 }
 
