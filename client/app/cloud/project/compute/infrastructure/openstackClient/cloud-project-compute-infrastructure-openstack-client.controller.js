@@ -41,8 +41,8 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
     }
 
     $onInit () {
-        this.CloudMessage.unSubscribe("iaas.pci-project.compute.infrastructure");
-        this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute.infrastructure", { onMessage: () => this.refreshMessages() });
+        this.CloudMessage.unSubscribe("iaas.pci-project.compute.openstack-console");
+        this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute.openstack-console", { onMessage: () => this.refreshMessages() });
         this.load();
     }
 
