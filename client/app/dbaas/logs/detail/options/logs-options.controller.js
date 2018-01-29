@@ -1,9 +1,11 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsOptionsService) {
+    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService, OrderHelperService) {
         this.$stateParams = $stateParams;
+        this.$window = $window;
         this.ControllerHelper = ControllerHelper;
-        this.CloudMessage = CloudMessage;
         this.LogsOptionsService = LogsOptionsService;
+        this.CurrencyService = CurrencyService;
+        this.OrderHelperService = OrderHelperService;
 
         this.serviceName = this.$stateParams.serviceName;
         this.messages = {};
@@ -11,26 +13,72 @@ class LogsOptionsCtrl {
     }
 
     $onInit () {
-        this._loadMessages();
         this.options.load();
+        this.currentOptions.load();
     }
 
-    refreshMessage () {
-        this.messages = this.messageHandler.getMessages();
-    }
-
+    /**
+     * initializes the options and currentOptions loaders
+     *
+     * @memberof LogsOptionsCtrl
+     */
     _initLoaders () {
         this.options = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOptionsService.getOptions(this.serviceName)
         });
+        this.currentOptions = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsService.getSubscribedOptions(this.serviceName)
+        });
     }
 
-    _loadMessages () {
-        const stateName = "dbaas.logs.detail.offer";
-        this.CloudMessage.unSubscribe(stateName);
-        this.messageHandler = this.CloudMessage.subscribe(stateName, {
-            onMessage: () => this.refreshMessage()
-        });
+    /**
+     * returns the total price for all the selected options
+     *
+     * @returns the total price
+     * @memberof LogsOptionsCtrl
+     */
+    getTotalPrice () {
+        return _.reduce(this.options.data, (total, option) => total + option.quantity * option.price, 0).toFixed(2);
+    }
+
+    /**
+     * returns the list of selected options
+     *
+     * @returns the list of options selected for order
+     * @memberof LogsOptionsCtrl
+     */
+    getSelectedOptions () {
+        return this.LogsOptionsService.getOptionsToOrder(this.options.data);
+    }
+
+    /**
+     * returns the current currency symbol being used
+     *
+     * @returns the symbol for the current currency
+     * @memberof LogsOptionsCtrl
+     */
+    getCurrentCurrency () {
+        return this.CurrencyService.getCurrentCurrency();
+    }
+
+    /**
+     * takes the browser to the previously visited page
+     *
+     * @memberof LogsOptionsCtrl
+     */
+    cancel () {
+        this.$window.history.back();
+    }
+
+    /**
+     * opens the order page for the selected options
+     *
+     * @memberof LogsOptionsCtrl
+     */
+    order () {
+        this.OrderHelperService.openExpressOrderUrl(
+            this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName)
+        );
     }
 }
 
