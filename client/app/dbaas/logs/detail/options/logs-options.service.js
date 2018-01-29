@@ -105,7 +105,9 @@ class LogsOptionsService {
                 .map(option => ({
                     optionId: option.optionId,
                     type: this.$translate.instant(`${option.reference}-type`),
-                    detail: this.$translate.instant(`${option.reference}-detail`)
+                    detail: this.$translate.instant(`${option.reference}-detail`),
+                    curNbStream: option.curNbStream,
+                    maxNbStream: option.maxNbStream
                 })));
     }
 

@@ -251,23 +251,6 @@ class LogsStreamsService {
     }
 
     /**
-     * returns number of streams assigned for given operation
-     *
-     * @param {any} operationId
-     * @returns number of streams assigned for given operation
-     * @memberof LogsStreamsService
-     */
-    _getNumberOfStreamsAssigned (serviceName, operationId) {
-        const defer = this.$q.defer();
-        if (this.optionStreamMap) {
-            defer.resolve(this.optionStreamMap[operationId] ? this.optionStreamMap[operationId] : 0);
-        } else {
-            this.getStreams(serviceName).then(() => defer.resolve(this.optionStreamMap[operationId] ? this.optionStreamMap[operationId] : 0));
-        }
-        return defer.promise;
-    }
-
-    /**
      * add additional data to stream before sending back to controller
      * 1. asynchronously gets notifications of a stream
      * 2. asynchronously gets archives of a stream
