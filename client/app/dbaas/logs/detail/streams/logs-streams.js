@@ -10,7 +10,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams", "dbaas/logs/detail/options"]
         })
         .state("dbaas.logs.detail.streams.home", {
             url: "/home",
@@ -20,18 +20,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsStreamsHomeCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
-        })
-        .state("dbaas.logs.detail.streams.detail", {
-            url: "/:streamId",
-            "abstract": true,
-            views: {
-                logsStreams: {
-                    template: '<div ui-view="logsStreamsDetail"></div>'
-                }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+            }
         })
         .state("dbaas.logs.detail.streams.add", {
             url: "/add",
@@ -41,8 +30,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsStreamsAddCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams/add"]
+            }
         })
         .state("dbaas.logs.detail.streams.edit", {
             url: "/:streamId",
@@ -52,8 +40,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsStreamsAddCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams/add"]
+            }
         })
         .state("dbaas.logs.detail.streams.detail.follow", {
             url: "/follow",

@@ -15,7 +15,7 @@ class LogsOptionsService {
      * @returns the transformed option
      * @memberof LogsOptionsService
      */
-    transformOption (option) {
+    _transformOption (option) {
         option.quantity = 0;
         option.price = option.prices[0].price.value;
         option.priceText = option.prices[0].price.text;
@@ -31,7 +31,7 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOptions (serviceName) {
-        const transformOption = this.transformOption.bind(this);
+        const transformOption = this._transformOption.bind(this);
         return this.OvhApiOrderCartServiceOption.Lexi().get({
             productName: this.LogOptionConstant.productName,
             serviceName
@@ -61,26 +61,58 @@ class LogsOptionsService {
     }
 
     /**
-     * returns the list of options that have been subscribed in the service
+     * makes API call to get the list of options that have been subscribed in the service
      *
      * @param {any} serviceName
      * @returns promise that resolves with the array of options which have been subscribed
      * @memberof LogsOptionsService
      */
     getSubscribedOptions (serviceName) {
-        const transformSubscribedOption = this.transformSubscribedOption.bind(this);
         return this.OvhApiDbaasLogs.Accounting().Aapi().me({
             serviceName
-        }).$promise
+        })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_options_current_options_loading_error"));
+    }
+
+    /**
+     * returns map of all subscribed options wiht there count.
+     *
+     * @param {any} serviceName
+     * @returns map of subscribed option with count
+     * @memberof LogsOptionsService
+     */
+    getSubscribedOptionsMap (serviceName) {
+        const transformSubscribedOption = this.transformSubscribedOption.bind(this);
+        return this.getSubscribedOptions(serviceName)
             .then(response => {
                 const optionsCountMap = _.reduce(response.options, (optionsMap, option) => {
                     optionsMap[option.reference] = optionsMap[option.reference] ? ++optionsMap[option.reference] : 1;
                     return optionsMap;
                 }, {});
-
                 return _.map(_.keys(optionsCountMap), option => transformSubscribedOption(option, optionsCountMap));
-            })
-            .catch(this.ServiceHelper.errorHandler("logs_options_current_options_loading_error"));
+            });
+    }
+    /**
+     * returns all subscribed options with reference "logs-stream".
+     *
+     * @param {any} serviceName
+     * @returns array of all subscribed option objects belonging to streams
+     * @memberof LogsOptionsService
+     */
+    getStreamSubscribedOptions (serviceName) {
+        return this.getSubscribedOptions(serviceName)
+            .then(response => response.options
+                .filter(option => _.startsWith(option.reference, "logs-stream"))
+                .map(option => {
+                    const type = this.$translate.instant(`${option.reference}-type`);
+                    const detail = this.$translate.instant(`${option.reference}-detail`);
+                    return {
+                        optionId: option.optionId,
+                        type,
+                        detail
+                    };
+                }));
     }
 
     /**
@@ -101,7 +133,7 @@ class LogsOptionsService {
      * @returns the transformed option
      * @memberof LogsOptionsService
      */
-    transformOptionForOrder (option, serviceName) {
+    _transformOptionForOrder (option, serviceName) {
         return {
             planCode: option.planCode,
             quantity: option.quantity,
@@ -118,7 +150,7 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOrderConfiguration (options, serviceName) {
-        const transformOptionForOrder = this.transformOptionForOrder.bind(this);
+        const transformOptionForOrder = this._transformOptionForOrder.bind(this);
         const optionsToOrder = this.getOptionsToOrder(options);
         return _.map(optionsToOrder, option => transformOptionForOrder(option, serviceName));
     }

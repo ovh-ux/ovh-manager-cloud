@@ -1,13 +1,16 @@
 class LogsStreamsService {
-    constructor ($q, OvhApiDbaas, ServiceHelper, CloudPoll, $translate) {
+    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll, LogsOptionsService) {
         this.$q = $q;
+        this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.CloudPoll = CloudPoll;
-        this.$translate = $translate;
+        this.LogsOptionsService = LogsOptionsService;
+        // map to get count of streams assigned to each option
+        this.optionStreamMap = null;
 
         this.initializeData();
     }
@@ -60,8 +63,9 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStreams (serviceName) {
+        this.optionStreamMap = {};
         return this.getStreamDetails(serviceName)
-            .then(streams => streams.map(stream => this.transformStream(serviceName, stream)))
+            .then(streams => streams.map(stream => this._transformStream(serviceName, stream)))
             .catch(this.ServiceHelper.errorHandler("logs_streams_get_error"));
     }
 
@@ -93,37 +97,55 @@ class LogsStreamsService {
             .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
     }
 
+    /**
+     * delete stream
+     *
+     * @param {any} serviceName
+     * @param {any} stream, stream object to be deleted
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsStreamsService
+     */
     deleteStream (serviceName, stream) {
         return this.StreamsApiService.delete({ serviceName, streamId: stream.streamId }, stream)
             .$promise
             .then(operation => {
-                this.resetAllCache();
-                return this.handleSuccess(serviceName, operation.data, "logs_stream_delete_success");
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_stream_delete_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_stream_delete_error"));
     }
 
+    /**
+     * create new stream
+     *
+     * @param {any} serviceName
+     * @param {any} stream, stream object to be created
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsStreamsService
+     */
     createStream (serviceName, stream) {
         return this.StreamsApiService.create({ serviceName }, stream)
             .$promise
             .then(operation => {
-                this.resetAllCache();
-                return this.handleSuccess(serviceName, operation.data, "logs_stream_create_success");
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_stream_create_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_stream_create_error"));
     }
 
+    /**
+     * update stream
+     *
+     * @param {any} serviceName
+     * @param {any} stream, stream object to be updated
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsStreamsService
+     */
     updateStream (serviceName, stream) {
         return this.StreamsApiService.update({ serviceName, streamId: stream.streamId }, stream)
             .$promise
-            .then(operation => this.handleSuccess(serviceName, operation.data, "logs_stream_update_success"))
+            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_stream_update_success"))
             .catch(this.ServiceHelper.errorHandler("logs_stream_update_error"));
-    }
-
-    handleSuccess (serviceName, operation, successMessage) {
-        this.poller = this.pollOperation(serviceName, operation);
-        return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
     }
 
     /**
@@ -146,7 +168,23 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getNotifications (serviceName, streamId) {
-        return this.StreamsApiService.notifications({ serviceName, streamId }).$promise;
+        return this.StreamsApiService.notifications({ serviceName, streamId })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_streams_notifications_get_error"));
+    }
+
+    /**
+     * returns all archives configured for a given stream
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @returns promise which will be resolve to array of archives
+     * @memberof LogsStreamsService
+     */
+    getArchives (serviceName, streamId) {
+        return this.StreamsApiService.archives({ serviceName, streamId })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_streams_archives_get_error"));
     }
 
     /**
@@ -176,38 +214,88 @@ class LogsStreamsService {
         return this.storageDurations;
     }
 
+    getSubscribedOptions (serviceName) {
+        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName);
+    }
+
     /**
-     * asynchronously gets notifications of a stream
+     * returns number of streams assigned for given operation
+     *
+     * @param {any} operationId
+     * @returns number of streams assigned for given operation
+     * @memberof LogsStreamsService
+     */
+    _getNumberOfStreamsAssigned (serviceName, operationId) {
+        const defer = this.$q.defer();
+        if (this.optionStreamMap) {
+            defer.resolve(this.optionStreamMap[operationId] ? this.optionStreamMap[operationId] : 0);
+        } else {
+            this.getStreams(serviceName).then(() => defer.resolve(this.optionStreamMap[operationId] ? this.optionStreamMap[operationId] : 0));
+        }
+        return defer.promise;
+    }
+
+    /**
+     * add additional data to stream before sending back to controller
+     * 1. asynchronously gets notifications of a stream
+     * 2. asynchronously gets archives of a stream
+     * 3. updates operationStreamMap to get number of streams assigned to each operation
      *
      * @param {any} serviceName
      * @param {any} stream
      * @returns stream object after adding notifications
      * @memberof LogsStreamsService
      */
-    transformStream (serviceName, stream) {
+    _transformStream (serviceName, stream) {
         stream.notifications = [];
         // asynchronously fetch all notification of a stream
         this.getNotifications(serviceName, stream.streamId)
             .then(notifications => {
                 stream.notifications = notifications;
-            }).catch(this.ServiceHelper.errorHandler("logs_streams_notifications_get_error"));
+            });
+        // asynchronously fetch all archives of a stream
+        this.getArchives(serviceName, stream.streamId)
+            .then(archives => {
+                stream.archives = archives;
+            });
+        if (stream.optionId && this.optionStreamMap[stream.optionId]) {
+            this.optionStreamMap[stream.optionId]++;
+        } else if (stream.optionId) {
+            this.optionStreamMap[stream.optionId] = 1;
+        }
         return stream;
     }
 
-    killPollar () {
+    /**
+     * handles success state for create, delete and update streams.
+     * Repetedly polls for operation untill it returns SUCCESS message.
+     *
+     * @param {any} serviceName
+     * @param {any} operation, operation to poll
+     * @param {any} successMessage, message to show on UI
+     * @returns promise which will be resolved to operation object
+     * @memberof LogsStreamsService
+     */
+    _handleSuccess (serviceName, operation, successMessage) {
+        this.poller = this._pollOperation(serviceName, operation);
+        return this.poller.$promise
+            .then(this.ServiceHelper.successHandler(successMessage));
+    }
+
+    _killPollar () {
         if (this.poller) {
             this.poller.kill();
         }
     }
 
-    resetAllCache () {
+    _resetAllCache () {
         this.LogsApiService.resetAllCache();
         this.StreamsApiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
     }
 
-    pollOperation (serviceName, operation) {
-        this.killPollar();
+    _pollOperation (serviceName, operation) {
+        this._killPollar();
         const pollar = this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,

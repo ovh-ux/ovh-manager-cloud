@@ -5,18 +5,18 @@
     <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
     <translation id="logs_streams_add_data_feed">Add a data stream</translation>
+
     <translation id="logs_streams_col_title">Name</translation>
     <translation id="logs_streams_col_description">Description</translation>
     <translation id="logs_streams_col_archives">Archives</translation>
     <translation id="logs_streams_col_actions">Actions</translation>
     <translation id="logs_streams_col_creation_date">Creation date</translation>
     <translation id="logs_streams_col_notifications">Alerts</translation>
-    <translation id="logs_streams_col_linked_option">Linked option</translation>
-    <translation id="logs_streams_get_error">An error has occurred while retrieving data streams: {{message}}</translation>
-    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
-    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
+    <translation id="logs_streams_col_linked_option">Linked to option</translation>
     <translation id="logs_streams_no_streams">No data feeds added</translation>
-    <translation id="logs_stream_get_error">An error has occurred while retrieving data stream: {{message}}</translation>
+
+    <translation id="logs_stream_delete_title">Delete data stream</translation>
+    <translation id="logs_stream_delete_message">Are you sure you want to delete the following data stream: {{stream}} ?</translation>
 
     <translation id="logs_streams_add_title">Add data stream</translation>
     <translation id="logs_streams_update_title">Update data stream</translation>
@@ -32,11 +32,17 @@
     <translation id="logs_streams_notification_detail">Notify me by e-mail when an archive is available</translation>
 
     <translation id="logs_stream_create_success">The data stream has been successfully created.</translation>
-    <translation id="logs_stream_create_error">An error has occurred while creating a data stream: {{message}}</translation>
     <translation id="logs_stream_update_success">The data stream has been successfully updated.</translation>
-    <translation id="logs_stream_update_error">An error has occurred while updating a data stream: {{message}}</translation>
     <translation id="logs_stream_delete_success">The data stream has been successfully deleted.</translation>
+
     <translation id="logs_stream_delete_error">An error has occurred while deleting a data stream: {{message}}</translation>
+    <translation id="logs_stream_update_error">An error has occurred while updating a data stream: {{message}}</translation>
+    <translation id="logs_stream_create_error">An error has occurred while creating a data stream: {{message}}</translation>
+    <translation id="logs_stream_get_error">An error has occurred while retrieving data stream: {{message}}</translation>
+    <translation id="logs_streams_get_error">An error has occurred while retrieving data streams: {{message}}</translation>
+    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
+    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
+    <translation id="logs_streams_archives_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
 
     <translation id="logs_stream_compression_gzip">.gz (zlib)</translation>
     <translation id="logs_stream_compression_zip">.zip (deflated)</translation>
