@@ -61,7 +61,7 @@ class LogsStreamsHomeCtrl {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_stream_delete_title"),
             text: this.$translate.instant("logs_stream_delete_message", { stream: stream.title })
-        }).then(this.delete(stream));
+        }).then(() => this.delete(stream));
     }
 
     /**
