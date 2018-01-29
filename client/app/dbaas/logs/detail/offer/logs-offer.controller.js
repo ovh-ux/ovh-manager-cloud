@@ -14,7 +14,6 @@ class LogsOfferCtrl {
     }
 
     $onInit () {
-        // this.LogsOfferService.getOffer(this.serviceName);
         this.getSelectedPlan.load();
         this.offers.load();
     }
