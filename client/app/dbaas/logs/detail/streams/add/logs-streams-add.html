@@ -43,7 +43,7 @@
                             name="stream_option"
                             id="stream_option"
                             data-ng-model="ctrl.stream.data.optionId"
-                            data-ng-options="option.optionId as option.type+', '+option.detail for option in ctrl.options.data">
+                            data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbStream+'/'+option.maxNbStream for option in ctrl.options.data">
                             <option data-translate="logs_streams_select_options_placeholder"></option>
                         </select>
                         <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
