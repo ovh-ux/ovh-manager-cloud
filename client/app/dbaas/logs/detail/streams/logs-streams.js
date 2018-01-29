@@ -42,10 +42,10 @@ angular.module("managerApp").config($stateProvider => {
                 }
             }
         })
-        .state("dbaas.logs.detail.streams.detail.follow", {
-            url: "/follow",
+        .state("dbaas.logs.detail.streams.follow", {
+            url: "/:streamId/follow",
             views: {
-                logsStreamsDetail: {
+                logsStreams: {
                     templateUrl: "app/dbaas/logs/detail/streams/follow/streams-follow.html",
                     controller: "LogsStreamsFollowCtrl",
                     controllerAs: "ctrl"

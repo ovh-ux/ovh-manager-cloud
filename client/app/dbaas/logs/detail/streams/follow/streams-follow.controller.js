@@ -1,8 +1,17 @@
 class LogsStreamsFollowCtrl {
-    constructor ($stateParams) {
+    constructor ($stateParams, LogsStreamsService, ControllerHelper) {
         this.$stateParams = $stateParams;
-        this.serviceName = this.$stateParams.serviceName;
-        this.stream = this.$stateParams.streamId;
+        this.LogsStreamsService = LogsStreamsService;
+        this.ControllerHelper = ControllerHelper;
+
+        this.initLoaders();
+    }
+
+    initLoaders () {
+        this.stream = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsStreamsService.getAapiStream(this.$stateParams.serviceName, this.$stateParams.streamId)
+        });
+        this.stream.load();
     }
 }
 

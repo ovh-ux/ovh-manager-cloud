@@ -15,6 +15,8 @@
     <translation id="logs_streams_col_linked_option">Linked to option</translation>
     <translation id="logs_streams_no_streams">No data feeds added</translation>
 
+    <translation id="logs_streams_follow_live">Follow live</translation>
+
     <translation id="logs_stream_delete_title">Delete data stream</translation>
     <translation id="logs_stream_delete_message">Are you sure you want to delete the following data stream: {{stream}} ?</translation>
 
@@ -52,5 +54,10 @@
     <translation id="logs_stream_retention_2y">two years</translation>
     <translation id="logs_stream_retention_5y">five years</translation>
     <translation id="logs_stream_retention_10y">ten years</translation>
+
+    <translation id="logs_streams_follow_copy_address">Copy the WebSocket address</translation>
+    <translation id="logs_streams_follow_download_client">Download ldp-tail</translation>
+    <translation id="logs_streams_follow_close_connection">Close the connection</translation>
+    <translation id="logs_streams_follow_open_connection">Open the connection</translation>
 
 </translations>

@@ -5,6 +5,7 @@ class LogsStreamsService {
         this.ServiceHelper = ServiceHelper;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
+        this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.CloudPoll = CloudPoll;
@@ -94,6 +95,19 @@ class LogsStreamsService {
      */
     getStream (serviceName, streamId) {
         return this.StreamsApiService.get({ serviceName, streamId })
+            .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
+    }
+
+    /**
+     * returns details of a stream making call to Aapi (2api) service
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @returns promise which will be resolve to stream object
+     * @memberof LogsStreamsService
+     */
+    getAapiStream (serviceName, streamId) {
+        return this.StreamsAapiService.get({ serviceName, streamId })
             .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
     }
 
@@ -216,6 +230,24 @@ class LogsStreamsService {
 
     getSubscribedOptions (serviceName) {
         return this.LogsOptionsService.getStreamSubscribedOptions(serviceName);
+    }
+
+    /**
+     * creates new stream with default values
+     *
+     * @returns stream object with default values
+     * @memberof LogsStreamsService
+     */
+    getNewStream () {
+        return {
+            data: {
+                coldStorageCompression: this.compressionAlgorithms[0].value,
+                coldStorageRetention: this.storageDurations[0].value,
+                coldStorageNotifyEnabled: true,
+                coldStorageEnabled: false,
+                webSocketEnabled: true
+            }
+        };
     }
 
     /**

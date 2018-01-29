@@ -31,13 +31,12 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOptions (serviceName) {
-        const transformOption = this._transformOption.bind(this);
         return this.OvhApiOrderCartServiceOption.Lexi().get({
             productName: this.LogOptionConstant.productName,
             serviceName
         }).$promise
             .then(response => {
-                _.each(response, option => transformOption(option));
+                _.each(response, option => this._transformOption(option));
                 return response;
             })
             .catch(this.ServiceHelper.errorHandler("logs_options_options_loading_error"));
@@ -83,14 +82,13 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getSubscribedOptionsMap (serviceName) {
-        const transformSubscribedOption = this.transformSubscribedOption.bind(this);
         return this.getSubscribedOptions(serviceName)
             .then(response => {
                 const optionsCountMap = _.reduce(response.options, (optionsMap, option) => {
                     optionsMap[option.reference] = optionsMap[option.reference] ? ++optionsMap[option.reference] : 1;
                     return optionsMap;
                 }, {});
-                return _.map(_.keys(optionsCountMap), option => transformSubscribedOption(option, optionsCountMap));
+                return _.map(_.keys(optionsCountMap), option => this.transformSubscribedOption(option, optionsCountMap));
             });
     }
     /**
@@ -104,15 +102,11 @@ class LogsOptionsService {
         return this.getSubscribedOptions(serviceName)
             .then(response => response.options
                 .filter(option => _.startsWith(option.reference, "logs-stream"))
-                .map(option => {
-                    const type = this.$translate.instant(`${option.reference}-type`);
-                    const detail = this.$translate.instant(`${option.reference}-detail`);
-                    return {
-                        optionId: option.optionId,
-                        type,
-                        detail
-                    };
-                }));
+                .map(option => ({
+                    optionId: option.optionId,
+                    type: this.$translate.instant(`${option.reference}-type`),
+                    detail: this.$translate.instant(`${option.reference}-detail`)
+                })));
     }
 
     /**
@@ -150,9 +144,8 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOrderConfiguration (options, serviceName) {
-        const transformOptionForOrder = this._transformOptionForOrder.bind(this);
         const optionsToOrder = this.getOptionsToOrder(options);
-        return _.map(optionsToOrder, option => transformOptionForOrder(option, serviceName));
+        return _.map(optionsToOrder, option => this._transformOptionForOrder(option, serviceName));
     }
 }
 
