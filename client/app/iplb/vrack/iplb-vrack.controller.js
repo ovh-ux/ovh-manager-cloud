@@ -1,5 +1,7 @@
 class IpLoadBalancerVrackCtrl {
-    constructor ($translate, ControllerHelper) {
+    constructor ($state, $stateParams, $translate, ControllerHelper) {
+        this.$state = $state;
+        this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
 
@@ -15,7 +17,7 @@ class IpLoadBalancerVrackCtrl {
             },
             addPrivateNetwork: {
                 text: this.$translate.instant("iplb_vrack_private_network_add"),
-                callback: () => console.log("something needs to be done here"),
+                callback: () => this.$state.go("network.iplb.detail.vrack.add", { serviceName: this.$stateParams.serviceName }),
                 isAvailable: () => true
             }
         };

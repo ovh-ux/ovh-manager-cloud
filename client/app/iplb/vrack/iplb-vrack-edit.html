@@ -1,0 +1,19 @@
+<section class="cui-page__content">
+    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
+        data-state-params="$ctrl.previousState.stateParams"
+        data-text="'common_back' | translate"></cui-back-link>
+    <cui-page-content-title text="'iplb_vrack_add_title' | translate"></cui-page-content-title>
+    <form novalidate name="$ctrl.form">
+        <div class="cui-form-actions">
+            <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
+            <div data-ng-if="!$ctrl.isLoading()">
+                <cui-submit-button data-text="'common_add' | translate"
+                    data-on-click="$ctrl.submit()"></cui-submit-button>
+                <a class="oui-button oui-button_link"
+                    data-translate="common_cancel"
+                    data-ui-state="$ctrl.previousState.state"
+                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
+            </div>
+        </div>
+    </form>
+</section>
