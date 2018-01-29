@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Co 6 godzin</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Snapshot to zdjęcie. Rejestruje on stan usługi NAS-HA z danej chwili.</translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Snapshoty wykorzystują do prawidłowego działania przestrzeń na partycji. Historia snapshotów nie jest rejestrowana. Nowy snapshot usuwa poprzedni snapshot.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Jeśli nie wybierzesz częstotliwości wykonywania snapshotów, shapshoty tej partycji zostaną usunięte.</translation>
 </translations>
