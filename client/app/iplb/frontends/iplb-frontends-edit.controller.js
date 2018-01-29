@@ -212,6 +212,11 @@ class IpLoadBalancerFrontendsEditCtrl {
         if (this.type === "udp") {
             delete request.ssl;
         }
+
+        if (_.includes(["udp", "tcp"], this.type)) {
+            delete request.hsts;
+        }
+
         if (!request.ssl || !request.defaultSslId) {
             delete request.defaultSslId;
         }
