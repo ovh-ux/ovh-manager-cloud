@@ -1,4 +1,50 @@
-<div>
-    Offers
-    Service Name: {{ ctrl.serviceName }}
+<div class="cui-page__content">
+    <oui-back-button data-ui-sref="dbaas.logs.detail.home"></oui-back-button>
+    <h1 class="inline">Change offer</h1>
+
+    <h3 data-translate="logs_offer_select_offer" class="pl-4"></h3>
+    
+    <oui-spinner size="l" data-ng-show="ctrl.offers.loading"></oui-spinner>
+    
+    <div class="cui-box-list-wrapper d-inline-block">
+        <div
+            class="cui-box col-md-4"
+            plan="{{offer.planCode}}"
+            data-ng-repeat="offer in ctrl.offers.data track by $index">
+            <div class="cui-box-header m-2">
+                <oui-radio
+                    text="{{offer.details.name}} {{'unit_size_' + offer.details.unit | translate}}"
+                    name="offer.planCode"
+                    model="ctrl.selectedOffer"
+                    value="offer.planCode"
+                    on-change="ctrl.selectedOffer = modelValue">
+                </oui-radio>
+                <span data-ng-if="ctrl.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
+            </div>
+            <div class="cui-box-line"></div>
+            <div class="cui-box-body ml-5">
+                <p>{{offer.details.streams}} {{'logs_offer_streams' | translate}}, {{offer.details.tables}} {{'logs_offer_tables' | translate}},</p>
+                <p data-ng-if="offer.details.collectionTool">{{offer.details.collectionTool}} {{'logs_offer_collection_tools' | translate}}</p>
+                <p>{{'logs_offer_limit' | translate}} : {{offer.details.limit}} {{'logs_offer_' + offer.details.limitDuration | translate}}</p>
+            </div>
+            <div class="cui-box-line"></div>          
+            <div class="cui-box-footer m-2">
+                <span class="price">{{offer.prices[0].price.text}}</span> /{{'logs_offer_month' | translate}}
+            </div>
+        </div>
+    </div>
+
+    <div class="pl-4">
+        <oui-spinner data-ng-show="ctrl.savingOffer.loading"></oui-spinner>
+        <div data-ng-hide="ctrl.savingOffer.loading || ctrl.offers.loading">
+            <button type="submit"
+                data-ng-disabled="ctrl.savingOffer.loading || ctrl.selectedOffer == ctrl.currentOffer"
+                class="oui-button oui-button_primary"
+                data-translate="common_confirm"
+                data-ng-click="ctrl.saveOffer()"></button>
+            <a class="oui-button oui-button_link"
+                data-translate="common_cancel"
+                data-ui-sref="dbaas.logs.detail.home"></a>
+        </div>
+    </div>
 </div>
