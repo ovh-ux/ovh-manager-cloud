@@ -66,7 +66,7 @@
             <oui-column data-title="'vps_tab_backup_storage_table_nfs' | translate" data-property="nfs" data-sortable>
                 <span data-ng-bind="$row.nfs"></span>
             </oui-column>
-            <oui-column data-title="'vps_tab_backup_storage_table_status' | translate" data-sortable>
+            <oui-column data-title="'vps_tab_backup_storage_table_status' | translate" data-property="isApplied" data-sortable>
                 <span data-ng-show="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_enable"></span>
                 <span data-ng-hide="$row.isApplied" data-translate="vps_tab_backup_storage_table_ip_disable"></span>
             </oui-column>

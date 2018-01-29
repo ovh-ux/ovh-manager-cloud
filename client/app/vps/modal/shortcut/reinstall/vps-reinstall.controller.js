@@ -61,7 +61,7 @@ class VpsReinstallCtrl {
     loadSummary () {
         this.loaders.summary = true;
         this.VpsService.getTabSummary(this.serviceName, true)
-            .then(summary => this.summary)
+            .then(data => {this.summary = data })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reinstall_loading_summary_error")))
             .finally(() => { this.loaders.summary = false; });
     }

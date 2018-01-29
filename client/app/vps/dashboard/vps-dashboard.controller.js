@@ -27,8 +27,10 @@ class VpsDashboardCtrl {
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
             successHandler: () => {
-                this.loadIps();
-                this.hasAdditionalDiskOption();
+                if (!this.vps.data.isExpired) {
+                    this.loadIps();
+                    this.hasAdditionalDiskOption();
+                }
             }
         });
         this.summary = this.ControllerHelper.request.getHashLoader({

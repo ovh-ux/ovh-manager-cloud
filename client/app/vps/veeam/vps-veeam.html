@@ -36,14 +36,14 @@
             <!--Show table-->
             <oui-datagrid data-rows="$ctrl.veeamTab.data"
                           data-ng-hide="$ctrl.veeamTab.loading">
-                <oui-column data-title="'vps_tab_VEEAM_dashboard_table_header_date' | translate" data-sortable>
-                    <span data-ng-bind="$row | momentFormat:'LLL'"></span>
+                <oui-column data-title="'vps_tab_VEEAM_dashboard_table_header_date' | translate" data-property="id" data-sortable>
+                    <span data-ng-bind="$row.id | momentFormat:'LLL'"></span>
                 </oui-column>
                 <oui-action-menu data-align="end" data-compact>
                     <oui-action-menu-item data-text="{{'vps_tab_VEEAM_dashboard_table_header_restore' | translate}}"
-                                          data-on-click="$ctrl.restore($row)"></oui-action-menu-item>
+                                          data-on-click="$ctrl.restore($row.id)"></oui-action-menu-item>
                     <oui-action-menu-item data-text="{{'vps_tab_VEEAM_dashboard_table_header_mount' | translate}}"
-                                          data-on-click="$ctrl.mount($row)"></oui-action-menu-item>
+                                          data-on-click="$ctrl.mount($row.id)"></oui-action-menu-item>
                 </oui-action-menu>
             </oui-datagrid>
         </div>

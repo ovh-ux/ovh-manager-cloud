@@ -7,16 +7,25 @@
             </div>
             <div data-ng-if="!$ctrl.loaders.init && !$ctrl.loaders.template && !$ctrl.loaders.save">
                 <!-- distribution -->
-                <label for="templates" class="oui-label" data-translate="vps_configuration_reinstall_step1_question"></label>
-                <div class="oui-select">
-                    <select name="templates" id="templates" class="oui-select__input"
-                            data-ng-options="template as template.name + ' (' + template.bitFormat + ' ' + ('vps_configuration_reinstall_bitFormat' | translate) +')' for template in $ctrl.templates | orderBy: 'name'"
-                            data-ng-model="$ctrl.template.value"
-                            data-ng-change="$ctrl.loadPackages($ctrl.template.value.distribution)"
-                            required>
-                        <option value="" data-ng-disabled="true" selected data-translate="vps_configuration_reinstall_step1_os"></option>
-                    </select>
-                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                <div class="oui-field">
+                    <label for="templates" class="oui-field__label oui-label" data-translate="vps_configuration_reinstall_step1_question"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control">
+                            <label class="oui-select">
+                                <select name="templates" id="templates" class="oui-select__input"
+                                        data-ng-options="template as template.name + ' (' + template.bitFormat + ' ' + ('vps_configuration_reinstall_bitFormat' | translate) +')' for template in $ctrl.templates | orderBy: 'name'"
+                                        data-ng-model="$ctrl.template.value"
+                                        data-ng-change="$ctrl.loadPackages($ctrl.template.value.distribution)"
+                                        required>
+                                    <option value="" data-ng-disabled="true" selected data-translate="vps_configuration_reinstall_step1_os"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <div class="oui-field-helper"
+                             data-ng-if="!$ctrl.summary.windowsActivated"
+                             data-translate="vps_configuration_reinstall_windows_option"></div>
+                    </div>
                 </div>
 
                 <!-- available packages (info box) -->
@@ -56,7 +65,9 @@
 
                 <!-- ssh keys -->
                 <div data-ng-if="$ctrl.template.value && ($ctrl.template.language || $ctrl.template.value.availableLanguage.length === 0) && !$ctrl.isWindows($ctrl.template.value)">
-                    <label for="sshKey" class="oui-label" data-translate="vps_configuration_reinstall_step1_select_ssh_key"></label>
+                    <label for="sshKey" class="oui-label"
+                           data-translate="vps_configuration_reinstall_step1_select_ssh_key"
+                           data-oui-tooltip="{{'vps_configuration_reinstall_step1_select_ssh_key_help' | translate}}"></label>
                     <div class="oui-select">
                         <!-- we need style overflow until something is set to handle multiple select-->
                         <select name="sshkey" id="sshKey" class="oui-select__input"
