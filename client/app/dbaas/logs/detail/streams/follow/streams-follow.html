@@ -1,5 +1,17 @@
-<div>
-    Follow Stream
-    Service Name: {{ ctrl.serviceName }}
-    Stream: {{ ctrl.stream }}
+<div class="cui-page__content log-streams-follow-live">
+    <oui-back-button data-state="dbaas.logs.detail.streams"
+        class="back_button_inline_text"
+        data-state-params="{ serviceName: ctrl.serviceName}">
+    </oui-back-button>
+    <span class="oui-header_3" data-translate="logs_streams_follow_live"></span>
+    <h6 class="oui-header_6">{{ctrl.stream.info.title}}</h6>
+
+    <oui-action-menu text="{{ ::'common_actions' | translate}}" align="start">
+        <oui-action-menu-item text="{{ ::'logs_streams_follow_copy_address' | translate}}" on-click="ctrl.copyAddress()"></oui-action-menu-item>
+        <oui-action-menu-item text="{{ ::'logs_streams_follow_download_client' | translate}}" href="https://github.com/ovh/ldp-tail/releases" external></oui-action-menu-item>
+        <oui-action-menu-item text="{{ ::'logs_streams_follow_close_connection' | translate}}" on-click="ctrl.closeConnection()"></oui-action-menu-item>
+        <oui-action-menu-item text="{{ ::'logs_streams_follow_open_connection' | translate}}" on-click="ctrl.openConnection()"></oui-action-menu-item>
+    </oui-action-menu>
+
 </div>
+

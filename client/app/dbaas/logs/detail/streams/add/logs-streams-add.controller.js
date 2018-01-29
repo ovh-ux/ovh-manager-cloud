@@ -33,15 +33,7 @@ class LogsStreamsAddCtrl {
             this.stream.load();
         } else {
             this.isEdit = false;
-            this.stream = {
-                data: {
-                    coldStorageCompression: this.compressionAlgorithms[0].value,
-                    coldStorageRetention: this.storageDurations[0].value,
-                    coldStorageNotifyEnabled: true,
-                    coldStorageEnabled: false,
-                    webSocketEnabled: true
-                }
-            };
+            this.stream = this.LogsStreamsService.getNewStream();
         }
     }
 

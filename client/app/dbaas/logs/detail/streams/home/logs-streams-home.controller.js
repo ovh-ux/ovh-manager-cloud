@@ -38,7 +38,7 @@ class LogsStreamsHomeCtrl {
     }
 
     /**
-     * takes to edit stream page
+     * navigates to edit stream page
      *
      * @param {any} stream
      * @memberof LogsStreamsHomeCtrl
@@ -77,6 +77,19 @@ class LogsStreamsHomeCtrl {
                     .then(() => this.initLoaders())
         });
         this.delete.load();
+    }
+
+    /**
+     * navigates to follow live stream page
+     *
+     * @param {any} stream, stream to follow live
+     * @memberof LogsStreamsHomeCtrl
+     */
+    followLive (stream) {
+        this.$state.go("dbaas.logs.detail.streams.follow", {
+            serviceName: this.serviceName,
+            streamId: stream.streamId
+        });
     }
 }
 
