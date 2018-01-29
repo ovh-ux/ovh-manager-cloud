@@ -87,6 +87,13 @@ class ControllerModalHelper {
         config.submitButtonText = config.submitButtonText || this.$translate.instant("common_delete");
         return this.showConfirmationModal(config);
     }
+
+    showVrackAssociateModal (config = {
+        title: "Activer les réseaux privés (via vRack)",
+        message: "Should be done by Ravindra team.  Awaiting https://github.com/ovh-ux/ovh-manager-cloud/pull/402"
+    }) {
+        return this.showWarningModal(config);
+    }
 }
 
 angular.module("managerApp").service("ControllerModalHelper", ControllerModalHelper);

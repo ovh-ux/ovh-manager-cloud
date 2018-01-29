@@ -112,6 +112,11 @@ class IpLoadBalancerHomeCtrl {
                 callback: () => this.IpLoadBalancerActionService.cipherChange(this.serviceName, () => this.configuration.load()),
                 isAvailable: () => !this.configuration.loading && !this.configuration.hasErrors
             },
+            activateVrack: {
+                text: this.$translate.instant("common_activate"),
+                callback: () => this.ControllerHelper.modal.showVrackAssociateModal(),
+                isAvailable: () => true
+            },
             changeOffer: {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.IpLoadBalancerActionService.offerChange(this.serviceName),

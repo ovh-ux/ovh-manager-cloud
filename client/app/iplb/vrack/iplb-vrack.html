@@ -1,0 +1,59 @@
+<section class="cui-page__content iplb-vrack">
+    <cui-page-content-title text="'iplb_vrack_title' | translate"></cui-page-content-title>
+    <p data-translate="iplb_vrack_intro_text"></p>
+    <div class="oui-box d-flex justify-content-end iplb-vrack__box">
+        <dl class="mr-auto iplb-vrack__box-dl">
+            <dt data-translate="iplb_vrack_box_inactive_title"></dt>
+            <dd data-translate="iplb_vrack_box_inactive_description"></dd>
+        </dl>
+        <oui-button data-variant="secondary" 
+            class="iplb-vrack__box-button"
+            data-text="{{ $ctrl.actions.activateVrack.text }}" 
+            data-on-click="$ctrl.actions.activateVrack.callback()"></oui-button>
+    </div>
+    <oui-button data-variant="secondary" 
+        data-text="{{ $ctrl.actions.addPrivateNetwork.text }}"
+        data-on-click="$ctrl.actions.addPrivateNetwork.callback()"></oui-button>
+    <oui-datagrid
+        data-rows="[]">
+        <oui-column
+            title="'iplb_vrack_list_col_private_network' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+        <oui-column
+            title="'iplb_vrack_list_col_private_vlan_id' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+        <oui-column
+            title="'iplb_vrack_list_col_private_subnet' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+        <oui-column
+            title="'iplb_vrack_list_col_private_nat_ip' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+        <oui-column
+            title="'iplb_vrack_list_col_private_farms' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+        <oui-column
+            title="'common_actions' | translate"
+            property="a"
+            sortable>
+        </oui-column>
+    </oui-datagrid>
+<!--
+    <oui-action-menu align="end" compact>
+      <oui-action-menu-item text="Action 1" on-click="$ctrl.action1Row = $row">
+      </oui-action-menu-item>
+      <oui-action-menu-divider></oui-action-menu-divider>
+      <oui-action-menu-item text="Lien externe" href="#" external>
+      </oui-action-menu-item>
+  </oui-action-menu> -->
+
+</section>
