@@ -1,8 +1,9 @@
 class VpsPasswordCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService) {
+    constructor ($translate, $uibModalInstance, CloudMessage, ovhDocUrl, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
+        this.ovhDocUrl = ovhDocUrl;
         this.serviceName = serviceName;
         this.VpsService = VpsService;
 
@@ -18,6 +19,7 @@ class VpsPasswordCtrl {
 
     $onInit () {
         this.loader.init = true;
+        this.guide = this.ovhDocUrl.getDocUrl("vps/root-password");
         this.VpsService.getTaskInError(this.serviceName)
             .then(tasks => {
                 if (tasks.length) {
