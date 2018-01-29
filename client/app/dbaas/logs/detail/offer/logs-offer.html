@@ -6,20 +6,20 @@
     
     <oui-spinner size="l" data-ng-show="ctrl.offers.loading"></oui-spinner>
     
-    <div class="cui-box-list-wrapper d-inline-block">
+    <div class="cui-box-list-wrapper d-inline-block w-100">
         <div
-            class="cui-box col-md-4"
+            class="cui-box col-md-4 w-25"
             plan="{{offer.planCode}}"
             data-ng-repeat="offer in ctrl.offers.data track by $index">
             <div class="cui-box-header m-2">
                 <oui-radio
                     text="{{offer.details.name}} {{'unit_size_' + offer.details.unit | translate}}"
                     name="offer.planCode"
-                    model="ctrl.selectedOffer"
+                    model="ctrl.offerDetail.selectedOffer"
                     value="offer.planCode"
-                    on-change="ctrl.selectedOffer = modelValue">
+                    on-change="ctrl.offerDetail.selectedOffer = modelValue">
                 </oui-radio>
-                <span data-ng-if="ctrl.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
+                <span data-ng-if="ctrl.offerDetail.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
             </div>
             <div class="cui-box-line"></div>
             <div class="cui-box-body ml-5">
@@ -29,7 +29,7 @@
             </div>
             <div class="cui-box-line"></div>          
             <div class="cui-box-footer m-2">
-                <span class="price">{{offer.prices[0].price.text}}</span> /{{'logs_offer_month' | translate}}
+                <span class="cui-box-footer__price">{{offer.prices[0].price.text}}</span> /{{'logs_offer_month' | translate}}
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <oui-spinner data-ng-show="ctrl.savingOffer.loading"></oui-spinner>
         <div data-ng-hide="ctrl.savingOffer.loading || ctrl.offers.loading">
             <button type="submit"
-                data-ng-disabled="ctrl.savingOffer.loading || ctrl.selectedOffer == ctrl.currentOffer"
+                data-ng-disabled="ctrl.savingOffer.loading || ctrl.offerDetail.selectedOffer == ctrl.offerDetail.currentOffer"
                 class="oui-button oui-button_primary"
                 data-translate="common_confirm"
                 data-ng-click="ctrl.saveOffer()"></button>
