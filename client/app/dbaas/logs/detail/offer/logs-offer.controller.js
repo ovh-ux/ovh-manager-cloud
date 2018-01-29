@@ -1,5 +1,5 @@
 class LogsOfferCtrl {
-    constructor (LogsOfferService, $stateParams, ControllerHelper, LogsOrderService, OrderHelperService, $window) {
+    constructor ($stateParams, $window, ControllerHelper, LogsOfferService, LogsOrderService, OrderHelperService) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.LogsOfferService = LogsOfferService;
@@ -7,9 +7,11 @@ class LogsOfferCtrl {
         this.ControllerHelper = ControllerHelper;
         this.OrderHelperService = OrderHelperService;
         this.$window = $window;
-        this.quantity = 1;
-        this.selectedOffer = "";
-        this.currentOffer = "";
+        this.offerDetail = {
+            quantity: 1,
+            selectedOffer: "",
+            currentOffer: "",
+        };
         this._initLoaders();
     }
 
@@ -30,13 +32,13 @@ class LogsOfferCtrl {
     }
 
     selectOffer (offerObj) {
-        this.selectedOffer = offerObj.reference;
-        this.currentOffer = offerObj.reference;
+        this.offerDetail.selectedOffer = offerObj.reference;
+        this.offerDetail.currentOffer = offerObj.reference;
     }
 
     saveOffer () {
         this.savingOffer = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.selectedOffer, this.quantity)
+            loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
                 .then(response => this.$window.open(response.data.order.url, "_self"))
         });
         this.savingOffer.load();

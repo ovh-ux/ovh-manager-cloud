@@ -27,12 +27,12 @@ class LogsOrderService {
             }).catch(this.ServiceHelper.errorHandler("logs_order_get_error"));
     }
 
-    saveOrder (serviceName, planCode, quantity) {
+    saveOrder (serviceName, offerDetail) {
         return this.OvhApiDbaasLogsOrder.saveOrder({
             serviceName,
-            planCode
+            planCode: offerDetail.selectedOffer
         }, {
-            quantity
+            quantity: offerDetail.quantity
         }).$promise.catch(this.ServiceHelper.errorHandler("logs_order_save_order"));
     }
 }
