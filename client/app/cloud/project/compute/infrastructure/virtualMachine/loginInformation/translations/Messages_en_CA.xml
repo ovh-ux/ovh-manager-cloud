@@ -3,7 +3,7 @@
    <translation id="cpcivm_login_information_title" qtlid="250927">Login information</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Instance login</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">In a terminal, enter the following command:<br/><code>ssh {{user}}@{{ip}}</code></translation>
-   <translation id="cpcivm_login_information_instance_info_windows" qtlid="453482">When you first log in, you must use the VNC console to finalize the Windows configuration. Then use your favorite RDP client, for example via a Linux post:</translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="453482">When you first log in, you will need to use the VNC console to finalize the Windows configuration. Then use your preferred RDP client, for example via a Linux desktop:</translation>
    <translation id="cpcivm_login_information_application_title" qtlid="401588">Application login</translation>
    <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Type</translation>
    <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>

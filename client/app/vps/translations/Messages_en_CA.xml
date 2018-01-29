@@ -102,6 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Upgrade my VPS</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Location</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS/Distribution</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">See additional IPs</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Not available</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">See the guide</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
@@ -123,9 +124,9 @@
    <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Reset the password</translation>
    <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Reset the password</translation>
    <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Once you confirm your request, your server will immediately reboot in "Rescue" mode. Downtime due to the reboot: about two minutes. </translation>
-   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Warning: You will receive temporary login details, but you need to reset your password. Please read this <a href="{{url}}" target="_blank">guide</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Important: you will receive temporary login details, but you need to reset your password. Please follow this <a href="{{url}}" target="_blank">guide</a>.</translation>
    <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">An error occurred while requesting to reset the password.</translation>
-   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">You need to reset your password. Please read this <a href="{{url}}" target="_blank">guide</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">You need to reset your password. Please follow this <a href="{{url}}" target="_blank">guide</a>.</translation>
    <translation id="vps_configuration_reboot_title_button" qtlid="168432">Reboot my VPS</translation>
    <translation id="vps_configuration_reboot_title" qtlid="168432">Reboot my VPS</translation>
    <translation id="vps_configuration_reboot_confirmation" qtlid="168445">If you confirm your request, your server will reboot immediately.</translation>
@@ -136,7 +137,7 @@
    <translation id="vps_configuration_reboot_rescue" qtlid="168458">Reboot in rescue mode</translation>
    <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">If you select this option, you will be sent an email containing the information required to log in to your VPS.</translation>
    <translation id="vps_configuration_reboot_alert" qtlid="171097">Unavailability due to reboot: approximately 2 minutes.</translation>
-   <translation id="vps_configuration_reboot_success" qtlid="452449">VPS {{serviceName}} will remboot (ETA: 2 minutes)</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="452449">VPS {{serviceName}} will reboot (estimated time: 2 minutes)</translation>
    <translation id="vps_configuration_reboot_todo" qtlid="168510">The request to reboot has been registered.</translation>
    <translation id="vps_configuration_reboot_fail" qtlid="168523">An error occurred on requesting to reboot.</translation>
    <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Rescue mode</translation>
@@ -150,7 +151,7 @@
    <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">If you confirm your request, you server will go into rescue mode and will reboot immediately. You will then receive an email containing the information required to log in to your VPS.</translation>
    <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Caution, once your VPS has rebooted in rescue mode, it will remain enabled until your VPS reboots normally again.</translation>
    <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Unavailability due to reboot: approximately 3 minutes.</translation>
-   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">VPS {{serviceName}} will reboot in rescue mode (ETA: 3 minutes)</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">VPS {{serviceName}} will reboot in rescue mode (estimated time: 3 minutes)</translation>
    <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">The request to reboot in rescue mode has been registered.</translation>
    <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">An error occurred on requesting to reboot.</translation>
    <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Modify the Reverse DNS</translation>
@@ -335,7 +336,7 @@
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">The request to mount the backup has been registered. You will be notified by email once the mounting has been completed.</translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">An error occurred on requesting to mount the backup on your VPS.</translation>
    <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Restore my VPS</translation>
-   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Are you sure you want to restore your <span class="normal italic">{{ serviceName }}</span> VPS using the following backup?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Are you sure you want to restore VPS <span class="normal italic">{{ serviceName }}</span>  using the following backup?</translation>
    <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Creation date</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Modify the root password on restoration</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Unable to reset your VPS password while VMware Tools is not installed. However, you can reset it via rescue mode.</translation>
@@ -345,7 +346,7 @@
    <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">If you want to mount backup, you have to dismount your current backup beforehand. </translation>
    <translation id="vps_configuration_veeam_restore_success" qtlid="170252">The request to restore the VPS has been registered. You will be notified by email once the restoration has been completed.</translation>
    <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">An error occurred on requesting to restore the backup on your VPS.</translation>
-   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Backup Storage is not available for products in this range.</translation>
+   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Backup Storage is not available for this series.</translation>
    <translation id="vps_tab_summary" qtlid="170278">Summary of options</translation>
    <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Backup storage:</translation>
    <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot:</translation>
@@ -434,7 +435,7 @@
    <translation id="vps_backup_storage_access_delete" qtlid="180590">Delete an access</translation>
    <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Are you sure you want to delete access for the {{ipBlock}} IP block?</translation>
    <translation id="vps_backup_storage_access_delete_success" qtlid="452878">Deletion of access to backup storage for the {{ipBlock}} IP block has been processed, but this may take a few minutes</translation>
-   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">An error has occurred attempting to delete backup storage access for the {{ipBlock}} IP block</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">An error has occurred while attempting to delete backup storage access for the {{ipBlock}} IP block</translation>
 
    <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">A error occurred while retrieving authorizable blocks </translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Add an access</translation>
@@ -454,7 +455,7 @@
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">All the available blocks have been authorized</translation>
 
    <translation id="vps_tab_backup_storage_set_success" qtlid="452904">Your modifications to the {{access}} access have been processed, but this may take a few minutes</translation>
-   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">An error has occurred modifying the {{access}} access</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">An error has occurred while modifying the {{access}} access</translation>
 
    <translation id="vps_monitoring_network_netRx" qtlid="33550">Incoming</translation>
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Outgoing</translation>
@@ -482,7 +483,7 @@
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Order an additional disk </translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Please choose the size of the additional disk for your VPS. It will appear as a second hard drive on your operating system. </translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, it will then be renewed with it. </translation>
-   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} /month/excl.taxes</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} /month</translation>
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Price excl. taxes:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Price incl. taxes:</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option:</translation>
@@ -513,5 +514,5 @@
    <translation id="vps_configuration_sla_title_enable" qtlid="452943">Do you want to enable SLA monitoring for this server?</translation>
    <translation id="vps_configuration_sla_title_disable" qtlid="452956">Do you want to disable SLA monitoring for this server?</translation>
 
-   <translation id="vps_service_expired" qtlid="452969">The {{vps}} service has not been renewed. This may be due to a decision from you, or due to a delayed payment.</translation>
+   <translation id="vps_service_expired" qtlid="452969">The {{vps}} service has not been renewed. This may be due to your own decision, or due to a delayed payment.</translation>
 </translations>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="vps_order_windows_title" qtlid="250745">Opções Windows</translation>
-   <translation id="vps_order_windows_step1_title" qtlid="452332">Sélection de la durée</translation>
-   <translation id="vps_order_windows_step2_title" qtlid="452345">Acceptation des conditions d'utilisation</translation>
+   <translation id="vps_order_windows_step1_title" qtlid="452332">Seleção da duração</translation>
+   <translation id="vps_order_windows_step2_title" qtlid="452345">Aceite as condições de utilização</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Resumo</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Esta opção permitir-lhe-á instalar um SO do tipo Windows no seu servidor VPS</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Ocorreu um erro durante o carregamento dos preços.</translation>
@@ -15,19 +15,19 @@
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Um novo separador ser-lhe-à apresentado e será automaticamente reencaminhado para a interface de pagamento.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Opção Windows</translation>
 
-   <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Votre VPS a bien été redémarré</translation>
+   <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">O VPS foi reinicializado</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Ocorreu um erro aquando do reboot da sua VPS.</translation>
-   <translation id="vps_configuration_setNetboot_polling_done" qtlid="452358">Votre VPS a bien été redémarré</translation>
+   <translation id="vps_configuration_setNetboot_polling_done" qtlid="452358">O VPS foi reinicializado</translation>
    <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Ocorreu um erro aquando do reboot da sua VPS.</translation>
    <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">O monitoring SLA foi corretamente modificado</translation>
    <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Ocorreu um erro aquando da modificação do monitoring SLA.</translation>
    <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Uma nova password foi gerada corretamente.</translation>
    <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Ocorreu um erro aquando da reinicialização da password.</translation>
-   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="452371">Un snapshot du VPS {{serviceName}} a été créé avec succès.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="452371">O snapshot do VPS {{serviceName}} foi criado com sucesso</translation>
    <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Ocorreu um erro aquando da criação de uma snapshot</translation>
    <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">A snapshot foi eliminada corretamente</translation>
    <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Ocorreu um erro aquando da eliminação da snapshot</translation>
-   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="452384">Votre VPS {{serviceName}} a bien été réinstallé</translation>
+   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="452384">O VPS {{serviceName}} foi reinstalado</translation>
    <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Ocorreu um erro aquando da reinstalação da sua VPS</translation>
    <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">O restauro do snapshot foi efetuado com sucesso</translation>
    <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Ocorreu um erro aquando do restauro da snapshot</translation>
@@ -44,7 +44,7 @@
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utilizador</translation>
 
    <translation id="vps_dashboard_task" qtlid="195633">Tarefas em curso</translation>
-   <translation id="vps_dashboard_task_finish" qtlid="452397">Tâches en cours terminées</translation>
+   <translation id="vps_dashboard_task_finish" qtlid="452397">Operações em curso terminadas</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Reiniciar</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Reiniciar (rescue)</translation>
    <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Modificação do SLA</translation>
@@ -102,6 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Efetuar upgrade à minha VPS</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Localização</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS / Distribuição</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">Ver os IP adicionais</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Não disponível</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Consultar o guia</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
@@ -110,7 +111,7 @@
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Não configurado</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">DNS secundário</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Nenhum domínio está configurado</translation>
-   <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">{{ count }} domaine(s) configuré(s)</translation>
+   <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">{{ count }} domínio(s) configurados(s)</translation>
    <translation id="vps_dashboard_state_services" qtlid="167912">Estado</translation>
    <translation id="vps_dashboard_monitoring_sla" qtlid="179537">Monitoring SLA</translation>
    <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">IPs monitoring SLA</translation>
@@ -123,54 +124,54 @@
    <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Reinicializar a Password</translation>
    <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Reinicializar a Password</translation>
    <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Se validar o seu pedido, o seu servidor será reiniciado em modo de "Rescue". O tempo de indisponibilidade devido ao reboot é de cerca de 2 minutos.</translation>
-   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Attention : Vous allez recevoir des identifiants temporaires, mais la réinitialisation du mot de passe est à effectuer par vos soins. Suivez le <a href="{{url}}" target="_blank">guide</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Atenção! Os dados de acesso que irá receber são temporários. Terá de repor a palavra-passe. Siga as instruções indicadas neste <a href="{{url}}" target="_blank">guia</a>.</translation>
    <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">Ocorreu um erro aquando do pedido de reinicialização da password.</translation>
-   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">La réinitialisation du mot de passe est à effectuer par vos soins. Suivez le <a href="{{url}}" target="_blank">guide</a>.</translation>
-   <translation id="vps_configuration_reboot_title_button" qtlid="168432">Reiniciar a minha VPS</translation>
-   <translation id="vps_configuration_reboot_title" qtlid="168432">Reiniciar a minha VPS</translation>
-   <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Se validar o seu pedido, o seu servidor reiniciará de imediato.</translation>
-   <translation id="vps_configuration_reboot_warning_tools" qtlid="194801">Recomendamos que instale as VMWare Tools.</translation>
-   <translation id="vps_configuration_reboot_warning_tools2" qtlid="194814">Atenção: Se solicitar um reset e as VMware tools não estão instaladas, isso levará à necessidade de um reboot "hard" da sua VPS</translation>
-   <translation id="vps_configuration_reboot_confirmation_rescue_loading" qtlid="195737">Ativação do modo de rescue antes do reboot...</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">Para repor a palavra-passe deverá consultar este <a href="{{url}}" target="_blank">guia</a>.</translation>
+   <translation id="vps_configuration_reboot_title_button" qtlid="168432">Reiniciar o meu VPS</translation>
+   <translation id="vps_configuration_reboot_title" qtlid="168432">Reiniciar o meu VPS</translation>
+   <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Se confirmar o seu pedido, o seu servidor será reiniciado de imediato.</translation>
+   <translation id="vps_configuration_reboot_warning_tools" qtlid="194801">Recomendamos a instalação das VMWare Tools.</translation>
+   <translation id="vps_configuration_reboot_warning_tools2" qtlid="194814">Atenção: se executar a reinicialização e as VMware tools não estiverem instaladas, terá que efetuar um «hard» reboot do VPS.</translation>
+   <translation id="vps_configuration_reboot_confirmation_rescue_loading" qtlid="195737">Ativação do modo rescue antes do reboot...</translation>
    <translation id="vps_configuration_reboot_confirmation_local_loading" qtlid="195750">Ativação do modo normal antes do reboot...</translation>
-   <translation id="vps_configuration_reboot_rescue" qtlid="168458">Reiniciar em modo de rescue</translation>
-   <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Se escolher esta opção irá receber um e-mail que conterá as informações que irá permitir que aceda à sua VPS</translation>
+   <translation id="vps_configuration_reboot_rescue" qtlid="168458">Reiniciar em Modo de Rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Se escolher esta opção, irá receber um e-mail com as informações para aceder ao VPS</translation>
    <translation id="vps_configuration_reboot_alert" qtlid="171097">Tempo de indisponibilidade devido ao reboot: cerca de 2 minutos.</translation>
-   <translation id="vps_configuration_reboot_success" qtlid="452449">Le VPS {{serviceName}} va redémarrer (temps estimé 2 minutes)</translation>
-   <translation id="vps_configuration_reboot_todo" qtlid="168510">O pedido de reboot foi corretamente tomado em conta.</translation>
-   <translation id="vps_configuration_reboot_fail" qtlid="168523">Ocorreu um erro aquando do pedido de reboot</translation>
-   <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Modo de rescue</translation>
-   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Algumas ações são inacessíveis em <b>modo de rescue</b>. Para restabelecer as funcionalidades deve recolocar o boot local (disco rígido) ao clicar em "Reiniciar a minha VPS".</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="452449">O VPS {{serviceName}} vai reiniciar (tempo estimado: 2 minutos)</translation>
+   <translation id="vps_configuration_reboot_todo" qtlid="168510">O pedido de reboot foi registado</translation>
+   <translation id="vps_configuration_reboot_fail" qtlid="168523">Ocorreu um erro na execução do pedido de reboot</translation>
+   <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Modo Rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_warning_text" qtlid="323327">Algumas ações não são possíveis de executar em <b>modo rescue</b>. Para restabelecer as funcionalidades, deverá restaurar o boot local, clicando em "Reiniciar o meu VPS".</translation>
    <translation id="vps_configuration_reboot_rescue_warning_btn_title" qtlid="323340">Esta ação não é possível em modo de rescue.</translation>
-   <translation id="vps_configuration_ipV6_info_text" qtlid="367125">A sua instância dispõe agora de um endereço <strong>IPv6 gratuito</strong> além do endereço IPv4 padrão.</translation>
+   <translation id="vps_configuration_ipV6_info_text" qtlid="367125">Para além do endereço IPv4 predefinido, a sua instância dispõe agora de um endereço <strong>IPv6 gratuito</strong>.</translation>
    <translation id="vps_configuration_ipV6_address_label" qtlid="25615">IP</translation>
    <translation id="vps_configuration_ipV6_gateway_label" qtlid="42682">Gateway</translation>
    <translation id="vps_configuration_ipV6_guide_link_text" qtlid="367112">Consultar o guia</translation>
-   <translation id="vps_configuration_reboot_rescue_title" qtlid="168549">Reiniciar a minha VPS em modo de rescue</translation>
-   <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Se validar o seu pedido, o seu servidor passará ao modo de rescue e irá reiniciar de imediato. Receberá depois um e-mail que irá permitir que aceda à sua VPS.</translation>
-   <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Atenção, assim que a VPS reiniciar, o modo de rescue ficará ativo até ao próximo reboot da sua VPS.</translation>
-   <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Tempos de indisponibilidade devido ao reboot: cerca de 3 minutos.</translation>
-   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">Le VPS {{serviceName}} va redémarrer en mode rescue (temps estimé 3 minutes)</translation>
-   <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">O pedido de reboot em modo de rescue foi corretamente tomado em conta.</translation>
-   <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Ocorreu um erro aquando do pedido de reboot</translation>
-   <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Modificar a Reverse DNS</translation>
-   <translation id="vps_configuration_reversedns_title" qtlid="168640">Modificar a Reverse DNS</translation>
+   <translation id="vps_configuration_reboot_rescue_title" qtlid="168549">Reiniciar o meu VPS em Modo Rescue</translation>
+   <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Se confirmar o pedido, o servidor será imediatamente reiniciado em Modo Rescue. Depois irá receber um e-mail com as instruções para aceder ao VPS.</translation>
+   <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Atenção, assim que o VPS reiniciar, o Modo Rescue ficará ativo até ao próximo reboot do VPS.</translation>
+   <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Tempo de indisponibilidade devido ao reboot: cerca de 3 minutos.</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">O VPS {{serviceName}} será reiniciado em Modo Rescue (tempo estimado: 3 minutos)</translation>
+   <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">O pedido de reboot em Modo de Rescue foi registado.</translation>
+   <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Ocorreu um erro na execução do pedido de reboot</translation>
+   <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Alterar Reverse DNS</translation>
+   <translation id="vps_configuration_reversedns_title" qtlid="168640">Alterar Reverse DNS</translation>
    <translation id="vps_configuration_reversedns_step1_question" qtlid="168653">Escolha o IP a configurar:</translation>
    <translation id="vps_configuration_reversedns_step1_ip" qtlid="25615">IP</translation>
-   <translation id="vps_configuration_reversedns_step2_ip" qtlid="168666">IP da VPS:</translation>
-   <translation id="vps_configuration_reversedns_step2_reverse" qtlid="168679">Atual reverse DNS:</translation>
-   <translation id="vps_configuration_reversedns_step2_newreverse" qtlid="168692">Defina uma nova reverse DNS:</translation>
-   <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Anterior Reverse DNS:</translation>
-   <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Nova Reverse DNS:</translation>
-   <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">A modificação será imediata mas deverá ter em conta o tempo de propagação (tempo médio de 24h).</translation>
-   <translation id="vps_configuration_reversedns_success" qtlid="452475">Le Reverse DNS du VPS {{serviceName}} a bien été modifié.</translation>
-   <translation id="vps_configuration_reversedns_fail" qtlid="168757">Ocorreu um erro aquando da modificação da Reverse DNS.</translation>
+   <translation id="vps_configuration_reversedns_step2_ip" qtlid="168666">IP do VPS:</translation>
+   <translation id="vps_configuration_reversedns_step2_reverse" qtlid="168679">Reverse DNS atual:</translation>
+   <translation id="vps_configuration_reversedns_step2_newreverse" qtlid="168692">Defina um novo reverse DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Reverse DNS anterior:</translation>
+   <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Novo Reverse DNS:</translation>
+   <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">A alteração será imediata, mas a propagação tem um tempo médio de 24h.</translation>
+   <translation id="vps_configuration_reversedns_success" qtlid="452475">O Reverse DNS do VPS {{serviceName}} foi alterado.</translation>
+   <translation id="vps_configuration_reversedns_fail" qtlid="168757">Ocorreu um erro na alteração do Reverse DNS.</translation>
    <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
-   <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">A Reverse DNS é oposta a um registo DNS clássico: ela associa um nome de domínio a um endereço IP.</translation>
-   <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">A Reverse DNS é particularmente útil se utilizar a sua VPS como servidor de e-mails. Numerosos servidores de e-mail estão configurados para rejeitar e-mails que tenham proveniência de endereços IPs que não possuam Reverse DNS.</translation>
-   <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Ao definir a Reverse otimiza as possibilidades para que os seus e-mails não sejam considerados como spam.</translation>
-   <translation id="vps_configuration_reinstall_title_button" qtlid="168809">Reinstalar a minha VPS</translation>
-   <translation id="vps_configuration_reinstall_title" qtlid="168809">Reinstalar a minha VPS</translation>
+   <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">O Reverse DNS funciona de forma inversa a um registo DNS clássico, ou seja, associa um domínio a um endereço IP.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc2" qtlid="168783">O Reverse DNS é particularmente útil se utilizar o VPS como servidor de e-mail. Muitos servidores de e-mail estão configurados para rejeitar e-mails provenientes de endereços IP sem Reverse DNS.</translation>
+   <translation id="vps_configuration_reversedns_step1_desc3" qtlid="168796">Ao definir o Reverse DNS, aumenta a possibilidade de os seus e-mails não serem considerados como spam.</translation>
+   <translation id="vps_configuration_reinstall_title_button" qtlid="168809">Reinstalar o meu VPS</translation>
+   <translation id="vps_configuration_reinstall_title" qtlid="168809">Reinstalar o meu VPS</translation>
    <translation id="vps_configuration_reinstall_bitFormat" qtlid="122107">bits</translation>
    <translation id="vps_configuration_reinstall_step1_question" qtlid="171123">Escolha o sistema operativo:</translation>
    <translation id="vps_configuration_reinstall_step1_packages" qtlid="349255">Versões dos pacotes instalados:</translation>
@@ -183,67 +184,67 @@
    <translation id="vps_configuration_reinstall_step1_software_ENVIRONMENT" qtlid="28495">Ambiente</translation>
    <translation id="vps_configuration_reinstall_step1_language" qtlid="145644">Idioma</translation>
    <translation id="vps_configuration_reinstall_step1_select_ssh_key" qtlid="243487">Chave(s) SSH a pré-instalar :</translation>
-   <translation id="vps_configuration_reinstall_step1_select_ssh_key_no" qtlid="295725">Não dispõe de nenhuma chave SSH registada. Os seus códigos de autenticação ser-lhe-ão enviados por e-mail.</translation>
+   <translation id="vps_configuration_reinstall_step1_select_ssh_key_no" qtlid="295725">Não dispõe de nenhuma chave SSH registada. Os seus códigos de autenticação serão enviados por e-mail.</translation>
    <translation id="vps_configuration_reinstall_step1_select_ssh_key_help" qtlid="295738">Adicione uma chave na secção A minha conta</translation>
-   <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Prima a tecla Ctrl e depois clique numa chave para a desselecionar.</translation>
-   <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Desejo receber por email os dados de acesso ao meu servidor VPS.</translation>
-   <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Ocorreu um erro durante o carregamento das suas chaves SSH.</translation>
-   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Ocorreu um erro aquando da obtenção das informações.</translation>
+   <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Prima a tecla Ctrl e clique numa chave para a desselecionar.</translation>
+   <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Desejo receber por e-mail os dados de acesso ao meu servidor VPS.</translation>
+   <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Ocorreu um erro no carregamento das chaves SSH.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Ocorreu um erro no acesso às informações.</translation>
    <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Sistema operativo:</translation>
    <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Linguagem:</translation>
    <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Software:</translation>
    <translation id="vps_configuration_reinstall_step2_software_status_DEPRECATED" qtlid="194593">obsoleta (deprecated)</translation>
    <translation id="vps_configuration_reinstall_step2_software_status_TESTING" qtlid="194606">versão de teste</translation>
-   <translation id="vps_configuration_reinstall_step2_sshKeys" qtlid="243526">Chave(s) SSH pré-instaladas:</translation>
-   <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Tempo estimado para a reinstalação: máximo 15 minutos.</translation>
-   <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Atenção: a reinstalação levará à perda de todos os seus dados!</translation>
-   <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Se deseja beneficiar de um sistema operativo MS Windows, deverá escolher essa opção adicional.</translation>
-   <translation id="vps_configuration_reinstall_success" qtlid="452488">Le VPS {{serviceName}} va être réinstallé</translation>
-   <translation id="vps_configuration_reinstall_fail" qtlid="452501">Une erreur est survenue lors de la demande de réinstallation {{message}}</translation>
-   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Eliminar a Snapshot</translation>
-   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Eliminar a Snapshot</translation>
-   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Souhaitez-vous réellement supprimer le Snapshot du VPS <span class="normal italic">{{serviceName}}</span> ?</translation>
+   <translation id="vps_configuration_reinstall_step2_sshKeys" qtlid="243526">Chave(s) SSH pré-instalada(s):</translation>
+   <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Tempo estimado para a reinstalação: 15 minutos (max!).</translation>
+   <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Atenção: a reinstalação levará à perda de todos os dados!</translation>
+   <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Se quiser beneficiar de um sistema operativo MS Windows, deverá escolher essa opção adicional.</translation>
+   <translation id="vps_configuration_reinstall_success" qtlid="452488">O VPS {{serviceName}} irá ser reinstalado</translation>
+   <translation id="vps_configuration_reinstall_fail" qtlid="452501">Ocorreu um erro na execução do pedido de reinstalação {{message}}</translation>
+   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Eliminar Snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Eliminar Snapshot</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Quer mesmo eliminar a Snapshot do VPS <span class="normal italic">{{serviceName}}</span>?</translation>
    <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Atenção, esta ação é irreversível.</translation>
-   <translation id="vps_configuration_delete_snapshot_success" qtlid="452527">Le Snapshot sur le VPS {{serviceName}} va être supprimé.</translation>
-   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Ocorreu um erro aquando do pedido de eliminação da Snapshot.</translation>
+   <translation id="vps_configuration_delete_snapshot_success" qtlid="452527">A Snapshot do VPS {{serviceName}} será eliminada.</translation>
+   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Ocorreu um erro na eliminação da Snapshot.</translation>
    <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Efetuar uma Snapshot</translation>
    <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Efetuar uma Snapshot</translation>
-   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="452540">Vous allez prendre un snapshot du VPS <span class="italic normal">{{serviceName}}</span>.</translation>
-   <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Descrição a associar à snapshot:</translation>
-   <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">Vai efetuar uma snapshot. Atenção: O servidor VPS ficará indisponível durante a opção, e qualquer snapshot que teria efetuado anteriormente será eliminada.</translation>
-   <translation id="vps_configuration_snapshot_take_success" qtlid="452553">Un Snapshot du VPS {{serviceName}} va être créé.</translation>
-   <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Ocorreu um erro aquando do pedido da Snapshot.</translation>
-   <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Restaurar a Snapshot.</translation>
-   <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Restaurar a Snapshot.</translation>
-   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Souhaitez-vous restaurer le Snapshot datant du {{date}} sur le VPS <span class="normal italic">{{serviceName}}</span>&#160;?</translation>
-   <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Atenção: esta ação irá levar à eliminação da versão atual da sua VPS e irá restaurá-la para o estado da última Snapshot efetuada. Esta ação é irreversível.</translation>
-   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">Le Snapshot va être restauré sur le VPS {{serviceName}}.</translation>
-   <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Ocorreu um erro aquando do pedido de restauro da Snapshot.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="452540">Pretende efetuar uma Snapshot do VPS <span class="italic normal">{{serviceName}}</span>.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Descrição a associar à Snapshot:</translation>
+   <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">Vai efetuar uma snapshot. Atenção: O servidor VPS ficará indisponível durante a operação, e as Snapshots anteriores serão eliminadas.</translation>
+   <translation id="vps_configuration_snapshot_take_success" qtlid="452553">Será criada uma Snapshot do VPS {{serviceName}}</translation>
+   <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Ocorreu um erro na execução da criação da Snapshot.</translation>
+   <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Restaurar Snapshot.</translation>
+   <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Restaurar Snapshot.</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Deseja restaurar a Snapshot de {{date}} no VPS <span class="normal italic">{{serviceName}}</span>?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Atenção: esta ação irá eliminar a versão atual do seu VPS e restaurá-lo de acordo com a configuração registada pela última Snapshot efetuada. Esta ação é irreversível.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">A Snapshot será restaurada no VPS {{serviceName}}.</translation>
+   <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Ocorreu um erro na execução do pedido de restauro da Snapshot.</translation>
    <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Ativar a opção Snapshot</translation>
    <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Ativar a opção Snapshot</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Para o primeiro pagamento será faturado ao prorata até à data de renovação da sua VPS.</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Cette option sera facturée au tarif mensuel de <span class="bold">{{ amount }} HT</span></translation>
-   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">A opção Snapshot permite que crie um ponto de restauro. É uma imagem instantânea da configuração que pode ser restaurada em caso de necessidade.</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Queira clicar no botão "Seguinte" para que prossiga com a ativação da opção Snapshot.</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Para confirmar o seu pedido queira proceder ao pagamento ao clicar no botão "Encomendar" em baixo.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Para o primeiro pagamento, a OVH fatura o tempo de utilização até à data de renovação do VPS.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Esta opção tem um preço mensal de <span class="bold">{{ amount }} IVA não incluído</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">A opção Snapshot permite criar um ponto de restauro. Esta opção guarda uma imagem duma configuração existente num determinado momento,  que pode ser restaurada em caso de necessidade.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">clique no botão "Seguinte" para avançar com a ativação da opção Snapshot.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Para confirmar o pedido, efetue o pagamento. Para tal, deverá clicar no botão "Encomendar".</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Resumo</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Irá ser aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a ativação da opção seja tomada em conta no seu Espaço de Cliente Web.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Irá surgir um novo separador, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Preço c/IVA.</translation>
-   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Ocorreu um erro aquando da ativação da snapshot.</translation>
-   <translation id="vps_configuration_desactivate_option" qtlid="48646">Rescindir</translation>
+   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Ocorreu um erro na ativação da Snapshot.</translation>
+   <translation id="vps_configuration_desactivate_option" qtlid="48646">Cancelar</translation>
    <translation id="vps_configuration_option_released" qtlid="284893">Não renovado</translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Ativar o Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Ativar a opção Backup storage</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Commande de l'option Backup storage sur le VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Cette option sera facturée au tarif mensuel de <span class="red bold">{{ price }} HT</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Deseja ativar a opção Backup Storage para o VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Este opção terá um preço mensal de <span class="red bold">{{ price }} IVA não incluído</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">O Backup Storage é um espaço de arquivo que lhe permite transferir conteúdos, dados, parâmetros e configurações.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">A gerar a nota de encomenda ...</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">Afin de confirmer votre demande, veuillez procéder au règlement en cliquant sur le bouton "Confirmer" ci-dessous.</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Irá ser aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a ativação da opção seja tomada em conta no seu Espaço de Cliente Web.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">Para confirmar o pedido, efetue o pagamento clicando no botão "Confirmar".</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Irá surgir um novo separador, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Preço c/IVA.</translation>
    <translation id="vps_configuration_activate_ftpbackup_fail" qtlid="209944">Ocorreu um erro aquando da ativação da opção Backup Storasge.</translation>
@@ -253,7 +254,7 @@
    <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Rescindir a opção Backup automatizado</translation>
    <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Rescindir a opção Windows</translation>
    <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Rescindir a opção de discos adicionais</translation>
-   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">La résiliation de l’option entrera en vigueur à&#160;la date de renouvellement, soit le {{ date }}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">O cancelamento do serviço terá efeito a partir da data de renovação: {{ date }}.</translation>
    <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Esta ação é irreversível e não pode ser anulada.</translation>
    <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">A opção foi cancelada</translation>
    <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Ocorreu um erro durante o cancelamento da opção.</translation>
@@ -278,16 +279,16 @@
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
    <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ mês</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Le basculement vers un nouveau modèle est totalement gratuit. Le tarif affiché est le tarif au mois correspondant à chaque modèle. Pour information, le tarif mensuel de votre offre actuelle est de <span class="bold">{{price}}</span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">A migração para um novo modelo é totalmente gratuita. O valor apresentado corresponde ao preço mensal para o respetivo modelo. O preço mensal da sua oferta atual é <span class="bold">{{price}}</span></translation>
    <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Atenção| Não é possível diminuir a potência da sua VPS: apenas pode efetuar upgrades.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Veuillez accepter les conditions d'utilisation.</translation>
-   <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade du VPS <span class="italic normal">{{vpsName}}</span> en {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Tarif jusqu'au {{duration}}, date du prochain renouvellement de votre serveur :</translation>
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Tem de aceitar as condições de utilização</translation>
+   <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade do VPS <span class="italic normal">{{vpsName}}</span> para {{modelName}}</translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Preço até {{duration}} (data da próxima renovação do servidor:</translation>
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Preço c/IVA.</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Ensuite, votre serveur sera facturé <span class="red">{{price}} HT / mois</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Para confirmar o seu pedido queira proceder ao pagamento ao clicar no botão "Encomendar" em baixo.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Irá ser aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">A seguir, o servidor será faturado ao preço mensal de <span class="red">{{price}} IVA não incluído</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Para confirmar o pedido, efetue o pagamento. Para tal, deverá clicar no botão "Encomendar".</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Irá surgir um novo separador, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a renovação seja tida em conta no seu Espaço de Cliente Web.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Será necessário um reboot para que a potência da sua VPS seja aumentada.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Resumo</translation>
@@ -297,10 +298,10 @@
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Adicionar um domínio ao DNS secundário</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domínio a adicionar:</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Ocorreu um erro aquando do pedido de adição de um domínio ao DNS secundário.</translation>
-   <translation id="vps_configuration_secondarydns_add_success" qtlid="452722">Le domaine {{domain}} va être ajouté sur le DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_add_success" qtlid="452722">O domínio {{domain}} irá ser associado ao DNS secundário</translation>
    <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Eliminar um domínio do DNS secundário</translation>
-   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="452735">Voulez vous supprimer le domaine <span class="normal italic">{{domain}}</span> du DNS secondaire ?</translation>
-   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="452748">Une erreur est survenue lors de la demande de suppression du domaine {{domain}} du DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="452735">Pretende eliminar o domínio <span class="normal italic">{{domain}}</span> do DNS secundário?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="452748">Ocorreu um erro na execução da eliminação do domínio {{domain}} do DNS secundário.</translation>
    <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">O domínio vai ser eliminado do DNS secundário.</translation>
    <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
    <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
@@ -311,8 +312,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Subscrever aos Backups Automatizados</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Ocorreu um erro aquando do carregamento das informações</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Ensuite, le service sera facturé mensuellement au prix de <span class="red bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Commande de l'option Backups automatisés sur le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">A seguir, o serviço será faturado ao preço de <span class="red bold">{{ price }}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Deseja subscrever a opção de backup automático para o VPS <span class="italic normal">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Para confirmar o seu pedido queira aceitar as condições de utilização e clicar no botão "Seguinte" em baixo.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Preço c/IVA.</translation>
@@ -320,22 +321,22 @@
    <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">A gerar a nota de encomenda ...</translation>
    <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">A nota de encomenda foi gerada com sucesso.</translation>
    <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">Para confirmar a sua encomenda queira clicar no botão "Pagar" em baixo.</translation>
-   <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a ativação da opção seja tomada em conta no seu Espaço de Cliente Web.</translation>
-   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Irá ser aberto um novo separador e será automaticamente reencaminhado para a interface de pagamentos OVH.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Irá surgir um novo separador, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
    <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Ocorreu um erro aquando do pedido de subscrição à opção Backups automatizados.</translation>
    <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Desmontar o backup</translation>
    <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Desmontar o backup</translation>
-   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="452787">Voulez vous démonter le backup suivant de votre VPS <span class="normal italic">{{ serviceName }}</span> ?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="452787">Deseja desmontar este backup do VPS <span class="normal italic">{{ serviceName }}</span> ?</translation>
    <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Data de criação</translation>
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Ocorreu um erro aquando do pedido de desmontagem do backu na sua VPS.</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">O backup vai ser desmontado da sua VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Montar o backup.</translation>
-   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Quer mesmo montar este backup no VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
    <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Esse backup ficará acessível através de um ponto de montagem NFS ou SMB.</translation>
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">O pedido de montagem do backup foi corretamente tomado em conta. Será notificado por e-mail após o término da montagem.</translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Ocorreu um erro aquando do pedido de montagem do backup na sua VPS.</translation>
    <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Restaurar a minha VPS</translation>
-   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Souhaitez-vous réellement restaurer votre VPS <span class="normal italic">{{ serviceName }}</span> en utilisant le backup suivant ?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Quer mesmo usar este backup para restaurar o VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Data de criação</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Modificar a password root aquando do restauro</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Será impossível reiniciar a palavra-passe da sua VPS até que as VMware Tools estejam instaladas. Entretanto, poderá reiniciar a VPS em modo rescue.</translation>
@@ -345,13 +346,13 @@
    <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">Se deseja montar um backup, deverá desmontar previamente o seu backup atual.</translation>
    <translation id="vps_configuration_veeam_restore_success" qtlid="170252">O pedido de restauro da VPS foi corretamente tomado em conta. Será notificado por e-mail aquando do término do restauro.</translation>
    <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">Ocorreu um erro aquando do pedido de restauro do backup na sua VPS.</translation>
-   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Le Backup storage n'est pas disponible sur cette gamme.</translation>
+   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">O Backup Storage não está disponível para esta gama.</translation>
    <translation id="vps_tab_summary" qtlid="170278">Resumo das opções</translation>
    <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Backup storage:</translation>
    <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Snapshot:</translation>
    <translation id="vps_tab_snapshot" qtlid="9671">Snapshot</translation>
    <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Backups automatizados:</translation>
-   <translation id="vps_tab_veeam" qtlid="452839">Backups automatisés</translation>
+   <translation id="vps_tab_veeam" qtlid="452839">Backups automáticos</translation>
    <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">efetuado a:</translation>
    <translation id="vps_tab_SUMMARY_license" qtlid="113658">Licenças</translation>
    <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Salvaguardas</translation>
@@ -413,7 +414,7 @@
    <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Uma nova palavra-passe será enviada ao NIC "Admin" do servidor.</translation>
    <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Acaba de ser enviada uma nova password ao nic admin do servidor</translation>
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Um erro ocorreu durante a reinicialização da nova palavra-passe.</translation>
-   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Etes-vous certain(e) de vouloir réinitialiser le mot de passe pour le backup storage ?</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Quer mesmo repor a palavra-passe para o Backup Storage?</translation>
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">Identificador</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Nome</translation>
@@ -432,9 +433,9 @@
    <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Anular a modificação</translation>
 
    <translation id="vps_backup_storage_access_delete" qtlid="180590">Eliminação de um acesso</translation>
-   <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Etes-vous certain(e) de vouloir supprimer l'accès du block ip {{ipBlock}} ?</translation>
-   <translation id="vps_backup_storage_access_delete_success" qtlid="452878">La suppression de l'accès au backup storage par le block ip {{ipBlock}} a bien été prise en compte mais peut prendre quelques minutes</translation>
-   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Une erreur est survenue lors de la tentative de suppression de l'accès au backup storage du block ip {{ipBlock}}</translation>
+   <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Quer mesmo eliminar o acesso do bloco IP {{ipBlock}}?</translation>
+   <translation id="vps_backup_storage_access_delete_success" qtlid="452878">A eliminação do acesso do bloco ip{{ipBlock}} ao Backup Storage pode demorar alguns minutos</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Ocorreu um erro na eliminação do acesso do bloco IP {{ipBlock}} ao Backup Storage</translation>
 
    <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Ocorreu um erro aquando da recuperação dos blocos que podem ser autorizados</translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar um acesso</translation>
@@ -453,8 +454,8 @@
    <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Ocorreu um erro aquando do pedido de adição de regras de acesso ao backup storage</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Todos os blocos disponível receberam uma autorização</translation>
 
-   <translation id="vps_tab_backup_storage_set_success" qtlid="452904">La modification de l'accès {{access}} a bien été prise en compte mais peut prendre quelques minutes</translation>
-   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">Une erreur est survenue lors de la modification de l'accès {{access}}</translation>
+   <translation id="vps_tab_backup_storage_set_success" qtlid="452904">A alteração do acesso {{access}} pode demorar alguns minutos</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">Ocorreu um erro na execução da alteração do acesso {{access}}</translation>
 
    <translation id="vps_monitoring_network_netRx" qtlid="33550">Entrando </translation>
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Saindo </translation>
@@ -486,7 +487,7 @@
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Preço c/IVA.</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Opção:</translation>
-   <translation id="vps_order_additional_disk_offer_description" qtlid="452930">Option Disque Additionnel - {{ size }} jusqu'au {{ date }}</translation>
+   <translation id="vps_order_additional_disk_offer_description" qtlid="452930">Opção Disco Extra - {{ size }} até {{ date }}</translation>
    <translation id="vps_order_additional_disk_price" qtlid="181084">Preço:</translation>
    <translation id="vps_order_additional_disk_step2_title" qtlid="82725">Resumo</translation>
    <translation id="vps_order_additional_disk_fail" qtlid="281680">Ocorreu um erro aquando da encomenda de um disco adicional</translation>
@@ -510,8 +511,8 @@
    <translation id="vps_status_disabled" qtlid="24967">Desativado</translation>
    <translation id="vps_status_enabled" qtlid="30250">Ativado</translation>
    <translation id="vps_dashboard_product" qtlid="26143">Modelo</translation>
-   <translation id="vps_configuration_sla_title_enable" qtlid="452943">Activer le monitoring SLA pour ce serveur ?</translation>
-   <translation id="vps_configuration_sla_title_disable" qtlid="452956">Désactiver le monitoring SLA pour ce serveur ?</translation>
+   <translation id="vps_configuration_sla_title_enable" qtlid="452943">Deseja ativar a monitorização SLA para este servidor?</translation>
+   <translation id="vps_configuration_sla_title_disable" qtlid="452956">Deseja desativar a monitorização SLA para este servidor?</translation>
 
-   <translation id="vps_service_expired" qtlid="452969">Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.</translation>
+   <translation id="vps_service_expired" qtlid="452969">O serviço {{vps}} não foi renovado. Esta situação pode dever-se a uma decisão sua ou a um pagamento em falta.</translation>
 </translations>

@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Elke 6 uur</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Een snapshot is een directe momentopname van de status van uw NAS-HA, precies van het moment waarop de snapshot wordt genomen.</translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Snapshots gebruiken ruimte op uw partitie om goed te kunnen functioneren. Er is geen snapshot-geschiedenis opgeslagen: voor snapshots van dezelfde frequentie wordt de vorige opname overschreven.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Als u geen periode selecteert, worden uw bestaande snapshots voor deze partitie verwijderd.</translation>
 </translations>

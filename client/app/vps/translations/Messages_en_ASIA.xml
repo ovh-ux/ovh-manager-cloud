@@ -102,6 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Upgrade my VPS</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Location</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS/Distribution</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">See additional IPs</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Not available</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">See the guide</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
@@ -215,7 +216,7 @@
    <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">An error occurred on requesting to take a snapshot.</translation>
    <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Restore the snapshot</translation>
    <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Restore the snapshot</translation>
-   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Do you want to restore your snapshot from {{date}} onto your <span class="normal italic">{{serviceName}}</span>&#160;VPS?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Would you like to restore your snapshot from {{date}} onto your <span class="normal italic">{{serviceName}}</span>&#160;VPS?</translation>
    <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Warning: this action will cause the current version of your VPS to be deleted and it will be restored to the status of the last snapshot taken. This action is permanent. </translation>
    <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">The snapshot will be restored onto the {{serviceName}} VPS.</translation>
    <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">An error occurred on requesting to restore the snapshot.</translation>
@@ -236,7 +237,7 @@
    <translation id="vps_configuration_option_released" qtlid="284893">Not renewed </translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activate Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activate the Backup storage option</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Do you want to order the Backup Storage option on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Would you like to order the Backup Storage option on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="red bold">{{ price }} ex. VAT</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">The Backup storage is an archiving space for transferring your content, data, settings and configurations.</translation>
@@ -330,7 +331,7 @@
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">An error occurred on unmounting the backup on your VPS.</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">The backup will be unmounted on your VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Mount the backup</translation>
-   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Are you sure you want to mount this backup on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Are you sure you would like to mount this backup on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
    <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">This backup will then be accessible via an NFS or SMB mount point.</translation>
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">The request to mount the backup has been registered. You will be notified by email once the mounting is complete. </translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">An error occurred on requesting to mount the backup on your VPS.</translation>

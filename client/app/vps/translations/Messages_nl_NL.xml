@@ -102,6 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Mijn vps upgraden</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Locatie</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS/Distributie</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">Bekijk aanvullende IP's</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Niet beschikbaar</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Bekijk de handleiding</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
@@ -254,7 +255,7 @@
    <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Annuleer geautomatiseerde back-up </translation>
    <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Annuleer Windows optie</translation>
    <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Annuleer aanvullende disks optie </translation>
-   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">Uw annulering van de optie gaat van kracht op de verlengingsdatum, d.w.z. {{ date }}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">Uw annulering van de optie gaat van kracht op de verlengdatum, op {{ date }}.</translation>
    <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Deze actie is onomkeerbaar en kan niet geannuleerd worden. </translation>
    <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">De optie is geannuleerd. </translation>
    <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Er is een fout opgetreden tijdens het annuleren van de optie. </translation>

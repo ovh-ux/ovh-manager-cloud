@@ -14,7 +14,7 @@
    <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Estado</translation>
    <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Palavra-passe</translation>
    <translation id="openstackusers_users_userlist_regenerate_password" qtlid="245337">Gerar nova palavra-passe</translation>
-   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Anular a eliminação</translation>
+   <translation id="openstackusers_users_userlist_delete_cancel" qtlid="173645">Anular eliminação</translation>
    <translation id="openstackusers_users_userlist_delete_submit" qtlid="7882">Eliminar este utilizador</translation>
    <translation id="openstackusers_users_delete_success" qtlid="245350">O utilizador {{username}} foi eliminado.</translation>
    <translation id="openstackusers_users_delete_error" qtlid="245363">Um erro levou à interrupção da eliminação:</translation>

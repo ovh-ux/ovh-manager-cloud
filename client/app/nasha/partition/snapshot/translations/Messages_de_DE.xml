@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Alle 6 Stunden</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Bei einem Snapshot handelt es sich um eine Momentaufnahme Ihres NAS-HA zum Zeitpunkt des Snapshots. </translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Die Snapshots verbrauchen Speicher auf Ihrer Partition, um korrekt zu funktionieren. Es wird kein Snapshot-Verlauf angelegt. Bei Snaphots aus der gleichen Frequenz überschreibt der neuere Snapshots den zuvor aufgenommenen.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Wenn Sie keine Dauer festlegen, werden alle existierenden Snapshots dieser Partition gelöscht.</translation>
 </translations>
