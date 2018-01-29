@@ -1,0 +1,26 @@
+<form>
+    <h1 class="oui-header_1 oui-header_underline"
+        data-ng-bind-html="$ctrl.formTitle"></h1>
+    <oui-spinner data-ng-if="!$ctrl.formLoadedCondition"></oui-spinner>
+    <div class="oui-list_steps oui-list_separated mt-5"
+         data-ng-if="$ctrl.formLoadedCondition">
+        <ol class="oui-list__items"
+            data-ng-transclude></ol>
+    </div>
+    <div>
+        <button class="oui-button oui-button_secondary"
+                type="reset"
+                data-ng-click="$ctrl.formCancelledFunction()"
+                data-ng-if="$ctrl.formCancelledFunction">
+            <span data-translate="common_cancel"></span>
+        </button>
+
+        <button class="oui-button oui-button_primary"
+                type="submit"
+                data-ng-disabled="!$ctrl.formCompletedCondition"
+                data-ng-if="$ctrl.formCompletedFunction"
+                data-ng-click="$ctrl.formCompletedFunction()">
+            <span data-translate="common_confirm"></span>
+        </button>
+    </div>
+</form>
