@@ -56,7 +56,7 @@
 
    <translation id="common_menu_support" qtlid="39994">Apoio ao cliente</translation>
    <translation id="common_menu_support_assistance" qtlid="52699">Assistência</translation>
-   <translation id="common_menu_support_all_guides" qtlid="260788">Todos os guias</translation>
+   <translation id="common_menu_support_all_guides" qtlid="260788">Manuais OVH</translation>
    <translation id="common_menu_support_guide" qtlid="269604">Guia de utilização</translation>
    <translation id="common_menu_support_new_ticket" qtlid="260801">Criar um ticket</translation>
    <translation id="common_menu_support_list_ticket" qtlid="260814">Lista dos meus tickets</translation>
@@ -104,9 +104,9 @@
    <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
    <translation id="vrack_change_owner" qtlid="254882">Alterar o proprietário</translation>
 
-   <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} trabalho(s) terminado(s)</translation>
-   <translation id="storage_promise_task_progress_error" qtlid="367527">{{count}} trabalho(s) em erro</translation>
-   <translation id="storage_promise_task_progress_todo" qtlid="367514">{{count}} trabalho(s) em curso</translation>
+   <translation id="storage_promise_task_progress_done" qtlid="367501">{{count}} tarefa(s) concluída(s)</translation>
+   <translation id="storage_promise_task_progress_error" qtlid="367527">{{count}} tarefa(s) em erro</translation>
+   <translation id="storage_promise_task_progress_todo" qtlid="367514">{{count}} tarefa(s) em curso</translation>
    <translation id="storage_promise_task_progress_error_description" qtlid="369126">Container: {{container}} - Objet: {{object}}</translation>
    <translation id="storage_promise_task_progress_error_reason" qtlid="369139">Erro: {{errorReason}}</translation>
    <translation id="storage_promise_task_progress_retry" qtlid="238193">Tente novamente</translation>
@@ -468,7 +468,7 @@
    <translation id="region_GRA1" qtlid="245051">França - Europa ocidental (GRA-1)</translation>
    <translation id="region_HZ1" qtlid="245064">Hardware Zone (HZ-1)</translation>
 
-   <translation id="ovh_account_cb_expire_alert" qtlid="294763">O seu cartão de crédito padrão expira dentro de  {{nbDays}} dia(s). Aceda <a href="{{urlBillingSection}}">à secção de faturação</a> para o atualizar.</translation>
+   <translation id="ovh_account_cb_expire_alert" qtlid="294763">O seu cartão de crédito predefinido expira dentro de  {{nbDays}} dia(s). Aceda <a href="{{urlBillingSection}}">à secção de faturação</a> para atualizar o cartão.</translation>
    <translation id="ovh_account_cb_expired_alert" qtlid="294776">O seu cartão de crédito padrão expirou. Aceda <a href="{{urlBillingSection}}">à secção de faturação</a> para o atualizar.</translation>
 
    <translation id="message_container_multiple_error" qtlid="404074">Ocorreram os seguintes erros</translation>
@@ -514,8 +514,8 @@
    <translation id="common_pagination_resultsperpage" qtlid="433384">Resultados por página</translation>
    <translation id="common_pagination_page" qtlid="433397">página</translation>
    <translation id="common_pagination_of" qtlid="121615">em</translation>
-   <translation id="common_pagination_ofnresults" qtlid="452982">sur TOTAL_ITEMS résultats</translation>
-   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE sur PAGE_COUNT</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">de TOTAL_ITEMS resultados</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Página CURRENT_PAGE de PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">resultados</translation>
    <translation id="common_pagination_next" qtlid="433423">Página seguinte</translation>
    <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>

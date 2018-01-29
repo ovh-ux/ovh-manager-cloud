@@ -27,6 +27,6 @@
    <translation id="cpb_rights_table_remove_cancel" qtlid="173645">De verwijdering annuleren</translation>
    <translation id="cpb_rights_add_title" qtlid="57836">Een contactpersoon toevoegen</translation>
    <translation id="cpb_rights_delete_title" qtlid="151152">Een contactpersoon verwijderen</translation>
-   <translation id="cpb_rights_delete_question" qtlid="453469">Voulez-vous vraiment supprimer les droits de {{nickname}}?</translation>
+   <translation id="cpb_rights_delete_question" qtlid="453469">Weet u zeker dat u de rechten van {{nickname}} wilt verwijderen?</translation>
 
 </translations>

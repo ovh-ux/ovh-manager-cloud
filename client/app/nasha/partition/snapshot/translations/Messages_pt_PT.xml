@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_snapshot_loading_error" qtlid="153974">Ocorreu um erro aquando da recuperação dos snapshots.</translation>
-   <translation id="nasha_snapshot_set_success" qtlid="344896">A modificação da frequência das snapshots será efetivada dentro de alguns instantes.</translation>
-   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Ocorreu um erro aquando da modificação da frequência das snapshosts.</translation>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Ocorreu um erro no carregamento das snapshots.</translation>
+   <translation id="nasha_snapshot_set_success" qtlid="344896">A alteração da frequência das snapshots terá efeito dentro de alguns instantes.</translation>
+   <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Ocorreu um erro durante a alteração da frequência das snapshosts.</translation>
    <translation id="nasha_snapshot_of" qtlid="344922">Snapshot da partição {{partitionName}}</translation>
    <translation id="nasha_snapshot_frequency" qtlid="344935">Frequência das snapshots</translation>
-   <translation id="nasha_snapshot_day-1" qtlid="154091">Todos os dias</translation>
+   <translation id="nasha_snapshot_day-1" qtlid="154091">Diária</translation>
    <translation id="nasha_snapshot_day-2" qtlid="154104">A cada 2 dias</translation>
    <translation id="nasha_snapshot_day-3" qtlid="154117">A cada 3 dias</translation>
    <translation id="nasha_snapshot_day-7" qtlid="8806">Semanal </translation>
-   <translation id="nasha_snapshot_hour-1" qtlid="8782">Todas as horas</translation>
+   <translation id="nasha_snapshot_hour-1" qtlid="8782">De hora em hora</translation>
    <translation id="nasha_snapshot_hour-6" qtlid="154130">A cada 6 horas</translation>
-   <translation id="nasha_snapshot_informations" qtlid="344948">Uma snapshot é uma imagem instantânea. Ela regista o estado da sua NAS-HA no momento em que a snapshot é efetuada.</translation>
-   <translation id="nasha_snapshot_informations_size" qtlid="344961">As snaphosts utilizam espaço na sua partição para o seu correto funcionamento. Nenhum histórico das snapshots é registado: para uma mesma frequência, a última snapshots leva à eliminação da anterior.</translation>
+   <translation id="nasha_snapshot_informations" qtlid="344948">A snapshot é uma imagem instantânea que regista o estado da sua NAS-HA no momento em que é realizada.</translation>
+   <translation id="nasha_snapshot_informations_size" qtlid="344961">As snaphosts necessitam de usar espaço na sua partição. Para uma dada frequência, a Snapshot mais recente irá substituir a anterior. Não existe qualquer histórico das snapshots realizadas.&#13;
+</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Se não selecionar a duração, as Snapshots desta partição serão eliminadas.</translation>
 </translations>

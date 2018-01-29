@@ -337,9 +337,9 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Reboot a quente (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Reativar</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Reboot a frio (hard)</translation>
-   <translation id="cpci_vm_action_auth_info" qtlid="250927">Informações de ligação</translation>
+   <translation id="cpci_vm_action_auth_info" qtlid="250927">Informações da ligação</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">Consola VNC</translation>
-   <translation id="cpci_vm_action_rescue" qtlid="168458">Reiniciar em modo de rescue</translation>
+   <translation id="cpci_vm_action_rescue" qtlid="168458">Reiniciar em Modo de Rescue</translation>
    <translation id="cpci_vm_action_rescue_end" qtlid="269188">Sair do modo de rescue</translation>
 
    <translation id="cpci_confirm_detach_button" qtlid="107207">Desligado</translation>

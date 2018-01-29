@@ -102,6 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">VPS:n päivitys</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Sijainti</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS/distribuutio</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">Katso ylimääräiset IP-osoitteet</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Ei käytettävissä</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Katso ohje</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>

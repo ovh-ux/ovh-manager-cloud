@@ -14,7 +14,7 @@
    <translation id="nasha_partition" qtlid="120835">Partitions</translation>
    <translation id="nasha_expired" qtlid="345390">Votre NAS-HA n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.</translation>
    <translation id="nasha_storage_usage_type_used" qtlid="233733">Stockage</translation>
-   <translation id="nasha_storage_usage_type_usedbysnapshots" qtlid="9671">Snapshot</translation>
+   <translation id="nasha_storage_usage_type_usedbysnapshots" qtlid="9671">Image instantanée</translation>
    <translation id="nasha_datacenter_rbx" qtlid="120414">Roubaix</translation>
    <translation id="nasha_datacenter_bhs" qtlid="172189">Beauharnois</translation>
    <translation id="nasha_datacenter_sbg" qtlid="172202">Strasbourg</translation>

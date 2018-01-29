@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="cpc_rescue_mode_title" qtlid="168458">Reiniciar em modo de rescue</translation>
+   <translation id="cpc_rescue_mode_title" qtlid="168458">Reiniciar em Modo de Rescue</translation>
    <translation id="cpc_rescue_mode_valid" qtlid="25951">Iniciar</translation>
    <translation id="cpc_rescue_mode_cancel" qtlid="37863">Anular</translation>
    <translation id="cpc_rescue_mode_expl" qtlid="269201">Vai reiniciar o seu servidor em modo de rescue.</translation>

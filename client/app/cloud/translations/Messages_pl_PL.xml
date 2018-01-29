@@ -31,8 +31,12 @@
    <translation id="cloud_common_region_SBG_micro" qtlid="363722">Strasburg ({{ micro }})</translation>
    <translation id="cloud_common_region_BHS" qtlid="172189">Beauharnois</translation>
    <translation id="cloud_common_region_BHS_micro" qtlid="363735">Beauharnois ({{ micro }})</translation>
+   <translation id="cloud_common_region_ERI" qtlid="94015">Londyn</translation>
+   <translation id="cloud_common_region_ERI_micro" qtlid="442756">Londyn ({{ micro }})</translation>
    <translation id="cloud_common_region_GRA" qtlid="264192">Gravelines</translation>
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
+   <translation id="cloud_common_region_LIM">Limburg</translation>
+   <translation id="cloud_common_region_LIM_micro">Limburg ({{ micro }})</translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Warszawa</translation>
@@ -50,7 +54,9 @@
    <translation id="cloud_common_region_location_SBG" qtlid="264244">Europa Środkowa (Francja)</translation>
    <translation id="cloud_common_region_location_WAW" qtlid="410117">Europa Środkowa (Polska)</translation>
    <translation id="cloud_common_region_location_BHS" qtlid="264257">Ameryka Północna (Kanada)</translation>
+   <translation id="cloud_common_region_location_ERI" qtlid="442769">Europa Zachodnia (Wielka Brytania)</translation>
    <translation id="cloud_common_region_location_GRA" qtlid="264270">Europa Zachodnia (Francja)</translation>
+   <translation id="cloud_common_region_location_LIM" qtlid="437611">Europa Środkowa (Niemcy)</translation>
    <translation id="cloud_common_region_location_RBX" qtlid="264270">Europa Zachodnia (Francja)</translation>
    <translation id="cloud_common_region_location_DE" qtlid="437611">Europa Środkowa (Niemcy)</translation>
    <translation id="cloud_common_region_location_UK" qtlid="442769">Europa Zachodnia (Wielka Brytania)</translation>
