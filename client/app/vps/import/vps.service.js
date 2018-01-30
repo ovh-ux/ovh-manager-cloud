@@ -1,17 +1,15 @@
 angular.module("managerApp").service("VpsService", [
-    "Products",
     "$http",
     "$q",
     "$timeout",
     "$cacheFactory",
     "$rootScope",
-    "Polling",
     "additionalDisk.capacities",
     "additionalDisk.hasNoOption",
     "VpsTaskService",
     "ServiceHelper",
     "$translate",
-    function (Products, $http, $q, $timeout, cache, $rootScope, Polling, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService, ServiceHelper, $translate) {
+    function ($http, $q, $timeout, cache, $rootScope, additionalDiskCapacities, additionalDiskHasNoOption, VpsTaskService, ServiceHelper, $translate) {
         "use strict";
 
         var aapiRootPath = "/sws/vps",
@@ -32,47 +30,6 @@ angular.module("managerApp").service("VpsService", [
         };
 
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-        this.getTaskPath = function (taskId) {
-            return Products.getSelectedProduct().then(function (product) {
-                return [swsVpsProxypass, product.name, "tasks", taskId].join("/");
-            });
-        };
-
-        this.addTaskFast = function (task, scopeId) {
-            var pollPromise = $q.defer();
-
-            self.getTaskPath(task.id).then(function (taskUrl) {
-
-                Polling.addTaskFast(taskUrl, task, scopeId).then(function (state){
-                    pollPromise.resolve(state);
-                    if (Polling.isDone(state)){
-                        $rootScope.$broadcast("tasks.update");
-                    }
-                }, function (data){
-                    pollPromise.reject(data);
-                    $rootScope.$broadcast("tasks.update");
-                });
-            });
-            return pollPromise.promise;
-        };
-
-        this.addTask = function (task, scopeId) {
-            var pollPromise = $q.defer();
-
-            self.getTaskPath(task.id).then(function (taskUrl) {
-                Polling.addTask(taskUrl, task, scopeId).then(function (state){
-                    pollPromise.resolve(state);
-                    if (Polling.isDone(state)){
-                        $rootScope.$broadcast("tasks.update");
-                    }
-                }, function (data){
-                    pollPromise.reject({ type: "ERROR", message: data.comment });
-                    $rootScope.$broadcast("tasks.update");
-                });
-            });
-            return pollPromise.promise;
-        };
 
         this.getTaskInProgress = function (serviceName, type) {
             var result = null;
@@ -140,37 +97,6 @@ angular.module("managerApp").service("VpsService", [
                 }
             }
         }
-
-        /*
-         * get Selected VPS
-         */
-        this.getSelected = function (forceRefresh) {
-            if (forceRefresh === true) {
-                resetCache();
-            }
-            return Products.getSelectedProduct(forceRefresh).then(function (product) {
-                if (product) {
-                    var selectedVps = vpsCache.get("vps");
-                    if (!selectedVps) {
-                        if (requests.vpsDetails === null) {
-                            requests.vpsDetails = $http.get([aapiRootPath, product.name,"info"].join("/"), {serviceType: "aapi"})
-                                .then(function (result) {
-                                    vpsCache.put("vps", result.data);
-                                });
-                        }
-                        return requests.vpsDetails;
-                    } else {
-                        return selectedVps;
-                    }
-                } else {
-                    return $q.reject(product);
-                }
-            }).then(function () {
-                return vpsCache.get("vps");
-            }, function (reason) {
-                return $q.reject(reason);
-            });
-        };
 
         /*
          * same as getSelected without using Products (it causes problem when changing vps using sidebar)
@@ -284,22 +210,10 @@ angular.module("managerApp").service("VpsService", [
         /*
          * Get a KVM access for the VPS
          */
-        this.getKVMAccess = function () {
-            var result = null;
-            return this.getSelected().then(function (vps) {
-                if (vps && vps.name) {
-                    return $http.post([swsVpsProxypass, vps.name, "openConsoleAccess"].join("/"), { protocol: "VNCOverWebSocket" })
-                        .then(function (data) {
-                            result = data.data;
-                        });
-                } else {
-                    return $q.reject(vps);
-                }
-            }).then(function () {
-                return result;
-            }, function (http) {
-                return $q.reject(http.data);
-            });
+        this.getKVMAccess = function (serviceName) {
+            return $http.post([swsVpsProxypass, serviceName, "openConsoleAccess"].join("/"), { protocol: "VNCOverWebSocket" })
+                .then(data => data.data)
+                .catch(ServiceHelper.errorHandler());
         };
 
         this.getKVMConsoleUrl = function (serviceName) {
