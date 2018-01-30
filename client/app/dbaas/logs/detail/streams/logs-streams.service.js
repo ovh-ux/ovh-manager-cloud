@@ -289,7 +289,7 @@ class LogsStreamsService {
             .then(this.ServiceHelper.successHandler(successMessage));
     }
 
-    _killPollar () {
+    _killPoller () {
         if (this.poller) {
             this.poller.kill();
         }
@@ -302,7 +302,7 @@ class LogsStreamsService {
     }
 
     _pollOperation (serviceName, operation) {
-        this._killPollar();
+        this._killPoller();
         const pollar = this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
