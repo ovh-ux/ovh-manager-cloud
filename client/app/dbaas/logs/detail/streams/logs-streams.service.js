@@ -10,8 +10,6 @@ class LogsStreamsService {
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.CloudPoll = CloudPoll;
         this.LogsOptionsService = LogsOptionsService;
-        // map to get count of streams assigned to each option
-        this.optionStreamMap = null;
 
         this.initializeData();
     }
@@ -64,7 +62,6 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStreams (serviceName) {
-        this.optionStreamMap = {};
         return this.getStreamDetails(serviceName)
             .then(streams => streams.map(stream => this._transformStream(serviceName, stream)))
             .catch(this.ServiceHelper.errorHandler("logs_streams_get_error"));
@@ -273,11 +270,6 @@ class LogsStreamsService {
             .then(archives => {
                 stream.archives = archives;
             });
-        if (stream.optionId && this.optionStreamMap[stream.optionId]) {
-            this.optionStreamMap[stream.optionId]++;
-        } else if (stream.optionId) {
-            this.optionStreamMap[stream.optionId] = 1;
-        }
         return stream;
     }
 
