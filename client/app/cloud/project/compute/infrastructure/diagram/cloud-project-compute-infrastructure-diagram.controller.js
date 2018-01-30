@@ -624,16 +624,13 @@
                     this.deleteVirtualMachine(vm);
                 });
             } else {
-                vm.confirm = "deleteConfirmPending";
+                this.InfrastructureService.deleteVirtualMachine(vm);
             }
         }
 
         deleteVirtualMachine (vm) {
             _.set(vm, "confirmLoading", true);
             this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
-                .then(() => {
-                    _.set(vm, "confirm", null);
-                })
                 .catch(err => {
                     this.CloudMessage.error(`${this.$translate.instant("cpci_vm_delete_submit_error")} ${_.get(err, "data.message", "")}`);
                 })

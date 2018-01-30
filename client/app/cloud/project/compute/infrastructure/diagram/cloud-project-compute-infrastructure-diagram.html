@@ -375,47 +375,9 @@
                                      data-highlighed-element="vm,{{vm.id}},vm-{{vm.getStatusGroup()}},vm-{{vm.getStatusGroup()}}-{{vm.region}},vm-{{vm.getStatusGroup()}}-{{ComputeInfrastructureDiagramCtrl.getVmContinent(vm)}}"
                                      data-instance-id="{{:: vm.id }}">
 
-                                    <!-- confirm box -->
-                                    <div class="vm-pending-ctnr animate-fadeIn-enter animate-fadeOut-leave"
-                                         data-ng-if="vm.confirm">
-
-                                        <div class="pending-overlay"></div>
-
-                                        <div class="pending-content text-center animated fadeInRight flex-row-center"
-                                             data-ng-switch="vm.confirm">
-
-                                            <!-- cancel btn -->
-                                            <button type="button" class="btn btn-default"
-                                                    data-ng-click="vm.confirm = null"
-                                                    data-ng-disabled="vm.confirmLoading">
-                                                <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
-                                                <span translate="common_cancel"></span>
-                                            </button>
-
-                                            <!-- confirm delete -->
-                                            <button type="button" class="btn btn-danger"
-                                                    data-autofocus
-                                                    data-ng-click="ComputeInfrastructureDiagramCtrl.deleteVirtualMachine(vm)"
-                                                    data-ng-disabled="vm.confirmLoading"
-                                                    data-ng-switch-when="deleteConfirmPending"
-                                                    data-track-on="click"
-                                                    data-track-name="VM-Delete"
-                                                    data-track-click="action">
-                                                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-                                                <span translate="cpci_vm_delete_submit"></span>
-                                                <oui-spinner size="s" inline="true"
-                                                             data-ng-show="vm.confirmLoading"></oui-spinner>
-                                            </button>
-
-                                            <div class="text-center" data-ng-if="vm.confirmLoading">
-                                                <oui-spinner size="m" inline="true"></oui-spinner>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <!-- loadings -->
                                     <div class="vm-pending-ctnr animate-fadeIn-enter animate-fadeOut-leave"
-                                         data-ng-if="(vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirm)">
+                                         data-ng-if="(vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirmLoading)">
 
                                         <div class="pending-overlay"></div>
 
@@ -462,7 +424,7 @@
                                                     </li>
                                                     <li data-ng-if="vm.status !== 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
                                                         <button type="button" class="red"
-                                                                data-ng-click="vm.confirm = 'rebootHardConfirmPending'">
+                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.rebootVirtualMachine(vm, 'hard')">
                                                             <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                             <span data-ng-bind="'cpci_vm_action_reboot_hard' | translate"></span>
                                                         </button>
@@ -514,7 +476,7 @@
 
                                     <!-- VM infos -->
                                     <div class="vm-infos fade-transition"
-                                         data-ng-class="{'show-problem': (vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirm)}"
+                                         data-ng-class="{'show-problem': (vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirmLoading)}"
                                          data-instance-id={{vm.id}}>
 
                                         <div class="vm-display-actions clearfix">
@@ -570,7 +532,7 @@
                                                 data-uib-dropdown-menu>
                                                 <li>
                                                     <button type="button" class="red"
-                                                            data-ng-click="vm.confirm = 'deleteConfirmPending'">
+                                                            data-ng-click="ComputeInfrastructureDiagramCtrl.deleteConfirmPending(vm)">
                                                         <span class="fa fa-trash-o right-space-m8" aria-hidden="true"></span>
                                                         <span data-ng-bind="'cpci_vm_action_delete' | translate"></span>
                                                     </button>
