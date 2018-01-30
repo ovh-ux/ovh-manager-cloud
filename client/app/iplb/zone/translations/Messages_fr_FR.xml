@@ -4,10 +4,14 @@
    <translation id="iplb_zone_add_intro_text">Sélectionner une ou plusieurs zone de disponibilité</translation>
    <translation id="iplb_zone_add_single_success">L'ajout de la zone doit être finalisé.</translation>
    <translation id="iplb_zone_add_plural_success">L'ajout des zones doit être finalisé.</translation>
+   <translation id="iplb_zone_activate_single_success">La zone a été réactivée avec succès.</translation>
+   <translation id="iplb_zone_activate_plural_success">Les zones ont été réactivées avec succès.</translation>
    <translation id="iplb_zone_add_selection_error">Vous devez sélectionner au moins une zone de disponibilité.</translation>
    <translation id="iplb_zone_add_loading_error">Une erreur est survenue lors de chargement des zones : {{message}}</translation>
    <translation id="iplb_zone_add_single_error">Une erreur est survenue lors de l'ajout de la zone : {{message}}</translation>
    <translation id="iplb_zone_add_plural_error">Une erreur est survenue lors de l'ajout des zones : {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error">Une erreur est survenue lors de la réactivation de la zone : {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error">Une erreur est survenue lors de la réactivation des zones : {{message}}</translation>
    <translation id="iplb_zone_add_available_released">Cette zone de disponibilité sera supprimée à la fin de la période de facturation. Il est quand même possible de l'ajouter à nouveau.</translation>
 
    <translation id="iplb_zone_delete_title">Supprimer une zone de disponibilité</translation>

@@ -33,23 +33,68 @@ class IpLoadBalancerZoneAddService {
             return this.ServiceHelper.errorHandler("iplb_zone_add_selection_error")({});
         }
 
+        return this.$q.all({
+            created: this._activateZones(serviceName, _.filter(zones, zone => zone.state !== "released")),
+            activated: this._activateZones(serviceName, _.filter(zones, zone => zone.state === "released"))
+        })
+            .then(response => {
+                if (response.created.quantity > 0) {
+                    this.$window.open(response, "_blank");
+                    return this.ServiceHelper.successHandler({
+                        text: this.$translate.instant(zones.length > 1 ? "iplb_zone_add_plural_success" : "iplb_zone_add_single_success"),
+                        link: {
+                            text: this.$translate.instant("common_complete_order"),
+                            value: response
+                        }
+                    })(response);
+                }
+
+                if (response.activated.quantity > 0) {
+                    return this.ServiceHelper.successHandler({
+                        text: this.$translate.instant(zones.length > 1 ? "iplb_zone_activate_plural_success" : "iplb_zone_activate_single_success")
+                    })(response);
+                }
+
+                return this.$q.reject();
+            });
+    }
+
+    _createZones (serviceName, zones) {
+        const emptyResponse = this.$q.when({ quantity: 0 });
+        if (!zones.length) {
+            return emptyResponse;
+        }
+
         return this.OrderHelperService.getExpressOrderUrl(_.map(zones, zone => ({
             productId: "ipLoadbalancing",
             serviceName,
             planCode: zone.planCode
         })))
-            .then(response => {
-                this.$window.open(response, "_blank");
+            .then(response => ({
+                quantity: zones.length,
+                url: response
+            }))
+            .catch(response => {
+                this.ServiceHelper.errorHandler(zones.length > 1 ? "iplb_zone_add_plural_error" : "iplb_zone_add_single_error")(response);
+                return emptyResponse;
+            });
+    }
 
-                return this.ServiceHelper.successHandler({
-                    text: this.$translate.instant(zones.length > 1 ? "iplb_zone_add_plural_success" : "iplb_zone_add_single_success"),
-                    link: {
-                        text: this.$translate.instant("common_complete_order"),
-                        value: response
-                    }
-                })(response);
-            })
-            .catch(this.ServiceHelper.errorHandler(zones.length > 1 ? "iplb_zone_add_plural_error" : "iplb_zone_add_single_error"));
+    _activateZones (serviceName, zones) {
+        const emptyResponse = this.$q.when({ quantity: 0 });
+        if (!zones.length) {
+            return emptyResponse;
+        }
+
+        const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().cancelDelete({ serviceName, name: zone.name }, {}).$promise);
+        return this.$q.all(promises)
+            .then(() => ({
+                quantity: zones.length
+            }))
+            .catch(response => {
+                this.ServiceHelper.errorHandler(zones.length > 1 ? "iplb_zone_add_plural_error" : "iplb_zone_add_single_error")(response);
+                return emptyResponse;
+            });
     }
 
     _getOrderableZones (serviceName) {
