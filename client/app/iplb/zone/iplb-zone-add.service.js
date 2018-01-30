@@ -100,9 +100,7 @@ class IpLoadBalancerZoneAddService {
     _getOrderableZones (serviceName) {
         return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
             .$promise
-            .then(response => _.map(response.orderableZone, zone => ({
-                name: zone
-            })));
+            .then(response => response.orderableZone);
     }
 
     _getSuspendedZones (serviceName) {
