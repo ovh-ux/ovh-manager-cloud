@@ -19,7 +19,7 @@ class IpLoadBalancerZoneDeleteService {
                 name: zone.name,
                 selectable: {
                     value: zone.state !== "released",
-                    reason: this.$translate.instant("iplb_zone_delete_unavailable_already_released")
+                    reason: zone.state === "released" ? this.$translate.instant("iplb_zone_delete_unavailable_already_released") : ""
                 }
             }, this.RegionService.getRegion(zone.name))))
             .catch(this.ServiceHelper.errorHandler("iplb_zone_delete_loading_error"));
@@ -48,7 +48,7 @@ class IpLoadBalancerZoneDeleteService {
                 }
 
                 const deletedZones = _.sortBy(_.map(zones, zone => zone.microRegion.text), zone => zone).join(", ");
-                const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().delete({ serviceName, name: zone.name }).$promise);
+                const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().delete({ serviceName, name: zone.name }, {}).$promise);
                 return this.$q.all(promises)
                     .then(() => this.ServiceHelper.successHandler(messages.success)({ zones: deletedZones }))
                     .catch(this.ServiceHelper.errorHandler(messages.error));
