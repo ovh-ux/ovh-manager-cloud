@@ -34,17 +34,17 @@ class IpLoadBalancerZoneAddService {
         }
 
         return this.$q.all({
-            created: this._activateZones(serviceName, _.filter(zones, zone => zone.state !== "released")),
+            created: this._createZones(serviceName, _.filter(zones, zone => zone.state !== "released")),
             activated: this._activateZones(serviceName, _.filter(zones, zone => zone.state === "released"))
         })
             .then(response => {
                 if (response.created.quantity > 0) {
-                    this.$window.open(response, "_blank");
+                    this.$window.open(response.created.url, "_blank");
                     return this.ServiceHelper.successHandler({
                         text: this.$translate.instant(zones.length > 1 ? "iplb_zone_add_plural_success" : "iplb_zone_add_single_success"),
                         link: {
                             text: this.$translate.instant("common_complete_order"),
-                            value: response
+                            value: response.created.url
                         }
                     })(response);
                 }
