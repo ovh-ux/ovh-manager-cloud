@@ -27,7 +27,7 @@ class LogsOptionsCtrl {
             loaderFunction: () => this.LogsOptionsService.getOptions(this.serviceName)
         });
         this.currentOptions = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsService.getSubscribedOptions(this.serviceName)
+            loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMap(this.serviceName)
         });
     }
 
