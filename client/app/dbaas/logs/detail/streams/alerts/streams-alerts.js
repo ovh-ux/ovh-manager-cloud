@@ -1,34 +1,34 @@
 angular.module("managerApp").config($stateProvider => {
     $stateProvider
-        .state("dbaas.logs.detail.streams.detail.alerts", {
-            url: "/alerts",
-            redirectTo: "dbaas.logs.detail.streams.detail.alerts.home",
+        .state("dbaas.logs.detail.streams.alerts", {
+            url: "/:streamId/alerts",
+            redirectTo: "dbaas.logs.detail.streams.alerts.home",
             views: {
-                logsStreamsDetail: {
+                logsStreams: {
                     template: `<div ui-view="logsAlerts"></div>`,
-                    controller: "LogsStreamsAlertsCtrl",
+                    controller: "StreamsAlertsCtrl",
                     controllerAs: "ctrl"
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
         })
-        .state("dbaas.logs.detail.streams.detail.alerts.home", {
+        .state("dbaas.logs.detail.streams.alerts.home", {
             url: "/",
             views: {
                 logsAlerts: {
                     templateUrl: "app/dbaas/logs/detail/streams/alerts/home/alerts-home.html",
-                    controller: "LogsStreamsAlertsHomeCtrl",
+                    controller: "AlertsHomeCtrl",
                     controllerAs: "ctrl"
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
         })
-        .state("dbaas.logs.detail.streams.detail.alerts.add", {
-            url: "/add",
+        .state("dbaas.logs.detail.streams.alerts.add", {
+            url: "/add/:type",
             views: {
                 logsAlerts: {
                     templateUrl: "app/dbaas/logs/detail/streams/alerts/add/alerts-add.html",
-                    controller: "LogsStreamsAlertsAddCtrl",
+                    controller: "AlertsAddCtrl",
                     controllerAs: "ctrl"
                 }
             },

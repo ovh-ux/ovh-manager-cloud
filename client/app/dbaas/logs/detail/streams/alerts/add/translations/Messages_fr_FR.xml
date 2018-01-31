@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="add_alert_title_message_count">Créer une condition de type compteur</translation>
+    <translation id="add_alert_title_field_value">Créer une condition de type valeur numérique</translation>
+    <translation id="add_alert_title_field_content_value">Créer une condition de type contenu textuel</translation>
+    
+    <translation id="add_alert_description_message_count">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée</translation>
+    <translation id="add_alert_description_field_value">Cette condition est déclachée quand la valeur aggrégée d’un chamo est plus haute ou plus basse qu’un seuil défini dans une période de temps donnée</translation>
+    <translation id="add_alert_description_field_content_value">Cette condition est activée lorsque la valeur du champ correspond à la valeur donnée</translation>
+    
+    <translation id="add_alert_title_field">Titre</translation>
+    <translation id="add_alert_title_field_description">Le titre de la condition de l’alerte</translation>
+    <translation id="add_alert_time_period_field">Période de temps (minutes)</translation>
+    <translation id="add_alert_time_period_field_description">Évaluer la condition pour tous les messages reçus dans le nombre de minutes données</translation>
+    <translation id="add_alert_threshold_type_field">Type de seuil</translation>
+    <translation id="add_alert_threshold_type_more">Plus</translation>
+    <translation id="add_alert_threshold_type_less">Moins</translation>
+    <translation id="add_alert_threshold_type_lower">Inférieur</translation>
+    <translation id="add_alert_threshold_type_higher">Supérieur</translation>
+    <translation id="add_alert_threshold_type_field_description_message_count">Sélectionner la condition qui active l’alerte: quand il y a plus ou moins de messages que le seuil</translation>
+    <translation id="add_alert_threshold_type_field_description_field_value">Sélectionner la condition qui active l’alerte: quandla valeur est plus haute ou moins haute que le seuil</translation>
+    <translation id="add_alert_threshold_field">Seuil</translation>
+    <translation id="add_alert_threshold_field_description">La valeur qui active l’alerte si le seuil est dépassé</translation>
+    <translation id="add_alert_grace_period_field">Période de grâce (minutes)</translation>
+    <translation id="add_alert_grace_period_field_description">Le nombre de minutes à attendre après qu’une alerte soit résolue pour en relancer une autre</translation>
+    <translation id="add_alert_accumulation_field">Accumulation de messages</translation>
+    <translation id="add_alert_accumulation_field_description">Le nombre de messages à inclure dans les notifications d’alertes</translation>
+    <translation id="add_alert_notification_field">Notification</translation>
+    <translation id="add_alert_notification_field_description">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l’alerte est remplie, peu importe son état.</translation>
+    <translation id="add_alert_field_field">Champ</translation>
+    <translation id="add_alert_field_field_description">Le nom du champ à vérifier</translation>
+    <translation id="add_alert_constraint_type_field">Type d'agrégation</translation>
+    <translation id="add_alert_constraint_type_field_description">L'agrégation à appliquer au champ. Cette valeur agrégée est testée pour la condition de seuil</translation>
+    <translation id="add_alert_constraint_type_mean">Médiane</translation>
+    <translation id="add_alert_constraint_type_min">Minimale</translation>
+    <translation id="add_alert_constraint_type_max">Maximale</translation>
+    <translation id="add_alert_constraint_type_sum">Somme</translation>
+    <translation id="add_alert_constraint_type_sd">Déviation standard</translation>
+    <translation id="add_alert_value_field">Valeur</translation>
+    <translation id="add_alert_value_field_description">La valeur qui doit être comparée à celle du champ</translation>
+    
+    <translation id="streams_alerts_add_success">Alerte créée avec succès</translation>
+    <translation id="streams_alerts_add_error">Erreur de création d'alerte: {{message}}</translation>
+</translations>
