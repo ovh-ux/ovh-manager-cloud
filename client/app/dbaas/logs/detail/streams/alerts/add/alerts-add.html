@@ -1,5 +1,195 @@
-<div>
-    Add Alert
-    Service Name: {{ ctrl.serviceName }}
-    Stream: {{ ctrl.stream }}
+<div class="cui-page__content">
+    <oui-back-button class="back_button_inline_text"></oui-back-button>
+    <span class="oui-header_3" data-translate="{{ 'add_alert_title_' + ctrl.alertType.toLowerCase() }}"></span>
+    <p class="oui-paragraph" data-translate="{{ 'add_alert_description_' + ctrl.alertType.toLowerCase() }}"></p>
+
+    <form novalidate name="ctrl.form">
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}">
+            <label for="alert_title" class="oui-field__label oui-label" data-translate="add_alert_title_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="alert_title" name="alert_title"
+                            class="oui-input" 
+                            data-ng-model="ctrl.alert.title"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}"
+                            data-ng-minlength="3"
+                            data-ng-maxlength="255"
+                            maxlength="255"
+                            autofocus
+                            required />
+                </div>
+                <div class="oui-field-helper" data-translate="add_alert_title_field_description"></div>
+            </div>
+        </div>
+
+        <div data-ng-if="ctrl.alertType !== 'MESSAGE_COUNT'" class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.field.$invalid}">
+            <label for="field" class="oui-field__label oui-label" data-translate="add_alert_field_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="field" name="field"
+                            class="oui-input" 
+                            data-ng-model="ctrl.alert.field"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
+                            data-ng-minlength="3"
+                            data-ng-maxlength="50"
+                            maxlength="50"
+                            required />
+                </div>
+                <div class="oui-field-helper" data-translate="add_alert_field_field_description"></div>
+            </div>
+        </div>
+
+        <div data-ng-if="ctrl.alertType === 'FIELD_CONTENT_VALUE'" class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.val.$invalid}">
+                <label for="val" class="oui-field__label oui-label" data-translate="add_alert_value_field"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="val" name="val"
+                                class="oui-input" 
+                                data-ng-model="ctrl.alert.value"
+                                data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
+                                data-ng-minlength="3"
+                                data-ng-maxlength="50"
+                                maxlength="50"
+                                required />
+                    </div>
+                    <div class="oui-field-helper" data-translate="add_alert_value_field_description"></div>
+                </div>
+            </div>
+
+        <div data-ng-if="ctrl.alertType !== 'FIELD_CONTENT_VALUE'">
+            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.time_period.$invalid}">
+                <label for="time_period" class="oui-field__label oui-label" data-translate="add_alert_time_period_field"></label>
+                <div class="oui-field__content">
+                    <oui-numeric
+                        id="time_period"
+                        name="time_period"
+                        model="ctrl.alert.time"
+                        min="1"
+                        max="3600"
+                        required>
+                    </oui-numeric>
+                    <div class="oui-field-helper" data-translate="add_alert_time_period_field_description"></div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="threshold_type" class="oui-label" data-translate="add_alert_threshold_type_field"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="threshold_type"
+                                id="threshold_type"
+                                data-ng-model="ctrl.alert.thresholdType">
+                                <option data-ng-if="ctrl.alertType !== 'FIELD_VALUE'" value="MORE" data-translate="add_alert_threshold_type_more"></option>
+                                <option data-ng-if="ctrl.alertType !== 'FIELD_VALUE'" value="LESS" data-translate="add_alert_threshold_type_less"></option>
+                                <option data-ng-if="ctrl.alertType === 'FIELD_VALUE'" value="LOWER" data-translate="add_alert_threshold_type_lower"></option>
+                                <option data-ng-if="ctrl.alertType === 'FIELD_VALUE'" value="HIGHER" data-translate="add_alert_threshold_type_higher"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="oui-field-helper" data-translate="{{ 'add_alert_threshold_type_field_description_' + ctrl.alertType.toLowerCase() }}"></div>
+                </div>
+            </div>
+
+            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.threshold.$invalid}">
+                <label for="threshold" class="oui-field__label oui-label" data-translate="add_alert_threshold_field"></label>
+                <div class="oui-field__content">
+                    <oui-numeric
+                        id="threshold"
+                        name="threshold"
+                        model="ctrl.alert.threshold"
+                        min="0"
+                        max="99"
+                        required>
+                    </oui-numeric>
+                    <div class="oui-field-helper" data-translate="add_alert_threshold_field_description"></div>
+                </div>
+            </div>
+
+            <div data-ng-if="ctrl.alertType === 'FIELD_VALUE'" class="oui-field">
+                <label for="constraint_type" class="oui-label" data-translate="add_alert_constraint_type_field"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="constraint_type"
+                                id="constraint_type"
+                                data-ng-model="ctrl.alert.constraintType">
+                                <option value="MEAN" data-translate="add_alert_constraint_type_mean"></option>
+                                <option value="MIN" data-translate="add_alert_constraint_type_min"></option>
+                                <option value="MAX" data-translate="add_alert_constraint_type_max"></option>
+                                <option value="SUM" data-translate="add_alert_constraint_type_sum"></option>
+                                <option value="STDDEV" data-translate="add_alert_constraint_type_sd"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="oui-field-helper" data-translate="add_alert_constraint_type_field_description"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.grace_period.$invalid}">
+            <label for="grace_period" class="oui-field__label oui-label" data-translate="add_alert_grace_period_field"></label>
+            <div class="oui-field__content">
+                <oui-numeric
+                    id="grace_period"
+                    name="grace_period"
+                    model="ctrl.alert.grace"
+                    min="1"
+                    max="60"
+                    required>
+                </oui-numeric>
+                <div class="oui-field-helper" data-translate="add_alert_grace_period_field_description"></div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.accumulation.$invalid}">
+            <label for="accumulation" class="oui-field__label oui-label" data-translate="add_alert_accumulation_field"></label>
+            <div class="oui-field__content">
+                <oui-numeric
+                    id="accumulation"
+                    name="accumulation"
+                    model="ctrl.alert.backlog"
+                    min="1"
+                    max="20"
+                    required>
+                </oui-numeric>
+                <div class="oui-field-helper" data-translate="add_alert_accumulation_field_description"></div>
+            </div>
+        </div>
+
+        <div class="oui-field pb-4">
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <oui-checkbox model="ctrl.alert.repeatNotificationsEnabled"
+                        id="notification"
+                        name="notification"
+                        text="{{'add_alert_notification_field' | translate}}"
+                        description="{{'add_alert_notification_field_description' | translate}}">
+                    </oui-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="cui-form-actions">
+            <oui-spinner data-ng-show="ctrl.addingAlert.loading"></oui-spinner>
+            <div data-ng-hide="ctrl.addingAlert.loading">
+                <oui-button
+                    text="{{'common_create' | translate}}"
+                    variant="primary"
+                    type="submit"
+                    on-click="ctrl.addAlert()"
+                ></oui-button>
+            
+                <oui-button
+                    text="{{'common_cancel' | translate}}"
+                    variant="link"
+                    on-click="ctrl.cancel()"
+                ></oui-button>
+            </div>
+        </div>
+    </form>
 </div>
