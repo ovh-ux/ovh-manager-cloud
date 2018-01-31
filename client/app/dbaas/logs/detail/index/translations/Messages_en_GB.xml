@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_index_title">Index Elasticsearch</translation>
+    <translation id="logs_index_description">Logs Data Platform allows you to create and host Elasticsearch index. These index can be used for the data configuration of a Kibana instance (to store settings, visualizations, and dashboards), to index to static data, or to enrich or correlate your logs. You can use these index with most of the tools and applications compatible with the Elasticsearch REST API.</translation>
+    <translation id="logs_index_total_used">aliases used</translation>
+    <translation id="logs_index_increase_quota">increase the quota</translation>
+    <translation id="logs_index_quota_get_error">An error has occurred while retrieving index quota: {{message}}</translation>
+    <translation id="logs_index_add_data_feed">Add index</translation>
+
+    <translation id="logs_index_get_error">An error has occurred while retrieving index</translation>
+
+    <translation id="logs_index_col_index">Index</translation>
+    <translation id="logs_index_col_description">Description</translation>
+    <translation id="logs_index_col_creation_date">Date of creation</translation>
+    <translation id="logs_index_col_free_space">Free space</translation>
+
+    <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
+    
+    <translation id="logs_modal_delete_title">Delete index</translation>
+    <translation id="logs_modal_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
+
+</translations>
