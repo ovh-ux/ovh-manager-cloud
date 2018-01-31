@@ -1,5 +1,6 @@
 class VpsHeaderCtrl {
-    constructor ($rootScope, $stateParams, $translate, CloudMessage, VpsNotificationIpv6, STOP_NOTIFICATION_USER_PREF, VpsService) {
+    constructor ($rootScope, $stateParams, $translate, CloudMessage, VpsNotificationIpv6, STOP_NOTIFICATION_USER_PREF,
+                 VpsService, ProductsService) {
         this.$rootScope = $rootScope;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -7,8 +8,9 @@ class VpsHeaderCtrl {
         this.VpsNotificationIpv6 = VpsNotificationIpv6;
         this.STOP_NOTIFICATION_USER_PREF = STOP_NOTIFICATION_USER_PREF;
         this.serviceName = $stateParams.serviceName;
-        this.description = $stateParams.displayName || $stateParams.serviceName;
+        this.description = $stateParams.serviceName;
         this.VpsService = VpsService;
+        this.ProductsService = ProductsService;
         this.loaders = {
             init: false
         };
@@ -37,6 +39,7 @@ class VpsHeaderCtrl {
             })
             .catch(() => this.CloudMessage.error(this.$translate.instant("vps_dashboard_loading_error")))
             .finally(() => { this.loaders.init = false });
+        this.description = this.ProductsService.getDisplayName("VPS", this.serviceName);
     }
 
     checkMessages (vps) {
