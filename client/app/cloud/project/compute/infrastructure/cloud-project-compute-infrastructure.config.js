@@ -1,13 +1,13 @@
 angular.module("managerApp")
     .config(atInternetControllerDecoratorsProvider => {
         atInternetControllerDecoratorsProvider.decorate({
-            CloudProjectComputeInfrastructureCtrl: {
+            CloudProjectComputeInfrastructureDiagramCtrl: {
                 initInfra (atInternet, controller) {
                     controller.Cloud.Project().Lexi().query().$promise
                         .then(projects => {
                             atInternet.trackEvent({
                                 event: `CloudProject-${projects.length}`,
-                                page: "cloud::iaas::pci-project::compute::infrastructure"
+                                page: "cloud::iaas::pci-project::compute::infrastructure::diagram"
                             });
                         });
                 }

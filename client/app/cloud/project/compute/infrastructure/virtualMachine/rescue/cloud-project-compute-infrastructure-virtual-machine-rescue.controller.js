@@ -1,77 +1,84 @@
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineRescueCtrl", function
-    ($scope, $translate, params, $uibModalInstance, $stateParams, OvhApiCloudProjectImage, CloudMessage,
-     CloudProjectComputeInfrastructureOrchestrator) {
+(() => {
+    class CloudProjectComputeInfrastructureVirtualmachineRescueCtrl {
+        constructor ($scope, $stateParams, $uibModalInstance, $translate,
+                     params, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, OvhApiCloudProjectImage, ServiceHelper) {
+            this.$scope = $scope;
+            this.$stateParams = $stateParams;
+            this.$uibModalInstance = $uibModalInstance;
+            this.$translate = $translate;
+            this.params = params;
+            this.CloudMessage = CloudMessage;
+            this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
+            this.OvhApiCloudProjectImage = OvhApiCloudProjectImage;
+            this.ServiceHelper = ServiceHelper;
+        }
 
-    "use strict";
-    var self = this;
+        $onInit () {
+            this.data = {
+                vm: this.params,
+                images: null,
+                selectedImage: null
+            };
+            this.loaders = {
+                action: false,
+                images: false
+            };
 
-    self.data = {
-        vm: params,
-        images: null,
-        selectedImage: null
-    };
+            this.getImages();
+        }
 
-    self.loaders = {
-        images: false,
-        action: false
-    };
-
-    function getImages () {
-        self.loaders.images = true;
-
-        OvhApiCloudProjectImage.Lexi().query({
-            serviceName: $stateParams.projectId,
-            flavorType: self.data.vm.type,
-            region: self.data.vm.region
-        }).$promise
-        .then(function (result) {
-            self.data.images = _.filter(result, {
-                visibility: "public",
-                type: self.data.vm.image ? self.data.vm.image.type : "linux"
-            });
-            if (self.isNonRescuableWithDefaultImage(self.data.vm)) {
-                self.data.selectedImage = _.findLast(self.data.images, {
-                    nameGeneric: self.data.vm.image.nameGeneric
+        rescueMode (enable) {
+            this.loaders.action = true;
+            return this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(this.data.vm, enable, this.data.selectedImage)
+                .then(result => {
+                    const typeKey = !this.data.selectedImage || this.data.vm.image.type === "linux" ? "linux" : "windows";
+                    const pwdKey = this.data.selectedImage ? "" : "pwd_";
+                    const user = this.data.selectedImage ? this.data.selectedImage.user : "root";
+                    const messageName = `cpc_rescue_mode_success_${pwdKey}${typeKey}`;
+                    this.CloudMessage.info({ textHtml: this.$translate.instant(messageName, {
+                        vmName: this.data.vm.name,
+                        user,
+                        ip: this.data.vm.ipAddresses[0].ip,
+                        pwd: _.get(result, "adminPassword", "")
+                    }) });
+                })
+                .catch(this.ServiceHelper.errorHandler("cpc_rescue_mode_error"))
+                .finally(() => {
+                    this.loaders.action = false;
+                    this.$uibModalInstance.close();
                 });
-            }
-        })
-        .finally(function () {
-            self.loaders.images = false;
-        });
+        }
+
+        cancel () {
+            this.$uibModalInstance.dismiss();
+        }
+
+        isNonRescuableWithDefaultImage (vm) {
+            return vm.image && (vm.image.distribution === "freebsd" || vm.image.type === "windows");
+        }
+
+        getImages () {
+            this.loaders.images = true;
+
+            return this.OvhApiCloudProjectImage.Lexi().query({
+                serviceName: this.$stateParams.projectId,
+                flavorType: this.data.vm.type,
+                region: this.data.vm.region
+            }).$promise.then(result => {
+                this.data.images = _.filter(result, {
+                    visibility: "public",
+                    type: this.data.vm.image ? this.data.vm.image.type : "linux"
+                });
+                if (this.isNonRescuableWithDefaultImage(this.data.vm)) {
+                    this.data.selectedImage = _.findLast(this.data.images, {
+                        nameGeneric: this.data.vm.image.nameGeneric
+                    });
+                }
+            }).finally(() => {
+                this.loaders.images = false;
+            });
+        }
     }
 
-    self.rescueMode = function (enable) {
-        self.loaders.action = true;
-        CloudProjectComputeInfrastructureOrchestrator.rescueVm(self.data.vm, enable, self.data.selectedImage)
-            .then(function (result) {
-                var typeKey = (!self.data.selectedImage || self.data.vm.image.type === "linux") ? "linux" : "windows";
-                var pwdKey = self.data.selectedImage ? "" : "pwd_";
-                var user = self.data.selectedImage ? self.data.selectedImage.user : "root";
-                var messageName = "cpc_rescue_mode_success_" + pwdKey + typeKey;
-                CloudMessage.success({textHtml : $translate.instant(messageName,
-                    {
-                        vmName: self.data.vm.name,
-                        user: user,
-                        ip: self.data.vm.ipAddresses[0].ip,
-                        pwd: result.adminPassword || ""
-                    })
-                });
-                $uibModalInstance.close();
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpc_rescue_mode_error"), err.data && err.data.message || ""].join(" "));
-            })
-            .finally(function () {
-                self.loaders.action = false;
-            });
-    };
-
-    self.cancel = function () {
-          $uibModalInstance.dismiss(self.snapshot);
-      };
-
-    self.isNonRescuableWithDefaultImage = function (vm) {
-        return vm.image && (vm.image.distribution === "freebsd" || vm.image.type === "windows");
-    };
-
-    getImages();
-});
+    angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineRescueCtrl", CloudProjectComputeInfrastructureVirtualmachineRescueCtrl);
+})();

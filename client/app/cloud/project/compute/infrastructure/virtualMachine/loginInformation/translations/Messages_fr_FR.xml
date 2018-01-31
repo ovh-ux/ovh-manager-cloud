@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="login_information_error" qtlid="401406">Oups! Nous n'arrivons pas à récupérer les informations de connexions.</translation>
    <translation id="cpcivm_login_information_title" qtlid="250927">Informations de connexion</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Connexion à l'instance</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Dans un terminal, saisir la commande suivante&#160;:<br/><code>ssh {{user}}@{{ip}}</code></translation>

@@ -35,6 +35,7 @@ angular.module("managerApp")
                     "cloud/project/compute/infrastructure/virtualMachine/rescue",
                     "cloud/project/compute/infrastructure/virtualMachine/monthlyConfirm",
                     "cloud/project/compute/infrastructure/virtualMachine/monitoring",
+                    "cloud/project/compute/infrastructure/virtualMachine/loginInformation",
                     "cloud/project/compute/infrastructure/privateNetwork",
                     "cloud/project/compute/infrastructure/privateNetwork/dialog",
                     "cloud/project/compute/infrastructure/privateNetwork/delete",
