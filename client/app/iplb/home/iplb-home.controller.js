@@ -114,7 +114,7 @@ class IpLoadBalancerHomeCtrl {
             },
             activateVrack: {
                 text: this.$translate.instant("common_activate"),
-                callback: () => this.ControllerHelper.modal.showVrackAssociateModal(),
+                callback: () => this.ControllerHelper.modal.showVrackActivateModal(),
                 isAvailable: () => true
             },
             changeOffer: {
