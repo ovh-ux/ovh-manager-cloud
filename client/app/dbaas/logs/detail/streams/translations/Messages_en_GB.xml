@@ -5,15 +5,59 @@
     <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
     <translation id="logs_streams_add_data_feed">Add a data stream</translation>
+
     <translation id="logs_streams_col_title">Name</translation>
     <translation id="logs_streams_col_description">Description</translation>
     <translation id="logs_streams_col_archives">Archives</translation>
     <translation id="logs_streams_col_actions">Actions</translation>
     <translation id="logs_streams_col_creation_date">Creation date</translation>
-    <translation id="logs_streams_col_notifications">Notifications</translation>
-    <translation id="logs_streams_col_linked_option">Linked option</translation>
-    <translation id="logs_streams_get_error">An error has occurred while retrieving data streams</translation>
-    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota</translation>
-    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations</translation>
+    <translation id="logs_streams_col_notifications">Alerts</translation>
+    <translation id="logs_streams_col_linked_option">Linked to option</translation>
     <translation id="logs_streams_no_streams">No data feeds added</translation>
+
+    <translation id="logs_streams_follow_live">Follow live</translation>
+
+    <translation id="logs_stream_delete_title">Delete data stream</translation>
+    <translation id="logs_stream_delete_message">Are you sure you want to delete the following data stream: {{stream}} ?</translation>
+
+    <translation id="logs_streams_add_title">Add data stream</translation>
+    <translation id="logs_streams_update_title">Update data stream</translation>
+    <translation id="logs_streams_select_options_title">Choose the attached option (optional)</translation>
+    <translation id="logs_streams_select_options_placeholder">Select option</translation>
+    <translation id="logs_streams_enable_websocket">Enable WebSocket Broadcast</translation>
+    <translation id="logs_streams_enable_websocket_description">Follow the receipt of your logs in real time via the WebSocket protocol</translation>
+    <translation id="logs_streams_enable_archieve">Enable long-term storage</translation>
+    <translation id="logs_streams_enable_archieve_description">Archive your logs safely for years</translation>
+    <translation id="logs_streams_select_archieve_algorithm">Compression algorithm</translation>
+    <translation id="logs_streams_select_archieve_duration">Duration of archive retention</translation>
+    <translation id="logs_streams_notification_title">Notification</translation>
+    <translation id="logs_streams_notification_detail">Notify me by e-mail when an archive is available</translation>
+
+    <translation id="logs_stream_create_success">The data stream has been successfully created.</translation>
+    <translation id="logs_stream_update_success">The data stream has been successfully updated.</translation>
+    <translation id="logs_stream_delete_success">The data stream has been successfully deleted.</translation>
+
+    <translation id="logs_stream_delete_error">An error has occurred while deleting a data stream: {{message}}</translation>
+    <translation id="logs_stream_update_error">An error has occurred while updating a data stream: {{message}}</translation>
+    <translation id="logs_stream_create_error">An error has occurred while creating a data stream: {{message}}</translation>
+    <translation id="logs_stream_get_error">An error has occurred while retrieving data stream: {{message}}</translation>
+    <translation id="logs_streams_get_error">An error has occurred while retrieving data streams: {{message}}</translation>
+    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
+    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
+    <translation id="logs_streams_archives_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
+
+    <translation id="logs_stream_compression_gzip">.gz (zlib)</translation>
+    <translation id="logs_stream_compression_zip">.zip (deflated)</translation>
+    <translation id="logs_stream_compression_lzma">.7z (lzma-2)</translation>
+    <translation id="logs_stream_compression_zstd">.zst (>= 1.2)</translation>
+    <translation id="logs_stream_retention_1y">one year</translation>
+    <translation id="logs_stream_retention_2y">two years</translation>
+    <translation id="logs_stream_retention_5y">five years</translation>
+    <translation id="logs_stream_retention_10y">ten years</translation>
+
+    <translation id="logs_streams_follow_copy_address">Copy the WebSocket address</translation>
+    <translation id="logs_streams_follow_download_client">Download ldp-tail</translation>
+    <translation id="logs_streams_follow_close_connection">Close the connection</translation>
+    <translation id="logs_streams_follow_open_connection">Open the connection</translation>
+
 </translations>

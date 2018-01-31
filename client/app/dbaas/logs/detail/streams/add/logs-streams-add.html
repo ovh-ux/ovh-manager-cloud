@@ -1,4 +1,149 @@
-<div>
-    Add Stream
-    Service Name: {{ ctrl.serviceName }}
+<div class="cui-page__content">
+    <oui-back-button data-state="dbaas.logs.detail.streams"
+                    class="back_button_inline_text"
+                    data-state-params="{ serviceName: ctrl.serviceName}">
+    </oui-back-button>
+    <span data-ng-show="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_update_title"></span>
+    <span data-ng-hide="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_add_data_feed"></span>
+
+    <form novalidate name="ctrl.form">
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
+            <label for="stream_name" class="oui-label" data-translate="logs_streams_col_title"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="stream_name" name="stream_name"
+                            class="oui-input" data-ng-model="ctrl.stream.data.title"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}"
+                            autofocus
+                            required />
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_description.$invalid}">
+            <label for="stream_description" class="oui-label" data-translate="logs_streams_col_description"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="stream_description" name="stream_description"
+                    class="oui-input" data-ng-model="ctrl.stream.data.description"
+                    data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.stream_description.$invalid}"
+                    required />
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field">
+            <label for="stream_option" class="oui-label" data-translate="logs_streams_select_options_title"></label>
+            <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+            <div data-ng-hide="ctrl.options.loading" class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+                    <div class="oui-select"
+                        data-ng-hide="ctrl.options.loading">
+                        <select class="oui-select__input"
+                            name="stream_option"
+                            id="stream_option"
+                            data-ng-model="ctrl.stream.data.optionId"
+                            data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbStream+'/'+option.maxNbStream for option in ctrl.options.data">
+                            <option data-translate="logs_streams_select_options_placeholder"></option>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field pb-4">
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <oui-checkbox model="ctrl.stream.data.webSocketEnabled"
+                        id="stream_enable_websocket"
+                        name="stream_enable_websocket"
+                        text="{{'logs_streams_enable_websocket' | translate}}"
+                        description="{{'logs_streams_enable_websocket_description' | translate}}">
+                    </oui-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field pb-4">
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <oui-checkbox model="ctrl.stream.data.coldStorageEnabled"
+                        id="stream_enable_compression"
+                        name="stream_enable_compression"
+                        text="{{'logs_streams_enable_archieve' | translate}}"
+                        description="{{'logs_streams_enable_archieve_description' | translate}}">
+                    </oui-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-show="ctrl.stream.data.coldStorageEnabled">
+            <div class="oui-field pl-5" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_archive_algorithm.$invalid }">
+                <label for="stream_archive_algorithm" class="oui-label" data-translate="logs_streams_select_archieve_algorithm"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_3">
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.stream_archive_algorithm.$invalid }">
+                            <select class="oui-select__input"
+                                name="stream_archive_algorithm"
+                                id="stream_archive_algorithm"
+                                data-ng-model="ctrl.stream.data.coldStorageCompression"
+                                data-ng-options="algo.value as algo.name for algo in ctrl.compressionAlgorithms">
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field pl-5" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_archive_duration.$invalid }">
+                <label for="stream_archive_duration" class="oui-label" data-translate="logs_streams_select_archieve_duration"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_3">
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.stream_archive_duration.$invalid }">
+                            <select class="oui-select__input"
+                                name="stream_archive_duration"
+                                id="stream_archive_duration"
+                                data-ng-model="ctrl.stream.data.coldStorageRetention"
+                                data-ng-options="duration.value as duration.name for duration in ctrl.storageDurations">
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field pl-5">
+                <label class="oui-label" data-translate="logs_streams_notification_title"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control">
+                        <oui-checkbox model="ctrl.stream.data.coldStorageNotifyEnabled" text="{{:: 'logs_streams_notification_detail' | translate}}"></oui-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cui-form-actions">
+            <oui-spinner data-ng-show="ctrl.saving.loading"></oui-spinner>
+            <div data-ng-hide="ctrl.saving.loading">
+                <button type="submit"
+                    class="oui-button oui-button_primary"
+                    data-translate="common_edit"
+                    data-ng-click="ctrl.updateStream()"
+                    data-ng-show="ctrl.isEdit"></button>
+                <button type="submit"
+                    class="oui-button oui-button_primary"
+                    data-translate="common_add"
+                    data-ng-click="ctrl.createStream()"
+                    data-ng-hide="ctrl.isEdit"></button>
+                <a class="oui-button oui-button_link"
+                    data-translate="common_cancel"
+                    data-ui-sref="dbaas.logs.detail.streams"></a>
+            </div>
+        </div>
+    </form>
 </div>
+
+
