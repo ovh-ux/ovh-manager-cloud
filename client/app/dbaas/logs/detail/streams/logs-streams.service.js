@@ -1,5 +1,6 @@
 class LogsStreamsService {
-    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll, LogsOptionsService) {
+    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
+                 LogsOptionsService, ControllerHelper, UrlHelper, CloudMessage) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -10,6 +11,9 @@ class LogsStreamsService {
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.CloudPoll = CloudPoll;
         this.LogsOptionsService = LogsOptionsService;
+        this.ControllerHelper = ControllerHelper;
+        this.UrlHelper = UrlHelper;
+        this.CloudMessage = CloudMessage;
 
         this.initializeData();
     }
@@ -77,7 +81,7 @@ class LogsStreamsService {
     getStreamDetails (serviceName) {
         return this.getAllStreams(serviceName)
             .then(streams => {
-                const promises = streams.map(stream => this.getStream(serviceName, stream));
+                const promises = streams.map(stream => this.getAapiStream(serviceName, stream));
                 return this.$q.all(promises);
             });
     }
@@ -248,6 +252,73 @@ class LogsStreamsService {
     }
 
     /**
+     * extracts graylog URL from stream. Shows error message on UI if no graylog URL is found.
+     *
+     * @param {any} stream
+     * @returns {string} graylog url, if not found empty string
+     * @memberof LogsStreamsService
+     */
+    getStreamGraylogUrl (stream) {
+        const url = this.UrlHelper.findUrl(stream, "GRAYLOG_WEBUI");
+        if (!url) {
+            this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_get_graylog_url_error", { stream: stream.info.title }) });
+        }
+        return url;
+    }
+
+    /**
+     * extracts and copies stream token to clipboard.
+     * Shows error message on UI if no no token found or browser does not support clipboard copy.
+     *
+     * @param {any} stream
+     * @memberof LogsStreamsService
+     */
+    copyStreamToken (stream) {
+        const token = this.getStreamToken(stream);
+        if (token) {
+            const error = this.ControllerHelper.copyToClipboard(token);
+            if (error) {
+                this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_copy_token_error", {
+                    stream: stream.info.title,
+                    token_value: token
+                }) });
+            } else {
+                this.CloudMessage.success(this.$translate.instant("logs_streams_copy_token_success"));
+            }
+        }
+    }
+
+    /**
+     * Extracts X-OVH-TOKEN token from given stream.
+     * Throws exception on UI if token was not found.
+     * @param {object} stream
+     * @return {string} stream token if found, empty string otherwise
+     */
+    getStreamToken (stream) {
+        const token = this.findStreamTokenValue(stream);
+        if (!token) {
+            this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_find_token_error", { stream: stream.info.title }) });
+        }
+        return token;
+    }
+
+    /**
+     * extracts X-OVH-TOKEN token from given stream
+     * @param {object} stream
+     * @return {string} stream token if found, empty string otherwise
+     */
+    findStreamTokenValue (stream) {
+        let rule = null;
+        for (let i = 0; i < stream.rules.length; i++) {
+            if (stream.rules[i].field === "X-OVH-TOKEN") {
+                rule = stream.rules[i];
+                break;
+            }
+        }
+        return rule ? rule.value : "";
+    }
+
+    /**
      * add additional data to stream before sending back to controller
      * 1. asynchronously gets notifications of a stream
      * 2. asynchronously gets archives of a stream
@@ -259,16 +330,17 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     _transformStream (serviceName, stream) {
-        stream.notifications = [];
+        stream.info.notifications = [];
+        stream.info.archives = [];
         // asynchronously fetch all notification of a stream
-        this.getNotifications(serviceName, stream.streamId)
+        this.getNotifications(serviceName, stream.info.streamId)
             .then(notifications => {
-                stream.notifications = notifications;
+                stream.info.notifications = notifications;
             });
         // asynchronously fetch all archives of a stream
-        this.getArchives(serviceName, stream.streamId)
+        this.getArchives(serviceName, stream.info.streamId)
             .then(archives => {
-                stream.archives = archives;
+                stream.info.archives = archives;
             });
         return stream;
     }

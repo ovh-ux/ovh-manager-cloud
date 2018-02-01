@@ -1,5 +1,5 @@
 class LogsStreamsHomeCtrl {
-    constructor ($state, $stateParams, $translate, LogsStreamsService, ControllerHelper, CloudMessage) {
+    constructor ($state, $stateParams, $translate, LogsStreamsService, ControllerHelper, CloudMessage, UrlHelper) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -7,6 +7,7 @@ class LogsStreamsHomeCtrl {
         this.LogsStreamsService = LogsStreamsService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.UrlHelper = UrlHelper;
 
         this.initLoaders();
     }
@@ -46,7 +47,7 @@ class LogsStreamsHomeCtrl {
     edit (stream) {
         this.$state.go("dbaas.logs.detail.streams.edit", {
             serviceName: this.serviceName,
-            streamId: stream.streamId
+            streamId: stream.info.streamId
         });
     }
 
@@ -86,10 +87,26 @@ class LogsStreamsHomeCtrl {
      * @memberof LogsStreamsHomeCtrl
      */
     followLive (stream) {
+        this.CloudMessage.flushChildMessage();
         this.$state.go("dbaas.logs.detail.streams.follow", {
             serviceName: this.serviceName,
-            streamId: stream.streamId
+            streamId: stream.info.streamId
         });
+    }
+
+    /**
+     * extracts graylog web URL from stream
+     *
+     * @param {any} stream, stream for which URL needs to be extracted
+     * @return {string} graylog url
+     * @memberof LogsStreamsHomeCtrl
+     */
+    getGraylogUrl (stream) {
+        return this.LogsStreamsService.getStreamGraylogUrl(stream);
+    }
+
+    copyToken (stream) {
+        this.LogsStreamsService.copyStreamToken(stream);
     }
 }
 
