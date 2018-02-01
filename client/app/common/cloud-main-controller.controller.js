@@ -1,5 +1,6 @@
 class CloudMainController {
-    constructor ($interval, $rootScope, $translate, OvhApiProducts) {
+    constructor ($document, $interval, $rootScope, $translate, OvhApiProducts) {
+        this.$document = $document;
         this.$interval = $interval;
         this.$rootScope = $rootScope;
         this.$translate = $translate;
@@ -49,6 +50,11 @@ class CloudMainController {
         this.expirationHours = duration.hours();
         this.expirationMinutes = duration.minutes();
     }
+
+    scrollTo (id) {
+        // Set focus to target
+        this.$document.find(`#${id}`)[0].focus();
+    };
 }
 
 angular.module("managerApp").controller("CloudMainController", CloudMainController);
