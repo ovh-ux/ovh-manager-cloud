@@ -12,7 +12,7 @@ class IpLoadBalancerVrackService {
         }, {
             ipLoadbalancing: serviceName
         }).$promise
-            .catch(this.ServiceHelper.errorHandler("iplb_vrack_add_associate_vrack_error"));
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_associate_vrack_error"));
     }
 
     deAssociateVrack (serviceName) {
@@ -22,7 +22,7 @@ class IpLoadBalancerVrackService {
                 serviceName: response.vrackName,
                 ipLoadbalancing: serviceName
             }).$promise)
-            .catch(this.ServiceHelper.errorHandler("iplb_vrack_add_deassociate_vrack_error"));
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_deassociate_vrack_error"));
     }
 
     getNetworkCreationRules (serviceName, config = { resetCache: false }) {
@@ -48,7 +48,7 @@ class IpLoadBalancerVrackService {
                         displayName: null
                     };
                 }
-                return this.ServiceHelper.errorHandler("iplb_vrack_add_rules_loading_error")(error);
+                return this.ServiceHelper.errorHandler("iplb_vrack_rules_loading_error")(error);
             });
     }
 
@@ -59,14 +59,40 @@ class IpLoadBalancerVrackService {
                 const promises = _.map(response, networkId => this._getPrivateNetwork(serviceName, networkId));
                 return this.$q.all(promises);
             })
-            .catch(this.ServiceHelper.errorHandler("iplb_vrack_add_private_networks_loading_error"));
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_networks_loading_error"));
+    }
+
+    getPrivateNetwork (serviceName, networkId) {
+        return this._getPrivateNetwork(serviceName, networkId)
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_loading_error"));
+    }
+
+    addPrivateNetwork (serviceName, network) {
+        return this.OvhApiIpLoadBalancingVrack.Lexi().post({ serviceName }, _.omit(network, ["vrackNetworkId", "farmId"]))
+            .$promise
+            .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_add_success"))
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_add_error"));
+    }
+
+    editPrivateNetwork (serviceName, network) {
+        return this.OvhApiIpLoadBalancingVrack.Lexi().put({ serviceName, vrackNetworkId: network.vrackNetworkId }, _.omit(network, ["vrackNetworkId", "farmId"]))
+            .$promise
+            .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_edit_success"))
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_edit_error"));
+    }
+
+    deletePrivateNetwork (serviceName, networkId) {
+        return this.OvhApiIpLoadBalancingVrack.Lexi().delete({ serviceName, vrackNetworkId: networkId })
+            .$promise
+            .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_delete_success"))
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_delete_error"));
     }
 
     _getPrivateNetwork (serviceName, networkId) {
         return this.OvhApiIpLoadBalancingVrack.Lexi().get({ serviceName, vrackNetworkId: networkId })
             .$promise
             .then(response => {
-                response.displayName = response.vrackNetworkId;
+                response.displayName = response.displayName || response.vrackNetworkId;
                 return response;
             });
     }

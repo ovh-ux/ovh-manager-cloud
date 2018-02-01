@@ -31,26 +31,9 @@
         <oui-column data-title="'iplb_vrack_list_col_private_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_private_subnet' | translate" data-property="subnet" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_private_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
-        <!-- <oui-column
-            data-title="'iplb_vrack_list_col_private_farms' | translate"
-            data-property="a"
-            data-sortable>
-        </oui-column>
-        <oui-column
-            data-title="'common_actions' | translate"
-            data-property="a"
-            data-sortable>
-        </oui-column> -->
         <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ $ctrl.actions.deletePrivateNetwork.text }}" on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>
         </oui-action-menu> 
     </oui-datagrid>
-<!--
-    <oui-action-menu align="end" compact>
-      <oui-action-menu-item text="Action 1" on-click="$ctrl.action1Row = $row">
-      </oui-action-menu-item>
-      <oui-action-menu-divider></oui-action-menu-divider>
-      <oui-action-menu-item text="Lien externe" href="#" external>
-      </oui-action-menu-item>
-  </oui-action-menu> -->
-
 </section>

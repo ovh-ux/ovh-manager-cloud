@@ -45,6 +45,23 @@ class IpLoadBalancerVrackCtrl {
                 text: this.$translate.instant("iplb_vrack_private_network_add"),
                 callback: () => this.$state.go("network.iplb.detail.vrack.add", { serviceName: this.$stateParams.serviceName }),
                 isAvailable: () => !this.creationRules.loading && this.creationRules.data.status === "active"
+            },
+            editPrivateNetwork: {
+                text: this.$translate.instant("common_modify"),
+                callback: network => {
+                    console.log(network);
+                    this.$state.go("network.iplb.detail.vrack.edit", { serviceName: this.serviceName, networkId: network.vrackNetworkId });
+                },
+                isAvailable: () => true
+            },
+            deletePrivateNetwork: {
+                text: this.$translate.instant("common_delete"),
+                callback: network => this.ControllerHelper.modal.showDeleteModal({
+                    titleText: this.$translate.instant("iplb_vrack_private_network_delete_title"),
+                    text: this.$translate.instant("iplb_vrack_private_network_delete_text")
+                })
+                    .then(() => this._deletePrivateNetwork(network)),
+                isAvailable: () => true
             }
         };
     }
@@ -57,6 +74,11 @@ class IpLoadBalancerVrackCtrl {
     _deAssociateVrack () {
         this.IpLoadBalancerVrackService.deAssociateVrack(this.serviceName)
             .then(() => this._pollVrackStatusChange("active", "deactivating"));
+    }
+
+    _deletePrivateNetwork (network) {
+        return this.IpLoadBalancerVrackService.deletePrivateNetwork(this.serviceName, network.vrackNetworkId)
+            .then(() => this.privateNetworks.load());
     }
 
     _pollVrackStatusChange (fromStatus, toStatus) {

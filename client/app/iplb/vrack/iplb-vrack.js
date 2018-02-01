@@ -38,7 +38,7 @@ angular.module("managerApp").config($stateProvider => {
             translations: ["common", "iplb", "iplb/frontends"]
         })
         .state("network.iplb.detail.vrack.edit", {
-            url: "/:vrackId",
+            url: "/:networkId",
             views: {
                 iplbVrack: {
                     templateUrl: "app/iplb/vrack/iplb-vrack-edit.html",

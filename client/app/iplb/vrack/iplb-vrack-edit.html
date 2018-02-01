@@ -1,13 +1,96 @@
+<pre><code>{{ $ctrl.model }}</code></pre>
 <section class="cui-page__content">
     <cui-back-link data-state="{{ $ctrl.previousState.state }}"
         data-state-params="$ctrl.previousState.stateParams"
         data-text="'common_back' | translate"></cui-back-link>
-    <cui-page-content-title text="'iplb_vrack_add_title' | translate"></cui-page-content-title>
+    <cui-page-content-title data-ng-if="!$ctrl.editing()" text="'iplb_vrack_private_network_add_title' | translate"></cui-page-content-title>
+    <cui-page-content-title data-ng-if="$ctrl.editing()" text="'iplb_vrack_private_network_edit_title' | translate"></cui-page-content-title>
     <form novalidate name="$ctrl.form">
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.displayName.id].$invalid }">
+            <label for="{{ $ctrl.model.displayName.id }}" 
+                class="oui-field__label oui-label" 
+                data-ng-bind="$ctrl.model.displayName.label"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_{{ $ctrl.model.displayName.inputSize }}">
+                    <input type="{{ $ctrl.model.displayName.type }}" 
+                        id="{{ $ctrl.model.displayName.id }}" 
+                        name="{{ $ctrl.model.displayName.id }}" 
+                        class="oui-input" 
+                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.displayName.id].$invalid }"
+                        data-ng-model="$ctrl.model.displayName.value"
+                        data-ng-required="$ctrl.model.displayName.required"
+                        data-ng-minlength="$ctrl.model.displayName.mingLength"
+                        data-ng-maxlength="$ctrl.model.displayName.maxLength"
+                        data-ng-disabled="$ctrl.model.displayName.disabled">
+                </div>
+                <div data-ng-if="$ctrl.model.displayName.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.displayName.helperText"></div>
+            </div>
+        </div>
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.vlan.id].$invalid }">
+            <label for="{{ $ctrl.model.vlan.id }}" 
+                class="oui-field__label oui-label" 
+                data-ng-bind="$ctrl.model.vlan.label"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_{{ $ctrl.model.vlan.inputSize }}">
+                    <input type="{{ $ctrl.model.vlan.type }}" 
+                        id="{{ $ctrl.model.vlan.id }}" 
+                        name="{{ $ctrl.model.vlan.id }}" 
+                        class="oui-input" 
+                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.vlan.id].$invalid }"
+                        data-ng-model="$ctrl.model.vlan.value"
+                        data-ng-required="$ctrl.model.vlan.required"
+                        data-ng-minlength="$ctrl.model.vlan.mingLength"
+                        data-ng-maxlength="$ctrl.model.vlan.maxLength"
+                        data-ng-disabled="$ctrl.model.vlan.disabled">
+                </div>
+                <div data-ng-if="$ctrl.model.vlan.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.vlan.helperText"></div>
+            </div>
+        </div>
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.subnet.id].$invalid }">
+            <label for="{{ $ctrl.model.subnet.id }}" 
+                class="oui-field__label oui-label" 
+                data-ng-bind="$ctrl.model.subnet.label"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_{{ $ctrl.model.subnet.inputSize }}">
+                    <input type="{{ $ctrl.model.subnet.type }}" 
+                        id="{{ $ctrl.model.subnet.id }}" 
+                        name="{{ $ctrl.model.subnet.id }}" 
+                        class="oui-input" 
+                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.subnet.id].$invalid }"
+                        data-ng-model="$ctrl.model.subnet.value"
+                        data-ng-required="$ctrl.model.subnet.required"
+                        data-ng-minlength="$ctrl.model.subnet.mingLength"
+                        data-ng-maxlength="$ctrl.model.subnet.maxLength"
+                        data-ng-disabled="$ctrl.model.subnet.disabled">
+                </div>
+                <div data-ng-if="$ctrl.model.subnet.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.subnet.helperText"></div>
+            </div>
+        </div>
+        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.natIp.id].$invalid }">
+            <label for="{{ $ctrl.model.natIp.id }}" 
+                class="oui-field__label oui-label" 
+                data-ng-bind="$ctrl.model.natIp.label"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_{{ $ctrl.model.natIp.inputSize }}">
+                    <input type="{{ $ctrl.model.natIp.type }}" 
+                        id="{{ $ctrl.model.natIp.id }}" 
+                        name="{{ $ctrl.model.natIp.id }}" 
+                        class="oui-input" 
+                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.natIp.id].$invalid }"
+                        data-ng-model="$ctrl.model.natIp.value"
+                        data-ng-required="$ctrl.model.natIp.required"
+                        data-ng-minlength="$ctrl.model.natIp.mingLength"
+                        data-ng-maxlength="$ctrl.model.natIp.maxLength"
+                        data-ng-disabled="$ctrl.model.natIp.disabled">
+                </div>
+                <div data-ng-if="$ctrl.model.natIp.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.natIp.helperText"></div>
+            </div>
+        </div>
+
         <div class="cui-form-actions">
             <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
             <div data-ng-if="!$ctrl.isLoading()">
-                <cui-submit-button data-text="'common_add' | translate"
+                <cui-submit-button data-text="(!$ctrl.editing() ? 'common_add' : 'common_modify') | translate"
                     data-on-click="$ctrl.submit()"></cui-submit-button>
                 <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
