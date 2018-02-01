@@ -19,10 +19,7 @@ class StreamsAlertsService {
      */
     addAlert (serviceName, streamId, alert) {
         return this.AlertsApiService.post({ serviceName, streamId }, alert).$promise
-            .then(operation => {
-                this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "streams_alerts_add_success");
-            })
+            .then(operation => this._handleSuccess(serviceName, operation.data, "streams_alerts_add_success"))
             .catch(this.ServiceHelper.errorHandler("streams_alerts_add_error"));
     }
 
@@ -37,15 +34,12 @@ class StreamsAlertsService {
      */
     deleteAlert (serviceName, streamId, alertId) {
         return this.AlertsApiService.delete({ serviceName, streamId, alertId }).$promise
-            .then(operation => {
-                this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "streams_alerts_delete_success");
-            })
+            .then(operation => this._handleSuccess(serviceName, operation.data, "streams_alerts_delete_success"))
             .catch(this.ServiceHelper.errorHandler("streams_alerts_delete_error"));
     }
 
     /**
-     * Get the IDs of all alerts 
+     * Get the IDs of all alerts
      *
      * @param {any} serviceName
      * @param {any} streamId
@@ -168,15 +162,6 @@ class StreamsAlertsService {
             stopCondition: opn => opn.state === "FAILURE" || opn.state === "SUCCESS"
         });
         return poller;
-    }
-
-    /**
-     * Cleans the cache
-     *
-     * @memberof LogsStreamsService
-     */
-    _resetAllCache () {
-        this.AlertsApiService.resetAllCache();
     }
 }
 
