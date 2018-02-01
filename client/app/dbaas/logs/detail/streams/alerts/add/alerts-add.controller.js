@@ -16,9 +16,9 @@ class AlertsAddCtrl {
     }
 
     /**
-     * Adds a new alert
+     * Adds a new alert by making an API call
      *
-     * @memberof LogsStreamsHomeCtrl
+     * @memberof AlertsAddCtrl
      */
     addAlert () {
         if (this.form.$invalid) {
@@ -34,6 +34,12 @@ class AlertsAddCtrl {
         return this.addingAlert.load();
     }
 
+    /**
+     * Cancels the Alert add operation and redirects
+     * to the page from which the user reached here
+     *
+     * @memberof AlertsAddCtrl
+     */
     cancel () {
         this.$window.history.back();
     }
