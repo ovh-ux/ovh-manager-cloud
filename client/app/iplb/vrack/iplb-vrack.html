@@ -1,7 +1,6 @@
 <pre><code>{{ $ctrl.creationRules.data }}</code></pre>
 <button data-ng-click="$ctrl._associateVrack()">Associate vrack TEST</button>
 <button data-ng-click="$ctrl._deAssociateVrack()">Deassociate vrack TEST</button>
-<pre><code>{{ $ctrl.privateNetworks.data }}</code></pre>
 
 <section class="cui-page__content iplb-vrack">
     <cui-page-content-title text="'iplb_vrack_title' | translate"></cui-page-content-title>
@@ -11,8 +10,8 @@
             <dt data-translate="iplb_vrack_box_title"></dt>
             <dd>
                 <cui-skeleton data-ng-if="$ctrl.creationRules.loading" loading="true" data-width="100%"></cui-skeleton>
-                <!-- <oui-spinner data-ng-if="$ctrl.creationRules.loading" size="s"></oui-spinner> -->
                 <span data-ng-if="!$ctrl.creationRules.loading" data-translate="{{ 'iplb_vrack_box_status_' + $ctrl.creationRules.data.status }}"></span>
+                <small data-ng-if="$ctrl.creationRules.data.status === 'active'">({{ $ctrl.creationRules.data.displayName }})</small>
             </dd>
         </dl>
         <cui-action-button class="iplb-vrack__box-button"
@@ -28,9 +27,10 @@
             data-type="secondary"></cui-action-button>
     <oui-datagrid data-rows="$ctrl.privateNetworks.data">
         <oui-column data-title="'iplb_vrack_list_col_private_network' | translate" data-property="displayName" data-sortable></oui-column>
-        <oui-column data-title="'iplb_vrack_list_col_private_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>
-        <oui-column data-title="'iplb_vrack_list_col_private_subnet' | translate" data-property="subnet" data-sortable></oui-column>
-        <oui-column data-title="'iplb_vrack_list_col_private_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
+        <oui-column data-title="'iplb_vrack_list_col_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>
+        <oui-column data-title="'iplb_vrack_list_col_subnet' | translate" data-property="subnet" data-sortable></oui-column>
+        <oui-column data-title="'iplb_vrack_list_col_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
+        <oui-column data-title="'iplb_vrack_list_col_farms' | translate" data-property="farms" data-sortable></oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ $ctrl.actions.deletePrivateNetwork.text }}" on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>

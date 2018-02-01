@@ -1,6 +1,8 @@
 class IpLoadBalancerVrackEditCtrl {
-    constructor ($q, $stateParams, CloudMessage, CloudNavigation, ControllerHelper, IpLoadBalancerVrackService) {
+    constructor ($q, $stateParams, $translate, CloudMessage, CloudNavigation, ControllerHelper, IpLoadBalancerVrackService) {
         this.$q = $q;
+        this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.ControllerHelper = ControllerHelper;
@@ -70,7 +72,7 @@ class IpLoadBalancerVrackEditCtrl {
         this.model = {
             displayName: {
                 id: "displayName",
-                label: "Nom (facultatif)",
+                label: this.$translate.instant("iplb_vrack_private_network_add_edit_field_display_name_label"),
                 type: "text",
                 value: undefined,
                 required: false,
@@ -81,38 +83,38 @@ class IpLoadBalancerVrackEditCtrl {
             },
             vlan: {
                 id: "vlan",
-                label: "VLAN ID (facultatif)",
+                label: this.$translate.instant("iplb_vrack_private_network_add_edit_field_vlan_label"),
                 type: "number",
                 value: undefined,
                 required: false,
                 minLength: 0,
                 maxLength: Infinity,
                 disabled: false,
-                helperText: "1 à 4000 (0 si le réseau privé n'est pas dans un VLAN)",
+                helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_vlan_helper"),
                 inputSize: 1
             },
             subnet: {
                 id: "subnet",
-                label: "Subnet",
+                label: this.$translate.instant("iplb_vrack_private_network_add_edit_field_subnet_label"),
                 type: "text",
                 value: undefined,
                 required: true,
                 minLength: 0,
                 maxLength: Infinity,
                 disabled: this.editing(),
-                helperText: "Ex. : 10.0.0.0/8",
+                helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_subnet_helper"),
                 inputSize: 2
             },
             natIp: {
                 id: "natIp",
-                label: "NatIP",
+                label: this.$translate.instant("iplb_vrack_private_network_add_edit_field_nat_ip_label"),
                 type: "text",
                 value: undefined,
                 required: true,
                 minLength: 0,
                 maxLength: Infinity,
                 disabled: false,
-                helperText: "Ex. : 127.0.0.1/8",
+                helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_nat_ip_helper"),
                 inputSize: 2
             },
             farmId: {

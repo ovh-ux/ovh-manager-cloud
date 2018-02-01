@@ -32,12 +32,16 @@ class IpLoadBalancerVrackService {
 
         return this.OvhApiIpLoadBalancingVrack.Lexi().getCreationRules({ serviceName }, {})
             .$promise
+            .then(response => this.$q.all({
+                vrack: this.OvhApiVrack.Lexi().get({ serviceName: response.vrackName }).$promise,
+                rules: this.$q.when(response)
+            }))
             .then(response => ({
-                networkId: response.vrackName,
-                remainingNetworks: response.remainingNetworks,
-                minNatIps: response.minNatIps,
+                networkId: response.rules.vrackName,
+                remainingNetworks: response.rules.remainingNetworks,
+                minNatIps: response.rules.minNatIps,
                 status: "active",
-                displayName: "Nothing to see here"
+                displayName: response.vrack.name || response.rules.vrackName
             }))
             .catch(error => {
                 //  I have no ther choice.  404 error is API way to say creationRules aren't available since we have no vrack associated.

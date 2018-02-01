@@ -48,10 +48,7 @@ class IpLoadBalancerVrackCtrl {
             },
             editPrivateNetwork: {
                 text: this.$translate.instant("common_modify"),
-                callback: network => {
-                    console.log(network);
-                    this.$state.go("network.iplb.detail.vrack.edit", { serviceName: this.serviceName, networkId: network.vrackNetworkId });
-                },
+                callback: network => this.$state.go("network.iplb.detail.vrack.edit", { serviceName: this.serviceName, networkId: network.vrackNetworkId }),
                 isAvailable: () => true
             },
             deletePrivateNetwork: {
@@ -78,7 +75,10 @@ class IpLoadBalancerVrackCtrl {
 
     _deletePrivateNetwork (network) {
         return this.IpLoadBalancerVrackService.deletePrivateNetwork(this.serviceName, network.vrackNetworkId)
-            .then(() => this.privateNetworks.load());
+            .then(() => {
+                this.creationRules.load();
+                this.privateNetworks.load();
+            });
     }
 
     _pollVrackStatusChange (fromStatus, toStatus) {
