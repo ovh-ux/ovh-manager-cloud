@@ -18,6 +18,11 @@ class AlertsHomeCtrl {
         this.runLoaders();
     }
 
+    /**
+     * Runs all the loaded to fetch data from APIs
+     *
+     * @memberof AlertsHomeCtrl
+     */
     runLoaders () {
         this.alertIds.load();
         this.stream.load();
@@ -37,6 +42,14 @@ class AlertsHomeCtrl {
         });
     }
 
+    /**
+     * Loads a number of alerts specified by the pageSize, starting from the specified offset
+     *
+     * @param {any} offset
+     * @param {any} pageSize
+     * @returns promise which will be resolve to the loaded alerts data
+     * @memberof AlertsHomeCtrl
+     */
     loadAlerts ({ offset, pageSize }) {
         return this.StreamsAlertsService.getAlerts(
             this.serviceName,
@@ -50,6 +63,13 @@ class AlertsHomeCtrl {
         }));
     }
 
+    /**
+     * Shows the confirmation modal box for alert deletion confirmation
+     * and deletes the alert if the user confirms the deletion
+     *
+     * @param {any} alert - the alert object
+     * @memberof AlertsHomeCtrl
+     */
     showDeleteConfirm (alert) {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
@@ -58,6 +78,12 @@ class AlertsHomeCtrl {
         }).then(() => this.delete(alert));
     }
 
+    /**
+     * Deletes the alert
+     *
+     * @param {any} alert - the alert object
+     * @memberof AlertsHomeCtrl
+     */
     delete (alert) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
@@ -68,6 +94,12 @@ class AlertsHomeCtrl {
         this.delete.load();
     }
 
+    /**
+     * Redirects to the new alert add page
+     *
+     * @param {any} type - the type of the alert to add
+     * @memberof AlertsHomeCtrl
+     */
     addAlert (type) {
         this.$state.go("dbaas.logs.detail.streams.alerts.add", {
             serviceName: this.serviceName,

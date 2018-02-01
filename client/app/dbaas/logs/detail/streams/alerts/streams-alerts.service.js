@@ -13,8 +13,8 @@ class StreamsAlertsService {
      *
      * @param {any} serviceName
      * @param {any} streamId
-     * @param {any} alert the alert object
-     * @returns promise which will be resolve to operation object
+     * @param {any} alert - the alert object
+     * @returns promise which will be resolve to an operation object
      * @memberof StreamsAlertsService
      */
     addAlert (serviceName, streamId, alert) {
@@ -26,6 +26,15 @@ class StreamsAlertsService {
             .catch(this.ServiceHelper.errorHandler("streams_alerts_add_error"));
     }
 
+    /**
+     * Deletes an alert
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @param {any} alertId - ID of the alert to be deleted
+     * @returns promise which will be resolve to an operation object
+     * @memberof StreamsAlertsService
+     */
     deleteAlert (serviceName, streamId, alertId) {
         return this.AlertsApiService.delete({ serviceName, streamId, alertId }).$promise
             .then(operation => {
@@ -35,6 +44,14 @@ class StreamsAlertsService {
             .catch(this.ServiceHelper.errorHandler("streams_alerts_delete_error"));
     }
 
+    /**
+     * Get the IDs of all alerts 
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @returns promise which will be resolve with a list of alert IDs
+     * @memberof StreamsAlertsService
+     */
     getAlertIds (serviceName, streamId) {
         return this.AlertsApiService.query({
             serviceName,
@@ -43,20 +60,54 @@ class StreamsAlertsService {
             .catch(this.ServiceHelper.errorHandler("streams_alerts_ids_loading_error"));
     }
 
+    /**
+     * Gets the alert objects corresponding to the alertIds
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @param {any} alertIds - list of alert IDs for which alert object is to be fetched
+     * @returns promise which will be resolve with the list of alerts
+     * @memberof StreamsAlertsService
+     */
     getAlerts (serviceName, streamId, alertIds) {
         return this.getAlertDetails(serviceName, streamId, alertIds)
             .catch(this.ServiceHelper.errorHandler("streams_alerts_loading_error"));
     }
 
+    /**
+     * Gets the alert objects corresponding to the alertIds
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @param {any} alertIds - list of alert IDs for which alert object is to be fetched
+     * @returns promise which will be resolve with the list of alerts
+     * @memberof StreamsAlertsService
+     */
     getAlertDetails (serviceName, streamId, alertIds) {
         const promises = alertIds.map(alertId => this.getAlert(serviceName, streamId, alertId));
         return this.$q.all(promises);
     }
 
+    /**
+     * Gets the alert object corresponding to the alertId
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @param {any} alertId - the alert ID for which alert object is to be fetched
+     * @returns promise which will be resolve with the alert
+     * @memberof StreamsAlertsService
+     */
     getAlert (serviceName, streamId, alertId) {
         return this.AlertsApiService.get({ serviceName, streamId, alertId }).$promise;
     }
 
+    /**
+     * Returns a new alert object with the default properties
+     *
+     * @param {any} conditionType - the type of the condition (one of StreamsAlertsConstant.alertType)
+     * @returns the default alert object
+     * @memberof StreamsAlertsService
+     */
     getNewAlert (conditionType) {
         const thresholdType = conditionType === this.StreamsAlertsConstant.alertType.numeric ?
             this.StreamsAlertsConstant.thresholdType.lower :
@@ -75,7 +126,7 @@ class StreamsAlertsService {
     }
 
     /**
-     * handles success state for create, delete and update streams.
+     * handles success state for create and delete alerts.
      * Repetedly polls for operation untill it returns SUCCESS message.
      *
      * @param {any} serviceName
@@ -90,12 +141,25 @@ class StreamsAlertsService {
             .then(this.ServiceHelper.successHandler(successMessage));
     }
 
+    /**
+     * Kills the current poller
+     *
+     * @memberof LogsStreamsService
+     */
     _killPoller () {
         if (this.poller) {
             this.poller.kill();
         }
     }
 
+    /**
+     * Sets up polling for an operation
+     *
+     * @param {any} serviceName
+     * @param {any} operation, operation to poll
+     * @returns returns the poller promise that resolves when the polling for success is complete
+     * @memberof LogsStreamsService
+     */
     _pollOperation (serviceName, operation) {
         this._killPoller();
         const poller = this.CloudPoll.poll({
@@ -106,6 +170,11 @@ class StreamsAlertsService {
         return poller;
     }
 
+    /**
+     * Cleans the cache
+     *
+     * @memberof LogsStreamsService
+     */
     _resetAllCache () {
         this.AlertsApiService.resetAllCache();
     }
