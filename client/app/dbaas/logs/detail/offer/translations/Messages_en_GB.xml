@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_offer_streams">streams</translation>
+    <translation id="logs_offer_tables">tables</translation>
+    <translation id="logs_offer_collection_tools">collection tools</translation>
+    <translation id="logs_offer_limit">Limit</translation>
+    <translation id="logs_offer_month">month</translation>
+    <translation id="logs_offer_day">day</translation>
+    <translation id="logs_offer_year">year</translation>
+    <translation id="logs_offer_select_offer">Select offer</translation>
+
+    <translation id="logs_offer_load_error">An error occurred while getting your offer details</translation>
+    <translation id="logs_order_save_order">An error occurred while saving your order. Please try again</translation>
+    <translation id="logs_order_get_error">An error has occurred while retrieving offers</translation>
+    <translation id="logs_offer_current_offer">Current offer</translation>    
+    <translation id="logs_offer_GB_day">GB/day</translation>
+
+</translations>
