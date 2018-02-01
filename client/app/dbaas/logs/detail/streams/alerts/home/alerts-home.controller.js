@@ -15,7 +15,7 @@ class AlertsHomeCtrl {
     }
 
     $onInit () {
-        this.runLoaders();
+        this._runLoaders();
     }
 
     /**
@@ -23,7 +23,7 @@ class AlertsHomeCtrl {
      *
      * @memberof AlertsHomeCtrl
      */
-    runLoaders () {
+    _runLoaders () {
         this.alertIds.load();
         this.stream.load();
     }
@@ -51,16 +51,21 @@ class AlertsHomeCtrl {
      * @memberof AlertsHomeCtrl
      */
     loadAlerts ({ offset, pageSize }) {
-        return this.StreamsAlertsService.getAlerts(
-            this.serviceName,
-            this.streamId,
-            this.alertIds.data.slice(offset - 1, offset + pageSize - 1)
-        ).then(alerts => ({
-            data: alerts,
-            meta: {
-                totalCount: this.alertIds.data.length
-            }
-        }));
+        this.alerts = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.StreamsAlertsService.getAlerts(
+                this.serviceName,
+                this.streamId,
+                this.alertIds.data.slice(offset - 1, offset + pageSize - 1)
+            )
+        });
+
+        return this.alerts.load()
+            .then(alerts => ({
+                data: alerts,
+                meta: {
+                    totalCount: this.alertIds.data.length
+                }
+            }));
     }
 
     /**
@@ -75,7 +80,7 @@ class AlertsHomeCtrl {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("streams_alerts_delete"),
             text: this.$translate.instant("streams_alerts_delete_message", { alert: alert.title })
-        }).then(() => this.delete(alert));
+        }).then(() => this._delete(alert));
     }
 
     /**
@@ -88,7 +93,7 @@ class AlertsHomeCtrl {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.StreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert.alertId)
-                    .then(() => this.runLoaders())
+                    .then(() => this._runLoaders())
         });
         this.alertIds.loading = true;
         this.delete.load();
