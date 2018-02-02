@@ -40,7 +40,7 @@
     <translation id="logs_stream_create_success">The data stream has been successfully created.</translation>
     <translation id="logs_stream_update_success">The data stream has been successfully updated.</translation>
     <translation id="logs_stream_delete_success">The data stream has been successfully deleted.</translation>
-    <translation id="logs_streams_copy_token_success">The token value has been successfully copied to your clipboard, use <strong>CTRL+V</strong> to paste it in your screen.</translation>
+    <translation id="logs_streams_copy_token_success">The token value has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
 
     <translation id="logs_streams_get_graylog_url_error">Graylog url not found for stream {{stream}}.</translation>
     <translation id="logs_stream_delete_error">An error has occurred while deleting a data stream: {{message}}</translation>
@@ -52,7 +52,7 @@
     <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
     <translation id="logs_streams_archives_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
     <translation id="logs_streams_find_token_error">Token not found for stream {{stream}}.</translation>
-    <translation id="logs_streams_copy_token_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version.<br/>Here is the token value to enter for stream <strong>{{stream}}</strong>: <strong>{{token_value}}</strong></translation>
+    <translation id="logs_streams_copy_token_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the token value to enter for stream {{stream}}: {{token_value}}</translation>
 
     <translation id="logs_stream_compression_gzip">.gz (zlib)</translation>
     <translation id="logs_stream_compression_zip">.zip (deflated)</translation>
@@ -87,10 +87,10 @@
 
     <translation id="logs_streams_follow_connection_error">Error occuried while connecting to WebSocket: {{message}}</translation>
     <translation id="logs_streams_follow_get_websocket_error">WebSocket address is not available for stream {{stream}}. Please retry later.</translation>
-    <translation id="logs_streams_follow_copy_websocket_success">WebSocket address has been successfully copied to your clipboard, use <strong>CTRL+V</strong> to paste it in your screen.</translation>
-    <translation id="logs_streams_follow_copy_websocket_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version.<br/>Here is the WebSocket address for stream <strong>{{stream}}</strong>: <strong>{{url}}</strong></translation>
+    <translation id="logs_streams_follow_copy_websocket_success">WebSocket address has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
+    <translation id="logs_streams_follow_copy_websocket_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the WebSocket address for stream {{stream}}: {{url}}</translation>
 
-    <translation id="logs_streams_follow_copy_command_success">The command line for the format <strong>{{type}}</strong> has been scuccessfully copied to your clipboard. Use <strong>CTRL+V</strong> to paste it in your terminal and press Enter key to execute it.</translation>
-    <translation id="logs_streams_follow_copy_command_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version.<br/>Here is the command line for format <strong>{{type}}</strong>: <br/> <strong>{{command}}</strong>. <br/> Copy and paste this command in terminal to execute it.</translation>
+    <translation id="logs_streams_follow_copy_command_success">The command line for the format {{type}} has been scuccessfully copied to your clipboard. Use CTRL+V to paste it in your terminal and press Enter key to execute it.</translation>
+    <translation id="logs_streams_follow_copy_command_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the command line for format {{type}}: "{{command}}". Copy and paste this command in terminal to execute it.</translation>
     <translation id="logs_streams_get_command_urls_error">Failed to get command URL's for Gelf, LTSV and RFC 5424. You will not be able to use these commands.</translation>
 </translations>

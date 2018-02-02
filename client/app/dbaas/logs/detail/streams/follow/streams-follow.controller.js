@@ -78,12 +78,18 @@
         }
 
         testFlow (type) {
-            if (type === this.LogsStreamsFollowService.testTypeEnum.GELF) {
-                this.LogsStreamsFollowService.copyGELCommandLine(this.stream.data, this.gelfUrl);
-            } else if (type === this.LogsStreamsFollowService.testTypeEnum.LTSV) {
-                this.LogsStreamsFollowService.copyLTSVCommandLine(this.stream.data, this.ltsvUrl);
-            } else if (type === this.LogsStreamsFollowService.testTypeEnum.RFC5424) {
-                this.LogsStreamsFollowService.copyRFCCommandLine(this.stream.data, this.rfc5424Url);
+            switch (type) {
+                case this.LogsStreamsFollowService.testTypeEnum.GELF:
+                    this.LogsStreamsFollowService.copyGELCommandLine(this.stream.data, this.gelfUrl);
+                    break;
+                case this.LogsStreamsFollowService.testTypeEnum.LTSV:
+                    this.LogsStreamsFollowService.copyLTSVCommandLine(this.stream.data, this.ltsvUrl);
+                    break;
+                case this.LogsStreamsFollowService.testTypeEnum.RFC5424:
+                    this.LogsStreamsFollowService.copyRFCCommandLine(this.stream.data, this.rfc5424Url);
+                    break;
+                default:
+                    break;
             }
         }
 

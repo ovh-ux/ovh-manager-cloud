@@ -282,12 +282,12 @@ class LogsStreamsService {
         if (token) {
             const error = this.ControllerHelper.copyToClipboard(token);
             if (error) {
-                this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_copy_token_error", {
+                this.CloudMessage.error(this.$translate.instant("logs_streams_copy_token_error", {
                     stream: stream.info.title,
                     token_value: token
-                }) });
+                }));
             } else {
-                this.CloudMessage.success({ textHtml: this.$translate.instant("logs_streams_copy_token_success") });
+                this.CloudMessage.success(this.$translate.instant("logs_streams_copy_token_success"));
             }
         }
     }
@@ -313,7 +313,7 @@ class LogsStreamsService {
      */
     findStreamTokenValue (stream) {
         const ruleObj = _.find(stream.rules, rule => rule.field === "X-OVH-TOKEN");
-        return ruleObj && ruleObj.value ? ruleObj.value : "";
+        return _.get(ruleObj, "value", "");
     }
 
     /**
