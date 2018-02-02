@@ -4,18 +4,7 @@
     class OuiInlineColorAlertController {
 
         getClass () {
-            if (this.type === "warning") {
-                return "oui-inline-color-alert__warning";
-            } else if (this.type === "error") {
-                return "oui-inline-color-alert__error";
-            } else if (this.type === "info") {
-                return "oui-inline-color-alert__info";
-            } else if (this.type === "primary") {
-                return "oui-inline-color-alert__primary";
-            } else if (this.type === "default") {
-                return "oui-inline-color-alert__default";
-            }
-            return "";
+            return `oui-inline-color-alert__${this.type}`;
         }
     }
 

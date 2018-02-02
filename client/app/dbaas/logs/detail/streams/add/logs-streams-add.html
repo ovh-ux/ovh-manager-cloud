@@ -6,7 +6,8 @@
     <span data-ng-show="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_update_title"></span>
     <span data-ng-hide="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_add_data_feed"></span>
 
-    <form novalidate name="ctrl.form">
+    <oui-spinner data-ng-show="ctrl.stream.loading"></oui-spinner>
+    <form novalidate name="ctrl.form" data-ng-hide="ctrl.stream.loading">
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
             <label for="stream_name" class="oui-label" data-translate="logs_streams_col_title"></label>
             <div class="oui-field__content">
