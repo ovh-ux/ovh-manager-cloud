@@ -159,7 +159,10 @@ class LogsStreamsService {
     updateStream (serviceName, stream) {
         return this.StreamsApiService.update({ serviceName, streamId: stream.streamId }, stream)
             .$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_stream_update_success"))
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_stream_update_success")
+            })
             .catch(this.ServiceHelper.errorHandler("logs_stream_update_error"));
     }
 
@@ -247,7 +250,8 @@ class LogsStreamsService {
                 coldStorageNotifyEnabled: true,
                 coldStorageEnabled: false,
                 webSocketEnabled: true
-            }
+            },
+            loading: false
         };
     }
 
@@ -261,7 +265,7 @@ class LogsStreamsService {
     getStreamGraylogUrl (stream) {
         const url = this.UrlHelper.findUrl(stream, "GRAYLOG_WEBUI");
         if (!url) {
-            this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_get_graylog_url_error", { stream: stream.info.title }) });
+            this.CloudMessage.error(this.$translate.instant("logs_streams_get_graylog_url_error", { stream: stream.info.title }));
         }
         return url;
     }
@@ -283,7 +287,7 @@ class LogsStreamsService {
                     token_value: token
                 }) });
             } else {
-                this.CloudMessage.success(this.$translate.instant("logs_streams_copy_token_success"));
+                this.CloudMessage.success({ textHtml: this.$translate.instant("logs_streams_copy_token_success") });
             }
         }
     }
@@ -297,7 +301,7 @@ class LogsStreamsService {
     getStreamToken (stream) {
         const token = this.findStreamTokenValue(stream);
         if (!token) {
-            this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_find_token_error", { stream: stream.info.title }) });
+            this.CloudMessage.error(this.$translate.instant("logs_streams_find_token_error", { stream: stream.info.title }));
         }
         return token;
     }
@@ -308,14 +312,8 @@ class LogsStreamsService {
      * @return {string} stream token if found, empty string otherwise
      */
     findStreamTokenValue (stream) {
-        let rule = null;
-        for (let i = 0; i < stream.rules.length; i++) {
-            if (stream.rules[i].field === "X-OVH-TOKEN") {
-                rule = stream.rules[i];
-                break;
-            }
-        }
-        return rule ? rule.value : "";
+        const ruleObj = _.find(stream.rules, rule => rule.field === "X-OVH-TOKEN");
+        return ruleObj && ruleObj.value ? ruleObj.value : "";
     }
 
     /**
@@ -370,6 +368,7 @@ class LogsStreamsService {
     _resetAllCache () {
         this.LogsApiService.resetAllCache();
         this.StreamsApiService.resetAllCache();
+        this.StreamsAapiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
     }
 

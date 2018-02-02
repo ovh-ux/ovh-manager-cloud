@@ -24,9 +24,9 @@
             <oui-action-menu-item data-ng-hide="ctrl.isConnectionClosed()" text="{{ ::'logs_streams_follow_close_connection' | translate}}" on-click="ctrl.closeConnection()"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_streams_follow_download_client' | translate}}" href="https://github.com/ovh/ldp-tail/releases" external></oui-action-menu-item>
             <oui-action-menu-item data-ng-show="ctrl.isConnectionClosed()" text="{{ ::'logs_streams_follow_open_connection' | translate}}" on-click="ctrl.openConnection()"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_gelf' | translate}}" on-click="ctrl.testFlow('GELF')"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_ltsv' | translate}}" on-click="ctrl.testFlow('LTSV')"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_rfc' | translate}}" on-click="ctrl.testFlow('RFC5424')"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_gelf' | translate}}" on-click="ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.GELF)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_ltsv' | translate}}" on-click="ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.LTSV)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_rfc' | translate}}" on-click="ctrl.testFlow(ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.RFC5424))"></oui-action-menu-item>
         </oui-action-menu>
 
         <oui-spinner data-ng-show="ctrl.LogsStreamsFollowService.waitingForMessages"></oui-spinner>

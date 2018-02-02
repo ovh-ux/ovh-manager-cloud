@@ -61,7 +61,7 @@ class LogsStreamsHomeCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_stream_delete_title"),
-            text: this.$translate.instant("logs_stream_delete_message", { stream: stream.title })
+            text: this.$translate.instant("logs_stream_delete_message", { stream: stream.info.title })
         }).then(() => this.delete(stream));
     }
 
@@ -74,7 +74,7 @@ class LogsStreamsHomeCtrl {
     delete (stream) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsStreamsService.deleteStream(this.serviceName, stream)
+                this.LogsStreamsService.deleteStream(this.serviceName, stream.info)
                     .then(() => this.initLoaders())
         });
         this.delete.load();

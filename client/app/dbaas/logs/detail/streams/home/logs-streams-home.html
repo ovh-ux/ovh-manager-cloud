@@ -44,8 +44,8 @@
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ ::'logs_streams_graylog_access' | translate }}" href="{{ctrl.getGraylogUrl($row)}}" external></oui-action-menu-item>
             <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'logs_streams_copy_token' | translate }}" on-click="ctrl.copyToken($row)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row.info)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_streams_follow_live' | translate }}" on-click="ctrl.followLive($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
