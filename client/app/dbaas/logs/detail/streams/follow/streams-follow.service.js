@@ -90,12 +90,12 @@
             } else {
                 const error = this.ControllerHelper.copyToClipboard(url);
                 if (error) {
-                    this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_follow_copy_websocket_error", {
+                    this.CloudMessage.error(this.$translate.instant("logs_streams_follow_copy_websocket_error", {
                         stream: stream.info.title,
                         url
-                    }) });
+                    }));
                 } else {
-                    this.CloudMessage.success({ textHtml: this.$translate.instant("logs_streams_follow_copy_websocket_success") });
+                    this.CloudMessage.success(this.$translate.instant("logs_streams_follow_copy_websocket_success"));
                 }
             }
         }
@@ -156,10 +156,9 @@
         copyRFCCommandLine (stream, rfc5424Url) {
             const token = this.LogsStreamsService.getStreamToken(stream);
             if (token) {
-                let command = "";
                 const now = new Date();
                 const dateFormatted = now.toISOString();
-                command = `echo -e '<6>1 ${dateFormatted} 149.202.165.20 example.org - - [exampleSDID@8485 user_id="9001"  some_info="foo" some_metric_num="42.0" X-OVH-TOKEN="${token}"] A short RFC 5424 message that helps you identify what is going on\'\\n | openssl s_client -quiet -no_ign_eof  -connect ${rfc5424Url}`;
+                const command = `echo -e '<6>1 ${dateFormatted} 149.202.165.20 example.org - - [exampleSDID@8485 user_id="9001"  some_info="foo" some_metric_num="42.0" X-OVH-TOKEN="${token}"] A short RFC 5424 message that helps you identify what is going on\'\\n | openssl s_client -quiet -no_ign_eof  -connect ${rfc5424Url}`;
                 const error = this.ControllerHelper.copyToClipboard(command);
                 this._handleCommandCopyStatus(error, stream, command, this.testTypeEnum.RFC5424);
             }
@@ -174,10 +173,9 @@
         copyLTSVCommandLine (stream, ltsvUrl) {
             const token = this.LogsStreamsService.getStreamToken(stream);
             if (token) {
-                let command = "";
                 const now = new Date();
                 const dateFormatted = now.toISOString();
-                command = `echo -e 'X-OVH-TOKEN:${token}\\thost:example.org\\ttime:${dateFormatted}\\tmessage:A short LTSV message that helps you identify what is going on\\tfull_message:Backtrace here more stuff\\tlevel:1\\tuser_id:9001\\tsome_info:foo\\tsome_metric_num:42.0\\0' | openssl s_client -quiet -no_ign_eof  -connect ${ltsvUrl}`;
+                const command = `echo -e 'X-OVH-TOKEN:${token}\\thost:example.org\\ttime:${dateFormatted}\\tmessage:A short LTSV message that helps you identify what is going on\\tfull_message:Backtrace here more stuff\\tlevel:1\\tuser_id:9001\\tsome_info:foo\\tsome_metric_num:42.0\\0' | openssl s_client -quiet -no_ign_eof  -connect ${ltsvUrl}`;
                 const error = this.ControllerHelper.copyToClipboard(command);
                 this._handleCommandCopyStatus(error, stream, command, this.testTypeEnum.LTSV);
             }
@@ -192,10 +190,9 @@
         copyGELCommandLine (stream, gelfUrl) {
             const token = this.LogsStreamsService.getStreamToken(stream);
             if (token) {
-                let command = "";
                 const now = new Date();
                 const timestamp = Math.round(now.getTime() / 1000);
-                command = `echo -e '{"version":"1.1", "host": "example.org", "short_message": "A short GELF message that helps you identify what is going on", "full_message": "Backtrace here more stuff", "timestamp": ${timestamp}, "level": 1, "_user_id": 9001, "_some_info": "foo", "some_metric_num": 42.0, "_X-OVH-TOKEN":"${token}"}\\0' | openssl s_client -quiet -no_ign_eof  -connect ${gelfUrl}`;
+                const command = `echo -e '{"version":"1.1", "host": "example.org", "short_message": "A short GELF message that helps you identify what is going on", "full_message": "Backtrace here more stuff", "timestamp": ${timestamp}, "level": 1, "_user_id": 9001, "_some_info": "foo", "some_metric_num": 42.0, "_X-OVH-TOKEN":"${token}"}\\0' | openssl s_client -quiet -no_ign_eof  -connect ${gelfUrl}`;
                 const error = this.ControllerHelper.copyToClipboard(command);
                 this._handleCommandCopyStatus(error, stream, command, this.testTypeEnum.GELF);
             }
@@ -203,13 +200,13 @@
 
         _handleCommandCopyStatus (error, stream, command, type) {
             if (error) {
-                this.CloudMessage.error({ textHtml: this.$translate.instant("logs_streams_follow_copy_command_error", {
+                this.CloudMessage.error(this.$translate.instant("logs_streams_follow_copy_command_error", {
                     stream: stream.info.title,
                     command,
                     type
-                }) });
+                }));
             } else {
-                this.CloudMessage.success({ textHtml: this.$translate.instant("logs_streams_follow_copy_command_success", { type }) });
+                this.CloudMessage.success(this.$translate.instant("logs_streams_follow_copy_command_success", { type }));
             }
         }
 
