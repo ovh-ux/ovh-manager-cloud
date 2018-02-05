@@ -9,13 +9,13 @@
     <oui-spinner data-ng-if="ctrl.stream.loading"></oui-spinner>
     <div data-ng-if="!ctrl.stream.loading">
         <div>
-            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{'logs_streams_connection_opened' | translate}} </strong>
+            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_opened' | translate}} </strong>
                 <span data-ng-if="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() | momentFormat:'LL' }} {{ctrl.getLastEvent() | momentFormat:'LTS' }}</span>
             </p>
-            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{'logs_streams_displaying_logs' | translate}}</strong>
-                <span> - {{ctrl.getTotalMessages() | number}}/{{ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</span>
+            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{::'logs_streams_displaying_logs' | translate}}</strong>
+                <span> - {{ctrl.getTotalMessages() | number}}/{{::ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</span>
             </p>
-            <p data-ng-if="ctrl.isConnectionClosed()"><strong>{{'logs_streams_connection_closed' | translate}}</strong></p>
+            <p data-ng-if="ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_closed' | translate}}</strong></p>
         </div>
 
         <oui-action-menu text="{{ ::'common_actions' | translate}}" align="start">
@@ -29,7 +29,7 @@
         </oui-action-menu>
 
         <oui-spinner data-ng-if="ctrl.LogsStreamsFollowService.waitingForMessages"></oui-spinner>
-        <p data-ng-if="ctrl.LogsStreamsFollowService.waitingForMessages">{{'logs_streams_waiting_for_messages' | translate}}</p>
+        <p data-ng-if="ctrl.LogsStreamsFollowService.waitingForMessages">{{::'logs_streams_waiting_for_messages' | translate}}</p>
         <table class="table" data-ng-repeat="message in ctrl.getMessages()">
             <tr>
                 <td>
