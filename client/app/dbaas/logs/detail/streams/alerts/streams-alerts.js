@@ -6,7 +6,7 @@ angular.module("managerApp").config($stateProvider => {
             views: {
                 logsStreams: {
                     template: `<div ui-view="logsAlerts"></div>`,
-                    controller: "StreamsAlertsCtrl",
+                    controller: "LogsStreamsAlertsCtrl",
                     controllerAs: "ctrl"
                 }
             },
@@ -17,7 +17,7 @@ angular.module("managerApp").config($stateProvider => {
             views: {
                 logsAlerts: {
                     templateUrl: "app/dbaas/logs/detail/streams/alerts/home/alerts-home.html",
-                    controller: "AlertsHomeCtrl",
+                    controller: "LogsStreamsAlertsHomeCtrl",
                     controllerAs: "ctrl"
                 }
             },
@@ -28,7 +28,7 @@ angular.module("managerApp").config($stateProvider => {
             views: {
                 logsAlerts: {
                     templateUrl: "app/dbaas/logs/detail/streams/alerts/add/alerts-add.html",
-                    controller: "AlertsAddCtrl",
+                    controller: "LogsStreamsAlertsAddCtrl",
                     controllerAs: "ctrl"
                 }
             },

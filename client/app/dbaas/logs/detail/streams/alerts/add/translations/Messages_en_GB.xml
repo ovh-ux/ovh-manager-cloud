@@ -35,7 +35,7 @@
     <translation id="add_alert_constraint_type_min">Minimum</translation>
     <translation id="add_alert_constraint_type_max">Maximum</translation>
     <translation id="add_alert_constraint_type_sum">Sum</translation>
-    <translation id="add_alert_constraint_type_sd">Standard deviation</translation>
+    <translation id="add_alert_constraint_type_stddev">Standard deviation</translation>
     <translation id="add_alert_value_field">Value</translation>
     <translation id="add_alert_value_field_description">The value that needs to be compared to that of the field</translation>
     

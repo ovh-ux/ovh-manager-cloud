@@ -1,5 +1,5 @@
-class AlertsAddCtrl {
-    constructor ($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, StreamsAlertsService) {
+class LogsStreamsAlertsAddCtrl {
+    constructor ($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, LogsStreamsAlertsAddConstant, LogsStreamsAlertsConstant, LogsStreamsAlertsService) {
         this.$q = $q;
         this.$state = $state;
         this.serviceName = $stateParams.serviceName;
@@ -8,17 +8,30 @@ class AlertsAddCtrl {
         this.$window = $window;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
-        this.StreamsAlertsService = StreamsAlertsService;
+        this.LogsStreamsAlertsAddConstant = LogsStreamsAlertsAddConstant;
+        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsStreamsAlertsService = LogsStreamsAlertsService;
     }
 
     $onInit () {
-        this.alert = this.StreamsAlertsService.getNewAlert(this.alertType);
+        this.LogsStreamsAlertsService.getNewAlert(this.alertType)
+            .then(alert => { this.alert = alert; });
+    }
+
+    /**
+     * Redirects back to the previous page
+     * from which the user reached here
+     *
+     * @memberof LogsStreamsAlertsAddCtrl
+     */
+    _goBack () {
+        this.$window.history.back();
     }
 
     /**
      * Adds a new alert by making an API call
      *
-     * @memberof AlertsAddCtrl
+     * @memberof LogsStreamsAlertsAddCtrl
      */
     addAlert () {
         if (this.form.$invalid) {
@@ -28,8 +41,8 @@ class AlertsAddCtrl {
         this.CloudMessage.flushChildMessage();
         this.addingAlert = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.StreamsAlertsService.addAlert(this.serviceName, this.streamId, this.alert)
-                    .then(() => this.$state.go("dbaas.logs.detail.streams.alerts"))
+                this.LogsStreamsAlertsService.addAlert(this.serviceName, this.streamId, this.alert)
+                    .then(() => this._goBack())
         });
         return this.addingAlert.load();
     }
@@ -38,11 +51,32 @@ class AlertsAddCtrl {
      * Cancels the Alert add operation and redirects
      * to the page from which the user reached here
      *
-     * @memberof AlertsAddCtrl
+     * @memberof LogsStreamsAlertsAddCtrl
      */
     cancel () {
-        this.$window.history.back();
+        this._goBack();
+    }    
+
+    /**
+     * Returns the valid threshold types based on the condition (alert) type
+     *
+     * @memberof LogsStreamsAlertsAddCtrl
+     */
+    getThresholdTypes () {
+        if (this.alertType === this.LogsStreamsAlertsConstant.alertType.numeric) {
+            return [this.LogsStreamsAlertsConstant.thresholdType.lower, this.LogsStreamsAlertsConstant.thresholdType.higher];
+        }
+        return [this.LogsStreamsAlertsConstant.thresholdType.more, this.LogsStreamsAlertsConstant.thresholdType.less];
+    }
+
+    /**
+     * Returns the constraint types
+     *
+     * @memberof LogsStreamsAlertsAddCtrl
+     */
+    getConstraintTypes () {
+        return Object.values(this.LogsStreamsAlertsConstant.constraintType);
     }
 }
 
-angular.module("managerApp").controller("AlertsAddCtrl", AlertsAddCtrl);
+angular.module("managerApp").controller("LogsStreamsAlertsAddCtrl", LogsStreamsAlertsAddCtrl);

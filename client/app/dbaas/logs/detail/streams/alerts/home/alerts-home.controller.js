@@ -1,13 +1,13 @@
-class AlertsHomeCtrl {
-    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, StreamsAlertsConstant, StreamsAlertsService) {
+class LogsStreamsAlertsHomeCtrl {
+    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsStreamsAlertsConstant, LogsStreamsAlertsService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.LogsStreamsService = LogsStreamsService;
-        this.StreamsAlertsConstant = StreamsAlertsConstant;
-        this.StreamsAlertsService = StreamsAlertsService;
+        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsStreamsAlertsService = LogsStreamsAlertsService;
 
         this.serviceName = this.$stateParams.serviceName;
         this.streamId = this.$stateParams.streamId;
@@ -19,9 +19,9 @@ class AlertsHomeCtrl {
     }
 
     /**
-     * Runs all the loaded to fetch data from APIs
+     * Runs all the loaders to fetch data from APIs
      *
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     _runLoaders () {
         this.alertIds.load();
@@ -31,11 +31,11 @@ class AlertsHomeCtrl {
     /**
      * initializes the alertsIDs and current stream
      *
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     _initLoaders () {
         this.alertIds = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.StreamsAlertsService.getAlertIds(this.serviceName, this.streamId)
+            loaderFunction: () => this.LogsStreamsAlertsService.getAlertIds(this.serviceName, this.streamId)
         });
         this.stream = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsStreamsService.getStream(this.serviceName, this.streamId)
@@ -48,11 +48,11 @@ class AlertsHomeCtrl {
      * @param {any} offset
      * @param {any} pageSize
      * @returns promise which will be resolve to the loaded alerts data
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     loadAlerts ({ offset, pageSize }) {
         this.alerts = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.StreamsAlertsService.getAlerts(
+            loaderFunction: () => this.LogsStreamsAlertsService.getAlerts(
                 this.serviceName,
                 this.streamId,
                 this.alertIds.data.slice(offset - 1, offset + pageSize - 1)
@@ -73,7 +73,7 @@ class AlertsHomeCtrl {
      * and deletes the alert if the user confirms the deletion
      *
      * @param {any} alert - the alert object
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     showDeleteConfirm (alert) {
         this.CloudMessage.flushChildMessage();
@@ -87,12 +87,12 @@ class AlertsHomeCtrl {
      * Deletes the alert
      *
      * @param {any} alert - the alert object
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     delete (alert) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.StreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert.alertId)
+                this.LogsStreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert.alertId)
                     .then(() => this._runLoaders())
         });
         this.alertIds.loading = true;
@@ -103,15 +103,15 @@ class AlertsHomeCtrl {
      * Redirects to the new alert add page
      *
      * @param {any} type - the type of the alert to add
-     * @memberof AlertsHomeCtrl
+     * @memberof LogsStreamsAlertsHomeCtrl
      */
     addAlert (type) {
         this.$state.go("dbaas.logs.detail.streams.alerts.add", {
             serviceName: this.serviceName,
             streamId: this.streamId,
-            type: this.StreamsAlertsConstant.alertType[type]
+            type: this.LogsStreamsAlertsConstant.alertType[type]
         });
     }
 }
 
-angular.module("managerApp").controller("AlertsHomeCtrl", AlertsHomeCtrl);
+angular.module("managerApp").controller("LogsStreamsAlertsHomeCtrl", LogsStreamsAlertsHomeCtrl);
