@@ -1,6 +1,7 @@
 class PrivateNetworkListCtrl {
     constructor ($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
-                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack, VrackSectionSidebarService, ControllerHelper) {
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS,
+                 OvhApiVrack, VrackSectionSidebarService, VrackService, ControllerHelper) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
@@ -16,7 +17,8 @@ class PrivateNetworkListCtrl {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.User = OvhApiMe;
-        this.URLS = URLS;
+        this.URLS = URLS
+        this.VrackService = VrackService;
         this.ControllerHelper = ControllerHelper;
 
         this.loaders = {
@@ -92,42 +94,20 @@ class PrivateNetworkListCtrl {
 
 
     /**
-     * open UI activate private network modal if there are pre ordered vRacks else
-     * take user to order new vRack page
+     * open UI activate private network modal
      *
      * @memberof PrivateNetworkListCtrl
      */
     addVRack () {
-        const vRacks = this.vRacks;
-        if (vRacks.length > 0) {
-            // user has pre ordered vRacks
-            const orderUrl = this.orderUrl;
-
-            this.ControllerHelper.modal.showModal({
-                modalConfig: {
-                    templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/addVRack/cloud-project-compute-infrastructure-privateNetwork-addVRack.html",
-                    controller: "AddVRackCtrl",
-                    controllerAs: "$ctrl",
-                    resolve: {
-                        params: () => ({
-                            orderUrl,
-                            vRacks
-                        })
-                    }
-                }
-            }).then(vRack => {
-                // closed or resolved
-                if (vRack) {
-                    this.models.vrack = vRack;
-                }
-            }, () => {
-                // dismissed, show error message on UI
-                this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
-            });
-        } else {
-            // user has no vRacks, take him to order new vRack page
-            this.$window.open(this.orderUrl, "_blank");
-        }
+        this.VrackService.addVrack()
+            .then(selectedVrack => {
+                console.log(selectedVrack);
+                this.VrackService.addCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
+            })
+            .then(vrack => {
+                this.models.vrack = vrack;
+            })
+            .catch(() => this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error")));
     }
 
     deletePrivateNetwork (privateNetwork) {

@@ -1,11 +1,10 @@
-class AddVRackCtrl {
-    constructor ($q, $window, $uibModalInstance, $stateParams, params, OvhApiVrack) {
+class AddToVrackCtrl {
+    constructor ($q, $window, $uibModalInstance, $stateParams, params) {
         this.$q = $q;
         this.projectId = $stateParams.projectId;
         this.orderUrl = params.orderUrl;
         this.modal = $uibModalInstance;
         this.$window = $window;
-        this.OvhApiVrack = OvhApiVrack;
         // get vRacks for current user, shown in left side bar
         this.vRacks = params.vRacks;
         this.loaders = {
@@ -31,29 +30,6 @@ class AddVRackCtrl {
     }
 
     /**
-     *  add selected existing vRack to private network
-     *
-     * @memberof AddVRackCtrl
-     */
-    addExistingVrack () {
-        const self = this;
-        const selectedVrack = this.selectedVrack;
-        this.loaders.activate = true;
-        // make call to API to add public cloud project to vRack
-        return this.OvhApiVrack.CloudProject().Lexi().create({
-            serviceName: this.selectedVrack.serviceName
-        }, {
-            project: this.projectId
-        }).$promise.then(() => {
-            self.modal.close({ name: selectedVrack.displayName, serviceName: selectedVrack.serviceName });
-        }, () => {
-            self.modal.dismiss();
-        }).finally(function () {
-            this.loaders.activate = false;
-        });
-    }
-
-    /**
      * open order new vRack url in new window
      *
      * @memberof AddVRackCtrl
@@ -61,6 +37,15 @@ class AddVRackCtrl {
     orderNewVrack () {
         this.modal.close();
         this.$window.open(this.orderUrl, "_blank");
+    }
+
+    /**
+     * close modal and return the chosen vrack
+     *
+     * @memberof AddVRackCtrl
+     */
+    chooseVrack () {
+        return this.modal.close({ name: this.selectedVrack.displayName, serviceName: this.selectedVrack.serviceName });
     }
 
     /**
@@ -73,7 +58,7 @@ class AddVRackCtrl {
             if (this.form.$invalid) {
                 return this.$q.reject();
             }
-            return this.addExistingVrack();
+            return this.chooseVrack();
         }
         return this.orderNewVrack();
     }
@@ -83,10 +68,8 @@ class AddVRackCtrl {
      * @memberof AddVRackCtrl
      */
     cancel () {
-        // close modal
-        this.modal.close();
+        this.modal.dismiss();
     }
 }
 
-angular.module("managerApp").controller("AddVRackCtrl",
-                                        AddVRackCtrl);
+angular.module("managerApp").controller("AddToVrackCtrl", AddToVrackCtrl);
