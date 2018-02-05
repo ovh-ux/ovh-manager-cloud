@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="login_information_error" qtlid="401406">Oups! Não conseguimos obter as informações de ligação.</translation>
    <translation id="cpcivm_login_information_title" qtlid="250927">Informações da ligação</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Ligação remota</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Introduza o seguinte comando no terminal:<br/><code>ssh {{user}}@{{ip}}</code></translation>

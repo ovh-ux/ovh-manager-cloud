@@ -17,6 +17,10 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Importuj IP Failover OVH</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Zamów IP Failover Cloud</translation>
 
+   <translation id="cpci_menu_view_label">Vue</translation>
+   <translation id="cpci_menu_view_diagram">Infrastructure</translation>
+   <translation id="cpci_menu_view_list">Liste</translation>
+
    <translation id="cpci_errors_init_title" qtlid="247040">Wystąpił błąd podczas pobierania informacji o infrastrukturze.</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Spróbuj ponownie później.</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">Jeśli problem będzie nadal występować, skontaktuj się z pomocą klikając <a href="{{url}}">tutaj</a>.</translation>
@@ -45,6 +49,17 @@
    <translation id="cloud_ip_action_sort" qtlid="257510">Sortowanie</translation>
    <translation id="cloud_ip_action_automatic" qtlid="257523">automatycznie</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">ręcznie</translation>
+
+   <translation id="cpci_vm_name">Nom</translation>
+   <translation id="cpci_vm_region">Localisation</translation>
+   <translation id="cpci_vm_flavor_category">Modèle</translation>
+   <translation id="cpci_vm_price">Prix</translation>
+   <translation id="cpci_vm_hdd">Disque dur attaché</translation>
+   <translation id="cpci_vm_status">Statut</translation>
+   <translation id="cpci_vm_status_ERROR">En erreur</translation>
+   <translation id="cpci_vm_status_REBOOT">Redémarrage</translation>
+   <translation id="cpci_vm_status_RESCUE">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING">Snapshot</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Nieznany status ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Nieznany status ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -308,17 +323,18 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Usuń ten serwer</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">Ten serwer zostanie usunięty za kilka minut.</translation>
-   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Wystąpił błąd podczas zlecania usunięcia tego serwera. </translation>
+   <translation id="cpci_vm_delete_submit_error">Une erreur est survenue lors de la demande de suppression de ce serveur : {{message}}</translation>
 
    <translation id="cpci_vm_reinstall_warn" qtlid="247755">Wszystkie dane zostaną usunięte!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Reinstalacja</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">Ten serwer zostanie przeinstalowany za kilka minut.</translation>
-   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Wystąpił błąd podczas zlecania reinstalacji tego serwera.</translation>
+   <translation id="cpci_vm_reinstall_submit_error">Une erreur est survenue lors de la demande de réinstallation de ce serveur : {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Zrestartuj ten serwer</translation>
-   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Wystąpił błąd podczas zlecania restartu tego serwera.</translation>
+   <translation id="cpci_vm_reboot_submit_success">La demande de redémarrage du serveur a bien été prise en compte.</translation>
+   <translation id="cpci_vm_reboot_submit_error">Une erreur est survenue lors de la demande de redémarrage de ce serveur : {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">Wystąpił błąd podczas aktywacji tego serwera.</translation>
-   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Wystąpił problem podczas wyłączania trybu rescue.</translation>
+   <translation id="cpci_vm_rescue_end_error">Oups! Nous n'arrivons pas à sortir le serveur du mode rescue : {{message}}</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">Aby połączyć się z tą maszyną, otwórz terminal i wpisz to polecenie: <br/><code>ssh {{user}}@{{ip}}</code></translation>
    <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">Podczas pierwszego połączenia musisz <a href="{{route}}">skorzystać z konsoli VNC</a>, aby dokończyć konfigurację systemu Windows. Następnie będziesz mógł skorzystać z wybranego programu RDP, na przykład z poziomu komputera z systemem Linux:<br/><code>rdesktop {{ip}}</code></translation>
@@ -337,6 +353,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Restart programowy (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Przywróć</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Restart sprzętowy (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot">Vous allez redémarrer votre instance <strong>{{name}}</strong>.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Informacje na temat połączenia</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">Konsola VNC</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Restartuj do trybu rescue</translation>

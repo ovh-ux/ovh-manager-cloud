@@ -17,6 +17,10 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Tuo OVH Failover-IP:t</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Osta Cloud Failover-IP -osoitteita</translation>
 
+   <translation id="cpci_menu_view_label">Vue</translation>
+   <translation id="cpci_menu_view_diagram">Infrastructure</translation>
+   <translation id="cpci_menu_view_list">Liste</translation>
+
    <translation id="cpci_errors_init_title" qtlid="247040">Tapahtui virhe selvitettäessä infrastruktuurin yksityiskohtia.</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Kokeile myöhemmin uudelleen.</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">Mikäli ongelma jatkuu, voit ottaa yhteyttä asiakastukeen klikkaamalla <a href="{{url}}">tästä</a>.</translation>
@@ -45,6 +49,17 @@
    <translation id="cloud_ip_action_sort" qtlid="257510">Jaottelu</translation>
    <translation id="cloud_ip_action_automatic" qtlid="257523">automaattinen</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">manuaalinen</translation>
+
+   <translation id="cpci_vm_name">Nom</translation>
+   <translation id="cpci_vm_region">Localisation</translation>
+   <translation id="cpci_vm_flavor_category">Modèle</translation>
+   <translation id="cpci_vm_price">Prix</translation>
+   <translation id="cpci_vm_hdd">Disque dur attaché</translation>
+   <translation id="cpci_vm_status">Statut</translation>
+   <translation id="cpci_vm_status_ERROR">En erreur</translation>
+   <translation id="cpci_vm_status_REBOOT">Redémarrage</translation>
+   <translation id="cpci_vm_status_RESCUE">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING">Snapshot</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Tuntematon tila ({{msg}}) palvelimella "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Tuntematon tila ({{msg}}) palvelimella "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -308,17 +323,18 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Poista tämä palvelin</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">Tämä palvelin poistetaan hetken kuluttua.</translation>
-   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Tapahtui virhe, palvelinta ei voida poistaa juuri nyt.</translation>
+   <translation id="cpci_vm_delete_submit_error">Une erreur est survenue lors de la demande de suppression de ce serveur : {{message}}</translation>
 
    <translation id="cpci_vm_reinstall_warn" qtlid="247755">Kaikki data poistetaan!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Uudelleenasenna</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">Tämä palvelin uudelleenasennetaan muutamassa minuutissa.</translation>
-   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Tapahtui virhe, palvelinta ei voida uudelleenasentaa juuri nyt.</translation>
+   <translation id="cpci_vm_reinstall_submit_error">Une erreur est survenue lors de la demande de réinstallation de ce serveur : {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Uudelleenkäynnistä tämä palvelin</translation>
-   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Tapahtui virhe, palvelinta ei voida uudelleenkäynnistää juuri nyt.</translation>
+   <translation id="cpci_vm_reboot_submit_success">La demande de redémarrage du serveur a bien été prise en compte.</translation>
+   <translation id="cpci_vm_reboot_submit_error">Une erreur est survenue lors de la demande de redémarrage de ce serveur : {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">Tapahtui virhe palvelimen aktivoinnissa. </translation>
-   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Tapahtui virhe poistettaessa palvelinta pelastustilasta.</translation>
+   <translation id="cpci_vm_rescue_end_error">Oups! Nous n'arrivons pas à sortir le serveur du mode rescue : {{message}}</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">Kirjautuaksesi tälle koneelle, avaa pääte ja syöstä seuraava komento:<br/><code>ssh {{user}}@{{ip}}</code></translation>
    <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">Ensimmäisen kirjautumisen yhteydessä on <a href="{{route}}">käytettävä VNC-pääteohjelmaa</a> Windowsin konfiguroinnin viimeistelyyn. Sen jälkeen voit käyttää haluaamaasi RDP-asiakasohjelmaa esimerkiksi Linux-aseman kautta:<br/><code>rdesktop {{ip}}</code></translation>
@@ -337,6 +353,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Uudelleenkäynnistys (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Uudelleenaktivoi</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Uudelleenkäynnistys (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot">Vous allez redémarrer votre instance <strong>{{name}}</strong>.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Kirjautumistiedot</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">VNC-konsoli</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Uudelleenkäynnistys pelastustilassa</translation>

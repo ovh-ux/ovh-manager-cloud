@@ -35,8 +35,8 @@
    <translation id="cloud_common_region_ERI_micro" qtlid="442756">Londres ({{ micro }})</translation>
    <translation id="cloud_common_region_GRA" qtlid="264192">Gravelines</translation>
    <translation id="cloud_common_region_GRA_micro" qtlid="363748">Gravelines ({{ micro }})</translation>
-   <translation id="cloud_common_region_LIM">Limburg</translation>
-   <translation id="cloud_common_region_LIM_micro">Limburg ({{ micro }})</translation>
+   <translation id="cloud_common_region_LIM" qtlid="414343">Limbourg</translation>
+   <translation id="cloud_common_region_LIM_micro" qtlid="453666">Limburg ({{ micro }})</translation>
    <translation id="cloud_common_region_RBX" qtlid="120414">Roubaix</translation>
    <translation id="cloud_common_region_RBX_micro" qtlid="403151">Roubaix ({{ micro }})</translation>
    <translation id="cloud_common_region_WAW" qtlid="94039">Varsovie</translation>
