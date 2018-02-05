@@ -21,12 +21,10 @@ class VpsSidebar {
                 icon: "ovh-font ovh-font-vps",
                 state: "iaas.vps.detail.dashboard",
                 stateParams: {
-                    displayName: vps.displayName,
                     serviceName: vps.serviceName
                 },
                 loadOnState: "iaas.vps.detail",
                 loadOnStateParams: {
-                    displayName: vps.displayName,
                     serviceName: vps.serviceName
                 }
             }, section);
