@@ -23,8 +23,8 @@
         <oui-column title="'logs_streams_col_title' | translate" property="info.title" sortable="asc"></oui-column>
         <oui-column title="'logs_streams_col_description' | translate" property="info.description" sortable></oui-column>
         <oui-column title="'logs_streams_col_shared' | translate" property="info.isEditable" sortable>
-            <span data-ng-if="$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
-            <span data-ng-if="!$row.info.isEditable"> - </span>
+            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>
         <oui-column title="'logs_streams_col_creation_date' | translate" property="info.createdAt">
             {{ $row.info.createdAt | momentFormat:'L'}}
