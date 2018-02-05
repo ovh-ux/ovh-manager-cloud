@@ -17,35 +17,35 @@
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_streams_add_data_feed' | translate }}
     </button>
 
-    <oui-spinner data-ng-show="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"></oui-spinner>
-    <oui-datagrid data-ng-hide="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"
+    <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"></oui-spinner>
+    <oui-datagrid data-ng-if="!ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"
         rows="ctrl.streams.data">
         <oui-column title="'logs_streams_col_title' | translate" property="info.title" sortable="asc"></oui-column>
         <oui-column title="'logs_streams_col_description' | translate" property="info.description" sortable></oui-column>
         <oui-column title="'logs_streams_col_shared' | translate" property="info.isEditable" sortable>
-            <span data-ng-hide="$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
-            <span data-ng-show="$row.info.isEditable"> - </span>
+            <span data-ng-if="$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="!$row.info.isEditable"> - </span>
         </oui-column>
         <oui-column title="'logs_streams_col_creation_date' | translate" property="info.createdAt">
             {{ $row.info.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title="'logs_streams_col_archives' | translate" property="info.archives.length" sortable>
-            <span data-ng-show="$row.info.archives.length">{{ $row.info.archives.length}}</span>
-            <span data-ng-hide="$row.info.archives.length"> - </span>
+            <span data-ng-if="$row.info.archives.length" data-ng-bind="$row.info.archives.length" />
+            <span data-ng-if="!$row.info.archives.length"> - </span>
         </oui-column>
         <oui-column title="'logs_streams_col_notifications' | translate" property="info.notifications.length" sortable>
-            <span data-ng-show="$row.info.notifications.length">{{ $row.info.notifications.length}}</span>
-            <span data-ng-hide="$row.info.notifications.length"> - </span>
+            <span data-ng-if="$row.info.notifications.length" data-ng-bind="$row.info.notifications.length" />
+            <span data-ng-if="!$row.info.notifications.length"> - </span>
         </oui-column>
         <oui-column align="center" title="'logs_streams_col_linked_option' | translate" property="info.optionId" sortable>
-            <i data-ng-show="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
-            <span data-ng-hide="$row.info.optionId"> - </span>
+            <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
+            <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ ::'logs_streams_graylog_access' | translate }}" href="{{ctrl.getGraylogUrl($row)}}" external></oui-action-menu-item>
-            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'logs_streams_copy_token' | translate }}" on-click="ctrl.copyToken($row)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-show="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'logs_streams_copy_token' | translate }}" on-click="ctrl.copyToken($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_streams_follow_live' | translate }}" on-click="ctrl.followLive($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
