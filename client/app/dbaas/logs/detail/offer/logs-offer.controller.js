@@ -10,7 +10,7 @@ class LogsOfferCtrl {
         this.offerDetail = {
             quantity: 1,
             selectedOffer: "",
-            currentOffer: "",
+            currentOffer: ""
         };
         this._initLoaders();
     }

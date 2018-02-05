@@ -1,0 +1,96 @@
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button
+            class="oui-icon oui-icon-close_thin oui-modal__close-button"
+            type="button"
+            aria-label="Exit"
+            ng-click="LogsIndexAddModalCtrl.cancel()"></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title" ng-if="LogsIndexAddModalCtrl.isEdit" data-translate="logs_index_modal_edit_title"></h2>
+            <h2 class="oui-modal__title" ng-if="!LogsIndexAddModalCtrl.isEdit" data-translate="logs_index_modal_add_title"></h2>
+            <div ng-if="LogsIndexAddModalCtrl.isEdit" class="mb-3">
+                <span data-translate="logs_index_modal_edit_desc"></span>
+                <b><span>{{ LogsIndexAddModalCtrl.indexInfo.name | translate }}</span></b>
+            </div>
+        </div>
+
+        <form novalidate name="LogsIndexAddModalCtrl.form">
+        <div class="oui-field" ng-if="!LogsIndexAddModalCtrl.isEdit" data-ng-class="{'oui-field_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.index_suffix.$invalid}">
+            <label for="index_suffix" class="oui-label" data-translate="logs_index_modal_suffix"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="index_suffix" name="index_suffix"
+                    class="oui-input" data-ng-model="LogsIndexAddModalCtrl.index.suffix"
+                    data-ng-class="{'oui-input_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.index_suffix.$invalid}"
+                    required />
+                </div>
+            </div>
+            <span data-translate="logs_index_suffix_description"></span>        
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.index_description.$invalid}">
+            <label for="index_description" class="oui-label" data-translate="logs_index_modal_description"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="index_description" name="index_description"
+                    class="oui-input" data-ng-model="LogsIndexAddModalCtrl.index.description"
+                    data-ng-class="{'oui-input_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.index_description.$invalid}"
+                    required />
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-show="LogsIndexAddModalCtrl.options.length > 0">
+            <div class="oui-field pl-5" data-ng-class="{ 'oui-field_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.logs_index_modal_select.$invalid }">
+                <label for="logs_index_modal_select" class="oui-label" data-translate="logs_index_modal_select"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_3">
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': LogsIndexAddModalCtrl.form.$submitted && LogsIndexAddModalCtrl.form.logs_index_modal_select.$invalid }">
+                            <select class="oui-select__input"
+                                name="index_option"
+                                id="index_option"
+                                data-ng-model="LogsIndexAddModalCtrl.index.option"
+                                data-ng-options="option.id as option.reference for option in LogsIndexAddModalCtrl.options">
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field">
+            <label class="oui-label" data-translate="logs_index_modal_notification"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <oui-checkbox model="LogsIndexAddModalCtrl.index.alertNotifyEnabled" text="{{ 'logs_index_modal_checkbox' | translate}}"></oui-checkbox>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="oui-modal__footer">
+        <oui-spinner data-ng-show="LogsIndexAddModalCtrl.saving.loading"></oui-spinner>
+        <div data-ng-hide="LogsIndexAddModalCtrl.saving.loading">
+            <button
+                class="oui-button oui-button_secondary"
+                data-translate="common_cancel"
+                data-ng-click="LogsIndexAddModalCtrl.cancel()"></button>
+            <button type="submit"
+                class="oui-button oui-button_primary"
+                data-translate="common_save"
+                data-ng-click="LogsIndexAddModalCtrl.editIndex()"
+                data-ng-show="LogsIndexAddModalCtrl.isEdit"></button>
+            <button
+                class="oui-button oui-button_primary"
+                type="button"
+                data-translate="common_save"
+                data-ng-click="LogsIndexAddModalCtrl.saveIndex()"
+                data-ng-hide="LogsIndexAddModalCtrl.isEdit"></button>
+        </div>
+    </div>
+    </form>
+  </div>

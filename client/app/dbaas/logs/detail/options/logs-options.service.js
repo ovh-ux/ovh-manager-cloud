@@ -98,17 +98,26 @@ class LogsOptionsService {
      * @returns array of all subscribed option objects belonging to streams
      * @memberof LogsOptionsService
      */
-    getStreamSubscribedOptions (serviceName) {
+    getStreamSubscribedOptions (serviceName, optionType) {
         return this.getSubscribedOptions(serviceName)
-            .then(response => response.options
-                .filter(option => _.startsWith(option.reference, "logs-stream"))
-                .map(option => ({
-                    optionId: option.optionId,
-                    type: this.$translate.instant(`${option.reference}-type`),
-                    detail: this.$translate.instant(`${option.reference}-detail`),
-                    curNbStream: option.curNbStream,
-                    maxNbStream: option.maxNbStream
-                })));
+            .then(response => {
+                let list = [];
+                if (optionType === "logs-stream") {
+                    list = response.options
+                        .filter(option => _.startsWith(option.reference, "logs-stream"))
+                        .map(option => ({
+                            optionId: option.optionId,
+                            type: this.$translate.instant(`${option.reference}-type`),
+                            detail: this.$translate.instant(`${option.reference}-detail`),
+                            curNbStream: option.curNbStream,
+                            maxNbStream: option.maxNbStream
+                        }));
+                } else if (optionType === "index") {
+                    list = response.options.filter(option => option.maxNbIndex > 0 && option.curNbIndex !== option.maxNbIndex)
+                        .map(option => option);
+                }
+                return list;
+            });
     }
 
     /**

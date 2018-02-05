@@ -1,7 +1,10 @@
 class LogsIndexService {
-    constructor ($q, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService) {
         this.$q = $q;
+        this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
+        this.ControllerHelper = ControllerHelper;
+        this.LogsOptionsService = LogsOptionsService;
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -16,8 +19,7 @@ class LogsIndexService {
                     currentUsage: me.total.curNbIndex * 100 / me.total.maxNbIndex
                 };
                 return quota;
-            })
-            .catch(this.ServiceHelper.errorHandler("logs_index_quota_get_error"));
+            }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
     }
 
     getIndices (serviceName) {
@@ -31,20 +33,47 @@ class LogsIndexService {
 
     getIndexDetails (serviceName, indexId) {
         return this.IndexAapiService.get({ serviceName, indexId }).$promise
-            .then(res => { return res; });
+            .then(res => res);
     }
 
-    deleteIndex (serviceName, info) {
+    deleteModal (info) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            titleText: this.$translate.instant("logs_modal_delete_title"),
+            text: this.$translate.instant("logs_modal_delete_question", { index: info.name })
+        });
+    }
+
+    deleteIndex (serviceName, indexId) {
+        return this.IndexApiService.delete({ serviceName, indexId }).$promise
+            .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
+    }
+
+    addModal (serviceName, indexInfo) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/dbaas/logs/detail/index/delete/logs-index-delete.html",
-                controller: "LogsIndexDeleteCtrl",
-                controllerAs: "LogsIndexDeleteCtrl",
+                templateUrl: "app/dbaas/logs/detail/index/add/logs-index-add.html",
+                controller: "LogsIndexAddModalCtrl",
+                controllerAs: "LogsIndexAddModalCtrl",
                 resolve: {
-                    index: () => info
+                    serviceName: () => serviceName,
+                    indexInfo: () => indexInfo
                 }
             }
         });
+    }
+
+    getSubscribedOptions (serviceName) {
+        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName, "index");
+    }
+
+    updateIndex (serviceName, indexId, indexInfo) {
+        this.IndexApiService.put({ serviceName, indexId }, indexInfo).$promise
+            .catch(this.ServiceHelper.errorHandler("logs_index_edit_error"));
+    }
+
+    createIndex (serviceName, object) {
+        this.IndexApiService.post({ serviceName }, object).$promise
+            .catch(this.ServiceHelper.errorHandler("logs_index_create_error"));
     }
 }
 
