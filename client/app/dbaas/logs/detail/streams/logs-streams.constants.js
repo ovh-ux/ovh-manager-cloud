@@ -6,5 +6,13 @@ angular.module("managerApp").constant("LogStreamsConstants", {
     GELF_URL: "TCP_TLS_GELF",
     GELF: "GELF",
     LTSV: "LTSV",
-    RFC5424: "RFC5424"
+    RFC5424: "RFC5424",
+    GRAYLOG_WEBUI: "GRAYLOG_WEBUI",
+    X_OVH_TOKEN: "X-OVH-TOKEN",
+    FAILURE: "FAILURE",
+    SUCCESS: "SUCCESS",
+    GZIP: "GZIP",
+    DEFLATED: "DEFLATED",
+    LZMA: "LZMA",
+    ZSTD: "ZSTD"
 });
