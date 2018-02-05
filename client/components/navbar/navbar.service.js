@@ -6,11 +6,11 @@ class ManagerNavbarService {
         this.$translate = $translate;
         this.$translatePartialLoader = $translatePartialLoader;
         this.atInternet = atInternet;
-        this.FeatureAvailabilityService = FeatureAvailabilityService;
-        this.SessionService = SessionService;
-        this.StatusService = StatusService;
-        this.TranslateService = TranslateService;
-        this.OtrsPopupService = OtrsPopupService;
+        this.featureAvailabilityService = FeatureAvailabilityService;
+        this.sessionService = SessionService;
+        this.statusService = StatusService;
+        this.translateService = TranslateService;
+        this.otrsPopupService = OtrsPopupService;
         this.ssoAuthentication = ssoAuthentication;
         this.LANGUAGES = LANGUAGES;
         this.MANAGER_URLS = MANAGER_URLS;
@@ -249,7 +249,7 @@ class ManagerNavbarService {
         }];
 
         // Cloud Desktop
-        if (this.FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
+        if (this.featureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
             universeMenu.push({
                 name: "deskaas",
                 title: this.$translate.instant("cloud_sidebar_section_cloud_desktop"),
@@ -327,7 +327,7 @@ class ManagerNavbarService {
     }
 
     getLanguageMenu () {
-        const currentLanguage = _.find(this.LANGUAGES.available, { key: this.TranslateService.getUserLocale() });
+        const currentLanguage = _.find(this.LANGUAGES.available, { key: this.translateService.getUserLocale() });
 
         return {
             name: "languages",
@@ -447,9 +447,9 @@ class ManagerNavbarService {
 
         return this.$q.all({
             translate: this.loadTranslations(),
-            user: this.SessionService.getUser(),
-            products: this.SessionService.getProducts(),
-            notifications: this.StatusService.getNotificationsMenu()
+            user: this.sessionService.getUser(),
+            products: this.sessionService.getProducts(),
+            notifications: this.statusService.getNotificationsMenu()
         }).then((result) => ({
             brand: {
                 title: this.$translate.instant("common_menu_portal"),

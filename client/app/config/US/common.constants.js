@@ -13,6 +13,7 @@ angular.module("managerApp")
     .constant("REDIRECT_URLS", {
         support: "https://www.ovh.us/manager/dedicated/index.html#/ticket",
         billing: "https://www.ovh.us/manager/dedicated/index.html#/billing/history",
+        consumptionsTelephony: null, // not yet available to US users
         ordersInProgress: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=in-progress",
         orders: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=all",
         services: "https://www.ovh.us/manager/dedicated/index.html#/billing/autoRenew",
