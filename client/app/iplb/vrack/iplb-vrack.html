@@ -30,7 +30,9 @@
         <oui-column data-title="'iplb_vrack_list_col_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_subnet' | translate" data-property="subnet" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_nat_ip' | translate" data-property="natIp" data-sortable></oui-column>
-        <oui-column data-title="'iplb_vrack_list_col_farms' | translate" data-property="farms" data-sortable></oui-column>
+        <oui-column data-title="'iplb_vrack_list_col_farms' | translate">
+            <cui-labels data-items="$row.farmId">{{ $item.displayName || $item.farmId }}</cui-labels>
+        </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ $ctrl.actions.deletePrivateNetwork.text }}" on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>

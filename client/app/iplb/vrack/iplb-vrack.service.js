@@ -1,6 +1,7 @@
 class IpLoadBalancerVrackService {
-    constructor ($q, OvhApiIpLoadBalancingVrack, OvhApiVrack, ServiceHelper) {
+    constructor ($q, IpLoadBalancerServerFarmService, OvhApiIpLoadBalancingVrack, OvhApiVrack, ServiceHelper) {
         this.$q = $q;
+        this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
         this.OvhApiIpLoadBalancingVrack = OvhApiIpLoadBalancingVrack;
         this.OvhApiVrack = OvhApiVrack;
         this.ServiceHelper = ServiceHelper;
@@ -62,6 +63,18 @@ class IpLoadBalancerVrackService {
             .then(response => {
                 const promises = _.map(response, networkId => this._getPrivateNetwork(serviceName, networkId));
                 return this.$q.all(promises);
+            })
+            .then(response => {
+                _.forEach(response, privateNetwork => {
+                    this.IpLoadBalancerServerFarmService.getServerFarms(serviceName, privateNetwork.vrackNetworkId)
+                        .then(farms => {
+                            privateNetwork.farmId = farms;
+                        });
+
+                    privateNetwork.farmId = [];
+                });
+
+                return response;
             })
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_networks_loading_error"));
     }

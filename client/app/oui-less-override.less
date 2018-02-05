@@ -46,6 +46,11 @@
 // TODO: remove this when the progress-bar will be stable
 .oui-datagrid {
     &__cell {
+        // Fix dropdown menu in a table that is not in the action column.  
+        // Without this fix the dropdown menu would procs the overflow-y property and the dropdown would be clipped behind the container div.
+        // See IPLB => private networks "server farm" column for use case.
+        position: static;
+
         .oui-progress {
             margin: rem-calc(8) 0;
         }

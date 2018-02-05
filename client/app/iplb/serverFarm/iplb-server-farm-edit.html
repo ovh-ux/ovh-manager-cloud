@@ -75,6 +75,27 @@
             </div>
         </div>
 
+        <div data-ng-if="!ctrl.privateNetworks.loading && ctrl.privateNetworks.data.length" 
+            class="oui-field" 
+            data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.vrackNetworkId.$invalid }">
+            <label for="vrackNetworkId" class="oui-label" data-translate="iplb_farm_edit_private_network"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-select"
+                        data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.vrackNetworkId.$invalid }">
+                        <select class="oui-select__input"
+                            name="vrackNetworkId"
+                            id="vrackNetworkId"
+                            data-ng-model="ctrl.farm.vrackNetworkId"
+                            data-ng-options="privateNetwork.vrackNetworkId as privateNetwork.displayName for privateNetwork in ctrl.privateNetworks.data">
+                            <option data-translate="common_select"></option>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <cui-advanced-options data-ng-hide="ctrl.type === 'udp'"
             data-title="'iplb_farm_edit_advanced_options' | translate"
             data-text="'iplb_farm_edit_advanced_options_info' | translate"

@@ -1,11 +1,12 @@
 class IpLoadBalancerVrackEditCtrl {
-    constructor ($q, $stateParams, $translate, CloudMessage, CloudNavigation, ControllerHelper, IpLoadBalancerVrackService) {
+    constructor ($q, $stateParams, $translate, CloudMessage, CloudNavigation, ControllerHelper, IpLoadBalancerServerFarmService, IpLoadBalancerVrackService) {
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.ControllerHelper = ControllerHelper;
+        this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
         this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
 
         this.serviceName = $stateParams.serviceName;
@@ -23,6 +24,8 @@ class IpLoadBalancerVrackEditCtrl {
                     this.model[key].value = this.privateNetwork.data[key];
                 });
             });
+
+        this.farms.load();
     }
 
     submit () {
@@ -41,6 +44,10 @@ class IpLoadBalancerVrackEditCtrl {
 
     editing () {
         return this.networkId;
+    }
+
+    loading () {
+        return this.privateNetwork.loading;
     }
 
     _addNetwork () {
@@ -65,6 +72,10 @@ class IpLoadBalancerVrackEditCtrl {
     _initLoaders () {
         this.privateNetwork = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.editing() ? this.IpLoadBalancerVrackService.getPrivateNetwork(this.serviceName, this.networkId) : this.$q.when({})
+        });
+
+        this.farms = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerServerFarmService.getServerFarms(this.serviceName)
         });
     }
 
