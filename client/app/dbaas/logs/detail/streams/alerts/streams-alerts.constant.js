@@ -1,4 +1,4 @@
-angular.module("managerApp").constant("StreamsAlertsConstant", {
+angular.module("managerApp").constant("LogsStreamsAlertsConstant", {
     alertType: {
         counter: "MESSAGE_COUNT",
         numeric: "FIELD_VALUE",

@@ -1,11 +1,11 @@
-class StreamsAlertsService {
-    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, StreamsAlertsConstant) {
+class LogsStreamsAlertsService {
+    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, LogsStreamsAlertsConstant) {
         this.$q = $q;
         this.CloudPoll = CloudPoll;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.AlertsApiService = OvhApiDbaas.Logs().Alert().Lexi();
         this.ServiceHelper = ServiceHelper;
-        this.StreamsAlertsConstant = StreamsAlertsConstant;
+        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
     }
 
     /**
@@ -15,7 +15,7 @@ class StreamsAlertsService {
      * @param {any} streamId
      * @param {any} alert - the alert object
      * @returns promise which will be resolve to an operation object
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     addAlert (serviceName, streamId, alert) {
         return this.AlertsApiService.post({ serviceName, streamId }, alert).$promise
@@ -30,7 +30,7 @@ class StreamsAlertsService {
      * @param {any} streamId
      * @param {any} alertId - ID of the alert to be deleted
      * @returns promise which will be resolve to an operation object
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     deleteAlert (serviceName, streamId, alertId) {
         return this.AlertsApiService.delete({ serviceName, streamId, alertId }).$promise
@@ -44,7 +44,7 @@ class StreamsAlertsService {
      * @param {any} serviceName
      * @param {any} streamId
      * @returns promise which will be resolve with a list of alert IDs
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     getAlertIds (serviceName, streamId) {
         return this.AlertsApiService.query({
@@ -61,7 +61,7 @@ class StreamsAlertsService {
      * @param {any} streamId
      * @param {any} alertIds - list of alert IDs for which alert object is to be fetched
      * @returns promise which will be resolve with the list of alerts
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     getAlerts (serviceName, streamId, alertIds) {
         return this.getAlertDetails(serviceName, streamId, alertIds)
@@ -75,7 +75,7 @@ class StreamsAlertsService {
      * @param {any} streamId
      * @param {any} alertIds - list of alert IDs for which alert object is to be fetched
      * @returns promise which will be resolve with the list of alerts
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     getAlertDetails (serviceName, streamId, alertIds) {
         const promises = alertIds.map(alertId => this.getAlert(serviceName, streamId, alertId));
@@ -89,7 +89,7 @@ class StreamsAlertsService {
      * @param {any} streamId
      * @param {any} alertId - the alert ID for which alert object is to be fetched
      * @returns promise which will be resolve with the alert
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     getAlert (serviceName, streamId, alertId) {
         return this.AlertsApiService.get({ serviceName, streamId, alertId }).$promise;
@@ -98,16 +98,16 @@ class StreamsAlertsService {
     /**
      * Returns a new alert object with the default properties
      *
-     * @param {any} conditionType - the type of the condition (one of StreamsAlertsConstant.alertType)
+     * @param {any} conditionType - the type of the condition (one of LogsStreamsAlertsConstant.alertType)
      * @returns the default alert object
-     * @memberof StreamsAlertsService
+     * @memberof LogsStreamsAlertsService
      */
     getNewAlert (conditionType) {
-        const thresholdType = conditionType === this.StreamsAlertsConstant.alertType.numeric ?
-            this.StreamsAlertsConstant.thresholdType.lower :
-            this.StreamsAlertsConstant.thresholdType.more;
-        const constraintType = this.StreamsAlertsConstant.constraintType.mean;
-        return {
+        const thresholdType = conditionType === this.LogsStreamsAlertsConstant.alertType.numeric ?
+            this.LogsStreamsAlertsConstant.thresholdType.lower :
+            this.LogsStreamsAlertsConstant.thresholdType.more;
+        const constraintType = this.LogsStreamsAlertsConstant.constraintType.mean;
+        return this.$q.when({
             conditionType,
             thresholdType,
             threshold: 1,
@@ -116,7 +116,7 @@ class StreamsAlertsService {
             backlog: 1,
             repeatNotificationsEnabled: false,
             constraintType
-        };
+        });
     }
 
     /**
@@ -165,4 +165,4 @@ class StreamsAlertsService {
     }
 }
 
-angular.module("managerApp").service("StreamsAlertsService", StreamsAlertsService);
+angular.module("managerApp").service("LogsStreamsAlertsService", LogsStreamsAlertsService);

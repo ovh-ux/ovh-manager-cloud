@@ -35,7 +35,7 @@
     <translation id="add_alert_constraint_type_min">Minimale</translation>
     <translation id="add_alert_constraint_type_max">Maximale</translation>
     <translation id="add_alert_constraint_type_sum">Somme</translation>
-    <translation id="add_alert_constraint_type_sd">Déviation standard</translation>
+    <translation id="add_alert_constraint_type_stddev">Déviation standard</translation>
     <translation id="add_alert_value_field">Valeur</translation>
     <translation id="add_alert_value_field_description">La valeur qui doit être comparée à celle du champ</translation>
     

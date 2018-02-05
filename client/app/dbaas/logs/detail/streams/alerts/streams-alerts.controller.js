@@ -1,4 +1,4 @@
-class StreamsAlertsCtrl {
+class LogsStreamsAlertsCtrl {
     constructor ($stateParams) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -6,4 +6,4 @@ class StreamsAlertsCtrl {
     }
 }
 
-angular.module("managerApp").controller("StreamsAlertsCtrl", StreamsAlertsCtrl);
+angular.module("managerApp").controller("LogsStreamsAlertsCtrl", LogsStreamsAlertsCtrl);
