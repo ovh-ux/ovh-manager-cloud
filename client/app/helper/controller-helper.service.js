@@ -40,6 +40,26 @@ class ControllerHelper {
             window.open(`data:text/plain;${charSet},${dataString}`);
         }
     }
+
+    /**
+     * copies given message to clipboard
+     * @param {string} messageToCopy, message to copy to clipboard
+     * @return {any} error if copy failed, empty string otherwise
+     */
+    copyToClipboard (messageToCopy) {
+        try {
+            const dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.setAttribute("id", "dummy_id");
+            dummy.setAttribute("value", messageToCopy);
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        } catch (err) {
+            return err;
+        }
+        return "";
+    }
 }
 
 angular.module("managerApp").service("ControllerHelper", ControllerHelper);
