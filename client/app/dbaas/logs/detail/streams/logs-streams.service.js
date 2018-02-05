@@ -1,6 +1,6 @@
 class LogsStreamsService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, ControllerHelper, UrlHelper, CloudMessage) {
+                 LogsOptionsService, ControllerHelper, UrlHelper, CloudMessage, LogStreamsConstants) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -14,6 +14,7 @@ class LogsStreamsService {
         this.ControllerHelper = ControllerHelper;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
+        this.LogStreamsConstants = LogStreamsConstants;
 
         this.initializeData();
     }
@@ -21,19 +22,19 @@ class LogsStreamsService {
     initializeData () {
         this.compressionAlgorithms = [
             {
-                value: "GZIP",
+                value: this.LogStreamsConstants.GZIP,
                 name: this.$translate.instant("logs_stream_compression_gzip")
             },
             {
-                value: "DEFLATED",
+                value: this.LogStreamsConstants.DEFLATED,
                 name: this.$translate.instant("logs_stream_compression_zip")
             },
             {
-                value: "LZMA",
+                value: this.LogStreamsConstants.LZMA,
                 name: this.$translate.instant("logs_stream_compression_lzma")
             },
             {
-                value: "ZSTD",
+                value: this.LogStreamsConstants.ZSTD,
                 name: this.$translate.instant("logs_stream_compression_zstd")
             }
         ];
@@ -263,7 +264,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStreamGraylogUrl (stream) {
-        const url = this.UrlHelper.findUrl(stream, "GRAYLOG_WEBUI");
+        const url = this.UrlHelper.findUrl(stream, this.LogStreamsConstants.GRAYLOG_WEBUI);
         if (!url) {
             this.CloudMessage.error(this.$translate.instant("logs_streams_get_graylog_url_error", { stream: stream.info.title }));
         }
@@ -312,7 +313,7 @@ class LogsStreamsService {
      * @return {string} stream token if found, empty string otherwise
      */
     findStreamTokenValue (stream) {
-        const ruleObj = _.find(stream.rules, rule => rule.field === "X-OVH-TOKEN");
+        const ruleObj = _.find(stream.rules, rule => rule.field === this.LogStreamsConstants.X_OVH_TOKEN);
         return _.get(ruleObj, "value", "");
     }
 
@@ -377,7 +378,7 @@ class LogsStreamsService {
         const pollar = this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === "FAILURE" || opn.state === "SUCCESS"
+            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS
         });
         return pollar;
     }
