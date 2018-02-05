@@ -32,7 +32,7 @@ class LogsIndexCtrl {
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/index/add/logs-index-add.html",
                 controller: "LogsIndexAddModalCtrl",
-                controllerAs: "LogsIndexAddModalCtrl",
+                controllerAs: "ctrl",
                 resolve: {
                     serviceName: () => this.serviceName,
                     indexInfo: () => info,
