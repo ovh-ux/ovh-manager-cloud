@@ -7,21 +7,29 @@ class LogsIndexAddModalCtrl {
         this.LogsIndexService = LogsIndexService;
         this.$uibModalInstance = $uibModalInstance;
         this.serviceName = $stateParams.serviceName;
-        this.index = {
-            description: "",
-            alertNotifyEnabled: false
-        };
+        this.index = this.LogsIndexService.getNewIndex();
     }
 
     $onInit () {
         this.isEdit = this.checkIsEdit(this.indexInfo);
+        if (this.isEdit) {
+            this.populateIndex();
+        } else {
+            this.clearIndex();
+        }
+    }
+
+    clearIndex () {
+        this.index.description = "";
+        this.index.alertNotifyEnabled = false;
+    }
+
+    populateIndex () {
+        this.index.description = this.indexInfo.description;
+        this.index.alertNotifyEnabled = this.indexInfo.alertNotifyEnabled;
     }
 
     checkIsEdit (indexInfo) {
-        if (indexInfo) {
-            this.index.description = indexInfo.description;
-            this.index.alertNotifyEnabled = indexInfo.alertNotifyEnabled;
-        }
         return indexInfo !== undefined;
     }
 

@@ -9,6 +9,14 @@ class LogsIndexService {
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.newIndex = {
+            description: "",
+            alertNotifyEnabled: false
+        };
+    }
+
+    getNewIndex () {
+        return this.newIndex;
     }
 
     getQuota (serviceName) {
@@ -33,8 +41,7 @@ class LogsIndexService {
     }
 
     getIndexDetails (serviceName, indexId) {
-        return this.IndexAapiService.get({ serviceName, indexId }).$promise
-            .then(res => res);
+        return this.IndexAapiService.get({ serviceName, indexId }).$promise;
     }
 
     deleteModal (indexName) {
