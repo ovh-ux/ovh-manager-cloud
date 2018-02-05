@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="vps_order_windows_title" qtlid="250745">Windows parinktys</translation>
-   <translation id="vps_order_windows_step1_title" qtlid="452332">Sélection de la durée</translation>
-   <translation id="vps_order_windows_step2_title" qtlid="452345">Acceptation des conditions d'utilisation</translation>
+   <translation id="vps_order_windows_step1_title" qtlid="452332">Trukmės pasirinkimas</translation>
+   <translation id="vps_order_windows_step2_title" qtlid="452345">Sutikimas su naudojimo sąlygomis</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Suvestinė</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Ši parinktis jums leis įdiegti Windows OS savo VPS.</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Įvyko klaida atkuriant kainas.</translation>
@@ -15,19 +15,19 @@
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Atsidarys naujas langas ir būsite automatiškai nukreipti į apmokėjimo sąsają.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Windows parinktys</translation>
 
-   <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Votre VPS a bien été redémarré</translation>
+   <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Jūsų VPS sėkmingai perkrautas</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Klaida perkraunant VPS</translation>
-   <translation id="vps_configuration_setNetboot_polling_done" qtlid="452358">Votre VPS a bien été redémarré</translation>
+   <translation id="vps_configuration_setNetboot_polling_done" qtlid="452358">Jūsų VPS sėkmingai perkrautas</translation>
    <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Klaida perkraunant VPS</translation>
    <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">Stebėjimo SLA buvo pakeista</translation>
    <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Klaida keičiant stebėjimo paslaugos SLA.</translation>
    <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Naujas slaptažodis buvo sugeneruotas.</translation>
    <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Klaida kuriant naują slaptažodį.</translation>
-   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="452371">Un snapshot du VPS {{serviceName}} a été créé avec succès.</translation>
+   <translation id="vps_configuration_createSnapshot_polling_done" qtlid="452371">VPS {{serviceName}} kopija sėkmingai sukurta.</translation>
    <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Klaida kuriant momentinę kopiją</translation>
    <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">Momentinė kopija sėkmingai ištrinta</translation>
    <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Klaida trinant momentinę kopiją.</translation>
-   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="452384">Votre VPS {{serviceName}} a bien été réinstallé</translation>
+   <translation id="vps_configuration_reinstallVm_polling_done" qtlid="452384">Jūsų VPS {{serviceName}} sėmingai įdiegtas iš naujo</translation>
    <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Klaida iš naujo diegiant VPS</translation>
    <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">Atkūrimas iš atsarginės kopijos sėkmingai atliktas</translation>
    <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Klaida atkuriant iš momentinės kopijos</translation>
@@ -44,7 +44,7 @@
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Vartotojas</translation>
 
    <translation id="vps_dashboard_task" qtlid="195633">Vykdomos užduotys</translation>
-   <translation id="vps_dashboard_task_finish" qtlid="452397">Tâches en cours terminées</translation>
+   <translation id="vps_dashboard_task_finish" qtlid="452397">Baigtos užduotys</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Perkrauti</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Perkrovimas (rescue)</translation>
    <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">SLA keitimas</translation>
@@ -102,7 +102,7 @@
    <translation id="vps_dashboard_upgrade_vps" qtlid="168224">Tobulinti VPS</translation>
    <translation id="vps_dashboard_localisation" qtlid="168237">Lokacija</translation>
    <translation id="vps_dashboard_distribution" qtlid="122359">OS / Distribucija</translation>
-   <translation id="vps_dashboard_ips_additional" qtlid="453546">Voir les IPs additionnelles</translation>
+   <translation id="vps_dashboard_ips_additional" qtlid="453546">Žiūrėti papildomus IP</translation>
    <translation id="vps_dashboard_ipv6_not_available" qtlid="94783">Negalima</translation>
    <translation id="vps_dashboard_ipv6_see_guide" qtlid="367112">Peržiūrėti gidą</translation>
    <translation id="vps_dashboard_tile_ipv4" qtlid="101781">IPv4</translation>
@@ -111,7 +111,7 @@
    <translation id="vps_dashboard_reverse_dns_none" qtlid="124952">Nesukonfigūruota</translation>
    <translation id="vps_dashboard_secondary_dns" qtlid="168250">Antrinis DNS</translation>
    <translation id="vps_dashboard_secondary_dns_count_0" qtlid="168263">Nesukonfigūruotas joks domenas</translation>
-   <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">{{ count }} domaine(s) configuré(s)</translation>
+   <translation id="vps_dashboard_secondary_dns_count_x" qtlid="452410">Sukonfigūruotų domenų: {{ count }}</translation>
    <translation id="vps_dashboard_state_services" qtlid="167912">Būsena</translation>
    <translation id="vps_dashboard_monitoring_sla" qtlid="179537">SLA stebėjimas</translation>
    <translation id="vps_dashboard_monitoring_sla_ips" qtlid="263650">SLA stebėjimo IP</translation>
@@ -124,9 +124,9 @@
    <translation id="vps_configuration_reinitpassword_title_button" qtlid="168367">Kurti naują slaptažodį</translation>
    <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Kurti naują slaptažodį</translation>
    <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Jums patvirtinus užklausą, jūsų serveris bus perkrautas nedelsiant Rescue režimu. Serverio nepasiekiamumas perkrovimo metu: ~2 minutės.</translation>
-   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Attention : Vous allez recevoir des identifiants temporaires, mais la réinitialisation du mot de passe est à effectuer par vos soins. Suivez le <a href="{{url}}" target="_blank">guide</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Dėmesio: Jums bus suteikti laikini prisijungimo duomenys. Prašome skaityti šį <a href="{{url}}" target="_blank">gidą</a>.</translation>
    <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">Klaida bandant sukurti naują slaptažodį.</translation>
-   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">La réinitialisation du mot de passe est à effectuer par vos soins. Suivez le <a href="{{url}}" target="_blank">guide</a>.</translation>
+   <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">Turite pakeiskite slaptažodį. Prašome skaityti šį <a href="{{url}}" target="_blank">gidą</a>.</translation>
    <translation id="vps_configuration_reboot_title_button" qtlid="168432">Perkrauti VPS</translation>
    <translation id="vps_configuration_reboot_title" qtlid="168432">Perkrauti VPS</translation>
    <translation id="vps_configuration_reboot_confirmation" qtlid="168445">Jeigu patvirtinsite, serveris bus perkrautas iškart.</translation>
@@ -137,7 +137,7 @@
    <translation id="vps_configuration_reboot_rescue" qtlid="168458">Perkrauti rescue režimu</translation>
    <translation id="vps_configuration_reboot_rescue_info" qtlid="168471">Jeigu pasirinksite šią parinktį, gausite laišką su laikinais prisijungimo prie VPS parametrais.</translation>
    <translation id="vps_configuration_reboot_alert" qtlid="171097">Nepasiekiamumo laikas dėl perkrovimo: iki 2 minučių.</translation>
-   <translation id="vps_configuration_reboot_success" qtlid="452449">Le VPS {{serviceName}} va redémarrer (temps estimé 2 minutes)</translation>
+   <translation id="vps_configuration_reboot_success" qtlid="452449">VPS {{serviceName}} bus perkrautas (numatytas laikas - 2 minutės)</translation>
    <translation id="vps_configuration_reboot_todo" qtlid="168510">Perkrovimas sėkmingai užregistruotas.</translation>
    <translation id="vps_configuration_reboot_fail" qtlid="168523">Klaida bandant perkrauti serverį.</translation>
    <translation id="vps_configuration_reboot_rescue_title_button" qtlid="168536">Rescue režimas</translation>
@@ -151,7 +151,7 @@
    <translation id="vps_configuration_reboot_rescue_confirmation" qtlid="168575">Jeigu patvirtinsite, serveris nedelsiant bus perkrautas rescue režimu. Taip pat gausite laišką su prisijungimo prie VPS informacija.</translation>
    <translation id="vps_configuration_reboot_rescue_information" qtlid="168588">Dėmesio, kai VPS bus perkrautas rescue režimu, normalus veikimas bus atkurtas tik dar kartą perkrovus VPS.</translation>
    <translation id="vps_configuration_reboot_rescue_alert" qtlid="171110">Nepasiekiamumo laikas dėl perkrovimo: iki 3 minučių.</translation>
-   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">Le VPS {{serviceName}} va redémarrer en mode rescue (temps estimé 3 minutes)</translation>
+   <translation id="vps_configuration_reboot_rescue_success" qtlid="452462">VPS {{serviceName}} bus perkrautas rescue režimu (numatytas laikas - 3 minutės)</translation>
    <translation id="vps_configuration_reboot_rescue_todo" qtlid="168627">Perkrovimas į rescue režimą buvo užregistruotas.</translation>
    <translation id="vps_configuration_reboot_rescue_fail" qtlid="168523">Klaida bandant perkrauti serverį.</translation>
    <translation id="vps_configuration_reversedns_title_button" qtlid="168640">Keisti Reverse DNS</translation>
@@ -164,7 +164,7 @@
    <translation id="vps_configuration_reversedns_step3_oldValue" qtlid="168705">Senas Reverse DNS:</translation>
    <translation id="vps_configuration_reversedns_step3_newValue" qtlid="168718">Naujas Reverse DNS:</translation>
    <translation id="vps_configuration_reversedns_step3_alert" qtlid="168731">Keitimas atliekamas nedelsiant, tačiau keitimo paskelbimas gali užtrukti (iki 24 valandų).</translation>
-   <translation id="vps_configuration_reversedns_success" qtlid="452475">Le Reverse DNS du VPS {{serviceName}} a bien été modifié.</translation>
+   <translation id="vps_configuration_reversedns_success" qtlid="452475">VPS {{serviceName}} Reverse DNS sėkmingai pakeista.</translation>
    <translation id="vps_configuration_reversedns_fail" qtlid="168757">Klaida keičiant Reverse DNS.</translation>
    <translation id="vps_configuration_reversedns_step1_title" qtlid="44284">Reverse DNS</translation>
    <translation id="vps_configuration_reversedns_step1_desc1" qtlid="168770">Reverse DNS - tai atvirkštinis DNS serverio veikimo variantas: jis susieja domeną su IP adresu.</translation>
@@ -199,31 +199,31 @@
    <translation id="vps_configuration_reinstall_step2_alert" qtlid="168887">Numatytas diegimo laikas: daugiausiai 15 minučių.</translation>
    <translation id="vps_configuration_reinstall_step2_alert2" qtlid="168900">Dėmesio: iš naujo įdiegus OS bus prarasti visi duomenys!</translation>
    <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Jeigu norite pasinaudoti Windows operacine sistema, rekomenduojame pasirinkti reikiamą parinktį.</translation>
-   <translation id="vps_configuration_reinstall_success" qtlid="452488">Le VPS {{serviceName}} va être réinstallé</translation>
-   <translation id="vps_configuration_reinstall_fail" qtlid="452501">Une erreur est survenue lors de la demande de réinstallation {{message}}</translation>
+   <translation id="vps_configuration_reinstall_success" qtlid="452488">VPS {{serviceName}} bus perinstaliuotas</translation>
+   <translation id="vps_configuration_reinstall_fail" qtlid="452501">Klaida užsakant diegimą {{message}}</translation>
    <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">Ištrinti momentinę kopiją</translation>
    <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">Ištrinti momentinę kopiją</translation>
-   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Souhaitez-vous réellement supprimer le Snapshot du VPS <span class="normal italic">{{serviceName}}</span> ?</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Ar tikrai norite ištrinti VPS <span class="normal italic">{{serviceName}}</span> kopiją?</translation>
    <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Dėmesio, šie veiksmai neatšaukiami.</translation>
-   <translation id="vps_configuration_delete_snapshot_success" qtlid="452527">Le Snapshot sur le VPS {{serviceName}} va être supprimé.</translation>
+   <translation id="vps_configuration_delete_snapshot_success" qtlid="452527">VPS {{serviceName}} kopija bus ištrinta.</translation>
    <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Klaida bandant ištrinti momentinę kopiją.</translation>
    <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Sukurti momentinę kopiją</translation>
    <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Sukurti momentinę kopiją</translation>
-   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="452540">Vous allez prendre un snapshot du VPS <span class="italic normal">{{serviceName}}</span>.</translation>
+   <translation id="vps_configuration_snapshot_take_step1_question" qtlid="452540">Sukursite VPS <span class="italic normal">{{serviceName}}</span> kopiją.</translation>
    <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Momentinės kopijos apibūdinimas:</translation>
    <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">Jūs darote momentinę kopiją (snapshot). Dėmesio: šios operacijos atlikimo metu jūsų VPS bus neprieinamas ir visos prieš tai atliktos momentinės kopijos bus prarastos.</translation>
-   <translation id="vps_configuration_snapshot_take_success" qtlid="452553">Un Snapshot du VPS {{serviceName}} va être créé.</translation>
+   <translation id="vps_configuration_snapshot_take_success" qtlid="452553">VPS {{serviceName}} kopija bus sukurta.</translation>
    <translation id="vps_configuration_snapshot_take_fail" qtlid="169082">Klaida bandant atlikti momentinę kopiją.</translation>
    <translation id="vps_configuration_snapshot_restore_title_button" qtlid="169095">Atkurti iš momentinės kopijos</translation>
    <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">Atkurti iš momentinės kopijos</translation>
-   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Souhaitez-vous restaurer le Snapshot datant du {{date}} sur le VPS <span class="normal italic">{{serviceName}}</span>&#160;?</translation>
+   <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Ar norite atkurti VPS <span class="normal italic">{{serviceName}}</span> iš kopijos, padarytos {{date}}?</translation>
    <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Dėmesio: atlikus šį veiksmą bus ištrinta dabartinė VPS versija ir bus naudojama dabartinė momentinės kopijos versija. Šis veiksmas neatšaukiamas.</translation>
-   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">Le Snapshot va être restauré sur le VPS {{serviceName}}.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">VPS {{serviceName}} bus atkurtas iš kopijos.</translation>
    <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Klaida bandant atkurti serverį iš kopijos.</translation>
    <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Įjungti momentinių kopijų parinktį</translation>
    <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Įjungti momentinių kopijų parinktį</translation>
    <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Pirmoji sąskaita bus apskaičiuota pagal laiką, likusį iki VPS atnaujinimo.</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Cette option sera facturée au tarif mensuel de <span class="bold">{{ amount }} HT</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Šiai parinkčiai taikomas <span class="bold">{{ amount }} be PVM</span> mėnesinis mokestis</translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Momentinių kopijų parinktis leidžia sukurti atsarginių kopijų tašką. Todėl galėsite atkurti VPS į tą pačią būseną.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Momentinių kopijų parinktis bus įjungta, kai spragtelėsite mygtuką "Toliau".</translation>
    <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Norėdami patvirtinti užklausą ir pereiti prie valdymo, spragtelėkite mygtuką "Užsakyti".</translation>
@@ -237,12 +237,12 @@
    <translation id="vps_configuration_option_released" qtlid="284893">Neatnaujinta</translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Įjungti atsarginių kopijų saugykloą</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Įjungti atsarginių kopijų saugyklos parinktį</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Commande de l'option Backup storage sur le VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Cette option sera facturée au tarif mensuel de <span class="red bold">{{ price }} HT</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Užsakyti atsarginių kopijų parinktį VPS serveriui<span class="normal italic">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Šiai parinkčiai taikomas mėnesinis <span class="red bold">{{ price }} be PVM</span> mokestis</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Pirmoji sąskaita bus apskaičiuota pagal likusį laiką iki VPS atnaujinimo.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Atsarginių kopijų saugyklą - tai vieta archyvams, į kurią galite perkelti savo failus, klientų duomenis, nustatymus ir atsarginius konfigūracinius failus.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Užsakymo generavimas...</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">Afin de confirmer votre demande, veuillez procéder au règlement en cliquant sur le bouton "Confirmer" ci-dessous.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">Norėdami patvirtinti, spragtelėkite mygtuką "Patvirtinti" žemiau ir pereikite prie apmokėjimo.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Atkreipkite dėmesį, kad prireiks iki 2 valandų nuo apmokėjimo patvirtinimo, kol parinktis bus matoma valdymo sąsajoje.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Kaina be PVM:</translation>
@@ -254,7 +254,7 @@
    <translation id="vps_configuration_cancel_option_title_automatedbackup" qtlid="284932">Atsisakyti automatinio rezervinio kopijavimo parinkties</translation>
    <translation id="vps_configuration_cancel_option_title_windows" qtlid="284945">Atsisakyti Windows parinkties</translation>
    <translation id="vps_configuration_cancel_option_title_additionaldisk" qtlid="284958">Atsisakyti papildomų diskų parinkties</translation>
-   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">La résiliation de l’option entrera en vigueur à&#160;la date de renouvellement, soit le {{ date }}.</translation>
+   <translation id="vps_configuration_cancel_option_step1_info" qtlid="452644">Parinkties atsisakymas įsigalios paslaugos galiojimo pabaigos dieną, t.y. {{ date }}.</translation>
    <translation id="vps_configuration_cancel_option_step1_warn" qtlid="284984">Šis veiksmas yra galutinis ir negali būti atšauktas.</translation>
    <translation id="vps_configuration_cancel_option_cancel_success" qtlid="285010">Parinkties atsisakymas priimtas.</translation>
    <translation id="vps_configuration_cancel_option_cancel_error" qtlid="285023">Įvyko klaida vykdant parinkties atsisakymo užklausą.</translation>
@@ -279,14 +279,14 @@
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
    <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/mėn.</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Le basculement vers un nouveau modèle est totalement gratuit. Le tarif affiché est le tarif au mois correspondant à chaque modèle. Pour information, le tarif mensuel de votre offre actuelle est de <span class="bold">{{price}}</span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Modelio keitimas yra visiškai nemokamas. Nurodyta kaina yra mėnesinė modelio kaina. Jūsų dabartinio modelio mėnesinė kaina yra <span class="bold">{{price}}</span></translation>
    <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Dėmesio! Negalima mažinti VPS galingumo, galima tik didinti jį.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Veuillez accepter les conditions d'utilisation.</translation>
-   <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade du VPS <span class="italic normal">{{vpsName}}</span> en {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Tarif jusqu'au {{duration}}, date du prochain renouvellement de votre serveur :</translation>
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Prašome sutikti su naudojimo sąlygomis.</translation>
+   <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Keisti VPS <span class="italic normal">{{vpsName}}</span> į {{modelName}}</translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Kaina iki {{duration}}, kito atnaujinimo metu jūsų serverio kaina bus:</translation>
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Kaina be PVM:</translation>
    <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Kaina su PVM:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Ensuite, votre serveur sera facturé <span class="red">{{price}} HT / mois</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Po to serverio kaina bus <span class="red">{{price}} be PVM / mėn.</span>.</translation>
    <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Norėdami patvirtinti užklausą ir pereiti prie valdymo, spragtelėkite mygtuką "Užsakyti".</translation>
    <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Atkreipkite dėmesį, kad galingumo keitimas bus atliktas 2 valandų laikotarpyje po apmokėjimo patvirtinimo.</translation>
@@ -298,10 +298,10 @@
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Įtraukti domeną į antrinį DNS</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domenas, kurį įtraukti:</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Klaida bandant įtraukti domeną į antrinį DNS.</translation>
-   <translation id="vps_configuration_secondarydns_add_success" qtlid="452722">Le domaine {{domain}} va être ajouté sur le DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_add_success" qtlid="452722">Domenas {{domain}} bus įtrauktas į antrinį DNS serverį.</translation>
    <translation id="vps_configuration_secondarydns_delete_title" qtlid="169927">Pašalinti domeną iš antrinio DNS</translation>
-   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="452735">Voulez vous supprimer le domaine <span class="normal italic">{{domain}}</span> du DNS secondaire ?</translation>
-   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="452748">Une erreur est survenue lors de la demande de suppression du domaine {{domain}} du DNS secondaire.</translation>
+   <translation id="vps_configuration_secondarydns_delete_step1_question" qtlid="452735">Ar tikrai norite ištrinti domeną <span class="normal italic">{{domain}}</span> iš antrinio DNS?</translation>
+   <translation id="vps_configuration_secondarydns_delete_fail" qtlid="452748">Klaida planuojant domeno {{domain}} šalinimą iš antrinio DNS.</translation>
    <translation id="vps_configuration_secondarydns_delete_success" qtlid="169966">Domenas bus ištrintas iš antrinio DNS.</translation>
    <translation id="vps_configuration_kvm_title_button" qtlid="114570">KVM</translation>
    <translation id="vps_configuration_kvm_title" qtlid="114570">KVM</translation>
@@ -312,8 +312,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Užsakyti automatines atsargines kopijas</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Klaida keičiant informaciją</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Pirmoji sąskaita bus apskaičiuota pagal likusį laiką iki VPS atnaujinimo.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Ensuite, le service sera facturé mensuellement au prix de <span class="red bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Commande de l'option Backups automatisés sur le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Vėliau paslaugai bus taikomas <span class="red bold">{{ price }}</span> mėnesinis mokestis</translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Ar norite užsakyti atsarginių kopijų paslaugą VPS serveriui <span class="italic normal">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Kaina be PVM:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Kaina su PVM:</translation>
@@ -326,17 +326,17 @@
    <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Klaida užsakant automatinių atsarginių kopijų parinktį.</translation>
    <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Atjungti atsarginę kopiją</translation>
    <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Atjungti atsarginę kopiją</translation>
-   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="452787">Voulez vous démonter le backup suivant de votre VPS <span class="normal italic">{{ serviceName }}</span> ?</translation>
+   <translation id="vps_configuration_veeam_umount_step1_question" qtlid="452787">Ar norite atjungti kopiją nuo VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_umount_step1_creation" qtlid="26419">Sukūrimo data</translation>
    <translation id="vps_configuration_veeam_umount_fail" qtlid="170122">Klaida bandant atjungti VPS nuo serverio</translation>
    <translation id="vps_configuration_veeam_umount_success" qtlid="170135">Kopija bus atjungta nuo VPS.</translation>
    <translation id="vps_configuration_veeam_mount_title" qtlid="170148">Prijungti kopiją</translation>
-   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Souhaitez-vous réellement monter ce backup sur le VPS <span class="normal italic">{{ serviceName }}</span>&#160;?</translation>
+   <translation id="vps_configuration_veeam_mount_question" qtlid="452800">Ar tikrai norite prijungti kopiją prie VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_mount_informations" qtlid="170161">Atsarginė kopija bus pasiekiama NFS ar SMB protokolu.</translation>
    <translation id="vps_configuration_veeam_mount_success" qtlid="170174">Kopijos prijungimas užregistruotas. Kai kopija bus prijungta, pranešime apie tai el. paštu.</translation>
    <translation id="vps_configuration_veeam_mount_fail" qtlid="170187">Klaida bandant prijungti kopiją prie VPS.</translation>
    <translation id="vps_configuration_veeam_restore_title" qtlid="170200">Atkurti VPS</translation>
-   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Souhaitez-vous réellement restaurer votre VPS <span class="normal italic">{{ serviceName }}</span> en utilisant le backup suivant ?</translation>
+   <translation id="vps_configuration_veeam_restore_step1_question" qtlid="452813">Ar tikrai norite atkurti VPS <span class="normal italic">{{ serviceName }}</span> iš šios kopijos?</translation>
    <translation id="vps_configuration_veeam_restore_step1_creation" qtlid="26419">Sukūrimo data</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Keisti root slaptažodį atkūrimo metu</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Neįmanoma inicijuoti jūsų VPS slaptažodžio atkūrimo, kol neįsidiegėte VMWare Tools. Tačiau galite inicijuoti slaptažodžio atkūrimą rescue režimu.</translation>
@@ -346,13 +346,13 @@
    <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">Jei norite pridėti atsarginį kopijavimą, pirmiausiai turite atjungti savo turimą atsarginį kopijavimą.</translation>
    <translation id="vps_configuration_veeam_restore_success" qtlid="170252">VPS atkūrimas buvo užregistruotas. Kai kopija bus prijungta, pranešime apie tai el. paštu.</translation>
    <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">Klaida bandant atkurti VPS iš atsarginės kopijos.</translation>
-   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Le Backup storage n'est pas disponible sur cette gamme.</translation>
+   <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Atsarginės kopijos nesuteikiamos su šiais modeliais.</translation>
    <translation id="vps_tab_summary" qtlid="170278">Parinkčių suvestinė</translation>
    <translation id="vps_tab_SUMMARY_ftpbackup" qtlid="209957">Atsarginių kopijų saugykla:</translation>
    <translation id="vps_tab_SUMMARY_snapshot" qtlid="170304">Momentinė kopija:</translation>
    <translation id="vps_tab_snapshot" qtlid="9671">Momentinė kopija</translation>
    <translation id="vps_tab_SUMMARY_veeam" qtlid="170317">Automatinė atsarginė kopija:</translation>
-   <translation id="vps_tab_veeam" qtlid="452839">Backups automatisés</translation>
+   <translation id="vps_tab_veeam" qtlid="452839">Automatinės kopijos</translation>
    <translation id="vps_tab_SUMMARY_snapshot_creationdate" qtlid="170330">Atlikta:</translation>
    <translation id="vps_tab_SUMMARY_license" qtlid="113658">Licencijos</translation>
    <translation id="vps_tab_SUMMARY_saves" qtlid="327367">Atsarginės kopijos</translation>
@@ -414,7 +414,7 @@
    <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Naujas slaptažodis bus išsiųstas serverio administraciniam kontaktui.</translation>
    <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Naujas slaptažodis bus išsiųstas administraciniam kontaktui.</translation>
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Įvyko klaida inicijuojant slaptažodžio keitimą.</translation>
-   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Etes-vous certain(e) de vouloir réinitialiser le mot de passe pour le backup storage ?</translation>
+   <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Ar tikrai norite keisti atsarginių kopijų saugyklos slaptažodį?</translation>
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">Identifikatorius</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Pavadinimas</translation>
@@ -433,9 +433,9 @@
    <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Keitimų atšaukimas</translation>
 
    <translation id="vps_backup_storage_access_delete" qtlid="180590">Prieigos šalinimas</translation>
-   <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Etes-vous certain(e) de vouloir supprimer l'accès du block ip {{ipBlock}} ?</translation>
-   <translation id="vps_backup_storage_access_delete_success" qtlid="452878">La suppression de l'accès au backup storage par le block ip {{ipBlock}} a bien été prise en compte mais peut prendre quelques minutes</translation>
-   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Une erreur est survenue lors de la tentative de suppression de l'accès au backup storage du block ip {{ipBlock}}</translation>
+   <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Ar tikrai norite ištrinti prieigą IP blokui {{ipBlock}}?</translation>
+   <translation id="vps_backup_storage_access_delete_success" qtlid="452878">IP bloko {{ipBlock}} prieiga prie atsarginių kopijų saugykla bus panaikinta po kelių minučių</translation>
+   <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Klaida bandant panaikinti IP bloko {{ipBlock}} prieigą prie atsarginių kopijų saugyklos</translation>
 
    <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Klaida gaunant leistinus blokus</translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Sukurti prieigą</translation>
@@ -454,8 +454,8 @@
    <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Klaida pridedant prieigos prie atsarginių kopijų saugyklos taisykles</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Autorizuoti visi galimi blokai</translation>
 
-   <translation id="vps_tab_backup_storage_set_success" qtlid="452904">La modification de l'accès {{access}} a bien été prise en compte mais peut prendre quelques minutes</translation>
-   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">Une erreur est survenue lors de la modification de l'accès {{access}}</translation>
+   <translation id="vps_tab_backup_storage_set_success" qtlid="452904">Prieigos {{access}} keitimas bus atliktas po kelių minučių</translation>
+   <translation id="vps_tab_backup_storage_set_fail" qtlid="452917">Klaida keičiant {{access}} prieigą</translation>
 
    <translation id="vps_monitoring_network_netRx" qtlid="33550">Įeinantis</translation>
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Išeinantis</translation>
@@ -487,7 +487,7 @@
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Kaina be PVM:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Kaina su PVM:</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Parinktis:</translation>
-   <translation id="vps_order_additional_disk_offer_description" qtlid="452930">Option Disque Additionnel - {{ size }} jusqu'au {{ date }}</translation>
+   <translation id="vps_order_additional_disk_offer_description" qtlid="452930">Papildomo disko parinktis - {{ size }} iki {{ date }}</translation>
    <translation id="vps_order_additional_disk_price" qtlid="181084">Kaina:</translation>
    <translation id="vps_order_additional_disk_step2_title" qtlid="82725">Suvestinė</translation>
    <translation id="vps_order_additional_disk_fail" qtlid="281680">Klaida užsakant papildomą diską</translation>
@@ -511,8 +511,8 @@
    <translation id="vps_status_disabled" qtlid="24967">Išjungta</translation>
    <translation id="vps_status_enabled" qtlid="30250">Įjungta</translation>
    <translation id="vps_dashboard_product" qtlid="26143">Modelis</translation>
-   <translation id="vps_configuration_sla_title_enable" qtlid="452943">Activer le monitoring SLA pour ce serveur ?</translation>
-   <translation id="vps_configuration_sla_title_disable" qtlid="452956">Désactiver le monitoring SLA pour ce serveur ?</translation>
+   <translation id="vps_configuration_sla_title_enable" qtlid="452943">Įjungti SLA šiam serveriui?</translation>
+   <translation id="vps_configuration_sla_title_disable" qtlid="452956">Išjungti SLA šiam serveriui?</translation>
 
-   <translation id="vps_service_expired" qtlid="452969">Le service {{vps}} n'a pas été renouvelé. Cela est peut être dû à une décision de votre part ou un retard de paiement de votre côté.</translation>
+   <translation id="vps_service_expired" qtlid="452969">{{vps}} paslauga nebuvo atnaujinta. Tai gali būti dėl jūsų sprendimo arba dėl apmokėjimo uždelsimo.</translation>
 </translations>

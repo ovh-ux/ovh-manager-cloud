@@ -12,6 +12,6 @@
    <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Päästäksesi palvelimelle "{{vmName}}" pelastustilassa käytä:<br/><code>ssh {{user}}@{{ip}}</code> tilapäisellä salasanalla{{pwd}} (jatkossa sitä ei enää lähetetä sinulle).  Huom,tässä tilassa voit päästä ainoastaan päälevylle.</translation>
    <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Päästäksesi palvelimelle {{vmName}} pelastustilassa käytä :<br/><code>rdesktop {{ip}}</code> tavanomaisella SSH-avaimella. Huom,tässä tilassa voit päästä ainoastaan päälevylle.</translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Päästäksesi palvelimelle {{vmName}} pelastustilassa, käytä :<br/><code>rdesktop {{ip}}</code> tilapäisen salasanan{{pwd}} kanssa (jatkossa sitä ei enää lähetetä sinulle). Huom,tässä tilassa voit päästä ainoastaan päälevylle.</translation>
-   <translation id="cpc_rescue_mode_error" qtlid="269305">Pahoittelemme, palvelinta ei voitu uudelleenkäynnistää pelastustilaan.</translation>
+   <translation id="cpc_rescue_mode_error">Oups! Nous n'arrivons pas à redémarrer votre serveur en mode rescue : {{message}}</translation>
 
 </translations>

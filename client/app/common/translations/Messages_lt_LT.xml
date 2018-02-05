@@ -510,12 +510,12 @@
 
    <translation id="common_datagrid_nodata" qtlid="197635">Jokio rezultato</translation>
    <translation id="common_table_col_action" qtlid="56105">Veiksmas</translation>
-   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Progresas</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Rezultatai / 1 psl.</translation>
    <translation id="common_pagination_page" qtlid="433397">puslapis</translation>
    <translation id="common_pagination_of" qtlid="121615"></translation>
-   <translation id="common_pagination_ofnresults" qtlid="452982">sur TOTAL_ITEMS résultats</translation>
-   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE sur PAGE_COUNT</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">viso rezultatų: TOTAL_ITEMS </translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Puslapis CURRENT_PAGE iš PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">rezultatai</translation>
    <translation id="common_pagination_next" qtlid="433423">Kitas puslapis</translation>
    <translation id="common_pagination_previous" qtlid="433436">Ankstesnis puslapis</translation>

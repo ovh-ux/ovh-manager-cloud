@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="login_information_error" qtlid="401406">¡Vaya! No se ha podido cargar la información de conexión.</translation>
    <translation id="cpcivm_login_information_title" qtlid="250927">Datos de conexión</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Conexión a la instancia</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Introduzca el siguiente comando en un terminal:<br/><code>ssh {{user}}@{{ip}}</code></translation>
