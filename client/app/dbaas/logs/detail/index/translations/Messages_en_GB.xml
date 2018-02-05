@@ -19,4 +19,42 @@
     <translation id="logs_modal_delete_title">Delete index</translation>
     <translation id="logs_modal_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
 
+    <translation id="logs_index_add_data_feed">Add index</translation>
+
+    <translation id="logs_index_get_error">An error has occurred while retrieving index</translation>
+
+    <translation id="logs_index_col_index">Index</translation>
+    <translation id="logs_index_col_description">Description</translation>
+    <translation id="logs_index_col_creation_date">Date of creation</translation>
+    <translation id="logs_index_col_free_space">Free space</translation>
+
+    <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
+    
+    <translation id="logs_index_delete_title">Delete index</translation>
+    <translation id="logs_index_delete_question">Are you sure you want to delete the following front facing service: {{ index }}?</translation>
+    <translation id="logs_index_delete_error">An error occurred while deleting the selected index</translation>
+
+    <translation id="logs_options_current_options_loading_error">An error occurred while loading options</translation>
+
+   <translation id="logs-input-2">1 Collector with 2 instances</translation>
+   <translation id="logs-input-4">1 Collector with 4 instances</translation>
+   <translation id="logs-input-8">1 Collector with 8 instances</translation>
+   <translation id="logs-dashboard-5">5 Graylog dashboards</translation>
+   <translation id="logs-stream-5">5 Graylog streams</translation>
+   <translation id="logs-kibana-1">Kibana Pack: 1 Alias et 1 Index of 500 MiB</translation>
+   <translation id="logs-alias-5">5 Aliases Elasticsearch</translation>
+
+   <translation id="logs_index_modal_add_title">Add index</translation>
+   <translation id="logs_index_modal_edit_title">Edit index</translation>
+   <translation id="logs_index_modal_edit_desc">Edit the information of the index: </translation>
+   <translation id="logs_index_modal_suffix">Suffix</translation>
+   <translation id="logs_index_suffix_description">Only lowercase characters from a to z, numbers and - or _ are allowed</translation>
+   <translation id="logs_index_modal_description">Description</translation>
+   <translation id="logs_index_modal_select">Choose the attached option</translation>
+   <translation id="logs_index_modal_notification">Notification</translation>
+   <translation id="logs_index_modal_checkbox">Notify me by e-mail when the index reaches a critical size</translation>
+
+   <translation id="logs_index_edit_error">An error occurred while saving changes: {{message}}</translation>
+   <translation id="logs_index_create_error">An error occurred while creating index: {{message}}</translation>
+
 </translations>

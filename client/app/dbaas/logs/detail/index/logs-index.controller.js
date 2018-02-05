@@ -10,42 +10,52 @@ class LogsIndexCtrl {
     $onInit () {
         this.quota.load();
         this.indices.load();
+        this.indexOptions.load();
     }
 
     initLoaders () {
+        this.indexOptions = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsIndexService.getSubscribedOptions(this.serviceName),
+            successHandler: res => { console.log(res); }
+        });
+
         this.quota = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsIndexService.getQuota(this.serviceName)
         });
 
         this.indices = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName)
+            loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName),
+            successHandler: res => { console.log(res); }
         });
     }
 
-    edit (info) {
-        // this.ControllerHelper.modal({
-
-        // });
+    add (info) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/dbaas/logs/detail/index/add/logs-index-add.html",
+                controller: "LogsIndexAddModalCtrl",
+                controllerAs: "LogsIndexAddModalCtrl",
+                resolve: {
+                    serviceName: () => this.serviceName,
+                    indexInfo: () => info,
+                    options: () => this.LogsIndexService.getSubscribedOptions(this.serviceName)
+                }
+            }
+        });
+        // this.LogsIndexService.addModal(this.$stateParams, info);
     }
 
     showDeleteConfirm (info) {
-        this.LogsIndexService.deleteIndex(
+        this.LogsIndexService.deleteModal(
             this.$stateParams.serviceName,
             info
-        ).then(() => this.init());
+        ).then(() => this.deleteIndex(info));
+    }
+
+    deleteModal (info) {
+        this.LogsIndexService.deleteIndex(this.serviceName, info.indexId);
+        // .then(() => refresh view ?)
     }
 }
 
-// preview (frontend) {
-//     this.ControllerHelper.modal.showModal({
-//         modalConfig: {
-//             templateUrl: "app/iplb/frontends/preview/iplb-frontends-preview.html",
-//             controller: "IpLoadBalancerFrontendPreviewCtrl",
-//             controllerAs: "IpLoadBalancerFrontendPreviewCtrl",
-//             resolve: {
-//                 frontend: () => frontend
-//             }
-//         }
-//     });
-// }
 angular.module("managerApp").controller("LogsIndexCtrl", LogsIndexCtrl);
