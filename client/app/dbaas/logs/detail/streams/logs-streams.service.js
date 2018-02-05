@@ -161,7 +161,7 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_stream_update_success")
+                return this._handleSuccess(serviceName, operation.data, "logs_stream_update_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_stream_update_error"));
     }
