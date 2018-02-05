@@ -2,7 +2,7 @@
 <translations>
     <translation id="logs_index_title">Index Elasticsearch</translation>
     <translation id="logs_index_description">Logs Data Platform allows you to create and host Elasticsearch index. These index can be used for the data configuration of a Kibana instance (to store settings, visualizations, and dashboards), to index to static data, or to enrich or correlate your logs. You can use these index with most of the tools and applications compatible with the Elasticsearch REST API.</translation>
-    <translation id="logs_index_total_used">aliases used</translation>
+    <translation id="logs_index_total_used">indices used</translation>
     <translation id="logs_index_increase_quota">increase the quota</translation>
     <translation id="logs_index_quota_get_error">An error has occurred while retrieving index quota: {{message}}</translation>
     <translation id="logs_index_add_data_feed">Add index</translation>
@@ -17,7 +17,7 @@
     <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
     
     <translation id="logs_modal_delete_title">Delete index</translation>
-    <translation id="logs_modal_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
+    <translation id="logs_modal_delete_question">Are you sure you want to delete the following front facing service: {{index}}?</translation>
 
     <translation id="logs_index_add_data_feed">Add index</translation>
 
@@ -31,7 +31,7 @@
     <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
     
     <translation id="logs_index_delete_title">Delete index</translation>
-    <translation id="logs_index_delete_question">Are you sure you want to delete the following front facing service: {{ index }}?</translation>
+    <translation id="logs_index_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
     <translation id="logs_index_delete_error">An error occurred while deleting the selected index</translation>
 
     <translation id="logs_options_current_options_loading_error">An error occurred while loading options</translation>
@@ -46,7 +46,7 @@
 
    <translation id="logs_index_modal_add_title">Add index</translation>
    <translation id="logs_index_modal_edit_title">Edit index</translation>
-   <translation id="logs_index_modal_edit_desc">Edit the information of the index: </translation>
+   <translation id="logs_index_modal_edit_description">Edit the information of the index: </translation>
    <translation id="logs_index_modal_suffix">Suffix</translation>
    <translation id="logs_index_suffix_description">Only lowercase characters from a to z, numbers and - or _ are allowed</translation>
    <translation id="logs_index_modal_description">Description</translation>
@@ -56,5 +56,9 @@
 
    <translation id="logs_index_edit_error">An error occurred while saving changes: {{message}}</translation>
    <translation id="logs_index_create_error">An error occurred while creating index: {{message}}</translation>
-
+   <translation id="logs_index_delete_error">An error occurred while deleting index: {{message}}</translation>
+   
+   <translation id="logs_index_create_success">Successfully created index</translation>
+   <translation id="logs_index_edit_success">Successfully saved your changes</translation>
+   <translation id="logs_index_delete_success">Successfully deleted the index</translation>
 </translations>

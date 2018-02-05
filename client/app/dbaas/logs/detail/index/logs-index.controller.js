@@ -1,22 +1,16 @@
 class LogsIndexCtrl {
-    constructor ($stateParams, ControllerHelper, LogsIndexService) {
+    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
+        this.CloudMessage = CloudMessage;
         this.LogsIndexService = LogsIndexService;
         this.initLoaders();
     }
 
-    $onInit () {
-        this.quota.load();
-        this.indices.load();
-        this.indexOptions.load();
-    }
-
     initLoaders () {
         this.indexOptions = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsIndexService.getSubscribedOptions(this.serviceName),
-            successHandler: res => { console.log(res); }
+            loaderFunction: () => this.LogsIndexService.getSubscribedOptions(this.serviceName)
         });
 
         this.quota = this.ControllerHelper.request.getHashLoader({
@@ -24,12 +18,16 @@ class LogsIndexCtrl {
         });
 
         this.indices = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName),
-            successHandler: res => { console.log(res); }
+            loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName)
         });
+
+        this.quota.load();
+        this.indices.load();
+        this.indexOptions.load();
     }
 
     add (info) {
+        this.CloudMessage.flushChildMessage();
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/index/add/logs-index-add.html",
@@ -41,20 +39,18 @@ class LogsIndexCtrl {
                     options: () => this.LogsIndexService.getSubscribedOptions(this.serviceName)
                 }
             }
+        }).then(() => {
+            this.initLoaders();
         });
-        // this.LogsIndexService.addModal(this.$stateParams, info);
     }
 
     showDeleteConfirm (info) {
+        this.CloudMessage.flushChildMessage();
         this.LogsIndexService.deleteModal(
-            this.$stateParams.serviceName,
+            this.serviceName,
             info
-        ).then(() => this.deleteIndex(info));
-    }
-
-    deleteModal (info) {
-        this.LogsIndexService.deleteIndex(this.serviceName, info.indexId);
-        // .then(() => refresh view ?)
+        ).then(() => this.deleteIndex(info))
+            .then(() => this.initLoaders());
     }
 }
 

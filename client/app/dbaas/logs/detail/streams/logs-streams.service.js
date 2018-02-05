@@ -1,8 +1,9 @@
 class LogsStreamsService {
-    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll, LogsOptionsService) {
+    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll, LogsOptionsService, LogsStreamsConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
+        this.LogsStreamsConstant = LogsStreamsConstant;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
         this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
@@ -226,7 +227,7 @@ class LogsStreamsService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName, "logs-stream");
+        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName, this.LogsStreamsConstant.optionType);
     }
 
     /**
