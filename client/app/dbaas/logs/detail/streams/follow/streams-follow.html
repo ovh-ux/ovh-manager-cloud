@@ -11,10 +11,10 @@
 
         <div>
             <p data-ng-hide="ctrl.isConnectionClosed()"><strong>{{'logs_streams_connection_opened' | translate}} </strong>
-                <span data-ng-show="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() * 1000 | momentFormat:'LL' }} {{ctrl.getLastEvent() * 1000 | momentFormat:'LTS' }}</span>
+                <span data-ng-show="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() | momentFormat:'LL' }} {{ctrl.getLastEvent() | momentFormat:'LTS' }}</span>
             </p>
             <p data-ng-hide="ctrl.isConnectionClosed()"><strong>{{'logs_streams_displaying_logs' | translate}}</strong>
-                <span> - {{ctrl.getTotalMessages() | number}}/1000</span>
+                <span> - {{ctrl.getTotalMessages() | number}}/{{ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</span>
             </p>
             <p data-ng-show="ctrl.isConnectionClosed()"><strong>{{'logs_streams_connection_closed' | translate}}</strong></p>
         </div>
@@ -36,7 +36,7 @@
                 <td>
                     <div class="log-streams-follow_date pb-3">
                         <strong>
-                            {{ message.timestamp * 1000 | momentFormat:'L' }} {{ message.timestamp * 1000 | momentFormat:'LTS' }}
+                            {{ message.timestamp | momentFormat:'L' }} {{ message.timestamp | momentFormat:'LTS' }}
                         </strong>
                     </div>
                     <p class="log-streams-follow_content">{{ message.content }}</p>
