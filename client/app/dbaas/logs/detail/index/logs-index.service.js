@@ -32,7 +32,7 @@ class LogsIndexService {
     }
 
     getIndices (serviceName) {
-        return this.IndexApiService.get({ serviceName }).$promise
+        return this.IndexApiService.query({ serviceName }).$promise
             .then(indices => {
                 const promises = indices.map(indexId => this.getIndexDetails(serviceName, indexId));
                 return this.$q.all(promises);
