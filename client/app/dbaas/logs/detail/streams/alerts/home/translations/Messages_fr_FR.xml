@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="streams_alerts_loading_error">Erreur de chargement de l'alerte: {{message}}</translation>
+    <translation id="streams_alerts_ids_loading_error">Erreur lors du chargement des ID d'alertes: {{message}}</translation>
+    <translation id="streams_alerts_title">Alertes</translation>
+    <translation id="streams_alerts_current_title">Gestion de vos alertes pour le</translation>
+    <translation id="streams_alerts_intro_text">Avec les conditons d’alerte, plus besoin de surveiller vos logs, la plateforme le fait pour vous. De nombreux cas d’usage sont susceptibles de lever une alerte et de vous adresser celle-ci par e-mail: une absence de messages en provenance d’un logiciel pour une durée inhabituelle: lorsque le nombre dde tâches réalisées est anormalement trop bas; lorsque le trafic réseau de votre site webest très élevé pu quand certains mots clefs spécifiques apparaissent dans votre flux</translation>
+    <translation id="streams_alerts_title">Alertes</translation>
+    <translation id="streams_alerts_condition">Condition</translation>
+    <translation id="streams_alerts_grace_period">Période de grâce (mins)</translation>
+    <translation id="streams_alerts_repeat_notification">Répéter notification</translation>
+    <translation id="streams_alerts_delete">Supprimer l'alerte</translation>
+    <translation id="streams_alerts_delete_message">Êtes-vous sûr de vouloir supprimer l'alerte suivante: {{alert}} ?</translation>
+    <translation id="streams_alerts_delete_error">Une erreur s'est produite lors de la suppression d'une alerte: {{message}}</translation>
+    <translation id="streams_alerts_delete_success">L'alerte a été supprimée avec succès.</translation>
+
+    <translation id="streams_alerts_condition_message_count">L'alerte est levée lorsqu'il y a <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> messages dans les <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+    <translation id="streams_alerts_condition_field_value">L'alerte est levée lorsque le champ <strong>{{field}}</strong> a une valeur <strong>{{constraintType}}</strong> <strong>{{thresholdType}}</strong> de <strong>{{threshold}}</strong> dans les dernières <strong>{{time}}</strong> minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+    <translation id="streams_alerts_condition_field_content_value">L'alerte est levée lorsqu'un message contenant le champ <strong>{{field}}</strong> égal à <strong>{{value}}</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+
+    <translation id="create_alert">Créer une alerte</translation>
+    <translation id="counter_alert">Compteur</translation>
+    <translation id="numeric_alert">Valeur Numérique</translation>
+    <translation id="textual_alert">Contenu Textuel</translation>
+</translations>

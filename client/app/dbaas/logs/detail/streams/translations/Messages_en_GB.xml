@@ -14,11 +14,15 @@
     <translation id="logs_streams_col_notifications">Alerts</translation>
     <translation id="logs_streams_col_linked_option">Linked to option</translation>
     <translation id="logs_streams_no_streams">No data feeds added</translation>
+    <translation id="logs_streams_col_shared">Shared stream</translation>
 
     <translation id="logs_streams_follow_live">Follow live</translation>
+    <translation id="logs_streams_graylog_access">Access Graylog</translation>
+    <translation id="logs_streams_copy_token">Copy the writing token</translation>
+
 
     <translation id="logs_stream_delete_title">Delete data stream</translation>
-    <translation id="logs_stream_delete_message">Are you sure you want to delete the following data stream: {{stream}} ?</translation>
+    <translation id="logs_stream_delete_message">Are you sure you want to delete the data stream: {{stream}} ?</translation>
 
     <translation id="logs_streams_add_title">Add data stream</translation>
     <translation id="logs_streams_update_title">Update data stream</translation>
@@ -36,7 +40,9 @@
     <translation id="logs_stream_create_success">The data stream has been successfully created.</translation>
     <translation id="logs_stream_update_success">The data stream has been successfully updated.</translation>
     <translation id="logs_stream_delete_success">The data stream has been successfully deleted.</translation>
+    <translation id="logs_streams_copy_token_success">The token value has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
 
+    <translation id="logs_streams_get_graylog_url_error">Graylog url not found for stream {{stream}}.</translation>
     <translation id="logs_stream_delete_error">An error has occurred while deleting a data stream: {{message}}</translation>
     <translation id="logs_stream_update_error">An error has occurred while updating a data stream: {{message}}</translation>
     <translation id="logs_stream_create_error">An error has occurred while creating a data stream: {{message}}</translation>
@@ -45,6 +51,8 @@
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
     <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
     <translation id="logs_streams_archives_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
+    <translation id="logs_streams_find_token_error">Token not found for stream {{stream}}.</translation>
+    <translation id="logs_streams_copy_token_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the token value to enter for stream {{stream}}: {{token_value}}</translation>
 
     <translation id="logs_stream_compression_gzip">.gz (zlib)</translation>
     <translation id="logs_stream_compression_zip">.zip (deflated)</translation>
@@ -59,5 +67,30 @@
     <translation id="logs_streams_follow_download_client">Download ldp-tail</translation>
     <translation id="logs_streams_follow_close_connection">Close the connection</translation>
     <translation id="logs_streams_follow_open_connection">Open the connection</translation>
+    <translation id="logs_streams_follow_test_gelf">Test the flow with Gelf</translation>
+    <translation id="logs_streams_follow_test_ltsv">Test the flow with LTSV</translation>
+    <translation id="logs_streams_follow_test_rfc">Test the flow with RFC 5424</translation>
 
+    <translation id="logs_streams_follow_emergency">Emergency</translation>
+    <translation id="logs_streams_follow_alert">Alert</translation>
+    <translation id="logs_streams_follow_critical">Critical</translation>
+    <translation id="logs_streams_follow_error">Error</translation>
+    <translation id="logs_streams_follow_warning">Warning</translation>
+    <translation id="logs_streams_follow_notice">Notice</translation>
+    <translation id="logs_streams_follow_info">Info</translation>
+    <translation id="logs_streams_follow_debug">Debug</translation>
+
+    <translation id="logs_streams_connection_opened">Connection established</translation>
+    <translation id="logs_streams_connection_closed">Connection closed</translation>
+    <translation id="logs_streams_displaying_logs">Displaying Logs</translation>
+    <translation id="logs_streams_waiting_for_messages">Connected to WebSocket, waiting for messages...</translation>
+
+    <translation id="logs_streams_follow_connection_error">Error occuried while connecting to WebSocket: {{message}}</translation>
+    <translation id="logs_streams_follow_get_websocket_error">WebSocket address is not available for stream {{stream}}. Please retry later.</translation>
+    <translation id="logs_streams_follow_copy_websocket_success">WebSocket address has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
+    <translation id="logs_streams_follow_copy_websocket_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the WebSocket address for stream {{stream}}: {{url}}</translation>
+
+    <translation id="logs_streams_follow_copy_command_success">The command line for the format {{type}} has been scuccessfully copied to your clipboard. Use CTRL+V to paste it in your terminal and press Enter key to execute it.</translation>
+    <translation id="logs_streams_follow_copy_command_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the command line for format {{type}}: "{{command}}". Copy and paste this command in terminal to execute it.</translation>
+    <translation id="logs_streams_get_command_urls_error">Failed to get command URL's for Gelf, LTSV and RFC 5424. You will not be able to use these commands.</translation>
 </translations>
