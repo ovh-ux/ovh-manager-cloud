@@ -1,4 +1,4 @@
-class AddToVrackCtrl {
+class SelectVrackCtrl {
     constructor ($q, $window, $uibModalInstance, $stateParams, params) {
         this.$q = $q;
         this.projectId = $stateParams.projectId;
@@ -44,7 +44,7 @@ class AddToVrackCtrl {
      *
      * @memberof AddVRackCtrl
      */
-    chooseVrack () {
+    selectVrack () {
         return this.modal.close({ name: this.selectedVrack.displayName, serviceName: this.selectedVrack.serviceName });
     }
 
@@ -58,7 +58,7 @@ class AddToVrackCtrl {
             if (this.form.$invalid) {
                 return this.$q.reject();
             }
-            return this.chooseVrack();
+            return this.selectVrack();
         }
         return this.orderNewVrack();
     }
@@ -68,8 +68,8 @@ class AddToVrackCtrl {
      * @memberof AddVRackCtrl
      */
     cancel () {
-        this.modal.dismiss();
+        this.modal.dismiss("cancel");
     }
 }
 
-angular.module("managerApp").controller("AddToVrackCtrl", AddToVrackCtrl);
+angular.module("managerApp").controller("SelectVrackCtrl", SelectVrackCtrl);

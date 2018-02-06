@@ -1,7 +1,7 @@
 class PrivateNetworkListCtrl {
     constructor ($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
                  OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS,
-                 OvhApiVrack, VrackSectionSidebarService, VrackService, ControllerHelper) {
+                 OvhApiVrack, VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
@@ -17,7 +17,8 @@ class PrivateNetworkListCtrl {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.User = OvhApiMe;
-        this.URLS = URLS
+        this.URLS = URLS;
+        this.CloudPoll = CloudPoll;
         this.VrackService = VrackService;
         this.ControllerHelper = ControllerHelper;
 
@@ -28,7 +29,8 @@ class PrivateNetworkListCtrl {
                 activate: false
             },
             vrack: {
-                get: false
+                get: false,
+                link: false
             },
             vracks: {
                 get: true
@@ -99,15 +101,47 @@ class PrivateNetworkListCtrl {
      * @memberof PrivateNetworkListCtrl
      */
     addVRack () {
-        this.VrackService.addVrack()
+        this.VrackService.selectVrack()
             .then(selectedVrack => {
-                console.log(selectedVrack);
-                this.VrackService.addCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
+                this.loaders.vrack.link = true;
+                this.models.vrack = {
+                    id: selectedVrack.serviceName,
+                    name: selectedVrack.name
+                };
+                return this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
             })
-            .then(vrack => {
-                this.models.vrack = vrack;
+            .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+            .catch(err => {
+                if (err === "cancel") {
+                    return;
+                }
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
             })
-            .catch(() => this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error")));
+            .finally(() => {
+                this.loaders.vrack.link = false;
+            });
+    }
+
+    startVrackTaskPolling (vrack, taskId) {
+        this.stopTaskPolling();
+
+        const taskToPoll = {
+            id: taskId
+        };
+
+        this.poller = this.CloudPoll.poll({
+            item: taskToPoll,
+            pollFunction: task => this.VrackService.getTask(vrack, task.id),
+            stopCondition: task => !task || _.includes(["done", "error"], task.status)
+        });
+
+        return this.poller;
+    }
+
+    stopTaskPolling () {
+        if (this.poller) {
+            this.poller.kill();
+        }
     }
 
     deletePrivateNetwork (privateNetwork) {
@@ -243,7 +277,8 @@ class PrivateNetworkListCtrl {
 
     hasPendingLoaders () {
         return _.some(this.loaders, "query", true) ||
-               _.some(this.loaders, "get", true)   ||
+               _.some(this.loaders, "get", true) ||
+               _.some(this.loaders, "link", true) ||
                this.isVrackCreating();
     }
 

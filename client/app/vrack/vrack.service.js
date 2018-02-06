@@ -29,11 +29,11 @@ class VrackService {
         return this.ControllerHelper.navigation.getConstant("website_order.vrack");
     }
 
-    addToVrackModal (vRacks, orderUrl) {
+    selectVrackModal (vRacks, orderUrl) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vrack/addToVrack/addToVrack.html",
-                controller: "AddToVrackCtrl",
+                templateUrl: "app/vrack/selectVrack/selectVrack.html",
+                controller: "SelectVrackCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
                     params: () => ({
@@ -45,30 +45,25 @@ class VrackService {
         });
     }
 
-    /**
-     *  add selected existing vRack to private network
-     *
-     * @memberof AddVRackCtrl
-     */
-    addCloudProjectToVrack (selectedVrack, projectId) {
+    linkCloudProjectToVrack (selectedVrack, projectId) {
         return this.OvhApiVrack.CloudProject().Lexi().create({
             serviceName: selectedVrack
         }, {
             project: projectId
         }).$promise
-            .then(vrack => {
-                vrack.data.id = vrack.data.serviceName;
-                console.log(vrack.data);
-                return vrack.data;
-            });
+            .then(vrackTask => vrackTask.data.id);
     }
 
-    addVrack () {
+    selectVrack () {
         return this.$q.all({
             orderUrl: this.getOrderUrl(),
             vracks: this.getVracks()
         })
-            .then(data => this.addToVrackModal(data.vracks, data.orderUrl));
+            .then(data => this.selectVrackModal(data.vracks, data.orderUrl));
+    }
+
+    getTask (serviceName, taskId) {
+        return this.OvhApiVrack.Lexi().task({ serviceName, taskId }).$promise;
     }
 }
 
