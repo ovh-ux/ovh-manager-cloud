@@ -18,7 +18,6 @@ angular.module("managerApp")
     .constant("REDIRECT_URLS", {
         support: "https://www.ovh.com/manager/dedicated/index.html#/ticket",
         billing: "https://www.ovh.com/manager/dedicated/index.html#/billing/history",
-        consumptionsTelephony: "https://www.ovh.com/manager/dedicated/index.html#/billing/consumptionsTelephony",
         ordersInProgress: "https://www.ovh.com/manager/dedicated/index.html#/billing/orders?status=in-progress",
         orders: "https://www.ovh.com/manager/dedicated/index.html#/billing/orders?status=all",
         orderSql: "https://www.ovh.com/manager/web/#/configuration/sql_order?orderType=dbaas",
