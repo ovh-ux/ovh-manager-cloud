@@ -1,3 +1,4 @@
+<pre><code>{{ $ctrl.model | json }}</code></pre>
 <section class="cui-page__content">
     <cui-back-link data-state="{{ $ctrl.previousState.state }}"
         data-state-params="$ctrl.previousState.stateParams"
@@ -21,7 +22,7 @@
                         data-ng-required="$ctrl.model.displayName.required"
                         data-ng-minlength="$ctrl.model.displayName.mingLength"
                         data-ng-maxlength="$ctrl.model.displayName.maxLength"
-                        data-ng-disabled="$ctrl.model.displayName.disabled">
+                        data-ng-disabled="$ctrl.model.displayName.disabled()">
                 </div>
                 <div data-ng-if="$ctrl.model.displayName.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.displayName.helperText"></div>
             </div>
@@ -41,7 +42,7 @@
                         data-ng-required="$ctrl.model.vlan.required"
                         data-ng-minlength="$ctrl.model.vlan.mingLength"
                         data-ng-maxlength="$ctrl.model.vlan.maxLength"
-                        data-ng-disabled="$ctrl.model.vlan.disabled">
+                        data-ng-disabled="$ctrl.model.vlan.disabled()">
                 </div>
                 <div data-ng-if="$ctrl.model.vlan.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.vlan.helperText"></div>
             </div>
@@ -61,7 +62,7 @@
                         data-ng-required="$ctrl.model.subnet.required"
                         data-ng-minlength="$ctrl.model.subnet.mingLength"
                         data-ng-maxlength="$ctrl.model.subnet.maxLength"
-                        data-ng-disabled="$ctrl.model.subnet.disabled">
+                        data-ng-disabled="$ctrl.model.subnet.disabled()">
                 </div>
                 <div data-ng-if="$ctrl.model.subnet.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.subnet.helperText"></div>
             </div>
@@ -81,12 +82,51 @@
                         data-ng-required="$ctrl.model.natIp.required"
                         data-ng-minlength="$ctrl.model.natIp.mingLength"
                         data-ng-maxlength="$ctrl.model.natIp.maxLength"
-                        data-ng-disabled="$ctrl.model.natIp.disabled">
+                        data-ng-disabled="$ctrl.model.natIp.disabled()">
                 </div>
                 <div data-ng-if="$ctrl.model.natIp.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.natIp.helperText"></div>
             </div>
         </div>
-
+        <oui-spinner data-ng-if="$ctrl.privateNetworkFarms.loading || $ctrl.farms.loading"></oui-spinner>
+        <div class="oui-field" 
+            data-ng-if="!$ctrl.privateNetworkFarms.loading && !$ctrl.farms.loading">
+            <div class="oui-field__label oui-label" data-translate="iplb_vrack_private_network_add_edit_field_farm_label"></div>
+            <div class="oui-field__content cui-key-value-input">
+                <div class="cui-key-value-input__container" data-ng-repeat="associatedFarm in $ctrl.model.farmId.value track by $index">
+                    <div class="oui-field">
+                        <label for="farmId{{ $index }}" 
+                            class="oui-field__label oui-label cui-key-value-input__label" 
+                            data-translate="iplb_vrack_private_network_add_edit_field_farm_description"></label>
+                        <div class="oui-field__content cui-key-value-input__field">
+                            <div class="oui-field-control oui-field-control_3">
+                                <label class="oui-select">
+                                    <select id="farmId{{ $index }}" 
+                                        name="farmId{{ $index }}" 
+                                        class="oui-select__input"
+                                        data-ng-model="associatedFarm.farmId"
+                                        ng-options="farm.farmId as farm.displayName for farm in $ctrl.getAvailableFarm(associatedFarm.farmId)">
+                                        <option value="" data-translate="common_select"></option>
+                                    </select>
+                                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cui-key-value-input__action">
+                        <div data-ng-show="$last" data-ng-if="$ctrl.canAddFarm()">
+                            <button class="oui-button oui-button_secondary"
+                                type="button"
+                                data-ng-click="$ctrl.addFarm()" >+</button>
+                        </div>
+                        <div data-ng-hide="$last">
+                            <button class="oui-button oui-button_secondary"
+                                type="button"
+                                data-ng-click="$ctrl.removeFarm($index)">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="cui-form-actions">
             <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
             <div data-ng-if="!$ctrl.isLoading()">

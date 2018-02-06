@@ -12,20 +12,44 @@ class IpLoadBalancerVrackEditCtrl {
         this.serviceName = $stateParams.serviceName;
         this.networkId = $stateParams.networkId;
 
+        this.defaultAssociatedFarmValue = {
+            farmId: null,
+            displayName: null
+        };
+
         this._initLoaders();
         this._initModel();
     }
 
     $onInit () {
         this.previousState = this.CloudNavigation.getPreviousState();
+        this.creationRules.load();
         this.privateNetwork.load()
             .then(() => {
                 _.forEach(_.keys(this.model), key => {
                     this.model[key].value = this.privateNetwork.data[key];
                 });
+
+                return this.privateNetworkFarms.load();
+            })
+            .then(() => {
+                if (!this.privateNetworkFarms.data.length) {
+                    this.model.farmId.value = [this.defaultAssociatedFarmValue];
+                    return;
+                }
+
+                _.forEach(this.privateNetworkFarms.data, farm => {
+                    farm.displayName = farm.displayName || farm.farmId;
+                });
+                this.model.farmId.value = this.privateNetworkFarms.data;
             });
 
-        this.farms.load();
+        this.farms.load()
+            .then(() => {
+                _.forEach(this.farms.data, farm => {
+                    farm.displayName = farm.displayName || farm.farmId;
+                });
+            });
     }
 
     submit () {
@@ -47,7 +71,28 @@ class IpLoadBalancerVrackEditCtrl {
     }
 
     loading () {
-        return this.privateNetwork.loading;
+        return this.creationRules.loading || this.privateNetwork.loading;
+    }
+
+    getAvailableFarm (forceValue) {
+        const filteredValue = _.filter(this.farms.data, farm => !_.includes(_.map(this.model.farmId.value, value => value.farmId), farm.farmId));
+        if (forceValue) {
+            filteredValue.push(_.find(this.farms.data, farm => farm.farmId === forceValue));
+        }
+        return filteredValue;
+    }
+
+    canAddFarm () {
+        const availableFarmCount = this.getAvailableFarm().length;
+        return availableFarmCount > 0 && this.model.farmId.value.length < this.farms.data.length;
+    }
+
+    addFarm () {
+        this.model.farmId.value.push(_.clone(this.defaultAssociatedFarmValue));
+    }
+
+    removeFarm (index) {
+        this.model.farmId.value.splice(index, 1);
     }
 
     _addNetwork () {
@@ -61,17 +106,32 @@ class IpLoadBalancerVrackEditCtrl {
     _getCleanModel () {
         const cleanModel = {};
         _.forEach(_.keys(this.model), key => {
-            if (!this.model[key].disabled) {
-                cleanModel[key] = this.model[key].value;
+            if (!this.model[key].disabled()) {
+                switch (this.model[key]) {
+                    case "farmId":
+                        cleanModel[key] = _.map(cleanModel.farmId, farm => farm.farmId);
+                        break;
+                    default:
+                        cleanModel[key] = this.model[key].value;
+                }
             }
         });
+
         cleanModel.vrackNetworkId = this.networkId;
         return cleanModel;
     }
 
     _initLoaders () {
+        this.creationRules = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerVrackService.getNetworkCreationRules(this.serviceName)
+        });
+
         this.privateNetwork = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.editing() ? this.IpLoadBalancerVrackService.getPrivateNetwork(this.serviceName, this.networkId) : this.$q.when({})
+        });
+
+        this.privateNetworkFarms = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.editing() ? this.IpLoadBalancerVrackService.getPrivateNetworkFarms(this.serviceName, this.networkId) : this.$q.when([])
         });
 
         this.farms = this.ControllerHelper.request.getArrayLoader({
@@ -89,7 +149,7 @@ class IpLoadBalancerVrackEditCtrl {
                 required: false,
                 minLength: 0,
                 maxLength: 100,
-                disabled: false,
+                disabled: () => this.creationRules.data.status !== "active",
                 inputSize: 4
             },
             vlan: {
@@ -100,7 +160,7 @@ class IpLoadBalancerVrackEditCtrl {
                 required: false,
                 minLength: 0,
                 maxLength: Infinity,
-                disabled: false,
+                disabled: () => this.creationRules.data.status !== "active",
                 helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_vlan_helper"),
                 inputSize: 1
             },
@@ -112,7 +172,7 @@ class IpLoadBalancerVrackEditCtrl {
                 required: true,
                 minLength: 0,
                 maxLength: Infinity,
-                disabled: this.editing(),
+                disabled: () => this.editing() && this.creationRules.data.status !== "active",
                 helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_subnet_helper"),
                 inputSize: 2
             },
@@ -124,14 +184,14 @@ class IpLoadBalancerVrackEditCtrl {
                 required: true,
                 minLength: 0,
                 maxLength: Infinity,
-                disabled: false,
+                disabled: () => this.creationRules.data.status !== "active",
                 helperText: this.$translate.instant("iplb_vrack_private_network_add_edit_field_nat_ip_helper"),
                 inputSize: 2
             },
             farmId: {
                 label: "Ferme de serveurs",
                 value: [],
-                disabled: false
+                disabled: () => false
             }
         };
     }

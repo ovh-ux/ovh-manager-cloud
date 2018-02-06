@@ -1,7 +1,10 @@
 class IpLoadBalancerVrackService {
-    constructor ($q, IpLoadBalancerServerFarmService, OvhApiIpLoadBalancingVrack, OvhApiVrack, ServiceHelper) {
+    constructor ($q, CloudPoll, IpLoadBalancerServerFarmService, OvhApiIpLoadBalancing, OvhApiIpLoadBalancingTask, OvhApiIpLoadBalancingVrack, OvhApiVrack, ServiceHelper) {
         this.$q = $q;
+        this.CloudPoll = CloudPoll;
         this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
+        this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
+        this.OvhApiIpLoadBalancingTask = OvhApiIpLoadBalancingTask;
         this.OvhApiIpLoadBalancingVrack = OvhApiIpLoadBalancingVrack;
         this.OvhApiVrack = OvhApiVrack;
         this.ServiceHelper = ServiceHelper;
@@ -12,7 +15,13 @@ class IpLoadBalancerVrackService {
             serviceName: vrackName
         }, {
             ipLoadbalancing: serviceName
-        }).$promise
+        })
+            .$promise
+            .then(task => {
+                const response = task.data;
+                response.poll = () => this._getVrackTaskPoller(response);
+                return response;
+            })
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_associate_vrack_error"));
     }
 
@@ -23,6 +32,11 @@ class IpLoadBalancerVrackService {
                 serviceName: response.vrackName,
                 ipLoadbalancing: serviceName
             }).$promise)
+            .then(task => {
+                const response = task.data;
+                response.poll = () => this._getVrackTaskPoller(response);
+                return response;
+            })
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_deassociate_vrack_error"));
     }
 
@@ -35,6 +49,7 @@ class IpLoadBalancerVrackService {
             .$promise
             .then(response => this.$q.all({
                 vrack: this.OvhApiVrack.Lexi().get({ serviceName: response.vrackName }).$promise,
+                iplb: this.OvhApiIpLoadBalancing.Lexi().get({ serviceName }).$promise,
                 rules: this.$q.when(response)
             }))
             .then(response => ({
@@ -42,15 +57,17 @@ class IpLoadBalancerVrackService {
                 remainingNetworks: response.rules.remainingNetworks,
                 minNatIps: response.rules.minNatIps,
                 status: "active",
-                displayName: response.vrack.name || response.rules.vrackName
+                displayName: response.vrack.name || response.rules.vrackName,
+                vrackEligibility: response.iplb.vrackEligibility
             }))
             .catch(error => {
-                //  I have no ther choice.  404 error is API way to say creationRules aren't available since we have no vrack associated.
+                //  404 error is API way to say creationRules aren't available since we have no vrack associated.
                 if (error.status === 404) {
                     return {
                         networkId: null,
                         status: "inactive",
-                        displayName: null
+                        displayName: null,
+                        vrackEligibility: false
                     };
                 }
                 return this.ServiceHelper.errorHandler("iplb_vrack_rules_loading_error")(error);
@@ -84,6 +101,11 @@ class IpLoadBalancerVrackService {
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_loading_error"));
     }
 
+    getPrivateNetworkFarms (serviceName, networkId) {
+        return this._getPrivateNetwork(serviceName, networkId)
+            .then(privateNetwork => this.IpLoadBalancerServerFarmService.getServerFarms(serviceName, privateNetwork.vrackNetworkId));
+    }
+
     addPrivateNetwork (serviceName, network) {
         return this.OvhApiIpLoadBalancingVrack.Lexi().post({ serviceName }, _.omit(network, ["vrackNetworkId", "farmId"]))
             .$promise
@@ -112,6 +134,20 @@ class IpLoadBalancerVrackService {
                 response.displayName = response.displayName || response.vrackNetworkId;
                 return response;
             });
+    }
+
+    _getVrackTaskPoller (task) {
+        return this.CloudPoll.poll({
+            item: task,
+            pollFunction: () => this.OvhApiVrack.Lexi().task({ serviceName: task.serviceName, taskId: task.id })
+                .$promise
+                .catch(() => ({
+                    id: task.id,
+                    serviceName: task.serviceName,
+                    status: "done"
+                })),
+            stopCondition: item => item.status === "done"
+        }).$promise;
     }
 }
 
