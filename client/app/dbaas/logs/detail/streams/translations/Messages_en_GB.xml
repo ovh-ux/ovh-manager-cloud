@@ -16,6 +16,7 @@
     <translation id="logs_streams_no_streams">No data feeds added</translation>
     <translation id="logs_streams_col_shared">Shared stream</translation>
 
+    <translation id="logs_streams_manage_alerts">Manage alerts</translation>
     <translation id="logs_streams_follow_live">Follow live</translation>
     <translation id="logs_streams_graylog_access">Access Graylog</translation>
     <translation id="logs_streams_copy_token">Copy the writing token</translation>
