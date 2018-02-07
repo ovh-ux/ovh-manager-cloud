@@ -29,7 +29,9 @@
             </div>
             <div class="cui-box-line"></div>          
             <div class="cui-box-footer m-2">
-                <span class="cui-box-footer__price">{{offer.prices[0].price.text}}</span> /{{'logs_offer_month' | translate}}
+                <span data-ng-repeat="price in offer.prices">
+                    <span class="cui-box-footer__price" ng-if="price.capacities.indexOf('renew') > -1">{{price.price.text}}</span>
+                </span>
             </div>
         </div>
     </div>
