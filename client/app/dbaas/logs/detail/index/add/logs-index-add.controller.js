@@ -22,6 +22,7 @@ class LogsIndexAddModalCtrl {
     clearIndex () {
         this.index.description = "";
         this.index.alertNotifyEnabled = false;
+        this.index.suffix = "";
     }
 
     populateIndex () {

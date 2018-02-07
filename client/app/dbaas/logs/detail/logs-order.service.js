@@ -16,7 +16,7 @@ class LogsOrderService {
     }
 
     getOrder (serviceName) {
-        return this.OvhApiDbaasLogsOrder.get({
+        return this.OvhApiDbaasLogsOrder.query({
             serviceName
         }).$promise
             .then(result => {
