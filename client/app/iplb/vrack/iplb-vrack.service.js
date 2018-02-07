@@ -49,7 +49,6 @@ class IpLoadBalancerVrackService {
             .$promise
             .then(response => this.$q.all({
                 vrack: this.OvhApiVrack.Lexi().get({ serviceName: response.vrackName }).$promise,
-                iplb: this.OvhApiIpLoadBalancing.Lexi().get({ serviceName }).$promise,
                 rules: this.$q.when(response)
             }))
             .then(response => ({
@@ -57,21 +56,24 @@ class IpLoadBalancerVrackService {
                 remainingNetworks: response.rules.remainingNetworks,
                 minNatIps: response.rules.minNatIps,
                 status: "active",
-                displayName: response.vrack.name || response.rules.vrackName,
-                vrackEligibility: response.iplb.vrackEligibility
+                displayName: response.vrack.name || response.rules.vrackName
             }))
             .catch(error => {
                 //  404 error is API way to say creationRules aren't available since we have no vrack associated.
                 if (error.status === 404) {
-                    return {
+                    return this.$q.when({
                         networkId: null,
                         status: "inactive",
-                        displayName: null,
-                        vrackEligibility: false
-                    };
+                        displayName: null
+                    });
                 }
-                return this.ServiceHelper.errorHandler("iplb_vrack_rules_loading_error")(error);
-            });
+                return this.$q.reject(error);
+            })
+            .then(response => this.OvhApiIpLoadBalancing.Lexi().get({ serviceName }).$promise.then(iplb => { 
+                response.vrackEligibility = iplb.vrackEligibility;
+                return response;
+            }))
+            .catch(this.ServiceHelper.errorHandler("iplb_vrack_rules_loading_error"));
     }
 
     getPrivateNetworks (serviceName) {

@@ -1,10 +1,11 @@
 class IpLoadBalancerVrackCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, IpLoadBalancerVrackService) {
+    constructor ($state, $stateParams, $translate, ControllerHelper, IpLoadBalancerVrackService, IpLoadBalancerVrackHelper) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
+        this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
 
         this.serviceName = $stateParams.serviceName;
 
@@ -31,14 +32,15 @@ class IpLoadBalancerVrackCtrl {
         this.actions = {
             activateVrack: {
                 text: this.$translate.instant("common_activate"),
-                callback: () => this.ControllerHelper.modal.showVrackActivateModal(),
+                callback: () => this.ControllerHelper.modal.showVrackActivateModal()
+                    .then(() => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, undefined, this.creationRules.data)),
                 isAvailable: () => !this.creationRules.loading && !this.creationRules.hasErrors && this.creationRules.data.vrackEligibility &&
                     this.creationRules.data.status === "inactive"
             },
             deActivateVrack: {
                 text: this.$translate.instant("common_deactivate"),
                 callback: () => this.ControllerHelper.modal.showVrackDeactivateModal(this.creationRules.data)
-                    .then(() => this._deAssociateVrack()),
+                    .then(() => this.IpLoadBalancerVrackHelper.deAssociateVrack(this.serviceName, this.creationRules.data)),
                 isAvailable: () => !this.creationRules.loading && !this.creationRules.hasErrors && this.creationRules.data.status === "active"
             },
             addPrivateNetwork: {
@@ -49,7 +51,7 @@ class IpLoadBalancerVrackCtrl {
             editPrivateNetwork: {
                 text: this.$translate.instant("common_modify"),
                 callback: network => this.$state.go("network.iplb.detail.vrack.edit", { serviceName: this.serviceName, networkId: network.vrackNetworkId }),
-                isAvailable: () => true
+                isAvailable: () => !this.creationRules.loading && _.includes(["active", "inactive"], this.creationRules.data.status)
             },
             deletePrivateNetwork: {
                 text: this.$translate.instant("common_delete"),
@@ -58,33 +60,9 @@ class IpLoadBalancerVrackCtrl {
                     text: this.$translate.instant("iplb_vrack_private_network_delete_text")
                 })
                     .then(() => this._deletePrivateNetwork(network)),
-                isAvailable: () => true
+                isAvailable: () => !this.creationRules.loading && _.includes(["active", "inactive"], this.creationRules.data.status)
             }
         };
-    }
-
-    _associateVrack (network = { networkId: "pn-16343", displayName: "someName" }) {
-        this.IpLoadBalancerVrackService.associateVrack(this.serviceName, network.networkId)
-            .then(task => {
-                this.creationRules.data.status = "activating";
-                return task.poll();
-            })
-            .then(() => this.IpLoadBalancerVrackService.getNetworkCreationRules(this.serviceName, { resetCache: true }))
-            .then(creationRules => {
-                this.creationRules.data = creationRules;
-            });
-    }
-
-    _deAssociateVrack () {
-        this.IpLoadBalancerVrackService.deAssociateVrack(this.serviceName)
-            .then(task => {
-                this.creationRules.data.status = "deactivating";
-                return task.poll();
-            })
-            .then(() => this.IpLoadBalancerVrackService.getNetworkCreationRules(this.serviceName, { resetCache: true }))
-            .then(creationRules => {
-                this.creationRules.data = creationRules;
-            });
     }
 
     _deletePrivateNetwork (network) {

@@ -1,6 +1,8 @@
 <button data-ng-click="$ctrl._associateVrack()">Associate vrack TEST</button>
 <button data-ng-click="$ctrl._deAssociateVrack()">Deassociate vrack TEST</button>
 
+TEST {{ $ctrl.creationRules.data }}
+test2 {{ $ctrl.actions.editPrivateNetwork.isAvailable() }}
 <section class="cui-page__content iplb-vrack">
     <cui-page-content-title text="'iplb_vrack_title' | translate"></cui-page-content-title>
     <p>
@@ -24,8 +26,10 @@
             <dt data-translate="iplb_vrack_box_title"></dt>
             <dd>
                 <cui-skeleton data-ng-if="$ctrl.creationRules.loading" loading="true" data-width="100%"></cui-skeleton>
-                <span data-ng-if="!$ctrl.creationRules.loading" data-translate="{{ 'iplb_vrack_box_status_' + $ctrl.creationRules.data.status }}"></span>
-                <small data-ng-if="$ctrl.creationRules.data.status === 'active'">({{ $ctrl.creationRules.data.displayName }})</small>
+                <span data-ng-if="!$ctrl.creationRules.loading">
+                    <span data-translate="{{ 'iplb_vrack_box_status_' + $ctrl.creationRules.data.status }}"></span>
+                    <small data-ng-if="$ctrl.creationRules.data.status === 'active'">({{ $ctrl.creationRules.data.displayName }})</small>
+                </span>
             </dd>
         </dl>
         <cui-action-button class="iplb-vrack__box-button"

@@ -63,7 +63,7 @@ class IpLoadBalancerVrackEditCtrl {
     }
 
     isLoading () {
-        return false;
+        return this.privateNetwork.loading || this.creationRules.loading;
     }
 
     editing () {
