@@ -76,10 +76,10 @@
                       data-translate-default="?"></span>
             </oui-column>
             <oui-column data-title="'ipv4'">
-                <span data-ng-bind="::$row.getPublicIpv4()"></span>
+                <span data-ng-bind="$row.getPublicIpv4()"></span>
             </oui-column>
             <oui-column data-title="'ipv6'">
-                <span data-ng-bind="::$row.getPublicIpv6()"></span>
+                <span data-ng-bind="$row.getPublicIpv6()"></span>
             </oui-column>
             <oui-column data-title="'cpci_vm_hdd' | translate" data-property="volumes">
                 <span data-ng-bind="$row.volumes.length"
@@ -88,31 +88,33 @@
                       data-ng-if="$row.volumes.length === 1"></span>
             </oui-column>
             <oui-column data-title="'cpci_vm_price' | translate" data-property="price">
-                <span data-ng-if="$row.status !== 'DRAFT' && $row.monthlyBilling.status !== 'ok' && $row.monthlyBilling.status !== 'activationPending'"
+                <span data-ng-if="$row.status !== 'DRAFT' && !$row.monthlyBillingBoolean"
                       data-translate="cpci_vm_flavor_price"
                       data-translate-values="{ price: $row.price.price.text || '?' }">
                 </span>
-                <span data-ng-if="$row.status !== 'DRAFT' && $row.monthlyBilling.status === 'ok'"
+                <span data-ng-if="$row.status !== 'DRAFT' && $row.monthlyBillingBoolean"
                       data-translate="cpci_vm_flavor_month"
-                      data-translate-values="{ price: ($row.price.monthlyPrice.text || $row.price.price.text) || '?' }">
-                </span>
-                <span class="text-center"
-                      data-ng-if="$row.monthlyBilling.status === 'activationPending'">
-                    <oui-spinner data-size="s" data-inline="true"></oui-spinner>
+                      data-translate-values="{ price: $row.price.monthlyPrice.text || $row.price.price.text || '?' }">
                 </span>
             </oui-column>
             <oui-column data-title="'cpci_vm_status' | translate" data-property="status">
                 <span class="label label-success"
-                      data-ng-if="$row.status === 'ACTIVE'">Ok</span>
+                      data-ng-if="$row.status === 'ACTIVE' && $row.monthlyBilling.status !== 'activationPending'">Ok</span>
+                <span class="label label-info"
+                      data-translate="cpci_vm_status_UPDATING"
+                      data-ng-if="$row.status === 'ACTIVE' && $row.monthlyBilling.status === 'activationPending'"></span>
                 <span class="label label-info"
                       data-translate="cpci_vm_status_REBOOT"
                       data-ng-if="$row.status === 'REBOOT' || $row.status === 'HARD_REBOOT' || $row.status === 'RESCUING' || $row.status === 'UNRESCUING'"></span>
+                <span class="label label-info"
+                      data-translate="cpci_vm_status_{{ $row.status }}"
+                      data-ng-if="$row.status === 'BUILD' || $row.status === 'REBUILD'"></span>
                 <span class="label label-warning"
                       data-translate="cpci_vm_status_{{ $row.status }}"
                       data-ng-if="$row.status === 'RESCUE' || $row.status === 'SNAPSHOTTING'"></span>
                 <span class="label label-danger"
                       data-translate="cpci_vm_status_{{ $row.status }}"
-                      data-ng-if="$row.status === 'ERROR'"></span>
+                      data-ng-if="$row.status === 'ERROR' || $row.status === 'DELETING'"></span>
             </oui-column>
             <oui-action-menu data-align="end" data-compact>
                 <oui-action-menu-item data-text="{{ 'cpci_vm_action_edit' | translate }}"
