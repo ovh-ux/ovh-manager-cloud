@@ -81,7 +81,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                                     }, {
                                         label: "description",
                                         value: self.model.description
-                                }).$promis);
+                                }).$promise);
                         }
                         
                         if (self.model.voucher && response.prices.withTax.value) {
