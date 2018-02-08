@@ -12,6 +12,6 @@
    <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Per accedere al tuo server "{{vmName}}" in modalità Rescue, utilizza <br/><code>ssh {{user}}@{{ip}}</code> con la tua password temporanea {{pwd}} (in seguito non ti sarà più comunicata). Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
    <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Per accedere al tuo server {{vmName}} in modalità Rescue, utilizza <br/><code>rdesktop {{ip}}</code> con la tua chiave SSH abituale. Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Per accedere al tuo server {{vmName}} in modalità Rescue, utilizza <br/><code>rdesktop {{ip}}</code> con la tua password temporanea {{pwd}} (in seguito non ti sarà più comunicata). Attenzione: solo il disco principale è accessibile in questa modalità.</translation>
-   <translation id="cpc_rescue_mode_error">Oups! Nous n'arrivons pas à redémarrer votre serveur en mode rescue : {{message}}</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="453705">Ops! Impossibile riavviare il server in modalità Rescue: {{message}}</translation>
 
 </translations>
