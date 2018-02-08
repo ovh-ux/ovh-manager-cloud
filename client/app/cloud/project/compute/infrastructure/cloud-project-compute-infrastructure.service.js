@@ -1,6 +1,7 @@
 class CloudProjectComputeInfrastructureService {
-    constructor ($rootScope, $translate, $uibModal, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper) {
+    constructor ($rootScope, $state, $translate, $uibModal, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper) {
         this.$rootScope = $rootScope;
+        this.$state = $state;
         this.$translate = $translate;
         this.$uibModal = $uibModal;
         this.CloudMessage = CloudMessage;
@@ -9,8 +10,29 @@ class CloudProjectComputeInfrastructureService {
         this.ServiceHelper = ServiceHelper;
     }
 
+    buyIpFailOver () {
+        return this.$uibModal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html",
+            controller: "CloudProjectComputeInfrastructureIpFailoverBuyCtrl",
+            controllerAs: "CPCIIpFailoverBuyCtrl"
+        }).result;
+    }
+
+    importIpFailOver (pendingImportIps) {
+        return this.$uibModal.open({
+            windowTopClass: "cui-modal",
+            templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html",
+            controller: "CloudProjectComputeInfrastructureIpFailoverImportCtrl",
+            controllerAs: "CPCIIpFailoverImportCtrl",
+            resolve: {
+                pendingImportIps: () => angular.copy(pendingImportIps)
+            }
+        }).result;
+    }
+
     openLoginInformations (vm) {
-        this.$uibModal.open({
+        return this.$uibModal.open({
             templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/loginInformation/cloud-project-compute-infrastructure-virtual-machine-login-information.html",
             controller: "CloudProjectComputeInfrastructureVirtualMachineLoginInformationCtrl",
             controllerAs: "VmLoginInformationCtrl",
@@ -23,16 +45,16 @@ class CloudProjectComputeInfrastructureService {
                     image: vm.image
                 })
             }
-        });
+        }).result;
     }
 
     openDeleteProjectModal () {
-        this.$uibModal.open({
+        return this.$uibModal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/delete/cloud-project-delete.html",
             controller: "CloudProjectDeleteCtrl",
             controllerAs: "CloudProjectDeleteCtrl"
-        });
+        }).result;
     }
 
     openMonthlyConfirmation (vm) {
@@ -50,7 +72,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     openSnapshotWizard (vm) {
-        this.$uibModal.open({
+        return this.$uibModal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/snapshot/add/cloud-project-compute-snapshot-add.html",
             controller: "CloudProjectComputeSnapshotAddCtrl",
@@ -58,11 +80,11 @@ class CloudProjectComputeInfrastructureService {
             resolve: {
                 params: () => vm
             }
-        });
+        }).result;
     }
 
     openVnc (vm) {
-        this.$uibModal.open({
+        return this.$uibModal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/vnc/cloud-project-compute-infrastructure-virtual-machine-vnc.html",
             controller: "CloudProjectComputeInfrastructureVirtualmachineVncCtrl",
@@ -71,7 +93,7 @@ class CloudProjectComputeInfrastructureService {
             resolve: {
                 params: () => vm
             }
-        });
+        }).result;
     }
 
     rebootVirtualMachine (vm, type) {
@@ -108,7 +130,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     rescueMode (vm) {
-        this.$uibModal.open({
+        return this.$uibModal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/rescue/cloud-project-compute-infrastructure-virtual-machine-rescue.html",
             controller: "CloudProjectComputeInfrastructureVirtualmachineRescueCtrl",
@@ -117,7 +139,7 @@ class CloudProjectComputeInfrastructureService {
             resolve: {
                 params: () => vm
             }
-        });
+        }).result;
     }
 
     resumeVirtualMachine (vm) {
@@ -132,7 +154,7 @@ class CloudProjectComputeInfrastructureService {
 
     stopRescueMode (vm, enable) {
         _.set(vm, "confirmLoading", true);
-        this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable)
+        return this.CloudProjectComputeInfrastructureOrchestrator.rescueVm(vm, enable)
             .then(() => {
                 _.set(vm, "confirm", null);
             })
@@ -140,6 +162,42 @@ class CloudProjectComputeInfrastructureService {
             .finally(() => {
                 vm.confirmLoading = false;
             });
+    }
+
+    addVirtualMachine () {
+        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+            createNewVm: true,
+            createNewVolume: false,
+            editVm: null,
+            monitorVm: null
+        });
+    }
+
+    addVolume () {
+        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+            createNewVm: false,
+            createNewVolume: true,
+            editVm: null,
+            monitorVm: null
+        });
+    }
+
+    editVirtualMachine (vmId) {
+        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+            createNewVm: false,
+            createNewVolume: false,
+            editVm: vmId,
+            monitorVm: null
+        });
+    }
+
+    monitorVirtualMachine (vmId) {
+        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+            createNewVm: false,
+            createNewVolume: false,
+            editVm: null,
+            monitorVm: vmId
+        });
     }
 }
 

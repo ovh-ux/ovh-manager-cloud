@@ -421,15 +421,16 @@
                         this.openVncWithId(this.$stateParams.openVncWithId);
                     }
 
-                    // check if we need to display the volume creation popup
-                    if (this.$stateParams.createNewVolume) {
+                    if (this.$stateParams.createNewVm) {
+                        this.addVirtualMachine();
+                    } else if (this.$stateParams.createNewVolume) { // check if we need to display the volume creation popup
                         this.addVolume();
                     } else if (this.$stateParams.createNewVolumeFromSnapshot.snapshot) {
                         this.addVolumeFromSnapshot(this.$stateParams.createNewVolumeFromSnapshot.snapshot);
-                    }
-
-                    if (this.$stateParams.createNewVm) {
-                        this.addVirtualMachine();
+                    } else if (_.isString(this.$stateParams.editVm) && !_.isEmpty(this.$stateParams.editVm)) {
+                        this.toggleVmEditionState(this.infra.vrack.publicCloud.items[this.$stateParams.editVm]);
+                    } else if (_.isString(this.$stateParams.monitorVm) && !_.isEmpty(this.$stateParams.monitorVm)) {
+                        this.openVmMonitoringPanel(this.infra.vrack.publicCloud.items[this.$stateParams.monitorVm]);
                     }
 
                     if (this.CLOUD_MONITORING.alertingEnabled) {
@@ -706,25 +707,8 @@
 
         // ------- IPS ACTIONS -------
 
-        buyIpFailOver () {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html",
-                controller: "CloudProjectComputeInfrastructureIpFailoverBuyCtrl",
-                controllerAs: "CPCIIpFailoverBuyCtrl"
-            });
-        }
-
         importIpFailover () {
-            this.$uibModal.open({
-                windowTopClass: "cui-modal",
-                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/import/cloud-project-compute-infrastructure-ip-failover-import.html",
-                controller: "CloudProjectComputeInfrastructureIpFailoverImportCtrl",
-                controllerAs: "CPCIIpFailoverImportCtrl",
-                resolve: {
-                    pendingImportIps: () => angular.copy(this.importedIpFailoverPending)
-                }
-            }).result.then(listTasksListIpsWithTasks => {
+            this.InfrastructureService.importIpFailOver(this.importedIpFailoverPending).then(listTasksListIpsWithTasks => {
                 // Launch polling
                 _.forEach(listTasksListIpsWithTasks, ipWithTask => {
                     this.pollImportIpFailOver(this.$stateParams.projectId, ipWithTask.ip, ipWithTask.task);

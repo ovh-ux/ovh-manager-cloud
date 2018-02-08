@@ -20,7 +20,9 @@ angular.module("managerApp")
                     // pass snapshot data to display restore volume popover
                     createNewVolumeFromSnapshot: { snapshot: null },
                     // true to indicate that we want to display the add VM popover
-                    createNewVm: false
+                    createNewVm: false,
+                    editVm: null,
+                    monitorVm: null
                 },
                 translations: ["common",
                     "cloud/project/compute/snapshot/add",
