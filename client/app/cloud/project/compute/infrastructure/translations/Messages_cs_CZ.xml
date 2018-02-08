@@ -17,11 +17,11 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Importovat IP Failover OVH</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Nákup IP Failover Cloud</translation>
 
-   <translation id="cpci_menu_view_label">Vue</translation>
-   <translation id="cpci_menu_view_diagram">Infrastructure</translation>
-   <translation id="cpci_menu_view_list">Liste</translation>
+   <translation id="cpci_menu_view_label" qtlid="453718">Zobrazení</translation>
+   <translation id="cpci_menu_view_diagram" qtlid="125552">Infrastruktura</translation>
+   <translation id="cpci_menu_view_list" qtlid="358942">Seznam</translation>
 
-   <translation id="cpci_errors_init_title" qtlid="247040">Při získávání informací o Vaší infrastruktuře došlo k chybě.</translation>
+   <translation id="cpci_errors_init_title" qtlid="247040">Při získávání informací o Vaší infrastruktuře došlo k chybě</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Zkuste to prosím později.</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">Pokud problém přetrvává, kontaktujte podporu <a href="{{url}}">kliknutím sem</a>.</translation>
 
@@ -29,7 +29,7 @@
    <translation id="cpci_collapse_all_vms" qtlid="250550">Skrýt všechny virtuální servery</translation>
 
    <translation id="cloud_public_ip_v6_gateway" qtlid="377605">Gateway: {{gateway}}</translation>
-   <translation id="cloud_public_ip_loadBalancing" qtlid="247105">IP LB</translation>
+   <translation id="cloud_public_ip_loadBalancing" qtlid="247105">IPLB</translation>
    <translation id="cloud_public_ip_failover" qtlid="186258">Failover</translation>
    <translation id="cloud_public_ip_failover_reverse" qtlid="273583">Reverzní DNS: {{ip}}</translation>
    <translation id="cloud_public_ip_failover_reverse_loading" qtlid="8410">Načítání...</translation>
@@ -50,16 +50,16 @@
    <translation id="cloud_ip_action_automatic" qtlid="257523">automatique</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">manuel</translation>
 
-   <translation id="cpci_vm_name">Nom</translation>
-   <translation id="cpci_vm_region">Localisation</translation>
-   <translation id="cpci_vm_flavor_category">Modèle</translation>
-   <translation id="cpci_vm_price">Prix</translation>
-   <translation id="cpci_vm_hdd">Disque dur attaché</translation>
-   <translation id="cpci_vm_status">Statut</translation>
-   <translation id="cpci_vm_status_ERROR">En erreur</translation>
-   <translation id="cpci_vm_status_REBOOT">Redémarrage</translation>
-   <translation id="cpci_vm_status_RESCUE">Rescue</translation>
-   <translation id="cpci_vm_status_SNAPSHOTTING">Snapshot</translation>
+   <translation id="cpci_vm_name" qtlid="3818">Název</translation>
+   <translation id="cpci_vm_region" qtlid="168237">Umístění</translation>
+   <translation id="cpci_vm_flavor_category" qtlid="26143">Model</translation>
+   <translation id="cpci_vm_price" qtlid="83913">Cena</translation>
+   <translation id="cpci_vm_hdd" qtlid="453731">Připojený pevný disk</translation>
+   <translation id="cpci_vm_status" qtlid="26443">Stav</translation>
+   <translation id="cpci_vm_status_ERROR" qtlid="45508">Chyba</translation>
+   <translation id="cpci_vm_status_REBOOT" qtlid="26287">Restartováno</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Neznámý stav ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Neznámý stav ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -323,18 +323,19 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Vymazat tento server</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">Tento server bude vymazán za několik sekund.</translation>
-   <translation id="cpci_vm_delete_submit_error">Une erreur est survenue lors de la demande de suppression de ce serveur : {{message}}</translation>
+   <translation id="cpci_vm_delete_submit_error" qtlid="453744">Při vytváření požadavku na odstranění serveru došlo k následující chybě: {{message}}</translation>
 
    <translation id="cpci_vm_reinstall_warn" qtlid="247755">Všechna data budou vymazána!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Reinstalace</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">Tento server bude za chvíli reinstalován.</translation>
-   <translation id="cpci_vm_reinstall_submit_error">Une erreur est survenue lors de la demande de réinstallation de ce serveur : {{message}}</translation>
+   <translation id="cpci_vm_reinstall_submit_error" qtlid="453757">Při vytváření požadavku na reinstalaci serveru došlo k následující chybě: {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Reboot tohoto serveru</translation>
-   <translation id="cpci_vm_reboot_submit_success">La demande de redémarrage du serveur a bien été prise en compte.</translation>
-   <translation id="cpci_vm_reboot_submit_error">Une erreur est survenue lors de la demande de redémarrage de ce serveur : {{message}}</translation>
+   <translation id="cpci_vm_reboot_submit_success" qtlid="453770">Požadavek na restart serveru byl přijat.</translation>
+   <translation id="cpci_vm_reboot_submit_error" qtlid="453783">Při vytváření požadavku na restart serveru došlo k následující chybě: {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">Při aktivaci tohoto serveru se vyskytla neočekávaná chyba.</translation>
-   <translation id="cpci_vm_rescue_end_error">Oups! Nous n'arrivons pas à sortir le serveur du mode rescue : {{message}}</translation>
+   <translation id="cpci_vm_rescue_end_error" qtlid="453796">Při pokusu o nabootování serveru do normálního režimu došlo k následující chybě: {{message}}&#13;
+</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">Pro připojení ke stroji otevřete terminál a zadejte příkaz:<br/><code>ssh {{user}}@{{ip}}</code></translation>
    <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">Při prvním přihlášení musíte <a href="{{route}}">použít konzoli VNC</a> a dokončit konfiguraci Windows. Poté použijte RDP klient dle svého výběru, v terminálu Linuxu například:<br/><code>rdesktop {{ip}}</code></translation>
@@ -353,7 +354,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Softwarový restart</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Obnovit</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Hardwarový restart</translation>
-   <translation id="cpci_vm_confirm_reboot">Vous allez redémarrer votre instance <strong>{{name}}</strong>.</translation>
+   <translation id="cpci_vm_confirm_reboot" qtlid="453809">Chystáte se restartovat svou instanci <strong>{{name}}</strong>.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Přístupové údaje</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">VNC konzole</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Reboot do režimu rescue</translation>

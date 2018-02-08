@@ -12,6 +12,6 @@
    <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">To access your "{{vmName}}" server in rescue mode, use  :<br/><code>ssh {{user}}@{{ip}}</code> with the temporary password {{pwd}} (this will not be sent to you again). Warning, only the primary disk will be available in this mode.</translation>
    <translation id="cpc_rescue_mode_success_windows" qtlid="296141">To access your {{vmName}} server in rescue mode, use :<br/><code>rdesktop {{ip}}</code> with the regular SSH key. Warning, only the primary disk will be available in this mode.</translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">To access your {{vmName}} server in rescue mode, use :<br/><code>rdesktop {{ip}}</code> with the temporary password {{pwd}} (this will not be sent to you again). Warning, only the primary disk will be available in this mode.</translation>
-   <translation id="cpc_rescue_mode_error">Oups! Nous n'arrivons pas à redémarrer votre serveur en mode rescue : {{message}}</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="453705">Oops! We were unable to reboot your server in rescue mode: {{message}}</translation>
 
 </translations>

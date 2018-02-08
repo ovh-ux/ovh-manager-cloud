@@ -19,7 +19,7 @@
    <translation id="veeam_infos_subscription_renew_manual_description" qtlid="219797">Ručně</translation>
    <translation id="veeam_infos_subscription_renew_automatic_description" qtlid="134215">Automatické</translation>
    <translation id="veeam_table_storage" qtlid="403762">Diskový prostor</translation>
-   <translation id="veeam_table_usage" qtlid="30382">Použito</translation>
+   <translation id="veeam_table_usage" qtlid="30382">Využití</translation>
    <translation id="veeam_table_datacenter" qtlid="403931">Replikační datacentrum</translation>
    <translation id="veeam_table_action" qtlid="56105">Akce</translation>
    <translation id="veeam_storage_list_load_error" qtlid="403944">Při načítání úložišť došlo k chybě.</translation>

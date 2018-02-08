@@ -419,7 +419,7 @@
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">Identifikátor</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Název</translation>
-   <translation id="vps_tab_backup_storage_usage" qtlid="30382">Použito</translation>
+   <translation id="vps_tab_backup_storage_usage" qtlid="30382">Využití</translation>
    <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Není nastaven žádný přístup</translation>
    <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
    <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>

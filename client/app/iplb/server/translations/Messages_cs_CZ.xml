@@ -8,7 +8,7 @@
    <translation id="iplb_server_preview_probe" qtlid="438233">Používat sondu pro dostupnost farmy</translation>
    <translation id="iplb_server_preview_ssl" qtlid="438246">Šifrovat požadavky pomocí SSL</translation>
    <translation id="iplb_server_preview_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_server_preview_chain" qtlid="19819">Certifikační retězec</translation>
+   <translation id="iplb_server_preview_chain" qtlid="19819">Certifikační řetězec</translation>
    <translation id="iplb_server_preview_proxyProtocolVersion" qtlid="438259">Verze protokolu PROXY</translation>
    <translation id="iplb_server_preview_proxyProtocolVersion_placeholder" qtlid="17923">Zvolte</translation>
    <translation id="iplb_server_preview_weight" qtlid="438272">Poměr zatížení</translation>
@@ -29,7 +29,7 @@
    <translation id="iplb_server_edit_ssl" qtlid="438246">Šifrovat požadavky pomocí SSL</translation>
    <translation id="iplb_server_edit_cookie" qtlid="223736">Cookie</translation>
    <translation id="iplb_server_edit_cookie_tip" qtlid="438298">Hodnota určující dobu platnosti cookies</translation>
-   <translation id="iplb_server_edit_chain" qtlid="19819">Certifikační retězec</translation>
+   <translation id="iplb_server_edit_chain" qtlid="19819">Certifikační řetězec</translation>
    <translation id="iplb_server_edit_chain_tip" qtlid="438311">Hodnota certifikátu SSL Intermediary. Umožňuje ověření serverového certifikátu (prevence před útoky typu Man-in-the-middle).</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion" qtlid="438259">Verze protokolu PROXY</translation>
    <translation id="iplb_server_edit_proxyProtocolVersion_tip" qtlid="438324">Doporučená verze protokolu PROXY. Přejděte na následující odkaz: {{link}}</translation>

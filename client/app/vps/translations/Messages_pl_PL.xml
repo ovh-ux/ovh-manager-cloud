@@ -279,7 +279,7 @@
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
    <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ m-c</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Przejście do wyższego modelu jest bezpłatne. Podana cena to opłata miesięczna za każdy model. Aktualna opłata za Twoją usługę wynosi class = "bold"> {{price}} </ span></translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Przejście do wyższego modelu jest bezpłatne. Podana cena to opłata miesięczna za każdy model. Aktualna opłata za Twoją usługę wynosi <span class="bold">{{price}}</span></translation>
    <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Uwaga! nie będziesz mógł przejść na niższą ofertę VPS: można przejść tylko na wyższą ofertę.</translation>
    <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Zaakceptuj warunki korzystania z usługi.</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Zmień VPS <span class="italic normal">{{vpsName}}</span> na wyższy model {{modelName}}</translation>
