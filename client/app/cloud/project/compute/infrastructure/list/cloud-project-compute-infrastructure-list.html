@@ -13,12 +13,35 @@
                     <span data-ng-bind=":: 'common_actions' | translate"></span>
                     <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                 </button>
-                <ul class="dropdown-menu mt-0">
+                <ul class="dropdown-menu mt-0" role="menu">
+                    <li role="menuitem">
+                        <button type="button" class="btn fs14"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                                data-ng-bind=":: 'cpci_add_server' | translate"
+                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.addVirtualMachine()">
+                        </button>
+                    </li>
                     <li>
                         <button type="button" class="btn fs14"
-                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openDeleteProjectModal()"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
+                                data-ng-bind=":: 'cpci_volume_add' | translate"
+                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.addVolume()">
+                        </button>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li>
+                        <button type="button" class="btn fs14"
+                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
+                                data-ng-bind=":: 'cpci_buy_ip_failover' | translate"
+                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.buyIpFailOver()">
+                        </button>
+                    </li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="menuitem">
+                        <button type="button" class="btn fs14"
                                 at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
                                 data-ng-bind=":: 'cpb_details_project_delete' | translate"
+                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.openDeleteProjectModal()"
                                 write-right-required>
                         </button>
                     </li>
@@ -92,9 +115,13 @@
                       data-ng-if="$row.status === 'ERROR'"></span>
             </oui-column>
             <oui-action-menu data-align="end" data-compact>
-                <oui-action-menu-item data-text="{{ 'cpci_vm_action_delete' | translate }}"
-                                      data-on-click="$row.confirm = 'deleteConfirmPending'"
-                                      data-ng-if="$row.status === 'DRAFT'">
+                <oui-action-menu-item data-text="{{ 'cpci_vm_action_edit' | translate }}"
+                                      data-on-click="ComputeInfrastructureListCtrl.InfrastructureService.editVirtualMachine($row.id)"
+                                      data-ng-if="$row.status === 'ACTIVE'">
+                </oui-action-menu-item>
+                <oui-action-menu-item data-text="{{ 'cpci_vm_action_monitoring' | translate }}"
+                                      data-on-click="ComputeInfrastructureListCtrl.InfrastructureService.monitorVirtualMachine($row.id)"
+                                      data-ng-if="$row.status === 'ACTIVE'">
                 </oui-action-menu-item>
                 <oui-action-menu-item data-text="{{ 'cpci_vm_action_monthly' | translate }}"
                                       data-on-click="ComputeInfrastructureListCtrl.InfrastructureService.openMonthlyConfirmation($row)"
