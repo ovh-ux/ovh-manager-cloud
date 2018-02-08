@@ -2,9 +2,9 @@
 <translations>
    <translation id="iplb_back_home" qtlid="4118">Zpět</translation>
 
-   <translation id="iplb_guides" qtlid="300370">Průvodci</translation>
-   <translation id="iplb_guides_title" qtlid="247105">IP LB</translation>
-   <translation id="iplb_guide_footer" qtlid="406905">OVH příručky</translation>
+   <translation id="iplb_guides" qtlid="300370">Příručky</translation>
+   <translation id="iplb_guides_title" qtlid="247105">IPLB</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">Všechny OVH příručky</translation>
 
    <translation id="iplb_tab_home" qtlid="27643">Domů</translation>
    <translation id="iplb_tab_frontends" qtlid="438545">Frontendy</translation>
@@ -49,7 +49,7 @@
    <translation id="iplb_zone_select_placeholder" qtlid="17923">Zvolte</translation>
    <translation id="iplb_zone_all" qtlid="439520">Vše (ALL)</translation>
 
-   <translation id="iplb_graph_name_conn" qtlid="41530">Současných připojení</translation>
+   <translation id="iplb_graph_name_conn" qtlid="41530">Simultánní připojení</translation>
    <translation id="iplb_graph_name_reqm" qtlid="439533">Požadavky za sekundu</translation>
    <translation id="iplb_graph_no_data" qtlid="439546">Aktuálně nejsou k dispozici žádná data</translation>
 
@@ -75,7 +75,7 @@
    <translation id="iplb_status_warning_servers" qtlid="449128">{{activeCount}} / {{totalCount}} v režimu varování</translation>
    <translation id="iplb_status_help_servers" qtlid="449141">{{activeCount}} / {{totalCount}} bez informací</translation>
 
-   <translation id="iplb_status_apply" qtlid="284867">Použít konfiguraci</translation>
+   <translation id="iplb_status_apply" qtlid="284867">Aplikovat konfiguraci</translation>
    <translation id="iplb_status_details" qtlid="439611">Podrobnosti</translation>
 
    <translation id="iplb_utilisation_update_alert" qtlid="439624">Upravit limit upozornění</translation>

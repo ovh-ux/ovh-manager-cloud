@@ -50,16 +50,16 @@ class CloudProjectComputeCtrl {
             this.loadAnnouncements(me.ovhSubsidiary);
         });
 
-        return this.shouldRedirectToProjectOverview()
-            .then(redirectToOverview => {
-                this.$scope.redirectToOverview = redirectToOverview;
+        return this.shouldRedirectToProjectListView()
+            .then(redirect => {
+                this.$scope.redirectToListView = redirect;
             })
             .finally(() => {
                 this.loading = false;
             });
     }
 
-    shouldRedirectToProjectOverview () {
+    shouldRedirectToProjectListView () {
         if (this.$stateParams.forceLargeProjectDisplay) {
             return this.$q.when(false);
         }

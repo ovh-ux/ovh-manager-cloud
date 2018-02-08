@@ -11,7 +11,7 @@
    <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">Počet VM</translation>
    <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacentrum</translation>
 
-   <translation id="veeam_tiles_subscription_title" qtlid="28891">Součet</translation>
+   <translation id="veeam_tiles_subscription_title" qtlid="28891">Předplatné</translation>
    <translation id="veeam_tiles_subscription_label_renewal_date" qtlid="98300">Automatické obnovení</translation>
    <translation id="veeam_tiles_subscription_label_renewal_renew_link" qtlid="16301">Správa</translation>
    <translation id="veeam_tiles_subscription_label_renewal_warning" qtlid="403723">Vaše služba bude deaktivována za {{remainingDays}} dní.</translation>

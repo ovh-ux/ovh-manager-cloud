@@ -18,6 +18,10 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Importeer OVH Failover IP's</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Koop Cloud Failover IP's</translation>
 
+   <translation id="cpci_menu_view_label" qtlid="453718">Bekijken</translation>
+   <translation id="cpci_menu_view_diagram" qtlid="125552">Infrastructuur</translation>
+   <translation id="cpci_menu_view_list" qtlid="358942">Lijst</translation>
+
    <translation id="cpci_errors_init_title" qtlid="247040">Er is een fout opgetreden tijdens het ophalen van de gegevens van uw infrastructuur.</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Probeer het later opnieuw svp</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">Als het probleem zich blijft voordoen kunt u contact opnemen met onze tech support door <a href="{{url}}">hier</a> te klikken.</translation>
@@ -48,6 +52,17 @@
    <translation id="cloud_ip_action_sort" qtlid="257510">Sortering</translation>
    <translation id="cloud_ip_action_automatic" qtlid="257523">automatisch</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">handmatig </translation>
+
+   <translation id="cpci_vm_name" qtlid="3818">Naam</translation>
+   <translation id="cpci_vm_region" qtlid="168237">Locatie</translation>
+   <translation id="cpci_vm_flavor_category" qtlid="26143">Model</translation>
+   <translation id="cpci_vm_price" qtlid="83913">Prijs</translation>
+   <translation id="cpci_vm_hdd" qtlid="453731">Gekoppelde harde schijf</translation>
+   <translation id="cpci_vm_status" qtlid="26443">Status</translation>
+   <translation id="cpci_vm_status_ERROR" qtlid="45508">Fout</translation>
+   <translation id="cpci_vm_status_REBOOT" qtlid="26287">Herstart</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Status onbekend ({{msg}}) op "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Status onbekend ({{msg}}) op "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -312,17 +327,18 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Verwijder deze server</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">Deze server zal in enkele ogenblikken worden verwijderd.</translation>
-   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Er is een fout opgetreden bij het verzoek om deze server te verwijderen.</translation>
+   <translation id="cpci_vm_delete_submit_error" qtlid="453744">Er is een fout opgetreden tijdens het aanvragen van een serververwijdering: {{message}}</translation>
 
    <translation id="cpci_vm_reinstall_warn" qtlid="247755">Alle gegevens worden verwijderd!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Herinstalleren</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">Deze server zal binnen enkele minuten opnieuw worden geïnstalleerd.</translation>
-   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Er is een fout opgetreden bij het opnieuw installeren van deze server.</translation>
+   <translation id="cpci_vm_reinstall_submit_error" qtlid="453757">Er is een fout opgetreden tijdens het aanvragen van herinstallatie van deze server: {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Herstart deze server</translation>
-   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Er is een fout opgetreden bij het herstarten van deze server.</translation>
+   <translation id="cpci_vm_reboot_submit_success" qtlid="453770">Uw verzoek om de server opnieuw te starten is verwerkt.</translation>
+   <translation id="cpci_vm_reboot_submit_error" qtlid="453783">Er is een fout opgetreden tijdens het opnieuw opstarten van de server: {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">Er is een fout opgetreden tijdens de activatie van deze server.</translation>
-   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Oeps! Het is niet mogelijk de veilige modus te verlaten. </translation>
+   <translation id="cpci_vm_rescue_end_error" qtlid="453796">De server kan niet uit de Reddingsmodus worden gehaald: {{message}}</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">Om u met deze machine te verbinden opent u een terminal en voert u het volgende command in:<br/><code>ssh {{user}}@{{ip}}</code></translation>
    <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">Bij de allereerste verbinding gebruikt u de <a href="{{route}}">VNC console</a> om de Windows configuratie te voltooien. Vervolgens gebruikt u uw RDP client naar voorkeur, bijvoorbeeld vanaf een Linux terminal:<br/><code>rdesktop {{ip}}</code></translation>
@@ -341,6 +357,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Warme herstart (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Reactiveren</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Koude herstart (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot" qtlid="453809">U staat op het punt uw <strong>{{name}}</strong>-instance opnieuw op te starten.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Inloggegevens</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">VNC console</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Reboot in de rescue modus</translation>

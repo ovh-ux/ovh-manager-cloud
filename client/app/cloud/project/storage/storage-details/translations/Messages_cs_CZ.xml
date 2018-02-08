@@ -41,8 +41,8 @@
    <translation id="storage_details_not_defined" qtlid="242054">Chyba při načítání container</translation>
    <translation id="storage_error_occurs" qtlid="242067">Při načítání seznamu container došlo k chybě: {{error}}</translation>
 
-   <translation id="storage_details_guide_title" qtlid="300370">Průvodci</translation>
+   <translation id="storage_details_guide_title" qtlid="300370">Příručky</translation>
    <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
    <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
-   <translation id="storage_details_guide_footer" qtlid="406905">OVH příručky</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Všechny OVH příručky</translation>
 </translations>

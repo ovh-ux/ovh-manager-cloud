@@ -4,39 +4,39 @@
    <translation id="vps_order_windows_step1_title" qtlid="452332">Seleção da duração</translation>
    <translation id="vps_order_windows_step2_title" qtlid="452345">Aceite as condições de utilização</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Resumo</translation>
-   <translation id="vps_order_windows_info" qtlid="250758">Esta opção permitir-lhe-á instalar um SO do tipo Windows no seu servidor VPS</translation>
+   <translation id="vps_order_windows_info" qtlid="250758">Esta opção permite instalar um SO Windows no seu servidor VPS</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Ocorreu um erro durante o carregamento dos preços.</translation>
-   <translation id="vps_order_windows_order_error" qtlid="181227">Ocorreu um erro aquando da criação da nota de encomenda.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Selecione a duração:</translation>
    <translation id="vps_order_windows_order_resume" qtlid="177496">Resumo da sua nota de encomenda</translation>
    <translation id="vps_order_windows_order_price_HT" qtlid="146177">Preço total sem IVA:</translation>
    <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Preço total com IVA:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Clique no botão "Validar" para confirmar a sua encomenda.</translation>
-   <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Um novo separador ser-lhe-à apresentado e será automaticamente reencaminhado para a interface de pagamento.</translation>
+   <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Irá visualizar um novo separador, e será automaticamente reencaminhado para a página de pagamento.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Opção Windows</translation>
 
    <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">O VPS foi reinicializado</translation>
-   <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Ocorreu um erro aquando do reboot da sua VPS.</translation>
+   <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Erro no reboot do VPS.</translation>
    <translation id="vps_configuration_setNetboot_polling_done" qtlid="452358">O VPS foi reinicializado</translation>
-   <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Ocorreu um erro aquando do reboot da sua VPS.</translation>
-   <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">O monitoring SLA foi corretamente modificado</translation>
-   <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Ocorreu um erro aquando da modificação do monitoring SLA.</translation>
-   <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">Uma nova password foi gerada corretamente.</translation>
-   <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Ocorreu um erro aquando da reinicialização da password.</translation>
+   <translation id="vps_configuration_setNetboot_polling_fail" qtlid="195594">Erro no reboot do VPS.</translation>
+   <translation id="vps_configuration_setMonitoring_polling_done" qtlid="195529">O monitoring SLA foi alterado</translation>
+   <translation id="vps_configuration_setMonitoring_polling_fail" qtlid="195542">Erro na modificação do monitoring SLA.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_done" qtlid="195555">A nova password foi gerada.</translation>
+   <translation id="vps_configuration_changeRootPassword_polling_fail" qtlid="195568">Ocorreu um erro na renovação da password.</translation>
    <translation id="vps_configuration_createSnapshot_polling_done" qtlid="452371">O snapshot do VPS {{serviceName}} foi criado com sucesso</translation>
-   <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Ocorreu um erro aquando da criação de uma snapshot</translation>
-   <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">A snapshot foi eliminada corretamente</translation>
-   <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Ocorreu um erro aquando da eliminação da snapshot</translation>
+   <translation id="vps_configuration_createSnapshot_polling_fail" qtlid="195399">Ocorreu um erro na criação da snapshot</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_done" qtlid="195412">A snapshot foi eliminada</translation>
+   <translation id="vps_configuration_deleteSnapshot_polling_fail" qtlid="195425">Erro na eliminação da snapshot</translation>
    <translation id="vps_configuration_reinstallVm_polling_done" qtlid="452384">O VPS {{serviceName}} foi reinstalado</translation>
-   <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Ocorreu um erro aquando da reinstalação da sua VPS</translation>
-   <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">O restauro do snapshot foi efetuado com sucesso</translation>
-   <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Ocorreu um erro aquando do restauro da snapshot</translation>
-   <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">O restauro do backup foi efetuado com sucesso</translation>
-   <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">Ocorreu um erro aquando do restauro do backup</translation>
-   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">O backup foi corretamente desmontado</translation>
-   <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">Ocorreu um erro aquando da desmontagem do backup</translation>
+   <translation id="vps_configuration_reinstallVm_polling_fail" qtlid="195620">Ocorreu um erro na reinstalação do VPS</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_done" qtlid="200794">Restauro da snapshot efetuado com sucesso</translation>
+   <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">Ocorreu um erro no restauro da snapshot</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">Restauro do backup efetuado com sucesso</translation>
+   <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">Ocorreu um erro no restauro do backup</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">O backup foi desmontado</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">Ocorreu um erro na desmontagem do backup</translation>
 
-   <translation id="vps_configuration_polling_fail" qtlid="195516">Um trabalho em estado de erro está em curso. Certas funções estarão inacessíveis até à resolução do problema. Queira aguardar alguns instantes.</translation>
+   <translation id="vps_configuration_polling_fail" qtlid="195516">Tarefa com erro em curso. Algumas funções estarão inacessíveis até à resolução do problema. Aguarde alguns instantes.</translation>
 
    <translation id="vps_monitoring_cpu_iowait" qtlid="208469">iowait</translation>
    <translation id="vps_monitoring_cpu_nice" qtlid="208482">nice</translation>
@@ -48,10 +48,10 @@
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Reiniciar</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Reiniciar (rescue)</translation>
    <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Modificação do SLA</translation>
-   <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Reinicialização da password</translation>
-   <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Criação de um snapshot</translation>
+   <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Renovação da password</translation>
+   <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Criação de uma snapshot</translation>
    <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Eliminação de uma imagem</translation>
-   <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">Reinstalação da VPS</translation>
+   <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">Reinstalação do VPS</translation>
    <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Restauro de uma imagem</translation>
    <translation id="vps_dashboard_task_restoreVeeamBackup" qtlid="195685">Montagem do backup</translation>
    <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Desmontagem do backup</translation>

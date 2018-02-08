@@ -1,6 +1,6 @@
 "use strict";
 
-describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
+describe("Controller: CloudProjectComputeInfrastructureDiagramCtrl", function () {
 
     var dataTest = {
         instance : readJSON('client/bower_components/ovh-api-services/src/cloud/project/instance/cloud-project-instance.service.dt.spec.json'),
@@ -57,10 +57,10 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
 
     //-----
 
-    var CloudProjectComputeInfrastructureCtrl;
+    var CloudProjectComputeInfrastructureDiagramCtrl;
 
     function initNewCtrl () {
-        CloudProjectComputeInfrastructureCtrl = $controller("CloudProjectComputeInfrastructureCtrl", {
+        CloudProjectComputeInfrastructureDiagramCtrl = $controller("CloudProjectComputeInfrastructureDiagramCtrl", {
             $scope: $scope,
             $state: $state,
             $stateParams : {
@@ -90,20 +90,11 @@ describe("Controller: CloudProjectComputeInfrastructureCtrl", function () {
             $httpBackend.flush();
         });
 
-        it("should redirect to project overview if '$scope.redirectToOverview' resolve to true", function() {
-            spyOn($state, "go").and.returnValue($q.when(true));
-            $scope.redirectToOverview = true;
-
-            initNewCtrl();
-
-            expect($state.go).toHaveBeenCalledWith("iaas.pci-project.compute.infrastructure-overview");
-        });
-
         xit('should initialize all datas and models with success', function () {
 
             // datas are set
-            expect(CloudProjectComputeInfrastructureCtrl.infra.vrack.publicCloud.length()).toBeGreaterThan(0);
-            // expect(CloudProjectComputeInfrastructureCtrl.infra.internet.ips.length).toBeGreaterThan(0);
+            expect(CloudProjectComputeInfrastructureDiagramCtrl.infra.vrack.publicCloud.length()).toBeGreaterThan(0);
+            // expect(CloudProjectComputeInfrastructureDiagramCtrl.infra.internet.ips.length).toBeGreaterThan(0);
 
         });
 
