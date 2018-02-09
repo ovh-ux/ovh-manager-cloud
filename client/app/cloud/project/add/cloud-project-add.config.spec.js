@@ -14,6 +14,8 @@ describe("Controller config: CloudProjectAddCtrl", () => {
         $httpBackend.whenPOST(/api(?:v6)?\/me/).respond(200, {});
         $httpBackend.whenGET(/api(?:v6)?\/cloud/).respond(200, {});
         $httpBackend.whenPOST(/api(?:v6)?\/cloud/).respond(200, {});
+        $httpBackend.whenGET(/api(?:v6)?\/order/).respond(200, {});
+        $httpBackend.whenPOST(/api(?:v6)?\/order/).respond(200, {});
     }));
 
     afterEach(inject(() => {
