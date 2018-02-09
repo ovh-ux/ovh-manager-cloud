@@ -9,22 +9,30 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/aliases", "dbaas/logs/detail/options"]
         })
-        .state("dbaas.logs.detail.aliases.detail", {
-            url: "/:aliasId",
-            redirectTo: "dbaas.logs.detail.aliases.detail.link",
+        .state("dbaas.logs.detail.aliases.add", {
+            url: "/add",
             views: {
                 logsAliases: {
-                    template: `<div ui-view="logsAliasesDetail"></div>`
+                    controller: "LogsAliasesAddModalCtrl",
+                    controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases"]
+            }
         })
-        .state("dbaas.logs.detail.aliases.detail.link", {
-            url: "/link",
+        .state("dbaas.logs.detail.aliases.edit", {
+            url: "/:aliasId",
             views: {
-                logsAliasesDetail: {
+                logsAliases: {
+                    controller: "LogsAliasesAddModalCtrl",
+                    controllerAs: "ctrl"
+                }
+            }
+        })
+        .state("dbaas.logs.detail.aliases.link", {
+            url: "/:aliasId/link",
+            views: {
+                logsAliases: {
                     templateUrl: "app/dbaas/logs/detail/aliases/link/aliases-link.html",
                     controller: "LogsAliasesLinkCtrl",
                     controllerAs: "ctrl"
