@@ -62,57 +62,15 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 });
                 promiseContracts = $q.all(queueContracts);
 
-                return OvhApiMe.Lexi().get()
-                    .$promise
-                    .then(user => OvhApiOrder.Cart().Lexi().post({}, { ovhSubsidiary: user.ovhSubsidiary }).$promise)
-                    .then(cart => OvhApiOrder.Cart().Lexi().assign({ cartId: cart.cartId }).$promise.then(() => cart))
-                    .then(cart => OvhApiOrder.Cart().Product().Lexi().post({ cartId: cart.cartId, productName: "cloud" }, {
-                        duration: "P1M",
-                        planCode: "project",
-                        pricingMode: "default",
-                        quantity: 1 }).$promise)
+                return CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
                     .then(response => {
-                        const promises = [];
-                        if (self.model.description) {
-                            promises.push(OvhApiOrder.Cart().Item().Configuration().Lexi()
-                                .post({
-                                    cartId: response.cartId,
-                                    itemId: response.itemId
-                                    }, {
-                                        label: "description",
-                                        value: self.model.description
-                                }).$promise);
-                        }
-                        
-                        if (self.model.voucher && response.prices.withTax.value) {
-                            promises.push(OvhApiOrder.Cart().Item().Configuration().Lexi()
-                                .post({
-                                    cartId: response.cartId,
-                                    itemId: response.itemId
-                                }, {
-                                    label: "voucher",
-                                    value: self.model.voucher
-                                }).$promise);
+                        self.data.activeOrder = response;
+
+                        if (response.prices.withTax.value) {
+                            $window.open(response.url);
                         }
 
-                        return $q.all(promises)
-                            .then(() => response);
-                    })
-                    .then(response => OvhApiOrder.Cart().Lexi().checkout({ cartId: response.cartId }).$promise)
-                    .then(response => {
-                        self.data.activeOrder = response;
-                        if (!response.prices.withTax.value) {
-                            /*return OvhApiMe.Order().Lexi().payRegisteredPaymentMean({ orderId: response.orderId }, { paymentMean: "fidelityAccount" })
-                                .then(() => response);*/
-                            return $q.when(response);
-                        } else {
-                            $window.open(response.url);
-                            return $q.when(response);
-                        }
-                    })
-                    .then(response => {
-                        self.data.activeOrder = response;
-                        this.pollOrder(response.orderId);
+                        self.pollOrder(response.orderId);
                     })
                     .catch(() => {
                         self.data.activeOrder = undefined;
@@ -131,16 +89,25 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
             self.data.poller = CloudPoll.poll({
                 item: cloudOrder,
-                pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => response || {}),
+                pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
+                        return response || {};
+                    }),
                 stopCondition: item => item.status === "delivered",
-                interval: 1000
+                interval: 3000
             });
             
             self.data.poller.$promise
                 .then(() => {
                     self.data.projectReady = true;
-                    return $timeout(function () {
-                        return $state.go("iaas.pci-project.compute", {
+                    return $timeout(() => {
+                        CloudProjectSidebar.addToSection({
+                            project_id: cloudOrder.serviceName, // jshint ignore:line
+                            description: self.model.description
+                        });
+                        OvhApiVrack.Lexi().resetCache();
+                        OvhApiVrack.CloudProject().Lexi().resetQueryCache();
+
+                        $state.go("iaas.pci-project.compute", {
                             projectId: cloudOrder.serviceName
                         });
                     }, 3000);
@@ -214,15 +181,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             })["finally"](function () {
                 self.loaders.init = false;
             });
-        }
-
-        function updateManager (projectId) {
-            CloudProjectSidebar.addToSection({
-                project_id: projectId, // jshint ignore:line
-                description: self.model.description
-            });
-            OvhApiVrack.Lexi().resetCache();
-            OvhApiVrack.CloudProject().Lexi().resetQueryCache();
         }
 
         init();
