@@ -58,7 +58,7 @@ class CloudProjectAddService {
                     itemId: order.itemId
                 }, {
                     label: "voucher",
-                    value: voucher.voucher
+                    value: voucher
                 }).$promise);
         }
 
