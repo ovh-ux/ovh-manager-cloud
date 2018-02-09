@@ -13,14 +13,14 @@
    <translation id="iplb_frontend_action" qtlid="56105">Ação</translation>
    <translation id="iplb_frontend_no_frontend" qtlid="438584">Nenhum frontend</translation>
 
-   <translation id="iplb_frontend_update" qtlid="37875">Modificar</translation>
+   <translation id="iplb_frontend_update" qtlid="37875">Alterar</translation>
    <translation id="iplb_frontend_delete" qtlid="2414">Eliminar</translation>
 
    <translation id="iplb_frontend_list_error" qtlid="438597">Erro durante o acesso à lista de Frontends.</translation>
 
    <translation id="iplb_frontend_update_error" qtlid="438610">Ocorreu um erro durante a alteração do Frontend: {{message}}</translation>
    <translation id="iplb_frontend_update_success" qtlid="438623">O Frontend foi alterado corretamente</translation>
-   <translation id="iplb_frontend_update_confirm" qtlid="37875">Modificar</translation>
+   <translation id="iplb_frontend_update_confirm" qtlid="37875">Alterar</translation>
    <translation id="iplb_frontend_update_title" qtlid="438636">Alteração ao Frontend {{frontendId}}</translation>
 
    <translation id="iplb_frontend_add_error" qtlid="438649">Ocorreu um erro durante a criação do Frontend: {{message}}</translation>

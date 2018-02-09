@@ -41,7 +41,7 @@
    <translation id="common_menu_v3" qtlid="135931">Starý zákaznický prostor</translation>
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partneři</translation>
-   <translation id="common_menu_billing" qtlid="32950">Fakturační kontakt</translation>
+   <translation id="common_menu_billing" qtlid="32950">Fakturace</translation>
    <translation id="common_menu_renew" qtlid="229658">Mé služby</translation>
    <translation id="common_menu_orders" qtlid="282809">Moje objednávky</translation>
    <translation id="common_menu_language" qtlid="30598">Jazyk</translation>
@@ -491,13 +491,13 @@
 
    <translation id="common_tile_configuration" qtlid="4406">Konfigurace</translation>
 
-   <translation id="common_tile_subscription" qtlid="28891">Součet</translation>
+   <translation id="common_tile_subscription" qtlid="28891">Předplatné</translation>
    <translation id="common_tile_subscription_offer" qtlid="38217">Nabídka</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Automatické obnovení</translation>
    <translation id="common_tile_subscription_expiration_date" qtlid="33010">Datum expirace</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakty</translation>
    <translation id="common_tile_subscription_contact_admin" qtlid="43948">Administrativní kontakt</translation>
-   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Fakturační kontakt</translation>
+   <translation id="common_tile_subscription_contact_billing" qtlid="32950">Fakturace</translation>
    <translation id="common_tile_subscription_contact_technical" qtlid="31750">Technika</translation>
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Datum vytvoření</translation>
 
@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Zobrazit náhled</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Žádný výsledek</translation>
    <translation id="common_table_col_action" qtlid="56105">Akce</translation>
-   <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
+   <translation id="common_table_col_progress" qtlid="442639">Postup</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Výsledky na stránku</translation>
    <translation id="common_pagination_page" qtlid="433397">stránka</translation>
    <translation id="common_pagination_of" qtlid="121615">na</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">z TOTAL_ITEMS výsledků</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Strana CURRENT_PAGE z PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">výsledky</translation>
    <translation id="common_pagination_next" qtlid="433423">Následující stránka</translation>
    <translation id="common_pagination_previous" qtlid="433436">Předchozí stránka</translation>

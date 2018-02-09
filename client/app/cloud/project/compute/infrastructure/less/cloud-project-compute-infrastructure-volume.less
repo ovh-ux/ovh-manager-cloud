@@ -103,6 +103,7 @@
                     }
 
                     .volume-detail-item-illustration{
+                        padding: 0;
                         position : relative;
 
                         spinner {
@@ -112,12 +113,12 @@
                             right    : 0;
                         }
                     }
-                    i.ovh-font {
+                    .ovh-font {
                         cursor : grab;
                     }
 
                     &.ui-draggable-disabled {
-                        i.ovh-font {
+                        .ovh-font {
                             cursor : no-drop;
                         }
                     }
@@ -141,17 +142,19 @@
                 width  : auto;
             }
         }
-        i.ovh-font {
+        .ovh-font {
             cursor : grabbing;
 
             &.ovh-font-harddiskspeed {
+                padding-top: 1px;
                 font-size : 29px;
             }
             &.ovh-font-harddisk {
+                padding-top: 5px;
                 font-size : 25px;
             }
         }
-        i.legend { // wait for it ...
+        .legend { // wait for it ...
             cursor: default !important;
         }
     }

@@ -55,8 +55,8 @@ class DeskaasUpgradeCtrl {
             });
     }
 
-    selectChoice (value) {
-        this.choice = JSON.parse(value);
+    selectChoice () {
+        this.choice = JSON.parse(this.deskaasOffer);
     }
 }
 

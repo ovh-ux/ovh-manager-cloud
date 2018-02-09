@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Každých 6 hodin</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Snapshot je instantní snímek Vašeho NAS-HA. Tento snímek zaznamenává přesný stav Vašeho NAS-HA úložiště v momentu jeho pořízení.</translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Pro správnou funkčnost snapshotů je na Vašem diskovém oddílu vyhrazeno speciální místo. K dispozici není žádná historie pořizování snapshotů. V případě snapshotů s totožnými intervaly platí pravidlo, že poslední pořízený snapshot přepisuje ten předcházející.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Pokud nevyberete délku intervalu, budou Vaše existující snapshoty pro tento oddíl smazány.</translation>
 </translations>

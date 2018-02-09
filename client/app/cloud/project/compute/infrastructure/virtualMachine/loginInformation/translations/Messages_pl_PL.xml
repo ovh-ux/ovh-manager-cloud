@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="login_information_error" qtlid="401406">Wystąpił problem z pobraniem danych do logowania.</translation>
    <translation id="cpcivm_login_information_title" qtlid="250927">Informacje na temat połączenia</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Logowanie do instancji</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Wpisz w terminalu następujące polecenie:<br/><code>ssh {{user}}@{{ip}}</code></translation>
-   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Podczas pierwszego połączenia, skorzystaj z konsoli VNC, aby dokończyć konfigurację Windows. Następnie skorzystaj z wybranego klienta RDP, na przykład z poziomu systemu Linux: <br/><code>rdesktop {{ip}}</code></translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="453482">Podczas pierwszego połączenia użyj konsoli VNC, aby zakończyć konfigurację systemu operacyjnego Windows. Później możesz używać dowolnego klienta RDP, na przykład przez pulpit Linux:</translation>
    <translation id="cpcivm_login_information_application_title" qtlid="401588">Logowanie do aplikacji</translation>
    <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Typ</translation>
    <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>

@@ -10,14 +10,14 @@
    <translation id="nasha_order_step_2_order" qtlid="345208">2. Commande</translation>
    <translation id="nasha_order_generate_order" qtlid="186219">Générer le bon de commande</translation>
    <translation id="nasha_order_accept_contract" qtlid="345221">J'ai lu et j'accepte les conditions décrites dans les documents suivants :</translation>
-   <translation id="nasha_order_nasha_1200g" qtlid="171994">NAS-HA hybride 1.2 To</translation>
-   <translation id="nasha_order_nasha_13200g" qtlid="172007">NAS-HA hybride 13.2 To</translation>
-   <translation id="nasha_order_nasha_2400g" qtlid="172020">NAS-HA hybride 2.4 To</translation>
-   <translation id="nasha_order_nasha_3600g" qtlid="172046">NAS-HA hybride 3.6 To</translation>
-   <translation id="nasha_order_nasha_7200g" qtlid="172072">NAS-HA hybride 7.2 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-1200g" qtlid="171994">NAS-HA hybride 1.2 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-13200g" qtlid="172007">NAS-HA hybride 13.2 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-2400g" qtlid="172020">NAS-HA hybride 2.4 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-3600g" qtlid="172046">NAS-HA hybride 3.6 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-7200g" qtlid="172072">NAS-HA hybride 7.2 To</translation>
    <translation id="nasha_order_nashaSSD" qtlid="172085">NAS-HA 100Go SSD</translation>
-   <translation id="nasha_order_nasha_19200g" qtlid="243445">NAS-HA hybride 19.2 To</translation>
-   <translation id="nasha_order_nasha_26400g" qtlid="243458">NAS-HA hybride 26.4 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-19200g" qtlid="243445">NAS-HA hybride 19.2 To</translation>
+   <translation id="nasha_order_nasha_nas-ha-26400g" qtlid="243458">NAS-HA hybride 26.4 To</translation>
    <translation id="nasha_order_name" qtlid="345234">Type de NAS-HA</translation>
    <translation id="nasha_order_price" qtlid="345247">HT (1 mois)</translation>
    <translation id="nasha_order_datacenter" qtlid="345260">Choix du datacentre</translation>

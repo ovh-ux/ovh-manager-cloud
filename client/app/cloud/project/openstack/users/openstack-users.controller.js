@@ -20,8 +20,7 @@ angular.module("managerApp")
         };
 
         self.toggle = {
-            openAddUser: false,
-            userGenerateTokenId: null,
+            userGenerateTokenId: null
         };
 
         self.order = {
@@ -34,7 +33,6 @@ angular.module("managerApp")
                 user: false
             },
             add: {
-                user: false,
                 token: false
             },
             remove: {
@@ -49,26 +47,11 @@ angular.module("managerApp")
             pass: null
         };
 
-        // user model to add
-        function initNewUser () {
-            self.userAdd = {
-                serviceName: self.projectId,
-                description: null
-            };
-        }
-
         function init () {
             self.getUsers();
-            initNewUser();
         }
 
         //---------TOOLS---------
-        self.toggleAddUser = function () {
-            if (self.toggle.openAddUser) {
-                initNewUser();
-            }
-            self.toggle.openAddUser = !self.toggle.openAddUser;
-        };
 
         self.getSelectedCount = function () {
             return Object.keys(self.table.selected).length;
@@ -170,26 +153,6 @@ angular.module("managerApp")
             Poller.kill({ namespace: "cloud.users.query" });
         });
 
-        self.postUser = function () {
-            if (!self.loaders.add.user) {
-                self.loaders.add.user = true;
-                return OvhApiCloud.Project().User().Lexi().save(self.userAdd).$promise.then(function (newUser) {
-                    self.toggleAddUser();
-                    self.table.selected = {};
-                    OpenstackUsersPassword.put(self.projectId, newUser.id, newUser.password);
-                    self.getUsers();
-                    CloudMessage.success($translate.instant("openstackusers_users_userlist_add_submit_success"));
-                    self.order.reverse = true;
-                    self.order.by = "id";
-                    return self.getUsers();
-                }, function (err) {
-                    CloudMessage.error([$translate.instant("openstackusers_users_userlist_add_submit_error"), err.data && err.data.message || ""].join(" "));
-                })["finally"](function () {
-                    self.loaders.add.user = false;
-                });
-            }
-        };
-
         self.regeneratePassword = function (currentUser) {
             if (!self.loaders.regeneratePassword) {
                 self.loaders.regeneratePassword = currentUser.id;
@@ -217,9 +180,7 @@ angular.module("managerApp")
                     controller: "OpenstackUsersOpenrcCtrl",
                     controllerAs: "OpenstackUsersOpenrcCtrl",
                     resolve: {
-                        openstackUser: function () {
-                            return currentUser;
-                        }
+                        openstackUser: () => currentUser
                     }
                 }
             });
@@ -247,11 +208,22 @@ angular.module("managerApp")
                     controller: "CloudProjectOpenstackUsersTokenCtrl",
                     controllerAs: "CloudProjectOpenstackUsersTokenCtrl",
                     resolve: {
-                        openstackUser: function () {
-                            return currentUser;
-                        }
+                        openstackUser: () => currentUser
                     }
                 }
+            });
+        };
+        self.openAddUser = function () {
+            ControllerHelper.modal.showModal({
+                modalConfig: {
+                    templateUrl: "app/cloud/project/openstack/users/add/openstack-users-add.html",
+                    controller: "CloudProjectOpenStackUserAddCtrl",
+                    controllerAs: "$ctrl",
+                    resolve: {
+                        serviceName: () => self.projectId
+                    }
+                },
+                successHandler: () => self.getUsers()
             });
         };
         self.openDeleteUser = function (currentUser) {
@@ -267,7 +239,7 @@ angular.module("managerApp")
                 },
                 successHandler: () => {
                     self.removeFromList(currentUser);
-                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", currentUser));                   
+                    CloudMessage.success($translate.instant("openstackusers_users_delete_success", currentUser));
                 },
                 errorHandler: (err) => CloudMessage.error([$translate.instant("openstackusers_users_delete_error"), err.data && err.data.message || ""].join(" "))
             });

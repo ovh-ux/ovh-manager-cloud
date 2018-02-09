@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">Kas 6 valandas</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Momentinė kopija (snapshot) suprantama kaip momentinis atvaizdas, fiksuojantis jūsų NAS-HA būklę momentinės kopijos atlikimo metu.</translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Momentinės kopijos naudoja disko vietą jūsų skirsnyje, taip užtikrinamas teisingas veikimas. Momentinių kopijų atlikimo istorija neregistruojama: esant tam pačiam dažnumui, naujausia momentinė kopija panaikina prieš tai buvusią.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">jeigu nepasirinksite trukmės, sukurtos skirsnio kopijos bus ištrintos.</translation>
 </translations>

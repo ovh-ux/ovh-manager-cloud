@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="login_information_error" qtlid="401406">Die Verbindungsdaten konnten nicht abgerufen werden.</translation>
    <translation id="cpcivm_login_information_title" qtlid="250927">Verbindungsinformationen</translation>
    <translation id="cpcivm_login_information_instance_title" qtlid="401471">Login zur Instanz</translation>
    <translation id="cpcivm_login_information_instance_info_linux" qtlid="401484">Geben Sie in einem Terminal folgenden Befehl ein:<br/><code>ssh {{user}}@{{ip}}</code></translation>
-   <translation id="cpcivm_login_information_instance_info_windows" qtlid="401575">Für Ihren ersten Login müssen Sie die VNC-Konsole verwenden, um die Windows-Konfiguration abzuschließen. Danach können Sie Ihren bevorzugten RDP Client verwenden, zum Beispiel über einen Linux-Rechner:<br/><code>rdesktop {{ip}}</code> </translation>
+   <translation id="cpcivm_login_information_instance_info_windows" qtlid="453482">Für Ihren ersten Login müssen Sie die VNC-Konsole verwenden, um die Windows-Konfiguration abzuschließen. Danach können Sie Ihren bevorzugten RDP Client verwenden, zum Beispiel über einen Linux-Rechner:</translation>
    <translation id="cpcivm_login_information_application_title" qtlid="401588">Login zu den Anwendungen</translation>
    <translation id="cpcivm_login_information_application_label_type" qtlid="2642">Typ</translation>
    <translation id="cpcivm_login_information_application_label_url" qtlid="31402">URL</translation>

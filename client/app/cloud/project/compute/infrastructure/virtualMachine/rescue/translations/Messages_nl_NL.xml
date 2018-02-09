@@ -13,7 +13,6 @@
    <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>ssh {{user}}@{{ip}}</code> met het tijdelijke wachtwoord {{pwd}} (deze wordt slechts eenmalig aan u verzonden). Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
    <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>rdesktop {{ip}}</code> met de gebruikelijke SSH key. Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Om toegang te krijgen tot uw "{{vmName}}" server in rescue modus gebruikt u: <br/><code>rdesktop {{ip}}</code> met het tijdelijke wachtwoord {{pwd}} (deze wordt slechts eenmalig aan u verzonden). Let op, alleen de primaire disk zal in deze modus beschikbaar zijn. </translation>
-   <translation id="cpc_rescue_mode_error" qtlid="269305">Oeps! Het is niet mogelijk om uw server in de veilige modes opnieuw op te starten.  &#13;
-</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="453705">Uw server kon niet opnieuw worden opgestart in de Reddingsmodus: {{message}}</translation>
 
 </translations>

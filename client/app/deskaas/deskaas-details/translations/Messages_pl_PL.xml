@@ -75,7 +75,7 @@
    <translation id="vdi_task_state_toCreate" qtlid="26227">W trakcie tworzenia</translation>
    <translation id="vdi_task_state_waitingTodo" qtlid="29467">Oczekujące</translation>
    <translation id="vdi_task_state_todo" qtlid="134605">Do wykonania</translation>
-   <translation id="vdi_task_state_doing" qtlid="26383">W trakcie</translation>
+   <translation id="vdi_task_state_doing" qtlid="26383">W toku</translation>
    <translation id="vdi_task_state_done" qtlid="370967">Wykonane</translation>
    <translation id="vdi_task_state_error" qtlid="26407">Błąd</translation>
    <translation id="vdi_task_state_fixing" qtlid="370980">Naprawa</translation>

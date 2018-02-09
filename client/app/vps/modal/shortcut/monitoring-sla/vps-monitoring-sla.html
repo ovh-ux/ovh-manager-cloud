@@ -1,0 +1,31 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+    <cui-modal-body data-title="$ctrl.title">
+        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+            <oui-spinner></oui-spinner>
+        </div>
+        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
+
+            <p class="oui-modal__body-text" data-ng-if="!$ctrl.preview">
+                <span data-translate="vps_dashboard_monitoring_sla"></span> :
+                <span data-translate="vps_status_enabled" data-ng-if="$ctrl.currentState"></span>
+                <span data-translate="vps_status_disabled" data-ng-if="!$ctrl.currentState"></span>
+            </p>
+            <div class="oui-message oui-message_info oui-message_icon-m" role="alert" data-ng-if="$ctrl.state">
+                <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
+                <p class="oui-message__body">
+                    <span data-translate ="vps_dashboard_monitoring_sla_ips_tooltip"></span>
+                    <ul>
+                        <li data-ng-repeat="ip in $ctrl.vps.monitoringIpBlocks" data-ng-bind="ip"></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </cui-modal-body>
+    <cui-modal-footer data-ng-if="!$ctrl.preview">
+        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+        <cui-submit-button data-text="'common_confirm' | translate"
+            data-on-click="$ctrl.confirm()"
+            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
+    </cui-modal-footer>
+</cui-modal>

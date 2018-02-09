@@ -4,14 +4,14 @@
         <cui-modal-body title="'iplb_modal_cipher_change_title' | translate">
             <oui-spinner data-ng-if="IpLoadBalancerCipherChangeCtrl.isModalLoading()"></oui-spinner>
             <div data-ng-if="!IpLoadBalancerCipherChangeCtrl.isModalLoading()">
-                <oui-radio-group data-value="IpLoadBalancerCipherChangeCtrl.model.cipherType.value"
-                    data-on-change="IpLoadBalancerCipherChangeCtrl.model.cipherType.value = $event.value">
-                    <oui-radio data-label="{{ cipherType.displayName }}"
-                        data-value="{{ cipherType.type }}"
-                        data-ng-repeat="cipherType in IpLoadBalancerCipherChangeCtrl.cipherTypes.data track by $index">
-                        <oui-radio-description data-ng-bind="cipherType.description"></oui-radio-description>
-                    </oui-radio>
-                </oui-radio-group>
+                <oui-radio data-ng-repeat="cipherType in IpLoadBalancerCipherChangeCtrl.cipherTypes.data track by $index"
+                    data-text="{{ cipherType.displayName }}"
+                    data-description="{{ cipherType.description }}"
+                    name="cipher"
+                    model="IpLoadBalancerCipherChangeCtrl.model.cipherType.value"
+                    value="cipherType.type"
+                    data-on-change="IpLoadBalancerCipherChangeCtrl.model.cipherType.value = modelValue">
+                </oui-radio>
             </div>
         </cui-modal-body>
         <cui-modal-footer>

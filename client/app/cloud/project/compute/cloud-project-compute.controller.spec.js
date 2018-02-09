@@ -66,12 +66,6 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                         $promise: $q.when(ipArray)
                     });
                 });
-
-                it("should put scope variable 'redirectToOverview' to true", function () {
-                    initNewCtrl();
-                    $httpBackend.flush();
-                    expect(scope.redirectToOverview).toEqual(true);
-                });
             });
 
             describe("project contains more than overview threshold ips", function() {
@@ -82,12 +76,6 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                     spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
-                });
-
-                it("should put scope variable 'redirectToOverview' to true", function () {
-                    initNewCtrl();
-                    $httpBackend.flush();
-                    expect(scope.redirectToOverview).toEqual(true);
                 });
             });
         });
@@ -112,12 +100,6 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                         $promise: $q.when(ipArray)
                     });
                 });
-
-                it("should put scope variable 'redirectToOverview' to false", function () {
-                    initNewCtrl();
-                    $httpBackend.flush();
-                    expect(scope.redirectToOverview).toEqual(false);
-                });
             });
         });
 
@@ -141,12 +123,6 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                         $promise: $q.when(ipArray)
                     });
                 });
-
-                it("should put scope variable 'redirectToOverview' to false", function () {
-                    initNewCtrl();
-                    $httpBackend.flush();
-                    expect(scope.redirectToOverview).toEqual(false);
-                });
             });
 
             describe("project contains more than overview threshold ips", function() {
@@ -157,12 +133,6 @@ describe("Controller: CloudProjectComputeCtrl", function () {
                     spyOn(OvhApiCloudProjectIpLexi, "query").and.returnValue({
                         $promise: $q.when(ipArray)
                     });
-                });
-
-                it("should put scope variable 'redirectToOverview' to true", function () {
-                    initNewCtrl();
-                    $httpBackend.flush();
-                    expect(scope.redirectToOverview).toEqual(true);
                 });
             });
         });

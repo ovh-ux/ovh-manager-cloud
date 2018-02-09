@@ -1,0 +1,58 @@
+<cui-modal>
+    <cui-modal-header data-on-dismiss="ctrl.cancel()"></cui-modal-header>
+    <cui-modal-body title="'cpb_rights_add_title' | translate">
+        <form novalidate name="ctrl.form">
+            <div class="oui-field">
+                <label for="billingContactInput"
+                    class="oui-label"
+                    data-ng-bind="ctrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text"
+                            id="billingContactInput"
+                            name="billingContactInput"
+                            class="oui-input"
+                            data-ng-model="ctrl.right.contact" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="oui-field">
+                <label for="selectRightType"
+                    class="oui-label"
+                    data-translate="cpb_rights_table_rights"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <label class="oui-select">
+                            <select id="selectRightType"
+                                name="selectRightType"
+                                class="oui-select__input"
+                                data-ng-model="ctrl.right.type">
+                                <option data-ng-repeat="type in ['readOnly', 'readWrite']" value="{{type}}">
+                                    {{ ('cpb_rights_table_rights_value_' + type) | translate }}
+                                </option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </cui-modal-body>
+    <cui-modal-footer>
+        <oui-spinner data-ng-show="ctrl.saving"></oui-spinner>
+        <button type="reset"
+            class="oui-button oui-button_secondary"
+            data-ng-click="ctrl.cancel()"
+            data-ng-disabled="!ctrl.model.isAdmin"
+            data-ng-hide="ctrl.edition"
+            data-translate="common_cancel">
+        </button>
+        <button type="submit"
+            class="oui-button oui-button_primary"
+            data-ng-disabled="!ctrl.model.isAdmin || !ctrl.right.contact || ctrl.loader"
+            data-ng-click="ctrl.validateAddRight()"
+            data-translate="cpb_rights_add">
+        </button>
+    </cui-modal-footer>
+</cui-modal>

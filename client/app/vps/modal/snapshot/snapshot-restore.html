@@ -1,0 +1,19 @@
+<cui-modal>
+    <form name="VpsSnapshotTakeForm" data-ng-submit="$ctrl.confirm()">
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body data-title="'vps_configuration_snapshot_restore_title' | translate">
+            <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
+                <oui-spinner></oui-spinner>
+            </div>
+            <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
+                <cui-modal-text data-text="'vps_configuration_snapshot_restore_step1_question' | translate: {date: $ctrl.date, serviceName: $ctrl.serviceName}"></cui-modal-text>
+                <p class="oui-modal__body-text red" data-translate="vps_configuration_snapshot_restore_step1_confirmation"></p>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
+            <cui-submit-button data-text="'common_confirm' | translate"
+                               data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
+        </cui-modal-footer>
+    </form>
+</cui-modal>

@@ -17,7 +17,11 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Importer des IPs Failover OVH</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Acheter des IPs Failover Cloud</translation>
 
-   <translation id="cpci_errors_init_title" qtlid="247040">Une erreur est survenue lors de la récupération des informations de votre infrastructure.</translation>
+   <translation id="cpci_menu_view_label" qtlid="453718">Vue</translation>
+   <translation id="cpci_menu_view_diagram" qtlid="125552">Infrastructure</translation>
+   <translation id="cpci_menu_view_list" qtlid="358942">Liste</translation>
+
+   <translation id="cpci_errors_init_title" qtlid="247040">Une erreur est survenue lors de la récupération des informations de votre infrastructure</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Veuillez réessayer plus tard.</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">Si le problème persiste, vous pouvez contacter le support en cliquant <a href="{{url}}">ici</a>.</translation>
 
@@ -34,7 +38,7 @@
    <translation id="cloud_public_ip_setup" qtlid="247131">Acheter des IP :</translation>
    <translation id="cloud_ip_action_change_associated_server" qtlid="247144">Modifier le serveur associé</translation>
    <translation id="cloud_ip_action_change_associated_servers" qtlid="247157">Modifier les serveurs associés</translation>
-   <translation id="cloud_ip_action_change_reverse_dns" qtlid="272066">Changer le reverse DNS</translation>
+   <translation id="cloud_ip_action_change_reverse_dns" qtlid="272066">Changer le DNS inversé</translation>
    <translation id="cloud_ip_action_change_activate_mitigation" qtlid="272079">Activer/Désactiver la mitigation</translation>
    <translation id="cloud_ip_action_change_configure_firewall" qtlid="272092">Configurer le pare-feu</translation>
    <translation id="cloud_ip_action_change_lb_configuration" qtlid="247170">Modifier la configuration de l'IPLB</translation>
@@ -45,6 +49,17 @@
    <translation id="cloud_ip_action_sort" qtlid="257510">Tri</translation>
    <translation id="cloud_ip_action_automatic" qtlid="257523">automatique</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">manuel</translation>
+
+   <translation id="cpci_vm_name" qtlid="3818">Nom</translation>
+   <translation id="cpci_vm_region" qtlid="168237">Localisation</translation>
+   <translation id="cpci_vm_flavor_category" qtlid="26143">Modèle</translation>
+   <translation id="cpci_vm_price" qtlid="83913">Prix</translation>
+   <translation id="cpci_vm_hdd" qtlid="453731">Disque dur attaché</translation>
+   <translation id="cpci_vm_status" qtlid="26443">Statut</translation>
+   <translation id="cpci_vm_status_ERROR" qtlid="45508">En erreur</translation>
+   <translation id="cpci_vm_status_REBOOT" qtlid="26287">Redémarrage</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Image instantanée</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Statut inconnu ({{msg}}) sur "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Statut inconnu ({{msg}}) sur "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -67,7 +82,7 @@
    <translation id="cpci_vm_RESCUE" qtlid="289081">"{{server}}" en rescue (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_RESCUING" qtlid="289094">Démarrage en mode rescue...</translation>
    <translation id="cpci_vm_UNRESCUING" qtlid="289107">Sortie du mode rescue...</translation>
-   <translation id="cpci_vm_SNAPSHOTTING" qtlid="263311">Snapshot en cours...</translation>
+   <translation id="cpci_vm_SNAPSHOTTING" qtlid="263311">Image instantanée en cours...</translation>
    <translation id="cpci_vm_RESUMING" qtlid="200261">Activation en cours...</translation>
 <translation id="cpci_vm_PASSWORD"/>
 <translation id="cpci_vm_RESCUED"/>
@@ -81,11 +96,11 @@
    <translation id="cpci_vms_loading" qtlid="247365">Chargement des machines virtuelles en cours...</translation>
    <translation id="cpci_vm_ips_getting_error" qtlid="247378">Oups, nous n'arrivons pas à récupérer la liste des IP</translation>
    <translation id="cpci_ip_delete_submit_error" qtlid="247391">Oups, nous n'arrivons pas à supprimer cette IP</translation>
-   <translation id="cpci_ip_reverse_info_soon" qtlid="272105">Vous pourrez modifier prochainement le reverse DNS de ce continent.</translation>
+   <translation id="cpci_ip_reverse_info_soon" qtlid="272105">Vous pourrez modifier prochainement le DNS inversé de ce continent.</translation>
 
 
-   <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} HT/h</translation>
-   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} HT/mois</translation>
+   <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}}/h</translation>
+   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}}/mois</translation>
    <translation id="cpci_price_month_btn" qtlid="270059">({{price}} /mois taxes non incluses)</translation>
    <translation id="cpci_vm_private_ip" qtlid="247430">IP privée</translation>
 
@@ -289,8 +304,8 @@
    <translation id="cpci_vm_flavor_category_win-g3-120" qtlid="414781">G3-120</translation>
    <translation id="cpci_vm_flavor_category_win-g3-240" qtlid="414794">G3-240</translation>
 
-   <translation id="cpci_vm_alert_cpu" qtlid="276181">Votre cpu a atteint plus de {{percentage}} de la puissance allouée au cours des 7 derniers jours.</translation>
-   <translation id="cpci_vm_alert_ram" qtlid="276194">Votre ram a atteint plus de {{percentage}} de l'espace utilisé au cours des 7 derniers jours.</translation>
+   <translation id="cpci_vm_alert_cpu" qtlid="276181">Votre processeur a atteint plus de {{percentage}} de la puissance allouée au cours des 7 derniers jours.</translation>
+   <translation id="cpci_vm_alert_ram" qtlid="276194">Votre mémoire vive a atteint plus de {{percentage}} de l'espace utilisé au cours des 7 derniers jours.</translation>
 
    <translation id="cpci_vm_flavor_category_ra_intel_sb_m" qtlid="243302">M</translation>
    <translation id="cpci_vm_flavor_category_ra_intel_sb_l" qtlid="243315">L</translation>
@@ -308,17 +323,18 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Supprimer ce serveur</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">Ce serveur sera supprimé d'ici quelques instants.</translation>
-   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Une erreur est survenue lors de la demande de suppression de ce serveur.</translation>
+   <translation id="cpci_vm_delete_submit_error" qtlid="453744">Une erreur est survenue lors de la demande de suppression de ce serveur : {{message}}</translation>
 
-   <translation id="cpci_vm_reinstall_warn" qtlid="247755">Toutes les données seront supprimées !</translation>
+   <translation id="cpci_vm_reinstall_warn" qtlid="247755">Toutes les données seront supprimées!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Réinstaller</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">Ce serveur sera réinstallé d'ici quelques minutes.</translation>
-   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Une erreur est survenue lors de la demande de réinstallation de ce serveur.</translation>
+   <translation id="cpci_vm_reinstall_submit_error" qtlid="453757">Une erreur est survenue lors de la demande de réinstallation de ce serveur : {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Redémarrer ce serveur</translation>
-   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Une erreur est survenue lors de la demande de redémarrage de ce serveur.</translation>
+   <translation id="cpci_vm_reboot_submit_success" qtlid="453770">La demande de redémarrage du serveur a bien été prise en compte.</translation>
+   <translation id="cpci_vm_reboot_submit_error" qtlid="453783">Une erreur est survenue lors de la demande de redémarrage de ce serveur : {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">Une erreur est survenue lors de l'activation de ce serveur.</translation>
-   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Oups! Nous n'arrivons pas à sortir le serveur du mode rescue.</translation>
+   <translation id="cpci_vm_rescue_end_error" qtlid="453796">Oups! Nous n'arrivons pas à sortir le serveur du mode rescue : {{message}}</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">Pour vous connecter à cette machine, ouvrez un terminal et saisissez la commande suivante&#160;:<br/><code>ssh {{user}}@{{ip}}</code></translation>
    <translation id="cpcivm_edit_vm_login_info_windows" qtlid="257549">Lors de votre première connexion, vous devez <a href="{{route}}">utiliser la console VNC</a> pour finaliser la configuration de Windows. Ensuite, utilisez votre client RDP favori, par exemple via un poste Linux&#160;:<br/><code>rdesktop {{ip}}</code></translation>
@@ -329,14 +345,15 @@
    <translation id="cpci_vm_action_edit_type" qtlid="248990">Modifier le type de serveur</translation>
    <translation id="cpci_vm_action_edit_size" qtlid="266833">Modifier la taille du volume</translation>
    <translation id="cpci_vm_action_edit_restaure" qtlid="249003">Modifier l'OS</translation>
-   <translation id="cpci_vm_action_monitoring" qtlid="276207">Afficher le monitoring</translation>
+   <translation id="cpci_vm_action_monitoring" qtlid="276207">Afficher la surveillance (monitoring)</translation>
 
    <translation id="cpci_vm_action_delete" qtlid="2414">Supprimer</translation>
    <translation id="cpci_vm_action_reinstall" qtlid="26503">Réinstaller</translation>
-   <translation id="cpci_vm_action_create_snapshot" qtlid="247820">Créer un snapshot</translation>
+   <translation id="cpci_vm_action_create_snapshot" qtlid="247820">Créer une image instantanée</translation>
    <translation id="cpci_vm_action_reboot" qtlid="247833">Redémarrer à chaud (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Réactiver</translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Redémarrer à froid (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot" qtlid="453809">Vous allez redémarrer votre instance <strong>{{name}}</strong>.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Informations de connexion</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">Console VNC</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Redémarrer en mode rescue</translation>
@@ -345,8 +362,8 @@
    <translation id="cpci_confirm_detach_button" qtlid="107207">Détacher</translation>
    <translation id="cpci_confirm_attach_button" qtlid="247859">Attacher</translation>
 
-   <translation id="cpci_confirm_detach_question" qtlid="247872">Détacher l'IP {{ip}} de l'instance {{instance}} ?</translation>
-   <translation id="cpci_confirm_attach_question" qtlid="247885">Si vous attachez l'IP {{ip}} à l'instance {{futurInstanceAttach}}, elle sera détachée de l'instance {{currentInstanceAttach}}. Voulez-vous vraiment continuer ?</translation>
+   <translation id="cpci_confirm_detach_question" qtlid="247872">Détacher l'IP {{ip}} de l'instance {{instance}}?</translation>
+   <translation id="cpci_confirm_attach_question" qtlid="247885">Si vous attachez l'IP {{ip}} à l'instance {{futurInstanceAttach}}, elle sera détachée de l'instance {{currentInstanceAttach}}. Voulez-vous vraiment continuer?</translation>
    <translation id="cpci_confirm_floating_attach_question" qtlid="271296">Vous allez attacher l'IP {{ip}} à l'instance {{futurInstanceAttach}}. Souhaitez-vous continuer ?</translation>
 
    <translation id="cpci_ip_attach_error" qtlid="250576">Nous n'arrivons pas à lier l'IP {{ip}} à l'instance "{{instance}}".</translation>
@@ -363,11 +380,11 @@
 
    <translation id="cpci_volume_number_attach_zero" qtlid="255651">Aucun disque dur attaché</translation>
    <translation id="cpci_volume_number_attach_one" qtlid="255664">1 disque dur attaché</translation>
-   <translation id="cpci_volume_number_attach_other" qtlid="255677">{{nbVolume}} disques dur attachés</translation>
+   <translation id="cpci_volume_number_attach_other" qtlid="255677">{{nbVolume}} disques durs attachés</translation>
 
    <translation id="cpci_volume_number_detach_zero" qtlid="255690">Aucun disque dur détaché</translation>
    <translation id="cpci_volume_number_detach_one" qtlid="255703">1 disque dur détaché</translation>
-   <translation id="cpci_volume_number_detach_other" qtlid="255716">{{nbVolume}} disques dur détachés</translation>
+   <translation id="cpci_volume_number_detach_other" qtlid="255716">{{nbVolume}} disques durs détachés</translation>
 
 
    <translation id="cpci_volume_add" qtlid="181175">Ajouter un disque</translation>
@@ -378,18 +395,18 @@
    <translation id="cpci_volume_delete" qtlid="255755">Supprimer ce disque</translation>
    <translation id="cpci_volume_delete_error" qtlid="255768">Oups, nous n'arrivons pas à supprimer ce disque dur.</translation>
    <translation id="cpci_volume_impossible_attach" qtlid="255781">Liaison impossible. Localisation incompatible.</translation>
-   <translation id="cpci_volume_add_from_snapshot_error" qtlid="273596">Oups, nous n'arrivons pas à récupérer les informations de ce snapshot.</translation>
-   <translation id="cpci_volume_snapshotted_delete_info" qtlid="295972">Ce disque a été snapshoté et des snapshots sont toujours existants. Vous devez <a href="{{url}}">supprimer les snapshots du disque</a> avant de supprimer ce dernier.</translation>
+   <translation id="cpci_volume_add_from_snapshot_error" qtlid="273596">Oups, nous n'arrivons pas à récupérer les informations de cette image instantanée.</translation>
+   <translation id="cpci_volume_snapshotted_delete_info" qtlid="295972">Une image instantanée du disque a été effectuée et des images sont toujours existantes. Vous devez <a href="{{url}}">supprimer les images instantanées du disque</a> avant de supprimer ce dernier.</translation>
    <translation id="cpci_volume_snapshot_error" qtlid="273622">Oups, une erreur est survenue lors de la récupération d'informations sur ce volume.</translation>
 
-   <translation id="cpci_volume_action_backup" qtlid="247820">Créer un snapshot</translation>
+   <translation id="cpci_volume_action_backup" qtlid="247820">Créer une image instantanée</translation>
 
    <translation id="cpci_volume_confirm_detach_question" qtlid="255794">Détacher le disque dur {{volume}} de l'instance {{srcVm}} ?</translation>
    <translation id="cpci_volume_confirm_move_question" qtlid="255807">Détacher le disque dur {{volume}} de l'instance {{srcVm}} pour l'attacher à l'instance {{targetVm}} ?</translation>
-   <translation id="cpci_volume_confirm_remove_question" qtlid="255820">Supprimer le disque dur {{volume}} ?</translation>
+   <translation id="cpci_volume_confirm_remove_question" qtlid="255820">Supprimer le disque dur {{volume}}?</translation>
 
    <translation id="cpci_volume_moveCheckbox_question_invalid" qtlid="255833">Cochez le serveur sur lequel vous souhaitez associer le disque dur {{volume}}.</translation>
-   <translation id="cpci_volume_moveCheckbox_question_valid" qtlid="255846">Attacher le disque dur {{volume}} à l'instance {{targetVm}} ?</translation>
+   <translation id="cpci_volume_moveCheckbox_question_valid" qtlid="255846">Attacher le disque dur {{volume}} à l'instance {{targetVm}}?</translation>
 
    <translation id="cpci_volume_confirm_move_button" qtlid="107207">Détacher</translation>
    <translation id="cpci_volume_confirm_remove_button" qtlid="255859">Supprimer le disque dur</translation>

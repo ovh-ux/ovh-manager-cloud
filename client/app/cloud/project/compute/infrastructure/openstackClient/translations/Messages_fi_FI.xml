@@ -7,4 +7,5 @@
    <translation id="cpci_openstack_client_regions" qtlid="450810">Alueet:</translation>
    <translation id="cpci_openstack_client_commands" qtlid="450823">Komennot:</translation>
    <translation id="cpci_openstack_client_select_region" qtlid="84153">Valitse</translation>
+   <translation id="cpci_openstack_client_remaining_time" qtlid="453175">Jäljellä oleva aika: <b>{{time}}</b></translation>
 </translations>

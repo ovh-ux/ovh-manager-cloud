@@ -17,7 +17,11 @@
    <translation id="cpci_import_ip_failover" qtlid="275869">Import OVH Failover IPs</translation>
    <translation id="cpci_buy_ip_failover" qtlid="275882">Buy Cloud failover IPs</translation>
 
-   <translation id="cpci_errors_init_title" qtlid="247040">An error occurred when retrieving details of your infrastructure.</translation>
+   <translation id="cpci_menu_view_label" qtlid="453718">View</translation>
+   <translation id="cpci_menu_view_diagram" qtlid="125552">Infrastructure</translation>
+   <translation id="cpci_menu_view_list" qtlid="358942">List</translation>
+
+   <translation id="cpci_errors_init_title" qtlid="247040">An error has occurred retrieving details on your infrastructure.</translation>
    <translation id="cpci_errors_init_help1" qtlid="247053">Please try again later.</translation>
    <translation id="cpci_errors_init_help3" qtlid="295933">If the problem persists, you can contact support by clicking <a href="{{url}}">here</a>.</translation>
 
@@ -45,6 +49,17 @@
    <translation id="cloud_ip_action_sort" qtlid="257510">Sort</translation>
    <translation id="cloud_ip_action_automatic" qtlid="257523">automatic</translation>
    <translation id="cloud_ip_action_manual" qtlid="257536">manual</translation>
+
+   <translation id="cpci_vm_name" qtlid="3818">Name</translation>
+   <translation id="cpci_vm_region" qtlid="168237">Location</translation>
+   <translation id="cpci_vm_flavor_category" qtlid="26143">Template</translation>
+   <translation id="cpci_vm_price" qtlid="83913">Price</translation>
+   <translation id="cpci_vm_hdd" qtlid="453731">Hard disk attached</translation>
+   <translation id="cpci_vm_status" qtlid="26443">Status</translation>
+   <translation id="cpci_vm_status_ERROR" qtlid="45508">Error</translation>
+   <translation id="cpci_vm_status_REBOOT" qtlid="26287">Reboot</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
@@ -85,7 +100,7 @@
 
 
    <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} excl. GST/hour</translation>
-   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. GST/month)</translation>
+   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. GST/month</translation>
    <translation id="cpci_price_month_btn" qtlid="270059">({{price}} excl. GST/month)</translation>
    <translation id="cpci_vm_private_ip" qtlid="247430">Private IP</translation>
 
@@ -308,17 +323,18 @@
 
    <translation id="cpci_vm_delete_submit" qtlid="247716">Delete this server</translation>
    <translation id="cpci_vm_delete_submit_success" qtlid="247729">This server will be deleted in a few moments.</translation>
-   <translation id="cpci_vm_delete_submit_error" qtlid="247742">Error: unable to delete this server.</translation>
+   <translation id="cpci_vm_delete_submit_error" qtlid="453744">An error has occurred submitting the deletion request for this server: {{message}}</translation>
 
    <translation id="cpci_vm_reinstall_warn" qtlid="247755">All data will be deleted!</translation>
    <translation id="cpci_vm_reinstall_submit" qtlid="26503">Reinstall</translation>
    <translation id="cpci_vm_reinstall_submit_success" qtlid="247768">This server will be reinstalled in a few minutes.</translation>
-   <translation id="cpci_vm_reinstall_submit_error" qtlid="247781">Error: unable to reinstall this server.</translation>
+   <translation id="cpci_vm_reinstall_submit_error" qtlid="453757">An error has occurred submitting the reinstallation request for this server: {{message}}</translation>
 
    <translation id="cpci_vm_reboot_submit" qtlid="247794">Reboot this server</translation>
-   <translation id="cpci_vm_reboot_submit_error" qtlid="247807">Error: unable to reboot this server.</translation>
+   <translation id="cpci_vm_reboot_submit_success" qtlid="453770">The request for rebooting the server has been processed.</translation>
+   <translation id="cpci_vm_reboot_submit_error" qtlid="453783">An error has occurred rebooting this server: {{message}}</translation>
    <translation id="cpci_vm_resume_submit_error" qtlid="372102">There was an error when activating this server. </translation>
-   <translation id="cpci_vm_rescue_end_error" qtlid="269149">Oops! Unable to exit rescue mode. </translation>
+   <translation id="cpci_vm_rescue_end_error" qtlid="453796">Oops! We're unable to bring the server out of rescue mode: {{message}}</translation>
 
    <translation id="cpcivm_edit_vm_login_info_linux" qtlid="295946">In order to connect to this machine, open a terminal and enter the following command :<br/><code>ssh {{user}}@{{ip}}</code>&#13;
 </translation>
@@ -338,6 +354,7 @@
    <translation id="cpci_vm_action_reboot" qtlid="247833">Hot reboot (soft)</translation>
    <translation id="cpci_vm_action_resume" qtlid="372115">Reactivate </translation>
    <translation id="cpci_vm_action_reboot_hard" qtlid="247846">Cold reboot (hard)</translation>
+   <translation id="cpci_vm_confirm_reboot" qtlid="453809">You will reboot your <strong>{{name}}</strong> instance.</translation>
    <translation id="cpci_vm_action_auth_info" qtlid="250927">Login information</translation>
    <translation id="cpci_vm_action_vnc" qtlid="251161">VNC console</translation>
    <translation id="cpci_vm_action_rescue" qtlid="168458">Reboot in rescue mode</translation>

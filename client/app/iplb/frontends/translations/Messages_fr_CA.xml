@@ -5,7 +5,7 @@
 
    <translation id="iplb_frontends_add" qtlid="438571">Ajouter un frontend</translation>
 
-   <translation id="iplb_frontend_frontend" qtlid="429615">Service frontal</translation>
+   <translation id="iplb_frontend_frontend" qtlid="429615">Serveur frontal</translation>
    <translation id="iplb_frontend_protocol" qtlid="9046">Protocol</translation>
    <translation id="iplb_frontend_datacenter" qtlid="30802">Centre de données</translation>
    <translation id="iplb_frontend_default_farm" qtlid="429563">Ferme par défaut</translation>
@@ -52,7 +52,7 @@
    <translation id="iplb_frontend_add_advanced_options_show" qtlid="69353">Afficher</translation>
    <translation id="iplb_frontend_add_dedicated_ip_failover" qtlid="430096">IP failover dédiée</translation>
    <translation id="iplb_frontend_add_dedicated_ip_failover_tip" qtlid="438740">La liste des adresses IP des serveurs distants auxquels votre répartiteur de charge est connecté.</translation>
-   <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">Restreindre l'accèss à des IPs</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">Restreindre l'accès à des IPs</translation>
    <translation id="iplb_frontend_add_restrict_ip_access_tip" qtlid="438766">La liste des adresses IPs clientes qui ont accès au répartiteur de charge (IPv4). Format : 1.2.3.4, 42.42.42.0/24</translation>
    <translation id="iplb_frontend_add_http_redirection" qtlid="430135">Redirection HTTP</translation>
    <translation id="iplb_frontend_add_http_header" qtlid="430122">Entête HTTP</translation>

@@ -13,4 +13,5 @@
    <translation id="nasha_snapshot_hour-6" qtlid="154130">6 tunnin välein</translation>
    <translation id="nasha_snapshot_informations" qtlid="344948">Tilannekuva (Snapshot) on pikakuva levystä. Se rekisteröi NAS-HA-palvelusi tilan tilannekuvan ottohetkellä. </translation>
    <translation id="nasha_snapshot_informations_size" qtlid="344961">Tilannekuvat käyttävät osion tilaa toimiakseen kunnolla. Tilannekuvien historiatietoja ei rekisteröidä: saman toistovälin viimeisin tilannekuva korvaa edellisen tilannekuvan.</translation>
+   <translation id="nasha_snapshot_warning_frequency" qtlid="453559">Jos et valitse kestoa, tämän levyosion olemassaolevat tilannekuvat poistetaan.</translation>
 </translations>

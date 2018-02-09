@@ -481,7 +481,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">OK</translation>
+   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
@@ -508,11 +508,14 @@
 
    <translation id="common_preview_see" qtlid="433371">Voir l'aperçu</translation>
 
+   <translation id="common_datagrid_nodata" qtlid="197635">Aucun résultat</translation>
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
    <translation id="common_pagination_resultsperpage" qtlid="433384">Résultats par page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
    <translation id="common_pagination_of" qtlid="121615">sur</translation>
+   <translation id="common_pagination_ofnresults" qtlid="452982">sur TOTAL_ITEMS résultats</translation>
+   <translation id="common_pagination_currentpageofpagecount" qtlid="452995">Page CURRENT_PAGE sur PAGE_COUNT</translation>
    <translation id="common_pagination_results" qtlid="433410">résultats</translation>
    <translation id="common_pagination_next" qtlid="433423">Page suivante</translation>
    <translation id="common_pagination_previous" qtlid="433436">Page précédente</translation>

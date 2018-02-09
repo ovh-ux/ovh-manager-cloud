@@ -102,10 +102,12 @@ angular.module("managerApp", [
                   data-ng-model="$value"
                   data-ng-change="$onChange()">
                 <label class="oui-checkbox__label-container" for="{{$name}}">
-                  <span class="oui-checkbox__icon">
-                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                  <span class="oui-checkbox__label">
+                    <span class="oui-checkbox__icon">
+                      <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
+                      <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
+                      <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
+                    </span>
                   </span>
                 </label>
               </div>
@@ -131,12 +133,12 @@ angular.module("managerApp", [
             };
 
             ouiPaginationConfiguration.translations = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage")
-                    .replace("CURRENT_PAGE", "{{currentPage}}")
-                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
                 ofNResults: $translate.instant("common_pagination_ofnresults")
                     .replace("TOTAL_ITEMS", "{{totalItems}}"),
-                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount"),
+                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
                 previousPage: $translate.instant("common_pagination_previous"),
                 nextPage: $translate.instant("common_pagination_next")
             };

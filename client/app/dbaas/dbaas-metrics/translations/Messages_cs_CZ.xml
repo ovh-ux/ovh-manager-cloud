@@ -5,8 +5,8 @@
    <translation id="metrics_tab_token" qtlid="403164">Tokeny</translation>
    <translation id="metrics_tab_platform" qtlid="123607">Platformy</translation>
 
-   <translation id="metrics_guides" qtlid="300370">Průvodci</translation>
-   <translation id="metrics_guides_footer" qtlid="406905">OVH příručky</translation>
+   <translation id="metrics_guides" qtlid="300370">Příručky</translation>
+   <translation id="metrics_guides_footer" qtlid="406905">Všechny OVH příručky</translation>
    <translation id="metrics_guides_first-step" qtlid="415753">První kroky...</translation>
    <translation id="metrics_guides_first-step_begin" qtlid="415766">Začít</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protokoly</translation>
@@ -33,7 +33,7 @@
    <translation id="metrics_need_upgrade" qtlid="403320">Brzy dosáhnete maximálního povoleného počtu sérií.</translation>
    <translation id="metrics_need_upgrade_how" qtlid="403333">Zvažte prosím migraci na vyšší verzi služby.</translation>
    <translation id="metrics_contact_admin" qtlid="43948">Administrativní kontakt</translation>
-   <translation id="metrics_contact_billing" qtlid="32950">Fakturační kontakt</translation>
+   <translation id="metrics_contact_billing" qtlid="32950">Fakturace</translation>
 
    <translation id="metrics_err_service" qtlid="403346">Při načítání služby došlo k chybě.</translation>
    <translation id="metrics_err_conso" qtlid="403359">Při načítání Vašich statistik o využití došlo k chybě.</translation>

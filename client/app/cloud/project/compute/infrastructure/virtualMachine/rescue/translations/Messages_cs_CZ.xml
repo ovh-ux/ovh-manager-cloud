@@ -16,6 +16,6 @@ Upozornění: v tomto režimu bude k dispozici pouze primární disk.</translati
 Upozornění: v tomto režimu bude k dispozici pouze primární disk.</translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Pro přístup k serveru {{vmName}} v režimu rescue použijte:<br/><code>rdesktop {{ip}}</code> s dočasným heslem {{pwd}} (heslo již nadále nebude nikde zobrazeno, poznamenejte si jej).&#13;
 Upozornění: v tomto režimu bude k dispozici pouze primární disk.</translation>
-   <translation id="cpc_rescue_mode_error" qtlid="269305">Nepodařilo se nám zrestartovat sever v režimu rescue.</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="453705">Váš server se nepodařilo restartovat v režimu rescue: {{message}}</translation>
 
 </translations>

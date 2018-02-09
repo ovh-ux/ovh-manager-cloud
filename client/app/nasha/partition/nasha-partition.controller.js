@@ -85,6 +85,12 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
             });
     };
 
+    self.goToNashaPartitionAccess = function (partitionName) {
+        $state.go("paas.nasha.nasha-partition-access", {
+            partitionName
+        });
+    };
+
     function initNasha () {
         return OvhApiDedicatedNasha.Aapi().get({ serviceName: $stateParams.nashaId }).$promise.then(function (nasha) {
             self.data.nasha = nasha;

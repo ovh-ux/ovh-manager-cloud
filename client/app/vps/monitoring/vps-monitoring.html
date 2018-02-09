@@ -1,0 +1,59 @@
+<section class="cui-page__content">
+    <div data-ng-if="$ctrl.loaders.init"
+         class="text-center">
+        <oui-spinner data-size="l"></oui-spinner>
+    </div>
+
+    <div data-ng-if="!$ctrl.loaders.init && !$ctrl.error">
+        <div class="oui-select">
+            <select class="oui-select__input"
+                    data-ng-options="period as ('vps_configuration_period_' + period | translate) for period in $ctrl.data.periods"
+                    data-ng-model="$ctrl.period"
+                    data-ng-change="$ctrl.loadMonitoring()">
+            </select>
+            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_proc"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="$ctrl.monitoring.cpu"
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-options="$ctrl.percentOption">
+                </canvas>
+            </div>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_ram"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="$ctrl.monitoring.ram"
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-options="$ctrl.percentOption">
+                </canvas>
+            </div>
+        </div>
+
+        <div class="cui-panel">
+            <div class="cui-panel__header">
+                <h2 data-translate="vps_configuration_monitoring_usage_trafic"></h2>
+            </div>
+            <div class="cui-panel__body">
+                <canvas id="line" class="chart chart-line"
+                    data-chart-data="$ctrl.monitoring.net"
+                    data-chart-labels="$ctrl.monitoring.labels"
+                    data-chart-series="$ctrl.series"
+                    data-chart-options="$ctrl.bpsOption"
+                    data-chart-colors="$ctrl.colors">
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+</section>
