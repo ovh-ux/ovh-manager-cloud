@@ -1,0 +1,39 @@
+<div class="oui-add-remove-panel">
+    <div class="panel panel-default">
+        <div class="panel-heading oui-add-remove-panel__heading">
+            <h3 class="panel-title">{{$ctrl.header}}</h3>
+            <oui-spinner size="s" class="pull-right" data-ng-if="$ctrl.inProgress"></oui-spinner>
+        </div>
+        <div class="panel-body oui-add-remove-panel__body" data-ng-class="$ctrl.inProgress? 'oui-add-remove-panel__busy' : ''">
+            <div class="row">
+                <div class="col-md-6 oui-add-remove-panel__source_panel">
+                    <h4 class="oui-add-remove-panel__source_panel_header">{{$ctrl.sourceListHeader}}</h4>
+                    <ul class="oui-add-remove-panel__source_panel_list">
+                        <li class="oui-add-remove-panel__source_panel_list_item"
+                            data-ng-repeat="source in $ctrl.sourceList"
+                            data-ng-click="$ctrl.add($index, source)">
+                            <span class="oui-add-remove-panel__source_panel_list_item__icon">
+                                <i class="oui-icon oui-icon-add" aria-hidden="true"></i>
+                            </span>
+                            {{source}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 oui-add-remove-panel__target_panel">
+                    <h4 class="oui-add-remove-panel__target_panel_header">{{$ctrl.targetListHeader}}</h4>
+                    <ul class="oui-add-remove-panel__target_panel_list">
+                        <li class="oui-add-remove-panel__target_panel_list_item"
+                            data-ng-repeat="target in $ctrl.targetList"
+                            data-ng-click="$ctrl.remove($index, target)">
+                            <span class="oui-add-remove-panel__target_panel_list_item__icon">
+                                <i class="oui-icon oui-icon-close" aria-hidden="true"></i>
+                            </span>
+                            {{target}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
