@@ -89,7 +89,7 @@ class LogsStreamsAlertsHomeCtrl {
      * @param {any} alert - the alert object
      * @memberof LogsStreamsAlertsHomeCtrl
      */
-    delete (alert) {
+    _delete (alert) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsStreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert.alertId)
