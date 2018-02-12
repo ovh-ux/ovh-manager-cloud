@@ -9,5 +9,8 @@
    <translation id="cpci_private_network_creating" qtlid="363906">Création du réseau privé en cours</translation>
    <translation id="cpci_private_network_creating_description" qtlid="261374">Cette opération peut prendre quelques minutes</translation>
    <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Une erreur est survenue lors de l'obtention des réseaux privés.</translation>
-   <translation id="cpci_private_network_add_vrack_error">Une erreur s'est produite lors de l'ajout de vRack.</translation>
+   <translation id="cpci_private_network_add_vrack_error">Une erreur s'est produite lors de l'activation des réseaux privés.</translation>
+   <translation id="cpci_private_network_remove_vrack_error">Une erreur s'est produite lors de la désactivation des réseaux privés.</translation>
+   <translation id="cpci_private_network_add_vrack_success">Les réseaux privés ont été activés avec succès.</translation>
+   <translation id="cpci_private_network_remove_vrack_success">Les réseaux privés ont été désactivés avec succès.</translation>
 </translations>

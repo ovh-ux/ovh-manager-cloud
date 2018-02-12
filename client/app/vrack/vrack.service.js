@@ -1,7 +1,8 @@
 class VrackService {
 
-    constructor ($q, ControllerHelper, OvhApiVrack) {
+    constructor ($q, $translate, ControllerHelper, OvhApiVrack) {
         this.$q = $q;
+        this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.OvhApiVrack = OvhApiVrack;
     }
@@ -32,7 +33,7 @@ class VrackService {
     selectVrackModal (vRacks, orderUrl) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
-                templateUrl: "app/vrack/selectVrack/selectVrack.html",
+                templateUrl: "app/vrack/modals/selectVrack.html",
                 controller: "SelectVrackCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
@@ -64,9 +65,9 @@ class VrackService {
 
     unlinkVrackModal () {
         return this.ControllerHelper.modal.showConfirmationModal({
-            submitButtonText: "Désactiver",
-            titleText: "Désactiver les réseaux privés",
-            text: "Êtes-vous sûr de vouloir désactiver les réseaux privés pour ce service?"
+            submitButtonText: this.$translate.instant("common_deactivate"),
+            titleText: this.$translate.instant("private_network_deactivate"),
+            text: this.$translate.instant("private_network_deactivate_confirmation")
         });
     }
 

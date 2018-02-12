@@ -6,4 +6,6 @@
    <translation id="private_network_activate_existing">Existant</translation>
    <translation id="private_network_activate_new">Nouveau</translation>
    <translation id="private_network_select_placeholder">Sélectionner</translation>
+   <translation id="private_network_deactivate">Désactiver les réseaux privés</translation>
+   <translation id="private_network_deactivate_confirmation">Êtes-vous sûr de vouloir désactiver les réseaux privés pour ce service?</translation>
 </translations>

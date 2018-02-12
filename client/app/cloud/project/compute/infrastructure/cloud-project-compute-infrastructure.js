@@ -45,7 +45,7 @@ angular.module("managerApp")
                     "cloud/project/delete",
                     "cloud/project/rename",
                     "cloud/project/compute/infrastructure/openstackClient",
-                    "vrack/selectVrack"
+                    "vrack/modals"
                 ]
             });
     });

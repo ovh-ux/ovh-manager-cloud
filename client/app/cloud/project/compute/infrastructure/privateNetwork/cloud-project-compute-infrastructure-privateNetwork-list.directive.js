@@ -112,6 +112,9 @@ class PrivateNetworkListCtrl {
                 return this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
             })
             .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+            .then(() => {
+                this.CloudMessage.success(this.$translate.instant("cpci_private_network_add_vrack_success"));
+            })
             .catch(err => {
                 if (err === "cancel") {
                     return;
@@ -126,13 +129,21 @@ class PrivateNetworkListCtrl {
     unlinkVrack () {
         this.VrackService.unlinkVrackModal()
             .then(() => {
-                console.log("unlinking");
                 this.loaders.vrack.unlink = true;
                 return this.VrackService.unlinkCloudProjectFromVrack(this.models.vrack.id, this.serviceName);
             })
             .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
-            .finally(() => {
+            .then(() => {
                 this.models.vrack = null;
+                this.CloudMessage.success(this.$translate.instant("cpci_private_network_remove_vrack_success"));
+            })
+            .catch(err => {
+                if (err === "cancel") {
+                    return;
+                }
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_remove_vrack_error"));
+            })
+            .finally(() => {
                 this.loaders.vrack.unlink = false;
             });
     }
