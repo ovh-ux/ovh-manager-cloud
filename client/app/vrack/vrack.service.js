@@ -45,6 +45,14 @@ class VrackService {
         });
     }
 
+    selectVrack () {
+        return this.$q.all({
+            orderUrl: this.getOrderUrl(),
+            vracks: this.getVracks()
+        })
+            .then(data => this.selectVrackModal(data.vracks, data.orderUrl));
+    }
+
     linkCloudProjectToVrack (selectedVrack, projectId) {
         return this.OvhApiVrack.CloudProject().Lexi().create({
             serviceName: selectedVrack
@@ -54,12 +62,20 @@ class VrackService {
             .then(vrackTask => vrackTask.data.id);
     }
 
-    selectVrack () {
-        return this.$q.all({
-            orderUrl: this.getOrderUrl(),
-            vracks: this.getVracks()
-        })
-            .then(data => this.selectVrackModal(data.vracks, data.orderUrl));
+    unlinkVrackModal () {
+        return this.ControllerHelper.modal.showConfirmationModal({
+            submitButtonText: "Désactiver",
+            titleText: "Désactiver les réseaux privés",
+            text: "Êtes-vous sûr de vouloir désactiver les réseaux privés pour ce service?"
+        });
+    }
+
+    unlinkCloudProjectFromVrack (selectedVrack, projectId) {
+        return this.OvhApiVrack.CloudProject().Lexi().delete({
+            serviceName: selectedVrack,
+            project: projectId
+        }).$promise
+            .then(vrackTask => vrackTask.data.id);
     }
 
     getTask (serviceName, taskId) {

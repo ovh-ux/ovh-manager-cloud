@@ -30,7 +30,8 @@ class PrivateNetworkListCtrl {
             },
             vrack: {
                 get: false,
-                link: false
+                link: false,
+                unlink: false
             },
             vracks: {
                 get: true
@@ -119,6 +120,20 @@ class PrivateNetworkListCtrl {
             })
             .finally(() => {
                 this.loaders.vrack.link = false;
+            });
+    }
+
+    unlinkVrack () {
+        this.VrackService.unlinkVrackModal()
+            .then(() => {
+                console.log("unlinking");
+                this.loaders.vrack.unlink = true;
+                return this.VrackService.unlinkCloudProjectFromVrack(this.models.vrack.id, this.serviceName);
+            })
+            .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+            .finally(() => {
+                this.models.vrack = null;
+                this.loaders.vrack.unlink = false;
             });
     }
 
@@ -279,6 +294,7 @@ class PrivateNetworkListCtrl {
         return _.some(this.loaders, "query", true) ||
                _.some(this.loaders, "get", true) ||
                _.some(this.loaders, "link", true) ||
+               _.some(this.loaders, "unlink", true) ||
                this.isVrackCreating();
     }
 
