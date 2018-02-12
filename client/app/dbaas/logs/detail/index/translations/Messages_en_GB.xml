@@ -8,12 +8,14 @@
     <translation id="logs_index_add_data_feed">Add index</translation>
 
     <translation id="logs_index_get_error">An error has occurred while retrieving index</translation>
-    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving quota</translation>
+    <translation id="logs_streams_quota_get_error">An error has occurred while retrieving quota </translation>
 
     <translation id="logs_index_col_index">Index</translation>
     <translation id="logs_index_col_description">Description</translation>
     <translation id="logs_index_col_creation_date">Date of creation</translation>
     <translation id="logs_index_col_free_space">Free space</translation>
+    <translation id="logs_index_col_shared">Shared index</translation>
+    
     <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
     
     <translation id="logs_modal_delete_title">Delete index</translation>
