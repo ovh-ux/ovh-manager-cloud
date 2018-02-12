@@ -1,6 +1,5 @@
 class LogsStreamsService {
-    constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, ControllerHelper, UrlHelper, CloudMessage, LogStreamsConstants) {
+    constructor ($q, $translate, CloudMessage, CloudPoll, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogStreamsConstants, OvhApiDbaas, ServiceHelper, UrlHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -11,6 +10,7 @@ class LogsStreamsService {
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.CloudPoll = CloudPoll;
         this.LogsOptionsService = LogsOptionsService;
+        this.LogsStreamsAlertsService = LogsStreamsAlertsService;
         this.ControllerHelper = ControllerHelper;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
@@ -179,20 +179,6 @@ class LogsStreamsService {
     }
 
     /**
-     * returns all notifications configured for a given stream
-     *
-     * @param {any} serviceName
-     * @param {any} streamId
-     * @returns promise which will be resolve to array of notifications
-     * @memberof LogsStreamsService
-     */
-    getNotifications (serviceName, streamId) {
-        return this.StreamsApiService.notifications({ serviceName, streamId })
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_streams_notifications_get_error"));
-    }
-
-    /**
      * returns all archives configured for a given stream
      *
      * @param {any} serviceName
@@ -332,7 +318,7 @@ class LogsStreamsService {
         stream.info.notifications = [];
         stream.info.archives = [];
         // asynchronously fetch all notification of a stream
-        this.getNotifications(serviceName, stream.info.streamId)
+        this.LogsStreamsAlertsService.getAlertIds(serviceName, stream.info.streamId)
             .then(notifications => {
                 stream.info.notifications = notifications;
             });
