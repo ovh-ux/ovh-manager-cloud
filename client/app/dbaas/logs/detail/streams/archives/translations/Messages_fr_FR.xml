@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="streams_archives_loading_error">Erreur lors du chargement des archives: {{message}}</translation>
+    <translation id="streams_archives_ids_loading_error">Erreur lors du chargement des ID d'archive: {{message}}</translation>
+    
+    <translation id="streams_archives_title">Archives</translation>
+    <translation id="streams_archives_current_title">Gestion de vos archives pour le</translation>
+    <translation id="streams_archives_intro_text">Une fois décongelées, les archives sont disponibles en téléchargement pendant 24 heures.</translation>
+</translations>

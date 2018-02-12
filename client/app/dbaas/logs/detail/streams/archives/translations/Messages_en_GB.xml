@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="streams_archives_loading_error">Error loading archive: {{message}}</translation>
+    <translation id="streams_archives_ids_loading_error">Error loading archive IDs: {{message}}</translation>
+    <translation id="streams_archives_url_load_error">Error loading archive url: {{message}}</translation>
+    <translation id="streams_archives_download_error">Error downloading archive: {{message}}</translation>
+
+    <translation id="streams_archives_title">Archives</translation>
+    <translation id="streams_archives_current_title">Manage your archives for</translation>
+    <translation id="streams_archives_intro_text">Once unfrozen, the archives are available to download for 24 hours.</translation>
+    
+    <translation id="streams_archives_file_name">File name</translation>
+    <translation id="streams_archives_size">Size</translation>
+    <translation id="streams_archives_signatures">Signatures</translation>
+    <translation id="streams_archives_status">Status</translation>
+
+    <translation id="streams_archives_unfreeze">Unfreeze</translation>
+    <translation id="streams_archives_download">Download</translation>
+</translations>
