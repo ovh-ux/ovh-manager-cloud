@@ -506,7 +506,7 @@
                                             <span class="flavor-offer-price right-space-m12"
                                                   data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBillingBoolean"
                                                   data-translate="cpci_vm_flavor_month"
-                                                  data-translate-values="{price: vm.price.price.text || '?' }"></span>
+                                                  data-translate-values="{price: vm.price.monthlyPrice.text || vm.price.price.text || '?' }"></span>
                                             <oui-spinner size="s" inline="true"
                                                          data-ng-if="vm.monthlyBilling.status === 'activationPending'"></oui-spinner>
                                         </div>

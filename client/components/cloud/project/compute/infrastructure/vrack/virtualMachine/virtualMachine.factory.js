@@ -135,6 +135,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
                     serviceName: this.serviceName
                 }).$promise.then(flavorsList => {
                     self.flavor = _.find(flavorsList, { id: flavorId });
+                    self.planCode = self.flavor.planCodes[self.monthlyBillingBoolean ? "monthly" : "hourly"];
 
                     // if not in the list: it's a deprecated flavor: directly get it!
                     if (!self.flavor) {
@@ -150,7 +151,6 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
                 })
             );
         }
-        queue.push(self.updatePrice());
 
         // if sshKeyId
         if (this.sshKeyId) {
@@ -161,11 +161,13 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
             }));
         }
 
-        return $q.all(queue).then(() => {
-            delete self.imageId;
-            delete self.flavorId;
-            delete self.sshKeyId;
-        });
+        return $q.all(queue)
+            .then(() => self.updatePrice())
+            .then(() => {
+                delete self.imageId;
+                delete self.flavorId;
+                delete self.sshKeyId;
+            });
     };
 
 
@@ -282,7 +284,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
                 flavorId: self.flavor.id
             }).$promise.then(vmOptions => {
                 self.status = vmOptions.status;
-                return self.getFullInformations();
+                return self;
             }, error => $q.reject({
                 error: error.data,
                 requestName: "resize"
@@ -340,7 +342,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
             self.name = vmWithChanges.name;
             self.monthlyBilling = vmWithChanges.monthlyBilling || self.monthlyBilling || undefined;
             self.monthlyBillingBoolean = vmWithChanges.monthlyBillingBoolean;
-            self.price = vmWithChanges.price || self.price || undefined;
+            self.price = vmWithChanges.flavor.price || vmWithChanges.price || undefined;
             self.image = vmWithChanges.image;
             self.flavor = vmWithChanges.flavor;
         }
