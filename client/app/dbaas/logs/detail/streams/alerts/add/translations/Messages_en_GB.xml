@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="add_alert_title_message_count">Create a counter condition</translation>
-    <translation id="add_alert_title_field_value">Create a numeric value condition</translation>
-    <translation id="add_alert_title_field_content_value">Create a textual content condition</translation>
+    <translation id="add_alert_title_message_count">Add a message count condition</translation>
+    <translation id="add_alert_title_field_value">Add a field aggregation condition</translation>
+    <translation id="add_alert_title_field_content_value">Add a field content condition</translation>
     
     <translation id="add_alert_description_message_count">This condition is triggered when the number of messages is greater than or less than the threshold set in a given period</translation>
     <translation id="add_alert_description_field_value">This condition is triggered when the aggregated value of a field is higher or lower than a defined threshold in a given period of time</translation>
