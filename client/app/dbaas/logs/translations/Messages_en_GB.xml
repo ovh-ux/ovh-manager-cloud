@@ -3,4 +3,5 @@
     <translation id="logs_select_options_title">Choose the attached option (optional)</translation>
     <translation id="logs_select_options_placeholder">Select Option</translation>
     <translation id="logs_notification_title">Notification</translation>
+    <translation id="logs_operation_failed">Operation {{operation_id}} failed</translation>
 </translations>

@@ -1,10 +1,9 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
-        this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.AliasApiService = OvhApiDbaas.Logs().Alias().Lexi();
         this.AliasAapiService = OvhApiDbaas.Logs().Alias().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -14,6 +13,7 @@ class LogsAliasesService {
         this.LogStreamsConstants = LogStreamsConstants;
         this.LogAliasConstants = LogAliasConstants;
         this.UrlHelper = UrlHelper;
+        this.CloudMessage = CloudMessage;
     }
 
     /**
@@ -89,14 +89,11 @@ class LogsAliasesService {
      */
     getQuota (serviceName) {
         return this.AccountingAapiService.me({ serviceName }).$promise
-            .then(me => {
-                const quota = {
-                    max: me.total.maxNbAlias,
-                    configured: me.total.curNbAlias,
-                    currentUsage: me.total.curNbAlias * 100 / me.total.maxNbAlias
-                };
-                return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_alias_quota_get_error"));
+            .then(me => ({
+                max: me.total.maxNbAlias,
+                configured: me.total.curNbAlias
+            })
+            ).catch(this.ServiceHelper.errorHandler("logs_alias_quota_get_error"));
     }
 
     /**
@@ -112,7 +109,7 @@ class LogsAliasesService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_aliases_delete_success");
+                return this._handleOperation(serviceName, operation, "logs_aliases_delete_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_aliases_delete_error"));
     }
@@ -130,7 +127,7 @@ class LogsAliasesService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_aliases_create_success");
+                return this._handleOperation(serviceName, operation, "logs_aliases_create_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_aliases_create_error"));
     }
@@ -148,7 +145,7 @@ class LogsAliasesService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_aliases_update_success");
+                return this._handleOperation(serviceName, operation, "logs_aliases_update_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_aliases_update_error"));
     }
@@ -182,8 +179,8 @@ class LogsAliasesService {
     }
 
     /**
-     * handles success state for create, delete and update streams.
-     * Repetedly polls for operation untill it returns SUCCESS message.
+     * handles success and failure state for create, delete and update streams.
+     * Repetedly polls for operation untill it returns SUCCESS or FAILURE.
      *
      * @param {any} serviceName
      * @param {any} operation, operation to poll
@@ -191,10 +188,17 @@ class LogsAliasesService {
      * @returns promise which will be resolved to operation object
      * @memberof LogsAliasesService
      */
-    _handleSuccess (serviceName, operation, successMessage) {
+    _handleOperation (serviceName, operation, successMessage) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
+            .then(result => {
+                if (result[0].item.state === this.LogStreamsConstants.SUCCESS) {
+                    this.CloudMessage.success(this.$translate.instant(successMessage));
+                } else {
+                    this.CloudMessage.error(this.$translate.instant("logs_operation_failed", { operation_id: result[0].item.operationId }));
+                }
+                return result;
+            });
     }
 
     _killPoller () {
@@ -204,19 +208,18 @@ class LogsAliasesService {
     }
 
     _resetAllCache () {
-        this.LogsApiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
         this.AliasAapiService.resetAllCache();
     }
 
     _pollOperation (serviceName, operation) {
         this._killPoller();
-        const pollar = this.CloudPoll.poll({
+        const poller = this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
             stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS
         });
-        return pollar;
+        return poller;
     }
 }
 
