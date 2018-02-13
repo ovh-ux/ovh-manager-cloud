@@ -57,6 +57,6 @@
 
     <translation id="cpd_project_creating_help" qtlid="245896">Vous serez automatiquement redirigé lorsque le projet sera créé.</translation>
     <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Veuillez finaliser le paiement de votre <a href="{{url}}" target="_blank">bon de commande initial</a>.</translation>
-    <translation id="cpd_project_creating_bc_do_not_havetopay" qtlid="272027">Votre commande est en cours de finalisation.</translation>
+    <translation id="cpd_project_creating_bc_do_not_havetopay">Votre commande est en cours de finalisation.</translation>
     <translation id="cpd_project_creating_bc_support" qtlid="286812">Si cette page est toujours présente plusieurs minutes après paiement, merci de contacter <a href="#/support">notre service client</a>.</translation>
 </translations>

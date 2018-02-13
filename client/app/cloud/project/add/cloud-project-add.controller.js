@@ -49,7 +49,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             self.loaders.creating = true;
 
             // If contracts: accept them
-            //if (self.model.contractsAccepted && self.data.agreements.length) {
+            if (self.model.contractsAccepted && self.data.agreements.length) {
                 var queueContracts = [];
                 angular.forEach(self.data.agreements, function (contract) {
                     queueContracts.push(OvhApiMe.Agreements().Lexi().accept({
@@ -61,24 +61,25 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                     }));
                 });
                 promiseContracts = $q.all(queueContracts);
+            }
 
-                return CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
-                    .then(response => {
-                        self.data.activeOrder = response;
+            return CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
+                .then(response => {
+                    self.data.activeOrder = response;
 
-                        if (response.prices.withTax.value) {
-                            $window.open(response.url);
-                        }
+                    if (response.prices.withTax.value) {
+                        $window.open(response.url);
+                    }
 
-                        self.pollOrder(response.orderId);
-                    })
-                    .catch(() => {
-                        self.data.activeOrder = undefined;
-                        Toast.error($translate.instant("cpa_error"));
-                    })
-                    .finally(() => {
-                        self.loaders.creating = false;
-                    });
+                    self.pollOrder(response.orderId);
+                })
+                .catch(() => {
+                    self.data.activeOrder = undefined;
+                    Toast.error($translate.instant("cpa_error"));
+                })
+                .finally(() => {
+                    self.loaders.creating = false;
+                });
         };
 
         this.pollOrder = function (orderId) {
@@ -164,7 +165,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 self.data.user = result.user;
                 self.model.description = $translate.instant("cloud_menu_project_num", { num: result.projectIds.length + 1 });
                 self.model.paymentMethod = self.model.noPaymentMethodEnum.MEAN;
-                self.data.user = result.user;
             });
         }
 

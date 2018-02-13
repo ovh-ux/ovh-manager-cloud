@@ -50,8 +50,7 @@ class CloudProjectAddService {
                 }).$promise);
         }
 
-        const total = _.filter(order.prices, price => price.label === "TOTAL")[0];
-        if (voucher && total.price.value) {
+        if (voucher) {
             promises.push(this.OvhApiOrder.Cart().Item().Configuration().Lexi()
                 .post({
                     cartId: order.cartId,
