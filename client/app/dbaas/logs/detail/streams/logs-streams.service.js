@@ -220,7 +220,7 @@ class LogsStreamsService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName, this.LogStreamsConstants.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogStreamsConstants.optionType);
     }
 
     /**

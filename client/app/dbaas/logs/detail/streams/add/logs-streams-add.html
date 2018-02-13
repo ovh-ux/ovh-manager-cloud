@@ -25,9 +25,9 @@
             <label for="stream_description" class="oui-label" data-translate="logs_streams_col_description"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
-                    <input type="text" id="stream_description" name="stream_description"
-                    class="oui-input" data-ng-model="ctrl.stream.data.description"
-                    data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.stream_description.$invalid}"
+                    <textarea id="stream_description" name="stream_description"
+                    class="oui-textarea" data-ng-model="ctrl.stream.data.description"
+                    data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.stream_description.$invalid}"
                     required />
                 </div>
             </div>
