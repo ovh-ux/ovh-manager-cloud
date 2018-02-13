@@ -73,9 +73,9 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
                     self.pollOrder(response.orderId);
                 })
-                .catch(() => {
+                .catch(error => {
                     self.data.activeOrder = undefined;
-                    Toast.error($translate.instant("cpa_error"));
+                    Toast.error($translate.instant("cpa_error", error.data));
                 })
                 .finally(() => {
                     self.loaders.creating = false;

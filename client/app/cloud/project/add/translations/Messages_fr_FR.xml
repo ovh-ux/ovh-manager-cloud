@@ -49,7 +49,7 @@
 
     <translation id="cpa_success" qtlid="295777">Le projet est en cours de création. Veuillez payer ce <a href="{{url}}" target="blank">bon de commande</a> afin de pouvoir l'utiliser.</translation>
 
-    <translation id="cpa_error" qtlid="144721">Une erreur est survenue. Veuillez réessayer plus tard.</translation>
+    <translation id="cpa_error">Une erreur est survenue. {{message}}</translation>
     <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Vous devez renseigner un moyen de paiement valide (actif).</translation>
     <translation id="cpa_error_invalid_voucher" qtlid="255350">Le voucher est invalide (erroné ou expiré).</translation>
     <translation id="cpa_error_contracts_tosign" qtlid="245844">Il y a un ou plusieurs contrats à valider.</translation>
