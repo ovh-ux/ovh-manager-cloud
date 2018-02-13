@@ -140,7 +140,7 @@
    <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Achtung: Die momentan ausgewählte Sicherung ist ausschließlich in ihrer derzeitigen Region verfügbar und kann nicht mehr verwendet werden, wenn die Lokalisierung geändert wird.</translation>
 
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Typ</translation>
-   <translation id="cpcivm_addedit_table_price" qtlid="133292">Preis ohne MwSt</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Preis (netto)</translation>
    <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUs</translation>
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Festplatten</translation>

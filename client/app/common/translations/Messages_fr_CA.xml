@@ -44,9 +44,12 @@
    <translation id="common_menu_billing" qtlid="32950">Facturation</translation>
    <translation id="common_menu_renew" qtlid="229658">Mes services</translation>
    <translation id="common_menu_orders" qtlid="282809">Mes commandes</translation>
+   <translation id="common_menu_contacts" qtlid="70541">Mes contacts</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Mes demandes d’assistance</translation>
    <translation id="common_menu_language" qtlid="30598">Langue</translation>
    <translation id="common_menu_account" qtlid="157642">Mon compte</translation>
    <translation id="common_menu_changelog" qtlid="124964">Historique des mises à jour</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Aller au contenu principal</translation>
    <translation id="global_logout" qtlid="33658">Déconnexion</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Serveurs dédiés</translation>
@@ -481,7 +484,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
