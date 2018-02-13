@@ -6,7 +6,6 @@
 @import (less) '../bower_components/ovh-angular-list-view/dist/ovh-angular-list-view.min.css';
 @import '../bower_components/bootstrap/less/bootstrap.less';
 @import '../bower_components/font-awesome/less/font-awesome.less';
-@import '../bower_components/ovh-angular-manager-navbar/less/ovh-angular-manager-navbar.less';
 @import '../bower_components/ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu.less';
 @import '../bower_components/ovh-angular-actions-menu/less/ovh-angular-actions-menu.less';
 @import '../bower_components/ovh-common-style/less/helpers.less';
@@ -67,9 +66,11 @@
 @top_bar_height : 80px;
 
 // App params structure
-@MobileTopNavHeight     : 55px;
+@TopNavHeight           : 44px;
+@MobileTopNavHeight     : @TopNavHeight;
 
 @TopTabBackground       : #e0e0e0;
+@TopNavBackground       : @TopTabBackground;
 
 @UNIVERS       : #EDC200;
 @UNIVERS_HOVER : #E9D473;

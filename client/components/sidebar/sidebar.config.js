@@ -3,8 +3,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService, OvhApiMe,
-                 FeatureAvailabilityService, ProductsService, REDIRECT_URLS, URLS) {
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService, SessionService,
+                 FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
     /*==========================================
@@ -112,8 +112,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     function init () {
         // set initialization promise
         var promise = $q.all({
-            user: OvhApiMe.Lexi().get().$promise,
-            products: ProductsService.getProducts(),
+            user: SessionService.getUser(),
+            products: SessionService.getProducts(),
             translate: $translate.refresh()
         }).catch(function (err) {
             Toast.error([$translate.instant("cloud_sidebar_error"), err.data.message || ""].join(" "));

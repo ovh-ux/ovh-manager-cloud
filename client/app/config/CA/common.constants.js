@@ -7,6 +7,7 @@ angular.module("managerApp")
         dedicated: "https://ca.ovh.com/manager/index.html#/",
         cloud: "https://ca.ovh.com/manager/cloud/index.html#/",
         sunrise: "https://ca.ovh.com/manager/sunrise/index.html#/",
+        gamma: "https://ca.ovh.com/manager/sunrise/index.html#/",
         portal: "https://www.ovh.com/manager/portal/index.html#/"
     })
     .constant("REDIRECT_URLS", {
