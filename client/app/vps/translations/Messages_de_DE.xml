@@ -483,7 +483,7 @@
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Eine zusätzliche Festplatte bestellen</translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Wählen Sie die gewünschte Größe der zusätzlichen Festplatte für Ihren VPS aus. Diese wird als zweite Festplatte in Ihrem Betriebssystem aufgeführt.</translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">Die zusätzliche Festplatte wird zu Ihrem VPS bis zu dessen Ablaufdatum hinzugefügt und anschließend mit diesem weiter verlängert.</translation>
-   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} zzgl. MwSt/Monat</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} zzgl. MwSt / Monat</translation>
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Preis zzgl. MwSt:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Preis inkl. MwSt:</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option:</translation>

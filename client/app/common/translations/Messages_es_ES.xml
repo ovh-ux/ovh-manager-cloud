@@ -44,9 +44,12 @@
    <translation id="common_menu_billing" qtlid="32950">Facturación</translation>
    <translation id="common_menu_renew" qtlid="229658">Mis servicios</translation>
    <translation id="common_menu_orders" qtlid="282809">Mis pedidos </translation>
+   <translation id="common_menu_contacts" qtlid="70541">Mis contactos</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Mis solicitudes de asistencia</translation>
    <translation id="common_menu_language" qtlid="30598">Idioma</translation>
    <translation id="common_menu_account" qtlid="157642">Mi cuenta</translation>
    <translation id="common_menu_changelog" qtlid="124964">Historial de actualizaciones</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
    <translation id="global_logout" qtlid="33658">Salir</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Servidores dedicados</translation>
