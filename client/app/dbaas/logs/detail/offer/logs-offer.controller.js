@@ -39,7 +39,7 @@ class LogsOfferCtrl {
     saveOffer () {
         this.savingOffer = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
-                .then(response => this.$window.open(response.data.order.url, "_self"))
+                .then(response => this.$window.open(response.order.url, "_self"))
         });
         this.savingOffer.load();
     }

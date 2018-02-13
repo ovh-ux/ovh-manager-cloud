@@ -10,9 +10,6 @@
     <translation id="logs_offer_select_offer">Select offer</translation>
 
     <translation id="logs_offer_load_error">An error occurred while getting your offer details</translation>
-    <translation id="logs_order_save_order">An error occurred while saving your order. Please try again</translation>
-    <translation id="logs_order_get_error">An error has occurred while retrieving offers</translation>
     <translation id="logs_offer_current_offer">Current offer</translation>    
     <translation id="logs_offer_GB_day">GB/day</translation>
-
 </translations>
