@@ -7,7 +7,7 @@
    <translation id="cloud_sidebar_section_dedicated_server" qtlid="66032">Serveur Dédié</translation>
    <translation id="cloud_sidebar_section_cloud_project" qtlid="274369">Projet Cloud</translation>
    <translation id="cloud_sidebar_section_dedicated_cloud" qtlid="20131">Private Cloud</translation>
-   <translation id="cloud_sidebar_section_housing">Housing</translation>
+   <translation id="cloud_sidebar_section_housing" qtlid="233583">Housing</translation>
    <translation id="cloud_sidebar_section_paas" qtlid="323447">Plateformes et services</translation>
    <translation id="cloud_sidebar_section_paas_cda" qtlid="355044">Cloud Disk Array</translation>
    <translation id="cloud_sidebar_section_paas_veeam" qtlid="404113">Veeam CC</translation>
@@ -20,7 +20,7 @@
    <translation id="cloud_sidebar_section_nas" qtlid="76782">NAS</translation>
    <translation id="cloud_sidebar_section_nasha" qtlid="345403">NAS-HA</translation>
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>
-   <translation id="cloud_sidebar_section_cdn">Content Delivery Network</translation>
+   <translation id="cloud_sidebar_section_cdn" qtlid="93415">Content Delivery Network</translation>
 
 <!-- PCI -->
    <translation id="cloud_sidebar_pci_infrastructure" qtlid="125552">Infrastructure</translation>

@@ -44,9 +44,12 @@
    <translation id="common_menu_billing" qtlid="32950">Laskutus</translation>
    <translation id="common_menu_renew" qtlid="229658">Omat palvelut</translation>
    <translation id="common_menu_orders" qtlid="282809">Omat tilaukset</translation>
+   <translation id="common_menu_contacts" qtlid="70541">Omat kontaktit</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Katso kaikki tukipyynnöt</translation>
    <translation id="common_menu_language" qtlid="30598">Kieli</translation>
    <translation id="common_menu_account" qtlid="157642">Oma tili</translation>
    <translation id="common_menu_changelog" qtlid="124964">Päivityshistoria</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
    <translation id="global_logout" qtlid="33658">Kirjaudu ulos</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Dedikoidut palvelimet</translation>
