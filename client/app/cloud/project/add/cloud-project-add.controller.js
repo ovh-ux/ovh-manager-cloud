@@ -3,7 +3,7 @@
 angular.module("managerApp").controller("CloudProjectAddCtrl",
     function ($q, $state, $timeout, $translate, $rootScope, $window, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
               OvhApiMe, OvhApiOrder, OvhApiVrack, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
-              CloudProjectAdd, CloudProjectAddService, CloudPoll) {
+              CloudProjectAddService, CloudPoll) {
 
         var self = this;
 
@@ -60,10 +60,10 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         });
                     }));
                 });
-                promiseContracts = $q.all(queueContracts);
+                promiseContracts = queueContracts.length ? $q.all(queueContracts) : $q.when();
             }
 
-            return CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
+            return promiseContracts.then(() => CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher))
                 .then(response => {
                     self.data.activeOrder = response;
 
@@ -91,7 +91,9 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             self.data.poller = CloudPoll.poll({
                 item: cloudOrder,
                 pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
-                        return response || {};
+                        const returnValue = response || { status: "delivered" };
+                        self.data.activeOrder.deliveryStatus = returnValue.status;
+                        return returnValue;
                     }),
                 stopCondition: item => item.status === "delivered",
                 interval: 3000
@@ -113,7 +115,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         });
                     }, 3000);
                 })
-                .catch(() => Toast.error($translate.instant("cpa_error")));
+                .catch(() => Toast.error($translate.instant("cpa_error", {})));
 
             return self.data.poller;
         }
@@ -128,6 +130,10 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             return angular.isDefined(_.find(self.data.creditCards, "threeDsValidated"));
         };
 
+        this.orderIsDelivering = function () {
+            return self.data.activeOrder.prices.withTax.value || self.data.activeOrder.deliveryStatus === "delivering";
+        };
+
         function initUserFidelityAccount () {
             return OvhApiMe.FidelityAccount().Lexi().get().$promise.then(function (account) {
                 return $q.when(account);
@@ -137,9 +143,9 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         }
 
         function initContracts () {
-            return CloudProjectAdd.getProjectInfo()
-                .then(projectInfo => {
-                    self.data.agreements = projectInfo.agreementsToAccept;
+            return CloudProjectAddService.getCloudProjectAgreements()
+                .then(agreements => {
+                     self.data.agreements = agreements;
                 });
         }
 
@@ -177,7 +183,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             }
             initContracts().then(initProject)["catch"](function (err) {
                 self.unknownError = true;
-                Toast.error($translate.instant("cpa_error") + (err && err.data && err.data.message ? " (" + err.data.message + ")" : ""));
+                Toast.error($translate.instant("cpa_error", err.data));
             })["finally"](function () {
                 self.loaders.init = false;
             });

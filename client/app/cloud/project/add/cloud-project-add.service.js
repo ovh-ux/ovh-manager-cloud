@@ -6,6 +6,17 @@ class CloudProjectAddService {
         this.OvhApiOrder = OvhApiOrder;
     }
 
+    getCloudProjectAgreements () {
+        return this.OvhApiMe.Agreements().Lexi().query({}, { agreed: "todo" })
+            .$promise
+            .then(response => {
+                const promises = _.map(response, agreementId => this.OvhApiMe.Agreements().Lexi().contract({ id: agreementId })
+                    .$promise
+                    .then(agreement => _.extend(agreement, { id: agreementId })));
+                return this.$q.all(promises);
+            });
+    }
+
     getCloudProjectOrders () {
         return this.OvhApiCloud.Lexi().order().$promise;
     }
