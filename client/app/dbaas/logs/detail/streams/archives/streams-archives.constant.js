@@ -4,10 +4,10 @@ angular.module("managerApp").constant("LogsStreamsArchivesConstant", {
         UNSEALED: "unsealed",
         UNSEALING: "unsealing"
     },
-    stateInfo: {
-        sealed: "Frozen",
-        unsealed: "Available",
-        unsealing: "Unfreezing"
+    stateType: {
+        sealed: "info",
+        unsealed: "success",
+        unsealing: "warning"
     },
     expirationInSeconds: 86400
 });

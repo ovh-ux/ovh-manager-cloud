@@ -4,7 +4,7 @@
     class OuiInlineColorAlertController {
 
         getClass () {
-            return `oui-inline-color-alert__${this.type}`;
+            return `oui-inline-color-alert__label oui-inline-color-alert__${this.type}`;
         }
     }
 
@@ -12,8 +12,7 @@
         .component("ouiInlineColorAlert", {
             template: `
                 <div class="oui-inline-color-alert">
-                    <span data-ng-class="$ctrl.getClass()" class="inline-block oui-inline-color-alert__circle"></span>
-                    <strong><span class="oui-inline-color-alert__label" data-ng-bind="$ctrl.label"></span></strong>
+                    <span data-ng-class="$ctrl.getClass()" data-ng-bind="$ctrl.label"></span>
                 </div>
             `,
             controller: OuiInlineColorAlertController,

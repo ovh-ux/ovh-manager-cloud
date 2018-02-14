@@ -2,9 +2,13 @@
     <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="streams_archives_title"></span>
     <h6 class="oui-header_6">
-        {{::'streams_archives_current_title' | translate}} {{ctrl.stream.data.title}}
+        {{::'streams_archives_current_title' | translate}} {{::ctrl.stream.data.title}}
     </h6>
     <p class="oui-paragraph mb-5" data-translate="streams_archives_intro_text"></p>
+
+    <div class="mb-5">
+        <oui-message ng-repeat="notification in ctrl.notifications | orderBy:'-'" type="{{notification.type}}">{{notification.text}}</oui-message>
+    </div>
 
     <oui-spinner data-ng-show="ctrl.archiveIds.loading"></oui-spinner>
     <oui-datagrid data-ng-if="!ctrl.archiveIds.loading"
@@ -18,20 +22,21 @@
             <div>MD5: {{$row.md5}}</div>
             <div>SHA256: {{$row.sha256}}</div>
         </oui-column>
-        <oui-column title="::'streams_archives_status' | translate" property="retrievalStateInfo">
-            {{$row.retrievalStateInfo}}
+        <oui-column title="::'streams_archives_status' | translate" property="retrievalState">
+            <oui-inline-color-alert type="$row.retrievalStateType" label="{{ 'streams_archives_' + $row.retrievalState | translate }}"></oui-inline-color-alert>
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item 
                 data-ng-if="$row.retrievalState !== ctrl.LogsStreamsArchivesConstant.state.UNSEALED" 
                 text="{{::'streams_archives_unfreeze' | translate}}" 
-                on-click="ctrl.download($row)" 
-                disabled="$row.retrievalState === ctrl.LogsStreamsArchivesConstant.state.UNSEALING">
+                on-click="ctrl.unfreeze($row)"
+                disabled="$row.retrievalState === ctrl.LogsStreamsArchivesConstant.state.UNSEALING || ctrl.archiveReload.loading">
             </oui-action-menu-item>
             <oui-action-menu-item 
                 data-ng-if="$row.retrievalState === ctrl.LogsStreamsArchivesConstant.state.UNSEALED" 
                 text="{{::'streams_archives_download' | translate}}" 
-                on-click="ctrl.download($row)">
+                on-click="ctrl.download($row)"
+                disabled="ctrl.archiveDownload.loading">
             </oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>    
