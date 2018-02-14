@@ -1,4 +1,5 @@
 angular.module("managerApp").constant("LogStreamsConstants", {
+    optionType: "logs-stream",
     MESSAGE_THRESHOLD: 1000,
     WEB_SOCKET_URL: "WEB_SOCKET",
     RFC_URL: "TCP_TLS_RFC5424",

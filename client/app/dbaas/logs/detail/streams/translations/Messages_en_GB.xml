@@ -50,7 +50,6 @@
     <translation id="logs_stream_get_error">An error has occurred while retrieving data stream: {{message}}</translation>
     <translation id="logs_streams_get_error">An error has occurred while retrieving data streams: {{message}}</translation>
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
-    <translation id="logs_streams_notifications_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
     <translation id="logs_streams_archives_get_error">An error has occurred while retrieving data stream notifiations: {{message}}</translation>
     <translation id="logs_streams_find_token_error">Token not found for stream {{stream}}.</translation>
     <translation id="logs_streams_copy_token_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the token value to enter for stream {{stream}}: {{token_value}}</translation>

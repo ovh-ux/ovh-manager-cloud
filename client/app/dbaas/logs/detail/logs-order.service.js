@@ -1,6 +1,6 @@
 class LogsOrderService {
     constructor (OvhApiDbaas, ServiceHelper) {
-        this.OvhApiDbaasLogsOrder = OvhApiDbaas.Logs().Order().Lexi();
+        this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().Lexi();
         this.ServiceHelper = ServiceHelper;
         this.staticOffer = {
             "logs-pro-0015": { name: "15", unit: "GB", streams: 5, tables: 5, limit: "0.5", limitDuration: "GB_day", duration: "month" },
@@ -16,7 +16,7 @@ class LogsOrderService {
     }
 
     getOrder (serviceName) {
-        return this.OvhApiDbaasLogsOrder.get({
+        return this.OvhApiDbaasLogsOrder.query({
             serviceName
         }).$promise
             .then(result => {

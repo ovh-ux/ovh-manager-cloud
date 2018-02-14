@@ -37,11 +37,11 @@
             <span data-ng-if="$row.info.notifications.length" data-ng-bind="$row.info.notifications.length" />
             <span data-ng-if="!$row.info.notifications.length"> - </span>
         </oui-column>
-        <oui-column align="center" title="::'logs_streams_col_linked_option' | translate" property="info.optionId" sortable>
+        <oui-column title="::'logs_streams_col_linked_option' | translate" property="info.optionId" sortable>
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
-        <oui-action-menu align="end" compact>
+        <oui-action-menu compact>
             <oui-action-menu-item text="{{ ::'logs_streams_graylog_access' | translate }}" href="{{ctrl.getGraylogUrl($row)}}" external></oui-action-menu-item>
             <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'logs_streams_copy_token' | translate }}" on-click="ctrl.copyToken($row)"></oui-action-menu-item>
             <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
