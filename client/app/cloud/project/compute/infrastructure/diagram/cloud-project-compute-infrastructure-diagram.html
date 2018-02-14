@@ -477,7 +477,7 @@
                                     <!-- VM infos -->
                                     <div class="vm-infos fade-transition"
                                          data-ng-class="{'show-problem': (vm.status !== 'DRAFT' && vm.status !== 'ACTIVE' && !vm.confirmLoading)}"
-                                         data-instance-id={{vm.id}}>
+                                         data-instance-id="{{vm.id}}">
 
                                         <div class="vm-display-actions clearfix">
                                             <div class="vm-grip pull-left" data-ovh-stop-event="click">
@@ -506,7 +506,7 @@
                                             <span class="flavor-offer-price right-space-m12"
                                                   data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
                                                   translate="cpci_vm_flavor_month"
-                                                  translate-values="{price: vm.price.monthlyPrice.text || '?' }"></span>
+                                                  translate-values="{price: vm.price.price.text || '?' }"></span>
                                             <span class="text-center"
                                                   data-ng-if="vm.monthlyBilling.status === 'activationPending'">
                                                 <oui-spinner size="s" inline="true"></oui-spinner>
