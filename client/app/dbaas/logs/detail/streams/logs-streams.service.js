@@ -1,5 +1,5 @@
 class LogsStreamsService {
-    constructor ($q, $translate, CloudMessage, CloudPoll, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogStreamsConstants, OvhApiDbaas, ServiceHelper, UrlHelper) {
+    constructor ($q, $translate, CloudMessage, CloudPoll, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogStreamsConstants, OvhApiDbaas, ServiceHelper, UrlHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -11,6 +11,7 @@ class LogsStreamsService {
         this.CloudPoll = CloudPoll;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
+        this.LogsStreamsArchivesService = LogsStreamsArchivesService;
         this.ControllerHelper = ControllerHelper;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
@@ -179,20 +180,6 @@ class LogsStreamsService {
     }
 
     /**
-     * returns all archives configured for a given stream
-     *
-     * @param {any} serviceName
-     * @param {any} streamId
-     * @returns promise which will be resolve to array of archives
-     * @memberof LogsStreamsService
-     */
-    getArchives (serviceName, streamId) {
-        return this.StreamsApiService.archives({ serviceName, streamId })
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_streams_archives_get_error"));
-    }
-
-    /**
      * returns objecy containing total number of streams and total number of streams used
      *
      * @param {any} serviceName
@@ -323,7 +310,7 @@ class LogsStreamsService {
                 stream.info.notifications = notifications;
             });
         // asynchronously fetch all archives of a stream
-        this.getArchives(serviceName, stream.info.streamId)
+        this.LogsStreamsArchivesService.getArchiveIds(serviceName, stream.info.streamId)
             .then(archives => {
                 stream.info.archives = archives;
             });
