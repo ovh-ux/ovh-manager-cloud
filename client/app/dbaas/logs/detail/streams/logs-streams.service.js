@@ -287,7 +287,7 @@ class LogsStreamsService {
      */
     findStreamTokenValue (stream) {
         const ruleObj = _.find(stream.rules, rule => rule.field === this.LogStreamsConstants.X_OVH_TOKEN);
-        return _.get(ruleObj, "value", "");
+        return _.get(ruleObj, "value");
     }
 
     /**

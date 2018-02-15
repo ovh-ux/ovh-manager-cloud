@@ -1,10 +1,9 @@
 class LogsStreamsArchivesCtrl {
-    constructor ($interval, $state, $stateParams, $translate, CloudDownload, CloudMessage, ControllerHelper, LogsStreamsService, LogsStreamsArchivesConstant, LogsStreamsArchivesService) {
+    constructor ($interval, $state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsStreamsArchivesConstant, LogsStreamsArchivesService) {
         this.$interval = $interval;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
-        this.CloudDownload = CloudDownload;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.LogsStreamsService = LogsStreamsService;
@@ -98,7 +97,7 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     _startRetrievalDelayUpdate () {
-        this.retrievalDelayUpdater = this.$interval(this._updateRetrievalDelay.bind(this), 1000);
+        this.retrievalDelayUpdater = this.$interval(() => this._updateRetrievalDelay(), 1000);
     }
 
     /**
@@ -188,7 +187,7 @@ class LogsStreamsArchivesCtrl {
         this.archiveDownload.load()
             .then(urlInfo => {
                 this.notifications.splice(this.notifications.indexOf(notification), 1);
-                this.CloudDownload.download(urlInfo.url);
+                this.ControllerHelper.downloadUrl(urlInfo.url);
             });
     }
 

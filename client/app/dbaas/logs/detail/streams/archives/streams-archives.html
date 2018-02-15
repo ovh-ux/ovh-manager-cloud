@@ -19,8 +19,8 @@
             {{$row.size | bytes: 1:true:"B"}}
         </oui-column>
         <oui-column title="::'streams_archives_signatures' | translate">
-            <div>MD5: {{$row.md5}}</div>
-            <div>SHA256: {{$row.sha256}}</div>
+            <div data-translate="streams_archives_md5_value" data-translate-values="{{$row}}"></div>
+            <div data-translate="streams_archives_sha256_value" data-translate-values="{{$row}}"></div>
         </oui-column>
         <oui-column title="::'streams_archives_status' | translate" property="retrievalState">
             <oui-inline-color-alert type="$row.retrievalStateType" label="{{ 'streams_archives_' + $row.retrievalState | translate }}"></oui-inline-color-alert>

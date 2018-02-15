@@ -17,6 +17,8 @@
     <translation id="streams_archives_size">Taille</translation>
     <translation id="streams_archives_signatures">Signature</translation>
     <translation id="streams_archives_status">Statut</translation>
+    <translation id="streams_archives_md5_value">MD5: {{md5}}</translation>
+    <translation id="streams_archives_sha256_value">SHA256: {{sha256}}</translation>
     
     <translation id="streams_archives_sealed">Congelé</translation>
     <translation id="streams_archives_unsealed">Disponible</translation>

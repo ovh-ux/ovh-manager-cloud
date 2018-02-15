@@ -17,6 +17,8 @@
     <translation id="streams_archives_size">Size</translation>
     <translation id="streams_archives_signatures">Signatures</translation>
     <translation id="streams_archives_status">Status</translation>
+    <translation id="streams_archives_md5_value">MD5: {{md5}}</translation>
+    <translation id="streams_archives_sha256_value">SHA256: {{sha256}}</translation>
     
     <translation id="streams_archives_sealed">Frozen</translation>
     <translation id="streams_archives_unsealed">Available</translation>
