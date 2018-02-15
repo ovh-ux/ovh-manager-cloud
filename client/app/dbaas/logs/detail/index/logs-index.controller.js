@@ -49,8 +49,14 @@ class LogsIndexCtrl {
         this.LogsIndexService.deleteModal(
             this.serviceName,
             info
-        ).then(() => this.deleteIndex(info))
-            .then(() => this.initLoaders());
+        ).then(() => {
+            this.delete = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info.indexId)
+                    .then(() => this.initLoaders())
+            });
+
+            this.delete.load();
+        });
     }
 }
 

@@ -1,3 +1,5 @@
 angular.module("managerApp").constant("LogsIndexConstant", {
-    optionType: "index"
+    optionType: "index",
+    FAILURE: "FAILURE",
+    SUCCESS: "SUCCESS"
 });
