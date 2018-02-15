@@ -7,7 +7,7 @@ class CloudProjectAddService {
     }
 
     getCloudProjectAgreements () {
-        return this.OvhApiMe.Agreements().Lexi().query({}, { agreed: "todo" })
+        return this.OvhApiMe.Agreements().Lexi().query({ agreed: "todo" })
             .$promise
             .then(response => {
                 const promises = _.map(response, agreementId => this.OvhApiMe.Agreements().Lexi().contract({ id: agreementId })

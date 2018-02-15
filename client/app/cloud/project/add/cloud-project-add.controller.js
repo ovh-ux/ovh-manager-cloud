@@ -45,7 +45,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
          * Launch project creation process
          */
         this.createProject = function () {
-            var promiseContracts = true;
+            var promiseContracts = $q.when();
             self.loaders.creating = true;
 
             // If contracts: accept them
@@ -69,6 +69,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
                     if (response.prices.withTax.value) {
                         $window.open(response.url);
+                    } else {
+                        self.data.activeOrder.deliveryStatus = "delivering";
                     }
 
                     self.pollOrder(response.orderId);
