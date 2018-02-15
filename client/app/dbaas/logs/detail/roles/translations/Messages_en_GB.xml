@@ -5,17 +5,24 @@
 
     <translation id="logs_roles_total_used">roles used</translation>
     <translation id="logs_roles_add">Add a role</translation>
-    
 
     <!-- common -->
     <translation id="logs_roles_increase_quota">increase the quota</translation>
 
     <translation id="logs_roles_quota_get_error">An error has occurred while retrieving quota</translation>
 
+<!-- Role datagrid -->
+    <translation id="logs_roles_col_role">Role</translation>
+    <translation id="logs_roles_col_name">Name</translation>
+    <translation id="logs_roles_col_description">Description</translation>
+    <translation id="logs_roles_col_permissions">Permissions</translation>
+    <translation id="logs_roles_col_alerts">Members</translation>
+    <translation id="logs_roles_col_link">Linked option</translation>
 
-
-
-
-
-
+<!-- small dropdown -->
+    <translation id="logs_edit_role">Edit role</translation>
+    <translation id="logs_edit_permissions">Edit permissions</translation>
+    <translation id="logs_manage_members">Manage members</translation>
+    <translation id="logs_delete_role">Delete role</translation>
+    
 </translations>

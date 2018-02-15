@@ -17,4 +17,21 @@
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_roles_add' | translate }}
     </button>
 
+    <oui-datagrid rows="ctrl.roles.data">
+        <oui-column title=":: 'logs_roles_col_role' | translate" property="info.name" sortable="asc"></oui-column>        
+        <oui-column title=":: 'logs_roles_col_name' | translate" property="info.name" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_roles_col_description' | translate" property="info.description" sortable></oui-column>
+
+        <oui-column title=":: 'logs_roles_col_permissions' | translate" property="permissions.length" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_roles_col_alerts' | translate" property="members.length" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_roles_col_link' | translate" property="name" ></oui-column>
+        
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="{{ ::'logs_edit_role' | translate }}" on-click="ctrl.add($row.info)"></oui-action-menu-item>            
+            <oui-action-menu-item text="{{ ::'logs_edit_permissions' | translate }}" on-click="ctrl.editPermissions($row.info)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_manage_members' | translate }}" on-click="ctrl.manageMembers($row.info)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_delete_role' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
+
 </div>

@@ -6,8 +6,9 @@ class LogsRolesService {
         this.ControllerHelper = ControllerHelper;
         // this.LogsOptionsService = LogsOptionsService;
         // this.LogsIndexConstant = LogsIndexConstant;
-        this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
-        this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
+        // OvhApiDbaasLogsRole
+        this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
+        this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
     }
 
@@ -24,6 +25,22 @@ class LogsRolesService {
                 console.log(err);
                 this.ServiceHelper.errorHandler("logs_roles_quota_get_error");
             });
+    }
+
+    getRoles (serviceName) {
+        return this.RolesApiService.query({ serviceName }).$promise
+            .then(roles => {
+                console.log(roles);
+                const promises = roles.map(roleId => this.getRoleDetails(serviceName, roleId));
+                return this.$q.all(promises);
+            }).catch(err => {
+                console.log(err);
+            });
+    }
+
+    getRoleDetails (serviceName, roleId) {
+        console.log("getting role details");
+        return this.RolesAapiService.query({ serviceName, roleId }).$promise;
     }
 }
 

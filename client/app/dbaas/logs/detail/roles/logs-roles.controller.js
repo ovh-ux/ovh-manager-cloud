@@ -12,7 +12,20 @@ class LogsRolesCtrl {
             loaderFunction: () => this.LogsRolesService.getQuota(this.serviceName)
         });
 
+        this.roles = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsRolesService.getRoles(this.serviceName)
+        });
+
         this.quota.load();
+        this.roles.load();
+    }
+
+    editPermissions () {
+        //
+    }
+
+    manageMembers () {
+        //
     }
 }
 
