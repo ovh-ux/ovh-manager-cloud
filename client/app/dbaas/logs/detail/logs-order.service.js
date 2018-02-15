@@ -3,6 +3,7 @@ class LogsOrderService {
         this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().Lexi();
         this.ServiceHelper = ServiceHelper;
         this.staticOffer = {
+            "logs-pro-0001": { name: "1", unit: "GB", streams: 1, tables: 1, duration: "month" },
             "logs-pro-0015": { name: "15", unit: "GB", streams: 5, tables: 5, limit: "0.5", limitDuration: "GB_day", duration: "month" },
             "logs-pro-0030": { name: "30", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "1", limitDuration: "GB_day", duration: "month" },
             "logs-pro-0090": { name: "90", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "3", limitDuration: "GB_day", duration: "month" },

@@ -23,9 +23,9 @@
             </div>
             <div class="cui-box-line"></div>
             <div class="cui-box-body ml-5">
-                <p>{{offer.details.streams}} {{'logs_offer_streams' | translate}}, {{offer.details.tables}} {{'logs_offer_tables' | translate}},</p>
+                <p>{{offer.details.streams}} {{'logs_offer_streams' | translate}}, {{offer.details.tables}} {{'logs_offer_tables' | translate}}<span data-ng-if="offer.details.collectionTool || offer.details.limit">,</span></p>
                 <p data-ng-if="offer.details.collectionTool">{{offer.details.collectionTool}} {{'logs_offer_collection_tools' | translate}}</p>
-                <p>{{'logs_offer_limit' | translate}} : {{offer.details.limit}} {{'logs_offer_' + offer.details.limitDuration | translate}}</p>
+                <p data-ng-if="offer.details.limit">{{'logs_offer_limit' | translate}} : {{offer.details.limit}} {{'logs_offer_' + offer.details.limitDuration | translate}}</p>
             </div>
             <div class="cui-box-line"></div>          
             <div class="cui-box-footer m-2">
