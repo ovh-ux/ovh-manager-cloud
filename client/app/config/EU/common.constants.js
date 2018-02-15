@@ -9,7 +9,7 @@ angular.module("managerApp")
         cloud: "https://www.ovh.com/manager/cloud/index.html#/",
         telecom: "https://www.ovhtelecom.fr/manager/index.html#/",
         sunrise: "https://www.ovh.com/manager/sunrise/index.html#/",
-        gamma: "https://ca.ovh.com/manager/sunrise/index.html#/",
+        gamma: "https://www.ovh.com/manager/sunrise/index.html#/",
         v3: "https://www.ovh.com/managerv3/home.pl",
         portal: "https://www.ovh.com/manager/portal/index.html#/",
         partners: "https://www.ovh.com/manager/partners/",
