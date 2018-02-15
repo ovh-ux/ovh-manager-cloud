@@ -9,7 +9,11 @@ angular.module("managerApp").config($stateProvider => {
     $stateProvider
         .state("dbaas.metrics", {
             url: "/metrics",
-            templateUrl: "app/dbaas/dbaas-metrics/metrics.html",
+            views: {
+                dbaasContainer: {
+                    templateUrl: "app/dbaas/dbaas-metrics/metrics.html",
+                }
+            },
             "abstract": true,
             translations: ["common", "dbaas/dbaas-metrics"]
         })

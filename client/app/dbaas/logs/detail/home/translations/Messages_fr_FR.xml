@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="logs_home_shortcuts">Raccourcis</translation>
+   <translation id="logs_home_shortcuts_last_stream">Dernier flux modifié</translation>
+   <translation id="logs_home_shortcuts_all_stream">Voir tous les flux</translation>
+   <translation id="logs_home_shortcuts_last_dashboard">Dernier tableau de bord modifié</translation>
+   <translation id="logs_home_shortcuts_all_dashboard">Voir tous les tableaux de bord</translation>
+   <translation id="logs_home_shortcuts_graylog">Graylog</translation>
+   <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
+
+   <translation id="logs_home_shortcuts_elasticsearch_help">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
+   <translation id="logs_home_usage">Utilisation</translation>
+   <translation id="logs_home_configuration">Configuration</translation>
+   <translation id="logs_home_access">Accès</translation>
+   <translation id="logs_home_subscription">Abonnement</translation>
+</translations>
