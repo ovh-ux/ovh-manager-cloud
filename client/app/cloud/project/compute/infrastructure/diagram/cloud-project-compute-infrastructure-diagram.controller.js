@@ -4,7 +4,7 @@
                      CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
                      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
                      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
-                     OvhApiCloudPrice, OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
+                     OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
                      CLOUD_UNIT_CONVERSION, CLOUD_MONITORING, REDIRECT_URLS, URLS) {
 
             this.$rootScope = $rootScope;
@@ -35,7 +35,6 @@
             this.OvhApiCloudProjectSnapshot = OvhApiCloudProjectSnapshot;
             this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
             this.OvhApiCloudProjectVolumeSnapshot = OvhApiCloudProjectVolumeSnapshot;
-            this.OvhApiCloudPrice = OvhApiCloudPrice;
             this.OvhApiIp = OvhApiIp;
             this.OvhApiMe = OvhApiMe;
 
@@ -305,7 +304,6 @@
                 this.OvhApiCloudProjectFlavor.Lexi().query({ serviceName: this.serviceName }).$promise,
                 this.OvhApiCloudProjectSshKey.Lexi().query({ serviceName: this.serviceName }).$promise,
                 this.OvhApiCloudProjectVolumeSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudPrice.Lexi().query().$promise,
                 this.initRegions(this.serviceName)
             ])
                 .then(() => this.initInfra())
