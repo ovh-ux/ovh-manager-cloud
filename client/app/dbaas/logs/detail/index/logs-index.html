@@ -18,10 +18,14 @@
 
     <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.indices.loading"></oui-spinner>
 
-    <oui-datagrid data-ng-hide="ctrl.quota.loading || ctrl.indices.loading"
+    <oui-datagrid
         rows="ctrl.indices.data">
         <oui-column title=":: 'logs_index_col_index' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable></oui-column>
+        <oui-column title=":: 'logs_index_col_shared' | translate" sortable>
+            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="$row.info.isEditable"> - </span>
+        </oui-column>
         <oui-column title=":: 'logs_index_col_creation_date' | translate" property="info.createdAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>

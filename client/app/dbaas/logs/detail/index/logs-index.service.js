@@ -52,7 +52,7 @@ class LogsIndexService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getStreamSubscribedOptions(serviceName, this.LogsIndexConstant.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsIndexConstant.optionType);
     }
 
     createIndex (serviceName, object) {

@@ -36,7 +36,7 @@ class LogsIndexCtrl {
                 resolve: {
                     serviceName: () => this.serviceName,
                     indexInfo: () => info,
-                    options: () => this.LogsIndexService.getSubscribedOptions(this.serviceName)
+                    options: () => this.indexOptions
                 }
             }
         }).then(() => {

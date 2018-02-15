@@ -91,6 +91,7 @@ class LogsOptionsService {
                 return _.map(_.keys(optionsCountMap), option => this.transformSubscribedOption(option, optionsCountMap));
             });
     }
+
     /**
      * returns all subscribed options with reference "logs-stream".
      *
@@ -98,25 +99,19 @@ class LogsOptionsService {
      * @returns array of all subscribed option objects belonging to streams
      * @memberof LogsOptionsService
      */
-    getStreamSubscribedOptions (serviceName, optionType) {
+    getSubscribedOptionsByType (serviceName, optionType) {
         return this.getSubscribedOptions(serviceName)
             .then(response => {
-                let list = [];
-                if (optionType === "logs-stream") {
-                    list = response.options
-                        .filter(option => _.startsWith(option.reference, "logs-stream"))
-                        .map(option => ({
-                            optionId: option.optionId,
-                            type: this.$translate.instant(`${option.reference}-type`),
-                            detail: this.$translate.instant(`${option.reference}-detail`),
-                            curNbStream: option.curNbStream,
-                            maxNbStream: option.maxNbStream
-                        }));
-                } else if (optionType === "index") {
-                    list = response.options.filter(option => option.maxNbIndex > 0 && option.curNbIndex !== option.maxNbIndex)
-                        .map(option => option);
+                switch (optionType) {
+                    case "logs-stream":
+                        return this._filterOptions(response.options, "maxNbStream");
+                    case "index":
+                        return this._filterOptions(response.options, "maxNbIndex");
+                    case "logs-alias":
+                        return this._filterOptions(response.options, "maxNbAlias");
+                    default:
+                        return response.options;
                 }
-                return list;
             });
     }
 
@@ -129,6 +124,16 @@ class LogsOptionsService {
      */
     getOptionsToOrder (options) {
         return _.filter(options, option => option.quantity > 0);
+    }
+
+    _filterOptions (options, max) {
+        return options
+            .filter(option => option[max] > 0)
+            .map(option => {
+                option.type = this.$translate.instant(`${option.reference}-type`);
+                option.detail = this.$translate.instant(`${option.reference}-detail`);
+                return option;
+            });
     }
 
     /**
