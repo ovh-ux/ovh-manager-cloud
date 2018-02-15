@@ -1,4 +1,20 @@
-<div>
-    Roles
-    Service Name: {{ ctrl.serviceName }}
+<div class="cui-page__content log-options">
+    <oui-back-button class="back_button_inline_text"></oui-back-button>
+    <span class="oui-header_3" data-translate="logs_roles_title"></span>
+    <p data-translate="logs_roles_description"></p>
+
+    <p>{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="logs_roles_total_used"></span>
+        (<button role="link" class="oui-link oui-button-link"
+            ui-sref="dbaas.logs.detail.options"
+            data-translate="logs_roles_increase_quota"
+            data-ng-disabled="ctrl.delete.loading">
+        </button>)
+    </p>
+
+    <button type="button"
+        class="oui-button oui-button_secondary mt-4"
+        ng-click="ctrl.add()">
+            <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_roles_add' | translate }}
+    </button>
+
 </div>
