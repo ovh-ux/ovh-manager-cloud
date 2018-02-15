@@ -404,12 +404,17 @@ class ManagerNavbarService {
             }];
         }
 
-        return [
+        const menu = [
             this.getAssistanceMenu(currentUser.ovhSubsidiary),  // Assistance
-            notificationsMenu,                                  // Notifications
             this.getLanguageMenu(),                             // Language
             this.getUserMenu(currentUser)                       // User
         ];
+
+        if (notificationsMenu.show) {
+            menu.splice(1, 0, notificationsMenu);
+        }
+
+        return menu;
     }
 
     getManagersNames (locale) {
