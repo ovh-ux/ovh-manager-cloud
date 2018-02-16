@@ -1,12 +1,20 @@
 class IpLoadBalancerDetailCtrl {
-    constructor ($stateParams, CloudMessage, IpLoadBalancerConfigurationService) {
+    constructor ($stateParams, CloudNavigation, CloudMessage, IpLoadBalancerConfigurationService) {
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
+        this.CloudNavigation = CloudNavigation;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
         this.messages = [];
     }
 
     $onInit () {
+        this.CloudNavigation.init({
+            state: "network.iplb.detail.home",
+            $stateParams: {
+                serviceName: this.$stateParams.serviceName
+            }
+        });
+
         this.CloudMessage.unSubscribe("network.iplb.detail");
         this.messageHandler = this.CloudMessage.subscribe("network.iplb.detail", { onMessage: () => this.refreshMessage() });
         this.checkPendingChanges();

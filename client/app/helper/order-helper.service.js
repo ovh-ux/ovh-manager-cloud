@@ -11,25 +11,31 @@ class OrderHelperService {
             });
     }
 
-    getUrlConfigPart (config, urlParams = {}) {
-        // Transform configuration and option value if necessary
-        const formattedConfig = _.assign({}, config);
-        if (formattedConfig.configuration && !_.isArray(formattedConfig.configuration)) {
-            formattedConfig.configuration = this.transformToOrderValues(formattedConfig.configuration);
-        }
+    getUrlConfigPart (configs, urlParams = {}) {
+        configs = !_.isArray(configs) ? [configs] : configs;
 
-        if (formattedConfig.option) {
-            const formattedOptions = formattedConfig.option.map(option => {
-                if (option.configuration && !_.isArray(option.configuration)) {
-                    option.configuration = this.transformToOrderValues(option.configuration);
-                }
-                return option;
-            });
-            formattedConfig.option = formattedOptions;
-        }
+        const formattedConfigs = [];
+        _.forEach(configs, config => {
+            const formattedConfigs = _.assign({}, config);
+            if (formattedConfigs.configuration && !_.isArray(formattedConfigs.configuration)) {
+                formattedConfigs.configuration = this.transformToOrderValues(formattedConfigs.configuration);
+            }
+
+            if (formattedConfigs.option) {
+                const formattedOptions = formattedConfigs.option.map(option => {
+                    if (option.configuration && !_.isArray(option.configuration)) {
+                        option.configuration = this.transformToOrderValues(option.configuration);
+                    }
+                    return option;
+                });
+                formattedConfigs.option = formattedOptions;
+            }
+            formattedConfigs.push(formattedConfigs);
+        });
+        // Transform configuration and option value if necessary
 
         const paramsPart = this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
-            products: JSURL.stringify([formattedConfig])
+            products: JSURL.stringify(formattedConfigs)
         }));
 
         return paramsPart;
