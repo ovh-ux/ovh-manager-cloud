@@ -21,9 +21,17 @@ class CloudProjectAddService {
         return this.OvhApiCloud.Lexi().order().$promise;
     }
 
-    getCloudProjectOrder (orderId) {
+    getCloudProjectOrder (orderId, config = { expand: false }) {
         return this.getCloudProjectOrders()
-            .then(response => _.first(_.filter(response, order => order.orderId === orderId)));
+            .then(response => {
+                const cloudOrder = _.first(_.filter(response, order => order.orderId === orderId));
+                if (!config.expand) {
+                    return this.$q.all({ cloudOrder, orderDetail: {} });
+                }
+
+                return this.$q.all({ cloudOrder, orderDetail: this.OvhApiMe.Order().Lexi().get({ orderId }).$promise });
+            })
+            .then(response => _.extend(response.orderDetail, { deliveryStatus: response.cloudOrder.status, serviceName: response.cloudOrder.serviceName }));
     }
 
     orderCloudProject (description, voucher) {

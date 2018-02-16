@@ -1,9 +1,9 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $timeout, $translate, $rootScope, $window, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
+    function ($q, $state, $timeout, $translate, $window, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
               OvhApiMe, OvhApiOrder, OvhApiVrack, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
-              CloudProjectAddService, CloudPoll) {
+              CloudProjectAddService, CloudPoll, ControllerNavigationHelper) {
 
         var self = this;
 
@@ -65,6 +65,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
             return promiseContracts.then(() => CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher))
                 .then(response => {
+                    ControllerNavigationHelper.addQueryParam("orderId", response.orderId);
+
                     self.data.activeOrder = response;
 
                     if (response.prices.withTax.value) {
@@ -93,9 +95,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             self.data.poller = CloudPoll.poll({
                 item: cloudOrder,
                 pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
-                        const returnValue = response || { status: "delivered" };
-                        self.data.activeOrder.deliveryStatus = returnValue.status;
-                        return returnValue;
+                        self.data.activeOrder.deliveryStatus = response.status;
+                        return response;
                     }),
                 stopCondition: item => item.status === "delivered",
                 interval: 3000
@@ -133,7 +134,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         };
 
         this.orderIsDelivering = function () {
-            return self.data.activeOrder.prices.withTax.value || self.data.activeOrder.deliveryStatus === "delivering";
+            return _.get(self.data.activeOrder, "prices.withTax.value ") || self.data.activeOrder.deliveryStatus === "delivering";
         };
 
         function initUserFidelityAccount () {
@@ -183,6 +184,20 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 $state.go("iaas.pci-project-onboarding", { location : "replace" });
                 return;
             }
+
+            const orderId = ControllerNavigationHelper.getQueryParam("orderId");
+            if (orderId) {
+                CloudProjectAddService.getCloudProjectOrder(parseInt(orderId, 10), { expand: true })
+                    .then(response => {
+                        self.data.activeOrder = response;
+                        self.pollOrder(orderId);
+                    })
+                    .finally(() => {
+                        self.loaders.init = false;
+                    });
+                return;
+            };
+
             initContracts().then(initProject)["catch"](function (err) {
                 self.unknownError = true;
                 Toast.error($translate.instant("cpa_error", err.data));
