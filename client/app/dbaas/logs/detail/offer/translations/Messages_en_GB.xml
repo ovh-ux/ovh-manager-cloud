@@ -13,7 +13,7 @@
     <translation id="logs_offer_GB_day">GB/day</translation>
 
     <translation id="logs_offer_description_pro">You currently have the {{offer}} Pro offer : choose an offer and order to change it.</translation>
-    <translation id="logs_offer_description_basic">You currently have the discovery offer : choose an offer and order to change for Pro.</translation>
+    <translation id="logs_offer_description_basic">You currently have the basic offer : choose an offer and order to change for Pro.</translation>
 
     <translation id="logs-pro-0001">1 GB</translation>
     <translation id="logs-pro-0015">15 GB </translation>
