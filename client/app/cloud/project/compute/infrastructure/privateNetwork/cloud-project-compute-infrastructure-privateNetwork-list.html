@@ -4,10 +4,10 @@
             <h2 class="private-networks__header-title" data-translate="cpci_private_network_list_header_title"></h2>
             <p class="private-networks__header-network-name" data-ng-if="$ctrl.hasVrack()">
                 <span class="text-wrap word-break" data-ng-bind="$ctrl.getVrackName()"></span>
-                <a class="private-networks__header-edit-vrack-button" data-ng-click="$ctrl.gotoVrack()" data-ng-if="$ctrl.canGotoVrack()">
-                    <span class="ovh-font ovh-font-newtab"></span>
+                <a data-ng-click="$ctrl.gotoVrack()" data-ng-if="$ctrl.canGotoVrack()">
+                    <i class="private-networks__header-edit-vrack-button oui-icon oui-icon-external_link" aria-hidden="true"></i>
                 </a>
-                <button class="oui-icon oui-icon-close" type="button" aria-hidden="true" data-ng-click="$ctrl.unlinkVrack()"></button>
+                <button class="private-networks__header-edit-vrack-button oui-icon oui-icon-close" type="button" aria-hidden="true" data-ng-click="$ctrl.unlinkVrack()"></button>
             </p>
         </div>
         <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
