@@ -1,0 +1,254 @@
+
+// dual list
+@oui-dual-list-background-color: #ffffff;
+@oui-dual-list-border-color: #eaeaea;
+@oui-dual-list-hover-color: #E0F6FD;
+@oui-dual-list-empty-label-color: #B3B3B3;
+@oui-dual-list-header-background-color: #E1E3DF;
+@oui-dual-list-link-color: #00A2BF;
+@oui-dual-list-add-label-color: #113F6D;
+@oui-dual-list-icon-size: 1.2rem;
+
+.oui-dual-list {
+
+    .flexbox() {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .flex-wrap(@wrap: wrap) {
+        -webkit-flex-wrap: @wrap;
+        -moz-flex-wrap: @wrap;
+        -ms-flex-wrap: @wrap;
+        flex-wrap: @wrap;
+    }
+
+    .flex-direction(@direction: row) {
+        -webkit-flex-direction: @direction;
+        -moz-flex-direction: @direction;
+        -ms-flex-direction: @direction;
+        flex-direction: @direction;
+    }
+
+    .justify-content(@justify: center) {
+        -webkit-justify-content: @justify;
+        -moz-justify-content: @justify;
+        -ms-justify-content: @justify;
+        justify-content: @justify;
+        -ms-flex-pack: @justify;
+    }
+
+    .align-content(@align: center) {
+        -webkit-align-content: @align;
+        -moz-align-content: @align;
+        -ms-align-content: @align;
+        align-content: @align;
+    }
+
+    .align-items(@align: center) {
+        -webkit-align-items: @align;
+        -moz-align-items: @align;
+        -ms-align-items: @align;
+        align-items: @align;
+    }
+
+    .transform(@transforms) {
+        -moz-transform: @transforms;
+        -o-transform: @transforms;
+        -ms-transform: @transforms;
+        -webkit-transform: @transforms;
+        transform: @transforms;
+    }
+
+
+    background: @oui-dual-list-background-color;
+    border: 1px solid @oui-dual-list-header-background-color;
+    border-radius: 0 0 3px 3px;
+    .flexbox();
+    .flex-wrap(wrap);
+    .flex-direction(row);
+
+    @media (min-width: 600px)  {
+        .flex-wrap(nowrap);
+    }
+
+    &__source {
+        border-right: 1px solid @oui-dual-list-header-background-color;
+    }
+
+    &__source, &__target {
+        .flexbox();
+        .flex-direction(column);
+        flex-basis: 100%;
+    }
+
+    &__header {
+        .flexbox();
+        .flex-direction(row);
+        background: @oui-dual-list-header-background-color;
+        border-radius: 3px 3px 0 0;
+        padding: 10px 20px;
+
+        &_toggle {
+            display: block;
+            margin-left: auto;
+            i {
+                font-size: @oui-dual-list-icon-size;
+            }
+            &:active, &:focus {
+                outline: none;
+            }
+            @media (min-width: 600px)  {
+                display: none !important;
+            }
+            @media (min-width: 600px)  {
+                &_up, &_down {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__content {
+        .flexbox();
+        .flex-direction(column);
+        padding: 10px 15px;
+
+        &_filter {
+            position: relative;
+
+            & > input {
+                background: @oui-dual-list-background-color;
+                border: 1px solid @oui-dual-list-header-background-color;
+                box-shadow: inset 2px 2px 1px 0 #E9EBE7;
+                border-radius: 3px;
+                width: 100%;
+                padding-right: 3rem;
+            }
+
+            & > i {
+                position: absolute;
+                right: 1rem;
+                vertical-align: -.225em;
+                top: 50%;
+                .transform(translateY(-50%));
+                font-size: @oui-dual-list-icon-size;
+            }
+        }
+
+        &_add_all, &_remove_all {
+            padding: 0px 10px;
+            padding-top: 5px;
+            text-decoration: underline;
+            color: @oui-dual-list-link-color;
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover, &:active {
+                color: @oui-dual-list-link-color;
+            }
+        }
+
+        a, a:active, a:hover {
+            color: @oui-dual-list-link-color;
+        }
+
+        @media (min-width: 600px)  {
+            &_remove_all {
+                margin-left: auto;
+            }
+        }
+
+        &_list {
+            list-style: none;
+            padding: 5px 0 0 0;
+            overflow: auto;
+            margin: 0px;
+            &_item {
+                padding: 5px 10px;
+                margin-bottom: 5px;
+                background-color: @oui-dual-list-background-color;
+
+                &_target {
+                    background-color: @oui-dual-list-hover-color;
+                }
+
+                &_title {
+                    margin-right: 20px;
+                }
+
+                &_icon {
+                    float: right;
+                }
+
+                &_icon > i {
+                    font-size: @oui-dual-list-icon-size;
+                }
+
+                &:active, &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: @oui-dual-list-hover-color;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+
+                &_add {
+                    display: none;
+                    padding-right: 10px;
+                    color: @oui-dual-list-add-label-color;
+                }
+
+                &:hover &_add {
+                    display: block !important;
+                }
+            }
+        }
+
+    }
+
+    &__target > &__header {
+        .oui-dual-list__header_toggle {
+            &_up {
+                display: none;
+            }
+            &_down {
+                display: block;
+            }
+        }
+    }
+
+    &__source > &__header {
+        .oui-dual-list__header_toggle {
+            &_up {
+                display: block;
+            }
+            &_down {
+                display: none;
+            }
+        }
+    }
+
+    &__target > &__content {
+        display: none;
+        @media (min-width: 600px)  {
+            display: block;
+        }
+    }
+
+    &__empty_label {
+        .flexbox();
+        .justify-content(center);
+        .align-items(center);
+        height: 100%;
+
+        p {
+            color: @oui-dual-list-empty-label-color;
+        }
+    }
+}
