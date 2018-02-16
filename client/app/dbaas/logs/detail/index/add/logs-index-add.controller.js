@@ -5,6 +5,7 @@ class LogsIndexAddModalCtrl {
         this.ControllerHelper = ControllerHelper;
         this.indexInfo = indexInfo;
         this.options = options;
+        this.suffixPattern = "^[a-z0-9_-]+$";
         this.LogsIndexService = LogsIndexService;
         this.$uibModalInstance = $uibModalInstance;
         this.serviceName = $stateParams.serviceName;
@@ -24,7 +25,7 @@ class LogsIndexAddModalCtrl {
         this.index.description = "";
         this.index.alertNotifyEnabled = false;
         this.index.suffix = "";
-        this.index.option = null;
+        this.index.optionId = null;
     }
 
     populateIndex () {
@@ -47,7 +48,7 @@ class LogsIndexAddModalCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsIndexService.createIndex(this.serviceName, this.index)
-                    .then(response => this.$uibModalInstance.dismiss(response))
+                    .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
         });
         return this.saving.load();

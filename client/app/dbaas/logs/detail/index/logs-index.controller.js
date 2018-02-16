@@ -1,10 +1,12 @@
 class LogsIndexCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService) {
+    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService, LogsIndexConstant) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.LogsIndexService = LogsIndexService;
+        this.LogsIndexConstant = LogsIndexConstant;
+        this.suffixPattern = this.LogsIndexConstant.suffixPattern;
         this.initLoaders();
     }
 

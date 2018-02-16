@@ -63,4 +63,7 @@
    <translation id="logs_index_create_success">Successfully created index</translation>
    <translation id="logs_index_edit_success">Successfully saved your changes</translation>
    <translation id="logs_index_delete_success">Successfully deleted the index</translation>
+
+   <translation id="logs_index_option_warning">The option you choose can not be changed later.</translation>
+
 </translations>

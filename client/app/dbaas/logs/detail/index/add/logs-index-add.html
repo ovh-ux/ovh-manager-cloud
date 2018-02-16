@@ -22,10 +22,10 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_4">
                         <input type="text" id="suffix" name="suffix"
+                        data-ng-pattern="ctrl.suffixPattern"
                         class="oui-input mb-0" data-ng-model="ctrl.index.suffix"
                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.suffix.$invalid}"
-                        autofocus
-                        required />
+                        autofocus required />
                     </div>
                 </div>
                 <p data-translate="logs_index_suffix_description" class="mb-4"></p>
@@ -45,7 +45,7 @@
             </div>
 
 
-            <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
+            <div class="oui-field" ng-if="!ctrl.isEdit" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="logs_select_options_title"></label>
                 <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
                 <div class="oui-field__content" data-ng-if="!ctrl.options.loading">
@@ -60,6 +60,7 @@
                                 <option data-translate="logs_select_options_placeholder"></option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            <span data-translate="logs_index_option_warning"></span>
                         </div>
                     </div>
                 </div>

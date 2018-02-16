@@ -36,12 +36,20 @@ class LogsOfferCtrl {
         this.offerDetail.currentOffer = offerObj.reference;
     }
 
-    saveOffer () {
+    processOrder () {
         this.savingOffer = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
                 .then(response => this.$window.open(response.order.url, "_self"))
         });
         this.savingOffer.load();
+    }
+
+    saveOffer () {
+        if (this.offerDetail.selectedOffer === this.offerDetail.currentOffer) {
+            this.LogsOfferService.showWarning();
+        } else {
+            this.processOrder();
+        }
     }
 }
 
