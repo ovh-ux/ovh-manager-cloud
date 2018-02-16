@@ -32,7 +32,8 @@ class DualListCtrl {
         this.sourceListLoading = false;
         this.targetListLoading = false;
         this.displayNoneStyle = { display: "none" };
-        this.displayBlockStyle = { display: "block" };
+        this.displayBlockStyle = { display: "inline-block" };
+        this.displayFlexStyle = { display: "flex" };
         this.listHeight = { height: this.height };
         this.loadSourceList();
         this.loadtargetList();
@@ -41,7 +42,7 @@ class DualListCtrl {
     onTargetContentClose () {
         this.targetCloseIconStyle = this.displayNoneStyle;
         this.targetOpenIconStyle = this.displayBlockStyle;
-        this.targetContentStyle = this.displayBlockStyle;
+        this.targetContentStyle = this.displayFlexStyle;
     }
 
     onTargetContentOpen () {
@@ -53,7 +54,7 @@ class DualListCtrl {
     onSourceContentClose () {
         this.sourceCloseIconStyle = this.displayNoneStyle;
         this.sourceOpenIconStyle = this.displayBlockStyle;
-        this.sourceContentStyle = this.displayBlockStyle;
+        this.sourceContentStyle = this.displayFlexStyle;
     }
 
     onSourceContentOpen () {
