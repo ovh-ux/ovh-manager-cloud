@@ -1,7 +1,7 @@
 class DualListCtrl {
-    constructor ($q, DualListProvider) {
+    constructor ($q, $element, DualListProvider) {
         this.$q = $q;
-        this.loadingMap = {};
+        this.$element = $element;
         this.dualListProvider = DualListProvider;
     }
 
@@ -22,13 +22,44 @@ class DualListCtrl {
         this.onRemove = this.onRemove || null;
         this.property = this.property || null;
 
+        this.loadingMap = {};
+        this.targetCloseIconStyle = {};
+        this.targetOpenIconStyle = {};
+        this.targetContentStyle = {};
+        this.sourceCloseIconStyle = {};
+        this.sourceOpenIconStyle = {};
+        this.sourceContentStyle = {};
         this.sourceListLoading = false;
         this.targetListLoading = false;
-        this.sourceListOpen = true;
-        this.targetListOpen = true;
+        this.displayNoneStyle = { display: "none" };
+        this.displayBlockStyle = { display: "block" };
         this.listHeight = { height: this.height };
         this.loadSourceList();
         this.loadtargetList();
+    }
+
+    onTargetContentClose () {
+        this.targetCloseIconStyle = this.displayNoneStyle;
+        this.targetOpenIconStyle = this.displayBlockStyle;
+        this.targetContentStyle = this.displayBlockStyle;
+    }
+
+    onTargetContentOpen () {
+        this.targetCloseIconStyle = this.displayBlockStyle;
+        this.targetOpenIconStyle = this.displayNoneStyle;
+        this.targetContentStyle = this.displayNoneStyle;
+    }
+
+    onSourceContentClose () {
+        this.sourceCloseIconStyle = this.displayNoneStyle;
+        this.sourceOpenIconStyle = this.displayBlockStyle;
+        this.sourceContentStyle = this.displayBlockStyle;
+    }
+
+    onSourceContentOpen () {
+        this.sourceCloseIconStyle = this.displayBlockStyle;
+        this.sourceOpenIconStyle = this.displayNoneStyle;
+        this.sourceContentStyle = this.displayNoneStyle;
     }
 
     getProperty (item) {

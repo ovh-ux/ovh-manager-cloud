@@ -4,14 +4,20 @@
         <div class="oui-dual-list__header">
             <span>{{$ctrl.sourceListLabel}}</span>
             <span data-ng-if="!$ctrl.sourceListLoading">({{$ctrl.sourceList.length}})</span>
-            <span class="oui-dual-list__header_toggle" data-ng-click="$ctrl.sourceListOpen = !$ctrl.sourceListOpen">
-                <i data-ng-show="$ctrl.sourceListOpen" class="oui-icon oui-icon-chevron-up" aria-hidden="true"></i>
-                <i data-ng-show="!$ctrl.sourceListOpen" class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+            <span class="oui-dual-list__header_toggle">
+                <i class="oui-icon oui-icon-chevron-up oui-dual-list__header_toggle_up"
+                    data-ng-style="$ctrl.sourceOpenIconStyle"
+                    data-ng-click="$ctrl.onSourceContentOpen()"
+                    aria-hidden="true"></i>
+                <i class="oui-icon oui-icon-chevron-down oui-dual-list__header_toggle_down"
+                    data-ng-style="$ctrl.sourceCloseIconStyle"
+                    data-ng-click="$ctrl.onSourceContentClose()"
+                    aria-hidden="true"></i>
             </span>
         </div>
         <div class="oui-dual-list__content"
             data-ng-if="!$ctrl.sourceListLoading && $ctrl.sourceList.length"
-            data-ng-show="$ctrl.sourceListOpen">
+            data-ng-style="$ctrl.sourceContentStyle">
             <div class="oui-dual-list__content_filter">
                 <input type="text" id="dual-list-filter" name="dual-list-filter"
                 data-ng-model="$ctrl.sourceFilterKey"/>
@@ -46,14 +52,19 @@
         <div class="oui-dual-list__header">
             <span>{{$ctrl.targetListLabel}}</span>
             <span data-ng-if="!$ctrl.targetListLoading">({{$ctrl.targetList.length}})</span>
-            <span class="oui-dual-list__header_toggle" data-ng-click="$ctrl.targetListOpen = !$ctrl.targetListOpen">
-                <i data-ng-show="$ctrl.targetListOpen" class="oui-icon oui-icon-chevron-up" aria-hidden="true"></i>
-                <i data-ng-show="!$ctrl.targetListOpen" class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+            <span class="oui-dual-list__header_toggle">
+                <i class="oui-icon oui-icon-chevron-up oui-dual-list__header_toggle_up"
+                    aria-hidden="true"
+                    data-ng-style="$ctrl.targetOpenIconStyle"
+                    data-ng-click="$ctrl.onTargetContentOpen()"></i>
+                <i class="oui-icon oui-icon-chevron-down oui-dual-list__header_toggle_down"
+                    aria-hidden="true"
+                    data-ng-style="$ctrl.targetCloseIconStyle"
+                    data-ng-click="$ctrl.onTargetContentClose()"></i>
             </span>
         </div>
         <div data-ng-if="!$ctrl.targetListLoading && $ctrl.targetList.length"
-            class="oui-dual-list__content"
-            data-ng-show="$ctrl.targetListOpen">
+            class="oui-dual-list__content" data-ng-style="$ctrl.targetContentStyle">
             <div class="oui-dual-list__content_remove_all" data-ng-if="$ctrl.bulkActionEnabled && $ctrl.targetList.length">
                 <a id="dual-list-remove-all"
                     name="dual-list-remove-all"

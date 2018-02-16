@@ -104,6 +104,11 @@
             @media (min-width: 600px)  {
                 display: none !important;
             }
+            @media (min-width: 600px)  {
+                &_up, &_down {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -205,6 +210,35 @@
             }
         }
 
+    }
+
+    &__target > &__header {
+        .oui-dual-list__header_toggle {
+            &_up {
+                display: none;
+            }
+            &_down {
+                display: block;
+            }
+        }
+    }
+
+    &__source > &__header {
+        .oui-dual-list__header_toggle {
+            &_up {
+                display: block;
+            }
+            &_down {
+                display: none;
+            }
+        }
+    }
+
+    &__target > &__content {
+        display: none;
+        @media (min-width: 600px)  {
+            display: block;
+        }
     }
 
     &__empty_label {
