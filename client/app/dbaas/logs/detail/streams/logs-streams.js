@@ -52,16 +52,5 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams/follow"]
-        })
-        .state("dbaas.logs.detail.streams.detail.archives", {
-            url: "/archives",
-            views: {
-                logsStreamsDetail: {
-                    templateUrl: "app/dbaas/logs/detail/streams/archives/streams-archives.html",
-                    controller: "LogsStreamsArchivesCtrl",
-                    controllerAs: "ctrl"
-                }
-            },
-            translations: ["common", "dbaas/logs"]
         });
 });
