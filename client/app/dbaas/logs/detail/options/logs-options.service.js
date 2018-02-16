@@ -75,7 +75,7 @@ class LogsOptionsService {
     }
 
     /**
-     * returns map of all subscribed options wiht there count.
+     * returns map of all subscribed options with their count.
      *
      * @param {any} serviceName
      * @returns map of subscribed option with count
@@ -84,10 +84,12 @@ class LogsOptionsService {
     getSubscribedOptionsMap (serviceName) {
         return this.getSubscribedOptions(serviceName)
             .then(response => {
+                // Build a map of option vs no. of subscribed instances
                 const optionsCountMap = _.reduce(response.options, (optionsMap, option) => {
                     optionsMap[option.reference] = optionsMap[option.reference] ? ++optionsMap[option.reference] : 1;
                     return optionsMap;
                 }, {});
+                // Build a new data structure with the option information and the no.of instances subscribed
                 return _.map(_.keys(optionsCountMap), option => this.transformSubscribedOption(option, optionsCountMap));
             });
     }
