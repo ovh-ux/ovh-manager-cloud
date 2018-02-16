@@ -14,28 +14,28 @@ class OrderHelperService {
     getUrlConfigPart (configs, urlParams = {}) {
         configs = !_.isArray(configs) ? [configs] : configs;
 
-        const formatedConfigs = [];
+        const formattedConfigs = [];
         _.forEach(configs, config => {
-            const formatedConfig = _.assign({}, config);
-            if (formatedConfig.configuration && !_.isArray(formatedConfig.configuration)) {
-                formatedConfig.configuration = this.transformToOrderValues(formatedConfig.configuration);
+            const formattedConfigs = _.assign({}, config);
+            if (formattedConfigs.configuration && !_.isArray(formattedConfigs.configuration)) {
+                formattedConfigs.configuration = this.transformToOrderValues(formattedConfigs.configuration);
             }
 
-            if (formatedConfig.option) {
-                const formattedOptions = formatedConfig.option.map(option => {
+            if (formattedConfigs.option) {
+                const formattedOptions = formattedConfigs.option.map(option => {
                     if (option.configuration && !_.isArray(option.configuration)) {
                         option.configuration = this.transformToOrderValues(option.configuration);
                     }
                     return option;
                 });
-                formatedConfig.option = formattedOptions;
+                formattedConfigs.option = formattedOptions;
             }
-            formatedConfigs.push(formatedConfig);
+            formattedConfigs.push(formattedConfigs);
         });
         // Transform configuration and option value if necessary
 
         const paramsPart = this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
-            products: JSURL.stringify(formatedConfigs)
+            products: JSURL.stringify(formattedConfigs)
         }));
 
         return paramsPart;
