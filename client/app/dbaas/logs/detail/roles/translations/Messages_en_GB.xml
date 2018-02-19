@@ -8,7 +8,6 @@
 
     <!-- common -->
     <translation id="logs_roles_increase_quota">increase the quota</translation>
-
     <translation id="logs_roles_quota_get_error">An error has occurred while retrieving quota</translation>
 
 <!-- Role datagrid -->
@@ -24,5 +23,17 @@
     <translation id="logs_edit_permissions">Edit permissions</translation>
     <translation id="logs_manage_members">Manage members</translation>
     <translation id="logs_delete_role">Delete role</translation>
-    
+    <translation id="logs_show_summary">Show summary</translation>
+
+<!-- modal -->
+    <translation id="logs_role_modal_add_title">Add a role</translation>
+    <translation id="logs_role_modal_name">Name</translation>
+    <translation id="logs_role_modal_description">Description</translation>
+    <translation id="logs_role_modal_option">Attached to option</translation>
+    <translation id="logs_select_options_placeholder">Select option</translation>
+
+<!-- api success and error messages -->
+    <translation id="logs_role_add_success">The role has been successfully created.</translation>
+    <translation id="logs_role_add_error">An error occurred while creating role.</translation>
+
 </translations>

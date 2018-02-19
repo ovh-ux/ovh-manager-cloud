@@ -4,4 +4,13 @@
     <translation id="logs_select_options_placeholder">Select Option</translation>
     <translation id="logs_notification_title">Notification</translation>
     <translation id="logs_operation_failed">Operation {{operation_id}} failed</translation>
+
+   <translation id="logs-input-2">1 Collector with 2 instances</translation>
+   <translation id="logs-input-4">1 Collector with 4 instances</translation>
+   <translation id="logs-input-8">1 Collector with 8 instances</translation>
+   <translation id="logs-dashboard-5">5 Graylog dashboards</translation>
+   <translation id="logs-stream-5">5 Graylog streams</translation>
+   <translation id="logs-kibana-1">Kibana Pack: 1 Alias et 1 Index of 500 MiB</translation>
+   <translation id="logs-alias-5">5 Aliases Elasticsearch</translation>
+
 </translations>
