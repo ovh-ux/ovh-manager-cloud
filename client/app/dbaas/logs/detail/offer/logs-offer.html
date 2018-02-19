@@ -3,8 +3,8 @@
     <span class="oui-header_3">Change offer</span>
 
     <div class="pl-4">
-        <h3 ng-if="ctrl.offerDetail.currentOffer !== 'logs-pro-0001'" data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}"></h3>
-        <h3 ng-if="ctrl.offerDetail.currentOffer === 'logs-pro-0001'" data-translate="logs_offer_description_basic"></h3>
+        <h3 ng-if="ctrl.offerDetail.currentOfferType === 'pro'" data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}"></h3>
+        <h3 ng-if="ctrl.offerDetail.currentOfferType === 'basic'" data-translate="logs_offer_description_basic"></h3>
     </div>
 
     <oui-spinner size="l" data-ng-show="ctrl.offers.loading"></oui-spinner>
