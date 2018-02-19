@@ -22,25 +22,18 @@ class LogsRolesService {
                     currentUsage: me.total.curNbRole * 100 / me.total.maxNbRole
                 };
                 return quota;
-            }).catch(err => {
-                console.log(err);
-                this.ServiceHelper.errorHandler("logs_roles_quota_get_error");
-            });
+            }).catch(this.ServiceHelper.errorHandler("logs_roles_quota_get_error"));
     }
 
     getRoles (serviceName) {
         return this.RolesApiService.query({ serviceName }).$promise
             .then(roles => {
-                console.log(roles);
                 const promises = roles.map(roleId => this.getRoleDetails(serviceName, roleId));
                 return this.$q.all(promises);
-            }).catch(err => {
-                console.log(err);
-            });
+            }).catch(this.ServiceHelper.errorHandler("logs_roles_get_error"));
     }
 
     getRoleDetails (serviceName, roleId) {
-        console.log("getting role details");
         return this.RolesAapiService.get({ serviceName, roleId }).$promise;
     }
 
@@ -51,12 +44,24 @@ class LogsRolesService {
 
     addRole (serviceName, object) {
         return this.RolesApiService.create({ serviceName }, object).$promise
-            .then(operation => {
-                console.log("");
-                // this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_add_success");
-            })
+            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_add_success"))
             .catch(this.ServiceHelper.errorHandler("logs_role_add_error"));
+    }
+
+    deleteRole (serviceName, roleId) {
+        return this.RolesApiService.remove({ serviceName, roleId }).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation, "logs_role_delete_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
+    }
+
+    deleteModal (role) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            titleText: this.$translate.instant("logs_role_modal_delete_title"),
+            text: this.$translate.instant("logs_role_modal_delete_question", { name: role.name })
+        });
     }
 
     _handleSuccess (serviceName, operation, successMessage) {
@@ -80,12 +85,11 @@ class LogsRolesService {
         });
     }
 
-    // _resetAllCache () {
-    //     this.LogsApiService.resetAllCache();
-    //     this.StreamsApiService.resetAllCache();
-    //     this.StreamsAapiService.resetAllCache();
-    //     this.AccountingAapiService.resetAllCache();
-    // }
+    _resetAllCache () {
+        this.RolesApiService.resetAllCache();
+        this.RolesAapiService.resetAllCache();
+        this.AccountingAapiService.resetAllCache();
+    }
 }
 
 angular.module("managerApp").service("LogsRolesService", LogsRolesService);

@@ -1,0 +1,38 @@
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button
+            class="oui-icon oui-icon-close_thin oui-modal__close-button"
+            type="button"
+            aria-label="Exit"
+            ng-click="ctrl.cancel()"></button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text mb-5">
+            <h2 class="oui-modal__title" data-translate="logs_role_overview_title"></h2>
+        </div>
+        <dl class="preview-list preview-list_no-margin">
+            <dt class="preview-list__term"
+                data-translate="logs_role_overview_role"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: ctrl.role.info.name"></dd>
+            <dt class="preview-list__term"
+                data-translate="logs_role_overview_description"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: ctrl.role.info.description"></dd>
+            <dt class="preview-list__term"
+                data-translate="logs_role_overview_permissions"></dt>
+            <dd class="preview-list__definition">
+                <ul data-ng-repeat="permission in ctrl.role.permissions" data-ng-bind="permission.stream.title"></ul>
+            </dd>
+            <dt class="preview-list__term"
+                data-translate="logs_role_overview_members"></dt>
+            <dd class="preview-list__definition">
+                <ul data-ng-repeat="member in ctrl.role.members" data-ng-bind="member.username"></ul>
+            </dd>
+            <dt class="preview-list__term"
+                data-translate="logs_role_overview_linked_option"></dt>
+            <dd class="preview-list__definition"
+                data-ng-bind=":: ctrl.role.info.optionId ? 'common_yes' : 'common_no' | translate"></dd>
+        </dl>
+    </div>
+</div>

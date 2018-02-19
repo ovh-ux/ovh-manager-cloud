@@ -6,11 +6,9 @@
     <translation id="logs_roles_total_used">roles used</translation>
     <translation id="logs_roles_add">Add a role</translation>
 
-    <!-- common -->
     <translation id="logs_roles_increase_quota">increase the quota</translation>
     <translation id="logs_roles_quota_get_error">An error has occurred while retrieving quota</translation>
 
-<!-- Role datagrid -->
     <translation id="logs_roles_col_role">Role</translation>
     <translation id="logs_roles_col_name">Name</translation>
     <translation id="logs_roles_col_description">Description</translation>
@@ -18,22 +16,31 @@
     <translation id="logs_roles_col_alerts">Members</translation>
     <translation id="logs_roles_col_link">Linked option</translation>
 
-<!-- small dropdown -->
     <translation id="logs_edit_role">Edit role</translation>
     <translation id="logs_edit_permissions">Edit permissions</translation>
     <translation id="logs_manage_members">Manage members</translation>
     <translation id="logs_delete_role">Delete role</translation>
     <translation id="logs_show_summary">Show summary</translation>
 
-<!-- modal -->
     <translation id="logs_role_modal_add_title">Add a role</translation>
     <translation id="logs_role_modal_name">Name</translation>
     <translation id="logs_role_modal_description">Description</translation>
     <translation id="logs_role_modal_option">Attached to option</translation>
     <translation id="logs_select_options_placeholder">Select option</translation>
 
-<!-- api success and error messages -->
+    <translation id="logs_role_modal_delete_title">Delete role</translation>
+    <translation id="logs_role_modal_delete_question">Are you sure you want to delete the following role: {{name}}?</translation>
     <translation id="logs_role_add_success">The role has been successfully created.</translation>
     <translation id="logs_role_add_error">An error occurred while creating role.</translation>
+    <translation id="logs_role_delete_success">The role has been successfully deleted.</translation>
+    <translation id="logs_index_delete_error">An error occurred while deleting role.</translation>
+    <translation id="logs_roles_get_error">An error occurred while getting roles.</translation>
 
+    <translation id="logs_role_overview_title">Role overview</translation>
+    <translation id="logs_role_overview_role">Role</translation>
+    <translation id="logs_role_overview_note">Note</translation>
+    <translation id="logs_role_overview_description">Description</translation>
+    <translation id="logs_role_overview_permissions">Permissions</translation>
+    <translation id="logs_role_overview_members">Members</translation>
+    <translation id="logs_role_overview_linked_option">Linked option</translation>
 </translations>

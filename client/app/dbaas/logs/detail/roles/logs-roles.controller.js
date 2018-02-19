@@ -26,16 +26,7 @@ class LogsRolesCtrl {
         this.roleOptions.load();
     }
 
-    editPermissions () {
-        //TODO: edit permissions
-    }
-
-    manageMembers () {
-        //TODO: manage members
-    }
-
-    add (info) {
-        console.log(info);
+    add () {
         this.CloudMessage.flushChildMessage();
         this.ControllerHelper.modal.showModal({
             modalConfig: {
@@ -47,8 +38,33 @@ class LogsRolesCtrl {
                 }
             }
         }).then(() => {
-            console.log("have to poll for data again  | stupid clear cache not working");
             this.initLoaders();
+        });
+    }
+
+    summary (info) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/dbaas/logs/detail/roles/overview/logs-role-overview.html",
+                controller: "LogsRoleOverviewCtrl",
+                controllerAs: "ctrl",
+                resolve: {
+                    role: () => info
+                }
+            }
+        });
+    }
+
+    showDeleteConfirm (info) {
+        this.CloudMessage.flushChildMessage();
+        this.LogsRolesService.deleteModal(
+            info
+        ).then(() => {
+            this.delete = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info.roleId)
+                    .then(() => this.initLoaders())
+            });
+            this.delete.load();
         });
     }
 }
