@@ -7,13 +7,14 @@
             ng-click="ctrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
+        <div class="oui-modal__body-text mb-3">
             <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_index_modal_edit_title"></h2>
             <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_index_modal_add_title"></h2>
-            <div ng-if="ctrl.isEdit" class="mb-3">
-                <span data-translate="logs_index_modal_edit_description"></span>
-                <b><span>{{ ctrl.indexInfo.name | translate }}</span></b>
-            </div>
+        </div>
+        
+        <div ng-if="ctrl.isEdit" class="mb-3">
+            <span data-translate="logs_index_modal_edit_description"></span>
+            <b><span>{{ ctrl.indexInfo.name | translate }}</span></b>
         </div>
 
         <form novalidate name="ctrl.form">
@@ -49,7 +50,7 @@
                 <label for="logs_index_modal_select" class="oui-label" data-translate="logs_select_options_title"></label>
                 <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
                 <div class="oui-field__content" data-ng-if="!ctrl.options.loading">
-                    <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-field-control oui-field-control_5">
                         <div class="oui-select"
                             data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
                             <select class="oui-select__input"
