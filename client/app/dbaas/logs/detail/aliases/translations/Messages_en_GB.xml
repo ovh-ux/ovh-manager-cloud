@@ -40,6 +40,11 @@
     <translation id="logs_aliases_notification_detail">Notify me by e-mail when the index reaches a critical size</translation>
     <translation id="logs_aliases_update_description">Edit alias information {{alias}}</translation>
 
-
+    <translation id="logs_aliases_link_title">Attach content to the alias</translation>
+    <translation id="logs_aliases_link_description">An alias can be attached to one or more Data streams or one or more Eleasticsearch indexes</translation>
+    <translation id="logs_aliases_available_streams">Available data streams</translation>
+    <translation id="logs_aliases_available_indices">Available indices</translation>
+    <translation id="logs_aliases_choose_stream">Choose a data stream</translation>
+    <translation id="logs_aliases_choose_indices">Choose a index</translation>
 
 </translations>

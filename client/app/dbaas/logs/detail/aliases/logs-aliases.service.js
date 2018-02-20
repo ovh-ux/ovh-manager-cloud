@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -14,6 +14,7 @@ class LogsAliasesService {
         this.LogAliasConstants = LogAliasConstants;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
+        this.LogsStreamsService = LogsStreamsService;
     }
 
     /**
@@ -65,6 +66,16 @@ class LogsAliasesService {
     getAlias (serviceName, aliasId) {
         return this.AliasApiService.get({ serviceName, aliasId })
             .$promise.catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
+    }
+
+    getAliasWithStreamsIndices (serviceName, aliasId) {
+        return this.AliasAapiService.get({ serviceName, aliasId })
+            .$promise
+            .then(alias => {
+                const promises = alias.streams.map(streamId => this.LogsStreamsService.getStream(serviceName, streamId));
+                return this.$q.all(promises);
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
     }
 
     /**
