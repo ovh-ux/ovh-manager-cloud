@@ -261,7 +261,7 @@ class LogsStreamsService {
                     token_value: token
                 }));
             } else {
-                this.CloudMessage.success(this.$translate.instant("logs_streams_copy_token_success"));
+                this.CloudMessage.info(this.$translate.instant("logs_streams_copy_token_success"));
             }
         }
     }

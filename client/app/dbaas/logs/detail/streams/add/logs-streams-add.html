@@ -6,7 +6,7 @@
     <span data-ng-show="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_update_title"></span>
     <span data-ng-hide="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_add_data_feed"></span>
 
-    <oui-spinner data-ng-show="ctrl.stream.loading"></oui-spinner>
+    <div><oui-spinner data-ng-show="ctrl.stream.loading"></oui-spinner></div>
     <form novalidate name="ctrl.form" data-ng-hide="ctrl.stream.loading">
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
             <label for="stream_name" class="oui-label" data-translate="logs_streams_col_title"></label>
@@ -131,12 +131,12 @@
             <div data-ng-hide="ctrl.saving.loading">
                 <button type="submit"
                     class="oui-button oui-button_primary"
-                    data-translate="common_edit"
+                    data-translate="common_save"
                     data-ng-click="ctrl.updateStream()"
                     data-ng-show="ctrl.isEdit"></button>
                 <button type="submit"
                     class="oui-button oui-button_primary"
-                    data-translate="common_add"
+                    data-translate="common_save"
                     data-ng-click="ctrl.createStream()"
                     data-ng-hide="ctrl.isEdit"></button>
                 <a class="oui-button oui-button_link"

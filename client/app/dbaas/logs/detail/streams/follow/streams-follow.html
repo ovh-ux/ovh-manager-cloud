@@ -8,12 +8,12 @@
 
     <oui-spinner data-ng-if="ctrl.stream.loading"></oui-spinner>
     <div data-ng-if="!ctrl.stream.loading">
-        <div>
+        <div class="log-streams-follow__connection_status">
             <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_opened' | translate}} </strong>
                 <span data-ng-if="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() | momentFormat:'LL' }} {{ctrl.getLastEvent() | momentFormat:'LTS' }}</span>
             </p>
-            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{::'logs_streams_displaying_logs' | translate}}</strong>
-                <span> - {{ctrl.getTotalMessages() | number}}/{{::ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</span>
+            <p data-ng-if="!ctrl.isConnectionClosed()">{{::'logs_streams_displaying_logs' | translate}}
+                <span> : <strong>{{ctrl.getTotalMessages() | number}}/{{::ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</strong> ({{::'logs_streams_follow_logs_limit' | translate}})</span>
             </p>
             <p data-ng-if="ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_closed' | translate}}</strong></p>
         </div>
