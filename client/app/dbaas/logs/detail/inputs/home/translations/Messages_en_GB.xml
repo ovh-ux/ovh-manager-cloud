@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_title">Collectors</translation>
+    <translation id="inputs_intro_text">Collection tools are software for recovering logs from servers or applications. It is an efficient way to process and transform in a GELF compatible format, with Logs Data Platform. No need to dedicate material resources or monitor the availability of your infrastructure, we do it for you. This platform allows you to link these tools to your different streams for a simplified and secure configuration, thanks to firewall rules.</translation>
+    <translation id="inputs_total_used">collection tools used</translation>
+    <translation id="inputs_increase_quota">increase the quota</translation>
+
+    <translation id="inputs_tool">Tool</translation>
+    <translation id="inputs_description">Description</translation>
+    <translation id="inputs_creation_date">Creation date</translation>
+    <translation id="inputs_software">Software</translation>
+    <translation id="inputs_linked_option">Linked option</translation>
+    <translation id="inputs_state">State</translation>
+
+    <translation id="inputs_state_processing"><i class="fa fa-spin fa-spinner"> </i> Processing</translation>
+    <translation id="inputs_state_restart_required">Restart required</translation>
+    <translation id="inputs_state_to_configure">To configure</translation>
+    <translation id="inputs_state_pending">Pending</translation>
+    <translation id="inputs_state_running">Up and running</translation>
+    <translation id="inputs_state_unknown">Unknown</translation>
+    
+    <translation id="inputs_start">Start</translation>
+    <translation id="inputs_restart">Restart</translation>
+    <translation id="inputs_stop">Stop</translation>
+    <translation id="inputs_standard_output">Standard output</translation>
+
+    <translation id="inputs_delete">Delete collector tool</translation>
+    <translation id="inputs_delete_message">Are you sure you want to delete the following collector tool: {{input}} ?</translation>
+    <translation id="inputs_delete_error">An error has occurred while deleting a collector tool: {{message}}</translation>
+    <translation id="inputs_delete_success">The collector tool has been successfully deleted.</translation>
+
+</translations>

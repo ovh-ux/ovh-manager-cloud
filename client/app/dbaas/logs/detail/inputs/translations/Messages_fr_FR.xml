@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_inputs_quota_get_error">Une erreur s'est produite lors de la récupération du quota d'outils de collecteur: {{message}}</translation>
+    <translation id="logs_inputs_get_error">Une erreur s'est produite lors de la récupération de l'outil de collecte: {{message}}</translation>
+    <translation id="logs_inputs_delete_success">L'outil de collection a été supprimé avec succès</translation>
+    <translation id="logs_inputs_delete_error">Une erreur s'est produite lors de la tentative de suppression de l'outil de collecte: {{message}}</translation>
+    <translation id="logs_inputs_start_success">L'outil de collecte a été démarré avec succès</translation>
+    <translation id="logs_inputs_start_error">Une erreur s'est produite lors de la tentative de démarrage de l'outil de collecte: {{message}}</translation>
+    <translation id="logs_inputs_restart_success">L'outil de collecte a été redémarré avec succès</translation>
+    <translation id="logs_inputs_restart_error">Une erreur est survenue lors de la tentative de redémarrage de l'outil de collecte: {{message}}</translation>
+    <translation id="logs_inputs_stop_success">L'outil de collecte a été arrêté avec succès</translation>
+    <translation id="logs_inputs_stop_error">Une erreur s'est produite lors de la tentative d'arrêt de l'outil de collecte: {{message}}</translation>
+    <translation id="logs_inputs_logurl_error">Une erreur s'est produite lors de la tentative d'obtention de l'URL de l'outil de collecte: {{message}}</translation>
+</translations>

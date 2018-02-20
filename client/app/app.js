@@ -48,6 +48,7 @@ angular.module("managerApp", [
     "ovh-jquery-ui-draggable-ng",
     "ovh-angular-jquery-ui-droppable",
     "ovh-angular-slider",
+    "ovh-angular-tail-logs",
     "ng-at-internet",
     "atInternetUiRouterPlugin",
     "matchmedia-ng",
