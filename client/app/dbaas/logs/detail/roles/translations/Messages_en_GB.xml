@@ -34,7 +34,7 @@
     <translation id="logs_role_add_success">The role has been successfully created.</translation>
     <translation id="logs_role_add_error">An error occurred while creating role.</translation>
     <translation id="logs_role_delete_success">The role has been successfully deleted.</translation>
-    <translation id="logs_index_delete_error">An error occurred while deleting role.</translation>
+    <translation id="logs_role_delete_error">An error occurred while deleting role.</translation>
     <translation id="logs_roles_get_error">An error occurred while getting roles.</translation>
     <translation id="logs_role_update_success">The role has been successfully updated.</translation>
     <translation id="logs_role_update_error">An error occurred while updating the role.</translation>
@@ -46,4 +46,9 @@
     <translation id="logs_role_overview_permissions">Permissions</translation>
     <translation id="logs_role_overview_members">Members</translation>
     <translation id="logs_role_overview_linked_option">Linked option</translation>
+    <translation id="logs_role_overview_stream">stream</translation>
+    <translation id="logs_role_overview_index">index</translation>
+    <translation id="logs_role_overview_alias">alias</translation>
+    <translation id="logs_role_overview_dashboard">dashboard</translation>
+
 </translations>

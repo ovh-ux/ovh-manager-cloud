@@ -68,7 +68,7 @@ class LogsRolesService {
                 this._resetAllCache();
                 return this._handleSuccess(serviceName, operation, "logs_role_delete_success");
             })
-            .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
+            .catch(this.ServiceHelper.errorHandler("logs_role_delete_error"));
     }
 
     deleteModal (role) {

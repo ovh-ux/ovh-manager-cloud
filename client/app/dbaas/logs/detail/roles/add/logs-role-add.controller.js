@@ -13,7 +13,6 @@ class LogsRoleAddModalCtrl {
 
     $onInit () {
         this.isEdit = this.checkIsEdit(this.roleInfo);
-        console.log(this.isEdit);
         if (this.isEdit) {
             this.populateRole();
         } else {

@@ -25,10 +25,10 @@
                 <span data-ng-if="ctrl.role.permissions.length === 0"> - </span>
                 <div data-ng-if="ctrl.role.permissions.length > 0">
                     <div data-ng-repeat="permission in ctrl.role.permissions">
-                        <ul class="pl-0" data-ng-if="permission.stream">{{permission.stream.title}} - stream</ul>
-                        <ul class="pl-0" data-ng-if="permission.index">{{permission.index.name}} - index</ul>
-                        <ul class="pl-0" data-ng-if="permission.alias">{{permission.alias.name}} - alias</ul>
-                        <ul class="pl-0" data-ng-if="permission.dashboard">{{permission.dashboard.title}} - dashboard</ul>                        
+                        <ul class="pl-0" data-ng-if="permission.stream">{{permission.stream.title}} - {{'logs_role_overview_stream' | translate}}</ul>
+                        <ul class="pl-0" data-ng-if="permission.index">{{permission.index.name}} - {{'logs_role_overview_index' | translate}}</ul>
+                        <ul class="pl-0" data-ng-if="permission.alias">{{permission.alias.name}} - {{'logs_role_overview_alias' | translate}}</ul>
+                        <ul class="pl-0" data-ng-if="permission.dashboard">{{permission.dashboard.title}} - {{'logs_role_overview_dashboard' | translate}}</ul>                        
                     </div>
                 </div>
             </dd>
