@@ -1,8 +1,9 @@
 class ControllerHelper {
-    constructor (ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
+    constructor ($timeout, ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
         this.request = ControllerRequestHelper;
         this.modal = ControllerModalHelper;
         this.navigation = ControllerNavigationHelper;
+        this.$timeout = $timeout;
     }
 
     downloadUrl (url) {
@@ -59,6 +60,10 @@ class ControllerHelper {
             return err;
         }
         return "";
+    }
+
+    scrollPageToTop () {
+        this.$timeout(() => scrollTo(0, 0), 100);
     }
 }
 

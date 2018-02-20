@@ -2,7 +2,7 @@
 <translations>
     <translation id="streams_archives_loading_error">Erreur lors du chargement des archives: {{message}}</translation>
     <translation id="streams_archives_ids_loading_error">Erreur lors du chargement des ID d'archive: {{message}}</translation>
-    <translation id="streams_archives_url_load_error">Erreur lors du chargement de l'URL de l'archive: {{message}}</translation>
+    <translation id="streams_archives_url_load_error">Erreur lors du chargement de l'URL de l'archive pour {{filename}}: {{message}}</translation>
     <translation id="streams_archives_download_error">Erreur lors du téléchargement des archives: {{message}}</translation>
 
     <translation id="streams_archives_unfreeze_start">Initialisation du dégel de {{filename}}</translation>

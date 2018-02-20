@@ -82,8 +82,7 @@ class LogsStreamsArchivesService {
             streamId,
             archiveId,
             expirationInSeconds: this.LogsStreamsArchivesConstant.expirationInSeconds
-        }).$promise.then(response => response.data)
-            .catch(this.ServiceHelper.errorHandler("streams_archives_url_load_error"));
+        }).$promise.then(response => response.data);
     }
 
     /**
