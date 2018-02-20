@@ -20,10 +20,10 @@
             data-ng-style="$ctrl.sourceContentStyle">
             <div class="oui-dual-list__content_filter">
                 <input type="text" id="dual-list-filter" name="dual-list-filter"
-                data-ng-model="$ctrl.sourceFilterKey"/>
+                data-ng-model="$ctrl.sourceFilterKey" ng-model-options="{debounce: 500}"/>
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
-            <div class="oui-dual-list__content_add_all" data-ng-if="$ctrl.bulkActionEnabled && $ctrl.sourceList.length">
+            <div class="oui-dual-list__content_add_all" data-ng-if="$ctrl.bulkActionEnabled && $ctrl.sourceList.length > 1">
                 <a id="dual-list-add-all"
                     name="dual-list-add-all"
                     data-ng-click="$ctrl.addAll()">{{$ctrl.moveAllLabel}}</a>
@@ -65,7 +65,7 @@
         </div>
         <div data-ng-if="!$ctrl.targetListLoading && $ctrl.targetList.length"
             class="oui-dual-list__content" data-ng-style="$ctrl.targetContentStyle">
-            <div class="oui-dual-list__content_remove_all" data-ng-if="$ctrl.bulkActionEnabled && $ctrl.targetList.length">
+            <div class="oui-dual-list__content_remove_all" data-ng-if="$ctrl.bulkActionEnabled && $ctrl.targetList.length > 1">
                 <a id="dual-list-remove-all"
                     name="dual-list-remove-all"
                     data-ng-click="$ctrl.removeAll()">{{$ctrl.removeAllLabel}}</a>
