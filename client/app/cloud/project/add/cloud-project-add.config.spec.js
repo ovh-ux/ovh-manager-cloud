@@ -16,6 +16,7 @@ describe("Controller config: CloudProjectAddCtrl", () => {
         $httpBackend.whenPOST(/api(?:v6)?\/cloud/).respond(200, {});
         $httpBackend.whenGET(/api(?:v6)?\/order/).respond(200, {});
         $httpBackend.whenPOST(/api(?:v6)?\/order/).respond(200, {});
+        $httpBackend.whenDELETE(/api(?:v6)?\/order/).respond(200, {});
     }));
 
     afterEach(inject(() => {
@@ -23,9 +24,8 @@ describe("Controller config: CloudProjectAddCtrl", () => {
     }));
 
     describe("atInternet track Click on Cloud Project activation", () => {
-        it("should track click on project creation when activation is set", inject(($httpBackend, atInternet) => {
-            controller.model = { contractsAccepted: true };
-            controller.data = { agreements: [{}] };
+        it("should track click on project creation when first project creation", inject(($httpBackend, atInternet) => {
+            controller.data = { isFirstProjectCreation: true };
 
             controller.createProject();
             $httpBackend.flush();
@@ -38,9 +38,8 @@ describe("Controller config: CloudProjectAddCtrl", () => {
     });
 
     describe("atInternet track Click on Cloud Project already activated", () => {
-        it("should not track click on project creation if agreements is empty", inject(($httpBackend, atInternet) => {
-            controller.model = { contractsAccepted: true };
-            controller.data = { agreements: [] };
+        it("should not track click on project creation when not first project creation", inject(($httpBackend, atInternet) => {
+            controller.data = { isFirstProjectCreation: false };
 
             controller.createProject();
             $httpBackend.flush();
