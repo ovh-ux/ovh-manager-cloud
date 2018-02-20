@@ -51,6 +51,9 @@
             <h1 data-ng-if="CloudProjectAddCtrl.data.isFirstProjectCreation" data-translate="cpa_title_first"></h1>
             <h1 data-ng-if="!CloudProjectAddCtrl.data.isFirstProjectCreation" data-translate="cpa_title"></h1>
         </div>
+        <div>
+            <cui-message-container data-messages="CloudProjectAddCtrl.messages"></cui-message-container>
+        </div>
 
         <!-- unknown error -->
         <div data-ng-if="!CloudProjectAddCtrl.loaders.init && CloudProjectAddCtrl.unknownError">

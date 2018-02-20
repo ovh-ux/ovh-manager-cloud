@@ -1,9 +1,17 @@
 class CloudProjectAddService {
-    constructor ($q, OvhApiCloud, OvhApiMe, OvhApiOrder) {
+    constructor ($q, OvhApiCloud, OvhApiMe, OvhApiOrder, OvhApiOrderCatalogFormatted) {
         this.$q = $q;
         this.OvhApiCloud = OvhApiCloud;
         this.OvhApiMe = OvhApiMe;
         this.OvhApiOrder = OvhApiOrder;
+        this.OvhApiOrderCatalogFormatted = OvhApiOrderCatalogFormatted;
+    }
+
+    getCloudCreditPrice () {
+        return this.OvhApiMe.Lexi().get()
+            .$promise
+            .then(me => this.OvhApiOrderCatalogFormatted.Lexi().get({ catalogName: "cloud", ovhSubsidiary: me.ovhSubsidiary }).$promise)
+            .then(catalog => catalog.plans[0].addonsFamily[0].addons[1].plan.details.pricings.default[0].price);
     }
 
     getCloudProjectOrders () {

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $timeout, $translate, $window, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
+    function ($q, $state, $timeout, $translate, $window, CloudMessage, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
               OvhApiMe, OvhApiOrder, OvhApiVrack, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
               CloudProjectAddService, CloudPoll, ControllerNavigationHelper) {
 
@@ -44,6 +44,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
          * Launch project creation process
          */
         this.createProject = () => {
+            CloudMessage.flushMessages();
+
             self.loaders.creating = true;
 
             let promise = null;
@@ -74,11 +76,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             }
 
             return promise
-                .catch(error => {
-                    self.data.activeOrder = undefined;
-                    self.model.contractsAccepted = false;
-                    Toast.error($translate.instant("cpa_error", error.data));
-                })
+                .catch(error => this.handleError(error))
                 .finally(() => {
                     self.loaders.creating = false;
                 });
@@ -116,7 +114,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         });
                     }, 3000);
                 })
-                .catch(() => Toast.error($translate.instant("cpa_error", {})));
+                .catch(() => this.handleError({}));
 
             return self.data.poller;
         }
@@ -137,6 +135,12 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
         this.awaitingDelivery = () => !self.loaders.creating && self.data.activeOrder && !this.awaitingContractValidation() && self.model.contractsAccepted;
 
+        this.handleError = error => {
+            self.data.activeOrder = undefined;
+            self.model.contractsAccepted = false;
+            CloudMessage.error($translate.instant("cpa_error", error.data));
+        };
+
         function initUserFidelityAccount () {
             return OvhApiMe.FidelityAccount().Lexi().get().$promise.then(function (account) {
                 return $q.when(account);
@@ -148,17 +152,17 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         function initProject () {
             return $q.all({
                 projectIds:       OvhApiCloud.Project().Lexi().query().$promise,
-                price:            OvhApiCloud.Price().Lexi().query().$promise,
                 user:             OvhApiMe.Lexi().get().$promise,
                 defaultPayment:   OvhApiMe.PaymentMean().Lexi().getDefaultPaymentMean(),
                 availablePayment: OvhApiMe.AvailableAutomaticPaymentMeans().Lexi().get().$promise,
                 fidelityAccount:  initUserFidelityAccount(),
                 bill:             OvhApiMe.Bill().Lexi().query().$promise,
-                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards()
+                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards(),
+                price:            CloudProjectAddService.getCloudCreditPrice()
             }).then(function (result) {
                 self.data.projectReady = false;
                 self.data.isFirstProjectCreation = !result.projectIds.length;
-                self.data.projectPrice = result.price.projectCreation;
+                self.data.projectPrice = result.price;
                 self.data.defaultPaymentMean = result.defaultPayment;
                 self.data.availablePaymentMeans = result.availablePayment;
                 self.data.hasDebt = result.fidelityAccount && result.fidelityAccount.balance < 0;
@@ -170,6 +174,10 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             });
         }
 
+        function refreshMessage () {
+            self.messages = self.messageHandler.getMessages();
+        }
+
         function init () {
             self.loaders.init = true;
             // Redirect US to onboarding
@@ -178,10 +186,14 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 return;
             }
 
+            CloudMessage.unSubscribe("iaas.pci-project-new");
+            self.messageHandler = CloudMessage.subscribe("iaas.pci-project-new", { onMessage: () => refreshMessage() });
+
             const orderId = ControllerNavigationHelper.getQueryParam("orderId");
             if (orderId) {
                 CloudProjectAddService.getCloudProjectOrder(parseInt(orderId, 10), { expand: true })
                     .then(response => {
+                        response.contracts = [];
                         self.data.activeOrder = response;
                         self.model.contractsAccepted = true;
                         self.pollOrder(orderId);
@@ -194,7 +206,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
             initProject()["catch"](function (err) {
                 self.unknownError = true;
-                Toast.error($translate.instant("cpa_error", err.data));
+                CloudMessage.error(this.handleError(err.data));
             })["finally"](function () {
                 self.loaders.init = false;
             });
