@@ -43,7 +43,19 @@ class LogsIndexService {
     }
 
     getIndexDetails (serviceName, indexId) {
-        return this.IndexAapiService.get({ serviceName, indexId }).$promise;
+        return this.IndexAapiService.get({ serviceName, indexId })
+            .$promise
+            .then(index => this._transformAapiIndex(index));
+    }
+
+    _transformAapiIndex (index) {
+        if (index.info.currentStorage < 0) {
+            index.info.currentStorage = 0;
+        }
+        if (index.info.maxSize < 0) {
+            index.info.maxSize = 0;
+        }
+        return index;
     }
 
     deleteModal (indexName) {
