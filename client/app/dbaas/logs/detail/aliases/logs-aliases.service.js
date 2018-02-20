@@ -209,7 +209,6 @@ class LogsAliasesService {
 
     _resetAllCache () {
         this.AccountingAapiService.resetAllCache();
-        this.AliasAapiService.resetAllCache();
     }
 
     _pollOperation (serviceName, operation) {

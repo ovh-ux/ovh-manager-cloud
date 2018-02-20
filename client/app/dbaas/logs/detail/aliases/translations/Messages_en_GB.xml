@@ -9,7 +9,7 @@
     <translation id="logs_aliases_col_title">Name</translation>
     <translation id="logs_aliases_col_description">Description</translation>
     <translation id="logs_aliases_col_creation_date">Creation date</translation>
-    <translation id="logs_aliases_col_shared">Shared aliases</translation>
+    <translation id="logs_aliases_col_shared">Shared alias</translation>
     <translation id="logs_aliases_col_streams">Linked data streams</translation>
     <translation id="logs_aliases_col_indices">Linked indices</translation>
 
