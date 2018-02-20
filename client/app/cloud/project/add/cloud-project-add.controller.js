@@ -15,7 +15,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         this.data = {
             isFirstProjectCreation: true,
             status: null,                // project creation status
-            agreements: [],              // contracts agreements
             defaultPaymentMean: null,
             projectPrice: null,          // price for creating a new project with BC
             availablePaymentMeans: {     // list of available payment means
@@ -44,41 +43,40 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         /**
          * Launch project creation process
          */
-        this.createProject = function () {
-            var promiseContracts = $q.when();
+        this.createProject = () => {
             self.loaders.creating = true;
 
-            // If contracts: accept them
-            if (self.model.contractsAccepted && self.data.agreements.length) {
-                var queueContracts = [];
-                angular.forEach(self.data.agreements, function (contract) {
-                    queueContracts.push(OvhApiMe.Agreements().Lexi().accept({
-                        id: contract.id
-                    }, {}).$promise.then(function () {
-                        _.remove(self.data.agreements, {
-                            id: contract.id
-                        });
-                    }));
-                });
-                promiseContracts = queueContracts.length ? $q.all(queueContracts) : $q.when();
+            let promise = null;
+            if (self.model.contractsAccepted) {
+                promise = CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
+                    .then(response => {
+                        ControllerNavigationHelper.addQueryParam("orderId", response.orderId);
+
+                        self.data.activeOrder = response;
+                        // We empty the contracts since we know the user just approved them and that agora
+                        // doesn't allow us to tell it a contract is accepted.
+                        self.data.activeOrder.contracts = [];
+
+                        if (response.prices.withTax.value) {
+                            $window.open(response.url);
+                            self.data.activeOrder.deliveryStatus = "unpaid";
+                        } else {
+                            self.data.activeOrder.deliveryStatus = "delivering";
+                        }
+
+                        self.pollOrder(response.orderId);
+                    });
+            } else {
+                promise = CloudProjectAddService.getOrderSummary(self.model.description, self.model.voucher)
+                    .then(response => {
+                        self.data.activeOrder = response;
+                    });
             }
 
-            return promiseContracts.then(() => CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher))
-                .then(response => {
-                    ControllerNavigationHelper.addQueryParam("orderId", response.orderId);
-
-                    self.data.activeOrder = response;
-
-                    if (response.prices.withTax.value) {
-                        $window.open(response.url);
-                    } else {
-                        self.data.activeOrder.deliveryStatus = "delivering";
-                    }
-
-                    self.pollOrder(response.orderId);
-                })
+            return promise
                 .catch(error => {
                     self.data.activeOrder = undefined;
+                    self.model.contractsAccepted = false;
                     Toast.error($translate.instant("cpa_error", error.data));
                 })
                 .finally(() => {
@@ -95,10 +93,10 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             self.data.poller = CloudPoll.poll({
                 item: cloudOrder,
                 pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
-                        self.data.activeOrder.deliveryStatus = response.status;
+                        self.data.activeOrder.deliveryStatus = response.deliveryStatus;
                         return response;
                     }),
-                stopCondition: item => item.status === "delivered",
+                stopCondition: item => item.deliveryStatus === "delivered",
                 interval: 3000
             });
             
@@ -133,9 +131,11 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             return angular.isDefined(_.find(self.data.creditCards, "threeDsValidated"));
         };
 
-        this.orderIsDelivering = function () {
-            return _.get(self.data.activeOrder, "prices.withTax.value ") || self.data.activeOrder.deliveryStatus === "delivering";
-        };
+        this.orderIsDelivering = () => self.data.activeOrder && self.data.activeOrder.deliveryStatus === "delivering";
+
+        this.awaitingContractValidation = () => self.data.activeOrder && self.data.activeOrder.contracts.length;
+
+        this.awaitingDelivery = () => !self.loaders.creating && self.data.activeOrder && !this.awaitingContractValidation() && self.model.contractsAccepted;
 
         function initUserFidelityAccount () {
             return OvhApiMe.FidelityAccount().Lexi().get().$promise.then(function (account) {
@@ -143,13 +143,6 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             }, function (err) {
                 return err && err.status === 404 ? $q.when(null) : $q.reject(err);
             });
-        }
-
-        function initContracts () {
-            return CloudProjectAddService.getCloudProjectAgreements()
-                .then(agreements => {
-                     self.data.agreements = agreements;
-                });
         }
 
         function initProject () {
@@ -164,7 +157,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards()
             }).then(function (result) {
                 self.data.projectReady = false;
-                self.data.isFirstProjectCreation = result.projectIds.length;
+                self.data.isFirstProjectCreation = !result.projectIds.length;
                 self.data.projectPrice = result.price.projectCreation;
                 self.data.defaultPaymentMean = result.defaultPayment;
                 self.data.availablePaymentMeans = result.availablePayment;
@@ -190,6 +183,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 CloudProjectAddService.getCloudProjectOrder(parseInt(orderId, 10), { expand: true })
                     .then(response => {
                         self.data.activeOrder = response;
+                        self.model.contractsAccepted = true;
                         self.pollOrder(orderId);
                     })
                     .finally(() => {
@@ -198,7 +192,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 return;
             };
 
-            initContracts().then(initProject)["catch"](function (err) {
+            initProject()["catch"](function (err) {
                 self.unknownError = true;
                 Toast.error($translate.instant("cpa_error", err.data));
             })["finally"](function () {
