@@ -11,6 +11,15 @@ class LogsRolesService {
         this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
         this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.newRole = {
+            description: "",
+            name: "",
+            optionId: null
+        };
+    }
+
+    getNewRole () {
+        return this.newRole;
     }
 
     getQuota (serviceName) {
@@ -37,7 +46,6 @@ class LogsRolesService {
         return this.RolesAapiService.get({ serviceName, roleId }).$promise;
     }
 
-
     getSubscribedOptions (serviceName) {
         return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsRolesConstant.optionType);
     }
@@ -46,6 +54,12 @@ class LogsRolesService {
         return this.RolesApiService.create({ serviceName }, object).$promise
             .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_add_success"))
             .catch(this.ServiceHelper.errorHandler("logs_role_add_error"));
+    }
+
+    updateRole (serviceName, object) {
+        return this.RolesAapiService.update({ serviceName }, object).$promise
+            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_update_success"))
+            .catch(this.ServiceHelper.errorHandler("logs_role_update_error"));
     }
 
     deleteRole (serviceName, roleId) {

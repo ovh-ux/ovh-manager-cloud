@@ -22,12 +22,21 @@
             <dt class="preview-list__term"
                 data-translate="logs_role_overview_permissions"></dt>
             <dd class="preview-list__definition">
-                <ul data-ng-repeat="permission in ctrl.role.permissions" data-ng-bind="permission.stream.title"></ul>
+                <span data-ng-if="ctrl.role.permissions.length === 0"> - </span>
+                <div data-ng-if="ctrl.role.permissions.length > 0">
+                    <div data-ng-repeat="permission in ctrl.role.permissions">
+                        <ul class="pl-0" data-ng-if="permission.stream">{{permission.stream.title}} - stream</ul>
+                        <ul class="pl-0" data-ng-if="permission.index">{{permission.index.name}} - index</ul>
+                        <ul class="pl-0" data-ng-if="permission.alias">{{permission.alias.name}} - alias</ul>
+                        <ul class="pl-0" data-ng-if="permission.dashboard">{{permission.dashboard.title}} - dashboard</ul>                        
+                    </div>
+                </div>
             </dd>
             <dt class="preview-list__term"
                 data-translate="logs_role_overview_members"></dt>
             <dd class="preview-list__definition">
-                <ul data-ng-repeat="member in ctrl.role.members" data-ng-bind="member.username"></ul>
+                <span data-ng-if="ctrl.role.members.length === 0"> - </span>
+                <ul class="pl-0" data-ng-repeat="member in ctrl.role.members" data-ng-bind="member.username"></ul>
             </dd>
             <dt class="preview-list__term"
                 data-translate="logs_role_overview_linked_option"></dt>

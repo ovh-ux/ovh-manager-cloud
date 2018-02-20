@@ -26,7 +26,7 @@ class LogsRolesCtrl {
         this.roleOptions.load();
     }
 
-    add () {
+    add (info) {
         this.CloudMessage.flushChildMessage();
         this.ControllerHelper.modal.showModal({
             modalConfig: {
@@ -34,6 +34,7 @@ class LogsRolesCtrl {
                 controller: "LogsRoleAddModalCtrl",
                 controllerAs: "ctrl",
                 resolve: {
+                    roleInfo: () => info,
                     options: () => this.roleOptions
                 }
             }
