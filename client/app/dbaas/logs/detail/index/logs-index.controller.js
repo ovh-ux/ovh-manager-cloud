@@ -1,10 +1,12 @@
 class LogsIndexCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService) {
+    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService, LogsIndexConstant) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.LogsIndexService = LogsIndexService;
+        this.LogsIndexConstant = LogsIndexConstant;
+        this.suffixPattern = this.LogsIndexConstant.suffixPattern;
         this.initLoaders();
     }
 
@@ -49,8 +51,14 @@ class LogsIndexCtrl {
         this.LogsIndexService.deleteModal(
             this.serviceName,
             info
-        ).then(() => this.deleteIndex(info))
-            .then(() => this.initLoaders());
+        ).then(() => {
+            this.delete = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info.indexId)
+                    .then(() => this.initLoaders())
+            });
+
+            this.delete.load();
+        });
     }
 }
 

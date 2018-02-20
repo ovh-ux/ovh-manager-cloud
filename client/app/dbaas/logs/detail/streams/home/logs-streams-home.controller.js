@@ -95,6 +95,20 @@ class LogsStreamsHomeCtrl {
     }
 
     /**
+     * navigates to the alerts page
+     *
+     * @param {any} stream, stream for which alerts should be managed
+     * @memberof LogsStreamsHomeCtrl
+     */
+    gotoArchives (stream) {
+        this.CloudMessage.flushChildMessage();
+        this.$state.go("dbaas.logs.detail.streams.archives", {
+            serviceName: this.serviceName,
+            streamId: stream.info.streamId
+        });
+    }
+
+    /**
      * navigates to follow live stream page
      *
      * @param {any} stream, stream to follow live

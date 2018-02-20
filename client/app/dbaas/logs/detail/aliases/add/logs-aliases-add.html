@@ -22,7 +22,7 @@
                 <div class="oui-field" data-ng-if="!ctrl.isEdit" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alias_name.$invalid}">
                     <label for="alias_name" class="oui-label" data-translate="logs_aliases_col_title"></label>
                     <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-field-control oui-field-control_5 mb-2">
                             <input type="text" id="alias_name"
                                     name="alias_name"
                                     pattern="^[a-z0-9_-]+$"
@@ -31,7 +31,7 @@
                                     data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alias_name.$invalid}"
                                     autofocus
                                     required />
-                            <p class="mb-4">{{::'logs_aliases_title_description' | translate}}</p>
+                            <p>{{::'logs_aliases_title_description' | translate}}</p>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alias_description.$invalid}">
                     <label for="alias_description" class="oui-label" data-translate="logs_aliases_col_description"></label>
                     <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-field-control oui-field-control_5">
                             <textarea
                             id="alias_description"
                             name="alias_description"
@@ -51,18 +51,20 @@
                     </div>
                 </div>
 
-                <div class="oui-field">
+                <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.alias_option.$invalid }">
                     <label for="alias_option" class="oui-label" data-translate="logs_select_options_title"></label>
                     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
                     <div data-ng-hide="ctrl.options.loading" class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-field-control oui-field-control_5">
                             <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.alias_option.$invalid }"
                                 data-ng-hide="ctrl.options.loading">
                                 <select class="oui-select__input"
                                     name="alias_option"
                                     id="alias_option"
                                     data-ng-model="ctrl.alias.data.optionId"
-                                    data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbAlias+'/'+option.maxNbAlias for option in ctrl.options.data">
+                                    data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbAlias+'/'+option.maxNbAlias for option in ctrl.options.data"
+                                    required>
                                     <option data-translate="logs_select_options_placeholder"></option>
                                 </select>
                                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
@@ -82,12 +84,12 @@
                         data-ng-click="ctrl.cancel()"></button>
                     <button type="submit"
                         class="oui-button oui-button_primary"
-                        data-translate="common_edit"
+                        data-translate="common_save"
                         data-ng-click="ctrl.updateAlias()"
                         data-ng-if="ctrl.isEdit"></button>
                     <button type="submit"
                         class="oui-button oui-button_primary"
-                        data-translate="common_add"
+                        data-translate="common_save"
                         data-ng-click="ctrl.createAlias()"
                         data-ng-if="!ctrl.isEdit"></button>
                 </div>

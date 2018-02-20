@@ -1,7 +1,8 @@
 class LogsIndexService {
-    constructor ($q, $translate, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
         this.$q = $q;
         this.$translate = $translate;
+        this.CloudPoll = CloudPoll;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
@@ -9,6 +10,7 @@ class LogsIndexService {
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.newIndex = {
             description: "",
             alertNotifyEnabled: false
@@ -41,7 +43,19 @@ class LogsIndexService {
     }
 
     getIndexDetails (serviceName, indexId) {
-        return this.IndexAapiService.get({ serviceName, indexId }).$promise;
+        return this.IndexAapiService.get({ serviceName, indexId })
+            .$promise
+            .then(index => this._transformAapiIndex(index));
+    }
+
+    _transformAapiIndex (index) {
+        if (index.info.currentStorage < 0) {
+            index.info.currentStorage = 0;
+        }
+        if (index.info.maxSize < 0) {
+            index.info.maxSize = 0;
+        }
+        return index;
     }
 
     deleteModal (indexName) {
@@ -57,9 +71,9 @@ class LogsIndexService {
 
     createIndex (serviceName, object) {
         return this.IndexApiService.post({ serviceName }, object).$promise
-            .then(() => {
+            .then(operation => {
                 this._resetAllCache();
-                this.ServiceHelper.successHandler("logs_index_create_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_create_error"));
     }
@@ -67,18 +81,18 @@ class LogsIndexService {
     updateIndex (serviceName, indexId, indexInfo) {
         return this.IndexApiService.put({ serviceName, indexId }, indexInfo)
             .$promise
-            .then(() => {
+            .then(operation => {
                 this._resetAllCache();
-                this.ServiceHelper.successHandler("logs_index_edit_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_edit_error"));
     }
 
     deleteIndex (serviceName, indexId) {
         return this.IndexApiService.delete({ serviceName, indexId }).$promise
-            .then(() => {
+            .then(operation => {
                 this._resetAllCache();
-                this.ServiceHelper.successHandler("logs_index_delete_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
     }
@@ -87,6 +101,27 @@ class LogsIndexService {
         this.IndexApiService.resetAllCache();
         this.IndexAapiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
+    }
+
+    _handleSuccess (serviceName, operation, successMessage) {
+        this.poller = this._pollOperation(serviceName, operation);
+        return this.poller.$promise
+            .then(this.ServiceHelper.successHandler(successMessage));
+    }
+
+    _killPoller () {
+        if (this.poller) {
+            this.poller.kill();
+        }
+    }
+
+    _pollOperation (serviceName, operation) {
+        this._killPoller();
+        return this.CloudPoll.poll({
+            item: operation,
+            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
+            stopCondition: opn => opn.state === this.LogsIndexConstant.FAILURE || opn.state === this.LogsIndexConstant.SUCCESS
+        });
     }
 }
 

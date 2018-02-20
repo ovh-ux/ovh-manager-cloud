@@ -9,6 +9,7 @@
     <translation id="logs_aliases_col_title">Name</translation>
     <translation id="logs_aliases_col_description">Description</translation>
     <translation id="logs_aliases_col_creation_date">Creation date</translation>
+    <translation id="logs_aliases_col_shared">Shared alias</translation>
     <translation id="logs_aliases_col_streams">Linked data streams</translation>
     <translation id="logs_aliases_col_indices">Linked indices</translation>
 
@@ -17,17 +18,16 @@
     <translation id="logs_aliases_delete">Delete</translation>
     <translation id="logs_aliases_elasticsearch_access">Elasticsearch access</translation>
     <translation id="logs_aliases_attach_content">Attach content</translation>
-    <translation id="logs_aliases_delete_title">Delete alias</translation>
-    <translation id="logs_alias_delete_message">Are you sure you want to delete the alias: {{alias}} ?</translation>
+    <translation id="logs_aliases_delete_title">Delete an alias</translation>
+    <translation id="logs_alias_delete_message">Are you sure you want to delete an alias: {{alias}} ?</translation>
 
     <translation id="logs_aliases_title_description">The name you choose can not be changed later.</translation>
-    <translation id="logs_aliases_notification_description">Notify me by e-mail when the index reaches a critical size</translation>
-    <translation id="logs_aliases_update_title">Update an alias</translation>
+    <translation id="logs_aliases_update_title">Edit an alias</translation>
 
     <translation id="logs_aliases_delete_message">Are you sure you want to delete an alias: {{alias}} ?</translation>
-    <translation id="logs_aliases_create_success">The alias has been successfully created.</translation>
-    <translation id="logs_aliases_update_success">The aliase has been successfully updated.</translation>
-    <translation id="logs_aliases_delete_success">The aliases has been successfully deleted.</translation>
+    <translation id="logs_aliases_create_success">An alias has been successfully created.</translation>
+    <translation id="logs_aliases_update_success">An aliase has been successfully updated.</translation>
+    <translation id="logs_aliases_delete_success">An aliases has been successfully deleted.</translation>
 
     <translation id="logs_aliases_get_error">An error has occurred while retrieving aliases: {{message}}</translation>
     <translation id="logs_alias_get_error">An error has occurred while retrieving alias: {{message}}</translation>
@@ -35,10 +35,8 @@
     <translation id="logs_aliases_delete_error">An error has occured while deleting alias: {{message}}</translation>
     <translation id="logs_aliases_create_error">An error has occured while creating alias: {{message}}</translation>
     <translation id="logs_aliases_update_error">An error has occured while updating alias: {{message}}</translation>
-    <translation id="logs_aliases_get_elasticsearch_url_error">Elastic search URL not found for alias {{alias}}</translation>
-
-    <translation id="logs_aliases_notification_detail">Notify me by e-mail when the index reaches a critical size</translation>
-    <translation id="logs_aliases_update_description">Edit alias information {{alias}}</translation>
+    <translation id="logs_aliases_get_elasticsearch_url_error">Elastic search URL not found for an alias {{alias}}</translation>
+    <translation id="logs_aliases_update_description">Edit an alias information {{alias}}</translation>
 
 
 

@@ -7,58 +7,64 @@
             ng-click="ctrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
+        <div class="oui-modal__body-text mb-3">
             <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_index_modal_edit_title"></h2>
             <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_index_modal_add_title"></h2>
-            <div ng-if="ctrl.isEdit" class="mb-3">
-                <span data-translate="logs_index_modal_edit_description"></span>
-                <b><span>{{ ctrl.indexInfo.name | translate }}</span></b>
-            </div>
+        </div>
+
+        <div ng-if="ctrl.isEdit" class="mb-3">
+            <span data-translate="logs_index_modal_edit_description"></span>
+            <b><span>{{ ctrl.indexInfo.name | translate }}</span></b>
         </div>
 
         <form novalidate name="ctrl.form">
             <div class="oui-field" ng-if="!ctrl.isEdit" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.suffix.$invalid}">
                 <label for="suffix" class="oui-label" data-translate="logs_index_modal_suffix"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-field-control oui-field-control_5 mb-2">
                         <input type="text" id="suffix" name="suffix"
+                        data-ng-pattern="ctrl.suffixPattern"
                         class="oui-input mb-0" data-ng-model="ctrl.index.suffix"
                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.suffix.$invalid}"
-                        autofocus
-                        required />
-                        <p data-translate="logs_index_suffix_description" class="mb-4"></p>
+                        autofocus required />
                     </div>
                 </div>
+                <p data-translate="logs_index_suffix_description" class="mb-4"></p>
+
             </div>
 
             <div class="oui-field mt-3" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.description.$invalid}">
                 <label for="description" class="oui-label" data-translate="logs_index_modal_description"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="description" name="description"
-                        class="oui-input" data-ng-model="ctrl.index.description"
-                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.description.$invalid}"
+                    <div class="oui-field-control oui-field-control_5">
+                        <textarea id="description" name="description"
+                        class="oui-textarea" data-ng-model="ctrl.index.description"
+                        data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.description.$invalid}"
                         required />
                     </div>
                 </div>
             </div>
 
 
-            <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
+            <div class="oui-field" ng-if="!ctrl.isEdit" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="logs_select_options_title"></label>
-                <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+                <oui-spinner data-ng-if="ctrl.options.loading"></oui-spinner>
                 <div class="oui-field__content" data-ng-if="!ctrl.options.loading">
-                    <div class="oui-field-control oui-field-control_3">
-                        <div class="oui-select"
+                    <div class="oui-field-control oui-field-control_5">
+                        <div class="oui-select mb-0"
                             data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
                             <select class="oui-select__input"
                                 name="logs_index_modal_select"
                                 id="logs_index_modal_select"
-                                data-ng-model="ctrl.index.option"
-                                data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbIndex+'/'+option.maxNbIndex for option in ctrl.options.data">
+                                data-ng-model="ctrl.index.optionId"
+                                data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbIndex+'/'+option.maxNbIndex for option in ctrl.options.data"
+                                required>
                                 <option data-translate="logs_select_options_placeholder"></option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="mb-4">
+                            <span data-translate="logs_index_option_warning"></span>
                         </div>
                     </div>
                 </div>

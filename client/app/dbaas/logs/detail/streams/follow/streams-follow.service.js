@@ -94,7 +94,7 @@ class LogsStreamsFollowService {
                     url
                 }));
             } else {
-                this.CloudMessage.success(this.$translate.instant("logs_streams_follow_copy_websocket_success"));
+                this.CloudMessage.info(this.$translate.instant("logs_streams_follow_copy_websocket_success"));
             }
         }
     }
@@ -205,7 +205,7 @@ class LogsStreamsFollowService {
                 type
             }));
         } else {
-            this.CloudMessage.success(this.$translate.instant("logs_streams_follow_copy_command_success", { type }));
+            this.CloudMessage.info(this.$translate.instant("logs_streams_follow_copy_command_success", { type }));
         }
     }
 
@@ -219,6 +219,8 @@ class LogsStreamsFollowService {
             this.webSocket = this.$websocket(url);
             let response;
             let message;
+            const date = new Date();
+            this.lastEvent = date.getTime() * 1000;
             this.webSocket.onMessage(event => {
                 this.waitingForMessages = false;
                 this.totalMessages++;

@@ -16,7 +16,7 @@
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_index_add_data_feed' | translate }}
     </button>
 
-    <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.indices.loading"></oui-spinner>
+    <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.indices.loading || ctrl.delete.loading"></oui-spinner>
 
     <oui-datagrid
         rows="ctrl.indices.data">
