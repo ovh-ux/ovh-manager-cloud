@@ -11,31 +11,55 @@
 
     <oui-spinner data-ng-if="ctrl.alias.loading"></oui-spinner>
     <form novalidate name="ctrl.form" data-ng-if="!ctrl.alias.loading">
-        <cui-radio-bar data-ng-model="ctrl.selectedTarget"
-            data-on-change="ctrl.onTargetChange()">
-            <cui-radio-bar-item data-ng-repeat="target in ctrl.targets"
-                data-text="target.name | translate"
-                data-value="target.value">
+        <cui-radio-bar data-ng-model="ctrl.selectedContent"
+            data-on-change="ctrl.onContentChange()">
+            <cui-radio-bar-item data-ng-repeat="content in ctrl.contents"
+                data-text="content.name | translate"
+                data-value="content.value"
+                data-ng-disabled="((content.value === 'streams' && ctrl.alias.data.indexes.length > 0) || (content.value === 'indices' && ctrl.alias.data.streams.length > 0))">
             </cui-radio-bar-item>
         </cui-radio-bar>
-        <div class="oui-field">
-            <label for="alias_link_streams" class="oui-label" data-translate="logs_aliases_available_streams"></label>
-            <oui-spinner data-ng-if="ctrl.streams.loading"></oui-spinner>
-            <div data-ng-if="!ctrl.streams.loading" class="oui-field__content">
-                <div class="oui-field-control oui-field-control_4">
-                    <div class="oui-select">
-                        <select class="oui-select__input"
-                            name="alias_link_streams"
-                            id="alias_link_streams"
-                            data-ng-model="ctrl.selectedStream"
-                            data-ng-options="stream.info.title for stream in ctrl.streams.data">
-                            <option data-translate="logs_aliases_choose_stream"></option>
-                        </select>
-                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+        <div data-ng-if="ctrl.selectedContent === 'streams'">
+            <div class="oui-field">
+                <label for="alias_link_streams" class="oui-label" data-translate="logs_aliases_available_streams"></label>
+                <oui-spinner data-ng-if="ctrl.streams.loading"></oui-spinner>
+                <div data-ng-if="!ctrl.streams.loading" class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="alias_link_streams"
+                                id="alias_link_streams"
+                                data-ng-model="ctrl.selectedStream"
+                                data-ng-options="stream.info.title for stream in ctrl.streams.data">
+                                <option data-translate="logs_aliases_choose_stream"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div data-ng-if="ctrl.selectedContent === 'indices'">
+                <div class="oui-field">
+                    <label for="alias_link_indices" class="oui-label" data-translate="logs_aliases_available_indices"></label>
+                    <oui-spinner data-ng-if="ctrl.indices.loading"></oui-spinner>
+                    <div data-ng-if="!ctrl.indices.loading" class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <div class="oui-select">
+                                <select class="oui-select__input"
+                                    name="alias_link_indices"
+                                    id="alias_link_indices"
+                                    data-ng-model="ctrl.selectedIndex"
+                                    data-ng-options="index.info.name for index in ctrl.indices.data">
+                                    <option data-translate="logs_aliases_choose_index"></option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <div class="cui-form-actions">
             <oui-spinner data-ng-show="ctrl.saving.loading"></oui-spinner>

@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -15,6 +15,16 @@ class LogsAliasesService {
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
         this.LogsStreamsService = LogsStreamsService;
+        this.LogsIndexService = LogsIndexService;
+
+        this.contents = [
+            { value: "streams", name: "logs_streams_title" },
+            { value: "indices", name: "logs_index_title" }
+        ];
+    }
+
+    getContents () {
+        return this.contents;
     }
 
     /**
@@ -68,12 +78,24 @@ class LogsAliasesService {
             .$promise.catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
     }
 
-    getAliasWithStreamsIndices (serviceName, aliasId) {
+    getAliasWithStreamsAndIndices (serviceName, aliasId) {
         return this.AliasAapiService.get({ serviceName, aliasId })
             .$promise
             .then(alias => {
-                const promises = alias.streams.map(streamId => this.LogsStreamsService.getStream(serviceName, streamId));
-                return this.$q.all(promises);
+                if (alias.streams.length > 0) {
+                    const promises = alias.streams.map(streamId => this.LogsStreamsService.getStream(serviceName, streamId));
+                    return this.$q.all(promises).then(streams => {
+                        alias.streams = streams;
+                        return alias;
+                    });
+                } else if (alias.indexes.length > 0) {
+                    const promises = alias.indexes.map(indexId => this.LogsIndexService.getIndexDetails(serviceName, indexId));
+                    return this.$q.all(promises).then(indices => {
+                        alias.indexes = indices;
+                        return alias;
+                    });
+                }
+                return alias;
             })
             .catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
     }

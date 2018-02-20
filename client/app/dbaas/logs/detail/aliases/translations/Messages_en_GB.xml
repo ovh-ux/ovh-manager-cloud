@@ -43,8 +43,8 @@
     <translation id="logs_aliases_link_title">Attach content to the alias</translation>
     <translation id="logs_aliases_link_description">An alias can be attached to one or more Data streams or one or more Eleasticsearch indexes</translation>
     <translation id="logs_aliases_available_streams">Available data streams</translation>
-    <translation id="logs_aliases_available_indices">Available indices</translation>
+    <translation id="logs_aliases_available_indices">Available indexes</translation>
     <translation id="logs_aliases_choose_stream">Choose a data stream</translation>
-    <translation id="logs_aliases_choose_indices">Choose a index</translation>
+    <translation id="logs_aliases_choose_index">Choose a index</translation>
 
 </translations>
