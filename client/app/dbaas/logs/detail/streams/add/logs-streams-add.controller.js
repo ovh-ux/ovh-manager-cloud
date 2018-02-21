@@ -25,6 +25,11 @@ class LogsStreamsAddCtrl {
         });
         this.options.load();
 
+        this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsStreamsService.getMainOffer(this.serviceName)
+        });
+        this.mainOffer.load();
+
         if (this.$stateParams.streamId) {
             this.isEdit = true;
             this.stream = this.ControllerHelper.request.getHashLoader({

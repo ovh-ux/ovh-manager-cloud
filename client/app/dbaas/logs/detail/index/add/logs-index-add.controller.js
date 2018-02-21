@@ -1,10 +1,11 @@
 class LogsIndexAddModalCtrl {
-    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, indexInfo, options, LogsIndexService) {
+    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, indexInfo, options, mainOffer, LogsIndexService) {
         this.$stateParams = $stateParams;
         this.$q = $q;
         this.ControllerHelper = ControllerHelper;
         this.indexInfo = indexInfo;
         this.options = options;
+        this.mainOffer = mainOffer;
         this.suffixPattern = "^[a-z0-9_-]+$";
         this.LogsIndexService = LogsIndexService;
         this.$uibModalInstance = $uibModalInstance;
