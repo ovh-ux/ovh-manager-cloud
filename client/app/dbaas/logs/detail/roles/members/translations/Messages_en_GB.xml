@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_roles_members_title">Manage members</translation>
+    <translation id="logs_roles_members_description">You will find here the list of your active members for the role {{roleName}}. You can revoke them individually, or add new ones through existing user accounts.</translation>
+    <translation id="logs_roles_members_add">Add a member</translation>
+
+    <translation id="logs_roles_members_user_account">User account</translation>
+    <translation id="logs_roles_members_note">Note</translation>
+    <translation id="logs_roles_members_date_added">Date added</translation>
+    <translation id="logs_roles_members_action">Action</translation>
+    <translation id="logs_roles_members_revoke">Revoke</translation>
+
+    <translation id="logs_roles_members_modal_user">Logs Data Platform user account</translation>
+    <translation id="logs_roles_members_modal_role">Choose the role</translation>
+
+</translations>
