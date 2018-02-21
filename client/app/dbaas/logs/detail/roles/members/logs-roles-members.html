@@ -1,6 +1,8 @@
 <section class="cui-page__content log-index">
-    <cui-page-content-title text="'logs_roles_members_title' | translate"></cui-page-content-title>
-    <p data-translate="logs_roles_members_description"></p>
+    <oui-back-button class="back_button_inline_text" data-ui-sref="dbaas.logs.detail.roles"></oui-back-button>
+    <span class="oui-header_3" data-translate="logs_roles_members_title"></span>
+    
+    <p data-translate="logs_roles_members_description" translate-value-name="{{ctrl.roleDetails.data.info.name}}"></p>
 
     <button type="button"
         class="oui-button oui-button_secondary mt-4"
@@ -9,16 +11,17 @@
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_roles_members_add' | translate }}
     </button>
 
-    <oui-spinner data-ng-if="ctrl.revoke.loading || ctrl.role.loading || ctrl.members.loading"></oui-spinner>
+    <oui-spinner data-ng-if="ctrl.revoke.loading || ctrl.role.loading || ctrl.roleDetails.loading"></oui-spinner>
 
     <oui-datagrid
-        rows="ctrl.indices.data">
-        <oui-column title=":: 'logs_roles_members_user_account' | translate" property="info.name" sortable="asc"></oui-column>
-        <oui-column title=":: 'logs_roles_members_note' | translate" property="info.description" sortable></oui-column>
-        <oui-column title=":: 'logs_roles_members_date_added' | translate" property="info.createdAt">
+        rows="ctrl.roleDetails.data.members">
+        <oui-column title=":: 'logs_roles_members_user_account' | translate" property="username" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_roles_members_note' | translate" property="note" sortable></oui-column>
+        <oui-column title=":: 'logs_roles_members_date_added' | translate" property="createdAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
-        <oui-column title="'logs_roles_members_revoke' | translate"> <button>revoke</button></oui-column>
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="{{ ::'logs_roles_members_revoke' | translate }}" on-click="ctrl.revoke($row.info)"></oui-action-menu-item>
+        </oui-action-menu>
     </oui-datagrid>
 </section>
-        
