@@ -33,6 +33,14 @@ class LogsIndexService {
             }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbIndex,
+                current: me.offer.curNbIndex
+            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
+    }
+
     getIndices (serviceName) {
         return this.IndexApiService.query({ serviceName }).$promise
             .then(indices => {
@@ -43,7 +51,19 @@ class LogsIndexService {
     }
 
     getIndexDetails (serviceName, indexId) {
-        return this.IndexAapiService.get({ serviceName, indexId }).$promise;
+        return this.IndexAapiService.get({ serviceName, indexId })
+            .$promise
+            .then(index => this._transformAapiIndex(index));
+    }
+
+    _transformAapiIndex (index) {
+        if (index.info.currentStorage < 0) {
+            index.info.currentStorage = 0;
+        }
+        if (index.info.maxSize < 0) {
+            index.info.maxSize = 0;
+        }
+        return index;
     }
 
     deleteModal (indexName) {

@@ -63,7 +63,7 @@
                                     id="alias_option"
                                     data-ng-model="ctrl.alias.data.optionId"
                                     data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbAlias+'/'+option.maxNbAlias for option in ctrl.options.data">
-                                    <option data-translate="logs_select_options_placeholder"></option>
+                                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
                                 </select>
                                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                             </div>

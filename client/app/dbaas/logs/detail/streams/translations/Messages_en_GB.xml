@@ -28,7 +28,6 @@
 
     <translation id="logs_streams_add_title">Add data stream</translation>
     <translation id="logs_streams_update_title">Edit data stream</translation>
-    <translation id="logs_streams_select_options_title">Choose the attached option (optional)</translation>
     <translation id="logs_streams_select_options_placeholder">Select option</translation>
     <translation id="logs_streams_enable_websocket">Enable WebSocket Broadcast</translation>
     <translation id="logs_streams_enable_websocket_description">Follow the receipt of your logs in real time via the WebSocket protocol</translation>
