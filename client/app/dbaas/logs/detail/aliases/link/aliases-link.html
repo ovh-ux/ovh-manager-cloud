@@ -19,6 +19,7 @@
                 data-ng-disabled="((content.value === 'streams' && ctrl.alias.data.indexes.length > 0) || (content.value === 'indices' && ctrl.alias.data.streams.length > 0))">
             </cui-radio-bar-item>
         </cui-radio-bar>
+
         <div data-ng-if="ctrl.selectedContent === 'streams'">
             <div class="oui-field">
                 <label for="alias_link_streams" class="oui-label" data-translate="logs_aliases_available_streams"></label>
@@ -38,28 +39,43 @@
                     </div>
                 </div>
             </div>
+           
+            <cui-dual-list
+                source-list-label="Available Data Streams"
+                target-list-label="Attached Data Streams"
+                source-list-empty-label="All Data Streams are attached"
+                target-list-empty-label="No Data Streams are attached"
+                property="info.title"
+                source-list="ctrl.streams.data"
+                target-list="ctrl.alias.streams"
+                on-add="ctrl.attachStream(items, defer)"
+                on-remove="ctrl.removeStreams(items, defer)"
+                bulk-action-enabled="false"
+                height="200px">
+            </cui-dual-list>
+               
         </div>
 
         <div data-ng-if="ctrl.selectedContent === 'indices'">
-                <div class="oui-field">
-                    <label for="alias_link_indices" class="oui-label" data-translate="logs_aliases_available_indices"></label>
-                    <oui-spinner data-ng-if="ctrl.indices.loading"></oui-spinner>
-                    <div data-ng-if="!ctrl.indices.loading" class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_4">
-                            <div class="oui-select">
-                                <select class="oui-select__input"
-                                    name="alias_link_indices"
-                                    id="alias_link_indices"
-                                    data-ng-model="ctrl.selectedIndex"
-                                    data-ng-options="index.info.name for index in ctrl.indices.data">
-                                    <option data-translate="logs_aliases_choose_index"></option>
-                                </select>
-                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </div>
+            <div class="oui-field">
+                <label for="alias_link_indices" class="oui-label" data-translate="logs_aliases_available_indices"></label>
+                <oui-spinner data-ng-if="ctrl.indices.loading"></oui-spinner>
+                <div data-ng-if="!ctrl.indices.loading" class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="alias_link_indices"
+                                id="alias_link_indices"
+                                data-ng-model="ctrl.selectedIndex"
+                                data-ng-options="index.info.name for index in ctrl.indices.data">
+                                <option data-translate="logs_aliases_choose_index"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
         <div class="cui-form-actions">
             <oui-spinner data-ng-show="ctrl.saving.loading"></oui-spinner>

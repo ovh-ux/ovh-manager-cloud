@@ -63,7 +63,13 @@ class DualListCtrl {
     }
 
     getProperty (item) {
-        return this.property ? item[this.property] : item;
+        // return this.property ? item[this.property] : item;
+
+        if (!this.property) {
+            return item;
+        }
+
+        return this.property.split(".").reduce((prev, curr) => prev ? prev[curr] : undefined, item);
     }
 
     isLoading (item) {
