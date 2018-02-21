@@ -50,7 +50,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsStreamsFollowCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/streams/follow"]
+            }
         });
 });

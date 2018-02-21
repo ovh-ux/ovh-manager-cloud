@@ -10,7 +10,8 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases", "dbaas/logs/detail/options"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/aliases",
+                "dbaas/logs/detail/options", "dbaas/logs/detail/streams", "dbaas/logs/detail/index"]
         })
         .state("dbaas.logs.detail.aliases.home", {
             url: "/home",
@@ -42,6 +43,9 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("dbaas.logs.detail.aliases.link", {
             url: "/:aliasId/link",
+            params: {
+                defaultContent: null
+            },
             views: {
                 logsAliases: {
                     templateUrl: "app/dbaas/logs/detail/aliases/link/aliases-link.html",

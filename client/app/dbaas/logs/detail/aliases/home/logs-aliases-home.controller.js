@@ -44,13 +44,14 @@ class LogsAliasesHomeCtrl {
     /**
      * navigates to link content page
      *
-     * @param {any} alias
+     * @param {any} aapiAlias
      * @memberof LogsAliasesHomeCtrl
      */
-    attachContent (alias) {
+    attachContent (aapiAlias) {
         this.$state.go("dbaas.logs.detail.aliases.link", {
             serviceName: this.serviceName,
-            aliasId: alias.aliasId
+            aliasId: aapiAlias.info.aliasId,
+            defaultContent: aapiAlias.indexes.length > 0 ? this.LogsAliasesService.contentTypeEnum.INDICES : this.LogsAliasesService.contentTypeEnum.STREAMS
         });
     }
 

@@ -17,9 +17,10 @@ class LogsAliasesService {
         this.LogsStreamsService = LogsStreamsService;
         this.LogsIndexService = LogsIndexService;
 
+        this.contentTypeEnum = _.indexBy(["STREAMS", "INDICES"]);
         this.contents = [
-            { value: "streams", name: "logs_streams_title" },
-            { value: "indices", name: "logs_index_title" }
+            { value: this.contentTypeEnum.STREAMS, name: "logs_streams_title" },
+            { value: this.contentTypeEnum.INDICES, name: "logs_index_title" }
         ];
     }
 
@@ -83,7 +84,7 @@ class LogsAliasesService {
             .$promise
             .then(alias => {
                 if (alias.streams.length > 0) {
-                    const promises = alias.streams.map(streamId => this.LogsStreamsService.getStream(serviceName, streamId));
+                    const promises = alias.streams.map(streamId => this.LogsStreamsService.getAapiStream(serviceName, streamId));
                     return this.$q.all(promises).then(streams => {
                         alias.streams = streams;
                         return alias;
@@ -127,6 +128,14 @@ class LogsAliasesService {
                 configured: me.total.curNbAlias
             })
             ).catch(this.ServiceHelper.errorHandler("logs_alias_quota_get_error"));
+    }
+
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbAlias,
+                current: me.offer.curNbAlias
+            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
     }
 
     /**
@@ -183,6 +192,34 @@ class LogsAliasesService {
             .catch(this.ServiceHelper.errorHandler("logs_aliases_update_error"));
     }
 
+    attachStream (serviceName, alias, stream) {
+        return this.AliasApiService.linkStream({ serviceName, aliasId: alias.aliasId }, stream)
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_attach_stream_error"));
+    }
+
+    detachStream (serviceName, alias, stream) {
+        return this.AliasApiService.unlinkStream({ serviceName, aliasId: alias.aliasId, streamId: stream.streamId })
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_detach_stream_error"));
+    }
+
+    attachIndex (serviceName, alias, index) {
+        return this.AliasApiService.linkIndex({ serviceName, aliasId: alias.aliasId }, index)
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_attach_index_error"));
+    }
+
+    detachIndex (serviceName, alias, index) {
+        return this.AliasApiService.unlinkIndex({ serviceName, aliasId: alias.aliasId, indexId: index.indexId })
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_detach_index_error"));
+    }
+
     /**
      * creates new alias with default values
      *
@@ -226,7 +263,9 @@ class LogsAliasesService {
         return this.poller.$promise
             .then(result => {
                 if (result[0].item.state === this.LogStreamsConstants.SUCCESS) {
-                    this.CloudMessage.success(this.$translate.instant(successMessage));
+                    if (successMessage) {
+                        this.CloudMessage.success(this.$translate.instant(successMessage));
+                    }
                 } else {
                     this.CloudMessage.error(this.$translate.instant("logs_operation_failed", { operation_id: result[0].item.operationId }));
                 }
@@ -242,7 +281,6 @@ class LogsAliasesService {
 
     _resetAllCache () {
         this.AccountingAapiService.resetAllCache();
-        this.AliasAapiService.resetAllCache();
     }
 
     _pollOperation (serviceName, operation) {

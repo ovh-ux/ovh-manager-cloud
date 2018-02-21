@@ -23,6 +23,11 @@ class LogsAliasesAddCtrl {
         });
         this.options.load();
 
+        this.mainOffer = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsAliasesService.getMainOffer(this.serviceName)
+        });
+        this.mainOffer.load();
+
         if (this.$stateParams.aliasId) {
             this.isEdit = true;
             this.alias = this.ControllerHelper.request.getHashLoader({

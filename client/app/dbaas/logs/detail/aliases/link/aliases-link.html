@@ -8,91 +8,53 @@
         {{ctrl.alias.data.info.name}}
     </h6>
     <p class="oui-paragraph mb-5" data-translate="logs_aliases_link_description"></p>
-
-    <oui-spinner data-ng-if="ctrl.alias.loading"></oui-spinner>
-    <form novalidate name="ctrl.form" data-ng-if="!ctrl.alias.loading">
-        <cui-radio-bar data-ng-model="ctrl.selectedContent"
-            data-on-change="ctrl.onContentChange()">
+    <form novalidate name="ctrl.form">
+        <cui-radio-bar data-ng-model="ctrl.selectedContent">
             <cui-radio-bar-item data-ng-repeat="content in ctrl.contents"
                 data-text="content.name | translate"
                 data-value="content.value"
-                data-ng-disabled="((content.value === 'streams' && ctrl.alias.data.indexes.length > 0) || (content.value === 'indices' && ctrl.alias.data.streams.length > 0))">
+                data-ng-disabled="ctrl.isContentDisabled(content.value)">
             </cui-radio-bar-item>
         </cui-radio-bar>
 
-        <div data-ng-if="ctrl.selectedContent === 'streams'">
-            <div class="oui-field">
-                <label for="alias_link_streams" class="oui-label" data-translate="logs_aliases_available_streams"></label>
-                <oui-spinner data-ng-if="ctrl.streams.loading"></oui-spinner>
-                <div data-ng-if="!ctrl.streams.loading" class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-select">
-                            <select class="oui-select__input"
-                                name="alias_link_streams"
-                                id="alias_link_streams"
-                                data-ng-model="ctrl.selectedStream"
-                                data-ng-options="stream.info.title for stream in ctrl.streams.data">
-                                <option data-translate="logs_aliases_choose_stream"></option>
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
+        <div data-ng-if="ctrl.selectedContent === ctrl.LogsAliasesService.contentTypeEnum.STREAMS">
             <cui-dual-list
-                source-list-label="Available Data Streams"
-                target-list-label="Attached Data Streams"
-                source-list-empty-label="All Data Streams are attached"
-                target-list-empty-label="No Data Streams are attached"
+                source-list-label="{{::'logs_aliases_link_available_streams' | translate}}"
+                target-list-label="{{::'logs_aliases_link_attached_streams' | translate}}"
+                source-list-empty-label="{{::'logs_aliases_link_all_streams_attached' | translate}}"
+                target-list-empty-label="{{::'logs_aliases_link_no_streams_attached' | translate}}"
                 property="info.title"
-                source-list="ctrl.streams.data"
-                target-list="ctrl.alias.streams"
+                source-list="ctrl.availableStreams.promise"
+                target-list="ctrl.attachedStreams.promise"
                 on-add="ctrl.attachStream(items, defer)"
-                on-remove="ctrl.removeStreams(items, defer)"
+                on-remove="ctrl.detachStream(items, defer)"
+                bulk-action-enabled="false"
+                height="200px">
+            </cui-dual-list>      
+        </div>
+
+        <div data-ng-if="ctrl.selectedContent === ctrl.LogsAliasesService.contentTypeEnum.INDICES">
+            <cui-dual-list
+                source-list-label="{{::'logs_aliases_link_available_indexes' | translate}}"
+                target-list-label="{{::'logs_aliases_link_attached_indexes' | translate}}"
+                source-list-empty-label="{{::'logs_aliases_link_all_indexes_attached' | translate}}"
+                target-list-empty-label="{{::'logs_aliases_link_no_indexes_attached' | translate}}"
+                property="info.name"
+                source-list="ctrl.availableIndices.promise"
+                target-list="ctrl.attachedIndices.promise"
+                on-add="ctrl.attachIndex(items, defer)"
+                on-remove="ctrl.detachIndex(items, defer)"
                 bulk-action-enabled="false"
                 height="200px">
             </cui-dual-list>
-               
-        </div>
-
-        <div data-ng-if="ctrl.selectedContent === 'indices'">
-            <div class="oui-field">
-                <label for="alias_link_indices" class="oui-label" data-translate="logs_aliases_available_indices"></label>
-                <oui-spinner data-ng-if="ctrl.indices.loading"></oui-spinner>
-                <div data-ng-if="!ctrl.indices.loading" class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
-                        <div class="oui-select">
-                            <select class="oui-select__input"
-                                name="alias_link_indices"
-                                id="alias_link_indices"
-                                data-ng-model="ctrl.selectedIndex"
-                                data-ng-options="index.info.name for index in ctrl.indices.data">
-                                <option data-translate="logs_aliases_choose_index"></option>
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="cui-form-actions">
             <oui-spinner data-ng-show="ctrl.saving.loading"></oui-spinner>
-            <div data-ng-hide="ctrl.saving.loading">
-                <button type="submit"
-                    class="oui-button oui-button_primary"
-                    data-translate="common_save"
-                    data-ng-click="ctrl.updateStream()"
-                    data-ng-show="ctrl.isEdit"></button>
-                <button type="submit"
-                    class="oui-button oui-button_primary"
-                    data-translate="common_save"
-                    data-ng-click="ctrl.createStream()"
-                    data-ng-hide="ctrl.isEdit"></button>
+            <div data-ng-hide="ctrl.save.loading">
                 <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
-                    data-ui-sref="dbaas.logs.detail.streams"></a>
+                    data-ui-sref="dbaas.logs.detail.aliases"></a>
             </div>
         </div>
     </form>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_streams_title">Data stream</translation>
     <translation id="logs_streams_description">The data streams allow you to direct your logs in real time to a specific category as soon as they arrive on Logs Data Platform. If you have multiple streams, you can also: Easily classify messages based on their source, application, or origin server, and create flow-sensitive privacy levels, which will allow you to distribute your access only to authorized persons. The tokens here are write tokens that allow you to route the logs to the correct stream. In general, having different streams greatly facilitates the search for your logs. No need to exclude results from another system or application.</translation>
     <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
-    <translation id="logs_streams_add_data_feed">Add a data stream</translation>
+    <translation id="logs_streams_add_data_feed">Add data stream</translation>
 
     <translation id="logs_streams_col_title">Name</translation>
     <translation id="logs_streams_col_description">Description</translation>
@@ -27,8 +26,7 @@
     <translation id="logs_stream_delete_message">Are you sure you want to delete the data stream: {{stream}} ?</translation>
 
     <translation id="logs_streams_add_title">Add data stream</translation>
-    <translation id="logs_streams_update_title">Update data stream</translation>
-    <translation id="logs_streams_select_options_title">Choose the attached option (optional)</translation>
+    <translation id="logs_streams_update_title">Edit data stream</translation>
     <translation id="logs_streams_select_options_placeholder">Select option</translation>
     <translation id="logs_streams_enable_websocket">Enable WebSocket Broadcast</translation>
     <translation id="logs_streams_enable_websocket_description">Follow the receipt of your logs in real time via the WebSocket protocol</translation>
@@ -81,6 +79,7 @@
     <translation id="logs_streams_follow_info">Info</translation>
     <translation id="logs_streams_follow_debug">Debug</translation>
 
+    <translation id="logs_streams_follow_logs_limit">limit</translation>
     <translation id="logs_streams_connection_opened">Connection established</translation>
     <translation id="logs_streams_connection_closed">Connection closed</translation>
     <translation id="logs_streams_displaying_logs">Displaying Logs</translation>
@@ -91,7 +90,7 @@
     <translation id="logs_streams_follow_copy_websocket_success">WebSocket address has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
     <translation id="logs_streams_follow_copy_websocket_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the WebSocket address for stream {{stream}}: {{url}}</translation>
 
-    <translation id="logs_streams_follow_copy_command_success">The command line for the format {{type}} has been scuccessfully copied to your clipboard. Use CTRL+V to paste it in your terminal and press Enter key to execute it.</translation>
+    <translation id="logs_streams_follow_copy_command_success">The command line using {{type}} format has been copied to your clipboard. You can know test it from a terminal.</translation>
     <translation id="logs_streams_follow_copy_command_error">Your browser does not support copy to clipboard. Please upgrade browser to latest version. Here is the command line for format {{type}}: "{{command}}". Copy and paste this command in terminal to execute it.</translation>
     <translation id="logs_streams_get_command_urls_error">Failed to get command URL's for Gelf, LTSV and RFC 5424. You will not be able to use these commands.</translation>
 </translations>
