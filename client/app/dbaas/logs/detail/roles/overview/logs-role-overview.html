@@ -24,19 +24,19 @@
             <dd class="preview-list__definition">
                 <div data-ng-if="ctrl.role.permissions.length > 0">
                     <div data-ng-if="ctrl.permissions.stream.length > 0">
-                        <span class="pl-0" >Stream</span>                        
+                        <span class="pl-0 font-weight-bold oui-modal__body-text" >Stream</span>                        
                         <ul data-ng-repeat="stream in ctrl.permissions.stream track by $index">{{stream.title}}</ul>
                     </div>
                     <div data-ng-if="ctrl.permissions.index.length > 0">
-                        <span class="pl-0" >Index</span>                        
+                        <span class="pl-0 font-weight-bold oui-modal__body-text" >Index</span>                        
                         <ul data-ng-repeat="index in ctrl.permissions.index track by $index">{{index.name}}</ul>
                     </div>
                     <div data-ng-if="ctrl.permissions.alias.length > 0">
-                        <span class="pl-0" >Alias</span>                        
+                        <span class="pl-0 font-weight-bold oui-modal__body-text" >Alias</span>                        
                         <ul data-ng-repeat="alias in ctrl.permissions.alias track by $index">{{alias.name}}</ul>
                     </div>
                     <div data-ng-if="ctrl.permissions.dashboard.length > 0">
-                        <span class="pl-0" >Dashboard</span>                        
+                        <span class="pl-0 font-weight-bold oui-modal__body-text" >Dashboard</span>                        
                         <ul data-ng-repeat="dashboard in ctrl.permissions.dashboard track by $index">{{dashboard.title}}</ul>
                     </div>
                 </div>
