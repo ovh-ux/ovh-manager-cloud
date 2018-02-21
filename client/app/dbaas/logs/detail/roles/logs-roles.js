@@ -10,5 +10,16 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/roles"]
+        })
+        .state("dbaas.logs.detail.members", {
+            url: "/members/:roleId",
+            views: {
+                logsContent: {
+                    templateUrl: "app/dbaas/logs/detail/roles/members/logs-roles-members.html",
+                    controller: "LogsRolesMembersCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/roles/members"]
         });
 });
