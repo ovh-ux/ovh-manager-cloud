@@ -46,20 +46,18 @@
             </div>
 
 
-            <div class="oui-field" ng-if="!ctrl.isEdit" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
+            <div class="oui-field" ng-if="!ctrl.isEdit">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="logs_select_options_title"></label>
                 <oui-spinner data-ng-if="ctrl.options.loading"></oui-spinner>
                 <div class="oui-field__content" data-ng-if="!ctrl.options.loading">
                     <div class="oui-field-control oui-field-control_5">
-                        <div class="oui-select mb-0"
-                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.logs_index_modal_select.$invalid }">
+                        <div class="oui-select mb-0">
                             <select class="oui-select__input"
                                 name="logs_index_modal_select"
                                 id="logs_index_modal_select"
                                 data-ng-model="ctrl.index.optionId"
-                                data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbIndex+'/'+option.maxNbIndex for option in ctrl.options.data"
-                                required>
-                                <option data-translate="logs_select_options_placeholder"></option>
+                                data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbIndex+'/'+option.maxNbIndex for option in ctrl.options.data">
+                                <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
