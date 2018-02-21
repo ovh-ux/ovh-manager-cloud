@@ -16,6 +16,57 @@ class LogsInputsHomeCtrl {
     }
 
     /**
+     * Deletes the input
+     *
+     * @param {any} input - the input object
+     * @memberof LogsInputsCtrl
+     */
+    _delete (input) {
+        this.delete = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () =>
+                this.LogsInputsService.deleteInput(this.serviceName, input)
+        });
+        this.delete.load().then(() => this._runLoaders());
+    }
+
+    /**
+     * initializes the inputs and the quota
+     *
+     * @memberof LogsInputsCtrl
+     */
+    _initLoaders () {
+        this.inputs = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsInputsService.getInputs(this.serviceName)
+        });
+        this.quota = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.getQuota(this.serviceName)
+        });
+    }
+
+    /**
+     * Updates the list of inputs with the latest information of the input
+     *
+     * @param {any} inputId
+     * @returns promise which will be resolve with the reloaded input
+     * @memberof LogsInputsCtrl
+     */
+    _reloadInputDetail (inputId) {
+        this.inputReload = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.getInputDetail(this.serviceName, inputId)
+        });
+
+        return this.inputReload.load()
+            .then(input => {
+                this.inputs.data.forEach((inputItem, inputIndex) => {
+                    if (inputItem.info.inputId === input.info.inputId) {
+                        this.inputs.data[inputIndex] = input;
+                    }
+                });
+                return input;
+            });
+    }
+
+    /**
      * Runs all the loaders to fetch data from APIs
      *
      * @memberof LogsInputsCtrl
@@ -26,16 +77,33 @@ class LogsInputsHomeCtrl {
     }
 
     /**
-     * initializes the inputsIDs and current stream
+     * Sets the state of the input to Processing
      *
+     * @param {any} input
      * @memberof LogsInputsCtrl
      */
-    _initLoaders () {
-        this.inputs = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsInputsService.getInputs(this.serviceName)
-        });
-        this.quota = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.getQuota(this.serviceName)
+    _setInputToProcessing (input) {
+        input.info.status = this.LogsInputsConstant.status.PROCESSING;
+        this.LogsInputsService.transformInput(input);
+    }
+
+    /**
+     * Opens the info pop-up for the input
+     *
+     * @param {any} input - the input for which info is to be displayed
+     * @memberof LogsInputsCtrl
+     */
+    info (input) {
+        this.CloudMessage.flushChildMessage();
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/dbaas/logs/detail/inputs/home/info/logs-inputs-home-info.html",
+                controller: "LogsInputsHomeInfoModalCtrl",
+                controllerAs: "ctrl",
+                resolve: {
+                    currentInput: () => input
+                }
+            }
         });
     }
 
@@ -55,86 +123,27 @@ class LogsInputsHomeCtrl {
     }
 
     /**
-     * Deletes the input
+     * Restarts the input
      *
-     * @param {any} input - the input object
+     * @param {any} input - the input to be restarted
      * @memberof LogsInputsCtrl
      */
-    _delete (input) {
-        this.delete = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () =>
-                this.LogsInputsService.deleteInput(this.serviceName, input.info.inputId)
-        });
-        this.delete.load().then(this._runLoaders());
-    }
-
-    /**
-     * Redirects to the new input add page
-     *
-     * @param {any} type - the type of the input to add
-     * @memberof LogsInputsCtrl
-     */
-    addInput (type) {
-        this.$state.go("dbaas.logs.detail.streams.inputs.add", {
-            serviceName: this.serviceName,
-            streamId: this.streamId,
-            type: this.LogsStreamsInputsConstant.inputType[type]
-        });
-    }
-
-    startInput (input) {
-        this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () =>
-                this.LogsInputsService.startInput(this.serviceName, input.info.inputId)
-        });
-        this.processInput.load().then(() => {
-            debugger;
-            console.log("Start over!!!");
-            this._runLoaders();
-        }, err => {
-            console.log("Error occurred in start", err);
-        });
-    }
-
     restartInput (input) {
+        this.CloudMessage.flushChildMessage();
+        this.CloudMessage.info(this.$translate.instant("inputs_restarting", { inputTitle: input.info.title }));
+        this._setInputToProcessing(input);
         this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () =>
-                this.LogsInputsService.restartInput(this.serviceName, input.info.inputId)
+            loaderFunction: () => this.LogsInputsService.restartInput(this.serviceName, input)
         });
-        this.processInput.load().then(this._runLoaders());
-    }
-
-    stopInput (input) {
-        this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () =>
-                this.LogsInputsService.stopInput(this.serviceName, input.info.inputId)
-        });
-        this.processInput.load().then(() => {
-            debugger;
-            console.log("Stop over!!!");
-            this._runLoaders();
-        }, err => {
-            console.log("Error occurred in stop", err);
-        });
-    }
-
-    info (input) {
-        this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/dbaas/logs/detail/inputs/home/info/logs-inputs-home-info.html",
-                controller: "LogsInputsHomeInfoModalCtrl",
-                controllerAs: "ctrl",
-                resolve: {
-                    currentInput: () => input
-                }
-            }
-        });
+        this.processInput.load()
+            .then(() => this._reloadInputDetail(input.info.inputId),
+                  () => this._reloadInputDetail(input.info.inputId));
     }
 
     /**
      * navigates to the standard output page
      *
-     * @param {any} input
+     * @param {any} input - the input for which standard output is to be displayed
      * @memberof LogsInputsCtrl
      */
     standardOutput (input) {
@@ -143,6 +152,42 @@ class LogsInputsHomeCtrl {
             serviceName: this.serviceName,
             inputId: input.info.inputId
         });
+    }
+
+    /**
+     * Starts the input
+     *
+     * @param {any} input - the input to be started
+     * @memberof LogsInputsCtrl
+     */
+    startInput (input) {
+        this.CloudMessage.flushChildMessage();
+        this.CloudMessage.info(this.$translate.instant("inputs_starting", { inputTitle: input.info.title }));
+        this._setInputToProcessing(input);
+        this.processInput = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.startInput(this.serviceName, input)
+        });
+        this.processInput.load()
+            .then(() => this._reloadInputDetail(input.info.inputId),
+                  () => this._reloadInputDetail(input.info.inputId));
+    }
+
+    /**
+     * Stops the input
+     *
+     * @param {any} input - the input to be stopped
+     * @memberof LogsInputsCtrl
+     */
+    stopInput (input) {
+        this.CloudMessage.flushChildMessage();
+        this.CloudMessage.info(this.$translate.instant("inputs_stopping", { inputTitle: input.info.title }));
+        this._setInputToProcessing(input);
+        this.processInput = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.stopInput(this.serviceName, input)
+        });
+        this.processInput.load()
+            .then(() => this._reloadInputDetail(input.info.inputId),
+                  () => this._reloadInputDetail(input.info.inputId));
     }
 }
 

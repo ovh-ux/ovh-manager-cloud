@@ -5,6 +5,8 @@
     <translation id="inputs_total_used">outils de collecte utilisés</translation>
     <translation id="inputs_increase_quota">augmenter le quota</translation>
 
+    <translation id="inputs_add_input">Ajouter un collecteur</translation>
+
     <translation id="inputs_tool">Outil</translation>
     <translation id="inputs_description">Description</translation>
     <translation id="inputs_creation_date">Date de création</translation>
@@ -12,7 +14,7 @@
     <translation id="inputs_linked_option">Option liée</translation>
     <translation id="inputs_state">États</translation>
 
-    <translation id="inputs_state_processing"><i class="fa fa-spin fa-spinner"> </i> Procédure en cours</translation>
+    <translation id="inputs_state_processing">Procédure en cours</translation>
     <translation id="inputs_state_restart_required">À redémarrer</translation>
     <translation id="inputs_state_to_configure">À configurer</translation>
     <translation id="inputs_state_pending">À démarrer</translation>
@@ -23,6 +25,10 @@
     <translation id="inputs_restart">Redémarrer</translation>
     <translation id="inputs_stop">Arrêtez</translation>
     <translation id="inputs_standard_output">Sortie console</translation>
+
+    <translation id="inputs_starting">L'outil de collecte {{inputTitle}} est en train de démarrer.</translation>
+    <translation id="inputs_stopping">L'outil de collecte {{inputTitle}} est en cours d'arrêt.</translation>
+    <translation id="inputs_restarting">L'outil de collecte {{inputTitle}} est en train de redémarrer.</translation>
 
     <translation id="inputs_delete">Supprimer l'outil de collecte</translation>
     <translation id="inputs_delete_message">Êtes-vous sûr de vouloir supprimer l'outil de collecteur suivant?: {{input}} ?</translation>
