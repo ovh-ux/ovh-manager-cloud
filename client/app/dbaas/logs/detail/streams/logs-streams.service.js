@@ -198,6 +198,14 @@ class LogsStreamsService {
             }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbStream,
+                current: me.offer.curNbStream
+            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
+    }
+
     getCompressionAlgorithms () {
         return this.compressionAlgorithms;
     }

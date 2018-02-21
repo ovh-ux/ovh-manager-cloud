@@ -96,6 +96,14 @@ class LogsAliasesService {
             ).catch(this.ServiceHelper.errorHandler("logs_alias_quota_get_error"));
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbAlias,
+                current: me.offer.curNbAlias
+            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
+    }
+
     /**
      * delete alias
      *
