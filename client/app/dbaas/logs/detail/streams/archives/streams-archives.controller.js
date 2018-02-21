@@ -33,7 +33,7 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     _getNotificationIndex (archive) {
-        return this.notifications.reduce((matchedIndex, currentNotification, currentIndex) => currentNotification.archive.filename === archive.filename ? currentIndex : matchedIndex, -1);
+        return this.notifications.reduce((matchedIndex, currentNotification, currentIndex) => currentNotification.archive.archiveId === archive.archiveId ? currentIndex : matchedIndex, -1);
     }
 
     /**
@@ -118,8 +118,8 @@ class LogsStreamsArchivesCtrl {
      * @returns Returns the updated/inserted notification
      * @memberof LogsStreamsArchivesHomeCtrl
      */
-    _updateNotification (archive, notification) {
-        const notificationIndex = this._getNotificationIndex(archive);
+    _updateNotification (notification) {
+        const notificationIndex = this._getNotificationIndex(notification.archive);
         return notificationIndex >= 0 ? (this.notifications[notificationIndex] = notification) : (this.notifications.push(notification));
     }
 
@@ -131,16 +131,17 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     _updateRetrievalDelay () {
-        if (this.archives && this.archives.data) {
-            this.archives.data.forEach(archive => {
-                archive.retrievalDelay = archive.retrievalDelay > 0 ? --archive.retrievalDelay : archive.retrievalDelay;
-                if (archive.retrievalState === this.LogsStreamsArchivesConstant.state.UNSEALING && archive.retrievalDelay === 0) {
+        _.clone(this.notifications).forEach(notification => {
+            const archive = notification.archive;
+            archive.retrievalDelay = archive.retrievalDelay > 0 ? --archive.retrievalDelay : archive.retrievalDelay;
+            if (archive.retrievalState === this.LogsStreamsArchivesConstant.state.UNSEALING) {
+                if (archive.retrievalDelay === 0) {
                     archive.retrievalState = this.LogsStreamsArchivesConstant.state.UNSEALED;
                     this.LogsStreamsArchivesService.transformArchive(archive);
-                    this._updateUnfreezingNotification(archive);
                 }
-            });
-        }
+                this._updateUnfreezingNotification(archive);
+            }
+        });
     }
 
     /**
@@ -153,7 +154,7 @@ class LogsStreamsArchivesCtrl {
      */
     _updateUnfreezingNotification (archive) {
         return archive.retrievalState === this.LogsStreamsArchivesConstant.state.UNSEALING ?
-            [this._updateNotification(archive, {
+            [this._updateNotification({
                 text: this.$translate.instant("streams_archives_unfreezing", {
                     filename: archive.filename,
                     remainingTime: moment.utc(archive.retrievalDelay * 1000).format("HH:mm:ss")
@@ -171,22 +172,21 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     download (archive) {
-        const notification = {
+        this._updateNotification({
             text: this.$translate.instant("streams_archives_preparing_download", {
                 filename: archive.filename
             }),
             type: "info",
             archive
-        };
-        this.notifications.push(notification);
-
+        });
+        this.ControllerHelper.scrollPageToTop();
         this.archiveDownload = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsStreamsArchivesService.getDownloadUrl(this.serviceName, this.streamId, archive.archiveId)
         });
 
         this.archiveDownload.load()
             .then(urlInfo => {
-                this.notifications.splice(this.notifications.indexOf(notification), 1);
+                this._removeNotification(archive);
                 this.ControllerHelper.downloadUrl(urlInfo.url);
             });
     }
@@ -231,22 +231,31 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     unfreeze (archive) {
-        const notification = {
+        this._updateNotification({
             text: this.$translate.instant("streams_archives_unfreeze_start", {
                 filename: archive.filename
             }),
             type: "info",
             archive
-        };
-        this.notifications.push(notification);
-
+        });
+        this.ControllerHelper.scrollPageToTop();
         this.LogsStreamsArchivesService.getDownloadUrl(
             this.serviceName,
             this.streamId,
             archive.archiveId
         )
             .then(() => this._reloadArchiveDetail(archive.archiveId))
-            .then(updatedArchive => this._updateUnfreezingNotification(updatedArchive));
+            .then(updatedArchive => this._updateUnfreezingNotification(updatedArchive))
+            .catch(err => {
+                this._updateNotification({
+                    text: this.$translate.instant("streams_archives_url_load_error", {
+                        filename: archive.filename,
+                        message: err
+                    }),
+                    type: "error",
+                    archive
+                });
+            });
     }
 }
 

@@ -33,6 +33,14 @@ class LogsIndexService {
             }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbIndex,
+                current: me.offer.curNbIndex
+            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
+    }
+
     getIndices (serviceName) {
         return this.IndexApiService.query({ serviceName }).$promise
             .then(indices => {
