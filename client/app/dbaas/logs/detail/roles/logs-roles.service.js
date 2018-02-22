@@ -8,6 +8,8 @@ class LogsRolesService {
         // this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
+        this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
+
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
         this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
@@ -29,6 +31,31 @@ class LogsRolesService {
 
     getLogDetails (serviceName) {
         return this.LogsApiService.logDetail({ serviceName }).$promise;
+    }
+
+    createMember (serviceName, roleId, userDetails) {
+        return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success", "logs_role_member_add_error");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
+    }
+
+    removeMember (serviceName, roleId, username) {
+        return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_role_member_remove_error"));
+    }
+
+    deleteMemberModal (username) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            titleText: this.$translate.instant("logs_member_delete_title"),
+            text: this.$translate.instant("logs_member_delete_question", { username })
+        });
     }
 
     getNewRole () {
@@ -91,10 +118,10 @@ class LogsRolesService {
         });
     }
 
-    _handleSuccess (serviceName, operation, successMessage) {
+    _handleSuccess (serviceName, operation, successMessage, failureMessage) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
+            .then(this.ServiceHelper.successHandler("successMessage"));
     }
 
     _killPoller () {
@@ -108,7 +135,7 @@ class LogsRolesService {
         return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogsRolesConstant.FAILURE || opn.state === this.LogsRolesConstant.SUCCESS
+            stopCondition: opn => opn.state === "SUCCESS" || opn.state === "FAILURE"
         });
     }
 

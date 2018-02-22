@@ -35,8 +35,17 @@ class LogsRolesMembersCtrl {
                     logs: () => this.logs
                 }
             }
-        }).then(() => {
-            this.initLoaders();
+        }).then(() => this.initLoaders());
+    }
+
+    revoke (info) {
+        this.CloudMessage.flushChildMessage();
+        this.LogsRolesService.deleteMemberModal(info.username).then(() => {
+            this.delete = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsRolesService.removeMember(this.serviceName, this.roleId, info.username)
+                    .then(() => this.initLoaders())
+            });
+            this.delete.load();
         });
     }
 

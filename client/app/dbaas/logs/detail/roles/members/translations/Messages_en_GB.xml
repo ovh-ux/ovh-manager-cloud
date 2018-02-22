@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="logs_roles_members_title">Manage members</translation>
-    <translation id="logs_roles_members_description">You will find here the list of your active members for the role <b>{{name}}</b>. You can revoke them individually, or add new ones through existing user accounts.</translation>
+    <translation id="logs_roles_members_description">You will find here the list of your active members for the role {{name}}. You can revoke them individually, or add new ones through existing user accounts.</translation>
     <translation id="logs_roles_members_add">Add a member</translation>
 
     <translation id="logs_roles_members_user_account">User account</translation>
@@ -13,8 +13,14 @@
     <translation id="logs_roles_members_modal_user">Logs Data Platform user account</translation>
     <translation id="logs_roles_members_modal_role">Choose the role</translation>
 
-    <!-- <translation id="logs_member_modal_edit_title">Choose the role</translation> -->
     <translation id="logs_member_modal_add_title">Add a member</translation>
+    <translation id="logs_role_member_add_success">The member was added successfully.</translation>
+    <translation id="logs_role_member_add_error">An error occurred while adding member {{message}}</translation>
 
+    <translation id="logs_member_delete_title">Remove member</translation>
+    <translation id="logs_member_delete_question">Are you sure you want to remove the following member: {{username}}?</translation>
+
+    <translation id="logs_role_member_remove_success">The member was removed successfully.</translation>
+    <translation id="logs_role_member_remove_error">An error occurred while adding member {{message}}</translation>
 
 </translations>
