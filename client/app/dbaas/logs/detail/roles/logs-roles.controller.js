@@ -38,9 +38,7 @@ class LogsRolesCtrl {
                     options: () => this.roleOptions
                 }
             }
-        }).then(() => {
-            this.initLoaders();
-        });
+        }).then(() => this.initLoaders());
     }
 
     summary (info) {
