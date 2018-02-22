@@ -48,7 +48,7 @@
             <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row)"></oui-action-menu-item>
             <oui-action-menu-item data-ng-if="$row.info.canAlert" text="{{ ::'logs_streams_manage_alerts' | translate }}" on-click="ctrl.manageAlerts($row)"></oui-action-menu-item>
             <oui-action-menu-item data-ng-if="$row.info.webSocketEnabled" text="{{ ::'logs_streams_follow_live' | translate }}" on-click="ctrl.followLive($row)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-if="$row.info.isEditable && ($row.info.coldStorageEnabled || $row.info.nbArchive)" text="{{ ::'logs_streams_archives' | translate }}" on-click="ctrl.gotoArchives($row)"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="$row.info.nbArchive > 0" text="{{ ::'logs_streams_archives' | translate }}" on-click="ctrl.gotoArchives($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>
