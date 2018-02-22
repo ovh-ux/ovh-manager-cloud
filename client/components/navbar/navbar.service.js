@@ -1,6 +1,6 @@
 class ManagerNavbarService {
     constructor ($q, $translate, $translatePartialLoader, atInternet, FeatureAvailabilityService,
-                    SessionService, OtrsPopupService, ssoAuthentication, TranslateService,
+                    SessionService, ProductsService, OtrsPopupService, ssoAuthentication, TranslateService,
                     StatusService, LANGUAGES, TARGET, MANAGER_URLS, REDIRECT_URLS, URLS) {
         this.$q = $q;
         this.$translate = $translate;
@@ -8,6 +8,7 @@ class ManagerNavbarService {
         this.atInternet = atInternet;
         this.featureAvailabilityService = FeatureAvailabilityService;
         this.sessionService = SessionService;
+        this.productsService = ProductsService;
         this.statusService = StatusService;
         this.translateService = TranslateService;
         this.otrsPopupService = OtrsPopupService;
@@ -126,7 +127,6 @@ class ManagerNavbarService {
                             title: service.displayName,
                             state: "iaas.vps.detail.dashboard",
                             stateParams: {
-                                displayName: service.displayName,
                                 serviceName: service.serviceName
                             }
                         };
@@ -205,7 +205,7 @@ class ManagerNavbarService {
         }));
     }
 
-    getUniverseMenu (products, locale) {
+    getUniverseMenu (products) {
         const universeProducts = this.getProducts(products);
         const universeMenu = [{
             // Iaas
@@ -249,7 +249,7 @@ class ManagerNavbarService {
         }];
 
         // Cloud Desktop
-        if (this.featureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
+        if (this.featureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", this.locale)) {
             universeMenu.push({
                 name: "deskaas",
                 title: this.$translate.instant("cloud_sidebar_section_cloud_desktop"),
@@ -332,11 +332,14 @@ class ManagerNavbarService {
         return {
             name: "languages",
             label: _(currentLanguage).get("name"),
+            "class": "oui-navbar-menu_language",
             title: _(currentLanguage).get("key").replace("_", "-"),
+            headerTitle: this.$translate.instant("common_menu_language"),
             subLinks: _.map(this.LANGUAGES.available, (lang) => ({
                 title: lang.name,
+                isActive: lang.key === currentLanguage.key,
                 click: function () {
-                    localStorage["univers-selected-language"] = lang.key;
+                    this.translateService.setUserLocale(lang.key);
                     window.location.reload();
                 },
                 lang: _.chain(lang.key).words().head().value()
@@ -345,30 +348,121 @@ class ManagerNavbarService {
     }
 
     getUserMenu (currentUser) {
-        const getUserLinks = () => {
-            const isTarget = this.TARGET !== "EU";
-            const userLinks = [
+        return {
+            name: "user",
+            title: currentUser.firstname,
+            iconClass: "icon-user",
+            nichandle: currentUser.nichandle,
+            fullName: `${currentUser.firstname} ${currentUser.name}`,
+            subLinks: [
+                // My Account
                 {
+                    name: "user.account",
                     title: this.$translate.instant("common_menu_account"),
-                    url: this.REDIRECT_URLS.userInfos
-                }, {
-                    title: this.$translate.instant("common_menu_billing"),
-                    url: this.REDIRECT_URLS.billing
+                    url: this.REDIRECT_URLS.userInfos,
+                    subLinks: [{
+                        title: this.$translate.instant("common_menu_account_infos"),
+                        url: this.REDIRECT_URLS.userInfos
+                    }, {
+                        title: this.$translate.instant("common_menu_account_security"),
+                        url: this.REDIRECT_URLS.userSecurity
+                    },
+                    (this.TARGET === "EU" || this.TARGET === "CA") && {
+                        title: this.$translate.instant("common_menu_account_emails"),
+                        url: this.REDIRECT_URLS.userEmails
+                    },
+                    (this.TARGET === "EU") && {
+                        title: this.$translate.instant("common_menu_account_subscriptions"),
+                        url: this.REDIRECT_URLS.userSubscriptions
+                    }, {
+                        title: this.$translate.instant("common_menu_account_ssh"),
+                        url: this.REDIRECT_URLS.userSSH
+                    }, {
+                        title: this.$translate.instant("common_menu_account_advanced"),
+                        url: this.REDIRECT_URLS.userAdvanced
+                    }]
                 },
-                (isTarget) ? null : {
+
+                // Billing
+                !currentUser.isEnterprise && {
+                    name: "user.billing",
+                    title: this.$translate.instant("common_menu_billing"),
+                    url: this.REDIRECT_URLS.billing,
+                    subLinks: [{
+                        title: this.$translate.instant("common_menu_billing_history"),
+                        url: this.REDIRECT_URLS.billing,
+                    }, {
+                        title: this.$translate.instant("common_menu_billing_payments"),
+                        url: this.REDIRECT_URLS.billingPayments,
+                    }]
+                },
+
+                // Services
+                (this.TARGET === "EU" || this.TARGET === "CA") && (!currentUser.isEnterprise ? {
+                    name: "user.services",
                     title: this.$translate.instant("common_menu_renew"),
-                    url: this.REDIRECT_URLS.services
-                }, {
+                    url: this.REDIRECT_URLS.services,
+                    subLinks: [{
+                        title: this.$translate.instant("common_menu_renew_management"),
+                        url: this.REDIRECT_URLS.services
+                    }, {
+                        title: this.$translate.instant("common_menu_renew_agreements"),
+                        url: this.REDIRECT_URLS.servicesAgreements
+                    }]
+                } : {
+                    title: this.$translate.instant("common_menu_renew_agreements"),
+                    url: this.REDIRECT_URLS.servicesAgreements
+                }),
+
+                // Payment
+                !currentUser.isEnterprise && {
+                    name: "user.payment",
+                    title: this.$translate.instant("common_menu_means"),
+                    url: this.REDIRECT_URLS.paymentMeans,
+                    subLinks: [{
+                        title: this.$translate.instant("common_menu_means_mean"),
+                        url: this.REDIRECT_URLS.paymentMeans
+                    },
+                    (this.TARGET === "EU" || this.TARGET === "CA") && {
+                        title: this.$translate.instant("common_menu_means_ovhaccount"),
+                        url: this.REDIRECT_URLS.ovhAccount
+                    },
+                    (this.TARGET === "EU" || this.TARGET === "CA") && {
+                        title: this.$translate.instant("common_menu_means_vouchers"),
+                        url: this.REDIRECT_URLS.billingVouchers
+                    }, {
+                        title: this.$translate.instant("common_menu_means_refunds"),
+                        url: this.REDIRECT_URLS.billingRefunds
+                    },
+                    (this.TARGET === "EU") && {
+                        title: this.$translate.instant("common_menu_means_fidelity"),
+                        url: this.REDIRECT_URLS.billingFidelity
+                    }, {
+                        title: this.$translate.instant("common_menu_means_credits"),
+                        url: this.REDIRECT_URLS.billingCredits
+                        }]
+                },
+
+                // Orders
+                (!currentUser.isEnterprise && this.TARGET === "EU" && currentUser.ovhSubsidiary === "FR") && {
                     title: this.$translate.instant("common_menu_orders"),
                     url: this.REDIRECT_URLS.orders
                 },
-                (isTarget) ? null : {
+
+                // Contacts
+                (this.TARGET === "EU") && {
                     title: this.$translate.instant("common_menu_contacts"),
                     url: this.REDIRECT_URLS.contacts
-                }, {
+                },
+
+                // Tickets
+                {
                     title: this.$translate.instant("common_menu_list_ticket"),
                     url: this.REDIRECT_URLS.support
-                }, {
+                },
+
+                // Logout
+                {
                     title: this.$translate.instant("global_logout"),
                     "class": "logout",
                     click: (callback) => {
@@ -379,19 +473,7 @@ class ManagerNavbarService {
                         }
                     }
                 }
-            ];
-
-            // Clean array from empty items
-            return _.remove(userLinks, (link) => !!link);
-        };
-
-        return {
-            name: "user",
-            title: currentUser.firstname,
-            iconClass: "icon-user",
-            nichandle: currentUser.nichandle,
-            fullName: `${currentUser.firstname} ${currentUser.name}`,
-            subLinks: getUserLinks()
+            ]
         };
     }
 
@@ -417,10 +499,10 @@ class ManagerNavbarService {
         return menu;
     }
 
-    getManagersNames (locale) {
+    getManagersNames () {
         switch (this.TARGET) {
         case "EU": {
-            if (locale === "FR") {
+            if (this.locale === "FR") {
                 return ["portal", "web", "dedicated", "cloud", "telecom", "gamma", "partners", "labs"];
             }
 
@@ -442,44 +524,69 @@ class ManagerNavbarService {
         return this.$translate.refresh();
     }
 
-    getNavbar () {
+    // Get managers links for main-links attribute
+    getManagerLinks (products) {
         const currentUniverse = "cloud";
         const managerUrls = this.MANAGER_URLS;
+        const managerNames = this.getManagersNames();
+
+        return _.map(managerNames, (managerName) => {
+            const managerLink = {
+                name: managerName,
+                "class": managerName,
+                title: this.$translate.instant(`common_menu_${managerName}`),
+                url: managerUrls[managerName],
+                isPrimary: ["partners", "labs"].indexOf(managerName) === -1
+            };
+
+            if (products && managerName === currentUniverse) {
+                managerLink.subLinks = this.getUniverseMenu(products);
+            }
+
+            return managerLink;
+        });
+    }
+
+    // Get products and build responsive menu
+    getResponsiveLinks () {
+        return this.productsService.getProducts()
+            .then(({ results }) => this.getManagerLinks(results))
+            .catch(() => this.getManagerLinks());
+    }
+
+    // Get navbar navigation and user infos
+    getNavbar () {
+        const managerUrls = this.MANAGER_URLS;
+
+        // Get base structure for the navbar
+        const getBaseNavbar = (user, notifications) => {
+            this.locale = user.ovhSubsidiary;
+
+            return {
+                // Set OVH Logo
+                brand: {
+                    title: this.$translate.instant("common_menu_cloud"),
+                    url: managerUrls.cloud,
+                    iconAlt: "OVH",
+                    iconClass: "navbar-logo",
+                    iconSrc: "assets/images/navbar/icon-logo-ovh.svg"
+                },
+
+                // Set Internal Links
+                internalLinks: this.getInternalLinks(user, notifications),
+
+                // Set Manager Links
+                managerLinks: this.getManagerLinks()
+            };
+        };
 
         return this.$q.all({
             translate: this.loadTranslations(),
             user: this.sessionService.getUser(),
-            products: this.sessionService.getProducts(),
             notifications: this.statusService.getNotificationsMenu()
-        }).then((result) => ({
-            brand: {
-                title: this.$translate.instant("common_menu_portal"),
-                url: managerUrls.portal,
-                iconAlt: "OVH",
-                iconClass: "navbar-logo",
-                iconSrc: "assets/images/navbar/icon-logo-ovh.svg"
-            },
-
-            // Set Internal Links
-            internalLinks: this.getInternalLinks(result.user, result.notifications),
-
-            // Set Manager Links
-            managerLinks: _.map(this.getManagersNames(result.user.ovhSubsidiary), (managerName) => {
-                const managerLink = {
-                    name: managerName,
-                    "class": managerName,
-                    title: this.$translate.instant(`common_menu_${managerName}`),
-                    url: managerUrls[managerName],
-                    isPrimary: ["partners", "labs"].indexOf(managerName) === -1
-                };
-
-                if (managerName === currentUniverse) {
-                    managerLink.subLinks = this.getUniverseMenu(_.get(result.products, "results", []), result.user.ovhSubsidiary);
-                }
-
-                return managerLink;
-            })
-        }));
+        })
+            .then(({ user, notifications }) => getBaseNavbar(user, notifications))
+            .catch(() => getBaseNavbar());
     }
 }
 
