@@ -1,0 +1,33 @@
+<div class="cui-page__content inputs-logs-add">
+    <oui-back-button class="back_button_inline_text"></oui-back-button>
+    <span class="oui-header_3" data-translate="{{ ctrl.editMode ? 'inputs_logs_title_edit' : 'inputs_logs_title_add' }}"></span>    
+    
+    <ul class="oui-progress-tracker">
+        <li class="oui-progress-tracker__step">
+        <a 
+            data-ui-sref="dbaas.logs.detail.inputs.add.edit" 
+            data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.add.edit') }" 
+            class="oui-progress-tracker__status">
+            <span class="oui-progress-tracker__label" data-translate="{{ ctrl.editMode ? 'inputs_logs_step1_edit' : 'inputs_logs_step1_add' }}"></span>
+        </a>
+        </li>
+        <li class="oui-progress-tracker__step">
+        <a 
+            data-ui-sref="dbaas.logs.detail.inputs.add.configure" 
+            data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.add.configure') }" 
+            class="oui-progress-tracker__status">
+            <span class="oui-progress-tracker__label" data-translate="inputs_logs_step2"></span>
+        </a>
+        </li>
+        <li class="oui-progress-tracker__step">
+        <a 
+            data-ui-sref="dbaas.logs.detail.inputs.add.networks" 
+            data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.add.networks') }" 
+            class="oui-progress-tracker__status">
+            <span class="oui-progress-tracker__label" data-translate="inputs_logs_step3"></span>
+        </a>
+        </li>
+    </ul>
+    
+    <div ui-view="logsInputsAdd"></div>
+</div>

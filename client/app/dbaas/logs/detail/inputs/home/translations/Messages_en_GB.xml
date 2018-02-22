@@ -21,6 +21,7 @@
     <translation id="inputs_state_running">Up and running</translation>
     <translation id="inputs_state_unknown">Unknown</translation>
     
+    <translation id="inputs_edit">Edit</translation>
     <translation id="inputs_start">Start</translation>
     <translation id="inputs_restart">Restart</translation>
     <translation id="inputs_stop">Stop</translation>

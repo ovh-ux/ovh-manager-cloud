@@ -94,6 +94,13 @@ class LogsInputsService {
             });
     }
 
+    getNewInput () {
+        return {
+            data: {},
+            loading: false
+        };
+    }
+
     /**
      * returns the object containing total number of inputs and total number of inputs used
      *
