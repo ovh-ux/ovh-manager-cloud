@@ -4,8 +4,8 @@
         data-text="'common_back' | translate"></cui-back-link>
     <cui-page-content-title data-ng-if="!$ctrl.editing()" text="'iplb_vrack_private_network_add_title' | translate"></cui-page-content-title>
     <cui-page-content-title data-ng-if="$ctrl.editing()" text="'iplb_vrack_private_network_edit_title' | translate"></cui-page-content-title>
-    <oui-spinner data-ng-if="$ctrl.loading()"></oui-spinner>
-    <form data-ng-if="!$ctrl.loading()" novalidate name="$ctrl.form">
+    <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
+    <form data-ng-if="!$ctrl.isLoading()" novalidate name="$ctrl.form">
         <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.displayName.id].$invalid }">
             <label for="{{ $ctrl.model.displayName.id }}" 
                 class="oui-field__label oui-label" 
@@ -127,10 +127,11 @@
             </div>
         </div>
         <div class="cui-form-actions">
-            <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
-            <div data-ng-if="!$ctrl.isLoading()">
+            <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
+            <div data-ng-if="!$ctrl.saving">
                 <cui-submit-button data-text="(!$ctrl.editing() ? 'common_add' : 'common_modify') | translate"
-                    data-on-click="$ctrl.submit()"></cui-submit-button>
+                    data-on-click="$ctrl.submit()"
+                    data-disabled="$ctrl.privateNetworkFarms.loading || $ctrl.farms.loading"></cui-submit-button>
                 <a class="oui-button oui-button_link"
                     data-translate="common_cancel"
                     data-ui-state="$ctrl.previousState.state"

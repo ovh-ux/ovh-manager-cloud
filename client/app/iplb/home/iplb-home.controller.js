@@ -3,7 +3,7 @@ class IpLoadBalancerHomeCtrl {
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
                  IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
-                 IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS) {
+                 IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, VrackService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -20,6 +20,7 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
         this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.VrackService = VrackService;
 
         this.serviceName = this.$stateParams.serviceName;
 
@@ -123,8 +124,8 @@ class IpLoadBalancerHomeCtrl {
             },
             activateVrack: {
                 text: this.$translate.instant("common_activate"),
-                callback: () => this.ControllerHelper.modal.showVrackActivateModal()
-                    .then(() => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, undefined, this.vrackCreationRules.data)),
+                callback: () => this.VrackService.selectVrack()
+                    .then(result => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, result.serviceName, this.vrackCreationRules.data)),
                 isAvailable: () => !this.vrackCreationRules.loading && !this.vrackCreationRules.hasErrors && this.vrackCreationRules.data.vrackEligibility &&
                     this.vrackCreationRules.data.status === "inactive"
             },

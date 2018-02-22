@@ -5,8 +5,8 @@ class IpLoadBalancerVrackHelper {
         this.OvhApiVrack = OvhApiVrack;
     }
 
-    associateVrack (serviceName, network = { networkId: "pn-16343", displayName: "someName" }, vrackCreationRules) {
-        this.IpLoadBalancerVrackService.associateVrack(serviceName, network.networkId)
+    associateVrack (serviceName, networkId, vrackCreationRules) {
+        this.IpLoadBalancerVrackService.associateVrack(serviceName, networkId)
             .then(task => {
                 vrackCreationRules.status = "activating";
                 return this.pollCreationRules(task);

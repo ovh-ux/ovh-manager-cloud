@@ -1,11 +1,12 @@
 class IpLoadBalancerVrackCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, IpLoadBalancerVrackService, IpLoadBalancerVrackHelper) {
+    constructor ($state, $stateParams, $translate, ControllerHelper, IpLoadBalancerVrackService, IpLoadBalancerVrackHelper, VrackService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
         this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
+        this.VrackService = VrackService;
 
         this.serviceName = $stateParams.serviceName;
 
@@ -32,8 +33,8 @@ class IpLoadBalancerVrackCtrl {
         this.actions = {
             activateVrack: {
                 text: this.$translate.instant("common_activate"),
-                callback: () => this.ControllerHelper.modal.showVrackActivateModal()
-                    .then(() => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, undefined, this.creationRules.data)),
+                callback: () => this.VrackService.selectVrack()
+                    .then(result => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, result.serviceName, this.creationRules.data)),
                 isAvailable: () => !this.creationRules.loading && !this.creationRules.hasErrors && this.creationRules.data.vrackEligibility &&
                     this.creationRules.data.status === "inactive"
             },

@@ -19,15 +19,13 @@
         <div class="oui-field">
             <label for="protocol" class="oui-label" data-translate="iplb_farm_edit_protocol"></label>
             <div class="oui-field__content">
-                <div class="oui-field-control">
-                    <cui-radio-bar data-ng-model="ctrl.protocol"
-                        data-on-change="ctrl.onProtocolChange()">
-                        <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
-                            data-text="('iplb_farm_protocol_' + protocol) | translate"
-                            data-value="protocol"
-                            data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
-                    </cui-radio-bar>
-                </div>
+                <cui-radio-bar data-ng-model="ctrl.protocol"
+                    data-on-change="ctrl.onProtocolChange()">
+                    <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
+                        data-text="('iplb_farm_protocol_' + protocol) | translate"
+                        data-value="protocol"
+                        data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
+                </cui-radio-bar>
             </div>
         </div>
 
@@ -105,26 +103,22 @@
             <div class="oui-field">
                 <label for="balance" class="oui-label" data-translate="iplb_farm_edit_balance"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <cui-radio-bar data-ng-model="ctrl.farm.balance">
-                            <cui-radio-bar-item data-ng-repeat="balance in ctrl.balances"
-                                data-text="('iplb_farm_balance_' + balance) | translate"
-                                data-value="balance"></cui-radio-bar-item>
-                        </cui-radio-bar>
-                    </div>
+                    <cui-radio-bar data-ng-model="ctrl.farm.balance">
+                        <cui-radio-bar-item data-ng-repeat="balance in ctrl.balances"
+                            data-text="('iplb_farm_balance_' + balance) | translate"
+                            data-value="balance"></cui-radio-bar-item>
+                    </cui-radio-bar>
                 </div>
             </div>
 
             <div class="oui-field">
                 <label for="stickiness" class="oui-label" data-translate="iplb_farm_edit_stickiness"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <cui-radio-bar data-ng-model="ctrl.farm.stickiness">
-                            <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.availableStickinesses"
-                                data-text="('iplb_farm_stickiness_' + stickiness) | translate"
-                                data-value="stickiness"></cui-radio-bar-item>
-                        </cui-radio-bar>
-                    </div>
+                    <cui-radio-bar data-ng-model="ctrl.farm.stickiness">
+                        <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.availableStickinesses"
+                            data-text="('iplb_farm_stickiness_' + stickiness) | translate"
+                            data-value="stickiness"></cui-radio-bar-item>
+                    </cui-radio-bar>
                 </div>
             </div>
 

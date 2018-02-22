@@ -54,9 +54,11 @@ class IpLoadBalancerVrackEditCtrl {
             return this.$q.reject();
         }
 
+        this.saving = true;
         this.CloudMessage.flushChildMessage();
         return (!this.editing() ? this._addNetwork() : this._editNetwork())
-            .then(() => this.previousState.go());
+            .then(() => this.previousState.go())
+            .finally(() => { this.saving = false; });
     }
 
     isLoading () {
@@ -65,10 +67,6 @@ class IpLoadBalancerVrackEditCtrl {
 
     editing () {
         return this.networkId;
-    }
-
-    loading () {
-        return this.creationRules.loading || this.privateNetwork.loading;
     }
 
     getAvailableFarm (forceValue) {
