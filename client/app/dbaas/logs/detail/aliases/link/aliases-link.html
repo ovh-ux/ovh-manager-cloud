@@ -12,13 +12,12 @@
         <cui-radio-bar data-ng-model="ctrl.selectedContent">
             <cui-radio-bar-item data-ng-repeat="content in ctrl.contents"
                 data-text="content.name | translate"
-                data-value="content.value"
-                data-ng-disabled="ctrl.isContentDisabled(content.value)">
+                data-value="content.value">
             </cui-radio-bar-item>
         </cui-radio-bar>
 
         <div data-ng-if="ctrl.selectedContent === ctrl.LogsAliasesService.contentTypeEnum.STREAMS">
-            <cui-dual-list
+            <cui-dual-list data-ng-if="!ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.STREAMS)"
                 source-list-label="{{::'logs_aliases_link_available_streams' | translate}}"
                 target-list-label="{{::'logs_aliases_link_attached_streams' | translate}}"
                 source-list-empty-label="{{::'logs_aliases_link_all_streams_attached' | translate}}"
@@ -30,11 +29,14 @@
                 on-remove="ctrl.detachStream(items, defer)"
                 bulk-action-enabled="false"
                 height="200px">
-            </cui-dual-list>      
+            </cui-dual-list>   
+            <div data-ng-if="ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.STREAMS)">  
+                <p>{{::'logs_aliases_remove_indexes_message' | translate}}</p>
+            </div>
         </div>
 
         <div data-ng-if="ctrl.selectedContent === ctrl.LogsAliasesService.contentTypeEnum.INDICES">
-            <cui-dual-list
+            <cui-dual-list data-ng-if="!ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.INDICES)"
                 source-list-label="{{::'logs_aliases_link_available_indexes' | translate}}"
                 target-list-label="{{::'logs_aliases_link_attached_indexes' | translate}}"
                 source-list-empty-label="{{::'logs_aliases_link_all_indexes_attached' | translate}}"
@@ -47,14 +49,8 @@
                 bulk-action-enabled="false"
                 height="200px">
             </cui-dual-list>
-        </div>
-
-        <div class="cui-form-actions">
-            <oui-spinner data-ng-show="ctrl.saving.loading"></oui-spinner>
-            <div data-ng-hide="ctrl.save.loading">
-                <a class="oui-button oui-button_link"
-                    data-translate="common_cancel"
-                    data-ui-sref="dbaas.logs.detail.aliases"></a>
+            <div data-ng-if="ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.INDICES)">  
+                <p>{{::'logs_aliases_remove_streams_message' | translate}}</p>
             </div>
         </div>
     </form>

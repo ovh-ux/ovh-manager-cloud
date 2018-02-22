@@ -270,7 +270,8 @@ class LogsAliasesService {
                     this.CloudMessage.error(this.$translate.instant("logs_operation_failed", { operation_id: result[0].item.operationId }));
                 }
                 return result;
-            });
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_operation_error"));
     }
 
     _killPoller () {

@@ -58,4 +58,7 @@
     <translation id="logs_aliases_detach_index_error">An error has occured while detaching index: {{message}} </translation>
     <translation id="logs_aliases_detach_index_fail">Failed to detach index {{index}} </translation>
 
+    <translation id="logs_aliases_remove_streams_message">Data streams are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all data streams to add eleasticsearch indexes. </translation>
+    <translation id="logs_aliases_remove_indexes_message">Eleasticsearch indexes are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all eleasticsearch indexes to add data streams. </translation>
+
 </translations>

@@ -38,15 +38,17 @@ class LogsAliasesLinkCtrl {
                     return alias;
                 })
         });
-        const aliasPromise = this.alias.load();
+        this.alias.load();
 
         this.streams = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsStreamsService.getStreams(this.serviceName)
         });
+        this.streams.load();
 
         this.indices = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsIndexService.getIndices(this.serviceName)
         });
+        this.indices.load();
 
 
         this.contents = this.LogsAliasesService.getContents();
@@ -56,15 +58,15 @@ class LogsAliasesLinkCtrl {
             this.selectedContent = this.contents[0].value;
         }
 
-        this.$q.all([aliasPromise, this.streams.load()])
+        this.$q.all([this.alias.promise, this.streams.promise])
             .then(result => {
-                const diff = _.filter(result[1], aapiStream => !_.find(result[0].streams, attachedAapiStream => attachedAapiStream.info.streamId === aapiStream.info.streamId));
+                const diff = _.filter(result[1], aapiStream => aapiStream.info.isEditable && !_.find(result[0].streams, attachedAapiStream => attachedAapiStream.info.streamId === aapiStream.info.streamId));
                 this.availableStreams.resolve(diff);
             });
 
-        this.$q.all([aliasPromise, this.indices.load()])
+        this.$q.all([this.alias.promise, this.indices.promise])
             .then(result => {
-                const diff = _.filter(result[1], aapiIndex => !_.find(result[0].indexes, attachedAapiIndex => attachedAapiIndex.info.indexId === aapiIndex.info.indexId));
+                const diff = _.filter(result[1], aapiIndex => aapiIndex.info.isEditable && !_.find(result[0].indexes, attachedAapiIndex => attachedAapiIndex.info.indexId === aapiIndex.info.indexId));
                 this.availableIndices.resolve(diff);
             });
     }
