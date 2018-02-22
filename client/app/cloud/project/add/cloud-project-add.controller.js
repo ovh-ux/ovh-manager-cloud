@@ -50,7 +50,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
             let promise = null;
             if (self.model.contractsAccepted) {
-                promise = CloudProjectAddService.orderCloudProject(self.model.description, self.model.voucher)
+                promise = CloudProjectAddService
+                    .orderCloudProject(self.model.description, self.model.voucher, self.model.paymentMethod === self.model.noPaymentMethodEnum.BC)
                     .then(response => {
                         ControllerNavigationHelper.addQueryParam("orderId", response.orderId);
 
@@ -69,7 +70,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         self.pollOrder(response.orderId);
                     });
             } else {
-                promise = CloudProjectAddService.getOrderSummary(self.model.description, self.model.voucher)
+                promise = CloudProjectAddService
+                    .getOrderSummary(self.model.description, self.model.voucher, self.model.paymentMethod === self.model.noPaymentMethodEnum.BC)
                     .then(response => {
                         self.data.activeOrder = response;
                     });
@@ -83,13 +85,12 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         };
 
         this.pollOrder = function (orderId) {
-            const cloudOrder = {};
             if (self.data.poller) {
                 self.data.poller.kill();
             }
 
             self.data.poller = CloudPoll.poll({
-                item: cloudOrder,
+                item: self.data.activeOrder,
                 pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
                         self.data.activeOrder.deliveryStatus = response.deliveryStatus;
                         return response;
@@ -103,14 +104,14 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                     self.data.projectReady = true;
                     return $timeout(() => {
                         CloudProjectSidebar.addToSection({
-                            project_id: cloudOrder.serviceName, // jshint ignore:line
+                            project_id: self.data.activeOrder.serviceName, // jshint ignore:line
                             description: self.model.description
                         });
                         OvhApiVrack.Lexi().resetCache();
                         OvhApiVrack.CloudProject().Lexi().resetQueryCache();
 
                         $state.go("iaas.pci-project.compute", {
-                            projectId: cloudOrder.serviceName
+                            projectId: self.data.activeOrder.serviceName
                         });
                     }, 3000);
                 })
@@ -196,7 +197,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         response.contracts = [];
                         self.data.activeOrder = response;
                         self.model.contractsAccepted = true;
-                        self.pollOrder(orderId);
+                        self.pollOrder(parseInt(orderId, 10));
                     })
                     .finally(() => {
                         self.loaders.init = false;

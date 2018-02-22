@@ -36,7 +36,7 @@ class CloudProjectAddService {
             .then(response => {
                 const promises = {
                     cart: response,
-                    orderSummary: this.OvhApiOrder.Cart().Lexi().summary({ cartId: response.cartId }).$promise
+                    orderSummary: this.OvhApiOrder.Cart().Lexi().getCheckout({ cartId: response.cartId }).$promise
                 };
                 return this.$q.all(promises);
             })
@@ -60,19 +60,29 @@ class CloudProjectAddService {
     }
 
     _orderCloudProject (description, voucher, payWithCredit) {
+        let cartId = null;
         return this.OvhApiMe.Lexi().get()
             .$promise
             .then(user => this.OvhApiOrder.Cart().Lexi().post({}, { ovhSubsidiary: user.ovhSubsidiary }).$promise)
-            .then(cart => this.OvhApiOrder.Cart().Lexi().assign({ cartId: cart.cartId }).$promise.then(() => cart))
+            .then(cart => {
+                cartId = cart.cartId;
+                return this.OvhApiOrder.Cart().Lexi().assign({ cartId: cart.cartId }).$promise.then(() => cart);
+            })
             .then(cart => this.OvhApiOrder.Cart().Product().Lexi().post({ cartId: cart.cartId, productName: "cloud" }, {
                 duration: "P1M",
                 planCode: "project",
                 pricingMode: "default",
                 quantity: 1 }).$promise)
-            .then(response => this._configureOrder(response, description, voucher));
+            .then(response => this._configureOrder(response, description, voucher, payWithCredit))
+            .catch(error => {
+                if (cartId) {
+                    this.OvhApiOrder.Cart().Lexi().delete({ cartId });
+                }
+                return this.$q.reject(error);
+            });
     }
 
-    _configureOrder (order, description, voucher) {
+    _configureOrder (order, description, voucher, payWithCredit) {
         const promises = [];
         if (description) {
             promises.push(this.OvhApiOrder.Cart().Item().Configuration().Lexi()
@@ -93,6 +103,20 @@ class CloudProjectAddService {
                 }, {
                     label: "voucher",
                     value: voucher
+                }).$promise);
+        }
+
+        if (payWithCredit) {
+            promises.push(this.OvhApiOrder.Cart().Product().Lexi()
+                .postOption({
+                    cartId: order.cartId,
+                    productName: "cloud"
+                }, {
+                    duration: "P1M",
+                    itemId: order.itemId,
+                    planCode: "cloud.credit.default",
+                    pricingMode: "default",
+                    quantity: 1
                 }).$promise);
         }
 
