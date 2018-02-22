@@ -4,7 +4,7 @@ angular.module("managerApp")
         atInternetControllerDecoratorsProvider.decorate({
             CloudProjectAddCtrl: {
                 createProject (atInternet, controller) {
-                    if (controller.model.contractsAccepted && controller.data.agreements.length) {
+                    if (controller.data.isFirstProjectCreation) {
                         atInternet.trackClick({
                             name: "AccountActivation",
                             type: "action"

@@ -1,4 +1,43 @@
-<div id="cloud-project-add" class="col-xs-12 bottom-space-m20">
+<div id="cloud-project-details" 
+    class="col-xs-12 bottom-space-m20 top-space-m20"
+    data-ng-if="CloudProjectAddCtrl.awaitingDelivery()">
+    <div data-ng-if="!CloudProjectAddCtrl.data.projectReady" class="col-xs-12 col-lg-10 col-lg-offset-1" style="margin-top: 150px;">
+        <div class="text-center">
+            <oui-spinner size="l" 
+                data-ng-if="CloudProjectAddCtrl.orderIsDelivering()"></oui-spinner>
+            <h2 data-translate="cpd_project_creating_bc_havetopay"
+                data-translate-values="{'url': CloudProjectAddCtrl.data.activeOrder.url}"
+                data-ng-if="!CloudProjectAddCtrl.orderIsDelivering()">
+            </h2>
+             <h2 data-translate="cpd_project_creating_bc_do_not_havetopay"
+                data-translate-values="{'url': CloudProjectAddCtrl.data.activeOrder.url}"
+                data-ng-if="CloudProjectAddCtrl.orderIsDelivering()">
+            </h2>
+            <p class="text-muted fs10" data-translate="cpd_project_creating_help"></p>
+            <p class="text-muted fs10" 
+                data-translate="cpd_project_creating_bc_support" 
+                data-ng-if="!CloudProjectAddCtrl.orderIsDelivering()"></p>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-lg-10 col-lg-offset-1" style="margin-top: 150px;"
+        data-ng-if="CloudProjectAddCtrl.data.projectReady">
+        <div class="text-center">
+            <div class="icon-sweet icon-sweet-success animated-300 fadeIn">
+                <span class="icon-sweet-line icon-sweet-tip"></span>
+                <span class="icon-sweet-line icon-sweet-long"></span>
+                <div class="icon-sweet-placeholder"></div>
+                <div class="icon-sweet-fix"></div>
+            </div>
+            <h2 class="text-success" data-translate="cpd_project_created"></h2>
+            <p class="text-muted fs10" data-translate="cpd_project_redirect"></p>
+        </div>
+    </div>
+</div>
+
+<div id="cloud-project-add" 
+    class="col-xs-12 bottom-space-m20"
+    data-ng-if="!CloudProjectAddCtrl.awaitingDelivery() && !CloudProjectAddCtrl.data.projectReady">
 
     <!-- init loading... -->
     <div data-ng-if="CloudProjectAddCtrl.loaders.init" class="top-space-m16">
@@ -9,8 +48,11 @@
     <div data-ng-if="!CloudProjectAddCtrl.loaders.init">
 
         <div class="page-header">
-            <h1 data-ng-if="CloudProjectAddCtrl.data.projectsCount === 0" data-translate="cpa_title_first"></h1>
-            <h1 data-ng-if="CloudProjectAddCtrl.data.projectsCount > 0" data-translate="cpa_title"></h1>
+            <h1 data-ng-if="CloudProjectAddCtrl.data.isFirstProjectCreation" data-translate="cpa_title_first"></h1>
+            <h1 data-ng-if="!CloudProjectAddCtrl.data.isFirstProjectCreation" data-translate="cpa_title"></h1>
+        </div>
+        <div>
+            <cui-message-container data-messages="CloudProjectAddCtrl.messages"></cui-message-container>
         </div>
 
         <!-- unknown error -->
@@ -30,23 +72,17 @@
             <div data-ng-if="!CloudProjectAddCtrl.data.status || CloudProjectAddCtrl.data.status !== 'validationPending'">
 
                 <!-- contracts -->
-                <div class="row" data-ng-if="CloudProjectAddCtrl.data.agreements.length">
+                <div class="row" data-ng-if="CloudProjectAddCtrl.awaitingContractValidation()">
                     <div class="col-xs-12"
-                         data-contracts="CloudProjectAddCtrl.data.agreements"
+                         data-contracts="CloudProjectAddCtrl.data.activeOrder.contracts"
                          data-full-text="true"
                          data-contracts-validated="CloudProjectAddCtrl.model.contractsAccepted">
                     </div>
                 </div>
 
-                <!-- contracts: okey (only shown if its the first project) -->
-                <div class="row" data-ng-if="!CloudProjectAddCtrl.data.agreements.length && CloudProjectAddCtrl.data.projectsCount === 0">
-                    <div class="col-xs-12">
-                        <p class="contracts-agree-ctnr space-p20 bold"><i class="fa fa-check text-success fs16"></i> <span class="fs12" data-translate="cpa_contract_empty"></span></p>
-                    </div>
-                </div>
-
                 <!-- project description -->
-                <div class="row top-space-m8 bottom-space-m16">
+                <div class="row top-space-m8 bottom-space-m16"
+                    data-ng-if="!CloudProjectAddCtrl.awaitingContractValidation()">
                     <div class="col-xs-12">
                         <form name="CpaDescriptionForm" class="cpa-description-ctnr form-horizontal right-space-p4">
                             <div class="form-group no-space" data-ng-class="{'has-error': CpaDescriptionForm.description.$invalid}">
@@ -76,7 +112,7 @@
 
                                     <!-- paymentMean and voucher -->
                                     <div class="cpa-box-body">
-                                        <div class="cpa-box-body-content">
+                                        <div class="cpa-box-body-content" data-ng-if="!CloudProjectAddCtrl.awaitingContractValidation()">
                                             <div class="form-group">
                                                 <label class="col-md-4 control-label" data-translate="cpa_paymentmean"></label>
 
@@ -192,8 +228,14 @@
                                     <!-- submit -->
                                     <div class="cpa-box-footer text-center">
                                         <button type="submit" class="btn btn-primary btn-lg"
-                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating">
-                                            {{(CloudProjectAddCtrl.data.projectsCount === 0 ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
+                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating && !CloudProjectAddCtrl.data.activeOrder">
+                                            {{(CloudProjectAddCtrl.data.isFirstProjectCreation ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
+                                        </button>
+                                        <button type="submit" class="btn btn-primary btn-lg"
+                                            data-ng-if="!CloudProjectAddCtrl.loaders.creating && CloudProjectAddCtrl.awaitingContractValidation()"
+                                            data-ng-disabled="CloudProjectAddCtrl.data.activeOrder.contracts.length && !CloudProjectAddCtrl.model.contractsAccepted"
+                                            style="margin-top: -24px;">
+                                            {{(CloudProjectAddCtrl.data.isFirstProjectCreation ? 'cpa_create_project_first' : 'cpa_create_project') | translate}}
                                         </button>
                                         <oui-spinner data-ng-if="CloudProjectAddCtrl.loaders.creating" size="s"></oui-spinner>
                                     </div>

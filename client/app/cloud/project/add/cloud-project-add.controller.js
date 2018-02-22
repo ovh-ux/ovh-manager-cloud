@@ -1,9 +1,9 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectAddCtrl",
-    function ($q, $state, $translate, $rootScope, Toast, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
-              OvhApiMe, OvhApiVrack, $window, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
-              CloudProjectAdd) {
+    function ($q, $state, $timeout, $translate, $window, CloudMessage, REDIRECT_URLS, FeatureAvailabilityService, OvhApiCloud,
+              OvhApiMe, OvhApiOrder, OvhApiVrack, OvhApiMePaymentMeanCreditCard, SidebarMenu, CloudProjectSidebar,
+              CloudProjectAddService, CloudPoll, ControllerNavigationHelper) {
 
         var self = this;
 
@@ -13,9 +13,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         };
 
         this.data = {
-            projectsCount: 0,
+            isFirstProjectCreation: true,
             status: null,                // project creation status
-            agreements: [],              // contracts agreements
             defaultPaymentMean: null,
             projectPrice: null,          // price for creating a new project with BC
             availablePaymentMeans: {     // list of available payment means
@@ -44,106 +43,82 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         /**
          * Launch project creation process
          */
-        this.createProject = function () {
-            var promiseContracts = true;
+        this.createProject = () => {
+            CloudMessage.flushMessages();
+
             self.loaders.creating = true;
 
-            // If contracts: accept them
-            if (self.model.contractsAccepted && self.data.agreements.length) {
-                var queueContracts = [];
-                angular.forEach(self.data.agreements, function (contract) {
-                    queueContracts.push(OvhApiMe.Agreements().Lexi().accept({
-                        id: contract.id
-                    }, {}).$promise.then(function () {
-                        _.remove(self.data.agreements, {
-                            id: contract.id
-                        });
-                    }));
-                });
-                promiseContracts = $q.all(queueContracts);
+            let promise = null;
+            if (self.model.contractsAccepted) {
+                promise = CloudProjectAddService
+                    .orderCloudProject(self.model.description, self.model.voucher, self.model.paymentMethod === self.model.noPaymentMethodEnum.BC)
+                    .then(response => {
+                        ControllerNavigationHelper.addQueryParam("orderId", response.orderId);
+
+                        self.data.activeOrder = response;
+                        // We empty the contracts since we know the user just approved them and that agora
+                        // doesn't allow us to tell it a contract is accepted.
+                        self.data.activeOrder.contracts = [];
+
+                        if (response.prices.withTax.value) {
+                            $window.open(response.url);
+                            self.data.activeOrder.deliveryStatus = "unpaid";
+                        } else {
+                            self.data.activeOrder.deliveryStatus = "delivering";
+                        }
+
+                        self.pollOrder(response.orderId);
+                    });
+            } else {
+                promise = CloudProjectAddService
+                    .getOrderSummary(self.model.description, self.model.voucher, self.model.paymentMethod === self.model.noPaymentMethodEnum.BC)
+                    .then(response => {
+                        self.data.activeOrder = response;
+                    });
             }
 
-            return $q.when(promiseContracts).then(function () {
-                return OvhApiCloud.Lexi().createProject({}, {
-                    voucher: self.model.voucher || undefined,
-                    description: self.model.description || undefined,
-                    catalogVersion: self.model.catalogVersion || undefined,
-                }).$promise.then(function (response) {
-                    self.data.status = response.status;
-
-                    switch (response.status) {
-                    case "creating":
-                        OvhApiMe.Order().Lexi().get({
-                            orderId: response.orderId
-                        }).$promise.then(function (order) {
-                            $window.open(order.url, "_blank");
-                            updateManager(response.project);
-                            $state.go("iaas.pci-project.details", {
-                                projectId: response.project,
-                                fromProjectAdd: true
-                            });
-                            return Toast.success($translate.instant("cpa_success", { url: order.url }));
-                        }, function () {
-                            return Toast.error($translate.instant("cpa_error"));
-                        });
-                        break;
-                    case "ok":
-                        if (response.project) {
-                            // Success: go to it
-                            updateManager(response.project);
-                            return $state.go("iaas.pci-project.details", {
-                                projectId: response.project,
-                                fromProjectAdd: true
-                            });
-                        } else {
-                            // Because it's not normal
-                            return Toast.error($translate.instant("cpa_error"));
-                        }
-                        break;
-                    case "waitingAgreementsValidation":
-                        self.data.agreements = [];
-                        var queue = [];
-
-                        // Get all contracts
-                        if (response.agreements && response.agreements.length) {
-                            angular.forEach(response.agreements, function (contractId) {
-                                queue.push(OvhApiMe.Agreements().Lexi().contract({
-                                    id: contractId
-                                }).$promise.then(function (contract) {
-                                    contract.id = contractId;
-                                    self.data.agreements.push(contract);
-                                }));
-                            });
-                        }
-
-                        // for multi-project: say to user that there are contracts to sign
-                        if (!self.loaders.init) {
-                            Toast.info($translate.instant("cpa_error_contracts_tosign"));
-                        }
-
-                        return $q.all(queue);
-
-                    // case "validationPending":
-                    default:
-                        return;
-                    }
+            return promise
+                .catch(error => this.handleError(error))
+                .finally(() => {
+                    self.loaders.creating = false;
                 });
-
-            })["catch"](function (err) {
-                if (err && err.status) {
-                    switch (err.status) {
-                    case 400:
-                        return Toast.error($translate.instant("cpa_error_invalid_paymentmean"));
-                    case 409:
-                        return Toast.error($translate.instant("cpa_error_over_quota"));
-                    default:
-                        return Toast.error($translate.instant("cpa_error") + (err.data && err.data.message ? " (" + err.data.message + ")" : ""));
-                    }
-                }
-            })["finally"](function () {
-                self.loaders.creating = false;
-            });
         };
+
+        this.pollOrder = function (orderId) {
+            if (self.data.poller) {
+                self.data.poller.kill();
+            }
+
+            self.data.poller = CloudPoll.poll({
+                item: self.data.activeOrder,
+                pollFunction: () => CloudProjectAddService.getCloudProjectOrder(orderId).then(response => {
+                        self.data.activeOrder.deliveryStatus = response.deliveryStatus;
+                        return response;
+                    }),
+                stopCondition: item => item.deliveryStatus === "delivered",
+                interval: 3000
+            });
+            
+            self.data.poller.$promise
+                .then(() => {
+                    self.data.projectReady = true;
+                    return $timeout(() => {
+                        CloudProjectSidebar.addToSection({
+                            project_id: self.data.activeOrder.serviceName, // jshint ignore:line
+                            description: self.model.description
+                        });
+                        OvhApiVrack.Lexi().resetCache();
+                        OvhApiVrack.CloudProject().Lexi().resetQueryCache();
+
+                        $state.go("iaas.pci-project.compute", {
+                            projectId: self.data.activeOrder.serviceName
+                        });
+                    }, 3000);
+                })
+                .catch(() => this.handleError({}));
+
+            return self.data.poller;
+        }
 
         // returns true if user has at least one bill and no debt
         this.isTrustedUser = function () {
@@ -155,16 +130,16 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             return angular.isDefined(_.find(self.data.creditCards, "threeDsValidated"));
         };
 
-        this.canCreateProject = function () {
-            var canCreate = false;
-            if (self.model.voucher) {
-                canCreate = true;
-            } else if (self.model.paymentMethod === self.model.noPaymentMethodEnum.BC) {
-                canCreate = true;
-            } else if (this.isTrustedUser()) {
-                canCreate = angular.isDefined(self.data.defaultPaymentMean);
-            }
-            return canCreate;
+        this.orderIsDelivering = () => self.data.activeOrder && self.data.activeOrder.deliveryStatus === "delivering";
+
+        this.awaitingContractValidation = () => self.data.activeOrder && self.data.activeOrder.contracts.length;
+
+        this.awaitingDelivery = () => !self.loaders.creating && self.data.activeOrder && !this.awaitingContractValidation() && self.model.contractsAccepted;
+
+        this.handleError = error => {
+            self.data.activeOrder = undefined;
+            self.model.contractsAccepted = false;
+            CloudMessage.error($translate.instant("cpa_error", error.data));
         };
 
         function initUserFidelityAccount () {
@@ -175,34 +150,33 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             });
         }
 
-        function initContracts () {
-            return CloudProjectAdd.getProjectInfo()
-                .then(projectInfo => {
-                    self.data.agreements = projectInfo.agreementsToAccept;
-                });
-        }
-
         function initProject () {
             return $q.all({
                 projectIds:       OvhApiCloud.Project().Lexi().query().$promise,
-                price:            OvhApiCloud.Price().Lexi().query().$promise,
                 user:             OvhApiMe.Lexi().get().$promise,
                 defaultPayment:   OvhApiMe.PaymentMean().Lexi().getDefaultPaymentMean(),
                 availablePayment: OvhApiMe.AvailableAutomaticPaymentMeans().Lexi().get().$promise,
                 fidelityAccount:  initUserFidelityAccount(),
                 bill:             OvhApiMe.Bill().Lexi().query().$promise,
-                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards()
+                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards(),
+                price:            CloudProjectAddService.getCloudCreditPrice()
             }).then(function (result) {
-                self.data.projectsCount = result.projectIds.length;
-                self.data.projectPrice = result.price.projectCreation;
+                self.data.projectReady = false;
+                self.data.isFirstProjectCreation = !result.projectIds.length;
+                self.data.projectPrice = result.price;
                 self.data.defaultPaymentMean = result.defaultPayment;
                 self.data.availablePaymentMeans = result.availablePayment;
                 self.data.hasDebt = result.fidelityAccount && result.fidelityAccount.balance < 0;
                 self.data.hasBill = result.bill.length > 0;
                 self.data.creditCards = result.creditCards;
-                self.model.description = $translate.instant("cloud_menu_project_num", { num: self.data.projectsCount + 1 });
+                self.data.user = result.user;
+                self.model.description = $translate.instant("cloud_menu_project_num", { num: result.projectIds.length + 1 });
                 self.model.paymentMethod = self.model.noPaymentMethodEnum.MEAN;
             });
+        }
+
+        function refreshMessage () {
+            self.messages = self.messageHandler.getMessages();
         }
 
         function init () {
@@ -212,21 +186,31 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 $state.go("iaas.pci-project-onboarding", { location : "replace" });
                 return;
             }
-            initContracts().then(initProject)["catch"](function (err) {
+
+            CloudMessage.unSubscribe("iaas.pci-project-new");
+            self.messageHandler = CloudMessage.subscribe("iaas.pci-project-new", { onMessage: () => refreshMessage() });
+
+            const orderId = ControllerNavigationHelper.getQueryParam("orderId");
+            if (orderId) {
+                CloudProjectAddService.getCloudProjectOrder(parseInt(orderId, 10), { expand: true })
+                    .then(response => {
+                        response.contracts = [];
+                        self.data.activeOrder = response;
+                        self.model.contractsAccepted = true;
+                        self.pollOrder(parseInt(orderId, 10));
+                    })
+                    .finally(() => {
+                        self.loaders.init = false;
+                    });
+                return;
+            };
+
+            initProject()["catch"](function (err) {
                 self.unknownError = true;
-                Toast.error($translate.instant("cpa_error") + (err && err.data && err.data.message ? " (" + err.data.message + ")" : ""));
+                CloudMessage.error(this.handleError(err.data));
             })["finally"](function () {
                 self.loaders.init = false;
             });
-        }
-
-        function updateManager (projectId) {
-            CloudProjectSidebar.addToSection({
-                project_id: projectId, // jshint ignore:line
-                description: self.model.description
-            });
-            OvhApiVrack.Lexi().resetCache();
-            OvhApiVrack.CloudProject().Lexi().resetQueryCache();
         }
 
         init();
