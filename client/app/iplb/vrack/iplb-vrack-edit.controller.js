@@ -12,11 +12,6 @@ class IpLoadBalancerVrackEditCtrl {
         this.serviceName = $stateParams.serviceName;
         this.networkId = $stateParams.networkId;
 
-        this.defaultAssociatedFarmValue = {
-            farmId: null,
-            displayName: null
-        };
-
         this._initLoaders();
         this._initModel();
     }
@@ -26,15 +21,17 @@ class IpLoadBalancerVrackEditCtrl {
         this.creationRules.load();
         this.privateNetwork.load()
             .then(() => {
-                _.forEach(_.keys(this.model), key => {
-                    this.model[key].value = this.privateNetwork.data[key];
-                });
+                if (_.keys(this.privateNetwork.data).length) {
+                    _.forEach(_.keys(this.model), key => {
+                        this.model[key].value = this.privateNetwork.data[key];
+                    });
+                }
 
                 return this.privateNetworkFarms.load();
             })
             .then(() => {
                 if (!this.privateNetworkFarms.data.length) {
-                    this.model.farmId.value = [this.defaultAssociatedFarmValue];
+                    this.addFarm();
                     return;
                 }
 
@@ -88,7 +85,10 @@ class IpLoadBalancerVrackEditCtrl {
     }
 
     addFarm () {
-        this.model.farmId.value.push(_.clone(this.defaultAssociatedFarmValue));
+        this.model.farmId.value.push({
+            farmId: null,
+            displayName: null
+        });
     }
 
     removeFarm (index) {
@@ -107,9 +107,9 @@ class IpLoadBalancerVrackEditCtrl {
         const cleanModel = {};
         _.forEach(_.keys(this.model), key => {
             if (!this.model[key].disabled()) {
-                switch (this.model[key]) {
+                switch (key) {
                     case "farmId":
-                        cleanModel[key] = _.map(cleanModel.farmId, farm => farm.farmId);
+                        cleanModel[key] = _.map(_.filter(this.model[key].value, farm => farm.farmId), farm => farm.farmId);
                         break;
                     default:
                         cleanModel[key] = this.model[key].value;
@@ -189,7 +189,7 @@ class IpLoadBalancerVrackEditCtrl {
                 inputSize: 2
             },
             farmId: {
-                label: "Ferme de serveurs",
+                label: this.$translate.instant("iplb_vrack_private_network_add_edit_field_farm_label"),
                 value: [],
                 disabled: () => false
             }

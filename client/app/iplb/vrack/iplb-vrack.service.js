@@ -91,20 +91,31 @@ class IpLoadBalancerVrackService {
     addPrivateNetwork (serviceName, network) {
         return this.OvhApiIpLoadBalancing.Vrack().Lexi().post({ serviceName }, _.omit(network, ["vrackNetworkId", "farmId"]))
             .$promise
+            .then(response => this.OvhApiIpLoadBalancing.Vrack().Lexi().updateFarmId({ serviceName, vrackNetworkId: response.vrackNetworkId }, { farmId: network.farmId }).$promise)
+            .then(response => {
+                this.OvhApiIpLoadBalancing.Farm().Lexi().resetQueryCache();
+                return response;
+            })
             .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_add_success"))
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_add_error"));
     }
 
     editPrivateNetwork (serviceName, network) {
-        return this.OvhApiIpLoadBalancing.Vrack().Lexi().put({ serviceName, vrackNetworkId: network.vrackNetworkId }, _.omit(network, ["vrackNetworkId", "farmId"]))
-            .$promise
+        return this.$q.all([
+            this.OvhApiIpLoadBalancing.Vrack().Lexi().put({ serviceName, vrackNetworkId: network.vrackNetworkId }, _.omit(network, ["vrackNetworkId", "farmId"])).$promise,
+            this.OvhApiIpLoadBalancing.Vrack().Lexi().updateFarmId({ serviceName, vrackNetworkId: network.vrackNetworkId }, { farmId: network.farmId }).$promise
+        ])
+            .then(response => {
+                this.OvhApiIpLoadBalancing.Farm().Lexi().resetQueryCache();
+                return response;
+            })
             .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_edit_success"))
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_edit_error"));
     }
 
     deletePrivateNetwork (serviceName, networkId) {
-        return this.OvhApiIpLoadBalancing.Vrack().Lexi().delete({ serviceName, vrackNetworkId: networkId })
-            .$promise
+        return this.OvhApiIpLoadBalancing.Vrack().Lexi().updateFarmId({ serviceName, vrackNetworkId: networkId }, { farmId: [] }).$promise
+            .then(() => this.OvhApiIpLoadBalancing.Vrack().Lexi().delete({ serviceName, vrackNetworkId: networkId }).$promise)
             .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_delete_success"))
             .catch(this.ServiceHelper.errorHandler("iplb_vrack_private_network_delete_error"));
     }
