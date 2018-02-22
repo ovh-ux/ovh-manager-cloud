@@ -118,7 +118,7 @@ class LogsAliasesService {
      * returns objecy containing total number of aliases and total number of aliases used
      *
      * @param {any} serviceName
-     * @returns quota object containing V (total number aliases) and configured (number of aliases used)
+     * @returns quota object containing max (total number aliases) and configured (number of aliases used)
      * @memberof LogsAliasesService
      */
     getQuota (serviceName) {
