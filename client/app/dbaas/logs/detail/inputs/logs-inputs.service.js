@@ -196,11 +196,20 @@ class LogsInputsService {
             actions[action.type] = action.isAllowed;
             return actions;
         }, {});
-        input.info.state = input.info.status === this.LogsInputsConstant.status.PROCESSING ? this.LogsInputsConstant.state.PROCESSING :
+
+        const isProcessing = input.info.status === this.LogsInputsConstant.status.PROCESSING;
+        const isToBeConfigured = input.info.status === this.LogsInputsConstant.status.INIT && !input.actionsMap.START;
+        const isPending = (input.info.status === this.LogsInputsConstant.status.INIT || input.info.status === this.LogsInputsConstant.status.PENDING) &&
+                          input.actionsMap.START;
+        const isRunning = input.info.status === this.LogsInputsConstant.status.RUNNING;
+
+        input.info.state = isProcessing ? this.LogsInputsConstant.state.PROCESSING :
             input.info.isRestartRequired ? this.LogsInputsConstant.state.RESTART_REQUIRED :
-                input.info.status === this.LogsInputsConstant.status.INIT && !input.actionsMap.START ? this.LogsInputsConstant.state.TO_CONFIGURE :
-                    (input.info.status === this.LogsInputsConstant.status.INIT || input.info.status === this.LogsInputsConstant.status.PENDING) && input.actionsMap.START ? this.LogsInputsConstant.state.PENDING :
-                        input.info.status === this.LogsInputsConstant.status.RUNNING ? this.LogsInputsConstant.state.RUNNING : this.LogsInputsConstant.state.UNKNOWN;
+                isToBeConfigured ? this.LogsInputsConstant.state.TO_CONFIGURE :
+                    isPending ? this.LogsInputsConstant.state.PENDING :
+                        isRunning ? this.LogsInputsConstant.state.RUNNING :
+                            this.LogsInputsConstant.state.UNKNOWN;
+
         input.info.stateType = this.LogsInputsConstant.stateType[input.info.state];
         return input;
     }
