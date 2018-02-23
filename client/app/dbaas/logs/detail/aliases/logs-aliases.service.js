@@ -286,12 +286,11 @@ class LogsAliasesService {
 
     _pollOperation (serviceName, operation) {
         this._killPoller();
-        const poller = this.CloudPoll.poll({
+        return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS
+            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
         });
-        return poller;
     }
 }
 

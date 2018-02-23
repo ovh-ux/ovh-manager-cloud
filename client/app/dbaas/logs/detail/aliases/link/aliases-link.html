@@ -25,8 +25,8 @@
                 property="info.title"
                 source-list="ctrl.availableStreams.promise"
                 target-list="ctrl.attachedStreams.promise"
-                on-add="ctrl.attachStream(items, defer)"
-                on-remove="ctrl.detachStream(items, defer)"
+                on-add="ctrl.attachStream(items)"
+                on-remove="ctrl.detachStream(items)"
                 bulk-action-enabled="false"
                 height="200px">
             </cui-dual-list>   
@@ -44,8 +44,8 @@
                 property="info.name"
                 source-list="ctrl.availableIndices.promise"
                 target-list="ctrl.attachedIndices.promise"
-                on-add="ctrl.attachIndex(items, defer)"
-                on-remove="ctrl.detachIndex(items, defer)"
+                on-add="ctrl.attachIndex(items)"
+                on-remove="ctrl.detachIndex(items)"
                 bulk-action-enabled="false"
                 height="200px">
             </cui-dual-list>

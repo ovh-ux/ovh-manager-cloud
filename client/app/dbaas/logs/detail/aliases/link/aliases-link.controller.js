@@ -71,56 +71,52 @@ class LogsAliasesLinkCtrl {
             });
     }
 
-    attachStream (items, defer) {
+    attachStream (items) {
         this.CloudMessage.flushChildMessage();
         this.saveStream = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsAliasesService.attachStream(this.serviceName, this.alias.data.info, items[0].info)
-                .then(() => defer.resolve(),
-                      () => {
-                          defer.reject(items);
-                          this.CloudMessage.error(this.$translate.instant("logs_aliases_attach_stream_fail", { stream: items[0].info.title }));
-                      })
+                .catch(() => {
+                    this.CloudMessage.error(this.$translate.instant("logs_aliases_attach_stream_fail", { stream: items[0].info.title }));
+                    this.$q.reject();
+                })
         });
-        this.saveStream.load();
+        return this.saveStream.load();
     }
 
-    detachStream (items, defer) {
+    detachStream (items) {
         this.CloudMessage.flushChildMessage();
         this.saveStream = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsAliasesService.detachStream(this.serviceName, this.alias.data.info, items[0].info)
-                .then(() => defer.resolve(),
-                      () => {
-                          defer.reject(items);
-                          this.CloudMessage.error(this.$translate.instant("logs_aliases_detach_stream_fail", { stream: items[0].info.title }));
-                      })
+                .catch(() => {
+                    this.CloudMessage.error(this.$translate.instant("logs_aliases_detach_stream_fail", { stream: items[0].info.title }));
+                    this.$q.reject();
+                })
         });
-        this.saveStream.load();
+        return this.saveStream.load();
     }
 
-    attachIndex (items, defer) {
+    attachIndex (items) {
         this.CloudMessage.flushChildMessage();
         this.saveIndex = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsAliasesService.attachIndex(this.serviceName, this.alias.data.info, items[0].info)
-                .then(() => defer.resolve(),
-                      () => {
-                          defer.reject(items);
-                          this.CloudMessage.error(this.$translate.instant("logs_aliases_attach_index_fail", { index: items[0].info.name }));
-                      })
+                .catch(() => {
+                    this.CloudMessage.error(this.$translate.instant("logs_aliases_attach_index_fail", { index: items[0].info.name }));
+                    this.$q.reject();
+                })
         });
-        this.saveIndex.load();
+        return this.saveIndex.load();
     }
 
-    detachIndex (items, defer) {
+    detachIndex (items) {
         this.CloudMessage.flushChildMessage();
         this.saveIndex = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsAliasesService.detachIndex(this.serviceName, this.alias.data.info, items[0].info)
-                .then(() => defer.resolve(),
-                      () => {
-                          defer.reject(items);
-                          this.CloudMessage.error(this.$translate.instant("logs_aliases_detach_index_fail", { index: items[0].info.name }));
-                      })
+                .catch(() => {
+                    this.CloudMessage.error(this.$translate.instant("logs_aliases_detach_index_fail", { index: items[0].info.name }));
+                    this.$q.reject();
+                })
         });
-        this.saveIndex.load();
+        return this.saveIndex.load();
     }
 
     isContentDisabled (contentType) {
