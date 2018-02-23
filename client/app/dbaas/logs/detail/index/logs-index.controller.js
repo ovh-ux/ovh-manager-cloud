@@ -15,10 +15,6 @@ class LogsIndexCtrl {
             loaderFunction: () => this.LogsIndexService.getSubscribedOptions(this.serviceName)
         });
 
-        this.mainOffer = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsIndexService.getMainOffer(this.serviceName)
-        });
-
         this.quota = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsIndexService.getQuota(this.serviceName)
         });
@@ -30,7 +26,6 @@ class LogsIndexCtrl {
         this.quota.load();
         this.indices.load();
         this.indexOptions.load();
-        this.mainOffer.load();
     }
 
     add (info) {
@@ -44,7 +39,7 @@ class LogsIndexCtrl {
                     serviceName: () => this.serviceName,
                     indexInfo: () => info,
                     options: () => this.indexOptions,
-                    mainOffer: () => this.mainOffer
+                    quota: () => this.quota
                 }
             }
         }).then(() => {
