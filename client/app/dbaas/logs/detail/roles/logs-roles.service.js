@@ -34,6 +34,10 @@ class LogsRolesService {
             }).catch(this.ServiceHelper.errorHandler("logs_get_error"));
     }
 
+    getLogDetails (serviceName) {
+        return this.LogsApiService.logDetail({ serviceName }).$promise;
+    }
+
     getQuota (serviceName) {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => {
@@ -92,10 +96,6 @@ class LogsRolesService {
         });
     }
 
-    getLogDetails (serviceName) {
-        return this.LogsApiService.logDetail({ serviceName }).$promise;
-    }
-
     createMember (serviceName, roleId, userDetails) {
         return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
             .then(operation => {
@@ -120,6 +120,7 @@ class LogsRolesService {
             text: this.$translate.instant("logs_member_delete_question", { username })
         });
     }
+
     _handleSuccess (serviceName, operation, successMessage) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
