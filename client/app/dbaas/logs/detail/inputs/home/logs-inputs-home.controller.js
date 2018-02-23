@@ -30,6 +30,21 @@ class LogsInputsHomeCtrl {
     }
 
     /**
+     * Executes an action on the input
+     *
+     * @param {any} input - the input on which the action has to be performed
+     * @param {any} actionFn - the action function to be called
+     * @memberof LogsInputsCtrl
+     */
+    _executeAction (input, actionFn) {
+        this._setInputToProcessing(input);
+        this.processInput = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService[actionFn](this.serviceName, input)
+        });
+        this.processInput.load().finally(() => this._reloadInputDetail(input.info.inputId));
+    }
+
+    /**
      * initializes the inputs and the quota
      *
      * @memberof LogsInputsCtrl
@@ -129,15 +144,8 @@ class LogsInputsHomeCtrl {
      * @memberof LogsInputsCtrl
      */
     restartInput (input) {
-        this.CloudMessage.flushChildMessage();
         this.CloudMessage.info(this.$translate.instant("inputs_restarting", { inputTitle: input.info.title }));
-        this._setInputToProcessing(input);
-        this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.restartInput(this.serviceName, input)
-        });
-        this.processInput.load()
-            .then(() => this._reloadInputDetail(input.info.inputId),
-                  () => this._reloadInputDetail(input.info.inputId));
+        this._executeAction(input, "restartInput");
     }
 
     /**
@@ -161,15 +169,8 @@ class LogsInputsHomeCtrl {
      * @memberof LogsInputsCtrl
      */
     startInput (input) {
-        this.CloudMessage.flushChildMessage();
         this.CloudMessage.info(this.$translate.instant("inputs_starting", { inputTitle: input.info.title }));
-        this._setInputToProcessing(input);
-        this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.startInput(this.serviceName, input)
-        });
-        this.processInput.load()
-            .then(() => this._reloadInputDetail(input.info.inputId),
-                  () => this._reloadInputDetail(input.info.inputId));
+        this._executeAction(input, "startInput");
     }
 
     /**
@@ -179,15 +180,8 @@ class LogsInputsHomeCtrl {
      * @memberof LogsInputsCtrl
      */
     stopInput (input) {
-        this.CloudMessage.flushChildMessage();
         this.CloudMessage.info(this.$translate.instant("inputs_stopping", { inputTitle: input.info.title }));
-        this._setInputToProcessing(input);
-        this.processInput = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.stopInput(this.serviceName, input)
-        });
-        this.processInput.load()
-            .then(() => this._reloadInputDetail(input.info.inputId),
-                  () => this._reloadInputDetail(input.info.inputId));
+        this._executeAction(input, "stopInput");
     }
 }
 
