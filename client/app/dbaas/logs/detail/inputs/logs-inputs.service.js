@@ -205,6 +205,26 @@ class LogsInputsService {
         return input;
     }
 
+    addNetwork (serviceName, input, network) {
+        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, { network })
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network, inputTitle: input.info.title });
+            })
+            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network, inputTitle: input.info.title }));
+    }
+
+    removeNetwork (serviceName, input, network) {
+        return this.InputsApiLexiService.rejectNetwork({ serviceName, inputId: input.info.inputId, allowedNetworkId: network.allowedNetworkId })
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation, "logs_inputs_network_remove_success", { network: network.network, inputTitle: input.info.title });
+            })
+            .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
+    }
+
     /**
      * handles error state for create, delete and update input
      *
