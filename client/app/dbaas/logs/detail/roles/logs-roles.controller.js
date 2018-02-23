@@ -75,6 +75,11 @@ class LogsRolesCtrl {
             roleId: info.roleId
         });
     }
+
+    // TODO: edit permission page
+    editPermissions () {
+        return null;
+    }
 }
 
 angular.module("managerApp").controller("LogsRolesCtrl", LogsRolesCtrl);

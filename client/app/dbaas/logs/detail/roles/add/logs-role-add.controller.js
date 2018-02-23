@@ -5,7 +5,6 @@ class LogsRoleAddModalCtrl {
         this.ControllerHelper = ControllerHelper;
         this.options = options;
         this.quota = quota;
-        console.log(quota);
         this.roleInfo = roleInfo;
         this.LogsRolesService = LogsRolesService;
         this.$uibModalInstance = $uibModalInstance;

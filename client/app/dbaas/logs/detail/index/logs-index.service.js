@@ -27,18 +27,12 @@ class LogsIndexService {
                 const quota = {
                     max: me.total.maxNbIndex,
                     configured: me.total.curNbIndex,
-                    currentUsage: me.total.curNbIndex * 100 / me.total.maxNbIndex
+                    currentUsage: me.total.curNbIndex * 100 / me.total.maxNbIndex,
+                    mainOfferMax: me.offer.maxNbIndex,
+                    mainOfferCurrent: me.offer.curNbIndex
                 };
                 return quota;
             }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
-    }
-
-    getMainOffer (serviceName) {
-        return this.AccountingAapiService.me({ serviceName }).$promise
-            .then(me => ({
-                max: me.offer.maxNbIndex,
-                current: me.offer.curNbIndex
-            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
     }
 
     getIndices (serviceName) {

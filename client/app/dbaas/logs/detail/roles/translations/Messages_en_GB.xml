@@ -27,7 +27,6 @@
     <translation id="logs_role_modal_name">Name</translation>
     <translation id="logs_role_modal_description">Description</translation>
     <translation id="logs_role_modal_option">Attached to option</translation>
-    <!-- <translation id="logs_select_options_placeholder">Select option</translation> -->
 
     <translation id="logs_role_modal_delete_title">Delete role</translation>
     <translation id="logs_role_modal_delete_question">Are you sure you want to delete the following role: {{name}}?</translation>

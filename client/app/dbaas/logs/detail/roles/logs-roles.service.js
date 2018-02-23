@@ -7,13 +7,14 @@ class LogsRolesService {
         this.LogsOptionsService = LogsOptionsService;
         this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
+
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
-
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
         this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+
         this.newRole = {
             description: "",
             name: "",
@@ -31,35 +32,6 @@ class LogsRolesService {
                 const promises = logs.map(serviceName => this.getLogDetails(serviceName));
                 return this.$q.all(promises);
             }).catch(this.ServiceHelper.errorHandler("logs_get_error"));
-    }
-
-    getLogDetails (serviceName) {
-        return this.LogsApiService.logDetail({ serviceName }).$promise;
-    }
-
-    createMember (serviceName, roleId, userDetails) {
-        return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
-            .then(operation => {
-                this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success");
-            })
-            .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
-    }
-
-    removeMember (serviceName, roleId, username) {
-        return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
-            .then(operation => {
-                this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success");
-            })
-            .catch(this.ServiceHelper.errorHandler("logs_role_member_remove_error"));
-    }
-
-    deleteMemberModal (username) {
-        return this.ControllerHelper.modal.showDeleteModal({
-            titleText: this.$translate.instant("logs_member_delete_title"),
-            text: this.$translate.instant("logs_member_delete_question", { username })
-        });
     }
 
     getQuota (serviceName) {
@@ -120,6 +92,34 @@ class LogsRolesService {
         });
     }
 
+    getLogDetails (serviceName) {
+        return this.LogsApiService.logDetail({ serviceName }).$promise;
+    }
+
+    createMember (serviceName, roleId, userDetails) {
+        return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
+    }
+
+    removeMember (serviceName, roleId, username) {
+        return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success");
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_role_member_remove_error"));
+    }
+
+    deleteMemberModal (username) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            titleText: this.$translate.instant("logs_member_delete_title"),
+            text: this.$translate.instant("logs_member_delete_question", { username })
+        });
+    }
     _handleSuccess (serviceName, operation, successMessage) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
