@@ -1,11 +1,11 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
-        // this.LogsRolesConstant = LogsRolesConstant;
+        this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
@@ -19,6 +19,10 @@ class LogsRolesService {
             name: "",
             optionId: null
         };
+    }
+
+    getNewRole () {
+        return this.newRole;
     }
 
     getLogs () {
@@ -37,7 +41,7 @@ class LogsRolesService {
         return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success", "logs_role_member_add_error");
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success");
             })
             .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
     }
@@ -58,15 +62,13 @@ class LogsRolesService {
         });
     }
 
-    getNewRole () {
-        return this.newRole;
-    }
-
     getQuota (serviceName) {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => {
                 const quota = {
                     max: me.total.maxNbRole,
+                    mainOfferMax: me.offer.maxNbRole,
+                    mainOfferCurrent: me.offer.curNbRole,
                     configured: me.total.curNbRole,
                     currentUsage: me.total.curNbRole * 100 / me.total.maxNbRole
                 };
@@ -118,10 +120,10 @@ class LogsRolesService {
         });
     }
 
-    _handleSuccess (serviceName, operation, successMessage, failureMessage) {
+    _handleSuccess (serviceName, operation, successMessage) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler("successMessage"));
+            .then(this.ServiceHelper.successHandler(successMessage));
     }
 
     _killPoller () {
@@ -135,7 +137,7 @@ class LogsRolesService {
         return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === "SUCCESS" || opn.state === "FAILURE"
+            stopCondition: opn => opn.state === this.LogsRolesConstant.SUCCESS || opn.state === this.LogsRolesConstant.FAILURE
         });
     }
 

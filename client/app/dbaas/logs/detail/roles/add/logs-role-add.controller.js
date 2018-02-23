@@ -1,9 +1,11 @@
 class LogsRoleAddModalCtrl {
-    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, LogsRolesService, options, roleInfo) {
+    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, LogsRolesService, options, quota, roleInfo) {
         this.$stateParams = $stateParams;
         this.$q = $q;
         this.ControllerHelper = ControllerHelper;
         this.options = options;
+        this.quota = quota;
+        console.log(quota);
         this.roleInfo = roleInfo;
         this.LogsRolesService = LogsRolesService;
         this.$uibModalInstance = $uibModalInstance;
