@@ -64,7 +64,10 @@ class DualListCtrl {
     }
 
     getProperty (item) {
-        return this.property ? item[this.property] : item;
+        if (!this.property) {
+            return item;
+        }
+        return this.property.split(".").reduce((prev, curr) => prev ? prev[curr] : undefined, item);
     }
 
     isLoading (item) {
@@ -116,9 +119,7 @@ class DualListCtrl {
         this.targetList.push(item);
         if (this.onAdd) {
             this.setLoading(item, true);
-            const defer = this.$q.defer();
-            this.onAdd({ items: [item], defer });
-            defer.promise
+            this.onAdd({ items: [item] })
                 .catch(() => {
                     const newIndex = this.targetList.indexOf(item);
                     this.targetList.splice(newIndex, 1);
@@ -136,9 +137,7 @@ class DualListCtrl {
         this.sourceList.push(item);
         if (this.onRemove) {
             this.setLoading(item, true);
-            const defer = this.$q.defer();
-            this.onRemove({ items: [item], defer });
-            defer.promise
+            this.onRemove({ items: [item] })
                 .catch(() => {
                     const newIndex = this.sourceList.indexOf(item);
                     this.sourceList.splice(newIndex, 1);
@@ -162,9 +161,7 @@ class DualListCtrl {
             this.sourceList.splice(newIndex, 1);
         });
         if (this.onAdd) {
-            const defer = this.$q.defer();
-            this.onAdd({ items: list, defer });
-            defer.promise
+            this.onAdd({ items: list })
                 .then(() => {
                     // all items successfully moved, remove loading
                     list.forEach(item => this.setLoading(item, false));
@@ -198,9 +195,7 @@ class DualListCtrl {
             this.targetList.splice(newIndex, 1);
         });
         if (this.onAdd) {
-            const defer = this.$q.defer();
-            this.onAdd({ items: list, defer });
-            defer.promise
+            this.onAdd({ items: list })
                 .then(() => {
                     // all items successfully moved, remove loading
                     list.forEach(item => this.setLoading(item, false));

@@ -128,7 +128,7 @@ class LogsIndexService {
         return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogsIndexConstant.FAILURE || opn.state === this.LogsIndexConstant.SUCCESS
+            stopCondition: opn => opn.state === this.LogsIndexConstant.FAILURE || opn.state === this.LogsIndexConstant.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
         });
     }
 }

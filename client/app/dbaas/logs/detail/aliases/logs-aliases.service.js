@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -14,6 +14,18 @@ class LogsAliasesService {
         this.LogAliasConstants = LogAliasConstants;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
+        this.LogsStreamsService = LogsStreamsService;
+        this.LogsIndexService = LogsIndexService;
+
+        this.contentTypeEnum = _.indexBy(["STREAMS", "INDICES"]);
+        this.contents = [
+            { value: this.contentTypeEnum.STREAMS, name: "logs_streams_title" },
+            { value: this.contentTypeEnum.INDICES, name: "logs_index_title" }
+        ];
+    }
+
+    getContents () {
+        return this.contents;
     }
 
     /**
@@ -67,6 +79,28 @@ class LogsAliasesService {
             .$promise.catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
     }
 
+    getAliasWithStreamsAndIndices (serviceName, aliasId) {
+        return this.AliasAapiService.get({ serviceName, aliasId })
+            .$promise
+            .then(alias => {
+                if (alias.streams.length > 0) {
+                    const promises = alias.streams.map(streamId => this.LogsStreamsService.getAapiStream(serviceName, streamId));
+                    return this.$q.all(promises).then(streams => {
+                        alias.streams = streams;
+                        return alias;
+                    });
+                } else if (alias.indexes.length > 0) {
+                    const promises = alias.indexes.map(indexId => this.LogsIndexService.getIndexDetails(serviceName, indexId));
+                    return this.$q.all(promises).then(indices => {
+                        alias.indexes = indices;
+                        return alias;
+                    });
+                }
+                return alias;
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_alias_get_error"));
+    }
+
     /**
      * returns details of an alias
      *
@@ -84,7 +118,7 @@ class LogsAliasesService {
      * returns objecy containing total number of aliases and total number of aliases used
      *
      * @param {any} serviceName
-     * @returns quota object containing V (total number aliases) and configured (number of aliases used)
+     * @returns quota object containing max (total number aliases) and configured (number of aliases used)
      * @memberof LogsAliasesService
      */
     getQuota (serviceName) {
@@ -158,6 +192,34 @@ class LogsAliasesService {
             .catch(this.ServiceHelper.errorHandler("logs_aliases_update_error"));
     }
 
+    attachStream (serviceName, alias, stream) {
+        return this.AliasApiService.linkStream({ serviceName, aliasId: alias.aliasId }, stream)
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_attach_stream_error"));
+    }
+
+    detachStream (serviceName, alias, stream) {
+        return this.AliasApiService.unlinkStream({ serviceName, aliasId: alias.aliasId, streamId: stream.streamId })
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_detach_stream_error"));
+    }
+
+    attachIndex (serviceName, alias, index) {
+        return this.AliasApiService.linkIndex({ serviceName, aliasId: alias.aliasId }, index)
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_attach_index_error"));
+    }
+
+    detachIndex (serviceName, alias, index) {
+        return this.AliasApiService.unlinkIndex({ serviceName, aliasId: alias.aliasId, indexId: index.indexId })
+            .$promise
+            .then(operation => this._handleOperation(serviceName, operation))
+            .catch(this.ServiceHelper.errorHandler("logs_aliases_detach_index_error"));
+    }
+
     /**
      * creates new alias with default values
      *
@@ -201,12 +263,15 @@ class LogsAliasesService {
         return this.poller.$promise
             .then(result => {
                 if (result[0].item.state === this.LogStreamsConstants.SUCCESS) {
-                    this.CloudMessage.success(this.$translate.instant(successMessage));
+                    if (successMessage) {
+                        this.CloudMessage.success(this.$translate.instant(successMessage));
+                    }
                 } else {
                     this.CloudMessage.error(this.$translate.instant("logs_operation_failed", { operation_id: result[0].item.operationId }));
                 }
                 return result;
-            });
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_operation_error"));
     }
 
     _killPoller () {
@@ -221,12 +286,11 @@ class LogsAliasesService {
 
     _pollOperation (serviceName, operation) {
         this._killPoller();
-        const poller = this.CloudPoll.poll({
+        return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS
+            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
         });
-        return poller;
     }
 }
 
