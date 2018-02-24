@@ -2,6 +2,7 @@ angular.module("managerApp").config($stateProvider => {
     $stateProvider
         .state("dbaas.logs.detail.aliases", {
             url: "/aliases",
+            redirectTo: "dbaas.logs.detail.aliases.home",
             views: {
                 logsContent: {
                     templateUrl: "app/dbaas/logs/detail/aliases/logs-aliases.html",
@@ -9,21 +10,32 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases", "dbaas/logs/detail/options"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/aliases",
+                "dbaas/logs/detail/options", "dbaas/logs/detail/streams", "dbaas/logs/detail/index"]
         })
-        .state("dbaas.logs.detail.aliases.add", {
-            url: "/add",
+        .state("dbaas.logs.detail.aliases.home", {
+            url: "/home",
             views: {
                 logsAliases: {
+                    templateUrl: "app/dbaas/logs/detail/aliases/home/logs-aliases-home.html",
+                    controller: "LogsAliasesHomeCtrl",
+                    controllerAs: "ctrl"
+                }
+            }
+        })
+        .state("dbaas.logs.detail.aliases.home.add", {
+            url: "/add",
+            views: {
+                logsAliasesAddEdit: {
                     controller: "LogsAliasesAddModalCtrl",
                     controllerAs: "ctrl"
                 }
             }
         })
-        .state("dbaas.logs.detail.aliases.edit", {
+        .state("dbaas.logs.detail.aliases.home.edit", {
             url: "/:aliasId",
             views: {
-                logsAliases: {
+                logsAliasesAddEdit: {
                     controller: "LogsAliasesAddModalCtrl",
                     controllerAs: "ctrl"
                 }
@@ -31,13 +43,15 @@ angular.module("managerApp").config($stateProvider => {
         })
         .state("dbaas.logs.detail.aliases.link", {
             url: "/:aliasId/link",
+            params: {
+                defaultContent: null
+            },
             views: {
                 logsAliases: {
                     templateUrl: "app/dbaas/logs/detail/aliases/link/aliases-link.html",
                     controller: "LogsAliasesLinkCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases/link"]
+            }
         });
 });

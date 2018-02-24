@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_streams_title">Data stream</translation>
     <translation id="logs_streams_description">The data streams allow you to direct your logs in real time to a specific category as soon as they arrive on Logs Data Platform. If you have multiple streams, you can also: Easily classify messages based on their source, application, or origin server, and create flow-sensitive privacy levels, which will allow you to distribute your access only to authorized persons. The tokens here are write tokens that allow you to route the logs to the correct stream. In general, having different streams greatly facilitates the search for your logs. No need to exclude results from another system or application.</translation>
     <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
