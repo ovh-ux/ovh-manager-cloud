@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_info_title">Useful information</translation>
+    <translation id="inputs_info_description">Click on the suggested options to copy them to your clipboard</translation>
+
+    <translation id="inputs_info_hostname">Hostname</translation>
+    <translation id="inputs_info_ipaddress">Public IP address</translation>
+    <translation id="inputs_info_certificate">Certificate</translation>
+</translations>
