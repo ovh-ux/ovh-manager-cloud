@@ -535,6 +535,6 @@
 
    <translation id="common_task_list_empty" qtlid="134865">Aucune tâche en cours</translation>
 
-   <translation id="common_complete_order">Régler le bon de commande</translation>
-   <translation id="common_deactivate">Désactiver</translation>
+   <translation id="common_complete_order" qtlid="454878">Régler le bon de commande</translation>
+   <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
 </translations>
