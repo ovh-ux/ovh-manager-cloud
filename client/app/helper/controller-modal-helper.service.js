@@ -87,14 +87,6 @@ class ControllerModalHelper {
         config.submitButtonText = config.submitButtonText || this.$translate.instant("common_delete");
         return this.showConfirmationModal(config);
     }
-
-    showVrackDeactivateModal (vrack, config = {
-        titleText: "Désactiver le vRack",
-        text: `Êtes-vous sûr de vouloir désactiver le vRack « ${vrack.displayName} »`,
-        submitButtonText: this.$translate.instant("common_deactivate")
-    }) {
-        return this.showDeleteModal(config);
-    }
 }
 
 angular.module("managerApp").service("ControllerModalHelper", ControllerModalHelper);

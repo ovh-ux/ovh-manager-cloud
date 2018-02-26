@@ -40,7 +40,7 @@ class IpLoadBalancerVrackCtrl {
             },
             deActivateVrack: {
                 text: this.$translate.instant("common_deactivate"),
-                callback: () => this.ControllerHelper.modal.showVrackDeactivateModal(this.creationRules.data)
+                callback: () => this.VrackService.unlinkVrackModal()
                     .then(() => this.IpLoadBalancerVrackHelper.deAssociateVrack(this.serviceName, this.creationRules.data)),
                 isAvailable: () => !this.creationRules.loading && !this.creationRules.hasErrors && this.creationRules.data.status === "active"
             },

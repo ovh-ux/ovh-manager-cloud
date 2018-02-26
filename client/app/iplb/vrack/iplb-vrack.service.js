@@ -94,9 +94,9 @@ class IpLoadBalancerVrackService {
             .then(response => this.OvhApiIpLoadBalancing.Vrack().Lexi().updateFarmId({ serviceName, vrackNetworkId: response.vrackNetworkId }, { farmId: network.farmId }).$promise)
             .then(response => {
                 this.OvhApiIpLoadBalancing.Farm().Lexi().resetQueryCache();
-                this.OvhApiIpLoadBalancing.Farm().Tcp().Lexi();
-                this.OvhApiIpLoadBalancing.Farm().Udp().Lexi();
-                this.OvhApiIpLoadBalancing.Farm().Http().Lexi();
+                this.OvhApiIpLoadBalancing.Farm().Tcp().Lexi().resetCache();
+                this.OvhApiIpLoadBalancing.Farm().Udp().Lexi().resetCache();
+                this.OvhApiIpLoadBalancing.Farm().Http().Lexi().resetCache();
                 return response;
             })
             .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_add_success"))
@@ -113,7 +113,6 @@ class IpLoadBalancerVrackService {
                 this.OvhApiIpLoadBalancing.Farm().Tcp().Lexi().resetCache();
                 this.OvhApiIpLoadBalancing.Farm().Udp().Lexi().resetCache();
                 this.OvhApiIpLoadBalancing.Farm().Http().Lexi().resetCache();
-
                 return response;
             })
             .then(this.ServiceHelper.successHandler("iplb_vrack_private_network_edit_success"))
