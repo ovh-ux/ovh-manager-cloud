@@ -13,4 +13,5 @@
    <translation id="cpci_private_network_remove_vrack_error">Une erreur s'est produite lors de la désactivation des réseaux privés.</translation>
    <translation id="cpci_private_network_add_vrack_success">Les réseaux privés ont été activés avec succès.</translation>
    <translation id="cpci_private_network_remove_vrack_success">Les réseaux privés ont été désactivés avec succès.</translation>
+   <translation id="private_network_deactivate_confirmation_vlans">Tous les vLans seront supprimés.</translation>
 </translations>

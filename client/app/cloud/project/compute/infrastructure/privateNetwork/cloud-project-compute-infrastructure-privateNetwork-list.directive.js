@@ -127,7 +127,11 @@ class PrivateNetworkListCtrl {
     }
 
     unlinkVrack () {
-        this.VrackService.unlinkVrackModal()
+        let hasVlansText = this.$translate.instant("private_network_deactivate_confirmation");
+        if (this.collections.privateNetworks.length > 0) {
+            hasVlansText += ` ${this.$translate.instant("private_network_deactivate_confirmation_vlans")}`;
+        }
+        this.VrackService.unlinkVrackModal(hasVlansText)
             .then(() => {
                 this.loaders.vrack.unlink = true;
                 return this.VrackService.unlinkCloudProjectFromVrack(this.models.vrack.id, this.serviceName);
@@ -135,6 +139,7 @@ class PrivateNetworkListCtrl {
             .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
             .then(() => {
                 this.models.vrack = null;
+                this.collections.privateNetworks = [];
                 this.CloudMessage.success(this.$translate.instant("cpci_private_network_remove_vrack_success"));
             })
             .catch(err => {

@@ -63,11 +63,11 @@ class VrackService {
             .then(vrackTask => vrackTask.data.id);
     }
 
-    unlinkVrackModal () {
+    unlinkVrackModal (text) {
         return this.ControllerHelper.modal.showConfirmationModal({
             submitButtonText: this.$translate.instant("common_deactivate"),
             titleText: this.$translate.instant("private_network_deactivate"),
-            text: this.$translate.instant("private_network_deactivate_confirmation")
+            text: text || this.$translate.instant("private_network_deactivate_confirmation")
         });
     }
 
