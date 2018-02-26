@@ -14,13 +14,13 @@
     <translation id="logs_roles_members_modal_role">Choose the role</translation>
 
     <translation id="logs_member_modal_add_title">Add a member</translation>
-    <translation id="logs_role_member_add_success">The member was added successfully.</translation>
-    <translation id="logs_role_member_add_error">An error occurred while adding member {{message}}</translation>
+    <translation id="logs_role_member_add_success">The member {{name}} was added successfully.</translation>
+    <translation id="logs_role_member_add_error">An error occurred while adding member: {{message}}</translation>
 
     <translation id="logs_member_delete_title">Remove member</translation>
     <translation id="logs_member_delete_question">Are you sure you want to remove the following member: {{username}}?</translation>
 
-    <translation id="logs_role_member_remove_success">The member was removed successfully.</translation>
-    <translation id="logs_role_member_remove_error">An error occurred while removing member {{message}}</translation>
+    <translation id="logs_role_member_remove_success">The member was {{name}} removed successfully.</translation>
+    <translation id="logs_role_member_remove_error">An error occurred while removing member: {{message}}</translation>
 
 </translations>

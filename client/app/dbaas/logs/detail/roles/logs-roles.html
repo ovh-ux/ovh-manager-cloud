@@ -32,7 +32,6 @@
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ ::'logs_show_summary' | translate }}" on-click="ctrl.summary($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_edit_role' | translate }}" on-click="ctrl.add($row.info)"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'logs_edit_permissions' | translate }}" on-click="ctrl.editPermissions()"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_manage_members' | translate }}" on-click="ctrl.manageMembers($row.info)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_delete_role' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
         </oui-action-menu>

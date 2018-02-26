@@ -1,5 +1,5 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, CloudMessage, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -7,6 +7,7 @@ class LogsRolesService {
         this.LogsOptionsService = LogsOptionsService;
         this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
+        this.CloudMessage = CloudMessage;
 
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
@@ -70,21 +71,24 @@ class LogsRolesService {
 
     addRole (serviceName, object) {
         return this.RolesApiService.create({ serviceName }, object).$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_add_success"))
+            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_add_success", object.name))
             .catch(this.ServiceHelper.errorHandler("logs_role_add_error"));
     }
 
-    updateRole (serviceName, object) {
-        return this.RolesAapiService.update({ serviceName }, object).$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_update_success"))
+    updateRole (serviceName, roleId, object) {
+        return this.RolesApiService.update({ serviceName, roleId }, object).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_role_update_success", object.name);
+            })
             .catch(this.ServiceHelper.errorHandler("logs_role_update_error"));
     }
 
-    deleteRole (serviceName, roleId) {
-        return this.RolesApiService.remove({ serviceName, roleId }).$promise
+    deleteRole (serviceName, role) {
+        return this.RolesApiService.remove({ serviceName, roleId: role.roleId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_role_delete_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_role_delete_success", role.name);
             })
             .catch(this.ServiceHelper.errorHandler("logs_role_delete_error"));
     }
@@ -100,7 +104,7 @@ class LogsRolesService {
         return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success", userDetails.username);
             })
             .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
     }
@@ -109,7 +113,7 @@ class LogsRolesService {
         return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success", username);
             })
             .catch(this.ServiceHelper.errorHandler("logs_role_member_remove_error"));
     }
@@ -121,10 +125,10 @@ class LogsRolesService {
         });
     }
 
-    _handleSuccess (serviceName, operation, successMessage) {
+    _handleSuccess (serviceName, operation, successMessage, name) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
+            .then(() => this.CloudMessage.success(this.$translate.instant(successMessage, { name })));
     }
 
     _killPoller () {
@@ -145,6 +149,7 @@ class LogsRolesService {
     _resetAllCache () {
         this.RolesApiService.resetAllCache();
         this.RolesAapiService.resetAllCache();
+        this.MembersApiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
     }
 }

@@ -1,5 +1,5 @@
 class LogsIndexService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
+    constructor ($q, $translate, CloudPoll, CloudMessage, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudPoll = CloudPoll;
@@ -7,6 +7,7 @@ class LogsIndexService {
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsIndexConstant = LogsIndexConstant;
+        this.CloudMessage = CloudMessage;
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -75,26 +76,26 @@ class LogsIndexService {
         return this.IndexApiService.post({ serviceName }, object).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success", object.suffix);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_create_error"));
     }
 
-    updateIndex (serviceName, indexId, indexInfo) {
-        return this.IndexApiService.put({ serviceName, indexId }, indexInfo)
+    updateIndex (serviceName, index, indexInfo) {
+        return this.IndexApiService.put({ serviceName, indexId: index.indexId }, indexInfo)
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success", index.name);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_edit_error"));
     }
 
-    deleteIndex (serviceName, indexId) {
-        return this.IndexApiService.delete({ serviceName, indexId }).$promise
+    deleteIndex (serviceName, index) {
+        return this.IndexApiService.delete({ serviceName, indexId: index.indexId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success", index.name);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
     }
@@ -105,10 +106,10 @@ class LogsIndexService {
         this.AccountingAapiService.resetAllCache();
     }
 
-    _handleSuccess (serviceName, operation, successMessage) {
+    _handleSuccess (serviceName, operation, successMessage, name) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
+            .then(() => this.CloudMessage.success(this.$translate.instant(successMessage, { name })));
     }
 
     _killPoller () {

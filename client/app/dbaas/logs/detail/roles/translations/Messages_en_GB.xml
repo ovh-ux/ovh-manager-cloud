@@ -30,13 +30,13 @@
 
     <translation id="logs_role_modal_delete_title">Delete role</translation>
     <translation id="logs_role_modal_delete_question">Are you sure you want to delete the following role: {{name}}?</translation>
-    <translation id="logs_role_add_success">The role has been successfully created.</translation>
-    <translation id="logs_role_add_error">An error occurred while creating role.</translation>
-    <translation id="logs_role_delete_success">The role has been successfully deleted.</translation>
-    <translation id="logs_role_delete_error">An error occurred while deleting role.</translation>
-    <translation id="logs_roles_get_error">An error occurred while getting roles.</translation>
-    <translation id="logs_role_update_success">The role has been successfully updated.</translation>
-    <translation id="logs_role_update_error">An error occurred while updating the role.</translation>
+    <translation id="logs_role_add_success">The role {{name}} has been successfully created.</translation>
+    <translation id="logs_role_add_error">An error occurred while creating role: {{message}}</translation>
+    <translation id="logs_role_delete_success">The role {{name}} has been successfully deleted.</translation>
+    <translation id="logs_role_delete_error">An error occurred while deleting role {{message}}.</translation>
+    <translation id="logs_roles_get_error">An error occurred while getting roles {{message}}</translation>
+    <translation id="logs_role_update_success">The role {{name}} has been successfully updated.</translation>
+    <translation id="logs_role_update_error">An error occurred while updating the role: {{message}}.</translation>
 
     <translation id="logs_role_overview_title">Role overview</translation>
     <translation id="logs_role_overview_role">Role</translation>
