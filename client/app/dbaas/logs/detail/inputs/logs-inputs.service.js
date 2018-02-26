@@ -215,13 +215,13 @@ class LogsInputsService {
     }
 
     addNetwork (serviceName, input, network) {
-        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, { network })
+        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, network)
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network, inputTitle: input.info.title });
+                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network: network.network, inputTitle: input.info.title });
             })
-            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network, inputTitle: input.info.title }));
+            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
     removeNetwork (serviceName, input, network) {

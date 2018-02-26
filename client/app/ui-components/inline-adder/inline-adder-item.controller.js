@@ -1,12 +1,20 @@
 class InlineAdderItemCtrl {
-    constructor ($q, $element) {
-        this.$q = $q;
-        this.$element = $element;
-    }
 
     $onInit () {
-        this.items = this.items || [];
-        console.log("item", this.item);
+        this.item = this.item || null;
+        this.isNewItem = this.isNewItem !== "undefined" ? this.isNewItem : true;
+    }
+
+    add () {
+        return this.parent.add(this.item);
+    }
+
+    remove () {
+        return this.parent.remove(this.item);
+    }
+
+    isLoading () {
+        return this.parent.isLoading(this.item);
     }
 }
 

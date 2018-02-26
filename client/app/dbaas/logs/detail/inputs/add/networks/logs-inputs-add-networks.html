@@ -4,54 +4,30 @@
     <cui-page-content-title text="::'inputs_logs_networks_title' | translate"></cui-page-content-title>
     <p data-translate="inputs_logs_networks_description"></p>
 
-
-    <oui-spinner data-ng-if="ctrl.input.loading || ctrl.addNetwork.loading || ctrl.removeNetwork.loading"></oui-spinner>
-
-    <form novalidate name="ctrl.form" data-ng-hide="ctrl.input.loading">
-        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_ip_address.$invalid}">
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_4 pr-2">
-                    <input type="text" 
-                        id="input_ip_address"
-                        name="input_ip_address"
-                        class="oui-input mb-4"
-                        data-ng-model="ctrl.ipAddress"
-                        data-ng-disabled="ctrl.addNetwork.loading"
-                        autofocus
-                        required />
-                </div>
-                <button type="submit" class="oui-button oui-button_secondary"
-                    data-ng-click="ctrl.addNetwork()">
-                        <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> Add Network
-                </button>
-            </div>
-        </div>
-    </form>
-
-    <!-- <oui-datagrid rows="ctrl.input.data.allowedNetworks">
-        <oui-column title="'IP Address' " property="network" sortable="asc">
-            <span>{{$row.network}}</span>
-            <span data-ng-click="ctrl.removeNetwork($row)"><i class="oui-icon oui-icon-trash_line" aria-hidden="true"></i></span>
-        </oui-column>
-    </oui-datagrid>   -->
-
     <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
-    <cui-inline-adder inlineItems="ctrl.input.promise" property="data.allowedNetworks">
-        <form novalidate name="ctrl.form" data-ng-hide="ctrl.stream.loading">
-            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
-                <label for="input_ip_address" class="oui-label" data-translate="logs_streams_col_title"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_4">
-                        <input type="text" id="input_ip_address" name="input_ip_address"
-                                class="oui-input" data-ng-model="ctrl.ipAddress"
-                                data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_ip_address.$invalid}"
-                                autofocus
-                                required />
+    <form novalidate name="ctrl.form">
+        <cui-inline-adder unique-property="allowedNetworkId"
+            on-add="ctrl.addNetwork(item)"
+            on-remove="ctrl.removeNetwork(item)">
+            <cui-inline-adder-item  data-ng-repeat="item in ctrl.input.data.allowedNetworks"
+                item="item"
+                is-new-item="!item.allowedNetworkId">
+                    <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}">
+                        <label for="inputIpAddress{{$index}}" class="oui-label" data-translate="inputs_logs_networks_ip_address"></label>
+                        <div class="oui-field-content">
+                            <div class="oui-field-control oui-field-control_4">
+                                <input type="text" 
+                                        id="inputIpAddress{{$index}}" 
+                                        name="inputIpAddress{{$index}}"
+                                        class="oui-input" data-ng-model="item.network"
+                                        data-ng-disabled="item.allowedNetworkId"
+                                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
+                                        autofocus
+                                        required />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </form>
-    </cui-inline-adder>
-
-
+            </cui-inline-adder-item>
+        </cui-inline-adder>
+    <form>
 </section>

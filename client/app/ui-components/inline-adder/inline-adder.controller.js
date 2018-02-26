@@ -1,41 +1,59 @@
 class InlineAdderCtrl {
-    constructor ($q, $element) {
+    constructor ($q) {
         this.$q = $q;
-        this.$element = $element;
-
-        this.inlineItemsLoading = false;
     }
 
     $onInit () {
-        this.inlineItems = this.inlineItems || [];
-        this.property = this.property || [];
         this.onAdd = this.onAdd || null;
         this.onRemove = this.onRemove || null;
+        this.uniqueProperty = this.uniqueProperty || null;
 
-        this.loadInlineItems();
+        this.loadingMap = {};
     }
 
-    loadInlineItems () {
-        if (this.inlineItemsLoading) {
-            return this.$q.reject(false);
+    add (item) {
+        let p = this.$q.resolve();
+        if (this.isLoading(item)) {
+            return p;
+        } else if (this.onAdd) {
+            this.setLoading(item, true);
+            p = this.onAdd({ item })
+                .finally(() => this.setLoading(item, false));
         }
-        this.inlineItemsLoading = true;
-        return this.$q.when(this.inlineItems)
-            .then(item => {
-                console.log("input", item);
-                this.inlineItems = this.getProperty(item);
-                console.log("inlineItems", this.inlineItems);
-            })
-            .finally(() => {
-                this.inlineItemsLoading = false;
-            });
+        return p;
+    }
+
+    remove (item) {
+        let p = this.$q.resolve();
+        if (this.isLoading(item)) {
+            return p;
+        } else if (this.onRemove) {
+            this.setLoading(item, true);
+            p = this.onRemove({ item })
+                .finally(() => this.setLoading(item, false));
+        }
+        return p;
     }
 
     getProperty (item) {
-        if (!this.property) {
+        if (!this.uniqueProperty) {
             return item;
         }
-        return this.property.split(".").reduce((prev, curr) => prev ? prev[curr] : undefined, item);
+        const up = this.uniqueProperty.split(".").reduce((prev, curr) => prev ? prev[curr] : undefined, item);
+        return up;
+    }
+
+    isLoading (item) {
+        const uniqueProperty = this.getProperty(item);
+        if (this.loadingMap[uniqueProperty]) {
+            return true;
+        }
+        return false;
+    }
+
+    setLoading (item, state) {
+        const uniqueProperty = this.getProperty(item);
+        this.loadingMap[uniqueProperty] = state;
     }
 }
 
