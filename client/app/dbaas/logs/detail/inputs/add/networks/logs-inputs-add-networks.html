@@ -28,12 +28,30 @@
         </div>
     </form>
 
-    <oui-datagrid rows="ctrl.input.data.allowedNetworks">
+    <!-- <oui-datagrid rows="ctrl.input.data.allowedNetworks">
         <oui-column title="'IP Address' " property="network" sortable="asc">
             <span>{{$row.network}}</span>
             <span data-ng-click="ctrl.removeNetwork($row)"><i class="oui-icon oui-icon-trash_line" aria-hidden="true"></i></span>
         </oui-column>
-    </oui-datagrid>  
+    </oui-datagrid>   -->
+
+    <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
+    <cui-inline-adder inlineItems="ctrl.input.promise" property="data.allowedNetworks">
+        <form novalidate name="ctrl.form" data-ng-hide="ctrl.stream.loading">
+            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
+                <label for="input_ip_address" class="oui-label" data-translate="logs_streams_col_title"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <input type="text" id="input_ip_address" name="input_ip_address"
+                                class="oui-input" data-ng-model="ctrl.ipAddress"
+                                data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_ip_address.$invalid}"
+                                autofocus
+                                required />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </cui-inline-adder>
 
 
 </section>
