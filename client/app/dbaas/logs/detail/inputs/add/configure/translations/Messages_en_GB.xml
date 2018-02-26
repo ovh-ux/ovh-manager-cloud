@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="inputs_logs_configure_title">Configuration</translation>
+    <translation id="inputs_logs_configure_flowgger_title">Flowgger Configuration</translation>
+    <translation id="inputs_logs_configure_format">Format of your logs</translation>
+    <translation id="inputs_logs_configure_delimiter">Delimiter between each message</translation>
+    <translation id="inputs_logs_configure_delimiter_line">Line</translation>
+    <translation id="inputs_logs_configure_delimiter_nul">Nul</translation>
+    <translation id="inputs_logs_configure_delimiter_syslen">Syslen</translation>
+    
+    <translation id="inputs_logs_configure_messages_batch">Number of messages sent by a batch</translation>
+    <translation id="inputs_logs_configure_kafkaCoalesce">Number of message</translation>
+    
+    <translation id="inputs_logs_configure_next">Next</translation>
+    <translation id="inputs_logs_configure_previous">Previous</translation>
+    <translation id="inputs_logs_configure_later">Continue later</translation>
+    <translation id="inputs_logs_configure_format">Format of your logs</translation>
+
+
+    <translation id="inputs_logs_configure_logstash_title">Configuration Logstash</translation>
+    <translation id="inputs_logs_configure_logstash_desc">On this page you can edit input and filter parts of your Logstash configuration file, output section is written by our service. We remind you that you choose to expose TCP port 6514.</translation>
+    <translation id="inputs_logs_configure_logstash_desc2">Once edited sections you can test the configuration directly.</translation>
+    <translation id="inputs_logs_configure_logstash_wizard">Configuration Wizard</translation>
+    <translation id="inputs_logs_configure_logstash_grok">Custom Grok Patterns</translation>
+
+    <translation id="inputs_logs_configure_logstash_input_section">Section «Input»</translation>
+    <translation id="inputs_logs_configure_logstash_filter_section">Section «Filter»</translation>
+
+    <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
+    <translation id="input_logs_configure_test">Configuration test</translation>
+
+
 </translations>
