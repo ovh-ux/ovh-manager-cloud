@@ -1,4 +1,4 @@
-<div class="cui-page__content log-options">
+<div class="cui-page__content">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="logs_roles_title"></span>
     <p data-translate="logs_roles_description"></p>
@@ -19,11 +19,11 @@
 
     <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.roles.loading || ctrl.delete.loading"></oui-spinner>
 
-    <oui-datagrid rows="ctrl.roles.data">
+    <oui-datagrid rows="ctrl.roles.data" class="datagrid-without-pagination">
         <oui-column title=":: 'logs_roles_col_role' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_roles_col_description' | translate" property="info.description" sortable></oui-column>
         <oui-column title=":: 'logs_roles_col_permissions' | translate" property="permissions.length" sortable="asc"></oui-column>
-        <oui-column title=":: 'logs_roles_col_alerts' | translate" property="members.length" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_roles_col_members' | translate" property="members.length" sortable="asc"></oui-column>
         <oui-column title="::'logs_roles_col_link' | translate" property="info.optionId" sortable>
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
