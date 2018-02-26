@@ -57,7 +57,7 @@
                                 id="logs_index_modal_select"
                                 data-ng-model="ctrl.index.optionId"
                                 data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbIndex+'/'+option.maxNbIndex for option in ctrl.options.data">
-                                <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
+                                <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.quota.data.mainOfferCurrent}}/{{ctrl.quota.data.mainOfferMax}}</option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>

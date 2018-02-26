@@ -12,7 +12,7 @@
     <button type="button"
         class="oui-button oui-button_secondary mt-4"
         ng-click="ctrl.add()"
-        data-ng-disabled="ctrl.delete.loading">
+        data-ng-disabled="ctrl.delete.loading || ctrl.quota.loading">
             <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_index_add_data_feed' | translate }}
     </button>
 
