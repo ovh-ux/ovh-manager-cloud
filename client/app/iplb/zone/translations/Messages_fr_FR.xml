@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="iplb_zone_add_title" qtlid="454436">Ajouter une zone de disponibilité</translation>
-   <translation id="iplb_zone_add_intro_text" qtlid="454449">Sélectionner une ou plusieurs zone de disponibilité</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Sélectionner une ou plusieurs zones de disponibilité</translation>
    <translation id="iplb_zone_add_single_success" qtlid="454462">L'ajout de la zone doit être finalisé.</translation>
    <translation id="iplb_zone_add_plural_success" qtlid="454475">L'ajout des zones doit être finalisé.</translation>
    <translation id="iplb_zone_activate_single_success" qtlid="454488">La zone a été réactivée avec succès.</translation>
