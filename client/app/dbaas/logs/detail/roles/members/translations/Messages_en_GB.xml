@@ -20,7 +20,7 @@
     <translation id="logs_member_delete_title">Remove member</translation>
     <translation id="logs_member_delete_question">Are you sure you want to remove the following member: {{username}}?</translation>
 
-    <translation id="logs_role_member_remove_success">The member was {{name}} removed successfully.</translation>
+    <translation id="logs_role_member_remove_success">The member {{name}} was removed successfully.</translation>
     <translation id="logs_role_member_remove_error">An error occurred while removing member: {{message}}</translation>
 
 </translations>
