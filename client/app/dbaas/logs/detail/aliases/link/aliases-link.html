@@ -8,7 +8,7 @@
         {{ctrl.alias.data.info.name}}
     </h6>
     <p class="oui-paragraph mb-5" data-translate="logs_aliases_link_description"></p>
-    <form novalidate name="ctrl.form">
+    <form novalidate name="ctrl.form" class="ml-1">
         <cui-radio-bar data-ng-model="ctrl.selectedContent">
             <cui-radio-bar-item data-ng-repeat="content in ctrl.contents"
                 data-text="content.name | translate"
@@ -28,7 +28,7 @@
                 on-add="ctrl.attachStream(items)"
                 on-remove="ctrl.detachStream(items)"
                 bulk-action-enabled="false"
-                height="200px">
+                height="300px">
             </cui-dual-list>   
             <div data-ng-if="ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.STREAMS)">  
                 <p>{{::'logs_aliases_remove_indexes_message' | translate}}</p>
@@ -47,7 +47,7 @@
                 on-add="ctrl.attachIndex(items)"
                 on-remove="ctrl.detachIndex(items)"
                 bulk-action-enabled="false"
-                height="200px">
+                height="360px">
             </cui-dual-list>
             <div data-ng-if="ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.INDICES)">  
                 <p>{{::'logs_aliases_remove_streams_message' | translate}}</p>

@@ -55,7 +55,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add", "dbaas/logs/detail/inputs/add/edit"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add", "dbaas/logs/detail/inputs/add/edit", "dbaas/logs/detail/options/"]
         })
         .state("dbaas.logs.detail.inputs.add.configure", {
             url: "/configure",

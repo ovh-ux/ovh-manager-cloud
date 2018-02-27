@@ -1,3 +1,132 @@
 <div class="cui-page__content inputs-logs-add-edit">
-    <p class="oui-header_3" data-translate="{{ ctrl.editMode ? 'inputs_logs_edit_title_edit' : 'inputs_logs_edit_title_add' }}"></p>
+    <form name="ctrl.form">
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_title.$invalid}">
+            <label for="input_title" class="oui-field__label oui-label" data-translate="inputs_logs_edit_title_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <input type="text" id="input_title" name="input_title"
+                            class="oui-input" 
+                            data-ng-model="ctrl.input.data.info.title"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_title.$invalid}"
+                            data-ng-minlength="ctrl.LogsInputsAddEditConstant.TITLE_MIN_LENGTH"
+                            data-ng-maxlength="ctrl.LogsInputsAddEditConstant.TITLE_MAX_LENGTH"
+                            autofocus
+                            required />                    
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_description.$invalid}">
+            <label for="input_description" class="oui-field__label oui-label" data-translate="inputs_logs_edit_description_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <textarea
+                        class="oui-textarea"
+                        id="input_description"
+                        name="input_description"
+                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_description.$invalid}"
+                        data-ng-model="ctrl.input.data.info.description"
+                        data-ng-minlength="ctrl.LogsInputsAddEditConstant.DESCRIPTION_MIN_LENGTH"
+                        required>
+                    </textarea>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-if="ctrl.availableEngines.length > 0" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_software.$invalid}">
+            <label for="input_software" class="oui-label" data-translate="inputs_logs_edit_software_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-select">
+                        <select class="oui-select__input"
+                            name="input_software"
+                            id="input_software"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_software.$invalid}"
+                            data-ng-options="engine.engineId as (engine.name + ' ' + engine.version) for engine in ctrl.availableEngines"
+                            data-ng-model="ctrl.input.data.info.engineId"
+                            required>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_port.$invalid}">
+            <label for="input_port" class="oui-field__label oui-label" data-translate="inputs_logs_edit_port_field"></label>
+            <div class="oui-field__content">
+                <oui-numeric
+                    id="input_port"
+                    name="input_port"
+                    model="ctrl.input.data.info.exposedPort"
+                    min="ctrl.LogsInputsAddEditConstant.EXPOSED_PORT_MIN"
+                    max="ctrl.LogsInputsAddEditConstant.EXPOSED_PORT_MAX"
+                    required>
+                </oui-numeric>                    
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-if="ctrl.streams.data.length > 0" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_stream.$invalid}">
+            <label for="input_stream" class="oui-label" data-translate="inputs_logs_edit_stream_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-select">
+                        <select class="oui-select__input"
+                            name="input_stream"
+                            id="input_stream"
+                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_stream.$invalid}"
+                            data-ng-options="stream.info.streamId as stream.info.title for stream in ctrl.streams.data"
+                            data-ng-model="ctrl.input.data.info.streamId"
+                            required>
+                            <option value="" disabled selected data-translate="inputs_logs_edit_select_stream"></option>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field" data-ng-if="ctrl.options.data.length > 0">
+            <label for="input_option" class="oui-label" data-translate="inputs_logs_edit_option_field"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-select">
+                        <select class="oui-select__input"
+                            name="input_option"
+                            id="input_option"
+                            data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbInput+'/'+option.maxNbInput for option in ctrl.options.data"
+                            data-ng-model="ctrl.input.data.info.optionId">
+                            <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+        <div class="oui-field">
+            <div class="oui-field__content">
+                <div class="oui-field-control">
+                    <oui-checkbox 
+                        model="ctrl.input.data.info.singleInstanceEnabled"
+                        id="single_instance_enabled"
+                        name="single_instance_enabled"
+                        text="{{::'inputs_logs_edit_single_instance_field' | translate}}"
+                        description="{{::'inputs_logs_edit_single_instance_description' | translate}}">
+                    </oui-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="cui-form-actions">
+            <oui-spinner data-ng-show="ctrl.inputAddEdit.loading"></oui-spinner>
+            <oui-button
+                data-ng-hide="ctrl.inputAddEdit.loading"
+                text="{{::'common_next' | translate}}"
+                variant="primary"
+                type="submit"
+                on-click="ctrl.addEditInput()"
+            ></oui-button>
+        </div>
+    </form>
 </div>

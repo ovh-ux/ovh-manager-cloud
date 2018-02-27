@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="inputs_logs_title_add">Add a collector tool</translation>
-    <translation id="inputs_logs_title_edit">Edit collector tool</translation>
+    <translation id="inputs_logs_title_add">Add a collector</translation>
+    <translation id="inputs_logs_title_edit">Edit collector</translation>
     
     <translation id="inputs_logs_step1_edit">Edit</translation>
     <translation id="inputs_logs_step1_add">Add</translation>

@@ -1,5 +1,6 @@
 class LogsRolesCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsRolesService) {
+    constructor ($state, $stateParams, CloudMessage, ControllerHelper, LogsRolesService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
@@ -35,7 +36,8 @@ class LogsRolesCtrl {
                 controllerAs: "ctrl",
                 resolve: {
                     roleInfo: () => info,
-                    options: () => this.roleOptions
+                    options: () => this.roleOptions,
+                    quota: () => this.quota
                 }
             }
         }).then(() => this.initLoaders());
@@ -65,6 +67,18 @@ class LogsRolesCtrl {
             });
             this.delete.load();
         });
+    }
+
+    manageMembers (info) {
+        this.$state.go("dbaas.logs.detail.members", {
+            serviceName: this.serviceName,
+            roleId: info.roleId
+        });
+    }
+
+    // TODO: edit permission page
+    editPermissions () {
+        return null;
     }
 }
 

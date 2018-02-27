@@ -1,5 +1,6 @@
 class LogsInputsAddNetworksCtrl {
-    constructor ($stateParams, ControllerHelper, LogsInputsService, CloudMessage) {
+    constructor ($q, $stateParams, ControllerHelper, LogsInputsService, CloudMessage) {
+        this.$q = $q;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.inputId = this.$stateParams.inputId;
@@ -7,31 +8,42 @@ class LogsInputsAddNetworksCtrl {
         this.LogsInputsService = LogsInputsService;
         this.CloudMessage = CloudMessage;
         this.editMode = Boolean(this.inputId);
+
+        this.initLoaders();
     }
 
-    $onInit () {
+    initLoaders () {
         this.input = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
+                .then(input => {
+                    input.allowedNetworks.push({
+                        network: null
+                    });
+                    return input;
+                })
         });
         this.input.load();
     }
 
-    addNetwork () {
+    addNetwork (network) {
+        if (this.form.$invalid) {
+            return this.$q.reject();
+        }
         this.CloudMessage.flushChildMessage();
-        this.addNetwork = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.addNetwork(this.serviceName, this.input.data, this.ipAddress)
+        return this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.addNetwork(this.serviceName, this.input.data, network)
                 .then(() => this.input.load())
-        });
-        this.addNetwork.load();
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        }).load();
     }
 
     removeNetwork (network) {
         this.CloudMessage.flushChildMessage();
-        this.removeNetwork = this.ControllerHelper.request.getHashLoader({
+        return this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.removeNetwork(this.serviceName, this.input.data, network)
                 .then(() => this.input.load())
-        });
-        this.removeNetwork.load();
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        }).load();
     }
 }
 

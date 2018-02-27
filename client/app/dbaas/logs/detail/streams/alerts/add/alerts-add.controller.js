@@ -55,7 +55,7 @@ class LogsStreamsAlertsAddCtrl {
      */
     cancel () {
         this._goBack();
-    }    
+    }
 
     /**
      * Returns the valid threshold types based on the condition (alert) type

@@ -22,5 +22,7 @@ angular.module("managerApp").constant("LogsInputsConstant", {
         unknown: "error"
     },
     FAILURE: "FAILURE",
-    SUCCESS: "SUCCESS"
+    SUCCESS: "SUCCESS",
+    DEFAULT_PORT: 6514,
+    optionType: "logs-input"
 });

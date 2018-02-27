@@ -1,14 +1,34 @@
 class LogsInputsService {
-    constructor ($q, CloudMessage, CloudPoll, LogsInputsConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, CloudMessage, CloudPoll, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.CloudMessage = CloudMessage;
         this.CloudPoll = CloudPoll;
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
         this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
         this.LogsInputsConstant = LogsInputsConstant;
+        this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
+    }
+
+    /**
+     * add input
+     *
+     * @param {any} serviceName
+     * @param {any} input, input object to be added
+     * @returns promise which will resolve with the operation object
+     * @memberof LogsInputsService
+     */
+    addInput (serviceName, input) {
+        return this.InputsApiLexiService.create({ serviceName }, this._transformInputToSave(input))
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_inputs_add_success", { inputTitle: input.info.title });
+            })
+            .catch(err => this._handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -27,6 +47,19 @@ class LogsInputsService {
                 return this._handleSuccess(serviceName, operation.data, "logs_inputs_delete_success", { inputTitle: input.info.title });
             })
             .catch(err => this._handleError("logs_inputs_delete_error", err, { inputTitle: input.info.title }));
+    }
+
+    /**
+     * returns array of Input IDs of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of input IDs
+     * @memberof LogsInputsService
+     */
+    getDetails (serviceName) {
+        return this.DetailsAapiService.me({ serviceName })
+            .$promise.then(details => this._transformDetails(details))
+            .catch(this.ServiceHelper.errorHandler("logs_inputs_details_get_error"));
     }
 
     /**
@@ -94,9 +127,21 @@ class LogsInputsService {
             });
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbInput,
+                current: me.offer.curNbInput
+            })).catch(this.ServiceHelper.errorHandler("logs_inputs_main_offer_get_error"));
+    }
+
     getNewInput () {
         return {
-            data: {},
+            data: {
+                info: {
+                    exposedPort: this.LogsInputsConstant.DEFAULT_PORT
+                }
+            },
             loading: false
         };
     }
@@ -118,6 +163,17 @@ class LogsInputsService {
                 };
                 return quota;
             }).catch(this.ServiceHelper.errorHandler("logs_inputs_quota_get_error"));
+    }
+
+    /**
+     * returns the subscribed options
+     *
+     * @param {any} serviceName
+     * @returns array of options
+     * @memberof LogsInputsService
+     */
+    getSubscribedOptions (serviceName) {
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsInputsConstant.optionType);
     }
 
     /**
@@ -192,27 +248,37 @@ class LogsInputsService {
      */
     transformInput (input) {
         input.info.engine.software = [input.info.engine.name, input.info.engine.version].join(" ");
+        input.info.exposedPort = parseInt(input.info.exposedPort, 10);
         input.actionsMap = input.actions.reduce((actions, action) => {
             actions[action.type] = action.isAllowed;
             return actions;
         }, {});
-        input.info.state = input.info.status === this.LogsInputsConstant.status.PROCESSING ? this.LogsInputsConstant.state.PROCESSING :
+
+        const isProcessing = input.info.status === this.LogsInputsConstant.status.PROCESSING;
+        const isToBeConfigured = input.info.status === this.LogsInputsConstant.status.INIT && !input.actionsMap.START;
+        const isPending = (input.info.status === this.LogsInputsConstant.status.INIT || input.info.status === this.LogsInputsConstant.status.PENDING) &&
+                          input.actionsMap.START;
+        const isRunning = input.info.status === this.LogsInputsConstant.status.RUNNING;
+
+        input.info.state = isProcessing ? this.LogsInputsConstant.state.PROCESSING :
             input.info.isRestartRequired ? this.LogsInputsConstant.state.RESTART_REQUIRED :
-                input.info.status === this.LogsInputsConstant.status.INIT && !input.actionsMap.START ? this.LogsInputsConstant.state.TO_CONFIGURE :
-                    (input.info.status === this.LogsInputsConstant.status.INIT || input.info.status === this.LogsInputsConstant.status.PENDING) && input.actionsMap.START ? this.LogsInputsConstant.state.PENDING :
-                        input.info.status === this.LogsInputsConstant.status.RUNNING ? this.LogsInputsConstant.state.RUNNING : this.LogsInputsConstant.state.UNKNOWN;
+                isToBeConfigured ? this.LogsInputsConstant.state.TO_CONFIGURE :
+                    isPending ? this.LogsInputsConstant.state.PENDING :
+                        isRunning ? this.LogsInputsConstant.state.RUNNING :
+                            this.LogsInputsConstant.state.UNKNOWN;
+
         input.info.stateType = this.LogsInputsConstant.stateType[input.info.state];
         return input;
     }
 
     addNetwork (serviceName, input, network) {
-        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, { network })
+        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, network)
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network, inputTitle: input.info.title });
+                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network: network.network, inputTitle: input.info.title });
             })
-            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network, inputTitle: input.info.title }));
+            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
     removeNetwork (serviceName, input, network) {
@@ -223,6 +289,24 @@ class LogsInputsService {
                 return this._handleSuccess(serviceName, operation, "logs_inputs_network_remove_success", { network: network.network, inputTitle: input.info.title });
             })
             .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
+    }
+
+    /**
+     * update input
+     *
+     * @param {any} serviceName
+     * @param {any} input, input object to be updated
+     * @returns promise which will resolve with the operation object
+     * @memberof LogsInputsService
+     */
+    updateInput (serviceName, input) {
+        return this.InputsApiLexiService.update({ serviceName, inputId: input.info.inputId }, this._transformInputToSave(input))
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._handleSuccess(serviceName, operation.data, "logs_inputs_update_success", { inputTitle: input.info.title });
+            })
+            .catch(err => this._handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -277,6 +361,27 @@ class LogsInputsService {
             stopCondition: opn => opn.state === this.LogsInputsConstant.FAILURE || opn.state === this.LogsInputsConstant.SUCCESS
         });
         return pollar;
+    }
+
+    _transformDetails (details) {
+        details.engines.forEach(engine => {
+            if (!engine.isDeprecated) {
+                engine.name = engine.name.charAt(0).toUpperCase() + engine.name.toLowerCase().slice(1);
+            }
+        });
+        return details;
+    }
+
+    _transformInputToSave (input) {
+        return {
+            title: input.info.title,
+            description: input.info.description,
+            engineId: input.info.engineId,
+            optionId: input.info.optionId ? input.info.optionId : undefined,
+            streamId: input.info.streamId,
+            singleInstanceEnabled: input.info.singleInstanceEnabled,
+            exposedPort: input.info.exposedPort.toString()
+        };
     }
 }
 
