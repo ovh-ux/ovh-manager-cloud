@@ -1,5 +1,6 @@
 class LogsInputsAddEditCtrl {
-    constructor ($state, $stateParams, CloudMessage, ControllerHelper, LogsInputsAddEditConstant, LogsInputsService, LogsStreamsService) {
+    constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper, LogsInputsAddEditConstant, LogsInputsService, LogsStreamsService) {
+        this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -73,7 +74,7 @@ class LogsInputsAddEditCtrl {
                 this.LogsInputsService.addInput(this.serviceName, this.input.data)
         });
         return this.inputAddEdit.load()
-            .then(() => this.$state.go("dbaas.logs.detail.inputs.add.configure"));
+            .then(() => this.$state.go("dbaas.logs.detail.inputs.wizard.configure"));
     }
 }
 
