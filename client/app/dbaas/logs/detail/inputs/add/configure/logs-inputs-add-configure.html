@@ -39,7 +39,9 @@
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
-                        <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        <a class="oui-link" oui-tooltip="{{:: 'input_logs_configure_delimiter_tooltip' | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -53,7 +55,9 @@
                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.kafkaCoalesce.$invalid}"
                         autofocus required />
                     </div>
-                    <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                    <a class="oui-link" oui-tooltip="{{:: 'input_logs_configure_kafka_coalesce_tooltip' | translate}}">
+                        <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
@@ -108,7 +112,7 @@
                 </div>
             </div>
 
-            <label class="oui-label mt-3">conf.d/logstash.conf</label>
+            <label class="oui-header_6 mt-3">conf.d/logstash.conf</label>
             <label class="oui-label pl-4">input {</label>
 
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input.$invalid}">
@@ -137,8 +141,9 @@
                     </div>
                 </div>
             </div>
+            <label class="oui-label pl-4">}</label>
 
-            <label class="oui-label mt-3">conf.d/logpatterns/custom-grok-patterns</label>
+            <label class="oui-header_6 mt-3">conf.d/logpatterns/custom-grok-patterns</label>
 
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.grok.$invalid}">
                 <label for="grok" class="oui-label" data-translate="inputs_logs_configure_logstash_grok"></label>
@@ -164,14 +169,14 @@
                         class="oui-button oui-button_secondary"
                         data-translate="inputs_logs_configure_previous"
                         data-ng-click="ctrl.cancel()"></button>
-                    <a class="oui-button oui-button_link"
-                        data-translate="inputs_logs_configure_later"
-                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
                         data-translate="inputs_logs_configure_next"
                         data-ng-click="ctrl.saveConfig()"></button>
+                    <a class="oui-button oui-button_link"
+                        data-translate="inputs_logs_configure_later"
+                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
                 </div>
             </div>
         </form>

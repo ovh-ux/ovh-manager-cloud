@@ -27,6 +27,9 @@
 
     <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
     <translation id="input_logs_configure_test">Configuration test</translation>
+    
+    <translation id="input_logs_configure_delimiter_tooltip">The delimiter will be "\ n" for each line break.</translation>
+    <translation id="input_logs_configure_kafka_coalesce_tooltip">Number of messages kept in RAM by Flowgger before it sends them to Kafka. A high value is more powerful but may cause indexing latency if you send few messages.</translation>
 
 
 </translations>
