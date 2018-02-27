@@ -42,7 +42,7 @@ class LogsInputsAddConfigureCtrl {
     htmlDecode (s) {
         let out = "";
         if (s === null) {
-            return null;
+            return out;
         }
         const l = s.length;
         for (let i = 0; i < l; i++) {
@@ -323,7 +323,6 @@ class LogsInputsAddConfigureCtrl {
     }
 
     _initFlowgger (configuration) {
-        console.log(configuration);
         this.configuration.flowgger.kafkaCoalesce = configuration.kafkaCoalesce;
         this.configuration.flowgger.logFormat = configuration.logFormat;
         this.configuration.flowgger.logFraming = configuration.logFraming;

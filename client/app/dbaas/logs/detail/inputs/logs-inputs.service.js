@@ -292,7 +292,6 @@ class LogsInputsService {
     }
 
     updateFlowgger (serviceName, input, flowgger) {
-        console.log("updateFlowgger");
         return this.InputsApiLexiService.updateFlowgger({ serviceName, inputId: input.info.inputId }, flowgger)
             .$promise
             .then(operation => {
