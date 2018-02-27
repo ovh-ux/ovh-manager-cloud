@@ -32,9 +32,10 @@
             </cui-inline-adder-item>
         </cui-inline-adder>
     </form>
+    <form novalidate
     <div class="cui-form-actions">
         <div data-ng-if="!ctrl.saving.loading">
-            <a class="oui-button oui-button_secondary"
+            <a class="oui-button oui-button_secondary mr-2"
                 data-translate="logs_previous"
                 data-ui-sref="dbaas.logs.detail.inputs.editwizard.configure"></a>
             <oui-button
@@ -49,4 +50,5 @@
                 data-ui-sref="dbaas.logs.detail.inputs"></a>
         </div>
     </div>
+    </form>
 </section>
