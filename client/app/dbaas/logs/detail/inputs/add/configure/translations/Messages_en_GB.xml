@@ -28,5 +28,8 @@
     <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
     <translation id="input_logs_configure_test">Configuration test</translation>
 
+    <translation id="logs_inputs_flowgger_update_success">The flowgger configuration has been updated successfully for input {{inputTitle}}</translation>
+    <translation id="logs_inputs_flowgger_update_error">An error has occurred while updating flowgger configuration of {{inputTitle}}: {{message}}</translation>
+
 
 </translations>

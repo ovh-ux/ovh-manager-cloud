@@ -64,15 +64,17 @@
                         class="oui-button oui-button_secondary"
                         data-translate="inputs_logs_configure_previous"
                         data-ng-click="ctrl.cancel()"></button>
+                    <a class="oui-button oui-button_secondary"
+                        data-translate="inputs_logs_configure_previous"
+                        data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
                         data-translate="inputs_logs_configure_next"
-                        data-ng-click="ctrl.saveConfig()"></button>
+                        data-ng-click="ctrl.saveFlowgger()"></button>
                     <a class="oui-button oui-button_link"
                         data-translate="inputs_logs_configure_later"
-                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
-                    </a>
+                        data-ui-sref="dbaas.logs.detail.inputs"></a>
                 </div>
             </div>
         </form>

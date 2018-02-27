@@ -1,11 +1,13 @@
 class LogsInputsAddConfigureCtrl {
-    constructor ($stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant) {
+    constructor ($state, $stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.inputId = this.$stateParams.inputId;
         this.ControllerHelper = ControllerHelper;
         this.LogsInputsService = LogsInputsService;
         this.LogsInputsConfigureConstant = LogsInputsConfigureConstant;
+        this.CloudMessage = CloudMessage;
         this.editMode = Boolean(this.inputId);
         this.configuration = {
             engineType: "",
@@ -13,14 +15,6 @@ class LogsInputsAddConfigureCtrl {
             logstash: {}
         };
         this._initLoaders();
-    }
-
-    $onInit () {
-        if (this.editMode) {
-            this.input.load();
-        } else {
-            this.input = this.LogsInputsService.getNewInput();
-        }
     }
 
     /**
@@ -40,23 +34,24 @@ class LogsInputsAddConfigureCtrl {
                     }
                 })
         });
+        this.input.load();
     }
 
     htmlDecode (s) {
-        var out = "";
+        let out = "";
         if (s === null) {
-            return;
+            return null;
         }
-        var l = s.length;
-        for (var i = 0; i < l; i++) {
-            var ch = s.charAt(i);
+        const l = s.length;
+        for (let i = 0; i < l; i++) {
+            let ch = s.charAt(i);
             if (ch === "&") {
-                var semicolonIndex = s.indexOf(";", i + 1);
+                const semicolonIndex = s.indexOf(";", i + 1);
                 if (semicolonIndex > 0) {
-                    var entity = s.substring(i + 1, semicolonIndex);
+                    const entity = s.substring(i + 1, semicolonIndex);
                     if (entity.length > 1 && entity.charAt(0) === "#") {
                         if (entity.charAt(1) === "x" || entity.charAt(1) === "X") {
-                            ch = String.fromCharCode("0" + entity.substring(1));
+                            ch = String.fromCharCode(`0${entity.substring(1)}`);
                         } else {
                             ch = String.fromCharCode(entity.substring(1));
                         }
@@ -344,6 +339,23 @@ class LogsInputsAddConfigureCtrl {
         this.configuration.logstash.inputSection = this.LogsInputsConfigureConstant.logStashWizard[name].input;
         this.configuration.logstash.filterSection = this.LogsInputsConfigureConstant.logStashWizard[name].filter;
         this.configuration.logstash.patternSection = this.LogsInputsConfigureConstant.logStashWizard[name].patterns;
+    }
+
+    saveConfig () {
+        this.CloudMessage.flushChildMessage();
+        this.saving = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.updateFlowgger(this.serviceName, this.input.data, this.configuration.flowgger)
+                .then(() => this.goToNetworkPage())
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        });
+        this.saving.load();
+    }
+
+    goToNetworkPage () {
+        this.$state.go("dbaas.logs.detail.inputs.editwizard.networks", {
+            serviceName: this.serviceName,
+            inputId: this.inputId
+        });
     }
 }
 
