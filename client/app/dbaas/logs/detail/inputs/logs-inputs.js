@@ -34,9 +34,9 @@ angular.module("managerApp").config($stateProvider => {
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/console"]
         })
-        .state("dbaas.logs.detail.inputs.add", {
-            url: "/add/:inputId",
-            redirectTo: "dbaas.logs.detail.inputs.add.edit",
+        .state("dbaas.logs.detail.inputs.addwizard", {
+            url: "/input",
+            redirectTo: "dbaas.logs.detail.inputs.addwizard.add",
             views: {
                 logsInputs: {
                     templateUrl: "app/dbaas/logs/detail/inputs/add/logs-inputs-add.html",
@@ -46,8 +46,20 @@ angular.module("managerApp").config($stateProvider => {
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add"]
         })
-        .state("dbaas.logs.detail.inputs.add.edit", {
-            url: "/edit",
+        .state("dbaas.logs.detail.inputs.editwizard", {
+            url: "/input/:inputId",
+            redirectTo: "dbaas.logs.detail.inputs.editwizard.edit",
+            views: {
+                logsInputs: {
+                    templateUrl: "app/dbaas/logs/detail/inputs/add/logs-inputs-add.html",
+                    controller: "LogsInputsAddCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add"]
+        })
+        .state("dbaas.logs.detail.inputs.addwizard.add", {
+            url: "/add",
             views: {
                 logsInputsAdd: {
                     templateUrl: "app/dbaas/logs/detail/inputs/add/edit/logs-inputs-add-edit.html",
@@ -57,7 +69,18 @@ angular.module("managerApp").config($stateProvider => {
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add", "dbaas/logs/detail/inputs/add/edit", "dbaas/logs/detail/options/"]
         })
-        .state("dbaas.logs.detail.inputs.add.configure", {
+        .state("dbaas.logs.detail.inputs.editwizard.edit", {
+            url: "/details",
+            views: {
+                logsInputsAdd: {
+                    templateUrl: "app/dbaas/logs/detail/inputs/add/edit/logs-inputs-add-edit.html",
+                    controller: "LogsInputsAddEditCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add", "dbaas/logs/detail/inputs/add/edit", "dbaas/logs/detail/options/"]
+        })
+        .state("dbaas.logs.detail.inputs.editwizard.configure", {
             url: "/configure",
             views: {
                 logsInputsAdd: {
@@ -68,7 +91,7 @@ angular.module("managerApp").config($stateProvider => {
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/add", "dbaas/logs/detail/inputs/add/configure"]
         })
-        .state("dbaas.logs.detail.inputs.add.networks", {
+        .state("dbaas.logs.detail.inputs.editwizard.networks", {
             url: "/networks",
             views: {
                 logsInputsAdd: {
