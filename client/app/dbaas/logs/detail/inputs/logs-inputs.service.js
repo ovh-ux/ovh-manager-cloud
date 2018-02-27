@@ -281,6 +281,14 @@ class LogsInputsService {
             .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
+    executeTest (serviceName, input) {
+        return this.InputsApiLexiService.test({ serviceName, inputId: input.info.inputId })
+            .$promise
+            .then(operation => this._pollOperation(serviceName, operation).$promise)
+            .then(() => this.getTestResults(serviceName, input))
+            .catch(err => this._handleError("logs_inputs_test_error", err, { inputTitle: input.info.title }));
+    }
+
     removeNetwork (serviceName, input, network) {
         return this.InputsApiLexiService.rejectNetwork({ serviceName, inputId: input.info.inputId, allowedNetworkId: network.allowedNetworkId })
             .$promise
@@ -307,6 +315,10 @@ class LogsInputsService {
                 return this._handleSuccess(serviceName, operation.data, "logs_inputs_update_success", { inputTitle: input.info.title });
             })
             .catch(err => this._handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
+    }
+
+    getTestResults (serviceName, input) {
+        return this.InputsApiLexiService.testResult({ serviceName, inputId: input.info.inputId }).$promise;
     }
 
     /**

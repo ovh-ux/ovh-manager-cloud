@@ -6,7 +6,6 @@ class LogsInputsAddConfigureCtrl {
         this.ControllerHelper = ControllerHelper;
         this.LogsInputsService = LogsInputsService;
         this.LogsInputsConfigureConstant = LogsInputsConfigureConstant;
-        this.editMode = Boolean(this.inputId);
         this.configuration = {
             engineType: "",
             flowgger: {},
@@ -16,11 +15,8 @@ class LogsInputsAddConfigureCtrl {
     }
 
     $onInit () {
-        if (this.editMode) {
-            this.input.load();
-        } else {
-            this.input = this.LogsInputsService.getNewInput();
-        }
+        this.input.load()
+            .then(() => this.test.load());
     }
 
     /**
@@ -38,7 +34,11 @@ class LogsInputsAddConfigureCtrl {
                     } else {
                         this._initFlowgger(result.info.engine.configuration);
                     }
+                    return result;
                 })
+        });
+        this.test = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.getTestResults(this.serviceName, this.input.data)
         });
     }
 
@@ -326,7 +326,6 @@ class LogsInputsAddConfigureCtrl {
     }
 
     _initFlowgger (configuration) {
-        console.log(configuration);
         this.configuration.flowgger.kafkaCoalesce = configuration.kafkaCoalesce;
         this.configuration.flowgger.logFormat = configuration.logFormat;
         this.configuration.flowgger.logFraming = configuration.logFraming;
@@ -344,6 +343,13 @@ class LogsInputsAddConfigureCtrl {
         this.configuration.logstash.inputSection = this.LogsInputsConfigureConstant.logStashWizard[name].input;
         this.configuration.logstash.filterSection = this.LogsInputsConfigureConstant.logStashWizard[name].filter;
         this.configuration.logstash.patternSection = this.LogsInputsConfigureConstant.logStashWizard[name].patterns;
+    }
+
+    executeTest () {
+        this.test = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.executeTest(this.serviceName, this.input.data)
+        });
+        this.test.load();
     }
 }
 

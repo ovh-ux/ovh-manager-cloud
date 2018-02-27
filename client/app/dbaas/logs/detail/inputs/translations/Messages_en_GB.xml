@@ -17,4 +17,5 @@
     <translation id="logs_inputs_stop_success">The collector tool {{inputTitle}} has been stopped successfully</translation>
     <translation id="logs_inputs_stop_error">An error has occurred while trying to stop the collector tool {{inputTitle}}: {{message}}</translation>
     <translation id="logs_inputs_logurl_error">An error has occurred while trying to get the log URL for the collector tool: {{message}}</translation>
+    <translation id="logs_inputs_test_error">An error has occurred while trying to run test for the collector tool {{inputTitle}}: {{message}}</translation>    
 </translations>

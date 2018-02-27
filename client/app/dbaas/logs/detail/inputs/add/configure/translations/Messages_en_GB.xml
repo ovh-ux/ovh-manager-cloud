@@ -27,6 +27,9 @@
 
     <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
     <translation id="input_logs_configure_test">Configuration test</translation>
+    <translation id="input_logs_configure_test_progress">Test in progress</translation>
 
-
+    <translation id="input_logs_configure_test_timestamp">Last executed: {{ timestamp }}</translation>
+    <translation id="input_logs_configure_test_success">Standard output: {{ output }}</translation>
+    <translation id="input_logs_configure_test_failure">Error output: {{ output }}</translation>
 </translations>
