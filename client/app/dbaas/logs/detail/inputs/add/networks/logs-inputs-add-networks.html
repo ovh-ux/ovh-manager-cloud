@@ -1,11 +1,13 @@
 
 
-<section class="cui-page__content inputs-logs-add-network">
-    <cui-page-content-title text="::'inputs_logs_networks_title' | translate"></cui-page-content-title>
+<section class="cui-page__content inputs-logs-add-network pt-0">
     <p data-translate="inputs_logs_networks_description"></p>
 
+    <h6 class="oui-header_6 mb-3">
+        {{::'inputs_logs_networks_add_remove_network_title' | translate}}
+    </h6> 
     <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
-    <form novalidate name="ctrl.form">
+    <form novalidate name="ctrl.form" style="max-width: 52rem;">
         <cui-inline-adder unique-property="allowedNetworkId"
             on-add="ctrl.addNetwork(item)"
             on-remove="ctrl.removeNetwork(item)">
@@ -22,8 +24,8 @@
                                         class="oui-input" data-ng-model="item.network"
                                         data-ng-disabled="item.allowedNetworkId"
                                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
-                                        autofocus
                                         required />
+                                <p data-ng-if="!item.allowedNetworkId">{{::'inputs_logs_networks_ip_address_example' | translate}}</p>
                             </div>
                         </div>
                     </div>

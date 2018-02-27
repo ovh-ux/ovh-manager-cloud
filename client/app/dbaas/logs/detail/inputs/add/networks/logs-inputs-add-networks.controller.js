@@ -30,20 +30,20 @@ class LogsInputsAddNetworksCtrl {
             return this.$q.reject();
         }
         this.CloudMessage.flushChildMessage();
-        this.addNetwork = this.ControllerHelper.request.getHashLoader({
+        return this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.addNetwork(this.serviceName, this.input.data, network)
                 .then(() => this.input.load())
-        });
-        return this.addNetwork.load();
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        }).load();
     }
 
     removeNetwork (network) {
         this.CloudMessage.flushChildMessage();
-        this.removeNetwork = this.ControllerHelper.request.getHashLoader({
+        return this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.removeNetwork(this.serviceName, this.input.data, network)
                 .then(() => this.input.load())
-        });
-        return this.removeNetwork.load();
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        }).load();
     }
 }
 
