@@ -338,7 +338,7 @@ class ManagerNavbarService {
             subLinks: _.map(this.LANGUAGES.available, (lang) => ({
                 title: lang.name,
                 isActive: lang.key === currentLanguage.key,
-                click: function () {
+                click: () => {
                     this.translateService.setUserLocale(lang.key);
                     window.location.reload();
                 },
