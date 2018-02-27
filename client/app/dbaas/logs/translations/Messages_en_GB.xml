@@ -8,5 +8,6 @@
     <translation id="logs_streams_title">Data streams</translation>
     <translation id="logs_index_title">Elasticsearch Indexes</translation>
     <translation id="logs_main_offer">Main offer</translation>
+    <translation id="logs_finish">Finish</translation>
     <translation id="logs_main_offer_get_error">An error has occurred while getting main offer details: {{message}}</translation>
 </translations>

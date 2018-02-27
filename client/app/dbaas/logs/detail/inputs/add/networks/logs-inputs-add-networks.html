@@ -31,5 +31,15 @@
                     </div>
             </cui-inline-adder-item>
         </cui-inline-adder>
-    <form>
+    </form>
+    <div class="cui-form-actions">
+        <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
+        <oui-button
+            data-ng-if="!ctrl.input.loading"
+            text="{{::'logs_finish' | translate}}"
+            variant="primary"
+            type="submit"
+            data-ui-sref="dbaas.logs.detail.inputs">
+        </oui-button>
+    </div>
 </section>
