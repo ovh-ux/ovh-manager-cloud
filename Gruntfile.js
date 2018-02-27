@@ -744,7 +744,7 @@ module.exports = function (grunt) {
             dev: {
                 expand: true,
                 flatten: false,
-                src: ["<%= yeoman.client %>/{app,components}/**/translations/*fr_FR.xml"],
+                src: ["<%= yeoman.client %>/{app,components}/**/translations/*.xml"],
                 filter: "isFile",
                 extendFrom: ["fr_FR", "en_GB"]
             },
