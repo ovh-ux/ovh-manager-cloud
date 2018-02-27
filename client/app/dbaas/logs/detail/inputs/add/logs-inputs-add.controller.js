@@ -30,6 +30,10 @@ class LogsInputsAddCtrl {
             });
         }
     }
+
+    gotoInputsHome () {
+        this.$state.go("dbaas.logs.detail.inputs");
+    }
 }
 
 angular.module("managerApp").controller("LogsInputsAddCtrl", LogsInputsAddCtrl);
