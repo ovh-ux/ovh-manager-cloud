@@ -73,7 +73,12 @@ class LogsInputsAddEditCtrl {
                 this.LogsInputsService.addInput(this.serviceName, this.input.data)
         });
         return this.inputAddEdit.load()
-            .then(() => this.$state.go("dbaas.logs.detail.inputs.add.configure"));
+            .then(successData => {
+                this.$state.go("dbaas.logs.detail.inputs.add.configure", {
+                    serviceName: this.serviceName,
+                    inputId: successData[0].item.inputId
+                });
+            });
     }
 }
 
