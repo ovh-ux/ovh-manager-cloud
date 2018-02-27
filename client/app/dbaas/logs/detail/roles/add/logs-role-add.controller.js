@@ -60,7 +60,7 @@ class LogsRoleAddModalCtrl {
         }
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsRolesService.updateRole(this.serviceName, this.role)
+                this.LogsRolesService.updateRole(this.serviceName, this.roleInfo.roleId, this.role)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
         });

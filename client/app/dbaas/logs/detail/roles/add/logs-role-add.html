@@ -64,8 +64,15 @@
                         <button
                             class="oui-button oui-button_primary"
                             type="submit"
+                            data-ng-if="!ctrl.isEdit"
                             data-translate="common_save"
                             data-ng-click="ctrl.saveRole()"></button>
+                        <button
+                            data-ng-if="ctrl.isEdit"
+                            class="oui-button oui-button_primary"
+                            type="submit"
+                            data-translate="common_save"
+                            data-ng-click="ctrl.updateRole()"></button>
                     </div>
                 </div>
             </div>
