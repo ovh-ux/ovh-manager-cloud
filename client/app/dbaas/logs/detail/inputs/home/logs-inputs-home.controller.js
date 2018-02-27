@@ -110,7 +110,7 @@ class LogsInputsHomeCtrl {
      */
     edit (input) {
         this.CloudMessage.flushChildMessage();
-        this.$state.go("dbaas.logs.detail.inputs.wizard.edit", {
+        this.$state.go("dbaas.logs.detail.inputs.editwizard.edit", {
             serviceName: this.serviceName,
             inputId: input.info.inputId
         });

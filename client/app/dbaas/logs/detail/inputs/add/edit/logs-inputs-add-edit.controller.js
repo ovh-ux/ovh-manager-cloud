@@ -75,9 +75,15 @@ class LogsInputsAddEditCtrl {
         });
         return this.inputAddEdit.load()
             .then(successData => {
-                this.$state.go("dbaas.logs.detail.inputs.wizard.configure", {
+                let id = null;
+                if (this.editMode) {
+                    id = this.inputId;
+                } else {
+                    id = successData[0].item.inputId;
+                }
+                this.$state.go("dbaas.logs.detail.inputs.editwizard.configure", {
                     serviceName: this.serviceName,
-                    inputId: successData[0].item.inputId
+                    inputId: id
                 });
             });
     }
