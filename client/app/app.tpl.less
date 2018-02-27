@@ -4,7 +4,6 @@
 @oui-icon-dist-folder: "../bower_components/ovh-ui-kit/dist/icons";
 @oui-font-source-sans-pro-folder: "../bower_components/ovh-ui-kit/packages/oui-typography/fonts/source-sans-pro";
 @import (less) '../bower_components/ovh-angular-list-view/dist/ovh-angular-list-view.min.css';
-@import '../bower_components/bootstrap/less/bootstrap.less';
 @import '../bower_components/font-awesome/less/font-awesome.less';
 @import '../bower_components/ovh-angular-sidebar-menu/less/ovh-angular-sidebar-menu.less';
 @import '../bower_components/ovh-angular-actions-menu/less/ovh-angular-actions-menu.less';
@@ -45,13 +44,13 @@
 // Overide ovh-form-flat Params
 @FormFlatBorderSize      : 1px;
 
-// Params use by bootstrap and app
-// @v6-min-with :@screen-sm-min + 1;
-// @v6-max-with : @screen-sm-min;
-
 // Overide Bootstrap Params
+@screen-xs-max: @v6-max-with;
 @screen-sm-min: @v6-min-with;
-@screen-sm-max: @v6-max-with;
+@screen-sm-max: (@oui-responsive-breakpoint-tablet - 1px);
+@screen-md-min: @oui-responsive-breakpoint-tablet;
+@screen-md-max: (@oui-responsive-breakpoint-medium - 1px);
+@screen-lg-min: @oui-responsive-breakpoint-medium;
 @component-offset-horizontal : 200px;
 @modal-backdrop-bg: @oui-color-shuttle;
 
