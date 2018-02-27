@@ -334,7 +334,10 @@ class LogsInputsService {
      */
     _handleSuccess (serviceName, operation, successMessage, messageData) {
         return this._pollOperation(serviceName, operation)
-            .$promise.then(() => this.ServiceHelper.successHandler(successMessage)(messageData));
+            .$promise.then(successData => {
+                this.ServiceHelper.successHandler(successMessage)(messageData);
+                return successData;
+            });
     }
 
     /**
