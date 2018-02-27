@@ -292,11 +292,12 @@ class LogsInputsService {
     }
 
     updateFlowgger (serviceName, input, flowgger) {
+        console.log("updateFlowgger");
         return this.InputsApiLexiService.updateFlowgger({ serviceName, inputId: input.info.inputId }, flowgger)
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, null, null);
+                return this._handleSuccess(serviceName, operation.data || operation, null, null);
             })
             .catch(err => this._handleError("logs_inputs_flowgger_update_error", err, { inputTitle: input.info.title }));
     }

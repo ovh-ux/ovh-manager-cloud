@@ -1,5 +1,6 @@
 class LogsInputsAddConfigureCtrl {
-    constructor ($state, $stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+    constructor ($q, $state, $stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+        this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -25,13 +26,14 @@ class LogsInputsAddConfigureCtrl {
     _initLoaders () {
         this.input = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
-                .then(result => {
-                    this.configuration.engineType = result.info.engine.name;
+                .then(input => {
+                    this.configuration.engineType = input.info.engine.name;
                     if (this.configuration.engineType === this.LogsInputsConfigureConstant.logstash) {
-                        this._initLogstash(result.info.engine.configuration);
+                        this._initLogstash(input.info.engine.configuration);
                     } else {
-                        this._initFlowgger(result.info.engine.configuration);
+                        this._initFlowgger(input.info.engine.configuration);
                     }
+                    return input;
                 })
         });
         this.input.load();
@@ -341,14 +343,17 @@ class LogsInputsAddConfigureCtrl {
         this.configuration.logstash.patternSection = this.LogsInputsConfigureConstant.logStashWizard[name].patterns;
     }
 
-    saveConfig () {
+    saveFlowgger () {
+        if (this.flowggerForm.$invalid) {
+            return this.$q.reject();
+        }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.updateFlowgger(this.serviceName, this.input.data, this.configuration.flowgger)
                 .then(() => this.goToNetworkPage())
                 .finally(() => this.ControllerHelper.scrollPageToTop())
         });
-        this.saving.load();
+        return this.saving.load();
     }
 
     goToNetworkPage () {

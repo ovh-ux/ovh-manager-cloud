@@ -1,11 +1,13 @@
 <div class="cui-page__content inputs-logs-add-configure">
+    
     <div class="flowgger-edit" data-ng-if="ctrl.configuration.engineType === 'FLOWGGER'">
         <p class="oui-header_3" data-translate="inputs_logs_configure_flowgger_title"></p>
 
-        <form novalidate name="ctrl.form">
+        <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
+        <form novalidate name="ctrl.flowggerForm" data-ng-if="!ctrl.input.loading">
             <div class="oui-field">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_format"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
+                <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_5 d-flex">
                         <div class="oui-select">
                             <select class="oui-select__input float-left"
@@ -25,7 +27,7 @@
 
             <div class="oui-field">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_delimiter"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
+                <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_5 d-flex">
                         <div class="oui-select">
                             <select class="oui-select__input float-left"
@@ -44,36 +46,36 @@
                 </div>
             </div>
 
-            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.kafkaCoalesce.$invalid}">
+            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}">
                 <label for="kafkaCoalesce" class="oui-label" data-translate="inputs_logs_configure_messages_batch"></label>
                 <div class="oui-field__content d-flex">
                     <div class="oui-field-control oui-field-control_1">
-                        <input type="number" id="kafkaCoalesce" name="kafkaCoalesce"
-                        class="oui-input mb-0" data-ng-model="ctrl.configuration.flowgger.kafkaCoalesce"
-                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.kafkaCoalesce.$invalid}"
-                        autofocus required />
+                        <oui-numeric
+                            data-ng-attr-id="kafkaCoalesce"
+                            data-ng-attr-name="kafkaCoalesce"
+                            class="numeric_without_bottom_margin"
+                            data-ng-class="{'oui-input_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}"
+                            model="ctrl.configuration.flowgger.kafkaCoalesce"
+                            min="0">
+                        </oui-numeric>
                     </div>
-                    <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                    <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help ml-7" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="cui-form-actions">
                 <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                <div>
-                    <button
-                        class="oui-button oui-button_secondary"
-                        data-translate="inputs_logs_configure_previous"
-                        data-ng-click="ctrl.cancel()"></button>
+                <div data-ng-if="!ctrl.saving.loading">
                     <a class="oui-button oui-button_secondary"
-                        data-translate="inputs_logs_configure_previous"
+                        data-translate="logs_previous"
                         data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
-                        data-translate="inputs_logs_configure_next"
+                        data-translate="logs_next"
                         data-ng-click="ctrl.saveFlowgger()"></button>
                     <a class="oui-button oui-button_link"
-                        data-translate="inputs_logs_configure_later"
+                        data-translate="logs_later"
                         data-ui-sref="dbaas.logs.detail.inputs"></a>
                 </div>
             </div>

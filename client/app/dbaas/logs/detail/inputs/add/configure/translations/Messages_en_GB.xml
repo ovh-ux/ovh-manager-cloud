@@ -9,10 +9,6 @@
     
     <translation id="inputs_logs_configure_messages_batch">Number of messages sent by a batch</translation>
     <translation id="inputs_logs_configure_kafkaCoalesce">Number of message</translation>
-    
-    <translation id="inputs_logs_configure_next">Next</translation>
-    <translation id="inputs_logs_configure_previous">Previous</translation>
-    <translation id="inputs_logs_configure_later">Continue later</translation>
     <translation id="inputs_logs_configure_format">Format of your logs</translation>
 
 
