@@ -113,6 +113,8 @@ class LogsOptionsService {
                         return this._filterOptions(response.options, "maxNbAlias");
                     case "logs-input":
                         return this._filterOptions(response.options, "maxNbInput");
+                    case "logs-role":
+                        return this._filterOptions(response.options, "maxNbRole");
                     default:
                         return response.options;
                 }

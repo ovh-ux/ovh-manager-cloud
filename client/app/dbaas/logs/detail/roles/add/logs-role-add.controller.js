@@ -1,67 +1,66 @@
-class LogsIndexAddModalCtrl {
-    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, indexInfo, options, quota, LogsIndexService) {
+class LogsRoleAddModalCtrl {
+    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, LogsRolesService, options, quota, roleInfo) {
         this.$stateParams = $stateParams;
         this.$q = $q;
         this.ControllerHelper = ControllerHelper;
-        this.indexInfo = indexInfo;
         this.options = options;
         this.quota = quota;
-        this.suffixPattern = "^[a-z0-9_-]+$";
-        this.LogsIndexService = LogsIndexService;
+        this.roleInfo = roleInfo;
+        this.LogsRolesService = LogsRolesService;
         this.$uibModalInstance = $uibModalInstance;
         this.serviceName = $stateParams.serviceName;
-        this.index = this.LogsIndexService.getNewIndex();
+        this.role = this.LogsRolesService.getNewRole();
     }
 
     $onInit () {
-        this.isEdit = this.checkIsEdit(this.indexInfo);
+        this.isEdit = this.checkIsEdit(this.roleInfo);
         if (this.isEdit) {
-            this.populateIndex();
+            this.populateRole();
         } else {
-            this.clearIndex();
+            this.clearRole();
         }
     }
 
-    clearIndex () {
-        this.index.description = "";
-        this.index.alertNotifyEnabled = false;
-        this.index.suffix = "";
-        this.index.optionId = null;
+    clearRole () {
+        this.role.description = "";
+        this.role.name = "";
+        this.role.optionId = null;
     }
 
-    populateIndex () {
-        this.index.description = this.indexInfo.description;
-        this.index.alertNotifyEnabled = this.indexInfo.alertNotifyEnabled;
+    populateRole () {
+        this.role.description = this.roleInfo.description;
+        this.role.name = this.roleInfo.name;
+        this.role.optionId = this.roleInfo.optionId;
     }
 
-    checkIsEdit (indexInfo) {
-        return indexInfo !== undefined;
+    checkIsEdit (roleInfo) {
+        return roleInfo !== undefined;
     }
 
     cancel () {
         this.$uibModalInstance.dismiss();
     }
 
-    saveIndex () {
+    saveRole () {
         if (this.form.$invalid) {
             return this.$q.reject();
         }
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsIndexService.createIndex(this.serviceName, this.index)
+                this.LogsRolesService.addRole(this.serviceName, this.role)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
         });
         return this.saving.load();
     }
 
-    editIndex () {
+    updateRole () {
         if (this.form.$invalid) {
             return this.$q.reject();
         }
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsIndexService.updateIndex(this.serviceName, this.indexInfo.indexId, this.index)
+                this.LogsRolesService.updateRole(this.serviceName, this.role)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
         });
@@ -69,4 +68,4 @@ class LogsIndexAddModalCtrl {
     }
 }
 
-angular.module("managerApp").controller("LogsIndexAddModalCtrl", LogsIndexAddModalCtrl);
+angular.module("managerApp").controller("LogsRoleAddModalCtrl", LogsRoleAddModalCtrl);

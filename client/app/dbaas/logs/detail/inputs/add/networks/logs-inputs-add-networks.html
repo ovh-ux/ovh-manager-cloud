@@ -1,3 +1,35 @@
-<div class="cui-page__content inputs-logs-add-network">
-    <p class="oui-header_3" data-translate="inputs_logs_networks_title"></p>
-</div>
+
+
+<section class="cui-page__content inputs-logs-add-network pt-0">
+    <p data-translate="inputs_logs_networks_description"></p>
+
+    <h6 class="oui-header_6 mb-3">
+        {{::'inputs_logs_networks_add_remove_network_title' | translate}}
+    </h6> 
+    <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
+    <form novalidate name="ctrl.form" style="max-width: 52rem;">
+        <cui-inline-adder unique-property="allowedNetworkId"
+            on-add="ctrl.addNetwork(item)"
+            on-remove="ctrl.removeNetwork(item)">
+            <cui-inline-adder-item  data-ng-repeat="item in ctrl.input.data.allowedNetworks"
+                item="item"
+                is-new-item="!item.allowedNetworkId">
+                    <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}">
+                        <label for="inputIpAddress{{$index}}" class="oui-label" data-translate="inputs_logs_networks_ip_address"></label>
+                        <div class="oui-field-content">
+                            <div class="oui-field-control oui-field-control_4">
+                                <input type="text" 
+                                        id="inputIpAddress{{$index}}" 
+                                        name="inputIpAddress{{$index}}"
+                                        class="oui-input" data-ng-model="item.network"
+                                        data-ng-disabled="item.allowedNetworkId"
+                                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
+                                        required />
+                                <p data-ng-if="!item.allowedNetworkId">{{::'inputs_logs_networks_ip_address_example' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+            </cui-inline-adder-item>
+        </cui-inline-adder>
+    <form>
+</section>

@@ -38,6 +38,27 @@
     <translation id="logs_aliases_get_elasticsearch_url_error">Elastic search URL not found for an alias {{alias}}</translation>
     <translation id="logs_aliases_update_description">Edit an alias information {{alias}}</translation>
 
+    <translation id="logs_aliases_link_title">Attach content to the alias</translation>
+    <translation id="logs_aliases_link_description">An alias can be attached to one or more Data streams or one or more Eleasticsearch indexes</translation>
+    <translation id="logs_aliases_link_available_streams">Available data streams</translation>
+    <translation id="logs_aliases_link_attached_streams">Attached data streams</translation>
+    <translation id="logs_aliases_link_all_streams_attached">All data streams are attached</translation>
+    <translation id="logs_aliases_link_no_streams_attached">No data streams are attached</translation>
+    <translation id="logs_aliases_link_available_indexes">Available indexes</translation>
+    <translation id="logs_aliases_link_attached_indexes">Attached indexes</translation>
+    <translation id="logs_aliases_link_all_indexes_attached">All indexes are attached</translation>
+    <translation id="logs_aliases_link_no_indexes_attached">No indexes are attached</translation>
 
+    <translation id="logs_aliases_attach_stream_error">An error has occured while attaching data stream: {{message}} </translation>
+    <translation id="logs_aliases_attach_stream_fail">Failed to attach data stream {{stream}} </translation>
+    <translation id="logs_aliases_detach_stream_error">An error has occured while detaching data stream: {{message}} </translation>
+    <translation id="logs_aliases_detach_stream_fail">Failed to detach data stream {{stream}} </translation>
+    <translation id="logs_aliases_attach_index_error">An error has occured while attaching index: {{message}} </translation>
+    <translation id="logs_aliases_attach_index_fail">Failed to attach index {{index}} </translation>
+    <translation id="logs_aliases_detach_index_error">An error has occured while detaching index: {{message}} </translation>
+    <translation id="logs_aliases_detach_index_fail">Failed to detach index {{index}} </translation>
+
+    <translation id="logs_aliases_remove_streams_message">Data streams are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all data streams to add eleasticsearch indexes. </translation>
+    <translation id="logs_aliases_remove_indexes_message">Eleasticsearch indexes are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all eleasticsearch indexes to add data streams. </translation>
 
 </translations>

@@ -1,0 +1,61 @@
+<div class="oui-modal oui-modal_shadow">
+        <div class="oui-modal__header">
+            <button
+                class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit"
+                ng-click="ctrl.cancel()"></button>
+        </div>
+        <div class="oui-modal__body oui-modal__body_no-icon">
+            <div class="oui-modal__body-text mb-5">
+                <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_member_modal_edit_title"></h2>
+                <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_member_modal_add_title"></h2>
+            </div>
+            <form novalidate name="ctrl.form">
+                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.name.$invalid}">
+                    <label for="name" class="oui-label" data-translate="logs_roles_members_modal_user"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <cloud-auto-complete
+                                data-id="userName"
+                                data-ng-model="ctrl.member.username"
+                                data-ng-disabled="ctrl.saving"
+                                data-options="ctrl.logs.data"
+                                data-display-property="username"
+                                data-placeholder="logs-XX-XXXXX"
+                                required autofocus></cloud-auto-complete>
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-field mt-3" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.note.$invalid}">
+                    <label for="note" class="oui-label" data-translate="logs_roles_members_note"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_4">
+                            <textarea type="text" id="note" name="note"
+                            data-ng-disabled="ctrl.saving"
+                            class="oui-textarea" data-ng-model="ctrl.member.note"
+                            data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.note.$invalid}"
+                            required />
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-modal__footer">
+                    <div class="cui-form-actions">
+                        <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
+                        <div data-ng-if="!ctrl.saving.loading">
+                            <button
+                                class="oui-button oui-button_secondary"
+                                data-translate="common_cancel"
+                                data-ng-click="ctrl.cancel()"></button>
+                            <button
+                                class="oui-button oui-button_primary"
+                                type="submit"
+                                data-translate="common_save"
+                                data-ng-click="ctrl.addMember()"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        
