@@ -1,5 +1,5 @@
 class LogsIndexService {
-    constructor ($q, $translate, CloudPoll, CloudMessage, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudPoll = CloudPoll;
@@ -7,7 +7,6 @@ class LogsIndexService {
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsIndexConstant = LogsIndexConstant;
-        this.CloudMessage = CloudMessage;
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -109,7 +108,7 @@ class LogsIndexService {
     _handleSuccess (serviceName, operation, successMessage, name) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(() => this.CloudMessage.success(this.$translate.instant(successMessage, { name })));
+            .then(() => this.ServiceHelper.successHandler(successMessage)({ name }));
     }
 
     _killPoller () {

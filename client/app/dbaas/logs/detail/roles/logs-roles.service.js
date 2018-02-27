@@ -1,5 +1,5 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, CloudMessage, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -7,8 +7,6 @@ class LogsRolesService {
         this.LogsOptionsService = LogsOptionsService;
         this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
-        this.CloudMessage = CloudMessage;
-
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
@@ -128,7 +126,7 @@ class LogsRolesService {
     _handleSuccess (serviceName, operation, successMessage, name) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(() => this.CloudMessage.success(this.$translate.instant(successMessage, { name })));
+            .then(() => this.ServiceHelper.successHandler(successMessage)({ name }));
     }
 
     _killPoller () {
