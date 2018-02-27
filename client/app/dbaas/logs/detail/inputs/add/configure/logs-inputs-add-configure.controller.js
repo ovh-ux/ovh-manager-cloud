@@ -1,22 +1,20 @@
 class LogsInputsAddConfigureCtrl {
-    constructor ($stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant) {
+    constructor ($q, $state, $stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+        this.$q = $q;
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.inputId = this.$stateParams.inputId;
         this.ControllerHelper = ControllerHelper;
         this.LogsInputsService = LogsInputsService;
         this.LogsInputsConfigureConstant = LogsInputsConfigureConstant;
+        this.CloudMessage = CloudMessage;
         this.configuration = {
             engineType: "",
             flowgger: {},
             logstash: {}
         };
         this._initLoaders();
-    }
-
-    $onInit () {
-        this.input.load()
-            .then(() => this.test.load());
     }
 
     /**
@@ -27,36 +25,40 @@ class LogsInputsAddConfigureCtrl {
     _initLoaders () {
         this.input = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
-                .then(result => {
-                    this.configuration.engineType = result.info.engine.name;
+                .then(input => {
+                    this.configuration.engineType = input.info.engine.name;
                     if (this.configuration.engineType === this.LogsInputsConfigureConstant.logstash) {
-                        this._initLogstash(result.info.engine.configuration);
+                        this._initLogstash(input.info.engine.configuration);
                     } else {
-                        this._initFlowgger(result.info.engine.configuration);
+                        this._initFlowgger(input.info.engine.configuration);
                     }
-                    return result;
+                    return input;
                 })
         });
+
         this.test = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.getTestResults(this.serviceName, this.input.data)
         });
+
+        this.input.load()
+            .then(() => this.test.load());
     }
 
     htmlDecode (s) {
-        var out = "";
+        let out = "";
         if (s === null) {
-            return;
+            return out;
         }
-        var l = s.length;
-        for (var i = 0; i < l; i++) {
-            var ch = s.charAt(i);
+        const l = s.length;
+        for (let i = 0; i < l; i++) {
+            let ch = s.charAt(i);
             if (ch === "&") {
-                var semicolonIndex = s.indexOf(";", i + 1);
+                const semicolonIndex = s.indexOf(";", i + 1);
                 if (semicolonIndex > 0) {
-                    var entity = s.substring(i + 1, semicolonIndex);
+                    const entity = s.substring(i + 1, semicolonIndex);
                     if (entity.length > 1 && entity.charAt(0) === "#") {
                         if (entity.charAt(1) === "x" || entity.charAt(1) === "X") {
-                            ch = String.fromCharCode("0" + entity.substring(1));
+                            ch = String.fromCharCode(`0${entity.substring(1)}`);
                         } else {
                             ch = String.fromCharCode(entity.substring(1));
                         }
@@ -347,9 +349,43 @@ class LogsInputsAddConfigureCtrl {
 
     executeTest () {
         this.test = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.executeTest(this.serviceName, this.input.data)
+            loaderFunction: () => this.LogsInputsService.updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)
+                .then(() => this.LogsInputsService.executeTest(this.serviceName, this.input.data))
         });
         this.test.load();
+    }
+
+    saveFlowgger () {
+        if (this.flowggerForm.$invalid) {
+            return this.$q.reject();
+        }
+        this.CloudMessage.flushChildMessage();
+        this.saving = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.updateFlowgger(this.serviceName, this.input.data, this.configuration.flowgger)
+                .then(() => this.goToNetworkPage())
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        });
+        return this.saving.load();
+    }
+
+    saveLogstash () {
+        if (this.logstashForm.$invalid) {
+            return this.$q.reject();
+        }
+        this.CloudMessage.flushChildMessage();
+        this.saving = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsInputsService.updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)
+                .then(() => this.goToNetworkPage())
+                .finally(() => this.ControllerHelper.scrollPageToTop())
+        });
+        return this.saving.load();
+    }
+
+    goToNetworkPage () {
+        this.$state.go("dbaas.logs.detail.inputs.editwizard.networks", {
+            serviceName: this.serviceName,
+            inputId: this.inputId
+        });
     }
 }
 

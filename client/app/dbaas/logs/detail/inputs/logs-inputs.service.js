@@ -299,6 +299,26 @@ class LogsInputsService {
             .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
+    updateFlowgger (serviceName, input, flowgger) {
+        return this.InputsApiLexiService.updateFlowgger({ serviceName, inputId: input.info.inputId }, flowgger)
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_flowgger_update_error", err, { inputTitle: input.info.title }));
+    }
+
+    updateLogstash (serviceName, input, logstash) {
+        return this.InputsApiLexiService.updateLogstash({ serviceName, inputId: input.info.inputId }, logstash)
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_logstash_update_error", err, { inputTitle: input.info.title }));
+    }
+
     /**
      * update input
      *
@@ -347,7 +367,9 @@ class LogsInputsService {
     _handleSuccess (serviceName, operation, successMessage, messageData) {
         return this._pollOperation(serviceName, operation)
             .$promise.then(successData => {
-                this.ServiceHelper.successHandler(successMessage)(messageData);
+                if (successMessage) {
+                    this.ServiceHelper.successHandler(successMessage)(messageData);
+                }
                 return successData;
             });
     }

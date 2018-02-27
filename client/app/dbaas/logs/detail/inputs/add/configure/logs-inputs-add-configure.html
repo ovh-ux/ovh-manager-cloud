@@ -1,11 +1,13 @@
-<div class="cui-page__content inputs-logs-add-configure">
+<div class="cui-page__content inputs-logs-add-configure pt-0">
+    
     <div class="flowgger-edit" data-ng-if="ctrl.configuration.engineType === 'FLOWGGER'">
         <p class="oui-header_3" data-translate="inputs_logs_configure_flowgger_title"></p>
 
-        <form novalidate name="ctrl.form">
+        <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
+        <form novalidate name="ctrl.flowggerForm" data-ng-if="!ctrl.input.loading">
             <div class="oui-field">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_format"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
+                <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_5 d-flex">
                         <div class="oui-select">
                             <select class="oui-select__input float-left"
@@ -25,7 +27,7 @@
 
             <div class="oui-field">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_delimiter"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
+                <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_5 d-flex">
                         <div class="oui-select">
                             <select class="oui-select__input float-left"
@@ -39,40 +41,46 @@
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
-                        <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        <a class="oui-link" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_' + ctrl.configuration.flowgger.logFraming | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.kafkaCoalesce.$invalid}">
+            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}">
                 <label for="kafkaCoalesce" class="oui-label" data-translate="inputs_logs_configure_messages_batch"></label>
                 <div class="oui-field__content d-flex">
                     <div class="oui-field-control oui-field-control_1">
-                        <input type="number" id="kafkaCoalesce" name="kafkaCoalesce"
-                        class="oui-input mb-0" data-ng-model="ctrl.configuration.flowgger.kafkaCoalesce"
-                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.kafkaCoalesce.$invalid}"
-                        autofocus required />
+                        <oui-numeric
+                            data-ng-attr-id="kafkaCoalesce"
+                            data-ng-attr-name="kafkaCoalesce"
+                            class="numeric_without_bottom_margin"
+                            data-ng-class="{'oui-input_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}"
+                            model="ctrl.configuration.flowgger.kafkaCoalesce"
+                            min="0">
+                        </oui-numeric>
                     </div>
-                    <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                    <a class="oui-link" oui-tooltip="{{:: 'input_logs_configure_kafka_coalesce_tooltip' | translate}}">
+                        <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help ml-7" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
             <div class="cui-form-actions">
                 <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                <div>
-                    <button
-                        class="oui-button oui-button_secondary"
-                        data-translate="inputs_logs_configure_previous"
-                        data-ng-click="ctrl.cancel()"></button>
+                <div data-ng-if="!ctrl.saving.loading">
+                    <a class="oui-button oui-button_secondary"
+                        data-translate="logs_previous"
+                        data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
-                        data-translate="inputs_logs_configure_next"
-                        data-ng-click="ctrl.saveConfig()"></button>
+                        data-translate="logs_next"
+                        data-ng-click="ctrl.saveFlowgger()"></button>
                     <a class="oui-button oui-button_link"
-                        data-translate="inputs_logs_configure_later"
-                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
-                    </a>
+                        data-translate="logs_later"
+                        data-ui-sref="dbaas.logs.detail.inputs"></a>
                 </div>
             </div>
         </form>
@@ -83,7 +91,7 @@
         <p data-translate="inputs_logs_configure_logstash_desc"></p>
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
         
-        <form novalidate name="ctrl.form">
+        <form novalidate name="ctrl.logstashForm">
             <div class="oui-field mt-4">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_logstash_wizard"></label>
                 <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
@@ -108,16 +116,16 @@
                 </div>
             </div>
 
-            <label class="oui-label mt-3">conf.d/logstash.conf</label>
+            <label class="oui-header_6 mt-3">conf.d/logstash.conf</label>
             <label class="oui-label pl-4">input {</label>
 
-            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input.$invalid}">
+            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}">
                 <label for="input" class="oui-label" data-translate="inputs_logs_configure_logstash_input_section"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="input" name="input" rows="8"
                         class="oui-textarea" data-ng-model="ctrl.configuration.logstash.inputSection"
-                        data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.input.$invalid}"
+                        data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
                         required />
                     </div>
                 </div>
@@ -126,27 +134,28 @@
             <label class="oui-label pl-4">}</label>
             <label class="oui-label pl-4">filter {</label>
             
-            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.filter.$invalid}">
+            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}">
                 <label for="filter" class="oui-label" data-translate="inputs_logs_configure_logstash_filter_section"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="filter" name="filter" rows="8"
                         class="oui-textarea" data-ng-model="ctrl.configuration.logstash.filterSection"
-                        data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.filter.$invalid}"
+                        data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}"
                         required />
                     </div>
                 </div>
             </div>
+            <label class="oui-label pl-4">}</label>
 
-            <label class="oui-label mt-3">conf.d/logpatterns/custom-grok-patterns</label>
+            <label class="oui-header_6 mt-3">conf.d/logpatterns/custom-grok-patterns</label>
 
-            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.grok.$invalid}">
+            <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}">
                 <label for="grok" class="oui-label" data-translate="inputs_logs_configure_logstash_grok"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="grok" name="grok" rows="8"
                         class="oui-textarea" data-ng-model="ctrl.configuration.logstash.patternSection"
-                        data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.grok.$invalid}"
+                        data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}"
                         required />
                     </div>
                 </div>
@@ -163,7 +172,7 @@
                 <p class="oui-paragraph" data-translate="input_logs_configure_test_timestamp" data-translate-values="{ timestamp: '{{ ctrl.test.data.updatedAt | amCalendar}}' }"></p>
                 <div class="oui-message m-0" data-ng-class="{'oui-message_success': ctrl.test.data.stdout, 'oui-message_error': ctrl.test.data.stderr}" role="alert">
                     <i class="oui-icon oui-icon_bicolor" data-ng-class="{'oui-icon-success_circle': ctrl.test.data.stdout, 'oui-icon-error_circle': ctrl.test.data.stderr}" aria-hidden="true"></i>
-                    <p class="oui-message__body" data-translate="{{ ctrl.test.data.stdout ? 'input_logs_configure_test_success' : 'input_logs_configure_test_failure' }}"  data-translate-values="{ output: ctrl.test.data.stdout }"></p>
+                    <p class="oui-message__body" data-translate="{{ ctrl.test.data.stdout ? 'input_logs_configure_test_success' : 'input_logs_configure_test_failure' }}"  data-translate-values="{ output: ctrl.test.data.stdout ? ctrl.test.data.stdout : ctrl.test.data.stderr }"></p>
                 </div>
             </div>
 
@@ -174,14 +183,14 @@
                         class="oui-button oui-button_secondary"
                         data-translate="inputs_logs_configure_previous"
                         data-ng-click="ctrl.cancel()"></button>
-                    <a class="oui-button oui-button_link"
-                        data-translate="inputs_logs_configure_later"
-                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
                         data-translate="inputs_logs_configure_next"
-                        data-ng-click="ctrl.saveConfig()"></button>
+                        data-ng-click="ctrl.saveLogstash()"></button>
+                    <a class="oui-button oui-button_link"
+                        data-translate="inputs_logs_configure_later"
+                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
                 </div>
             </div>
         </form>

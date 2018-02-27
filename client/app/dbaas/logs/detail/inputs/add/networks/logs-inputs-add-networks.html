@@ -31,5 +31,22 @@
                     </div>
             </cui-inline-adder-item>
         </cui-inline-adder>
-    <form>
+    </form>
+    <div class="cui-form-actions">
+        <div data-ng-if="!ctrl.saving.loading">
+            <a class="oui-button oui-button_secondary"
+                data-translate="logs_previous"
+                data-ui-sref="dbaas.logs.detail.inputs.editwizard.configure"></a>
+            <oui-button
+                data-ng-if="!ctrl.input.loading"
+                text="{{::'logs_finish' | translate}}"
+                variant="primary"
+                type="submit"
+                data-ui-sref="dbaas.logs.detail.inputs">
+            </oui-button>
+            <a class="oui-button oui-button_link"
+                data-translate="logs_later"
+                data-ui-sref="dbaas.logs.detail.inputs"></a>
+        </div>
+    </div>
 </section>
