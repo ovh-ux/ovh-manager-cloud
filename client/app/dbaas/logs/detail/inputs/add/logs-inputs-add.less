@@ -1,6 +1,5 @@
 .inputs-logs-add {
     .oui-progress-tracker__step {
-        cursor: pointer;
         pointer-events: initial;
         max-width: none;
 
@@ -11,5 +10,12 @@
 
     .oui-progress-tracker__step_active {
         color: @oui-color-concrete;
+        pointer-events: none;
+        cursor: none;
+    }
+
+    .oui-progress-tracker__step_disabled {
+        pointer-events: none;
+        cursor: none;
     }
 }
