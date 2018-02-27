@@ -2,7 +2,7 @@ class IpLoadBalancerHomeCtrl {
     constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
-                 REDIRECT_URLS) {
+                 IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService, REDIRECT_URLS) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -14,6 +14,8 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerHomeService = IpLoadBalancerHomeService;
         this.IpLoadBalancerHomeStatusService = IpLoadBalancerHomeStatusService;
         this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
+        this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
+        this.IpLoadBalancerZoneDeleteService = IpLoadBalancerZoneDeleteService;
         this.REDIRECT_URLS = REDIRECT_URLS;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -28,6 +30,9 @@ class IpLoadBalancerHomeCtrl {
 
         this.iplbStatus.load();
         this.usage.load();
+
+        this.orderableZones.load();
+        this.deletableZones.load();
 
         this.initActions();
         this.initGraph();
@@ -71,6 +76,14 @@ class IpLoadBalancerHomeCtrl {
         this.usage = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.getUsage(this.serviceName)
         });
+
+        this.orderableZones = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerZoneAddService.getOrderableZones(this.serviceName)
+        });
+
+        this.deletableZones = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerZoneDeleteService.getDeletableZones(this.serviceName)
+        });
     }
 
     initActions () {
@@ -113,6 +126,16 @@ class IpLoadBalancerHomeCtrl {
                 text: this.$translate.instant("common_manage"),
                 href: this.ControllerHelper.navigation.getUrl("contacts", { serviceName: this.serviceName }),
                 isAvailable: () => this.FeatureAvailabilityService.hasFeature("CONTACTS", "manage") && !this.subscription.loading && !this.subscription.hasErrors
+            },
+            addZone: {
+                text: this.$translate.instant("common_add"),
+                callback: () => this.$state.go("network.iplb.detail.zone.add", { serviceName: this.serviceName }),
+                isAvailable: () => !this.orderableZones.loading && this.orderableZones.data.length > 0
+            },
+            deleteZone: {
+                text: this.$translate.instant("common_delete"),
+                callback: () => this.$state.go("network.iplb.detail.zone.delete", { serviceName: this.serviceName }),
+                isAvailable: () => !this.deletableZones.loading && _.filter(this.deletableZones.data, zone => zone.selectable.value !== false).length - 1 >= 1
             }
         };
     }
