@@ -1,63 +1,38 @@
-<form id="editDetailForm" name="editDetailForm" class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="CdaDetailEditCtrl.closeModal()"></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="CdaDetailEditCtrl.saving">
-            <div class="text-center">
-                <oui-spinner></oui-spinner>
-            </div>
+<form id="editDetailForm" name="editDetailForm">
+    <oui-modal
+        data-title="{{ ::'cda_detail_edit_title' | translate }}"
+        data-primary-action="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
+        data-primary-label="{{ ::'common_modify' | translate }}"
+        data-secondary-action="CdaDetailEditCtrl.closeModal()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="CdaDetailEditCtrl.closeModal()">
+
+        <div class="text-center">
+            <oui-spinner data-ng-if="CdaDetailEditCtrl.saving"></oui-spinner>
         </div>
-        <div class="oui-modal__body-text" data-ng-if="!CdaDetailEditCtrl.saving">
-            <h2 class="oui-modal__title" data-translate="cda_detail_edit_title"></h2>
 
-            <label for="oui-label" data-translate="cda_detail_edit_label" class="cda-input-label"></label>
-            <input type="text" class="oui-input"
-                id="label" name="label"
-                data-ng-model="CdaDetailEditCtrl.model.label"
-                data-ng-maxLength="CdaDetailEditCtrl.options.label.maxLength"
-                required />
-            <div class="text-danger" data-ng-messages="editDetailForm.label.$error" data-ng-if="editDetailForm.label.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                    <span data-ng-message="required" data-translate="cda_detail_edit_label_required"></span>
-                    <span data-ng-message="maxlength" data-translate="cda_detail_edit_label_maxlength" data-translate-values="{ maxlength: CdaDetailEditCtrl.options.label.maxLength }"></span>
-                </p>
-            </div>
+        <div data-ng-if="!CdaDetailEditCtrl.saving">
+            <oui-field label="{{ ::'cda_detail_edit_label' | translate }}">
+                <input class="oui-input"
+                       type="text"
+                       id="label"
+                       name="label"
+                       data-ng-model="CdaDetailEditCtrl.model.label"
+                       data-ng-maxLength="CdaDetailEditCtrl.options.label.maxLength"
+                       required>
+            </oui-field>
 
-            <label for="crushTunable" data-translate="cda_detail_edit_crushTunable" class="oui-label"></label>
-            <div class="oui-select">
-                <select class="oui-select__input"
-                    id="crushTunable" name="crushTunable"
-                    data-ng-model="CdaDetailEditCtrl.model.crushTunable"
-                    data-ng-options="crushTunableValue | lowercase for crushTunableValue in CdaDetailEditCtrl.crushTunableValues"
-                    required />
-                <i class="oui-icon oui-icon-chevron-down"></i>
-            </div>
-            <div class="text-danger" data-ng-messages="editDetailForm.crushTunable.$error" data-ng-if="editDetailForm.crushTunable.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                    <span data-ng-message="required" data-translate="cda_detail_edit_crushTunable_required"></span>
-                </p>
-            </div>
+            <oui-field label="{{ ::'cda_detail_edit_crushTunable' | translate }}">
+                <oui-select
+                    name="crushTunable"
+                    title="{{ ::'cda_detail_edit_crushTunable' | translate }}"
+                    placeholder="{{ ::'cda_detail_edit_crushTunable' | translate }}"
+                    model="CdaDetailEditCtrl.model.crushTunable"
+                    items="CdaDetailEditCtrl.crushTunableValues"
+                    required>
+                    <span ng-bind="$item"></span>
+                </oui-select>
+            </oui-field>
         </div>
-    </div>
-
-    <div class="oui-modal__footer">
-        <button type="reset"
-                class="oui-button oui-button_secondary"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaDetailEditCtrl.closeModal()"
-                data-ng-disabled="CdaDetailEditCtrl.saving"
-                form="editDetailForm">
-            <span data-translate="common_cancel"></span>
-        </button>
-        <button type="button"
-                class="oui-button oui-button_primary"
-                title="{{ ::'common_modify' | translate }}"
-                data-ng-click="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
-                data-ng-disabled="CdaDetailEditCtrl.saving || (editDetailForm.$error && !editDetailForm.$valid)"
-                form="editDetailForm">
-            <span data-translate="common_modify"></span>
-        </button>
-    </div>
+    </oui-modal>
 </form>
