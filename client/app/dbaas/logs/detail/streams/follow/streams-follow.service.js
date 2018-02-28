@@ -220,7 +220,7 @@ class LogsStreamsFollowService {
             let response;
             let message;
             const date = new Date();
-            this.lastEvent = date.getTime() * 1000;
+            this.lastEvent = date.getTime();
             this.webSocket.onMessage(event => {
                 this.waitingForMessages = false;
                 this.totalMessages++;

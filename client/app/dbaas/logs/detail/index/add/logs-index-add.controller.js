@@ -61,7 +61,7 @@ class LogsIndexAddModalCtrl {
         }
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsIndexService.updateIndex(this.serviceName, this.indexInfo.indexId, this.index)
+                this.LogsIndexService.updateIndex(this.serviceName, this.indexInfo, this.index)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
         });

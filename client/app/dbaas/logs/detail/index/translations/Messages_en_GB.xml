@@ -33,7 +33,6 @@
     
     <translation id="logs_index_delete_title">Delete index</translation>
     <translation id="logs_index_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
-    <translation id="logs_index_delete_error">An error occurred while deleting the selected index</translation>
 
     <translation id="logs_options_current_options_loading_error">An error occurred while loading options</translation>
 
@@ -59,9 +58,9 @@
    <translation id="logs_index_create_error">An error occurred while creating index: {{message}}</translation>
    <translation id="logs_index_delete_error">An error occurred while deleting index: {{message}}</translation>
    
-   <translation id="logs_index_create_success">Successfully created index</translation>
-   <translation id="logs_index_edit_success">Successfully saved your changes</translation>
-   <translation id="logs_index_delete_success">Successfully deleted the index</translation>
+   <translation id="logs_index_create_success">Successfully created index: {{name}}</translation>
+   <translation id="logs_index_edit_success">Successfully updated {{name}}</translation>
+   <translation id="logs_index_delete_success">Successfully deleted the index: {{name}}</translation>
 
    <translation id="logs_index_option_warning">The option you choose can not be changed later.</translation>
 

@@ -62,7 +62,7 @@ class LogsRolesCtrl {
             info
         ).then(() => {
             this.delete = this.ControllerHelper.request.getHashLoader({
-                loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info.roleId)
+                loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info)
                     .then(() => this.initLoaders())
             });
             this.delete.load();
@@ -76,10 +76,6 @@ class LogsRolesCtrl {
         });
     }
 
-    // TODO: edit permission page
-    editPermissions () {
-        return null;
-    }
 }
 
 angular.module("managerApp").controller("LogsRolesCtrl", LogsRolesCtrl);

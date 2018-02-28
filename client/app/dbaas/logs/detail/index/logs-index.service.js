@@ -75,26 +75,26 @@ class LogsIndexService {
         return this.IndexApiService.post({ serviceName }, object).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success", object.suffix);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_create_error"));
     }
 
-    updateIndex (serviceName, indexId, indexInfo) {
-        return this.IndexApiService.put({ serviceName, indexId }, indexInfo)
+    updateIndex (serviceName, index, indexInfo) {
+        return this.IndexApiService.put({ serviceName, indexId: index.indexId }, indexInfo)
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success", index.name);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_edit_error"));
     }
 
-    deleteIndex (serviceName, indexId) {
-        return this.IndexApiService.delete({ serviceName, indexId }).$promise
+    deleteIndex (serviceName, index) {
+        return this.IndexApiService.delete({ serviceName, indexId: index.indexId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success");
+                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success", index.name);
             })
             .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
     }
@@ -105,10 +105,10 @@ class LogsIndexService {
         this.AccountingAapiService.resetAllCache();
     }
 
-    _handleSuccess (serviceName, operation, successMessage) {
+    _handleSuccess (serviceName, operation, successMessage, name) {
         this.poller = this._pollOperation(serviceName, operation);
         return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
+            .then(() => this.ServiceHelper.successHandler(successMessage)({ name }));
     }
 
     _killPoller () {
