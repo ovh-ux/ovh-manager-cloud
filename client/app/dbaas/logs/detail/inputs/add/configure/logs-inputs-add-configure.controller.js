@@ -342,7 +342,7 @@ class LogsInputsAddConfigureCtrl {
     }
 
     applyConfiguration (name) {
-        this.configuration.logstash.inputSection = this.LogsInputsConfigureConstant.logStashWizard[name].input;
+        this.configuration.logstash.inputSection = this.LogsInputsConfigureConstant.logStashWizard[name].input.replace("INPUT_PORT", this.input.data.info.exposedPort);
         this.configuration.logstash.filterSection = this.LogsInputsConfigureConstant.logStashWizard[name].filter;
         this.configuration.logstash.patternSection = this.LogsInputsConfigureConstant.logStashWizard[name].patterns;
     }
@@ -359,6 +359,8 @@ class LogsInputsAddConfigureCtrl {
     saveFlowgger () {
         if (this.flowggerForm.$invalid) {
             return this.$q.reject();
+        } else if (!this.flowggerForm.$dirty) {
+            return this.goToNetworkPage();
         }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
@@ -372,6 +374,8 @@ class LogsInputsAddConfigureCtrl {
     saveLogstash () {
         if (this.logstashForm.$invalid) {
             return this.$q.reject();
+        } else if (!this.flowggerForm.$dirty) {
+            return this.goToNetworkPage();
         }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
@@ -387,6 +391,7 @@ class LogsInputsAddConfigureCtrl {
             serviceName: this.serviceName,
             inputId: this.inputId
         });
+        return this.$q.resolve();
     }
 }
 

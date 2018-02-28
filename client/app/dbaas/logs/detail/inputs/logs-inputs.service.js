@@ -276,7 +276,7 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_inputs_network_add_success", { network: network.network, inputTitle: input.info.title });
+                return this._handleSuccess(serviceName, operation, null, null);
             })
             .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
     }
@@ -294,7 +294,7 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, "logs_inputs_network_remove_success", { network: network.network, inputTitle: input.info.title });
+                return this._handleSuccess(serviceName, operation, null, null);
             })
             .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
     }

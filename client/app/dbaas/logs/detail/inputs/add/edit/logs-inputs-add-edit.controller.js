@@ -65,8 +65,9 @@ class LogsInputsAddEditCtrl {
     addEditInput () {
         if (this.form.$invalid) {
             return this.$q.reject();
+        } else if (!this.form.$dirty) {
+            return this.gotToNextStep(this.inputId);
         }
-
         this.CloudMessage.flushChildMessage();
         this.inputAddEdit = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.editMode ?
@@ -75,11 +76,16 @@ class LogsInputsAddEditCtrl {
         });
         return this.inputAddEdit.load()
             .then(successData => {
-                this.$state.go("dbaas.logs.detail.inputs.editwizard.configure", {
-                    serviceName: this.serviceName,
-                    inputId: this.inputId || successData[0].item.inputId
-                });
+                this.gotToNextStep(this.inputId || successData[0].item.inputId);
             });
+    }
+
+    gotToNextStep (inputId) {
+        this.$state.go("dbaas.logs.detail.inputs.editwizard.configure", {
+            serviceName: this.serviceName,
+            inputId
+        });
+        return this.$q.resolve();
     }
 }
 
