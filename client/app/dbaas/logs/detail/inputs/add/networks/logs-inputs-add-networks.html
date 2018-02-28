@@ -3,9 +3,15 @@
 <section class="cui-page__content inputs-logs-add-network pt-0">
     <p data-translate="inputs_logs_networks_description"></p>
 
-    <h6 class="oui-header_6 mb-3">
-        {{::'inputs_logs_networks_add_remove_network_title' | translate}}
-    </h6> 
+    <div class="d-inline-block">
+        <h6 class="oui-header_6 mb-3 float-left">
+            {{::'inputs_logs_networks_add_remove_network_title' | translate}}
+        </h6>
+        <a class="oui-link ml-3" oui-tooltip="{{:: 'inputs_logs_networks_allow_tooltip' | translate}}">
+            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"></i>
+        </a>
+    </div>
+
     <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
     <form novalidate name="ctrl.form" style="max-width: 52rem;">
         <cui-inline-adder unique-property="allowedNetworkId"

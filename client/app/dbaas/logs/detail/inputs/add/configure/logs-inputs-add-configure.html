@@ -41,7 +41,16 @@
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
-                        <a class="oui-link" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_' + ctrl.configuration.flowgger.logFraming | translate}}">
+                        <a class="oui-link" data-ng-if="ctrl.configuration.flowgger.logFraming === 'LINE'" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_LINE' | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
+                        <a class="oui-link" data-ng-if="ctrl.configuration.flowgger.logFraming === 'NUL'" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_NUL' | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
+                        <a class="oui-link" data-ng-if="ctrl.configuration.flowgger.logFraming === 'SYSLEN'" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_SYSLEN' | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
+                        <a class="oui-link" data-ng-if="ctrl.configuration.flowgger.logFraming === 'CAPNP'" data-oui-tooltip="{{'input_logs_configure_delimiter_tooltip_CAPNP' | translate}}">
                             <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -90,7 +99,7 @@
         <p class="oui-header_3" data-translate="inputs_logs_configure_logstash_title"></p>
         <p data-translate="inputs_logs_configure_logstash_desc"></p>
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
-        
+
         <form novalidate name="ctrl.logstashForm">
             <div class="oui-field mt-4">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_logstash_wizard"></label>
@@ -124,7 +133,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="input" name="input" rows="8"
-                        class="oui-textarea" data-ng-model="ctrl.configuration.logstash.inputSection"
+                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.inputSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
                         required />
                     </div>
@@ -139,7 +148,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="filter" name="filter" rows="8"
-                        class="oui-textarea" data-ng-model="ctrl.configuration.logstash.filterSection"
+                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.filterSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}"
                         required />
                     </div>
@@ -154,7 +163,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_6">
                         <textarea id="grok" name="grok" rows="8"
-                        class="oui-textarea" data-ng-model="ctrl.configuration.logstash.patternSection"
+                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}"
                         required />
                     </div>

@@ -55,7 +55,8 @@ angular.module("managerApp", [
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
     "ovhBrowserAlert",
-    "angular-websocket"
+    "angular-websocket",
+    "monospaced.elastic"
 ])
     .config(function ($stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) {
         "use strict";
