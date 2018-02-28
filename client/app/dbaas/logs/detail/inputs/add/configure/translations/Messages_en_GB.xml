@@ -25,12 +25,12 @@
     <translation id="inputs_logs_configure_logstash_filter_section">Section «Filter»</translation>
 
     <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
-    <translation id="input_logs_configure_test">Configuration test</translation>
+    <translation id="input_logs_configure_test">Test configuration</translation>
     <translation id="input_logs_configure_test_progress">Test in progress</translation>
 
     <translation id="input_logs_configure_test_timestamp">Last executed: {{ timestamp }}</translation>
-    <translation id="input_logs_configure_test_success">Standard output: {{ output }}</translation>
-    <translation id="input_logs_configure_test_failure">Error output: {{ output }}</translation>
+    <translation id="input_logs_configure_test_success">Configuration is OK</translation>
+    <translation id="input_logs_configure_test_failure">{{ output }}</translation>
 
     <translation id="input_logs_configure_delimiter_tooltip_LINE">The delimiter will be "\ n" for each line break.</translation>
     <translation id="input_logs_configure_delimiter_tooltip_NUL">Null character, typically used by GELF / TCP: \ 0.</translation>

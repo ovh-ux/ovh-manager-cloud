@@ -173,33 +173,33 @@
             <button
                 class="oui-button oui-button_secondary"
                 data-ng-click="ctrl.executeTest()"
-                data-ng-disabled="ctrl.test.loading">
+                data-ng-if="!ctrl.previousTest.loading"
+                data-ng-disabled="ctrl.test.loading || ctrl.saving.loading">
                 {{ ctrl.test.loading ? 'input_logs_configure_test_progress' : 'input_logs_configure_test' | translate }}
             </button>
-            <div data-ng-if="ctrl.test.loading"><oui-spinner size="m"></oui-spinner></div>
             <div data-ng-if="!ctrl.input.loading && !ctrl.test.loading && ctrl.test.data.updatedAt">
-                <p class="oui-paragraph" data-translate="input_logs_configure_test_timestamp" data-translate-values="{ timestamp: '{{ ctrl.test.data.updatedAt | amCalendar}}' }"></p>
                 <div class="oui-message m-0" data-ng-class="{'oui-message_success': ctrl.test.data.stdout, 'oui-message_error': ctrl.test.data.stderr}" role="alert">
                     <i class="oui-icon oui-icon_bicolor" data-ng-class="{'oui-icon-success_circle': ctrl.test.data.stdout, 'oui-icon-error_circle': ctrl.test.data.stderr}" aria-hidden="true"></i>
                     <p class="oui-message__body" data-translate="{{ ctrl.test.data.stdout ? 'input_logs_configure_test_success' : 'input_logs_configure_test_failure' }}"  data-translate-values="{ output: ctrl.test.data.stdout ? ctrl.test.data.stdout : ctrl.test.data.stderr }"></p>
+                    <p class="oui-message__body font-size-1" data-translate="input_logs_configure_test_timestamp" data-translate-values="{ timestamp: '{{ ctrl.test.data.updatedAt | amCalendar}}' }"></p>
                 </div>
             </div>
 
             <div class="cui-form-actions">
-                <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                <div>
-                    <button
-                        class="oui-button oui-button_secondary"
-                        data-translate="inputs_logs_configure_previous"
-                        data-ng-click="ctrl.cancel()"></button>
+                <oui-spinner data-ng-if="ctrl.saving.loading || ctrl.test.loading"></oui-spinner>
+                <div data-ng-if="!(ctrl.saving.loading || ctrl.test.loading)">
+                    <a class="oui-button oui-button_secondary"
+                        data-translate="logs_previous"
+                        data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit"></a>
                     <button
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
-                        data-translate="inputs_logs_configure_next"
-                        data-ng-click="ctrl.saveLogstash()"></button>
+                        data-translate="logs_next"
+                        data-ng-click="ctrl.saveLogstash()"
+                        data-ng-disabled="!ctrl.test.data.stdout"></button>
                     <a class="oui-button oui-button_link"
-                        data-translate="inputs_logs_configure_later"
-                        data-ui-sref="dbaas.logs.detail.inputs.add.edit"></a>
+                        data-translate="logs_later"
+                        data-ui-sref="dbaas.logs.detail.inputs"></a>
                 </div>
             </div>
         </form>

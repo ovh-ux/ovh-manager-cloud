@@ -26,7 +26,7 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_add_success", { inputTitle: input.info.title });
+                return this._pollOperation(serviceName, operation.data);
             })
             .catch(err => this._handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
     }
@@ -332,7 +332,7 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_update_success", { inputTitle: input.info.title });
+                return this._pollOperation(serviceName, operation.data);
             })
             .catch(err => this._handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
     }
