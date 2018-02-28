@@ -6,5 +6,5 @@
     <translation id="inputs_logs_step1_edit">Edit</translation>
     <translation id="inputs_logs_step1_add">Add</translation>
     <translation id="inputs_logs_step2">Configuration</translation>
-    <translation id="inputs_logs_step3">Allowed networks</translation>
+    <translation id="inputs_logs_step3">Trusted networks</translation>
 </translations>

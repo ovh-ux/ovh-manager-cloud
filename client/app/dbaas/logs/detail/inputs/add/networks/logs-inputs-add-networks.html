@@ -4,11 +4,11 @@
     <p data-translate="inputs_logs_networks_description"></p>
 
     <div class="d-inline-block">
-        <h6 class="oui-header_6 mb-3 float-left">
+        <p class="oui-header_3 mb-3 float-left">
             {{::'inputs_logs_networks_add_remove_network_title' | translate}}
-        </h6>
+        </p>
         <a class="oui-link ml-3" oui-tooltip="{{:: 'inputs_logs_networks_allow_tooltip' | translate}}">
-            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor"></i>
+            <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor pt-4"></i>
         </a>
     </div>
 
@@ -30,8 +30,11 @@
                                         class="oui-input" data-ng-model="item.network"
                                         data-ng-disabled="item.allowedNetworkId"
                                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
+                                        autofocus
                                         required />
-                                <p data-ng-if="!item.allowedNetworkId">{{::'inputs_logs_networks_ip_address_example' | translate}}</p>
+                                <p data-ng-if="!item.allowedNetworkId" class="input-network__example_text">
+                                    <span> {{::'inputs_logs_networks_ip_address_example' | translate}} </span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -39,20 +42,18 @@
         </cui-inline-adder>
     </form>
     <div class="cui-form-actions">
+        <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
         <div data-ng-if="!ctrl.saving.loading">
             <a class="oui-button oui-button_secondary mr-2"
                 data-translate="logs_previous"
                 data-ui-sref="dbaas.logs.detail.inputs.editwizard.configure"></a>
             <oui-button
                 data-ng-if="!ctrl.input.loading"
-                text="{{::'logs_finish' | translate}}"
+                text="{{::'logs_finish_configuration' | translate}}"
                 variant="primary"
                 type="submit"
                 data-ui-sref="dbaas.logs.detail.inputs">
             </oui-button>
-            <a class="oui-button oui-button_link"
-                data-translate="logs_later"
-                data-ui-sref="dbaas.logs.detail.inputs"></a>
         </div>
     </div>
 </section>

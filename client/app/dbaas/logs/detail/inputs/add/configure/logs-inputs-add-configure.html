@@ -1,7 +1,7 @@
 <div class="cui-page__content inputs-logs-add-configure pt-0">
     
     <div class="flowgger-edit" data-ng-if="ctrl.configuration.engineType === 'FLOWGGER'">
-        <p class="oui-header_3" data-translate="inputs_logs_configure_flowgger_title"></p>
+        <p class="oui-header_3"> {{::'inputs_logs_configure_flowgger_title' | translate}} {{ctrl.input.data.info.engine.version}}</p>
 
         <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
         <form novalidate name="ctrl.flowggerForm" data-ng-if="!ctrl.input.loading">
@@ -96,7 +96,7 @@
     </div>
 
     <div class="logstash-edit" data-ng-if="ctrl.configuration.engineType === 'LOGSTASH'">
-        <p class="oui-header_3" data-translate="inputs_logs_configure_logstash_title"></p>
+        <p class="oui-header_3">{{::'inputs_logs_configure_logstash_title' | translate}} {{ctrl.input.data.info.engine.version}}</p>
         <p data-translate="inputs_logs_configure_logstash_desc"></p>
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
 
