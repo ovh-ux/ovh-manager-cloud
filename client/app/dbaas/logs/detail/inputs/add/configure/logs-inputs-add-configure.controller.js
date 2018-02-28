@@ -350,7 +350,7 @@ class LogsInputsAddConfigureCtrl {
     executeTest () {
         this.CloudMessage.flushChildMessage();
         this.test = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsInputsService.updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)
+            loaderFunction: () => (this.logstashForm.$dirty ? this.LogsInputsService.updateLogstash(this.serviceName, this.input.data, this.configuration.logstash) : this.$q.when({}))
                 .then(() => this.LogsInputsService.executeTest(this.serviceName, this.input.data))
                 .catch(() => this.ControllerHelper.scrollPageToTop())
         });
