@@ -726,6 +726,7 @@ angular.module("managerApp")
         self.activeSwitchPageIndex = 0;
         self.toggle.editDetail = null;
         self.toggle.editFlavor = "categories";
+        self.states.hasSetFlavor = false;
     };
 
     self.isSwitchMode = function () {
@@ -876,14 +877,6 @@ angular.module("managerApp")
     });
 
     // --------- MODELS watchs ---------
-
-    $scope.$watch('VmAddEditCtrl.model.flavorId', function (value) {
-        self.toggle.accordions.flavors = {};
-        if (value) {
-            var category = getCategoryFromFlavor(self.vmInEdition.flavor.type);
-            self.toggle.accordions.flavors[category] = true;
-        }
-    });
 
     $scope.$watch('VmAddEditCtrl.model.imageId', function (value, oldValue) {
         if (value) {
@@ -1819,5 +1812,13 @@ angular.module("managerApp")
      */
     self.hasWindowsCompatibilityIssue = function(category) {
         return self.vmInEdition.image && self.vmInEdition.image.type === 'windows' && category === 'vps';
+    };
+
+    self.showFlex = function (category) {
+        return _.includes(["balanced", "cpu", "ram"], category);
+    };
+
+    self.showCeph = function (category) {
+        return _.includes(["balanced", "cpu", "ram"], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], "ceph", false) !== undefined;
     };
 });

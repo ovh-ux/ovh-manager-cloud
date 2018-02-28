@@ -15,19 +15,31 @@ angular.module("managerApp")
             id: "vps",
             types: ["ovh.vps-ssd"],
             migrationNotAllowed: [],
-            order: 3
+            order: 5
         },
         {
-            id: "other",
-            types: ["ovh.cpu", "ovh.ram", "ovh.ceph.eg", "ovh.ssd.cpu", "ovh.ssd.ram", "ovh.ssd.eg", "ovh.ceph.hg"],
+            id: "balanced",
+            types: ["ovh.ceph.eg", "ovh.ssd.eg"],
             migrationNotAllowed: ["vps"],
             order: 1
         },
         {
-            id: "gpu",
-            types: ["ovh.ssd.gpu", "ovh.ssd.gpu2", "ovh.ssd.gpu3"],
+            id: "accelerated",
+            types: ["ovh.ssd.gpu", "ovh.ssd.gpu2", "ovh.ssd.gpu3", "ovh.ssd.fpga2"],
+            migrationNotAllowed: ["vps"],
+            order: 4
+        },
+        {
+            id: "cpu",
+            types: ["ovh.cpu", "ovh.ssd.cpu", "ovh.ceph.hg"],
             migrationNotAllowed: ["vps"],
             order: 2
+        },
+        {
+            id: "ram",
+            types: ["ovh.ram", "ovh.ssd.ram"],
+            migrationNotAllowed: ["vps"],
+            order: 3
         }
     ])
     .constant("CLOUD_FLAVOR_SPECIFIC_IMAGE", [
@@ -48,8 +60,10 @@ angular.module("managerApp")
         "ovh.ssd.gpu3": 3.1
     })
     .constant("CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES", [
-        "other",
-        "gpu"
+        "balanced",
+        "ram",
+        "cpu",
+        "accelerated"
     ])
     .constant("CLOUD_VOLUME_TYPES", ["classic", "high-speed"])
     .constant("CLOUD_IPFO_ORDER_LIMIT", {
