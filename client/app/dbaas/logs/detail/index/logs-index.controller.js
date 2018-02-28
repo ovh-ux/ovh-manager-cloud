@@ -54,7 +54,7 @@ class LogsIndexCtrl {
             info
         ).then(() => {
             this.delete = this.ControllerHelper.request.getHashLoader({
-                loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info.indexId)
+                loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info)
                     .then(() => this.initLoaders())
             });
 
