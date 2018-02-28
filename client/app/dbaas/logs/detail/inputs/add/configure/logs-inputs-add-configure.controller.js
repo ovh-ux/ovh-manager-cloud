@@ -358,6 +358,8 @@ class LogsInputsAddConfigureCtrl {
     saveFlowgger () {
         if (this.flowggerForm.$invalid) {
             return this.$q.reject();
+        } else if (!this.flowggerForm.$dirty) {
+            return this.goToNetworkPage();
         }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
@@ -371,6 +373,8 @@ class LogsInputsAddConfigureCtrl {
     saveLogstash () {
         if (this.logstashForm.$invalid) {
             return this.$q.reject();
+        } else if (!this.flowggerForm.$dirty) {
+            return this.goToNetworkPage();
         }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
@@ -386,6 +390,7 @@ class LogsInputsAddConfigureCtrl {
             serviceName: this.serviceName,
             inputId: this.inputId
         });
+        return this.$q.resolve();
     }
 }
 
