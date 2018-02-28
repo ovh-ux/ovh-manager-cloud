@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="inputs_logs_networks_title">Allowed networks</translation>
-    <translation id="inputs_logs_networks_description">Logs Data Platform allows you to create and host Elasticsearch indexes. These can be used for configuration data of a Kibana instance, index statistical data and enrich or correlate your logs. You can then use these indexes with most of the tools and applications that are compatible with the Elasticsearch REST API.</translation>
     <translation id="inputs_logs_networks_add_remove_network_title">Add/Remove trusted networks</translation>
-    <translation id="inputs_logs_networks_ip_address">IP Address</translation>
+    <translation id="inputs_logs_networks_ip_address">Trusted network IP address</translation>
     <translation id="inputs_logs_networks_ip_address_example">Example: 5.196.85.154 or 5.196.2.0/26</translation>
 
     <translation id="logs_inputs_network_add_success">The network {{network}} has been added successfully to input {{inputTitle}}</translation>
