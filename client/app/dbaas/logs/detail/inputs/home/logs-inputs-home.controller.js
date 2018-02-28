@@ -40,6 +40,7 @@ class LogsInputsHomeCtrl {
         this._setInputToProcessing(input);
         this.processInput = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService[actionFn](this.serviceName, input)
+                .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         this.processInput.load().finally(() => this._reloadInputDetail(input.info.inputId));
     }

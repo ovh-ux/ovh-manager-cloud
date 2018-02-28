@@ -352,6 +352,7 @@ class LogsInputsAddConfigureCtrl {
         this.test = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService.updateLogstash(this.serviceName, this.input.data, this.configuration.logstash)
                 .then(() => this.LogsInputsService.executeTest(this.serviceName, this.input.data))
+                .catch(() => this.ControllerHelper.scrollPageToTop())
         });
         this.test.load();
     }
@@ -374,7 +375,7 @@ class LogsInputsAddConfigureCtrl {
     saveLogstash () {
         if (this.logstashForm.$invalid) {
             return this.$q.reject();
-        } else if (!this.flowggerForm.$dirty) {
+        } else if (!this.logstashForm.$dirty) {
             return this.goToNetworkPage();
         }
         this.CloudMessage.flushChildMessage();

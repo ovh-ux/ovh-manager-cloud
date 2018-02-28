@@ -77,7 +77,8 @@ class LogsInputsAddEditCtrl {
         return this.inputAddEdit.load()
             .then(successData => {
                 this.gotToNextStep(this.inputId || successData[0].item.inputId);
-            });
+            })
+            .catch(() => this.ControllerHelper.scrollPageToTop());
     }
 
     gotToNextStep (inputId) {
