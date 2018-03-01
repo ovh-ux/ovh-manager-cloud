@@ -87,7 +87,7 @@
    <translation id="vps_dashboard_ssh" qtlid="168081">ssh</translation>
    <translation id="vps_dashboard_ssh_tooltip_OK" qtlid="168094">O serviço SSH está ativo</translation>
    <translation id="vps_dashboard_ssh_tooltip_KO" qtlid="168107">O serviço SSH está inativo</translation>
-   <translation id="vps_dashboard_loading_error" qtlid="168120">Ocorreu um erro no acesso às informações</translation>
+   <translation id="vps_dashboard_loading_error" qtlid="168120">Erro ao carregar a informação.</translation>
    <translation id="vps_dashboard_loading_error_monitoring" qtlid="168133">Ocorreu um erro aquando do carregamento das informações de monitorização.</translation>
    <translation id="vps_dashboard_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_dashboard_vcore_other" qtlid="128413">vCores</translation>
@@ -226,7 +226,7 @@
    <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Esta opção tem um preço mensal de <span class="bold">{{ amount }} IVA não incluído</span></translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">A opção Snapshot permite criar um ponto de restauro. Esta opção guarda uma imagem duma configuração existente num determinado momento,  que pode ser restaurada em caso de necessidade.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">clique no botão "Seguinte" para avançar com a ativação da opção Snapshot.</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Para confirmar o pedido, efetue o pagamento. Para tal, deverá clicar no botão "Encomendar".</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Para confirmar o pedido, clique no botão "Encomendar" e efetue o pagamento.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Resumo</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Irá surgir uma nova janela, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
@@ -267,11 +267,11 @@
    <translation id="vps_configuration_monitoring_usage_trafic" qtlid="169615">Utilização do tráfego</translation>
    <translation id="vps_configuration_monitoring_traffic" qtlid="169628">Tráfego da sua VPS</translation>
    <translation id="vps_configuration_monitoring_fail" qtlid="169641">Ocorreu um erro aquando do carregamento das informações de monitorização.</translation>
-   <translation id="vps_configuration_monitoring_reset_zoom" qtlid="169654">Reinicializar</translation>
+   <translation id="vps_configuration_monitoring_reset_zoom" qtlid="169654">Reiniciar</translation>
    <translation id="vps_configuration_period_LASTDAY" qtlid="169667">As últimas 24 horas</translation>
    <translation id="vps_configuration_period_LASTMONTH" qtlid="169680">O último mês</translation>
    <translation id="vps_configuration_period_LASTWEEK" qtlid="169693">Os últimos 7 dias</translation>
-   <translation id="vps_configuration_period_LASTYEAR" qtlid="169706">Os últimos 12 meses</translation>
+   <translation id="vps_configuration_period_LASTYEAR" qtlid="169706">Últimos 12 meses</translation>
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Hoje</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Fazer evoluir a minha VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Fazer evoluir a minha VPS</translation>
@@ -287,7 +287,7 @@
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Preço c/IVA.</translation>
    <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">A seguir, o servidor será faturado ao preço mensal de <span class="red">{{price}} IVA não incluído</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Para confirmar o pedido, efetue o pagamento. Para tal, deverá clicar no botão "Encomendar".</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Para confirmar o pedido, clique no botão "Encomendar" e efetue o pagamento.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Irá surgir uma nova janela, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a renovação seja tida em conta no seu Espaço de Cliente Web.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Será necessário um reboot para que a potência da sua VPS seja aumentada.</translation>
@@ -319,7 +319,7 @@
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Preço c/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Eu reconheço ter tomado conhecimento dos seguintes elementos:</translation>
    <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">A gerar nota de encomenda ...</translation>
-   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">A nota de encomenda foi gerada com sucesso.</translation>
+   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">Nota de encomenda gerada com sucesso.</translation>
    <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">Para confirmar a encomenda, clique no botão "Pagar".</translation>
    <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Atenção: a ativação pode demorar cerca de 2 horas até ficar registada na Área de Cliente.</translation>
    <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Irá surgir uma nova janela, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
@@ -416,7 +416,7 @@
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Um erro ocorreu durante a reinicialização da nova palavra-passe.</translation>
    <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Quer mesmo repor a palavra-passe para o Backup Storage?</translation>
 
-   <translation id="vps_tab_backup_storage_login" qtlid="46792">Identificador</translation>
+   <translation id="vps_tab_backup_storage_login" qtlid="46792">ID utilizador</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Nome</translation>
    <translation id="vps_tab_backup_storage_usage" qtlid="30382">Utilização</translation>
    <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Nenhum acesso configurado</translation>

@@ -11,37 +11,40 @@ class OrderHelperService {
             });
     }
 
-    getUrlConfigPart (config, urlParams = {}) {
+    getUrlConfigPart (configs, urlParams = {}) {
+        configs = !_.isArray(configs) ? [configs] : configs;
+
+        const formattedConfigs = [];
+        _.forEach(configs, config => {
+            const formattedConfig = _.assign({}, config);
+            if (formattedConfig.configuration && !_.isArray(formattedConfig.configuration)) {
+                formattedConfig.configuration = this.transformToOrderValues(formattedConfig.configuration);
+            }
+
+            if (formattedConfig.option) {
+                formattedConfig.option = formattedConfig.option.map(option => {
+                    if (option.configuration && !_.isArray(option.configuration)) {
+                        option.configuration = this.transformToOrderValues(option.configuration);
+                    }
+                    return option;
+                });
+            }
+            formattedConfigs.push(formattedConfig);
+        });
         // Transform configuration and option value if necessary
-        const formattedConfig = _.assign({}, config);
-        if (formattedConfig.configuration && !_.isArray(formattedConfig.configuration)) {
-            formattedConfig.configuration = this.transformToOrderValues(formattedConfig.configuration);
-        }
 
-        if (formattedConfig.option) {
-            const formattedOptions = formattedConfig.option.map(option => {
-                if (option.configuration && !_.isArray(option.configuration)) {
-                    option.configuration = this.transformToOrderValues(option.configuration);
-                }
-                return option;
-            });
-            formattedConfig.option = formattedOptions;
-        }
-
-        const paramsPart = this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
-            products: JSURL.stringify([formattedConfig])
+        return this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
+            products: JSURL.stringify(formattedConfigs)
         }));
-
-        return paramsPart;
     }
 
     /**
      * Transform an object to an Order compliant array
-     * @param  {[Object} config plain json
-     * @return {Array}          an array compatible with Order
+     * @param  {Object} config plain json
+     * @return {Array} an array compatible with Order
      */
     transformToOrderValues (config) {
-        let orderConfig = [];
+        const orderConfig = [];
         _.forEach(_.keys(config), key => {
             const configParam = {
                 label: key

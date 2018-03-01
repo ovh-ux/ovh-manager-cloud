@@ -16,7 +16,7 @@
    <translation id="common_apply" qtlid="41326">Appliquer</translation>
    <translation id="common_loading" qtlid="58256">Chargement</translation>
    <translation id="common_refresh" qtlid="250030">Actualizar</translation>
-   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}} / {{nbPages}}</translation>
+   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}}/ {{nbPages}}</translation>
    <translation id="common_pagination_display" qtlid="69353">Afficher</translation>
    <translation id="common_search_placeholder" qtlid="98288">Rechercher...</translation>
    <translation id="common_disk_bootable" qtlid="271348">Disco de arranque </translation>
@@ -44,12 +44,12 @@
    <translation id="common_menu_billing" qtlid="32950">Facturation</translation>
    <translation id="common_menu_renew" qtlid="229658">Mis servicios</translation>
    <translation id="common_menu_orders" qtlid="282809">Mis pedidos</translation>
-   <translation id="common_menu_contacts" qtlid="70541">Mes contacts</translation>
-   <translation id="common_menu_list_ticket" qtlid="454039">Mes demandes d’assistance</translation>
+   <translation id="common_menu_contacts" qtlid="70541">Mis contactos</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Mis solicitudes de asistencia</translation>
    <translation id="common_menu_language" qtlid="30598">Langue</translation>
    <translation id="common_menu_account" qtlid="157642">Mi cuenta</translation>
    <translation id="common_menu_changelog" qtlid="124964">Historique des mises à jour</translation>
-   <translation id="common_skip_to_main_content" qtlid="454052">Aller au contenu principal</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Ir al contenido principal</translation>
    <translation id="global_logout" qtlid="33658">Déconnexion</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Servidores dedicados</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nombre personalizado</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">No hay tareas en curso.</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Abonar la orden de pedido</translation>
+   <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
 </translations>

@@ -1,0 +1,56 @@
+<form novalidate name="$ctrl.form">
+    <cui-modal>
+        <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
+        <cui-modal-body title="'private_network_activate_title' | translate">
+            <div class="oui-radio" data-ng-class="{ 'oui-radio_error': $ctrl.form.$submitted && $ctrl.form.vRacks.$invalid }">
+                <input class="oui-radio__input"
+                    type="radio"
+                    name="activateOptions"
+                    id="existingVrack"
+                    data-ng-value="$ctrl.activateOptions.EXISTING"
+                    data-ng-model="$ctrl.selectedActivateOption">
+                <label class="oui-radio__label-container" for="existingVrack">
+                    <span class="oui-radio__label">{{ :: "private_network_activate_existing" | translate }}</span>
+                    <span class="oui-radio__description">
+                        <div class="oui-select"
+                            data-ng-class="{ 'oui-select_error': $ctrl.form.$submitted && $ctrl.form.vRacks.$invalid }">
+                            <select class="oui-select__input"
+                                id="vRacks"
+                                name="vRacks"
+                                data-ng-model="$ctrl.selectedVrack"
+                                data-ng-options="vRack.displayName for vRack in $ctrl.vRacks"
+                                ui-validate="{ selection: '$ctrl.validateSelection($value)' }">
+                                <option data-translate="private_network_select_placeholder"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down"></i>
+                        </div>
+                    </span>
+                </label>
+            </div>
+            <div class="oui-radio">
+                <input class="oui-radio__input"
+                    type="radio"
+                    name="activateOptions"
+                    id="newVrack"
+                    data-ng-value="$ctrl.activateOptions.NEW"
+                    data-ng-model="$ctrl.selectedActivateOption">
+                <label class="oui-radio__label-container" for="newVrack">
+                    <span class="oui-radio__label">{{ :: "private_network_activate_new" | translate }}</span>
+                    <span class="oui-radio__description">
+                        {{ :: "private_network_activate_new_vRack_description" | translate }}
+                    </span>
+                </label>
+            </div>
+        </cui-modal-body>
+        <cui-modal-footer>
+            <cui-cancel-button data-text="'common_cancel' | translate"
+                data-on-click="$ctrl.cancel()"
+                data-disabled="$ctrl.loaders.activate">
+            </cui-cancel-button>
+            <cui-submit-button data-text="'private_network_activate' | translate"
+                data-on-click="$ctrl.activate()"
+                data-disabled="$ctrl.loaders.activate || ($ctrl.selectedActivateOption === $ctrl.activateOptions.EXISTING && $ctrl.form.$invalid)">
+            </cui-submit-button>
+        </cui-modal-footer>
+    </cui-modal>
+</form>

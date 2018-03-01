@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="preload_welcome" qtlid="433576">Welcome to your</translation>
-   <translation id="preload_manager_ovh" qtlid="433589">OVH Control Panel</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">OVH Manager</translation>
 
    <translation id="common_confirm" qtlid="31498">Confirm</translation>
    <translation id="common_buy" qtlid="269591">Buy </translation>
@@ -98,10 +98,10 @@
    <translation id="vrack_menu_add" qtlid="323106">Create a vRack </translation>
    <translation id="vrack_menu_project_num" qtlid="323119">Vrack {{num}}</translation>
    <translation id="vrack_service_type_dedicatedserver" qtlid="101913">Dedicated server</translation>
-   <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Private Cloud</translation>
+   <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Hosted Private Cloud</translation>
    <translation id="vrack_service_type_dedicatedconnect" qtlid="323132">Dedicated connect</translation>
    <translation id="vrack_service_type_legacyvrack" qtlid="323145">Legacy vRack </translation>
-   <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Private Cloud</translation>
+   <translation id="vrack_service_type_dedicatedclouddatacenter" qtlid="20131">Hosted Private Cloud</translation>
    <translation id="vrack_service_type_ip" qtlid="25615">IP</translation>
    <translation id="vrack_service_type_cloudproject" qtlid="274369">Cloud project </translation>
    <translation id="vrack_service_type_iploadbalancing" qtlid="439819">Load Balancer</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Customized name</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">No task in progress</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Pay bill</translation>
+   <translation id="common_deactivate" qtlid="90973">Disable</translation>
 </translations>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_zone_add_title" qtlid="454436">Aggiungi una localizzazione</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Seleziona una o più localizzazioni</translation>
+   <translation id="iplb_zone_add_single_success" qtlid="454462">È necessario completare l'aggiunta della localizzazione.</translation>
+   <translation id="iplb_zone_add_plural_success" qtlid="454475">È necessario completare l'aggiunta delle localizzazioni.</translation>
+   <translation id="iplb_zone_activate_single_success" qtlid="454488">La localizzazione è stata riattivata correttamente.</translation>
+   <translation id="iplb_zone_activate_plural_success" qtlid="454501">Le localizzazioni sono state riattivate correttamente.</translation>
+   <translation id="iplb_zone_add_selection_error" qtlid="454514">Seleziona almeno una localizzazione.</translation>
+   <translation id="iplb_zone_add_loading_error" qtlid="454527">Si è verificato un errore durante il caricamento delle localizzazioni: {{message}}</translation>
+   <translation id="iplb_zone_add_single_error" qtlid="454540">Si è verificato un errore durante il caricamento della localizzazione: {{message}}</translation>
+   <translation id="iplb_zone_add_plural_error" qtlid="454553">Si è verificato un errore durante l'operazione di aggiunta delle localizzazioni: {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error" qtlid="454566">Si è verificato un errore durante la riattivazione della localizzazione: {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error" qtlid="454579">Si è verificato un errore durante la riattivazione delle localizzazioni: {{message}}</translation>
+   <translation id="iplb_zone_add_available_released" qtlid="454592">Per questa localizzazione è già in corso una richiesta di eliminazione, che diventerà effettiva alla fine del periodo di fatturazione. Ti ricordiamo che sarà comunque possibile aggiungerla nuovamente.</translation>
+
+   <translation id="iplb_zone_delete_title" qtlid="454605">Elimina una localizzazione</translation>
+   <translation id="iplb_zone_delete_intro_text_single" qtlid="454618">Seleziona massimo {{zoneQuantity}} localizzazione</translation>
+   <translation id="iplb_zone_delete_intro_text_plural" qtlid="454631">Seleziona massimo {{zoneQuantity}} localizzazioni</translation>
+   <translation id="iplb_zone_delete_intro_text_none" qtlid="454644">Seleziona un massimo di 0 localizzazioni.</translation>
+   <translation id="iplb_zone_delete_single_success" qtlid="454657">La localizzazione "{{zones}}" verrà eliminata alla fine del periodo di fatturazione.</translation>
+   <translation id="iplb_zone_delete_plural_success" qtlid="454670">Le localizzazioni "{{zones}}" verranno eliminate alla fine del periodo di fatturazione.</translation>
+   <translation id="iplb_zone_delete_selection_error" qtlid="454514">Seleziona almeno una localizzazione.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error" qtlid="454683">È possibile selezionare al massimo {{zoneQuantity}} localizzazione</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error" qtlid="454696">È possibile selezionare al massimo {{zoneQuantity}} localizzazioni</translation>
+   <translation id="iplb_zone_delete_loading_error" qtlid="454527">Si è verificato un errore durante il caricamento delle localizzazioni: {{message}}</translation>
+   <translation id="iplb_zone_delete_single_error" qtlid="454709">Si è verificato un errore durante l'eliminazione della localizzazione: {{message}}</translation>
+   <translation id="iplb_zone_delete_plural_error" qtlid="454722">Si è verificato un errore durante l'eliminazione delle localizzazioni: {{message}}</translation>
+   <translation id="iplb_zone_delete_unavailable_already_released" qtlid="454735">Questa localizzazione verrà eliminata alla fine del periodo di fatturazione</translation>
+</translations>

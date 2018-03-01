@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_zone_add_title" qtlid="454436">Dodaj strefę</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Wybierz jedną lub kilka stref</translation>
+   <translation id="iplb_zone_add_single_success" qtlid="454462">Dodanie strefy musi zostać zakończone.</translation>
+   <translation id="iplb_zone_add_plural_success" qtlid="454475">Dodanie stref musi zostać zakończone.</translation>
+   <translation id="iplb_zone_activate_single_success" qtlid="454488">Strefa została ponownie aktywowana.</translation>
+   <translation id="iplb_zone_activate_plural_success" qtlid="454501">Strefy zostały ponownie aktywowane. </translation>
+   <translation id="iplb_zone_add_selection_error" qtlid="454514">Wybierz co najmniej jedną strefę.</translation>
+   <translation id="iplb_zone_add_loading_error" qtlid="454527">Wystąpił błąd podczas ładowania stref: {{message}}</translation>
+   <translation id="iplb_zone_add_single_error" qtlid="454540">Wystąpił błąd podczas dodawania strefy: {{message}}</translation>
+   <translation id="iplb_zone_add_plural_error" qtlid="454553">Wystąpił błąd podczas dodawania stref: {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error" qtlid="454566">Wystąpił błąd podczas ponownej aktywacji strefy: {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error" qtlid="454579">Wystąpił błąd podczas ponownej aktywacji stref: {{message}}</translation>
+   <translation id="iplb_zone_add_available_released" qtlid="454592">Żądanie usunięcia tej strefy zostało już przesłane. Strefa zostanie usunięta na koniec okresu rozliczeniowego. Istnieje jednak możliwość jej ponownego dodania. </translation>
+
+   <translation id="iplb_zone_delete_title" qtlid="454605">Usuń strefę</translation>
+   <translation id="iplb_zone_delete_intro_text_single" qtlid="454618">Wybierz maksymalnie {{zoneQuantity}} strefę</translation>
+   <translation id="iplb_zone_delete_intro_text_plural" qtlid="454631">Wybierz maksymalnie {{zoneQuantity}} stref/y</translation>
+   <translation id="iplb_zone_delete_intro_text_none" qtlid="454644">Wybierz maksymalnie 0 stref.</translation>
+   <translation id="iplb_zone_delete_single_success" qtlid="454657">Strefa « {{zones}} » zostanie usunięta na koniec okresu rozliczeniowego.</translation>
+   <translation id="iplb_zone_delete_plural_success" qtlid="454670">Strefy « {{zones}} » zostaną usunięte na koniec okresu rozliczeniowego.</translation>
+   <translation id="iplb_zone_delete_selection_error" qtlid="454514">Wybierz co najmniej jedną strefę.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error" qtlid="454683">Wybierz maksymalnie {{zoneQuantity}} strefę</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error" qtlid="454696">Wybierz maksymalnie {{zoneQuantity}} stref/y</translation>
+   <translation id="iplb_zone_delete_loading_error" qtlid="454527">Wystąpił błąd podczas ładowania stref: {{message}}</translation>
+   <translation id="iplb_zone_delete_single_error" qtlid="454709">Wystąpił błąd podczas usuwania strefy: {{message}}</translation>
+   <translation id="iplb_zone_delete_plural_error" qtlid="454722">Wystąpił błąd podczas usuwania stref: {{message}}</translation>
+   <translation id="iplb_zone_delete_unavailable_already_released" qtlid="454735">Ta strefa zostanie usunięta na koniec okresu rozliczeniowego.</translation>
+</translations>

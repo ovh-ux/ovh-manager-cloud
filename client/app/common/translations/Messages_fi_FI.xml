@@ -49,7 +49,7 @@
    <translation id="common_menu_language" qtlid="30598">Kieli</translation>
    <translation id="common_menu_account" qtlid="157642">Oma tili</translation>
    <translation id="common_menu_changelog" qtlid="124964">Päivityshistoria</translation>
-   <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Siirry pääsisältöön</translation>
    <translation id="global_logout" qtlid="33658">Kirjaudu ulos</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Dedikoidut palvelimet</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personoitu nimi</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">Ei käynnissä olevaa tehtävää</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Maksa tilaus</translation>
+   <translation id="common_deactivate" qtlid="90973">Poista käytöstä</translation>
 </translations>
