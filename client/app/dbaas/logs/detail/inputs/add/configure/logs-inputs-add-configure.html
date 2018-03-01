@@ -132,8 +132,8 @@
                 <label for="input" class="oui-label" data-translate="inputs_logs_configure_logstash_input_section"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
-                        <textarea id="input" name="input" rows="8"
-                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.inputSection"
+                        <textarea id="input" name="input" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.inputSection)}}"
+                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.inputSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
                         required />
                     </div>
@@ -147,8 +147,8 @@
                 <label for="filter" class="oui-label" data-translate="inputs_logs_configure_logstash_filter_section"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
-                        <textarea id="filter" name="filter" rows="8"
-                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.filterSection"
+                        <textarea id="filter" name="filter" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.filterSection)}}"
+                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.filterSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}" />
                     </div>
                 </div>
@@ -161,8 +161,8 @@
                 <label for="grok" class="oui-label" data-translate="inputs_logs_configure_logstash_grok"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
-                        <textarea id="grok" name="grok" rows="8"
-                        class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.patternSection"
+                        <textarea id="grok" name="grok" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.patternSection)}}"
+                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}" />
                     </div>
                 </div>
