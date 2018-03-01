@@ -133,7 +133,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="input" name="input" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.inputSection)}}"
-                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.inputSection"
+                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.inputSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
                         required />
                     </div>
@@ -148,7 +148,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="filter" name="filter" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.filterSection)}}"
-                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.filterSection"
+                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.filterSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}" />
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="grok" name="grok" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.patternSection)}}"
-                        type="text" class="oui-input oui-input_xl" data-ng-model="ctrl.configuration.logstash.patternSection"
+                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}" />
                     </div>
                 </div>
