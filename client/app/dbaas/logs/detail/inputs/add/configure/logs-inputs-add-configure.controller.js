@@ -52,6 +52,11 @@ class LogsInputsAddConfigureCtrl {
         this.configuration.flowgger.type = configuration.type;
     }
 
+    findRowLength (str) {
+        const lines = str.split(/\r\n|\r|\n/);
+        return lines.length;
+    }
+
     _initLogstash (configuration) {
         this.configuration.logstash.inputSection = this.ControllerHelper.htmlDecode(configuration.inputSection);
         this.configuration.logstash.filterSection = this.ControllerHelper.htmlDecode(configuration.filterSection);
