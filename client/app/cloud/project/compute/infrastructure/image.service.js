@@ -37,7 +37,8 @@
         "virtualmin",
         "datascience",
         "deeplearning",
-        "rstudio"
+        "rstudio",
+        "minikube"
     ];
 
     class CloudImageService {
