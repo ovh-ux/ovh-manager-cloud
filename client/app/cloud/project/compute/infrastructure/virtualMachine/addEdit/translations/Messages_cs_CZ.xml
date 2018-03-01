@@ -58,9 +58,9 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instances GPU<br/>Grafický procesor s vysokým výkonem</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">Instances GPU<br/>Grafický procesor s vysokým výkonem</translation>
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Starší generace</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Instance GPU<br/>Grafický procesor s vysokým výkonem</translation>
+   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">Instance GPU<br/>Grafický procesor s vysokým výkonem</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Místní SSD RAID storage, sdílené CPU/RAM/šířka pásma.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikovaný pevný disk, sdílené CPU/RAM/šířka pásma.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Vysoká dostupnost úložiště, sdílené CPU/RAM/šířka pásma.</translation>
@@ -145,9 +145,9 @@
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disky</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
-   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }}x Nvidia GTX 1060 6GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }}x Nvidia GTX 1070 8GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }}x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Instance VPS-SSD: <br/>public cloud za nejlepší cenu</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD využívají lokální SSD RAID a jejich výkon může v čase kolísat</translation>
    <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instance: <br/>Sdílené zdroje</translation>
@@ -219,7 +219,7 @@
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Nemáte žádný SSH klíč.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">Společnost OVH používá pro zajištění šifrované datové komunikace mezi servery bezpečnostní protokol SSH.</translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů.<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Příručka pro vytváření SSH klíčů<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Rozuměl jsem!</translation>

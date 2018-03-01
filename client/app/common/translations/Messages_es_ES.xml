@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="preload_welcome" qtlid="433576">Bienvenido a su</translation>
+   <translation id="preload_welcome" qtlid="433576">Bienvenido/a al</translation>
    <translation id="preload_manager_ovh" qtlid="433589">Área de cliente de OVH</translation>
 
    <translation id="common_confirm" qtlid="31498">Confirmar</translation>
@@ -49,7 +49,7 @@
    <translation id="common_menu_language" qtlid="30598">Idioma</translation>
    <translation id="common_menu_account" qtlid="157642">Mi cuenta</translation>
    <translation id="common_menu_changelog" qtlid="124964">Historial de actualizaciones</translation>
-   <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Ir al contenido principal</translation>
    <translation id="global_logout" qtlid="33658">Salir</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Servidores dedicados</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nombre personalizado</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">No hay tareas en curso.</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Abonar la orden de pedido</translation>
+   <translation id="common_deactivate" qtlid="90973">Desactivar</translation>
 </translations>

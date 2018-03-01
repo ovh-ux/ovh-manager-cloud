@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_zone_add_title" qtlid="454436">Add an availability zone</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Select one or more availability zones</translation>
+   <translation id="iplb_zone_add_single_success" qtlid="454462">You will need to finalize the zone addition.</translation>
+   <translation id="iplb_zone_add_plural_success" qtlid="454475">You will need to finalize the zone additions.</translation>
+   <translation id="iplb_zone_activate_single_success" qtlid="454488">You have successfully reactivated this zone.</translation>
+   <translation id="iplb_zone_activate_plural_success" qtlid="454501">YYou have successfully reactivated these zones.</translation>
+   <translation id="iplb_zone_add_selection_error" qtlid="454514">Please select at least one availability zone.</translation>
+   <translation id="iplb_zone_add_loading_error" qtlid="454527">An error has occurred while loading the zones: {{message}}</translation>
+   <translation id="iplb_zone_add_single_error" qtlid="454540">An error has occurred while adding the zone: {{message}}</translation>
+   <translation id="iplb_zone_add_plural_error" qtlid="454553">An error has occurred while adding the zones: {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error" qtlid="454566">An error has occurred while reactivating the zone: {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error" qtlid="454579">An error has occurred while reactivating the zones: {{message}}</translation>
+   <translation id="iplb_zone_add_available_released" qtlid="454592">A deletion request has already been submitted for this zone. It will become effective at the end of the billing period. However, you can still add it again.</translation>
+
+   <translation id="iplb_zone_delete_title" qtlid="454605">Delete an availability zone</translation>
+   <translation id="iplb_zone_delete_intro_text_single" qtlid="454618">Select a maximum of {{zoneQuantity}} availability zones</translation>
+   <translation id="iplb_zone_delete_intro_text_plural" qtlid="454631">Select a maximum of {{zoneQuantity}} availability zones</translation>
+   <translation id="iplb_zone_delete_intro_text_none" qtlid="454644">Select a maximum of 0 availability zones.</translation>
+   <translation id="iplb_zone_delete_single_success" qtlid="454657">The "{{zones}}" zone will be deleted at the end of the billing period.</translation>
+   <translation id="iplb_zone_delete_plural_success" qtlid="454670">The "{{zones}}" zones will be deleted at the end of the billing period.</translation>
+   <translation id="iplb_zone_delete_selection_error" qtlid="454514">Please select at least one availability zone.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error" qtlid="454683">Please select a maximum of {{zoneQuantity}} availability zones</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error" qtlid="454696">Please select a maximum of {{zoneQuantity}} availability zones</translation>
+   <translation id="iplb_zone_delete_loading_error" qtlid="454527">An error has occurred while loading the zones: {{message}}</translation>
+   <translation id="iplb_zone_delete_single_error" qtlid="454709">An error has occurred while deleting the zone: {{message}}</translation>
+   <translation id="iplb_zone_delete_plural_error" qtlid="454722">An error has occurred while deleting the zones: {{message}}</translation>
+   <translation id="iplb_zone_delete_unavailable_already_released" qtlid="454735">This availability zone will be deleted at the end of the billing period.</translation>
+</translations>
