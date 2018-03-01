@@ -59,8 +59,8 @@
 
             <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.flowggerForm.$submitted && ctrl.flowggerForm.kafkaCoalesce.$invalid}">
                 <label for="kafkaCoalesce" class="oui-label" data-translate="inputs_logs_configure_messages_batch"></label>
-                <div class="oui-field__content d-flex">
-                    <div class="oui-field-control oui-field-control_1">
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_2 d-flex">
                         <oui-numeric
                             data-ng-attr-id="kafkaCoalesce"
                             data-ng-attr-name="kafkaCoalesce"
@@ -69,10 +69,10 @@
                             model="ctrl.configuration.flowgger.kafkaCoalesce"
                             min="0">
                         </oui-numeric>
+                        <a class="oui-link" oui-tooltip="{{:: 'input_logs_configure_kafka_coalesce_tooltip' | translate}}">
+                            <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <a class="oui-link logs-inputs-configure__help_icon" oui-tooltip="{{:: 'input_logs_configure_kafka_coalesce_tooltip' | translate}}">
-                        <i class="oui-icon oui-icon-help_circle logs-inputs-configure-help" aria-hidden="true"></i>
-                    </a>
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}">
                 <label for="input" class="oui-label" data-translate="inputs_logs_configure_logstash_input_section"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
+                    <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="input" name="input" rows="8"
                         class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.inputSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
@@ -146,7 +146,7 @@
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}">
                 <label for="filter" class="oui-label" data-translate="inputs_logs_configure_logstash_filter_section"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
+                    <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="filter" name="filter" rows="8"
                         class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.filterSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}" />
@@ -160,7 +160,7 @@
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}">
                 <label for="grok" class="oui-label" data-translate="inputs_logs_configure_logstash_grok"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
+                    <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="grok" name="grok" rows="8"
                         class="oui-textarea msd-elastic" data-ng-model="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}" />
