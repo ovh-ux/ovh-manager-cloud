@@ -7,7 +7,7 @@
    <translation id="cpci_internet" qtlid="246975">Internet</translation>
 
    <translation id="cpci_public_cloud" qtlid="104890">Public Cloud</translation>
-   <translation id="cpci_private_cloud" qtlid="20131">Private Cloud</translation>
+   <translation id="cpci_private_cloud" qtlid="20131">Hosted Private Cloud</translation>
 
    <translation id="cpci_public_cloud_soon_help" qtlid="269097">Your OVH Cloud servers will soon be able to communicate across a private network, without sending any traffic over the Internet. This service will be available in the first half of 2016.</translation>
 

@@ -8,7 +8,7 @@
    <translation id="cda_detail_billing_state" qtlid="354418">Estado de faturação</translation>
    <translation id="cda_detail_status_label_CREATING" qtlid="26227">Em criação</translation>
    <translation id="cda_detail_status_label_INSTALLED" qtlid="108913">Pronta</translation>
-   <translation id="cda_detail_status_label_DELETING" qtlid="133929">A ser eliminado</translation>
+   <translation id="cda_detail_status_label_DELETING" qtlid="133929">Eliminação em curso</translation>
    <translation id="cda_detail_status_label_DELETED" qtlid="134514">Eliminado</translation>
    <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Trabalho em curso de execução</translation>
 

@@ -9,4 +9,10 @@
    <translation id="cpci_private_network_creating" qtlid="363906">Privátní síť se vytváří</translation>
    <translation id="cpci_private_network_creating_description" qtlid="261374">Tato operace může zabrat několik minut</translation>
    <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Při získávání informací o privátních sítích došlo k neočekávané chybě.</translation>
+   <translation id="cpci_private_network_add_vrack_error" qtlid="454761">Při aktivaci privátních sítí došlo k chybě.</translation>
+   <translation id="cpci_private_network_remove_vrack_error" qtlid="454774">Při deaktivaci privátních sítí došlo k chybě.&#13;
+</translation>
+   <translation id="cpci_private_network_add_vrack_success" qtlid="454787">Privátní sítě byly úspěšně aktivovány.</translation>
+   <translation id="cpci_private_network_remove_vrack_success" qtlid="454800">Privátní sítě byly úspěšně deaktivovány.</translation>
+   <translation id="private_network_deactivate_confirmation_vlans" qtlid="454951">Všechny vLAN budou smazány.</translation>
 </translations>

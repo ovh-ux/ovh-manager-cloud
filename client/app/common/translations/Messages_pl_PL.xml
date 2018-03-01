@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Spersonalizowana nazwa</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">Brak zadań w trakcie</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Ureguluj płatność za zamówienie</translation>
+   <translation id="common_deactivate" qtlid="90973">Wyłącz</translation>
 </translations>

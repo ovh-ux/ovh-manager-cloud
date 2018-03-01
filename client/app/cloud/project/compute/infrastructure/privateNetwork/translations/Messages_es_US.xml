@@ -9,4 +9,9 @@
    <translation id="cpci_private_network_creating" qtlid="363906">Creando red privada...</translation>
    <translation id="cpci_private_network_creating_description" qtlid="261374">Esta operación puede tardar unos minutos.</translation>
    <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Se ha producido un error al cargar las redes privadas.</translation>
+   <translation id="cpci_private_network_add_vrack_error" qtlid="454761">Se ha producido un error al activar las redes privadas.</translation>
+   <translation id="cpci_private_network_remove_vrack_error" qtlid="454774">Se ha producido un error al desactivar las redes privadas.</translation>
+   <translation id="cpci_private_network_add_vrack_success" qtlid="454787">Las redes privadas se han activado correctamente.</translation>
+   <translation id="cpci_private_network_remove_vrack_success" qtlid="454800">Las redes privadas se han desactivado correctamente.</translation>
+   <translation id="private_network_deactivate_confirmation_vlans" qtlid="454951">Todos los vLans se eliminarán.</translation>
 </translations>

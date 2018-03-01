@@ -136,7 +136,7 @@
    <translation id="language_nl" qtlid="33982">Dutch</translation>
    <translation id="language_pt" qtlid="239285">Portuguese</translation>
    <translation id="unit_size_B" qtlid="121975">B</translation>
-   <translation id="unit_size_KB" qtlid="121987">kB</translation>
+   <translation id="unit_size_KB" qtlid="121987">KB</translation>
    <translation id="unit_size_MB" qtlid="48878">MB</translation>
    <translation id="unit_size_GB" qtlid="48890">GB</translation>
    <translation id="unit_size_TB" qtlid="70121">TB</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Custom name</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">No task in progress</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Pay bill</translation>
+   <translation id="common_deactivate" qtlid="90973">Disable</translation>
 </translations>

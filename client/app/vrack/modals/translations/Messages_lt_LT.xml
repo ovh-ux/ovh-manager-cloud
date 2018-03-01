@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="private_network_activate" qtlid="76734">Įjungti</translation>
+   <translation id="private_network_activate_new_vRack_description" qtlid="454813">Būsite nukreipti į užsakymų puslapį, kur galėsite aktyvuoti naują vRack. Tuomet galėsite susieti jį su savo paslaugomis. Konfigūracija pradės veikti po kelių sekundžių.</translation>
+   <translation id="private_network_activate_title" qtlid="454826">Įjungti privačius tinklus</translation>
+   <translation id="private_network_activate_existing" qtlid="454839">Egzistuojantys</translation>
+   <translation id="private_network_activate_new" qtlid="9274">Naujas</translation>
+   <translation id="private_network_select_placeholder" qtlid="17923">Pasirinkti</translation>
+   <translation id="private_network_deactivate" qtlid="454852">Išjungti privačius tinklus</translation>
+   <translation id="private_network_deactivate_confirmation" qtlid="454865">Ar tikrai norite išjungti privačius tinklus šiai paslaugai?</translation>
+</translations>

@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Nome personalizzato</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">Nessun task in corso</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Régler le bon de commande</translation>
+   <translation id="common_deactivate" qtlid="90973">Disattiva</translation>
 </translations>

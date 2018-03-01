@@ -87,7 +87,7 @@
    <translation id="vps_dashboard_ssh" qtlid="168081">SSH</translation>
    <translation id="vps_dashboard_ssh_tooltip_OK" qtlid="168094">The SSH service has been enabled</translation>
    <translation id="vps_dashboard_ssh_tooltip_KO" qtlid="168107">The SSH service has been disabled</translation>
-   <translation id="vps_dashboard_loading_error" qtlid="168120">An error occurred while the information was loading. </translation>
+   <translation id="vps_dashboard_loading_error" qtlid="168120">An error has occurred loading the information.</translation>
    <translation id="vps_dashboard_loading_error_monitoring" qtlid="168133">An error occurred on loading the monitoring information.</translation>
    <translation id="vps_dashboard_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_dashboard_vcore_other" qtlid="128413">vCores</translation>
@@ -125,7 +125,7 @@
    <translation id="vps_configuration_reinitpassword_title" qtlid="168367">Reset the password</translation>
    <translation id="vps_configuration_reinitpassword_confirmation" qtlid="366619">Once you confirm your request, your server will immediately reboot in "Rescue" mode. Downtime due to the reboot: about two minutes. </translation>
    <translation id="vps_configuration_reinitpassword_alert" qtlid="452423">Please note: you will receive temporary login details, but you need to reset your password. Please follow this <a href="{{url}}" target="_blank">guide</a>.</translation>
-   <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">An error occurred on requesting to reset the password.</translation>
+   <translation id="vps_configuration_reinitpassword_fail" qtlid="168419">An error has occurred submitting the password reset request.</translation>
    <translation id="vps_configuration_reinitpassword_fail_netboot" qtlid="452436">You need to reset your password. Please follow this <a href="{{url}}" target="_blank">guide</a>.</translation>
    <translation id="vps_configuration_reboot_title_button" qtlid="168432">Reboot my VPS</translation>
    <translation id="vps_configuration_reboot_title" qtlid="168432">Reboot my VPS</translation>
@@ -226,9 +226,9 @@
    <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">This option will be billed at a monthly rate of <span class="bold">{{ amount }} ex. VAT</span></translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">The snapshot option enables you to create a restoration point. It records the configuration at that point, which can be restored if necessary.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Please click "Next" to continue to enable the snapshot option.</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">To confirm your order, please proceed to payment by clicking the "Order" button below.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Review </translation>
-   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for activation of the option to take effect in the Web Control Panel.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
@@ -241,9 +241,9 @@
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="red bold">{{ price }} ex. VAT</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">The Backup storage is an archiving space for transferring your content, data, settings and configurations.</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Generating the order...</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Generating purchase order...</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">To confirm your request, please proceed with your payment by clicking the "Confirm" button below.</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for activation of the option to take effect in the Web Control Panel.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
@@ -287,8 +287,8 @@
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
    <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Your server will then be billed at <span class="red">{{price}} ex. VAT/month</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">To confirm your order, please proceed to payment by clicking the "Order" button below.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for the upgrade to take effect in the Web Control Panel.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">A reboot will be necessary before your VPS can be upgraded. </translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Review </translation>
@@ -318,11 +318,11 @@
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Price ex. GST:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">I confirm having read and understood the following:</translation>
-   <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Generating the order...</translation>
-   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">The order was generated successfully.</translation>
-   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">To confirm your order please click the "Pay" button below.</translation>
+   <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Generating purchase order...</translation>
+   <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">The purchase order has been generated.</translation>
+   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">To confirm your order, please click the "Pay" button below.</translation>
    <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for activation of the option to take effect in the Web Control Panel.</translation>
-   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+   <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_veeam_order_fail" qtlid="170083">An error occurred on requesting to sign up to the Automated backup option.</translation>
    <translation id="vps_configuration_veeam_umount_title_button" qtlid="170096">Unmount the backup</translation>
    <translation id="vps_configuration_veeam_umount_title" qtlid="170096">Unmount the backup</translation>

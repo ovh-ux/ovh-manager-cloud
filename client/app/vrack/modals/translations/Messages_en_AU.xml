@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="private_network_activate" qtlid="76734">Enable</translation>
+   <translation id="private_network_activate_new_vRack_description" qtlid="454813">You will be redirected to the order, so that you can enable the new vRack. You can then associate it with your services. The configuration will become operational in a few seconds.</translation>
+   <translation id="private_network_activate_title" qtlid="454826">Enable private networks</translation>
+   <translation id="private_network_activate_existing" qtlid="454839">Existing</translation>
+   <translation id="private_network_activate_new" qtlid="9274">New</translation>
+   <translation id="private_network_select_placeholder" qtlid="17923">Select</translation>
+   <translation id="private_network_deactivate" qtlid="454852">Disable private networks</translation>
+   <translation id="private_network_deactivate_confirmation" qtlid="454865">Are you sure you want to disable private networks for this service?</translation>
+</translations>

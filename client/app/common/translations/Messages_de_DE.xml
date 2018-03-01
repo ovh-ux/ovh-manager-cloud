@@ -45,11 +45,11 @@
    <translation id="common_menu_renew" qtlid="229658">Meine Dienstleistungen</translation>
    <translation id="common_menu_orders" qtlid="282809">Meine Bestellungen</translation>
    <translation id="common_menu_contacts" qtlid="70541">Meine Kontakte</translation>
-   <translation id="common_menu_list_ticket" qtlid="454039">Meiner Support-Anfragen</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Meine Support-Anfragen</translation>
    <translation id="common_menu_language" qtlid="30598">Sprache</translation>
    <translation id="common_menu_account" qtlid="157642">Mein Account</translation>
    <translation id="common_menu_changelog" qtlid="124964">Changelog</translation>
-   <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Zum Hauptinhalt</translation>
    <translation id="global_logout" qtlid="33658">Abmelden</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Dedicated Server</translation>
@@ -534,4 +534,7 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalisierter Name</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">Keine laufenden Tasks</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Bestellschein begleichen</translation>
+   <translation id="common_deactivate" qtlid="90973">Deaktivieren</translation>
 </translations>
