@@ -1,5 +1,5 @@
 <div class="cui-page__content inputs-home">
-    <oui-back-button class="back_button_inline_text"></oui-back-button>
+    <oui-back-button class="back_button_inline_text" data-ui-sref="dbaas.logs.detail.home"></oui-back-button>
     <span class="oui-header_3" data-translate="inputs_title"></span>    
     <p class="oui-paragraph mb-5" data-translate="inputs_intro_text"></p>
     
@@ -13,8 +13,11 @@
         </button>)
     </p>
 
-    <button class="oui-button oui-button_secondary oui-button_icon-left mt-4 mb-5">
-        <i class="oui-icon oui-icon-add" aria-hidden="true"></i>
+    <button 
+        type="button" 
+        class="oui-button oui-button_secondary oui-button_icon-left mt-4 mb-5"
+        data-ui-sref="dbaas.logs.detail.inputs.addwizard.add">
+        <i class="oui-icon oui-icon-add pr-1 mr-1" aria-hidden="true"></i>
         {{::'inputs_add_input' | translate}}
     </button>
 
@@ -30,7 +33,7 @@
             {{ $row.info.engine.software }}
         </oui-column>
         <oui-column title="::'inputs_linked_option' | translate" property="info.optionId">
-            <i data-ng-if="$row.info.optionId" class="glyphicon glyphicon-ok"></i>
+            <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
         <oui-column title="::'inputs_state' | translate" property="info.state">
@@ -38,6 +41,7 @@
         </oui-column>
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ ::'inputs_info_title' | translate }}" on-click="ctrl.info($row)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'inputs_edit' | translate }}" on-click="ctrl.edit($row)" disabled="$row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'inputs_start' | translate }}" on-click="ctrl.startInput($row)" disabled="!$row.actionsMap.START || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'inputs_restart' | translate }}" on-click="ctrl.restartInput($row)" disabled="!$row.actionsMap.RESTART || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'inputs_stop' | translate }}" on-click="ctrl.stopInput($row)" disabled="!$row.actionsMap.END || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>

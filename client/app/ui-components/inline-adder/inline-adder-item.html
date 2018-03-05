@@ -1,0 +1,19 @@
+
+<div class="cui-inline-adder__item">
+    <div class="cui-inline-adder__item_content">
+        <ng-transclude></ng-transclude>
+    </div>
+    <div class="cui-inline-adder__item_actions">
+        <oui-spinner data-ng-if="$ctrlChild.isLoading()"></oui-spinner>
+        <button type="submit"
+            data-ng-if="$ctrlChild.isNewItem && !$ctrlChild.isLoading()"
+            data-ng-click="$ctrlChild.add()">
+                <i class="oui-icon oui-icon-add" aria-hidden="true"></i>
+        </button>
+        <button type="submit"
+            data-ng-if="!$ctrlChild.isNewItem && !$ctrlChild.isLoading()"
+            data-ng-click="$ctrlChild.remove()">
+                <i class="oui-icon oui-icon-trash_line" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>

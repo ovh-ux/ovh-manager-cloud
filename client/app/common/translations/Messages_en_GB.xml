@@ -74,7 +74,8 @@
    <translation id="common_remove" qtlid="323093">Remove </translation>
    <translation id="edit" qtlid="37875">Edit</translation>
    <translation id="delete" qtlid="2414">Delete</translation>
-   <translation id="common_back" qtlid="4118">Back</translation>
+   <translation id="common_back">Back</translation>
+   <translation id="common_next">Next</translation>
    <translation id="error" qtlid="26407">Error</translation>
    <translation id="soon" qtlid="250043">Coming soon</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">For more information</a>.</translation>

@@ -40,6 +40,7 @@ class LogsInputsHomeCtrl {
         this._setInputToProcessing(input);
         this.processInput = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsInputsService[actionFn](this.serviceName, input)
+                .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         this.processInput.load().finally(() => this._reloadInputDetail(input.info.inputId));
     }
@@ -100,6 +101,20 @@ class LogsInputsHomeCtrl {
     _setInputToProcessing (input) {
         input.info.status = this.LogsInputsConstant.status.PROCESSING;
         this.LogsInputsService.transformInput(input);
+    }
+
+    /**
+     * navigates to the edit page
+     *
+     * @param {any} input - the input for which standard output is to be edited
+     * @memberof LogsInputsCtrl
+     */
+    edit (input) {
+        this.CloudMessage.flushChildMessage();
+        this.$state.go("dbaas.logs.detail.inputs.editwizard.edit", {
+            serviceName: this.serviceName,
+            inputId: input.info.inputId
+        });
     }
 
     /**

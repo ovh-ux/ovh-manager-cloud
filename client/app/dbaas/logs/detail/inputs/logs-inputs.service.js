@@ -1,14 +1,115 @@
 class LogsInputsService {
-    constructor ($q, CloudMessage, CloudPoll, LogsInputsConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, CloudMessage, CloudPoll, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.CloudMessage = CloudMessage;
         this.CloudPoll = CloudPoll;
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
         this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
         this.LogsInputsConstant = LogsInputsConstant;
+        this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
+
+        this.initializeData();
+    }
+
+    initializeData () {
+        this.flowggerLogFormats = [
+            {
+                value: "GELF",
+                name: "inputs_logs_configure_format_gelf"
+            },
+            {
+                value: "RFC5424",
+                name: "inputs_logs_configure_format_rfc"
+            },
+            {
+                value: "LTSV",
+                name: "inputs_logs_configure_format_ltsv"
+            },
+            {
+                value: "CAPNP",
+                name: "inputs_logs_configure_format_cap_proto"
+            }
+        ];
+
+        this.delimiters = [
+            {
+                value: "LINE",
+                name: "inputs_logs_configure_delimiter_line"
+            },
+            {
+                value: "NUL",
+                name: "inputs_logs_configure_delimiter_nul"
+            },
+            {
+                value: "SYSLEN",
+                name: "inputs_logs_configure_delimiter_syslen"
+            },
+            {
+                value: "CAPNP",
+                name: "inputs_logs_configure_format_cap_proto"
+            }
+        ];
+
+        this.logstashLogFormats = [
+            {
+                value: "Syslog",
+                name: "inputs_logs_configure_format_syslog"
+            },
+            {
+                value: "Apache",
+                name: "inputs_logs_configure_format_apache"
+            },
+            {
+                value: "HAProxy",
+                name: "inputs_logs_configure_format_ha_proxy"
+            },
+            {
+                value: "MySQL Slow Queries",
+                name: "inputs_logs_configure_format_my_sql"
+            },
+            {
+                value: "Twitter",
+                name: "inputs_logs_configure_format_twitter"
+            },
+            {
+                value: "Nginx",
+                name: "inputs_logs_configure_format_nginx"
+            }
+        ];
+    }
+
+    getFlowggerLogFormats () {
+        return this.flowggerLogFormats;
+    }
+
+    getLogstashLogFormats () {
+        return this.logstashLogFormats;
+    }
+
+    getDelimiters () {
+        return this.delimiters;
+    }
+
+    /**
+     * add input
+     *
+     * @param {any} serviceName
+     * @param {any} input, input object to be added
+     * @returns promise which will resolve with the operation object
+     * @memberof LogsInputsService
+     */
+    addInput (serviceName, input) {
+        return this.InputsApiLexiService.create({ serviceName }, this._transformInputToSave(input))
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._pollOperation(serviceName, operation.data).$promise;
+            })
+            .catch(err => this._handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -27,6 +128,19 @@ class LogsInputsService {
                 return this._handleSuccess(serviceName, operation.data, "logs_inputs_delete_success", { inputTitle: input.info.title });
             })
             .catch(err => this._handleError("logs_inputs_delete_error", err, { inputTitle: input.info.title }));
+    }
+
+    /**
+     * returns array of Input IDs of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of input IDs
+     * @memberof LogsInputsService
+     */
+    getDetails (serviceName) {
+        return this.DetailsAapiService.me({ serviceName })
+            .$promise.then(details => this._transformDetails(details))
+            .catch(this.ServiceHelper.errorHandler("logs_inputs_details_get_error"));
     }
 
     /**
@@ -94,6 +208,25 @@ class LogsInputsService {
             });
     }
 
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbInput,
+                current: me.offer.curNbInput
+            })).catch(this.ServiceHelper.errorHandler("logs_inputs_main_offer_get_error"));
+    }
+
+    getNewInput () {
+        return {
+            data: {
+                info: {
+                    exposedPort: this.LogsInputsConstant.DEFAULT_PORT
+                }
+            },
+            loading: false
+        };
+    }
+
     /**
      * returns the object containing total number of inputs and total number of inputs used
      *
@@ -111,6 +244,17 @@ class LogsInputsService {
                 };
                 return quota;
             }).catch(this.ServiceHelper.errorHandler("logs_inputs_quota_get_error"));
+    }
+
+    /**
+     * returns the subscribed options
+     *
+     * @param {any} serviceName
+     * @returns array of options
+     * @memberof LogsInputsService
+     */
+    getSubscribedOptions (serviceName) {
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsInputsConstant.optionType);
     }
 
     /**
@@ -185,6 +329,7 @@ class LogsInputsService {
      */
     transformInput (input) {
         input.info.engine.software = [input.info.engine.name, input.info.engine.version].join(" ");
+        input.info.exposedPort = parseInt(input.info.exposedPort, 10);
         input.actionsMap = input.actions.reduce((actions, action) => {
             actions[action.type] = action.isAllowed;
             return actions;
@@ -205,6 +350,76 @@ class LogsInputsService {
 
         input.info.stateType = this.LogsInputsConstant.stateType[input.info.state];
         return input;
+    }
+
+    addNetwork (serviceName, input, network) {
+        return this.InputsApiLexiService.trustNetwork({ serviceName, inputId: input.info.inputId }, network)
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
+    }
+
+    executeTest (serviceName, input) {
+        return this.InputsApiLexiService.test({ serviceName, inputId: input.info.inputId })
+            .$promise
+            .then(operation => this._pollOperation(serviceName, operation).$promise)
+            .then(() => this.getTestResults(serviceName, input))
+            .catch(err => this._handleError("logs_inputs_test_error", err, { inputTitle: input.info.title }));
+    }
+
+    removeNetwork (serviceName, input, network) {
+        return this.InputsApiLexiService.rejectNetwork({ serviceName, inputId: input.info.inputId, allowedNetworkId: network.allowedNetworkId })
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
+    }
+
+    updateFlowgger (serviceName, input, flowgger) {
+        return this.InputsApiLexiService.updateFlowgger({ serviceName, inputId: input.info.inputId }, flowgger)
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_flowgger_update_error", err, { inputTitle: input.info.title }));
+    }
+
+    updateLogstash (serviceName, input, logstash) {
+        return this.InputsApiLexiService.updateLogstash({ serviceName, inputId: input.info.inputId }, logstash)
+            .$promise
+            .then(operation => {
+                this.InputsApiAapiService.resetAllCache();
+                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+            })
+            .catch(err => this._handleError("logs_inputs_logstash_update_error", err, { inputTitle: input.info.title }));
+    }
+
+    /**
+     * update input
+     *
+     * @param {any} serviceName
+     * @param {any} input, input object to be updated
+     * @returns promise which will resolve with the operation object
+     * @memberof LogsInputsService
+     */
+    updateInput (serviceName, input) {
+        return this.InputsApiLexiService.update({ serviceName, inputId: input.info.inputId }, this._transformInputToSave(input))
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this._pollOperation(serviceName, operation.data).$promise;
+            })
+            .catch(err => this._handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
+    }
+
+    getTestResults (serviceName, input) {
+        return this.InputsApiLexiService.testResult({ serviceName, inputId: input.info.inputId }).$promise;
     }
 
     /**
@@ -232,7 +447,12 @@ class LogsInputsService {
      */
     _handleSuccess (serviceName, operation, successMessage, messageData) {
         return this._pollOperation(serviceName, operation)
-            .$promise.then(() => this.ServiceHelper.successHandler(successMessage)(messageData));
+            .$promise.then(successData => {
+                if (successMessage) {
+                    this.ServiceHelper.successHandler(successMessage)(messageData);
+                }
+                return successData;
+            });
     }
 
     /**
@@ -259,6 +479,27 @@ class LogsInputsService {
             stopCondition: opn => opn.state === this.LogsInputsConstant.FAILURE || opn.state === this.LogsInputsConstant.SUCCESS
         });
         return pollar;
+    }
+
+    _transformDetails (details) {
+        details.engines.forEach(engine => {
+            if (!engine.isDeprecated) {
+                engine.name = engine.name.charAt(0).toUpperCase() + engine.name.toLowerCase().slice(1);
+            }
+        });
+        return details;
+    }
+
+    _transformInputToSave (input) {
+        return {
+            title: input.info.title,
+            description: input.info.description,
+            engineId: input.info.engineId,
+            optionId: input.info.optionId ? input.info.optionId : undefined,
+            streamId: input.info.streamId,
+            singleInstanceEnabled: input.info.singleInstanceEnabled,
+            exposedPort: input.info.exposedPort.toString()
+        };
     }
 }
 

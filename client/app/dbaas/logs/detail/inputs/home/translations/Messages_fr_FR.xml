@@ -21,6 +21,7 @@
     <translation id="inputs_state_running">Opérationnel</translation>
     <translation id="inputs_state_unknown">Inconnu</translation>
 
+    <translation id="inputs_edit">Modifier</translation>
     <translation id="inputs_start">Début</translation>
     <translation id="inputs_restart">Redémarrer</translation>
     <translation id="inputs_stop">Arrêtez</translation>

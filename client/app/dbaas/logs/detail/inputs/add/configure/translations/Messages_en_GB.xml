@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_logs_configure_flowgger_title">Flowgger</translation>
+    <translation id="inputs_logs_configure_format">Format of your logs</translation>
+    <translation id="inputs_logs_configure_delimiter">Delimiter between each message</translation>
+    <translation id="inputs_logs_configure_delimiter_line">Line</translation>
+    <translation id="inputs_logs_configure_delimiter_nul">Nul</translation>
+    <translation id="inputs_logs_configure_delimiter_syslen">Syslen</translation>
+
+    <translation id="inputs_logs_configure_format_gelf">Graylog Extended Log Format (GELF)</translation>
+    <translation id="inputs_logs_configure_format_rfc">Syslog RFC 5424</translation>
+    <translation id="inputs_logs_configure_format_ltsv">Labeled Tab-separated Values (LTSV)</translation>
+    <translation id="inputs_logs_configure_format_cap_proto">Cap’n Proto</translation>
+
+    <translation id="inputs_logs_configure_format_syslog">Syslog</translation>
+    <translation id="inputs_logs_configure_format_apache">Apache</translation>
+    <translation id="inputs_logs_configure_format_ha_proxy">HAProxy</translation>
+    <translation id="inputs_logs_configure_format_my_sql">MySQL Slow Queries</translation>
+    <translation id="inputs_logs_configure_format_twitter">Twitter</translation>
+    <translation id="inputs_logs_configure_format_nginx">Nginx</translation>
+
+    <translation id="inputs_logs_configure_messages_batch">Number of messages sent by a batch</translation>
+    <translation id="inputs_logs_configure_kafkaCoalesce">Number of message</translation>
+
+    <translation id="inputs_logs_configure_next">Next</translation>
+    <translation id="inputs_logs_configure_previous">Previous</translation>
+    <translation id="inputs_logs_configure_later">Continue later</translation>
+    <translation id="inputs_logs_configure_format">Format of your logs</translation>
+
+    <translation id="inputs_logs_configure_logstash_title">Logstash</translation>
+    <translation id="inputs_logs_configure_logstash_desc">On this page you can edit input and filter parts of your Logstash configuration file, output section is written by our service. We remind you that you choose to expose TCP port 6514.</translation>
+    <translation id="inputs_logs_configure_logstash_desc2">Once edited sections you can test the configuration directly.</translation>
+    <translation id="inputs_logs_configure_logstash_wizard">Configuration Wizard</translation>
+    <translation id="inputs_logs_configure_logstash_grok">Custom Grok Patterns</translation>
+
+    <translation id="inputs_logs_configure_logstash_input_section">Section «Input»</translation>
+    <translation id="inputs_logs_configure_logstash_filter_section">Section «Filter»</translation>
+
+    <translation id="inputs_logs_configure_choose_app">Choose an application</translation>
+    <translation id="input_logs_configure_test">Test configuration</translation>
+    <translation id="input_logs_configure_test_progress">Test in progress</translation>
+
+    <translation id="input_logs_configure_test_timestamp">Last executed: {{ timestamp }}</translation>
+    <translation id="input_logs_configure_test_success">Configuration is OK</translation>
+    <translation id="input_logs_configure_test_failure">{{ output }}</translation>
+
+    <translation id="input_logs_configure_delimiter_tooltip_LINE">The delimiter will be "\ n" for each line break.</translation>
+    <translation id="input_logs_configure_delimiter_tooltip_NUL">Null character, typically used by GELF / TCP: \ 0.</translation>
+    <translation id="input_logs_configure_delimiter_tooltip_SYSLEN">Message size prefix as specified in RFC 5425. However, line feeds also act as delimiters, in order to recover corrupted or invalid entries.</translation>
+    <translation id="input_logs_configure_delimiter_tooltip_CAPNP">This delimiter should only be used for the Cap'n Proto protocol</translation>
+
+    <translation id="input_logs_configure_kafka_coalesce_tooltip">Number of messages kept in RAM by Flowgger before it sends them to Kafka. A high value is more powerful but may cause indexing latency if you send few messages.</translation>
+
+    <translation id="logs_inputs_flowgger_update_success">The flowgger configuration has been updated successfully for input {{inputTitle}}</translation>
+    <translation id="logs_inputs_flowgger_update_error">An error has occurred while updating flowgger configuration of {{inputTitle}}: {{message}}</translation>
+    <translation id="logs_inputs_logstash_update_success">The logstash configuration has been updated successfully for input {{inputTitle}}</translation>
+    <translation id="logs_inputs_logstash_update_error">An error has occurred while updating logstash configuration of {{inputTitle}}: {{message}}</translation>
+
+    <translation id="logs_inputs_logstash_save_warning_title">No successful configuration test</translation>
+    <translation id="logs_inputs_logstash_save_warning_no_test">No test has been run for the current configuration. Please run the test configuration to continue.</translation>
+    <translation id="logs_inputs_logstash_save_warning_unsuccessful">The last test for the configuration was not successful. Please make sure that the configuration is correct and try running the test once again.</translation>
+</translations>
