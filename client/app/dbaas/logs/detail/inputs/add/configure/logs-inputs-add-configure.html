@@ -99,9 +99,9 @@
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
 
         <form novalidate name="ctrl.logstashForm">
-            <div class="oui-field mt-4">
+            <div class="oui-field mt-4" data-ng-if="!ctrl.saving.loading">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_logstash_wizard"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.saving.loading">
+                <div class="oui-field__content">
                     <div class="oui-field-control oui-field-control_5 d-flex">
                         <div class="oui-select">
                             <select class="oui-select__input float-left"
@@ -128,7 +128,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="input" name="input" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.inputSection)}}"
-                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.inputSection"
+                        type="text" class="oui-input" data-ng-model="ctrl.configuration.logstash.inputSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.input.$invalid}"
                         required />
                     </div>
@@ -143,7 +143,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="filter" name="filter" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.filterSection)}}"
-                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.filterSection"
+                        type="text" class="oui-input" data-ng-model="ctrl.configuration.logstash.filterSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}" />
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
                         <textarea id="grok" name="grok" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.patternSection)}}"
-                        type="text" class="oui-input oui-input_xl" ng-bind-html="ctrl.configuration.logstash.patternSection"
+                        type="text" class="oui-input" data-ng-model="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}" />
                     </div>
                 </div>
@@ -188,8 +188,7 @@
                         class="oui-button oui-button_primary ml-2"
                         type="submit"
                         data-translate="logs_next"
-                        data-ng-click="ctrl.saveLogstash()"
-                        data-ng-disabled="!ctrl.test.data.stdout"></button>
+                        data-ng-click="ctrl.saveLogstash()"></button>
                     <a class="oui-button oui-button_link"
                         data-translate="logs_later"
                         data-ui-sref="dbaas.logs.detail.inputs"></a>

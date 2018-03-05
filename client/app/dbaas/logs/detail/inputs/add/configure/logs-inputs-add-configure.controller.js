@@ -1,10 +1,12 @@
 class LogsInputsAddConfigureCtrl {
-    constructor ($q, $state, $stateParams, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+    constructor ($q, $state, $stateParams, $translate, ControllerModalHelper, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
+        this.$translate = $translate;
         this.serviceName = this.$stateParams.serviceName;
         this.inputId = this.$stateParams.inputId;
+        this.ControllerModalHelper = ControllerModalHelper;
         this.ControllerHelper = ControllerHelper;
         this.LogsInputsService = LogsInputsService;
         this.LogsInputsConfigureConstant = LogsInputsConfigureConstant;
@@ -58,9 +60,9 @@ class LogsInputsAddConfigureCtrl {
     }
 
     _initLogstash (configuration) {
-        this.configuration.logstash.inputSection = configuration.inputSection;
-        this.configuration.logstash.filterSection = configuration.filterSection;
-        this.configuration.logstash.patternSection = configuration.patternSection;
+        this.configuration.logstash.inputSection = this.ControllerHelper.htmlDecode(configuration.inputSection);
+        this.configuration.logstash.filterSection = this.ControllerHelper.htmlDecode(configuration.filterSection);
+        this.configuration.logstash.patternSection = this.ControllerHelper.htmlDecode(configuration.patternSection);
     }
 
     applyConfiguration (name) {
@@ -97,6 +99,11 @@ class LogsInputsAddConfigureCtrl {
     saveLogstash () {
         if (this.logstashForm.$invalid) {
             return this.$q.reject();
+        } else if (!this.test.data.stdout) {
+            return this.ControllerModalHelper.showWarningModal({
+                title: this.$translate.instant("logs_inputs_logstash_save_warning_title"),
+                message: this.test.data.updatedAt ? this.$translate.instant("logs_inputs_logstash_save_warning_unsuccessful") : this.$translate.instant("logs_inputs_logstash_save_warning_no_test")
+            });
         } else if (!this.logstashForm.$dirty) {
             return this.goToNetworkPage();
         }
