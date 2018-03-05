@@ -1,6 +1,7 @@
 angular.module("managerApp").constant("LogsInputsConfigureConstant", {
     logstash: "LOGSTASH",
     flowgger: "FLOWGGER",
+    patternRowFill: 5,
     logStashWizard:
     {
         Syslog: {
