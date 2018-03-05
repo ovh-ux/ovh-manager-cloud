@@ -1,12 +1,14 @@
 <form id="editDetailForm" name="editDetailForm">
     <oui-modal
-        data-title="{{ ::'cda_detail_edit_title' | translate }}"
         data-primary-action="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
         data-primary-label="{{ ::'common_modify' | translate }}"
         data-secondary-action="CdaDetailEditCtrl.closeModal()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
         data-on-dismiss="CdaDetailEditCtrl.closeModal()">
 
+        <cui-message-container data-messages="CdaDetailEditCtrl.messages"></cui-message-container>
+
+        <h2 class="oui-modal__title" ng-bind="::'cda_detail_edit_title' | translate "></h2>
         <div class="text-center">
             <oui-spinner data-ng-if="CdaDetailEditCtrl.saving"></oui-spinner>
         </div>
