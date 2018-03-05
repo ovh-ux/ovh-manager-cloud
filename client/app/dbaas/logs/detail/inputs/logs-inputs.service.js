@@ -11,6 +11,87 @@ class LogsInputsService {
         this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
+
+        this.initializeData();
+    }
+
+    initializeData () {
+        this.flowggerLogFormats = [
+            {
+                value: "GELF",
+                name: "inputs_logs_configure_format_gelf"
+            },
+            {
+                value: "RFC5424",
+                name: "inputs_logs_configure_format_rfc"
+            },
+            {
+                value: "LTSV",
+                name: "inputs_logs_configure_format_ltsv"
+            },
+            {
+                value: "CAPNP",
+                name: "inputs_logs_configure_format_cap_proto"
+            }
+        ];
+
+        this.delimiters = [
+            {
+                value: "LINE",
+                name: "inputs_logs_configure_delimiter_line"
+            },
+            {
+                value: "NUL",
+                name: "inputs_logs_configure_delimiter_nul"
+            },
+            {
+                value: "SYSLEN",
+                name: "inputs_logs_configure_delimiter_syslen"
+            },
+            {
+                value: "CAPNP",
+                name: "inputs_logs_configure_format_cap_proto"
+            }
+        ];
+
+        this.logstashLogFormats = [
+            {
+                value: "Syslog",
+                name: "inputs_logs_configure_format_syslog"
+            },
+            {
+                value: "Apache",
+                name: "inputs_logs_configure_format_apache"
+            },
+            {
+                value: "HAProxy",
+                name: "inputs_logs_configure_format_ha_proxy"
+            },
+            {
+                value: "MySQL Slow Queries",
+                name: "inputs_logs_configure_format_my_sql"
+            },
+            {
+                value: "Twitter",
+                name: "inputs_logs_configure_format_twitter"
+            },
+            {
+                value: "Nginx",
+                name: "inputs_logs_configure_format_nginx"
+            }
+        ];
+    }
+
+    getFlowggerLogFormats () {
+        return this.flowggerLogFormats;
+    }
+
+    getLogstashLogFormats () {
+        return this.logstashLogFormats;
+    }
+
+    getDelimiters () {
+        return this.delimiters;
     }
 
     /**

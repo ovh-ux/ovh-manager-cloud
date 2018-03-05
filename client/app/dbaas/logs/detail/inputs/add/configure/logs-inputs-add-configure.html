@@ -14,10 +14,9 @@
                                 name="logs_inputs_configure_format"
                                 id="logs_inputs_configure_format"
                                 data-ng-model="ctrl.configuration.flowgger.logFormat">
-                                <option value="GELF">Graylog Extended Log Format (GELF)</option>
-                                <option value="RFC5424">Syslog RFC 5424</option>
-                                <option value="LTSV">Labeled Tab-separated Values (LTSV)</option>
-                                <option value="CAPNP">Cap’n Proto</option>
+                                    <option data-ng-repeat="logType in ctrl.getFlowggerLogFormats()" value="{{logType.value}}">
+                                        {{ logType.name | translate }}
+                                    </option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
@@ -34,10 +33,9 @@
                                 name="logs_inputs_configure_delimiter"
                                 id="logs_inputs_configure_delimiter"
                                 data-ng-model="ctrl.configuration.flowgger.logFraming">
-                                <option value="LINE" data-translate="inputs_logs_configure_delimiter_line"></option>
-                                <option value="NUL" data-translate="inputs_logs_configure_delimiter_nul"></option>
-                                <option value="SYSLEN" data-translate="inputs_logs_configure_delimiter_syslen"></option>
-                                <option value="CAPNP">Cap'n Proto</option>
+                                    <option data-ng-repeat="delimiter in ctrl.getDelimiters()" value="{{delimiter.value}}">
+                                        {{ delimiter.name | translate }}
+                                    </option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
@@ -111,13 +109,10 @@
                                 id="logs_inputs_configure_format"
                                 data-ng-model="ctrl.configuration.logstash.logFormat"
                                 data-ng-change="ctrl.applyConfiguration(ctrl.configuration.logstash.logFormat)">
-                                <option value="" data-translate="inputs_logs_configure_choose_app"></option>                                
-                                <option value="Syslog">Syslog</option>
-                                <option value="Apache">Apache</option>
-                                <option value="HAProxy">HAProxy</option>
-                                <option value="MySQL Slow Queries">MySQL Slow Queries</option>
-                                <option value="Twitter">Twitter</option>
-                                <option value="Nginx">Nginx</option>
+                                    <option value="" data-translate="inputs_logs_configure_choose_app"></option>                                
+                                    <option data-ng-repeat="logFormat in ctrl.getLogstashLogFormats()" value="{{logFormat.value}}">
+                                        {{ logFormat.name | translate }}
+                                    </option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>                        
                         </div>

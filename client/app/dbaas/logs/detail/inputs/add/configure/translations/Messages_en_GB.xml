@@ -7,6 +7,18 @@
     <translation id="inputs_logs_configure_delimiter_nul">Nul</translation>
     <translation id="inputs_logs_configure_delimiter_syslen">Syslen</translation>
 
+    <translation id="inputs_logs_configure_format_gelf">Graylog Extended Log Format (GELF)</translation>
+    <translation id="inputs_logs_configure_format_rfc">Syslog RFC 5424</translation>
+    <translation id="inputs_logs_configure_format_ltsv">Labeled Tab-separated Values (LTSV)</translation>
+    <translation id="inputs_logs_configure_format_cap_proto">Cap’n Proto</translation>
+
+    <translation id="inputs_logs_configure_format_syslog">Syslog</translation>
+    <translation id="inputs_logs_configure_format_apache">Apache</translation>
+    <translation id="inputs_logs_configure_format_ha_proxy">HAProxy</translation>
+    <translation id="inputs_logs_configure_format_my_sql">MySQL Slow Queries</translation>
+    <translation id="inputs_logs_configure_format_twitter">Twitter</translation>
+    <translation id="inputs_logs_configure_format_nginx">Nginx</translation>
+
     <translation id="inputs_logs_configure_messages_batch">Number of messages sent by a batch</translation>
     <translation id="inputs_logs_configure_kafkaCoalesce">Number of message</translation>
 

@@ -116,6 +116,18 @@ class LogsInputsAddConfigureCtrl {
         });
         return this.$q.resolve();
     }
+
+    getFlowggerLogFormats () {
+        return this.LogsInputsService.getFlowggerLogFormats();
+    }
+
+    getLogstashLogFormats () {
+        return this.LogsInputsService.getLogstashLogFormats();
+    }
+
+    getDelimiters () {
+        return this.LogsInputsService.getDelimiters();
+    }
 }
 
 angular.module("managerApp").controller("LogsInputsAddConfigureCtrl", LogsInputsAddConfigureCtrl);
