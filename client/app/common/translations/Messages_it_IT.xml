@@ -42,12 +42,29 @@
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partner</translation>
    <translation id="common_menu_billing" qtlid="32950">Fatturazione</translation>
+   <translation id="common_menu_billing_history" qtlid="159540">Le tue fatture</translation>
+   <translation id="common_menu_billing_payments" qtlid="398781">Controllo dei pagamenti</translation>
+   <translation id="common_menu_means" qtlid="90049">Modalità di pagamento</translation>
+   <translation id="common_menu_means_mean" qtlid="139949">I tuoi metodi di pagamento</translation>
+   <translation id="common_menu_means_ovhaccount" qtlid="366826">Il tuo conto prepagato</translation>
+   <translation id="common_menu_means_vouchers" qtlid="270917">I tuoi voucher</translation>
+   <translation id="common_menu_means_refunds" qtlid="139923">Il tuo credito</translation>
+   <translation id="common_menu_means_fidelity" qtlid="260606">Il tuo spazio fedeltà</translation>
+   <translation id="common_menu_means_credits" qtlid="448907">I tuoi crediti</translation>
    <translation id="common_menu_renew" qtlid="229658">I tuoi servizi</translation>
+   <translation id="common_menu_renew_management" qtlid="287527">Gestisci i tuoi servizi</translation>
+   <translation id="common_menu_renew_agreements" qtlid="204350">I tuoi contratti </translation>
    <translation id="common_menu_orders" qtlid="282809">I tuoi ordini</translation>
    <translation id="common_menu_contacts" qtlid="70541">I tuoi contatti</translation>
    <translation id="common_menu_list_ticket" qtlid="454039">Tue richieste di supporto</translation>
    <translation id="common_menu_language" qtlid="30598">Lingua</translation>
    <translation id="common_menu_account" qtlid="157642">Il tuo account</translation>
+   <translation id="common_menu_account_infos" qtlid="405499">Il tuo profilo</translation>
+   <translation id="common_menu_account_security" qtlid="125420">Sicurezza</translation>
+   <translation id="common_menu_account_emails" qtlid="266118">Email ricevute</translation>
+   <translation id="common_menu_account_subscriptions" qtlid="144708">I tuoi abbonamenti</translation>
+   <translation id="common_menu_account_ssh" qtlid="165897">Le tue chiavi SSH</translation>
+   <translation id="common_menu_account_advanced" qtlid="39958">Opzioni avanzate</translation>
    <translation id="common_menu_changelog" qtlid="124964">Cronologia aggiornamenti</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Skip to main content</translation>
    <translation id="global_logout" qtlid="33658">Logout</translation>

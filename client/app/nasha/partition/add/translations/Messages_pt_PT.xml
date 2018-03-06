@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Escolha de um protocolo</translation>
+   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Seleção de um protocolo</translation>
    <translation id="nasha_partitions_action_add_success" qtlid="344818">A partição {{partitionName}} será adicionada dentro de alguns instantes.</translation>
    <translation id="nasha_partitions_action_add_failure" qtlid="344831">Ocorreu um erro aquando da criação da partição {{partitionName}}.</translation>
    <translation id="nasha_partitions_action_add_desc_CIFS" qtlid="344844">CIFS: protocolo de troca de dados preconizado para os servidores Windows.</translation>

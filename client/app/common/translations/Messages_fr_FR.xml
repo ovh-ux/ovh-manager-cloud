@@ -42,29 +42,29 @@
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partenaires</translation>
    <translation id="common_menu_billing" qtlid="32950">Facturation</translation>
-   <translation id="common_menu_billing_history">Mes factures</translation>
-   <translation id="common_menu_billing_payments">Suivi des paiements</translation>
-   <translation id="common_menu_means">Moyens de paiement</translation>
-   <translation id="common_menu_means_mean">Mes moyens de paiement</translation>
-   <translation id="common_menu_means_ovhaccount">Mon compte prépayé</translation>
-   <translation id="common_menu_means_vouchers">Mes vouchers</translation>
-   <translation id="common_menu_means_refunds">Mes avoirs</translation>
-   <translation id="common_menu_means_fidelity">Mon espace fidélité</translation>
-   <translation id="common_menu_means_credits">Mes crédits</translation>
+   <translation id="common_menu_billing_history" qtlid="159540">Mes factures</translation>
+   <translation id="common_menu_billing_payments" qtlid="398781">Suivi des paiements</translation>
+   <translation id="common_menu_means" qtlid="90049">Moyens de paiement</translation>
+   <translation id="common_menu_means_mean" qtlid="139949">Mes moyens de paiement</translation>
+   <translation id="common_menu_means_ovhaccount" qtlid="366826">Mon compte prépayé</translation>
+   <translation id="common_menu_means_vouchers" qtlid="270917">Mes vouchers</translation>
+   <translation id="common_menu_means_refunds" qtlid="139923">Mes avoirs</translation>
+   <translation id="common_menu_means_fidelity" qtlid="260606">Mon espace fidélité</translation>
+   <translation id="common_menu_means_credits" qtlid="448907">Mes crédits</translation>
    <translation id="common_menu_renew" qtlid="229658">Mes services</translation>
-   <translation id="common_menu_renew_management">Gérer mes services</translation>
-   <translation id="common_menu_renew_agreements">Mes contrats</translation>
+   <translation id="common_menu_renew_management" qtlid="287527">Gérer mes services</translation>
+   <translation id="common_menu_renew_agreements" qtlid="204350">Mes contrats</translation>
    <translation id="common_menu_orders" qtlid="282809">Mes commandes</translation>
    <translation id="common_menu_contacts" qtlid="70541">Mes contacts</translation>
    <translation id="common_menu_list_ticket" qtlid="454039">Mes demandes d’assistance</translation>
    <translation id="common_menu_language" qtlid="30598">Langue</translation>
    <translation id="common_menu_account" qtlid="157642">Mon compte</translation>
-   <translation id="common_menu_account_infos">Mon profil</translation>
-   <translation id="common_menu_account_security">Sécurité</translation>
-   <translation id="common_menu_account_emails">Emails reçus</translation>
-   <translation id="common_menu_account_subscriptions">Mes abonnements</translation>
-   <translation id="common_menu_account_ssh">Mes clés SSH</translation>
-   <translation id="common_menu_account_advanced">Paramètres avancés</translation>
+   <translation id="common_menu_account_infos" qtlid="405499">Mon profil</translation>
+   <translation id="common_menu_account_security" qtlid="125420">Sécurité</translation>
+   <translation id="common_menu_account_emails" qtlid="266118">Emails reçus</translation>
+   <translation id="common_menu_account_subscriptions" qtlid="144708">Mes abonnements</translation>
+   <translation id="common_menu_account_ssh" qtlid="165897">Mes clés SSH</translation>
+   <translation id="common_menu_account_advanced" qtlid="39958">Paramètres avancés</translation>
    <translation id="common_menu_changelog" qtlid="124964">Historique des mises à jour</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Aller au contenu principal</translation>
    <translation id="global_logout" qtlid="33658">Déconnexion</translation>

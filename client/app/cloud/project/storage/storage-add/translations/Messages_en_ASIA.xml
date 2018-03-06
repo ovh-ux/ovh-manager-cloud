@@ -44,7 +44,7 @@
 
    <translation id="add_instance_name_step_title" qtlid="242912">Name your virtual server (instance)</translation>
 
-   <translation id="add_instance_go_to_the_moon" qtlid="217288">Starting up the server</translation>
+   <translation id="add_instance_go_to_the_moon" qtlid="217288">Boot server</translation>
 
    <translation id="add_storage_region_step_title" qtlid="242730">Select the datacentre</translation>
    <translation id="add_storage_container_type_step_title" qtlid="242925">Select the container type</translation>

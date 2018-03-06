@@ -42,12 +42,29 @@
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partners</translation>
    <translation id="common_menu_billing" qtlid="32950">Facturatie</translation>
+   <translation id="common_menu_billing_history" qtlid="159540">Mijn facturen</translation>
+   <translation id="common_menu_billing_payments" qtlid="398781">Betaling volgen</translation>
+   <translation id="common_menu_means" qtlid="90049">Betaalmethoden</translation>
+   <translation id="common_menu_means_mean" qtlid="139949">Mijn betaalmethodes</translation>
+   <translation id="common_menu_means_ovhaccount" qtlid="366826">Mijn prepaid account </translation>
+   <translation id="common_menu_means_vouchers" qtlid="270917">Mijn vouchers</translation>
+   <translation id="common_menu_means_refunds" qtlid="139923">Mijn credit</translation>
+   <translation id="common_menu_means_fidelity" qtlid="260606">Mijn vertrouwelijke omgeving</translation>
+   <translation id="common_menu_means_credits" qtlid="448907">Mijn kredieten</translation>
    <translation id="common_menu_renew" qtlid="229658">Mijn diensten</translation>
+   <translation id="common_menu_renew_management" qtlid="287527">Beheer mijn services</translation>
+   <translation id="common_menu_renew_agreements" qtlid="204350">Mijn contracten</translation>
    <translation id="common_menu_orders" qtlid="282809">Mijn bestellingen</translation>
    <translation id="common_menu_contacts" qtlid="70541">Mijn contacten</translation>
    <translation id="common_menu_list_ticket" qtlid="454039">Mijn support-verzoeken</translation>
    <translation id="common_menu_language" qtlid="30598">Taal</translation>
    <translation id="common_menu_account" qtlid="157642">Mijn account</translation>
+   <translation id="common_menu_account_infos" qtlid="405499">Mijn profiel</translation>
+   <translation id="common_menu_account_security" qtlid="125420">Beveiliging</translation>
+   <translation id="common_menu_account_emails" qtlid="266118">Ontvangen e-mails</translation>
+   <translation id="common_menu_account_subscriptions" qtlid="144708">Mijn bestellingen</translation>
+   <translation id="common_menu_account_ssh" qtlid="165897">Mijn SSH keys</translation>
+   <translation id="common_menu_account_advanced" qtlid="39958">Geavanceerde instellingen</translation>
    <translation id="common_menu_changelog" qtlid="124964">Updates geschiedenis</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Ga naar de hoofdinhoud</translation>
    <translation id="global_logout" qtlid="33658">Uitloggen</translation>
