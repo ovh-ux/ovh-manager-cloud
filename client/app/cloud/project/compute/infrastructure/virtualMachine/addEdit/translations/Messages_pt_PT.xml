@@ -207,7 +207,7 @@
    <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">A sua chave está agora disponível!</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Este nome já está a ser usado numa outra chave SSH.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Eliminar a chave</translation>
+   <translation id="cpcivm_addedit_sshkey_delete_button" qtlid="248730">Eliminar chave</translation>
    <translation id="cpcivm_addedit_sshkey_delete_cancel" qtlid="37863">Anular</translation>
    <translation id="cpcivm_addedit_sshkey_delete_submit" qtlid="248743">Eliminar esta chave</translation>
    <translation id="cpcivm_addedit_sshkey_delete_success" qtlid="248756">Esta chave já não está disponível.</translation>

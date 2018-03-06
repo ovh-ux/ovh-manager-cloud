@@ -41,7 +41,7 @@
    <translation id="iplb_server_add_confirm" qtlid="37923">Adicionar</translation>
    <translation id="iplb_server_update_confirm" qtlid="43462">Atualizar</translation>
 
-   <translation id="iplb_server_request_error" qtlid="175205">Ocorreu um erro durante o carregamento das suas informações.</translation>
+   <translation id="iplb_server_request_error" qtlid="175205">Erro ao carregar informações.</translation>
    <translation id="iplb_server_add_error" qtlid="437791">Ocorreu um erro durante a criação da Server Farm: {{message}}</translation>
    <translation id="iplb_server_add_success" qtlid="438363">O servidor foi adicionado com sucesso</translation>
    <translation id="iplb_server_update_error" qtlid="438376">Ocorreu um erro durante a realização das alterações ao servidor: {{message}}</translation>

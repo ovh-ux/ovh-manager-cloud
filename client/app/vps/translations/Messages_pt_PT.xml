@@ -8,7 +8,7 @@
    <translation id="vps_order_windows_price_error" qtlid="250771">Ocorreu um erro durante o carregamento dos preços.</translation>
    <translation id="vps_order_windows_order_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Selecione a duração:</translation>
-   <translation id="vps_order_windows_order_resume" qtlid="177496">Resumo da sua nota de encomenda</translation>
+   <translation id="vps_order_windows_order_resume" qtlid="177496">Resumo da nota de encomenda</translation>
    <translation id="vps_order_windows_order_price_HT" qtlid="146177">Preço total sem IVA:</translation>
    <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Preço total com IVA:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Clique no botão "Validar" para confirmar a sua encomenda.</translation>
@@ -189,7 +189,7 @@
    <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Prima a tecla Ctrl e clique numa chave para a desselecionar.</translation>
    <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">Desejo receber por e-mail os dados de acesso ao meu servidor VPS.</translation>
    <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">Ocorreu um erro no carregamento das chaves SSH.</translation>
-   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Ocorreu um erro no acesso às informações.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Erro ao aceder às informações.</translation>
    <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Sistema operativo:</translation>
    <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Linguagem:</translation>
    <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Software:</translation>
@@ -294,7 +294,7 @@
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Resumo</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Ocorreu um erro aquando do pedido de upgrade da sua VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Configuração atual</translation>
-   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar um domínio </translation>
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar domínio </translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Adicionar um domínio ao DNS secundário</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domínio a adicionar:</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Ocorreu um erro aquando do pedido de adição de um domínio ao DNS secundário.</translation>
@@ -314,7 +314,7 @@
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Para o primeiro pagamento será faturado ao prorata do número de dias que restam antes da data de renovação da sua VPS.</translation>
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">A seguir, o serviço será faturado ao preço de <span class="red bold">{{ price }}</span></translation>
    <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Deseja subscrever a opção de backup automático para o VPS <span class="italic normal">{{ serviceName }}</span>?</translation>
-   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Para confirmar o seu pedido queira aceitar as condições de utilização e clicar no botão "Seguinte" em baixo.</translation>
+   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Para confirmar o pedido, leia a aceite as condições de utilização, e clique no botão «Seguinte».</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Preço s/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Preço c/IVA.</translation>
    <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Eu reconheço ter tomado conhecimento dos seguintes elementos:</translation>
@@ -411,47 +411,47 @@
 
    <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">Perdeu a password?</translation>
    <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Pedido de nova palavra-passe</translation>
-   <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Uma nova palavra-passe será enviada ao NIC "Admin" do servidor.</translation>
-   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Acaba de ser enviada uma nova password ao nic admin do servidor</translation>
-   <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Um erro ocorreu durante a reinicialização da nova palavra-passe.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Será enviada uma nova palavra-passe ao NIC «Admin» do servidor.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Foi enviada uma nova palavra-passe ao NIC «Admin» do servidor.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Erro ao processar renovação da palavra-passe.</translation>
    <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Quer mesmo repor a palavra-passe para o Backup Storage?</translation>
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">ID utilizador</translation>
    <translation id="vps_tab_backup_storage_name" qtlid="3818">Nome</translation>
    <translation id="vps_tab_backup_storage_usage" qtlid="30382">Utilização</translation>
    <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Nenhum acesso configurado</translation>
-   <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">Ip</translation>
+   <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
    <translation id="vps_tab_backup_storage_table_cifs" qtlid="176740">CIFS</translation>
    <translation id="vps_tab_backup_storage_table_ftp" qtlid="50410">FTP</translation>
    <translation id="vps_tab_backup_storage_table_nfs" qtlid="6778">NFS</translation>
    <translation id="vps_tab_backup_storage_table_status" qtlid="26443">Estado</translation>
    <translation id="vps_tab_backup_storage_table_ip_disable" qtlid="26383">Em curso</translation>
    <translation id="vps_tab_backup_storage_table_ip_enable" qtlid="30250">Ativado</translation>
-   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Modificar o acesso</translation>
-   <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">Eliminar o acesso</translation>
-   <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">Validar a modificação</translation>
-   <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Anular a modificação</translation>
+   <translation id="vps_tab_backup_storage_table_ip_edit" qtlid="180694">Alterar acesso</translation>
+   <translation id="vps_tab_backup_storage_table_ip_delete" qtlid="180707">Alterar acesso</translation>
+   <translation id="vps_tab_backup_storage_table_ip_modify" qtlid="180720">Validar alteração</translation>
+   <translation id="vps_tab_backup_storage_table_ip_cancel" qtlid="180733">Anular alteração</translation>
 
-   <translation id="vps_backup_storage_access_delete" qtlid="180590">Eliminação de um acesso</translation>
+   <translation id="vps_backup_storage_access_delete" qtlid="180590">Eliminar acesso</translation>
    <translation id="vps_backup_storage_access_delete_question" qtlid="452865">Quer mesmo eliminar o acesso do bloco IP {{ipBlock}}?</translation>
    <translation id="vps_backup_storage_access_delete_success" qtlid="452878">A eliminação do acesso do bloco ip{{ipBlock}} ao Backup Storage pode demorar alguns minutos</translation>
    <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">Ocorreu um erro na eliminação do acesso do bloco IP {{ipBlock}} ao Backup Storage</translation>
 
-   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Ocorreu um erro aquando da recuperação dos blocos que podem ser autorizados</translation>
-   <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar um acesso</translation>
-   <translation id="vps_backup_storage_access_add" qtlid="180772">Adicionar um acesso</translation>
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">Erro no acesso aos blocos disponíveis para receber autorizações</translation>
+   <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar acesso</translation>
+   <translation id="vps_backup_storage_access_add" qtlid="180772">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Queira escolher o bloco de IPs que deseja autorizar, bem como as opções de acesso.</translation>
    <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lista dos blocos</translation>
    <translation id="vps_backup_storage_access_add_info2" qtlid="210061">Queira adicionar uma regra no acesso ao seu backup storage para cada bloco de IPs da seguinte lista:</translation>
    <translation id="vps_backup_storage_access_add_info3" qtlid="210074">No mínimo, deve autorizar um protocolo uma vez que, de forma padrão, os blocos de endereços IP que não tenham uma regra associada serão "recusados".</translation>
-   <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Direitos aplicados:</translation>
+   <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Permissões aplicadas:</translation>
    <translation id="vps_backup_storage_access_add_allow" qtlid="141795">Autorizar</translation>
    <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Recusar</translation>
    <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Bloco afetado:</translation>
    <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Autorizar em:</translation>
-   <translation id="vps_backup_storage_access_add_success" qtlid="184438">O pedido de adição de regras de acesso ao backup storage foi corretamente tomada em conta mas poderá levar alguns minutos</translation>
-   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">O pedido de adição de certas regras de acesso ao backup storasge foi corretamente tomado em conta mas poderá levar alguns minutos. Enquanto essa operação está em curso, nenhuma outra poderá ser levada a cabo.</translation>
-   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Ocorreu um erro aquando do pedido de adição de regras de acesso ao backup storage</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">O pedido para adicionar regras de acesso ao Backup Storage foi registado mas pode demorar alguns minutos</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">O pedido para adicionar algumas regras de acesso ao Backup Storasge foi registado mas pode demorar alguns minutos. Durante este período não podem ser realizadas outras operações.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Erro ao adicionar regras de acesso ao Backup Storage</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Todos os blocos disponível receberam uma autorização</translation>
 
    <translation id="vps_tab_backup_storage_set_success" qtlid="452904">A alteração do acesso {{access}} pode demorar alguns minutos</translation>
@@ -472,7 +472,7 @@
    <translation id="vps_tab_additional_disk_count" qtlid="281550">Não dispõe de um disco adicional.</translation>
    <translation id="vps_tab_additional_disk_count_1" qtlid="281563">Dispõe de um disco adicional.</translation>
    <translation id="vps_tab_additional_disk_header_id" qtlid="8194">ID</translation>
-   <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Tamanho (em GB)</translation>
+   <translation id="vps_tab_additional_disk_header_size" qtlid="153623">Dimensão (em GB)</translation>
    <translation id="vps_tab_additional_disk_header_state" qtlid="33790">Estado</translation>
    <translation id="vps_tab_additional_disk_state_connected" qtlid="99944">Ligado</translation>
    <translation id="vps_tab_additional_disk_state_disconnected" qtlid="77154">Desligado</translation>
@@ -506,7 +506,7 @@
    <translation id="vps_setting_name_updated" qtlid="439905">Nome do projeto alterado</translation>
    <translation id="vps_default_name" qtlid="415714">Nome predefinido</translation>
    <translation id="vps_personal_name" qtlid="415727">Nome personalizado</translation>
-   <translation id="vps_change_owner" qtlid="254882">Alterar o proprietário</translation>
+   <translation id="vps_change_owner" qtlid="254882">Alterar titular</translation>
    <translation id="vps_dashboard_name" qtlid="3818">Nome</translation>
    <translation id="vps_status_disabled" qtlid="24967">Desativado</translation>
    <translation id="vps_status_enabled" qtlid="30250">Ativado</translation>

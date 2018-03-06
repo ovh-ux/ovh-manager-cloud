@@ -42,12 +42,29 @@
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">Partneři</translation>
    <translation id="common_menu_billing" qtlid="32950">Fakturace</translation>
+   <translation id="common_menu_billing_history" qtlid="159540">Mé faktury</translation>
+   <translation id="common_menu_billing_payments" qtlid="398781">Informace o platbách</translation>
+   <translation id="common_menu_means" qtlid="90049">Platební metoda</translation>
+   <translation id="common_menu_means_mean" qtlid="139949">Mé platební metody</translation>
+   <translation id="common_menu_means_ovhaccount" qtlid="366826">Můj předplacený účet</translation>
+   <translation id="common_menu_means_vouchers" qtlid="270917">Mé vouchery</translation>
+   <translation id="common_menu_means_refunds" qtlid="139923">Mé dobropisy</translation>
+   <translation id="common_menu_means_fidelity" qtlid="260606">Můj bodový účet</translation>
+   <translation id="common_menu_means_credits" qtlid="448907">Mé kredity</translation>
    <translation id="common_menu_renew" qtlid="229658">Mé služby</translation>
+   <translation id="common_menu_renew_management" qtlid="287527">Správa mých služeb</translation>
+   <translation id="common_menu_renew_agreements" qtlid="204350">Mé smlouvy</translation>
    <translation id="common_menu_orders" qtlid="282809">Moje objednávky</translation>
    <translation id="common_menu_contacts" qtlid="70541">Moje kontakty</translation>
    <translation id="common_menu_list_ticket" qtlid="454039">Mé tikety</translation>
    <translation id="common_menu_language" qtlid="30598">Jazyk</translation>
    <translation id="common_menu_account" qtlid="157642">Můj účet</translation>
+   <translation id="common_menu_account_infos" qtlid="405499">Můj profil</translation>
+   <translation id="common_menu_account_security" qtlid="125420">Zabezpečení</translation>
+   <translation id="common_menu_account_emails" qtlid="266118">Přijaté e-maily</translation>
+   <translation id="common_menu_account_subscriptions" qtlid="144708">Přihlášky k odebírání novinek</translation>
+   <translation id="common_menu_account_ssh" qtlid="165897">Moje klíče SSH</translation>
+   <translation id="common_menu_account_advanced" qtlid="39958">Pokročilé nastavení</translation>
    <translation id="common_menu_changelog" qtlid="124964">Changelog</translation>
    <translation id="common_skip_to_main_content" qtlid="454052">Přejít na hlavní obsah</translation>
    <translation id="global_logout" qtlid="33658">Odpojení</translation>

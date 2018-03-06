@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="home_welcome_message" qtlid="245233">Bem vindo ao seu espaço cliente OVH <b>CLOUD</b>.</translation>
-   <translation id="home_welcome_message_choose_product" qtlid="123487">Selecionar o produto a configurar na coluna à esquerda</translation>
+   <translation id="home_welcome_message_choose_product" qtlid="123487">Selecionar na coluna à esquerda o produto que pretende configurar</translation>
 </translations>
