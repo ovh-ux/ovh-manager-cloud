@@ -1,8 +1,7 @@
 class SessionService {
-    constructor ($q, OvhApiMe, OvhApiProducts) {
+    constructor ($q, OvhApiMe) {
         this.$q = $q;
         this.OvhApiMe = OvhApiMe;
-        this.OvhApiProducts = OvhApiProducts;
     }
 
     getUser (force) {
@@ -20,29 +19,12 @@ class SessionService {
         this.userDeferred = this.$q.defer();
         this.OvhApiMe.Lexi()
             .get().$promise
-            .then((result) => this.userDeferred.resolve(result));
+            .then((result) => {
+                this.user = result;
+                this.userDeferred.resolve(result);
+            });
 
         return this.userDeferred.promise;
-    }
-
-    getProducts (force) {
-        // Check if cached
-        if (!!this.products) {
-            return $q.when(this.products);
-        }
-
-        // Check if already deferred
-        if (!!this.productsDeferred && !force) {
-            return this.productsDeferred.promise;
-        }
-
-        // Get Products
-        this.productsDeferred = this.$q.defer();
-        this.OvhApiProducts.Aapi()
-            .get({ universe: "cloud" }).$promise
-            .then((result) => this.productsDeferred.resolve(result));
-
-        return this.productsDeferred.promise;
     }
 }
 
