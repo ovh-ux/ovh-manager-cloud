@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="options_pruchaselink_increase_quota">augmenter le quota</translation>
+    <translation id="options_pruchaselink_increase_quota_title">Offre de mise à niveau requise</translation>
+    <translation id="options_pruchaselink_increase_quota_message">Vous êtes actuellement abonné à Discover et devriez passer à PRO pour pouvoir acheter plus d'options. Voulez-vous mettre à jour maintenant?</translation>
+</translations>

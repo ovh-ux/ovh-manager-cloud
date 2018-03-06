@@ -21,7 +21,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/home", "dbaas/logs/detail/inputs/home/info", "dbaas/logs/detail/options"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/home", "dbaas/logs/detail/inputs/home/info", "dbaas/logs/detail/options", "dbaas/logs/detail/options/purchaselink"]
         })
         .state("dbaas.logs.detail.inputs.console", {
             url: "/:inputId/console",

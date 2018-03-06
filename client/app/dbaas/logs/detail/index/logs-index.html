@@ -2,11 +2,7 @@
     <cui-page-content-title text="'logs_index_title' | translate"></cui-page-content-title>
     <p data-translate="logs_index_description"></p>
     <p>{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="logs_index_total_used"></span>
-        (<button role="link" class="oui-link oui-button-link"
-            ui-sref="dbaas.logs.detail.options"
-            data-translate="logs_index_increase_quota"
-            data-ng-disabled="ctrl.delete.loading">
-        </button>)
+        (<options-purchase-link></options-purchase-link>)
     </p>
 
     <button type="button"

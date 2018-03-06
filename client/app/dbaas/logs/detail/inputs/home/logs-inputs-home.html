@@ -6,11 +6,7 @@
     <div data-ng-if="ctrl.quota.loading"><oui-spinner></oui-spinner></div>
 
     <p data-ng-if="!ctrl.quota.loading">{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="inputs_total_used"></span>
-        (<button role="link" class="oui-link oui-button-link"
-            ui-sref="dbaas.logs.detail.options"
-            data-translate="inputs_increase_quota"
-            data-ng-disabled="ctrl.delete.loading">
-        </button>)
+        (<options-purchase-link></options-purchase-link>)
     </p>
 
     <button 
