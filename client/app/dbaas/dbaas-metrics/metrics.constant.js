@@ -7,7 +7,7 @@ angular.module("managerApp")
             },
             {
                 name: "Grafana",
-                url: "https://grafana.tsaas.ovh.com"
+                url: "https://grafana.metrics.ovh.net"
             }
         ],
         protos: [
