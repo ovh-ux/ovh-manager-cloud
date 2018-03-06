@@ -6,7 +6,7 @@
    <translation id="vps_order_windows_step3_title" qtlid="82725">Review </translation>
    <translation id="vps_order_windows_info" qtlid="250758">This option will allow you to install a Windows-type OS on your VPS.</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">An error occurred when retrieving the prices.</translation>
-   <translation id="vps_order_windows_order_error" qtlid="181227">Error when creating the order confirmation.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">An error has occurred generating the purchase order.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Select the duration:</translation>
    <translation id="vps_order_windows_order_resume" qtlid="177496">Order summary</translation>
    <translation id="vps_order_windows_order_price_HT" qtlid="146177">Total price ex. GST:</translation>
@@ -189,7 +189,7 @@
    <translation id="vps_configuration_reinstall_step1_unselect_ssh_key" qtlid="295751">Press Ctrl then click on a key to deselect it.  </translation>
    <translation id="vps_configuration_reinstall_step1_sendPassword" qtlid="243500">I wish to receive my VPS authentication codes by email.</translation>
    <translation id="vps_configuration_reinstall_loading_sshKeys_error" qtlid="243513">An error occurred on loading your SSH keys.</translation>
-   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">Error when retrieving the data.</translation>
+   <translation id="vps_configuration_reinstall_loading_summary_error" qtlid="233047">An error has occurred retrieving the data.</translation>
    <translation id="vps_configuration_reinstall_step2_os" qtlid="171149">Operating system:</translation>
    <translation id="vps_configuration_reinstall_step2_language" qtlid="168874">Language:</translation>
    <translation id="vps_configuration_reinstall_step2_softwares" qtlid="194580">Software:</translation>

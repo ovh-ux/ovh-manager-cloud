@@ -40,7 +40,7 @@
    <translation id="add_instance_ssh_step_title" qtlid="242886">Escolha a sua chave SSH</translation>
    <translation id="add_instance_ssh_loading" qtlid="242769">Carregamento em curso</translation>
    <translation id="add_instance_ssh_not_found" qtlid="242899">Atualmente não possui nenhuma chave SSH.</translation>
-   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Adicionar uma chave SSH</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Adicionar chave SSH</translation>
 
    <translation id="add_instance_name_step_title" qtlid="242912">Atribua um nome ao seu servidor virtual (instance)</translation>
 

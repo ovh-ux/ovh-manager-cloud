@@ -19,15 +19,15 @@
    <translation id="nasha_partitions_protocol_CIFS" qtlid="176740">CIFS</translation>
    <translation id="nasha_partitions_protocol_NFS" qtlid="6778">NFS</translation>
    <translation id="nasha_partitions_protocol_NFS_CIFS" qtlid="176753">NFS CIFS</translation>
-   <translation id="nasha_partitions_size" qtlid="7726">Tamanho</translation>
-   <translation id="nasha_partitions_size_in_Gb" qtlid="153623">Tamanho (em GB)</translation>
-   <translation id="nasha_partitions_action_update" qtlid="172319">Modificar o tamanho</translation>
+   <translation id="nasha_partitions_size" qtlid="7726">Dimensão</translation>
+   <translation id="nasha_partitions_size_in_Gb" qtlid="153623">Dimensão (em GB)</translation>
+   <translation id="nasha_partitions_action_update" qtlid="172319">Alterar dimensão</translation>
    <translation id="nasha_partitions_action_change_access" qtlid="82581">Gerir os acessos</translation>
    <translation id="nasha_partitions_action_display_snapshot" qtlid="172332">Frequência das snapshots</translation>
    <translation id="nasha_partitions_action_display_custom_snapshot" qtlid="369178">Snapshot instantânea</translation>
    <translation id="nasha_partitions_action_z_file_system" qtlid="373649">Parâmetros Z File System (ZFS)</translation>
-   <translation id="nasha_partitions_action_add" qtlid="120919">Criar uma partição</translation>
-   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Escolha de um protocolo</translation>
+   <translation id="nasha_partitions_action_add" qtlid="120919">Criar partição</translation>
+   <translation id="nasha_partitions_action_add_partition_title" qtlid="153662">Seleção de um protocolo</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionAdd" qtlid="26791">Criação</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionDelete" qtlid="59699">Supressão</translation>
    <translation id="nasha_partitions_task_clusterLeclercPartitionUpdate" qtlid="369282">Redimensionamento</translation>
