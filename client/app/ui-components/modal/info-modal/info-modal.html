@@ -4,7 +4,7 @@
         <cui-modal-text data-text="$ctrl.params.text"></cui-modal-text>
     </cui-modal-body>
     <cui-modal-footer>
-        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.dismissModal()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_modal_ok' | translate" data-on-click="$ctrl.closeModal()"></cui-submit-button>
+        <cui-cancel-button data-text="$ctrl.cancelButtonText" data-on-click="$ctrl.dismissModal()"></cui-cancel-button>
+        <cui-submit-button data-text="$ctrl.okButtonText" data-on-click="$ctrl.closeModal()"></cui-submit-button>
     </cui-modal-footer>
 </cui-modal>

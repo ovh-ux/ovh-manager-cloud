@@ -47,7 +47,8 @@ class optionsPurchaseLinkCtrl {
         if (this._isBasicOffer(this.selectedOffer.data)) {
             return this.ControllerModalHelper.showInfoModal({
                 titleText: this.$translate.instant("options_pruchaselink_increase_quota_title"),
-                text: this.$translate.instant("options_pruchaselink_increase_quota_message")
+                text: this.$translate.instant("options_pruchaselink_increase_quota_message"),
+                okButtonText: this.$translate.instant("options_pruchaselink_increase_quota_upgrade")
             })
                 .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName: this.serviceName }));
         }
