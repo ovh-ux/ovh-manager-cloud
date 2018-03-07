@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_tokens_title">Read-only tokens</translation>
+    <translation id="logs_tokens_description">If you want to allow access to your logs from external applications or automate some tasks on this basis, you will need to give them access to the APIs. The safest way to manage these access is to use the authentication tokens. With this feature, you no longer need to enter your credentials in your configuration files.</translation>
+    <translation id="logs_tokens_add">Add a token</translation>
+
+    <translation id="logs_tokens_col_name">Name</translation>
+    <translation id="logs_tokens_col_token">Token</translation>
+    <translation id="logs_tokens_col_creation_date">Creation date</translation>
+    <translation id="logs_tokens_col_platform">Platform</translation>
+    <translation id="logs_tokens_cluster">Cluster</translation>
+    <translation id="logs_tokens_select_cluster">Select a cluster</translation>
+    <translation id="logs_tokens_delete_title">Delete a token</translation>
+    <translation id="logs_tokens_delete_message">Are you sure you want to delete a token: {{tokenName}} ?</translation>
+
+    <translation id="logs_tokens_create_success">A token {{tokenName}} has been successfully created.</translation>
+    <translation id="logs_tokens_delete_success">A token {{tokenName}} has been successfully deleted.</translation>
+
+    <translation id="logs_tokens_get_error">An error has occurred while retrieving tokens: {{message}}</translation>
+    <translation id="logs_tokens_get_detail_error">An error has occurred while getting token details: {{message}}</translation>
+    <translation id="logs_tokens_delete_error">An error has occured while deleting a token {{tokenName}}: {{message}}</translation>
+    <translation id="logs_tokens_create_error">An error has occured while creating a token {{tokenName}}: {{message}}</translation>
+    <translation id="logs_tokens_cluster_get_error">An error has occured while retrieving platform details: {{message}}</translation>
+
+</translations>

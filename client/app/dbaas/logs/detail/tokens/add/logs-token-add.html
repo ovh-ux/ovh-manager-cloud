@@ -1,0 +1,74 @@
+<form novalidate name="ctrl.form">
+    <div class="oui-modal oui-modal_shadow">
+        <div class="oui-modal__header">
+            <button
+                class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                type="button"
+                aria-label="Exit"
+                ng-click="ctrl.cancel()"></button>
+        </div>
+        <div class="oui-modal__body oui-modal__body_no-icon">
+            <oui-spinner data-ng-if="ctrl.token.loading"></oui-spinner>
+            <div data-ng-if="!ctrl.token.loading">
+                <div class="oui-modal__body-text">
+                    <h2 class="oui-modal__title" data-translate="logs_tokens_add"></h2>
+                </div>
+
+                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.token_name.$invalid}">
+                    <label for="token_name" class="oui-label" data-translate="logs_tokens_col_name"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_5 mb-2">
+                            <input type="text" id="token_name"
+                                    name="token_name"
+                                    class="oui-input mb-0"
+                                    data-ng-model="ctrl.token.data.name"
+                                    data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.token_name.$invalid}"
+                                    autofocus
+                                    required />
+                        </div>
+                    </div>
+                </div>
+                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.token_cluster.$invalid}">
+                    <label for="token_cluster" class="oui-label" data-translate="logs_tokens_select_cluster"></label>
+                    <div class="oui-field__content">
+                        <div class="oui-field-control oui-field-control_5 d-flex">
+                            <oui-spinner data-ng-if="ctrl.clusters.loading"></oui-spinner>
+                            <div class="oui-select" data-ng-if="!ctrl.clusters.loading">
+                                <select class="oui-select__input float-left"
+                                    name="token_cluster"
+                                    id="token_cluster"
+                                    data-ng-model="ctrl.token.data.clusterId"
+                                    data-ng-class="{'oui-select_error': ctrl.form.$submitted && ctrl.form.token_cluster.$invalid}"
+                                    required >
+                                    <option value="" disabled selected data-translate="logs_tokens_select_cluster"></option>
+                                        <option data-ng-repeat="cluster in ctrl.clusters.data" value="{{cluster.clusterId}}">
+                                            {{ cluster.hostname }}
+                                        </option>
+                                </select>
+                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="oui-modal__footer" data-ng-if="!ctrl.token.loading">
+            <div class="cui-form-actions">
+                <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
+                <div data-ng-if="!ctrl.saving.loading">
+                    <button type="button"
+                        class="oui-button oui-button_secondary"
+                        data-translate="common_cancel"
+                        data-ng-click="ctrl.cancel()"></button>
+                    <button type="submit"
+                        class="oui-button oui-button_primary"
+                        data-translate="common_save"
+                        data-ng-click="ctrl.createToken()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

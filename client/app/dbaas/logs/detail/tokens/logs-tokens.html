@@ -1,4 +1,30 @@
-<div>
-    Tokens
-    Service Name: {{ ctrl.serviceName }}
-</div>
+
+<section class="cui-page__content log-aliases">
+    <cui-page-content-title text="::'logs_tokens_title' | translate"></cui-page-content-title>
+    <p data-translate="logs_tokens_description"></p>
+
+    <button type="button" class="oui-button oui-button_secondary"
+        data-ui-sref="dbaas.logs.detail.tokens.add"
+        data-ng-disabled="ctrl.delete.loading">
+            <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_tokens_add' | translate }}
+    </button>
+
+    <oui-spinner data-ng-if="ctrl.tokens.loading || ctrl.delete.loading"></oui-spinner>
+    <oui-datagrid rows="ctrl.tokens.data">
+        <oui-column title="::'logs_tokens_col_name' | translate" property="name" sortable="asc"></oui-column>
+        <oui-column title="::'logs_tokens_col_creation_date' | translate" property="createdAt">
+            {{ $row.createdAt | momentFormat:'L'}}
+        </oui-column>
+        <oui-column title="::'logs_tokens_col_token' | translate" property="value" sortable></oui-column>
+        <oui-column title="::'logs_tokens_col_platform' | translate" property="cluster.hostname" sortable>
+            <oui-spinner data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
+            <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
+        </oui-column>
+        <oui-action-menu compact>
+            <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
+    <div ui-view="logsTokensAdd"></div>
+</section>
+
+
