@@ -6,7 +6,7 @@
     <div data-ng-if="ctrl.quota.loading"><oui-spinner></oui-spinner></div>
 
     <p data-ng-if="!ctrl.quota.loading">{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="inputs_total_used"></span>
-        (<options-purchase-link></options-purchase-link>)
+        (<logs-upgrade-quota-link></logs-upgrade-quota-link>)
     </p>
 
     <button 
