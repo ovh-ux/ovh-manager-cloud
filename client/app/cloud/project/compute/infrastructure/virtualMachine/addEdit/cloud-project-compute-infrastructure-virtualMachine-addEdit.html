@@ -609,7 +609,7 @@
                                              data-is-open="VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category]"
                                              data-is-disabled="!categoryObject.flavors.length">
                                 <uib-accordion-heading>
-                                    <div data-ng-click="VmAddEditCtrl.changeCategory(categoryObject.category)" class="{{VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category] ? 'active' : categoryObject.flavors.length ? '' : 'disabled'}}">
+                                    <div class="{{VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category] ? 'active' : categoryObject.flavors.length ? '' : 'disabled'}}">
                                         <div class="chevron-left">
                                             <i class="glyphicon pull-left"
                                                ng-class="{'glyphicon-chevron-down': VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category], 'glyphicon-chevron-right': !VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category]}"></i>

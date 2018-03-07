@@ -971,6 +971,15 @@ angular.module("managerApp")
         }
     });
 
+    $scope.$watchCollection("VmAddEditCtrl.toggle.accordions.flavors", (value, oldValue) => {
+        if (value !== oldValue) {
+            const chosen = _.keys(_.pick(value, key => key));
+            if (chosen.length === 1) {
+                self.changeCategory(chosen[0]);
+            }
+        }
+    });
+
     // ---
 
     // --------- VM NAME ---------
@@ -1342,7 +1351,7 @@ angular.module("managerApp")
 
     self.getRealFlavor = function (flavor, category) {
         var osType = self.vmInEdition.image ? self.vmInEdition.image.type : "linux";
-        var flex = category === "gpu" ? false : self.model.flex;
+        var flex = category === "accelerated" ? false : self.model.flex;
         return self.getFlavorOfType(flavor, self.model.diskType, flex, self.model.region, osType);
     };
 
