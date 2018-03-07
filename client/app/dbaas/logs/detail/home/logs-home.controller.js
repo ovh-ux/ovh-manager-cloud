@@ -1,46 +1,62 @@
 class LogsHomeCtrl {
-    constructor ($stateParams, $translate, ControllerHelper) {
+    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsInputsConstant, LogsHomeService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
-        this.$translate = $translate;
-        this.ControllerHelper = ControllerHelper;
         this.serviceName = this.$stateParams.serviceName;
-        this.stream = {
-            name: "Flux 123",
-            url: "https://gra2.logs.ovh.com/streams/595fa3e852440d0001e14a5e"
-        };
-        this.dashboard = {
-            name: "test-tableau-juillet-2017",
-            url: "https://gra2.logs.ovh.com/streams/595fa3e852440d0001e14a5e"
-        };
-        this.graylog = {
-            url: "https://gra2.logs.ovh.com/"
-        };
+        this.$translate = $translate;
+        this.CloudMessage = CloudMessage;
+        this.ControllerHelper = ControllerHelper;
+        this.LogsInputsConstant = LogsInputsConstant;
+        this.LogsHomeService = LogsHomeService;
+        this._initLoaders();
+    }
+
+    $onInit () {
+        this._initActions();
+        this.accountDetails.load();
+    }
+
+    /**
+     * initializes the inputs and the quota
+     *
+     * @memberof LogsHomeCtrl
+     */
+    _initLoaders () {
+        this.accountDetails = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName)
+        });
+    }
+
+    _initActions () {
         this.actions = {
-            lastStream: {
-                href: "https://gra2.logs.ovh.com/streams/595fa3e852440d0001e14a5e",
-                text: "Flux 123",
+            changeName: {
+                text: this.$translate.instant("common_edit"),
+                callback: () => this.editName(),
+                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
             },
-            allStream: {
-                state: "dbaas.logs.detail.streams",
-                text: this.$translate.instant("logs_home_shortcuts_all_stream")
+            editTokens: {
+                text: this.$translate.instant("common_edit"),
+                callback: () => this.editTokens(),
+                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
             },
-            lastDashboard: {
-                href: "https://gra2.logs.ovh.com/streams/595fa3e852440d0001e14a5e",
-                text: "test-tableau-juillet-2017"
-            },
-            allDashboard: {
-                state: "dbaas.logs.detail.dashboards",
-                text: this.$translate.instant("logs_home_shortcuts_all_dashboard")
-            },
-            graylog: {
-                href: "https://gra2.logs.ovh.com/",
-                text: this.$translate.instant("logs_home_shortcuts_graylog")
-            },
-            elasticsearch: {
-                href: "https://gra2.logs.ovh.com/",
-                text: this.$translate.instant("logs_home_shortcuts_elasticsearch")
+            changePassword: {
+                text: this.$translate.instant("common_edit"),
+                callback: () => this.editPassword(),
+                isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
             }
         };
+    }
+
+    editName () {
+        console.log("Edit Name");
+    }
+
+    editTokens () {
+        console.log("Edit Tokens");
+    }
+
+    editPassword () {
+        console.log("Edit Password");
     }
 }
 

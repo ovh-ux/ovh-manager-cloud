@@ -1,9 +1,8 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_shortcuts' | translate"
-                      class="h-100">
-                <cui-tile-body-list>
+            <cui-tile data-title="'logs_home_shortcuts' | translate" class="h-100">
+                <!-- <cui-tile-body-list>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_stream"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastStream"></cui-tile-action-link>
@@ -19,32 +18,38 @@
                         <cui-tile-action-link data-action="ctrl.actions.graylog"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.elasticsearch"></cui-tile-action-link>
                     </cui-tile-body-list-item>
-                </cui-tile-body-list>
+                </cui-tile-body-list> -->
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-8">
-            <cui-tile data-title="'logs_home_usage' | translate"
-                      class="h-100">
+            <cui-tile data-title="'logs_home_usage' | translate" class="h-100">
                 Un graphe
             </cui-tile>
         </div>
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_configuration' | translate"
-                      class="h-100">
-                Config
+            <cui-tile data-title="'logs_home_configuration' | translate" class="h-100">
+                <cui-tile-body>
+                    <cui-tile-item data-term="'logs_home_account_name' | translate"
+                        data-description="ctrl.accountDetails.data.fullname"
+                        data-actions="ctrl.actions.changeName"></cui-tile-item>
+                    <cui-tile-item data-term="'logs_home_tokens' | translate"
+                        data-description="3"
+                        data-actions="ctrl.actions.editTokens"></cui-tile-item>
+                    <cui-tile-item data-term="'logs_home_password' | translate"
+                        data-description="'logs_home_password_default_value' | translate"
+                        data-actions="ctrl.actions.changePassword"></cui-tile-item>
+                </cui-tile-body>
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_access' | translate"
-                      class="h-100">
+            <cui-tile data-title="'logs_home_access' | translate" class="h-100">
                 Accès
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_subscription' | translate"
-                      class="h-100">
+            <cui-tile data-title="'logs_home_subscription' | translate" class="h-100">
                 Abonnement
             </cui-tile>
         </div>

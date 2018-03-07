@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="logs_home_shortcuts">Shortcuts</translation>
+   <translation id="logs_home_shortcuts_last_stream">Last modified stream</translation>
+   <translation id="logs_home_shortcuts_all_stream">See all streams</translation>
+   <translation id="logs_home_shortcuts_last_dashboard">Last modified dashboard</translation>
+   <translation id="logs_home_shortcuts_all_dashboard">See all dashboards</translation>
+   <translation id="logs_home_shortcuts_graylog">Graylog</translation>
+   <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
+
+   <translation id="logs_home_shortcuts_elasticsearch_help">You have access to Elasticsearch by acquiring an index or alias.</translation>
+   <translation id="logs_home_usage">Usage</translation>
+
+   <translation id="logs_home_configuration">Configuration</translation>
+   <translation id="logs_home_account_name">Name of account</translation>
+   <translation id="logs_home_tokens">Tokens</translation>
+   <translation id="logs_home_tokens_tooltip">These tokens allow you to access APIs (write to indexes, read on Graylog and read on Elasticsearch)</translation>
+   <translation id="logs_home_password">Password</translation>
+   <translation id="logs_home_password_default_value">******</translation>
+
+   <translation id="logs_home_access">Access</translation>
+   <translation id="logs_home_subscription">Subscription</translation>
+
+   <translation id="logs_home_account_details_get_error">An error occurred while trying to retrieve account details: {{message}}</translation>
+</translations>
