@@ -1,13 +1,11 @@
 class HomeCtrl {
-    constructor ($window, $state, OvhApiCloudProject, TranslateService, CloudUserPref, ControllerHelper,
-                 CLOUD_PROJECT_STATE) {
+    constructor ($window, $state, ProductsService, TranslateService, CloudUserPref, ControllerHelper) {
         this.$window = $window;
         this.$state = $state;
-        this.OvhApiCloudProject = OvhApiCloudProject;
+        this.ProductsService = ProductsService;
         this.TranslateService = TranslateService;
         this.CloudUserPref = CloudUserPref;
         this.ControllerHelper = ControllerHelper;
-        this.CLOUD_PROJECT_STATE = CLOUD_PROJECT_STATE;
 
         this.summit = {
             link: {
@@ -16,21 +14,14 @@ class HomeCtrl {
             }
         };
     }
-    getDisplayablesProjects () {
-        return this.OvhApiCloudProject.Lexi().queryDetails().then(projects => {
-            _.remove(projects, { status: this.CLOUD_PROJECT_STATE.deleting });
-            _.remove(projects, { status: this.CLOUD_PROJECT_STATE.deleted });
-            _.remove(projects, { status: this.CLOUD_PROJECT_STATE.suspended });
-            return projects;
-        });
-    }
+
     redirectToPage () {
         //While we don't have a real homepage
-        this.getDisplayablesProjects()
+        this.ProductsService.getCloudProjects()
             .then(projects => {
                 if (projects && projects.length) {
                     return this.$state.go("iaas.pci-project.compute.infrastructure", {
-                        projectId: projects[0].project_id
+                        projectId: projects[0].serviceName
                     });
                 }
                 return this.$state.go("iaas.pci-project-new");

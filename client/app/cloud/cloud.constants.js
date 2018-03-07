@@ -101,12 +101,6 @@ angular.module("managerApp")
         instances: 15,
         ips: 32
     })
-    .constant("CLOUD_PROJECT_STATE", {
-        deleting: "deleting",
-        deleted: "deleted",
-        ok: "ok",
-        suspended: "suspended"
-    })
     .constant("CLOUD_PCA_FILE_STATE", {
         SEALED: "sealed",
         UNSEALING: "unsealing",

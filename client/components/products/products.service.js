@@ -15,6 +15,15 @@ class ProductsService {
             });
     }
 
+    getCloudProjects () {
+        return this.OvhApiProducts.Aapi().get({
+            universe: "cloud",
+            product: "PROJECT"
+        })
+            .$promise
+            .then(results => results.results[0].services);
+    }
+
     getProductsOfType (type) {
         return _.result(_.find(this.products, service => service.name === type), "services");
     }
