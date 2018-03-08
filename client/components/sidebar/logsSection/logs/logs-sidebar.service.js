@@ -1,5 +1,6 @@
 class LogsSidebar {
-    constructor (SidebarMenu, URLS, OvhApiMe) {
+    constructor ($translate, SidebarMenu, URLS, OvhApiMe) {
+        this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
         this.URLS = URLS;
         this.User = OvhApiMe;
@@ -12,6 +13,14 @@ class LogsSidebar {
     }
 
     loadIntoSection (section, services) {
+        // add all services navigation link
+        this.SidebarMenu.addMenuItem({
+            id: "logs-all-accounts",
+            title: this.$translate.instant("cloud_sidebar_section_logs_all_accounts"),
+            allowSubItems: false,
+            state: "dbaas.logs"
+        }, section);
+        // add navigation link for each account
         const orderedServices = _.sortBy(services, ["displayName"]);
         _.forEach(orderedServices, logService => {
             this.SidebarMenu.addMenuItem({

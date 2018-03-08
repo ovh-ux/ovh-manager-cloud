@@ -17,8 +17,6 @@ class LogsSectionSidebarService {
         const logsMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainLogsItem",
             title: this.$translate.instant("cloud_sidebar_section_logs"),
-            loadOnState: "dbaas.logs",
-            state: "dbaas.logs",
             allowSubItems: true,
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
