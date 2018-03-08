@@ -18,6 +18,7 @@ class LogsSectionSidebarService {
             id: "mainLogsItem",
             title: this.$translate.instant("cloud_sidebar_section_logs"),
             allowSubItems: true,
+            icon: "ovh-font ovh-font-logs",
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
         this.SidebarService.fillSection(logsMenuSection, this.section, false, services);
