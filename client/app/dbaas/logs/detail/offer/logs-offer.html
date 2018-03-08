@@ -1,45 +1,68 @@
 <div class="cui-page__content">
-    <oui-back-button class="back_button_inline_text" data-ui-sref="dbaas.logs.detail.home"></oui-back-button>
+    <oui-back-button class="back_button_inline_text" data-ng-click="ctrl.back()"></oui-back-button>
     <span class="oui-header_3">Change offer</span>
 
-    <div class="pl-4">
-        <h3 ng-if="ctrl.offerDetail.currentOfferType === 'pro'" data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}"></h3>
-        <h3 ng-if="ctrl.offerDetail.currentOfferType === 'basic'" data-translate="logs_offer_description_basic"></h3>
+    <div class="pl-4" ng-if="ctrl.offerDetail.currentOfferType === 'pro'">
+        <span data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}" class="oui-header_4"></span>
+    </div>
+    <div class="pl-4" ng-if="ctrl.offerDetail.currentOfferType === 'upgrade'">
+        <span data-translate="logs_offer_description_upgrade" class="oui-header_4"></span>
+    </div>
+    <div data-ng-if="ctrl.offers.loading"><oui-spinner></oui-spinner></div>
+
+    <div data-ng-if="ctrl.offerDetail.currentOfferType === 'basic' && !ctrl.offers.loading" class="basic-offer">
+        <p class="oui-header_4" data-translate="logs_offer_description_basic"></p>
+        <p data-translate="logs_offer_upgrade_pro" class="mt-5 oui-header_5"></p>
+        <p data-translate="logs_offer_upgrade_feature" class="oui-header_5"></p>
+        <ul class="dashed mb-4 pl-3">
+            <li data-translate="logs_offer_upgrade_pro_description_1"></li>
+            <li data-translate="logs_offer_upgrade_pro_description_2"></li>
+            <li data-translate="logs_offer_upgrade_pro_description_3"></li>
+            <li data-translate="logs_offer_upgrade_pro_description_4"></li>
+            <li data-translate="logs_offer_upgrade_pro_description_5"></li>
+        </ul>
     </div>
 
-    <oui-spinner size="l" data-ng-show="ctrl.offers.loading"></oui-spinner>
-
-    <div class="cui-box-list-wrapper d-inline-block w-100">
-        <div
-            class="cui-box col-md-4 w-25"
-            plan="{{offer.planCode}}"
-            data-ng-repeat="offer in ctrl.offers.data track by $index">
-            <div class="cui-box-header m-2">
-                <oui-radio
-                    text="{{offer.planCode | translate}}"
-                    name="offer.planCode"
-                    model="ctrl.offerDetail.selectedOffer"
-                    value="offer.planCode"
-                    on-change="ctrl.offerDetail.selectedOffer = modelValue">
-                </oui-radio>
-                <span data-ng-if="ctrl.offerDetail.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
-            </div>
-            <div class="cui-box-line"></div>
-            <div class="cui-box-body ml-5">
-                <p>{{offer.details.streams}} {{'logs_offer_streams' | translate}}, {{offer.details.tables}} {{'logs_offer_tables' | translate}}<span data-ng-if="offer.details.collectionTool || offer.details.limit">,</span></p>
-                <p data-ng-if="offer.details.collectionTool">{{offer.details.collectionTool}} {{'logs_offer_collection_tools' | translate}}</p>
-                <p data-ng-if="offer.details.limit">{{'logs_offer_limit' | translate}} : {{offer.details.limit}} {{'logs_offer_' + offer.details.limitDuration | translate}}</p>
-            </div>
-            <div class="cui-box-line"></div>          
-            <div class="cui-box-footer m-2">
-                <span data-ng-repeat="price in offer.prices">
-                    <span class="cui-box-footer__price" ng-if="price.capacities.indexOf('renew') > -1">{{price.price.text}}</span>
-                </span>
+    <div class="cui-box-list-wrapper d-inline-block w-100" data-ng-if="ctrl.offerDetail.currentOfferType !== 'basic'">
+        <div  data-ng-repeat="offer in ctrl.offers.data track by $index">
+            <div
+                class="cui-box col-md-3"
+                plan="{{offer.planCode}}"
+                data-ng-if="offer.planCode !== 'logs-basic'">
+                <div class="cui-box-header p-2">
+                    <oui-radio
+                        text="{{offer.planCode | translate}}"
+                        name="offer.planCode"
+                        model="ctrl.offerDetail.selectedOffer"
+                        value="offer.planCode"
+                        on-change="ctrl.offerDetail.selectedOffer = modelValue">
+                    </oui-radio>
+                    <span data-ng-if="ctrl.offerDetail.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
+                </div>
+                <div class="cui-box-line"></div>
+                <div class="cui-box-body ml-5">
+                    <p>{{offer.maxNbStream}} {{'logs_offer_streams' | translate}}, {{offer.maxNbDashboard}} {{'logs_offer_tables' | translate}}<span data-ng-if="offer.maxNbInput > 0">,</span></p>
+                    <p data-ng-if="offer.maxNbInput > 0">{{offer.maxNbInput}} {{'logs_offer_collection_tools' | translate}}</p>
+                    <p data-ng-if="offer.esStorage > 1">{{'logs_offer_limit' | translate}} : {{offer.planCode + '_limit' | translate}}</p>
+                </div>
+                <div class="cui-box-line"></div>            
+                <div class="cui-box-footer p-2">
+                    <span data-ng-repeat="price in offer.prices">
+                        <span class="cui-box-footer__price" ng-if="price.capacities.indexOf('renew') > -1">{{price.price.text}}</span>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="pl-4">
+    <div ng-if="ctrl.offerDetail.currentOfferType === 'basic' && !ctrl.offers.loading">
+        <button
+            class="oui-button oui-button_primary"
+            data-translate="logs_offer_unlock_pro_button"
+            data-ng-click="ctrl.orderPro()"></button>
+    </div>
+
+    <div class="pl-4" ng-if="ctrl.offerDetail.currentOfferType !== 'basic'">
         <oui-spinner data-ng-show="ctrl.savingOffer.loading"></oui-spinner>
         <div data-ng-hide="ctrl.savingOffer.loading || ctrl.offers.loading">
             <button type="submit"
@@ -49,7 +72,7 @@
                 data-ng-click="ctrl.saveOffer()"></button>
             <a class="oui-button oui-button_link"
                 data-translate="common_cancel"
-                data-ui-sref="dbaas.logs.detail.home"></a>
+                data-ng-click="ctrl.back()"></a>
         </div>
     </div>
 </div>
