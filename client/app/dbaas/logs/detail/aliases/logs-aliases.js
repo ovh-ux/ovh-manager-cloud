@@ -11,7 +11,7 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/aliases",
-                "dbaas/logs/detail/options", "dbaas/logs/detail/streams", "dbaas/logs/detail/index"]
+                "dbaas/logs/detail/options", "dbaas/logs/detail/streams", "dbaas/logs/detail/index", "dbaas/logs/detail/options/upgradequotalink"]
         })
         .state("dbaas.logs.detail.aliases.home", {
             url: "/home",
