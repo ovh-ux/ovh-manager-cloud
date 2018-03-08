@@ -5,9 +5,8 @@
             <oui-spinner></oui-spinner>
         </div>
         <div data-ng-if="!$ctrl.loader.init">
-            <kvm data-ng-if="$ctrl.hasKVM"
+            <kvm data-ng-if="$ctrl.noVNC"
                  kvm-data="$ctrl.kvm"
-                 data-ng-show="!$ctrl.loader.kvm">
             </kvm>
             <div class="text-center">
                 <iframe id="consoleIframe" width="550" height="440" seamless
@@ -16,10 +15,10 @@
                         data-ng-src="{{$ctrl.consoleUrl}}">
                 </iframe>
             </div>
-            <cui-modal-text data-ng-if="!$ctrl.hasKVM" data-text="'vps_configuration_kvm_cloud_mapping_keyboard_warning' | translate"></cui-modal-text>
+            <cui-modal-text data-ng-if="!$ctrl.noVNC && $ctrl.consoleUrl" data-text="'vps_configuration_kvm_cloud_mapping_keyboard_warning' | translate"></cui-modal-text>
         </div>
     </cui-modal-body>
-    <cui-modal-footer>
+    <cui-modal-footer data-ng-if="$ctrl.consoleUrl">
         <a class="oui-button oui-button_link oui-button_icon-right"
            data-ng-href="{{$ctrl.consoleUrl}}" target="_blank">
             <span data-translate="vps_configuration_kvm_new_window"></span>
