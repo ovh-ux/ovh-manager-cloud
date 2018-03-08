@@ -31,10 +31,10 @@
                 <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.token_cluster.$invalid}">
                     <label for="token_cluster" class="oui-label" data-translate="logs_tokens_select_cluster"></label>
                     <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5 d-flex">
+                        <div class="oui-field-control oui-field-control_5">
                             <oui-spinner data-ng-if="ctrl.clusters.loading"></oui-spinner>
                             <div class="oui-select" data-ng-if="!ctrl.clusters.loading">
-                                <select class="oui-select__input float-left"
+                                <select class="oui-select__input"
                                     name="token_cluster"
                                     id="token_cluster"
                                     data-ng-model="ctrl.token.data.clusterId"

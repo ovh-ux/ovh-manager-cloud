@@ -13,8 +13,8 @@
     <translation id="logs_tokens_delete_title">Delete a token</translation>
     <translation id="logs_tokens_delete_message">Are you sure you want to delete a token: {{tokenName}} ?</translation>
 
-    <translation id="logs_tokens_create_success">A token {{tokenName}} has been successfully created.</translation>
-    <translation id="logs_tokens_delete_success">A token {{tokenName}} has been successfully deleted.</translation>
+    <translation id="logs_tokens_create_success">A token {{tokenName}} has been successfully created</translation>
+    <translation id="logs_tokens_delete_success">A token {{tokenName}} has been successfully deleted</translation>
 
     <translation id="logs_tokens_get_error">An error has occurred while retrieving tokens: {{message}}</translation>
     <translation id="logs_tokens_get_detail_error">An error has occurred while getting token details: {{message}}</translation>
