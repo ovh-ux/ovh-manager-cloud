@@ -13,16 +13,16 @@
    <translation id="logs_tab_alias">Alias</translation>
    <translation id="logs_tab_roles">Rôles</translation>
 
-   <translation id="logs_loading_error_configuration">Erreur lors du chargement de la section Configuration.</translation>
+   <translation id="logs_loading_error_configuration">Erreur lors du chargement de la section « Configuration ».</translation>
 
-   <translation id="logs_home_contact_temp_1">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces</translation>
+   <translation id="logs_home_contact_temp_1">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
    <translation id="logs_home_contact_temp_2">Changer le contact actuel : {{ contact }}</translation>
    <translation id="logs_home_contact_temp_3">La modification de l'adresse de contact de ce service entraînera l'envoi des notifications vers le nouveau destinataire.</translation>
    <translation id="logs_home_contact_temp_4">Sélectionnez l'un de vos contacts. Si aucun contact n'est choisi, il sera associé par défaut à votre identité principale.</translation>
    <translation id="logs_home_contact_temp_5">Ajouter un nouveau contact</translation>
 
    <translation id="logs_home_token_temp_1">Jetons de lecture</translation>
-   <translation id="logs_home_token_temp_2">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes, ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
+   <translation id="logs_home_token_temp_2">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
    <translation id="logs_home_token_temp_3">Ajouter un jeton</translation>
 
    <translation id="logs_home_password_temp_1">Changer le mot de passe</translation>
@@ -75,7 +75,7 @@
    <translation id="logs_streams_add_temp_13">Me notifier par e-mail lorsqu'une archive est disponible.</translation>
 
    <translation id="logs_alerts_temp_1">Alertes</translation>
-   <translation id="logs_alerts_temp_2">Gestion de vos alerts pour le flux {{ name }}</translation>
+   <translation id="logs_alerts_temp_2">Gestion de vos alertes pour le flux {{ name }}</translation>
    <translation id="logs_alerts_temp_3">Avec les conditions d'alerte, plus besoin de surveiller vos logs, la plateforme le fait pour vous. De nombreux cas d'usage sont susceptibles de lever une alerte et de vous adresser celle-ci par e-mail : une absence de messages en provenance d'un logiciel pour une durée inhabituelle, lorsque le nombre de tâches réalisées est anormalement bas, lorsque le trafic réseau de votre site web est très élevé ou quand certains mots-clés spécifiques apparaissent dans votre flux.</translation>
    <translation id="logs_alerts_temp_4">Créer une alerte</translation>
    <translation id="logs_alerts_temp_5">Condition</translation>
@@ -167,8 +167,8 @@
    <translation id="logs_dashboard_edit_temp_3">Nom</translation>
    <translation id="logs_dashboard_edit_temp_4">Description</translation>
 
-   <translation id="logs_dashboard_delete_temp_1">Supprimer le table de bord</translation>
-   <translation id="logs_dashboard_delete_temp_2">Confirmez-vous la suppression du tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_delete_temp_1">Supprimer le tableau de bord</translation>
+   <translation id="logs_dashboard_delete_temp_2">Confirmez-vous la suppression du tableau de bord <strong>{{ name }}</strong> ?</translation>
 
    <translation id="logs_collector_temp_1">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
 
@@ -181,7 +181,7 @@
    <translation id="logs_collector_console_temp_1">Sortie console</translation>
 
    <translation id="logs_collector_delete_temp_1">Supprimer l'outil de collecte</translation>
-   <translation id="logs_collector_delete_temp_2">Confirmez-vous la suppression de l'outil de collect <strong>{{ name }}</strong></translation>
+   <translation id="logs_collector_delete_temp_2">Confirmez-vous la suppression de l'outil de collecte <strong>{{ name }}</strong> ?</translation>
 
    <translation id="logs_collector_add_logstash_temp_1">Ajouter un nouvel outil de collecte</translation>
    <translation id="logs_collector_add_logstash_temp_2">Configuration</translation>
@@ -195,7 +195,7 @@
    <translation id="logs_collector_add_logstash_temp_10">Instance unique</translation>
    <translation id="logs_collector_add_logstash_temp_11">Ne démarrer qu'une seule instance de ce type.</translation>
 
-   <translation id="logs_collector_add_logstash_configure_temp_1">Éditez les sections « input » et filtrez la partie « output » étant écrite par notre service de la configuration de votre Logstash. </translation>
+   <translation id="logs_collector_add_logstash_configure_temp_1">Éditez les sections « input » et filtrez la partie « output » de la configuration de votre Logstash écrite par notre service.</translation>
    <translation id="logs_collector_add_logstash_configure_temp_2">Nous vous rappelons que vous avez choisi d'exposer le port TCP 6514 à l'extérieur.</translation>
    <translation id="logs_collector_add_logstash_configure_temp_3">Une fois ces sections éditées, vous pouvez tester directement votre configuration.</translation>
    <translation id="logs_collector_add_logstash_configure_temp_4">Tester la configuration</translation>
@@ -218,12 +218,12 @@
 
    <translation id="logs_index_add_temp_1">Ajouter un index</translation>
    <translation id="logs_index_add_temp_2">Suffixe</translation>
-   <translation id="logs_index_add_temp_3">Seuls les caractères minuscules de a à z, les nombres et - ou _ sont autorisés.</translation>
+   <translation id="logs_index_add_temp_3">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
    <translation id="logs_index_add_temp_4">Description</translation>
    <translation id="logs_index_add_temp_5">Choisir l'option attachée</translation>
    <translation id="logs_index_add_temp_6">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
 
-   <translation id="logs_index_edit_temp_1">Étider un index</translation>
+   <translation id="logs_index_edit_temp_1">Éditer un index</translation>
    <translation id="logs_index_edit_temp_2">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
    <translation id="logs_index_edit_temp_3">Description</translation>
    <translation id="logs_index_edit_temp_4">Choisir l'option attachée</translation>
