@@ -197,6 +197,7 @@ angular.module("managerApp")
                 <button data-ng-if="$ctrl.action.callback || ($ctrl.action.isAvailable && !$ctrl.action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                     data-ng-click="$ctrl.action.callback()"
+                    data-at-internet-click="{ name: $ctrl.action.atInternetClickTag }"
                     data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
@@ -208,10 +209,10 @@ angular.module("managerApp")
                     <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                 </a>
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
-                    class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
+                    class="oui-button oui-button_link oui-button_full-width cui-tile__button"
                     data-ng-href="{{ $ctrl.action.href }}">
                     <span data-ng-bind="$ctrl.action.text"></span>
-                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
+                    <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
                 </a>
             </div>`,
         bindToController: {
