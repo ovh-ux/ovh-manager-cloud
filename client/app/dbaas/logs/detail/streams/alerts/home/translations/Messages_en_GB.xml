@@ -11,8 +11,8 @@
     <translation id="streams_alerts_repeat_notification">Repeat notification</translation>
     <translation id="streams_alerts_delete">Delete alert</translation>
     <translation id="streams_alerts_delete_message">Are you sure you want to delete the following alert: {{alert}} ?</translation>
-    <translation id="streams_alerts_delete_error">An error has occurred while deleting an alert: {{message}}</translation>
-    <translation id="streams_alerts_delete_success">The alert has been successfully deleted.</translation>
+    <translation id="streams_alerts_delete_error">An error has occurred while deleting an alert {{alertName}}: {{message}}</translation>
+    <translation id="streams_alerts_delete_success">The alert {{alertName}} has been successfully deleted.</translation>
 
     <translation id="streams_alerts_condition_message_count">Alert is triggered when there are <strong>{{thresholdType}}</strong> than <strong>{{threshold}}</strong> message(s) in the last <strong>{{time}}</strong> minute. Include <strong>{{backlog}}</strong> messages in alert notification.</translation>
     <translation id="streams_alerts_condition_field_value">Alert is triggered when the field <strong>{{field}}</strong> has <strong>{{constraintType}}</strong> value <strong>{{thresholdType}}</strong> than <strong>{{threshold}}</strong> in the last <strong>{{time}}</strong> minute. Include <strong>{{backlog}}</strong> messages in alert notification.</translation>

@@ -42,8 +42,8 @@ class LogsHelperService {
     }
 
     /**
-     * handles success state for create, delete and update inputs.
-     * Repetedly polls for operation untill it returns SUCCESS message.
+     * handles (CRUD) operations create, delete and update.
+     * Repetedly polls for operation untill it returns SUCCESS, FAILURE or REVOKED message.
      *
      * @param {any} serviceName
      * @param {any} operation, operation to poll
@@ -52,13 +52,17 @@ class LogsHelperService {
      * @returns promise which will be resolved to operation object
      * @memberof LogsHelperService
      */
-    handleSuccess (serviceName, operation, successMessage, messageData) {
+    handleOperation (serviceName, operation, successMessage, messageData) {
         return this.pollOperation(serviceName, operation)
-            .$promise.then(successData => {
+            .$promise
+            .then(pollResult => {
+                if (pollResult[0].item.state !== this.LogStreamsConstants.SUCCESS) {
+                    return Promise.reject({ data: { message: "Operation failed" } });
+                }
                 if (successMessage) {
                     this.ServiceHelper.successHandler(successMessage)(messageData);
                 }
-                return successData;
+                return pollResult;
             });
     }
 }

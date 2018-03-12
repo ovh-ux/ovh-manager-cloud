@@ -127,7 +127,7 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_stream_delete_success", { streamName: stream.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_delete_success", { streamName: stream.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_stream_delete_error", err, { streamName: stream.title }));
     }
@@ -145,7 +145,7 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_stream_create_success", { streamName: stream.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_create_success", { streamName: stream.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_stream_create_error", err, { streamName: stream.title }));
     }
@@ -163,7 +163,7 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_stream_update_success", { streamName: stream.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_update_success", { streamName: stream.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_stream_update_error", err, { streamName: stream.title }));
     }
