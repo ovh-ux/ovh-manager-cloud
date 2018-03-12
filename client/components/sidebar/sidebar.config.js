@@ -27,6 +27,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         IaasSectionSidebarService.fillSection(services.iaas);
         PaasSectionSidebarService.fillSection(services.paas);
         MetricsSectionSidebarService.fillSection(services.metrics);
+        LogsSectionSidebarService.fillSection(services.logs);
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("cloud_sidebar_section_license"),
@@ -44,7 +45,6 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
 
         LoadBalancerSidebarService.fillSection(services.load_balancer);
         VrackSectionSidebarService.fillSection(services.vracks);
-        LogsSectionSidebarService.fillSection(services.logs);
 
         if (FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
             CloudDesktopSidebarService.fillSection(services.cloud_desktop);
