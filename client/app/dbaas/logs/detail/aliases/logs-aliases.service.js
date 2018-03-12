@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService, LogOptionConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -16,6 +16,7 @@ class LogsAliasesService {
         this.CloudMessage = CloudMessage;
         this.LogsStreamsService = LogsStreamsService;
         this.LogsIndexService = LogsIndexService;
+        this.LogOptionConstant = LogOptionConstant;
 
         this.contentTypeEnum = _.indexBy(["STREAMS", "INDICES"]);
         this.contents = [
@@ -237,7 +238,7 @@ class LogsAliasesService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogAliasConstants.ALIAS_OPTION_REFERENCE);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.ALIAS_OPTION_REFERENCE);
     }
 
     getElasticSearchUrl (alias) {

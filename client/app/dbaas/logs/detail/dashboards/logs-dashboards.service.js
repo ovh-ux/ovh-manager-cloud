@@ -1,0 +1,204 @@
+class LogsDashboardsService {
+    constructor ($q, OvhApiDbaas, LogsOptionsService, LogsStreamsService,
+                 LogsHelperService, LogOptionConstant, LogStreamsConstants, UrlHelper) {
+        this.$q = $q;
+        this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().Lexi();
+        this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
+        this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.LogsOptionsService = LogsOptionsService;
+        this.LogsStreamsService = LogsStreamsService;
+        this.LogsHelperService = LogsHelperService;
+        this.LogOptionConstant = LogOptionConstant;
+        this.LogStreamsConstants = LogStreamsConstants;
+        this.UrlHelper = UrlHelper;
+
+    }
+
+    /**
+     * returns array of dashboards with details
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of dashboards. Each Dashboard will have all details populated.
+     * @memberof LogsDashboardsService
+     */
+    getDashboards (serviceName) {
+        return this.getDashboardsDetails(serviceName)
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_get_error", err, {}));
+    }
+
+    /**
+     * gets details for each dashboard in array
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to an array of dashboard objects
+     * @memberof LogsDashboardsService
+     */
+    getDashboardsDetails (serviceName) {
+        return this.getDashboardsIds(serviceName)
+            .then(dashboards => {
+                const promises = dashboards.map(dashboardId => this.getAapiDashboard(serviceName, dashboardId));
+                return this.$q.all(promises);
+            });
+    }
+
+    /**
+     * returns array of dashboards id's of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of dashboards id's
+     * @memberof LogsDashboardsService
+     */
+    getDashboardsIds (serviceName) {
+        return this.DashboardsApiService.query({ serviceName }).$promise;
+    }
+
+    /**
+     * returns details of an dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} dashboardId
+     * @returns promise which will be resolve to dashboard object
+     * @memberof LogsDashboardsService
+     */
+    getDashboard (serviceName, dashboardId) {
+        return this.DashboardsApiService.get({ serviceName, dashboardId })
+            .$promise
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_get_detail_error", err, {}));
+    }
+
+    /**
+     * returns details of an dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} dashboardId
+     * @returns promise which will be resolve to dashboard object
+     * @memberof LogsDashboardsService
+     */
+    getAapiDashboard (serviceName, dashboardId) {
+        return this.DashboardsAapiService.get({ serviceName, dashboardId })
+            .$promise
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_get_detail_error", err, {}));
+    }
+
+    /**
+     * returns objecy containing total number of dashboards and total number of dashboards used
+     *
+     * @param {any} serviceName
+     * @returns quota object containing max (total number dashboards) and configured (number of dashboards used)
+     * @memberof LogsDashboardsService
+     */
+    getQuota (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.total.maxNbDashboard,
+                configured: me.total.curNbDashboard
+            }))
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_quota_get_error", err, {}));
+    }
+
+    getMainOffer (serviceName) {
+        return this.AccountingAapiService.me({ serviceName }).$promise
+            .then(me => ({
+                max: me.offer.maxNbDashboard,
+                current: me.offer.curNbDashboard
+            }))
+            .catch(err => this.LogsHelperService.handleError("logs_main_offer_get_error", err, {}));
+    }
+
+    /**
+     * delete dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} Dashboard, dashboard object to be deleted
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsDashboardsService
+     */
+    deleteDashboard (serviceName, dashboard) {
+        return this.DashboardsApiService.delete({ serviceName, dashboardId: dashboard.dashboardId })
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_delete_success", { dashboardName: dashboard.title });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_delete_error", err, { dashboardName: dashboard.title }));
+    }
+
+    /**
+     * create new dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} Dashboard, dashboard object to be created
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsDashboardsService
+     */
+    createDashboard (serviceName, dashboard) {
+        return this.DashboardsApiService.create({ serviceName }, dashboard)
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_create_success", { dashboardName: dashboard.title });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_create_error", err, { dashboardName: dashboard.title }));
+    }
+
+    /**
+     * update dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} Dashboard, dashboard object to be updated
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsDashboardsService
+     */
+    updateDashboard (serviceName, dashboard) {
+        return this.DashboardsApiService.update({ serviceName, DashboardId: dashboard.dashboardId }, dashboard)
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_update_success", { dashboardName: dashboard.title });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_update_error", err, { dashboardName: dashboard.title }));
+    }
+
+    /**
+     * creates new dashboard with default values
+     *
+     * @returns dashboard object with default values
+     * @memberof LogsDashboardsService
+     */
+    getNewDashboard () {
+        return {
+            data: {
+                description: null,
+                title: null
+            },
+            loading: false
+        };
+    }
+
+    getSubscribedOptions (serviceName) {
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.DASHBOARD_OPTION_REFERENCE);
+    }
+
+    /**
+     * extracts graylog URL from dashboard. Shows error message on UI if no graylog URL is found.
+     *
+     * @param {any} dashboard
+     * @returns {string} graylog url, if not found empty string
+     * @memberof LogsDashboardsService
+     */
+    getDashboardGraylogUrl (aapiDashboard) {
+        const url = this.UrlHelper.findUrl(aapiDashboard, this.LogStreamsConstants.GRAYLOG_WEBUI);
+        if (!url) {
+            this.LogsHelperService.handleError("logs_dashboards_get_graylog_url_error", {}, { dashboardName: aapiDashboard.info.title });
+        }
+        return url;
+    }
+
+    _resetAllCache () {
+        this.AccountingAapiService.resetAllCache();
+        this.DashboardsApiService.resetAllCache();
+        this.DashboardsAapiService.resetAllCache();
+    }
+}
+
+angular.module("managerApp").service("LogsDashboardsService", LogsDashboardsService);
