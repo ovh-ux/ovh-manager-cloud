@@ -45,9 +45,31 @@
     <translation id="logs_role_overview_permissions">Permissions</translation>
     <translation id="logs_role_overview_members">Members</translation>
     <translation id="logs_role_overview_linked_option">Linked option</translation>
-    <translation id="logs_role_overview_stream">stream</translation>
-    <translation id="logs_role_overview_index">index</translation>
-    <translation id="logs_role_overview_alias">alias</translation>
-    <translation id="logs_role_overview_dashboard">dashboard</translation>
+    <translation id="logs_role_overview_stream">Stream</translation>
+    <translation id="logs_role_overview_index">Index</translation>
+    <translation id="logs_role_overview_alias">Alias</translation>
+    <translation id="logs_role_overview_dashboard">Dashboard</translation>
+
+    
+    <translation id="logs_roles_edit_permissions_title">Edit permissions</translation>    
+    <translation id="logs_role_available_stream">Available streams</translation>
+    <translation id="logs_role_selected_stream">Selected streams</translation>
+    <translation id="logs_role_empty_stream">All streams have permission</translation>
+    <translation id="logs_role_empty_selected_stream">No stream has permission</translation>
+
+    <translation id="logs_role_available_index">Available indices</translation>
+    <translation id="logs_role_selected_index">Selected indices</translation>
+    <translation id="logs_role_empty_index">All indices have permission</translation>
+    <translation id="logs_role_empty_selected_index">No index has permission</translation>
+
+    <translation id="logs_role_available_alias">Available aliases</translation>
+    <translation id="logs_role_selected_alias">Selected aliases</translation>
+    <translation id="logs_role_empty_alias">All aliases have permission</translation>
+    <translation id="logs_role_empty_selected_alias">No alias has permission</translation>
+
+    <translation id="logs_role_available_dashboard">Available dashboards</translation>
+    <translation id="logs_role_selected_dashboard">Selected dashboards</translation>
+    <translation id="logs_role_empty_dashboard">All dashboards have permission</translation>
+    <translation id="logs_role_empty_selected_dashboard">No dashboard has permission</translation>
 
 </translations>

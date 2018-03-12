@@ -1,14 +1,22 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsOptionsService, LogsRolesConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
+        this.LogsDashboardService = LogsDashboardService;
         this.LogsOptionsService = LogsOptionsService;
+        this.LogsAliasesService = LogsAliasesService;
+        this.LogsDashboardService = LogsDashboardService;
+        this.LogsIndexService = LogsIndexService;
+        this.LogsStreamsService = LogsStreamsService;
+
         this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
+        this.PermissionsApiService = OvhApiDbaas.Logs().Role().Permission().Lexi();
+
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
         this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
@@ -19,6 +27,42 @@ class LogsRolesService {
             name: "",
             optionId: null
         };
+    }
+
+    getAllStreams (serviceName) {
+        return this.LogsStreamsService.getStreamDetails(serviceName);
+    }
+
+    getAllAliases (serviceName) {
+        return this.LogsAliasesService.getAliases(serviceName);
+    }
+
+    getAllDashboards (serviceName) {
+        return this.LogsDashboardService.getDashboards(serviceName);
+    }
+
+    getAllIndices (serviceName) {
+        return this.LogsIndexService.getIndices(serviceName);
+    }
+
+    addAlias (serviceName, roleId, aliasId) {
+        return this.PermissionsApiService.addAlias({ serviceName, roleId }, { aliasId }).$promise;
+    }
+
+    addDashboard (serviceName, roleId, dashboardId) {
+        return this.PermissionsApiService.addDashboard({ serviceName, roleId }, { dashboardId }).$promise;
+    }
+
+    addIndex (serviceName, roleId, indexId) {
+        return this.PermissionsApiService.addIndex({ serviceName, roleId }, { indexId }).$promise;
+    }
+
+    addStream (serviceName, roleId, streamId) {
+        return this.PermissionsApiService.addStream({ serviceName, roleId }, { streamId }).$promise;
+    }
+
+    removePermission (serviceName, roleId, permissionId) {
+        return this.PermissionsApiService.remove({ serviceName, roleId, permissionId }).$promise;
     }
 
     getNewRole () {
