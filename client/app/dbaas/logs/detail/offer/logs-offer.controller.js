@@ -18,10 +18,6 @@ class LogsOfferCtrl {
         this._initLoaders();
     }
 
-    // $onInit () {
-// 
-    // }
-
     _initLoaders () {
         this.getSelectedPlan = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
