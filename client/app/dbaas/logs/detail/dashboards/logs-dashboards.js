@@ -32,7 +32,6 @@ angular.module("managerApp").config($stateProvider => {
         .state("dbaas.logs.detail.dashboards.duplicate", {
             url: "/:dashboardId/duplicate",
             params: {
-                isDuplicate: false,
                 dashboardName: null
             },
             views: {

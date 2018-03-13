@@ -1,12 +1,11 @@
 class LogsDashboardsService {
-    constructor ($q, OvhApiDbaas, LogsOptionsService, LogsStreamsService,
+    constructor ($q, OvhApiDbaas, LogsOptionsService,
                  LogsHelperService, LogOptionConstant, LogStreamsConstants, UrlHelper) {
         this.$q = $q;
         this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().Lexi();
         this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.LogsOptionsService = LogsOptionsService;
-        this.LogsStreamsService = LogsStreamsService;
         this.LogsHelperService = LogsHelperService;
         this.LogOptionConstant = LogOptionConstant;
         this.LogStreamsConstants = LogStreamsConstants;
@@ -96,6 +95,10 @@ class LogsDashboardsService {
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_quota_get_error", err, {}));
     }
 
+    /**
+     * Retrieves options associated with main offer
+     * @param {string} serviceName
+     */
     getMainOffer (serviceName) {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => ({
@@ -175,6 +178,10 @@ class LogsDashboardsService {
         };
     }
 
+    /**
+     * retrives all subscribed options of type dashboards
+     * @param {string} serviceName
+     */
     getSubscribedOptions (serviceName) {
         return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.DASHBOARD_OPTION_REFERENCE);
     }

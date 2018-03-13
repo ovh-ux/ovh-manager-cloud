@@ -4,7 +4,6 @@ class LogsDashboardsCtrl {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.$translate = $translate;
-        this.serviceName = this.$stateParams.serviceName;
         this.LogsDashboardsService = LogsDashboardsService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
@@ -51,7 +50,6 @@ class LogsDashboardsCtrl {
         this.$state.go("dbaas.logs.detail.dashboards.duplicate", {
             serviceName: this.serviceName,
             dashboardId: dashboard.dashboardId,
-            isDuplicate: true,
             dashboardName: dashboard.title
         });
     }
@@ -81,6 +79,7 @@ class LogsDashboardsCtrl {
             loaderFunction: () =>
                 this.LogsDashboardsService.deleteDashboard(this.serviceName, dashboard)
                     .then(() => this.initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         this.delete.load();
     }

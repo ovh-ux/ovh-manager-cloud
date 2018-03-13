@@ -72,6 +72,19 @@ class LogsStreamsService {
     }
 
     /**
+     * returns array of owned streams with details of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of streams. each stream will have all details populated.
+     * @memberof LogsStreamsService
+     */
+    getOwnStreams (serviceName) {
+        return this.getStreamDetails(serviceName)
+            .then(streams => streams.filter(aapiStream => aapiStream.info.isEditable))
+            .catch(err => this.LogsHelperService.handleError("logs_streams_get_error", err, {}));
+    }
+
+    /**
      * gets stream details for each stream in array
      *
      * @param {any} serviceName

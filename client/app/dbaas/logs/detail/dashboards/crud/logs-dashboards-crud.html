@@ -12,13 +12,13 @@
             <div data-ng-if="!ctrl.dashboard.loading">
                 <div class="oui-modal__body-text">
                     <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_dashboards_update_title"></h2>
-                    <h2 class="oui-modal__title" ng-if="!ctrl.isEdit && !isDuplicate" data-translate="logs_dashboards_add"></h2>
-                    <h2 class="oui-modal__title" ng-if="ctrl.isDuplicate" data-translate="logs_dashboards_duplicate"></h2>
+                    <h2 class="oui-modal__title" ng-if="ctrl.isDuplicate" data-translate="logs_dashboards_duplicate_title"></h2>
+                    <h2 class="oui-modal__title" ng-if="!ctrl.isEdit && !ctrl.isDuplicate" data-translate="logs_dashboards_add"></h2>
                     <div ng-if="ctrl.isEdit" class="mb-3">
                         <span data-translate="logs_dashboards_update_description"></span>
                         <b><span>{{ ctrl.dashboard.data.title }}</span></b>
                     </div>
-                    <div ng-if="ctrl.isDUplicate" class="mb-3">
+                    <div ng-if="ctrl.isDuplicate" class="mb-3">
                         <span data-translate="logs_dashboards_duplicate_description"></span>
                         <b><span>{{ ctrl.dashboardName }}</span></b>
                     </div>

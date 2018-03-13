@@ -20,7 +20,7 @@
     <translation id="logs_dashboards_duplicate_title">Duplicate a dashboard</translation>
     <translation id="logs_dashboards_update_description">Edit the dashboard</translation>
     <translation id="logs_dashboards_duplicate_description">Duplicate the dashboard</translation>
-    <translation id="logs_dashboards_select_stream_title">Select a data stream to target all widgets</translation>
+    <translation id="logs_dashboards_select_stream_title">Select a data stream to copy all widgets (optional)</translation>
     <translation id="logs_dashboards_select_stream">Select a data stream</translation>
 
     <translation id="logs_dashboards_create_success">A dashboard {{dashboardName}} has been successfully created</translation>

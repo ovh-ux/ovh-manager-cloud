@@ -1,11 +1,8 @@
 class LogsDashboardsCrudModalCtrl {
-    constructor ($scope, $state, $stateParams, ControllerHelper) {
+    constructor ($scope, $state, ControllerHelper) {
         this.$scope = $scope;
         this.$state = $state;
-        this.$stateParams = $stateParams;
         this.ControllerHelper = ControllerHelper;
-        this.isDuplicate = this.$stateParams.isDuplicate || false;
-        this.dashboardName = this.$stateParams.dashboardName || null;
         this.openModal();
     }
 
@@ -14,11 +11,7 @@ class LogsDashboardsCrudModalCtrl {
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/dashboards/crud/logs-dashboards-crud.html",
                 controller: "LogsDashboardsCrudCtrl",
-                controllerAs: "ctrl",
-                resolve: {
-                    isDuplicate: this.isDuplicate,
-                    dashboardName: this.dashboardName
-                }
+                controllerAs: "ctrl"
             }
         }).then(() => this.$scope.$parent.ctrl.initLoaders())
             .finally(() => this.onCloseModal());
