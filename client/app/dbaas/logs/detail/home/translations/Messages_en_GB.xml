@@ -6,6 +6,7 @@
    <translation id="logs_home_shortcuts_last_dashboard">Last modified dashboard</translation>
    <translation id="logs_home_shortcuts_all_dashboard">See all dashboards</translation>
    <translation id="logs_home_shortcuts_graylog">Graylog</translation>
+   <translation id="logs_home_shortcuts_graylog_api">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
 
    <translation id="logs_home_shortcuts_elasticsearch_help">You have access to Elasticsearch by acquiring an index or alias.</translation>
@@ -16,10 +17,20 @@
    <translation id="logs_home_tokens">Tokens</translation>
    <translation id="logs_home_tokens_tooltip">These tokens allow you to access APIs (write to indexes, read on Graylog and read on Elasticsearch)</translation>
    <translation id="logs_home_password">Password</translation>
-   <translation id="logs_home_password_default_value">******</translation>
 
-   <translation id="logs_home_access">Access</translation>
+   <translation id="logs_home_ssi_configuration">SSI Configuration</translation>
+   <translation id="logs_home_collector">Collectors</translation>
+   <translation id="logs_home_formats_and_ports">Message formats and available ports</translation>
+
    <translation id="logs_home_subscription">Subscription</translation>
+   <translation id="logs_home_offer">Offer</translation>
+   <translation id="logs_home_data_volume">Data volume</translation>
+   <translation id="logs_home_options">Options</translation>
+   <translation id="logs_home_service">Account</translation>
+   <translation id="logs_home_start_date">Creation date</translation>
 
    <translation id="logs_home_account_details_get_error">An error occurred while trying to retrieve account details: {{message}}</translation>
+   <translation id="logs_home_account_get_error">An error occurred while trying to retrieve account: {{message}}</translation>
+   <translation id="logs_home_contacts_get_error">An error occurred while trying to retrieve the contacts: {{message}}</translation>
+   <translation id="logs_home_contact_get_error">An error occurred while trying to retrieve contact details: {{message}}</translation>
 </translations>

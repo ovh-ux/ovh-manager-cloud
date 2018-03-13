@@ -1,0 +1,55 @@
+<div class="oui-modal oui-modal_shadow">
+    <div class="oui-modal__header">
+        <button
+            class="oui-icon oui-icon-close_thin oui-modal__close-button"
+            type="button"
+            aria-label="Exit"
+            ng-click="ctrl.cancel()">
+        </button>
+    </div>
+    <div class="oui-modal__body oui-modal__body_no-icon">
+        <div class="oui-modal__body-text">
+            <h2 class="oui-modal__title" data-translate="logs_home_account_title"></h2>
+            <span class="oui-paragraph" data-translate="logs_home_account_description1"></span>
+            <oui-spinner size="s" data-ng-if="ctrl.accountDetails.loading"></oui-spinner>
+            <span class="out-paragraph font-weight-bold" data-ng-if="!ctrl.accountDetails.loading">{{ ctrl.accountDetails.data.email }}</span>
+            <p class="oui-paragraph" data-translate="logs_home_account_description2"></p>
+            <oui-spinner data-ng-if="ctrl.contacts.loading"></oui-spinner>
+            <div class="oui-field" data-ng-if="!ctrl.contacts.loading">
+                <label for="contact" class="oui-label" data-translate="logs_home_account_contact_field"></label>
+                <div class="oui-field__content">
+                    <div class="oui-field-control oui-field-control_4">
+                        <div class="oui-select">
+                            <select class="oui-select__input"
+                                name="contact"
+                                id="contact"
+                                data-ng-model="ctrl.accountDetails.data.service.contactId"
+                                data-ng-options="contact.id as (contact.firstName + ' ' + contact.lastName) for contact in ctrl.contacts.data">
+                                <option value="" data-translate="logs_home_account_no_contact"></option>
+                            </select>
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="oui-field-helper ml-0" data-translate="logs_home_account_contact_field_description"></div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="oui-modal__footer" data-ng-if="!ctrl.contacts.loading">
+        <div class="cui-form-actions">
+            <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
+            <div data-ng-if="!ctrl.saving.loading">
+                <button type="button"
+                    class="oui-button oui-button_secondary"
+                    data-translate="common_cancel"
+                    data-ng-click="ctrl.cancel()">
+                </button>
+                <button type="submit"
+                    class="oui-button oui-button_primary"
+                    data-translate="common_save"
+                    data-ng-click="ctrl.updateContact()">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@
    <translation id="logs_home_shortcuts_last_dashboard">Dernier tableau de bord modifié</translation>
    <translation id="logs_home_shortcuts_all_dashboard">Voir tous les tableaux de bord</translation>
    <translation id="logs_home_shortcuts_graylog">Graylog</translation>
+   <translation id="logs_home_shortcuts_graylog_api">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
 
    <translation id="logs_home_shortcuts_elasticsearch_help">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
@@ -16,10 +17,15 @@
    <translation id="logs_home_tokens">Jetons</translation>
    <translation id="logs_home_tokens_tooltip">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et lire sur Elasticsearch)</translation>
    <translation id="logs_home_password">Mot de passe</translation>
-   <translation id="logs_home_password_default_value">******</translation>
    
-   <translation id="logs_home_access">Accès</translation>
+   <translation id="logs_home_ssi_configuration">SSI Configuration</translation>
+   <translation id="logs_home_collector">Outils de collecte</translation>
+   <translation id="logs_home_formats_and_ports">Formats de message et ports disponibles</translation>
+
    <translation id="logs_home_subscription">Abonnement</translation>
 
    <translation id="logs_home_account_details_get_error">Une erreur s'est produite lors de la tentative de récupération des détails du compte: {{message}}</translation>
+   <translation id="logs_home_account_get_error">Une erreur s'est produite lors de la tentative de récupération du compte: {{message}}</translation>
+   <translation id="logs_home_contacts_get_error">Une erreur s'est produite lors de la tentative de récupération des contacts: {{message}}</translation>
+   <translation id="logs_home_contact_get_error">Une erreur s'est produite lors de la tentative de récupération des coordonnées: {{message}}</translation>
 </translations>
