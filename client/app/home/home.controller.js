@@ -23,7 +23,6 @@ class HomeCtrl {
                     .filter((value, index) => sections[index])
                     .map(section => this.DocsService.getGuidesOfSection(section))
                     .value();
-                console.log(this.guides);
             });
     }
 

@@ -41,8 +41,6 @@ class DocsService {
             return guide;
         });
 
-        console.log(sectionContent);
-
         return sectionContent;
     }
 }
