@@ -432,6 +432,7 @@ module.exports = function (grunt) {
                         "app/**/!(*.tpl).html",
                         "assets/images/{,*/}*.{webp}",
                         "assets/fonts/**/*",
+                        "assets/noVNC/**/*",
                         "bower_components/**/*.{ttf,woff,woff2,svg,eot}",
                         "bower_components/**/translations/*.json",
                         "bower_components/angular-i18n/angular-locale_*-*.js",
