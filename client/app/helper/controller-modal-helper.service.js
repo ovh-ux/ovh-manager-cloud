@@ -44,6 +44,19 @@ class ControllerModalHelper {
         });
     }
 
+    showInfoModal (config = {}) {
+        return this.showModal({
+            modalConfig: {
+                templateUrl: "app/ui-components/modal/info-modal/info-modal.html",
+                controller: "InfoModalController",
+                controllerAs: "$ctrl",
+                resolve: {
+                    params: () => config
+                }
+            }
+        });
+    }
+
     showConfirmationModal (config = {}) {
         return this.showModal({
             modalConfig: {
