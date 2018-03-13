@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="home_welcome_message" qtlid="245233">Bienvenue dans votre espace client OVH <b>CLOUD</b>.</translation>
-   <translation id="home_welcome_message_choose_product" qtlid="123487">Veuillez sélectionner un produit à configurer dans la colonne de gauche.</translation>
+   <translation id="homepage_welcome_to_your_manager_1" qtlid="282393">Bienvenue dans votre</translation>
+   <translation id="homepage_welcome_to_your_manager_2" qtlid="282406">espace client OVH</translation>
+   <translation id="homepage_top_guides_header" qtlid="468499">Pour obtenir de l'information plus détaillée, veuillez consulter <a class="oui-link" href="{{ url }}" target="_blank">nos guides</a>.</translation>
+   <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
+   <translation id="homepage_type_of_guide_pci" qtlid="251655">Cloud Public</translation>
 </translations>

@@ -554,4 +554,24 @@
 
    <translation id="common_complete_order" qtlid="454878">Abonar la orden de pedido</translation>
    <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
+
+   <translation id="guide_vps_1" qtlid="468512">Débuter avec un VPS</translation>
+   <translation id="guide_vps_2" qtlid="468525">Sécuriser un VPS</translation>
+   <translation id="guide_vps_3" qtlid="468538">Répartitionner un VPS suite à un upgrade</translation>
+   <translation id="guide_vps_4" qtlid="468551">Utiliser le KVM pour les VPS</translation>
+   <translation id="guide_vps_5" qtlid="468564">Configurer Windows Server pour la première fois</translation>
+   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
+   <translation id="guide_vps_7" qtlid="468590">Changer le mot de passe root sur un VPS</translation>
+   <translation id="guide_vps_8" qtlid="468603">Activer le mode Rescue sur un VPS</translation>
+   <translation id="guide_vps_all" qtlid="468616">Voir tous les guides VPS</translation>
+
+   <translation id="guide_project_1" qtlid="468629">Créer son premier projet Public Cloud</translation>
+   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
+   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
+   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_5" qtlid="290785">Crear un acceso a Horizon</translation>
+   <translation id="guide_project_6" qtlid="468681">Démarrer un premier serveur Cloud en 3 minutes</translation>
+   <translation id="guide_project_7" qtlid="468694">Préparer l'environnement pour utiliser l'API Openstack</translation>
+   <translation id="guide_project_8" qtlid="468707">Créer et configurer un disque supplémentaire sur une instance</translation>
+   <translation id="guide_project_all" qtlid="468720">Voir tous les guides Public Cloud</translation>
 </translations>

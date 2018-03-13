@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="vps_order_windows_title" qtlid="250745">Options windows</translation>
+   <translation id="vps_order_windows_title" qtlid="250745">Options Windows</translation>
    <translation id="vps_order_windows_step1_title" qtlid="452332">Sélection de la durée</translation>
    <translation id="vps_order_windows_step2_title" qtlid="452345">Acceptation des conditions d'utilisation</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Récapitulatif</translation>
@@ -13,7 +13,7 @@
    <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Prix total:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Cliquez sur le bouton "Valider" afin de confirmer votre commande.</translation>
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement.</translation>
-   <translation id="vps_order_windows_button_title" qtlid="250784">Option windows</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Option Windows</translation>
 
    <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Votre VPS a bien été redémarré</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Une erreur est survenue lors du redémarrage de votre VPS</translation>

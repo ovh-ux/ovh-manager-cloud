@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="home_welcome_message" qtlid="245233">Vítejte v Zákaznickém prostoru OVH <b>Cloud</b>.</translation>
-   <translation id="home_welcome_message_choose_product" qtlid="123487">V levém sloupci si zvolte produkt k nastavení.</translation>
+   <translation id="homepage_welcome_to_your_manager_1" qtlid="282393">Vítejte ve svém</translation>
+   <translation id="homepage_welcome_to_your_manager_2" qtlid="282406">Zákaznickém prostoru OVH</translation>
+   <translation id="homepage_top_guides_header" qtlid="468499">Pro více informací se obraťte na <a class="oui-link" href="{{ url }}" target="_blank">naše příručky</a>.</translation>
+   <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
+   <translation id="homepage_type_of_guide_pci" qtlid="251655">Public Cloud</translation>
 </translations>

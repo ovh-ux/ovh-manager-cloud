@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_dashboard_loading_error" qtlid="345338">Beim Laden der Informationen des NAS-HA ist ein Fehler aufgetreten. </translation>
+   <translation id="nasha_dashboard_loading_error" qtlid="345338">Beim Laden der Informationen des HA-NAS ist ein Fehler aufgetreten. </translation>
    <translation id="nasha_dashboard_update_success_enabled" qtlid="400886">Gebrauchsmeldungen sind aktiviert.</translation>
    <translation id="nasha_dashboard_update_success_disabled" qtlid="400899">Gebrauchsmeldungen sind deaktiviert.</translation>
-   <translation id="nasha_dashboard_update_error" qtlid="345377">Bei der Bearbeitung der Informationen des NAS-HA ist ein Fehler aufgetreten. </translation>
+   <translation id="nasha_dashboard_update_error" qtlid="345377">Bei der Bearbeitung der Informationen des HA-NAS ist ein Fehler aufgetreten. </translation>
    <translation id="nasha_dashboard_ip" qtlid="25615">IP</translation>
    <translation id="nasha_dashboard_datacenter" qtlid="369321">Datacenter</translation>
    <translation id="nasha_dashboard_capacity" qtlid="75822">Gesamtkapazität</translation>
@@ -12,7 +12,7 @@
    <translation id="nasha_dashboard_expiration_date" qtlid="33010">Ablaufdatum</translation>
    <translation id="nasha_dashboard_monitoring" qtlid="31666">Monitoring</translation>
    <translation id="nasha_partition" qtlid="120835">Partitionen</translation>
-   <translation id="nasha_expired" qtlid="345390">Ihr NAS-HA wurde nicht verlängert. Sollte dies keine bewusste Entscheidung Ihrerseits gewesen sein, liegt möglicherweise Zahlungsverzug vor. </translation>
+   <translation id="nasha_expired" qtlid="345390">Ihr HA-NAS wurde nicht verlängert. Sollte dies keine bewusste Entscheidung Ihrerseits gewesen sein, liegt möglicherweise Zahlungsverzug vor. </translation>
    <translation id="nasha_storage_usage_type_used" qtlid="233733">Storage</translation>
    <translation id="nasha_storage_usage_type_usedbysnapshots" qtlid="9671">Snapshot</translation>
    <translation id="nasha_datacenter_rbx" qtlid="120414">Roubaix</translation>
@@ -27,5 +27,5 @@
 
    <translation id="nasha_guide_title" qtlid="300370">Hilfen</translation>
    <translation id="nash_guide_footer" qtlid="406905">Alle Anleitungen von OVH</translation>
-   <translation id="nash_guide_name" qtlid="369862">NAS-HA</translation>
+   <translation id="nash_guide_name" qtlid="369862">HA-NAS</translation>
 </translations>
