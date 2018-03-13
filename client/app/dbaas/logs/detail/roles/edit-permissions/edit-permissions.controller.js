@@ -30,16 +30,15 @@ class LogsRolesPermissionsCtrl {
             loaderFunction: () => this.LogsRolesService.getRoleDetails(this.serviceName, this.roleId)
                 .then(role => {
                     role.permissions.forEach(permission => {
-                        if (permission.index) { this.permissions.index.push(permission.index); }
-                        if (permission.alias) { this.permissions.alias.push(permission.alias); }
-                        if (permission.stream) { this.permissions.stream.push(permission.stream); }
-                        if (permission.dashboard) { this.permissions.dashboard.push(permission.dashboard); }
+                        if (permission.index) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.index.push(permission.index); }
+                        if (permission.alias) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.alias.push(permission.alias); }
+                        if (permission.stream) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.stream.push(permission.stream); }
+                        if (permission.dashboard) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.dashboard.push(permission.dashboard); }
                     });
                     this.attachedIndices.resolve(this.permissions.index);
                     this.attachedAliases.resolve(this.permissions.alias);
                     this.attachedDashboards.resolve(this.permissions.dashboard);
                     this.attachedStreams.resolve(this.permissions.stream);
-                    console.log(this.permissions);
                     return role;
                 })
         });
@@ -88,30 +87,39 @@ class LogsRolesPermissionsCtrl {
     }
 
     attachAlias (item) {
-        console.log(item);
-        return this.ControllerHelper.request.getArrayLoader({
+        this.saveAlias = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0])
         });
+        return this.saveAlias.load();
+    }
+
+    attachIndex (item) {
+        this.saveIndex = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0])
+        });
+        return this.saveIndex.load();
+    }
+
+    attachStream (item) {
+        this.saveStream = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0])
+        });
+        return this.saveStream.load();
+    }
+
+    attachDashboard (item) {
+        this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsRolesService.addDashboard(this.serviceName, this.roleId, item[0])
+        });
+        return this.saveDashboard.load();
     }
 
     removePermission (permission) {
-        return this.ControllerHelper.request.getArrayLoader({
+        this.deletePermission = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.removePermission(this.serviceName, this.roleId, permission)
         });
+        return this.deletePermission.load();
     }
-
-    // findDiff (permissions, allItems) {
-    //     const diff = _.map(_.filter(permissions, index => index.info.isEditable && !_.find(result[1].permissions, permission => permission.indexId === index.info.indexId)), "info");
-    //     this.availableIndices.resolve(diff);
-    // }
-
-    // getAvailableList () {
-    //     switch ("alias") {
-    //         case "alias": return _.map(this.roleDetails.permissions, permission => permission.alias);
-    //         default:
-    //             break;
-    //     }
-    // }
 }
 
 angular.module("managerApp").controller("LogsRolesPermissionsCtrl", LogsRolesPermissionsCtrl);

@@ -1,9 +1,8 @@
 <div class="cui-page__content">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="logs_roles_edit_permissions_title"></span>
-    <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.roles.loading || ctrl.delete.loading"></oui-spinner>
 
-    <div>
+    <div class="dual-list-content">
         <span class="oui-header_4">Streams</span>
         <cui-dual-list
             source-list-label="{{::'logs_role_available_stream' | translate}}"
@@ -14,7 +13,7 @@
             source-list="ctrl.availableStreams.promise"
             target-list="ctrl.attachedStreams.promise"
             on-add="ctrl.attachStream(items)"
-            on-remove="ctrl.detachStream(items)"
+            on-remove="ctrl.removePermission(items)"
             bulk-action-enabled="false"
             height="300px">
         </cui-dual-list>
@@ -25,11 +24,11 @@
             target-list-label="{{::'logs_role_selected_dashboard' | translate}}"
             source-list-empty-label="{{::'logs_role_empty_dashboard' | translate}}"
             target-list-empty-label="{{::'logs_role_empty_selected_dashboard' | translate}}"
-            property="description"
+            property="title"
             source-list="ctrl.availableDashboards.promise"
             target-list="ctrl.attachedDashboards.promise"
             on-add="ctrl.attachDashboard(items)"
-            on-remove="ctrl.detachDashboard(items)"
+            on-remove="ctrl.removePermission(items)"
             bulk-action-enabled="false"
             height="300px">
         </cui-dual-list>
@@ -44,7 +43,7 @@
             source-list="ctrl.availableIndices.promise"
             target-list="ctrl.attachedIndices.promise"
             on-add="ctrl.attachIndex(items)"
-            on-remove="ctrl.detachIndex(items)"
+            on-remove="ctrl.removePermission(items)"
             bulk-action-enabled="false"
             height="300px">
         </cui-dual-list>

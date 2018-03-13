@@ -1,5 +1,5 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardService, LogsHelperService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -10,6 +10,7 @@ class LogsRolesService {
         this.LogsDashboardService = LogsDashboardService;
         this.LogsIndexService = LogsIndexService;
         this.LogsStreamsService = LogsStreamsService;
+        this.LogsHelperService = LogsHelperService;
 
         this.LogsRolesConstant = LogsRolesConstant;
         this.CloudPoll = CloudPoll;
@@ -38,31 +39,41 @@ class LogsRolesService {
     }
 
     getAllDashboards (serviceName) {
-        return this.LogsDashboardService.getDashboards(serviceName);
+        return this.LogsDashboardService.getAllDashboards(serviceName);
     }
 
     getAllIndices (serviceName) {
         return this.LogsIndexService.getIndices(serviceName);
     }
 
-    addAlias (serviceName, roleId, aliasId) {
-        return this.PermissionsApiService.addAlias({ serviceName, roleId }, { aliasId }).$promise;
+    addAlias (serviceName, roleId, alias) {
+        return this.PermissionsApiService.addAlias({ serviceName, roleId, aliasId: alias.aliasId }).$promise
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .catch(err => this.LogsHelperService.handleError("logs_roles_add_alias_error", err, { tokenName: alias.name }));
     }
 
-    addDashboard (serviceName, roleId, dashboardId) {
-        return this.PermissionsApiService.addDashboard({ serviceName, roleId }, { dashboardId }).$promise;
+    addDashboard (serviceName, roleId, dashboard) {
+        return this.PermissionsApiService.addDashboard({ serviceName, roleId, dashboardId: dashboard.dashboardId }).$promise
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .catch(err => this.LogsHelperService.handleError("logs_roles_add_dashboard_error", err, { tokenName: dashboard.title }));
     }
 
-    addIndex (serviceName, roleId, indexId) {
-        return this.PermissionsApiService.addIndex({ serviceName, roleId }, { indexId }).$promise;
+    addIndex (serviceName, roleId, index) {
+        return this.PermissionsApiService.addIndex({ serviceName, roleId, indexId: index.indexId }).$promise
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .catch(err => this.LogsHelperService.handleError("logs_roles_add_index_error", err, { tokenName: index.name }));
     }
 
-    addStream (serviceName, roleId, streamId) {
-        return this.PermissionsApiService.addStream({ serviceName, roleId }, { streamId }).$promise;
+    addStream (serviceName, roleId, stream) {
+        return this.PermissionsApiService.addStream({ serviceName, roleId, streamId: stream.streamId }).$promise
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .catch(err => this.LogsHelperService.handleError("logs_roles_add_stream_error", err, { tokenName: stream.name }));
     }
 
-    removePermission (serviceName, roleId, permissionId) {
-        return this.PermissionsApiService.remove({ serviceName, roleId, permissionId }).$promise;
+    removePermission (serviceName, roleId, permission) {
+        return this.PermissionsApiService.remove({ serviceName, roleId }, { permissionId: permission[0].permissionId }).$promise
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .catch(err => this.LogsHelperService.handleError("logs_remove_permission_error", err, { tokenName: permission[0].permissionId }));
     }
 
     getNewRole () {

@@ -31,6 +31,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles/members", "dbaas/logs/detail/options"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles/members", "dbaas/logs/detail/options", "dbaas/logs/detail/index", "dbaas/logs/detail/aliases", "dbaas/logs/detail/streams", "dbaas/logs/detail/dashboards"]
         });
 });

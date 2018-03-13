@@ -50,7 +50,6 @@
     <translation id="logs_role_overview_alias">Alias</translation>
     <translation id="logs_role_overview_dashboard">Dashboard</translation>
 
-    
     <translation id="logs_roles_edit_permissions_title">Edit permissions</translation>    
     <translation id="logs_role_available_stream">Available streams</translation>
     <translation id="logs_role_selected_stream">Selected streams</translation>
@@ -72,4 +71,10 @@
     <translation id="logs_role_empty_dashboard">All dashboards have permission</translation>
     <translation id="logs_role_empty_selected_dashboard">No dashboard has permission</translation>
 
+    <translation id="logs_roles_add_alias_error">An error has occured while adding alias permission {{tokenName}}: {{message}}</translation>
+    <translation id="logs_roles_add_dashboard_error">An error has occured while adding dashboard permission {{tokenName}}: {{message}}</translation>
+    <translation id="logs_roles_add_stream_error">An error has occured while adding stream permission {{tokenName}}: {{message}}</translation>
+    <translation id="logs_roles_add_index_error">An error has occured while adding index permission {{tokenName}}: {{message}}</translation>
+
+    <translation id="logs_remove_permission_error">An error has occured while removing permission {{tokenName}}: {{message}}</translation>
 </translations>
