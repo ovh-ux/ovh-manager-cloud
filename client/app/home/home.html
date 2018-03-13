@@ -1,20 +1,24 @@
-<!-- <div class="container-fluid">
-
-    <div class="row">
-
-        <h2 class="text-center top-space-m20" data-translate="home_welcome_message"></h2>
-
-        <div class="col-xs-10 col-xs-offset-1">
-            <h4 class="text-center text-muted top-space-m16" data-translate="home_welcome_message_choose_product"></h4>
-        </div>
-
-        <img src="assets/images/logo_homepage.png" alt="OVH logo" class="main_brand_logo">
-
+<div class="container-fluid">
+    <div class="text-center mt-5 py-5">
+        <h1 class="d-inline">
+            <span data-translate="homepage_welcome_to_your_manager_1"></span>
+            <span data-translate="homepage_welcome_to_your_manager_2"></span>
+        </h1>
+        <p class="lead"
+           data-ng-bind-html="'homepage_top_guides_header' | translate: { url: $ctrl.guides.all }">
+        </p>
     </div>
-
-</div>
--->
-
-<div class="text-center" style="padding-top: 100px;">
-    <oui-spinner size="l"></oui-spinner>
+    <div class="row d-md-flex">
+        <div class="col-md-10 col-lg-8 mx-md-auto">
+            <cui-tile data-ng-repeat="section in $ctrl.guides.sections track by $index"
+                      data-title="section.title | translate"
+                      class="cui-tile mb-5">
+                <cui-tile-body-list>
+                    <cui-tile-body-list-item data-ng-repeat="link in section.list track by $index">
+                        <cui-tile-action-link data-action="link"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                </cui-tile-body-list>
+            </cui-tile>
+        </div>
+    </div>
 </div>

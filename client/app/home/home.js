@@ -6,7 +6,7 @@ angular.module("managerApp")
         url          : "/",
         templateUrl  : "app/home/home.html",
         controller   : "HomeCtrl",
-        controllerAs : "HomeCtrl",
+        controllerAs : "$ctrl",
         translations : ["common", "home", "home/announcement"]
       });
 });
