@@ -1,11 +1,12 @@
 class LogsStreamsAlertsService {
-    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, LogsStreamsAlertsConstant) {
+    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, LogsStreamsAlertsConstant, LogsHelperService) {
         this.$q = $q;
         this.CloudPoll = CloudPoll;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.AlertsApiService = OvhApiDbaas.Logs().Alert().Lexi();
         this.ServiceHelper = ServiceHelper;
         this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsHelperService = LogsHelperService;
     }
 
     /**
@@ -19,8 +20,8 @@ class LogsStreamsAlertsService {
      */
     addAlert (serviceName, streamId, alert) {
         return this.AlertsApiService.post({ serviceName, streamId }, alert).$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "streams_alerts_add_success"))
-            .catch(this.ServiceHelper.errorHandler("streams_alerts_add_error"));
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "streams_alerts_add_success", { alertName: alert.title }))
+            .catch(err => this.LogsHelperService.handleError("streams_alerts_add_error", err, { alertName: alert.title }));
     }
 
     /**
@@ -28,14 +29,14 @@ class LogsStreamsAlertsService {
      *
      * @param {any} serviceName
      * @param {any} streamId
-     * @param {any} alertId - ID of the alert to be deleted
+     * @param {any} alert - alert to be deleted
      * @returns promise which will be resolve to an operation object
      * @memberof LogsStreamsAlertsService
      */
-    deleteAlert (serviceName, streamId, alertId) {
-        return this.AlertsApiService.delete({ serviceName, streamId, alertId }).$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "streams_alerts_delete_success"))
-            .catch(this.ServiceHelper.errorHandler("streams_alerts_delete_error"));
+    deleteAlert (serviceName, streamId, alert) {
+        return this.AlertsApiService.delete({ serviceName, streamId, alertId: alert.alertId }).$promise
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "streams_alerts_delete_success", { alertName: alert.title }))
+            .catch(err => this.LogsHelperService.handleError("streams_alerts_delete_error", err, { alertName: alert.title }));
     }
 
     /**
@@ -51,7 +52,7 @@ class LogsStreamsAlertsService {
             serviceName,
             streamId
         }).$promise
-            .catch(this.ServiceHelper.errorHandler("streams_alerts_ids_loading_error"));
+            .catch(err => this.LogsHelperService.handleError("streams_alerts_ids_loading_error", err, {}));
     }
 
     /**
@@ -65,7 +66,7 @@ class LogsStreamsAlertsService {
      */
     getAlerts (serviceName, streamId, alertIds) {
         return this.getAlertDetails(serviceName, streamId, alertIds)
-            .catch(this.ServiceHelper.errorHandler("streams_alerts_loading_error"));
+            .catch(err => this.LogsHelperService.handleError("streams_alerts_loading_error", err, {}));
     }
 
     /**
@@ -117,51 +118,6 @@ class LogsStreamsAlertsService {
             repeatNotificationsEnabled: false,
             constraintType
         });
-    }
-
-    /**
-     * handles success state for create and delete alerts.
-     * Repetedly polls for operation untill it returns SUCCESS message.
-     *
-     * @param {any} serviceName
-     * @param {any} operation, operation to poll
-     * @param {any} successMessage, message to show on UI
-     * @returns promise which will be resolved to operation object
-     * @memberof LogsStreamsService
-     */
-    _handleSuccess (serviceName, operation, successMessage) {
-        this.poller = this._pollOperation(serviceName, operation);
-        return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
-    }
-
-    /**
-     * Kills the current poller
-     *
-     * @memberof LogsStreamsService
-     */
-    _killPoller () {
-        if (this.poller) {
-            this.poller.kill();
-        }
-    }
-
-    /**
-     * Sets up polling for an operation
-     *
-     * @param {any} serviceName
-     * @param {any} operation, operation to poll
-     * @returns returns the poller promise that resolves when the polling for success is complete
-     * @memberof LogsStreamsService
-     */
-    _pollOperation (serviceName, operation) {
-        this._killPoller();
-        const poller = this.CloudPoll.poll({
-            item: operation,
-            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === "FAILURE" || opn.state === "SUCCESS"
-        });
-        return poller;
     }
 }
 

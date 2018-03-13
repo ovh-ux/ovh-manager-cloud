@@ -1,14 +1,11 @@
 class LogsStreamsService {
-    constructor ($q, $translate, CloudMessage, CloudPoll, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogStreamsConstants, OvhApiDbaas, ServiceHelper, UrlHelper) {
+    constructor ($q, $translate, CloudMessage, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogStreamsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
         this.$q = $q;
         this.$translate = $translate;
-        this.ServiceHelper = ServiceHelper;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
         this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
-        this.CloudPoll = CloudPoll;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
         this.LogsStreamsArchivesService = LogsStreamsArchivesService;
@@ -16,6 +13,7 @@ class LogsStreamsService {
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
         this.LogStreamsConstants = LogStreamsConstants;
+        this.LogsHelperService = LogsHelperService;
 
         this.initializeData();
     }
@@ -70,7 +68,7 @@ class LogsStreamsService {
     getStreams (serviceName) {
         return this.getStreamDetails(serviceName)
             .then(streams => streams.map(stream => this._transformStream(serviceName, stream)))
-            .catch(this.ServiceHelper.errorHandler("logs_streams_get_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_streams_get_error", err, {}));
     }
 
     /**
@@ -98,7 +96,8 @@ class LogsStreamsService {
      */
     getStream (serviceName, streamId) {
         return this.StreamsApiService.get({ serviceName, streamId })
-            .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
+            .$promise
+            .catch(err => this.LogsHelperService.handleError("logs_stream_get_error", err, {}));
     }
 
     /**
@@ -111,7 +110,8 @@ class LogsStreamsService {
      */
     getAapiStream (serviceName, streamId) {
         return this.StreamsAapiService.get({ serviceName, streamId })
-            .$promise.catch(this.ServiceHelper.errorHandler("logs_stream_get_error"));
+            .$promise
+            .catch(err => this.LogsHelperService.handleError("logs_stream_get_error", err, {}));
     }
 
     /**
@@ -127,9 +127,9 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_stream_delete_success");
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_delete_success", { streamName: stream.title });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_stream_delete_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_stream_delete_error", err, { streamName: stream.title }));
     }
 
     /**
@@ -145,9 +145,9 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_stream_create_success");
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_create_success", { streamName: stream.title });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_stream_create_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_stream_create_error", err, { streamName: stream.title }));
     }
 
     /**
@@ -163,9 +163,9 @@ class LogsStreamsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_stream_update_success");
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_stream_update_success", { streamName: stream.title });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_stream_update_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_stream_update_error", err, { streamName: stream.title }));
     }
 
     /**
@@ -195,7 +195,7 @@ class LogsStreamsService {
                     currentUsage: me.total.curNbStream * 100 / me.total.maxNbStream
                 };
                 return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
+            }).catch(err => this.LogsHelperService.handleError("logs_streams_quota_get_error", err, {}));
     }
 
     getMainOffer (serviceName) {
@@ -203,7 +203,7 @@ class LogsStreamsService {
             .then(me => ({
                 max: me.offer.maxNbStream,
                 current: me.offer.curNbStream
-            })).catch(this.ServiceHelper.errorHandler("logs_main_offer_get_error"));
+            })).catch(err => this.LogsHelperService.handleError("logs_main_offer_get_error", err, {}));
     }
 
     getCompressionAlgorithms () {
@@ -325,42 +325,11 @@ class LogsStreamsService {
         return stream;
     }
 
-    /**
-     * handles success state for create, delete and update streams.
-     * Repetedly polls for operation untill it returns SUCCESS message.
-     *
-     * @param {any} serviceName
-     * @param {any} operation, operation to poll
-     * @param {any} successMessage, message to show on UI
-     * @returns promise which will be resolved to operation object
-     * @memberof LogsStreamsService
-     */
-    _handleSuccess (serviceName, operation, successMessage) {
-        this.poller = this._pollOperation(serviceName, operation);
-        return this.poller.$promise
-            .then(this.ServiceHelper.successHandler(successMessage));
-    }
-
-    _killPoller () {
-        if (this.poller) {
-            this.poller.kill();
-        }
-    }
-
     _resetAllCache () {
         this.LogsApiService.resetAllCache();
         this.StreamsApiService.resetAllCache();
         this.StreamsAapiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
-    }
-
-    _pollOperation (serviceName, operation) {
-        this._killPoller();
-        return this.CloudPoll.poll({
-            item: operation,
-            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
-        });
     }
 }
 
