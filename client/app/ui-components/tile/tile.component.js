@@ -210,6 +210,7 @@ angular.module("managerApp")
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     class="oui-button oui-button_link oui-button_full-width cui-tile__button"
                     data-at-internet-click="{ name: $ctrl.action.atInternetClickTag }"
+                    target="_blank"
                     data-ng-href="{{ $ctrl.action.href }}">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
