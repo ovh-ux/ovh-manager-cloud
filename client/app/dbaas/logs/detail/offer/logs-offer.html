@@ -44,9 +44,8 @@
                 <div class="cui-box-body ml-5">
                     <p>{{offer.maxNbStream}} {{'logs_offer_streams' | translate}}, {{offer.maxNbDashboard}} {{'logs_offer_tables' | translate}}<span data-ng-if="offer.maxNbInput > 0">,</span></p>
                     <p data-ng-if="offer.maxNbInput > 0">{{offer.maxNbInput}} {{'logs_offer_collection_tools' | translate}}</p>
-                    <p data-ng-if="offer.esStorage > 1">{{'logs_offer_limit' | translate}} : {{offer.planCode + '_limit' | translate}}</p>
                 </div>
-                <div class="cui-box-line"></div>            
+                <div class="cui-box-line"></div>
                 <div class="cui-box-footer p-2">
                     <span data-ng-repeat="price in offer.prices">
                         <span class="cui-box-footer__price" ng-if="price.capacities.indexOf('renew') > -1">{{price.price.text}}</span>
