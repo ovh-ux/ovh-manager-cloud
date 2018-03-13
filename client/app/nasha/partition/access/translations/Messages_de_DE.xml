@@ -21,5 +21,5 @@
    <translation id="nasha_partitions_access_readwrite" qtlid="215754">Lesen/Schreiben</translation>
    <translation id="nasha_partitions_access_permissions" qtlid="6946">Berechtigungen</translation>
    <translation id="nasha_partitions_access_permissions_warning_cifs" qtlid="344766">"Read-only" ist nur bei NFS verfügbar. </translation>
-   <translation id="nasha_partitions_access_notice" qtlid="372154">Derzeit ist der NAS-HA nur mit OVH IPs verwendbar (Dedicated Server / VPS / Public Cloud / Private Cloud / SoYouStart / Kimsufi / ADSL). </translation>
+   <translation id="nasha_partitions_access_notice" qtlid="372154">Derzeit ist der HA-NAS nur mit OVH IPs verwendbar (Dedicated Server / VPS / Public Cloud / Private Cloud / So you Start / Kimsufi / ADSL). </translation>
 </translations>

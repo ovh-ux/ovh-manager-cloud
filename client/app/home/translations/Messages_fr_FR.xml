@@ -2,7 +2,7 @@
 <translations>
    <translation id="homepage_welcome_to_your_manager_1" qtlid="282393">Bienvenue dans votre</translation>
    <translation id="homepage_welcome_to_your_manager_2" qtlid="282406">espace client OVH</translation>
-   <translation id="homepage_top_guides_header">Pour obtenir de l'information plus détaillée, veuillez consulter <a class="oui-link" href="{{ url }}" target="_blank">nos guides</a>.</translation>
+   <translation id="homepage_top_guides_header" qtlid="468499">Pour obtenir de l'information plus détaillée, veuillez consulter <a class="oui-link" href="{{ url }}" target="_blank">nos guides</a>.</translation>
    <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
-   <translation id="homepage_type_of_guide_pci">Public Cloud</translation>
+   <translation id="homepage_type_of_guide_pci" qtlid="251655">Public Cloud</translation>
 </translations>

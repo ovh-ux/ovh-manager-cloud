@@ -61,7 +61,7 @@
    <translation id="cpci_vm_status_ERROR" qtlid="45508">En error</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Reinicio</translation>
    <translation id="cpci_vm_status_REBUILD" qtlid="34740">Reinstalación</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Mode Rescue</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Modo de rescate</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
    <translation id="cpci_vm_status_UPDATING" qtlid="26863">Actualización</translation>
 
