@@ -4,14 +4,12 @@
         data-primary-label="{{ ::'common_modify' | translate }}"
         data-secondary-action="CdaDetailEditCtrl.closeModal()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
-        data-on-dismiss="CdaDetailEditCtrl.closeModal()">
+        data-on-dismiss="CdaDetailEditCtrl.closeModal()"
+        loading="CdaDetailEditCtrl.saving">
 
         <cui-message-container data-messages="CdaDetailEditCtrl.messages"></cui-message-container>
 
         <h2 class="oui-modal__title" ng-bind="::'cda_detail_edit_title' | translate "></h2>
-        <div class="text-center">
-            <oui-spinner data-ng-if="CdaDetailEditCtrl.saving"></oui-spinner>
-        </div>
 
         <div data-ng-if="!CdaDetailEditCtrl.saving">
             <oui-field label="{{ ::'cda_detail_edit_label' | translate }}">
