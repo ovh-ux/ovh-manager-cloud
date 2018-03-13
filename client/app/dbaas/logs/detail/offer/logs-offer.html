@@ -38,6 +38,7 @@
                         on-change="ctrl.offerDetail.selectedOffer = modelValue">
                     </oui-radio>
                     <span data-ng-if="ctrl.offerDetail.currentOffer == offer.planCode" class="current-offer">{{'logs_offer_current_offer' | translate}}</span>
+                    <p data-ng-if="offer.esStorage > 1" class="sub-heading">{{offer.planCode + '_limit' | translate}}</p>
                 </div>
                 <div class="cui-box-line"></div>
                 <div class="cui-box-body ml-5">

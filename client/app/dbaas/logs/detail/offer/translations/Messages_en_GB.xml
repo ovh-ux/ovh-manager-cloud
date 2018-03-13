@@ -25,27 +25,27 @@
     <translation id="logs_offer_unlock_pro_button">Unlock the pro offers</translation>
 
     <translation id="logs-basic">Basic</translation>
-    <translation id="logs-pro-0001">1 GB</translation>
-    <translation id="logs-pro-0015">15 GB </translation>
-    <translation id="logs-pro-0030">30 GB </translation>
-    <translation id="logs-pro-0090">90 GB </translation>
-    <translation id="logs-pro-0150">150 GB </translation>
-    <translation id="logs-pro-0300">300 GB </translation>
-    <translation id="logs-pro-0600">600 GB </translation>
-    <translation id="logs-pro-0900">900 GB </translation>
-    <translation id="logs-pro-1500">1.5 TB </translation>
-    <translation id="logs-pro-3000">3 TB </translation>
+    <translation id="logs-pro-0001">1 GB/Month</translation>
+    <translation id="logs-pro-0015">15 GB/Month </translation>
+    <translation id="logs-pro-0030">30 GB/Month </translation>
+    <translation id="logs-pro-0090">90 GB/Month </translation>
+    <translation id="logs-pro-0150">150 GB/Month </translation>
+    <translation id="logs-pro-0300">300 GB/Month </translation>
+    <translation id="logs-pro-0600">600 GB/Month </translation>
+    <translation id="logs-pro-0900">900 GB/Month </translation>
+    <translation id="logs-pro-1500">1.5 TB/Month </translation>
+    <translation id="logs-pro-3000">3 TB/Month </translation>
     <translation id="logs-reader-1">None</translation>
 
-   <translation id="logs-pro-0015_limit">0.5 GB/day </translation>
-   <translation id="logs-pro-0030_limit">1 GB/day </translation>
-   <translation id="logs-pro-0090_limit">3 GB/day </translation>
-   <translation id="logs-pro-0150_limit">5 GB/day </translation>
-   <translation id="logs-pro-0300_limit">10 GB/day </translation>
-   <translation id="logs-pro-0600_limit">20 GB/day </translation>
-   <translation id="logs-pro-0900_limit">30 GB/day </translation>
-   <translation id="logs-pro-1500_limit">50 GB/day </translation>
-   <translation id="logs-pro-3000_limit">100 GB/day </translation>
+   <translation id="logs-pro-0015_limit">An average of 0.5 GB/day </translation>
+   <translation id="logs-pro-0030_limit">An average of 1 GB/day </translation>
+   <translation id="logs-pro-0090_limit">An average of 3 GB/day </translation>
+   <translation id="logs-pro-0150_limit">An average of 5 GB/day </translation>
+   <translation id="logs-pro-0300_limit">An average of 10 GB/day </translation>
+   <translation id="logs-pro-0600_limit">An average of 20 GB/day </translation>
+   <translation id="logs-pro-0900_limit">An average of 30 GB/day </translation>
+   <translation id="logs-pro-1500_limit">An average of 50 GB/day </translation>
+   <translation id="logs-pro-3000_limit">An average of 100 GB/day </translation>
 
     <translation id="logs_offer_conflict_title">Offer conflict</translation>
     <translation id="logs_offer_conflict_description">You selected an offer which is the one you already have. Please select another one if you wish to upgrade or downgrade your service.</translation>
