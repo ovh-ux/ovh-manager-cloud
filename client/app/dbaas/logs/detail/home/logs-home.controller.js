@@ -1,15 +1,12 @@
 class LogsHomeCtrl {
-    constructor ($q, $state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsInputsConstant, LogsHomeService, LogsOptionsService, LogsTokensService) {
+    constructor ($q, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.$translate = $translate;
-        this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
-        this.LogsInputsConstant = LogsInputsConstant;
         this.LogsHomeService = LogsHomeService;
-        this.LogsOptionsService = LogsOptionsService;
         this.LogsTokensService = LogsTokensService;
         this.initLoaders();
     }
@@ -27,28 +24,10 @@ class LogsHomeCtrl {
     }
 
     /**
-     * initializes the inputs and the quota
+     * initializes the actions for menus
      *
      * @memberof LogsHomeCtrl
      */
-    initLoaders () {
-        this.accountDetails = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName)
-        });
-        this.account = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getAccount(this.serviceName)
-        });
-        this.options = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsHomeService.getOptions(this.serviceName)
-        });
-        this.tokenIds = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsTokensService.getTokensIds(this.serviceName)
-        });
-        this.defaultCluster = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName)
-        });
-    }
-
     _initActions () {
         this.actions = {
             changeName: {
@@ -129,16 +108,54 @@ class LogsHomeCtrl {
         };
     }
 
+    /**
+     * Redirects to the tokens page
+     *
+     * @memberof LogsHomeCtrl
+     */
     editTokens () {
         this.$state.go("dbaas.logs.detail.tokens", {
             serviceName: this.serviceName
         });
     }
 
+    /**
+     * Opens the edit password dialog
+     *
+     * @memberof LogsHomeCtrl
+     */
     editPassword () {
-        console.log("Edit Password");
+        // To be done
     }
 
+    /**
+     * initializes the loaders
+     *
+     * @memberof LogsHomeCtrl
+     */
+    initLoaders () {
+        this.accountDetails = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName)
+        });
+        this.account = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getAccount(this.serviceName)
+        });
+        this.options = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsHomeService.getOptions(this.serviceName)
+        });
+        this.tokenIds = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsTokensService.getTokensIds(this.serviceName)
+        });
+        this.defaultCluster = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName)
+        });
+    }
+
+    /**
+     * Opens the Messages and Ports information dialog
+     *
+     * @memberof LogsHomeCtrl
+     */
     openMessagesAndPorts () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+   <translation id="logs_home_info_title">À propos</translation>
+   <translation id="logs_home_info">Logs Data platform est une interface de collecte, d’indexation et d’analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d’entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L’analyse et l’exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
+
    <translation id="logs_home_shortcuts">Raccourcis</translation>
    <translation id="logs_home_shortcuts_last_stream">Dernier flux modifié</translation>
    <translation id="logs_home_shortcuts_all_stream">Voir tous les flux</translation>
@@ -13,7 +16,7 @@
    <translation id="logs_home_usage">Utilisation</translation>
    
    <translation id="logs_home_configuration">Configuration</translation>
-   <translation id="logs_home_account_name">Nom du compte</translation>
+   <translation id="logs_home_account_name">Afficher un nom</translation>
    <translation id="logs_home_tokens">Jetons</translation>
    <translation id="logs_home_tokens_tooltip">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et lire sur Elasticsearch)</translation>
    <translation id="logs_home_password">Mot de passe</translation>
@@ -23,9 +26,18 @@
    <translation id="logs_home_formats_and_ports">Formats de message et ports disponibles</translation>
 
    <translation id="logs_home_subscription">Abonnement</translation>
+   <translation id="logs_home_offer">Offre</translation>
+   <translation id="logs_home_data_volume">Transert de données</translation>
+   <translation id="logs_home_options">Options</translation>
+   <translation id="logs_home_options_empty">Aucun</translation>
+   <translation id="logs_home_service">Logs Data Platform Service</translation>
+   <translation id="logs_home_start_date">Date de création</translation>
+   
+   <translation id="logs_home_contact_update_success">Contact mis à jour avec succès</translation>
 
    <translation id="logs_home_account_details_get_error">Une erreur s'est produite lors de la tentative de récupération des détails du compte: {{message}}</translation>
    <translation id="logs_home_account_get_error">Une erreur s'est produite lors de la tentative de récupération du compte: {{message}}</translation>
    <translation id="logs_home_contacts_get_error">Une erreur s'est produite lors de la tentative de récupération des contacts: {{message}}</translation>
    <translation id="logs_home_contact_get_error">Une erreur s'est produite lors de la tentative de récupération des coordonnées: {{message}}</translation>
+   <translation id="logs_home_contact_update_error">Une erreur s'est produite lors de la tentative de mise à jour du contact: {{message}}</translation>
 </translations>

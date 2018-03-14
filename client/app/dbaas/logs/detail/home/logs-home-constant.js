@@ -77,5 +77,6 @@ angular.module("managerApp").constant("LogsHomeConstant", {
             PORT: "UDP",
             MESSAGE: "CAP_N_PROTO"
         }
-    }
+    },
+    ADD_CONTACT_URL: "https://www.ovh.com/manager/web/index.html#/useraccount/subContacts/add?returnUrl="
 });

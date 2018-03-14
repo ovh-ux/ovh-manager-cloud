@@ -18,6 +18,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsHomeAccountModalCtrl",
                     controllerAs: "ctrl"
                 }
-            }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/home", "dbaas/logs/detail/home/account"]
         });
 });

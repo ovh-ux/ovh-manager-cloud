@@ -1,9 +1,11 @@
 class LogsHomeAccountCtrl {
-    constructor ($stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeService) {
+    constructor ($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeConstant, LogsHomeService) {
+        this.$location = $location;
         this.serviceName = $stateParams.serviceName;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
+        this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this._initLoaders();
     }
@@ -11,12 +13,13 @@ class LogsHomeAccountCtrl {
     $onInit () {
         this.accountDetails.load();
         this.contacts.load();
+        this.addContactUrl = this.LogsHomeConstant.ADD_CONTACT_URL + this.$location.absUrl();
     }
 
     /**
-     * initializes the inputs and the quota
+     * initializes the account details and contacts
      *
-     * @memberof LogsHomeCtrl
+     * @memberof LogsHomeAccountCtrl
      */
     _initLoaders () {
         this.accountDetails = this.ControllerHelper.request.getHashLoader({
@@ -36,6 +39,11 @@ class LogsHomeAccountCtrl {
         this.$uibModalInstance.dismiss();
     }
 
+    /**
+     * Updates the contact
+     *
+     * @memberof LogsHomeAccountCtrl
+     */
     updateContact () {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({

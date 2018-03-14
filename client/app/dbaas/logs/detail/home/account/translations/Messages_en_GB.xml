@@ -6,4 +6,5 @@
     <translation id="logs_home_account_contact_field">Contact</translation>
     <translation id="logs_home_account_contact_field_description">Select one of your contacts. If no contact is chosen, it will be associated by default with your main identity</translation>
     <translation id="logs_home_account_no_contact">Do not designate contact</translation>
+    <translation id="logs_home_account_add_contact">Add a new contact</translation>
 </translations>

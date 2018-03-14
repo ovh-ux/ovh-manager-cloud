@@ -1,47 +1,78 @@
 class LogsHomeService {
-    constructor ($q, $translate, CloudMessage, CloudPoll, LogsOfferConstant, LogsHomeConstant, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.ContactsApiLexiService = OvhApiDbaas.Logs().Contacts().Lexi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
-        this.CloudMessage = CloudMessage;
-        this.CloudPoll = CloudPoll;
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
         this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
         this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
+        this.LogsHelperService = LogsHelperService;
         this.LogsHomeConstant = LogsHomeConstant;
-        this.LogsInputsConstant = LogsInputsConstant;
-        this.LogsOptionsService = LogsOptionsService;
         this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
     }
 
+    /**
+     * Gets the transformed account object
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the account object
+     * @memberof LogsHomeService
+     */
     getAccount (serviceName) {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(account => this._transformAccount(account))
             .catch(this.ServiceHelper.errorHandler("logs_home_account_get_error"));
     }
 
+    /**
+     * Gets the transformed account details object
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the account details object
+     * @memberof LogsHomeService
+     */
     getAccountDetails (serviceName) {
         return this.DetailsAapiService.me({ serviceName }).$promise
             .then(accountDetails => this._transformAccountDetails(accountDetails))
             .catch(this.ServiceHelper.errorHandler("logs_home_account_details_get_error"));
     }
 
-    getContactIds () {
-        return this.ContactsApiLexiService.query({})
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_home_contacts_get_error"));
-    }
-
+    /**
+     * Gets the contact details for a particular contact id
+     *
+     * @param {string} contactId
+     * @returns promise which will resolve to the contact details object
+     * @memberof LogsHomeService
+     */
     getContactDetails (contactId) {
         return this.ContactsApiLexiService.get({ contactId })
             .$promise
             .catch(this.ServiceHelper.errorHandler("logs_home_contact_get_error"));
     }
 
+    /**
+     * Gets the list of contact ids
+     *
+     * @returns promise which will resolve to the list of contact ids
+     * @memberof LogsHomeService
+     */
+    getContactIds () {
+        return this.ContactsApiLexiService.query({})
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_home_contacts_get_error"));
+    }
+
+    /**
+     * Gets all contact details
+     *
+     * @returns promise which will resolve to the array of contact details objects
+     * @memberof LogsHomeService
+     */
     getContacts () {
         return this.getContactIds()
             .then(contactIds => {
@@ -50,11 +81,25 @@ class LogsHomeService {
             });
     }
 
+    /**
+     * Gets the current offer object
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the current offer object
+     * @memberof LogsHomeService
+     */
     getCurrentOffer (serviceName) {
         return this.LogsOfferService.getOffer(serviceName)
             .then(offer => this._transformOffer(offer));
     }
 
+    /**
+     * Gets the currently subscribed options
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the array of subscribed options
+     * @memberof LogsHomeService
+     */
     getOptions (serviceName) {
         return this.LogsOptionsService.getSubscribedOptionsMap(serviceName)
             .then(options => {
@@ -63,34 +108,79 @@ class LogsHomeService {
             });
     }
 
+    /**
+     * Updates the current contact information. Any further communication would be then sent to this contact
+     *
+     * @param {any} serviceName
+     * @param {string} contactId - the contact to set active
+     * @returns promise which will resolve or reject once the operation is complete
+     * @memberof LogsHomeService
+     */
     updateContact (serviceName, contactId) {
-        return this.LogsLexiService.update(serviceName, { contactId })
-            .then(options => {
-                options.forEach(option => this._transformOption(option));
-                return options;
-            });
+        return this.LogsLexiService.update({ serviceName }, { contactId })
+            .$promise.then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_contact_update_success", { });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_home_contact_update_error", err, { }));
     }
 
-    _getGreyLogUrl (object) {
-        object.graylogWebuiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_WEBUI);
-        return object;
+    /**
+     * Finds and returns a url from a list of urls based on it's type
+     *
+     * @param {any} urls the list of urls
+     * @param {string} type the type of url that has to be retrieved
+     * @returns the found url
+     * @memberof LogsHomeService
+     */
+    _findUrl (urls, type) {
+        return urls.reduce((foundUrl, url) => url.type === type ? url.address : foundUrl, "");
     }
 
-    _getGreyLogApiUrl (object) {
-        object.graylogApiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_API);
-        return object;
-    }
-
+    /**
+     * Gets the Elasticsearch url from the object
+     *
+     * @param {any} object the object with urls
+     * @returns the Elasticsearch url
+     * @memberof LogsHomeService
+     */
     _getElasticSearchApiUrl (object) {
         const elasticSearchApiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.ELASTICSEARCH_API);
         object.elasticSearchApiUrl = `${elasticSearchApiUrl}/_cluster/health?pretty=true`;
         return object;
     }
 
-    _findUrl (urls, type) {
-        return urls.reduce((foundUrl, url) => url.type === type ? url.address : foundUrl, "");
+    /**
+     * Gets the Greylog API url from the object
+     *
+     * @param {any} object the object with urls
+     * @returns the Greylog API url
+     * @memberof LogsHomeService
+     */
+    _getGreyLogApiUrl (object) {
+        object.graylogApiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_API);
+        return object;
     }
 
+    /**
+     * Gets the Greylog url from the object
+     *
+     * @param {any} object the object with urls
+     * @returns the Greylog url
+     * @memberof LogsHomeService
+     */
+    _getGreyLogUrl (object) {
+        object.graylogWebuiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_WEBUI);
+        return object;
+    }
+
+    /**
+     * Builds and returns the ports and messages information from the account details object
+     *
+     * @param {any} accountDetails
+     * @returns the ports and messages information
+     * @memberof LogsHomeService
+     */
     _getPortsAndMessages (accountDetails) {
         const portsAndMessages = {};
         accountDetails.urls.forEach(url => {
@@ -104,6 +194,41 @@ class LogsHomeService {
         return Object.keys(portsAndMessages).map(portType => portsAndMessages[portType]);
     }
 
+    /**
+     * Resets all relevant caches
+     *
+     * @memberof LogsHomeService
+     */
+    _resetAllCache () {
+        this.DetailsAapiService.resetAllCache();
+    }
+
+    /**
+     * Returns the transformed account object
+     *
+     * @param {any} account
+     * @returns the transformed account object
+     * @memberof LogsHomeService
+     */
+    _transformAccount (account) {
+        if (account.offer.reference === this.LogsOfferConstant.basicOffer) {
+            account.offer.description = this.LogsOfferConstant.offertypes.BASIC;
+        } else {
+            const dataVolume = this.$translate.instant("logs_home_data_volume");
+            const dataVolumeValue = this.$translate.instant(account.offer.reference);
+            const month = this.$translate.instant("month");
+            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}/${month}`;
+        }
+        return account;
+    }
+
+    /**
+     * Returns the transformed account details object
+     *
+     * @param {any} accountDetails
+     * @returns the transformed account detials object
+     * @memberof LogsHomeService
+     */
     _transformAccountDetails (accountDetails) {
         accountDetails.fullname = accountDetails.service.contact ? `${accountDetails.service.contact.firstName} ${accountDetails.service.contact.lastName}` : `${accountDetails.me.firstname} ${accountDetails.me.name}`;
         accountDetails.acccountName = `${accountDetails.fullname} - ${accountDetails.service.username}`;
@@ -119,18 +244,13 @@ class LogsHomeService {
         return accountDetails;
     }
 
-    _transformAccount (account) {
-        if (account.offer.reference === this.LogsOfferConstant.basicOffer) {
-            account.offer.description = this.LogsOfferConstant.offertypes.BASIC;
-        } else {
-            const dataVolume = this.$translate.instant("logs_home_data_volume");
-            const dataVolumeValue = this.$translate.instant(account.offer.reference);
-            const month = this.$translate.instant("month");
-            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}/${month}`;
-        }
-        return account;
-    }
-
+    /**
+     * Returns the transformed option object
+     *
+     * @param {any} option
+     * @returns the transformed option object
+     * @memberof LogsHomeService
+     */
     _transformOption (option) {
         option.description = `${option.quantity} ${option.type}: ${option.detail}`;
         return option;

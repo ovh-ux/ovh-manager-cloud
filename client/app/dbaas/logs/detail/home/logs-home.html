@@ -1,4 +1,9 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
+    <div class="oui-message oui-message_info m-3" role="alert">
+        <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
+        <p class="oui-message__body font-weight-bold" data-translate="logs_home_info_title"></p>
+        <p class="oui-message__body" data-translate="logs_home_info"></p>
+    </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
             <cui-tile 
@@ -37,14 +42,17 @@
                 class="h-100">
                 <cui-tile-body>
                     <cui-tile-item data-term="'logs_home_account_name' | translate"
-                        data-description="ctrl.accountDetails.data.fullname"
-                        data-actions="ctrl.actions.changeName"></cui-tile-item>
+                        data-description="ctrl.accountDetails.data.service.displayName"
+                        data-actions="ctrl.actions.changeName">
+                    </cui-tile-item>
                     <cui-tile-item data-term="'logs_home_tokens' | translate"
                         data-description="ctrl.tokenIds.data.length"
-                        data-actions="ctrl.actions.editTokens"></cui-tile-item>
+                        data-actions="ctrl.actions.editTokens">
+                    </cui-tile-item>
                     <cui-tile-item data-term="'logs_home_password' | translate"
                         data-description="'******'"
-                        data-actions="ctrl.actions.changePassword"></cui-tile-item>
+                        data-actions="ctrl.actions.changePassword">
+                    </cui-tile-item>                    
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -85,14 +93,17 @@
                     <cui-tile-item data-term="'logs_home_offer' | translate"
                     data-description="ctrl.account.data.offer.description"
                     data-actions="ctrl.actions.changeOffer"></cui-tile-item>
-                    <div class="d-flex" class="cui-dropdown-menu-container">
-                        <div class="cui-tile__item-main">
-                            <cui-tile-definitions>
-                                <cui-tile-definition-term data-term="'logs_home_options' | translate"></cui-tile-definition-term>
-                                <cui-tile-definition-description data-ng-repeat="option in ctrl.options.data" data-description="option.description"></cui-tile-definition-description>
-                            </cui-tile-definitions>
+                    <div class="cui-tile__item">
+                        <div class="d-flex cui-dropdown-menu-container">
+                            <div class="cui-tile__item-main">
+                                <cui-tile-definitions>
+                                    <cui-tile-definition-term data-term="'logs_home_options' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-ng-repeat="option in ctrl.options.data" data-ng-if="ctrl.options.data.length > 0" data-description="option.description"></cui-tile-definition-description>
+                                    <cui-tile-definition-description data-ng-if="ctrl.options.data.length === 0" data-description="'logs_home_options_empty' | translate"></cui-tile-definition-description>
+                                </cui-tile-definitions>
+                            </div>
+                            <cui-tile-action-menu data-actions="ctrl.actions.editOptions" data-ng-if="ctrl.actions.editOptions"></cui-tile-action-menu>
                         </div>
-                        <cui-tile-action-menu data-actions="ctrl.actions.editOptions" data-ng-if="ctrl.actions.editOptions"></cui-tile-action-menu>
                     </div>
                     <cui-tile-item data-term="'logs_home_service' | translate"
                         data-description="ctrl.accountDetails.data.acccountName">

@@ -199,24 +199,21 @@ angular.module("managerApp")
                     data-ng-click="$ctrl.action.callback()"
                     data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
                     <span data-ng-bind="$ctrl.action.text"></span>
-                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true" data-ng-if="!$ctrl.action.isExternal"></i>
-                    <i class="oui-icon oui-icon-external_link" aria-hidden="true" data-ng-if="$ctrl.action.isExternal"></i>
+                    <i class="oui-icon" data-ng-class="{'oui-icon-chevron-right': !$ctrl.action.isExternal, 'oui-icon-external_link': $ctrl.action.isExternal }" aria-hidden="true"></i>
                 </button>
                 <a data-ng-if="$ctrl.action.state && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                     data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
-                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true" data-ng-if="!$ctrl.action.isExternal"></i>
-                    <i class="oui-icon oui-icon-external_link" aria-hidden="true" data-ng-if="$ctrl.action.isExternal"></i>
+                    <i class="oui-icon" data-ng-class="{'oui-icon-chevron-right': !$ctrl.action.isExternal, 'oui-icon-external_link': $ctrl.action.isExternal }" aria-hidden="true"></i>
                 </a>
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                     data-ng-href="{{ $ctrl.action.href }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
-                    <i class="oui-icon oui-icon-chevron-right" aria-hidden="true" data-ng-if="!$ctrl.action.isExternal"></i>
-                    <i class="oui-icon oui-icon-external_link" aria-hidden="true" data-ng-if="$ctrl.action.isExternal"></i>
+                    <i class="oui-icon" data-ng-class="{'oui-icon-chevron-right': !$ctrl.action.isExternal, 'oui-icon-external_link': $ctrl.action.isExternal }" aria-hidden="true"></i>
                 </a>
             </div>`,
         bindToController: {
