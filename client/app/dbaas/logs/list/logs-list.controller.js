@@ -1,7 +1,11 @@
 class LogsListCtrl {
-    constructor (CloudMessage) {
+    constructor (CloudMessage, LogsListService, ControllerHelper) {
         this.CloudMessage = CloudMessage;
+        this.LogsListService = LogsListService;
+        this.ControllerHelper = ControllerHelper;
         this.messages = [];
+
+        this.initLoaders();
     }
 
     $onInit () {
@@ -11,6 +15,18 @@ class LogsListCtrl {
 
     refreshMessage () {
         this.messages = this.messageHandler.getMessages();
+    }
+
+    /**
+     * load tokens array by making API call to get data
+     *
+     * @memberof LogsTokensCtrl
+     */
+    initLoaders () {
+        this.accounts = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsListService.getServices()
+        });
+        this.accounts.load();
     }
 }
 
