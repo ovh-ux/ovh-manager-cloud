@@ -39,6 +39,6 @@
     <translation id="add_alert_value_field">Value</translation>
     <translation id="add_alert_value_field_description">The value that needs to be compared to that of the field</translation>
     
-    <translation id="streams_alerts_add_success">Alert created successfully</translation>
-    <translation id="streams_alerts_add_error">Error creating alert: {{message}}</translation>
+    <translation id="streams_alerts_add_success">Alert {{alertName}} created successfully</translation>
+    <translation id="streams_alerts_add_error">Error creating alert {{alertName}}: {{message}}</translation>
 </translations>

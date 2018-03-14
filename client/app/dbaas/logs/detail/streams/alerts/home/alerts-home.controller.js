@@ -92,7 +92,7 @@ class LogsStreamsAlertsHomeCtrl {
     _delete (alert) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsStreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert.alertId)
+                this.LogsStreamsAlertsService.deleteAlert(this.serviceName, this.streamId, alert)
                     .then(() => this._runLoaders())
         });
         this.alertIds.loading = true;

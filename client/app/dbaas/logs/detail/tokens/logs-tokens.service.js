@@ -70,7 +70,7 @@ class LogsTokensService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_tokens_delete_success", { tokenName: token.name });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_tokens_delete_success", { tokenName: token.name });
             })
             .catch(err => this.LogsHelperService.handleError("logs_tokens_delete_error", err, { tokenName: token.name }));
     }
@@ -88,7 +88,7 @@ class LogsTokensService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_tokens_create_success", { tokenName: token.name });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_tokens_create_success", { tokenName: token.name });
             })
             .catch(err => this.LogsHelperService.handleError("logs_tokens_create_error", err, { tokenName: token.name }));
     }
