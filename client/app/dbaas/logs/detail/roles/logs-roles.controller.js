@@ -22,11 +22,6 @@ class LogsRolesCtrl {
             loaderFunction: () => this.LogsRolesService.getSubscribedOptions(this.serviceName)
         });
 
-        // this.dashs = this.ControllerHelper.request.getArrayLoader({
-        //     loaderFunction: () => this.LogsRolesService.getAllDashboards(this.serviceName)
-        // });
-        // this.dashs.load();
-
         this.quota.load();
         this.roles.load();
         this.roleOptions.load();
