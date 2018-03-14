@@ -84,7 +84,8 @@ class LogsRolesPermissionsCtrl {
     attachAlias (item) {
         this.saveAlias = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0]),
-            successHandler: () => this.roleDetails.load()
+            successHandler: () => this.roleDetails.load(),
+            errorHandler: () => this.ControllerHelper.scrollPageToTop()
         });
         return this.saveAlias.load();
     }
@@ -92,7 +93,8 @@ class LogsRolesPermissionsCtrl {
     attachIndex (item) {
         this.saveIndex = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0]),
-            successHandler: () => this.roleDetails.load()
+            successHandler: () => this.roleDetails.load(),
+            errorHandler: () => this.ControllerHelper.scrollPageToTop()            
         });
         return this.saveIndex.load();
     }
@@ -100,7 +102,8 @@ class LogsRolesPermissionsCtrl {
     attachStream (item) {
         this.saveStream = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0]),
-            successHandler: () => this.roleDetails.load()
+            successHandler: () => this.roleDetails.load(),
+            errorHandler: () => this.ControllerHelper.scrollPageToTop()
         });
         return this.saveStream.load();
     }
@@ -108,14 +111,16 @@ class LogsRolesPermissionsCtrl {
     attachDashboard (item) {
         this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addDashboard(this.serviceName, this.roleId, item[0]),
-            successHandler: () => this.roleDetails.load()
+            successHandler: () => this.roleDetails.load(),
+            errorHandler: () => this.ControllerHelper.scrollPageToTop()
         });
         return this.saveDashboard.load();
     }
 
     removePermission (permission) {
         this.deletePermission = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsRolesService.removePermission(this.serviceName, this.roleId, permission)
+            loaderFunction: () => this.LogsRolesService.removePermission(this.serviceName, this.roleId, permission),
+            errorHandler: () => this.ControllerHelper.scrollPageToTop()
         });
         return this.deletePermission.load();
     }
