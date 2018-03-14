@@ -1,6 +1,8 @@
-<form id="editDetailForm" name="editDetailForm" novalidate>
+<form id="editDetailForm"
+      name="editDetailForm"
+      data-ng-submit="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
+      novalidate>
     <oui-modal
-        data-primary-action="editDetailForm.$valid && CdaDetailEditCtrl.editCluster()"
         data-primary-label="{{ ::'common_modify' | translate }}"
         data-secondary-action="CdaDetailEditCtrl.closeModal()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
