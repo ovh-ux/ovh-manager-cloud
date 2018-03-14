@@ -76,5 +76,5 @@
     <translation id="logs_roles_add_stream_error">An error has occured while adding stream permission {{tokenName}}: {{message}}</translation>
     <translation id="logs_roles_add_index_error">An error has occured while adding index permission {{tokenName}}: {{message}}</translation>
 
-    <translation id="logs_remove_permission_error">An error has occured while removing permission {{tokenName}}: {{message}}</translation>
+    <translation id="logs_remove_permission_error">An error has occured while removing permission for {{tokenName}}: {{message}}</translation>
 </translations>

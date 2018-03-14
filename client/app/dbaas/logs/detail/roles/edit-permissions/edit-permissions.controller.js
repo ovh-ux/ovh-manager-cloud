@@ -7,12 +7,6 @@ class LogsRolesPermissionsCtrl {
         this.ControllerHelper = ControllerHelper;
         this.LogsRolesService = LogsRolesService;
         this.CloudMessage = CloudMessage;
-        this.permissions = {
-            dashboard: [],
-            alias: [],
-            index: [],
-            stream: []
-        };
         this.initLoaders();
     }
 
@@ -29,11 +23,12 @@ class LogsRolesPermissionsCtrl {
         this.roleDetails = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getRoleDetails(this.serviceName, this.roleId)
                 .then(role => {
+                    this.permissions = this.LogsRolesService.getNewPermissions();
                     role.permissions.forEach(permission => {
                         if (permission.index) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.index.push(permission.index); }
-                        if (permission.alias) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.alias.push(permission.alias); }
-                        if (permission.stream) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.stream.push(permission.stream); }
-                        if (permission.dashboard) { _.extend(permission.index, { permissionId: permission.permissionId }); this.permissions.dashboard.push(permission.dashboard); }
+                        if (permission.alias) { _.extend(permission.alias, { permissionId: permission.permissionId }); this.permissions.alias.push(permission.alias); }
+                        if (permission.stream) { _.extend(permission.stream, { permissionId: permission.permissionId }); this.permissions.stream.push(permission.stream); }
+                        if (permission.dashboard) { _.extend(permission.dashboard, { permissionId: permission.permissionId }); this.permissions.dashboard.push(permission.dashboard); }
                     });
                     this.attachedIndices.resolve(this.permissions.index);
                     this.attachedAliases.resolve(this.permissions.alias);
@@ -88,28 +83,32 @@ class LogsRolesPermissionsCtrl {
 
     attachAlias (item) {
         this.saveAlias = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0])
+            loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0]),
+            successHandler: () => this.roleDetails.load()
         });
         return this.saveAlias.load();
     }
 
     attachIndex (item) {
         this.saveIndex = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0])
+            loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0]),
+            successHandler: () => this.roleDetails.load()
         });
         return this.saveIndex.load();
     }
 
     attachStream (item) {
         this.saveStream = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0])
+            loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0]),
+            successHandler: () => this.roleDetails.load()
         });
         return this.saveStream.load();
     }
 
     attachDashboard (item) {
         this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsRolesService.addDashboard(this.serviceName, this.roleId, item[0])
+            loaderFunction: () => this.LogsRolesService.addDashboard(this.serviceName, this.roleId, item[0]),
+            successHandler: () => this.roleDetails.load()
         });
         return this.saveDashboard.load();
     }

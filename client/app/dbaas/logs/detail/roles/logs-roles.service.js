@@ -28,6 +28,20 @@ class LogsRolesService {
             name: "",
             optionId: null
         };
+        this.permissions = {
+            dashboard: [],
+            alias: [],
+            index: [],
+            stream: []
+        };
+    }
+
+    getNewPermissions () {
+        this.permissions.dashboard.length = 0;
+        this.permissions.alias.length = 0;
+        this.permissions.index.length = 0;
+        this.permissions.stream.length = 0;
+        return this.permissions;
     }
 
     getAllStreams (serviceName) {
@@ -48,32 +62,44 @@ class LogsRolesService {
 
     addAlias (serviceName, roleId, alias) {
         return this.PermissionsApiService.addAlias({ serviceName, roleId, aliasId: alias.aliasId }).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .then(operation => {
+                this.RolesAapiService.resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+            })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_alias_error", err, { tokenName: alias.name }));
     }
 
     addDashboard (serviceName, roleId, dashboard) {
         return this.PermissionsApiService.addDashboard({ serviceName, roleId, dashboardId: dashboard.dashboardId }).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .then(operation => {
+                this.RolesAapiService.resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+            })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_dashboard_error", err, { tokenName: dashboard.title }));
     }
 
     addIndex (serviceName, roleId, index) {
         return this.PermissionsApiService.addIndex({ serviceName, roleId, indexId: index.indexId }).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .then(operation => {
+                this.RolesAapiService.resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+            })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_index_error", err, { tokenName: index.name }));
     }
 
     addStream (serviceName, roleId, stream) {
         return this.PermissionsApiService.addStream({ serviceName, roleId, streamId: stream.streamId }).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
-            .catch(err => this.LogsHelperService.handleError("logs_roles_add_stream_error", err, { tokenName: stream.name }));
+            .then(operation => {
+                this.RolesAapiService.resetAllCache();
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_roles_add_stream_error", err, { tokenName: stream.title }));
     }
 
     removePermission (serviceName, roleId, permission) {
         return this.PermissionsApiService.remove({ serviceName, roleId }, { permissionId: permission[0].permissionId }).$promise
             .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
-            .catch(err => this.LogsHelperService.handleError("logs_remove_permission_error", err, { tokenName: permission[0].permissionId }));
+            .catch(err => this.LogsHelperService.handleError("logs_remove_permission_error", err, { tokenName: permission[0].name || permission[0].title }));
     }
 
     getNewRole () {
@@ -124,26 +150,26 @@ class LogsRolesService {
 
     addRole (serviceName, object) {
         return this.RolesApiService.create({ serviceName }, object).$promise
-            .then(operation => this._handleSuccess(serviceName, operation.data, "logs_role_add_success", object.name))
-            .catch(this.ServiceHelper.errorHandler("logs_role_add_error"));
+            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_add_success", { name: object.name }))
+            .catch(err => this.LogsHelperService.handleError("logs_role_add_error", err, { name: object.name }));
     }
 
     updateRole (serviceName, roleId, object) {
         return this.RolesApiService.update({ serviceName, roleId }, object).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_update_success", object.name);
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_update_success", { name: object.name });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_role_update_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_role_update_error", err, { name: object.name }));
     }
 
     deleteRole (serviceName, role) {
         return this.RolesApiService.remove({ serviceName, roleId: role.roleId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_delete_success", role.name);
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_delete_success", { name: role.name });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_role_delete_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_role_delete_error", err, { name: role.name }));
     }
 
     deleteModal (role) {
@@ -157,45 +183,24 @@ class LogsRolesService {
         return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_add_success", userDetails.username);
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_member_add_success", { name: userDetails.username });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_role_member_add_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_role_member_add_error", err, { name: userDetails.username }));
     }
 
     removeMember (serviceName, roleId, username) {
         return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_role_member_remove_success", username);
+                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_member_remove_success", { name: username });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_role_member_remove_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_role_member_remove_error", err, { name: username }));
     }
 
     deleteMemberModal (username) {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_member_delete_title"),
             text: this.$translate.instant("logs_member_delete_question", { username })
-        });
-    }
-
-    _handleSuccess (serviceName, operation, successMessage, name) {
-        this.poller = this._pollOperation(serviceName, operation);
-        return this.poller.$promise
-            .then(() => this.ServiceHelper.successHandler(successMessage)({ name }));
-    }
-
-    _killPoller () {
-        if (this.poller) {
-            this.poller.kill();
-        }
-    }
-
-    _pollOperation (serviceName, operation) {
-        this._killPoller();
-        return this.CloudPoll.poll({
-            item: operation,
-            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogsRolesConstant.SUCCESS || opn.state === this.LogsRolesConstant.FAILURE
         });
     }
 
