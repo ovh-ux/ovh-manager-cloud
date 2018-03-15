@@ -111,7 +111,7 @@ angular.module("managerApp", [
             `);
     })
     .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiPaginationConfiguration) => {
+          ouiDatagridConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
         "use strict";
         $translatePartialLoader.addPart("components");
 
@@ -138,6 +138,23 @@ angular.module("managerApp", [
                     .replace("PAGE_COUNT", "{{pageCount}}"),
                 previousPage: $translate.instant("common_pagination_previous"),
                 nextPage: $translate.instant("common_pagination_next")
+            };
+
+            ouiFieldConfiguration.translations = {
+                errors: {
+                    required: $translate.instant("common_field_error_required"),
+                    number: $translate.instant("common_field_error_number"),
+                    email: $translate.instant("common_field_error_email"),
+                    min: $translate.instant("common_field_error_min")
+                        .replace("MIN_VALUE", "{{min}}"),
+                    max: $translate.instant("common_field_error_max")
+                        .replace("MAX_VALUE", "{{max}}"),
+                    minlength: $translate.instant("common_field_error_minlength")
+                        .replace("MIN_LENGTH_VALUE", "{{minlength}}"),
+                    maxlength: $translate.instant("common_field_error_maxlength")
+                        .replace("MAX_LENGTH_VALUE", "{{maxlength}}"),
+                    pattern: $translate.instant("common_field_error_pattern")
+                }
             };
 
             off();
