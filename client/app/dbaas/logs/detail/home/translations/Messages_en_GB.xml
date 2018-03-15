@@ -12,7 +12,7 @@
    <translation id="logs_home_shortcuts_graylog_api">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
 
-   <translation id="logs_home_shortcuts_elasticsearch_help">You have access to Elasticsearch by acquiring an index or alias.</translation>
+   <translation id="logs_home_shortcuts_elasticsearch_help">You can access Elasticsearch by acquiring an index or alias.</translation>
    <translation id="logs_home_usage">Usage</translation>
 
    <translation id="logs_home_configuration">Configuration</translation>

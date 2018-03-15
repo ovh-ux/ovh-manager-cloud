@@ -1,4 +1,4 @@
-<section class="container-fluid cui-page__content cui-page__content-flex">
+<section class="container-fluid cui-page__content cui-page__content-flex logs-home">
     <div class="oui-message oui-message_info m-3" role="alert">
         <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
         <p class="oui-message__body font-weight-bold" data-translate="logs_home_info_title"></p>
@@ -11,20 +11,24 @@
                 data-loading="ctrl.accountDetails.loading"
                 class="h-100">
                 <cui-tile-body-list>
+                    <div class="cui-tile__top-bordered"></div>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_stream"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastStream"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.allStream"></cui-tile-action-link>
                     </cui-tile-body-list-item>
+                    <div class="cui-tile__top-bordered"></div>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_dashboard"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastDashboard"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.allDashboard"></cui-tile-action-link>
                     </cui-tile-body-list-item>
-                    <cui-tile-body-list-item>
+                    <cui-tile-body-list-item class="cui-tile__top-bordered">
                         <cui-tile-action-link data-action="ctrl.actions.graylog"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.graylogApi"></cui-tile-action-link>
-                        <cui-tile-action-link data-action="ctrl.actions.elasticsearch"></cui-tile-action-link>
+                        <cui-tile-action-link data-action="ctrl.actions.elasticsearch">
+                            <i class="oui-icon oui-icon-help_circle tooltip-icon" aria-hidden="true" oui-tooltip="{{ 'logs_home_shortcuts_elasticsearch_help' | translate }}"></i>
+                        </cui-tile-action-link>                        
                     </cui-tile-body-list-item>
                 </cui-tile-body-list>
             </cui-tile>
@@ -40,7 +44,7 @@
                 data-title="'logs_home_configuration' | translate" 
                 data-loading="ctrl.accountDetails.loading || ctrl.tokenIds.loading"
                 class="h-100">
-                <cui-tile-body>
+                <cui-tile-body class="cui-tile__top-bordered">
                     <cui-tile-item data-term="'logs_home_account_name' | translate"
                         data-description="ctrl.accountDetails.data.service.displayName"
                         data-actions="ctrl.actions.changeName">
@@ -61,7 +65,7 @@
                 data-title="'logs_home_ssi_configuration' | translate" 
                 data-loading="ctrl.defaultCluster.loading"
                 class="h-100">
-                <cui-tile-body>
+                <cui-tile-body class="cui-tile__top-bordered">
                     <cui-tile-item>
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="ctrl.accountDetails.data.graylogEntryPoint"></cui-tile-definition-term>
@@ -90,10 +94,10 @@
                 data-loading="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading"
                 class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item data-term="'logs_home_offer' | translate"
+                    <cui-tile-item class="cui-tile__top-bordered" data-term="'logs_home_offer' | translate"
                     data-description="ctrl.account.data.offer.description"
                     data-actions="ctrl.actions.changeOffer"></cui-tile-item>
-                    <div class="cui-tile__item">
+                    <div class="cui-tile__item cui-tile__top-bordered">
                         <div class="d-flex cui-dropdown-menu-container">
                             <div class="cui-tile__item-main">
                                 <cui-tile-definitions>
@@ -105,10 +109,10 @@
                             <cui-tile-action-menu data-actions="ctrl.actions.editOptions" data-ng-if="ctrl.actions.editOptions"></cui-tile-action-menu>
                         </div>
                     </div>
-                    <cui-tile-item data-term="'logs_home_service' | translate"
+                    <cui-tile-item class="cui-tile__top-bordered" data-term="'logs_home_service' | translate"
                         data-description="ctrl.accountDetails.data.acccountName">
                     </cui-tile-item>
-                    <cui-tile-item data-term="'logs_home_start_date' | translate"
+                    <cui-tile-item class="cui-tile__top-bordered" data-term="'logs_home_start_date' | translate"
                         data-description="ctrl.accountDetails.data.service.createdAt | momentFormat:'LL'">
                     </cui-tile-item>
                 </cui-tile-body>
