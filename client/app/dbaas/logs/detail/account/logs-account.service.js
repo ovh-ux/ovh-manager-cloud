@@ -1,11 +1,11 @@
 class LogsAccountService {
     constructor (OvhApiDbaas, LogsHelperService) {
-        this.UserAapiService = OvhApiDbaas.User().Lexi();
+        this.UserAapiService = OvhApiDbaas.Logs().User().Lexi();
         this.LogsHelperService = LogsHelperService;
     }
 
     changePassword (serviceName, newPassword) {
-        return this.UserAapiService.changePassword({ serviceName }, newPassword)
+        return this.UserAapiService.changePassword({ serviceName }, { password: newPassword })
             .$promise
             .then(operation => {
                 this._resetAllCache();

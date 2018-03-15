@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_password_change_title">Change the password</translation>
+    <translation id="logs_password_new_label">New password</translation>
+    <translation id="logs_password_confirm_label">Confirm password</translation>
+    <translation id="logs_password_validation_message">Password must be at least 12 characters long, contain a number, an uppercase, a lowercase and a special character.</translation>
+
+    <translation id="logs_password_change_success">The password has been successfully changed</translation>
+    <translation id="logs_password_change_error">An error has occured while changing password: {{message}}</translation>
+
+</translations>

@@ -1,17 +1,12 @@
 class LogsAccountPasswordCtrl {
-    constructor ($q, $stateParams, $uibModalInstance, LogsAccountService, ControllerHelper, CloudMessage) {
+    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, CloudMessage, LogsAccountService) {
         this.$q = $q;
+        this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
         this.serviceName = this.$stateParams.serviceName;
-        this.LogsAccountService = LogsAccountService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
-
-        this.init();
-    }
-
-    init () {
-        console.log("init");
+        this.LogsAccountService = LogsAccountService;
     }
 
     /**
@@ -26,7 +21,7 @@ class LogsAccountPasswordCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsAccountService.changePassword(this.serviceName, this.token.data)
+                this.LogsAccountService.changePassword(this.serviceName, this.newPassword)
                     .finally(() => this.$uibModalInstance.close())
         });
         return this.saving.load();
