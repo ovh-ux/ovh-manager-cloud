@@ -7,6 +7,7 @@ class LogsAccountPasswordModalCtrl {
     }
 
     openModal () {
+        console.log("open modal");
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/account/password/logs-account-password.html",
@@ -18,7 +19,7 @@ class LogsAccountPasswordModalCtrl {
     }
 
     onCloseModal () {
-        this.$state.go("dbaas.logs.detail.tokens");
+        this.$state.go("dbaas.logs.detail.home");
     }
 }
 

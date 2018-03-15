@@ -10,5 +10,15 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/home"]
+        })
+        .state("dbaas.logs.detail.home.password", {
+            url: "/password",
+            views: {
+                passwordModal: {
+                    controller: "LogsAccountPasswordModalCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/home"]
         });
 });

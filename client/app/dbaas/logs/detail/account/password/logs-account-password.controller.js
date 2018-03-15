@@ -6,6 +6,12 @@ class LogsAccountPasswordCtrl {
         this.LogsAccountService = LogsAccountService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+
+        this.init();
+    }
+
+    init () {
+        console.log("init");
     }
 
     /**
