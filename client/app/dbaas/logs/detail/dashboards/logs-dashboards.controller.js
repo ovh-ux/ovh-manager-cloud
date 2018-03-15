@@ -1,5 +1,6 @@
 class LogsDashboardsCtrl {
-    constructor ($state, $stateParams, $translate, LogsDashboardsService, ControllerHelper, CloudMessage) {
+    constructor ($state, $stateParams, $translate, LogsDashboardsService,
+                 ControllerHelper, CloudMessage, LogsOfferConstant, ControllerModalHelper) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -7,6 +8,8 @@ class LogsDashboardsCtrl {
         this.LogsDashboardsService = LogsDashboardsService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.LogsOfferConstant = LogsOfferConstant;
+        this.ControllerModalHelper = ControllerModalHelper;
 
         this.initLoaders();
     }
@@ -47,11 +50,15 @@ class LogsDashboardsCtrl {
      * @memberof LogsDashboardsCtrl
      */
     duplicate (dashboard) {
-        this.$state.go("dbaas.logs.detail.dashboards.duplicate", {
-            serviceName: this.serviceName,
-            dashboardId: dashboard.dashboardId,
-            dashboardName: dashboard.title
-        });
+        if (this._isBasicOffer(this.quota.data)) {
+            this.showOfferUpgradeInfo();
+        } else {
+            this.$state.go("dbaas.logs.detail.dashboards.duplicate", {
+                serviceName: this.serviceName,
+                dashboardId: dashboard.dashboardId,
+                dashboardName: dashboard.title
+            });
+        }
     }
 
     /**
@@ -93,6 +100,30 @@ class LogsDashboardsCtrl {
      */
     getGraylogUrl (aapiDashboard) {
         return this.LogsDashboardsService.getDashboardGraylogUrl(aapiDashboard);
+    }
+
+    /**
+     * Checks if the user has a basic offer
+     *
+     * @returns true if the user is subscribed to a basic offer
+     * @memberof LogsDashboardsCtrl
+     */
+    _isBasicOffer (offerObj) {
+        return offerObj.reference === this.LogsOfferConstant.basicOffer;
+    }
+
+    /**
+     * show a modal dialog asking user to upgrade before creating more dashboards
+     *
+     * @memberof LogsDashboardsCtrl
+     */
+    showOfferUpgradeInfo () {
+        return this.ControllerModalHelper.showInfoModal({
+            titleText: this.$translate.instant("options_upgradequotalink_increase_quota_title"),
+            text: this.$translate.instant("logs_dashboards_basic_offer_info_message"),
+            okButtonText: this.$translate.instant("options_upgradequotalink_increase_quota_upgrade")
+        })
+            .then(() => this.$state.go("dbaas.logs.detail.offer", { serveiceName: this.serviceName }));
     }
 
 }

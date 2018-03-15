@@ -15,6 +15,7 @@
     <translation id="logs_dashboards_duplicate">Duplicate</translation>
     <translation id="logs_dashboards_delete_title">Delete a dashboard</translation>
     <translation id="logs_dashboards_delete_message">Are you sure you want to delete a dashboard: {{dashboardName}} ?</translation>
+    <translation id="logs_dashboards_basic_offer_info_message">You are currently subscribed to Basic offer and should upgrade to PRO in order to be able to duplicate or create more dashboards. Do you want to upgrade now?</translation>
 
     <translation id="logs_dashboards_update_title">Edit a dashboard</translation>
     <translation id="logs_dashboards_duplicate_title">Duplicate a dashboard</translation>

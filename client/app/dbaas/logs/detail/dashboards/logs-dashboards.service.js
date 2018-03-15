@@ -90,7 +90,8 @@ class LogsDashboardsService {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => ({
                 max: me.total.maxNbDashboard,
-                configured: me.total.curNbDashboard
+                configured: me.total.curNbDashboard,
+                reference: me.total.reference
             }))
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_quota_get_error", err, {}));
     }
