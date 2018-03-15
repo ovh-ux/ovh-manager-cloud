@@ -1,30 +1,18 @@
 class LogsOrderService {
-    constructor (OvhApiDbaas, ServiceHelper) {
+    constructor ($q, OvhApiDbaas, ServiceHelper, LogsOfferService) {
+        this.$q = $q;
         this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().Lexi();
         this.ServiceHelper = ServiceHelper;
-        this.staticOffer = {
-            "logs-pro-0001": { name: "1", unit: "GB", streams: 1, tables: 1, duration: "month" },
-            "logs-pro-0015": { name: "15", unit: "GB", streams: 5, tables: 5, limit: "0.5", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0030": { name: "30", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "1", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0090": { name: "90", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "3", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0150": { name: "150", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "5", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0300": { name: "300", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "10", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0600": { name: "600", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "20", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-0900": { name: "900", unit: "GB", streams: 5, tables: 5, collectionTool: 1, limit: "30", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-1500": { name: "1.5", unit: "TB", streams: 5, tables: 5, collectionTool: 1, limit: "50", limitDuration: "GB_day", duration: "month" },
-            "logs-pro-3000": { name: "3", unit: "TB", streams: 5, tables: 5, collectionTool: 1, limit: "100", limitDuration: "GB_day", duration: "month" }
-        };
+        this.LogsOfferService = LogsOfferService;
     }
 
     getOrder (serviceName) {
         return this.OvhApiDbaasLogsOrder.query({
             serviceName
         }).$promise
-            .then(result => {
-                _.each(result, offer => {
-                    offer.details = this.staticOffer[offer.planCode];
-                });
-                return _.filter(result, offer => offer.details !== undefined);
+            .then(plans => {
+                const promises = plans.map(plan => this.LogsOfferService.getOfferDetail(plan.planCode));
+                return this.$q.all(promises).then(planDetails => _.map(plans, item => _.extend(item, _.findWhere(planDetails, { reference: item.planCode }))));
             }).catch(this.ServiceHelper.errorHandler("logs_order_get_error"));
     }
 
