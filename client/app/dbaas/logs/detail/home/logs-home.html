@@ -1,52 +1,141 @@
-<section class="container-fluid cui-page__content cui-page__content-flex">
+<section class="container-fluid cui-page__content cui-page__content-flex logs-home">
+    <div class="oui-message oui-message_info m-3" role="alert">
+        <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
+        <p class="oui-message__body font-weight-bold" data-translate="logs_home_info_title"></p>
+        <p class="oui-message__body" data-translate="logs_home_info"></p>
+    </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_shortcuts' | translate"
-                      class="h-100">
+            <cui-tile 
+                data-title="'logs_home_shortcuts' | translate" 
+                data-loading="ctrl.accountDetails.loading"
+                class="h-100">
                 <cui-tile-body-list>
+                    <div class="cui-tile__top-bordered"></div>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_stream"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastStream"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.allStream"></cui-tile-action-link>
                     </cui-tile-body-list-item>
+                    <div class="cui-tile__top-bordered"></div>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_dashboard"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastDashboard"></cui-tile-action-link>
                         <cui-tile-action-link data-action="ctrl.actions.allDashboard"></cui-tile-action-link>
                     </cui-tile-body-list-item>
-                    <br/>
-                    <cui-tile-body-list-item>
+                    <cui-tile-body-list-item class="cui-tile__top-bordered">
                         <cui-tile-action-link data-action="ctrl.actions.graylog"></cui-tile-action-link>
-                        <cui-tile-action-link data-action="ctrl.actions.elasticsearch"></cui-tile-action-link>
+                        <cui-tile-action-link data-action="ctrl.actions.graylogApi"></cui-tile-action-link>
+                        <cui-tile-action-link data-action="ctrl.actions.elasticsearch" data-disabled="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)">
+                            <i data-ng-if="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)" class="oui-icon oui-icon-help_circle cui-tile__tooltip" aria-hidden="true" oui-tooltip="{{ ::'logs_home_shortcuts_elasticsearch_help' | translate }}"></i>
+                        </cui-tile-action-link>
                     </cui-tile-body-list-item>
                 </cui-tile-body-list>
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-8">
-            <cui-tile data-title="'logs_home_usage' | translate"
-                      class="h-100">
-                Un graphe
+            <cui-tile data-title="'logs_home_usage' | translate" class="h-100">
             </cui-tile>
         </div>
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_configuration' | translate"
-                      class="h-100">
-                Config
+            <cui-tile 
+                data-title="'logs_home_configuration' | translate" 
+                data-loading="ctrl.accountDetails.loading || ctrl.tokenIds.loading"
+                class="h-100">
+                <cui-tile-body class="cui-tile__top-bordered">
+                    <cui-tile-item data-term="'logs_home_account_name' | translate"
+                        data-description="ctrl.accountDetails.data.service.displayName"
+                        data-actions="ctrl.actions.changeName">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'logs_home_tokens' | translate"
+                        data-description="ctrl.tokenIds.data.length"
+                        data-actions="ctrl.actions.editTokens">
+                        <i class="oui-icon oui-icon-help_circle cui-tile__tooltip" aria-hidden="true" oui-tooltip="{{ ::'logs_home_tokens_tooltip' | translate }}"></i>
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'logs_home_service' | translate"
+                        data-description="ctrl.accountDetails.data.service.username">
+                    </cui-tile-item>
+                    <cui-tile-item data-term="'logs_home_password' | translate"
+                        data-description="'******'"
+                        data-actions="ctrl.actions.changePassword">
+                    </cui-tile-item>                    
+                </cui-tile-body>
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_access' | translate"
-                      class="h-100">
-                Accès
+            <cui-tile 
+                data-title="'logs_home_ssi_configuration' | translate" 
+                data-loading="ctrl.defaultCluster.loading"
+                class="h-100">
+                <cui-tile-body class="cui-tile__top-bordered">
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="ctrl.accountDetails.data.graylogEntryPoint"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <cui-clipboard data-text="ctrl.defaultCluster.data.directInputPEM"></cui-clipboard>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                    <cui-tile-item>
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'logs_home_collector' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <cui-clipboard data-text="ctrl.defaultCluster.data.dedicatedInputPEM"></cui-clipboard>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                    <cui-tile-item>
+                        <cui-tile-action-link class="mt-3" data-action="ctrl.actions.messagesAndPorts"></cui-tile-action-link>
+                    </cui-tile-item>
+                </cui-tile-body>
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'logs_home_subscription' | translate"
-                      class="h-100">
-                Abonnement
+            <cui-tile 
+                data-title="'logs_home_subscription' | translate" 
+                data-loading="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading"
+                class="h-100">
+                <cui-tile-body>
+                    <cui-tile-item class="cui-tile__top-bordered" data-term="'logs_home_offer' | translate"
+                    data-description="ctrl.account.data.offer.description"
+                    data-actions="ctrl.actions.changeOffer"></cui-tile-item>
+                    <div class="cui-tile__item cui-tile__top-bordered">
+                        <div class="d-flex cui-dropdown-menu-container">
+                            <div class="cui-tile__item-main">
+                                <cui-tile-definitions>
+                                    <cui-tile-definition-term data-term="'logs_home_options' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-ng-repeat="option in ctrl.options.data" data-ng-if="ctrl.options.data.length > 0" data-description="option.description"></cui-tile-definition-description>
+                                    <cui-tile-definition-description data-ng-if="ctrl.options.data.length === 0" data-description="'logs_home_options_empty' | translate"></cui-tile-definition-description>
+                                </cui-tile-definitions>
+                            </div>
+                            <cui-tile-action-menu data-actions="ctrl.actions.editOptions" data-ng-if="ctrl.actions.editOptions"></cui-tile-action-menu>
+                        </div>
+                    </div>
+                    <cui-tile-item class="cui-tile__top-bordered">
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'common_tile_subscription_contact' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <span data-ng-bind="ctrl.serviceInfos.data.contactAdmin"></span>
+                                <small data-translate="common_tile_subscription_contact_admin"></small>
+                            </cui-tile-definition-description>
+                            <cui-tile-definition-description>
+                                <span data-ng-bind="ctrl.serviceInfos.data.contactBilling"></span>
+                                <small data-translate="common_tile_subscription_contact_billing"></small>
+                            </cui-tile-definition-description>
+                            <cui-tile-definition-description>
+                                <span data-ng-bind="ctrl.serviceInfos.data.contactTech"></span>
+                                <small data-translate="common_tile_subscription_contact_technical"></small>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered" data-term="'logs_home_start_date' | translate"
+                        data-description="ctrl.accountDetails.data.service.createdAt | momentFormat:'LL'">
+                    </cui-tile-item>
+                </cui-tile-body>
             </cui-tile>
         </div>
     </div>
+    <div ui-view="logsAccountContent"></div>
 </section>
