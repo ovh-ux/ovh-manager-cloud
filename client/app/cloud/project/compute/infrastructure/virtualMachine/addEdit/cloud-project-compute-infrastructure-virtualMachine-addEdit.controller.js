@@ -1803,13 +1803,13 @@ angular.module("managerApp")
     // TODO : Delete this and the code in the .html once we remove the old catalog.
     //        Used to display the proper label text.
     self.catalogVersion = function () {
-        var newCatalog =  _.any(self.panelsData.regions, function (region) {
-            return /[a-z|A-Z]{3}3/.test(region);
+        let oldCatalog = _.any(self.panelsData.regions, function (region) {
+            return /GRA1|BHS1|SBG1/.test(region);
         });
         if (/(WAW)|(DE)|(UK)/.test(self.model.region)) {
-            newCatalog = true;
+            oldCatalog = false;
         }
-        return newCatalog ? 'new' : 'old';
+        return oldCatalog ? "old" : "new";
     };
 
     /**
