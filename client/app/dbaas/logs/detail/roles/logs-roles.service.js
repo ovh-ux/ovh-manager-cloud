@@ -64,7 +64,7 @@ class LogsRolesService {
         return this.PermissionsApiService.addAlias({ serviceName, roleId, aliasId: alias.aliasId }).$promise
             .then(operation => {
                 this.RolesAapiService.resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_alias_error", err, { tokenName: alias.name }));
     }
@@ -73,7 +73,7 @@ class LogsRolesService {
         return this.PermissionsApiService.addDashboard({ serviceName, roleId, dashboardId: dashboard.dashboardId }).$promise
             .then(operation => {
                 this.RolesAapiService.resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_dashboard_error", err, { tokenName: dashboard.title }));
     }
@@ -82,7 +82,7 @@ class LogsRolesService {
         return this.PermissionsApiService.addIndex({ serviceName, roleId, indexId: index.indexId }).$promise
             .then(operation => {
                 this.RolesAapiService.resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_index_error", err, { tokenName: index.name }));
     }
@@ -91,14 +91,14 @@ class LogsRolesService {
         return this.PermissionsApiService.addStream({ serviceName, roleId, streamId: stream.streamId }).$promise
             .then(operation => {
                 this.RolesAapiService.resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
             .catch(err => this.LogsHelperService.handleError("logs_roles_add_stream_error", err, { tokenName: stream.title }));
     }
 
     removePermission (serviceName, roleId, permission) {
         return this.PermissionsApiService.remove({ serviceName, roleId }, { permissionId: permission[0].permissionId }).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation))
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation))
             .catch(err => this.LogsHelperService.handleError("logs_remove_permission_error", err, { tokenName: permission[0].name || permission[0].title }));
     }
 
@@ -150,7 +150,7 @@ class LogsRolesService {
 
     addRole (serviceName, object) {
         return this.RolesApiService.create({ serviceName }, object).$promise
-            .then(operation => this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_add_success", { name: object.name }))
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_add_success", { name: object.name }))
             .catch(err => this.LogsHelperService.handleError("logs_role_add_error", err, { name: object.name }));
     }
 
@@ -158,7 +158,7 @@ class LogsRolesService {
         return this.RolesApiService.update({ serviceName, roleId }, object).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_update_success", { name: object.name });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_update_success", { name: object.name });
             })
             .catch(err => this.LogsHelperService.handleError("logs_role_update_error", err, { name: object.name }));
     }
@@ -167,7 +167,7 @@ class LogsRolesService {
         return this.RolesApiService.remove({ serviceName, roleId: role.roleId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_delete_success", { name: role.name });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_delete_success", { name: role.name });
             })
             .catch(err => this.LogsHelperService.handleError("logs_role_delete_error", err, { name: role.name }));
     }
@@ -183,7 +183,7 @@ class LogsRolesService {
         return this.MembersApiService.create({ serviceName, roleId }, userDetails).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_member_add_success", { name: userDetails.username });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_member_add_success", { name: userDetails.username });
             })
             .catch(err => this.LogsHelperService.handleError("logs_role_member_add_error", err, { name: userDetails.username }));
     }
@@ -192,7 +192,7 @@ class LogsRolesService {
         return this.MembersApiService.remove({ serviceName, roleId, username }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_role_member_remove_success", { name: username });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_member_remove_success", { name: username });
             })
             .catch(err => this.LogsHelperService.handleError("logs_role_member_remove_error", err, { name: username }));
     }
