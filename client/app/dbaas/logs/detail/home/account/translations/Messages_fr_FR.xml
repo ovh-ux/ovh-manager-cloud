@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-    <translation id="logs_home_account_title">Changer de contact</translation>
-    <translation id="logs_home_account_description1">Changer le contact actuel</translation>
-    <translation id="logs_home_account_description2">En modiffiant l’adresse de contact de ce service, l’ensemble des notifications sera envoyé au nouveau destinataire.</translation>
-    <translation id="logs_home_account_contact_field">Contact</translation>
-    <translation id="logs_home_account_contact_field_description">Sélectionnez l’un de vos contacts. Si aucun contact n’est choisi, il sera associé par défaut à votre identité principale</translation>
-    <translation id="logs_home_account_no_contact">Ne pas désigner de contact</translation>
-    <translation id="logs_home_account_add_contact">Ajouter un nouveau contact</translation>
+    <translation id="logs_home_account_title">Changer le nom d'affichage</translation>
+    <translation id="logs_home_account_description">Changez le nom réel de {{displayName}} affiché dans votre menu de gauche et en haut de la page dans l'en-tête.</translation>
+    <translation id="logs_home_account_display_name_field">Afficher un nom</translation>
 </translations>

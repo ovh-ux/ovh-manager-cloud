@@ -12,13 +12,13 @@
    <translation id="logs_home_shortcuts_graylog_api">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
 
-   <translation id="logs_home_shortcuts_elasticsearch_help">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
+   <translation id="logs_home_shortcuts_elasticsearch_help">Un alias ou un indice est requis pour accéder à l'API Elasticsearch.</translation>
    <translation id="logs_home_usage">Utilisation</translation>
    
    <translation id="logs_home_configuration">Configuration</translation>
    <translation id="logs_home_account_name">Afficher un nom</translation>
    <translation id="logs_home_tokens">Jetons</translation>
-   <translation id="logs_home_tokens_tooltip">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et lire sur Elasticsearch)</translation>
+   <translation id="logs_home_tokens_tooltip">Ces jetons vous permettent d'accéder aux API</translation>
    <translation id="logs_home_password">Mot de passe</translation>
    
    <translation id="logs_home_ssi_configuration">SSI Configuration</translation>
@@ -33,11 +33,12 @@
    <translation id="logs_home_service">Logs Data Platform Service</translation>
    <translation id="logs_home_start_date">Date de création</translation>
    
-   <translation id="logs_home_contact_update_success">Contact mis à jour avec succès</translation>
+   <translation id="logs_home_display_name_update_success">Nom d'affichage mis à jour avec succès</translation>
 
    <translation id="logs_home_account_details_get_error">Une erreur s'est produite lors de la tentative de récupération des détails du compte: {{message}}</translation>
    <translation id="logs_home_account_get_error">Une erreur s'est produite lors de la tentative de récupération du compte: {{message}}</translation>
    <translation id="logs_home_contacts_get_error">Une erreur s'est produite lors de la tentative de récupération des contacts: {{message}}</translation>
    <translation id="logs_home_contact_get_error">Une erreur s'est produite lors de la tentative de récupération des coordonnées: {{message}}</translation>
-   <translation id="logs_home_contact_update_error">Une erreur s'est produite lors de la tentative de mise à jour du contact: {{message}}</translation>
+   <translation id="logs_home_display_name_update_error">Une erreur s'est produite lors de la tentative de mise à jour du nom d'affichage: {{message}}</translation>
+   <translation id="logs_home_service_info_get_error">Une erreur s'est produite lors de la tentative d'extraction des informations de service: {{message}}</translation>
 </translations>

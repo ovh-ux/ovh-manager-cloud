@@ -43,45 +43,6 @@ class LogsHomeService {
     }
 
     /**
-     * Gets the contact details for a particular contact id
-     *
-     * @param {string} contactId
-     * @returns promise which will resolve to the contact details object
-     * @memberof LogsHomeService
-     */
-    getContactDetails (contactId) {
-        return this.ContactsApiLexiService.get({ contactId })
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_home_contact_get_error"));
-    }
-
-    /**
-     * Gets the list of contact ids
-     *
-     * @returns promise which will resolve to the list of contact ids
-     * @memberof LogsHomeService
-     */
-    getContactIds () {
-        return this.ContactsApiLexiService.query({})
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_home_contacts_get_error"));
-    }
-
-    /**
-     * Gets all contact details
-     *
-     * @returns promise which will resolve to the array of contact details objects
-     * @memberof LogsHomeService
-     */
-    getContacts () {
-        return this.getContactIds()
-            .then(contactIds => {
-                const promises = contactIds.map(contactId => this.getContactDetails(contactId));
-                return this.$q.all(promises);
-            });
-    }
-
-    /**
      * Gets the current offer object
      *
      * @param {any} serviceName
@@ -109,20 +70,32 @@ class LogsHomeService {
     }
 
     /**
-     * Updates the current contact information. Any further communication would be then sent to this contact
+     * Gets the service info
      *
      * @param {any} serviceName
-     * @param {string} contactId - the contact to set active
+     * @returns promise which will resolve to the service info
+     * @memberof LogsHomeService
+     */
+    getServiceInfos (serviceName) {
+        return this.LogsLexiService.serviceInfos({ serviceName }).$promise
+            .catch(this.ServiceHelper.errorHandler("logs_home_service_info_get_error"));
+    }
+
+    /**
+     * Updates the current display name information
+     *
+     * @param {any} serviceName
+     * @param {string} displayName
      * @returns promise which will resolve or reject once the operation is complete
      * @memberof LogsHomeService
      */
-    updateContact (serviceName, contactId) {
-        return this.LogsLexiService.update({ serviceName }, { contactId })
+    updateDisplayName (serviceName, displayName) {
+        return this.LogsLexiService.update({ serviceName }, { displayName })
             .$promise.then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_contact_update_success", { });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_display_name_update_success", { });
             })
-            .catch(err => this.LogsHelperService.handleError("logs_home_contact_update_error", err, { }));
+            .catch(err => this.LogsHelperService.handleError("logs_home_display_name_update_error", err, { }));
     }
 
     /**
@@ -230,8 +203,6 @@ class LogsHomeService {
      * @memberof LogsHomeService
      */
     _transformAccountDetails (accountDetails) {
-        accountDetails.fullname = accountDetails.service.contact ? `${accountDetails.service.contact.firstName} ${accountDetails.service.contact.lastName}` : `${accountDetails.me.firstname} ${accountDetails.me.name}`;
-        accountDetails.acccountName = `${accountDetails.fullname} - ${accountDetails.service.username}`;
         accountDetails.email = accountDetails.service.contact ? accountDetails.service.contact.email : accountDetails.me.email;
         this._getGreyLogUrl(accountDetails);
         this._getGreyLogApiUrl(accountDetails);

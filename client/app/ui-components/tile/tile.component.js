@@ -102,7 +102,7 @@ angular.module("managerApp")
             <div class="d-flex" data-ng-class="{ 'cui-dropdown-menu-container': $ctrl.actions }">
                 <div class="cui-tile__item-main" data-ng-if="$ctrl.term">
                     <cui-tile-definitions data-ng-if="$ctrl.term">
-                        <cui-tile-definition-term data-term="$ctrl.term"></cui-tile-definition-term>
+                        <cui-tile-definition-term data-term="$ctrl.term"><ng-transclude></ng-transclude></cui-tile-definition-term>
                         <cui-tile-definition-description data-description="$ctrl.description"></cui-tile-definition-description>
                     </cui-tile-definitions>
                 </div>
@@ -203,14 +203,14 @@ angular.module("managerApp")
                 </button>
                 <a data-ng-if="$ctrl.action.state && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     class="oui-button oui-button_link cui-tile__button cui-tile__link"
-                    data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}"
+                    data-ui-sref="{{ $ctrl.disabled ? '' : $ctrl.action.state + $ctrl.getActionStateParamString() }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-external_link ml-1" data-ng-if="$ctrl.action.isExternal" aria-hidden="true"></i>
                 </a>
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     class="oui-button oui-button_link cui-tile__button cui-tile__link"
-                    data-ng-href="{{ $ctrl.action.href }}"
+                    data-ng-href="{{ $ctrl.disabled ? '' : $ctrl.action.href }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
                     <i class="oui-icon oui-icon-external_link ml-1" data-ng-if="$ctrl.action.isExternal" aria-hidden="true"></i>
@@ -219,7 +219,8 @@ angular.module("managerApp")
             </div>`,
         transclude: true,
         bindToController: {
-            action: "<"
+            action: "<",
+            disabled: "<"
         }
     }))
     .directive("cuiTileDefinitions", () => ({
@@ -239,10 +240,14 @@ angular.module("managerApp")
         controller: class CuiTileDefinitionTermCtrl {},
         scope: true,
         template: `
-            <dt class="cui-tile__term text-truncate" data-ng-bind="$ctrl.term"></dt>`,
+            <dt class="cui-tile__term text-truncate">
+                {{$ctrl.term}}
+                <ng-transclude></ng-transclude>
+            </dt>`,
         bindToController: {
             term: "<"
-        }
+        },
+        transclude: true
     }))
     .directive("cuiTileDefinitionDescription", () => ({
         replace: true,

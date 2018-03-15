@@ -12,14 +12,7 @@ class LogsHomeCtrl {
     }
 
     $onInit () {
-        const loaderPromises = [];
-        loaderPromises.push(this.accountDetails.load());
-        loaderPromises.push(this.account.load());
-        loaderPromises.push(this.options.load());
-        loaderPromises.push(this.tokenIds.load());
-        loaderPromises.push(this.defaultCluster.load());
-
-        this.$q.all(loaderPromises)
+        this.runLoaders()
             .then(() => this._initActions());
     }
 
@@ -149,6 +142,9 @@ class LogsHomeCtrl {
         this.defaultCluster = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName)
         });
+        this.serviceInfos = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName)
+        });
     }
 
     /**
@@ -167,6 +163,22 @@ class LogsHomeCtrl {
                 }
             }
         });
+    }
+
+    /**
+     * Runs the loaders
+     *
+     * @memberof LogsHomeCtrl
+     */
+    runLoaders () {
+        const loaderPromises = [];
+        loaderPromises.push(this.accountDetails.load());
+        loaderPromises.push(this.account.load());
+        loaderPromises.push(this.options.load());
+        loaderPromises.push(this.tokenIds.load());
+        loaderPromises.push(this.defaultCluster.load());
+        loaderPromises.push(this.serviceInfos.load());
+        return this.$q.all(loaderPromises);
     }
 }
 

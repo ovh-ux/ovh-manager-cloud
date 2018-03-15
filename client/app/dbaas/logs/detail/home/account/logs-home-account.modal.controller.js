@@ -1,7 +1,8 @@
 class LogsHomeAccountModalCtrl {
-    constructor ($scope, $state, ControllerHelper) {
+    constructor ($scope, $state, $stateParams, ControllerHelper) {
         this.$scope = $scope;
         this.$state = $state;
+        this.serviceName = $stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.openModal();
     }
@@ -13,12 +14,14 @@ class LogsHomeAccountModalCtrl {
                 controller: "LogsHomeAccountCtrl",
                 controllerAs: "ctrl"
             }
-        }).then(() => this.$scope.$parent.ctrl.initLoaders())
+        }).then(() => this.$scope.$parent.ctrl.runLoaders())
             .finally(() => this.onCloseModal());
     }
 
     onCloseModal () {
-        this.$state.go("dbaas.logs.detail.home");
+        this.$state.go("dbaas.logs.detail.home", {
+            serviceName: this.serviceName
+        });
     }
 }
 

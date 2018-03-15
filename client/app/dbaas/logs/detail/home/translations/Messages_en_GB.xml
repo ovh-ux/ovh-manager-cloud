@@ -12,13 +12,13 @@
    <translation id="logs_home_shortcuts_graylog_api">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch">Elasticsearch</translation>
 
-   <translation id="logs_home_shortcuts_elasticsearch_help">You can access Elasticsearch by acquiring an index or alias.</translation>
+   <translation id="logs_home_shortcuts_elasticsearch_help">An alias or an index is required to access the Elasticsearch API.</translation>
    <translation id="logs_home_usage">Usage</translation>
 
    <translation id="logs_home_configuration">Configuration</translation>
    <translation id="logs_home_account_name">Display name</translation>
    <translation id="logs_home_tokens">Tokens</translation>
-   <translation id="logs_home_tokens_tooltip">These tokens allow you to access APIs (write to indexes, read on Graylog and read on Elasticsearch)</translation>
+   <translation id="logs_home_tokens_tooltip">These tokens allow you to access APIs</translation>
    <translation id="logs_home_password">Password</translation>
 
    <translation id="logs_home_ssi_configuration">SSI Configuration</translation>
@@ -33,11 +33,12 @@
    <translation id="logs_home_service">Logs Data Platform Service</translation>
    <translation id="logs_home_start_date">Creation date</translation>
    
-   <translation id="logs_home_contact_update_success">Contact successfully updated</translation>
+   <translation id="logs_home_display_name_update_success">Display name successfully updated</translation>
 
    <translation id="logs_home_account_details_get_error">An error occurred while trying to retrieve account details: {{message}}</translation>
    <translation id="logs_home_account_get_error">An error occurred while trying to retrieve account: {{message}}</translation>
    <translation id="logs_home_contacts_get_error">An error occurred while trying to retrieve the contacts: {{message}}</translation>
    <translation id="logs_home_contact_get_error">An error occurred while trying to retrieve contact details: {{message}}</translation>
-   <translation id="logs_home_contact_update_error">An error occurred while trying to updated the contact: {{message}}</translation>
+   <translation id="logs_home_display_name_update_error">An error occurred while trying to update the display name: {{message}}</translation>
+   <translation id="logs_home_service_info_get_error">An error occurred while trying to retrieve the service info: {{message}}</translation>
 </translations>

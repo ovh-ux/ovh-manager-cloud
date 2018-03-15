@@ -1,19 +1,21 @@
 class LogsHomeAccountCtrl {
-    constructor ($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeConstant, LogsHomeService) {
+    constructor ($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeAccountConstant, LogsHomeConstant, LogsHomeService) {
         this.$location = $location;
         this.serviceName = $stateParams.serviceName;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
+        this.LogsHomeAccountConstant = LogsHomeAccountConstant;
         this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this._initLoaders();
     }
 
     $onInit () {
-        this.accountDetails.load();
-        this.contacts.load();
-        this.addContactUrl = this.LogsHomeConstant.ADD_CONTACT_URL + this.$location.absUrl();
+        this.accountDetails.load()
+            .then(() => {
+                this.displayName = this.accountDetails.data.service.displayName;
+            });
     }
 
     /**
@@ -24,9 +26,6 @@ class LogsHomeAccountCtrl {
     _initLoaders () {
         this.accountDetails = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName)
-        });
-        this.contacts = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsHomeService.getContacts(this.serviceName)
         });
     }
 
@@ -44,11 +43,15 @@ class LogsHomeAccountCtrl {
      *
      * @memberof LogsHomeAccountCtrl
      */
-    updateContact () {
+    updateDisplayName () {
+        if (this.form.$invalid) {
+            return this.$q.reject();
+        }
+
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsHomeService.updateContact(this.serviceName, this.accountDetails.data.service.contactId)
+                this.LogsHomeService.updateDisplayName(this.serviceName, this.accountDetails.data.service.displayName)
                     .finally(() => this.$uibModalInstance.close())
         });
         return this.saving.load();
