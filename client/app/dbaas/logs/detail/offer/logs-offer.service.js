@@ -13,6 +13,12 @@ class LogsOfferService {
             .catch(this.ServiceHelper.errorHandler("logs_offer_load_error"));
     }
 
+    getOfferDetail (offerCode) {
+        return this.OvhApiDbaasLogsOffer.offerDetail({
+            offerCode
+        }).$promise;
+    }
+
     showWarning () {
         this.ControllerHelper.modal.showWarningModal({
             title: this.$translate.instant("logs_offer_conflict_title"),

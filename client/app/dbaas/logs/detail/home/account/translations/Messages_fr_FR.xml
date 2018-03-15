@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_home_account_title">Changer le nom d'affichage</translation>
+    <translation id="logs_home_account_description">Changez le nom réel de {{displayName}} affiché dans votre menu de gauche et en haut de la page dans l'en-tête.</translation>
+    <translation id="logs_home_account_display_name_field">Afficher un nom</translation>
+</translations>

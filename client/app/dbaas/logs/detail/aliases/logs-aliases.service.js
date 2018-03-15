@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService) {
+                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService, LogOptionConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -16,6 +16,7 @@ class LogsAliasesService {
         this.CloudMessage = CloudMessage;
         this.LogsStreamsService = LogsStreamsService;
         this.LogsIndexService = LogsIndexService;
+        this.LogOptionConstant = LogOptionConstant;
 
         this.contentTypeEnum = _.indexBy(["STREAMS", "INDICES"]);
         this.contents = [
@@ -38,6 +39,20 @@ class LogsAliasesService {
     getAliases (serviceName) {
         return this.getAliasesDetails(serviceName)
             .catch(this.ServiceHelper.errorHandler("logs_aliases_get_error"));
+    }
+
+
+    /**
+     * returns array of owned aliases with details of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of aliases. each stream will have all details populated.
+     * @memberof LogsStreamsService
+     */
+    getOwnAliases (serviceName) {
+        return this.getAliasesDetails(serviceName)
+            .then(aliases => aliases.filter(alias => alias.info.isEditable))
+            .catch(err => this.LogsHelperService.handleError("logs_aliases_get_error", err, {}));
     }
 
     /**
@@ -237,7 +252,7 @@ class LogsAliasesService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogAliasConstants.ALIAS_OPTION_REFERENCE);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.ALIAS_OPTION_REFERENCE);
     }
 
     getElasticSearchUrl (alias) {

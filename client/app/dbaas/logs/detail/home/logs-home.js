@@ -9,7 +9,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/home"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/home", "dbaas/logs/detail/home/formatsports", "dbaas/logs/detail/home/account", "dbaas/logs/detail/offer", "dbaas/logs/detail/options"]
         })
         .state("dbaas.logs.detail.home.password", {
             url: "/password",
@@ -20,5 +20,15 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/home", "dbaas/logs/detail/account/password"]
+        })
+        .state("dbaas.logs.detail.home.account", {
+            url: "/account",
+            views: {
+                logsAccountContent: {
+                    controller: "LogsHomeAccountModalCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/home", "dbaas/logs/detail/home/account"]
         });
 });

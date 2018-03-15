@@ -105,16 +105,18 @@ class LogsOptionsService {
         return this.getSubscribedOptions(serviceName)
             .then(response => {
                 switch (optionType) {
-                    case "logs-stream":
+                    case this.LogOptionConstant.STREAM_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbStream");
-                    case "index":
+                    case this.LogOptionConstant.INDEX_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbIndex");
-                    case "logs-alias":
+                    case this.LogOptionConstant.ALIAS_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbAlias");
-                    case "logs-input":
+                    case this.LogOptionConstant.INPUT_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbInput");
-                    case "logs-role":
+                    case this.LogOptionConstant.ROLE_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbRole");
+                    case this.LogOptionConstant.DASHBOARD_OPTION_REFERENCE:
+                        return this._filterOptions(response.options, "maxNbDashboard");
                     default:
                         return response.options;
                 }
