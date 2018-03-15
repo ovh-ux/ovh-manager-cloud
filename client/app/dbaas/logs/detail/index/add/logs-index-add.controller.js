@@ -51,6 +51,7 @@ class LogsIndexAddModalCtrl {
                 this.LogsIndexService.createIndex(this.serviceName, this.index)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }
@@ -64,6 +65,7 @@ class LogsIndexAddModalCtrl {
                 this.LogsIndexService.updateIndex(this.serviceName, this.indexInfo, this.index)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }

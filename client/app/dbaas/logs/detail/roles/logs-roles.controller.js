@@ -64,6 +64,7 @@ class LogsRolesCtrl {
             this.delete = this.ControllerHelper.request.getHashLoader({
                 loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info)
                     .then(() => this.initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
             });
             this.delete.load();
         });

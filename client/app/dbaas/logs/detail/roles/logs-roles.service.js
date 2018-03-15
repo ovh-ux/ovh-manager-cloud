@@ -1,13 +1,12 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardService, LogsHelperService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardsService, LogsHelperService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
-        this.LogsDashboardService = LogsDashboardService;
+        this.LogsDashboardsService = LogsDashboardsService;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsAliasesService = LogsAliasesService;
-        this.LogsDashboardService = LogsDashboardService;
         this.LogsIndexService = LogsIndexService;
         this.LogsStreamsService = LogsStreamsService;
         this.LogsHelperService = LogsHelperService;
@@ -45,19 +44,19 @@ class LogsRolesService {
     }
 
     getAllStreams (serviceName) {
-        return this.LogsStreamsService.getStreamDetails(serviceName);
+        return this.LogsStreamsService.getOwnStreams(serviceName);
     }
 
     getAllAliases (serviceName) {
-        return this.LogsAliasesService.getAliases(serviceName);
+        return this.LogsAliasesService.getOwnAliases(serviceName);
     }
 
     getAllDashboards (serviceName) {
-        return this.LogsDashboardService.getAllDashboards(serviceName);
+        return this.LogsDashboardsService.getOwnDashboards(serviceName);
     }
 
     getAllIndices (serviceName) {
-        return this.LogsIndexService.getIndices(serviceName);
+        return this.LogsIndexService.getOwnIndices(serviceName);
     }
 
     addAlias (serviceName, roleId, alias) {

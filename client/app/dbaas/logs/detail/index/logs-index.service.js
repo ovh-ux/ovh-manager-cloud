@@ -1,10 +1,11 @@
 class LogsIndexService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudPoll = CloudPoll;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
+        this.LogsHelperService = LogsHelperService;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsIndexConstant = LogsIndexConstant;
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
@@ -32,7 +33,8 @@ class LogsIndexService {
                     mainOfferCurrent: me.offer.curNbIndex
                 };
                 return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_streams_quota_get_error"));
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_streams_quota_get_error", err, {}));
     }
 
     getIndices (serviceName) {
@@ -41,7 +43,13 @@ class LogsIndexService {
                 const promises = indices.map(indexId => this.getIndexDetails(serviceName, indexId));
                 return this.$q.all(promises);
             })
-            .catch(this.ServiceHelper.errorHandler("logs_index_get_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_index_get_error", err, {}));
+    }
+
+    getOwnIndices (serviceName) {
+        return this.getIndices(serviceName)
+            .then(indices => indices.filter(index => index.info.isEditable))
+            .catch(err => this.LogsHelperService.handleError("logs_index_get_error", err, {}));
     }
 
     getIndexDetails (serviceName, indexId) {
@@ -75,9 +83,9 @@ class LogsIndexService {
         return this.IndexApiService.post({ serviceName }, object).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_create_success", object.suffix);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_index_create_success", { name: object.suffix });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_index_create_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_index_create_error", err, { name: object.suffix }));
     }
 
     updateIndex (serviceName, index, indexInfo) {
@@ -85,45 +93,24 @@ class LogsIndexService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_edit_success", index.name);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_index_edit_success", { name: index.name });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_index_edit_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_index_edit_error", err, { name: index.name }));
     }
 
     deleteIndex (serviceName, index) {
         return this.IndexApiService.delete({ serviceName, indexId: index.indexId }).$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_index_delete_success", index.name);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_index_delete_success", { name: index.name });
             })
-            .catch(this.ServiceHelper.errorHandler("logs_index_delete_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_index_delete_error", err, { name: index.name }));
     }
 
     _resetAllCache () {
         this.IndexApiService.resetAllCache();
         this.IndexAapiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
-    }
-
-    _handleSuccess (serviceName, operation, successMessage, name) {
-        this.poller = this._pollOperation(serviceName, operation);
-        return this.poller.$promise
-            .then(() => this.ServiceHelper.successHandler(successMessage)({ name }));
-    }
-
-    _killPoller () {
-        if (this.poller) {
-            this.poller.kill();
-        }
-    }
-
-    _pollOperation (serviceName, operation) {
-        this._killPoller();
-        return this.CloudPoll.poll({
-            item: operation,
-            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogsIndexConstant.FAILURE || opn.state === this.LogsIndexConstant.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
-        });
     }
 }
 

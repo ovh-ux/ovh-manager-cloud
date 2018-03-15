@@ -1,5 +1,5 @@
 class LogsRolesPermissionsCtrl {
-    constructor ($q, $stateParams, ControllerHelper, CloudMessage, LogsRolesService) {
+    constructor ($q, $stateParams, CloudMessage, ControllerHelper, LogsRolesService) {
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -71,7 +71,7 @@ class LogsRolesPermissionsCtrl {
         this.allStreams = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.getAllStreams(this.serviceName)
                 .then(result => {
-                    const diff = _.map(_.filter(result, stream => stream.info.isEditable && !_.find(permissionList, permission => permission.streamId === stream.info.streamId)), "info");
+                    const diff = _.map(_.filter(result, stream => !_.find(permissionList, permission => permission.streamId === stream.info.streamId)), "info");
                     this.availableStreams.resolve(diff);
                 })
         });
@@ -98,6 +98,7 @@ class LogsRolesPermissionsCtrl {
     }
 
     attachAlias (item) {
+        this.CloudMessage.flushChildMessage();
         this.saveAlias = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addAlias(this.serviceName, this.roleId, item[0]),
             successHandler: () => this.roleDetails.load(),
@@ -107,6 +108,7 @@ class LogsRolesPermissionsCtrl {
     }
 
     attachIndex (item) {
+        this.CloudMessage.flushChildMessage();
         this.saveIndex = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addIndex(this.serviceName, this.roleId, item[0]),
             successHandler: () => this.roleDetails.load(),
@@ -116,6 +118,7 @@ class LogsRolesPermissionsCtrl {
     }
 
     attachStream (item) {
+        this.CloudMessage.flushChildMessage();
         this.saveStream = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addStream(this.serviceName, this.roleId, item[0]),
             successHandler: () => this.roleDetails.load(),
@@ -125,6 +128,7 @@ class LogsRolesPermissionsCtrl {
     }
 
     attachDashboard (item) {
+        this.CloudMessage.flushChildMessage();
         this.saveDashboard = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.addDashboard(this.serviceName, this.roleId, item[0]),
             successHandler: () => this.roleDetails.load(),
@@ -134,6 +138,7 @@ class LogsRolesPermissionsCtrl {
     }
 
     removePermission (permission) {
+        this.CloudMessage.flushChildMessage();
         this.deletePermission = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsRolesService.removePermission(this.serviceName, this.roleId, permission),
             errorHandler: () => this.ControllerHelper.scrollPageToTop()
