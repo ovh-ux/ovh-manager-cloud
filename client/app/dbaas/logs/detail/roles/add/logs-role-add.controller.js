@@ -50,6 +50,7 @@ class LogsRoleAddModalCtrl {
                 this.LogsRolesService.addRole(this.serviceName, this.role)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }
@@ -63,6 +64,7 @@ class LogsRoleAddModalCtrl {
                 this.LogsRolesService.updateRole(this.serviceName, this.roleInfo.roleId, this.role)
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }
