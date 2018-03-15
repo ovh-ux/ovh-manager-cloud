@@ -10,7 +10,6 @@ class LogsDashboardsService {
         this.LogOptionConstant = LogOptionConstant;
         this.LogStreamsConstants = LogStreamsConstants;
         this.UrlHelper = UrlHelper;
-
     }
 
     /**
@@ -22,6 +21,19 @@ class LogsDashboardsService {
      */
     getDashboards (serviceName) {
         return this.getDashboardsDetails(serviceName)
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_get_error", err, {}));
+    }
+
+    /**
+     * returns array of owned dashboards with details of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of dashboards. each stream will have all details populated.
+     * @memberof LogsStreamsService
+     */
+    getOwnDashboards (serviceName) {
+        return this.getDashboardsDetails(serviceName)
+            .then(dashboards => dashboards.filter(dashboard => dashboard.info.isEditable))
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_get_error", err, {}));
     }
 
@@ -122,7 +134,7 @@ class LogsDashboardsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_delete_success", { dashboardName: dashboard.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_dashboards_delete_success", { dashboardName: dashboard.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_delete_error", err, { dashboardName: dashboard.title }));
     }
@@ -140,7 +152,7 @@ class LogsDashboardsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_create_success", { dashboardName: dashboard.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_dashboards_create_success", { dashboardName: dashboard.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_create_error", err, { dashboardName: dashboard.title }));
     }
@@ -158,7 +170,7 @@ class LogsDashboardsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleSuccess(serviceName, operation.data || operation, "logs_dashboards_update_success", { dashboardName: dashboard.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_dashboards_update_success", { dashboardName: dashboard.title });
             })
             .catch(err => this.LogsHelperService.handleError("logs_dashboards_update_error", err, { dashboardName: dashboard.title }));
     }

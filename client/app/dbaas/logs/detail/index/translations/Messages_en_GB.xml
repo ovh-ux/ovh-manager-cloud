@@ -54,9 +54,9 @@
    <translation id="logs_index_modal_notification">Notification</translation>
    <translation id="logs_index_modal_checkbox">Notify me by e-mail when the index reaches a critical size</translation>
 
-   <translation id="logs_index_edit_error">An error occurred while saving changes: {{message}}</translation>
-   <translation id="logs_index_create_error">An error occurred while creating index: {{message}}</translation>
-   <translation id="logs_index_delete_error">An error occurred while deleting index: {{message}}</translation>
+   <translation id="logs_index_edit_error">An error occurred while saving changes for {{name}}: {{message}}</translation>
+   <translation id="logs_index_create_error">An error occurred while creating index {{name}}: {{message}}</translation>
+   <translation id="logs_index_delete_error">An error occurred while deleting index {{name}}: {{message}}</translation>
    
    <translation id="logs_index_create_success">Successfully created index: {{name}}</translation>
    <translation id="logs_index_edit_success">Successfully updated {{name}}</translation>

@@ -41,6 +41,20 @@ class LogsAliasesService {
             .catch(this.ServiceHelper.errorHandler("logs_aliases_get_error"));
     }
 
+
+    /**
+     * returns array of owned aliases with details of logged in user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to array of aliases. each stream will have all details populated.
+     * @memberof LogsStreamsService
+     */
+    getOwnAliases (serviceName) {
+        return this.getAliasesDetails(serviceName)
+            .then(aliases => aliases.filter(alias => alias.info.isEditable))
+            .catch(err => this.LogsHelperService.handleError("logs_aliases_get_error", err, {}));
+    }
+
     /**
      * gets details for each alias in array
      *
