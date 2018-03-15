@@ -6,6 +6,7 @@ class CdaDetailEditCtrl {
         this.CloudMessage = CloudMessage;
         this.CdaService = CdaService;
         this.items = items;
+        this.messageContainerName = "paas.cda.detail.edit";
 
         this.model = {
             label: items.details.label,
@@ -26,8 +27,8 @@ class CdaDetailEditCtrl {
     }
 
     loadMessage () {
-            this.CloudMessage.unSubscribe("paas.cda.detail.edit");
-            this.messageHandler = this.CloudMessage.subscribe("paas.cda.detail.edit", { onMessage: () => this.refreshMessage() });
+            this.CloudMessage.unSubscribe(this.messageContainerName);
+            this.messageHandler = this.CloudMessage.subscribe(this.messageContainerName, { onMessage: () => this.refreshMessage() });
     }
 
     refreshMessage () {
@@ -35,6 +36,7 @@ class CdaDetailEditCtrl {
     }
 
     editCluster () {
+        this.CloudMessage.flushMessages(this.messageContainerName);
         this.saving = true;
         return this.CdaService.updateDetails(this.serviceName, this.model.label, this.model.crushTunable)
             .then(() => {
@@ -42,7 +44,7 @@ class CdaDetailEditCtrl {
                 this.$uibModalInstance.close();
             })
             .catch(error => {
-                this.CloudMessage.error(`${this.$translate.instant("ceph_common_error")} ${error.data && error.data.message || ""}`, "paas.cda.detail.edit");
+                this.CloudMessage.error(`${this.$translate.instant("ceph_common_error")} ${error.data && error.data.message || ""}`, this.messageContainerName);
             })
             .finally(() => { this.saving = false; });
     }
