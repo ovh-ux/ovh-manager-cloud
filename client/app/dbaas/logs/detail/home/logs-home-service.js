@@ -189,8 +189,7 @@ class LogsHomeService {
         } else {
             const dataVolume = this.$translate.instant("logs_home_data_volume");
             const dataVolumeValue = this.$translate.instant(account.offer.reference);
-            const month = this.$translate.instant("month");
-            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}/${month}`;
+            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}`;
         }
         return account;
     }
