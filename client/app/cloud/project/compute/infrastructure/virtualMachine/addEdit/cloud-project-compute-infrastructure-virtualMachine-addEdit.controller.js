@@ -726,6 +726,7 @@ angular.module("managerApp")
         self.activeSwitchPageIndex = 0;
         self.toggle.editDetail = null;
         self.toggle.editFlavor = "categories";
+        self.states.hasSetFlavor = false;
     };
 
     self.isSwitchMode = function () {
@@ -877,14 +878,6 @@ angular.module("managerApp")
 
     // --------- MODELS watchs ---------
 
-    $scope.$watch('VmAddEditCtrl.model.flavorId', function (value) {
-        self.toggle.accordions.flavors = {};
-        if (value) {
-            var category = getCategoryFromFlavor(self.vmInEdition.flavor.type);
-            self.toggle.accordions.flavors[category] = true;
-        }
-    });
-
     $scope.$watch('VmAddEditCtrl.model.imageId', function (value, oldValue) {
         if (value) {
 
@@ -974,6 +967,15 @@ angular.module("managerApp")
 
             if (value !== oldValue) {
                 self.backToMenu();
+            }
+        }
+    });
+
+    $scope.$watchCollection("VmAddEditCtrl.toggle.accordions.flavors", (value, oldValue) => {
+        if (value !== oldValue) {
+            const chosen = _.keys(_.pick(value, key => key));
+            if (chosen.length === 1) {
+                self.changeCategory(chosen[0]);
             }
         }
     });
@@ -1349,7 +1351,7 @@ angular.module("managerApp")
 
     self.getRealFlavor = function (flavor, category) {
         var osType = self.vmInEdition.image ? self.vmInEdition.image.type : "linux";
-        var flex = category === "gpu" ? false : self.model.flex;
+        var flex = category === "accelerated" ? false : self.model.flex;
         return self.getFlavorOfType(flavor, self.model.diskType, flex, self.model.region, osType);
     };
 
@@ -1819,5 +1821,13 @@ angular.module("managerApp")
      */
     self.hasWindowsCompatibilityIssue = function(category) {
         return self.vmInEdition.image && self.vmInEdition.image.type === 'windows' && category === 'vps';
+    };
+
+    self.showFlex = function (category) {
+        return _.includes(["balanced", "cpu", "ram"], category);
+    };
+
+    self.showCeph = function (category) {
+        return _.includes(["balanced", "cpu", "ram"], category) && self.getFlavorOfCurrentRegionAndOSType(self.categoriesVmInEditionFlavor[category], "ceph", false) !== undefined;
     };
 });
