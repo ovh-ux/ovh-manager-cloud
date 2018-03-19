@@ -23,7 +23,7 @@ class LogsHomeCtrl {
 
     /**
      * opens UI modal to change password
-     * @param {string} setupPassword 
+     * @param {string} setupPassword
      */
     openSetupAccountModal (setupPassword) {
         this.ControllerHelper.modal.showModal({
