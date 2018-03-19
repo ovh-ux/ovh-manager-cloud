@@ -73,8 +73,11 @@ class LogsDashboardsCrudCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsDashboardsService.updateDashboard(this.$stateParams.serviceName, this.dashboard.data)
-                    .finally(() => this.$uibModalInstance.close())
+                this.LogsDashboardsService.updateDashboard(this.serviceName, this.dashboard.data)
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
         });
         return this.saving.load();
     }
@@ -91,8 +94,11 @@ class LogsDashboardsCrudCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsDashboardsService.createDashboard(this.$stateParams.serviceName, this.dashboard.data)
-                    .finally(() => this.$uibModalInstance.close())
+                this.LogsDashboardsService.createDashboard(this.serviceName, this.dashboard.data)
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
         });
         return this.saving.load();
     }

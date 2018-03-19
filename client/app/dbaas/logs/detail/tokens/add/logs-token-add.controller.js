@@ -39,7 +39,10 @@ class LogsTokenAddCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsTokensService.createToken(this.serviceName, this.token.data)
-                    .finally(() => this.$uibModalInstance.close())
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
         });
         return this.saving.load();
     }
