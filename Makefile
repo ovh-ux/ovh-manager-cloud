@@ -1,6 +1,7 @@
 #### SYSTEM COMMAND ####
 NODE=node
 NPM=npm
+YARN=yarn
 GRUNT=grunt
 BOWER=bower
 GIT=git
@@ -83,9 +84,8 @@ gen-certificate:
 	openssl x509 -req -days 365 -in $(CERTIFICATE_CSR_FILE) -signkey $(CERTIFICATE_KEY) -out $(CERTIFICATE_CRT_FILE)
 	rm $(CERTIFICATE_TMP_KEY)
 
-install: submodule
-	$(NPM) install
-	$(BOWER) install $(BOWER_PARAM)
+install:
+	$(YARN) install
 
 dev: deps
 	$(GRUNT) serve
