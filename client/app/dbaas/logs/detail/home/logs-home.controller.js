@@ -1,6 +1,7 @@
 class LogsHomeCtrl {
-    constructor ($q, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService) {
+    constructor ($q, $scope, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails) {
         this.$q = $q;
+        this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -8,12 +9,34 @@ class LogsHomeCtrl {
         this.ControllerHelper = ControllerHelper;
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
+        this.service = serviceDetails;
         this.initLoaders();
     }
 
     $onInit () {
+        if (this.service.state === this.LogsHomeService.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
+            this.openSetupAccountModal(true);
+        }
         this.runLoaders()
             .then(() => this._initActions());
+    }
+
+    /**
+     * opens UI modal to change password
+     * @param {string} setupPassword 
+     */
+    openSetupAccountModal (setupPassword) {
+        this.ControllerHelper.modal.showModal({
+            modalConfig: {
+                templateUrl: "app/dbaas/logs/detail/account/password/logs-account-password.html",
+                controller: "LogsAccountPasswordCtrl",
+                controllerAs: "ctrl",
+                backdrop: "static",
+                resolve: {
+                    setupPassword
+                }
+            }
+        }).finally(() => this.ControllerHelper.scrollPageToTop());
     }
 
     /**
@@ -118,7 +141,7 @@ class LogsHomeCtrl {
      * @memberof LogsHomeCtrl
      */
     editPassword () {
-        // To be done
+        this.openSetupAccountModal(false);
     }
 
     /**
@@ -145,6 +168,10 @@ class LogsHomeCtrl {
         this.serviceInfos = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName)
         });
+    }
+
+    showSetupModal () {
+        //
     }
 
     /**

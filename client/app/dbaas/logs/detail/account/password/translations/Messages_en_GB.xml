@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
     <translation id="logs_password_change_title">Change the password</translation>
+    <translation id="logs_password_get_started_title">Get started</translation>
     <translation id="logs_password_new_label">New password</translation>
+    <translation id="logs_password_setup_label">Password</translation>
     <translation id="logs_password_confirm_label">Confirm password</translation>
-    <translation id="logs_password_validation_message">Password must be at least 12 characters long, contain a number, an uppercase, a lowercase and a special character.</translation>
+    <translation id="logs_password_setup_message">Welcome {{userFullName}}. Please start by choosing a password you want for your Logs Data Platform ({{userName}}).</translation>
+
+    <translation id="logs_password_rule_length">Password must be at least 12 characters long</translation>
+    <translation id="logs_password_rule_contains_number">Password must contain at least one number</translation>
+    <translation id="logs_password_rule_contains_uppercase">Password must contain at least one uppercase character</translation>
+    <translation id="logs_password_rule_contains_lowercase">Password must contain at least one lowercase character</translation>
+    <translation id="logs_password_rule_contains_special">Password must contain at least one special character {{specialCharacters}}</translation>
+    <translation id="logs_password_valid">Your password is secure and good to go!</translation>
 
     <translation id="logs_password_change_success">The password has been successfully changed</translation>
+    <translation id="logs_password_setup_success">The password has been successfully saved</translation>
     <translation id="logs_password_change_error">An error has occured while changing password: {{message}}</translation>
+    <translation id="logs_password_setup_error">An error has occured while saving password: {{message}}</translation>
 
 </translations>

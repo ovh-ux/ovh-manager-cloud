@@ -77,5 +77,7 @@ angular.module("managerApp").constant("LogsHomeConstant", {
             PORT: "UDP",
             MESSAGE: "CAP_N_PROTO"
         }
-    }
+    },
+    PASSWORD_SPECIAL_CHARACTERS: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
+    SERVICE_STATE_TO_CONFIG: "TO_CONFIG"
 });
