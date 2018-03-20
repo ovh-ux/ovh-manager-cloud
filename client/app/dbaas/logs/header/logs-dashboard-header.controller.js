@@ -16,6 +16,7 @@ class LogsDashboardHeaderCtrl {
     $onInit () {
         this.title = this.serviceName;
         this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
+        //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
         if (!this.menuItem) {
             this.menuItem = { title: this.serviceName };
         }
