@@ -29,6 +29,17 @@ class LogsAliasesHomeCtrl {
     }
 
     /**
+     * navigates to add alias page
+     *
+     * @memberof LogsAliasesHomeCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.aliases.home.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * navigates to edit alias page
      *
      * @param {any} alias

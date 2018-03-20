@@ -29,6 +29,17 @@ class LogsStreamsHomeCtrl {
     }
 
     /**
+     * navigates to add stream page
+     *
+     * @memberof LogsStreamsHomeCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.streams.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * create stream
      *
      * @memberof LogsStreamsHomeCtrl

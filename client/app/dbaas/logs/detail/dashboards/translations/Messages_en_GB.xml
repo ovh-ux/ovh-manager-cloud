@@ -3,6 +3,7 @@
     <translation id="logs_dashboards_title">Graylog dashboards</translation>
     <translation id="logs_dashboards_description">Dashboards are graphical representations of your logs. Thanks to the different modules (curves, pie charts, counters, statistics ...), you get a synthetic view of your data. How many errors have occurred in the last 24 hours? Are they up or down? What is the most visited page today? How many customers this month? So much information immediately accessible. Having different tables allows you to display the data according to specific contexts and provides a greater readability of the information.</translation>
     <translation id="logs_dashboards_add">Add a dashboard</translation>
+    <translation id="logs_dashboards_name">dashboard</translation>
     <translation id="logs_dashboards_total_used">graylog dashboards used</translation>
 
     <translation id="logs_dashboards_col_name">Name</translation>

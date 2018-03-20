@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="add_tool_add">Add a</translation>
+    <translation id="add_tool_title">Quota reached</translation>
+    <translation id="add_tool_quota_reached">You have reached the quota for {{toolname}}. Please purchase more options in order to continue.</translation>
+    <translation id="add_tool_options_purchase">Purchase now</translation>
+</translations>
