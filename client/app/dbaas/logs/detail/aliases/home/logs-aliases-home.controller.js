@@ -80,6 +80,7 @@ class LogsAliasesHomeCtrl {
             loaderFunction: () =>
                 this.LogsAliasesService.deleteAlias(this.serviceName, alias)
                     .then(() => this.initLoaders())
+                    .catch(() => this.ControllerHelper.scrollPageToTop())
         });
         this.delete.load();
     }

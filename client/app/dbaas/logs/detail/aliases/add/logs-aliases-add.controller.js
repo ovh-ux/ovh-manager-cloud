@@ -53,7 +53,10 @@ class LogsAliasesAddCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsAliasesService.updateAlias(this.$stateParams.serviceName, this.alias.data)
-                    .finally(() => this.$uibModalInstance.close())
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
         });
         return this.saving.load();
     }
@@ -71,7 +74,10 @@ class LogsAliasesAddCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsAliasesService.createAlias(this.$stateParams.serviceName, this.alias.data)
-                    .finally(() => this.$uibModalInstance.close())
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
         });
         return this.saving.load();
     }

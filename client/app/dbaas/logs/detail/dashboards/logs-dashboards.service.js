@@ -158,6 +158,24 @@ class LogsDashboardsService {
     }
 
     /**
+     * create new dashboard from another dashboard
+     *
+     * @param {any} serviceName
+     * @param {any} Dashboard, dashboard object to be created
+     * @returns promise which will be resolve to operation object
+     * @memberof LogsDashboardsService
+     */
+    duplicateDashboard (serviceName, dashboard, dashboardId) {
+        return this.DashboardsApiService.duplicate({ serviceName, dashboardId }, dashboard)
+            .$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_dashboards_create_success", { dashboardName: dashboard.title });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_dashboards_create_error", err, { dashboardName: dashboard.title }));
+    }
+
+    /**
      * update dashboard
      *
      * @param {any} serviceName

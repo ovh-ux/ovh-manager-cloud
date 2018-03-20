@@ -81,6 +81,12 @@ class LogsHomeService {
             .catch(this.ServiceHelper.errorHandler("logs_home_service_info_get_error"));
     }
 
+    getServiceDetails (serviceName) {
+        return this.LogsLexiService.logDetail({ serviceName })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_get_error"));
+    }
+
     /**
      * Updates the current display name information
      *
@@ -189,8 +195,7 @@ class LogsHomeService {
         } else {
             const dataVolume = this.$translate.instant("logs_home_data_volume");
             const dataVolumeValue = this.$translate.instant(account.offer.reference);
-            const month = this.$translate.instant("month");
-            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}/${month}`;
+            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}`;
         }
         return account;
     }

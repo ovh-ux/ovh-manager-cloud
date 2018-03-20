@@ -25,6 +25,7 @@ class LogsInputsHomeCtrl {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsInputsService.deleteInput(this.serviceName, input)
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         this.delete.load().then(() => this._runLoaders());
     }

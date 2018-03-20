@@ -76,6 +76,7 @@ class LogsStreamsHomeCtrl {
             loaderFunction: () =>
                 this.LogsStreamsService.deleteStream(this.serviceName, stream.info)
                     .then(() => this.initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         this.delete.load();
     }
@@ -135,6 +136,7 @@ class LogsStreamsHomeCtrl {
 
     copyToken (stream) {
         this.LogsStreamsService.copyStreamToken(stream);
+        this.ControllerHelper.scrollPageToTop();
     }
 }
 
