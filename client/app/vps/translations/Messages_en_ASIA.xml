@@ -9,8 +9,8 @@
    <translation id="vps_order_windows_order_error" qtlid="181227">An error has occurred generating the purchase order.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Select the duration:</translation>
    <translation id="vps_order_windows_order_resume" qtlid="177496">Order summary</translation>
-   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Total price ex. VAT:</translation>
-   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Total price incl. VAT:</translation>
+   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Total price ex. GST:</translation>
+   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Total price incl. GST:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Click "Confirm" to confirm your order.</translation>
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">A new tab will open and you will be automatically redirected to the payment interface.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Windows option</translation>
@@ -223,30 +223,30 @@
    <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">Enable the snapshot option</translation>
    <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">Enable the snapshot option</translation>
    <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">This option will be billed at a monthly rate of <span class="bold">{{ amount }} ex. VAT</span></translation>
+   <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">This option will be billed at a monthly rate of <span class="bold">{{ amount }} ex. GST</span></translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">The snapshot option enables you to create a restoration point. It records the configuration at that point, which can be restored if necessary.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Please click "Next" to continue to enable the snapshot option.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Review </translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for activation of the option to take effect in the Web Control Panel.</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Price ex. VAT:</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Price incl. VAT:</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">An error occurred when enabling the snapshot.</translation>
    <translation id="vps_configuration_desactivate_option" qtlid="48646">Cancel</translation>
    <translation id="vps_configuration_option_released" qtlid="284893">Not renewed </translation>
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activate Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activate the Backup storage option</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Would you like to order the Backup Storage option on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="red bold">{{ price }} ex. VAT</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="red bold">{{ price }} ex. GST</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">The Backup storage is an archiving space for transferring your content, data, settings and configurations.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Generating purchase order...</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_id" qtlid="452631">To confirm your request, please proceed with your payment by clicking the "Confirm" button below.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_explication2" qtlid="169225">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for activation of the option to take effect in the Web Control Panel.</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Price ex. VAT:</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Price incl. VAT:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_configuration_activate_ftpbackup_fail" qtlid="209944">An error occurred on activating the Backup storage option.</translation>
    <translation id="vps_configuration_cancel_option_title_ftpbackup" qtlid="284906">Cancel backup storage </translation>
    <translation id="vps_configuration_cancel_option_title_snapshot" qtlid="284919">Cancel snapshot option </translation>
@@ -284,9 +284,9 @@
    <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Please accept the terms and conditions of use.</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade your <span class="italic normal">{{vpsName}}</span> VPS to {{modelName}}</translation>
    <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Price until {{duration}}, your server's next renewal date:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Price ex. VAT:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Price incl. VAT:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Your server will then be billed at <span class="red">{{price}} ex. VAT/month</span>.</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Price ex. GST:</translation>
+   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Price incl. GST:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Your server will then be billed at <span class="red">{{price}} ex. GST/month</span>.</translation>
    <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">To confirm your order, please proceed with the payment by clicking the "Order" button below.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">A new tab will open, and you will be automatically redirected to the OVH payment interface.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for the upgrade to take effect in the Web Control Panel.</translation>
@@ -315,8 +315,8 @@
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">The service will then be billed monthly, at a price of <span class="red bold">{{ price }}</span></translation>
    <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Do you want to order the automated backup option on the <span class="italic normal">{{ serviceName }}</span> VPS?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">To confirm your request, please accept the terms and conditions and click "Next" below.</translation>
-   <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Price ex. VAT:</translation>
-   <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Price incl. VAT:</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Price ex. GST:</translation>
+   <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">I confirm having read and understood the following:</translation>
    <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Generating purchase order...</translation>
    <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">The purchase order has been generated.</translation>
@@ -483,9 +483,9 @@
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Order an additional disk </translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Please choose the size of the additional disk for your VPS. It will appear as a second hard drive on your operating system. </translation>
    <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, it will then be renewed with it. </translation>
-   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} excl.VAT/month</translation>
-   <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Price ex. VAT:</translation>
-   <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Price incl. VAT:</translation>
+   <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} excl.GST/month</translation>
+   <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Price ex. GST:</translation>
+   <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Price incl. GST:</translation>
    <translation id="vps_order_additional_disk_option" qtlid="281654">Option:</translation>
    <translation id="vps_order_additional_disk_offer_description" qtlid="452930">Additional disk option - {{ size }} until {{ date }}</translation>
    <translation id="vps_order_additional_disk_price" qtlid="181084">Price:</translation>

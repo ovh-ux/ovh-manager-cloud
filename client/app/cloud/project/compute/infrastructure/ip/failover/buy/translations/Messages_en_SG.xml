@@ -16,5 +16,5 @@
    <translation id="cpciif_buy_ip_na_soon" qtlid="269552">North-american IPs coming soon </translation>
    <translation id="cpciif_buy_services" qtlid="269565">This service includes: </translation>
    <translation id="cpciif_buy_no_instance" qtlid="301935">You do not have a server.</translation>
-   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} excl.VAT)</translation>
+   <translation id="cpciif_buy_price_tax_free" qtlid="270215">({{price}} excl.GST)</translation>
 </translations>
