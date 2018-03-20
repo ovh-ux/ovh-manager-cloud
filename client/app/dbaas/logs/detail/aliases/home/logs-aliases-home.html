@@ -34,10 +34,10 @@
             <span data-ng-if="!$row.indexes.length"> - </span>
         </oui-column>
         <oui-action-menu compact>
-            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'logs_aliases_attach_content' | translate }}" on-click="ctrl.attachContent($row)"></oui-action-menu-item>
+            <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'logs_aliases_attach_content' | translate }}" on-click="ctrl.attachContent($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_aliases_elasticsearch_access' | translate }}" href="{{ctrl.getElasticSearchUrl($row)}}" external></oui-action-menu-item>
-            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
-            <oui-action-menu-item data-ng-if="$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row.info)"></oui-action-menu-item>
+            <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
+            <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row.info)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
     <div ui-view="logsAliasesAddEdit"></div>
