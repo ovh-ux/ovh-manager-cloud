@@ -81,6 +81,12 @@ class LogsHomeService {
             .catch(this.ServiceHelper.errorHandler("logs_home_service_info_get_error"));
     }
 
+    getServiceDetails (serviceName) {
+        return this.LogsLexiService.logDetail({ serviceName })
+            .$promise
+            .catch(this.ServiceHelper.errorHandler("logs_get_error"));
+    }
+
     /**
      * Updates the current display name information
      *
