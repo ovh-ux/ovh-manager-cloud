@@ -4,7 +4,7 @@
    <translation id="cpcv_snapshot_choose_name" qtlid="246819">Enter the snapshot name:</translation>
    <translation id="cpcv_snapshot_name" qtlid="246520">Snapshot name</translation>
    <translation id="cpcv_snapshot_confirm" qtlid="246858">Take a snapshot</translation>
-   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} excl. VAT/GiB/month)</translation>
+   <translation id="cpcv_snapshot_monthlyPrice" qtlid="319258">({{ size | bytes:2:'true' }} x {{ price }} excl. GST/GiB/month)</translation>
    <translation id="cpcv_snapshot_name_error" qtlid="273687">Please give a valid name to your backup.</translation>
    <translation id="cpcv_snapshot_name_length_error" qtlid="273700">Please choose a shorter name for your backup.</translation>
    <translation id="cpcv_snapshot_creation_info" qtlid="263311">Backing up...</translation>

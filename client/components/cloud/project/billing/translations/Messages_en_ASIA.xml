@@ -16,7 +16,7 @@
    <translation id="cpbc_hourly_instance_pass_to_monthly_error" qtlid="250368">Oops, we could not add this instance to monthly billing. </translation>
    <translation id="cpbc_hourly_instance_pass_to_monthly_price_error" qtlid="250329">Oops. We were unable to retrieve the amount for the monthly fixed rate.</translation>
    <translation id="cpbc_hourly_instance_pass_to_monthly_info" qtlid="250355">You will be charged right away, on a pro-rata basis, for the days remaining in the current month.</translation>
-   <translation id="cpbc_hourly_instance_pass_to_monthly_button" qtlid="269955">Switch to monthly billing ({{price}} exc. VAT/month)</translation>
+   <translation id="cpbc_hourly_instance_pass_to_monthly_button" qtlid="269955">Switch to monthly billing ({{price}} exc. GST/month)</translation>
    <translation id="cpbc_hourly_instance_deleted" qtlid="250277">Instance deleted</translation>
    <translation id="cpbc_hourly_instance_pass_to_monthly" qtlid="246026">Switch the instance to monthly billing</translation>
 

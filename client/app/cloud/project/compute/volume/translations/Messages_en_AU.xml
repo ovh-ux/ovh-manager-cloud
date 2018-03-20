@@ -34,6 +34,6 @@
    <translation id="cpc_volume_delete_error_plural" qtlid="253049">Oops! We were unable to delete the {{nbVolumes}} volumes.</translation>
    <translation id="cpc_volume_delete_error_one" qtlid="253062">Oops! Unable to delete volume.</translation>
 
-   <translation id="cpc_volume_total_size_price" qtlid="296180">As a guide, your current volumes total <span class="text-danger">{{ capacity }}</span>, around <span class="text-danger">{{ total }} excl. VAT/month</span>.</translation>
+   <translation id="cpc_volume_total_size_price" qtlid="296180">As a guide, your current volumes total <span class="text-danger">{{ capacity }}</span>, around <span class="text-danger">{{ total }} excl. GST/month</span>.</translation>
 
 </translations>
