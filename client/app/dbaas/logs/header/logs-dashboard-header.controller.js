@@ -1,10 +1,12 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsDetailService, ovhDocUrl) {
+    constructor ($stateParams, $translate, ControllerHelper, LogsDetailService, ovhDocUrl, SidebarMenu) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.LogsDetailService = LogsDetailService;
         this.ovhDocUrl = ovhDocUrl;
+        this.SidebarMenu = SidebarMenu;
+        this.serviceName = $stateParams.serviceName;
 
         this.serviceName = $stateParams.serviceName;
 
@@ -17,7 +19,12 @@ class LogsDashboardHeaderCtrl {
 
     $onInit () {
         this.title = this.serviceName;
-        this.configuration.load();
+        this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
+        //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
+        if (!this.menuItem) {
+            this.menuItem = { title: this.serviceName };
+            this.configuration.load();
+        }
         this.initGuides();
     }
 

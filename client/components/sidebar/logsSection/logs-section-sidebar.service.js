@@ -18,6 +18,7 @@ class LogsSectionSidebarService {
             id: "mainLogsItem",
             title: this.$translate.instant("cloud_sidebar_section_logs"),
             allowSubItems: true,
+            loadOnState: "dbaas.logs",
             icon: "fa fa-bar-chart", // "ovh-font ovh-font-logs",
             allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
