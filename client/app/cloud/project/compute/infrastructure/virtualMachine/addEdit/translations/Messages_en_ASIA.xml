@@ -109,7 +109,7 @@
    <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Important information: OVH only makes sure that the application has been installed. Any management or maintenance must be done by you.</translation>
 
    <translation id="cpcivm_addedit_image_apps" qtlid="401432">Pre-installed applications</translation>
-   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. VAT/hour. or {{monthly}} excl. GST/month</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. GST/hour. or {{monthly}} excl. GST/month</translation>
    <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/hour</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/month</translation>
    <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} excl. GST/hour)</translation>
