@@ -1,5 +1,5 @@
 class LogsHomeService {
-    constructor ($q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
         this.$q = $q;
         this.$translate = $translate;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -14,6 +14,7 @@ class LogsHomeService {
         this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
+        this.SidebarMenu = SidebarMenu;
     }
 
     /**
@@ -99,7 +100,11 @@ class LogsHomeService {
         return this.LogsLexiService.update({ serviceName }, { displayName })
             .$promise.then(operation => {
                 this._resetAllCache();
-                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_display_name_update_success", { });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_display_name_update_success", { })
+                    .then(res => {
+                        this._changeMenuTitle(serviceName, displayName);
+                        return res;
+                    });
             })
             .catch(err => this.LogsHelperService.handleError("logs_home_display_name_update_error", err, { }));
     }
@@ -231,6 +236,13 @@ class LogsHomeService {
     _transformOption (option) {
         option.description = `${option.quantity} ${option.type}: ${option.detail}`;
         return option;
+    }
+
+    _changeMenuTitle (serviceName, displayName) {
+        const menuItem = this.SidebarMenu.getItemById(serviceName);
+        if (menuItem) {
+            menuItem.title = displayName;
+        }
     }
 }
 
