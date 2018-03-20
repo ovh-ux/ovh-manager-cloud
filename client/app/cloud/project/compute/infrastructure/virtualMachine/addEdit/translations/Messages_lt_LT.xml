@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU virtualios mašinos<br/>Didelio našumo grafinis procesorius</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU virtualios mašinos<br/>Didelio našumo grafinis procesorius</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Local RAID SSD saugykla, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikuotas HDD diskas, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Aukšto pasiekiamumo saugykla, bendrai naudojami CPU/RAM/tinklo pralaidumo resursai.</translation>
@@ -150,7 +148,6 @@
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">Virtualios mašinos VPS-SSD: <br/>Public Cloud už geriausią kainą</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD naudojamas bendras lokalus SSD RAID, todėl šių virtualių serverių našumas gali svyruoti  </translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox virtualios mašinos: <br/>Bendrai naudojami resursai</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Šios virtualios mašinos idealiai tinka jūsų testams ir plėtojimo aplinkoms. Jų našumas gali nežymiai pakisti su laiku.</translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Garantuojamas našumas <br/>ir aukšto našumo saugykla</translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Šie virtualūs serveriai paremti CEPH disku, jūsų duomenys replikuojami trijuose duomenų centruose. Resursai (CPU, RAM, tinklas) yra garantuojami</translation>
@@ -287,4 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Atsiprašome, įvyko klaida kuriant jūsų serverius!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Bus sukurta virtualių mašinų: {{nb}}.</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
 </translations>

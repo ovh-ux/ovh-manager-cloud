@@ -103,9 +103,9 @@
    <translation id="cpci_ip_reverse_info_soon" qtlid="272105">You will soon be able to modify the reverse DNS for this continent</translation>
 
 
-   <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} excl. VAT/hour</translation>
-   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. VAT/month</translation>
-   <translation id="cpci_price_month_btn" qtlid="270059">({{price}} ex. VAT/month)</translation>
+   <translation id="cpci_vm_flavor_price" qtlid="270033">{{price}} excl. GST/hour</translation>
+   <translation id="cpci_vm_flavor_month" qtlid="270046">{{price}} excl. GST/month</translation>
+   <translation id="cpci_price_month_btn" qtlid="270059">({{price}} ex. GST/month)</translation>
    <translation id="cpci_vm_private_ip" qtlid="247430">Private IP</translation>
 
    <translation id="cpci_vm_flavor_category_ks-1" qtlid="247443">KS-1</translation>
