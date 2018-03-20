@@ -103,6 +103,27 @@ class LogsDashboardsCrudCtrl {
         return this.saving.load();
     }
 
+    /**
+     * create new dashboard from another dahsboard
+     *
+     * @memberof LogsDashboardsCrudCtrl
+     */
+    duplicateDashboard () {
+        if (this.form.$invalid) {
+            return this.$q.reject();
+        }
+        this.CloudMessage.flushChildMessage();
+        this.saving = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () =>
+                this.LogsDashboardsService.duplicateDashboard(this.serviceName, this.dashboard.data, this.$stateParams.dashboardId)
+                    .finally(() => {
+                        this.$uibModalInstance.close();
+                        this.ControllerHelper.scrollPageToTop();
+                    })
+        });
+        return this.saving.load();
+    }
+
     cancel () {
         this.$uibModalInstance.dismiss();
     }
