@@ -63,8 +63,8 @@ class LogsHomeCtrl {
                 isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors
             },
             lastStream: {
-                text: this.accountDetails.data.last_stream.info.title,
-                href: this.accountDetails.data.last_stream.graylogWebuiUrl,
+                text: this.accountDetails.data.last_stream ? this.accountDetails.data.last_stream.info.title : "",
+                href: this.accountDetails.data.last_stream ? this.accountDetails.data.last_stream.graylogWebuiUrl : "",
                 isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
                 isExternal: true
             },
@@ -75,8 +75,8 @@ class LogsHomeCtrl {
                 isAvailable: () => true
             },
             lastDashboard: {
-                text: this.accountDetails.data.last_dashboard.info.title,
-                href: this.accountDetails.data.last_dashboard.graylogWebuiUrl,
+                text: this.accountDetails.data.last_dashboard ? this.accountDetails.data.last_dashboard.info.title : "",
+                href: this.accountDetails.data.last_dashboard ? this.accountDetails.data.last_dashboard.graylogWebuiUrl : "",
                 isAvailable: () => !this.accountDetails.loading && !this.accountDetails.hasErrors,
                 isExternal: true
             },
