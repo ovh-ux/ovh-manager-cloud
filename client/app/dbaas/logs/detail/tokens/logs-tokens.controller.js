@@ -53,7 +53,7 @@ class LogsTokensCtrl {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_tokens_delete_title"),
             text: this.$translate.instant("logs_tokens_delete_message", { tokenName: token.name })
-        }).then(() => this.delete(token));
+        }).then(() => this._delete(token));
     }
 
     /**
@@ -62,7 +62,7 @@ class LogsTokensCtrl {
      * @param {any} token to delete
      * @memberof LogsTokensCtrl
      */
-    delete (token) {
+    _delete (token) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsTokensService.deleteToken(this.serviceName, token)

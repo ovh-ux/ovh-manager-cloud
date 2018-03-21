@@ -219,8 +219,8 @@ class LogsHomeService {
         accountDetails.graylogApiUrl = `${accountDetails.graylogApiUrl}/api-browser`;
         accountDetails.graylogEntryPoint = accountDetails.graylogWebuiUrl.replace("https://", "").replace("/api", "");
         this._getElasticSearchApiUrl(accountDetails);
-        this._getGreyLogUrl(accountDetails.last_stream);
-        this._getGreyLogUrl(accountDetails.last_dashboard);
+        if (accountDetails.last_stream) { this._getGreyLogUrl(accountDetails.last_stream); }
+        if (accountDetails.last_dashboard) { this._getGreyLogUrl(accountDetails.last_dashboard); }
         accountDetails.portsAndMessages = this._getPortsAndMessages(accountDetails);
         return accountDetails;
     }
