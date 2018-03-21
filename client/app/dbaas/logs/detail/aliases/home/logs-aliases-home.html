@@ -17,6 +17,10 @@
     <oui-datagrid rows="ctrl.aliases.data">
         <oui-column title="::'logs_aliases_col_title' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title="::'logs_aliases_col_description' | translate" property="info.description" sortable></oui-column>
+        <oui-column title="::'logs_aliases_col_shared' | translate" property="info.isEditable" sortable>
+            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="$row.info.isEditable"> - </span>
+        </oui-column>
         <oui-column title="::'logs_aliases_col_creation_date' | translate" property="info.createdAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
