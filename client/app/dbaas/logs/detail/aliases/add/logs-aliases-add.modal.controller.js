@@ -11,7 +11,8 @@ class LogsAliasesAddModalCtrl {
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/aliases/add/logs-aliases-add.html",
                 controller: "LogsAliasesAddCtrl",
-                controllerAs: "ctrl"
+                controllerAs: "ctrl",
+                backdrop: "static"
             }
         }).then(() => this.$scope.$parent.ctrl.initLoaders())
             .finally(() => this.onCloseModal());

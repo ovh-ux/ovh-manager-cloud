@@ -34,6 +34,7 @@ class LogsRolesCtrl {
                 templateUrl: "app/dbaas/logs/detail/roles/add/logs-role-add.html",
                 controller: "LogsRoleAddModalCtrl",
                 controllerAs: "ctrl",
+                backdrop: "static",
                 resolve: {
                     roleInfo: () => info,
                     options: () => this.roleOptions,
