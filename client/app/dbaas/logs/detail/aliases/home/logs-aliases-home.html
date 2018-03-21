@@ -17,21 +17,21 @@
     <oui-datagrid rows="ctrl.aliases.data">
         <oui-column title="::'logs_aliases_col_title' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title="::'logs_aliases_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_aliases_col_shared' | translate" property="info.isEditable" sortable>
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
             <span data-ng-if="$row.info.isEditable"> - </span>
-        </oui-column>
-        <oui-column title="::'logs_aliases_col_creation_date' | translate" property="info.createdAt" sortable>
-            {{ $row.info.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title="::'logs_aliases_col_streams' | translate" property="streams.length" sortable>
             <span data-ng-if="$row.streams.length" data-ng-bind="$row.streams.length" />
             <span data-ng-if="!$row.streams.length"> - </span>
         </oui-column>
+        <oui-column title="::'logs_aliases_col_modified_date' | translate" property="info.updatedAt" sortable>
+            {{ $row.info.createdAt | momentFormat:'L'}}
+        </oui-column>
         <oui-column title="::'logs_aliases_col_indices' | translate" property="indexes.length" sortable>
             <span data-ng-if="$row.indexes.length" data-ng-bind="$row.indexes.length" />
             <span data-ng-if="!$row.indexes.length"> - </span>
         </oui-column>
+        <oui-column title="::'logs_aliases_col_shared' | translate" property="info.isEditable" sortable>
         <oui-action-menu compact>
             <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'logs_aliases_attach_content' | translate }}" on-click="ctrl.attachContent($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_aliases_elasticsearch_access' | translate }}" href="{{ctrl.getElasticSearchUrl($row)}}" external></oui-action-menu-item>
