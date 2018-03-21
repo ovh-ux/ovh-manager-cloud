@@ -58,11 +58,10 @@ class LogsStreamsHomeCtrl {
      */
     showDeleteConfirm (stream) {
         this.CloudMessage.flushChildMessage();
-        this.close = this.ControllerHelper.modal.showDeleteModal({
+        this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_stream_delete_title"),
             text: this.$translate.instant("logs_stream_delete_message", { stream: stream.info.title })
         }).then(() => this._delete(stream));
-        return this.close;
     }
 
     /**
