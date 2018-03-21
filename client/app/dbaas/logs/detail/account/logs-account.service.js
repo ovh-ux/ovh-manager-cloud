@@ -1,6 +1,7 @@
 class LogsAccountService {
     constructor (OvhApiDbaas, LogsHelperService, LogsHomeConstant) {
-        this.UserAapiService = OvhApiDbaas.Logs().User().Lexi();
+        this.UserApiService = OvhApiDbaas.Logs().User().Lexi();
+        this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
         this.LogsHelperService = LogsHelperService;
         this.LogsHomeConstant = LogsHomeConstant;
         this.initializePasswordRules();
@@ -50,10 +51,12 @@ class LogsAccountService {
     }
 
     changePassword (serviceName, newPassword, isSetup) {
-        return this.UserAapiService.changePassword({ serviceName }, { password: newPassword })
+        return this.UserApiService.changePassword({ serviceName }, { password: newPassword })
             .$promise
             .then(operation => {
-                this._resetAllCache();
+                if (isSetup) {
+                    this._resetAllCache();
+                }
                 const message = isSetup ? "logs_password_setup_success" : "logs_password_change_success";
                 return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, message, {});
             })
@@ -65,7 +68,7 @@ class LogsAccountService {
     }
 
     _resetAllCache () {
-        this.UserAapiService.resetAllCache();
+        this.LogsLexiService.resetAllCache();
     }
 
 }
