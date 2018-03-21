@@ -1,8 +1,8 @@
+@logs-offer-box-color: #59D2EF;
 .cui-box {
-    min-width: 25%;
     margin: 20px;
     background: #E0F6FD;
-    border: 1px solid #59D2EF;
+    border: 1px solid @logs-offer-box-color;
     border-radius: 6px;
     .cui-box-header {
         .oui-radio {
@@ -14,7 +14,7 @@
         }
     }
     .cui-box-line {
-        background: #59D2EF;
+        background: @logs-offer-box-color;
         height: 1px;
     }
     
@@ -31,7 +31,21 @@
         }
     }
 }
+.basic-offer {
+      ul.dashed {
+        list-style-type: none;
+      }
+      ul.dashed > li:before {
+        content: "-";
+        color: @logs-offer-box-color;
+        margin-left: -1rem;
+        font-weight: 600;
+        padding-right: 10px;
+      }
+}
 
-
-
-
+.sub-heading {
+    font-size: 14px;
+    margin-left: 2.5rem;
+    margin-top: -1rem;
+}

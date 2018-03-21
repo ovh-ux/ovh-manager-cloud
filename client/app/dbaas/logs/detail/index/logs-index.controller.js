@@ -35,6 +35,7 @@ class LogsIndexCtrl {
                 templateUrl: "app/dbaas/logs/detail/index/add/logs-index-add.html",
                 controller: "LogsIndexAddModalCtrl",
                 controllerAs: "ctrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => this.serviceName,
                     indexInfo: () => info,
@@ -56,6 +57,7 @@ class LogsIndexCtrl {
             this.delete = this.ControllerHelper.request.getHashLoader({
                 loaderFunction: () => this.LogsIndexService.deleteIndex(this.serviceName, info)
                     .then(() => this.initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
             });
 
             this.delete.load();

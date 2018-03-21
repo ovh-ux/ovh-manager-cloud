@@ -25,6 +25,7 @@ class LogsRolesAddMembersCtrl {
                 })
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }

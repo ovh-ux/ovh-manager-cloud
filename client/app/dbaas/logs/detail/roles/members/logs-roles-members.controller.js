@@ -30,6 +30,7 @@ class LogsRolesMembersCtrl {
                 templateUrl: "app/dbaas/logs/detail/roles/members/add/add-members.html",
                 controller: "LogsRolesAddMembersCtrl",
                 controllerAs: "ctrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => this.serviceName,
                     logs: () => this.logs

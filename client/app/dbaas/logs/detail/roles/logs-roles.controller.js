@@ -34,6 +34,7 @@ class LogsRolesCtrl {
                 templateUrl: "app/dbaas/logs/detail/roles/add/logs-role-add.html",
                 controller: "LogsRoleAddModalCtrl",
                 controllerAs: "ctrl",
+                backdrop: "static",
                 resolve: {
                     roleInfo: () => info,
                     options: () => this.roleOptions,
@@ -64,6 +65,7 @@ class LogsRolesCtrl {
             this.delete = this.ControllerHelper.request.getHashLoader({
                 loaderFunction: () => this.LogsRolesService.deleteRole(this.serviceName, info)
                     .then(() => this.initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
             });
             this.delete.load();
         });
@@ -76,6 +78,12 @@ class LogsRolesCtrl {
         });
     }
 
+    editPermissions (info) {
+        this.$state.go("dbaas.logs.detail.permissions", {
+            serviceName: this.serviceName,
+            roleId: info.roleId
+        });
+    }
 }
 
 angular.module("managerApp").controller("LogsRolesCtrl", LogsRolesCtrl);

@@ -41,9 +41,9 @@
                                     data-ng-class="{'oui-select_error': ctrl.form.$submitted && ctrl.form.token_cluster.$invalid}"
                                     required >
                                     <option value="" disabled selected data-translate="logs_tokens_select_cluster"></option>
-                                        <option data-ng-repeat="cluster in ctrl.clusters.data" value="{{cluster.clusterId}}">
-                                            {{ cluster.hostname }}
-                                        </option>
+                                    <option data-ng-repeat="cluster in ctrl.clusters.data" value="{{cluster.clusterId}}">
+                                        {{ cluster.hostname }}
+                                    </option>
                                 </select>
                                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                             </div>

@@ -1,5 +1,6 @@
 class LogsOfferCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOrderService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOrderService, OrderHelperService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.LogsOfferService = LogsOfferService;
@@ -17,11 +18,6 @@ class LogsOfferCtrl {
         this._initLoaders();
     }
 
-    $onInit () {
-        this.getSelectedPlan.load();
-        this.offers.load();
-    }
-
     _initLoaders () {
         this.getSelectedPlan = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
@@ -31,6 +27,8 @@ class LogsOfferCtrl {
         this.offers = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOrderService.getOrder(this.serviceName)
         });
+        this.getSelectedPlan.load();
+        this.offers.load();
     }
 
     selectOffer (offerObj) {
@@ -45,6 +43,7 @@ class LogsOfferCtrl {
         this.savingOffer = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOrderService.saveOrder(this.serviceName, this.offerDetail)
                 .then(response => this.$window.open(response.order.url, "_self"))
+                .catch(() => this.ControllerHelper.scrollPageToTop())
         });
         this.savingOffer.load();
     }
@@ -54,6 +53,18 @@ class LogsOfferCtrl {
             this.LogsOfferService.showWarning();
         } else {
             this.processOrder();
+        }
+    }
+
+    orderPro () {
+        this.offerDetail.currentOfferType = "upgrade";
+    }
+
+    back () {
+        if (this.offerDetail.currentOfferType === "pro") {
+            this.$state.go("dbaas.logs.detail.home");
+        } else {
+            this.offerDetail.currentOfferType = "basic";
         }
     }
 }
