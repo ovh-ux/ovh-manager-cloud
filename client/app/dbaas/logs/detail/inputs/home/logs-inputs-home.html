@@ -11,11 +11,11 @@
     <div class="mt-4 mb-2">
         <logs-add-tool
             data-ng-if="!ctrl.quota.loading"
-            text = "{{ ::'inputs_add_input' | translate }}"
-            tool-name = "{{ ::'inputs_name' | translate }}"
-            current-usage = "ctrl.quota.data.configured"
-            max-usage = "ctrl.quota.data.max"
-            callback = "ctrl.add()"
+            text="{{ ::'inputs_add_input' | translate }}"
+            tool-type="{{ ::'inputs_name' | translate }}"
+            current-usage="ctrl.quota.data.configured"
+            max-usage="ctrl.quota.data.max"
+            callback="ctrl.add()"
         ></logs-add-tool>
     </div>
 

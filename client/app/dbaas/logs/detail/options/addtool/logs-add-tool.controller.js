@@ -11,8 +11,7 @@ class logsAddToolCtrl {
     }
 
     $onInit () {
-        const addTxt = this.$translate.instant("add_tool_add");
-        this.text = this.text || `${addTxt} ${this.toolName}`;
+        this.text = this.text || `Add ${this.toolType}`;
         this.selectedOffer.load();
     }
 
@@ -56,9 +55,11 @@ class logsAddToolCtrl {
             })
                 .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName: this.serviceName }));
         }
+        const quotaReached = this.$translate.instant("add_tool_quota_reached");
+        const purchaseMore = this.$translate.instant("add_tool_purchase_more_options");
         return this.ControllerModalHelper.showInfoModal({
             titleText: this.$translate.instant("add_tool_title"),
-            text: this.$translate.instant("add_tool_quota_reached", { toolname: this.toolName }),
+            text: `${quotaReached} ${this.toolType}. ${purchaseMore}`,
             okButtonText: this.$translate.instant("add_tool_options_purchase")
         })
             .then(() => this.$state.go("dbaas.logs.detail.options", { serviceName: this.serviceName }));

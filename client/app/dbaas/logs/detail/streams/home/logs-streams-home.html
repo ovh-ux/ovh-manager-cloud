@@ -10,11 +10,11 @@
     <div class="mt-4 mb-2">
         <logs-add-tool
             data-ng-if="!ctrl.quota.loading"
-            text = "{{ ::'logs_streams_add_data_feed' | translate }}"
-            tool-name = "{{ ::'logs_streams_name' | translate }}"
-            current-usage = "ctrl.quota.data.configured"
-            max-usage = "ctrl.quota.data.max"
-            callback = "ctrl.add()"
+            text="{{ ::'logs_streams_add_data_feed' | translate }}"
+            tool-type="{{ ::'logs_streams_name' | translate }}"
+            current-usage="ctrl.quota.data.configured"
+            max-usage="ctrl.quota.data.max"
+            callback="ctrl.add()"
         ></logs-add-tool>
     </div>
 

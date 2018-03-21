@@ -4,7 +4,7 @@ angular.module("managerApp").component("logsAddTool", {
     controllerAs: "ctrl",
     bindings: {
         text: "@",
-        toolName: "@",
+        toolType: "@",
         currentUsage: "<",
         maxUsage: "<",
         callback: "&"
