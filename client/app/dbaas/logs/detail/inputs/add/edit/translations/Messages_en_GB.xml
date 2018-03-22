@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_logs_edit_title_field">Name</translation>
+    <translation id="inputs_logs_edit_description_field">Description</translation>
+    <translation id="inputs_logs_edit_software_field">Software</translation>
+    <translation id="inputs_logs_edit_port_field">Exposed TCP port</translation>
+    <translation id="inputs_logs_edit_stream_field">Link to a data stream</translation>
+    <translation id="inputs_logs_edit_select_stream">Select a stream</translation>
+    <translation id="inputs_logs_edit_select_software">Select a software</translation>
+    <translation id="inputs_logs_edit_option_field">Choose the attached option</translation>
+    <translation id="inputs_logs_edit_single_instance_field">Single instance</translation>
+    <translation id="inputs_logs_edit_single_instance_description">Only start one instance of this collector</translation>
+</translations>

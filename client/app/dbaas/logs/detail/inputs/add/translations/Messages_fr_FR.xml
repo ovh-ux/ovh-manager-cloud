@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_logs_title_add">Ajouter un outil de collecte</translation>
+    <translation id="inputs_logs_title_edit">Modifier l'outil de collecte - {{title}}</translation>
+
+    <translation id="inputs_logs_step1_edit">Modifier</translation>
+    <translation id="inputs_logs_step1_add">Ajouter</translation>
+    <translation id="inputs_logs_step2">Configuration</translation>
+    <translation id="inputs_logs_step3">Autoriser des réseaux</translation>
+</translations>

@@ -11,30 +11,29 @@ class OrderHelperService {
             });
     }
 
-    getUrlConfigPart (configs, urlParams = {}) {
-        configs = !_.isArray(configs) ? [configs] : configs;
-
-        const formattedConfigs = [];
-        _.forEach(configs, config => {
-            const formattedConfig = _.assign({}, config);
+    getUrlConfigPart (config, urlParams = {}) {
+        let formattedConfig = config;
+        if (!_.isArray(config)) {
+            // Transform configuration and option value if necessary
+            formattedConfig = _.assign({}, config);
             if (formattedConfig.configuration && !_.isArray(formattedConfig.configuration)) {
                 formattedConfig.configuration = this.transformToOrderValues(formattedConfig.configuration);
             }
 
             if (formattedConfig.option) {
-                formattedConfig.option = formattedConfig.option.map(option => {
+                const formattedOptions = formattedConfig.option.map(option => {
                     if (option.configuration && !_.isArray(option.configuration)) {
                         option.configuration = this.transformToOrderValues(option.configuration);
                     }
                     return option;
                 });
+                formattedConfig.option = formattedOptions;
             }
-            formattedConfigs.push(formattedConfig);
-        });
-        // Transform configuration and option value if necessary
+            formattedConfig = [formattedConfig];
+        }
 
         return this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
-            products: JSURL.stringify(formattedConfigs)
+            products: JSURL.stringify(formattedConfig)
         }));
     }
 

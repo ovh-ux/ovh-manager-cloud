@@ -1,0 +1,27 @@
+<cui-page-header data-title-text="ctrl.title"
+                 data-subtitle-text="ctrl.title === ctrl.serviceName ? '' : ctrl.serviceName"
+                 data-guides="ctrl.guides">
+    <cui-tabs>
+        <cui-tab data-text="'logs_tab_home' | translate"
+                 data-state="dbaas.logs.detail.home"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_streams' | translate"
+                 data-state="dbaas.logs.detail.streams"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_dashboards' | translate"
+                 data-state="dbaas.logs.detail.dashboards"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_inputs' | translate"
+                 data-state="dbaas.logs.detail.inputs"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_indices' | translate"
+                 data-state="dbaas.logs.detail.indices"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_alias' | translate"
+                 data-state="dbaas.logs.detail.aliases"
+                 data-state-params="{ serviceName: ctrl.serviceName }"></cui-tab>
+        <cui-tab data-text="'logs_tab_roles' | translate"
+                 data-state="dbaas.logs.detail.roles"
+                 data-state-params="{ serviceName: ctrl.serivceName }"></cui-tab>
+    </cui-tabs>
+</cui-page-header>

@@ -1,0 +1,19 @@
+angular.module("managerApp").constant("LogStreamsConstants", {
+    optionType: "logs-stream",
+    MESSAGE_THRESHOLD: 1000,
+    WEB_SOCKET_URL: "WEB_SOCKET",
+    RFC_URL: "TCP_TLS_RFC5424",
+    LTSV_URL: "TCP_TLS_LTSV_NUL",
+    GELF_URL: "TCP_TLS_GELF",
+    GELF: "GELF",
+    LTSV: "LTSV",
+    RFC5424: "RFC5424",
+    GRAYLOG_WEBUI: "GRAYLOG_WEBUI",
+    X_OVH_TOKEN: "X-OVH-TOKEN",
+    FAILURE: "FAILURE",
+    SUCCESS: "SUCCESS",
+    GZIP: "GZIP",
+    DEFLATED: "DEFLATED",
+    LZMA: "LZMA",
+    ZSTD: "ZSTD"
+});

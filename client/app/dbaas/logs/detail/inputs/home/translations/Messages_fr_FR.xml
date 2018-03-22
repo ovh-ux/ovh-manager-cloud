@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_title">Outils de collecte</translation>
+    <translation id="inputs_intro_text">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d’applications. Il s’agit d’un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
+    <translation id="inputs_total_used">outils de collecte utilisés</translation>
+    <translation id="inputs_increase_quota">augmenter le quota</translation>
+
+    <translation id="inputs_add_input">Ajouter un collecteur</translation>
+
+    <translation id="inputs_tool">Outil</translation>
+    <translation id="inputs_description">Description</translation>
+    <translation id="inputs_creation_date">Date de création</translation>
+    <translation id="inputs_software">Logiciel</translation>
+    <translation id="inputs_linked_option">Option liée</translation>
+    <translation id="inputs_state">États</translation>
+
+    <translation id="inputs_state_processing">Procédure en cours</translation>
+    <translation id="inputs_state_restart_required">À redémarrer</translation>
+    <translation id="inputs_state_to_configure">À configurer</translation>
+    <translation id="inputs_state_pending">À démarrer</translation>
+    <translation id="inputs_state_running">Opérationnel</translation>
+    <translation id="inputs_state_unknown">Inconnu</translation>
+
+    <translation id="inputs_edit">Modifier</translation>
+    <translation id="inputs_start">Début</translation>
+    <translation id="inputs_restart">Redémarrer</translation>
+    <translation id="inputs_stop">Arrêtez</translation>
+    <translation id="inputs_standard_output">Sortie console</translation>
+
+    <translation id="inputs_starting">L'outil de collecte {{inputTitle}} est en train de démarrer.</translation>
+    <translation id="inputs_stopping">L'outil de collecte {{inputTitle}} est en cours d'arrêt.</translation>
+    <translation id="inputs_restarting">L'outil de collecte {{inputTitle}} est en train de redémarrer.</translation>
+
+    <translation id="inputs_delete">Supprimer l'outil de collecte</translation>
+    <translation id="inputs_delete_message">Êtes-vous sûr de vouloir supprimer l'outil de collecteur suivant?: {{input}} ?</translation>
+    <translation id="inputs_delete_error">Une erreur s'est produite lors de la suppression d'un outil de collecteur: {{message}}</translation>
+    <translation id="inputs_delete_success">L'outil de collection a été supprimé avec succès.</translation>
+</translations>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="streams_archives_loading_error">Erreur lors du chargement des archives: {{message}}</translation>
+    <translation id="streams_archives_ids_loading_error">Erreur lors du chargement des ID d'archive: {{message}}</translation>
+    <translation id="streams_archives_url_load_error">Erreur lors du chargement de l'URL de l'archive pour {{filename}}: {{message}}</translation>
+    <translation id="streams_archives_download_error">Erreur lors du téléchargement des archives: {{message}}</translation>
+
+    <translation id="streams_archives_unfreeze_start">Initialisation du dégel de {{filename}}</translation>
+    <translation id="streams_archives_unfreezing">L'archive {{filename}} est en cours de dégel. Elle sera disponible dans {{remainingTime}} heures</translation>
+    <translation id="streams_archives_preparing_download">Préparer {{filename}} pour le téléchargement. S'il vous plaît, attendez...</translation>
+
+    <translation id="streams_archives_title">Archives</translation>
+    <translation id="streams_archives_current_title">Gérez vos archives pour</translation>
+    <translation id="streams_archives_intro_text">Les archives une fois dégelées sont disponibles au téléchargement pour 24h.</translation>
+    
+    <translation id="streams_archives_file_name">Nom de fichier</translation>
+    <translation id="streams_archives_size">Taille</translation>
+    <translation id="streams_archives_signatures">Signature</translation>
+    <translation id="streams_archives_status">Statut</translation>
+    <translation id="streams_archives_md5_value">MD5: {{md5}}</translation>
+    <translation id="streams_archives_sha256_value">SHA256: {{sha256}}</translation>
+    
+    <translation id="streams_archives_sealed">Congelé</translation>
+    <translation id="streams_archives_unsealed">Disponible</translation>
+    <translation id="streams_archives_unsealing">Décongélation</translation>
+
+    <translation id="streams_archives_unfreeze">Dégeler</translation>
+    <translation id="streams_archives_download">Télécharger</translation>
+</translations>

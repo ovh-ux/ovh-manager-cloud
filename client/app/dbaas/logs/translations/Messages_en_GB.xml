@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="logs_guides">Guides</translation>
+    <translation id="logs_guides_title">Logs Data Platform</translation>
+    <translation id="logs_guides_footer">All the OVH guides</translation>
+
+    <translation id="logs_title">Logs Data Platform</translation>
+    <translation id="logs_tab_home">Home</translation>
+    <translation id="logs_tab_streams">Data streams</translation>
+    <translation id="logs_tab_dashboards">Dashboards</translation>
+    <translation id="logs_tab_inputs">Collectors</translation>
+    <translation id="logs_tab_indices">Index</translation>
+    <translation id="logs_tab_alias">Alias</translation>
+    <translation id="logs_tab_roles">Roles</translation>
+
+    <translation id="logs_select_options_title">Choose the attached option</translation>
+    <translation id="logs_select_options_placeholder">Select Option</translation>
+    <translation id="logs_notification_title">Notification</translation>
+    <translation id="logs_operation_failed">Operation {{operation_id}} failed</translation>
+    <translation id="logs_operation_error">An error has occurred while waiting for operation: {{message}}</translation>
+    <translation id="logs_streams_title">Data streams</translation>
+    <translation id="logs_index_title">Elasticsearch Indexes</translation>
+    <translation id="logs_main_offer">Main offer</translation>
+    <translation id="logs_finish_configuration">Finish Configuration</translation>
+    <translation id="logs_next">Next</translation>
+    <translation id="logs_previous">Previous</translation>
+    <translation id="logs_later">Continue later</translation>
+    <translation id="logs_main_offer_get_error">An error has occurred while getting main offer details: {{message}}</translation>
+</translations>

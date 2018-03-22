@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="inputs_logs_edit_title_add">Ajouter un outil de collecte</translation>
+    <translation id="inputs_logs_edit_title_edit">Modifier l'outil de collecte</translation>
+
+    <translation id="inputs_logs_edit_title_field">Nom</translation>
+    <translation id="inputs_logs_edit_description_field">Description</translation>
+    <translation id="inputs_logs_edit_software_field">Logiciel</translation>
+    <translation id="inputs_logs_edit_port_field">Port TCP à ouvrir</translation>
+    <translation id="inputs_logs_edit_stream_field">Lier à un flux de données</translation>
+    <translation id="inputs_logs_edit_select_stream">Sélectionnez un flux</translation>
+    <translation id="inputs_logs_edit_select_software">Sélectionnez un logiciel</translation>
+    <translation id="inputs_logs_edit_option_field">Choisir l’option attachée</translation>
+    <translation id="inputs_logs_edit_single_instance_field">Instance unique</translation>
+    <translation id="inputs_logs_edit_single_instance_description">Ne démarrer qu'une seule instance de ce type</translation>
+</translations>
