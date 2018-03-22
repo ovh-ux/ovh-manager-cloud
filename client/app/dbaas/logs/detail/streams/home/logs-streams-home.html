@@ -18,13 +18,6 @@
         rows="ctrl.streams.data">
         <oui-column title="::'logs_streams_col_title' | translate" property="info.title" sortable="asc"></oui-column>
         <oui-column title="::'logs_streams_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_streams_col_shared' | translate" property="info.isEditable" sortable>
-            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
-            <span data-ng-if="$row.info.isEditable"> - </span>
-        </oui-column>
-        <oui-column title="::'logs_streams_col_creation_date' | translate" property="info.createdAt">
-            {{ $row.info.createdAt | momentFormat:'L'}}
-        </oui-column>
         <oui-column title="::'logs_streams_col_archives' | translate" property="info.archives.length" sortable>
             <span data-ng-if="$row.info.coldStorageEnabled" data-ng-bind="$row.info.archives.length" />
             <span data-ng-if="!$row.info.coldStorageEnabled"> {{ $row.info.nbArchive || "-" }} </span>
@@ -36,6 +29,13 @@
         <oui-column title="::'logs_streams_col_linked_option' | translate" property="info.optionId" sortable>
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
+        </oui-column>
+        <oui-column title="::'logs_streams_col_updated_date' | translate" property="info.updatedAt" sortable>
+            {{ $row.info.updatedAt | momentFormat:'L'}}
+        </oui-column>
+        <oui-column title="::'logs_streams_col_shared' | translate" property="info.isEditable" sortable>
+            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>
         <oui-action-menu compact>
             <oui-action-menu-item text="{{ ::'logs_streams_graylog_access' | translate }}" href="{{ctrl.getGraylogUrl($row)}}" external></oui-action-menu-item>
