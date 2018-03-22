@@ -15,7 +15,9 @@ class LogsHomeAccountModalCtrl {
                 controllerAs: "ctrl",
                 backdrop: "static"
             }
-        }).then(() => this.$scope.$parent.ctrl.runLoaders())
+        })
+            .then(() => this.$scope.$parent.$parent.$$prevSibling.ctrl.runLoaders())
+            .then(() => this.$scope.$parent.ctrl.runLoaders())
             .finally(() => this.onCloseModal());
     }
 

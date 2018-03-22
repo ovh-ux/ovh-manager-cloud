@@ -2,4 +2,5 @@
 <translations>
     <translation id="logs_order_get_error">An error has occurred while retrieving offers</translation>
     <translation id="logs_order_save_order">An error occurred while saving your order. Please try again</translation>
+    <translation id="logs_details_error">An error occurred while retrieving the log details: {message}</translation>
 </translations>
