@@ -1,9 +1,8 @@
 class ControllerHelper {
-    constructor ($timeout, ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
+    constructor (ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
         this.request = ControllerRequestHelper;
         this.modal = ControllerModalHelper;
         this.navigation = ControllerNavigationHelper;
-        this.$timeout = $timeout;
     }
 
     downloadUrl (url) {
@@ -40,36 +39,6 @@ class ControllerHelper {
         } else {
             window.open(`data:text/plain;${charSet},${dataString}`);
         }
-    }
-
-    /**
-     * copies given message to clipboard
-     * @param {string} messageToCopy, message to copy to clipboard
-     * @return {any} error if copy failed, empty string otherwise
-     */
-    copyToClipboard (messageToCopy) {
-        try {
-            const dummy = document.createElement("input");
-            document.body.appendChild(dummy);
-            dummy.setAttribute("id", "dummy_id");
-            dummy.setAttribute("value", messageToCopy);
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-        } catch (err) {
-            return err;
-        }
-        return "";
-    }
-
-    htmlDecode (html) {
-        const txt = document.createElement("textarea");
-        txt.innerHTML = html;
-        return txt.value;
-    }
-
-    scrollPageToTop () {
-        this.$timeout(() => scrollTo(0, 0), 100);
     }
 }
 

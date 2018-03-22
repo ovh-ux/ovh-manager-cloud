@@ -20,5 +20,5 @@
    <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Seuil de l'alerte</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Illimité</translation>
    <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Ciphers</translation>
-   <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="30802">Datacentre</translation>
+   <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="454748">Zones de disponibilité</translation>
 </translations>

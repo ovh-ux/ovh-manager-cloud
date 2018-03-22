@@ -50,12 +50,14 @@ export function login (req, res) {
 export function auth (req, res) {
     let origin = req.headers.host;
     let protocol = req.protocol || "http";
-    let headers = req.headers;
+    let headers = {
+        contentType: req.headers.contentType,
+    };
     headers.host = config.ssoAuth.host;
     proxy.post({
         url: config.ssoAuth.devLoginUrl,
         proxy: config.proxy ? config.proxy.host : null,
-        headers: headers,
+        headers,
         followRedirect: false,
         gzip: true,
         json: {

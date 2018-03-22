@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Vanhat mallit</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU-instanssit<br/>Graafinen korkean suorituskyvyn prosessori</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage paikallinen SSD, jaettu CPU/RAM/kaista.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedikoitu HDD-levy, jaettu CPU/RAM/kaista.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Korkeakäyttöinen Storage, jaettu CPU/RAM/kaista.</translation>
@@ -150,7 +148,6 @@
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">3 x Nvidia GTX 1080 Ti 11 GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud parhaaseen hintaan</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD -palvelimet käyttävät jaettua paikallista RAID SSD:tä ja niiden suorituskyky saattaa vaihdella hieman ajan kuluessa</translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox-instanssit: <br/>Jaetut resurssit</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Ihaanteelisia instansseja testaukseen sekä kehitysympäristöihin. Niiden suorituskyky saattaa vaihdella hieman ajan myötä.</translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Taattu suorituskyky <br/>ja korkean käytettävyyden storage</translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Nämä virtuaalipalvelimet perustuvat CEPH-levyyn datan kolminkertaisella replikoinnilla.  Taatut resurssit (CPU, RAM, Verkko)</translation>
@@ -287,4 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Palvelimia luotaessa tapahtui virhe!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Olet luomassa {{nb}} instanssia.</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Yleiskäyttö (Tasapainotetut resurssit)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Optimoitu laskenta (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Optimoitu muisti (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Kiihdytetty laskenta (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Kiihdytetty laskenta (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Jaetut resurssit (Sandbox)</translation>
 </translations>

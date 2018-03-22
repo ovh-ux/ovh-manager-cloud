@@ -412,7 +412,7 @@
    <translation id="vps_backup_storage_access_forgot_password_button" qtlid="149150">¿Ha olvidado la contraseña?</translation>
    <translation id="vps_backup_storage_access_forgot_password" qtlid="149241">Solicitud de nueva contraseña</translation>
    <translation id="vps_backup_storage_access_forgot_password_success" qtlid="149254">Se va a enviar una nueva contraseña al contacto de administración del servidor.</translation>
-   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Acabamos de enviar una nueva contraseña al NIC admin del servidor.</translation>
+   <translation id="vps_backup_storage_access_forgot_password_successfull" qtlid="164402">Acabamos de enviar una nueva contraseña al contacto administrador admin del servidor.</translation>
    <translation id="vps_backup_storage_access_forgot_password_failure" qtlid="149267">Se ha producido un error al restaurar la contraseña.</translation>
    <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">¿Seguro que quiere restaurar la contraseña del backup storage?</translation>
 
@@ -449,9 +449,9 @@
    <translation id="vps_backup_storage_access_add_deny" qtlid="141808">Denegar</translation>
    <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Bloque:</translation>
    <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Autorizar por:</translation>
-   <translation id="vps_backup_storage_access_add_success" qtlid="184438">La solicitud de creación de reglas de acceso al backup storage se ha enviado, aunque puede tardar unos minutos.</translation>
-   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">La solicitud de creación de algunas reglas de acceso al backup storage se ha enviado, aunque puede tardar unos minutos. Sin embargo, otras reglas no han podido aplicarse.</translation>
-   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Se ha producido un error al solicitar la creación de reglas de acceso al backup storage.</translation>
+   <translation id="vps_backup_storage_access_add_success" qtlid="184438">La solicitud de creación de reglas de acceso al Backup Storage se ha enviado, aunque puede tardar unos minutos.</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">La solicitud de creación de algunas reglas de acceso al Backup Storage se ha enviado, aunque puede tardar unos minutos. Sin embargo, otras reglas no han podido aplicarse.</translation>
+   <translation id="vps_backup_storage_access_add_failure" qtlid="184464">Se ha producido un error al solicitar la creación de reglas de acceso al Backup Storage.</translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">Todos los bloques disponibles han recibido autorización</translation>
 
    <translation id="vps_tab_backup_storage_set_success" qtlid="452904">La solicitud de modificación del acceso {{access}} se ha registrado correctamente, pero tardará algunos minutos en aplicarse.</translation>

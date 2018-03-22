@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_zone_add_title" qtlid="454436">Lisää saatavuusalue</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Valitse yksi tai useampi saatavuusalue</translation>
+   <translation id="iplb_zone_add_single_success" qtlid="454462">Alueen lisäys täytyy viimeistellä.</translation>
+   <translation id="iplb_zone_add_plural_success" qtlid="454475">Alueiden lisäys täyytyy viimeistellä</translation>
+   <translation id="iplb_zone_activate_single_success" qtlid="454488">Alueen uudelleenaktivointi onnistui.</translation>
+   <translation id="iplb_zone_activate_plural_success" qtlid="454501">Alueiden uudelleenaktivointi onnistui.</translation>
+   <translation id="iplb_zone_add_selection_error" qtlid="454514">Valitse vähintään yksi saatavuusalue.</translation>
+   <translation id="iplb_zone_add_loading_error" qtlid="454527">Tapahtui virhe alueiden latauksessa: {{message}}</translation>
+   <translation id="iplb_zone_add_single_error" qtlid="454540">Tapahtui virhe alueen lisäyksessä: {{message}}</translation>
+   <translation id="iplb_zone_add_plural_error" qtlid="454553">Tapahtui virhe alueiden lisäyksessä: {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error" qtlid="454566">Tapahtui virhe alueen uudelleenaktivoinnissa: {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error" qtlid="454579">Tapahtui virhe alueiden uudelleenaktivoinnissa: {{message}}</translation>
+   <translation id="iplb_zone_add_available_released" qtlid="454592">Poistopyyntö on jo käynnistetty tälle alueelle. Se astuu voimaan laskutuskauden lopussa. On kuitenkin mahdollista lisätä se uudestaan.</translation>
+
+   <translation id="iplb_zone_delete_title" qtlid="454605">Poista saatavuusalue</translation>
+   <translation id="iplb_zone_delete_intro_text_single" qtlid="454618">Valitse enintään {{zoneQuantity}} saatavuusalue</translation>
+   <translation id="iplb_zone_delete_intro_text_plural" qtlid="454631">Valitse enintään {{zoneQuantity}} saatavuusaluetta</translation>
+   <translation id="iplb_zone_delete_intro_text_none" qtlid="454644">Valitse enintään 0 saatavuusalue.</translation>
+   <translation id="iplb_zone_delete_single_success" qtlid="454657">Alue " {{zones}} " poistetaan laskutuskauden lopussa.</translation>
+   <translation id="iplb_zone_delete_plural_success" qtlid="454670">Alueet " {{zones}} " poistetaan laskutuskauden lopussa.</translation>
+   <translation id="iplb_zone_delete_selection_error" qtlid="454514">Valitse vähintään yksi saatavuusalue.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error" qtlid="454683">On valittava enintään {{zoneQuantity}} saatavuusalue</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error" qtlid="454696">On valittava enintään {{zoneQuantity}} saatavuusaluetta</translation>
+   <translation id="iplb_zone_delete_loading_error" qtlid="454527">Tapahtui virhe alueiden latauksessa: {{message}}</translation>
+   <translation id="iplb_zone_delete_single_error" qtlid="454709">Tapahtui virhe alueen poistossa: {{message}}</translation>
+   <translation id="iplb_zone_delete_plural_error" qtlid="454722">Tapahtui virhe alueiden poistossa: {{message}}</translation>
+   <translation id="iplb_zone_delete_unavailable_already_released" qtlid="454735">Tämä saatavuusalue poistetaan laskutuskauden lopussa.</translation>
+</translations>

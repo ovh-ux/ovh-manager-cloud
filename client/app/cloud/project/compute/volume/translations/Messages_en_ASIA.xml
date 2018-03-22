@@ -7,7 +7,7 @@
    <translation id="cpc_volume_size2" qtlid="319245">Min. disk space (GiB)</translation>
 
    <translation id="cpc_volume_creation_date" qtlid="26419">Creation date</translation>
-   <translation id="cpc_volume_monthly_price" qtlid="270007">Price excl. VAT/month</translation>
+   <translation id="cpc_volume_monthly_price" qtlid="270007">Price excl. GST/month</translation>
 
    <translation id="cpc_volume_date_start" qtlid="252867">Created on</translation>
    <translation id="cpc_volume_date_end" qtlid="252880">Created before</translation>
@@ -34,6 +34,6 @@
    <translation id="cpc_volume_delete_error_plural" qtlid="253049">Oops! We were unable to delete the {{nbVolumes}} volumes.</translation>
    <translation id="cpc_volume_delete_error_one" qtlid="253062">Oops! Unable to delete volume.</translation>
 
-   <translation id="cpc_volume_total_size_price" qtlid="296180">As a guide, your current volumes total <span class="text-danger">{{ capacity }}</span>, around <span class="text-danger">{{ total }} excl. VAT/month</span>.</translation>
+   <translation id="cpc_volume_total_size_price" qtlid="296180">As a guide, your current volumes total <span class="text-danger">{{ capacity }}</span>, around <span class="text-danger">{{ total }} excl. GST/month</span>.</translation>
 
 </translations>

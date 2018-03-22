@@ -1,6 +1,7 @@
 class PrivateNetworkListCtrl {
-    constructor ($rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService, 
-                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS, OvhApiVrack) {
+    constructor ($window, $rootScope, $translate, $stateParams, $state, $q, $uibModal, CloudProjectComputeInfrastructurePrivateNetworkService,
+                 OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS,
+                 OvhApiVrack, VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
         this.resources = {
             privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
             project: OvhApiCloudProject.Lexi(),
@@ -17,14 +18,23 @@ class PrivateNetworkListCtrl {
         this.$stateParams = $stateParams;
         this.User = OvhApiMe;
         this.URLS = URLS;
+        this.CloudPoll = CloudPoll;
+        this.VrackService = VrackService;
+        this.ControllerHelper = ControllerHelper;
 
         this.loaders = {
             privateNetworks: {
                 query: false,
-                delete: false
+                delete: false,
+                activate: false
             },
             vrack: {
-                get: false
+                get: false,
+                link: false,
+                unlink: false
+            },
+            vracks: {
+                get: true
             }
         };
         this.urls = {
@@ -40,7 +50,16 @@ class PrivateNetworkListCtrl {
             dialog: {
                 visible: false
             }
-        };  
+        };
+        this.$window = $window;
+        // get vRacks for current user, shown in left side bar
+        this.vRacks = [];
+        VrackSectionSidebarService.getVracks()
+            .then(vRacks => {
+                this.vRacks = vRacks;
+            }).finally(() => {
+                this.loaders.vracks.get = false;
+            });
     }
 
     $onInit () {
@@ -74,6 +93,86 @@ class PrivateNetworkListCtrl {
             .then(id => this.models.vrack.id = id)
             .catch(() => this.models.vrack = null)
             .finally(() => this.loaders.vrack.get = false);
+    }
+
+
+    /**
+     * open UI activate private network modal
+     *
+     * @memberof PrivateNetworkListCtrl
+     */
+    addVRack () {
+        this.VrackService.selectVrack()
+            .then(selectedVrack => {
+                this.loaders.vrack.link = true;
+                this.models.vrack = {
+                    id: selectedVrack.serviceName,
+                    name: selectedVrack.name
+                };
+                return this.VrackService.linkCloudProjectToVrack(selectedVrack.serviceName, this.serviceName);
+            })
+            .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+            .then(() => {
+                this.CloudMessage.success(this.$translate.instant("cpci_private_network_add_vrack_success"));
+            })
+            .catch(err => {
+                if (err === "cancel") {
+                    return;
+                }
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
+            })
+            .finally(() => {
+                this.loaders.vrack.link = false;
+            });
+    }
+
+    unlinkVrack () {
+        let hasVlansText = this.$translate.instant("private_network_deactivate_confirmation");
+        if (this.collections.privateNetworks.length > 0) {
+            hasVlansText += ` ${this.$translate.instant("private_network_deactivate_confirmation_vlans")}`;
+        }
+        this.VrackService.unlinkVrackModal(hasVlansText)
+            .then(() => {
+                this.loaders.vrack.unlink = true;
+                return this.VrackService.unlinkCloudProjectFromVrack(this.models.vrack.id, this.serviceName);
+            })
+            .then(vrackTaskId => this.startVrackTaskPolling(this.models.vrack.id, vrackTaskId).$promise)
+            .then(() => {
+                this.models.vrack = null;
+                this.collections.privateNetworks = [];
+                this.CloudMessage.success(this.$translate.instant("cpci_private_network_remove_vrack_success"));
+            })
+            .catch(err => {
+                if (err === "cancel") {
+                    return;
+                }
+                this.CloudMessage.error(this.$translate.instant("cpci_private_network_remove_vrack_error"));
+            })
+            .finally(() => {
+                this.loaders.vrack.unlink = false;
+            });
+    }
+
+    startVrackTaskPolling (vrack, taskId) {
+        this.stopTaskPolling();
+
+        const taskToPoll = {
+            id: taskId
+        };
+
+        this.poller = this.CloudPoll.poll({
+            item: taskToPoll,
+            pollFunction: task => this.VrackService.getTask(vrack, task.id),
+            stopCondition: task => !task || _.includes(["done", "error"], task.status)
+        });
+
+        return this.poller;
+    }
+
+    stopTaskPolling () {
+        if (this.poller) {
+            this.poller.kill();
+        }
     }
 
     deletePrivateNetwork (privateNetwork) {
@@ -136,7 +235,7 @@ class PrivateNetworkListCtrl {
             }).catch(() => {
                 this.collections.privateNetworks = [];
                 this.CloudMessage.error(this.$translate.instant("cpci_private_network_list_private_network_query_error"));
-            }).finally(() => this.loaders.privateNetworks.query = false);        
+            }).finally(() => this.loaders.privateNetworks.query = false);
     }
 
     getPrivateNetworks () {
@@ -209,7 +308,9 @@ class PrivateNetworkListCtrl {
 
     hasPendingLoaders () {
         return _.some(this.loaders, "query", true) ||
-               _.some(this.loaders, "get", true)   ||
+               _.some(this.loaders, "get", true) ||
+               _.some(this.loaders, "link", true) ||
+               _.some(this.loaders, "unlink", true) ||
                this.isVrackCreating();
     }
 

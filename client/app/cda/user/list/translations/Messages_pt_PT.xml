@@ -2,7 +2,7 @@
 <translations>
    <translation id="cda_user_permission_definition" qtlid="354717">Os seus utilizadores podem utilizar o cluster com permissões específicas por pool.</translation>
 
-   <translation id="cda_user_add_button_text" qtlid="7150">Adicionar um utilizador</translation>
+   <translation id="cda_user_add_button_text" qtlid="7150">Adicionar utilizador</translation>
    <translation id="cda_user_delete_button_text" qtlid="2414">Eliminar</translation>
    <translation id="cda_user_edit_button_text" qtlid="354730">Ver as permissões</translation>
 
@@ -11,7 +11,7 @@
    <translation id="cda_user_table_col_pool" qtlid="354587">Pools</translation>
    <translation id="cda_user_table_col_actions" qtlid="72809">Ações</translation>
 
-   <translation id="cda_user_add_title" qtlid="7150">Adicionar um utilizador</translation>
+   <translation id="cda_user_add_title" qtlid="7150">Adicionar utilizador</translation>
    <translation id="cda_user_add_username_label" qtlid="3818">Nome</translation>
 
    <translation id="cda_user_add_username_required" qtlid="354288">O nome é obrigatório.</translation>

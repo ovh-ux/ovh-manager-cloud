@@ -7,6 +7,10 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
+            },
+            guides: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         SERVER: {
@@ -23,6 +27,11 @@
                 US: ["US"]
             },
             expressOrder: {
+                US: ["US"]
+            },
+            guides: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
                 US: ["US"]
             }
         },

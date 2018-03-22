@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Older generation</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Local SSD RAID storage, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedicated HDD drive, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">High-availability storage, shared CPU/RAM/bandwidth.</translation>
@@ -150,7 +148,6 @@
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud at the best price</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD use a shared local SSD RAID and their performance may vary through time</translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instances: <br/>Shared resources</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">They are ideal for your tests and development environments. Their performance could slightly vary over time. </translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Guaranteed performance <br/>and high availability storage</translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">These virtual servers are based on a CEPH disk using triple data replication and we provide guaranteed resources (CPU, RAM, network).</translation>
@@ -287,4 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oops, an error occurred while creating your servers!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">You are about to create {{nb}} instances.</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">General use (balanced resources)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Optimized computing (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Optimized memory (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Accelerated computing (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Accelerated computing (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (sandbox)</translation>
 </translations>

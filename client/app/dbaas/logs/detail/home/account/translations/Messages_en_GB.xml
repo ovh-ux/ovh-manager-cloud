@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-    <translation id="logs_home_account_title">Change the display name</translation>
-    <translation id="logs_home_account_description">Change the actual name of {{displayName}} displayed in your left menu and at the top of the page in the header.</translation>
-    <translation id="logs_home_account_display_name_field">Display name</translation>
-</translations>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_snapshot_loading_error" qtlid="153974">Ocorreu um erro no carregamento das snapshots.</translation>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Erro ao carregar informação relativa às snapshots.</translation>
    <translation id="nasha_snapshot_set_success" qtlid="344896">A alteração da frequência das snapshots terá efeito dentro de alguns instantes.</translation>
    <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Ocorreu um erro durante a alteração da frequência das snapshosts.</translation>
    <translation id="nasha_snapshot_of" qtlid="344922">Snapshot da partição {{partitionName}}</translation>

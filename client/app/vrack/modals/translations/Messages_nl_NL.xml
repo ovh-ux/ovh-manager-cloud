@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="private_network_activate" qtlid="76734">Activeren</translation>
+   <translation id="private_network_activate_new_vRack_description" qtlid="454813">U wordt doorgestuurd naar de bestelling, zodat u de nieuwe vRack kunt inschakelen. U kunt het vervolgens aan uw diensten koppelen. De configuratie wordt binnen enkele seconden actief.</translation>
+   <translation id="private_network_activate_title" qtlid="454826">Privénetwerken inschakelen</translation>
+   <translation id="private_network_activate_existing" qtlid="454839">Bestaand</translation>
+   <translation id="private_network_activate_new" qtlid="9274">Nieuw</translation>
+   <translation id="private_network_select_placeholder" qtlid="17923">Selecteren</translation>
+   <translation id="private_network_deactivate" qtlid="454852">Privénetwerken uitschakelen</translation>
+   <translation id="private_network_deactivate_confirmation" qtlid="454865">Weet u zeker dat u privénetwerken voor deze dienst wilt uitschakelen?</translation>
+</translations>

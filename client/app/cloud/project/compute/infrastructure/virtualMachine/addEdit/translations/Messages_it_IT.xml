@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">Istanze GPU:<br/>processore grafico high performance</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">Istanze GPU:<br/>processore grafico high performance</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Storage raid SSD locale, CPU/RAM/BP condivise</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Disco HDD dedicato, CPU/RAM/BP condivise</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Storage high availability, CPU/RAM/BP condivise</translation>
@@ -152,7 +150,6 @@
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>il Public Cloud più competitivo&#13;
 </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">I VPS SSD utilizzano un RAID locale SSD condiviso, quindi le loro performance possono subire piccole variazioni</translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Istanze Sandbox: <br/>Risorse condivise</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Sono ideali per test e ambienti di sviluppo e pre-produzione. Le loro performance possono variare leggermente nel corso del tempo.</translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Performance garantite <br/>e storage high availability</translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Questi server virtuali sono basati su un disco CEPH, con tripla replica dei dati. Le risorse (CPU, RAM, rete) sono garantite</translation>
@@ -289,4 +286,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Ops! Si è verificato un errore durante la creazione dei tuoi server!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Stai per creare {{nb}} istanze</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
 </translations>

@@ -190,11 +190,12 @@ class VpsDashboardCtrl {
             },
             changeOwner: {
                 text: this.$translate.instant("vps_change_owner"),
+                atInternetClickTag: "VPS-Actions-ChangeOwner",
                 isAvailable: () => !this.loaders.url
             },
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),
-                callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.hasKVM),
+                callback: () => this.VpsActionService.kvm(this.serviceName, this.vps.data.noVNC),
                 isAvailable: () => !this.loaders.polling && !this.vps.loading
             },
             manageAutorenew: {

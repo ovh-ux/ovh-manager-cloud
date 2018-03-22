@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Older generation</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU instances<br/>High-performance graphics processor </translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">Local SSD RAID storage, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedicated HDD drive, shared CPU/RAM/bandwidth.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">High-availability storage, shared CPU/RAM/bandwidth.</translation>
@@ -111,12 +109,12 @@
    <translation id="cpcivm_addedit_image_application_warning" qtlid="401419">Important information: OVH only makes sure that the application has been installed. Any management or maintenance must be done by you.</translation>
 
    <translation id="cpcivm_addedit_image_apps" qtlid="401432">Pre-installed applications</translation>
-   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. VAT/hour. or {{monthly}} excl. VAT/month</translation>
+   <translation id="cpcivm_addedit_flavor_price_full" qtlid="270111">{{price}} excl. GST/hour. or {{monthly}} excl. GST/month</translation>
    <translation id="cpcivm_addedit_flavor_price" qtlid="250953">{{price}}<br/>/hour</translation>
    <translation id="cpcivm_addedit_flavor_monthlyPrice" qtlid="247417">{{price}}<br/>/month</translation>
-   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} excl. VAT/hour)</translation>
-   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} ex. VAT/month)</translation>
-   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} ex. VAT/hour. or + {{monthly}} ex. VAT/month</translation>
+   <translation id="cpcivm_addedit_flavor_price_btn" qtlid="270124">({{price}} excl. GST/hour)</translation>
+   <translation id="cpcivm_addedit_flavor_monthlyPrice_btn" qtlid="270059">({{price}} ex. GST/month)</translation>
+   <translation id="cpcivm_addedit_win_image_price_full" qtlid="270137">+ {{price}} ex. GST/hour. or + {{monthly}} ex. GST/month</translation>
    <translation id="cpcivm_addedit_image_show_all" qtlid="400260">Show all distributions </translation>
    <translation id="cpcivm_addedit_image_recommended_gpu" qtlid="400273">Recommended GPU</translation>
    <translation id="cpcivm_addedit_image_recommended_none" qtlid="400286">No specific distribution is recommended for this model </translation>
@@ -140,7 +138,7 @@
    <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Please note that the currently selected snapshot may only be used in its current location. It may therefore not be used if its location changes.</translation>
 
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Type</translation>
-   <translation id="cpcivm_addedit_table_price" qtlid="133292">Price ex. VAT</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Price ex. GST</translation>
    <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUs</translation>
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Disks</translation>
@@ -150,7 +148,6 @@
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>Public Cloud for the best price</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">VPS SSD use a shared local SSD RAID and their performance may vary over time</translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox instances: <br/>Shared resources</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">They are ideal for your tests and development environments. Their performance could slightly vary over time. </translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Guaranteed performance <br/>and high-availability storage</translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">These virtual servers are based on a CEPH disk using triple data replication and we provide guaranteed resources (CPU, RAM, network).</translation>
@@ -287,4 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oops, an error occurred while creating your servers!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">You are about to create {{nb}} instances.</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
 </translations>

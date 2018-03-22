@@ -4,12 +4,12 @@
    <translation id="openstackusers_users_description" qtlid="245259">O cloud da OVH fornece acesso à API Openstack, ferramenta sobre a qual é baseada.</translation>
    <translation id="openstackusers_users_description2" qtlid="245272">Para poder utilizar as API e as ferramentas propostas por Openstack, poderá gerir os seus acessos através da definição de utilizadores.</translation>
    <translation id="openstackusers_users_go_to_horizon_button" qtlid="245285">Abrir Openstack Horizon</translation>
-   <translation id="openstackusers_users_add_button" qtlid="7150">Adicionar um utilizador</translation>
+   <translation id="openstackusers_users_add_button" qtlid="7150">Adicionar utilizador</translation>
 
    <translation id="openstackusers_users_userlist_error" qtlid="245298">Ocorreu um erro durante o carregamento dos utilizadores:</translation>
    <translation id="openstackusers_users_userlist_empty" qtlid="245311">Nenhum utilizador Openstack está associado à sua conta cloud OVH.</translation>
    <translation id="openstackusers_users_userlist_empty_add" qtlid="245324">Clique no botão em baixo para adicionar um utilizador.</translation>
-   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">Identificador</translation>
+   <translation id="openstackusers_users_userlist_username_cols" qtlid="46792">ID utilizador</translation>
    <translation id="openstackusers_users_userlist_description_cols" qtlid="9238">Descrição </translation>
    <translation id="openstackusers_users_userlist_status_cols" qtlid="33790">Estado</translation>
    <translation id="openstackusers_users_userlist_password_cols" qtlid="2270">Palavra-passe</translation>
