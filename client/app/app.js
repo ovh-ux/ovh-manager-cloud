@@ -46,14 +46,12 @@ angular.module("managerApp", [
     "ovh-jquery-ui-draggable-ng",
     "ovh-angular-jquery-ui-droppable",
     "ovh-angular-slider",
-    "ovh-angular-tail-logs",
     "ng-at-internet",
     "atInternetUiRouterPlugin",
     "matchmedia-ng",
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
-    "ovhBrowserAlert",
-    "angular-websocket"
+    "ovhBrowserAlert"
 ])
     .config(function ($stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) {
         "use strict";

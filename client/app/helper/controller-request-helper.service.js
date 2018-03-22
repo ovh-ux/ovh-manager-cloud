@@ -17,7 +17,6 @@ class ControllerRequestHelper {
         const loader = {
             loading: false,
             data: undefined,
-            promise: undefined,
             hasErrors: false
         };
 
@@ -37,7 +36,7 @@ class ControllerRequestHelper {
             if (_.isArray(initialData.data) || _.keys(initialData.data).length === 0) {
                 loader.loading = true;
             }
-            const promise = this.$q.when(config.loaderFunction())
+            return this.$q.when(config.loaderFunction())
                 .then(response => {
                     loader.data = response.data || response;
                     loader.hasErrors = false;
@@ -60,8 +59,6 @@ class ControllerRequestHelper {
                 .finally(() => {
                     loader.loading = false;
                 });
-            loader.promise = promise;
-            return promise;
         };
 
         return loader;

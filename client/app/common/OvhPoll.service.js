@@ -50,7 +50,7 @@ class OvhPoll {
 
                     if (!items.length) {
                         poller.kill();
-                        deferred.resolve(results);
+                        deferred.resolve();
                     }
                 });
         }, opts.interval || 5000);
