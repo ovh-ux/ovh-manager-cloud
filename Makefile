@@ -96,17 +96,17 @@ prod: deps
 build: build-eu build-ca build-us
 	$(TAR) $(DIST_TAR) $(DIST_EU_TAR) $(DIST_CA_TAR) $(DIST_US_TAR)
 
-build-eu: deps
+build-eu:
 	$(GRUNT) build --mode=prod --zone=EU
 	$(MV) $(DIST_DIR) $(DIST_EU_DIR)
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
-build-ca: deps
+build-ca:
 	$(GRUNT) build --mode=prod --zone=CA
 	$(MV) $(DIST_DIR) $(DIST_CA_DIR)
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
-build-us: deps
+build-us:
 	$(GRUNT) build --mode=prod --zone=US
 	$(MV) $(DIST_DIR) $(DIST_US_DIR)
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
