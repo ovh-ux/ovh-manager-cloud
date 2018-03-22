@@ -185,6 +185,7 @@ class LogsHomeService {
      */
     _resetAllCache () {
         this.DetailsAapiService.resetAllCache();
+        this.LogsLexiService.resetAllCache();
     }
 
     /**
