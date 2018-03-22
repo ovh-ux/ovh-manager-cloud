@@ -7,14 +7,18 @@
             <p data-translate="logs_accounts_description"></p>
         
             <button type="button" class="oui-button oui-button_secondary"
-                data-ui-sref="dbaas.logs.accounts.add">
+                data-ui-sref="dbaas.logs">
                     <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_accounts_order' | translate }}
             </button>
         
             <oui-spinner data-ng-if="ctrl.accounts.loading"></oui-spinner>
             <oui-datagrid rows="ctrl.accounts.data">
-                <oui-column title="::'logs_accounts_col_name' | translate" property="serviceName" sortable="asc"></oui-column>
-                <oui-column title="::'logs_accounts_col_streams' | translate" property="quota.offerType" sortable>
+                <oui-column title="::'logs_accounts_col_name' | translate" property="serviceName" sortable="asc">
+                    <a class="oui-button oui-button_link"
+                        data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})">{{$row.serviceName}}
+                    </a>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable>
                     <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
                     <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.offerType}}</span>
                 </oui-column>
@@ -35,7 +39,9 @@
                     <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.indices.current}}/{{$row.quota.indices.max}}</span>
                 </oui-column>
                 <oui-action-menu compact>
-                    <oui-action-menu-item text="{{ ::'logs_accounts_details' | translate }}" on-click="ctrl.goToDetails($row)"></oui-action-menu-item>
+                    <oui-action-menu-item text="{{ ::'logs_accounts_details' | translate }}" data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})"></oui-action-menu-item>
+                    <oui-action-menu-item text="{{ ::'logs_accounts_offer' | translate }}" data-ui-sref="dbaas.logs.detail.offer({serviceName: $row.serviceName})"></oui-action-menu-item>
+                    <oui-action-menu-item text="{{ ::'logs_accounts_options' | translate }}" data-ui-sref="dbaas.logs.detail.options({serviceName: $row.serviceName})"></oui-action-menu-item>  
                 </oui-action-menu>
             </oui-datagrid>
         </section>
