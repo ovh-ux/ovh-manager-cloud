@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-    <translation id="options_upgradequotalink_increase_quota">increase the quota</translation>
-    <translation id="options_upgradequotalink_increase_quota_title">Offer upgrade required</translation>
-    <translation id="options_upgradequotalink_increase_quota_message">You are currently subscribed to Basic offer and should upgrade to PRO in order to be able to purchase more options. Do you want to upgrade now?</translation>
-    <translation id="options_upgradequotalink_increase_quota_upgrade">Upgrade now</translation>
-</translations>

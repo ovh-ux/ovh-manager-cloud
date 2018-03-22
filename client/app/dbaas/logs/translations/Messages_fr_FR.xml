@@ -305,17 +305,4 @@
 
    <translation id="logs_role_delete_temp_1" qtlid="470752">Supprimer le rôle</translation>
    <translation id="logs_role_delete_temp_2" qtlid="470765">Confirmez-vous la suppression du rôle <strong>{{ name }}</strong> ?</translation>
-
-   <translation id="logs_guides">Guides</translation>
-   <translation id="logs_guides_title">Logs Data Platform</translation>
-   <translation id="logs_guides_footer">Tous les guides OVH</translation>
-
-   <translation id="logs_title">Logs Data Platform</translation>
-   <translation id="logs_tab_home">Accueil</translation>
-   <translation id="logs_tab_streams">Flux de données</translation>
-   <translation id="logs_tab_dashboards">Tableaux de bord</translation>
-   <translation id="logs_tab_inputs">Outils de collecte</translation>
-   <translation id="logs_tab_indices">Index</translation>
-   <translation id="logs_tab_alias">Alias</translation>
-   <translation id="logs_tab_roles">Rôles</translation>
 </translations>

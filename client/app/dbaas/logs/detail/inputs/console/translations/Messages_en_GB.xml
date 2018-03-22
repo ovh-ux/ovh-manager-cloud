@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-    <translation id="inputs_logs_title">Standard output of {{inputTitle}}</translation>
-    <translation id="inputs_logs_no_logs">No message received for the last hour.</translation>
-</translations>

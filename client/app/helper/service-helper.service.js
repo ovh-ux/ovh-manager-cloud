@@ -28,7 +28,7 @@
         successHandler (message, containerName) {
             return data => {
                 if (message) {
-                    const jsonData = data ? data.toJSON ? data.toJSON() : data : {};
+                    const jsonData = data && data.toJSON ? data.toJSON() : {};
                     this.CloudMessage.success(_.isString(message) ? this.$translate.instant(message, jsonData) : message, containerName);
                 } else {
                     // Default success message

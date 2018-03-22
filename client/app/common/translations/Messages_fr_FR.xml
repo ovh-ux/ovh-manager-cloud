@@ -95,7 +95,6 @@
    <translation id="edit" qtlid="37875">Modifier</translation>
    <translation id="delete" qtlid="2414">Supprimer</translation>
    <translation id="common_back" qtlid="4118">Retour</translation>
-   <translation id="common_next">Prochain</translation>
    <translation id="error" qtlid="26407">Erreur</translation>
    <translation id="soon" qtlid="250043">Bientôt disponible</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Plus d'informations</a>.</translation>
@@ -239,8 +238,6 @@
    <translation id="october_short" qtlid="123559">Oct</translation>
    <translation id="november_short" qtlid="123571">Nov</translation>
    <translation id="december_short" qtlid="158539">Dec</translation>
-
-   <translation id="month">mois</translation>
 
    <translation id="country_AD" qtlid="239324">Andorra</translation>
    <translation id="country_AE" qtlid="239337">United Arab Emirates</translation>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-    <translation id="inputs_info_title">Info utiles</translation>
-    <translation id="inputs_info_description">Cliquez sur les options proposées pour les copier dans votre presse-papiers</translation>
-    
-    <translation id="inputs_info_hostname">Nom de l’hôte</translation>
-    <translation id="inputs_info_ipaddress">Adresse IP publique</translation>
-    <translation id="inputs_info_certificate">Certificat</translation>
-</translations>
