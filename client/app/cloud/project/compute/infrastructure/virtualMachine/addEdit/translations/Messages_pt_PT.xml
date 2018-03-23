@@ -96,7 +96,7 @@
    <translation id="cpcivm_addedit_flavor_soldout_choose_another" qtlid="281277">Escolha um outro tipo de instância</translation>
 
    <translation id="cpcivm_addedit_image_unknown" qtlid="248184">Distribuição desconhecida</translation>
-   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Distribuições Unix</translation>
+   <translation id="cpcivm_addedit_image_linux" qtlid="296856">Sistemas Unix</translation>
    <translation id="cpcivm_addedit_image_windows" qtlid="248223">Distribuições Windows</translation>
    <translation id="cpcivm_addedit_image_template" qtlid="248236">Ambientes pré-instalados</translation>
    <translation id="cpcivm_addedit_image_snapshots" qtlid="248249">As minhas snapshots</translation>
@@ -125,7 +125,7 @@
    <translation id="cpcivm_addedit_image_refresh" qtlid="248379">Atualizar a lista das imagens</translation>
    <translation id="cpcivm_addedit_image_choose" qtlid="248392">Escolher a minha imagem</translation>
 
-   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Não pode eliminar uma snapshot se o mesmo estiver a ser utilizado por, pelo menos, um servidor.</translation>
+   <translation id="cpcivm_addedit_snapshot_cannot_delete_installed_snapshot" qtlid="252607">Não pode eliminar uma snapshot se estiver a ser utilizada por, pelo menos, um servidor.</translation>
 
    <translation id="cpcivm_addedit_region_loading" qtlid="248405">Carregamento das zonas disponíveis.</translation>
    <translation id="cpcivm_addedit_region_error" qtlid="248418">Oops, não foi possível encontrar todas as regiões!</translation>
@@ -146,7 +146,7 @@
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
-   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>o Public Cloud ao melhor preço</translation>
+   <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS: <br/>a Public Cloud ao melhor preço</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Os servidores VPS SSD utilizam um RAID local SSD partilhado e as suas performances podem variar ao longo do tempo</translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Elas são ideias para os seus testes e ambientes de desenvolvimento e pré-produção. O seu rendimento pode  variar ligeiramente.</translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Performances garantidas <br/>e armazenamento de alta disponibilidade</translation>
@@ -156,7 +156,7 @@
    <translation id="cpcivm_addedit_flavor_other_new" qtlid="377454">Instâncias CPU, RAM e utilização gerais<br/>Performances constantes garantidas</translation>
    <translation id="cpcivm_addedit_flavor_other_info_new" qtlid="327042">OS recursos (CPU, RAM, Rede) são garantidos. Cada modelo está disponível com um armazenamento CEPH (replicado 3 vezes) ou SSH (local).</translation>
    <translation id="cpcivm_addedit_flavor_fast" qtlid="296414">Performances garantidas <br/>e armazenamento local SSD (sem raid)</translation>
-   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Estes servidores virtuais utilizam um SSD local não redundado, oferecendo uma latência extremamente baixa. Os recursos (CPU, RAM, Rede) são garantidos</translation>
+   <translation id="cpcivm_addedit_flavor_fast_info" qtlid="296427">Estes servidores virtuais utilizam um SSD local não redundado, e têm uma latência extremamente baixa. Os recursos (CPU, RAM, Rede) são garantidos</translation>
    <translation id="cpcivm_addedit_table_model" qtlid="26143">Modelo</translation>
    <translation id="cpcivm_addedit_table_core_details" qtlid="296440">{{ vCores }} vCores <span class="text-nowrap"> x {{ frequency }} Ghz</span></translation>
    <translation id="cpcivm_addedit_table_core_details_short" qtlid="327055">{{ vCores }} x {{ frequency }} GHz</translation>
@@ -181,7 +181,7 @@
    <translation id="cpcivm_addedit_sshkey_refresh_button" qtlid="248522">Atualizar as minhas chaves SSH</translation>
    <translation id="cpcivm_addedit_sshkey_loading" qtlid="248535">Carregamento das suas chaves SSH.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Nome</translation>
+   <translation id="cpcivm_addedit_sshkey_name" qtlid="3818">Apelido</translation>
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Chave</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Introduza o seu script de pós-instalação</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Escolher a minha chave SSH</translation>
@@ -284,10 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oups, ocorreu um erro aquando da criação dos seus servidores!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Vai criar {{nb}} instâncias.</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Utilização genérica (Recursos equilibrados)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Cálculo otimizado (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Memória otimizada (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Cálculo acelerado (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Cálculo acelerado (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Recursos partilhados (Sandbox)</translation>
 </translations>

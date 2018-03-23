@@ -292,10 +292,10 @@ CPU/RAM/bandbreedte.</translation>
 </translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">U staat op het punt om {{nb}} instances te creëren.</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Algemeen gebruik (gebalanceerde resources)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Geoptimaliseerde computing (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Geoptimaliseerd geheugen (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Versnelde computing (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Versnelde computing (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Gedeelde resources (Sandbox)</translation>
 </translations>

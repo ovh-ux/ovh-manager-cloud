@@ -32,12 +32,12 @@
    <translation id="iplb_ssl_update_title" qtlid="439065">Alterar um certificado SSL</translation>
    <translation id="iplb_ssl_update_confirm" qtlid="37875">Alterar</translation>
    <translation id="iplb_ssl_update_cancel" qtlid="37863">Anular</translation>
-   <translation id="iplb_ssl_update_nom" qtlid="3818">Nome</translation>
+   <translation id="iplb_ssl_update_nom" qtlid="3818">Apelido</translation>
    <translation id="iplb_ssl_update_success" qtlid="439078">O certificado SSL foi alterado.</translation>
    <translation id="iplb_ssl_update_error" qtlid="439091">Ocorreu um erro durante a alteração do certificado SSL: {{message}}</translation>
 
    <translation id="iplb_ssl_preview_title" qtlid="439104">Pré-visualização do certificado SSL</translation>
-   <translation id="iplb_ssl_preview_name" qtlid="3818">Nome</translation>
+   <translation id="iplb_ssl_preview_name" qtlid="3818">Apelido</translation>
    <translation id="iplb_ssl_preview_serial" qtlid="429758">Número de sequência</translation>
    <translation id="iplb_ssl_preview_subject" qtlid="22639">Assunto</translation>
    <translation id="iplb_ssl_preview_fingerprint" qtlid="192344">Chave</translation>

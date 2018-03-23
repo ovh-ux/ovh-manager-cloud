@@ -284,10 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Během přípravy Vašich serverů došlo k chybě.</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Počet instancí, které se chystáte vytvořit: {{nb}}</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Obecné použití (Vyvážené zdroje)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Optimalizovaný výpočetní výkon (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Optimalizovaná paměť (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Vysoký výpočetní výkon (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Vysoký výpočetní výkon (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Sdílené zdroje (Sandbox)</translation>
 </translations>
