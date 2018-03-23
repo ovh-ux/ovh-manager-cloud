@@ -1,6 +1,6 @@
 class IpLoadBalancerSslCertificateOrderCtrl {
     constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper, IpLoadBalancerConstant,
-        IpLoadBalancerSslCertificateService) {
+                 IpLoadBalancerSslCertificateService) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -67,8 +67,7 @@ class IpLoadBalancerSslCertificateOrderCtrl {
     }
 
     orderFreeCertificate () {
-        const fqdn = this.newSsl.fqdn.split(",");
-
+        const fqdn = this.newSsl.fqdn.split(",").map(item => item.trim());
         this.saving = true;
         this.IpLoadBalancerSslCertificateService.orderFreeCertificate(this.$stateParams.serviceName, fqdn)
             .then(() => this.$state.go("network.iplb.detail.ssl-certificate.home"))

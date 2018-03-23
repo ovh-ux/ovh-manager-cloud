@@ -2,7 +2,7 @@
 <translations>
    <translation id="nasha_partitions_zfs_title" qtlid="373649">Parâmetros Z File System (ZFS)</translation>
    <translation id="nasha_partitions_zfs_atime_label" qtlid="373675">Atualização dos tempos de acesso (atime)</translation>
-   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Desactivar</translation>
+   <translation id="nasha_partitions_zfs_atime_disable" qtlid="90973">Desativar</translation>
    <translation id="nasha_partitions_zfs_atime_description" qtlid="373688">Desativação da necessidade do kernel atualizar o tempo de acesso de um ficheiro sempre que ele é solicitado</translation>
    <translation id="nasha_partitions_zfs_recordsize_label" qtlid="373701">ZFS recordsize</translation>
    <translation id="nasha_partitions_zfs_recordsize_default" qtlid="373714">(Padrão)</translation>
