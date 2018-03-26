@@ -59,8 +59,6 @@
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
    <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_new" qtlid="400234">GPU Instanzen <br/>High-Performance Grafikprozessor</translation>
-   <translation id="cpcivm_addedit_flavor_gpu_old" qtlid="400234">GPU Instanzen <br/>High-Performance Grafikprozessor</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage lokale SSD, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedizierte Festplatte, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Hochverfügbares Storage, CPU/RAM/Bandbreite geteilt.</translation>
@@ -140,7 +138,7 @@
    <translation id="cpcivm_addedit_region_snapshot_change" qtlid="251590">Achtung: Die momentan ausgewählte Sicherung ist ausschließlich in ihrer derzeitigen Region verfügbar und kann nicht mehr verwendet werden, wenn die Lokalisierung geändert wird.</translation>
 
    <translation id="cpcivm_addedit_table_type" qtlid="2642">Typ</translation>
-   <translation id="cpcivm_addedit_table_price" qtlid="133292">Preis ohne MwSt</translation>
+   <translation id="cpcivm_addedit_table_price" qtlid="133292">Preis (netto)</translation>
    <translation id="cpcivm_addedit_table_core" qtlid="248509">vCPUs</translation>
    <translation id="cpcivm_addedit_table_ram" qtlid="31354">RAM</translation>
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Festplatten</translation>
@@ -150,7 +148,6 @@
    <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS-SSD Instanzen: <br/>Public Cloud zum Bestpreis </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Die VPS SSD verwenden einen lokalen SSD RAID mit geteilten Ressourcen. Die Performance kann im Laufe der Zeit leicht variieren </translation>
-   <translation id="cpcivm_addedit_flavor_vps_new" qtlid="377428">Sandbox Instanzen: <br/>Geteilte Ressourcen </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Die optimale Lösung für Tests und Entwicklungsumgebungen. Die Performance kann im Laufe der Zeit leicht variieren. </translation>
    <translation id="cpcivm_addedit_flavor_safe" qtlid="296388">Garantierte Performance <br/>und HA Storage </translation>
    <translation id="cpcivm_addedit_flavor_safe_info" qtlid="296401">Diese virtuellen Server basieren auf CEPH mit dreifacher Datenreplikation. Die Ressourcen (CPU, RAM, Netzwerk) sind garantiert </translation>
@@ -287,4 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Bei der Erstellung Ihrer Server ist ein Fehler aufgetreten!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Sie sind im Begriff, {{nb}} Instanzen zu erstellen.</translation>
 
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
 </translations>

@@ -50,7 +50,7 @@ class logsUpgradeQuotaLinkCtrl {
                 text: this.$translate.instant("options_upgradequotalink_increase_quota_message"),
                 okButtonText: this.$translate.instant("options_upgradequotalink_increase_quota_upgrade")
             })
-                .then(() => this.$state.go("dbaas.logs.detail.offer", { serveiceName: this.serviceName }));
+                .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName: this.serviceName }));
         }
         return this.$state.go("dbaas.logs.detail.options", { serviceName: this.serviceName });
     }

@@ -5,6 +5,7 @@
     <translation id="logs_aliases_total_used">aliases used</translation>
     <translation id="logs_aliases_increase_quota">increase the quota</translation>
     <translation id="logs_aliases_add">Add an alias</translation>
+    <translation id="logs_aliases_name">alias</translation>
 
     <translation id="logs_aliases_col_title">Name</translation>
     <translation id="logs_aliases_col_description">Description</translation>

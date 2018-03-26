@@ -27,7 +27,7 @@
    <translation id="veeam_storage_update_quota_error" qtlid="403970">Při aktualizaci kvóty diskového prostoru došlo k chybě.</translation>
    <translation id="veeam_storage_update_quota_success" qtlid="403983">Kvóta diskového prostoru byla úspěšně aktualizována.</translation>
    <translation id="veeam_tasks_success" qtlid="403996">Požadavek na provedení úprav byl přijat.</translation>
-   <translation id="veeam_tasks_pending" qtlid="195633">Probíhající úkol</translation>
+   <translation id="veeam_tasks_pending" qtlid="195633">Probíhající úkoly</translation>
 
    <translation id="veeam_action_upgrade_offer_no_upgrade" qtlid="404009">Řešení {{offer}} v současné době nelze navýšit.&#13;
 </translation>

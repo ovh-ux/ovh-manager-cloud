@@ -9,7 +9,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles", "dbaas/logs/detail/optoins", "dbaas/logs/detail/options/upgradequotalink"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles", "dbaas/logs/detail/optoins", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool"]
         })
         .state("dbaas.logs.detail.members", {
             url: "/members/:roleId",

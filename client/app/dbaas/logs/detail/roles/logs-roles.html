@@ -4,13 +4,21 @@
 
     <p>{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="logs_roles_total_used"></span>
         (<logs-upgrade-quota-link></logs-upgrade-quota-link>)
+        <a class="oui-link" data-oui-tooltip="{{'logs_roles_tooltip' | translate}}">
+            <i class="oui-icon oui-icon-info_circle logs-inputs-roles-tooltip" aria-hidden="true"></i>
+        </a>
     </p>
 
-    <button type="button" data-ng-disabled="ctrl.delete.loading || ctrl.roleOptions.loading"
-        class="oui-button oui-button_secondary mt-4"
-        ng-click="ctrl.add()">
-            <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_roles_add' | translate }}
-    </button>
+    <div class="mt-4 mb-2">
+        <logs-add-tool
+            data-ng-if="!ctrl.quota.loading"
+            text="{{ ::'logs_roles_add' | translate }}"
+            tool-type="{{ ::'logs_roles_name' | translate }}"
+            current-usage="ctrl.quota.data.configured"
+            max-usage="ctrl.quota.data.max"
+            callback="ctrl.add()"
+        ></logs-add-tool>
+    </div>
 
     <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.roles.loading || ctrl.delete.loading"></oui-spinner>
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="home_welcome_message" qtlid="245233">Sveikiname prisijungus prie savo OVH kliento valdymo sąsajos <b>CLOUD</b>.</translation>
-   <translation id="home_welcome_message_choose_product" qtlid="123487">Stulpelyje kairėje pasirinkite produktą, kurį konfigūruosite.</translation>
+   <translation id="homepage_welcome_to_your_manager_1" qtlid="282393">Sveiki atvykę į</translation>
+   <translation id="homepage_welcome_to_your_manager_2" qtlid="282406">OVH kliento sąsają</translation>
+   <translation id="homepage_top_guides_header" qtlid="468499">Daugiau informacijos rasite <a class="oui-link" href="{{ url }}" target="_blank">mūsų giduose</a>.</translation>
+   <translation id="homepage_type_of_guide_vps" qtlid="23083">VPS</translation>
+   <translation id="homepage_type_of_guide_pci" qtlid="251655">Public Cloud</translation>
 </translations>

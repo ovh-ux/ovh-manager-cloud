@@ -26,7 +26,7 @@
                         {{region}}
                     </option>
             </select>
-            <oui-loader data-ng-show="OpenstackClientCtl.regions.loading" size="s" class="d-inline-block"></oui-loader>
+            <oui-spinner data-ng-show="OpenstackClientCtl.regions.loading" data-size="s"></oui-spinner>
             <label data-translate="cpci_openstack_client_commands"></label>
             <button type="button" class="btn btn-primary"
                 data-ng-repeat="(label,action) in OpenstackClientCtl.actions track by label"

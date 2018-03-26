@@ -40,7 +40,7 @@
    <translation id="add_instance_ssh_step_title" qtlid="242886">Escolha a sua chave SSH</translation>
    <translation id="add_instance_ssh_loading" qtlid="242769">Carregamento em curso</translation>
    <translation id="add_instance_ssh_not_found" qtlid="242899">Atualmente não possui nenhuma chave SSH.</translation>
-   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Adicionar uma chave SSH</translation>
+   <translation id="add_instance_add_a_ssh_key" qtlid="166001">Adicionar chave SSH</translation>
 
    <translation id="add_instance_name_step_title" qtlid="242912">Atribua um nome ao seu servidor virtual (instance)</translation>
 
@@ -90,7 +90,7 @@
    <translation id="code_linked_to_your_account" qtlid="243250">Este código está agora associado à sua conta</translation>
    <translation id="add_no_more_instances" qtlid="295881">Devido ao seu elevado sucesso, as instâncias estão temporariamente indisponível para os novos clientes. Será automaticamente adicionado à lista de espera. <br /><br />Será notificado assim que elas estiverem disponíveis. <br /><br />Agradecemos a sua paciência.</translation>
 
-   <translation id="add_storage_categories_more_info" qtlid="44536">Saber mais</translation>
+   <translation id="add_storage_categories_more_info" qtlid="44536">Mais informação</translation>
    <translation id="add_storage_category_pcs" qtlid="135593">Public Cloud Storage</translation>
    <translation id="add_storage_category_pca" qtlid="134631">Public Cloud Archive</translation>
 

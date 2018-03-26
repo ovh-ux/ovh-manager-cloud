@@ -42,11 +42,31 @@
 <translation id="common_menu_portal" translate="none">MyOVH</translation>
    <translation id="common_menu_partners" qtlid="383512">OVH Partner</translation>
    <translation id="common_menu_billing" qtlid="32950">Abrechnung</translation>
+   <translation id="common_menu_billing_history" qtlid="159540">Meine Rechnungen</translation>
+   <translation id="common_menu_billing_payments" qtlid="398781">Zahlungsverfolgung</translation>
+   <translation id="common_menu_means" qtlid="90049">Zahlungsarten</translation>
+   <translation id="common_menu_means_mean" qtlid="139949">Meine Zahlungsarten</translation>
+   <translation id="common_menu_means_ovhaccount" qtlid="366826">Mein Prepaid-Account</translation>
+   <translation id="common_menu_means_vouchers" qtlid="270917">Meine Gutscheine</translation>
+   <translation id="common_menu_means_refunds" qtlid="139923">Meine Gutschriften</translation>
+   <translation id="common_menu_means_fidelity" qtlid="260606">Mein Treuebereich</translation>
+   <translation id="common_menu_means_credits" qtlid="448907">Meine Guthaben</translation>
    <translation id="common_menu_renew" qtlid="229658">Meine Dienstleistungen</translation>
+   <translation id="common_menu_renew_management" qtlid="287527">Meine Dienste verwalten</translation>
+   <translation id="common_menu_renew_agreements" qtlid="204350">Meine Verträge</translation>
    <translation id="common_menu_orders" qtlid="282809">Meine Bestellungen</translation>
+   <translation id="common_menu_contacts" qtlid="70541">Meine Kontakte</translation>
+   <translation id="common_menu_list_ticket" qtlid="454039">Meine Support-Anfragen</translation>
    <translation id="common_menu_language" qtlid="30598">Sprache</translation>
    <translation id="common_menu_account" qtlid="157642">Mein Account</translation>
+   <translation id="common_menu_account_infos" qtlid="405499">Mein Profil</translation>
+   <translation id="common_menu_account_security" qtlid="125420">Sicherheit</translation>
+   <translation id="common_menu_account_emails" qtlid="266118">Empfangene E-Mails</translation>
+   <translation id="common_menu_account_subscriptions" qtlid="144708">Meine Abos</translation>
+   <translation id="common_menu_account_ssh" qtlid="165897">Meine SSH Keys</translation>
+   <translation id="common_menu_account_advanced" qtlid="39958">Erweiterte Einstellungen</translation>
    <translation id="common_menu_changelog" qtlid="124964">Changelog</translation>
+   <translation id="common_skip_to_main_content" qtlid="454052">Zum Hauptinhalt</translation>
    <translation id="global_logout" qtlid="33658">Abmelden</translation>
 
    <translation id="common_menu_dedicated_servers" qtlid="256151">Dedicated Server</translation>
@@ -531,4 +551,27 @@
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalisierter Name</translation>
 
    <translation id="common_task_list_empty" qtlid="134865">Keine laufenden Tasks</translation>
+
+   <translation id="common_complete_order" qtlid="454878">Bestellschein begleichen</translation>
+   <translation id="common_deactivate" qtlid="90973">Deaktivieren</translation>
+
+   <translation id="guide_vps_1" qtlid="468512">Getting started with a VPS</translation>
+   <translation id="guide_vps_2" qtlid="468525">Securing a VPS</translation>
+   <translation id="guide_vps_3" qtlid="468538">Repartitioning a VPS after an upgrade</translation>
+   <translation id="guide_vps_4" qtlid="468551">Using the KVM for the VPS</translation>
+   <translation id="guide_vps_5" qtlid="468564">First Windows Server Configuration (Firewall)</translation>
+   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
+   <translation id="guide_vps_7" qtlid="468590">Changing your root password on a VPS</translation>
+   <translation id="guide_vps_8" qtlid="468603">Activating Rescue Mode on VPS</translation>
+   <translation id="guide_vps_all" qtlid="468616">Siehe alle VPS-Handbücher</translation>
+
+   <translation id="guide_project_1" qtlid="468629">Getting started with Public Cloud: logging in and creating a project</translation>
+   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
+   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
+   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_5" qtlid="290785">Einen Horizon Zugang erstellen </translation>
+   <translation id="guide_project_6" qtlid="468681">Start a first cloud server within 3 minutes</translation>
+   <translation id="guide_project_7" qtlid="468694">Prepare the environment for using the OpenStack API</translation>
+   <translation id="guide_project_8" qtlid="468707">Create and configure an additional disk on an instance</translation>
+   <translation id="guide_project_all" qtlid="468720">Siehe alle Public Cloud-Handbücher</translation>
 </translations>

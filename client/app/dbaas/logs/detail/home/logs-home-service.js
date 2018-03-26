@@ -102,7 +102,7 @@ class LogsHomeService {
                 this._resetAllCache();
                 return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_home_display_name_update_success", { })
                     .then(res => {
-                        this._changeMenuTitle(serviceName, displayName);
+                        this._changeMenuTitle(serviceName, displayName || serviceName);
                         return res;
                     });
             })
@@ -185,6 +185,7 @@ class LogsHomeService {
      */
     _resetAllCache () {
         this.DetailsAapiService.resetAllCache();
+        this.LogsLexiService.resetAllCache();
     }
 
     /**

@@ -43,7 +43,7 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Systém</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Uživatel</translation>
 
-   <translation id="vps_dashboard_task" qtlid="195633">Probíhající úkol</translation>
+   <translation id="vps_dashboard_task" qtlid="195633">Probíhající úkoly</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Probíhající úkoly byly dokončeny</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Restartováno</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Reboot (rescue)</translation>

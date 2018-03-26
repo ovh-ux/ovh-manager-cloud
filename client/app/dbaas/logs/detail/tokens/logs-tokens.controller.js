@@ -56,6 +56,12 @@ class LogsTokensCtrl {
         }).then(() => this._delete(token));
     }
 
+    goToHomePage () {
+        this.$state.go("dbaas.logs.detail", {
+            serviceName: this.serviceName
+        });
+    }
+
     /**
      * delete token
      *

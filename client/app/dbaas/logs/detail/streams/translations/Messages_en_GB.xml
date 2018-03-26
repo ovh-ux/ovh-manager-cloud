@@ -4,6 +4,7 @@
     <translation id="logs_streams_total_used">data streams used</translation>
     <translation id="logs_streams_increase_quota">increase the quota</translation>
     <translation id="logs_streams_add_data_feed">Add data stream</translation>
+    <translation id="logs_streams_name">stream</translation>
 
     <translation id="logs_streams_col_title">Name</translation>
     <translation id="logs_streams_col_description">Description</translation>

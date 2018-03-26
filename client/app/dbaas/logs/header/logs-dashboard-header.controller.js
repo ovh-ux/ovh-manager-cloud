@@ -10,11 +10,7 @@ class LogsDashboardHeaderCtrl {
 
         this.serviceName = $stateParams.serviceName;
 
-        //  No error handling since we don't want to break anything for a title.
-        this.configuration = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsDetailService.getConfiguration(this.serviceName),
-            successHandler: () => { this.title = this.configuration.data.displayName; }
-        });
+        this._initLoaders();
     }
 
     $onInit () {
@@ -23,9 +19,21 @@ class LogsDashboardHeaderCtrl {
         //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
         if (!this.menuItem) {
             this.menuItem = { title: this.serviceName };
-            this.configuration.load();
         }
+        this.runLoaders();
         this.initGuides();
+    }
+
+    _initLoaders () {
+        //  No error handling since we don't want to break anything for a title.
+        this.configuration = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsDetailService.getConfiguration(this.serviceName),
+            successHandler: () => { this.title = this.configuration.data.displayName || this.configuration.data.serviceName; }
+        });
+    }
+
+    runLoaders () {
+        this.configuration.load();
     }
 
     initGuides () {
@@ -33,7 +41,7 @@ class LogsDashboardHeaderCtrl {
         this.guides.title = this.$translate.instant("logs_guides");
         this.guides.list = [{
             name: this.$translate.instant("logs_guides_title"),
-            url: this.ovhDocUrl.getDocUrl("logs")
+            url: this.ovhDocUrl.getDocUrl("logs-data-platform")
         }];
         this.guides.footer = this.$translate.instant("logs_guides_footer");
     }

@@ -29,7 +29,7 @@
    <translation id="iplb_farm_protocol_udp" qtlid="141834">UDP</translation>
 
    <translation id="iplb_farm_balance_first" qtlid="437856">First</translation>
-   <translation id="iplb_farm_balance_leastconn" qtlid="437869">Last</translation>
+   <translation id="iplb_farm_balance_leastconn" qtlid="437869">Least</translation>
    <translation id="iplb_farm_balance_roundrobin" qtlid="437882">Round-robin</translation>
    <translation id="iplb_farm_balance_source" qtlid="97496">Fonte</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
@@ -91,7 +91,7 @@
    <translation id="iplb_farm_preview_stickiness" qtlid="429823">Monitorar a sessão</translation>
    <translation id="iplb_farm_preview_probe" qtlid="429797">Sonda</translation>
    <translation id="iplb_farm_preview_probe_none" qtlid="8674">Nenhuma</translation>
-   <translation id="iplb_farm_preview_id" qtlid="46792">Identificador</translation>
+   <translation id="iplb_farm_preview_id" qtlid="46792">ID utilizador</translation>
    <translation id="iplb_farm_preview_probe_url" qtlid="31402">URL</translation>
    <translation id="iplb_farm_preview_probe_port" qtlid="9034">Porta</translation>
    <translation id="iplb_farm_preview_probe_method" qtlid="19447">Método</translation>

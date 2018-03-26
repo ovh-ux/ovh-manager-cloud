@@ -1,0 +1,18 @@
+{
+  "name": "ovh-noVNC",
+  "version": "2.1.4",
+  "author": "Team JS <teamjs@interne.ovh.net>",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "devria@incubator.ovh.net:ovh-noVNC"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "matchdep": "~0.3.0",
+    "grunt-mvn-deploy": "~0.5.5",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-bump": "0.0.11",
+    "bower": "0.9.2"
+  }
+}

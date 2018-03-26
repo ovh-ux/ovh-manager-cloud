@@ -9,4 +9,9 @@
    <translation id="cpci_private_network_creating" qtlid="363906">Kuriamas privatus tinklas</translation>
    <translation id="cpci_private_network_creating_description" qtlid="261374">Operacija gali užtrukti keletą minučių</translation>
    <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Įvyko klaida įkeliant privačių tinklų duomenis.</translation>
+   <translation id="cpci_private_network_add_vrack_error" qtlid="454761">Klaida įjungiant privačius tinklus.</translation>
+   <translation id="cpci_private_network_remove_vrack_error" qtlid="454774">Klaida išjungiant privačius tinklus.</translation>
+   <translation id="cpci_private_network_add_vrack_success" qtlid="454787">Privatūs tinklai sėkmingai įjungti.</translation>
+   <translation id="cpci_private_network_remove_vrack_success" qtlid="454800">Privatūs tinklai sėkmingai išjungti.</translation>
+   <translation id="private_network_deactivate_confirmation_vlans" qtlid="454951">Visi vLAN bus ištrinti.</translation>
 </translations>

@@ -56,10 +56,14 @@
    <translation id="cpci_vm_price" qtlid="83913">Hinta</translation>
    <translation id="cpci_vm_hdd" qtlid="453731">Liitetty kovalevy</translation>
    <translation id="cpci_vm_status" qtlid="26443">Tila</translation>
+   <translation id="cpci_vm_status_BUILD" qtlid="26791">Luonti</translation>
+   <translation id="cpci_vm_status_DELETING" qtlid="59699">Poisto</translation>
    <translation id="cpci_vm_status_ERROR" qtlid="45508">Virhe</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Uudelleenkäynnistys</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_REBUILD" qtlid="34740">Uudelleenasennus</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Rescue-tila</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Tilannekuva</translation>
+   <translation id="cpci_vm_status_UPDATING" qtlid="26863">Päivitys</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Tuntematon tila ({{msg}}) palvelimella "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Tuntematon tila ({{msg}}) palvelimella "{{server}}" (ID Openstack Nova: {{id}})</translation>

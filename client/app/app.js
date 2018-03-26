@@ -5,8 +5,6 @@ angular.module("managerApp", [
     "ngAnimate",
     "ngMessages",
     "pascalprecht.translate",
-    "ovh-angular-toggleClass",
-    "ovh-angular-manager-navbar",
     "ui.bootstrap",
     "ui.router",
     "ui.validate",

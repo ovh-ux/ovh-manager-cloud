@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Threshold alert </translation>
-   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Email address</translation>
    <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">An email address is required to send an alert. </translation>
    <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">The email address is invalid.</translation>
 

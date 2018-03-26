@@ -1,0 +1,14 @@
+{
+  "name": "ovh-noVNC",
+  "version": "2.1.4",
+  "author": "Team JS <teamjs@interne.ovh.net>",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "devria@incubator.ovh.net:ovh-noVNC"
+  },
+  "ignore": [
+    ".gitignore",
+    ".gitmodules"
+  ]
+}

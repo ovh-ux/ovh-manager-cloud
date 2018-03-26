@@ -7,7 +7,7 @@
    <translation id="cpci_internet" qtlid="246975">Internet</translation>
 
    <translation id="cpci_public_cloud" qtlid="104890">Public Cloud</translation>
-   <translation id="cpci_private_cloud" qtlid="20131">Private Cloud</translation>
+   <translation id="cpci_private_cloud" qtlid="20131">Hosted Private Cloud</translation>
 
    <translation id="cpci_public_cloud_soon_help" qtlid="269097">Your OVH Cloud servers will soon be able to communicate across a private network, without sending any traffic over the Internet. This service will be available in the first half of 2016.</translation>
 
@@ -56,10 +56,14 @@
    <translation id="cpci_vm_price" qtlid="83913">Price</translation>
    <translation id="cpci_vm_hdd" qtlid="453731">Hard drive attached</translation>
    <translation id="cpci_vm_status" qtlid="26443">Status</translation>
+   <translation id="cpci_vm_status_BUILD" qtlid="26791">Creation</translation>
+   <translation id="cpci_vm_status_DELETING" qtlid="59699">Delete</translation>
    <translation id="cpci_vm_status_ERROR" qtlid="45508">Error</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Reboot</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_REBUILD" qtlid="34740">Re-installation</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Mode Rescue</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
+   <translation id="cpci_vm_status_UPDATING" qtlid="26863">Update</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Status unknown ({{msg}}) on "{{server}}" (ID Openstack Nova: {{id}})</translation>
