@@ -223,9 +223,9 @@
     jquery "~2.1.3"
     lodash "~3.3.0"
 
-"@bower_components/ovh-angular-doc-url@ovh-ux/ovh-angular-doc-url#master":
-  version "0.0.6"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-doc-url/tar.gz/ea654925141965a1b9268c81e7be3849e3896a32"
+"@bower_components/ovh-angular-doc-url@ovh-ux/ovh-angular-doc-url#^0.0.7":
+  version "0.0.7"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-doc-url/tar.gz/7bb91949aaa9ab7b671f72033fb83648f6197352"
 
 "@bower_components/ovh-angular-form-flat@ovh-ux/ovh-angular-form-flat#^3.2.2":
   version "3.2.2"
