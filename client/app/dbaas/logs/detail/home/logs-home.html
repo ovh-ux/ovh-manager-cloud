@@ -38,7 +38,7 @@
                 <div class="pl-4 pr-4 pb-2">
                     <oui-spinner data-ng-if="ctrl.storageData.loading"></oui-spinner>
                     <canvas id="storage-data" class="chart chart-line"
-                        data-ng-if="!ctrl.storageData.loading"
+                        data-ng-if="!ctrl.storageData.loading && ctrl.storageData.data.timestamps.length>0"
                         chart-data="ctrl.dataUsageGraphData.data"
                         chart-labels="ctrl.dataUsageGraphData.labels" 
                         chart-series="ctrl.dataUsageGraphData.series" 
@@ -46,6 +46,7 @@
                         chart-dataset-override="ctrl.dataUsageGraphData.datasetOverride"
                         chart-options="ctrl.dataUsageGraphData.options">
                     </canvas>
+                    <p class="ml-2" data-ng-if="!ctrl.storageData.loading && ctrl.storageData.data.timestamps.length===0" data-translate="logs_home_no_usage_data"></p>
                 </div>
             </cui-tile>
         </div>

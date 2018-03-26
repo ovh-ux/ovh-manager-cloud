@@ -56,6 +56,13 @@ class LogsHomeService {
             .then(offer => this._transformOffer(offer));
     }
 
+    /**
+     * Gets the data usage statistics data (number of documents and data received)
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve with the statistics data
+     * @memberof LogsHomeService
+     */
     getDataUsage (serviceName) {
         return this.getAccount(serviceName)
             .then(account => {
@@ -84,7 +91,7 @@ class LogsHomeService {
                 });
             })
             .then(data => {
-                const timestamps = Object.keys(data.data[0].dps);
+                const timestamps = data.data.length > 0 ? Object.keys(data.data[0].dps) : [];
                 data = data.data.map(dat => timestamps.map(timestamp => dat.dps[timestamp]));
                 return {
                     timestamps: timestamps.map(timestamp => timestamp * 1000),
@@ -121,10 +128,35 @@ class LogsHomeService {
             .catch(this.ServiceHelper.errorHandler("logs_home_service_info_get_error"));
     }
 
+    /**
+     * Gets the service details
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the service details
+     * @memberof LogsHomeService
+     */
     getServiceDetails (serviceName) {
         return this.LogsLexiService.logDetail({ serviceName })
             .$promise
             .catch(this.ServiceHelper.errorHandler("logs_get_error"));
+    }
+
+    /**
+     * Converts the number to a more readable form
+     *
+     * @param {any} number
+     * @returns the number in more readable form
+     * @memberof LogsHomeService
+     */
+    humanizeNumber (number) {
+        if (number < 1000) {
+            return Math.round(number * 100) / 100;
+        }
+        const si = ["K", "M", "G", "T", "P", "H"];
+        const exp = Math.floor(Math.log(number) / Math.log(1000));
+        let result = number / 1000 ** exp;
+        result = result % 1 > (1 / (1000 ** (exp - 1))) ? Math.round(result.toFixed(2) * 100) / 100 : result.toFixed(0);
+        return result + si[exp - 1];
     }
 
     /**
@@ -277,6 +309,13 @@ class LogsHomeService {
         return option;
     }
 
+    /**
+     * Sets the menu's title
+     *
+     * @param {any} serviceName
+     * @param {any} displayName
+     * @memberof LogsHomeService
+     */
     _changeMenuTitle (serviceName, displayName) {
         const menuItem = this.SidebarMenu.getItemById(serviceName);
         if (menuItem) {
