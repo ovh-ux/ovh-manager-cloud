@@ -11,7 +11,8 @@ class LogsDashboardsCrudModalCtrl {
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/dashboards/crud/logs-dashboards-crud.html",
                 controller: "LogsDashboardsCrudCtrl",
-                controllerAs: "ctrl"
+                controllerAs: "ctrl",
+                backdrop: "static"
             }
         }).then(() => this.$scope.$parent.ctrl.initLoaders())
             .finally(() => this.onCloseModal());

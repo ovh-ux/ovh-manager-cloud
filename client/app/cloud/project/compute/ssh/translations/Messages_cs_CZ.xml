@@ -9,8 +9,8 @@
    <translation id="cpc_ssh_error" qtlid="248808">Chyba, není možné získat seznam SSH klíčů.</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">Společnost OVH používá pro zajištění šifrované datové komunikace mezi servery bezpečnostní protokol SSH.</translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů.<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
-   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Mějte prosím na paměti, že na Vaši instanci lze <a href="{{ addUrl }}" target="_blank">nakonfigurovat dodatečné SSH klíče<i class="fa fa-external-link" aria-hidden="true"></i></a> <a href="{{ changeUrl }}" target="_blank">pro případ ztráty<i class="fa fa-external-link" aria-hidden="true"></i></a> či umožnění přístupu dalším osobám. &#13;
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Pro každý operační systém existuje SSH klient. Pro více informací nahlédněte do <a href="{{ createUrl }}" target="_blank">příručky pro vytváření SSH klíčů<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_3" qtlid="366567">Mějte prosím na paměti, že na Vaší instanci lze <a href="{{ addUrl }}" target="_blank">nakonfigurovat dodatečné SSH klíče<i class="fa fa-external-link" aria-hidden="true"></i></a> <a href="{{ changeUrl }}" target="_blank">pro případ ztráty<i class="fa fa-external-link" aria-hidden="true"></i></a> či umožnění přístupu dalším osobám. &#13;
 &#13;
 </translation>
 

@@ -54,7 +54,7 @@
 
    <translation id="vdi_upgrading" qtlid="314066">Das Upgrade des Desktops wird durchgeführt.</translation>
    <translation id="vdi_upgraded" qtlid="314079">Das Upgrade des Desktops wurde durchgeführt.</translation>
-   <translation id="vdi_HT" qtlid="101397">ohne MwSt.</translation>
+   <translation id="vdi_HT" qtlid="101397">zzgl. MwSt.</translation>
 
    <translation id="vdi_task_current" qtlid="195633">Aktuelle Tasks</translation>
    <translation id="vdi_task_id" qtlid="279015">ID</translation>

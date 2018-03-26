@@ -32,20 +32,18 @@ class OrderHelperService {
             formattedConfig = [formattedConfig];
         }
 
-        const paramsPart = this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
+        return this.$httpParamSerializerJQLike(_.assign({}, urlParams, {
             products: JSURL.stringify(formattedConfig)
         }));
-
-        return paramsPart;
     }
 
     /**
      * Transform an object to an Order compliant array
-     * @param  {[Object} config plain json
-     * @return {Array}          an array compatible with Order
+     * @param  {Object} config plain json
+     * @return {Array} an array compatible with Order
      */
     transformToOrderValues (config) {
-        let orderConfig = [];
+        const orderConfig = [];
         _.forEach(_.keys(config), key => {
             const configParam = {
                 label: key

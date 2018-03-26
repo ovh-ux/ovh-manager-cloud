@@ -8,7 +8,6 @@ class LogsStreamsHomeCtrl {
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.UrlHelper = UrlHelper;
-
         this.initLoaders();
     }
 
@@ -26,6 +25,17 @@ class LogsStreamsHomeCtrl {
         });
         this.quota.load();
         this.streams.load();
+    }
+
+    /**
+     * navigates to add stream page
+     *
+     * @memberof LogsStreamsHomeCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.streams.add", {
+            serviceName: this.serviceName
+        });
     }
 
     /**
@@ -59,10 +69,10 @@ class LogsStreamsHomeCtrl {
      */
     showDeleteConfirm (stream) {
         this.CloudMessage.flushChildMessage();
-        return this.ControllerHelper.modal.showDeleteModal({
+        this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_stream_delete_title"),
             text: this.$translate.instant("logs_stream_delete_message", { stream: stream.info.title })
-        }).then(() => this.delete(stream));
+        }).then(() => this._delete(stream));
     }
 
     /**
@@ -71,7 +81,7 @@ class LogsStreamsHomeCtrl {
      * @param {any} stream to delete
      * @memberof LogsStreamsHomeCtrl
      */
-    delete (stream) {
+    _delete (stream) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsStreamsService.deleteStream(this.serviceName, stream.info)

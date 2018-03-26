@@ -32,12 +32,12 @@ angular.module("managerApp").directive("kvm", function () {
                            </table>
                            <br/>
                        </div>
-                       <canvas id="noVNC_canvas" width="640px" height="20px" data-ng-hide="rfbLoading">
+                       <canvas id="noVNC_canvas" width="480px" height="20px" data-ng-hide="rfbLoading">
                            'Error: Canvas not supported.'
                        </canvas>
-                       <div class="row-fluid" data-ng-show="rfbLoading">
-                            <div class="span12 loader"></div>
-                        </div>
+                       <div class="text-center" data-ng-if="rfbLoading">
+                           <oui-spinner></oui-spinner>
+                       </div>
                    </div>`,
         link: function ($scope, element) {
 
@@ -57,7 +57,7 @@ angular.module("managerApp").directive("kvm", function () {
                     launchKVM();
                 } else {
                     // Load supporting scripts
-                    window.INCLUDE_URI = "js/app/libs/noVNC/include/";
+                    window.INCLUDE_URI = "assets/noVNC/include/";
                     Util.load_scripts(["webutil.js", "base64.js", "websock.js", "des.js",
                                        "keysymdef.js", "keyboard.js", "input.js", "display.js",
                                        "jsunzip.js", "rfb.js"]);
@@ -127,8 +127,8 @@ angular.module("managerApp").directive("kvm", function () {
                     unregisterSizeChangedWatch = false;
                 }
                 if(canvaElement.is(":visible")) {
-                    angular.element($("#currentAction .modal-dialog")).css({
-                        "width": canvaElement.width() + 20 + "px",
+                    angular.element($(".modal-dialog")).css({
+                        "width": canvaElement.width() + 80 + "px",
                         "height": canvaElement.height() + 150 + "px"
                     });
                 }

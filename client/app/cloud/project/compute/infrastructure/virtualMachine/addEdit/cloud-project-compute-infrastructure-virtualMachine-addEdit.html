@@ -609,17 +609,17 @@
                                              data-is-open="VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category]"
                                              data-is-disabled="!categoryObject.flavors.length">
                                 <uib-accordion-heading>
-                                    <div data-ng-click="VmAddEditCtrl.changeCategory(categoryObject.category)" class="{{VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category] ? 'active' : categoryObject.flavors.length ? '' : 'disabled'}}">
+                                    <div class="{{VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category] ? 'active' : categoryObject.flavors.length ? '' : 'disabled'}}">
                                         <div class="chevron-left">
                                             <i class="glyphicon pull-left"
                                                ng-class="{'glyphicon-chevron-down': VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category], 'glyphicon-chevron-right': !VmAddEditCtrl.toggle.accordions.flavors[categoryObject.category]}"></i>
                                         </div>
                                         <div class="accordion-heading-title">
-                                            <span data-translate="cpcivm_addedit_flavor_{{ categoryObject.category }}_{{ VmAddEditCtrl.catalogVersion() }}"></span>
+                                            <span data-translate="cpcivm_addedit_flavor_{{ categoryObject.category }}"></span>
                                             <small data-ng-show="VmAddEditCtrl.hasWindowsCompatibilityIssue(categoryObject.category)" data-translate="cpcivm_addedit_image_windows_incompatibility" class="accordion-heading-title__information"></small>
                                         </div>
                                     </div>
-                                    <p class="alert alert-warning text-center top-space-m8" data-ng-if="!categoryObject.flavors.length && categoryObject.category === 'gpu'">
+                                    <p class="alert alert-warning text-center top-space-m8" data-ng-if="!categoryObject.flavors.length && categoryObject.category === 'accelerated'">
                                         <i class="fa fa-warning"></i>
                                         <span data-translate="cpcivm_addedit_flavor_not_available_region"></span>
                                     </p>
@@ -706,9 +706,9 @@
                                                     </div>
                                                 </button>
                                             </dd>
-                                            <dt data-ng-if="categoryObject.category === 'gpu'"
+                                            <dt data-ng-if="categoryObject.category === 'accelerated'"
                                                 data-translate="cpcivm_addedit_table_gpu"></dt>
-                                            <dd data-ng-if="categoryObject.category === 'gpu'">
+                                            <dd data-ng-if="categoryObject.category === 'accelerated'">
                                                 <div data-ng-bind="'cpcivm_addedit_table_gpu_' + VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].shortType | translate: { cardCount: VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].gpuCardCount }"></div>
                                             </dd>
                                             <dt data-translate="cpcivm_addedit_table_disk"></dt>
@@ -716,7 +716,7 @@
                                                 <div data-translate="cpcivm_addedit_table_disk_details_ssd"
                                                      data-translate-values="{ size: (VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category].disk | bytes:2:true:'GiB') }"></div>
 
-                                                <div data-ng-show="categoryObject.category === 'other'">
+                                                <div data-ng-show="VmAddEditCtrl.showFlex(categoryObject.category)">
                                                     <div class="checkbox" data-ng-disabled="VmAddEditCtrl.isIncompatible(categoryObject.category, 'ssd')">
                                                         <label data-uib-tooltip="{{ VmAddEditCtrl.isIncompatible(categoryObject.category, 'ssd') ? ('cpcivm_addedit_flavor_disabled_NO_FLEX' | translate) : '' }}">
                                                             <input type="checkbox"
@@ -732,7 +732,7 @@
                                                     </div>
                                                 </div>
                                             </dd>
-                                            <dd data-ng-if="categoryObject.category === 'other' && VmAddEditCtrl.getFlavorOfCurrentRegionAndOSType(VmAddEditCtrl.categoriesVmInEditionFlavor[categoryObject.category], 'ceph', false) !== undefined">
+                                            <dd data-ng-if="VmAddEditCtrl.showCeph(categoryObject.category)">
                                                 <div class="btn-group btn-disks top-space-m8" role="group">
                                                     <button type="button"
                                                             class="btn"

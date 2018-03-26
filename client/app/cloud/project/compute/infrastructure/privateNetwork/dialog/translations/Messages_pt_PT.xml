@@ -19,7 +19,7 @@
    <translation id="cpcipnd_subnet_label" qtlid="331358">Endereço da rede privada (CIDR):</translation>
    <translation id="cpcipnd_subnet_address_required_error" qtlid="331371">O endereço é necessário.</translation>
    <translation id="cpcipnd_subnet_address_valid_ip_address_error" qtlid="331384">O formato da morada é inválido.</translation>
-   <translation id="cpcipnd_subnet_address_hint" qtlid="30430">Morada</translation>
+   <translation id="cpcipnd_subnet_address_hint" qtlid="30430">Endereço Postal</translation>
    <translation id="cpcipnd_subnet_address_title" qtlid="331397">Endereço de sub-rede</translation>
    <translation id="cpcipnd_subnet_range_label" qtlid="331410">Range:</translation>
    <translation id="cpcipnd_subnet_mask_hint" qtlid="331423">24</translation>

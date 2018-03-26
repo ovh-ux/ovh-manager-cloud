@@ -149,7 +149,10 @@ class LogsRolesService {
 
     addRole (serviceName, object) {
         return this.RolesApiService.create({ serviceName }, object).$promise
-            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_add_success", { name: object.name }))
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_role_add_success", { name: object.name });
+            })
             .catch(err => this.LogsHelperService.handleError("logs_role_add_error", err, { name: object.name }));
     }
 

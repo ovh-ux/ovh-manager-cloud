@@ -34,7 +34,7 @@
             this.dismissableTypes = this.dismissableTypes || ["info", "success"];
             this.groupedTypes = this.groupedTypes || ["error"];
 
-            this.$scope.$watch(() => this.messages.length, () => {
+            this.$scope.$watchCollection(() => this.messages, () => {
                 this.refreshValues();
                 this.groupedMessages = this.getGroupedMessages();
             });

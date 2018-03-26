@@ -10,7 +10,7 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams", "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/streams", "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool"]
         })
         .state("dbaas.logs.detail.streams.home", {
             url: "/home",

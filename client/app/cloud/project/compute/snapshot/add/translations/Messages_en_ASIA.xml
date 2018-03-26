@@ -11,5 +11,5 @@
    <translation id="cpc_snapshot_add_success" qtlid="246884">The {{snapshotname}} snapshot is going to be taken and will be available in a few minutes.</translation>
    <translation id="cpc_snapshot_add_availibility" qtlid="271270">Your server will be suspended for a few seconds and read/write performance may be impacted until the backup is complete. </translation>
    <translation id="cpc_snapshot_add_error" qtlid="246897">Oops! We were unable to take a snapshot of this server.</translation>
-   <translation id="cpc_snapshot_add_total" qtlid="270020">({{size | bytes:2}}, approximately {{price}} exl. VAT/month)</translation>
+   <translation id="cpc_snapshot_add_total" qtlid="270020">({{size | bytes:2}}, approximately {{price}} exl. GST/month)</translation>
 </translations>

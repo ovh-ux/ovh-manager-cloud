@@ -9,4 +9,9 @@
    <translation id="cpci_private_network_creating" qtlid="363906">Yksityistä verkkoa luodaan</translation>
    <translation id="cpci_private_network_creating_description" qtlid="261374">Operaatio kestää muutaman minuutin.</translation>
    <translation id="cpci_private_network_list_private_network_query_error" qtlid="364641">Tapahtui virhe yksityisten verkkojen hakemisessa.</translation>
+   <translation id="cpci_private_network_add_vrack_error" qtlid="454761">Tapahtui virhe yksityisten verkkojen aktivoinnissa.</translation>
+   <translation id="cpci_private_network_remove_vrack_error" qtlid="454774">Tapahtui virhe poistettaessa käytöstä yksityisiä verkkoja.</translation>
+   <translation id="cpci_private_network_add_vrack_success" qtlid="454787">Yksityisten verkkojen aktivointi onnistui.</translation>
+   <translation id="cpci_private_network_remove_vrack_success" qtlid="454800">Yksityisten verkkojen käytöstä poistaminen onnistui.</translation>
+   <translation id="private_network_deactivate_confirmation_vlans" qtlid="454951">Kaikki vLanit poistetaan.</translation>
 </translations>

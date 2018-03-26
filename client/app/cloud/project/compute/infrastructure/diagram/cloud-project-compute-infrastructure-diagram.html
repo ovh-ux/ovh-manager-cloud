@@ -410,7 +410,7 @@
                                                     </li>
                                                     <li data-ng-if="vm.status === 'RESCUE' && vm.getStatusGroup() === 'OPENSTACK'">
                                                         <button type="button" class="red"
-                                                                data-ng-click="ComputeInfrastructureListCtrl.InfrastructureService.stopRescueMode(vm, false)">
+                                                                data-ng-click="ComputeInfrastructureDiagramCtrl.InfrastructureService.stopRescueMode(vm, false)">
                                                             <span class="fa fa-power-off right-space-m8" aria-hidden="true"></span>
                                                             <span data-ng-bind="'cpci_vm_action_rescue_end' | translate"></span>
                                                         </button>
@@ -500,17 +500,15 @@
                                                 <span translate="cpci_vm_flavor_category_{{vm.flavor.name}}" translate-default="?"></span>
                                             </div>
                                             <span class="flavor-offer-price right-space-m12"
-                                                  data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status !== 'ok'"
-                                                  translate="cpci_vm_flavor_price"
-                                                  translate-values="{price: vm.price.price.text || '?' }"></span>
+                                                  data-ng-if="vm.status !== 'DRAFT' && !vm.monthlyBillingBoolean"
+                                                  data-translate="cpci_vm_flavor_price"
+                                                  data-translate-values="{price: vm.price.price.text || '?' }"></span>
                                             <span class="flavor-offer-price right-space-m12"
-                                                  data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBilling.status === 'ok'"
-                                                  translate="cpci_vm_flavor_month"
-                                                  translate-values="{price: vm.price.monthlyPrice.text || '?' }"></span>
-                                            <span class="text-center"
-                                                  data-ng-if="vm.monthlyBilling.status === 'activationPending'">
-                                                <oui-spinner size="s" inline="true"></oui-spinner>
-                                            </span>
+                                                  data-ng-if="vm.status !== 'DRAFT' && vm.monthlyBillingBoolean"
+                                                  data-translate="cpci_vm_flavor_month"
+                                                  data-translate-values="{price: vm.price.monthlyPrice.text || vm.price.price.text || '?' }"></span>
+                                            <oui-spinner size="s" inline="true"
+                                                         data-ng-if="vm.monthlyBilling.status === 'activationPending'"></oui-spinner>
                                         </div>
 
                                         <!-- dropdown -->

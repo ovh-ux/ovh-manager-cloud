@@ -23,7 +23,7 @@
    <translation id="nasha_partitions_size_in_Gb" qtlid="153623">Taille (en Go)</translation>
    <translation id="nasha_partitions_action_update" qtlid="172319">Modifier la taille</translation>
    <translation id="nasha_partitions_action_change_access" qtlid="82581">Gérer les accès</translation>
-   <translation id="nasha_partitions_action_display_snapshot" qtlid="172332">Fréquence des snapshots</translation>
+   <translation id="nasha_partitions_action_display_snapshot" qtlid="172332">Fréquence des images instantanées</translation>
    <translation id="nasha_partitions_action_display_custom_snapshot" qtlid="369178">Image instantanée</translation>
    <translation id="nasha_partitions_action_z_file_system" qtlid="373649">Paramètres Z File System (ZFS)</translation>
    <translation id="nasha_partitions_action_add" qtlid="120919">Créer une partition</translation>

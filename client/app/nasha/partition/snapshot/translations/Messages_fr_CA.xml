@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="nasha_snapshot_loading_error" qtlid="153974">Une erreur est survenue lors de la récupération des snapshots.</translation>
+   <translation id="nasha_snapshot_loading_error" qtlid="153974">Une erreur est survenue lors de la récupération des images instantanées.</translation>
    <translation id="nasha_snapshot_set_success" qtlid="344896">La modification des fréquences de snapshot sera effective dans quelques instants.</translation>
    <translation id="nasha_snapshot_set_success_fail" qtlid="344909">Une erreur est survenue lors de la modifications de la fréquence d'images instantanées.</translation>
    <translation id="nasha_snapshot_of" qtlid="344922">Image instantanée de la partition {{partitionName}}</translation>

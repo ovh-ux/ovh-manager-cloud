@@ -42,7 +42,7 @@ class VpsActionService {
         });
     }
 
-    kvm (serviceName, hasKVM) {
+    kvm (serviceName, noVNC) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/vps/modal/shortcut/kvm/vps-kvm.html",
@@ -50,7 +50,7 @@ class VpsActionService {
                 controllerAs: "$ctrl",
                 resolve: {
                     serviceName: () => serviceName,
-                    hasKVM: () => hasKVM
+                    noVNC: () => noVNC
                 }
             }
         });

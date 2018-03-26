@@ -4,6 +4,7 @@
     <translation id="logs_roles_description">Your logs contain important information that you sometimes have to share with others. Logs Data Platform allows you to define read-only access rights on part of your streams, dashboards, indices or aliases.</translation>
 
     <translation id="logs_roles_total_used">roles used</translation>
+    <translation id="logs_roles_name">role</translation>
     <translation id="logs_roles_add">Add a role</translation>
 
     <translation id="logs_roles_increase_quota">increase the quota</translation>
@@ -27,6 +28,7 @@
     <translation id="logs_role_modal_name">Name</translation>
     <translation id="logs_role_modal_description">Description</translation>
     <translation id="logs_role_modal_option">Attached to option</translation>
+    <translation id="logs_roles_tooltip">Roles are available for buying streams, tables and aliases (eg 5 streams = 5 roles).</translation>
 
     <translation id="logs_role_modal_delete_title">Delete role</translation>
     <translation id="logs_role_modal_delete_question">Are you sure you want to delete the following role: {{name}}?</translation>

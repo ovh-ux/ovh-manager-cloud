@@ -42,7 +42,7 @@
    <translation id="iplb_ssl_preview_subject" qtlid="22639">Assunto</translation>
    <translation id="iplb_ssl_preview_fingerprint" qtlid="192344">Chave</translation>
    <translation id="iplb_ssl_preview_type" qtlid="2642">Tipo</translation>
-   <translation id="iplb_ssl_preview_id" qtlid="46792">Identificador</translation>
+   <translation id="iplb_ssl_preview_id" qtlid="46792">ID utilizador</translation>
 
    <translation id="iplb_ssl_delete_title" qtlid="439117">Eliminar um certificado</translation>
    <translation id="iplb_ssl_delete_question" qtlid="439130">Quer mesmo eliminar o certificado {{name}}?</translation>
@@ -67,7 +67,7 @@
    <translation id="iplb_ssl_order_incorporation_date" qtlid="431799">Data de constituição da organização</translation>
    <translation id="iplb_ssl_order_organisation_name" qtlid="191109">Nome da organização</translation>
    <translation id="iplb_ssl_order_unit_name" qtlid="439260">Nome da unidade organizativa</translation>
-   <translation id="iplb_ssl_order_address" qtlid="30430">Morada</translation>
+   <translation id="iplb_ssl_order_address" qtlid="30430">Endereço Postal</translation>
    <translation id="iplb_ssl_order_postal_code" qtlid="30346">Código postal</translation>
    <translation id="iplb_ssl_order_city" qtlid="33310">Localidade</translation>
    <translation id="iplb_ssl_order_joi" qtlid="439273">Sede Social</translation>

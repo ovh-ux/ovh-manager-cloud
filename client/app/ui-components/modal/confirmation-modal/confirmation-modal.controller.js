@@ -8,7 +8,7 @@ class ConfirmationModalController {
     }
 
     dismissModal () {
-        this.$uibModalInstance.dismiss();
+        this.$uibModalInstance.dismiss("cancel");
     }
 
     closeModal () {

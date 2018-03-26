@@ -54,8 +54,9 @@ class LogsStreamsAddCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsStreamsService.updateStream(this.$stateParams.serviceName, this.stream.data)
+                this.LogsStreamsService.updateStream(this.serviceName, this.stream.data)
                     .then(() => this.$state.go("dbaas.logs.detail.streams"))
+                    .catch(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }
@@ -72,8 +73,9 @@ class LogsStreamsAddCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsStreamsService.createStream(this.$stateParams.serviceName, this.stream.data)
+                this.LogsStreamsService.createStream(this.serviceName, this.stream.data)
                     .then(() => this.$state.go("dbaas.logs.detail.streams"))
+                    .catch(() => this.ControllerHelper.scrollPageToTop())
         });
         return this.saving.load();
     }

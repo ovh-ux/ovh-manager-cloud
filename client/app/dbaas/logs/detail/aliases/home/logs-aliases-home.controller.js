@@ -29,6 +29,17 @@ class LogsAliasesHomeCtrl {
     }
 
     /**
+     * navigates to add alias page
+     *
+     * @memberof LogsAliasesHomeCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.aliases.home.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * navigates to edit alias page
      *
      * @param {any} alias
@@ -66,7 +77,7 @@ class LogsAliasesHomeCtrl {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_aliases_delete_title"),
             text: this.$translate.instant("logs_alias_delete_message", { alias: alias.name })
-        }).then(() => this.delete(alias));
+        }).then(() => this._delete(alias));
     }
 
     /**
@@ -75,7 +86,7 @@ class LogsAliasesHomeCtrl {
      * @param {any} alias to delete
      * @memberof LogsAliasesHomeCtrl
      */
-    delete (alias) {
+    _delete (alias) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsAliasesService.deleteAlias(this.serviceName, alias)

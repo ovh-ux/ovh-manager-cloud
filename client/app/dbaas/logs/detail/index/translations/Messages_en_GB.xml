@@ -5,6 +5,7 @@
     <translation id="logs_index_increase_quota">increase the quota</translation>
     <translation id="logs_index_quota_get_error">An error has occurred while retrieving index quota: {{message}}</translation>
     <translation id="logs_index_add_data_feed">Add index</translation>
+    <translation id="logs_index_name">index</translation>
 
     <translation id="logs_index_get_error">An error has occurred while retrieving index</translation>
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving quota </translation>

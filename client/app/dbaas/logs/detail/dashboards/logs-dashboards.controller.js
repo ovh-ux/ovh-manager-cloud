@@ -31,6 +31,17 @@ class LogsDashboardsCtrl {
     }
 
     /**
+     * navigates to add dashboard page
+     *
+     * @memberof LogsDashboardsCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.dashboards.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * navigates to edit dashboard page
      *
      * @param {any} dashboard
@@ -72,7 +83,7 @@ class LogsDashboardsCtrl {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_dashboards_delete_title"),
             text: this.$translate.instant("logs_dashboards_delete_message", { dashboardName: dashboard.title })
-        }).then(() => this.delete(dashboard));
+        }).then(() => this._delete(dashboard));
     }
 
     /**
@@ -81,7 +92,7 @@ class LogsDashboardsCtrl {
      * @param {any} dashboard to delete
      * @memberof LogsDashboardsCtrl
      */
-    delete (dashboard) {
+    _delete (dashboard) {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsDashboardsService.deleteDashboard(this.serviceName, dashboard)
