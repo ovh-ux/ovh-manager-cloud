@@ -19,7 +19,7 @@
    <translation id="nasha_order_nasha_nas-ha-19200g" qtlid="243445">Hybrid HA-NAS 19.2 TB</translation>
    <translation id="nasha_order_nasha_nas-ha-26400g" qtlid="243458">Hybrid HA-NAS 26.4 TB</translation>
    <translation id="nasha_order_name" qtlid="345234">Type of HA-NAS</translation>
-   <translation id="nasha_order_price" qtlid="345247">Price ex. VAT (1 month)</translation>
+   <translation id="nasha_order_price" qtlid="345247">Price ex. GST (1 month)</translation>
    <translation id="nasha_order_datacenter" qtlid="345260">Choose your datacentre:</translation>
    <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
    <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
@@ -31,8 +31,8 @@
 </translation>
    <translation id="nasha_order_error" qtlid="345286">An error has occurred retrieving the purchase order.</translation>
    <translation id="nasha_order_success" qtlid="345299">The order number <a href='{{data.url}}' target='_blank'>{{data.orderId}}</a> of your HA-NAS has been registered.</translation>
-   <translation id="nasha_order_bc_price_HT" qtlid="345312">Total price ex. VAT: <strong>{{priceHT}}</strong></translation>
-   <translation id="nasha_order_bc_price_TTC" qtlid="345325">Total price incl. VAT: <strong>{{priceTTC}}</strong></translation>
+   <translation id="nasha_order_bc_price_HT" qtlid="345312">Total price ex. GST: <strong>{{priceHT}}</strong></translation>
+   <translation id="nasha_order_bc_price_TTC" qtlid="345325">Total price incl. GST: <strong>{{priceTTC}}</strong></translation>
 
    <translation id="nasha_order_guide_title" qtlid="300370">Guides</translation>
    <translation id="nasha_order_new_window" qtlid="222176">New window</translation>

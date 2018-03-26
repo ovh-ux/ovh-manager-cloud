@@ -16,8 +16,7 @@ module.exports = function (grunt) {
         useminPrepare  : "grunt-usemin",
         ngtemplates    : "grunt-angular-templates",
         protractor     : "grunt-protractor-runner",
-        ngconstant     : "grunt-ng-constant",
-        bump           : "grunt-bump"
+        ngconstant     : "grunt-ng-constant"
     });
 
     // Load custom tasks
@@ -295,16 +294,6 @@ module.exports = function (grunt) {
             }
         },
 
-        // Bump version
-        bump: {
-            options : {
-                pushTo        : "origin",
-                files         : ["package.json", "bower.json"],
-                updateConfigs : ["pkg"],
-                commitFiles   : ["-a"]
-            }
-        },
-
         // Dynamically generate angular constants
         ngconstant: {
             custom: {
@@ -432,6 +421,7 @@ module.exports = function (grunt) {
                         "app/**/!(*.tpl).html",
                         "assets/images/{,*/}*.{webp}",
                         "assets/fonts/**/*",
+                        "assets/noVNC/**/*",
                         "bower_components/**/*.{ttf,woff,woff2,svg,eot}",
                         "bower_components/**/translations/*.json",
                         "bower_components/angular-i18n/angular-locale_*-*.js",
@@ -1004,16 +994,4 @@ module.exports = function (grunt) {
         "wiredep:test",
         "karma:unit"
     ]);
-
-    grunt.registerTask("release", function () {
-        grunt.config.set("mode", "production");
-        var type = grunt.option("type");
-
-        if (type === "patch" || type === "minor" || type === "major") {
-            grunt.task.run(["bump:" + type]);
-        } else {
-            grunt.verbose.or.write("You try to release in a weird version type [" + type + "]").error();
-            grunt.fail.warn("Please try with --type=patch|minor|major");
-        }
-    });
 };

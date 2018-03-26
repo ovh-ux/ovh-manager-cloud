@@ -2,21 +2,23 @@
     <li class="private-networks__item" data-ng-class="{ 'private-networks__item_no-vrack': !$ctrl.hasVrack() }">
         <div class="private-networks__header" data-ng-class="{ 'private-networks__header_no-vrack': !$ctrl.hasVrack() }">
             <h2 class="private-networks__header-title" data-translate="cpci_private_network_list_header_title"></h2>
-            <p class="private-networks__header-network-name">
-                <span data-ng-bind="$ctrl.getVrackName()" data-ng-if="$ctrl.hasVrack()"></span>
-                <a class="private-networks__header-edit-vrack-button" data-ng-click="$ctrl.gotoVrack()" data-ng-if="$ctrl.canGotoVrack()">
-                    <span class="ovh-font ovh-font-newtab"></span>
+            <p class="private-networks__header-network-name" data-ng-if="$ctrl.hasVrack()">
+                <span class="text-wrap word-break" data-ng-bind="$ctrl.getVrackName()"></span>
+                <a data-ng-click="$ctrl.gotoVrack()" data-ng-if="$ctrl.canGotoVrack()">
+                    <i class="private-networks__header-edit-vrack-button oui-icon oui-icon-external_link" aria-hidden="true"></i>
                 </a>
+                <button class="private-networks__header-edit-vrack-button oui-icon oui-icon-close" type="button" aria-hidden="true" data-ng-click="$ctrl.unlinkVrack()"></button>
             </p>
         </div>
         <div class="private-networks__description" data-ng-if="!$ctrl.hasVrack() && !$ctrl.hasPendingLoaders()">
             <p data-translate="cpci_private_network_activateVrack_description"></p>
-            <a type="button" 
-                data-ng-show="$ctrl.orderUrl" 
-                class="ovh-button ovh-button_secondary" 
-                data-ng-href="{{ $ctrl.orderUrl }}" 
-                data-translate="cpci_private_network_activateVrack_activate"
-                target="_blank"></a>
+            <a type="button"
+                data-ng-show="$ctrl.orderUrl"
+                data-ng-disabled="$ctrl.loaders.vracks.get"
+                class="ovh-button ovh-button_secondary"
+                data-ng-click="$ctrl.addVRack()"
+                data-translate="private_network_activate_title">
+            </a>
         </div>
     </li>
     <li class="private-networks__item" data-ng-repeat="network in $ctrl.getPrivateNetworks() track by network.id" data-ng-if="$ctrl.hasVrack()">

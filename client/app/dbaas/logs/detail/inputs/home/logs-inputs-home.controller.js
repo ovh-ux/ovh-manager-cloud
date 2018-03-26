@@ -105,6 +105,18 @@ class LogsInputsHomeCtrl {
     }
 
     /**
+     * navigates to the add page
+     *
+     * @memberof LogsInputsCtrl
+     */
+    add () {
+        this.CloudMessage.flushChildMessage();
+        this.$state.go("dbaas.logs.detail.inputs.addwizard.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * navigates to the edit page
      *
      * @param {any} input - the input for which standard output is to be edited

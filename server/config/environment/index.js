@@ -87,23 +87,18 @@ var zoneConfig = {
     },
     US: {
         ssoAuth: {
-            host: "ovh.us",
-            devLoginUrl: "https://ovh.us/auth/requestDevLogin/",
-            baseUrl: "https://www.ovh.us/cgi-bin/crosslogin.cgi"
+            host: "ovhcloud.com",
+            devLoginUrl: "https://ovhcloud.com/auth/requestDevLogin/",
+            baseUrl: "https://ovhcloud.com/cgi-bin/crosslogin.cgi"
         },
         apiv6: {
-            url: "https://www.ovh.us/engine/apiv6"
+            url: "https://ovhcloud.com/engine/apiv6"
         },
         apiv7: {
-            url: "https://www.ovh.us/engine/apiv7"
+            url: "https://ovhcloud.com/engine/apiv7"
         },
         aapi: {
-            url: process.env.LOCAL_2API === "true" ? "http://localhost:8080" : "https://www.ovh.us/engine/2api"
-        },
-        //Simply remove these lines when US is prodded
-        proxy: {
-            host: "http://proxy.prod.ovh.us:3128",
-            target: "https://www.ovh.us"
+            url: process.env.LOCAL_2API === "true" ? "http://localhost:8080" : "https://ovhcloud.com/engine/2api"
         }
     }
 };

@@ -8,7 +8,7 @@
    <translation id="cda_detail_billing_state" qtlid="354418">Estado de faturação</translation>
    <translation id="cda_detail_status_label_CREATING" qtlid="26227">Em criação</translation>
    <translation id="cda_detail_status_label_INSTALLED" qtlid="108913">Pronta</translation>
-   <translation id="cda_detail_status_label_DELETING" qtlid="133929">A ser eliminado</translation>
+   <translation id="cda_detail_status_label_DELETING" qtlid="133929">Eliminação em curso</translation>
    <translation id="cda_detail_status_label_DELETED" qtlid="134514">Eliminado</translation>
    <translation id="cda_detail_status_label_TASK_IN_PROGRESS" qtlid="14609">Trabalho em curso de execução</translation>
 
@@ -16,7 +16,7 @@
    <translation id="cda_detail_crush_tunables" qtlid="354431">Crush tunables</translation>
    <translation id="cda_detail_service_name" qtlid="3818">Nome</translation>
    <translation id="cda_detail_service_id" qtlid="8194">ID</translation>
-   <translation id="cda_detail_size" qtlid="7726">Tamanho</translation>
+   <translation id="cda_detail_size" qtlid="7726">Dimensão</translation>
    <translation id="cda_detail_region" qtlid="32434">Região</translation>
    <translation id="cda_detail_monitor" qtlid="354444">Monite</translation>
    <translation id="cda_detail_create_date" qtlid="26419">Data de criação</translation>

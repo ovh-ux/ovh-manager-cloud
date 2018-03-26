@@ -5,7 +5,7 @@
    <translation id="cpcivm_monitoring_cpu_title" qtlid="25555">CPU</translation>
    <translation id="cpcivm_monitoring_ram_title" qtlid="31354">RAM</translation>
    <translation id="cpcivm_monitoring_hd_title" qtlid="25567">Disque</translation>
-   <translation id="cpcivm_monitoring_bandwidth_title" qtlid="7510">Traffic</translation>
+   <translation id="cpcivm_monitoring_bandwidth_title" qtlid="7510">Trafic</translation>
    <translation id="cpcivm_monitoring_comingSoon" qtlid="250043">Bientôt disponible</translation>
    <translation id="cpcivm_monitoring_unavailable" qtlid="91957">Indisponible</translation>
    <translation id="cpcivm_monitoring_netLimit" qtlid="276038">Bande passante {{ netMax }} Mbps</translation>

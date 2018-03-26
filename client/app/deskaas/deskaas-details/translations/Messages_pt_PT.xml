@@ -23,7 +23,7 @@
    <translation id="vdi_deleted" qtlid="314001">O desktop irá ser eliminado. Foi enviado um e-mail de confirmação.</translation>
    <translation id="vdi_btn_restore" qtlid="314014">Restaurar o desktop</translation>
    <translation id="vdi_btn_reboot" qtlid="323859">Reiniciar o desktop</translation>
-   <translation id="vdi_btn_reset_password" qtlid="80394">Alterar a password</translation>
+   <translation id="vdi_btn_reset_password" qtlid="80394">Alterar password</translation>
    <translation id="vdi_btn_delete" qtlid="442691">Eliminar o Desktop</translation>
    <translation id="vdi_label_username" qtlid="197024">Utilizador:</translation>
    <translation id="vdi_label_email" qtlid="116322">E-mail:</translation>

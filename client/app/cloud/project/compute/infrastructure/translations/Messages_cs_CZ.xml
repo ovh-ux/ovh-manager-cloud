@@ -46,9 +46,9 @@
    <translation id="cloud_ip_action_delete" qtlid="247196">Vymazat IP</translation>
    <translation id="cloud_ip_action_detach" qtlid="247209">Odebrat IP ze serveru</translation>
    <translation id="cloud_ip_action_park" qtlid="247222">Zaparkovat IP</translation>
-   <translation id="cloud_ip_action_sort" qtlid="257510">Tri</translation>
-   <translation id="cloud_ip_action_automatic" qtlid="257523">automatique</translation>
-   <translation id="cloud_ip_action_manual" qtlid="257536">manuel</translation>
+   <translation id="cloud_ip_action_sort" qtlid="257510">Třídění</translation>
+   <translation id="cloud_ip_action_automatic" qtlid="257523">automatické</translation>
+   <translation id="cloud_ip_action_manual" qtlid="257536">manuální</translation>
 
    <translation id="cpci_vm_name" qtlid="3818">Název</translation>
    <translation id="cpci_vm_region" qtlid="168237">Umístění</translation>
@@ -56,10 +56,14 @@
    <translation id="cpci_vm_price" qtlid="83913">Cena</translation>
    <translation id="cpci_vm_hdd" qtlid="453731">Připojený pevný disk</translation>
    <translation id="cpci_vm_status" qtlid="26443">Stav</translation>
+   <translation id="cpci_vm_status_BUILD" qtlid="26791">Vytvoření</translation>
+   <translation id="cpci_vm_status_DELETING" qtlid="59699">Smazat</translation>
    <translation id="cpci_vm_status_ERROR" qtlid="45508">Chyba</translation>
    <translation id="cpci_vm_status_REBOOT" qtlid="26287">Restartováno</translation>
-   <translation id="cpci_vm_status_RESCUE" qtlid="17395">Rescue</translation>
+   <translation id="cpci_vm_status_REBUILD" qtlid="34740">Reinstalace</translation>
+   <translation id="cpci_vm_status_RESCUE" qtlid="454066">Režim rescue</translation>
    <translation id="cpci_vm_status_SNAPSHOTTING" qtlid="9671">Snapshot</translation>
+   <translation id="cpci_vm_status_UPDATING" qtlid="26863">Aktualizovat</translation>
 
    <translation id="cpci_vm_UNKNOWN_ERROR" qtlid="289003">Neznámý stav ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>
    <translation id="cpci_vm_UNKNOWN" qtlid="289003">Neznámý stav ({{msg}}) na "{{server}}" (ID Openstack Nova: {{id}})</translation>

@@ -1,0 +1,6 @@
+{
+  "endpoint": "http://bower.ci.ria.ovh.net",
+  "searchpath": [
+    "https://bower.herokuapp.com"
+  ]
+}

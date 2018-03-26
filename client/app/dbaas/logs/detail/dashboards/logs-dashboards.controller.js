@@ -31,6 +31,17 @@ class LogsDashboardsCtrl {
     }
 
     /**
+     * navigates to add dashboard page
+     *
+     * @memberof LogsDashboardsCtrl
+     */
+    add () {
+        this.$state.go("dbaas.logs.detail.dashboards.add", {
+            serviceName: this.serviceName
+        });
+    }
+
+    /**
      * navigates to edit dashboard page
      *
      * @param {any} dashboard

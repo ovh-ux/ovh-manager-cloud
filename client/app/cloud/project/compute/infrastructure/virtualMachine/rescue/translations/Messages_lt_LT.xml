@@ -12,6 +12,6 @@
    <translation id="cpc_rescue_mode_success_pwd_linux" qtlid="296128">Norėdami prisijungti prie serverio {{vmName}} rescue režimu, naudokite: <br/><code>ssh {{user}}@{{ip}}</code> su laikinu slaptažodžiu {{pwd}} (šis slaptažodis nebus siunčiamas pakartotinai). Dėmesio: šiame režime prieinamas tik pagrindinis diskas.</translation>
    <translation id="cpc_rescue_mode_success_windows" qtlid="296141">Norėdami prisijungti prie serverio {{vmName}} rescue režimu, naudokite: <br/><code>rdesktop {{ip}}</code> su įprastu SSH raktu. Dėmesio: šiame režime prieinamas tik pagrindinis diskas.</translation>
    <translation id="cpc_rescue_mode_success_pwd_windows" qtlid="296154">Norėdami prisijungti prie serverio {{vmName}} rescue režimu, naudokite: <br/><code>rdesktop {{ip}}</code> su laikinu slaptažodžiu {{pwd}} (šis slaptažodis nebus siunčiamas pakartotinai). Dėmesio: šiame režime prieinamas tik pagrindinis diskas.</translation>
-   <translation id="cpc_rescue_mode_error" qtlid="453705">Oups! Nous n'arrivons pas à redémarrer votre serveur en mode rescue : {{message}}</translation>
+   <translation id="cpc_rescue_mode_error" qtlid="453705">Atsiprašome, nepavyko perkrauti serverio rescue režimu: {{message}}</translation>
 
 </translations>

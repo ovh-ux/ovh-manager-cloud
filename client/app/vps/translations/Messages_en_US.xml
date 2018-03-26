@@ -9,8 +9,8 @@
    <translation id="vps_order_windows_order_error" qtlid="181227">An error occurred while creating the order confirmation.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Select the duration:</translation>
    <translation id="vps_order_windows_order_resume" qtlid="177496">Summary of your order</translation>
-   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Total price excl. taxes:</translation>
-   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Total price incl. taxes:</translation>
+   <translation id="vps_order_windows_order_price_HT" qtlid="146177">Sub-total:</translation>
+   <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Total price:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Click on "Confirm" to confirm your order.</translation>
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">A new tab will open and you will be automatically redirected to the payment interface.</translation>
    <translation id="vps_order_windows_button_title" qtlid="250784">Windows option</translation>
@@ -494,7 +494,7 @@
 
    <translation id="vps_additional_disk_info_fail" qtlid="281706">An error occurred when loading information on additional disks </translation>
 
-   <translation id="vps_autorenew_stop_bother_error" qtlid="290589">There was an error when sending the request to stop showing you information about automatic renewal. </translation>
+   <translation id="vps_autorenew_stop_bother_error" qtlid="290589">An error occurred while sending the request to stop showing you information about automatic renewal. </translation>
    <translation id="vps_autorenew_alert" qtlid="290602">Make your life easier and choose automatic renewal for your VPS! Say goodbye to reminders and unnecessary deletions. </translation>
    <translation id="vps_autorenew_guide" qtlid="290615">See the guide </translation>
    <translation id="vps_autorenew_activate" qtlid="98576">Activate automatic renewal</translation>

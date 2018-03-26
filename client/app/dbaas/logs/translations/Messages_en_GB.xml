@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
+    <translation id="logs_guides">Guides</translation>
+    <translation id="logs_guides_title">Logs Data Platform</translation>
+    <translation id="logs_guides_footer">All the OVH guides</translation>
+
+    <translation id="logs_title">Logs Data Platform</translation>
+    <translation id="logs_tab_home">Home</translation>
+    <translation id="logs_tab_streams">Data streams</translation>
+    <translation id="logs_tab_dashboards">Dashboards</translation>
+    <translation id="logs_tab_inputs">Collectors</translation>
+    <translation id="logs_tab_indices">Index</translation>
+    <translation id="logs_tab_alias">Alias</translation>
+    <translation id="logs_tab_roles">Roles</translation>
+
     <translation id="logs_select_options_title">Choose the attached option</translation>
     <translation id="logs_select_options_placeholder">Select Option</translation>
     <translation id="logs_notification_title">Notification</translation>

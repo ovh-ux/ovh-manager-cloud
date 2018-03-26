@@ -12,8 +12,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 1031;  // navbar is 1030
-        // background: rgba(0, 0, 0, 0.3);
+        z-index: @SIDEBAR_MENU_Z_INDEX - 1;
         background: rgba(255, 255, 255, 0.8);
     }
 
@@ -22,7 +21,7 @@
 .highlighed-element {
 
     &.highlighed-element-active {
-        z-index: 1032;  // navbar is 1030
+        z-index: @SIDEBAR_MENU_Z_INDEX + 2;
     }
 
 }

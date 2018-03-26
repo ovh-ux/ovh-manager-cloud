@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_zone_add_title" qtlid="454436">Beschikbaarheidszone toevoegen</translation>
+   <translation id="iplb_zone_add_intro_text" qtlid="454449">Selecteer een of meer beschikbaarheidszones</translation>
+   <translation id="iplb_zone_add_single_success" qtlid="454462">U moet de zone-toevoeging voltooien.</translation>
+   <translation id="iplb_zone_add_plural_success" qtlid="454475">U moet de zone-toevoegingen voltooien.</translation>
+   <translation id="iplb_zone_activate_single_success" qtlid="454488">Deze zone is gereactiveerd.</translation>
+   <translation id="iplb_zone_activate_plural_success" qtlid="454501">Deze zones zijn gereactiveerd.</translation>
+   <translation id="iplb_zone_add_selection_error" qtlid="454514">Selecteer ten minste één beschikbaarheidszone.</translation>
+   <translation id="iplb_zone_add_loading_error" qtlid="454527">Er is een fout opgetreden tijdens het laden van de zones: {{message}}</translation>
+   <translation id="iplb_zone_add_single_error" qtlid="454540">Er is een fout opgetreden tijdens het toevoegen van de zone: {{message}}</translation>
+   <translation id="iplb_zone_add_plural_error" qtlid="454553">Er is een fout opgetreden tijdens het toevoegen van de zones: {{message}}</translation>
+   <translation id="iplb_zone_activate_single_error" qtlid="454566">Er is een fout opgetreden tijdens het reactiveren van de zone: {{message}}</translation>
+   <translation id="iplb_zone_activate_plural_error" qtlid="454579">Er is een fout opgetreden tijdens het reactiveren van de zones: {{message}}</translation>
+   <translation id="iplb_zone_add_available_released" qtlid="454592">Er is al een verwijderingsverzoek ingediend voor deze zone. Het gaat van kracht aan het einde van de factureringsperiode. U kunt het echter nog steeds opnieuw toevoegen.</translation>
+
+   <translation id="iplb_zone_delete_title" qtlid="454605">Een beschikbaarheidszone verwijderen</translation>
+   <translation id="iplb_zone_delete_intro_text_single" qtlid="454618">Selecteer een maximum van {{zoneQuantity}} beschikbaarheidzones</translation>
+   <translation id="iplb_zone_delete_intro_text_plural" qtlid="454631">Selecteer een maximum van {{zoneQuantity}} beschikbaarheidzones</translation>
+   <translation id="iplb_zone_delete_intro_text_none" qtlid="454644">Selecteer een maximum van 0 beschikbaarheidzones</translation>
+   <translation id="iplb_zone_delete_single_success" qtlid="454657">De '{{zones}}' zone wordt aan het einde van de factureringsperiode verwijderd.</translation>
+   <translation id="iplb_zone_delete_plural_success" qtlid="454670">De '{{zones}}' zones worden aan het einde van de factureringsperiode verwijderd.</translation>
+   <translation id="iplb_zone_delete_selection_error" qtlid="454514">Selecteer ten minste één beschikbaarheidszone.</translation>
+   <translation id="iplb_zone_delete_selection_too_many_single_error" qtlid="454683">Selecteer een maximum van {{zoneQuantity}} beschikbaarheidzones</translation>
+   <translation id="iplb_zone_delete_selection_too_many_plural_error" qtlid="454696">Selecteer een maximum van {{zoneQuantity}} beschikbaarheidzones</translation>
+   <translation id="iplb_zone_delete_loading_error" qtlid="454527">Er is een fout opgetreden tijdens het laden van de zones: {{message}}</translation>
+   <translation id="iplb_zone_delete_single_error" qtlid="454709">Er is een fout opgetreden tijdens het verwijderen van de zone: {{message}}</translation>
+   <translation id="iplb_zone_delete_plural_error" qtlid="454722">Er is een fout opgetreden tijdens het verwijderen van de zones: {{message}}</translation>
+   <translation id="iplb_zone_delete_unavailable_already_released" qtlid="454735">Deze beschikbaarheidszone wordt aan het einde van de factureringsperiode verwijderd.</translation>
+</translations>

@@ -212,11 +212,12 @@ angular.module("managerApp")
                 </a>
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     data-ng-class="{ 'cui-tile__link_disabled': $ctrl.disabled }"
-                    class="oui-button oui-button_link cui-tile__button cui-tile__link"
+                    class="oui-button oui-button_link cui-tile__button"
+                    data-at-internet-click="{ name: $ctrl.action.atInternetClickTag }"
                     data-ng-href="{{ $ctrl.action.href }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
-                    <i class="oui-icon oui-icon-external_link ml-1" data-ng-if="$ctrl.action.isExternal" aria-hidden="true"></i>
+                    <span class="oui-icon oui-icon-external_link" data-ng-if="$ctrl.action.isExternal" aria-hidden="true"></span>
                 </a>
                 <ng-transclude></ng-transclude>
             </div>`,

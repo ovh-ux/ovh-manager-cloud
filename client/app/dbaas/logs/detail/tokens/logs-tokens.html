@@ -1,10 +1,6 @@
 
 <section class="cui-page__content log-aliases">
-    <oui-back-button data-state="dbaas.logs.detail"
-        class="back_button_inline_text"
-        data-state-params="{ serviceName: ctrl.serviceName}">
-    </oui-back-button>
-    <span class="oui-header_3" data-translate="logs_tokens_title"></span>
+    <oui-back-button data-title="{{::'logs_tokens_title' | translate}}" on-click="ctrl.goToHomePage()"></oui-back-button>
     <p data-translate="logs_tokens_description"></p>
 
     <button type="button" class="oui-button oui-button_secondary"

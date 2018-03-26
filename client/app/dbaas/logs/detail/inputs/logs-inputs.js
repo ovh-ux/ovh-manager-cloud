@@ -21,7 +21,8 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/home", "dbaas/logs/detail/inputs/home/info", "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink"]
+            translations: ["common", "dbaas/logs", "dbaas/logs/detail/inputs", "dbaas/logs/detail/inputs/home", "dbaas/logs/detail/inputs/home/info",
+                "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool", "dbaas/logs/detail/options/addtool"]
         })
         .state("dbaas.logs.detail.inputs.console", {
             url: "/:inputId/console",

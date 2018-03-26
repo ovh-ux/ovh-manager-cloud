@@ -112,7 +112,7 @@ build-us: deps
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
 
 release: deps
-	$(GRUNT) release --type=$(type)
+	$(NPM) version $(type) -m "chore: release v%s"
 
 
 ###############
