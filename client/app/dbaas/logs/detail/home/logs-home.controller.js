@@ -1,11 +1,12 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails) {
+    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.$translate = $translate;
+        this.bytesFilter = bytesFilter;
         this.ControllerHelper = ControllerHelper;
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
@@ -14,11 +15,13 @@ class LogsHomeCtrl {
     }
 
     $onInit () {
+        this.dataUsageGraphData = {};
         if (this.service.state === this.LogsHomeService.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
             this.openSetupAccountModal(true);
         }
         this.runLoaders()
-            .then(() => this._initActions());
+            .then(() => this._initActions())
+            .then(() => this._prepareDataUsageGraphData());
     }
 
     /**
@@ -37,6 +40,70 @@ class LogsHomeCtrl {
                 }
             }
         }).finally(() => this.ControllerHelper.scrollPageToTop());
+    }
+
+    _prepareDataUsageGraphData () {
+        this.dataUsageGraphData.labels = this.storageData.data.timestamps.map(timestamp => moment(timestamp).format("DD MMM"));
+        this.dataUsageGraphData.data = this.storageData.data.usageData;
+        this.dataUsageGraphData.series = [this.$translate.instant("logs_home_data_received"), this.$translate.instant("logs_home_number_of_documents")];
+        this.dataUsageGraphData.options = {
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [
+                    {
+                        id: "y-axis-1",
+                        type: "linear",
+                        display: true,
+                        position: "left",
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: _.max(this.dataUsageGraphData.data[0]) * 1.3 || 5,
+                            callback: value => value % 1 === 0 ? this.bytesFilter(value, 2, true) : ""
+                        }
+                    },
+                    {
+                        id: "y-axis-2",
+                        type: "linear",
+                        display: true,
+                        position: "right",
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: _.max(this.dataUsageGraphData.data[1]) * 1.3 || 5,
+                            callback: value => value % 1 === 0 ? value : ""
+                        }
+                    }
+                ]
+            },
+            legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                    fontStyle: "bold"
+                }
+            }
+        };
+        this.dataUsageGraphData.colors = [
+            {
+                backgroundColor: "rgba(89,210,239, 0.4)",
+                pointBackgroundColor: "transparent",
+                pointHoverBackgroundColor: "#59d2ef",
+                borderColor: "#59d2ef",
+                pointBorderColor: "transparent",
+                pointHoverBorderColor: "#fff"
+            }, {
+                backgroundColor: "transparent",
+                pointBackgroundColor: "transparent",
+                pointHoverBackgroundColor: "#113f6d",
+                borderColor: "#113f6d",
+                pointBorderColor: "transparent",
+                pointHoverBorderColor: "#fff"
+            }
+        ];
+        this.dataUsageGraphData.datasetOverride = [{ yAxisID: "y-axis-1" }, { yAxisID: "y-axis-2" }];
     }
 
     /**
@@ -168,6 +235,9 @@ class LogsHomeCtrl {
         this.serviceInfos = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName)
         });
+        this.storageData = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName)
+        });
     }
 
     showSetupModal () {
@@ -205,6 +275,7 @@ class LogsHomeCtrl {
         loaderPromises.push(this.tokenIds.load());
         loaderPromises.push(this.defaultCluster.load());
         loaderPromises.push(this.serviceInfos.load());
+        loaderPromises.push(this.storageData.load());
         return this.$q.all(loaderPromises);
     }
 }

@@ -79,5 +79,18 @@ angular.module("managerApp").constant("LogsHomeConstant", {
         }
     },
     PASSWORD_SPECIAL_CHARACTERS: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-    SERVICE_STATE_TO_CONFIG: "TO_CONFIG"
+    SERVICE_STATE_TO_CONFIG: "TO_CONFIG",
+    DATA_STORAGE: {
+        TIME_PERIOD_MONTHS: 3,
+        METRICS: {
+            SUM: "ldp.service.consumption.sum",
+            COUNT: "ldp.service.consumption.count"
+        },
+        AGGREGATORS: {
+            MAX: "max"
+        },
+        DOWNSAMPLING_MODE: {
+            "24H_MAX": "24h-max-none"
+        }
+    }
 });

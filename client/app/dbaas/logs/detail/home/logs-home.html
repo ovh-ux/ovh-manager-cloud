@@ -35,6 +35,18 @@
         </div>
         <div class="col-xm-12 col-md-8">
             <cui-tile data-title="'logs_home_usage' | translate" class="h-100">
+                <div class="pl-4 pr-4 pb-2">
+                    <oui-spinner data-ng-if="ctrl.storageData.loading"></oui-spinner>
+                    <canvas id="storage-data" class="chart chart-line"
+                        data-ng-if="!ctrl.storageData.loading"
+                        chart-data="ctrl.dataUsageGraphData.data"
+                        chart-labels="ctrl.dataUsageGraphData.labels" 
+                        chart-series="ctrl.dataUsageGraphData.series" 
+                        chart-colors="ctrl.dataUsageGraphData.colors" 
+                        chart-dataset-override="ctrl.dataUsageGraphData.datasetOverride"
+                        chart-options="ctrl.dataUsageGraphData.options">
+                    </canvas>
+                </div>
             </cui-tile>
         </div>
     </div>

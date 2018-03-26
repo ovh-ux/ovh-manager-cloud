@@ -1,5 +1,6 @@
 class LogsHomeService {
-    constructor ($q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
+    constructor ($http, $q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
+        this.$http = $http;
         this.$q = $q;
         this.$translate = $translate;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -53,6 +54,44 @@ class LogsHomeService {
     getCurrentOffer (serviceName) {
         return this.LogsOfferService.getOffer(serviceName)
             .then(offer => this._transformOffer(offer));
+    }
+
+    getDataUsage (serviceName) {
+        return this.getAccount(serviceName)
+            .then(account => {
+                const token = btoa(account.metrics.token);
+                const query = {
+                    start: moment().subtract(this.LogsHomeConstant.DATA_STORAGE.TIME_PERIOD_MONTHS, "month").unix() * 1000,
+                    queries: [{
+                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.SUM,
+                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                    },
+                    {
+                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.COUNT,
+                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                    }]
+                };
+                return this.$http({
+                    method: "POST",
+                    url: `${account.metrics.host}/api/query`,
+                    headers: {
+                        Authorization: `Basic ${token}`
+                    },
+                    preventLogout: true,
+                    data: JSON.stringify(query)
+                });
+            })
+            .then(data => {
+                const timestamps = Object.keys(data.data[0].dps);
+                data = data.data.map(dat => timestamps.map(timestamp => dat.dps[timestamp]));
+                return {
+                    timestamps: timestamps.map(timestamp => timestamp * 1000),
+                    usageData: data
+                };
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_home_data_get_error"));
     }
 
     /**
