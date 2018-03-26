@@ -6,41 +6,47 @@
         <section class="cui-page__content log-accounts">
             <p data-translate="logs_accounts_description"></p>
         
-            <button type="button" class="oui-button oui-button_secondary"
-                data-ui-sref="dbaas.logs">
-                    <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_accounts_order' | translate }}
-            </button>
+            <a class="oui-button oui-button_secondary"
+                target="_blank" ng-href="{{ctrl.LogsConstants.ORDER_URL}}">
+                <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_accounts_try_for_free' | translate }}
+            </a>
         
             <oui-spinner data-ng-if="ctrl.accounts.loading"></oui-spinner>
             <oui-datagrid rows="ctrl.accounts.data">
                 <oui-column title="::'logs_accounts_col_name' | translate" property="serviceName" sortable="asc">
                     <a class="oui-button oui-button_link"
-                        data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})">{{$row.serviceName}}
+                        data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})">
+                        <span data-ng-if="!$row.displayName">{{$row.serviceName}}</span>
+                        <span data-ng-if="$row.displayName">{{$row.displayName}}</span>
                     </a>
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable>
                     <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
                     <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.offerType}}</span>
+                    
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_entry_point' | translate" property="cluster.hostname" sortable>
-                    <oui-spinner data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
-                    <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
+                        <oui-spinner size="s" data-ng-if="$row.quota.isLoadingCluster"></oui-spinner>
+                        <span data-ng-if="!$row.quota.isLoadingCluster">{{$row.cluster.hostname}}</span>
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_streams' | translate">
-                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
-                    <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.streams.current}}/{{$row.quota.streams.max}}</span>
+                    <span data-ng-if="!$row.quota.streams">-</span>
+                    <oui-spinner size="s" data-ng-if="$row.quota.streams && $row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="$row.quota.streams && !$row.quota.isLoadingQuota">{{$row.quota.streams.current}}/{{$row.quota.streams.max}}</span>
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_dashboards' | translate">
-                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
-                    <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.dashboards.current}}/{{$row.quota.dashboards.max}}</span>
+                    <span data-ng-if="!$row.quota.dashboards">-</span>
+                    <oui-spinner size="s" data-ng-if="$row.quota.dashboards && $row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="$row.quota.dashboards && !$row.quota.isLoadingQuota">{{$row.quota.dashboards.current}}/{{$row.quota.dashboards.max}}</span>
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_indices' | translate">
-                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
-                    <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.indices.current}}/{{$row.quota.indices.max}}</span>
+                    <span data-ng-if="!$row.quota.indices">-</span>
+                    <oui-spinner size="s" data-ng-if="$row.quota.indices && $row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="$row.quota.indices && !$row.quota.isLoadingQuota">{{$row.quota.indices.current}}/{{$row.quota.indices.max}}</span>
                 </oui-column>
                 <oui-action-menu compact>
                     <oui-action-menu-item text="{{ ::'logs_accounts_details' | translate }}" data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})"></oui-action-menu-item>
-                    <oui-action-menu-item text="{{ ::'logs_accounts_offer' | translate }}" data-ui-sref="dbaas.logs.detail.offer({serviceName: $row.serviceName})"></oui-action-menu-item>
+                    <oui-action-menu-item text="{{ ::'logs_accounts_offers' | translate }}" data-ui-sref="dbaas.logs.detail.offer({serviceName: $row.serviceName})"></oui-action-menu-item>
                     <oui-action-menu-item text="{{ ::'logs_accounts_options' | translate }}" data-ui-sref="dbaas.logs.detail.options({serviceName: $row.serviceName})"></oui-action-menu-item>  
                 </oui-action-menu>
             </oui-datagrid>

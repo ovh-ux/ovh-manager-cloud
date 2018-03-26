@@ -1,9 +1,10 @@
 class LogsListService {
-    constructor ($q, OvhApiDbaas, LogsHelperService, LogsStreamsService) {
+    constructor ($q, OvhApiDbaas, LogsHelperService, LogsTokensService, LogsHomeConstant) {
         this.$q = $q;
         this.LogsListApiService = OvhApiDbaas.Logs().Lexi();
         this.LogsHelperService = LogsHelperService;
-        this.LogsStreamsService = LogsStreamsService;
+        this.LogsTokensService = LogsTokensService;
+        this.LogsHomeConstant = LogsHomeConstant;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
     }
 
@@ -15,7 +16,7 @@ class LogsListService {
      */
     getServices () {
         return this.getServicesDetails()
-            .catch(err => this.LogsHelperService.handleError("logs_tokens_get_error", err, {}));
+            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_accounts_error", err, {}));
     }
 
     /**
@@ -53,18 +54,43 @@ class LogsListService {
         return this.LogsListApiService.logDetail({ serviceName })
             .$promise
             .then(service => this._transformService(service))
-            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_detail_error", err, {}));
+            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_detail_error", err, { accountName: serviceName }));
     }
 
     getQuota (serviceName) {
         return this.AccountingAapiService.me({ serviceName })
             .$promise
-            .catch(err => this.LogsHelperService.handleError("logs_streams_quota_get_error", err, {}));
+            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_quota_error", err, { accountName: serviceName }));
+    }
+
+    /**
+     * returns default cluster associated with user
+     *
+     * @param {any} serviceName
+     * @returns promise which will be resolve to default cluster
+     * @memberof LogsInputsService
+     */
+    getDefaultCluster (serviceName) {
+        return this.LogsTokensService.getDefaultCluster(serviceName);
     }
 
     _transformService (service) {
+        if (service.state === this.LogsHomeConstant.SERVICE_STATE_DISABLED) {
+            service.quota = {
+                isLoadingQuota: false,
+                offerType: "-"
+            };
+            service.cluster = {
+                isLoadingCluster: false,
+                hostname: "-"
+            };
+            return service;
+        }
         service.quota = {
             isLoadingQuota: true
+        };
+        service.cluster = {
+            isLoadingCluster: true
         };
         this.getQuota(service.serviceName)
             .then(me => {
@@ -81,51 +107,18 @@ class LogsListService {
                     max: me.total.maxNbDashboard
                 };
                 service.quota.offerType = me.offer.reference.startsWith("logs-pro") ? "Pro" : "Basic";
+            })
+            .finally(() => {
                 service.quota.isLoadingQuota = false;
             });
-        return service;
-    }
-
-    /**
-     * returns array of Input IDs of logged in user
-     *
-     * @param {any} serviceName
-     * @returns promise which will be resolve to array of input IDs
-     * @memberof LogsInputsService
-     */
-    getClusters (serviceName) {
-        return this.DetailsAapiService.me({ serviceName })
-            .$promise
-            .then(details => details.clusters)
-            .catch(err => this.LogsHelperService.handleError("logs_tokens_cluster_get_error", err, {}));
-    }
-
-    /**
-     * returns default cluster associated with user
-     *
-     * @param {any} serviceName
-     * @returns promise which will be resolve to default cluster
-     * @memberof LogsInputsService
-     */
-    getDefaultCluster (serviceName) {
-        return this.getClusters(serviceName)
-            .then(clusters => {
-                const defaultClusters = clusters.filter(cluster => cluster.isDefault);
-                return defaultClusters.length > 0 ? defaultClusters[0] : null;
+        this.getDefaultCluster(service.serviceName)
+            .then(cluster => {
+                service.cluster.hostname = cluster.hostname;
+            })
+            .finally(() => {
+                service.cluster.isLoadingCluster = false;
             });
-    }
-
-    /**
-     * creates new token with default values
-     *
-     * @returns token object with default values
-     * @memberof LogsListService
-     */
-    getNewToken (serviceName) {
-        return this.getDefaultCluster(serviceName).then(defaultCluster => ({
-            name: null,
-            clusterId: defaultCluster ? defaultCluster.clusterId : null
-        }));
+        return service;
     }
 
     _resetAllCache () {

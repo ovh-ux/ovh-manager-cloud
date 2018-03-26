@@ -1,8 +1,9 @@
 class LogsListCtrl {
-    constructor (CloudMessage, LogsListService, ControllerHelper) {
+    constructor (CloudMessage, LogsListService, ControllerHelper, LogsConstants) {
         this.CloudMessage = CloudMessage;
         this.LogsListService = LogsListService;
         this.ControllerHelper = ControllerHelper;
+        this.LogsConstants = LogsConstants;
         this.messages = [];
 
         this.initLoaders();

@@ -2,6 +2,7 @@
 <translations>
     <translation id="logs_accounts_description">Logs Data Platform brings you a comprehensive platform to manage and analyze your logs for you or your company. Overlook the behavior of your physicals or virtuals servers. Understand the behavior of your cloud or mobile applications. Predict any incident or be alerted in case of failure.</translation>
     <translation id="logs_accounts_order">Order</translation>
+    <translation id="logs_accounts_try_for_free">Try for free</translation>
     <translation id="logs_accounts_col_name">Account name</translation>
     <translation id="logs_accounts_col_offer_type">Offer type</translation>
     <translation id="logs_accounts_col_entry_point">Entry point</translation>
@@ -11,4 +12,7 @@
     <translation id="logs_accounts_details">Details</translation>
     <translation id="logs_accounts_offers">Offer</translation>
     <translation id="logs_accounts_options">Options</translation>
+    <translation id="logs_accounts_get_accounts_error">An error has occurred while retrieving accounts</translation>
+    <translation id="logs_accounts_get_detail_error">An error has occurred while retrieving account '{{accountName}}' details: {{message}}</translation>
+    <translation id="logs_accounts_get_quota_error">An error has occurred while retrieving account '{{accountName}}' quota details: {{message}}</translation>
 </translations>
