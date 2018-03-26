@@ -1,10 +1,10 @@
 class CloudPoll {
-    constructor ($rootScope, OvhPoll) {
+    constructor ($transitions, OvhPoll) {
         this.OvhPoll = OvhPoll;
 
         this.pollers = [];
 
-        $rootScope.$on("$stateChangeSuccess", () => {
+        $transitions.onSuccess({}, () => {
             _.forEach(this.pollers, poller => poller.kill());
             this.pollers = [];
         });

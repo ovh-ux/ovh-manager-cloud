@@ -14,8 +14,8 @@ class VpsOrderWindowsCtrl {
         };
 
         this.durations = {
-            available : null,
-            details : {}
+            available: null,
+            details: {}
         };
 
         this.model = {
@@ -68,7 +68,7 @@ class VpsOrderWindowsCtrl {
 
     orderOption () {
         this.VpsService.postWindowsOptionOrder(this.serviceName, this.model.duration)
-            .then(order => { this.model.url = order.url; })
+            .then(({ url }) => { this.model.url = url; })
             .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_windows_order_error")));
     }
 
@@ -78,7 +78,6 @@ class VpsOrderWindowsCtrl {
 
     confirm () {
         this.displayBC();
-        this.previousState.go();
     }
 
     displayBC () {

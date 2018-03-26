@@ -1,15 +1,17 @@
 /**
  * Special rules for redirections
  */
-angular.module("managerApp").run(function ($rootScope, $state, $stateParams) {
-    $rootScope.$on("$stateChangeStart", (evt, to, params) => {
+angular.module("managerApp").run(($transitions, $state, $stateParams) => {
+    $transitions.onStart({}, transition => {
+        const to = transition.to();
+        const params = transition.params();
         if (to.redirectTo) {
-            evt.preventDefault();
             $state.go(to.redirectTo, params);
         }
     });
 
-    $rootScope.$on("$stateChangeSuccess", function (e, state) {
+    $transitions.onSuccess({}, transition => {
+        const state = transition.to();
         if (state && state.url === "/compute") {
             if ($state.includes("iaas.pci-project")) {
                 if ($stateParams.createNewVm) {
