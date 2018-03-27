@@ -79,5 +79,78 @@ angular.module("managerApp").constant("LogsHomeConstant", {
         }
     },
     PASSWORD_SPECIAL_CHARACTERS: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-    SERVICE_STATE_TO_CONFIG: "TO_CONFIG"
+    SERVICE_STATE_TO_CONFIG: "TO_CONFIG",
+    DATA_STORAGE: {
+        TIME_PERIOD_MONTHS: 3,
+        METRICS: {
+            SUM: "ldp.service.consumption.sum",
+            COUNT: "ldp.service.consumption.count"
+        },
+        AGGREGATORS: {
+            MAX: "max"
+        },
+        DOWNSAMPLING_MODE: {
+            "24H_MAX": "24h-max-none"
+        }
+    },
+    DATA_USAGE_GRAPH_CONFIGURATION: {
+        options: {
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                yAxes: [
+                    {
+                        id: "y-axis-1",
+                        type: "linear",
+                        display: true,
+                        position: "left"
+                    },
+                    {
+                        id: "y-axis-2",
+                        type: "linear",
+                        display: true,
+                        position: "right",
+                        gridLines: {
+                            display: false
+                        }
+                    }
+                ]
+            },
+            legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                    fontStyle: "bold"
+                }
+            },
+            tooltips: {
+                backgroundColor: "rgba(256,256,256,0.8)",
+                titleFontColor: "#113f6d",
+                bodyFontColor: "#113f6d",
+                borderColor: "#bbbdbf",
+                borderWidth: 1
+            }
+        },
+        colors: [
+            {
+                backgroundColor: "rgba(89,210,239, 0.4)",
+                pointBackgroundColor: "transparent",
+                pointHoverBackgroundColor: "#59d2ef",
+                borderColor: "#59d2ef",
+                pointBorderColor: "transparent",
+                pointHoverBorderColor: "#fff"
+            }, {
+                backgroundColor: "transparent",
+                pointBackgroundColor: "transparent",
+                pointHoverBackgroundColor: "#113f6d",
+                borderColor: "#113f6d",
+                pointBorderColor: "transparent",
+                pointHoverBorderColor: "#fff"
+            }
+        ],
+        datasetOverride: [{ yAxisID: "y-axis-1" }, { yAxisID: "y-axis-2" }]
+    }
 });

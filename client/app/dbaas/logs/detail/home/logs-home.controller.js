@@ -1,12 +1,14 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails) {
+    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, serviceDetails) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.$translate = $translate;
+        this.bytesFilter = bytesFilter;
         this.ControllerHelper = ControllerHelper;
+        this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
         this.service = serviceDetails;
@@ -14,16 +16,20 @@ class LogsHomeCtrl {
     }
 
     $onInit () {
-        if (this.service.state === this.LogsHomeService.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
+        if (this.service.state === this.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
             this.openSetupAccountModal(true);
         }
+        this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
         this.runLoaders()
-            .then(() => this._initActions());
+            .then(() => this._initActions())
+            .then(() => this._prepareDataUsageGraphData());
     }
 
     /**
      * opens UI modal to change password
      * @param {string} setupPassword
+     *
+     * @memberof LogsHomeCtrl
      */
     openSetupAccountModal (setupPassword) {
         this.ControllerHelper.modal.showModal({
@@ -37,6 +43,39 @@ class LogsHomeCtrl {
                 }
             }
         }).finally(() => this.ControllerHelper.scrollPageToTop());
+    }
+
+    /**
+     * Prepares the data usage graph
+     *
+     * @memberof LogsHomeCtrl
+     */
+    _prepareDataUsageGraphData () {
+        this.dataUsageGraphData.labels = this.storageData.data.timestamps.map(timestamp => moment(timestamp).format("DD MMM"));
+        this.dataUsageGraphData.data = this.storageData.data.usageData;
+        this.dataUsageGraphData.series = [this.$translate.instant("logs_home_data_received"), this.$translate.instant("logs_home_number_of_documents")];
+
+        this.dataUsageGraphData.options.scales.yAxes[0].ticks = {
+            suggestedMin: 0,
+            suggestedMax: _.max(this.dataUsageGraphData.data[0]) * 1.3 || 5,
+            callback: value => value % 1 === 0 ? this.bytesFilter(value, 2, true) : ""
+        };
+        this.dataUsageGraphData.options.scales.yAxes[1].ticks = {
+            suggestedMin: 0,
+            suggestedMax: _.max(this.dataUsageGraphData.data[1]) * 1.3 || 5,
+            callback: value => value % 1 === 0 ? value : ""
+        };
+
+        this.dataUsageGraphData.options.tooltips.callbacks = {
+            label: (tooltipItem, data) => {
+                let label = data.datasets[tooltipItem.datasetIndex].label || "";
+                if (label) {
+                    label += ": ";
+                }
+                label += tooltipItem.datasetIndex === 0 ? this.bytesFilter(tooltipItem.yLabel, 2, true) : this.LogsHomeService.humanizeNumber(tooltipItem.yLabel);
+                return label;
+            }
+        };
     }
 
     /**
@@ -168,6 +207,9 @@ class LogsHomeCtrl {
         this.serviceInfos = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName)
         });
+        this.storageData = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName)
+        });
     }
 
     showSetupModal () {
@@ -205,6 +247,7 @@ class LogsHomeCtrl {
         loaderPromises.push(this.tokenIds.load());
         loaderPromises.push(this.defaultCluster.load());
         loaderPromises.push(this.serviceInfos.load());
+        loaderPromises.push(this.storageData.load());
         return this.$q.all(loaderPromises);
     }
 }

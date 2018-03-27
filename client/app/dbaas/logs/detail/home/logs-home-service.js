@@ -1,5 +1,6 @@
 class LogsHomeService {
-    constructor ($q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
+    constructor ($http, $q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
+        this.$http = $http;
         this.$q = $q;
         this.$translate = $translate;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -56,6 +57,51 @@ class LogsHomeService {
     }
 
     /**
+     * Gets the data usage statistics data (number of documents and data received)
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve with the statistics data
+     * @memberof LogsHomeService
+     */
+    getDataUsage (serviceName) {
+        return this.getAccount(serviceName)
+            .then(account => {
+                const token = btoa(account.metrics.token);
+                const query = {
+                    start: moment().subtract(this.LogsHomeConstant.DATA_STORAGE.TIME_PERIOD_MONTHS, "month").unix() * 1000,
+                    queries: [{
+                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.SUM,
+                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                    },
+                    {
+                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.COUNT,
+                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                    }]
+                };
+                return this.$http({
+                    method: "POST",
+                    url: `${account.metrics.host}/api/query`,
+                    headers: {
+                        Authorization: `Basic ${token}`
+                    },
+                    preventLogout: true,
+                    data: JSON.stringify(query)
+                });
+            })
+            .then(data => {
+                const timestamps = data.data.length > 0 ? Object.keys(data.data[0].dps) : [];
+                data = data.data.map(dat => timestamps.map(timestamp => dat.dps[timestamp]));
+                return {
+                    timestamps: timestamps.map(timestamp => timestamp * 1000),
+                    usageData: data
+                };
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_home_data_get_error"));
+    }
+
+    /**
      * Gets the currently subscribed options
      *
      * @param {any} serviceName
@@ -82,10 +128,35 @@ class LogsHomeService {
             .catch(this.ServiceHelper.errorHandler("logs_home_service_info_get_error"));
     }
 
+    /**
+     * Gets the service details
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve to the service details
+     * @memberof LogsHomeService
+     */
     getServiceDetails (serviceName) {
         return this.LogsLexiService.logDetail({ serviceName })
             .$promise
             .catch(this.ServiceHelper.errorHandler("logs_get_error"));
+    }
+
+    /**
+     * Converts the number to a more readable form
+     *
+     * @param {any} number
+     * @returns the number in more readable form
+     * @memberof LogsHomeService
+     */
+    humanizeNumber (number) {
+        if (number < 1000) {
+            return Math.round(number * 100) / 100;
+        }
+        const si = ["K", "M", "G", "T", "P", "H"];
+        const exp = Math.floor(Math.log(number) / Math.log(1000));
+        let result = number / 1000 ** exp;
+        result = result % 1 > (1 / (1000 ** (exp - 1))) ? Math.round(result.toFixed(2) * 100) / 100 : result.toFixed(0);
+        return result + si[exp - 1];
     }
 
     /**
@@ -238,6 +309,13 @@ class LogsHomeService {
         return option;
     }
 
+    /**
+     * Sets the menu's title
+     *
+     * @param {any} serviceName
+     * @param {any} displayName
+     * @memberof LogsHomeService
+     */
     _changeMenuTitle (serviceName, displayName) {
         const menuItem = this.SidebarMenu.getItemById(serviceName);
         if (menuItem) {

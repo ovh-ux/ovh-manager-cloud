@@ -32,6 +32,10 @@
    <translation id="logs_home_options_empty">Aucun</translation>
    <translation id="logs_home_service">Logs Data Platform Service</translation>
    <translation id="logs_home_start_date">Date de création</translation>
+
+   <translation id="logs_home_data_received">Données réceptionnées</translation>
+   <translation id="logs_home_number_of_documents">Nombre de documents</translation>
+   <translation id="logs_home_no_usage_data">Pas de données disponibles</translation>
    
    <translation id="logs_home_display_name_update_success">Nom d'affichage mis à jour avec succès</translation>
 
@@ -41,4 +45,5 @@
    <translation id="logs_home_contact_get_error">Une erreur s'est produite lors de la tentative de récupération des coordonnées: {{message}}</translation>
    <translation id="logs_home_display_name_update_error">Une erreur s'est produite lors de la tentative de mise à jour du nom d'affichage: {{message}}</translation>
    <translation id="logs_home_service_info_get_error">Une erreur s'est produite lors de la tentative d'extraction des informations de service: {{message}}</translation>
+   <translation id="logs_home_data_get_error">Une erreur s'est produite lors de la tentative de récupération des données de stockage: {{message}}</translation>
 </translations>
