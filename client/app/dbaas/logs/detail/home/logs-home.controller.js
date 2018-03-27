@@ -1,5 +1,5 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails) {
+    constructor ($q, $scope, $state, $stateParams, $translate, ControllerHelper, LogsHomeService, LogsTokensService, serviceDetails, LogsHelperService) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -10,6 +10,7 @@ class LogsHomeCtrl {
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
         this.service = serviceDetails;
+        this.LogsHelperService = LogsHelperService;
         this.initLoaders();
     }
 
@@ -117,11 +118,23 @@ class LogsHomeCtrl {
             },
             editOptions: {
                 text: this.$translate.instant("common_edit"),
-                state: "dbaas.logs.detail.options",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.goToOptionsPage(),
                 isAvailable: () => !this.options.loading && !this.options.hasErrors
             }
         };
+    }
+
+    /**
+     * takes to options UI page if account is pro else shows offer upgrade required modal
+     */
+    goToOptionsPage () {
+        if (this.LogsHelperService.isBasicOffer(this.account.data)) {
+            this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
+        } else {
+            this.$state.go("dbaas.logs.detail.options", {
+                serviceName: this.serviceName
+            });
+        }
     }
 
     /**

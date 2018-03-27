@@ -1,9 +1,11 @@
 class LogsListCtrl {
-    constructor (CloudMessage, LogsListService, ControllerHelper, LogsConstants) {
+    constructor ($state, CloudMessage, LogsListService, ControllerHelper, LogsConstants, LogsHelperService) {
+        this.$state = $state;
         this.CloudMessage = CloudMessage;
         this.LogsListService = LogsListService;
         this.ControllerHelper = ControllerHelper;
         this.LogsConstants = LogsConstants;
+        this.LogsHelperService = LogsHelperService;
         this.messages = [];
 
         this.initLoaders();
@@ -18,11 +20,22 @@ class LogsListCtrl {
         this.messages = this.messageHandler.getMessages();
     }
 
-    /**
-     * load tokens array by making API call to get data
-     *
-     * @memberof LogsTokensCtrl
-     */
+    goToOptionsPage (service) {
+        if (service.isBasicOffer) {
+            this.LogsHelperService.showOfferUpgradeModal(service.serviceName);
+        } else {
+            this.$state.go("dbaas.logs.detail.options", {
+                serviceName: service.serviceName
+            });
+        }
+    }
+
+    goToOfferPage (service) {
+        this.$state.go("dbaas.logs.detail.offer", {
+            serviceName: service.serviceName
+        });
+    }
+
     initLoaders () {
         this.accounts = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsListService.getServices()

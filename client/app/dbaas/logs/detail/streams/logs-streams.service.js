@@ -6,6 +6,7 @@ class LogsStreamsService {
         this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
         this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.LogsOptionsService = LogsOptionsService;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
         this.LogsStreamsArchivesService = LogsStreamsArchivesService;
@@ -343,6 +344,8 @@ class LogsStreamsService {
         this.StreamsApiService.resetAllCache();
         this.StreamsAapiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
+        // refresh home page last modified stream
+        this.DetailsAapiService.resetAllCache();
     }
 }
 

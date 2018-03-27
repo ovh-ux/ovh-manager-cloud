@@ -84,8 +84,10 @@ class LogsListService {
                 isLoadingCluster: false,
                 hostname: "-"
             };
+            service.isDisabled = true;
             return service;
         }
+        service.isDisabled = false;
         service.quota = {
             isLoadingQuota: true
         };
@@ -106,7 +108,8 @@ class LogsListService {
                     current: me.total.curNbDashboard,
                     max: me.total.maxNbDashboard
                 };
-                service.quota.offerType = me.offer.reference.startsWith("logs-pro") ? "Pro" : "Basic";
+                service.isBasicOffer = this.LogsHelperService.isBasicOffer(me);
+                service.quota.offerType = service.isBasicOffer ? "Basic" : "Pro";
             })
             .finally(() => {
                 service.quota.isLoadingQuota = false;

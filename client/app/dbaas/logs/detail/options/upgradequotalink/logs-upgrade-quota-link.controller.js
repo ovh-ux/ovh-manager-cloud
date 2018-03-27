@@ -1,5 +1,5 @@
 class logsUpgradeQuotaLinkCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsOfferConstant, LogsOfferService) {
+    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsOfferConstant, LogsOfferService, LogsHelperService) {
         this.$state = $state;
         this.$translate = $translate;
         this.serviceName = $stateParams.serviceName;
@@ -7,6 +7,7 @@ class logsUpgradeQuotaLinkCtrl {
         this.ControllerModalHelper = ControllerModalHelper;
         this.LogsOfferConstant = LogsOfferConstant;
         this.LogsOfferService = LogsOfferService;
+        this.LogsHelperService = LogsHelperService;
         this._initLoaders();
     }
 
@@ -45,12 +46,7 @@ class logsUpgradeQuotaLinkCtrl {
      */
     purchaseOptions () {
         if (this._isBasicOffer(this.selectedOffer.data)) {
-            return this.ControllerModalHelper.showInfoModal({
-                titleText: this.$translate.instant("options_upgradequotalink_increase_quota_title"),
-                text: this.$translate.instant("options_upgradequotalink_increase_quota_message"),
-                okButtonText: this.$translate.instant("options_upgradequotalink_increase_quota_upgrade")
-            })
-                .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName: this.serviceName }));
+            return this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
         }
         return this.$state.go("dbaas.logs.detail.options", { serviceName: this.serviceName });
     }
