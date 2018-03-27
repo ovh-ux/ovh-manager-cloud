@@ -8,7 +8,6 @@
 
     <translation id="logs_dashboards_col_name">Name</translation>
     <translation id="logs_dashboards_col_description">Description</translation>
-    <translation id="logs_dashboards_col_modified_date">Last modified</translation>
     <translation id="logs_dashboards_col_linked_option">Linked option</translation>
     <translation id="logs_dashboards_graylog_access">Access Graylog</translation>
     <translation id="logs_dashboards_col_shared">Shared dashboard</translation>

@@ -2,10 +2,11 @@
 <translations>
     <translation id="streams_alerts_loading_error">Error loading alert: {{message}}</translation>
     <translation id="streams_alerts_ids_loading_error">Error loading alerts IDs: {{message}}</translation>
-    <translation id="streams_alerts_title">Alerts</translation>
     <translation id="streams_alerts_current_title">Manage your alerts for</translation>
     <translation id="streams_alerts_intro_text">With alert conditions, you don't have to monitor your logs. The platform does it for you. Many use cases are likely to raise an alert and send it to you by e-mail, like: a lack of messages from software for an unusual duration; when the number of tasks performed is abnormally too low; when your website's network traffic is very high; when some specific keywords appear in your feed</translation>
     <translation id="streams_alerts_title">Alerts</translation>
+    <translation id="streams_alerts_name">Name</translation>
+    
     <translation id="streams_alerts_condition">Condition</translation>    
     <translation id="streams_alerts_grace_period">Grace period (mins)</translation>
     <translation id="streams_alerts_repeat_notification">Repeat notification</translation>

@@ -22,18 +22,18 @@
     <oui-datagrid rows="ctrl.dashboards.data">
         <oui-column title="::'logs_dashboards_col_name' | translate" property="info.title" sortable="asc"></oui-column>
         <oui-column title="::'logs_dashboards_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_dashboards_col_shared' | translate" property="info.isEditable" sortable>
-            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
-            <span data-ng-if="$row.info.isEditable"> - </span>
-        </oui-column>
-        <oui-column title="::'logs_dashboards_col_modified_date' | translate" property="info.createdAt" sortable>
-            {{ $row.info.createdAt | momentFormat:'L'}}
-        </oui-column>
         <oui-column title="::'logs_dashboards_col_linked_option' | translate" property="info.optionId" sortable>
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
-        <oui-action-menu compact>
+        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+            {{ $row.info.createdAt | momentFormat:'L'}}
+        </oui-column>
+        <oui-column title="::'logs_dashboards_col_shared' | translate" property="info.isEditable" sortable>
+            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="$row.info.isEditable"> - </span>
+        </oui-column>
+        <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'logs_dashboards_graylog_access' | translate }}" href="{{ctrl.getGraylogUrl($row)}}" external></oui-action-menu-item>
             <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'logs_dashboards_duplicate' | translate }}" on-click="ctrl.duplicate($row.info)"></oui-action-menu-item>
             <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.edit($row.info)"></oui-action-menu-item>

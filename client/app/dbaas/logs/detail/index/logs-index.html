@@ -20,20 +20,20 @@
 
     <oui-datagrid
         rows="ctrl.indices.data">
-        <oui-column title=":: 'logs_index_col_index' | translate" property="info.name" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable></oui-column>
         <oui-column title="'logs_index_col_free_space' | translate"> {{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}</oui-column>
-        <oui-column title=":: 'logs_index_col_modified_date' | translate" property="info.createdAt">
+        <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title=":: 'logs_index_col_shared' | translate" sortable>
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
             <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>
-        <oui-action-menu align="end" compact>
+        <oui-action-menu data-align="end" compact>
             <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_edit' | translate }}" on-click="ctrl.add($row.info)"></oui-action-menu-item>
-            <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'logs_index_elastic_search_access' | translate }}" href="{{ $row.urls[0].address }}" external></oui-action-menu-item>
+            <oui-action-menu-item disabled="!$row.info.isEditable" text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row.info)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
 </section>

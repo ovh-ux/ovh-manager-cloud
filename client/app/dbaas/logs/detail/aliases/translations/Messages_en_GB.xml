@@ -9,7 +9,6 @@
 
     <translation id="logs_aliases_col_title">Name</translation>
     <translation id="logs_aliases_col_description">Description</translation>
-    <translation id="logs_aliases_col_modified_date">Last modified</translation>
     <translation id="logs_aliases_col_shared">Shared alias</translation>
     <translation id="logs_aliases_col_streams">Linked data streams</translation>
     <translation id="logs_aliases_col_indices">Linked indices</translation>
@@ -17,7 +16,7 @@
 
     <translation id="logs_aliases_edit">Edit</translation>
     <translation id="logs_aliases_delete">Delete</translation>
-    <translation id="logs_aliases_elasticsearch_access">Elasticsearch access</translation>
+    <translation id="logs_aliases_elasticsearch_access">Access elasticsearch</translation>
     <translation id="logs_aliases_attach_content">Attach content</translation>
     <translation id="logs_aliases_delete_title">Delete an alias</translation>
     <translation id="logs_alias_delete_message">Are you sure you want to delete an alias: {{alias}} ?</translation>

@@ -11,12 +11,13 @@
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving quota </translation>
 
     <translation id="logs_index_col_index">Index</translation>
+    <translation id="logs_index_name_text">Name</translation>
+    
     <translation id="logs_index_col_description">Description</translation>
-    <translation id="logs_index_col_modified_date">Last modified</translation>
     <translation id="logs_index_col_free_space">Free space</translation>
     <translation id="logs_index_col_shared">Shared index</translation>
     
-    <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
+    <translation id="logs_index_elastic_search_access">Access elasticsearch</translation>
     
     <translation id="logs_modal_delete_title">Delete index</translation>
     <translation id="logs_modal_delete_question">Are you sure you want to delete the following index: {{name}}?</translation>
@@ -27,10 +28,7 @@
 
     <translation id="logs_index_col_index">Index</translation>
     <translation id="logs_index_col_description">Description</translation>
-    <translation id="logs_index_col_free_space">Free space</translation>
-
-    <translation id="logs_index_elastic_search_access">Elasticsearch access</translation>
-    
+    <translation id="logs_index_col_free_space">Free space</translation>    
     <translation id="logs_index_delete_title">Delete index</translation>
     <translation id="logs_index_delete_question">Are you sure you want to delete the following front facing service: {{name}}?</translation>
 

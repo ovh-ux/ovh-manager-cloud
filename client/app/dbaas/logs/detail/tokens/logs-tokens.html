@@ -17,10 +17,10 @@
             <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
             <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
         </oui-column>
-        <oui-column title="::'logs_tokens_col_updated_date' | translate" property="updatedAt" sortable>
+        <oui-column title="::'logs_col_last_modified' | translate" property="updatedAt" sortable>
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
-        <oui-action-menu compact>
+        <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
