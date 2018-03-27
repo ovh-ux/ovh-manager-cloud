@@ -102,6 +102,29 @@ class LogsHomeService {
     }
 
     /**
+     * Gets the cold storage data volume
+     *
+     * @param {any} serviceName
+     * @returns promise which will resolve with the data volume
+     * @memberof LogsHomeService
+     */
+    getColdstorage = function (serviceName) {
+        return this.getAccount(serviceName)
+            .then(account => {
+                const token = btoa(account.metrics.token);
+                return this.$http({
+                    method: "GET",
+                    url: `${account.metrics.host}/api/query/last`,
+                    params: { timeseries: this.LogsHomeConstant.DATA_STORAGE.METRICS.COLD_STORAGE_TOTAL },
+                    headers: {
+                        Authorization: `Basic ${token}`
+                    },
+                    preventLogout: true
+                }).then(data => ({ coldStorage: data.data.length > 0 ? Math.floor(data.data[0].value) : undefined }));
+            });
+    };
+
+    /**
      * Gets the currently subscribed options
      *
      * @param {any} serviceName

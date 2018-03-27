@@ -210,6 +210,9 @@ class LogsHomeCtrl {
         this.storageData = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName)
         });
+        this.coldStorage = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getColdstorage(this.serviceName)
+        });
     }
 
     showSetupModal () {
@@ -248,6 +251,7 @@ class LogsHomeCtrl {
         loaderPromises.push(this.defaultCluster.load());
         loaderPromises.push(this.serviceInfos.load());
         loaderPromises.push(this.storageData.load());
+        loaderPromises.push(this.coldStorage.load());
         return this.$q.all(loaderPromises);
     }
 }

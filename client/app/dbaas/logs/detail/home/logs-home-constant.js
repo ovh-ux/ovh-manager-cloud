@@ -84,7 +84,8 @@ angular.module("managerApp").constant("LogsHomeConstant", {
         TIME_PERIOD_MONTHS: 3,
         METRICS: {
             SUM: "ldp.service.consumption.sum",
-            COUNT: "ldp.service.consumption.count"
+            COUNT: "ldp.service.consumption.count",
+            COLD_STORAGE_TOTAL: "ldp.service.coldstorage.total"
         },
         AGGREGATORS: {
             MAX: "max"

@@ -36,6 +36,7 @@
    <translation id="logs_home_data_received">Data received</translation>
    <translation id="logs_home_number_of_documents">Number of documents</translation>
    <translation id="logs_home_no_usage_data">No data available</translation>
+   <translation id="logs_home_cold_storage">Archived volume: {{coldStorage}}</translation>
    
    <translation id="logs_home_display_name_update_success">Display name successfully updated</translation>
 
