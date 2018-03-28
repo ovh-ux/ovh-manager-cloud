@@ -177,8 +177,8 @@ class LogsHomeService {
         }
         const si = ["K", "M", "G", "T", "P", "H"];
         const exp = Math.floor(Math.log(number) / Math.log(1000));
-        let result = number / 1000 ** exp;
-        result = result % 1 > (1 / (1000 ** (exp - 1))) ? Math.round(result.toFixed(2) * 100) / 100 : result.toFixed(0);
+        let result = number / Math.pow(1000, exp);
+        result = result % 1 > (1 / Math.pow(1000, exp - 1)) ? Math.round(result.toFixed(2) * 100) / 100 : result.toFixed(0);
         return result + si[exp - 1];
     }
 
