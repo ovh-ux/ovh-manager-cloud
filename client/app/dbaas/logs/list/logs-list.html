@@ -29,11 +29,11 @@
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable>
                     <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
-                    <span data-ng-if="!$row.quota.isLoadingQuota">{{$row.quota.offerType}}</span>   
+                    <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.offerType">{{$row.quota.offerType}}</span>   
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_entry_point' | translate" property="cluster.hostname" sortable>
                     <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
-                    <span data-ng-if="!$row.quota.isLoadingCluster">{{$row.cluster.hostname}}</span>
+                    <span data-ng-if="!$row.quota.isLoadingCluster && $row.cluster.hostname">{{$row.cluster.hostname}}</span>
                 </oui-column>
                 <oui-column title="::'logs_accounts_col_streams' | translate">
                     <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>

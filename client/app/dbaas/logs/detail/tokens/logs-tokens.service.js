@@ -100,11 +100,12 @@ class LogsTokensService {
      * @returns promise which will be resolve to array of input IDs
      * @memberof LogsInputsService
      */
-    getClusters (serviceName) {
+    getClusters (serviceName, errorMessage) {
+        errorMessage = errorMessage || "logs_tokens_cluster_get_error";
         return this.DetailsAapiService.me({ serviceName })
             .$promise
             .then(details => details.clusters)
-            .catch(err => this.LogsHelperService.handleError("logs_tokens_cluster_get_error", err, {}));
+            .catch(err => this.LogsHelperService.handleError(errorMessage, err, { accountName: serviceName }));
     }
 
     /**
@@ -114,8 +115,8 @@ class LogsTokensService {
      * @returns promise which will be resolve to default cluster
      * @memberof LogsInputsService
      */
-    getDefaultCluster (serviceName) {
-        return this.getClusters(serviceName)
+    getDefaultCluster (serviceName, errorMessage) {
+        return this.getClusters(serviceName, errorMessage)
             .then(clusters => {
                 const defaultClusters = clusters.filter(cluster => cluster.isDefault);
                 return defaultClusters.length > 0 ? defaultClusters[0] : null;

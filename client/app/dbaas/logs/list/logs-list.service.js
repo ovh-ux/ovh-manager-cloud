@@ -57,10 +57,10 @@ class LogsListService {
             .catch(err => this.LogsHelperService.handleError("logs_accounts_get_detail_error", err, { accountName: serviceName }));
     }
 
-    getQuota (serviceName) {
-        return this.AccountingAapiService.me({ serviceName })
+    getQuota (service) {
+        return this.AccountingAapiService.me({ serviceName: service.serviceName })
             .$promise
-            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_quota_error", err, { accountName: serviceName }));
+            .catch(err => this.LogsHelperService.handleError("logs_accounts_get_quota_error", err, { accountName: service.displayName || service.serviceName }));
     }
 
     /**
@@ -71,30 +71,24 @@ class LogsListService {
      * @memberof LogsInputsService
      */
     getDefaultCluster (serviceName) {
-        return this.LogsTokensService.getDefaultCluster(serviceName);
+        return this.LogsTokensService.getDefaultCluster(serviceName, "logs_accounts_get_entry_point_error");
     }
 
     _transformService (service) {
         if (service.state === this.LogsHomeConstant.SERVICE_STATE_DISABLED) {
-            service.quota = {
-                isLoadingQuota: false,
-                offerType: "-"
-            };
-            service.cluster = {
-                isLoadingCluster: false,
-                hostname: "-"
-            };
             service.isDisabled = true;
-            return service;
+        } else {
+            service.isDisabled = false;
         }
-        service.isDisabled = false;
         service.quota = {
-            isLoadingQuota: true
+            isLoadingQuota: true,
+            offerType: "-"
         };
         service.cluster = {
-            isLoadingCluster: true
+            isLoadingCluster: true,
+            hostname: "-"
         };
-        this.getQuota(service.serviceName)
+        this.getQuota(service)
             .then(me => {
                 service.quota.streams = {
                     current: me.total.curNbStream,

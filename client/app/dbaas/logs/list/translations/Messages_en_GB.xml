@@ -18,5 +18,6 @@
     <translation id="logs_accounts_setup_required">Setup required</translation>
     <translation id="logs_accounts_get_accounts_error">An error has occurred while retrieving accounts</translation>
     <translation id="logs_accounts_get_detail_error">An error has occurred while retrieving account '{{accountName}}' details: {{message}}</translation>
+    <translation id="logs_accounts_get_entry_point_error">An error has occurred while retrieving account '{{accountName}}' entry point: {{message}}</translation>
     <translation id="logs_accounts_get_quota_error">An error has occurred while retrieving account '{{accountName}}' quota details: {{message}}</translation>
 </translations>
