@@ -33,6 +33,11 @@
    <translation id="logs_home_service">Logs Data Platform Service</translation>
    <translation id="logs_home_start_date">Creation date</translation>
    
+   <translation id="logs_home_data_received">Data received</translation>
+   <translation id="logs_home_number_of_documents">Number of documents</translation>
+   <translation id="logs_home_no_usage_data">No data available</translation>
+   <translation id="logs_home_cold_storage">Archived volume: {{coldStorage}}</translation>
+   
    <translation id="logs_home_display_name_update_success">Display name successfully updated</translation>
 
    <translation id="logs_home_account_details_get_error">An error occurred while trying to retrieve account details: {{message}}</translation>
@@ -41,4 +46,5 @@
    <translation id="logs_home_contact_get_error">An error occurred while trying to retrieve contact details: {{message}}</translation>
    <translation id="logs_home_display_name_update_error">An error occurred while trying to update the display name: {{message}}</translation>
    <translation id="logs_home_service_info_get_error">An error occurred while trying to retrieve the service info: {{message}}</translation>
+   <translation id="logs_home_data_get_error">An error occurred while trying to retrieve the storage data: {{message}}</translation>
 </translations>
