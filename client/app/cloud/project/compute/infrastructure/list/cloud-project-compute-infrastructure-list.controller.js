@@ -75,6 +75,7 @@ class CloudProjectComputeInfrastructureListCtrl {
             this.table.items = [];
             this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
             this.$log.error(err);
+            return this.$q.reject(err);
         }).finally(() => {
             this.loaders.infra = false;
         });
