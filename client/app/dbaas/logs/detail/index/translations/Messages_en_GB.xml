@@ -52,13 +52,13 @@
    <translation id="logs_index_modal_notification">Notification</translation>
    <translation id="logs_index_modal_checkbox">Notify me by e-mail when the index reaches a critical size</translation>
 
-   <translation id="logs_index_edit_error">An error occurred while saving changes for {{name}}: {{message}}</translation>
-   <translation id="logs_index_create_error">An error occurred while creating index {{name}}: {{message}}</translation>
-   <translation id="logs_index_delete_error">An error occurred while deleting index {{name}}: {{message}}</translation>
+   <translation id="logs_index_edit_error">An error has occured while updating index '{{name}}': {{message}}</translation>
+   <translation id="logs_index_create_error">An error occurred while creating index '{{name}}': {{message}}</translation>
+   <translation id="logs_index_delete_error">An error occurred while deleting index '{{name}}': {{message}}</translation>
    
-   <translation id="logs_index_create_success">Successfully created index: {{name}}</translation>
-   <translation id="logs_index_edit_success">Successfully updated {{name}}</translation>
-   <translation id="logs_index_delete_success">Successfully deleted the index: {{name}}</translation>
+   <translation id="logs_index_create_success">The index '{{name}}' has been successfully created.</translation>
+   <translation id="logs_index_edit_success">The index '{{name}}' has been successfully updated.</translation>
+   <translation id="logs_index_delete_success">The index '{{name}}' has been successfully deleted.</translation>
 
    <translation id="logs_index_option_warning">The option you choose can not be changed later.</translation>
 

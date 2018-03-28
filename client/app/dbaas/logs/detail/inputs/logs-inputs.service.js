@@ -1,5 +1,5 @@
 class LogsInputsService {
-    constructor ($q, CloudMessage, CloudPoll, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, CloudMessage, CloudPoll, LogsHelperService, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
@@ -11,6 +11,7 @@ class LogsInputsService {
         this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
+        this.LogsHelperService = LogsHelperService;
 
         this.initializeData();
     }
@@ -109,7 +110,7 @@ class LogsInputsService {
                 this._resetAllCache();
                 return this._pollOperation(serviceName, operation.data).$promise;
             })
-            .catch(err => this._handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -125,9 +126,9 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_delete_success", { inputTitle: input.info.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_inputs_delete_success", { inputTitle: input.info.title });
             })
-            .catch(err => this._handleError("logs_inputs_delete_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_delete_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -140,7 +141,7 @@ class LogsInputsService {
     getDetails (serviceName) {
         return this.DetailsAapiService.me({ serviceName })
             .$promise.then(details => this._transformDetails(details))
-            .catch(this.ServiceHelper.errorHandler("logs_inputs_details_get_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_details_get_error", err, {}));
     }
 
     /**
@@ -164,7 +165,7 @@ class LogsInputsService {
      */
     getInput (serviceName, inputId) {
         return this.InputsApiAapiService.get({ serviceName, inputId })
-            .$promise.catch(err => this._handleError("logs_inputs_get_error", err, { inputId }));
+            .$promise.catch(err => this.LogsHelperService.handleError("logs_inputs_get_error", err, {}));
     }
 
     /**
@@ -190,7 +191,7 @@ class LogsInputsService {
      */
     getInputLogUrl (serviceName, inputId) {
         return this.InputsApiLexiService.logurl({ serviceName, inputId })
-            .$promise.catch(this.ServiceHelper.errorHandler("logs_inputs_logurl_error"));
+            .$promise.catch(err => this.LogsHelperService.handleError("logs_inputs_logurl_error", err, {}));
     }
 
     /**
@@ -213,7 +214,7 @@ class LogsInputsService {
             .then(me => ({
                 max: me.offer.maxNbInput,
                 current: me.offer.curNbInput
-            })).catch(this.ServiceHelper.errorHandler("logs_inputs_main_offer_get_error"));
+            })).catch(err => this.LogsHelperService.handleError("logs_inputs_main_offer_get_error", err, {}));
     }
 
     getNewInput () {
@@ -243,7 +244,7 @@ class LogsInputsService {
                     currentUsage: me.total.curNbInput * 100 / me.total.maxNbInput
                 };
                 return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_inputs_quota_get_error"));
+            }).catch(err => this.LogsHelperService.handleError("logs_inputs_quota_get_error", err, {}));
     }
 
     /**
@@ -270,11 +271,11 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_restart_success", { inputTitle: input.info.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_inputs_restart_success", { inputTitle: input.info.title });
             })
             .catch(err => {
                 this._resetAllCache();
-                return this._handleError("logs_inputs_restart_error", err, { inputTitle: input.info.title });
+                return this.LogsHelperService.handleError("logs_inputs_restart_error", err, { inputTitle: input.info.title });
             });
     }
 
@@ -291,11 +292,11 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_start_success", { inputTitle: input.info.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_inputs_start_success", { inputTitle: input.info.title });
             })
             .catch(err => {
                 this._resetAllCache();
-                return this._handleError("logs_inputs_start_error", err, { inputTitle: input.info.title });
+                return this.LogsHelperService.handleError("logs_inputs_start_error", err, { inputTitle: input.info.title });
             });
     }
 
@@ -312,11 +313,11 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._handleSuccess(serviceName, operation.data, "logs_inputs_stop_success", { inputTitle: input.info.title });
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_inputs_stop_success", { inputTitle: input.info.title });
             })
             .catch(err => {
                 this._resetAllCache();
-                return this._handleError("logs_inputs_stop_error", err, { inputTitle: input.info.title });
+                return this.LogsHelperService.handleError("logs_inputs_stop_error", err, { inputTitle: input.info.title });
             });
     }
 
@@ -357,9 +358,9 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, null, null);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
-            .catch(err => this._handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_network_add_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
     executeTest (serviceName, input) {
@@ -367,7 +368,7 @@ class LogsInputsService {
             .$promise
             .then(operation => this._pollOperation(serviceName, operation).$promise)
             .then(() => this.getTestResults(serviceName, input))
-            .catch(err => this._handleError("logs_inputs_test_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_test_error", err, { inputTitle: input.info.title }));
     }
 
     removeNetwork (serviceName, input, network) {
@@ -375,9 +376,9 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation, null, null);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
-            .catch(err => this._handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_network_remove_error", err, { network: network.network, inputTitle: input.info.title }));
     }
 
     updateFlowgger (serviceName, input, flowgger) {
@@ -385,9 +386,9 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
-            .catch(err => this._handleError("logs_inputs_flowgger_update_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_flowgger_update_error", err, { inputTitle: input.info.title }));
     }
 
     updateLogstash (serviceName, input, logstash) {
@@ -395,9 +396,9 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this.InputsApiAapiService.resetAllCache();
-                return this._handleSuccess(serviceName, operation.data || operation, null, null);
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
-            .catch(err => this._handleError("logs_inputs_logstash_update_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_logstash_update_error", err, { inputTitle: input.info.title }));
     }
 
     /**
@@ -413,46 +414,13 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._pollOperation(serviceName, operation.data).$promise;
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation);
             })
-            .catch(err => this._handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
+            .catch(err => this.LogsHelperService.handleError("logs_inputs_update_error", err, { inputTitle: input.info.title }));
     }
 
     getTestResults (serviceName, input) {
         return this.InputsApiLexiService.testResult({ serviceName, inputId: input.info.inputId }).$promise;
-    }
-
-    /**
-     * handles error state for create, delete and update input
-     *
-     * @param {any} errorMessage, message to show on UI
-     * @param {any} error, the error object
-     * @param {any} messageData, the data to be used in the error message
-     * @memberof LogsInputsService
-     */
-    _handleError (errorMessage, error, messageData) {
-        return this.ServiceHelper.errorHandler(errorMessage)({ data: _.assign(messageData, error.data) });
-    }
-
-    /**
-     * handles success state for create, delete and update inputs.
-     * Repetedly polls for operation untill it returns SUCCESS message.
-     *
-     * @param {any} serviceName
-     * @param {any} operation, operation to poll
-     * @param {any} successMessage, message to show on UI
-     * @param {any} messageData, the data to be used in the success message
-     * @returns promise which will be resolved to operation object
-     * @memberof LogsInputsService
-     */
-    _handleSuccess (serviceName, operation, successMessage, messageData) {
-        return this._pollOperation(serviceName, operation)
-            .$promise.then(successData => {
-                if (successMessage) {
-                    this.ServiceHelper.successHandler(successMessage)(messageData);
-                }
-                return successData;
-            });
     }
 
     /**
@@ -464,21 +432,6 @@ class LogsInputsService {
         this.InputsApiAapiService.resetAllCache();
         this.InputsApiLexiService.resetAllCache();
         this.AccountingAapiService.resetAllCache();
-    }
-
-    /**
-     * Stops the previous pollers and creates a new one
-     *
-     * @returns the new poller
-     * @memberof LogsInputsService
-     */
-    _pollOperation (serviceName, operation) {
-        const pollar = this.CloudPoll.poll({
-            item: operation,
-            pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogsInputsConstant.FAILURE || opn.state === this.LogsInputsConstant.SUCCESS
-        });
-        return pollar;
     }
 
     _transformDetails (details) {
