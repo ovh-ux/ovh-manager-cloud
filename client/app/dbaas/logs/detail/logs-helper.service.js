@@ -1,8 +1,11 @@
 class LogsHelperService {
-    constructor (OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper) {
+        this.$translate = $translate;
+        this.$state = $state;
         this.ServiceHelper = ServiceHelper;
         this.CloudPoll = CloudPoll;
         this.LogStreamsConstants = LogStreamsConstants;
+        this.ControllerModalHelper = ControllerModalHelper;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
     }
 
@@ -64,6 +67,27 @@ class LogsHelperService {
                 }
                 return pollResult;
             });
+    }
+
+    /**
+     * shows offer upgrade required info modal
+     * @param {string} serviceName
+     */
+    showOfferUpgradeModal (serviceName) {
+        return this.ControllerModalHelper.showInfoModal({
+            titleText: this.$translate.instant("options_upgradequotalink_increase_quota_title"),
+            text: this.$translate.instant("options_upgradequotalink_increase_quota_message"),
+            okButtonText: this.$translate.instant("options_upgradequotalink_increase_quota_upgrade")
+        })
+            .then(() => this.$state.go("dbaas.logs.detail.offer", { serviceName }));
+    }
+
+    /**
+     * return true if account is of type basic, false otherwise
+     * @param {accountDetails} account
+     */
+    isBasicOffer (account) {
+        return !account.offer.reference.startsWith("logs-pro");
     }
 }
 

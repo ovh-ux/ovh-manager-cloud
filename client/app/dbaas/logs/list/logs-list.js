@@ -14,6 +14,6 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             },
-            translations: ["common", "cloud", "dbaas/logs"]
+            translations: ["common", "dbaas/logs/list", "dbaas/logs/detail/tokens"]
         });
 });
