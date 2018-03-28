@@ -5,6 +5,7 @@ class LogsDashboardsService {
         this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().Lexi();
         this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
+        this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.LogsOptionsService = LogsOptionsService;
         this.LogsHelperService = LogsHelperService;
         this.LogOptionConstant = LogOptionConstant;
@@ -236,6 +237,8 @@ class LogsDashboardsService {
         this.AccountingAapiService.resetAllCache();
         this.DashboardsApiService.resetAllCache();
         this.DashboardsAapiService.resetAllCache();
+        // refresh home page last modified dashboard
+        this.DetailsAapiService.resetAllCache();
     }
 }
 
