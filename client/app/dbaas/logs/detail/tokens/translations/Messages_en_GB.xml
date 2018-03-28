@@ -6,7 +6,6 @@
 
     <translation id="logs_tokens_col_name">Name</translation>
     <translation id="logs_tokens_col_token">Token</translation>
-    <translation id="logs_tokens_col_creation_date">Creation date</translation>
     <translation id="logs_tokens_col_platform">Platform</translation>
     <translation id="logs_tokens_cluster">Cluster</translation>
     <translation id="logs_tokens_select_cluster">Select a cluster</translation>

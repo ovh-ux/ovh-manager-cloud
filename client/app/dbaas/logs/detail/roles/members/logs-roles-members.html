@@ -20,7 +20,7 @@
         <oui-column title=":: 'logs_roles_members_date_added' | translate" property="createdAt">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
-        <oui-action-menu align="end" compact>
+        <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'logs_roles_members_revoke' | translate }}" on-click="ctrl.revoke($row)"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>
