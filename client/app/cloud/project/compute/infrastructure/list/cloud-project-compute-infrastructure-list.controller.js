@@ -1,10 +1,9 @@
 class CloudProjectComputeInfrastructureListCtrl {
-    constructor ($scope, $q, $log, $stateParams, $translate,
+    constructor ($scope, $q, $stateParams, $translate,
                  CloudMessage, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
                  OvhApiCloudProjectVolume, OvhCloudPriceHelper, RegionService) {
         this.$scope = $scope;
         this.$q = $q;
-        this.$log = $log;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
@@ -74,7 +73,6 @@ class CloudProjectComputeInfrastructureListCtrl {
         }).catch(err => {
             this.table.items = [];
             this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
-            this.$log.error(err);
             return this.$q.reject(err);
         }).finally(() => {
             this.loaders.infra = false;
