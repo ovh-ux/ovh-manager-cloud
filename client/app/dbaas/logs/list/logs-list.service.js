@@ -90,20 +90,22 @@ class LogsListService {
         };
         this.getQuota(service)
             .then(me => {
-                service.quota.streams = {
-                    current: me.total.curNbStream,
-                    max: me.total.maxNbStream
-                };
-                service.quota.indices = {
-                    current: me.total.curNbIndex,
-                    max: me.total.maxNbIndex
-                };
-                service.quota.dashboards = {
-                    current: me.total.curNbDashboard,
-                    max: me.total.maxNbDashboard
-                };
-                service.isBasicOffer = this.LogsHelperService.isBasicOffer(me);
-                service.quota.offerType = service.isBasicOffer ? "Basic" : "Pro";
+                if (!_.isEmpty(me.total)) {
+                    service.quota.streams = {
+                        current: me.total.curNbStream,
+                        max: me.total.maxNbStream
+                    };
+                    service.quota.indices = {
+                        current: me.total.curNbIndex,
+                        max: me.total.maxNbIndex
+                    };
+                    service.quota.dashboards = {
+                        current: me.total.curNbDashboard,
+                        max: me.total.maxNbDashboard
+                    };
+                    service.isBasicOffer = this.LogsHelperService.isBasicOffer(me);
+                    service.quota.offerType = service.isBasicOffer ? "Basic" : "Pro";
+                }
             })
             .finally(() => {
                 service.quota.isLoadingQuota = false;
