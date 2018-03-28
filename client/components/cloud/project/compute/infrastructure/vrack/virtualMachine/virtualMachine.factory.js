@@ -162,12 +162,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
         }
 
         return $q.all(queue)
-            .then(() => self.updatePrice())
-            .then(() => {
-                delete self.imageId;
-                delete self.flavorId;
-                delete self.sshKeyId;
-            });
+            .then(() => self.updatePrice());
     };
 
 
