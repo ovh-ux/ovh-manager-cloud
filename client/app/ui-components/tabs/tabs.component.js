@@ -51,8 +51,11 @@ angular.module("managerApp")
                 role="menuitem"
                 data-ng-class="{ 'cui-tabs__tab_active': $ctrl.active, 'cui-tabs__tab_animate': $ctrl.isActivating }">
                 <ng-transclude data-ng-if="!$ctrl.state"></ng-transclude>
-                <a data-ng-if="$ctrl.state"
+                <a data-ng-if="$ctrl.state && !$ctrl.disabled"
                    ui-sref="{{ $ctrl.state + '(' + String($ctrl.stateParams) + ')' }}">
+                   <span data-ng-bind="$ctrl.text"></span>
+                </a>
+                <a data-ng-if="$ctrl.state && $ctrl.disabled" class="cui-tabs__tab_disabled">
                    <span data-ng-bind="$ctrl.text"></span>
                 </a>
             </li>
@@ -61,7 +64,8 @@ angular.module("managerApp")
             active: "<",
             state: "@",
             stateParams: "<",
-            text: "<"
+            text: "<",
+            disabled: "<"
         },
         link: ($scope, $element, $attrs, $ctrls) => {
             const parentCtrl = $ctrls[0];

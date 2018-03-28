@@ -13,6 +13,8 @@ class LogsHomeCtrl {
         this.LogsTokensService = LogsTokensService;
         this.service = serviceDetails;
         this.LogsHelperService = LogsHelperService;
+        this.isAccountDisabled = LogsHelperService.isAccountDisabled(this.service);
+        this.lastUpdatedDate = moment(this.service.updatedAt).format("LL");
         this.initLoaders();
     }
 
@@ -153,12 +155,12 @@ class LogsHomeCtrl {
                 text: this.$translate.instant("common_edit"),
                 state: "dbaas.logs.detail.offer",
                 stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.account.loading && !this.account.hasErrors
+                isAvailable: () => !this.account.loading && !this.account.hasErrors && !this.isAccountDisabled
             },
             editOptions: {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.goToOptionsPage(),
-                isAvailable: () => !this.options.loading && !this.options.hasErrors
+                isAvailable: () => !this.options.loading && !this.options.hasErrors && !this.isAccountDisabled
             }
         };
     }

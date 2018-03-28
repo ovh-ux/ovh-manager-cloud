@@ -3,12 +3,6 @@ angular.module("managerApp").config($stateProvider => {
     $stateProvider
         .state("dbaas.logs.detail.home", {
             url: "/home",
-            resolve: {
-                serviceDetails: ($q, $state, $stateParams, LogsHomeService) => {
-                    const serviceName = $stateParams.serviceName;
-                    return LogsHomeService.getServiceDetails(serviceName);
-                }
-            },
             views: {
                 logsContent: {
                     templateUrl: "app/dbaas/logs/detail/home/logs-home.html",

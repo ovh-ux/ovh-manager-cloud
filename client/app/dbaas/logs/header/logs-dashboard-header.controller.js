@@ -1,5 +1,5 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsDetailService, ovhDocUrl, SidebarMenu) {
+    constructor ($stateParams, $translate, ControllerHelper, LogsDetailService, ovhDocUrl, SidebarMenu, serviceDetails, LogsHelperService) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
@@ -7,8 +7,8 @@ class LogsDashboardHeaderCtrl {
         this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
         this.serviceName = $stateParams.serviceName;
-
-        this.serviceName = $stateParams.serviceName;
+        this.service = serviceDetails;
+        this.isAccountDisabled = LogsHelperService.isAccountDisabled(this.service);
 
         this._initLoaders();
     }

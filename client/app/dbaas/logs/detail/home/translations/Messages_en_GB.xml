@@ -2,7 +2,9 @@
 <translations>
    <translation id="logs_home_info_title">About</translation>
    <translation id="logs_home_info">Logs Data Platform is an interface for collecting, indexing and analyzing logs. Regardless of where they come from, the platform allows you to choose different entry points based on protocol, security level and format. Data analysis and exploitation can be done through different APIs and interfaces.</translation>
-   
+   <translation id="logs_home_account_disabled_title">Account disabled</translation>
+   <translation id="logs_home_account_disabled_message">Your account is disabled on {{disabledDate}}. Contact customer support to enable it.</translation>
+
    <translation id="logs_home_shortcuts">Shortcuts</translation>
    <translation id="logs_home_shortcuts_last_stream">Last modified stream</translation>
    <translation id="logs_home_shortcuts_all_stream">See all streams</translation>
