@@ -1,7 +1,22 @@
 <div class="cui-page__content log-options">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
-    <span class="oui-header_3" data-translate="log_options_title"></span>    
-    <h6 class="oui-header_6" data-translate="log_options_current_title"></h6>
+    <span class="oui-header_3" data-translate="log_options_title"></span>
+    
+    <oui-spinner data-ng-show="ctrl.currentOptions.loading || ctrl.selectedOffer.loading"></oui-spinner>
+    <div data-ng-if="!(ctrl.currentOptions.loading || ctrl.selectedOffer.loading)">
+        <h6 class="oui-header_6" data-translate="log_options_current_title" data-ng-if="ctrl.currentOptions.data.length>0"></h6>
+        <div class="oui-header_6" data-ng-if="ctrl.currentOptions.data.length===0 && ctrl.isBasicOffer()">
+            <span data-translate="log_options_basic_no_options"></span>
+            <button
+                role="link"
+                class="oui-link oui-button-link"
+                data-ng-click="ctrl.goToOffersPage()"
+                data-translate="log_options_basic_no_options_upgrade"
+                data-ui-sref="dbaas.logs.detail.offer">
+            </button>
+        </div>
+        <h6 class="oui-header_6" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></h6>
+    </div>
     
     <div class="row">
         <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">

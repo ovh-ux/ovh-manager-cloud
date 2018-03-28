@@ -35,6 +35,10 @@
     <translation id="logs-index-4-detail">4 fragment</translation>
     <translation id="logs-index-8-detail">8 fragment</translation>
 
+    <translation id="log_options_basic_no_options">Vous êtes actuellement abonné à l'offre Basic. Vous devrez passer à PRO pour pouvoir acheter des options.</translation>
+    <translation id="log_options_basic_no_options_upgrade">Mettre à jour maintenant</translation>
+    <translation id="log_options_pro_no_options">Actuellement, vous n'êtes abonné à aucune option. Vous pouvez acheter des options dans le tableau ci-dessous.</translation>
+
     <translation id="log_options_order">Commande</translation>
     <translation id="log_options_cancel">Annuler</translation>
     <translation id="log_options_total">Total</translation>
