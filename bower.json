@@ -69,7 +69,7 @@
     "ovh-angular-sso-auth-modal-plugin": "^1.0.15",
     "ovh-angular-swimming-poll": "^3.0.1",
     "ovh-angular-doc-url": "^0.0.6",
-    "ovh-angular-module-status": "^2.0.0",
+    "ovh-angular-module-status": "^3.0.0",
     "ovh-angular-otrs": "^5.0.0",
     "ovh-api-services": "^2.1.13",
     "angular-chart.js": "^1.1.1",
