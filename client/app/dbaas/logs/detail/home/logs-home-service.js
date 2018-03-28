@@ -179,7 +179,8 @@ class LogsHomeService {
         const exp = Math.floor(Math.log(number) / Math.log(1000));
         let result = number / Math.pow(1000, exp);
         result = result % 1 > (1 / Math.pow(1000, exp - 1)) ? Math.round(result.toFixed(2) * 100) / 100 : result.toFixed(0);
-        return result + si[exp - 1];
+        const unit = si[exp - 1];
+        return `${result} ${unit}`;
     }
 
     /**

@@ -33,5 +33,16 @@ angular.module("managerApp").config($stateProvider => {
                 }
             },
             translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
+        })
+        .state("dbaas.logs.detail.streams.alerts.edit", {
+            url: "/:alertId",
+            views: {
+                logsAlerts: {
+                    templateUrl: "app/dbaas/logs/detail/streams/alerts/add/alerts-add.html",
+                    controller: "LogsStreamsAlertsAddCtrl",
+                    controllerAs: "ctrl"
+                }
+            },
+            translations: ["common", "dbaas/logs", "dbaas/logs/streams"]
         });
 });

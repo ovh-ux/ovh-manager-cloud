@@ -112,6 +112,20 @@ class LogsStreamsAlertsHomeCtrl {
             type: this.LogsStreamsAlertsConstant.alertType[type]
         });
     }
+
+    /**
+     * Redirects to the alert edit page
+     *
+     * @param {any} alert
+     * @memberof LogsStreamsAlertsHomeCtrl
+     */
+    editAlert (alert) {
+        this.$state.go("dbaas.logs.detail.streams.alerts.edit", {
+            serviceName: this.serviceName,
+            streamId: this.streamId,
+            alertId: alert.alertId
+        });
+    }
 }
 
 angular.module("managerApp").controller("LogsStreamsAlertsHomeCtrl", LogsStreamsAlertsHomeCtrl);
