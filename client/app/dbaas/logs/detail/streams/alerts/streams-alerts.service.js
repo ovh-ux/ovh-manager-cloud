@@ -93,7 +93,8 @@ class LogsStreamsAlertsService {
      * @memberof LogsStreamsAlertsService
      */
     getAlert (serviceName, streamId, alertId) {
-        return this.AlertsApiService.get({ serviceName, streamId, alertId }).$promise;
+        return this.AlertsApiService.get({ serviceName, streamId, alertId })
+            .$promise.then(alert => this._transformAlert(alert));
     }
 
     /**
@@ -109,15 +110,49 @@ class LogsStreamsAlertsService {
             this.LogsStreamsAlertsConstant.thresholdType.more;
         const constraintType = this.LogsStreamsAlertsConstant.constraintType.mean;
         return this.$q.when({
-            conditionType,
-            thresholdType,
-            threshold: 1,
-            time: 1,
-            grace: 1,
-            backlog: 1,
-            repeatNotificationsEnabled: false,
-            constraintType
+            data: {
+                conditionType,
+                thresholdType,
+                threshold: 1,
+                time: 1,
+                grace: 1,
+                backlog: 1,
+                repeatNotificationsEnabled: false,
+                constraintType
+            },
+            loading: false
         });
+    }
+
+    /**
+     * Edit and save an alert
+     *
+     * @param {any} serviceName
+     * @param {any} streamId
+     * @param {any} alert - the alert object
+     * @returns promise which will be resolve to an operation object
+     * @memberof LogsStreamsAlertsService
+     */
+    updateAlert (serviceName, streamId, alert) {
+        return this.AlertsApiService.put({ serviceName, streamId, alertId: alert.alertId }, alert).$promise
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "streams_alerts_update_success", { alertName: alert.title }))
+            .catch(err => this.LogsHelperService.handleError("streams_alerts_update_error", err, { alertName: alert.title }));
+    }
+
+    /**
+     * Applies transformation to the alert
+     *
+     * @param {any} alert - the alert object
+     * @returns the transformed alert
+     * @memberof LogsStreamsAlertsService
+     */
+    _transformAlert (alert) {
+        Object.keys(alert).forEach(property => {
+            if (alert[property] === null) {
+                alert[property] = undefined;
+            }
+        });
+        return alert;
     }
 }
 

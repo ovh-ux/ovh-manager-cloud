@@ -1,16 +1,17 @@
 <div class="cui-page__content">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
-    <span class="oui-header_3" data-translate="{{ ::'add_alert_title_' + ctrl.alertType.toLowerCase() }}"></span>
-    <p class="oui-paragraph" data-translate="{{ ::'add_alert_description_' + ctrl.alertType.toLowerCase() }}"></p>
+    <span class="oui-header_3" data-translate="{{ ctrl.editMode ? 'edit_alert_title_' + ctrl.alertType.toLowerCase() : 'add_alert_title_' + ctrl.alertType.toLowerCase() }}"></span>
+    <p class="oui-paragraph" data-translate="{{ 'add_alert_description_' + ctrl.alertType.toLowerCase() }}"></p>
 
-    <form novalidate name="ctrl.form">
+    <oui-spinner data-ng-if="ctrl.alert.loading"></oui-spinner>
+    <form data-ng-if="!ctrl.alert.loading" novalidate name="ctrl.form">
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}">
             <label for="alert_title" class="oui-field__label oui-label" data-translate="add_alert_name_field"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <input type="text" id="alert_title" name="alert_title"
                             class="oui-input" 
-                            data-ng-model="ctrl.alert.title"
+                            data-ng-model="ctrl.alert.data.title"
                             data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}"
                             data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.TITLE_MIN_LENGTH"
                             data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.TITLE_MAX_LENGTH"
@@ -27,7 +28,7 @@
                 <div class="oui-field-control oui-field-control_4">
                     <input type="text" id="field" name="field"
                             class="oui-input" 
-                            data-ng-model="ctrl.alert.field"
+                            data-ng-model="ctrl.alert.data.field"
                             data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
                             data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.FIELD_MIN_LENGTH"
                             data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.FIELD_MAX_LENGTH"
@@ -43,7 +44,7 @@
                     <div class="oui-field-control oui-field-control_4">
                         <input type="text" id="val" name="val"
                                 class="oui-input" 
-                                data-ng-model="ctrl.alert.value"
+                                data-ng-model="ctrl.alert.data.value"
                                 data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
                                 data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.VALUE_MIN_LENGTH"
                                 data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.VALUE_MAX_LENGTH"
@@ -60,7 +61,7 @@
                     <oui-numeric
                         id="time_period"
                         name="time_period"
-                        model="ctrl.alert.time"
+                        model="ctrl.alert.data.time"
                         class="numeric_without_bottom_margin"
                         min="ctrl.LogsStreamsAlertsAddConstant.TIME_PERIOD_MIN_IN_SECONDS"
                         max="ctrl.LogsStreamsAlertsAddConstant.TIME_PERIOD_MAX_IN_SECONDS"
@@ -78,7 +79,7 @@
                             <select class="oui-select__input"
                                 name="threshold_type"
                                 id="threshold_type"
-                                data-ng-model="ctrl.alert.thresholdType">
+                                data-ng-model="ctrl.alert.data.thresholdType">
                                 <option data-ng-repeat="thresholdType in ctrl.getThresholdTypes()" value="{{::thresholdType}}" data-translate="{{ ::'add_alert_threshold_type_' + thresholdType.toLowerCase() }}"></option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
@@ -94,7 +95,7 @@
                     <oui-numeric
                         id="threshold"
                         name="threshold"
-                        model="ctrl.alert.threshold"
+                        model="ctrl.alert.data.threshold"
                         class="numeric_without_bottom_margin"
                         min="ctrl.LogsStreamsAlertsAddConstant.THRESHOLD_MIN"
                         max="ctrl.LogsStreamsAlertsAddConstant.THRESHOLD_MAX"
@@ -112,7 +113,7 @@
                             <select class="oui-select__input"
                                 name="constraint_type"
                                 id="constraint_type"
-                                data-ng-model="ctrl.alert.constraintType">
+                                data-ng-model="ctrl.alert.data.constraintType">
                                 <option data-ng-repeat="constraintType in ctrl.getConstraintTypes()" value="{{::constraintType}}" data-translate="{{ ::'add_alert_constraint_type_' + constraintType.toLowerCase() }}"></option>
                             </select>
                             <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
@@ -129,7 +130,7 @@
                 <oui-numeric
                     id="grace_period"
                     name="grace_period"
-                    model="ctrl.alert.grace"
+                    model="ctrl.alert.data.grace"
                     class="numeric_without_bottom_margin"
                     min="ctrl.LogsStreamsAlertsAddConstant.GRACE_PERIOD_MIN_IN_MINUTES"
                     max="ctrl.LogsStreamsAlertsAddConstant.GRACE_PERIOD_MAX_IN_MINUTES"
@@ -145,7 +146,7 @@
                 <oui-numeric
                     id="accumulation"
                     name="accumulation"
-                    model="ctrl.alert.backlog"
+                    model="ctrl.alert.data.backlog"
                     class="numeric_without_bottom_margin"
                     min="ctrl.LogsStreamsAlertsAddConstant.BACKLOG_MIN"
                     max="ctrl.LogsStreamsAlertsAddConstant.BACKLOG_MAX"
@@ -158,7 +159,7 @@
         <div class="oui-field pb-4">
             <div class="oui-field__content">
                 <div class="oui-field-control">
-                    <oui-checkbox model="ctrl.alert.repeatNotificationsEnabled"
+                    <oui-checkbox model="ctrl.alert.data.repeatNotificationsEnabled"
                         id="notification"
                         name="notification"
                         text="{{::'add_alert_notification_field' | translate}}"
@@ -169,13 +170,13 @@
         </div>
 
         <div class="cui-form-actions">
-            <oui-spinner data-ng-show="ctrl.addingAlert.loading"></oui-spinner>
-            <div data-ng-hide="ctrl.addingAlert.loading">
+            <oui-spinner data-ng-show="ctrl.savingAlert.loading"></oui-spinner>
+            <div data-ng-hide="ctrl.savingAlert.loading">
                 <oui-button
                     text="{{::'common_save' | translate}}"
                     variant="primary"
                     type="submit"
-                    on-click="ctrl.addAlert()"
+                    on-click="ctrl.saveAlert()"
                 ></oui-button>
             
                 <oui-button

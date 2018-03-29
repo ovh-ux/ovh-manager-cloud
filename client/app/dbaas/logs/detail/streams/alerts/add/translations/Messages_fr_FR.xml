@@ -3,6 +3,9 @@
     <translation id="add_alert_title_message_count">Créer une condition de type compteur</translation>
     <translation id="add_alert_title_field_value">Créer une condition de type valeur numérique</translation>
     <translation id="add_alert_title_field_content_value">Créer une condition de type contenu textuel</translation>
+    <translation id="edit_alert_title_message_count">Modifier la condition de type compteur</translation>
+    <translation id="edit_alert_title_field_value">Modifier la condition de type valeur numérique</translation>
+    <translation id="edit_alert_title_field_content_value">Modifier la condition de type contenu textuel</translation>
     
     <translation id="add_alert_description_message_count">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée</translation>
     <translation id="add_alert_description_field_value">Cette condition est déclachée quand la valeur aggrégée d’un chamo est plus haute ou plus basse qu’un seuil défini dans une période de temps donnée</translation>
@@ -41,4 +44,6 @@
     
     <translation id="streams_alerts_add_success">Alerte créée avec succès</translation>
     <translation id="streams_alerts_add_error">Erreur de création d'alerte: {{message}}</translation>
+    <translation id="streams_alerts_update_success">Alerte {{alertName}} mise à jour avec succès</translation>
+    <translation id="streams_alerts_update_error">Erreur de mise à jour {{alertName}}: {{message}}</translation>
 </translations>
