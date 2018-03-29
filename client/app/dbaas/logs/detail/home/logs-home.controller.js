@@ -13,6 +13,8 @@ class LogsHomeCtrl {
         this.LogsTokensService = LogsTokensService;
         this.service = serviceDetails;
         this.LogsHelperService = LogsHelperService;
+        this.isAccountDisabled = LogsHelperService.isAccountDisabled(this.service);
+        this.lastUpdatedDate = moment(this.service.updatedAt).format("LL");
         this.initLoaders();
     }
 
@@ -153,12 +155,12 @@ class LogsHomeCtrl {
                 text: this.$translate.instant("common_edit"),
                 state: "dbaas.logs.detail.offer",
                 stateParams: { serviceName: this.serviceName },
-                isAvailable: () => !this.account.loading && !this.account.hasErrors
+                isAvailable: () => !this.account.loading && !this.account.hasErrors && !this.isAccountDisabled
             },
             editOptions: {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.goToOptionsPage(),
-                isAvailable: () => !this.options.loading && !this.options.hasErrors
+                isAvailable: () => !this.options.loading && !this.options.hasErrors && !this.isAccountDisabled
             }
         };
     }
@@ -211,25 +213,23 @@ class LogsHomeCtrl {
         this.options = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsHomeService.getOptions(this.serviceName)
         });
-        this.tokenIds = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsTokensService.getTokensIds(this.serviceName)
-        });
-        this.defaultCluster = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName)
-        });
         this.serviceInfos = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsHomeService.getServiceInfos(this.serviceName)
         });
-        this.storageData = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName)
-        });
-        this.coldStorage = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getColdstorage(this.serviceName)
-        });
-    }
-
-    showSetupModal () {
-        //
+        if (!this.isAccountDisabled) {
+            this.tokenIds = this.ControllerHelper.request.getArrayLoader({
+                loaderFunction: () => this.LogsTokensService.getTokensIds(this.serviceName)
+            });
+            this.defaultCluster = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsTokensService.getDefaultCluster(this.serviceName)
+            });
+            this.storageData = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsHomeService.getDataUsage(this.serviceName)
+            });
+            this.coldStorage = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsHomeService.getColdstorage(this.serviceName)
+            });
+        }
     }
 
     /**
@@ -260,11 +260,13 @@ class LogsHomeCtrl {
         loaderPromises.push(this.accountDetails.load());
         loaderPromises.push(this.account.load());
         loaderPromises.push(this.options.load());
-        loaderPromises.push(this.tokenIds.load());
-        loaderPromises.push(this.defaultCluster.load());
         loaderPromises.push(this.serviceInfos.load());
-        loaderPromises.push(this.storageData.load());
-        loaderPromises.push(this.coldStorage.load());
+        if (!this.isAccountDisabled) {
+            loaderPromises.push(this.tokenIds.load());
+            loaderPromises.push(this.defaultCluster.load());
+            loaderPromises.push(this.storageData.load());
+            loaderPromises.push(this.coldStorage.load());
+        }
         return this.$q.all(loaderPromises);
     }
 }

@@ -1,11 +1,12 @@
 class LogsHelperService {
-    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper, LogsHomeConstant) {
         this.$translate = $translate;
         this.$state = $state;
         this.ServiceHelper = ServiceHelper;
         this.CloudPoll = CloudPoll;
         this.LogStreamsConstants = LogStreamsConstants;
         this.ControllerModalHelper = ControllerModalHelper;
+        this.LogsHomeConstant = LogsHomeConstant;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
     }
 
@@ -88,6 +89,10 @@ class LogsHelperService {
      */
     isBasicOffer (account) {
         return !account.offer.reference.startsWith("logs-pro");
+    }
+
+    isAccountDisabled (account) {
+        return account.state === this.LogsHomeConstant.SERVICE_STATE_DISABLED;
     }
 }
 

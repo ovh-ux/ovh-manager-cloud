@@ -16,7 +16,7 @@
     <oui-datagrid data-ng-if="!ctrl.alertIds.loading"
         rows-loader="ctrl.loadAlerts($config)" 
         page-size="25">
-        <oui-column title="'streams_alerts_title' | translate" property="title"></oui-column>
+        <oui-column title="'streams_alerts_name' | translate" property="title"></oui-column>
         <oui-column title="'streams_alerts_condition' | translate" property="title">
             <span 
                 data-translate="{{ 'streams_alerts_condition_' + $row.conditionType.toLowerCase() }}" 
@@ -30,7 +30,7 @@
             <i data-ng-show="$row.repeatNotificationsEnabled" class="glyphicon glyphicon-ok"></i>
             <span data-ng-hide="$row.repeatNotificationsEnabled"> - </span>
         </oui-column>
-        <oui-action-menu align="end" compact>
+        <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'common_edit' | translate }}" on-click="ctrl.editAlert($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
         </oui-action-menu>

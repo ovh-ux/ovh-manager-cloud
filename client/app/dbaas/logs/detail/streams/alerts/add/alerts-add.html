@@ -6,7 +6,7 @@
     <oui-spinner data-ng-if="ctrl.alert.loading"></oui-spinner>
     <form data-ng-if="!ctrl.alert.loading" novalidate name="ctrl.form">
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}">
-            <label for="alert_title" class="oui-field__label oui-label" data-translate="add_alert_title_field"></label>
+            <label for="alert_title" class="oui-field__label oui-label" data-translate="add_alert_name_field"></label>
             <div class="oui-field__content">
                 <div class="oui-field-control oui-field-control_4">
                     <input type="text" id="alert_title" name="alert_title"

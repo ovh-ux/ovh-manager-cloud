@@ -110,7 +110,8 @@ class LogsRolesService {
             .then(logs => {
                 const promises = logs.map(serviceName => this.getLogDetails(serviceName));
                 return this.$q.all(promises);
-            }).catch(this.ServiceHelper.errorHandler("logs_get_error"));
+            })
+            .catch(this.ServiceHelper.errorHandler("logs_get_error"));
     }
 
     getLogDetails (serviceName) {
@@ -128,7 +129,7 @@ class LogsRolesService {
                     currentUsage: me.total.curNbRole * 100 / me.total.maxNbRole
                 };
                 return quota;
-            }).catch(this.ServiceHelper.errorHandler("logs_roles_quota_get_error"));
+            }).catch(err => this.LogsHelperService.handleError("logs_roles_quota_get_error", err, {}));
     }
 
     getRoles (serviceName) {
@@ -136,7 +137,7 @@ class LogsRolesService {
             .then(roles => {
                 const promises = roles.map(roleId => this.getRoleDetails(serviceName, roleId));
                 return this.$q.all(promises);
-            }).catch(this.ServiceHelper.errorHandler("logs_roles_get_error"));
+            }).catch(err => this.LogsHelperService.handleError("logs_roles_get_error", err, {}));
     }
 
     getRoleDetails (serviceName, roleId) {

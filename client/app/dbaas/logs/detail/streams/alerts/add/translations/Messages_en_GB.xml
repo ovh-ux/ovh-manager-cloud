@@ -11,7 +11,7 @@
     <translation id="add_alert_description_field_value">This condition is triggered when the aggregated value of a field is higher or lower than a defined threshold in a given period of time</translation>
     <translation id="add_alert_description_field_content_value">This condition is enabled when the value of the field matches the given value</translation>
     
-    <translation id="add_alert_title_field">Title</translation>
+    <translation id="add_alert_name_field">Name</translation>
     <translation id="add_alert_title_field_description">The title of the alert condition</translation>
     <translation id="add_alert_time_period_field">Time period (minutes)</translation>
     <translation id="add_alert_time_period_field_description">Evaluate the condition for all received messages in the given number of minutes</translation>
