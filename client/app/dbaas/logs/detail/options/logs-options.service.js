@@ -1,11 +1,13 @@
 class LogsOptionsService {
-    constructor ($translate, $window, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogOptionConstant) {
+    constructor ($translate, $window, ControllerHelper, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogOptionConstant) {
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
         this.ServiceHelper = ServiceHelper;
+        this.ControllerHelper = ControllerHelper;
         this.$translate = $translate;
         this.$window = $window;
-        this.OvhApiDbaasLogs = OvhApiDbaasLogs;
+        this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
         this.LogOptionConstant = LogOptionConstant;
+        this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().Lexi();
     }
 
     /**
@@ -57,6 +59,19 @@ class LogsOptionsService {
         optionConfig.detail = this.$translate.instant(`${option}-detail`);
         optionConfig.quantity = optionsCountMap[option];
         return optionConfig;
+    }
+
+    transformManagedOptions (option) {
+        option.type = this.$translate.instant(`${option.reference}-type`);
+        option.detail = this.$translate.instant(`${option.reference}-detail`);
+        option.linked_items = option.curNbAlias + option.curNbDashboard + option.curNbIndex + option.curNbRole + option.curNbInput + option.curNbStream;
+        return option;
+    }
+
+    getManagedOptions (serviceName) {
+        return this.getSubscribedOptions(serviceName)
+            .then(response => _.map(response.options, option => this.transformManagedOptions(option, 0)))
+            .catch(this.ServiceHelper.errorHandler("logs_options_manage_get_error"));
     }
 
     /**
@@ -170,6 +185,17 @@ class LogsOptionsService {
     getOrderConfiguration (options, serviceName) {
         const optionsToOrder = this.getOptionsToOrder(options);
         return _.map(optionsToOrder, option => this._transformOptionForOrder(option, serviceName));
+    }
+
+    showReactivateInfo (option) {
+        this.ControllerHelper.modal.showWarningModal({
+            title: this.$translate.instant("logs_options_modal_reactivate_title"),
+            message: this.$translate.instant("logs_options_modal_reactivate_description", { optionType: option.type })
+        });
+    }
+
+    terminateOption (serviceName, option) {
+        return this.OptionsApiLexiService.terminate({ serviceName, optionId: "7ad08e7b-a5a8-40e7-ba80-621aaf8e2ba6" }).$promise;
     }
 }
 

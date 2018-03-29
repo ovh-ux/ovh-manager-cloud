@@ -1,0 +1,63 @@
+<div class="cui-page__content log-options">
+        <oui-back-button class="back_button_inline_text"></oui-back-button>
+        <span class="oui-header_3" data-translate="log_options_title"></span>    
+        <h6 class="oui-header_6" data-translate="log_options_current_title"></h6>
+        
+        <div class="row">
+            <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">
+                <cui-tile data-title="option.quantity"
+                    data-loading="ctrl.currentOptions.loading">
+                    <cui-tile-body class="cui-tile__top-bordered">
+                        <cui-tile-item>
+                            <cui-tile-definitions>
+                                <cui-tile-definition-term data-term="option.type+', '+option.detail"></cui-tile-definition-term>                            
+                            </cui-tile-definitions>
+                        </cui-tile-item>
+                    </cui-tile-body>
+                </cui-tile>
+            </div>
+        </div>
+    
+        <p class="oui-paragraph" data-translate="log_options_intro_text"></p>
+    
+        <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+        <oui-datagrid data-ng-hide="ctrl.options.loading" rows="ctrl.options.data" page-size="15" class="datagrid-without-pagination">
+            <oui-column title="'log_options_type' | translate" property="type" sortable="asc"></oui-column>
+            <oui-column title="'log_options_details' | translate" property="detail" sortable></oui-column>
+            <oui-column title="'log_options_add' | translate" property="quantity">
+                <oui-numeric
+                    data-ng-attr-id="{{ $row.planCode }}"
+                    class="numeric_without_bottom_margin"
+                    model="$row.quantity"
+                    min="0">
+                </oui-numeric>
+            </oui-column>
+            <oui-column title="'log_options_price' | translate" property="price" sortable>
+                {{$row.priceText}}
+            </oui-column>
+        </oui-datagrid>
+    
+        <p class="oui-paragraph text-right">
+            <span data-translate="log_options_total"></span>:
+            <span>
+                <span class="oui-header_3" data-ng-bind="ctrl.getTotalPrice()"></span>
+                {{ctrl.getCurrentCurrency()}}/{{'month' | translate}}
+            </span>
+        </p>
+    
+        <oui-button
+            text="{{'log_options_order' | translate}}"
+            variant="primary"
+            type="button"
+            on-click="ctrl.order()"
+            disabled="ctrl.getSelectedOptions().length===0"
+        ></oui-button>
+    
+        <oui-button
+            text="{{'log_options_cancel' | translate}}"
+            variant="link"
+            type="button"
+            on-click="ctrl.cancel()"
+        ></oui-button>
+    </div>
+    

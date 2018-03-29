@@ -1,0 +1,19 @@
+<div class="cui-page__content">
+    <oui-back-button class="back_button_inline_text" on-click="ctrl.back()"></oui-back-button>
+    <span class="oui-header_3" data-translate="logs_options_manage_title"></span>
+    <p data-translate="logs_options_manage_description_1"></p>
+    <p data-translate="logs_options_manage_description_2"></p>
+    <p><span data-translate="logs_options_manage_description_3"></span><a data-translate="logs_options_manage_add_options" data-ng-click="ctrl.back()"></a></p>
+
+    <oui-datagrid rows="ctrl.getManagedOptions.data">
+        <oui-column title=":: 'logs_options_option_type' | translate" property="type" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_options_details' | translate" property="detail" sortable></oui-column>
+        <oui-column title=":: 'logs_options_linked_items' | translate" property="linked_items" sortable="asc"></oui-column>
+        <oui-column title=":: 'logs_options_status' | translate" property="state" sortable="asc"></oui-column>
+        <oui-action-menu align="end" compact>
+            <oui-action-menu-item text="{{ ::'logs_options_action_overview' | translate }}" on-click="ctrl.overview($row)"></oui-action-menu-item>
+            <oui-action-menu-item disabled="$row.state === 'DISABLED'" text="{{ ::'logs_options_action_deactivate' | translate }}" on-click="ctrl.deactivate($row)"></oui-action-menu-item>
+            <oui-action-menu-item disabled="$row.state === 'ENABLED'" text="{{ ::'logs_options_reactivate' | translate }}" on-click="ctrl.reactivate($row)"></oui-action-menu-item>
+        </oui-action-menu>
+    </oui-datagrid>
+</div>

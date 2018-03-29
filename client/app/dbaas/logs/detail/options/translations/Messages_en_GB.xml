@@ -2,6 +2,7 @@
 <translations>
     <translation id="logs_options_options_loading_error">Error loading options: {{message}}</translation>
     <translation id="logs_options_current_options_loading_error">Error loading current options: {{message}}</translation>
+    <translation id="logs_options_manage_get_error">Error loading options: {{message}}</translation>
 
     <translation id="log_options_title">Add Options</translation>
     <translation id="log_options_current_title">You are currently subscribed to the following options:</translation>
@@ -38,4 +39,27 @@
     <translation id="log_options_order">Order</translation>
     <translation id="log_options_cancel">Cancel</translation>
     <translation id="log_options_total">Total</translation>
+
+    <translation id="logs_options_manage_title">Manage options</translation>
+    <translation id="logs_options_manage_description_1">You can manage all the options you already have, deactivate the ones you don't want to use anymore or for a while.</translation>
+    <translation id="logs_options_manage_description_2">Please note that the options already included with your offer cannot be deactivated.</translation>
+    <translation id="logs_options_manage_description_3">If you need to add more option, go to</translation>
+    <translation id="logs_options_manage_add_options"> Add options</translation>
+
+    <translation id="logs_options_option_type">Option type</translation>
+    <translation id="logs_options_details">Details</translation>
+    <translation id="logs_options_linked_items">Linked items</translation>
+    <translation id="logs_options_status">Status</translation>
+
+    <translation id="logs_options_action_overview">Show overview</translation>
+    <translation id="logs_options_action_deactivate">Deactivate</translation>
+    <translation id="logs_options_reactivate">Reactivate</translation>
+
+    <translation id="logs_options_enabled">Enabled</translation>
+    <translation id="logs_options_disabled">Disabled</translation>
+
+    <translation id="logs_options_overview_title">Option overview</translation>
+    <translation id="logs_options_modal_reactivate_title">Reactivate the option</translation>
+    <translation id="logs_options_modal_reactivate_description">You need to contact the support teams to reactivate the option {{optionType}}.</translation>
+
 </translations>

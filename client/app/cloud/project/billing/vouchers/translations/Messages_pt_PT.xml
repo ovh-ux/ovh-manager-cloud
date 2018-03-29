@@ -14,7 +14,7 @@
 
    <translation id="cpb_vouchers_bill_ref" qtlid="295894">Fatura n° <a href="{{url}}">{{billId}}</a></translation>
    <translation id="cpb_vouchers_voucher_cell" qtlid="258860">Voucher associado</translation>
-   <translation id="cpb_vouchers_name_cell" qtlid="3818">Nome</translation>
+   <translation id="cpb_vouchers_name_cell" qtlid="3818">Apelido</translation>
    <translation id="cpb_vouchers_total_credit_cell" qtlid="255194">Valor inicial</translation>
    <translation id="cpb_vouchers_available_credit_cell" qtlid="40406">Crédito actual</translation>
    <translation id="cpb_vouchers_available_credit_cell_info" qtlid="250472">Crédito que será utilizado automaticamente nas suas próximas faturas</translation>

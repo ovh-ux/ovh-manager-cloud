@@ -6,7 +6,7 @@
    <translation id="cda_pool_add_button_text" qtlid="354236">Adicionar uma pool</translation>
    <translation id="cda_pool_delete_button_text" qtlid="2414">Eliminar</translation>
 
-   <translation id="cda_pool_table_col_poolname" qtlid="3818">Nome</translation>
+   <translation id="cda_pool_table_col_poolname" qtlid="3818">Apelido</translation>
    <translation id="cda_pool_table_col_pooltype" qtlid="2642">Tipo</translation>
    <translation id="cda_pool_table_col_replica" qtlid="354249">Número de réplicas</translation>
    <translation id="cda_pool_table_col_minreplica" qtlid="354262">Número mínimo de réplicas ativas</translation>
@@ -14,7 +14,7 @@
    <translation id="cda_pool_table_col_actions" qtlid="72809">Ações</translation>
 
    <translation id="cda_pool_add_title" qtlid="354236">Adicionar uma pool</translation>
-   <translation id="cda_pool_add_poolname_label" qtlid="3818">Nome</translation>
+   <translation id="cda_pool_add_poolname_label" qtlid="3818">Apelido</translation>
 
    <translation id="cda_pool_add_poolname_required" qtlid="354288">O nome é obrigatório.</translation>
    <translation id="cda_pool_add_poolname_pattern" qtlid="354301">O nome não pode conter espaços.</translation>
@@ -22,7 +22,7 @@
    <translation id="cda_pool_add_success" qtlid="354327">Pool adicionado com sucesso.</translation>
 
    <translation id="cda_pool_delete_title" qtlid="354340">Eliminar uma pool</translation>
-   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nome :</translation>
+   <translation id="cda_pool_delete_poolname_label" qtlid="100328">Nome:</translation>
    <translation id="cda_pool_delete_confirm" qtlid="354353">Têm a certeza de que deseja eliminar a pool?</translation>
    <translation id="cda_pool_delete_success" qtlid="354366">Pool eliminada com sucesso.</translation>
 
