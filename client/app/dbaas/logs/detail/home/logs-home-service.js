@@ -290,7 +290,9 @@ class LogsHomeService {
      * @memberof LogsHomeService
      */
     _transformAccount (account) {
-        if (account.offer.reference === this.LogsOfferConstant.basicOffer) {
+        if (_.isEmpty(account.offer)) {
+            account.offer.description = "";
+        } else if (account.offer.reference === this.LogsOfferConstant.basicOffer) {
             account.offer.description = this.LogsOfferConstant.offertypes.BASIC;
         } else {
             const dataVolume = this.$translate.instant("logs_home_data_volume");
