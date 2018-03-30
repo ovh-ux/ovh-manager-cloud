@@ -9,8 +9,8 @@
     <translation id="inputs_name">collector</translation>
 
     <translation id="inputs_tool">Tool</translation>
+    <translation id="inputs_col_name">Name</translation>
     <translation id="inputs_description">Description</translation>
-    <translation id="inputs_creation_date">Creation date</translation>
     <translation id="inputs_software">Software</translation>
     <translation id="inputs_linked_option">Linked option</translation>
     <translation id="inputs_state">State</translation>

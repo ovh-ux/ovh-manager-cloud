@@ -4,7 +4,9 @@ class LogsStreamsAlertsAddCtrl {
         this.$state = $state;
         this.serviceName = $stateParams.serviceName;
         this.streamId = $stateParams.streamId;
+        this.alertId = $stateParams.alertId;
         this.alertType = $stateParams.type;
+        this.editMode = Boolean(this.alertId);
         this.$window = $window;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
@@ -14,8 +16,18 @@ class LogsStreamsAlertsAddCtrl {
     }
 
     $onInit () {
-        this.LogsStreamsAlertsService.getNewAlert(this.alertType)
-            .then(alert => { this.alert = alert; });
+        if (this.editMode) {
+            this.alert = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsStreamsAlertsService.getAlert(this.serviceName, this.streamId, this.alertId)
+            });
+            this.alert.load()
+                .then(alert => {
+                    this.alertType = alert.conditionType;
+                });
+        } else {
+            this.LogsStreamsAlertsService.getNewAlert(this.alertType)
+                .then(alert => { this.alert = alert; });
+        }
     }
 
     /**
@@ -33,18 +45,19 @@ class LogsStreamsAlertsAddCtrl {
      *
      * @memberof LogsStreamsAlertsAddCtrl
      */
-    addAlert () {
+    saveAlert () {
         if (this.form.$invalid) {
             return this.$q.reject();
         }
 
         this.CloudMessage.flushChildMessage();
-        this.addingAlert = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () =>
-                this.LogsStreamsAlertsService.addAlert(this.serviceName, this.streamId, this.alert)
-                    .then(() => this._goBack())
+        this.savingAlert = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.editMode ?
+                this.LogsStreamsAlertsService.updateAlert(this.serviceName, this.streamId, this.alert.data) :
+                this.LogsStreamsAlertsService.addAlert(this.serviceName, this.streamId, this.alert.data)
         });
-        return this.addingAlert.load();
+        return this.savingAlert.load()
+            .then(() => this._goBack());
     }
 
     /**

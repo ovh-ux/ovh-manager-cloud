@@ -9,7 +9,6 @@
 
     <translation id="logs_aliases_col_title">Name</translation>
     <translation id="logs_aliases_col_description">Description</translation>
-    <translation id="logs_aliases_col_creation_date">Creation date</translation>
     <translation id="logs_aliases_col_shared">Shared alias</translation>
     <translation id="logs_aliases_col_streams">Linked data streams</translation>
     <translation id="logs_aliases_col_indices">Linked indices</translation>
@@ -17,7 +16,7 @@
 
     <translation id="logs_aliases_edit">Edit</translation>
     <translation id="logs_aliases_delete">Delete</translation>
-    <translation id="logs_aliases_elasticsearch_access">Elasticsearch access</translation>
+    <translation id="logs_aliases_elasticsearch_access">Access elasticsearch</translation>
     <translation id="logs_aliases_attach_content">Attach content</translation>
     <translation id="logs_aliases_delete_title">Delete an alias</translation>
     <translation id="logs_alias_delete_message">Are you sure you want to delete an alias: {{alias}} ?</translation>
@@ -25,17 +24,17 @@
     <translation id="logs_aliases_title_description">The name you choose can not be changed later.</translation>
     <translation id="logs_aliases_update_title">Edit an alias</translation>
 
-    <translation id="logs_aliases_delete_message">Are you sure you want to delete an alias: {{alias}} ?</translation>
-    <translation id="logs_aliases_create_success">An alias has been successfully created.</translation>
-    <translation id="logs_aliases_update_success">An aliase has been successfully updated.</translation>
-    <translation id="logs_aliases_delete_success">An aliases has been successfully deleted.</translation>
+    <translation id="logs_aliases_delete_message">Are you sure you want to delete alias: {{alias}} ?</translation>
+    <translation id="logs_aliases_create_success">The alias '{{aliasName}}' has been successfully created.</translation>
+    <translation id="logs_aliases_update_success">The alias '{{aliasName}}' has been successfully updated.</translation>
+    <translation id="logs_aliases_delete_success">The alias '{{aliasName}}' has been successfully deleted.</translation>
 
     <translation id="logs_aliases_get_error">An error has occurred while retrieving aliases: {{message}}</translation>
     <translation id="logs_alias_get_error">An error has occurred while retrieving alias: {{message}}</translation>
     <translation id="logs_alias_quota_get_error">An error has occurred while retrieving alias quota: {{message}}</translation>
-    <translation id="logs_aliases_delete_error">An error has occured while deleting alias: {{message}}</translation>
-    <translation id="logs_aliases_create_error">An error has occured while creating alias: {{message}}</translation>
-    <translation id="logs_aliases_update_error">An error has occured while updating alias: {{message}}</translation>
+    <translation id="logs_aliases_delete_error">An error has occured while deleting alias '{{aliasName}}': {{message}}</translation>
+    <translation id="logs_aliases_create_error">An error has occured while creating alias '{{aliasName}}': {{message}}</translation>
+    <translation id="logs_aliases_update_error">An error has occured while updating alias '{{aliasName}}': {{message}}</translation>
     <translation id="logs_aliases_get_elasticsearch_url_error">Elastic search URL not found for an alias {{alias}}</translation>
     <translation id="logs_aliases_update_description">Edit an alias information {{alias}}</translation>
 
@@ -50,14 +49,14 @@
     <translation id="logs_aliases_link_all_indexes_attached">All indexes are attached</translation>
     <translation id="logs_aliases_link_no_indexes_attached">No indexes are attached</translation>
 
-    <translation id="logs_aliases_attach_stream_error">An error has occured while attaching data stream: {{message}} </translation>
-    <translation id="logs_aliases_attach_stream_fail">Failed to attach data stream {{stream}} </translation>
-    <translation id="logs_aliases_detach_stream_error">An error has occured while detaching data stream: {{message}} </translation>
-    <translation id="logs_aliases_detach_stream_fail">Failed to detach data stream {{stream}} </translation>
-    <translation id="logs_aliases_attach_index_error">An error has occured while attaching index: {{message}} </translation>
-    <translation id="logs_aliases_attach_index_fail">Failed to attach index {{index}} </translation>
-    <translation id="logs_aliases_detach_index_error">An error has occured while detaching index: {{message}} </translation>
-    <translation id="logs_aliases_detach_index_fail">Failed to detach index {{index}} </translation>
+    <translation id="logs_aliases_attach_stream_error">An error has occured while attaching data stream '{{streamName}}': {{message}} </translation>
+    <translation id="logs_aliases_attach_stream_fail">Failed to attach data stream '{{stream}}': {{message}} </translation>
+    <translation id="logs_aliases_detach_stream_error">An error has occured while detaching data stream '{{streamName}}': {{message}} </translation>
+    <translation id="logs_aliases_detach_stream_fail">Failed to detach data stream '{{stream}}': {{message}} </translation>
+    <translation id="logs_aliases_attach_index_error">An error has occured while attaching index '{{indexName}}': {{message}} </translation>
+    <translation id="logs_aliases_attach_index_fail">Failed to attach index '{{index}}': {{message}} </translation>
+    <translation id="logs_aliases_detach_index_error">An error has occured while detaching index '{{indexName}}': {{message}} </translation>
+    <translation id="logs_aliases_detach_index_fail">Failed to detach index '{{index}}': {{message}} </translation>
 
     <translation id="logs_aliases_remove_streams_message">Data streams are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all data streams to add eleasticsearch indexes. </translation>
     <translation id="logs_aliases_remove_indexes_message">Eleasticsearch indexes are attached to this alias. Either data streams or eleasticsearch indexes can be attached. Remove all eleasticsearch indexes to add data streams. </translation>

@@ -42,7 +42,7 @@ class LogsOptionsService {
                 _.each(response, option => this._transformOption(option));
                 return response;
             })
-            .catch(this.ServiceHelper.errorHandler("logs_options_options_loading_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_options_options_loading_error", err, {}));
     }
 
     /**
@@ -87,7 +87,7 @@ class LogsOptionsService {
             serviceName
         })
             .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_options_current_options_loading_error"));
+            .catch(err => this.LogsHelperService.handleError("logs_options_current_options_loading_error", err, {}));
     }
 
     /**

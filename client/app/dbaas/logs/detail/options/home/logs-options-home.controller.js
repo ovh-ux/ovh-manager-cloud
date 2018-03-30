@@ -1,8 +1,11 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
+        this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsOfferService = LogsOfferService;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
         this.OrderHelperService = OrderHelperService;
@@ -15,6 +18,7 @@ class LogsOptionsCtrl {
     $onInit () {
         this.options.load();
         this.currentOptions.load();
+        this.selectedOffer.load();
     }
 
     /**
@@ -28,6 +32,9 @@ class LogsOptionsCtrl {
         });
         this.currentOptions = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMap(this.serviceName)
+        });
+        this.selectedOffer = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
         });
     }
 
@@ -59,6 +66,16 @@ class LogsOptionsCtrl {
      */
     getCurrentCurrency () {
         return this.CurrencyService.getCurrentCurrency();
+    }
+
+    /**
+     * Checks if the user has a basic offer
+     *
+     * @returns true if the user is subscribed to a basic offer
+     * @memberof LogsOptionsCtrl
+     */
+    isBasicOffer () {
+        return this.selectedOffer.data.reference === this.LogsOfferConstant.basicOffer;
     }
 
     /**

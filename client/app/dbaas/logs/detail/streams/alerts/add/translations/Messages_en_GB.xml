@@ -3,12 +3,15 @@
     <translation id="add_alert_title_message_count">Add a message count condition</translation>
     <translation id="add_alert_title_field_value">Add a field aggregation condition</translation>
     <translation id="add_alert_title_field_content_value">Add a field content condition</translation>
+    <translation id="edit_alert_title_message_count">Edit message count condition</translation>
+    <translation id="edit_alert_title_field_value">Edit field aggregation condition</translation>
+    <translation id="edit_alert_title_field_content_value">Edit field content condition</translation>
     
     <translation id="add_alert_description_message_count">This condition is triggered when the number of messages is greater than or less than the threshold set in a given period</translation>
     <translation id="add_alert_description_field_value">This condition is triggered when the aggregated value of a field is higher or lower than a defined threshold in a given period of time</translation>
     <translation id="add_alert_description_field_content_value">This condition is enabled when the value of the field matches the given value</translation>
     
-    <translation id="add_alert_title_field">Title</translation>
+    <translation id="add_alert_name_field">Name</translation>
     <translation id="add_alert_title_field_description">The title of the alert condition</translation>
     <translation id="add_alert_time_period_field">Time period (minutes)</translation>
     <translation id="add_alert_time_period_field_description">Evaluate the condition for all received messages in the given number of minutes</translation>
@@ -41,4 +44,6 @@
     
     <translation id="streams_alerts_add_success">Alert {{alertName}} created successfully</translation>
     <translation id="streams_alerts_add_error">Error creating alert {{alertName}}: {{message}}</translation>
+    <translation id="streams_alerts_update_success">Alert {{alertName}} updated successfully</translation>
+    <translation id="streams_alerts_update_error">Error updating alert {{alertName}}: {{message}}</translation>
 </translations>

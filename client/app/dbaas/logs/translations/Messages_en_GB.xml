@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-
+   <translation id="logs_col_last_modified">Last modified</translation>
    <translation id="logs_select_options_title">Choose the attached option</translation>
    <translation id="logs_select_options_placeholder">Select Option</translation>
    <translation id="logs_notification_title">Notification</translation>
