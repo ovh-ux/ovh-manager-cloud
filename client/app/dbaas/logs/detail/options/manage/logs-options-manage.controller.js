@@ -11,7 +11,6 @@ class LogsOptionsManageCtrl {
         this.OrderHelperService = OrderHelperService;
 
         this.serviceName = this.$stateParams.serviceName;
-        this.messages = {};
         this._initLoaders();
     }
 

@@ -1,14 +1,11 @@
 class LogsOptionsManageService {
-    constructor ($translate, LogsStreamsService, LogsAliasesService, LogsIndexService, LogsDashboardsService, LogsInputsService, LogsRolesService, ServiceHelper, OvhApiDbaas) {
-        this.ServiceHelper = ServiceHelper;
+    constructor (LogsStreamsService, LogsAliasesService, LogsIndexService, LogsDashboardsService, LogsInputsService, LogsRolesService) {
         this.LogsAliasesService = LogsAliasesService;
         this.LogsStreamsService = LogsStreamsService;
         this.LogsIndexService = LogsIndexService;
         this.LogsDashboardsService = LogsDashboardsService;
         this.LogsRolesService = LogsRolesService;
         this.LogsInputsService = LogsInputsService;
-        this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
-        this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().Lexi();
     }
 
     getAllStreams (serviceName) {

@@ -71,7 +71,7 @@ class LogsOptionsService {
 
     getManagedOptions (serviceName) {
         return this.getSubscribedOptions(serviceName)
-            .then(response => _.map(response.options, option => this.transformManagedOptions(option, 0)))
+            .then(response => _.map(response.options, option => this.transformManagedOptions(option)))
             .catch(this.ServiceHelper.errorHandler("logs_options_manage_get_error"));
     }
 

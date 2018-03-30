@@ -10,7 +10,7 @@
     <oui-datagrid rows="ctrl.getManagedOptions.data">
         <oui-column title=":: 'logs_options_option_type' | translate" property="type" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_options_details' | translate" property="detail" sortable></oui-column>
-        <oui-column title=":: 'logs_options_linked_items' | translate" property="linked_items" sortable="asc"></oui-column>        
+        <oui-column title=":: 'logs_options_linked_items' | translate" property="linked_items" sortable></oui-column>        
         <oui-column title="::'logs_options_status' | translate" property="state" sortable>
             <span data-ng-if="$row.state === 'ENABLED'">{{'logs_options_enabled' | translate}}</span>
             <span data-ng-if="$row.state === 'DISABLED'">{{'logs_options_disabled' | translate}}</span>
