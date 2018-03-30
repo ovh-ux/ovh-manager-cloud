@@ -63,7 +63,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         // Terminate validation if params exists
         if (this.validate) {
             this.loaders.loadbalancer = true;
-            validatePromise = this.OvhApiCloudProjectIplb.Lexi().validate({ serviceName: this.serviceName, id: this.validate }, {}).$promise
+            validatePromise = this.OvhApiCloudProjectIplb.v6().validate({ serviceName: this.serviceName, id: this.validate }, {}).$promise
                 .then(() => {
                     this.$location.search("validate", null);
                     this.toggle.updatedMessage = true;
@@ -115,13 +115,13 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         if (this.loadbalancer.status !== "custom" && this.loadbalancer.status !== "unavailable" && configLoadBalancer) {
             if (this.loadbalancer.status === "available") {
                 // Create farm and front
-                configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().Lexi().post({ serviceName: this.loadbalancerId }, {
+                configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().v6().post({ serviceName: this.loadbalancerId }, {
                     displayName: "PublicCloud",
                     port: 80,
                     zone: "all"
                 }).$promise)
                     .then(farm => { this.loadbalancer.farm = farm; })
-                    .then(() => this.OvhApiIpLoadBalancing.Frontend().Http().Lexi().post({ serviceName: this.loadbalancerId }, {
+                    .then(() => this.OvhApiIpLoadBalancing.Frontend().Http().v6().post({ serviceName: this.loadbalancerId }, {
                         displayName: "PublicCloud",
                         port: 80,
                         zone: "all",
@@ -137,7 +137,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
                 const displayName = server ? server.label : null;
                 if (enable && !this.attachedServers[ip]) {
                     modified = true;
-                    configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().Server().Lexi()
+                    configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().Server().v6()
                         .post({ serviceName: this.loadbalancerId, farmId: this.loadbalancer.farm.farmId }, {
                             displayName,
                             port: 80,
@@ -147,7 +147,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
                 }
                 if (!enable && this.attachedServers[ip]) {
                     modified = true;
-                    configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().Server().Lexi()
+                    configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Farm().Http().Server().v6()
                         .delete({
                             serviceName: this.loadbalancerId,
                             serverId: this.attachedServers[ip].serverId,
@@ -158,7 +158,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
 
             // Deploy configuration
             if (modified) {
-                configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.Lexi().refresh({ serviceName: this.loadbalancerId }, {}).$promise)
+                configurePromise = configurePromise.then(() => this.OvhApiIpLoadBalancing.v6().refresh({ serviceName: this.loadbalancerId }, {}).$promise)
                     .then(() => this.tasks.load())
                     .then(() => this.getLoadbalancer(true));
             }
@@ -167,18 +167,18 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
         if (this.form.openstack && (!this.loadBalancerImported || this.loadBalancerImported.status !== "validated")) {
             // Need to remove old import to recreate it
             if (this.loadBalancerImported) {
-                configurePromise = configurePromise.then(() => this.OvhApiCloudProjectIplb.Lexi().delete({ serviceName: this.serviceName, id: this.loadBalancerImported.id }).$promise);
+                configurePromise = configurePromise.then(() => this.OvhApiCloudProjectIplb.v6().delete({ serviceName: this.serviceName, id: this.loadBalancerImported.id }).$promise);
             }
             configurePromise = configurePromise.then(() =>
                 // Import and redirect to auth page
-                this.OvhApiCloudProjectIplb.Lexi().post({ serviceName: this.serviceName }, { ipLoadbalancingServiceName: this.loadbalancerId, redirection: `${this.$location.hash("").absUrl().replace(/\?.*$/, "")}?validate=%id` }).$promise
+                this.OvhApiCloudProjectIplb.v6().post({ serviceName: this.serviceName }, { ipLoadbalancingServiceName: this.loadbalancerId, redirection: `${this.$location.hash("").absUrl().replace(/\?.*$/, "")}?validate=%id` }).$promise
                     .then(result => {
                         this.$window.location.href = result.validationUrl;
                         this.loaders.form.redirect = true;
                     })
             );
         } else if (!this.form.openstack && this.loadBalancerImported) {
-            configurePromise = configurePromise.then(() => this.OvhApiCloudProjectIplb.Lexi().delete({ serviceName: this.serviceName, id: this.loadBalancerImported.id }).$promise).then(() => {
+            configurePromise = configurePromise.then(() => this.OvhApiCloudProjectIplb.v6().delete({ serviceName: this.serviceName, id: this.loadBalancerImported.id }).$promise).then(() => {
                 this.loadBalancerImported = null;
                 this.form.openstack = false;
             });
@@ -196,8 +196,8 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     getLoadbalancer (clearCache) {
         this.loaders.loadbalancer = true;
         if (clearCache) {
-            this.OvhApiCloudProjectIplb.Lexi().resetQueryCache();
-            this.OvhApiIpLoadBalancing.Lexi().resetQueryCache();
+            this.OvhApiCloudProjectIplb.v6().resetQueryCache();
+            this.OvhApiIpLoadBalancing.v6().resetQueryCache();
         }
         return this.$q.all({
             loadbalancer: this.CloudProjectComputeLoadbalancerService.getLoadbalancer(this.loadbalancerId),

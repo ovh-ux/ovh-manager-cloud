@@ -13,7 +13,7 @@ class CloudProjectComputeVolumeDeleteCtrl {
 
     deleteVolume (volumeId) {
         return this.OvhApiCloudProjectVolume
-            .Lexi()
+            .v6()
             .remove({serviceName : this.serviceName, volumeId: volumeId})
             .$promise;
     }

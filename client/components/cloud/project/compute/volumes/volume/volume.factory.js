@@ -68,7 +68,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
         VolumeFactory.prototype.get = function () {
             var self = this;
 
-            return OvhApiCloudProjectVolume.Lexi().get({
+            return OvhApiCloudProjectVolume.v6().get({
                 serviceName : this.serviceName,
                 volumeId : this.id
             }).$promise.then(function (volOptions) {
@@ -146,7 +146,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
         VolumeFactory.prototype.create = function () {
             var self = this;
 
-            return OvhApiCloudProjectVolume.Lexi().save({
+            return OvhApiCloudProjectVolume.v6().save({
                 serviceName    : this.serviceName
             }, {
                 description : this.description || undefined,
@@ -169,7 +169,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
         VolumeFactory.prototype.remove = function () {
             var self = this;
 
-            return OvhApiCloudProjectVolume.Lexi().remove({
+            return OvhApiCloudProjectVolume.v6().remove({
                 serviceName : this.serviceName,
                 volumeId    : this.id
             }).$promise.then(function () {
@@ -186,7 +186,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
                 promises = [];
 
             if (self.hasChange('name') || self.hasChange('description') || self.hasChange('bootable')){
-                promises.push(OvhApiCloudProjectVolume.Lexi().put({
+                promises.push(OvhApiCloudProjectVolume.v6().put({
                         serviceName : self.serviceName,
                         volumeId    : self.id
                     }, {
@@ -206,7 +206,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
 
             // upscale
             if (self.hasChange('size')){
-                promises.push(OvhApiCloudProjectVolume.Lexi().upsize({
+                promises.push(OvhApiCloudProjectVolume.v6().upsize({
                         serviceName : self.serviceName,
                         volumeId    : self.id
                     }, {
@@ -301,7 +301,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
          */
         VolumeFactory.prototype.attach = function (vmId) {
             var self = this;
-            return OvhApiCloudProjectVolume.Lexi().attach({
+            return OvhApiCloudProjectVolume.v6().attach({
                 serviceName : this.serviceName,
                 volumeId    : this.id
             }, {
@@ -316,7 +316,7 @@ angular.module("managerApp").factory('CloudProjectComputeVolumesVolumeFactory',
          */
         VolumeFactory.prototype.detach = function (vmId) {
             var self = this;
-            return OvhApiCloudProjectVolume.Lexi().detach({
+            return OvhApiCloudProjectVolume.v6().detach({
                 serviceName : this.serviceName,
                 volumeId    : this.id
             }, {

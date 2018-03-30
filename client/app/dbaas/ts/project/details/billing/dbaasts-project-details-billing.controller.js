@@ -23,7 +23,7 @@ function ($q, $scope, $state, $stateParams, $translate, Toast, OvhApiDBaasTsProj
     function init () {
         self.loaders.init = true;
 
-        OvhApiDBaasTsProjectBilling.Lexi().get({
+        OvhApiDBaasTsProjectBilling.v6().get({
             serviceName: serviceName,
             from: getMonthYear()
         }).$promise.then(function (billing) {
@@ -43,7 +43,7 @@ function ($q, $scope, $state, $stateParams, $translate, Toast, OvhApiDBaasTsProj
     // --
 
     self.refresh = function () {
-        OvhApiDBaasTsProjectBilling.Lexi().resetCache();
+        OvhApiDBaasTsProjectBilling.v6().resetCache();
         init();
     };
 

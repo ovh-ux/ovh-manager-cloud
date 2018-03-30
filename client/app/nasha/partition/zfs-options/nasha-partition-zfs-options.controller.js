@@ -18,7 +18,7 @@ angular.module("managerApp").controller("NashaPartitionZFSOptionsCtrl",
 
         self.applyZFSOptionsChanges = function () {
             self.states.saving = true;
-            OvhApiDedicatedNasha.Partition().Options().Lexi().save({
+            OvhApiDedicatedNasha.Partition().Options().v6().save({
                 serviceName: $stateParams.nashaId,
                 partitionName: self.data.partition.partitionName
             }, {

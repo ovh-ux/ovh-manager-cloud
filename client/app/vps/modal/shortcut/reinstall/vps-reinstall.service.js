@@ -8,7 +8,7 @@ class VpsReinstallService {
     }
 
     getSshKeys () {
-        return this.OvhApiMe.SshKey().Lexi().query().$promise;
+        return this.OvhApiMe.SshKey().v6().query().$promise;
     }
 
     getPackages (image) {

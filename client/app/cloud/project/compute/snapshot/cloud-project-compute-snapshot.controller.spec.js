@@ -41,7 +41,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
         spyOn(CloudMessage, "error");
         spyOn(CloudMessage, "success");
         spyOn(CloudMessage, "info");
-        spyOn(OvhApiCloudProjectSnapshot.Lexi(), "resetQueryCache");
+        spyOn(OvhApiCloudProjectSnapshot.v6(), "resetQueryCache");
 
         $scope = $rootScope.$new();
         $scope.searchSnapshotForm = {
@@ -82,7 +82,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
         });
 
         xit("should set default value", function () {
-            expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.any()).toEqual(false);
+            expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.any()).toEqual(false);
 
             expect(CloudProjectComputeSnapshotCtrl.table.snapshot).toBeArrayOfObjects();
             expect(CloudProjectComputeSnapshotCtrl.table.snapshotFilter).toBeArrayOfObjects();
@@ -260,7 +260,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
                     CloudProjectComputeSnapshotCtrl.deleteSnapshot(dataTest.snapshots[0]);
                     $httpBackend.flush();
 
-                    expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                    expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.count()).toEqual(1);
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshot).toBeFalsy();
                     expect(CloudMessage.success.calls.count()).toEqual(1);
                 });
@@ -317,7 +317,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
                     $httpBackend.flush();
 
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti).toBeFalsy();
-                    expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                    expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.count()).toEqual(1);
                     expect(CloudMessage.success.calls.count()).toEqual(1);
                     expect(CloudProjectComputeSnapshotCtrl.table.autoSelected).toEqual([]);
                     //expect(CloudProjectComputeSnapshotCtrl.table.selected).toEqual({});
@@ -348,7 +348,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
                     $httpBackend.flush();
 
                     expect(CloudProjectComputeSnapshotCtrl.loaders.remove.snapshotMulti).toBeFalsy();
-                    expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                    expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.count()).toEqual(1);
                     expect(CloudMessage.error.calls.count()).toEqual(1);
 
                     expect(CloudProjectComputeSnapshotCtrl.table.autoSelected.length).toEqual(1);
@@ -371,7 +371,7 @@ describe("Controller: CloudProjectComputeSnapshotCtrl", function () {
 
 
         xit("should throw an error when get snapshots", function () {
-            expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.any()).toEqual(false);
+            expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.any()).toEqual(false);
 
             expect(CloudProjectComputeSnapshotCtrl.table.snapshot).toBeNull();
             expect(CloudProjectComputeSnapshotCtrl.table.snapshotFilter).toEqual([]);

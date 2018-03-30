@@ -15,7 +15,7 @@ angular.module("managerApp").controller("DBaasTsProjectDetailsKeyCtrl.exampleUse
     // -- Init --
 
     function initGuideURL () {
-        OvhApiMe.Lexi().get().$promise.then(function (me) {
+        OvhApiMe.v6().get().$promise.then(function (me) {
           var lang = me.ovhSubsidiary;
           var guide = DBaasTsConstants.guides[permission];
           if (guide) {

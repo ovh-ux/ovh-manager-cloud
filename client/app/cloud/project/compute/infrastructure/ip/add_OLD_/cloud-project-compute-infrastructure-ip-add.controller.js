@@ -96,7 +96,7 @@ angular.module("managerApp") .controller("CloudProjectComputeInfrastructureIpAdd
             $rootScope.$broadcast('highlighed-element.show', 'compute,draft-ip');
             // get possible geolocs
             self.locLoader = true;
-            return OvhApiCloud.Lexi().schema().$promise.then(function (schema) {
+            return OvhApiCloud.v6().schema().$promise.then(function (schema) {
                 self.availableGeolocs = schema.models['ip.FloatingIpGeolocEnum']['enum'];
                 self.locLoader = false;
             });

@@ -363,7 +363,7 @@ angular.module("managerApp").controller("RA.storageDetailsCtrl", [
                 return;
             }
 
-            return OvhApiCloudProjectUser.Lexi().query(request).$promise
+            return OvhApiCloudProjectUser.v6().query(request).$promise
                 .then(function (users) {
                     $scope.users = users;
                     if (users.length > 0) {

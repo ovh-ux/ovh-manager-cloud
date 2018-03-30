@@ -9,7 +9,7 @@ class CloudProjectOpenstackUsersRcloneService {
     }
 
     getValidRcloneRegions (projectId) {
-        return this.OvhApiCloud.Project().Region().Lexi().query({ serviceName: projectId })
+        return this.OvhApiCloud.Project().Region().v6().query({ serviceName: projectId })
             .$promise
             .then(regions => _.map(regions, region => this.RegionService.getRegion(region)))
             .catch(this.ServiceHelper.errorHandler("cpou_rclone_modal_loading_error"));
@@ -18,7 +18,7 @@ class CloudProjectOpenstackUsersRcloneService {
     getRcloneFileInfo (projectId, userId, region) {
         let url = [
             (_.find(this.CONFIG_API.apis, { serviceType: "apiv6" }) || {}).urlPrefix,
-            this.OvhApiCloud.Project().User().Lexi().services.rclone.url,
+            this.OvhApiCloud.Project().User().v6().services.rclone.url,
             "?",
             this.$httpParamSerializer({
                 region
@@ -34,7 +34,7 @@ class CloudProjectOpenstackUsersRcloneService {
             url = url.replace(`:${paramName}`, replacements[paramName]);
         });
 
-        return this.OvhApiCloud.Project().User().Lexi().rclone({ serviceName: projectId, userId, region }, { })
+        return this.OvhApiCloud.Project().User().v6().rclone({ serviceName: projectId, userId, region }, { })
             .$promise
             .then(response => {
                 _.assign(response, { url });

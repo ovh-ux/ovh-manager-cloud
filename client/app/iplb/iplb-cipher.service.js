@@ -6,14 +6,14 @@ class IpLoadBalancerCipherService {
     }
 
     getCipher (serviceName) {
-        return this.IpLoadBalancing.Lexi().get({ serviceName })
+        return this.IpLoadBalancing.v6().get({ serviceName })
             .$promise
             .then(response => this.transformCipher(response.sslConfiguration))
             .catch(this.ServiceHelper.errorHandler("iplb_modal_cipher_change_loading_error"));
     }
 
     getCipherTypes () {
-        return this.IpLoadBalancing.Lexi().schema()
+        return this.IpLoadBalancing.v6().schema()
             .$promise
             .then(response => {
                 const types = response.models["ipLoadbalancing.SslConfigurationEnum"].enum;
@@ -33,7 +33,7 @@ class IpLoadBalancerCipherService {
     }
 
     updateCipher (serviceName, newCipher) {
-        return this.IpLoadBalancing.Lexi().put({ serviceName }, { sslConfiguration: newCipher })
+        return this.IpLoadBalancing.v6().put({ serviceName }, { sslConfiguration: newCipher })
             .$promise
             .then(response => response)
             .catch(this.ServiceHelper.errorHandler("iplb_modal_cipher_change_updating_error"));

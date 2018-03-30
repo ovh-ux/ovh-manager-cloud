@@ -21,7 +21,7 @@ angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($s
 
     self.updatePartition = function () {
         self.loading = true;
-        OvhApiDedicatedNasha.Partition().Lexi().update({
+        OvhApiDedicatedNasha.Partition().v6().update({
             serviceName: self.data.nashaId
         }, {
             partitionName: self.data.partition.partitionName,
@@ -49,7 +49,7 @@ angular.module("managerApp").controller("NashaPartitionUpdateCtrl", function ($s
     };
 
     function getTasksTodo (operation) {
-        return OvhApiDedicatedNasha.Task().Lexi().query({
+        return OvhApiDedicatedNasha.Task().v6().query({
             operation: operation,
             serviceName: self.data.nashaId,
             status: "todo"

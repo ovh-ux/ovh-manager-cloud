@@ -38,7 +38,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
 
         function initForecast () {
             self.loaders.forecast = true;
-            return OvhApiCloudProjectUsageForecast.Lexi().get({
+            return OvhApiCloudProjectUsageForecast.v6().get({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (billingInfo) {
                 return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo).then(function (data) {
@@ -52,7 +52,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
 
         function initCurrent () {
             self.loaders.current = true;
-            return OvhApiCloudProjectUsageCurrent.Lexi().get({
+            return OvhApiCloudProjectUsageCurrent.v6().get({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (billingInfo) {
                 return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo);
@@ -64,14 +64,14 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
         }
 
         function getAlertIds () {
-            OvhApiCloudProjectAlerting.Lexi().resetCache();
-            return OvhApiCloudProjectAlerting.Lexi().getIds({
+            OvhApiCloudProjectAlerting.v6().resetCache();
+            return OvhApiCloudProjectAlerting.v6().getIds({
                 serviceName: $stateParams.projectId
             }).$promise;
         }
 
         function getAlert (id) {
-            return OvhApiCloudProjectAlerting.Lexi().get({
+            return OvhApiCloudProjectAlerting.v6().get({
                 serviceName: $stateParams.projectId,
                 alertId: id }).$promise
                 .catch(function () {
@@ -140,11 +140,11 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateC
         self.deleteAlert = function () {
             self.loaders.deleteAlert = true;
             // we query alerts to check if an alert already exists, in this case we delete it
-            OvhApiCloudProjectAlerting.Lexi().getIds({
+            OvhApiCloudProjectAlerting.v6().getIds({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (alertIds) {
                 if (!_.isEmpty(alertIds)) {
-                    return OvhApiCloudProjectAlerting.Lexi()["delete"]({
+                    return OvhApiCloudProjectAlerting.v6()["delete"]({
                         serviceName: $stateParams.projectId,
                         alertId: _.first(alertIds)
                     }).$promise.then(function () {

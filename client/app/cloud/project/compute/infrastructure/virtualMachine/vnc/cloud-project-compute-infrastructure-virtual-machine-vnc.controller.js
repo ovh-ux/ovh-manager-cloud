@@ -11,7 +11,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
 
     function init () {
         self.loading = true;
-        return OvhApiCloudProjectInstance.Lexi().vnc({
+        return OvhApiCloudProjectInstance.v6().vnc({
             serviceName: self.data.vm.serviceName,
             instanceId: self.data.vm.id
         }, {}).$promise.then(function (vncInfos) {

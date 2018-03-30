@@ -52,7 +52,7 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
     self.getAddSchedulesPromises = function (promises) {
         var addToSchedule = _.difference(self.snapshots.after, self.snapshots.before);
         _.forEach(addToSchedule, function (schedule) {
-            promises.push(OvhApiDedicatedNasha.Partition().Snapshot().Lexi().add({
+            promises.push(OvhApiDedicatedNasha.Partition().Snapshot().v6().add({
                 serviceName: self.data.nashaId,
                 partitionName: self.data.partition.partitionName
             }, {
@@ -66,7 +66,7 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
     self.getDeleteSchedulesPromises = function (promises) {
         var deleteFromSchedule = _.difference(self.snapshots.before, self.snapshots.after);
         _.forEach(deleteFromSchedule, function (schedule) {
-            promises.push(OvhApiDedicatedNasha.Partition().Snapshot().Lexi().remove({
+            promises.push(OvhApiDedicatedNasha.Partition().Snapshot().v6().remove({
                 serviceName: self.data.nashaId,
                 partitionName: self.data.partition.partitionName,
                 snapshotType: schedule
@@ -84,12 +84,12 @@ angular.module("managerApp").controller("NashaPartitionSnapshotCtrl", function (
         self.loading = true;
         self.schedule = {};
 
-        OvhApiDedicatedNasha.Lexi().schema()
+        OvhApiDedicatedNasha.v6().schema()
             .$promise.then(function (data) {
                 self.snapshotEnum = data.models["dedicated.storage.SnapshotEnum"].enum;
             });
 
-        OvhApiDedicatedNasha.Partition().Snapshot().Lexi().query({
+        OvhApiDedicatedNasha.Partition().Snapshot().v6().query({
             serviceName: self.data.nashaId,
             partitionName: self.data.partition.partitionName
         }).$promise.then(function (data) {

@@ -17,7 +17,7 @@ angular.module("managerApp")
 
       self.deleteUser = function () {
           self.saving = true;
-          OvhApiDedicatedCeph.User().Lexi()["delete"]({
+          OvhApiDedicatedCeph.User().v6()["delete"]({
               serviceName: $stateParams.serviceName,
               userName: self.user.name
           }).$promise.then(function (result) {

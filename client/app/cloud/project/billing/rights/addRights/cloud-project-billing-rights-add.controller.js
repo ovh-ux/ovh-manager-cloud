@@ -14,7 +14,7 @@ class CloudProjectBillingRightsAddCtrl {
         this.loader = true;
 
         this.$uibModalInstance.close(
-            this.OvhApiCloud.Project().Acl().Lexi().add({
+            this.OvhApiCloud.Project().Acl().v6().add({
                 serviceName: this.$stateParams.projectId
             }, {
                 accountId: CloudProjectBillingRightsAddCtrl.normalizedNic(this.right.contact),

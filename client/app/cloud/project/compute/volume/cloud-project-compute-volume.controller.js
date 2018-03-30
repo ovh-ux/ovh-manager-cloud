@@ -180,12 +180,12 @@ angular.module("managerApp")
             self.toggle.volumeDeleteId = null;
             self.loaders.table.volume = true;
             if (clearCache){
-                OvhApiCloudProjectVolume.Lexi().resetQueryCache();
+                OvhApiCloudProjectVolume.v6().resetQueryCache();
             }
 
             $q.all([
                 // GET INSTANCES DETAILS
-                OvhApiCloudProjectInstance.Lexi().query({
+                OvhApiCloudProjectInstance.v6().query({
                     serviceName : serviceName
                 }).$promise.then(function (instanceList) {
                     self.table.instance = instanceList;
@@ -197,7 +197,7 @@ angular.module("managerApp")
                     self.table.volume = getVolumeListDetailed(volumeList);
                     self.table.groupVolume = volumeList;
                 }),
-                OvhApiCloudProjectVolumeSnapshot.Lexi().query({
+                OvhApiCloudProjectVolumeSnapshot.v6().query({
                     serviceName : serviceName
                 }).$promise.then(function (snapshotList) {
                     self.table.snapshots = snapshotList;

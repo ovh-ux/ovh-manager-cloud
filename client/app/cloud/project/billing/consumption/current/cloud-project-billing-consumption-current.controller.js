@@ -8,7 +8,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionCurrentCt
         function init () {
             self.loading = true;
 
-            return OvhApiCloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise
+            return OvhApiCloudProjectUsageCurrent.v6().get({ serviceName: $stateParams.projectId }).$promise
                 .then(function (billingInfo) {
                     return CloudProjectBillingService.getConsumptionDetails(billingInfo, billingInfo);
                 })

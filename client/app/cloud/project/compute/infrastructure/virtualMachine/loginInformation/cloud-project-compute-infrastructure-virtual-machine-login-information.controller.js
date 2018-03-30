@@ -59,7 +59,7 @@
                 this.data.image = this.CloudImageService.augmentImage(this.data.vm.image);
                 return this.$q.resolve({});
             } else {
-                return this.OvhApiCloudProjectInstance.Lexi().get({
+                return this.OvhApiCloudProjectInstance.v6().get({
                     serviceName: this.data.vm.serviceName,
                     instanceId: this.data.vm.id
                 }).$promise

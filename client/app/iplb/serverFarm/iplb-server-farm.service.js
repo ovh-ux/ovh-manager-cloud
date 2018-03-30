@@ -8,27 +8,27 @@ class IpLoadBalancerServerFarmService {
         this.ServiceHelper = ServiceHelper;
 
         this.Farm = {
-            all: this.IpLoadBalancing.Farm().Lexi(),
-            tcp: this.IpLoadBalancing.Farm().Tcp().Lexi(),
-            udp: this.IpLoadBalancing.Farm().Udp().Lexi(),
-            http: this.IpLoadBalancing.Farm().Http().Lexi()
+            all: this.IpLoadBalancing.Farm().v6(),
+            tcp: this.IpLoadBalancing.Farm().Tcp().v6(),
+            udp: this.IpLoadBalancing.Farm().Udp().v6(),
+            http: this.IpLoadBalancing.Farm().Http().v6()
         };
 
         this.Server = {
-            tcp: this.IpLoadBalancing.Farm().Tcp().Server().Lexi(),
-            udp: this.IpLoadBalancing.Farm().Udp().Server().Lexi(),
-            http: this.IpLoadBalancing.Farm().Http().Server().Lexi()
+            tcp: this.IpLoadBalancing.Farm().Tcp().Server().v6(),
+            udp: this.IpLoadBalancing.Farm().Udp().Server().v6(),
+            http: this.IpLoadBalancing.Farm().Http().Server().v6()
         };
     }
 
     getAvailableFarmProbes (serviceName) {
-        return this.IpLoadBalancing.Lexi().availableFarmProbes({ serviceName })
+        return this.IpLoadBalancing.v6().availableFarmProbes({ serviceName })
             .$promise
             .catch(this.ServiceHelper.errorHandler("iplb_farm_edit_probe_info_error"));
     }
 
     getServerFarms (serviceName) {
-        return this.IpLoadBalancing.Farm().Lexi().query({ serviceName })
+        return this.IpLoadBalancing.Farm().v6().query({ serviceName })
             .$promise
             .then(farms => {
                 const promises = _.map(farms, farm => this.getServerFarm(serviceName, farm.id, farm.type));

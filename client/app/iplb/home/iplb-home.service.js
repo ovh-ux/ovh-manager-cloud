@@ -10,9 +10,9 @@ class IpLoadBalancerHomeService {
 
     getInformations (serviceName) {
         return this.$q.all({
-            configuration: this.OvhApiIpLoadBalancing.Lexi().get({ serviceName }).$promise,
-            failoverIp: this.OvhApiIpLoadBalancing.Lexi().failoverIp({ serviceName }).$promise,
-            natIp: this.OvhApiIpLoadBalancing.Lexi().natIp({ serviceName }).$promise
+            configuration: this.OvhApiIpLoadBalancing.v6().get({ serviceName }).$promise,
+            failoverIp: this.OvhApiIpLoadBalancing.v6().failoverIp({ serviceName }).$promise,
+            natIp: this.OvhApiIpLoadBalancing.v6().natIp({ serviceName }).$promise
         })
             .then(response => ({
                 ipV4: response.configuration.ipLoadbalancing,
@@ -24,7 +24,7 @@ class IpLoadBalancerHomeService {
     }
 
     getConfiguration (serviceName) {
-        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
+        return this.OvhApiIpLoadBalancing.v6().get({ serviceName })
             .$promise
             .then(response => {
                 response.displayName = response.displayName || response.serviceName;
@@ -35,7 +35,7 @@ class IpLoadBalancerHomeService {
     }
 
     getUsage (serviceName) {
-        return this.OvhApiIpLoadBalancing.Quota().Lexi().query({ serviceName })
+        return this.OvhApiIpLoadBalancing.Quota().v6().query({ serviceName })
             .$promise
             .then(zones => this.$q.all(zones.map(zone => this.getUsageForZone(serviceName, zone))))
             .then(quotas => quotas.map(quota => {
@@ -46,14 +46,14 @@ class IpLoadBalancerHomeService {
     }
 
     getUsageForZone (serviceName, zoneName) {
-        return this.OvhApiIpLoadBalancing.Quota().Lexi().get({
+        return this.OvhApiIpLoadBalancing.Quota().v6().get({
             serviceName,
             zoneName
         }).$promise;
     }
 
     updateQuota (serviceName, zoneName, alert) {
-        return this.OvhApiIpLoadBalancing.Quota().Lexi().put({
+        return this.OvhApiIpLoadBalancing.Quota().v6().put({
             serviceName,
             zoneName
         }, {
@@ -63,7 +63,7 @@ class IpLoadBalancerHomeService {
     }
 
     updateName (serviceName, newName) {
-        return this.OvhApiIpLoadBalancing.Lexi().put({ serviceName }, { displayName: newName })
+        return this.OvhApiIpLoadBalancing.v6().put({ serviceName }, { displayName: newName })
             .$promise
             .then(response => {
                 this.getConfiguration(serviceName).then(configuration => this.changeMenuTitle(serviceName, configuration.displayName || serviceName));
@@ -81,8 +81,8 @@ class IpLoadBalancerHomeService {
 
     getSubscription (serviceName) {
         return this.$q.all({
-            configuration: this.OvhApiIpLoadBalancing.Lexi().get({ serviceName }).$promise,
-            serviceInfos: this.OvhApiIpLoadBalancing.Lexi().serviceInfos({ serviceName }).$promise
+            configuration: this.OvhApiIpLoadBalancing.v6().get({ serviceName }).$promise,
+            serviceInfos: this.OvhApiIpLoadBalancing.v6().serviceInfos({ serviceName }).$promise
         })
             .then(response => _.extend(response.serviceInfos, { offer: response.configuration.offer }))
             .catch(this.ServiceHelper.errorHandler("iplb_subscription_loading_error"));

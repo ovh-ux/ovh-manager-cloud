@@ -18,7 +18,7 @@ class CloudProjectBillingVoucherAddCtrl {
     confirm () {
         this.saving = true;
 
-        return this.OvhApiCloudProjectCredit.Lexi().save({
+        return this.OvhApiCloudProjectCredit.v6().save({
                 serviceName: this.serviceName
             }, {
                 code: this.model.value

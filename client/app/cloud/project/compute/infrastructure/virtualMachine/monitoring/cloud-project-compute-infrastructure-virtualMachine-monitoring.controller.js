@@ -82,8 +82,8 @@ angular.module("managerApp")
         self.onChartPeriodChanged = function (type) {
             var period = self.selectedChartPeriod[type];
             self.loaders.monitoring[type] = true;
-            OvhApiCloudProjectInstance.Lexi().resetAllCache();
-            OvhApiCloudProjectInstance.Lexi().monitoring({
+            OvhApiCloudProjectInstance.v6().resetAllCache();
+            OvhApiCloudProjectInstance.v6().monitoring({
                 serviceName : self.vm.serviceName,
                 instanceId  : self.vm.id,
                 period      : period,

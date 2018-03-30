@@ -137,14 +137,14 @@ describe("Controller: CloudProjectComputeSshCtrl", function () {
                 xit("should not sent POST request (name already exist)", function () {
                     CloudProjectComputeSshCtrl.sshAdd.name = dataTest.sshkeys[0].name;
 
-                    spyOn(OvhApiCloudProjectSshKey, "Lexi");
+                    spyOn(OvhApiCloudProjectSshKey, "V6");
                     spyOn(CloudProjectComputeSshCtrl, "getSshKeys");
 
                     CloudProjectComputeSshCtrl.postSshKey();
 
                     expect(CloudProjectComputeSshCtrl.loaders.add.ssh).toBeFalsy();
                     expect(CloudProjectComputeSshCtrl.sshAdd.name).toEqual(dataTest.sshkeys[0].name);
-                    expect(OvhApiCloudProjectSshKey.Lexi.calls.any()).toEqual(false);
+                    expect(OvhApiCloudProjectSshKey.v6.calls.any()).toEqual(false);
                     expect(CloudProjectComputeSshCtrl.getSshKeys.calls.any()).toEqual(false);
                     expect(CloudMessage.error.calls.count()).toEqual(1);
                 });

@@ -7,7 +7,7 @@ class IpLoadBalancerTaskService {
     }
 
     getTasks (serviceName) {
-        return this.IpLoadBalancing.Task().Lexi().query({ serviceName })
+        return this.IpLoadBalancing.Task().v6().query({ serviceName })
             .$promise
             .then(response => {
                 const promises = _.map(response, taskId => this.getTask(serviceName, taskId));
@@ -17,7 +17,7 @@ class IpLoadBalancerTaskService {
     }
 
     getTask (serviceName, taskId) {
-        return this.IpLoadBalancing.Task().Lexi().get({ serviceName, taskId })
+        return this.IpLoadBalancing.Task().v6().get({ serviceName, taskId })
             .$promise;
     }
 }

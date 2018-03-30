@@ -8,9 +8,9 @@ class OvhCloudPriceHelper {
 
     getPrices (serviceName) {
         return this.$q.all({
-            catalog: this.OvhApiMe.Lexi().get().$promise
-                .then(me => this.OvhApiOrderCatalogFormatted.Lexi().get({ catalogName: "cloud", ovhSubsidiary: me.ovhSubsidiary }).$promise),
-            project: this.OvhApiCloudProject.Lexi().get({ serviceName }).$promise
+            catalog: this.OvhApiMe.v6().get().$promise
+                .then(me => this.OvhApiOrderCatalogFormatted.v6().get({ catalogName: "cloud", ovhSubsidiary: me.ovhSubsidiary }).$promise),
+            project: this.OvhApiCloudProject.v6().get({ serviceName }).$promise
         })
             .then(({ catalog, project }) => {
                 const projectPlan = _.find(catalog.plans, { planCode: project.planCode });

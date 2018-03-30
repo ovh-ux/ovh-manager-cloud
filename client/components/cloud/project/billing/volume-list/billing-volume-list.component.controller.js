@@ -10,7 +10,7 @@ angular.module("managerApp")
       self.data = {};
 
       function getVolumesDetails () {
-          return OvhApiCloudProjectVolume.Lexi().query({
+          return OvhApiCloudProjectVolume.v6().query({
               serviceName: $stateParams.projectId
           }).$promise.then(function (volumes) {
               return volumes;
@@ -67,7 +67,7 @@ angular.module("managerApp")
       }
 
       function initUserCurrency () {
-          return OvhApiMe.Lexi().get().$promise.then(function (me) {
+          return OvhApiMe.v6().get().$promise.then(function (me) {
               self.currencySymbol = me.currency.symbol;
           });
       }

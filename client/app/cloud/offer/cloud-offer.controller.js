@@ -147,14 +147,14 @@
         }
 
         acceptAgreement (agreementId) {
-            return this.User.Agreements().Lexi().accept({
+            return this.User.Agreements().v6().accept({
                 id: agreementId
             }, {});
         }
 
         getDefaultPaymentMethod () {
             this.loaders.payment = true;
-            this.User.PaymentMean().Lexi().getDefaultPaymentMean()
+            this.User.PaymentMean().v6().getDefaultPaymentMean()
                 .then(defaultPayment => {
                     this.data.defaultPayment = defaultPayment;
                 })

@@ -10,7 +10,7 @@ angular.module("managerApp").controller("NashaPartitionDeleteCtrl", function (Ov
 
     self.deletePartition = function () {
         self.loading = true;
-        OvhApiDedicatedNasha.Partition().Lexi().delete({
+        OvhApiDedicatedNasha.Partition().v6().delete({
             serviceName: self.data.nashaId,
             partitionName: self.data.partition.partitionName
         }).$promise.then(function (result) {

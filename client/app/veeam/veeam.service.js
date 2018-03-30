@@ -13,7 +13,7 @@
             this.$timeout = $timeout;
             this.$translate = $translate;
             this.$filter = $filter;
-            this.veeam = OvhApiVeeam.Lexi();
+            this.veeam = OvhApiVeeam.v6();
             this.RegionService = RegionService;
 
             this.unitOfWork = { };

@@ -45,7 +45,7 @@ angular.module("managerApp")
                         }
                     }
                 };
-                return OvhApiMe.Lexi().get().$promise.then(function (me) {
+                return OvhApiMe.v6().get().$promise.then(function (me) {
                     self.data.totals.currencySymbol = me.currency.symbol;
                     return self.data;
                 });

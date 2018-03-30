@@ -39,7 +39,7 @@ function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemContro
     $scope.saveName = function () {
         $scope.loader.save = true;
 
-        OvhApiDBaasTsProject.Lexi().setup({
+        OvhApiDBaasTsProject.v6().setup({
             serviceName: locals.project.serviceName
         }, {
             displayName: $scope.model.name || ""
@@ -56,7 +56,7 @@ function ($rootScope, $scope, $timeout, $translate, managerSidebarMenuItemContro
         })["finally"](function () {
             $scope.loader.save = false;
             DBaasTsSidebarEditMediator.stopEdition();
-            OvhApiDBaasTsProject.Lexi().resetCache();
+            OvhApiDBaasTsProject.v6().resetCache();
         });
     };
 

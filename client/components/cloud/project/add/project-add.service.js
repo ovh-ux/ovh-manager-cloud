@@ -18,7 +18,7 @@
 
             //Agreements should be already accepted
 
-            return this.Cloud.Lexi().createProject({}, {
+            return this.Cloud.v6().createProject({}, {
                 voucher: voucher,
                 description: description,
                 catalogVersion: catalogVersion
@@ -28,7 +28,7 @@
                     switch (response.status) {
                         case "creating":
                             //User needs to pay something
-                            this.User.Order().Lexi().get({
+                            this.User.Order().v6().get({
                                 orderId: response.orderId
                             }).$promise
                                 .then(order => {
@@ -95,7 +95,7 @@
         }
 
         getProjectInfo () {
-            return this.Cloud.Lexi().createProjectInfo()
+            return this.Cloud.v6().createProjectInfo()
                 .$promise
                 .then(response => {
                     return this.$q.all({
@@ -127,7 +127,7 @@
         }
 
         getContractInfo (contractId) {
-            return this.User.Agreements().Lexi().contract({
+            return this.User.Agreements().v6().contract({
                 id: contractId
             })
                 .$promise
@@ -142,8 +142,8 @@
                 project_id: projectId, // jshint ignore:line
                 description: description
             });
-            this.Vrack.Lexi().resetCache();
-            this.Vrack.CloudProject().Lexi().resetQueryCache();
+            this.Vrack.v6().resetCache();
+            this.Vrack.CloudProject().v6().resetQueryCache();
         }
     }
     angular.module("managerApp").service("CloudProjectAdd", CloudProjectAdd);

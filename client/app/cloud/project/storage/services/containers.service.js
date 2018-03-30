@@ -14,7 +14,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
          * @return {Promise}
          */
         self.list = function (projectId) {
-            return OvhApiCloudProjectStorage.Lexi().query({
+            return OvhApiCloudProjectStorage.v6().query({
                 projectId: projectId
             }).$promise
                 .then(function (containers) {
@@ -53,7 +53,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
                 data.archive = true;
             }
 
-            return OvhApiCloudProjectStorage.Lexi().save({
+            return OvhApiCloudProjectStorage.v6().save({
                 projectId: projectId
             }, data).$promise
                 .then(function (result) {
@@ -62,7 +62,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
 
                     // Make container a static hosting
                     if (type === "static") {
-                        return OvhApiCloudProjectStorage.Lexi().static({
+                        return OvhApiCloudProjectStorage.v6().static({
                             projectId: projectId,
                             containerId: currentContainerId
                         }).$promise;
@@ -88,7 +88,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
          * @return {Promise}
          */
         self.delete = function (projectId, containerId) {
-            return OvhApiCloudProjectStorage.Lexi().get({
+            return OvhApiCloudProjectStorage.v6().get({
                 projectId: projectId,
                 containerId: containerId
             }).$promise
@@ -96,7 +96,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
                     if (containerData.objects.length) {
                         return $q.reject("NON_EMPTY_CONTAINER");
                     }
-                    return OvhApiCloudProjectStorage.Lexi().delete({
+                    return OvhApiCloudProjectStorage.v6().delete({
                         projectId: projectId,
                         containerId: containerId
                     }).$promise;

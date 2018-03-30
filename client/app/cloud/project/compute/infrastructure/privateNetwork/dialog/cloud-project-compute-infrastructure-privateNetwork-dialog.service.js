@@ -55,7 +55,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkDialogService {
                 return;
             }
 
-            this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
+            this.OvhApiCloudProjectNetworkPrivate.v6().resetCache();
 
             this.fetchPrivateNetwork(
                 options.serviceName,
