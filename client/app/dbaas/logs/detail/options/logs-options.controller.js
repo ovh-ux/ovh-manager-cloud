@@ -1,5 +1,6 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOptionsService, CurrencyService, OrderHelperService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
@@ -79,6 +80,12 @@ class LogsOptionsCtrl {
         this.OrderHelperService.openExpressOrderUrl(
             this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName)
         );
+    }
+
+    goToManage () {
+        this.$state.go("dbaas.logs.detail.options.manage", {
+            serviceName: this.serviceName
+        });
     }
 }
 

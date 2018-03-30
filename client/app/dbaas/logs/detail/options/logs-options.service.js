@@ -1,6 +1,7 @@
 class LogsOptionsService {
-    constructor ($translate, $window, ControllerHelper, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogOptionConstant) {
+    constructor ($translate, $window, ControllerHelper, LogsHelperService, LogOptionConstant, OvhApiDbaas, OvhApiOrderCartServiceOption, ServiceHelper) {
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
+        this.LogsHelperService = LogsHelperService;
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
         this.$translate = $translate;
@@ -190,12 +191,30 @@ class LogsOptionsService {
     showReactivateInfo (option) {
         this.ControllerHelper.modal.showWarningModal({
             title: this.$translate.instant("logs_options_modal_reactivate_title"),
-            message: this.$translate.instant("logs_options_modal_reactivate_description", { optionType: option.type })
+            message: this.$translate.instant("logs_options_modal_reactivate_description", { optionType: `${option.type}, ${option.detail}` })
+        });
+    }
+
+    terminateModal (option) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            submitButtonText: this.$translate.instant("logs_options_action_disable"),
+            titleText: this.$translate.instant("logs_options_manage_terminate_title"),
+            text: this.$translate.instant("logs_options_manage_terminate_question", { optionType: `${option.type}, ${option.detail}` })
         });
     }
 
     terminateOption (serviceName, option) {
-        return this.OptionsApiLexiService.terminate({ serviceName, optionId: "7ad08e7b-a5a8-40e7-ba80-621aaf8e2ba6" }).$promise;
+        return this.OptionsApiLexiService.terminate({ serviceName, optionId: option.optionId }).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_options_delete_success", { optionType: `${option.type}, ${option.detail}` });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_options_delete_error", err, { optionType: `${option.type}, ${option.detail}` }));
+    }
+
+    _resetAllCache () {
+        this.OvhApiDbaasLogs.Accounting().Aapi().resetAllCache();
+        this.OptionsApiLexiService.resetAllCache();
     }
 }
 

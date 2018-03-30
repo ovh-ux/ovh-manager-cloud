@@ -80,6 +80,12 @@ class LogsOptionsCtrl {
             this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName)
         );
     }
+
+    goToManage () {
+        this.$state.go("dbaas.logs.detail.options.manage", {
+            serviceName: this.serviceName
+        });
+    }
 }
 
 angular.module("managerApp").controller("LogsOptionsCtrl", LogsOptionsCtrl);

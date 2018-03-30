@@ -12,19 +12,19 @@ class LogsOptionsManageService {
     }
 
     getAllStreams (serviceName) {
-        return this.LogsStreamsService.getOwnStreams(serviceName);
+        return this.LogsStreamsService.getStreamDetails(serviceName);
     }
 
     getAllAliases (serviceName) {
-        return this.LogsAliasesService.getOwnAliases(serviceName);
+        return this.LogsAliasesService.getAliasesDetails(serviceName);
     }
 
     getAllDashboards (serviceName) {
-        return this.LogsDashboardsService.getOwnDashboards(serviceName);
+        return this.LogsDashboardsService.getDashboardsDetails(serviceName);
     }
 
     getAllIndices (serviceName) {
-        return this.LogsIndexService.getOwnIndices(serviceName);
+        return this.LogsIndexService.getIndices(serviceName);
     }
 
     getAllRoles (serviceName) {

@@ -25,27 +25,27 @@
                 <dd class="preview-list__definition">
                     <div data-ng-if="ctrl.option.linked_items > 0">
                         <div data-ng-if="ctrl.aliases.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Alias</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_alias"></span>                        
                             <ul data-ng-repeat="alias in ctrl.aliases track by $index">{{alias.info.name}}</ul>
                         </div>
                         <div data-ng-if="ctrl.dashboards.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Dashboard</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_dashboard"></span>                        
                             <ul data-ng-repeat="dashboard in ctrl.dashboards track by $index">{{dashboard.info.title}}</ul>
                         </div>
                         <div data-ng-if="ctrl.indices.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Index</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_index"></span>                        
                             <ul data-ng-repeat="index in ctrl.indices track by $index">{{index.info.name}}</ul>
                         </div>
                         <div data-ng-if="ctrl.inputs.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Input</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_input"></span>                        
                             <ul data-ng-repeat="input in ctrl.inputs track by $index">{{input.info.title}}</ul>
                         </div>
                         <div data-ng-if="ctrl.roles.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Role</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_role"></span>                        
                             <ul data-ng-repeat="role in ctrl.roles track by $index">{{role.info.name}}</ul>
                         </div>
                         <div data-ng-if="ctrl.streams.length > 0">
-                            <span class="pl-0 preview-list__list-heading" >Stream</span>                        
+                            <span class="pl-0 preview-list__list-heading" data-translate="logs_options_manage_stream"></span>                        
                             <ul data-ng-repeat="stream in ctrl.streams track by $index">{{stream.info.title}}</ul>
                         </div>
                     </div>

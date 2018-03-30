@@ -84,7 +84,7 @@ class ControllerModalHelper {
     }
 
     showDeleteModal (config = {}) {
-        config.submitButtonText = this.$translate.instant("common_delete");
+        config.submitButtonText = config.submitButtonText || this.$translate.instant("common_delete");
         return this.showConfirmationModal(config);
     }
 }

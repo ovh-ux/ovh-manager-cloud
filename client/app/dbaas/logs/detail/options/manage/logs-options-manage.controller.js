@@ -1,8 +1,9 @@
 class LogsOptionsManageCtrl {
-    constructor ($state, $stateParams, $window, ControllerHelper, LogsOptionsService, LogsOptionsManageService, CurrencyService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, CloudMessage, ControllerHelper, LogsOptionsService, LogsOptionsManageService, CurrencyService, OrderHelperService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
+        this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsOptionsManageService = LogsOptionsManageService;
@@ -14,7 +15,35 @@ class LogsOptionsManageCtrl {
         this._initLoaders();
     }
 
-    $onInit () {
+    _initLoaders () {
+        this.getManagedOptions = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsService.getManagedOptions(this.serviceName)
+        });
+
+        this.getAllDashboards = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllDashboards(this.serviceName)
+        });
+
+        this.getAllStreams = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllStreams(this.serviceName)
+        });
+
+        this.getAllIndices = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllIndices(this.serviceName)
+        });
+
+        this.getAllAliases = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllAliases(this.serviceName)
+        });
+
+        this.getAllRoles = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllRoles(this.serviceName)
+        });
+
+        this.getAllInputs = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsOptionsManageService.getAllInputs(this.serviceName)
+        });
+
         this.getManagedOptions.load();
         this.getAllAliases.load();
         this.getAllDashboards.load();
@@ -22,30 +51,6 @@ class LogsOptionsManageCtrl {
         this.getAllStreams.load();
         this.getAllRoles.load();
         this.getAllInputs.load();
-    }
-
-    _initLoaders () {
-        this.getManagedOptions = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsService.getManagedOptions(this.serviceName)
-        });
-        this.getAllDashboards = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllDashboards(this.serviceName)
-        });
-        this.getAllStreams = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllStreams(this.serviceName)
-        });
-        this.getAllIndices = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllIndices(this.serviceName)
-        });
-        this.getAllAliases = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllAliases(this.serviceName)
-        });
-        this.getAllRoles = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllRoles(this.serviceName)
-        });
-        this.getAllInputs = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsManageService.getAllInputs(this.serviceName)
-        });
     }
 
     terminateOption (option) {
@@ -73,8 +78,18 @@ class LogsOptionsManageCtrl {
         });
     }
 
-    deactivate () {
-
+    deactivate (option) {
+        this.CloudMessage.flushChildMessage();
+        this.LogsOptionsService.terminateModal(
+            option
+        ).then(() => {
+            this.delete = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.LogsOptionsService.terminateOption(this.serviceName, option)
+                    .then(() => this._initLoaders())
+                    .finally(() => this.ControllerHelper.scrollPageToTop())
+            });
+            this.delete.load();
+        });
     }
 
     reactivate (option) {

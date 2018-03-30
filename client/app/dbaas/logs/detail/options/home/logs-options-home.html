@@ -2,7 +2,8 @@
         <oui-back-button class="back_button_inline_text"></oui-back-button>
         <span class="oui-header_3" data-translate="log_options_title"></span>    
         <h6 class="oui-header_6" data-translate="log_options_current_title"></h6>
-        
+        <p><span data-translate="logs_options_description_manage"></span><a data-translate="logs_options_manage_link" data-ng-click="ctrl.goToManage()"></a></p>
+
         <div class="row">
             <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">
                 <cui-tile data-title="option.quantity"
