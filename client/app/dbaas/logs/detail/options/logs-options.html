@@ -3,8 +3,8 @@
     <span class="oui-header_3" data-translate="log_options_title"></span>
     
     <oui-spinner data-ng-show="ctrl.currentOptions.loading || ctrl.selectedOffer.loading"></oui-spinner>
-    <div class="row" data-ng-if="!ctrl.isBasicOffer() && !ctrl.selectedOffer.loading">
-        <h6 class="oui-header_6 col-md-12" data-translate="log_options_current_offer_title"></h6>
+    <div class="row mb-4" data-ng-if="!ctrl.isBasicOffer() && !ctrl.selectedOffer.loading">
+        <p class="oui-paragraph col-md-12" data-translate="log_options_current_offer_title"></p>
         <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5">
             <cui-tile data-title="ctrl.selectedOffer.data.name"
                 data-loading="ctrl.selectedOffer.loading">
@@ -22,8 +22,8 @@
     </div>
 
     <div data-ng-if="!(ctrl.currentOptions.loading || ctrl.selectedOffer.loading)">
-        <h6 class="oui-header_6" data-translate="log_options_current_title" data-ng-if="ctrl.currentOptions.data.length>0"></h6>
-        <div class="oui-header_6" data-ng-if="ctrl.currentOptions.data.length===0 && ctrl.isBasicOffer()">
+        <p class="oui-paragraph" data-translate="log_options_current_title" data-ng-if="ctrl.currentOptions.data.length>0"></p>
+        <div class="oui-paragraph" data-ng-if="ctrl.currentOptions.data.length===0 && ctrl.isBasicOffer()">
             <span data-translate="log_options_basic_no_options"></span>
             <button
                 role="link"
@@ -33,10 +33,11 @@
                 data-ui-sref="dbaas.logs.detail.offer">
             </button>
         </div>
-        <h6 class="oui-header_6" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></h6>
+        <p class="oui-paragraph" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></p>
     </div>
     
-    <div class="row d-flex flex-wrap">
+    <div
+     class="row d-flex flex-wrap mb-4">
         <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">
             <cui-tile data-title="option.type+' ('+option.quantity+')'"
                 data-loading="ctrl.currentOptions.loading">
