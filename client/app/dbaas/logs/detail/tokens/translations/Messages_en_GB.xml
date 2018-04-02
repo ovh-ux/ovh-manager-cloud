@@ -7,11 +7,11 @@
     <translation id="logs_tokens_col_name">Name</translation>
     <translation id="logs_tokens_col_token">Token</translation>
     <translation id="logs_tokens_col_platform">Platform</translation>
+    <translation id="logs_tokens_col_createdAt">Creation date</translation>
     <translation id="logs_tokens_cluster">Cluster</translation>
     <translation id="logs_tokens_select_cluster">Select a cluster</translation>
     <translation id="logs_tokens_delete_title">Delete a token</translation>
     <translation id="logs_tokens_delete_message">Are you sure you want to delete a token: {{tokenName}} ?</translation>
-
     <translation id="logs_tokens_create_success">A token {{tokenName}} has been successfully created</translation>
     <translation id="logs_tokens_delete_success">A token {{tokenName}} has been successfully deleted</translation>
 

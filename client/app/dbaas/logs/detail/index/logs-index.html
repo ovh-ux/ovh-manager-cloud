@@ -22,7 +22,9 @@
         rows="ctrl.indices.data">
         <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="'logs_index_col_free_space' | translate"> {{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}</oui-column>
+        <oui-column title="::'logs_index_col_free_space' | translate">
+            <oui-inline-color-alert type="ctrl.storageColor($row.info)" label="{{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}"></oui-inline-color-alert>
+        </oui-column>
         <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
             {{ $row.updatedAt | momentFormat:'L'}}
         </oui-column>
