@@ -1,10 +1,12 @@
 class LogsOptionsService {
-    constructor ($translate, $window, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogOptionConstant) {
+    constructor ($translate, $window, ControllerHelper, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogsOfferService, LogOptionConstant) {
+        this.ControllerHelper = ControllerHelper;
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
         this.ServiceHelper = ServiceHelper;
         this.$translate = $translate;
         this.$window = $window;
         this.OvhApiDbaasLogs = OvhApiDbaasLogs;
+        this.LogsOfferService = LogsOfferService;
         this.LogOptionConstant = LogOptionConstant;
     }
 
@@ -23,6 +25,24 @@ class LogsOptionsService {
         option.detail = this.$translate.instant(`${option.planCode}-detail`);
     }
 
+    _transformOffer (offer) {
+        const offerPrefix = this.$translate.instant("log_options_pro_offer");
+        const offerName = this.$translate.instant(offer.reference);
+        const streams = this.$translate.instant("logs_offer_streams");
+        const dashboards = this.$translate.instant("logs_offer_tables");
+        const inputs = this.$translate.instant("logs_offer_collection_tools");
+        offer.name = `${offerPrefix} ${offerName}`;
+        offer.streams = `${offer.maxNbStream} ${streams}`;
+        offer.dashboards = `${offer.maxNbDashboard} ${dashboards}`;
+        offer.inputs = `${offer.maxNbInput} ${inputs}`;
+        return offer;
+    }
+
+    getOffer (serviceName) {
+        return this.LogsOfferService.getOffer(serviceName)
+            .then(offer => this._transformOffer(offer));
+    }
+
     /**
      * returns the list of options available for selection
      *
@@ -37,7 +57,7 @@ class LogsOptionsService {
         }).$promise
             .then(response => {
                 _.each(response, option => this._transformOption(option));
-                return response;
+                return response.sort((optionA, optionB) => optionA.type === optionB.type ? this.ControllerHelper.naturalCompare(optionA.detail, optionB.detail) : this.ControllerHelper.naturalCompare(optionA.type, optionB.type));
             })
             .catch(err => this.LogsHelperService.handleError("logs_options_options_loading_error", err, {}));
     }
@@ -53,6 +73,7 @@ class LogsOptionsService {
      */
     transformSubscribedOption (option, optionsCountMap) {
         const optionConfig = {};
+        optionConfig.id = option;
         optionConfig.type = this.$translate.instant(`${option}-type`);
         optionConfig.detail = this.$translate.instant(`${option}-detail`);
         optionConfig.quantity = optionsCountMap[option];
@@ -90,7 +111,22 @@ class LogsOptionsService {
                     return optionsMap;
                 }, {});
                 // Build a new data structure with the option information and the no.of instances subscribed
-                return _.map(_.keys(optionsCountMap), option => this.transformSubscribedOption(option, optionsCountMap));
+                return _.map(_.keys(optionsCountMap), option => this.transformSubscribedOption(option, optionsCountMap))
+                    .sort((optionA, optionB) => optionA.type === optionB.type ? this.ControllerHelper.naturalCompare(optionA.detail, optionB.detail) : this.ControllerHelper.naturalCompare(optionA.type, optionB.type));
+            });
+    }
+
+    getSubscribedOptionsMapGrouped (serviceName) {
+        return this.getSubscribedOptionsMap(serviceName)
+            .then(options => {
+                const groupedOptionsMap = options.reduce((groupedOptions, option) => {
+                    groupedOptions[option.type] = groupedOptions[option.type] ? groupedOptions[option.type] : { type: option.type, quantity: 0, details: [] };
+                    groupedOptions[option.type].quantity += option.quantity * this.LogOptionConstant.PRODUCT_COUNT[option.id];
+                    groupedOptions[option.type].details.push(option);
+                    return groupedOptions;
+                }, {});
+                return Object.keys(groupedOptionsMap).map(groupedOptionsName => groupedOptionsMap[groupedOptionsName])
+                    .sort((optionA, optionB) => this.ControllerHelper.naturalCompare(optionA.type, optionB.type));
             });
     }
 

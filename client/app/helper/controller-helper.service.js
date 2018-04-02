@@ -68,6 +68,20 @@ class ControllerHelper {
         return txt.value;
     }
 
+    naturalCompare (str1, str2) {
+        const words1 = str1.split(" ");
+        const words2 = str2.split(" ");
+        const minLength = Math.min(words1.length, words2.length);
+        for (let wordIndex = 0; wordIndex < minLength; wordIndex++) {
+            const word1 = words1[wordIndex];
+            const word2 = words2[wordIndex];
+            if (word1 !== word2) {
+                return !isNaN(word1) && !isNaN(word2) ? parseFloat(word1) > parseFloat(word2) : word1 > word2 ? 1 : -1;
+            }
+        }
+        return words1.length > words2.length ? 1 : 0;
+    }
+
     scrollPageToTop () {
         this.$timeout(() => scrollTo(0, 0), 100);
     }

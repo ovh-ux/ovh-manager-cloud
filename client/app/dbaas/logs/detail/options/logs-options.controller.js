@@ -1,10 +1,9 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService) {
+    constructor ($stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOptionsService, CurrencyService, OrderHelperService) {
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
         this.LogsOfferConstant = LogsOfferConstant;
-        this.LogsOfferService = LogsOfferService;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
         this.OrderHelperService = OrderHelperService;
@@ -17,7 +16,8 @@ class LogsOptionsCtrl {
     $onInit () {
         this.options.load();
         this.currentOptions.load();
-        this.selectedOffer.load();
+        this.selectedOffer.load()
+            .then(offer => console.log("offer", offer));
     }
 
     /**
@@ -30,10 +30,10 @@ class LogsOptionsCtrl {
             loaderFunction: () => this.LogsOptionsService.getOptions(this.serviceName)
         });
         this.currentOptions = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMap(this.serviceName)
+            loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMapGrouped(this.serviceName)
         });
         this.selectedOffer = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
+            loaderFunction: () => this.LogsOptionsService.getOffer(this.serviceName)
         });
     }
 
