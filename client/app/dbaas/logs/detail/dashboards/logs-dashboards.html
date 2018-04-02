@@ -27,7 +27,7 @@
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
         <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
-            {{ $row.info.createdAt | momentFormat:'L'}}
+            {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title="::'logs_dashboards_col_shared' | translate" property="info.isEditable" sortable>
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>

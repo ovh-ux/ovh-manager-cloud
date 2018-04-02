@@ -18,7 +18,7 @@
             <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
         </oui-column>
         <oui-column title="::'logs_col_last_modified' | translate" property="updatedAt" sortable>
-            {{ $row.createdAt | momentFormat:'L'}}
+            {{ $row.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>

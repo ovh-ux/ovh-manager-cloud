@@ -23,8 +23,8 @@
         <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc"></oui-column>
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable></oui-column>
         <oui-column title="'logs_index_col_free_space' | translate"> {{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}</oui-column>
-        <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt">
-            {{ $row.createdAt | momentFormat:'L'}}
+        <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+            {{ $row.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title=":: 'logs_index_col_shared' | translate" sortable>
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
