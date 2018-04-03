@@ -4,6 +4,8 @@
     <translation id="logs_options_current_options_loading_error">Error loading current options: {{message}}</translation>
 
     <translation id="log_options_title">Add Options</translation>
+    <translation id="log_options_current_offer_title">You are currently subscribed to the below offer:</translation>
+    <translation id="log_options_pro_offer">Offer PRO</translation>
     <translation id="log_options_current_title">You are currently subscribed to the following options:</translation>
     <translation id="log_options_intro_text">When purchasing data feeds, aliases and dashboards, you have user roles offered (eg 5 streams = 5 roles).</translation>
     <translation id="log_options_type">Option type</translation>

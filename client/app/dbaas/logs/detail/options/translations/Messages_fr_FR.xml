@@ -4,6 +4,8 @@
     <translation id="logs_options_current_options_loading_error">Erreur lors du chargement des options actuelles: {{message}}</translation>
 
     <translation id="log_options_title">Ajouter des options</translation>
+    <translation id="log_options_current_offer_title">Vous êtes actuellement abonné à la section ci-dessous:</translation>
+    <translation id="log_options_pro_offer">Offre PRO</translation>
     <translation id="log_options_current_title">Vous disposez actuellement des options suivantes:</translation>
     <translation id="log_options_intro_text">À l'achat de flux de données, d'alias et de tableaux de bord, vous avez des rôles utilisateur offerts (ex. 5 flux = 5 rôles).</translation>
     <translation id="log_options_type">Type d’option</translation>
