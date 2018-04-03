@@ -93,6 +93,8 @@ angular.module("managerApp")
             veeam: {
             },
             cloud_desktop: {
+            },
+            dbaas_logs: {
             }
         },
         guides: {

@@ -27,7 +27,9 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         IaasSectionSidebarService.fillSection(services.iaas);
         PaasSectionSidebarService.fillSection(services.paas);
         MetricsSectionSidebarService.fillSection(services.metrics);
-        LogsSectionSidebarService.fillSection(services.logs);
+        if (FeatureAvailabilityService.hasFeature("DBAAS_LOGS", "sidebarMenu", locale)) {
+            LogsSectionSidebarService.fillSection(services.logs);
+        }
 
         SidebarMenu.addMenuItem({
             title: $translate.instant("cloud_sidebar_section_license"),

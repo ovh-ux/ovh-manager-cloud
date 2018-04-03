@@ -148,6 +148,15 @@ angular.module("managerApp")
             cloud_disk_array: {
             },
             cloud_desktop: {
+            },
+            dbaas_logs: {
+                // ASIA: "https://ca.ovh.com/asia/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                // AU: "https://ca.ovh.com/au/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                CA: "https://ca.ovh.com/en/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                QC: "https://ca.ovh.com/fr/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                // SG: "https://ca.ovh.com/sg/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                WE: "https://us.ovh.com/us/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                WS: "https://us.ovh.com/es/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))"
             }
         },
         guides: {
