@@ -53,8 +53,10 @@
                 </dd>
                 <dt class="preview-list__term"
                     data-translate="logs_options_status"></dt>
-                <dd class="preview-list__definition"
-                    data-ng-bind=":: ctrl.option.state"></dd>
+                <dd data-ng-if="ctrl.option.state === 'ENABLED'" class="preview-list__definition"
+                    data-translate="logs_options_enabled"></dd>
+                <dd data-ng-if="ctrl.option.state === 'DISABLED'" class="preview-list__definition"
+                    data-translate="logs_options_disabled"></dd>
             </dl>
         </div>
     </div>

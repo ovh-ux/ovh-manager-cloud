@@ -1,5 +1,5 @@
 class LogsIndexCtrl {
-    constructor ($stateParams, CloudMessage, ControllerHelper, LogsIndexService, LogsIndexConstant) {
+    constructor ($stateParams, bytesFilter, CloudMessage, ControllerHelper, LogsIndexService, LogsIndexConstant) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
@@ -7,6 +7,7 @@ class LogsIndexCtrl {
         this.LogsIndexService = LogsIndexService;
         this.LogsIndexConstant = LogsIndexConstant;
         this.suffixPattern = this.LogsIndexConstant.suffixPattern;
+        this.bytesFilter = bytesFilter;
         this.initLoaders();
     }
 
@@ -46,6 +47,18 @@ class LogsIndexCtrl {
         }).then(() => {
             this.initLoaders();
         });
+    }
+
+    storageColor (info) {
+        const percentage = parseInt((info.currentStorage * 100) / info.maxSize, 10);
+        if (percentage > 80) {
+            return this.LogsIndexConstant.HIGH;
+        } else if (percentage < 60) {
+            return this.LogsIndexConstant.LOW;
+        } else if (percentage > 60 && percentage < 80) {
+            return this.LogsIndexConstant.MID;
+        }
+        return null;
     }
 
     showDeleteConfirm (info) {

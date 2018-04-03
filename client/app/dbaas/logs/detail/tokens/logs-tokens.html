@@ -1,4 +1,3 @@
-
 <section class="cui-page__content log-aliases">
     <oui-back-button data-title="{{::'logs_tokens_title' | translate}}" on-click="ctrl.goToHomePage()"></oui-back-button>
     <p data-translate="logs_tokens_description"></p>
@@ -17,8 +16,8 @@
             <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
             <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
         </oui-column>
-        <oui-column title="::'logs_col_last_modified' | translate" property="updatedAt" sortable>
-            {{ $row.updatedAt | momentFormat:'L'}}
+        <oui-column title="::'logs_tokens_col_createdAt' | translate" property="createdAt" sortable>
+            {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>
             <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)"></oui-action-menu-item>
@@ -26,5 +25,3 @@
     </oui-datagrid>
     <div ui-view="logsTokensAdd"></div>
 </section>
-
-
