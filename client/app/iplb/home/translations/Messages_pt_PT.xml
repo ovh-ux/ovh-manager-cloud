@@ -15,7 +15,7 @@
    <translation id="iplb_home_tile_infos_ip_outbound" qtlid="429459">IPv4 de saída</translation>
 
    <translation id="iplb_home_tile_configuration" qtlid="4406">Configuração</translation>
-   <translation id="iplb_home_tile_configuration_name" qtlid="3818">Nome</translation>
+   <translation id="iplb_home_tile_configuration_name" qtlid="3818">Apelido</translation>
    <translation id="iplb_home_tile_configuration_quota_max" qtlid="439286">Quota mensal</translation>
    <translation id="iplb_home_tile_configuration_quota_alert" qtlid="439299">Limite do alerta</translation>
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Ilimitado</translation>

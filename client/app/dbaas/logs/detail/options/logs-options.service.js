@@ -1,13 +1,16 @@
 class LogsOptionsService {
-    constructor ($translate, $window, ControllerHelper, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaasLogs, LogsOfferService, LogOptionConstant) {
+    constructor ($translate, $window, ControllerHelper, LogsHelperService, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogsOfferService, LogOptionConstant) {
         this.ControllerHelper = ControllerHelper;
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
+        this.LogsHelperService = LogsHelperService;
         this.ServiceHelper = ServiceHelper;
+        this.ControllerHelper = ControllerHelper;
         this.$translate = $translate;
         this.$window = $window;
-        this.OvhApiDbaasLogs = OvhApiDbaasLogs;
+        this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
         this.LogsOfferService = LogsOfferService;
         this.LogOptionConstant = LogOptionConstant;
+        this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().Lexi();
     }
 
     /**
@@ -63,6 +66,19 @@ class LogsOptionsService {
     getOrderConfiguration (options, serviceName) {
         const optionsToOrder = this.getOptionsToOrder(options);
         return _.map(optionsToOrder, option => this._transformOptionForOrder(option, serviceName));
+    }
+
+    transformManagedOptions (option) {
+        option.type = this.$translate.instant(`${option.reference}-type`);
+        option.detail = this.$translate.instant(`${option.reference}-detail`);
+        option.linked_items = option.curNbAlias + option.curNbDashboard + option.curNbIndex + option.curNbRole + option.curNbInput + option.curNbStream;
+        return option;
+    }
+
+    getManagedOptions (serviceName) {
+        return this.getSubscribedOptions(serviceName)
+            .then(response => _.map(response.options, option => this.transformManagedOptions(option)))
+            .catch(this.ServiceHelper.errorHandler("logs_options_manage_get_error"));
     }
 
     /**
@@ -228,6 +244,35 @@ class LogsOptionsService {
             serviceName,
             productId: this.LogOptionConstant.productName
         };
+    }
+
+    showReactivateInfo (option) {
+        this.ControllerHelper.modal.showWarningModal({
+            title: this.$translate.instant("logs_options_modal_reactivate_title"),
+            message: this.$translate.instant("logs_options_modal_reactivate_description", { optionType: `${option.type}, ${option.detail}` })
+        });
+    }
+
+    terminateModal (option) {
+        return this.ControllerHelper.modal.showDeleteModal({
+            submitButtonText: this.$translate.instant("logs_options_action_disable"),
+            titleText: this.$translate.instant("logs_options_manage_terminate_title"),
+            text: this.$translate.instant("logs_options_manage_terminate_question", { optionType: `${option.type}, ${option.detail}` })
+        });
+    }
+
+    terminateOption (serviceName, option) {
+        return this.OptionsApiLexiService.terminate({ serviceName, optionId: option.optionId }).$promise
+            .then(operation => {
+                this._resetAllCache();
+                return this.LogsHelperService.handleOperation(serviceName, operation.data || operation, "logs_options_delete_success", { optionType: `${option.type}, ${option.detail}` });
+            })
+            .catch(err => this.LogsHelperService.handleError("logs_options_delete_error", err, { optionType: `${option.type}, ${option.detail}` }));
+    }
+
+    _resetAllCache () {
+        this.OvhApiDbaasLogs.Accounting().Aapi().resetAllCache();
+        this.OptionsApiLexiService.resetAllCache();
     }
 }
 

@@ -2,6 +2,7 @@
 <translations>
     <translation id="logs_options_options_loading_error">Error loading options: {{message}}</translation>
     <translation id="logs_options_current_options_loading_error">Error loading current options: {{message}}</translation>
+    <translation id="logs_options_manage_get_error">Error loading options: {{message}}</translation>
 
     <translation id="log_options_title">Add Options</translation>
     <translation id="log_options_current_offer_title">You are currently subscribed to the below offer:</translation>
@@ -46,4 +47,42 @@
     <translation id="log_options_order">Order</translation>
     <translation id="log_options_cancel">Cancel</translation>
     <translation id="log_options_total">Total</translation>
+
+    <translation id="logs_options_manage_title">Manage options</translation>
+    <translation id="logs_options_manage_description_1">You can manage all the options you already have, disable the ones you don't want to use anymore or for a while.</translation>
+    <translation id="logs_options_manage_description_2">Please note that the options already included with your offer cannot be disabled.</translation>
+    <translation id="logs_options_manage_description_3">If you need to add more option, go to</translation>
+    <translation id="logs_options_manage_add_options"> Add options</translation>
+
+    <translation id="logs_options_option_type">Option type</translation>
+    <translation id="logs_options_details">Details</translation>
+    <translation id="logs_options_linked_items">Linked items</translation>
+    <translation id="logs_options_status">Status</translation>
+
+    <translation id="logs_options_action_overview">Show overview</translation>
+    <translation id="logs_options_action_disable">Disable</translation>
+    <translation id="logs_options_action_enable">Enable</translation>
+
+    <translation id="logs_options_enabled">Enabled</translation>
+    <translation id="logs_options_disabled">Disabled</translation>
+    <translation id="logs_options_manage_alias">Alias</translation>
+    <translation id="logs_options_manage_dashboard">Dashboard</translation>
+    <translation id="logs_options_manage_index">Index</translation>
+    <translation id="logs_options_manage_stream">Stream</translation>
+    <translation id="logs_options_manage_role">Role</translation>
+    <translation id="logs_options_manage_input">Input</translation>
+
+    <translation id="logs_options_overview_title">Option overview</translation>
+    <translation id="logs_options_modal_reactivate_title">Enable the option</translation>
+    <translation id="logs_options_modal_reactivate_description">You need to contact the support teams to enable the option '{{optionType}}'.</translation>
+
+    <translation id="logs_options_manage_terminate_title">Disable the option</translation>
+    <translation id="logs_options_manage_terminate_question">You are going to disable '{{optionType}}'. Please note that you will need to contact the support teams to enable it.</translation>
+
+   <translation id="logs_options_delete_error">An error occurred while disabling option '{{optionType}}': {{message}}</translation>
+   <translation id="logs_options_delete_success">Successfully disabled the option: {{optionType}}</translation>
+   <translation id="logs_options_delete_success">Successfully disabled the option: {{optionType}}</translation>
+
+   <translation id="logs_options_description_manage">If you need to manage your current options, go to</translation>
+   <translation id="logs_options_manage_link"> Manage options.</translation>
 </translations>

@@ -37,15 +37,15 @@
     <translation id="logs_streams_notification_title">Notification</translation>
     <translation id="logs_streams_notification_detail">Notify me by e-mail when an archive is available</translation>
 
-    <translation id="logs_stream_create_success">The data stream {{streamName}} has been successfully created.</translation>
-    <translation id="logs_stream_update_success">The data stream {{streamName}} has been successfully updated.</translation>
-    <translation id="logs_stream_delete_success">The data stream {{streamName}} has been successfully deleted.</translation>
+    <translation id="logs_stream_create_success">The data stream '{{streamName}}' has been successfully created.</translation>
+    <translation id="logs_stream_update_success">The data stream '{{streamName}}' has been successfully updated.</translation>
+    <translation id="logs_stream_delete_success">The data stream '{{streamName}}' has been successfully deleted.</translation>
     <translation id="logs_streams_copy_token_success">The token value has been successfully copied to your clipboard, use CTRL+V to paste it in your screen.</translation>
 
     <translation id="logs_streams_get_graylog_url_error">Graylog url not found for stream {{stream}}.</translation>
-    <translation id="logs_stream_delete_error">An error has occurred while deleting a data stream {{streamName}}: {{message}}</translation>
-    <translation id="logs_stream_update_error">An error has occurred while updating a data stream {{streamName}}: {{message}}</translation>
-    <translation id="logs_stream_create_error">An error has occurred while creating a data stream {{streamName}}: {{message}}</translation>
+    <translation id="logs_stream_delete_error">An error has occurred while deleting data stream '{{streamName}}': {{message}}</translation>
+    <translation id="logs_stream_update_error">An error has occurred while updating data stream '{{streamName}}': {{message}}</translation>
+    <translation id="logs_stream_create_error">An error has occurred while creating data stream '{{streamName}}': {{message}}</translation>
     <translation id="logs_stream_get_error">An error has occurred while retrieving data stream: {{message}}</translation>
     <translation id="logs_streams_get_error">An error has occurred while retrieving data streams: {{message}}</translation>
     <translation id="logs_streams_quota_get_error">An error has occurred while retrieving data stream quota: {{message}}</translation>
