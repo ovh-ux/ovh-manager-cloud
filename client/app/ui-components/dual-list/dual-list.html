@@ -29,7 +29,7 @@
                     data-ng-click="$ctrl.addAll()">{{$ctrl.moveAllLabel}}</a>
             </div>
             <ul class="oui-dual-list__content_list" data-ng-style="$ctrl.listHeight">
-                <li data-ng-repeat="source in $ctrl.sourceList | filter:$ctrl.sourceFilterKey"
+                <li data-ng-repeat="source in $ctrl.sourceList | dualListFilter:$ctrl.sourceFilterKey:$ctrl.property"
                     data-ng-click="$ctrl.add($index, source)"
                     class="oui-dual-list__content_list_item">
                     <span data-ng-if="!$ctrl.isLoading(source)" class="oui-dual-list__content_list_item_icon">
