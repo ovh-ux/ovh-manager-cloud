@@ -1,8 +1,9 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsDetailService, ovhDocUrl, SidebarMenu, serviceDetails, LogsHelperService) {
+    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, serviceDetails, LogsHelperService) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
+        this.LogsConstants = LogsConstants;
         this.LogsDetailService = LogsDetailService;
         this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
@@ -41,7 +42,7 @@ class LogsDashboardHeaderCtrl {
         this.guides.title = this.$translate.instant("logs_guides");
         this.guides.list = [{
             name: this.$translate.instant("logs_guides_title"),
-            url: this.ovhDocUrl.getDocUrl("logs-data-platform")
+            url: this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME)
         }];
         this.guides.footer = this.$translate.instant("logs_guides_footer");
     }
