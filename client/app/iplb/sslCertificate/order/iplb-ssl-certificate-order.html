@@ -1,8 +1,7 @@
 <div class="cui-page__content">
-    <cui-back-link data-state="network.iplb.detail.ssl-certificate"
-                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
-                   data-text="'iplb_back_home' | translate"></cui-back-link>
-    <h2 class="oui-header_2" data-translate="iplb_ssl_add_title"></h2>
+    <oui-back-button data-title="{{ ::'iplb_ssl_add_title' | translate }}"
+                     data-on-click="ctrl.$state.go('network.iplb.detail.ssl-certificate')">
+    </oui-back-button>
 
     <form novalidate name="ctrl.form">
         <div class="oui-field">
@@ -18,24 +17,16 @@
             </div>
         </div>
 
-        <div class="oui-field"
-            data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.fqdn.$invalid }">
-            <label for="fqdn" class="oui-label" data-translate="iplb_ssl_order_fqdn"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_4">
-                    <input
-                        type="text"
-                        id="fqdn"
-                        name="fqdn"
-                        class="oui-input"
-                        data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.fqdn.$invalid }"
-                        data-ng-model="ctrl.newSsl.fqdn"
-                        required />
-                </div>
-                <div class="oui-field-helper"
-                    data-translate="iplb_ssl_order_fqdn_tip"></div>
-            </div>
-        </div>
+        <oui-field label="{{ ::'iplb_ssl_order_fqdn' | translate }}" help-text="{{ ::'iplb_ssl_order_fqdn_tip' | translate }}" size="l">
+            <input
+                type="text"
+                id="fqdn"
+                name="fqdn"
+                class="oui-input"
+                data-ng-class="{ 'oui-input_error': ctrl.form.$submitted && ctrl.form.fqdn.$invalid }"
+                data-ng-model="ctrl.newSsl.fqdn"
+                required />
+        </oui-field>
 
         <div data-ng-if="ctrl.newSsl.type === 'iplb_ssl_ev_single'">
             <h3 class="oui-header_3" data-translate="iplb_ssl_order_contact"></h3>

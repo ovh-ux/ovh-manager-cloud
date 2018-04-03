@@ -6,56 +6,57 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Página Inicial</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Fluxo de dados</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Painel de controlo</translation>
-   <translation id="logs_tab_inputs" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Ferramentas de recolha de dados</translation>
    <translation id="logs_tab_indices" qtlid="426729">Index</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_tab_roles" qtlid="427886">Rôles</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Funções</translation>
 
-   <translation id="logs_loading_error_configuration" qtlid="469153">Erreur lors du chargement de la section « Configuration ».</translation>
+   <translation id="logs_loading_error_configuration" qtlid="469153">Erro ao no acesso à secção «Configuração.»</translation>
 
-   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
-   <translation id="logs_home_contact_temp_2" qtlid="469179">Changer le contact actuel : {{ contact }}</translation>
-   <translation id="logs_home_contact_temp_3" qtlid="469192">La modification de l'adresse de contact de ce service entraînera l'envoi des notifications vers le nouveau destinataire.</translation>
-   <translation id="logs_home_contact_temp_4" qtlid="469205">Sélectionnez l'un de vos contacts. Si aucun contact n'est choisi, il sera associé par défaut à votre identité principale.</translation>
-   <translation id="logs_home_contact_temp_5" qtlid="421347">Ajouter un nouveau contact</translation>
+   <translation id="logs_home_contact_temp_1" qtlid="469166">A Logs Data Platform é uma interface de recolha, idexação e análise de registos. Independentemente da sua proveniência a plataforma permite escolher diferentes tipos de de entrada em função do protocolo, do nível de segurança e do formato necessários. A análise e o processamento dos dados pode ser efetuada através de diferentes API e interfaces.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Alterar contacto: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">A alteração do endereço de contacto do serviço implica o envio de notificações para um novo destinatário.</translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Selecione um dos contactos. Se não escolher um contacto, o serviço será associado automaticamente ao identificador principal.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Adicionar um novo contacto</translation>
 
-   <translation id="logs_home_token_temp_1" qtlid="421386">Jetons de lecture</translation>
-   <translation id="logs_home_token_temp_2" qtlid="469218">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
-   <translation id="logs_home_token_temp_3" qtlid="469231">Ajouter un jeton</translation>
+   <translation id="logs_home_token_temp_1" qtlid="421386">Tokens de leitura</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">Se quiser permitir o acesso aos seus logs (registos) a partir de aplicações externas ou automatizar algumas operações nesta base de dados, terá de conceder acesso à API, a forma mais segura para gerir o acesso e usar os tokens de autenticação Graças a esta funcionalidade, já não é preciso inserir os dados de acesso nos ficheiros de configuração.</translation>
+   <translation id="logs_home_token_temp_3" qtlid="469231">Adicionar um token</translation>
 
    <translation id="logs_home_password_temp_1" qtlid="80394">Alterar palavra-passe</translation>
    <translation id="logs_home_password_temp_2" qtlid="17177">Nova palavra-passe</translation>
    <translation id="logs_home_password_temp_3" qtlid="300539">Confirmar palavra-passe</translation>
 
-   <translation id="logs_home_password_temp_4" qtlid="469244">Définir le mot de passe</translation>
-   <translation id="logs_home_password_temp_5" qtlid="469257">Configurer le mot de passe pour le contact <strong>{{ contact }}.</strong></translation>
+   <translation id="logs_home_password_temp_4" qtlid="469244">Definir palavra-passe</translation>
+   <translation id="logs_home_password_temp_5" qtlid="469257">Configurar palavra-opasse para o contacto <strong>{{ contact }}.</strong></translation>
 
-   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et sur Elasticsearch).</translation>
+   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Estes tokens permitem aceder à API (escrever no Index, ler no Graylog no Elastisearch).</translation>
 
-   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Com a atiavção de &#13;
+Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
 
-   <translation id="logs_home_messages_temp_1" qtlid="469296">Formats de messages et ports disponibles</translation>
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Formatos de mensagens e portas disponíveis</translation>
 
-   <translation id="logs_options_temp_1" qtlid="424402">Ajouter des options</translation>
-   <translation id="logs_options_temp_2" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
-   <translation id="logs_options_temp_3" qtlid="469322">Options actuelles</translation>
-   <translation id="logs_options_type_temp_1" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_options_temp_1" qtlid="424402">Adicionar opções</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">Se contratar fluxos de dados, alias e painéis de gestão, irá receber grátis funções de utilizador (e.g. 5 fluxos = % funções).</translation>
+   <translation id="logs_options_temp_3" qtlid="469322">Opções atuais</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Ferramentas de recolha de dados</translation>
    <translation id="logs_options_type_temp_2" qtlid="45376">Painel</translation>
    <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
-   <translation id="logs_options_type_temp_4" qtlid="422452">Flux de données</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Fluxo de dados</translation>
    <translation id="logs_options_type_temp_5" qtlid="469335">Pack Kibana</translation>
    <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index de {{ size }}</translation>
-   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instance(s)</translation>
-   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragment(s)</translation>
+   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instância(s)</translation>
+   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragmento(s)</translation>
    <translation id="logs_options_details_temp_3" qtlid="469387">Pack de {{ count }}</translation>
-   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias et {{count}} index de {{ size }}</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias e {{count}} index de {{ size }}</translation>
 
-   <translation id="logs_offer_temp_1" qtlid="469413">Sélectionnez votre offre</translation>
-   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} flux</translation>
-   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} tableaux</translation>
-   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} outil(s) de collecte</translation>
+   <translation id="logs_offer_temp_1" qtlid="469413">Selecione a oferta</translation>
+   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} fluxo(s)</translation>
+   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} painéis de gestão</translation>
+   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} ferramenta(s) recolha</translation>
 
    <translation id="logs_streams_temp_1" qtlid="469465">Les flux vous permettent d'aiguiller en temps réel vos logs vers une catégorie précise dès leur arrivée sur Logs Data Platform. Si vous disposez de plusieurs flux, vous pourrez aussi : classer facilement les messages en fonction de leur source, de l'application ou du serveur de provenance et créer des niveaux de confidentialité selon les flux, ce qui vous permettra de distribuer vos accès uniquement aux personnes autorisées. Les jetons ici sont des jetons d'écriture qui vous permettent d'acheminer les logs sur le bon flux. De manière générale, posséder différents flux facilite grandement la recherche de vos logs. Plus besoin d'exclure les résultats d'un autre système ou d'une autre application.</translation>
 
@@ -290,7 +291,7 @@
    <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Apelido</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Descrição </translation>
-   <translation id="logs_role_permissions_temp_5" qtlid="422452">Flux de données</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Fluxo de dados</translation>
    <translation id="logs_role_permissions_temp_6" qtlid="225075">Painel de controlo</translation>
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>

@@ -111,35 +111,50 @@ angular.module("managerApp", [
             `);
     })
     .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiPaginationConfiguration) => {
+          ouiDatagridConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
         "use strict";
         $translatePartialLoader.addPart("components");
 
         const off = $rootScope.$on("$stateChangeSuccess", () => {
-            ouiTableConfiguration.words = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                page: $translate.instant("common_pagination_page"),
-                of: $translate.instant("common_pagination_of"),
-                results: $translate.instant("common_pagination_results"),
-                next: $translate.instant("common_pagination_next"),
-                previous: $translate.instant("common_pagination_previous")
-            };
+            $translate.refresh().then(() => {
+                ouiTableConfiguration.words = {
+                    resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
+                    page: $translate.instant("common_pagination_page"),
+                    of: $translate.instant("common_pagination_of"),
+                    results: $translate.instant("common_pagination_results"),
+                    next: $translate.instant("common_pagination_next"),
+                    previous: $translate.instant("common_pagination_previous")
+                };
 
-            ouiDatagridConfiguration.translations = {
-                emptyPlaceholder: $translate.instant("common_datagrid_nodata")
-            };
+                ouiDatagridConfiguration.translations = {
+                    emptyPlaceholder: $translate.instant("common_datagrid_nodata")
+                };
 
-            ouiPaginationConfiguration.translations = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                ofNResults: $translate.instant("common_pagination_ofnresults")
-                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
-                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
-                    .replace("CURRENT_PAGE", "{{currentPage}}")
-                    .replace("PAGE_COUNT", "{{pageCount}}"),
-                previousPage: $translate.instant("common_pagination_previous"),
-                nextPage: $translate.instant("common_pagination_next")
-            };
+                ouiPaginationConfiguration.translations = {
+                    resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
+                    ofNResults: $translate.instant("common_pagination_ofnresults")
+                        .replace("TOTAL_ITEMS", "{{totalItems}}"),
+                    currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
+                        .replace("CURRENT_PAGE", "{{currentPage}}")
+                        .replace("PAGE_COUNT", "{{pageCount}}"),
+                    previousPage: $translate.instant("common_pagination_previous"),
+                    nextPage: $translate.instant("common_pagination_next")
+                };
 
-            off();
+                ouiFieldConfiguration.translations = {
+                    errors: {
+                        required: $translate.instant("common_field_error_required"),
+                        number: $translate.instant("common_field_error_number"),
+                        email: $translate.instant("common_field_error_email"),
+                        min: $translate.instant("common_field_error_min", { min: "{{min}}" }),
+                        max: $translate.instant("common_field_error_max", { max: "{{max}}" }),
+                        minlength: $translate.instant("common_field_error_minlength", { minlength: "{{minlength}}" }),
+                        maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
+                        pattern: $translate.instant("common_field_error_pattern")
+                    }
+                };
+
+                off();
+            });
         });
     });
