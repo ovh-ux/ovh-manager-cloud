@@ -2,13 +2,6 @@
  * Special rules for redirections
  */
 angular.module("managerApp").run(($transitions, $state, $stateParams) => {
-    $transitions.onStart({}, transition => {
-        const to = transition.to();
-        const params = transition.params();
-        if (to.redirectTo) {
-            $state.go(to.redirectTo, params);
-        }
-    });
 
     $transitions.onSuccess({}, transition => {
         const state = transition.to();
