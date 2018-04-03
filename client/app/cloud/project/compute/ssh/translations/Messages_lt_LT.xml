@@ -9,7 +9,7 @@
    <translation id="cpc_ssh_error" qtlid="248808">Atsiprašome, nepavyko atkurti jūsų SSH raktų sąrašo!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">Kominikacijai tarp OVH serverių naudojamas saugus duomenų šifravimo protokolas (SSH).</translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Kiekviena OS turi savo SSH klientus. Daugiau informacijos <a href="{{ createUrl }}" target="_blank">SSH raktų kūrimo gide<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Kiekviena OS turi savo SSH klientus. Daugiau informacijos <a class="oui-link" href="{{ createUrl }}" target="_blank">SSH raktų kūrimo gide<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="cpc_ssh_key_explain_3" qtlid="366567">Jūs taip pat galite <a href="{{ addUrl }}" target="_blank">konfigūruoti papildomus SSH raktus<i class="fa fa-external-link" aria-hidden="true"></i></a> savo virtualioje mašinoje, tai leidžia suteikti prieigą kitiems asmenims ar <a href="{{ changeUrl }}" target="_blank">pakeisti SSH raktą praradimo atveju<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Pridėti raktą</translation>

@@ -6,89 +6,89 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Home</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Data flow</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Dashboards</translation>
-   <translation id="logs_tab_inputs" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Data-gathering tools</translation>
    <translation id="logs_tab_indices" qtlid="426729">Index</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_tab_roles" qtlid="427886">Rôles</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Roles</translation>
 
-   <translation id="logs_loading_error_configuration" qtlid="469153">Erreur lors du chargement de la section « Configuration ».</translation>
+   <translation id="logs_loading_error_configuration" qtlid="469153">Error when loading "Configuration" section.</translation>
 
-   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
-   <translation id="logs_home_contact_temp_2" qtlid="469179">Changer le contact actuel : {{ contact }}</translation>
-   <translation id="logs_home_contact_temp_3" qtlid="469192">La modification de l'adresse de contact de ce service entraînera l'envoi des notifications vers le nouveau destinataire.</translation>
-   <translation id="logs_home_contact_temp_4" qtlid="469205">Sélectionnez l'un de vos contacts. Si aucun contact n'est choisi, il sera associé par défaut à votre identité principale.</translation>
-   <translation id="logs_home_contact_temp_5" qtlid="421347">Ajouter un nouveau contact</translation>
+   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data Platform is an interface for gathering, indexing and analysing logs. Wherever these logs come from, the platform lets you choose between different entry points depending on the protocol, the security level and the format required. The different APIs and interfaces can be used to analyse and use the data.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Change current contact person: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">Changing the contact address for this service will result in notifications being sent to the new recipient.</translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Select one of your contacts. If no contact is selected, it will be associated with your main identity by default.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Add a new contact</translation>
 
-   <translation id="logs_home_token_temp_1" qtlid="421386">Jetons de lecture</translation>
-   <translation id="logs_home_token_temp_2" qtlid="469218">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
-   <translation id="logs_home_token_temp_3" qtlid="469231">Ajouter un jeton</translation>
+   <translation id="logs_home_token_temp_1" qtlid="421386">Read tokens</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">If you want to be able to access your logs from external applications or automate certain tasks on this basis, you have to grant those applications access to your APIs. The most secure way of managing these access rights is by using security tokens. This feature means you will no longer have to enter your username and password in your configuration files.</translation>
+   <translation id="logs_home_token_temp_3" qtlid="469231">Add a token</translation>
 
    <translation id="logs_home_password_temp_1" qtlid="80394">Change password</translation>
    <translation id="logs_home_password_temp_2" qtlid="17177">New password</translation>
    <translation id="logs_home_password_temp_3" qtlid="300539">Confirm password </translation>
 
-   <translation id="logs_home_password_temp_4" qtlid="469244">Définir le mot de passe</translation>
-   <translation id="logs_home_password_temp_5" qtlid="469257">Configurer le mot de passe pour le contact <strong>{{ contact }}.</strong></translation>
+   <translation id="logs_home_password_temp_4" qtlid="469244">Define password</translation>
+   <translation id="logs_home_password_temp_5" qtlid="469257">Configure password for contact <strong>{{ contact }}.</strong></translation>
 
-   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et sur Elasticsearch).</translation>
+   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">These tokens will allow you to access the APIs (write in the indices, read Graylog and use Elasticsearch).</translation>
 
-   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">You have access to Elasticsearch because you have obtained an index or an alias.</translation>
 
-   <translation id="logs_home_messages_temp_1" qtlid="469296">Formats de messages et ports disponibles</translation>
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Message formats and ports available</translation>
 
-   <translation id="logs_options_temp_1" qtlid="424402">Ajouter des options</translation>
-   <translation id="logs_options_temp_2" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
-   <translation id="logs_options_temp_3" qtlid="469322">Options actuelles</translation>
-   <translation id="logs_options_type_temp_1" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_options_temp_1" qtlid="424402">Add options</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">For each data flow, alias and dashboard purchased, you will receive a free user role (e.g. 5 flows purchased = 5 roles).</translation>
+   <translation id="logs_options_temp_3" qtlid="469322">Current options</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Data-gathering tools</translation>
    <translation id="logs_options_type_temp_2" qtlid="45376">Dashboard</translation>
-   <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
-   <translation id="logs_options_type_temp_4" qtlid="422452">Flux de données</translation>
-   <translation id="logs_options_type_temp_5" qtlid="469335">Pack Kibana</translation>
-   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index de {{ size }}</translation>
+   <translation id="logs_options_type_temp_3" qtlid="421919">Elasticsearch alias</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Data flow</translation>
+   <translation id="logs_options_type_temp_5" qtlid="469335">Kibana Pack</translation>
+   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index of {{ size }}</translation>
    <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instance(s)</translation>
    <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragment(s)</translation>
-   <translation id="logs_options_details_temp_3" qtlid="469387">Pack de {{ count }}</translation>
-   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias et {{count}} index de {{ size }}</translation>
+   <translation id="logs_options_details_temp_3" qtlid="469387">Pack of {{ count }}</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias and {{count}} index of {{ size }}</translation>
 
-   <translation id="logs_offer_temp_1" qtlid="469413">Sélectionnez votre offre</translation>
-   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} flux</translation>
-   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} tableaux</translation>
-   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} outil(s) de collecte</translation>
+   <translation id="logs_offer_temp_1" qtlid="469413">Select your package</translation>
+   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} flows</translation>
+   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} dashboards</translation>
+   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} data-gathering tool(s)</translation>
 
-   <translation id="logs_streams_temp_1" qtlid="469465">Les flux vous permettent d'aiguiller en temps réel vos logs vers une catégorie précise dès leur arrivée sur Logs Data Platform. Si vous disposez de plusieurs flux, vous pourrez aussi : classer facilement les messages en fonction de leur source, de l'application ou du serveur de provenance et créer des niveaux de confidentialité selon les flux, ce qui vous permettra de distribuer vos accès uniquement aux personnes autorisées. Les jetons ici sont des jetons d'écriture qui vous permettent d'acheminer les logs sur le bon flux. De manière générale, posséder différents flux facilite grandement la recherche de vos logs. Plus besoin d'exclure les résultats d'un autre système ou d'une autre application.</translation>
+   <translation id="logs_streams_temp_1" qtlid="469465">Flows allow you to classify your logs by precise category and in realtime, as soon as they arrive on the Logs Data Platform. If you have several flows, you can also: store messages easily based on their source (the application or server they originated from) and create different degrees of confidentiality for different flows, which means you can grant access to authorised people only. Here, the tokens are write token, which can be used to direct logs to the appropriate flow. Generally speaking, having multiple flows makes it a lot easier to search your logs: you no longer need to exclude the results from another system or another application.</translation>
 
-   <translation id="logs_streams_add_temp_1" qtlid="426170">Ajouter un flux de données</translation>
+   <translation id="logs_streams_add_temp_1" qtlid="426170">Add data flow</translation>
    <translation id="logs_streams_add_temp_1" qtlid="3818">Name</translation>
    <translation id="logs_streams_add_temp_2" qtlid="9238">Description</translation>
-   <translation id="logs_streams_add_temp_3" qtlid="469478">Choisir l'option attachée</translation>
-   <translation id="logs_streams_add_temp_4" qtlid="426807">L'offre principale</translation>
-   <translation id="logs_streams_add_temp_5" qtlid="426677">Activer la diffusion WebSocket</translation>
+   <translation id="logs_streams_add_temp_3" qtlid="469478">Chose option attached</translation>
+   <translation id="logs_streams_add_temp_4" qtlid="426807">Main package</translation>
+   <translation id="logs_streams_add_temp_5" qtlid="426677">Activate WebSocket broadcasting</translation>
    <translation id="logs_streams_add_temp_6" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
-   <translation id="logs_streams_add_temp_7" qtlid="426469">Activer le stockage longue durée</translation>
-   <translation id="logs_streams_add_temp_8" qtlid="469504">Archivez vos logs de façon sûre pour des années.</translation>
-   <translation id="logs_streams_add_temp_9" qtlid="426495">Algorithme de compression</translation>
-   <translation id="logs_streams_add_temp_10" qtlid="426560">Durée de rétention des archives</translation>
-   <translation id="logs_streams_add_temp_11" qtlid="469517">{{ count }} an(s)</translation>
+   <translation id="logs_streams_add_temp_7" qtlid="426469">Activate long-term storage</translation>
+   <translation id="logs_streams_add_temp_8" qtlid="469504">Archive your logs securely for years.</translation>
+   <translation id="logs_streams_add_temp_9" qtlid="426495">Compression algorithm</translation>
+   <translation id="logs_streams_add_temp_10" qtlid="426560">Archive conservation period</translation>
+   <translation id="logs_streams_add_temp_11" qtlid="469517">{{ count }} year(s)</translation>
    <translation id="logs_streams_add_temp_12" qtlid="32386">Notification</translation>
-   <translation id="logs_streams_add_temp_13" qtlid="469530">Me notifier par e-mail lorsqu'une archive est disponible.</translation>
+   <translation id="logs_streams_add_temp_13" qtlid="469530">Notify me by email when an archive becomes available.</translation>
 
    <translation id="logs_alerts_temp_1" qtlid="72797">Alerts</translation>
-   <translation id="logs_alerts_temp_2" qtlid="469543">Gestion de vos alertes pour le flux {{ name }}</translation>
-   <translation id="logs_alerts_temp_3" qtlid="469556">Avec les conditions d'alerte, plus besoin de surveiller vos logs, la plateforme le fait pour vous. De nombreux cas d'usage sont susceptibles de lever une alerte et de vous adresser celle-ci par e-mail : une absence de messages en provenance d'un logiciel pour une durée inhabituelle, lorsque le nombre de tâches réalisées est anormalement bas, lorsque le trafic réseau de votre site web est très élevé ou quand certains mots-clés spécifiques apparaissent dans votre flux.</translation>
-   <translation id="logs_alerts_temp_4" qtlid="469569">Créer une alerte</translation>
+   <translation id="logs_alerts_temp_2" qtlid="469543">Managing your alerts for the flow {{ name }}</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Once you have set up your alerts, you no longer need to monitor your logs - the platoform does it for you. Numerous use cases are liable to trigger an alert, which will then be sent to you by email: a lack of messages from a specific piece of software for an unusually long time, if the number of tasks carried out is abnomrnmally low, if traffic on your website is very high or if certain  keywords in particular appear in your flow.</translation>
+   <translation id="logs_alerts_temp_4" qtlid="469569">Create an alert</translation>
    <translation id="logs_alerts_temp_5" qtlid="425806">Condition</translation>
-   <translation id="logs_alerts_temp_6" qtlid="469582">Période de grâce</translation>
-   <translation id="logs_alerts_temp_7" qtlid="469595">Répéter les notifications</translation>
+   <translation id="logs_alerts_temp_6" qtlid="469582">Cooling-off period</translation>
+   <translation id="logs_alerts_temp_7" qtlid="469595">Repeat notifications</translation>
 
-   <translation id="logs_alert_count_temp_1" qtlid="469608">Créer une condition de type compteur</translation>
-   <translation id="logs_alert_count_temp_2" qtlid="469621">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée.</translation>
+   <translation id="logs_alert_count_temp_1" qtlid="469608">Create a counter condition</translation>
+   <translation id="logs_alert_count_temp_2" qtlid="469621">This condition is triggered when the number of messages is higher or lower than the defined threshold for a given period.</translation>
    <translation id="logs_alert_count_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_count_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
-   <translation id="logs_alert_count_temp_5" qtlid="469647">Période de temps (minutes)</translation>
-   <translation id="logs_alert_count_temp_6" qtlid="469660">Évaluer la condition pour tous les messages reçus dans le nombre de minutes donné.</translation>
-   <translation id="logs_alert_count_temp_7" qtlid="469673">Type de seuil</translation>
+   <translation id="logs_alert_count_temp_4" qtlid="469634">Title of alert condition.</translation>
+   <translation id="logs_alert_count_temp_5" qtlid="469647">Period of time (minutes)</translation>
+   <translation id="logs_alert_count_temp_6" qtlid="469660">Evaluate the condition for all messages received within the given number of minutes.</translation>
+   <translation id="logs_alert_count_temp_7" qtlid="469673">Threshold type</translation>
    <translation id="logs_alert_count_temp_8" qtlid="469686">Sélectionner la condition qui active l'alerte : quand il y a plus ou moins de messages que le seuil.</translation>
    <translation id="logs_alert_count_temp_9" qtlid="469699">Seuil</translation>
    <translation id="logs_alert_count_temp_10" qtlid="469712">La valeur qui active l'alerte si dépassée.</translation>
@@ -103,12 +103,12 @@
    <translation id="logs_alert_numerical_temp_1" qtlid="469790">Créer une condition de type valeur numérique</translation>
    <translation id="logs_alert_numerical_temp_2" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
    <translation id="logs_alert_numerical_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
+   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Title of alert condition.</translation>
    <translation id="logs_alert_numerical_temp_5" qtlid="469816">Champ</translation>
    <translation id="logs_alert_numerical_temp_6" qtlid="469829">Le nom du champ à vérifier.</translation>
-   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Période de temps (minutes)</translation>
+   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Period of time (minutes)</translation>
    <translation id="logs_alert_numerical_temp_8" qtlid="469842">Évaluer la condition à déclencher pour tous les messages reçus dans le nombre de minutes donné.</translation>
-   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Type de seuil</translation>
+   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Threshold type</translation>
    <translation id="logs_alert_numerical_temp_10" qtlid="469855">Sélectionner la condition qui active l'alerte : quand la valeur est plus haute ou moins haute que le seuil.</translation>
    <translation id="logs_alert_numerical_temp_11" qtlid="469868">Type d'agrégation</translation>
    <translation id="logs_alert_numerical_temp_12" qtlid="469881">Sélectionner la condition qui active l'alerte : quand la valeur est inférieure ou supérieure au seuil.</translation>
@@ -122,7 +122,7 @@
    <translation id="logs_alert_text_temp_1" qtlid="469894">Créer une condition de type contenu textuel</translation>
    <translation id="logs_alert_text_temp_2" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
    <translation id="logs_alert_text_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_text_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
+   <translation id="logs_alert_text_temp_4" qtlid="469634">Title of alert condition.</translation>
    <translation id="logs_alert_text_temp_5" qtlid="469816">Champ</translation>
    <translation id="logs_alert_text_temp_6" qtlid="469829">Le nom du champ à vérifier.</translation>
    <translation id="logs_alert_text_temp_7" qtlid="47548">Value</translation>
@@ -191,7 +191,7 @@
    <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Logiciel</translation>
    <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Port TCP à ouvrir</translation>
    <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Lier à un flux de données</translation>
-   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Chose option attached</translation>
    <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Instance unique</translation>
    <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
 
@@ -220,13 +220,13 @@
    <translation id="logs_index_add_temp_2" qtlid="59267">Suffix</translation>
    <translation id="logs_index_add_temp_3" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
    <translation id="logs_index_add_temp_4" qtlid="9238">Description</translation>
-   <translation id="logs_index_add_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_index_add_temp_5" qtlid="469478">Chose option attached</translation>
    <translation id="logs_index_add_temp_6" qtlid="470440">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
 
    <translation id="logs_index_edit_temp_1" qtlid="470453">Éditer un index</translation>
    <translation id="logs_index_edit_temp_2" qtlid="470466">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
    <translation id="logs_index_edit_temp_3" qtlid="9238">Description</translation>
-   <translation id="logs_index_edit_temp_4" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_index_edit_temp_4" qtlid="469478">Chose option attached</translation>
    <translation id="logs_index_edit_temp_5" qtlid="32386">Notification</translation>
    <translation id="logs_index_edit_temp_6" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -239,7 +239,7 @@
    <translation id="logs_alias_add_temp_2" qtlid="59267">Suffix</translation>
    <translation id="logs_alias_add_temp_3" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
    <translation id="logs_alias_add_temp_4" qtlid="9238">Description</translation>
-   <translation id="logs_alias_add_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_alias_add_temp_5" qtlid="469478">Chose option attached</translation>
    <translation id="logs_alias_add_temp_6" qtlid="32386">Notification</translation>
    <translation id="logs_alias_add_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -247,7 +247,7 @@
    <translation id="logs_alias_edit_temp_2" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong>.</translation>
    <translation id="logs_alias_edit_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_alias_edit_temp_4" qtlid="9238">Description</translation>
-   <translation id="logs_alias_edit_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_alias_edit_temp_5" qtlid="469478">Chose option attached</translation>
    <translation id="logs_alias_edit_temp_6" qtlid="32386">Notification</translation>
    <translation id="logs_alias_edit_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -290,7 +290,7 @@
    <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Description</translation>
-   <translation id="logs_role_permissions_temp_5" qtlid="422452">Flux de données</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Data flow</translation>
    <translation id="logs_role_permissions_temp_6" qtlid="225075">Dashboards</translation>
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>

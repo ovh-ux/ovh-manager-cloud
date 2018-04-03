@@ -27,7 +27,7 @@
    <translation id="storage_gateway_username" qtlid="367579">Username: </translation>
    <translation id="storage_gateway_password" qtlid="367592">Password (the concatenation of the following fields): </translation>
    <translation id="storage_availability_unsealing" qtlid="367605">Available in: {{delay}}</translation>
-   <translation id="storage_availability_sealed" qtlid="369152">Unfreeze</translation>
+   <translation id="storage_availability_sealed" qtlid="369152">Thaw</translation>
    <translation id="storage_file_download" qtlid="39286">Download</translation>
    <translation id="storage_availability_unsealed" qtlid="99920">Available</translation>
    <translation id="storage_file_state_sealed" qtlid="367631">Your file is not available to download immediately. Please click to begin the unlocking process. </translation>

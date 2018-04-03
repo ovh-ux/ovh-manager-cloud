@@ -6,22 +6,22 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data platforma</translation>
    <translation id="logs_tab_home" qtlid="27643">Pradžia</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Skydai</translation>
-   <translation id="logs_tab_inputs" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Rinkimo įrankiai</translation>
    <translation id="logs_tab_indices" qtlid="426729">Index</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_tab_roles" qtlid="427886">Rôles</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Vaidmenys</translation>
 
-   <translation id="logs_loading_error_configuration" qtlid="469153">Erreur lors du chargement de la section « Configuration ».</translation>
+   <translation id="logs_loading_error_configuration" qtlid="469153">Klaida įkeliant skiltį Configuration.</translation>
 
-   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
-   <translation id="logs_home_contact_temp_2" qtlid="469179">Changer le contact actuel : {{ contact }}</translation>
-   <translation id="logs_home_contact_temp_3" qtlid="469192">La modification de l'adresse de contact de ce service entraînera l'envoi des notifications vers le nouveau destinataire.</translation>
-   <translation id="logs_home_contact_temp_4" qtlid="469205">Sélectionnez l'un de vos contacts. Si aucun contact n'est choisi, il sera associé par défaut à votre identité principale.</translation>
-   <translation id="logs_home_contact_temp_5" qtlid="421347">Ajouter un nouveau contact</translation>
+   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform - tai sisteminių įrašų rinkimo, žymėjimo ir analizės sąsaja. Nepriklausomai nuo kilmės, platforma jums leidžia pasirinkti įvairius prieigos taškus atsižvelgiant į būtiną protokolą, saugumo lygį ir formatą. Duomenys gali būti analizuojami ir naudojami įvairiose API ir sąsajose.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Keisti dabartinį kontaktą: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">Pakeitus šios paslaugos kontaktinį adresą, pranešimai bus siunčiami naujam gavėjui. </translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Pasirinkite vieną iš kontaktų. Jeigu nėra galimybės pasirinkti, tuomet bus susieta su jūsų pagrindiniu kontaktu.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Pridėti naują kontaką</translation>
 
-   <translation id="logs_home_token_temp_1" qtlid="421386">Jetons de lecture</translation>
+   <translation id="logs_home_token_temp_1" qtlid="421386">Skaitymo tokenai</translation>
    <translation id="logs_home_token_temp_2" qtlid="469218">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
    <translation id="logs_home_token_temp_3" qtlid="469231">Ajouter un jeton</translation>
 
@@ -41,10 +41,10 @@
    <translation id="logs_options_temp_1" qtlid="424402">Ajouter des options</translation>
    <translation id="logs_options_temp_2" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
    <translation id="logs_options_temp_3" qtlid="469322">Options actuelles</translation>
-   <translation id="logs_options_type_temp_1" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Rinkimo įrankiai</translation>
    <translation id="logs_options_type_temp_2" qtlid="45376">Valdymo skydelis</translation>
    <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
-   <translation id="logs_options_type_temp_4" qtlid="422452">Flux de données</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_options_type_temp_5" qtlid="469335">Pack Kibana</translation>
    <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index de {{ size }}</translation>
    <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instance(s)</translation>
@@ -290,7 +290,7 @@
    <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_role_permissions_temp_5" qtlid="422452">Flux de données</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_role_permissions_temp_6" qtlid="225075">Skydai</translation>
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
