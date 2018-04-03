@@ -501,7 +501,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
@@ -539,6 +539,15 @@
    <translation id="common_pagination_results" qtlid="433410">résultats</translation>
    <translation id="common_pagination_next" qtlid="433423">Page suivante</translation>
    <translation id="common_pagination_previous" qtlid="433436">Page précédente</translation>
+
+   <translation id="common_field_error_required" qtlid="472294">Veuillez compléter ce champ.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Veuillez saisir une valeur numérique valide.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Veuillez saisir une adresse courriel valide.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Veuillez saisir une valeur plus grande ou égale à {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Veuillez saisir une valeur plus petite ou égale à {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Veuillez saisir un minimum de {{minlength}} caractères.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Veuillez saisir un maximum de {{maxlength}} caractères.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>
