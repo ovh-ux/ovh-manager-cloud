@@ -1,4 +1,7 @@
-<section class="container-fluid cui-page__content cui-page__content-flex logs-home">
+<section data-ng-if="ctrl.service.loading" class="container-fluid cui-page__content cui-page__content-flex logs-home">
+    <oui-spinner></oui-spinner>
+</section>
+<section data-ng-if="!ctrl.service.loading" class="container-fluid cui-page__content cui-page__content-flex logs-home">
     <div class="oui-message oui-message_info m-3" role="alert">
         <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
         <p class="oui-message__body font-weight-bold" data-translate="logs_home_info_title"></p>
