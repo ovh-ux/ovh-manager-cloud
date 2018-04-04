@@ -52,7 +52,10 @@ class LogsHomeAccountCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsHomeService.updateDisplayName(this.serviceName, this.accountDetails.data.service.displayName)
-                    .finally(() => this.$uibModalInstance.close())
+                    .finally(() => {
+                        this.ControllerHelper.scrollPageToTop();
+                        this.$uibModalInstance.close();
+                    })
         });
         return this.saving.load();
     }
