@@ -1,10 +1,10 @@
 class LogsOptionsCtrl {
-    constructor ($stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService) {
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
         this.LogsOfferConstant = LogsOfferConstant;
-        this.LogsOfferService = LogsOfferService;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
         this.OrderHelperService = OrderHelperService;
@@ -30,10 +30,10 @@ class LogsOptionsCtrl {
             loaderFunction: () => this.LogsOptionsService.getOptions(this.serviceName)
         });
         this.currentOptions = this.ControllerHelper.request.getArrayLoader({
-            loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMap(this.serviceName)
+            loaderFunction: () => this.LogsOptionsService.getSubscribedOptionsMapGrouped(this.serviceName)
         });
         this.selectedOffer = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsOfferService.getOffer(this.serviceName)
+            loaderFunction: () => this.LogsOptionsService.getOffer(this.serviceName)
         });
     }
 
@@ -95,6 +95,12 @@ class LogsOptionsCtrl {
         this.OrderHelperService.openExpressOrderUrl(
             this.LogsOptionsService.getOrderConfiguration(this.options.data, this.serviceName)
         );
+    }
+
+    goToManage () {
+        this.$state.go("dbaas.logs.detail.options.manage", {
+            serviceName: this.serviceName
+        });
     }
 }
 

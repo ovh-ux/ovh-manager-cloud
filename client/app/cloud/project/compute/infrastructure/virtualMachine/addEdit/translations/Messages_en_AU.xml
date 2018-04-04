@@ -284,10 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Oops, an error occurred while creating your servers!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">You are about to create {{nb}} instances.</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">General usage (Balanced resources)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Optimised computing (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Optimised memory (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Accelerated computing (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Accelerated computing (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Shared resources (Sandbox)</translation>
 </translations>

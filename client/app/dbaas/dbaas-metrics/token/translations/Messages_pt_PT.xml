@@ -6,12 +6,12 @@
 
    <translation id="metrics_table_create_date" qtlid="26419">Data de criação</translation>
    <translation id="metrics_table_expiry_date" qtlid="33010">Data de expiração</translation>
-   <translation id="metrics_table_name" qtlid="3818">Nome</translation>
+   <translation id="metrics_table_name" qtlid="3818">Apelido</translation>
    <translation id="metrics_table_token" qtlid="254115">Token</translation>
    <translation id="metrics_table_state" qtlid="33790">Estado</translation>
    <translation id="metrics_table_action" qtlid="56105">Ação</translation>
 
-   <translation id="metrics_token_state_active" qtlid="55133">Ativo</translation>
+   <translation id="metrics_token_state_active" qtlid="55133">Ativado</translation>
    <translation id="metrics_token_state_inactive" qtlid="105310">Inativo</translation>
 
    <translation id="metrics_token_explain" qtlid="439918">Os tokens protegem o acesso aos dados de séries temporais. Cada token define as permissões e pode incluir labels ou «etiquetas» (par "chave"-"valor"). Estas etiquetas são adicionadas automaticamente como filtro durante o processo de leitura, e associadas a cada dado escrito. Para mais informação <a href="{{ guidesUrl }}" target="_blank">consultez nos guides.</a></translation>

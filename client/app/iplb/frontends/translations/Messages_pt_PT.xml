@@ -9,7 +9,7 @@
    <translation id="iplb_frontend_protocol" qtlid="9046">Protocolo </translation>
    <translation id="iplb_frontend_datacenter" qtlid="30802">Datacenter</translation>
    <translation id="iplb_frontend_default_farm" qtlid="429563">Farm predefinida</translation>
-   <translation id="iplb_frontend_active" qtlid="55133">Ativo</translation>
+   <translation id="iplb_frontend_active" qtlid="55133">Ativado</translation>
    <translation id="iplb_frontend_action" qtlid="56105">Ação</translation>
    <translation id="iplb_frontend_no_frontend" qtlid="438584">Nenhum frontend</translation>
 
@@ -70,7 +70,7 @@
    <translation id="iplb_frontend_delete_success" qtlid="438857">O Frontend foi eliminado corretamente</translation>
 
    <translation id="iplb_frontend_preview_title" qtlid="438870">Pré-visualização do Frontend</translation>
-   <translation id="iplb_frontend_preview_name" qtlid="3818">Nome</translation>
+   <translation id="iplb_frontend_preview_name" qtlid="3818">Apelido</translation>
    <translation id="iplb_frontend_preview_protocol" qtlid="19711">Protocolo</translation>
    <translation id="iplb_frontend_preview_port" qtlid="9034">Porta</translation>
    <translation id="iplb_frontend_preview_datacenter" qtlid="30802">Datacenter</translation>
@@ -81,7 +81,7 @@
    <translation id="iplb_frontend_preview_http_redirection" qtlid="430135">Redirecionamento HTTP</translation>
    <translation id="iplb_frontend_preview_http_header" qtlid="430122">Cabeçalho HTTP</translation>
    <translation id="iplb_frontend_preview_hsts" qtlid="429537">HSTS</translation>
-   <translation id="iplb_frontend_preview_active" qtlid="55133">Ativo</translation>
+   <translation id="iplb_frontend_preview_active" qtlid="55133">Ativado</translation>
    <translation id="iplb_frontend_preview_id" qtlid="46792">ID utilizador</translation>
 
    <translation id="iplb_frontend_toggle_success" qtlid="438623">O Frontend foi alterado corretamente</translation>
