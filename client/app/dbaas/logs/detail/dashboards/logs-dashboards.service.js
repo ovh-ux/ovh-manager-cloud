@@ -167,6 +167,7 @@ class LogsDashboardsService {
      * @memberof LogsDashboardsService
      */
     duplicateDashboard (serviceName, dashboard, dashboardId) {
+        if (!dashboard.streamId) { delete dashboard.streamId; }
         return this.DashboardsApiService.duplicate({ serviceName, dashboardId }, dashboard)
             .$promise
             .then(operation => {
