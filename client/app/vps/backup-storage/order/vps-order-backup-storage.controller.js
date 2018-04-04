@@ -1,11 +1,12 @@
 class VpsOrderBackupStorageCtrl {
-    constructor ($stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService) {
+    constructor ($stateParams, $translate, $window, CloudMessage, CloudNavigation, ServiceHelper, VpsService) {
         "use strict";
         this.$translate = $translate;
         this.$window = $window;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
+        this.ServiceHelper = ServiceHelper;
         this.VpsService = VpsService;
 
 
@@ -31,13 +32,10 @@ class VpsOrderBackupStorageCtrl {
     }
 
     orderOption () {
-        this.VpsService.orderOption(this.serviceName, "ftpbackup", this.model.optionDetails.duration.duration).then(order => {
-            this.model.url = order.url;
-            this.$window.open(order.url, "_blank");
-            this.previousState.go();
-        }).catch(error => {
-            this.CloudMessage.error(this.$translate.instant("vps_configuration_activate_ftpbackup_fail") + " " + error.data);
-        });
+        this.ServiceHelper.loadOnNewPage(this.VpsService.orderOption(this.serviceName, "ftpbackup", this.model.optionDetails.duration.duration))
+            .then(({ url }) => {
+                this.model.url = url;
+            });
     }
 
     cancel () {

@@ -1,7 +1,7 @@
 <cui-modal>
     <form id="IplbOfferChangeForm">
         <cui-modal-header data-on-dismiss="IpLoadBalancerOfferChangeCtrl.cancel()"></cui-modal-header>
-        <cui-modal-body title="'iplb_modal_offer_change_title' | translate">
+        <cui-modal-body data-title=":: 'iplb_modal_offer_change_title' | translate">
             <oui-spinner data-ng-if="IpLoadBalancerOfferChangeCtrl.isModalLoading()"></oui-spinner>
             <div data-ng-if="!IpLoadBalancerOfferChangeCtrl.isModalLoading()">
                 Old offer => {{ IpLoadBalancerOfferChangeCtrl.configuration.data.offer }}

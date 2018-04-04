@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudProjectCtrl", function ($scope, $state, $stateParams, $rootScope, OvhApiCloud, CloudProjectRightService) {
+  .controller("CloudProjectCtrl", function ($scope, $state, $stateParams, $transitions, OvhApiCloud, CloudProjectRightService) {
     var self = this;
     var serviceName = $stateParams.projectId;
 
@@ -52,7 +52,9 @@ angular.module("managerApp")
 
         // before a state change, check if the destination project is suspended,
         // if it's the case just redirect to the error page
-        _stateChangeListener = $rootScope.$on("$stateChangeStart", function (ev, toState, toParams) {
+        _stateChangeListener = $transitions.onStart({}, transition => {
+            const toState = transition.to();
+            const toParams = transition.params();
             // avoid infinite state redirection loop
             if (toState && toState.name === "iaas.pci-project.details") {
                 return;
@@ -66,7 +68,6 @@ angular.module("managerApp")
                 return;
             }
             if (self.model.project.project_id === toParams.projectId) {
-                ev.preventDefault();
                 $state.go("iaas.pci-project.details");
             }
         });
