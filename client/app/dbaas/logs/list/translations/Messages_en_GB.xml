@@ -2,7 +2,7 @@
 <translations>
     <translation id="logs_accounts_description">Logs Data Platform brings you a comprehensive platform to manage and analyze your logs for you or your company. Overlook the behavior of your physicals or virtuals servers. Understand the behavior of your cloud or mobile applications. Predict any incident or be alerted in case of failure.</translation>
     <translation id="logs_accounts_order">Order</translation>
-    <translation id="logs_accounts_try_for_free">Try for free</translation>
+    <translation id="logs_accounts_add">New account</translation>
     <translation id="logs_accounts_col_name">Account name</translation>
     <translation id="logs_accounts_col_offer_type">Offer type</translation>
     <translation id="logs_accounts_col_status">Status</translation>

@@ -75,6 +75,7 @@ class LogsListService {
     }
 
     _transformService (service) {
+        service.name = service.displayName || service.serviceName;
         if (this.LogsHelperService.isAccountDisabled(service)) {
             service.isDisabled = true;
         } else {

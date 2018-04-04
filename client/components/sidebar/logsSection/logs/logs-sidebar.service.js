@@ -39,7 +39,7 @@ class LogsSidebar {
                 }, section);
             });
         } else {
-            // add welcome link
+            // add welcome navigation link
             this.SidebarMenu.addMenuItem({
                 id: "logs-welcome",
                 title: this.$translate.instant("cloud_sidebar_section_logs_welcome"),
@@ -50,7 +50,18 @@ class LogsSidebar {
     }
 
     addOrder () {
-        return null;
+        const link = _.get(this.URLS.website_order, `dbaas_logs.${this.locale}`);
+        if (!link) {
+            return null;
+        }
+
+        return {
+            title: this.$translate.instant("cloud_sidebar_section_logs"),
+            icon: "fa fa-bar-chart",
+            href: link,
+            target: "_blank",
+            external: true
+        };
     }
 }
 
