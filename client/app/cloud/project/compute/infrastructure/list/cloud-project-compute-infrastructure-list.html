@@ -3,7 +3,7 @@
     <oui-spinner size="l" inline="true"></oui-spinner>
 </div>
 <div data-ng-hide="ComputeInfrastructureListCtrl.loaders.init">
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-xs-3">
             <div class="btn-group cloud-compute-infra-primary-actions">
                 <button type="button" class="oui-button oui-button_dropdown dropdown-toggle mb-0" aria-haspopup="true" aria-expanded="false"
@@ -64,8 +64,8 @@
         </div>
     </div>
 
-    <section class="row cui-page__content">
-        <oui-datagrid data-rows="ComputeInfrastructureListCtrl.table.items">
+    <section class="row">
+        <oui-datagrid class="col-xs-12" data-rows="ComputeInfrastructureListCtrl.table.items">
             <oui-column title="'cpci_vm_name' | translate" data-property="name" data-type="string" data-searchable data-filterable data-sortable="asc">
             </oui-column>
             <oui-column data-title="'cpci_vm_region' | translate" data-property="macroRegion" data-type="options" data-type-options="ComputeInfrastructureListCtrl.regionOptions" data-filterable>
