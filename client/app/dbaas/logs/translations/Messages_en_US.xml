@@ -231,7 +231,7 @@
    <translation id="logs_index_edit_temp_6" qtlid="470479">Please notify me by email when the index reaches a critical size.</translation>
 
    <translation id="logs_index_delete_temp_1" qtlid="470492">Delete index</translation>
-   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirmez-vous la suppression de l'index <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirm deletion of the <strong>{{ name }}</strong> index?</translation>
 
    <translation id="logs_alias_temp_1" qtlid="470518">Unlock the full potential of Elasticsearch by creating an alias on your logs or your indexes. This will give you access to more complex queries such as nested aggregations and will unlock compatibility with the most popular tools in the ecosystem.</translation>
 

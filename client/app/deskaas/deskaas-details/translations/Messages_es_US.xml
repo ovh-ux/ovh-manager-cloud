@@ -17,7 +17,7 @@
    <translation id="vdi_username_changing" qtlid="323833">Le changement d'username est en cours.</translation>
    <translation id="vdi_username_changed" qtlid="323846">Le changement d'username a été effectué.</translation>
 
-   <translation id="vdi_terminate_confirming" qtlid="370824">La suppression du service est programmée.</translation>
+   <translation id="vdi_terminate_confirming" qtlid="370824">La eliminación del servicio está programada.</translation>
    <translation id="vdi_confirm_delete" qtlid="442678">Vous ne pourrez plus à accéder à votre desktop. Il sera supprimé, ainsi que l’ensemble des données qui y sont stockées. Souhaitez-vous continuer?</translation>
    <translation id="vdi_deleting" qtlid="313988">Le desktop est en cours de suppression. Un email vous a été envoyé afin de confirmer la demande.</translation>
    <translation id="vdi_deleted" qtlid="314001">Le desktop va être supprimé. Un email de confrmation vous a été envoyé.</translation>

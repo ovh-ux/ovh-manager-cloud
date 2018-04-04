@@ -9,7 +9,7 @@
    <translation id="cpc_ssh_error" qtlid="248808">Die Liste Ihrer SSH Schlüssel konnte nicht abgerufen werden!</translation>
 
    <translation id="cpc_ssh_key_explain_1" qtlid="366541">Bei der Kommunikation zwischen den OVH Servern wird das gesicherte Netzwerkprotokoll SSH zur Verschlüsselung der Daten verwendet. </translation>
-   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unseren <a href="{{ createUrl }}" target="_blank">Guide zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpc_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unsere <a href="{{ createUrl }}" target="_blank">Anleitung zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="cpc_ssh_key_explain_3" qtlid="366567">Außerdem ist es auch möglich, auf Ihren Instanzen <a href="{{ addUrl }}" target="_blank">zusätzliche SSH-Schlüssel zu konfigurieren<i class="fa fa-external-link" aria-hidden="true"></i></a>, um anderen Personen den Zugriff zu ermöglichen, oder <a href="{{ changeUrl }}" target="_blank">den SSH-Schlüssel bei Verlust zu ändern<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
    <translation id="cpc_ssh_add_button" qtlid="248561">Einen Schlüssel hinzufügen</translation>
