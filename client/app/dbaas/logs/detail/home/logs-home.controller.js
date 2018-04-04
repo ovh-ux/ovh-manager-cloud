@@ -1,5 +1,5 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, serviceDetails, LogsHelperService) {
+    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, LogsHelperService) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -11,21 +11,27 @@ class LogsHomeCtrl {
         this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
-        this.service = serviceDetails;
         this.LogsHelperService = LogsHelperService;
-        this.isAccountDisabled = LogsHelperService.isAccountDisabled(this.service);
-        this.lastUpdatedDate = moment(this.service.updatedAt).format("LL");
-        this.initLoaders();
     }
 
     $onInit () {
-        if (this.service.state === this.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
-            this.openSetupAccountModal(true);
-        }
-        this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
-        this.runLoaders()
-            .then(() => this._initActions())
-            .then(() => this._prepareDataUsageGraphData());
+        this.service = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getServiceDetails(this.serviceName)
+                .then(service => {
+                    this.initLoaders();
+                    this.isAccountDisabled = this.LogsHelperService.isAccountDisabled(service);
+                    this.lastUpdatedDate = moment(service.updatedAt).format("LL");
+                    if (service.state === this.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
+                        this.openSetupAccountModal(true);
+                    }
+                    this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
+                    this.runLoaders()
+                        .then(() => this._initActions())
+                        .then(() => this._prepareDataUsageGraphData());
+                    return service;
+                })
+        });
+        this.service.load();
     }
 
     /**

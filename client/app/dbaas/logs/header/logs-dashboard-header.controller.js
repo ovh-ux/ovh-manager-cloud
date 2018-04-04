@@ -1,5 +1,5 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, serviceDetails, LogsHelperService) {
+    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, LogsHelperService, LogsHomeService) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
@@ -8,13 +8,22 @@ class LogsDashboardHeaderCtrl {
         this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
         this.serviceName = $stateParams.serviceName;
-        this.service = serviceDetails;
-        this.isAccountDisabled = LogsHelperService.isAccountDisabled(this.service);
+        this.isAccountDisabled = true;
+        this.LogsHelperService = LogsHelperService;
+        this.LogsHomeService = LogsHomeService;
 
         this._initLoaders();
     }
 
     $onInit () {
+        this.service = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsHomeService.getServiceDetails(this.serviceName)
+                .then(service => {
+                    this.isAccountDisabled = this.LogsHelperService.isAccountDisabled(service);
+                    return service;
+                })
+        }).load();
+
         this.title = this.serviceName;
         this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
         //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
