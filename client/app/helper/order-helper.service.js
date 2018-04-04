@@ -74,8 +74,53 @@ class OrderHelperService {
                     case "FR":
                         targetURL = "https://www.ovh.com/fr";
                         break;
+                    case "CZ":
+                        targetURL = "https://www.ovh.cz";
+                        break;
+                    case "DE":
+                        targetURL = "https://www.ovh.de";
+                        break;
+                    case "ES":
+                        targetURL = "https://www.ovh.es";
+                        break;
+                    case "FI":
+                        targetURL = "https://www.ovh-hosting.fi";
+                        break;
+                    case "GB":
+                        targetURL = "https://www.ovh.co.uk";
+                        break;
+                    case "IE":
+                        targetURL = "https://www.ovh.ie";
+                        break;
+                    case "IT":
+                        targetURL = "https://www.ovh.it";
+                        break;
+                    case "LT":
+                        targetURL = "https://www.ovh.lt";
+                        break;
+                    case "MA":
+                        targetURL = "https://www.ovh.ma";
+                        break;
+                    case "NL":
+                        targetURL = "https://www.ovh.nl";
+                        break;
+                    case "PL":
+                        targetURL = "https://www.ovh.pl";
+                        break;
+                    case "PT":
+                        targetURL = "https://www.ovh.pt";
+                        break;
+                    case "SN":
+                        targetURL = "https://www.ovh.sn";
+                        break;
+                    case "TN":
+                        targetURL = "https://www.ovh.com/tn";
+                        break;
                     case "ASIA":
                         targetURL = "https://ca.ovh.com/asia";
+                        break;
+                    case "AU":
+                        targetURL = "https://www.ovh.com.au";
                         break;
                     case "CA":
                         targetURL = "https://ca.ovh.com/en";
