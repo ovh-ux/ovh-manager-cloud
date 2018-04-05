@@ -1,7 +1,7 @@
 class CloudProjectComputeInfrastructureListCtrl {
     constructor ($scope, $q, $stateParams, $translate,
                  CloudMessage, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
-                 OvhApiCloudProjectVolume, OvhCloudPriceHelper, RegionService) {
+                 OvhApiCloudProjectVolume, OvhCloudPriceHelper, RegionService, OvhApiCloudProjectFlavor) {
         this.$scope = $scope;
         this.$q = $q;
         this.$stateParams = $stateParams;
@@ -12,6 +12,7 @@ class CloudProjectComputeInfrastructureListCtrl {
         this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
         this.RegionService = RegionService;
         this.OvhCloudPriceHelper = OvhCloudPriceHelper;
+        this.OvhApiCloudProjectFlavor = OvhApiCloudProjectFlavor;
     }
 
     $onInit () {
@@ -54,22 +55,32 @@ class CloudProjectComputeInfrastructureListCtrl {
         this.loaders.infra = true;
         return this.$q.all({
             infra: this.CloudProjectOrchestrator.initInfrastructure({ serviceName: this.serviceName }),
-            volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes")))
+            volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes"))),
         }).then(({ infra }) => {
             this.infra = infra;
-            this.table.items = _.map(this.infra.vrack.publicCloud.items, instance => {
-                _.set(instance, "volumes", _.get(this.volumes, instance.id, []));
-                instance.ipv4 = instance.getPublicIpv4();
-                instance.ipv6 = instance.getPublicIpv6();
-                instance.macroRegion = this.RegionService.getMacroRegion(instance.region);
-                instance.statusToTranslate = this.getStatusToTranslate(instance);
-                instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${instance.flavor.name}`);
-
-                //patch for some translations that have &#160; html entities
-                instance.flavorTranslated = instance.flavorTranslated .replace("&#160;"," ");
-
-                return instance;
-            });
+            return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => {
+                 return this.OvhApiCloudProjectFlavor.Lexi().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
+                 .then((flavor) => {
+                     return {
+                        volumes: _.get(this.volumes, instance.id, []),
+                        ipv4: instance.getPublicIpv4(),
+                        ipv6: instance.getPublicIpv6(),
+                        region: instance.region,
+                        macroRegion: this.RegionService.getMacroRegion(instance.region),
+                        statusToTranslate: this.getStatusToTranslate(instance),
+                        name: instance.name,
+                        price: instance.price,
+                        status: instance.status,
+                        monthlyBillingBoolean: instance.monthlyBillingBoolean,
+                        monthlyBilling: instance.monthlyBilling,
+                        id: instance.id,
+                        getStatusGroup: instance.getStatusGroup,
+                        //patch for some translations that have &#160; html entities
+                        flavorTranslated: this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace("&#160;"," "),
+                     };
+                 });
+            }))
+            .then(instances => this.table.items = instances);
         }).catch(err => {
             this.table.items = [];
             this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
