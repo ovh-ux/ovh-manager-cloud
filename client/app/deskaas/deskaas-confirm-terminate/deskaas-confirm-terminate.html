@@ -1,7 +1,7 @@
 <cui-modal>
     <form novalidate name="confirmTerminateForm">
         <cui-modal-header data-on-dismiss="DeskaasGetConsoleAccessCtrl.cancel()"></cui-modal-header>
-        <cui-modal-body title="'vdi_cancel_title' | translate">
+        <cui-modal-body data-title=":: 'vdi_cancel_title' | translate">
             <oui-spinner data-ng-if="DeskaasConfirmTerminateCtrl.flags.init"></oui-spinner>
             <div data-ng-if="!DeskaasConfirmTerminateCtrl.flags.init">
                 <div class="oui-field">

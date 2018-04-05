@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="logs_guides" qtlid="300370">Příručky</translation>
+   <translation id="logs_guides_title" qtlid="366385">Logs Data Platform</translation>
+   <translation id="logs_guides_footer" qtlid="406905">Všechny OVH příručky</translation>
+
+   <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
+   <translation id="logs_tab_home" qtlid="27643">Domů</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Tabule</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Kolektory</translation>
+   <translation id="logs_tab_indices" qtlid="426729">Indexy</translation>
+   <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Role</translation>
+
+   <translation id="logs_loading_error_configuration" qtlid="469153">Při načítání sekce "Konfigurace" došlo k chybě.</translation>
+
+   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data Platform je rozhraní pro sběr, indexaci a analýzu logů. Ať je původ Vašich logů jakýkoli, tato platforma Vám umožňuje vybrat různé vstupní body (v závislosti na protokolu, úrovni zabezpečení a potřebných formátech). Analýzu a zpracování dat lze provádět díky různým API a rozhraním.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Změnit aktuální kontakt: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">Změna kontaktní adresy služby bude mít za následek odeslání upozornění na novou adresu.</translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Vyberte jeden z Vašich kontaktů. Pokud nebude vybrán žádný kontakt, bude defaultně asociován s Vaším hlavním identifikátorem.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Přidat nový kontakt</translation>
+
+   <translation id="logs_home_token_temp_1" qtlid="421386">Autentizační tokeny</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">Pokud potřebujete zprostředkovat přístup ke svým logům externím aplikacím, nebo na této bázi automatizovat některé úkoly, budete jim muset umožnit přístup k API. Nejspolehlivější způsob zprávy těchto přístupů je použití autentizačních tokenů. Díky této funkci již není zapotřebí zadávat své identifikační údaje do konfiguračních souborů.</translation>
+   <translation id="logs_home_token_temp_3" qtlid="469231">Přidat token</translation>
+
+   <translation id="logs_home_password_temp_1" qtlid="80394">Změna hesla</translation>
+   <translation id="logs_home_password_temp_2" qtlid="17177">Nové heslo</translation>
+   <translation id="logs_home_password_temp_3" qtlid="300539">Potvrďte heslo</translation>
+
+   <translation id="logs_home_password_temp_4" qtlid="469244">Definovat heslo</translation>
+   <translation id="logs_home_password_temp_5" qtlid="469257">Nastavit heslo pro kontakt <strong>{{ contact }}.</strong></translation>
+
+   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Tyto tokeny Vám umožní přístup k API (zápis do indexů, čtení na platformách Graylog a Elasticsearch).</translation>
+
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Disponujete přístupem k Elasticsearch díky akvizici indexu či aliasu.</translation>
+
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Formáty správ a dostupných portů</translation>
+
+   <translation id="logs_options_temp_1" qtlid="424402">Přidat možnosti</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">Při nákupu datových proudů, aliasů a dashboardů Vám budou nabídnuty uživatelské role (např. 5 proudů = 5 rolí).</translation>
+   <translation id="logs_options_temp_3" qtlid="469322">Aktuální možnosti</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Kolektory</translation>
+   <translation id="logs_options_type_temp_2" qtlid="45376">Řídící panel</translation>
+   <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_options_type_temp_5" qtlid="469335">Balíček Kibana</translation>
+   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index {{ size }}</translation>
+   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }}x instance</translation>
+   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }}x fragment</translation>
+   <translation id="logs_options_details_temp_3" qtlid="469387">Balíček {{ count }}</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }}x alias a {{count}}x index {{ size }}</translation>
+
+   <translation id="logs_offer_temp_1" qtlid="469413">Zvolte svou nabídku</translation>
+   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }}x proud</translation>
+   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }}x dashboard</translation>
+   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }}x kolektor</translation>
+
+   <translation id="logs_streams_temp_1" qtlid="469465">Proudy umožňují směrovat Vaše logy v reálném čase do specifické kategorie, ihned jakmile dorazí na Logs Data Platform. Pokud máte vícero proudů, můžete rovněž: třídit správy v závislosti na jejich zdroji, aplikaci či původním serveru. V závislosti na proudu můžete vytvářet úrovně důvěrnosti, umožňující distribuci Vašich přístupů mezi autorizované uživatele. Tyto tokeny jsou tokeny pro zápis, umožňující směrovat logy na správný proud. Obecně řečeno, čím více proudů, tím snazší orientace mezi logy - bez potřeby vylučovat výsledky jiných systémů či aplikací.</translation>
+
+   <translation id="logs_streams_add_temp_1" qtlid="426170">Přidat datový proud</translation>
+   <translation id="logs_streams_add_temp_1" qtlid="3818">Název</translation>
+   <translation id="logs_streams_add_temp_2" qtlid="9238">Popis</translation>
+   <translation id="logs_streams_add_temp_3" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_streams_add_temp_4" qtlid="426807">Hlavní nabídka</translation>
+   <translation id="logs_streams_add_temp_5" qtlid="426677">Aktivovat difúzi WebSocket</translation>
+   <translation id="logs_streams_add_temp_6" qtlid="469491">Sledujte příjem svých logů v reálném čase prostřednictvím protokolu WebSocket.</translation>
+   <translation id="logs_streams_add_temp_7" qtlid="426469">Aktivovat dlouhodobé ukládání</translation>
+   <translation id="logs_streams_add_temp_8" qtlid="469504">Archivujte své logy bezpečně po několik let.</translation>
+   <translation id="logs_streams_add_temp_9" qtlid="426495">Kompresní algoritmus</translation>
+   <translation id="logs_streams_add_temp_10" qtlid="426560">Doba uchování archivů</translation>
+   <translation id="logs_streams_add_temp_11" qtlid="469517">Počet let: {{ count }} </translation>
+   <translation id="logs_streams_add_temp_12" qtlid="32386">Oznámení</translation>
+   <translation id="logs_streams_add_temp_13" qtlid="469530">Přeji si dostat upozornění na dostupnost archivu.</translation>
+
+   <translation id="logs_alerts_temp_1" qtlid="72797">Upozornění</translation>
+   <translation id="logs_alerts_temp_2" qtlid="469543">Správa upozornění pro proud {{ name }}</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Díky podmínečným upozorněním již nemusíte pracně prohledávat své logy - platforma to udělá za Vás. Existuje mnoho případů, pro něž lze upozornění nastavit: absence zpráv ze softwaru po podezřele dlouhou dobu, abnormálně nízký počet prováděných úkolů, vysoký síťový traffic na Vašich webových stránkách nebo detekce specifických klíčových hesel v datovém proudu.</translation>
+   <translation id="logs_alerts_temp_4" qtlid="469569">Vytvořit upozornění</translation>
+   <translation id="logs_alerts_temp_5" qtlid="425806">Podmínka</translation>
+   <translation id="logs_alerts_temp_6" qtlid="469582">Zpoždění</translation>
+   <translation id="logs_alerts_temp_7" qtlid="469595">Opakovat notifikace</translation>
+
+   <translation id="logs_alert_count_temp_1" qtlid="469608">Přidat množstevní podmínku</translation>
+   <translation id="logs_alert_count_temp_2" qtlid="469621">Tato podmínka je aktivována, pokud je počet zpráv vyšší nebo nižší než práh definovaný v daném časovém období.</translation>
+   <translation id="logs_alert_count_temp_3" qtlid="16469">Titul</translation>
+   <translation id="logs_alert_count_temp_4" qtlid="469634">Název podmínky upozornění.</translation>
+   <translation id="logs_alert_count_temp_5" qtlid="469647">Časový úsek (minuty)</translation>
+   <translation id="logs_alert_count_temp_6" qtlid="469660">Definujte podmínku pro všechny zprávy obdržené za daný počet minut.</translation>
+   <translation id="logs_alert_count_temp_7" qtlid="469673">Typ prahu</translation>
+   <translation id="logs_alert_count_temp_8" qtlid="469686">Nastavte podmínku, která aktivuje upozornění: počet zpráv je vyšší nebo nižší než definovaný práh.</translation>
+   <translation id="logs_alert_count_temp_9" qtlid="469699">Práh</translation>
+   <translation id="logs_alert_count_temp_10" qtlid="469712">Pokud dojde k překročení této hodnoty, upozornění se aktivuje.</translation>
+   <translation id="logs_alert_count_temp_11" qtlid="469699">Práh</translation>
+   <translation id="logs_alert_count_temp_12" qtlid="469725">Zpoždění (minuty)</translation>
+   <translation id="logs_alert_count_temp_13" qtlid="469738">Počet minut, udávající celkovou dobu mezi odesláním jednoho upozornění a spuštěním dalšího upozornění.</translation>
+   <translation id="logs_alert_count_temp_14" qtlid="469751">Akumulace zpráv</translation>
+   <translation id="logs_alert_count_temp_15" qtlid="469764">Počet zpráv zahrnutý v notifikaci upozornění.</translation>
+   <translation id="logs_alert_count_temp_16" qtlid="33250">Oznámení</translation>
+   <translation id="logs_alert_count_temp_17" qtlid="469777">Toto políčko zaškrtněte, pokud si přejete dostat notifikaci pokaždé, když jsou naplněny podmínky upozornění, nezávisle na jeho stavu.</translation>
+
+   <translation id="logs_alert_numerical_temp_1" qtlid="469790">Přidat podmínku s číselnou hodnotou</translation>
+   <translation id="logs_alert_numerical_temp_2" qtlid="469803">Tato podmínka je aktivována tehdy, když je agregovaná hodnota pole vyšší nebo nižší než práh definovaný v daném časovém období.</translation>
+   <translation id="logs_alert_numerical_temp_3" qtlid="16469">Titul</translation>
+   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Název podmínky upozornění.</translation>
+   <translation id="logs_alert_numerical_temp_5" qtlid="469816">Pole</translation>
+   <translation id="logs_alert_numerical_temp_6" qtlid="469829">Název pole k ověření.</translation>
+   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Časový úsek (minuty)</translation>
+   <translation id="logs_alert_numerical_temp_8" qtlid="469842">Definujte podmínku, která má být spuštěna pro všechny zprávy obdržené za daný počet minut.</translation>
+   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Typ prahu</translation>
+   <translation id="logs_alert_numerical_temp_10" qtlid="469855">Nastavte podmínku, která aktivuje upozornění: hodnota je vyšší nebo nižší než definovaný práh.</translation>
+   <translation id="logs_alert_numerical_temp_11" qtlid="469868">Typ agregace</translation>
+   <translation id="logs_alert_numerical_temp_12" qtlid="469881">Nastavte podmínku, která aktivuje upozornění: počet zpráv je vyšší nebo nižší než definovaný práh.</translation>
+   <translation id="logs_alert_numerical_temp_13" qtlid="469725">Zpoždění (minuty)</translation>
+   <translation id="logs_alert_numerical_temp_14" qtlid="469738">Počet minut, udávající celkovou dobu mezi odesláním jednoho upozornění a spuštěním dalšího upozornění.</translation>
+   <translation id="logs_alert_numerical_temp_15" qtlid="469751">Akumulace zpráv</translation>
+   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Počet zpráv zahrnutý v notifikaci upozornění.</translation>
+   <translation id="logs_alert_numerical_temp_17" qtlid="33250">Oznámení</translation>
+   <translation id="logs_alert_numerical_temp_18" qtlid="469777">Toto políčko zaškrtněte, pokud si přejete dostat notifikaci pokaždé, když jsou naplněny podmínky upozornění, nezávisle na jeho stavu.</translation>
+
+   <translation id="logs_alert_text_temp_1" qtlid="469894">Přidat podmínku pro textový obsah</translation>
+   <translation id="logs_alert_text_temp_2" qtlid="469907">Tato podmínka je aktivována, pokud je obsah zpráv identický s definovanou hodnotou.</translation>
+   <translation id="logs_alert_text_temp_3" qtlid="16469">Titul</translation>
+   <translation id="logs_alert_text_temp_4" qtlid="469634">Název podmínky upozornění.</translation>
+   <translation id="logs_alert_text_temp_5" qtlid="469816">Pole</translation>
+   <translation id="logs_alert_text_temp_6" qtlid="469829">Název pole k ověření.</translation>
+   <translation id="logs_alert_text_temp_7" qtlid="47548">Hodnota</translation>
+   <translation id="logs_alert_text_temp_8" qtlid="469920">Hodnota, která má být porovnána s hodnotou pole.</translation>
+   <translation id="logs_alert_text_temp_9" qtlid="469725">Zpoždění (minuty)</translation>
+   <translation id="logs_alert_text_temp_10" qtlid="469738">Počet minut, udávající celkovou dobu mezi odesláním jednoho upozornění a spuštěním dalšího upozornění.</translation>
+   <translation id="logs_alert_text_temp_11" qtlid="469751">Akumulace zpráv</translation>
+   <translation id="logs_alert_text_temp_12" qtlid="469764">Počet zpráv zahrnutý v notifikaci upozornění.</translation>
+   <translation id="logs_alert_text_temp_13" qtlid="33250">Oznámení</translation>
+   <translation id="logs_alert_text_temp_14" qtlid="469777">Toto políčko zaškrtněte, pokud si přejete dostat notifikaci pokaždé, když jsou naplněny podmínky upozornění, nezávisle na jeho stavu.</translation>
+
+   <translation id="logs_archives_temp_1" qtlid="469933">Archivy</translation>
+   <translation id="logs_archives_temp_2" qtlid="469946">Po rozmrazení jsou archivy dostupné ke stažení po dobu 24 hodin</translation>
+   <translation id="logs_archives_temp_3" qtlid="469959">Probíhá rozmrazování archivu {{ name }}. Archiv bude dostupný za {{ time }}.</translation>
+   <translation id="logs_archives_temp_4" qtlid="469972">Název souboru</translation>
+   <translation id="logs_archives_temp_5" qtlid="7726">Velikost</translation>
+   <translation id="logs_archives_temp_6" qtlid="69953">Podpis</translation>
+   <translation id="logs_archives_temp_7" qtlid="39286">Stáhnout</translation>
+   <translation id="logs_archives_temp_8" qtlid="369152">Odblokovat</translation>
+   <translation id="logs_archives_temp_9" qtlid="469985">Zmrazeno</translation>
+   <translation id="logs_archives_temp_10" qtlid="99920">Dostupný</translation>
+   <translation id="logs_archives_temp_11" qtlid="469998">Probíhá rozmrazování</translation>
+
+   <translation id="logs_stream_delete_temp_1" qtlid="470011">Odstranit datový proud</translation>
+   <translation id="logs_stream_delete_temp_2" qtlid="470024">Opravdu si přejete odstranit datový proud <strong>{{ name }}</strong>?</translation>
+
+   <translation id="logs_stream_follow_temp_1" qtlid="426222">Sledovat v reálném čase</translation>
+   <translation id="logs_stream_follow_temp_2" qtlid="470037">Uzavřít spojení</translation>
+
+   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Za účelem zkopírování příkazového řádku, který je zapotřebí pro otestování Vašeho datového proudu pomocí terminálu, zvolte některý z nabízených formátu.</translation>
+
+   <translation id="logs_dashboards_temp_1" qtlid="470063">Dashboard je grafická reprezentace Vašich logů. Díky nejrůznějším modulům (křivky, koláčové grafy, čítače, statistiky apod.) můžete získat jasnou a syntetickou představu o svých datech. Ke kolika chybám došlo za posledních 24 hodin? Jsou na vzestupu či naopak? Jaká stránka se dnes načítala nejrychleji? Vzrostl počet uživatelů za poslední měsíc? Veškeré informace jsou dostupné okamžitě. Možnost spuštění a správy několika dashboardů najednou umožňuje monitoring dat v závislosti na přesném kontextu a přináší lepší čitelnost informací.</translation>
+
+   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Duplikovat dashboard</translation>
+   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Duplikovat dashboard <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_duplicate_temp_3" qtlid="3818">Název</translation>
+   <translation id="logs_dashboard_duplicate_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Připojit moduly nového dashboardu k následujícímu datovému proudu: </translation>
+
+   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Upravit dashboard</translation>
+   <translation id="logs_dashboard_edit_temp_2" qtlid="470128">Upravit dashboard <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_edit_temp_3" qtlid="3818">Název</translation>
+   <translation id="logs_dashboard_edit_temp_4" qtlid="9238">Popis</translation>
+
+   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Odstranit dashboard</translation>
+   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Opravdu si přejete odstranit dashboard <strong>{{ name }}</strong>?</translation>
+
+   <translation id="logs_collector_temp_1" qtlid="470167">Kolektory umožňují sběr logů odesílaných ze serverů či aplikací. Jedná se o efektivní způsob zpracování a transformace do formátu GELF, kompatibilního s Logs Data Platform. Nyní již nemusíte dedikovat své materiální zdroje a monitorovat dostupnost svých infrastruktur - my to uděláme za Vás. Tato platforma umožňuje za účelem zjednodušené a zabezpečené konfigurace (díky firewallovým pravidlům) připojení těchto nástrojů k Vašim datovým proudům.</translation>
+
+   <translation id="logs_collector_info_temp_1" qtlid="470180">Užitečné informace</translation>
+   <translation id="logs_collector_info_temp_2" qtlid="470193">Kliknutím na níže uvedené informace je zkopírujete do své schránky.</translation>
+   <translation id="logs_collector_info_temp_3" qtlid="470206">Název hostitele</translation>
+   <translation id="logs_collector_info_temp_4" qtlid="470219">Veřejná IP adresa</translation>
+   <translation id="logs_collector_info_temp_5" qtlid="439169">Typ certifikátu</translation>
+
+   <translation id="logs_collector_console_temp_1" qtlid="424350">Výstupní konzole</translation>
+
+   <translation id="logs_collector_delete_temp_1" qtlid="470232">Odstranit kolektor</translation>
+   <translation id="logs_collector_delete_temp_2" qtlid="470245">Opravdu si přejete odstranit kolektor <strong>{{ name }}</strong>?</translation>
+
+   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Přidat nový kolektor</translation>
+   <translation id="logs_collector_add_logstash_temp_2" qtlid="4406">Konfigurace</translation>
+   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Autorizovat síť</translation>
+   <translation id="logs_collector_add_logstash_temp_4" qtlid="3818">Název</translation>
+   <translation id="logs_collector_add_logstash_temp_5" qtlid="9238">Popis</translation>
+   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Software</translation>
+   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">TCP port pro otevření</translation>
+   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Připojit k datovému proudu</translation>
+   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Unikátní instance</translation>
+   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Spustit pouze jednu instanci tohoto typu.</translation>
+
+   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Upravte sekce "Input" a vyfiltrujte část "Output" konfigurace Vašeho Logstash, zapsanou naší službou.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Připomínáme, že máte TCP port 6514 otevřený pro vnější komunikaci.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Jakmile tyto sekce upravíte, budete moci otestovat svou konfiguraci.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Otestovat konfiguraci</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_5" qtlid="23215">Pomocník při nastavení</translation>
+
+   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Autorizovat síť</translation>
+   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Důvěryhodná síť</translation>
+   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">Prostřednictvím IP adresy můžete jakožto důvěryhodnou autorizovat jednu či více sítí.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">Tato fáze značí finální krok konfigurace před spuštěním Vašeho nástroje.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">Pokud není autorizována žádná síť, je Vaše bezpečnost kompromitována, jelikož se k Vaší aplikaci může připojit kdokoli.</translation>
+
+   <translation id="logs_collector_add_logstash_start_temp_1" qtlid="9983">Potvrzení hesla</translation>
+   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Začít</translation>
+   <translation id="logs_collector_add_logstash_start_temp_3" qtlid="82305">Později</translation>
+   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Přejete si zahájit sběr dat nyní?</translation>
+
+   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Počet zpráv uchovávaných v paměti Flowgger předtím, než jsou odeslány do platformy Kafka. Vysoká hodnota představuje vyšší výkon, v případě odesílání malého počtu zpráv však může zapříčinit zpoždění indexace.</translation>
+
+   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform umožňuje vytvářet a hostovat indexy Elasticsearch. Tyto indexy mohou být použity pro konfigurační data instance Kibana, indexaci statistických dat a obohacení či korelaci Vašich logů. Tyto indexy můžete následně používat s většinou nástrojů a aplikací kompatibilních s REST API Elasticsearch.</translation>
+
+   <translation id="logs_index_add_temp_1" qtlid="423024">Přidat index</translation>
+   <translation id="logs_index_add_temp_2" qtlid="59267">Sufix</translation>
+   <translation id="logs_index_add_temp_3" qtlid="470427">Jsou povolena pouze malá písmena (od A do Z), číslice a následující speciální znaky: - a _.</translation>
+   <translation id="logs_index_add_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_index_add_temp_5" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_index_add_temp_6" qtlid="470440">Upozornění: hodnotu, kterou vyberete, nebudete moci později změnit.</translation>
+
+   <translation id="logs_index_edit_temp_1" qtlid="470453">Upravit index</translation>
+   <translation id="logs_index_edit_temp_2" qtlid="470466">Úprava informaci indexu <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_index_edit_temp_3" qtlid="9238">Popis</translation>
+   <translation id="logs_index_edit_temp_4" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_index_edit_temp_5" qtlid="32386">Oznámení</translation>
+   <translation id="logs_index_edit_temp_6" qtlid="470479">Přeji si dostat e-mail s upozorněním v případě dosažení kritické velikosti indexu.&#13;
+</translation>
+
+   <translation id="logs_index_delete_temp_1" qtlid="470492">Odstranit index</translation>
+   <translation id="logs_index_delete_temp_2" qtlid="470505">Opravdu si přejete odstranit index <strong>{{ name }}</strong>?</translation>
+
+   <translation id="logs_alias_temp_1" qtlid="470518">Aktivujte všechny možnosti Elasticsearch prostřednictvím vytvoření aliasu pro své logy či indexy. Tento krok Vám zprostředkuje přístup ke komplexním požadavkům, jako jsou např. vnořené agregace, a odemkne kompatibilitu s těmi nejpopulárnějšími nástroji celého ekosystému.</translation>
+
+   <translation id="logs_alias_add_temp_1" qtlid="143538">Přidat alias</translation>
+   <translation id="logs_alias_add_temp_2" qtlid="59267">Sufix</translation>
+   <translation id="logs_alias_add_temp_3" qtlid="470531">Upozornění: název nelze později změnit.</translation>
+   <translation id="logs_alias_add_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_alias_add_temp_5" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_alias_add_temp_6" qtlid="32386">Oznámení</translation>
+   <translation id="logs_alias_add_temp_7" qtlid="470479">Přeji si dostat e-mail s upozorněním v případě dosažení kritické velikosti indexu.&#13;
+</translation>
+
+   <translation id="logs_alias_edit_temp_1" qtlid="470544">Upravit alias</translation>
+   <translation id="logs_alias_edit_temp_2" qtlid="470557">Úprava informaci aliasu <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_alias_edit_temp_3" qtlid="3818">Název</translation>
+   <translation id="logs_alias_edit_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_alias_edit_temp_5" qtlid="469478">Vyberte jednu z možností</translation>
+   <translation id="logs_alias_edit_temp_6" qtlid="32386">Oznámení</translation>
+   <translation id="logs_alias_edit_temp_7" qtlid="470479">Přeji si dostat e-mail s upozorněním v případě dosažení kritické velikosti indexu.&#13;
+</translation>
+
+   <translation id="logs_alias_link_temp_1" qtlid="421672">Připojení obsahu</translation>
+   <translation id="logs_alias_link_temp_2" qtlid="421789">Alias může být připojen k jednomu či několika datovým proudům Graylog, nebo k jednomu či několika indexům Elasticsearch.</translation>
+   <translation id="logs_alias_link_temp_3" qtlid="470570">Proud</translation>
+   <translation id="logs_alias_link_temp_4" qtlid="426729">Indexy</translation>
+   <translation id="logs_alias_link_temp_5" qtlid="421685">Dostupné proudy</translation>
+   <translation id="logs_alias_link_temp_6" qtlid="470583">Vyberte proud</translation>
+
+   <translation id="logs_role_temp_1" qtlid="425130">Vaše logy obsahují důležité informace, které je někdy zapotřebí sdílet s ostatními lidmi. Logs Data Platform Vám nabízí možnost definování přístupových práv (v režimu read-only) k datům obsaženým v určitých proudech, dashboardech, indexech či aliasech.</translation>
+
+   <translation id="logs_role_add_temp_1" qtlid="425143">Přidat roli</translation>
+   <translation id="logs_role_add_temp_2" qtlid="3818">Název</translation>
+   <translation id="logs_role_add_temp_3" qtlid="9238">Popis</translation>
+   <translation id="logs_role_add_temp_4" qtlid="470596">Vyberte připojený proud</translation>
+
+   <translation id="logs_role_member_temp_1" qtlid="356810">Spravovat členy</translation>
+   <translation id="logs_role_member_temp_2" qtlid="470609">Níže naleznete seznam aktivních členů pro roli <strong>{{ name }}</strong>. Jednotlivé členy lze libovolně odebírat. Nové členy lze přidávat prostřednictvím již existujících uživatelských účtů.</translation>
+   <translation id="logs_role_member_temp_3" qtlid="392502">Přidat člena</translation>
+   <translation id="logs_role_member_temp_4" qtlid="470622">Uživatelský účet</translation>
+   <translation id="logs_role_member_temp_5" qtlid="26011">Poznámka</translation>
+   <translation id="logs_role_member_temp_6" qtlid="470635">Datum přidání</translation>
+   <translation id="logs_role_member_temp_7" qtlid="185751">Odebrat</translation>
+
+   <translation id="logs_role_member_add_temp_1" qtlid="392502">Přidat člena</translation>
+   <translation id="logs_role_member_add_temp_2" qtlid="424857">Uživatelský účet Logs Data Platform</translation>
+   <translation id="logs_role_member_add_temp_3" qtlid="470648">Logs-XX-XXXX</translation>
+   <translation id="logs_role_member_add_temp_4" qtlid="26011">Poznámka</translation>
+   <translation id="logs_role_member_add_temp_5" qtlid="470661">Vybrat roli</translation>
+
+   <translation id="logs_role_edit_temp_1" qtlid="470674">Upravit roli</translation>
+   <translation id="logs_role_edit_temp_2" qtlid="3818">Název</translation>
+   <translation id="logs_role_edit_temp_3" qtlid="9238">Popis</translation>
+   <translation id="logs_role_edit_temp_4" qtlid="6946">Práva</translation>
+   <translation id="logs_role_edit_temp_5" qtlid="470687">Upravit oprávnění</translation>
+   <translation id="logs_role_edit_temp_6" qtlid="422569">Přidat novou roli</translation>
+
+   <translation id="logs_role_permissions_temp_1" qtlid="470700">Upravit oprávnění role</translation>
+   <translation id="logs_role_permissions_temp_2" qtlid="470713">Upravujte, omezujte a/nebo přidělujte oprávnění pro jednotlivé role.</translation>
+   <translation id="logs_role_permissions_temp_3" qtlid="3818">Název</translation>
+   <translation id="logs_role_permissions_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_role_permissions_temp_6" qtlid="225075">Tabule</translation>
+   <translation id="logs_role_permissions_temp_7" qtlid="426729">Indexy</translation>
+   <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
+
+   <translation id="logs_role_preview_temp_1" qtlid="470726">Přehled</translation>
+   <translation id="logs_role_preview_temp_2" qtlid="403398">Role</translation>
+   <translation id="logs_role_preview_temp_3" qtlid="26011">Poznámka</translation>
+   <translation id="logs_role_preview_temp_4" qtlid="9238">Popis</translation>
+   <translation id="logs_role_preview_temp_5" qtlid="470739">Oprávnění</translation>
+   <translation id="logs_role_preview_temp_6" qtlid="425169">Členové</translation>
+   <translation id="logs_role_preview_temp_7" qtlid="426768">Související volby</translation>
+
+   <translation id="logs_role_delete_temp_1" qtlid="470752">Odstranit roli</translation>
+   <translation id="logs_role_delete_temp_2" qtlid="470765">Opravdu si přejete odstranit roli <strong>{{ name }}</strong>?&#13;
+</translation>
+</translations>

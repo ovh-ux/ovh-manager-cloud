@@ -6,7 +6,7 @@
    <translation id="vps_order_windows_step3_title" qtlid="82725">Resumo</translation>
    <translation id="vps_order_windows_info" qtlid="250758">Esta opção permite instalar um SO Windows no seu servidor VPS</translation>
    <translation id="vps_order_windows_price_error" qtlid="250771">Ocorreu um erro durante o carregamento dos preços.</translation>
-   <translation id="vps_order_windows_order_error" qtlid="181227">Erro na criação da nota de encomenda.</translation>
+   <translation id="vps_order_windows_order_error" qtlid="181227">Erro ao gerar nota de encomenda.</translation>
    <translation id="vps_order_windows_order_select_duration" qtlid="181214">Selecione a duração:</translation>
    <translation id="vps_order_windows_order_resume" qtlid="177496">Resumo da nota de encomenda</translation>
    <translation id="vps_order_windows_order_price_HT" qtlid="146177">Preço total sem IVA:</translation>
@@ -43,7 +43,7 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Sistema</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utilizador</translation>
 
-   <translation id="vps_dashboard_task" qtlid="195633">Tarefas em curso</translation>
+   <translation id="vps_dashboard_task" qtlid="195633">Operações em curso</translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Operações em curso terminadas</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Reiniciar</translation>
    <translation id="vps_dashboard_task_setNetboot" qtlid="195646">Reiniciar (rescue)</translation>
@@ -417,7 +417,7 @@
    <translation id="vps_backup_storage_access_forgot_password_question" qtlid="452852">Quer mesmo repor a palavra-passe para o Backup Storage?</translation>
 
    <translation id="vps_tab_backup_storage_login" qtlid="46792">ID utilizador</translation>
-   <translation id="vps_tab_backup_storage_name" qtlid="3818">Nome</translation>
+   <translation id="vps_tab_backup_storage_name" qtlid="3818">Apelido</translation>
    <translation id="vps_tab_backup_storage_usage" qtlid="30382">Utilização</translation>
    <translation id="vps_tab_backup_storage_table_empty" qtlid="209996">Nenhum acesso configurado</translation>
    <translation id="vps_tab_backup_storage_table_ip" qtlid="186492">IP</translation>
@@ -507,7 +507,7 @@
    <translation id="vps_default_name" qtlid="415714">Nome predefinido</translation>
    <translation id="vps_personal_name" qtlid="415727">Nome personalizado</translation>
    <translation id="vps_change_owner" qtlid="254882">Alterar titular</translation>
-   <translation id="vps_dashboard_name" qtlid="3818">Nome</translation>
+   <translation id="vps_dashboard_name" qtlid="3818">Apelido</translation>
    <translation id="vps_status_disabled" qtlid="24967">Desativado</translation>
    <translation id="vps_status_enabled" qtlid="30250">Ativado</translation>
    <translation id="vps_dashboard_product" qtlid="26143">Modelo</translation>

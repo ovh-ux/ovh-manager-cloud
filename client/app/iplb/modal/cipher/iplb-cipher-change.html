@@ -1,7 +1,7 @@
 <cui-modal>
     <form id="IplbCipherChangeForm">
         <cui-modal-header data-on-dismiss="IpLoadBalancerCipherChangeCtrl.cancel()"></cui-modal-header>
-        <cui-modal-body title="'iplb_modal_cipher_change_title' | translate">
+        <cui-modal-body data-title=":: 'iplb_modal_cipher_change_title' | translate">
             <oui-spinner data-ng-if="IpLoadBalancerCipherChangeCtrl.isModalLoading()"></oui-spinner>
             <div data-ng-if="!IpLoadBalancerCipherChangeCtrl.isModalLoading()">
                 <oui-radio data-ng-repeat="cipherType in IpLoadBalancerCipherChangeCtrl.cipherTypes.data track by $index"

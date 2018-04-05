@@ -2,7 +2,7 @@
 <translations>
    <translation id="cpc_ssh_demo" qtlid="249393">Aqui, terá a possibilidade de adicionar as suas chaves SSH, que lhe permitirão o acesso aos seus servidores.</translation>
 
-   <translation id="cpc_ssh_name" qtlid="3818">Nome</translation>
+   <translation id="cpc_ssh_name" qtlid="3818">Apelido</translation>
    <translation id="cpc_ssh_key" qtlid="104326">Chave</translation>
 
    <translation id="cpc_ssh_loading" qtlid="249406">Carregamento das suas chaves SSH...</translation>

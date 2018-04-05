@@ -1,10 +1,11 @@
 class CloudProjectComputeInfrastructureService {
-    constructor ($rootScope, $state, $translate, $uibModal, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper) {
+    constructor ($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper) {
         this.$rootScope = $rootScope;
         this.$state = $state;
         this.$translate = $translate;
         this.$uibModal = $uibModal;
         this.CloudMessage = CloudMessage;
+        this.CloudUserPref = CloudUserPref;
         this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
         this.ControllerHelper = ControllerHelper;
         this.ServiceHelper = ServiceHelper;
@@ -198,6 +199,19 @@ class CloudProjectComputeInfrastructureService {
             editVm: null,
             monitorVm: vmId
         });
+    }
+
+    setPreferredView (view) {
+        if (_.includes(["diagram", "list"], view)) {
+            this.CloudUserPref.set("CLOUD_PROJECT_INFRA_PREFERRED_VIEW", {
+                view
+            });
+        }
+    }
+
+    getPreferredView () {
+        return this.CloudUserPref.get("CLOUD_PROJECT_INFRA_PREFERRED_VIEW")
+            .then(view => _.get(view, "view", "diagram"));
     }
 }
 

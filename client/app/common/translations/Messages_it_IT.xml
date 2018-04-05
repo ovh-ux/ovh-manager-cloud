@@ -540,6 +540,15 @@
    <translation id="common_pagination_next" qtlid="433423">Pagina successiva</translation>
    <translation id="common_pagination_previous" qtlid="433436">Pagina precedente</translation>
 
+   <translation id="common_field_error_required" qtlid="472294">Completa questo campo.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Inserisci un valore numerico valido.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Inserisci un indirizzo email valido.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Inserisci un valore superiore o pari a {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Inserisci un valore inferiore o pari a {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Inserisci almeno {{minlength}} caratteri.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Inserisci un massimo di {{maxlength}} caratteri.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Inserisci un formato valido.</translation>
+
    <translation id="common_limited_voucher_start" qtlid="440982">Restano ancora</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">per il tuo progetto</translation>
    <translation id="common_day_unit" qtlid="441008">giorni</translation>
@@ -555,23 +564,23 @@
    <translation id="common_complete_order" qtlid="454878">Régler le bon de commande</translation>
    <translation id="common_deactivate" qtlid="90973">Disattiva</translation>
 
-   <translation id="guide_vps_1" qtlid="468512">Getting started with a VPS</translation>
-   <translation id="guide_vps_2" qtlid="468525">Securing a VPS</translation>
-   <translation id="guide_vps_3" qtlid="468538">Repartitioning a VPS after an upgrade</translation>
-   <translation id="guide_vps_4" qtlid="468551">Using the KVM for the VPS</translation>
-   <translation id="guide_vps_5" qtlid="468564">First Windows Server Configuration (Firewall)</translation>
-   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
-   <translation id="guide_vps_7" qtlid="468590">Changing your root password on a VPS</translation>
-   <translation id="guide_vps_8" qtlid="468603">Activating Rescue Mode on VPS</translation>
+   <translation id="guide_vps_1" qtlid="468512">Iniziare a utilizzare un VPS</translation>
+   <translation id="guide_vps_2" qtlid="468525">Mettere in sicurezza un VPS</translation>
+   <translation id="guide_vps_3" qtlid="468538">Partizionare un VPS in seguito a un upgrade</translation>
+   <translation id="guide_vps_4" qtlid="468551">Utilizzare KVM sui VPS</translation>
+   <translation id="guide_vps_5" qtlid="468564">Prima configurazione di Windows Server (firewall)</translation>
+   <translation id="guide_vps_6" qtlid="468577">Introduzione a SSH</translation>
+   <translation id="guide_vps_7" qtlid="468590">Modifica la password di root su un VPS</translation>
+   <translation id="guide_vps_8" qtlid="468603">Attivare la modalità Rescue sui VPS</translation>
    <translation id="guide_vps_all" qtlid="468616">Vedi tutte le guide VPS</translation>
 
-   <translation id="guide_project_1" qtlid="468629">Getting started with Public Cloud: logging in and creating a project</translation>
-   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
-   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
-   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_1" qtlid="468629">Crea il tuo primo progetto Public Cloud</translation>
+   <translation id="guide_project_2" qtlid="468642">Informazioni sulle modalità di fatturazione Cloud</translation>
+   <translation id="guide_project_3" qtlid="468655">Introduzione alle istanze e ad altre nozioni Cloud</translation>
+   <translation id="guide_project_4" qtlid="468668">Aumenta la quota del tuo Public Cloud</translation>
    <translation id="guide_project_5" qtlid="290785">Crea un utente per accedere a Horizon</translation>
-   <translation id="guide_project_6" qtlid="468681">Start a first cloud server within 3 minutes</translation>
-   <translation id="guide_project_7" qtlid="468694">Prepare the environment for using the OpenStack API</translation>
-   <translation id="guide_project_8" qtlid="468707">Create and configure an additional disk on an instance</translation>
+   <translation id="guide_project_6" qtlid="468681">Avvia il primo server Cloud in 3 minuti</translation>
+   <translation id="guide_project_7" qtlid="468694">Prepara il tuo ambiente di sviluppo per utilizzare l’API OpenStack</translation>
+   <translation id="guide_project_8" qtlid="468707">Crea e configura un disco aggiuntivo sulla tua istanza</translation>
    <translation id="guide_project_all" qtlid="468720">Vedi tutte le guide Public Cloud</translation>
 </translations>

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
-    function ($state, $q, $translate, $stateParams, CloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
+    function ($state, $q, $translate, $stateParams, validParams, CloudMessage, CloudProjectBillingService, OvhApiCloudProjectUsageHistory, OvhApiCloudProjectUsageCurrent, OvhApiCloudProject, OvhApiMe, REDIRECT_URLS) {
         var self = this;
         self.year = null;
         self.month = null;
@@ -27,18 +27,11 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
         function init () {
             self.loading = true;
 
-            self.year = $stateParams.year;
-            self.month = $stateParams.month;
+            self.year = validParams.year;
+            self.month = validParams.month;
 
-            self.monthBilling = moment.utc({ y: $stateParams.year, M: $stateParams.month - 1, d: 1 });
+            self.monthBilling = moment.utc({ y: validParams.year, M: validParams.month - 1, d: 1 });
             self.previousMonth = moment.utc(self.monthBilling).subtract(1, "month");
-
-            if (!self.monthBilling.isValid() || self.monthBilling.isAfter(moment.utc().startOf("month")) || self.monthBilling.year() < 1990) {
-                return $state.go("iaas.pci-project.billing.history.details", {
-                    year: moment.utc().year(),
-                    month: moment.utc().month() + 1, // because moment indexes month from 0 to 11
-                });
-            }
 
             initConsumptionHistory()
                 .catch(function (err) {

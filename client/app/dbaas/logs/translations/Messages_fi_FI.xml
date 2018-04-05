@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="logs_guides" qtlid="300370">Oppaat</translation>
+   <translation id="logs_guides_title" qtlid="366385">Logs Data Platform</translation>
+   <translation id="logs_guides_footer" qtlid="406905">Kaikki OVH:n ohjeet</translation>
+
+   <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
+   <translation id="logs_tab_home" qtlid="27643">Etusivu</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Tietovuo</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Ohjauspaneeli</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Keräystyökalut</translation>
+   <translation id="logs_tab_indices" qtlid="426729">Hakemisto</translation>
+   <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Roolit</translation>
+
+   <translation id="logs_loading_error_configuration" qtlid="469153">Virhe "Konfigurointi"-osion lataamisessa.</translation>
+
+   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform on käyttöliittymä lokitietojen keräykseen, indeksointiin ja analysointiin. Riippumnatta lokitietojen lähteestä tällä alustalla on mahdollista valita erilaisia syöttöpisteitä protokollan, tietoturvatason ja tarvittavan formaatin mukaan. Tietojen analysointi ja tarkastelu voidaan eri API-ohjelmistoilla sekä käyttöliittymillä.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Muuta nykyistä kontaktia: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">Kontaktin muutos johtaa ilmoitusten lähettämiseen uudelle vastaanottajalle.</translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Valitse yksi kontakteistasi. Jos yhtään kontaktia ei ole valittu, se liitetään oletuksena pääkäyttäjääsi.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Lisää uusi kontakti</translation>
+
+   <translation id="logs_home_token_temp_1" qtlid="421386">Lukutunnisteet</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">Jos haluat sallia pääsyn lokeihisi ulkopuolisilta sovelluksilta tai automatisoida tiettyjä tehtäviä, sinun on annettava niille pääsy APIin. Varmin tapa yhteyksienhallintaan on käyttää todennustunnisteita. Tämän ominaisuuden ansiosta sinun ei enää tarvitse syöttää tunnuksisasi konfigurointitiedostoihisi.</translation>
+   <translation id="logs_home_token_temp_3" qtlid="469231">Lisää tunniste</translation>
+
+   <translation id="logs_home_password_temp_1" qtlid="80394">Salasanamuutos</translation>
+   <translation id="logs_home_password_temp_2" qtlid="17177">Uusi salasana</translation>
+   <translation id="logs_home_password_temp_3" qtlid="300539">Vahvista salasana</translation>
+
+   <translation id="logs_home_password_temp_4" qtlid="469244">Määritä salasana</translation>
+   <translation id="logs_home_password_temp_5" qtlid="469257">Konfiguroi salasana kontaktille <strong>{{ contact }}.</strong></translation>
+
+   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Näiden tunnisteiden avulla voit päästä API-ohjkelmistoihin (kirjoitus hakemistoihin, lukeminen Graylogissa ja Elasticsearchissä).</translation>
+
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Sinulla on pääsy Elasticsearch-hakukoneeseen hakemiston tai aliaksen hankkimisen ansiosta.</translation>
+
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Viestiformaatit ja saatavillla olevat portit</translation>
+
+   <translation id="logs_options_temp_1" qtlid="424402">Lisää lisäpalveluja</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">Tietovuon, aliaksen tai ohjauspaneelin hankinnan yhteydessä sinulle tarjotaan käyttäjärooleja (esim. 5kpl tietovuota = 5 roolia).</translation>
+   <translation id="logs_options_temp_3" qtlid="469322">Nykyiset lisävalinnat</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Keräystyökalut</translation>
+   <translation id="logs_options_type_temp_2" qtlid="45376">Ohjauspaneeli</translation>
+   <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Tietovuo</translation>
+   <translation id="logs_options_type_temp_5" qtlid="469335">Kibana-paketti</translation>
+   <translation id="logs_options_type_temp_6" qtlid="469348">{{ size }} Elasticsearch-hakemisto </translation>
+   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instanssia</translation>
+   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragmenttia</translation>
+   <translation id="logs_options_details_temp_3" qtlid="469387">{{ count }} paketti</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} aliasta ja {{count}} {{ size }} hakemistoa</translation>
+
+   <translation id="logs_offer_temp_1" qtlid="469413">Valitse tuotteesi</translation>
+   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} tietovuota</translation>
+   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} taulukkoa</translation>
+   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} keräystyökalua</translation>
+
+   <translation id="logs_streams_temp_1" qtlid="469465">Tietovuot mahdollistavat lokitietojen reaaliaikaisen ohjauksen &#13;
+tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos sinulla useita tietovoita, voit lisäksi: luokitella viestejä helposti niiden lähteen, sovelluksen tai lähdepalvelimen mukaan ja luoda uusia luottamuksellisuustasoja tietovuon mukaan. Tämän avulla voit jakaa pääsyoikeuksia ainoastaan sallituille henkilöille. Tunnisteella tarkoitetaan tässä kirjoitustunnisteita, joiden avulla voidaan yhdistää lokitiedot oikeaan vuohon. Yleisesti usean vuon omistaminen helpottaa suuresti lokitietojen hakua. Ei ole enää tarvetta poissulkea toisen järjestelmän tai sovelluksen tuloksia.</translation>
+
+   <translation id="logs_streams_add_temp_1" qtlid="426170">Lisää tietovuo</translation>
+   <translation id="logs_streams_add_temp_1" qtlid="3818">Nimi</translation>
+   <translation id="logs_streams_add_temp_2" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_streams_add_temp_3" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_streams_add_temp_4" qtlid="426807">Päätuote</translation>
+   <translation id="logs_streams_add_temp_5" qtlid="426677">Aktivoi WebSocket-jakaminen</translation>
+   <translation id="logs_streams_add_temp_6" qtlid="469491">Seuraa lokitietojen vastaanottamista reaaliajassa WebSocket-protokollan kautta.</translation>
+   <translation id="logs_streams_add_temp_7" qtlid="426469">Aktivoi pitkäaikainen säilytys</translation>
+   <translation id="logs_streams_add_temp_8" qtlid="469504">Arkistoi lokitietosi varmalla tavalla vuosiksi eteenpäin.</translation>
+   <translation id="logs_streams_add_temp_9" qtlid="426495">Pakkausalgoritmi</translation>
+   <translation id="logs_streams_add_temp_10" qtlid="426560">Arkistojen säilytysaika</translation>
+   <translation id="logs_streams_add_temp_11" qtlid="469517">{{ count }} vuotta</translation>
+   <translation id="logs_streams_add_temp_12" qtlid="32386">Muistutus</translation>
+   <translation id="logs_streams_add_temp_13" qtlid="469530">Ilmoita sähköpostitse, kun arkisto on saatavilla.</translation>
+
+   <translation id="logs_alerts_temp_1" qtlid="72797">Varoitukset</translation>
+   <translation id="logs_alerts_temp_2" qtlid="469543">Hälytysten hallinta tietovuolle {{ name }}</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Hälytysehtoja käyttämällä sinun ei tarvitse valvoa lokejasi, vaan alusta tekee sen puolestasi. Useat tapaukset saattavat aiheuttaa hälytyksen ja ilmoittaa sinulle siitä sähköpostitse: ohjelmistosta saapuvien viestien puuttuminen epätavallisen pitkänä ajanjaksona, kun toteutettujen tehtävien määrä on epänormaalin alhainen, kun verkkosivusi liikennen on erittäin korkea tai kun tietyt avainsanat ilmestyvät tietovuohosi.</translation>
+   <translation id="logs_alerts_temp_4" qtlid="469569">Luo hälytys</translation>
+   <translation id="logs_alerts_temp_5" qtlid="425806">Ehto</translation>
+   <translation id="logs_alerts_temp_6" qtlid="469582">Lisäaika</translation>
+   <translation id="logs_alerts_temp_7" qtlid="469595">Toista ilmoitukset</translation>
+
+   <translation id="logs_alert_count_temp_1" qtlid="469608">Luo mittarityyppinen ehto</translation>
+   <translation id="logs_alert_count_temp_2" qtlid="469621">Tämä ehto aktivoidaan kun viestien lukumäärä on ylittää tai alittaa tietylle ajanjaksolle määritetyn kynnysarvon.</translation>
+   <translation id="logs_alert_count_temp_3" qtlid="16469">Otsikko</translation>
+   <translation id="logs_alert_count_temp_4" qtlid="469634">Hälytysehdon otsikko</translation>
+   <translation id="logs_alert_count_temp_5" qtlid="469647">Ajanjakso (minuuteissa)</translation>
+   <translation id="logs_alert_count_temp_6" qtlid="469660">Arvioi ehtoa kaikille annetun minuuttimäärän aikana vastaanotetuille viesteille.</translation>
+   <translation id="logs_alert_count_temp_7" qtlid="469673">Kynnysarvon tyyppi</translation>
+   <translation id="logs_alert_count_temp_8" qtlid="469686">Valitse hälytyksen aktivoiva ehto: kun viestejä on kynnysarvoa enemmän tai vähemmän viestejä. &#13;
+</translation>
+   <translation id="logs_alert_count_temp_9" qtlid="469699">Kynnysarvo</translation>
+   <translation id="logs_alert_count_temp_10" qtlid="469712">Arvo, jonka ylittyminen laukaisee hälytyksen.</translation>
+   <translation id="logs_alert_count_temp_11" qtlid="469699">Kynnysarvo</translation>
+   <translation id="logs_alert_count_temp_12" qtlid="469725">Lisäaika (minuuteissa)</translation>
+   <translation id="logs_alert_count_temp_13" qtlid="469738">Odotettava aika minuuteissa hälytyksen selvittämisen jälkeen toisen hälytyksen käynnistämiseen.</translation>
+   <translation id="logs_alert_count_temp_14" qtlid="469751">Viestien kertyminen</translation>
+   <translation id="logs_alert_count_temp_15" qtlid="469764">Hälytysilmoituksiin liitettävien viestien määrä</translation>
+   <translation id="logs_alert_count_temp_16" qtlid="33250">Ilmoitukset</translation>
+   <translation id="logs_alert_count_temp_17" qtlid="469777">Rastita tämä ruutu lähettääksesi ilmoituksia, aina kun hälytysehto täyttyy, tilasta riippumatta.</translation>
+
+   <translation id="logs_alert_numerical_temp_1" qtlid="469790">Luo ehto numeerisena arvona</translation>
+   <translation id="logs_alert_numerical_temp_2" qtlid="469803">Tämä ehto aktivoituu, kun kentän yhteenlaskettu arvo on korkeampi tai matalampi kuin tietylle ajalle määritelty kynnysarvo.</translation>
+   <translation id="logs_alert_numerical_temp_3" qtlid="16469">Otsikko</translation>
+   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Hälytysehdon otsikko</translation>
+   <translation id="logs_alert_numerical_temp_5" qtlid="469816">Kenttä</translation>
+   <translation id="logs_alert_numerical_temp_6" qtlid="469829">Tarkistettavan kentän nimi.</translation>
+   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Ajanjakso (minuuteissa)</translation>
+   <translation id="logs_alert_numerical_temp_8" qtlid="469842">Arvioi ehtoa, jota sovelletaan kaikille saapuneille viesteille tietyn minuuttimäärän aikana.</translation>
+   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Kynnysarvon tyyppi</translation>
+   <translation id="logs_alert_numerical_temp_10" qtlid="469855">Valitse hälytyksen aktivoiva ehto: kun arvo on kynnysarvoa korkeampi tai matalampi.</translation>
+   <translation id="logs_alert_numerical_temp_11" qtlid="469868">Yhdistämisen tyyppi</translation>
+   <translation id="logs_alert_numerical_temp_12" qtlid="469881">Valitse hälytyksen aktivoiva ehto: kun arvo on kynnysarvoa pienempi tai suurempi.</translation>
+   <translation id="logs_alert_numerical_temp_13" qtlid="469725">Lisäaika (minuuteissa)</translation>
+   <translation id="logs_alert_numerical_temp_14" qtlid="469738">Odotettava aika minuuteissa hälytyksen selvittämisen jälkeen toisen hälytyksen käynnistämiseen.</translation>
+   <translation id="logs_alert_numerical_temp_15" qtlid="469751">Viestien kertyminen</translation>
+   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Hälytysilmoituksiin liitettävien viestien määrä</translation>
+   <translation id="logs_alert_numerical_temp_17" qtlid="33250">Ilmoitukset</translation>
+   <translation id="logs_alert_numerical_temp_18" qtlid="469777">Rastita tämä ruutu lähettääksesi ilmoituksia, aina kun hälytysehto täyttyy, tilasta riippumatta.</translation>
+
+   <translation id="logs_alert_text_temp_1" qtlid="469894">Luo tekstisisältöön liittyvä ehto</translation>
+   <translation id="logs_alert_text_temp_2" qtlid="469907">Tämä ehto aktivoituu, kun viestien sisältö vastaa määritettyä arvoa.</translation>
+   <translation id="logs_alert_text_temp_3" qtlid="16469">Otsikko</translation>
+   <translation id="logs_alert_text_temp_4" qtlid="469634">Hälytysehdon otsikko</translation>
+   <translation id="logs_alert_text_temp_5" qtlid="469816">Kenttä</translation>
+   <translation id="logs_alert_text_temp_6" qtlid="469829">Tarkistettavan kentän nimi.</translation>
+   <translation id="logs_alert_text_temp_7" qtlid="47548">Arvo</translation>
+   <translation id="logs_alert_text_temp_8" qtlid="469920">Arvo, jota on verrattava kentän arvoon.</translation>
+   <translation id="logs_alert_text_temp_9" qtlid="469725">Lisäaika (minuuteissa)</translation>
+   <translation id="logs_alert_text_temp_10" qtlid="469738">Odotettava aika minuuteissa hälytyksen selvittämisen jälkeen toisen hälytyksen käynnistämiseen.</translation>
+   <translation id="logs_alert_text_temp_11" qtlid="469751">Viestien kertyminen</translation>
+   <translation id="logs_alert_text_temp_12" qtlid="469764">Hälytysilmoituksiin liitettävien viestien määrä</translation>
+   <translation id="logs_alert_text_temp_13" qtlid="33250">Ilmoitukset</translation>
+   <translation id="logs_alert_text_temp_14" qtlid="469777">Rastita tämä ruutu lähettääksesi ilmoituksia, aina kun hälytysehto täyttyy, tilasta riippumatta.</translation>
+
+   <translation id="logs_archives_temp_1" qtlid="469933">Arkistot</translation>
+   <translation id="logs_archives_temp_2" qtlid="469946">Kun arkistot on vapautettu, ne ovat ladattavissa 24 tunnin ajan.</translation>
+   <translation id="logs_archives_temp_3" qtlid="469959">Arkistoa {{ name }} vapautetaan. Se on käytettävissä  {{ time }} kuluessa.</translation>
+   <translation id="logs_archives_temp_4" qtlid="469972">Tiedoston nimi</translation>
+   <translation id="logs_archives_temp_5" qtlid="7726">Koko</translation>
+   <translation id="logs_archives_temp_6" qtlid="69953">Allekirjoitukset</translation>
+   <translation id="logs_archives_temp_7" qtlid="39286">Lataa</translation>
+   <translation id="logs_archives_temp_8" qtlid="369152">Poista jäädytys</translation>
+   <translation id="logs_archives_temp_9" qtlid="469985">Jäädytetty</translation>
+   <translation id="logs_archives_temp_10" qtlid="99920">Saatavilla</translation>
+   <translation id="logs_archives_temp_11" qtlid="469998">Vapautetaan</translation>
+
+   <translation id="logs_stream_delete_temp_1" qtlid="470011">Poista tietovuo</translation>
+   <translation id="logs_stream_delete_temp_2" qtlid="470024">Vahvistatko tietovuon <strong>{{ name }}</strong> poistamisen?</translation>
+
+   <translation id="logs_stream_follow_temp_1" qtlid="426222">Seuraa suoraan</translation>
+   <translation id="logs_stream_follow_temp_2" qtlid="470037">Sulje yhteys</translation>
+
+   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Valitse yksi ehdotetuista muodoista tarvittavan komentorivin kopimoimiseksi. Sitä tarvitaan tietovuon testaamiseen päätteeltä.</translation>
+
+   <translation id="logs_dashboards_temp_1" qtlid="470063">Ohjauspaneelit ovat lokitietojesi graafisia esityksiä. Erilaisten moduulien (käyrät, ympyräkaavioit, laskurit, tilastot jne.) ansiosta saat tiedoistasi kokonaiskuvan. Montako virhettä tapahtui viimeisen vuorokauden aikana? Onko määrä kasvanut vai laskenut? Mikä on päivän eniten vierailtu sivu? Kuinka monta asiakasta tässä kuussa? Näin paljon tietoa saatavilla heti. Kun sinulla on erilaisia taulukoita, voit nähdä tietosi tietyn kontekstin mukaan ja tieto on paremmin luettavaa.</translation>
+
+   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Kahdenna ohjauspaneeli</translation>
+   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Kahdenna ohjauspaneeli <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_duplicate_temp_3" qtlid="3818">Nimi</translation>
+   <translation id="logs_dashboard_duplicate_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Liitä kaikki uuden ohjauspaneelin moduulit seuraavaan tietovuohon:</translation>
+
+   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Muokkaa ohjauspaneelia</translation>
+   <translation id="logs_dashboard_edit_temp_2" qtlid="470128">Muokkaa ohjauspaneelia <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_edit_temp_3" qtlid="3818">Nimi</translation>
+   <translation id="logs_dashboard_edit_temp_4" qtlid="9238">Kuvaus</translation>
+
+   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Poista ohjauspaneeli</translation>
+   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Vahvistatko ohjauspaneeliin <strong>{{ name }}</strong> poistamisen?</translation>
+
+   <translation id="logs_collector_temp_1" qtlid="470167">Keräystyökalut ovat ohjelmistoja, joilla voidaan poimia lokitietoja palvelimilta tai sovelluksilta. Kyse on keinosta käsitellä ja muuttaa tietoa tehokkaasti GELF-muotoon, joka on yhteensoppiva Lpgs Data Platform -alustan kanssa. Enää ei tarvitse varata materiaalisia resursseja tai valvoa infrastruktuurisi käytetävyyttä, me teemme sen puolestasi. Tämän alustan avulla voit yhdistää työkalut eri tietovoihisi yksinkertaistettua ja palomuurisääntöjen avulla suojattua konfigurointia varten.</translation>
+
+   <translation id="logs_collector_info_temp_1" qtlid="470180">Hyvä tietää</translation>
+   <translation id="logs_collector_info_temp_2" qtlid="470193">Cliquez sur les options proposées pour les copier dans votre presse-papiers.</translation>
+   <translation id="logs_collector_info_temp_3" qtlid="470206">Isäntäpalvelimen nimi</translation>
+   <translation id="logs_collector_info_temp_4" qtlid="470219">Julkinen IP (osoite)</translation>
+   <translation id="logs_collector_info_temp_5" qtlid="439169">Varmenteen tyyppi</translation>
+
+   <translation id="logs_collector_console_temp_1" qtlid="424350">Sortie console</translation>
+
+   <translation id="logs_collector_delete_temp_1" qtlid="470232">Supprimer l'outil de collecte</translation>
+   <translation id="logs_collector_delete_temp_2" qtlid="470245">Confirmez-vous la suppression de l'outil de collecte <strong>{{ name }}</strong> ?</translation>
+
+   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Lisää uusi keräystyökalu</translation>
+   <translation id="logs_collector_add_logstash_temp_2" qtlid="4406">Konfiguraatio</translation>
+   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Autoriser des réseaux</translation>
+   <translation id="logs_collector_add_logstash_temp_4" qtlid="3818">Nimi</translation>
+   <translation id="logs_collector_add_logstash_temp_5" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Logiciel</translation>
+   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Port TCP à ouvrir</translation>
+   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Liitä datavuohon</translation>
+   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Yksittäinen instanssi</translation>
+   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
+
+   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Éditez les sections « input » et filtrez la partie « output » de la configuration de votre Logstash écrite par notre service.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Nous vous rappelons que vous avez choisi d'exposer le port TCP 6514 à l'extérieur.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Une fois ces sections éditées, vous pouvez tester directement votre configuration.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Tester la configuration</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_5" qtlid="23215">Konfigurointiavustaja</translation>
+
+   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Autoriser des réseaux</translation>
+   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Réseau de confiance</translation>
+   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">Vous pouvez autoriser un ou plusieurs réseaux de confiance via leur adresse IP.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">Cette étape marque la finalisation de la configuration avant le démarrage de votre outil.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">Tant qu'aucun réseau n'est autorisé, votre sécurité est compromise car tout le monde peut accéder à votre application.</translation>
+
+   <translation id="logs_collector_add_logstash_start_temp_1" qtlid="9983">Vahvista</translation>
+   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Commencer maintenant</translation>
+   <translation id="logs_collector_add_logstash_start_temp_3" qtlid="82305">Myöhemmin</translation>
+   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Voulez-vous commmencer la collecte des données maintenant ?</translation>
+
+   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Nombre de messages gardés en mémoire vive par Flowgger avant que celui-ci ne les envoie à Kafka. Une valeur élevée est plus performante, mais peut entraîner une latence d'indexation si vous envoyez peu de messages.</translation>
+
+   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform vous permet de créer et d'héberger des index Elasticsearch. Ceux-ci peuvent être utilisés pour les données de configuration d'une instance Kibana, indexer des données statistiques et enrichir ou corréler vos logs. Vous pourrez ensuite utiliser ces index avec la majorité des outils et applications compatibles avec l'API REST d'Elasticsearch.</translation>
+
+   <translation id="logs_index_add_temp_1" qtlid="423024">Ajouter un index</translation>
+   <translation id="logs_index_add_temp_2" qtlid="59267">Loppuliite</translation>
+   <translation id="logs_index_add_temp_3" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
+   <translation id="logs_index_add_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_index_add_temp_5" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_index_add_temp_6" qtlid="470440">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
+
+   <translation id="logs_index_edit_temp_1" qtlid="470453">Éditer un index</translation>
+   <translation id="logs_index_edit_temp_2" qtlid="470466">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_index_edit_temp_3" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_index_edit_temp_4" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_index_edit_temp_5" qtlid="32386">Muistutus</translation>
+   <translation id="logs_index_edit_temp_6" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+
+   <translation id="logs_index_delete_temp_1" qtlid="470492">Supprimer l'index</translation>
+   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirmez-vous la suppression de l'index <strong>{{ name }}</strong> ?</translation>
+
+   <translation id="logs_alias_temp_1" qtlid="470518">Activez toutes les possibilités d'Elasticsearch en créant un alias sur vos logs ou vos index. Cela vous donnera accès à des requêtes plus complexes comme les agrégations imbriquées et déverrouillera la compatibilité aux outils les plus populaires de l'écosystème.</translation>
+
+   <translation id="logs_alias_add_temp_1" qtlid="143538">Lisää alias</translation>
+   <translation id="logs_alias_add_temp_2" qtlid="59267">Loppuliite</translation>
+   <translation id="logs_alias_add_temp_3" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
+   <translation id="logs_alias_add_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_alias_add_temp_5" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_alias_add_temp_6" qtlid="32386">Muistutus</translation>
+   <translation id="logs_alias_add_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+
+   <translation id="logs_alias_edit_temp_1" qtlid="470544">Éditer un alias</translation>
+   <translation id="logs_alias_edit_temp_2" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_alias_edit_temp_3" qtlid="3818">Nimi</translation>
+   <translation id="logs_alias_edit_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_alias_edit_temp_5" qtlid="469478">Valitse liitetty lisävalinta</translation>
+   <translation id="logs_alias_edit_temp_6" qtlid="32386">Muistutus</translation>
+   <translation id="logs_alias_edit_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+
+   <translation id="logs_alias_link_temp_1" qtlid="421672">Liitä sisältöä aliakseen</translation>
+   <translation id="logs_alias_link_temp_2" qtlid="421789">Alias voidaan lititää yhteen tai useampaan Graylog-datavuohon tai Elasticsearch-hakemistoon.</translation>
+   <translation id="logs_alias_link_temp_3" qtlid="470570">Flux</translation>
+   <translation id="logs_alias_link_temp_4" qtlid="426729">Hakemisto</translation>
+   <translation id="logs_alias_link_temp_5" qtlid="421685">Saatavilla olevat datavuot</translation>
+   <translation id="logs_alias_link_temp_6" qtlid="470583">Choisir un flux</translation>
+
+   <translation id="logs_role_temp_1" qtlid="425130">Lokisi sisältävät tärkeitä tietoja, joita täytyy joskus jakaa muille. Logs Data Platform tarjoaa mahdollisuuden määrittää ainoastaan lukuoikeuksia valittujen tietovuoiden  sisältämiin tietoihin, ohjauspaneeliin, hakemistoon tai aliaksiin.</translation>
+
+   <translation id="logs_role_add_temp_1" qtlid="425143">Lisää rooli</translation>
+   <translation id="logs_role_add_temp_2" qtlid="3818">Nimi</translation>
+   <translation id="logs_role_add_temp_3" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_role_add_temp_4" qtlid="470596">Choisir le flux attaché</translation>
+
+   <translation id="logs_role_member_temp_1" qtlid="356810">Jäsenten hallinta</translation>
+   <translation id="logs_role_member_temp_2" qtlid="470609">Vous trouverez ici la liste de vos membres actifs pour le rôle <strong>{{ name }}</strong>. Vous pouvez les révoquer individuellement ou en ajouter de nouveaux grâce à des comptes utilisateur existants.</translation>
+   <translation id="logs_role_member_temp_3" qtlid="392502">Ajouter un membre</translation>
+   <translation id="logs_role_member_temp_4" qtlid="470622">Compte utilisateur</translation>
+   <translation id="logs_role_member_temp_5" qtlid="26011">Merkintä</translation>
+   <translation id="logs_role_member_temp_6" qtlid="470635">Date d'ajout</translation>
+   <translation id="logs_role_member_temp_7" qtlid="185751">Peruuta</translation>
+
+   <translation id="logs_role_member_add_temp_1" qtlid="392502">Ajouter un membre</translation>
+   <translation id="logs_role_member_add_temp_2" qtlid="424857">Compte utilisateur Logs Data Platform</translation>
+   <translation id="logs_role_member_add_temp_3" qtlid="470648">Logs-XX-XXXX</translation>
+   <translation id="logs_role_member_add_temp_4" qtlid="26011">Merkintä</translation>
+   <translation id="logs_role_member_add_temp_5" qtlid="470661">Choisir le rôle</translation>
+
+   <translation id="logs_role_edit_temp_1" qtlid="470674">Éditer le rôle</translation>
+   <translation id="logs_role_edit_temp_2" qtlid="3818">Nimi</translation>
+   <translation id="logs_role_edit_temp_3" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_role_edit_temp_4" qtlid="6946">Oikeudet</translation>
+   <translation id="logs_role_edit_temp_5" qtlid="470687">Éditer les permissions</translation>
+   <translation id="logs_role_edit_temp_6" qtlid="422569">Lisää uusi rooli</translation>
+
+   <translation id="logs_role_permissions_temp_1" qtlid="470700">Éditer les permissions du rôle</translation>
+   <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
+   <translation id="logs_role_permissions_temp_3" qtlid="3818">Nimi</translation>
+   <translation id="logs_role_permissions_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Tietovuo</translation>
+   <translation id="logs_role_permissions_temp_6" qtlid="225075">Ohjauspaneeli</translation>
+   <translation id="logs_role_permissions_temp_7" qtlid="426729">Hakemisto</translation>
+   <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
+
+   <translation id="logs_role_preview_temp_1" qtlid="470726">Aperçu</translation>
+   <translation id="logs_role_preview_temp_2" qtlid="403398">Rooli</translation>
+   <translation id="logs_role_preview_temp_3" qtlid="26011">Merkintä</translation>
+   <translation id="logs_role_preview_temp_4" qtlid="9238">Kuvaus</translation>
+   <translation id="logs_role_preview_temp_5" qtlid="470739">Permission(s)</translation>
+   <translation id="logs_role_preview_temp_6" qtlid="425169">Jäsenet</translation>
+   <translation id="logs_role_preview_temp_7" qtlid="426768">Liitetty optio</translation>
+
+   <translation id="logs_role_delete_temp_1" qtlid="470752">Supprimer le rôle</translation>
+   <translation id="logs_role_delete_temp_2" qtlid="470765">Confirmez-vous la suppression du rôle <strong>{{ name }}</strong> ?</translation>
+</translations>

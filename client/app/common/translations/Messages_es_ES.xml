@@ -34,7 +34,7 @@
 
    <translation id="common_menu_web" qtlid="135840">Web</translation>
    <translation id="common_menu_labs" qtlid="383707">UX Labs</translation>
-   <translation id="common_menu_dedicated" qtlid="31738">Dedicado</translation>
+   <translation id="common_menu_dedicated" qtlid="31738">Serviços Dedicados</translation>
    <translation id="common_menu_cloud" qtlid="15677">Cloud</translation>
    <translation id="common_menu_telecom" qtlid="135827">Telecom</translation>
    <translation id="common_menu_gamma" qtlid="232401">Sunrise</translation>
@@ -540,6 +540,15 @@
    <translation id="common_pagination_next" qtlid="433423">Página siguiente</translation>
    <translation id="common_pagination_previous" qtlid="433436">Página anterior</translation>
 
+   <translation id="common_field_error_required" qtlid="472294">Complete este campo.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Introduzca un valor numérico válido.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Introduzca una dirección de correo electrónico válida.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Introduzca un valor superior o igual a {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Introduzca un valor inferior o igual a {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Introduzca un mínimo de {{minlength}} caracteres.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Introduzca un máximo de {{maxlength}} caracteres.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Introduzca un formato válido.</translation>
+
    <translation id="common_limited_voucher_start" qtlid="440982">Le quedan</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">a su proyecto</translation>
    <translation id="common_day_unit" qtlid="441008">día(s)</translation>
@@ -555,23 +564,23 @@
    <translation id="common_complete_order" qtlid="454878">Abonar la orden de pedido</translation>
    <translation id="common_deactivate" qtlid="90973">Desactivar</translation>
 
-   <translation id="guide_vps_1" qtlid="468512">Getting started with a VPS</translation>
-   <translation id="guide_vps_2" qtlid="468525">Securing a VPS</translation>
-   <translation id="guide_vps_3" qtlid="468538">Repartitioning a VPS after an upgrade</translation>
-   <translation id="guide_vps_4" qtlid="468551">Using the KVM for the VPS</translation>
-   <translation id="guide_vps_5" qtlid="468564">First Windows Server Configuration (Firewall)</translation>
-   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
-   <translation id="guide_vps_7" qtlid="468590">Changing your root password on a VPS</translation>
-   <translation id="guide_vps_8" qtlid="468603">Activating Rescue Mode on VPS</translation>
+   <translation id="guide_vps_1" qtlid="468512">Primeros pasos con un VPS</translation>
+   <translation id="guide_vps_2" qtlid="468525">Proteger un VPS</translation>
+   <translation id="guide_vps_3" qtlid="468538">Reparticionar un VPS tras un upgrade</translation>
+   <translation id="guide_vps_4" qtlid="468551">Utilizar el KVM en un VPS</translation>
+   <translation id="guide_vps_5" qtlid="468564">Configurar Windows Server por primera vez</translation>
+   <translation id="guide_vps_6" qtlid="468577">Introducción al SSH</translation>
+   <translation id="guide_vps_7" qtlid="468590">Cambiar la contraseña «root» de un VPS</translation>
+   <translation id="guide_vps_8" qtlid="468603">Activar el modo de rescate en un VPS</translation>
    <translation id="guide_vps_all" qtlid="468616">Ver todas las guías de VPS</translation>
 
-   <translation id="guide_project_1" qtlid="468629">Getting started with Public Cloud: logging in and creating a project</translation>
-   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
-   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
-   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_1" qtlid="468629">Empezar con Public Cloud: identificarse y crear un proyecto</translation>
+   <translation id="guide_project_2" qtlid="468642">Información sobre el modo de facturación cloud</translation>
+   <translation id="guide_project_3" qtlid="468655">Introducción a las instancias y otras nociones cloud</translation>
+   <translation id="guide_project_4" qtlid="468668">Aumentar el límite de Public Cloud</translation>
    <translation id="guide_project_5" qtlid="290785">Crear un acceso a Horizon</translation>
-   <translation id="guide_project_6" qtlid="468681">Start a first cloud server within 3 minutes</translation>
-   <translation id="guide_project_7" qtlid="468694">Prepare the environment for using the OpenStack API</translation>
-   <translation id="guide_project_8" qtlid="468707">Create and configure an additional disk on an instance</translation>
+   <translation id="guide_project_6" qtlid="468681">Arrancar un primer servidor cloud en 3 minutos</translation>
+   <translation id="guide_project_7" qtlid="468694">Preparar el entorno para utilizar la API de OpenStack</translation>
+   <translation id="guide_project_8" qtlid="468707">Crear y configurar un disco adicional en una instancia</translation>
    <translation id="guide_project_all" qtlid="468720">Ver todas las guías de Public Cloud</translation>
 </translations>

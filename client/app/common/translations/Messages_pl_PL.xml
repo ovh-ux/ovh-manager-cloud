@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="preload_welcome" qtlid="433576">Witamy w</translation>
-   <translation id="preload_manager_ovh" qtlid="433589">panelu klienta OVH</translation>
+   <translation id="preload_manager_ovh" qtlid="433589">Panelu klienta OVH</translation>
 
    <translation id="common_confirm" qtlid="31498">Potwierdź</translation>
    <translation id="common_buy" qtlid="269591">Kup</translation>
@@ -540,6 +540,15 @@
    <translation id="common_pagination_next" qtlid="433423">Następna strona</translation>
    <translation id="common_pagination_previous" qtlid="433436">Poprzednia strona</translation>
 
+   <translation id="common_field_error_required" qtlid="472294">Wypełnij to pole.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Wprowadź poprawną wartość liczbową.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Wprowadź poprawny adres e-mail.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Wprowadź wartość większą lub równą {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Wprowadź wartość mniejszą lub równą {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Wprowadź minimum {{minlength}} znaków.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Wprowadź maksimum {{maxlength}} znaków.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Użyj poprawnego formatu.</translation>
+
    <translation id="common_limited_voucher_start" qtlid="440982">Pozostaje</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">w ramach Twojego projektu</translation>
    <translation id="common_day_unit" qtlid="441008">dni</translation>
@@ -555,23 +564,23 @@
    <translation id="common_complete_order" qtlid="454878">Ureguluj płatność za zamówienie</translation>
    <translation id="common_deactivate" qtlid="90973">Wyłącz</translation>
 
-   <translation id="guide_vps_1" qtlid="468512">Getting started with a VPS</translation>
-   <translation id="guide_vps_2" qtlid="468525">Securing a VPS</translation>
-   <translation id="guide_vps_3" qtlid="468538">Repartitioning a VPS after an upgrade</translation>
-   <translation id="guide_vps_4" qtlid="468551">Using the KVM for the VPS</translation>
-   <translation id="guide_vps_5" qtlid="468564">First Windows Server Configuration (Firewall)</translation>
-   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
-   <translation id="guide_vps_7" qtlid="468590">Changing your root password on a VPS</translation>
-   <translation id="guide_vps_8" qtlid="468603">Activating Rescue Mode on VPS</translation>
+   <translation id="guide_vps_1" qtlid="468512">Pierwsze kroki z VPS</translation>
+   <translation id="guide_vps_2" qtlid="468525">Zabezpieczenie VPS</translation>
+   <translation id="guide_vps_3" qtlid="468538">Zwiększenie rozmiaru partycji VPS po aktualizacji</translation>
+   <translation id="guide_vps_4" qtlid="468551">Używanie konsoli KVM z VPS</translation>
+   <translation id="guide_vps_5" qtlid="468564">Pierwsza konfiguracja Windows Server</translation>
+   <translation id="guide_vps_6" qtlid="468577">Wprowadzenie do SSH</translation>
+   <translation id="guide_vps_7" qtlid="468590">Zmiana hasła root na serwerze VPS</translation>
+   <translation id="guide_vps_8" qtlid="468603">Uruchamianie trybu Rescue na serwerze VPS</translation>
    <translation id="guide_vps_all" qtlid="468616">Zobacz wszystkie przewodniki VPS</translation>
 
-   <translation id="guide_project_1" qtlid="468629">Getting started with Public Cloud: logging in and creating a project</translation>
-   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
-   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
-   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_1" qtlid="468629">Tworzenie pierwszego projektu Public Cloud</translation>
+   <translation id="guide_project_2" qtlid="468642">Informacje o metodach fakturowania za usługi Cloud</translation>
+   <translation id="guide_project_3" qtlid="468655">Podstawowe pojęcia związane z instancjami i usługami Cloud</translation>
+   <translation id="guide_project_4" qtlid="468668">Zwiększenie limitów Public Cloud</translation>
    <translation id="guide_project_5" qtlid="290785">Utwórzenie dostępu do interfejsu Horizon</translation>
-   <translation id="guide_project_6" qtlid="468681">Start a first cloud server within 3 minutes</translation>
-   <translation id="guide_project_7" qtlid="468694">Prepare the environment for using the OpenStack API</translation>
-   <translation id="guide_project_8" qtlid="468707">Create and configure an additional disk on an instance</translation>
+   <translation id="guide_project_6" qtlid="468681">Uruchom swój pierwszy serwer w chmurze w ciągu 3 minut</translation>
+   <translation id="guide_project_7" qtlid="468694">Przygotowanie środowiska do korzystania z API OpenStack</translation>
+   <translation id="guide_project_8" qtlid="468707">Utworzenie i konfiguracja dodatkowego dysku dla instancji</translation>
    <translation id="guide_project_all" qtlid="468720">Zobacz wszystkie przewodniki Public Cloud</translation>
 </translations>

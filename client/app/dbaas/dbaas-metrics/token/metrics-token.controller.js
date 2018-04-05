@@ -62,41 +62,14 @@
 
         actionTemplate () {
             return `
-                <cui-dropdown-menu>
-                    <cui-dropdown-menu-button>
-                        <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                    </cui-dropdown-menu-button>
-                    <cui-dropdown-menu-body>
-                        <div class="oui-action-menu">
-                            <div class="oui-action-menu__item oui-action-menu-item">
-                                <div class="oui-action-menu-item__icon">
-                                </div>
-                                <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                    type="button"
-                                    data-translate="metrics_token_show_preview"
-                                    data-ng-click="MetricsTokenCtrl.showPreview($row.id)"></button>
-                            </div>
-                        </div>
-                        <div class="oui-action-menu">
-                            <div class="oui-action-menu__item oui-action-menu-item">
-                                <div class="oui-action-menu-item__icon">
-                                </div>
-                                <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                    type="button"
-                                    data-translate="metrics_token_edit"
-                                    data-ng-click="MetricsTokenCtrl.edit($row.id, $row.description)"></button>
-                            </div>
-                            <div class="oui-action-menu__item oui-action-menu-item">
-                                <div class="oui-action-menu-item__icon">
-                                </div>
-                                <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                    type="button"
-                                    data-translate="metrics_token_delete"
-                                    data-ng-click="MetricsTokenCtrl.delete($row.id)"></button>
-                            </div>
-                        </div>
-                    </cui-dropdown-menu-body>
-                </cui-dropdown-menu>
+                <oui-action-menu data-align="end" data-compact>
+                    <oui-action-menu-item data-text="{{'metrics_token_show_preview' | translate}}"
+                                          data-on-click="MetricsTokenCtrl.showPreview($row.id)"></oui-action-menu-item>
+                    <oui-action-menu-item data-text="{{'metrics_token_edit' | translate}}"
+                                          data-on-click="MetricsTokenCtrl.edit($row.id, $row.description)"></oui-action-menu-item>
+                    <oui-action-menu-item data-text="{{'metrics_token_delete' | translate}}"
+                                          data-on-click="MetricsTokenCtrl.delete($row.id)"></oui-action-menu-item>
+                </oui-action-menu>
             `;
         }
 

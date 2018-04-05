@@ -20,7 +20,7 @@ angular.module("managerApp")
             }
 
             hasMultipleRegions () {
-                return this.detailedRegions.length > 1;
+                return this.detailedRegions && this.detailedRegions.length > 1;
             }
         },
         scope: true,

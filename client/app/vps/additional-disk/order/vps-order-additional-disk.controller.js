@@ -1,5 +1,6 @@
 class VpsOrderDiskCtrl {
-    constructor ($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation, VpsService) {
+    constructor ($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation, VpsService,
+                 ServiceHelper) {
         this.$filter = $filter;
         this.$translate = $translate;
         this.$q = $q;
@@ -8,6 +9,7 @@ class VpsOrderDiskCtrl {
         this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
         this.VpsService = VpsService;
+        this.ServiceHelper = ServiceHelper;
 
         this.loaders = {
             capacity: false,
@@ -16,8 +18,8 @@ class VpsOrderDiskCtrl {
         };
 
         this.model = {
-            capacity : null,
-            duration : null,
+            capacity: null,
+            duration: null,
             url: null,
             contractsValidated: null
         };
@@ -53,15 +55,12 @@ class VpsOrderDiskCtrl {
 
     orderAdditionalDiskOption () {
         this.loaders.order = true;
-        this.VpsService.postAdditionalDiskOrder(this.serviceName, this.model.capacity, this.model.duration)
-            .then(data => {
-                this.model.url = data.url;
-                this.displayBC();
+        this.ServiceHelper.loadOnNewPage(this.VpsService.postAdditionalDiskOrder(this.serviceName, this.model.capacity, this.model.duration))
+            .then(({ url }) => {
+                this.model.url = url;
             })
-            .catch(error => this.CloudMessage.error(error || this.$translate.instant("vps_order_additional_disk_fail")))
             .finally(() => {
                 this.loaders.order = false;
-                this.previousState.go();
             });
     }
 
