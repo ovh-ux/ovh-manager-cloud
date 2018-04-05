@@ -380,13 +380,13 @@ angular.module("managerApp")
     self.createVmBySnapshot = function(snapshot){
         CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
-        $state.go('iaas.pci-project.compute.infrastructure');
+        $state.go('iaas.pci-project.compute.infrastructure.diagram');
     };
 
     self.createVolumeBySnapshot = function (snapshot) {
         CloudMessage.info($translate.instant("cpc_snapshot_create_volume_button_info"));
         $timeout(function() {
-            $state.go("iaas.pci-project.compute.infrastructure", {
+            $state.go("iaas.pci-project.compute.infrastructure.diagram", {
                 createNewVolumeFromSnapshot: {
                     snapshot: snapshot
                 }
