@@ -2,7 +2,7 @@
     <form name="VpsMountForm" data-ng-submit="$ctrl.confirm()">
         <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
         <!-- Mount -->
-        <cui-modal-body data-title="'vps_configuration_veeam_mount_title' | translate" data-ng-if="$ctrl.mount">
+        <cui-modal-body data-title=":: 'vps_configuration_veeam_mount_title' | translate" data-ng-if="$ctrl.mount">
             <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
                 <oui-spinner></oui-spinner>
             </div>
@@ -21,7 +21,7 @@
         </cui-modal-body>
 
         <!-- Unmount -->
-        <cui-modal-body data-title="'vps_configuration_veeam_umount_title' | translate" data-ng-if="!$ctrl.mount">
+        <cui-modal-body data-title=":: 'vps_configuration_veeam_umount_title' | translate" data-ng-if="!$ctrl.mount">
             <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
                 <oui-spinner></oui-spinner>
             </div>

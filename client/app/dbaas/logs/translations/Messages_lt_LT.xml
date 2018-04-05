@@ -6,131 +6,131 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data platforma</translation>
    <translation id="logs_tab_home" qtlid="27643">Pradžia</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Skydai</translation>
-   <translation id="logs_tab_inputs" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Rinkimo įrankiai</translation>
    <translation id="logs_tab_indices" qtlid="426729">Index</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_tab_roles" qtlid="427886">Rôles</translation>
+   <translation id="logs_tab_roles" qtlid="427886">Vaidmenys</translation>
 
-   <translation id="logs_loading_error_configuration" qtlid="469153">Erreur lors du chargement de la section « Configuration ».</translation>
+   <translation id="logs_loading_error_configuration" qtlid="469153">Klaida įkeliant skiltį Configuration.</translation>
 
-   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform est une interface de collecte, d'indexation et d'analyse de logs. Quelle que soit leur provenance, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format nécessaires. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces.</translation>
-   <translation id="logs_home_contact_temp_2" qtlid="469179">Changer le contact actuel : {{ contact }}</translation>
-   <translation id="logs_home_contact_temp_3" qtlid="469192">La modification de l'adresse de contact de ce service entraînera l'envoi des notifications vers le nouveau destinataire.</translation>
-   <translation id="logs_home_contact_temp_4" qtlid="469205">Sélectionnez l'un de vos contacts. Si aucun contact n'est choisi, il sera associé par défaut à votre identité principale.</translation>
-   <translation id="logs_home_contact_temp_5" qtlid="421347">Ajouter un nouveau contact</translation>
+   <translation id="logs_home_contact_temp_1" qtlid="469166">Logs Data platform - tai sisteminių įrašų rinkimo, žymėjimo ir analizės sąsaja. Nepriklausomai nuo kilmės, platforma jums leidžia pasirinkti įvairius prieigos taškus atsižvelgiant į būtiną protokolą, saugumo lygį ir formatą. Duomenys gali būti analizuojami ir naudojami įvairiose API ir sąsajose.</translation>
+   <translation id="logs_home_contact_temp_2" qtlid="469179">Keisti dabartinį kontaktą: {{ contact }}</translation>
+   <translation id="logs_home_contact_temp_3" qtlid="469192">Pakeitus šios paslaugos kontaktinį adresą, pranešimai bus siunčiami naujam gavėjui. </translation>
+   <translation id="logs_home_contact_temp_4" qtlid="469205">Pasirinkite vieną iš kontaktų. Jeigu nėra galimybės pasirinkti, tuomet bus susieta su jūsų pagrindiniu kontaktu.</translation>
+   <translation id="logs_home_contact_temp_5" qtlid="421347">Pridėti naują kontaką</translation>
 
-   <translation id="logs_home_token_temp_1" qtlid="421386">Jetons de lecture</translation>
-   <translation id="logs_home_token_temp_2" qtlid="469218">Si vous souhaitez permettre l'accès à vos logs depuis des applications externes ou automatiser certaines tâches sur cette base, vous devrez leur donner accès aux API. La façon la plus sûre de gérer ces accès est d'utiliser les jetons d'authentification. Grâce à cette fonctionnalité, plus besoin de renseigner vos identifiants dans vos fichiers de configuration.</translation>
-   <translation id="logs_home_token_temp_3" qtlid="469231">Ajouter un jeton</translation>
+   <translation id="logs_home_token_temp_1" qtlid="421386">Skaitymo tokenai</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">Jeigu jūs norite suteikti prieigą prie užduočių vykdymo, žurnalų per API iš kitos programinės įrangos, jūs galite suteikti prieigą naudojant tokenus. Saugiausias būdas valdyti šią prieigą yra naudojant saugius tokenus. Tai reiškia, kad jums nereikės daugiau įvedinėti vartotojo vardo ar slaptažodžio konfigūraciniuose failuose.</translation>
+   <translation id="logs_home_token_temp_3" qtlid="469231">Pridėti tokeną</translation>
 
    <translation id="logs_home_password_temp_1" qtlid="80394">Keisti slaptažodį</translation>
    <translation id="logs_home_password_temp_2" qtlid="17177">Naujas slaptažodis</translation>
    <translation id="logs_home_password_temp_3" qtlid="300539">Patvirtinti slaptažodį</translation>
 
-   <translation id="logs_home_password_temp_4" qtlid="469244">Définir le mot de passe</translation>
-   <translation id="logs_home_password_temp_5" qtlid="469257">Configurer le mot de passe pour le contact <strong>{{ contact }}.</strong></translation>
+   <translation id="logs_home_password_temp_4" qtlid="469244">Nurodykite slaptažodį</translation>
+   <translation id="logs_home_password_temp_5" qtlid="469257">Nurodykite kontakto <strong>{{ contact }}</strong> slaptažodį.</translation>
 
-   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Ces jetons vous permettent d'accéder aux API (écrire dans les index, lire sur Graylog et sur Elasticsearch).</translation>
+   <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Šie tokenai suteikia prieigą prie API (skaityti indeksą, Graylog ir Elasticsearch).</translation>
 
-   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Vous disposez d'un accès à Elasticsearch grâce à l'acquisition d'un index ou d'un alias.</translation>
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Jūs turite priegą prie Elasticsearch nes turite indeksą ar alias.</translation>
 
-   <translation id="logs_home_messages_temp_1" qtlid="469296">Formats de messages et ports disponibles</translation>
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Galimi pranešimų ir portų formatai</translation>
 
-   <translation id="logs_options_temp_1" qtlid="424402">Ajouter des options</translation>
-   <translation id="logs_options_temp_2" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
-   <translation id="logs_options_temp_3" qtlid="469322">Options actuelles</translation>
-   <translation id="logs_options_type_temp_1" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_options_temp_1" qtlid="424402">Pridėti parinktis</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">Įsigiję duomenų srautą, alias ar dashboard, gaunate nemokamą vartotojo rolę (pvz. 5 srautai = 5 rolės).</translation>
+   <translation id="logs_options_temp_3" qtlid="469322">Dabartinės parinktys</translation>
+   <translation id="logs_options_type_temp_1" qtlid="421217">Rinkimo įrankiai</translation>
    <translation id="logs_options_type_temp_2" qtlid="45376">Valdymo skydelis</translation>
    <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
-   <translation id="logs_options_type_temp_4" qtlid="422452">Flux de données</translation>
+   <translation id="logs_options_type_temp_4" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_options_type_temp_5" qtlid="469335">Pack Kibana</translation>
-   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index de {{ size }}</translation>
-   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} instance(s)</translation>
-   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragment(s)</translation>
-   <translation id="logs_options_details_temp_3" qtlid="469387">Pack de {{ count }}</translation>
-   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias et {{count}} index de {{ size }}</translation>
+   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch {{ size }} dydžio indeksas</translation>
+   <translation id="logs_options_details_temp_1" qtlid="469361">{{ count }} virtuali (-ios) mašina (-os)</translation>
+   <translation id="logs_options_details_temp_2" qtlid="469374">{{ count }} fragmentas(ai)</translation>
+   <translation id="logs_options_details_temp_3" qtlid="469387">Paketas {{ count }}</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias ir {{count}} {{ size }} dydžio indeksas (-ai)</translation>
 
-   <translation id="logs_offer_temp_1" qtlid="469413">Sélectionnez votre offre</translation>
-   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} flux</translation>
-   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} tableaux</translation>
-   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} outil(s) de collecte</translation>
+   <translation id="logs_offer_temp_1" qtlid="469413">Pasirinkite pasiūlymą</translation>
+   <translation id="logs_offer_temp_2" qtlid="469426">{{ count }} srautas(-ai)</translation>
+   <translation id="logs_offer_temp_3" qtlid="469439">{{ count }} dashboard</translation>
+   <translation id="logs_offer_temp_4" qtlid="469452">{{ count }} duomenų rinkimo įrankis(-iai)</translation>
 
-   <translation id="logs_streams_temp_1" qtlid="469465">Les flux vous permettent d'aiguiller en temps réel vos logs vers une catégorie précise dès leur arrivée sur Logs Data Platform. Si vous disposez de plusieurs flux, vous pourrez aussi : classer facilement les messages en fonction de leur source, de l'application ou du serveur de provenance et créer des niveaux de confidentialité selon les flux, ce qui vous permettra de distribuer vos accès uniquement aux personnes autorisées. Les jetons ici sont des jetons d'écriture qui vous permettent d'acheminer les logs sur le bon flux. De manière générale, posséder différents flux facilite grandement la recherche de vos logs. Plus besoin d'exclure les résultats d'un autre système ou d'une autre application.</translation>
+   <translation id="logs_streams_temp_1" qtlid="469465">Srautas padeda klasifikuoti realiu laiku duomenis gaunamus į Logs Data Platform. Jeigu jūs turite kelis srautus jūs taip pat galite: lengvai saugoti pranešimus priklausomai nuo jų šaltinio (programos ar serverio) ir sukurti skirtingus konfidencialumo lygis skirtingiems srautams, tai reiškia, kad prieigą prie jų galite suteikti tik tam tikriems žmonėms. Tai yra rašymo tokenai, kurie gali būti naudojami duomenų nukreipimui į tam tikrus srautus. Bendrai tariant, turint kelis srautus lengviau ieškoti žurnaluose: jums nereikia filtruoti kitos sistemos ar aplikacijos rezultatų.</translation>
 
-   <translation id="logs_streams_add_temp_1" qtlid="426170">Ajouter un flux de données</translation>
+   <translation id="logs_streams_add_temp_1" qtlid="426170">Pridėti duomenų srautą</translation>
    <translation id="logs_streams_add_temp_1" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_streams_add_temp_2" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_streams_add_temp_3" qtlid="469478">Choisir l'option attachée</translation>
-   <translation id="logs_streams_add_temp_4" qtlid="426807">L'offre principale</translation>
-   <translation id="logs_streams_add_temp_5" qtlid="426677">Activer la diffusion WebSocket</translation>
-   <translation id="logs_streams_add_temp_6" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
-   <translation id="logs_streams_add_temp_7" qtlid="426469">Activer le stockage longue durée</translation>
-   <translation id="logs_streams_add_temp_8" qtlid="469504">Archivez vos logs de façon sûre pour des années.</translation>
-   <translation id="logs_streams_add_temp_9" qtlid="426495">Algorithme de compression</translation>
-   <translation id="logs_streams_add_temp_10" qtlid="426560">Durée de rétention des archives</translation>
-   <translation id="logs_streams_add_temp_11" qtlid="469517">{{ count }} an(s)</translation>
+   <translation id="logs_streams_add_temp_3" qtlid="469478">Pasirinkite papildomą parinktį</translation>
+   <translation id="logs_streams_add_temp_4" qtlid="426807">Pagrindinis pasiūlymas</translation>
+   <translation id="logs_streams_add_temp_5" qtlid="426677">Aktyvuot WebSocket transliacijas</translation>
+   <translation id="logs_streams_add_temp_6" qtlid="469491">Stebėkite žurnalus realiu laiku naudodami WebSocket protokolą.</translation>
+   <translation id="logs_streams_add_temp_7" qtlid="426469">Aktyvuoti ilgalaikį saugojimą</translation>
+   <translation id="logs_streams_add_temp_8" qtlid="469504">Archyvuokite savo žurnalų ilgalaikį saugojimą.</translation>
+   <translation id="logs_streams_add_temp_9" qtlid="426495">Suspaudimo algoritmas</translation>
+   <translation id="logs_streams_add_temp_10" qtlid="426560">Archyvų saugojimo trukmė</translation>
+   <translation id="logs_streams_add_temp_11" qtlid="469517">{{ count }} metai(-ų)</translation>
    <translation id="logs_streams_add_temp_12" qtlid="32386">Pranešimas</translation>
-   <translation id="logs_streams_add_temp_13" qtlid="469530">Me notifier par e-mail lorsqu'une archive est disponible.</translation>
+   <translation id="logs_streams_add_temp_13" qtlid="469530">Pranešti el. paštu, kai archyvas bus prieinamas.</translation>
 
    <translation id="logs_alerts_temp_1" qtlid="72797">Įspėjimai</translation>
-   <translation id="logs_alerts_temp_2" qtlid="469543">Gestion de vos alertes pour le flux {{ name }}</translation>
-   <translation id="logs_alerts_temp_3" qtlid="469556">Avec les conditions d'alerte, plus besoin de surveiller vos logs, la plateforme le fait pour vous. De nombreux cas d'usage sont susceptibles de lever une alerte et de vous adresser celle-ci par e-mail : une absence de messages en provenance d'un logiciel pour une durée inhabituelle, lorsque le nombre de tâches réalisées est anormalement bas, lorsque le trafic réseau de votre site web est très élevé ou quand certains mots-clés spécifiques apparaissent dans votre flux.</translation>
-   <translation id="logs_alerts_temp_4" qtlid="469569">Créer une alerte</translation>
-   <translation id="logs_alerts_temp_5" qtlid="425806">Condition</translation>
-   <translation id="logs_alerts_temp_6" qtlid="469582">Période de grâce</translation>
-   <translation id="logs_alerts_temp_7" qtlid="469595">Répéter les notifications</translation>
+   <translation id="logs_alerts_temp_2" qtlid="469543">Srauto {{ name }} pranešimų valdymas</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Nustačius pranešimus, nėra būtinybės stebėti žurnalus - platforma tai daro už jus. Yra daugybė scenarijų, kurie gali aktyvuoti pranešimą el. paštu: pranešimo iš programinės įrangos nebuvimas ilgą laiką, neįprastai mažas skaičius įvykdytų užduočių, didelis srautas į svetainę, ar sraute atsiranda pasirinkti raktažodžiai.</translation>
+   <translation id="logs_alerts_temp_4" qtlid="469569">Sukurti pranešimą</translation>
+   <translation id="logs_alerts_temp_5" qtlid="425806">Sąlygos</translation>
+   <translation id="logs_alerts_temp_6" qtlid="469582">Atidėjimo periodas</translation>
+   <translation id="logs_alerts_temp_7" qtlid="469595">Kartoti pranešimus</translation>
 
-   <translation id="logs_alert_count_temp_1" qtlid="469608">Créer une condition de type compteur</translation>
-   <translation id="logs_alert_count_temp_2" qtlid="469621">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée.</translation>
+   <translation id="logs_alert_count_temp_1" qtlid="469608">Sukurti skaičiuoklės sąlygą</translation>
+   <translation id="logs_alert_count_temp_2" qtlid="469621">Ši sąlyga aktyvuojama, kai pranešimų skaičius yra didesnis ar mažesnis nei numatyta per nurodytą periodą.</translation>
    <translation id="logs_alert_count_temp_3" qtlid="16469">Pavadinimas</translation>
-   <translation id="logs_alert_count_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
-   <translation id="logs_alert_count_temp_5" qtlid="469647">Période de temps (minutes)</translation>
-   <translation id="logs_alert_count_temp_6" qtlid="469660">Évaluer la condition pour tous les messages reçus dans le nombre de minutes donné.</translation>
-   <translation id="logs_alert_count_temp_7" qtlid="469673">Type de seuil</translation>
-   <translation id="logs_alert_count_temp_8" qtlid="469686">Sélectionner la condition qui active l'alerte : quand il y a plus ou moins de messages que le seuil.</translation>
-   <translation id="logs_alert_count_temp_9" qtlid="469699">Seuil</translation>
-   <translation id="logs_alert_count_temp_10" qtlid="469712">La valeur qui active l'alerte si dépassée.</translation>
-   <translation id="logs_alert_count_temp_11" qtlid="469699">Seuil</translation>
-   <translation id="logs_alert_count_temp_12" qtlid="469725">Période de grâce (minutes)</translation>
-   <translation id="logs_alert_count_temp_13" qtlid="469738">Le nombre de minutes à attendre après la résolution d'une alerte pour en relancer une autre.</translation>
-   <translation id="logs_alert_count_temp_14" qtlid="469751">Accumulation de messages</translation>
-   <translation id="logs_alert_count_temp_15" qtlid="469764">Le nombre de messages à inclure dans les notifications d'alertes.</translation>
+   <translation id="logs_alert_count_temp_4" qtlid="469634">Pranešimo sąlygos pavadinimas.</translation>
+   <translation id="logs_alert_count_temp_5" qtlid="469647">Periodo trukmė (minutės)</translation>
+   <translation id="logs_alert_count_temp_6" qtlid="469660">Įvertinti sąlyga visiems pranešimas gautiems per minutėmis nurodyta periodą.</translation>
+   <translation id="logs_alert_count_temp_7" qtlid="469673">Slenksčio tipas</translation>
+   <translation id="logs_alert_count_temp_8" qtlid="469686">Pasirinkite sąlygas, kurios aktyvuoja įspėjimą: mažiau ar daugiau nei nustatytas slenkstis.</translation>
+   <translation id="logs_alert_count_temp_9" qtlid="469699">Slenkstis</translation>
+   <translation id="logs_alert_count_temp_10" qtlid="469712">Vertė, kurią viršijus aktyvuojamas įspėjimas.</translation>
+   <translation id="logs_alert_count_temp_11" qtlid="469699">Slenkstis</translation>
+   <translation id="logs_alert_count_temp_12" qtlid="469725">Atidėjimo laikotarpis (minutėmis)</translation>
+   <translation id="logs_alert_count_temp_13" qtlid="469738">Laikas minutėmis nuo paskutinio pranešimo prieš siunčiant naują.</translation>
+   <translation id="logs_alert_count_temp_14" qtlid="469751">Pranešimų surinkimas</translation>
+   <translation id="logs_alert_count_temp_15" qtlid="469764">Skaičius įspėjimų, kuriuos įtraukti į pranešimus.</translation>
    <translation id="logs_alert_count_temp_16" qtlid="33250">Pranešimai</translation>
    <translation id="logs_alert_count_temp_17" qtlid="469777">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l'alerte est remplie, peu importe son état.</translation>
 
    <translation id="logs_alert_numerical_temp_1" qtlid="469790">Créer une condition de type valeur numérique</translation>
    <translation id="logs_alert_numerical_temp_2" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
    <translation id="logs_alert_numerical_temp_3" qtlid="16469">Pavadinimas</translation>
-   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
+   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Pranešimo sąlygos pavadinimas.</translation>
    <translation id="logs_alert_numerical_temp_5" qtlid="469816">Champ</translation>
    <translation id="logs_alert_numerical_temp_6" qtlid="469829">Le nom du champ à vérifier.</translation>
-   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Période de temps (minutes)</translation>
+   <translation id="logs_alert_numerical_temp_7" qtlid="469647">Periodo trukmė (minutės)</translation>
    <translation id="logs_alert_numerical_temp_8" qtlid="469842">Évaluer la condition à déclencher pour tous les messages reçus dans le nombre de minutes donné.</translation>
-   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Type de seuil</translation>
+   <translation id="logs_alert_numerical_temp_9" qtlid="469673">Slenksčio tipas</translation>
    <translation id="logs_alert_numerical_temp_10" qtlid="469855">Sélectionner la condition qui active l'alerte : quand la valeur est plus haute ou moins haute que le seuil.</translation>
    <translation id="logs_alert_numerical_temp_11" qtlid="469868">Type d'agrégation</translation>
    <translation id="logs_alert_numerical_temp_12" qtlid="469881">Sélectionner la condition qui active l'alerte : quand la valeur est inférieure ou supérieure au seuil.</translation>
-   <translation id="logs_alert_numerical_temp_13" qtlid="469725">Période de grâce (minutes)</translation>
-   <translation id="logs_alert_numerical_temp_14" qtlid="469738">Le nombre de minutes à attendre après la résolution d'une alerte pour en relancer une autre.</translation>
-   <translation id="logs_alert_numerical_temp_15" qtlid="469751">Accumulation de messages</translation>
-   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Le nombre de messages à inclure dans les notifications d'alertes.</translation>
+   <translation id="logs_alert_numerical_temp_13" qtlid="469725">Atidėjimo laikotarpis (minutėmis)</translation>
+   <translation id="logs_alert_numerical_temp_14" qtlid="469738">Laikas minutėmis nuo paskutinio pranešimo prieš siunčiant naują.</translation>
+   <translation id="logs_alert_numerical_temp_15" qtlid="469751">Pranešimų surinkimas</translation>
+   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Skaičius įspėjimų, kuriuos įtraukti į pranešimus.</translation>
    <translation id="logs_alert_numerical_temp_17" qtlid="33250">Pranešimai</translation>
    <translation id="logs_alert_numerical_temp_18" qtlid="469777">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l'alerte est remplie, peu importe son état.</translation>
 
    <translation id="logs_alert_text_temp_1" qtlid="469894">Créer une condition de type contenu textuel</translation>
    <translation id="logs_alert_text_temp_2" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
    <translation id="logs_alert_text_temp_3" qtlid="16469">Pavadinimas</translation>
-   <translation id="logs_alert_text_temp_4" qtlid="469634">Titre de la condition de l'alerte.</translation>
+   <translation id="logs_alert_text_temp_4" qtlid="469634">Pranešimo sąlygos pavadinimas.</translation>
    <translation id="logs_alert_text_temp_5" qtlid="469816">Champ</translation>
    <translation id="logs_alert_text_temp_6" qtlid="469829">Le nom du champ à vérifier.</translation>
    <translation id="logs_alert_text_temp_7" qtlid="47548">Reikšmė</translation>
    <translation id="logs_alert_text_temp_8" qtlid="469920">La valeur qui doit être comparée à celle du champ.</translation>
-   <translation id="logs_alert_text_temp_9" qtlid="469725">Période de grâce (minutes)</translation>
-   <translation id="logs_alert_text_temp_10" qtlid="469738">Le nombre de minutes à attendre après la résolution d'une alerte pour en relancer une autre.</translation>
-   <translation id="logs_alert_text_temp_11" qtlid="469751">Accumulation de messages</translation>
-   <translation id="logs_alert_text_temp_12" qtlid="469764">Le nombre de messages à inclure dans les notifications d'alertes.</translation>
+   <translation id="logs_alert_text_temp_9" qtlid="469725">Atidėjimo laikotarpis (minutėmis)</translation>
+   <translation id="logs_alert_text_temp_10" qtlid="469738">Laikas minutėmis nuo paskutinio pranešimo prieš siunčiant naują.</translation>
+   <translation id="logs_alert_text_temp_11" qtlid="469751">Pranešimų surinkimas</translation>
+   <translation id="logs_alert_text_temp_12" qtlid="469764">Skaičius įspėjimų, kuriuos įtraukti į pranešimus.</translation>
    <translation id="logs_alert_text_temp_13" qtlid="33250">Pranešimai</translation>
    <translation id="logs_alert_text_temp_14" qtlid="469777">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l'alerte est remplie, peu importe son état.</translation>
 
@@ -191,7 +191,7 @@
    <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Logiciel</translation>
    <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Port TCP à ouvrir</translation>
    <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Lier à un flux de données</translation>
-   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Instance unique</translation>
    <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
 
@@ -220,13 +220,13 @@
    <translation id="logs_index_add_temp_2" qtlid="59267">Sufiksas</translation>
    <translation id="logs_index_add_temp_3" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
    <translation id="logs_index_add_temp_4" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_index_add_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_index_add_temp_5" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_index_add_temp_6" qtlid="470440">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
 
    <translation id="logs_index_edit_temp_1" qtlid="470453">Éditer un index</translation>
    <translation id="logs_index_edit_temp_2" qtlid="470466">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
    <translation id="logs_index_edit_temp_3" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_index_edit_temp_4" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_index_edit_temp_4" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_index_edit_temp_5" qtlid="32386">Pranešimas</translation>
    <translation id="logs_index_edit_temp_6" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -239,7 +239,7 @@
    <translation id="logs_alias_add_temp_2" qtlid="59267">Sufiksas</translation>
    <translation id="logs_alias_add_temp_3" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
    <translation id="logs_alias_add_temp_4" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_alias_add_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_alias_add_temp_5" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_alias_add_temp_6" qtlid="32386">Pranešimas</translation>
    <translation id="logs_alias_add_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -247,7 +247,7 @@
    <translation id="logs_alias_edit_temp_2" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong>.</translation>
    <translation id="logs_alias_edit_temp_3" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_alias_edit_temp_4" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_alias_edit_temp_5" qtlid="469478">Choisir l'option attachée</translation>
+   <translation id="logs_alias_edit_temp_5" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_alias_edit_temp_6" qtlid="32386">Pranešimas</translation>
    <translation id="logs_alias_edit_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
 
@@ -290,7 +290,7 @@
    <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_role_permissions_temp_5" qtlid="422452">Flux de données</translation>
+   <translation id="logs_role_permissions_temp_5" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_role_permissions_temp_6" qtlid="225075">Skydai</translation>
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>

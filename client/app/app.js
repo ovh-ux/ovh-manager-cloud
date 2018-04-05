@@ -55,14 +55,12 @@ angular.module("managerApp", [
     "ovhBrowserAlert",
     "angular-websocket"
 ])
-    .config(function ($stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) {
-        "use strict";
-
+    .config(($transitionsProvider, $stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) => {
         // Config current locale
         TranslateServiceProvider.setUserLocale();
 
         // Add translations decorator (need to be added before routes definitions)
-        TranslateDecoratorServiceProvider.add($stateProvider);
+        TranslateDecoratorServiceProvider.add($transitionsProvider, $stateProvider);
     })
     .config(function ($urlRouterProvider, $locationProvider) {
         "use strict";
@@ -112,21 +110,11 @@ angular.module("managerApp", [
               </div>
             `);
     })
-    .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiPaginationConfiguration) => {
-        "use strict";
+    .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
+          ouiDatagridConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
         $translatePartialLoader.addPart("components");
 
-        const off = $rootScope.$on("$stateChangeSuccess", () => {
-            ouiTableConfiguration.words = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                page: $translate.instant("common_pagination_page"),
-                of: $translate.instant("common_pagination_of"),
-                results: $translate.instant("common_pagination_results"),
-                next: $translate.instant("common_pagination_next"),
-                previous: $translate.instant("common_pagination_previous")
-            };
-
+        const removeOnSuccessHook = $transitions.onSuccess({}, () => {
             ouiDatagridConfiguration.translations = {
                 emptyPlaceholder: $translate.instant("common_datagrid_nodata")
             };
@@ -142,6 +130,19 @@ angular.module("managerApp", [
                 nextPage: $translate.instant("common_pagination_next")
             };
 
-            off();
+            ouiFieldConfiguration.translations = {
+                errors: {
+                    required: $translate.instant("common_field_error_required"),
+                    number: $translate.instant("common_field_error_number"),
+                    email: $translate.instant("common_field_error_email"),
+                    min: $translate.instant("common_field_error_min", { min: "{{min}}" }),
+                    max: $translate.instant("common_field_error_max", { max: "{{max}}" }),
+                    minlength: $translate.instant("common_field_error_minlength", { minlength: "{{minlength}}" }),
+                    maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
+                    pattern: $translate.instant("common_field_error_pattern")
+                }
+            };
+
+            removeOnSuccessHook();
         });
     });

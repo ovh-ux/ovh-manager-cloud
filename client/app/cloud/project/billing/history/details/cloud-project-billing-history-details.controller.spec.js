@@ -5,9 +5,9 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
     var $httpBackend;
     var $controller;
     var scope;
-    var $rootScope;
     var $q;
     var $stateParams;
+    var validParams;
     var mockCloudProjectUsageHistoryLexi;
     var mockCloudProjectBillingService;
     var mockCloudProjectBillLexi;
@@ -23,14 +23,15 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
-        $rootScope = _$rootScope_;
         $q = _$q_;
         $stateParams = _$stateParams_;
         $stateParams.projectId = projectId;
         dateMonthBilling = new Date(2016, 6, 10);
         monthBilling = moment.utc(dateMonthBilling);
-        $stateParams.year = monthBilling.year();
-        $stateParams.month = monthBilling.month() + 1;
+        validParams = {
+            year: monthBilling.year(),
+            month: monthBilling.month() + 1
+        };
         mockCloudProjectUsageHistoryLexi = _OvhApiCloudProjectUsageHistoryLexi_;
         mockCloudProjectBillingService = _CloudProjectBillingService_;
         mockCloudProjectBillLexi = _OvhApiCloudProjectBillLexi_;
@@ -60,7 +61,9 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
     }));
 
     function initCtrl () {
-        return $controller("CloudProjectBillingHistoryDetailsCtrl");
+        return $controller("CloudProjectBillingHistoryDetailsCtrl", {
+            validParams
+        });
     }
 
     describe("Init", function () {

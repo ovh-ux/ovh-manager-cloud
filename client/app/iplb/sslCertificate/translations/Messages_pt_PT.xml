@@ -52,10 +52,10 @@
 
    <translation id="iplb_ssl_order_name" qtlid="415818">Nome (facultativo)</translation>
    <translation id="iplb_ssl_order_type" qtlid="439169">Tipo de certificado</translation>
-   <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
+   <translation id="iplb_ssl_order_type_free" qtlid="130495">Grátis</translation>
    <translation id="iplb_ssl_order_type_iplb_ssl_dv_single" qtlid="439182">Comodo DV</translation>
    <translation id="iplb_ssl_order_type_iplb_ssl_ev_single" qtlid="439195">Comodo EV</translation>
-   <translation id="iplb_ssl_order_type_free" qtlid="130495">Gratuito</translation>
+   <translation id="iplb_ssl_order_type_free" qtlid="130495">Grátis</translation>
    <translation id="iplb_ssl_order_fqdn" qtlid="439208">Fully Qualified Domain Name (FQDN)</translation>
    <translation id="iplb_ssl_order_fqdn_tip" qtlid="439221">exemplo.com, www.exemplo.com</translation>
    <translation id="iplb_ssl_order_contact" qtlid="31066">Contacto</translation>

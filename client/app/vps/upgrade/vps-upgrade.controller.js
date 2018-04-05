@@ -65,7 +65,7 @@ class VpsUpgradeCtrl {
                 this.order = data;
                 return data;
             }).catch(err => {
-                 if (err.message) {
+                if (err.message) {
                     this.CloudMessage.error(err.message);
                 } else {
                     this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
@@ -82,7 +82,6 @@ class VpsUpgradeCtrl {
 
     confirm () {
         this.displayBC();
-        this.previousState.go();
     }
 
     displayBC () {

@@ -11,9 +11,9 @@
    <translation id="vdi_link_editone" qtlid="6766">Éditer</translation>
 
    <translation id="vdi_pwd_title" qtlid="106427">Changement de mot de passe</translation>
-   <translation id="vdi_cancel_title" qtlid="371032">Confirmation de suppression</translation>
-   <translation id="vdi_confirm_cancel_reason" qtlid="371045">Motif de la résiliation</translation>
-   <translation id="vdi_confirm_cancel_commentary" qtlid="371058">Commentaire (optionnel)</translation>
+   <translation id="vdi_cancel_title" qtlid="371032">Confirmación de eliminación</translation>
+   <translation id="vdi_confirm_cancel_reason" qtlid="371045">Motivo de la cancelación</translation>
+   <translation id="vdi_confirm_cancel_commentary" qtlid="371058">Comentario (opcional)</translation>
    <translation id="vdi_pwd_policy_length" qtlid="295322">Le mot de passe doit avoir une longueur comprise entre {{min}} et {{max}} caractères.</translation>
    <translation id="vdi_pwd_policy_letterMandatory" qtlid="295335">Le mot de passe doit contenir au moins une lettre.</translation>
    <translation id="vdi_pwd_policy_lowerMandatory" qtlid="295348">Le mot de passe doit contenir au moins une lettre minuscule.</translation>
@@ -33,12 +33,12 @@
    <translation id="vdi_change_username_label" qtlid="323755">Entrez le nouvel username</translation>
    <translation id="vdi_change_username_err_username" qtlid="323729">Doit être pas pire long, avec des caractères mais rien de trop compliqué</translation>
 
-   <translation id="vdi_reason_hard" qtlid="371071">Trop compliqué à utiliser</translation>
-   <translation id="vdi_reason_testing" qtlid="371084">Test de la solution</translation>
-   <translation id="vdi_reason_missing" qtlid="371097">Manque de fonctionnalité</translation>
-   <translation id="vdi_reason_performance" qtlid="371110">Mauvaises performances</translation>
-   <translation id="vdi_reason_not_suitable" qtlid="371123">Non adapté au besoin</translation>
-   <translation id="vdi_reason_need" qtlid="371136">Plus d'utilité</translation>
+   <translation id="vdi_reason_hard" qtlid="371071">Uso demasiado complicado</translation>
+   <translation id="vdi_reason_testing" qtlid="371084">Prueba de la solución</translation>
+   <translation id="vdi_reason_missing" qtlid="371097">No es funcional.</translation>
+   <translation id="vdi_reason_performance" qtlid="371110">Bajo rendimiento</translation>
+   <translation id="vdi_reason_not_suitable" qtlid="371123">No se adapta a mis necesidades.</translation>
+   <translation id="vdi_reason_need" qtlid="371136">Ya no tiene utilidad.</translation>
    <translation id="vdi_reason_other" qtlid="19963">Autre</translation>
 
    <translation id="vdi_console_title" qtlid="164844">Acceder a la consola</translation>

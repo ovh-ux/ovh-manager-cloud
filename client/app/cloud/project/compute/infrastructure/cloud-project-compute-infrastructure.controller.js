@@ -1,15 +1,19 @@
 (() => {
     class CloudProjectComputeInfrastructureCtrl {
-        constructor ($state, CLOUD_MONITORING) {
+        constructor ($state, CLOUD_MONITORING, CloudProjectComputeInfrastructureService) {
             this.$state = $state;
             this.CLOUD_MONITORING = CLOUD_MONITORING;
+            this.InfrastructureService = CloudProjectComputeInfrastructureService;
         }
 
         $onInit () {
             this.vmMonitoringUpgradeThreshold = this.CLOUD_MONITORING.vm.upgradeAlertThreshold;
 
             if (this.$state.is("iaas.pci-project.compute.infrastructure")) {
-                this.$state.go("iaas.pci-project.compute.infrastructure.diagram");
+                this.InfrastructureService.getPreferredView()
+                    .then(view => {
+                        this.$state.go(`iaas.pci-project.compute.infrastructure.${view}`);
+                    });
             }
         }
     }

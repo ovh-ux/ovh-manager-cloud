@@ -1,11 +1,11 @@
 class TabsService {
-    constructor ($rootScope, $state) {
+    constructor ($transitions, $state) {
         this.$state = $state;
 
         this.registeredTabs = [];
         this.activeTab = undefined;
 
-        $rootScope.$on("$stateChangeSuccess", () => {
+        $transitions.onSuccess({}, () => {
             this.refreshActiveTab();
         });
     }
@@ -46,7 +46,7 @@ class TabsService {
     refreshActiveTab () {
         const previousActiveTab = _.find(this.registeredTabs, tab => tab.active);
 
-        // ActiveTab is determined in this order => 
+        // ActiveTab is determined in this order =>
         //  1- We check if the current state fit with one of the tabs' state.  (Direct state reference or it's children).  We activate the corresponding tab.
         //  2- We are in the presence of an orphan state (no tab corresponds to the state).  We try to find the current active and make sure is is active.
         //  3- If, however, no tabs are active, we activate the first tab.

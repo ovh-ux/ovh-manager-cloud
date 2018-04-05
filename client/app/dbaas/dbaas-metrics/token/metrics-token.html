@@ -1,4 +1,4 @@
-<div class="metrics__token" ui-view="metricsSubContent">
+<div class="metrics__token cui-page__content" ui-view="metricsSubContent">
     <div class="metrics__row">
         <h3 class="oui-header_3" data-translate="metrics_token_title"></h3>
         <p data-translate="metrics_token_explain"
@@ -22,18 +22,18 @@
     </div>
     <div class="metrics__row">
         <oui-table id="token-table"
-                   rows="MetricsTokenCtrl.tokens" 
+                   rows="MetricsTokenCtrl.tokens"
                    rows-loader="MetricsTokenCtrl.loading">
-            <column title="'metrics_table_name' | translate" 
+            <column title="'metrics_table_name' | translate"
                     property="description"
                     sortable>
                 <span data-ng-bind="$row.description || '-'"></span>
             </column>
-            <column title="'metrics_token_labels' | translate" 
+            <column title="'metrics_token_labels' | translate"
                     property="labels"
                     template="MetricsTokenCtrl.labelsTemplate()">
             </column>
-            <column title="'metrics_table_token' | translate" 
+            <column title="'metrics_table_token' | translate"
                     property="access">
                 <cui-clipboard data-text="$row.access"></cui-clipboard>
             </column>

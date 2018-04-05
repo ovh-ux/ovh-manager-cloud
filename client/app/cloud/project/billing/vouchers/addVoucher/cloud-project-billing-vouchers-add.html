@@ -1,7 +1,7 @@
 <cui-modal>
     <form name="voucherFormAdd">
         <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-            <cui-modal-body title="'cpb_vouchers_your_voucher_add' | translate">
+            <cui-modal-body data-title=":: 'cpb_vouchers_your_voucher_add' | translate">
             <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
             <div data-ng-if="!$ctrl.saving">
                 <label class="oui-label" for="voucherAddValue"

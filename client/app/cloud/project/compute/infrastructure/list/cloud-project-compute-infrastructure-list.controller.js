@@ -29,6 +29,8 @@ class CloudProjectComputeInfrastructureListCtrl {
             this.addOrRemoveInstance(newValues, oldValues);
         });
 
+        this.InfrastructureService.setPreferredView("list");
+
         return this.initInfra();
     }
 

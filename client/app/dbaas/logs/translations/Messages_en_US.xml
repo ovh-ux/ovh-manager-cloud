@@ -85,7 +85,7 @@
    <translation id="logs_alert_count_temp_1" qtlid="469608">Create a meter type condition</translation>
    <translation id="logs_alert_count_temp_2" qtlid="469621">This condition is enabled when the number of messages is greater than or smaller than the threshold defined for a given period.</translation>
    <translation id="logs_alert_count_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_count_temp_4" qtlid="469634">Alert condition title.</translation>
+   <translation id="logs_alert_count_temp_4" qtlid="469634">Title of alert condition.</translation>
    <translation id="logs_alert_count_temp_5" qtlid="469647">Time period (minutes)</translation>
    <translation id="logs_alert_count_temp_6" qtlid="469660">Assess condition for all messages received in the given number of minutes.</translation>
    <translation id="logs_alert_count_temp_7" qtlid="469673">Threshold type</translation>
@@ -103,7 +103,7 @@
    <translation id="logs_alert_numerical_temp_1" qtlid="469790">Create a numerical value type of condition</translation>
    <translation id="logs_alert_numerical_temp_2" qtlid="469803">This condition is triggered when the aggregated value of a field is higher or lower than a defined threshold in a given period of time.</translation>
    <translation id="logs_alert_numerical_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Alert condition title.</translation>
+   <translation id="logs_alert_numerical_temp_4" qtlid="469634">Title of alert condition.</translation>
    <translation id="logs_alert_numerical_temp_5" qtlid="469816">Field</translation>
    <translation id="logs_alert_numerical_temp_6" qtlid="469829">Name of field to check.</translation>
    <translation id="logs_alert_numerical_temp_7" qtlid="469647">Time period (minutes)</translation>
@@ -119,14 +119,14 @@
    <translation id="logs_alert_numerical_temp_17" qtlid="33250">Notifications</translation>
    <translation id="logs_alert_numerical_temp_18" qtlid="469777">Check this box to send notifications every time the alert condition is met, regardless of its status.</translation>
 
-   <translation id="logs_alert_text_temp_1" qtlid="469894">Créer une condition de type contenu textuel</translation>
-   <translation id="logs_alert_text_temp_2" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="logs_alert_text_temp_1" qtlid="469894">Create a text-based type condition</translation>
+   <translation id="logs_alert_text_temp_2" qtlid="469907">This condition is activated when the content of the messages is equal to a set value.</translation>
    <translation id="logs_alert_text_temp_3" qtlid="16469">Title</translation>
-   <translation id="logs_alert_text_temp_4" qtlid="469634">Alert condition title.</translation>
+   <translation id="logs_alert_text_temp_4" qtlid="469634">Title of alert condition.</translation>
    <translation id="logs_alert_text_temp_5" qtlid="469816">Field</translation>
    <translation id="logs_alert_text_temp_6" qtlid="469829">Name of field to check.</translation>
    <translation id="logs_alert_text_temp_7" qtlid="47548">Value</translation>
-   <translation id="logs_alert_text_temp_8" qtlid="469920">La valeur qui doit être comparée à celle du champ.</translation>
+   <translation id="logs_alert_text_temp_8" qtlid="469920">The value that must be compared to the field's value.</translation>
    <translation id="logs_alert_text_temp_9" qtlid="469725">Grace period (minutes)</translation>
    <translation id="logs_alert_text_temp_10" qtlid="469738">Number of minutes to wait after the resolution of an alert before launching another one.</translation>
    <translation id="logs_alert_text_temp_11" qtlid="469751">Message accumulation</translation>
@@ -135,159 +135,159 @@
    <translation id="logs_alert_text_temp_14" qtlid="469777">Check this box to send notifications every time the alert condition is met, regardless of its status.</translation>
 
    <translation id="logs_archives_temp_1" qtlid="469933">Archives</translation>
-   <translation id="logs_archives_temp_2" qtlid="469946">Une fois dégelées, les archives sont disponibles au téléchargement pour 24 heures.</translation>
-   <translation id="logs_archives_temp_3" qtlid="469959">L'archive {{ name }} est en cours de dégel. Elle sera disponible dans {{ time }}.</translation>
-   <translation id="logs_archives_temp_4" qtlid="469972">Nom de ficher</translation>
+   <translation id="logs_archives_temp_2" qtlid="469946">Once thawed, archives are available for download for  24 hours.</translation>
+   <translation id="logs_archives_temp_3" qtlid="469959">The {{ name }} archive is being thawed. It will be available in {{ time }}.</translation>
+   <translation id="logs_archives_temp_4" qtlid="469972">File name</translation>
    <translation id="logs_archives_temp_5" qtlid="7726">Size</translation>
    <translation id="logs_archives_temp_6" qtlid="69953">Signature</translation>
    <translation id="logs_archives_temp_7" qtlid="39286">Download</translation>
-   <translation id="logs_archives_temp_8" qtlid="369152">Unfreeze</translation>
-   <translation id="logs_archives_temp_9" qtlid="469985">Gelé</translation>
+   <translation id="logs_archives_temp_8" qtlid="369152">Thaw</translation>
+   <translation id="logs_archives_temp_9" qtlid="469985">Frozen</translation>
    <translation id="logs_archives_temp_10" qtlid="99920">Available</translation>
-   <translation id="logs_archives_temp_11" qtlid="469998">En cours de dégel</translation>
+   <translation id="logs_archives_temp_11" qtlid="469998">Thawing</translation>
 
-   <translation id="logs_stream_delete_temp_1" qtlid="470011">Supprimer le flux de données</translation>
-   <translation id="logs_stream_delete_temp_2" qtlid="470024">Confirmez-vous la suppression du flux de données <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_stream_delete_temp_1" qtlid="470011">Delete data stream</translation>
+   <translation id="logs_stream_delete_temp_2" qtlid="470024">Do you confirm the deletion of data stream <strong>{{ name }}</strong>?</translation>
 
-   <translation id="logs_stream_follow_temp_1" qtlid="426222">Suivre en direct</translation>
-   <translation id="logs_stream_follow_temp_2" qtlid="470037">Fermer la connexion</translation>
+   <translation id="logs_stream_follow_temp_1" qtlid="426222">Real-time tracking</translation>
+   <translation id="logs_stream_follow_temp_2" qtlid="470037">Close the connection</translation>
 
-   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Choisissez l'un des formats proposés afin de copier la ligne de commande requise qui va servir à tester votre flux depuis un terminal.</translation>
+   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Choose one of the suggested formats to copy the required command line which will be used to test your stream from a terminal.</translation>
 
-   <translation id="logs_dashboards_temp_1" qtlid="470063">Les tableaux de bord sont des représentations graphiques de vos logs. Grâce aux différents modules (courbes, camemberts, compteurs, statistiques, etc.), vous obtenez une vision synthétique de vos données. Combien d'erreurs sont survenues durant les dernières 24 heures ? Sont-elles en hausse ou en baisse ? Quelle est la page la plus visitée aujourd'hui ? Combien de clients ce mois-ci ? Autant d'informations accessibles immédiatement. Disposer de différents tableaux vous permet d'afficher les données selon des contextes précis et apporte une plus grande lisibilité de l'information.</translation>
+   <translation id="logs_dashboards_temp_1" qtlid="470063">Dashboards are graphical representations of your logs. Thanks to the various modules (curves, pie charts, counters, statistics, etc.), you get a synthetic view of your data. How many errors have occurred over the past 24 hours? Are they increasing or decreasing? Which page has received the largest number of hits today?  How many customers have you had this month? All that information can be accessed immediately. You can have different tables that will allow you to display your data based on specific contexts, thereby making the information more legible. </translation>
 
-   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Dupliquer le tableau de bord</translation>
-   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Dupliquer le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Duplicate dashboard</translation>
+   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Duplicate the <strong>{{ name }}</strong> dashboard</translation>
    <translation id="logs_dashboard_duplicate_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_dashboard_duplicate_temp_4" qtlid="9238">Description</translation>
-   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Attacher l'ensemble des modules du nouveau tableau au flux de données suivant :</translation>
+   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Attach all modules of the new table to the following data stream:</translation>
 
-   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Éditer le tableau de bord</translation>
-   <translation id="logs_dashboard_edit_temp_2" qtlid="470128">Éditez le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Edit dashboard</translation>
+   <translation id="logs_dashboard_edit_temp_2" qtlid="470128">Edit <strong>{{ name }}</strong> dashboard</translation>
    <translation id="logs_dashboard_edit_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_dashboard_edit_temp_4" qtlid="9238">Description</translation>
 
-   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Supprimer le tableau de bord</translation>
-   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Confirmez-vous la suppression du tableau de bord <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Delete dashboard</translation>
+   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Do you confirm the deletion of the <strong>{{ name }}</strong> dashboard?</translation>
 
-   <translation id="logs_collector_temp_1" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
+   <translation id="logs_collector_temp_1" qtlid="470167">Collection tools are programs that allow the retrieval of logs from servers or applications. It is an efficient way of processing and transforming in a GELF format that's compatible with Logs Data Platform. You no longer need to dedicate hardware resources or monitor the availability of your infrastructures because we do it for you. This platform allows you to link these tools to your various streams to simplify and secure your configuration using firewall rules.</translation>
 
-   <translation id="logs_collector_info_temp_1" qtlid="470180">Informations utiles</translation>
-   <translation id="logs_collector_info_temp_2" qtlid="470193">Cliquez sur les options proposées pour les copier dans votre presse-papiers.</translation>
-   <translation id="logs_collector_info_temp_3" qtlid="470206">Nom de l'hôte</translation>
-   <translation id="logs_collector_info_temp_4" qtlid="470219">(Adresse) IP publique</translation>
+   <translation id="logs_collector_info_temp_1" qtlid="470180">Useful information</translation>
+   <translation id="logs_collector_info_temp_2" qtlid="470193">Click on the suggested options to copy them to your clipboard.</translation>
+   <translation id="logs_collector_info_temp_3" qtlid="470206">Host name</translation>
+   <translation id="logs_collector_info_temp_4" qtlid="470219">Public IP (address)</translation>
    <translation id="logs_collector_info_temp_5" qtlid="439169">Certificate type</translation>
 
-   <translation id="logs_collector_console_temp_1" qtlid="424350">Sortie console</translation>
+   <translation id="logs_collector_console_temp_1" qtlid="424350">Console output</translation>
 
-   <translation id="logs_collector_delete_temp_1" qtlid="470232">Supprimer l'outil de collecte</translation>
-   <translation id="logs_collector_delete_temp_2" qtlid="470245">Confirmez-vous la suppression de l'outil de collecte <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_collector_delete_temp_1" qtlid="470232">Delete collecting tool</translation>
+   <translation id="logs_collector_delete_temp_2" qtlid="470245">Do you confirm the deletion of the <strong>{{ name }}</strong> collection tool?</translation>
 
-   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Add a new collection tool</translation>
    <translation id="logs_collector_add_logstash_temp_2" qtlid="4406">Configuration</translation>
-   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Autoriser des réseaux</translation>
+   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Authorize networks</translation>
    <translation id="logs_collector_add_logstash_temp_4" qtlid="3818">Name</translation>
    <translation id="logs_collector_add_logstash_temp_5" qtlid="9238">Description</translation>
-   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Logiciel</translation>
-   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Port TCP à ouvrir</translation>
-   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Lier à un flux de données</translation>
+   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Program</translation>
+   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">TCP port to open</translation>
+   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Link to a data stream</translation>
    <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Chose attached option</translation>
-   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Instance unique</translation>
-   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
+   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Single instance</translation>
+   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Start only one instance of this type.</translation>
 
-   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Éditez les sections « input » et filtrez la partie « output » de la configuration de votre Logstash écrite par notre service.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Nous vous rappelons que vous avez choisi d'exposer le port TCP 6514 à l'extérieur.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Une fois ces sections éditées, vous pouvez tester directement votre configuration.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Tester la configuration</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Edit the "input" sections and filter the "output" part of your Logstash configuration written by our service.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">We would like to remind you that you've chosen to expose TCP port 6514 to the outside world.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Once these sections have been edited, you can test your configuration directly.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Test configuration</translation>
    <translation id="logs_collector_add_logstash_configure_temp_5" qtlid="23215">Configuration assistant </translation>
 
-   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Autoriser des réseaux</translation>
-   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Réseau de confiance</translation>
-   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">Vous pouvez autoriser un ou plusieurs réseaux de confiance via leur adresse IP.</translation>
-   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">Cette étape marque la finalisation de la configuration avant le démarrage de votre outil.</translation>
-   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">Tant qu'aucun réseau n'est autorisé, votre sécurité est compromise car tout le monde peut accéder à votre application.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Authorize networks</translation>
+   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Trusted network</translation>
+   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">You can authorize one or several trusted networks through their IP address.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">This steps marks the finalization of the configuration before your tool starts.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">As long as no network has been authorized, your security is being compromised because anyone can access your application.</translation>
 
    <translation id="logs_collector_add_logstash_start_temp_1" qtlid="9983">Confirmation</translation>
-   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Commencer maintenant</translation>
+   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Start now</translation>
    <translation id="logs_collector_add_logstash_start_temp_3" qtlid="82305">Later</translation>
-   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Voulez-vous commmencer la collecte des données maintenant ?</translation>
+   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Do you wish to start data collection now?</translation>
 
-   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Nombre de messages gardés en mémoire vive par Flowgger avant que celui-ci ne les envoie à Kafka. Une valeur élevée est plus performante, mais peut entraîner une latence d'indexation si vous envoyez peu de messages.</translation>
+   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Number of messages stored in RAM by Flowgger before it sends them to Kafka. A higher value is more efficient but can bring about a latency of index if you send only a few messages.</translation>
 
-   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform vous permet de créer et d'héberger des index Elasticsearch. Ceux-ci peuvent être utilisés pour les données de configuration d'une instance Kibana, indexer des données statistiques et enrichir ou corréler vos logs. Vous pourrez ensuite utiliser ces index avec la majorité des outils et applications compatibles avec l'API REST d'Elasticsearch.</translation>
+   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform allows you to create and host Elasticsearch indexes. These can be used for configuration data in a Kibana instance, as well as indexing statistical data and enhancing or correlating your logs. You can then use those indexes with most tools and applications that are compatible with the Elasticsearch REST API.</translation>
 
-   <translation id="logs_index_add_temp_1" qtlid="423024">Ajouter un index</translation>
+   <translation id="logs_index_add_temp_1" qtlid="423024">Add an index</translation>
    <translation id="logs_index_add_temp_2" qtlid="59267">Suffix</translation>
-   <translation id="logs_index_add_temp_3" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
+   <translation id="logs_index_add_temp_3" qtlid="470427">Only lower cases from a to z, numbers and characters - or _ are authorized.</translation>
    <translation id="logs_index_add_temp_4" qtlid="9238">Description</translation>
    <translation id="logs_index_add_temp_5" qtlid="469478">Chose attached option</translation>
-   <translation id="logs_index_add_temp_6" qtlid="470440">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
+   <translation id="logs_index_add_temp_6" qtlid="470440">Warning: the option you're choosing can't be changed later. </translation>
 
-   <translation id="logs_index_edit_temp_1" qtlid="470453">Éditer un index</translation>
-   <translation id="logs_index_edit_temp_2" qtlid="470466">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_index_edit_temp_1" qtlid="470453">Edit an index</translation>
+   <translation id="logs_index_edit_temp_2" qtlid="470466">Edit details for the <strong>{{ name }}</strong> index.</translation>
    <translation id="logs_index_edit_temp_3" qtlid="9238">Description</translation>
    <translation id="logs_index_edit_temp_4" qtlid="469478">Chose attached option</translation>
    <translation id="logs_index_edit_temp_5" qtlid="32386">Notification</translation>
-   <translation id="logs_index_edit_temp_6" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_index_edit_temp_6" qtlid="470479">Please notify me by email when the index reaches a critical size.</translation>
 
-   <translation id="logs_index_delete_temp_1" qtlid="470492">Supprimer l'index</translation>
-   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirmez-vous la suppression de l'index <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_index_delete_temp_1" qtlid="470492">Delete index</translation>
+   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirm deletion of the <strong>{{ name }}</strong> index?</translation>
 
-   <translation id="logs_alias_temp_1" qtlid="470518">Activez toutes les possibilités d'Elasticsearch en créant un alias sur vos logs ou vos index. Cela vous donnera accès à des requêtes plus complexes comme les agrégations imbriquées et déverrouillera la compatibilité aux outils les plus populaires de l'écosystème.</translation>
+   <translation id="logs_alias_temp_1" qtlid="470518">Unlock the full potential of Elasticsearch by creating an alias on your logs or your indexes. This will give you access to more complex queries such as nested aggregations and will unlock compatibility with the most popular tools in the ecosystem.</translation>
 
    <translation id="logs_alias_add_temp_1" qtlid="143538">Add an alias</translation>
    <translation id="logs_alias_add_temp_2" qtlid="59267">Suffix</translation>
-   <translation id="logs_alias_add_temp_3" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
+   <translation id="logs_alias_add_temp_3" qtlid="470531">Warning: the name you're choosing cannot be changed later.</translation>
    <translation id="logs_alias_add_temp_4" qtlid="9238">Description</translation>
    <translation id="logs_alias_add_temp_5" qtlid="469478">Chose attached option</translation>
    <translation id="logs_alias_add_temp_6" qtlid="32386">Notification</translation>
-   <translation id="logs_alias_add_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_alias_add_temp_7" qtlid="470479">Please notify me by email when the index reaches a critical size.</translation>
 
-   <translation id="logs_alias_edit_temp_1" qtlid="470544">Éditer un alias</translation>
-   <translation id="logs_alias_edit_temp_2" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_alias_edit_temp_1" qtlid="470544">Edit an alias</translation>
+   <translation id="logs_alias_edit_temp_2" qtlid="470557">Edit details for alias <strong>{{ name }}</strong>.</translation>
    <translation id="logs_alias_edit_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_alias_edit_temp_4" qtlid="9238">Description</translation>
    <translation id="logs_alias_edit_temp_5" qtlid="469478">Chose attached option</translation>
    <translation id="logs_alias_edit_temp_6" qtlid="32386">Notification</translation>
-   <translation id="logs_alias_edit_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_alias_edit_temp_7" qtlid="470479">Please notify me by email when the index reaches a critical size.</translation>
 
-   <translation id="logs_alias_link_temp_1" qtlid="421672">Attacher du contenu à l'alias</translation>
-   <translation id="logs_alias_link_temp_2" qtlid="421789">Un alias peut être attaché à un ou plusieurs flux de données Graylog ou un ou plusieurs index Elasticsearch.</translation>
-   <translation id="logs_alias_link_temp_3" qtlid="470570">Flux</translation>
+   <translation id="logs_alias_link_temp_1" qtlid="421672">Link content to the alias</translation>
+   <translation id="logs_alias_link_temp_2" qtlid="421789">An alias can be linked to one or several Graylog data streams, or one or several Elasticsearch indexes.</translation>
+   <translation id="logs_alias_link_temp_3" qtlid="470570">Stream</translation>
    <translation id="logs_alias_link_temp_4" qtlid="426729">Index</translation>
-   <translation id="logs_alias_link_temp_5" qtlid="421685">Flux disponibles</translation>
-   <translation id="logs_alias_link_temp_6" qtlid="470583">Choisir un flux</translation>
+   <translation id="logs_alias_link_temp_5" qtlid="421685">Available streams</translation>
+   <translation id="logs_alias_link_temp_6" qtlid="470583">Choose a stream</translation>
 
-   <translation id="logs_role_temp_1" qtlid="425130">Vos logs contiennent des informations importantes que vous devez parfois partager avec d'autres personnes. Logs Data Platform vous offre la possibilité de définir des droits d'accès en lecture seule aux données contenues dans une sélection de vos flux, tableaux de bord, index ou alias.</translation>
+   <translation id="logs_role_temp_1" qtlid="425130">Your logs contain some important information that you must share with other people sometimes. Logs Data Platform gives you the possibility to set read-only access rights to data contained in select streams, dashboards, indexes or aliases.</translation>
 
-   <translation id="logs_role_add_temp_1" qtlid="425143">Ajouter un rôle</translation>
+   <translation id="logs_role_add_temp_1" qtlid="425143">Add a role</translation>
    <translation id="logs_role_add_temp_2" qtlid="3818">Name</translation>
    <translation id="logs_role_add_temp_3" qtlid="9238">Description</translation>
-   <translation id="logs_role_add_temp_4" qtlid="470596">Choisir le flux attaché</translation>
+   <translation id="logs_role_add_temp_4" qtlid="470596">Choose the attached stream</translation>
 
-   <translation id="logs_role_member_temp_1" qtlid="356810">Gérer les membres</translation>
-   <translation id="logs_role_member_temp_2" qtlid="470609">Vous trouverez ici la liste de vos membres actifs pour le rôle <strong>{{ name }}</strong>. Vous pouvez les révoquer individuellement ou en ajouter de nouveaux grâce à des comptes utilisateur existants.</translation>
-   <translation id="logs_role_member_temp_3" qtlid="392502">Ajouter un membre</translation>
-   <translation id="logs_role_member_temp_4" qtlid="470622">Compte utilisateur</translation>
+   <translation id="logs_role_member_temp_1" qtlid="356810">Manage members</translation>
+   <translation id="logs_role_member_temp_2" qtlid="470609">Here you will find a list of your active members for the <strong>{{ name }}</strong> role . You can revoke them individually or add new ones using existing user accounts.</translation>
+   <translation id="logs_role_member_temp_3" qtlid="392502">Add a member</translation>
+   <translation id="logs_role_member_temp_4" qtlid="470622">User account</translation>
    <translation id="logs_role_member_temp_5" qtlid="26011">Note</translation>
-   <translation id="logs_role_member_temp_6" qtlid="470635">Date d'ajout</translation>
+   <translation id="logs_role_member_temp_6" qtlid="470635">Date added</translation>
    <translation id="logs_role_member_temp_7" qtlid="185751">Revoke</translation>
 
-   <translation id="logs_role_member_add_temp_1" qtlid="392502">Ajouter un membre</translation>
-   <translation id="logs_role_member_add_temp_2" qtlid="424857">Compte utilisateur Logs Data Platform</translation>
+   <translation id="logs_role_member_add_temp_1" qtlid="392502">Add a member</translation>
+   <translation id="logs_role_member_add_temp_2" qtlid="424857">Logs Data Platform user account</translation>
    <translation id="logs_role_member_add_temp_3" qtlid="470648">Logs-XX-XXXX</translation>
    <translation id="logs_role_member_add_temp_4" qtlid="26011">Note</translation>
-   <translation id="logs_role_member_add_temp_5" qtlid="470661">Choisir le rôle</translation>
+   <translation id="logs_role_member_add_temp_5" qtlid="470661">Choose role</translation>
 
-   <translation id="logs_role_edit_temp_1" qtlid="470674">Éditer le rôle</translation>
+   <translation id="logs_role_edit_temp_1" qtlid="470674">Edit role</translation>
    <translation id="logs_role_edit_temp_2" qtlid="3818">Name</translation>
    <translation id="logs_role_edit_temp_3" qtlid="9238">Description</translation>
    <translation id="logs_role_edit_temp_4" qtlid="6946">Permissions</translation>
-   <translation id="logs_role_edit_temp_5" qtlid="470687">Éditer les permissions</translation>
-   <translation id="logs_role_edit_temp_6" qtlid="422569">Ajouter un nouveau rôle</translation>
+   <translation id="logs_role_edit_temp_5" qtlid="470687">Edit permissions</translation>
+   <translation id="logs_role_edit_temp_6" qtlid="422569">Add a new role</translation>
 
-   <translation id="logs_role_permissions_temp_1" qtlid="470700">Éditer les permissions du rôle</translation>
-   <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
+   <translation id="logs_role_permissions_temp_1" qtlid="470700">Edit role permissions</translation>
+   <translation id="logs_role_permissions_temp_2" qtlid="470713">Modify, limit and/or grant permissions to your various roles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Name</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Description</translation>
    <translation id="logs_role_permissions_temp_5" qtlid="422452">Data stream</translation>
@@ -295,14 +295,14 @@
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
 
-   <translation id="logs_role_preview_temp_1" qtlid="470726">Aperçu</translation>
+   <translation id="logs_role_preview_temp_1" qtlid="470726">Preview</translation>
    <translation id="logs_role_preview_temp_2" qtlid="403398">Role</translation>
    <translation id="logs_role_preview_temp_3" qtlid="26011">Note</translation>
    <translation id="logs_role_preview_temp_4" qtlid="9238">Description</translation>
    <translation id="logs_role_preview_temp_5" qtlid="470739">Permission(s)</translation>
-   <translation id="logs_role_preview_temp_6" qtlid="425169">Membres</translation>
-   <translation id="logs_role_preview_temp_7" qtlid="426768">Option liée</translation>
+   <translation id="logs_role_preview_temp_6" qtlid="425169">Members</translation>
+   <translation id="logs_role_preview_temp_7" qtlid="426768">Linked option</translation>
 
-   <translation id="logs_role_delete_temp_1" qtlid="470752">Supprimer le rôle</translation>
+   <translation id="logs_role_delete_temp_1" qtlid="470752">Delete role</translation>
    <translation id="logs_role_delete_temp_2" qtlid="470765">Confirmez-vous la suppression du rôle <strong>{{ name }}</strong> ?</translation>
 </translations>

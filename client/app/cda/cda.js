@@ -1,13 +1,15 @@
 angular.module("managerApp")
-    .config(function ($stateProvider) {
-        "use strict";
+    .config($stateProvider => {
         $stateProvider
             .state("paas.cda", {
                 url: "/cda",
-                templateUrl: "app/cda/cda.html",
-                controller: "CdaCtrl",
-                controllerAs: "CdaCtrl",
-                translations: ["common"],
+                template: "<div ui-view=\"cdaDetails\"></div>",
+                translations: ["common", "cda"],
                 abstract: true
             });
+    })
+    .run(($transitions, CdaService) => {
+        $transitions.onSuccess({ to: "paas.cda.**" }, transition => {
+            CdaService.initDetails(transition.params().serviceName);
+        });
     });

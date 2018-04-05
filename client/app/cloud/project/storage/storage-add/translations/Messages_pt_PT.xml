@@ -74,7 +74,7 @@
    <translation id="add_instance_created" qtlid="243107">O servidor virtual (instance) {0} foi criado</translation>
    <translation id="add_container_selected_publicKey_create" qtlid="243120">Nome da chave SSH</translation>
    <translation id="add_key_success" qtlid="243133">Chave SSH adicionada</translation>
-   <translation id="add_ok" qtlid="224880">Ok</translation>
+   <translation id="add_ok" qtlid="224880">OK</translation>
    <translation id="add_storage_storage_added" qtlid="243146">Armazenamento</translation>
    <translation id="add_storage_storage_added_error" qtlid="246481">Ocorreu um erro durante a criação de um container.</translation>
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">Já existe uma chave com esse nome</translation>
@@ -122,8 +122,8 @@
    <translation id="instance_creation_success" qtlid="242548">Servidor em curso de criação</translation>
    <translation id="instance_creation_PermissionDenied" qtlid="243419">Quota ultrapassada: não está autorizado a criar mais instâncias.</translation>
 
-   <translation id="storage_details_guide_title" qtlid="300370">Guias</translation>
+   <translation id="storage_details_guide_title" qtlid="300370">Manuais</translation>
    <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
    <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Stockage (PCS)</translation>
-   <translation id="storage_details_guide_footer" qtlid="406905">Todos os guias OVH</translation>
+   <translation id="storage_details_guide_footer" qtlid="406905">Manuais OVH</translation>
 </translations>

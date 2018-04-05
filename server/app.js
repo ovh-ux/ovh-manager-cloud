@@ -4,12 +4,14 @@
 
 "use strict";
 
+const chalk = require('chalk');
 const spdy = require('spdy');
 const fs = require('fs');
 const options = {
     key: fs.readFileSync(__dirname + '/certificate/server.key'),
     cert:  fs.readFileSync(__dirname + '/certificate/server.crt')
 };
+const ctx = new chalk.constructor({ level: 1 });
 
 var express = require("express");
 var config = require("./config/environment");
@@ -27,6 +29,7 @@ server.listen(config.port, config.ip, function (error) {
         return process.exit(1);
     } else {
         console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+        return console.log(ctx.black.bgGreen(" OPEN "), ctx.green(`https://localhost:${config.port}`));
     }
 });
 

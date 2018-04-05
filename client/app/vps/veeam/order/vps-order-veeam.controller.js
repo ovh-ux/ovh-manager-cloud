@@ -1,5 +1,5 @@
 class VpsOrderVeeamCtrl {
-    constructor ($scope, $stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService) {
+    constructor ($scope, $stateParams, $translate, $window, CloudMessage, CloudNavigation, VpsService, ServiceHelper) {
         "use strict";
         this.$scope = $scope;
         this.$translate = $translate;
@@ -8,6 +8,7 @@ class VpsOrderVeeamCtrl {
         this.CloudNavigation = CloudNavigation;
         this.serviceName = $stateParams.serviceName;
         this.VpsService = VpsService;
+        this.ServiceHelper = ServiceHelper;
 
 
         $scope.model = {
@@ -43,13 +44,9 @@ class VpsOrderVeeamCtrl {
 
     orderOption () {
         if (this.$scope.model.optionDetails && this.$scope.model.contractsValidated) {
-            this.VpsService.orderVeeamOption(this.serviceName, this.$scope.model.optionDetails.duration.duration)
-                .then(order => {
-                    this.$scope.model.url = order.url;
-                    this.$window.open(order.url, "_blank");
-                    this.previousState.go();
-                }).catch(error => {
-                    this.CloudMessage.error({ textHtml: this.$translate.instant("vps_configuration_veeam_order_fail") + " " + error.data });
+            this.ServiceHelper.loadOnNewPage(this.VpsService.orderVeeamOption(this.serviceName, this.$scope.model.optionDetails.duration.duration))
+                .then(({ url }) => {
+                    this.$scope.model.url = url;
                 });
         } else if (this.$scope.model.contractsValidated) {
             this.CloudMessage.error(this.$translate.instant("vps_configuration_veeam_order_fail"));

@@ -544,6 +544,15 @@
    <translation id="common_pagination_next" qtlid="433423">Next page</translation>
    <translation id="common_pagination_previous" qtlid="433436">Previous page</translation>
 
+   <translation id="common_field_error_required" qtlid="472294">Please fill in this field.</translation>
+   <translation id="common_field_error_number" qtlid="472307">Please enter a valid numeric value.</translation>
+   <translation id="common_field_error_email" qtlid="472320">Please enter a valid email address.</translation>
+   <translation id="common_field_error_min" qtlid="472333">Please enter a value greater than or equal to {{min}}.</translation>
+   <translation id="common_field_error_max" qtlid="472346">Please enter a value less than or equal to {{max}}.</translation>
+   <translation id="common_field_error_minlength" qtlid="472359">Please enter a minimum of {{minlength}} characters.</translation>
+   <translation id="common_field_error_maxlength" qtlid="472372">Veuillez saisir un maximum de {{maxlength}} caractères.</translation>
+   <translation id="common_field_error_pattern" qtlid="472385">Please enter a valid format.</translation>
+
    <translation id="common_limited_voucher_start" qtlid="440982">There are</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">left on your project</translation>
    <translation id="common_day_unit" qtlid="441008">days</translation>

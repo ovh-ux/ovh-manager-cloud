@@ -39,7 +39,7 @@ angular.module("managerApp")
                   self.changeMenuTitle(serviceName, self.currentService.label ? self.currentService.label : self.currentService.serviceName);
               });
           }).catch(function (error) {
-              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
+              return $q.reject(error);
           });
       };
 
