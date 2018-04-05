@@ -17,7 +17,7 @@ class LogsHomeAccountModalCtrl {
             }
         })
             .then(() => {
-                this.$scope.$parent.$parent.$$prevSibling.ctrl.runLoaders();
+                this.$scope.$parent.$parent.$parent.$$prevSibling.ctrl.runLoaders();
                 this.$scope.$parent.ctrl.runLoaders();
             })
             .finally(() => this.onCloseModal());
