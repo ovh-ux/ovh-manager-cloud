@@ -9,9 +9,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsAliasesCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/aliases",
-                "dbaas/logs/detail/options", "dbaas/logs/detail/streams", "dbaas/logs/detail/index", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool"]
+            }
         })
         .state("dbaas.logs.detail.aliases.home", {
             url: "/home",

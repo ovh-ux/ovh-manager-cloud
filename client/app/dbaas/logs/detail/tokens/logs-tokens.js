@@ -8,8 +8,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsTokensCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/tokens"]
+            }
         })
         .state("dbaas.logs.detail.tokens.add", {
             url: "/add",
@@ -18,7 +17,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsTokenAddModalCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/tokens"]
+            }
         });
 });

@@ -8,7 +8,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsIndexCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/index", "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool"]
+            }
         });
 });

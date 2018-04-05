@@ -8,7 +8,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsOfferCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/offer"]
+            }
         });
 });

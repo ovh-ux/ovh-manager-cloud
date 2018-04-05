@@ -13,7 +13,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsWelcomeCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs/welcome"]
+            }
         });
 });

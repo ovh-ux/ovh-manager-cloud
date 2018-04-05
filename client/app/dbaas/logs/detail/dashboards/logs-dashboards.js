@@ -8,8 +8,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsDashboardsCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/dashboards", "dbaas/logs/detail/options", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool", "dbaas/logs/detail/streams"]
+            }
         })
         .state("dbaas.logs.detail.dashboards.add", {
             url: "/add",

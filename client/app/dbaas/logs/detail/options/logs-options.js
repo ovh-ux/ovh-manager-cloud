@@ -9,8 +9,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsOptionsCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/options", "dbaas/logs/detail/offer"]
+            }
         })
         .state("dbaas.logs.detail.options.home", {
             url: "/home",
@@ -29,8 +28,7 @@ angular.module("managerApp").config($stateProvider => {
                     templateUrl: "app/dbaas/logs/detail/options/manage/logs-options-manage.html",
                     controller: "LogsOptionsManageCtrl",
                     controllerAs: "ctrl"
-                },
-                translations: ["common", "dbaas/logs", "dbaas/logs/options"]
+                }
             }
         });
 });

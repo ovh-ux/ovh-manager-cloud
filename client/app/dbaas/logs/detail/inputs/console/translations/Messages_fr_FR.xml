@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<translations>
-    <translation id="inputs_logs_title">Sortie console de l'outil de collecte {{inputTitle}}</translation>
-    <translation id="inputs_logs_no_logs">Aucun message reçu pour la dernière heure.</translation>
-</translations>

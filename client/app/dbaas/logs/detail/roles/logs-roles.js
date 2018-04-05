@@ -8,8 +8,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsRolesCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles", "dbaas/logs/detail/optoins", "dbaas/logs/detail/options/upgradequotalink", "dbaas/logs/detail/options/addtool"]
+            }
         })
         .state("dbaas.logs.detail.members", {
             url: "/members/:roleId",
@@ -19,8 +18,7 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsRolesMembersCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles/members", "dbaas/logs/detail/options"]
+            }
         })
         .state("dbaas.logs.detail.permissions", {
             url: "/permissions/:roleId",
@@ -30,7 +28,6 @@ angular.module("managerApp").config($stateProvider => {
                     controller: "LogsRolesPermissionsCtrl",
                     controllerAs: "ctrl"
                 }
-            },
-            translations: ["common", "dbaas/logs", "dbaas/logs/detail/roles/members", "dbaas/logs/detail/options", "dbaas/logs/detail/index", "dbaas/logs/detail/aliases", "dbaas/logs/detail/streams", "dbaas/logs/detail/dashboards"]
+            }
         });
 });
