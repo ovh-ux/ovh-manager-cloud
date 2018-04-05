@@ -94,6 +94,8 @@
             this.user = null;
             this.volumes = null;
 
+            this.InfrastructureService.setPreferredView("diagram");
+
             // Hide highlighted-element on change state
             this.$scope.$on("$stateChangeStart", () => {
                 this.$rootScope.$broadcast("highlighed-element.hide");
