@@ -95,6 +95,8 @@
             this.user = null;
             this.volumes = null;
 
+            this.InfrastructureService.setPreferredView("diagram");
+
             // Hide highlighted-element on change state
             const hook = this.$transitions.onStart({ from: "iaas.pci-project.compute.infrastructure.diagram" }, () => {
                 this.$rootScope.$broadcast("highlighed-element.hide");
