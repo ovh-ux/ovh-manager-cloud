@@ -56,7 +56,9 @@ class LogsAccountSetupCtrl {
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
                 this.LogsAccountService.changePassword(this.serviceName, this.newPassword, true)
-                    .then(() => this.$state.go("dbaas.logs.detail.home"))
+                    .then(() => {
+                        this.$state.go("dbaas.logs.detail.home", { serviceName: this.serviceName }, { reload: true });
+                    })
         });
         return this.saving.load();
     }
