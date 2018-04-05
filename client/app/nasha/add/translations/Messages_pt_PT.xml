@@ -32,7 +32,7 @@
    <translation id="nasha_order_bc_price_HT" qtlid="345312">Preço total s/IVA: <strong>{{priceHT}}</strong></translation>
    <translation id="nasha_order_bc_price_TTC" qtlid="345325">Preço total c/IVA: <strong>{{priceTTC}}</strong></translation>
 
-   <translation id="nasha_order_guide_title" qtlid="300370">Guias</translation>
+   <translation id="nasha_order_guide_title" qtlid="300370">Manuais</translation>
    <translation id="nasha_order_new_window" qtlid="222176">Nova janela</translation>
 
    <translation id="nasha_order_select_placeholder" qtlid="159046">Selecione...</translation>
