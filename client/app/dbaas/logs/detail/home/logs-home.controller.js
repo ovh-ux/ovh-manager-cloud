@@ -1,5 +1,5 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, LogsHelperService) {
+    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, LogsHelperService, LogsDetailService, LogsConstants) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -12,44 +12,49 @@ class LogsHomeCtrl {
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
         this.LogsHelperService = LogsHelperService;
+        this.LogsDetailService = LogsDetailService;
+        this.LogsConstants = LogsConstants;
     }
 
     $onInit () {
         this.service = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getServiceDetails(this.serviceName)
+            loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
                 .then(service => {
                     this.initLoaders();
                     this.isAccountDisabled = this.LogsHelperService.isAccountDisabled(service);
                     this.lastUpdatedDate = moment(service.updatedAt).format("LL");
-                    if (service.state === this.LogsHomeConstant.SERVICE_STATE_TO_CONFIG) {
-                        this.openSetupAccountModal(true);
+                    if (service.state === this.LogsConstants.SERVICE_STATE_TO_CONFIG) {
+                        this.goToAccountSetupPage();
+                    } else {
+                        this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
+                        this.runLoaders()
+                            .then(() => this._initActions())
+                            .then(() => this._prepareDataUsageGraphData());
                     }
-                    this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
-                    this.runLoaders()
-                        .then(() => this._initActions())
-                        .then(() => this._prepareDataUsageGraphData());
                     return service;
                 })
         });
         this.service.load();
     }
 
+    goToAccountSetupPage () {
+        this.$state.go("dbaas.logs.detail.setup", {
+            serviceName: this.serviceName
+        });
+    }
+
     /**
      * opens UI modal to change password
-     * @param {string} setupPassword
      *
      * @memberof LogsHomeCtrl
      */
-    openSetupAccountModal (setupPassword) {
+    openChangePasswordModal () {
         this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/dbaas/logs/detail/account/password/logs-account-password.html",
                 controller: "LogsAccountPasswordCtrl",
                 controllerAs: "ctrl",
-                backdrop: "static",
-                resolve: {
-                    setupPassword
-                }
+                backdrop: "static"
             }
         }).finally(() => this.ControllerHelper.scrollPageToTop());
     }
@@ -201,7 +206,7 @@ class LogsHomeCtrl {
      * @memberof LogsHomeCtrl
      */
     editPassword () {
-        this.openSetupAccountModal(false);
+        this.openChangePasswordModal();
     }
 
     /**

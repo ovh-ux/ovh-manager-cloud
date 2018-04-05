@@ -15,5 +15,15 @@ angular.module("managerApp").config($stateProvider => {
                     controllerAs: "ctrl"
                 }
             }
+        })
+        .state("dbaas.logs.detail.setup", {
+            url: "/setup",
+            views: {
+                logsContent: {
+                    templateUrl: "app/dbaas/logs/detail/account/setup/logs-account-setup.html",
+                    controller: "LogsAccountSetupCtrl",
+                    controllerAs: "ctrl"
+                }
+            }
         });
 });
