@@ -7,7 +7,7 @@
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Strona główna</translation>
    <translation id="logs_tab_streams" qtlid="422452">Strumienie danych</translation>
-   <translation id="logs_tab_dashboards" qtlid="225075">Panel sterowania</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Narzędzia do gromadzenia logów</translation>
    <translation id="logs_tab_indices" qtlid="426729">Indeks</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
@@ -34,30 +34,30 @@
 
    <translation id="logs_home_dashboard_token_temp_1" qtlid="469270">Tokeny umożliwiają dostęp do interfejsu API (zapis w indeksach, odczyt w systemie Graylog i Elasticsearch).</translation>
 
-   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Możesz korzystać z dostępu do Elasticsearch po zakupieniu indeksu lub aliasu.</translation>
+   <translation id="logs_home_dashboard_index_temp_1" qtlid="469283">Możesz korzystać z dostępu do Elasticsearch po zamówieniu indeksu lub aliasu.</translation>
 
-   <translation id="logs_home_messages_temp_1" qtlid="469296">Formaty wiadomości i dostępne porty</translation>
+   <translation id="logs_home_messages_temp_1" qtlid="469296">Obsługiwane formaty i dostępne porty</translation>
 
    <translation id="logs_options_temp_1" qtlid="424402">Dodaj opcje</translation>
-   <translation id="logs_options_temp_2" qtlid="469309">Wraz z zakupionymi strumieniami danych, aliasami i panelami kontrolnymi zyskujesz role użytkowników (np. 5 strumieni = 5 ról).</translation>
+   <translation id="logs_options_temp_2" qtlid="469309">Wraz z zakupionymi strumieniami danych, aliasami i dashboardami zyskujesz role użytkowników (np. 5 strumieni = 5 ról).</translation>
    <translation id="logs_options_temp_3" qtlid="469322">Aktualne opcje</translation>
    <translation id="logs_options_type_temp_1" qtlid="421217">Narzędzia do gromadzenia logów</translation>
    <translation id="logs_options_type_temp_2" qtlid="45376">Informacje ogólne</translation>
    <translation id="logs_options_type_temp_3" qtlid="421919">Alias Elasticsearch</translation>
    <translation id="logs_options_type_temp_4" qtlid="422452">Strumienie danych</translation>
-   <translation id="logs_options_type_temp_5" qtlid="469335">Pack Kibana</translation>
-   <translation id="logs_options_type_temp_6" qtlid="469348">Elasticsearch Index {{ size }}</translation>
+   <translation id="logs_options_type_temp_5" qtlid="469335">Pakiet Kibana</translation>
+   <translation id="logs_options_type_temp_6" qtlid="469348">Indeks Elasticsearch {{ size }}</translation>
    <translation id="logs_options_details_temp_1" qtlid="469361">Liczba instancji: {{ count }}</translation>
    <translation id="logs_options_details_temp_2" qtlid="469374">Liczba fragmentów: {{ count }}</translation>
    <translation id="logs_options_details_temp_3" qtlid="469387">Pakiet {{ count }}</translation>
-   <translation id="logs_options_details_temp_4" qtlid="469400">Liczba aliasów: {{ count }} i liczba indeksów {{ size }}: {{count}}</translation>
+   <translation id="logs_options_details_temp_4" qtlid="469400">{{ count }} alias(y) oraz indeks(y) {{ size }}: {{count}}</translation>
 
    <translation id="logs_offer_temp_1" qtlid="469413">Wybierz Twoje rozwiązanie</translation>
    <translation id="logs_offer_temp_2" qtlid="469426">Liczba strumieni: {{ count }}</translation>
    <translation id="logs_offer_temp_3" qtlid="469439">Liczba paneli kontrolnych: {{ count }}</translation>
    <translation id="logs_offer_temp_4" qtlid="469452">Liczba narzędzi do gromadzenia logów: {{ count }}</translation>
 
-   <translation id="logs_streams_temp_1" qtlid="469465">Strumienie umożliwiają kierowanie logów w czasie rzeczywistym do określonej kategorii zaraz po ich dotarciu na Logs Data Platform. Jeśli masz wiele strumieni, możesz także: sortować wiadomości na podstawie ich źródła, aplikacji lub serwera źródłowego. Na podstawie strumieni można również utworzyć poziomy poufności, dzięki czemu będziesz mógł udzielać praw dostępu tylko upoważnionym użytkownikom. Tokeny, o których mowa, to tokeny zapisu, które umożliwiają kierowanie logów do prawidłowego strumienia. Posiadanie różnych strumieni znacznie ułatwia wyszukiwanie logów - bez potrzeby wykluczania wyników innych systemów lub aplikacji.</translation>
+   <translation id="logs_streams_temp_1" qtlid="469465">Strumienie umożliwiają kierowanie logów w czasie rzeczywistym do określonej kategorii zaraz po ich dotarciu na Logs Data Platform. Jeśli masz wiele strumieni, możesz także: sortować dane na podstawie ich źródła, aplikacji lub serwera źródłowego. Na podstawie strumieni można również utworzyć poziomy poufności, dzięki czemu będziesz mógł udzielać praw dostępu tylko upoważnionym użytkownikom. Tokeny, o których mowa, to tokeny zapisu, które umożliwiają kierowanie logów do prawidłowego strumienia. Posiadanie różnych strumieni znacznie ułatwia wyszukiwanie logów - bez potrzeby wykluczania wyników innych systemów lub aplikacji.</translation>
 
    <translation id="logs_streams_add_temp_1" qtlid="426170">Dodaj strumień danych</translation>
    <translation id="logs_streams_add_temp_1" qtlid="3818">Nazwa</translation>
@@ -65,9 +65,9 @@
    <translation id="logs_streams_add_temp_3" qtlid="469478">Wybierz powiązaną opcję</translation>
    <translation id="logs_streams_add_temp_4" qtlid="426807">Główne rozwiązanie</translation>
    <translation id="logs_streams_add_temp_5" qtlid="426677">Aktywuj udostępnianie WebSocket</translation>
-   <translation id="logs_streams_add_temp_6" qtlid="469491">Śledź otrzymywanie logów w czasie rzeczywistym za pośrednictwem protokołu WebSocket.</translation>
+   <translation id="logs_streams_add_temp_6" qtlid="469491">Śledzenie otrzymywania logów w czasie rzeczywistym za pośrednictwem protokołu WebSocket.</translation>
    <translation id="logs_streams_add_temp_7" qtlid="426469">Aktywuj długoterminowe przechowywanie</translation>
-   <translation id="logs_streams_add_temp_8" qtlid="469504">Archiwizuj bezpiecznie logi przez wiele lat.</translation>
+   <translation id="logs_streams_add_temp_8" qtlid="469504">Bezpieczna archiwizacja logów przez wiele lat.</translation>
    <translation id="logs_streams_add_temp_9" qtlid="426495">Algorytm kompresji</translation>
    <translation id="logs_streams_add_temp_10" qtlid="426560">Czas archiwizacji</translation>
    <translation id="logs_streams_add_temp_11" qtlid="469517">Liczba lat: {{ count }}</translation>
@@ -76,13 +76,13 @@
 
    <translation id="logs_alerts_temp_1" qtlid="72797">Alerty</translation>
    <translation id="logs_alerts_temp_2" qtlid="469543">Zarządzanie alertami dla strumienia {{ name }}</translation>
-   <translation id="logs_alerts_temp_3" qtlid="469556">Dzięki ustawieniu warunków alertów nie musisz już monitorować Twoich logów - platforma zrobi to za Ciebie. Istnieje wiele przypadków, dla których możesz ustawić żądanie przesyłania alertu e-mailem, np.: brak komunikatów oprogramowania przez nietypowo długi czas, wyjątkowo mała liczba wykonywanych zadań, bardzo duży ruch na Twojej stronie WWW czy też pojawianie się określonych słów kluczowych w Twoim strumieniu.</translation>
-   <translation id="logs_alerts_temp_4" qtlid="469569">Utwórz alert</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Dzięki alertom nie musisz już monitorować Twoich logów - platforma zrobi to za Ciebie. Istnieje wiele przypadków, dla których możesz ustawić żądanie przesyłania alertu e-mailem, np.: brak komunikatów oprogramowania przez nietypowo długi czas, wyjątkowo mała liczba wykonywanych zadań, bardzo duży ruch na Twojej stronie WWW czy też pojawianie się określonych słów kluczowych w Twoim strumieniu.</translation>
+   <translation id="logs_alerts_temp_4" qtlid="469569">Dodaj alert</translation>
    <translation id="logs_alerts_temp_5" qtlid="425806">Warunek</translation>
-   <translation id="logs_alerts_temp_6" qtlid="469582">Termin dodatkowy</translation>
+   <translation id="logs_alerts_temp_6" qtlid="469582">Dodatkowy odstęp czasu</translation>
    <translation id="logs_alerts_temp_7" qtlid="469595">Powtarzaj powiadomienia</translation>
 
-   <translation id="logs_alert_count_temp_1" qtlid="469608">Utwórz warunek typu "liczba wiadomości"</translation>
+   <translation id="logs_alert_count_temp_1" qtlid="469608">Utwórz warunek typu "liczba"</translation>
    <translation id="logs_alert_count_temp_2" qtlid="469621">Warunek ten jest aktywowany, jeśli liczba wiadomości jest większa lub mniejsza od progu określonego dla danego przedziału czasu.</translation>
    <translation id="logs_alert_count_temp_3" qtlid="16469">Tytuł</translation>
    <translation id="logs_alert_count_temp_4" qtlid="469634">Nazwa warunku alertu.</translation>
@@ -156,8 +156,8 @@
 
    <translation id="logs_dashboards_temp_1" qtlid="470063">Dashboard to graficzne przedstawienie Twoich logów. Dzięki różnorodnym modułom (krzywe, wykresy kołowe, liczniki, statystyki itp.) zyskujesz syntetyczny widok Twoich danych. Ile błędów wystąpiło w ciągu ostatnich 24 godzin? Czy ich liczba rośnie czy spada? Która strona odnotowała w danym dniu najwięcej odwiedzin? Ilu użytkowników odwiedziło stronę w danym miesiącu? Wszystkie informacje są dostępne natychmiast. Możliwość tworzenia wielu dashboardów pozwala wyświetlać dane filtrowane według precyzyjnych kryteriów, co zapewnia większą przejrzystość informacji.</translation>
 
-   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Duplikuj dashboard</translation>
-   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Duplikuj dashboard <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Zrób kopię dashboardu</translation>
+   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Zrób kopię dashboardu <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboard_duplicate_temp_3" qtlid="3818">Nazwa</translation>
    <translation id="logs_dashboard_duplicate_temp_4" qtlid="9238">Opis</translation>
    <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Powiąż wszystkie moduły nowego dashboardu z następującym strumieniem danych:</translation>
@@ -196,7 +196,7 @@
    <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Uruchom tylko jedną instancję tego typu.</translation>
 
    <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Edytuj sekcje "Input" i odfiltruj sekcję "Output" w konfiguracji Logstash.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Upewnij się, że otworzyłeś port TCP 6514</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Uwaga, otworzyłeś port TCP 6514 do sieci publicznej.</translation>
    <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Po edytowaniu tych sekcji będziesz mógł przetestować konfigurację.</translation>
    <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Przetestuj konfigurację</translation>
    <translation id="logs_collector_add_logstash_configure_temp_5" qtlid="23215">Asystent konfiguracji</translation>
@@ -214,7 +214,7 @@
 
    <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Liczba wiadomości przechowywanych w pamięci RAM przez Flowgger przed wysłaniem ich do aplikacji Kafka. Wysoka wartość świadczy o większej wydajności, jednak może spowodować opóźnieni indeksacji, jeśli wysyłasz mało wiadomości.</translation>
 
-   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform umożliwia tworzenie i hostowanie indeksów Elasticsearch. Mogę być one wykorzystywane w danych konfiguracyjnych instancji Kibana, do indeksowania danych statystycznych i wzbogacania lub korelacji Twoich logów. Indeksy te mogą być również użyte przez większość narzędzi i aplikacji kompatybilnych z API REST Elasticsearch.</translation>
+   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform umożliwia tworzenie i hostowanie indeksów Elasticsearch. Mogą być one wykorzystywane w danych konfiguracyjnych instancji Kibana, do indeksowania danych statystycznych i wzbogacania lub korelacji Twoich logów. Indeksy te mogą być również użyte przez większość narzędzi i aplikacji kompatybilnych z API REST Elasticsearch.</translation>
 
    <translation id="logs_index_add_temp_1" qtlid="423024">Dodaj indeks</translation>
    <translation id="logs_index_add_temp_2" qtlid="59267">Sufiks</translation>
@@ -265,15 +265,15 @@
    <translation id="logs_role_add_temp_3" qtlid="9238">Opis</translation>
    <translation id="logs_role_add_temp_4" qtlid="470596">Wybierz powiązany strumień</translation>
 
-   <translation id="logs_role_member_temp_1" qtlid="356810">Zarządzaj członkami</translation>
-   <translation id="logs_role_member_temp_2" qtlid="470609">Tutaj znajdziesz listę aktywnych członków dla roli <strong>{{ name }}</strong>. Możesz ich pojedynczo usuwać lub dodawać nowych przy użyciu istniejących kont użytkowników.</translation>
-   <translation id="logs_role_member_temp_3" qtlid="392502">Dodaj członka</translation>
+   <translation id="logs_role_member_temp_1" qtlid="356810">Zarządzaj użytkownikami</translation>
+   <translation id="logs_role_member_temp_2" qtlid="470609">Tutaj znajdziesz listę aktywnych użytkowników dla roli <strong>{{ name }}</strong>. Możesz ich pojedynczo usuwać lub dodawać nowych przy użyciu istniejących kont użytkowników.</translation>
+   <translation id="logs_role_member_temp_3" qtlid="392502">Dodaj użytkownika</translation>
    <translation id="logs_role_member_temp_4" qtlid="470622">Konto użytkownika</translation>
    <translation id="logs_role_member_temp_5" qtlid="26011">Ocena</translation>
    <translation id="logs_role_member_temp_6" qtlid="470635">Data dodania</translation>
    <translation id="logs_role_member_temp_7" qtlid="185751">Usuń</translation>
 
-   <translation id="logs_role_member_add_temp_1" qtlid="392502">Dodaj członka</translation>
+   <translation id="logs_role_member_add_temp_1" qtlid="392502">Dodaj użytkownika</translation>
    <translation id="logs_role_member_add_temp_2" qtlid="424857">Konto użytkownika Logs Data Platform</translation>
    <translation id="logs_role_member_add_temp_3" qtlid="470648">Logs-XX-XXXX</translation>
    <translation id="logs_role_member_add_temp_4" qtlid="26011">Ocena</translation>
@@ -291,7 +291,7 @@
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Nazwa</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Opis</translation>
    <translation id="logs_role_permissions_temp_5" qtlid="422452">Strumienie danych</translation>
-   <translation id="logs_role_permissions_temp_6" qtlid="225075">Panel sterowania</translation>
+   <translation id="logs_role_permissions_temp_6" qtlid="225075">Dashboardy</translation>
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Indeks</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
 
@@ -300,7 +300,7 @@
    <translation id="logs_role_preview_temp_3" qtlid="26011">Ocena</translation>
    <translation id="logs_role_preview_temp_4" qtlid="9238">Opis</translation>
    <translation id="logs_role_preview_temp_5" qtlid="470739">Uprawnienia</translation>
-   <translation id="logs_role_preview_temp_6" qtlid="425169">Członkowie</translation>
+   <translation id="logs_role_preview_temp_6" qtlid="425169">Użytkownicy</translation>
    <translation id="logs_role_preview_temp_7" qtlid="426768">Powiązana opcja</translation>
 
    <translation id="logs_role_delete_temp_1" qtlid="470752">Usuń rolę</translation>

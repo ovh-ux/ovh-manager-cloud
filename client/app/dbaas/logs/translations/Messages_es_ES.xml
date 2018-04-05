@@ -22,7 +22,7 @@
    <translation id="logs_home_contact_temp_5" qtlid="421347">Añadir un nuevo contacto</translation>
 
    <translation id="logs_home_token_temp_1" qtlid="421386">Tokens de lectura</translation>
-   <translation id="logs_home_token_temp_2" qtlid="469218">Si quiere habilitar el acceso a sus logs desde aplicaciones externas o automatizar determinadas tareas, deberá habilitar su acceso a las API. La forma más segura de gestionar estos accesos es mediante el uso de los tokens de autenticación. Gracias a esta funcionalidad, no tendrá que volver a introducir sus claves en sus archivos de configuración.</translation>
+   <translation id="logs_home_token_temp_2" qtlid="469218">Si quiere habilitar el acceso a sus logs desde aplicaciones externas o automatizar determinadas tareas, deberá habilitar su acceso a las API. La forma más segura de gestionar estos accesos es mediante el uso de los tokens de autenticación. Gracias a esta funcionalidad, no tendrá que volver a introducir sus claves en los archivos de configuración.</translation>
    <translation id="logs_home_token_temp_3" qtlid="469231">Añadir un token</translation>
 
    <translation id="logs_home_password_temp_1" qtlid="80394">Cambiar la contraseña</translation>
@@ -65,7 +65,7 @@
    <translation id="logs_streams_add_temp_3" qtlid="469478">Elegir la opción asociada</translation>
    <translation id="logs_streams_add_temp_4" qtlid="426807">Solución principal</translation>
    <translation id="logs_streams_add_temp_5" qtlid="426677">Activar la difusión WebSocket</translation>
-   <translation id="logs_streams_add_temp_6" qtlid="469491">Monitorice la recepción de sus logs en tiempo real a través del protocolo WebSocket.</translation>
+   <translation id="logs_streams_add_temp_6" qtlid="469491">Monitorice la recepción de sus logs en tiempo real mediante el protocolo WebSocket.</translation>
    <translation id="logs_streams_add_temp_7" qtlid="426469">Activar el almacenamiento de larga duración</translation>
    <translation id="logs_streams_add_temp_8" qtlid="469504">Archive sus logs de forma segura durante años.</translation>
    <translation id="logs_streams_add_temp_9" qtlid="426495">Algoritmo de compresión</translation>
@@ -76,14 +76,14 @@
 
    <translation id="logs_alerts_temp_1" qtlid="72797">Alertas</translation>
    <translation id="logs_alerts_temp_2" qtlid="469543">Gestión de alertas para el flujo {{ name }}</translation>
-   <translation id="logs_alerts_temp_3" qtlid="469556">Gracias a las alertas, ya no tendrá que monitorizar sus logs: nuestra plataforma se encarga de todo. Las alertas (que recibirá por correo electrónico) pueden activarse por distintos motivos: ausencia de mensajes procedentes de un programa durante un período unusual de tiempo, número de tareas realizadas anormalmente bajo, tráfico de red muy elevado en su sitio web, determinadas palabras clave que aparecen en su flujo, etc.</translation>
+   <translation id="logs_alerts_temp_3" qtlid="469556">Gracias a las alertas, ya no tendrá que monitorizar sus logs: nuestra plataforma se encarga de todo. Las alertas (que recibirá por correo electrónico) pueden activarse por distintos motivos: ausencia de mensajes procedentes de un programa durante un período unusual de tiempo, número anormalmente bajo de tareas realizadas, tráfico de red muy elevado en su sitio web, determinadas palabras clave que aparecen en su flujo, etc.</translation>
    <translation id="logs_alerts_temp_4" qtlid="469569">Crear una alerta</translation>
    <translation id="logs_alerts_temp_5" qtlid="425806">Condición</translation>
    <translation id="logs_alerts_temp_6" qtlid="469582">Período de gracia</translation>
    <translation id="logs_alerts_temp_7" qtlid="469595">Repetir las notificaciones</translation>
 
    <translation id="logs_alert_count_temp_1" qtlid="469608">Crear una condición de tipo contador</translation>
-   <translation id="logs_alert_count_temp_2" qtlid="469621">Esta condición se activa cuando el número de mensajes es superior o inferior al límite definido para un período determinado de tiempo.</translation>
+   <translation id="logs_alert_count_temp_2" qtlid="469621">Esta condición se activa cuando el número de mensajes es superior o inferior al límite definido para un período de tiempo determinado.</translation>
    <translation id="logs_alert_count_temp_3" qtlid="16469">Título</translation>
    <translation id="logs_alert_count_temp_4" qtlid="469634">Título de la condición de la alerta.</translation>
    <translation id="logs_alert_count_temp_5" qtlid="469647">Período de tiempo (minutos)</translation>
@@ -96,12 +96,12 @@
    <translation id="logs_alert_count_temp_12" qtlid="469725">Período de gracia (minutos)</translation>
    <translation id="logs_alert_count_temp_13" qtlid="469738">Número de minutos que deben transcurrir tras la activación de una alerta para volver a lanzar otra.</translation>
    <translation id="logs_alert_count_temp_14" qtlid="469751">Acumulación de mensajes</translation>
-   <translation id="logs_alert_count_temp_15" qtlid="469764">Número de mensajes que deseas incluir en las notificaciones de alerta.</translation>
+   <translation id="logs_alert_count_temp_15" qtlid="469764">Número de mensajes que desea incluir en las notificaciones de alerta.</translation>
    <translation id="logs_alert_count_temp_16" qtlid="33250">Notificaciones</translation>
-   <translation id="logs_alert_count_temp_17" qtlid="469777">Marque esta casilla si desea enviar notificaciones cada vez que se cumple la condición de la alerta, independientemente de su estado.</translation>
+   <translation id="logs_alert_count_temp_17" qtlid="469777">Marque esta casilla para enviar notificaciones cada vez que se cumpla la condición de la alerta, independientemente de su estado.</translation>
 
    <translation id="logs_alert_numerical_temp_1" qtlid="469790">Crear una condición de tipo valor numérico</translation>
-   <translation id="logs_alert_numerical_temp_2" qtlid="469803">Esta condición se activa cuando el valor agregado de un campo es superior o inferior al límite definido para un período determinado de tiempo.</translation>
+   <translation id="logs_alert_numerical_temp_2" qtlid="469803">Esta condición se activa cuando el valor agregado de un campo es superior o inferior al límite definido para un período de tiempo determinado.</translation>
    <translation id="logs_alert_numerical_temp_3" qtlid="16469">Título</translation>
    <translation id="logs_alert_numerical_temp_4" qtlid="469634">Título de la condición de la alerta.</translation>
    <translation id="logs_alert_numerical_temp_5" qtlid="469816">Campo</translation>
@@ -110,14 +110,14 @@
    <translation id="logs_alert_numerical_temp_8" qtlid="469842">Evaluar la condición para todos los mensajes recibidos en el número de minutos determinado.</translation>
    <translation id="logs_alert_numerical_temp_9" qtlid="469673">Tipo de límite</translation>
    <translation id="logs_alert_numerical_temp_10" qtlid="469855">Seleccione la condición que activa la alerta: cuando el valor es superior o inferior al establecido en el límite.</translation>
-   <translation id="logs_alert_numerical_temp_11" qtlid="469868">Valor agregado</translation>
+   <translation id="logs_alert_numerical_temp_11" qtlid="469868">Tipo de agregación</translation>
    <translation id="logs_alert_numerical_temp_12" qtlid="469881">Seleccione la condición que activa la alerta: cuando el valor es inferior o superior al establecido en el límite.</translation>
    <translation id="logs_alert_numerical_temp_13" qtlid="469725">Período de gracia (minutos)</translation>
    <translation id="logs_alert_numerical_temp_14" qtlid="469738">Número de minutos que deben transcurrir tras la activación de una alerta para volver a lanzar otra.</translation>
    <translation id="logs_alert_numerical_temp_15" qtlid="469751">Acumulación de mensajes</translation>
-   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Número de mensajes que deseas incluir en las notificaciones de alerta.</translation>
+   <translation id="logs_alert_numerical_temp_16" qtlid="469764">Número de mensajes que desea incluir en las notificaciones de alerta.</translation>
    <translation id="logs_alert_numerical_temp_17" qtlid="33250">Notificaciones</translation>
-   <translation id="logs_alert_numerical_temp_18" qtlid="469777">Marque esta casilla si desea enviar notificaciones cada vez que se cumple la condición de la alerta, independientemente de su estado.</translation>
+   <translation id="logs_alert_numerical_temp_18" qtlid="469777">Marque esta casilla para enviar notificaciones cada vez que se cumpla la condición de la alerta, independientemente de su estado.</translation>
 
    <translation id="logs_alert_text_temp_1" qtlid="469894">Crear una condición de tipo contenido textual</translation>
    <translation id="logs_alert_text_temp_2" qtlid="469907">Esta condición se activa cuando el contenido de los mensajes es igual a un valor definido.</translation>
@@ -130,9 +130,9 @@
    <translation id="logs_alert_text_temp_9" qtlid="469725">Período de gracia (minutos)</translation>
    <translation id="logs_alert_text_temp_10" qtlid="469738">Número de minutos que deben transcurrir tras la activación de una alerta para volver a lanzar otra.</translation>
    <translation id="logs_alert_text_temp_11" qtlid="469751">Acumulación de mensajes</translation>
-   <translation id="logs_alert_text_temp_12" qtlid="469764">Número de mensajes que deseas incluir en las notificaciones de alerta.</translation>
+   <translation id="logs_alert_text_temp_12" qtlid="469764">Número de mensajes que desea incluir en las notificaciones de alerta.</translation>
    <translation id="logs_alert_text_temp_13" qtlid="33250">Notificaciones</translation>
-   <translation id="logs_alert_text_temp_14" qtlid="469777">Marque esta casilla si desea enviar notificaciones cada vez que se cumple la condición de la alerta, independientemente de su estado.</translation>
+   <translation id="logs_alert_text_temp_14" qtlid="469777">Marque esta casilla para enviar notificaciones cada vez que se cumpla la condición de la alerta, independientemente de su estado.</translation>
 
    <translation id="logs_archives_temp_1" qtlid="469933">Archivos</translation>
    <translation id="logs_archives_temp_2" qtlid="469946">Una vez descongelados, podrá descargar los archivos durante 24 horas.</translation>
@@ -152,7 +152,7 @@
    <translation id="logs_stream_follow_temp_1" qtlid="426222">Monitorizar en directo</translation>
    <translation id="logs_stream_follow_temp_2" qtlid="470037">Cerrar la conexión</translation>
 
-   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Seleccione uno de los formatos propuestos para copiar la línea de comando necesaria para comprobar su flujo desde un dispositivo.</translation>
+   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Seleccione uno de los formatos propuestos para copiar la línea de comando necesaria para probar su flujo desde un terminal.</translation>
 
    <translation id="logs_dashboards_temp_1" qtlid="470063">Los paneles de control son representaciones gráficas de sus logs. Los distintos módulos (lineales, circulares, contadores, estadísticas, etc.) le ofrecen una visión sintética de sus datos. ¿Cuántos errores se han producido en las últimas 24 horas? ¿Están aumentando o disminuyendo estos errores? ¿Cuál es la página más visitada hoy? ¿Cuántos clientes se han registrado este mes? Con los paneles de control, podrá acceder a toda esta información de inmediato. Además, disponer de distintos paneles le permite visualizar los datos en función del contexto preciso y facilita la compresión de la información.</translation>
 
@@ -170,10 +170,10 @@
    <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Eliminar el panel de control</translation>
    <translation id="logs_dashboard_delete_temp_2" qtlid="470154">¿Seguro que quiere eliminar el panel de control <strong>{{ name }}</strong>?</translation>
 
-   <translation id="logs_collector_temp_1" qtlid="470167">Los recopiladores son programas que permiten recopilar los logs procedentes de servidores o de aplicaciones. Gracias a esta herramienta de tratamiento y de transformación eficaz, en un formato GELF compatible con Logs Data Platform, ya no tendrá que dedicar recursos de hardware ni supervisar la disponibilidad de sus infraestructuras: nosotros nos encargamos de todo. La plataforma también permite asociar los recopiladores a sus distintos flujos para conseguir una configuración simplificada y protegida, gracias a las reglas de firewall.</translation>
+   <translation id="logs_collector_temp_1" qtlid="470167">Los recopiladores son programas que permiten recopilar los logs procedentes de servidores o de aplicaciones. Gracias a esta eficaz herramienta de tratamiento y de transformación en un formato GELF compatible con Logs Data Platform, ya no tendrá que dedicar recursos de hardware ni supervisar la disponibilidad de sus infraestructuras: nosotros nos encargamos de todo. La plataforma también permite asociar los recopiladores a sus distintos flujos para conseguir una configuración simplificada y protegida, gracias a las reglas de firewall.</translation>
 
    <translation id="logs_collector_info_temp_1" qtlid="470180">Información útil</translation>
-   <translation id="logs_collector_info_temp_2" qtlid="470193">Haga clic en la información para copiarla al portapapeles.</translation>
+   <translation id="logs_collector_info_temp_2" qtlid="470193">Haga clic en las opciones propuestas para copiarlas al portapapeles.</translation>
    <translation id="logs_collector_info_temp_3" qtlid="470206">Nombre del host</translation>
    <translation id="logs_collector_info_temp_4" qtlid="470219">(Dirección) IP pública</translation>
    <translation id="logs_collector_info_temp_5" qtlid="439169">Tipo de certificado</translation>
@@ -212,7 +212,7 @@
    <translation id="logs_collector_add_logstash_start_temp_3" qtlid="82305">Más tarde</translation>
    <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">¿Quiere empezar a recopilar datos ahora?</translation>
 
-   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Número de mensajes guardados en la memoria RAM por Flowgger antes de que se envíen a Kafka. Introduzca un valor elevado para un mayor rendimiento; si envía pocos mensajes, es posible que aumente la latencia de indexación. </translation>
+   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Número de mensajes guardados en la memoria RAM por Flowgger antes de que se envíen a Kafka. Introduzca un valor elevado para un mayor rendimiento; si envía pocos mensajes, es posible que aumente la latencia de indexación.</translation>
 
    <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform le permite crear y alojar índices Elasticsearch, que pueden ser utilizados para configurar una instancia Kibana, indexar datos estadísticos y mejorar o corregir sus logs. También puede utilizar estos índices con la mayoría de herramientas y aplicaciones compatibles con la API REST de Elasticsearch.</translation>
 
@@ -233,7 +233,7 @@
    <translation id="logs_index_delete_temp_1" qtlid="470492">Eliminar el índice</translation>
    <translation id="logs_index_delete_temp_2" qtlid="470505">¿Seguro que quiere eliminar el índice <strong>{{ name }}</strong>?</translation>
 
-   <translation id="logs_alias_temp_1" qtlid="470518">Disfrute de todas las posibilidades de Elasticsearch creando un alias en sus logs o índices. De este modo, tendrá acceso a peticiones más complejas, como las agregaciones, y desbloqueará la compatibilidad con las herramientas más populares del ecosistema.</translation>
+   <translation id="logs_alias_temp_1" qtlid="470518">Al crear un alias en sus logs o índices, activará todas las opciones de Elasticsearch. De este modo, tendrá acceso a peticiones más complejas, como las agregaciones anidadas, y desbloqueará la compatibilidad con las herramientas más populares del ecosistema.</translation>
 
    <translation id="logs_alias_add_temp_1" qtlid="143538">Añadir un alias</translation>
    <translation id="logs_alias_add_temp_2" qtlid="59267">Sufijo</translation>
@@ -252,7 +252,7 @@
    <translation id="logs_alias_edit_temp_7" qtlid="470479">Avisarme por correo electrónico cuando el índice alcance un tamaño crítico.</translation>
 
    <translation id="logs_alias_link_temp_1" qtlid="421672">Asociar contenido al alias</translation>
-   <translation id="logs_alias_link_temp_2" qtlid="421789">Puede asociar su alias a uno o varios flujos de datos Graylog o a uno o varios índices Elasticsearch.</translation>
+   <translation id="logs_alias_link_temp_2" qtlid="421789">Puede asociar un alias a uno o varios flujos de datos Graylog o a uno o varios índices Elasticsearch.</translation>
    <translation id="logs_alias_link_temp_3" qtlid="470570">Flujo</translation>
    <translation id="logs_alias_link_temp_4" qtlid="426729">Índice</translation>
    <translation id="logs_alias_link_temp_5" qtlid="421685">Flujos disponibles</translation>
@@ -286,7 +286,7 @@
    <translation id="logs_role_edit_temp_5" qtlid="470687">Configurar los permisos</translation>
    <translation id="logs_role_edit_temp_6" qtlid="422569">Añadir un nuevo rol</translation>
 
-   <translation id="logs_role_permissions_temp_1" qtlid="470700">Editar los permisos del rol</translation>
+   <translation id="logs_role_permissions_temp_1" qtlid="470700">Configurar los permisos del rol</translation>
    <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifique, restrinja o otorgue permisos a sus diferentes roles.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Nombre</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Descripción</translation>

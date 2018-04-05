@@ -120,13 +120,13 @@
    <translation id="logs_alert_numerical_temp_18" qtlid="469777">Vink dit vakje aan als u meldingen wilt ontvangen wanneer aan een meldingsvoorwaarde is voldaan, ongeacht de status ervan.</translation>
 
    <translation id="logs_alert_text_temp_1" qtlid="469894">Maak een voorwaarde voor 'berichtinhoud'</translation>
-   <translation id="logs_alert_text_temp_2" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="logs_alert_text_temp_2" qtlid="469907">Deze voorwaarde wordt geactiveerd wanneer de berichtinhoud identiek is aan de opgegeven waarde.</translation>
    <translation id="logs_alert_text_temp_3" qtlid="16469">Titel</translation>
    <translation id="logs_alert_text_temp_4" qtlid="469634">De naam van de meldingsvoorwaarde.</translation>
    <translation id="logs_alert_text_temp_5" qtlid="469816">Veld</translation>
    <translation id="logs_alert_text_temp_6" qtlid="469829">Nazwa pola do zweryfikowania.</translation>
    <translation id="logs_alert_text_temp_7" qtlid="47548">Waarde</translation>
-   <translation id="logs_alert_text_temp_8" qtlid="469920">La valeur qui doit être comparée à celle du champ.</translation>
+   <translation id="logs_alert_text_temp_8" qtlid="469920">De waarde die moet worden vergeleken met de waarde van het veld.</translation>
    <translation id="logs_alert_text_temp_9" qtlid="469725">Wachtperiode (minuten)</translation>
    <translation id="logs_alert_text_temp_10" qtlid="469738">Het aantal minuten tussen het verzenden van een melding en het verzenden van de volgende.</translation>
    <translation id="logs_alert_text_temp_11" qtlid="469751">Cumulatie van berichten</translation>
@@ -134,160 +134,160 @@
    <translation id="logs_alert_text_temp_13" qtlid="33250">Notificaties</translation>
    <translation id="logs_alert_text_temp_14" qtlid="469777">Vink dit vakje aan als u meldingen wilt ontvangen wanneer aan een meldingsvoorwaarde is voldaan, ongeacht de status ervan.</translation>
 
-   <translation id="logs_archives_temp_1" qtlid="469933">Archives</translation>
-   <translation id="logs_archives_temp_2" qtlid="469946">Une fois dégelées, les archives sont disponibles au téléchargement pour 24 heures.</translation>
-   <translation id="logs_archives_temp_3" qtlid="469959">L'archive {{ name }} est en cours de dégel. Elle sera disponible dans {{ time }}.</translation>
-   <translation id="logs_archives_temp_4" qtlid="469972">Nom de ficher</translation>
+   <translation id="logs_archives_temp_1" qtlid="469933">Archieven</translation>
+   <translation id="logs_archives_temp_2" qtlid="469946">Zodra de archieven zijn vrijgegeven, zijn ze beschikbaar voor download voor 24 uur.</translation>
+   <translation id="logs_archives_temp_3" qtlid="469959">Het archief van {{name}} wordt momenteel vrijgegeven. Het zal beschikbaar zijn in {{time}}.</translation>
+   <translation id="logs_archives_temp_4" qtlid="469972">Bestandsnaam</translation>
    <translation id="logs_archives_temp_5" qtlid="7726">Grootte</translation>
    <translation id="logs_archives_temp_6" qtlid="69953">Signature</translation>
    <translation id="logs_archives_temp_7" qtlid="39286">Downloaden</translation>
    <translation id="logs_archives_temp_8" qtlid="369152">Deblokkeren</translation>
-   <translation id="logs_archives_temp_9" qtlid="469985">Gelé</translation>
+   <translation id="logs_archives_temp_9" qtlid="469985">Vergrendeld</translation>
    <translation id="logs_archives_temp_10" qtlid="99920">Beschikbaar</translation>
-   <translation id="logs_archives_temp_11" qtlid="469998">En cours de dégel</translation>
+   <translation id="logs_archives_temp_11" qtlid="469998">Wordt momenteel vrijgegeven</translation>
 
-   <translation id="logs_stream_delete_temp_1" qtlid="470011">Supprimer le flux de données</translation>
-   <translation id="logs_stream_delete_temp_2" qtlid="470024">Confirmez-vous la suppression du flux de données <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_stream_delete_temp_1" qtlid="470011">Datastream verwijderen</translation>
+   <translation id="logs_stream_delete_temp_2" qtlid="470024">Weet u zeker dat u de <strong>{{ name }}</strong> wilt verwijderen?</translation>
 
-   <translation id="logs_stream_follow_temp_1" qtlid="426222">Suivre en direct</translation>
-   <translation id="logs_stream_follow_temp_2" qtlid="470037">Fermer la connexion</translation>
+   <translation id="logs_stream_follow_temp_1" qtlid="426222">Volgen in realtime</translation>
+   <translation id="logs_stream_follow_temp_2" qtlid="470037">Verbinding sluiten</translation>
 
-   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Choisissez l'un des formats proposés afin de copier la ligne de commande requise qui va servir à tester votre flux depuis un terminal.</translation>
+   <translation id="logs_stream_follow_actions_temp_1" qtlid="470050">Selecteer een van de voorgestelde formats om de vereiste opdrachtregel te kopiëren, die zal worden gebruikt om uw stream vanaf een terminal te testen.</translation>
 
-   <translation id="logs_dashboards_temp_1" qtlid="470063">Les tableaux de bord sont des représentations graphiques de vos logs. Grâce aux différents modules (courbes, camemberts, compteurs, statistiques, etc.), vous obtenez une vision synthétique de vos données. Combien d'erreurs sont survenues durant les dernières 24 heures ? Sont-elles en hausse ou en baisse ? Quelle est la page la plus visitée aujourd'hui ? Combien de clients ce mois-ci ? Autant d'informations accessibles immédiatement. Disposer de différents tableaux vous permet d'afficher les données selon des contextes précis et apporte une plus grande lisibilité de l'information.</translation>
+   <translation id="logs_dashboards_temp_1" qtlid="470063">Dashboards zijn grafische weergaven van uw logs. De verschillende modules (curven, cirkeldiagrammen, tellers, statistieken, enz.) geven u een totaaloverzicht van uw data. Hoeveel fouten zijn er in de afgelopen 24 uur opgetreden? Is de trend opwaarts of neerwaarts? Welke was de meest bezochte pagina vandaag? Hoeveel klanten deze maand? Al deze informatie en meer zijn binnen handbereik. Het hebben van meerdere dashboards betekent dat u gegevens voor specifieke contexten kunt weergeven, waardoor de informatie zelf gemakkelijker te interpreteren is.</translation>
 
-   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Dupliquer le tableau de bord</translation>
-   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089">Dupliquer le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_duplicate_temp_1" qtlid="470076">Dashboard dupliceren</translation>
+   <translation id="logs_dashboard_duplicate_temp_2" qtlid="470089"><strong>{{ name }}</strong> dashboard dupliceren</translation>
    <translation id="logs_dashboard_duplicate_temp_3" qtlid="3818">Naam</translation>
    <translation id="logs_dashboard_duplicate_temp_4" qtlid="9238">Beschrijving</translation>
-   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Attacher l'ensemble des modules du nouveau tableau au flux de données suivant :</translation>
+   <translation id="logs_dashboard_duplicate_temp_5" qtlid="470102">Koppel alle modules in het nieuwe dashboard aan de volgende datastream:</translation>
 
-   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Éditer le tableau de bord</translation>
-   <translation id="logs_dashboard_edit_temp_2" qtlid="470128">Éditez le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboard_edit_temp_1" qtlid="470115">Dashboard bewerken</translation>
+   <translation id="logs_dashboard_edit_temp_2" qtlid="470128"><strong>{{ name }}</strong> dashboard bewerken</translation>
    <translation id="logs_dashboard_edit_temp_3" qtlid="3818">Naam</translation>
    <translation id="logs_dashboard_edit_temp_4" qtlid="9238">Beschrijving</translation>
 
-   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Supprimer le tableau de bord</translation>
-   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Confirmez-vous la suppression du tableau de bord <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_dashboard_delete_temp_1" qtlid="470141">Dashboard verwijderen</translation>
+   <translation id="logs_dashboard_delete_temp_2" qtlid="470154">Weet u zeker dat u het <strong>{{ name }}</strong> dashboard wilt verwijderen?</translation>
 
-   <translation id="logs_collector_temp_1" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
+   <translation id="logs_collector_temp_1" qtlid="470167">Verzameltools zijn software die logs van servers of applicaties kan ophalen. Het is een efficiënt middel voor verwerking en transformatie in een GELF-indeling die compatibel is met Logs Data Platform. U hoeft niet langer materiële bronnen te reserveren of de bruikbaarheid van uw infrastructuur te regelen, wij doen het voor u. Met dit platform kunt u deze hulpprogramma's aan uw verschillende streams koppelen voor een vereenvoudigde en veilige configuratie via firewallregels.</translation>
 
-   <translation id="logs_collector_info_temp_1" qtlid="470180">Informations utiles</translation>
-   <translation id="logs_collector_info_temp_2" qtlid="470193">Cliquez sur les options proposées pour les copier dans votre presse-papiers.</translation>
-   <translation id="logs_collector_info_temp_3" qtlid="470206">Nom de l'hôte</translation>
-   <translation id="logs_collector_info_temp_4" qtlid="470219">(Adresse) IP publique</translation>
+   <translation id="logs_collector_info_temp_1" qtlid="470180">Nuttige informatie</translation>
+   <translation id="logs_collector_info_temp_2" qtlid="470193">Klik op de voorgestelde opties om ze naar het klembord te kopiëren.</translation>
+   <translation id="logs_collector_info_temp_3" qtlid="470206">Hostnaam</translation>
+   <translation id="logs_collector_info_temp_4" qtlid="470219">Openbaar IP (-adres)</translation>
    <translation id="logs_collector_info_temp_5" qtlid="439169">Type certificaat</translation>
 
-   <translation id="logs_collector_console_temp_1" qtlid="424350">Sortie console</translation>
+   <translation id="logs_collector_console_temp_1" qtlid="424350">Console-uitgang</translation>
 
-   <translation id="logs_collector_delete_temp_1" qtlid="470232">Supprimer l'outil de collecte</translation>
-   <translation id="logs_collector_delete_temp_2" qtlid="470245">Confirmez-vous la suppression de l'outil de collecte <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_collector_delete_temp_1" qtlid="470232">Verzameltool verwijderen</translation>
+   <translation id="logs_collector_delete_temp_2" qtlid="470245">Weet u zeker dat u de <strong>{{ name }}</strong> verzameltool wilt verwijderen?</translation>
 
-   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="logs_collector_add_logstash_temp_1" qtlid="423193">Verzameltool toevoegen</translation>
    <translation id="logs_collector_add_logstash_temp_2" qtlid="4406">Configuratie</translation>
-   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Autoriser des réseaux</translation>
+   <translation id="logs_collector_add_logstash_temp_3" qtlid="470258">Netwerken autoriseren</translation>
    <translation id="logs_collector_add_logstash_temp_4" qtlid="3818">Naam</translation>
    <translation id="logs_collector_add_logstash_temp_5" qtlid="9238">Beschrijving</translation>
-   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Logiciel</translation>
-   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Port TCP à ouvrir</translation>
-   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Lier à un flux de données</translation>
+   <translation id="logs_collector_add_logstash_temp_6" qtlid="423973">Software</translation>
+   <translation id="logs_collector_add_logstash_temp_7" qtlid="470271">Te openen TCP-poort</translation>
+   <translation id="logs_collector_add_logstash_temp_8" qtlid="423349">Koppelen aan een datastream</translation>
    <translation id="logs_collector_add_logstash_temp_9" qtlid="469478">Selecteer de bijbehorende optie</translation>
-   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Instance unique</translation>
-   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
+   <translation id="logs_collector_add_logstash_temp_10" qtlid="424311">Unieke instance</translation>
+   <translation id="logs_collector_add_logstash_temp_11" qtlid="470284">Start slechts één instance van dit type.</translation>
 
-   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Éditez les sections « input » et filtrez la partie « output » de la configuration de votre Logstash écrite par notre service.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Nous vous rappelons que vous avez choisi d'exposer le port TCP 6514 à l'extérieur.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Une fois ces sections éditées, vous pouvez tester directement votre configuration.</translation>
-   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Tester la configuration</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_1" qtlid="470297">Bewerk het gedeelte 'Invoer' en filter de 'Uitvoer'-configuratie van uw Logstash uit, inbegrepen bij onze service.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_2" qtlid="470310">Ter herinnering: u hebt ervoor gekozen om de TCP 6514-poort naar buiten te openen.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_3" qtlid="470323">Nadat deze secties zijn bewerkt, kunt u uw configuratie rechtstreeks testen.</translation>
+   <translation id="logs_collector_add_logstash_configure_temp_4" qtlid="423908">Configuratie testen</translation>
    <translation id="logs_collector_add_logstash_configure_temp_5" qtlid="23215">Configuration Wizard</translation>
 
-   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Autoriser des réseaux</translation>
-   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Réseau de confiance</translation>
-   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">Vous pouvez autoriser un ou plusieurs réseaux de confiance via leur adresse IP.</translation>
-   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">Cette étape marque la finalisation de la configuration avant le démarrage de votre outil.</translation>
-   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">Tant qu'aucun réseau n'est autorisé, votre sécurité est compromise car tout le monde peut accéder à votre application.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_1" qtlid="470258">Netwerken autoriseren</translation>
+   <translation id="logs_collector_add_logstash_network_temp_2" qtlid="423661">Betrouwbaar netwerk</translation>
+   <translation id="logs_collector_add_logstash_network_temp_3" qtlid="470336">U kunt een of meer vertrouwde netwerken toestaan via het IP-adres.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_4" qtlid="470349">Deze stap is de laatste configuratiefase voordat het hulpprogramma wordt uitgevoerd.</translation>
+   <translation id="logs_collector_add_logstash_network_temp_5" qtlid="470362">Als er geen netwerk is toegevoegd aan de lijst met vertrouwde netwerken, loopt uw beveiliging gevaar omdat iedereen verbinding kan maken met uw applicatie.</translation>
 
    <translation id="logs_collector_add_logstash_start_temp_1" qtlid="9983">Bevestiging</translation>
-   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Commencer maintenant</translation>
+   <translation id="logs_collector_add_logstash_start_temp_2" qtlid="470375">Nu beginnen</translation>
    <translation id="logs_collector_add_logstash_start_temp_3" qtlid="82305">Later</translation>
-   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Voulez-vous commmencer la collecte des données maintenant ?</translation>
+   <translation id="logs_collector_add_logstash_start_temp_4" qtlid="470388">Wilt u nu beginnen met het verzamelen van logs?</translation>
 
-   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Nombre de messages gardés en mémoire vive par Flowgger avant que celui-ci ne les envoie à Kafka. Une valeur élevée est plus performante, mais peut entraîner une latence d'indexation si vous envoyez peu de messages.</translation>
+   <translation id="logs_collector_add_flowgger_temp_1" qtlid="470401">Het aantal berichten dat wordt bewaard in het Random Access-geheugen van Flowgger voordat het naar Kafka wordt verzonden. Hoge waarde is krachtiger, maar kan resulteren in een crawlvertraging als u kleine berichten verzendt.</translation>
 
-   <translation id="logs_index_temp_1" qtlid="470414">Logs Data Platform vous permet de créer et d'héberger des index Elasticsearch. Ceux-ci peuvent être utilisés pour les données de configuration d'une instance Kibana, indexer des données statistiques et enrichir ou corréler vos logs. Vous pourrez ensuite utiliser ces index avec la majorité des outils et applications compatibles avec l'API REST d'Elasticsearch.</translation>
+   <translation id="logs_index_temp_1" qtlid="470414">Op het Logs Data Platform kunt u Elasticsearch-mappen maken en onderhouden. Ze kunnen worden gebruikt voor configuratie-informatie voor de Kibana-instance, voor het classificeren van statistische gegevens of voor het invullen of samenvoegen van logs. U kunt dan mappen gebruiken op de meeste API REST Elasticsearch-compatibele tools en applicaties.</translation>
 
-   <translation id="logs_index_add_temp_1" qtlid="423024">Ajouter un index</translation>
+   <translation id="logs_index_add_temp_1" qtlid="423024">Directory toevoegen</translation>
    <translation id="logs_index_add_temp_2" qtlid="59267">Suffix</translation>
-   <translation id="logs_index_add_temp_3" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
+   <translation id="logs_index_add_temp_3" qtlid="470427">Alleen kleine letters a tot z, cijfers, en de tekens - of _ zijn toegestaan.</translation>
    <translation id="logs_index_add_temp_4" qtlid="9238">Beschrijving</translation>
    <translation id="logs_index_add_temp_5" qtlid="469478">Selecteer de bijbehorende optie</translation>
-   <translation id="logs_index_add_temp_6" qtlid="470440">Attention, l'option que vous choisissez ne pourra pas être changée par la suite.</translation>
+   <translation id="logs_index_add_temp_6" qtlid="470440">Let op, de optie die u kiest kan later niet worden gewijzigd.</translation>
 
-   <translation id="logs_index_edit_temp_1" qtlid="470453">Éditer un index</translation>
-   <translation id="logs_index_edit_temp_2" qtlid="470466">Éditer les informations de l'index <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_index_edit_temp_1" qtlid="470453">Directory bewerken</translation>
+   <translation id="logs_index_edit_temp_2" qtlid="470466">Bewerk de gegevens van de <strong>{{ name }}</strong> directory.</translation>
    <translation id="logs_index_edit_temp_3" qtlid="9238">Beschrijving</translation>
    <translation id="logs_index_edit_temp_4" qtlid="469478">Selecteer de bijbehorende optie</translation>
    <translation id="logs_index_edit_temp_5" qtlid="32386">Notificatie</translation>
-   <translation id="logs_index_edit_temp_6" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_index_edit_temp_6" qtlid="470479">Stuur me een e-mailmelding wanneer de directory een kritieke grootte bereikt.</translation>
 
-   <translation id="logs_index_delete_temp_1" qtlid="470492">Supprimer l'index</translation>
-   <translation id="logs_index_delete_temp_2" qtlid="470505">Confirmez-vous la suppression de l'index <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_index_delete_temp_1" qtlid="470492">Directory verwijderen</translation>
+   <translation id="logs_index_delete_temp_2" qtlid="470505">Weet u zeker dat u de <strong>{{ name }}</strong> directory wilt verwijderen?</translation>
 
-   <translation id="logs_alias_temp_1" qtlid="470518">Activez toutes les possibilités d'Elasticsearch en créant un alias sur vos logs ou vos index. Cela vous donnera accès à des requêtes plus complexes comme les agrégations imbriquées et déverrouillera la compatibilité aux outils les plus populaires de l'écosystème.</translation>
+   <translation id="logs_alias_temp_1" qtlid="470518">Activeer alle Elasticsearch-opties door een alias te maken voor uw logs of directories. Hierdoor hebt u toegang tot meer complexe query's, zoals geneste aggregaties, en krijgt u compatibiliteit met de populairste ecosysteemtools.</translation>
 
    <translation id="logs_alias_add_temp_1" qtlid="143538">Een alias toevoegen</translation>
    <translation id="logs_alias_add_temp_2" qtlid="59267">Suffix</translation>
-   <translation id="logs_alias_add_temp_3" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
+   <translation id="logs_alias_add_temp_3" qtlid="470531">Let op, de naam kan later niet worden gewijzigd.</translation>
    <translation id="logs_alias_add_temp_4" qtlid="9238">Beschrijving</translation>
    <translation id="logs_alias_add_temp_5" qtlid="469478">Selecteer de bijbehorende optie</translation>
    <translation id="logs_alias_add_temp_6" qtlid="32386">Notificatie</translation>
-   <translation id="logs_alias_add_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_alias_add_temp_7" qtlid="470479">Stuur me een e-mailmelding wanneer de directory een kritieke grootte bereikt.</translation>
 
-   <translation id="logs_alias_edit_temp_1" qtlid="470544">Éditer un alias</translation>
-   <translation id="logs_alias_edit_temp_2" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong>.</translation>
+   <translation id="logs_alias_edit_temp_1" qtlid="470544">Alias bewerken</translation>
+   <translation id="logs_alias_edit_temp_2" qtlid="470557">Bewerk de gegevens van de <strong>{{ name }}</strong> alias.</translation>
    <translation id="logs_alias_edit_temp_3" qtlid="3818">Naam</translation>
    <translation id="logs_alias_edit_temp_4" qtlid="9238">Beschrijving</translation>
    <translation id="logs_alias_edit_temp_5" qtlid="469478">Selecteer de bijbehorende optie</translation>
    <translation id="logs_alias_edit_temp_6" qtlid="32386">Notificatie</translation>
-   <translation id="logs_alias_edit_temp_7" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
+   <translation id="logs_alias_edit_temp_7" qtlid="470479">Stuur me een e-mailmelding wanneer de directory een kritieke grootte bereikt.</translation>
 
-   <translation id="logs_alias_link_temp_1" qtlid="421672">Attacher du contenu à l'alias</translation>
-   <translation id="logs_alias_link_temp_2" qtlid="421789">Un alias peut être attaché à un ou plusieurs flux de données Graylog ou un ou plusieurs index Elasticsearch.</translation>
-   <translation id="logs_alias_link_temp_3" qtlid="470570">Flux</translation>
+   <translation id="logs_alias_link_temp_1" qtlid="421672">Koppel inhoud aan een alias</translation>
+   <translation id="logs_alias_link_temp_2" qtlid="421789">De alias kan worden gekoppeld aan een of meerdere Graylog-datastromen of met een of meer Elasticsearch-directories.</translation>
+   <translation id="logs_alias_link_temp_3" qtlid="470570">Stream</translation>
    <translation id="logs_alias_link_temp_4" qtlid="426729">Index</translation>
-   <translation id="logs_alias_link_temp_5" qtlid="421685">Flux disponibles</translation>
-   <translation id="logs_alias_link_temp_6" qtlid="470583">Choisir un flux</translation>
+   <translation id="logs_alias_link_temp_5" qtlid="421685">Beschikbare streams</translation>
+   <translation id="logs_alias_link_temp_6" qtlid="470583">Stream kiezen</translation>
 
-   <translation id="logs_role_temp_1" qtlid="425130">Vos logs contiennent des informations importantes que vous devez parfois partager avec d'autres personnes. Logs Data Platform vous offre la possibilité de définir des droits d'accès en lecture seule aux données contenues dans une sélection de vos flux, tableaux de bord, index ou alias.</translation>
+   <translation id="logs_role_temp_1" qtlid="425130">Uw logs bevatten belangrijke informatie die u soms met anderen moet delen. Logs Data Platform biedt u de mogelijkheid toegangsrechten te verlenen in de leesmodus voor gegevens in geselecteerde streams, dashboards, directories of aliassen.</translation>
 
-   <translation id="logs_role_add_temp_1" qtlid="425143">Ajouter un rôle</translation>
+   <translation id="logs_role_add_temp_1" qtlid="425143">Rol toevoegen</translation>
    <translation id="logs_role_add_temp_2" qtlid="3818">Naam</translation>
    <translation id="logs_role_add_temp_3" qtlid="9238">Beschrijving</translation>
-   <translation id="logs_role_add_temp_4" qtlid="470596">Choisir le flux attaché</translation>
+   <translation id="logs_role_add_temp_4" qtlid="470596">Gekoppelde stream kiezen</translation>
 
-   <translation id="logs_role_member_temp_1" qtlid="356810">Gérer les membres</translation>
-   <translation id="logs_role_member_temp_2" qtlid="470609">Vous trouverez ici la liste de vos membres actifs pour le rôle <strong>{{ name }}</strong>. Vous pouvez les révoquer individuellement ou en ajouter de nouveaux grâce à des comptes utilisateur existants.</translation>
-   <translation id="logs_role_member_temp_3" qtlid="392502">Ajouter un membre</translation>
-   <translation id="logs_role_member_temp_4" qtlid="470622">Compte utilisateur</translation>
+   <translation id="logs_role_member_temp_1" qtlid="356810">Leden beheren</translation>
+   <translation id="logs_role_member_temp_2" qtlid="470609">Hier vindt u een lijst met actieve leden voor de rol <strong>{{name}}</strong>. U kunt ze afzonderlijk verwijderen of nieuwe toevoegen met behulp van bestaande gebruikersaccounts.</translation>
+   <translation id="logs_role_member_temp_3" qtlid="392502">Lid toevoegen</translation>
+   <translation id="logs_role_member_temp_4" qtlid="470622">Gebruikersaccount</translation>
    <translation id="logs_role_member_temp_5" qtlid="26011">Opmerking</translation>
-   <translation id="logs_role_member_temp_6" qtlid="470635">Date d'ajout</translation>
+   <translation id="logs_role_member_temp_6" qtlid="470635">Datum van toevoeging</translation>
    <translation id="logs_role_member_temp_7" qtlid="185751">Intrekken</translation>
 
-   <translation id="logs_role_member_add_temp_1" qtlid="392502">Ajouter un membre</translation>
-   <translation id="logs_role_member_add_temp_2" qtlid="424857">Compte utilisateur Logs Data Platform</translation>
+   <translation id="logs_role_member_add_temp_1" qtlid="392502">Lid toevoegen</translation>
+   <translation id="logs_role_member_add_temp_2" qtlid="424857">Logs Data Platform-gebruikersaccount</translation>
    <translation id="logs_role_member_add_temp_3" qtlid="470648">Logs-XX-XXXX</translation>
    <translation id="logs_role_member_add_temp_4" qtlid="26011">Opmerking</translation>
-   <translation id="logs_role_member_add_temp_5" qtlid="470661">Choisir le rôle</translation>
+   <translation id="logs_role_member_add_temp_5" qtlid="470661">Rol kiezen</translation>
 
-   <translation id="logs_role_edit_temp_1" qtlid="470674">Éditer le rôle</translation>
+   <translation id="logs_role_edit_temp_1" qtlid="470674">Rol wijzigen</translation>
    <translation id="logs_role_edit_temp_2" qtlid="3818">Naam</translation>
    <translation id="logs_role_edit_temp_3" qtlid="9238">Beschrijving</translation>
    <translation id="logs_role_edit_temp_4" qtlid="6946">Rechten</translation>
-   <translation id="logs_role_edit_temp_5" qtlid="470687">Éditer les permissions</translation>
-   <translation id="logs_role_edit_temp_6" qtlid="422569">Ajouter un nouveau rôle</translation>
+   <translation id="logs_role_edit_temp_5" qtlid="470687">Toegangsrechten bewerken</translation>
+   <translation id="logs_role_edit_temp_6" qtlid="422569">Nieuwe rol toevoegen</translation>
 
-   <translation id="logs_role_permissions_temp_1" qtlid="470700">Éditer les permissions du rôle</translation>
-   <translation id="logs_role_permissions_temp_2" qtlid="470713">Modifiez, restreignez et/ou accordez les permissions à vos différents rôles.</translation>
+   <translation id="logs_role_permissions_temp_1" qtlid="470700">Toegangsrechten van een rol bewerken</translation>
+   <translation id="logs_role_permissions_temp_2" qtlid="470713">Wijzig, beperk en/of wijs machtigingen toe voor individuele rollen.</translation>
    <translation id="logs_role_permissions_temp_3" qtlid="3818">Naam</translation>
    <translation id="logs_role_permissions_temp_4" qtlid="9238">Beschrijving</translation>
    <translation id="logs_role_permissions_temp_5" qtlid="422452">Datastroom</translation>
@@ -295,14 +295,14 @@
    <translation id="logs_role_permissions_temp_7" qtlid="426729">Index</translation>
    <translation id="logs_role_permissions_temp_8" qtlid="9466">Alias</translation>
 
-   <translation id="logs_role_preview_temp_1" qtlid="470726">Aperçu</translation>
+   <translation id="logs_role_preview_temp_1" qtlid="470726">Voorbeeld</translation>
    <translation id="logs_role_preview_temp_2" qtlid="403398">Functie</translation>
    <translation id="logs_role_preview_temp_3" qtlid="26011">Opmerking</translation>
    <translation id="logs_role_preview_temp_4" qtlid="9238">Beschrijving</translation>
-   <translation id="logs_role_preview_temp_5" qtlid="470739">Permission(s)</translation>
-   <translation id="logs_role_preview_temp_6" qtlid="425169">Membres</translation>
-   <translation id="logs_role_preview_temp_7" qtlid="426768">Option liée</translation>
+   <translation id="logs_role_preview_temp_5" qtlid="470739">Toegangsrecht(en)</translation>
+   <translation id="logs_role_preview_temp_6" qtlid="425169">Leden</translation>
+   <translation id="logs_role_preview_temp_7" qtlid="426768">Gekoppelde optie</translation>
 
-   <translation id="logs_role_delete_temp_1" qtlid="470752">Supprimer le rôle</translation>
-   <translation id="logs_role_delete_temp_2" qtlid="470765">Confirmez-vous la suppression du rôle <strong>{{ name }}</strong> ?</translation>
+   <translation id="logs_role_delete_temp_1" qtlid="470752">Rol verwijderen</translation>
+   <translation id="logs_role_delete_temp_2" qtlid="470765">Weet u zeker dat u de <strong>{{ name }}</strong> -rol wilt verwijderen?</translation>
 </translations>
