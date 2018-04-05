@@ -231,7 +231,7 @@ angular.module("managerApp")
     self.createNewVolume = function () {
         CloudMessage.info($translate.instant('cpc_volume_create_volume_button_info'));
         $timeout(function() {
-            $state.go("iaas.pci-project.compute.infrastructure", {
+            $state.go("iaas.pci-project.compute.infrastructure.diagram", {
                 createNewVolume: true
             });
         }, 99);
