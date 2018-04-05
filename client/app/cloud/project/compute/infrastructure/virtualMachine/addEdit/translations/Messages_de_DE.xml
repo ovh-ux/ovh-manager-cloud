@@ -58,7 +58,7 @@
    <translation id="cpci_vm_flavor_category_s1-2" qtlid="377389">S1-2</translation>
    <translation id="cpci_vm_flavor_category_s1-4" qtlid="377402">S1-4</translation>
    <translation id="cpci_vm_flavor_category_s1-8" qtlid="377415">S1-8</translation>
-   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Anciens modèles</translation>
+   <translation id="cpcivm_addedit_flavor_has_old_flavors" qtlid="437684">Vorherige Modelle</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_ssd_info" qtlid="248041">RAID Storage lokale SSD, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_hdd_info" qtlid="248054">Dedizierte Festplatte, CPU/RAM/Bandbreite geteilt.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_vps_cloud_info" qtlid="248067">Hochverfügbares Storage, CPU/RAM/Bandbreite geteilt.</translation>
@@ -144,8 +144,8 @@
    <translation id="cpcivm_addedit_table_disk" qtlid="193943">Festplatten</translation>
    <translation id="cpcivm_addedit_table_gpu" qtlid="401445">GPU</translation>
    <translation id="cpcivm_addedit_table_gpu_g1" qtlid="401458">{{ cardCount }} x Nvidia GTX 1060 6 GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8GB</translation>
-   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g2" qtlid="414621">{{ cardCount }} x Nvidia GTX 1070 8 GB</translation>
+   <translation id="cpcivm_addedit_table_gpu_g3" qtlid="414634">{{ cardCount }} x Nvidia GTX 1080 Ti 11 GB</translation>
    <translation id="cpcivm_addedit_flavor_vps_old" qtlid="296362">VPS-SSD Instanzen: <br/>Public Cloud zum Bestpreis </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_old" qtlid="296375">Die VPS SSD verwenden einen lokalen SSD RAID mit geteilten Ressourcen. Die Performance kann im Laufe der Zeit leicht variieren </translation>
    <translation id="cpcivm_addedit_flavor_vps_info_new" qtlid="377441">Die optimale Lösung für Tests und Entwicklungsumgebungen. Die Performance kann im Laufe der Zeit leicht variieren. </translation>
@@ -216,7 +216,7 @@
 
    <translation id="cpcivm_addedit_sshkey_none" qtlid="405590">Sie haben keinen SSH-Schlüssel.</translation>
    <translation id="cpcivm_addedit_ssh_key_explain_1" qtlid="366541">Bei der Kommunikation zwischen den OVH Servern wird das gesicherte Netzwerkprotokoll SSH zur Verschlüsselung der Daten verwendet. </translation>
-   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unseren <a href="{{ createUrl }}" target="_blank">Guide zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
+   <translation id="cpcivm_addedit_ssh_key_explain_2" qtlid="366554">Es existieren SSH-Clients für jedes Betriebssystem. Wenn Sie mehr darüber erfahren möchten, lesen Sie unsere <a href="{{ createUrl }}" target="_blank">Anleitung zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
    <translation id="cpcivm_addedit_sshkey_guide" qtlid="405603"><a href="{{ createUrl }}" target="_blank">Anleitung zur Erstellung der SSH-Schlüssel<i class="fa fa-external-link" aria-hidden="true"></i></a></translation>
 
    <translation id="cpcivm_addedit_sshkey_help_back_button" qtlid="248821">Ich habe verstanden!</translation>
@@ -284,10 +284,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Bei der Erstellung Ihrer Server ist ein Fehler aufgetreten!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Sie sind im Begriff, {{nb}} Instanzen zu erstellen.</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Allgemeine Nutzung (ausgeglichene Ressourcen)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Optimierte Rechenleistung (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Optimierter Arbeitsspeicher (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Beschleunigte Rechenleistung (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Beschleunigte Rechenleistung (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Geteilte Ressourcen (Sandbox)</translation>
 </translations>
