@@ -92,6 +92,7 @@ angular.module("managerApp").constant("LogsHomeConstant", {
             "24H_MAX": "24h-max-none"
         }
     },
+    OFFER_STORAGE_MULTIPLIER: 1073741824,
     DATA_USAGE_GRAPH_CONFIGURATION: {
         options: {
             scales: {
@@ -130,7 +131,8 @@ angular.module("managerApp").constant("LogsHomeConstant", {
                 titleFontColor: "#113f6d",
                 bodyFontColor: "#113f6d",
                 borderColor: "#bbbdbf",
-                borderWidth: 1
+                borderWidth: 1,
+                position: "nearest"
             }
         },
         colors: [
@@ -148,8 +150,15 @@ angular.module("managerApp").constant("LogsHomeConstant", {
                 borderColor: "#113f6d",
                 pointBorderColor: "transparent",
                 pointHoverBorderColor: "#fff"
+            }, {
+                backgroundColor: "transparent",
+                pointBackgroundColor: "transparent",
+                pointHoverBackgroundColor: "transparent",
+                borderColor: "#ff9803",
+                pointBorderColor: "transparent",
+                pointHoverBorderColor: "transparent"
             }
         ],
-        datasetOverride: [{ yAxisID: "y-axis-1" }, { yAxisID: "y-axis-2" }]
+        datasetOverride: [{ yAxisID: "y-axis-1" }, { yAxisID: "y-axis-2" }, { yAxisID: "y-axis-1" }]
     }
 });
