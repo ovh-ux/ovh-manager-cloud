@@ -1,5 +1,5 @@
 class LogsOfferCtrl {
-    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOrderService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOrderService, OrderHelperService, LogsDetailService, LogsConstants) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -8,6 +8,8 @@ class LogsOfferCtrl {
         this.ControllerHelper = ControllerHelper;
         this.OrderHelperService = OrderHelperService;
         this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsDetailService = LogsDetailService;
+        this.LogsConstants = LogsConstants;
         this.$window = $window;
         this.offerDetail = {
             quantity: 1,
@@ -27,8 +29,20 @@ class LogsOfferCtrl {
         this.offers = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsOrderService.getOrder(this.serviceName)
         });
-        this.getSelectedPlan.load();
-        this.offers.load();
+
+        this.service = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
+                .then(service => {
+                    if (service.state !== this.LogsConstants.SERVICE_STATE_ENABLED) {
+                        this.goToHomePage();
+                    } else {
+                        this.getSelectedPlan.load();
+                        this.offers.load();
+                    }
+                    return service;
+                })
+        });
+        this.service.load();
     }
 
     selectOffer (offerObj) {
@@ -60,9 +74,13 @@ class LogsOfferCtrl {
         this.offerDetail.currentOfferType = "upgrade";
     }
 
+    goToHomePage () {
+        this.$state.go("dbaas.logs.detail.home");
+    }
+
     back () {
         if (this.offerDetail.currentOfferType === "pro") {
-            this.$state.go("dbaas.logs.detail.home");
+            this.goToHomePage();
         } else {
             this.offerDetail.currentOfferType = "basic";
         }

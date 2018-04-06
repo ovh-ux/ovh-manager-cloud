@@ -152,19 +152,6 @@ class LogsHomeService {
     }
 
     /**
-     * Gets the service details
-     *
-     * @param {any} serviceName
-     * @returns promise which will resolve to the service details
-     * @memberof LogsHomeService
-     */
-    getServiceDetails (serviceName) {
-        return this.LogsLexiService.logDetail({ serviceName })
-            .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_get_error"));
-    }
-
-    /**
      * Converts the number to a more readable form
      *
      * @param {any} number

@@ -1,5 +1,5 @@
 class LogsOptionsCtrl {
-    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService, LogsDetailService, LogsConstants) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
@@ -8,16 +8,12 @@ class LogsOptionsCtrl {
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
         this.OrderHelperService = OrderHelperService;
+        this.LogsDetailService = LogsDetailService;
+        this.LogsConstants = LogsConstants;
 
         this.serviceName = this.$stateParams.serviceName;
         this.messages = {};
         this._initLoaders();
-    }
-
-    $onInit () {
-        this.options.load();
-        this.currentOptions.load();
-        this.selectedOffer.load();
     }
 
     /**
@@ -35,6 +31,21 @@ class LogsOptionsCtrl {
         this.selectedOffer = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.LogsOptionsService.getOffer(this.serviceName)
         });
+
+        this.service = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName)
+                .then(service => {
+                    if (service.state !== this.LogsConstants.SERVICE_STATE_ENABLED) {
+                        this.goToHomePage();
+                    } else {
+                        this.options.load();
+                        this.currentOptions.load();
+                        this.selectedOffer.load();
+                    }
+                    return service;
+                })
+        });
+        this.service.load();
     }
 
     /**
@@ -101,6 +112,10 @@ class LogsOptionsCtrl {
         this.$state.go("dbaas.logs.detail.options.manage", {
             serviceName: this.serviceName
         });
+    }
+
+    goToHomePage () {
+        this.$state.go("dbaas.logs.detail.home");
     }
 }
 

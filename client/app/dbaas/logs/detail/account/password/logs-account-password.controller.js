@@ -1,5 +1,5 @@
 class LogsAccountPasswordCtrl {
-    constructor ($q, $state, $stateParams, $uibModalInstance, ControllerHelper, CloudMessage, LogsAccountService, LogsHomeService, setupPassword) {
+    constructor ($q, $state, $stateParams, $uibModalInstance, ControllerHelper, CloudMessage, LogsAccountService) {
         this.$q = $q;
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
@@ -7,29 +7,8 @@ class LogsAccountPasswordCtrl {
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.LogsAccountService = LogsAccountService;
-        this.LogsHomeService = LogsHomeService;
-        this.isSetup = setupPassword;
         this.passwordValid = false;
         this.passwordRules = this.LogsAccountService.getPasswordRules(false);
-
-        this.initLoaders();
-    }
-
-    initLoaders () {
-        this.service = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getServiceDetails(this.serviceName)
-                .then(service => {
-                    this.userName = service.username;
-                    return service;
-                })
-        }).load();
-        this.accountDetails = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getAccountDetails(this.serviceName)
-                .then(account => {
-                    this.fullName = `${account.me.firstname} ${account.me.name}`;
-                    return account;
-                })
-        }).load();
     }
 
     resetPasswordRules () {
@@ -59,7 +38,7 @@ class LogsAccountPasswordCtrl {
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
-                this.LogsAccountService.changePassword(this.serviceName, this.newPassword, this.isSetup)
+                this.LogsAccountService.changePassword(this.serviceName, this.newPassword, false)
                     .finally(() => {
                         this.resetPasswordRules();
                         this.$uibModalInstance.close();

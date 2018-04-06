@@ -1,5 +1,5 @@
 class LogsDashboardHeaderCtrl {
-    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, LogsHelperService, LogsHomeService) {
+    constructor ($stateParams, $translate, ControllerHelper, LogsConstants, LogsDetailService, ovhDocUrl, SidebarMenu, LogsHelperService) {
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
@@ -8,22 +8,13 @@ class LogsDashboardHeaderCtrl {
         this.ovhDocUrl = ovhDocUrl;
         this.SidebarMenu = SidebarMenu;
         this.serviceName = $stateParams.serviceName;
-        this.isAccountDisabled = true;
+        this.disableTabs = true;
         this.LogsHelperService = LogsHelperService;
-        this.LogsHomeService = LogsHomeService;
 
         this._initLoaders();
     }
 
     $onInit () {
-        this.service = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsHomeService.getServiceDetails(this.serviceName)
-                .then(service => {
-                    this.isAccountDisabled = this.LogsHelperService.isAccountDisabled(service);
-                    return service;
-                })
-        }).load();
-
         this.title = this.serviceName;
         this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
         //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
@@ -37,8 +28,11 @@ class LogsDashboardHeaderCtrl {
     _initLoaders () {
         //  No error handling since we don't want to break anything for a title.
         this.configuration = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.LogsDetailService.getConfiguration(this.serviceName),
-            successHandler: () => { this.title = this.configuration.data.displayName || this.configuration.data.serviceName; }
+            loaderFunction: () => this.LogsDetailService.getServiceDetails(this.serviceName),
+            successHandler: () => {
+                this.title = this.configuration.data.displayName || this.configuration.data.serviceName;
+                this.disableTabs = this.LogsHelperService.isAccountDisabled(this.configuration.data) || this.LogsHelperService.accountSetupRequired(this.configuration.data);
+            }
         });
     }
 

@@ -6,7 +6,7 @@ class LogsDetailService {
         this.ServiceHelper = ServiceHelper;
     }
 
-    getConfiguration (serviceName) {
+    getServiceDetails (serviceName) {
         return this.LogsLexiService.logDetail({ serviceName })
             .$promise
             .catch(this.ServiceHelper.errorHandler("logs_details_error"));

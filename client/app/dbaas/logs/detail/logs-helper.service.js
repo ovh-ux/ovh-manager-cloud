@@ -1,12 +1,12 @@
 class LogsHelperService {
-    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper, LogsHomeConstant) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper, LogsConstants) {
         this.$translate = $translate;
         this.$state = $state;
         this.ServiceHelper = ServiceHelper;
         this.CloudPoll = CloudPoll;
         this.LogStreamsConstants = LogStreamsConstants;
         this.ControllerModalHelper = ControllerModalHelper;
-        this.LogsHomeConstant = LogsHomeConstant;
+        this.LogsConstants = LogsConstants;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
     }
 
@@ -92,7 +92,11 @@ class LogsHelperService {
     }
 
     isAccountDisabled (account) {
-        return account.state === this.LogsHomeConstant.SERVICE_STATE_DISABLED;
+        return account.state === this.LogsConstants.SERVICE_STATE_DISABLED;
+    }
+
+    accountSetupRequired (account) {
+        return account.state === this.LogsConstants.SERVICE_STATE_TO_CONFIG;
     }
 }
 

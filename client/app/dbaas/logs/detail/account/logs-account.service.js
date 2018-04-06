@@ -1,9 +1,9 @@
 class LogsAccountService {
-    constructor (OvhApiDbaas, LogsHelperService, LogsHomeConstant) {
+    constructor (OvhApiDbaas, LogsHelperService, LogsConstants) {
         this.UserApiService = OvhApiDbaas.Logs().User().Lexi();
         this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
         this.LogsHelperService = LogsHelperService;
-        this.LogsHomeConstant = LogsHomeConstant;
+        this.LogsConstants = LogsConstants;
         this.initializePasswordRules();
     }
 
@@ -42,10 +42,10 @@ class LogsAccountService {
             },
             {
                 message: "logs_password_rule_contains_special",
-                translateParams: { specialCharacters: this.LogsHomeConstant.PASSWORD_SPECIAL_CHARACTERS },
+                translateParams: { specialCharacters: this.LogsConstants.PASSWORD_SPECIAL_CHARACTERS },
                 isValid: false,
                 isValidated: false,
-                validator: password => password && password.match(`.*[${this._escapeRegExp(this.LogsHomeConstant.PASSWORD_SPECIAL_CHARACTERS)}].*`)
+                validator: password => password && password.match(`.*[${this._escapeRegExp(this.LogsConstants.PASSWORD_SPECIAL_CHARACTERS)}].*`)
             }
         ];
     }

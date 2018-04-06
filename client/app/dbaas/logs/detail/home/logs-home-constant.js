@@ -78,9 +78,6 @@ angular.module("managerApp").constant("LogsHomeConstant", {
             MESSAGE: "CAP_N_PROTO"
         }
     },
-    PASSWORD_SPECIAL_CHARACTERS: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-    SERVICE_STATE_TO_CONFIG: "TO_CONFIG",
-    SERVICE_STATE_DISABLED: "DISABLED",
     DATA_STORAGE: {
         TIME_PERIOD_MONTHS: 3,
         METRICS: {
