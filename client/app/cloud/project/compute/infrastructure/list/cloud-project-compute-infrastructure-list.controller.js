@@ -60,26 +60,15 @@ class CloudProjectComputeInfrastructureListCtrl {
             volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes")))
         }).then(({ infra }) => {
             this.infra = infra;
-            return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.Lexi().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
-                .then(flavor => ({
-                    volumes: _.get(this.volumes, instance.id, []),
-                    ipv4: instance.getPublicIpv4(),
-                    ipv6: instance.getPublicIpv6(),
-                    region: instance.region,
-                    macroRegion: this.RegionService.getMacroRegion(instance.region),
-                    statusToTranslate: this.getStatusToTranslate(instance),
-                    name: instance.name,
-                    price: instance.price,
-                    status: instance.status,
-                    monthlyBillingBoolean: instance.monthlyBillingBoolean,
-                    monthlyBilling: instance.monthlyBilling,
-                    id: instance.id,
-                    getStatusGroup: instance.getStatusGroup,
-                    // patch for some translations that have &#160; html entities
-                    flavorTranslated: this.$translate.instant(`cpci_vm_flavor_category_${flavor.name}`).replace("&#160;", " ")
-                }))
-            ))
-                .then(instances => (this.table.items = instances));
+            this.table.items = _.map(this.infra.vrack.publicCloud.items, instance => {
+                instance.volumes = _.get(this.volumes, instance.id, []);
+                instance.ipv4 = instance.getPublicIpv4();
+                instance.ipv6 = instance.getPublicIpv6();
+                instance.macroRegion = this.RegionService.getMacroRegion(instance.region);
+                // patch for some translations that have &#160; html entities
+                instance.flavorTranslated = this.$translate.instant(`cpci_vm_flavor_category_${instance.flavor.name}`).replace("&#160;", " ")
+                return instance;
+            });
         }).catch(err => {
             this.table.items = [];
             this.CloudMessage.error(`${this.$translate.instant("cpci_errors_init_title")} : ${_.get(err, "data.message", "")}`);
@@ -87,17 +76,6 @@ class CloudProjectComputeInfrastructureListCtrl {
         }).finally(() => {
             this.loaders.infra = false;
         });
-    }
-
-    getStatusToTranslate (instance) {
-        if (instance.status === "ACTIVE" && instance.monthlyBilling && instance.monthlyBilling.status === "activationPending") {
-            return "UPDATING";
-        } else if (instance.status === "ACTIVE") {
-            return "OK";
-        } else if (instance.status === "REBOOT" || instance.status === "HARD_REBOOT" || instance.status === "RESCUING" || instance.status === "UNRESCUING") {
-            return "REBOOT";
-        }
-        return instance.status;
     }
 
     addOrRemoveInstance (newIds, oldIds) {
