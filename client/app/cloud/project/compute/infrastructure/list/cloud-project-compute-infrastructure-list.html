@@ -93,25 +93,25 @@
                       data-translate-values="{ price: $row.price.monthlyPrice.text || $row.price.price.text || '?' }">
                 </span>
             </oui-column>
-            <oui-column data-title="'cpci_vm_status' | translate" data-property="statusToTranslate" data-type="options" data-type-options="ComputeInfrastructureListCtrl.statusOptions" data-filterable>
+            <oui-column data-title="'cpci_vm_status' | translate" data-property="status" data-type="options" data-type-options="ComputeInfrastructureListCtrl.statusOptions" data-filterable>
                 <span class="label label-success"
                       data-translate="cpci_vm_status_OK"
-                      data-ng-if="$row.statusToTranslate === 'OK'"></span>
+                      data-ng-if="$row.status === 'ACTIVE' && $row.monthlyBilling.status !== 'activationPending'"></span>
                 <span class="label label-info"
                       data-translate="cpci_vm_status_UPDATING"
-                      data-ng-if="$row.statusToTranslate === 'UPDATING'"></span>
+                      data-ng-if="$row.status === 'ACTIVE' && $row.monthlyBilling.status === 'activationPending'"></span>
                 <span class="label label-info"
                       data-translate="cpci_vm_status_REBOOT"
-                      data-ng-if="$row.statusToTranslate === 'REBOOT'"></span>
+                      data-ng-if="$row.status === 'REBOOT' || $row.status === 'HARD_REBOOT' || $row.status === 'RESCUING' || $row.status === 'UNRESCUING'"></span>
                 <span class="label label-info"
                       data-translate="cpci_vm_status_{{ $row.status }}"
-                      data-ng-if="$row.statusToTranslate === 'BUILD' || $row.statusToTranslate === 'REBUILD'"></span>
+                      data-ng-if="$row.status === 'BUILD' || $row.status === 'REBUILD'"></span>
                 <span class="label label-warning"
                       data-translate="cpci_vm_status_{{ $row.status }}"
-                      data-ng-if="$row.statusToTranslate === 'RESCUE' || $row.statusToTranslate === 'SNAPSHOTTING'"></span>
+                      data-ng-if="$row.status === 'RESCUE' || $row.status === 'SNAPSHOTTING'"></span>
                 <span class="label label-danger"
                       data-translate="cpci_vm_status_{{ $row.status }}"
-                      data-ng-if="$row.statusToTranslate === 'ERROR' || $row.statusToTranslate === 'DELETING'"></span>
+                      data-ng-if="$row.status === 'ERROR' || $row.status === 'DELETING'"></span>
             </oui-column>
             <oui-action-menu data-align="end" data-compact>
                 <oui-action-menu-item data-text="{{ 'cpci_vm_action_edit' | translate }}"
