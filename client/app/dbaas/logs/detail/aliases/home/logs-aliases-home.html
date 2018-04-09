@@ -20,20 +20,20 @@
 
     <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.aliases.loading || ctrl.delete.loading"></oui-spinner>
     <oui-datagrid rows="ctrl.aliases.data">
-        <oui-column title="::'logs_aliases_col_title' | translate" property="info.name" sortable="asc"></oui-column>
-        <oui-column title="::'logs_aliases_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_aliases_col_streams' | translate" property="streams.length" sortable>
+        <oui-column title="::'logs_aliases_col_title' | translate" property="info.name" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_aliases_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_aliases_col_streams' | translate" property="streams.length" sortable type="number" filterable>
             <span data-ng-if="$row.streams.length" data-ng-bind="$row.streams.length" />
             <span data-ng-if="!$row.streams.length"> - </span>
         </oui-column>
-        <oui-column title="::'logs_aliases_col_indices' | translate" property="indexes.length" sortable>
+        <oui-column title="::'logs_aliases_col_indices' | translate" property="indexes.length" sortable type="number" filterable>
             <span data-ng-if="$row.indexes.length" data-ng-bind="$row.indexes.length" />
             <span data-ng-if="!$row.indexes.length"> - </span>
         </oui-column>
-        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
-        <oui-column title="::'logs_aliases_col_shared' | translate" property="info.isEditable" sortable>
+        <oui-column title="::'logs_aliases_col_shared' | translate" property="info.isEditable" sortable type="string">
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
             <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>

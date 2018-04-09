@@ -22,19 +22,19 @@
     <div data-ng-if="ctrl.inputs.loading || ctrl.delete.loading"><oui-spinner></oui-spinner></div>
     <oui-datagrid data-ng-if="!(ctrl.inputs.loading || ctrl.delete.loading)"
         rows="ctrl.inputs.data">
-        <oui-column title="::'inputs_col_name' | translate" property="info.title" sortable></oui-column>
-        <oui-column title="::'inputs_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'inputs_software' | translate" property="info.engine.software">
+        <oui-column title="::'inputs_col_name' | translate" property="info.title" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'inputs_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'inputs_software' | translate" property="info.engine.software" type="string" searchable filterable>
             {{ $row.info.engine.software }}
         </oui-column>
-        <oui-column title="::'inputs_linked_option' | translate" property="info.optionId">
+        <oui-column title="::'inputs_linked_option' | translate" property="info.optionId" type="string">
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
-        <oui-column title="::'inputs_state' | translate" property="info.state">
+        <oui-column title="::'inputs_state' | translate" property="info.state" type="string" searchable filterable>
             <oui-inline-color-alert type="$row.info.stateType" label="{{ 'inputs_state_' + $row.info.state | translate }}"></oui-inline-color-alert>
         </oui-column>
-        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>

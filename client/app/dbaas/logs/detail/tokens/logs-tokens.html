@@ -10,13 +10,13 @@
 
     <oui-spinner data-ng-if="ctrl.tokens.loading || ctrl.delete.loading"></oui-spinner>
     <oui-datagrid rows="ctrl.tokens.data">
-        <oui-column title="::'logs_tokens_col_name' | translate" property="name" sortable="asc"></oui-column>
-        <oui-column title="::'logs_tokens_col_token' | translate" property="value" sortable></oui-column>
-        <oui-column title="::'logs_tokens_col_platform' | translate" property="cluster.hostname" sortable>
+        <oui-column title="::'logs_tokens_col_name' | translate" property="name" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_tokens_col_token' | translate" property="value" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_tokens_col_platform' | translate" property="cluster.hostname" sortable type="string" searchable filterable>
             <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
             <span data-ng-if="!$row.cluster.isLoadingCluster">{{$row.cluster.hostname}}</span>
         </oui-column>
-        <oui-column title="::'logs_tokens_col_createdAt' | translate" property="createdAt" sortable>
+        <oui-column title="::'logs_tokens_col_createdAt' | translate" property="createdAt" sortable type="date">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>

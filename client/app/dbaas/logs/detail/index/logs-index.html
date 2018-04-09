@@ -20,15 +20,15 @@
 
     <oui-datagrid
         rows="ctrl.indices.data">
-        <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc"></oui-column>
-        <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_index_col_free_space' | translate">
+        <oui-column title=":: 'logs_index_name_text' | translate" property="info.name" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_index_col_free_space' | translate" type="number">
             <oui-inline-color-alert type="ctrl.storageColor($row.info)" label="{{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}"></oui-inline-color-alert>
         </oui-column>
-        <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+        <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.updatedAt | momentFormat:'L'}}
         </oui-column>
-        <oui-column title=":: 'logs_index_col_shared' | translate" sortable>
+        <oui-column title=":: 'logs_index_col_shared' | translate" sortable type="string">
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
             <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>

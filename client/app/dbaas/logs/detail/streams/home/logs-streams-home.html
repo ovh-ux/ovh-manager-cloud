@@ -21,24 +21,24 @@
     <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"></oui-spinner>
     <oui-datagrid data-ng-if="!ctrl.quota.loading || ctrl.streams.loading || ctrl.delete.loading"
         rows="ctrl.streams.data">
-        <oui-column title="::'logs_streams_col_title' | translate" property="info.title" sortable="asc"></oui-column>
-        <oui-column title="::'logs_streams_col_description' | translate" property="info.description" sortable></oui-column>
-        <oui-column title="::'logs_streams_col_archives' | translate" property="info.archives.length" sortable>
+        <oui-column title="::'logs_streams_col_title' | translate" property="info.title" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_streams_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="::'logs_streams_col_archives' | translate" property="info.archives.length" sortable type="number" filterable>
             <span data-ng-if="$row.info.coldStorageEnabled" data-ng-bind="$row.info.archives.length" />
             <span data-ng-if="!$row.info.coldStorageEnabled"> {{ $row.info.nbArchive || "-" }} </span>
         </oui-column>
-        <oui-column title="::'logs_streams_col_notifications' | translate" property="info.notifications.length" sortable>
+        <oui-column title="::'logs_streams_col_notifications' | translate" property="info.notifications.length" sortable type="number" filterable>
             <span data-ng-if="$row.info.notifications.length" data-ng-bind="$row.info.notifications.length" />
             <span data-ng-if="!$row.info.notifications.length"> - </span>
         </oui-column>
-        <oui-column title="::'logs_streams_col_linked_option' | translate" property="info.optionId" sortable>
+        <oui-column title="::'logs_streams_col_linked_option' | translate" property="info.optionId" sortable type="string">
             <i data-ng-if="$row.info.optionId" class="oui-icon oui-icon-check_line" aria-hidden="true"></i>
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
-        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable>
+        <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
-        <oui-column title="::'logs_streams_col_shared' | translate" property="info.isEditable" sortable>
+        <oui-column title="::'logs_streams_col_shared' | translate" property="info.isEditable" sortable type="string">
             <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
             <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>
