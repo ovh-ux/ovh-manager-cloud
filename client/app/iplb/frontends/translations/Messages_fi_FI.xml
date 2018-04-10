@@ -52,7 +52,7 @@
    <translation id="iplb_frontend_add_advanced_options_show" qtlid="69353">Näytä</translation>
    <translation id="iplb_frontend_add_dedicated_ip_failover" qtlid="430096">Dedicated IP failover</translation>
    <translation id="iplb_frontend_add_dedicated_ip_failover_tip" qtlid="438740">Lista kuormantasaajaasi yhdistettyjen palvelinten IP-osoitteista</translation>
-   <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">IP-osoitteiden estäminen</translation>
+   <translation id="iplb_frontend_add_restrict_ip_access" qtlid="438753">Pääsyn estäminen IP-osoitteisiin</translation>
    <translation id="iplb_frontend_add_restrict_ip_access_tip" qtlid="438766">Lista kuormantasaajaan yhteydessä olevien asiakkaiden IP-osoitteista (IPv4). Format : 1.2.3.4, 42.42.42.0/24</translation>
    <translation id="iplb_frontend_add_http_redirection" qtlid="430135">HTTP-uudelleenohjaus</translation>
    <translation id="iplb_frontend_add_http_header" qtlid="430122">HTTP-otsake</translation>

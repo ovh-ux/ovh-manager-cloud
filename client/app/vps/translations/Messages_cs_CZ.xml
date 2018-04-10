@@ -226,7 +226,7 @@
    <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Toto rozšíření bude fakturováno na základě sazby <span class="bold">{{ amount }} bez DPH/měsíc</span></translation>
    <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Možnost snapshot Vám umožní vytvořit bod obnovy, který se uloží pro případ pozdějšího obnovení. </translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Pro aktivování této možnosti klikněte na "Další".</translation>
-   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Dokončit".</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Shrnutí</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Časová prodleva mezi přijetím platby za službu a aktivací služby v Zákaznickém rozhraní WEB je cca 2 hodiny.</translation>
@@ -283,13 +283,13 @@
    <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Pozor! U VPS není možný downgrade. Jedinou povolenou možnosti je upgrade.</translation>
    <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Přijměte prosím podmínky používání služby.</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade VPS <span class="italic normal">{{vpsName}}</span> na {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Cena platí až do {{duration}}. Příští datum obnovení Vašeho serveru: </translation>
+   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Doplatek do data příštího obnovení serveru ({{duration}}):</translation>
    <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Cena bez DPH:</translation>
    <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Cena vč. DPH:</translation>
    <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Váš server bude následně fakturován na základě sazby <span class="red">{{price}} bez DPH/měsíc</span>. </translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Objednat".</translation>
+   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">K potvrzení objednávky a platbě prosím pokračujte kliknutím na tlačítko "Dokončit".</translation>
    <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Otevře se nová záložka a budete automaticky přesměrováni do platebního rozhraní OVH.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Berte prosím na vědomí, že po schválení platby bude potřeba ještě zhruba 2 hodiny trvat, nežli se tyto změny projeví v Zákaznickém prostoru Web.</translation>
+   <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Mějte prosím na paměti, že po schválení platby bude ještě zhruba 2 hodiny trvat, než se tyto změny projeví v Zákaznickém prostoru OVH.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Aby byl upgrade proveden, je potřeba provést reboot serveru.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Shrnutí</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Při provádění žádosti o upgrade VPS došlo k chybě.</translation>

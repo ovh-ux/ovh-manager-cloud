@@ -43,7 +43,7 @@
    <translation id="iplb_frontend_add_farm" qtlid="437726">Add a server cluster</translation>
    <translation id="iplb_frontend_add_farm_text" qtlid="438688">Once this front-facing service has been created, you can add a server cluster to it directly by default.</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="438701">Default SSL certificate</translation>
-   <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">No</translation>
+   <translation id="iplb_frontend_add_default_certificate_no_certificate" qtlid="30646">None</translation>
    <translation id="iplb_frontend_add_default_certificate_add_another_choice" qtlid="438714">+ Add/Order</translation>
    <translation id="iplb_frontend_add_default_certificate" qtlid="448699">Certificate presented by default</translation>
    <translation id="iplb_frontend_add_default_certificate_text" qtlid="438727">Unable to add a new certificate directly. You can add it once your front-facing service has been successfully created.</translation>

@@ -66,7 +66,7 @@
    <translation id="vdi_task_name_removeVirtualDesktop" qtlid="370889">Suppression du desktop</translation>
    <translation id="vdi_task_name_upgradeVirtualDesktop" qtlid="370902">Changement de pack</translation>
    <translation id="vdi_task_name_suspendVirtualDesktop" qtlid="370915">Suspension du desktop</translation>
-   <translation id="vdi_task_name_setAliasOnVirtualDesktop" qtlid="323690">Changement d'alias</translation>
+   <translation id="vdi_task_name_setAliasOnVirtualDesktop" qtlid="323690">Cambio de alias</translation>
    <translation id="vdi_task_name_updateUsername" qtlid="370928">Mise à jour de l'utilisateur</translation>
    <translation id="vdi_task_name_openVirtualDesktop" qtlid="370941">Création du desktop</translation>
    <translation id="vdi_task_name_updateUserPassword" qtlid="370954">Mise à jour du mot de passe utilisateur</translation>

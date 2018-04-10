@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="cpb_quota_protect_explain" qtlid="251265">Počet zdrojů pro Váš projekt Cloud je omezen, abyste měli kontrolu nad spotřebou zdrojů..</translation>
-   <translation id="cpb_quota_protect_more" qtlid="251278">Jestliže potřebujete více zdrojů, můžete o ně požádat náš tým kliknutím na tlačítko níže.</translation>
+   <translation id="cpb_quota_protect_explain" qtlid="251265">Abyste měli plnou kontrolou nad spotřebou zdrojů, je objem zdrojů Vašeho cloudového projektu omezen.</translation>
+   <translation id="cpb_quota_protect_more" qtlid="251278">Pokud potřebujete více zdrojů, požádejte o ně náš tým kliknutím na tlačítko níže.</translation>
    <translation id="cpb_quota_protect_more_btn" qtlid="251291">Navýšení mých limitů</translation>
    <translation id="cpb_quota_current_limit" qtlid="251304">Současné limity</translation>
 
@@ -12,7 +12,7 @@
    <translation id="cpb_quota_no_quota" qtlid="251343">Nebyly nalezeny žádné limity</translation>
 
    <translation id="cpb_quota_restricted_account" qtlid="251356">Tento limit je omezený, protože aktuálně nemáte platební metodu na Vaše účtu.</translation>
-   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429">Veuillez <a href="{{url}}">ajouter un moyen de paiement</a> valide, puis revenir sur cette page pour augmenter votre quota.</translation>
+   <translation id="cpb_quota_restricted_account_unlock" qtlid="345429">Pro navýšení limitů prosím <a href="{{url}}">přidejte platnou platební metodu</a> a následně se vraťte zpět na tuto stránku.</translation>
    <translation id="cpb_quota_restricted_paymentmean_active" qtlid="251382">Toto je nyní aktivní platební metoda na Vašem účtu.</translation>
    <translation id="cpb_quota_restricted_unlock_button" qtlid="251395">Aktivovat standardní limit.</translation>
 
