@@ -1,4 +1,4 @@
-class InlineAdderItemCtrl {
+class InlineAdderGroupCtrl {
 
     $onInit () {
         this.item = this.item || null;
@@ -18,4 +18,4 @@ class InlineAdderItemCtrl {
     }
 }
 
-angular.module("managerApp").controller("InlineAdderItemCtrl", InlineAdderItemCtrl);
+angular.module("managerApp").controller("InlineAdderGroupCtrl", InlineAdderGroupCtrl);
