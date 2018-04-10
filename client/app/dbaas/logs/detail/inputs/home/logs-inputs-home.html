@@ -38,13 +38,13 @@
             {{ $row.info.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>
-            <oui-action-menu-item text="{{ ::'inputs_edit' | translate }}" on-click="ctrl.edit($row)" disabled="$row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'inputs_edit' | translate }}" on-click="ctrl.edit($row)" disabled="$row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'inputs_info_title' | translate }}" on-click="ctrl.info($row)"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'inputs_start' | translate }}" on-click="ctrl.startInput($row)" disabled="!$row.actionsMap.START || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'inputs_restart' | translate }}" on-click="ctrl.restartInput($row)" disabled="!$row.actionsMap.RESTART || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'inputs_stop' | translate }}" on-click="ctrl.stopInput($row)" disabled="!$row.actionsMap.END || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'inputs_start' | translate }}" on-click="ctrl.startInput($row)" disabled="!$row.actionsMap.START || $row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'inputs_restart' | translate }}" on-click="ctrl.restartInput($row)" disabled="!$row.actionsMap.RESTART || $row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'inputs_stop' | translate }}" on-click="ctrl.stopInput($row)" disabled="!$row.actionsMap.END || $row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'inputs_standard_output' | translate }}" on-click="ctrl.standardOutput($row)" disabled="!$row.actionsMap.LOG"></oui-action-menu-item>
-            <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)" disabled="!$row.actionsMap.DESTROY || $row.info.status === ctrl.LogsInputsConstant.status.PROCESSING"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)" disabled="!$row.actionsMap.DESTROY || $row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
         </oui-action-menu>
     </oui-datagrid>    
 </div>

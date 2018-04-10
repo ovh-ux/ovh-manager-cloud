@@ -1,6 +1,6 @@
 class LogsDashboardsCtrl {
     constructor ($state, $stateParams, $translate, LogsDashboardsService,
-                 ControllerHelper, CloudMessage, LogsOfferConstant, ControllerModalHelper) {
+                 ControllerHelper, CloudMessage, LogsConstants, ControllerModalHelper) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -8,7 +8,7 @@ class LogsDashboardsCtrl {
         this.LogsDashboardsService = LogsDashboardsService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
-        this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsConstants = LogsConstants;
         this.ControllerModalHelper = ControllerModalHelper;
 
         this.initLoaders();
@@ -120,7 +120,7 @@ class LogsDashboardsCtrl {
      * @memberof LogsDashboardsCtrl
      */
     _isBasicOffer (offerObj) {
-        return offerObj.reference === this.LogsOfferConstant.basicOffer;
+        return offerObj.reference === this.LogsConstants.basicOffer;
     }
 
     /**

@@ -1,6 +1,6 @@
 class LogsAliasesService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper, CloudPoll, LogsHelperService,
-                 LogsOptionsService, LogStreamsConstants, LogAliasConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService, LogOptionConstant) {
+                 LogsOptionsService, LogsConstants, UrlHelper, CloudMessage, LogsStreamsService, LogsIndexService) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -11,13 +11,11 @@ class LogsAliasesService {
         this.CloudPoll = CloudPoll;
         this.LogsHelperService = LogsHelperService;
         this.LogsOptionsService = LogsOptionsService;
-        this.LogStreamsConstants = LogStreamsConstants;
-        this.LogAliasConstants = LogAliasConstants;
+        this.LogsConstants = LogsConstants;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
         this.LogsStreamsService = LogsStreamsService;
         this.LogsIndexService = LogsIndexService;
-        this.LogOptionConstant = LogOptionConstant;
 
         this.contentTypeEnum = _.indexBy(["STREAMS", "INDICES"]);
         this.contents = [
@@ -254,11 +252,11 @@ class LogsAliasesService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.ALIAS_OPTION_REFERENCE);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.ALIAS_OPTION_REFERENCE);
     }
 
     getElasticSearchUrl (alias) {
-        const url = this.UrlHelper.findUrl(alias, this.LogAliasConstants.ELASTICSEARCH_API_URL);
+        const url = this.UrlHelper.findUrl(alias, this.LogsConstants.ELASTICSEARCH_API_URL);
         if (!url) {
             this.CloudMessage.error(this.$translate.instant("logs_aliases_get_elasticsearch_url_error", { alias: alias.info.name }));
         }

@@ -1,11 +1,11 @@
 class logsUpgradeQuotaLinkCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsOfferConstant, LogsOfferService, LogsHelperService) {
+    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsConstants, LogsOfferService, LogsHelperService) {
         this.$state = $state;
         this.$translate = $translate;
         this.serviceName = $stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.ControllerModalHelper = ControllerModalHelper;
-        this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsOfferService = LogsOfferService;
         this.LogsHelperService = LogsHelperService;
         this._initLoaders();
@@ -34,7 +34,7 @@ class logsUpgradeQuotaLinkCtrl {
      * @memberof logsUpgradeQuotaLinkCtrl
      */
     _isBasicOffer (offerObj) {
-        return offerObj.reference === this.LogsOfferConstant.basicOffer;
+        return offerObj.reference === this.LogsConstants.basicOffer;
     }
 
     /**

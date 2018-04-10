@@ -1,5 +1,5 @@
 class LogsStreamsService {
-    constructor ($q, $translate, CloudMessage, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogStreamsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
+    constructor ($q, $translate, CloudMessage, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
         this.$q = $q;
         this.$translate = $translate;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
@@ -13,7 +13,7 @@ class LogsStreamsService {
         this.ControllerHelper = ControllerHelper;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
-        this.LogStreamsConstants = LogStreamsConstants;
+        this.LogsConstants = LogsConstants;
         this.LogsHelperService = LogsHelperService;
 
         this.initializeData();
@@ -22,19 +22,19 @@ class LogsStreamsService {
     initializeData () {
         this.compressionAlgorithms = [
             {
-                value: this.LogStreamsConstants.GZIP,
+                value: this.LogsConstants.GZIP,
                 name: this.$translate.instant("logs_stream_compression_gzip")
             },
             {
-                value: this.LogStreamsConstants.DEFLATED,
+                value: this.LogsConstants.DEFLATED,
                 name: this.$translate.instant("logs_stream_compression_zip")
             },
             {
-                value: this.LogStreamsConstants.LZMA,
+                value: this.LogsConstants.LZMA,
                 name: this.$translate.instant("logs_stream_compression_lzma")
             },
             {
-                value: this.LogStreamsConstants.ZSTD,
+                value: this.LogsConstants.ZSTD,
                 name: this.$translate.instant("logs_stream_compression_zstd")
             }
         ];
@@ -229,7 +229,7 @@ class LogsStreamsService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogStreamsConstants.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.optionType);
     }
 
     /**
@@ -259,7 +259,7 @@ class LogsStreamsService {
      * @memberof LogsStreamsService
      */
     getStreamGraylogUrl (stream) {
-        const url = this.UrlHelper.findUrl(stream, this.LogStreamsConstants.GRAYLOG_WEBUI);
+        const url = this.UrlHelper.findUrl(stream, this.LogsConstants.GRAYLOG_WEBUI);
         if (!url) {
             this.CloudMessage.error(this.$translate.instant("logs_streams_get_graylog_url_error", { stream: stream.info.title }));
         }
@@ -308,7 +308,7 @@ class LogsStreamsService {
      * @return {string} stream token if found, empty string otherwise
      */
     findStreamTokenValue (stream) {
-        const ruleObj = _.find(stream.rules, rule => rule.field === this.LogStreamsConstants.X_OVH_TOKEN);
+        const ruleObj = _.find(stream.rules, rule => rule.field === this.LogsConstants.X_OVH_TOKEN);
         return _.get(ruleObj, "value");
     }
 

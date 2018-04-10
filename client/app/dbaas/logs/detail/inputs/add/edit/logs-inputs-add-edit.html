@@ -8,8 +8,8 @@
                             class="oui-input" 
                             data-ng-model="ctrl.input.data.info.title"
                             data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.input_title.$invalid}"
-                            data-ng-minlength="ctrl.LogsInputsAddEditConstant.TITLE_MIN_LENGTH"
-                            data-ng-maxlength="ctrl.LogsInputsAddEditConstant.TITLE_MAX_LENGTH"
+                            data-ng-minlength="ctrl.LogsConstants.TITLE_MIN_LENGTH"
+                            data-ng-maxlength="ctrl.LogsConstants.TITLE_MAX_LENGTH"
                             autofocus
                             required />                    
                 </div>
@@ -26,7 +26,7 @@
                         name="input_description"
                         data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.input_description.$invalid}"
                         data-ng-model="ctrl.input.data.info.description"
-                        data-ng-minlength="ctrl.LogsInputsAddEditConstant.DESCRIPTION_MIN_LENGTH"
+                        data-ng-minlength="ctrl.LogsConstants.DESCRIPTION_MIN_LENGTH"
                         required>
                     </textarea>                    
                 </div>
@@ -61,8 +61,8 @@
                     id="input_port"
                     name="input_port"
                     model="ctrl.input.data.info.exposedPort"
-                    min="ctrl.LogsInputsAddEditConstant.EXPOSED_PORT_MIN"
-                    max="ctrl.LogsInputsAddEditConstant.EXPOSED_PORT_MAX"
+                    min="ctrl.LogsConstants.EXPOSED_PORT_MIN"
+                    max="ctrl.LogsConstants.EXPOSED_PORT_MAX"
                     required>
                 </oui-numeric>                    
             </div>

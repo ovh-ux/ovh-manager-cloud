@@ -156,7 +156,7 @@
                 <label for="grok" class="oui-label" data-translate="inputs_logs_configure_logstash_grok"></label>
                 <div class="oui-field__content">
                     <div class="oui-field-control logs-inputs-configure__textarea">
-                        <textarea id="grok" name="grok" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.patternSection) + ctrl.LogsInputsConfigureConstant.patternRowFill}}"
+                        <textarea id="grok" name="grok" rows="{{ctrl.findRowLength(ctrl.configuration.logstash.patternSection) + ctrl.LogsConstants.patternRowFill}}"
                         type="text" class="oui-input" data-ng-model="ctrl.configuration.logstash.patternSection"
                         data-ng-class="{'oui-textarea_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.grok.$invalid}" />
                     </div>

@@ -1,6 +1,6 @@
 class LogsDashboardsService {
     constructor ($q, OvhApiDbaas, LogsOptionsService,
-                 LogsHelperService, LogOptionConstant, LogStreamsConstants, UrlHelper) {
+                 LogsHelperService, LogsConstants, UrlHelper) {
         this.$q = $q;
         this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().Lexi();
         this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
@@ -8,8 +8,7 @@ class LogsDashboardsService {
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.LogsOptionsService = LogsOptionsService;
         this.LogsHelperService = LogsHelperService;
-        this.LogOptionConstant = LogOptionConstant;
-        this.LogStreamsConstants = LogStreamsConstants;
+        this.LogsConstants = LogsConstants;
         this.UrlHelper = UrlHelper;
     }
 
@@ -216,7 +215,7 @@ class LogsDashboardsService {
      * @param {string} serviceName
      */
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogOptionConstant.DASHBOARD_OPTION_REFERENCE);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.DASHBOARD_OPTION_REFERENCE);
     }
 
     /**
@@ -227,7 +226,7 @@ class LogsDashboardsService {
      * @memberof LogsDashboardsService
      */
     getDashboardGraylogUrl (aapiDashboard) {
-        const url = this.UrlHelper.findUrl(aapiDashboard, this.LogStreamsConstants.GRAYLOG_WEBUI);
+        const url = this.UrlHelper.findUrl(aapiDashboard, this.LogsConstants.GRAYLOG_WEBUI);
         if (!url) {
             this.LogsHelperService.handleError("logs_dashboards_get_graylog_url_error", {}, { dashboardName: aapiDashboard.info.title });
         }

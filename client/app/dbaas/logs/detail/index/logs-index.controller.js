@@ -1,12 +1,12 @@
 class LogsIndexCtrl {
-    constructor ($stateParams, bytesFilter, CloudMessage, ControllerHelper, LogsIndexService, LogsIndexConstant) {
+    constructor ($stateParams, bytesFilter, CloudMessage, ControllerHelper, LogsIndexService, LogsConstants) {
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.LogsIndexService = LogsIndexService;
-        this.LogsIndexConstant = LogsIndexConstant;
-        this.suffixPattern = this.LogsIndexConstant.suffixPattern;
+        this.LogsConstants = LogsConstants;
+        this.suffixPattern = this.LogsConstants.suffixPattern;
         this.bytesFilter = bytesFilter;
         this.initLoaders();
     }
@@ -52,11 +52,11 @@ class LogsIndexCtrl {
     storageColor (info) {
         const percentage = parseInt((info.currentStorage * 100) / info.maxSize, 10);
         if (percentage > 80) {
-            return this.LogsIndexConstant.HIGH;
+            return this.LogsConstants.HIGH;
         } else if (percentage < 60) {
-            return this.LogsIndexConstant.LOW;
+            return this.LogsConstants.LOW;
         } else if (percentage > 60 && percentage < 80) {
-            return this.LogsIndexConstant.MID;
+            return this.LogsConstants.MID;
         }
         return null;
     }

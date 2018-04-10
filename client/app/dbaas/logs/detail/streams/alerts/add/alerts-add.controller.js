@@ -1,5 +1,5 @@
 class LogsStreamsAlertsAddCtrl {
-    constructor ($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, LogsStreamsAlertsAddConstant, LogsStreamsAlertsConstant, LogsStreamsAlertsService) {
+    constructor ($q, $state, $stateParams, $window, CloudMessage, ControllerHelper, LogsConstants, LogsStreamsAlertsService) {
         this.$q = $q;
         this.$state = $state;
         this.serviceName = $stateParams.serviceName;
@@ -10,8 +10,8 @@ class LogsStreamsAlertsAddCtrl {
         this.$window = $window;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
-        this.LogsStreamsAlertsAddConstant = LogsStreamsAlertsAddConstant;
-        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsConstants = LogsConstants;
+        this.LogsConstants = LogsConstants;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
     }
 
@@ -76,10 +76,10 @@ class LogsStreamsAlertsAddCtrl {
      * @memberof LogsStreamsAlertsAddCtrl
      */
     getThresholdTypes () {
-        if (this.alertType === this.LogsStreamsAlertsConstant.alertType.numeric) {
-            return [this.LogsStreamsAlertsConstant.thresholdType.lower, this.LogsStreamsAlertsConstant.thresholdType.higher];
+        if (this.alertType === this.LogsConstants.alertType.numeric) {
+            return [this.LogsConstants.thresholdType.lower, this.LogsConstants.thresholdType.higher];
         }
-        return [this.LogsStreamsAlertsConstant.thresholdType.more, this.LogsStreamsAlertsConstant.thresholdType.less];
+        return [this.LogsConstants.thresholdType.more, this.LogsConstants.thresholdType.less];
     }
 
     /**
@@ -88,7 +88,7 @@ class LogsStreamsAlertsAddCtrl {
      * @memberof LogsStreamsAlertsAddCtrl
      */
     getConstraintTypes () {
-        return Object.values(this.LogsStreamsAlertsConstant.constraintType);
+        return Object.values(this.LogsConstants.constraintType);
     }
 }
 

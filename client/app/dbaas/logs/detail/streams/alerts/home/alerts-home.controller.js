@@ -1,12 +1,12 @@
 class LogsStreamsAlertsHomeCtrl {
-    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsStreamsAlertsConstant, LogsStreamsAlertsService) {
+    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsConstants, LogsStreamsAlertsService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.LogsStreamsService = LogsStreamsService;
-        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -109,7 +109,7 @@ class LogsStreamsAlertsHomeCtrl {
         this.$state.go("dbaas.logs.detail.streams.alerts.add", {
             serviceName: this.serviceName,
             streamId: this.streamId,
-            type: this.LogsStreamsAlertsConstant.alertType[type]
+            type: this.LogsConstants.alertType[type]
         });
     }
 

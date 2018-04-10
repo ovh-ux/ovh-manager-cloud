@@ -1,5 +1,5 @@
 class LogsHomeCtrl {
-    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsHomeConstant, LogsHomeService, LogsTokensService, LogsHelperService, LogsDetailService, LogsConstants) {
+    constructor ($q, $scope, $state, $stateParams, $translate, bytesFilter, ControllerHelper, LogsConstants, LogsHomeService, LogsTokensService, LogsHelperService, LogsDetailService) {
         this.$q = $q;
         this.$scope = $scope;
         this.$state = $state;
@@ -8,7 +8,6 @@ class LogsHomeCtrl {
         this.$translate = $translate;
         this.bytesFilter = bytesFilter;
         this.ControllerHelper = ControllerHelper;
-        this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this.LogsTokensService = LogsTokensService;
         this.LogsHelperService = LogsHelperService;
@@ -26,7 +25,7 @@ class LogsHomeCtrl {
                     if (service.state === this.LogsConstants.SERVICE_STATE_TO_CONFIG) {
                         this.goToAccountSetupPage();
                     } else {
-                        this.dataUsageGraphData = this.LogsHomeConstant.DATA_USAGE_GRAPH_CONFIGURATION;
+                        this.dataUsageGraphData = this.LogsConstants.DATA_USAGE_GRAPH_CONFIGURATION;
                         this.runLoaders()
                             .then(() => this._initActions())
                             .then(() => this._prepareDataUsageGraphData());
@@ -65,7 +64,7 @@ class LogsHomeCtrl {
      * @memberof LogsHomeCtrl
      */
     _prepareDataUsageGraphData () {
-        const offerLimit = this.account.data.offer.esStorage * this.LogsHomeConstant.OFFER_STORAGE_MULTIPLIER;
+        const offerLimit = this.account.data.offer.esStorage * this.LogsConstants.OFFER_STORAGE_MULTIPLIER;
         const maxDataReceived = _.max(this.storageData.data.usageData[0]);
         this.dataUsageGraphData.labels = this.storageData.data.timestamps.map(timestamp => moment(timestamp).format("DD MMM"));
         this.dataUsageGraphData.data = this.storageData.data.usageData;

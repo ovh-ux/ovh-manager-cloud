@@ -1,5 +1,5 @@
 class LogsIndexService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsIndexConstant) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsHelperService, OvhApiDbaas, ServiceHelper, LogsOptionsService, LogsConstants) {
         this.$q = $q;
         this.$translate = $translate;
         this.CloudPoll = CloudPoll;
@@ -7,7 +7,7 @@ class LogsIndexService {
         this.ControllerHelper = ControllerHelper;
         this.LogsHelperService = LogsHelperService;
         this.LogsOptionsService = LogsOptionsService;
-        this.LogsIndexConstant = LogsIndexConstant;
+        this.LogsConstants = LogsConstants;
         this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
@@ -76,7 +76,7 @@ class LogsIndexService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsIndexConstant.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.indexOptionType);
     }
 
     createIndex (serviceName, object) {

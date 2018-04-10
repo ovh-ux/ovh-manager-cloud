@@ -1,5 +1,5 @@
 class LogsHomeService {
-    constructor ($http, $q, $translate, LogsHelperService, LogsHomeConstant, LogsOfferConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
+    constructor ($http, $q, $translate, LogsHelperService, LogsConstants, LogsOptionsService, OvhApiDbaas, ServiceHelper, SidebarMenu) {
         this.$http = $http;
         this.$q = $q;
         this.$translate = $translate;
@@ -10,8 +10,7 @@ class LogsHomeService {
         this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
         this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
         this.LogsHelperService = LogsHelperService;
-        this.LogsHomeConstant = LogsHomeConstant;
-        this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
@@ -68,16 +67,16 @@ class LogsHomeService {
             .then(account => {
                 const token = btoa(account.metrics.token);
                 const query = {
-                    start: moment().subtract(this.LogsHomeConstant.DATA_STORAGE.TIME_PERIOD_MONTHS, "month").unix() * 1000,
+                    start: moment().subtract(this.LogsConstants.DATA_STORAGE.TIME_PERIOD_MONTHS, "month").unix() * 1000,
                     queries: [{
-                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.SUM,
-                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
-                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                        metric: this.LogsConstants.DATA_STORAGE.METRICS.SUM,
+                        aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
                     },
                     {
-                        metric: this.LogsHomeConstant.DATA_STORAGE.METRICS.COUNT,
-                        aggregator: this.LogsHomeConstant.DATA_STORAGE.AGGREGATORS.MAX,
-                        downsample: this.LogsHomeConstant.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
+                        metric: this.LogsConstants.DATA_STORAGE.METRICS.COUNT,
+                        aggregator: this.LogsConstants.DATA_STORAGE.AGGREGATORS.MAX,
+                        downsample: this.LogsConstants.DATA_STORAGE.DOWNSAMPLING_MODE["24H_MAX"]
                     }]
                 };
                 return this.$http({
@@ -115,7 +114,7 @@ class LogsHomeService {
                 return this.$http({
                     method: "GET",
                     url: `${account.metrics.host}/api/query/last`,
-                    params: { timeseries: this.LogsHomeConstant.DATA_STORAGE.METRICS.COLD_STORAGE_TOTAL },
+                    params: { timeseries: this.LogsConstants.DATA_STORAGE.METRICS.COLD_STORAGE_TOTAL },
                     headers: {
                         Authorization: `Basic ${token}`
                     },
@@ -152,7 +151,7 @@ class LogsHomeService {
     }
 
     /**
-     * Converts the number to a more readable form
+     * Converts the number to a more readable formhttps://sharepoint.corp.ovh.com/my/personal/gio-94fbba0f2de44122/_layouts/15/WopiFrame.aspx?sourcedoc={935AFCC0-72B9-4B54-AAC4-135A9AE8415D}&file=UX%20Projects%20-%20W12-13.pptx&action=default
      *
      * @param {any} number
      * @returns the number in more readable form
@@ -211,7 +210,7 @@ class LogsHomeService {
      * @memberof LogsHomeService
      */
     _getElasticSearchApiUrl (object) {
-        const elasticSearchApiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.ELASTICSEARCH_API);
+        const elasticSearchApiUrl = this._findUrl(object.urls, this.LogsConstants.URLS.ELASTICSEARCH_API);
         object.elasticSearchApiUrl = `${elasticSearchApiUrl}/_cluster/health?pretty=true`;
         return object;
     }
@@ -224,7 +223,7 @@ class LogsHomeService {
      * @memberof LogsHomeService
      */
     _getGreyLogApiUrl (object) {
-        object.graylogApiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_API);
+        object.graylogApiUrl = this._findUrl(object.urls, this.LogsConstants.URLS.GRAYLOG_API);
         return object;
     }
 
@@ -236,7 +235,7 @@ class LogsHomeService {
      * @memberof LogsHomeService
      */
     _getGreyLogUrl (object) {
-        object.graylogWebuiUrl = this._findUrl(object.urls, this.LogsHomeConstant.URLS.GRAYLOG_WEBUI);
+        object.graylogWebuiUrl = this._findUrl(object.urls, this.LogsConstants.URLS.GRAYLOG_WEBUI);
         return object;
     }
 
@@ -250,10 +249,10 @@ class LogsHomeService {
     _getPortsAndMessages (accountDetails) {
         const portsAndMessages = {};
         accountDetails.urls.forEach(url => {
-            const urlInfo = this.LogsHomeConstant.URL_TYPES[url.type];
+            const urlInfo = this.LogsConstants.URL_TYPES[url.type];
             if (urlInfo) {
                 portsAndMessages[urlInfo.PORT] = portsAndMessages[urlInfo.PORT] ||
-                    { name: this.LogsHomeConstant.PORT_TYPES[urlInfo.PORT] };
+                    { name: this.LogsConstants.PORT_TYPES[urlInfo.PORT] };
                 portsAndMessages[urlInfo.PORT][urlInfo.MESSAGE] = url.address.split(":")[1];
             }
         });
@@ -280,12 +279,12 @@ class LogsHomeService {
     _transformAccount (account) {
         if (_.isEmpty(account.offer)) {
             account.offer.description = "";
-        } else if (account.offer.reference === this.LogsOfferConstant.basicOffer) {
-            account.offer.description = this.LogsOfferConstant.offertypes.BASIC;
+        } else if (account.offer.reference === this.LogsConstants.basicOffer) {
+            account.offer.description = this.LogsConstants.offertypes.BASIC;
         } else {
             const dataVolume = this.$translate.instant("logs_home_data_volume");
             const dataVolumeValue = this.$translate.instant(account.offer.reference);
-            account.offer.description = `${this.LogsOfferConstant.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}`;
+            account.offer.description = `${this.LogsConstants.offertypes.PRO} - ${dataVolume}: ${dataVolumeValue}`;
         }
         return account;
     }

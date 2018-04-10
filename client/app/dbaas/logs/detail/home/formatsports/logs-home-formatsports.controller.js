@@ -1,8 +1,8 @@
 class LogsHomeFormatsportsCtrl {
-    constructor ($uibModalInstance, accountDetails, LogsHomeConstant) {
+    constructor ($uibModalInstance, accountDetails, LogsConstants) {
         this.accountDetails = accountDetails;
         this.$uibModalInstance = $uibModalInstance;
-        this.LogsHomeConstant = LogsHomeConstant;
+        this.LogsConstants = LogsConstants;
     }
 
     /**

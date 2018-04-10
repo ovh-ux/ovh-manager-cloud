@@ -1,10 +1,9 @@
 class LogsListService {
-    constructor ($q, OvhApiDbaas, LogsHelperService, LogsTokensService, LogsHomeConstant) {
+    constructor ($q, OvhApiDbaas, LogsHelperService, LogsTokensService) {
         this.$q = $q;
         this.LogsListApiService = OvhApiDbaas.Logs().Lexi();
         this.LogsHelperService = LogsHelperService;
         this.LogsTokensService = LogsTokensService;
-        this.LogsHomeConstant = LogsHomeConstant;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
     }
 
