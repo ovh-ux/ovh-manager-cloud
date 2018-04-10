@@ -8,11 +8,14 @@ class LogsWelcomeCtrl {
     }
 
     $onInit () {
-        debugger;
         this.urls.docsUrl = this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME);
         this.OrderHelperService.buildUrl(this.LogsConstants.LOGS_PRODUCT_URL)
             .then(url => {
                 this.urls.productURL = url;
+            });
+        this.OrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
+            .then(url => {
+                this.urls.orderURL = url;
             });
     }
 }
