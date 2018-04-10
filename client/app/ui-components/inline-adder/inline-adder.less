@@ -48,20 +48,28 @@
 
 
     background: #FFFFFF;
-    border: 1px solid #DADCE0;
-    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.06);
 
-    &__item {
+    &__group {
         .flexbox();
         .flex-direction(row);
         min-height: 100px;
-        border-bottom: 1px solid #DADCE0;
+        border: 1px solid #DADCE0;
+        box-shadow: 0 4px 6px 0 rgba(0,0,0,0.06);
+        margin-bottom: 10px;
 
         &_content {
+            .flexbox();
+            .flex-direction(column);
+            .flex-wrap();
             margin: 25px 20px;
             flex: 1;
             input {
                 margin: 0px;
+            }
+        }
+        @media (min-width: 600px)  {
+            &_content {
+                .flex-direction(row);
             }
         }
         &_actions {
@@ -88,10 +96,28 @@
                 }
             }
         }
+        &_item {
+            flex: 1;
+        }
+        &_line_break {
+            width:110%;
+            height:1px; 
+            background: #DADCE0;
+            margin: 10px -20px 10px -20px;
+        }
+        @media (min-width: 600px)  {
+            &_item:not(:first-child) {
+                margin-left: 10px;
+            }
+
+            &_line_break + &_item {
+                margin-left: 0px;
+            }
+        }
     }
 
-    &__item:last-child {
-        border-bottom: none;
+    &__group:last-child {
+        margin-bottom: 0px;
     }
 }
 
