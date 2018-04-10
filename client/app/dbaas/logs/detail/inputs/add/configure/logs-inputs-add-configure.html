@@ -1,5 +1,5 @@
 <div class="cui-page__content inputs-logs-add-configure pt-0">
-    
+
     <div class="flowgger-edit" data-ng-if="ctrl.configuration.engineType === 'FLOWGGER'">
         <p class="oui-header_3"> {{::'inputs_logs_configure_flowgger_title' | translate}} {{ctrl.input.data.info.engine.version}}</p>
 
@@ -95,7 +95,10 @@
 
     <div class="logstash-edit" data-ng-if="ctrl.configuration.engineType === 'LOGSTASH'">
         <p class="oui-header_3">{{::'inputs_logs_configure_logstash_title' | translate}} {{ctrl.input.data.info.engine.version}}</p>
-        <p data-translate="inputs_logs_configure_logstash_desc"></p>
+        <p>
+            <span data-translate="inputs_logs_configure_logstash_desc"></span>
+            <span data-translate="inputs_logs_configure_logstash_desc_tcp"></span>
+        </p>
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
 
         <form novalidate name="ctrl.logstashForm">
@@ -109,12 +112,12 @@
                                 id="logs_inputs_configure_format"
                                 data-ng-model="ctrl.configuration.logstash.logFormat"
                                 data-ng-change="ctrl.applyConfiguration(ctrl.configuration.logstash.logFormat)">
-                                    <option value="" data-translate="inputs_logs_configure_choose_app"></option>                                
+                                    <option value="" data-translate="inputs_logs_configure_choose_app"></option>
                                     <option data-ng-repeat="logFormat in ctrl.getLogstashLogFormats()" value="{{logFormat.value}}">
                                         {{ logFormat.name | translate }}
                                     </option>
                             </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>                        
+                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -137,7 +140,7 @@
 
             <label class="oui-label pl-4">}</label>
             <label class="oui-label pl-4">filter {</label>
-            
+
             <div class="oui-field mt-3 pl-4" data-ng-class="{'oui-field_error': ctrl.logstashForm.$submitted && ctrl.logstashForm.filter.$invalid}">
                 <label for="filter" class="oui-label" data-translate="inputs_logs_configure_logstash_filter_section"></label>
                 <div class="oui-field__content">
@@ -197,4 +200,3 @@
         </form>
     </div>
 </div>
-    
