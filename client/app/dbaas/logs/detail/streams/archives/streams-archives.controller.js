@@ -1,5 +1,5 @@
 class LogsStreamsArchivesCtrl {
-    constructor ($interval, $state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsStreamsArchivesConstant, LogsStreamsArchivesService) {
+    constructor ($interval, $state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsStreamsService, LogsConstants, LogsStreamsArchivesService) {
         this.$interval = $interval;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -7,7 +7,7 @@ class LogsStreamsArchivesCtrl {
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
         this.LogsStreamsService = LogsStreamsService;
-        this.LogsStreamsArchivesConstant = LogsStreamsArchivesConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsStreamsArchivesService = LogsStreamsArchivesService;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -134,9 +134,9 @@ class LogsStreamsArchivesCtrl {
         _.clone(this.notifications).forEach(notification => {
             const archive = notification.archive;
             archive.retrievalDelay = archive.retrievalDelay > 0 ? --archive.retrievalDelay : archive.retrievalDelay;
-            if (archive.retrievalState === this.LogsStreamsArchivesConstant.state.UNSEALING) {
+            if (archive.retrievalState === this.LogsConstants.state.UNSEALING) {
                 if (archive.retrievalDelay === 0) {
-                    archive.retrievalState = this.LogsStreamsArchivesConstant.state.UNSEALED;
+                    archive.retrievalState = this.LogsConstants.state.UNSEALED;
                     this.LogsStreamsArchivesService.transformArchive(archive);
                 }
                 this._updateUnfreezingNotification(archive);
@@ -153,7 +153,7 @@ class LogsStreamsArchivesCtrl {
      * @memberof LogsStreamsArchivesHomeCtrl
      */
     _updateUnfreezingNotification (archive) {
-        return archive.retrievalState === this.LogsStreamsArchivesConstant.state.UNSEALING ?
+        return archive.retrievalState === this.LogsConstants.state.UNSEALING ?
             [this._updateNotification({
                 text: this.$translate.instant("streams_archives_unfreezing", {
                     filename: archive.filename,

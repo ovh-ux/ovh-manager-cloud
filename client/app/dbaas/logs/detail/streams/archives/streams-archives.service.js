@@ -1,8 +1,8 @@
 class LogsStreamsArchivesService {
-    constructor ($http, $q, LogsStreamsArchivesConstant, OvhApiDbaas, ServiceHelper) {
+    constructor ($http, $q, LogsConstants, OvhApiDbaas, ServiceHelper) {
         this.$http = $http;
         this.$q = $q;
-        this.LogsStreamsArchivesConstant = LogsStreamsArchivesConstant;
+        this.LogsConstants = LogsConstants;
         this.ArchivesApiService = OvhApiDbaas.Logs().Archive().Lexi();
         this.ServiceHelper = ServiceHelper;
     }
@@ -81,7 +81,7 @@ class LogsStreamsArchivesService {
             serviceName,
             streamId,
             archiveId,
-            expirationInSeconds: this.LogsStreamsArchivesConstant.expirationInSeconds
+            expirationInSeconds: this.LogsConstants.expirationInSeconds
         }).$promise.then(response => response.data);
     }
 
@@ -92,7 +92,7 @@ class LogsStreamsArchivesService {
      * @memberof LogsStreamsArchivesService
      */
     transformArchive (archive) {
-        archive.retrievalStateType = this.LogsStreamsArchivesConstant.stateType[archive.retrievalState];
+        archive.retrievalStateType = this.LogsConstants.stateType[archive.retrievalState];
     }
 }
 

@@ -13,8 +13,8 @@
                             class="oui-input" 
                             data-ng-model="ctrl.alert.data.title"
                             data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alert_title.$invalid}"
-                            data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.TITLE_MIN_LENGTH"
-                            data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.TITLE_MAX_LENGTH"
+                            data-ng-minlength="ctrl.LogsConstants.TITLE_MIN_LENGTH"
+                            data-ng-maxlength="ctrl.LogsConstants.TITLE_MAX_LENGTH"
                             autofocus
                             required />
                     <div class="oui-field-helper mb-0 ml-0" data-translate="add_alert_title_field_description"></div>
@@ -30,8 +30,8 @@
                             class="oui-input" 
                             data-ng-model="ctrl.alert.data.field"
                             data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
-                            data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.FIELD_MIN_LENGTH"
-                            data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.FIELD_MAX_LENGTH"
+                            data-ng-minlength="ctrl.LogsConstants.FIELD_MIN_LENGTH"
+                            data-ng-maxlength="ctrl.LogsConstants.FIELD_MAX_LENGTH"
                             required />
                     <div class="oui-field-helper mb-0 ml-0" data-translate="add_alert_field_field_description"></div>
                 </div>
@@ -46,8 +46,8 @@
                                 class="oui-input" 
                                 data-ng-model="ctrl.alert.data.value"
                                 data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.field.$invalid}"
-                                data-ng-minlength="ctrl.LogsStreamsAlertsAddConstant.VALUE_MIN_LENGTH"
-                                data-ng-maxlength="ctrl.LogsStreamsAlertsAddConstant.VALUE_MAX_LENGTH"
+                                data-ng-minlength="ctrl.LogsConstants.VALUE_MIN_LENGTH"
+                                data-ng-maxlength="ctrl.LogsConstants.VALUE_MAX_LENGTH"
                                 required />
                         <div class="oui-field-helper mb-0 ml-0" data-translate="add_alert_value_field_description"></div>
                     </div>
@@ -63,8 +63,8 @@
                         name="time_period"
                         model="ctrl.alert.data.time"
                         class="numeric_without_bottom_margin"
-                        min="ctrl.LogsStreamsAlertsAddConstant.TIME_PERIOD_MIN_IN_SECONDS"
-                        max="ctrl.LogsStreamsAlertsAddConstant.TIME_PERIOD_MAX_IN_SECONDS"
+                        min="ctrl.LogsConstants.TIME_PERIOD_MIN_IN_SECONDS"
+                        max="ctrl.LogsConstants.TIME_PERIOD_MAX_IN_SECONDS"
                         required>
                     </oui-numeric>                    
                 </div>
@@ -97,8 +97,8 @@
                         name="threshold"
                         model="ctrl.alert.data.threshold"
                         class="numeric_without_bottom_margin"
-                        min="ctrl.LogsStreamsAlertsAddConstant.THRESHOLD_MIN"
-                        max="ctrl.LogsStreamsAlertsAddConstant.THRESHOLD_MAX"
+                        min="ctrl.LogsConstants.THRESHOLD_MIN"
+                        max="ctrl.LogsConstants.THRESHOLD_MAX"
                         required>
                     </oui-numeric>
                 </div>
@@ -132,8 +132,8 @@
                     name="grace_period"
                     model="ctrl.alert.data.grace"
                     class="numeric_without_bottom_margin"
-                    min="ctrl.LogsStreamsAlertsAddConstant.GRACE_PERIOD_MIN_IN_MINUTES"
-                    max="ctrl.LogsStreamsAlertsAddConstant.GRACE_PERIOD_MAX_IN_MINUTES"
+                    min="ctrl.LogsConstants.GRACE_PERIOD_MIN_IN_MINUTES"
+                    max="ctrl.LogsConstants.GRACE_PERIOD_MAX_IN_MINUTES"
                     required>
                 </oui-numeric>
             </div>
@@ -148,8 +148,8 @@
                     name="accumulation"
                     model="ctrl.alert.data.backlog"
                     class="numeric_without_bottom_margin"
-                    min="ctrl.LogsStreamsAlertsAddConstant.BACKLOG_MIN"
-                    max="ctrl.LogsStreamsAlertsAddConstant.BACKLOG_MAX"
+                    min="ctrl.LogsConstants.BACKLOG_MIN"
+                    max="ctrl.LogsConstants.BACKLOG_MAX"
                     required>
                 </oui-numeric>
             </div>

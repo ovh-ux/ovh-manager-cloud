@@ -15,9 +15,9 @@
 
     <oui-datagrid
         rows="ctrl.roleDetails.data.members">
-        <oui-column title=":: 'logs_roles_members_user_account' | translate" property="username" sortable="asc"></oui-column>
-        <oui-column title=":: 'logs_roles_members_note' | translate" property="note" sortable></oui-column>
-        <oui-column title=":: 'logs_roles_members_date_added' | translate" property="createdAt">
+        <oui-column title=":: 'logs_roles_members_user_account' | translate" property="username" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title=":: 'logs_roles_members_note' | translate" property="note" sortable type="string" searchable filterable></oui-column>
+        <oui-column title=":: 'logs_roles_members_date_added' | translate" property="createdAt" type="date">
             {{ $row.createdAt | momentFormat:'L'}}
         </oui-column>
         <oui-action-menu data-align="end" compact>

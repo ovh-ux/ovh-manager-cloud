@@ -1,5 +1,5 @@
 class LogsOptionsService {
-    constructor ($translate, $window, ControllerHelper, LogsHelperService, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogsOfferService, LogOptionConstant) {
+    constructor ($translate, $window, ControllerHelper, LogsHelperService, OvhApiOrderCartServiceOption, ServiceHelper, OvhApiDbaas, LogsOfferService, LogsConstants) {
         this.ControllerHelper = ControllerHelper;
         this.OvhApiOrderCartServiceOption = OvhApiOrderCartServiceOption;
         this.LogsHelperService = LogsHelperService;
@@ -9,7 +9,7 @@ class LogsOptionsService {
         this.$window = $window;
         this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
         this.LogsOfferService = LogsOfferService;
-        this.LogOptionConstant = LogOptionConstant;
+        this.LogsConstants = LogsConstants;
         this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().Lexi();
     }
 
@@ -34,7 +34,7 @@ class LogsOptionsService {
      */
     getOptions (serviceName) {
         return this.OvhApiOrderCartServiceOption.Lexi().get({
-            productName: this.LogOptionConstant.productName,
+            productName: this.LogsConstants.productName,
             serviceName
         }).$promise
             .then(response => {
@@ -107,17 +107,17 @@ class LogsOptionsService {
         return this.getSubscribedOptions(serviceName)
             .then(response => {
                 switch (optionType) {
-                    case this.LogOptionConstant.STREAM_OPTION_REFERENCE:
+                    case this.LogsConstants.STREAM_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbStream");
-                    case this.LogOptionConstant.INDEX_OPTION_REFERENCE:
+                    case this.LogsConstants.INDEX_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbIndex");
-                    case this.LogOptionConstant.ALIAS_OPTION_REFERENCE:
+                    case this.LogsConstants.ALIAS_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbAlias");
-                    case this.LogOptionConstant.INPUT_OPTION_REFERENCE:
+                    case this.LogsConstants.INPUT_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbInput");
-                    case this.LogOptionConstant.ROLE_OPTION_REFERENCE:
+                    case this.LogsConstants.ROLE_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbRole");
-                    case this.LogOptionConstant.DASHBOARD_OPTION_REFERENCE:
+                    case this.LogsConstants.DASHBOARD_OPTION_REFERENCE:
                         return this._filterOptions(response.options, "maxNbDashboard");
                     default:
                         return response.options;
@@ -158,7 +158,7 @@ class LogsOptionsService {
             .then(options => {
                 const groupedOptionsMap = options.reduce((groupedOptions, option) => {
                     groupedOptions[option.type] = groupedOptions[option.type] ? groupedOptions[option.type] : { type: option.type, quantity: 0, details: [] };
-                    groupedOptions[option.type].quantity += option.quantity * this.LogOptionConstant.PRODUCT_COUNT[option.id];
+                    groupedOptions[option.type].quantity += option.quantity * this.LogsConstants.PRODUCT_COUNT[option.id];
                     groupedOptions[option.type].details.push(option);
                     return groupedOptions;
                 }, {});
@@ -242,7 +242,7 @@ class LogsOptionsService {
             planCode: option.planCode,
             quantity: option.quantity,
             serviceName,
-            productId: this.LogOptionConstant.productName
+            productId: this.LogsConstants.productName
         };
     }
 

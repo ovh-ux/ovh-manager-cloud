@@ -12,24 +12,24 @@
             </a>
         
             <oui-datagrid rows="ctrl.accounts.data">
-                <oui-column title="::'logs_accounts_col_name' | translate" property="name" sortable="asc">
+                <oui-column title="::'logs_accounts_col_name' | translate" property="name" sortable="asc" type="string" searchable filterable>
                     <a class="oui-button oui-button_link"
                         data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})">
                         <span>{{$row.name}}</span>
                     </a>
                 </oui-column>
-                <oui-column title="::'logs_accounts_col_status' | translate" property="state" sortable>
+                <oui-column title="::'logs_accounts_col_status' | translate" property="state" sortable type="string" searchable filterable>
                     <div data-ng-switch="$row.state">
                         <span data-ng-switch-when="ENABLED">{{::'logs_accounts_enabled' | translate}}</span>
                         <span data-ng-switch-when="DISABLED">{{::'logs_accounts_disabled' | translate}}</span>
                         <span data-ng-switch-when="TO_CONFIG">{{::'logs_accounts_setup_required' | translate}}</span>
                     </div>   
                 </oui-column>
-                <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable>
+                <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable type="string" searchable filterable>
                     <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
                     <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.offerType">{{$row.quota.offerType}}</span>   
                 </oui-column>
-                <oui-column title="::'logs_accounts_col_entry_point' | translate" property="cluster.hostname" sortable>
+                <oui-column title="::'logs_accounts_col_entry_point' | translate" property="cluster.hostname" sortable type="string" searchable filterable>
                     <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
                     <span data-ng-if="!$row.quota.isLoadingCluster && $row.cluster.hostname">{{$row.cluster.hostname}}</span>
                 </oui-column>

@@ -1,5 +1,5 @@
 class LogsInputsService {
-    constructor ($q, CloudMessage, CloudPoll, LogsHelperService, LogsInputsConstant, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, CloudMessage, CloudPoll, LogsHelperService, LogsConstants, LogsOptionsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
@@ -7,7 +7,7 @@ class LogsInputsService {
         this.CloudPoll = CloudPoll;
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
         this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
-        this.LogsInputsConstant = LogsInputsConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsOptionsService = LogsOptionsService;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.ServiceHelper = ServiceHelper;
@@ -221,7 +221,7 @@ class LogsInputsService {
         return {
             data: {
                 info: {
-                    exposedPort: this.LogsInputsConstant.DEFAULT_PORT
+                    exposedPort: this.LogsConstants.INPUT_DEFAULT_PORT
                 }
             },
             loading: false
@@ -255,7 +255,7 @@ class LogsInputsService {
      * @memberof LogsInputsService
      */
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsInputsConstant.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.inputOptionType);
     }
 
     /**
@@ -336,20 +336,20 @@ class LogsInputsService {
             return actions;
         }, {});
 
-        const isProcessing = input.info.status === this.LogsInputsConstant.status.PROCESSING;
-        const isToBeConfigured = input.info.status === this.LogsInputsConstant.status.INIT && !input.actionsMap.START;
-        const isPending = (input.info.status === this.LogsInputsConstant.status.INIT || input.info.status === this.LogsInputsConstant.status.PENDING) &&
+        const isProcessing = input.info.status === this.LogsConstants.inputStatus.PROCESSING;
+        const isToBeConfigured = input.info.status === this.LogsConstants.inputStatus.INIT && !input.actionsMap.START;
+        const isPending = (input.info.status === this.LogsConstants.inputStatus.INIT || input.info.status === this.LogsConstants.inputStatus.PENDING) &&
                           input.actionsMap.START;
-        const isRunning = input.info.status === this.LogsInputsConstant.status.RUNNING;
+        const isRunning = input.info.status === this.LogsConstants.inputStatus.RUNNING;
 
-        input.info.state = isProcessing ? this.LogsInputsConstant.state.PROCESSING :
-            input.info.isRestartRequired ? this.LogsInputsConstant.state.RESTART_REQUIRED :
-                isToBeConfigured ? this.LogsInputsConstant.state.TO_CONFIGURE :
-                    isPending ? this.LogsInputsConstant.state.PENDING :
-                        isRunning ? this.LogsInputsConstant.state.RUNNING :
-                            this.LogsInputsConstant.state.UNKNOWN;
+        input.info.state = isProcessing ? this.LogsConstants.inputState.PROCESSING :
+            input.info.isRestartRequired ? this.LogsConstants.inputState.RESTART_REQUIRED :
+                isToBeConfigured ? this.LogsConstants.inputState.TO_CONFIGURE :
+                    isPending ? this.LogsConstants.inputState.PENDING :
+                        isRunning ? this.LogsConstants.inputState.RUNNING :
+                            this.LogsConstants.inputState.UNKNOWN;
 
-        input.info.stateType = this.LogsInputsConstant.stateType[input.info.state];
+        input.info.stateType = this.LogsConstants.inputStateType[input.info.state];
         return input;
     }
 

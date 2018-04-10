@@ -1,6 +1,6 @@
 class LogsStreamsFollowService {
     constructor ($websocket, $translate, OvhApiDbaas, LogsStreamsService,
-                 ControllerHelper, CloudMessage, ServiceHelper, UrlHelper, LogStreamsConstants) {
+                 ControllerHelper, CloudMessage, ServiceHelper, UrlHelper, LogsConstants) {
         this.$websocket = $websocket;
         this.$translate = $translate;
         this.LogsStreamsService = LogsStreamsService;
@@ -9,9 +9,9 @@ class LogsStreamsFollowService {
         this.ServiceHelper = ServiceHelper;
         this.UrlHelper = UrlHelper;
         this.LogsAapiService = OvhApiDbaas.Logs().Aapi();
-        this.LogStreamsConstants = LogStreamsConstants;
+        this.LogsConstants = LogsConstants;
 
-        this.testTypeEnum = _.indexBy([this.LogStreamsConstants.GELF, this.LogStreamsConstants.LTSV, this.LogStreamsConstants.RFC5424]);
+        this.testTypeEnum = _.indexBy([this.LogsConstants.GELF, this.LogsConstants.LTSV, this.LogsConstants.RFC5424]);
         this.webSocket = null;
         this.messages = [];
         this.totalMessages = 0;
@@ -83,7 +83,7 @@ class LogsStreamsFollowService {
      * @param {object} stream
      */
     copyWebSocketAddress (stream) {
-        const url = this.UrlHelper.findUrl(stream, this.LogStreamsConstants.WEB_SOCKET_URL);
+        const url = this.UrlHelper.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
         if (!url) {
             this.CloudMessage.error(this.$translate.instant("logs_streams_follow_get_websocket_error", { stream: stream.info.title }));
         } else {
@@ -214,7 +214,7 @@ class LogsStreamsFollowService {
      * @param {object} stream
      */
     _connectToWebSocket (stream) {
-        const url = this.UrlHelper.findUrl(stream, this.LogStreamsConstants.WEB_SOCKET_URL);
+        const url = this.UrlHelper.findUrl(stream, this.LogsConstants.WEB_SOCKET_URL);
         if (url) {
             this.webSocket = this.$websocket(url);
             let response;
@@ -243,7 +243,7 @@ class LogsStreamsFollowService {
                 if (this.messages.length > 20) {
                     this.messages.pop();
                 }
-                if (this.totalMessages === this.LogStreamsConstants.MESSAGE_THRESHOLD) {
+                if (this.totalMessages === this.LogsConstants.MESSAGE_THRESHOLD) {
                     this.closeConnection();
                 }
             });

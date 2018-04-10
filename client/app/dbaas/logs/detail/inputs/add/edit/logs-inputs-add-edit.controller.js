@@ -1,5 +1,5 @@
 class LogsInputsAddEditCtrl {
-    constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper, LogsInputsAddEditConstant, LogsInputsService, LogsStreamsService) {
+    constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper, LogsConstants, LogsInputsService, LogsStreamsService) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -7,7 +7,7 @@ class LogsInputsAddEditCtrl {
         this.inputId = this.$stateParams.inputId;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
-        this.LogsInputsAddEditConstant = LogsInputsAddEditConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsInputsService = LogsInputsService;
         this.LogsStreamsService = LogsStreamsService;
 

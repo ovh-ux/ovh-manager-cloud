@@ -1,10 +1,9 @@
 class LogsHelperService {
-    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, LogStreamsConstants, ControllerModalHelper, LogsConstants) {
+    constructor ($translate, $state, OvhApiDbaas, ServiceHelper, CloudPoll, ControllerModalHelper, LogsConstants) {
         this.$translate = $translate;
         this.$state = $state;
         this.ServiceHelper = ServiceHelper;
         this.CloudPoll = CloudPoll;
-        this.LogStreamsConstants = LogStreamsConstants;
         this.ControllerModalHelper = ControllerModalHelper;
         this.LogsConstants = LogsConstants;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
@@ -29,7 +28,7 @@ class LogsHelperService {
         return this.CloudPoll.poll({
             item: operation,
             pollFunction: opn => this.OperationApiService.get({ serviceName, operationId: opn.operationId }).$promise,
-            stopCondition: opn => opn.state === this.LogStreamsConstants.FAILURE || opn.state === this.LogStreamsConstants.SUCCESS || opn.state === this.LogStreamsConstants.REVOKED
+            stopCondition: opn => opn.state === this.LogsConstants.FAILURE || opn.state === this.LogsConstants.SUCCESS || opn.state === this.LogsConstants.REVOKED
         });
     }
 
@@ -60,7 +59,7 @@ class LogsHelperService {
         return this.pollOperation(serviceName, operation)
             .$promise
             .then(pollResult => {
-                if (pollResult[0].item.state !== this.LogStreamsConstants.SUCCESS) {
+                if (pollResult[0].item.state !== this.LogsConstants.SUCCESS) {
                     return Promise.reject({ data: { message: "Operation failed" } });
                 }
                 if (successMessage) {

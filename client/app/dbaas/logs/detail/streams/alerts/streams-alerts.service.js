@@ -1,11 +1,11 @@
 class LogsStreamsAlertsService {
-    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, LogsStreamsAlertsConstant, LogsHelperService) {
+    constructor ($q, CloudPoll, OvhApiDbaas, ServiceHelper, LogsConstants, LogsHelperService) {
         this.$q = $q;
         this.CloudPoll = CloudPoll;
         this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
         this.AlertsApiService = OvhApiDbaas.Logs().Alert().Lexi();
         this.ServiceHelper = ServiceHelper;
-        this.LogsStreamsAlertsConstant = LogsStreamsAlertsConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsHelperService = LogsHelperService;
     }
 
@@ -100,15 +100,15 @@ class LogsStreamsAlertsService {
     /**
      * Returns a new alert object with the default properties
      *
-     * @param {any} conditionType - the type of the condition (one of LogsStreamsAlertsConstant.alertType)
+     * @param {any} conditionType - the type of the condition (one of LogsConstants.alertType)
      * @returns the default alert object
      * @memberof LogsStreamsAlertsService
      */
     getNewAlert (conditionType) {
-        const thresholdType = conditionType === this.LogsStreamsAlertsConstant.alertType.numeric ?
-            this.LogsStreamsAlertsConstant.thresholdType.lower :
-            this.LogsStreamsAlertsConstant.thresholdType.more;
-        const constraintType = this.LogsStreamsAlertsConstant.constraintType.mean;
+        const thresholdType = conditionType === this.LogsConstants.alertType.numeric ?
+            this.LogsConstants.thresholdType.lower :
+            this.LogsConstants.thresholdType.more;
+        const constraintType = this.LogsConstants.constraintType.mean;
         return this.$q.when({
             data: {
                 conditionType,

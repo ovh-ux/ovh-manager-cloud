@@ -1,5 +1,5 @@
 class LogsRolesService {
-    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardsService, LogsHelperService, LogsIndexService, LogsOptionsService, LogsRolesConstant, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
+    constructor ($q, $translate, CloudPoll, ControllerHelper, LogsAliasesService, LogsDashboardsService, LogsHelperService, LogsIndexService, LogsOptionsService, LogsConstants, LogsStreamsService, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
@@ -11,7 +11,7 @@ class LogsRolesService {
         this.LogsStreamsService = LogsStreamsService;
         this.LogsHelperService = LogsHelperService;
 
-        this.LogsRolesConstant = LogsRolesConstant;
+        this.LogsConstants = LogsConstants;
         this.CloudPoll = CloudPoll;
         this.LogsApiService = OvhApiDbaas.Logs().Lexi();
         this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
@@ -145,7 +145,7 @@ class LogsRolesService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsRolesConstant.optionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.roleOptionType);
     }
 
     addRole (serviceName, object) {

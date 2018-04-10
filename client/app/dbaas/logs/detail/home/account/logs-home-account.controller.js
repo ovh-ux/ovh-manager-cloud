@@ -1,12 +1,11 @@
 class LogsHomeAccountCtrl {
-    constructor ($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeAccountConstant, LogsHomeConstant, LogsHomeService) {
+    constructor ($location, $stateParams, $uibModalInstance, CloudMessage, ControllerHelper, LogsHomeService, LogsConstants) {
         this.$location = $location;
         this.serviceName = $stateParams.serviceName;
         this.$uibModalInstance = $uibModalInstance;
         this.CloudMessage = CloudMessage;
+        this.LogsConstants = LogsConstants;
         this.ControllerHelper = ControllerHelper;
-        this.LogsHomeAccountConstant = LogsHomeAccountConstant;
-        this.LogsHomeConstant = LogsHomeConstant;
         this.LogsHomeService = LogsHomeService;
         this._initLoaders();
     }

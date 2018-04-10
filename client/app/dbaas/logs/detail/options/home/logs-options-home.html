@@ -57,9 +57,9 @@
 
     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
     <oui-datagrid data-ng-hide="ctrl.options.loading" rows="ctrl.options.data" page-size="15" class="datagrid-without-pagination">
-        <oui-column title="'log_options_type' | translate" property="type" sortable="asc"></oui-column>
-        <oui-column title="'log_options_details' | translate" property="detail" sortable></oui-column>
-        <oui-column title="'log_options_add' | translate" property="quantity">
+        <oui-column title="'log_options_type' | translate" property="type" sortable="asc" type="string" searchable filterable></oui-column>
+        <oui-column title="'log_options_details' | translate" property="detail" sortable type="string" searchable filterable></oui-column>
+        <oui-column title="'log_options_add' | translate" property="quantity" type="number">
             <oui-numeric
                 data-ng-attr-id="{{ $row.planCode }}"
                 class="numeric_without_bottom_margin"
@@ -67,7 +67,7 @@
                 min="0">
             </oui-numeric>
         </oui-column>
-        <oui-column title="'log_options_price' | translate" property="price" data-align="end" sortable>
+        <oui-column title="'log_options_price' | translate" property="price" data-align="end" sortable type="number" filterable>
             {{$row.priceText}}
         </oui-column>
     </oui-datagrid>

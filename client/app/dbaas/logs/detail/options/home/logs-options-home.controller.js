@@ -1,10 +1,9 @@
 class LogsOptionsCtrl {
-    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService, LogsDetailService, LogsConstants) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsConstants, LogsOfferService, LogsOptionsService, CurrencyService, OrderHelperService, LogsDetailService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$window = $window;
         this.ControllerHelper = ControllerHelper;
-        this.LogsOfferConstant = LogsOfferConstant;
         this.LogsOptionsService = LogsOptionsService;
         this.CurrencyService = CurrencyService;
         this.OrderHelperService = OrderHelperService;
@@ -85,7 +84,7 @@ class LogsOptionsCtrl {
      * @memberof LogsOptionsCtrl
      */
     isBasicOffer () {
-        return this.selectedOffer.data.reference === this.LogsOfferConstant.basicOffer;
+        return this.selectedOffer.data.reference === this.LogsConstants.basicOffer;
     }
 
     /**

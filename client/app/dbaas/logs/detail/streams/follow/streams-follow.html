@@ -13,7 +13,7 @@
                 <span data-ng-if="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() | momentFormat:'LL' }} {{ctrl.getLastEvent() | momentFormat:'LTS' }}</span>
             </p>
             <p data-ng-if="!ctrl.isConnectionClosed()">{{::'logs_streams_displaying_logs' | translate}}
-                <span> : <strong>{{ctrl.getTotalMessages() | number}}/{{::ctrl.LogStreamsConstants.MESSAGE_THRESHOLD}}</strong> ({{::'logs_streams_follow_logs_limit' | translate}})</span>
+                <span> : <strong>{{ctrl.getTotalMessages() | number}}/{{::ctrl.LogsConstants.MESSAGE_THRESHOLD}}</strong> ({{::'logs_streams_follow_logs_limit' | translate}})</span>
             </p>
             <p data-ng-if="ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_closed' | translate}}</strong></p>
         </div>

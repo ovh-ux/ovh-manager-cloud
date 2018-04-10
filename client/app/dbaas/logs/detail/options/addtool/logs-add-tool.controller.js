@@ -1,11 +1,11 @@
 class logsAddToolCtrl {
-    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsOfferConstant, LogsOfferService) {
+    constructor ($state, $stateParams, $translate, ControllerHelper, ControllerModalHelper, LogsConstants, LogsOfferService) {
         this.$state = $state;
         this.$translate = $translate;
         this.serviceName = $stateParams.serviceName;
         this.ControllerHelper = ControllerHelper;
         this.ControllerModalHelper = ControllerModalHelper;
-        this.LogsOfferConstant = LogsOfferConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsOfferService = LogsOfferService;
         this._initLoaders();
     }
@@ -33,7 +33,7 @@ class logsAddToolCtrl {
      * @memberof logsAddToolCtrl
      */
     _isBasicOffer (offerObj) {
-        return offerObj.reference === this.LogsOfferConstant.basicOffer;
+        return offerObj.reference === this.LogsConstants.basicOffer;
     }
 
     /**

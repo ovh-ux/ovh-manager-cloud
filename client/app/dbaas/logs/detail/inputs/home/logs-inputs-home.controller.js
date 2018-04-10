@@ -1,12 +1,12 @@
 class LogsInputsHomeCtrl {
-    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsInputsConstant, LogsInputsService) {
+    constructor ($state, $stateParams, $translate, CloudMessage, ControllerHelper, LogsConstants, LogsInputsService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.ControllerHelper = ControllerHelper;
-        this.LogsInputsConstant = LogsInputsConstant;
+        this.LogsConstants = LogsConstants;
         this.LogsInputsService = LogsInputsService;
         this._initLoaders();
     }
@@ -100,7 +100,7 @@ class LogsInputsHomeCtrl {
      * @memberof LogsInputsCtrl
      */
     _setInputToProcessing (input) {
-        input.info.status = this.LogsInputsConstant.status.PROCESSING;
+        input.info.status = this.LogsConstants.inputStatus.PROCESSING;
         this.LogsInputsService.transformInput(input);
     }
 

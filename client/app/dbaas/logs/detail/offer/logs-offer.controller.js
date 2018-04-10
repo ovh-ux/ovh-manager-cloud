@@ -1,5 +1,5 @@
 class LogsOfferCtrl {
-    constructor ($state, $stateParams, $window, ControllerHelper, LogsOfferConstant, LogsOfferService, LogsOrderService, OrderHelperService, LogsDetailService, LogsConstants) {
+    constructor ($state, $stateParams, $window, ControllerHelper, LogsConstants, LogsOfferService, LogsOrderService, OrderHelperService, LogsDetailService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.serviceName = this.$stateParams.serviceName;
@@ -7,7 +7,6 @@ class LogsOfferCtrl {
         this.LogsOrderService = LogsOrderService;
         this.ControllerHelper = ControllerHelper;
         this.OrderHelperService = OrderHelperService;
-        this.LogsOfferConstant = LogsOfferConstant;
         this.LogsDetailService = LogsDetailService;
         this.LogsConstants = LogsConstants;
         this.$window = $window;
@@ -48,7 +47,7 @@ class LogsOfferCtrl {
     selectOffer (offerObj) {
         this.offerDetail.selectedOffer = offerObj.reference;
         this.offerDetail.currentOffer = offerObj.reference;
-        if (offerObj.reference !== this.LogsOfferConstant.basicOffer) {
+        if (offerObj.reference !== this.LogsConstants.basicOffer) {
             this.offerDetail.currentOfferType = "pro";
         }
     }

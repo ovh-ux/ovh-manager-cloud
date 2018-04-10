@@ -1,5 +1,5 @@
 class LogsInputsAddConfigureCtrl {
-    constructor ($q, $state, $stateParams, $translate, ControllerModalHelper, ControllerHelper, LogsInputsService, LogsInputsConfigureConstant, CloudMessage) {
+    constructor ($q, $state, $stateParams, $translate, ControllerModalHelper, ControllerHelper, LogsInputsService, LogsConstants, CloudMessage) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -9,7 +9,7 @@ class LogsInputsAddConfigureCtrl {
         this.ControllerModalHelper = ControllerModalHelper;
         this.ControllerHelper = ControllerHelper;
         this.LogsInputsService = LogsInputsService;
-        this.LogsInputsConfigureConstant = LogsInputsConfigureConstant;
+        this.LogsConstants = LogsConstants;
         this.CloudMessage = CloudMessage;
         this.configuration = {
             engineType: "",
@@ -29,7 +29,7 @@ class LogsInputsAddConfigureCtrl {
             loaderFunction: () => this.LogsInputsService.getInput(this.serviceName, this.inputId)
                 .then(input => {
                     this.configuration.engineType = input.info.engine.name;
-                    if (this.configuration.engineType === this.LogsInputsConfigureConstant.logstash) {
+                    if (this.configuration.engineType === this.LogsConstants.logstash) {
                         this._initLogstash(input.info.engine.configuration);
                     } else {
                         this._initFlowgger(input.info.engine.configuration);
@@ -66,9 +66,9 @@ class LogsInputsAddConfigureCtrl {
     }
 
     applyConfiguration (name) {
-        this.configuration.logstash.inputSection = this.LogsInputsConfigureConstant.logStashWizard[name].input.replace("INPUT_PORT", this.input.data.info.exposedPort);
-        this.configuration.logstash.filterSection = this.LogsInputsConfigureConstant.logStashWizard[name].filter;
-        this.configuration.logstash.patternSection = this.LogsInputsConfigureConstant.logStashWizard[name].patterns;
+        this.configuration.logstash.inputSection = this.LogsConstants.logStashWizard[name].input.replace("INPUT_PORT", this.input.data.info.exposedPort);
+        this.configuration.logstash.filterSection = this.LogsConstants.logStashWizard[name].filter;
+        this.configuration.logstash.patternSection = this.LogsConstants.logStashWizard[name].patterns;
     }
 
     executeTest () {
