@@ -145,7 +145,7 @@ class LogsRolesService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.roleOptionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.ROLE_OPTION_REFERENCE);
     }
 
     addRole (serviceName, object) {

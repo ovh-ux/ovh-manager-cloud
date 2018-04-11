@@ -1,6 +1,7 @@
 class LogsWelcomeCtrl {
-    constructor ($state, LogsConstants, OrderHelperService, ovhDocUrl) {
+    constructor ($state, LogsConstants, OrderHelperService, ovhDocUrl, TARGET) {
         this.$state = $state;
+        this.TARGET = TARGET;
         this.LogsConstants = LogsConstants;
         this.OrderHelperService = OrderHelperService;
         this.ovhDocUrl = ovhDocUrl;
@@ -8,7 +9,6 @@ class LogsWelcomeCtrl {
     }
 
     $onInit () {
-        debugger;
         this.urls.docsUrl = this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME);
         this.OrderHelperService.buildUrl(this.LogsConstants.LOGS_PRODUCT_URL)
             .then(url => {

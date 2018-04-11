@@ -255,7 +255,7 @@ class LogsInputsService {
      * @memberof LogsInputsService
      */
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.inputOptionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.INPUT_OPTION_REFERENCE);
     }
 
     /**

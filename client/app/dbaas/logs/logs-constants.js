@@ -3,7 +3,6 @@ angular.module("managerApp").constant("LogsConstants", {
     EXPOSED_PORT_MIN: 514,
     EXPOSED_PORT_MAX: 65535,
     DISPLAY_NAME_MAX_LENGTH: 255,
-    indexOptionType: "index",
     FAILURE: "FAILURE",
     SUCCESS: "SUCCESS",
     HIGH: "high",
@@ -18,7 +17,6 @@ angular.module("managerApp").constant("LogsConstants", {
     SERVICE_STATE_DISABLED: "DISABLED",
     SERVICE_STATE_ENABLED: "ENABLED",
     PASSWORD_SPECIAL_CHARACTERS: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
-    optionType: "logs-stream",
     MESSAGE_THRESHOLD: 1000,
     WEB_SOCKET_URL: "WEB_SOCKET",
     RFC_URL: "TCP_TLS_RFC5424",
@@ -261,8 +259,6 @@ angular.module("managerApp").constant("LogsConstants", {
         unknown: "error"
     },
     INPUT_DEFAULT_PORT: 6514,
-    inputOptionType: "logs-input",
-    roleOptionType: "logs-role",
     basicOffer: "logs-basic",
     offertypes: {
         BASIC: "Basic",
@@ -271,7 +267,7 @@ angular.module("managerApp").constant("LogsConstants", {
     productName: "logs",
     ALIAS_OPTION_REFERENCE: "logs-alias",
     DASHBOARD_OPTION_REFERENCE: "logs-dashboard",
-    INDEX_OPTION_REFERENCE: "index",
+    INDEX_OPTION_REFERENCE: "logs-index",
     INPUT_OPTION_REFERENCE: "logs-input",
     ROLE_OPTION_REFERENCE: "logs-role",
     STREAM_OPTION_REFERENCE: "logs-stream",
