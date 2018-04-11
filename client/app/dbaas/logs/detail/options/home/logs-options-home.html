@@ -1,7 +1,7 @@
 <div class="cui-page__content log-options">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="log_options_title"></span>
-    
+
     <oui-spinner data-ng-show="ctrl.currentOptions.loading || ctrl.selectedOffer.loading"></oui-spinner>
     <div class="row mb-4" data-ng-if="!ctrl.isBasicOffer() && !ctrl.selectedOffer.loading">
         <p class="oui-paragraph col-md-12" data-translate="log_options_current_offer_title"></p>
@@ -35,7 +35,7 @@
         </div>
         <p class="oui-paragraph" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></p>
     </div>
-    
+
     <div
      class="row d-flex flex-wrap mb-4">
         <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">
@@ -44,7 +44,7 @@
                 <cui-tile-body class="cui-tile__top-bordered">
                     <cui-tile-item>
                         <cui-tile-definitions>
-                            <cui-tile-definition-term data-ng-repeat="suboption in option.details" data-term="suboption.quantity+' '+suboption.type+', '+suboption.detail"></cui-tile-definition-term>                            
+                            <cui-tile-definition-term data-ng-repeat="suboption in option.details" data-term="suboption.quantity+' '+suboption.type+', '+suboption.detail"></cui-tile-definition-term>
                         </cui-tile-definitions>
                     </cui-tile-item>
                 </cui-tile-body>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <p class="oui-paragraph"><span data-translate="logs_options_description_manage"></span><a data-translate="logs_options_manage_link" data-ng-click="ctrl.goToManage()"></a></p>
+    <p class="oui-paragraph"><span data-translate="logs_options_description_manage"></span> <a data-translate="logs_options_manage_link" data-ng-click="ctrl.goToManage()"></a></p>
     <p class="oui-paragraph" data-translate="log_options_intro_text"></p>
 
     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
