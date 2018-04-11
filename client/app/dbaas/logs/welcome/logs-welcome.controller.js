@@ -1,6 +1,7 @@
 class LogsWelcomeCtrl {
-    constructor ($state, LogsConstants, OrderHelperService, ovhDocUrl) {
+    constructor ($state, LogsConstants, OrderHelperService, ovhDocUrl, TARGET) {
         this.$state = $state;
+        this.TARGET = TARGET;
         this.LogsConstants = LogsConstants;
         this.OrderHelperService = OrderHelperService;
         this.ovhDocUrl = ovhDocUrl;

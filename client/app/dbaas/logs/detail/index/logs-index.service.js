@@ -76,7 +76,7 @@ class LogsIndexService {
     }
 
     getSubscribedOptions (serviceName) {
-        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.indexOptionType);
+        return this.LogsOptionsService.getSubscribedOptionsByType(serviceName, this.LogsConstants.INDEX_OPTION_REFERENCE);
     }
 
     createIndex (serviceName, object) {

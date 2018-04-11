@@ -16,28 +16,28 @@
         <cui-inline-adder unique-property="allowedNetworkId"
             on-add="ctrl.addNetwork(item)"
             on-remove="ctrl.removeNetwork(item)">
-            <cui-inline-adder-item  data-ng-repeat="item in ctrl.input.data.allowedNetworks"
+            <cui-inline-adder-group  data-ng-repeat="item in ctrl.input.data.allowedNetworks"
                 item="item"
                 is-new-item="!item.allowedNetworkId">
-                    <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}">
-                        <label for="inputIpAddress{{$index}}" class="oui-label" data-translate="inputs_logs_networks_ip_address"></label>
-                        <div class="oui-field-content">
-                            <div class="oui-field-control oui-field-control_4">
-                                <input type="text" 
-                                        id="inputIpAddress{{$index}}" 
-                                        name="inputIpAddress{{$index}}"
-                                        class="oui-input" data-ng-model="item.network"
-                                        data-ng-disabled="item.allowedNetworkId"
-                                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
-                                        autofocus
-                                        required />
-                                <p data-ng-if="!item.allowedNetworkId" class="input-network__example_text">
-                                    <span> {{::'inputs_logs_networks_ip_address_example' | translate}} </span>
-                                </p>
+                    <cui-inline-adder-item>
+                        <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}">
+                            <label for="inputIpAddress{{$index}}" class="oui-label" data-translate="inputs_logs_networks_ip_address"></label>
+                            <div class="oui-field-content">
+                                    <input type="text" 
+                                            id="inputIpAddress{{$index}}" 
+                                            name="inputIpAddress{{$index}}"
+                                            class="oui-input" data-ng-model="item.network"
+                                            data-ng-disabled="item.allowedNetworkId"
+                                            data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form['inputIpAddress' + $index].$invalid}"
+                                            autofocus
+                                            required />
+                                    <p data-ng-if="!item.allowedNetworkId" class="input-network__example_text">
+                                        <span> {{::'inputs_logs_networks_ip_address_example' | translate}} </span>
+                                    </p>
                             </div>
                         </div>
-                    </div>
-            </cui-inline-adder-item>
+                    </cui-inline-adder-item>
+            </cui-inline-adder-group>
         </cui-inline-adder>
     </form>
     <div class="cui-form-actions">
