@@ -14,6 +14,10 @@ class LogsWelcomeCtrl {
             .then(url => {
                 this.urls.productURL = url;
             });
+        this.OrderHelperService.buildUrl(this.LogsConstants.ORDER_URL)
+            .then(url => {
+                this.urls.orderURL = url;
+            });
     }
 }
 
