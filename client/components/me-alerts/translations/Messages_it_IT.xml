@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Il tuo account OVH ha un saldo negativo di <strong>{{value}}</strong> al {{date | date:'medium'}}. Accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Hai un saldo negativo di <strong>{{value}}</strong>. Accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Il tuo account ha un saldo negativo di <strong>{{ dueAmount }}</strong> (di cui un importo di {{ unmaturedAmount }} non scaduto). Accedi alla <a href="#/billing/statements" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Il tuo account ha un saldo negativo di <strong>{{ dueAmount }}</strong> (di cui un importo di {{ unmaturedAmount }} non scaduto). Accedi alla <a href="{{ link }}" class="alert-link">sezione fatturazione</a> per regolarizzare la tua situazione.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Il tuo conto OVH ha raggiunto la soglia massima definita. Per maggiori informazioni, accedi alla <a href="{{link}}" class="alert-link">sezione fatturazione</a>.</translation>
 

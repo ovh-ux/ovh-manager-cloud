@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Your OVH account is outstanding by <strong>{{value}}</strong> as of {{date | date:'medium'}}. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to correct the situation.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">You owe <strong>{{value}}</strong>. Please go to the <a href="{{link}}" class="alert-link">billing section</a> to sort out the situation.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">You have a debt of <strong>{{ dueAmount }}</strong> (including an amount of {{ unmaturedAmount }} unmatured). Go to <a href="#/billing/statements" class="alert-link">the billing section</a> to regularize the situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">You have a debt of <strong>{{ dueAmount }}</strong> (including an amount of {{ unmaturedAmount }} unmatured). Go to <a href="{{ link }}" class="alert-link">the billing section</a> to regularize the situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Your OVH account has reached the threshold you defined. Please go to the <a href="{{link}}" class="alert-link">billing section</a> for more information.</translation>
 

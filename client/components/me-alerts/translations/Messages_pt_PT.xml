@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">A sua conta OVH tem um saldo negativo de <strong>{{value}}</strong> à data de {{date | date:'medium'}}. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para regularizar a situação.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Tem uma dívida de <strong>{{value}}</strong>. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para regularizar a situação.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="{{ link }}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">A sua conta OVH atingiu o limite definido. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para mais informações.</translation>
 
