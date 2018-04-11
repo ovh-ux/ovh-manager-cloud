@@ -11,7 +11,8 @@
    <translation id="cpa_description_num" qtlid="250069">Projet {{num}}</translation>
    <translation id="cpa_description_error_min_char" qtlid="255311">Le nom de votre projet doit contenir minimum 3 caractères.</translation>
    <translation id="cpa_description_error_max_char" qtlid="255324">Le nom de votre projet ne peut pas dépasser 255 caractères.</translation>
-
+   <translation id="cpd_project_created" qtlid="245935">Votre projet est prêt !</translation>
+   <translation id="cpd_project_redirect" qtlid="245857">Redirection...</translation>
 
    <translation id="cpa_paymentmean" qtlid="140014">Moyen de paiement</translation>
    <translation id="cpa_paymentmean_creditCard" qtlid="275817">Débiter automatiquement ma carte bancaire (Recommandé).</translation>
@@ -24,7 +25,6 @@
 
    <translation id="cpa_paymentmean_expl" qtlid="319154">Chaque projet cloud est facturé en début de mois (consommations à l'heure ou au Gio du mois écoulé et forfaits mensuels d'instances du mois à venir). Une facture de prorata est également émise lors du lancement des instances en forfait mensuel.</translation>
    <translation id="cpa_paymentmean_expl2" qtlid="266703">Chaque facture sera automatiquement débitée de votre moyen de paiement par défaut (après déductions de vos éventuels crédits, vouchers et compte prépayé OVH).</translation>
-
 
    <translation id="cpa_and_or" qtlid="245727">et/ou</translation>
    <translation id="cpa_voucher" qtlid="266716">Voucher (facultatif)</translation>
@@ -48,9 +48,14 @@
 
    <translation id="cpa_success" qtlid="295777">Le projet est en cours de création. Veuillez payer ce <a href="{{url}}" target="blank">bon de commande</a> afin de pouvoir l'utiliser.</translation>
 
-   <translation id="cpa_error" qtlid="144721">Une erreur est survenue. Veuillez réessayer plus tard.</translation>
+   <translation id="cpa_error">Une erreur est survenue. {{message}}</translation>
    <translation id="cpa_error_invalid_paymentmean" qtlid="245818">Vous devez renseigner un moyen de paiement valide (actif).</translation>
    <translation id="cpa_error_invalid_voucher" qtlid="255350">Le voucher est invalide (erroné ou expiré).</translation>
    <translation id="cpa_error_contracts_tosign" qtlid="245844">Il y a un ou plusieurs contrats à valider.</translation>
    <translation id="cpa_error_over_quota" qtlid="295790">Vous avez atteint le nombre maximum de projets Cloud. Veuillez <a href="#/support?state=new" target="_blank">contacter le support</a> pour débloquer cette limite.</translation>
+
+   <translation id="cpd_project_creating_help">Cette opération peut prendre quelques minutes.  Vous serez automatiquement redirigé lorsque le projet sera créé.</translation>
+   <translation id="cpd_project_creating_bc_havetopay" qtlid="272027">Veuillez finaliser le paiement de votre <a href="{{url}}" target="_blank">bon de commande initial</a>.</translation>
+   <translation id="cpd_project_creating_bc_do_not_havetopay">Votre commande est en cours de finalisation.</translation>
+   <translation id="cpd_project_creating_bc_support" qtlid="286812">Si cette page est toujours présente plusieurs minutes après paiement, merci de contacter <a href="#/support">notre service client</a>.</translation>
 </translations>
