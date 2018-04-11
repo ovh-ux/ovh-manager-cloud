@@ -1,7 +1,7 @@
 class ManagerNavbarService {
     constructor ($q, $translate, $translatePartialLoader, atInternet, FeatureAvailabilityService,
                     SessionService, ProductsService, OtrsPopupService, ssoAuthentication, TranslateService,
-                    StatusService, LANGUAGES, TARGET, MANAGER_URLS, REDIRECT_URLS, URLS) {
+                    LANGUAGES, TARGET, MANAGER_URLS, REDIRECT_URLS, URLS, MeAlertsV2Service) {
         this.$q = $q;
         this.$translate = $translate;
         this.$translatePartialLoader = $translatePartialLoader;
@@ -9,7 +9,6 @@ class ManagerNavbarService {
         this.featureAvailabilityService = FeatureAvailabilityService;
         this.sessionService = SessionService;
         this.productsService = ProductsService;
-        this.statusService = StatusService;
         this.translateService = TranslateService;
         this.otrsPopupService = OtrsPopupService;
         this.ssoAuthentication = ssoAuthentication;
@@ -26,6 +25,7 @@ class ManagerNavbarService {
             loadBalancer: "LOAD_BALANCER",
             cloudDesktop: "CLOUD_DESKTOP"
         };
+        this.meAlertsV2Service = MeAlertsV2Service;
     }
 
     getProducts (products) {
@@ -583,7 +583,7 @@ class ManagerNavbarService {
         return this.$q.all({
             translate: this.loadTranslations(),
             user: this.sessionService.getUser(),
-            notifications: this.statusService.getNotificationsMenu()
+            notifications: this.meAlertsV2Service.getNavbarContent()
         })
             .then(({ user, notifications }) => getBaseNavbar(user, notifications))
             .catch(() => getBaseNavbar());
