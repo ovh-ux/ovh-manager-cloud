@@ -545,8 +545,8 @@
    <translation id="common_criteria_adder_operator_string_is">est égal à</translation>
    <translation id="common_criteria_adder_operator_string_isNot">est différent de</translation>
    <translation id="common_criteria_adder_operator_number_is">est égal à</translation>
-   <translation id="common_criteria_adder_operator_number_smaller">est inférieure à</translation>
-   <translation id="common_criteria_adder_operator_number_bigger">est supérieure à</translation>
+   <translation id="common_criteria_adder_operator_number_smaller">est inférieur à</translation>
+   <translation id="common_criteria_adder_operator_number_bigger">est supérieur à</translation>
    <translation id="common_criteria_adder_operator_date_is">est</translation>
    <translation id="common_criteria_adder_operator_date_isBefore">est avant</translation>
    <translation id="common_criteria_adder_operator_date_isAfter">est après</translation>
