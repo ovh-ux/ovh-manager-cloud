@@ -1,3 +1,13 @@
+<a name="7.1.1"></a>
+## [7.1.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.0...v7.1.1) (2018-04-12)
+
+
+### Bug Fixes
+
+* **pci:** fix issue where directing to list instead of diagram ([c0dcfe5](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0dcfe5))
+
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.0.1...v7.1.0) (2018-04-05)
 
