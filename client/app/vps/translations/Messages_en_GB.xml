@@ -437,7 +437,7 @@
    <translation id="vps_backup_storage_access_delete_success" qtlid="452878">Deletion of access to backup storage for the {{ipBlock}} IP block has been processed, but this may take a few minutes</translation>
    <translation id="vps_backup_storage_access_delete_failure" qtlid="452891">An error has occurred attempting to delete backup storage access for the {{ipBlock}} IP block</translation>
 
-   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">A error occurred on retrieving authorisable blocks </translation>
+   <translation id="vps_backup_storage_access_add_ip_failure" qtlid="180642">A error occurred while retrieving authorisable blocks </translation>
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Add an access</translation>
    <translation id="vps_backup_storage_access_add" qtlid="180772">Add an access</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Please select the IP block you wish to authorise and the access options.</translation>
@@ -450,7 +450,7 @@
    <translation id="vps_backup_storage_access_add_ip" qtlid="180850">Block involved:</translation>
    <translation id="vps_backup_storage_access_add_authorization" qtlid="180863">Authorise in:</translation>
    <translation id="vps_backup_storage_access_add_success" qtlid="184438">The request to add access rules to the backup storage has been registered but may take a few minutes</translation>
-   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some. However, errors occurred for others.</translation>
+   <translation id="vps_backup_storage_access_add_partial" qtlid="184451">The request to add access rules to the backup storage has been registered but may take a few minutes for some rules. However, errors occurred for others.</translation>
    <translation id="vps_backup_storage_access_add_failure" qtlid="184464">An error occurred when requesting to add access rules to the backup storage </translation>
    <translation id="vps_backup_storage_access_add_no_block" qtlid="210087">All the available blocks have been authorised</translation>
 

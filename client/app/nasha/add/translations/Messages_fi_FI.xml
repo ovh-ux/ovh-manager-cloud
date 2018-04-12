@@ -23,7 +23,7 @@ NAS-HA -tuotteiden listan latauksessa.</translation>
    <translation id="nasha_order_price" qtlid="345247">ALV0 (1 kk)</translation>
    <translation id="nasha_order_datacenter" qtlid="345260">Konesalin valinta</translation>
    <translation id="nasha_order_datacenter_rbx" qtlid="120414">Roubaix</translation>
-   <translation id="nasha_order_datacenter_bhs" qtlid="172189">Beauharnois</translation>
+   <translation id="nasha_order_datacenter_bhs" qtlid="172189">Montreal</translation>
    <translation id="nasha_order_datacenter_sbg" qtlid="172202">Strasburg</translation>
    <translation id="nasha_order_datacenter_gra" qtlid="264192">Gravelines</translation>
    <translation id="nasha_order_datacenter_unavailable" qtlid="448712">Suuren suosion vuoksi tuote on tilapäisesti loppu konesalissa {{ region }}. Vastaanlaista suorituskykyä voidaan saada konesalissa {{ fallback }}.</translation>

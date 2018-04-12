@@ -286,10 +286,10 @@
    <translation id="cpcivm_addedit_save_multiple_error" qtlid="272248">Ops! Si è verificato un errore durante la creazione dei tuoi server!</translation>
    <translation id="cpcivm_addedit_save_multiple_info" qtlid="272261">Stai per creare {{nb}} istanze</translation>
 
-   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Usage général (Ressources équilibrées)</translation>
-   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcul optimisé (CPU)</translation>
-   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Mémoire optimisée (RAM)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcul accéléré (GPU)</translation>
-   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcul accéléré (GPU, FPGA)</translation>
-   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Ressources partagées (Sandbox)</translation>
+   <translation id="cpcivm_addedit_flavor_balanced" qtlid="469075">Uso generale (Risorse bilanciate)</translation>
+   <translation id="cpcivm_addedit_flavor_cpu" qtlid="469088">Calcolo ottimizzato (CPU)</translation>
+   <translation id="cpcivm_addedit_flavor_ram" qtlid="469101">Memoria ottimizzata (RAM)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated" qtlid="469114">Calcolo accelerato (GPU)</translation>
+   <translation id="cpcivm_addedit_flavor_accelerated_soon" qtlid="469127">Calcolo accelerato (GPU, FPGA)</translation>
+   <translation id="cpcivm_addedit_flavor_vps" qtlid="469140">Sandbox (Risorse condivise)</translation>
 </translations>

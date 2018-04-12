@@ -122,7 +122,7 @@
    <translation id="instance_creation_success" qtlid="242548">Server wird erstellt</translation>
    <translation id="instance_creation_PermissionDenied" qtlid="243419">Quota überschritten: Sie können keine weiteren Instanzen erstellen.</translation>
 
-   <translation id="storage_details_guide_title" qtlid="300370">Hilfen</translation>
+   <translation id="storage_details_guide_title" qtlid="300370">Anleitungen</translation>
    <translation id="storage_details_guide_pca" qtlid="406879">Public Cloud Archive (PCA)</translation>
    <translation id="storage_details_guide_pcs" qtlid="406892">Public Cloud Storage (PCS)</translation>
    <translation id="storage_details_guide_footer" qtlid="406905">Alle Anleitungen von OVH</translation>

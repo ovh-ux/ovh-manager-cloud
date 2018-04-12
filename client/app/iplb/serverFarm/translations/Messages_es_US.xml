@@ -20,7 +20,7 @@
    <translation id="iplb_farm_server_list_col_server" qtlid="8290">Serveur</translation>
    <translation id="iplb_farm_server_list_col_ipv4" qtlid="101781">IPv4</translation>
    <translation id="iplb_farm_server_list_col_active" qtlid="29635">Active</translation>
-   <translation id="iplb_farm_server_list_col_status" qtlid="251970">Status</translation>
+   <translation id="iplb_farm_server_list_col_status" qtlid="251970">Estado</translation>
 
    <translation id="iplb_farm_protocol_http" qtlid="19639">HTTP</translation>
    <translation id="iplb_farm_protocol_https" qtlid="60228">HTTPS</translation>
@@ -62,7 +62,7 @@
    <translation id="iplb_farm_edit_probe_match" qtlid="438012">Match</translation>
    <translation id="iplb_farm_edit_probe_match_" qtlid="42370">-</translation>
    <translation id="iplb_farm_edit_probe_match_default" qtlid="438025">Default</translation>
-   <translation id="iplb_farm_edit_probe_match_status" qtlid="251970">Status</translation>
+   <translation id="iplb_farm_edit_probe_match_status" qtlid="251970">Estado</translation>
    <translation id="iplb_farm_edit_probe_match_contains" qtlid="438038">Contains</translation>
    <translation id="iplb_farm_edit_probe_match_matches" qtlid="438051">Matches</translation>
    <translation id="iplb_farm_edit_probe_pattern" qtlid="438064">Pattern</translation>
