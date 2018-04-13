@@ -14,8 +14,7 @@
                     <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_aliases_update_title"></h2>
                     <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_aliases_add"></h2>
                     <div ng-if="ctrl.isEdit" class="mb-3">
-                        <span data-translate="logs_aliases_update_description"></span>
-                        <b><span>{{ ctrl.alias.data.name }}</span></b>
+                        <span data-translate="logs_aliases_update_description" data-translate-values="{name: ctrl.alias.data.name}"></span>
                     </div>
                 </div>
 

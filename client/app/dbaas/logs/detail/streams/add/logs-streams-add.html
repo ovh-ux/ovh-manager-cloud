@@ -8,6 +8,10 @@
 
     <div><oui-spinner data-ng-show="ctrl.stream.loading"></oui-spinner></div>
     <form novalidate name="ctrl.form" data-ng-hide="ctrl.stream.loading">
+        <div ng-if="ctrl.isEdit" class="mb-5">
+            <span data-translate="logs_streams_update_description" data-translate-values="{name:ctrl.stream.data.title}"></span>
+        </div>
+
         <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.stream_name.$invalid}">
             <label for="stream_name" class="oui-label" data-translate="logs_streams_col_title"></label>
             <div class="oui-field__content">

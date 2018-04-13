@@ -1,35 +1,38 @@
 <div class="cui-page__content inputs-logs-add">
     <oui-back-button class="back_button_inline_text" on-click="ctrl.gotoInputsHome()"></oui-back-button>
-    <span class="oui-header_3" data-translate="{{ ctrl.editMode ? 'inputs_logs_title_edit' : 'inputs_logs_title_add' }}" data-translate-values="{ title: ctrl.input.data.info.title}"></span>
-    
+    <span class="oui-header_3" data-translate="{{ ctrl.editMode ? 'inputs_logs_title_edit' : 'inputs_logs_title_add' }}"></span>
+    <div ng-if="ctrl.editMode" class="mb-5">
+        <span data-translate="inputs_logs_edit_description" data-translate-values="{ name: ctrl.input.data.info.title}"></span>
+    </div>
+
     <ul class="oui-progress-tracker">
         <li class="oui-progress-tracker__step"
             data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.editwizard.edit') || ctrl.$state.is('dbaas.logs.detail.inputs.addwizard.add') }">
-        <a 
-            data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit" 
+        <a
+            data-ui-sref="dbaas.logs.detail.inputs.editwizard.edit"
             class="oui-progress-tracker__status">
             <span class="oui-progress-tracker__label" data-translate="{{ ctrl.editMode ? 'inputs_logs_step1_edit' : 'inputs_logs_step1_add' }}"></span>
         </a>
         </li>
         <li class="oui-progress-tracker__connector"></li>
-        <li class="oui-progress-tracker__step" 
+        <li class="oui-progress-tracker__step"
             data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.editwizard.configure'), 'oui-progress-tracker__step_disabled': !ctrl.editMode }">
-        <a 
-            data-ui-sref="dbaas.logs.detail.inputs.editwizard.configure" 
+        <a
+            data-ui-sref="dbaas.logs.detail.inputs.editwizard.configure"
             class="oui-progress-tracker__status">
             <span class="oui-progress-tracker__label" data-translate="inputs_logs_step2"></span>
         </a>
         </li>
         <li class="oui-progress-tracker__connector"></li>
-        <li class="oui-progress-tracker__step" 
+        <li class="oui-progress-tracker__step"
             data-ng-class="{ 'oui-progress-tracker__step_active': ctrl.$state.is('dbaas.logs.detail.inputs.editwizard.networks'), 'oui-progress-tracker__step_disabled': !ctrl.editMode }">
-        <a 
-            data-ui-sref="dbaas.logs.detail.inputs.editwizard.networks" 
+        <a
+            data-ui-sref="dbaas.logs.detail.inputs.editwizard.networks"
             class="oui-progress-tracker__status">
             <span class="oui-progress-tracker__label" data-translate="inputs_logs_step3"></span>
         </a>
         </li>
     </ul>
-    
+
     <div ui-view="logsInputsAdd"></div>
 </div>

@@ -15,12 +15,10 @@
                     <h2 class="oui-modal__title" ng-if="ctrl.isDuplicate" data-translate="logs_dashboards_duplicate_title"></h2>
                     <h2 class="oui-modal__title" ng-if="!ctrl.isEdit && !ctrl.isDuplicate" data-translate="logs_dashboards_add"></h2>
                     <div ng-if="ctrl.isEdit" class="mb-3">
-                        <span data-translate="logs_dashboards_update_description"></span>
-                        <b><span>{{ ctrl.dashboard.data.title }}</span></b>
+                        <span data-translate="logs_dashboards_update_description" data-translate-values="{name: ctrl.dashboard.data.title}"></span>
                     </div>
                     <div ng-if="ctrl.isDuplicate" class="mb-3">
-                        <span data-translate="logs_dashboards_duplicate_description"></span>
-                        <b><span>{{ ctrl.dashboardName }}</span></b>
+                        <span data-translate="logs_dashboards_duplicate_description" data-translate-values="{name: ctrl.dashboardName}"></span>
                     </div>
                 </div>
 
@@ -92,7 +90,7 @@
                                     </option>
                                 </select>
                                 <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </div>                        
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,6 +124,5 @@
         </div>
     </div>
 </form>
-    
-    
-    
+
+
