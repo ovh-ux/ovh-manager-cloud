@@ -24,12 +24,13 @@ class MeAlertsService {
                             if (_.get(alert, "data.debtAccount.unmaturedAmount.value", 0) > 0) {
                                 this.warningAlert(this.$translate.instant("me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT", {
                                     dueAmount: _.get(alert, "data.debtAccount.dueAmount.text"),
-                                    unmaturedAmount: _.get(alert, "data.debtAccount.unmaturedAmount.text")
+                                    unmaturedAmount: _.get(alert, "data.debtAccount.unmaturedAmount.text"),
+                                    link: this.REDIRECT_URLS.billing
                                 }));
                             } else {
                                 this.warningAlert(this.$translate.instant("me_alerts_DEBTACCOUNT_DEBT", {
                                     value: _.get(alert, "data.debtAccount.dueAmount.text"),
-                                    link: this.REDIRECT_URLS.paymentMeans
+                                    link: this.REDIRECT_URLS.billing
                                 }));
                             }
                             break;
