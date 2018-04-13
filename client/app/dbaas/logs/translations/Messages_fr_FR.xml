@@ -131,8 +131,8 @@
    <translation id="logs_home_usage">Utilisation</translation>
    <translation id="logs_home_configuration">Configuration</translation>
    <translation id="logs_home_account_name">Nom</translation>
-   <translation id="logs_home_tokens">Tokens</translation>
-   <translation id="logs_home_tokens_tooltip">Ces tokens vous permettent d'accéder aux APIs</translation>
+   <translation id="logs_home_tokens">Jetons de lecture</translation>
+   <translation id="logs_home_tokens_tooltip">Ces jetons (tokens) vous permettent d'accéder aux APIs</translation>
    <translation id="logs_home_password">Mot de passe</translation>
    <translation id="logs_home_ssi_configuration">Configuration SSI</translation>
    <translation id="logs_home_collector" qtlid="421217">Outils de collecte</translation>
