@@ -10,10 +10,14 @@ class VpsUpgradeCtrl {
         this.Vps = VpsService;
 
         this.loaders = {
-            init: false
+            step1: false,
+            step2: false
         };
 
-        this.step = 0;
+        this.completed = {
+            step1: false,
+            step2: false
+        };
         this.order = null;
         this.selectedModel = {};
         this.upgradesList = null;
@@ -21,12 +25,6 @@ class VpsUpgradeCtrl {
 
     $onInit () {
         this.previousState = this.CloudNavigation.getPreviousState();
-        this.loaders.init = true;
-        this.loadNextStep();
-    }
-
-    loadNextStep (step) {
-        this.step = step || this.step + 1;
     }
 
     getCurrentModel () {
@@ -34,10 +32,11 @@ class VpsUpgradeCtrl {
     }
 
     loadUpgradesList () {
-        this.loaders.step1 = true;
         if (!this.upgradesList) {
+            this.loaders.step1 = true;
             return this.Vps.upgradesList(this.serviceName).then(data => {
                 this.upgradesList = data.results;
+                this.selectedModel.model = this.getCurrentModel().model;
                 return data;
             }).catch(err => {
                 if (err.message) {
