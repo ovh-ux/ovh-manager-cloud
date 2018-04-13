@@ -1,10 +1,11 @@
 <div class="cui-page__content">
     <oui-back-button class="back_button_inline_text"></oui-back-button>
     <span class="oui-header_3" data-translate="logs_roles_edit_permissions_title"></span>
+    <p class="mb-5" data-translate="logs_roles_permissions_subtitle" data-translate-values="{role:ctrl.roleDetails.data.info.name}"></p>
 
     <div class="dual-list-content">
         <div class="mt-4">
-            <span class="oui-header_4">Streams</span>
+            <span class="oui-header_4" data-translate="logs_roles_permissions_streams"></span>
             <cui-dual-list
                 source-list-label="{{::'logs_role_available_stream' | translate}}"
                 target-list-label="{{::'logs_role_selected_stream' | translate}}"
@@ -21,7 +22,7 @@
         </div>
 
         <div class="mt-4">
-            <span class="oui-header_4">Dashboards</span>        
+            <span class="oui-header_4" data-translate="logs_roles_permissions_dashboards"></span>
             <cui-dual-list
                 source-list-label="{{::'logs_role_available_dashboard' | translate}}"
                 target-list-label="{{::'logs_role_selected_dashboard' | translate}}"
@@ -37,8 +38,8 @@
             </cui-dual-list>
         </div>
 
-        <div class="mt-4">        
-            <span class="oui-header_4">Indices</span>        
+        <div class="mt-4">
+            <span class="oui-header_4" data-translate="logs_roles_permissions_indices"></span>
             <cui-dual-list
                 source-list-label="{{::'logs_role_available_index' | translate}}"
                 target-list-label="{{::'logs_role_selected_index' | translate}}"
@@ -54,8 +55,8 @@
             </cui-dual-list>
         </div>
 
-        <div class="mt-4">        
-            <span class="oui-header_4">Aliases</span>        
+        <div class="mt-4">
+            <span class="oui-header_4" data-translate="logs_roles_permissions_alias"></span>
             <cui-dual-list
                 source-list-label="{{::'logs_role_available_alias' | translate}}"
                 target-list-label="{{::'logs_role_selected_alias' | translate}}"
@@ -72,4 +73,3 @@
         </div>
     </div>
 </div>
-    

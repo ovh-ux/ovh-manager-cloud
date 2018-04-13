@@ -7,9 +7,12 @@
             ng-click="ctrl.cancel()"></button>
     </div>
     <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text mb-5">
+        <div class="oui-modal__body-text">
             <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_role_modal_edit_title"></h2>
             <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_role_modal_add_title"></h2>
+        </div>
+        <div ng-if="ctrl.isEdit" class="mb-3">
+            <span data-translate="logs_role_modal_edit_desription" data-translate-values="{role: ctrl.role.name}"></span>
         </div>
         <form novalidate name="ctrl.form">
             <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.name.$invalid}">
@@ -79,4 +82,3 @@
         </form>
     </div>
 </div>
-    

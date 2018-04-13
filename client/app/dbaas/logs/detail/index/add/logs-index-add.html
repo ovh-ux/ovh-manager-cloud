@@ -13,8 +13,7 @@
         </div>
 
         <div ng-if="ctrl.isEdit" class="mb-3">
-            <span data-translate="logs_index_modal_edit_description"></span>
-            <b><span>{{ ctrl.indexInfo.name | translate }}</span></b>
+            <span data-translate="logs_index_modal_edit_description" data-translate-values="{name: ctrl.indexInfo.name }"></span>
         </div>
 
         <form novalidate name="ctrl.form">

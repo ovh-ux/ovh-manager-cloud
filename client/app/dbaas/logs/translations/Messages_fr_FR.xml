@@ -29,12 +29,12 @@
    <translation id="logs_dashboards_col_shared">Tableau partagé</translation>
    <translation id="logs_dashboards_duplicate">Dupliquer</translation>
    <translation id="logs_dashboards_delete_title" qtlid="470141">Supprimer le tableau de bord</translation>
-   <translation id="logs_dashboards_delete_message" qtlid="470154">Confirmez-vous la suppression du tableau de bord <strong>{{ dashboardName }}</strong> ?</translation>
-   <translation id="logs_dashboards_basic_offer_info_message">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO?</translation>
-   <translation id="logs_dashboards_update_title">Modifier un tableau de bord</translation>
-   <translation id="logs_dashboards_duplicate_title">Dupliquer un tableau de bord</translation>
-   <translation id="logs_dashboards_update_description" qtlid="470115">Modifier le tableau de bord</translation>
-   <translation id="logs_dashboards_duplicate_description" qtlid="470076">Dupliquer le tableau de bord</translation>
+   <translation id="logs_dashboards_delete_message">Êtes-vous sûr de vouloir supprimer le tableau de bord <strong>{{ dashboardName }}</strong> ?</translation>
+   <translation id="logs_dashboards_basic_offer_info_message">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO ?</translation>
+   <translation id="logs_dashboards_update_title" qtlid="470115">Modifier le tableau de bord</translation>
+   <translation id="logs_dashboards_duplicate_title" qtlid="470076">Dupliquer le tableau de bord</translation>
+   <translation id="logs_dashboards_update_description">Pour le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboards_duplicate_description">Pour le tableau de bord <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_select_stream_title" qtlid="470102">Attacher l'ensemble des modules du nouveau tableau au flux de données suivant (optionel):</translation>
    <translation id="logs_dashboards_select_stream">Sélectionner un flux de données</translation>
    <translation id="logs_dashboards_create_success">Le tableau de bord '{{dashboardName}}' a été créé avec succès</translation>
@@ -166,7 +166,7 @@
    <!-- Options -->
    <translation id="options_upgradequotalink_increase_quota">augmenter le quota</translation>
    <translation id="options_upgradequotalink_increase_quota_title">Changement d'offre requis</translation>
-   <translation id="options_upgradequotalink_increase_quota_message">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options. Voulez-vous passer à l'offre PRO?</translation>
+   <translation id="options_upgradequotalink_increase_quota_message">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options. Voulez-vous passer à l'offre PRO ?</translation>
    <translation id="options_upgradequotalink_increase_quota_upgrade">Changer maintenant</translation>
    <translation id="logs_options_options_loading_error">Une erreur est survenue lors du chargement des options: {{message}}</translation>
    <translation id="logs_options_current_options_loading_error">Une erreur est survenue lors du chargement de vos options: {{message}}</translation>
@@ -255,8 +255,8 @@
    <translation id="logs_offer_year">année</translation>
    <translation id="logs_offer_load_error">Une erreur est survenue lors du chargement de l'offre: {{message}}</translation>
    <translation id="logs_offer_current_offer">Offre courante</translation>
-   <translation id="logs_offer_description_pro">Vous avez actuellement l'offre {{offer}} PRO : vous pouvez choisir parmis les offres suivantes.</translation>
-   <translation id="logs_offer_description_upgrade">Vous avez actuellement l'offre basique : vous pouvez choisir parmis les offres suivantes.</translation>
+   <translation id="logs_offer_description_pro">Vous avez actuellement l'offre {{offer}} PRO : vous pouvez choisir parmi les offres suivantes.</translation>
+   <translation id="logs_offer_description_upgrade">Vous avez actuellement l'offre basique : vous pouvez choisir parmi les offres suivantes.</translation>
    <translation id="logs_offer_description_basic">Vous avez actuellement l'offre basique.</translation>
    <translation id="logs_offer_upgrade_pro">Passer à l'offre PRO</translation>
    <translation id="logs_offer_upgrade_feature">En passant à l'offre PRO, de nouvelles fonctionnalitées seront disponibles:</translation>
@@ -302,8 +302,8 @@
    <translation id="logs_tokens_col_createdAt">Date de création</translation>
    <translation id="logs_tokens_cluster">Cluster</translation>
    <translation id="logs_tokens_select_cluster">Choisir un cluster</translation>
-   <translation id="logs_tokens_delete_title">Supprimer un jeton</translation>
-   <translation id="logs_tokens_delete_message">Êtes-vous sûr de vouloir supprimer ce jeton: {{tokenName}} ?</translation>
+   <translation id="logs_tokens_delete_title">Supprimer le jeton</translation>
+   <translation id="logs_tokens_delete_message">Êtes-vous sûr de vouloir supprimer le jeton <strong>{{tokenName}}</strong> ?</translation>
    <translation id="logs_tokens_create_success">Le jeton {{tokenName}} a été créé avec succès</translation>
    <translation id="logs_tokens_delete_success">Le jeton {{tokenName}} a été supprimé avec succès</translation>
    <translation id="logs_tokens_get_error">Une erreur est survenue lors du chargement des jetons: {{message}}</translation>
@@ -332,9 +332,10 @@
    <translation id="logs_streams_graylog_access">Accès Graylog</translation>
    <translation id="logs_streams_copy_token">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title">Supprimer le flux</translation>
-   <translation id="logs_stream_delete_message">Êtes-vous sûr de vouloir supprimer le flux: {{stream}} ?</translation>
+   <translation id="logs_stream_delete_message">Êtes-vous sûr de vouloir supprimer le flux <strong>{{stream}}</strong> ?</translation>
    <translation id="logs_streams_add_title" qtlid="426170">Ajouter un flux de données</translation>
    <translation id="logs_streams_update_title">Modifier le flux</translation>
+   <translation id="logs_streams_update_description">Pour le flux <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_select_options_placeholder">Choisir une option </translation>
    <translation id="logs_streams_enable_websocket" qtlid="426677">Activer la diffusion WebSocket</translation>
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
@@ -424,7 +425,7 @@
    <translation id="streams_alerts_grace_period" qtlid="469582">Période de grâce (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Répéter les notifications</translation>
    <translation id="streams_alerts_delete">Supprimer l'alerte</translation>
-   <translation id="streams_alerts_delete_message">Êtes-vous sûr de vouloir supprimer l'alerte: {{alert}} ?</translation>
+   <translation id="streams_alerts_delete_message">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
    <translation id="streams_alerts_delete_error">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success">L'alerte {{alertName}} a été supprimée avec succès.</translation>
    <translation id="streams_alerts_condition_message_count">L'alerte est levée lorsqu'il y a <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> message(s) lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
@@ -524,7 +525,7 @@
    <translation id="inputs_stopping">Arrêt de l'outil de collecte {{inputTitle}}</translation>
    <translation id="inputs_restarting">Redémarrage de l'outil de collecte {{inputTitle}}</translation>
    <translation id="inputs_delete">Supprimer l'outil de collecte</translation>
-   <translation id="inputs_delete_message">Êtes-vous sûr de vouloir supprimer l'outil de collecte suivant: {{input}} ?</translation>
+   <translation id="inputs_delete_message">Êtes-vous sûr de vouloir supprimer l'outil de collecte <strong>{{input}}</strong> ?</translation>
    <translation id="inputs_delete_error">Une erreur est survenue lors de la suppression de l'outil de collecte: {{message}}</translation>
    <translation id="inputs_delete_success">L'outil de collecte a été supprimé avec succès</translation>
    <translation id="inputs_info_title" qtlid="470180">Informations utiles</translation>
@@ -535,10 +536,11 @@
    <translation id="inputs_logs_title">Sortie console de {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs">Aucun message reçu lors de la dernière heure.</translation>
    <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
-   <translation id="inputs_logs_title_edit">Modifier un outil de collecte - {{title}}</translation>
+   <translation id="inputs_logs_title_edit">Modifier l'outil de collecte</translation>
+   <translation id="inputs_logs_edit_description">Pour l'outil de collecte <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit">Modifier</translation>
    <translation id="inputs_logs_step1_add">Ajouter</translation>
-   <translation id="inputs_logs_step2" qtlid="4406">Configuration</translation>
+   <translation id="inputs_logs_step2">Configurer</translation>
    <translation id="inputs_logs_step3" qtlid="470258">Autoriser des réseaux</translation>
    <translation id="inputs_logs_networks_title" qtlid="423661">Réseau de confiance</translation>
    <translation id="inputs_logs_networks_add_remove_network_title">Ajouter/Enlever des réseaux de confiance</translation>
@@ -624,7 +626,7 @@
    <translation id="logs_index_col_shared">Index partagé</translation>
    <translation id="logs_index_elastic_search_access">Accès elasticsearch</translation>
    <translation id="logs_modal_delete_title">Supprimer l'index</translation>
-   <translation id="logs_modal_delete_question">Êtes-vous sûr de vouloir supprimer l'index suivant: {{name}}?</translation>
+   <translation id="logs_modal_delete_question">Êtes-vous sûr de vouloir supprimer l'index <strong>{{name}}</strong> ?</translation>
    <translation id="logs_options_current_options_loading_error">Une erreur est survenue lors du chargement des options</translation>
    <translation id="logs-input-2">1 Outil de collecte avec 2 instances</translation>
    <translation id="logs-input-4">1 Outil de collecte avec 4 instances</translation>
@@ -634,8 +636,8 @@
    <translation id="logs-kibana-1">Kibana Pack: 1 Alias et 1 Index de 500 MiB</translation>
    <translation id="logs-alias-5">5 Alias Elasticsearch</translation>
    <translation id="logs_index_modal_add_title" qtlid="423024">Ajouter un index</translation>
-   <translation id="logs_index_modal_edit_title">Modifier un index</translation>
-   <translation id="logs_index_modal_edit_description">Modifier les informations de l'index: </translation>
+   <translation id="logs_index_modal_edit_title">Modifier l'index</translation>
+   <translation id="logs_index_modal_edit_description">Pour l'index <strong>{{ name }}</strong></translation>
    <translation id="logs_index_modal_suffix" qtlid="59267">Suffixe</translation>
    <translation id="logs_index_suffix_description" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
    <translation id="logs_index_modal_description" qtlid="9238">Description</translation>
@@ -666,11 +668,11 @@
    <translation id="logs_aliases_delete">Supprimer</translation>
    <translation id="logs_aliases_elasticsearch_access">Accès elasticsearch</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Attacher du contenu à l'alias</translation>
-   <translation id="logs_aliases_delete_title">Supprimer un alias</translation>
-   <translation id="logs_alias_delete_message">Êtes-vous sûr de vouloir supprimer l'alias: {{alias}} ?</translation>
+   <translation id="logs_aliases_delete_title">Supprimer l'alias</translation>
+   <translation id="logs_alias_delete_message">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
    <translation id="logs_aliases_title_description" qtlid="470531">Attention, le nom que vous choisissez ne pourra pas être modifié par la suite.</translation>
-   <translation id="logs_aliases_update_title" qtlid="470544">Éditer un alias</translation>
-   <translation id="logs_aliases_delete_message">Êtes-vous sûr de vouloir supprimer l'alias: {{alias}} ?</translation>
+   <translation id="logs_aliases_update_title">Modifier l'alias</translation>
+   <translation id="logs_aliases_delete_message">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
    <translation id="logs_aliases_create_success">L'alias '{{aliasName}}' a été créé avec succès.</translation>
    <translation id="logs_aliases_update_success">L'alias '{{aliasName}}' a été modifié avec succès.</translation>
    <translation id="logs_aliases_delete_success">L'alias '{{aliasName}}' a été supprimé avec succès.</translation>
@@ -681,11 +683,11 @@
    <translation id="logs_aliases_create_error">Une erreur est survenue lors de la création de l'alias '{{aliasName}}': {{message}}</translation>
    <translation id="logs_aliases_update_error">Une erreur est survenue lors de la modification de l'alias '{{aliasName}}': {{message}}</translation>
    <translation id="logs_aliases_get_elasticsearch_url_error">L'URL d'Elasticsearch est introuvable pour l'alias {{alias}}</translation>
-   <translation id="logs_aliases_update_description" qtlid="470557">Éditer les informations de l'alias <strong>{{ name }}</strong></translation>
+   <translation id="logs_aliases_update_description">Pour l'alias <strong>{{ name }}</strong></translation>
    <translation id="logs_aliases_link_title" qtlid="421672">Attacher du contenu à l'alias</translation>
    <translation id="logs_aliases_link_description" qtlid="421789">Un alias peut être attaché à un ou plusieurs flux de données Graylog ou un ou plusieurs index Elasticsearch.</translation>
    <translation id="logs_aliases_link_available_streams" qtlid="421685">Flux disponibles</translation>
-   <translation id="logs_aliases_link_attached_streams">Flux de données attachés</translation>
+   <translation id="logs_aliases_link_attached_streams">Flux de données liés</translation>
    <translation id="logs_aliases_link_all_streams_attached">Tous les flux de données sont attachés</translation>
    <translation id="logs_aliases_link_no_streams_attached">Aucun flux de données n'est attaché</translation>
    <translation id="logs_aliases_link_available_indexes">Index disponibles</translation>
@@ -724,12 +726,13 @@
    <translation id="logs_show_summary" qtlid="470726">Aperçu</translation>
    <translation id="logs_role_modal_add_title" qtlid="425143">Ajouter un rôle</translation>
    <translation id="logs_role_modal_edit_title" qtlid="470674">Modifier le rôle</translation>
+   <translation id="logs_role_modal_edit_desription">Pour le rôle <strong>{{ role }}</strong></translation>
    <translation id="logs_role_modal_name" qtlid="3818">Nom</translation>
    <translation id="logs_role_modal_description" qtlid="9238">Description</translation>
    <translation id="logs_role_modal_option" qtlid="469478">Choisir l'option liée</translation>
    <translation id="logs_roles_tooltip">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Supprimer le rôle</translation>
-   <translation id="logs_role_modal_delete_question">Êtes-vous sûr de vouloir supprimer le rôle suivant: {{name}}?</translation>
+   <translation id="logs_role_modal_delete_question">Êtes-vous sûr de vouloir supprimer le rôle <strong>{{name}}</strong> ?</translation>
    <translation id="logs_role_add_success">Le rôle '{{name}}' a été créé avec succès.</translation>
    <translation id="logs_role_add_error">Une erreur est survenue lors de la création du rôle '{{name}}': {{message}}</translation>
    <translation id="logs_role_delete_success">Le rôle '{{name}}' a été supprimé avec succès.</translation>
@@ -749,6 +752,11 @@
    <translation id="logs_role_overview_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_overview_dashboard" qtlid="225075">Tableaux de bord</translation>
    <translation id="logs_roles_edit_permissions_title" qtlid="470687">Modifier les permissions</translation>
+   <translation id="logs_roles_permissions_subtitle">Pour le rôle <strong>{{ role }}</strong></translation>
+   <translation id="logs_roles_permissions_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_roles_permissions_dashboards" qtlid="225075">Tableaux de bord</translation>
+   <translation id="logs_roles_permissions_indices" qtlid="426729">Index</translation>
+   <translation id="logs_roles_permissions_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_available_stream">Flux disponible(s)</translation>
    <translation id="logs_role_selected_stream">Flux sélectionné(s)</translation>
    <translation id="logs_role_empty_stream">Tous les flux ont été sélectionnés</translation>
@@ -771,7 +779,8 @@
    <translation id="logs_roles_add_index_error">Une erreur est survenue lors de l'ajout de l'index à la permission '{{tokenName}}': {{message}}</translation>
    <translation id="logs_remove_permission_error">Une erreur est survenue lors du retrait de la permission '{{tokenName}}': {{message}}</translation>
    <translation id="logs_roles_members_title" qtlid="356810">Gérer les membres</translation>
-   <translation id="logs_roles_members_description" qtlid="470609">Vous trouverez ici la liste de vos membres actifs pour le rôle {{ name }}. Vous pouvez les révoquer individuellement ou en ajouter de nouveaux grâce à des comptes utilisateur existants.</translation>
+   <translation id="logs_roles_members_subtitle" qtlid="470609">Pour le rôle <strong>{{ name }}</strong></translation>
+   <translation id="logs_roles_members_description" qtlid="470609">Vous trouverez ici la liste de vos membres actifs pour ce rôle. Vous pouvez les révoquer individuellement ou en ajouter de nouveaux grâce à des comptes utilisateur existants.</translation>
    <translation id="logs_roles_members_add" qtlid="392502">Ajouter un membre</translation>
    <translation id="logs_roles_members_user_account" qtlid="470622">Compte utilisateur</translation>
    <translation id="logs_roles_members_note" qtlid="26011">Note</translation>
@@ -783,8 +792,8 @@
    <translation id="logs_member_modal_add_title" qtlid="392502">Ajouter un membre</translation>
    <translation id="logs_role_member_add_success">Le membre {{name}} a été ajouté avec succès.</translation>
    <translation id="logs_role_member_add_error">Une erreur est survenue lors de l'ajout du membre: {{message}}</translation>
-   <translation id="logs_member_delete_title">Retirer un membre</translation>
-   <translation id="logs_member_delete_question">Êtes-vous sûr de vouloir retirer le membre suivant: {{username}}?</translation>
+   <translation id="logs_member_delete_title">Retirer le membre</translation>
+   <translation id="logs_member_delete_question">Êtes-vous sûr de vouloir retirer le membre <strong>{{username}}</strong> ?</translation>
    <translation id="logs_role_member_remove_success">Le membre {{name}} a été retiré avec succès.</translation>
    <translation id="logs_role_member_remove_error">Une erreur est survenue lors du retrait du membre: {{message}}</translation>
 
