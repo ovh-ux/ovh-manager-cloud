@@ -642,13 +642,14 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
 
                     // Update status
                     if (instanceFromFactory.status !== instanceFromApi.status) {
+                        let oldStatus = instanceFromFactory.status;
                         var hardRebootingSuspended = instanceFromFactory.status === "HARD_REBOOT" && instanceFromApi.status === "SUSPENDED";
                         // if hard rebooting a suspended project the API do not update the status correctly
                         // this bug is not easilly fixable for the API so we fix it on UX side
                         if (!hardRebootingSuspended) {
                             haveChanges = true;
-                            $rootScope.$broadcast('compute.infrastructure.vm.status-update', instanceFromApi.status, instanceFromFactory.status, instanceFromApi);
                             instanceFromFactory.status = instanceFromApi.status;
+                            $rootScope.$broadcast('compute.infrastructure.vm.status-update', instanceFromApi.status, oldStatus, instanceFromFactory);
                         }
                     }
 
@@ -684,7 +685,9 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
                     // Update monthlyBilling status
                     if (instanceFromFactory.monthlyBilling && instanceFromApi.monthlyBilling && instanceFromFactory.monthlyBilling.status !== instanceFromApi.monthlyBilling.status) {
                         haveChanges = true;
+                        let oldStatus = instanceFromFactory.monthlyBilling.status;
                         instanceFromFactory.monthlyBilling.status = instanceFromApi.monthlyBilling.status;
+                        $rootScope.$broadcast('compute.infrastructure.vm.monthlyBilling.status-update', instanceFromApi.status, oldStatus, instanceFromFactory);
                     }
                 } else {
                     // Updates all infos
