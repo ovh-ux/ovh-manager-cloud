@@ -28,7 +28,10 @@
    <translation id="common_yes" qtlid="34776">Ano</translation>
    <translation id="common_no" qtlid="34788">Ne</translation>
    <translation id="common_move" qtlid="69989">Přesunout</translation>
-
+   <translation id="common_order_success" qtlid="403866">Objednávka <a href="{{orderUrl}}" target="_blank">{{orderId}}</a> byla úspěšně vytvořena.</translation>
+   <translation id="common_order_error" qtlid="479095">Chyba při vytváření objednávky: {{ message }}&#13;
+</translation>
+   <translation id="common_order_doing" qtlid="255586">Vytváření objednávky...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Zobrazit/skrýt nabídku</translation>
    <translation id="common_new_window" qtlid="222176">Nové okno</translation>
 
@@ -95,6 +98,7 @@
    <translation id="edit" qtlid="37875">Upravit</translation>
    <translation id="delete" qtlid="2414">Odstranit</translation>
    <translation id="common_back" qtlid="4118">Zpět</translation>
+   <translation id="common_next" qtlid="17743">Další</translation>
    <translation id="error" qtlid="26407">Chyba</translation>
    <translation id="soon" qtlid="250043">Již brzy</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Více informací</a>.</translation>
@@ -238,6 +242,8 @@
    <translation id="october_short" qtlid="123559">Říjen</translation>
    <translation id="november_short" qtlid="123571">Listopad</translation>
    <translation id="december_short" qtlid="158539">Prosinec</translation>
+
+   <translation id="month" qtlid="40222">měsíc</translation>
 
    <translation id="country_AD" qtlid="239324">Andorra</translation>
    <translation id="country_AE" qtlid="239337">Spojené arabské emiráty</translation>
@@ -531,6 +537,30 @@
    <translation id="common_datagrid_nodata" qtlid="197635">Žádný výsledek</translation>
    <translation id="common_table_col_action" qtlid="56105">Akce</translation>
    <translation id="common_table_col_progress" qtlid="442639">Postup</translation>
+
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Sloupec</translation>
+   <translation id="common_criteria_adder_operator_label" qtlid="425806">Podmínka</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">je</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">je jiný než</translation>
+   <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">zahrnuje</translation>
+   <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">nezahrnuje</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">začíná na</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">končí na</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">je rovný</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">je jiný než</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">je rovný</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">je menší než</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">je větší než</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">je</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">je před</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">je po</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">je</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">je jiný než</translation>
+   <translation id="common_criteria_adder_true_label" qtlid="34776">Ano</translation>
+   <translation id="common_criteria_adder_false_label" qtlid="34788">Ne</translation>
+   <translation id="common_criteria_adder_value_label" qtlid="47548">Hodnota</translation>
+   <translation id="common_criteria_adder_submit_label" qtlid="37923">Přidat</translation>
+
    <translation id="common_pagination_resultsperpage" qtlid="433384">Výsledky na stránku</translation>
    <translation id="common_pagination_page" qtlid="433397">stránka</translation>
    <translation id="common_pagination_of" qtlid="121615">na</translation>
