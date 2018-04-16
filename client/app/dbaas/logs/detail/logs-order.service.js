@@ -12,8 +12,16 @@ class LogsOrderService {
         }).$promise
             .then(plans => {
                 const promises = plans.map(plan => this.LogsOfferService.getOfferDetail(plan.planCode));
-                return this.$q.all(promises).then(planDetails => _.map(plans, item => _.extend(item, _.findWhere(planDetails, { reference: item.planCode }))));
+                return this.$q.all(promises).then(planDetails => {
+                    const list = _.map(plans, item => _.extend(item, _.findWhere(planDetails, { reference: item.planCode }), { renewalPrice: this.getRenewalPrice(item) }));
+                    const sortedList = list.sort((a, b) => a.renewalPrice.value - b.renewalPrice.value);
+                    return sortedList;
+                });
             }).catch(this.ServiceHelper.errorHandler("logs_order_get_error"));
+    }
+
+    getRenewalPrice (item) {
+        return item.prices.filter(price => price.capacities.indexOf("renew") > -1)[0].price;
     }
 
     saveOrder (serviceName, offerDetail) {
