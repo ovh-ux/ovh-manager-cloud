@@ -1,3 +1,33 @@
+<a name="7.1.3"></a>
+## [7.1.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.2...v7.1.3) (2018-04-17)
+
+
+### Bug Fixes
+
+* **veeam:** fix veeam polling stop condition ([bc71a23](https://github.com/ovh-ux/ovh-manager-cloud/commit/bc71a23))
+
+
+
+<a name="7.1.2"></a>
+## [7.1.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.1...v7.1.2) (2018-04-13)
+
+
+### Bug Fixes
+
+* **me-alerts:** fix bad links to billing statements ([2d178c5](https://github.com/ovh-ux/ovh-manager-cloud/commit/2d178c5))
+
+
+
+<a name="7.1.1"></a>
+## [7.1.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.0...v7.1.1) (2018-04-12)
+
+
+### Bug Fixes
+
+* **pci:** fix issue where directing to list instead of diagram ([c0dcfe5](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0dcfe5))
+
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.0.1...v7.1.0) (2018-04-05)
 

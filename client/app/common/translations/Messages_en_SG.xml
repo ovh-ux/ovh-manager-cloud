@@ -174,22 +174,22 @@
    <translation id="unit_gib" qtlid="180278">GiB</translation>
    <translation id="unit_gb" qtlid="48890">GB</translation>
 
-   <translation id="payment_type_none" qtlid="30646">No</translation>
+   <translation id="payment_type_none" qtlid="30646">None</translation>
    <translation id="payment_type_cash" qtlid="139689">Cash</translation>
    <translation id="payment_type_chargeback" qtlid="139702">Payment declined</translation>
    <translation id="payment_type_cheque" qtlid="139715">Cheque</translation>
    <translation id="payment_type_creditCard" qtlid="89809">Credit card</translation>
    <translation id="payment_type_deposit" qtlid="139728">Deposit</translation>
-   <translation id="payment_type_edinar" qtlid="139741"></translation>
+   <translation id="payment_type_edinar" qtlid="139741">e-DINAR</translation>
    <translation id="payment_type_fidelityPoints" qtlid="139754">Loyalty points</translation>
    <translation id="payment_type_free" qtlid="130495">Free</translation>
-   <translation id="payment_type_ideal" qtlid="139767"></translation>
+   <translation id="payment_type_ideal" qtlid="139767">iDEAL</translation>
    <translation id="payment_type_mandat" qtlid="139780">Postal order</translation>
-   <translation id="payment_type_multibanco" qtlid="139793"></translation>
+   <translation id="payment_type_multibanco" qtlid="139793">Multibanco</translation>
    <translation id="payment_type_ovhAccount" qtlid="139806">OVH Account</translation>
-   <translation id="payment_type_paymentMandate" qtlid="139819"></translation>
+   <translation id="payment_type_paymentMandate" qtlid="139819">Payment order</translation>
    <translation id="payment_type_paypal" qtlid="98228">PayPal</translation>
-   <translation id="payment_type_platnosci" qtlid="139832"></translation>
+   <translation id="payment_type_platnosci" qtlid="139832">Płatności</translation>
    <translation id="payment_type_refund" qtlid="139845">Credit note</translation>
    <translation id="payment_type_transfer" qtlid="89833">Transfer</translation>
    <translation id="payment_type_withdrawal" qtlid="139858">Recurring payment</translation>
@@ -267,7 +267,7 @@
    <translation id="country_BM" qtlid="239545">Bermuda</translation>
    <translation id="country_BN" qtlid="239558">Brunei Darussalam</translation>
    <translation id="country_BO" qtlid="239571">Plurinational State Of Bolivia</translation>
-   <translation id="country_BQ" qtlid="239584">Bonaire, Saint Eustatius, and Saba</translation>
+   <translation id="country_BQ" qtlid="239584">Bonaire, Sint Eustatius and Saba</translation>
    <translation id="country_BR" qtlid="239597">Brazil</translation>
    <translation id="country_BS" qtlid="187300">Bahamas</translation>
    <translation id="country_BT" qtlid="239610">Bhutan</translation>
