@@ -50,24 +50,13 @@
                     <td class="oui-table__cell" data-ng-bind="storage.quota.value | bytes:2:false:storage.quota.unit"></td>
                     <td class="oui-table__cell" data-ng-bind="VeeamStorageCtrl.getRegionText(storage.replicationZone)"></td>
                     <td class="oui-table__cell oui-table__cell_action">
-                        <cui-dropdown-menu>
-                            <cui-dropdown-menu-button>
-                                <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                            </cui-dropdown-menu-button>
-                            <cui-dropdown-menu-body>
-                                <div class="oui-action-menu">
-                                  <div class="oui-action-menu__item oui-action-menu-item">
-                                    <div class="oui-action-menu-item__icon"></div>
-                                    <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                        type="button"
-                                        data-ng-if="!VeeamStorageCtrl.capabilities.loading"
-                                        data-ng-disabled="(VeeamStorageCtrl.capabilities.data.maxQuota | bytes:0:false:'GB':true) <= (VeeamStorageCtrl.capabilities.data.defaultQuota | bytes:0:false:'GB':true)"
-                                        data-translate="veeam_storage_update_title"
-                                        data-ng-click="VeeamStorageCtrl.updateQuota(storage.inventoryName)"></button>
-                                  </div>
-                                </div>
-                            </cui-dropdown-menu-body>
-                        </cui-dropdown-menu>
+                        <oui-action-menu data-align="end" data-compact>
+                            <oui-action-menu-item data-text="{{ 'veeam_storage_update_title' | translate }}"
+                                                  data-on-click="VeeamStorageCtrl.updateQuota(storage.inventoryName)"
+                                                  data-disabled="(VeeamStorageCtrl.capabilities.data.maxQuota | bytes:0:false:'GB':true) <= (VeeamStorageCtrl.capabilities.data.defaultQuota | bytes:0:false:'GB':true)"
+                                                  data-ng-if="!VeeamStorageCtrl.capabilities.loading">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
                     </td>
                 </tr>
             </tbody>

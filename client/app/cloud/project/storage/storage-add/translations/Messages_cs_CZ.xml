@@ -5,14 +5,14 @@
    <translation id="add_instance_ssh_key_help_message" qtlid="242652">Pozor: pro dokončení vytváření Vaší instance musíte poskytnout Váš SSH klíč.</translation>
 
    <translation id="add_instance" qtlid="242665">Virtuální server</translation>
-   <translation id="add_storage" qtlid="242678">Object container</translation>
+   <translation id="add_storage" qtlid="242678">Objektový kontejner</translation>
    <translation id="add_storage2" qtlid="246468">Přidat object container</translation>
    <translation id="add_ssh_key" qtlid="242691">SSH klíč</translation>
    <translation id="add_title" qtlid="37923">Přidat</translation>
    <translation id="add_subtitle" qtlid="242704">Zvolte si komponentu, kterou byste chtěli přidat.</translation>
 
    <translation id="add_instance" qtlid="242665">Virtuální server</translation>
-   <translation id="add_storage" qtlid="242678">Object container</translation>
+   <translation id="add_storage" qtlid="242678">Objektový kontejner</translation>
    <translation id="add_ssh" qtlid="242691">SSH klíč</translation>
 
    <translation id="add_already_instancied_title" qtlid="242717">Limit!</translation>
@@ -47,11 +47,11 @@
    <translation id="add_instance_go_to_the_moon" qtlid="217288">Spouštění serveru</translation>
 
    <translation id="add_storage_region_step_title" qtlid="242730">Zvolte datacentrum</translation>
-   <translation id="add_storage_container_type_step_title" qtlid="242925">Zvolte typ konteineru</translation>
-   <translation id="add_storage_name_step_title" qtlid="242938">Název Vašeho conteineru</translation>
-   <translation id="add_build_you_own_warehouse" qtlid="242951">Vytvořit container</translation>
+   <translation id="add_storage_container_type_step_title" qtlid="242925">Zvolte typ kontejneru</translation>
+   <translation id="add_storage_name_step_title" qtlid="242938">Název Vašeho kontejneru</translation>
+   <translation id="add_build_you_own_warehouse" qtlid="242951">Vytvořit kontejner</translation>
 
-   <translation id="add_container_name" qtlid="242964">Název conteiner</translation>
+   <translation id="add_container_name" qtlid="242964">Název kontejneru</translation>
    <translation id="add_instance_name" qtlid="242977">Název serveru</translation>
    <translation id="add_container_image" qtlid="4394">Obrazy</translation>
    <translation id="add_instance_choose" qtlid="186115">Zvolte...</translation>
@@ -80,10 +80,10 @@
    <translation id="add_form_error_ssh_key_already_exist" qtlid="243159">SSH klíč s tímto názvem již existuje</translation>
    <translation id="add_form_error_pattern" qtlid="149774">Neplatný formát</translation>
    <translation id="add_already_instancied" qtlid="243172">Nemáte již možnost mí více instancí v tomto datacentru</translation>
-   <translation id="add_container_selected_flavor" qtlid="243185">Zvolený typ conteineru</translation>
+   <translation id="add_container_selected_flavor" qtlid="243185">Zvolený typ kontejneru</translation>
    <translation id="add_quota_ssh_title" qtlid="242717">Limit!</translation>
    <translation id="add_quota_ssh" qtlid="243198">Není možné přidat žádný další SSH klíč</translation>
-   <translation id="ssh_key_quota_exceeded" qtlid="243211">You're not able to add any more SSH keys do tohoto projektu.</translation>
+   <translation id="ssh_key_quota_exceeded" qtlid="243211">Do tohoto projektu již nelze přidávat další SSH klíče.</translation>
    <translation id="add_form_error_maxlength" qtlid="243224">Tento klíč je příliš dlouhý</translation>
 
    <translation id="labs_sandbox_success_subscribed" qtlid="243237">Lab Sandbox aktivován!</translation>

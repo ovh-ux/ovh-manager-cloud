@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Votre compte OVH est débiteur de <strong>{{value}}</strong> au {{date | date:'medium'}}. Rendez-vous dans <a href="{{link}}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">U heeft een openstaand bedrag van <strong>{{value}}</strong>. Ga naar <a href="{{link}}" class="alert-link">Facturatie</a> om uw rekening te vereffenen. </translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="{{ link }}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Uw account heeft de door u ingestelde limiet bereikt. Ga aub naar <a href="{{link}}" class="alert-link">Facturatie</a> voor meer informatie.</translation>
 
