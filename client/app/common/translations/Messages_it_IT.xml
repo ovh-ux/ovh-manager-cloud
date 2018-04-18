@@ -28,7 +28,9 @@
    <translation id="common_yes" qtlid="34776">Sì</translation>
    <translation id="common_no" qtlid="34788">No</translation>
    <translation id="common_move" qtlid="69989">Sposta</translation>
-
+   <translation id="common_order_success" qtlid="403866">Il buono d'ordine <a href="{{orderUrl}}" target="_blank">{{orderId}}</a> è stato creato correttamente.</translation>
+   <translation id="common_order_error" qtlid="479095">Erreur lors de la création du bon de commande: {{ message }}</translation>
+   <translation id="common_order_doing" qtlid="255586">Creazione del tuo ordine in corso...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Mostra/nascondi il menu a tendina</translation>
    <translation id="common_new_window" qtlid="222176">Nuova finestra</translation>
 
@@ -95,6 +97,7 @@
    <translation id="edit" qtlid="37875">Modifica</translation>
    <translation id="delete" qtlid="2414">Elimina</translation>
    <translation id="common_back" qtlid="4118">Ritorna</translation>
+   <translation id="common_next" qtlid="17743">Seguente</translation>
    <translation id="error" qtlid="26407">Errore</translation>
    <translation id="soon" qtlid="250043">In arrivo</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Più informazioni</a>.</translation>
@@ -238,6 +241,8 @@
    <translation id="october_short" qtlid="123559">Ott</translation>
    <translation id="november_short" qtlid="123571">Nov</translation>
    <translation id="december_short" qtlid="158539">Dic</translation>
+
+   <translation id="month" qtlid="40222">mese</translation>
 
    <translation id="country_AD" qtlid="239324">Andorra</translation>
    <translation id="country_AE" qtlid="239337">Emirati Arabi Uniti</translation>
@@ -531,6 +536,30 @@
    <translation id="common_datagrid_nodata" qtlid="197635">Nessun risultato</translation>
    <translation id="common_table_col_action" qtlid="56105">Azione</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progressione</translation>
+
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
+   <translation id="common_criteria_adder_operator_label" qtlid="425806">Condizione</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">est</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">contiene</translation>
+   <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">non contiene </translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">débute par</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">termine par</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">est égal à</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">est égal à</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">est inférieur à</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">est supérieur à</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">est</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">est avant</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">est après</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">est</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_true_label" qtlid="34776">Sì</translation>
+   <translation id="common_criteria_adder_false_label" qtlid="34788">No</translation>
+   <translation id="common_criteria_adder_value_label" qtlid="47548">Valore</translation>
+   <translation id="common_criteria_adder_submit_label" qtlid="37923">Aggiungi</translation>
+
    <translation id="common_pagination_resultsperpage" qtlid="433384">Risultati per pagina</translation>
    <translation id="common_pagination_page" qtlid="433397">pagina</translation>
    <translation id="common_pagination_of" qtlid="121615">su</translation>
