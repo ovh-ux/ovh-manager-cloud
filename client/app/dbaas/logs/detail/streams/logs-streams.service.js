@@ -1,5 +1,5 @@
 class LogsStreamsService {
-    constructor ($q, $translate, CloudMessage, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
+    constructor ($q, $translate, CloudMessage, ControllerHelper, LogsHomeService, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogsOrderService, LogsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
         this.$q = $q;
         this.$translate = $translate;
         this.LogsApiService = OvhApiDbaas.Logs().v6();
@@ -7,10 +7,12 @@ class LogsStreamsService {
         this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
+        this.LogsHomeService = LogsHomeService;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsStreamsAlertsService = LogsStreamsAlertsService;
         this.LogsStreamsArchivesService = LogsStreamsArchivesService;
         this.ControllerHelper = ControllerHelper;
+        this.LogsOrderService = LogsOrderService;
         this.UrlHelper = UrlHelper;
         this.CloudMessage = CloudMessage;
         this.LogsConstants = LogsConstants;
@@ -216,7 +218,8 @@ class LogsStreamsService {
         return this.AccountingAapiService.me({ serviceName }).$promise
             .then(me => ({
                 max: me.offer.maxNbStream,
-                current: me.offer.curNbStream
+                current: me.offer.curNbStream,
+                planCode: me.offer.reference
             })).catch(err => this.LogsHelperService.handleError("logs_main_offer_get_error", err, {}));
     }
 
@@ -310,6 +313,14 @@ class LogsStreamsService {
     findStreamTokenValue (stream) {
         const ruleObj = _.find(stream.rules, rule => rule.field === this.LogsConstants.X_OVH_TOKEN);
         return _.get(ruleObj, "value");
+    }
+
+    getOrderCatalog (ovhSubsidiary) {
+        return this.LogsOrderService.getOrderCatalog(ovhSubsidiary);
+    }
+
+    getAccountDetails (serviceName) {
+        return this.LogsHomeService.getAccountDetails(serviceName);
     }
 
     /**
