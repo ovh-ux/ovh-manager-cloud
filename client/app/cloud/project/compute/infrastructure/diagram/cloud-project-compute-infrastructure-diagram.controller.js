@@ -1,6 +1,6 @@
 (() => {
     class CloudProjectComputeInfrastructureDiagramCtrl {
-        constructor ($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $translate, $uibModal, $window,
+        constructor ($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $transitions, $translate, $uibModal, $window,
                      CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
                      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
                      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
@@ -15,6 +15,7 @@
             this.$state = $state;
             this.$stateParams = $stateParams;
             this.$timeout = $timeout;
+            this.$transitions = $transitions;
             this.$translate = $translate;
             this.$uibModal = $uibModal;
             this.$window = $window;
@@ -97,9 +98,11 @@
             this.InfrastructureService.setPreferredView("diagram");
 
             // Hide highlighted-element on change state
-            this.$scope.$on("$stateChangeStart", () => {
+            const hook = this.$transitions.onStart({ from: "iaas.pci-project.compute.infrastructure.diagram" }, () => {
                 this.$rootScope.$broadcast("highlighed-element.hide");
             });
+
+            this.$scope.$on("$destroy", hook);
 
             this.$scope.$on("compute.infrastructure.vm.status-update", (evt, newStatus, oldStatus, vm) => {
                 if (oldStatus === "BUILD" && newStatus === "ACTIVE") {

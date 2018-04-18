@@ -1,7 +1,7 @@
 <cui-modal>
     <form name="VeeamStorageUpdateQuotaForm">
         <cui-modal-header data-on-dismiss="VeeamStorageUpdateQuotaCtrl.cancel()"></cui-modal-header>
-        <cui-modal-body title="'veeam_storage_update_quota_title' | translate">
+        <cui-modal-body data-title=":: 'veeam_storage_update_quota_title' | translate">
             <oui-spinner data-ng-show="VeeamStorageUpdateQuotaCtrl.isModalLoading()"></oui-spinner>
             <div data-ng-hide="VeeamStorageUpdateQuotaCtrl.isModalLoading()">
                 <cui-modal-text data-text="'veeam_storage_update_quota_information' | translate: {maxquota: VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}"></cui-modal-text>

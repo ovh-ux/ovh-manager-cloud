@@ -1,10 +1,12 @@
-angular.module("managerApp").run(($rootScope, $state, OvhApiMe) => {
+angular.module("managerApp").run(($rootScope, $transitions, OvhApiMe) => {
 
-    $rootScope.$on("$stateChangeSuccess", () => {
+    $transitions.onSuccess({}, () => {
         OvhApiMe.Lexi().get().$promise
             .then(() => {
                 $rootScope.managerPreloadHide += " manager-preload-hide";
             });
+    }, {
+        priority: -1 // Last to load so we hide as much as possible
     });
 
 });

@@ -1,10 +1,10 @@
 class CloudMessage {
-    constructor ($rootScope, $state) {
+    constructor ($transitions, $state) {
         this.$state = $state;
         this.messages = {};
         this.subscribers = {};
 
-        $rootScope.$on("$stateChangeSuccess", () => {
+        $transitions.onSuccess({}, () => {
             this.flushChildMessage();
         });
     }

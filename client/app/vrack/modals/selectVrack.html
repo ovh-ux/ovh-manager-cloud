@@ -1,7 +1,7 @@
 <form novalidate name="$ctrl.form">
     <cui-modal>
         <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-        <cui-modal-body title="'private_network_activate_title' | translate">
+        <cui-modal-body data-title=":: 'private_network_activate_title' | translate">
             <div class="oui-radio" data-ng-class="{ 'oui-radio_error': $ctrl.form.$submitted && $ctrl.form.vRacks.$invalid }">
                 <input class="oui-radio__input"
                     type="radio"

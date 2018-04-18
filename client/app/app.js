@@ -53,14 +53,12 @@ angular.module("managerApp", [
     "ovh-angular-doc-url",
     "ovhBrowserAlert"
 ])
-    .config(function ($stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) {
-        "use strict";
-
+    .config(($transitionsProvider, $stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) => {
         // Config current locale
         TranslateServiceProvider.setUserLocale();
 
         // Add translations decorator (need to be added before routes definitions)
-        TranslateDecoratorServiceProvider.add($stateProvider);
+        TranslateDecoratorServiceProvider.add($transitionsProvider, $stateProvider);
     })
     .config(function ($urlRouterProvider, $locationProvider) {
         "use strict";
@@ -110,51 +108,71 @@ angular.module("managerApp", [
               </div>
             `);
     })
-    .run(($rootScope, $translate, $translatePartialLoader, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
-        "use strict";
+    .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
+          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
         $translatePartialLoader.addPart("components");
 
-        const off = $rootScope.$on("$stateChangeSuccess", () => {
-            $translate.refresh().then(() => {
-                ouiTableConfiguration.words = {
-                    resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                    page: $translate.instant("common_pagination_page"),
-                    of: $translate.instant("common_pagination_of"),
-                    results: $translate.instant("common_pagination_results"),
-                    next: $translate.instant("common_pagination_next"),
-                    previous: $translate.instant("common_pagination_previous")
-                };
+        const removeOnSuccessHook = $transitions.onSuccess({}, () => {
+            ouiDatagridConfiguration.translations = {
+                emptyPlaceholder: $translate.instant("common_datagrid_nodata")
+            };
 
-                ouiDatagridConfiguration.translations = {
-                    emptyPlaceholder: $translate.instant("common_datagrid_nodata")
-                };
+            ouiCriteriaAdderConfiguration.translations = {
+                column_label: $translate.instant("common_criteria_adder_column_label"),
+                operator_label: $translate.instant("common_criteria_adder_operator_label"),
 
-                ouiPaginationConfiguration.translations = {
-                    resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                    ofNResults: $translate.instant("common_pagination_ofnresults")
-                        .replace("TOTAL_ITEMS", "{{totalItems}}"),
-                    currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
-                        .replace("CURRENT_PAGE", "{{currentPage}}")
-                        .replace("PAGE_COUNT", "{{pageCount}}"),
-                    previousPage: $translate.instant("common_pagination_previous"),
-                    nextPage: $translate.instant("common_pagination_next")
-                };
+                operator_boolean_is: $translate.instant("common_criteria_adder_operator_boolean_is"),
+                operator_boolean_isNot: $translate.instant("common_criteria_adder_operator_boolean_isNot"),
 
-                ouiFieldConfiguration.translations = {
-                    errors: {
-                        required: $translate.instant("common_field_error_required"),
-                        number: $translate.instant("common_field_error_number"),
-                        email: $translate.instant("common_field_error_email"),
-                        min: $translate.instant("common_field_error_min", { min: "{{min}}" }),
-                        max: $translate.instant("common_field_error_max", { max: "{{max}}" }),
-                        minlength: $translate.instant("common_field_error_minlength", { minlength: "{{minlength}}" }),
-                        maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
-                        pattern: $translate.instant("common_field_error_pattern")
-                    }
-                };
+                operator_string_contains: $translate.instant("common_criteria_adder_operator_string_contains"),
+                operator_string_containsNot: $translate.instant("common_criteria_adder_operator_string_containsNot"),
+                operator_string_startsWith: $translate.instant("common_criteria_adder_operator_string_startsWith"),
+                operator_string_endsWith: $translate.instant("common_criteria_adder_operator_string_endsWith"),
+                operator_string_is: $translate.instant("common_criteria_adder_operator_string_is"),
+                operator_string_isNot: $translate.instant("common_criteria_adder_operator_string_isNot"),
 
-                off();
-            });
+                operator_number_is: $translate.instant("common_criteria_adder_operator_number_is"),
+                operator_number_smaller: $translate.instant("common_criteria_adder_operator_number_smaller"),
+                operator_number_bigger: $translate.instant("common_criteria_adder_operator_number_bigger"),
+
+                operator_date_is: $translate.instant("common_criteria_adder_operator_date_is"),
+                operator_date_isBefore: $translate.instant("common_criteria_adder_operator_date_isBefore"),
+                operator_date_isAfter: $translate.instant("common_criteria_adder_operator_date_isAfter"),
+
+                operator_options_is: $translate.instant("common_criteria_adder_operator_options_is"),
+                operator_options_isNot: $translate.instant("common_criteria_adder_operator_options_isNot"),
+
+                true_label: $translate.instant("common_criteria_adder_true_label"),
+                false_label: $translate.instant("common_criteria_adder_false_label"),
+
+                value_label: $translate.instant("common_criteria_adder_value_label"),
+                submit_label: $translate.instant("common_criteria_adder_submit_label")
+            };
+
+            ouiPaginationConfiguration.translations = {
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
+                ofNResults: $translate.instant("common_pagination_ofnresults")
+                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
+                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                previousPage: $translate.instant("common_pagination_previous"),
+                nextPage: $translate.instant("common_pagination_next")
+            };
+
+            ouiFieldConfiguration.translations = {
+                errors: {
+                    required: $translate.instant("common_field_error_required"),
+                    number: $translate.instant("common_field_error_number"),
+                    email: $translate.instant("common_field_error_email"),
+                    min: $translate.instant("common_field_error_min", { min: "{{min}}" }),
+                    max: $translate.instant("common_field_error_max", { max: "{{max}}" }),
+                    minlength: $translate.instant("common_field_error_minlength", { minlength: "{{minlength}}" }),
+                    maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
+                    pattern: $translate.instant("common_field_error_pattern")
+                }
+            };
+
+            removeOnSuccessHook();
         });
     });
