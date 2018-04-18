@@ -159,7 +159,7 @@ describe("Controller: CloudProjectDetailsCtrl", function () {
         };
 
         CloudProjectMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     get: function () {
                         return {

@@ -9,10 +9,10 @@ class IpLoadBalancerZoneDeleteService {
     }
 
     getDeletableZones (serviceName) {
-        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
+        return this.OvhApiIpLoadBalancing.v6().get({ serviceName })
             .$promise
             .then(response => {
-                const promises = _.map(response.zone, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().get({ serviceName, name: zone }).$promise);
+                const promises = _.map(response.zone, zone => this.OvhApiIpLoadBalancing.Zone().v6().get({ serviceName, name: zone }).$promise);
                 return this.$q.all(promises);
             })
             .then(zones => _.map(zones, zone => _.extend({
@@ -48,7 +48,7 @@ class IpLoadBalancerZoneDeleteService {
                 }
 
                 const deletedZones = _.sortBy(_.map(zones, zone => zone.microRegion.text), zone => zone).join(", ");
-                const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().delete({ serviceName, name: zone.name }, {}).$promise);
+                const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().v6().delete({ serviceName, name: zone.name }, {}).$promise);
                 return this.$q.all(promises)
                     .then(() => this.ServiceHelper.successHandler(messages.success)({ zones: deletedZones }))
                     .catch(this.ServiceHelper.errorHandler(messages.error));

@@ -22,7 +22,7 @@ angular.module("managerApp")
         };
 
         function getProjectDescription () {
-            OvhApiCloudProject.Lexi().get({
+            OvhApiCloudProject.v6().get({
                 serviceName: self.projectId
             }).$promise.then(function (data) {
                 self.model.description = data.description;
@@ -34,7 +34,7 @@ angular.module("managerApp")
         self.saveDescription = function () {
             self.loader.save = true;
 
-            OvhApiCloudProject.Lexi().put({
+            OvhApiCloudProject.v6().put({
                 serviceName: self.projectId
             }, {
                 description: self.editing.description || ""

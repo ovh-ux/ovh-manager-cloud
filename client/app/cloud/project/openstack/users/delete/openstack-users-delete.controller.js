@@ -12,7 +12,7 @@
         }
 
         deleteUser (userId) {
-            return this.Cloud.Project().User().Lexi().remove({
+            return this.Cloud.Project().User().v6().remove({
                 serviceName: this.serviceName,
                 userId: userId
             }).$promise;

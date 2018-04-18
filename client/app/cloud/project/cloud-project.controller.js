@@ -27,7 +27,7 @@ angular.module("managerApp")
 
         // get current project
         if (serviceName) {
-            OvhApiCloud.Project().Lexi().get({
+            OvhApiCloud.Project().v6().get({
                 serviceName: serviceName
             }).$promise
                 .then(function (project) {

@@ -2,7 +2,7 @@ class IpLoadBalancerSslCertificateService {
     constructor ($q, OvhApiIpLoadBalancing, OvhApiMe, OvhApiOrder, ServiceHelper) {
         this.$q = $q;
         this.OvhApiIpLoadBalancing = OvhApiIpLoadBalancing;
-        this.Ssl = OvhApiIpLoadBalancing.Ssl().Lexi();
+        this.Ssl = OvhApiIpLoadBalancing.Ssl().v6();
         this.User = OvhApiMe;
         this.OvhApiOrder = OvhApiOrder;
         this.ServiceHelper = ServiceHelper;
@@ -48,7 +48,7 @@ class IpLoadBalancerSslCertificateService {
     }
 
     getCertificateProducts (serviceName) {
-        return this.OvhApiOrder.Cart().ServiceOption().Lexi().get({
+        return this.OvhApiOrder.Cart().ServiceOption().v6().get({
             productName: "ipLoadbalancing",
             serviceName
         })
@@ -78,13 +78,13 @@ class IpLoadBalancerSslCertificateService {
      */
     orderPaidCertificate (serviceName, orderOptions, configuration) {
         let cartId;
-        return this.User.Lexi().get().$promise
-            .then(me => this.OvhApiOrder.Cart().Lexi().post({}, { ovhSubsidiary: me.ovhSubsidiary }).$promise)
+        return this.User.v6().get().$promise
+            .then(me => this.OvhApiOrder.Cart().v6().post({}, { ovhSubsidiary: me.ovhSubsidiary }).$promise)
             .then(cart => {
                 cartId = cart.cartId;
-                return this.OvhApiOrder.Cart().Lexi().assign({ cartId }).$promise;
+                return this.OvhApiOrder.Cart().v6().assign({ cartId }).$promise;
             })
-            .then(() => this.OvhApiOrder.Cart().ServiceOption().Lexi().post({
+            .then(() => this.OvhApiOrder.Cart().ServiceOption().v6().post({
                 productName: "ipLoadbalancing",
                 serviceName
             }, Object.assign({}, orderOptions, {
@@ -96,10 +96,10 @@ class IpLoadBalancerSslCertificateService {
                     .map(label => this.configureCartItem(cartId, item.itemId, label, configuration[label]));
                 return this.$q.all(promises);
             })
-            .then(() => this.OvhApiOrder.Cart().Lexi().checkout({ cartId }, {}).$promise)
+            .then(() => this.OvhApiOrder.Cart().v6().checkout({ cartId }, {}).$promise)
             .catch(err => {
                 if (cartId) {
-                    this.OvhApiOrder.Cart().Lexi().delete({ cartId });
+                    this.OvhApiOrder.Cart().v6().delete({ cartId });
                 }
 
                 this.ServiceHelper.errorHandler("iplb_ssl_order_error")(err);
@@ -107,7 +107,7 @@ class IpLoadBalancerSslCertificateService {
     }
 
     configureCartItem (cartId, itemId, label, value) {
-        return this.OvhApiOrder.Cart().Item().Configuration().Lexi()
+        return this.OvhApiOrder.Cart().Item().Configuration().v6()
             .post({
                 cartId,
                 itemId
@@ -118,7 +118,7 @@ class IpLoadBalancerSslCertificateService {
     }
 
     orderFreeCertificate (serviceName, fqdn) {
-        return this.OvhApiIpLoadBalancing.Lexi().freeCertificate({ serviceName }, { fqdn }).$promise
+        return this.OvhApiIpLoadBalancing.v6().freeCertificate({ serviceName }, { fqdn }).$promise
             .then(this.ServiceHelper.successHandler("iplb_ssl_order_success"))
             .then(() => this.Ssl.resetQueryCache())
             .catch(this.ServiceHelper.errorHandler("iplb_ssl_order_error"));

@@ -69,6 +69,9 @@ angular.module("managerApp", [
         // tell to the module that we consider a mobile device with at least 800px width
         responsivePopoverProvider.setMobileMediaQuery("(max-width: 800px)");
     })
+    .config(function (OtrsPopupProvider, REDIRECT_URLS) {
+        OtrsPopupProvider.setBaseUrlTickets(_.get(REDIRECT_URLS, "support", null));
+    })
     .config(ouiTableConfigurationProvider => {
         ouiTableConfigurationProvider.setCssConfig({
             tablePanel: "oui-table-panel",

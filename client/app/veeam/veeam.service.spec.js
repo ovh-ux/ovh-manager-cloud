@@ -156,41 +156,41 @@ describe("Service: CloudStorageContainer", () => {
     });
 
     function setupVeeamMocks() {
-        spyOn(Veeam.Lexi(), "getDetails")
+        spyOn(Veeam.v6(), "getDetails")
             .and.returnValue(resourceResult({
                 location: "sbg1"
             }));
 
-        spyOn(Veeam.Lexi(), "getInventories")
+        spyOn(Veeam.v6(), "getInventories")
             .and.returnValue(resourceResult([
                 "a",
                 "b"
             ]));
 
-        spyOn(Veeam.Lexi(), "getInventory")
+        spyOn(Veeam.v6(), "getInventory")
             .and.returnValue(resourceResult({
                 name: "XXX"
             }));
 
-        spyOn(Veeam.Lexi(), "getServiceInfos")
+        spyOn(Veeam.v6(), "getServiceInfos")
             .and.returnValue(resourceResult({
                 expiration: "EXPIRATION"
             }));
 
-        spyOn(Veeam.Lexi(), "getOrderableOffers")
+        spyOn(Veeam.v6(), "getOrderableOffers")
             .and.returnValue(resourceResult([
                 "offer1",
                 "offer2"
             ]));
 
-        spyOn(Veeam.Lexi(), "getOrderUpgradeDurations")
+        spyOn(Veeam.v6(), "getOrderUpgradeDurations")
             .and.returnValue(resourceResult([
                 "01",
                 "06",
                 "12"
             ]));
 
-        spyOn(Veeam.Lexi(), "getOrderUpgradeDurationsPrices")
+        spyOn(Veeam.v6(), "getOrderUpgradeDurationsPrices")
             .and.returnValue(resourceResult({
                 orderId: null,
                 url: null,
@@ -227,16 +227,16 @@ describe("Service: CloudStorageContainer", () => {
                 }]
             }));
 
-        spyOn(Veeam.Lexi(), "createUpgradeOrder")
+        spyOn(Veeam.v6(), "createUpgradeOrder")
             .and.returnValue(resourceResult(true));
 
-        spyOn(Veeam.Lexi(), "addInventory")
+        spyOn(Veeam.v6(), "addInventory")
             .and.returnValue(resourceResult(true));
 
-        spyOn(Veeam.Lexi(), "upgradeQuota")
+        spyOn(Veeam.v6(), "upgradeQuota")
             .and.returnValue(resourceResult(true));
 
-        spyOn(Veeam.Lexi(), "capabilities")
+        spyOn(Veeam.v6(), "capabilities")
             .and.returnValue(resourceResult({
                 canDoThis: true,
                 canDoThat: false

@@ -31,7 +31,7 @@ angular.module("managerApp")
              */
             // check if the instance is routed to failover IPs
             /*self.loaders.ips = true;
-            OvhApiCloudProjectIpFailover.Lexi().query({
+            OvhApiCloudProjectIpFailover.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (ips) {
                 if (vmToDelete && vmToDelete.routedTo) {

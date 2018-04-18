@@ -166,7 +166,7 @@ describe("Controller: CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl
 
             xit('should update the server name', function () {
 
-                var name = 'LexiHub';
+                var name = 'name';
 
                 VmAddEditCtrl.toggleEditVmName();
                 VmAddEditCtrl.model.name = name;
@@ -176,7 +176,7 @@ describe("Controller: CloudProjectComputeInfrastructureVirtualMachineAddEditCtrl
 
                 // and cancel the update
                 VmAddEditCtrl.toggleEditVmName();
-                VmAddEditCtrl.model.name = 'TeraHub';
+                VmAddEditCtrl.model.name = 'editedName';
                 VmAddEditCtrl.toggleEditVmName(true);
 
                 expect(VmAddEditCtrl.vmInEdition.name).toEqual(name);

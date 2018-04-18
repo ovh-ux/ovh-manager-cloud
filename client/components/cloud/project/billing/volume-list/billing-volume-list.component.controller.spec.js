@@ -7,9 +7,9 @@ describe("Component: VolumeList", function () {
     var scope;
     var $rootScope;
     var $q;
-    var CloudProjectVolumeLexi;
+    var CloudProjectVolumeV6;
     var ToastMock;
-    var UserLexi;
+    var UserV6;
     var $translateMock;
     var $stateMock;
 
@@ -18,14 +18,14 @@ describe("Component: VolumeList", function () {
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$componentController_, ssoAuthentication, _$q_, _OvhApiCloudProjectVolumeLexi_, _OvhApiMeLexi_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$componentController_, ssoAuthentication, _$q_, _OvhApiCloudProjectVolumeV6_, _OvhApiMeV6_) {
         $httpBackend = _$httpBackend_;
         $componentController = _$componentController_;
         scope = _$rootScope_.$new();
         $rootScope = _$rootScope_;
         $q = _$q_;
-        CloudProjectVolumeLexi = _OvhApiCloudProjectVolumeLexi_;
-        UserLexi = _OvhApiMeLexi_;
+        CloudProjectVolumeV6 = _OvhApiCloudProjectVolumeV6_;
+        UserV6 = _OvhApiMeV6_;
 
         ToastMock = {
             success: jasmine.createSpy("success"),
@@ -86,10 +86,10 @@ describe("Component: VolumeList", function () {
                 size: 5,
                 status: "status"
             }];
-            spyOn(CloudProjectVolumeLexi, "query").and
+            spyOn(CloudProjectVolumeV6, "query").and
                 .returnValue({ $promise: $q.when(allVolumes) });
 
-            spyOn(UserLexi, "get").and
+            spyOn(UserV6, "get").and
                 .returnValue({ $promise: $q.when(user) });
 
             initNewCtrl(volumeConsumptions);
@@ -113,9 +113,9 @@ describe("Component: VolumeList", function () {
                 size: 500,
                 status: "status"
             }];
-            spyOn(CloudProjectVolumeLexi, "query").and
+            spyOn(CloudProjectVolumeV6, "query").and
                 .returnValue({ $promise: $q.when(allVolumes) });
-            spyOn(UserLexi, "get").and
+            spyOn(UserV6, "get").and
                 .returnValue({ $promise: $q.when(user) });
 
             initNewCtrl(volumeConsumptions);
@@ -130,9 +130,9 @@ describe("Component: VolumeList", function () {
         });
 
         it("Should show error toast on CloudProjectVolume api error", function () {
-            spyOn(CloudProjectVolumeLexi, "query").and
+            spyOn(CloudProjectVolumeV6, "query").and
                 .returnValue({ $promise: $q.reject("api error") });
-            spyOn(UserLexi, "get").and
+            spyOn(UserV6, "get").and
                 .returnValue({ $promise: $q.when(user) });
 
             initNewCtrl(volumeConsumptions);
@@ -142,9 +142,9 @@ describe("Component: VolumeList", function () {
         });
 
         it("Should activate loading during async call", function () {
-            spyOn(CloudProjectVolumeLexi, "query").and
+            spyOn(CloudProjectVolumeV6, "query").and
                 .returnValue({ $promise: $q.reject("api error") });
-            spyOn(UserLexi, "get").and
+            spyOn(UserV6, "get").and
                 .returnValue({ $promise: $q.when(user) });
 
             initNewCtrl(volumeConsumptions);

@@ -23,7 +23,7 @@ class ControllerNavigationHelper {
         const path = _.get(this.URLS, constantName);
         const fallback = this.TARGET === "US" ? "US" : "GB";
 
-        return this.OvhApiMe.Lexi().get().$promise
+        return this.OvhApiMe.v6().get().$promise
             .then(me => path[me.ovhSubsidiary] || path[fallback] || path.FR);
     }
 }

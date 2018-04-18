@@ -11,7 +11,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
 
 
     getSession ({ serviceName, term }) {
-        return this.OvhApiCloudProjectOpenstackClient.Lexi().post({ serviceName }).$promise
+        return this.OvhApiCloudProjectOpenstackClient.v6().post({ serviceName }).$promise
             .then(session => {
                 this.session = session;
                 this.updateExpiresAt();
@@ -24,7 +24,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
     }
 
     getRegions (serviceName) {
-        return this.OvhApiCloudProjectRegion.Lexi().query({ serviceName }).$promise
+        return this.OvhApiCloudProjectRegion.v6().query({ serviceName }).$promise
             .catch(this.ServiceHelper.errorHandler("cpci_openstack_client_regions_error", "iaas.pci-project.compute.openstack-console"));
     }
 

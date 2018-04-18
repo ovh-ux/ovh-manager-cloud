@@ -34,7 +34,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
 
         spyOn(CloudMessage, "error");
         spyOn(CloudMessage, "success");
-        spyOn(OvhApiCloudProjectSnapshot.Lexi(), "resetQueryCache");
+        spyOn(OvhApiCloudProjectSnapshot.v6(), "resetQueryCache");
 
         $scope = $rootScope.$new();
     }));
@@ -100,7 +100,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 expect(CloudMessage.success.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(1);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
-                expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.count()).toEqual(1);
             });
 
         });
@@ -120,7 +120,7 @@ xdescribe("Controller: CloudProjectComputeSnapshotAddCtrl", function () {
                 expect(CloudMessage.error.calls.count()).toEqual(1);
                 expect($uibModalInstance.close.calls.count()).toEqual(0);
                 expect(CloudProjectComputeSnapshotAddCtrl.loaders.backup).toBeFalsy();
-                expect(OvhApiCloudProjectSnapshot.Lexi().resetQueryCache.calls.count()).toEqual(1);
+                expect(OvhApiCloudProjectSnapshot.v6().resetQueryCache.calls.count()).toEqual(1);
             });
 
         });

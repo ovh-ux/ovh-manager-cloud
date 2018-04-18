@@ -115,7 +115,7 @@
             this.TARGET = TARGET;
 
             this.locale = null;
-            this.localePromise = this.User.Lexi().get().$promise
+            this.localePromise = this.User.v6().get().$promise
                 .then(user => {
                     this.locale = user.ovhSubsidiary;
                     return user.ovhSubsidiary;

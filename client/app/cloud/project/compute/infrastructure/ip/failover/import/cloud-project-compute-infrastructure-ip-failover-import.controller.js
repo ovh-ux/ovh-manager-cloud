@@ -30,7 +30,7 @@ angular.module("managerApp")
     //---------INIT---------
 
     function init () {
-        return OvhApiMe.Lexi().get().$promise.then(function (user) {
+        return OvhApiMe.v6().get().$promise.then(function (user) {
             self.datas.user = user;
             return getIpsFo(true);
         }, function (err) {
@@ -42,10 +42,10 @@ angular.module("managerApp")
         if (!self.loaders.table.ipsFo) {
             self.loaders.table.ipsFo = true;
             if (clearCache){
-                OvhApiIp.Lexi().resetQueryCache();
-                OvhApiIp.Lexi().resetCache();
+                OvhApiIp.v6().resetQueryCache();
+                OvhApiIp.v6().resetCache();
             }
-            return OvhApiIp.Lexi().query({
+            return OvhApiIp.v6().query({
                 type: 'failover'
             }).$promise.then(function (ips) {
                 ips = _.filter(ips, function (ip) {
@@ -70,7 +70,7 @@ angular.module("managerApp")
         self.datas.ipsFo = [];
 
         angular.forEach(ips, function (ip) {
-            queries.push(OvhApiIp.Lexi().get({
+            queries.push(OvhApiIp.v6().get({
                 ip: ip
             }).$promise.then(function (ip) {
                 if (!(ip.routedTo && ip.routedTo.serviceName === $scope.projectId)) {
@@ -126,7 +126,7 @@ angular.module("managerApp")
             angular.forEach(self.datas.selected, function (value, ip) {
                 lastIp = ip;
 
-                listPromise.push(OvhApiIp.Lexi().move(
+                listPromise.push(OvhApiIp.v6().move(
                     { ip : ip },
                     { to : $scope.projectId }
                 ).$promise.then(function (task) {

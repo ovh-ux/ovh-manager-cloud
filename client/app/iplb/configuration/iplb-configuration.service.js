@@ -10,13 +10,13 @@ class IpLoadBalancerConfigurationService {
     }
 
     getPendingChanges (serviceName) {
-        return this.IpLoadBalancing.Lexi().pendingChanges({ serviceName })
+        return this.IpLoadBalancing.v6().pendingChanges({ serviceName })
             .$promise;
     }
 
     getAllZonesChanges (serviceName) {
         return this.$q.all({
-            description: this.IpLoadBalancing.Lexi().get({ serviceName }),
+            description: this.IpLoadBalancing.v6().get({ serviceName }),
             pendingChanges: this.getPendingChanges(serviceName),
             tasks: this.getRefreshTasks(serviceName)
         })
@@ -63,7 +63,7 @@ class IpLoadBalancerConfigurationService {
     }
 
     refresh (serviceName, zone) {
-        return this.IpLoadBalancing.Lexi().refresh({
+        return this.IpLoadBalancing.v6().refresh({
             serviceName
         }, {
             zone
@@ -74,7 +74,7 @@ class IpLoadBalancerConfigurationService {
     }
 
     batchRefresh (serviceName, zones) {
-        const promises = zones.map(zone => this.IpLoadBalancing.Lexi().refresh({
+        const promises = zones.map(zone => this.IpLoadBalancing.v6().refresh({
             serviceName
         }, {
             zone
@@ -88,21 +88,21 @@ class IpLoadBalancerConfigurationService {
         let tasksPromise;
 
         if (statuses) {
-            tasksPromise = this.$q.all(statuses.map(status => this.IpLoadBalancing.Task().Lexi().query({
+            tasksPromise = this.$q.all(statuses.map(status => this.IpLoadBalancing.Task().v6().query({
                 serviceName,
                 action: "refreshIplb",
                 status
             }).$promise))
                 .then(tasksResults => _.flatten(tasksResults));
         } else {
-            tasksPromise = this.IpLoadBalancing.Task().Lexi().query({
+            tasksPromise = this.IpLoadBalancing.Task().v6().query({
                 serviceName,
                 action: "refreshIplb"
             }).$promise;
         }
 
         return tasksPromise
-            .then(ids => this.$q.all(ids.map(id => this.IpLoadBalancing.Task().Lexi().get({
+            .then(ids => this.$q.all(ids.map(id => this.IpLoadBalancing.Task().v6().get({
                 serviceName,
                 taskId: id
             }).$promise)));

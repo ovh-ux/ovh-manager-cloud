@@ -24,11 +24,11 @@ class IpLoadBalancerMetricsService {
     }
 
     getService (serviceName) {
-        return this.IpLoadBalancing.Lexi().get({ serviceName }).$promise;
+        return this.IpLoadBalancing.v6().get({ serviceName }).$promise;
     }
 
     getToken () {
-        return this.IpLoadBalancing.Lexi().get({
+        return this.IpLoadBalancing.v6().get({
             serviceName: this.$stateParams.serviceName
         })
             .$promise

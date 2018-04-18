@@ -8,7 +8,7 @@ class MetricService {
     }
 
     getService (serviceName) {
-        return this.metrics.Lexi()
+        return this.metrics.v6()
             .get({
                 serviceName
             }).$promise
@@ -17,7 +17,7 @@ class MetricService {
     }
 
     getServiceInfos (serviceName) {
-        return this.metrics.Lexi()
+        return this.metrics.v6()
             .getServiceInfos({
                 serviceName
             }).$promise
@@ -26,7 +26,7 @@ class MetricService {
     }
 
     setServiceDescription (serviceName, description) {
-        return this.metrics.Lexi()
+        return this.metrics.v6()
             .edit({
                 serviceName
             }, {
@@ -38,7 +38,7 @@ class MetricService {
     }
 
     getConsumption (serviceName) {
-        return this.metrics.Lexi()
+        return this.metrics.v6()
             .getConsumption({
                 serviceName
             }).$promise
@@ -47,13 +47,13 @@ class MetricService {
     }
 
     getTokens (serviceName) {
-        this.metrics.Token().Lexi().resetAllCache();
-        return this.metrics.Token().Lexi()
+        this.metrics.Token().v6().resetAllCache();
+        return this.metrics.Token().v6()
             .query({
                 serviceName
             })
             .$promise
-            .then(tokenList => this.$q.all(tokenList.map(tokenID => this.metrics.Token().Lexi()
+            .then(tokenList => this.$q.all(tokenList.map(tokenID => this.metrics.Token().v6()
                 .get({
                     serviceName,
                     tokenID
@@ -61,7 +61,7 @@ class MetricService {
     }
 
     getToken (serviceName, tokenID) {
-        return this.metrics.Token().Lexi()
+        return this.metrics.Token().v6()
             .get({
                 serviceName,
                 tokenID
@@ -69,39 +69,39 @@ class MetricService {
     }
 
     addToken (token) {
-        return this.metrics.Token().Lexi()
+        return this.metrics.Token().v6()
             .save(token)
             .$promise
             .then(response => {
-                this.metrics.Token().Lexi().resetAllCache();
+                this.metrics.Token().v6().resetAllCache();
                 return this.acceptResponse(response, this.$translate.instant("metrics_token_created"));
             })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
     }
 
     updateToken (serviceName, tokenID, description) {
-        return this.metrics.Token().Lexi()
+        return this.metrics.Token().v6()
             .edit({
                 serviceName,
                 tokenID,
                 description
             }).$promise
             .then(response => {
-                this.metrics.Token().Lexi().resetAllCache();
+                this.metrics.Token().v6().resetAllCache();
                 return this.acceptResponse(response, this.$translate.instant("metrics_token_updated"));
             })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_token_err_create")));
     }
 
     deleteToken (serviceName, tokenID) {
-        return this.metrics.Token().Lexi()
+        return this.metrics.Token().v6()
             .delete({
                 serviceName,
                 tokenID
             })
             .$promise
             .then(response => {
-                this.metrics.Token().Lexi().resetAllCache();
+                this.metrics.Token().v6().resetAllCache();
                 return this.acceptResponse(response, this.$translate.instant("metrics_token_revoked"));
             })
             .catch(response => this.rejectResponse(response.data, this.$translate.instant("metrics_err_delete_token")));

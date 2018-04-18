@@ -20,7 +20,7 @@ angular.module("managerApp")
 
       self.backup = function () {
           self.loaders.backup = true;
-          OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
+          OvhApiCloudProjectSnapshot.v6().resetQueryCache();
           CloudProjectComputeInfrastructureOrchestrator.backupVm(self.snapshot.vm, self.snapshot.name).then(function () {
               CloudMessage.success($translate.instant("cpc_snapshot_add_success", { snapshotname: self.snapshot.name }));
               $uibModalInstance.close(self.snapshot);

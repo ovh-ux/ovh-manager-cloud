@@ -57,12 +57,12 @@ angular.module("managerApp")
         };
 
         function initContact () {
-            return OvhApiCloudProjectServiceInfos.Lexi().get({
+            return OvhApiCloudProjectServiceInfos.v6().get({
                 serviceName: serviceName
             }).$promise.then(function (infos) {
                 self.model.owner = self.contactFormData.owner = infos.contactAdmin;
                 self.model.billing = self.contactFormData.billing = infos.contactBilling;
-                return OvhApiMe.Lexi().get().$promise.then(function (me) {
+                return OvhApiMe.v6().get().$promise.then(function (me) {
                     if (me.nichandle === infos.contactAdmin) {
                         self.model.isAdmin = true;
                     }
@@ -161,9 +161,9 @@ angular.module("managerApp")
         self.getRights = function (clearCache) {
             self.loader = true;
             if (clearCache) {
-                OvhApiCloud.Project().Acl().Lexi().resetQueryCache();
+                OvhApiCloud.Project().Acl().v6().resetQueryCache();
             }
-            return OvhApiCloud.Project().Acl().Lexi().query({
+            return OvhApiCloud.Project().Acl().v6().query({
                 serviceName
             }).$promise
                 .then(rightIds => {
@@ -186,7 +186,7 @@ angular.module("managerApp")
                 titleText: $translate.instant("cpb_rights_delete_title"),
                 text: $translate.instant("cpb_rights_delete_question", { nickname: account.accountId })
             })
-                .then(() => OvhApiCloud.Project().Acl().Lexi().remove({
+                .then(() => OvhApiCloud.Project().Acl().v6().remove({
                     serviceName,
                     accountId: account.accountId
                 }).$promise)
@@ -204,7 +204,7 @@ angular.module("managerApp")
         };
 
         this.transformItem = function (account) {
-            return OvhApiCloud.Project().Acl().Lexi().get({
+            return OvhApiCloud.Project().Acl().v6().get({
                 serviceName,
                 accountId: account.accountId
             }).$promise;

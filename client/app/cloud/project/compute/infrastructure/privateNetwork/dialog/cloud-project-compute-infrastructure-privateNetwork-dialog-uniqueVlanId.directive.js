@@ -12,7 +12,7 @@ angular.module("managerApp").directive("uniqueVlanId", function ($q, $stateParam
 
                 var defer = $q.defer();
 
-                OvhApiCloudProjectNetworkPrivate.Lexi().query({
+                OvhApiCloudProjectNetworkPrivate.v6().query({
                     serviceName: $stateParams.projectId
                 }).$promise.then(function (networks) {
                     if (_.find(networks, { vlanId: value })) {

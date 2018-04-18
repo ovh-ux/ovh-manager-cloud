@@ -39,7 +39,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
          *  Get the default vm configuration options
          */
         var getDefaultVmConfiguration = function () {
-            return OvhApiCloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.v6().query({
                 serviceName: _self.infra.serviceName
             }).$promise.then(function (regionList) {
                 // check if the default region exists
@@ -63,7 +63,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
 
             // get the flavor id
             optionsQueue.push(
-                OvhApiCloudProjectFlavor.Lexi().query({
+                OvhApiCloudProjectFlavor.v6().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (flavors) {
                     options.flavorId = (_.find(flavors, { region : options.region, name : CLOUD_INSTANCE_DEFAULTS.flavor }) || {}).id;
@@ -72,7 +72,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
 
             // get the image id
             optionsQueue.push(
-                OvhApiCloudProjectImage.Lexi().query({
+                OvhApiCloudProjectImage.v6().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (images) {
                     options.imageId = (_.find(images, { region : options.region, name : CLOUD_INSTANCE_DEFAULTS.image }) || {}).id;
@@ -82,7 +82,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
             // get the ssh key id - the first ssh key present in given region
             // remove this if default image becomes windows type
             optionsQueue.push(
-                OvhApiCloudProjectSshKey.Lexi().query({
+                OvhApiCloudProjectSshKey.v6().query({
                     serviceName : _self.infra.serviceName
                 }).$promise.then(function (sshKeys) {
                     options.sshKeyId = (_.find(sshKeys, function (sshKey) {
@@ -156,7 +156,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
          * Launch vm creation, creating multiple copies.
          */
         this.saveMultipleNewVms = function (vmBase, count) {
-            return OvhApiCloudProjectInstance.Lexi().bulk({
+            return OvhApiCloudProjectInstance.v6().bulk({
                 serviceName    : _self.infra.serviceName
             }, {
                 flavorId       : vmBase.flavor.id,
@@ -767,7 +767,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
                 /*==========  VMs  ==========*/
 
                 initQueue.push(
-                    OvhApiCloudProjectInstance.Lexi().query({
+                    OvhApiCloudProjectInstance.v6().query({
                         serviceName : _self.infra.serviceName
                     }).$promise.then(function (instances) {
                         _.forEach(instances, function (instance) {
@@ -790,7 +790,7 @@ angular.module("managerApp").service("CloudProjectComputeInfrastructureOrchestra
                 var ipTypes = ['failover'];
                 angular.forEach(ipTypes, function (ipType) {
                     initQueue.push(
-                        OvhApiCloudProjectIp[ipType].Lexi().query({
+                        OvhApiCloudProjectIp[ipType].v6().query({
                             serviceName : _self.infra.serviceName
                         }).$promise.then(function (ips) {
                             angular.forEach(ips, function (ip) {

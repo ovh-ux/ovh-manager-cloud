@@ -271,7 +271,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
     function getConsole () {
         var promise;
 
-        promise = OvhApiDeskaasService.Lexi().console({ serviceName: $stateParams.serviceName }, null).$promise;
+        promise = OvhApiDeskaasService.v6().console({ serviceName: $stateParams.serviceName }, null).$promise;
 
         return handleServiceMethodCall(
             promise,
@@ -288,7 +288,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             text: $translate.instant("vdi_confirm_delete")
         })
             .then(() => {
-                var promise = OvhApiDeskaasService.Lexi().deleteService({ serviceName: $stateParams.serviceName }, null).$promise;
+                var promise = OvhApiDeskaasService.v6().deleteService({ serviceName: $stateParams.serviceName }, null).$promise;
 
                 return handleServiceMethodCall(
                     promise,
@@ -329,9 +329,9 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         var promise;
 
         if (passwordParams.generatePwd) {
-            promise = OvhApiDeskaasService.Lexi().resetPassword({ serviceName: $stateParams.serviceName }, null).$promise;
+            promise = OvhApiDeskaasService.v6().resetPassword({ serviceName: $stateParams.serviceName }, null).$promise;
         } else if (passwordParams.password) {
-            promise = OvhApiDeskaasService.Lexi().resetPassword({ serviceName: $stateParams.serviceName }, { password: passwordParams.password }).$promise;
+            promise = OvhApiDeskaasService.v6().resetPassword({ serviceName: $stateParams.serviceName }, { password: passwordParams.password }).$promise;
         } else {
             return $q.when();
         }
@@ -352,7 +352,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             text: $translate.instant("vdi_confirm_restore")
         })
             .then(() => {
-                var promise = OvhApiDeskaasService.Lexi().restoreService({ serviceName: $stateParams.serviceName }, null).$promise;
+                var promise = OvhApiDeskaasService.v6().restoreService({ serviceName: $stateParams.serviceName }, null).$promise;
 
                 return handleServiceMethodCall(
                     promise,
@@ -370,7 +370,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             text: $translate.instant("vdi_confirm_reboot")
         })
             .then(() => {
-                var promise = OvhApiDeskaasService.Lexi().rebootService({ serviceName: $stateParams.serviceName }, null).$promise;
+                var promise = OvhApiDeskaasService.v6().rebootService({ serviceName: $stateParams.serviceName }, null).$promise;
 
                 return handleServiceMethodCall(
                     promise,
@@ -387,7 +387,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             return $q.when();
         }
 
-        var promise = OvhApiDeskaasService.Lexi().upgradeService({ serviceName: $stateParams.serviceName }, { planCode: planCode }).$promise;
+        var promise = OvhApiDeskaasService.v6().upgradeService({ serviceName: $stateParams.serviceName }, { planCode: planCode }).$promise;
 
         return handleServiceMethodCall(
             promise,
@@ -402,7 +402,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         self.flags.init.serviceInfos = true;
 
-        var promise = OvhApiDeskaasService.Lexi().serviceInfos({ serviceName: $stateParams.serviceName }).$promise;
+        var promise = OvhApiDeskaasService.v6().serviceInfos({ serviceName: $stateParams.serviceName }).$promise;
 
         return handleMethodCall(
             promise,
@@ -439,7 +439,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         var promise;
 
         if (newDisplayName) {
-            promise = OvhApiDeskaasService.Lexi().changeAlias({ serviceName: $stateParams.serviceName }, { alias: newDisplayName }).$promise;
+            promise = OvhApiDeskaasService.v6().changeAlias({ serviceName: $stateParams.serviceName }, { alias: newDisplayName }).$promise;
         } else {
             return $q.when();
         }
@@ -529,7 +529,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         var promise;
 
         if (terminateParams.token && terminateParams.reason) {
-            promise = OvhApiDeskaasService.Lexi().confirmTerminate({ serviceName: $stateParams.serviceName }, { token: terminateParams.token, reason: terminateParams.reason, commentary: terminateParams.commentary }).$promise;
+            promise = OvhApiDeskaasService.v6().confirmTerminate({ serviceName: $stateParams.serviceName }, { token: terminateParams.token, reason: terminateParams.reason, commentary: terminateParams.commentary }).$promise;
         } else {
             return $q.when();
         }
@@ -548,7 +548,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
         var promise;
 
         if (modalData.newUsername) {
-            promise = OvhApiDeskaasService.Lexi().changeUsername({ serviceName: $stateParams.serviceName }, { username: modalData.newUsername }).$promise;
+            promise = OvhApiDeskaasService.v6().changeUsername({ serviceName: $stateParams.serviceName }, { username: modalData.newUsername }).$promise;
         } else {
             return $q.when();
         }
@@ -587,7 +587,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         self.flags.init.user = true;
 
-        var promise = OvhApiDeskaasService.Lexi().getUser({ serviceName: $stateParams.serviceName }).$promise;
+        var promise = OvhApiDeskaasService.v6().getUser({ serviceName: $stateParams.serviceName }).$promise;
 
         return handleMethodCall(
             promise,
@@ -618,7 +618,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
     }
 
     function handleTask (taskId, isUserTask) {
-        return OvhApiDeskaasService.Lexi()
+        return OvhApiDeskaasService.v6()
             .getTask({ serviceName: $stateParams.serviceName, taskId: taskId }, null).$promise
             .then(function (taskDetails) {
                 updateTasksStatus(taskDetails, isUserTask);
@@ -630,7 +630,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
             self.flags.init.getTasks = false;
             return $q.when();
         } else if (taskIds.length > 1) {
-            return OvhApiDeskaasService.Lexi()
+            return OvhApiDeskaasService.v6()
                 .getTaskBatch({ serviceName: $stateParams.serviceName, taskId: taskIds }, null).$promise
                 .then(function (tasksDetails) {
                     tasksDetails.forEach(function (taskDetail) {
@@ -639,7 +639,7 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
                     self.flags.init.getTasks = false;
                 });
         } else {
-            return OvhApiDeskaasService.Lexi()
+            return OvhApiDeskaasService.v6()
                 .getTask({ serviceName: $stateParams.serviceName, taskId: taskIds }, null).$promise
                 .then(function (tasksDetail) {
                     updateTasksStatus(tasksDetail);
@@ -750,9 +750,9 @@ angular.module("managerApp").controller("DeskaasDetailsCtrl",
 
         return $q.all([
 
-            OvhApiDeskaasService.Lexi().getAllTasks({ serviceName: $stateParams.serviceName }, null).$promise,
-            OvhApiDeskaasService.Lexi().getDoneTasks({ serviceName: $stateParams.serviceName }, null).$promise,
-            OvhApiDeskaasService.Lexi().getCanceledTasks({ serviceName: $stateParams.serviceName }, null).$promise
+            OvhApiDeskaasService.v6().getAllTasks({ serviceName: $stateParams.serviceName }, null).$promise,
+            OvhApiDeskaasService.v6().getDoneTasks({ serviceName: $stateParams.serviceName }, null).$promise,
+            OvhApiDeskaasService.v6().getCanceledTasks({ serviceName: $stateParams.serviceName }, null).$promise
 
         ]).then(function (elements) {
 

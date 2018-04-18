@@ -21,7 +21,7 @@ class IpLoadBalancerHomeStatusService {
     }
 
     getIPLBStatus (serviceName, config = { toArray: false }) {
-        return this.OvhApiIpLoadBalancing.Lexi().status({ serviceName })
+        return this.OvhApiIpLoadBalancing.v6().status({ serviceName })
             .$promise
             .then(response => {
                 const transformedResponse = {};
@@ -53,7 +53,7 @@ class IpLoadBalancerHomeStatusService {
     }
 
     _buildServiceStatusItem (serviceName, iplbItem) {
-        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
+        return this.OvhApiIpLoadBalancing.v6().get({ serviceName })
             .$promise
             .then(response => ({
                 itemName: iplbItem.itemName,

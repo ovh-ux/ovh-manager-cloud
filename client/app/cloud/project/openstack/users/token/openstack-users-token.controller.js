@@ -33,7 +33,7 @@ angular.module("managerApp")
             if (!self.loaders.generateToken) {
                 self.loaders.generateToken = true;
                 return $q.allSettled([
-                    OvhApiCloudProjectUser.Lexi().token({
+                    OvhApiCloudProjectUser.v6().token({
                         serviceName: self.projectId,
                         userId: self.openstackUser.id
                     }, {
@@ -44,7 +44,7 @@ angular.module("managerApp")
                     }, function (err) {
                         CloudMessage.error([$translate.instant("cpou_token_error"), err.data && err.data.message || ""].join(" "));
                     }),
-                    OvhApiMe.Lexi().get().$promise.then(function (me) {
+                    OvhApiMe.v6().get().$promise.then(function (me) {
                         // set guide lang
                         self.tokenGuide.lang = me.ovhSubsidiary;
                         self.tokenGuide.link = getTokenGuideUrl();

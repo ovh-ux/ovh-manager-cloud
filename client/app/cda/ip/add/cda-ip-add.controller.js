@@ -11,7 +11,7 @@ angular.module("managerApp")
 
       self.createIp = function () {
           self.saving = true;
-          return OvhApiDedicatedCeph.Acl().Lexi().post({
+          return OvhApiDedicatedCeph.Acl().v6().post({
               serviceName: $stateParams.serviceName
           }, {
               aclList: [self.model.ip]

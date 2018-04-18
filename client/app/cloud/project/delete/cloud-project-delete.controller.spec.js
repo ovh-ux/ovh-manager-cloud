@@ -225,7 +225,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         };
 
         CloudProjectCreditMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     query: function () {
                         return {
@@ -257,7 +257,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         };
 
         CloudProjectCreditMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     query: function () {
                         return {
@@ -289,7 +289,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         };
 
         CloudProjectCreditMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     query: function () {
                         return {
@@ -316,7 +316,7 @@ xdescribe("Controller: CloudProjectDeleteCtrl", function () {
         };
 
         CloudProjectConsumptionMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     query: function () {
                         return {

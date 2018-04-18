@@ -33,7 +33,7 @@ angular.module("managerApp").controller("NashaPartitionAccessAddCtrl", function 
 
     self.addAccess = function () {
         self.loading = true;
-        OvhApiDedicatedNasha.Partition().Access().Lexi().add({
+        OvhApiDedicatedNasha.Partition().Access().v6().add({
             serviceName: self.data.serviceName,
             partitionName: self.data.partition.partitionName
         }, {

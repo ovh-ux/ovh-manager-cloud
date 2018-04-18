@@ -93,7 +93,7 @@ angular.module("managerApp").controller("RA.add.storageCtrl", [
             $scope.loaders.regions = true;
             $scope.regions = null;
 
-            return OvhApiCloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.v6().query({
                     serviceName: $scope.projectId
                 }).$promise
                 .then(function (regions) {

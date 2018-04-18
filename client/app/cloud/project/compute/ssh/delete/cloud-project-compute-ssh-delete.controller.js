@@ -12,7 +12,7 @@ class CloudProjectComputeSshDeleteCtrl {
     }
 
     deleteSshKey (sshKey) {
-        return this.OvhApiCloudProjectSshKey.Lexi()
+        return this.OvhApiCloudProjectSshKey.v6()
             .remove({serviceName : this.serviceName, keyId: sshKey.id})
             .$promise
     }

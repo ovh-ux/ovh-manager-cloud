@@ -13,7 +13,7 @@ angular.module("managerApp").service("deskaasSidebar", function ($rootScope, Ovh
 
         return $q(function (resolve) {
 
-            OvhApiDeskaasService.Lexi().query()
+            OvhApiDeskaasService.v6().query()
                 .$promise
                 .then(function (serviceNames) {
 
@@ -25,7 +25,7 @@ angular.module("managerApp").service("deskaasSidebar", function ($rootScope, Ovh
 
                             requests
                                 .push(
-                                    OvhApiDeskaasService.Lexi()
+                                    OvhApiDeskaasService.v6()
                                         .get({ serviceName: serviceName })
                                         .$promise
                                         .then(function (service) {

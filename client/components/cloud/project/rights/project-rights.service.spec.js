@@ -6,9 +6,9 @@ describe("Controller: ProjectRightsService", function () {
     beforeEach(module("managerAppMock"));
 
     var projectRightsService;
-    var CloudProjectAclLexiMock;
-    var CloudProjectServiceInfosLexiMock;
-    var UserLexiMock;
+    var CloudProjectAclV6Mock;
+    var CloudProjectServiceInfosV6Mock;
+    var UserV6Mock;
     var $q;
     var $rootScope;
 
@@ -17,27 +17,27 @@ describe("Controller: ProjectRightsService", function () {
     };
 
     function setupCloudProject(acl, contactAdmin) {
-        spyOn(UserLexiMock, "get").and.returnValue({
+        spyOn(UserV6Mock, "get").and.returnValue({
             $promise: $q.when(user)
         });
 
-        spyOn(CloudProjectAclLexiMock, "query").and.returnValue({
+        spyOn(CloudProjectAclV6Mock, "query").and.returnValue({
             $promise: $q.when(acl)
         });
-        spyOn(CloudProjectServiceInfosLexiMock, "get").and.returnValue({
+        spyOn(CloudProjectServiceInfosV6Mock, "get").and.returnValue({
             $promise: $q.when({
                 contactAdmin: contactAdmin
             })
         });
     }
 
-    beforeEach(inject(function (OvhApiCloudProjectAclLexi, OvhApiMeLexi, CloudProjectRightService, OvhApiCloudProjectServiceInfosLexi, _$httpBackend_, _$q_, _$rootScope_) {
+    beforeEach(inject(function (OvhApiCloudProjectAclV6, OvhApiMeV6, CloudProjectRightService, OvhApiCloudProjectServiceInfosV6, _$httpBackend_, _$q_, _$rootScope_) {
         $q = _$q_;
         $rootScope = _$rootScope_;
         var $httpBackend = _$httpBackend_;
-        CloudProjectAclLexiMock = OvhApiCloudProjectAclLexi;
-        CloudProjectServiceInfosLexiMock = OvhApiCloudProjectServiceInfosLexi;
-        UserLexiMock = OvhApiMeLexi;
+        CloudProjectAclV6Mock = OvhApiCloudProjectAclV6;
+        CloudProjectServiceInfosV6Mock = OvhApiCloudProjectServiceInfosV6;
+        UserV6Mock = OvhApiMeV6;
         projectRightsService = CloudProjectRightService;
         $httpBackend.whenGET(/translations\/Messages\w+\.json$/).respond(200, {});
         $httpBackend.whenGET("app/home/home.html").respond(200, {});

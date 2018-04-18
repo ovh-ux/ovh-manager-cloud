@@ -38,7 +38,7 @@ angular.module("managerApp")
         };
 
         function initInstances () {
-            return OvhApiCloudProjectInstance.Lexi().query({
+            return OvhApiCloudProjectInstance.v6().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (instances) {
                 self.data.instances = instances;
@@ -46,7 +46,7 @@ angular.module("managerApp")
         }
 
         function initImages () {
-            return OvhApiCloudProjectImage.Lexi().query({
+            return OvhApiCloudProjectImage.v6().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(function (result) {
                 self.data.images = result;
@@ -54,7 +54,7 @@ angular.module("managerApp")
         }
 
         function initUserCurrency () {
-            return OvhApiMe.Lexi().get().$promise.then(function (me) {
+            return OvhApiMe.v6().get().$promise.then(function (me) {
                 self.currencySymbol = me.currency.symbol;
             });
         }
@@ -126,7 +126,7 @@ angular.module("managerApp")
         self.confirmMonthlyPaymentActivation = function () {
             self.loaders.monthlyBilling = true;
 
-            OvhApiCloudProjectInstance.Lexi().activeMonthlyBilling({
+            OvhApiCloudProjectInstance.v6().activeMonthlyBilling({
                 serviceName: $stateParams.projectId,
                 instanceId: self.instanceToMonthly
             }).$promise.then(function () {

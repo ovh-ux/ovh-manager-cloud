@@ -60,7 +60,7 @@
         getImages () {
             this.loaders.images = true;
 
-            return this.OvhApiCloudProjectImage.Lexi().query({
+            return this.OvhApiCloudProjectImage.v6().query({
                 serviceName: this.$stateParams.projectId,
                 flavorType: this.data.vm.type,
                 region: this.data.vm.region
