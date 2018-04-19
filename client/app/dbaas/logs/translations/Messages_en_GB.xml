@@ -348,7 +348,9 @@
    <translation id="logs_streams_enable_websocket" qtlid="426677">Activate WebSocket broadcasting</translation>
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activate long-term storage</translation>
-   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs securely for years.</translation>
+   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs safely for years.</translation>
+   <translation id="streams_cold_storage_price"> This feature is charged {{price}} HT / month in 2GB increments</translation>
+   <translation id="logs_streams_storage_basic_offer">Please upgrade to pro offer to avail this feature.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Compression algorithm</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archive conservation period</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>

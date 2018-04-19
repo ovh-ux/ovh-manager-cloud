@@ -32,6 +32,10 @@ class LogsOrderService {
             quantity: offerDetail.quantity
         }).$promise.catch(this.ServiceHelper.errorHandler("logs_order_save_order"));
     }
+
+    getOrderCatalog (ovhSubsidiary) {
+        return this.OvhApiDbaasLogsOrder.getCatalog({ ovhSubsidiary }).$promise.catch(this.ServiceHelper.errorHandler("logs_order_get_error"));
+    }
 }
 
 angular.module("managerApp").service("LogsOrderService", LogsOrderService);

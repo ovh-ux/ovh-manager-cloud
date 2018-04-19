@@ -1,4 +1,5 @@
 angular.module("managerApp").constant("LogsConstants", {
+    COLDSTORAGE: "COLDSTORAGE",
     DESCRIPTION_MIN_LENGTH: 3,
     EXPOSED_PORT_MIN: 514,
     EXPOSED_PORT_MAX: 65535,

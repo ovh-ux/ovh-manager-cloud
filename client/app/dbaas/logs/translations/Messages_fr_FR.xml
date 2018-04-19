@@ -349,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activer le stockage longue durée</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivez vos logs de façon sûre pour des années.</translation>
+   <translation id="streams_cold_storage_price">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorithme de compression</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durée de rétention des archives</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>

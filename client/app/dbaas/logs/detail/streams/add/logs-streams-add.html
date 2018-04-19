@@ -71,13 +71,15 @@
 
         <div class="oui-field pb-4">
             <div class="oui-field__content">
-                <div class="oui-field-control">
+                <div class="oui-field-control oui-checkbox">
                     <oui-checkbox model="ctrl.stream.data.coldStorageEnabled"
                         id="stream_enable_compression"
                         name="stream_enable_compression"
                         text="{{'logs_streams_enable_archieve' | translate}}"
-                        description="{{'logs_streams_enable_archieve_description' | translate}}">
+                        disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer">
                     </oui-checkbox>
+                    <span ng-if="ctrl.mainOffer.data.planCode !== ctrl.LogsConstants.basicOffer" class="oui-checkbox__description" data-translate="{{'logs_streams_enable_archieve_description' | translate}} {{'streams_cold_storage_price' | translate: ctrl.coldStoragePrice}}"></span>
+                    <span ng-if="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer" class="oui-checkbox__description" data-translate="logs_streams_storage_basic_offer"></span>
                 </div>
             </div>
         </div>

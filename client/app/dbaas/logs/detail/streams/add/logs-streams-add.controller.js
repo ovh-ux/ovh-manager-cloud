@@ -1,5 +1,5 @@
 class LogsStreamsAddCtrl {
-    constructor ($q, $state, $stateParams, LogsStreamsService, ControllerHelper, CloudMessage) {
+    constructor ($q, $state, $stateParams, LogsStreamsService, ControllerHelper, CloudMessage, LogsConstants) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -7,10 +7,11 @@ class LogsStreamsAddCtrl {
         this.LogsStreamsService = LogsStreamsService;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.LogsConstants = LogsConstants;
         this.isEdit = false;
         this.compressionAlgorithms = this.LogsStreamsService.getCompressionAlgorithms();
         this.storageDurations = this.LogsStreamsService.getStorageDurations();
-
+        this.coldStoragePrice = { price: "" };
         this.initLoaders();
     }
 
@@ -28,7 +29,21 @@ class LogsStreamsAddCtrl {
         this.mainOffer = this.ControllerHelper.request.getArrayLoader({
             loaderFunction: () => this.LogsStreamsService.getMainOffer(this.serviceName)
         });
-        this.mainOffer.load();
+        this.catalog = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.LogsStreamsService.getOrderCatalog(this.ovhSubsidiary)
+        });
+        this.accountDetails = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.LogsStreamsService.getAccountDetails(this.serviceName)
+        });
+
+        this.accountDetails.load().then(() => {
+            this.ovhSubsidiary = this.accountDetails.data.me.ovhSubsidiary;
+            this.$q.all([this.mainOffer.load(), this.catalog.load()]).then(() => {
+                const selectedCatalog = this.catalog.data.plans.find(plan => plan.planCode === this.mainOffer.data.planCode);
+                const coldstorage = selectedCatalog.addonsFamily.find(addon => addon.family === this.LogsConstants.COLDSTORAGE);
+                this.coldStoragePrice.price = coldstorage.addons[0].plan.details.pricings.default[0].price.text;
+            });
+        });
 
         if (this.$stateParams.streamId) {
             this.isEdit = true;
