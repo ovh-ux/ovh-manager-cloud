@@ -2,11 +2,6 @@
     <oui-spinner></oui-spinner>
 </section>
 <section data-ng-if="!ctrl.service.loading" class="container-fluid cui-page__content cui-page__content-flex logs-home">
-    <div class="oui-message oui-message_info m-3" role="alert">
-        <i class="oui-icon oui-icon-info_circle oui-icon_bicolor" aria-hidden="true"></i>
-        <p class="oui-message__body font-weight-bold" data-translate="logs_home_info_title"></p>
-        <p class="oui-message__body" data-translate="logs_home_info"></p>
-    </div>
     <div class="oui-message oui-message_warning m-3" role="alert" data-ng-if="ctrl.isAccountDisabled">
         <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
         <p class="oui-message__body font-weight-bold" data-translate="logs_home_account_disabled_title"></p>
@@ -14,8 +9,8 @@
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4" data-ng-if="!ctrl.isAccountDisabled">
-            <cui-tile 
-                data-title="'logs_home_shortcuts' | translate" 
+            <cui-tile
+                data-title="'logs_home_shortcuts' | translate"
                 data-loading="ctrl.accountDetails.loading"
                 class="h-100">
                 <cui-tile-body-list>
@@ -23,19 +18,30 @@
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_stream"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastStream"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.allStream"></cui-tile-action-link>
                     </cui-tile-body-list-item>
                     <div class="cui-tile__top-bordered"></div>
                     <h5 class="cui-tile__title cui-tile__subtitle" data-translate="logs_home_shortcuts_last_dashboard"></h5>
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.lastDashboard"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.allDashboard"></cui-tile-action-link>
                     </cui-tile-body-list-item>
                     <cui-tile-body-list-item class="cui-tile__top-bordered">
                         <cui-tile-action-link data-action="ctrl.actions.graylog"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.graylogApi"></cui-tile-action-link>
+                    </cui-tile-body-list-item>
+                    <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.elasticsearch" data-disabled="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)">
-                            <i data-ng-if="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)" class="oui-icon oui-icon-help_circle cui-tile__tooltip" aria-hidden="true" oui-tooltip="{{ ::'logs_home_shortcuts_elasticsearch_help' | translate }}"></i>
+                            <i data-ng-if="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)"
+                               class="oui-icon oui-icon-help_circle cui-tile__tooltip"
+                               aria-hidden="true"
+                               data-oui-tooltip="{{ ::'logs_home_shortcuts_elasticsearch_help' | translate }}"></i>
                         </cui-tile-action-link>
                     </cui-tile-body-list-item>
                 </cui-tile-body-list>
@@ -48,9 +54,9 @@
                     <canvas id="storage-data" class="chart chart-line"
                         data-ng-if="!ctrl.storageData.loading && ctrl.storageData.data.timestamps.length>0"
                         chart-data="ctrl.dataUsageGraphData.data"
-                        chart-labels="ctrl.dataUsageGraphData.labels" 
-                        chart-series="ctrl.dataUsageGraphData.series" 
-                        chart-colors="ctrl.dataUsageGraphData.colors" 
+                        chart-labels="ctrl.dataUsageGraphData.labels"
+                        chart-series="ctrl.dataUsageGraphData.series"
+                        chart-colors="ctrl.dataUsageGraphData.colors"
                         chart-dataset-override="ctrl.dataUsageGraphData.datasetOverride"
                         chart-options="ctrl.dataUsageGraphData.options">
                     </canvas>
@@ -62,8 +68,8 @@
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4" data-ng-if="!ctrl.isAccountDisabled">
-            <cui-tile 
-                data-title="'logs_home_configuration' | translate" 
+            <cui-tile
+                data-title="'logs_home_configuration' | translate"
                 data-loading="ctrl.accountDetails.loading || ctrl.tokenIds.loading"
                 class="h-100">
                 <cui-tile-body class="cui-tile__top-bordered">
@@ -74,7 +80,10 @@
                     <cui-tile-item data-term="'logs_home_tokens' | translate"
                         data-description="ctrl.tokenIds.data.length"
                         data-actions="ctrl.actions.editTokens">
-                        <i class="oui-icon oui-icon-help_circle cui-tile__tooltip" aria-hidden="true" oui-tooltip="{{ ::'logs_home_tokens_tooltip' | translate }}"></i>
+                        <i class="oui-icon oui-icon-help_circle cui-tile__tooltip"
+                           aria-hidden="true"
+                           data-oui-tooltip="{{ ::'logs_home_tokens_tooltip' | translate }}"
+                           data-oui-tooltip-placement="top-start"></i>
                     </cui-tile-item>
                     <cui-tile-item data-term="'logs_home_service' | translate"
                         data-description="ctrl.accountDetails.data.service.username">
@@ -82,13 +91,13 @@
                     <cui-tile-item data-term="'logs_home_password' | translate"
                         data-description="'******'"
                         data-actions="ctrl.actions.changePassword">
-                    </cui-tile-item>                    
+                    </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4" data-ng-if="!ctrl.isAccountDisabled">
-            <cui-tile 
-                data-title="'logs_home_ssi_configuration' | translate" 
+            <cui-tile
+                data-title="'logs_home_ssi_configuration' | translate"
                 data-loading="ctrl.defaultCluster.loading"
                 class="h-100">
                 <cui-tile-body class="cui-tile__top-bordered">
@@ -115,8 +124,8 @@
             </cui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile 
-                data-title="'logs_home_subscription' | translate" 
+            <cui-tile
+                data-title="'logs_home_subscription' | translate"
                 data-loading="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading"
                 class="h-100">
                 <cui-tile-body>
