@@ -47,9 +47,7 @@
                 </div>
                 <div class="cui-box-line"></div>
                 <div class="cui-box-footer p-2">
-                    <span data-ng-repeat="price in offer.prices">
-                        <span class="cui-box-footer__price" ng-if="price.capacities.indexOf('renew') > -1">{{price.price.text}}</span>
-                    </span>
+                        <span class="cui-box-footer__price" >{{offer.renewalPrice.text}}</span>
                 </div>
             </div>
         </div>

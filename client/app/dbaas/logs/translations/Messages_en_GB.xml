@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 Go/Mois</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 To/Mois</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 To/Mois</translation>
+   <translation id="logs-pro-10240">10 To/Month</translation>
+   <translation id="logs-pro-51200">50 To/Month</translation>
+   <translation id="logs-pro-102400">100 To/Month</translation>
+   <translation id="logs-pro-307200">300 To/Month</translation>
    <translation id="logs-reader-1" qtlid="30646">None</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Moyenne de 0.5 Go/jour</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Moyenne de 1 Go/jour</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Moyenne de 30 Go/jour</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Moyenne de 50 Go/jour</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Moyenne de 100 Go/jour</translation>
+   <translation id="logs-pro-10240_limit">An average of 341 GB/day </translation>
+   <translation id="logs-pro-51200_limit">An average of 1.6 TB/day </translation>
+   <translation id="logs-pro-102400_limit">An average of 3.3 TB/day </translation>
+   <translation id="logs-pro-307200_limit">An average of 10 TB/day </translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Conflit d'offre</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Vous avez sélectionné une offre que vous possédez déjà. Veuillez sélectionner une autre offre.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Une erreur est survenue lors du chargement des offres</translation>
