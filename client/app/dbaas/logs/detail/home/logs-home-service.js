@@ -4,15 +4,15 @@ class LogsHomeService {
         this.$q = $q;
         this.$translate = $translate;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
-        this.ContactsApiLexiService = OvhApiDbaas.Logs().Contacts().Lexi();
+        this.ContactsApiLexiService = OvhApiDbaas.Logs().Contacts().v6();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
-        this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
-        this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
+        this.InputsApiLexiService = OvhApiDbaas.Logs().Input().v6();
+        this.LogsLexiService = OvhApiDbaas.Logs().v6();
         this.LogsHelperService = LogsHelperService;
         this.LogsConstants = LogsConstants;
         this.LogsOptionsService = LogsOptionsService;
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
         this.ServiceHelper = ServiceHelper;
         this.SidebarMenu = SidebarMenu;
     }

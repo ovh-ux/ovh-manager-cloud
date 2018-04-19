@@ -4,10 +4,10 @@ class LogsAliasesService {
         this.$q = $q;
         this.$translate = $translate;
         this.ServiceHelper = ServiceHelper;
-        this.AliasApiService = OvhApiDbaas.Logs().Alias().Lexi();
+        this.AliasApiService = OvhApiDbaas.Logs().Alias().v6();
         this.AliasAapiService = OvhApiDbaas.Logs().Alias().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
         this.CloudPoll = CloudPoll;
         this.LogsHelperService = LogsHelperService;
         this.LogsOptionsService = LogsOptionsService;

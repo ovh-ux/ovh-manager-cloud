@@ -2,8 +2,8 @@ class LogsStreamsService {
     constructor ($q, $translate, CloudMessage, ControllerHelper, LogsOptionsService, LogsStreamsAlertsService, LogsStreamsArchivesService, LogsConstants, OvhApiDbaas, UrlHelper, LogsHelperService) {
         this.$q = $q;
         this.$translate = $translate;
-        this.LogsApiService = OvhApiDbaas.Logs().Lexi();
-        this.StreamsApiService = OvhApiDbaas.Logs().Stream().Lexi();
+        this.LogsApiService = OvhApiDbaas.Logs().v6();
+        this.StreamsApiService = OvhApiDbaas.Logs().Stream().v6();
         this.StreamsAapiService = OvhApiDbaas.Logs().Stream().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();

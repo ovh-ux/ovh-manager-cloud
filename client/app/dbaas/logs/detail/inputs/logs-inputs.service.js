@@ -6,10 +6,10 @@ class LogsInputsService {
         this.CloudMessage = CloudMessage;
         this.CloudPoll = CloudPoll;
         this.InputsApiAapiService = OvhApiDbaas.Logs().Input().Aapi();
-        this.InputsApiLexiService = OvhApiDbaas.Logs().Input().Lexi();
+        this.InputsApiLexiService = OvhApiDbaas.Logs().Input().v6();
         this.LogsConstants = LogsConstants;
         this.LogsOptionsService = LogsOptionsService;
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
         this.ServiceHelper = ServiceHelper;
         this.LogsHelperService = LogsHelperService;
 

@@ -10,7 +10,7 @@ class LogsOptionsService {
         this.OvhApiDbaasLogs = OvhApiDbaas.Logs();
         this.LogsOfferService = LogsOfferService;
         this.LogsConstants = LogsConstants;
-        this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().Lexi();
+        this.OptionsApiLexiService = OvhApiDbaas.Logs().Option().v6();
     }
 
     /**
@@ -33,7 +33,7 @@ class LogsOptionsService {
      * @memberof LogsOptionsService
      */
     getOptions (serviceName) {
-        return this.OvhApiOrderCartServiceOption.Lexi().get({
+        return this.OvhApiOrderCartServiceOption.v6().get({
             productName: this.LogsConstants.productName,
             serviceName
         }).$promise

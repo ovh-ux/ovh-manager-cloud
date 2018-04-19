@@ -2,7 +2,7 @@ class LogsDashboardsService {
     constructor ($q, OvhApiDbaas, LogsOptionsService,
                  LogsHelperService, LogsConstants, UrlHelper) {
         this.$q = $q;
-        this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().Lexi();
+        this.DashboardsApiService = OvhApiDbaas.Logs().Dashboard().v6();
         this.DashboardsAapiService = OvhApiDbaas.Logs().Dashboard().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
         this.DetailsAapiService = OvhApiDbaas.Logs().Details().Aapi();

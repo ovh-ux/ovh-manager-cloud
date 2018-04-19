@@ -3,7 +3,7 @@ class LogsStreamsArchivesService {
         this.$http = $http;
         this.$q = $q;
         this.LogsConstants = LogsConstants;
-        this.ArchivesApiService = OvhApiDbaas.Logs().Archive().Lexi();
+        this.ArchivesApiService = OvhApiDbaas.Logs().Archive().v6();
         this.ServiceHelper = ServiceHelper;
     }
 

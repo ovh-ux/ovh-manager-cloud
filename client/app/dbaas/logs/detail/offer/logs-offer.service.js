@@ -1,7 +1,7 @@
 class LogsOfferService {
     constructor ($translate, ControllerHelper, OvhApiDbaas, ServiceHelper) {
         this.$translate = $translate;
-        this.OvhApiDbaasLogsOffer = OvhApiDbaas.Logs().Offer().Lexi();
+        this.OvhApiDbaasLogsOffer = OvhApiDbaas.Logs().Offer().v6();
         this.ServiceHelper = ServiceHelper;
         this.ControllerHelper = ControllerHelper;
     }
