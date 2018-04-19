@@ -57,6 +57,13 @@ class LogsStreamsAddCtrl {
         }
     }
 
+    submit () {
+        if (this.edit) {
+            this.updateStream();
+        } else {
+            this.createStream();
+        }
+    }
     /**
      * update stream
      *
