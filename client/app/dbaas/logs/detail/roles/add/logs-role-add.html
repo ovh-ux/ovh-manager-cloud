@@ -1,84 +1,39 @@
-<div class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button
-            class="oui-icon oui-icon-close_thin oui-modal__close-button"
-            type="button"
-            aria-label="Exit"
-            ng-click="ctrl.cancel()"></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
-            <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_role_modal_edit_title"></h2>
-            <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_role_modal_add_title"></h2>
-        </div>
-        <div ng-if="ctrl.isEdit" class="mb-3">
+<form novalidate name="ctrl.form">
+    <oui-modal data-title="{{ ::ctrl.title | translate }}"
+               data-primary-action="ctrl.save()"
+               data-primary-label="{{ ::'common_save' | translate }}"
+               data-secondary-action="ctrl.cancel()"
+               data-secondary-label="{{ ::'common_cancel' | translate }}"
+               data-on-dismiss="ctrl.cancel()"
+               data-loading="ctrl.saving.loading">
+        <div data-ng-if="ctrl.isEdit" class="mb-3">
             <span data-translate="logs_role_modal_edit_desription" data-translate-values="{role: ctrl.role.name}"></span>
         </div>
-        <form novalidate name="ctrl.form">
-            <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.name.$invalid}">
-                <label for="name" class="oui-label" data-translate="logs_role_modal_name"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_5">
-                        <input type="text" id="name" name="name"
-                        class="oui-input mb-0" data-ng-model="ctrl.role.name"
-                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.name.$invalid}"
-                        autofocus
-                        required />
-                    </div>
-                </div>
+
+        <oui-field data-label="{{::'logs_role_modal_name' | translate }}">
+            <input type="text" id="name" name="name"
+                class="oui-input mb-0" data-ng-model="ctrl.role.name"
+                autofocus
+                required>
+        </oui-field>
+
+        <oui-field data-label="{{::'logs_role_modal_description' | translate }}">
+            <input type="text" id="description" name="description"
+                class="oui-input" data-ng-model="ctrl.role.description"
+                required>
+        </oui-field>
+
+        <oui-field data-label="{{::'logs_role_modal_description' | translate }}">
+            <div class="oui-select">
+                <select class="oui-select__input"
+                    name="role_modal_select"
+                    id="role_modal_select"
+                    data-ng-model="ctrl.role.optionId"
+                    data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbRole+'/'+option.maxNbRole for option in ctrl.options.data">
+                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.quota.data.mainOfferCurrent}}/{{ctrl.quota.data.mainOfferMax}}</option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </div>
-            <div class="oui-field mt-3" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.description.$invalid}">
-                <label for="description" class="oui-label" data-translate="logs_role_modal_description"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_5">
-                        <input type="text" id="description" name="description"
-                        class="oui-input" data-ng-model="ctrl.role.description"
-                        data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.description.$invalid}"
-                        required />
-                    </div>
-                </div>
-            </div>
-            <div class="oui-field" data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.role_modal_select.$invalid }">
-                <label for="select_option" class="oui-label" data-translate="logs_role_modal_option"></label>
-                <div class="oui-field__content" data-ng-if="!ctrl.options.loading">
-                    <div class="oui-field-control oui-field-control_5">
-                        <div class="oui-select"
-                            data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.role_modal_select.$invalid }">
-                            <select class="oui-select__input"
-                                name="role_modal_select"
-                                id="role_modal_select"
-                                data-ng-model="ctrl.role.optionId"
-                                data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbRole+'/'+option.maxNbRole for option in ctrl.options.data">
-                                <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.quota.data.mainOfferCurrent}}/{{ctrl.quota.data.mainOfferMax}}</option>
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="oui-modal__footer">
-                <div class="cui-form-actions">
-                    <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                    <div data-ng-if="!ctrl.saving.loading">
-                        <button
-                            class="oui-button oui-button_secondary"
-                            data-translate="common_cancel"
-                            data-ng-click="ctrl.cancel()"></button>
-                        <button
-                            class="oui-button oui-button_primary"
-                            type="submit"
-                            data-ng-if="!ctrl.isEdit"
-                            data-translate="common_save"
-                            data-ng-click="ctrl.saveRole()"></button>
-                        <button
-                            data-ng-if="ctrl.isEdit"
-                            class="oui-button oui-button_primary"
-                            type="submit"
-                            data-translate="common_save"
-                            data-ng-click="ctrl.updateRole()"></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+        </oui-field>
+    </oui-modal>
+</form>

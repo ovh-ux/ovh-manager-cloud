@@ -1,43 +1,16 @@
-<div class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button
-            class="oui-icon oui-icon-close_thin oui-modal__close-button"
-            type="button"
-            aria-label="Exit"
-            ng-click="ctrl.cancel()"></button>
-    </div>
+<oui-modal data-title="{{ ::'inputs_info_title' | translate }}"
+           data-on-dismiss="ctrl.cancel()">
+    <p data-translate="inputs_info_description"></p>
 
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text">
-            <h2 class="oui-modal__title" data-translate="inputs_info_title"></h2>
-            <p class="oui-paragraph" data-translate="inputs_info_description"></p>
-        </div>
+    <oui-field data-label="{{ ::'inputs_info_hostname' | translate}}">
+        <cui-clipboard id="input_hostname" data-text="ctrl.currentInput.info.hostname"></cui-clipboard>
+    </oui-field>
 
-        <div class="oui-field">
-            <label for="input_hostname" class="oui-label" data-translate="inputs_info_hostname"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_5">
-                    <cui-clipboard id="input_hostname" data-text="ctrl.currentInput.info.hostname"></cui-clipboard>
-                </div>
-            </div>
-        </div>
+    <oui-field data-label="{{ ::'inputs_info_ipaddress' | translate}}" data-size="m">
+        <cui-clipboard id="input_ipaddress" data-text="ctrl.currentInput.info.publicAddress"></cui-clipboard>
+    </oui-field>
 
-        <div class="oui-field">
-            <label for="input_ipaddress" class="oui-label" data-translate="inputs_info_ipaddress"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_3">
-                    <cui-clipboard id="input_ipaddress" data-text="ctrl.currentInput.info.publicAddress"></cui-clipboard>
-                </div>
-            </div>
-        </div>
-
-        <div class="oui-field">
-            <label for="input_certificate" class="oui-label" data-translate="inputs_info_certificate"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_5">
-                    <cui-clipboard id="input_certificate" data-text="ctrl.currentInput.info.sslCertificate"></cui-clipboard>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
+    <oui-field data-label="{{ ::'inputs_info_certificate' | translate}}">
+        <cui-clipboard id="input_certificate" data-text="ctrl.currentInput.info.sslCertificate"></cui-clipboard>
+    </oui-field>
+</oui-modal>
