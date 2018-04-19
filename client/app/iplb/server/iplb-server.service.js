@@ -8,9 +8,9 @@ class IpLoadBalancerServerService {
         this.ServiceHelper = ServiceHelper;
 
         this.Server = {
-            tcp: this.IpLoadBalancing.Farm().Tcp().Server().Lexi(),
-            udp: this.IpLoadBalancing.Farm().Udp().Server().Lexi(),
-            http: this.IpLoadBalancing.Farm().Http().Server().Lexi()
+            tcp: this.IpLoadBalancing.Farm().Tcp().Server().v6(),
+            udp: this.IpLoadBalancing.Farm().Udp().Server().v6(),
+            http: this.IpLoadBalancing.Farm().Http().Server().v6()
         };
     }
 
@@ -59,7 +59,7 @@ class IpLoadBalancerServerService {
     }
 
     getFarmType (serviceName, farmId) {
-        return this.IpLoadBalancing.Farm().Lexi().query({ serviceName })
+        return this.IpLoadBalancing.Farm().v6().query({ serviceName })
             .$promise
             .then(farms => {
                 const farm = _.find(farms, { id: parseInt(farmId, 10) });
@@ -74,7 +74,7 @@ class IpLoadBalancerServerService {
     }
 
     getProxyProtocolVersions () {
-        return this.IpLoadBalancing.Lexi().schema()
+        return this.IpLoadBalancing.v6().schema()
             .$promise
             .then(schema => schema.models["ipLoadbalancing.ProxyProtocolVersionEnum"].enum)
             .catch(this.ServiceHelper.errorHandler("iplb_server_request_error"));

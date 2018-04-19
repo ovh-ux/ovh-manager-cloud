@@ -53,7 +53,7 @@ angular.module("managerApp").controller("RA.add.storage.stepContainerTypeCtrl", 
         };
 
         self.$onInit = function () {
-            OvhApiMe.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.v6().get().$promise.then(function (me) {
                 var lang = me.ovhSubsidiary;
                 _.forEach($scope.categories, category => {
                     category.moreInfo.url = URLS.website_order[category.code][lang];

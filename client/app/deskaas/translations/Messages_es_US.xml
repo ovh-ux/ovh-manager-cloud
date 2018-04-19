@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
 
-   <translation id="vdi_header" qtlid="313897">Cloud desktop</translation>
+   <translation id="vdi_header" qtlid="313897">Cloud Desktop</translation>
 
    <translation id="vdi_hdr_status" qtlid="33790">État</translation>
    <translation id="vdi_hdr_name" qtlid="3818">Nombre</translation>
@@ -14,24 +14,24 @@
    <translation id="vdi_cancel_title" qtlid="371032">Confirmación de eliminación</translation>
    <translation id="vdi_confirm_cancel_reason" qtlid="371045">Motivo de la cancelación</translation>
    <translation id="vdi_confirm_cancel_commentary" qtlid="371058">Comentario (opcional)</translation>
-   <translation id="vdi_pwd_policy_length" qtlid="295322">Le mot de passe doit avoir une longueur comprise entre {{min}} et {{max}} caractères.</translation>
-   <translation id="vdi_pwd_policy_letterMandatory" qtlid="295335">Le mot de passe doit contenir au moins une lettre.</translation>
-   <translation id="vdi_pwd_policy_lowerMandatory" qtlid="295348">Le mot de passe doit contenir au moins une lettre minuscule.</translation>
-   <translation id="vdi_pwd_policy_upperMandatory" qtlid="295361">Le mot de passe doit contenir au moins une lettre majuscule.</translation>
-   <translation id="vdi_pwd_policy_digitMandatory" qtlid="295374">Le mot de passe doit contenir au moins un chiffre.</translation>
-   <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">Le mot de passe doit contenir au moins un caractère spécial.</translation>
-   <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">Le mot de passe ne doit pas contenir les caractères <span class="code">{{chars}}</span>.</translation>
+   <translation id="vdi_pwd_policy_length" qtlid="295322">La contraseña debe tener entre {{min}} y {{max}} caracteres.</translation>
+   <translation id="vdi_pwd_policy_letterMandatory" qtlid="295335">La contraseña debe contener al menos una letra.</translation>
+   <translation id="vdi_pwd_policy_lowerMandatory" qtlid="295348">La contraseña debe contener al menos una letra minúscula.</translation>
+   <translation id="vdi_pwd_policy_upperMandatory" qtlid="295361">La contraseña debe contener al menos una letra mayúscula.</translation>
+   <translation id="vdi_pwd_policy_digitMandatory" qtlid="295374">La contraseña debe contener al menos una cifra.</translation>
+   <translation id="vdi_pwd_policy_specialMandatory" qtlid="295387">La contraseña debe contener al menos un carácter especial.</translation>
+   <translation id="vdi_pwd_policy_deniedChars" qtlid="295400">La contraseña no debe contener los caracteres <span class="code">{{chars}}</span>.</translation>
 
    <translation id="vdi_pwd_password_label" qtlid="442717">Entrer le nouveau mot de passe</translation>
    <translation id="vdi_pwd_password_generated" qtlid="442730">Générer un mot de passe aléatoire. Vous recevrez ce mot de passe par e-mail.</translation>
 
-   <translation id="vdi_change_alias_title" qtlid="323690">Changement d'alias</translation>
-   <translation id="vdi_change_alias_label" qtlid="323716">Entrez le nouvel alias</translation>
+   <translation id="vdi_change_alias_title" qtlid="323690">Cambio de alias</translation>
+   <translation id="vdi_change_alias_label" qtlid="323716">Introduzca el nuevo alias</translation>
 
-   <translation id="vdi_change_username_title" qtlid="323742">Changement d'username</translation>
-   <translation id="vdi_change_username_policy" qtlid="323703">Doit être pas pire long, avec des caractères mais rien de trop compliqué.</translation>
-   <translation id="vdi_change_username_label" qtlid="323755">Entrez le nouvel username</translation>
-   <translation id="vdi_change_username_err_username" qtlid="323729">Doit être pas pire long, avec des caractères mais rien de trop compliqué</translation>
+   <translation id="vdi_change_username_title" qtlid="323742">Cambio de nombre de usuario</translation>
+   <translation id="vdi_change_username_policy" qtlid="323703">Debe ser larga y con caracteres especiales, pero no demasiado complicada.</translation>
+   <translation id="vdi_change_username_label" qtlid="323755">Introduzca el nuevo nombre de usuario</translation>
+   <translation id="vdi_change_username_err_username" qtlid="323729">Debe ser larga y con caracteres especiales, pero no demasiado complicada.</translation>
 
    <translation id="vdi_reason_hard" qtlid="371071">Uso demasiado complicado</translation>
    <translation id="vdi_reason_testing" qtlid="371084">Prueba de la solución</translation>
@@ -44,8 +44,8 @@
    <translation id="vdi_console_title" qtlid="164844">Acceder a la consola</translation>
    <translation id="vdi_btn_console" qtlid="164844">Acceder a la consola</translation>
    <translation id="vdi_console_info" qtlid="442743">Vous allez recevoir un e-mail contenant la procédure à suivre pour vous connecter à la console de votre Cloud Desktop. Souhaitez-vous continuer?</translation>
-   <translation id="vdi_console_task" qtlid="406554">Demande d'accès à la console envoyée</translation>
-   <translation id="vdi_console_done" qtlid="406567">Vous allez recevoir un mail pour votre demande d'accès à la console.</translation>
+   <translation id="vdi_console_task" qtlid="406554">La solicitud de acceso a la consola se ha enviado.</translation>
+   <translation id="vdi_console_done" qtlid="406567">Usted recibirá por correo electrónico la respuesta a su solicitud de acceso a la consola.</translation>
 
    <translation id="vdi_core" qtlid="251213">vCPU</translation>
    <translation id="vdi_ram" qtlid="31354">RAM</translation>

@@ -3,8 +3,8 @@ class PrivateNetworkListCtrl {
                  OvhApiCloudProjectNetworkPrivate, OvhApiCloudProject, REDIRECT_URLS, CloudMessage, OvhApiMe, URLS,
                  OvhApiVrack, VrackSectionSidebarService, VrackService, CloudPoll, ControllerHelper) {
         this.resources = {
-            privateNetwork: OvhApiCloudProjectNetworkPrivate.Lexi(),
-            project: OvhApiCloudProject.Lexi(),
+            privateNetwork: OvhApiCloudProjectNetworkPrivate.v6(),
+            project: OvhApiCloudProject.v6(),
             aapi: OvhApiVrack.Aapi(),
             modal: $uibModal
         };
@@ -76,7 +76,7 @@ class PrivateNetworkListCtrl {
         // Loading privateNetwork first because vrack can fallback to privateNetworkList to find it's ID.
         this.fetchPrivateNetworks().then(() => this.fetchVrack());
 
-        this.User.Lexi().get().$promise.then(user => {
+        this.User.v6().get().$promise.then(user => {
             this.orderUrl = _.get(this.URLS.website_order, `vrack.${user.ovhSubsidiary}`);
         });
     }

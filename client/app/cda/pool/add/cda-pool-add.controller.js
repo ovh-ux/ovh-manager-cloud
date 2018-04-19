@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.createPool = function () {
           self.saving = true;
-          return OvhApiDedicatedCeph.Pool().Lexi().post({
+          return OvhApiDedicatedCeph.Pool().v6().post({
               serviceName: $stateParams.serviceName
           }, {
               poolName: self.model.poolName

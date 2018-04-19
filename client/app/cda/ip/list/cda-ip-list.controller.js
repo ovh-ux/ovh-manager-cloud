@@ -33,8 +33,8 @@ angular.module("managerApp")
         }
 
         function initIps () {
-            OvhApiDedicatedCeph.Acl().Lexi().resetAllCache();
-            return OvhApiDedicatedCeph.Acl().Lexi().query({
+            OvhApiDedicatedCeph.Acl().v6().resetAllCache();
+            return OvhApiDedicatedCeph.Acl().v6().query({
                 serviceName: $stateParams.serviceName
             }).$promise.then(ips => {
                 self.datas.ips = ips;

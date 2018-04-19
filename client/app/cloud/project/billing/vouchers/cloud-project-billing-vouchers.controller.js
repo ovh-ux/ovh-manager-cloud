@@ -39,7 +39,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         function init () {
             self.loading.init = true;
 
-            return OvhApiCloudProjectCredit.Lexi().query({
+            return OvhApiCloudProjectCredit.v6().query({
                 serviceName: $stateParams.projectId
             }).$promise.then(voucherIds => {
                 self.datas.voucherIds = voucherIds;
@@ -87,7 +87,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         };
 
         function futureVoucherWithPdfUrl (voucher) {
-            return OvhApiMeBill.Lexi().get({ billId: voucher.bill }).$promise.then(function (bill) {
+            return OvhApiMeBill.v6().get({ billId: voucher.bill }).$promise.then(function (bill) {
                 voucher.pdfUrl = bill.pdfUrl;
                 return voucher;
             }, function () {
@@ -96,7 +96,7 @@ angular.module("managerApp").controller("CloudprojectbillingvouchersCtrl",
         }
 
         this.transformItem = function (voucherId) {
-            return OvhApiCloudProjectCredit.Lexi().get({
+            return OvhApiCloudProjectCredit.v6().get({
                 serviceName: $stateParams.projectId,
                 creditId: voucherId
             }).$promise.then(voucher => voucher.bill ? futureVoucherWithPdfUrl(voucher) : voucher);

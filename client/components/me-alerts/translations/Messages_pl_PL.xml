@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Posiadasz ujemne saldo o wartości <strong>{{value}}</strong> na dzień {{date | date:'medium'}}. Przejdź do <a href="{{link}}" class="alert-link">sekcji Płatności</a>, aby uregulować płatności.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Posiadasz zadłużenie w kwocie <strong>{{value}}</strong>. Przejdź do <a href="{{link}}" class="alert-link">sekcji Płatności</a>, aby uregulować płatności.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="#/billing/statements" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="{{ link }}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Twoje konto OVH osiągnęło zdefiniowany przez Ciebie próg. Przejdź do <a href="{{link}}" class="alert-link">sekcji Płatności</a>, aby uzyskać więcej informacji. </translation>
 

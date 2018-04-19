@@ -55,7 +55,7 @@ class VrackService {
     }
 
     linkCloudProjectToVrack (selectedVrack, projectId) {
-        return this.OvhApiVrack.CloudProject().Lexi().create({
+        return this.OvhApiVrack.CloudProject().v6().create({
             serviceName: selectedVrack
         }, {
             project: projectId
@@ -72,7 +72,7 @@ class VrackService {
     }
 
     unlinkCloudProjectFromVrack (selectedVrack, projectId) {
-        return this.OvhApiVrack.CloudProject().Lexi().delete({
+        return this.OvhApiVrack.CloudProject().v6().delete({
             serviceName: selectedVrack,
             project: projectId
         }).$promise
@@ -80,7 +80,7 @@ class VrackService {
     }
 
     getTask (serviceName, taskId) {
-        return this.OvhApiVrack.Lexi().task({ serviceName, taskId }).$promise;
+        return this.OvhApiVrack.v6().task({ serviceName, taskId }).$promise;
     }
 }
 

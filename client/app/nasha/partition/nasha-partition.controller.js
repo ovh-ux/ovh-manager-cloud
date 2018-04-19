@@ -118,7 +118,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     }
 
     function initTasks () {
-        OvhApiDedicatedNasha.Task().Lexi().resetCache();
+        OvhApiDedicatedNasha.Task().v6().resetCache();
 
         var tasksPromises = _.map(self.trackedTaskStatus, function (status) {
             return getTasksPromise(status);
@@ -128,7 +128,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
             return _.flatten(data);
         }).then(function (taskIds) {
             var taskPromises = _.map(taskIds, function (taskId) {
-                return OvhApiDedicatedNasha.Task().Lexi().get({ serviceName: $stateParams.nashaId, taskId: taskId }).$promise;
+                return OvhApiDedicatedNasha.Task().v6().get({ serviceName: $stateParams.nashaId, taskId: taskId }).$promise;
             });
 
             return $q.allSettled(taskPromises);
@@ -190,7 +190,7 @@ angular.module("managerApp").controller("PartitionCtrl", function ($state, $root
     }
 
     function getTasksPromise (status) {
-        return OvhApiDedicatedNasha.Task().Lexi().query({ serviceName: $stateParams.nashaId, status: status }).$promise;
+        return OvhApiDedicatedNasha.Task().v6().query({ serviceName: $stateParams.nashaId, status: status }).$promise;
     }
 
     function launchPolling (taskId) {

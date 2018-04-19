@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">OVH-tililläsi on velkaa <strong>{{value}}</strong> päivänä {{date | date:'medium'}}. Mene <a href="{{link}}" class="alert-link">laskutusosioon</a> hoitamaan velanmaksu. </translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Sinulla on velkaa <strong>{{value}}</strong>. Mene <a href="{{link}}" class="alert-link">laskutusosioon</a> hoitamaan velanmaksu.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Sinulla on velkaa <strong>{{ dueAmount }}</strong> (josta summa {{ unmaturedAmount }} ei ole erääntynyt). Mene <a href="#/billing/statements" class="alert-link">laskutusosioon</a> korjaamaan tilanne.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Sinulla on velkaa <strong>{{ dueAmount }}</strong> (josta summa {{ unmaturedAmount }} ei ole erääntynyt). Mene <a href="{{ link }}" class="alert-link">laskutusosioon</a> korjaamaan tilanne.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">OVH-tilisi on saavuttanut määrittelemäsi rajan. Lisätietoja <a href="{{link}}" class="alert-link">laskutusosiossa</a>.</translation>
 

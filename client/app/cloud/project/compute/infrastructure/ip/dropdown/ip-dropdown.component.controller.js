@@ -21,7 +21,7 @@ angular.module("managerApp")
           switch (action) {
               case "reverse":
                   if (self.isIpUserSameContinent(ip)) {
-                      OvhApiIp.Lexi().resetCache();
+                      OvhApiIp.v6().resetCache();
                       url = ipActionUrlWithSession.replace("{action}", "reverse").replace("{ipBlock}", window.encodeURIComponent(ip.block || ip[self.ipAccessKey])).replace("{ip}", ip[self.ipAccessKey]);
                   } else {
                       CloudMessage.info($translate.instant("cpci_ip_reverse_info_soon"));

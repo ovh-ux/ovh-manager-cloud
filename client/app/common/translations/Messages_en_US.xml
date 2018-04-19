@@ -28,7 +28,9 @@
    <translation id="common_yes" qtlid="34776">Yes</translation>
    <translation id="common_no" qtlid="34788">No</translation>
    <translation id="common_move" qtlid="69989">Move</translation>
-
+   <translation id="common_order_success" qtlid="403866"><a href="{{orderUrl}}" target="_blank">{{orderId}}</a> purchase order successfully created. </translation>
+   <translation id="common_order_error" qtlid="479095">An error has occurred generating your purchase order: {{ message }}</translation>
+   <translation id="common_order_doing" qtlid="255586">Creating a purchase order...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Show/hide dropdown</translation>
    <translation id="common_new_window" qtlid="222176">New window</translation>
 
@@ -95,6 +97,7 @@
    <translation id="edit" qtlid="37875">Modify</translation>
    <translation id="delete" qtlid="2414">Delete</translation>
    <translation id="common_back" qtlid="4118">Back</translation>
+   <translation id="common_next" qtlid="17743">Next</translation>
    <translation id="error" qtlid="26407">Error</translation>
    <translation id="soon" qtlid="250043">Coming soon</translation>
    <translation id="common_more_info" qtlid="325172"><a target="_blank" href="{{link}}">Plus d'informations</a>.</translation>
@@ -239,6 +242,8 @@
    <translation id="november_short" qtlid="123571">Nov</translation>
    <translation id="december_short" qtlid="158539">Dec</translation>
 
+   <translation id="month" qtlid="40222">month</translation>
+
    <translation id="country_AD" qtlid="239324">Andorra</translation>
    <translation id="country_AE" qtlid="239337">United Arab Emirates</translation>
    <translation id="country_AF" qtlid="172683">Afghanistan</translation>
@@ -267,7 +272,7 @@
    <translation id="country_BM" qtlid="239545">Bermuda</translation>
    <translation id="country_BN" qtlid="239558">Brunei Darussalam</translation>
    <translation id="country_BO" qtlid="239571">Plurinational State Of Bolivia</translation>
-   <translation id="country_BQ" qtlid="239584">Bonaire, Saint Eustatius, and Saba</translation>
+   <translation id="country_BQ" qtlid="239584">Bonaire, Sint Eustatius and Saba</translation>
    <translation id="country_BR" qtlid="239597">Brazil</translation>
    <translation id="country_BS" qtlid="187300">Bahamas</translation>
    <translation id="country_BT" qtlid="239610">Bhutan</translation>
@@ -531,6 +536,30 @@
    <translation id="common_datagrid_nodata" qtlid="197635">No result</translation>
    <translation id="common_table_col_action" qtlid="56105">Action</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progression</translation>
+
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Column</translation>
+   <translation id="common_criteria_adder_operator_label" qtlid="425806">Condition</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">includes</translation>
+   <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">doesn't include</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">starts with</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">ends with</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">is equal to</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">is equal to</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">is lower than</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">is higher than</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">is before</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">is after</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">is</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">is different from</translation>
+   <translation id="common_criteria_adder_true_label" qtlid="34776">Yes</translation>
+   <translation id="common_criteria_adder_false_label" qtlid="34788">No</translation>
+   <translation id="common_criteria_adder_value_label" qtlid="47548">Value</translation>
+   <translation id="common_criteria_adder_submit_label" qtlid="37923">Add</translation>
+
    <translation id="common_pagination_resultsperpage" qtlid="433384">Results per page</translation>
    <translation id="common_pagination_page" qtlid="433397">page</translation>
    <translation id="common_pagination_of" qtlid="121615">on</translation>
@@ -569,17 +598,17 @@
    <translation id="guide_vps_3" qtlid="468538">Repartitioning a VPS after an upgrade</translation>
    <translation id="guide_vps_4" qtlid="468551">Using the KVM for the VPS</translation>
    <translation id="guide_vps_5" qtlid="468564">First Windows Server Configuration (Firewall)</translation>
-   <translation id="guide_vps_6" qtlid="468577">Introduction au SSH</translation>
+   <translation id="guide_vps_6" qtlid="468577">Introduction to SSH</translation>
    <translation id="guide_vps_7" qtlid="468590">Changing your root password on a VPS</translation>
    <translation id="guide_vps_8" qtlid="468603">Activating Rescue Mode on VPS</translation>
    <translation id="guide_vps_all" qtlid="468616">See all VPS guides</translation>
 
    <translation id="guide_project_1" qtlid="468629">Getting started with Public Cloud: logging in and creating a project</translation>
-   <translation id="guide_project_2" qtlid="468642">Information concernant le mode de facturation Cloud</translation>
-   <translation id="guide_project_3" qtlid="468655">Introduction aux instances et autres notions Cloud</translation>
-   <translation id="guide_project_4" qtlid="468668">Augmenter le quota Public Cloud</translation>
+   <translation id="guide_project_2" qtlid="468642">Information about the Cloud billing procedure</translation>
+   <translation id="guide_project_3" qtlid="468655">Introduction to instances, and other cloud-based technology</translation>
+   <translation id="guide_project_4" qtlid="468668">Increase Public Cloud quota</translation>
    <translation id="guide_project_5" qtlid="290785">Create user access to Horizon </translation>
-   <translation id="guide_project_6" qtlid="468681">Start a first cloud server within 3 minutes</translation>
+   <translation id="guide_project_6" qtlid="468681">Boot your first cloud server in 3 minutes</translation>
    <translation id="guide_project_7" qtlid="468694">Prepare the environment for using the OpenStack API</translation>
    <translation id="guide_project_8" qtlid="468707">Create and configure an additional disk on an instance</translation>
    <translation id="guide_project_all" qtlid="468720">See all Public Cloud guides</translation>

@@ -7,7 +7,7 @@ class CurrencyService {
     }
 
     getSubsidiary () {
-        return this.OvhApiMe.Lexi().get().$promise
+        return this.OvhApiMe.v6().get().$promise
             .then(user => user.ovhSubsidiary);
     }
 

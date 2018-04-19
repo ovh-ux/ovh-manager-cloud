@@ -20,7 +20,7 @@ class CloudProjectComputeLoadbalancerCtrl {
         this.urls = URLS;
         this.locale = "";
         // Init locale for order link
-        OvhApiMe.Lexi().get().$promise.then(user => { this.locale = user.ovhSubsidiary.toUpperCase(); });
+        OvhApiMe.v6().get().$promise.then(user => { this.locale = user.ovhSubsidiary.toUpperCase(); });
 
         // Loader during Datas requests
         this.loaders = {
@@ -50,20 +50,20 @@ class CloudProjectComputeLoadbalancerCtrl {
         if (!this.loaders.table.loadbalancer) {
             this.loaders.table.loadbalancer = true;
             if (clearCache) {
-                this.OvhApiCloudProjectIplb.Lexi().resetQueryCache();
-                this.OvhApiIpLoadBalancing.Lexi().resetQueryCache();
+                this.OvhApiCloudProjectIplb.v6().resetQueryCache();
+                this.OvhApiIpLoadBalancing.v6().resetQueryCache();
             }
             this.$q.all({
                 loadbalancers:
-                    this.OvhApiIpLoadBalancing.Lexi().query().$promise.then(response => this.$q.all(
+                    this.OvhApiIpLoadBalancing.v6().query().$promise.then(response => this.$q.all(
                         _.map(response, id => this.CloudProjectComputeLoadbalancerService.getLoadbalancer(id))
                     )),
                 loadbalancersImportedArray:
-                    this.OvhApiCloudProjectIplb.Lexi().query({
+                    this.OvhApiCloudProjectIplb.v6().query({
                         serviceName: this.serviceName
                     }).$promise.then(ids => this.$q.all(
                         _.map(ids, id =>
-                            this.OvhApiCloudProjectIplb.Lexi().get({
+                            this.OvhApiCloudProjectIplb.v6().get({
                                 serviceName: this.serviceName,
                                 id
                             }).$promise

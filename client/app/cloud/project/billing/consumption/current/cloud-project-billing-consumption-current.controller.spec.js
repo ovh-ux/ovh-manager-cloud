@@ -8,14 +8,14 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
     var $rootScope;
     var $q;
     var $stateParams;
-    var CloudProjectUsageCurrentLexi;
+    var CloudProjectUsageCurrentV6;
     var CloudProjectBillingService;
     var CloudMessage;
     var projectId = "test";
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageCurrentLexi_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageCurrentV6_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -23,7 +23,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         $q = _$q_;
         $stateParams = _$stateParams_;
         $stateParams.projectId = projectId;
-        CloudProjectUsageCurrentLexi = _OvhApiCloudProjectUsageCurrentLexi_;
+        CloudProjectUsageCurrentV6 = _OvhApiCloudProjectUsageCurrentV6_;
         CloudProjectBillingService = _CloudProjectBillingService_;
 
         CloudMessage = _CloudMessage_;
@@ -45,7 +45,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         it("Should expose usage details", function () {
             var usage = { usage: {} };
             var detail = { detail: {} };
-            spyOn(CloudProjectUsageCurrentLexi, "get").and
+            spyOn(CloudProjectUsageCurrentV6, "get").and
                 .returnValue({ $promise: $q.when(usage) });
 
             spyOn(CloudProjectBillingService, "getConsumptionDetails").and
@@ -58,7 +58,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         });
 
         it("Should show error CloudMessage (using oui-message) on api error", function () {
-            spyOn(CloudProjectUsageCurrentLexi, "get").and
+            spyOn(CloudProjectUsageCurrentV6, "get").and
                 .returnValue({ $promise: $q.reject("error") });
 
             initCtrl();
@@ -68,7 +68,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         });
 
         it("Should activate loading during async call", function () {
-            spyOn(CloudProjectUsageCurrentLexi, "get").and
+            spyOn(CloudProjectUsageCurrentV6, "get").and
                 .returnValue({ $promise: $q.reject("error") });
 
             var controller = $controller("CloudProjectBillingConsumptionCurrentCtrl");

@@ -71,6 +71,9 @@ angular.module("managerApp", [
         // tell to the module that we consider a mobile device with at least 800px width
         responsivePopoverProvider.setMobileMediaQuery("(max-width: 800px)");
     })
+    .config(function (OtrsPopupProvider, REDIRECT_URLS) {
+        OtrsPopupProvider.setBaseUrlTickets(_.get(REDIRECT_URLS, "support", null));
+    })
     .config(ouiTableConfigurationProvider => {
         ouiTableConfigurationProvider.setCssConfig({
             tablePanel: "oui-table-panel",
@@ -111,12 +114,44 @@ angular.module("managerApp", [
             `);
     })
     .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
+          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
         $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {
             ouiDatagridConfiguration.translations = {
                 emptyPlaceholder: $translate.instant("common_datagrid_nodata")
+            };
+
+            ouiCriteriaAdderConfiguration.translations = {
+                column_label: $translate.instant("common_criteria_adder_column_label"),
+                operator_label: $translate.instant("common_criteria_adder_operator_label"),
+
+                operator_boolean_is: $translate.instant("common_criteria_adder_operator_boolean_is"),
+                operator_boolean_isNot: $translate.instant("common_criteria_adder_operator_boolean_isNot"),
+
+                operator_string_contains: $translate.instant("common_criteria_adder_operator_string_contains"),
+                operator_string_containsNot: $translate.instant("common_criteria_adder_operator_string_containsNot"),
+                operator_string_startsWith: $translate.instant("common_criteria_adder_operator_string_startsWith"),
+                operator_string_endsWith: $translate.instant("common_criteria_adder_operator_string_endsWith"),
+                operator_string_is: $translate.instant("common_criteria_adder_operator_string_is"),
+                operator_string_isNot: $translate.instant("common_criteria_adder_operator_string_isNot"),
+
+                operator_number_is: $translate.instant("common_criteria_adder_operator_number_is"),
+                operator_number_smaller: $translate.instant("common_criteria_adder_operator_number_smaller"),
+                operator_number_bigger: $translate.instant("common_criteria_adder_operator_number_bigger"),
+
+                operator_date_is: $translate.instant("common_criteria_adder_operator_date_is"),
+                operator_date_isBefore: $translate.instant("common_criteria_adder_operator_date_isBefore"),
+                operator_date_isAfter: $translate.instant("common_criteria_adder_operator_date_isAfter"),
+
+                operator_options_is: $translate.instant("common_criteria_adder_operator_options_is"),
+                operator_options_isNot: $translate.instant("common_criteria_adder_operator_options_isNot"),
+
+                true_label: $translate.instant("common_criteria_adder_true_label"),
+                false_label: $translate.instant("common_criteria_adder_false_label"),
+
+                value_label: $translate.instant("common_criteria_adder_value_label"),
+                submit_label: $translate.instant("common_criteria_adder_submit_label")
             };
 
             ouiPaginationConfiguration.translations = {

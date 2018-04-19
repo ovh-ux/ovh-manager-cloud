@@ -12,8 +12,8 @@ angular.module("managerApp")
           }
 
           if (self.currentService.serviceName !== serviceName || forceRefresh === true) {
-              OvhApiDedicatedCeph.Lexi().resetQueryCache();
-              return OvhApiDedicatedCeph.Lexi().get({
+              OvhApiDedicatedCeph.v6().resetQueryCache();
+              return OvhApiDedicatedCeph.v6().get({
                   serviceName: serviceName
               }).$promise.then(function (cda) {
                   self.currentService = cda;
@@ -28,7 +28,7 @@ angular.module("managerApp")
 
       self.updateDetails = function (serviceName, label, crushTunable) {
           self.saving = true;
-          return OvhApiDedicatedCeph.Lexi().put({
+          return OvhApiDedicatedCeph.v6().put({
               serviceName: serviceName
           }, {
               serviceName: serviceName,

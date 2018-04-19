@@ -54,7 +54,7 @@
 
    <translation id="iplb_server_status_title" qtlid="159098">Estado del servidor</translation>
    <translation id="iplb_server_status_instance" qtlid="438441">Instancia {{instanceId}}</translation>
-   <translation id="iplb_server_status_status" qtlid="251970">Status</translation>
+   <translation id="iplb_server_status_status" qtlid="251970">Estado</translation>
    <translation id="iplb_server_status_check_code" qtlid="438454">Check code</translation>
    <translation id="iplb_server_status_check_status" qtlid="438467">Check status</translation>
    <translation id="iplb_server_status_last_check_content" qtlid="438480">Last check content</translation>

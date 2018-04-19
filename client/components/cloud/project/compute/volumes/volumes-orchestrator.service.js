@@ -37,7 +37,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
          *  Get the default volume configuration options
          */
         var getDefaultVolumeConfiguration = function () {
-            return OvhApiCloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.v6().query({
                 serviceName: _self.volumes.serviceName
             }).$promise.then(function (regionList) {
                 // check if the default region exists
@@ -104,7 +104,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
                 if (!snapshot || !snapshot.id) {
                     return $q.reject({ data: { message: "Snapshot id cannot be found" } });
                 }
-                return OvhApiCloudProjectVolume.Lexi().get({
+                return OvhApiCloudProjectVolume.v6().get({
                     serviceName : _self.volumes.serviceName,
                     volumeId : snapshot.volumeId
                 }).$promise;
@@ -259,7 +259,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
          * Create a snapshot of given volume.
          */
         this.snapshotVolume = function (volume, snapshotName) {
-            return OvhApiCloudProjectVolumeSnapshot.Lexi().create({
+            return OvhApiCloudProjectVolumeSnapshot.v6().create({
                 serviceName : _self.volumes.serviceName,
                 volumeId : volume.id
             }, {
@@ -515,7 +515,7 @@ angular.module("managerApp").service("CloudProjectComputeVolumesOrchestrator",
                 /*==========  Volumes  ==========*/
 
                 initQueue.push(
-                    OvhApiCloudProjectVolume.Lexi().query({
+                    OvhApiCloudProjectVolume.v6().query({
                         serviceName : _self.volumes.serviceName
                     }).$promise.then(function (volumes) {
                         // Group by attachedTo

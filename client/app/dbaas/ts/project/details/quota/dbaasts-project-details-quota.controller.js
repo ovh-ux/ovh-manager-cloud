@@ -21,13 +21,13 @@ function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, OvhApi
     function init () {
         self.loaders.init = true;
 
-        OvhApiDBaasTsProject.Lexi().get({
+        OvhApiDBaasTsProject.v6().get({
             serviceName: serviceName
         }).$promise.then(function (project) {
 
             self.project = project;
 
-            return OvhApiDBaasTsProjectQuota.Lexi().query({
+            return OvhApiDBaasTsProjectQuota.v6().query({
                 serviceName: serviceName
             }).$promise.then(function (quotas) {
                 self.data.quotas = quotas;
@@ -45,7 +45,7 @@ function ($q, $uibModal, $state, $scope, $stateParams, $translate, Toast, OvhApi
     // --
 
     self.refresh = function () {
-        OvhApiDBaasTsProjectQuota.Lexi().resetQueryCache();
+        OvhApiDBaasTsProjectQuota.v6().resetQueryCache();
         init();
     };
 

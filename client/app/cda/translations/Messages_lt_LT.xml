@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="ceph_common_error" qtlid="354925">Atsiprašome, įvyko klaida:</translation>
+   <translation id="cda_tab_home" qtlid="354561">Santrauka</translation>
+   <translation id="cda_tab_user" qtlid="7738">Vartotojai</translation>
+   <translation id="cda_tab_ip" qtlid="354574">IP prieigos kontrolė</translation>
+   <translation id="cda_tab_pool" qtlid="354587">Telkiniai</translation>
+   <translation id="cda_guide_title" qtlid="300370">Gidai</translation>
+   <translation id="cda_guide_name" qtlid="406918">Cloud Disk Array (CDA)</translation>
+   <translation id="cda_guide_footer" qtlid="406905">Visi OVH gidai</translation>
+   <translation id="cda_new_window" qtlid="222176">Naujas langas</translation>
 </translations>

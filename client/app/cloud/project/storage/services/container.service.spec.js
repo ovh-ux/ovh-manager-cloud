@@ -10,7 +10,7 @@ describe("Service: CloudStorageContainer", function () {
     var $q;
     var $rootScope;
 
-    var cloudProjectStorageLexi;
+    var cloudProjectStorageV6;
     var cloudStorageContainer;
     var CLOUD_PCA_FILE_STATE;
 
@@ -20,19 +20,19 @@ describe("Service: CloudStorageContainer", function () {
         "$httpBackend",
         "$q",
         "$rootScope",
-        "OvhApiCloudProjectStorageLexi",
+        "OvhApiCloudProjectStorageV6",
         "CloudStorageContainer",
         "CLOUD_PCA_FILE_STATE", function (
             _$httpBackend,
             _$q,
             _$rootScope,
-            _OvhApiCloudProjectStorageLexi,
+            _OvhApiCloudProjectStorageV6,
             _cloudStorageContainer,
             _CLOUD_PCA_FILE_STATE) {
             $httpBackend = _$httpBackend;
             $q = _$q;
             $rootScope = _$rootScope;
-            cloudProjectStorageLexi = _OvhApiCloudProjectStorageLexi;
+            cloudProjectStorageV6 = _OvhApiCloudProjectStorageV6;
             cloudStorageContainer = _cloudStorageContainer;
             CLOUD_PCA_FILE_STATE = _CLOUD_PCA_FILE_STATE;
             setupApiMocks();
@@ -79,7 +79,7 @@ describe("Service: CloudStorageContainer", function () {
                     expect(result.objects).toBeTruthy();
                 });
 
-            expect(cloudProjectStorageLexi.get).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6.get).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: containerId
             }));
@@ -97,7 +97,7 @@ describe("Service: CloudStorageContainer", function () {
                         name: "a_file.txt"
                     });
 
-                expect(cloudProjectStorageLexi.getURL).toHaveBeenCalledWith(
+                expect(cloudProjectStorageV6.getURL).toHaveBeenCalledWith(
                     jasmine.objectContaining({
                         projectId: projectId,
                         containerId: containerId
@@ -126,7 +126,7 @@ describe("Service: CloudStorageContainer", function () {
 
                 $rootScope.$apply();
 
-                expect(cloudProjectStorageLexi.getURL).toHaveBeenCalledWith(
+                expect(cloudProjectStorageV6.getURL).toHaveBeenCalledWith(
                     jasmine.objectContaining({
                         projectId: projectId,
                         containerId: containerId
@@ -169,7 +169,7 @@ describe("Service: CloudStorageContainer", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.get).toHaveBeenCalled();
+            expect(cloudProjectStorageV6.get).toHaveBeenCalled();
             expect(xhr.open).toHaveBeenCalledWith("PUT", "https://storage.bhs1.cloud.ovh.net/v1/AUTH_abc123/container1/file.txt", true);
             expect(xhr.setRequestHeader).toHaveBeenCalledWith("Content-Type", "text/plain");
             expect(xhr.setRequestHeader).toHaveBeenCalledWith("X-Auth-Token", "TOKEN");
@@ -221,7 +221,7 @@ describe("Service: CloudStorageContainer", function () {
     });
 
     function setupApiMocks () {
-        spyOn(cloudProjectStorageLexi, "access")
+        spyOn(cloudProjectStorageV6, "access")
             .and.returnValue(resourceResult({
                 endpoints: [
                     { url: "https://storage.bhs1.cloud.ovh.net/v1/AUTH_abc123", region: "BHS1" },
@@ -231,10 +231,10 @@ describe("Service: CloudStorageContainer", function () {
                 token: "TOKEN"
             }));
 
-        spyOn(cloudProjectStorageLexi, "cors")
+        spyOn(cloudProjectStorageV6, "cors")
             .and.returnValue(resourceResult(null));
 
-        spyOn(cloudProjectStorageLexi, "get")
+        spyOn(cloudProjectStorageV6, "get")
             .and.callFake(function (params) {
                 if (params.containerId) {
                     return resourceResult({
@@ -261,7 +261,7 @@ describe("Service: CloudStorageContainer", function () {
                 }
             });
 
-        spyOn(cloudProjectStorageLexi, "query")
+        spyOn(cloudProjectStorageV6, "query")
             .and.returnValue(resourceResult([{
                     storedBytes: 0,
                     region: "bhs1",
@@ -271,7 +271,7 @@ describe("Service: CloudStorageContainer", function () {
                 }])
             );
 
-        spyOn(cloudProjectStorageLexi, "getURL")
+        spyOn(cloudProjectStorageV6, "getURL")
             .and.returnValue(resourceResult({
                 getURL: testUrl
             }));

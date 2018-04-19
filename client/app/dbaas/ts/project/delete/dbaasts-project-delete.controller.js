@@ -10,7 +10,7 @@ angular.module("managerApp").controller("DBaasTsSidebarDeleteCtrl",
             self.confirm = function () {
                 self.loaders.deleting = true;
 
-                OvhApiDBaasTsProject.Lexi().delete({
+                OvhApiDBaasTsProject.v6().delete({
                     serviceName: locals.project.serviceName
 
                 }).$promise.then(function () {

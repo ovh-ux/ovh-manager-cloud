@@ -71,9 +71,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetworks (serviceName) {
         this.loaders.privateNetwork.query = true;
-        this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
+        this.OvhApiCloudProjectNetworkPrivate.v6().resetCache();
         
-        return this.OvhApiCloudProjectNetworkPrivate.Lexi().query({
+        return this.OvhApiCloudProjectNetworkPrivate.v6().query({
             serviceName: serviceName
         }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
                    .finally(() => this.loaders.privateNetwork.query = false);
@@ -85,9 +85,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     fetchPrivateNetwork (serviceName, id) {
         this.loaders.privateNetwork.get = true;
-        this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
+        this.OvhApiCloudProjectNetworkPrivate.v6().resetCache();
 
-        return this.OvhApiCloudProjectNetworkPrivate.Lexi().get({
+        return this.OvhApiCloudProjectNetworkPrivate.v6().get({
             serviceName: serviceName,
             networkId: id
         }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_private_network_error")))
@@ -101,7 +101,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     fetchRegions (serviceName) {
         this.loaders.region.query = true;
 
-        return this.Region.Lexi().query({
+        return this.Region.v6().query({
             serviceName: serviceName
         }).$promise
           .catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_regions_error")))
@@ -115,7 +115,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     fetchUrls () {
         this.loaders.url = true;
 
-        return this.User.Lexi().get().$promise
+        return this.User.v6().get().$promise
           .then(me => this.urls.api = this.URLS.guides.vlans[me.ovhSubsidiary].api)
           .catch(() => this.urls.api = this.URLS.guides.vlans.FR.api)
           .finally(() => this.loaders.url = false);
@@ -132,7 +132,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     savePrivateNetwork (projectId, privateNetwork, onSuccess) {
         this.loaders.save = true;
 
-        return this.OvhApiCloudProjectNetworkPrivate.Lexi().save(_.assign(privateNetwork, {
+        return this.OvhApiCloudProjectNetworkPrivate.v6().save(_.assign(privateNetwork, {
             serviceName: projectId
         })).$promise.then(network => {
             const options = {
@@ -166,7 +166,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
                 return;
             }
 
-            this.OvhApiCloudProjectNetworkPrivate.Lexi().resetCache();
+            this.OvhApiCloudProjectNetworkPrivate.v6().resetCache();
 
             this.fetchPrivateNetwork(
                 options.serviceName,
@@ -184,7 +184,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     saveSubnet (projectId, networkId, subnet) {
         this.loaders.save = true;
 
-        return this.Subnet.Lexi().save(_.assign(subnet, {
+        return this.Subnet.v6().save(_.assign(subnet, {
             serviceName: projectId,
             networkId: networkId
         })).$promise
@@ -213,7 +213,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
     deleteProjectNetworkPrivate (serviceName, networkId) {
         this.loaders.delete = true;
-        return this.OvhApiCloudProjectNetworkPrivate.Lexi().delete({
+        return this.OvhApiCloudProjectNetworkPrivate.v6().delete({
             serviceName: serviceName,
             networkId: networkId
         }).$promise.catch(error => {

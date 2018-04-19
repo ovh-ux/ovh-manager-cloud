@@ -14,7 +14,7 @@
 
    <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Jūsų OVH kliento sąskaitoje yra skola <strong>{{value}}</strong> {{date | date:'medium'}} duomenimis. Jūs galite apmokėti likusią sumą <a href="{{link}}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
    <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Jūsų skola yra <strong>{{value}}</strong>. Jūs galite apmokėti likusią sumą <a href="{{link}}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
-   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Jūsų skola yra <strong>{{ dueAmount }}</strong> (neįtraukiant neapskaitomos sumos {{ unmaturedAmount }}). Eikite į <a href="#/billing/statements" class="alert-link">sąskaitų skyrių</a>, kad pataisytumėte situaciją.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Jūsų skola yra <strong>{{ dueAmount }}</strong> (neįtraukiant neapskaitomos sumos {{ unmaturedAmount }}). Eikite į <a href="{{ link }}" class="alert-link">sąskaitų skyrių</a>, kad pataisytumėte situaciją.</translation>
 
    <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Jūsų OVH kliento sąskaitoje pasiektas jūsų nustatytas limitas. Išsamesnė informacija <a href="{{link}}" class="alert-link">sąskaitų ir mokėjimų skiltyje</a>.</translation>
 

@@ -86,7 +86,7 @@ class IpLoadBalancerZoneAddService {
             return emptyResponse;
         }
 
-        const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().Lexi().cancelDelete({ serviceName, name: zone.name }, {}).$promise);
+        const promises = _.map(zones, zone => this.OvhApiIpLoadBalancing.Zone().v6().cancelDelete({ serviceName, name: zone.name }, {}).$promise);
         return this.$q.all(promises)
             .then(() => ({
                 quantity: zones.length
@@ -98,16 +98,16 @@ class IpLoadBalancerZoneAddService {
     }
 
     _getOrderableZones (serviceName) {
-        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName })
+        return this.OvhApiIpLoadBalancing.v6().get({ serviceName })
             .$promise
             .then(response => response.orderableZone);
     }
 
     _getSuspendedZones (serviceName) {
-        return this.OvhApiIpLoadBalancing.Zone().Lexi().query({ serviceName })
+        return this.OvhApiIpLoadBalancing.Zone().v6().query({ serviceName })
             .$promise
             .then(zoneIds => {
-                const promises = _.map(zoneIds, zoneId => this.OvhApiIpLoadBalancing.Zone().Lexi().get({ serviceName, name: zoneId }).$promise);
+                const promises = _.map(zoneIds, zoneId => this.OvhApiIpLoadBalancing.Zone().v6().get({ serviceName, name: zoneId }).$promise);
                 return this.$q.all(promises);
             })
             .then(zones => _.filter(zones, zone => zone.state === "released"));
