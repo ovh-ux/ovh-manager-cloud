@@ -28,15 +28,15 @@
             </dd>
         </dl>
         <cui-action-button class="iplb-vrack__box-button"
-            data-ng-if="$ctrl.actions.activateVrack.isAvailable()" 
-            data-action="$ctrl.actions.activateVrack" 
+            data-ng-if="$ctrl.actions.activateVrack.isAvailable()"
+            data-action="$ctrl.actions.activateVrack"
             data-type="secondary"></cui-action-button>
         <cui-action-button class="iplb-vrack__box-button"
-            data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()" 
-            data-action="$ctrl.actions.deActivateVrack" 
+            data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()"
+            data-action="$ctrl.actions.deActivateVrack"
             data-type="secondary"></cui-action-button>
     </div>
-    <cui-action-button data-action="$ctrl.actions.addPrivateNetwork" 
+    <cui-action-button data-action="$ctrl.actions.addPrivateNetwork"
             data-type="secondary"></cui-action-button>
     <oui-datagrid data-rows="$ctrl.privateNetworks.data">
         <oui-column data-title="'iplb_vrack_list_col_private_network' | translate" data-property="displayName" data-sortable></oui-column>
@@ -49,6 +49,6 @@
         <oui-action-menu align="end" compact>
             <oui-action-menu-item text="{{ $ctrl.actions.editPrivateNetwork.text }}" on-click="$ctrl.actions.editPrivateNetwork.callback($row)"></oui-action-menu-item>
             <oui-action-menu-item text="{{ $ctrl.actions.deletePrivateNetwork.text }}" on-click="$ctrl.actions.deletePrivateNetwork.callback($row)"></oui-action-menu-item>
-        </oui-action-menu> 
+        </oui-action-menu>
     </oui-datagrid>
 </section>

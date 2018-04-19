@@ -32,7 +32,7 @@ class IpLoadBalancerVrackHelper {
     pollCreationRules (task) {
         return this.CloudPoll.poll({
             item: task,
-            pollFunction: () => this.OvhApiVrack.Lexi().task({ serviceName: task.serviceName, taskId: task.id })
+            pollFunction: () => this.OvhApiVrack.v6().task({ serviceName: task.serviceName, taskId: task.id })
                 .$promise
                 .catch(() => ({ status: "done" })),
             stopCondition: item => item.status === "done" || item.status === "error"

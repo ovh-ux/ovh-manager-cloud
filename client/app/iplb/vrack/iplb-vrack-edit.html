@@ -6,101 +6,68 @@
     <cui-page-content-title data-ng-if="$ctrl.editing()" text="'iplb_vrack_private_network_edit_title' | translate"></cui-page-content-title>
     <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
     <form data-ng-if="!$ctrl.isLoading()" novalidate name="$ctrl.form">
-        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.displayName.id].$invalid }">
-            <label for="{{ $ctrl.model.displayName.id }}" 
-                class="oui-field__label oui-label" 
-                data-ng-bind="$ctrl.model.displayName.label"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_{{ $ctrl.model.displayName.inputSize }}">
-                    <input type="{{ $ctrl.model.displayName.type }}" 
-                        id="{{ $ctrl.model.displayName.id }}" 
-                        name="{{ $ctrl.model.displayName.id }}" 
-                        class="oui-input" 
-                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.displayName.id].$invalid }"
-                        data-ng-model="$ctrl.model.displayName.value"
-                        data-ng-required="$ctrl.model.displayName.required"
-                        data-ng-minlength="$ctrl.model.displayName.mingLength"
-                        data-ng-maxlength="$ctrl.model.displayName.maxLength"
-                        data-ng-disabled="$ctrl.model.displayName.disabled()">
-                </div>
-                <div data-ng-if="$ctrl.model.displayName.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.displayName.helperText"></div>
-            </div>
-        </div>
-        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.vlan.id].$invalid }">
-            <label for="{{ $ctrl.model.vlan.id }}" 
-                class="oui-field__label oui-label" 
-                data-ng-bind="$ctrl.model.vlan.label"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_{{ $ctrl.model.vlan.inputSize }}">
-                    <input type="{{ $ctrl.model.vlan.type }}" 
-                        id="{{ $ctrl.model.vlan.id }}" 
-                        name="{{ $ctrl.model.vlan.id }}" 
-                        class="oui-input" 
-                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.vlan.id].$invalid }"
-                        data-ng-model="$ctrl.model.vlan.value"
-                        data-ng-required="$ctrl.model.vlan.required"
-                        data-ng-minlength="$ctrl.model.vlan.mingLength"
-                        data-ng-maxlength="$ctrl.model.vlan.maxLength"
-                        data-ng-disabled="$ctrl.model.vlan.disabled()">
-                </div>
-                <div data-ng-if="$ctrl.model.vlan.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.vlan.helperText"></div>
-            </div>
-        </div>
-        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.subnet.id].$invalid }">
-            <label for="{{ $ctrl.model.subnet.id }}" 
-                class="oui-field__label oui-label" 
-                data-ng-bind="$ctrl.model.subnet.label"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_{{ $ctrl.model.subnet.inputSize }}">
-                    <input type="{{ $ctrl.model.subnet.type }}" 
-                        id="{{ $ctrl.model.subnet.id }}" 
-                        name="{{ $ctrl.model.subnet.id }}" 
-                        class="oui-input" 
-                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.subnet.id].$invalid }"
-                        data-ng-model="$ctrl.model.subnet.value"
-                        data-ng-required="$ctrl.model.subnet.required"
-                        data-ng-minlength="$ctrl.model.subnet.mingLength"
-                        data-ng-maxlength="$ctrl.model.subnet.maxLength"
-                        data-ng-disabled="$ctrl.model.subnet.disabled()">
-                </div>
-                <div data-ng-if="$ctrl.model.subnet.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.subnet.helperText"></div>
-            </div>
-        </div>
-        <div class="oui-field" data-ng-class="{ 'oui-field_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.natIp.id].$invalid }">
-            <label for="{{ $ctrl.model.natIp.id }}" 
-                class="oui-field__label oui-label" 
-                data-ng-bind="$ctrl.model.natIp.label"></label>
-            <div class="oui-field__content">
-                <div class="oui-field-control oui-field-control_{{ $ctrl.model.natIp.inputSize }}">
-                    <input type="{{ $ctrl.model.natIp.type }}" 
-                        id="{{ $ctrl.model.natIp.id }}" 
-                        name="{{ $ctrl.model.natIp.id }}" 
-                        class="oui-input" 
-                        data-ng-class="{ 'oui-input_error': $ctrl.form.$submitted && $ctrl.form[$ctrl.model.natIp.id].$invalid }"
-                        data-ng-model="$ctrl.model.natIp.value"
-                        data-ng-required="$ctrl.model.natIp.required"
-                        data-ng-minlength="$ctrl.model.natIp.mingLength"
-                        data-ng-maxlength="$ctrl.model.natIp.maxLength"
-                        data-ng-disabled="$ctrl.model.natIp.disabled()">
-                </div>
-                <div data-ng-if="$ctrl.model.natIp.helperText" class="oui-field-helper" data-ng-bind="$ctrl.model.natIp.helperText"></div>
-            </div>
-        </div>
+        <oui-field label="{{:: 'iplb_vrack_private_network_add_edit_field_display_name_label' | translate }}"
+                   size="l">
+            <input class="oui-input"
+                   type="text"
+                   id="displayName"
+                   name="displayName"
+                   data-ng-model="$ctrl.model.displayName.value"
+                   minlength="0"
+                   maxlength="100"
+                   data-ng-disabled="$ctrl.creationRules.data.status !== 'active'">
+        </oui-field>
+        <oui-field label="{{:: 'iplb_vrack_private_network_add_edit_field_vlan_label' | translate }}"
+                   help-text="{{:: 'iplb_vrack_private_network_add_edit_field_vlan_helper' | translate }}"
+                   size="xs">
+            <input class="oui-input"
+                   type="number"
+                   id="vlan"
+                   name="vlan"
+                   data-ng-model="$ctrl.model.vlan.value"
+                   minlength="0"
+                   maxlength="Infinity"
+                   data-ng-disabled="$ctrl.creationRules.data.status !== 'active'">
+        </oui-field>
+        <oui-field label="{{:: 'iplb_vrack_private_network_add_edit_field_subnet_label' | translate }}"
+                   help-text="{{:: 'iplb_vrack_private_network_add_edit_field_subnet_helper' | translate }}"
+                   size="s">
+            <input class="oui-input"
+                   type="text"
+                   id="subnet"
+                   name="subnet"
+                   data-ng-model="$ctrl.model.subnet.value"
+                   minlength="0"
+                   maxlength="Infinity"
+                   data-ng-disabled="$ctrl.creationRules.data.status !== 'active'">
+        </oui-field>
+        <oui-field label="{{:: 'iplb_vrack_private_network_add_edit_field_nat_ip_label' | translate }}"
+                   help-text="{{:: 'iplb_vrack_private_network_add_edit_field_nat_ip_helper' | translate }}"
+                   size="s">
+            <input class="oui-input"
+                   type="text"
+                   id="natIp"
+                   name="natIp"
+                   data-ng-model="$ctrl.model.natIp.value"
+                   minlength="0"
+                   maxlength="Infinity"
+                   data-ng-disabled="$ctrl.creationRules.data.status !== 'active'">
+        </oui-field>
         <oui-spinner data-ng-if="$ctrl.privateNetworkFarms.loading || $ctrl.farms.loading"></oui-spinner>
-        <div class="oui-field" 
+        <div class="oui-field"
             data-ng-if="!$ctrl.privateNetworkFarms.loading && !$ctrl.farms.loading">
             <div class="oui-field__label oui-label" data-translate="iplb_vrack_private_network_add_edit_field_farm_label"></div>
             <div class="oui-field__content cui-key-value-input">
                 <div class="cui-key-value-input__container" data-ng-repeat="associatedFarm in $ctrl.model.farmId.value track by $index">
                     <div class="oui-field">
-                        <label for="farmId{{ $index }}" 
-                            class="oui-field__label oui-label cui-key-value-input__label" 
+                        <label for="farmId{{ $index }}"
+                            class="oui-field__label oui-label cui-key-value-input__label"
                             data-translate="iplb_vrack_private_network_add_edit_field_farm_description"></label>
                         <div class="oui-field__content cui-key-value-input__field">
                             <div class="oui-field-control oui-field-control_3">
                                 <label class="oui-select">
-                                    <select id="farmId{{ $index }}" 
-                                        name="farmId{{ $index }}" 
+                                    <select id="farmId{{ $index }}"
+                                        name="farmId{{ $index }}"
                                         class="oui-select__input"
                                         data-ng-model="associatedFarm.farmId"
                                         ng-options="farm.farmId as farm.displayName for farm in $ctrl.getAvailableFarm(associatedFarm.farmId)">
@@ -126,17 +93,12 @@
                 </div>
             </div>
         </div>
-        <div class="cui-form-actions">
-            <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
-            <div data-ng-if="!$ctrl.saving">
-                <cui-submit-button data-text="(!$ctrl.editing() ? 'common_add' : 'common_modify') | translate"
-                    data-on-click="$ctrl.submit()"
-                    data-disabled="$ctrl.privateNetworkFarms.loading || $ctrl.farms.loading"></cui-submit-button>
-                <a class="oui-button oui-button_link"
-                    data-translate="common_cancel"
-                    data-ui-state="$ctrl.previousState.state"
-                    data-ui-state-params="$ctrl.previousState.stateParams"></a>
-            </div>
-        </div>
+        <oui-spinner data-ng-if="$ctrl.saving"></oui-spinner>
+        <oui-form-actions on-submit="$ctrl.submit()"
+                          on-cancel="$ctrl.previousState.go()"
+                          submit-text="{{:: (!$ctrl.editing() ? 'common_add' : 'common_modify') | translate }}"
+                          cancel-text="{{:: 'common_cancel' | translate }}"
+                          data-disabled="$ctrl.privateNetworkFarms.loading || $ctrl.farms.loading || $ctrl.saving">
+        </oui-form-actions>
     </form>
 </section>
