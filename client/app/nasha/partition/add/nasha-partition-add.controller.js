@@ -29,7 +29,7 @@ angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stat
 
     self.addPartition = function () {
         self.loading = true;
-        OvhApiDedicatedNasha.Partition().Lexi().create({
+        OvhApiDedicatedNasha.Partition().v6().create({
             serviceName: self.nasha.serviceName
         }, {
             partitionName: self.newPartition.partitionName,
@@ -53,8 +53,8 @@ angular.module("managerApp").controller("NashaPartitionAddCtrl", function ($stat
     function init () {
         self.loading = true;
         $q.all({
-            nasha: OvhApiDedicatedNasha.Lexi().get({ serviceName: $stateParams.nashaId }).$promise,
-            schema:  OvhApiDedicatedNasha.Lexi().schema().$promise
+            nasha: OvhApiDedicatedNasha.v6().get({ serviceName: $stateParams.nashaId }).$promise,
+            schema:  OvhApiDedicatedNasha.v6().schema().$promise
         }).then(function (data) {
             self.protocols = data.schema.models["dedicated.storage.ProtocolEnum"].enum;
             self.nasha = data.nasha;

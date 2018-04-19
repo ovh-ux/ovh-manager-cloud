@@ -42,7 +42,7 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
         this.unleashAccount = function () {
             self.loader.unleash = true;
 
-            return OvhApiCloudProject.Lexi().unleash({
+            return OvhApiCloudProject.v6().unleash({
                 serviceName: serviceName
             }, {}).$promise.then(function () {
                 init();
@@ -67,12 +67,12 @@ angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
             self.loader.unleash = false;
 
             // check default payment mean
-            initQueue.push(OvhApiMePaymentMean.Lexi().getDefaultPaymentMean().then(function (defaultPaymentMean) {
+            initQueue.push(OvhApiMePaymentMean.v6().getDefaultPaymentMean().then(function (defaultPaymentMean) {
                 self.datas.defaultPaymentMean = defaultPaymentMean;
             }));
 
             // get quota
-            initQueue.push(OvhApiCloudProjectQuota.Lexi().query({
+            initQueue.push(OvhApiCloudProjectQuota.v6().query({
                 serviceName: serviceName
             }).$promise.then(function (quotas) {
                 self.datas.quota = quotas;

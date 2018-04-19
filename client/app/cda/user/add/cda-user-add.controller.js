@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.createUser = function () {
           self.saving = true;
-          return OvhApiDedicatedCeph.User().Lexi().post({
+          return OvhApiDedicatedCeph.User().v6().post({
               serviceName: $stateParams.serviceName
           }, {
               userName: self.model.userName

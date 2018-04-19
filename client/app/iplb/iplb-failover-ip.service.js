@@ -6,7 +6,7 @@ class IpLoadBalancerFailoverIpService {
     }
 
     getFailoverIps (serviceName) {
-        return this.IpLoadBalancing.Lexi().failoverIp({ serviceName }).$promise
+        return this.IpLoadBalancing.v6().failoverIp({ serviceName }).$promise
             .then(response => response)
             .catch(this.ServiceHelper.errorHandler("iplb_failover_ip_detail_loading_error"));
     }

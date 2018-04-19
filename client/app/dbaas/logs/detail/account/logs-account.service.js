@@ -1,7 +1,7 @@
 class LogsAccountService {
     constructor (OvhApiDbaas, LogsHelperService, LogsConstants) {
-        this.UserApiService = OvhApiDbaas.Logs().User().Lexi();
-        this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
+        this.UserApiService = OvhApiDbaas.Logs().User().v6();
+        this.LogsLexiService = OvhApiDbaas.Logs().v6();
         this.LogsHelperService = LogsHelperService;
         this.LogsConstants = LogsConstants;
         this.initializePasswordRules();

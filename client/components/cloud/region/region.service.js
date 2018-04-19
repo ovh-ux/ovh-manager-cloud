@@ -18,6 +18,17 @@ class RegionService {
         return number ? number[0] : "";
     }
 
+    getAllTranslatedMacroRegion () {
+        return {
+            SBG: this.$translate.instant("cloud_common_region_SBG"),
+            BHS: this.$translate.instant("cloud_common_region_BHS"),
+            GRA: this.$translate.instant("cloud_common_region_GRA"),
+            WAW: this.$translate.instant("cloud_common_region_WAW"),
+            DE: this.$translate.instant("cloud_common_region_DE"),
+            UK: this.$translate.instant("cloud_common_region_UK"),
+        };
+    }
+
     getTranslatedMacroRegion (region) {
         const translatedMacroRegion = this.$translate.instant(`cloud_common_region_${this.getMacroRegion(region)}`);
         return translatedMacroRegion || region;

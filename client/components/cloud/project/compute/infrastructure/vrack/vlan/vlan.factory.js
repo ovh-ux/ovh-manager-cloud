@@ -17,7 +17,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVlanFactory",
 
         VlanFactory.prototype.hasVrack = function () {
 
-            return OvhApiCloudProject.Lexi().vrack({ serviceName: this.serviceName }).$promise
+            return OvhApiCloudProject.v6().vrack({ serviceName: this.serviceName }).$promise
                 .then(function () {
                     return true;
                 }, function (err) {

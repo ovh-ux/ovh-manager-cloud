@@ -1,7 +1,7 @@
 class LogsOrderService {
     constructor ($q, OvhApiDbaas, ServiceHelper, LogsOfferService) {
         this.$q = $q;
-        this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().Lexi();
+        this.OvhApiDbaasLogsOrder = OvhApiDbaas.Order().v6();
         this.ServiceHelper = ServiceHelper;
         this.LogsOfferService = LogsOfferService;
     }

@@ -2,7 +2,7 @@ class LogsDetailService {
     constructor ($q, $translate, OvhApiDbaas, ServiceHelper) {
         this.$q = $q;
         this.$translate = $translate;
-        this.LogsLexiService = OvhApiDbaas.Logs().Lexi();
+        this.LogsLexiService = OvhApiDbaas.Logs().v6();
         this.ServiceHelper = ServiceHelper;
     }
 

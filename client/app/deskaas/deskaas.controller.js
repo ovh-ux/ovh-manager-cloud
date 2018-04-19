@@ -26,9 +26,9 @@ class DeskaasCtrl {
     }
 
     loadService (serviceId) {
-        const servicePromise = this.OvhApiDeskaasService.Lexi().serviceInfos({ serviceName: serviceId }).$promise;
+        const servicePromise = this.OvhApiDeskaasService.v6().serviceInfos({ serviceName: serviceId }).$promise;
         servicePromise.then(serviceInfo => {
-            const detailsPromise = this.OvhApiDeskaasService.Lexi().getDetails({ serviceName: serviceId }).$promise;
+            const detailsPromise = this.OvhApiDeskaasService.v6().getDetails({ serviceName: serviceId }).$promise;
             detailsPromise.then(details => {
                 if (details.alias !== "noAlias") {
                     details.displayName = `${details.alias} (${details.serviceName})`;
@@ -37,7 +37,7 @@ class DeskaasCtrl {
                 }
 
                 if (serviceInfo.status === "ok") {
-                    const userPromise = this.OvhApiDeskaasService.Lexi().getUser({ serviceName: serviceId }).$promise;
+                    const userPromise = this.OvhApiDeskaasService.v6().getUser({ serviceName: serviceId }).$promise;
                     userPromise.then(user => {
                         user.displayName = `${user.name} (${user.email})`;
                         this.registerService(details, serviceInfo, user);
@@ -51,7 +51,7 @@ class DeskaasCtrl {
     }
 
     getServices () {
-        const promise = this.OvhApiDeskaasService.Lexi().getServices().$promise;
+        const promise = this.OvhApiDeskaasService.v6().getServices().$promise;
 
         return promise.then(serviceIds => {
             const promises = [];

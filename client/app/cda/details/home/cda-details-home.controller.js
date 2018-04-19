@@ -49,7 +49,7 @@ angular.module("managerApp")
         }
 
         function initHealth () {
-            return OvhApiDedicatedCeph.Lexi().health({
+            return OvhApiDedicatedCeph.v6().health({
                 serviceName: self.serviceName
             }).$promise.then(function (health) {
                 self.datas.health = health;
@@ -61,7 +61,7 @@ angular.module("managerApp")
         }
 
         function initCrushTunablesOptions () {
-            return OvhApiDedicatedCeph.Lexi().schema({
+            return OvhApiDedicatedCeph.v6().schema({
                 serviceName: self.serviceName
             }).$promise.then(function (schema) {
                 self.datas.crushTunablesOptions = schema.models["dedicated.ceph.clusterUpdate.crushTunablesEnum"].enum;
@@ -69,8 +69,8 @@ angular.module("managerApp")
         }
 
         function initTasks () {
-            OvhApiDedicatedCeph.Task().Lexi().resetQueryCache();
-            OvhApiDedicatedCeph.Task().Lexi().query({
+            OvhApiDedicatedCeph.Task().v6().resetQueryCache();
+            OvhApiDedicatedCeph.Task().v6().query({
                 serviceName: self.serviceName
             }).$promise.then(function (tasks) {
                 //If we passed from a state with no tasks to a state with tasks or a state with tasks to a state with no tasks we update the details.

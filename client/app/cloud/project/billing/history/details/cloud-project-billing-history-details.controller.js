@@ -44,7 +44,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
         }
 
         function initConsumptionHistory () {
-            return OvhApiCloudProjectUsageHistory.Lexi().query({
+            return OvhApiCloudProjectUsageHistory.v6().query({
                 serviceName: $stateParams.projectId,
                 from: self.previousMonth.format(),
                 to: self.monthBilling.format()
@@ -59,7 +59,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
 
         function getConsumptionDetails (periods) {
             var detailPromises = _.map(periods, function (period) {
-                return OvhApiCloudProjectUsageHistory.Lexi().get({
+                return OvhApiCloudProjectUsageHistory.v6().get({
                     serviceName: $stateParams.projectId,
                     usageId: period.id
                 }).$promise;
@@ -71,7 +71,7 @@ angular.module("managerApp").controller("CloudProjectBillingHistoryDetailsCtrl",
                     var hourlyDetails;
 
                     if (moment.utc().isSame(self.monthBilling, "month")) {
-                        monthlyDetails = OvhApiCloudProjectUsageCurrent.Lexi().get({ serviceName: $stateParams.projectId }).$promise;
+                        monthlyDetails = OvhApiCloudProjectUsageCurrent.v6().get({ serviceName: $stateParams.projectId }).$promise;
                     } else {
                         monthlyDetails = _.find(periodDetails, function (detail) {
                             return moment.utc(detail.period.from).isSame(self.monthBilling, "month");

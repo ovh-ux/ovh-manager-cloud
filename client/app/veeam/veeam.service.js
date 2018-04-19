@@ -13,7 +13,7 @@
             this.$timeout = $timeout;
             this.$translate = $translate;
             this.$filter = $filter;
-            this.veeam = OvhApiVeeam.Lexi();
+            this.veeam = OvhApiVeeam.v6();
             this.RegionService = RegionService;
 
             this.unitOfWork = { };
@@ -232,7 +232,7 @@
                     const promises = _.map(tasks, task => this.veeam.task({
                         serviceName,
                         taskId: task
-                    }));
+                    }).$promise);
                     return this.$q.all(promises);
                 });
         }
@@ -295,11 +295,11 @@
         }
 
         getPendingTasksMessages () {
-            let messagesByTaskName = _.groupBy(this.unitOfWork.tasks, "name");
+            let messagesByTaskName = _.groupBy(_.uniq(this.unitOfWork.tasks, "taskId"), "name");
             messagesByTaskName = _.forEach(messagesByTaskName, (task, taskName) => {
                 const taskMessage = taskMessages[taskName];
 
-                //We only watch some tasks.
+                // We only watch some tasks.
                 if (taskMessage) {
                     messagesByTaskName[taskName] = {
                         message: this.$translate.instant(`${taskMessage}pending`),
@@ -329,7 +329,6 @@
                                 });
                             }
                         } else if (completedTask.state === "todo" || completedTask.state === "doing") {
-                            // WTF are "todo" and "doing" states make here... thanks to fantastic API
                             // Task is finally not done...
                             tasks.push(completedTask);
                         } else {
@@ -344,8 +343,8 @@
                         }
                     });
                 })).then(() => {
-                    this.unitOfWork.tasks = tasks;
-                    if (!tasks.length) {
+                    this.unitOfWork.tasks = _.filter(tasks, task => _.indexOf(_.keys(taskMessages), task.name) >= 0);
+                    if (!this.unitOfWork.tasks.length) {
                         this.stopPolling();
                     }
                 });

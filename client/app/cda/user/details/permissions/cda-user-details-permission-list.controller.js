@@ -26,9 +26,9 @@ angular.module("managerApp")
       }
 
       function initUserPermissions () {
-          OvhApiDedicatedCeph.User().Pool().Lexi().resetQueryCache();
+          OvhApiDedicatedCeph.User().Pool().v6().resetQueryCache();
 
-          return OvhApiDedicatedCeph.User().Pool().Lexi().query({
+          return OvhApiDedicatedCeph.User().Pool().v6().query({
               serviceName: $stateParams.serviceName,
               userName: $stateParams.userName
           }).$promise.then(function (userPermissions) {
@@ -38,9 +38,9 @@ angular.module("managerApp")
       }
 
       function initPools () {
-          OvhApiDedicatedCeph.Pool().Lexi().resetQueryCache();
+          OvhApiDedicatedCeph.Pool().v6().resetQueryCache();
 
-          return OvhApiDedicatedCeph.Pool().Lexi().query({
+          return OvhApiDedicatedCeph.Pool().v6().query({
               serviceName: $stateParams.serviceName
           }).$promise.then(function (pools) {
               self.datas.pools = pools;

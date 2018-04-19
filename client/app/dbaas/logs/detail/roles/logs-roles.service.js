@@ -13,12 +13,12 @@ class LogsRolesService {
 
         this.LogsConstants = LogsConstants;
         this.CloudPoll = CloudPoll;
-        this.LogsApiService = OvhApiDbaas.Logs().Lexi();
-        this.MembersApiService = OvhApiDbaas.Logs().Role().Member().Lexi();
-        this.PermissionsApiService = OvhApiDbaas.Logs().Role().Permission().Lexi();
+        this.LogsApiService = OvhApiDbaas.Logs().v6();
+        this.MembersApiService = OvhApiDbaas.Logs().Role().Member().v6();
+        this.PermissionsApiService = OvhApiDbaas.Logs().Role().Permission().v6();
 
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
-        this.RolesApiService = OvhApiDbaas.Logs().Role().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
+        this.RolesApiService = OvhApiDbaas.Logs().Role().v6();
         this.RolesAapiService = OvhApiDbaas.Logs().Role().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
 

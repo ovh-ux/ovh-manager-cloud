@@ -7,7 +7,7 @@ class IpLoadBalancerZoneService {
     }
 
     getIPLBZones (serviceName) {
-        return this.IpLoadBalancing.Zone().Lexi().query({
+        return this.IpLoadBalancing.Zone().v6().query({
             serviceName
         }).$promise
             .then(zones => zones.map(zone => ({
@@ -17,7 +17,7 @@ class IpLoadBalancerZoneService {
     }
 
     getZones () {
-        return this.IpLoadBalancing.Lexi().availableZones().$promise
+        return this.IpLoadBalancing.v6().availableZones().$promise
             .then(zones => zones.filter(zone => !/private$/.test(zone))
                 .filter(zone => !/^all/.test(zone))
                 .map(zone => ({

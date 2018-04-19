@@ -7,12 +7,12 @@ class DeskaasService {
         this.OrderPlanOffers = [];
     }
     getMe () {
-        return this.OvhApiMe.Lexi().get().$promise;
+        return this.OvhApiMe.v6().get().$promise;
     }
 
     fetchProductPlans (me) {
         // Use the catalog to get Product for deskaas
-        const promise = this.OvhApiDeskaasService.Lexi().getProducts({ ovhSubsidiary: me.ovhSubsidiary }).$promise;
+        const promise = this.OvhApiDeskaasService.v6().getProducts({ ovhSubsidiary: me.ovhSubsidiary }).$promise;
         promise.then(catalog => {
             const newOrderPlanOffers = {};
             catalog.plans.forEach(catalogEntry => {
@@ -43,7 +43,7 @@ class DeskaasService {
     }
 
     getDetails (serviceName) {
-        return this.OvhApiDeskaasService.Lexi().getDetails({ serviceName }).$promise
+        return this.OvhApiDeskaasService.v6().getDetails({ serviceName }).$promise
             .then(response => {
                 this.deskaasSidebar.updateItem(response);
                 return response;

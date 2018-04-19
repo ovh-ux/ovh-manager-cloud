@@ -18,7 +18,7 @@ class CloudProjectOpenStackUserAddCtrl {
 
     confirm () {
         this.saving = true;
-        return this.OvhApiCloud.Project().User().Lexi().save({
+        return this.OvhApiCloud.Project().User().v6().save({
             serviceName: this.serviceName,
             description: this.model.value
         }).$promise

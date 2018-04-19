@@ -166,7 +166,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     addVirtualMachine () {
-        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+        return this.$state.go("iaas.pci-project.compute.infrastructure.diagram", {
             createNewVm: true,
             createNewVolume: false,
             editVm: null,
@@ -175,7 +175,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     addVolume () {
-        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+        return this.$state.go("iaas.pci-project.compute.infrastructure.diagram", {
             createNewVm: false,
             createNewVolume: true,
             editVm: null,
@@ -184,7 +184,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     editVirtualMachine (vmId) {
-        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+        return this.$state.go("iaas.pci-project.compute.infrastructure.diagram", {
             createNewVm: false,
             createNewVolume: false,
             editVm: vmId,
@@ -193,7 +193,7 @@ class CloudProjectComputeInfrastructureService {
     }
 
     monitorVirtualMachine (vmId) {
-        return this.$state.go("iaas.pci-project.compute.infrastructure", {
+        return this.$state.go("iaas.pci-project.compute.infrastructure.diagram", {
             createNewVm: false,
             createNewVolume: false,
             editVm: null,

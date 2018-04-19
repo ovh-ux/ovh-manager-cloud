@@ -15,21 +15,21 @@ angular.module("managerApp").service("CloudProjectRightService",
         };
 
         function getReadWriteAccounts (projectId) {
-            return OvhApiCloud.Project().Acl().Lexi().query({
+            return OvhApiCloud.Project().Acl().v6().query({
                 serviceName: projectId,
                 type: "readWrite"
             }).$promise;
         }
 
         function getCurrentUserNic () {
-            return OvhApiMe.Lexi().get().$promise
+            return OvhApiMe.v6().get().$promise
                 .then(function(user) {
                     return user.nichandle;
                 });
         }
 
         function getProjectAdminNic(projectId) {
-            return OvhApiCloudProjectServiceInfos.Lexi().get({
+            return OvhApiCloudProjectServiceInfos.v6().get({
                 serviceName: projectId
             }).$promise
                 .then(function(project) {

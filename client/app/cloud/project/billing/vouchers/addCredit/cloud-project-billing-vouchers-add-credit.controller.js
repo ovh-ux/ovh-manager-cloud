@@ -18,7 +18,7 @@ angular.module("managerApp")
 
         function getCurrency () {
             self.loaders.currency = true;
-            OvhApiMe.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.v6().get().$promise.then(function (me) {
                 self.credit.currencyCodeText = me.currency.symbol;
             })["finally"](function () {
                 self.loaders.currency = false;
@@ -27,7 +27,7 @@ angular.module("managerApp")
 
         self.addCredit = function () {
             self.loaders.addCredit = true;
-            OvhApiOrderCloudProjectCredit.Lexi().save({
+            OvhApiOrderCloudProjectCredit.v6().save({
                 serviceName: $stateParams.projectId
             }, {
                 amount: self.credit.amount

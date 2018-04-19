@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.deleteIp = function () {
           self.saving = true;
-          OvhApiDedicatedCeph.Acl().Lexi()["delete"]({
+          OvhApiDedicatedCeph.Acl().v6()["delete"]({
               serviceName: $stateParams.serviceName,
               aclId: self.ip.id
           }).$promise.then(function (result) {

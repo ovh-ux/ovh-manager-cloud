@@ -1,7 +1,7 @@
 class LogsListService {
     constructor ($q, OvhApiDbaas, LogsHelperService, LogsTokensService) {
         this.$q = $q;
-        this.LogsListApiService = OvhApiDbaas.Logs().Lexi();
+        this.LogsListApiService = OvhApiDbaas.Logs().v6();
         this.LogsHelperService = LogsHelperService;
         this.LogsTokensService = LogsTokensService;
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();

@@ -156,7 +156,7 @@ angular.module("managerApp")
         self.regeneratePassword = function (currentUser) {
             if (!self.loaders.regeneratePassword) {
                 self.loaders.regeneratePassword = currentUser.id;
-                return OvhApiCloud.Project().User().Lexi().password({
+                return OvhApiCloud.Project().User().v6().password({
                     serviceName: self.projectId,
                     userId: currentUser.id
                 }).$promise.then(function (newUser) {

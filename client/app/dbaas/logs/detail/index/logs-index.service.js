@@ -8,10 +8,10 @@ class LogsIndexService {
         this.LogsHelperService = LogsHelperService;
         this.LogsOptionsService = LogsOptionsService;
         this.LogsConstants = LogsConstants;
-        this.IndexApiService = OvhApiDbaas.Logs().Index().Lexi();
+        this.IndexApiService = OvhApiDbaas.Logs().Index().v6();
         this.IndexAapiService = OvhApiDbaas.Logs().Index().Aapi();
         this.AccountingAapiService = OvhApiDbaas.Logs().Accounting().Aapi();
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
         this.newIndex = {
             description: "",
             alertNotifyEnabled: false

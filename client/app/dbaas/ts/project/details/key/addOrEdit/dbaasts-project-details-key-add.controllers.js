@@ -31,7 +31,7 @@ function ($q, $state, $stateParams, $translate, OvhApiDBaasTsProjectKey, Toast) 
         // Retrieve the key in edition
         if (self.data.edition) {
             self.loaders.init = true;
-            OvhApiDBaasTsProjectKey.Lexi().get({
+            OvhApiDBaasTsProjectKey.v6().get({
                 serviceName: serviceName,
                 keyId: keyId
             }).$promise.then(function (key) {
@@ -70,14 +70,14 @@ function ($q, $state, $stateParams, $translate, OvhApiDBaasTsProjectKey, Toast) 
         if (self.data.edition) {
             successMsg = "dtpdt_edit_successful";
             errorMsg = "dtpdt_edit_error";
-            req = OvhApiDBaasTsProjectKey.Lexi().update({
+            req = OvhApiDBaasTsProjectKey.v6().update({
                 serviceName: serviceName,
                 keyId: keyId
             }, self.model);
         } else {
             successMsg = "dtpdt_creation_successful";
             errorMsg = "dtpdt_creation_error";
-            req = OvhApiDBaasTsProjectKey.Lexi().create({
+            req = OvhApiDBaasTsProjectKey.v6().create({
                 serviceName: serviceName
             }, self.model);
         }

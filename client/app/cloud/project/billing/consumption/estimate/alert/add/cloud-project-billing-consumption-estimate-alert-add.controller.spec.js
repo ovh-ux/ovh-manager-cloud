@@ -112,7 +112,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.model.email = "mail";
             controller.model.threshold = "threshold";
 
-            spyOn(OvhApiCloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.when() });
+            spyOn(OvhApiCloudProjectAlerting.v6(), "save").and.returnValue({ $promise: $q.when() });
 
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
@@ -123,7 +123,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.saveAlert();
             $httpBackend.flush();
 
-            expect(OvhApiCloudProjectAlerting.Lexi().save).toHaveBeenCalledWith({ serviceName: "projectId" }, {
+            expect(OvhApiCloudProjectAlerting.v6().save).toHaveBeenCalledWith({ serviceName: "projectId" }, {
                 delay: 1234,
                 email: "mail",
                 monthlyThreshold: "threshold"
@@ -135,7 +135,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
         it("Should handles save error correctly", function () {
             var controller = initCtrl();
 
-            spyOn(OvhApiCloudProjectAlerting.Lexi(), "save").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.v6(), "save").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
 
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);
@@ -158,7 +158,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.model.email = "mail";
             controller.model.threshold = "threshold";
 
-            spyOn(OvhApiCloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.when() });
+            spyOn(OvhApiCloudProjectAlerting.v6(), "put").and.returnValue({ $promise: $q.when() });
 
             var successMessage = "success message";
             spyOn($translate, "instant").and.returnValue(successMessage);
@@ -169,7 +169,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             controller.saveAlert();
             $httpBackend.flush();
 
-            expect(OvhApiCloudProjectAlerting.Lexi().put).toHaveBeenCalledWith({ serviceName: "projectId", alertId: "alertid" }, {
+            expect(OvhApiCloudProjectAlerting.v6().put).toHaveBeenCalledWith({ serviceName: "projectId", alertId: "alertid" }, {
                 delay: 1234,
                 email: "mail",
                 monthlyThreshold: "threshold"
@@ -182,7 +182,7 @@ describe("Controller: CloudProjectBillingConsumptionCurrentCtrl", function () {
             var controller = initCtrl();
 
             controller.alerting.id = "alertid";
-            spyOn(OvhApiCloudProjectAlerting.Lexi(), "put").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
+            spyOn(OvhApiCloudProjectAlerting.v6(), "put").and.returnValue({ $promise: $q.reject({ data: { message: "reason" } }) });
 
             var errorMessage = "error message";
             spyOn($translate, "instant").and.returnValue(errorMessage);

@@ -52,7 +52,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             if (self.model.contractsAccepted && self.data.agreements.length) {
                 var queueContracts = [];
                 angular.forEach(self.data.agreements, function (contract) {
-                    queueContracts.push(OvhApiMe.Agreements().Lexi().accept({
+                    queueContracts.push(OvhApiMe.Agreements().v6().accept({
                         id: contract.id
                     }, {}).$promise.then(function () {
                         _.remove(self.data.agreements, {
@@ -64,7 +64,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
             }
 
             return $q.when(promiseContracts).then(function () {
-                return OvhApiCloud.Lexi().createProject({}, {
+                return OvhApiCloud.v6().createProject({}, {
                     voucher: self.model.voucher || undefined,
                     description: self.model.description || undefined,
                     catalogVersion: self.model.catalogVersion || undefined,
@@ -73,7 +73,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
                     switch (response.status) {
                     case "creating":
-                        OvhApiMe.Order().Lexi().get({
+                        OvhApiMe.Order().v6().get({
                             orderId: response.orderId
                         }).$promise.then(function (order) {
                             $window.open(order.url, "_blank");
@@ -107,7 +107,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                         // Get all contracts
                         if (response.agreements && response.agreements.length) {
                             angular.forEach(response.agreements, function (contractId) {
-                                queue.push(OvhApiMe.Agreements().Lexi().contract({
+                                queue.push(OvhApiMe.Agreements().v6().contract({
                                     id: contractId
                                 }).$promise.then(function (contract) {
                                     contract.id = contractId;
@@ -168,7 +168,7 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
         };
 
         function initUserFidelityAccount () {
-            return OvhApiMe.FidelityAccount().Lexi().get().$promise.then(function (account) {
+            return OvhApiMe.FidelityAccount().v6().get().$promise.then(function (account) {
                 return $q.when(account);
             }, function (err) {
                 return err && err.status === 404 ? $q.when(null) : $q.reject(err);
@@ -184,14 +184,14 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
 
         function initProject () {
             return $q.all({
-                projectIds:       OvhApiCloud.Project().Lexi().query().$promise,
-                price:            OvhApiCloud.Price().Lexi().query().$promise,
-                user:             OvhApiMe.Lexi().get().$promise,
-                defaultPayment:   OvhApiMe.PaymentMean().Lexi().getDefaultPaymentMean(),
-                availablePayment: OvhApiMe.AvailableAutomaticPaymentMeans().Lexi().get().$promise,
+                projectIds:       OvhApiCloud.Project().v6().query().$promise,
+                price:            OvhApiCloud.Price().v6().query().$promise,
+                user:             OvhApiMe.v6().get().$promise,
+                defaultPayment:   OvhApiMe.PaymentMean().v6().getDefaultPaymentMean(),
+                availablePayment: OvhApiMe.AvailableAutomaticPaymentMeans().v6().get().$promise,
                 fidelityAccount:  initUserFidelityAccount(),
-                bill:             OvhApiMe.Bill().Lexi().query().$promise,
-                creditCards:      OvhApiMePaymentMeanCreditCard.Lexi().getCreditCards()
+                bill:             OvhApiMe.Bill().v6().query().$promise,
+                creditCards:      OvhApiMePaymentMeanCreditCard.v6().getCreditCards()
             }).then(function (result) {
                 self.data.projectsCount = result.projectIds.length;
                 self.data.projectPrice = result.price.projectCreation;
@@ -225,8 +225,8 @@ angular.module("managerApp").controller("CloudProjectAddCtrl",
                 project_id: projectId, // jshint ignore:line
                 description: self.model.description
             });
-            OvhApiVrack.Lexi().resetCache();
-            OvhApiVrack.CloudProject().Lexi().resetQueryCache();
+            OvhApiVrack.v6().resetCache();
+            OvhApiVrack.CloudProject().v6().resetQueryCache();
         }
 
         init();

@@ -32,9 +32,9 @@ angular.module("managerApp")
         }
 
         function initPools () {
-            OvhApiDedicatedCeph.Pool().Lexi().resetAllCache();
+            OvhApiDedicatedCeph.Pool().v6().resetAllCache();
 
-            return OvhApiDedicatedCeph.Pool().Lexi().query({
+            return OvhApiDedicatedCeph.Pool().v6().query({
                 serviceName: $stateParams.serviceName
             }).$promise.then(pools => {
                 self.datas.pools = pools;

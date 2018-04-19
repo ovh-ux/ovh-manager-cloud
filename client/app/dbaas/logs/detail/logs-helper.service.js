@@ -6,7 +6,7 @@ class LogsHelperService {
         this.CloudPoll = CloudPoll;
         this.ControllerModalHelper = ControllerModalHelper;
         this.LogsConstants = LogsConstants;
-        this.OperationApiService = OvhApiDbaas.Logs().Operation().Lexi();
+        this.OperationApiService = OvhApiDbaas.Logs().Operation().v6();
     }
 
     killPoller () {

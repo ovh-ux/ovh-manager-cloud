@@ -3,7 +3,7 @@ angular.module("managerApp").service("NashaPartitionZFSOptionsService",
         "use strict";
         var self = this;
         self.getZFSOptionsEnums = function () {
-            return OvhApiDedicatedNasha.Lexi().schema().$promise
+            return OvhApiDedicatedNasha.v6().schema().$promise
                 .then(function (schema) {
                     var enums = {};
                     enums.recordsize = _.chain(schema.models["dedicated.storage.RecordSizeEnum"].enum)
@@ -35,7 +35,7 @@ angular.module("managerApp").service("NashaPartitionZFSOptionsService",
                 recordsize: NASHA_ZFS_OPTIONS_DEFAULT.recordsize,
                 sync: NASHA_ZFS_OPTIONS_DEFAULT.sync
             };
-            return OvhApiDedicatedNasha.Partition().Options().Lexi().get({
+            return OvhApiDedicatedNasha.Partition().Options().v6().get({
                 serviceName: nashaId,
                 partitionName: partitionName
             }).$promise

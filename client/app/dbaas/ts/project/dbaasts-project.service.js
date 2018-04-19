@@ -12,7 +12,7 @@ angular.module("managerApp").service("DBaasTsProjectService", function (OvhApiDB
 
     this.ensureProjectIsActive = function (params) {
 
-        return OvhApiDBaasTsProject.Lexi().get({
+        return OvhApiDBaasTsProject.v6().get({
             serviceName: params.serviceName
         }).$promise
             .then(function (project) {

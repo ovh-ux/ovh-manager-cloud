@@ -32,7 +32,7 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApi
                 modalSelf.confirm = function () {
                     modalSelf.loaders.deleting = true;
 
-                    DBaasTsProjectKey.Lexi().remove({
+                    DBaasTsProjectKey.v6().remove({
                         serviceName: serviceName,
                         keyId: key.id
                     }).$promise.then(function () {
@@ -83,7 +83,7 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApi
     };
 
     self.refresh = function () {
-        DBaasTsProjectKey.Lexi().resetQueryCache();
+        DBaasTsProjectKey.v6().resetQueryCache();
         self.init();
     };
 
@@ -97,15 +97,15 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApi
     self.init = function () {
         self.loaders.init = true;
 
-        var futureProject = OvhApiDBaasTsProject.Lexi().get({
+        var futureProject = OvhApiDBaasTsProject.v6().get({
             serviceName: serviceName
         }).$promise;
 
         // Load regions to display the project's region name and URL
-        var futureRegions = OvhApiDBaasTsRegion.Lexi().query().$promise;
+        var futureRegions = OvhApiDBaasTsRegion.v6().query().$promise;
 
         // Load keys
-        var futureKeys = DBaasTsProjectKey.Lexi().queryDetails(serviceName);
+        var futureKeys = DBaasTsProjectKey.v6().queryDetails(serviceName);
 
         futureProject.then(function (project) {
 
@@ -131,7 +131,7 @@ function ($q, $state, $stateParams, $translate, $uibModal, $scope, Toast, OvhApi
 
     function initGuideURL () {
         self.loaders.guide = true;
-        OvhApiMe.Lexi().get().$promise.then(function (me) {
+        OvhApiMe.v6().get().$promise.then(function (me) {
             var lang = me.ovhSubsidiary;
             self.data.guideDBaasTsConceptsURL = DBaasTsConstants.guides.concepts[lang] || DBaasTsConstants.guides.concepts.FR;
         })["finally"](function () {

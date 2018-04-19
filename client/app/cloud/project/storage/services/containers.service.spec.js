@@ -8,7 +8,7 @@ describe("Service: CloudStorageContainers", function () {
     var $q;
     var $rootScope;
 
-    var cloudProjectStorageLexi;
+    var cloudProjectStorageV6;
     var cloudStorageContainer;
     var cloudStorageContainers;
 
@@ -18,19 +18,19 @@ describe("Service: CloudStorageContainers", function () {
         "$httpBackend",
         "$q",
         "$rootScope",
-        "OvhApiCloudProjectStorageLexi",
+        "OvhApiCloudProjectStorageV6",
         "CloudStorageContainer",
         "CloudStorageContainers", function (
             _$httpBackend,
             _$q,
             _$rootScope,
-            _OvhApiCloudProjectStorageLexi,
+            _OvhApiCloudProjectStorageV6,
             _cloudStorageContainer,
             _cloudStorageContainers) {
             $httpBackend = _$httpBackend;
             $q = _$q;
             $rootScope = _$rootScope;
-            cloudProjectStorageLexi = _OvhApiCloudProjectStorageLexi;
+            cloudProjectStorageV6 = _OvhApiCloudProjectStorageV6;
             cloudStorageContainer = _cloudStorageContainer;
             cloudStorageContainers = _cloudStorageContainers;
             setupMocks();
@@ -55,7 +55,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.query).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6.query).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId
             }));
 
@@ -72,7 +72,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.save).toHaveBeenCalledWith(
+            expect(cloudProjectStorageV6.save).toHaveBeenCalledWith(
                 jasmine.objectContaining({
                     projectId: projectId
                 }),
@@ -93,7 +93,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.save).toHaveBeenCalledWith(
+            expect(cloudProjectStorageV6.save).toHaveBeenCalledWith(
                 jasmine.objectContaining({
                     projectId: projectId
                 }),
@@ -115,7 +115,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.save).toHaveBeenCalledWith(
+            expect(cloudProjectStorageV6.save).toHaveBeenCalledWith(
                 jasmine.objectContaining({
                     projectId: projectId
                 }),
@@ -137,7 +137,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.save).toHaveBeenCalledWith(
+            expect(cloudProjectStorageV6.save).toHaveBeenCalledWith(
                 jasmine.objectContaining({
                     projectId: projectId
                 }),
@@ -147,7 +147,7 @@ describe("Service: CloudStorageContainers", function () {
                 })
             );
             expect(cloudStorageContainer.getMetaData).toHaveBeenCalledWith(projectId, "xxx-static-id");
-            expect(cloudProjectStorageLexi.static).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6.static).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: "xxx-static-id"
             }));
@@ -168,7 +168,7 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.get).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6.get).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: "xxx-private-id"
             }));
@@ -183,11 +183,11 @@ describe("Service: CloudStorageContainers", function () {
 
             $rootScope.$apply();
 
-            expect(cloudProjectStorageLexi.get).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6.get).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: "xxx-public-id"
             }));
-            expect(cloudProjectStorageLexi["delete"]).toHaveBeenCalledWith(jasmine.objectContaining({
+            expect(cloudProjectStorageV6["delete"]).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: "xxx-public-id"
             }));
@@ -198,7 +198,7 @@ describe("Service: CloudStorageContainers", function () {
 
     function setupMocks () {
         // Get container content
-        spyOn(cloudProjectStorageLexi, "get")
+        spyOn(cloudProjectStorageV6, "get")
             .and.callFake(function (params) {
                 return resourceResult({
                     "archive": false,
@@ -224,7 +224,7 @@ describe("Service: CloudStorageContainers", function () {
             });
 
         // List containers
-        spyOn(cloudProjectStorageLexi, "query")
+        spyOn(cloudProjectStorageV6, "query")
             .and.returnValue(resourceResult([
                 {
                     storedBytes: 0,
@@ -283,7 +283,7 @@ describe("Service: CloudStorageContainers", function () {
         spyOn(cloudStorageContainer, "setAsPublic")
             .and.returnValue($q.resolve(null));
 
-        spyOn(cloudProjectStorageLexi, "save")
+        spyOn(cloudProjectStorageV6, "save")
             .and.callFake(function (params, data) {
                 var containerName = data.containerName;
                 switch (containerName) {
@@ -324,10 +324,10 @@ describe("Service: CloudStorageContainers", function () {
                 }
             });
 
-        spyOn(cloudProjectStorageLexi, "static")
+        spyOn(cloudProjectStorageV6, "static")
             .and.returnValue(resourceResult(null));
 
-        spyOn(cloudProjectStorageLexi, "delete")
+        spyOn(cloudProjectStorageV6, "delete")
             .and.returnValue(resourceResult(null));
     }
 

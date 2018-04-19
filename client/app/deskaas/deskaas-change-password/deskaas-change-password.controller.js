@@ -69,7 +69,7 @@ angular.module("managerApp").controller("DeskaasChangePasswordCtrl", function ($
 
         self.flags.init = true;
 
-        OvhApiDeskaasService.Lexi().getPwdPolicy({ serviceName: service }, null).$promise
+        OvhApiDeskaasService.v6().getPwdPolicy({ serviceName: service }, null).$promise
             .then(function (policies) {
                 self.policies = policies;
 

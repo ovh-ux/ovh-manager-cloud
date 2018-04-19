@@ -141,11 +141,11 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.getPendingTasks = function () {
-        return OvhApiVrack.Lexi().tasks({
+        return OvhApiVrack.v6().tasks({
             serviceName: self.serviceName
         }).$promise.then(function (taskIds) {
             return $q.all(_.map(taskIds, function (id) {
-                return OvhApiVrack.Lexi().task({
+                return OvhApiVrack.v6().task({
                     serviceName: self.serviceName,
                     taskId: id
                 }).$promise.then(function (task) {
@@ -161,14 +161,14 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     self.resetCache = function () {
-        OvhApiVrack.Lexi().resetCache();
-        OvhApiVrack.CloudProject().Lexi().resetQueryCache();
-        OvhApiVrack.IpLoadBalancing().Lexi().resetQueryCache();
-        OvhApiVrack.DedicatedCloud().Lexi().resetQueryCache();
-        OvhApiVrack.DedicatedServer().Lexi().resetQueryCache();
-        OvhApiVrack.DedicatedServerInterface().Lexi().resetQueryCache();
-        OvhApiVrack.Ip().Lexi().resetQueryCache();
-        OvhApiVrack.LegacyVrack().Lexi().resetQueryCache();
+        OvhApiVrack.v6().resetCache();
+        OvhApiVrack.CloudProject().v6().resetQueryCache();
+        OvhApiVrack.IpLoadBalancing().v6().resetQueryCache();
+        OvhApiVrack.DedicatedCloud().v6().resetQueryCache();
+        OvhApiVrack.DedicatedServer().v6().resetQueryCache();
+        OvhApiVrack.DedicatedServerInterface().v6().resetQueryCache();
+        OvhApiVrack.Ip().v6().resetQueryCache();
+        OvhApiVrack.LegacyVrack().v6().resetQueryCache();
         OvhApiVrack.Aapi().resetAllCache();
     };
 
@@ -328,7 +328,7 @@ angular.module("managerApp").controller("VrackCtrl",
     self.saveName = function () {
         self.nameEditing = false;
 
-        OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
+        OvhApiVrack.v6().edit({ serviceName: self.serviceName }, { name: self.name }).$promise
             .catch(function (err) {
                 self.name = self.nameBackup;
                 CloudMessage.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
@@ -354,7 +354,7 @@ angular.module("managerApp").controller("VrackCtrl",
 
     self.saveDescription = function () {
         self.descriptionEditing = false;
-        OvhApiVrack.Lexi().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
+        OvhApiVrack.v6().edit({ serviceName: self.serviceName }, { description: self.description }).$promise
             .catch(function (err) {
                 self.description = self.descriptionBackup;
                 CloudMessage.error([$translate.instant("vrack_error"), err.data && err.data.message || err.message || ""].join(" "));
@@ -370,49 +370,49 @@ angular.module("managerApp").controller("VrackCtrl",
             var task = $q.reject("Unknown service type");
             switch (service.type) {
                 case "dedicatedServer":
-                    task = OvhApiVrack.DedicatedServer().Lexi().create({
+                    task = OvhApiVrack.DedicatedServer().v6().create({
                         serviceName: self.serviceName
                     }, {
                         dedicatedServer: service.id
                     }).$promise;
                     break;
                 case "dedicatedServerInterface":
-                    task = OvhApiVrack.DedicatedServerInterface().Lexi().post({
+                    task = OvhApiVrack.DedicatedServerInterface().v6().post({
                         serviceName: self.serviceName
                     }, {
                         dedicatedServerInterface: service.id
                     }).$promise;
                     break;
                 case "dedicatedCloud":
-                    task = OvhApiVrack.DedicatedCloud().Lexi().create({
+                    task = OvhApiVrack.DedicatedCloud().v6().create({
                         serviceName: self.serviceName
                     }, {
                         dedicatedCloud: service.id
                     }).$promise;
                     break;
                 case "legacyVrack":
-                    task = OvhApiVrack.LegacyVrack().Lexi().create({
+                    task = OvhApiVrack.LegacyVrack().v6().create({
                         serviceName: self.serviceName
                     }, {
                         legacyVrack: service.id
                     }).$promise;
                     break;
                 case "ip":
-                    task = OvhApiVrack.Ip().Lexi().create({
+                    task = OvhApiVrack.Ip().v6().create({
                         serviceName: self.serviceName
                     }, {
                         block: service.id
                     }).$promise;
                     break;
                 case "cloudProject":
-                    task = OvhApiVrack.CloudProject().Lexi().create({
+                    task = OvhApiVrack.CloudProject().v6().create({
                         serviceName: self.serviceName
                     }, {
                         project: service.id
                     }).$promise;
                     break;
                 case "ipLoadbalancing":
-                    task = OvhApiVrack.IpLoadBalancing().Lexi().create({
+                    task = OvhApiVrack.IpLoadBalancing().v6().create({
                         serviceName: self.serviceName
                     }, {
                         ipLoadbalancing: service.id
@@ -437,43 +437,43 @@ angular.module("managerApp").controller("VrackCtrl",
             var task = $q.reject("Unknown service type");
             switch (service.type) {
                 case "dedicatedServer":
-                    task = OvhApiVrack.DedicatedServer().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedServer().v6()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedServer: service.id
                     }).$promise;
                     break;
                 case "dedicatedServerInterface":
-                    task = OvhApiVrack.DedicatedServerInterface().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedServerInterface().v6()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedServerInterface: service.id
                     }).$promise;
                     break;
                 case "dedicatedCloud":
-                    task = OvhApiVrack.DedicatedCloud().Lexi()["delete"]({
+                    task = OvhApiVrack.DedicatedCloud().v6()["delete"]({
                         serviceName: self.serviceName,
                         dedicatedCloud: service.id
                     }).$promise;
                     break;
                 case "legacyVrack":
-                    task = OvhApiVrack.LegacyVrack().Lexi()["delete"]({
+                    task = OvhApiVrack.LegacyVrack().v6()["delete"]({
                         serviceName: self.serviceName,
                         legacyVrack: service.id
                     }).$promise;
                     break;
                 case "ip":
-                    task = OvhApiVrack.Ip().Lexi()["delete"]({
+                    task = OvhApiVrack.Ip().v6()["delete"]({
                         serviceName: self.serviceName,
                         ip: service.id
                     }).$promise;
                     break;
                 case "cloudProject":
-                    task = OvhApiVrack.CloudProject().Lexi()["delete"]({
+                    task = OvhApiVrack.CloudProject().v6()["delete"]({
                         serviceName: self.serviceName,
                         project: service.id
                     }).$promise;
                     break;
                 case "ipLoadbalancing":
-                    task = OvhApiVrack.IpLoadBalancing().Lexi()["delete"]({
+                    task = OvhApiVrack.IpLoadBalancing().v6()["delete"]({
                         serviceName: self.serviceName,
                         ipLoadbalancing: service.id
                     }).$promise;
@@ -549,7 +549,7 @@ angular.module("managerApp").controller("VrackCtrl",
     };
 
     function setUserRelatedContent () {
-        OvhApiMe.Lexi().get().$promise
+        OvhApiMe.v6().get().$promise
             .then(function (user) {
                 if (user.ovhSubsidiary === "FR") {
                     // Roadmap is only available in french
@@ -676,7 +676,7 @@ angular.module("managerApp").controller("VrackCtrl",
         self.loaders.init = true;
         self.loadMessage();
         if (_.isEmpty($stateParams.vrackId)) {
-            OvhApiVrack.Lexi().query().$promise
+            OvhApiVrack.v6().query().$promise
                 .then(function (vracks) {
                     if (_.isEmpty(vracks)) {
                         $state.go("vrack-add");
@@ -688,7 +688,7 @@ angular.module("managerApp").controller("VrackCtrl",
                 });
         } else {
             // check if the serviceName is valid before loading the services
-            OvhApiVrack.Lexi().get({
+            OvhApiVrack.v6().get({
                 serviceName: $stateParams.vrackId
             }).$promise.then(function (resp) {
                 self.serviceName = $stateParams.vrackId;

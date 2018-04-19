@@ -207,7 +207,7 @@ angular.module("managerApp")
                 notifyOnError : false
             }
         ).then(function (snapshotList) {
-            OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
+            OvhApiCloudProjectSnapshot.v6().resetQueryCache();
             // get volume snapshots and concat new state instance snapshots
             var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
             self.table.snapshot = snapshotList.concat(volumeSnapshots);
@@ -222,7 +222,7 @@ angular.module("managerApp")
         }, function(snapshotList){
             var currentImageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
             if (currentImageSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
+                OvhApiCloudProjectSnapshot.v6().resetQueryCache();
                 var volumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
                 self.table.snapshot = snapshotList.concat(volumeSnapshots);
                 checkImageInstalled();
@@ -243,7 +243,7 @@ angular.module("managerApp")
                 notifyOnError : false
             }
         ).then(function (snapshotList) {
-            OvhApiCloudProjectVolumeSnapshot.Lexi().resetAllCache();
+            OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
             // get instance snapshots and concat new state volume snapshots
             var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
             var snapshots = checkImagesCustom (snapshotList);
@@ -258,7 +258,7 @@ angular.module("managerApp")
         }, function(snapshotList){
             var currentVolumeSnapshots = _.filter(self.table.snapshot, { type : "volume" } );
             if (currentVolumeSnapshots.length!==snapshotList.length || snapshotStateChange(self.table.snapshot, snapshotList)) {
-                OvhApiCloudProjectVolumeSnapshot.Lexi().resetAllCache();
+                OvhApiCloudProjectVolumeSnapshot.v6().resetAllCache();
                 var imageSnapshots = _.filter(self.table.snapshot, function (snapshot) { return snapshot.type !== "volume";} );
                 var snapshots = checkImagesCustom (snapshotList);
                 self.table.snapshot = imageSnapshots.concat(mapVolumeSnapshots(snapshots));
@@ -298,9 +298,9 @@ angular.module("managerApp")
             self.toggle.snapshotDeleteId = null;
             self.loaders.table.snapshot = true;
             if (clearCache){
-                OvhApiCloudProjectSnapshot.Lexi().resetQueryCache();
-                OvhApiCloudProjectInstance.Lexi().resetQueryCache(); // because with check if snapshot is installed on instances
-                OvhApiCloudProjectVolume.Lexi().resetAllCache();
+                OvhApiCloudProjectSnapshot.v6().resetQueryCache();
+                OvhApiCloudProjectInstance.v6().resetQueryCache(); // because with check if snapshot is installed on instances
+                OvhApiCloudProjectVolume.v6().resetAllCache();
             }
 
             $q.all([getInstancePromise(), getSnapshotPromise(), getPricesPromise(), getVolumeSnapshotPromise(), getImagePromise()]).then(function (result) {
@@ -330,19 +330,19 @@ angular.module("managerApp")
     };
 
     function getInstancePromise(){
-        return OvhApiCloudProjectInstance.Lexi().query({
+        return OvhApiCloudProjectInstance.v6().query({
                 serviceName : serviceName
             }).$promise;
     }
 
     function getSnapshotPromise(){
-        return OvhApiCloudProjectSnapshot.Lexi().query({
+        return OvhApiCloudProjectSnapshot.v6().query({
                 serviceName : serviceName
             }).$promise;
     }
 
     function getImagePromise(){
-        return OvhApiCloudProjectImage.Lexi().query({
+        return OvhApiCloudProjectImage.v6().query({
                 serviceName : serviceName
             }).$promise;
     }
@@ -352,7 +352,7 @@ angular.module("managerApp")
     }
 
     function getVolumeSnapshotPromise(){
-        return OvhApiCloudProjectVolumeSnapshot.Lexi().query({
+        return OvhApiCloudProjectVolumeSnapshot.v6().query({
             serviceName : serviceName
         }).$promise.then(function (result) {
             return mapVolumeSnapshots(result);  //transform
@@ -380,13 +380,13 @@ angular.module("managerApp")
     self.createVmBySnapshot = function(snapshot){
         CloudMessage.info($translate.instant('cpc_snapshot_create_vm_button_info'));
         CloudProjectOrchestrator.askToCreateInstanceFromSnapshot(snapshot);
-        $state.go('iaas.pci-project.compute.infrastructure');
+        $state.go('iaas.pci-project.compute.infrastructure.diagram');
     };
 
     self.createVolumeBySnapshot = function (snapshot) {
         CloudMessage.info($translate.instant("cpc_snapshot_create_volume_button_info"));
         $timeout(function() {
-            $state.go("iaas.pci-project.compute.infrastructure", {
+            $state.go("iaas.pci-project.compute.infrastructure.diagram", {
                 createNewVolumeFromSnapshot: {
                     snapshot: snapshot
                 }

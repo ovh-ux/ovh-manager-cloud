@@ -11,7 +11,7 @@ angular.module("managerApp").controller("NashaPartitionAccessDeleteCtrl", functi
 
     self.removeAccess = function () {
         self.loading = true;
-        OvhApiDedicatedNasha.Partition().Access().Lexi().remove({
+        OvhApiDedicatedNasha.Partition().Access().v6().remove({
             serviceName: self.toRemove.serviceName,
             partitionName: self.toRemove.partitionName,
             ip: self.toRemove.access.ip

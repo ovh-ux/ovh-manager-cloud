@@ -6,14 +6,14 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
     var $q = null;
     var $rootScope = null;
     var service = null;
-    var orderCatalogFormattedLexi = null;
-    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, OvhApiOrderCatalogFormattedLexi, OvhApiCloudProjectLexi, OvhApiMeLexi) {
+    var orderCatalogFormattedV6 = null;
+    beforeEach(inject(function (_$q_, _$rootScope_, CloudProjectComputeSnapshotPriceService, OvhApiOrderCatalogFormattedV6, OvhApiCloudProjectV6, OvhApiMeV6) {
         $q = _$q_;
         $rootScope = _$rootScope_;
-        orderCatalogFormattedLexi = OvhApiOrderCatalogFormattedLexi;
+        orderCatalogFormattedV6 = OvhApiOrderCatalogFormattedV6;
         service = CloudProjectComputeSnapshotPriceService;
-        spyOn(OvhApiMeLexi, "get").and.returnValue({ $promise: $q.when({ country: "FR" })});
-        spyOn(OvhApiCloudProjectLexi, "get").and.returnValue({ $promise: $q.when({ planCode: "project" }) });
+        spyOn(OvhApiMeV6, "get").and.returnValue({ $promise: $q.when({ country: "FR" })});
+        spyOn(OvhApiCloudProjectV6, "get").and.returnValue({ $promise: $q.when({ planCode: "project" }) });
     }));
 
     function mockPriceData(priceData) {
@@ -54,7 +54,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
                 },
                 priceInUcents : 1388,
             })
-            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
+            spyOn(orderCatalogFormattedV6, "get").and.returnValue({ $promise: $q.when(priceData) });
 
             service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : "GRA1"}).then(function (data) {
                 expect(data).toEqual({
@@ -91,7 +91,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
                 priceInUcents : 1388,
             });
 
-            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
+            spyOn(orderCatalogFormattedV6, "get").and.returnValue({ $promise: $q.when(priceData) });
 
             service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
                 expect(data).toEqual({
@@ -127,7 +127,7 @@ describe("CloudProjectComputeSnapshotPriceService service", function () {
                 },
                 priceInUcents : 46388,
             });
-            spyOn(orderCatalogFormattedLexi, "get").and.returnValue({ $promise: $q.when(priceData) });
+            spyOn(orderCatalogFormattedV6, "get").and.returnValue({ $promise: $q.when(priceData) });
 
             service.getSnapshotPrice({size : snapshotSize, serviceName : "", region : ""}).then(function (data) {
                 expect(data).toEqual({
