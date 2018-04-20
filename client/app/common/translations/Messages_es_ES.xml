@@ -578,6 +578,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Introduzca un máximo de {{maxlength}} caracteres.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Introduzca un formato válido.</translation>
 
+   <translation id="common_stepper_optional_label">(facultatif)</translation>
+   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
+   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
+   <translation id="common_stepper_next_button_label">Suivant</translation>
+   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+
    <translation id="common_limited_voucher_start" qtlid="440982">Le quedan</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">a su proyecto</translation>
    <translation id="common_day_unit" qtlid="441008">día(s)</translation>

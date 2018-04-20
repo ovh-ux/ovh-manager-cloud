@@ -4,49 +4,49 @@
    <translation id="logs_col_last_modified" qtlid="92380">Paskutiniai keitimai</translation>
    <translation id="logs_select_options_title" qtlid="469478">Pasirinkite papildomą parinktį</translation>
    <translation id="logs_notification_title" qtlid="32386">Pranešimas</translation>
-   <translation id="logs_operation_failed" qtlid="473908">L'opération {{operation_id}} a échouée</translation>
-   <translation id="logs_operation_error" qtlid="473921">Une erreur est survenue lors de l'opération: {{message}}</translation>
+   <translation id="logs_operation_failed" qtlid="473908">Operacija {{operation_id}} nepavyko</translation>
+   <translation id="logs_operation_error" qtlid="473921">Vykdant operaciją įvyko klaida: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Duomenų srautas</translation>
    <translation id="logs_index_title" qtlid="473934">Index elasticsearch</translation>
-   <translation id="logs_main_offer" qtlid="424389">Offre principale</translation>
-   <translation id="logs_finish_configuration" qtlid="473947">Terminer la configuration</translation>
+   <translation id="logs_main_offer" qtlid="424389">Pagrindinis pasiūlymas</translation>
+   <translation id="logs_finish_configuration" qtlid="473947">Užbaigti konfigūravimą</translation>
    <translation id="logs_next" qtlid="17743">Toliau</translation>
    <translation id="logs_previous" qtlid="17431">Ankstesnis</translation>
    <translation id="logs_later" qtlid="82305">Vėliau</translation>
-   <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_main_offer_get_error" qtlid="473960">Keičiant pagrindinį pasiūlymą įvyko klaida: {{message}}</translation>
+   <translation id="logs_details_error" qtlid="473973">Keičiant paslaugos duomenis įvyko klaida: {message}</translation>
 
 <!-- Dashboard -->
-   <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>
+   <translation id="logs_dashboards_title" qtlid="422270">Valdymo skydas Graylog</translation>
    <translation id="logs_dashboards_description" qtlid="470063">Les tableaux de bord sont des représentations graphiques de vos logs. Grâce aux différents modules (courbes, camemberts, compteurs, statistiques, etc.), vous obtenez une vision synthétique de vos données. Combien d'erreurs sont survenues durant les dernières 24 heures ? Sont-elles en hausse ou en baisse ? Quelle est la page la plus visitée aujourd'hui ? Combien de clients ce mois-ci ? Autant d'informations accessibles immédiatement. Disposer de différents tableaux vous permet d'afficher les données selon des contextes précis et apporte une plus grande lisibilité de l'information.</translation>
-   <translation id="logs_dashboards_add" qtlid="422296">Ajouter un tableau de bord</translation>
-   <translation id="logs_dashboards_name" qtlid="473986">tableau de bord</translation>
-   <translation id="logs_dashboards_total_used" qtlid="473999">tableaux de bord utilisés</translation>
+   <translation id="logs_dashboards_add" qtlid="422296">Pridėti valdymo skydą</translation>
+   <translation id="logs_dashboards_name" qtlid="473986">valdymo skydas</translation>
+   <translation id="logs_dashboards_total_used" qtlid="473999">naudojamas valdymo skydas</translation>
    <translation id="logs_dashboards_col_name" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_dashboards_col_description" qtlid="9238">Apibūdinimas</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Option liée</translation>
-   <translation id="logs_dashboards_graylog_access" qtlid="426820">Accès Graylog</translation>
-   <translation id="logs_dashboards_col_shared" qtlid="474012">Tableau partagé</translation>
+   <translation id="logs_dashboards_graylog_access" qtlid="426820">Graylog prieiga</translation>
+   <translation id="logs_dashboards_col_shared" qtlid="474012">Bendras skydas</translation>
    <translation id="logs_dashboards_duplicate" qtlid="302717">Dublikuoti</translation>
    <translation id="logs_dashboards_delete_title" qtlid="470141">Supprimer le tableau de bord</translation>
-   <translation id="logs_dashboards_delete_message" qtlid="474025">Êtes-vous sûr de vouloir supprimer le tableau de bord <strong>{{ dashboardName }}</strong> ?</translation>
-   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO ?</translation>
+   <translation id="logs_dashboards_delete_message" qtlid="474025">Ar iš tiesų norite ištrinti valdymo skydą <strong>{{ dashboardName }}</strong> ?</translation>
+   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Jūs turite užsakę bazinį pasiūlymą, tačiau norėdami pridėti ar dubliuoti valdymo skydus, jums reikia užsakyti PRO pasiūlymą. Ar norite pereiti prie PRO pasiūlymo?</translation>
    <translation id="logs_dashboards_update_title" qtlid="470115">Éditer le tableau de bord</translation>
    <translation id="logs_dashboards_duplicate_title" qtlid="470076">Dupliquer le tableau de bord</translation>
-   <translation id="logs_dashboards_update_description" qtlid="474051">Pour le tableau de bord <strong>{{ name }}</strong></translation>
-   <translation id="logs_dashboards_duplicate_description" qtlid="474051">Pour le tableau de bord <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboards_update_description" qtlid="474051">Valdymo skydui <strong>{{ name }}</strong></translation>
+   <translation id="logs_dashboards_duplicate_description" qtlid="474051">Valdymo skydui <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_select_stream_title" qtlid="470102">Attacher l'ensemble des modules du nouveau tableau au flux de données suivant :</translation>
-   <translation id="logs_dashboards_select_stream" qtlid="474064">Sélectionner un flux de données</translation>
-   <translation id="logs_dashboards_create_success" qtlid="474077">Le tableau de bord '{{dashboardName}}' a été créé avec succès</translation>
-   <translation id="logs_dashboards_update_success" qtlid="474090">Le tableau de bord '{{dashboardName}}' a été modifié avec succès</translation>
-   <translation id="logs_dashboards_delete_success" qtlid="474103">Le tableau de bord '{{dashboardName}}' a été supprimé avec succès</translation>
-   <translation id="logs_dashboards_get_error" qtlid="474116">Une erreur est survenue lors du chargement des tableaux de bord: {{message}}</translation>
-   <translation id="logs_dashboards_get_detail_error" qtlid="474129">Une erreur est survenue lors du chargement du tableau de bord: {{message}}</translation>
-   <translation id="logs_dashboards_delete_error" qtlid="474142">Une erreur est survenue lors de la suppression du tableau de bord '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_create_error" qtlid="474155">Une erreur est survenue lors de la création du tableau de bord '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_update_error" qtlid="474168">Une erreur est survenue lors de la modification du tableau de bord '{{dashboardName}}': {{message}}</translation>
+   <translation id="logs_dashboards_select_stream" qtlid="474064">Pasirinkite duomenų srautą</translation>
+   <translation id="logs_dashboards_create_success" qtlid="474077">Valdymo skydas '{{dashboardName}}' buvo sėkmingai sukurtas</translation>
+   <translation id="logs_dashboards_update_success" qtlid="474090">Valdymo skydas '{{dashboardName}}' buvo sėkmingai modifikuotas</translation>
+   <translation id="logs_dashboards_delete_success" qtlid="474103">Valdymo skydas '{{dashboardName}}' buvo sėkmingai pašalintas</translation>
+   <translation id="logs_dashboards_get_error" qtlid="474116">Įkeliant valdymo skydus įvyko klaida: {{message}}</translation>
+   <translation id="logs_dashboards_get_detail_error" qtlid="474129">Įkeliant valdymo skydą įvyko klaida: {{message}}</translation>
+   <translation id="logs_dashboards_delete_error" qtlid="474142">Šalinant valdymo skydą'{{dashboardName}}' įvyko klaida: {{message}}</translation>
+   <translation id="logs_dashboards_create_error" qtlid="474155">Kuriant valdymo skydą'{{dashboardName}}' įvyko klaida: {{message}}</translation>
+   <translation id="logs_dashboards_update_error" qtlid="474168">Modifikuojant valdymo skydą '{{dashboardName}}' įvyko klaida: {{message}}</translation>
    <translation id="logs_dashboards_quota_get_error" qtlid="474181">Une erreur est survenue lors du chargement du quota: {{message}}</translation>
-   <translation id="logs_dashboards_get_graylog_url_error" qtlid="474194">L'URL de Graylog n'a pas été trouvé pour le tableau de bord '{{dashboardName}}'</translation>
+   <translation id="logs_dashboards_get_graylog_url_error" qtlid="474194">Graylog URL nebuvo rastas valdymo skydui '{{dashboardName}}'</translation>
 
 <!-- Header and guides -->
    <translation id="logs_guides" qtlid="300370">Gidai</translation>
@@ -63,38 +63,38 @@
    <translation id="logs_loading_error_configuration" qtlid="469153">Klaida įkeliant skiltį Configuration.</translation>
 
 <!-- Welcome page -->
-   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform est la solution de gestion de logs par OVH</translation>
-   <translation id="logs_welcome_description_1" qtlid="426716">Indexez et analysez vos logs en temps réel. Soyez alertés en cas de dysfonctionnement. Partagez vos données avec vos collaborateurs.</translation>
-   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
-   <translation id="logs_welcome_try" qtlid="427080">Essayer gratuitement</translation>
-   <translation id="logs_welcome_graylog_webui" qtlid="427132">Interface web Graylog</translation>
+   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform yra OVH sukurtas sprendimas skirtas žurnalų valdymui</translation>
+   <translation id="logs_welcome_description_1" qtlid="426716">Indeksuokite ir analizuokite savo žurnalus realiu laiku. Gaukite įspėjimus apie gedimus. Bendrinkite savo duomenis su bendradarbiais.</translation>
+   <translation id="logs_welcome_description_2" qtlid="474207">„Logs Data Platform“ siūlo pilną žurnalų valdymo ir analizės platformą jums ir jūsų verslui. Kontroliuokite fizinių, virtualių serverių veiklą, jūsų programinės įrangos veikimą, jų naudojimą debesyje arba mobiliose programose. Numatykite galimus sutrikimus ar gaukite įspėjimus apie juos.</translation>
+   <translation id="logs_welcome_try" qtlid="427080">Išbandykite nemokamai</translation>
+   <translation id="logs_welcome_graylog_webui" qtlid="427132">Web sąsaja Graylog</translation>
    <translation id="logs_welcome_grafana_saas" qtlid="427145">Grafana SaaS</translation>
-   <translation id="logs_welcome_kibana_supported" qtlid="427158">Compatible Kibana</translation>
-   <translation id="logs_welcome_product_page" qtlid="427106">Page produit</translation>
+   <translation id="logs_welcome_kibana_supported" qtlid="427158">Suderinamas su "Kibana"</translation>
+   <translation id="logs_welcome_product_page" qtlid="427106">Produkto puslapis</translation>
    <translation id="logs_welcome_documentation" qtlid="42574">Dokumentacija</translation>
-   <translation id="logs_welcome_forum" qtlid="427119">Forum</translation>
+   <translation id="logs_welcome_forum" qtlid="427119">Forumas</translation>
 
 <!-- All accounts page -->
-   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_accounts_description" qtlid="474207">„Logs Data Platform“ siūlo pilną žurnalų valdymo ir analizės platformą jums ir jūsų verslui. Kontroliuokite fizinių, virtualių serverių veiklą, jūsų programinės įrangos veikimą, jų naudojimą debesyje arba mobiliose programose. Numatykite galimus sutrikimus ar gaukite įspėjimus apie juos.</translation>
    <translation id="logs_accounts_order" qtlid="43558">Užsakyti</translation>
-   <translation id="logs_accounts_add" qtlid="350872">Nouveau compte</translation>
+   <translation id="logs_accounts_add" qtlid="350872">Nauja paskyra</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_accounts_col_offer_type" qtlid="50254">Pasiūlymo tipas</translation>
    <translation id="logs_accounts_col_status" qtlid="26443">Būsena</translation>
-   <translation id="logs_accounts_col_entry_point" qtlid="421165">Point d'entrée</translation>
+   <translation id="logs_accounts_col_entry_point" qtlid="421165">Įeigos taškas</translation>
    <translation id="logs_accounts_col_streams" qtlid="422452">Duomenų srautas</translation>
-   <translation id="logs_accounts_col_dashboards" qtlid="474220">Tableaux de bords</translation>
+   <translation id="logs_accounts_col_dashboards" qtlid="474220">Valdymo skydai</translation>
    <translation id="logs_accounts_col_indices" qtlid="426729">Index</translation>
    <translation id="logs_accounts_details" qtlid="37527">Išsamiau</translation>
    <translation id="logs_accounts_offers" qtlid="38217">Pasiūlymas</translation>
    <translation id="logs_accounts_options" qtlid="23395">Parinktys</translation>
    <translation id="logs_accounts_enabled" qtlid="30250">Įjungta</translation>
    <translation id="logs_accounts_disabled" qtlid="24967">Išjungta</translation>
-   <translation id="logs_accounts_setup_required" qtlid="474233">Configuration requise</translation>
-   <translation id="logs_accounts_get_accounts_error" qtlid="474246">Une erreur est survenue lors du chargement des comptes</translation>
-   <translation id="logs_accounts_get_detail_error" qtlid="474259">Une erreur est survenue lors du chargement du compte '{{accountName}}': {{message}}</translation>
-   <translation id="logs_accounts_get_entry_point_error" qtlid="474272">Une erreur est survenue lors du chargement du point d'entrée du compte '{{accountName}}': {{message}}</translation>
-   <translation id="logs_accounts_get_quota_error" qtlid="474285">Une erreur est survenue lors du chargement du quota du compte '{{accountName}}': {{message}}</translation>
+   <translation id="logs_accounts_setup_required" qtlid="474233">Sistemos reikalavimai</translation>
+   <translation id="logs_accounts_get_accounts_error" qtlid="474246">Įkeliant paskyras įvyko klaida</translation>
+   <translation id="logs_accounts_get_detail_error" qtlid="474259">Įkeliant '{{accountName}}' paskyrą įvyko klaida: {{message}}</translation>
+   <translation id="logs_accounts_get_entry_point_error" qtlid="474272">Įkeliant paskyros '{{accountName}}' įvedimo tašką įvyko klaida: {{message}}</translation>
+   <translation id="logs_accounts_get_quota_error" qtlid="474285">Keičiant paskyros '{{accountName}}' kvotą įvyko klaida: {{message}}</translation>
 
 <!-- Setup account and change password -->
    <translation id="logs_password_change_title" qtlid="8434">Keisti slaptažodį</translation>
@@ -102,28 +102,28 @@
    <translation id="logs_password_new_label" qtlid="17177">Naujas slaptažodis</translation>
    <translation id="logs_password_setup_label" qtlid="2270">Slaptažodis</translation>
    <translation id="logs_password_confirm_label" qtlid="9382">Patvirtinkite slaptažodį</translation>
-   <translation id="logs_password_setup_message" qtlid="474298">Bienvenue {{userFullName}}. Commencez par choisir le mot de passe pour votre compte Logs Data Platform ({{userName}}).</translation>
-   <translation id="logs_password_rule_length" qtlid="474311">Le mot de passe doit contenir un minimum de 12 caractères</translation>
-   <translation id="logs_password_rule_contains_number" qtlid="474324">Le mot de passe doit contenir au moins un chiffre</translation>
-   <translation id="logs_password_rule_contains_uppercase" qtlid="474337">Le mot de passe doit contenir au moins une majuscule</translation>
-   <translation id="logs_password_rule_contains_lowercase" qtlid="474350">Le mot de passe doit contenir au moins une minuscule</translation>
-   <translation id="logs_password_rule_contains_special" qtlid="474363">Le mot de passe doit contenir au moins un caractère spécial {{specialCharacters}}</translation>
-   <translation id="logs_password_valid" qtlid="474376">Le mot de passe est valide</translation>
-   <translation id="logs_password_change_success" qtlid="474389">Le mot de passe a été changé avec succès</translation>
-   <translation id="logs_password_setup_success" qtlid="474402">Le mot de passe a été configuré avec succès</translation>
-   <translation id="logs_password_change_error" qtlid="474415">Une erreur est survenue lors du changement de mot de passe : {{message}}</translation>
-   <translation id="logs_password_setup_error" qtlid="474428">Une erreur est survenue lors de la configuration du mot de passe : {{message}}</translation>
+   <translation id="logs_password_setup_message" qtlid="474298">Sveiki {{userFullName}}. Pirmiausiai pasirinkite slaptažodį savo Logs Data Platform ({{userName}}) paskyrai.</translation>
+   <translation id="logs_password_rule_length" qtlid="474311">Slaptažodyje turi būti bent 12 simbolių</translation>
+   <translation id="logs_password_rule_contains_number" qtlid="474324">Slaptažodyje turi būti bent vienas skaitmuo</translation>
+   <translation id="logs_password_rule_contains_uppercase" qtlid="474337">Slaptažodyje turi būti bent viena didžioji raidė</translation>
+   <translation id="logs_password_rule_contains_lowercase" qtlid="474350">Slaptažodyje turi būti bent viena mažoji raidė</translation>
+   <translation id="logs_password_rule_contains_special" qtlid="474363">Slaptažodį turi sudaryti bent vienas specialus simbolis {{specialCharacters}}</translation>
+   <translation id="logs_password_valid" qtlid="474376">Slaptažodis galioja</translation>
+   <translation id="logs_password_change_success" qtlid="474389">Slaptažodis buvo sėkmingai pakeistas</translation>
+   <translation id="logs_password_setup_success" qtlid="474402">Slaptažodis buvo sėkmingai nustatytas</translation>
+   <translation id="logs_password_change_error" qtlid="474415">Keičiant slaptažodį įvyko klaida: {{message}}</translation>
+   <translation id="logs_password_setup_error" qtlid="474428">Nustatant slaptažodį įvyko klaida: {{message}}</translation>
 
 <!-- Home -->
-   <translation id="logs_home_info_title" qtlid="427028">À propos</translation>
-   <translation id="logs_home_info" qtlid="474441">Logs Data Platform est une interface de collecte, d'indexation et d'analyse de logs. Quelque soit la provenance de vos logs, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces web.</translation>
-   <translation id="logs_home_account_disabled_title" qtlid="474454">Compte désactivé</translation>
-   <translation id="logs_home_account_disabled_message" qtlid="474467">Votre compte a été désactivé le {{disabledDate}}. Contactez le support pour le réactiver.</translation>
+   <translation id="logs_home_info_title" qtlid="427028">Apie</translation>
+   <translation id="logs_home_info" qtlid="474441">"Logs Data Platform" - tai žurnalų surinkimo, indeksavimo ir analizės sąsaja. Nepriklausomai nuo jūsų žurnalų šaltinio, platforma leidžia pasirinkti skirtingus įėjimo taškus, priklausomai nuo protokolo, saugumo lygio ir formato. Duomenų analizę ir naudojimą galima atlikti naudojant skirtingas API ir žiniatinklio sąsajas.</translation>
+   <translation id="logs_home_account_disabled_title" qtlid="474454">Paskyra neaktyvi</translation>
+   <translation id="logs_home_account_disabled_message" qtlid="474467">Jūsų paskyra buvo išjungta {{disabledDate}}. Norėdami ją aktyvuoti, susisiekite su pagalbos tarnyba.</translation>
    <translation id="logs_home_shortcuts" qtlid="403658">Greitosios nuorodos</translation>
-   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Dernier flux de données modifié</translation>
-   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Voir tous les flux</translation>
-   <translation id="logs_home_shortcuts_last_dashboard" qtlid="474493">Dernier tableau de bord modifié</translation>
-   <translation id="logs_home_shortcuts_all_dashboard" qtlid="422517">Voir tous les tableaux de bord</translation>
+   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Paskutiniai modifikuoti duomenų srautai</translation>
+   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Peržiūrėti visus srautus</translation>
+   <translation id="logs_home_shortcuts_last_dashboard" qtlid="474493">Paskutinis modifikuotas valdymo skydas</translation>
+   <translation id="logs_home_shortcuts_all_dashboard" qtlid="422517">Jūsų visi valdymo skydai</translation>
    <translation id="logs_home_shortcuts_graylog" qtlid="474506">Graylog</translation>
    <translation id="logs_home_shortcuts_graylog_api" qtlid="474519">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch" qtlid="474532">Elasticsearch</translation>
@@ -320,16 +320,16 @@
    <translation id="logs_streams_name" qtlid="475338">flux</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Pavadinimas</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Apibūdinimas</translation>
-   <translation id="logs_streams_col_archives" qtlid="469933">Archives</translation>
+   <translation id="logs_streams_col_archives" qtlid="469933">Archyvai</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Veiksmai</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Įspėjimai</translation>
    <translation id="logs_streams_col_linked_option" qtlid="426768">Option liée</translation>
    <translation id="logs_streams_no_streams" qtlid="476014">Aucun flux de données</translation>
    <translation id="logs_streams_col_shared" qtlid="476027">Flux partagé</translation>
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
-   <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
-   <translation id="logs_streams_follow_live" qtlid="426222">Suivre en direct</translation>
-   <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
+   <translation id="logs_streams_archives" qtlid="469933">Archyvai</translation>
+   <translation id="logs_streams_follow_live" qtlid="426222">Stebėti realiu laiku</translation>
+   <translation id="logs_streams_graylog_access" qtlid="426820">Graylog prieiga</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>
    <translation id="logs_stream_delete_message" qtlid="476079">Êtes-vous sûr de vouloir supprimer le flux <strong>{{stream}}</strong> ?</translation>
@@ -369,7 +369,7 @@
    <translation id="logs_stream_retention_10y" qtlid="426612">dix ans</translation>
    <translation id="logs_streams_follow_copy_address" qtlid="476313">Copier l'adresse WebSocket</translation>
    <translation id="logs_streams_follow_download_client" qtlid="476326">Télécharger ldp-tail</translation>
-   <translation id="logs_streams_follow_close_connection" qtlid="470037">Fermer la connexion</translation>
+   <translation id="logs_streams_follow_close_connection" qtlid="470037">Uždaryti jungtį</translation>
    <translation id="logs_streams_follow_open_connection" qtlid="476339">Ouvrir la connexion</translation>
    <translation id="logs_streams_follow_test_gelf" qtlid="476352">Tester le flux avec Gelf</translation>
    <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Tester le flux avec LTSV</translation>
@@ -399,20 +399,20 @@
    <translation id="streams_archives_url_load_error" qtlid="476586">Une erreur est survenue lors du chargement de l'URL de l'archive {{filename}}: {{message}}</translation>
    <translation id="streams_archives_download_error" qtlid="476599">Une erreur est survenue lors du téléchargement de l'archive: {{message}}</translation>
    <translation id="streams_archives_unfreeze_start" qtlid="476612">Début du dégel de {{filename}}</translation>
-   <translation id="streams_archives_unfreezing" qtlid="469959">L'archive {{ name }} est en cours de dégel. Elle sera disponible dans {{ time }}.</translation>
+   <translation id="streams_archives_unfreezing" qtlid="469959">Archyvas {{ name }} yra atlaisvinamas. Jus bus prieinamas per {{ time }}.</translation>
    <translation id="streams_archives_preparing_download" qtlid="476625">Préparation du téléchargement de {{filename}}. Veuillez patienter...</translation>
-   <translation id="streams_archives_title" qtlid="469933">Archives</translation>
+   <translation id="streams_archives_title" qtlid="469933">Archyvai</translation>
    <translation id="streams_archives_current_title" qtlid="476638">Gestion de vos archives pour le flux {{ name }}</translation>
-   <translation id="streams_archives_intro_text" qtlid="469946">Une fois dégelées, les archives sont disponibles au téléchargement pour 24 heures.</translation>
-   <translation id="streams_archives_file_name" qtlid="469972">Nom de ficher</translation>
+   <translation id="streams_archives_intro_text" qtlid="469946">Atlaisvinus, archyvus galima atsisiųsti 24 valandas.</translation>
+   <translation id="streams_archives_file_name" qtlid="469972">Bylos pavadinimas</translation>
    <translation id="streams_archives_size" qtlid="7726">Dydis</translation>
    <translation id="streams_archives_signatures" qtlid="69953">Parašai</translation>
    <translation id="streams_archives_status" qtlid="26443">Būsena</translation>
    <translation id="streams_archives_md5_value" qtlid="476651">MD5: {{md5}}</translation>
    <translation id="streams_archives_sha256_value" qtlid="476664">SHA256: {{sha256}}</translation>
-   <translation id="streams_archives_sealed" qtlid="469985">Gelé</translation>
+   <translation id="streams_archives_sealed" qtlid="469985">Neatlaisvintas</translation>
    <translation id="streams_archives_unsealed" qtlid="99920">Galimi</translation>
-   <translation id="streams_archives_unsealing" qtlid="469998">En cours de dégel</translation>
+   <translation id="streams_archives_unsealing" qtlid="469998">Yra atlaisvinamas</translation>
    <translation id="streams_archives_unfreeze" qtlid="369152">Atblokuoti</translation>
    <translation id="streams_archives_download" qtlid="39286">Parsisiuntimas</translation>
    <translation id="streams_alerts_loading_error" qtlid="476677">Une erreur est survenue lors du chargement de l'alerte: {{message}}</translation>
@@ -442,8 +442,8 @@
    <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition de champ d'aggrégation</translation>
    <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition de champ de contenu</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Ši sąlyga aktyvuojama, kai pranešimų skaičius yra didesnis ar mažesnis nei numatyta per nurodytą periodą.</translation>
-   <translation id="add_alert_description_field_value" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="add_alert_description_field_value" qtlid="469803">Ši sąlyga suaktyvinama, kai bendra lauko reikšmė yra didesnė ar mažesnė už ribą, nustatytą tam tikru laikotarpiu.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Ši sąlyga įjungiama, kai pranešimo turinys lygus nustatytai vertei.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Pavadinimas</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Pranešimo sąlygos pavadinimas.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Periodo trukmė (minutės)</translation>
@@ -454,7 +454,7 @@
    <translation id="add_alert_threshold_type_lower" qtlid="476859">Moins haute</translation>
    <translation id="add_alert_threshold_type_higher" qtlid="476872">Plus haute</translation>
    <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Pasirinkite sąlygas, kurios aktyvuoja įspėjimą: mažiau ar daugiau nei nustatytas slenkstis.</translation>
-   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Sélectionner la condition qui active l'alerte : quand la valeur est plus haute ou moins haute que le seuil.</translation>
+   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Pasirinkite būseną, kuri aktyvuoja įspėjimą: kai reikšmė yra didesnė arba mažesnė už slenkstį.</translation>
    <translation id="add_alert_threshold_field" qtlid="469699">Slenkstis</translation>
    <translation id="add_alert_threshold_field_description" qtlid="469712">Vertė, kurią viršijus aktyvuojamas įspėjimas.</translation>
    <translation id="add_alert_grace_period_field" qtlid="469725">Atidėjimo laikotarpis (minutėmis)</translation>
@@ -462,18 +462,18 @@
    <translation id="add_alert_accumulation_field" qtlid="469751">Pranešimų surinkimas</translation>
    <translation id="add_alert_accumulation_field_description" qtlid="469764">Skaičius įspėjimų, kuriuos įtraukti į pranešimus.</translation>
    <translation id="add_alert_notification_field" qtlid="32386">Pranešimas</translation>
-   <translation id="add_alert_notification_field_description" qtlid="469777">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l'alerte est remplie, peu importe son état.</translation>
-   <translation id="add_alert_field_field" qtlid="469816">Champ</translation>
-   <translation id="add_alert_field_field_description" qtlid="469829">Le nom du champ à vérifier.</translation>
-   <translation id="add_alert_constraint_type_field" qtlid="469868">Type d'agrégation</translation>
-   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Sélectionner la condition qui active l'alerte : quand la valeur est inférieure ou supérieure au seuil.</translation>
+   <translation id="add_alert_notification_field_description" qtlid="469777">Pažymėkite šį laukelį, jei norite kad pranešimai būtų siunčiame kiekvieną kartą, kai įvykdoma įspėjimo sąlyga, nepriklausomai nuo jo būsenos.</translation>
+   <translation id="add_alert_field_field" qtlid="469816">Laukas</translation>
+   <translation id="add_alert_field_field_description" qtlid="469829">Lauko pavadinimas, kurį reikia patikrinti.</translation>
+   <translation id="add_alert_constraint_type_field" qtlid="469868">Apibendrinimo tipas</translation>
+   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Pasirinkite būseną, kuri aktyvuoja įspėjimą: kai vertė yra žemiau arba virš slenksčio.</translation>
    <translation id="add_alert_constraint_type_mean" qtlid="31930">Vidurkis</translation>
    <translation id="add_alert_constraint_type_min" qtlid="476885">Minimum</translation>
    <translation id="add_alert_constraint_type_max" qtlid="33826">Daugiausiai</translation>
    <translation id="add_alert_constraint_type_sum" qtlid="476898">Somme</translation>
    <translation id="add_alert_constraint_type_stddev" qtlid="476911">Écart-type</translation>
    <translation id="add_alert_value_field" qtlid="47548">Reikšmė</translation>
-   <translation id="add_alert_value_field_description" qtlid="469920">La valeur qui doit être comparée à celle du champ.</translation>
+   <translation id="add_alert_value_field_description" qtlid="469920">Vertė, kurią reikia palyginti su lauko verte.</translation>
    <translation id="streams_alerts_add_success" qtlid="476924">L'alerte {{alertName}} a été créé avec succès</translation>
    <translation id="streams_alerts_add_error" qtlid="476937">Une erreur est survenue lors de la création de l'alerte {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_update_success" qtlid="476950">L'alerte {{alertName}} a été modifié avec succès</translation>

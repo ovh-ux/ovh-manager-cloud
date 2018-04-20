@@ -33,7 +33,7 @@
    <translation id="vps_configuration_revertSnapshot_polling_fail" qtlid="195451">An error occurred on restoring the snapshot</translation>
    <translation id="vps_configuration_restoreVeeamBackup_polling_done" qtlid="195464">The backup has been restored</translation>
    <translation id="vps_configuration_restoreVeeamBackup_polling_fail" qtlid="195477">An error occurred on restoring the backup</translation>
-   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">The backup has been mounted</translation>
+   <translation id="vps_configuration_removeVeeamBackup_polling_done" qtlid="195490">The backup has been unmounted</translation>
    <translation id="vps_configuration_removeVeeamBackup_polling_fail" qtlid="195503">An error occurred on unmounting the backup</translation>
 
    <translation id="vps_configuration_polling_fail" qtlid="195516">There is a task in error in progress. Some features will be unavailable until it is resolved. Please wait a few moments.</translation>
@@ -50,13 +50,13 @@
    <translation id="vps_dashboard_task_setMonitoring" qtlid="195672">Modifying the SLA </translation>
    <translation id="vps_dashboard_task_changeRootPassword" qtlid="93079">Password reset</translation>
    <translation id="vps_dashboard_task_createSnapshot" qtlid="195711">Creating a snapshot</translation>
-   <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Snapshot deletion</translation>
+   <translation id="vps_dashboard_task_deleteSnapshot" qtlid="26911">Deleting a snapshot</translation>
    <translation id="vps_dashboard_task_reinstallVm" qtlid="195659">Reinstalling the VPS</translation>
-   <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Snapshot restoration</translation>
+   <translation id="vps_dashboard_task_revertSnapshot" qtlid="26899">Restoring a snapshot</translation>
    <translation id="vps_dashboard_task_restoreVeeamBackup" qtlid="195685">Mounting the backup</translation>
-   <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Un-mounting the backup</translation>
-   <translation id="vps_dashboard_task_openConsoleAccess" qtlid="200807">Opening of the KVM</translation>
-   <translation id="vps_dashboard_task_getConsoleUrl" qtlid="200807">Opening of the KVM</translation>
+   <translation id="vps_dashboard_task_removeVeeamBackup" qtlid="195698">Unmounting the backup</translation>
+   <translation id="vps_dashboard_task_openConsoleAccess" qtlid="200807">Opening the KVM</translation>
+   <translation id="vps_dashboard_task_getConsoleUrl" qtlid="200807">Opening the KVM</translation>
    <translation id="vps_dashboard_task_deliverVm" qtlid="200820">VPS delivery </translation>
    <translation id="vps_dashboard_task_restoreVm" qtlid="363774">Mounting or restoring the backup </translation>
 
