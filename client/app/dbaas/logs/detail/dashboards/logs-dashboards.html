@@ -6,19 +6,18 @@
         (<logs-upgrade-quota-link></logs-upgrade-quota-link>)
     </p>
 
-    <div class="mt-4 mb-2">
-        <logs-add-tool
-            data-ng-if="!ctrl.quota.loading"
-            text="{{ ::'logs_dashboards_add' | translate }}"
-            tool-type="{{ ::'logs_dashboards_name' | translate }}"
-            current-usage="ctrl.quota.data.configured"
-            max-usage="ctrl.quota.data.max"
-            callback="ctrl.add()"
-        ></logs-add-tool>
-    </div>
-
-    <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.dashboards.loading || ctrl.delete.loading"></oui-spinner>
     <oui-datagrid rows="ctrl.dashboards.data">
+        <extra-top>
+            <logs-add-tool
+                data-ng-if="!ctrl.quota.loading"
+                text="{{ ::'logs_dashboards_add' | translate }}"
+                tool-type="{{ ::'logs_dashboards_name' | translate }}"
+                current-usage="ctrl.quota.data.configured"
+                max-usage="ctrl.quota.data.max"
+                callback="ctrl.add()">
+            </logs-add-tool>
+            <oui-spinner data-ng-if="ctrl.quota.loading"></oui-spinner>
+        </extra-top>
         <oui-column title="::'logs_dashboards_col_name' | translate" property="info.title" sortable="asc" type="string" searchable filterable></oui-column>
         <oui-column title="::'logs_dashboards_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'logs_dashboards_col_linked_option' | translate" property="info.optionId" sortable type="string">

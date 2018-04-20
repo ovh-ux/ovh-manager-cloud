@@ -58,14 +58,22 @@
 
         <oui-field>
             <oui-checkbox
+                data-ng-if="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer"
                 id="stream_enable_compression"
                 name="stream_enable_compression"
                 data-text="{{'logs_streams_enable_archieve' | translate}}"
+                data-description="{{ ::'logs_streams_storage_basic_offer' | translate }}"
                 data-model="ctrl.stream.data.coldStorageEnabled"
-                data-disabled="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer">
+                data-disabled>
             </oui-checkbox>
-            <span ng-if="ctrl.mainOffer.data.planCode !== ctrl.LogsConstants.basicOffer" class="oui-checkbox__description" data-translate="{{'logs_streams_enable_archieve_description' | translate}} {{'streams_cold_storage_price' | translate: ctrl.coldStoragePrice}}"></span>
-            <span ng-if="ctrl.mainOffer.data.planCode === ctrl.LogsConstants.basicOffer" class="oui-checkbox__description" data-translate="logs_streams_storage_basic_offer"></span>
+            <oui-checkbox
+                data-ng-if="ctrl.mainOffer.data.planCode !== ctrl.LogsConstants.basicOffer"
+                id="stream_enable_compression"
+                name="stream_enable_compression"
+                data-text="{{'logs_streams_enable_archieve' | translate}}"
+                data-description="{{ ::'logs_streams_enable_archieve_description' | translate}} {{ ::'streams_cold_storage_price' | translate: { price: ctrl.coldStoragePrice.price } }}"
+                data-model="ctrl.stream.data.coldStorageEnabled">
+            </oui-checkbox>
         </oui-field>
 
         <div data-ng-if="ctrl.stream.data.coldStorageEnabled">
