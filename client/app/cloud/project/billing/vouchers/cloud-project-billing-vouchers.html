@@ -5,7 +5,7 @@
         <!-- ADD BUTTON -->
         <button class="oui-button oui-button_secondary"
                 data-ng-click="VouchersCtrl.openAddVoucher()"
-                data-ng-disabled="VouchersCtrl.loading.init || VouchersCtrl.datas.voucherIds === null"
+                data-ng-disabled="VouchersCtrl.vouchers.loading"
                 write-right-required>
             <span data-translate="cpb_vouchers_add_button"/>
         </button>
@@ -13,7 +13,7 @@
         <!-- ADD CREDIT BUTTON -->
         <button class="oui-button oui-button_secondary"
                 data-ng-click="VouchersCtrl.openAddCredit()"
-                data-ng-disabled="VouchersCtrl.loading.init || VouchersCtrl.datas.voucherIds === null"
+                data-ng-disabled="VouchersCtrl.vouchers.loading"
                 write-right-required>
             <span data-translate="cpb_vouchers_add_credit_button"/>
         </button>
@@ -21,9 +21,9 @@
         <p data-translate="cpb_vouchers_add_explain_bis" class=""></p>
 
         <!-- VOUCHERS LIST -->
-        <oui-datagrid data-rows="VouchersCtrl.datas.vouchers">
+        <oui-datagrid data-rows="VouchersCtrl.vouchers.data">
             <oui-column data-title="'cpb_vouchers_name_cell' | translate" data-property="id" data-sortable>
-                {{ :: VouchersCtrl.getVoucherDisplayName($row) }}
+                {{ :: VouchersCtrl.CloudVouchersService.getVoucherDisplayName($row) }}
                 <div data-ng-if="$row.pdfUrl">
                     <span data-translate="cpb_vouchers_bill_ref" data-translate-values="{ url : $row.pdfUrl, billId : $row.bill }"></span>
                 </div>
