@@ -1,9 +1,15 @@
 <div class="cui-page__content">
-    <oui-back-button class="back_button_inline_text" on-click="ctrl.back()"></oui-back-button>
-    <span class="oui-header_3" data-translate="logs_options_manage_title"></span>
+    <oui-back-button data-title="{{ ::'logs_options_manage_title' | translate }}"
+        data-on-click="ctrl.back()">
+    </oui-back-button>
+
     <p data-translate="logs_options_manage_description_1"></p>
     <p data-translate="logs_options_manage_description_2"></p>
-    <p class="mb-5"><span data-translate="logs_options_manage_description_3"></span> <a data-translate="logs_options_manage_add_options" data-ng-click="ctrl.back()"></a></p>
+    <p class="mb-5">
+        <span data-translate="logs_options_manage_description_3"></span>
+        <a data-translate="logs_options_manage_add_options"
+           data-ui-sref="dbaas.logs.detail.options.home"></a>
+    </p>
 
     <oui-spinner data-ng-if="ctrl.getManagedOptions.loading || ctrl.delete.loading"></oui-spinner>
 

@@ -128,7 +128,7 @@ angular.module("managerApp")
         });
         // Configure $translate
         $translateProvider.useLoaderCache(true);
-        $translateProvider.useSanitizeValueStrategy("sanitizeParameters");
+        $translateProvider.useSanitizeValueStrategy("sceParameters");
         $translateProvider.useMissingTranslationHandler("translateMissingTranslationHandler");
         $translateProvider.preferredLanguage(lang);
         $translateProvider.fallbackLanguage(LANGUAGES.fallback);
