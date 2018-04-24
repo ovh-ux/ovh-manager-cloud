@@ -21,4 +21,5 @@
    <translation id="iplb_home_tile_configuration_quota_unlimited" qtlid="185504">Neomezeno</translation>
    <translation id="iplb_home_tile_configuration_quota_cipher" qtlid="439312">Šifrovací algoritmus Cipher</translation>
    <translation id="iplb_home_tile_configuration_quota_datacenter" qtlid="454748">Zóny dostupnosti</translation>
+   <translation id="iplb_home_tile_configuration_private_network" qtlid="482355">Réseaux privés</translation>
 </translations>

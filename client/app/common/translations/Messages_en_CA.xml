@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Close</translation>
 
    <translation id="common_cancel" qtlid="37863">Cancel</translation>
+   <translation id="common_activate" qtlid="76734">Enable</translation>
+   <translation id="common_deactivate" qtlid="90973">Disable</translation>
    <translation id="common_edit" qtlid="37875">Modify</translation>
    <translation id="common_consult" qtlid="339639">Read</translation>
    <translation id="common_see_detail" qtlid="225192">See more information</translation>
@@ -29,7 +31,7 @@
    <translation id="common_no" qtlid="34788">No</translation>
    <translation id="common_move" qtlid="69989">Move</translation>
    <translation id="common_order_success" qtlid="403866"><a href="{{orderUrl}}" target="_blank">{{orderId}}</a> purchase order successfully created. </translation>
-   <translation id="common_order_error" qtlid="479095">An error has occurred generating your purchase order: {{ message }}</translation>
+   <translation id="common_order_error" qtlid="479095">An error occurred while generating your purchase order: {{ message }}</translation>
    <translation id="common_order_doing" qtlid="255586">Creating a purchase order...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Show/hide dropdown</translation>
    <translation id="common_new_window" qtlid="222176">New window</translation>
@@ -578,11 +580,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Please enter a maximum of {{maxlength}} characters.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Please enter a valid format.</translation>
 
-   <translation id="common_stepper_optional_label">(facultatif)</translation>
-   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
-   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
-   <translation id="common_stepper_next_button_label">Suivant</translation>
-   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+   <translation id="common_stepper_optional_label" qtlid="356264">(optional)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Edit this step</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Skip this step</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Next</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Send</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Cancel</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">There are</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">left on your project</translation>

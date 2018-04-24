@@ -41,8 +41,8 @@
    <translation id="vdi_reason_need" qtlid="371136">Deixou de ser necessário</translation>
    <translation id="vdi_reason_other" qtlid="19963">Outro</translation>
 
-   <translation id="vdi_console_title" qtlid="164844">Aceder à consola</translation>
-   <translation id="vdi_btn_console" qtlid="164844">Aceder à consola</translation>
+   <translation id="vdi_console_title" qtlid="164844">Acesse o console</translation>
+   <translation id="vdi_btn_console" qtlid="164844">Acesse o console</translation>
    <translation id="vdi_console_info" qtlid="442743">Irá receber um email com as instruções para aceder à consola do seu Cloud Desktop. Deseja continuar?</translation>
    <translation id="vdi_console_task" qtlid="406554">Pedido de acesso à consola enviado</translation>
    <translation id="vdi_console_done" qtlid="406567">Irá receber um e-mail relativo ao pedido de acesso à consola.</translation>

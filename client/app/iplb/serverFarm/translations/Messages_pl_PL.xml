@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port powiązany z Twoim serwerem (1 do {{portMax}}). Jako port domyślny ustawiony jest port front-endu.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Data center</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Réseau privé</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Zaawansowane parametry</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Domyślnie zostały ustawione najczęściej używane wartości. Będziesz mógł je zmienić w każdym momencie. </translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Wyświetl</translation>

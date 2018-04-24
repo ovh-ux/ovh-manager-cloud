@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Sluiten</translation>
 
    <translation id="common_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="common_activate" qtlid="76734">Activeren</translation>
+   <translation id="common_deactivate" qtlid="90973">Deactiveren</translation>
    <translation id="common_edit" qtlid="37875">Wijzigen</translation>
    <translation id="common_consult" qtlid="339639">Lezen</translation>
    <translation id="common_see_detail" qtlid="225192">De details weergeven</translation>
@@ -578,11 +580,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Voer een maximum van {{maxlength}} tekens in.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Voer een geldig formaat in.</translation>
 
-   <translation id="common_stepper_optional_label">(facultatif)</translation>
-   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
-   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
-   <translation id="common_stepper_next_button_label">Suivant</translation>
-   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+   <translation id="common_stepper_optional_label" qtlid="356264">(optioneel)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Deze stap bewerken</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Deze stap overslaan</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Volgende</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Verzenden</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Annuleren</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Er zijn</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">over op uw project</translation>

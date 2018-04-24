@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Schließen</translation>
 
    <translation id="common_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="common_activate" qtlid="76734">Aktivieren</translation>
+   <translation id="common_deactivate" qtlid="90973">Deaktivieren</translation>
    <translation id="common_edit" qtlid="37875">Ändern</translation>
    <translation id="common_consult" qtlid="339639">Einsehen</translation>
    <translation id="common_see_detail" qtlid="225192">Details anzeigen</translation>
@@ -578,11 +580,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Bitte geben Sie höchstens {{maxlength}} Zeichen ein.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
 
-   <translation id="common_stepper_optional_label">(facultatif)</translation>
-   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
-   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
-   <translation id="common_stepper_next_button_label">Suivant</translation>
-   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+   <translation id="common_stepper_optional_label" qtlid="356264">(optional) </translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Diesen Schritt bearbeiten</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Diesen Schritt überspringen</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Weiter</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Absenden</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Abbrechen</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Sie haben noch</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">für Ihr Projekt</translation>
