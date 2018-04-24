@@ -1,23 +1,20 @@
 <section class="cui-page__content cui-page__content-flex vps-upgrade">
-    <oui-back-button data-title="{{ 'vps_configuration_upgradevps_title' | translate }}"
+    <oui-back-button data-title="{{ ::'vps_configuration_upgradevps_title' | translate }}"
         data-on-click="$ctrl.cancel()"></oui-back-button>
 
     <oui-stepper data-linear
         data-on-init="$ctrl.loadUpgradesList()"
         data-on-finish="$ctrl.confirm()">
-        <oui-step-form data-header="{{:: 'vps_configuration_upgradevps_step1_title' | translate }}"
+        <oui-step-form data-header="{{ ::'vps_configuration_upgradevps_step1_title' | translate }}"
             data-loading="$ctrl.loaders.step1"
             data-on-focus="$ctrl.completed.step1 = false"
-            data-on-submit="$ctrl.completed.step1 = true"
-            data-valid="$ctrl.selectedModel.model !== $ctrl.getCurrentModel().model">
-
+            data-on-submit="$ctrl.validateStep1()">
             <div class="d-md-flex flex-wrap">
                 <div class="vps-upgrade-item  vps-upgrade-grid-cell"
                      data-ng-repeat="upgrade in $ctrl.upgradesList track by $index"
                      data-ng-if="!$ctrl.completed.step1 || (upgrade.model === $ctrl.selectedModel.model)">
                     <oui-radio
                         data-id="{{upgrade.model}}"
-                        data-ng-if="!$ctrl.completed.step1 || (upgrade.model === $ctrl.selectedModel.model)"
                         data-name="upgrade.model"
                         data-model="$ctrl.selectedModel.model"
                         data-text="{{ upgrade.name }}"
@@ -47,7 +44,7 @@
                         </span>
                         <span class="oui-radio__section text-right">
                             <strong class="d-block">
-                                {{ upgrade.monthPrice }} {{ 'vps_configuration_upgradevps_step1_table_price_monthly' | translate }}
+                                {{ upgrade.monthPrice }} {{ ::'vps_configuration_upgradevps_step1_table_price_monthly' | translate }}
                             </strong>
                         </span>
                     </oui-radio>
@@ -66,15 +63,15 @@
                 </a>
             </div>
             <oui-checkbox
-                data-text="{{ 'contracts_agree' | translate }}"
+                data-text="{{ ::'contracts_agree' | translate }}"
                 id="contractsValidated"
                 name="contractsValidated"
                 data-model="$ctrl.conditionsAgree"
                 required>
             </oui-checkbox>
         </oui-step-form>
-        <oui-step-form data-header="{{:: 'vps_configuration_upgradevps_step3_title' | translate }}"
-            data-submit-text="{{:: 'vps_configuration_upgradevps_order' | translate }}">
+        <oui-step-form data-header="{{ ::'vps_configuration_upgradevps_step3_title' | translate }}"
+            data-submit-text="{{ ::'vps_configuration_upgradevps_order' | translate }}">
             <dl class="vps-upgrade-dl-horizontal">
                 <dt class="vps-upgrade-item-horizontal"
                     data-translate="vps_configuration_upgradevps_step2_price1"
@@ -90,7 +87,7 @@
                     <span data-translate="vps_configuration_upgradevps_step1_table_price_monthly"></span>
                 </dd>
             </dl>
-            <div class="mb-3">
+            <div class="mb-4">
                 <span data-translate="vps_configuration_upgradevps_step2_explication2"></span>
                 <span data-translate="vps_configuration_upgradevps_step2_explication3">></span>
             </div>
