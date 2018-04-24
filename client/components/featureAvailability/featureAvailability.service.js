@@ -23,8 +23,7 @@
         PROJECT: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             },
             expressOrder: {
                 US: ["US"]
@@ -38,8 +37,7 @@
         DEDICATED_CLOUD: {
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             }
         },
         ip: {
@@ -53,7 +51,12 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 // CA: allCanadianSubsidiaries, TODO : to remove when iplb order prodded in CA
-                US: ["US"]
+            }
+        },
+        LOAD_BALANCER: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         VRACK: {
@@ -78,14 +81,12 @@
         },
         METRICS: {
             sidebarOrder: {
-                EU: ["FR"],
-                US: ["US"]
+                EU: ["FR"]
             }
         },
         CEPH: {
             sidebarOrder: {
-                EU: ["FR"],
-                US: ["US"]
+                EU: ["FR"]
             }
         },
         VEEAM: {
