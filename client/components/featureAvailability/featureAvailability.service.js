@@ -30,8 +30,7 @@
             },
             guides: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             }
         },
         DEDICATED_CLOUD: {
