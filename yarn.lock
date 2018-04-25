@@ -71,11 +71,11 @@
   version "0.0.0"
   resolved "https://codeload.github.com/PascalPrecht/bower-angular-translate/tar.gz/4e6c7fdcef6362e95a9faa615e72822a4290a03e"
 
-"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#0.3.x":
-  version "0.3.2"
-  resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/c1989bcd4185a0f5e206646b267024f45a905c06"
+"@bower_components/angular-ui-router@angular-ui/angular-ui-router-bower#^1.0.0":
+  version "1.0.15"
+  resolved "https://codeload.github.com/angular-ui/angular-ui-router-bower/tar.gz/35fb8a9a6c6e345de3238582bc300a5cdd4ff649"
   dependencies:
-    angular "^1.0.8"
+    "@uirouter/core" "5.0.17"
 
 "@bower_components/angular-ui-sortable@angular-ui/ui-sortable#0.14.x":
   version "0.0.0"
@@ -93,9 +93,9 @@
   version "3.1.1"
   resolved "https://codeload.github.com/daneden/animate.css/tar.gz/1d0401008b73494fcde9d606140625ac38753e5c"
 
-"@bower_components/at-internet-ui-router-plugin@ovh-ux/at-internet-ui-router-plugin#^0.1.2":
-  version "0.1.2"
-  resolved "https://codeload.github.com/ovh-ux/at-internet-ui-router-plugin/tar.gz/8812dd90ab04b609d4879254a4d1fcdb52101b3e"
+"@bower_components/at-internet-ui-router-plugin@ovh-ux/at-internet-ui-router-plugin#~1.0.0":
+  version "1.0.0"
+  resolved "https://codeload.github.com/ovh-ux/at-internet-ui-router-plugin/tar.gz/2de4ec8b476de10f816fcbbea5fdeceaa9f93cdc"
 
 "@bower_components/bootstrap-additions@mgcrea/bootstrap-additions#~0.3.1":
   version "0.3.1"
@@ -246,15 +246,15 @@
     angular-mock "^1.0.0"
     less-plugin-remcalc "^0.0.1"
 
-"@bower_components/ovh-angular-module-status@ovh-ux/ovh-angular-module-status#^2.0.0":
-  version "2.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-module-status/tar.gz/c0fe801027bc77ad4085409fa627d24b70e3dfda"
+"@bower_components/ovh-angular-module-status@ovh-ux/ovh-angular-module-status#^3.0.0":
+  version "3.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-module-status/tar.gz/3b23f68a86df5a4342d400c6399ba0e525965a88"
   dependencies:
     less-plugin-remcalc "^0.0.1"
 
-"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^3.0.0":
-  version "3.0.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/7f4b292a9ec49511ca476395b83e9b6c7d6b003b"
+"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^5.0.0":
+  version "5.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/895a1dfd780bb62ec8b5c7126147a8739cfd0f70"
 
 "@bower_components/ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0":
   version "5.0.0"
@@ -278,13 +278,13 @@
   version "4.0.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-popover/tar.gz/8645df39fae851071dac3b9286d55ce522ab1d59"
 
-"@bower_components/ovh-angular-responsive-tabs@ovh-ux/ovh-angular-responsive-tabs#^3.1.4":
-  version "3.1.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-tabs/tar.gz/7066fc3b52d7f607c3eb10c90fa3f4f1ee1e16c3"
+"@bower_components/ovh-angular-responsive-tabs@ovh-ux/ovh-angular-responsive-tabs#^4.0.0":
+  version "4.0.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-tabs/tar.gz/0aa90a9a3b281fc0422b33ba2ba121ab3a69b693"
 
-"@bower_components/ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^6.0.0":
-  version "6.0.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/5a84d69276f872932df2f3f7bb23b428f482bfce"
+"@bower_components/ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.0.0":
+  version "7.1.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/a136079e568287ce49bef031dbd10efd0750ec34"
 
 "@bower_components/ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2":
   version "0.2.3"
@@ -503,6 +503,10 @@
   version "2.53.37"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-2.53.37.tgz#34f743c20e53ae7100ede90870fde554df2447f8"
 
+"@uirouter/core@5.0.17":
+  version "5.0.17"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.17.tgz#c85d422b1e9a45df885be8b84f9b7f53233a7973"
+
 CSSselect@0.x:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/CSSselect/-/CSSselect-0.7.0.tgz#e4054c67b467465f3c9500c0da0aa7878c4babd2"
@@ -646,7 +650,7 @@ angular@1.3.x:
   version "1.3.20"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.3.20.tgz#b23a3d7c5e7f99f7d95b9b4d49b9ac355269baee"
 
-angular@1.x, "angular@>=1.2.26 <=1.6", angular@^1.0.8:
+angular@1.x, "angular@>=1.2.26 <=1.6":
   version "1.6.9"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.9.tgz#bc812932e18909038412d594a5990f4bb66c0619"
 
@@ -1649,6 +1653,14 @@ chalk@^0.5.1:
 chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
+  dependencies:
+    ansi-styles "^3.2.1"
+    escape-string-regexp "^1.0.5"
+    supports-color "^5.3.0"
+
+chalk@^2.3.2:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -3958,12 +3970,6 @@ grunt-ng-constant@^2.0.1:
     lodash "^4.5.1"
     merge "^1.2.0"
     tosource "^1.0.0"
-
-grunt-open@~0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/grunt-open/-/grunt-open-0.2.3.tgz#145ac45026a57fcfaa433ffd7398ae46d2bd3957"
-  dependencies:
-    open "~0.0.4"
 
 grunt-ovh-translation@^2.1.1:
   version "2.1.2"
