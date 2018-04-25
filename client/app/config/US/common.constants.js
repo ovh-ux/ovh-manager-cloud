@@ -4,9 +4,9 @@ angular.module("managerApp")
     .constant("TARGET", "US")
     .constant("UNIVERSE", "CLOUD")
     .constant("MANAGER_URLS", {
-        dedicated: "https://www.ovh.us/manager/dedicated/index.html#/",
-        cloud: "https://www.ovh.us/manager/cloud/index.html#/",
-        sunrise: "https://www.ovh.us/manager/sunrise/index.html#/",
+        dedicated: "https://ovhcloud.com/manager/dedicated/index.html#/",
+        cloud: "https://ovhcloud.com/manager/cloud/index.html#/",
+        sunrise: "https://ovhcloud.com/manager/sunrise/index.html#/",
         gamma: "https://ca.ovh.com/manager/sunrise/index.html#/",
         portal: "https://www.ovh.com/manager/portal/index.html#/"
     })
