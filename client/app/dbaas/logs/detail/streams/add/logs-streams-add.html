@@ -1,10 +1,8 @@
 <div class="cui-page__content">
     <oui-back-button data-state="dbaas.logs.detail.streams"
-                    class="back_button_inline_text"
+                    data-title="{{ ctrl.isEdit ? 'logs_streams_update_title' : 'logs_streams_add_data_feed' | translate }}"
                     data-state-params="{ serviceName: ctrl.serviceName}">
     </oui-back-button>
-    <span data-ng-show="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_update_title"></span>
-    <span data-ng-hide="ctrl.isEdit" class="oui-header_3" data-translate="logs_streams_add_data_feed"></span>
 
     <div><oui-spinner data-ng-show="ctrl.stream.loading"></oui-spinner></div>
     <form novalidate

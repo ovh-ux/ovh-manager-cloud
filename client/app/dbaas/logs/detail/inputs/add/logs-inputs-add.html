@@ -1,6 +1,7 @@
 <div class="cui-page__content inputs-logs-add">
-    <oui-back-button class="back_button_inline_text" on-click="ctrl.gotoInputsHome()"></oui-back-button>
-    <span class="oui-header_3" data-translate="{{ ctrl.editMode ? 'inputs_logs_title_edit' : 'inputs_logs_title_add' }}"></span>
+    <oui-back-button data-title="{{ ctrl.editMode ? 'inputs_logs_title_edit' : 'inputs_logs_title_add' | translate}}"
+        data-on-click="ctrl.gotoInputsHome()"></oui-back-button>
+
     <div ng-if="ctrl.editMode" class="mb-5">
         <span data-translate="inputs_logs_edit_description" data-translate-values="{ name: ctrl.input.data.info.title}"></span>
     </div>

@@ -1,6 +1,5 @@
 <div class="cui-page__content">
-    <oui-back-button class="back_button_inline_text" data-ng-click="ctrl.back()"></oui-back-button>
-    <span class="oui-header_3" data-translate="logs_offer_title"></span>
+    <oui-back-button data-title="{{ ::'logs_offer_title' | translate }}" data-on-click="ctrl.back()"></oui-back-button>
 
     <div class="pl-4 mb-3" data-ng-if="ctrl.offerDetail.currentOfferType === 'pro'">
         <span data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}"></span>
