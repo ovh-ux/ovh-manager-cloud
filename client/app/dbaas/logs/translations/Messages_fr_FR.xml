@@ -14,7 +14,7 @@
    <translation id="logs_previous" qtlid="17431">Précédent</translation>
    <translation id="logs_later" qtlid="82305">Plus tard</translation>
    <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {{message}}</translation>
 
 <!-- Dashboard -->
    <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>

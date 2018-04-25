@@ -38,7 +38,7 @@
                     <cui-tile-body-list-item>
                         <cui-tile-action-link data-action="ctrl.actions.graylogApi"></cui-tile-action-link>
                     </cui-tile-body-list-item>
-                    <cui-tile-body-list-item>
+                    <cui-tile-body-list-item data-ng-if="ctrl.account.data">
                         <cui-tile-action-link data-action="ctrl.actions.elasticsearch" data-disabled="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)">
                             <i data-ng-if="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)"
                                class="oui-icon oui-icon-help_circle cui-tile__tooltip"

@@ -9,7 +9,7 @@ class LogsDetailService {
     getServiceDetails (serviceName) {
         return this.LogsLexiService.logDetail({ serviceName })
             .$promise
-            .catch(this.ServiceHelper.errorHandler("logs_details_error"));
+            .catch(this.ServiceHelper.errorHandler("logs_details_error", undefined, "data.message"));
     }
 }
 
