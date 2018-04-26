@@ -63,6 +63,16 @@
    <translation id="cloud_common_region_location_SGP" qtlid="447547">Asie du Sud-Est (Singapour)</translation>
    <translation id="cloud_common_region_location_SYD" qtlid="449180">Océanie (Australie)</translation>
 
+   <translation id="cloud_common_region_continent_SBG">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_WAW">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_BHS">Amérique du Nord</translation>
+   <translation id="cloud_common_region_continent_GRA">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_RBX">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_DE">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_UK">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_SGP">Asie du Sud-Est</translation>
+   <translation id="cloud_common_region_continent_SYD">Océanie</translation>
+
    <translation id="browser_alert_not_supported" qtlid="405357">Votre navigateur n'est pas supporté.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Votre navigateur n'est pas à jour et peut contenir des failles de sécurité ou de compatibilité.</translation>
    <translation id="browser_alert_update" qtlid="405383">Nous vous recommandons de <a href="http://outdatedbrowser.com/fr" class="alert-link" target="_blank">mettre à jour votre navigateur <i class="fa fa-external-link" aria-hidden="true"></i></a> afin de profiter d'une expérience optimale.</translation>
