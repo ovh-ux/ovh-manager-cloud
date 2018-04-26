@@ -63,11 +63,15 @@
 
         orderSuccessHandler (newWindow) {
             return data => {
-                let orderUrl = this.findOrderUrl(data);
+                const orderUrl = this.findOrderUrl(data);
                 let orderId = this.findOrderId(data);
 
                 if (!orderUrl) {
-                    return this.$q.reject("URL not found");
+                    return this.$q.reject({
+                        data: {
+                            message: "URL not found"
+                        }
+                    });
                 }
                 if (!orderId) {
                     orderId = orderUrl;
@@ -75,14 +79,20 @@
 
                 newWindow.location = orderUrl;
 
-                this.CloudMessage.success({
-                    textHtml: this.$translate.instant(defaultOrderSuccessMessage, {
-                        orderUrl,
-                        orderId
-                    })
+                return this.$q.resolve({
+                    orderUrl,
+                    orderId
                 });
-                return this.$q.resolve(data);
             };
+        }
+
+        orderSuccessMessage ({ orderUrl, orderId }, message = defaultOrderSuccessMessage) {
+            this.CloudMessage.success({
+                textHtml: this.$translate.instant(message, {
+                    orderUrl,
+                    orderId
+                })
+            });
         }
 
         orderErrorHandler (newWindow) {
@@ -92,11 +102,20 @@
             };
         }
 
-        loadOnNewPage (orderPromise) {
+        loadOnNewPage (orderPromise, config = {}) {
             let newWindow = this.$window.open("", "_blank");
             newWindow.document.write(this.$translate.instant("common_order_doing"));
             return orderPromise
                 .then(this.orderSuccessHandler(newWindow))
+                .then(data => {
+                    if (_.isFunction(config.successMessage)) {
+                        return config.successMessage(data);
+                    }
+                    if (_.isString(config.successMessage)) {
+                        return this.orderSuccessMessage(data, config.successMessage);
+                    }
+                    return this.orderSuccessMessage(data);
+                })
                 .catch(this.orderErrorHandler(newWindow));
         }
     }
