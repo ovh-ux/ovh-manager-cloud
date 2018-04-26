@@ -9,11 +9,9 @@
         <title>OVH - Cloud</title>
         <meta name="description" content="OVH - Cloud Manager">
         <meta name="viewport" content="width=device-width">
-        <!-- build:css(client) app/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- injector:assetscss -->
-        <!-- endinjector:assetscss -->
+        <!-- build:css(.) app/vendor.css -->
+            <!-- injector:bowercss -->
+            <!-- endinjector:bowercss -->
         <!-- endbuild -->
         <!-- build:css({.tmp,client}) app/app.css -->
           <link rel="stylesheet" href="app/app.css">
@@ -90,10 +88,9 @@
         </div>
 
         <div data-otrs-popup></div>
-
-        <!-- build:js({client,node_modules}) app/vendor.js -->
-            <!-- bower:js -->
-            <!-- endbower -->
+        <!-- build:js(.) app/vendor.js -->
+            <!-- injector:bowerjs -->
+            <!-- endinjector:bowerjs -->
         <!-- endbuild -->
         <!-- build:js(.tmp) app/app.js -->
             <script src="app/app.js"></script>
