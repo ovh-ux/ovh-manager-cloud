@@ -36,8 +36,10 @@ export default function (app) {
     app.use(/^\/(?:engine\/)?2api/, require("./proxy/2api").default);
 
     // All undefined asset or api routes should return a 404
-    app.route("/:url(auth|components|app|bower_components|assets|fonts)/*").get(function (req, res) {
-        if (
+    app.route("/:url(auth|components|app|bower_components|node_modules|assets|fonts)/*").get(function (req, res) {
+        if (req.path.indexOf("node_modules")) {
+            res.sendFile(path.join(path.normalize(__dirname + "/.."), req.path));
+        } else if (
             (
                 req.path.match(/Messages_.._..\.json$/) ||
                 req.path.match(/app\.css$/)
