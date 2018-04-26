@@ -1,27 +1,25 @@
 <div class="cui-page__content inputs-home">
-    <span class="oui-header_3" data-translate="inputs_title"></span>    
-    <p class="oui-paragraph mb-5" data-translate="inputs_intro_text"></p>
-    
+    <span class="oui-header_3" data-translate="inputs_title"></span>
+    <p class="oui-paragraph" data-translate="inputs_intro_text"></p>
+
     <div data-ng-if="ctrl.quota.loading"><oui-spinner></oui-spinner></div>
 
     <p data-ng-if="!ctrl.quota.loading">{{ctrl.quota.data.configured}}/{{ctrl.quota.data.max}} <span data-translate="inputs_total_used"></span>
         (<logs-upgrade-quota-link></logs-upgrade-quota-link>)
     </p>
 
-    <div class="mt-4 mb-2">
-        <logs-add-tool
-            data-ng-if="!ctrl.quota.loading"
-            text="{{ ::'inputs_add_input' | translate }}"
-            tool-type="{{ ::'inputs_name' | translate }}"
-            current-usage="ctrl.quota.data.configured"
-            max-usage="ctrl.quota.data.max"
-            callback="ctrl.add()"
-        ></logs-add-tool>
-    </div>
-
-    <div data-ng-if="ctrl.inputs.loading || ctrl.delete.loading"><oui-spinner></oui-spinner></div>
-    <oui-datagrid data-ng-if="!(ctrl.inputs.loading || ctrl.delete.loading)"
-        rows="ctrl.inputs.data">
+    <oui-datagrid data-ng-if="!(ctrl.inputs.loading || ctrl.delete.loading)" rows="ctrl.inputs.data">
+        <extra-top>
+            <logs-add-tool
+                data-ng-if="!ctrl.quota.loading"
+                text="{{ ::'inputs_add_input' | translate }}"
+                tool-type="{{ ::'inputs_name' | translate }}"
+                current-usage="ctrl.quota.data.configured"
+                max-usage="ctrl.quota.data.max"
+                callback="ctrl.add()">
+            </logs-add-tool>
+            <oui-spinner data-ng-if="ctrl.quota.loading"></oui-spinner>
+        </extra-top>
         <oui-column title="::'inputs_col_name' | translate" property="info.title" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'inputs_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'inputs_software' | translate" property="info.engine.software" type="string" searchable filterable>
@@ -46,5 +44,5 @@
             <oui-action-menu-item text="{{ ::'inputs_standard_output' | translate }}" on-click="ctrl.standardOutput($row)" disabled="!$row.actionsMap.LOG"></oui-action-menu-item>
             <oui-action-menu-item text="{{ ::'common_delete' | translate }}" on-click="ctrl.showDeleteConfirm($row)" disabled="!$row.actionsMap.DESTROY || $row.info.status === ctrl.LogsConstants.inputStatus.PROCESSING"></oui-action-menu-item>
         </oui-action-menu>
-    </oui-datagrid>    
+    </oui-datagrid>
 </div>

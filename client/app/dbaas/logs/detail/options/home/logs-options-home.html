@@ -1,13 +1,21 @@
 <div class="cui-page__content log-options">
-    <oui-back-button class="back_button_inline_text"></oui-back-button>
-    <span class="oui-header_3" data-translate="log_options_title"></span>
+    <oui-back-button data-title="{{ ::'log_options_title' | translate}}"
+        data-on-click="ctrl.goToHomePage()">
+    </oui-back-button>
+
+    <p class="oui-paragraph">
+        <span data-translate="log_options_intro_text"></span>
+        <span data-translate="logs_options_description_manage"></span>
+        <a data-translate="logs_options_manage_link"
+           data-ui-sref="dbaas.logs.detail.options.manage"></a>.
+    </p>
 
     <oui-spinner data-ng-show="ctrl.currentOptions.loading || ctrl.selectedOffer.loading"></oui-spinner>
     <div class="row mb-4" data-ng-if="!ctrl.isBasicOffer() && !ctrl.selectedOffer.loading">
         <p class="oui-paragraph col-md-12" data-translate="log_options_current_offer_title"></p>
-        <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5">
-            <cui-tile data-title="ctrl.selectedOffer.data.name"
-                data-loading="ctrl.selectedOffer.loading">
+        <div class="col-xm-12 col-md-4 current-options-tile mb-5">
+            <cui-tile data-loading="ctrl.selectedOffer.loading">
+                <h4 class="oui-header_5 cui-tile__title" data-ng-bind="ctrl.selectedOffer.data.name"></h4>
                 <cui-tile-body class="cui-tile__top-bordered">
                     <cui-tile-item>
                         <cui-tile-definitions>
@@ -36,24 +44,25 @@
         <p class="oui-paragraph" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></p>
     </div>
 
-    <div
-     class="row d-flex flex-wrap mb-4">
-        <div class="col-xm-12 col-md-4 current-options-tile text-center mb-5" data-ng-repeat="option in ctrl.currentOptions.data">
-            <cui-tile data-title="option.type+' ('+option.quantity+')'"
-                data-loading="ctrl.currentOptions.loading">
+    <div class="cui-grid-list d-md-flex flex-wrap mb-4">
+        <div class="cui-grid-list-item cui-grid-cell current-options-tile" data-ng-repeat="option in ctrl.currentOptions.data">
+            <cui-tile data-loading="ctrl.currentOptions.loading">
+                <h4 class="oui-header_5 cui-tile__title" data-ng-bind="option.type+' ('+option.quantity+')'"></h4>
                 <cui-tile-body class="cui-tile__top-bordered">
                     <cui-tile-item>
                         <cui-tile-definitions>
-                            <cui-tile-definition-term data-ng-repeat="suboption in option.details" data-term="suboption.quantity+' '+suboption.type+', '+suboption.detail"></cui-tile-definition-term>
+                            <cui-tile-definition-term data-ng-repeat="suboption in option.details">
+                                <span class="cui-tile__description">
+                                    <strong data-ng-bind="suboption.quantity"></strong>
+                                </span>
+                                <span data-ng-bind="suboption.detail"></span>
+                            </cui-tile-definition-term>
                         </cui-tile-definitions>
                     </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
     </div>
-
-    <p class="oui-paragraph"><span data-translate="logs_options_description_manage"></span> <a data-translate="logs_options_manage_link" data-ng-click="ctrl.goToManage()"></a></p>
-    <p class="oui-paragraph" data-translate="log_options_intro_text"></p>
 
     <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
     <oui-datagrid data-ng-hide="ctrl.options.loading" rows="ctrl.options.data" page-size="15" class="datagrid-without-pagination">

@@ -18,6 +18,10 @@ class LogsStreamsAlertsHomeCtrl {
         this._runLoaders();
     }
 
+    back() {
+        this.$state.go("dbaas.logs.detail.streams");
+    }
+
     /**
      * Runs all the loaders to fetch data from APIs
      *

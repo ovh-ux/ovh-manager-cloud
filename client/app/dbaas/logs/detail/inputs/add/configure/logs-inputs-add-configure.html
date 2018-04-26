@@ -5,24 +5,19 @@
 
         <oui-spinner data-ng-if="ctrl.input.loading"></oui-spinner>
         <form novalidate name="ctrl.flowggerForm" data-ng-if="!ctrl.input.loading">
-            <div class="oui-field">
-                <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_format"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_5 d-flex">
-                        <div class="oui-select">
-                            <select class="oui-select__input float-left"
-                                name="logs_inputs_configure_format"
-                                id="logs_inputs_configure_format"
-                                data-ng-model="ctrl.configuration.flowgger.logFormat">
-                                    <option data-ng-repeat="logType in ctrl.getFlowggerLogFormats()" value="{{logType.value}}">
-                                        {{ logType.name | translate }}
-                                    </option>
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
+            <oui-field label="{{ ::'inputs_logs_configure_format' | translate }}" size="xl">
+                <div class="oui-select">
+                    <select class="oui-select__input float-left"
+                        name="logs_inputs_configure_format"
+                        id="logs_inputs_configure_format"
+                        data-ng-model="ctrl.configuration.flowgger.logFormat">
+                            <option data-ng-repeat="logType in ctrl.getFlowggerLogFormats()" value="{{logType.value}}">
+                                {{ logType.name | translate }}
+                            </option>
+                    </select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                 </div>
-            </div>
+            </oui-field>
 
             <div class="oui-field">
                 <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_delimiter"></label>
@@ -102,26 +97,22 @@
         <p data-translate="inputs_logs_configure_logstash_desc2"></p>
 
         <form novalidate name="ctrl.logstashForm">
-            <div class="oui-field mt-4" data-ng-if="!ctrl.saving.loading">
-                <label for="logs_index_modal_select" class="oui-label" data-translate="inputs_logs_configure_logstash_wizard"></label>
-                <div class="oui-field__content">
-                    <div class="oui-field-control oui-field-control_5 d-flex">
-                        <div class="oui-select">
-                            <select class="oui-select__input float-left"
-                                name="logs_inputs_configure_format"
-                                id="logs_inputs_configure_format"
-                                data-ng-model="ctrl.configuration.logstash.logFormat"
-                                data-ng-change="ctrl.applyConfiguration(ctrl.configuration.logstash.logFormat)">
-                                    <option value="" data-translate="inputs_logs_configure_choose_app"></option>
-                                    <option data-ng-repeat="logFormat in ctrl.getLogstashLogFormats()" value="{{logFormat.value}}">
-                                        {{ logFormat.name | translate }}
-                                    </option>
-                            </select>
-                            <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                        </div>
-                    </div>
+            <oui-field label="{{ ::'inputs_logs_configure_logstash_wizard' | translate }}" size="xl">
+                <div class="oui-select">
+                    <select class="oui-select__input float-left"
+                        name="logs_inputs_configure_format"
+                        id="logs_inputs_configure_format"
+                        data-ng-model="ctrl.configuration.logstash.logFormat"
+                        data-ng-change="ctrl.applyConfiguration(ctrl.configuration.logstash.logFormat)"
+                        data-ng-disabled="ctrl.saving.loading">
+                            <option value="" data-translate="inputs_logs_configure_choose_app"></option>
+                            <option data-ng-repeat="logFormat in ctrl.getLogstashLogFormats()" value="{{logFormat.value}}">
+                                {{ logFormat.name | translate }}
+                            </option>
+                    </select>
+                    <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
                 </div>
-            </div>
+            </oui-field>
 
             <label class="oui-header_6 mt-3">conf.d/logstash.conf</label>
             <label class="oui-label pl-4">input {</label>

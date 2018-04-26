@@ -23,6 +23,7 @@ class LogsIndexAddModalCtrl {
     }
 
     clearIndex () {
+        this.title = "logs_index_modal_add_title";
         this.index.description = "";
         this.index.alertNotifyEnabled = false;
         this.index.suffix = "";
@@ -30,6 +31,7 @@ class LogsIndexAddModalCtrl {
     }
 
     populateIndex () {
+        this.title = "logs_index_modal_edit_title";
         this.index.description = this.indexInfo.description;
         this.index.alertNotifyEnabled = this.indexInfo.alertNotifyEnabled;
     }
@@ -40,6 +42,14 @@ class LogsIndexAddModalCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
+    }
+
+    save () {
+        if (this.isEdit) {
+            return this.editIndex();
+        } else {
+            return this.saveIndex();
+        }
     }
 
     saveIndex () {

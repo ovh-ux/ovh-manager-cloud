@@ -107,12 +107,6 @@ class LogsOptionsCtrl {
         );
     }
 
-    goToManage () {
-        this.$state.go("dbaas.logs.detail.options.manage", {
-            serviceName: this.serviceName
-        });
-    }
-
     goToHomePage () {
         this.$state.go("dbaas.logs.detail.home");
     }

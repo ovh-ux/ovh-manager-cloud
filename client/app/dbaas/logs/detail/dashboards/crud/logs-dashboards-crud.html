@@ -1,128 +1,67 @@
 <form novalidate name="ctrl.form">
-    <div class="oui-modal oui-modal_shadow">
-        <div class="oui-modal__header">
-            <button
-                class="oui-icon oui-icon-close_thin oui-modal__close-button"
-                type="button"
-                aria-label="Exit"
-                ng-click="ctrl.cancel()"></button>
+    <oui-modal data-title="{{ ::ctrl.title | translate }}"
+               data-primary-action="ctrl.save()"
+               data-primary-label="{{ ::'common_save' | translate }}"
+               data-secondary-action="ctrl.cancel()"
+               data-secondary-label="{{ ::'common_cancel' | translate }}"
+               data-on-dismiss="ctrl.cancel()"
+               data-loading="ctrl.saving.loading">
+        <div ng-if="ctrl.isEdit" class="mb-3">
+            <span data-translate="logs_dashboards_update_description" data-translate-values="{name: ctrl.dashboard.data.title}"></span>
         </div>
-        <div class="oui-modal__body oui-modal__body_no-icon">
-            <oui-spinner data-ng-if="ctrl.dashboard.loading"></oui-spinner>
-            <div data-ng-if="!ctrl.dashboard.loading">
-                <div class="oui-modal__body-text">
-                    <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_dashboards_update_title"></h2>
-                    <h2 class="oui-modal__title" ng-if="ctrl.isDuplicate" data-translate="logs_dashboards_duplicate_title"></h2>
-                    <h2 class="oui-modal__title" ng-if="!ctrl.isEdit && !ctrl.isDuplicate" data-translate="logs_dashboards_add"></h2>
-                    <div ng-if="ctrl.isEdit" class="mb-3">
-                        <span data-translate="logs_dashboards_update_description" data-translate-values="{name: ctrl.dashboard.data.title}"></span>
-                    </div>
-                    <div ng-if="ctrl.isDuplicate" class="mb-3">
-                        <span data-translate="logs_dashboards_duplicate_description" data-translate-values="{name: ctrl.dashboardName}"></span>
-                    </div>
-                </div>
+        <div ng-if="ctrl.isDuplicate" class="mb-3">
+            <span data-translate="logs_dashboards_duplicate_description" data-translate-values="{name: ctrl.dashboardName}"></span>
+        </div>
 
-                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.dashboard_name.$invalid}">
-                    <label for="dashboard_name" class="oui-label" data-translate="logs_dashboards_col_name"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5 mb-2">
-                            <input type="text" id="dashboard_name"
-                                    name="dashboard_name"
-                                    class="oui-input mb-0"
-                                    data-ng-model="ctrl.dashboard.data.title"
-                                    data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.dashboard_name.$invalid}"
-                                    autofocus
-                                    required />
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-label="{{::'logs_dashboards_col_name' | translate}}">
+            <input type="text" id="dashboard_name"
+                name="dashboard_name"
+                class="oui-input"
+                data-ng-model="ctrl.dashboard.data.title"
+                autofocus
+                required>
+        </oui-field>
 
-                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.dashboard_description.$invalid}">
-                    <label for="dashboard_description" class="oui-label" data-translate="logs_dashboards_col_description"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5">
-                            <textarea
-                            id="dashboard_description"
-                            name="dashboard_description"
-                            class="oui-textarea"
-                            data-ng-model="ctrl.dashboard.data.description"
-                            data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.dashboard_description.$invalid}"
-                            required />
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-label="{{::'logs_dashboards_col_description' | translate}}">
+            <textarea
+                id="dashboard_description"
+                name="dashboard_description"
+                class="oui-textarea"
+                data-ng-model="ctrl.dashboard.data.description"
+                required></textarea>
+        </oui-field>
 
-                <div class="oui-field">
-                    <label for="dashboard_option" class="oui-label" data-translate="logs_select_options_title"></label>
-                    <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
-                    <div data-ng-hide="ctrl.options.loading" class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5">
-                            <div class="oui-select"
-                                data-ng-hide="ctrl.options.loading">
-                                <select class="oui-select__input"
-                                    name="dashboard_option"
-                                    id="dashboard_option"
-                                    data-ng-model="ctrl.dashboard.data.optionId">
-                                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
-                                    <option data-ng-repeat="option in ctrl.options.data" value="{{option.optionId}}">
-                                        {{ option.type+', '+option.detail+' - '+option.curNbDashboard+'/'+option.maxNbDashboard }}
-                                    </option>
-                                </select>
-                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="oui-field" data-ng-if="ctrl.isDuplicate">
-                    <label for="dashboard_stream" class="oui-label" data-translate="logs_dashboards_select_stream_title"></label>
-                    <oui-spinner data-ng-if="ctrl.streams.loading"></oui-spinner>
-                    <div data-ng-if="!ctrl.streams.loading" class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5">
-                            <div class="oui-select">
-                                <select class="oui-select__input"
-                                    name="dashboard_stream"
-                                    id="dashboard_stream"
-                                    data-ng-model="ctrl.dashboard.data.streamId">
-                                    <option value="" disabled selected data-translate="logs_dashboards_select_stream"></option>
-                                    <option data-ng-repeat="stream in ctrl.streams.data" value="{{stream.info.streamId}}">
-                                        {{ stream.info.title }}
-                                    </option>
-                                </select>
-                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-label="{{::'logs_select_options_title' | translate}}">
+            <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+            <div class="oui-select" data-ng-hide="ctrl.options.loading">
+                <select class="oui-select__input"
+                    name="dashboard_option"
+                    id="dashboard_option"
+                    data-ng-model="ctrl.dashboard.data.optionId">
+                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
+                    <option data-ng-repeat="option in ctrl.options.data" value="{{option.optionId}}">
+                        {{ option.type+', '+option.detail+' - '+option.curNbDashboard+'/'+option.maxNbDashboard }}
+                    </option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </div>
-        </div>
-        <div class="oui-modal__footer" data-ng-if="!ctrl.dashboard.loading">
-            <div class="cui-form-actions">
-                <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                <div data-ng-if="!ctrl.saving.loading">
-                    <button type="button"
-                        class="oui-button oui-button_secondary"
-                        data-translate="common_cancel"
-                        data-ng-click="ctrl.cancel()"></button>
-                    <button type="submit"
-                        class="oui-button oui-button_primary"
-                        data-translate="common_save"
-                        data-ng-click="ctrl.updateDashboard()"
-                        data-ng-if="ctrl.isEdit"></button>
-                    <button type="submit"
-                        class="oui-button oui-button_primary"
-                        data-translate="common_save"
-                        data-ng-click="ctrl.createDashboard()"
-                        data-ng-if="!ctrl.isEdit && !ctrl.isDuplicate"></button>
-                    <button type="submit"
-                        class="oui-button oui-button_primary"
-                        data-translate="common_save"
-                        data-ng-click="ctrl.duplicateDashboard()"
-                        data-ng-if="ctrl.isDuplicate"></button>
-                </div>
+        </oui-field>
+
+        <oui-field data-ng-if="ctrl.isDuplicate" data-label="{{::'logs_select_options_title' | translate}}">
+            <oui-spinner data-ng-show="ctrl.streams.loading"></oui-spinner>
+            <div class="oui-select" data-ng-hide="ctrl.streams.loading">
+                <select class="oui-select__input"
+                    name="dashboard_stream"
+                    id="dashboard_stream"
+                    data-ng-model="ctrl.dashboard.data.streamId">
+                    <option value="" disabled selected data-translate="logs_dashboards_select_stream"></option>
+                    <option data-ng-repeat="stream in ctrl.streams.data" value="{{stream.info.streamId}}">
+                        {{ stream.info.title }}
+                    </option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </div>
-        </div>
-    </div>
+        </oui-field>
+
+    </oui-modal>
 </form>
-
-

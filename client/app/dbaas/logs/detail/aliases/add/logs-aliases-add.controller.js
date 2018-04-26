@@ -38,6 +38,14 @@ class LogsAliasesAddCtrl {
             this.isEdit = false;
             this.alias = this.LogsAliasesService.getNewAlias();
         }
+
+        this.title = this.isEdit ? 'logs_aliases_update_title' : 'logs_aliases_add';
+    }
+
+    save () {
+        if (this.isEdit) {
+            return this.updateAlias();
+        } else { return this.createAlias(); }
     }
 
     /**

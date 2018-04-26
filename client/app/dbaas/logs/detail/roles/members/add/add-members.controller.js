@@ -7,6 +7,15 @@ class LogsRolesAddMembersCtrl {
         this.$uibModalInstance = $uibModalInstance;
         this.logs = logs;
         this.LogsRolesService = LogsRolesService;
+        this.isEdit = false;
+    }
+
+    $onInit () {
+        if (this.isEdit) {
+            this.title = "logs_member_modal_edit_title";
+        } else {
+            this.title = "logs_member_modal_add_title";
+        }
     }
 
     cancel () {

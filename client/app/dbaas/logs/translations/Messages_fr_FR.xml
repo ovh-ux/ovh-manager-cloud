@@ -14,7 +14,7 @@
    <translation id="logs_previous" qtlid="17431">Précédent</translation>
    <translation id="logs_later" qtlid="82305">Plus tard</translation>
    <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {{message}}</translation>
 
 <!-- Dashboard -->
    <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>
@@ -512,7 +512,7 @@
    <translation id="inputs_intro_text" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
    <translation id="inputs_total_used" qtlid="477210">outils de collecte utilisés</translation>
    <translation id="inputs_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_add_input" qtlid="423193">Ajouter un outil de collecte</translation>
    <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
    <translation id="inputs_tool" qtlid="477236">Outil</translation>
    <translation id="inputs_col_name" qtlid="3818">Nom</translation>

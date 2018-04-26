@@ -31,16 +31,6 @@ class LogsStreamsAlertsAddCtrl {
     }
 
     /**
-     * Redirects back to the previous page
-     * from which the user reached here
-     *
-     * @memberof LogsStreamsAlertsAddCtrl
-     */
-    _goBack () {
-        this.$window.history.back();
-    }
-
-    /**
      * Adds a new alert by making an API call
      *
      * @memberof LogsStreamsAlertsAddCtrl
@@ -57,17 +47,17 @@ class LogsStreamsAlertsAddCtrl {
                 this.LogsStreamsAlertsService.addAlert(this.serviceName, this.streamId, this.alert.data)
         });
         return this.savingAlert.load()
-            .then(() => this._goBack());
+            .then(() => this.$state.go("dbaas.logs.detail.streams.alerts"));
     }
 
     /**
      * Cancels the Alert add operation and redirects
-     * to the page from which the user reached here
+     * to the parent page
      *
      * @memberof LogsStreamsAlertsAddCtrl
      */
     cancel () {
-        this._goBack();
+        this.$state.go("dbaas.logs.detail.streams.alerts");
     }
 
     /**

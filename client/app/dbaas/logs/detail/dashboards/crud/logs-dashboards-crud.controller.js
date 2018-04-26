@@ -38,6 +38,7 @@ class LogsDashboardsCrudCtrl {
             });
             this.streams.load();
             this.isEdit = false;
+            this.title = "logs_dashboards_duplicate_title";
             this.dashboard = this.LogsDashboardsService.getNewDashboard();
             if (!this.dashboardName) {
                 this.ControllerHelper.request.getHashLoader({
@@ -50,6 +51,7 @@ class LogsDashboardsCrudCtrl {
             }
         } else if (this.$stateParams.dashboardId) {
             this.isEdit = true;
+            this.title = "logs_dashboards_update_title";
             this.dashboard = this.ControllerHelper.request.getHashLoader({
                 loaderFunction: () => this.LogsDashboardsService.getAapiDashboard(this.serviceName, this.$stateParams.dashboardId)
                     .then(dashboard => dashboard.info)
@@ -57,7 +59,20 @@ class LogsDashboardsCrudCtrl {
             this.dashboard.load();
         } else {
             this.isEdit = false;
+            this.title = "logs_dashboards_add";
             this.dashboard = this.LogsDashboardsService.getNewDashboard();
+        }
+    }
+
+    save () {
+        if (this.isDuplicate) {
+            this.duplicateDashboard();
+        }
+        if (this.isEdit) {
+            this.updateDashboard();
+        }
+        if (!this.isEdit && !this.isDuplicate) {
+            this.createDashboard();
         }
     }
 

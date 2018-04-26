@@ -1,98 +1,49 @@
 <form novalidate name="ctrl.form">
-    <div class="oui-modal oui-modal_shadow">
-        <div class="oui-modal__header">
-            <button
-                class="oui-icon oui-icon-close_thin oui-modal__close-button"
-                type="button"
-                aria-label="Exit"
-                ng-click="ctrl.cancel()"></button>
+    <oui-modal data-title="{{ ::ctrl.title | translate }}"
+               data-primary-action="ctrl.save()"
+               data-primary-label="{{ ::'common_save' | translate }}"
+               data-secondary-action="ctrl.cancel()"
+               data-secondary-label="{{ ::'common_cancel' | translate }}"
+               data-on-dismiss="ctrl.cancel()"
+               data-loading="ctrl.alias.loading || ctrl.saving.loading">
+        <div data-ng-if="ctrl.isEdit" class="mb-3">
+            <span data-translate="logs_aliases_update_description" data-translate-values="{name: ctrl.alias.data.name}"></span>
         </div>
-        <div class="oui-modal__body oui-modal__body_no-icon">
-            <oui-spinner data-ng-if="ctrl.alias.loading"></oui-spinner>
-            <div data-ng-if="!ctrl.alias.loading">
-                <div class="oui-modal__body-text">
-                    <h2 class="oui-modal__title" ng-if="ctrl.isEdit" data-translate="logs_aliases_update_title"></h2>
-                    <h2 class="oui-modal__title" ng-if="!ctrl.isEdit" data-translate="logs_aliases_add"></h2>
-                    <div ng-if="ctrl.isEdit" class="mb-3">
-                        <span data-translate="logs_aliases_update_description" data-translate-values="{name: ctrl.alias.data.name}"></span>
-                    </div>
-                </div>
 
-                <div class="oui-field" data-ng-if="!ctrl.isEdit" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alias_name.$invalid}">
-                    <label for="alias_name" class="oui-label" data-translate="logs_aliases_col_title"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5 mb-2">
-                            <input type="text" id="alias_name"
-                                    name="alias_name"
-                                    pattern="^[a-z0-9_-]+$"
-                                    class="oui-input mb-0"
-                                    data-ng-model="ctrl.alias.data.suffix"
-                                    data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alias_name.$invalid}"
-                                    autofocus
-                                    required />
-                            <p>{{::'logs_aliases_title_description' | translate}}</p>
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-ng-if="!ctrl.isEdit" data-label="{{ ::'logs_aliases_col_title' | translate }}"
+            data-help-text="{{::'logs_aliases_title_description' | translate}}">
+            <input type="text" id="alias_name"
+                name="alias_name"
+                pattern="^[a-z0-9_-]+$"
+                class="oui-input mb-0"
+                data-ng-model="ctrl.alias.data.suffix"
+                data-ng-class="{'oui-input_error': ctrl.form.$submitted && ctrl.form.alias_name.$invalid}"
+                autofocus
+                required>
+        </oui-field>
 
-                <div class="oui-field" data-ng-class="{'oui-field_error': ctrl.form.$submitted && ctrl.form.alias_description.$invalid}">
-                    <label for="alias_description" class="oui-label" data-translate="logs_aliases_col_description"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5">
-                            <textarea
-                            id="alias_description"
-                            name="alias_description"
-                            class="oui-textarea"
-                            data-ng-model="ctrl.alias.data.description"
-                            data-ng-class="{'oui-textarea_error': ctrl.form.$submitted && ctrl.form.alias_description.$invalid}"
-                            required />
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-label="{{ ::'logs_aliases_col_description' | translate }}">
+            <textarea
+                id="alias_description"
+                name="alias_description"
+                class="oui-textarea"
+                data-ng-model="ctrl.alias.data.description"
+                required></textarea>
+        </oui-field>
 
-                <div class="oui-field">
-                    <label for="alias_option" class="oui-label" data-translate="logs_select_options_title"></label>
-                    <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
-                    <div data-ng-hide="ctrl.options.loading" class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_5">
-                            <div class="oui-select"
-                                data-ng-hide="ctrl.options.loading">
-                                <select class="oui-select__input"
-                                    name="alias_option"
-                                    id="alias_option"
-                                    data-ng-model="ctrl.alias.data.optionId"
-                                    data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbAlias+'/'+option.maxNbAlias for option in ctrl.options.data">
-                                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
-                                </select>
-                                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <oui-field data-label="{{ ::'logs_select_options_title' | translate }}">
+            <oui-spinner data-ng-show="ctrl.options.loading"></oui-spinner>
+            <div class="oui-select" data-ng-hide="ctrl.options.loading">
+                <select class="oui-select__input"
+                    name="alias_option"
+                    id="alias_option"
+                    data-ng-model="ctrl.alias.data.optionId"
+                    data-ng-options="option.optionId as option.type+', '+option.detail+' - '+option.curNbAlias+'/'+option.maxNbAlias for option in ctrl.options.data">
+                    <option value="">{{::'logs_main_offer' | translate}} - {{ctrl.mainOffer.data.current}}/{{ctrl.mainOffer.data.max}}</option>
+                </select>
+                <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
             </div>
-        </div>
-        <div class="oui-modal__footer" data-ng-if="!ctrl.alias.loading">
-            <div class="cui-form-actions">
-                <oui-spinner data-ng-if="ctrl.saving.loading"></oui-spinner>
-                <div data-ng-if="!ctrl.saving.loading">
-                    <button type="button"
-                        class="oui-button oui-button_secondary"
-                        data-translate="common_cancel"
-                        data-ng-click="ctrl.cancel()"></button>
-                    <button type="submit"
-                        class="oui-button oui-button_primary"
-                        data-translate="common_save"
-                        data-ng-click="ctrl.updateAlias()"
-                        data-ng-if="ctrl.isEdit"></button>
-                    <button type="submit"
-                        class="oui-button oui-button_primary"
-                        data-translate="common_save"
-                        data-ng-click="ctrl.createAlias()"
-                        data-ng-if="!ctrl.isEdit"></button>
-                </div>
-            </div>
-        </div>
-    </div>
+        </oui-field>
+
+   </oui-modal>
 </form>
-
-

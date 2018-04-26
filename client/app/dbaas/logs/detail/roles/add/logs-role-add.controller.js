@@ -22,12 +22,14 @@ class LogsRoleAddModalCtrl {
     }
 
     clearRole () {
+        this.title = "logs_role_modal_add_title";
         this.role.description = "";
         this.role.name = "";
         this.role.optionId = null;
     }
 
     populateRole () {
+        this.title = "logs_role_modal_edit_title";
         this.role.description = this.roleInfo.description;
         this.role.name = this.roleInfo.name;
         this.role.optionId = this.roleInfo.optionId;
@@ -39,6 +41,14 @@ class LogsRoleAddModalCtrl {
 
     cancel () {
         this.$uibModalInstance.dismiss();
+    }
+
+    save () {
+        if (this.isEdit) {
+            this.updateRole();
+        } else {
+            this.saveRole();
+        }
     }
 
     saveRole () {
