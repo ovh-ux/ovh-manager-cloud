@@ -1,6 +1,8 @@
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
+const dependencies = require("./dependencies.json");
+
 module.exports = function (config) {
     config.set({
         // base path, that will be used to resolve files and exclude
@@ -11,8 +13,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            // bower:js
-            // endbower
+            ...dependencies.js,
+            ...dependencies.dev.js,
+
             "client/app/app.js",
             "client/{app,components}/**/*.module.js",
             "client/{app,components}/**/*.js",

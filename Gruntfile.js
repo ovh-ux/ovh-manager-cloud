@@ -1,6 +1,8 @@
 // Generated on 2017-01-25 using generator-ovh-stack 0.0.0
 "use strict";
 
+var dependencies = require("./dependencies.json");
+
 module.exports = function (grunt) {
 
     var localConfig;
@@ -36,7 +38,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json"),
         yeoman: {
             // configurable paths
-            client: require("./bower.json").appPath || "client",
+            client: "client",
             server: "server",
             dist: "dist"
         },
@@ -66,11 +68,11 @@ module.exports = function (grunt) {
             },
             tpl_index: {
                 files: ["<%= yeoman.client %>/index.tpl.html"],
-                tasks: ["copy:tpl_index", "wiredep:client", "injector:scripts", "injector:css"]
+                tasks: ["copy:tpl_index", "injector:scripts", "injector:css"]
             },
             tpl_karma: {
                 files: ["karma.conf.tpl.js"],
-                tasks: ["copy:tpl_karma", "wiredep:test"]
+                tasks: ["copy:tpl_karma"]
             },
             injectJS: {
                 files: [
@@ -126,10 +128,6 @@ module.exports = function (grunt) {
                     livereload: true,
                     spawn: false //Without this option specified express won"t be reloaded
                 }
-            },
-            bower: {
-                files: ["bower.json"],
-                tasks: ["wiredep"]
             }
         },
 
@@ -188,27 +186,6 @@ module.exports = function (grunt) {
                     src: "{,*/}*.css",
                     dest: ".tmp/"
                 }]
-            }
-        },
-
-        // Automatically inject Bower components into the app and karma.conf.js
-        wiredep: {
-            options: {
-                exclude: [
-                    /bs4/,
-                    "/json3/",
-                    "/es5-shim/",
-                    /font-awesome\.css/,
-                    /bootstrap\.css/
-                ]
-            },
-            client: {
-                src: "<%= yeoman.client %>/index.html",
-                ignorePath: "<%= yeoman.client %>/"
-            },
-            test: {
-                src: "./karma.conf.js",
-                devDependencies: true
             }
         },
 
@@ -721,7 +698,35 @@ module.exports = function (grunt) {
                         "<%= yeoman.client %>/{app,components}/**/*.css"
                     ]
                 }
-            }
+            },
+
+            bowercss: {
+                options: {
+                    transform: function(filePath) {
+                        filePath = filePath.replace("/node_modules", "node_modules");
+                        return "<link rel=\"stylesheet\" href=\"" + filePath + "\">";
+                    },
+                    starttag: "<!-- injector:bowercss -->",
+                    endtag: "<!-- endinjector:bowercss -->"
+                },
+                files: {
+                    "<%= yeoman.client %>/index.html": dependencies.css
+                }
+            },
+
+            bowerjs: {
+                options: {
+                    transform: function(filePath) {
+                        filePath = filePath.replace("/node_modules", "node_modules");
+                        return "<script src=\"" + filePath + "\"></script>";
+                    },
+                    starttag: "<!-- injector:bowerjs -->",
+                    endtag: "<!-- endinjector:bowerjs -->"
+                },
+                files: {
+                    "<%= yeoman.client %>/index.html": dependencies.js
+                }
+            },
         },
 
         // OVH translations
@@ -778,7 +783,6 @@ module.exports = function (grunt) {
                 "concurrent:server",
                 "injector",
 
-                "wiredep:client",
                 "postcss",
                 "ovhTranslation:dev",
                 "concurrent:debug"
@@ -794,7 +798,6 @@ module.exports = function (grunt) {
             "concurrent:pre",
             "concurrent:server",
             "injector",
-            "wiredep:client",
             "postcss",
             "ovhTranslation:dev",
             "json_merge",
@@ -833,7 +836,6 @@ module.exports = function (grunt) {
                 "injector",
                 "postcss",
                 "ovhTranslation:dev",
-                "wiredep:test",
                 // "eslint:all",
                 // "eslint:test",
                 "karma:unit"
@@ -875,7 +877,6 @@ module.exports = function (grunt) {
                     "concurrent:pre",
                     "concurrent:test",
                     "injector",
-                    "wiredep:client",
                     "postcss",
                     "ovhTranslation:dev",
                     "express:dev",
@@ -897,7 +898,6 @@ module.exports = function (grunt) {
                     "concurrent:test",
                     "injector",
 
-                    "wiredep:test",
                     "postcss",
                     "ovhTranslation:dev",
                     //"mocha_istanbul:unit",
@@ -946,7 +946,6 @@ module.exports = function (grunt) {
             "concurrent:pre",
             "concurrent:dist",
             "injector",
-            "wiredep:client",
             "useminPrepare",
             "postcss",
             "ngtemplates",
@@ -970,22 +969,18 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask("karma-unit-chrome", [
-        "wiredep:test",
         "karma:unitChrome"
     ]);
 
     grunt.registerTask("karma-unit-firefox", [
-        "wiredep:test",
         "karma:unitFirefox"
     ]);
 
     grunt.registerTask("karma-unit-watch", [
-        "wiredep:test",
         "karma:unitWatch"
     ]);
 
     grunt.registerTask("karma-unit", [
-        "wiredep:test",
         "karma:unit"
     ]);
 };
