@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Puerto</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Puerto asociado a la granja (1 a {{portMax}}). Por defecto, heredado del puerto del frontend.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Réseau privé</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Parámetros avanzados</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Los valores por defecto más habituales están preestablecidos, pero puede modificarlos en cualquier momento.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Ver</translation>

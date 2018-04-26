@@ -23,7 +23,7 @@
    <translation id="logs_dashboards_name" qtlid="473986">tableau de bord</translation>
    <translation id="logs_dashboards_total_used" qtlid="473999">tableaux de bord utilisés</translation>
    <translation id="logs_dashboards_col_name" qtlid="3818">Apelido</translation>
-   <translation id="logs_dashboards_col_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_dashboards_col_description" qtlid="9238">Descrição</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Opção associada</translation>
    <translation id="logs_dashboards_graylog_access" qtlid="426820">Accès Graylog</translation>
    <translation id="logs_dashboards_col_shared" qtlid="474012">Tableau partagé</translation>
@@ -319,7 +319,7 @@
    <translation id="logs_streams_add_data_feed" qtlid="426170">Adicionar fluxo de dados</translation>
    <translation id="logs_streams_name" qtlid="475338">flux</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Apelido</translation>
-   <translation id="logs_streams_col_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_streams_col_description" qtlid="9238">Descrição</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Arquivos</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Ações</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Alertas</translation>
@@ -506,7 +506,7 @@
    <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
    <translation id="inputs_tool" qtlid="477236">Outil</translation>
    <translation id="inputs_col_name" qtlid="3818">Apelido</translation>
-   <translation id="inputs_description" qtlid="9238">Descrição </translation>
+   <translation id="inputs_description" qtlid="9238">Descrição</translation>
    <translation id="inputs_software" qtlid="423973">Software</translation>
    <translation id="inputs_linked_option" qtlid="426768">Opção associada</translation>
    <translation id="inputs_state" qtlid="251970">Estado</translation>
@@ -518,7 +518,7 @@
    <translation id="inputs_state_unknown" qtlid="77142">Desconhecido</translation>
    <translation id="inputs_edit" qtlid="37875">Alterar</translation>
    <translation id="inputs_start" qtlid="25951">Iniciar</translation>
-   <translation id="inputs_restart" qtlid="33538">Reiniciar </translation>
+   <translation id="inputs_restart" qtlid="33538">Reiniciar</translation>
    <translation id="inputs_stop" qtlid="108480">Parar</translation>
    <translation id="inputs_standard_output" qtlid="424350">Resposta da consola</translation>
    <translation id="inputs_starting" qtlid="477262">Démarrage de l'outil de collecte {{inputTitle}}</translation>
@@ -552,7 +552,7 @@
    <translation id="logs_inputs_network_add_error" qtlid="477444">Une erreur est survenue lors de l'ajout du réseau {{network}} à l'outil de collecte {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_network_remove_error" qtlid="477457">Une erreur est survenue lors du retrait du réseau {{network}} à l'outil de collecte {{inputTitle}}: {{message}}</translation>
    <translation id="inputs_logs_edit_title_field" qtlid="3818">Apelido</translation>
-   <translation id="inputs_logs_edit_description_field" qtlid="9238">Descrição </translation>
+   <translation id="inputs_logs_edit_description_field" qtlid="9238">Descrição</translation>
    <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
    <translation id="inputs_logs_edit_port_field" qtlid="470271">Porta TCP a ser aberta</translation>
    <translation id="inputs_logs_edit_stream_field" qtlid="423349">Associar a um fluxo de dados</translation>
@@ -623,7 +623,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_streams_quota_get_error" qtlid="477912">Une erreur est survenue lors du chargement du quota</translation>
    <translation id="logs_index_col_index" qtlid="426729">Índice</translation>
    <translation id="logs_index_name_text" qtlid="3818">Apelido</translation>
-   <translation id="logs_index_col_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_index_col_description" qtlid="9238">Descrição</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Espaço disponível</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Index partagé</translation>
    <translation id="logs_index_elastic_search_access" qtlid="477938">Accès elasticsearch</translation>
@@ -642,7 +642,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_index_modal_edit_description" qtlid="478055">Pour l'index <strong>{{ name }}</strong></translation>
    <translation id="logs_index_modal_suffix" qtlid="59267">Sufixo</translation>
    <translation id="logs_index_suffix_description" qtlid="470427">Só é possível usar minúsculas de A a Z, números e os seguintes caracteres: travessão (-) e travessão cansado (_).</translation>
-   <translation id="logs_index_modal_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_index_modal_description" qtlid="9238">Descrição</translation>
    <translation id="logs_index_modal_select" qtlid="469478">Selecionar opções extra</translation>
    <translation id="logs_index_modal_notification" qtlid="32386">Notificação</translation>
    <translation id="logs_index_modal_checkbox" qtlid="470479">Receber notificações por e-mail quando o índice atingir uma dimensão (valor) crítica.</translation>
@@ -662,7 +662,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_aliases_add" qtlid="143538">Adicionar um alias</translation>
    <translation id="logs_aliases_name" qtlid="478159">alias</translation>
    <translation id="logs_aliases_col_title" qtlid="3818">Apelido</translation>
-   <translation id="logs_aliases_col_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_aliases_col_description" qtlid="9238">Descrição</translation>
    <translation id="logs_aliases_col_shared" qtlid="478172">Alias partagé</translation>
    <translation id="logs_aliases_col_streams" qtlid="478185">Flux de données liés</translation>
    <translation id="logs_aliases_col_indices" qtlid="478198">Index liés</translation>
@@ -717,7 +717,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_roles_quota_get_error" qtlid="477912">Une erreur est survenue lors du chargement du quota</translation>
    <translation id="logs_roles_col_role" qtlid="403398">Função</translation>
    <translation id="logs_roles_col_name" qtlid="3818">Apelido</translation>
-   <translation id="logs_roles_col_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_roles_col_description" qtlid="9238">Descrição</translation>
    <translation id="logs_roles_col_permissions" qtlid="6946">Permissões </translation>
    <translation id="logs_roles_col_members" qtlid="425169">Membros</translation>
    <translation id="logs_roles_col_link" qtlid="426768">Opção associada</translation>
@@ -730,7 +730,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_role_modal_edit_title" qtlid="470674">Editar função</translation>
    <translation id="logs_role_modal_edit_desription" qtlid="478601">Pour le rôle <strong>{{ role }}</strong></translation>
    <translation id="logs_role_modal_name" qtlid="3818">Apelido</translation>
-   <translation id="logs_role_modal_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_role_modal_description" qtlid="9238">Descrição</translation>
    <translation id="logs_role_modal_option" qtlid="469478">Selecionar opções extra</translation>
    <translation id="logs_roles_tooltip" qtlid="469309">A ativação de fluxos de dados, alias e painéis de controlo inclui a oferta de funções de utilizador (e.g. 5 fluxos = 5 funções).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Eliminar função</translation>
@@ -745,7 +745,7 @@ Estes podem ser usados para configurar uma instância Kibana, indexar dados esta
    <translation id="logs_role_overview_title" qtlid="478718">Aperçu du rôle</translation>
    <translation id="logs_role_overview_role" qtlid="403398">Função</translation>
    <translation id="logs_role_overview_note" qtlid="26011">Nota</translation>
-   <translation id="logs_role_overview_description" qtlid="9238">Descrição </translation>
+   <translation id="logs_role_overview_description" qtlid="9238">Descrição</translation>
    <translation id="logs_role_overview_permissions" qtlid="6946">Permissões </translation>
    <translation id="logs_role_overview_members" qtlid="425169">Membros</translation>
    <translation id="logs_role_overview_linked_option" qtlid="426768">Opção associada</translation>

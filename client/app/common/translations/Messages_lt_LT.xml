@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Uždaryti</translation>
 
    <translation id="common_cancel" qtlid="37863">Anuliuoti</translation>
+   <translation id="common_activate" qtlid="76734">Įjungti</translation>
+   <translation id="common_deactivate" qtlid="90973">Išjungti</translation>
    <translation id="common_edit" qtlid="37875">Keisti</translation>
    <translation id="common_consult" qtlid="339639">Tikrinti</translation>
    <translation id="common_see_detail" qtlid="225192">Peržiūrėti detaliau</translation>
@@ -29,7 +31,7 @@
    <translation id="common_no" qtlid="34788">Ne</translation>
    <translation id="common_move" qtlid="69989">Perkelti</translation>
    <translation id="common_order_success" qtlid="403866">Užsakymas <a href="{{orderUrl}}" target="_blank">{{orderId}}</a> sėkmingai sukurtas.</translation>
-   <translation id="common_order_error" qtlid="479095">Erreur lors de la création du bon de commande: {{ message }}</translation>
+   <translation id="common_order_error" qtlid="479095">Klaida generuojant užsakymą: {{ message }}</translation>
    <translation id="common_order_doing" qtlid="255586">Kuriamas užsakymas...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Rodyti/slėpti meniu</translation>
    <translation id="common_new_window" qtlid="222176">Naujas langas</translation>
@@ -537,24 +539,24 @@
    <translation id="common_table_col_action" qtlid="56105">Veiksmas</translation>
    <translation id="common_table_col_progress" qtlid="442639">Progresas</translation>
 
-   <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
+   <translation id="common_criteria_adder_column_label" qtlid="479108">Stulpelis</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Sąlygos</translation>
-   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">yra</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">yra skirtingas nei</translation>
    <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">yra</translation>
    <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">nėra</translation>
-   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">débute par</translation>
-   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">termine par</translation>
-   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">est égal à</translation>
-   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">est différent de</translation>
-   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">est égal à</translation>
-   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">est inférieur à</translation>
-   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">est supérieur à</translation>
-   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">est avant</translation>
-   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">est après</translation>
-   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">prasideda</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">baigiasi</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">yra lygus</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">yra skirtingas nei</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">yra lygus</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">yra žemesnis nei</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">yra didesnis nei</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">yra</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">yra ankčiau nei</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">yra vėliau nei</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">yra</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">yra skirtingas nei</translation>
    <translation id="common_criteria_adder_true_label" qtlid="34776">Taip</translation>
    <translation id="common_criteria_adder_false_label" qtlid="34788">Ne</translation>
    <translation id="common_criteria_adder_value_label" qtlid="47548">Reikšmė</translation>
@@ -578,11 +580,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Įveskite na daugiau kaip {{maxlength}} simbolius.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Prašome naudoti priimtiną formatą</translation>
 
-   <translation id="common_stepper_optional_label">(facultatif)</translation>
-   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
-   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
-   <translation id="common_stepper_next_button_label">Suivant</translation>
-   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+   <translation id="common_stepper_optional_label" qtlid="356264">(neprivaloma)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Keisti šį žingsnį</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Praleisti šį žingsnį</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Toliau</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Siųsti</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Anuliuoti</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Liko</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">jūsų projektui</translation>

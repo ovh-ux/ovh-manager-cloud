@@ -9,8 +9,8 @@
    <translation id="common_close" qtlid="4670">Fermer</translation>
 
    <translation id="common_cancel" qtlid="37863">Annuler</translation>
-   <translation id="common_activate">Activer</translation>
-   <translation id="common_deactivate">Désactiver</translation>
+   <translation id="common_activate" qtlid="76734">Activer</translation>
+   <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
    <translation id="common_edit" qtlid="37875">Modifier</translation>
    <translation id="common_consult" qtlid="339639">Consulter</translation>
    <translation id="common_see_detail" qtlid="225192">Voir le détail</translation>
@@ -585,7 +585,7 @@
    <translation id="common_stepper_skip_this_step" qtlid="480935">Ignorer cette étape</translation>
    <translation id="common_stepper_next_button_label" qtlid="17743">Suivant</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Envoyer</translation>
-   <translation id="common_stepper_cancel_button_label">Annuler</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Annuler</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>

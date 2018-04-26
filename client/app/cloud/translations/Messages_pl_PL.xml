@@ -63,6 +63,16 @@
    <translation id="cloud_common_region_location_SGP" qtlid="447547">Azja Południowo-Wschodnia (Singapur)</translation>
    <translation id="cloud_common_region_location_SYD" qtlid="449180">Oceania (Australia)</translation>
 
+   <translation id="cloud_common_region_continent_SBG" qtlid="468885">Europa Środkowa</translation>
+   <translation id="cloud_common_region_continent_WAW" qtlid="468885">Europa Środkowa</translation>
+   <translation id="cloud_common_region_continent_BHS" qtlid="117354">Ameryka Północna</translation>
+   <translation id="cloud_common_region_continent_GRA" qtlid="468859">Europa Zachodnia</translation>
+   <translation id="cloud_common_region_continent_RBX" qtlid="468859">Europa Zachodnia</translation>
+   <translation id="cloud_common_region_continent_DE" qtlid="468885">Europa Środkowa</translation>
+   <translation id="cloud_common_region_continent_UK" qtlid="468859">Europa Zachodnia</translation>
+   <translation id="cloud_common_region_continent_SGP" qtlid="483603">Asie du Sud-Est</translation>
+   <translation id="cloud_common_region_continent_SYD" qtlid="440366">Oceania</translation>
+
    <translation id="browser_alert_not_supported" qtlid="405357">Twoja przeglądarka nie jest obsługiwana.</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">Wersja Twojej przeglądarki jest nieaktualna i może zawierać luki związane z bezpieczeństwem lub kompatybilnością.</translation>
    <translation id="browser_alert_update" qtlid="405383">Zalecamy <a href="http://outdatedbrowser.com/" class="alert-link" target="_blank">zaktualizowanie przeglądarki <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
