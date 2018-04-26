@@ -583,6 +583,7 @@
    <translation id="common_stepper_skip_this_step" qtlid="480935">Ignorer cette étape</translation>
    <translation id="common_stepper_next_button_label" qtlid="17743">Suivant</translation>
    <translation id="common_stepper_submit_button_label" qtlid="52807">Envoyer</translation>
+   <translation id="common_stepper_cancel_button_label">Annuler</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>
