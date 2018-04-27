@@ -4,7 +4,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
                  MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService,
-                 ProductsService, SessionService, FeatureAvailabilityService, REDIRECT_URLS, URLS, TARGET) {
+                 ProductsService, SessionService, FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
     /*==========================================
@@ -23,9 +23,15 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
     function initSidebarMenuItems (services, locale) {
-        if (TARGET !== "US") {
+        if (FeatureAvailabilityService.hasFeature("PROJECT", "sidebarMenu", locale)) {
             IaasSectionSidebarService.fillSection(services.iaas);
+        }
+
+        if (FeatureAvailabilityService.hasFeature("DEDICATED_CLOUD", "sidebarMenu", locale)) {
             PaasSectionSidebarService.fillSection(services.paas);
+        }
+
+        if (FeatureAvailabilityService.hasFeature("METRICS", "sidebarMenu", locale)) {
             MetricsSectionSidebarService.fillSection(services.metrics);
         }
 
@@ -87,7 +93,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             target: "_parent"
         });
 
-        if (TARGET !== "US") {
+        if (FeatureAvailabilityService.hasFeature("iplb", "sidebarOrder", locale)) {
             actionsMenuOptions.push({
                 title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
                 icon: "ovh-font ovh-font-ip",

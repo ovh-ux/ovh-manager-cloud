@@ -21,6 +21,10 @@
             }
         },
         PROJECT: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
@@ -34,6 +38,10 @@
             }
         },
         DEDICATED_CLOUD: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
@@ -79,6 +87,10 @@
             }
         },
         METRICS: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+            },
             sidebarOrder: {
                 EU: ["FR"]
             }
