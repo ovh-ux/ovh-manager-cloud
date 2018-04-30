@@ -736,7 +736,7 @@
    <translation id="logs_role_add_success" qtlid="478627">The '{{name}}' role has been created.</translation>
    <translation id="logs_role_add_error" qtlid="478640">An error occurred while creating the '{{name}}' role: {{message}}</translation>
    <translation id="logs_role_delete_success" qtlid="478653">The '{{name}}' role has been deleted.</translation>
-   <translation id="logs_role_delete_error" qtlid="478666">An error occurred while deleting the {{message}} role: {{message}}</translation>
+   <translation id="logs_role_delete_error" qtlid="478666">An error occurred while deleting the {{name}} role: {{message}}</translation>
    <translation id="logs_roles_get_error" qtlid="478679">An error occurred while loading roles: {{message}}</translation>
    <translation id="logs_role_update_success" qtlid="478692">The '{{name}}' role has been modified.</translation>
    <translation id="logs_role_update_error" qtlid="478705">An error occurred while modifying the '{{name}}' role: {{message}}</translation>

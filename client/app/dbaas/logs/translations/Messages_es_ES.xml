@@ -4,7 +4,7 @@
    <translation id="logs_col_last_modified" qtlid="92380">Última modificación</translation>
    <translation id="logs_select_options_title" qtlid="469478">Elegir la opción asociada</translation>
    <translation id="logs_notification_title" qtlid="32386">Notificación</translation>
-   <translation id="logs_operation_failed" qtlid="473908">La operación {{operation_id}} se ha interrumpido.</translation>
+   <translation id="logs_operation_failed" qtlid="473908">Se ha producido un fallo en la operación {{operation_id}}.</translation>
    <translation id="logs_operation_error" qtlid="473921">Se ha producido un error al realizar la operación: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Flujo de datos</translation>
    <translation id="logs_index_title" qtlid="473934">Índice Elasticsearch</translation>
@@ -35,7 +35,7 @@
    <translation id="logs_dashboards_duplicate_title" qtlid="470076">Duplicar el panel de control</translation>
    <translation id="logs_dashboards_update_description" qtlid="474051">Para el panel de control <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_duplicate_description" qtlid="474051">Para el panel de control <strong>{{ name }}</strong></translation>
-   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Agregar todos los módulos del nuevo panel al siguiente flujo de datos (opcional):</translation>
+   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Asociar todos los módulos del nuevo panel al siguiente flujo de datos (opcional):</translation>
    <translation id="logs_dashboards_select_stream" qtlid="474064">Seleccionar un flujo de datos</translation>
    <translation id="logs_dashboards_create_success" qtlid="474077">El panel de control «{{dashboardName}}» se ha creado correctamente.</translation>
    <translation id="logs_dashboards_update_success" qtlid="474090">El panel de control «{{dashboardName}}» se ha modificado correctamente.</translation>
@@ -188,11 +188,11 @@
    <translation id="logs-stream-5-type" qtlid="422452">Flujo de datos</translation>
    <translation id="logs-kibana-1-type" qtlid="469335">Pack Kibana</translation>
    <translation id="logs-alias-5-type" qtlid="474896">Alias ​​Elasticsearch</translation>
-   <translation id="logs-index-1-type" qtlid="474909">Índice Elasticsearch de 25 Gio</translation>
-   <translation id="logs-index-2-type" qtlid="474922">Índice Elasticsearch de 50 Gio</translation>
-   <translation id="logs-index-4-type" qtlid="474935">Índice Elasticsearch de 100 Gio</translation>
-   <translation id="logs-index-8-type" qtlid="474948">Índice Elasticsearch de 200 Gio</translation>
-   <translation id="logs-index-16-type" qtlid="474961">Índice Elasticsearch de 400 Gio</translation>
+   <translation id="logs-index-1-type" qtlid="474909">Índice Elasticsearch de 25 GiB</translation>
+   <translation id="logs-index-2-type" qtlid="474922">Índice Elasticsearch de 50 GiB</translation>
+   <translation id="logs-index-4-type" qtlid="474935">Índice Elasticsearch de 100 GiB</translation>
+   <translation id="logs-index-8-type" qtlid="474948">Índice Elasticsearch de 200 GiB</translation>
+   <translation id="logs-index-16-type" qtlid="474961">Índice Elasticsearch de 400 GiB</translation>
    <translation id="logs-input-2-detail" qtlid="474974">2 instancias</translation>
    <translation id="logs-input-4-detail" qtlid="474987">4 instancias</translation>
    <translation id="logs-input-8-detail" qtlid="475000">8 instancias</translation>
@@ -266,7 +266,7 @@
    <translation id="logs_offer_upgrade_pro_description_3" qtlid="475494">Gestión de los permisos de acceso</translation>
    <translation id="logs_offer_upgrade_pro_description_4" qtlid="475507">Almacenamiento de larga duración (de 1 a 10 años)</translation>
    <translation id="logs_offer_upgrade_pro_description_5" qtlid="475520">Configuración de alertas</translation>
-   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Desbloquear los planes Pro</translation>
+   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Ver los planes Pro</translation>
    <translation id="logs-basic" qtlid="173333">Básica</translation>
    <translation id="logs-pro-0001" qtlid="475546">1 GB/mes</translation>
    <translation id="logs-pro-0015" qtlid="475559">15 GB/mes</translation>
@@ -288,7 +288,7 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Promedio de 30 GB/día</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Promedio de 50 GB/día</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Promedio de 100 GB/día</translation>
-   <translation id="logs_offer_conflict_title" qtlid="475793">Conflit d'offre</translation>
+   <translation id="logs_offer_conflict_title" qtlid="475793">Opción incompatible</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Ha seleccionado un plan que ya tiene contratado. Por favor, seleccione otro plan.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Se ha producido un error al cargar los planes.</translation>
    <translation id="logs_order_save_order" qtlid="475832">Se ha producido un error durante el proceso de contratación. Por favor, vuelva a intentarlo.</translation>
@@ -438,13 +438,13 @@
    <translation id="numeric_alert" qtlid="425481">Valor numérico</translation>
    <translation id="textual_alert" qtlid="425468">Contenido de texto</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Crear una condición de tipo contador</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Añadir una condición de valor agregado del campo</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Añadir una condición de agregación del campo</translation>
    <translation id="add_alert_title_field_content_value" qtlid="476794">Añadir una condición de contenido del campo</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Modificar la condición de tipo contador</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar la condición de valor agregado del campo</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar la condición de agregación del campo</translation>
    <translation id="edit_alert_title_field_content_value" qtlid="476833">Modificar la condición de contenido del campo</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Esta condición se activa cuando el número de mensajes es superior o inferior al límite definido para un período de tiempo determinado.</translation>
-   <translation id="add_alert_description_field_value" qtlid="469803">Esta condición se activa cuando el valor agregado de un campo es superior o inferior al límite definido para un período de tiempo determinado.</translation>
+   <translation id="add_alert_description_field_value" qtlid="469803">Esta condición se activa cuando la agregación de un campo es superior o inferior al límite definido para un período de tiempo determinado.</translation>
    <translation id="add_alert_description_field_content_value" qtlid="469907">Esta condición se activa cuando el contenido de los mensajes es igual a un valor definido.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Nombre</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Título de la condición de la alerta.</translation>
@@ -466,7 +466,7 @@
    <translation id="add_alert_notification_field" qtlid="32386">Notificación</translation>
    <translation id="add_alert_notification_field_description" qtlid="469777">Marque esta casilla para enviar notificaciones cada vez que se cumpla la condición de la alerta, independientemente de su estado.</translation>
    <translation id="add_alert_field_field" qtlid="469816">Campo</translation>
-   <translation id="add_alert_field_field_description" qtlid="469829">El nombre del campo que se debe comprobar.</translation>
+   <translation id="add_alert_field_field_description" qtlid="469829">El nombre del campo que debe comprobar.</translation>
    <translation id="add_alert_constraint_type_field" qtlid="469868">Tipo de agregación</translation>
    <translation id="add_alert_constraint_type_field_description" qtlid="469881">Seleccione la condición que activa la alerta: cuando el valor es inferior o superior al establecido en el límite.</translation>
    <translation id="add_alert_constraint_type_mean" qtlid="31930">Media</translation>
@@ -535,7 +535,7 @@
    <translation id="inputs_info_hostname" qtlid="470206">Nombre del host</translation>
    <translation id="inputs_info_ipaddress" qtlid="470219">(Dirección) IP pública</translation>
    <translation id="inputs_info_certificate" qtlid="439169">Tipo de certificado</translation>
-   <translation id="inputs_logs_title" qtlid="477340">Salida consola de {{inputTitle}}</translation>
+   <translation id="inputs_logs_title" qtlid="477340">Salida por consola de {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs" qtlid="477353">No se ha recibido ningún mensaje durante la última hora.</translation>
    <translation id="inputs_logs_title_add" qtlid="423193">Añadir un nuevo recopilador</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Modificar el recopilador</translation>
@@ -562,12 +562,12 @@
    <translation id="inputs_logs_edit_select_software" qtlid="477470">Elegir un programa</translation>
    <translation id="inputs_logs_edit_option_field" qtlid="469478">Elegir la opción asociada</translation>
    <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Instancia única</translation>
-   <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Arrancar solo una instancia de este tipo.</translation>
+   <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Iniciar solo una instancia de este tipo.</translation>
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Formato de sus logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimitador entre cada mensaje</translation>
    <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Línea</translation>
-   <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Ninguno</translation>
+   <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
    <translation id="inputs_logs_configure_format_rfc" qtlid="477522">Syslog RFC 5424</translation>
@@ -600,17 +600,17 @@
    <translation id="input_logs_configure_test_success" qtlid="477717">La configuración está OK.</translation>
    <translation id="input_logs_configure_test_failure" qtlid="477730">{{ output }}</translation>
    <translation id="input_logs_configure_delimiter_tooltip_LINE" qtlid="477743">El delimitador será «n» para un salto de línea.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Carácter Ninguno, típicamente utilizado por GELF / TCP: 0.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Prefijo de tamaño de mensaje tal como se especifica en la RFC 5425. Sin embargo, los saltos de línea también funcionan como delimitadores, permitiendo detectar entradas corruptas o inválidas.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Carácter Nul, típicamente utilizado por GELF / TCP: 0.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Prefijo de longitud de mensaje tal como se especifica en la RFC 5425. Sin embargo, los saltos de línea también funcionan como delimitadores, permitiendo detectar entradas corruptas o inválidas.</translation>
    <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">Este delimitador solo puede utilizarse para el protocolo Cap'n Proto.</translation>
    <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Número de mensajes guardados en la memoria RAM por Flowgger antes de que se envíen a Kafka. Introduzca un valor elevado para un mayor rendimiento; si envía pocos mensajes, es posible que aumente la latencia de indexación.</translation>
    <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuración Flowgger se ha modificado correctamente para el recopilador {{inputTitle}}.</translation>
    <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Se ha producido un error al modificar la configuración Flowgger de {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_logstash_update_success" qtlid="477795">La configuración Logstash se ha modificado correctamente para el recopilador {{inputTitle}}</translation>
    <translation id="logs_inputs_logstash_update_error" qtlid="477808">Se ha producido un error al modificar la configuración Logstash de {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Ningún test de configuración ha dado un resultado positivo.</translation>
+   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">No se ha completado ningún test de configuración.</translation>
    <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">No se ha realizado ningún test de la configuración actual. Por favor, lance el test de configuración para continuar.</translation>
-   <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">El último test de configuración ha dado un resultado negativo. Compruebe que la configuración es correcta y vuelva a lanzar el test de configuración.</translation>
+   <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">Se ha producido un fallo en el último test de configuración. Compruebe que la configuración es correcta y vuelva a lanzar el test de configuración.</translation>
 
 <!-- Elasticsearch Indices -->
    <translation id="logs_index_description" qtlid="470414">Logs Data Platform le permite crear y alojar índices Elasticsearch, que pueden ser utilizados para configurar una instancia Kibana, indexar datos estadísticos y mejorar o corregir sus logs. También puede utilizar estos índices con la mayoría de herramientas y aplicaciones compatibles con la API REST de Elasticsearch.</translation>
@@ -664,8 +664,8 @@
    <translation id="logs_aliases_col_title" qtlid="3818">Nombre</translation>
    <translation id="logs_aliases_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_aliases_col_shared" qtlid="478172">Alias compartido</translation>
-   <translation id="logs_aliases_col_streams" qtlid="478185">Flujos de datos vinculados</translation>
-   <translation id="logs_aliases_col_indices" qtlid="478198">Índices vinculados</translation>
+   <translation id="logs_aliases_col_streams" qtlid="478185">Flujos de datos asociados</translation>
+   <translation id="logs_aliases_col_indices" qtlid="478198">Índices asociados</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Editar</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Eliminar</translation>
    <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Acceso Elasticsearch</translation>
@@ -689,23 +689,23 @@
    <translation id="logs_aliases_link_title" qtlid="421672">Asociar contenido al alias</translation>
    <translation id="logs_aliases_link_description" qtlid="421789">Puede asociar un alias a uno o varios flujos de datos Graylog o a uno o varios índices Elasticsearch.</translation>
    <translation id="logs_aliases_link_available_streams" qtlid="421685">Flujos disponibles</translation>
-   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Flujos de datos vinculados</translation>
-   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">Todos los flujos de datos están vinculados</translation>
-   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">No hay ningún flujo de datos vinculado</translation>
+   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Flujos de datos asociados</translation>
+   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">Todos los flujos de datos están asociados</translation>
+   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">No hay ningún flujo de datos asociado</translation>
    <translation id="logs_aliases_link_available_indexes" qtlid="421815">Índices disponibles</translation>
-   <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Índices vinculados</translation>
-   <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">Todos los índices están vinculados</translation>
-   <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">No hay ningún índice de datos vinculado</translation>
-   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Se ha producido un error al vincular al flujo de datos «{{streamName}}»: {{message}}</translation>
-   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Fallo al vincular al flujo de datos «{{stream}}»: {{message}}</translation>
+   <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Índices asociados</translation>
+   <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">Todos los índices están asociados</translation>
+   <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">No hay ningún índice de datos asociado</translation>
+   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Se ha producido un error al asociar al flujo de datos «{{streamName}}»: {{message}}</translation>
+   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Fallo al asociar al flujo de datos «{{stream}}»: {{message}}</translation>
    <translation id="logs_aliases_detach_stream_error" qtlid="478471">Se ha producido un error al desvincular del «{{streamName}}»: {{message}}</translation>
    <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Fallo al desvincular del flujo de datos «{{stream}}»: {{message}}</translation>
-   <translation id="logs_aliases_attach_index_error" qtlid="478497">Se ha producido un error al vincular al índice «{{indexName}}»: {{message}}</translation>
-   <translation id="logs_aliases_attach_index_fail" qtlid="478510">Fallo al vincular al índice «{{index}}»: {{message}}</translation>
+   <translation id="logs_aliases_attach_index_error" qtlid="478497">Se ha producido un error al asociar al índice «{{indexName}}»: {{message}}</translation>
+   <translation id="logs_aliases_attach_index_fail" qtlid="478510">Fallo al asociar al índice «{{index}}»: {{message}}</translation>
    <translation id="logs_aliases_detach_index_error" qtlid="478523">Se ha producido un error al desvincular del índice «{{indexName}}»: {{message}}</translation>
    <translation id="logs_aliases_detach_index_fail" qtlid="478536">Fallo al desvincular del índice «{{index}}»: {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Este alias tiene flujos de datos vinculados. Solo es posible vincular, o bien flujos de datos, o bien índices Elasticsearch. Desvincule todos los flujos de datos para poder añadir un índice.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Este alias tiene índices Elasticsearch vinculados. Solo es posible vincular, o bien flujos de datos, o bien índices Elasticsearch. Desvincule todos los índices para poder añadir un flujo de datos.</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Este alias tiene flujos de datos asociados. Solo es posible asociar, o bien flujos de datos, o bien índices Elasticsearch. Desvincule todos los flujos de datos para poder añadir un índice.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Este alias tiene índices Elasticsearch asociados. Solo es posible asociar, o bien flujos de datos, o bien índices Elasticsearch. Desvincule todos los índices para poder añadir un flujo de datos.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Roles</translation>
@@ -738,7 +738,7 @@
    <translation id="logs_role_add_success" qtlid="478627">El rol «{{name}}» se ha creado correctamente.</translation>
    <translation id="logs_role_add_error" qtlid="478640">Se ha producido un error al crear el rol «{{name}}»: {{message}}</translation>
    <translation id="logs_role_delete_success" qtlid="478653">El rol «{{name}}» se ha creado correctamente.</translation>
-   <translation id="logs_role_delete_error" qtlid="478666">Se ha producido un error al eliminar el rol {{message}}: {{message}}</translation>
+   <translation id="logs_role_delete_error" qtlid="478666">Se ha producido un error al eliminar el rol {{name}}: {{message}}</translation>
    <translation id="logs_roles_get_error" qtlid="478679">Se ha producido un error al cargar los roles: {{message}}</translation>
    <translation id="logs_role_update_success" qtlid="478692">El rol «{{name}}» se ha modificado correctamente.</translation>
    <translation id="logs_role_update_error" qtlid="478705">Se ha producido un error al modificar el rol «{{name}}»: {{message}}</translation>
@@ -775,11 +775,11 @@
    <translation id="logs_role_selected_dashboard" qtlid="478900">Panel(es) de control seleccionado(s)</translation>
    <translation id="logs_role_empty_dashboard" qtlid="478913">Se han seleccionado todos los paneles de control.</translation>
    <translation id="logs_role_empty_selected_dashboard" qtlid="478926">No se ha seleccionado ningún panel de control.</translation>
-   <translation id="logs_roles_add_alias_error" qtlid="478939">Se ha producido un error al añadir el alias a la autorización «{{tokenName}}»: {{message}}</translation>
-   <translation id="logs_roles_add_dashboard_error" qtlid="478952">Se ha producido un error al añadir el panel de control a la autorización «{{tokenName}}»: {{message}}</translation>
-   <translation id="logs_roles_add_stream_error" qtlid="478965">Se ha producido un error al añadir el flujo a la autorización «{{tokenName}}»: {{message}}</translation>
-   <translation id="logs_roles_add_index_error" qtlid="478978">Se ha producido un error al añadir el índice a la autorización «{{tokenName}}»: {{message}}</translation>
-   <translation id="logs_remove_permission_error" qtlid="478991">Se ha producido un error al eliminar la autorización «{{tokenName}}»: {{message}}</translation>
+   <translation id="logs_roles_add_alias_error" qtlid="478939">Se ha producido un error al añadir el alias al permiso «{{tokenName}}»: {{message}}</translation>
+   <translation id="logs_roles_add_dashboard_error" qtlid="478952">Se ha producido un error al añadir el panel de control al permiso «{{tokenName}}»: {{message}}</translation>
+   <translation id="logs_roles_add_stream_error" qtlid="478965">Se ha producido un error al añadir el flujo al permiso «{{tokenName}}»: {{message}}</translation>
+   <translation id="logs_roles_add_index_error" qtlid="478978">Se ha producido un error al añadir el índice al permiso «{{tokenName}}»: {{message}}</translation>
+   <translation id="logs_remove_permission_error" qtlid="478991">Se ha producido un error al eliminar el permiso «{{tokenName}}»: {{message}}</translation>
    <translation id="logs_roles_members_title" qtlid="356810">Administrar los miembros</translation>
    <translation id="logs_roles_members_subtitle" qtlid="479004">Para el rol <strong>{{ name }}</strong></translation>
    <translation id="logs_roles_members_description" qtlid="470609">A continuación puede consultar la lista de miembros activos para este rol. Podrá revocarlos individualmente o añadir nuevos miembros a través de las cuentas de usuario existentes.</translation>

@@ -86,7 +86,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Liste de mes demandes d'assistance</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">Historique des courriels</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Assistance téléphonique</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Historique des mises à jour</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
    <translation id="common_modify" qtlid="37875">Modifier</translation>
