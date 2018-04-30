@@ -1,9 +1,14 @@
 .cui-modal {
+    .modal-dialog {
+        height: ~"calc(100% - 20px)";
+    }
+
     //Default uibModal style override for oui-less.
     .modal-content {
         background-color: transparent;
         box-shadow: none;
         border: none;
+        height: 100%;
 
         .oui-modal {
             background-color: white;
@@ -29,8 +34,16 @@
             }
         }
 
-        .oui-checkbox__label { 
-            font-size: 1.6rem; 
+        .oui-checkbox__label {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media (min-width: 801px) {
+    .cui-modal {
+        .modal-dialog {
+            height: ~"calc(100% - 60px)";
         }
     }
 }

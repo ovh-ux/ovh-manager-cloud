@@ -2,13 +2,16 @@
 
 .cui-page {
   #oui > .base-font();
-  @message-selector: oui-message;
 
-  .@{message-selector} {
-    margin: @spacing-top @spacing-side_l 0 @spacing-side_l;
+  .cui-message-container {
+    @message-selector: oui-message;
 
-    @media (max-width: 1280px) {
-      margin: @spacing-top @spacing-side_s 0 @spacing-side_s;
+    .@{message-selector} {
+      margin: @spacing-top @spacing-side_l 0 @spacing-side_l;
+
+      @media (max-width: 1280px) {
+        margin: @spacing-top @spacing-side_s 0 @spacing-side_s;
+      }
     }
   }
 

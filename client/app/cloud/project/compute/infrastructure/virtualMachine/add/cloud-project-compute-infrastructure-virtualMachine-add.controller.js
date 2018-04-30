@@ -190,7 +190,7 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
                     }
                 });
 
-                this.displayedRegions = this.VirtualMachineAddService.groupRegionsByDatacenter(regions);
+                this.displayedRegions = this.CloudRegionService.groupRegionsByDatacenter(regions);
                 this.groupedRegions = _.groupBy(this.displayedRegions, "continent");
             })
             .catch(this.ServiceHelper.errorHandler("cpcivm_add_step2_regions_ERROR"))

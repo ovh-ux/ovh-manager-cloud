@@ -1,5 +1,16 @@
 class CloudRegionService {
 
+    groupRegionsByDatacenter (regions) {
+        const groupedByMacroRegions = _.groupBy(regions, "macroRegion.code");
+        return _.map(groupedByMacroRegions, microRegions => {
+            const region = _.cloneDeep(microRegions[0]);
+            region.dataCenters = microRegions;
+            delete region.microRegion;
+            delete region.disabled;
+            return region;
+        });
+    }
+
     static addOverQuotaInfos (region, quota) {
         const quotaByRegion = _.find(quota, { region: _.get(region, "microRegion.code") });
         const instanceQuota = _.get(quotaByRegion, "instance", false);

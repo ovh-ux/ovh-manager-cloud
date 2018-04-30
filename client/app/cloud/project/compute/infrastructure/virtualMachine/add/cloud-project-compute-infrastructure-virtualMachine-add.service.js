@@ -103,18 +103,6 @@ class CloudProjectVirtualMachineAddService {
         return _.filter(regions, region => _.indexOf(filteredRegions, region.microRegion.code) > -1);
     }
 
-    groupRegionsByDatacenter (regions) {
-        const groupedByMacroRegions = _.groupBy(regions, "macroRegion.code");
-        const groupedRegions = _.map(groupedByMacroRegions, microRegions => {
-            const region = _.cloneDeep(microRegions[0]);
-            region.dataCenters = microRegions;
-            delete region.microRegion;
-            delete region.disabled;
-            return region;
-        });
-        return groupedRegions;
-    }
-
     groupFlavorsByCategory (flavors, flavorsTypes) {
         const categorizedFlavors = [];
         _.forEach(flavorsTypes, flavorType => {

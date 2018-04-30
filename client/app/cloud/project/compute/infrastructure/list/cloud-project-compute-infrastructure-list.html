@@ -28,6 +28,13 @@
                         </button>
                     </li>
                     <li class="divider" role="presentation"></li>
+                    <li role="menuitem">
+                        <a class="btn fs14 text-left" ui-sref="iaas.pci-project.compute.infrastructure.iac-add()"
+                           at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-iac' }"
+                           data-ng-bind=":: 'cpci_add_iac' | translate">
+                        </a>
+                    </li>
+                    <li class="divider" role="presentation"></li>
                     <li>
                         <button type="button" class="btn fs14"
                                 at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"

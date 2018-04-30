@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cpciiac_add_title">Déployer une infrastructure as code</translation>
+    <translation id="cpciiac_add_intro">Déployez rapidement et simplement une infrastructure-as-code non managée dans votre projet Cloud, et ce en quelques clics grâce à nos scripts de déploiement d'infrastructure.</translation>
+    <translation id="cpciiac_add_step1_title">Sélectionnez un modèle d'infrastructure as code</translation>
+    <translation id="cpciiac_add_step1_only_one">Un seul script est disponible pour l'instant. <a href="{{url}}" target="_blank">Contribuez ou suivez notre progression sur Github <span class="fa fa-external-link" aria-hidden="true"></span></a>.</translation>
+    <translation id="cpciiac_add_step1_stack_description">{{instances}} instances, {{commands}} commandes</translation>
+    <translation id="cpciiac_add_step1_stack_terraform-ovh-publiccloud-k8s">Kubernetes</translation>
+    <translation id="cpciiac_add_step1_general_ERROR">Une erreur s'est produite lors de la récupération des modèles d'infrastucture as code : {{message}}</translation>
+    <translation id="cpciiac_add_flavor_price" qtlid="270033">{{price}} HT/h</translation>
+    <translation id="cpciiac_add_flavor_month" qtlid="270046">{{price}} HT/mois</translation>
+    <translation id="cpciiac_add_step2_title" qtlid="482966">Sélectionnez une région et un data center</translation>
+    <translation id="cpciiac_add_step2_tab_all" qtlid="331319">Toutes les régions</translation>
+    <translation id="cpciiac_add_step2_no_region">Aucune région n'est disponible pour démarrer votre infrastructure as code.</translation>
+    <translation id="cpciiac_add_step2_datacenter_choose">Choisir votre data center</translation>
+    <translation id="cpciiac_add_step2_general_ERROR" qtlid="483031">Impossible de récupérer la liste des régions et des data centers disponibles : {{message}}</translation>
+    <translation id="cpciiac_add_step3_title">Sélectionnez une clé SSH</translation>
+    <translation id="cpciiac_add_step3_sshKey_label"  qtlid="21859">Clé SSH</translation>
+    <translation id="cpciiac_add_step3_sshKey_message" qtlid="482862">Les clés SSH sont obligatoires pour se connecter à votre service.<br/><a href="{{url}}" target="_blank">En savoir plus sur les clés SSH</a>.</translation>
+    <translation id="cpciiac_add_step3_sshKey_add" qtlid="248561">Ajouter une clé</translation>
+    <translation id="cpciiac_add_step3_sshKey_adding" qtlid="248587">Ajouter cette clé</translation>
+    <translation id="cpciiac_add_step3_sshKey_adding_ERROR" qtlid="482836">Impossible d'ajouter la nouvelle clé : {{message}}</translation>
+    <translation id="cpciiac_add_step3_sshKey_name_label" qtlid="243120">Nom de la clé SSH</translation>
+    <translation id="cpciiac_add_step3_sshKey_publicKey_label" qtlid="482849">Clé existante</translation>
+    <translation id="cpciiac_add_step3_sshKey_adding_ERROR" qtlid="482836">Impossible d'ajouter la nouvelle clé : {{message}}</translation>
+    <translation id="cpciiac_add_step4_flavors_ERROR">Impossible de récupérer la liste des ressources nécessaires : {{message}}</translation>
+    <translation id="cpciiac_add_step4_title">Résumé</translation>
+    <translation id="cpciiac_add_step4_model_label">Modèle</translation>
+    <translation id="cpciiac_add_step4_quantity_label">Quantité</translation>
+    <translation id="cpciiac_add_step4_instance_label">Noms des instances</translation>
+    <translation id="cpciiac_add_step4_price_label">Prix total</translation>
+    <translation id="cpciiac_add_step4_label_ram" qtlid="483200">Mémoire vive :</translation>
+    <translation id="cpciiac_add_step4_label_core" qtlid="483213">Processeur :</translation>
+    <translation id="cpciiac_add_step4_label_disk" qtlid="483226">Stockage :</translation>
+    <translation id="cpciiac_add_step4_label_bandwidth" qtlid="145358">Bande passante :</translation>
+    <translation id="cpciiac_add_step4_value_core" qtlid="483239">{{vcores}} vCores ({{frequency}} GHz)</translation>
+    <translation id="cpciiac_add_step4_price_monthly">Prix unitaire (mensuel)</translation>
+    <translation id="cpciiac_add_step4_price_hourly">Prix unitaire (horaire)</translation>
+    <translation id="cpciiac_add_button_completed_text">Déployer</translation>
+    <translation id="cpciiac_add_deployment_ERROR">Une erreur s'est produite lors de la demande de déploiement : {{message}}</translation>
+</translations>

@@ -1,0 +1,210 @@
+<section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
+    <oui-back-button data-title="{{ 'cpciiac_add_title' | translate }}"></oui-back-button>
+    <p data-translate="cpciiac_add_intro"></p>
+
+    <oui-stepper class="mt-5"
+                 data-on-finish="$ctrl.addInfrastructureAsCode()">
+        <!-- Step 1 -->
+        <oui-step-form data-header="{{ 'cpciiac_add_step1_title' | translate }}"
+                       data-loading="$ctrl.loaders.stacks"
+                       data-on-focus="$ctrl.submitted.step1 = false;$ctrl.resetStep2()"
+                       data-on-submit="$ctrl.getRegions()">
+            <p data-ng-bind-html="'cpciiac_add_step1_only_one' | translate: { url: $ctrl.stacks[0].gitRepository }"
+               data-ng-if="$ctrl.stacks.length === 1"></p>
+            <oui-radio-group data-model="$ctrl.model.stack"
+                             data-name="stack">
+                <div class="cui-grid-list">
+                    <div class="cui-grid-list-item cui-grid-cell"
+                         data-ng-repeat="stack in $ctrl.stacks track by stack.uuid">
+                        <oui-radio data-text="{{ 'cpciiac_add_step1_stack_' + stack.name | translate }}"
+                                   data-id="stack_{{ stack.uuid }}"
+                                   data-description="{{ ::'cpciiac_add_step1_stack_description' | translate: { instances: stack.flavors.total, commands: stack.commands.length || 0 } }}"
+                                   data-model="$ctrl.model.stack"
+                                   data-value="stack"
+                                   data-required
+                                   data-thumbnail>
+                            <span class="oui-radio__section text-right">
+                                <strong data-translate="cpciiac_add_flavor_month"
+                                        data-translate-values="{ price: (stack.flavors.price.monthly | currency: $ctrl.currentCurrency: 2) || '?' }"></strong><br/>
+                                <span data-translate="cpciiac_add_flavor_price"
+                                      data-translate-values="{ price: (stack.flavors.price.hourly | currency: $ctrl.currentCurrency: 3) || '?' }"></span>
+                            </span>
+                        </oui-radio>
+                    </div>
+                </div>
+            </oui-radio-group>
+        </oui-step-form>
+
+        <!-- Step 2 -->
+        <oui-step-form data-header="{{ 'cpciiac_add_step2_title' | translate }}"
+                       data-loading="$ctrl.loaders.regions"
+                       data-navigation="$ctrl.regions.length"
+                       data-on-focus="$ctrl.submitted.step2 = false;$ctrl.resetStep3()"
+                       data-on-submit="$ctrl.submitStep2()">
+            <uib-tabset data-ng-show="$ctrl.regions.length > 0">
+                <uib-tab index="0" heading="{{ 'cpciiac_add_step2_tab_all' | translate }}">
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
+                             data-ng-repeat="region in $ctrl.displayedRegions track by region.macroRegion.code">
+                            <oui-select-picker data-id="allRegions_{{region.macroRegion.code}}"
+                                               data-match="microRegion.text"
+                                               data-model="$ctrl.model.region"
+                                               data-name="allRegions"
+                                               data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }}"
+                                               data-placeholder="{{ 'cpciiac_add_step2_datacenter_choose' | translate }}"
+                                               data-text="{{region.macroRegion.text}}"
+                                               data-values="region.dataCenters"
+                                               data-required>
+                            </oui-select-picker>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab data-ng-repeat="(continent, regions) in $ctrl.groupedRegions track by $index"
+                         index="($index + 1)" heading="{{continent}}">
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
+                             data-ng-repeat="region in regions track by region.macroRegion.code">
+                            <oui-select-picker data-id="region_{{ region.macroRegion.code }}"
+                                               data-match="microRegion.text"
+                                               data-model="$ctrl.model.region"
+                                               data-name="region"
+                                               data-picture="flag-icon flag-icon-{{ region.macroRegion.code | lowercase }} flag"
+                                               data-placeholder="{{ 'cpciiac_add_step2_datacenter_choose' | translate }}"
+                                               data-text="{{ region.macroRegion.text }}"
+                                               data-values="region.dataCenters"
+                                               data-required>
+                            </oui-select-picker>
+                        </div>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+
+            <oui-message type="warning"
+                         data-ng-if="$ctrl.regions && !$ctrl.regions.length">
+                <span data-translate="cpciiac_add_step2_no_region"></span>
+            </oui-message>
+        </oui-step-form>
+
+        <!-- Step 3 -->
+        <oui-step-form data-header="{{ 'cpciiac_add_step3_title' | translate }}"
+                       data-loading="$ctrl.loaders.sshKeys"
+                       data-navigation="!$ctrl.addingSshKey"
+                       data-on-focus="$ctrl.submitted.step3 = false;$ctrl.resetStep4()"
+                       data-on-submit="$ctrl.submitStep3()">
+            <oui-field data-label="{{ 'cpciiac_add_step3_sshKey_label' | translate }}"
+                       data-label-popover="{{ 'cpciiac_add_step3_sshKey_message' | translate: { url: $ctrl.urls.guidesSshkey } }}"
+                       data-ng-if="!$ctrl.addingSshKey"
+                       data-ng-show="$ctrl.sshKeys">
+                <div class="d-md-flex flex-wrap">
+                    <div class="oui-field__control_l pr-4">
+                        <label class="oui-select mb-0">
+                            <select class="oui-select__input" id="sshKey" name="sshKey" required
+                                    data-ng-model="$ctrl.model.sshKey"
+                                    data-ng-options="sshKey.name for sshKey in $ctrl.sshKeys track by sshKey.id">
+                                <option value="" disabled
+                                        data-translate="common_select"></option>
+                            </select>
+                            <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
+                        </label>
+                    </div>
+                    <div data-ng-if="!$ctrl.submitted.step3">
+                        <button type="button" class="oui-button oui-button_secondary mb-0"
+                                data-translate="cpciiac_add_step3_sshKey_add"
+                                data-ng-click="$ctrl.addingSshKey = true">
+                        </button>
+                    </div>
+                </div>
+            </oui-field>
+
+            <div data-ng-if="$ctrl.addingSshKey">
+                <oui-field data-label="{{ 'cpciiac_add_step3_sshKey_name_label' | translate }}"
+                           data-size="l">
+                    <input type="text" class="oui-input" id="sshKeyName" name="newSshKey_name" required
+                           data-ng-disabled="$ctrl.loaders.addingSsh"
+                           data-ng-model="$ctrl.newSshKey.name">
+                </oui-field>
+                <oui-field data-label="{{ 'cpciiac_add_step3_sshKey_publicKey_label' | translate }}"
+                           data-label-popover="{{ 'cpciiac_add_step3_sshKey_message' | translate: { url: $ctrl.urls.guidesSshkey } }}"
+                           data-size="l">
+                    <oui-textarea data-id="sshKeyValue"
+                                  data-name="newSshKey_value"
+                                  data-rows="5"
+                                  data-disabled="$ctrl.loaders.addingSsh"
+                                  data-model="$ctrl.newSshKey.publicKey"
+                                  data-required="true">
+                    </oui-textarea>
+                </oui-field>
+                <oui-button data-variant="secondary"
+                            data-type="submit"
+                            data-text="{{ 'cpciiac_add_step3_sshKey_adding' | translate }}"
+                            data-on-click="$ctrl.addSshKey()"
+                            data-disabled="$ctrl.loaders.addingSsh">
+                </oui-button>
+                <oui-button data-variant="link"
+                            data-text="{{ 'common_cancel' | translate }}"
+                            data-on-click="$ctrl.resetAddingSshKey()">
+                </oui-button>
+                <oui-spinner data-ng-if="$ctrl.loaders.addingSsh"></oui-spinner>
+            </div>
+        </oui-step-form>
+
+        <!-- Step 4 -->
+        <oui-step-form data-header="{{ 'cpciiac_add_step4_title' | translate }}"
+                       data-loading="$ctrl.loaders.flavors"
+                       data-on-cancel="$ctrl.cancel()"
+                       data-on-focus="$ctrl.submitted.step4 = false"
+                       data-submit-text="{{ 'cpciiac_add_button_completed_text' | translate }}">
+            <div data-ng-show="$ctrl.flavors">
+                <h4 data-translate="cpciiac_add_step4_model_label"></h4>
+                <div class="cui-grid-list">
+                    <div class="cui-grid-list-item cui-grid-cell"
+                         data-ng-repeat="flavor in $ctrl.flavors track by flavor.id">
+                        <cui-tile>
+                            <h5 class="oui-header_5 cui-tile__title" data-ng-bind="flavor.name"></h5>
+                            <cui-tile-body class="cui-tile__top-bordered">
+                                <cui-tile-definitions>
+                                    <cui-tile-definition-term data-term="'cpciiac_add_step4_label_ram' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-description="flavor.ram | bytes:0:false:'MB'"></cui-tile-definition-description>
+                                    <cui-tile-definition-term class="mt-2"
+                                                              data-term="'cpciiac_add_step4_label_core' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-description="'cpciiac_add_step4_value_core' | translate: { vcores: flavor.vcpus, frequency: flavor.frequency }"></cui-tile-definition-description>
+                                    <cui-tile-definition-term class="mt-2"
+                                                              data-term="'cpciiac_add_step4_label_disk' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-description="(flavor.disk | bytes:2:false:'GB') + ' ' + (flavor.diskType | uppercase)"></cui-tile-definition-description>
+                                    <cui-tile-definition-term class="mt-2"
+                                                              data-term="'cpciiac_add_step4_label_bandwidth' | translate"></cui-tile-definition-term>
+                                    <cui-tile-definition-description data-description="flavor.outboundBandwidth ? flavor.outboundBandwidth + ' Mbps' : '?'"></cui-tile-definition-description>
+                                </cui-tile-definitions>
+                            </cui-tile-body>
+                            <cui-tile-body class="cui-tile__top-bordered">
+                                <cui-tile-item data-term="'cpciiac_add_step4_quantity_label' | translate"
+                                               data-description="flavor.count || '?'">
+                                </cui-tile-item>
+                            </cui-tile-body>
+                            <cui-tile-body class="cui-tile__top-bordered">
+                                <cui-tile-item data-term="'cpciiac_add_step4_price_monthly' | translate"
+                                               data-description="'cpciiac_add_flavor_month' | translate: { price: (flavor.price.monthlyPrice.value | currency: $ctrl.currentCurrency: 2) || '?' }">
+                                </cui-tile-item>
+                                <cui-tile-item data-term="'cpciiac_add_step4_price_hourly' | translate"
+                                               data-description="'cpciiac_add_flavor_price' | translate: { price: (flavor.price.price.value | currency: $ctrl.currentCurrency: 3) || '?' }">
+                                </cui-tile-item>
+                            </cui-tile-body>
+                        </cui-tile>
+                    </div>
+                </div>
+                <!--<h4 data-translate="cpciiac_add_step4_quantity_label"></h4>
+                <p data-ng-bind="$ctrl.model.stack.flavors.total"></p>
+                <h4 data-translate="cpciiac_add_step4_instance_label"></h4>-->
+                <h4 data-translate="cpciiac_add_step4_price_label"></h4>
+                <p>
+                    <strong data-translate="cpciiac_add_flavor_month"
+                            data-translate-values="{ price: ($ctrl.model.stack.flavors.price.monthly | currency: $ctrl.currentCurrency: 2) || '?' }"></strong><br/>
+                    <span data-translate="cpciiac_add_flavor_price"
+                          data-translate-values="{ price: ($ctrl.model.stack.flavors.price.hourly | currency: $ctrl.currentCurrency: 3) || '?' }"></span>
+                </p>
+
+                <oui-spinner data-ng-if="$ctrl.loaders.deploying"></oui-spinner>
+            </div>
+        </oui-step-form>
+    </oui-stepper>
+</section>
