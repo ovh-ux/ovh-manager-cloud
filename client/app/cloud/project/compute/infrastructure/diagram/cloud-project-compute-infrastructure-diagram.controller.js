@@ -303,12 +303,12 @@
 
             // Pre-load required data (all this data will be cached)
             return this.$q.all([
-                this.OvhApiCloudProjectRegion.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudProjectImage.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudProjectSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudProjectFlavor.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudProjectSshKey.Lexi().query({ serviceName: this.serviceName }).$promise,
-                this.OvhApiCloudProjectVolumeSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectRegion.v6().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectImage.v6().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectSnapshot.v6().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectFlavor.v6().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectSshKey.v6().query({ serviceName: this.serviceName }).$promise,
+                this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise,
                 this.initRegions(this.serviceName)
             ])
                 .then(() => this.initInfra())
@@ -333,7 +333,7 @@
         }
 
         getUser () {
-            return this.OvhApiMe.Lexi().get().$promise
+            return this.OvhApiMe.v6().get().$promise
                 .then(user => {
                     this.user = user;
                 });
@@ -344,7 +344,7 @@
          * @param {string} serviceName
          */
         initRegions (serviceName) {
-            return this.OvhApiCloudProjectRegion.Lexi().query({ serviceName }).$promise
+            return this.OvhApiCloudProjectRegion.v6().query({ serviceName }).$promise
                 .then(regionIds => this.initRegionFromIds(serviceName, regionIds));
         }
 
@@ -354,7 +354,7 @@
          * @param {array} regionIds
          */
         initRegionFromIds (serviceName, regionIds) {
-            const getRegions = _.map(regionIds, regionId => this.OvhApiCloudProjectRegion.Lexi().get({ serviceName, id: regionId }).$promise);
+            const getRegions = _.map(regionIds, regionId => this.OvhApiCloudProjectRegion.v6().get({ serviceName, id: regionId }).$promise);
             return this.$q.all(getRegions)
                 .then(result => {
                     this.regions = result;
@@ -484,7 +484,7 @@
                 return;
             }
 
-            const taskToPoll = taskObj ? taskObj.taskId : this.OvhApiIp.Lexi().getPendingTask(ip, "genericMoveFloatingIp");
+            const taskToPoll = taskObj ? taskObj.taskId : this.OvhApiIp.v6().getPendingTask(ip, "genericMoveFloatingIp");
 
             this.$q.when(taskToPoll)
                 .then(taskId => {
@@ -538,7 +538,7 @@
          * Updates reverse dns of given ips.
          */
         updateReverseDns (ips) {
-            const reverseQueue = _.map(ips, ip => this.OvhApiIp.Reverse().Lexi().getReverseDns(ip.ip, ip.block)
+            const reverseQueue = _.map(ips, ip => this.OvhApiIp.Reverse().v6().getReverseDns(ip.ip, ip.block)
                 .then(dns => {
                     ip.reverse = dns;
                 })
@@ -1087,7 +1087,7 @@
                 targetVmId: null, // use for checkbox vm
                 remove: {
                     launchConfirm: volume => {
-                        this.OvhApiCloudProjectVolumeSnapshot.Lexi().query({ serviceName: this.serviceName }).$promise
+                        this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise
                             .then(snapshots => {
                                 if (_.find(snapshots, { volumeId: volume.id })) {
                                     this.CloudMessage.error(this.$translate.instant("cpci_volume_snapshotted_delete_info", { url: this.$state.href("iaas.pci-project.compute.snapshot") }));
@@ -1299,7 +1299,7 @@
 
             this.loaders.privateNetworks.query = true;
 
-            this.OvhApiCloudProjectNetworkPrivate.Lexi().query({ serviceName: this.serviceName }).$promise
+            this.OvhApiCloudProjectNetworkPrivate.v6().query({ serviceName: this.serviceName }).$promise
                 .then(networks => {
                     this.collections.privateNetworks = networks;
                 })

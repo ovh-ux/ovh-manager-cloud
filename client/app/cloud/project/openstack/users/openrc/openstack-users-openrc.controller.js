@@ -30,7 +30,7 @@ angular.module("managerApp")
 
         function getRegions () {
             self.loaders.regions = true;
-            return OvhApiCloud.Project().Region().Lexi().query({
+            return OvhApiCloud.Project().Region().v6().query({
                 serviceName: self.projectId
             }).$promise.then(function (regions) {
                 self.form.regions = regions;
@@ -44,7 +44,7 @@ angular.module("managerApp")
 
         function initGuideURL () {
             self.loaders.guide = true;
-            OvhApiMe.Lexi().get().$promise.then(function (me) {
+            OvhApiMe.v6().get().$promise.then(function (me) {
                 var lang = me.ovhSubsidiary;
                 self.data.guideURL = URLS.guides.openstack[lang];
             })["finally"](function () {

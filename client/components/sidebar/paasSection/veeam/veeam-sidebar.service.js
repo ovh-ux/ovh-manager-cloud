@@ -6,7 +6,7 @@ class VeeamSidebar {
         this.URLS = URLS;
 
         this.locale = null;
-        this.User.Lexi().get().$promise
+        this.User.v6().get().$promise
             .then(user => {
                 this.locale = user.ovhSubsidiary;
             });

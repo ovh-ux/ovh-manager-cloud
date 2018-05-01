@@ -33,7 +33,7 @@ angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope,
 
         self.loaders.allowedVrack = true;
 
-        return OvhApiVrackDedicatedCloudDatacenter.Lexi().allowedVrack({
+        return OvhApiVrackDedicatedCloudDatacenter.v6().allowedVrack({
             serviceName: self.service.vrack,
             datacenter: self.service.id
         }).$promise.then(function (allowedVracks) {
@@ -94,7 +94,7 @@ angular.module("managerApp").controller("VrackMoveDialogCtrl", function ($scope,
 
         self.loaders.move = true;
 
-        OvhApiVrackDedicatedCloudDatacenter.Lexi().move({
+        OvhApiVrackDedicatedCloudDatacenter.v6().move({
             serviceName: self.service.vrack,
             datacenter: self.service.id
         }, {

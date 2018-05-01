@@ -55,7 +55,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
         };
 
         function createAlert () {
-            return OvhApiCloudProjectAlerting.Lexi().save({
+            return OvhApiCloudProjectAlerting.v6().save({
                 serviceName: $stateParams.projectId
             }, {
                 delay: self.alerting.defaultDelay,
@@ -67,7 +67,7 @@ angular.module("managerApp").controller("CloudProjectBillingConsumptionEstimateA
         }
 
         function editAlert (alertId) {
-            return OvhApiCloudProjectAlerting.Lexi().put({
+            return OvhApiCloudProjectAlerting.v6().put({
                 serviceName: $stateParams.projectId,
                 alertId: alertId
             }, {

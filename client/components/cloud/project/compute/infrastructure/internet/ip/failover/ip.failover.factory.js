@@ -62,7 +62,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.attach = function (vmId) {
             var self = this;
-            return OvhApiCloudProjectIpFailover.Lexi().attach({
+            return OvhApiCloudProjectIpFailover.v6().attach({
                 serviceName : this.serviceName,
                 id          : this.id
             }, {
@@ -77,7 +77,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.detach = function () {
             var self = this;
-            return OvhApiCloudProjectIpFailover.Lexi().detach({
+            return OvhApiCloudProjectIpFailover.v6().detach({
                 serviceName : this.serviceName,
                 id          : this.id
             }, {}).$promise.then(function (ipOptions) {
@@ -90,7 +90,7 @@ angular.module("managerApp").factory('CloudProjectComputeInfraIpFailoverFactory'
          */
         IpFailoverFactory.prototype.park = function () {
             var self = this;
-            return OvhApiIpReverse.Lexi().park({
+            return OvhApiIpReverse.v6().park({
                 ip : this.ip
             }, {}).$promise.then(function (ipOptions) {
                 self.status = ipOptions.status;

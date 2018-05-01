@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Close</translation>
 
    <translation id="common_cancel" qtlid="37863">Cancel</translation>
+   <translation id="common_activate" qtlid="76734">Enable</translation>
+   <translation id="common_deactivate" qtlid="90973">Disable</translation>
    <translation id="common_edit" qtlid="37875">Edit</translation>
    <translation id="common_consult" qtlid="339639">Read</translation>
    <translation id="common_see_detail" qtlid="225192">See more information</translation>
@@ -577,6 +579,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Please enter a minimum of {{minlength}} characters.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Please enter a maximum of {{maxlength}} characters.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Please enter a valid format.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(optional)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Edit this step</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Skip this step</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Next</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Send</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Cancel</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">There are</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">left on your project</translation>

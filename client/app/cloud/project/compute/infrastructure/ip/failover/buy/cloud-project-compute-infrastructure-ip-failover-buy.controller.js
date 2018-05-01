@@ -92,8 +92,8 @@ angular.module("managerApp")
     }
 
     function initInstance(){
-        OvhApiCloudProjectInstance.Lexi().resetQueryCache();
-        return OvhApiCloudProjectInstance.Lexi().query({
+        OvhApiCloudProjectInstance.v6().resetQueryCache();
+        return OvhApiCloudProjectInstance.v6().query({
             serviceName : projectId
         }).$promise.then(function (result) {
             self.form.instances = result;
@@ -106,7 +106,7 @@ angular.module("managerApp")
     }
 
     function initFlavors(){
-        return OvhApiCloudProjectFlavor.Lexi().query({
+        return OvhApiCloudProjectFlavor.v6().query({
             serviceName : projectId
         }).$promise.then(function (result) {
             self.form.flavors = result;
@@ -119,8 +119,8 @@ angular.module("managerApp")
     }
 
     function initIp () {
-        OvhApiCloudProjectIpFailover.Lexi().resetQueryCache();
-        return OvhApiCloudProjectIpFailover.Lexi().query({
+        OvhApiCloudProjectIpFailover.v6().resetQueryCache();
+        return OvhApiCloudProjectIpFailover.v6().query({
             serviceName : projectId
         }).$promise.then(function (result) {
             self.form.failoverIps = result;
@@ -146,7 +146,7 @@ angular.module("managerApp")
         if (self.form.instance && self.form.country && self.form.quantity) {
             self.loaders.billingInfo = true;
             self.form.contractsAccepted = false;
-            OvhApiOrderCloudProjectIp.Lexi().get({
+            OvhApiOrderCloudProjectIp.v6().get({
                 serviceName: projectId
             }, {
                 country : self.form.country.toLowerCase(),
@@ -167,7 +167,7 @@ angular.module("managerApp")
     function buyIps () {
         self.loaders.buying = true;
 
-        OvhApiOrderCloudProjectIp.Lexi().buy({
+        OvhApiOrderCloudProjectIp.v6().buy({
             serviceName: projectId
         }, {
             country : self.form.country.toLowerCase(),

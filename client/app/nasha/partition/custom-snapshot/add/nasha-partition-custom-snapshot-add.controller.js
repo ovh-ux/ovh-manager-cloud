@@ -25,7 +25,7 @@ angular.module("managerApp").controller("NashaPartitionCustomSnapshotAddCtrl", f
 
     self.addCustomSnapshot = function () {
         self.saving = true;
-        OvhApiDedicatedNashaPartition.CustomSnapshot().Lexi().add({
+        OvhApiDedicatedNashaPartition.CustomSnapshot().v6().add({
             serviceName: $stateParams.nashaId,
             partitionName: self.data.partition.partitionName
         }, {

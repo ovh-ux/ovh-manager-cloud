@@ -8,7 +8,7 @@ angular.module("managerApp")
     self.content = [];
 
     function getUser () {
-        return OvhApiMe.Lexi().get().$promise;
+        return OvhApiMe.v6().get().$promise;
     }
 
     function getChangelog (country, zone) {

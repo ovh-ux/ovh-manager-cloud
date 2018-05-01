@@ -18,7 +18,7 @@ angular.module("managerApp")
 
       self.deletePool = function () {
           self.saving = true;
-          OvhApiDedicatedCeph.Pool().Lexi()["delete"]({
+          OvhApiDedicatedCeph.Pool().v6()["delete"]({
               serviceName: $stateParams.serviceName,
               poolName: self.pool.name
           }).$promise.then(function (result) {

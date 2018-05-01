@@ -461,7 +461,7 @@
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Sortant</translation>
 
    <translation id="vps_zone" qtlid="26335">Zone</translation>
-   <translation id="vps_cluster" qtlid="232414">Cluster</translation>
+   <translation id="vps_cluster" qtlid="232414">Grappe (cluster)</translation>
 
    <translation id="vps_tab_SUMMARY_additional_disk" qtlid="281485">Disques additionnels</translation>
    <translation id="vps_additional_disk_add_button" qtlid="281498">Commander un disque additionnel</translation>

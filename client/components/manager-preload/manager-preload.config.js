@@ -1,7 +1,7 @@
 angular.module("managerApp").run(($rootScope, $transitions, OvhApiMe) => {
 
     $transitions.onSuccess({}, () => {
-        OvhApiMe.Lexi().get().$promise
+        OvhApiMe.v6().get().$promise
             .then(() => {
                 $rootScope.managerPreloadHide += " manager-preload-hide";
             });

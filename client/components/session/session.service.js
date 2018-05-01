@@ -17,7 +17,7 @@ class SessionService {
 
         // Get User
         this.userDeferred = this.$q.defer();
-        this.OvhApiMe.Lexi()
+        this.OvhApiMe.v6()
             .get().$promise
             .then((result) => {
                 this.user = result;

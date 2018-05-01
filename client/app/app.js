@@ -69,6 +69,9 @@ angular.module("managerApp", [
         // tell to the module that we consider a mobile device with at least 800px width
         responsivePopoverProvider.setMobileMediaQuery("(max-width: 800px)");
     })
+    .config(function (OtrsPopupProvider, REDIRECT_URLS) {
+        OtrsPopupProvider.setBaseUrlTickets(_.get(REDIRECT_URLS, "support", null));
+    })
     .config(ouiTableConfigurationProvider => {
         ouiTableConfigurationProvider.setCssConfig({
             tablePanel: "oui-table-panel",
@@ -109,7 +112,7 @@ angular.module("managerApp", [
             `);
     })
     .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
+          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration, ouiStepperConfiguration) => {
         $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {
@@ -171,6 +174,15 @@ angular.module("managerApp", [
                     maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
                     pattern: $translate.instant("common_field_error_pattern")
                 }
+            };
+
+            ouiStepperConfiguration.translations = {
+                optionalLabel: $translate.instant("common_stepper_optional_label"),
+                modifyThisStep: $translate.instant("common_stepper_modify_this_step"),
+                skipThisStep: $translate.instant("common_stepper_skip_this_step"),
+                nextButtonLabel: $translate.instant("common_stepper_next_button_label"),
+                submitButtonLabel: $translate.instant("common_stepper_submit_button_label"),
+                cancelButtonLabel: $translate.instant("common_stepper_cancel_button_label")
             };
 
             removeOnSuccessHook();

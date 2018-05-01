@@ -341,9 +341,9 @@
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Modify the root password on restoration</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Unable to reset your VPS password while VMware Tools is not installed. However, you can reset it via rescue mode.</translation>
    <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Warning! Restoring your VPS will cause all your current data to be deleted.</translation>
-   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">The backup restore could take a few hours depending on the size of the disk. </translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">The backup restore may take a few hours, depending on the size of the disk. </translation>
    <translation id="vps_configuration_veeam_restore_step1_warning_umount" qtlid="268147">If you want to carry out a restoration, you have to dismount your current backup beforehand. </translation>
-   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">If you want to mount backup, you have to dismount your current backup beforehand. </translation>
+   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">If you want to mount a backup, you have to dismount your current backup beforehand. </translation>
    <translation id="vps_configuration_veeam_restore_success" qtlid="170252">The request to restore the VPS has been registered. You will be notified by email once the restoration has been completed.</translation>
    <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">An error occurred on requesting to restore the backup on your VPS.</translation>
    <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Backup Storage is not available for products in this range.</translation>
@@ -359,7 +359,7 @@
    <translation id="vps_tab_SUMMARY_ip_adress" qtlid="170356">IP addresses</translation>
    <translation id="vps_tab_SUMMARY_windows" qtlid="102237">Windows</translation>
    <translation id="vps_tab_SUMMARY_windows_option" qtlid="285036">License:</translation>
-   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">The additional IP addresses are not available for this range.</translation>
+   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">Additional IP addresses are not available for this range.</translation>
    <translation id="vps_tab_SUMMARY_backups_not_available" qtlid="250810">The backup options are not available for this range.</translation>
    <translation id="vps_tab_ip" qtlid="25615">IP</translation>
    <translation id="vps_tab_IPS_ipv4" qtlid="101781">IPv4</translation>
@@ -482,7 +482,7 @@
 
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Order an additional disk </translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Please choose the size of the additional disk for your VPS. It will appear as a second hard drive on your operating system. </translation>
-   <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, it will then be renewed with it. </translation>
+   <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, and it will then be renewed with it. </translation>
    <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} /month before taxes</translation>
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Price excl. taxes:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Price incl. taxes:</translation>

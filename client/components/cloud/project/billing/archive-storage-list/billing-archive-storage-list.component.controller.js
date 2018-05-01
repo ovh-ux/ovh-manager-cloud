@@ -24,7 +24,7 @@ angular.module("managerApp")
         }
 
         function initUserCurrency () {
-            return OvhApiMe.Lexi().get().$promise.then(function (me) {
+            return OvhApiMe.v6().get().$promise.then(function (me) {
                 self.currencySymbol = me.currency.symbol;
             });
         }

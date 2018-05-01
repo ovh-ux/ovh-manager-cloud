@@ -46,7 +46,7 @@ class CloudProjectComputeCtrl {
     init () {
         this.loading = true;
 
-        this.OvhApiMe.Lexi().get().$promise.then(me => {
+        this.OvhApiMe.v6().get().$promise.then(me => {
             this.loadAnnouncements(me.ovhSubsidiary);
         });
 

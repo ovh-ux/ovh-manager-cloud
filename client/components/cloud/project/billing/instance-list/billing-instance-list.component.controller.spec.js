@@ -41,7 +41,7 @@ describe("Component: InstanceList", function () {
 
     function mockInstanceApi (allInstances, error) {
         CloudProjectInstanceMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     get: function () {
                         return {
@@ -60,7 +60,7 @@ describe("Component: InstanceList", function () {
 
     function mockImageApi (allImages, error) {
         CloudProjectImageMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     query: function () {
                         return {
@@ -93,7 +93,7 @@ describe("Component: InstanceList", function () {
 
     function mockUserApi (user, error) {
         UserMock = {
-            Lexi: function () {
+            v6: function () {
                 return {
                     get: function () {
                         return {

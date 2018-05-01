@@ -10,16 +10,16 @@ class IpLoadBalancerFrontendsService {
         this.ServiceHelper = ServiceHelper;
 
         this.Frontend = {
-            all: this.IpLoadBalancing.Frontend().Lexi(),
-            tcp: this.IpLoadBalancing.Frontend().Tcp().Lexi(),
-            udp: this.IpLoadBalancing.Frontend().Udp().Lexi(),
-            http: this.IpLoadBalancing.Frontend().Http().Lexi()
+            all: this.IpLoadBalancing.Frontend().v6(),
+            tcp: this.IpLoadBalancing.Frontend().Tcp().v6(),
+            udp: this.IpLoadBalancing.Frontend().Udp().v6(),
+            http: this.IpLoadBalancing.Frontend().Http().v6()
         };
 
         this.Farm = {
-            tcp: this.IpLoadBalancing.Farm().Tcp().Lexi(),
-            udp: this.IpLoadBalancing.Farm().Udp().Lexi(),
-            http: this.IpLoadBalancing.Farm().Http().Lexi()
+            tcp: this.IpLoadBalancing.Farm().Tcp().v6(),
+            udp: this.IpLoadBalancing.Farm().Udp().v6(),
+            http: this.IpLoadBalancing.Farm().Http().v6()
         };
     }
 
@@ -137,12 +137,12 @@ class IpLoadBalancerFrontendsService {
     }
 
     getCertificates (serviceName) {
-        return this.IpLoadBalancing.Ssl().Lexi().query({ serviceName }).$promise
+        return this.IpLoadBalancing.Ssl().v6().query({ serviceName }).$promise
             .then(ids => this.$q.all(ids.map(id => this.getCertificate(serviceName, id))));
     }
 
     getCertificate (serviceName, sslId) {
-        return this.IpLoadBalancing.Ssl().Lexi().get({
+        return this.IpLoadBalancing.Ssl().v6().get({
             serviceName,
             sslId
         }).$promise;

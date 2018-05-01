@@ -67,7 +67,7 @@ class OrderHelperService {
 
     buildUrl (path) {
         // Maybe this could be put in configuration
-        return this.User.Lexi().get()
+        return this.User.v6().get()
             .$promise
             .then(user => {
                 let targetURL;

@@ -16,7 +16,7 @@
    <translation id="metrics_endpoint" qtlid="403177">Acesso à plataforma</translation>
    <translation id="metrics_setting" qtlid="403190">Regras</translation>
    <translation id="metrics_event" qtlid="403203">Eventos</translation>
-   <translation id="metrics_stat" qtlid="26671">Estatísticas</translation>
+   <translation id="metrics_stat" qtlid="26671">Estatística</translation>
    <translation id="metrics_quantum" qtlid="403216">Quantum</translation>
    <translation id="metrics_more" qtlid="72641">Mais</translation>
    <translation id="metrics_upgrade" qtlid="403229">Boost!</translation>
@@ -24,7 +24,7 @@
    <translation id="metrics_welcome" qtlid="403242">Bem-vindo ao seu projeto Metrics!</translation>
    <translation id="metrics_read" qtlid="6958">Leitura </translation>
    <translation id="metrics_write" qtlid="17321">Escrita</translation>
-   <translation id="metrics_desc" qtlid="9238">Descrição </translation>
+   <translation id="metrics_desc" qtlid="9238">Descrição</translation>
    <translation id="metrics_series" qtlid="403255">Séries</translation>
    <translation id="metrics_mads" qtlid="403268">Séries ativas por mês</translation>
    <translation id="metrics_ddp" qtlid="403281">Pontos por dia</translation>

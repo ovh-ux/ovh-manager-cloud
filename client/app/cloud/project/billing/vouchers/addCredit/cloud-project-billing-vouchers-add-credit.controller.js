@@ -1,51 +1,29 @@
-"use strict";
-
-angular.module("managerApp")
-  .controller("CloudProjectBillingVouchersAddcreditCtrl",
-    function ($uibModalInstance, OvhApiOrderCloudProjectCredit, $stateParams, CloudMessage, $translate, $window, OvhApiMe) {
-
-        var self = this;
-
-        self.loaders = {
-            addCredit: false,
-            currency: false
+class CloudProjectBillingVouchersAddcreditCtrl {
+    constructor ($uibModalInstance, ControllerHelper, OvhApiMe) {
+        this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
+        this.OvhApiMe = OvhApiMe;
+        this.credit = {
+            amount: 10
         };
 
-        self.credit = {
-            amount: 10,
-            currencyCodeText: ""
-        };
-
-        function getCurrency () {
-            self.loaders.currency = true;
-            OvhApiMe.Lexi().get().$promise.then(function (me) {
-                self.credit.currencyCodeText = me.currency.symbol;
-            })["finally"](function () {
-                self.loaders.currency = false;
-            });
-        }
-
-        self.addCredit = function () {
-            self.loaders.addCredit = true;
-            OvhApiOrderCloudProjectCredit.Lexi().save({
-                serviceName: $stateParams.projectId
-            }, {
-                amount: self.credit.amount
-            }).$promise.then(function (result) {
-                $window.open(result.url, "_blank");
-                CloudMessage.success($translate.instant("cpb_vouchers_add_credit_success", { amount: result.prices.withoutTax.text, url: result.url }), { hideAfter: 10 });
-                $uibModalInstance.close();
-            }, function (err) {
-                CloudMessage.error([$translate.instant("cpb_vouchers_add_credit_error"), err.data && err.data.message || ""].join(" "));
-            })["finally"](function () {
-                self.loaders.addCredit = false;
-            });
-        };
-
-        self.cancel = function () {
-            $uibModalInstance.dismiss();
-        };
-
-        getCurrency();
+        this.currency = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.OvhApiMe.v6().get().$promise
+        });
     }
-);
+
+    $onInit () {
+        this.currency.load();
+    }
+
+    addCredit () {
+        this.$uibModalInstance.close(this.credit.amount);
+    }
+
+    cancel () {
+        this.$uibModalInstance.dismiss();
+    }
+
+}
+
+angular.module("managerApp").controller("CloudProjectBillingVouchersAddcreditCtrl", CloudProjectBillingVouchersAddcreditCtrl);

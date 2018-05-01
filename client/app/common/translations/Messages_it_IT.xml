@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Chiudi</translation>
 
    <translation id="common_cancel" qtlid="37863">Annulla</translation>
+   <translation id="common_activate" qtlid="76734">Attiva</translation>
+   <translation id="common_deactivate" qtlid="90973">Disattiva</translation>
    <translation id="common_edit" qtlid="37875">Modifica</translation>
    <translation id="common_consult" qtlid="339639">Consulta</translation>
    <translation id="common_see_detail" qtlid="225192">Visualizza dettagli </translation>
@@ -29,7 +31,7 @@
    <translation id="common_no" qtlid="34788">No</translation>
    <translation id="common_move" qtlid="69989">Sposta</translation>
    <translation id="common_order_success" qtlid="403866">Il buono d'ordine <a href="{{orderUrl}}" target="_blank">{{orderId}}</a> è stato creato correttamente.</translation>
-   <translation id="common_order_error" qtlid="479095">Erreur lors de la création du bon de commande: {{ message }}</translation>
+   <translation id="common_order_error" qtlid="479095">Errore durante la creazione del buono d'ordine: {{ message }}</translation>
    <translation id="common_order_doing" qtlid="255586">Creazione del tuo ordine in corso...</translation>
    <translation id="common_toggle_dropdown" qtlid="377618">Mostra/nascondi il menu a tendina</translation>
    <translation id="common_new_window" qtlid="222176">Nuova finestra</translation>
@@ -539,22 +541,22 @@
 
    <translation id="common_criteria_adder_column_label" qtlid="479108">Colonne</translation>
    <translation id="common_criteria_adder_operator_label" qtlid="425806">Condizione</translation>
-   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_boolean_is" qtlid="479121">è</translation>
+   <translation id="common_criteria_adder_operator_boolean_isNot" qtlid="479134">è diverso da</translation>
    <translation id="common_criteria_adder_operator_string_contains" qtlid="218692">contiene</translation>
    <translation id="common_criteria_adder_operator_string_containsNot" qtlid="218705">non contiene </translation>
-   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">débute par</translation>
-   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">termine par</translation>
-   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">est égal à</translation>
-   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">est différent de</translation>
-   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">est égal à</translation>
-   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">est inférieur à</translation>
-   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">est supérieur à</translation>
-   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">est avant</translation>
-   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">est après</translation>
-   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">est</translation>
-   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">est différent de</translation>
+   <translation id="common_criteria_adder_operator_string_startsWith" qtlid="479147">inizia con</translation>
+   <translation id="common_criteria_adder_operator_string_endsWith" qtlid="479160">termina con</translation>
+   <translation id="common_criteria_adder_operator_string_is" qtlid="479173">è uguale a</translation>
+   <translation id="common_criteria_adder_operator_string_isNot" qtlid="479134">è diverso da</translation>
+   <translation id="common_criteria_adder_operator_number_is" qtlid="479173">è uguale a</translation>
+   <translation id="common_criteria_adder_operator_number_smaller" qtlid="479186">è inferiore a</translation>
+   <translation id="common_criteria_adder_operator_number_bigger" qtlid="479199">è superiore a</translation>
+   <translation id="common_criteria_adder_operator_date_is" qtlid="479121">è</translation>
+   <translation id="common_criteria_adder_operator_date_isBefore" qtlid="479212">è precedente a</translation>
+   <translation id="common_criteria_adder_operator_date_isAfter" qtlid="479225">è successivo a</translation>
+   <translation id="common_criteria_adder_operator_options_is" qtlid="479121">è</translation>
+   <translation id="common_criteria_adder_operator_options_isNot" qtlid="479134">è diverso da</translation>
    <translation id="common_criteria_adder_true_label" qtlid="34776">Sì</translation>
    <translation id="common_criteria_adder_false_label" qtlid="34788">No</translation>
    <translation id="common_criteria_adder_value_label" qtlid="47548">Valore</translation>
@@ -577,6 +579,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Inserisci almeno {{minlength}} caratteri.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Inserisci un massimo di {{maxlength}} caratteri.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Inserisci un formato valido.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(facoltativo)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Modifica questo step</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Ignora questo step</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Seguente</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Invia</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Annulla</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Restano ancora</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">per il tuo progetto</translation>

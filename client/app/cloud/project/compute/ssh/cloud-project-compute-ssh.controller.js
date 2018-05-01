@@ -132,9 +132,9 @@ angular.module("managerApp")
             self.toggle.sshDeleteId = null;
             self.loaders.table.ssh = true;
             if (clearCache) {
-                OvhApiCloudProjectSshKey.Lexi().resetQueryCache();
+                OvhApiCloudProjectSshKey.v6().resetQueryCache();
             }
-            OvhApiCloudProjectSshKey.Lexi().query({
+            OvhApiCloudProjectSshKey.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (sshList) {
                 self.table.ssh = sshList;
@@ -160,7 +160,7 @@ angular.module("managerApp")
             }
 
             self.loaders.add.ssh = true;
-            OvhApiCloudProjectSshKey.Lexi().save(self.sshAdd).$promise.then(function () {
+            OvhApiCloudProjectSshKey.v6().save(self.sshAdd).$promise.then(function () {
                 self.toggleAddSshKey();
                 self.getSshKeys(true);
                 CloudMessage.success($translate.instant('cpc_ssh_add_submit_success'));

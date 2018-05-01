@@ -92,7 +92,7 @@ angular.module("managerApp")
 
               // Load quota to get availableGygabytes and compute the maximum resize value
               self.loaders.quota = true;
-              OvhApiCloudProjectQuota.Lexi().query({
+              OvhApiCloudProjectQuota.v6().query({
                   serviceName: serviceName
               }).$promise.then(function (quotas) {
                   if (quotas) {
@@ -202,7 +202,7 @@ angular.module("managerApp")
               if (!self.loaders.panelsData.regions) {
                   self.loaders.panelsData.regions = true;
 
-                  OvhApiCloudProjectRegion.Lexi().query({
+                  OvhApiCloudProjectRegion.v6().query({
                       serviceName: serviceName
                   }).$promise.then(function (regionsList) {
                       self.panelsData.regions = regionsList;

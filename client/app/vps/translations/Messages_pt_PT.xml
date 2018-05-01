@@ -294,7 +294,7 @@
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Resumo</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Ocorreu um erro aquando do pedido de upgrade da sua VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Configuração atual</translation>
-   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar domínio </translation>
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar domínio</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Adicionar um domínio ao DNS secundário</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domínio a adicionar:</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Ocorreu um erro aquando do pedido de adição de um domínio ao DNS secundário.</translation>
@@ -441,7 +441,7 @@
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add" qtlid="180772">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Queira escolher o bloco de IPs que deseja autorizar, bem como as opções de acesso.</translation>
-   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lista dos blocos</translation>
+   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lista dos blocos :</translation>
    <translation id="vps_backup_storage_access_add_info2" qtlid="210061">Queira adicionar uma regra no acesso ao seu backup storage para cada bloco de IPs da seguinte lista:</translation>
    <translation id="vps_backup_storage_access_add_info3" qtlid="210074">No mínimo, deve autorizar um protocolo uma vez que, de forma padrão, os blocos de endereços IP que não tenham uma regra associada serão "recusados".</translation>
    <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Permissões aplicadas:</translation>

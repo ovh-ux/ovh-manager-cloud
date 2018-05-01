@@ -306,7 +306,7 @@ class ManagerNavbarService {
         // Tickets list
         assistanceMenu.push({
             title: this.$translate.instant("common_menu_support_list_ticket"),
-            url: "#/support"
+            url: _.get(this.REDIRECT_URLS, "support", "")
         });
 
         // Telephony (External)
@@ -333,7 +333,7 @@ class ManagerNavbarService {
             name: "languages",
             label: _(currentLanguage).get("name"),
             "class": "oui-navbar-menu_language",
-            title: _(currentLanguage).get("key").replace("_", "-"),
+            title: _(currentLanguage).get("key").split("_")[0].toUpperCase(),
             headerTitle: this.$translate.instant("common_menu_language"),
             subLinks: _.map(this.LANGUAGES.available, (lang) => ({
                 title: lang.name,
@@ -487,8 +487,8 @@ class ManagerNavbarService {
         }
 
         const menu = [
-            this.getAssistanceMenu(currentUser.ovhSubsidiary),  // Assistance
             this.getLanguageMenu(),                             // Language
+            this.getAssistanceMenu(currentUser.ovhSubsidiary),  // Assistance
             this.getUserMenu(currentUser)                       // User
         ];
 

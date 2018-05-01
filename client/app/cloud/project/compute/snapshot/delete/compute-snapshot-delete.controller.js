@@ -13,14 +13,14 @@
         }
 
         deleteSnapshot (snapshotId) {
-            return this.OvhApiCloudProjectSnapshot.Lexi().remove({
+            return this.OvhApiCloudProjectSnapshot.v6().remove({
                 serviceName : this.serviceName,
                 snapshotId: snapshotId
             }).$promise;
         }
 
         deleteVolumeSnapshot (snapshotId) {
-            return this.OvhApiCloudProjectVolumeSnapshot.Lexi().delete({
+            return this.OvhApiCloudProjectVolumeSnapshot.v6().delete({
                 serviceName : this.serviceName,
                 snapshotId: snapshotId
             }).$promise;

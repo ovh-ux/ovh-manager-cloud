@@ -76,7 +76,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
                 return;
             case "creating":
                 if (project.orderId) {
-                    OvhApiMeOrder.Lexi().get({
+                    OvhApiMeOrder.v6().get({
                         orderId: project.orderId
                     }).$promise.then(function (result) {
                         _self.order = result;
@@ -108,7 +108,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
         this.cancelProjectCreation = function () {
             _self.loaders.cancelCreation = true;
 
-            return OvhApiCloudProject.Lexi().cancelCreation({
+            return OvhApiCloudProject.v6().cancelCreation({
                 serviceName: _self.projectId
             }, null).$promise.then(function (result) {
                 CloudMessage.success($translate.instant("cpd_project_cancel_success"));
@@ -142,7 +142,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
          */
         function init () {
             _self.loaders.init = true;
-            return OvhApiCloudProject.Lexi().get({
+            return OvhApiCloudProject.v6().get({
                 serviceName: _self.projectId
             }).$promise.then(function (project) {
                 return handleProjectDetails(project);

@@ -9,25 +9,25 @@ class NashaAddService {
     }
 
     getAvailableRegions () {
-        return this.OvhApiOrder.Lexi().schema()
+        return this.OvhApiOrder.v6().schema()
             .$promise
             .then(response => _.filter(response.models["dedicated.NasHAZoneEnum"].enum, datacenter => datacenter !== "gra"))
             .catch(this.ServiceHelper.errorHandler("nasha_order_loading_error"));
     }
 
     getOffers () {
-        return this.OvhApiMe.Lexi().get()
+        return this.OvhApiMe.v6().get()
             .$promise
-            .then(user => this.OvhApiOrder.Cart().Lexi().post({}, { ovhSubsidiary: user.ovhSubsidiary }).$promise)
-            .then(cart => this.OvhApiOrder.Cart().Product().Lexi().get({ cartId: cart.cartId, productName: "nasha" }).$promise.then(offers => ({ cart, offers })))
+            .then(user => this.OvhApiOrder.Cart().v6().post({}, { ovhSubsidiary: user.ovhSubsidiary }).$promise)
+            .then(cart => this.OvhApiOrder.Cart().Product().v6().get({ cartId: cart.cartId, productName: "nasha" }).$promise.then(offers => ({ cart, offers })))
             .then(response => {
                 _.forEach(response.offers, offer => {
                     offer.productName = this.$translate.instant(`nasha_order_nasha_${offer.planCode}`);
                 });
 
-                this.OvhApiOrder.Cart().Lexi().assign({ cartId: response.cart.cartId })
+                this.OvhApiOrder.Cart().v6().assign({ cartId: response.cart.cartId })
                     .$promise
-                    .then(() => this.OvhApiOrder.Cart().Lexi().delete({ cartId: response.cart.cartId }));
+                    .then(() => this.OvhApiOrder.Cart().v6().delete({ cartId: response.cart.cartId }));
 
                 return response.offers;
             })

@@ -42,7 +42,7 @@ class DeskaasUpgradeCtrl {
             titleText: this.$translate.instant("vdi_btn_popup_upgrade"),
             text: this.$translate.instant("vdi_confirm_upgrade", { plan: this.choice.name, price: this.choice.priceText })
         })
-            .then(() => this.OvhApiDeskaasService.Lexi().upgradeService({
+            .then(() => this.OvhApiDeskaasService.v6().upgradeService({
                 serviceName: this.serviceName
             }, {
                 planCode: this.choice.planCode

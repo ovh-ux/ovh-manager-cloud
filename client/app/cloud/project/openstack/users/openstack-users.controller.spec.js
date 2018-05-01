@@ -36,7 +36,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
         spyOn(CloudMessage, "error");
         spyOn(CloudMessage, "success");
         spyOn(CloudMessage, "info");
-        spyOn(Cloud.Project().User().Lexi(), "resetQueryCache");
+        spyOn(Cloud.Project().User().v6(), "resetQueryCache");
 
         $scope = $rootScope.$new();
     }));
@@ -73,7 +73,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
         });
 
         xit("should set default value", function () {
-            expect(Cloud.Project().User().Lexi().resetQueryCache.calls.any()).toEqual(false);
+            expect(Cloud.Project().User().v6().resetQueryCache.calls.any()).toEqual(false);
 
             expect(OpenstackUsersCtrl.table.users).toBeArrayOfObjects();
             expect(OpenstackUsersCtrl.table.selected).toEqual({});
@@ -353,7 +353,7 @@ describe("Controller: OpenstackUsersCtrl", function () {
         });
 
         xit("should throw an error when get snapshots", function () {
-            expect(Cloud.Project().User().Lexi().resetQueryCache.calls.any()).toEqual(false);
+            expect(Cloud.Project().User().v6().resetQueryCache.calls.any()).toEqual(false);
 
             expect(OpenstackUsersCtrl.table.users).toEqual([]);
             expect(OpenstackUsersCtrl.table.selected).toEqual({});

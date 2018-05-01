@@ -69,7 +69,7 @@ class CloudProjectComputeInfrastructureListCtrl {
             volumes: this.CloudProjectOrchestrator.initVolumes({ serviceName: this.serviceName }).then(volumes => (this.volumes = _.get(volumes, "volumes")))
         }).then(({ infra }) => {
             this.infra = infra;
-            return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.Lexi().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
+            return this.$q.all(_.map(this.infra.vrack.publicCloud.items, instance => this.OvhApiCloudProjectFlavor.v6().get({ serviceName: this.serviceName, flavorId: instance.flavorId }).$promise
                 .then(flavor => this.updateInstance(instance, flavor))
             ))
             .then(instances => (this.table.items = instances));

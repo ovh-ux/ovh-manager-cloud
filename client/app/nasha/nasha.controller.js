@@ -40,7 +40,7 @@ class NashaCtrl {
         this.loading = true;
         this.$q.all({
             nasha: this.OvhApiDedicatedNasha.Aapi().get({ serviceName: this.$stateParams.nashaId }).$promise,
-            nashaInfo: this.OvhApiDedicatedNasha.Lexi().getServiceInfos({ serviceName: this.$stateParams.nashaId }).$promise
+            nashaInfo: this.OvhApiDedicatedNasha.v6().getServiceInfos({ serviceName: this.$stateParams.nashaId }).$promise
         })
             .then(data => {
                 this.data.nasha = data.nasha;
@@ -77,7 +77,7 @@ class NashaCtrl {
         if (!this.monitoring.loading) {
             this.monitoring.enabled = state;
             this.monitoring.loading = true;
-            this.OvhApiDedicatedNasha.Lexi().updateDetail({
+            this.OvhApiDedicatedNasha.v6().updateDetail({
                 serviceName: this.data.nasha.serviceName,
                 customName: this.data.nasha.customName,
                 monitored: state

@@ -7,18 +7,18 @@ class CloudProjectComputeLoadbalancerService {
     }
 
     getLoadbalancer (id) {
-        return this.OvhApiIpLoadBalancing.Lexi().get({ serviceName: id })
+        return this.OvhApiIpLoadBalancing.v6().get({ serviceName: id })
             .$promise.then(loadbalancer => {
                 if (loadbalancer.state !== "ok") {
                     return loadbalancer;
                 }
                 // Find the frontend http 80 if exists as this page only display a view for HTTP.
-                return this.OvhApiIpLoadBalancing.Frontend().Http().Lexi().query({
+                return this.OvhApiIpLoadBalancing.Frontend().Http().v6().query({
                     serviceName: id,
                     port: 80
                 }).$promise.then(frontendIds =>
                 // Get frontend details
-                    frontendIds.length && this.OvhApiIpLoadBalancing.Frontend().Http().Lexi().get({
+                    frontendIds.length && this.OvhApiIpLoadBalancing.Frontend().Http().v6().get({
                         serviceName: id,
                         frontendId: frontendIds[0]
                     }).$promise || loadbalancer
@@ -26,7 +26,7 @@ class CloudProjectComputeLoadbalancerService {
                     if (frontend.frontendId) {
                         loadbalancer.frontend = frontend;
                     }
-                    return frontend.frontendId && frontend.defaultFarmId && this.OvhApiIpLoadBalancing.Farm().Http().Lexi().get({
+                    return frontend.frontendId && frontend.defaultFarmId && this.OvhApiIpLoadBalancing.Farm().Http().v6().get({
                         serviceName: id,
                         farmId: frontend.defaultFarmId
                     }).$promise || loadbalancer;
@@ -57,11 +57,11 @@ class CloudProjectComputeLoadbalancerService {
     }
 
     getLoadbalancersImported (serviceName) {
-        return this.OvhApiCloudProjectIplb.Lexi().query({
+        return this.OvhApiCloudProjectIplb.v6().query({
             serviceName
         }).$promise.then(ids => this.$q.all(
             _.map(ids, id =>
-                this.OvhApiCloudProjectIplb.Lexi().get({
+                this.OvhApiCloudProjectIplb.v6().get({
                     serviceName,
                     id
                 }).$promise
@@ -82,14 +82,14 @@ class CloudProjectComputeLoadbalancerService {
         if (!loadbalancer.farm) {
             return Promise.resolve([]);
         }
-        return this.OvhApiIpLoadBalancing.Farm().Http().Server().Lexi()
+        return this.OvhApiIpLoadBalancing.Farm().Http().Server().v6()
             .query({
                 serviceName: loadbalancer.serviceName,
                 farmId: loadbalancer.farm.farmId
             }).$promise
             .then(serverIds =>
                 this.$q.all(
-                    _.map(serverIds, serverId => this.OvhApiIpLoadBalancing.Farm().Http().Server().Lexi()
+                    _.map(serverIds, serverId => this.OvhApiIpLoadBalancing.Farm().Http().Server().v6()
                         .get({
                             serviceName: loadbalancer.serviceName,
                             farmId: loadbalancer.farm.farmId,
@@ -102,7 +102,7 @@ class CloudProjectComputeLoadbalancerService {
 
     getServerList ({ serviceName, loadbalancer }) {
         return this.$q.all({
-            cloudServers: this.OvhApiCloudProject.Instance().Lexi().query({ serviceName }).$promise,
+            cloudServers: this.OvhApiCloudProject.Instance().v6().query({ serviceName }).$promise,
             attachedServers: this.getAttachedServers(loadbalancer)
         }).then(({ cloudServers, attachedServers }) => {
             const activeServers = {};

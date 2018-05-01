@@ -3,7 +3,7 @@ angular.module("managerApp")
         atInternetControllerDecoratorsProvider.decorate({
             CloudProjectComputeInfrastructureDiagramCtrl: {
                 initInfra (atInternet, controller) {
-                    controller.Cloud.Project().Lexi().query().$promise
+                    controller.Cloud.Project().v6().query().$promise
                         .then(projects => {
                             atInternet.trackEvent({
                                 event: `CloudProject-${projects.length}`,

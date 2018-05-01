@@ -63,6 +63,16 @@
    <translation id="cloud_common_region_location_SGP" qtlid="447547">Sudeste Asiático (Singapura)</translation>
    <translation id="cloud_common_region_location_SYD" qtlid="449180">Oceânia (Austrália)</translation>
 
+   <translation id="cloud_common_region_continent_SBG" qtlid="468885">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_WAW" qtlid="468885">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_BHS" qtlid="117354">América do Norte</translation>
+   <translation id="cloud_common_region_continent_GRA" qtlid="468859">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_RBX" qtlid="468859">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_DE" qtlid="468885">Europe Centrale</translation>
+   <translation id="cloud_common_region_continent_UK" qtlid="468859">Europe de l'Ouest</translation>
+   <translation id="cloud_common_region_continent_SGP" qtlid="483603">Asie du Sud-Est</translation>
+   <translation id="cloud_common_region_continent_SYD" qtlid="440366">Oceânia</translation>
+
    <translation id="browser_alert_not_supported" qtlid="405357">O seu browser não é compatível</translation>
    <translation id="browser_alert_deprecated" qtlid="405370">O seu browser não está atualizado e pode ter falhas de segurança ou problemas de compatibilidade.</translation>
    <translation id="browser_alert_update" qtlid="405383">Para melhorar a experiência de navegação, recomendamos que <a href="http://outdatedbrowser.com/pt" class="alert-link" target="_blank">atualize o seu browser <i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>

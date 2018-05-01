@@ -8,18 +8,18 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
     var $q;
     var $stateParams;
     var validParams;
-    var mockCloudProjectUsageHistoryLexi;
+    var mockCloudProjectUsageHistoryV6;
     var mockCloudProjectBillingService;
-    var mockCloudProjectBillLexi;
+    var mockCloudProjectBillV6;
     var CloudMessage;
     var projectId = "test";
     var monthBilling;
     var dateMonthBilling;
-    var mockUserBillLexi;
+    var mockUserBillV6;
 
     beforeEach(module("managerAppMock"));
 
-    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageHistoryLexi_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_, _OvhApiCloudProjectBillLexi_, _OvhApiMeBillLexi_) {
+    beforeEach(inject(function (_$httpBackend_, _$rootScope_, _$controller_, ssoAuthentication, _$q_, _OvhApiCloudProjectUsageHistoryV6_, _CloudProjectBillingService_, _$stateParams_, _CloudMessage_, _OvhApiCloudProjectBillV6_, _OvhApiMeBillV6_) {
         $httpBackend = _$httpBackend_;
         $controller = _$controller_;
         scope = _$rootScope_.$new();
@@ -32,24 +32,24 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
             year: monthBilling.year(),
             month: monthBilling.month() + 1
         };
-        mockCloudProjectUsageHistoryLexi = _OvhApiCloudProjectUsageHistoryLexi_;
+        mockCloudProjectUsageHistoryV6 = _OvhApiCloudProjectUsageHistoryV6_;
         mockCloudProjectBillingService = _CloudProjectBillingService_;
-        mockCloudProjectBillLexi = _OvhApiCloudProjectBillLexi_;
-        mockUserBillLexi = _OvhApiMeBillLexi_;
+        mockCloudProjectBillV6 = _OvhApiCloudProjectBillV6_;
+        mockUserBillV6 = _OvhApiMeBillV6_;
 
         CloudMessage = _CloudMessage_;
         spyOn(CloudMessage, "error");
-        spyOn(mockCloudProjectBillLexi, "query").and
+        spyOn(mockCloudProjectBillV6, "query").and
             .returnValue({ $promise: $q.when([]) });
-        spyOn(mockCloudProjectUsageHistoryLexi, "query").and
+        spyOn(mockCloudProjectUsageHistoryV6, "query").and
             .returnValue({ $promise: $q.when([]) });
-        spyOn(mockCloudProjectUsageHistoryLexi, "get").and
+        spyOn(mockCloudProjectUsageHistoryV6, "get").and
             .returnValue({ $promise: $q.when({}) });
         spyOn(mockCloudProjectBillingService, "getDataInitialized").and
             .returnValue($q.when({}));
         spyOn(mockCloudProjectBillingService, "getConsumptionDetails").and
             .returnValue($q.when({}));
-        spyOn(mockUserBillLexi, "get").and
+        spyOn(mockUserBillV6, "get").and
             .returnValue($q.when({}));
 
     }));
@@ -72,10 +72,10 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
 
             var usageHistory = [{ period: { from: dateMonthBilling } }];
             var usageDetails = { details: { } };
-            mockCloudProjectUsageHistoryLexi.query.and
+            mockCloudProjectUsageHistoryV6.query.and
                 .returnValue({ $promise: $q.when(usageHistory) });
 
-            mockCloudProjectUsageHistoryLexi.get.and
+            mockCloudProjectUsageHistoryV6.get.and
                 .returnValue({ $promise: $q.when(usageHistory[0]) });
 
             mockCloudProjectBillingService.getConsumptionDetails.and
@@ -89,7 +89,7 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
         });
 
         it("Should show error CloudMessage on api error", function () {
-            mockCloudProjectUsageHistoryLexi.query.and
+            mockCloudProjectUsageHistoryV6.query.and
                 .returnValue({ $promise: $q.reject("error") });
 
             initCtrl();
@@ -99,7 +99,7 @@ describe("Controller: CloudProjectBillingHistoryDetailsCtrl", function () {
         });
 
         it("Should activate loading during async call", function () {
-            mockCloudProjectUsageHistoryLexi.query.and
+            mockCloudProjectUsageHistoryV6.query.and
                 .returnValue({ $promise: $q.reject("error") });
             var controller = initCtrl();
 

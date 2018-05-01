@@ -569,7 +569,7 @@ angular.module("managerApp")
             regions: self.getRegions(),
             sshKeys: self.getSshKeys(),
             hasVrack: CloudProjectComputeInfrastructureOrchestrator.hasVrack(),
-            user: OvhApiMe.Lexi().get().$promise
+            user: OvhApiMe.v6().get().$promise
         }).then(function (data) {
             self.model.name = self.vmInEdition.name;
             self.model.flavorId = self.vmInEdition.flavor ? self.vmInEdition.flavor.id : null;
@@ -1028,7 +1028,7 @@ angular.module("managerApp")
             self.loaders.panelsData.flavors = true;
 
             return $q.all([
-                OvhApiCloudProjectFlavor.Lexi().query({
+                OvhApiCloudProjectFlavor.v6().query({
                     serviceName : serviceName
                 }).$promise.then(function (flavorsList) {
                     var modifiedFlavorsList = _.map(flavorsList, function (flavor) {
@@ -1042,7 +1042,7 @@ angular.module("managerApp")
 
                     // if not in the list: it's a deprecated flavor: directly get it!
                     if (!flavorInList && self.vmInEdition.flavor && self.vmInEdition.flavor.id) {
-                        return OvhApiCloudProjectFlavor.Lexi().get({
+                        return OvhApiCloudProjectFlavor.v6().get({
                             serviceName : serviceName,
                             flavorId    : self.vmInEdition.flavor.id
                         }).$promise.then(function (flavorDeprecated) {
@@ -1067,7 +1067,7 @@ angular.module("managerApp")
                     CloudMessage.error( [$translate.instant('cpcivm_addedit_flavor_error'), err.data.message || ''].join(' '));
                     return $q.reject(err);
                 }),
-                OvhApiCloudProjectQuota.Lexi().query({
+                OvhApiCloudProjectQuota.v6().query({
                     serviceName : serviceName
                 }).$promise.then(function (quota) {
                     self.panelsData.quota = quota;
@@ -1464,7 +1464,7 @@ angular.module("managerApp")
     self.getImages = function () {
         if (!self.loaders.panelsData.images) {
             self.loaders.panelsData.images = true;
-            return OvhApiCloudProjectImage.Lexi().query({
+            return OvhApiCloudProjectImage.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (imagesList) {
 
@@ -1479,7 +1479,7 @@ angular.module("managerApp")
                 var imageInList = _.find(imagesList, { id : self.vmInEdition.image && self.vmInEdition.image.id });
 
                 if (!imageInList && self.vmInEdition.image && self.vmInEdition.image.id && self.vmInEdition.image.visibility === 'public') {
-                    return OvhApiCloudProjectImage.Lexi().get({
+                    return OvhApiCloudProjectImage.v6().get({
                         serviceName : serviceName,
                         imageId : self.vmInEdition.image.id
                     }).$promise.then(function (imageDeprecated) {
@@ -1504,7 +1504,7 @@ angular.module("managerApp")
     self.getSnapshots = function () {
         if (!self.loaders.panelsData.snapshots) {
             self.loaders.panelsData.snapshots = true;
-            return OvhApiCloudProjectSnapshot.Lexi().query({
+            return OvhApiCloudProjectSnapshot.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (snapshotList) {
 
@@ -1543,7 +1543,7 @@ angular.module("managerApp")
         if (!self.loaders.panelsData.regions) {
             self.loaders.panelsData.regions = true;
 
-            return OvhApiCloudProjectRegion.Lexi().query({
+            return OvhApiCloudProjectRegion.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (regionsList) {
                 self.panelsData.regions = regionsList;
@@ -1562,9 +1562,9 @@ angular.module("managerApp")
         if (!self.loaders.panelsData.sshKeys) {
             self.loaders.panelsData.sshKeys = true;
             if (clearCache){
-                OvhApiCloudProjectSshKey.Lexi().resetQueryCache();
+                OvhApiCloudProjectSshKey.v6().resetQueryCache();
             }
-            return OvhApiCloudProjectSshKey.Lexi().query({
+            return OvhApiCloudProjectSshKey.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (sshList) {
                 self.panelsData.sshKeys = sshList;
@@ -1596,7 +1596,7 @@ angular.module("managerApp")
             }
 
             self.loaders.sshKey.add = true;
-            return OvhApiCloudProjectSshKey.Lexi().save({
+            return OvhApiCloudProjectSshKey.v6().save({
                 serviceName : serviceName
             }, {
                 name        : self.sshKeyAdd.name,
@@ -1617,7 +1617,7 @@ angular.module("managerApp")
 
     self.sshKeyAddRegion = function (sshKey) {
         self.loaders.sshKey.add = true;
-        return OvhApiCloudProjectSshKey.Lexi().save({
+        return OvhApiCloudProjectSshKey.v6().save({
             serviceName : serviceName
         }, {
             name        : sshKey.name,
@@ -1638,7 +1638,7 @@ angular.module("managerApp")
     self.deleteSshKey = function (keyId) {
         if (!self.loaders.sshKey.remove) {
             self.loaders.sshKey.remove = true;
-            return OvhApiCloudProjectSshKey.Lexi().remove({
+            return OvhApiCloudProjectSshKey.v6().remove({
                 serviceName : serviceName,
                 keyId: keyId
             }).$promise.then(function () {
@@ -1686,7 +1686,7 @@ angular.module("managerApp")
 
         self.loaders.publicNetwork.query = true;
 
-        OvhApiCloudProjectNetworkPublic.Lexi().query({
+        OvhApiCloudProjectNetworkPublic.v6().query({
             serviceName: serviceName
         }).$promise.then(function (networks) {
             self.panelsData.publicNetworks = networks;
@@ -1707,7 +1707,7 @@ angular.module("managerApp")
 
         self.loaders.privateNetwork.query = true;
 
-        return OvhApiCloudProjectNetworkPrivate.Lexi().query({
+        return OvhApiCloudProjectNetworkPrivate.v6().query({
             serviceName: serviceName
         }).$promise.then(function (networks) {
             self.panelsData.privateNetworks = networks;
@@ -1739,7 +1739,7 @@ angular.module("managerApp")
             .map(_.property('id'))
             .tap(function (ids) { networkIds = ids; })
             .map(function (networkId) {
-                return OvhApiCloudProjectNetworkPrivateSubnet.Lexi().query({
+                return OvhApiCloudProjectNetworkPrivateSubnet.v6().query({
                     serviceName: serviceName,
                     networkId: networkId
                 }).$promise;
