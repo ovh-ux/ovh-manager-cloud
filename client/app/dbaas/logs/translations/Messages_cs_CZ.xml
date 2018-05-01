@@ -430,7 +430,7 @@
    <translation id="streams_alerts_delete_success" qtlid="476729">Upozornění {{alertName}} bylo úspěšně odstraněno.</translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">Upozornění se spustí tehdy, dojde-li k <strong>{{thresholdType}}</strong> než <strong>{{threshold}}</strong> zpráv za posledních <strong>{{time}}</strong> minut. Včetně <strong>{{backlog}}</strong> zpráv v notifikaci.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">Upozornění se spustí, pokud pole <strong>{{field}}</strong> nabude hodnoty <strong>{{thresholdType}} {{constraintType}}</strong> než <strong>{{threshold}}</strong> za posledních <strong>{{time}}</strong> minut. Včetně <strong>{{backlog}}</strong> zpráv v notifikaci.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">Upozornění se spustí, pokud je obdržena zpráva obsahující následující pole: <strong>{{field}}:"{{value}}" Včetně <strong>{{backlog}}</strong> zpráv v notifikaci.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">Upozornění se spustí, pokud je obdržena zpráva obsahující následující pole: <strong>{{field}}:"{{value}}"</strong> Včetně <strong>{{backlog}}</strong> zpráv v notifikaci.</translation>
    <translation id="create_alert" qtlid="469569">Vytvořit upozornění</translation>
    <translation id="counter_alert" qtlid="425494">Počítadlo</translation>
    <translation id="numeric_alert" qtlid="425481">Číselná hodnota</translation>
