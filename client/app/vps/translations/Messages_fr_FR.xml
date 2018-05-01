@@ -278,19 +278,19 @@
    <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Modèle</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly">HT / mois</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">HT / mois</translation>
 
-   <translation id="vps_configuration_upgradevps_label_ram">Mémoire vive :</translation>
-   <translation id="vps_configuration_upgradevps_label_core">Processeur :</translation>
-   <translation id="vps_configuration_upgradevps_label_disk">Stockage :</translation>
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">Mémoire vive :</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Processeur :</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Stockage :</translation>
 
    <translation id="vps_warning_title" qtlid="373441">Avertissement</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning">Vous avez sélectionné un modèle que vous possédez déjà. Veuillez sélectionner un autre modèle.</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Vous avez sélectionné un modèle que vous possédez déjà. Veuillez sélectionner un autre modèle.</translation>
 
    <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Acceptation des conditions d'utilisation</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade du VPS <span class="italic normal">{{vpsName}}</span> en {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_price1">Tarif jusqu'au {{duration}} : </translation>
-   <translation id="vps_configuration_upgradevps_step2_price2">Ensuite, votre serveur sera facturé :</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Tarif jusqu'au {{duration}} :</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Ensuite, votre serveur sera facturé :</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'upgrade soit pris en compte dans votre Espace Client Web.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Un redémarrage sera nécessaire pour que la puissance de votre VPS soit augmentée.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Récapitulatif</translation>
