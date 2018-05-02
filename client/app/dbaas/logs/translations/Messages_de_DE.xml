@@ -436,11 +436,11 @@
    <translation id="numeric_alert" qtlid="425481">Numerischer Wert</translation>
    <translation id="textual_alert" qtlid="425468">Textinhalt</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Bedingung vom Typ "Zähler" einrichten</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Bedingung zum Aggregationsfeld hinzufügen</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Bedingung zum Textfeld hinzufügen</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Feldaggregationsbedingung hinzufügen</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Feldinhaltsbedingung hinzufügen</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Bedingung vom Typ Zähler bearbeiten</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Bedingung des Aggregationsfelds bearbeiten </translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Bedingung des Inhaltsfelds bearbeiten </translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Feldaggregationsbedingung bearbeiten </translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Feldinhaltsbedingung bearbeiten </translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Diese Bedingung wird aktiviert, wenn die Anzahl der Nachrichten für eine bestimmte Zeit über oder unter der festgelegten Warnschwelle liegt.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Diese Bedingung wird ausgelöst, wenn der Gesamtwert eines Feldes für eine bestimmte Dauer höher oder geringer ist als der festgelegte Schwellenwert.</translation>
    <translation id="add_alert_description_field_content_value" qtlid="469907">Diese Bedingung wird ausgelöst, wenn der Inhalt der Nachrichten mit dem festgelegten Wert übereinstimmt. </translation>
@@ -511,7 +511,7 @@
    <translation id="inputs_linked_option" qtlid="426768">Verbundene Option</translation>
    <translation id="inputs_state" qtlid="251970">Status</translation>
    <translation id="inputs_state_processing" qtlid="477249">In Bearbeitung</translation>
-   <translation id="inputs_state_restart_required" qtlid="424129">Zu starten</translation>
+   <translation id="inputs_state_restart_required" qtlid="424129">Neu zu starten</translation>
    <translation id="inputs_state_to_configure" qtlid="424142">Konfiguration erforderlich</translation>
    <translation id="inputs_state_pending" qtlid="424168">Neustart erforderlich</translation>
    <translation id="inputs_state_running" qtlid="424155">Funktionsbereit</translation>
@@ -521,9 +521,9 @@
    <translation id="inputs_restart" qtlid="33538">Neu starten</translation>
    <translation id="inputs_stop" qtlid="108480">Anhalten</translation>
    <translation id="inputs_standard_output" qtlid="424350">Konsolenausgabe</translation>
-   <translation id="inputs_starting" qtlid="477262">Démarrage de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_stopping" qtlid="477275">Arrêt de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_restarting" qtlid="477288">Redémarrage de l'outil de collecte {{inputTitle}}</translation>
+   <translation id="inputs_starting" qtlid="477262">{{inputTitle}} Datensammler starten</translation>
+   <translation id="inputs_stopping" qtlid="477275">{{inputTitle}} Datensammler anhalten</translation>
+   <translation id="inputs_restarting" qtlid="477288">{{inputTitle}} Datensammler neu starten</translation>
    <translation id="inputs_delete" qtlid="470232">Datensammler löschen</translation>
    <translation id="inputs_delete_message" qtlid="477301">Sind Sie sicher, dass Sie den Datensammler <strong>{{input}}</strong> löschen möchten?</translation>
    <translation id="inputs_delete_error" qtlid="477314">Beim Löschen des Datensammlers ist ein Fehler aufgetreten: {{message}}</translation>

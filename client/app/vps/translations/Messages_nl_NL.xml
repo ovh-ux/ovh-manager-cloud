@@ -62,7 +62,7 @@
 
    <translation id="vps_dashboard_action_doing" qtlid="149787">Bewerking wordt uitgevoerd</translation>
    <translation id="vps_dashboard_display_name_save" qtlid="222072">Minimaal 2 letters </translation>
-   <translation id="vps_dashboard_display_name_edit" qtlid="71741">De naam wijzigen</translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Naam wijzigen</translation>
    <translation id="vps_dashboard_display_name_min" qtlid="222085">Bewerking geannuleerd. Er zijn minimaal 2 letters vereist.</translation>
    <translation id="vps_dashboard_display_name_reset" qtlid="37935">Bewerking geannuleerd</translation>
 

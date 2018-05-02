@@ -6,7 +6,7 @@
    <translation id="metrics_tab_platform" qtlid="123607">Platforms</translation>
 
    <translation id="metrics_guides" qtlid="300370">Handleidingen</translation>
-   <translation id="metrics_guides_footer" qtlid="406905">Alle OVH handleidingen</translation>
+   <translation id="metrics_guides_footer" qtlid="406905">Alle OVH-handleidingen</translation>
    <translation id="metrics_guides_first-step" qtlid="415753">Eerste stappen...</translation>
    <translation id="metrics_guides_first-step_begin" qtlid="415766">Start</translation>
    <translation id="metrics_guides_protocoles" qtlid="249458">Protocols</translation>
@@ -18,7 +18,7 @@
    <translation id="metrics_event" qtlid="403203">Evenementen</translation>
    <translation id="metrics_stat" qtlid="26671">Statistieken</translation>
    <translation id="metrics_quantum" qtlid="403216">Quantum</translation>
-   <translation id="metrics_more" qtlid="72641">Plus</translation>
+   <translation id="metrics_more" qtlid="72641">Meer</translation>
    <translation id="metrics_upgrade" qtlid="403229">Boost!</translation>
 
    <translation id="metrics_welcome" qtlid="403242">Welkom bij uw Metrics project! </translation>

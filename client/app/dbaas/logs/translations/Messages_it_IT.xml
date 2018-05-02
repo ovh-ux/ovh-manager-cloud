@@ -2,7 +2,7 @@
 <translations>
 <!-- Common -->
    <translation id="logs_col_last_modified" qtlid="92380">Ultima modifica</translation>
-   <translation id="logs_select_options_title" qtlid="469478">Scegli l'opzione allegata</translation>
+   <translation id="logs_select_options_title" qtlid="469478">Scegli l'opzione associata</translation>
    <translation id="logs_notification_title" qtlid="32386">Notifiche</translation>
    <translation id="logs_operation_failed" qtlid="473908">L'operazione {{operation_id}} non è andata a buon fine</translation>
    <translation id="logs_operation_error" qtlid="473921">Si è verificato un errore durante l'operazione: {{message}}</translation>
@@ -25,14 +25,15 @@
    <translation id="logs_dashboards_col_name" qtlid="3818">Nome</translation>
    <translation id="logs_dashboards_col_description" qtlid="9238">Descrizione</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Option liée</translation>
-   <translation id="logs_dashboards_graylog_access" qtlid="426820">Accès Graylog</translation>
+   <translation id="logs_dashboards_graylog_access" qtlid="426820">Accesso Graylog</translation>
    <translation id="logs_dashboards_col_shared" qtlid="474012">Dashboard condivisa</translation>
    <translation id="logs_dashboards_duplicate" qtlid="302717">Duplica</translation>
-   <translation id="logs_dashboards_delete_title" qtlid="470141">Supprimer le tableau de bord</translation>
+   <translation id="logs_dashboards_delete_title" qtlid="470141">Elimina la dashboard</translation>
    <translation id="logs_dashboards_delete_message" qtlid="474025">Vuoi davvero rimuovere la dashboard <strong>{{ dashboardName }}</strong> ?</translation>
-   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO ?</translation>
-   <translation id="logs_dashboards_update_title" qtlid="470115">Éditer le tableau de bord</translation>
-   <translation id="logs_dashboards_duplicate_title" qtlid="470076">Dupliquer le tableau de bord</translation>
+   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Hai acquistato un piano base. Se vuoi duplicare o aggiungere più dashboard, è necessario cambiare versione. Vuoi passare alla soluzione PRO?&#13;
+</translation>
+   <translation id="logs_dashboards_update_title" qtlid="470115">Modifica la dashboard</translation>
+   <translation id="logs_dashboards_duplicate_title" qtlid="470076">Duplica la dashboard</translation>
    <translation id="logs_dashboards_update_description" qtlid="474051">Per la dashboard <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_duplicate_description" qtlid="474051">Per la dashboard <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_select_stream_title" qtlid="470102">Attacher l'ensemble des modules du nouveau tableau au flux de données suivant :</translation>
@@ -45,7 +46,7 @@
    <translation id="logs_dashboards_delete_error" qtlid="474142">Si è verificato un errore durante la rimozione della dashboard '{{dashboardName}}': {{message}}</translation>
    <translation id="logs_dashboards_create_error" qtlid="474155">Si è verificato un errore durante la creazione della dashboard '{{dashboardName}}': {{message}}</translation>
    <translation id="logs_dashboards_update_error" qtlid="474168">Si è verificato un errore durante la modifica della dashboard '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_quota_get_error" qtlid="474181">Une erreur est survenue lors du chargement du quota: {{message}}</translation>
+   <translation id="logs_dashboards_quota_get_error" qtlid="474181">Si è verificato un errore durante il caricamento del numero massimo consentito: {{message}}</translation>
    <translation id="logs_dashboards_get_graylog_url_error" qtlid="474194">Non è stato possibile trovare l'URL di Graylog attraverso la dashboard '{{dashboardName}}'</translation>
 
 <!-- Header and guides -->
@@ -63,9 +64,9 @@
    <translation id="logs_loading_error_configuration" qtlid="469153">Si è verificato un errore durante il caricamento della sezione "Configurazione"</translation>
 
 <!-- Welcome page -->
-   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform est la solution de gestion de logs par OVH</translation>
-   <translation id="logs_welcome_description_1" qtlid="426716">Indexez et analysez vos logs en temps réel. Soyez alertés en cas de dysfonctionnement. Partagez vos données avec vos collaborateurs.</translation>
-   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform è la soluzione per la gestione dei log di OVH</translation>
+   <translation id="logs_welcome_description_1" qtlid="426716">Indicizza e analizza i tuoi log in tempo reale. Ricevi un avviso in caso di malfunzionamenti. Condividi i tuoi dati con i tuoi collaboratori.</translation>
+   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform mette a disposizione una piattaforma completa per la gestione e l'analisi dei log, per te e per la tua azienda, con cui puoi monitorare lo stato dei tuoi server fisici e virtuali, comprendere il comportamento delle tue applicazioni Cloud e delle applicazioni mobili, così come prevenire i tuoi incidenti o ricevere un avviso in caso di malfunzionamenti.</translation>
    <translation id="logs_welcome_try" qtlid="427080">Fai una prova gratuita</translation>
    <translation id="logs_welcome_graylog_webui" qtlid="427132">Interfaccia Web di Graylog</translation>
    <translation id="logs_welcome_grafana_saas" qtlid="427145">Grafana SaaS</translation>
@@ -75,7 +76,7 @@
    <translation id="logs_welcome_forum" qtlid="427119">Forum</translation>
 
 <!-- All accounts page -->
-   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform mette a disposizione una piattaforma completa per la gestione e l'analisi dei log, per te e per la tua azienda, con cui puoi monitorare lo stato dei tuoi server fisici e virtuali, comprendere il comportamento delle tue applicazioni Cloud e delle applicazioni mobili, così come prevenire i tuoi incidenti o ricevere un avviso in caso di malfunzionamenti.</translation>
    <translation id="logs_accounts_order" qtlid="43558">Ordina</translation>
    <translation id="logs_accounts_add" qtlid="350872">Nuovo account</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Nome</translation>
@@ -115,8 +116,8 @@
    <translation id="logs_password_setup_error" qtlid="474428">Si è verificato un errore durante la configurazione della password: {{message}}</translation>
 
 <!-- Home -->
-   <translation id="logs_home_info_title" qtlid="427028">À propos</translation>
-   <translation id="logs_home_info" qtlid="474441">Logs Data Platform est une interface de collecte, d'indexation et d'analyse de logs. Quelque soit la provenance de vos logs, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces web.</translation>
+   <translation id="logs_home_info_title" qtlid="427028">Su</translation>
+   <translation id="logs_home_info" qtlid="474441">Logs Data Platform è una piattaforma per la raccolta, l'indicizzazione e l'analisi dei file di log. Qualunque sia la fonte dei tuoi log, questa interfaccia ti consente di scegliere diversi punti d'ingresso in base al protocollo, al livello di sicurezza e al formato. L'analisi e lo sfruttamento dei dati possono essere effettuati attraverso diverse API e interfacce Web.</translation>
    <translation id="logs_home_account_disabled_title" qtlid="474454">Account disattivato</translation>
    <translation id="logs_home_account_disabled_message" qtlid="474467">Il tuo account è stato disattivato il {{disabledDate}}. Se vuoi riattivarlo, contatta il nostro supporto.</translation>
    <translation id="logs_home_shortcuts" qtlid="403658">Scelta rapida</translation>
@@ -175,7 +176,7 @@
    <translation id="log_options_current_offer_title" qtlid="474831">Vous avez souscrit à l'offre suivante:</translation>
    <translation id="log_options_pro_offer" qtlid="474844">Offre PRO</translation>
    <translation id="log_options_current_title" qtlid="474857">Vous avez souscrit aux options suivantes:</translation>
-   <translation id="log_options_intro_text" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
+   <translation id="log_options_intro_text" qtlid="469309">Con ogni acquisto di stream di dati, alias e dashboard, ricevi un ruolo utente gratuito (es. 5 stream = 5 ruoli).</translation>
    <translation id="log_options_type" qtlid="474870">Type d'option</translation>
    <translation id="log_options_details" qtlid="37527">Dettagli</translation>
    <translation id="log_options_add" qtlid="37923">Aggiungi</translation>
@@ -320,16 +321,16 @@
    <translation id="logs_streams_name" qtlid="475338">flux</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Nome</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Descrizione</translation>
-   <translation id="logs_streams_col_archives" qtlid="469933">Archives</translation>
+   <translation id="logs_streams_col_archives" qtlid="469933">Archivi</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Azioni</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Alert</translation>
    <translation id="logs_streams_col_linked_option" qtlid="426768">Option liée</translation>
    <translation id="logs_streams_no_streams" qtlid="476014">Aucun flux de données</translation>
    <translation id="logs_streams_col_shared" qtlid="476027">Flux partagé</translation>
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
-   <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
+   <translation id="logs_streams_archives" qtlid="469933">Archivi</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Segui in diretta</translation>
-   <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
+   <translation id="logs_streams_graylog_access" qtlid="426820">Accesso Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>
    <translation id="logs_stream_delete_message" qtlid="476079">Êtes-vous sûr de vouloir supprimer le flux <strong>{{stream}}</strong> ?</translation>
@@ -337,14 +338,14 @@
    <translation id="logs_streams_update_title" qtlid="476092">Modifier le flux</translation>
    <translation id="logs_streams_update_description" qtlid="476105">Pour le flux <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_select_options_placeholder" qtlid="476118">Choisir une option</translation>
-   <translation id="logs_streams_enable_websocket" qtlid="426677">Attiva la diffusione WebSocket</translation>
-   <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
-   <translation id="logs_streams_enable_archieve" qtlid="426469">Activer le stockage longue durée</translation>
-   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivez vos logs de façon sûre pour des années.</translation>
+   <translation id="logs_streams_enable_websocket" qtlid="426677">Attiva la trasmissione WebSocket</translation>
+   <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitora i tuoi log in tempo reale attraverso il protocollo WebSocket.</translation>
+   <translation id="logs_streams_enable_archieve" qtlid="426469">Attiva lo storage a lungo termine</translation>
+   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivia i tuoi log in modo sicuro per anni.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algoritmo di compressione</translation>
-   <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durée de rétention des archives</translation>
+   <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durata di conservazione degli archivi</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notifiche</translation>
-   <translation id="logs_streams_notification_detail" qtlid="469530">Me notifier par e-mail lorsqu'une archive est disponible.</translation>
+   <translation id="logs_streams_notification_detail" qtlid="469530">Ricevi un'email quando un archivio è disponibile.</translation>
    <translation id="logs_stream_create_success" qtlid="476131">Le flux de données '{{streamName}}' a été créé avec succès.</translation>
    <translation id="logs_stream_update_success" qtlid="476144">Le flux de données '{{streamName}}' a été modifié avec succès.</translation>
    <translation id="logs_stream_delete_success" qtlid="476157">Le flux de données '{{streamName}}' a été supprimé avec succès.</translation>
@@ -369,7 +370,7 @@
    <translation id="logs_stream_retention_10y" qtlid="426612">dix ans</translation>
    <translation id="logs_streams_follow_copy_address" qtlid="476313">Copier l'adresse WebSocket</translation>
    <translation id="logs_streams_follow_download_client" qtlid="476326">Télécharger ldp-tail</translation>
-   <translation id="logs_streams_follow_close_connection" qtlid="470037">Fermer la connexion</translation>
+   <translation id="logs_streams_follow_close_connection" qtlid="470037">Blocca la connessione</translation>
    <translation id="logs_streams_follow_open_connection" qtlid="476339">Ouvrir la connexion</translation>
    <translation id="logs_streams_follow_test_gelf" qtlid="476352">Tester le flux avec Gelf</translation>
    <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Tester le flux avec LTSV</translation>
@@ -401,7 +402,7 @@
    <translation id="streams_archives_unfreeze_start" qtlid="476612">Début du dégel de {{filename}}</translation>
    <translation id="streams_archives_unfreezing" qtlid="469959">L'archive {{ name }} est en cours de dégel. Elle sera disponible dans {{ time }}.</translation>
    <translation id="streams_archives_preparing_download" qtlid="476625">Préparation du téléchargement de {{filename}}. Veuillez patienter...</translation>
-   <translation id="streams_archives_title" qtlid="469933">Archives</translation>
+   <translation id="streams_archives_title" qtlid="469933">Archivi</translation>
    <translation id="streams_archives_current_title" qtlid="476638">Gestion de vos archives pour le flux {{ name }}</translation>
    <translation id="streams_archives_intro_text" qtlid="469946">Une fois dégelées, les archives sont disponibles au téléchargement pour 24 heures.</translation>
    <translation id="streams_archives_file_name" qtlid="469972">Nome del file</translation>
@@ -417,13 +418,13 @@
    <translation id="streams_archives_download" qtlid="39286">Scarica</translation>
    <translation id="streams_alerts_loading_error" qtlid="476677">Une erreur est survenue lors du chargement de l'alerte: {{message}}</translation>
    <translation id="streams_alerts_ids_loading_error" qtlid="476690">Une erreur est survenue lors du chargement des alertes: {{message}}</translation>
-   <translation id="streams_alerts_current_title" qtlid="469543">Gestion de vos alertes pour le flux {{ name }}</translation>
+   <translation id="streams_alerts_current_title" qtlid="469543">Gestione degli alert per lo stream {{ name }}</translation>
    <translation id="streams_alerts_intro_text" qtlid="469556">Avec les conditions d'alerte, plus besoin de surveiller vos logs, la plateforme le fait pour vous. De nombreux cas d'usage sont susceptibles de lever une alerte et de vous adresser celle-ci par e-mail : une absence de messages en provenance d'un logiciel pour une durée inhabituelle, lorsque le nombre de tâches réalisées est anormalement bas, lorsque le trafic réseau de votre site web est très élevé ou quand certains mots-clés spécifiques apparaissent dans votre flux.</translation>
    <translation id="streams_alerts_title" qtlid="72797">Alert</translation>
    <translation id="streams_alerts_name" qtlid="3818">Nome</translation>
    <translation id="streams_alerts_condition" qtlid="425806">Condizione</translation>
-   <translation id="streams_alerts_grace_period" qtlid="469582">Période de grâce</translation>
-   <translation id="streams_alerts_repeat_notification" qtlid="469595">Ripetere le notifiche</translation>
+   <translation id="streams_alerts_grace_period" qtlid="469582">Grace period (minuti)</translation>
+   <translation id="streams_alerts_repeat_notification" qtlid="469595">Ripeti le notifiche</translation>
    <translation id="streams_alerts_delete" qtlid="286903">Elimina l'alert</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
@@ -441,32 +442,32 @@
    <translation id="edit_alert_title_message_count" qtlid="476807">Modifier la condition de type compteur</translation>
    <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition de champ d'aggrégation</translation>
    <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition de champ de contenu</translation>
-   <translation id="add_alert_description_message_count" qtlid="469621">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée.</translation>
+   <translation id="add_alert_description_message_count" qtlid="469621">Questa condizione si attiva quando il numero di messaggi è superiore o inferiore alla soglia stabilita per un determinato periodo di tempo.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Questa condizione si attiva quando il contenuto dei messaggi corrisponde a un valore definito.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Nome</translation>
-   <translation id="add_alert_title_field_description" qtlid="469634">Titre de la condition de l'alerte.</translation>
+   <translation id="add_alert_title_field_description" qtlid="469634">Titolo della condizione dell'alert</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Periodo di tempo (minuti)</translation>
    <translation id="add_alert_time_period_field_description" qtlid="469660">Évaluer la condition pour tous les messages reçus dans le nombre de minutes donné.</translation>
-   <translation id="add_alert_threshold_type_field" qtlid="469673">Tipo di accesso</translation>
+   <translation id="add_alert_threshold_type_field" qtlid="469673">Tipo di valore</translation>
    <translation id="add_alert_threshold_type_more" qtlid="72641">Più</translation>
    <translation id="add_alert_threshold_type_less" qtlid="476846">Moins</translation>
    <translation id="add_alert_threshold_type_lower" qtlid="476859">Moins haute</translation>
    <translation id="add_alert_threshold_type_higher" qtlid="476872">Plus haute</translation>
-   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Sélectionner la condition qui active l'alerte : quand il y a plus ou moins de messages que le seuil.</translation>
-   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Sélectionner la condition qui active l'alerte : quand la valeur est plus haute ou moins haute que le seuil.</translation>
-   <translation id="add_alert_threshold_field" qtlid="469699">Accesso</translation>
-   <translation id="add_alert_threshold_field_description" qtlid="469712">La valeur qui active l'alerte si dépassée.</translation>
-   <translation id="add_alert_grace_period_field" qtlid="469725">Période de grâce (minutes)</translation>
+   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Seleziona la condizione che attiva l'alert: quando ci sono più o meno messaggi rispetto alla soglia stabilita.</translation>
+   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Seleziona la condizione che attiva l'alert: quando il valore è più o meno alto rispetto ala soglia stabilita.</translation>
+   <translation id="add_alert_threshold_field" qtlid="469699">Soglia</translation>
+   <translation id="add_alert_threshold_field_description" qtlid="469712">Valore che attiva l'alert se viene superato.</translation>
+   <translation id="add_alert_grace_period_field" qtlid="469725">Grace period (minuti)</translation>
    <translation id="add_alert_grace_period_field_description" qtlid="469738">Le nombre de minutes à attendre après la résolution d'une alerte pour en relancer une autre.</translation>
    <translation id="add_alert_accumulation_field" qtlid="469751">Accumulation de messages</translation>
-   <translation id="add_alert_accumulation_field_description" qtlid="469764">Le nombre de messages à inclure dans les notifications d'alertes.</translation>
+   <translation id="add_alert_accumulation_field_description" qtlid="469764">Numero di messaggi da includere nelle notifiche di alert.</translation>
    <translation id="add_alert_notification_field" qtlid="32386">Notifiche</translation>
    <translation id="add_alert_notification_field_description" qtlid="469777">Cochez cette case pour envoyer des notifications à chaque fois que la condition de l'alerte est remplie, peu importe son état.</translation>
-   <translation id="add_alert_field_field" qtlid="469816">Champ</translation>
-   <translation id="add_alert_field_field_description" qtlid="469829">Le nom du champ à vérifier.</translation>
-   <translation id="add_alert_constraint_type_field" qtlid="469868">Type d'agrégation</translation>
-   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Sélectionner la condition qui active l'alerte : quand la valeur est inférieure ou supérieure au seuil.</translation>
+   <translation id="add_alert_field_field" qtlid="469816">Campo</translation>
+   <translation id="add_alert_field_field_description" qtlid="469829">Nome del campo da verificare.</translation>
+   <translation id="add_alert_constraint_type_field" qtlid="469868">Tipo di aggregazione</translation>
+   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Seleziona la condizione che attiva l'alert: quando il valore è inferiore o superiore rispetto ala soglia stabilita.</translation>
    <translation id="add_alert_constraint_type_mean" qtlid="31930">Media</translation>
    <translation id="add_alert_constraint_type_min" qtlid="476885">Minimum</translation>
    <translation id="add_alert_constraint_type_max" qtlid="33826">Massimo</translation>
@@ -502,12 +503,12 @@
    <translation id="inputs_intro_text" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des logs provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
    <translation id="inputs_total_used" qtlid="477210">outils de collecte utilisés</translation>
    <translation id="inputs_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_add_input" qtlid="423193">Aggiungi un nuovo strumento di raccolta</translation>
    <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
    <translation id="inputs_tool" qtlid="477236">Outil</translation>
    <translation id="inputs_col_name" qtlid="3818">Nome</translation>
    <translation id="inputs_description" qtlid="9238">Descrizione</translation>
-   <translation id="inputs_software" qtlid="423973">Logiciel</translation>
+   <translation id="inputs_software" qtlid="423973">Software</translation>
    <translation id="inputs_linked_option" qtlid="426768">Option liée</translation>
    <translation id="inputs_state" qtlid="251970">Stato</translation>
    <translation id="inputs_state_processing" qtlid="477249">En traitement</translation>
@@ -524,24 +525,24 @@
    <translation id="inputs_starting" qtlid="477262">Démarrage de l'outil de collecte {{inputTitle}}</translation>
    <translation id="inputs_stopping" qtlid="477275">Arrêt de l'outil de collecte {{inputTitle}}</translation>
    <translation id="inputs_restarting" qtlid="477288">Redémarrage de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_delete" qtlid="470232">Supprimer l'outil de collecte</translation>
+   <translation id="inputs_delete" qtlid="470232">Elimina lo strumento di raccolta</translation>
    <translation id="inputs_delete_message" qtlid="477301">Êtes-vous sûr de vouloir supprimer l'outil de collecte <strong>{{input}}</strong> ?</translation>
    <translation id="inputs_delete_error" qtlid="477314">Une erreur est survenue lors de la suppression de l'outil de collecte: {{message}}</translation>
    <translation id="inputs_delete_success" qtlid="477327">L'outil de collecte a été supprimé avec succès</translation>
-   <translation id="inputs_info_title" qtlid="470180">Informations utiles</translation>
-   <translation id="inputs_info_description" qtlid="470193">Cliquez sur les options proposées pour les copier dans votre presse-papiers.</translation>
-   <translation id="inputs_info_hostname" qtlid="470206">Nom de l'hôte</translation>
-   <translation id="inputs_info_ipaddress" qtlid="470219">(Adresse) IP publique</translation>
+   <translation id="inputs_info_title" qtlid="470180">Informazioni utili</translation>
+   <translation id="inputs_info_description" qtlid="470193">Clicca sulle opzioni proposte per copiarle negli appunti.</translation>
+   <translation id="inputs_info_hostname" qtlid="470206">Nome dell'host</translation>
+   <translation id="inputs_info_ipaddress" qtlid="470219">(Adresse) IP pubblico</translation>
    <translation id="inputs_info_certificate" qtlid="439169">Tipo di certificato</translation>
    <translation id="inputs_logs_title" qtlid="477340">Sortie console de {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs" qtlid="477353">Aucun message reçu lors de la dernière heure.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Aggiungi un nuovo strumento di raccolta</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Modifier l'outil de collecte</translation>
    <translation id="inputs_logs_edit_description" qtlid="477379">Pour l'outil de collecte <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Modifica</translation>
    <translation id="inputs_logs_step1_add" qtlid="37923">Aggiungi</translation>
    <translation id="inputs_logs_step2" qtlid="4010">Configura</translation>
-   <translation id="inputs_logs_step3" qtlid="470258">Autoriser des réseaux</translation>
+   <translation id="inputs_logs_step3" qtlid="470258">Autorizza le reti</translation>
    <translation id="inputs_logs_networks_title" qtlid="423661">Réseau de confiance</translation>
    <translation id="inputs_logs_networks_add_remove_network_title" qtlid="477392">Ajouter/Enlever des réseaux de confiance</translation>
    <translation id="inputs_logs_networks_ip_address" qtlid="477405">Adresse IP du réseau de confiance</translation>
@@ -553,13 +554,13 @@
    <translation id="logs_inputs_network_remove_error" qtlid="477457">Une erreur est survenue lors du retrait du réseau {{network}} à l'outil de collecte {{inputTitle}}: {{message}}</translation>
    <translation id="inputs_logs_edit_title_field" qtlid="3818">Nome</translation>
    <translation id="inputs_logs_edit_description_field" qtlid="9238">Descrizione</translation>
-   <translation id="inputs_logs_edit_software_field" qtlid="423973">Logiciel</translation>
-   <translation id="inputs_logs_edit_port_field" qtlid="470271">Port TCP à ouvrir</translation>
+   <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
+   <translation id="inputs_logs_edit_port_field" qtlid="470271">Porta TCP da aprire</translation>
    <translation id="inputs_logs_edit_stream_field" qtlid="423349">Lier à un flux de données</translation>
    <translation id="inputs_logs_edit_select_stream" qtlid="470583">Choisir un flux</translation>
    <translation id="inputs_logs_edit_select_software" qtlid="477470">Choisir un logiciel</translation>
-   <translation id="inputs_logs_edit_option_field" qtlid="469478">Scegli l'opzione allegata</translation>
-   <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Instance unique</translation>
+   <translation id="inputs_logs_edit_option_field" qtlid="469478">Scegli l'opzione associata</translation>
+   <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Istanza singola</translation>
    <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
@@ -641,7 +642,7 @@
    <translation id="logs_index_modal_suffix" qtlid="59267">Suffisso</translation>
    <translation id="logs_index_suffix_description" qtlid="470427">Seuls les minuscules de a à z, les nombres et les caractères - ou _ sont autorisés.</translation>
    <translation id="logs_index_modal_description" qtlid="9238">Descrizione</translation>
-   <translation id="logs_index_modal_select" qtlid="469478">Scegli l'opzione allegata</translation>
+   <translation id="logs_index_modal_select" qtlid="469478">Scegli l'opzione associata</translation>
    <translation id="logs_index_modal_notification" qtlid="32386">Notifiche</translation>
    <translation id="logs_index_modal_checkbox" qtlid="470479">Me notifier par e-mail quand l'index atteint une taille critique.</translation>
    <translation id="logs_index_edit_error" qtlid="478068">Si è verificato un errore durante la modifica dell'indice '{{name}}': {{message}}</translation>
@@ -729,8 +730,8 @@
    <translation id="logs_role_modal_edit_desription" qtlid="478601">Per il ruolo <strong>{{ role }}</strong></translation>
    <translation id="logs_role_modal_name" qtlid="3818">Nome</translation>
    <translation id="logs_role_modal_description" qtlid="9238">Descrizione</translation>
-   <translation id="logs_role_modal_option" qtlid="469478">Scegli l'opzione allegata</translation>
-   <translation id="logs_roles_tooltip" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
+   <translation id="logs_role_modal_option" qtlid="469478">Scegli l'opzione associata</translation>
+   <translation id="logs_roles_tooltip" qtlid="469309">Con ogni acquisto di stream di dati, alias e dashboard, ricevi un ruolo utente gratuito (es. 5 stream = 5 ruoli).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Supprimer le rôle</translation>
    <translation id="logs_role_modal_delete_question" qtlid="478614">Vuoi davvero rimuovere il ruolo <strong>{{name}}</strong> ?</translation>
    <translation id="logs_role_add_success" qtlid="478627">Il ruolo '{{name}}' è stato creato correttamente.</translation>
