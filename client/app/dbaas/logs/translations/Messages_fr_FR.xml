@@ -424,7 +424,7 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Période de grâce (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Répéter les notifications</translation>
-   <translation id="streams_alerts_delete">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">L'alerte {{alertName}} a été supprimée avec succès.</translation>
@@ -564,7 +564,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Délimiteur entre chaque message</translation>
-   <translation id="inputs_logs_configure_delimiter_line">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
