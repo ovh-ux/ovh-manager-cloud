@@ -36,7 +36,7 @@ class ControllerModalHelper {
             modalConfig: {
                 templateUrl: "app/ui-components/modal/warning-modal/warning-modal.html",
                 controller: "WarningModalController",
-                controllerAs: "ctrl",
+                controllerAs: "$ctrl",
                 resolve: {
                     params: () => config
                 }
