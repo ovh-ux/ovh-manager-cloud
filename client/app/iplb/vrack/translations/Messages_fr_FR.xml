@@ -23,8 +23,8 @@
    <translation id="iplb_vrack_rules_loading_error" qtlid="482472">Une erreur est survenue lors du chargement des informations de réseau privé : {{message}}</translation>
    <translation id="iplb_vrack_private_network_loading_error" qtlid="482485">Une erreur est survenue lors du chargement du réseau privé : {{message}}</translation>
    <translation id="iplb_vrack_private_networks_loading_error" qtlid="482498">Une erreur est survenue lors du chargement des réseaux privés : {{message}}</translation>
-   <translation id="iplb_vrack_associate_vrack_error" qtlid="482511">Une erreur est survenue lors de l'association du vrack : {{message}}</translation>
-   <translation id="iplb_vrack_deassociate_vrack_error" qtlid="482524">Une erreur est survenue lors de la désactivation du vrack : {{message}}</translation>
+   <translation id="iplb_vrack_associate_vrack_error" qtlid="482511">Une erreur est survenue lors de l'association du vRack : {{message}}</translation>
+   <translation id="iplb_vrack_deassociate_vrack_error" qtlid="482524">Une erreur est survenue lors de la désactivation du vRack : {{message}}</translation>
 
    <translation id="iplb_vrack_private_network_add_title" qtlid="331202">Ajouter un réseau privé</translation>
    <translation id="iplb_vrack_private_network_edit_title" qtlid="482537">Modifier un réseau privé</translation>
