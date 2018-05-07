@@ -6,9 +6,9 @@
    <translation id="cpcivm_add_step1_tab_os_linux" qtlid="296856">Unix distributions </translation>
    <translation id="cpcivm_add_step1_tab_os_windows" qtlid="248223">Windows operating systems</translation>
    <translation id="cpcivm_add_step1_tab_apps" qtlid="482732">Distributions + Apps</translation>
-   <translation id="cpcivm_add_step1_tab_customs" qtlid="482745">Customised images</translation>
+   <translation id="cpcivm_add_step1_tab_customs" qtlid="482745">Customized images</translation>
    <translation id="cpcivm_add_step1_tab_shapshots" qtlid="10235">Snapshots</translation>
-   <translation id="cpcivm_add_step1_general_ERROR" qtlid="482758">An error occurred when recovering information: {{message}}</translation>
+   <translation id="cpcivm_add_step1_general_ERROR" qtlid="482758">An error occurred while recovering information: {{message}}</translation>
    <translation id="cpcivm_add_step1_images_ERROR" qtlid="482771">Unable to recover the list of images of the operating system: {{message}}</translation>
    <translation id="cpcivm_add_step1_shapshots_ERROR" qtlid="482784">Unable to recover the list of snapshots: {{message}}</translation>
    <translation id="cpcivm_add_step1_distribution_last_version" qtlid="482797">Latest version</translation>
@@ -23,7 +23,7 @@
    <translation id="cpcivm_add_step1_sshKey_message" qtlid="482862">You need SSH keys in order to connect to your service.<br/><a href="{{url}}" target="_blank">Find out more about SSH keys</a>.</translation>
    <translation id="cpcivm_add_step1_sshKey_licence" qtlid="482875">The use of images is subject to the prior acceptance of the supplier's user licence agreement.</translation>
    <translation id="cpcivm_add_step1_sshKey_regions_title" qtlid="482888">Implementing the SSH key</translation>
-   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">Your SSH key will be available for all regions and OVH datacentres.</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">Your SSH key will be available for all regions and OVH data centres.</translation>
    <translation id="cpcivm_add_distribution_linux" qtlid="102213">Linux</translation>
    <translation id="cpcivm_add_distribution_linux_other" qtlid="349728">Archlinux</translation>
    <translation id="cpcivm_add_distribution_centos" qtlid="482914">CentOS</translation>
@@ -34,24 +34,24 @@
    <translation id="cpcivm_add_distribution_ubuntu" qtlid="349715">Ubuntu</translation>
    <translation id="cpcivm_add_distribution_windows_server_2012" qtlid="482940">Windows Server 2012</translation>
    <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
-   <translation id="cpcivm_add_step2_title" qtlid="482966">Select a region and a datacentre</translation>
+   <translation id="cpcivm_add_step2_title" qtlid="482966">Select a region and a data centre</translation>
    <translation id="cpcivm_add_step2_tab_all" qtlid="331319">All regions</translation>
    <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">No preference </translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Instance quota reached</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM quota reached</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core quota reached</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH key unavailable</translation>
-   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Unable to recover list of regions and datacentres available: {{message}}</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Unable to recover list of regions and data centres available: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Unable to load your quota available: {{message}}</translation>
-   <translation id="cpcivm_add_step3_title" qtlid="483057">Sélectionnez votre instance</translation>
+   <translation id="cpcivm_add_step3_title" qtlid="483057">Choose your instance</translation>
    <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">General use</translation>
-   <translation id="cpcivm_add_step3_category_cpu" qtlid="483083">Optimised computing</translation>
-   <translation id="cpcivm_add_step3_category_ram" qtlid="483096">Optimised memory</translation>
-   <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Calcul accéléré</translation>
+   <translation id="cpcivm_add_step3_category_cpu" qtlid="483083">Optimized computing</translation>
+   <translation id="cpcivm_add_step3_category_ram" qtlid="483096">Optimized memory</translation>
+   <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Accelerated computing</translation>
    <translation id="cpcivm_add_step3_category_vps" qtlid="483122">Shared resources</translation>
    <translation id="cpcivm_add_step3_category_definition_balanced" qtlid="483135">Instances for general use offer a good balance of RAM and performance.</translation>
-   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Instances with optimised computing are ideally suited to applications requiring high processing speeds or parallel task processing.</translation>
-   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Les instances à mémoire optimisée sont recommandées pour vos bases de données, analyses et calculs en mémoire, ainsi que d'autres applicatifs gourmands en RAM.</translation>
+   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Instances with optimized computing are ideally suited to applications requiring high processing speeds or parallel task processing.</translation>
+   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Instances with optimized memory are recommended for databases, analyses and computations stored in memory, as well as other RAM-intensive applications. </translation>
    <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Instances with accelerated computing (GPU, FPGA) are up to 1000 times faster than a CPU for certain applications (rendering, video transcoding, bioinformatics, big data, deep learning, etc.)</translation>
    <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Instances with shared resources (Sandbox) are suitable for testing, verifications and development environments. Their performance may vary slightly over time.</translation>
    <translation id="cpcivm_add_step3_label_ram" qtlid="483200">RAM:</translation>
@@ -82,19 +82,19 @@
    <translation id="cpcivm_add_step3_network_info" qtlid="483473">Use a private network to protect your data. This will not only boost the connection between your services; it will also allow you to exchange data securely between servers.<a href="{{url}}" target="_blank">More info on private networks</a>.</translation>
    <translation id="cpcivm_add_step3_network_none" qtlid="30646">None</translation>
    <translation id="cpcivm_add_step3_flavor_prices_ERROR" qtlid="483486">Unable to recover the prices for the offers available: {{message}}</translation>
-   <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Impossible de récupérer la liste des offres disponibles : {{message}}</translation>
+   <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Unable to recover the list of available offers: {{message}}</translation>
    <translation id="cpcivm_add_step4_title" qtlid="483512">Configuring your instance</translation>
    <translation id="cpcivm_add_step5_title" qtlid="483525">Select a billing period</translation>
-   <translation id="cpcivm_add_step5_message" qtlid="483538">The monthly installments will be charged as soon as the instance is started up and allows you to save 50% on server costs. For use for short periods only, we recommend that you choose hourly billing and switch to the monthly package later if need be.</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">The monthly instalments will be charged as soon as the instance is started up and allows you to save 50% on server costs. For use over short periods, we recommend that you choose hourly billing and switch to monthly billing later if need be.</translation>
    <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Hourly </translation>
    <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Monthly</translation>
-   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Une erreur s'est produite lors de la création de votre nouvelle instance : {{message}}</translation>
+   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">An error occurred when creating your new instance: {{message}}</translation>
    <translation id="cpcivm_add_summary_title" qtlid="4082">Summary</translation>
    <translation id="cpcivm_add_summary_os" qtlid="168835">Operating system</translation>
    <translation id="cpcivm_add_summary_region" qtlid="32434">Province</translation>
    <translation id="cpcivm_add_summary_instance" qtlid="104482">Instance</translation>
    <translation id="cpcivm_add_summary_name" qtlid="3818">Name</translation>
-   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Prix / heure (hors taxes)</translation>
-   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Prix / mois (hors taxes)</translation>
-   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Non renseigné</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Price per hour</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Price per month</translation>
+   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Not stated</translation>
 </translations>

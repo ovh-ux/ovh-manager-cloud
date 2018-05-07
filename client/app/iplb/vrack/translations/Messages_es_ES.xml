@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="iplb_vrack_title" qtlid="482355">Réseaux privés</translation>
-   <translation id="iplb_vrack_intro_text" qtlid="482368">Répartissez facilement la charge entre les différents services de votre VLAN à l'intérieur du vRack.</translation>
-   <translation id="iplb_vrack_intro_text2_single" qtlid="482381">Vous pouvez créer encore {{remainingNetworks}} réseau privé.</translation>
-   <translation id="iplb_vrack_intro_text2_plural" qtlid="482394">Vous pouvez créer encore {{remainingNetworks}} réseaux privés.</translation>
-   <translation id="iplb_vrack_intro_not_eligible" qtlid="482407">La configuration de votre load balancer ne vous permet pas d'associer un vRack pour le moment.</translation>
+   <translation id="iplb_vrack_title" qtlid="482355">Redes privadas</translation>
+   <translation id="iplb_vrack_intro_text" qtlid="482368">Reparta fácilmente la carga entre los distintos servicios de su VLAN incluidos en el vRack.</translation>
+   <translation id="iplb_vrack_intro_text2_single" qtlid="482381">Todavía puede crear {{remainingNetworks}} red privada.</translation>
+   <translation id="iplb_vrack_intro_text2_plural" qtlid="482394">Todavía puede crear {{remainingNetworks}} redes privadas.</translation>
+   <translation id="iplb_vrack_intro_not_eligible" qtlid="482407">La configuración de su Load Balancer no le permite asociar un vRack actualmente.</translation>
 
    <translation id="iplb_vrack_box_title" qtlid="246962">vRack</translation>
    <translation id="iplb_vrack_box_status_active" qtlid="55133">Activo</translation>
    <translation id="iplb_vrack_box_status_inactive" qtlid="105310">Inactivo</translation>
    <translation id="iplb_vrack_box_status_activating" qtlid="148474">Activando...</translation>
-   <translation id="iplb_vrack_box_status_deactivating" qtlid="148487">Desactivando</translation>
+   <translation id="iplb_vrack_box_status_deactivating" qtlid="148487">Desactivando...</translation>
 
    <translation id="iplb_vrack_private_network_add" qtlid="331202">Añadir una red privada</translation>
 
-   <translation id="iplb_vrack_list_col_private_network" qtlid="482342">Réseau privé</translation>
+   <translation id="iplb_vrack_list_col_private_network" qtlid="482342">Red privada</translation>
    <translation id="iplb_vrack_list_col_vlan_id" qtlid="482420">VLAN ID</translation>
-   <translation id="iplb_vrack_list_col_subnet" qtlid="482433">Subnet</translation>
+   <translation id="iplb_vrack_list_col_subnet" qtlid="482433">Subred</translation>
    <translation id="iplb_vrack_list_col_nat_ip" qtlid="482446">NatIP</translation>
-   <translation id="iplb_vrack_list_col_farms" qtlid="482459">Ferme de serveurs</translation>
+   <translation id="iplb_vrack_list_col_farms" qtlid="482459">Granja de servidores</translation>
 
-   <translation id="iplb_vrack_rules_loading_error" qtlid="482472">Une erreur est survenue lors du chargement des informations de réseau privé : {{message}}</translation>
-   <translation id="iplb_vrack_private_network_loading_error" qtlid="482485">Une erreur est survenue lors du chargement du réseau privé : {{message}}</translation>
-   <translation id="iplb_vrack_private_networks_loading_error" qtlid="482498">Une erreur est survenue lors du chargement des réseaux privés : {{message}}</translation>
-   <translation id="iplb_vrack_associate_vrack_error" qtlid="482511">Une erreur est survenue lors de l'association du vrack : {{message}}</translation>
-   <translation id="iplb_vrack_deassociate_vrack_error" qtlid="482524">Une erreur est survenue lors de la désactivation du vrack : {{message}}</translation>
+   <translation id="iplb_vrack_rules_loading_error" qtlid="482472">Se ha producido un error al cargar la información de la red privada: {{message}}</translation>
+   <translation id="iplb_vrack_private_network_loading_error" qtlid="482485">Se ha producido un error al cargar la red privada: {{message}}</translation>
+   <translation id="iplb_vrack_private_networks_loading_error" qtlid="482498">Se ha producido un error al cargar las redes privadas: {{message}}</translation>
+   <translation id="iplb_vrack_associate_vrack_error" qtlid="482511">Se ha producido un error al asociar el vRack: {{message}}</translation>
+   <translation id="iplb_vrack_deassociate_vrack_error" qtlid="482524">Se ha producido un error al desactivar el vRack: {{message}}</translation>
 
    <translation id="iplb_vrack_private_network_add_title" qtlid="331202">Añadir una red privada</translation>
-   <translation id="iplb_vrack_private_network_edit_title" qtlid="482537">Modifier un réseau privé</translation>
-   <translation id="iplb_vrack_private_network_add_success" qtlid="482550">Le réseau privé a été ajouté avec succès.</translation>
-   <translation id="iplb_vrack_private_network_add_error" qtlid="482563">Une erreur est survenue lors de l'ajout du réseau privé: {{ message }}</translation>
-   <translation id="iplb_vrack_private_network_edit_success" qtlid="482576">Le réseau privé a été modifié avec succès.</translation>
-   <translation id="iplb_vrack_private_network_edit_error" qtlid="482589">Une erreur est survenue lors de la modification du réseau privé: {{ message }}</translation>
+   <translation id="iplb_vrack_private_network_edit_title" qtlid="482537">Modificar una red privada</translation>
+   <translation id="iplb_vrack_private_network_add_success" qtlid="482550">La red privada se ha añadido correctamente.</translation>
+   <translation id="iplb_vrack_private_network_add_error" qtlid="482563">Se ha producido un error al añadir la red privada: {{ message }}</translation>
+   <translation id="iplb_vrack_private_network_edit_success" qtlid="482576">La red privada se ha modificado correctamente.</translation>
+   <translation id="iplb_vrack_private_network_edit_error" qtlid="482589">Se ha producido un error al modificar la red privada: {{ message }}</translation>
 
    <translation id="iplb_vrack_private_network_add_edit_field_display_name_label" qtlid="415818">Nombre (opcional)</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_vlan_label" qtlid="482602">VLAN ID (facultatif)</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_vlan_helper" qtlid="482615">1 à 4000 (0 si le réseau privé n'est pas dans un VLAN)</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_subnet_label" qtlid="482433">Subnet</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_subnet_helper" qtlid="482628">Ex. : 10.0.0.0/8</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_vlan_label" qtlid="482602">VLAN ID (opcional)</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_vlan_helper" qtlid="482615">1 a 4000 (0, si la red privada no está en un VLAN)</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_subnet_label" qtlid="482433">Subred</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_subnet_helper" qtlid="482628">P. ej.: 10.0.0.0/8</translation>
    <translation id="iplb_vrack_private_network_add_edit_field_nat_ip_label" qtlid="482446">NatIP</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_nat_ip_helper" qtlid="482641">Ex. : 10.0.0.0/24</translation>
-   <translation id="iplb_vrack_private_network_add_edit_field_farm_label" qtlid="482654">Fermes de serveurs liées</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_nat_ip_helper" qtlid="482641">P. ej.: 10.0.0.0/24</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_farm_label" qtlid="482654">Granjas de servidores asociados</translation>
    <translation id="iplb_vrack_private_network_add_edit_field_farm_description" qtlid="3818">Nombre</translation>
 
-   <translation id="iplb_vrack_private_network_delete_title" qtlid="482667">Supprimer le réseau privé</translation>
-   <translation id="iplb_vrack_private_network_delete_text" qtlid="482680">Êtes-vous sûr de vouloir supprimer le réseau privé {{ network }} ?</translation>
-   <translation id="iplb_vrack_private_network_delete_success" qtlid="482693">Le réseau privé a été supprimé avec succès.</translation>
-   <translation id="iplb_vrack_private_network_delete_error" qtlid="482706">Une erreur est survenue lors de la suppression du réseau privé: {{message}}</translation>
+   <translation id="iplb_vrack_private_network_delete_title" qtlid="482667">Eliminar la red privada</translation>
+   <translation id="iplb_vrack_private_network_delete_text" qtlid="482680">¿Seguro que quiere eliminar la red privada {{ network }}?</translation>
+   <translation id="iplb_vrack_private_network_delete_success" qtlid="482693">La red privada se ha eliminado correctamente.</translation>
+   <translation id="iplb_vrack_private_network_delete_error" qtlid="482706">Se ha producido un error al eliminar la red privada: {{message}}</translation>
 </translations>

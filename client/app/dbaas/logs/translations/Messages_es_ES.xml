@@ -235,7 +235,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activar esta opción</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Debe contactar con el soporte para reactivar la opción «{{optionType}}».</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Desactivar esta opción</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">¿Seguro que quiere desactivar la opción «{{optionType}}»? Recuerde que deberá contactar con el soporte para reactivar esta opción. </translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">¿Seguro que quiere desactivar la opción «{{optionType}}»? Recuerde que deberá contactar con el soporte para reactivar esta opción.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Se ha producido un error al desactivar la opción «{{optionType}}»: {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">La opción «{{optionType}}» se ha desactivado correctamente.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Para administrar sus opciones diríjase a la página</translation>
@@ -426,26 +426,26 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condición</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Período de gracia (minutos)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Repetir las notificaciones</translation>
-   <translation id="streams_alerts_delete" qtlid="286903">Eliminar la alerta</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Eliminar la alerta</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">¿Seguro que quiere eliminar la alerta <strong>{{alert}}</strong>?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Se ha producido un error al eliminar la alerta {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">La alerta {{alertName}} se ha eliminado correctamente.</translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">La alerta se activa cuando hay <strong>{{thresholdType}}</strong> de <strong>{{threshold}}</strong> mensaje(s) durante los últimos <strong>{{time}}</strong> minutos. Incluir <strong>{{backlog}}</strong> mensajes en la notificación.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">La alerta se activa cuando el campo <strong>{{field}}</strong> posee un valor <strong>{{thresholdType}} {{constraintType}}</strong> a <strong>{{threshold}}</strong> durante los últimos <strong>{{time}}</strong> minutos. Incluir <strong>{{backlog}}</strong> mensajes en la notificación.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">La alerta se activa cuando se recibe un mensaje con el campo <strong>{{field}}:"{{value}}"</strong>. Incluir <strong>{{backlog}}</strong> mensajes en la notificación.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">La alerta se activa cuando se recibe un mensaje con el valor <strong>«{{value}}»</strong> en el campo <strong>{{field}}</strong>. Incluir <strong>{{backlog}}</strong> mensajes en la notificación.</translation>
    <translation id="create_alert" qtlid="469569">Crear una alerta</translation>
    <translation id="counter_alert" qtlid="425494">Contador</translation>
    <translation id="numeric_alert" qtlid="425481">Valor numérico</translation>
    <translation id="textual_alert" qtlid="425468">Contenido de texto</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Crear una condición de tipo contador</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Añadir una condición de agregación del campo</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Añadir una condición de contenido del campo</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Añadir una condición basada en la agregación del campo</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Añadir una condición basada en el contenido del campo</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Modificar la condición de tipo contador</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar la condición de agregación del campo</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modificar la condición de contenido del campo</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modificar la condición basada en la agregación del campo</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modificar la condición basada en el contenido del campo</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Esta condición se activa cuando el número de mensajes es superior o inferior al límite definido para un período de tiempo determinado.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Esta condición se activa cuando la agregación de un campo es superior o inferior al límite definido para un período de tiempo determinado.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Esta condición se activa cuando el contenido de los mensajes es igual a un valor definido.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Esta condición se activa cuando el contenido de un campo es igual a un valor definido.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Nombre</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Título de la condición de la alerta.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Período de tiempo (minutos)</translation>
@@ -566,7 +566,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Formato de sus logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimitador entre cada mensaje</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Línea</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Línea</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>

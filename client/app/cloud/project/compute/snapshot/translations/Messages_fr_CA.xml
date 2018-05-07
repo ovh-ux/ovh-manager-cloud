@@ -35,7 +35,7 @@
    <translation id="cpc_snapshot_status_deleted" qtlid="223710">Supprimé</translation>
    <translation id="cpc_snapshot_status_pending_delete" qtlid="152778">En cours de suppression</translation>
    <translation id="cpc_snapshot_status_cannot_delete" qtlid="252594">Ce snapshot ne peut être supprimé, car il est actuellement en cours d'utilisation sur au moins un serveur.</translation>
-   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">En cours de snapshot</translation>
+   <translation id="cpc_snapshot_status_snapshotting" qtlid="348438">Image instantanée en cours</translation>
    <translation id="cpc_snapshot_status_creating" qtlid="29647">En cours de création</translation>
    <translation id="cpc_snapshot_status_available" qtlid="246624">Prêt</translation>
    <translation id="cpc_snapshot_status_deleting" qtlid="152778">En cours de suppression</translation>

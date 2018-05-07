@@ -7,7 +7,7 @@
    <translation id="logs_operation_failed" qtlid="473908">Bewerking {{operation_id}} mislukt</translation>
    <translation id="logs_operation_error" qtlid="473921">Er is een fout opgetreden tijdens de bewerking: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Datastroom</translation>
-   <translation id="logs_index_title" qtlid="473934">Index elasticsearch</translation>
+   <translation id="logs_index_title" qtlid="473934">Index Elasticsearch</translation>
    <translation id="logs_main_offer" qtlid="424389">Hoofdmenu</translation>
    <translation id="logs_finish_configuration" qtlid="473947">Configuratie beëindigen</translation>
    <translation id="logs_next" qtlid="17743">Volgende</translation>
@@ -108,7 +108,7 @@
    <translation id="logs_password_rule_contains_uppercase" qtlid="474337">Het wachtwoord moet minstens één hoofdletter bevatten</translation>
    <translation id="logs_password_rule_contains_lowercase" qtlid="474350">Het wachtwoord moet minstens één kleine letter bevatten</translation>
    <translation id="logs_password_rule_contains_special" qtlid="474363">Het wachtwoord moet minstens één speciaal teken {{specialCharacters}} bevatten</translation>
-   <translation id="logs_password_valid" qtlid="474376">Het wachtwoord is juist</translation>
+   <translation id="logs_password_valid" qtlid="474376">Het wachtwoord is geldig</translation>
    <translation id="logs_password_change_success" qtlid="474389">Het wachtwoord is gewijzigd</translation>
    <translation id="logs_password_setup_success" qtlid="474402">Het wachtwoord is ingesteld</translation>
    <translation id="logs_password_change_error" qtlid="474415">Er is een fout opgetreden bij het wijzigen van het wachtwoord: {{message}}</translation>
@@ -424,26 +424,26 @@
    <translation id="streams_alerts_condition" qtlid="425806">Voorwaarde</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Wachtperiode</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Meldingen herhalen</translation>
-   <translation id="streams_alerts_delete" qtlid="286903">Alert verwijderen</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Melding (waarschuwing) verwijderen</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Weet u zeker dat u de <strong>{{alert}}</strong> melding wilt verwijderen? </translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Er is een fout opgetreden bij het verwijderen van de '{{alertName}}' melding: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">De {{alertName}} melding is verwijderd. </translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">De melding wordt weergegeven als er <strong>{{threshold}}</strong> <strong>{{thresholdType}}</strong> berichten zijn binnen de laatste <strong>{{time}}</strong> minuten. Neem <strong>{{backlog}}</strong> berichten op in de melding.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">De melding wordt weergegeven als het <strong>{{field}}</strong> veld een <strong>{{thresholdType}} {{constraintType}}</strong> waarde heeft van <strong>{{threshold}}</strong> binnen de laatste <strong>{{time}}</strong> minuten. Neem <strong>{{backlog}}</strong> berichten op in de melding.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">De melding wordt weergegeven als een bericht met het veld <strong>{{field}}:"{{value}}"</strong> is ontvangen. Neem <strong>{{backlog}}</strong> berichten op in de melding.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">De melding wordt weergegeven als een bericht met het veld <strong>{{field}} met de waarde "{{value}}"</strong> is ontvangen. Neem <strong>{{backlog}}</strong> berichten op in de melding.</translation>
    <translation id="create_alert" qtlid="469569">Melding creëren</translation>
    <translation id="counter_alert" qtlid="425494">Teller</translation>
    <translation id="numeric_alert" qtlid="425481">Numerieke waarde</translation>
    <translation id="textual_alert" qtlid="425468">Tekstinhoud</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Voeg een kwantitatieve voorwaarde toe</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Aggregatieveld toevoegen</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Inhoudsveld toevoegen</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Aggregatieveld-voorwaarde toevoegen</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Inhoudsveld-voorwaarde toevoegen</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Staat van het type teller bewerken</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Staat van het aggregatieveld bewerken</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Staat van het inhoudsveld bewerken</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Aggregatieveld-voorwaarde bewerken</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Inhoudsveld-voorwaarde bewerken</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Deze voorwaarde wordt geactiveerd als het aantal berichten groter of kleiner is dan de opgegeven drempelwaarde voor een bepaald tijdsinterval.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Deze voorwaarde wordt geactiveerd wanneer de totale waarde van het veld voor een bepaalde tijd hoger of lager is dan de drempelwaarde.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Deze voorwaarde wordt geactiveerd wanneer de berichtinhoud identiek is aan de opgegeven waarde.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Deze voorwaarde wordt geactiveerd wanneer de veld-inhoud identiek is aan de opgegeven waarde.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Naam</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">De naam van de meldingsvoorwaarde.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Tijdsinterval (minuten)</translation>
@@ -564,7 +564,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Log format</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Scheidingsteken tussen elk bericht</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Lijn</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Regel (code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
@@ -606,7 +606,8 @@
    <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Er is een fout opgetreden bij het bewerken van de {{inputTitle}} Flowgger-configuratie: {{message}}</translation>
    <translation id="logs_inputs_logstash_update_success" qtlid="477795">De Logstash-configuratie is bewerkt voor de {{inputTitle}} verzameltool</translation>
    <translation id="logs_inputs_logstash_update_error" qtlid="477808">Er is een fout opgetreden bij het bewerken van de {{inputTitle}} Logstash-configuratie: {{message}}</translation>
-   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Geen van de configuratietests was succesvol</translation>
+   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Geen succesvolle configuratietest&#13;
+</translation>
    <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">Er zijn geen tests uitgevoerd voor de huidige configuratie. Voer de configuratietest uit om verder te gaan.</translation>
    <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">De laatste configuratietest is mislukt. Ga aub na of de configuratie correct is en voer de configuratietest opnieuw uit.</translation>
 
@@ -624,7 +625,7 @@
    <translation id="logs_index_col_description" qtlid="9238">Beschrijving</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Beschikbare ruimte</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Gedeelde index</translation>
-   <translation id="logs_index_elastic_search_access" qtlid="477938">Toegang tot Elasticsearch</translation>
+   <translation id="logs_index_elastic_search_access" qtlid="477938">Open Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Index verwijderen</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Weet u zeker dat u de <strong>{{name}}</strong> index wilt verwijderen? </translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Er is een fout opgetreden bij het laden van de opties</translation>
@@ -666,7 +667,7 @@
    <translation id="logs_aliases_col_indices" qtlid="478198">Gelinkte indexen</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Wijzigen</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Verwijderen</translation>
-   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Toegang tot Elasticsearch</translation>
+   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Open Elasticsearch</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Koppel inhoud aan een alias</translation>
    <translation id="logs_aliases_delete_title" qtlid="478211">Alias verwijderen</translation>
    <translation id="logs_alias_delete_message" qtlid="478224">Weet u zeker dat u de <strong>{{alias}}</strong> alias wilt verwijderen? </translation>
@@ -702,7 +703,7 @@
    <translation id="logs_aliases_attach_index_fail" qtlid="478510">Kan niet worden toegevoegd aan '{{index}}' index: {{message}}</translation>
    <translation id="logs_aliases_detach_index_error" qtlid="478523">Er is een fout opgetreden bij het verwijderen van de '{{indexName}}' index: {{message}}</translation>
    <translation id="logs_aliases_detach_index_fail" qtlid="478536">Kan niet worden verwijderd van '{{index}}' index: {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Alle datastreams zijn verbonden aan deze alias Alleen datastreams of Elasticsearch-indexen kunnen worden verbonden. Verwijder alle datastreams om een index toe te kunnen voegen.</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Alle datastreams zijn verbonden aan deze alias. Alleen datastreams of Elasticsearch-indexen kunnen worden verbonden. Verwijder alle datastreams om een index toe te kunnen voegen.</translation>
    <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Elasticsearch-indexen zijn verbonden aan alias. Alleen datastreams of Elasticsearch-indexen kunnen worden verbonden. Verwijder alle datastreams om een index toe te kunnen voegen.</translation>
 
 <!-- Roles -->

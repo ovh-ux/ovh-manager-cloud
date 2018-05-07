@@ -533,7 +533,7 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">Den Namen ändern</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Namen ändern</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standardname</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalisierter Name</translation>
 

@@ -13,7 +13,7 @@
    <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Totale prijs incl. btw:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Klik op "Bevestigen" om uw bestelling te bevestigen.</translation>
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Een nieuwe tab wordt geopend en u wordt automatisch doorgestuurd naar de betaling interface.</translation>
-   <translation id="vps_order_windows_button_title" qtlid="250784">Windows optie</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Windows-optie</translation>
 
    <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Uw VPS is opnieuw opgestart</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Er is een fout opgetreden bij de herstart van uw VPS </translation>
@@ -201,14 +201,14 @@
    <translation id="vps_configuration_reinstall_windows_option" qtlid="250836">Overweeg de optie, als u over een Windows besturingssysteem wilt beschikken.</translation>
    <translation id="vps_configuration_reinstall_success" qtlid="452488">De {{serviceName}} VPS zal opnieuw worden geïnstalleerd</translation>
    <translation id="vps_configuration_reinstall_fail" qtlid="452501">Er is een fout opgetreden tijdens het aanvragen van de herinstallatie {{message}}</translation>
-   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">De Snapshot verwijderen</translation>
-   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">De Snapshot verwijderen</translation>
-   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Weet u zeker dat u de snapshot van de <span class="normal italic">{{serviceName}}</span> VOS wilt verwijderen?</translation>
+   <translation id="vps_configuration_delete_snapshot_title_button" qtlid="168939">De snapshot verwijderen</translation>
+   <translation id="vps_configuration_delete_snapshot_title" qtlid="168939">De snapshot verwijderen</translation>
+   <translation id="vps_configuration_delete_snapshot_step1_question" qtlid="452514">Weet u zeker dat u de snapshot van de <span class="normal italic">{{serviceName}}</span> VPS wilt verwijderen?</translation>
    <translation id="vps_configuration_delete_snapshot_step1_confirmation" qtlid="168965">Let op: deze actie is onomkeerbaar.</translation>
    <translation id="vps_configuration_delete_snapshot_success" qtlid="452527">De snapshot op de {{serviceName}} VPS zal worden verwijderd. </translation>
-   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Er is een fout opgetreden bij het ​​verzoek om het Snapshot te verwijderen.</translation>
-   <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Een Snapshot nemen</translation>
-   <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Een Snapshot nemen</translation>
+   <translation id="vps_configuration_delete_snapshot_fail" qtlid="168991">Er is een fout opgetreden bij het ​​verzoek om de snapshot te verwijderen.</translation>
+   <translation id="vps_configuration_snapshot_take_title_button" qtlid="169004">Een snapshot maken</translation>
+   <translation id="vps_configuration_snapshot_take_title" qtlid="169004">Een snapshot maken</translation>
    <translation id="vps_configuration_snapshot_take_step1_question" qtlid="452540">U wilt een snapshot maken van uw <span class="italic normal">{{serviceName}}</span> VPS.</translation>
    <translation id="vps_configuration_snapshot_take_step1_description" qtlid="169030">Beschrijving van de snapshot:</translation>
    <translation id="vps_configuration_snapshot_take_step2_confirmation" qtlid="371567">U staat op het punt een snapshot te maken. Tijdens dit proces zult u tijdelijk geen toegang hebben tot uw VPS en alle vorige snapshots zullen verloren gaan. </translation>
@@ -218,13 +218,13 @@
    <translation id="vps_configuration_snapshot_restore_title" qtlid="169095">De snapshot herstellen</translation>
    <translation id="vps_configuration_snapshot_restore_step1_question" qtlid="452566">Wilt u uw snapshot van {{date}} herstellen op de VPS <span class="normal italic">{{serviceName}}</span>&#160;?</translation>
    <translation id="vps_configuration_snapshot_restore_step1_confirmation" qtlid="169108">Let op: met deze actie wordt de huidige versie van uw VPS verwijderd en hersteld naar de laatste snapshot. Deze actie is onomkeerbaar.</translation>
-   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">De snapshot zal worden herstelf op de {{serviceName}} VPS.</translation>
+   <translation id="vps_configuration_snapshot_restore_success" qtlid="452579">De snapshot zal worden hersteld op de {{serviceName}} VPS.</translation>
    <translation id="vps_configuration_snapshot_restore_fail" qtlid="169134">Bij de aanvraag van het herstel van de snapshot is een fout opgetreden.</translation>
-   <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">De snapshot optie activeren</translation>
-   <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">De snapshot optie activeren</translation>
-   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Voor de eerste betaling, krijgt u een pro rata factuur tot de verlengingsdatum van uw VPS.</translation>
+   <translation id="vps_configuration_activate_snapshot_title_button" qtlid="169147">De snapshot-optie activeren</translation>
+   <translation id="vps_configuration_activate_snapshot_title" qtlid="169147">De snapshot-optie activeren</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_confirmation" qtlid="169160">Voor de eerste betaling, krijgt u een pro rata factuur tot de verlengdatum van uw VPS.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_alert" qtlid="452592">Deze optie zal worden gefactureerd tegen een maandelijks tarief van  <span class="bold">{{ amount }} excl. btw</span></translation>
-   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Met de snapshot optie kunt u een herstelpunt maken. Dit is een momentopname van uw configuratie dat hersteld kan worden indien nodig.</translation>
+   <translation id="vps_configuration_activate_snapshot_step1_description" qtlid="169186">Met de snapshot-optie kunt u een herstelpunt maken. Dit is een momentopname van uw configuratie dat hersteld kan worden indien nodig.</translation>
    <translation id="vps_configuration_activate_snapshot_step1_instruction" qtlid="169199">Klik op "Volgende" om met de activering van de snapshot optie door te gaan.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_id" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_title" qtlid="82725">Overzicht</translation>
@@ -232,11 +232,11 @@
    <translation id="vps_configuration_activate_snapshot_step2_explication2" qtlid="169225">Hou er rekening mee, dat het ongeveer 2 uur na de aanvaarding van uw betaling kan duren, voordat de optie effectief wordt in uw Web Control Panel.</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalHT" qtlid="169238">Prijs excl. btw:</translation>
    <translation id="vps_configuration_activate_snapshot_step2_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
-   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Er is een fout opgetreden bij het ​​activeren van het snapshot.</translation>
+   <translation id="vps_configuration_activate_snapshot_fail" qtlid="169277">Er is een fout opgetreden bij het ​​activeren van de snapshot.</translation>
    <translation id="vps_configuration_desactivate_option" qtlid="48646">Annuleren</translation>
    <translation id="vps_configuration_option_released" qtlid="284893">Niet verlengd</translation>
-   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activeer de Backup storage</translation>
-   <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activeer de Backup storage optie</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activeer Backup Storage</translation>
+   <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activeer de Backup Storage-optie</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Wilt u Backup Storage bestellen op de <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Deze optie zal worden gefactureerd tegen een maandelijks tarief van <span class="red bold">{{ price }} excl. btw</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Voor de eerste betaling, wordt u pro rata gefactureerd voor de resterende dagen vóór de verlengingsdatum van uw VPS.</translation>
@@ -276,25 +276,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Vandaag</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Mijn VPS upgraden</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Mijn VPS upgraden</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Selecteer het VPS-model waarnaar u wilt upgraden.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Model</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/maand</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Het is geheel gratis om te upgraden naar een nieuwer model. De weergegeven prijs is de maandelijkse prijs die overeenkomt met elk model. Voor uw administratie is de maandelijkse prijs van uw huidige aanbieding <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Let op! Het is niet mogelijk om de prestatie van uw VPS te reduceren, alleen upgrades zijn mogelijk.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Gelieve aub de algemene gebruiksvoorwaarden te accepteren. </translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">excl. btw/maand</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Processor:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Opslag:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Waarschuwing</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">U hebt het geselecteerde model al in bezit. Selecteer aub een ander model.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Algemene gebruiksvoorwaarden accepteren</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade uw <span class="italic normal">{{vpsName}}</span> VOS naar {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Prijs tot {{duration}}, de volgende verlengdatum van uw server: </translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Prijs excl. btw:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Prijs incl. btw:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Daarna zal uw server worden gefactureerd voor <span class="red">{{price}} excl. btw/maand </span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Om uw bestelling te bevestigen, ga svp naar betalen door op de knop "Bestellen" te klikken.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Er wordt een nieuwe tab geopend en u wordt automatisch doorgestuurd naar OVH's verlengingsscherm.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Tarief tot {{duration}}:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Hierna bedraagt de prijs van uw server:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Hou er rekening mee, dat het ongeveer 2 uur duurt na de aanvaarding van uw betaling, voordat de upgrade in uw Web Control Panel wordt getoond.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Een herstart is vereist om de prestaties van uw VPS te verhogen.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Overzicht</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Er is een fout opgetreden tijdens de upgrade-aanvraag van uw VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Huidige configuratie</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Bestellen</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Een domein toevoegen</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Een domein toevoegen aan de secundaire DNS</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Toe te voegen domein:</translation>
