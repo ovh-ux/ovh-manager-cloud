@@ -307,7 +307,7 @@ angular.module("managerApp").service("CloudStorageContainer", [
                 $q.resolve(cacheValue) :
                 OvhApiCloudProjectStorage.v6().access({
                     projectId: projectId
-                }).$promise;
+                }, {}).$promise;
 
             return getAccessAndTokenPromise
                 .then(function (accessResult) {

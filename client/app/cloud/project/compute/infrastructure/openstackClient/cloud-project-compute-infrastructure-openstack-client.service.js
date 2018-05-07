@@ -11,7 +11,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
 
 
     getSession ({ serviceName, term }) {
-        return this.OvhApiCloudProjectOpenstackClient.v6().post({ serviceName }).$promise
+        return this.OvhApiCloudProjectOpenstackClient.v6().post({ serviceName }, {}).$promise
             .then(session => {
                 this.session = session;
                 this.updateExpiresAt();
