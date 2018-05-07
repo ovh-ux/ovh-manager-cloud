@@ -121,7 +121,7 @@
    <translation id="dbaasts_menu_project_num" qtlid="250069">Projet {{num}}</translation>
 
    <translation id="vrack_menu_title" qtlid="186284">Vrack</translation>
-   <translation id="vrack_menu_add" qtlid="323106">Créer un vrack</translation>
+   <translation id="vrack_menu_add" qtlid="323106">Créer un vRack</translation>
    <translation id="vrack_menu_project_num" qtlid="323119">Vrack {{num}}</translation>
    <translation id="vrack_service_type_dedicatedserver" qtlid="101913">Serveur dédié</translation>
    <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Private Cloud</translation>
