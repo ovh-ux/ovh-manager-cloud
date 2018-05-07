@@ -329,9 +329,9 @@
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-"@bower_components/ovh-api-services@ovh-ux/ovh-api-services#^3.0.0":
-  version "3.4.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/dc4e97d9a5f71ed32493ecab86e753d780e31f6d"
+"@bower_components/ovh-api-services@https://github.com/ovh-ux/ovh-api-services.git#feature/new-navbar-staging":
+  version "3.2.0"
+  resolved "https://github.com/ovh-ux/ovh-api-services.git#0fe28f2fde4431937413aa4d2fe6c67e7e317e81"
   dependencies:
     grunt-injector "^0.6.0"
 
@@ -6203,16 +6203,16 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@ovh-ux/ovh-ui-angular#^2.2.0:
+"ovh-ui-angular@https://github.com/ovh-ux/ovh-ui-angular.git#feature/new-navbar-staging":
   version "2.13.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-ui-angular/tar.gz/047a90153e98fcdea344fbf789e8593b8b40d45b"
+  resolved "https://github.com/ovh-ux/ovh-ui-angular.git#9523ead737e884178e83c06ae37898bf46d7d174"
   dependencies:
     escape-string-regexp "^1.0.5"
     popper.js "^1.12.9"
 
-ovh-ui-kit@ovh-ux/ovh-ui-kit#^2.2.0:
-  version "2.13.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-ui-kit/tar.gz/58847ff1ddaeefd39faceab335b2ec66f682373c"
+"ovh-ui-kit@https://github.com/ovh-ux/ovh-ui-kit.git#feature/new-navbar-staging":
+  version "2.11.0"
+  resolved "https://github.com/ovh-ux/ovh-ui-kit.git#fc250de6fa9fdb8c819c79478ffae14148a0c5c7"
   dependencies:
     less-plugin-remcalc "^0.0.1"
 
