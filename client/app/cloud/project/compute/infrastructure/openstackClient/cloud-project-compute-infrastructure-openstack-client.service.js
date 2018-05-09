@@ -33,11 +33,11 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
         this.send(`${action}\n`);
     }
 
-    updateExpiresAt() {
+    updateExpiresAt () {
         this.expiresAt = moment(this.session.expires).fromNow(true);
     }
 
-    ping(ws) {
+    ping () {
         this.updateExpiresAt();
         this.ws.send("1");
     }
@@ -70,26 +70,28 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
             if (this.success) {
                 return;
             }
-            if (!this.retry) {
+            if (!this.retry && moment(this.session.expires).isAfter()) {
                 this.retry = true;
                 this.initWebSocket(session, term);
                 return;
             }
+            this.ServiceHelper.errorHandler("cpci_openstack_client_session_closed", "iaas.pci-project.compute.openstack-console")({ data: "Expired Session" });
             defer.reject();
-            this.ServiceHelper.errorHandler("cpci_openstack_client_session_closed", "iaas.pci-project.compute.openstack-console")({data : "Expired Session"});
         };
 
         this.ws.onerror = err => {
-            defer.reject(err);
             this.ServiceHelper.errorHandler("cpci_openstack_client_session_error", "iaas.pci-project.compute.openstack-console")(err);
-        }
+            defer.reject(err);
+        };
 
         return defer.promise;
     }
 
     close () {
         this.success = true;
-        this.ws && this.ws.close();
+        if (this.ws) {
+            this.ws.close();
+        }
     }
 
     send (data) {
@@ -101,7 +103,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
 
     clear () {
         // to clear the line before sending data
-        this.ws.send("0\x15\x0b")
+        this.ws.send("0\x15\x0b");
     }
 
     setRegion (region) {
@@ -119,7 +121,7 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
         this.ws.send(`2${JSON.stringify(config)}`);
     }
 
-    wsReady() {
+    wsReady () {
         return this.ws && this.ws.opened;
     }
 
