@@ -263,7 +263,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
             promises.push(OvhApiCloudProjectInstance.v6().activeMonthlyBilling({
                 serviceName: self.serviceName,
                 instanceId: self.id
-            }).$promise.then(vmOptions => {
+            }, {}).$promise.then(vmOptions => {
                 self.monthlyBilling = vmOptions.monthlyBilling;
                 self.planCode = self.planCode.replace("consumption", "monthly");
                 $rootScope.$broadcast('compute.infrastructure.vm.monthlyBilling.status-update', self.monthlyBilling.status, "OK", self);
@@ -428,7 +428,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
             instanceId: self.id,
             imageId: image ? image.id : undefined,
             rescue: enable
-        }).$promise;
+        }, {}).$promise;
     };
 
     /**
@@ -456,7 +456,7 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
         return OvhApiCloudProjectInstance.v6().resume({
             serviceName: this.serviceName,
             instanceId: this.id
-        }).$promise;
+        }, {}).$promise;
     };
 
     /**

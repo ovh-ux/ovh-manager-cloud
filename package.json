@@ -1,6 +1,6 @@
 {
   "name": "cloud",
-  "version": "7.1.3",
+  "version": "7.1.4",
   "license": "BSD-3-Clause",
   "description": "OVH Cloud control panel",
   "author": "OVH SAS",
@@ -190,7 +190,7 @@
     "update-webdriver": "node node_modules/protractor/bin/webdriver-manager update",
     "commit": "npm-scripts-config commit",
     "commitmsg": "npm-scripts-config commitmsg",
-    "version": "npm-scripts-config version && npm-bower-sync-ver && git add bower.json",
+    "version": "npm-scripts-config version",
     "postversion": "git push && git push --tags",
     "preview-changelog": "npm-scripts-config preview-changelog",
     "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'client/bower_components', 'junction') } catch (e) { }\""

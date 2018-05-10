@@ -1,3 +1,24 @@
+<a name="7.1.4"></a>
+## [7.1.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.3...v7.1.4) (2018-05-01)
+
+
+### Bug Fixes
+
+* configure translations for criteria adder ([11705b4](https://github.com/ovh-ux/ovh-manager-cloud/commit/11705b4))
+* rename services to v6 and v7 ([8dec1b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/8dec1b2)), closes [ovh-ux/ovh-api-services#68](https://github.com/ovh-ux/ovh-api-services/issues/68)
+* **navbar:** language button position and format ([129ac0c](https://github.com/ovh-ux/ovh-manager-cloud/commit/129ac0c))
+* **pci:** fix credit for cloud ([d2ebab7](https://github.com/ovh-ux/ovh-manager-cloud/commit/d2ebab7))
+* **pci:** revert infrastructure list ([c8e3e2e](https://github.com/ovh-ux/ovh-manager-cloud/commit/c8e3e2e))
+* **pci:** update vm status in the view when the model changes ([e914240](https://github.com/ovh-ux/ovh-manager-cloud/commit/e914240))
+
+
+### Features
+
+* **oui-stepper:** add oui-stepper component default translations ([d645bda](https://github.com/ovh-ux/ovh-manager-cloud/commit/d645bda))
+* **pci:** Add search and filters to infrastructure list ([42d5de7](https://github.com/ovh-ux/ovh-manager-cloud/commit/42d5de7))
+
+
+
 <a name="7.1.3"></a>
 ## [7.1.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.2...v7.1.3) (2018-04-17)
 

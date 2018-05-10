@@ -150,7 +150,7 @@ describe("Service: CloudStorageContainers", function () {
             expect(cloudProjectStorageV6.static).toHaveBeenCalledWith(jasmine.objectContaining({
                 projectId: projectId,
                 containerId: "xxx-static-id"
-            }));
+            }), jasmine.objectContaining({}));
 
             done();
         });

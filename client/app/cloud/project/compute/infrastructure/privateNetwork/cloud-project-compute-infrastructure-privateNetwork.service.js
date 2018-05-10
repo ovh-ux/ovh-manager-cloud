@@ -72,7 +72,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     fetchPrivateNetworks (serviceName) {
         this.loaders.privateNetwork.query = true;
         this.OvhApiCloudProjectNetworkPrivate.v6().resetCache();
-        
+
         return this.OvhApiCloudProjectNetworkPrivate.v6().query({
             serviceName: serviceName
         }).$promise.catch(() => this.CloudMessage.error(this.$translate.instant("cpcipnd_fetch_private_networks_error")))
@@ -134,7 +134,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
 
         return this.OvhApiCloudProjectNetworkPrivate.v6().save(_.assign(privateNetwork, {
             serviceName: projectId
-        })).$promise.then(network => {
+        }), {}).$promise.then(network => {
             const options = {
                 serviceName: projectId,
                 privateNetworkId: network.id,
@@ -187,7 +187,7 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
         return this.Subnet.v6().save(_.assign(subnet, {
             serviceName: projectId,
             networkId: networkId
-        })).$promise
+        }), {}).$promise
         .catch(error => {
             this.CloudMessage.error(this.$translate.instant("cpcipnd_save_error", {
                 message: error.data.message || JSON.stringify(error)
