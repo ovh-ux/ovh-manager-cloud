@@ -257,12 +257,6 @@
     angular-mock "^1.0.0"
     less-plugin-remcalc "^0.0.1"
 
-"@bower_components/ovh-angular-module-status@ovh-ux/ovh-angular-module-status#^4.0.1":
-  version "4.0.1"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-module-status/tar.gz/cecc988e95fe8ad0b0ff1af11ca7702da109588c"
-  dependencies:
-    less-plugin-remcalc "^0.0.1"
-
 "@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.0.1":
   version "6.0.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/2720d9eb96e14fe106ed977fdfb20f79fc57bcc8"

@@ -39,7 +39,6 @@ angular.module("managerApp", [
     "ng-slide-down",
     "ovh-angular-jsplumb",
     "tmh.dynamicLocale",
-    "ovh-angular-module-status",
     "ovh-angular-otrs",
     "ovh-api-services",
 

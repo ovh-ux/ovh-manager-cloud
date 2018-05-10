@@ -421,6 +421,13 @@ module.exports = function (grunt) {
                     src: ["generated/*"]
                 }, {
                     expand: true,
+                    cwd: "node_modules",
+                    dest: "<%= yeoman.dist %>/<%= yeoman.client %>/node_modules",
+                    src: [
+                        "ovh-ui-kit/**/*.{ttf,woff,woff2,svg,eot}"
+                    ]
+                }, {
+                    expand: true,
                     dest: "<%= yeoman.dist %>",
                     src: [
                         "package.json",
