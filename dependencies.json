@@ -12,7 +12,6 @@
     "js": [
         "node_modules/@bower_components/jquery/dist/jquery.js",
         "node_modules/@bower_components/angular/angular.js",
-        "node_modules/@bower_components/ovh-ui-angular/dist/oui-angular.min.js",
         "node_modules/@bower_components/angular-animate/angular-animate.js",
         "node_modules/@bower_components/angular-aria/angular-aria.js",
         "node_modules/@bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
@@ -88,6 +87,7 @@
         "node_modules/@bower_components/ovh-angular-list-view/dist/ovh-angular-list-view.min.js",
         "node_modules/@bower_components/jsurl/lib/jsurl.js",
         "node_modules/@bower_components/moment-duration-format/lib/moment-duration-format.js",
+        "node_modules/ovh-ui-angular/dist/oui-angular.min.js",
         "node_modules/popper.js/dist/umd/popper.js"
     ],
     "dev": {

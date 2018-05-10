@@ -12,9 +12,9 @@
    <translation id="cpc_ssh_key_explain_2" qtlid="366554">Existen clientes SSH para cada sistema operativo. Para más información, consulte nuestra <a href="{{ createUrl }}" target="_blank">guía<i class="fa fa-external-link" aria-hidden="true"></i></a> sobre la creación de llaves SSH.</translation>
    <translation id="cpc_ssh_key_explain_3" qtlid="366567">Recuerde que también puede <a href="{{ addUrl }}" target="_blank">configurar llaves SSH adicionales<i class="fa fa-external-link" aria-hidden="true"></i></a> en su instancia para dar acceso a otras personas o <a href="{{ changeUrl }}" target="_blank">modificar su llave SSH en caso de pérdida<i class="fa fa-external-link" aria-hidden="true"></i></a>.</translation>
 
-   <translation id="cpc_ssh_add_button" qtlid="248561">Añadir clave</translation>
+   <translation id="cpc_ssh_add_button" qtlid="248561">Añadir una llave</translation>
    <translation id="cpc_ssh_add_button_cancel" qtlid="248704">Cancelar</translation>
-   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Añadir clave</translation>
+   <translation id="cpc_ssh_add_button_submit" qtlid="248587">Añadir llave</translation>
    <translation id="cpc_ssh_add_submit_success" qtlid="248600">Clave disponible</translation>
    <translation id="cpc_ssh_add_name" qtlid="248626">Nombrar clave</translation>
    <translation id="cpc_ssh_add_key" qtlid="366580">Introduzca su llave de 4096 bytes.</translation>

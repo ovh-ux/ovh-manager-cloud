@@ -7,7 +7,7 @@
    <translation id="logs_operation_failed" qtlid="473908">L'opération {{operation_id}} a échouée</translation>
    <translation id="logs_operation_error" qtlid="473921">Une erreur est survenue lors de l'opération: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Flux de données</translation>
-   <translation id="logs_index_title" qtlid="473934">Index elasticsearch</translation>
+   <translation id="logs_index_title" qtlid="473934">Index Elasticsearch</translation>
    <translation id="logs_main_offer" qtlid="424389">Offre principale</translation>
    <translation id="logs_finish_configuration" qtlid="473947">Terminer la configuration</translation>
    <translation id="logs_next" qtlid="17743">Suivant</translation>
@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activer cette option</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Vous devez contacter le support pour réactiver cette option '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Désactiver cette option</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'. Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'? Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Une erreur est survenue lors de la désactivation de '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">L'option {{optionType}} a été désactivé avec succès</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Pour gérer vos options, allez à la page</translation>
@@ -424,26 +424,26 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Période de grâce (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Répéter les notifications</translation>
-   <translation id="streams_alerts_delete" qtlid="286903">Supprimer l'alerte</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">L'alerte {{alertName}} a été supprimée avec succès.</translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">L'alerte est levée lorsqu'il y a <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> message(s) lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">L'alerte est levée lorsque le champ <strong>{{field}}</strong> a une valeur <strong>{{thresholdType}} {{constraintType}}</strong> de <strong>{{threshold}}</strong> lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">L'alerte est levée lorsqu'un message contenant le champ <strong>{{field}}:"{{value}}"</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">L'alerte est levée lorsqu'un message ayant le champ <strong>{{field}}</strong> avec la valeur <strong>"{{value}}"</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
    <translation id="create_alert" qtlid="469569">Créer une alerte</translation>
    <translation id="counter_alert" qtlid="425494">Compteur</translation>
    <translation id="numeric_alert" qtlid="425481">Valeur numérique</translation>
    <translation id="textual_alert" qtlid="425468">Contenu textuel</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Créer une condition de type compteur</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Ajouter une condition de champ d'aggrégation</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Ajouter une condition de champ de contenu</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Ajouter une condition d'aggrégation d'un champ</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Ajouter une condition sur le contenu d'un champ</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Modifier la condition de type compteur</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition de champ d'aggrégation</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition de champ de contenu</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition d'aggrégation d'un champ</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition sur le contenu d'un champ</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu d'un champ est égal à une valeur définie.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Nom</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Titre de la condition de l'alerte.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Période de temps (minutes)</translation>
@@ -564,7 +564,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Délimiteur entre chaque message</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Ligne</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
@@ -602,7 +602,7 @@
    <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Préfixe de taille de message tel que spécifié dans la RFC 5425. Cependant, les retours à la lignes agissent aussi comme délimiteur, afin de récupérer des entrées corrompues ou invalides.</translation>
    <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">Ce délimiteur ne doit être utilisé que pour le protocole Cap'n Proto</translation>
    <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Nombre de messages gardés en mémoire vive par Flowgger avant que celui-ci ne les envoie à Kafka. Une valeur élevée est plus performante, mais peut entraîner une latence d'indexation si vous envoyez peu de messages.</translation>
-   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuration flowgger a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
+   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuration Flowgger a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
    <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Une erreur est survenue lors de la modification de la configuration Flowgger de {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_logstash_update_success" qtlid="477795">La configuration Logstash a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
    <translation id="logs_inputs_logstash_update_error" qtlid="477808">Une erreur est survenue lors de la modification de la configuration Logstash de {{inputTitle}}: {{message}}</translation>
@@ -624,7 +624,7 @@
    <translation id="logs_index_col_description" qtlid="9238">Description</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Espace disponible</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Index partagé</translation>
-   <translation id="logs_index_elastic_search_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_index_elastic_search_access" qtlid="477938">Accès Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Supprimer l'index</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Êtes-vous sûr de vouloir supprimer l'index <strong>{{name}}</strong> ?</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Une erreur est survenue lors du chargement des options</translation>
@@ -666,7 +666,7 @@
    <translation id="logs_aliases_col_indices" qtlid="478198">Index liés</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Modifier</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Supprimer</translation>
-   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Accès Elasticsearch</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Attacher du contenu à l'alias</translation>
    <translation id="logs_aliases_delete_title" qtlid="478211">Supprimer l'alias</translation>
    <translation id="logs_alias_delete_message" qtlid="478224">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
@@ -702,8 +702,8 @@
    <translation id="logs_aliases_attach_index_fail" qtlid="478510">Échec de l'attachement à l'index '{{index}}': {{message}}</translation>
    <translation id="logs_aliases_detach_index_error" qtlid="478523">Une erreur est survenu lors du détachement de l'index '{{indexName}}': {{message}}</translation>
    <translation id="logs_aliases_detach_index_fail" qtlid="478536">Échec du détachement de l'index '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Des flux de données sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les flux de données pour pouvoir ajouter un index.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Des index Elasticsearch sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les index pour pouvoir ajouter un flux de données.</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Des flux de données sont attachés à cet alias. Seuls des flux de données ou des index Elasticsearch peuvent être attachés. Détachez tous les flux de données pour pouvoir ajouter un index.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Des index Elasticsearch sont attachés à cet alias. Seuls des flux de données ou des index Elasticsearch peuvent être attachés. Détachez tous les index pour pouvoir ajouter un flux de données.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Rôles</translation>

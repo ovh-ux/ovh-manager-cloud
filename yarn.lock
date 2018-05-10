@@ -332,19 +332,6 @@
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-"@bower_components/ovh-ui-angular@ovh-ux/ovh-ui-angular#^2.2.0":
-  version "2.12.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-ui-angular/tar.gz/d5d77a342f24ce278094d4533dc1bd60c3a4dfef"
-  dependencies:
-    escape-string-regexp "^1.0.5"
-    popper.js "^1.12.9"
-
-"@bower_components/ovh-ui-kit@ovh-ux/ovh-ui-kit#^2.2.0":
-  version "2.12.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-ui-kit/tar.gz/50b9e4a0de3befc72cc0156da9efd791045313ca"
-  dependencies:
-    less-plugin-remcalc "^0.0.1"
-
 "@bower_components/uri.js@medialize/URI.js#~1.15.0":
   version "1.15.2"
   resolved "https://codeload.github.com/medialize/URI.js/tar.gz/c51da7e8c0bdf46ae926d2388d3032e2347c61db"
@@ -5880,7 +5867,7 @@ node-pre-gyp@^0.9.0:
     semver "^5.3.0"
     tar "^4"
 
-node-sass@^4.5.3, node-sass@^4.7.2:
+node-sass@^4.7.2, node-sass@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.9.0.tgz#d1b8aa855d98ed684d6848db929a20771cc2ae52"
   dependencies:
@@ -6196,6 +6183,19 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   resolved "https://registry.yarnpkg.com/ovh-protractor-jasmine2-logs-reporter/-/ovh-protractor-jasmine2-logs-reporter-0.0.1.tgz#60717603d7419b149482355a7bda25ed109c872a"
   dependencies:
     q "^1.4.1"
+
+ovh-ui-angular@ovh-ux/ovh-ui-angular#^2.2.0:
+  version "2.13.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-ui-angular/tar.gz/047a90153e98fcdea344fbf789e8593b8b40d45b"
+  dependencies:
+    escape-string-regexp "^1.0.5"
+    popper.js "^1.12.9"
+
+ovh-ui-kit@ovh-ux/ovh-ui-kit#^2.2.0:
+  version "2.13.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-ui-kit/tar.gz/58847ff1ddaeefd39faceab335b2ec66f682373c"
+  dependencies:
+    less-plugin-remcalc "^0.0.1"
 
 p-limit@^1.1.0:
   version "1.2.0"
