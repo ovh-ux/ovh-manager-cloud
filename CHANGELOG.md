@@ -1,3 +1,24 @@
+<a name="7.1.5"></a>
+## [7.1.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.4...v7.1.5) (2018-05-10)
+
+
+### Bug Fixes
+
+* **pci:** don't retry openstack client if expired ([f032912](https://github.com/ovh-ux/ovh-manager-cloud/commit/f032912))
+* **pci:** fix some objects not passing in body ([c9017bb](https://github.com/ovh-ux/ovh-manager-cloud/commit/c9017bb))
+* **pci:** fix the actions menu to be completely visible ([68bf932](https://github.com/ovh-ux/ovh-manager-cloud/commit/68bf932))
+* **pci:** remove body from post call ([c0f31b0](https://github.com/ovh-ux/ovh-manager-cloud/commit/c0f31b0))
+* **ui-kit:** fix path for ui-kit less ([8e1cfce](https://github.com/ovh-ux/ovh-manager-cloud/commit/8e1cfce))
+
+
+### Features
+
+* **oui-modal:** change helper to handle oui-modal ([2914ceb](https://github.com/ovh-ux/ovh-manager-cloud/commit/2914ceb))
+* **translations:** add read/unread notification ([beaa863](https://github.com/ovh-ux/ovh-manager-cloud/commit/beaa863))
+* **vps:** update vps upgrade including oui-stepper ([c07a98e](https://github.com/ovh-ux/ovh-manager-cloud/commit/c07a98e))
+
+
+
 <a name="7.1.4"></a>
 ## [7.1.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.3...v7.1.4) (2018-05-01)
 
