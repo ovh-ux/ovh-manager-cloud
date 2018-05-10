@@ -425,10 +425,11 @@ angular.module("managerApp").factory("CloudProjectComputeInfraVrackVmFactory", (
         $rootScope.$broadcast('compute.infrastructure.vm.status-update', self.status, oldStatus, self);
         return OvhApiCloudProjectInstance.v6().rescueMode({
             serviceName: self.serviceName,
-            instanceId: self.id,
+            instanceId: self.id
+        }, {
             imageId: image ? image.id : undefined,
             rescue: enable
-        }, {}).$promise;
+        }).$promise;
     };
 
     /**
