@@ -6199,7 +6199,7 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
 
 "ovh-ui-angular@https://github.com/ovh-ux/ovh-ui-angular.git#feature/new-navbar-staging":
   version "2.13.0"
-  resolved "https://github.com/ovh-ux/ovh-ui-angular.git#9523ead737e884178e83c06ae37898bf46d7d174"
+  resolved "https://github.com/ovh-ux/ovh-ui-angular.git#f1555acc8a68770dcda317c398b64e9b69f25d8b"
   dependencies:
     escape-string-regexp "^1.0.5"
     popper.js "^1.12.9"

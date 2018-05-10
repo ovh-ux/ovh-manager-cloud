@@ -1,4 +1,4 @@
-class MeAlertsV2Service {
+class NavbarNotificationService {
     constructor ($interval, $q, $translate, CloudMessage, MANAGER_URLS, OvhApiNotificationAapi, TARGET, UNIVERSE) {
         this.$interval = $interval;
         this.$q = $q;
@@ -41,8 +41,8 @@ class MeAlertsV2Service {
                 date: moment(),
                 time: this._formatTime(moment()),
                 level: "error",
-                subject: "error",
-                description: "Les notitfication n'ont pas pu être chargé"
+                subject: this.$translate.instant("common_navbar_notification_error_subject"),
+                description: this.$translate.instant("common_navbar_notification_error")
             }];
         });
     }
@@ -51,36 +51,14 @@ class MeAlertsV2Service {
         return moment(dateTime).fromNow();
     }
 
-    _findURL (urlDetails) {
-        let href = "";
-        switch (urlDetails.universe) {
-            case "DEDICATED":
-                href = `${this.MANAGER_URLS.dedicated}${urlDetails.relativePath.replace("#/")}`;
-                break;
-            case "GAMMA":
-                href = `${this.MANAGER_URLS.gamma}${urlDetails.relativePath}`;
-                break;
-            case "TELECOM":
-                href = `${this.MANAGER_URLS.telecom}${urlDetails.relativePath}`;
-                break;
-            case "WEB":
-                href = `${this.MANAGER_URLS.web}${urlDetails.relativePath}`;
-                break;
-            default:
-                href = `#${urlDetails.relativePath}`;
-                break;
-        }
-        return href;
-    }
-
-    _toggleSublinkAction (toUpdate) {
+    _toggleSublinkAction (toUpdate, linkClicked) {
         if (toUpdate.isActive && !toUpdate.updating) {
             toUpdate.updating = true;
             this.OvhApiNotificationAapi.post({ completed: [toUpdate.id] }).$promise.then(() => {
                 toUpdate.isActive = false;
                 toUpdate.acknowledged = true;
             }).finally(() => { toUpdate.updating = false; });
-        } else if (!toUpdate.isActive && !toUpdate.updating) {
+        } else if (!toUpdate.isActive && !toUpdate.updating && !linkClicked) {
             toUpdate.updating = true;
             this.OvhApiNotificationAapi.post({ acknowledged: [toUpdate.id] }).$promise.then(() => {
                 toUpdate.isActive = true;
@@ -91,10 +69,11 @@ class MeAlertsV2Service {
 
     convertSubLink (notification) {
         notification.time = this._formatTime(notification.date);
-        notification.url = this._findURL(notification.urlDetails);
+        notification.url = notification.urlDetails.href;
         notification.isActive = _.contains(["acknowledged", "delivered"], notification.status);
         notification.acknowledged = _.contains(["acknowledged", "completed", "unknown"], notification.status);
-        notification.onClick = toUpdate => this._toggleSublinkAction(toUpdate);
+        notification.actionClicked = toUpdate => this._toggleSublinkAction(toUpdate);
+        notification.linkClicked = toUpdate => this._toggleSublinkAction(toUpdate, true);
         return notification;
     }
 
@@ -132,7 +111,7 @@ class MeAlertsV2Service {
             this._setRefresfTime(sublinks);
             const navbarContent = {
                 name: "notifications",
-                title: this.$translate.instant("status_menu_title"),
+                title: this.$translate.instant("common_navbar_notification_title"),
                 iconClass: "icon-notifications",
                 limitTo: 10,
                 onClick: () => this.aknowledgeAll(),
@@ -145,4 +124,4 @@ class MeAlertsV2Service {
     }
 }
 
-angular.module("managerApp").service("MeAlertsV2Service", MeAlertsV2Service);
+angular.module("managerApp").service("NavbarNotificationService", NavbarNotificationService);
