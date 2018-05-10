@@ -132,9 +132,9 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     savePrivateNetwork (projectId, privateNetwork, onSuccess) {
         this.loaders.save = true;
 
-        return this.OvhApiCloudProjectNetworkPrivate.v6().save(_.assign(privateNetwork, {
+        return this.OvhApiCloudProjectNetworkPrivate.v6().save({
             serviceName: projectId
-        }), {}).$promise.then(network => {
+        }, privateNetwork).$promise.then(network => {
             const options = {
                 serviceName: projectId,
                 privateNetworkId: network.id,
@@ -184,10 +184,10 @@ class CloudProjectComputeInfrastructurePrivateNetworkService {
     saveSubnet (projectId, networkId, subnet) {
         this.loaders.save = true;
 
-        return this.Subnet.v6().save(_.assign(subnet, {
+        return this.Subnet.v6().save({
             serviceName: projectId,
-            networkId: networkId
-        }), {}).$promise
+            networkId
+        }, subnet).$promise
         .catch(error => {
             this.CloudMessage.error(this.$translate.instant("cpcipnd_save_error", {
                 message: error.data.message || JSON.stringify(error)
