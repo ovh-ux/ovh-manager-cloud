@@ -43,32 +43,6 @@
     }
 }
 
-.oui-datagrid {
-    &__cell {
-        // Fix dropdown menu in a table that is not in the action column.  
-        // Without this fix the dropdown menu would procs the overflow-y property and the dropdown would be clipped behind the container div.
-        // See IPLB => private networks "server farm" column for use case.
-        // TODO : Remove when https://github.com/ovh-ux/ovh-ui-kit/pull/148 is merged and released.
-        position: static;
-
-        // TODO: remove this when the progress-bar will be stable
-        .oui-progress {
-            margin: rem-calc(8) 0;
-        }
-    }
-}
-
 .tui-dropdown-menu {
     z-index: 10;
-}
-
-// TODO: remove this when the progress-bar will be stable
-.oui-progress {
-    &__label {
-        white-space: nowrap;
-    }
-
-    &__bar {
-        position: static;
-    }
 }
