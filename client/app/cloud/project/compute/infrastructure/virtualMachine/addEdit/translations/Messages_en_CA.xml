@@ -66,7 +66,7 @@
    <translation id="cpcivm_addedit_flavor_ovh_ram_info" qtlid="290407">Guaranteed resources, high availability storage, high frequency/core. </translation>
    <translation id="cpcivm_addedit_flavor_ovh_ssd_cpu_info" qtlid="290420">Guaranteed resources, low latency SSD storage, optimised RAM/price ratio.</translation>
    <translation id="cpcivm_addedit_flavor_ovh_ssd_ram_info" qtlid="290433">Guaranteed resources, low latency SSD storage, optimised RAM/price ratio.</translation>
-   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">There are no offers for this range.</translation>
+   <translation id="cpcivm_addedit_flavor_empty" qtlid="248106">There are no offers for this series.</translation>
    <translation id="cpcivm_addedit_flavor_not_available_region" qtlid="400247">Not available in this region </translation>
    <translation id="cpcivm_addedit_flavor_loading" qtlid="248119">Loading available offers.</translation>
    <translation id="cpcivm_addedit_flavor_downtime_warn" qtlid="303991">The server should restart during the operation! It will therefore be unavailable for a few seconds.</translation>

@@ -12,7 +12,7 @@
    <translation id="metrics_table_action" qtlid="56105">Toiminto</translation>
 
    <translation id="metrics_token_state_active" qtlid="55133">Aktiivinen</translation>
-   <translation id="metrics_token_state_inactive" qtlid="105310">Toimeton</translation>
+   <translation id="metrics_token_state_inactive" qtlid="105310">Pois käytöstä</translation>
 
    <translation id="metrics_token_explain" qtlid="439918">Tunnisteet suojaavat pääsyä aikasarjojesi tietoihin. Jokainen tunniste määrittää lupia ja voi sisältää "etikettejä" (avain, pari, arvo). Etiketit lisätään automaattisesti lukemisen suodattimena ja kiinnitetään jokaiseen kirjoitettuun tietoon, jolla on näitä etikettejä sisältävä tunniste. Lue lisää<a href="{{ guidesUrl }}" target="_blank">ohjeistamme.</a></translation>
 <!-- Page: token -->
