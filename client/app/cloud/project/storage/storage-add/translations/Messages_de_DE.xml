@@ -57,7 +57,7 @@
    <translation id="add_instance_choose" qtlid="186115">Auswählen...</translation>
    <translation id="add_container_region" qtlid="30802">Rechenzentrum</translation>
    <translation id="add_container_flavor" qtlid="2642">Typ</translation>
-   <translation id="add_container_ssh" qtlid="21859">SSH Schlüssel</translation>
+   <translation id="add_container_ssh" qtlid="21859">SSH-Schlüssel</translation>
    <translation id="add_instance_new_ssh" qtlid="242990">Einen SSH Schlüssel erstellen</translation>
    <translation id="add_container_ssh_enter" qtlid="243003">Geben Sie Ihren Schlüssel an</translation>
    <translation id="add_submit" qtlid="37923">Hinzufügen</translation>

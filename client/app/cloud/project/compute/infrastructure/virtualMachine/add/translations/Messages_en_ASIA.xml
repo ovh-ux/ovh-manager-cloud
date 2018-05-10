@@ -85,16 +85,16 @@
    <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Impossible de récupérer la liste des offres disponibles : {{message}}</translation>
    <translation id="cpcivm_add_step4_title" qtlid="483512">Configuring your instance</translation>
    <translation id="cpcivm_add_step5_title" qtlid="483525">Select a billing period</translation>
-   <translation id="cpcivm_add_step5_message" qtlid="483538">The monthly installments will be charged as soon as the instance is started up and allows you to save 50% on server costs. For use for short periods only, we recommend that you choose hourly billing and switch to the monthly package later if need be.</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">The monthly installments will be charged as soon as the instance is started up and allows you to save 50% on server costs. For use for short periods only, we recommend that you choose hourly billing and switch to monthly billing later if need be.</translation>
    <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Hourly </translation>
    <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Monthly</translation>
-   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Une erreur s'est produite lors de la création de votre nouvelle instance : {{message}}</translation>
+   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">An error occurred when creating your new instance: {{message}}</translation>
    <translation id="cpcivm_add_summary_title" qtlid="4082">Summary</translation>
    <translation id="cpcivm_add_summary_os" qtlid="168835">Operating system</translation>
    <translation id="cpcivm_add_summary_region" qtlid="32434">Region</translation>
    <translation id="cpcivm_add_summary_instance" qtlid="104482">Instance</translation>
    <translation id="cpcivm_add_summary_name" qtlid="3818">Name</translation>
-   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Prix / heure (hors taxes)</translation>
-   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Prix / mois (hors taxes)</translation>
-   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Non renseigné</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Price per hour (excl. VAT)</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Price per month (excl. VAT)</translation>
+   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Not stated</translation>
 </translations>

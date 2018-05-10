@@ -62,7 +62,7 @@
 
    <translation id="vps_dashboard_action_doing" qtlid="149787">Operation wird ausgeführt...</translation>
    <translation id="vps_dashboard_display_name_save" qtlid="222072">Mindestens 2 Zeichen</translation>
-   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Den Namen ändern</translation>
+   <translation id="vps_dashboard_display_name_edit" qtlid="71741">Namen ändern</translation>
    <translation id="vps_dashboard_display_name_min" qtlid="222085">Operation abgebrochen. Es sind mindestens 2 Zeichen erforderlich.</translation>
    <translation id="vps_dashboard_display_name_reset" qtlid="37935">Operation abgebrochen</translation>
 
@@ -275,25 +275,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Heute</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Meinen VPS upgraden</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Meinen VPS upgraden</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Bitte wählen Sie das VPS Modell aus, zu dem gewechselt werden soll.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Modell</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ Monat</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Der Umstieg auf ein neues Modell ist vollständig kostenlos. Der angezeigte Preis ist der monatliche Preis für das jeweilige Modell. Zur Information, der monatliche Preis Ihres derzeitigen Angebots ist <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Achtung ! Es ist nicht möglich, die Leistung des VPS zu reduzieren: nur die Steigerung der Leistung ist möglich.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Bitte akzeptieren Sie die Nutzungsbedingungen.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">/ Monat</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Prozessor:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Storage:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Achtung </translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Sie besitzen bereits das ausgewählte Modell. Bitte wählen Sie ein anderes Modell aus.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Nutzungsbedingungen akzeptieren</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade des VPS <span class="italic normal">{{vpsName}}</span> auf {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Preis bis zum {{duration}}, dem Datum der nächsten Verlängerung Ihres Servers:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Preis zzgl. MwSt:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Preis inkl. MwSt:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Anschließend kostet Ihr Server <span class="red">{{price}} zzgl. MwSt./Monat</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Um Ihre Anfrage zu bestätigen klicken Sie auf "Bestellen" und begleichen Sie den angezeigten Bestellschein.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Es wird dann ein neuer Browser-Tab geöffnet und Sie werden automatisch auf das Verlängerungs-Interface von OVH weitergeleitet.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Preis bis zum {{duration}}:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Danach kostet Ihr Server:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Bitte beachten Sie, dass es nach dem Eingang Ihrer Zahlung etwa 2 Stunden dauert, bis das Upgrade in Ihrem Web Kundencenter angezeigt wird.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Um die Leistung Ihres VPS anzupassen ist ein Neustart erforderlich.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Zusammenfassung</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Bei der Anfrage für das Upgrade Ihres VPS ist ein Fehler aufgetreten.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Derzeitige Konfiguration</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Bestellen</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Eine Domain hinzufügen</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Eine Domain auf dem sekundären DNS hinzufügen</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Hinzuzufügende Domain:</translation>

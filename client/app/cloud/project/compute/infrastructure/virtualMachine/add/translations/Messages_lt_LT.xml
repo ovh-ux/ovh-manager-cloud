@@ -54,9 +54,9 @@
    <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Les instances à mémoire optimisée sont recommandées pour vos bases de données, analyses et calculs en mémoire, ainsi que d'autres applicatifs gourmands en RAM.</translation>
    <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Les instances de calcul accéléré (GPU, FPGA) sont jusqu'à 1 000 fois plus rapides qu'un CPU sur certaines applications (rendering, transcodage vidéo, bio-informatique, Big Data, deep learning, etc.)</translation>
    <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Les instances à ressources partagées (Sandbox) sont adaptées aux tests, recettes et environnements de développement. Leurs performances peuvent légèrement varier au cours du temps.</translation>
-   <translation id="cpcivm_add_step3_label_ram" qtlid="483200">Mémoire vive :</translation>
-   <translation id="cpcivm_add_step3_label_core" qtlid="483213">Processeur :</translation>
-   <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Stockage :</translation>
+   <translation id="cpcivm_add_step3_label_ram" qtlid="483200">Operatyvioji atmintis:</translation>
+   <translation id="cpcivm_add_step3_label_core" qtlid="483213">Procesorius:</translation>
+   <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Saugykla:</translation>
    <translation id="cpcivm_add_step3_label_bandwidth" qtlid="145358">Duomenų kiekis:</translation>
    <translation id="cpcivm_add_step3_value_core" qtlid="483239">{{vcores}} vCores ({{frequency}} GHz)</translation>
    <translation id="cpcivm_add_step3_disabled_NOT_AVAILABLE" qtlid="400247">Neprieinama šiame duomenų centrų regione</translation>

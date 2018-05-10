@@ -236,7 +236,7 @@
    <translation id="cpcivm_addedit_sshkey_help_window_paragraph_generateKeypair" qtlid="296050">Pobierz i dokonaj instalacji. Kliknij na <code>Generate</code> i przenieś mysz na okno, aby wygenerować w pełni losowy klucz.</translation>
    <translation id="cpcivm_addedit_sshkey_help_window_paragraph_saveKeypair" qtlid="248977">Po zakończeniu generowania, skopiuj klucz publiczny do pliku. Zapisz klucz prywatny na swoim komputerze. Będzie Ci on potrzebny, żeby się łączyć z serwerami.</translation>
 
-   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Skrypt po-instalacyjny</translation>
+   <translation id="cpcivm_addedit_postinstall_script" qtlid="64568">Skrypt poinstalacyjny</translation>
    <translation id="cpcivm_addedit_change_flavors_title" qtlid="248990">Zmień typ serwera</translation>
    <translation id="cpcivm_addedit_change_image_title" qtlid="249003">Zmień OS</translation>
    <translation id="cpcivm_addedit_change_script_title" qtlid="272144">Dodaj skrypt poinstalacyjny</translation>

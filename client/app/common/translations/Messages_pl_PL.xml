@@ -523,7 +523,7 @@
    <translation id="common_tile_configuration" qtlid="4406">Konfiguracja</translation>
 
    <translation id="common_tile_subscription" qtlid="28891">Abonament</translation>
-   <translation id="common_tile_subscription_offer" qtlid="38217">Oferta</translation>
+   <translation id="common_tile_subscription_offer" qtlid="38217">Pakiet</translation>
    <translation id="common_tile_subscription_autorenew" qtlid="98300">Odnowienie automatyczne</translation>
    <translation id="common_tile_subscription_expiration_date" qtlid="33010">Data wygasania</translation>
    <translation id="common_tile_subscription_contact" qtlid="32206">Kontakt</translation>

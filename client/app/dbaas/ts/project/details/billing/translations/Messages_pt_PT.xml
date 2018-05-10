@@ -6,7 +6,7 @@
    <translation id="dtpdb_bill_current_month" qtlid="300837">Consumo do mês de <strong>{{month}} {{year}}</strong></translation>
    <translation id="dtpdb_total_current_month" qtlid="300850">Estimativa do custo total para este mês:</translation>
 
-   <translation id="dtpdb_thead_description" qtlid="9238">Descrição</translation>
+   <translation id="dtpdb_thead_description" qtlid="9238">Descrição </translation>
    <translation id="dtpdb_thead_quantity" qtlid="37107">Quantidade</translation>
    <translation id="dtpdb_thead_unit_price" qtlid="259961">Preço unitário</translation>
    <translation id="dtpdb_thead_price" qtlid="32458">Total</translation>

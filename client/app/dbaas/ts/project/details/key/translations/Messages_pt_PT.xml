@@ -17,7 +17,7 @@
    <translation id="dtpdt_key_explain_more_3" qtlid="301448">Para mais informações <a href="{{ tsaas_guide_concepts_url }}" target="_blank">consulte os nossos guias.</a></translation>
 
 
-   <translation id="dtpdt_thead_description" qtlid="9238">Descrição</translation>
+   <translation id="dtpdt_thead_description" qtlid="9238">Descrição </translation>
    <translation id="dtpdt_thead_permissions" qtlid="6946">Permissões </translation>
    <translation id="dtpdt_thead_key" qtlid="301461">Chave da API</translation>
    <translation id="dtpdt_thead_tags" qtlid="11519">Tags</translation>
