@@ -129,7 +129,7 @@ angular.module("managerApp")
             OvhApiCloudProjectInstance.v6().activeMonthlyBilling({
                 serviceName: $stateParams.projectId,
                 instanceId: self.instanceToMonthly
-            }).$promise.then(function () {
+            }, {}).$promise.then(function () {
                 init();
                 // reset loaders and instance to activate
                 self.endInstanceToMonthlyConversion();

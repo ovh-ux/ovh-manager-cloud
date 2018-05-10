@@ -110,7 +110,7 @@ angular.module("managerApp").controller("CloudProjectDetailsCtrl",
 
             return OvhApiCloudProject.v6().cancelCreation({
                 serviceName: _self.projectId
-            }, null).$promise.then(function (result) {
+            }, {}).$promise.then(function (result) {
                 CloudMessage.success($translate.instant("cpd_project_cancel_success"));
                 $rootScope.$broadcast("sidebar_refresh_cloud");
                 $state.go("home");

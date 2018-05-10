@@ -1,196 +1,161 @@
-"use strict";
+class CloudProjectComputeSshCtrl {
+    constructor (OvhApiCloudProjectSshKey, CloudProjectSSHKeyService, $translate, ControllerHelper, CloudMessage,
+                 $stateParams, ovhDocUrl) {
+        this.OvhApiCloudProjectSshKey = OvhApiCloudProjectSshKey;
+        this.CloudProjectSSHKeyService = CloudProjectSSHKeyService;
+        this.$translate = $translate;
+        this.ControllerHelper = ControllerHelper;
+        this.CloudMessage = CloudMessage;
+        this.$stateParams = $stateParams;
+        this.ovhDocUrl = ovhDocUrl;
 
-angular.module("managerApp")
-  .controller("CloudProjectComputeSshCtrl", function (OvhApiCloudProjectSshKey, $scope, $translate, ControllerHelper, CloudMessage, $stateParams, ovhDocUrl) {
+        this.serviceName = $stateParams.projectId;
+        this.addSshKeyForm = null;
+        this.searchSshKeysForm = null;
 
-    var self = this,
-        serviceName = $stateParams.projectId;
-
-    //Datas
-    self.table = {
-        ssh : [],
-        sshKeysFilter: []
-    };
-
-    self.toggle = {
-        openAddSsh  : false,
-        sshDeleteId : null   //Curent sshkey to delete
-    };
-
-    self.order = {
-        by      : 'name',
-        reverse : false
-    };
-
-    //Loader during Datas requests
-    self.loaders = {
-        table : {
-            ssh : false
-        },
-        add : {
-            ssh : false
-        },
-        remove : {
-            ssh : false
-        }
-    };
-
-    var unsubscribeSearchEvent;
-
-    //ssh model to add
-    function initNewSshKey () {
-        self.sshAdd = {
-            serviceName : serviceName,
-            name : null,
-            publicKey  : null
+        this.table = {
+            sshKeysFilter: []
         };
-    }
-
-    function init () {
-        self.getSshKeys();
-        initGuides();
-        initNewSshKey();
-        initSearchBar();
-
-    }
-    function initGuides () {
-        self.guides = {
-            create: ovhDocUrl.getDocUrl("g1769.creating_ssh_keys"),
-            add: ovhDocUrl.getDocUrl("g1924.configuring_additionnal_ssh_key"),
-            change: ovhDocUrl.getDocUrl("g2069.replacing_your_lost_ssh_key_pair")
+        this.toggle = {
+            openAddSsh: false,
+            sshDeleteId: null
         };
-    }
-
-    //---------SEARCH BAR---------
-
-    function initSearchBar () {
-        self.search = {
-            name: null
+        this.order = {
+            by: "name",
+            reverse: false
         };
-
-        if(!unsubscribeSearchEvent) {
-            unsubscribeSearchEvent = $scope.$watch("CloudProjectComputeSshCtrl.search", function () {
-                filterSshKeys();
-            }, true);
-        }
+        this.search = null;
     }
 
-    function isSshKeyMatchSearchCriterias(sshKey) {
-        if (self.search.name && sshKey.name) {
-            return sshKey.name.toLowerCase().indexOf(self.search.name.toLowerCase()) !== -1;
-        }
+    $onInit () {
+        this.initLoaders();
 
-        return true;
+        this.getSshKeys();
+        this.initGuides();
+        this.initNewSshKey();
     }
 
-    function filterSshKeys () {
-        if ($scope.searchSshKeysForm && $scope.searchSshKeysForm.$valid) {
-            var filteredKeys = _.filter(self.table.ssh, isSshKeyMatchSearchCriterias);
-
-            self.table.sshKeysFilter = filteredKeys;
-
-            if (self.table.sshKeysFilter.length){
-                self.orderBy();
+    initLoaders () {
+        this.createKey = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.CloudProjectSSHKeyService.createSSHKey(this.serviceName, this.sshKey),
+            errorHandler: err => this.CloudMessage.error([this.$translate.instant("cpc_ssh_add_submit_error"), err.data && err.data.message || ""].join(" ")),
+            successHandler: () => {
+                this.toggleAddSshKey();
+                this.getSshKeys(true);
+                this.CloudMessage.success(this.$translate.instant("cpc_ssh_add_submit_success"));
             }
-        }
+        });
+
+        this.keys = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.CloudProjectSSHKeyService.getSSHKeys(this.serviceName),
+            errorHandler: err => this.CloudMessage.error([this.$translate.instant("cpc_ssh_error"), err.data && err.data.message || ""].join(" ")),
+            successHandler: () => this.filterSshKeys()
+        });
     }
 
-    //---------TOOLS---------
-
-    self.toggleAddSshKey = function () {
-        if (self.toggle.openAddSsh) {
-            initNewSshKey();
+    getSshKeys (clearCache) {
+        if (this.keys.loading) {
+            return;
         }
-        self.toggle.openAddSsh = !self.toggle.openAddSsh;
-    };
-
-    //---------ORDER---------
-
-    self.orderBy = function (by) {
-        if (by) {
-            if (self.order.by === by) {
-                self.order.reverse = !self.order.reverse;
-            } else {
-                self.order.by = by;
-            }
+        this.toggle.sshDeleteId = null;
+        if (clearCache) {
+            this.OvhApiCloudProjectSshKey.v6().resetQueryCache();
         }
-    };
+        this.keys.load();
+    }
 
-    self.selectSshKey = function(id, active){
-        if (active) {
-            setTimeout(function(){
-                var areaheight=$('#sshkey_'+ id).prop('scrollHeight');
-                $('#sshkey_'+ id).height(areaheight).select();
-            }, 0);
+    postSshKey () {
+        if (this.createKey.loading) {
+            return;
         }
-    };
-
-    //---------SSH---------
-
-    self.getSshKeys = function (clearCache) {
-        if (!self.loaders.table.ssh) {
-            self.toggle.sshDeleteId = null;
-            self.loaders.table.ssh = true;
-            if (clearCache) {
-                OvhApiCloudProjectSshKey.v6().resetQueryCache();
-            }
-            OvhApiCloudProjectSshKey.v6().query({
-                serviceName : serviceName
-            }).$promise.then(function (sshList) {
-                self.table.ssh = sshList;
-                filterSshKeys();
-            }, function (err){
-                self.table.ssh = null;
-                CloudMessage.error( [$translate.instant('cpc_ssh_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.table.ssh = false;
-            });
+        const notUnique = _.find(this.keys.data, sshkey => sshkey.name === this.sshKey.name);
+        if (notUnique) {
+            this.CloudMessage.error(this.$translate.instant("cpc_ssh_add_submit_name_error"));
+            return;
         }
-    };
+        this.createKey.load();
+    }
 
-    self.postSshKey = function () {
-        if (!self.loaders.add.ssh) {
-            var uniq = _.find(self.table.ssh, function (sshkey) {
-                return sshkey.name === self.sshAdd.name;
-            });
-
-            if (uniq) {
-                CloudMessage.error( $translate.instant('cpc_ssh_add_submit_name_error'));
-                return;
-            }
-
-            self.loaders.add.ssh = true;
-            OvhApiCloudProjectSshKey.v6().save(self.sshAdd).$promise.then(function () {
-                self.toggleAddSshKey();
-                self.getSshKeys(true);
-                CloudMessage.success($translate.instant('cpc_ssh_add_submit_success'));
-            }, function (err){
-                CloudMessage.error( [$translate.instant('cpc_ssh_add_submit_error'), err.data && err.data.message || ''].join(' '));
-            })['finally'](function () {
-                self.loaders.add.ssh = false;
-            });
-        }
-    };
-
-    self.openDeleteSshKey = function (sshKey) {
-        ControllerHelper.modal.showModal({
+    openDeleteSshKey (sshKey) {
+        this.ControllerHelper.modal.showModal({
             modalConfig: {
                 templateUrl: "app/cloud/project/compute/ssh/delete/compute-ssh-delete.html",
                 controller: "CloudProjectComputeSshDeleteCtrl",
                 controllerAs: "$ctrl",
                 resolve: {
-                    serviceName: () => serviceName,
+                    serviceName: () => this.serviceName,
                     sshKey: () => sshKey
                 }
             },
             successHandler: () => {
-                self.getSshKeys(true);
-                CloudMessage.success($translate.instant('cpc_ssh_delete_success'));
+                this.getSshKeys(true);
+                this.CloudMessage.success(this.$translate.instant("cpc_ssh_delete_success"));
             },
-            errorHandler: (err) => CloudMessage.error( [$translate.instant('cpc_ssh_delete_error'), err.data && err.data.message || ''].join(' '))
+            errorHandler: err => this.CloudMessage.error([this.$translate.instant("cpc_ssh_delete_error"), err.data && err.data.message || ""].join(" "))
         });
-    };
+    }
 
-    init();
+    initNewSshKey () {
+        this.sshKey = {
+            name: null,
+            publicKey: null
+        };
+    }
 
-});
+    initGuides () {
+        this.guides = {
+            create: this.ovhDocUrl.getDocUrl("g1769.creating_ssh_keys"),
+            add: this.ovhDocUrl.getDocUrl("g1924.configuring_additionnal_ssh_key"),
+            change: this.ovhDocUrl.getDocUrl("g2069.replacing_your_lost_ssh_key_pair")
+        };
+    }
+
+    filterSshKeys () {
+        if (this.searchSshKeysForm && this.searchSshKeysForm.$valid) {
+            let filteredKeys = _.filter(this.keys.data, sshKey => this.isSshKeyMatchSearchCriterias(sshKey));
+
+            this.table.sshKeysFilter = filteredKeys;
+
+            if (this.table.sshKeysFilter.length) {
+                this.orderBy();
+            }
+        }
+    }
+
+    isSshKeyMatchSearchCriterias (sshKey) {
+        if (this.search && sshKey.name) {
+            return sshKey.name.toLowerCase().indexOf(this.search.toLowerCase()) !== -1;
+        }
+
+        return true;
+    }
+
+    toggleAddSshKey () {
+        if (this.toggle.openAddSsh) {
+            this.initNewSshKey();
+        }
+        this.toggle.openAddSsh = !this.toggle.openAddSsh;
+    }
+
+    orderBy (by) {
+        if (by) {
+            if (this.order.by === by) {
+                this.order.reverse = !this.order.reverse;
+            } else {
+                this.order.by = by;
+            }
+        }
+    }
+
+    selectSshKey (id, active) {
+        if (active) {
+            setTimeout(() => {
+                const sshKeyObject = $(`#sshkey_${id}`);
+                const areaHeight = sshKeyObject.prop("scrollHeight");
+                sshKeyObject.height(areaHeight).select();
+            }, 0);
+        }
+    }
+}
+
+angular.module("managerApp").controller("CloudProjectComputeSshCtrl", CloudProjectComputeSshCtrl);
