@@ -40,7 +40,9 @@ module.exports = function (grunt) {
             // configurable paths
             client: "client",
             server: "server",
-            dist: "dist"
+            dist: "dist",
+            npm: "node_modules",
+            assets: "assets"
         },
         express: {
             options: {
@@ -382,6 +384,18 @@ module.exports = function (grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
+            uikit: {
+                files: [{
+                    expand: true,
+                    cwd: "<%= yeoman.npm %>/ovh-ui-kit",
+                    src: [
+                        "packages/**/*.{less,svg}",
+                        "packages/oui-typography/fonts/**/*",
+                        "dist/icons/*"
+                    ],
+                    dest: "<%= yeoman.client %>/<%= yeoman.assets %>/ovh-ui-kit"
+                }]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -394,6 +408,7 @@ module.exports = function (grunt) {
                         "assets/images/{,*/}*.{webp}",
                         "assets/fonts/**/*",
                         "assets/noVNC/**/*",
+                        "assets/ovh-ui-kit/**/*",
                         "bower_components/**/*.{ttf,woff,woff2,svg,eot}",
                         "bower_components/**/translations/*.json",
                         "bower_components/angular-i18n/angular-locale_*-*.js",
@@ -794,6 +809,7 @@ module.exports = function (grunt) {
             "env:all",
             "env:dev",
             "ngconstant",
+            "copy:uikit",
             "concurrent:templates",
             "concurrent:pre",
             "concurrent:server",
@@ -816,125 +832,102 @@ module.exports = function (grunt) {
     grunt.registerTask("test", function (target, option) {
         grunt.config.set("mode", "test");
 
-        if (target === "server") {
-            return grunt.task.run([
-                "env:all",
-                "env:test"/*,
-                 "eslint:server",
-                 "eslint:serverTest"*/
-            ]);
-        }
-
-        else if (target === "client") {
-            return grunt.task.run([
-                "clean:server",
-                "env:all",
-                "ngconstant",
-                "concurrent:templates",
-                "concurrent:pre",
-                "concurrent:test",
-                "injector",
-                "postcss",
-                "ovhTranslation:dev",
-                // "eslint:all",
-                // "eslint:test",
-                "karma:unit"
-            ]);
-        }
-
-        else if (target === "e2e") {
-
-            // Check if it's a remote test
-            if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
-                option = "remote";
-            }
-
-            if (option === "remote") {
+        switch (target) {
+            case "server":
                 return grunt.task.run([
-                    "protractor"
-                ]);
-            }
-
-            else if (option === "prod") {
-                grunt.config.set("mode", "production");
-                return grunt.task.run([
-                    "ngconstant",
-                    "build",
                     "env:all",
-                    "env:prod",
-                    "express:prod",
-                    "protractor"
+                    "env:test"
                 ]);
-            }
-
-            else {
+            case "client":
                 return grunt.task.run([
                     "clean:server",
                     "env:all",
-                    "env:test",
                     "ngconstant",
+                    "copy:uikit",
                     "concurrent:templates",
                     "concurrent:pre",
                     "concurrent:test",
                     "injector",
                     "postcss",
                     "ovhTranslation:dev",
-                    "express:dev",
-                    "protractor"
+                    "karma:unit"
                 ]);
-            }
+            case "e2e":
+                // Check if it's a remote test
+                if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
+                    option = "remote";
+                }
+
+                switch (option) {
+                    case "remote":
+                        return grunt.task.run([
+                            "protractor"
+                        ]);
+                    case "prod":
+                        grunt.config.set("mode", "production");
+                        return grunt.task.run([
+                            "ngconstant",
+                            "build",
+                            "env:all",
+                            "env:prod",
+                            "express:prod",
+                            "protractor"
+                        ]);
+                    default:
+                        return grunt.task.run([
+                            "clean:server",
+                            "env:all",
+                            "env:test",
+                            "ngconstant",
+                            "copy:uikit",
+                            "concurrent:templates",
+                            "concurrent:pre",
+                            "concurrent:test",
+                            "injector",
+                            "postcss",
+                            "ovhTranslation:dev",
+                            "express:dev",
+                            "protractor"
+                        ]);
+                }
+            case "coverage":
+                switch (option) {
+                    case "unit":
+                        return grunt.task.run([
+                            "clean:server",
+                            "env:all",
+                            "env:test",
+                            "ngconstant",
+                            "copy:uikit",
+                            "concurrent:templates",
+                            "concurrent:pre",
+                            "concurrent:test",
+                            "injector",
+                            "postcss",
+                            "ovhTranslation:dev",
+                            "karma:coverage"
+                        ]);
+                    case "integration":
+                        return grunt.task.run([
+                            "env:all",
+                            "env:test"
+                        ]);
+                    case "check":
+                        return grunt.task.run([
+                            "karma:check_coverage"
+                        ]);
+                    default:
+                        return grunt.task.run([
+                            "env:all",
+                            "env:test"
+                        ]);
+                }
+            default:
+                return grunt.task.run([
+                    "test:server",
+                    "test:client"
+                ]);
         }
-
-        else if (target === "coverage") {
-
-            if (option === "unit") {
-                return grunt.task.run([
-                    "clean:server",
-                    "env:all",
-                    "env:test",
-                    "ngconstant",
-                    "concurrent:templates",
-                    "concurrent:pre",
-                    "concurrent:test",
-                    "injector",
-
-                    "postcss",
-                    "ovhTranslation:dev",
-                    //"mocha_istanbul:unit",
-                    "karma:coverage"
-                ]);
-            }
-
-            else if (option === "integration") {
-                return grunt.task.run([
-                    "env:all",
-                    "env:test"/*,
-                     "mocha_istanbul:integration"*/
-                ]);
-            }
-
-            else if (option === "check") {
-                return grunt.task.run([
-                    "karma:check_coverage"/*,
-                     "istanbul_check_coverage"*/
-                ]);
-            }
-
-            else {
-                return grunt.task.run([
-                    "env:all",
-                    "env:test"/*,
-                     "mocha_istanbul",
-                     "istanbul_check_coverage"*/
-                ]);
-            }
-
-        }
-
-        else grunt.task.run([
-                "test:server",
-                "test:client"
-            ]);
     });
 
     grunt.registerTask("build", function () {
@@ -942,6 +935,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             "clean:dist",
             "ngconstant",
+            "copy:uikit",
             "concurrent:templates",
             "concurrent:pre",
             "concurrent:dist",
