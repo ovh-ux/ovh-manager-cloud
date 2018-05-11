@@ -19,9 +19,10 @@ class CloudProjectOpenStackUserAddCtrl {
     confirm () {
         this.saving = true;
         return this.OvhApiCloud.Project().User().v6().save({
-            serviceName: this.serviceName,
+            serviceName: this.serviceName
+        }, {
             description: this.model.value
-        }, {}).$promise
+        }).$promise
             .then(newUser => {
                 this.OpenstackUsersPassword.put(this.serviceName, newUser.id, newUser.password);
                 this.CloudMessage.success(this.$translate.instant("openstackusers_users_userlist_add_submit_success"));
