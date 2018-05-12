@@ -2,51 +2,51 @@
 <translations>
 <!-- Common -->
    <translation id="logs_col_last_modified" qtlid="92380">Latest modification</translation>
-   <translation id="logs_select_options_title" qtlid="469478">Chose option attached</translation>
+   <translation id="logs_select_options_title" qtlid="469478">Choose attached option</translation>
    <translation id="logs_notification_title" qtlid="32386">Notification</translation>
-   <translation id="logs_operation_failed" qtlid="473908">L'opération {{operation_id}} a échouée</translation>
-   <translation id="logs_operation_error" qtlid="473921">Une erreur est survenue lors de l'opération: {{message}}</translation>
+   <translation id="logs_operation_failed" qtlid="473908">Operation {{operation_id}} has failed</translation>
+   <translation id="logs_operation_error" qtlid="473921">An error has occurred completing the operation: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Data stream</translation>
-   <translation id="logs_index_title" qtlid="473934">Index elasticsearch</translation>
-   <translation id="logs_main_offer" qtlid="424389">Offre principale</translation>
-   <translation id="logs_finish_configuration" qtlid="473947">Terminer la configuration</translation>
+   <translation id="logs_index_title" qtlid="473934">Elasticsearch index</translation>
+   <translation id="logs_main_offer" qtlid="424389">Main solution</translation>
+   <translation id="logs_finish_configuration" qtlid="473947">Finish the configuration</translation>
    <translation id="logs_next" qtlid="17743">Next</translation>
    <translation id="logs_previous" qtlid="17431">Previous</translation>
    <translation id="logs_later" qtlid="82305">Later</translation>
-   <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_main_offer_get_error" qtlid="473960">An error has occurred loading the main solution: {{message}}</translation>
+   <translation id="logs_details_error" qtlid="473973">An error has occurred loading the service details: {message}</translation>
 
 <!-- Dashboard -->
-   <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>
-   <translation id="logs_dashboards_description" qtlid="470063">Dashboards are graphical representations of your logs. The various modules (curves, pie charts, counters, statistics, etc.) give you an overall summary view of your data. How many errors occurred during the past 24 hours? Is the trend upward or downward? Which was the most visited page today? How many customers this month? All this information and more is at your fingertips. Having several dashboards means you can display data for specific contexts, which makes the information itself easier to interpret.</translation>
-   <translation id="logs_dashboards_add" qtlid="422296">Ajouter un tableau de bord</translation>
-   <translation id="logs_dashboards_name" qtlid="473986">tableau de bord</translation>
-   <translation id="logs_dashboards_total_used" qtlid="473999">tableaux de bord utilisés</translation>
+   <translation id="logs_dashboards_title" qtlid="422270">Graylog dashboards</translation>
+   <translation id="logs_dashboards_description" qtlid="470063">Dashboards are graphic representations of your logs. The various modules (curves, pie charts, counters, statistics, etc.) give you an overall summary view of your data. Are you looking to find out how many errors occurred over the past 24 hours? Whether the trend is upward or downward? Or which page was most visited today? How many customers this month? All this information and more is at your fingertips. Having several dashboards means that you can display data for specific contexts, which makes the information itself easier to interpret.</translation>
+   <translation id="logs_dashboards_add" qtlid="422296">Add a dashboard</translation>
+   <translation id="logs_dashboards_name" qtlid="473986">dashboard</translation>
+   <translation id="logs_dashboards_total_used" qtlid="473999">dashboards used</translation>
    <translation id="logs_dashboards_col_name" qtlid="3818">Name</translation>
    <translation id="logs_dashboards_col_description" qtlid="9238">Description</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Associated option</translation>
-   <translation id="logs_dashboards_graylog_access" qtlid="426820">Accès Graylog</translation>
-   <translation id="logs_dashboards_col_shared" qtlid="474012">Tableau partagé</translation>
+   <translation id="logs_dashboards_graylog_access" qtlid="426820">Graylog access</translation>
+   <translation id="logs_dashboards_col_shared" qtlid="474012">Shared dashboard</translation>
    <translation id="logs_dashboards_duplicate" qtlid="302717">Copy</translation>
    <translation id="logs_dashboards_delete_title" qtlid="470141">Delete dashboard</translation>
-   <translation id="logs_dashboards_delete_message" qtlid="474025">Êtes-vous sûr de vouloir supprimer le tableau de bord <strong>{{ dashboardName }}</strong> ?</translation>
-   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO ?</translation>
-   <translation id="logs_dashboards_update_title" qtlid="470115">Edit dashboard</translation>
+   <translation id="logs_dashboards_delete_message" qtlid="474025">Are you sure you want to delete the <strong>{{ dashboardName }}</strong> dashboard?</translation>
+   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">You have signed up to the basic solution. To duplicate and add more dashboards, you will need to upgrade to the Professional solution. Would you like to upgrade to the Professional solution?</translation>
+   <translation id="logs_dashboards_update_title" qtlid="470115">Modify dashboard</translation>
    <translation id="logs_dashboards_duplicate_title" qtlid="470076">Duplicate the dashboard</translation>
-   <translation id="logs_dashboards_update_description" qtlid="474051">Pour le tableau de bord <strong>{{ name }}</strong></translation>
-   <translation id="logs_dashboards_duplicate_description" qtlid="474051">Pour le tableau de bord <strong>{{ name }}</strong></translation>
-   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Attach all modules in the new dashboard to the following data stream:</translation>
-   <translation id="logs_dashboards_select_stream" qtlid="474064">Sélectionner un flux de données</translation>
-   <translation id="logs_dashboards_create_success" qtlid="474077">Le tableau de bord '{{dashboardName}}' a été créé avec succès</translation>
-   <translation id="logs_dashboards_update_success" qtlid="474090">Le tableau de bord '{{dashboardName}}' a été modifié avec succès</translation>
-   <translation id="logs_dashboards_delete_success" qtlid="474103">Le tableau de bord '{{dashboardName}}' a été supprimé avec succès</translation>
-   <translation id="logs_dashboards_get_error" qtlid="474116">Une erreur est survenue lors du chargement des tableaux de bord: {{message}}</translation>
-   <translation id="logs_dashboards_get_detail_error" qtlid="474129">Une erreur est survenue lors du chargement du tableau de bord: {{message}}</translation>
-   <translation id="logs_dashboards_delete_error" qtlid="474142">Une erreur est survenue lors de la suppression du tableau de bord '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_create_error" qtlid="474155">Une erreur est survenue lors de la création du tableau de bord '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_update_error" qtlid="474168">Une erreur est survenue lors de la modification du tableau de bord '{{dashboardName}}': {{message}}</translation>
-   <translation id="logs_dashboards_quota_get_error" qtlid="474181">Une erreur est survenue lors du chargement du quota: {{message}}</translation>
-   <translation id="logs_dashboards_get_graylog_url_error" qtlid="474194">L'URL de Graylog n'a pas été trouvé pour le tableau de bord '{{dashboardName}}'</translation>
+   <translation id="logs_dashboards_update_description" qtlid="474051">For the <strong>{{ name }}</strong> dashboard</translation>
+   <translation id="logs_dashboards_duplicate_description" qtlid="474051">For the <strong>{{ name }}</strong> dashboard</translation>
+   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Attach all modules in the new dashboard to the following data stream (optional):</translation>
+   <translation id="logs_dashboards_select_stream" qtlid="474064">Select a data stream</translation>
+   <translation id="logs_dashboards_create_success" qtlid="474077">The '{{dashboardName}}' dashboard has been created</translation>
+   <translation id="logs_dashboards_update_success" qtlid="474090">The '{{dashboardName}}' dashboard has been modified</translation>
+   <translation id="logs_dashboards_delete_success" qtlid="474103">The '{{dashboardName}}' dashboard has been deleted</translation>
+   <translation id="logs_dashboards_get_error" qtlid="474116">An error has occurred loading the dashboards: {{message}}</translation>
+   <translation id="logs_dashboards_get_detail_error" qtlid="474129">An error has occurred loading the dashboard: {{message}}</translation>
+   <translation id="logs_dashboards_delete_error" qtlid="474142">An error has occurred deleting the '{{dashboardName}}' dashboard: {{message}}</translation>
+   <translation id="logs_dashboards_create_error" qtlid="474155">An error has occurred creating the '{{dashboardName}}' dashboard: {{message}}</translation>
+   <translation id="logs_dashboards_update_error" qtlid="474168">An error has occurred modifying the '{{dashboardName}}' dashboard: {{message}}</translation>
+   <translation id="logs_dashboards_quota_get_error" qtlid="474181">An error has occurred loading the quota: {{message}}</translation>
+   <translation id="logs_dashboards_get_graylog_url_error" qtlid="474194">The Graylog URL cannot be found for the '{{dashboardName}}' dashboard</translation>
 
 <!-- Header and guides -->
    <translation id="logs_guides" qtlid="300370">Guides</translation>
@@ -54,47 +54,47 @@
    <translation id="logs_guides_footer" qtlid="406905">All the OVH guides </translation>
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Home</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flux de données</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Data stream</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Dashboards</translation>
-   <translation id="logs_tab_inputs" qtlid="421217">Outils de collecte</translation>
+   <translation id="logs_tab_inputs" qtlid="421217">Data-gathering tools</translation>
    <translation id="logs_tab_indices" qtlid="426729">Index</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
    <translation id="logs_tab_roles" qtlid="427886">Roles</translation>
-   <translation id="logs_loading_error_configuration" qtlid="469153">Error when loading "Configuration" section.</translation>
+   <translation id="logs_loading_error_configuration" qtlid="469153">An error has occurred loading the "Configuration" section.</translation>
 
 <!-- Welcome page -->
-   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform est la solution de gestion de logs par OVH</translation>
-   <translation id="logs_welcome_description_1" qtlid="426716">Indexez et analysez vos logs en temps réel. Soyez alertés en cas de dysfonctionnement. Partagez vos données avec vos collaborateurs.</translation>
-   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
-   <translation id="logs_welcome_try" qtlid="427080">Essayer gratuitement</translation>
-   <translation id="logs_welcome_graylog_webui" qtlid="427132">Interface web Graylog</translation>
+   <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform is a logs management system designed by OVH</translation>
+   <translation id="logs_welcome_description_1" qtlid="426716">Index and analyse your logs in real time. Receive alerts about any downtime. Share your data with your collaborators.</translation>
+   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This way, you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
+   <translation id="logs_welcome_try" qtlid="427080">Try it out for free</translation>
+   <translation id="logs_welcome_graylog_webui" qtlid="427132">Graylog web interface</translation>
    <translation id="logs_welcome_grafana_saas" qtlid="427145">Grafana SaaS</translation>
-   <translation id="logs_welcome_kibana_supported" qtlid="427158">Compatible Kibana</translation>
-   <translation id="logs_welcome_product_page" qtlid="427106">Page produit</translation>
+   <translation id="logs_welcome_kibana_supported" qtlid="427158">Compatible with Kibana</translation>
+   <translation id="logs_welcome_product_page" qtlid="427106">Product page</translation>
    <translation id="logs_welcome_documentation" qtlid="42574">Documentation</translation>
    <translation id="logs_welcome_forum" qtlid="427119">Forum</translation>
 
 <!-- All accounts page -->
-   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This way, you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
    <translation id="logs_accounts_order" qtlid="43558">Order</translation>
-   <translation id="logs_accounts_add" qtlid="350872">Nouveau compte</translation>
+   <translation id="logs_accounts_add" qtlid="350872">New account</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Name</translation>
    <translation id="logs_accounts_col_offer_type" qtlid="50254">Type of sevice</translation>
    <translation id="logs_accounts_col_status" qtlid="26443">Status</translation>
-   <translation id="logs_accounts_col_entry_point" qtlid="421165">Point d'entrée</translation>
+   <translation id="logs_accounts_col_entry_point" qtlid="421165">Entry point</translation>
    <translation id="logs_accounts_col_streams" qtlid="422452">Data stream</translation>
-   <translation id="logs_accounts_col_dashboards" qtlid="474220">Tableaux de bords</translation>
+   <translation id="logs_accounts_col_dashboards" qtlid="474220">Dashboards</translation>
    <translation id="logs_accounts_col_indices" qtlid="426729">Index</translation>
    <translation id="logs_accounts_details" qtlid="37527">Details</translation>
    <translation id="logs_accounts_offers" qtlid="38217">Solution </translation>
    <translation id="logs_accounts_options" qtlid="23395">Options</translation>
    <translation id="logs_accounts_enabled" qtlid="30250">Enabled</translation>
    <translation id="logs_accounts_disabled" qtlid="24967">Disabled</translation>
-   <translation id="logs_accounts_setup_required" qtlid="474233">Configuration requise</translation>
-   <translation id="logs_accounts_get_accounts_error" qtlid="474246">Une erreur est survenue lors du chargement des comptes</translation>
-   <translation id="logs_accounts_get_detail_error" qtlid="474259">Une erreur est survenue lors du chargement du compte '{{accountName}}': {{message}}</translation>
-   <translation id="logs_accounts_get_entry_point_error" qtlid="474272">Une erreur est survenue lors du chargement du point d'entrée du compte '{{accountName}}': {{message}}</translation>
-   <translation id="logs_accounts_get_quota_error" qtlid="474285">Une erreur est survenue lors du chargement du quota du compte '{{accountName}}': {{message}}</translation>
+   <translation id="logs_accounts_setup_required" qtlid="474233">Configuration required</translation>
+   <translation id="logs_accounts_get_accounts_error" qtlid="474246">An error has occurred loading accounts</translation>
+   <translation id="logs_accounts_get_detail_error" qtlid="474259">An error has occurred loading the '{{accountName}}' account: {{message}}</translation>
+   <translation id="logs_accounts_get_entry_point_error" qtlid="474272">An error has occurred loading the entry point for the '{{accountName}}' account: {{message}}</translation>
+   <translation id="logs_accounts_get_quota_error" qtlid="474285">An error has occurred loading the quota for the '{{accountName}}' account: {{message}}</translation>
 
 <!-- Setup account and change password -->
    <translation id="logs_password_change_title" qtlid="8434">Modify password</translation>
@@ -102,122 +102,122 @@
    <translation id="logs_password_new_label" qtlid="17177">New password</translation>
    <translation id="logs_password_setup_label" qtlid="2270">Password</translation>
    <translation id="logs_password_confirm_label" qtlid="9382">Confirm password</translation>
-   <translation id="logs_password_setup_message" qtlid="474298">Bienvenue {{userFullName}}. Commencez par choisir le mot de passe pour votre compte Logs Data Platform ({{userName}}).</translation>
-   <translation id="logs_password_rule_length" qtlid="474311">Le mot de passe doit contenir un minimum de 12 caractères</translation>
-   <translation id="logs_password_rule_contains_number" qtlid="474324">Le mot de passe doit contenir au moins un chiffre</translation>
-   <translation id="logs_password_rule_contains_uppercase" qtlid="474337">Le mot de passe doit contenir au moins une majuscule</translation>
-   <translation id="logs_password_rule_contains_lowercase" qtlid="474350">Le mot de passe doit contenir au moins une minuscule</translation>
-   <translation id="logs_password_rule_contains_special" qtlid="474363">Le mot de passe doit contenir au moins un caractère spécial {{specialCharacters}}</translation>
-   <translation id="logs_password_valid" qtlid="474376">Le mot de passe est valide</translation>
-   <translation id="logs_password_change_success" qtlid="474389">Le mot de passe a été changé avec succès</translation>
-   <translation id="logs_password_setup_success" qtlid="474402">Le mot de passe a été configuré avec succès</translation>
-   <translation id="logs_password_change_error" qtlid="474415">Une erreur est survenue lors du changement de mot de passe : {{message}}</translation>
-   <translation id="logs_password_setup_error" qtlid="474428">Une erreur est survenue lors de la configuration du mot de passe : {{message}}</translation>
+   <translation id="logs_password_setup_message" qtlid="474298">Welcome, {{userFullName}}. Please start by choosing a password for your ({{userName}}) Logs Data Platform account.</translation>
+   <translation id="logs_password_rule_length" qtlid="474311">Password must contain at least 12 characters</translation>
+   <translation id="logs_password_rule_contains_number" qtlid="474324">Password must contain at least one number</translation>
+   <translation id="logs_password_rule_contains_uppercase" qtlid="474337">Password must contain at least one upper-case character</translation>
+   <translation id="logs_password_rule_contains_lowercase" qtlid="474350">Password must contain at least one lower-case character</translation>
+   <translation id="logs_password_rule_contains_special" qtlid="474363">Password must contain at least one special character: {{specialCharacters}}</translation>
+   <translation id="logs_password_valid" qtlid="474376">Your password is valid</translation>
+   <translation id="logs_password_change_success" qtlid="474389">Your password has been changed</translation>
+   <translation id="logs_password_setup_success" qtlid="474402">Your password has been configured</translation>
+   <translation id="logs_password_change_error" qtlid="474415">An error has occurred changing your password: {{message}}</translation>
+   <translation id="logs_password_setup_error" qtlid="474428">An error has occurred configuring your password: {{message}}</translation>
 
 <!-- Home -->
-   <translation id="logs_home_info_title" qtlid="427028">À propos</translation>
-   <translation id="logs_home_info" qtlid="474441">Logs Data Platform est une interface de collecte, d'indexation et d'analyse de logs. Quelque soit la provenance de vos logs, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces web.</translation>
-   <translation id="logs_home_account_disabled_title" qtlid="474454">Compte désactivé</translation>
-   <translation id="logs_home_account_disabled_message" qtlid="474467">Votre compte a été désactivé le {{disabledDate}}. Contactez le support pour le réactiver.</translation>
+   <translation id="logs_home_info_title" qtlid="427028">About</translation>
+   <translation id="logs_home_info" qtlid="474441">Logs Data Platform is an interface for gathering, indexing and analysing logs. Wherever your logs are from, you can use the platform to choose different entry points depending on the protocol, security level and format. You can use and analyse data with the various APIs and web interfaces.</translation>
+   <translation id="logs_home_account_disabled_title" qtlid="474454">Account disabled</translation>
+   <translation id="logs_home_account_disabled_message" qtlid="474467">Your account was disabled on {{disabledDate}}. Please contact the support team to reactivate it.</translation>
    <translation id="logs_home_shortcuts" qtlid="403658">Shortcuts</translation>
-   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Dernier flux de données modifié</translation>
-   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Voir tous les flux</translation>
-   <translation id="logs_home_shortcuts_last_dashboard" qtlid="474493">Dernier tableau de bord modifié</translation>
-   <translation id="logs_home_shortcuts_all_dashboard" qtlid="422517">Voir tous les tableaux de bord</translation>
+   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Last data stream modified</translation>
+   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">View all streams</translation>
+   <translation id="logs_home_shortcuts_last_dashboard" qtlid="474493">Last dashboard modified</translation>
+   <translation id="logs_home_shortcuts_all_dashboard" qtlid="422517">View all dashboards</translation>
    <translation id="logs_home_shortcuts_graylog" qtlid="474506">Graylog</translation>
    <translation id="logs_home_shortcuts_graylog_api" qtlid="474519">Graylog API</translation>
    <translation id="logs_home_shortcuts_elasticsearch" qtlid="474532">Elasticsearch</translation>
-   <translation id="logs_home_shortcuts_elasticsearch_help" qtlid="474545">Il est nécessaire d'avoir un alias ou un index afin d'accéder à l'API Elasticsearch.</translation>
+   <translation id="logs_home_shortcuts_elasticsearch_help" qtlid="474545">You need to have an alias or index to access the Elasticsearch API.</translation>
    <translation id="logs_home_usage" qtlid="30382">Use</translation>
    <translation id="logs_home_configuration" qtlid="4406">Configuration</translation>
    <translation id="logs_home_account_name" qtlid="3818">Name</translation>
    <translation id="logs_home_tokens" qtlid="421386">Read tokens</translation>
-   <translation id="logs_home_tokens_tooltip" qtlid="474558">Ces jetons (tokens) vous permettent d'accéder aux APIs</translation>
+   <translation id="logs_home_tokens_tooltip" qtlid="474558">You can use these tokens to access the APIs</translation>
    <translation id="logs_home_password" qtlid="2270">Password</translation>
-   <translation id="logs_home_ssi_configuration" qtlid="474571">Configuration SSI</translation>
+   <translation id="logs_home_ssi_configuration" qtlid="474571">SSI configuration</translation>
    <translation id="logs_home_collector" qtlid="421217">Data-gathering tools</translation>
-   <translation id="logs_home_formats_and_ports" qtlid="421191">Format de message et ports disponibles</translation>
-   <translation id="logs_home_subscription" qtlid="474584">Inscription</translation>
+   <translation id="logs_home_formats_and_ports" qtlid="421191">Message format and available ports</translation>
+   <translation id="logs_home_subscription" qtlid="474584">Subscription</translation>
    <translation id="logs_home_offer" qtlid="38217">Solution </translation>
-   <translation id="logs_home_data_volume" qtlid="474597">Volume des données</translation>
+   <translation id="logs_home_data_volume" qtlid="474597">Data volume</translation>
    <translation id="logs_home_options" qtlid="23395">Options</translation>
    <translation id="logs_home_options_empty" qtlid="8674">None</translation>
-   <translation id="logs_home_service" qtlid="474610">Service Logs Data Platform</translation>
+   <translation id="logs_home_service" qtlid="474610">Logs Data Platform service</translation>
    <translation id="logs_home_start_date" qtlid="26419">Creation date</translation>
-   <translation id="logs_home_data_received" qtlid="474623">Données reçues</translation>
-   <translation id="logs_home_number_of_documents" qtlid="424662">Nombre de documents</translation>
+   <translation id="logs_home_data_received" qtlid="474623">Data received</translation>
+   <translation id="logs_home_number_of_documents" qtlid="424662">Number of documents</translation>
    <translation id="logs_home_no_usage_data" qtlid="89689">No data available</translation>
-   <translation id="logs_home_cold_storage" qtlid="474636">Volume archivé: {{coldStorage}}</translation>
-   <translation id="logs_home_display_name_update_success" qtlid="474649">Le nom a été modifié avec succès</translation>
-   <translation id="logs_home_account_details_get_error" qtlid="474662">Une erreur est survenue lors du chargement du compte: {{message}}</translation>
-   <translation id="logs_home_account_get_error" qtlid="474662">Une erreur est survenue lors du chargement du compte: {{message}}</translation>
-   <translation id="logs_home_contacts_get_error" qtlid="474675">Une erreur est survenue lors du chargement des contacts: {{message}}</translation>
-   <translation id="logs_home_contact_get_error" qtlid="474688">Une erreur est survenue lors du chargement d'un contact: {{message}}</translation>
-   <translation id="logs_home_display_name_update_error" qtlid="474701">Une erreur est survenue lors de la modification du nom: {{message}}</translation>
-   <translation id="logs_home_service_info_get_error" qtlid="474714">Une erreur est survenue lors du chargement des informations du service: {{message}}</translation>
-   <translation id="logs_home_data_get_error" qtlid="474727">Une erreur est survenue lors du chargement des données de stockage: {{message}}</translation>
-   <translation id="logs_home_formatsports_title" qtlid="421191">Format de message et ports disponibles</translation>
+   <translation id="logs_home_cold_storage" qtlid="474636">Volume archived: {{coldStorage}}</translation>
+   <translation id="logs_home_display_name_update_success" qtlid="474649">The name has been modified</translation>
+   <translation id="logs_home_account_details_get_error" qtlid="474662">An error has occurred loading the account: {{message}}</translation>
+   <translation id="logs_home_account_get_error" qtlid="474662">An error has occurred loading the account: {{message}}</translation>
+   <translation id="logs_home_contacts_get_error" qtlid="474675">An error has occurred loading contacts: {{message}}</translation>
+   <translation id="logs_home_contact_get_error" qtlid="474688">An error has occurred loading a contact: {{message}}</translation>
+   <translation id="logs_home_display_name_update_error" qtlid="474701">An error has occurred modifying the name: {{message}}</translation>
+   <translation id="logs_home_service_info_get_error" qtlid="474714">An error has occurred loading information on the service: {{message}}</translation>
+   <translation id="logs_home_data_get_error" qtlid="474727">An error has occurred loading the storage data: {{message}}</translation>
+   <translation id="logs_home_formatsports_title" qtlid="421191">Message format and available ports</translation>
    <translation id="logs_home_formatsports_name" qtlid="3818">Name</translation>
    <translation id="logs_home_formatsports_not_supported" qtlid="190771">Not supported</translation>
    <translation id="logs_home_account_title" qtlid="71741">Change the name</translation>
-   <translation id="logs_home_account_description" qtlid="474740">Modifier le nom {{displayName}} affiché dans le menu de gauche ainsi que dans l'entête.</translation>
+   <translation id="logs_home_account_description" qtlid="474740">Modify the {{displayName}} name displayed in the left-hand menu, and in the header.</translation>
    <translation id="logs_home_account_display_name_field" qtlid="3818">Name</translation>
 
 <!-- Options -->
-   <translation id="options_upgradequotalink_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="options_upgradequotalink_increase_quota_title" qtlid="474766">Changement d'offre requis</translation>
-   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options. Voulez-vous passer à l'offre PRO ?</translation>
-   <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Changer maintenant</translation>
-   <translation id="logs_options_options_loading_error" qtlid="474805">Une erreur est survenue lors du chargement des options: {{message}}</translation>
-   <translation id="logs_options_current_options_loading_error" qtlid="474818">Une erreur est survenue lors du chargement de vos options: {{message}}</translation>
-   <translation id="logs_options_manage_get_error" qtlid="474805">Une erreur est survenue lors du chargement des options: {{message}}</translation>
+   <translation id="options_upgradequotalink_increase_quota" qtlid="474753">increase quota</translation>
+   <translation id="options_upgradequotalink_increase_quota_title" qtlid="474766">Solution upgrade required</translation>
+   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">You have subscribed to the basic solution. You will need to upgrade to the Professional version to order more options. Would you like to upgrade to the Professional solution?</translation>
+   <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Upgrade now</translation>
+   <translation id="logs_options_options_loading_error" qtlid="474805">An error has occurred loading options: {{message}}</translation>
+   <translation id="logs_options_current_options_loading_error" qtlid="474818">An error has occurred loading your options: {{message}}</translation>
+   <translation id="logs_options_manage_get_error" qtlid="474805">An error has occurred loading options: {{message}}</translation>
    <translation id="log_options_title" qtlid="424402">Add options</translation>
-   <translation id="log_options_current_offer_title" qtlid="474831">Vous avez souscrit à l'offre suivante:</translation>
-   <translation id="log_options_pro_offer" qtlid="474844">Offre PRO</translation>
-   <translation id="log_options_current_title" qtlid="474857">Vous avez souscrit aux options suivantes:</translation>
-   <translation id="log_options_intro_text" qtlid="469309">For each data stream, alias and dashboard purchased, you will receive a free user role (e.g. 5 streams purchased = 5 roles).</translation>
-   <translation id="log_options_type" qtlid="474870">Type d'option</translation>
+   <translation id="log_options_current_offer_title" qtlid="474831">You have subscribed to the following solution:</translation>
+   <translation id="log_options_pro_offer" qtlid="474844">Professional solution</translation>
+   <translation id="log_options_current_title" qtlid="474857">You have subscribed to the following options:</translation>
+   <translation id="log_options_intro_text" qtlid="469309">For each data stream, alias and dashboard you purchase, you will receive a free user role (e.g. 5 streams purchased = 5 roles).</translation>
+   <translation id="log_options_type" qtlid="474870">Option type</translation>
    <translation id="log_options_details" qtlid="37527">Details</translation>
    <translation id="log_options_add" qtlid="37923">Add</translation>
    <translation id="log_options_price" qtlid="252854">Price/month</translation>
-   <translation id="logs-input-2-type" qtlid="474883">Outil de collecte</translation>
-   <translation id="logs-input-4-type" qtlid="474883">Outil de collecte</translation>
-   <translation id="logs-input-8-type" qtlid="474883">Outil de collecte</translation>
+   <translation id="logs-input-2-type" qtlid="474883">Data-gathering tool</translation>
+   <translation id="logs-input-4-type" qtlid="474883">Data-gathering tool</translation>
+   <translation id="logs-input-8-type" qtlid="474883">Data-gathering tool</translation>
    <translation id="logs-dashboard-5-type" qtlid="45376">Dashboard</translation>
    <translation id="logs-stream-5-type" qtlid="422452">Data stream</translation>
    <translation id="logs-kibana-1-type" qtlid="469335">Kibana Pack</translation>
-   <translation id="logs-alias-5-type" qtlid="474896">Alias ​​Elasticsearch</translation>
-   <translation id="logs-index-1-type" qtlid="474909">Elasticsearch Index de 25 Gio</translation>
-   <translation id="logs-index-2-type" qtlid="474922">Elasticsearch Index de 50 Gio</translation>
-   <translation id="logs-index-4-type" qtlid="474935">Elasticsearch Index de 100 Gio</translation>
-   <translation id="logs-index-8-type" qtlid="474948">Elasticsearch Index de 200 Gio</translation>
-   <translation id="logs-index-16-type" qtlid="474961">Elasticsearch Index de 400 Gio</translation>
+   <translation id="logs-alias-5-type" qtlid="474896">​​Elasticsearch alias</translation>
+   <translation id="logs-index-1-type" qtlid="474909">25 GiB Elasticsearch index</translation>
+   <translation id="logs-index-2-type" qtlid="474922">50 GiB Elasticsearch index</translation>
+   <translation id="logs-index-4-type" qtlid="474935">100 GiB Elasticsearch index</translation>
+   <translation id="logs-index-8-type" qtlid="474948">200 GiB Elasticsearch index </translation>
+   <translation id="logs-index-16-type" qtlid="474961">400 GiB Elasticsearch index</translation>
    <translation id="logs-input-2-detail" qtlid="474974">2 instances</translation>
    <translation id="logs-input-4-detail" qtlid="474987">4 instances</translation>
    <translation id="logs-input-8-detail" qtlid="475000">8 instances</translation>
-   <translation id="logs-dashboard-5-detail" qtlid="475013">Pack de 5</translation>
-   <translation id="logs-stream-5-detail" qtlid="475013">Pack de 5</translation>
-   <translation id="logs-kibana-1-detail" qtlid="475026">1 alias et 1 index de 500 Mo</translation>
-   <translation id="logs-alias-5-detail" qtlid="475013">Pack de 5</translation>
+   <translation id="logs-dashboard-5-detail" qtlid="475013">5-pack</translation>
+   <translation id="logs-stream-5-detail" qtlid="475013">5-pack</translation>
+   <translation id="logs-kibana-1-detail" qtlid="475026">1 alias and 1 500 MB index</translation>
+   <translation id="logs-alias-5-detail" qtlid="475013">5-pack</translation>
    <translation id="logs-index-1-detail" qtlid="475039">1 fragment</translation>
    <translation id="logs-index-2-detail" qtlid="475052">2 fragments</translation>
    <translation id="logs-index-4-detail" qtlid="475065">4 fragments</translation>
    <translation id="logs-index-8-detail" qtlid="475078">8 fragments</translation>
    <translation id="logs-index-16-detail" qtlid="475091">16 fragments</translation>
-   <translation id="log_options_basic_no_options" qtlid="475104">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options.</translation>
-   <translation id="log_options_basic_no_options_upgrade" qtlid="474792">Changer maintenant</translation>
-   <translation id="log_options_pro_no_options" qtlid="475117">Vous n'avez souscrit à aucune option. Vous pouvez commander des options à partir du tableau ci-dessous.</translation>
+   <translation id="log_options_basic_no_options" qtlid="475104">You have subscribed to the basic solution. You will need to upgrade to the Professional solution to order more options.</translation>
+   <translation id="log_options_basic_no_options_upgrade" qtlid="474792">Upgrade now</translation>
+   <translation id="log_options_pro_no_options" qtlid="475117">You have not subscribed to any options. You can order options using the dashboard below.</translation>
    <translation id="log_options_order" qtlid="43558">Order</translation>
    <translation id="log_options_cancel" qtlid="37863">Cancel</translation>
    <translation id="log_options_total" qtlid="32458">Total</translation>
-   <translation id="logs_options_manage_title" qtlid="340354">Gérer les options</translation>
-   <translation id="logs_options_manage_description_1" qtlid="475130">Vous pouvez gérer vos options en désactivant celles que vous ne voulez plus utiliser.</translation>
-   <translation id="logs_options_manage_description_2" qtlid="475143">Veuillez noter que les options déjà incluses dans votre offre ne peuvent être désactivées.</translation>
-   <translation id="logs_options_manage_description_3" qtlid="475156">Pour ajouter une option, allez à la page</translation>
+   <translation id="logs_options_manage_title" qtlid="340354">Manage options</translation>
+   <translation id="logs_options_manage_description_1" qtlid="475130">You can manage your options by disabling the ones you no longer wish to use.</translation>
+   <translation id="logs_options_manage_description_2" qtlid="475143">Please note that the options already included in your solution cannot be disabled.</translation>
+   <translation id="logs_options_manage_description_3" qtlid="475156">To add an option, go to the page</translation>
    <translation id="logs_options_manage_add_options" qtlid="424402">Add options</translation>
-   <translation id="logs_options_option_type" qtlid="474870">Type d'option</translation>
+   <translation id="logs_options_option_type" qtlid="474870">Option type</translation>
    <translation id="logs_options_details" qtlid="37527">Details</translation>
-   <translation id="logs_options_linked_items" qtlid="475169">Éléments liées</translation>
+   <translation id="logs_options_linked_items" qtlid="475169">Associated elements</translation>
    <translation id="logs_options_status" qtlid="26443">Status</translation>
    <translation id="logs_options_action_overview" qtlid="433371">See a preview</translation>
    <translation id="logs_options_action_disable" qtlid="90973">Disable</translation>
@@ -230,160 +230,160 @@
    <translation id="logs_options_manage_stream" qtlid="422452">Data stream</translation>
    <translation id="logs_options_manage_role" qtlid="427886">Roles</translation>
    <translation id="logs_options_manage_input" qtlid="421217">Data-gathering tools</translation>
-   <translation id="logs_options_overview_title" qtlid="475182">Aperçu de l'option</translation>
-   <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activer cette option</translation>
-   <translation id="logs_options_modal_reactivate_description" qtlid="475208">Vous devez contacter le support pour réactiver cette option '{{optionType}}'.</translation>
-   <translation id="logs_options_manage_terminate_title" qtlid="475221">Désactiver cette option</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'. Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
-   <translation id="logs_options_delete_error" qtlid="475247">Une erreur est survenue lors de la désactivation de '{{optionType}}': {{message}}</translation>
-   <translation id="logs_options_delete_success" qtlid="475260">L'option {{optionType}} a été désactivé avec succès</translation>
-   <translation id="logs_options_description_manage" qtlid="475273">Pour gérer vos options, allez à la page</translation>
-   <translation id="logs_options_manage_link" qtlid="340354">Gérer les options</translation>
-   <translation id="add_tool_title" qtlid="475286">Quota atteint</translation>
-   <translation id="add_tool_quota_reached" qtlid="475299">Vous avez atteint le quota:</translation>
-   <translation id="add_tool_purchase_more_options" qtlid="475312">Veuillez commander plus d'options afin de continuer.</translation>
-   <translation id="add_tool_options_purchase" qtlid="475325">Commander maintenant</translation>
+   <translation id="logs_options_overview_title" qtlid="475182">Option overview</translation>
+   <translation id="logs_options_modal_reactivate_title" qtlid="475195">Enable this option</translation>
+   <translation id="logs_options_modal_reactivate_description" qtlid="475208">You will need to contact our support team to re-enable this '{{optionType}}' option.</translation>
+   <translation id="logs_options_manage_terminate_title" qtlid="475221">Disable this option</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Are you sure you want to disable '{{optionType}}'? Please note that to re-enable this option, you will need to contact our support team.</translation>
+   <translation id="logs_options_delete_error" qtlid="475247">An error has occurred disabling '{{optionType}}': {{message}}</translation>
+   <translation id="logs_options_delete_success" qtlid="475260">The {{optionType}} option has been disabled</translation>
+   <translation id="logs_options_description_manage" qtlid="475273">To manage your options, go to the page</translation>
+   <translation id="logs_options_manage_link" qtlid="340354">Manage options</translation>
+   <translation id="add_tool_title" qtlid="475286">Quota reached</translation>
+   <translation id="add_tool_quota_reached" qtlid="475299">You have reached the quota:</translation>
+   <translation id="add_tool_purchase_more_options" qtlid="475312">Please order more options to continue.</translation>
+   <translation id="add_tool_options_purchase" qtlid="475325">Order now</translation>
 
 <!-- Offer -->
    <translation id="logs_offer_title" qtlid="25783">Upgrade</translation>
-   <translation id="logs_offer_streams" qtlid="475338">flux</translation>
-   <translation id="logs_offer_tables" qtlid="475351">tableau(x)</translation>
-   <translation id="logs_offer_collection_tools" qtlid="475364">outil(s) de collecte</translation>
+   <translation id="logs_offer_streams" qtlid="475338">streams</translation>
+   <translation id="logs_offer_tables" qtlid="475351">dashboards</translation>
+   <translation id="logs_offer_collection_tools" qtlid="475364">data-gathering tools</translation>
    <translation id="logs_offer_limit" qtlid="33562">Limit</translation>
    <translation id="logs_offer_month" qtlid="40222">month</translation>
    <translation id="logs_offer_day" qtlid="44248">day</translation>
    <translation id="logs_offer_year" qtlid="444326">year</translation>
-   <translation id="logs_offer_load_error" qtlid="475377">Une erreur est survenue lors du chargement de l'offre: {{message}}</translation>
-   <translation id="logs_offer_current_offer" qtlid="475390">Offre courante</translation>
-   <translation id="logs_offer_description_pro" qtlid="475403">Vous avez actuellement l'offre {{offer}} PRO : vous pouvez choisir parmi les offres suivantes.</translation>
-   <translation id="logs_offer_description_upgrade" qtlid="475416">Vous avez actuellement l'offre basique : vous pouvez choisir parmi les offres suivantes.</translation>
-   <translation id="logs_offer_description_basic" qtlid="475429">Vous avez actuellement l'offre basique.</translation>
-   <translation id="logs_offer_upgrade_pro" qtlid="475442">Passer à l'offre PRO</translation>
-   <translation id="logs_offer_upgrade_feature" qtlid="475455">En passant à l'offre PRO, de nouvelles fonctionnalitées seront disponibles:</translation>
-   <translation id="logs_offer_upgrade_pro_description_1" qtlid="475468">45 jours de rétention Elasticsearch (2 heures avec l'offre basique)</translation>
-   <translation id="logs_offer_upgrade_pro_description_2" qtlid="475481">Suivi en direct par Websocket</translation>
-   <translation id="logs_offer_upgrade_pro_description_3" qtlid="475494">Gestion des droits d'accès</translation>
-   <translation id="logs_offer_upgrade_pro_description_4" qtlid="475507">Stockage longue durée (1 à 10 ans)</translation>
-   <translation id="logs_offer_upgrade_pro_description_5" qtlid="475520">Configurations des alertes</translation>
-   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Débloquer les offres PRO</translation>
+   <translation id="logs_offer_load_error" qtlid="475377">An error has occurred loading the solution: {{message}}</translation>
+   <translation id="logs_offer_current_offer" qtlid="475390">Current solution</translation>
+   <translation id="logs_offer_description_pro" qtlid="475403">You are currently using the {{offer}} Professional solution: you can choose from the following solutions.</translation>
+   <translation id="logs_offer_description_upgrade" qtlid="475416">You are currently using the basic solution: you can choose from the following solutions.</translation>
+   <translation id="logs_offer_description_basic" qtlid="475429">You are currently using the basic solution.</translation>
+   <translation id="logs_offer_upgrade_pro" qtlid="475442">Upgrade to the Professional solution</translation>
+   <translation id="logs_offer_upgrade_feature" qtlid="475455">By upgrading to the Professional solution, you can use new features:</translation>
+   <translation id="logs_offer_upgrade_pro_description_1" qtlid="475468">45-day Elasticsearch retention period (2 hours with the basic solution)</translation>
+   <translation id="logs_offer_upgrade_pro_description_2" qtlid="475481">Real time monitoring from WebSocket</translation>
+   <translation id="logs_offer_upgrade_pro_description_3" qtlid="475494">Management of access rights</translation>
+   <translation id="logs_offer_upgrade_pro_description_4" qtlid="475507">Long-term storage (1-10 years)</translation>
+   <translation id="logs_offer_upgrade_pro_description_5" qtlid="475520">Configurations for alerts</translation>
+   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Show Professional solutions</translation>
    <translation id="logs-basic" qtlid="173333">Basic</translation>
-   <translation id="logs-pro-0001" qtlid="475546">1 Go/Mois</translation>
-   <translation id="logs-pro-0015" qtlid="475559">15 Go/Mois</translation>
-   <translation id="logs-pro-0030" qtlid="475572">30 Go/Mois</translation>
-   <translation id="logs-pro-0090" qtlid="475585">90 Go/Mois</translation>
-   <translation id="logs-pro-0150" qtlid="475598">150 Go/Mois</translation>
-   <translation id="logs-pro-0300" qtlid="475611">300 Go/Mois</translation>
-   <translation id="logs-pro-0600" qtlid="475624">600 Go/Mois</translation>
-   <translation id="logs-pro-0900" qtlid="475637">900 Go/Mois</translation>
-   <translation id="logs-pro-1500" qtlid="475650">1.5 To/Mois</translation>
-   <translation id="logs-pro-3000" qtlid="475663">3 To/Mois</translation>
-   <translation id="logs-pro-10240">10 To/Month</translation>
-   <translation id="logs-pro-51200">50 To/Month</translation>
-   <translation id="logs-pro-102400">100 To/Month</translation>
-   <translation id="logs-pro-307200">300 To/Month</translation>
+   <translation id="logs-pro-0001" qtlid="475546">1 GB/Month</translation>
+   <translation id="logs-pro-0015" qtlid="475559">15 GB/Month</translation>
+   <translation id="logs-pro-0030" qtlid="475572">30 GB/Month</translation>
+   <translation id="logs-pro-0090" qtlid="475585">90 GB/Month</translation>
+   <translation id="logs-pro-0150" qtlid="475598">150 GB/Month</translation>
+   <translation id="logs-pro-0300" qtlid="475611">300 GB/Month</translation>
+   <translation id="logs-pro-0600" qtlid="475624">600 GB/Month</translation>
+   <translation id="logs-pro-0900" qtlid="475637">900 GB/Month</translation>
+   <translation id="logs-pro-1500" qtlid="475650">1.5 TB/Month</translation>
+   <translation id="logs-pro-3000" qtlid="475663">3 TB/Month</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/Month</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/Month</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/Month</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/Month</translation>
    <translation id="logs-reader-1" qtlid="30646">None</translation>
-   <translation id="logs-pro-0015_limit" qtlid="475676">Moyenne de 0.5 Go/jour</translation>
-   <translation id="logs-pro-0030_limit" qtlid="475689">Moyenne de 1 Go/jour</translation>
-   <translation id="logs-pro-0090_limit" qtlid="475702">Moyenne de 3 Go/jour</translation>
-   <translation id="logs-pro-0150_limit" qtlid="475715">Moyenne de 5 Go/jour</translation>
-   <translation id="logs-pro-0300_limit" qtlid="475728">Moyenne de 10 Go/jour</translation>
-   <translation id="logs-pro-0600_limit" qtlid="475741">Moyenne de 20 Go/jour</translation>
-   <translation id="logs-pro-0900_limit" qtlid="475754">Moyenne de 30 Go/jour</translation>
-   <translation id="logs-pro-1500_limit" qtlid="475767">Moyenne de 50 Go/jour</translation>
-   <translation id="logs-pro-3000_limit" qtlid="475780">Moyenne de 100 Go/jour</translation>
-   <translation id="logs-pro-10240_limit">An average of 341 GB/day </translation>
-   <translation id="logs-pro-51200_limit">An average of 1.6 TB/day </translation>
-   <translation id="logs-pro-102400_limit">An average of 3.3 TB/day </translation>
-   <translation id="logs-pro-307200_limit">An average of 10 TB/day </translation>
-   <translation id="logs_offer_conflict_title" qtlid="475793">Conflit d'offre</translation>
-   <translation id="logs_offer_conflict_description" qtlid="475806">Vous avez sélectionné une offre que vous possédez déjà. Veuillez sélectionner une autre offre.</translation>
-   <translation id="logs_order_get_error" qtlid="475819">Une erreur est survenue lors du chargement des offres</translation>
-   <translation id="logs_order_save_order" qtlid="475832">Une erreur est survenue lors de la commande. Veuillez essayer de nouveau</translation>
+   <translation id="logs-pro-0015_limit" qtlid="475676">Average 0.5 GB/day</translation>
+   <translation id="logs-pro-0030_limit" qtlid="475689">Average 1 GB/day</translation>
+   <translation id="logs-pro-0090_limit" qtlid="475702">Average 3 GB/day</translation>
+   <translation id="logs-pro-0150_limit" qtlid="475715">Average 5 GB/day</translation>
+   <translation id="logs-pro-0300_limit" qtlid="475728">Average 10 GB/day</translation>
+   <translation id="logs-pro-0600_limit" qtlid="475741">Average 20 GB/day</translation>
+   <translation id="logs-pro-0900_limit" qtlid="475754">Average 30 GB/day</translation>
+   <translation id="logs-pro-1500_limit" qtlid="475767">Average 50 GB/day</translation>
+   <translation id="logs-pro-3000_limit" qtlid="475780">Average 100 GB/day</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Average 341 GB/day</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Average 1.6 TB/day</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Average 3.3 TB/day</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Average 10 TB/day</translation>
+   <translation id="logs_offer_conflict_title" qtlid="475793">Solution conflict</translation>
+   <translation id="logs_offer_conflict_description" qtlid="475806">You have selected a solution you are already using. Please select another solution.</translation>
+   <translation id="logs_order_get_error" qtlid="475819">An error has occurred loading the solutions</translation>
+   <translation id="logs_order_save_order" qtlid="475832">An error has occurred processing your order. Please try again.</translation>
 
 <!-- Tokens -->
    <translation id="logs_tokens_title" qtlid="421386">Read tokens</translation>
-   <translation id="logs_tokens_description" qtlid="475845">Afin de permettre l'accès de vos logs à des applications externes ou pour automatiser certaines tâches, vous allez devoir leurs donner accès aux APIs. La façon la plus sécuritaire de gérer ces accès est l'utilisation de jetons d'authentification. Cette fonctionnalité vous permet de ne plus avoir besoin de mettre vos identifiants dans des fichiers de configuration.</translation>
+   <translation id="logs_tokens_description" qtlid="475845">To grant external applications with access to your logs, and to automate certain tasks, you will need to give them access to the APIs. The most secure way to manage this access is by using authentication tokens. By using this feature, you no longer need to enter your credentials into the configuration files.</translation>
    <translation id="logs_tokens_add" qtlid="469231">Add a token</translation>
    <translation id="logs_tokens_col_name" qtlid="3818">Name</translation>
-   <translation id="logs_tokens_col_token" qtlid="421490">Jeton</translation>
-   <translation id="logs_tokens_col_platform" qtlid="475858">Platforme</translation>
+   <translation id="logs_tokens_col_token" qtlid="421490">Token</translation>
+   <translation id="logs_tokens_col_platform" qtlid="475858">Platform</translation>
    <translation id="logs_tokens_col_createdAt" qtlid="26419">Creation date</translation>
    <translation id="logs_tokens_cluster" qtlid="232414">Cluster</translation>
-   <translation id="logs_tokens_select_cluster" qtlid="475871">Choisir un cluster</translation>
-   <translation id="logs_tokens_delete_title" qtlid="475884">Supprimer le jeton</translation>
-   <translation id="logs_tokens_delete_message" qtlid="475897">Êtes-vous sûr de vouloir supprimer le jeton <strong>{{tokenName}}</strong> ?</translation>
-   <translation id="logs_tokens_create_success" qtlid="475910">Le jeton {{tokenName}} a été créé avec succès</translation>
-   <translation id="logs_tokens_delete_success" qtlid="475923">Le jeton {{tokenName}} a été supprimé avec succès</translation>
-   <translation id="logs_tokens_get_error" qtlid="475936">Une erreur est survenue lors du chargement des jetons: {{message}}</translation>
-   <translation id="logs_tokens_get_detail_error" qtlid="475949">Une erreur est survenue lors du chargement du jeton: {{message}}</translation>
-   <translation id="logs_tokens_delete_error" qtlid="475962">Une erreur est survenue lors de la suppression du jeton {{tokenName}}: {{message}}</translation>
-   <translation id="logs_tokens_create_error" qtlid="475975">Une erreur est survenue lors de la création du jeton {{tokenName}}: {{message}}</translation>
-   <translation id="logs_tokens_cluster_get_error" qtlid="475988">Une erreur est survenue lors du chargement des plateformes: {{message}}</translation>
+   <translation id="logs_tokens_select_cluster" qtlid="475871">Choose a cluster</translation>
+   <translation id="logs_tokens_delete_title" qtlid="475884">Delete token</translation>
+   <translation id="logs_tokens_delete_message" qtlid="475897">Are you sure you want to delete the <strong>{{tokenName}}</strong> token?</translation>
+   <translation id="logs_tokens_create_success" qtlid="475910">The {{tokenName}} token has been created</translation>
+   <translation id="logs_tokens_delete_success" qtlid="475923">The {{tokenName}} token has been deleted</translation>
+   <translation id="logs_tokens_get_error" qtlid="475936">An error has occurred loading tokens: {{message}}</translation>
+   <translation id="logs_tokens_get_detail_error" qtlid="475949">An error has occurred loading the token: {{message}}</translation>
+   <translation id="logs_tokens_delete_error" qtlid="475962">An error has occurred deleting the {{tokenName}} token: {{message}}</translation>
+   <translation id="logs_tokens_create_error" qtlid="475975">An error has occurred creating the {{tokenName}} token: {{message}}</translation>
+   <translation id="logs_tokens_cluster_get_error" qtlid="475988">An error has occurred loading the platforms: {{message}}</translation>
 
 <!-- Streams -->
-   <translation id="logs_streams_description" qtlid="469465">Streams allow you to classify your logs by precise category and in realtime, as soon as they arrive on the Logs Data Platform. If you have several streams, you can also: store messages easily based on their source (the application or server they originated from) and create different degrees of confidentiality for different streams, which means you can grant access to authorised people only. Here, the tokens are write token, which can be used to direct logs to the appropriate flow. Generally speaking, having multiple streams makes it a lot easier to search your logs: you no longer need to exclude the results from another system or another application.</translation>
-   <translation id="logs_streams_total_used" qtlid="476001">flux utilisés</translation>
-   <translation id="logs_streams_increase_quota" qtlid="474753">augmenter le quota</translation>
+   <translation id="logs_streams_description" qtlid="469465">With streams, you can classify your logs into precise categories in real time, as soon as they arrive on the Logs Data Platform. If you have several streams, you can also store messages easily based on their source (the application or server they originated from), and create different levels of confidentiality for different streams, which means you can grant access to authorised people only. Here, the tokens are write tokens, which can be used to direct logs to the appropriate stream. Generally, having multiple streams makes it a lot easier to search your logs, since you no longer need to exclude the results from another system or application.</translation>
+   <translation id="logs_streams_total_used" qtlid="476001">data streams used</translation>
+   <translation id="logs_streams_increase_quota" qtlid="474753">increase quota</translation>
    <translation id="logs_streams_add_data_feed" qtlid="426170">Add data stream</translation>
-   <translation id="logs_streams_name" qtlid="475338">flux</translation>
+   <translation id="logs_streams_name" qtlid="475338">streams</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Name</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Description</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Archives</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Actions</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Alerts</translation>
    <translation id="logs_streams_col_linked_option" qtlid="426768">Associated option</translation>
-   <translation id="logs_streams_no_streams" qtlid="476014">Aucun flux de données</translation>
-   <translation id="logs_streams_col_shared" qtlid="476027">Flux partagé</translation>
-   <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
+   <translation id="logs_streams_no_streams" qtlid="476014">No data streams</translation>
+   <translation id="logs_streams_col_shared" qtlid="476027">Shared data stream</translation>
+   <translation id="logs_streams_manage_alerts" qtlid="476040">Manage alerts</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
-   <translation id="logs_streams_follow_live" qtlid="426222">Follow in realtime</translation>
-   <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
-   <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
-   <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>
-   <translation id="logs_stream_delete_message" qtlid="476079">Êtes-vous sûr de vouloir supprimer le flux <strong>{{stream}}</strong> ?</translation>
+   <translation id="logs_streams_follow_live" qtlid="426222">Monitor in real time</translation>
+   <translation id="logs_streams_graylog_access" qtlid="426820">Graylog access</translation>
+   <translation id="logs_streams_copy_token" qtlid="476053">Copy write token</translation>
+   <translation id="logs_stream_delete_title" qtlid="476066">Delete data stream</translation>
+   <translation id="logs_stream_delete_message" qtlid="476079">Are you sure you want to delete the <strong>{{stream}}</strong> data stream?</translation>
    <translation id="logs_streams_add_title" qtlid="426170">Add data stream</translation>
-   <translation id="logs_streams_update_title" qtlid="476092">Modifier le flux</translation>
-   <translation id="logs_streams_update_description" qtlid="476105">Pour le flux <strong>{{ name }}</strong></translation>
-   <translation id="logs_streams_select_options_placeholder" qtlid="476118">Choisir une option</translation>
-   <translation id="logs_streams_enable_websocket" qtlid="426677">Activate WebSocket broadcasting</translation>
-   <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos logs en temps réel via le protocole WebSocket.</translation>
-   <translation id="logs_streams_enable_archieve" qtlid="426469">Activate long-term storage</translation>
-   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs safely for years.</translation>
-   <translation id="streams_cold_storage_price"> This feature is charged {{price}} HT / month in 2GB increments</translation>
-   <translation id="logs_streams_storage_basic_offer">Please upgrade to pro offer to avail this feature.</translation>
+   <translation id="logs_streams_update_title" qtlid="476092">Modify data stream</translation>
+   <translation id="logs_streams_update_description" qtlid="476105">For the <strong>{{ name }}</strong> data stream</translation>
+   <translation id="logs_streams_select_options_placeholder" qtlid="476118">Choose an option</translation>
+   <translation id="logs_streams_enable_websocket" qtlid="426677">Enable WebSocket broadcasting</translation>
+   <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitor the logs you receive in real time, via the WebSocket protocol.</translation>
+   <translation id="logs_streams_enable_archieve" qtlid="426469">Enable long-term storage</translation>
+   <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs securely for years.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Compression algorithm</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archive conservation period</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>
    <translation id="logs_streams_notification_detail" qtlid="469530">Notify me by email when an archive becomes available.</translation>
-   <translation id="logs_stream_create_success" qtlid="476131">Le flux de données '{{streamName}}' a été créé avec succès.</translation>
-   <translation id="logs_stream_update_success" qtlid="476144">Le flux de données '{{streamName}}' a été modifié avec succès.</translation>
-   <translation id="logs_stream_delete_success" qtlid="476157">Le flux de données '{{streamName}}' a été supprimé avec succès.</translation>
-   <translation id="logs_streams_copy_token_success" qtlid="476170">Le jeton a été copié dans votre presse-papiers, utiliser CTRL+V pour coller son contenu.</translation>
-   <translation id="logs_streams_get_graylog_url_error" qtlid="476183">L'URL Graylog n'a pas été trouvé pour le flux {{stream}}.</translation>
-   <translation id="logs_stream_delete_error" qtlid="476196">Une erreur est survenue lors de la suppression du flux '{{streamName}}': {{message}}</translation>
-   <translation id="logs_stream_update_error" qtlid="476209">Une erreur est survenue lors de la modification du flux '{{streamName}}': {{message}}</translation>
-   <translation id="logs_stream_create_error" qtlid="476222">Une erreur est survenue lors de la création du flux '{{streamName}}': {{message}}</translation>
-   <translation id="logs_stream_get_error" qtlid="476235">Une erreur est survenue lors du chargement d'un flux: {{message}}</translation>
-   <translation id="logs_streams_get_error" qtlid="476248">Une erreur est survenue lors du chargement des flux: {{message}}</translation>
-   <translation id="logs_streams_quota_get_error" qtlid="476261">Une erreur est survenue lors du chargement du quota du flux: {{message}}</translation>
-   <translation id="logs_streams_archives_get_error" qtlid="476274">Une erreur est survenue lors du chargement des notifications du flux: {{message}}</translation>
-   <translation id="logs_streams_find_token_error" qtlid="476287">Jeton introuvable pour le flux {{stream}}.</translation>
-   <translation id="logs_streams_copy_token_error" qtlid="476300">Votre navigateur ne permet pas de copier au presse-papiers. Veuillez passer à une version plus récente de votre navigateur. La valeur du jeton pour le flux {{stream}} est: {{token_value}}</translation>
+   <translation id="logs_stream_create_success" qtlid="476131">The '{{streamName}}' data stream has been created.</translation>
+   <translation id="logs_stream_update_success" qtlid="476144">The '{{streamName}}' data stream has been modified.</translation>
+   <translation id="logs_stream_delete_success" qtlid="476157">The '{{streamName}}' data stream has been deleted.</translation>
+   <translation id="logs_streams_copy_token_success" qtlid="476170">The token has been copied to your clipboard. Use Ctrl+V to paste the content.</translation>
+   <translation id="logs_streams_get_graylog_url_error" qtlid="476183">Graylog URL cannot be found for the {{stream}} data stream.</translation>
+   <translation id="logs_stream_delete_error" qtlid="476196">An error has occurred deleting the '{{streamName}}' data stream: {{message}}</translation>
+   <translation id="logs_stream_update_error" qtlid="476209">An error has occurred modifying the '{{streamName}}' data stream: {{message}}</translation>
+   <translation id="logs_stream_create_error" qtlid="476222">An error has occurred creating the '{{streamName}}' data stream: {{message}}</translation>
+   <translation id="logs_stream_get_error" qtlid="476235">An error has occurred loading a data stream: {{message}}</translation>
+   <translation id="logs_streams_get_error" qtlid="476248">An error has occurred loading data streams: {{message}}</translation>
+   <translation id="logs_streams_quota_get_error" qtlid="476261">An error has occurred loading the data stream quota: {{message}}</translation>
+   <translation id="logs_streams_archives_get_error" qtlid="476274">An error has occurred loading data stream notifications: {{message}}</translation>
+   <translation id="logs_streams_find_token_error" qtlid="476287">Cannot find token for the {{stream}} data stream.</translation>
+   <translation id="logs_streams_copy_token_error" qtlid="476300">Your browser is unable to copy text to clipboards. Please use a more recent browser version. The token value for the {{stream}} data stream is: {{token_value}}</translation>
    <translation id="logs_stream_compression_gzip" qtlid="426508">.gz (zlib)</translation>
    <translation id="logs_stream_compression_zip" qtlid="426521">.zip (deflated)</translation>
    <translation id="logs_stream_compression_lzma" qtlid="426534">.7z (lzma-2)</translation>
    <translation id="logs_stream_compression_zstd" qtlid="426547">.zst (>= 1.2)</translation>
-   <translation id="logs_stream_retention_1y" qtlid="426573">un an</translation>
-   <translation id="logs_stream_retention_2y" qtlid="426586">deux ans</translation>
-   <translation id="logs_stream_retention_5y" qtlid="426599">cinq ans</translation>
-   <translation id="logs_stream_retention_10y" qtlid="426612">dix ans</translation>
-   <translation id="logs_streams_follow_copy_address" qtlid="476313">Copier l'adresse WebSocket</translation>
-   <translation id="logs_streams_follow_download_client" qtlid="476326">Télécharger ldp-tail</translation>
+   <translation id="logs_stream_retention_1y" qtlid="426573">1 year</translation>
+   <translation id="logs_stream_retention_2y" qtlid="426586">2 years</translation>
+   <translation id="logs_stream_retention_5y" qtlid="426599">5 years</translation>
+   <translation id="logs_stream_retention_10y" qtlid="426612">10 years</translation>
+   <translation id="logs_streams_follow_copy_address" qtlid="476313">Copy WebSocket address</translation>
+   <translation id="logs_streams_follow_download_client" qtlid="476326">Download ldp-tail</translation>
    <translation id="logs_streams_follow_close_connection" qtlid="470037">Close the connection</translation>
-   <translation id="logs_streams_follow_open_connection" qtlid="476339">Ouvrir la connexion</translation>
-   <translation id="logs_streams_follow_test_gelf" qtlid="476352">Tester le flux avec Gelf</translation>
-   <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Tester le flux avec LTSV</translation>
-   <translation id="logs_streams_follow_test_rfc" qtlid="476378">Tester le flux avec RFC 5424</translation>
+   <translation id="logs_streams_follow_open_connection" qtlid="476339">Open connection</translation>
+   <translation id="logs_streams_follow_test_gelf" qtlid="476352">Test data stream with GELF</translation>
+   <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Test data stream with LTSV</translation>
+   <translation id="logs_streams_follow_test_rfc" qtlid="476378">Test data stream with RFC 5424</translation>
    <translation id="logs_streams_follow_emergency" qtlid="476391">Emergency</translation>
    <translation id="logs_streams_follow_alert" qtlid="81114">Alert</translation>
    <translation id="logs_streams_follow_critical" qtlid="476404">Critical</translation>
@@ -392,28 +392,28 @@
    <translation id="logs_streams_follow_notice" qtlid="81162">Notice</translation>
    <translation id="logs_streams_follow_info" qtlid="81174">Info</translation>
    <translation id="logs_streams_follow_debug" qtlid="81186">Debug</translation>
-   <translation id="logs_streams_follow_logs_limit" qtlid="476430">limite</translation>
-   <translation id="logs_streams_connection_opened" qtlid="426105">Connexion établie</translation>
-   <translation id="logs_streams_connection_closed" qtlid="426118">Connexion fermée</translation>
-   <translation id="logs_streams_displaying_logs" qtlid="476443">Affichage des Logs</translation>
-   <translation id="logs_streams_waiting_for_messages" qtlid="476456">Connexion WebSocket établie, dans l'attente de messages...</translation>
-   <translation id="logs_streams_follow_connection_error" qtlid="476469">Une erreur est survenue lors de la connexion WebSocket: {{message}}</translation>
-   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">L'adresse Webscoket n'est pas disponible pour le flux {{stream}}. Veuillez réessayer plus tard.</translation>
-   <translation id="logs_streams_follow_copy_websocket_success" qtlid="476495">L'adresse WebSocket a été copiée avec succès dans votre presse-papiers, utiliser CTRL+V pour coller son contenu.</translation>
-   <translation id="logs_streams_follow_copy_websocket_error" qtlid="476508">Votre navigateur ne permet pas de copier au presse-papiers. Veuillez passer à une version plus récente de votre navigateur. L'adresse WebSocket pour le flux {{stream}} est: {{url}}</translation>
-   <translation id="logs_streams_follow_copy_command_success" qtlid="476521">La ligne de commande pour le format {{type}} a été copiée dans votre presse-papiers. Vous pouvez la tester à partir d'un terminal.</translation>
-   <translation id="logs_streams_follow_copy_command_error" qtlid="476534">Votre navigateur ne permet pas de copier au presse-papiers. Veuillez passer à une version plus récente de votre navigateur. La ligne de commande pour le format {{type}} est: "{{command}}". Copiez et collez cette commande dans le terminal pour l'exécuter.</translation>
-   <translation id="logs_streams_get_command_urls_error" qtlid="476547">Échec lors du chargement de l'URL pour les commandes Gelf, LTSV and RFC 5424. Vous ne pourrez utiliser ces commandes.</translation>
-   <translation id="streams_archives_loading_error" qtlid="476560">Une erreur est survenue lors du chargement de l'archive: {{message}}</translation>
-   <translation id="streams_archives_ids_loading_error" qtlid="476573">Une erreur est survenue lors du chargement des archives: {{message}}</translation>
-   <translation id="streams_archives_url_load_error" qtlid="476586">Une erreur est survenue lors du chargement de l'URL de l'archive {{filename}}: {{message}}</translation>
-   <translation id="streams_archives_download_error" qtlid="476599">Une erreur est survenue lors du téléchargement de l'archive: {{message}}</translation>
-   <translation id="streams_archives_unfreeze_start" qtlid="476612">Début du dégel de {{filename}}</translation>
-   <translation id="streams_archives_unfreezing" qtlid="469959">The {{ name }} archive is currently being unfrozen. It will be available in {{ time }}.</translation>
-   <translation id="streams_archives_preparing_download" qtlid="476625">Préparation du téléchargement de {{filename}}. Veuillez patienter...</translation>
+   <translation id="logs_streams_follow_logs_limit" qtlid="476430">limit</translation>
+   <translation id="logs_streams_connection_opened" qtlid="426105">Connection established</translation>
+   <translation id="logs_streams_connection_closed" qtlid="426118">Connection closed</translation>
+   <translation id="logs_streams_displaying_logs" qtlid="476443">Display logs</translation>
+   <translation id="logs_streams_waiting_for_messages" qtlid="476456">WebSocket connection established. Waiting to receive messages...</translation>
+   <translation id="logs_streams_follow_connection_error" qtlid="476469">An error has occurred connecting to WebSocket: {{message}}</translation>
+   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">The WebSocket address is unavailable for the {{stream}} data stream. Please try again later.</translation>
+   <translation id="logs_streams_follow_copy_websocket_success" qtlid="476495">The WebSocket address has been copied to your clipboard. Use Ctrl+V to paste the content.</translation>
+   <translation id="logs_streams_follow_copy_websocket_error" qtlid="476508">Your browser is unable to copy text to clipboards. Please use a more recent browser version. The WebSocket address for the {{stream}} data stream is: {{url}}</translation>
+   <translation id="logs_streams_follow_copy_command_success" qtlid="476521">The command line for the {{type}} format has been copied to your clipboard. You can test it using a terminal.</translation>
+   <translation id="logs_streams_follow_copy_command_error" qtlid="476534">Your browser is unable to copy text to clipboards. Please use a more recent browser version. The command line for the {{type}} format is: "{{command}}". Copy and paste this command into the terminal to run it.</translation>
+   <translation id="logs_streams_get_command_urls_error" qtlid="476547">Unable to load the URL for the GELF, LTSV and RFC 5424 commands. You cannot use these commands.</translation>
+   <translation id="streams_archives_loading_error" qtlid="476560">An error has occurred loading the archive: {{message}}</translation>
+   <translation id="streams_archives_ids_loading_error" qtlid="476573">An error has occurred loading the archives: {{message}}</translation>
+   <translation id="streams_archives_url_load_error" qtlid="476586">An error has occurred loading the {{filename}} archive URL: {{message}}</translation>
+   <translation id="streams_archives_download_error" qtlid="476599">An error has occurred downloading the archive: {{message}}</translation>
+   <translation id="streams_archives_unfreeze_start" qtlid="476612">Preparing to unfreeze {{filename}}</translation>
+   <translation id="streams_archives_unfreezing" qtlid="469959">The {{ name }} archive is currently being unfrozen. It will be available in {{ time }} hours.</translation>
+   <translation id="streams_archives_preparing_download" qtlid="476625">Preparing to download {{filename}}. Please wait...</translation>
    <translation id="streams_archives_title" qtlid="469933">Archives</translation>
-   <translation id="streams_archives_current_title" qtlid="476638">Gestion de vos archives pour le flux {{ name }}</translation>
-   <translation id="streams_archives_intro_text" qtlid="469946">Once archives have been unfrozen, they will be available for download for 24 hours.</translation>
+   <translation id="streams_archives_current_title" qtlid="476638">Manage your archives for the {{ name }} data stream</translation>
+   <translation id="streams_archives_intro_text" qtlid="469946">Once archives have been unfrozen, they will be available to download for 24 hours.</translation>
    <translation id="streams_archives_file_name" qtlid="469972">Filename</translation>
    <translation id="streams_archives_size" qtlid="7726">Size</translation>
    <translation id="streams_archives_signatures" qtlid="69953">Signature</translation>
@@ -422,160 +422,160 @@
    <translation id="streams_archives_sha256_value" qtlid="476664">SHA256: {{sha256}}</translation>
    <translation id="streams_archives_sealed" qtlid="469985">Frozen</translation>
    <translation id="streams_archives_unsealed" qtlid="99920">Available</translation>
-   <translation id="streams_archives_unsealing" qtlid="469998">Currently being unfrozen</translation>
+   <translation id="streams_archives_unsealing" qtlid="469998">Unfreezing</translation>
    <translation id="streams_archives_unfreeze" qtlid="369152">Unfreeze</translation>
    <translation id="streams_archives_download" qtlid="39286">Download</translation>
-   <translation id="streams_alerts_loading_error" qtlid="476677">Une erreur est survenue lors du chargement de l'alerte: {{message}}</translation>
-   <translation id="streams_alerts_ids_loading_error" qtlid="476690">Une erreur est survenue lors du chargement des alertes: {{message}}</translation>
-   <translation id="streams_alerts_current_title" qtlid="469543">Managing your alerts for the stream {{ name }}</translation>
-   <translation id="streams_alerts_intro_text" qtlid="469556">Once you have set up your alerts, you no longer need to monitor your logs - the platform does it for you. Numerous use cases are liable to trigger an alert, which will then be sent to you by email: a lack of messages from a specific piece of software for an unusually long time, if the number of tasks carried out is abnomrnmally low, if traffic on your website is very high or if certain  keywords in particular appear in your stream.</translation>
+   <translation id="streams_alerts_loading_error" qtlid="476677">An error has occurred loading the alert: {{message}}</translation>
+   <translation id="streams_alerts_ids_loading_error" qtlid="476690">An error has occurred loading the alerts: {{message}}</translation>
+   <translation id="streams_alerts_current_title" qtlid="469543">Manage your alerts for the {{ name }} data stream</translation>
+   <translation id="streams_alerts_intro_text" qtlid="469556">Once you have set up your alerts, you no longer need to monitor your logs - the platform does it for you. A number of different use cases are liable to trigger an alert, which will then be sent to you by email: a lack of messages from a specific software application for an unusually long time, if the number of tasks carried out is unusually low, if traffic on your website is very high, or if certain keywords in particular appear on your stream.</translation>
    <translation id="streams_alerts_title" qtlid="72797">Alerts</translation>
    <translation id="streams_alerts_name" qtlid="3818">Name</translation>
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
-   <translation id="streams_alerts_grace_period" qtlid="469582">Grace period</translation>
+   <translation id="streams_alerts_grace_period" qtlid="469582">Grace period (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Repeat notifications</translation>
-   <translation id="streams_alerts_delete" qtlid="286903">Delete alert </translation>
-   <translation id="streams_alerts_delete_message" qtlid="476703">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
-   <translation id="streams_alerts_delete_error" qtlid="476716">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
-   <translation id="streams_alerts_delete_success" qtlid="476729">L'alerte {{alertName}} a été supprimée avec succès.</translation>
-   <translation id="streams_alerts_condition_message_count" qtlid="476742">L'alerte est levée lorsqu'il y a <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> message(s) lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
-   <translation id="streams_alerts_condition_field_value" qtlid="476755">L'alerte est levée lorsque le champ <strong>{{field}}</strong> a une valeur <strong>{{thresholdType}} {{constraintType}}</strong> de <strong>{{threshold}}</strong> lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">L'alerte est levée lorsqu'un message contenant le champ <strong>{{field}}:"{{value}}"</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete_message" qtlid="476703">Are you sure you want to delete the <strong>{{alert}}</strong> alert?</translation>
+   <translation id="streams_alerts_delete_error" qtlid="476716">An error has occurred deleting the {{alertName}} alert: {{message}}</translation>
+   <translation id="streams_alerts_delete_success" qtlid="476729">The {{alertName}} alert has been deleted.</translation>
+   <translation id="streams_alerts_condition_message_count" qtlid="476742">The alert is triggered when there have been <strong>{{thresholdType}}</strong> than <strong>{{threshold}}</strong> message(s) in the last <strong>{{time}}</strong> minutes. Include <strong>{{backlog}}</strong> messages in the notification.</translation>
+   <translation id="streams_alerts_condition_field_value" qtlid="476755">The alert is triggered when the <strong>{{field}}</strong> field has had a value <strong>{{thresholdType}} {{constraintType}}</strong> than <strong>{{threshold}}</strong> in the last <strong>{{time}}</strong> minutes. Include <strong>{{backlog}}</strong> messages in the notification.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">The alert is triggered when a message containing the field <strong>{{field}}:"{{value}}"</strong> is received. Include <strong>{{backlog}}</strong> messages in the notification.</translation>
    <translation id="create_alert" qtlid="469569">Create an alert</translation>
-   <translation id="counter_alert" qtlid="425494">Compteur</translation>
-   <translation id="numeric_alert" qtlid="425481">Valeur numérique</translation>
-   <translation id="textual_alert" qtlid="425468">Contenu textuel</translation>
+   <translation id="counter_alert" qtlid="425494">Counter</translation>
+   <translation id="numeric_alert" qtlid="425481">Numerical value</translation>
+   <translation id="textual_alert" qtlid="425468">Text content</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Create a counter condition</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Ajouter une condition de champ d'aggrégation</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Ajouter une condition de champ de contenu</translation>
-   <translation id="edit_alert_title_message_count" qtlid="476807">Modifier la condition de type compteur</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition de champ d'aggrégation</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition de champ de contenu</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Add an aggregation field condition</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Add a content field condition</translation>
+   <translation id="edit_alert_title_message_count" qtlid="476807">Modify message counter condition</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modify aggregation field condition</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modify content field condition</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">This condition is triggered when the number of messages is higher or lower than the defined threshold for a given period.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">This condition is triggered when the aggregate value for a field is higher or lower than a defined threshold over a given period.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">This condition is activated when the contents of the messages equals a defined value.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">This condition is activated when the contents of the messages equal a defined value.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Name</translation>
-   <translation id="add_alert_title_field_description" qtlid="469634">Title of alert condition.</translation>
-   <translation id="add_alert_time_period_field" qtlid="469647">Period of time (minutes)</translation>
+   <translation id="add_alert_title_field_description" qtlid="469634">Title of the alert condition.</translation>
+   <translation id="add_alert_time_period_field" qtlid="469647">Time period (minutes)</translation>
    <translation id="add_alert_time_period_field_description" qtlid="469660">Evaluate the condition for all messages received within the given number of minutes.</translation>
    <translation id="add_alert_threshold_type_field" qtlid="469673">Threshold type</translation>
    <translation id="add_alert_threshold_type_more" qtlid="72641">More</translation>
-   <translation id="add_alert_threshold_type_less" qtlid="476846">Moins</translation>
-   <translation id="add_alert_threshold_type_lower" qtlid="476859">Moins haute</translation>
-   <translation id="add_alert_threshold_type_higher" qtlid="476872">Plus haute</translation>
-   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Select the condition that will trigger the alert - more/fewer messages than the threshold.</translation>
-   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Select the condition that will trigger the alert: when the value is higher/lower than the threshold.</translation>
+   <translation id="add_alert_threshold_type_less" qtlid="476846">Less</translation>
+   <translation id="add_alert_threshold_type_lower" qtlid="476859">Lower</translation>
+   <translation id="add_alert_threshold_type_higher" qtlid="476872">Higher</translation>
+   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Select the condition that will trigger the alert, e.g. more/less messages than the threshold.</translation>
+   <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Select the condition that will trigger the alert: e.g. when the value is higher/lower than the threshold.</translation>
    <translation id="add_alert_threshold_field" qtlid="469699">Threshold</translation>
    <translation id="add_alert_threshold_field_description" qtlid="469712">The value that triggers the alert if it is exceeded.</translation>
    <translation id="add_alert_grace_period_field" qtlid="469725">Grace period (minutes)</translation>
-   <translation id="add_alert_grace_period_field_description" qtlid="469738">The number of minutes to wait after an alert has been resolved before reissuing an alert.</translation>
-   <translation id="add_alert_accumulation_field" qtlid="469751">Buildup of messages</translation>
+   <translation id="add_alert_grace_period_field_description" qtlid="469738">The number of minutes to wait after an alert has been resolved before re-issuing an alert.</translation>
+   <translation id="add_alert_accumulation_field" qtlid="469751">Build-up of messages</translation>
    <translation id="add_alert_accumulation_field_description" qtlid="469764">The number of messages to include in the alert notifications.</translation>
    <translation id="add_alert_notification_field" qtlid="32386">Notification</translation>
    <translation id="add_alert_notification_field_description" qtlid="469777">Tick this box to send notifications every time the condition for the alert is met, regardless of the alert's status.</translation>
    <translation id="add_alert_field_field" qtlid="469816">Field</translation>
    <translation id="add_alert_field_field_description" qtlid="469829">Name of the field to be checked.</translation>
-   <translation id="add_alert_constraint_type_field" qtlid="469868">Type of aggregation</translation>
-   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Sélectionner la condition qui active l'alerte : quand la valeur est inférieure ou supérieure au seuil.</translation>
+   <translation id="add_alert_constraint_type_field" qtlid="469868">Aggregation type</translation>
+   <translation id="add_alert_constraint_type_field_description" qtlid="469881">Select the condition that will trigger the alert: e.g. when the value is lower or higher than the threshold.</translation>
    <translation id="add_alert_constraint_type_mean" qtlid="31930">Average</translation>
    <translation id="add_alert_constraint_type_min" qtlid="476885">Minimum</translation>
    <translation id="add_alert_constraint_type_max" qtlid="33826">Maximum</translation>
-   <translation id="add_alert_constraint_type_sum" qtlid="476898">Somme</translation>
-   <translation id="add_alert_constraint_type_stddev" qtlid="476911">Écart-type</translation>
+   <translation id="add_alert_constraint_type_sum" qtlid="476898">Sum</translation>
+   <translation id="add_alert_constraint_type_stddev" qtlid="476911">Threshold-type</translation>
    <translation id="add_alert_value_field" qtlid="47548">Value</translation>
-   <translation id="add_alert_value_field_description" qtlid="469920">The value that is to be compared against the field's value.</translation>
-   <translation id="streams_alerts_add_success" qtlid="476924">L'alerte {{alertName}} a été créé avec succès</translation>
-   <translation id="streams_alerts_add_error" qtlid="476937">Une erreur est survenue lors de la création de l'alerte {{alertName}}: {{message}}</translation>
-   <translation id="streams_alerts_update_success" qtlid="476950">L'alerte {{alertName}} a été modifié avec succès</translation>
-   <translation id="streams_alerts_update_error" qtlid="476963">Une erreur est survenue lors de la modification de l'alerte {{alertName}}: {{message}}</translation>
+   <translation id="add_alert_value_field_description" qtlid="469920">The value to be compared against the field's value.</translation>
+   <translation id="streams_alerts_add_success" qtlid="476924">The {{alertName}} alert has been created</translation>
+   <translation id="streams_alerts_add_error" qtlid="476937">An error has occurred creating the {{alertName}} alert: {{message}}</translation>
+   <translation id="streams_alerts_update_success" qtlid="476950">The {{alertName}} alert has been modified</translation>
+   <translation id="streams_alerts_update_error" qtlid="476963">An error has occurred modifying the {{alertName}} alert: {{message}}</translation>
 
 <!-- Inputs -->
-   <translation id="logs_inputs_quota_get_error" qtlid="476976">Une erreur est survenue lors du chargement du quota d'outils de collecte: {{message}}</translation>
-   <translation id="logs_inputs_details_get_error" qtlid="476989">Une erreur est survenue lors du chargement des détails du logiciel: {{message}}</translation>
-   <translation id="logs_inputs_main_offer_get_error" qtlid="477002">Une erreur est survenue lors du chargement des détails de l'offre: {{message}}</translation>
-   <translation id="logs_inputs_get_error" qtlid="477015">Une erreur est survenue lors du chargement de l'outil de collecte '{{inputId}}': {{message}}</translation>
-   <translation id="logs_inputs_delete_success" qtlid="477028">L'outil de collecte '{{inputTitle}}' a été supprimé avec succès</translation>
-   <translation id="logs_inputs_delete_error" qtlid="477041">Une erreur est survenue lors de la suppression de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_add_success" qtlid="477054">L'outil de collecte '{{inputTitle}}' a été ajouté avec succès</translation>
-   <translation id="logs_inputs_add_error" qtlid="477067">Une erreur est survenue lors de l'ajout de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_update_success" qtlid="477080">L'outil de collecte '{{inputTitle}}' a été modifié avec succès</translation>
-   <translation id="logs_inputs_update_error" qtlid="477093">Une erreur est survenue lors de la modification de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_start_success" qtlid="477106">L'outil de collecte '{{inputTitle}}' a été démarré avec succès</translation>
-   <translation id="logs_inputs_start_error" qtlid="477119">Une erreur est survenue lors du démarrage de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_restart_success" qtlid="477132">L'outil de collecte '{{inputTitle}}' a été redémarré avec succès</translation>
-   <translation id="logs_inputs_restart_error" qtlid="477145">Une erreur est survenue lors du redémarrage de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_stop_success" qtlid="477158">L'outil de collecte '{{inputTitle}}' a été arrêté avec succès</translation>
-   <translation id="logs_inputs_stop_error" qtlid="477171">Une erreur est survenue lors de l'arrêt de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
-   <translation id="logs_inputs_logurl_error" qtlid="477184">Une erreur est survenue lors du chargement de l'URL de l'outil de collecte: {{message}}</translation>
-   <translation id="logs_inputs_test_error" qtlid="477197">Une erreur est survenue lors du test de l'outil de collecte '{{inputTitle}}': {{message}}</translation>
+   <translation id="logs_inputs_quota_get_error" qtlid="476976">An error has occurred loading the data-gathering tools quota: {{message}}</translation>
+   <translation id="logs_inputs_details_get_error" qtlid="476989">An error has occurred loading the software application details: {{message}}</translation>
+   <translation id="logs_inputs_main_offer_get_error" qtlid="477002">An error has occurred loading the solution details: {{message}}</translation>
+   <translation id="logs_inputs_get_error" qtlid="477015">An error has occurred loading the '{{inputId}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_delete_success" qtlid="477028">The '{{inputTitle}}' data-gathering tool has been deleted</translation>
+   <translation id="logs_inputs_delete_error" qtlid="477041">An error has occurred deleting the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_add_success" qtlid="477054">The '{{inputTitle}}' data-gathering tool has been added</translation>
+   <translation id="logs_inputs_add_error" qtlid="477067">An error has occurred adding the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_update_success" qtlid="477080">The '{{inputTitle}}' data-gathering tool has been modified</translation>
+   <translation id="logs_inputs_update_error" qtlid="477093">An error has occurred modifying the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_start_success" qtlid="477106">The '{{inputTitle}}' data-gathering tool has been launched</translation>
+   <translation id="logs_inputs_start_error" qtlid="477119">An error has occurred relaunching the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_restart_success" qtlid="477132">The '{{inputTitle}}' data-gathering tool has been relaunched</translation>
+   <translation id="logs_inputs_restart_error" qtlid="477145">An error has occurred relaunching the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_stop_success" qtlid="477158">The '{{inputTitle}}' data-gathering tool has been stopped</translation>
+   <translation id="logs_inputs_stop_error" qtlid="477171">An error has occurred stopping the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_logurl_error" qtlid="477184">An error has occurred loading the data-gathering tool URL: {{message}}</translation>
+   <translation id="logs_inputs_test_error" qtlid="477197">An error has occurred testing the '{{inputTitle}}' data-gathering tool: {{message}}</translation>
    <translation id="inputs_title" qtlid="421217">Data-gathering tools</translation>
-   <translation id="inputs_intro_text" qtlid="470167">Gathering tools are software packages used to recover logs from servers or applications. They are an effective of processing and converting logs into GELF format, which is compatible with Logs Data Platform. You no longer have to dedicate material resources to this task or verify that you infrastructures are available - we will do it for you. Thanks to this platform, you can connect these tools to your different streams for a simplified configuration secured via firewall rules.</translation>
-   <translation id="inputs_total_used" qtlid="477210">outils de collecte utilisés</translation>
-   <translation id="inputs_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Add new gathering tool</translation>
-   <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
-   <translation id="inputs_tool" qtlid="477236">Outil</translation>
+   <translation id="inputs_intro_text" qtlid="470167">Data-gathering tools are software packages used to recover logs from servers or applications. They are an effective way to process and convert logs into GELF format, which is compatible with the Logs Data Platform. You no longer need to dedicate hardware resources to this task, or check that your infrastructures are available - we will do it for you. With this platform, you can connect these tools to your different streams for a simplified configuration, secured via firewall rules.</translation>
+   <translation id="inputs_total_used" qtlid="477210">data-gathering tools used</translation>
+   <translation id="inputs_increase_quota" qtlid="474753">increase quota</translation>
+   <translation id="inputs_add_input" qtlid="423193">Add a new data-gathering tool</translation>
+   <translation id="inputs_name" qtlid="477223">data-gathering tool</translation>
+   <translation id="inputs_tool" qtlid="477236">Tool</translation>
    <translation id="inputs_col_name" qtlid="3818">Name</translation>
    <translation id="inputs_description" qtlid="9238">Description</translation>
    <translation id="inputs_software" qtlid="423973">Software</translation>
    <translation id="inputs_linked_option" qtlid="426768">Associated option</translation>
    <translation id="inputs_state" qtlid="251970">Status</translation>
-   <translation id="inputs_state_processing" qtlid="477249">En traitement</translation>
-   <translation id="inputs_state_restart_required" qtlid="424129">À redémarrer</translation>
-   <translation id="inputs_state_to_configure" qtlid="424142">À configurer</translation>
-   <translation id="inputs_state_pending" qtlid="424168">À démarrer</translation>
-   <translation id="inputs_state_running" qtlid="424155">Opérationnel</translation>
+   <translation id="inputs_state_processing" qtlid="477249">Processing</translation>
+   <translation id="inputs_state_restart_required" qtlid="424129">Relaunch required</translation>
+   <translation id="inputs_state_to_configure" qtlid="424142">Configuration required</translation>
+   <translation id="inputs_state_pending" qtlid="424168">Launch required</translation>
+   <translation id="inputs_state_running" qtlid="424155">Operational</translation>
    <translation id="inputs_state_unknown" qtlid="77142">Unknown</translation>
    <translation id="inputs_edit" qtlid="37875">Edit</translation>
    <translation id="inputs_start" qtlid="25951">Start</translation>
    <translation id="inputs_restart" qtlid="33538">Restart</translation>
    <translation id="inputs_stop" qtlid="108480">Stop</translation>
    <translation id="inputs_standard_output" qtlid="424350">Console output</translation>
-   <translation id="inputs_starting" qtlid="477262">Démarrage de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_stopping" qtlid="477275">Arrêt de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_restarting" qtlid="477288">Redémarrage de l'outil de collecte {{inputTitle}}</translation>
-   <translation id="inputs_delete" qtlid="470232">Supprimer l'outil de collecte</translation>
-   <translation id="inputs_delete_message" qtlid="477301">Êtes-vous sûr de vouloir supprimer l'outil de collecte <strong>{{input}}</strong> ?</translation>
-   <translation id="inputs_delete_error" qtlid="477314">Une erreur est survenue lors de la suppression de l'outil de collecte: {{message}}</translation>
-   <translation id="inputs_delete_success" qtlid="477327">L'outil de collecte a été supprimé avec succès</translation>
+   <translation id="inputs_starting" qtlid="477262">Launch the {{inputTitle}} data-gathering tool</translation>
+   <translation id="inputs_stopping" qtlid="477275">Stop the {{inputTitle}} data-gathering tool</translation>
+   <translation id="inputs_restarting" qtlid="477288">Relaunch the {{inputTitle}} data-gathering tool</translation>
+   <translation id="inputs_delete" qtlid="470232">Delete data-gathering tool</translation>
+   <translation id="inputs_delete_message" qtlid="477301">Are you sure you want to delete the <strong>{{input}}</strong> data-gathering tool?</translation>
+   <translation id="inputs_delete_error" qtlid="477314">An error has occurred deleting the data-gathering tool: {{message}}</translation>
+   <translation id="inputs_delete_success" qtlid="477327">The data-gathering tool has been deleted</translation>
    <translation id="inputs_info_title" qtlid="470180">Useful information</translation>
    <translation id="inputs_info_description" qtlid="470193">Click on the options shown to copy them to your clipboard.</translation>
    <translation id="inputs_info_hostname" qtlid="470206">Host name</translation>
    <translation id="inputs_info_ipaddress" qtlid="470219">Public IP (address)</translation>
    <translation id="inputs_info_certificate" qtlid="439169">Certificate type</translation>
-   <translation id="inputs_logs_title" qtlid="477340">Sortie console de {{inputTitle}}</translation>
-   <translation id="inputs_logs_no_logs" qtlid="477353">Aucun message reçu lors de la dernière heure.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Add new gathering tool</translation>
-   <translation id="inputs_logs_title_edit" qtlid="477366">Modifier l'outil de collecte</translation>
-   <translation id="inputs_logs_edit_description" qtlid="477379">Pour l'outil de collecte <strong>{{ name }}</strong></translation>
+   <translation id="inputs_logs_title" qtlid="477340">Console output for {{inputTitle}}</translation>
+   <translation id="inputs_logs_no_logs" qtlid="477353">No messages received in the last hour.</translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Add a new data-gathering tool</translation>
+   <translation id="inputs_logs_title_edit" qtlid="477366">Modify data-gathering tool</translation>
+   <translation id="inputs_logs_edit_description" qtlid="477379">For the <strong>{{ name }}</strong> data-gathering tool</translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Edit</translation>
    <translation id="inputs_logs_step1_add" qtlid="37923">Add</translation>
    <translation id="inputs_logs_step2" qtlid="4010">Configure</translation>
    <translation id="inputs_logs_step3" qtlid="470258">Authorise networks</translation>
    <translation id="inputs_logs_networks_title" qtlid="423661">Trusted network</translation>
-   <translation id="inputs_logs_networks_add_remove_network_title" qtlid="477392">Ajouter/Enlever des réseaux de confiance</translation>
-   <translation id="inputs_logs_networks_ip_address" qtlid="477405">Adresse IP du réseau de confiance</translation>
-   <translation id="inputs_logs_networks_ip_address_example" qtlid="423687">Exemple: 5.196.85.154 ou 5.196.2.0/26</translation>
+   <translation id="inputs_logs_networks_add_remove_network_title" qtlid="477392">Add/Remove trusted networks</translation>
+   <translation id="inputs_logs_networks_ip_address" qtlid="477405">Trusted network IP address</translation>
+   <translation id="inputs_logs_networks_ip_address_example" qtlid="423687">E.g.: 5.196.85.154 or 5.196.2.0/26</translation>
    <translation id="inputs_logs_networks_allow_tooltip" qtlid="470362">When there are no authorised networks, your security is compromised, as anyone can access your application.</translation>
-   <translation id="logs_inputs_network_add_success" qtlid="477418">Le réseau {{network}} a été ajouté à l'outil de collecte {{inputTitle}} avec succès</translation>
-   <translation id="logs_inputs_network_remove_success" qtlid="477431">Le réseau {{network}} a été enlevé à l'outil de collecte {{inputTitle}} avec succès</translation>
-   <translation id="logs_inputs_network_add_error" qtlid="477444">Une erreur est survenue lors de l'ajout du réseau {{network}} à l'outil de collecte {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_network_remove_error" qtlid="477457">Une erreur est survenue lors du retrait du réseau {{network}} à l'outil de collecte {{inputTitle}}: {{message}}</translation>
+   <translation id="logs_inputs_network_add_success" qtlid="477418">The {{network}} network has been added to the {{inputTitle}} data-gathering tool</translation>
+   <translation id="logs_inputs_network_remove_success" qtlid="477431">The {{network}} network has been deleted from the {{inputTitle}} data-gathering tool</translation>
+   <translation id="logs_inputs_network_add_error" qtlid="477444">An error has occurred adding the {{network}} network to the {{inputTitle}} data-gathering tool: {{message}}</translation>
+   <translation id="logs_inputs_network_remove_error" qtlid="477457">An error has occurred deleting the {{network}} network from the {{inputTitle}} data-gathering tool: {{message}}</translation>
    <translation id="inputs_logs_edit_title_field" qtlid="3818">Name</translation>
    <translation id="inputs_logs_edit_description_field" qtlid="9238">Description</translation>
    <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
    <translation id="inputs_logs_edit_port_field" qtlid="470271">TCP port to be opened</translation>
    <translation id="inputs_logs_edit_stream_field" qtlid="423349">Associate with data stream</translation>
-   <translation id="inputs_logs_edit_select_stream" qtlid="470583">Select a stream</translation>
-   <translation id="inputs_logs_edit_select_software" qtlid="477470">Choisir un logiciel</translation>
-   <translation id="inputs_logs_edit_option_field" qtlid="469478">Chose option attached</translation>
+   <translation id="inputs_logs_edit_select_stream" qtlid="470583">Select a data stream</translation>
+   <translation id="inputs_logs_edit_select_software" qtlid="477470">Choose a software application</translation>
+   <translation id="inputs_logs_edit_option_field" qtlid="469478">Choose attached option</translation>
    <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Single instance</translation>
    <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Launch only one instance of this type.</translation>
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
-   <translation id="inputs_logs_configure_delimiter" qtlid="423375">Délimiteur entre chaque message</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Line</translation>
-   <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Format of your logs</translation>
+   <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimiter between each message</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Null</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
    <translation id="inputs_logs_configure_format_rfc" qtlid="477522">Syslog RFC 5424</translation>
@@ -584,173 +584,173 @@
    <translation id="inputs_logs_configure_format_syslog" qtlid="5414">Syslog</translation>
    <translation id="inputs_logs_configure_format_apache" qtlid="477561">Apache</translation>
    <translation id="inputs_logs_configure_format_ha_proxy" qtlid="477574">HAProxy</translation>
-   <translation id="inputs_logs_configure_format_my_sql" qtlid="477587">MySQL Slow Queries</translation>
+   <translation id="inputs_logs_configure_format_my_sql" qtlid="477587">MySQL slow queries</translation>
    <translation id="inputs_logs_configure_format_twitter" qtlid="236216">Twitter</translation>
    <translation id="inputs_logs_configure_format_nginx" qtlid="477600">Nginx</translation>
-   <translation id="inputs_logs_configure_messages_batch" qtlid="477613">Nombre de messages envoyé par lot</translation>
-   <translation id="inputs_logs_configure_kafkaCoalesce" qtlid="477626">Nombre de messages</translation>
+   <translation id="inputs_logs_configure_messages_batch" qtlid="477613">Number of messages sent by batch</translation>
+   <translation id="inputs_logs_configure_kafkaCoalesce" qtlid="477626">Number of messages</translation>
    <translation id="inputs_logs_configure_next" qtlid="17743">Next</translation>
    <translation id="inputs_logs_configure_previous" qtlid="17431">Previous</translation>
    <translation id="inputs_logs_configure_later" qtlid="82305">Later</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Format of your logs</translation>
    <translation id="inputs_logs_configure_logstash_title" qtlid="477639">Logstash</translation>
-   <translation id="inputs_logs_configure_logstash_desc" qtlid="470297">Edit the "input" sections and filter the "output" section of the configuration of your Logstash that we wrote.</translation>
+   <translation id="inputs_logs_configure_logstash_desc" qtlid="470297">Edit the "input" sections, and filter the "output" section of your Logstash configuration that we wrote.</translation>
    <translation id="inputs_logs_configure_logstash_desc_tcp" qtlid="470310">As a reminder, you have chosen to open TCP port 6154 publicly.</translation>
    <translation id="inputs_logs_configure_logstash_desc2" qtlid="470323">Once you have edited these sections, you can test your configuration directly.</translation>
-   <translation id="inputs_logs_configure_logstash_wizard" qtlid="477652">Formulaire de configuration</translation>
-   <translation id="inputs_logs_configure_logstash_grok" qtlid="477665">Modèles Grok personnalisés</translation>
-   <translation id="inputs_logs_configure_logstash_input_section" qtlid="423245">Section «Input»</translation>
-   <translation id="inputs_logs_configure_logstash_filter_section" qtlid="423258">Section «Filter»</translation>
-   <translation id="inputs_logs_configure_choose_app" qtlid="477678">Choisir une application</translation>
+   <translation id="inputs_logs_configure_logstash_wizard" qtlid="477652">Configuration form</translation>
+   <translation id="inputs_logs_configure_logstash_grok" qtlid="477665">Customised Grok templates</translation>
+   <translation id="inputs_logs_configure_logstash_input_section" qtlid="423245">'Input' section</translation>
+   <translation id="inputs_logs_configure_logstash_filter_section" qtlid="423258">'Filter' section</translation>
+   <translation id="inputs_logs_configure_choose_app" qtlid="477678">Choose an application</translation>
    <translation id="input_logs_configure_test" qtlid="423908">Test the configuration</translation>
-   <translation id="input_logs_configure_test_progress" qtlid="477691">Test en cours</translation>
-   <translation id="input_logs_configure_test_timestamp" qtlid="477704">Dernière exécution: {{ timestamp }}</translation>
-   <translation id="input_logs_configure_test_success" qtlid="477717">Configuration est OK</translation>
+   <translation id="input_logs_configure_test_progress" qtlid="477691">Test in progress</translation>
+   <translation id="input_logs_configure_test_timestamp" qtlid="477704">Last tested: {{ timestamp }}</translation>
+   <translation id="input_logs_configure_test_success" qtlid="477717">Configuration is OK</translation>
    <translation id="input_logs_configure_test_failure" qtlid="477730">{{ output }}</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_LINE" qtlid="477743">Le délimiteur sera " n" pour un retour à la ligne.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Caractère Nul, typiquement utilisé par GELF / TCP: 0.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Préfixe de taille de message tel que spécifié dans la RFC 5425. Cependant, les retours à la lignes agissent aussi comme délimiteur, afin de récupérer des entrées corrompues ou invalides.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">Ce délimiteur ne doit être utilisé que pour le protocole Cap'n Proto</translation>
-   <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Number of messages stored in the RAM by Flowgger before sending them to Kafka. A high value gives better performance but may cause indexing lag if you send only a small number of messages.</translation>
-   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuration flowgger a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
-   <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Une erreur est survenue lors de la modification de la configuration Flowgger de {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_logstash_update_success" qtlid="477795">La configuration Logstash a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
-   <translation id="logs_inputs_logstash_update_error" qtlid="477808">Une erreur est survenue lors de la modification de la configuration Logstash de {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Aucun test de configuration n'a réussi</translation>
-   <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">Aucun test n'a été effectué pour la configuration courante. Veuillez exécuter le test de la configuration pour continuer.</translation>
-   <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">Le dernier test de la configuration a échoué. Assurez-vous que la configuration soit correcte et réexécuter le test de la configuration.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_LINE" qtlid="477743">The delimiter will be "n" for a line return.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Null character, typically used by GELF/TCP: 0.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Message size prefix, as specified in RFC 5425. However, line returns also act as delimiters, to collect corrupt or invalid inputs.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">This delimiter can only be used for the Cap'n Pro protocol</translation>
+   <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Number of messages stored in the RAM by Flowgger before sending them to Kafka. A high value gives better performance, but may cause indexing lag if you send only a small number of messages.</translation>
+   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">Flowgger configuration has been modified for the  {{inputTitle}} data-gathering tool</translation>
+   <translation id="logs_inputs_flowgger_update_error" qtlid="477782">An error has occurred modifying the {{inputTitle}} Flowgger configuration: {{message}}</translation>
+   <translation id="logs_inputs_logstash_update_success" qtlid="477795">The Logstash configuration has been modified for the {{inputTitle}} data-gathering tool</translation>
+   <translation id="logs_inputs_logstash_update_error" qtlid="477808">An error has occurred modifying the {{inputTitle}} Logstash configuration: {{message}}</translation>
+   <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">No configuration tests have been successful</translation>
+   <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">The current configuration has not been tested. Please launch the configuration test to continue.</translation>
+   <translation id="logs_inputs_logstash_save_warning_unsuccessful" qtlid="477847">The most recent configuration test has failed. Please check that your configuration is correct, then retry the configuration test.</translation>
 
 <!-- Elasticsearch Indices -->
-   <translation id="logs_index_description" qtlid="470414">Logs Data Platform lets you create and host Elasticsearch indices. These indices can be used for the configuration data of a Kibana instance, indexing your statistical data and enriching or correlating your logs. You can then use these indices with the majority of tools and applications compatible with the Elasticsearch REST API.</translation>
-   <translation id="logs_index_total_used" qtlid="477860">index utilisés</translation>
-   <translation id="logs_index_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="logs_index_quota_get_error" qtlid="477873">Une erreur est survenue lors du chargement du quota d'index: {{message}}</translation>
+   <translation id="logs_index_description" qtlid="470414">Logs Data Platform lets you create and host Elasticsearch indexes. These indexes can be used for the configuration data of a Kibana instance, indexing your statistical data, and enriching or correlating your logs. You can then use these indexes with most tools and applications that are compatible with the Elasticsearch REST API.</translation>
+   <translation id="logs_index_total_used" qtlid="477860">indexes used</translation>
+   <translation id="logs_index_increase_quota" qtlid="474753">increase quota</translation>
+   <translation id="logs_index_quota_get_error" qtlid="477873">An error has occurred loading the index quota: {{message}}</translation>
    <translation id="logs_index_add_data_feed" qtlid="423024">Add an index</translation>
    <translation id="logs_index_name" qtlid="477886">index</translation>
-   <translation id="logs_index_get_error" qtlid="477899">Une erreur est survenue lors du chargement de l'index</translation>
-   <translation id="logs_streams_quota_get_error" qtlid="477912">Une erreur est survenue lors du chargement du quota</translation>
+   <translation id="logs_index_get_error" qtlid="477899">An error has occurred loading the index</translation>
+   <translation id="logs_streams_quota_get_error" qtlid="477912">An error has occurred loading the quota</translation>
    <translation id="logs_index_col_index" qtlid="426729">Index</translation>
    <translation id="logs_index_name_text" qtlid="3818">Name</translation>
    <translation id="logs_index_col_description" qtlid="9238">Description</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Space available</translation>
-   <translation id="logs_index_col_shared" qtlid="477925">Index partagé</translation>
-   <translation id="logs_index_elastic_search_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_index_col_shared" qtlid="477925">Shared index</translation>
+   <translation id="logs_index_elastic_search_access" qtlid="477938">Elasticsearch access</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Delete index</translation>
-   <translation id="logs_modal_delete_question" qtlid="477951">Êtes-vous sûr de vouloir supprimer l'index <strong>{{name}}</strong> ?</translation>
-   <translation id="logs_options_current_options_loading_error" qtlid="477964">Une erreur est survenue lors du chargement des options</translation>
-   <translation id="logs-input-2" qtlid="477977">1 Outil de collecte avec 2 instances</translation>
-   <translation id="logs-input-4" qtlid="477990">1 Outil de collecte avec 4 instances</translation>
-   <translation id="logs-input-8" qtlid="478003">1 Outil de collecte avec 8 instances</translation>
-   <translation id="logs-dashboard-5" qtlid="426937">5 tableaux de bord Graylog</translation>
-   <translation id="logs-stream-5" qtlid="426950">5 flux de données Graylog</translation>
-   <translation id="logs-kibana-1" qtlid="478016">Kibana Pack: 1 Alias et 1 Index de 500 MiB</translation>
-   <translation id="logs-alias-5" qtlid="478029">5 Alias Elasticsearch</translation>
+   <translation id="logs_modal_delete_question" qtlid="477951">Are you sure you want to delete the <strong>{{name}}</strong> index?</translation>
+   <translation id="logs_options_current_options_loading_error" qtlid="477964">An error has occurred changing the options</translation>
+   <translation id="logs-input-2" qtlid="477977">1 data-gathering tool with 2 instances</translation>
+   <translation id="logs-input-4" qtlid="477990">1 data-gathering tool with 4 instances</translation>
+   <translation id="logs-input-8" qtlid="478003">1 data-gathering tool with 8 instances</translation>
+   <translation id="logs-dashboard-5" qtlid="426937">5 Graylog dashboards</translation>
+   <translation id="logs-stream-5" qtlid="426950">5 Graylog data streams</translation>
+   <translation id="logs-kibana-1" qtlid="478016">Kibana Pack: 1 Alias and 1 500 MiB index</translation>
+   <translation id="logs-alias-5" qtlid="478029">5 Elasticsearch aliases</translation>
    <translation id="logs_index_modal_add_title" qtlid="423024">Add an index</translation>
-   <translation id="logs_index_modal_edit_title" qtlid="478042">Modifier l'index</translation>
-   <translation id="logs_index_modal_edit_description" qtlid="478055">Pour l'index <strong>{{ name }}</strong></translation>
+   <translation id="logs_index_modal_edit_title" qtlid="478042">Modify index</translation>
+   <translation id="logs_index_modal_edit_description" qtlid="478055">For the <strong>{{ name }}</strong> index</translation>
    <translation id="logs_index_modal_suffix" qtlid="59267">Suffix</translation>
    <translation id="logs_index_suffix_description" qtlid="470427">Only lower-case letters from a to z, numbers and the characters '-' and '_' are permitted.</translation>
    <translation id="logs_index_modal_description" qtlid="9238">Description</translation>
-   <translation id="logs_index_modal_select" qtlid="469478">Chose option attached</translation>
+   <translation id="logs_index_modal_select" qtlid="469478">Choose attached option</translation>
    <translation id="logs_index_modal_notification" qtlid="32386">Notification</translation>
-   <translation id="logs_index_modal_checkbox" qtlid="470479">Notify me by email when the index reaches critical size.</translation>
-   <translation id="logs_index_edit_error" qtlid="478068">Une erreur est survenue lors de la modification de l'index '{{name}}': {{message}}</translation>
-   <translation id="logs_index_create_error" qtlid="478081">Une erreur est survenue lors de la création de l'index '{{name}}': {{message}}</translation>
-   <translation id="logs_index_delete_error" qtlid="478094">Une erreur est survenue lors de la suppression de l'index '{{name}}': {{message}}</translation>
-   <translation id="logs_index_create_success" qtlid="478107">L'index '{{name}}' a été créé avec succès.</translation>
-   <translation id="logs_index_edit_success" qtlid="478120">L'index '{{name}}' a été modifié avec succès.</translation>
-   <translation id="logs_index_delete_success" qtlid="478133">L'index '{{name}}' a été supprimé avec succès.</translation>
+   <translation id="logs_index_modal_checkbox" qtlid="470479">Notify me by email when the index reaches a critical size.</translation>
+   <translation id="logs_index_edit_error" qtlid="478068">An error has occurred modifying the '{{name}}' index: {{message}}</translation>
+   <translation id="logs_index_create_error" qtlid="478081">An error has occurred creating the '{{name}}' index: {{message}}</translation>
+   <translation id="logs_index_delete_error" qtlid="478094">An error has occurred deleting the '{{name}}' index: {{message}}</translation>
+   <translation id="logs_index_create_success" qtlid="478107">The '{{name}}' index has been created.</translation>
+   <translation id="logs_index_edit_success" qtlid="478120">The '{{name}}' index has been modified.</translation>
+   <translation id="logs_index_delete_success" qtlid="478133">The '{{name}}' index has been deleted.</translation>
    <translation id="logs_index_option_warning" qtlid="470440">N.B.: the option you choose now cannot be changed later.</translation>
 
 <!-- Aliasses -->
    <translation id="logs_aliases_title" qtlid="9466">Alias</translation>
-   <translation id="logs_aliases_description" qtlid="470518">Tap into the full potential of Elasticsearch by creating an alias on your logs or indices. This will give you access to more complex requests, such as nested aggregations, and will unlock compatibility with the most popular tools on the market.</translation>
-   <translation id="logs_aliases_total_used" qtlid="478146">alias utilisés</translation>
-   <translation id="logs_aliases_increase_quota" qtlid="474753">augmenter le quota</translation>
+   <translation id="logs_aliases_description" qtlid="470518">Tap into the full potential of Elasticsearch by creating an alias on your logs or indexes. This will give you access to more complex requests, such as nested aggregations, and will unlock compatibility with the most popular tools on the market.</translation>
+   <translation id="logs_aliases_total_used" qtlid="478146">aliases used</translation>
+   <translation id="logs_aliases_increase_quota" qtlid="474753">increase quota</translation>
    <translation id="logs_aliases_add" qtlid="143538">Add an alias</translation>
    <translation id="logs_aliases_name" qtlid="478159">alias</translation>
    <translation id="logs_aliases_col_title" qtlid="3818">Name</translation>
    <translation id="logs_aliases_col_description" qtlid="9238">Description</translation>
-   <translation id="logs_aliases_col_shared" qtlid="478172">Alias partagé</translation>
-   <translation id="logs_aliases_col_streams" qtlid="478185">Flux de données liés</translation>
-   <translation id="logs_aliases_col_indices" qtlid="478198">Index liés</translation>
+   <translation id="logs_aliases_col_shared" qtlid="478172">Shared alias</translation>
+   <translation id="logs_aliases_col_streams" qtlid="478185">Associated data streams</translation>
+   <translation id="logs_aliases_col_indices" qtlid="478198">Associated indexes</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Edit</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Delete</translation>
-   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Elasticsearch access</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Attach content to the alias</translation>
-   <translation id="logs_aliases_delete_title" qtlid="478211">Supprimer l'alias</translation>
-   <translation id="logs_alias_delete_message" qtlid="478224">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
+   <translation id="logs_aliases_delete_title" qtlid="478211">Delete alias</translation>
+   <translation id="logs_alias_delete_message" qtlid="478224">Are you sure you want to delete the <strong>{{alias}}</strong> alias?</translation>
    <translation id="logs_aliases_title_description" qtlid="470531">N.B.: the name you choose now cannot be changed later.</translation>
    <translation id="logs_aliases_update_title" qtlid="323885">Change alias </translation>
-   <translation id="logs_aliases_delete_message" qtlid="478224">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
-   <translation id="logs_aliases_create_success" qtlid="478237">L'alias '{{aliasName}}' a été créé avec succès.</translation>
-   <translation id="logs_aliases_update_success" qtlid="478250">L'alias '{{aliasName}}' a été modifié avec succès.</translation>
-   <translation id="logs_aliases_delete_success" qtlid="478263">L'alias '{{aliasName}}' a été supprimé avec succès.</translation>
-   <translation id="logs_aliases_get_error" qtlid="478276">Une erreur est survenue lors du chargement des alias: {{message}}</translation>
-   <translation id="logs_alias_get_error" qtlid="478289">Une erreur est survenue lors du chargement de l'alias: {{message}}</translation>
-   <translation id="logs_alias_quota_get_error" qtlid="478302">Une erreur est survenue lors du chargement du quota d'alias: {{message}}</translation>
-   <translation id="logs_aliases_delete_error" qtlid="478315">Une erreur est survenue lors de la suppression de l'alias '{{aliasName}}': {{message}}</translation>
-   <translation id="logs_aliases_create_error" qtlid="478328">Une erreur est survenue lors de la création de l'alias '{{aliasName}}': {{message}}</translation>
-   <translation id="logs_aliases_update_error" qtlid="478341">Une erreur est survenue lors de la modification de l'alias '{{aliasName}}': {{message}}</translation>
-   <translation id="logs_aliases_get_elasticsearch_url_error" qtlid="478354">L'URL d'Elasticsearch est introuvable pour l'alias {{alias}}</translation>
-   <translation id="logs_aliases_update_description" qtlid="478367">Pour l'alias <strong>{{ name }}</strong></translation>
+   <translation id="logs_aliases_delete_message" qtlid="478224">Are you sure you want to delete the <strong>{{alias}}</strong> alias?</translation>
+   <translation id="logs_aliases_create_success" qtlid="478237">The '{{aliasName}}' alias has been created.</translation>
+   <translation id="logs_aliases_update_success" qtlid="478250">The '{{aliasName}}' alias has been modified.</translation>
+   <translation id="logs_aliases_delete_success" qtlid="478263">The '{{aliasName}}' alias has been deleted.</translation>
+   <translation id="logs_aliases_get_error" qtlid="478276">An error has occurred loading the aliases: {{message}}</translation>
+   <translation id="logs_alias_get_error" qtlid="478289">An error has occurred loading the alias: {{message}}</translation>
+   <translation id="logs_alias_quota_get_error" qtlid="478302">An error has occurred loading the alias quota: {{message}}</translation>
+   <translation id="logs_aliases_delete_error" qtlid="478315">An error has occurred deleting the '{{aliasName}}' alias: {{message}}</translation>
+   <translation id="logs_aliases_create_error" qtlid="478328">An error has occurred creating the '{{aliasName}}' alias: {{message}}</translation>
+   <translation id="logs_aliases_update_error" qtlid="478341">An error has occurred modifying the '{{aliasName}}' alias: {{message}}</translation>
+   <translation id="logs_aliases_get_elasticsearch_url_error" qtlid="478354">The Elasticsearch URL cannot be found for the {{alias}} alias</translation>
+   <translation id="logs_aliases_update_description" qtlid="478367">For the <strong>{{ name }}</strong> alias</translation>
    <translation id="logs_aliases_link_title" qtlid="421672">Attach content to the alias</translation>
-   <translation id="logs_aliases_link_description" qtlid="421789">An alias can be attached to one or more Graylog data streams or to one or more Elasticsearch indices.</translation>
-   <translation id="logs_aliases_link_available_streams" qtlid="421685">Streams available</translation>
-   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Flux de données liés</translation>
-   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">Tous les flux de données sont attachés</translation>
-   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">Aucun flux de données n'est attaché</translation>
-   <translation id="logs_aliases_link_available_indexes" qtlid="421815">Index disponibles</translation>
-   <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Index attachés</translation>
-   <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">Tous les index sont attachés</translation>
-   <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">Aucun index n'est attaché</translation>
-   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Une erreur est survenu lors de l'attachement au flux de données '{{streamName}}': {{message}}</translation>
-   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Échec de l'attachement au flux de données '{{stream}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_error" qtlid="478471">Une erreur est survenu lors du détachement au '{{streamName}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Échec du détachement au flux de données '{{stream}}': {{message}}</translation>
-   <translation id="logs_aliases_attach_index_error" qtlid="478497">Une erreur est survenu lors de l'attachement à l'index '{{indexName}}': {{message}}</translation>
-   <translation id="logs_aliases_attach_index_fail" qtlid="478510">Échec de l'attachement à l'index '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_index_error" qtlid="478523">Une erreur est survenu lors du détachement à l'index '{{indexName}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_index_fail" qtlid="478536">Échec du détachement à l'index '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Des flux de données sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les flux de données pour pouvoir ajouter un index.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Des index Elasticsearch sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les index pour pouvoir ajouter un flux de données.</translation>
+   <translation id="logs_aliases_link_description" qtlid="421789">An alias can either be attached to one or more Graylog data streams, or to one or more Elasticsearch indexes.</translation>
+   <translation id="logs_aliases_link_available_streams" qtlid="421685">Data streams available</translation>
+   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Associated data streams</translation>
+   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">All data streams are attached</translation>
+   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">No data streams are attached</translation>
+   <translation id="logs_aliases_link_available_indexes" qtlid="421815">Indexes available</translation>
+   <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Attached indexes</translation>
+   <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">All indexes are attached</translation>
+   <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">No indexes are attached</translation>
+   <translation id="logs_aliases_attach_stream_error" qtlid="478445">An error has occurred attaching to the '{{streamName}}' data stream: {{message}}</translation>
+   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Failed to attach to the '{{stream}}' data stream: {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_error" qtlid="478471">An error has occurred detaching from the '{{streamName}}' data stream: {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Failed to detach from the '{{stream}}' data stream: {{message}}</translation>
+   <translation id="logs_aliases_attach_index_error" qtlid="478497">An error has occurred attaching to the '{{indexName}}' index: {{message}}</translation>
+   <translation id="logs_aliases_attach_index_fail" qtlid="478510">Failed to attach to the '{{index}}' index: {{message}}</translation>
+   <translation id="logs_aliases_detach_index_error" qtlid="478523">An error has occurred detaching from the '{{indexName}}' index: {{message}}</translation>
+   <translation id="logs_aliases_detach_index_fail" qtlid="478536">Failed to detach from the '{{index}}' index: {{message}}</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Data streams are attached to this alias. Either data streams or Elasticsearch indexes can be attached, but you cannot attach both at once. Please detach all data streams to add an index.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Elasticsearch indexes are attached to this alias. Either data streams or Elasticsearch indexes can be attached, but you cannot attach both at once. Please detach all indexes to add a data stream.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Roles</translation>
-   <translation id="logs_roles_description" qtlid="425130">Your logs contain important information that you sometimes have to share with other people. Logs Data Platform lets you define read-only access rights to the data contained in a selection of your streams, dashboards, indices or aliases.</translation>
-   <translation id="logs_roles_total_used" qtlid="478575">rôles utilisés</translation>
-   <translation id="logs_roles_name" qtlid="478588">rôle</translation>
+   <translation id="logs_roles_description" qtlid="425130">Your logs contain important information that you sometimes need to share with other people. With the Logs Data Platform, you can define read-only access rights to the data contained in a selection of your data streams, dashboards, indexes and aliases.</translation>
+   <translation id="logs_roles_total_used" qtlid="478575">roles used</translation>
+   <translation id="logs_roles_name" qtlid="478588">role</translation>
    <translation id="logs_roles_add" qtlid="425143">Add a role</translation>
-   <translation id="logs_roles_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="logs_roles_quota_get_error" qtlid="477912">Une erreur est survenue lors du chargement du quota</translation>
+   <translation id="logs_roles_increase_quota" qtlid="474753">increase quota</translation>
+   <translation id="logs_roles_quota_get_error" qtlid="477912">An error has occurred loading the quota</translation>
    <translation id="logs_roles_col_role" qtlid="403398">Role</translation>
    <translation id="logs_roles_col_name" qtlid="3818">Name</translation>
    <translation id="logs_roles_col_description" qtlid="9238">Description</translation>
    <translation id="logs_roles_col_permissions" qtlid="6946">Permissions</translation>
    <translation id="logs_roles_col_members" qtlid="425169">Members</translation>
    <translation id="logs_roles_col_link" qtlid="426768">Associated option</translation>
-   <translation id="logs_edit_role" qtlid="470674">Éditer le rôle</translation>
-   <translation id="logs_edit_permissions" qtlid="470687">Edit permissions</translation>
+   <translation id="logs_edit_role" qtlid="470674">Modify role</translation>
+   <translation id="logs_edit_permissions" qtlid="470687">Modify permissions</translation>
    <translation id="logs_manage_members" qtlid="356810">Manage members</translation>
    <translation id="logs_delete_role" qtlid="470752">Delete role</translation>
-   <translation id="logs_show_summary" qtlid="470726">Preview</translation>
+   <translation id="logs_show_summary" qtlid="470726">Overview</translation>
    <translation id="logs_role_modal_add_title" qtlid="425143">Add a role</translation>
-   <translation id="logs_role_modal_edit_title" qtlid="470674">Éditer le rôle</translation>
-   <translation id="logs_role_modal_edit_desription" qtlid="478601">Pour le rôle <strong>{{ role }}</strong></translation>
+   <translation id="logs_role_modal_edit_title" qtlid="470674">Modify role</translation>
+   <translation id="logs_role_modal_edit_desription" qtlid="478601">for the <strong>{{ role }}</strong> role</translation>
    <translation id="logs_role_modal_name" qtlid="3818">Name</translation>
    <translation id="logs_role_modal_description" qtlid="9238">Description</translation>
-   <translation id="logs_role_modal_option" qtlid="469478">Chose option attached</translation>
-   <translation id="logs_roles_tooltip" qtlid="469309">For each data stream, alias and dashboard purchased, you will receive a free user role (e.g. 5 streams purchased = 5 roles).</translation>
+   <translation id="logs_role_modal_option" qtlid="469478">Choose attached option</translation>
+   <translation id="logs_roles_tooltip" qtlid="469309">For each data stream, alias and dashboard you purchase, you will receive a free user role (e.g. 5 streams purchased = 5 roles).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Delete role</translation>
-   <translation id="logs_role_modal_delete_question" qtlid="478614">Êtes-vous sûr de vouloir supprimer le rôle <strong>{{name}}</strong> ?</translation>
-   <translation id="logs_role_add_success" qtlid="478627">Le rôle '{{name}}' a été créé avec succès.</translation>
-   <translation id="logs_role_add_error" qtlid="478640">Une erreur est survenue lors de la création du rôle '{{name}}': {{message}}</translation>
-   <translation id="logs_role_delete_success" qtlid="478653">Le rôle '{{name}}' a été supprimé avec succès.</translation>
-   <translation id="logs_role_delete_error" qtlid="478666">Une erreur est survenue lors de la suppression du rôle {{message}}: {{message}}</translation>
-   <translation id="logs_roles_get_error" qtlid="478679">Une erreur est survenue lors du chargement des rôles: {{message}}</translation>
-   <translation id="logs_role_update_success" qtlid="478692">Le rôle '{{name}}' a été modifié avec succès.</translation>
-   <translation id="logs_role_update_error" qtlid="478705">Une erreur est survenue lors de la modification du rôle '{{name}}': {{message}}</translation>
-   <translation id="logs_role_overview_title" qtlid="478718">Aperçu du rôle</translation>
+   <translation id="logs_role_modal_delete_question" qtlid="478614">Are you sure you want to delete the <strong>{{name}}</strong> role?</translation>
+   <translation id="logs_role_add_success" qtlid="478627">The '{{name}}' role has been created.</translation>
+   <translation id="logs_role_add_error" qtlid="478640">An error has occurred creating the '{{name}}' role: {{message}}</translation>
+   <translation id="logs_role_delete_success" qtlid="478653">The '{{name}}' role has been deleted.</translation>
+   <translation id="logs_role_delete_error" qtlid="478666">An error has occurred deleting the {{name}} role: {{message}}</translation>
+   <translation id="logs_roles_get_error" qtlid="478679">An error has occurred loading roles: {{message}}</translation>
+   <translation id="logs_role_update_success" qtlid="478692">The '{{name}}' role has been modified.</translation>
+   <translation id="logs_role_update_error" qtlid="478705">An error has occurred modifying the '{{name}}' role: {{message}}</translation>
+   <translation id="logs_role_overview_title" qtlid="478718">Role overview</translation>
    <translation id="logs_role_overview_role" qtlid="403398">Role</translation>
    <translation id="logs_role_overview_note" qtlid="26011">Note</translation>
    <translation id="logs_role_overview_description" qtlid="9238">Description</translation>
@@ -761,36 +761,36 @@
    <translation id="logs_role_overview_index" qtlid="426729">Index</translation>
    <translation id="logs_role_overview_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_overview_dashboard" qtlid="225075">Dashboards</translation>
-   <translation id="logs_roles_edit_permissions_title" qtlid="470687">Edit permissions</translation>
-   <translation id="logs_roles_permissions_subtitle" qtlid="478601">Pour le rôle <strong>{{ role }}</strong></translation>
+   <translation id="logs_roles_edit_permissions_title" qtlid="470687">Modify permissions</translation>
+   <translation id="logs_roles_permissions_subtitle" qtlid="478601">for the <strong>{{ role }}</strong> role</translation>
    <translation id="logs_roles_permissions_streams" qtlid="422452">Data stream</translation>
    <translation id="logs_roles_permissions_dashboards" qtlid="225075">Dashboards</translation>
    <translation id="logs_roles_permissions_indices" qtlid="426729">Index</translation>
    <translation id="logs_roles_permissions_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_role_available_stream" qtlid="478731">Flux disponible(s)</translation>
-   <translation id="logs_role_selected_stream" qtlid="478744">Flux sélectionné(s)</translation>
-   <translation id="logs_role_empty_stream" qtlid="478757">Tous les flux ont été sélectionnés</translation>
-   <translation id="logs_role_empty_selected_stream" qtlid="478770">Aucun flux n'a été sélectionné</translation>
-   <translation id="logs_role_available_index" qtlid="478783">Index disponible(s)</translation>
-   <translation id="logs_role_selected_index" qtlid="478796">Index sélectionné(s)</translation>
-   <translation id="logs_role_empty_index" qtlid="478809">Tous les index ont été sélectionnés</translation>
-   <translation id="logs_role_empty_selected_index" qtlid="478822">Aucun index n'a été sélectionné</translation>
-   <translation id="logs_role_available_alias" qtlid="478835">Alias disponible(s)</translation>
-   <translation id="logs_role_selected_alias" qtlid="478848">Alias sélectionné(s)</translation>
-   <translation id="logs_role_empty_alias" qtlid="478861">Tous les alias ont été sélectionnés</translation>
-   <translation id="logs_role_empty_selected_alias" qtlid="478874">Aucun alias n'a été sélectionné</translation>
-   <translation id="logs_role_available_dashboard" qtlid="478887">Tableau(x) de bord disponible(s)</translation>
-   <translation id="logs_role_selected_dashboard" qtlid="478900">Tableau(x) de bord sélectionné(s)</translation>
-   <translation id="logs_role_empty_dashboard" qtlid="478913">Tous les tableaux de bord ont été sélectionnés</translation>
-   <translation id="logs_role_empty_selected_dashboard" qtlid="478926">Aucun tableau de bord n'a été sélectionné</translation>
-   <translation id="logs_roles_add_alias_error" qtlid="478939">Une erreur est survenue lors de l'ajout de l'alias à la permission '{{tokenName}}': {{message}}</translation>
-   <translation id="logs_roles_add_dashboard_error" qtlid="478952">Une erreur est survenue lors de l'ajout du tableau de bord à la permission '{{tokenName}}': {{message}}</translation>
-   <translation id="logs_roles_add_stream_error" qtlid="478965">Une erreur est survenue lors de l'ajout du flux à la permission '{{tokenName}}': {{message}}</translation>
-   <translation id="logs_roles_add_index_error" qtlid="478978">Une erreur est survenue lors de l'ajout de l'index à la permission '{{tokenName}}': {{message}}</translation>
-   <translation id="logs_remove_permission_error" qtlid="478991">Une erreur est survenue lors du retrait de la permission '{{tokenName}}': {{message}}</translation>
+   <translation id="logs_role_available_stream" qtlid="478731">Data streams available</translation>
+   <translation id="logs_role_selected_stream" qtlid="478744">Data streams selected</translation>
+   <translation id="logs_role_empty_stream" qtlid="478757">All data streams have been selected</translation>
+   <translation id="logs_role_empty_selected_stream" qtlid="478770">No data streams have been selected</translation>
+   <translation id="logs_role_available_index" qtlid="478783">Indexes available</translation>
+   <translation id="logs_role_selected_index" qtlid="478796">Indexes selected</translation>
+   <translation id="logs_role_empty_index" qtlid="478809">All indexes have been selected</translation>
+   <translation id="logs_role_empty_selected_index" qtlid="478822">No indexes have been selected</translation>
+   <translation id="logs_role_available_alias" qtlid="478835">Aliases available</translation>
+   <translation id="logs_role_selected_alias" qtlid="478848">Aliases selected</translation>
+   <translation id="logs_role_empty_alias" qtlid="478861">All aliases have been selected</translation>
+   <translation id="logs_role_empty_selected_alias" qtlid="478874">No aliases have been selected</translation>
+   <translation id="logs_role_available_dashboard" qtlid="478887">Dashboards available</translation>
+   <translation id="logs_role_selected_dashboard" qtlid="478900">Dashboards selected</translation>
+   <translation id="logs_role_empty_dashboard" qtlid="478913">All dashboards have been selected</translation>
+   <translation id="logs_role_empty_selected_dashboard" qtlid="478926">No dashboards have been selected</translation>
+   <translation id="logs_roles_add_alias_error" qtlid="478939">An error has occurred adding the alias to the '{{tokenName}}' permission: {{message}}</translation>
+   <translation id="logs_roles_add_dashboard_error" qtlid="478952">An error has occurred adding the dashboard to the '{{tokenName}}' permission: {{message}}</translation>
+   <translation id="logs_roles_add_stream_error" qtlid="478965">An error has occurred adding the stream to the '{{tokenName}}' permission: {{message}}</translation>
+   <translation id="logs_roles_add_index_error" qtlid="478978">An error has occurred adding the index to the '{{tokenName}}' permission: {{message}}</translation>
+   <translation id="logs_remove_permission_error" qtlid="478991">An error has occurred deleting the '{{tokenName}}' permission: {{message}}</translation>
    <translation id="logs_roles_members_title" qtlid="356810">Manage members</translation>
-   <translation id="logs_roles_members_subtitle" qtlid="479004">Pour le rôle <strong>{{ name }}</strong></translation>
-   <translation id="logs_roles_members_description" qtlid="470609">This is the list of your active members for the <strong>{{ name }}</strong> role. You can revoke members individually or add new ones by using existing user accounts.</translation>
+   <translation id="logs_roles_members_subtitle" qtlid="479004">For the role <strong>{{ name }}</strong></translation>
+   <translation id="logs_roles_members_description" qtlid="470609">This is the list of your active members for this role. You can revoke members individually, or add new ones by using existing user accounts.</translation>
    <translation id="logs_roles_members_add" qtlid="392502">Add a member</translation>
    <translation id="logs_roles_members_user_account" qtlid="470622">User account</translation>
    <translation id="logs_roles_members_note" qtlid="26011">Note</translation>
@@ -800,12 +800,12 @@
    <translation id="logs_roles_members_modal_user" qtlid="424857">Logs Data Platform user account</translation>
    <translation id="logs_roles_members_modal_role" qtlid="470661">Select role</translation>
    <translation id="logs_member_modal_add_title" qtlid="392502">Add a member</translation>
-   <translation id="logs_role_member_add_success" qtlid="479017">Le membre {{name}} a été ajouté avec succès.</translation>
-   <translation id="logs_role_member_add_error" qtlid="479030">Une erreur est survenue lors de l'ajout du membre: {{message}}</translation>
-   <translation id="logs_member_delete_title" qtlid="479043">Retirer le membre</translation>
-   <translation id="logs_member_delete_question" qtlid="479056">Êtes-vous sûr de vouloir retirer le membre <strong>{{username}}</strong> ?</translation>
-   <translation id="logs_role_member_remove_success" qtlid="479069">Le membre {{name}} a été retiré avec succès.</translation>
-   <translation id="logs_role_member_remove_error" qtlid="479082">Une erreur est survenue lors du retrait du membre: {{message}}</translation>
+   <translation id="logs_role_member_add_success" qtlid="479017">The member {{name}} has been added.</translation>
+   <translation id="logs_role_member_add_error" qtlid="479030">An error has occurred adding the member: {{message}}</translation>
+   <translation id="logs_member_delete_title" qtlid="479043">Delete member</translation>
+   <translation id="logs_member_delete_question" qtlid="479056">Are you sure you want to delete the member <strong>{{username}}</strong>?</translation>
+   <translation id="logs_role_member_remove_success" qtlid="479069">The member {{name}} has been deleted.</translation>
+   <translation id="logs_role_member_remove_error" qtlid="479082">An error has occurred deleting the member: {{message}}</translation>
 
    <translation id="logs_guides" qtlid="300370">Guides</translation>
    <translation id="logs_guides_title" qtlid="366385">Logs Data Platform</translation>

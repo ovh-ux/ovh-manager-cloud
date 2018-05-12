@@ -75,7 +75,7 @@
    <translation id="cpcivm_add_step3_quota_link_text" qtlid="483408">Consultez votre quota</translation>
    <translation id="cpcivm_add_step3_name_label" qtlid="483421">Nom de votre instance</translation>
    <translation id="cpcivm_add_step3_name_help" qtlid="483434">Doit uniquement contenir des nombres, lettres, soulignements, tirets, ou points.</translation>
-   <translation id="cpcivm_add_step3_name_additional" qtlid="483447">Le nom des instances supplémentaires sera préfixé et incrémeté à partir du terme saisi.</translation>
+   <translation id="cpcivm_add_step3_name_additional" qtlid="483447">Le nom des instances supplémentaires sera préfixé et incrémenté à partir du terme saisi.</translation>
    <translation id="cpcivm_add_step3_postscript_label" qtlid="64568">Script de post-installation</translation>
    <translation id="cpcivm_add_step3_postscript_info" qtlid="483460">Saisissez votre script post-installation</translation>
    <translation id="cpcivm_add_step3_network_label" qtlid="316125">Associer au réseau privé</translation>

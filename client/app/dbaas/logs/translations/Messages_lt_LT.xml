@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/mėn.</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 TB/mėn.</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/mėn.</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/mėn.</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/mėn.</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/mėn.</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/mėn.</translation>
    <translation id="logs-reader-1" qtlid="30646">Nėra</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Vidutiniškai 0.5 GB/dieną</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Vidutiniškai 1 GB/dieną</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Vidutiniškai 30 GB/dieną</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Vidutiniškai 50 GB/dieną</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Vidutiniškai 100 GB/dieną</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Vidutiniškai 341 GB/dieną</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Vidutiniškai 1.6 TB/dieną</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Vidutiniškai 3.3 TB/dieną</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Vidutiniškai 10 TB/dieną</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Pasiūlymų konfliktas</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Jūs pasirinkote pasiūlymą, kurį jau turite. Pasirinkite kitą pasiūlymą.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Įkraunant pasiūlymus įvyko klaida</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Stebėkite sisteminius įrašus realiu laiku naudodami WebSocket protokolą.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Aktyvuoti ilgalaikį saugojimą</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archyvuokite savo žurnalų ilgalaikį saugojimą.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Suspaudimo algoritmas</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archyvų saugojimo trukmė</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Pranešimas</translation>

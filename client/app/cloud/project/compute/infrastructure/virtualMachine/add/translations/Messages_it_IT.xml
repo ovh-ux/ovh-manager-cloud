@@ -50,10 +50,10 @@
    <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Calcolo accelerato</translation>
    <translation id="cpcivm_add_step3_category_vps" qtlid="483122">Risorse condivise</translation>
    <translation id="cpcivm_add_step3_category_definition_balanced" qtlid="483135">Le istanze per uso generico offrono un buon rapporto RAM/performance.</translation>
-   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Les instances de calcul optimisé sont idéales pour les applications nécessitant des fréquences de calculs importantes ou de la parallélisation de tâches.</translation>
-   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Les instances à mémoire optimisée sont recommandées pour vos bases de données, analyses et calculs en mémoire, ainsi que d'autres applicatifs gourmands en RAM.</translation>
-   <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Les instances de calcul accéléré (GPU, FPGA) sont jusqu'à 1 000 fois plus rapides qu'un CPU sur certaines applications (rendering, transcodage vidéo, bio-informatique, Big Data, deep learning, etc.)</translation>
-   <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Les instances à ressources partagées (Sandbox) sont adaptées aux tests, recettes et environnements de développement. Leurs performances peuvent légèrement varier au cours du temps.</translation>
+   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Le istanze di calcolo ottimizzato sono ideali per le applicazioni che richiedono frequenze di calcolo elevate o la parallelizzazione dei task.</translation>
+   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Le istanze con memoria ottimizzata sono consigliate per database, analisi e calcoli in memoria, nonché altre applicazioni che consumano grandi quantità di RAM.</translation>
+   <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Le istanze con cacolo accelerato (GPU, FPGA) sono fino a 1000 volte più rapide rispetto a una CPU in determinate applicazioni (rendering, transcodifica video, bioinformatica, Big Data, Deep Learning, etc.)</translation>
+   <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Le istanze con risorse condivise (Sandbox) sono adatte per test, verifiche e ambienti di sviluppo. Le loro prestazioni possono variare leggermente nel tempo.</translation>
    <translation id="cpcivm_add_step3_label_ram" qtlid="483200">RAM:</translation>
    <translation id="cpcivm_add_step3_label_core" qtlid="483213">CPU:</translation>
    <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Storage:</translation>
@@ -64,14 +64,14 @@
    <translation id="cpcivm_add_step3_disabled_QUOTA_VCPUS" qtlid="483265">Supera la quota (Core)</translation>
    <translation id="cpcivm_add_step3_disabled_QUOTA_MINDISK" qtlid="483278">Spazio su disco insufficiente</translation>
    <translation id="cpcivm_add_step3_disabled_QUOTA_MINRAM" qtlid="483291">RAM insufficiente</translation>
-   <translation id="cpcivm_add_step3_disabled_message_NOT_AVAILABLE" qtlid="483304">Région(s) où cette instance est disponible : {{regions}}</translation>
-   <translation id="cpcivm_add_step3_disabled_message_QUOTA_RAM" qtlid="483317">Votre quota de RAM est actuellement de {{quota.remaining}} pour la région sélectionnée. L'instance sélectionnée nécessite {{quota.required}}.</translation>
-   <translation id="cpcivm_add_step3_disabled_message_QUOTA_VCPUS" qtlid="483330">Votre quota est actuellement de {{quota.remaining}} core(s) pour la région sélectionnée. L'instance sélectionnée nécessite {{quota.required}} core(s).</translation>
-   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINDISK" qtlid="483343">L'image {{name}} requiert un minimum de {{requiredDisk}} d'espace disque pour être installée. L'instance sélectionnée ne dispose que de {{currentDisk}}.</translation>
-   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINRAM" qtlid="483356">L'image {{name}} requiert un minimum de {{requiredRam}} de mémoire vive (RAM) pour fonctionner correctement. L'instance sélectionnée ne dispose que de {{currentRam}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_NOT_AVAILABLE" qtlid="483304">Regioni in cui è disponibile questa istanza: {{regions}}</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_RAM" qtlid="483317">La tua quota di RAM è attualmente di {{quota.remaining}} per la regione selezionata. L'istanza selezionata necessita {{quota.required}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_VCPUS" qtlid="483330">La tua quota è attualmente di {{quota.remaining}} Core per la regione selezionata. L'istanza selezionata necessita {{quota.required}} Core.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINDISK" qtlid="483343">L'immmagine {{name}} richiede un minimo di {{requiredDisk}} di spazio su disco per poter essere installata. L'istanza selezionata dispone solo di {{currentDisk}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINRAM" qtlid="483356">L'immagine {{name}} richiede un minimo di {{requiredRam}} di RAM per funzionare correttamente. L'istanza selezionata dispone solo di {{currentRam}}.</translation>
    <translation id="cpcivm_add_step3_quantity_label" qtlid="483369">Numero di istanze da creare</translation>
    <translation id="cpcivm_add_step3_quantity_info" qtlid="483382">Tutte le tue istanze saranno configurate nello stesso modo e sviluppate nella stessa regione.</translation>
-   <translation id="cpcivm_add_step3_quantity_help" qtlid="483395">Votre quota actuel vous permet de créer simultanéement jusqu'à {{max}} instance(s) de type {{type}} pour la region de {{region}}.</translation>
+   <translation id="cpcivm_add_step3_quantity_help" qtlid="483395">La tua quota attuale ti consente di creare contemporaneamente un massimo di {{max}} istanze di tipo {{type}} per la regione {{region}}.</translation>
    <translation id="cpcivm_add_step3_quota_link_text" qtlid="483408">Consulta la tua quota</translation>
    <translation id="cpcivm_add_step3_name_label" qtlid="483421">Nome della tua istanza</translation>
    <translation id="cpcivm_add_step3_name_help" qtlid="483434">Può contenere soltanto numeri, lettere, trattini o punti.</translation>

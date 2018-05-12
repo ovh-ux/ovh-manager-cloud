@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/Month</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 TB/Month</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/Month</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/Month</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/Month</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/Month</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/Month</translation>
    <translation id="logs-reader-1" qtlid="30646">None</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Average 0.5 GB/day</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Average 1 GB/day</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Average 30 GB/day</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Average 50 GB/day</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Average 100 GB/day</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Average 341 GB/day</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Average 1.6 TB/day</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Average 3.3 TB/day</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Average 10 TB/day</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Solution conflict</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">You have selected a solution you are already using. Please select another solution.</translation>
    <translation id="logs_order_get_error" qtlid="475819">An error has occurred loading the solutions</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitor the logs you receive in real time, via the WebSocket protocol.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Enable long-term storage</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs securely for years.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Compression algorithm</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archive conservation period</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>

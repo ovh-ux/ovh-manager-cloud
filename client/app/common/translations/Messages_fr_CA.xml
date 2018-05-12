@@ -121,7 +121,7 @@
    <translation id="dbaasts_menu_project_num" qtlid="250069">Projet {{num}}</translation>
 
    <translation id="vrack_menu_title" qtlid="186284">Vrack</translation>
-   <translation id="vrack_menu_add" qtlid="323106">Créer un vrack</translation>
+   <translation id="vrack_menu_add" qtlid="323106">Créer un vRack</translation>
    <translation id="vrack_menu_project_num" qtlid="323119">Vrack {{num}}</translation>
    <translation id="vrack_service_type_dedicatedserver" qtlid="101913">Serveur dédié</translation>
    <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Cloud Privé</translation>
@@ -512,7 +512,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
