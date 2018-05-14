@@ -1,46 +1,40 @@
 class SidebarService {
-    constructor ($translate, MANAGER_URLS) {
+    constructor ($translate, FeatureAvailabilityService, SidebarMenu, MANAGER_URLS) {
         this.$translate = $translate;
+        this.FeatureAvailabilityService = FeatureAvailabilityService;
+        this.SidebarMenu = SidebarMenu;
         this.MANAGER_URLS = MANAGER_URLS;
     }
 
-    getServices (section, products) {
-        return _.map(section, serviceType => {
-            return _.map(_.get(_.find(products, { name: serviceType.type }), "services"));
+    fillSidebarMenuItems (allProducts, sectionsProviders, locale) {
+        _.forEach(sectionsProviders, section => {
+            if (!this.sectionHasAvailableProduct(section, locale)) {
+                return;
+            }
+            if (this.countProductsInSection(allProducts[section.sectionName]) <= 0) {
+                return;
+            }
+            section.createSection(allProducts[section.sectionName]);
         });
     }
 
-    fillSection (section, serviceDescriptors, shouldDisplayViewAllItem, allServices) {
-        if (shouldDisplayViewAllItem) {
-            this.addViewAllItem(allServices, section);
-        }
-        _.forEach(allServices, (services, index) => {
-            serviceDescriptors[index].provider.loadIntoSection(section, services);
-        });
+    sectionHasAvailableProduct (section, locale) {
+        return _.some(section.productTypesInSection, product => this.FeatureAvailabilityService.hasFeature(product.type, "sidebarMenu", locale));
     }
 
-    addViewAllItem (allServices, section) {
-        let serviceCount = _.reduce(allServices, (total, services) => {
-            return total + services.length;
-        }, 0);
-        if (serviceCount > 1) {
-            section.viewAllItem = {
-                title: this.$translate.instant("cloud_sidebar_server_more", { count: serviceCount }),
-                url: this.MANAGER_URLS.dedicated,
-                target: "_parent"
-            };
-        }
-    }
-
-    getNumberOfServicesPerSection (services) {
-        const count = _.flatten(services);
+    countProductsInSection (productsInSection) {
+        const count = _.chain(productsInSection)
+            .values()
+            .compact()
+            .flattenDeep()
+            .value();
         return count.length;
     }
 
-    addOrder (serviceDescriptor) {
-        if (_.isFunction(serviceDescriptor.provider.addOrder)) {
-            return serviceDescriptor.provider.addOrder();
-        }
+    fillSection (menuItem, productTypes, productsInSection) {
+        _.forEach(productTypes, product => {
+            product.loadIntoSection(menuItem, productsInSection[product.type]);
+        });
     }
 }
 

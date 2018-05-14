@@ -25,6 +25,9 @@
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Cloud Desktop</translation>
    <translation id="cloud_sidebar_section_cdn" qtlid="93415">Content Delivery Network</translation>
 
+   <translation id="cloud_sidebar_section_ip_all">Tous les IPs</translation>
+   <translation id="cloud_sidebar_section_license_all">Tous les licences</translation>
+
 <!-- PCI -->
    <translation id="cloud_sidebar_pci_infrastructure" qtlid="125552">Infrastructure</translation>
    <translation id="cloud_sidebar_pci_object_storage" qtlid="233733">Stockage</translation>
