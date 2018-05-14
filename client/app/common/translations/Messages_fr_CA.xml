@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Fermer</translation>
 
    <translation id="common_cancel" qtlid="37863">Annuler</translation>
+   <translation id="common_activate" qtlid="76734">Activer</translation>
+   <translation id="common_deactivate" qtlid="90973">Désactiver</translation>
    <translation id="common_edit" qtlid="37875">Modifier</translation>
    <translation id="common_consult" qtlid="339639">Consulter</translation>
    <translation id="common_see_detail" qtlid="225192">Voir le détail</translation>
@@ -84,7 +86,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Liste de mes demandes d'assistance</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">Historique des courriels</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Assistance téléphonique</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Historique des mises à jour</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
    <translation id="common_modify" qtlid="37875">Modifier</translation>
@@ -506,7 +512,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">OK</translation>
+   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
@@ -577,6 +583,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Veuillez saisir un minimum de {{minlength}} caractères.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Veuillez saisir un maximum de {{maxlength}} caractères.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Veuillez saisir un format valide.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(facultatif)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Modifier cette étape</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Ignorer cette étape</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Suivant</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Envoyer</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Annuler</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Il reste</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">à votre projet</translation>

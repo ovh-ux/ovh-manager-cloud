@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Zavřít</translation>
 
    <translation id="common_cancel" qtlid="37863">Zrušit</translation>
+   <translation id="common_activate" qtlid="76734">Aktivovat</translation>
+   <translation id="common_deactivate" qtlid="90973">Deaktivovat</translation>
    <translation id="common_edit" qtlid="37875">Upravit</translation>
    <translation id="common_consult" qtlid="339639">Zobrazit</translation>
    <translation id="common_see_detail" qtlid="225192">Více informací</translation>
@@ -85,7 +87,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Seznam mých ticketů</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">Historie e-mailů</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Telefonická podpora</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Changelog</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Označit jako přečtené</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Označit jako nepřečtené</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">Historie aktualizací není momentálně k dispozici.</translation>
 
    <translation id="common_modify" qtlid="37875">Upravit</translation>
@@ -579,6 +585,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Zadejte alespoň {{minlength}} znaků.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Zadejte maximálně {{maxlength}} znaků.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Zadejte platný formát.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(volitelné)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Upravit tento krok</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Přeskočit tento krok</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Další</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Odeslat</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Zrušit</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Zbývá ještě</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">z Vašeho projektu</translation>

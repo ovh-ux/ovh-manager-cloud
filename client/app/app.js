@@ -114,7 +114,7 @@ angular.module("managerApp", [
             `);
     })
     .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration) => {
+          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration, ouiStepperConfiguration) => {
         $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {
@@ -176,6 +176,15 @@ angular.module("managerApp", [
                     maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
                     pattern: $translate.instant("common_field_error_pattern")
                 }
+            };
+
+            ouiStepperConfiguration.translations = {
+                optionalLabel: $translate.instant("common_stepper_optional_label"),
+                modifyThisStep: $translate.instant("common_stepper_modify_this_step"),
+                skipThisStep: $translate.instant("common_stepper_skip_this_step"),
+                nextButtonLabel: $translate.instant("common_stepper_next_button_label"),
+                submitButtonLabel: $translate.instant("common_stepper_submit_button_label"),
+                cancelButtonLabel: $translate.instant("common_stepper_cancel_button_label")
             };
 
             removeOnSuccessHook();

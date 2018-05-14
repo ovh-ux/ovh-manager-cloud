@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port aangesloten op de farm (1 tot {{portMax}}). Gebruik standaard de front-end port.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacenter</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Privénetwerk</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Geavanceerde instellingen</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">De meest recente standaardwaarden zijn vooraf ingesteld. U kunt ze op elk gewenst moment wijzigen.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Weergeven</translation>

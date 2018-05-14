@@ -275,25 +275,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Today</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Upgrade my VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Upgrade my VPS</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Please select the VPS model you want to upgrade to.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Template</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/month</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Switching to a new model is completely free. The displayed rate is the montly rate corresponding to each model. For your information, the monthly rate of your current plan is <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Warning! You cannot downgrade your VPS: it is only possible to upgrade.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">You must agree to the terms and conditions.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767"> / month</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Processor:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Storage:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Warning </translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">You have selected a model you already own. Please select another model.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Acceptance of the terms and conditions</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade of VPS <span class="italic normal">{{vpsName}}</span> to {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Rate in effect until {{duration}}, your server's next renewal date:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Price excl. taxes:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Price incl. taxes:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Then, your server will be billed <span class="red">{{price}}/month</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">To confirm your order, please proceed to payment by clicking on the "Order" button below.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">A new tab will open and you will automatically be redirected to the OVH payment interface.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Rate valid until {{duration}} :</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">You server will then be charged at :</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Please note that a period of approximately 2 hours from your payment being accepted will be necessary for the upgrade to take effect in the Web Control Panel.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">A reboot will be necessary for your VPS upgrade to take effect.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Review </translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">An error occurred on requesting to upgrade your VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Current configuration</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Order</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Add a domain</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Add a domain to the secondary DNS</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domain to be added:</translation>
@@ -341,9 +345,9 @@
    <translation id="vps_configuration_veeam_restore_step1_changepassword" qtlid="170226">Modify the root password on restoration</translation>
    <translation id="vps_configuration_veeam_restore_step1_changepassword_warning" qtlid="194827">Unable to reset your VPS password while VMware Tools is not installed. However, you can reset it via rescue mode.</translation>
    <translation id="vps_configuration_veeam_restore_step1_warning" qtlid="170239">Warning! Restoring your VPS will cause all your current data to be deleted.</translation>
-   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">The backup restore could take a few hours depending on the size of the disk. </translation>
+   <translation id="vps_configuration_veeam_restore_step1_warning_time" qtlid="363787">The backup restore may take a few hours, depending on the size of the disk. </translation>
    <translation id="vps_configuration_veeam_restore_step1_warning_umount" qtlid="268147">If you want to carry out a restoration, you have to dismount your current backup beforehand. </translation>
-   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">If you want to mount backup, you have to dismount your current backup beforehand. </translation>
+   <translation id="vps_configuration_veeam_mount_step1_warning_umount" qtlid="268160">If you want to mount a backup, you have to dismount your current backup beforehand. </translation>
    <translation id="vps_configuration_veeam_restore_success" qtlid="170252">The request to restore the VPS has been registered. You will be notified by email once the restoration has been completed.</translation>
    <translation id="vps_configuration_veeam_restore_fail" qtlid="170265">An error occurred on requesting to restore the backup on your VPS.</translation>
    <translation id="vps_tab_BACKUP_STORAGE_dashboard_ftpbackup_unavailable" qtlid="452826">Backup Storage is not available for this series.</translation>
@@ -359,7 +363,7 @@
    <translation id="vps_tab_SUMMARY_ip_adress" qtlid="170356">IP addresses</translation>
    <translation id="vps_tab_SUMMARY_windows" qtlid="102237">Windows</translation>
    <translation id="vps_tab_SUMMARY_windows_option" qtlid="285036">Licence:</translation>
-   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">The additional IP addresses are not available for this range.</translation>
+   <translation id="vps_tab_SUMMARY_ip_not_available" qtlid="250797">Additional IP addresses are not available for this range.</translation>
    <translation id="vps_tab_SUMMARY_backups_not_available" qtlid="250810">The backup options are not available for this range.</translation>
    <translation id="vps_tab_ip" qtlid="25615">IP</translation>
    <translation id="vps_tab_IPS_ipv4" qtlid="101781">IPv4</translation>
@@ -482,7 +486,7 @@
 
    <translation id="vps_order_additionnal_disk_title" qtlid="281498">Order an additional disk </translation>
    <translation id="vps_order_additional_disk_select_capacity" qtlid="281615">Please choose the size of the additional disk for your VPS. It will appear as a second hard drive on your operating system. </translation>
-   <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, it will then be renewed with it. </translation>
+   <translation id="vps_order_additional_disk_step2" qtlid="281628">The additional disk will be added to your server until your VPS renewal date, and it will then be renewed with it. </translation>
    <translation id="vps_order_additional_disk_select_capacity_price_tax_free" qtlid="270254">{{ price }} /month</translation>
    <translation id="vps_order_additional_disk_totalHT" qtlid="169238">Price excl. taxes:</translation>
    <translation id="vps_order_additional_disk_totalTTC" qtlid="169251">Price incl. taxes:</translation>

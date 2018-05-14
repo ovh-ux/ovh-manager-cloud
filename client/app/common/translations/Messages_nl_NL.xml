@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Sluiten</translation>
 
    <translation id="common_cancel" qtlid="37863">Annuleren</translation>
+   <translation id="common_activate" qtlid="76734">Activeren</translation>
+   <translation id="common_deactivate" qtlid="90973">Deactiveren</translation>
    <translation id="common_edit" qtlid="37875">Wijzigen</translation>
    <translation id="common_consult" qtlid="339639">Lezen</translation>
    <translation id="common_see_detail" qtlid="225192">De details weergeven</translation>
@@ -84,7 +86,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Overzicht van mijn aanvragen ter assistentie</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">E-mail geschiedenis</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Telefonische assistentie</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Updates geschiedenis</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Markeer als gelezen</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Markeer als ongelezen</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">De update geschiedenis is momenteel niet beschikbaar. </translation>
 
    <translation id="common_modify" qtlid="37875">Wijzigen</translation>
@@ -199,7 +205,7 @@
    <translation id="payment_type_bankAccount" qtlid="176911">Bankrekening</translation>
 
    <translation id="contract_next" qtlid="17743">Volgende</translation>
-   <translation id="contract_previous" qtlid="17431">Vorig</translation>
+   <translation id="contract_previous" qtlid="17431">Vorige</translation>
    <translation id="contract_download" qtlid="250082">Open het contract "{{id}}" in PDF</translation>
    <translation id="contract_help" qtlid="180382">Scroll naar beneden naar de contracten om deze te bevestigen.</translation>
    <translation id="contract_agree" qtlid="250095">Ik heb de voorwaarden gelezen en aanvaard</translation>
@@ -527,7 +533,7 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Aanmaakdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">De naam wijzigen</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Naam wijzigen</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standaard naam</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Gepersonaliseerde naam</translation>
 
@@ -577,6 +583,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Voer een minimum van {{minlength}} tekens in.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Voer een maximum van {{maxlength}} tekens in.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Voer een geldig formaat in.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(optioneel)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Deze stap bewerken</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Deze stap overslaan</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Volgende</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Verzenden</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Annuleren</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Er zijn</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">over op uw project</translation>

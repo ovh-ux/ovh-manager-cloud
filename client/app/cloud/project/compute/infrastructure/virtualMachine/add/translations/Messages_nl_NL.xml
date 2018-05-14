@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_add_title" qtlid="19315">Een server toevoegen</translation>
+   <translation id="cpcivm_add_button_completed_text" qtlid="249094">Begin nu</translation>
+   <translation id="cpcivm_add_step1_title" qtlid="482719">Selecteer een OS of een snapshot</translation>
+   <translation id="cpcivm_add_step1_tab_os_linux" qtlid="296856">Unix distributies</translation>
+   <translation id="cpcivm_add_step1_tab_os_windows" qtlid="248223">Windows distributies </translation>
+   <translation id="cpcivm_add_step1_tab_apps" qtlid="482732">Distributions + Apps</translation>
+   <translation id="cpcivm_add_step1_tab_customs" qtlid="482745">Aangepaste afbeeldingen</translation>
+   <translation id="cpcivm_add_step1_tab_shapshots" qtlid="10235">Snapshots</translation>
+   <translation id="cpcivm_add_step1_general_ERROR" qtlid="482758">Er is een fout opgetreden bij het openen van informatie: {{message}}</translation>
+   <translation id="cpcivm_add_step1_images_ERROR" qtlid="482771">De lijst met afbeeldingen van het besturingssysteem kon niet worden geopend: {{message}}</translation>
+   <translation id="cpcivm_add_step1_shapshots_ERROR" qtlid="482784">De lijst met snapshots kon niet worden geopend: {{message}}</translation>
+   <translation id="cpcivm_add_step1_distribution_last_version" qtlid="482797">Laatste versie</translation>
+   <translation id="cpcivm_add_step1_distribution_choose" qtlid="482810">Selecteer uw versie</translation>
+   <translation id="cpcivm_add_step1_windows_message" qtlid="482823">De kosten van de Windows-licentie worden automatisch toegevoegd aan de prijs van de geselecteerde instance.</translation>
+   <translation id="cpcivm_add_step1_sshKey_label" qtlid="21859">SSH-keys</translation>
+   <translation id="cpcivm_add_step1_sshKey_add" qtlid="248561">Een key toevoegen</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding" qtlid="248587">Deze key toevoegen</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding_ERROR" qtlid="482836">Kon de nieuwe key niet toevoegen: {{message}}</translation>
+   <translation id="cpcivm_add_step1_sshKey_name_label" qtlid="243120">Naam van de SSH-key</translation>
+   <translation id="cpcivm_add_step1_sshKey_publicKey_label" qtlid="482849">Bestaande key</translation>
+   <translation id="cpcivm_add_step1_sshKey_message" qtlid="482862">U hebt SSH-keys nodig om verbinding te maken met uw dienst. <br/><a href="{{url}}" target="_blank">Meer informatie over SSH-keys</a>.</translation>
+   <translation id="cpcivm_add_step1_sshKey_licence" qtlid="482875">Het gebruik van afbeeldingen is onderworpen aan de voorafgaande acceptatie van de gebruiksrechtovereenkomst van de leverancier.</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_title" qtlid="482888">Implementatie van de SSH-key</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">Uw SSH-key is beschikbaar voor alle regio's en OVH-datacenters.</translation>
+   <translation id="cpcivm_add_distribution_linux" qtlid="102213">Linux</translation>
+   <translation id="cpcivm_add_distribution_linux_other" qtlid="349728">Archlinux</translation>
+   <translation id="cpcivm_add_distribution_centos" qtlid="482914">CentOS</translation>
+   <translation id="cpcivm_add_distribution_coreos" qtlid="482927">CoreOS</translation>
+   <translation id="cpcivm_add_distribution_debian" qtlid="349650">Debian</translation>
+   <translation id="cpcivm_add_distribution_fedora" qtlid="437494">Fedora</translation>
+   <translation id="cpcivm_add_distribution_freebsd" qtlid="102225">FreeBSD</translation>
+   <translation id="cpcivm_add_distribution_ubuntu" qtlid="349715">Ubuntu</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2012" qtlid="482940">Windows Server 2012</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
+   <translation id="cpcivm_add_step2_title" qtlid="482966">Selecteer een regio en datacenter</translation>
+   <translation id="cpcivm_add_step2_tab_all" qtlid="331319">Alle regio's</translation>
+   <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Geen voorkeur</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Instance-quota bereikt</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM-quota bereikt</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core-quota bereikt</translation>
+   <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH-key niet beschikbaar</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">De lijst met beschikbare regio's en datacenters kon niet worden geopend: {{message}}</translation>
+   <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Uw beschikbare quota kon niet worden geladen: {{message}}</translation>
+   <translation id="cpcivm_add_step3_title" qtlid="483057">Selecteer uw instance</translation>
+   <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">Algemeen gebruik</translation>
+   <translation id="cpcivm_add_step3_category_cpu" qtlid="483083">Geoptimaliseerde computing</translation>
+   <translation id="cpcivm_add_step3_category_ram" qtlid="483096">Geoptimaliseerd geheugen</translation>
+   <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Versnelde computing</translation>
+   <translation id="cpcivm_add_step3_category_vps" qtlid="483122">Gedeelde resources</translation>
+   <translation id="cpcivm_add_step3_category_definition_balanced" qtlid="483135">Instances voor algemeen gebruik bieden een goede balans tussen RAM en performance.</translation>
+   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Instances met geoptimaliseerde computing zijn bij uitstek geschikt voor applicaties die hoge verwerkingssnelheden of parallelle taakverwerking vereisen.</translation>
+   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Geoptimaliseerde geheugeninstances worden aanbevolen voor uw databases, analyse en geheugenberekeningen, evenals andere RAM-intensieve applicaties.</translation>
+   <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Instances met versnelde verwerking (GPU, FPGA) zijn tot 1000 keer sneller dan een CPU voor bepaalde applicaties (rendering, video-transcoding, bio-informatica, big data, deep learning, enz.)</translation>
+   <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Instances met gedeelde resources (Sandbox) zijn geschikt voor testen, verificaties en ontwikkelomgevingen. Hun prestaties kunnen in de loop van de tijd enigszins variëren.</translation>
+   <translation id="cpcivm_add_step3_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="cpcivm_add_step3_label_core" qtlid="483213">Processor:</translation>
+   <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Opslag:</translation>
+   <translation id="cpcivm_add_step3_label_bandwidth" qtlid="145358">Bandbreedte:</translation>
+   <translation id="cpcivm_add_step3_value_core" qtlid="483239">{{vcores}} vCores ({{frequency}} GHz)</translation>
+   <translation id="cpcivm_add_step3_disabled_NOT_AVAILABLE" qtlid="400247">Niet beschikbaar in deze regio</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_RAM" qtlid="483252">Overschrijdt quota (RAM)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_VCPUS" qtlid="483265">Overschrijdt quota (Core)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINDISK" qtlid="483278">Onvoldoende schijfruimte</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINRAM" qtlid="483291">Onvoldoende RAM</translation>
+   <translation id="cpcivm_add_step3_disabled_message_NOT_AVAILABLE" qtlid="483304">Regio('s) waarin deze instance beschikbaar is: {{regions}}</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_RAM" qtlid="483317">Uw huidige RAM-quota is {{quota.remaining}} voor de regio die u hebt geselecteerd. De geselecteerde instance vereist {{quota.required}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_VCPUS" qtlid="483330">Uw huidige quota is {{quota.remaining}} cores voor de regio die u hebt geselecteerd. De geselecteerde instance vereist {{quota.required}} core(s).</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINDISK" qtlid="483343">De afbeelding {{name}} vereist een minimum van {{requiredDisk}} schijfruimte voor installatie. De geselecteerde instance heeft alleen {{currentDisk}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINRAM" qtlid="483356">De {{name}} afbeelding heeft minimaal {{requiredRam}} RAM nodig om goed te kunnen werken. De geselecteerde instance heeft slechts {{currentRam}}.</translation>
+   <translation id="cpcivm_add_step3_quantity_label" qtlid="483369">Aantal te creëren instances </translation>
+   <translation id="cpcivm_add_step3_quantity_info" qtlid="483382">Al uw instances worden op dezelfde manier geconfigureerd en geïmplementeerd in dezelfde regio.</translation>
+   <translation id="cpcivm_add_step3_quantity_help" qtlid="483395">Onder uw huidige quota kunt u maximaal {{max}} gelijktijdige {{type}} instance(s) maken voor de regio {{region}}.</translation>
+   <translation id="cpcivm_add_step3_quota_link_text" qtlid="483408">Bekijk uw quota</translation>
+   <translation id="cpcivm_add_step3_name_label" qtlid="483421">Naam van uw instance</translation>
+   <translation id="cpcivm_add_step3_name_help" qtlid="483434">Mag alleen cijfers, letters, lage streepjes, liggende streepjes en punten bevatten.</translation>
+   <translation id="cpcivm_add_step3_name_additional" qtlid="483447">De naam van de extra instances wordt bepaald en toegevoegd op basis van de ingevoerde term.</translation>
+   <translation id="cpcivm_add_step3_postscript_label" qtlid="64568">Post-installatie script</translation>
+   <translation id="cpcivm_add_step3_postscript_info" qtlid="483460">Voer uw script na installatie in</translation>
+   <translation id="cpcivm_add_step3_network_label" qtlid="316125">Toewijzen aan een privénetwerk</translation>
+   <translation id="cpcivm_add_step3_network_info" qtlid="483473">Gebruik een privénetwerk om uw data te beschermen. Dit zal niet alleen de verbinding tussen uw diensten verbeteren; hiermee kunt u ook data veilig uitwisselen tussen servers. <a href="{{url}}" target="_blank">Meer informatie over privénetwerken</a>.</translation>
+   <translation id="cpcivm_add_step3_network_none" qtlid="30646">Geen</translation>
+   <translation id="cpcivm_add_step3_flavor_prices_ERROR" qtlid="483486">De prijzen voor de beschikbare producten konden niet worden geopend: {{message}}</translation>
+   <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">De lijst met beschikbare aanbiedingen kon niet worden geopend: {{message}}</translation>
+   <translation id="cpcivm_add_step4_title" qtlid="483512">Configuratie van uw instance</translation>
+   <translation id="cpcivm_add_step5_title" qtlid="483525">Selecteer een factureringsperiode</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">De maandelijkse termijnen worden in rekening gebracht zodra de instance is opgestart en u kunt 50% besparen op serverkosten. Alleen voor korte perioden raden we aan dat u kiest voor facturering per uur en indien nodig later overschakelt naar maandelijkse facturering.</translation>
+   <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Per uur</translation>
+   <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Maandelijks</translation>
+   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Er is een fout opgetreden bij het maken van uw nieuwe instance: {{message}}</translation>
+   <translation id="cpcivm_add_summary_title" qtlid="4082">Overzicht</translation>
+   <translation id="cpcivm_add_summary_os" qtlid="168835">Besturingssysteem</translation>
+   <translation id="cpcivm_add_summary_region" qtlid="32434">Regio</translation>
+   <translation id="cpcivm_add_summary_instance" qtlid="104482">Instance</translation>
+   <translation id="cpcivm_add_summary_name" qtlid="3818">Naam</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Prijs per uur (excl. btw)</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Prijs per maand (excl. btw)</translation>
+   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Niet ingevoerd</translation>
+</translations>

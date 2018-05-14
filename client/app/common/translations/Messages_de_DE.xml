@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Schließen</translation>
 
    <translation id="common_cancel" qtlid="37863">Abbrechen</translation>
+   <translation id="common_activate" qtlid="76734">Aktivieren</translation>
+   <translation id="common_deactivate" qtlid="90973">Deaktivieren</translation>
    <translation id="common_edit" qtlid="37875">Ändern</translation>
    <translation id="common_consult" qtlid="339639">Einsehen</translation>
    <translation id="common_see_detail" qtlid="225192">Details anzeigen</translation>
@@ -84,7 +86,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Liste meiner Support-Anfragen</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">E-Mail-History</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Telefonischer Support</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Changelog</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Als gelesen markieren</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Als nicht gelesen markieren</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">Die Update-History ist derzeit nicht verfügbar.</translation>
 
    <translation id="common_modify" qtlid="37875">Ändern</translation>
@@ -527,7 +533,7 @@
    <translation id="common_tile_subscription_creation_date" qtlid="26419">Erstellungsdatum</translation>
 
    <translation id="common_tile_information_status" qtlid="26443">Status</translation>
-   <translation id="common_name_change_modal_title" qtlid="71741">Den Namen ändern</translation>
+   <translation id="common_name_change_modal_title" qtlid="71741">Namen ändern</translation>
    <translation id="common_name_change_modal_service_name_label" qtlid="415714">Standardname</translation>
    <translation id="common_name_change_modal_display_name_label" qtlid="415727">Personalisierter Name</translation>
 
@@ -577,6 +583,13 @@
    <translation id="common_field_error_minlength" qtlid="472359">Bitte geben Sie mindestens {{minlength}} Zeichen ein.</translation>
    <translation id="common_field_error_maxlength" qtlid="472372">Bitte geben Sie höchstens {{maxlength}} Zeichen ein.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Bitte geben Sie ein gültiges Format ein.</translation>
+
+   <translation id="common_stepper_optional_label" qtlid="356264">(optional) </translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Diesen Schritt bearbeiten</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Diesen Schritt überspringen</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Weiter</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Absenden</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Abbrechen</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Sie haben noch</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">für Ihr Projekt</translation>
