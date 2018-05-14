@@ -1,0 +1,50 @@
+<div class="cui-page__content log-streams-follow">
+    <oui-back-button data-state="dbaas.logs.detail.streams"
+        class="back_button_inline_text"
+        data-state-params="{ serviceName: ctrl.serviceName}">
+    </oui-back-button>
+    <span class="oui-header_3" data-translate="logs_streams_follow_live"></span>
+    <h6 class="oui-header_6 pb-3" data-ng-bind="ctrl.stream.data.info.title" />
+
+    <oui-spinner data-ng-if="ctrl.stream.loading"></oui-spinner>
+    <div data-ng-if="!ctrl.stream.loading">
+        <div class="log-streams-follow__connection_status">
+            <p data-ng-if="!ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_opened' | translate}} </strong>
+                <span data-ng-if="ctrl.getLastEvent()"> - {{ctrl.getLastEvent() | momentFormat:'LL' }} {{ctrl.getLastEvent() | momentFormat:'LTS' }}</span>
+            </p>
+            <p data-ng-if="!ctrl.isConnectionClosed()">{{::'logs_streams_displaying_logs' | translate}}
+                <span> : <strong>{{ctrl.getTotalMessages() | number}}/{{::ctrl.LogsConstants.MESSAGE_THRESHOLD}}</strong> ({{::'logs_streams_follow_logs_limit' | translate}})</span>
+            </p>
+            <p data-ng-if="ctrl.isConnectionClosed()"><strong>{{::'logs_streams_connection_closed' | translate}}</strong></p>
+        </div>
+
+        <oui-action-menu text="{{ ::'common_actions' | translate}}" align="start">
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_copy_address' | translate}}" on-click="ctrl.copyAddress()"></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="!ctrl.isConnectionClosed()" text="{{ ::'logs_streams_follow_close_connection' | translate}}" on-click="ctrl.closeConnection()"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_download_client' | translate}}" href="https://github.com/ovh/ldp-tail/releases" external></oui-action-menu-item>
+            <oui-action-menu-item data-ng-if="ctrl.isConnectionClosed()" text="{{ ::'logs_streams_follow_open_connection' | translate}}" on-click="ctrl.openConnection()"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_gelf' | translate}}" on-click="ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.GELF)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_ltsv' | translate}}" on-click="ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.LTSV)"></oui-action-menu-item>
+            <oui-action-menu-item text="{{ ::'logs_streams_follow_test_rfc' | translate}}" on-click="ctrl.testFlow(ctrl.testFlow(ctrl.LogsStreamsFollowService.testTypeEnum.RFC5424))"></oui-action-menu-item>
+        </oui-action-menu>
+
+        <oui-spinner data-ng-if="ctrl.LogsStreamsFollowService.waitingForMessages"></oui-spinner>
+        <p data-ng-if="ctrl.LogsStreamsFollowService.waitingForMessages">{{::'logs_streams_waiting_for_messages' | translate}}</p>
+        <table class="table" data-ng-repeat="message in ctrl.getMessages()">
+            <tr>
+                <td>
+                    <div class="log-streams-follow_date pb-3">
+                        <strong>
+                            {{ message.timestamp | momentFormat:'L' }} {{ message.timestamp | momentFormat:'LTS' }}
+                        </strong>
+                    </div>
+                    <p class="log-streams-follow_content" data-ng-bind="message.content" />
+                </td>
+                <td data-ng-if="message.code >= 0" style="width: 20%">
+                    <oui-inline-color-alert type="message.type" label="{{ ::message.label | translate}}"></oui-inline-color-alert>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

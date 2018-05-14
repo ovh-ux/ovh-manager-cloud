@@ -191,7 +191,8 @@ class VpsDashboardCtrl {
             changeOwner: {
                 text: this.$translate.instant("vps_change_owner"),
                 atInternetClickTag: "VPS-Actions-ChangeOwner",
-                isAvailable: () => !this.loaders.url
+                isAvailable: () => !this.loaders.url,
+                isExternal: true
             },
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),

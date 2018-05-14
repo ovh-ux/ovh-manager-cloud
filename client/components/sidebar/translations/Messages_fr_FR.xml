@@ -14,6 +14,9 @@
    <translation id="cloud_sidebar_section_license" qtlid="113658">Licences</translation>
    <translation id="cloud_sidebar_section_ip" qtlid="25615">IP</translation>
    <translation id="cloud_sidebar_section_vrack" qtlid="246962">vRack</translation>
+   <translation id="cloud_sidebar_section_logs">Logs Data Platform</translation>
+   <translation id="cloud_sidebar_section_logs_all_accounts">Tous les comptes</translation>
+   <translation id="cloud_sidebar_section_logs_welcome">Bienvenue</translation>
    <translation id="cloud_sidebar_section_load_balancer" qtlid="439819">Load Balancer</translation>
    <translation id="cloud_sidebar_section_cloud_db" qtlid="404863">CloudDB</translation>
    <translation id="cloud_sidebar_section_cda" qtlid="355031">Cloud Disk Array</translation>

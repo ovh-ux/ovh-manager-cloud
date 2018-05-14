@@ -1,0 +1,60 @@
+<div>
+    <div>
+        <cui-message-container data-messages="ctrl.messages"></cui-message-container>
+    </div>
+    <div>
+        <section class="cui-page__content log-accounts">
+            <p data-translate="logs_home_info"></p>
+
+            <oui-datagrid rows="ctrl.accounts.data">
+                <extra-top>
+                    <a class="oui-button oui-button_secondary"
+                       target="_blank" data-ng-href="{{ctrl.orderURL}}">
+                        <i class="oui-icon oui-icon-add pr-1" aria-hidden="true"></i> {{ ::'logs_accounts_add' | translate }}
+                    </a>
+                </extra-top>
+                <oui-column title="::'logs_accounts_col_name' | translate" property="name" sortable="asc" type="string" searchable filterable>
+                    <a class="oui-button oui-button_link"
+                        data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})">
+                        <span>{{$row.name}}</span>
+                    </a>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_status' | translate" property="state" sortable type="string" searchable filterable>
+                    <div data-ng-switch="$row.state">
+                        <span data-ng-switch-when="ENABLED">{{::'logs_accounts_enabled' | translate}}</span>
+                        <span data-ng-switch-when="DISABLED">{{::'logs_accounts_disabled' | translate}}</span>
+                        <span data-ng-switch-when="TO_CONFIG">{{::'logs_accounts_setup_required' | translate}}</span>
+                    </div>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_offer_type' | translate" property="quota.offerType" sortable type="string" searchable filterable>
+                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.offerType">{{$row.quota.offerType}}</span>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_entry_point' | translate" property="cluster.hostname" sortable type="string" searchable filterable>
+                    <oui-spinner size="s" data-ng-if="$row.cluster.isLoadingCluster"></oui-spinner>
+                    <span data-ng-if="!$row.quota.isLoadingCluster && $row.cluster.hostname">{{$row.cluster.hostname}}</span>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_streams' | translate">
+                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && !$row.quota.streams">-</span>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.streams">{{$row.quota.streams.current}}/{{$row.quota.streams.max}}</span>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_dashboards' | translate">
+                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && !$row.quota.dashboards">-</span>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.dashboards">{{$row.quota.dashboards.current}}/{{$row.quota.dashboards.max}}</span>
+                </oui-column>
+                <oui-column title="::'logs_accounts_col_indices' | translate">
+                    <oui-spinner size="s" data-ng-if="$row.quota.isLoadingQuota"></oui-spinner>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && !$row.quota.indices">-</span>
+                    <span data-ng-if="!$row.quota.isLoadingQuota && $row.quota.indices">{{$row.quota.indices.current}}/{{$row.quota.indices.max}}</span>
+                </oui-column>
+                <oui-action-menu compact>
+                    <oui-action-menu-item text="{{ ::'logs_accounts_details' | translate }}" data-ui-sref="dbaas.logs.detail({serviceName: $row.serviceName})"></oui-action-menu-item>
+                    <oui-action-menu-item disabled="$row.isDisabled" text="{{ ::'logs_accounts_offers' | translate }}" on-click="ctrl.goToOfferPage($row)"></oui-action-menu-item>
+                    <oui-action-menu-item disabled="$row.isDisabled" text="{{ ::'logs_accounts_options' | translate }}" on-click="ctrl.goToOptionsPage($row)"></oui-action-menu-item>
+                </oui-action-menu>
+            </oui-datagrid>
+        </section>
+    </div>
+</div>
