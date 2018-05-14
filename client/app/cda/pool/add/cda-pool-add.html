@@ -1,51 +1,25 @@
-<form id="addPoolForm" name="addPoolForm" class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="CdaPoolAddCtrl.closeModal()"></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="CdaPoolAddCtrl.saving">
-            <div class="text-center">
-                <oui-spinner></oui-spinner>
-            </div>
-        </div>
-        <div class="oui-modal__body-text" data-ng-if="!CdaPoolAddCtrl.saving">
-            <h2 class="oui-modal__title" data-translate="cda_pool_add_title"></h2>
+<form id="addPoolForm" name="addPoolForm"
+    data-ng-submit="addPoolForm.$valid && CdaPoolAddCtrl.createPool()">
+    <oui-modal
+        data-primary-label="{{ ::'common_add' | translate }}"
+        data-secondary-action="CdaPoolAddCtrl.closeModal()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="CdaPoolAddCtrl.closeModal()"
+        data-loading="CdaPoolAddCtrl.saving">
 
-            <label for="poolName" data-translate="cda_pool_add_poolname_label" class="oui-label"></label>
-            <input type="text" class="oui-input"
-                id="poolName" name="poolName"
+        <cui-message-container data-messages="CdaPoolAddCtrl.messages"></cui-message-container>
+
+        <h2 class="oui-modal__title" data-ng-bind="::'cda_pool_add_title' | translate "></h2>
+
+        <oui-field data-label="{{ ::'cda_pool_add_poolname_label' | translate }}">
+            <input type="text"
+                class="oui-input"
+                id="poolName"
+                name="poolName"
                 data-ng-model="CdaPoolAddCtrl.model.poolName"
                 data-ng-maxLength="CdaPoolAddCtrl.options.poolName.maxLength"
                 data-ng-pattern="CdaPoolAddCtrl.options.poolName.pattern"
-                required />
-
-            <div class="text-danger" data-ng-messages="addPoolForm.poolName.$error" data-ng-if="addPoolForm.poolName.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                    <span data-ng-message="required" data-translate="cda_pool_add_poolname_required"></span>
-                    <span data-ng-message="maxlength" data-translate="cda_pool_add_poolname_maxlength" data-translate-values="{ maxlength: CdaPoolAddCtrl.options.poolName.maxLength }"></span>
-                    <span data-ng-message="pattern" data-translate="cda_pool_add_poolname_pattern"></span>
-                </p>
-            </div>
-        </div>
-
-    </div>
-    <div class="oui-modal__footer">
-        <button type="reset"
-                class="oui-button oui-button_secondary"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaPoolAddCtrl.closeModal()"
-                data-ng-disabled="CdaPoolAddCtrl.saving"
-                form="addPoolForm">
-            <span data-translate="common_cancel"></span>
-        </button>
-        <button type="button"
-                class="oui-button oui-button_primary"
-                title="{{ ::'common_add' | translate }}"
-                data-ng-click="addPoolForm.$valid && CdaPoolAddCtrl.createPool()"
-                data-ng-disabled="CdaPoolAddCtrl.saving || (addPoolForm.poolName.$error && !addPoolForm.poolName.$valid)"
-                form="addPoolForm">
-            <span data-translate="common_add"></span>
-        </button>
-    </div>
+                required>
+        </oui-field>
+    </oui-modal>
 </form>
