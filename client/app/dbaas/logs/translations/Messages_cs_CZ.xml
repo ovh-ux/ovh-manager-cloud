@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/měsíc</translation>
    <translation id="logs-pro-1500" qtlid="475650">1,5 TB/měsíc</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/měsíc</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/měsíc</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/měsíc</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/měsíc</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/měsíc</translation>
    <translation id="logs-reader-1" qtlid="30646">Ne</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Průměrně 0,5 GB/den</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Průměrně 1 GB/den</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Průměrně 30 GB/den</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Průměrně 50 GB/den</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Průměrně 100 GB/den</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Průměrně 341 GB/den</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Průměrně 1.6 TB/den</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Průměrně 3.3 TB/den</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Průměrně 10 TB/den</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Konflikt nabídek</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Zvolili jste nabídku, kterou již máte aktivní. Zvolte prosím jinou nabídku.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Při načítání nabídek došlo k chybě</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Sledujte příjem svých logů v reálném čase prostřednictvím protokolu WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Aktivovat dlouhodobé ukládání</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivujte své logy bezpečně po několik let.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Kompresní algoritmus</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Doba uchování archivů</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Oznámení</translation>

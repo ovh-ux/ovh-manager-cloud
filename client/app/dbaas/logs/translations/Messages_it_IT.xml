@@ -278,6 +278,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/mese</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 TB/mese</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/mese</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/mese</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/mese</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/mese</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/mese</translation>
    <translation id="logs-reader-1" qtlid="30646">Nessuno</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Media di 0.5 GB/giorno</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Media di 1 GB/giorno</translation>
@@ -288,6 +292,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Media di 30 GB/giorno</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Media di 50 GB/giorno</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Media di 100 GB/giorno</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Media di 341 GB/giorno</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Media di 1.6 TB/giorno</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Media di 3.3 TB/giorno</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Media di 10 TB/giorno</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Opzione incompatibile</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Hai selezionato un piano che stai già utilizzando. È necessario selezionarne un altro.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Si è verificato un errore durante il caricamento dei piani</translation>
@@ -342,6 +350,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitora i tuoi log in tempo reale attraverso il protocollo WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Attiva lo storage a lungo termine</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivia i tuoi log in modo sicuro per anni.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algoritmo di compressione</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durata di conservazione degli archivi</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notifiche</translation>

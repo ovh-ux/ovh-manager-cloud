@@ -14,7 +14,7 @@
    <translation id="logs_previous" qtlid="17431">Précédent</translation>
    <translation id="logs_later" qtlid="82305">Plus tard</translation>
    <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {{message}}</translation>
 
 <!-- Dashboard -->
    <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>
@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 Go/Mois</translation>
    <translation id="logs-pro-1500" qtlid="475650">1,5 To/Mois</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 To/Mois</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 To/Mois</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 To/Mois</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 To/Mois</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 To/Mois</translation>
    <translation id="logs-reader-1" qtlid="30646">Aucun</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Moyenne de 0,5 Go/jour</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Moyenne de 1 Go/jour</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Moyenne de 30 Go/jour</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Moyenne de 50 Go/jour</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Moyenne de 100 Go/jour</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Moyenne de 341 Go/jour</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Moyenne de 1.6 To/jour</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Moyenne de 3.3 To/jour</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Moyenne de 10 To/jour</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Conflit d'offre</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Vous avez sélectionné une offre que vous possédez déjà. Veuillez sélectionner une autre offre.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Une erreur est survenue lors du chargement des offres</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos journaux en temps réel via le protocole WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activer le stockage longue durée</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivez vos journaux de façon sûre pour des années.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorithme de compression</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durée de rétention des archives</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>
@@ -502,7 +512,7 @@
    <translation id="inputs_intro_text" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des journaux provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
    <translation id="inputs_total_used" qtlid="477210">outils de collecte utilisés</translation>
    <translation id="inputs_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_add_input" qtlid="423193">Ajouter un outil de collecte</translation>
    <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
    <translation id="inputs_tool" qtlid="477236">Outil</translation>
    <translation id="inputs_col_name" qtlid="3818">Nom</translation>
@@ -535,7 +545,7 @@
    <translation id="inputs_info_certificate" qtlid="439169">Type de certificat</translation>
    <translation id="inputs_logs_title" qtlid="477340">Sortie console de {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs" qtlid="477353">Aucun message reçu au cours de la dernière heure.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un outil de collecte</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Modifier l'outil de collecte</translation>
    <translation id="inputs_logs_edit_description" qtlid="477379">Pour l'outil de collecte <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Modifier</translation>

@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB / m-c</translation>
    <translation id="logs-pro-1500" qtlid="475650">1,5 TB / m-c</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB / m-c</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB / m-c</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB / m-c</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB / m-c</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB / m-c</translation>
    <translation id="logs-reader-1" qtlid="30646">Żaden</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Średnia 0,5 GB / dzień</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Średnia 1 GB / dzień</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Średnia 30 GB / dzień</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Średnia 50 GB / dzień</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Średnia 100 GB / dzień</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Średnia 341 GB / dzień</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Średnia 1.6 TB / dzień</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Średnia 3.3 TB / dzień</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Średnia 10 TB / dzień</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Nieprawidłowy pakiet</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Wybrałeś ofertę, z której już korzystasz. Wybierz inną ofertę.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Wystąpił błąd podczas ładowania ofert</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Śledzenie otrzymywania logów w czasie rzeczywistym za pośrednictwem protokołu WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Aktywuj długoterminowe przechowywanie</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Bezpieczna archiwizacja logów przez wiele lat.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorytm kompresji</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Czas archiwizacji</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Powiadomienie</translation>
@@ -424,7 +434,7 @@
    <translation id="streams_alerts_condition" qtlid="425806">Warunek</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Dodatkowy odstęp czasu</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Powtarzaj powiadomienia</translation>
-   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Usuń alert</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Czy na pewno chcesz usunąć alert <strong>{{alert}}</strong>?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Wystąpił błąd podczas usuwania alertu {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">Alert {{alertName}} został usunięty.</translation>
@@ -564,7 +574,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Format Twoich logów</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Separator oddzielający każdą wiadomość</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Linia kodu</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>

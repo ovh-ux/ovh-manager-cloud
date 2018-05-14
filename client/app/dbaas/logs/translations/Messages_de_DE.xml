@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/Monat</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 TB/Monat</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/Monat</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/Monat</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/Monat</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/Monat</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/Monat</translation>
    <translation id="logs-reader-1" qtlid="30646">Keiner</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Durchschnittlich 0.5 GB/Tag</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Durchschnittlich 1 GB/Tag</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Durchschnittlich 30 GB/Tag</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Durchschnittlich 50 GB/Tag</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Durchschnittlich 100 GB/Tag</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Durchschnittlich 341 GB/Tag</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Durchschnittlich 1.6 TB/Tag</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Durchschnittlich 3.3 TB/Tag</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Durchschnittlich 10 TB/Tag</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Angebotskonflikt</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Sie besitzen bereits das ausgewählte Angebot. Bitte wählen Sie ein anderes Angebot aus.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Beim Laden der Angebote ist ein Fehler aufgetreten.</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Verfolgen Sie den Empfang Ihrer Logs in Echtzeit über das WebSocket-Protokoll.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Langzeitarchivierung aktivieren</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivieren Sie Ihre Logs sicher und jahrelang</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Komprimierungsalgorithmus</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Vorhaltezeit der Archive</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Benachrichtigung</translation>
