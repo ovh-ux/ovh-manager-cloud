@@ -83,7 +83,7 @@ class LogsStreamsAlertsHomeCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("streams_alerts_delete"),
-            text: this.$translate.instant("streams_alerts_delete_message", { alert: alert.title })
+            textHtml: this.$translate.instant("streams_alerts_delete_message", { alert: alert.title })
         }).then(() => this._delete(alert));
     }
 

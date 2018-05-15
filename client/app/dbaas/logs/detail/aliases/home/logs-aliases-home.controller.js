@@ -76,7 +76,7 @@ class LogsAliasesHomeCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_aliases_delete_title"),
-            text: this.$translate.instant("logs_alias_delete_message", { alias: alias.name })
+            textHtml: this.$translate.instant("logs_alias_delete_message", { alias: alias.name })
         }).then(() => this._delete(alias));
     }
 

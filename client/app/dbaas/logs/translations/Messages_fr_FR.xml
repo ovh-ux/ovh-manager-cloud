@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activer cette option</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Vous devez contacter le support pour réactiver cette option '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Désactiver cette option</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'? Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver <strong>{{optionType}}</strong>? Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Une erreur est survenue lors de la désactivation de '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">L'option {{optionType}} a été désactivé avec succès</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Pour gérer vos options, allez à la page</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Suivre en direct</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Pour le flux <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>

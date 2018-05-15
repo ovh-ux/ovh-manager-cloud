@@ -10,10 +10,12 @@ angular.module("managerApp")
                         data-term="'common_tile_subscription_offer' | translate" 
                         data-description="$ctrl.subscriptionInfo.offer"
                         data-actions="$ctrl.offerActions"></cui-tile-item>
-                    <cui-tile-item data-term="$ctrl.hasAutoRenew() ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate" 
-                        data-description="$ctrl.subscriptionInfo.expiration | momentFormat:'LL'"
-                        data-actions="$ctrl.autorenewActions"></cui-tile-item>
-                    <cui-tile-item data-actions="$ctrl.contactActions">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="$ctrl.hasAutoRenew() ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate" 
+                                   data-description="$ctrl.subscriptionInfo.expiration | momentFormat:'LL'"
+                                   data-actions="$ctrl.autorenewActions"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-actions="$ctrl.contactActions">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'common_tile_subscription_contact' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -30,8 +32,9 @@ angular.module("managerApp")
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item data-term="'common_tile_subscription_creation_date' | translate" 
-                        data-description="$ctrl.subscriptionInfo.creation | momentFormat:'LL'"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'common_tile_subscription_creation_date' | translate" 
+                                   data-description="$ctrl.subscriptionInfo.creation | momentFormat:'LL'"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         `,

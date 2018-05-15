@@ -4,7 +4,7 @@
             <div class="cui-tile h-100">
                 <h4 class="oui-header_4 cui-tile__title" data-translate="veeam_tiles_shortcut_title"></h4>
                 <ul class="cui-tile__body cui-tile__body_list">
-                    <li class="cui-tile__item cui-tile__item_button">
+                    <li class="cui-tile__top-bordered cui-tile__item cui-tile__item_button">
                         <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                             type="button"
                             data-ng-click="VeeamDashboardCtrl.addStorage()">
@@ -12,7 +12,7 @@
                             <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                         </button>
                     </li>
-                    <li class="cui-tile__item cui-tile__item_button">
+                    <li class="cui-tile__top-bordered cui-tile__item cui-tile__item_button">
                         <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                             type="button"
                             data-ng-click="VeeamDashboardCtrl.changeOffer()">
@@ -27,15 +27,17 @@
             <cui-tile class="h-100" data-title="'veeam_tiles_configuration_title' | translate" data-loading="VeeamDashboardCtrl.configurationInfos.loading">
                 <cui-tile-body>
                     <cui-tile-item data-term="'veeam_tiles_configuration_label_name' | translate"
-                        data-description=":: VeeamDashboardCtrl.configurationInfos.data.serviceName">
+                                   data-description=":: VeeamDashboardCtrl.configurationInfos.data.serviceName">
                     </cui-tile-item>
-                    <cui-tile-item data-term="'veeam_tiles_configuration_label_vm_count' | translate"
-                        data-description=":: VeeamDashboardCtrl.configurationInfos.data.vmCount">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'veeam_tiles_configuration_label_vm_count' | translate"
+                                   data-description=":: VeeamDashboardCtrl.configurationInfos.data.vmCount">
                     </cui-tile-item>
-                    <cui-tile-item class="cui-dropdown-menu-container" data-term="'veeam_tiles_configuration_label_stockage_number' | translate"
-                        data-description=":: VeeamDashboardCtrl.configurationInfos.data.backupCount">
+                    <cui-tile-item class="cui-tile__top-bordered cui-dropdown-menu-container"
+                                   data-term="'veeam_tiles_configuration_label_stockage_number' | translate"
+                                   data-description=":: VeeamDashboardCtrl.configurationInfos.data.backupCount">
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'veeam_tiles_configuration_label_datacenter' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description-region data-regions="VeeamDashboardCtrl.configurationInfos.data.location.macroRegion.code"></cui-tile-definition-description-region>

@@ -77,14 +77,6 @@ class LogsOfferCtrl {
     goToHomePage () {
         this.$state.go("dbaas.logs.detail.home");
     }
-
-    back () {
-        if (this.offerDetail.currentOfferType === "pro") {
-            this.goToHomePage();
-        } else {
-            this.offerDetail.currentOfferType = "basic";
-        }
-    }
 }
 
 angular.module("managerApp").controller("LogsOfferCtrl", LogsOfferCtrl);

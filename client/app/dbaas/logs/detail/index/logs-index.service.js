@@ -71,7 +71,7 @@ class LogsIndexService {
     deleteModal (indexName) {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_modal_delete_title"),
-            text: this.$translate.instant("logs_modal_delete_question", { name: indexName })
+            textHtml: this.$translate.instant("logs_modal_delete_question", { name: indexName })
         });
     }
 

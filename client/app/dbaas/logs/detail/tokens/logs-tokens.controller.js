@@ -52,7 +52,7 @@ class LogsTokensCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_tokens_delete_title"),
-            text: this.$translate.instant("logs_tokens_delete_message", { tokenName: token.name })
+            textHtml: this.$translate.instant("logs_tokens_delete_message", { tokenName: token.name })
         }).then(() => this._delete(token));
     }
 

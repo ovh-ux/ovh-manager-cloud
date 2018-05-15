@@ -79,20 +79,23 @@
                         data-description="ctrl.accountDetails.data.service.displayName"
                         data-actions="ctrl.actions.changeName">
                     </cui-tile-item>
-                    <cui-tile-item data-term="'logs_home_tokens' | translate"
-                        data-description="ctrl.tokenIds.data.length"
-                        data-actions="ctrl.actions.editTokens">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'logs_home_tokens' | translate"
+                                   data-description="ctrl.tokenIds.data.length"
+                                   data-actions="ctrl.actions.editTokens">
                         <i class="oui-icon oui-icon-help_circle cui-tile__tooltip"
                            aria-hidden="true"
-                           data-oui-tooltip="{{ ::'logs_home_tokens_tooltip' | translate }}"
-                           data-oui-tooltip-placement="top-start"></i>
+                           data-oui-tooltip="{{ ::'logs_home_tokens_tooltip' | translate }}"></i>
                     </cui-tile-item>
-                    <cui-tile-item data-term="'logs_home_service' | translate"
-                        data-description="ctrl.accountDetails.data.service.username">
+                    <div class="cui-tile__top-bordered"></div>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'logs_home_service' | translate"
+                                   data-description="ctrl.accountDetails.data.service.username">
                     </cui-tile-item>
-                    <cui-tile-item data-term="'logs_home_password' | translate"
-                        data-description="'******'"
-                        data-actions="ctrl.actions.changePassword">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'logs_home_password' | translate"
+                                   data-description="'******'"
+                                   data-actions="ctrl.actions.changePassword">
                     </cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
@@ -111,7 +114,7 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'logs_home_collector' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -119,7 +122,7 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-action-link class="mt-3" data-action="ctrl.actions.messagesAndPorts"></cui-tile-action-link>
                     </cui-tile-item>
                 </cui-tile-body>
