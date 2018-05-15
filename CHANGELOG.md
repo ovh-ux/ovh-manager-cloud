@@ -1,3 +1,56 @@
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.5...v7.2.0) (2018-05-15)
+
+
+### Bug Fixes
+
+* added offer limit to translation ([f88d43f](https://github.com/ovh-ux/ovh-manager-cloud/commit/f88d43f))
+* **conflict:** fix external link ([8a3d463](https://github.com/ovh-ux/ovh-manager-cloud/commit/8a3d463))
+* fix for home page display name ([1f6bc79](https://github.com/ovh-ux/ovh-manager-cloud/commit/1f6bc79))
+* **logs:** final fixes ([6ec322e](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ec322e))
+* **logs:** fix for ovh-api-service update ([77c1b9d](https://github.com/ovh-ux/ovh-manager-cloud/commit/77c1b9d))
+* **logs:** general fixes ([b90286c](https://github.com/ovh-ux/ovh-manager-cloud/commit/b90286c))
+* updated urls to make them dynamic ([14bc3b9](https://github.com/ovh-ux/ovh-manager-cloud/commit/14bc3b9))
+* **logs:** genereal fix : ([e6566a6](https://github.com/ovh-ux/ovh-manager-cloud/commit/e6566a6)), closes [#L26](https://github.com/ovh-ux/ovh-manager-cloud/issues/L26)
+* **logs:** handle error message param ([1fcc9b4](https://github.com/ovh-ux/ovh-manager-cloud/commit/1fcc9b4))
+* fix for search filter of dual list ([dcde252](https://github.com/ovh-ux/ovh-manager-cloud/commit/dcde252))
+* **logs:** margin + back-buttons ([5f9aef4](https://github.com/ovh-ux/ovh-manager-cloud/commit/5f9aef4))
+* fix for coldstorage price ([14d935e](https://github.com/ovh-ux/ovh-manager-cloud/commit/14d935e))
+* fix for consistent success and error messages ([23e434c](https://github.com/ovh-ux/ovh-manager-cloud/commit/23e434c))
+* fix for constants ([e96f307](https://github.com/ovh-ux/ovh-manager-cloud/commit/e96f307))
+* fix for dashboard and home page ([27a98cd](https://github.com/ovh-ux/ovh-manager-cloud/commit/27a98cd))
+* fix for datagrid issues and rearrage action menu items ([76e54f3](https://github.com/ovh-ux/ovh-manager-cloud/commit/76e54f3))
+* fix for index storage color code ([6e81b4d](https://github.com/ovh-ux/ovh-manager-cloud/commit/6e81b4d))
+* fix for new offers ([17a0d49](https://github.com/ovh-ux/ovh-manager-cloud/commit/17a0d49))
+* fix for product link ([1d82645](https://github.com/ovh-ux/ovh-manager-cloud/commit/1d82645))
+* fix for updatedAt ([5723e1c](https://github.com/ovh-ux/ovh-manager-cloud/commit/5723e1c))
+* fixed order, product and documentation urls ([af35d08](https://github.com/ovh-ux/ovh-manager-cloud/commit/af35d08))
+* fixed pow operator ([3ff1307](https://github.com/ovh-ux/ovh-manager-cloud/commit/3ff1307))
+* fixed spacing between sections ([ee42c20](https://github.com/ovh-ux/ovh-manager-cloud/commit/ee42c20))
+* updated fr translation files ([acda74c](https://github.com/ovh-ux/ovh-manager-cloud/commit/acda74c))
+* upgraded progress-tracker from ui-kit ([53037a1](https://github.com/ovh-ux/ovh-manager-cloud/commit/53037a1))
+
+
+### Features
+
+* added appropriate messages in options page ([72cc03f](https://github.com/ovh-ux/ovh-manager-cloud/commit/72cc03f))
+* added documentation ([043d774](https://github.com/ovh-ux/ovh-manager-cloud/commit/043d774))
+* added logs homepage graph ([6c2d182](https://github.com/ovh-ux/ovh-manager-cloud/commit/6c2d182))
+* feature of managing options ([0658012](https://github.com/ovh-ux/ovh-manager-cloud/commit/0658012))
+* **logs:** datagrid handle top button ([160c5c0](https://github.com/ovh-ux/ovh-manager-cloud/commit/160c5c0))
+* **logs:** forms update ([d81fb58](https://github.com/ovh-ux/ovh-manager-cloud/commit/d81fb58))
+* added searchable and filterable ([cc35f42](https://github.com/ovh-ux/ovh-manager-cloud/commit/cc35f42))
+* cold storage added ([e34cb2a](https://github.com/ovh-ux/ovh-manager-cloud/commit/e34cb2a))
+* edit alert ([aabd1b2](https://github.com/ovh-ux/ovh-manager-cloud/commit/aabd1b2))
+* feature of managing options ([698e866](https://github.com/ovh-ux/ovh-manager-cloud/commit/698e866))
+* **logs:** oui-modal : ([6d13bb9](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d13bb9))
+* logs welcome page added ([36717bc](https://github.com/ovh-ux/ovh-manager-cloud/commit/36717bc))
+* offer limit for homepage graph added ([77790ec](https://github.com/ovh-ux/ovh-manager-cloud/commit/77790ec))
+* offer tile and options grouping ([140ef80](https://github.com/ovh-ux/ovh-manager-cloud/commit/140ef80))
+* ui upgrade for progress bar ([859534b](https://github.com/ovh-ux/ovh-manager-cloud/commit/859534b))
+
+
+
 <a name="7.1.5"></a>
 ## [7.1.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.1.4...v7.1.5) (2018-05-10)
 
