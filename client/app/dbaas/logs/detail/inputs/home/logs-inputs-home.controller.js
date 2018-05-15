@@ -161,7 +161,7 @@ class LogsInputsHomeCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("inputs_delete"),
-            text: this.$translate.instant("inputs_delete_message", { input: input.info.title })
+            textHtml: this.$translate.instant("inputs_delete_message", { input: input.info.title })
         }).then(() => this._delete(input));
     }
 

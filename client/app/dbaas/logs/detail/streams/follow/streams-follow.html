@@ -4,7 +4,8 @@
         data-state-params="{ serviceName: ctrl.serviceName}">
     </oui-back-button>
     <span class="oui-header_3" data-translate="logs_streams_follow_live"></span>
-    <h6 class="oui-header_6 pb-3" data-ng-bind="ctrl.stream.data.info.title" />
+    <p data-translate="logs_streams_follow_description"
+       data-translate-values="{name:ctrl.stream.data.info.title}"></p>
 
     <oui-spinner data-ng-if="ctrl.stream.loading"></oui-spinner>
     <div data-ng-if="!ctrl.stream.loading">

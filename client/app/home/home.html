@@ -13,11 +13,16 @@
             <cui-tile data-ng-repeat="section in $ctrl.guides.sections track by $index"
                       data-title="section.title | translate"
                       class="cui-tile mb-5">
-                <cui-tile-body-list>
-                    <cui-tile-body-list-item data-ng-repeat="link in section.list track by $index">
-                        <cui-tile-action-link data-action="link"></cui-tile-action-link>
-                    </cui-tile-body-list-item>
-                </cui-tile-body-list>
+                <div class="cui-tile__top-bordered"
+                     data-ng-repeat="link in section.list track by $index">
+                    <a class="oui-button oui-button_link cui-tile__button cui-tile__button_extended"
+                       data-at-internet-click="{ name: link.atInternetClickTag }"
+                       data-ng-href="{{ link.href }}"
+                       ng-attr-target="{{(link.isExternal) ? '_blank' : undefined}}">
+                        <span data-ng-bind="link.text"></span>
+                        <span class="oui-icon oui-icon-external_link" data-ng-if="link.isExternal" aria-hidden="true"></span>
+                    </a>
+                </div>
             </cui-tile>
         </div>
     </div>

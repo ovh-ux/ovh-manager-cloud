@@ -257,7 +257,7 @@ class LogsOptionsService {
         return this.ControllerHelper.modal.showDeleteModal({
             submitButtonText: this.$translate.instant("logs_options_action_disable"),
             titleText: this.$translate.instant("logs_options_manage_terminate_title"),
-            text: this.$translate.instant("logs_options_manage_terminate_question", { optionType: `${option.type}, ${option.detail}` })
+            textHtml: this.$translate.instant("logs_options_manage_terminate_question", { optionType: `${option.type}, ${option.detail}` })
         });
     }
 

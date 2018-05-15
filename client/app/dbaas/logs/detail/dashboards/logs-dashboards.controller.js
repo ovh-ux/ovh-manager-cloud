@@ -82,7 +82,7 @@ class LogsDashboardsCtrl {
         this.CloudMessage.flushChildMessage();
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_dashboards_delete_title"),
-            text: this.$translate.instant("logs_dashboards_delete_message", { dashboardName: dashboard.title })
+            textHtml: this.$translate.instant("logs_dashboards_delete_message", { dashboardName: dashboard.title })
         }).then(() => this._delete(dashboard));
     }
 

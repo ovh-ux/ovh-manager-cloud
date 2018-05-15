@@ -178,7 +178,7 @@ class LogsRolesService {
     deleteModal (role) {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_role_modal_delete_title"),
-            text: this.$translate.instant("logs_role_modal_delete_question", { name: role.name })
+            textHtml: this.$translate.instant("logs_role_modal_delete_question", { name: role.name })
         });
     }
 
@@ -203,7 +203,7 @@ class LogsRolesService {
     deleteMemberModal (username) {
         return this.ControllerHelper.modal.showDeleteModal({
             titleText: this.$translate.instant("logs_member_delete_title"),
-            text: this.$translate.instant("logs_member_delete_question", { username })
+            textHtml: this.$translate.instant("logs_member_delete_question", { username })
         });
     }
 

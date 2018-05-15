@@ -244,7 +244,7 @@ angular.module("managerApp")
         controller: class CuiTileDefinitionTermCtrl {},
         scope: true,
         template: `
-            <dt class="cui-tile__term text-truncate">
+            <dt class="cui-tile__term">
                 {{$ctrl.term}}
                 <ng-transclude></ng-transclude>
             </dt>`,
