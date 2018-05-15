@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Option aktivieren</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Bitte kontaktieren Sie den Support, um die Option '{{optionType}}' erneut zu aktivieren.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Option deaktivieren</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Sind Sie sicher, dass Sie '{{optionType}}' deaktivieren möchten? Bitte beachten Sie, dass Sie diese Option nur mithilfe des Kundendienstes erneut aktivieren können.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Sind Sie sicher, dass Sie <strong>{{optionType}}'</strong>deaktivieren möchten? Bitte beachten Sie, dass Sie diese Option nur mithilfe des Kundendienstes erneut aktivieren können.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Bei der Deaktivierung von '{{optionType}}' ist ein Fehler aufgetreten: {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">Die Option {{optionType}} wurde erfolgreich deaktiviert.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Um Ihre Optionen zu verwalten, gehen Sie auf die Seite</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Alarme verwalten</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archive</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">In Echtzeit verfolgen</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Für den Stream <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Graylog-Zugang</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Schreibtoken kopieren</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Stream löschen</translation>
@@ -349,8 +350,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Verfolgen Sie den Empfang Ihrer Logs in Echtzeit über das WebSocket-Protokoll.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Langzeitarchivierung aktivieren</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivieren Sie Ihre Logs sicher und jahrelang</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Diese Funktion kostet {{price}} / Monat und je 2 GB</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Sie benötigen das Pro Angebot, um diese Funktion nutzen zu können.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Komprimierungsalgorithmus</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Vorhaltezeit der Archive</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Benachrichtigung</translation>
@@ -512,7 +513,7 @@
    <translation id="inputs_intro_text" qtlid="470167">Datensammler sind Programme, mit deren Hilfe die von Servern oder Anwendungen stammenden Logs zusammengetragen werden können. Sie sind ein effektives Mittel, um Daten zu verarbeiten und in das mit der Logs Data Platform kompatible Datenformat GELF zu konvertieren. So ist es nicht länger notwendig, spezielle Hardware-Ressourcen zu verwenden oder die Verfügbarkeit Ihrer Infrastrukturen zu überprüfen - das übernehmen wir für Sie. Dank dieser Plattform können Sie Datensammler mit Ihren verschiedenen Streams verbinden und erhalten so eine vereinfachte, mit Firewall-Regeln gesicherte Konfiguration.</translation>
    <translation id="inputs_total_used" qtlid="477210">Datensammler verwendet</translation>
    <translation id="inputs_increase_quota" qtlid="474753">Quota erhöhen</translation>
-   <translation id="inputs_add_input" qtlid="423193">Neuen Datensammler hinzufügen</translation>
+   <translation id="inputs_add_input" qtlid="423193">Datensammler hinzufügen</translation>
    <translation id="inputs_name" qtlid="477223">Datensammler</translation>
    <translation id="inputs_tool" qtlid="477236">Tool</translation>
    <translation id="inputs_col_name" qtlid="3818">Name</translation>
@@ -545,7 +546,7 @@
    <translation id="inputs_info_certificate" qtlid="439169">Zertifikattyp</translation>
    <translation id="inputs_logs_title" qtlid="477340">Konsolen-Output von {{inputTitle}}</translation>
    <translation id="inputs_logs_no_logs" qtlid="477353">Keine Nachrichten innerhalb der letzten Stunde empfangen.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Neuen Datensammler hinzufügen</translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Datensammler hinzufügen</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Datensammler bearbeiten</translation>
    <translation id="inputs_logs_edit_description" qtlid="477379">Für den Datensammler <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Ändern</translation>

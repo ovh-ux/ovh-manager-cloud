@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Enable this option</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">You will need to contact our support team to re-enable this '{{optionType}}' option.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Disable this option</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Are you sure you want to disable '{{optionType}}'? Please note that to re-enable this option, you will need to contact our support team.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Are you sure you want to disable <strong>{{optionType}}</strong>? Please note that to re-enable this option, you will need to contact our support team.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">An error has occurred disabling '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">The {{optionType}} option has been disabled</translation>
    <translation id="logs_options_description_manage" qtlid="475273">To manage your options, go to the page</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Manage alerts</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Monitor in real time</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">For the <strong>{{ name }}</strong> data stream</translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Graylog access</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copy write token</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Delete data stream</translation>
@@ -349,8 +350,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitor the logs you receive in real time, via the WebSocket protocol.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Enable long-term storage</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive your logs securely for years.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">This feature costs {{price}} ex. VAT/month, per increment of 2 GB</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">To access this feature, you need to upgrade to the Professional plan.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Compression algorithm</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archive conservation period</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>

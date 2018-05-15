@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Įjungti šią parinktį</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Norėdami vėl įjungti šią parinktį turite susisiekti su pagalba '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Išjungti šią parinktį</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Ar iš tiesų norite išjungti parinktį '{{optionType}}'. Dėmesio: norėdami įjungti parinktį turėsite susisiekti su pagalbos tarnyba.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Ar iš tiesų norite išjungti parinktį <strong>{{optionType}}</strong>. Dėmesio: norėdami įjungti parinktį turėsite susisiekti su pagalbos tarnyba.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Išjungiant parinktį '{{optionType}}' įvyko klaida: {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">Parinktis {{optionType}} buvo sėkmingai išjungta</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Norėdami valdyti savo parinktis, eikite į puslapį</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Valdyti įspėjimus</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archyvai</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Stebėti realiu laiku</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Srautui <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Graylog prieiga</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Kopijavimo ir rašymo tokenas</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Pašalinti srautą</translation>

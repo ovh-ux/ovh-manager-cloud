@@ -235,7 +235,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Attiva questa opzione</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Per riattivare l'opzione '{{optionType}}', è necessario contattare il nostro supporto.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Disattiva questa opzione</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Vuoi davvero disattivare '{{optionType}}'? Ti ricordiamo che, in caso volessi riattivarla in seguito, sarà necessario contattare il nostro supporto.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Vuoi davvero disattivare <strong>{{optionType}}</strong>? Ti ricordiamo che, in caso volessi riattivarla in seguito, sarà necessario contattare il nostro supporto.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Si è verificato un errore durante la disattivazione dell'opzione '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">L'opzione {{optionType}} è stata disattivata correttamente</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Per gestire le tue opzioni, vai alla pagina</translation>
@@ -338,6 +338,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gestisci gli alert</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archivi</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Segui in tempo reale</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Per il flusso di dati <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Accesso Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copia il token di scrittura</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Elimina il flusso di dati</translation>
@@ -350,8 +351,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitora i tuoi log in tempo reale attraverso il protocollo WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Attiva lo storage a lungo termine</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivia i tuoi log in modo sicuro per anni.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Questa funzionalità costa {{price}} +IVA/mese per ogni 2GB aggiunti</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">È necessario passare al piano Pro per accedere a questa funzionalità.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algoritmo di compressione</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durata di conservazione degli archivi</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notifiche</translation>
