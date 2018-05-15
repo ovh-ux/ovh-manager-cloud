@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Ativar esta opção</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Deve contactar o Apoio ao Cliente para reativar esta opção '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Desativar esta opção</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Tem a certeza de que deseja desativar '{{optionType}}'? Caso o fizer, tenha em atenção que terá de contactar o Apoio ao Cliente para reativar esta opção.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Tem a certeza de que deseja desativar <strong>{{optionType}}</strong>? Caso o fizer, tenha em atenção que terá de contactar o Apoio ao Cliente para reativar esta opção.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Ocorreu um erro durante a desativação de '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">A opção {{optionType}} foi desativada com êxito.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Para gerir as suas opções, vá à página</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gerir os alertas</translation>
    <translation id="logs_streams_archives" qtlid="469933">Arquivos</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Monitorizar em tempo real</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Para o fluxo <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Acesso Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copiar o token de escrita</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Eliminar o fluxo</translation>

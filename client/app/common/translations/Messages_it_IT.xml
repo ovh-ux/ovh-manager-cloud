@@ -202,7 +202,7 @@
    <translation id="payment_type_refund" qtlid="139845">Credito</translation>
    <translation id="payment_type_transfer" qtlid="89833">Bonifico</translation>
    <translation id="payment_type_withdrawal" qtlid="139858">Prelievo</translation>
-   <translation id="payment_type_bankAccount" qtlid="176911">Conto bancario</translation>
+   <translation id="payment_type_bankAccount" qtlid="176911">Conto corrente</translation>
 
    <translation id="contract_next" qtlid="17743">Seguente</translation>
    <translation id="contract_previous" qtlid="17431">Precedente</translation>
