@@ -57,6 +57,10 @@
   version "1.6.10"
   resolved "https://codeload.github.com/angular/bower-angular-sanitize/tar.gz/4edf1d245f0f3453d2766a16283ba5a70c82d55f"
 
+"@bower_components/angular-scroll-glue@luegg/angularjs-scroll-glue#2.2.x":
+  version "2.2.0"
+  resolved "https://codeload.github.com/luegg/angularjs-scroll-glue/tar.gz/5990d90cbf84efdf837edcbf26cefe9adb676f5b"
+
 "@bower_components/angular-strap@mgcrea/angular-strap#~2.3.6":
   version "2.3.12"
   resolved "https://codeload.github.com/mgcrea/angular-strap/tar.gz/bc1cb5cc10f253a0cce16ecda360879d77f10768"
@@ -84,6 +88,13 @@
 "@bower_components/angular-ui-validate@angular-ui/ui-validate#1.2.x":
   version "1.2.3"
   resolved "https://codeload.github.com/angular-ui/ui-validate/tar.gz/0d982055360032be2421b969fa1c83bf053e735a"
+
+"@bower_components/angular-websocket@gdi2290/angular-websocket#^2.0.0":
+  version "2.0.0"
+  resolved "https://codeload.github.com/gdi2290/angular-websocket/tar.gz/f3b33c1a88a8e334d2cc23dad7afbd79cece044e"
+  dependencies:
+    angular "*"
+    ws "^1.0.0"
 
 "@bower_components/angular@angular/bower-angular#1.6.9":
   version "1.6.9"
@@ -305,6 +316,10 @@
 "@bower_components/ovh-angular-swimming-poll@ovh-ux/ovh-angular-swimming-poll#^3.0.1":
   version "3.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-swimming-poll/tar.gz/dfb6d59e8748084171fc34b169401e6183e2fe38"
+
+"@bower_components/ovh-angular-tail-logs@ovh-ux/ovh-angular-tail-logs#^1.1.2":
+  version "1.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-tail-logs/tar.gz/46b1735714dbf22c6d90fd2b469fd42904f9a5ff"
 
 "@bower_components/ovh-angular-toaster@ovh-ux/ovh-angular-toaster#^0.8.0":
   version "0.8.0"
@@ -636,6 +651,10 @@ angular-translate@~2.16.0:
   resolved "https://registry.yarnpkg.com/angular-translate/-/angular-translate-2.16.0.tgz#6b7f84657d6534d25878cc55e6a2a06f7607299f"
   dependencies:
     angular ">=1.2.26 <=1.6"
+
+angular@*:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.0.tgz#e45d679fc8d81040a4894c7ccc16a4e1ad0a9ca6"
 
 angular@1.3.x:
   version "1.3.20"
@@ -8326,7 +8345,7 @@ ws@1.1.1:
     options ">=0.0.5"
     ultron "1.0.x"
 
-ws@^1.0.1:
+ws@^1.0.0, ws@^1.0.1:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.5.tgz#cbd9e6e75e09fc5d2c90015f21f0c40875e0dd51"
   dependencies:

@@ -11,7 +11,7 @@
                 <div class="cui-tile h-100">
                     <h4 class="oui-header_4 cui-tile__title" data-translate="common_tile_shortcut"></h4>
                     <ul class="cui-tile__body cui-tile__body_list">
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.restart.callback()"
@@ -20,7 +20,7 @@
                                 <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.changePassword.callback()"
@@ -29,7 +29,7 @@
                                 <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.accessConsole.callback()"
@@ -38,7 +38,7 @@
                                 <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.reinit.callback()"
@@ -47,7 +47,7 @@
                                 <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.changeOffer.callback()"
@@ -56,7 +56,7 @@
                                 <i class="oui-icon oui-icon-chevron-right" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li class="cui-tile__item cui-tile__item_button">
+                        <li class="cui-tile__item cui-tile__item_button cui-tile__top-bordered">
                             <button class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                                 type="button"
                                 data-ng-click="DeskaasDetailsCtrl.actions.remove.callback()"
@@ -81,16 +81,19 @@
                     data-title="'common_tile_infos' | translate"
                     data-loading="DeskaasDetailsCtrl.flags.initializing()">
                     <cui-tile-body>
-                        <cui-tile-item data-term="'common_tile_information_status' | translate"
-                            data-description="DeskaasDetailsCtrl.services.status">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'common_tile_information_status' | translate"
+                                       data-description="DeskaasDetailsCtrl.services.status">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_username' | translate"
-                            data-description="DeskaasDetailsCtrl.user.name">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_username' | translate"
+                                       data-description="DeskaasDetailsCtrl.user.name">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_email' | translate"
-                            data-description="DeskaasDetailsCtrl.user.email">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_email' | translate"
+                                       data-description="DeskaasDetailsCtrl.user.email">
                         </cui-tile-item>
-                        <cui-tile-item>
+                        <cui-tile-item class="cui-tile__top-bordered">
                             <cui-tile-definitions>
                                 <cui-tile-definition-term data-term="'vdi_label_ip' | translate"></cui-tile-definition-term>
                                 <cui-tile-definition-description>
@@ -98,7 +101,7 @@
                                 </cui-tile-definition-description>
                             </cui-tile-definitions>
                         </cui-tile-item>
-                        <cui-tile-item>
+                        <cui-tile-item class="cui-tile__top-bordered">
                             <cui-tile-definitions>
                                 <cui-tile-definition-term data-term="'vdi_label_connection' | translate"></cui-tile-definition-term>
                                 <cui-tile-definition-description>
@@ -116,21 +119,26 @@
                     data-title="'common_tile_configuration' | translate"
                     data-loading="DeskaasDetailsCtrl.flags.initializing()">
                     <cui-tile-body>
-                        <cui-tile-item data-term="'vdi_label_alias' | translate"
-                            data-description="DeskaasDetailsCtrl.details.displayName"
-                            data-actions="DeskaasDetailsCtrl.actions.changeAlias">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_alias' | translate"
+                                       data-description="DeskaasDetailsCtrl.details.displayName"
+                                       data-actions="DeskaasDetailsCtrl.actions.changeAlias">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_os' | translate"
-                            data-description="DeskaasDetailsCtrl.details.os">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_os' | translate"
+                                       data-description="DeskaasDetailsCtrl.details.os">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_vcpu' | translate"
-                            data-description="DeskaasDetailsCtrl.details.vcpu">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_vcpu' | translate"
+                                       data-description="DeskaasDetailsCtrl.details.vcpu">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_ram' | translate"
-                            data-description="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_ram' | translate"
+                                       data-description="DeskaasDetailsCtrl.details.ram.value + ' ' + DeskaasDetailsCtrl.details.ram.unit">
                         </cui-tile-item>
-                        <cui-tile-item data-term="'vdi_label_data' | translate"
-                            data-description="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit">
+                        <cui-tile-item class="cui-tile__top-bordered"
+                                       data-term="'vdi_label_data' | translate"
+                                       data-description="DeskaasDetailsCtrl.details.dataDisk.value + ' ' + DeskaasDetailsCtrl.details.dataDisk.unit">
                         </cui-tile-item>
                     </cui-tile-body>
                 </cui-tile>

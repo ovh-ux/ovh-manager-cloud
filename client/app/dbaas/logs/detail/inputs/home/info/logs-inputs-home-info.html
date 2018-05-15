@@ -1,0 +1,16 @@
+<oui-modal data-title="{{ ::'inputs_info_title' | translate }}"
+           data-on-dismiss="ctrl.cancel()">
+    <p data-translate="inputs_info_description"></p>
+
+    <oui-field data-label="{{ ::'inputs_info_hostname' | translate}}">
+        <cui-clipboard id="input_hostname" data-text="ctrl.currentInput.info.hostname"></cui-clipboard>
+    </oui-field>
+
+    <oui-field data-label="{{ ::'inputs_info_ipaddress' | translate}}" data-size="m">
+        <cui-clipboard id="input_ipaddress" data-text="ctrl.currentInput.info.publicAddress"></cui-clipboard>
+    </oui-field>
+
+    <oui-field data-label="{{ ::'inputs_info_certificate' | translate}}">
+        <cui-clipboard id="input_certificate" data-text="ctrl.currentInput.info.sslCertificate"></cui-clipboard>
+    </oui-field>
+</oui-modal>

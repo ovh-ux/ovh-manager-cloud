@@ -277,6 +277,10 @@
    <translation id="logs-pro-0900" qtlid="475637">900 GB/Maand</translation>
    <translation id="logs-pro-1500" qtlid="475650">1.5 TB/Maand</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 TB/Maand</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 TB/Maand</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 TB/Maand</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 TB/Maand</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 TB/Maand</translation>
    <translation id="logs-reader-1" qtlid="30646">Geen</translation>
    <translation id="logs-pro-0015_limit" qtlid="475676">Gemiddeld 0,5 GB/Dag</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Gemiddeld 1 GB/Dag</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Gemiddeld 30 GB/Dag</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Gemiddeld 50 GB/Dag</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Gemiddeld 100 GB/Dag</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Gemiddeld 341 GB/Dag</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Gemiddeld 1.6 TB/Dag</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Gemiddeld 3.3 TB/Dag</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Gemiddeld 10 TB/Dag</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Niet mogelijk</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">U hebt een aanbod geselecteerd waar u al op geabonneerd bent.  Selecteer aub een ander aanbod. </translation>
    <translation id="logs_order_get_error" qtlid="475819">Er is een fout opgetreden bij het laden van de accounts</translation>
@@ -341,6 +349,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Volg real-time logs via het WebSocket-protocol.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Langetermijnopslag inschakelen</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archiveert uw logs jarenlang veilig.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Compressie-algoritme</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Archivering opslagtijd</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Melding</translation>

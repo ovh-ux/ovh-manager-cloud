@@ -7,7 +7,8 @@
                 <cui-tile-body class="cui-tile__body-no-grow">
                     <cui-tile-item-status
                         data-ng-repeat="statusInfo in ctrl.iplbStatus.data | orderBy: 'weight' track by $index"
-                        data-actions="ctrl[statusInfo.itemName + 'Actions']">
+                        data-actions="ctrl[statusInfo.itemName + 'Actions']"
+                        class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-term-status data-term="statusInfo.displayName"></cui-tile-term-status>
                             <cui-tile-description-status
@@ -90,7 +91,7 @@
                 data-loading="ctrl.information.loading"
                 class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv4' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -98,7 +99,7 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'iplb_home_tile_infos_ipv6' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -106,13 +107,15 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item data-term="'iplb_home_tile_infos_ip_failover' | translate"
-                        data-description="ctrl.information.data.failoverIp.length"
-                        data-actions="ctrl.actions.showFailoverIp">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'iplb_home_tile_infos_ip_failover' | translate"
+                                   data-description="ctrl.information.data.failoverIp.length"
+                                   data-actions="ctrl.actions.showFailoverIp">
                     </cui-tile-item>
-                    <cui-tile-item data-term="'iplb_home_tile_infos_ip_outbound' | translate"
-                        data-description="ctrl.information.data.natIp.length"
-                        data-actions="ctrl.actions.showNatIp"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'iplb_home_tile_infos_ip_outbound' | translate"
+                                   data-description="ctrl.information.data.natIp.length"
+                                   data-actions="ctrl.actions.showNatIp"></cui-tile-item>
                 </cui-tile-body>
             </cui-tile>
         </div>
@@ -121,13 +124,16 @@
                 data-loading="ctrl.configuration.loading"
                 class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item data-term="'iplb_home_tile_configuration_name' | translate"
-                        data-description="ctrl.configuration.data.displayName"
-                        data-actions="ctrl.actions.changeName"></cui-tile-item>
-                    <cui-tile-item data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
-                        data-description="ctrl.configuration.data.sslConfiguration.displayName"
-                        data-actions="ctrl.actions.changeCipher"></cui-tile-item>
-                    <cui-tile-item data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'iplb_home_tile_configuration_name' | translate"
+                                   data-description="ctrl.configuration.data.displayName"
+                                   data-actions="ctrl.actions.changeName"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
+                                   data-description="ctrl.configuration.data.sslConfiguration.displayName"
+                                   data-actions="ctrl.actions.changeCipher"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'iplb_home_tile_configuration_quota_datacenter' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
