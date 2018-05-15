@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Ota lisäpalvelu käyttöön</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Ota yhteyttä asiakaspalveluun tämän lisäpalvelun '{{optionType}}' aktivoimiseksi.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Poista lisäpalvelu käytöstä</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Haluatko varmasti poistaa käytöstä kohteen '{{optionType}}'. Ota yhteyttä asiakaspalveluun tämän lisäpalvelun '{{optionType}}' uudelleenaktivoimiseksi.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Haluatko varmasti poistaa käytöstä kohteen <strong>{{optionType}}</strong>. Ota yhteyttä asiakaspalveluun tämän lisäpalvelun <strong>{{optionType}}</strong> uudelleenaktivoimiseksi.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Tapahtui virhe poistettaessa käytöstä lisäpalvelua '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">Lisäpalvelu {{optionType}} poistettiin käytöstä.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Hallitse lisäpalvelujasi menemällä sivulle</translation>
@@ -292,8 +292,8 @@
    <translation id="logs-pro-1500_limit" qtlid="475767">Keskimäärin 50 GB /päivä</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Keskimäärin 100 GB /päivä</translation>
    <translation id="logs-pro-10240_limit" qtlid="487574">Keskimäärin 341 GB /päivä</translation>
-   <translation id="logs-pro-51200_limit" qtlid="487587">Keskimäärin 1.6 TB /päivä</translation>
-   <translation id="logs-pro-102400_limit" qtlid="487600">Keskimäärin 3.3 TB /päivä</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Keskimäärin 1,6 TB /päivä</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Keskimäärin 3,3 TB /päivä</translation>
    <translation id="logs-pro-307200_limit" qtlid="487613">Keskimäärin 10 TB /päivä</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Ristiriita tuotteessa</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Olet valinnut tuotteen, jonka omistat jo. Ole hyvä ja valitse jokin toinen tuote.</translation>
@@ -338,6 +338,7 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="logs_streams_manage_alerts" qtlid="476040">Hälytysten hallinta</translation>
    <translation id="logs_streams_archives" qtlid="469933">Arkistot</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Seuraa suorana</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Tietovuolle <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Kirjautuminen Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Kopioi kirjoitustunniste</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Poista tietovuo</translation>
@@ -350,8 +351,8 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Seuraa lokitietojen vastaanottamista reaaliajassa WebSocket-protokollan kautta.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Aktivoi pitkäaikainen säilytys</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Arkistoi lokitietosi varmalla tavalla vuosiksi eteenpäin.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Tämä ominaisuus maksaa {{price}} ALV0 / kk lisäten 2 GB</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Tämän ominaisuuden käyttämiseksi on siirryttävä PRO-tuotteeseen</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Pakkausalgoritmi</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Arkistojen säilytysaika</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Muistutus</translation>
@@ -435,7 +436,7 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="streams_alerts_condition" qtlid="425806">Ehto</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Lisäaika</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Toista ilmoitukset</translation>
-   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Poista varoitus (hälytys)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Haluatko varmasti poistaa hälytyksen <strong>{{alert}}</strong>?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Tapahtui virhe hälytyksen {{alertName}} poistamisessa: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">Hälytyksen {{alertName}} poistaminen onnistui.</translation>
@@ -447,11 +448,11 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="numeric_alert" qtlid="425481">Numeerinen arvo</translation>
    <translation id="textual_alert" qtlid="425468">Tekstisisältö</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Luo mittarityyppinen ehto</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Lisää aggregointikentän ehto</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Lisää sisältökentän ehto</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Lisää kentän aggregointiehto</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Lisää ehto kentän sisällölle</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Muokkaa laskurin tyypin ehtoa</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Muokkaa aggregointikentän ehtoa</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Muokkaa sisältökentän ehtoa</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Muokkaa kentän aggregointiehtoa</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Muokkaa kentän sisällön ehtoa</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Tämä ehto aktivoidaan, kun viestien lukumäärä on ylittää tai alittaa tietylle ajanjaksolle määritetyn kynnysarvon.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Tämä ehto aktivoituu, kun kentän yhteenlaskettu arvo on korkeampi tai matalampi kuin tietylle ajalle määritelty kynnysarvo.</translation>
    <translation id="add_alert_description_field_content_value" qtlid="469907">Tämä ehto aktivoituu, kun viestien sisältö vastaa määritettyä arvoa.</translation>
@@ -576,7 +577,7 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Lokitietojesi formaatti</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Erotin jokaisen viestin välissä</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Rivi (koodin)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>

@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Włącz tę opcję</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Skontaktuj się z pomocą techniczną, aby ponownie aktywować tę opcję '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Wyłącz tę opcję</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Czy na pewno chcesz wyłączyć '{{optionType}}'? Aby wyłączyć tę opcję, należy skontaktować się z pomocą techniczną.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Czy na pewno chcesz wyłączyć <strong>{{optionType}}</strong>? Aby wyłączyć tę opcję, należy skontaktować się z pomocą techniczną.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Wystąpił błąd podczas wyłączania '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">Opcja {{optionType}} została wyłączona</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Aby zarządzać opcjami, przejdź do strony</translation>
@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Zarządzaj alertami</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archiwa</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Śledź w czasie rzeczywistym</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Dla strumienia <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Dostęp do narzędzia Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Kopiuj token zapisu</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Usuń strumień</translation>
@@ -349,8 +350,9 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Śledzenie otrzymywania logów w czasie rzeczywistym za pośrednictwem protokołu WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Aktywuj długoterminowe przechowywanie</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Bezpieczna archiwizacja logów przez wiele lat.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Ta funkcja kosztuje {{price}} netto / m-c za każde dodatkowe 2 GB&#13;
+</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Aby uzyskać dostęp do tej funkcji, zamów ofertę PRO.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorytm kompresji</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Czas archiwizacji</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Powiadomienie</translation>

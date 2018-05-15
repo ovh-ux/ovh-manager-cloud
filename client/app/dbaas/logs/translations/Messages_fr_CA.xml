@@ -337,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Suivre en direct</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Pour le flux <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>
@@ -349,7 +350,7 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos journaux en temps réel via le protocole WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activer le stockage longue durée</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivez vos journaux de façon sûre pour des années.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}}/ mois en incrément de 2Go</translation>
    <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorithme de compression</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durée de rétention des archives</translation>
