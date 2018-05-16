@@ -14,14 +14,14 @@
                      data-ng-repeat="upgrade in $ctrl.upgradesList track by $index"
                      data-ng-if="!$ctrl.completed.step1 || (upgrade.model === $ctrl.selectedModel.model)">
                     <oui-radio
-                        data-id="{{upgrade.model}}"
-                        data-name="upgrade.model"
+                        id="{{upgrade.model}}"
+                        name="upgrade.model"
                         data-model="$ctrl.selectedModel.model"
                         data-text="{{ upgrade.name }}"
                         data-value="upgrade.model"
                         data-thumbnail="true"
                         data-disabled="!upgrade.isAvailable && !upgrade.isCurrentModel"
-                        data-required>
+                        required>
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
                                 <span data-translate="vps_configuration_upgradevps_label_core"></span>
