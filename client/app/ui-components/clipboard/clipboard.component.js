@@ -52,8 +52,10 @@
                     <input class="cui-clipboard__input text-truncate"
                         type="text"
                         id="{{$ctrl.id}}"
+                        name="{{$ctrl.name}}"
                         data-ng-focus="$ctrl.onTextFocus($event)"
                         data-ng-value="$ctrl.text"
+                        data-ng-model="$ctrl.text"
                         readonly>
                     <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'initial'"><i class="oui-icon oui-icon-copy-normal aria-hidden="true"></i></span>
                     <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'success'"><i class="oui-icon oui-icon-copy-success aria-hidden="true"></i></span>
@@ -64,7 +66,8 @@
             bindings: {
                 text: "<",
                 label: "<?",
-                id: "@?"
+                id: "@?",
+                name: "@?"
             }
         });
 })();
