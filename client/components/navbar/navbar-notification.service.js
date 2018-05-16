@@ -13,22 +13,15 @@ class NavbarNotificationService {
     }
 
     getMessages () {
-        return this.$q((resolve, reject) => {
-            this.$translate.refresh().then(() => {
-                this.OvhApiNotificationAapi.query({
-                        lang: this.$translate.preferredLanguage(),
-                        target: this.TARGET,
-                        universe: this.UNIVERSE
-                    }).$promise
-                    .then(messages => {
-                        resolve(messages);
-                    })
-                    .catch(error => {
-                        this.CloudMessage.error({ textHtml: error.message }, "index");
-                        reject(error);
-                    });
-                }
-            );
+        return this.$translate.refresh().then(() => {
+            return this.OvhApiNotificationAapi.query({
+                    lang: this.$translate.preferredLanguage(),
+                    target: this.TARGET,
+                    universe: this.UNIVERSE
+                }).$promise.catch(error => {
+                    this.CloudMessage.error({ textHtml: error.message }, "index");
+                    throw error;
+                });
         });
     }
 
@@ -79,12 +72,8 @@ class NavbarNotificationService {
 
     aknowledgeAll () {
         if (this.navbarContent) {
-            const toAcknowledge = [];
-            this.navbarContent.subLinks.forEach(subLink => {
-                if (!subLink.acknowledged && subLink.isActive) {
-                    toAcknowledge.push(subLink);
-                }
-            });
+            const toAcknowledge = this.navbarContent.subLinks
+                .filter(subLink => !subLink.acknowledged && subLink.isActive);
             if (toAcknowledge.length) {
                 this.OvhApiNotificationAapi.post({ acknowledged: toAcknowledge.map(x => x.id) }).$promise.then(() => {
                     toAcknowledge.forEach(sublink => {
@@ -95,7 +84,7 @@ class NavbarNotificationService {
         }
     }
 
-    _setRefresfTime (sublinks) {
+    _setRefreshTime (sublinks) {
         if (this.formatTimeTask) {
             this.$interval.cancel(this.formatTimeTask);
         }
@@ -108,7 +97,7 @@ class NavbarNotificationService {
 
     getNavbarContent () {
         return this.getSubLinks().then(sublinks => {
-            this._setRefresfTime(sublinks);
+            this._setRefreshTime(sublinks);
             const navbarContent = {
                 name: "notifications",
                 title: this.$translate.instant("common_navbar_notification_title"),

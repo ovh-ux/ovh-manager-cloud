@@ -323,9 +323,9 @@
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-"@bower_components/ovh-api-services@https://github.com/ovh-ux/ovh-api-services.git#feature/new-navbar-staging":
-  version "3.2.0"
-  resolved "https://github.com/ovh-ux/ovh-api-services.git#0fe28f2fde4431937413aa4d2fe6c67e7e317e81"
+"@bower_components/ovh-api-services@ovh-ux/ovh-api-services#^3.8.0":
+  version "3.8.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/097490508821aa4b9b9010173661630d0a0cf278"
   dependencies:
     grunt-injector "^0.6.0"
 
