@@ -293,8 +293,8 @@
    <translation id="logs-pro-1500_limit" qtlid="475767">Promedio de 50 GB/día</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Promedio de 100 GB/día</translation>
    <translation id="logs-pro-10240_limit" qtlid="487574">Promedio de 341 GB/día</translation>
-   <translation id="logs-pro-51200_limit" qtlid="487587">Promedio de 1.6 TB/día</translation>
-   <translation id="logs-pro-102400_limit" qtlid="487600">Promedio de 3.3 TB/día</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Promedio de 1,6 TB/día</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Promedio de 3,3 TB/día</translation>
    <translation id="logs-pro-307200_limit" qtlid="487613">Promedio de 10 TB/día</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Opción incompatible</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Ha seleccionado un plan que ya tiene contratado. Por favor, seleccione otro plan.</translation>
@@ -351,8 +351,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Monitorice la recepción de sus logs en tiempo real mediante el protocolo WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activar el almacenamiento de larga duración</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archive sus logs de forma segura durante años.</translation>
-   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}} HT / mois en incrément de 2Go</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Esta funcionalidad tiene un precio de {{price}}/mes + IVA por cada 2 GB.</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Debe cambiar al plan Pro para tener acceso a esta funcionalidad.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algoritmo de compresión</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Tiempo de conservación de los archivos</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notificación</translation>

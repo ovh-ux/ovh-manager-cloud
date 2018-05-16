@@ -55,7 +55,7 @@
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Domů</translation>
    <translation id="logs_tab_streams" qtlid="422452">Datové proudy</translation>
-   <translation id="logs_tab_dashboards" qtlid="225075">Tabule</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Kolektory</translation>
    <translation id="logs_tab_indices" qtlid="426729">Indexy</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
@@ -762,11 +762,11 @@
    <translation id="logs_role_overview_stream" qtlid="422452">Datové proudy</translation>
    <translation id="logs_role_overview_index" qtlid="426729">Indexy</translation>
    <translation id="logs_role_overview_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_role_overview_dashboard" qtlid="225075">Tabule</translation>
+   <translation id="logs_role_overview_dashboard" qtlid="225075">Dashboardy</translation>
    <translation id="logs_roles_edit_permissions_title" qtlid="470687">Upravit oprávnění</translation>
    <translation id="logs_roles_permissions_subtitle" qtlid="478601">Pro roli <strong>{{ role }}</strong></translation>
    <translation id="logs_roles_permissions_streams" qtlid="422452">Datové proudy</translation>
-   <translation id="logs_roles_permissions_dashboards" qtlid="225075">Tabule</translation>
+   <translation id="logs_roles_permissions_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_roles_permissions_indices" qtlid="426729">Indexy</translation>
    <translation id="logs_roles_permissions_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_available_stream" qtlid="478731">Dostupné proudy</translation>
@@ -816,7 +816,7 @@
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Domů</translation>
    <translation id="logs_tab_streams" qtlid="422452">Datové proudy</translation>
-   <translation id="logs_tab_dashboards" qtlid="225075">Tabule</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Kolektory</translation>
    <translation id="logs_tab_indices" qtlid="426729">Indexy</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
