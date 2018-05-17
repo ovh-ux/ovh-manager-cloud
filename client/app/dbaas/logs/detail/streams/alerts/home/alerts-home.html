@@ -17,6 +17,9 @@
     <oui-datagrid data-ng-if="!ctrl.alertIds.loading"
         rows-loader="ctrl.loadAlerts($config)"
         page-size="25">
+        <extra-top>
+            <oui-spinner data-ng-if="ctrl.delete.loading"></oui-spinner>
+        </extra-top>
         <oui-column title="'streams_alerts_name' | translate" property="title"></oui-column>
         <oui-column title="'streams_alerts_condition' | translate" property="title">
             <span
