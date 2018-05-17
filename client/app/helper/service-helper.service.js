@@ -12,16 +12,26 @@
             this.$window = $window;
         }
 
-        errorHandler (message, containerName, messageParams) {
+        errorHandler (messageInput, containerName, messageDetailsPath = "data.message") {
             return err => {
-                if (message) {
-                    this.CloudMessage.error(_.isString(message) ? this.$translate.instant(message)+' ' + _.get(err, messageParams, err.data) : message, containerName);
-                } else if (err.message) {
-                    this.CloudMessage.error(err.message, containerName);
-                } else {
-                    // Default error message
-                    this.CloudMessage.error(this.$translate.instant(defaultErrorMessage), containerName);
+                let messageText = this.$translate.instant(defaultErrorMessage);
+                let messageDetail = _.get(err, messageDetailsPath, _.isString(err.message) ? err.message : "");
+                let message = {
+                    text: null
+                };
+
+                if (_.isString(messageInput)) {
+                    messageText = this.$translate.instant(messageInput);
                 }
+
+                message.text = `${messageText} ${messageDetail}`;
+
+                // Override
+                if (_.has(messageInput, "text") || _.has(messageInput, "textHtml")) {
+                    message = messageInput;
+                }
+
+                this.CloudMessage.error(message, containerName);
 
                 return this.$q.reject(err);
             };
