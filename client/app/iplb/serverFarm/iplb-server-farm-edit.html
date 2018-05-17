@@ -19,15 +19,13 @@
         <div class="oui-field">
             <label for="protocol" class="oui-label" data-translate="iplb_farm_edit_protocol"></label>
             <div class="oui-field__content">
-                <div class="oui-field-control">
-                    <cui-radio-bar data-ng-model="ctrl.protocol"
-                        data-on-change="ctrl.onProtocolChange()">
-                        <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
-                            data-text="('iplb_farm_protocol_' + protocol) | translate"
-                            data-value="protocol"
-                            data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
-                    </cui-radio-bar>
-                </div>
+                <cui-radio-bar data-ng-model="ctrl.protocol"
+                    data-on-change="ctrl.onProtocolChange()">
+                    <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
+                        data-text="('iplb_farm_protocol_' + protocol) | translate"
+                        data-value="protocol"
+                        data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
+                </cui-radio-bar>
             </div>
         </div>
 
@@ -75,6 +73,27 @@
             </div>
         </div>
 
+        <div data-ng-if="!ctrl.privateNetworks.loading && ctrl.privateNetworks.data.length" 
+            class="oui-field" 
+            data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.vrackNetworkId.$invalid }">
+            <label for="vrackNetworkId" class="oui-label" data-translate="iplb_farm_edit_private_network"></label>
+            <div class="oui-field__content">
+                <div class="oui-field-control oui-field-control_4">
+                    <div class="oui-select"
+                        data-ng-class="{ 'oui-select_error': ctrl.form.$submitted && ctrl.form.vrackNetworkId.$invalid }">
+                        <select class="oui-select__input"
+                            name="vrackNetworkId"
+                            id="vrackNetworkId"
+                            data-ng-model="ctrl.farm.vrackNetworkId"
+                            data-ng-options="privateNetwork.vrackNetworkId as privateNetwork.displayName for privateNetwork in ctrl.privateNetworks.data">
+                            <option data-translate="common_select"></option>
+                        </select>
+                        <i class="oui-icon oui-icon-chevron-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <cui-advanced-options data-ng-hide="ctrl.type === 'udp'"
             data-title="'iplb_farm_edit_advanced_options' | translate"
             data-text="'iplb_farm_edit_advanced_options_info' | translate"
@@ -84,26 +103,22 @@
             <div class="oui-field">
                 <label for="balance" class="oui-label" data-translate="iplb_farm_edit_balance"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <cui-radio-bar data-ng-model="ctrl.farm.balance">
-                            <cui-radio-bar-item data-ng-repeat="balance in ctrl.balances"
-                                data-text="('iplb_farm_balance_' + balance) | translate"
-                                data-value="balance"></cui-radio-bar-item>
-                        </cui-radio-bar>
-                    </div>
+                    <cui-radio-bar data-ng-model="ctrl.farm.balance">
+                        <cui-radio-bar-item data-ng-repeat="balance in ctrl.balances"
+                            data-text="('iplb_farm_balance_' + balance) | translate"
+                            data-value="balance"></cui-radio-bar-item>
+                    </cui-radio-bar>
                 </div>
             </div>
 
             <div class="oui-field">
                 <label for="stickiness" class="oui-label" data-translate="iplb_farm_edit_stickiness"></label>
                 <div class="oui-field__content">
-                    <div class="oui-field-control">
-                        <cui-radio-bar data-ng-model="ctrl.farm.stickiness">
-                            <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.availableStickinesses"
-                                data-text="('iplb_farm_stickiness_' + stickiness) | translate"
-                                data-value="stickiness"></cui-radio-bar-item>
-                        </cui-radio-bar>
-                    </div>
+                    <cui-radio-bar data-ng-model="ctrl.farm.stickiness">
+                        <cui-radio-bar-item data-ng-repeat="stickiness in ctrl.availableStickinesses"
+                            data-text="('iplb_farm_stickiness_' + stickiness) | translate"
+                            data-value="stickiness"></cui-radio-bar-item>
+                    </cui-radio-bar>
                 </div>
             </div>
 

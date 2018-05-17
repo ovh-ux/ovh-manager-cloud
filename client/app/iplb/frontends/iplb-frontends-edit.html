@@ -19,15 +19,13 @@
         <div class="oui-field">
             <label for="protocol" class="oui-label" data-translate="iplb_frontend_add_protocol"></label>
             <div class="oui-field__content">
-                <div class="oui-field-control">
                 <cui-radio-bar data-ng-model="ctrl.protocol"
                     data-on-change="ctrl.onProtocolChange()">
-                <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
-                    data-text="('iplb_frontend_add_protocol_' + protocol) | translate"
-                    data-value="protocol"
-                    data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
+                    <cui-radio-bar-item data-ng-repeat="protocol in ctrl.protocols"
+                        data-text="('iplb_frontend_add_protocol_' + protocol) | translate"
+                        data-value="protocol"
+                        data-ng-disabled="ctrl.isProtocolDisabled(protocol)"></cui-radio-bar-item>
                 </cui-radio-bar>
-                </div>
             </div>
         </div>
 
