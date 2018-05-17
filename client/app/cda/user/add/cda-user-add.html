@@ -1,51 +1,25 @@
-<form id="addUserForm" name="addUserForm" class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="CdaUserAddCtrl.closeModal()"></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="CdaUserAddCtrl.saving">
-            <div class="text-center">
-                <oui-spinner></oui-spinner>
-            </div>
-        </div>
-        <div class="oui-modal__body-text" data-ng-if="!CdaUserAddCtrl.saving">
-            <h2 class="oui-modal__title" data-translate="cda_user_add_title"></h2>
+<form id="addUserForm" name="addUserForm"
+    data-ng-submit="addUserForm.$valid && CdaUserAddCtrl.createUser()">
+    <oui-modal
+        data-primary-label="{{ ::'common_add' | translate }}"
+        data-secondary-action="CdaUserAddCtrl.closeModal()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="CdaUserAddCtrl.closeModal()"
+        data-loading="CdaUserAddCtrl.saving">
 
-            <label for="userName" data-translate="cda_user_add_username_label" class="oui-label"></label>
-            <input type="text" class="oui-input"
-                id="userName" name="userName"
+        <cui-message-container data-messages="CdaUserAddCtrl.messages"></cui-message-container>
+
+        <h2 class="oui-modal__title" data-ng-bind="::'cda_user_add_title' | translate"></h2>
+
+        <oui-field data-label="{{ ::'cda_user_add_username_label' | translate }}">
+            <input type="text"
+                class="oui-input"
+                id="userName"
+                name="userName"
                 data-ng-model="CdaUserAddCtrl.model.userName"
                 data-ng-maxLength="CdaUserAddCtrl.options.userName.maxLength"
                 data-ng-pattern="CdaUserAddCtrl.options.userName.pattern"
-                required />
-
-            <div class="text-danger" data-ng-messages="addUserForm.userName.$error" data-ng-if="addUserForm.userName.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                    <span data-ng-message="required" data-translate="cda_user_add_username_required"></span>
-                    <span data-ng-message="maxlength" data-translate="cda_user_add_username_maxlength" data-translate-values="{ maxlength: CdaUserAddCtrl.options.userName.maxLength }"></span>
-                    <span data-ng-message="pattern" data-translate="cda_user_add_username_pattern"></span>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="oui-modal__footer">
-        <button type="reset"
-                class="oui-button oui-button_secondary"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaUserAddCtrl.closeModal()"
-                data-ng-disabled="CdaUserAddCtrl.saving"
-                form="addUserForm">
-            <span data-translate="common_cancel"></span>
-        </button>
-        <button type="button"
-                class="oui-button oui-button_primary"
-                title="{{ ::'common_add' | translate }}"
-                data-ng-click="addUserForm.$valid && CdaUserAddCtrl.createUser()"
-                data-ng-disabled="CdaUserAddCtrl.saving || (addUserForm.userName.$error && !addUserForm.userName.$valid)"
-                form="addUserForm">
-            <span data-translate="common_add"></span>
-        </button>
-    </div>
+                required>
+        </oui-field>
+    </oui-modal>
 </form>
