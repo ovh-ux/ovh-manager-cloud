@@ -97,20 +97,6 @@ class VpsActionService {
         });
     }
 
-    editName (displayName, serviceName) {
-        return this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/vps/modal/edit-name/vps-edit-name.html",
-                controller: "VpsEditNameCtrl",
-                controllerAs: "$ctrl",
-                resolve: {
-                    displayName: () => displayName,
-                    serviceName: () => serviceName
-                }
-            }
-        });
-    }
-
     deleteSecondaryDns (serviceName, domain) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {
