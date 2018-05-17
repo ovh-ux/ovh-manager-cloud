@@ -132,13 +132,7 @@
                                    data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
                                    data-description="ctrl.configuration.data.sslConfiguration.displayName"
                                    data-actions="ctrl.actions.changeCipher"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-term="'iplb_home_tile_configuration_private_network' | translate"
-                                   data-description="'Inactif'"
-                                   data-actions="ctrl.actions.activateVrack"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'iplb_home_tile_configuration_private_network' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -147,7 +141,8 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'iplb_home_tile_configuration_quota_datacenter' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
