@@ -91,23 +91,32 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             })
         });
 
-        SidebarMenu.addActionsMenuOptions([{
+        const actionsMenuOptions = [];
+        actionsMenuOptions.push({
             title: $translate.instant("cloud_sidebar_actions_menu_ip"),
             icon: "ovh-font ovh-font-ip",
             href: REDIRECT_URLS.ip,
             target: "_parent"
-        }, {
-            title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
-            icon: "ovh-font ovh-font-ip",
-            href: URLS.website_order.load_balancer[locale],
-            target: "_blank",
-            external: true
-        }, {
+        });
+
+        if (FeatureAvailabilityService.hasFeature("iplb", "sidebarOrder", locale)) {
+            actionsMenuOptions.push({
+                title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
+                icon: "ovh-font ovh-font-ip",
+                href: URLS.website_order.load_balancer[locale],
+                target: "_blank",
+                external: true
+            });
+        }
+
+        actionsMenuOptions.push({
             title: $translate.instant("cloud_sidebar_actions_menu_licence"),
             icon: "ovh-font ovh-font-certificate",
             href: REDIRECT_URLS.license,
             target: "_parent"
-        }]);
+        });
+
+        SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
 
         if (REDIRECT_URLS.orderSql) {
             SidebarMenu.addActionsMenuOptions([{
