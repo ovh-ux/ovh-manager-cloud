@@ -1,3 +1,18 @@
+<a name="7.2.2"></a>
+## [7.2.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.1...v7.2.2) (2018-05-18)
+
+
+### Bug Fixes
+
+* **config:** replace ovh.us to ovhcloud.com ([1de3216](https://github.com/ovh-ux/ovh-manager-cloud/commit/1de3216))
+* **home:** prevent displaying wrong guide to US customers ([f3e80ab](https://github.com/ovh-ux/ovh-manager-cloud/commit/f3e80ab))
+* **navbar:** managers urls from US customers ([2dc1f6a](https://github.com/ovh-ux/ovh-manager-cloud/commit/2dc1f6a))
+* **sidebar:** remove TARGET constant from config ([2d7cd4b](https://github.com/ovh-ux/ovh-manager-cloud/commit/2d7cd4b))
+* **sidebar:** unavailable items from US customers ([efcd737](https://github.com/ovh-ux/ovh-manager-cloud/commit/efcd737))
+* remove load balancer entry for US ([cc6e016](https://github.com/ovh-ux/ovh-manager-cloud/commit/cc6e016))
+
+
+
 <a name="7.2.1"></a>
 ## [7.2.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.0...v7.2.1) (2018-05-16)
 
