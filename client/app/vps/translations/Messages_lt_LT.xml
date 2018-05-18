@@ -275,25 +275,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Šiandien</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Tobulinti VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Tobulinti VPS</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Pasirinkite VPS modelį, kurį norite naudoti.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Modelis</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/mėn.</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Modelio keitimas yra visiškai nemokamas. Nurodyta kaina yra mėnesinė modelio kaina. Jūsų dabartinio modelio mėnesinė kaina yra <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Dėmesio! Negalima mažinti VPS galingumo, galima tik didinti jį.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Prašome sutikti su naudojimo sąlygomis.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">be PVM / mėn.</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">Operatyvioji atmintis:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Procesorius:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Saugykla:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Įspėjimas</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Jūs pasirinkote modelį, kurį jau turite. Prašome pasirinkti kitą modelį.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Sutikimas su naudojimo sąlygomis</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Keisti VPS <span class="italic normal">{{vpsName}}</span> į {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Kaina iki {{duration}}, kito atnaujinimo metu jūsų serverio kaina bus:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Kaina be PVM:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Kaina su PVM:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Po to serverio kaina bus <span class="red">{{price}} be PVM / mėn.</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Norėdami patvirtinti užklausą ir pereiti prie valdymo, spragtelėkite mygtuką "Užsakyti".</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Atsidarys naujas langas ir būsite automatiškai nukreipti į OVH apmokėjimų sąsają.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Įkainis iki {{duration}}:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Po to, jūsų serveriui bus taikomas įkainis:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Atkreipkite dėmesį, kad galingumo keitimas bus atliktas 2 valandų laikotarpyje po apmokėjimo patvirtinimo.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Nauja VPS konfigūracija įsigalios, kai perkrausite serverį.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Suvestinė</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Klaida bandant patobulinti VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Dabartinė konfigūraciją</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Užsakyti</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Pridėti domeną</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Įtraukti domeną į antrinį DNS</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domenas, kurį įtraukti:</translation>

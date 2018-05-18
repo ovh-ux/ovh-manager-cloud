@@ -6,7 +6,7 @@
 
    <translation id="veeam_tiles_configuration_title" qtlid="4406">Configurazione</translation>
    <translation id="veeam_tiles_configuration_label_name" qtlid="3818">Nome</translation>
-   <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Offerta</translation>
+   <translation id="veeam_tiles_configuration_label_offer" qtlid="38217">Servizio</translation>
    <translation id="veeam_tiles_configuration_label_stockage_number" qtlid="403697">Numero di spazi di storage</translation>
    <translation id="veeam_tiles_configuration_label_vm_count" qtlid="403710">Numero di VM</translation>
    <translation id="veeam_tiles_configuration_label_datacenter" qtlid="30802">Datacenter</translation>

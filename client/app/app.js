@@ -46,12 +46,14 @@ angular.module("managerApp", [
     "ovh-jquery-ui-draggable-ng",
     "ovh-angular-jquery-ui-droppable",
     "ovh-angular-slider",
+    "ovh-angular-tail-logs",
     "ng-at-internet",
     "atInternetUiRouterPlugin",
     "matchmedia-ng",
     "ovh-angular-user-pref",
     "ovh-angular-doc-url",
-    "ovhBrowserAlert"
+    "ovhBrowserAlert",
+    "angular-websocket"
 ])
     .config(($transitionsProvider, $stateProvider, TranslateDecoratorServiceProvider, TranslateServiceProvider) => {
         // Config current locale
@@ -181,7 +183,8 @@ angular.module("managerApp", [
                 modifyThisStep: $translate.instant("common_stepper_modify_this_step"),
                 skipThisStep: $translate.instant("common_stepper_skip_this_step"),
                 nextButtonLabel: $translate.instant("common_stepper_next_button_label"),
-                submitButtonLabel: $translate.instant("common_stepper_submit_button_label")
+                submitButtonLabel: $translate.instant("common_stepper_submit_button_label"),
+                cancelButtonLabel: $translate.instant("common_stepper_cancel_button_label")
             };
 
             removeOnSuccessHook();

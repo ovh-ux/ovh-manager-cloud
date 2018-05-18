@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Port</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Port připojený k farmě (1 až {{portMax}}). Jako výchozí je nastaven frontend port.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Datacentrum</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Privátní síť</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Pokročilé nastavení</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Ve výchozím nastavení byly zvoleny nejčastěji používané hodnoty. Toto nastavení můžete kdykoli změnit.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Zobrazit</translation>

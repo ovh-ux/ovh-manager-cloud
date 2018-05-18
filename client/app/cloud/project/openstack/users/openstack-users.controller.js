@@ -159,7 +159,7 @@ angular.module("managerApp")
                 return OvhApiCloud.Project().User().v6().password({
                     serviceName: self.projectId,
                     userId: currentUser.id
-                }).$promise.then(function (newUser) {
+                }, {}).$promise.then(function (newUser) {
                     var user = _.find(self.table.users, function (user) {
                         return user.username === currentUser.username;
                     });

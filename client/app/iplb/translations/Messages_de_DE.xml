@@ -10,6 +10,7 @@
    <translation id="iplb_tab_frontends" qtlid="438545">Frontends</translation>
    <translation id="iplb_tab_server_farm" qtlid="437700">Serverfarmen</translation>
    <translation id="iplb_tab_ssl_certificate" qtlid="371307">SSL Zertifikate</translation>
+   <translation id="iplb_tab_vrack" qtlid="482355">Private Netzwerke</translation>
    <translation id="iplb_tab_graph" qtlid="5402">Graphen</translation>
    <translation id="iplb_tab_task" qtlid="96716">Tasks</translation>
 
@@ -18,7 +19,7 @@
    <translation id="iplb_modal_nat_ip_title" qtlid="429459">Ausgehende IPv4</translation>
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">Sie müssen diesen IP-Adressen erlauben, sich mit Ihren Servern zu verbinden.</translation>
 
-   <translation id="iplb_modal_name_change_title" qtlid="71741">Den Namen ändern</translation>
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Namen ändern</translation>
    <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Standardname</translation>
    <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Personalisierter Name</translation>
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Beim Ändern des Namens ist ein Fehler aufgetreten.</translation>

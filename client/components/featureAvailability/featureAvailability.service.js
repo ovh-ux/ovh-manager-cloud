@@ -118,6 +118,16 @@
             manage: {
                 EU: allEuropeanSubsidiaries
             }
+        },
+        DBAAS_LOGS: {
+            sidebarOrder: {
+                EU: allEuropeanSubsidiaries,
+                CA: ["CA", "QC"]
+            },
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: ["CA", "QC"]
+            }
         }
     };
 

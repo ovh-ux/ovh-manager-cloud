@@ -1,17 +1,19 @@
 class IpLoadBalancerDetailCtrl {
-    constructor ($stateParams, CloudNavigation, CloudMessage, IpLoadBalancerConfigurationService) {
+    constructor ($stateParams, CloudMessage, CloudNavigation, IpLoadBalancerConfigurationService) {
         this.$stateParams = $stateParams;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.IpLoadBalancerConfigurationService = IpLoadBalancerConfigurationService;
         this.messages = [];
+
+        this.serviceName = $stateParams.serviceName;
     }
 
     $onInit () {
         this.CloudNavigation.init({
-            state: "network.iplb.detail.home",
-            $stateParams: {
-                serviceName: this.$stateParams.serviceName
+            state: "network.iplb.detail",
+            stateParams: {
+                serviceName: this.serviceName
             }
         });
 
@@ -26,7 +28,7 @@ class IpLoadBalancerDetailCtrl {
 
     checkPendingChanges () {
         this.IpLoadBalancerConfigurationService.getPendingChanges(
-            this.$stateParams.serviceName
+            this.serviceName
         )
             .then(changes => _.chain(changes).map("number").sum().value() > 0)
             .then(hasChanges => {

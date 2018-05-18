@@ -36,7 +36,20 @@ class ControllerModalHelper {
             modalConfig: {
                 templateUrl: "app/ui-components/modal/warning-modal/warning-modal.html",
                 controller: "WarningModalController",
-                controllerAs: "ctrl",
+                controllerAs: "$ctrl",
+                resolve: {
+                    params: () => config
+                }
+            }
+        });
+    }
+
+    showInfoModal (config = {}) {
+        return this.showModal({
+            modalConfig: {
+                templateUrl: "app/ui-components/modal/info-modal/info-modal.html",
+                controller: "InfoModalController",
+                controllerAs: "$ctrl",
                 resolve: {
                     params: () => config
                 }
@@ -71,7 +84,7 @@ class ControllerModalHelper {
     }
 
     showDeleteModal (config = {}) {
-        config.submitButtonText = this.$translate.instant("common_delete");
+        config.submitButtonText = config.submitButtonText || this.$translate.instant("common_delete");
         return this.showConfirmationModal(config);
     }
 }

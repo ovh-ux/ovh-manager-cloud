@@ -275,26 +275,30 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Hoje</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Fazer evoluir a minha VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Fazer evoluir a minha VPS</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Queira selecionar o modelo de VPS para o qual deseja evoluir.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Modelo</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ mês</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">A migração para um novo modelo é totalmente gratuita. O valor apresentado corresponde ao preço mensal para o respetivo modelo. O preço mensal da sua oferta atual é <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Atenção| Não é possível diminuir a potência da sua VPS: apenas pode efetuar upgrades.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Tem de aceitar as condições de utilização</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">IVA / mês</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Processador:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Armazenamento:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Aviso</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Você selecionou um modelo que já possui. Por favor, selecione um modelo diferente.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Aceite as condições de utilização</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Upgrade do VPS <span class="italic normal">{{vpsName}}</span> para {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Preço até {{duration}} (data da próxima renovação do servidor:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Preço s/IVA.</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Preço c/IVA.</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">A seguir, o servidor será faturado ao preço mensal de <span class="red">{{price}} IVA não incluído</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Para confirmar o pedido, clique no botão "Encomendar" e efetue o pagamento.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Irá surgir uma nova janela, e será reencaminhado(a) para a interface de pagamentos OVH.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Preço até {{duration}}:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Depois disso, seu servidor custará:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Queira ter em conta que podem ser necessárias 2 horas a contar a partir da validação do seu pagamento para que a renovação seja tida em conta no seu Espaço de Cliente Web.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Será necessário um reboot para que a potência da sua VPS seja aumentada.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Resumo</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Ocorreu um erro aquando do pedido de upgrade da sua VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Configuração atual</translation>
-   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar domínio </translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Encomendar</translation>
+
+   <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Adicionar domínio</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Adicionar um domínio ao DNS secundário</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domínio a adicionar:</translation>
    <translation id="vps_configuration_secondarydns_add_fail" qtlid="169901">Ocorreu um erro aquando do pedido de adição de um domínio ao DNS secundário.</translation>
@@ -441,7 +445,7 @@
    <translation id="vps_backup_storage_access_add_button" qtlid="153857">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add" qtlid="180772">Adicionar acesso</translation>
    <translation id="vps_backup_storage_access_add_info" qtlid="210048">Queira escolher o bloco de IPs que deseja autorizar, bem como as opções de acesso.</translation>
-   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lista dos blocos</translation>
+   <translation id="vps_backup_storage_access_add_info1" qtlid="180798">Lista dos blocos :</translation>
    <translation id="vps_backup_storage_access_add_info2" qtlid="210061">Queira adicionar uma regra no acesso ao seu backup storage para cada bloco de IPs da seguinte lista:</translation>
    <translation id="vps_backup_storage_access_add_info3" qtlid="210074">No mínimo, deve autorizar um protocolo uma vez que, de forma padrão, os blocos de endereços IP que não tenham uma regra associada serão "recusados".</translation>
    <translation id="vps_backup_storage_access_add_info4" qtlid="180837">Permissões aplicadas:</translation>

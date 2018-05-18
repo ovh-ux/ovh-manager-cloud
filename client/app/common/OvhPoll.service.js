@@ -24,7 +24,14 @@ class OvhPoll {
                 this.$q.when(opts.pollFunction(item))
                     .then(newItem => {
                         if (newItem) {
+                            const newItemKeys = _.keys(newItem);
+                            _.forEach(_.keys(item), key => {
+                                if (!_.includes(newItemKeys, key)) {
+                                    delete item[key];
+                                }
+                            });
                             _.merge(item, newItem.data ? newItem.data : newItem);
+
                             opts.onItemUpdated(item);
                         }
 
@@ -50,7 +57,7 @@ class OvhPoll {
 
                     if (!items.length) {
                         poller.kill();
-                        deferred.resolve();
+                        deferred.resolve(results);
                     }
                 });
         }, opts.interval || 5000);

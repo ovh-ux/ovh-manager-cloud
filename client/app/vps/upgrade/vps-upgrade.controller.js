@@ -1,19 +1,24 @@
 class VpsUpgradeCtrl {
-    constructor ($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation, VpsService) {
+    constructor ($filter, $stateParams, $state, $translate, $q, $window, CloudMessage, CloudNavigation, ControllerHelper, VpsService) {
         this.$filter = $filter;
         this.$translate = $translate;
         this.$q = $q;
         this.$window = $window;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
+        this.ControllerHelper = ControllerHelper;
         this.serviceName = $stateParams.serviceName;
         this.Vps = VpsService;
 
         this.loaders = {
-            init: false
+            step1: false,
+            step2: false
         };
 
-        this.step = 0;
+        this.completed = {
+            step1: false,
+            step2: false
+        };
         this.order = null;
         this.selectedModel = {};
         this.upgradesList = null;
@@ -21,25 +26,33 @@ class VpsUpgradeCtrl {
 
     $onInit () {
         this.previousState = this.CloudNavigation.getPreviousState();
-        this.loaders.init = true;
-        this.loadNextStep();
-    }
-
-    loadNextStep (step) {
-        this.step = step || this.step + 1;
     }
 
     getCurrentModel () {
         return _.find(this.upgradesList, upgrade => upgrade.isCurrentModel === true);
     }
 
+    validateStep1 () {
+        if (this.selectedModel.model === this.getCurrentModel().model) {
+            const title = this.$translate.instant("vps_warning_title");
+            const message = this.$translate.instant("vps_configuration_upgradevps_step1_warning");
+
+            this.ControllerHelper.modal.showWarningModal({title, message});
+            throw new Error(message);
+        } else {
+            this.completed.step1 = true;
+        }
+    }
+
     loadUpgradesList () {
-        this.loaders.step1 = true;
         if (!this.upgradesList) {
+            this.loaders.step1 = true;
             return this.Vps.upgradesList(this.serviceName).then(data => {
                 this.upgradesList = data.results;
+                this.selectedModel.model = this.getCurrentModel().model;
                 return data;
             }).catch(err => {
+                this.$q.reject(err);
                 if (err.message) {
                     this.CloudMessage.error(err.message);
                 } else {
@@ -65,6 +78,7 @@ class VpsUpgradeCtrl {
                 this.order = data;
                 return data;
             }).catch(err => {
+                this.$q.reject(err);
                 if (err.message) {
                     this.CloudMessage.error(err.message);
                 } else {

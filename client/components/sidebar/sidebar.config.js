@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LogsSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService,
                  ProductsService, SessionService, FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -18,7 +18,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             metrics: SidebarService.getServices(MetricsSectionSidebarService.section, products),
             vracks: SidebarService.getServices(VrackSectionSidebarService.section, products),
             load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products),
-            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products)
+            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products),
+            logs: SidebarService.getServices(LogsSectionSidebarService.section, products)
         };
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
@@ -33,6 +34,10 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
 
         if (FeatureAvailabilityService.hasFeature("METRICS", "sidebarMenu", locale)) {
             MetricsSectionSidebarService.fillSection(services.metrics);
+        }
+      
+        if (FeatureAvailabilityService.hasFeature("DBAAS_LOGS", "sidebarMenu", locale)) {
+            LogsSectionSidebarService.fillSection(services.logs);
         }
 
         SidebarMenu.addMenuItem({
@@ -73,6 +78,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             PaasSectionSidebarService.section,
             MetricsSectionSidebarService.section,
             VrackSectionSidebarService.section,
+            LogsSectionSidebarService.section,
             CloudDesktopSidebarService.section
         ], section => {
             _.forEach(section, product => {

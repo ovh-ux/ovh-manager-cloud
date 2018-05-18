@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="vps_order_windows_title" qtlid="250745">Opcje windows</translation>
+   <translation id="vps_order_windows_title" qtlid="250745">Opcje Windows</translation>
    <translation id="vps_order_windows_step1_title" qtlid="452332">Wybór częstotliwości wykonywania snapshotów</translation>
    <translation id="vps_order_windows_step2_title" qtlid="452345">Akceptacja warunków świadczenia usługi</translation>
    <translation id="vps_order_windows_step3_title" qtlid="82725">Podsumowanie</translation>
@@ -13,7 +13,7 @@
    <translation id="vps_order_windows_order_price_TTC" qtlid="146190">Cena brutto:</translation>
    <translation id="vps_order_windows_order_final_txt" qtlid="181240">Kliknij na przycisk "Zatwierdź", aby potwierdzić zamówienie.</translation>
    <translation id="vps_order_windows_order_final_txt2" qtlid="181253">Otworzy się nowa zakładka i zostaniesz przekierowany do interfejsu płatności. </translation>
-   <translation id="vps_order_windows_button_title" qtlid="250784">Opcja windows</translation>
+   <translation id="vps_order_windows_button_title" qtlid="250784">Opcja Windows</translation>
 
    <translation id="vps_configuration_rebootVm_polling_done" qtlid="452358">Twój VPS został zrestartowany</translation>
    <translation id="vps_configuration_rebootVm_polling_fail" qtlid="195594">Wystąpił błąd podczas restartu serwera VPS.</translation>
@@ -275,25 +275,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Dziś</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">Zmiana oferty VPS</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">Zmiana oferty VPS</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Wybierz model serwera VPS, na który chcesz przejść.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Model</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCores</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/ m-c</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Przejście do wyższego modelu jest bezpłatne. Podana cena to opłata miesięczna za każdy model. Aktualna opłata za Twoją usługę wynosi <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Uwaga! nie będziesz mógł przejść na niższą ofertę VPS: można przejść tylko na wyższą ofertę.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Zaakceptuj warunki korzystania z usługi.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">netto / m-c</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">Pamięć operacyjna:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Procesor:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Przestrzeń dyskowa:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Ostrzeżenie</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Wybrałeś model, który już posiadasz. Wybierz inny model.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Akceptacja warunków świadczenia usługi</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Zmień VPS <span class="italic normal">{{vpsName}}</span> na wyższy model {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Cena obowiązuje do {{duration}}, czyli daty następnego odnowienia Twojego serwera:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Cena netto:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Cena brutto:</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Następnie opłata za serwer będzie wynosiła <span class="red">{{price}} netto / miesięcznie</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Aby potwierdzić zlecenie, kliknij na przycisk "Zamów".</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Otworzy się nowe okno i zostaniesz automatycznie przekierowany do interfejsu płatności OVH.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Cena do {{duration}}:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Następnie cena za serwer będzie wynosiła:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Upgrade trwa około 2 godziny od momentu zaksięgowania płatności.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">Po zmianie oferty należy wykonać restart serwera.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Podsumowanie</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Wystąpił błąd podczas zlecania zmiany oferty serwera VPS.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Aktualna konfiguracja</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Zamów</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Dodaj domenę</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Dodaj domenę do DNS secondary</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Domena do dodania:</translation>

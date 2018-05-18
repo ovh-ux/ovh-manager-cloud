@@ -1,6 +1,7 @@
 .cui-tabs {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 16px 0 -32px 0;
     padding: 0;
 
@@ -35,7 +36,7 @@
                 font-weight: 700;
             }
 
-            &:after { 
+            &:after {
                 width: 100%;
                 left: 0;
             }
@@ -47,6 +48,13 @@
                 left: 0;
                 animation: tab-active-animation 200ms ease-in 1 forwards;
             }
+        }
+
+        &_disabled {
+            pointer-events: none;
+            cursor: default;
+            text-decoration: none;
+            opacity: 0.6;
         }
     }
 

@@ -1,32 +1,53 @@
-angular.module("managerApp")
-  .controller("CdaIpAddCtrl", function ($q, $scope, $uibModalInstance, $translate, $stateParams, CloudMessage, OvhApiDedicatedCeph) {
-      "use strict";
+class CdaIpAddCtrl {
+    constructor ($q, $translate, $uibModalInstance, $stateParams, CloudMessage, OvhApiDedicatedCeph) {
+        this.$q = $q;
+        this.$translate = $translate;
+        this.$uibModalInstance = $uibModalInstance;
+        this.serviceName = $stateParams.serviceName;
+        this.CloudMessage = CloudMessage;
+        this.OvhApiDedicatedCeph = OvhApiDedicatedCeph;
 
-      var self = this;
-      self.model = {
-          ip: ""
-      };
+        this.model = {
+            ip: null
+        };
+        this.saving = false;
+        this.messages = [];
+        this.messageContainerName = "paas.cda.ip.add";
+    }
 
-      self.saving = false;
+    $onInit () {
+        this.loadMessage();
+    }
 
-      self.createIp = function () {
-          self.saving = true;
-          return OvhApiDedicatedCeph.Acl().v6().post({
-              serviceName: $stateParams.serviceName
-          }, {
-              aclList: [self.model.ip]
-          }).$promise.then(function (result) {
-              $uibModalInstance.close({ taskId: result.data });
-              CloudMessage.success($translate.instant("cda_ip_add_success"));
-          }).catch(function (error) {
-              CloudMessage.error([$translate.instant("ceph_common_error"), error.data && error.data.message || ""].join(" "));
-              $uibModalInstance.dismiss();
-          }).finally(function () {
-              self.saving = false;
-          });
-      };
+    loadMessage () {
+            this.CloudMessage.unSubscribe(this.messageContainerName);
+            this.messageHandler = this.CloudMessage.subscribe(this.messageContainerName, { onMessage: () => this.refreshMessage() });
+    }
 
-      self.closeModal = function () {
-          $uibModalInstance.dismiss();
-      };
-  });
+    refreshMessage () {
+        this.messages = this.messageHandler.getMessages();
+    }
+
+    createIp () {
+        this.saving = true;
+        return this.OvhApiDedicatedCeph.Acl().v6().post({
+                serviceName: this.serviceName
+            }, {
+                aclList: [this.model.ip]
+            }).$promise
+        .then(result => {
+            this.$uibModalInstance.close({ taskId: result.data });
+            this.CloudMessage.success(this.$translate.instant("cda_ip_add_success"));
+          })
+        .catch(error => {
+            this.CloudMessage.error(`${this.$translate.instant("ceph_common_error")} ${error.data && error.data.message || ""}`, this.messageContainerName);
+        })
+        .finally(() => { this.saving = false });
+    }
+
+    closeModal () {
+        this.$uibModalInstance.dismiss();
+    }
+}
+
+angular.module("managerApp").controller("CdaIpAddCtrl", CdaIpAddCtrl);

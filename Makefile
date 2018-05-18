@@ -1,8 +1,8 @@
 #### SYSTEM COMMAND ####
 NODE=node
 NPM=npm
+YARN=yarn
 GRUNT=grunt
-BOWER=bower
 GIT=git
 CD=cd
 ECHO=@echo
@@ -20,7 +20,6 @@ CERTIFICATE_CSR_FILE=server/certificate/server.csr
 CERTIFICATE_CRT_FILE=server/certificate/server.crt
 
 #### FOLDERS ####
-BOWER_DIR=client/bower_components
 NODE_DIR=node_modules
 GRUNT_DEP=$(NODE_DIR)/grunt
 DIST_DIR=dist
@@ -36,11 +35,6 @@ DIST_US_TAR=dist-US.tar.gz
 
 #### MACRO ####
 NAME=`grep -Po '(?<="name": ")[^"]*' package.json`
-
-#### OTHER ####
-ifneq ($(strip $(bower_registry)),)
-BOWER_PARAM=--config.registry=$(bower_registry)
-endif
 
 
 help:
@@ -64,7 +58,6 @@ help:
 
 clean:
 	$(DEL) $(NODE_DIR)
-	$(DEL) $(BOWER_DIR)
 	$(DEL) $(DIST_DIR)
 	$(DEL) $(DIST_TAR)
 	$(DEL) $(DIST_EU_DIR)
@@ -83,9 +76,8 @@ gen-certificate:
 	openssl x509 -req -days 365 -in $(CERTIFICATE_CSR_FILE) -signkey $(CERTIFICATE_KEY) -out $(CERTIFICATE_CRT_FILE)
 	rm $(CERTIFICATE_TMP_KEY)
 
-install: submodule
-	$(NPM) install
-	$(BOWER) install $(BOWER_PARAM)
+install:
+	$(YARN) install
 
 dev: deps
 	$(GRUNT) serve
@@ -96,17 +88,17 @@ prod: deps
 build: build-eu build-ca build-us
 	$(TAR) $(DIST_TAR) $(DIST_EU_TAR) $(DIST_CA_TAR) $(DIST_US_TAR)
 
-build-eu: deps
+build-eu:
 	$(GRUNT) build --mode=prod --zone=EU
 	$(MV) $(DIST_DIR) $(DIST_EU_DIR)
 	$(TAR) $(DIST_EU_TAR) $(DIST_EU_DIR)
 
-build-ca: deps
+build-ca:
 	$(GRUNT) build --mode=prod --zone=CA
 	$(MV) $(DIST_DIR) $(DIST_CA_DIR)
 	$(TAR) $(DIST_CA_TAR) $(DIST_CA_DIR)
 
-build-us: deps
+build-us:
 	$(GRUNT) build --mode=prod --zone=US
 	$(MV) $(DIST_DIR) $(DIST_US_DIR)
 	$(TAR) $(DIST_US_TAR) $(DIST_US_DIR)
@@ -150,10 +142,7 @@ tar-test-reports:
 #############
 
 # Dependencies of the project
-deps: $(GRUNT_DEP) $(BOWER_DIR) submodule
-
-$(BOWER_DIR):
-	$(MAKE) install
+deps: $(GRUNT_DEP) submodule
 
 $(NODE_DIR)/%:
 	$(MAKE) install

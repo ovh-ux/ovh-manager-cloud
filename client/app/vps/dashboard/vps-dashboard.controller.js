@@ -1,5 +1,5 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, VpsActionService, VpsService) {
+    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, SidebarMenu, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$q = $q;
         this.$scope = $scope;
@@ -9,6 +9,7 @@ class VpsDashboardCtrl {
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
         this.serviceName = $stateParams.serviceName;
+        this.SidebarMenu = SidebarMenu;
         this.VpsActionService = VpsActionService;
         this.VpsService = VpsService;
 
@@ -181,17 +182,34 @@ class VpsDashboardCtrl {
         this.initVeeamActions();
     }
 
+    updateName (newDisplayName) {
+        return this.VpsService.updateDisplayName(this.serviceName, newDisplayName)
+            .then(() => {
+                this.$scope.$emit("changeDescription", newDisplayName);
+                const menuItem = this.SidebarMenu.getItemById(this.serviceName);
+                menuItem.title = newDisplayName;
+
+                this.CloudMessage.success(this.$translate.instant("vps_setting_name_updated"));
+            })
+            .catch(err => this.CloudMessage.error(err));
+    }
+
     initActions () {
         this.actions = {
             changeName: {
                 text: this.$translate.instant("common_edit"),
-                callback: () => this.VpsActionService.editName(this.vps.data.displayName, this.serviceName).then(() => this.vps.load()),
+                callback: () => this.ControllerHelper.modal.showNameChangeModal({
+                    serviceName: this.serviceName,
+                    displayName: this.vps.data.displayName,
+                    onSave: newDisplayName => this.updateName(newDisplayName)
+                }),
                 isAvailable: () => !this.vps.loading
             },
             changeOwner: {
                 text: this.$translate.instant("vps_change_owner"),
                 atInternetClickTag: "VPS-Actions-ChangeOwner",
-                isAvailable: () => !this.loaders.url
+                isAvailable: () => !this.loaders.url,
+                isExternal: true
             },
             kvm: {
                 text: this.$translate.instant("vps_configuration_kvm_title_button"),

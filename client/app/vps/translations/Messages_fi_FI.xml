@@ -275,25 +275,29 @@
    <translation id="vps_configuration_period_TODAY" qtlid="169719">Tänään</translation>
    <translation id="vps_configuration_upgradevps_title_button" qtlid="169732">VPS:n päivitys</translation>
    <translation id="vps_configuration_upgradevps_title" qtlid="169732">VPS:n päivitys</translation>
-   <translation id="vps_configuration_upgradevps_step1_title" qtlid="169745">Valitse haluamasi VPS-malli, johon haluat päivittää.</translation>
+   <translation id="vps_configuration_upgradevps_step1_title" qtlid="26143">Malli</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_1" qtlid="122299">vCore</translation>
    <translation id="vps_configuration_upgradevps_step1_table_vcore_other" qtlid="128413">vCoret</translation>
-   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="200040">/kuukausi</translation>
-   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="452657">Uuteen malliin siirtyminen on täysin ilmaista. Näkyvä hinta on jokaisen mallin kuukausihinta. Tiedoksi nykyisen tuotteesi kuukausi hinta on <span class="bold">{{price}}</span></translation>
-   <translation id="vps_configuration_upgradevps_step1_warning2" qtlid="169758">Huomio! Voit vain nostaa VPS:n tasoa. Sen lasku ei ole mahdollinen.</translation>
-   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452670">Ole hyvä ja hyväksy käyttöehdot.</translation>
+   <translation id="vps_configuration_upgradevps_step1_table_price_monthly" qtlid="484767">ALV0 / kk</translation>
+
+   <translation id="vps_configuration_upgradevps_label_ram" qtlid="483200">Keskusmuisti:</translation>
+   <translation id="vps_configuration_upgradevps_label_core" qtlid="483213">Suoritin:</translation>
+   <translation id="vps_configuration_upgradevps_label_disk" qtlid="483226">Datasäilö:</translation>
+
+   <translation id="vps_warning_title" qtlid="373441">Huomio</translation>
+   <translation id="vps_configuration_upgradevps_step1_warning" qtlid="484780">Olet vallinnut mallin, jollainen sinulla on jo entuudestaan. Ole hyvä ja valitse toinen malli.</translation>
+
+   <translation id="vps_configuration_upgradevps_step2_title" qtlid="452345">Käyttöehtojen hyväksyntä</translation>
    <translation id="vps_configuration_upgradevps_step2_question" qtlid="452683">Virtuaalipalvelimen <span class="italic normal">{{vpsName}}</span> päivitys korkeamman tason malliin {{modelName}}</translation>
-   <translation id="vps_configuration_upgradevps_step2_question2" qtlid="452696">Hinta {{duration}} asti, palvelimesi seuraava uusintapäivä:</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
-   <translation id="vps_configuration_upgradevps_step2_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>
-   <translation id="vps_configuration_upgradevps_step2_price_by_month" qtlid="452709">Tämän jälkeen palvelimestasi laskutetaan <span class="red">{{price}} ALV0 / kuukausi</span>.</translation>
-   <translation id="vps_configuration_upgradevps_step2_confirm" qtlid="167873">Vahvistaaksesi pyyntösi, klikkaa alla olevaa ”Tilaus”-nappia.</translation>
-   <translation id="vps_configuration_upgradevps_step2_explication" qtlid="167886">Uusi välilehti avataan ja sinut ohjataan OVH:n maksusivulle.</translation>
+   <translation id="vps_configuration_upgradevps_step2_price1" qtlid="484793">Hinta {{duration}} asti:</translation>
+   <translation id="vps_configuration_upgradevps_step2_price2" qtlid="484806">Tämän jälkeen palvelimen hinta on:</translation>
    <translation id="vps_configuration_upgradevps_step2_explication2" qtlid="169810">Ota huomioon että viive maksamisesta tietojen päivittymiseen Web-hallintapaneeliin, on noin kaksi tuntia.</translation>
    <translation id="vps_configuration_upgradevps_step2_explication3" qtlid="169823">VPS:n päivitystä varten palvelimen uudelleenkäynnistys on tarpeen.</translation>
    <translation id="vps_configuration_upgradevps_step3_title" qtlid="82725">Yhteenveto</translation>
    <translation id="vps_configuration_upgradevps_fail" qtlid="169836">Tapahtui virhe pyydettäessä VPS:n päivitystä.</translation>
    <translation id="vps_configuration_upgradevps_current" qtlid="169849">Nykyinen konfiguraatio</translation>
+   <translation id="vps_configuration_upgradevps_order" qtlid="43558">Tilaa</translation>
+
    <translation id="vps_configuration_secondarydns_add_title_button" qtlid="8602">Lisää verkkotunnus</translation>
    <translation id="vps_configuration_secondarydns_add_title" qtlid="169862">Lisää verkkotunnus toissijaiselle nimipalvelimelle</translation>
    <translation id="vps_configuration_secondarydns_add_domain" qtlid="103378">Lisättävä verkkotunnus:</translation>
@@ -461,7 +465,7 @@
    <translation id="vps_monitoring_network_netTx" qtlid="30886">Lähtevä</translation>
 
    <translation id="vps_zone" qtlid="26335">Alue</translation>
-   <translation id="vps_cluster" qtlid="232414">Cluster</translation>
+   <translation id="vps_cluster" qtlid="232414">Klusteri</translation>
 
    <translation id="vps_tab_SUMMARY_additional_disk" qtlid="281485">Lisälevyt</translation>
    <translation id="vps_additional_disk_add_button" qtlid="281498">Tilaa lisälevy</translation>

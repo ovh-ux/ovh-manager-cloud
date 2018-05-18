@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Portti</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Palvelinfarmiin littetty portti (1 - {{portMax}}). Palvelinfarmi käyttää oletuksena frontendissä käytettyä porttia.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Palvelinkeskus</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Yksityinen verkko</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Lisäasetukset</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Yleisimmät oletusarvot on esimääritetty. Voit muokata niitä milloin tahansa.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Näytä</translation>

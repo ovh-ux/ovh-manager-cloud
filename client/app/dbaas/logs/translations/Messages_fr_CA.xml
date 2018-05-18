@@ -7,14 +7,14 @@
    <translation id="logs_operation_failed" qtlid="473908">L'opération {{operation_id}} a échouée</translation>
    <translation id="logs_operation_error" qtlid="473921">Une erreur est survenue lors de l'opération: {{message}}</translation>
    <translation id="logs_streams_title" qtlid="422452">Flux de données</translation>
-   <translation id="logs_index_title" qtlid="473934">Index elasticsearch</translation>
+   <translation id="logs_index_title" qtlid="473934">Index Elasticsearch</translation>
    <translation id="logs_main_offer" qtlid="424389">Offre principale</translation>
    <translation id="logs_finish_configuration" qtlid="473947">Terminer la configuration</translation>
    <translation id="logs_next" qtlid="17743">Suivant</translation>
    <translation id="logs_previous" qtlid="17431">Précédent</translation>
    <translation id="logs_later" qtlid="82305">Plus tard</translation>
    <translation id="logs_main_offer_get_error" qtlid="473960">Une erreur est survenue lors du chargement de l'offre principale: {{message}}</translation>
-   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {message}</translation>
+   <translation id="logs_details_error" qtlid="473973">Une erreur est survenue lors du chargement des détails du service: {{message}}</translation>
 
 <!-- Dashboard -->
    <translation id="logs_dashboards_title" qtlid="422270">Tableaux de bord Graylog</translation>
@@ -29,8 +29,8 @@
    <translation id="logs_dashboards_col_shared" qtlid="474012">Tableau partagé</translation>
    <translation id="logs_dashboards_duplicate" qtlid="302717">Dupliquer</translation>
    <translation id="logs_dashboards_delete_title" qtlid="470141">Supprimer le tableau de bord</translation>
-   <translation id="logs_dashboards_delete_message" qtlid="474025">Êtes-vous sûr de vouloir supprimer le tableau de bord <strong>{{ dashboardName }}</strong> ?</translation>
-   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO ?</translation>
+   <translation id="logs_dashboards_delete_message" qtlid="474025">Êtes-vous sûr de vouloir supprimer le tableau de bord <strong>{{ dashboardName }}</strong>?</translation>
+   <translation id="logs_dashboards_basic_offer_info_message" qtlid="474038">Vous vous êtes abonné à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir dupliquer ou ajouter plus de tableaux de bord. Voulez-vous passer à l'offre PRO?</translation>
    <translation id="logs_dashboards_update_title" qtlid="470115">Modifier le tableau de bord</translation>
    <translation id="logs_dashboards_duplicate_title" qtlid="470076">Dupliquer le tableau de bord</translation>
    <translation id="logs_dashboards_update_description" qtlid="474051">Pour le tableau de bord <strong>{{ name }}</strong></translation>
@@ -64,8 +64,8 @@
 
 <!-- Welcome page -->
    <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform est la solution de gestion de logs par OVH</translation>
-   <translation id="logs_welcome_description_1" qtlid="426716">Indexez et analysez vos logs en temps réel. Soyez alertés en cas de dysfonctionnement. Partagez vos données avec vos collaborateurs.</translation>
-   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_welcome_description_1" qtlid="426716">Indexez et analysez vos journaux en temps réel. Soyez alertés en cas de dysfonctionnement. Partagez vos données avec vos collaborateurs.</translation>
+   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de journaux pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
    <translation id="logs_welcome_try" qtlid="427080">Essayer gratuitement</translation>
    <translation id="logs_welcome_graylog_webui" qtlid="427132">Interface web Graylog</translation>
    <translation id="logs_welcome_grafana_saas" qtlid="427145">Grafana SaaS</translation>
@@ -75,7 +75,7 @@
    <translation id="logs_welcome_forum" qtlid="427119">Forum</translation>
 
 <!-- All accounts page -->
-   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de logs pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
+   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform vous offre une plateforme complète de gestion et d'analyse de journaux pour vous et votre entreprise. Ayez une vue sur le comportement de vos serveurs physiques et virtuels. Comprenez le comportement de vos applications déployées dans le Cloud ou de vos applications mobiles. Prévoyez vos incidents ou soyez alertés en cas de dysfonctionnement.</translation>
    <translation id="logs_accounts_order" qtlid="43558">Commander</translation>
    <translation id="logs_accounts_add" qtlid="350872">Nouveau compte</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Nom</translation>
@@ -116,9 +116,9 @@
 
 <!-- Home -->
    <translation id="logs_home_info_title" qtlid="427028">À propos</translation>
-   <translation id="logs_home_info" qtlid="474441">Logs Data Platform est une interface de collecte, d'indexation et d'analyse de logs. Quelque soit la provenance de vos logs, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces web.</translation>
+   <translation id="logs_home_info" qtlid="474441">Logs Data Platform est une interface de collecte, d'indexation et d'analyse de journaux. Quelque soit la provenance de vos logs, la plateforme vous permet de choisir différents points d'entrée en fonction du protocole, du niveau de sécurité et du format. L'analyse et l'exploitation des données peuvent se faire grâce à différentes API et interfaces web.</translation>
    <translation id="logs_home_account_disabled_title" qtlid="474454">Compte désactivé</translation>
-   <translation id="logs_home_account_disabled_message" qtlid="474467">Votre compte a été désactivé le {{disabledDate}}. Contactez le support pour le réactiver.</translation>
+   <translation id="logs_home_account_disabled_message" qtlid="474467">Votre compte a été désactivé le {{disabledDate}}. Contactez le soutien pour le réactiver.</translation>
    <translation id="logs_home_shortcuts" qtlid="403658">Raccourcis</translation>
    <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Dernier flux de données modifié</translation>
    <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Voir tous les flux</translation>
@@ -166,15 +166,15 @@
 <!-- Options -->
    <translation id="options_upgradequotalink_increase_quota" qtlid="474753">augmenter le quota</translation>
    <translation id="options_upgradequotalink_increase_quota_title" qtlid="474766">Changement d'offre requis</translation>
-   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options. Voulez-vous passer à l'offre PRO ?</translation>
+   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options. Voulez-vous passer à l'offre PRO?</translation>
    <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Changer maintenant</translation>
    <translation id="logs_options_options_loading_error" qtlid="474805">Une erreur est survenue lors du chargement des options: {{message}}</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="474818">Une erreur est survenue lors du chargement de vos options: {{message}}</translation>
    <translation id="logs_options_manage_get_error" qtlid="474805">Une erreur est survenue lors du chargement des options: {{message}}</translation>
    <translation id="log_options_title" qtlid="424402">Ajouter des options</translation>
-   <translation id="log_options_current_offer_title" qtlid="474831">Vous avez souscrit à l'offre suivante:</translation>
+   <translation id="log_options_current_offer_title" qtlid="474831">Vous êtes abonné à l'offre suivante:</translation>
    <translation id="log_options_pro_offer" qtlid="474844">Offre PRO</translation>
-   <translation id="log_options_current_title" qtlid="474857">Vous avez souscrit aux options suivantes:</translation>
+   <translation id="log_options_current_title" qtlid="474857">Vous êtes abonné aux options suivantes:</translation>
    <translation id="log_options_intro_text" qtlid="469309">À l'achat de flux de données, d'alias et de tableaux de bord, des rôles utilisateur vous sont offerts (ex. 5 flux = 5 rôles).</translation>
    <translation id="log_options_type" qtlid="474870">Type d'option</translation>
    <translation id="log_options_details" qtlid="37527">Détails</translation>
@@ -204,9 +204,9 @@
    <translation id="logs-index-4-detail" qtlid="475065">4 fragments</translation>
    <translation id="logs-index-8-detail" qtlid="475078">8 fragments</translation>
    <translation id="logs-index-16-detail" qtlid="475091">16 fragments</translation>
-   <translation id="log_options_basic_no_options" qtlid="475104">Vous avez souscrit à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options.</translation>
+   <translation id="log_options_basic_no_options" qtlid="475104">Vous êtes abonné à l'offre basique et vous devez passer à l'offre PRO afin de pouvoir commander plus d'options.</translation>
    <translation id="log_options_basic_no_options_upgrade" qtlid="474792">Changer maintenant</translation>
-   <translation id="log_options_pro_no_options" qtlid="475117">Vous n'avez souscrit à aucune option. Vous pouvez commander des options à partir du tableau ci-dessous.</translation>
+   <translation id="log_options_pro_no_options" qtlid="475117">Vous n'êtes abonné à aucune option. Vous pouvez commander des options à partir du tableau ci-dessous.</translation>
    <translation id="log_options_order" qtlid="43558">Commander</translation>
    <translation id="log_options_cancel" qtlid="37863">Annuler</translation>
    <translation id="log_options_total" qtlid="32458">Total</translation>
@@ -217,7 +217,7 @@
    <translation id="logs_options_manage_add_options" qtlid="424402">Ajouter des options</translation>
    <translation id="logs_options_option_type" qtlid="474870">Type d'option</translation>
    <translation id="logs_options_details" qtlid="37527">Détails</translation>
-   <translation id="logs_options_linked_items" qtlid="475169">Éléments liées</translation>
+   <translation id="logs_options_linked_items" qtlid="475169">Éléments liés</translation>
    <translation id="logs_options_status" qtlid="26443">Statut</translation>
    <translation id="logs_options_action_overview" qtlid="433371">Voir l'aperçu</translation>
    <translation id="logs_options_action_disable" qtlid="90973">Désactiver</translation>
@@ -232,11 +232,11 @@
    <translation id="logs_options_manage_input" qtlid="421217">Outils de collecte</translation>
    <translation id="logs_options_overview_title" qtlid="475182">Aperçu de l'option</translation>
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Activer cette option</translation>
-   <translation id="logs_options_modal_reactivate_description" qtlid="475208">Vous devez contacter le support pour réactiver cette option '{{optionType}}'.</translation>
+   <translation id="logs_options_modal_reactivate_description" qtlid="475208">Vous devez contacter le soutien technique pour réactiver cette option '{{optionType}}'.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Désactiver cette option</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'. Veuillez noter que vous devrez contacter le support pour réactiver cette option.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Êtes-vous sûr de vouloir désactiver '{{optionType}}'. Veuillez noter que vous devrez contacter le soutien technique pour réactiver cette option.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Une erreur est survenue lors de la désactivation de '{{optionType}}': {{message}}</translation>
-   <translation id="logs_options_delete_success" qtlid="475260">L'option {{optionType}} a été désactivé avec succès</translation>
+   <translation id="logs_options_delete_success" qtlid="475260">L'option {{optionType}} a été désactivée avec succès</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Pour gérer vos options, allez à la page</translation>
    <translation id="logs_options_manage_link" qtlid="340354">Gérer les options</translation>
    <translation id="add_tool_title" qtlid="475286">Quota atteint</translation>
@@ -275,10 +275,14 @@
    <translation id="logs-pro-0300" qtlid="475611">300 Go/Mois</translation>
    <translation id="logs-pro-0600" qtlid="475624">600 Go/Mois</translation>
    <translation id="logs-pro-0900" qtlid="475637">900 Go/Mois</translation>
-   <translation id="logs-pro-1500" qtlid="475650">1.5 To/Mois</translation>
+   <translation id="logs-pro-1500" qtlid="475650">1,5 To/Mois</translation>
    <translation id="logs-pro-3000" qtlid="475663">3 To/Mois</translation>
+   <translation id="logs-pro-10240" qtlid="487522">10 To/Mois</translation>
+   <translation id="logs-pro-51200" qtlid="487535">50 To/Mois</translation>
+   <translation id="logs-pro-102400" qtlid="487548">100 To/Mois</translation>
+   <translation id="logs-pro-307200" qtlid="487561">300 To/Mois</translation>
    <translation id="logs-reader-1" qtlid="30646">Aucun</translation>
-   <translation id="logs-pro-0015_limit" qtlid="475676">Moyenne de 0.5 Go/jour</translation>
+   <translation id="logs-pro-0015_limit" qtlid="475676">Moyenne de 0,5 Go/jour</translation>
    <translation id="logs-pro-0030_limit" qtlid="475689">Moyenne de 1 Go/jour</translation>
    <translation id="logs-pro-0090_limit" qtlid="475702">Moyenne de 3 Go/jour</translation>
    <translation id="logs-pro-0150_limit" qtlid="475715">Moyenne de 5 Go/jour</translation>
@@ -287,6 +291,10 @@
    <translation id="logs-pro-0900_limit" qtlid="475754">Moyenne de 30 Go/jour</translation>
    <translation id="logs-pro-1500_limit" qtlid="475767">Moyenne de 50 Go/jour</translation>
    <translation id="logs-pro-3000_limit" qtlid="475780">Moyenne de 100 Go/jour</translation>
+   <translation id="logs-pro-10240_limit" qtlid="487574">Moyenne de 341 Go/jour</translation>
+   <translation id="logs-pro-51200_limit" qtlid="487587">Moyenne de 1.6 To/jour</translation>
+   <translation id="logs-pro-102400_limit" qtlid="487600">Moyenne de 3.3 To/jour</translation>
+   <translation id="logs-pro-307200_limit" qtlid="487613">Moyenne de 10 To/jour</translation>
    <translation id="logs_offer_conflict_title" qtlid="475793">Conflit d'offre</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">Vous avez sélectionné une offre que vous possédez déjà. Veuillez sélectionner une autre offre.</translation>
    <translation id="logs_order_get_error" qtlid="475819">Une erreur est survenue lors du chargement des offres</translation>
@@ -300,8 +308,8 @@
    <translation id="logs_tokens_col_token" qtlid="421490">Jeton</translation>
    <translation id="logs_tokens_col_platform" qtlid="475858">Platforme</translation>
    <translation id="logs_tokens_col_createdAt" qtlid="26419">Date de création</translation>
-   <translation id="logs_tokens_cluster" qtlid="232414">Cluster</translation>
-   <translation id="logs_tokens_select_cluster" qtlid="475871">Choisir un cluster</translation>
+   <translation id="logs_tokens_cluster" qtlid="232414">Grappe (cluster)</translation>
+   <translation id="logs_tokens_select_cluster" qtlid="475871">Choisir une grappe</translation>
    <translation id="logs_tokens_delete_title" qtlid="475884">Supprimer le jeton</translation>
    <translation id="logs_tokens_delete_message" qtlid="475897">Êtes-vous sûr de vouloir supprimer le jeton <strong>{{tokenName}}</strong> ?</translation>
    <translation id="logs_tokens_create_success" qtlid="475910">Le jeton {{tokenName}} a été créé avec succès</translation>
@@ -329,6 +337,7 @@
    <translation id="logs_streams_manage_alerts" qtlid="476040">Gérer les alertes</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archives</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Suivre en direct</translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Pour le flux <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Accès Graylog</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Copier le jeton d'écriture</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Supprimer le flux</translation>
@@ -341,6 +350,8 @@
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Suivez la réception de vos journaux en temps réel via le protocole WebSocket.</translation>
    <translation id="logs_streams_enable_archieve" qtlid="426469">Activer le stockage longue durée</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivez vos journaux de façon sûre pour des années.</translation>
+   <translation id="streams_cold_storage_price" qtlid="487626">Cette fonctionnalité coûte {{price}}/ mois en incrément de 2Go</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Vous devez passer à l'offre PRO pour avoir accès à cette fonctionnalité.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Algorithme de compression</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Durée de rétention des archives</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Notification</translation>
@@ -385,10 +396,10 @@
    <translation id="logs_streams_follow_logs_limit" qtlid="476430">limite</translation>
    <translation id="logs_streams_connection_opened" qtlid="426105">Connexion établie</translation>
    <translation id="logs_streams_connection_closed" qtlid="426118">Connexion fermée</translation>
-   <translation id="logs_streams_displaying_logs" qtlid="476443">Affichage des Logs</translation>
+   <translation id="logs_streams_displaying_logs" qtlid="476443">Affichage des journaux</translation>
    <translation id="logs_streams_waiting_for_messages" qtlid="476456">Connexion WebSocket établie, dans l'attente de messages...</translation>
    <translation id="logs_streams_follow_connection_error" qtlid="476469">Une erreur est survenue lors de la connexion WebSocket: {{message}}</translation>
-   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">L'adresse Webscoket n'est pas disponible pour le flux {{stream}}. Veuillez réessayer plus tard.</translation>
+   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">L'adresse WebSocket n'est pas disponible pour le flux {{stream}}. Veuillez réessayer plus tard.</translation>
    <translation id="logs_streams_follow_copy_websocket_success" qtlid="476495">L'adresse WebSocket a été copiée avec succès dans votre presse-papiers, utiliser CTRL+V pour coller son contenu.</translation>
    <translation id="logs_streams_follow_copy_websocket_error" qtlid="476508">Votre navigateur ne permet pas de copier au presse-papiers. Veuillez passer à une version plus récente de votre navigateur. L'adresse WebSocket pour le flux {{stream}} est: {{url}}</translation>
    <translation id="logs_streams_follow_copy_command_success" qtlid="476521">La ligne de commande pour le format {{type}} a été copiée dans votre presse-papiers. Vous pouvez la tester à partir d'un terminal.</translation>
@@ -424,26 +435,26 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Période de grâce (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Répéter les notifications</translation>
-   <translation id="streams_alerts_delete" qtlid="286903">Supprimer l'alerte</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Êtes-vous sûr de vouloir supprimer l'alerte <strong>{{alert}}</strong> ?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">Une erreur est survenue lors de la suppression de l'alerte {{alertName}}: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">L'alerte {{alertName}} a été supprimée avec succès.</translation>
    <translation id="streams_alerts_condition_message_count" qtlid="476742">L'alerte est levée lorsqu'il y a <strong>{{thresholdType}}</strong> que <strong>{{threshold}}</strong> message(s) lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
    <translation id="streams_alerts_condition_field_value" qtlid="476755">L'alerte est levée lorsque le champ <strong>{{field}}</strong> a une valeur <strong>{{thresholdType}} {{constraintType}}</strong> de <strong>{{threshold}}</strong> lors des <strong>{{time}}</strong> dernières minutes. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
-   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">L'alerte est levée lorsqu'un message contenant le champ <strong>{{field}}:"{{value}}"</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
+   <translation id="streams_alerts_condition_field_content_value" qtlid="476768">L'alerte est levée lorsqu'un message ayant le champ <strong>{{field}}</strong> avec la valeur <strong>"{{value}}"</strong> est reçu. Inclure <strong>{{backlog}}</strong> messages dans la notification.</translation>
    <translation id="create_alert" qtlid="469569">Créer une alerte</translation>
    <translation id="counter_alert" qtlid="425494">Compteur</translation>
    <translation id="numeric_alert" qtlid="425481">Valeur numérique</translation>
    <translation id="textual_alert" qtlid="425468">Contenu textuel</translation>
    <translation id="add_alert_title_message_count" qtlid="469608">Créer une condition de type compteur</translation>
-   <translation id="add_alert_title_field_value" qtlid="476781">Ajouter une condition de champ d'aggrégation</translation>
-   <translation id="add_alert_title_field_content_value" qtlid="476794">Ajouter une condition de champ de contenu</translation>
+   <translation id="add_alert_title_field_value" qtlid="476781">Ajouter une condition d'aggrégation d'un champ</translation>
+   <translation id="add_alert_title_field_content_value" qtlid="476794">Ajouter une condition sur le contenu d'un champ</translation>
    <translation id="edit_alert_title_message_count" qtlid="476807">Modifier la condition de type compteur</translation>
-   <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition de champ d'aggrégation</translation>
-   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition de champ de contenu</translation>
+   <translation id="edit_alert_title_field_value" qtlid="476820">Modifier la condition d'aggrégation d'un champ</translation>
+   <translation id="edit_alert_title_field_content_value" qtlid="476833">Modifier la condition sur le contenu d'un champ</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">Cette condition est activée quand le nombre de messages est supérieur ou inférieur au seuil défini dans une période donnée.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">Cette condition est déclenchée quand la valeur agrégée d'un champ est plus haute ou plus basse qu'un seuil défini dans une période de temps donnée.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu des messages est égal à une valeur définie.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">Cette condition est activée quand le contenu d'un champ est égal à une valeur définie.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Nom</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Titre de la condition de l'alerte.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Période de temps (minutes)</translation>
@@ -476,7 +487,7 @@
    <translation id="add_alert_value_field_description" qtlid="469920">La valeur qui doit être comparée à celle du champ.</translation>
    <translation id="streams_alerts_add_success" qtlid="476924">L'alerte {{alertName}} a été créé avec succès</translation>
    <translation id="streams_alerts_add_error" qtlid="476937">Une erreur est survenue lors de la création de l'alerte {{alertName}}: {{message}}</translation>
-   <translation id="streams_alerts_update_success" qtlid="476950">L'alerte {{alertName}} a été modifié avec succès</translation>
+   <translation id="streams_alerts_update_success" qtlid="476950">L'alerte {{alertName}} a été modifiée avec succès</translation>
    <translation id="streams_alerts_update_error" qtlid="476963">Une erreur est survenue lors de la modification de l'alerte {{alertName}}: {{message}}</translation>
 
 <!-- Inputs -->
@@ -502,7 +513,7 @@
    <translation id="inputs_intro_text" qtlid="470167">Les outils de collecte sont des logiciels permettant de récupérer des journaux provenant de serveurs ou d'applications. Il s'agit d'un moyen de traitement et de transformation efficace dans un format GELF compatible avec Logs Data Platform. Plus besoin de dédier des ressources matérielles ou de surveiller la disponibilité de vos infrastructures, nous le faisons pour vous. Cette plateforme vous permet de lier ces outils à vos différents flux pour une configuration simplifiée et sécurisée grâce à des règles de pare-feu.</translation>
    <translation id="inputs_total_used" qtlid="477210">outils de collecte utilisés</translation>
    <translation id="inputs_increase_quota" qtlid="474753">augmenter le quota</translation>
-   <translation id="inputs_add_input" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_add_input" qtlid="423193">Ajouter un outil de collecte</translation>
    <translation id="inputs_name" qtlid="477223">outil de collecte</translation>
    <translation id="inputs_tool" qtlid="477236">Outil</translation>
    <translation id="inputs_col_name" qtlid="3818">Nom</translation>
@@ -534,8 +545,8 @@
    <translation id="inputs_info_ipaddress" qtlid="470219">(Adresse) IP publique</translation>
    <translation id="inputs_info_certificate" qtlid="439169">Type de certificat</translation>
    <translation id="inputs_logs_title" qtlid="477340">Sortie console de {{inputTitle}}</translation>
-   <translation id="inputs_logs_no_logs" qtlid="477353">Aucun message reçu lors de la dernière heure.</translation>
-   <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un nouvel outil de collecte</translation>
+   <translation id="inputs_logs_no_logs" qtlid="477353">Aucun message reçu au cours de la dernière heure.</translation>
+   <translation id="inputs_logs_title_add" qtlid="423193">Ajouter un outil de collecte</translation>
    <translation id="inputs_logs_title_edit" qtlid="477366">Modifier l'outil de collecte</translation>
    <translation id="inputs_logs_edit_description" qtlid="477379">Pour l'outil de collecte <strong>{{ name }}</strong></translation>
    <translation id="inputs_logs_step1_edit" qtlid="37875">Modifier</translation>
@@ -562,9 +573,9 @@
    <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Instance unique</translation>
    <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Ne démarrer qu'une seule instance de ce type.</translation>
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos journaux</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Délimiteur entre chaque message</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="42802">Ligne</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Nul</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
@@ -582,7 +593,7 @@
    <translation id="inputs_logs_configure_next" qtlid="17743">Suivant</translation>
    <translation id="inputs_logs_configure_previous" qtlid="17431">Précédent</translation>
    <translation id="inputs_logs_configure_later" qtlid="82305">Plus tard</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos logs</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Format de vos journaux</translation>
    <translation id="inputs_logs_configure_logstash_title" qtlid="477639">Logstash</translation>
    <translation id="inputs_logs_configure_logstash_desc" qtlid="470297">Éditez les sections « input » et filtrez la partie « output » de la configuration de votre Logstash écrite par notre service.</translation>
    <translation id="inputs_logs_configure_logstash_desc_tcp" qtlid="470310">Nous vous rappelons que vous avez choisi d'exposer le port TCP 6514 à l'extérieur.</translation>
@@ -590,7 +601,7 @@
    <translation id="inputs_logs_configure_logstash_wizard" qtlid="477652">Formulaire de configuration</translation>
    <translation id="inputs_logs_configure_logstash_grok" qtlid="477665">Modèles Grok personnalisés</translation>
    <translation id="inputs_logs_configure_logstash_input_section" qtlid="423245">Section «Input»</translation>
-   <translation id="inputs_logs_configure_logstash_filter_section" qtlid="423258">Section «Filter»</translation>
+   <translation id="inputs_logs_configure_logstash_filter_section" qtlid="423258">Section « Filter »</translation>
    <translation id="inputs_logs_configure_choose_app" qtlid="477678">Choisir une application</translation>
    <translation id="input_logs_configure_test" qtlid="423908">Tester la configuration</translation>
    <translation id="input_logs_configure_test_progress" qtlid="477691">Test en cours</translation>
@@ -599,12 +610,12 @@
    <translation id="input_logs_configure_test_failure" qtlid="477730">{{ output }}</translation>
    <translation id="input_logs_configure_delimiter_tooltip_LINE" qtlid="477743">Le délimiteur sera " n" pour un retour à la ligne.</translation>
    <translation id="input_logs_configure_delimiter_tooltip_NUL" qtlid="477756">Caractère Nul, typiquement utilisé par GELF / TCP: 0.</translation>
-   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Préfixe de taille de message tel que spécifié dans la RFC 5425. Cependant, les retours à la lignes agissent aussi comme délimiteur, afin de récupérer des entrées corrompues ou invalides.</translation>
+   <translation id="input_logs_configure_delimiter_tooltip_SYSLEN" qtlid="423440">Préfixe de taille de message tel que spécifié dans la RFC 5425. Cependant, les retours à la ligne agissent aussi comme délimiteur, afin de récupérer des entrées corrompues ou invalides.</translation>
    <translation id="input_logs_configure_delimiter_tooltip_CAPNP" qtlid="423479">Ce délimiteur ne doit être utilisé que pour le protocole Cap'n Proto</translation>
    <translation id="input_logs_configure_kafka_coalesce_tooltip" qtlid="470401">Nombre de messages gardés en mémoire vive par Flowgger avant que celui-ci ne les envoie à Kafka. Une valeur élevée est plus performante, mais peut entraîner une latence d'indexation si vous envoyez peu de messages.</translation>
-   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuration flowgger a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
+   <translation id="logs_inputs_flowgger_update_success" qtlid="477769">La configuration Flowgger a été modifiée avec succès pour l'outil de collecte {{inputTitle}}</translation>
    <translation id="logs_inputs_flowgger_update_error" qtlid="477782">Une erreur est survenue lors de la modification de la configuration Flowgger de {{inputTitle}}: {{message}}</translation>
-   <translation id="logs_inputs_logstash_update_success" qtlid="477795">La configuration Logstash a été modifié avec succès pour l'outil de collecte {{inputTitle}}</translation>
+   <translation id="logs_inputs_logstash_update_success" qtlid="477795">La configuration Logstash a été modifiée avec succès pour l'outil de collecte {{inputTitle}}</translation>
    <translation id="logs_inputs_logstash_update_error" qtlid="477808">Une erreur est survenue lors de la modification de la configuration Logstash de {{inputTitle}}: {{message}}</translation>
    <translation id="logs_inputs_logstash_save_warning_title" qtlid="477821">Aucun test de configuration n'a réussi</translation>
    <translation id="logs_inputs_logstash_save_warning_no_test" qtlid="477834">Aucun test n'a été effectué pour la configuration courante. Veuillez exécuter le test de la configuration pour continuer.</translation>
@@ -624,7 +635,7 @@
    <translation id="logs_index_col_description" qtlid="9238">Description</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Espace disponible</translation>
    <translation id="logs_index_col_shared" qtlid="477925">Index partagé</translation>
-   <translation id="logs_index_elastic_search_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_index_elastic_search_access" qtlid="477938">Accès Elasticsearch</translation>
    <translation id="logs_modal_delete_title" qtlid="470492">Supprimer l'index</translation>
    <translation id="logs_modal_delete_question" qtlid="477951">Êtes-vous sûr de vouloir supprimer l'index <strong>{{name}}</strong> ?</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="477964">Une erreur est survenue lors du chargement des options</translation>
@@ -666,7 +677,7 @@
    <translation id="logs_aliases_col_indices" qtlid="478198">Index liés</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Modifier</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Supprimer</translation>
-   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Accès elasticsearch</translation>
+   <translation id="logs_aliases_elasticsearch_access" qtlid="477938">Accès Elasticsearch</translation>
    <translation id="logs_aliases_attach_content" qtlid="421672">Attacher du contenu à l'alias</translation>
    <translation id="logs_aliases_delete_title" qtlid="478211">Supprimer l'alias</translation>
    <translation id="logs_alias_delete_message" qtlid="478224">Êtes-vous sûr de vouloir supprimer l'alias <strong>{{alias}}</strong> ?</translation>
@@ -694,16 +705,16 @@
    <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Index attachés</translation>
    <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">Tous les index sont attachés</translation>
    <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">Aucun index n'est attaché</translation>
-   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Une erreur est survenu lors de l'attachement au flux de données '{{streamName}}': {{message}}</translation>
+   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Une erreur est survenue lors de l'attachement au flux de données '{{streamName}}': {{message}}</translation>
    <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Échec de l'attachement au flux de données '{{stream}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_error" qtlid="478471">Une erreur est survenu lors du détachement au '{{streamName}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Échec du détachement au flux de données '{{stream}}': {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_error" qtlid="478471">Une erreur est survenue lors du détachement au '{{streamName}}': {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Échec du détachement du flux de données '{{stream}}': {{message}}</translation>
    <translation id="logs_aliases_attach_index_error" qtlid="478497">Une erreur est survenu lors de l'attachement à l'index '{{indexName}}': {{message}}</translation>
    <translation id="logs_aliases_attach_index_fail" qtlid="478510">Échec de l'attachement à l'index '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_index_error" qtlid="478523">Une erreur est survenu lors du détachement à l'index '{{indexName}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_index_fail" qtlid="478536">Échec du détachement à l'index '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Des flux de données sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les flux de données pour pouvoir ajouter un index.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Des index Elasticsearch sont attachés à cet alias. Seuls des flux de données ou des index elasticsearch peuvent être attachés. Détachez tous les index pour pouvoir ajouter un flux de données.</translation>
+   <translation id="logs_aliases_detach_index_error" qtlid="478523">Une erreur est survenue lors du détachement à l'index '{{indexName}}': {{message}}</translation>
+   <translation id="logs_aliases_detach_index_fail" qtlid="478536">Échec du détachement de l'index '{{index}}': {{message}}</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">Des flux de données sont attachés à cet alias. Seuls des flux de données ou des index Elasticsearch peuvent être attachés. Détachez tous les flux de données pour pouvoir ajouter un index.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">Des index Elasticsearch sont attachés à cet alias. Seuls des flux de données ou des index Elasticsearch peuvent être attachés. Détachez tous les index pour pouvoir ajouter un flux de données.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Rôles</translation>
@@ -736,7 +747,7 @@
    <translation id="logs_role_add_success" qtlid="478627">Le rôle '{{name}}' a été créé avec succès.</translation>
    <translation id="logs_role_add_error" qtlid="478640">Une erreur est survenue lors de la création du rôle '{{name}}': {{message}}</translation>
    <translation id="logs_role_delete_success" qtlid="478653">Le rôle '{{name}}' a été supprimé avec succès.</translation>
-   <translation id="logs_role_delete_error" qtlid="478666">Une erreur est survenue lors de la suppression du rôle {{message}}: {{message}}</translation>
+   <translation id="logs_role_delete_error" qtlid="478666">Une erreur est survenue lors de la suppression du rôle {{name}}: {{message}}</translation>
    <translation id="logs_roles_get_error" qtlid="478679">Une erreur est survenue lors du chargement des rôles: {{message}}</translation>
    <translation id="logs_role_update_success" qtlid="478692">Le rôle '{{name}}' a été modifié avec succès.</translation>
    <translation id="logs_role_update_error" qtlid="478705">Une erreur est survenue lors de la modification du rôle '{{name}}': {{message}}</translation>

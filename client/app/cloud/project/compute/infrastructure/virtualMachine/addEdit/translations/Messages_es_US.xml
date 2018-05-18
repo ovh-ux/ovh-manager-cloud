@@ -185,10 +185,10 @@
    <translation id="cpcivm_addedit_sshkey_key" qtlid="104326">Clé</translation>
    <translation id="cpcivm_addedit_script_key" qtlid="272131">Introduzca el script de post-instalación</translation>
    <translation id="cpcivm_addedit_sshkey_key_choose" qtlid="248548">Seleccionar llave SSH</translation>
-   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Añadir clave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Añadir una llave</translation>
    <translation id="cpcivm_addedit_sshkey_add_info" qtlid="248574">¿Cómo?</translation>
    <translation id="cpcivm_addedit_sshkey_add_remove" qtlid="103942">Effacer</translation>
-   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Añadir clave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_submit" qtlid="248587">Añadir llave</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Clave disponible</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_error" qtlid="248613">Lo sentimos, no se ha podido añadir la clave</translation>
    <translation id="cpcivm_addedit_sshkey_add_key_field" qtlid="248626">Nombrar clave</translation>
@@ -199,7 +199,7 @@
    <translation id="cpcivm_addedit_sshkey_add_error_pattern_name" qtlid="248678">El nombre de la llave solo puede contener cifras, letras mayúsculas y/o minúsculas, guiones (-), barras bajas (_) y espacios.</translation>
    <translation id="cpcivm_addedit_sshkey_add_error_required_key" qtlid="248691">Ha olvidado introducir la clave.</translation>
 
-   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Añadir clave</translation>
+   <translation id="cpcivm_addedit_sshkey_add_button" qtlid="248561">Añadir una llave</translation>
    <translation id="cpcivm_addedit_sshkey_add_button_cancel" qtlid="248704">Cancelar</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_success" qtlid="248600">Clave disponible</translation>
    <translation id="cpcivm_addedit_sshkey_add_submit_name_error" qtlid="248717">Este nombre ya ha sido utilizado para otra clave SSH.</translation>

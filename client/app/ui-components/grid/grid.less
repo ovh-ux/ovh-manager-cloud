@@ -1,0 +1,34 @@
+.cui-grid-list {
+    &-item {
+        .cui-tile,
+        .oui-select-picker,
+        .oui-radio_thumbnail {
+            height: 100%;
+        }
+    }
+
+    .cui-grid-cell {
+        button {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+.cui-grid-cell {
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    width: 33.33%;
+}
+
+@media only screen and (min-width: @screen-sm-min) and (max-width: 1439px) {
+    .cui-grid-cell {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: (@screen-sm-min - 1)) {
+    .cui-grid-cell {
+        width: 100%;
+    }
+}

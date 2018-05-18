@@ -2,7 +2,8 @@ class IpLoadBalancerHomeCtrl {
     constructor ($state, $stateParams, $translate, ControllerHelper, CloudMessage, FeatureAvailabilityService,
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
-                 IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService, REDIRECT_URLS) {
+                 IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
+                 IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, VrackService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -16,7 +17,10 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerMetricsService = IpLoadBalancerMetricsService;
         this.IpLoadBalancerZoneAddService = IpLoadBalancerZoneAddService;
         this.IpLoadBalancerZoneDeleteService = IpLoadBalancerZoneDeleteService;
+        this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
+        this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.VrackService = VrackService;
 
         this.serviceName = this.$stateParams.serviceName;
 
@@ -25,6 +29,8 @@ class IpLoadBalancerHomeCtrl {
 
     $onInit () {
         this.configuration.load();
+        this.vrackCreationRules.load();
+
         this.information.load();
         this.subscription.load();
 
@@ -63,6 +69,10 @@ class IpLoadBalancerHomeCtrl {
 
         this.configuration = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.getConfiguration(this.serviceName)
+        });
+
+        this.vrackCreationRules = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerVrackService.getNetworkCreationRules(this.serviceName)
         });
 
         this.subscription = this.ControllerHelper.request.getHashLoader({
@@ -111,6 +121,19 @@ class IpLoadBalancerHomeCtrl {
                 text: this.$translate.instant("common_edit"),
                 callback: () => this.IpLoadBalancerActionService.cipherChange(this.serviceName, () => this.configuration.load()),
                 isAvailable: () => !this.configuration.loading && !this.configuration.hasErrors
+            },
+            activateVrack: {
+                text: this.$translate.instant("common_activate"),
+                callback: () => this.VrackService.selectVrack()
+                    .then(result => this.IpLoadBalancerVrackHelper.associateVrack(this.serviceName, result.serviceName, this.vrackCreationRules.data)),
+                isAvailable: () => !this.vrackCreationRules.loading && !this.vrackCreationRules.hasErrors && this.vrackCreationRules.data.vrackEligibility &&
+                    this.vrackCreationRules.data.status === "inactive"
+            },
+            deActivateVrack: {
+                text: this.$translate.instant("common_deactivate"),
+                callback: () => this.VrackService.unlinkVrackModal()
+                    .then(() => this.IpLoadBalancerVrackHelper.deAssociateVrack(this.serviceName, this.vrackCreationRules.data)),
+                isAvailable: () => !this.vrackCreationRules.loading && !this.vrackCreationRules.hasErrors && this.vrackCreationRules.data.status === "active"
             },
             changeOffer: {
                 text: this.$translate.instant("common_edit"),

@@ -8,19 +8,24 @@
             data-ng-transclude></ol>
     </div>
     <div>
-        <button class="oui-button oui-button_secondary"
+        <button class="oui-button oui-button_primary"
+                type="submit"
+                data-ng-disabled="!$ctrl.formCompletedCondition || $ctrl.formSubmittedCondition"
+                data-ng-if="$ctrl.formCompletedFunction"
+                data-ng-click="$ctrl.formCompletedFunction()">
+            <span data-translate="common_confirm"
+                  data-ng-if="!$ctrl.formCompletedText"></span>
+            <span data-ng-bind="$ctrl.formCompletedText"
+                  data-ng-if="$ctrl.formCompletedText"></span>
+        </button>
+
+        <button class="oui-button oui-button_link"
                 type="reset"
                 data-ng-click="$ctrl.formCancelledFunction()"
                 data-ng-if="$ctrl.formCancelledFunction">
             <span data-translate="common_cancel"></span>
         </button>
 
-        <button class="oui-button oui-button_primary"
-                type="submit"
-                data-ng-disabled="!$ctrl.formCompletedCondition"
-                data-ng-if="$ctrl.formCompletedFunction"
-                data-ng-click="$ctrl.formCompletedFunction()">
-            <span data-translate="common_confirm"></span>
-        </button>
+        <oui-spinner data-size="s" data-ng-if="$ctrl.formSubmittedCondition"></oui-spinner>
     </div>
 </form>

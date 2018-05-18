@@ -3,7 +3,7 @@
    <translation id="cpcivm_monitoring_loading" qtlid="276025">Chargement des graphiques.</translation>
    <translation id="cpcivm_monitoring_title" qtlid="31666">Surveillance</translation>
    <translation id="cpcivm_monitoring_cpu_title" qtlid="25555">CPU</translation>
-   <translation id="cpcivm_monitoring_ram_title" qtlid="31354">RAM</translation>
+   <translation id="cpcivm_monitoring_ram_title" qtlid="31354">Mémoire vive</translation>
    <translation id="cpcivm_monitoring_hd_title" qtlid="25567">Disque</translation>
    <translation id="cpcivm_monitoring_bandwidth_title" qtlid="7510">Trafic</translation>
    <translation id="cpcivm_monitoring_comingSoon" qtlid="250043">Bientôt disponible</translation>

@@ -27,3 +27,4 @@ tools/
 client/app/app-scss.css
 .DS_Store
 .vscode/
+client/assets/ovh-ui-kit

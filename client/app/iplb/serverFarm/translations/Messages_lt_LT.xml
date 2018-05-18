@@ -45,6 +45,7 @@
    <translation id="iplb_farm_edit_port" qtlid="9034">Prievadas</translation>
    <translation id="iplb_farm_edit_port_tip" qtlid="448660">Grupės prievadas (1 - {{portMax}}). Pagal nutylėjimą, siejama su frontend prievadu.</translation>
    <translation id="iplb_farm_edit_datacenter" qtlid="30802">Duomenų centras</translation>
+   <translation id="iplb_farm_edit_private_network" qtlid="482342">Réseau privé</translation>
    <translation id="iplb_farm_edit_advanced_options" qtlid="39958">Pažangūs nustatymai</translation>
    <translation id="iplb_farm_edit_advanced_options_info" qtlid="437947">Naujausios vertės pagal nutylėjimą buvo pakeistos. Jas galite redaguoti bet kuriuo metu.</translation>
    <translation id="iplb_farm_edit_advanced_options_show" qtlid="69353">Rodyti</translation>

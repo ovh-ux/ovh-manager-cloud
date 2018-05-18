@@ -50,6 +50,11 @@ class RegionService {
         return `flag-icon-${this.getMacroRegionLowercase(region)}`;
     }
 
+    getTranslatedRegionContinent (region) {
+        const translatedRegionContinent = this.$translate.instant(`cloud_common_region_continent_${this.getMacroRegion(region)}`);
+        return translatedRegionContinent || region;
+    }
+
     getRegionCountry (region) {
         const translatedMicroRegionLocation = this.getTranslatedMicroRegionLocation(region);
         return _.trim(translatedMicroRegionLocation.split("(")[1], ")");
@@ -67,6 +72,7 @@ class RegionService {
                 text: this.getTranslatedMicroRegion(region)
             },
             location: this.getTranslatedMicroRegionLocation(region),
+            continent: this.getTranslatedRegionContinent(region),
             icon: this.getRegionIconFlag(region),
             country: this.getRegionCountry(region)
         };

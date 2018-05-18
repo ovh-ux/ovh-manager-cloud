@@ -1,20 +1,8 @@
-<div class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" 
-                type="button" 
-                aria-label="{{ common_modal_exit | translate }}"
-                data-ng-click="ctrl.dismissModal()"></button>
-    </div>
-    <div class="oui-modal__body">
-        <i class="oui-icon oui-icon-warning_circle oui-icon_bicolor" aria-hidden="true"></i>
-        <div class="oui-modal__body-text">
-        <h2 class="oui-modal__title" data-ng-bind="ctrl.params.title"></h2>
-        <p class="oui-modal__text" data-ng-bind="ctrl.params.message"></p>
-    </div>
-    </div>
-    <div class="oui-modal__footer">
-        <button class="oui-button oui-button_primary" type="button" data-ng-click="ctrl.closeModal()">
-            <span data-translate="common_modal_ok"></span>
-        </button>
-    </div>
-</div>
+<oui-modal
+    data-title="{{:: $ctrl.params.title}}"
+    data-on-dismiss="$ctrl.dismissModal()"
+    data-primary-action="$ctrl.closeModal()"
+    data-primary-label="{{::'common_modal_ok' | translate}}"
+    data-type="warning">
+    <span data-ng-bind="$ctrl.params.message"></span>
+</oui-modal>
