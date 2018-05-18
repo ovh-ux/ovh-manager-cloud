@@ -191,7 +191,8 @@ class VpsDashboardCtrl {
 
                 this.CloudMessage.success(this.$translate.instant("vps_setting_name_updated"));
             })
-            .catch(err => this.CloudMessage.error(err));
+            .catch(err => this.CloudMessage.error(err))
+            .finally(() => this.vps.load());
     }
 
     initActions () {
