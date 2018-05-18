@@ -1,7 +1,7 @@
 class IpLoadBalancerServerFarmEditCtrl {
     constructor ($q, $state, $stateParams, CloudMessage, ControllerHelper,
                  IpLoadBalancerConstant, IpLoadBalancerServerFarmService,
-                 IpLoadBalancerZoneService) {
+                 IpLoadBalancerVrackService, IpLoadBalancerZoneService) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
@@ -9,6 +9,7 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerConstant = IpLoadBalancerConstant;
         this.IpLoadBalancerServerFarmService = IpLoadBalancerServerFarmService;
+        this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
         this.IpLoadBalancerZoneService = IpLoadBalancerZoneService;
 
         this.initLoaders();
@@ -19,6 +20,10 @@ class IpLoadBalancerServerFarmEditCtrl {
             loaderFunction: () => this.IpLoadBalancerZoneService.getZonesSelectData(
                 this.$stateParams.serviceName
             )
+        });
+
+        this.privateNetworks = this.ControllerHelper.request.getArrayLoader({
+            loaderFunction: () => this.IpLoadBalancerVrackService.getPrivateNetworks(this.$stateParams.serviceName)
         });
 
         this.apiFarm = this.ControllerHelper.request.getHashLoader({
@@ -57,6 +62,7 @@ class IpLoadBalancerServerFarmEditCtrl {
         this.portLimit = this.IpLoadBalancerConstant.portLimit;
 
         this.zones.load();
+        this.privateNetworks.load();
         this.updateStickinessList();
 
         if (this.$stateParams.farmId) {

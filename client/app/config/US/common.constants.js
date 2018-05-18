@@ -4,54 +4,54 @@ angular.module("managerApp")
     .constant("TARGET", "US")
     .constant("UNIVERSE", "CLOUD")
     .constant("MANAGER_URLS", {
-        dedicated: "https://www.ovh.us/manager/dedicated/index.html#/",
-        cloud: "https://www.ovh.us/manager/cloud/index.html#/",
-        sunrise: "https://www.ovh.us/manager/sunrise/index.html#/",
+        dedicated: "https://ovhcloud.com/manager/dedicated/index.html#/",
+        cloud: "https://ovhcloud.com/manager/cloud/index.html#/",
+        sunrise: "https://ovhcloud.com/manager/sunrise/index.html#/",
         gamma: "https://ca.ovh.com/manager/sunrise/index.html#/",
         portal: "https://www.ovh.com/manager/portal/index.html#/"
     })
     .constant("REDIRECT_URLS", {
         support: "https://ovhcloud.com/manager/dedicated/index.html#/ticket",
-        billing: "https://www.ovh.us/manager/dedicated/index.html#/billing/history",
-        billingPayments: "https://www.ovh.us/manager/dedicated/index.html#/billing/payments",
-        billingMean: "https://www.ovh.us/manager/dedicated/index.html#/billing/mean",
-        billingVouchers: "https://www.ovh.us/manager/dedicated/index.html#/billing/vouchers",
-        billingRefunds: "https://www.ovh.us/manager/dedicated/index.html#/billing/refunds",
-        billingFidelity: "https://www.ovh.us/manager/dedicated/index.html#/billing/fidelity",
-        billingCredits: "https://www.ovh.us/manager/dedicated/index.html#/billing/credits",
-        ordersInProgress: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=in-progress",
-        orders: "https://www.ovh.us/manager/dedicated/index.html#/billing/orders?status=all",
-        services: "https://www.ovh.us/manager/dedicated/index.html#/billing/autoRenew",
-        servicesAgreements: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/agreements",
-        paymentMeans: "https://www.ovh.us/manager/dedicated/index.html#/billing/mean",
-        addCreditCard: "https://www.ovh.us/manager/dedicated/index.html#/billing/mean/add?meanType=creditCard",
-        ovhAccount: "https://www.ovh.us/manager/dedicated/index.html#/billing/ovhaccount",
-        debtAccount: "https://www.ovh.us/manager/dedicated/index.html#/billing/statements",
-        userInfos: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/infos",
-        userSecurity: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/security",
-        userEmails: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/emails",
-        userSubscriptions: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/subscriptions",
-        userSSH: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/ssh",
-        userAdvanced: "https://www.ovh.us/manager/dedicated/index.html#/useraccount/advanced",
+        billing: "https://ovhcloud.com/manager/dedicated/index.html#/billing/history",
+        billingPayments: "https://ovhcloud.com/manager/dedicated/index.html#/billing/payments",
+        billingMean: "https://ovhcloud.com/manager/dedicated/index.html#/billing/mean",
+        billingVouchers: "https://ovhcloud.com/manager/dedicated/index.html#/billing/vouchers",
+        billingRefunds: "https://ovhcloud.com/manager/dedicated/index.html#/billing/refunds",
+        billingFidelity: "https://ovhcloud.com/manager/dedicated/index.html#/billing/fidelity",
+        billingCredits: "https://ovhcloud.com/manager/dedicated/index.html#/billing/credits",
+        ordersInProgress: "https://ovhcloud.com/manager/dedicated/index.html#/billing/orders?status=in-progress",
+        orders: "https://ovhcloud.com/manager/dedicated/index.html#/billing/orders?status=all",
+        services: "https://ovhcloud.com/manager/dedicated/index.html#/billing/autoRenew",
+        servicesAgreements: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/agreements",
+        paymentMeans: "https://ovhcloud.com/manager/dedicated/index.html#/billing/mean",
+        addCreditCard: "https://ovhcloud.com/manager/dedicated/index.html#/billing/mean/add?meanType=creditCard",
+        ovhAccount: "https://ovhcloud.com/manager/dedicated/index.html#/billing/ovhaccount",
+        debtAccount: "https://ovhcloud.com/manager/dedicated/index.html#/billing/statements",
+        userInfos: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/infos",
+        userSecurity: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/security",
+        userEmails: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/emails",
+        userSubscriptions: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/subscriptions",
+        userSSH: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/ssh",
+        userAdvanced: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/advanced",
         contacts: null, // not yet available to US users
         horizon: "https://horizon.cloud.ovh.net/openstackdashboard?username={username}",
-        ipAction: "https://www.ovh.us/manager/dedicated/index.html#/configuration/ip?action={action}&ip={ip}&ipBlock={ipBlock}",
-        vRack: "https://www.ovh.us/manager/dedicated/index.html#/configuration/vrack?landingTo=networks",
-        nas: "https://www.ovh.us/manager/dedicated/index.html#/configuration/nas?landingTo=networks",
-        nasPage: "https://www.ovh.us/manager/dedicated/index.html#/configuration/nas/nas/nas_{nas}?landingTo=networks",
-        ip: "https://www.ovh.us/manager/dedicated/index.html#/configuration/ip?landingTo=ip",
-        license: "https://www.ovh.us/manager/dedicated/index.html#/configuration/license?landingTo=licences",
+        ipAction: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip?action={action}&ip={ip}&ipBlock={ipBlock}",
+        vRack: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vrack?landingTo=networks",
+        nas: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas?landingTo=networks",
+        nasPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas/nas/nas_{nas}?landingTo=networks",
+        ip: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip?landingTo=ip",
+        license: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/license?landingTo=licences",
         housing: "https://www.ovh.com/manager/dedicated/index.html#/configuration/housing/{housing}?landingTo=dedicatedServers",
-        dedicatedServers: "https://www.ovh.us/manager/dedicated/index.html#/configuration?landingTo=dedicatedServers",
-        dedicatedServersPage: "https://www.ovh.us/manager/dedicated/index.html#/configuration/server/{server}?landingTo=dedicatedServers",
-        dedicatedCloud: "https://www.ovh.us/manager/dedicated/index.html#/configuration?landingTo=dedicatedClouds",
-        dedicatedCloudPage: "https://www.ovh.us/manager/dedicated/index.html#/configuration/dedicated_cloud/{pcc}?landingTo=dedicatedClouds",
+        dedicatedServers: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=dedicatedServers",
+        dedicatedServersPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/server/{server}?landingTo=dedicatedServers",
+        dedicatedCloud: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=dedicatedClouds",
+        dedicatedCloudPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/dedicated_cloud/{pcc}?landingTo=dedicatedClouds",
         cloudDesktop: null, // not yet available to US users
-        vps: "https://www.ovh.us/manager/dedicated/index.html#/configuration?landingTo=vps",
-        vpsPage: "https://www.ovh.us/manager/dedicated/index.html#/configuration/vps/{vps}?landingTo=vps",
-        networks: "https://www.ovh.us/manager/dedicated/index.html#/configuration?landingTo=networks",
-        cdnPage: "https://www.ovh.us/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
-        renew: "https://www.ovh.us/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        vps: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=vps",
+        vpsPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vps/{vps}?landingTo=vps",
+        networks: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=networks",
+        cdnPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
+        renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
     })
 // CA eq to en_CA
 // QC eq to fr_CA
@@ -59,36 +59,36 @@ angular.module("managerApp")
 // AU eq to en_CA
     .constant("URLS", {
         support: {
-            US: "http://www.ovh.us/support/"
+            US: "http://ovhcloud.com/support/"
         },
         support_contact: {
-            US: "https://www.ovh.us/us/support/"
+            US: "https://ovhcloud.com/us/support/"
         },
         website_order: {
             "cloud-resell-eu": {
                 US: projectName =>
-                    `https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
+                    `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
             },
             dedicated_server: {
-                US: "https://www.ovh.us/dedicated-servers/"
+                US: "https://ovh.us/order/dedicated/#/dedicated/select"
             },
             dedicated_cloud: {
-                US: "https://www.ovh.us/dedicated-cloud/"
+                US: "https://ovhcloud.com/dedicated-cloud/"
             },
             load_balancer: {
-                US: "https://www.ovh.us/solutions/ip-load-balancing/"
+                US: "https://ovhcloud.com/solutions/ip-load-balancing/"
             },
             pcs: {
-                US: "https://www.ovh.us/public-cloud/storage/object-storage/"
+                US: "https://ovhcloud.com/public-cloud/storage/object-storage/"
             },
             pca: {
-                US: "https://www.ovh.us/public-cloud/storage/cloud-archive/"
+                US: "https://ovhcloud.com/public-cloud/storage/cloud-archive/"
             },
             vrack: {
                 US: "https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
             },
             cloud_disk_array: {
-                US: "https://www.ovh.us/cloud/cloud-disk-array/"
+                US: "https://ovhcloud.com/cloud/cloud-disk-array/"
             },
             veeam: {
             },
@@ -99,7 +99,7 @@ angular.module("managerApp")
         },
         guides: {
             home: {
-                US: "http://docs.ovh.us"
+                US: "http://docs.ovhcloud.com"
             },
             cda: {
 
@@ -121,7 +121,7 @@ angular.module("managerApp")
             vmResize: {
             },
             cloud: {
-                US: "https://docs.ovh.us/cloud/"
+                US: "https://docs.ovhcloud.com/cloud/"
             },
             vlans: {
             },
@@ -131,13 +131,13 @@ angular.module("managerApp")
             },
             ssh: {
                 create: {
-                    US: "https://www.ovh.us/g1769.creating_ssh_keys"
+                    US: "https://ovhcloud.com/g1769.creating_ssh_keys"
                 },
                 add: {
-                    US: "https://www.ovh.us/g1924.configuring_additionnal_ssh_key"
+                    US: "https://ovhcloud.com/g1924.configuring_additionnal_ssh_key"
                 },
                 change: {
-                    US: "https://www.ovh.us/g2069.replacing_your_lost_ssh_key_pair"
+                    US: "https://ovhcloud.com/g2069.replacing_your_lost_ssh_key_pair"
                 }
             }
         }

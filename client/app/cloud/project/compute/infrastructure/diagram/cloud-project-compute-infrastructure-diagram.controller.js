@@ -1,7 +1,8 @@
 (() => {
     class CloudProjectComputeInfrastructureDiagramCtrl {
         constructor ($rootScope, $scope, $document, $filter, $q, $state, $stateParams, $timeout, $transitions, $translate, $uibModal, $window,
-                     CloudMessage, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService, CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
+                     CloudMessage, CloudNavigation, CloudProjectComputeInfrastructureOrchestrator, CloudProjectComputeInfrastructureService,
+                     CloudProjectComputeVolumesOrchestrator, CloudProjectOrchestrator, CloudUserPref,
                      OvhApiCloud, OvhApiCloudProject, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectNetworkPrivate,
                      OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey, OvhApiCloudProjectVolumeSnapshot,
                      OvhApiIp, OvhApiMe, jsPlumbService, Poller, RegionService,
@@ -21,6 +22,7 @@
             this.$window = $window;
 
             this.CloudMessage = CloudMessage;
+            this.CloudNavigation = CloudNavigation;
             this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
             this.InfrastructureService = CloudProjectComputeInfrastructureService;
             this.CloudProjectComputeVolumesOrchestrator = CloudProjectComputeVolumesOrchestrator;
@@ -51,6 +53,13 @@
         $onInit () {
             this.serviceName = null;
             this.sortInterval = null;
+
+            this.CloudNavigation.init({
+                state: "iaas.pci-project.compute.infrastructure.diagram",
+                stateParams: {
+                    serviceName: this.serviceName
+                }
+            });
 
             this.collections = {
                 privateNetworks: []

@@ -906,18 +906,15 @@ angular.module("managerApp").service("VpsService", [
         /**
          * Update the VPS display name
          */
-        this.updateDisplayName = function (serviceName, newValue) {
-            return this.getSelectedVps(serviceName)
-                .then(function (vps) {
-                    return $http.put([swsVpsProxypass, vps.name].join("/"), newValue)
-                        .then(function (response) {
-                            resetCache();
-                            $rootScope.$broadcast("global_display_name_change", {
-                                serviceName: vps.name,
-                                displayName: newValue.displayName
-                            });
-                            return response.data;
-                        });
+        this.updateDisplayName = function (serviceName, displayName) {
+            return $http.put([swsVpsProxypass, serviceName].join("/"), {displayName})
+                .then(function (response) {
+                    resetCache();
+                    $rootScope.$broadcast("global_display_name_change", {
+                        serviceName: serviceName,
+                        displayName: displayName
+                    });
+                    return response.data;
                 });
         };
 

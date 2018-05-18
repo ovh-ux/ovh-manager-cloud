@@ -7,13 +7,11 @@
         <div class="oui-field">
             <label class="oui-label" data-translate="iplb_ssl_order_type"></label>
             <div class="oui-field__content">
-                <div class="oui-field-control">
                 <cui-radio-bar data-ng-model="ctrl.newSsl.type">
                     <cui-radio-bar-item data-ng-repeat="type in ctrl.sslTypes"
                         data-text="('iplb_ssl_order_type_' + type) | translate"
                         data-value="type"></cui-radio-bar-item>
                 </cui-radio-bar>
-                </div>
             </div>
         </div>
 

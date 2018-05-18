@@ -1,49 +1,24 @@
-<form id="addIpForm" name="addIpForm" class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="CdaIpAddCtrl.closeModal()"></button>
-    </div>
+<form id="addIpForm" name="addIpForm"
+    data-ng-submit="addIpForm.$valid && CdaIpAddCtrl.createIp()">
+    <oui-modal
+        data-primary-label="{{ ::'common_add' | translate }}"
+        data-secondary-action="CdaIpAddCtrl.closeModal()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="CdaIpAddCtrl.closeModal()"
+        data-loading="CdaIpAddCtrl.saving">
 
-    <div class="oui-modal__body oui-modal__body_no-icon">
-        <div class="oui-modal__body-text" data-ng-if="CdaIpAddCtrl.saving">
-            <div class="text-center">
-                <oui-spinner></oui-spinner>
-            </div>
-        </div>
-        <div class="oui-modal__body-text" data-ng-if="!CdaIpAddCtrl.saving">
-            <h2 class="oui-modal__title" data-translate="cda_ip_add_title"></h2>
+        <cui-message-container data-messages="CdaIpAddCtrl.messages"></cui-message-container>
 
-            <label for="ip" data-translate="cda_ip_add_ip_label" class="oui-label"></label>
-            <input type="text" class="oui-input"
-                id="ip" name="ip"
+        <h2 class="oui-modal__title" data-ng-bind="::'cda_ip_add_title' | translate "></h2>
+
+        <oui-field data-label="{{ ::'cda_ip_add_ip_label' | translate }}"
+            data-help-text="{{ ::'cda_ip_add_format' | translate }}">
+            <input type="text"
+                class="oui-input"
+                id="ip"
+                name="ip"
                 data-ng-model="CdaIpAddCtrl.model.ip"
-                required />
-            <div class="text-danger" data-ng-messages="addIpForm.ip.$error" data-ng-if="addIpForm.ip.$dirty">
-                <p class="animate-fadeInLeft-enter animate-fadeOutRight-leave" >
-                    <span data-ng-message="required" data-translate="cda_ip_add_ip_required"></span>
-                </p>
-            </div>
-
-            <p class="oui-modal__text" data-translate="cda_ip_add_format"></p>
-        </div>
-    </div>
-
-    <div class="oui-modal__footer">
-        <button type="reset"
-                class="oui-button oui-button_secondary"
-                title="{{ ::'common_cancel' | translate }}"
-                data-ng-click="CdaIpAddCtrl.closeModal()"
-                data-ng-disabled="CdaIpAddCtrl.saving"
-                form="addIpForm">
-            <span data-translate="common_cancel"></span>
-        </button>
-        <button type="button"
-                class="oui-button oui-button_primary"
-                title="{{ ::'common_add' | translate }}"
-                data-ng-click="addIpForm.$valid && CdaIpAddCtrl.createIp()"
-                data-ng-disabled="CdaIpAddCtrl.saving || (addIpForm.ip.$error && !addIpForm.ip.$valid)"
-                form="addIpForm">
-            <span data-translate="common_add"></span>
-        </button>
-    </div>
+                required>
+        </oui-field>
+    </oui-modal>
 </form>
