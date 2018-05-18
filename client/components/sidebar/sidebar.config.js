@@ -24,9 +24,18 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
     function initSidebarMenuItems (services, locale) {
-        IaasSectionSidebarService.fillSection(services.iaas);
-        PaasSectionSidebarService.fillSection(services.paas);
-        MetricsSectionSidebarService.fillSection(services.metrics);
+        if (FeatureAvailabilityService.hasFeature("PROJECT", "sidebarMenu", locale)) {
+            IaasSectionSidebarService.fillSection(services.iaas);
+        }
+
+        if (FeatureAvailabilityService.hasFeature("DEDICATED_CLOUD", "sidebarMenu", locale)) {
+            PaasSectionSidebarService.fillSection(services.paas);
+        }
+
+        if (FeatureAvailabilityService.hasFeature("METRICS", "sidebarMenu", locale)) {
+            MetricsSectionSidebarService.fillSection(services.metrics);
+        }
+
         if (FeatureAvailabilityService.hasFeature("DBAAS_LOGS", "sidebarMenu", locale)) {
             LogsSectionSidebarService.fillSection(services.logs);
         }

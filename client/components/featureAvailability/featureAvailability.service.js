@@ -21,25 +21,30 @@
             }
         },
         PROJECT: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             },
             expressOrder: {
                 US: ["US"]
             },
             guides: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             }
         },
         DEDICATED_CLOUD: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
-                US: ["US"]
+                CA: allCanadianSubsidiaries
             }
         },
         ip: {
@@ -53,7 +58,12 @@
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 // CA: allCanadianSubsidiaries, TODO : to remove when iplb order prodded in CA
-                US: ["US"]
+            }
+        },
+        LOAD_BALANCER: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
             }
         },
         VRACK: {
@@ -77,15 +87,17 @@
             }
         },
         METRICS: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+            },
             sidebarOrder: {
-                EU: ["FR"],
-                US: ["US"]
+                EU: ["FR"]
             }
         },
         CEPH: {
             sidebarOrder: {
-                EU: ["FR"],
-                US: ["US"]
+                EU: ["FR"]
             }
         },
         VEEAM: {
