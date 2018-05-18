@@ -19,7 +19,8 @@ class CloudProjectOpenStackUserAddCtrl {
     confirm () {
         this.saving = true;
         return this.OvhApiCloud.Project().User().v6().save({
-            serviceName: this.serviceName,
+            serviceName: this.serviceName
+        }, {
             description: this.model.value
         }).$promise
             .then(newUser => {

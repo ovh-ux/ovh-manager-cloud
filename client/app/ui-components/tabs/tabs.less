@@ -48,6 +48,13 @@
                 animation: tab-active-animation 200ms ease-in 1 forwards;
             }
         }
+
+        &_disabled {
+            pointer-events: none;
+            cursor: default;
+            text-decoration: none;
+            opacity: 0.6;
+        }
     }
 
     @keyframes tab-active-animation {

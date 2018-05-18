@@ -1,6 +1,8 @@
 // Generated on 2017-01-25 using generator-ovh-stack 0.0.0
 "use strict";
 
+var dependencies = require("./dependencies.json");
+
 module.exports = function (grunt) {
 
     var localConfig;
@@ -36,9 +38,11 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json"),
         yeoman: {
             // configurable paths
-            client: require("./bower.json").appPath || "client",
+            client: "client",
             server: "server",
-            dist: "dist"
+            dist: "dist",
+            npm: "node_modules",
+            assets: "assets"
         },
         express: {
             options: {
@@ -66,11 +70,11 @@ module.exports = function (grunt) {
             },
             tpl_index: {
                 files: ["<%= yeoman.client %>/index.tpl.html"],
-                tasks: ["copy:tpl_index", "wiredep:client", "injector:scripts", "injector:css"]
+                tasks: ["copy:tpl_index", "injector:scripts", "injector:css"]
             },
             tpl_karma: {
                 files: ["karma.conf.tpl.js"],
-                tasks: ["copy:tpl_karma", "wiredep:test"]
+                tasks: ["copy:tpl_karma"]
             },
             injectJS: {
                 files: [
@@ -126,10 +130,6 @@ module.exports = function (grunt) {
                     livereload: true,
                     spawn: false //Without this option specified express won"t be reloaded
                 }
-            },
-            bower: {
-                files: ["bower.json"],
-                tasks: ["wiredep"]
             }
         },
 
@@ -188,27 +188,6 @@ module.exports = function (grunt) {
                     src: "{,*/}*.css",
                     dest: ".tmp/"
                 }]
-            }
-        },
-
-        // Automatically inject Bower components into the app and karma.conf.js
-        wiredep: {
-            options: {
-                exclude: [
-                    /bs4/,
-                    "/json3/",
-                    "/es5-shim/",
-                    /font-awesome\.css/,
-                    /bootstrap\.css/
-                ]
-            },
-            client: {
-                src: "<%= yeoman.client %>/index.html",
-                ignorePath: "<%= yeoman.client %>/"
-            },
-            test: {
-                src: "./karma.conf.js",
-                devDependencies: true
             }
         },
 
@@ -405,6 +384,18 @@ module.exports = function (grunt) {
 
         // Copies remaining files to places other tasks can use
         copy: {
+            uikit: {
+                files: [{
+                    expand: true,
+                    cwd: "<%= yeoman.npm %>/ovh-ui-kit",
+                    src: [
+                        "packages/**/*.{less,svg}",
+                        "packages/oui-typography/fonts/**/*",
+                        "dist/icons/*"
+                    ],
+                    dest: "<%= yeoman.client %>/<%= yeoman.assets %>/ovh-ui-kit"
+                }]
+            },
             dist: {
                 files: [{
                     expand: true,
@@ -417,6 +408,7 @@ module.exports = function (grunt) {
                         "assets/images/{,*/}*.{webp}",
                         "assets/fonts/**/*",
                         "assets/noVNC/**/*",
+                        "assets/ovh-ui-kit/**/*",
                         "bower_components/**/*.{ttf,woff,woff2,svg,eot}",
                         "bower_components/**/translations/*.json",
                         "bower_components/angular-i18n/angular-locale_*-*.js",
@@ -721,7 +713,35 @@ module.exports = function (grunt) {
                         "<%= yeoman.client %>/{app,components}/**/*.css"
                     ]
                 }
-            }
+            },
+
+            bowercss: {
+                options: {
+                    transform: function(filePath) {
+                        filePath = filePath.replace("/node_modules", "node_modules");
+                        return "<link rel=\"stylesheet\" href=\"" + filePath + "\">";
+                    },
+                    starttag: "<!-- injector:bowercss -->",
+                    endtag: "<!-- endinjector:bowercss -->"
+                },
+                files: {
+                    "<%= yeoman.client %>/index.html": dependencies.css
+                }
+            },
+
+            bowerjs: {
+                options: {
+                    transform: function(filePath) {
+                        filePath = filePath.replace("/node_modules", "node_modules");
+                        return "<script src=\"" + filePath + "\"></script>";
+                    },
+                    starttag: "<!-- injector:bowerjs -->",
+                    endtag: "<!-- endinjector:bowerjs -->"
+                },
+                files: {
+                    "<%= yeoman.client %>/index.html": dependencies.js
+                }
+            },
         },
 
         // OVH translations
@@ -778,7 +798,6 @@ module.exports = function (grunt) {
                 "concurrent:server",
                 "injector",
 
-                "wiredep:client",
                 "postcss",
                 "ovhTranslation:dev",
                 "concurrent:debug"
@@ -790,11 +809,11 @@ module.exports = function (grunt) {
             "env:all",
             "env:dev",
             "ngconstant",
+            "copy:uikit",
             "concurrent:templates",
             "concurrent:pre",
             "concurrent:server",
             "injector",
-            "wiredep:client",
             "postcss",
             "ovhTranslation:dev",
             "json_merge",
@@ -813,128 +832,102 @@ module.exports = function (grunt) {
     grunt.registerTask("test", function (target, option) {
         grunt.config.set("mode", "test");
 
-        if (target === "server") {
-            return grunt.task.run([
-                "env:all",
-                "env:test"/*,
-                 "eslint:server",
-                 "eslint:serverTest"*/
-            ]);
-        }
-
-        else if (target === "client") {
-            return grunt.task.run([
-                "clean:server",
-                "env:all",
-                "ngconstant",
-                "concurrent:templates",
-                "concurrent:pre",
-                "concurrent:test",
-                "injector",
-                "postcss",
-                "ovhTranslation:dev",
-                "wiredep:test",
-                // "eslint:all",
-                // "eslint:test",
-                "karma:unit"
-            ]);
-        }
-
-        else if (target === "e2e") {
-
-            // Check if it's a remote test
-            if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
-                option = "remote";
-            }
-
-            if (option === "remote") {
+        switch (target) {
+            case "server":
                 return grunt.task.run([
-                    "protractor"
-                ]);
-            }
-
-            else if (option === "prod") {
-                grunt.config.set("mode", "production");
-                return grunt.task.run([
-                    "ngconstant",
-                    "build",
                     "env:all",
-                    "env:prod",
-                    "express:prod",
-                    "protractor"
+                    "env:test"
                 ]);
-            }
-
-            else {
+            case "client":
                 return grunt.task.run([
                     "clean:server",
                     "env:all",
-                    "env:test",
                     "ngconstant",
+                    "copy:uikit",
                     "concurrent:templates",
                     "concurrent:pre",
                     "concurrent:test",
                     "injector",
-                    "wiredep:client",
                     "postcss",
                     "ovhTranslation:dev",
-                    "express:dev",
-                    "protractor"
+                    "karma:unit"
                 ]);
-            }
+            case "e2e":
+                // Check if it's a remote test
+                if (process.env.E2E_BASE_URL && !/^https?:\/\/localhost/.test(process.env.E2E_BASE_URL)) {
+                    option = "remote";
+                }
+
+                switch (option) {
+                    case "remote":
+                        return grunt.task.run([
+                            "protractor"
+                        ]);
+                    case "prod":
+                        grunt.config.set("mode", "production");
+                        return grunt.task.run([
+                            "ngconstant",
+                            "build",
+                            "env:all",
+                            "env:prod",
+                            "express:prod",
+                            "protractor"
+                        ]);
+                    default:
+                        return grunt.task.run([
+                            "clean:server",
+                            "env:all",
+                            "env:test",
+                            "ngconstant",
+                            "copy:uikit",
+                            "concurrent:templates",
+                            "concurrent:pre",
+                            "concurrent:test",
+                            "injector",
+                            "postcss",
+                            "ovhTranslation:dev",
+                            "express:dev",
+                            "protractor"
+                        ]);
+                }
+            case "coverage":
+                switch (option) {
+                    case "unit":
+                        return grunt.task.run([
+                            "clean:server",
+                            "env:all",
+                            "env:test",
+                            "ngconstant",
+                            "copy:uikit",
+                            "concurrent:templates",
+                            "concurrent:pre",
+                            "concurrent:test",
+                            "injector",
+                            "postcss",
+                            "ovhTranslation:dev",
+                            "karma:coverage"
+                        ]);
+                    case "integration":
+                        return grunt.task.run([
+                            "env:all",
+                            "env:test"
+                        ]);
+                    case "check":
+                        return grunt.task.run([
+                            "karma:check_coverage"
+                        ]);
+                    default:
+                        return grunt.task.run([
+                            "env:all",
+                            "env:test"
+                        ]);
+                }
+            default:
+                return grunt.task.run([
+                    "test:server",
+                    "test:client"
+                ]);
         }
-
-        else if (target === "coverage") {
-
-            if (option === "unit") {
-                return grunt.task.run([
-                    "clean:server",
-                    "env:all",
-                    "env:test",
-                    "ngconstant",
-                    "concurrent:templates",
-                    "concurrent:pre",
-                    "concurrent:test",
-                    "injector",
-
-                    "wiredep:test",
-                    "postcss",
-                    "ovhTranslation:dev",
-                    //"mocha_istanbul:unit",
-                    "karma:coverage"
-                ]);
-            }
-
-            else if (option === "integration") {
-                return grunt.task.run([
-                    "env:all",
-                    "env:test"/*,
-                     "mocha_istanbul:integration"*/
-                ]);
-            }
-
-            else if (option === "check") {
-                return grunt.task.run([
-                    "karma:check_coverage"/*,
-                     "istanbul_check_coverage"*/
-                ]);
-            }
-
-            else {
-                return grunt.task.run([
-                    "env:all",
-                    "env:test"/*,
-                     "mocha_istanbul",
-                     "istanbul_check_coverage"*/
-                ]);
-            }
-
-        }
-
-        else grunt.task.run([
-                "test:server",
-                "test:client"
-            ]);
     });
 
     grunt.registerTask("build", function () {
@@ -942,11 +935,11 @@ module.exports = function (grunt) {
         grunt.task.run([
             "clean:dist",
             "ngconstant",
+            "copy:uikit",
             "concurrent:templates",
             "concurrent:pre",
             "concurrent:dist",
             "injector",
-            "wiredep:client",
             "useminPrepare",
             "postcss",
             "ngtemplates",
@@ -970,22 +963,18 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask("karma-unit-chrome", [
-        "wiredep:test",
         "karma:unitChrome"
     ]);
 
     grunt.registerTask("karma-unit-firefox", [
-        "wiredep:test",
         "karma:unitFirefox"
     ]);
 
     grunt.registerTask("karma-unit-watch", [
-        "wiredep:test",
         "karma:unitWatch"
     ]);
 
     grunt.registerTask("karma-unit", [
-        "wiredep:test",
         "karma:unit"
     ]);
 };

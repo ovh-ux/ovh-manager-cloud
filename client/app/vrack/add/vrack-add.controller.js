@@ -30,7 +30,7 @@ angular.module("managerApp").controller("VrackAddCtrl",
             self.loaders.loading = true;
             return OvhApiOrder.Vrack().New().v6().create({
                 quantity: this.model.quantityToOrder
-            }).$promise.then(function (data) {
+            }, {}).$promise.then(function (data) {
                 CloudMessage.success($translate.instant("vrack_adding_success", { data: _.pick(data, ["url", "orderId"]) }));
                 self.model.purchaseOrderUrl = data.url;
                 self.loaders.validationPending = true;

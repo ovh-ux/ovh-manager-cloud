@@ -2,7 +2,7 @@
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-5">
             <cui-tile class="h-100" data-title="'metrics_tiles_shortcut_title' | translate">
-                <ul class="cui-tile__body cui-tile__body_list">
+                <ul class="cui-tile__body cui-tile__body_list cui-tile__top-bordered">
                     <li class="cui-tile__item cui-tile__item_button">
                         <a class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button"
                             type="button"
@@ -14,7 +14,7 @@
                 </ul>
                 <br />
                 <h5 class="cui-tile__title cui-tile__subtitle" data-translate="metrics_tiles_tools_title"></h5>
-                <ul class="cui-tile__body cui-tile__body_list">
+                <ul class="cui-tile__body cui-tile__body_list cui-tile__top-bordered">
                     <li class="cui-tile__item" data-ng-repeat="graph in MetricsDashboardCtrl.graphs">
                         <a class="oui-button oui-button_link oui-button_icon-right oui-button_full-width cui-tile__button cui-tile__button_link"
                             type="button"
@@ -69,13 +69,14 @@
                     data-loading="MetricsDashboardCtrl.loading.service"
                     class="h-100">
                 <div class="cui-tile__body">
-                    <cui-tile-item data-actions="MetricsDashboardCtrl.actions.editName">
+                    <cui-tile-item class="cui-tile__top-bordered"
+                                   data-actions="MetricsDashboardCtrl.actions.editName">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_name' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description data-description="MetricsDashboardCtrl.configuration.description || MetricsDashboardCtrl.configuration.name"></cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_retention' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>
@@ -84,7 +85,7 @@
                             </cui-tile-definition-description>
                         </cui-tile-definitions>
                     </cui-tile-item>
-                    <cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
                         <cui-tile-definitions>
                             <cui-tile-definition-term data-term="'metrics_tiles_configuration_datacenter' | translate"></cui-tile-definition-term>
                             <cui-tile-definition-description>

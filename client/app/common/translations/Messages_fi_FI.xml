@@ -9,6 +9,8 @@
    <translation id="common_close" qtlid="4670">Sulje</translation>
 
    <translation id="common_cancel" qtlid="37863">Peruuta</translation>
+   <translation id="common_activate" qtlid="76734">Aktivoi</translation>
+   <translation id="common_deactivate" qtlid="90973">Poista käytöstä</translation>
    <translation id="common_edit" qtlid="37875">Muokkaa</translation>
    <translation id="common_consult" qtlid="339639">Tarkastele</translation>
    <translation id="common_see_detail" qtlid="225192">Katso tiedot</translation>
@@ -84,7 +86,11 @@
    <translation id="common_menu_support_list_ticket" qtlid="260814">Katso kaikki tukipyynnöt</translation>
    <translation id="common_menu_support_email_history" qtlid="260091">Sähköpostihistoria</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Puhelintuki</translation>
-   <translation id="common_menu_support_changelog" qtlid="124964">Päivityshistoria</translation>
+
+
+   <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Merkitse luetuksi</translation>
+   <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Merkitse lukemattomaksi</translation>
+
    <translation id="changelog_loading_error" qtlid="298014">Päivitysten historiatiedot eivät tilapäisesti ole saatavilla.</translation>
 
    <translation id="common_modify" qtlid="37875">Muokkaa</translation>
@@ -578,11 +584,12 @@
    <translation id="common_field_error_maxlength" qtlid="472372">Syötä enintään {{maxlength}} merkkiä.</translation>
    <translation id="common_field_error_pattern" qtlid="472385">Syötä hyväksytty formaatti.</translation>
 
-   <translation id="common_stepper_optional_label">(facultatif)</translation>
-   <translation id="common_stepper_modify_this_step">Modifier cette étape</translation>
-   <translation id="common_stepper_skip_this_step">Ignorer cette étape</translation>
-   <translation id="common_stepper_next_button_label">Suivant</translation>
-   <translation id="common_stepper_submit_button_label">Envoyer</translation>
+   <translation id="common_stepper_optional_label" qtlid="356264">(valinnainen)</translation>
+   <translation id="common_stepper_modify_this_step" qtlid="480922">Muokkaa tätä vaihetta</translation>
+   <translation id="common_stepper_skip_this_step" qtlid="480935">Älä huomioi tätä vaihetta</translation>
+   <translation id="common_stepper_next_button_label" qtlid="17743">Seuraava</translation>
+   <translation id="common_stepper_submit_button_label" qtlid="52807">Lähetä</translation>
+   <translation id="common_stepper_cancel_button_label" qtlid="37863">Peruuta</translation>
 
    <translation id="common_limited_voucher_start" qtlid="440982">Projektissasi on</translation>
    <translation id="common_limited_voucher_end" qtlid="440995">jäljellä</translation>

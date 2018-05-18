@@ -4,12 +4,13 @@
 
    <translation id="iplb_guides" qtlid="300370">Handleidingen</translation>
    <translation id="iplb_guides_title" qtlid="247105">LBIP</translation>
-   <translation id="iplb_guide_footer" qtlid="406905">Alle OVH handleidingen</translation>
+   <translation id="iplb_guide_footer" qtlid="406905">Alle OVH-handleidingen</translation>
 
    <translation id="iplb_tab_home" qtlid="27643">Home</translation>
    <translation id="iplb_tab_frontends" qtlid="438545">Front-ends</translation>
    <translation id="iplb_tab_server_farm" qtlid="437700">Serverclusters</translation>
    <translation id="iplb_tab_ssl_certificate" qtlid="371307">SSL certificaten</translation>
+   <translation id="iplb_tab_vrack" qtlid="482355">Privénetwerken</translation>
    <translation id="iplb_tab_graph" qtlid="5402">Graphics</translation>
    <translation id="iplb_tab_task" qtlid="96716">Taken</translation>
 
@@ -18,7 +19,7 @@
    <translation id="iplb_modal_nat_ip_title" qtlid="429459">Outbound IPv4</translation>
    <translation id="iplb_modal_nat_ip_description" qtlid="439325">U moet de verbinding van uw servers met deze IP-adressen autoriseren. </translation>
 
-   <translation id="iplb_modal_name_change_title" qtlid="71741">De naam wijzigen</translation>
+   <translation id="iplb_modal_name_change_title" qtlid="71741">Naam wijzigen</translation>
    <translation id="iplb_modal_name_change_service_name_label" qtlid="415714">Standaard naam</translation>
    <translation id="iplb_modal_name_change_display_name_label" qtlid="415727">Gepersonaliseerde naam</translation>
    <translation id="iplb_modal_name_change_updating_error" qtlid="439338">Er is een fout opgetreden tijdens het wijzigen van de naam. </translation>

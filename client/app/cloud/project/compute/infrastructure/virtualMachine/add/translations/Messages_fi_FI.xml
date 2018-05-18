@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_add_title" qtlid="19315">Lisää palvelin</translation>
+   <translation id="cpcivm_add_button_completed_text" qtlid="249094">Käynnistä nyt</translation>
+   <translation id="cpcivm_add_step1_title" qtlid="482719">Valitse OS tai tilannekuva</translation>
+   <translation id="cpcivm_add_step1_tab_os_linux" qtlid="296856">Unix-distribuutiot</translation>
+   <translation id="cpcivm_add_step1_tab_os_windows" qtlid="248223">Windows-distribuutiot</translation>
+   <translation id="cpcivm_add_step1_tab_apps" qtlid="482732">Distribuutiot + Apps</translation>
+   <translation id="cpcivm_add_step1_tab_customs" qtlid="482745">Personoidut imaget</translation>
+   <translation id="cpcivm_add_step1_tab_shapshots" qtlid="10235">Tilannekuvat</translation>
+   <translation id="cpcivm_add_step1_general_ERROR" qtlid="482758">Tapahtui virhe tietojen haussa: {{message}}</translation>
+   <translation id="cpcivm_add_step1_images_ERROR" qtlid="482771">Käyttöjärjestelmän imageluettelon haku ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step1_shapshots_ERROR" qtlid="482784">Tilannekuvien haku ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step1_distribution_last_version" qtlid="482797">Viimeisin versio</translation>
+   <translation id="cpcivm_add_step1_distribution_choose" qtlid="482810">Valitse versiosi</translation>
+   <translation id="cpcivm_add_step1_windows_message" qtlid="482823">Windows-lisensseihin liittyvät kulut lisätään automaattisesti valitun instanssin hintaan.</translation>
+   <translation id="cpcivm_add_step1_sshKey_label" qtlid="21859">SSH-avain</translation>
+   <translation id="cpcivm_add_step1_sshKey_add" qtlid="248561">Lisää avain</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding" qtlid="248587">Lisää avain</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding_ERROR" qtlid="482836">Uuden avaimen lisäys ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step1_sshKey_name_label" qtlid="243120">SSH-avaimen nimi</translation>
+   <translation id="cpcivm_add_step1_sshKey_publicKey_label" qtlid="482849">Olemassa oleva avain</translation>
+   <translation id="cpcivm_add_step1_sshKey_message" qtlid="482862">Tarvitset SSH-avaimia palveluun kirjautumista varten.<br/><a href="{{url}}" target="_blank">Lue lisää SSH-avaimista</a>.</translation>
+   <translation id="cpcivm_add_step1_sshKey_licence" qtlid="482875">Imagen käyttö edellyttää palveluntarjoajan käyttäjälisenssiä koskevan sopimuksen hyväksyntää.</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_title" qtlid="482888">SSH-avaimen käyttöönotto</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">SSH-avaimesi on saatavilla kaikkiin OVH:n konesaleihin kaikille alueille.</translation>
+   <translation id="cpcivm_add_distribution_linux" qtlid="102213">Linux</translation>
+   <translation id="cpcivm_add_distribution_linux_other" qtlid="349728">Archlinux</translation>
+   <translation id="cpcivm_add_distribution_centos" qtlid="482914">CentOS</translation>
+   <translation id="cpcivm_add_distribution_coreos" qtlid="482927">CoreOS</translation>
+   <translation id="cpcivm_add_distribution_debian" qtlid="349650">Debian</translation>
+   <translation id="cpcivm_add_distribution_fedora" qtlid="437494">Fedora</translation>
+   <translation id="cpcivm_add_distribution_freebsd" qtlid="102225">FreeBSD</translation>
+   <translation id="cpcivm_add_distribution_ubuntu" qtlid="349715">Ubuntu</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2012" qtlid="482940">Windows Server 2012</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
+   <translation id="cpcivm_add_step2_title" qtlid="482966">Valitse alue ja konesali</translation>
+   <translation id="cpcivm_add_step2_tab_all" qtlid="331319">Kaikki alueet</translation>
+   <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Valitse puolestani</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Instanssikiintiö saavutettu</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM-kiintiö saavutettu</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core-kiintiö saavutettu</translation>
+   <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Ei saatavilla olevaa SSH-avainta</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Saatavilla olevien alueiden ja konesalien luettelon haku ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Käytettävissä olevan kiintiön lataaminen ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step3_title" qtlid="483057">Valitse instanssi</translation>
+   <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">Yleinen käyttö</translation>
+   <translation id="cpcivm_add_step3_category_cpu" qtlid="483083">Optimoitu laskenta</translation>
+   <translation id="cpcivm_add_step3_category_ram" qtlid="483096">Optimoitu muisti</translation>
+   <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Kiihdytetty laskenta</translation>
+   <translation id="cpcivm_add_step3_category_vps" qtlid="483122">Jaetut resurssit</translation>
+   <translation id="cpcivm_add_step3_category_definition_balanced" qtlid="483135">Yleiseen käyttöön tarkoitetuissa instansseissa RAM ja suorituskyky ovat keskenään tasapainossa.</translation>
+   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">Optimoidun laskennan instanssit sopivat ihanteellisesti sovelluksille, jotka vaativat korkeaa laskentatehoa tai tehtävien rinnakkaisprosessointia.</translation>
+   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">Optimoidun muistin instansseja suositellaan tietokannoille, analyyseille, keskusmuistissa tapahtuvaan tietojenkäsittelyyn (in-memory processing) sekä muille RAM-resurssisyöpöille sovelluksille.</translation>
+   <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">Kiihdytetyn laskennan instanssit (GPU, FPGA) ovat jopa 1000 kertaa tavallista suoritinta nopeampia tietyissä sovelluksissa (renderointi, videokoodaus, bioinformatiikka, Big Data, syväoppiminen jne.)</translation>
+   <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">Instanssit jaetuilla resursseilla (Sandbox) sopivat testaukseen, tarkistuksiin ja kehitysympäristöihin. Niiden suorituskyky voi muuttua hieman ajan kuluessa.</translation>
+   <translation id="cpcivm_add_step3_label_ram" qtlid="483200">Keskusmuisti:</translation>
+   <translation id="cpcivm_add_step3_label_core" qtlid="483213">Suoritin:</translation>
+   <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Datasäilö:</translation>
+   <translation id="cpcivm_add_step3_label_bandwidth" qtlid="145358">Liikennöinti:</translation>
+   <translation id="cpcivm_add_step3_value_core" qtlid="483239">{{vcores}} vCores ({{frequency}} GHz)</translation>
+   <translation id="cpcivm_add_step3_disabled_NOT_AVAILABLE" qtlid="400247">Ei saatavilla tällä alueella</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_RAM" qtlid="483252">Ylittää kiintiön (RAM)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_VCPUS" qtlid="483265">Ylittää kiintiön (Core)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINDISK" qtlid="483278">Levytila ei riitä</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINRAM" qtlid="483291">Keskusmuisti (RAM) ei riitä</translation>
+   <translation id="cpcivm_add_step3_disabled_message_NOT_AVAILABLE" qtlid="483304">Tämä instanssi on saatavilla alueilla: {{regions}}</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_RAM" qtlid="483317">RAM-kiintiösi valitulla alueella on tällä hetkellä {{quota.remaining}}. Valittu instanssi vaatii {{quota.required}} kiintiön.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_VCPUS" qtlid="483330">Core-kiintiösi valitulla alueella on tällä hetkellä {{quota.remaining}}. Valittu instanssi vaatii {{quota.required}} ydintä.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINDISK" qtlid="483343">Image {{name}} vaatii vähintään {{requiredDisk}} levytilaa asennusta varten. Valitussa instanssissa on tilaa ainoastaan {{currentDisk}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINRAM" qtlid="483356">Image {{name}} vaatii vähintään {{requiredRam}} keskusmuistia (RAM) toimiakseen oikein. Valitussa instanssissa on muistia ainoastaan {{currentRam}}.</translation>
+   <translation id="cpcivm_add_step3_quantity_label" qtlid="483369">Luotavien instanssien määrä</translation>
+   <translation id="cpcivm_add_step3_quantity_info" qtlid="483382">Kaikki instanssisi konfiguroidaan samalla tavoin ja otetaan käyttöön samalle alueelle.</translation>
+   <translation id="cpcivm_add_step3_quantity_help" qtlid="483395">Nykyinen kiintiösi mahdollistaa jopa {{max}} samanaikaisen {{type}}-tyyppisen instanssin luomisen alueelle {{region}}.</translation>
+   <translation id="cpcivm_add_step3_quota_link_text" qtlid="483408">Katso kiintiösi</translation>
+   <translation id="cpcivm_add_step3_name_label" qtlid="483421">Instanssin nimi</translation>
+   <translation id="cpcivm_add_step3_name_help" qtlid="483434">Voi sisältää ainoastaan numeroita, kirjaimia, ala- ja väliviivoja tai pisteitä.</translation>
+   <translation id="cpcivm_add_step3_name_additional" qtlid="483447">Ylimääräisten instanssien nimi määräytyy ja lisätään syötetyn termin perusteella. </translation>
+   <translation id="cpcivm_add_step3_postscript_label" qtlid="64568">Asennuksen jälkeinen skripti</translation>
+   <translation id="cpcivm_add_step3_postscript_info" qtlid="483460">Syötä asennuksen jälkeen ajettava skriptisi</translation>
+   <translation id="cpcivm_add_step3_network_label" qtlid="316125">Liitä yksityisverkko</translation>
+   <translation id="cpcivm_add_step3_network_info" qtlid="483473">Suojaa tietosi yksityisellä verkolla. Se ei tehosta pelkästään palveluidesi välistä yhteyttä vaan mahdollistaa lisäksi eri palvelinten välisten viestien suojaamisen. <a href="{{url}}" target="_blank">Lue lisää yksityisistä verkoista</a>.</translation>
+   <translation id="cpcivm_add_step3_network_none" qtlid="30646">Ei ole</translation>
+   <translation id="cpcivm_add_step3_flavor_prices_ERROR" qtlid="483486">Saatavilla olevien tuotteiden hintojen hakeminen ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Saatavilla olevien tuotteiden luettelon haku ei onnistu: {{message}}</translation>
+   <translation id="cpcivm_add_step4_title" qtlid="483512">Konfiguroi instanssi</translation>
+   <translation id="cpcivm_add_step5_title" qtlid="483525">Valitse laskutuskausi</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">Kuukausilaskutus alkaa heti instanssin käynnistymisestä ja sen avulla on mahdollista säästää 50 % palvelinten hinnasta. Lyhytaikaisessa käytössä on suositeltavaa valita tuntilaskutus ja siirtyä myöhemmin kuukausilaskutukseen.</translation>
+   <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Aikataulu</translation>
+   <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Kuukausittainen</translation>
+   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Tapahtui virhe uuden instanssisi luomisessa: {{message}}</translation>
+   <translation id="cpcivm_add_summary_title" qtlid="4082">Yhteenveto</translation>
+   <translation id="cpcivm_add_summary_os" qtlid="168835">Käyttöjärjestelmä</translation>
+   <translation id="cpcivm_add_summary_region" qtlid="32434">Alue</translation>
+   <translation id="cpcivm_add_summary_instance" qtlid="104482">Instanssi</translation>
+   <translation id="cpcivm_add_summary_name" qtlid="3818">Nimi</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Hinta / tunti (ALV0)</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Hinta / tunti (ALV0)</translation>
+   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Ei ilmoitettu</translation>
+</translations>

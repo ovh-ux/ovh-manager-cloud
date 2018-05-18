@@ -252,6 +252,23 @@ angular.module("managerApp")
                 PT: "https://www.ovh.pt/cloud/cloud-desktop/",
                 SN: "https://www.ovh.sn/cloud/cloud-desktop/",
                 TN: "https://www.ovh.com/tn/cloud/cloud-desktop/"
+            },
+            dbaas_logs: {
+                FR: "https://www.ovh.com/fr/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                CZ: "https://www.ovh.cz/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                DE: "https://www.ovh.de/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                ES: "https://www.ovh.es/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                FI: "https://www.ovh-hosting.fi/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                GB: "https://www.ovh.co.uk/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                IE: "https://www.ovh.ie/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                IT: "https://www.ovh.it/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                LT: "https://www.ovh.lt/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                MA: "https://www.ovh.ma/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                NL: "https://www.ovh.nl/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                PL: "https://www.ovh.pl/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                PT: "https://www.ovh.pt/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                SN: "https://www.ovh.sn/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
+                TN: "https://www.ovh.com/tn/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))"
             }
         },
         guides: {

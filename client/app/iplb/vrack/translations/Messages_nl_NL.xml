@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="iplb_vrack_title" qtlid="482355">Privénetwerken</translation>
+   <translation id="iplb_vrack_intro_text" qtlid="482368">Verdeel eenvoudig de lading tussen de verschillende diensten van uw VLAN in het vRack.</translation>
+   <translation id="iplb_vrack_intro_text2_single" qtlid="482381">U kunt nog {{remainingNetworks}} privénetwerk(en) maken.</translation>
+   <translation id="iplb_vrack_intro_text2_plural" qtlid="482394">U kunt nog {{remainingNetworks}} privénetwerk(en) maken.</translation>
+   <translation id="iplb_vrack_intro_not_eligible" qtlid="482407">De configuratie van uw load balancer houdt in dat deze niet kan worden gekoppeld met een vRack.</translation>
+
+   <translation id="iplb_vrack_box_title" qtlid="246962">vRack</translation>
+   <translation id="iplb_vrack_box_status_active" qtlid="55133">Actief</translation>
+   <translation id="iplb_vrack_box_status_inactive" qtlid="105310">Inactief</translation>
+   <translation id="iplb_vrack_box_status_activating" qtlid="148474">Activering wordt uitgevoerd</translation>
+   <translation id="iplb_vrack_box_status_deactivating" qtlid="148487">Deactivering wordt uitgevoerd</translation>
+
+   <translation id="iplb_vrack_private_network_add" qtlid="331202">Privénetwerk toevoegen</translation>
+
+   <translation id="iplb_vrack_list_col_private_network" qtlid="482342">Privénetwerk</translation>
+   <translation id="iplb_vrack_list_col_vlan_id" qtlid="482420">VLAN ID</translation>
+   <translation id="iplb_vrack_list_col_subnet" qtlid="482433">Subnet</translation>
+   <translation id="iplb_vrack_list_col_nat_ip" qtlid="482446">NatIP</translation>
+   <translation id="iplb_vrack_list_col_farms" qtlid="482459">Server farm</translation>
+
+   <translation id="iplb_vrack_rules_loading_error" qtlid="482472">Er is een fout opgetreden bij het laden van informatie voor het privénetwerk: {{message}}</translation>
+   <translation id="iplb_vrack_private_network_loading_error" qtlid="482485">Er is een fout opgetreden bij het laden van het privénetwerk: {{message}}</translation>
+   <translation id="iplb_vrack_private_networks_loading_error" qtlid="482498">Er is een fout opgetreden bij het laden van het privénetwerken: {{message}}</translation>
+   <translation id="iplb_vrack_associate_vrack_error" qtlid="482511">Er is een fout opgetreden bij het koppelen van het vRack: {{message}}</translation>
+   <translation id="iplb_vrack_deassociate_vrack_error" qtlid="482524">Er is een fout opgetreden bij het deactiveren van het vRack: {{message}}</translation>
+
+   <translation id="iplb_vrack_private_network_add_title" qtlid="331202">Privénetwerk toevoegen</translation>
+   <translation id="iplb_vrack_private_network_edit_title" qtlid="482537">Privénetwerk bewerken</translation>
+   <translation id="iplb_vrack_private_network_add_success" qtlid="482550">Privénetwerk is toegevoegd.</translation>
+   <translation id="iplb_vrack_private_network_add_error" qtlid="482563">Er is een fout opgetreden bij het toevoegen van het privénetwerk: {{message}}</translation>
+   <translation id="iplb_vrack_private_network_edit_success" qtlid="482576">Privénetwerk is bewerkt.</translation>
+   <translation id="iplb_vrack_private_network_edit_error" qtlid="482589">Er is een fout opgetreden tijdens het bewerken van het privénetwerk: {{message}}</translation>
+
+   <translation id="iplb_vrack_private_network_add_edit_field_display_name_label" qtlid="415818">Naam (optioneel)</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_vlan_label" qtlid="482602">VLAN ID (optioneel)</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_vlan_helper" qtlid="482615">1 - 4000 (0 als het privénetwerk zich niet in een VLAN bevindt)</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_subnet_label" qtlid="482433">Subnet</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_subnet_helper" qtlid="482628">Voorbeeld.: 10.0.0.0/8</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_nat_ip_label" qtlid="482446">NatIP</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_nat_ip_helper" qtlid="482641">Voorbeeld.: 10.0.0.0/24</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_farm_label" qtlid="482654">Verbonden server farms</translation>
+   <translation id="iplb_vrack_private_network_add_edit_field_farm_description" qtlid="3818">Naam</translation>
+
+   <translation id="iplb_vrack_private_network_delete_title" qtlid="482667">Privénetwerk verwijderen</translation>
+   <translation id="iplb_vrack_private_network_delete_text" qtlid="482680">Weet u zeker dat u het {{network}} privénetwerk wilt verwijderen ?</translation>
+   <translation id="iplb_vrack_private_network_delete_success" qtlid="482693">Het privénetwerk is verwijderd.</translation>
+   <translation id="iplb_vrack_private_network_delete_error" qtlid="482706">Er is een fout opgetreden bij het verwijderen van het privénetwerk: {{message}}</translation>
+</translations>

@@ -123,7 +123,7 @@ angular.module("managerApp").controller("CloudProjectDeleteCtrl",
             self.loaders.deleting = true;
             return OvhApiCloudProject.v6().delete({
                 serviceName: projectId
-            }).$promise.then(function () {
+            }, {}).$promise.then(function () {
                 self.errors = false;
             }, function (err) {
                 self.errors = true;

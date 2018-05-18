@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+   <translation id="cpcivm_add_title" qtlid="19315">Adicionar servidor</translation>
+   <translation id="cpcivm_add_button_completed_text" qtlid="249094">Iniciar agora</translation>
+   <translation id="cpcivm_add_step1_title" qtlid="482719">Selecione um SO ou um Snapshot</translation>
+   <translation id="cpcivm_add_step1_tab_os_linux" qtlid="296856">Sistemas Unix</translation>
+   <translation id="cpcivm_add_step1_tab_os_windows" qtlid="248223">Distribuições Windows</translation>
+   <translation id="cpcivm_add_step1_tab_apps" qtlid="482732">Distribuições + Apps</translation>
+   <translation id="cpcivm_add_step1_tab_customs" qtlid="482745">Imagens personalizadas</translation>
+   <translation id="cpcivm_add_step1_tab_shapshots" qtlid="10235">Snapshots</translation>
+   <translation id="cpcivm_add_step1_general_ERROR" qtlid="482758">Ocorreu um erro durante a obtenção das informações: {{message}}</translation>
+   <translation id="cpcivm_add_step1_images_ERROR" qtlid="482771">Não é possível obter a lista das imagens de sistema de exploração: {{message}}</translation>
+   <translation id="cpcivm_add_step1_shapshots_ERROR" qtlid="482784">Não é possível obter a lista dos snapshots: {{message}}</translation>
+   <translation id="cpcivm_add_step1_distribution_last_version" qtlid="482797">Última versão</translation>
+   <translation id="cpcivm_add_step1_distribution_choose" qtlid="482810">Escolher a sua versão</translation>
+   <translation id="cpcivm_add_step1_windows_message" qtlid="482823">Os custos associados às licenças Windows serão adicionados automaticamente ao preço da instância selecionada.</translation>
+   <translation id="cpcivm_add_step1_sshKey_label" qtlid="21859">Chave SSH</translation>
+   <translation id="cpcivm_add_step1_sshKey_add" qtlid="248561">Adicionar uma chave</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding" qtlid="248587">Adicionar esta chave</translation>
+   <translation id="cpcivm_add_step1_sshKey_adding_ERROR" qtlid="482836">Não é possível adicionar a nova chave: {{message}}</translation>
+   <translation id="cpcivm_add_step1_sshKey_name_label" qtlid="243120">Nome da chave SSH</translation>
+   <translation id="cpcivm_add_step1_sshKey_publicKey_label" qtlid="482849">Chave existente</translation>
+   <translation id="cpcivm_add_step1_sshKey_message" qtlid="482862">As chaves SSH são obrigatórias para se conectar ao serviço.<br/><a href="{{url}}" target="_blank">Saber mais sobre as chaves SSH</a>.</translation>
+   <translation id="cpcivm_add_step1_sshKey_licence" qtlid="482875">A utilização de uma imagem é sujeita à aceitação prévia do Contrato de Licença do Utilizador do fornecedor.</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_title" qtlid="482888">Aplicação da chave SSH</translation>
+   <translation id="cpcivm_add_step1_sshKey_regions_message" qtlid="482901">A sua chave SSH estará disponível no conjunto das regiões e dos datacenters da OVH.</translation>
+   <translation id="cpcivm_add_distribution_linux" qtlid="102213">Linux</translation>
+   <translation id="cpcivm_add_distribution_linux_other" qtlid="349728">Archlinux</translation>
+   <translation id="cpcivm_add_distribution_centos" qtlid="482914">CentOS</translation>
+   <translation id="cpcivm_add_distribution_coreos" qtlid="482927">CoreOS</translation>
+   <translation id="cpcivm_add_distribution_debian" qtlid="349650">Debian</translation>
+   <translation id="cpcivm_add_distribution_fedora" qtlid="437494">Fedora</translation>
+   <translation id="cpcivm_add_distribution_freebsd" qtlid="102225">FreeBSD</translation>
+   <translation id="cpcivm_add_distribution_ubuntu" qtlid="349715">Ubuntu</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2012" qtlid="482940">Windows Server 2012</translation>
+   <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
+   <translation id="cpcivm_add_step2_title" qtlid="482966">Selecione uma região e um datacenter</translation>
+   <translation id="cpcivm_add_step2_tab_all" qtlid="331319">Todas as regiões</translation>
+   <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Selecionem por mim</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Quota de instâncias atingida</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Quota de RAM atingida</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Quota de Core atingida</translation>
+   <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Chave SSH indisponível</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Não é possível obter a lista das regiões e dos datacenters disponíveis: {{message}}</translation>
+   <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Não é possível carregar a sua quota disponível: {{message}}</translation>
+   <translation id="cpcivm_add_step3_title" qtlid="483057">Selecione a sua instância</translation>
+   <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">Uso geral</translation>
+   <translation id="cpcivm_add_step3_category_cpu" qtlid="483083">Cálculo otimizado</translation>
+   <translation id="cpcivm_add_step3_category_ram" qtlid="483096">Memória otimizada</translation>
+   <translation id="cpcivm_add_step3_category_accelerated" qtlid="483109">Cálculo acelerado</translation>
+   <translation id="cpcivm_add_step3_category_vps" qtlid="483122">Recursos partilhados</translation>
+   <translation id="cpcivm_add_step3_category_definition_balanced" qtlid="483135">As instâncias de uso geral oferecem um equilíbrio entre RAM e desempenho.</translation>
+   <translation id="cpcivm_add_step3_category_definition_cpu" qtlid="483148">As instâncias de cálculo otimizado são ideais para as aplicações que necessitam de frequências de cálculos de monta ou que precisem de paralelização de tarefas.</translation>
+   <translation id="cpcivm_add_step3_category_definition_ram" qtlid="483161">As instâncias de memória otimizada são recomendadas para bases de dados, análises e cálculos de memória, bem como para outras aplicações que consomem muita RAM.</translation>
+   <translation id="cpcivm_add_step3_category_definition_accelerated" qtlid="483174">As instâncias de cálculo acelerado (GPU, FPGA) são até mil vezes mais rápidas que um CPU em certas aplicações (rendering, transcodificação de vídeo, bio-informática, Big Data, deep learning, etc.).</translation>
+   <translation id="cpcivm_add_step3_category_definition_vps" qtlid="483187">As instâncias de recursos partilhados (Sandbox) são adaptadas a testes, receitas e ambientes de desenvolvimento. O seu desempenho pode variar ligeiramente ao longo do tempo.</translation>
+   <translation id="cpcivm_add_step3_label_ram" qtlid="483200">RAM:</translation>
+   <translation id="cpcivm_add_step3_label_core" qtlid="483213">Processador:</translation>
+   <translation id="cpcivm_add_step3_label_disk" qtlid="483226">Armazenamento:</translation>
+   <translation id="cpcivm_add_step3_label_bandwidth" qtlid="145358">Largura de banda</translation>
+   <translation id="cpcivm_add_step3_value_core" qtlid="483239">{{vcores}} vCores ({{frequency}} GHz)</translation>
+   <translation id="cpcivm_add_step3_disabled_NOT_AVAILABLE" qtlid="400247">Não disponíveis nessa região</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_RAM" qtlid="483252">Ultrapassa a quota (RAM)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_VCPUS" qtlid="483265">Ultrapassa a quota (Core)</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINDISK" qtlid="483278">Espaço em disco insuficiente</translation>
+   <translation id="cpcivm_add_step3_disabled_QUOTA_MINRAM" qtlid="483291">Memória viva (RAM) insuficiente</translation>
+   <translation id="cpcivm_add_step3_disabled_message_NOT_AVAILABLE" qtlid="483304">Regiões em que esta instância está disponível:  {{regions}}</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_RAM" qtlid="483317">A sua quota de RAM é atualmente de {{quota.remaining}} para a região selecionada. A instância selecionada necessita de {{quota.required}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_VCPUS" qtlid="483330">A sua quota é atualmente de {{quota.remaining}} core(s) para a região selecionada. A instância selecionada necessita de {{quota.required}} core(s).</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINDISK" qtlid="483343">A imagem {{name}} requer um mínimo de {{requiredDisk}} de espaço em disco para ser instalada. A instância selecionada dispõe apenas de {{currentDisk}}.</translation>
+   <translation id="cpcivm_add_step3_disabled_message_QUOTA_MINRAM" qtlid="483356">A imagem {{name}} requer um mínimo de {{requiredRam}} de memória viva (RAM) para funcionar corretamente. A instância selecionada dispõe apenas de {{currentRam}}.</translation>
+   <translation id="cpcivm_add_step3_quantity_label" qtlid="483369">Número de instâncias a criar.</translation>
+   <translation id="cpcivm_add_step3_quantity_info" qtlid="483382">Todas as instâncias serão configuradas da mesma forma e executadas na mesma região.</translation>
+   <translation id="cpcivm_add_step3_quantity_help" qtlid="483395">A sua quota atual permite-lhe criar, simultaneamente, até  {{max}} instância(s) de tipo {{type}} para a região de {{region}}.</translation>
+   <translation id="cpcivm_add_step3_quota_link_text" qtlid="483408">Consulte a sua quota</translation>
+   <translation id="cpcivm_add_step3_name_label" qtlid="483421">Nome da sua instância</translation>
+   <translation id="cpcivm_add_step3_name_help" qtlid="483434">Deve apenas conter algarismos, letras, underscores, traços ou pontos.</translation>
+   <translation id="cpcivm_add_step3_name_additional" qtlid="483447">O nome das instâncias suplementares será criado com base no termo introduzido.</translation>
+   <translation id="cpcivm_add_step3_postscript_label" qtlid="64568">Script de pôs-instalação</translation>
+   <translation id="cpcivm_add_step3_postscript_info" qtlid="483460">Introduza o script pós-instalação</translation>
+   <translation id="cpcivm_add_step3_network_label" qtlid="316125">Associar à rede privada</translation>
+   <translation id="cpcivm_add_step3_network_info" qtlid="483473">Proteja os seus dados por meio de uma rede privada. Ela não se limitará a impulsionar a conexão entre os seus serviços. Também lhe permitirá proteger a troca de dados entre os diferentes servidores. <a href="{{url}}" target="_blank">Mais informações sobre as redes privadas</a>.</translation>
+   <translation id="cpcivm_add_step3_network_none" qtlid="30646">Nenhum</translation>
+   <translation id="cpcivm_add_step3_flavor_prices_ERROR" qtlid="483486">Não é possível obter os preços das ofertas disponíveis: {{message}}</translation>
+   <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Não é possível obter a lista das ofertas disponíveis: {{message}}</translation>
+   <translation id="cpcivm_add_step4_title" qtlid="483512">Configurar a sua instância</translation>
+   <translation id="cpcivm_add_step5_title" qtlid="483525">Selecione um período de faturação</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">O plano mensal é faturado a partir da ativação da instância e permite poupar 50 % do preço dos servidores. Para uma utilização em períodos curtos, recomendamos que escolha a faturação à hora e que mais tarde passe para o plano mensal.</translation>
+   <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Horário</translation>
+   <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Mensal</translation>
+   <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Ocorreu um erro durante a criação da sua nova instância: {{message}}</translation>
+   <translation id="cpcivm_add_summary_title" qtlid="4082">Resumo</translation>
+   <translation id="cpcivm_add_summary_os" qtlid="168835">Sistema operativo</translation>
+   <translation id="cpcivm_add_summary_region" qtlid="32434">Região</translation>
+   <translation id="cpcivm_add_summary_instance" qtlid="104482">Instância</translation>
+   <translation id="cpcivm_add_summary_name" qtlid="3818">Apelido</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Preço / hora (fora taxas)</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Preço / mês (fora taxas)</translation>
+   <translation id="cpcivm_add_summary_undefined" qtlid="483590">Sem informação</translation>
+</translations>

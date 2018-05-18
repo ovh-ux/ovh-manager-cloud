@@ -3,7 +3,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
     // add translation path
     SidebarMenuProvider.addTranslationPath("../components/sidebar");
 }).run(function ($q, $translate, Toast, SidebarMenu, SidebarService, IaasSectionSidebarService, PaasSectionSidebarService,
-                 MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService,
+                 MetricsSectionSidebarService, VrackSectionSidebarService, LogsSectionSidebarService, LoadBalancerSidebarService, CloudDesktopSidebarService,
                  ProductsService, SessionService, FeatureAvailabilityService, REDIRECT_URLS, URLS) {
     "use strict";
 
@@ -18,7 +18,8 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             metrics: SidebarService.getServices(MetricsSectionSidebarService.section, products),
             vracks: SidebarService.getServices(VrackSectionSidebarService.section, products),
             load_balancer: SidebarService.getServices(LoadBalancerSidebarService.section, products),
-            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products)
+            cloud_desktop: SidebarService.getServices(CloudDesktopSidebarService.section, products),
+            logs: SidebarService.getServices(LogsSectionSidebarService.section, products)
         };
     }
     /*----------  SERVICES MENU ITEMS  ----------*/
@@ -35,6 +36,10 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             MetricsSectionSidebarService.fillSection(services.metrics);
         }
 
+        if (FeatureAvailabilityService.hasFeature("DBAAS_LOGS", "sidebarMenu", locale)) {
+            LogsSectionSidebarService.fillSection(services.logs);
+        }
+
         SidebarMenu.addMenuItem({
             title: $translate.instant("cloud_sidebar_section_license"),
             icon: "ovh-font ovh-font-certificate",
@@ -49,10 +54,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             target: "_parent"
         });
 
-        if (FeatureAvailabilityService.hasFeature("LOAD_BALANCER", "sidebarMenu", locale)) {
-            LoadBalancerSidebarService.fillSection(services.load_balancer);
-        }
-
+        LoadBalancerSidebarService.fillSection(services.load_balancer);
         VrackSectionSidebarService.fillSection(services.vracks);
 
         if (FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
@@ -73,6 +75,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             PaasSectionSidebarService.section,
             MetricsSectionSidebarService.section,
             VrackSectionSidebarService.section,
+            LogsSectionSidebarService.section,
             CloudDesktopSidebarService.section
         ], section => {
             _.forEach(section, product => {
@@ -85,32 +88,23 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             })
         });
 
-        const actionsMenuOptions = [];
-        actionsMenuOptions.push({
+        SidebarMenu.addActionsMenuOptions([{
             title: $translate.instant("cloud_sidebar_actions_menu_ip"),
             icon: "ovh-font ovh-font-ip",
             href: REDIRECT_URLS.ip,
             target: "_parent"
-        });
-
-        if (FeatureAvailabilityService.hasFeature("iplb", "sidebarOrder", locale)) {
-            actionsMenuOptions.push({
-                title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
-                icon: "ovh-font ovh-font-ip",
-                href: URLS.website_order.load_balancer[locale],
-                target: "_blank",
-                external: true
-            });
-        }
-
-        actionsMenuOptions.push({
+        }, {
+            title: $translate.instant("cloud_sidebar_actions_menu_iplb"),
+            icon: "ovh-font ovh-font-ip",
+            href: URLS.website_order.load_balancer[locale],
+            target: "_blank",
+            external: true
+        }, {
             title: $translate.instant("cloud_sidebar_actions_menu_licence"),
             icon: "ovh-font ovh-font-certificate",
             href: REDIRECT_URLS.license,
             target: "_parent"
-        });
-
-        SidebarMenu.addActionsMenuOptions(actionsMenuOptions);
+        }]);
 
         if (REDIRECT_URLS.orderSql) {
             SidebarMenu.addActionsMenuOptions([{

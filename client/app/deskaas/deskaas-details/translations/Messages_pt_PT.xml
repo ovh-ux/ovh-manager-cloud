@@ -59,7 +59,7 @@
    <translation id="vdi_task_current" qtlid="195633">Operações em curso</translation>
    <translation id="vdi_task_id" qtlid="279015">Id</translation>
    <translation id="vdi_task_name" qtlid="9238">Descrição </translation>
-   <translation id="vdi_task_state" qtlid="8230">Estado</translation>
+   <translation id="vdi_task_state" qtlid="8230">Status</translation>
    <translation id="vdi_task_modification_date" qtlid="293905">Data de modificação</translation>
    <translation id="vdi_task_name_refreshVirtualDesktop" qtlid="370863">Reset do desktop</translation>
    <translation id="vdi_task_name_restartVirtualDesktop" qtlid="370876">Reboot ao desktop</translation>

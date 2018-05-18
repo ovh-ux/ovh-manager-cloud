@@ -65,7 +65,7 @@ angular.module("managerApp").service("CloudStorageContainers", [
                         return OvhApiCloudProjectStorage.v6().static({
                             projectId: projectId,
                             containerId: currentContainerId
-                        }).$promise;
+                        }, {}).$promise;
                     }
 
                     // Make container public

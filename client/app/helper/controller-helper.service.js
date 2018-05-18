@@ -1,8 +1,9 @@
 class ControllerHelper {
-    constructor (ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
+    constructor ($timeout, ControllerModalHelper, ControllerRequestHelper, ControllerNavigationHelper) {
         this.request = ControllerRequestHelper;
         this.modal = ControllerModalHelper;
         this.navigation = ControllerNavigationHelper;
+        this.$timeout = $timeout;
     }
 
     downloadUrl (url) {
@@ -39,6 +40,50 @@ class ControllerHelper {
         } else {
             window.open(`data:text/plain;${charSet},${dataString}`);
         }
+    }
+
+    /**
+     * copies given message to clipboard
+     * @param {string} messageToCopy, message to copy to clipboard
+     * @return {any} error if copy failed, empty string otherwise
+     */
+    copyToClipboard (messageToCopy) {
+        try {
+            const dummy = document.createElement("input");
+            document.body.appendChild(dummy);
+            dummy.setAttribute("id", "dummy_id");
+            dummy.setAttribute("value", messageToCopy);
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        } catch (err) {
+            return err;
+        }
+        return "";
+    }
+
+    htmlDecode (html) {
+        const txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
+    naturalCompare (str1, str2) {
+        const words1 = str1.split(" ");
+        const words2 = str2.split(" ");
+        const minLength = Math.min(words1.length, words2.length);
+        for (let wordIndex = 0; wordIndex < minLength; wordIndex++) {
+            const word1 = words1[wordIndex];
+            const word2 = words2[wordIndex];
+            if (word1 !== word2) {
+                return !isNaN(word1) && !isNaN(word2) ? parseFloat(word1) > parseFloat(word2) : word1 > word2 ? 1 : -1;
+            }
+        }
+        return words1.length > words2.length ? 1 : 0;
+    }
+
+    scrollPageToTop () {
+        this.$timeout(() => scrollTo(0, 0), 100);
     }
 }
 
