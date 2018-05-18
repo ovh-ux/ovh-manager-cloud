@@ -54,7 +54,10 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
             target: "_parent"
         });
 
-        LoadBalancerSidebarService.fillSection(services.load_balancer);
+        if (FeatureAvailabilityService.hasFeature("LOAD_BALANCER", "sidebarMenu", locale)) {
+            LoadBalancerSidebarService.fillSection(services.load_balancer);
+        }
+
         VrackSectionSidebarService.fillSection(services.vracks);
 
         if (FeatureAvailabilityService.hasFeature("CLOUD_DESKTOP", "sidebarMenu", locale)) {
