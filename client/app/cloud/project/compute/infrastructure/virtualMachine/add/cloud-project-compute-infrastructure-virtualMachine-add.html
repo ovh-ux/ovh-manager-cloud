@@ -1,4 +1,4 @@
-<section class="cui-page__content cloud-vm-add__content">
+<section class="cui-page__content cui-page__content-narrow">
     <oui-back-button data-title="{{ 'cpcivm_add_title' | translate }}"></oui-back-button>
     <oui-stepper data-on-init="$ctrl.initProject()"
                  data-on-finish="$ctrl.confirm()">
@@ -14,8 +14,8 @@
                          data-ng-repeat="(imageType, distributions) in $ctrl.displayedImages track by imageType">
                     <p class="mt-4"
                        data-translate="cpcivm_add_step1_sshKey_licence"></p>
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap mt-4">
-                        <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
                              data-ng-repeat="(distribution, images) in distributions track by $index">
                             <oui-select-picker data-id="imageType_{{ images[0].nameGeneric }}"
                                                data-match="name"
@@ -38,8 +38,8 @@
                          data-ng-if="$ctrl.displayedApps.length > 0">
                     <p class="mt-4"
                        data-translate="cpcivm_add_step1_sshKey_licence"></p>
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap mt-4">
-                        <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
                              data-ng-repeat="app in $ctrl.displayedApps track by app.nameGeneric">
                             <oui-select-picker data-id="imageType_{{ app.nameGeneric }}"
                                                data-match="name"
@@ -55,8 +55,8 @@
                 </uib-tab>
                 <uib-tab index="3" heading="{{ 'cpcivm_add_step1_tab_shapshots' | translate }}"
                          data-ng-if="$ctrl.displayedSnapshots.length > 0">
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap mt-4">
-                        <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
                              data-ng-repeat="snapshot in $ctrl.displayedSnapshots track by snapshot.id">
                             <oui-select-picker data-id="snapshot_{{ snapshot.id }}"
                                                data-match="name"
@@ -71,32 +71,34 @@
                 </uib-tab>
             </uib-tabset>
 
-            <div class="cloud-vm-add-grid-cell"
+            <div class="cui-grid-list"
                  data-ng-if="$ctrl.submitted.step1 && $ctrl.model.imageType">
-                <oui-select-picker data-ng-if="!$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
-                                   data-match="name"
-                                   data-model="$ctrl.model.imageType"
-                                   data-name="imageTypeSelected"
-                                   data-picture="assets/images/cloud/{{ $ctrl.model.imageType.apps ? 'apps/' + ($ctrl.model.imageType.applications[0] || 'unknown') : 'os/' + $ctrl.model.imageType.distribution + '_50' }}.png"
-                                   data-text="{{:: $ctrl.model.imageType.apps ? $ctrl.model.imageType.appName : 'cpcivm_add_distribution_' + $ctrl.model.imageType.distribution | translate }}"
-                                   data-values="[$ctrl.model.imageType]">
-                </oui-select-picker>
-                <oui-select-picker data-ng-if="$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
-                                   data-match="name"
-                                   data-model="$ctrl.model.imageType"
-                                   data-name="snapshotSelected"
-                                   data-picture="fa fa-2x fa-{{ $ctrl.model.imageType.type }}"
-                                   data-text="{{ $ctrl.model.imageType.name }}"
-                                   data-values="[$ctrl.model.imageType]">
-                </oui-select-picker>
+                <div class="cui-grid-cell">
+                    <oui-select-picker data-ng-if="!$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
+                                       data-match="name"
+                                       data-model="$ctrl.model.imageType"
+                                       data-name="imageTypeSelected"
+                                       data-picture="assets/images/cloud/{{ $ctrl.model.imageType.apps ? 'apps/' + ($ctrl.model.imageType.applications[0] || 'unknown') : 'os/' + $ctrl.model.imageType.distribution + '_50' }}.png"
+                                       data-text="{{:: $ctrl.model.imageType.apps ? $ctrl.model.imageType.appName : 'cpcivm_add_distribution_' + $ctrl.model.imageType.distribution | translate }}"
+                                       data-values="[$ctrl.model.imageType]">
+                    </oui-select-picker>
+                    <oui-select-picker data-ng-if="$ctrl.CloudImageService.isSnapshot($ctrl.model.imageType)"
+                                       data-match="name"
+                                       data-model="$ctrl.model.imageType"
+                                       data-name="snapshotSelected"
+                                       data-picture="fa fa-2x fa-{{ $ctrl.model.imageType.type }}"
+                                       data-text="{{ $ctrl.model.imageType.name }}"
+                                       data-values="[$ctrl.model.imageType]">
+                    </oui-select-picker>
+                </div>
             </div>
 
-            <div class="mt-4" data-ng-if="$ctrl.model.imageType.type === 'linux'">
+            <div data-ng-if="$ctrl.model.imageType.type === 'linux'">
                 <oui-field data-label="{{ 'cpcivm_add_step1_sshKey_label' | translate }}"
                            data-label-popover="{{ 'cpcivm_add_step1_sshKey_message' | translate: { url: $ctrl.urls.guidesSshkey } }}"
                            data-ng-if="!$ctrl.addingSshKey">
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap">
-                        <div class="cloud-vm-add-grid-cell pb-0">
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-cell pb-0">
                             <label class="oui-select mb-0">
                                 <select class="oui-select__input" id="sshKey" name="sshKey" required
                                         data-ng-change="$ctrl.checkSshKeyByRegion($ctrl.model.sshKey.regions)"
@@ -109,7 +111,7 @@
                                 <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
                             </label>
                         </div>
-                        <div class="cloud-vm-add-grid-cell pb-0"
+                        <div class="cui-grid-cell pb-0"
                              data-ng-if="!$ctrl.submitted.step1">
                             <oui-button data-variant="secondary"
                                         data-text="{{ 'cpcivm_add_step1_sshKey_add' | translate }}"
@@ -160,8 +162,8 @@
                        data-valid="$ctrl.isStep2Valid()">
             <uib-tabset data-ng-show="!$ctrl.submitted.step2">
                 <uib-tab index="0" heading="{{ 'cpcivm_add_step2_tab_all' | translate }}">
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap mt-4">
-                        <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
                              data-ng-repeat="region in $ctrl.displayedRegions track by region.macroRegion.code">
                             <oui-select-picker data-id="allRegions_{{region.macroRegion.code}}"
                                                data-disabled="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled"
@@ -190,8 +192,8 @@
                 </uib-tab>
                 <uib-tab data-ng-repeat="(continent, regions) in $ctrl.groupedRegions track by $index"
                          index="($index + 1)" heading="{{continent}}">
-                    <div class="cloud-vm-add-list d-md-flex flex-wrap mt-4">
-                        <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                    <div class="cui-grid-list">
+                        <div class="cui-grid-list-item cui-grid-cell"
                              data-ng-repeat="region in regions track by region.macroRegion.code">
                             <oui-select-picker data-id="region_{{ region.macroRegion.code }}"
                                                data-disabled="region.dataCenters.length === 1 ? region.dataCenters[0].disabled : $ctrl.model.region.disabled"
@@ -220,15 +222,17 @@
                 </uib-tab>
             </uib-tabset>
 
-            <div class="cloud-vm-add-grid-cell"
+            <div class="cui-grid-list"
                  data-ng-if="$ctrl.submitted.step2 && $ctrl.model.region">
-                <oui-select-picker data-match="microRegion.text"
-                                   data-model="$ctrl.model.region"
-                                   data-name="regionSelected"
-                                   data-picture="flag-icon flag-icon-{{ $ctrl.model.region.macroRegion.code | lowercase }} flag"
-                                   data-text="{{ $ctrl.model.region.macroRegion.text }}"
-                                   data-values="[$ctrl.model.region]">
-                </oui-select-picker>
+                <div class="cui-grid-cell">
+                    <oui-select-picker data-match="microRegion.text"
+                                       data-model="$ctrl.model.region"
+                                       data-name="regionSelected"
+                                       data-picture="flag-icon flag-icon-{{ $ctrl.model.region.macroRegion.code | lowercase }} flag"
+                                       data-text="{{ $ctrl.model.region.macroRegion.text }}"
+                                       data-values="[$ctrl.model.region]">
+                    </oui-select-picker>
+                </div>
             </div>
         </oui-step-form>
 
@@ -246,8 +250,8 @@
 
                     <oui-radio-group data-model="$ctrl.model.flavor"
                                      data-name="flavor">
-                        <div class="cloud-vm-add-list d-md-flex flex-wrap">
-                            <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                        <div class="cui-grid-list">
+                            <div class="cui-grid-list-item cui-grid-cell"
                                  data-ng-repeat="flavor in group.flavors track by flavor.id">
                                 <oui-radio data-text="{{ flavor.name }}"
                                            data-id="flavor_{{ flavor.id }}"
@@ -321,45 +325,47 @@
                 </uib-tab>
             </uib-tabset>
 
-            <div class="cloud-vm-add-grid-cell"
+            <div class="cui-grid-list"
                  data-ng-if="$ctrl.submitted.step3 && $ctrl.model.flavor">
-                <oui-radio data-model="$ctrl.model.flavor"
-                           data-name="flavorSelected"
-                           data-text="{{ $ctrl.model.flavor.name }}"
-                           data-value="$ctrl.model.flavor"
-                           data-thumbnail>
-                    <span class="oui-radio__section">
-                        <span class="d-flex flex-wrap">
-                            <span data-translate="cpcivm_add_step3_label_ram"></span>
-                            <span class="ml-auto"
-                                  data-ng-bind="$ctrl.model.flavor.ram | bytes:0:false:'MB'"></span>
+                <div class="cui-grid-cell">
+                    <oui-radio data-model="$ctrl.model.flavor"
+                               data-name="flavorSelected"
+                               data-text="{{ $ctrl.model.flavor.name }}"
+                               data-value="$ctrl.model.flavor"
+                               data-thumbnail>
+                        <span class="oui-radio__section">
+                            <span class="d-flex flex-wrap">
+                                <span data-translate="cpcivm_add_step3_label_ram"></span>
+                                <span class="ml-auto"
+                                      data-ng-bind="$ctrl.model.flavor.ram | bytes:0:false:'MB'"></span>
+                            </span>
+                            <span class="d-flex flex-wrap">
+                                <span data-translate="cpcivm_add_step3_label_core"></span>
+                                <span class="ml-auto"
+                                      data-translate="cpcivm_add_step3_value_core"
+                                      data-translate-values="{ vcores: $ctrl.model.flavor.vcpus, frequency: $ctrl.model.flavor.frequency }"></span>
+                            </span>
+                            <span class="d-flex flex-wrap">
+                                <span data-translate="cpcivm_add_step3_label_disk"></span>
+                                <span class="ml-auto"
+                                      data-ng-bind="($ctrl.model.flavor.disk | bytes:2:false:'GB') + ' ' + ($ctrl.model.flavor.diskType | uppercase)"></span>
+                            </span>
+                            <span class="d-flex flex-wrap">
+                                <span data-translate="cpcivm_add_step3_label_bandwidth"></span>
+                                <span class="ml-auto"
+                                      data-ng-bind="$ctrl.model.flavor.outboundBandwidth ? ($ctrl.VirtualMachineAddService.constructor.roundBandwidthValue($ctrl.model.flavor.outboundBandwidth) + ' Mbps') : '?'"></span>
+                            </span>
                         </span>
-                        <span class="d-flex flex-wrap">
-                            <span data-translate="cpcivm_add_step3_label_core"></span>
-                            <span class="ml-auto"
-                                  data-translate="cpcivm_add_step3_value_core"
-                                  data-translate-values="{ vcores: $ctrl.model.flavor.vcpus, frequency: $ctrl.model.flavor.frequency }"></span>
+                        <span class="oui-radio__section text-right">
+                            <strong class="d-block"
+                                    data-translate="cpci_vm_flavor_month"
+                                    data-translate-values="{ price: ($ctrl.model.flavor.price.monthlyPrice.value | currency: $ctrl.currentCurrency: 2) || '?' }"></strong>
+                            <span class="d-block"
+                                  data-translate="cpci_vm_flavor_price"
+                                  data-translate-values="{ price: ($ctrl.model.flavor.price.price.value | currency: $ctrl.currentCurrency: 3) || '?' }"></span>
                         </span>
-                        <span class="d-flex flex-wrap">
-                            <span data-translate="cpcivm_add_step3_label_disk"></span>
-                            <span class="ml-auto"
-                                  data-ng-bind="($ctrl.model.flavor.disk | bytes:2:false:'GB') + ' ' + ($ctrl.model.flavor.diskType | uppercase)"></span>
-                        </span>
-                        <span class="d-flex flex-wrap">
-                            <span data-translate="cpcivm_add_step3_label_bandwidth"></span>
-                            <span class="ml-auto"
-                                  data-ng-bind="$ctrl.model.flavor.outboundBandwidth ? ($ctrl.VirtualMachineAddService.constructor.roundBandwidthValue($ctrl.model.flavor.outboundBandwidth) + ' Mbps') : '?'"></span>
-                        </span>
-                    </span>
-                    <span class="oui-radio__section text-right">
-                        <strong class="d-block"
-                                data-translate="cpci_vm_flavor_month"
-                                data-translate-values="{ price: ($ctrl.model.flavor.price.monthlyPrice.value | currency: $ctrl.currentCurrency: 2) || '?' }"></strong>
-                        <span class="d-block"
-                              data-translate="cpci_vm_flavor_price"
-                              data-translate-values="{ price: ($ctrl.model.flavor.price.price.value | currency: $ctrl.currentCurrency: 3) || '?' }"></span>
-                    </span>
-                </oui-radio>
+                    </oui-radio>
+                </div>
             </div>
         </oui-step-form>
 
@@ -451,8 +457,8 @@
             <oui-radio-group data-model="$ctrl.model.billingPeriod"
                              data-name="billingPeriod"
                              data-ng-show="!$ctrl.submitted.step5">
-                <div class="cloud-vm-add-list d-md-flex flex-wrap">
-                    <div class="cloud-vm-add-list-item cloud-vm-add-grid-cell"
+                <div class="cui-grid-list">
+                    <div class="cui-grid-list-item cui-grid-cell"
                          data-ng-repeat="period in $ctrl.enums.billingPeriods track by $index">
                         <oui-radio data-text="{{:: 'cpcivm_add_step5_billing_period_' + period | translate}}"
                                    data-id="period_{{period}}"
@@ -471,22 +477,24 @@
                 </div>
             </oui-radio-group>
 
-            <div class="cloud-vm-add-grid-cell"
+            <div class="cui-grid-list"
                  data-ng-if="$ctrl.submitted.step5 && $ctrl.model.billingPeriod">
-                <oui-radio data-text="{{:: 'cpcivm_add_step5_billing_period_' + $ctrl.model.billingPeriod | translate}}"
-                           data-model="$ctrl.model.billingPeriod"
-                           data-name="billingPeriodSelected"
-                           data-value="$ctrl.model.billingPeriod"
-                           data-thumbnail>
-                    <span class="oui-radio__section"
-                          data-translate="cpci_vm_flavor_price"
-                          data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.price.value) | currency: $ctrl.currentCurrency: 3) || '?' }"
-                          data-ng-if="$ctrl.model.billingPeriod === 'hourly'"></span>
-                    <span class="oui-radio__section"
-                          data-translate="cpci_vm_flavor_month"
-                          data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.monthlyPrice.value) | currency: $ctrl.currentCurrency: 2) || '?' }"
-                          data-ng-if="$ctrl.model.billingPeriod === 'monthly'"></span>
-                </oui-radio>
+                <div class="cui-grid-cell">
+                    <oui-radio data-text="{{:: 'cpcivm_add_step5_billing_period_' + $ctrl.model.billingPeriod | translate}}"
+                               data-model="$ctrl.model.billingPeriod"
+                               data-name="billingPeriodSelected"
+                               data-value="$ctrl.model.billingPeriod"
+                               data-thumbnail>
+                        <span class="oui-radio__section"
+                              data-translate="cpci_vm_flavor_price"
+                              data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.price.value) | currency: $ctrl.currentCurrency: 3) || '?' }"
+                              data-ng-if="$ctrl.model.billingPeriod === 'hourly'"></span>
+                        <span class="oui-radio__section"
+                              data-translate="cpci_vm_flavor_month"
+                              data-translate-values="{ price: (($ctrl.model.number * $ctrl.model.flavor.price.monthlyPrice.value) | currency: $ctrl.currentCurrency: 2) || '?' }"
+                              data-ng-if="$ctrl.model.billingPeriod === 'monthly'"></span>
+                    </oui-radio>
+                </div>
             </div>
 
             <oui-spinner data-ng-if="$ctrl.loaders.adding"></oui-spinner>

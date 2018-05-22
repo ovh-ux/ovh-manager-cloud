@@ -44,7 +44,7 @@
         <p class="oui-paragraph" data-translate="log_options_pro_no_options" data-ng-if="ctrl.currentOptions.data.length===0 && !ctrl.isBasicOffer()"></p>
     </div>
 
-    <div class="cui-grid-list d-md-flex flex-wrap mb-4">
+    <div class="cui-grid-list mb-5">
         <div class="cui-grid-list-item cui-grid-cell current-options-tile" data-ng-repeat="option in ctrl.currentOptions.data">
             <cui-tile data-loading="ctrl.currentOptions.loading">
                 <h4 class="oui-header_5 cui-tile__title" data-ng-bind="option.type+' ('+option.quantity+')'"></h4>
@@ -94,13 +94,13 @@
         variant="primary"
         type="button"
         on-click="ctrl.order()"
-        disabled="ctrl.getSelectedOptions().length===0"
-    ></oui-button>
+        disabled="ctrl.getSelectedOptions().length === 0">
+    </oui-button>
 
     <oui-button
         text="{{'log_options_cancel' | translate}}"
         variant="link"
         type="button"
-        on-click="ctrl.cancel()"
-    ></oui-button>
+        on-click="ctrl.cancel()">
+    </oui-button>
 </div>
