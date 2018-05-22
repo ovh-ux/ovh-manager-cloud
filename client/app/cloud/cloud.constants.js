@@ -9,25 +9,14 @@ angular.module("managerApp")
     .constant("CLOUD_INSTANCE_DEFAULT_FALLBACK", {
         region: "WAW1",
         image: "Ubuntu 16.04",
-        flavor: "s1-2" })
+        flavor: "s1-2"
+    })
     .constant("CLOUD_FLAVORTYPE_CATEGORY", [
-        {
-            id: "vps",
-            types: ["ovh.vps-ssd"],
-            migrationNotAllowed: [],
-            order: 5
-        },
         {
             id: "balanced",
             types: ["ovh.ceph.eg", "ovh.ssd.eg"],
             migrationNotAllowed: ["vps"],
             order: 1
-        },
-        {
-            id: "accelerated",
-            types: ["ovh.ssd.gpu", "ovh.ssd.gpu2", "ovh.ssd.gpu3", "ovh.ssd.fpga2"],
-            migrationNotAllowed: ["vps"],
-            order: 4
         },
         {
             id: "cpu",
@@ -40,6 +29,18 @@ angular.module("managerApp")
             types: ["ovh.ram", "ovh.ssd.ram"],
             migrationNotAllowed: ["vps"],
             order: 3
+        },
+        {
+            id: "accelerated",
+            types: ["ovh.ssd.gpu", "ovh.ssd.gpu2", "ovh.ssd.gpu3", "ovh.ssd.fpga2"],
+            migrationNotAllowed: ["vps"],
+            order: 4
+        },
+        {
+            id: "vps",
+            types: ["ovh.vps-ssd"],
+            migrationNotAllowed: [],
+            order: 5
         }
     ])
     .constant("CLOUD_FLAVOR_SPECIFIC_IMAGE", [

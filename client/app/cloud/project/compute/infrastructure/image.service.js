@@ -60,6 +60,57 @@
             }
             return augmentedImage;
         }
+
+        static getImageTypes (images) {
+            return _.uniq(_.map(images, "type"));
+        }
+
+        getImagesByType (images, imagesTypes, region = null) {
+            const filteredImages = {};
+            const filter = { apps: false, status: "active" };
+
+            if (_.isString(region)) {
+                filter.region = region;
+            }
+
+            _.forEach(imagesTypes, imageType => {
+                filter.type = imageType;
+                filteredImages[imageType] = _.filter(_.cloneDeep(images), filter);
+            });
+
+            return filteredImages;
+        }
+
+        getApps (images, region = null) {
+            const filter = { apps: true, status: "active" };
+
+            if (_.isString(region)) {
+                _.set(filter, "region", region);
+            }
+
+            return _.filter(_.cloneDeep(images), filter);
+        }
+
+        groupImagesByType (images, imagesTypes, region = null) {
+            const filteredImages = this.getImagesByType(images, imagesTypes, region);
+            const groupedImages = {};
+
+            _.forEach(filteredImages, (list, type) => {
+                groupedImages[type] = _.groupBy(list, "distribution");
+                _.forEach(groupedImages[type], (version, distribution) => {
+                    groupedImages[type][distribution] = _.uniq(_.forEach(version, image => {
+                        delete image.region;
+                        delete image.id;
+                    }), "name").sort((image1, image2) => image1.name > image2.name ? -1 : image1.name < image2.name ? 1 : 0);
+                });
+            });
+
+            return groupedImages;
+        }
+
+        isSnapshot (image) {
+            return _.get(image, "visibility", "") === "private";
+        }
     }
 
     angular.module("managerApp").service("CloudImageService", CloudImageService);

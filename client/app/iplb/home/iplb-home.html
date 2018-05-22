@@ -121,7 +121,7 @@
         </div>
         <div class="col-xm-12 col-md-4">
            <cui-tile data-title="'iplb_home_tile_configuration' | translate"
-                data-loading="ctrl.configuration.loading"
+                data-loading="ctrl.configuration.loading || ctrl.vrackCreationRules.loading"
                 class="h-100">
                 <cui-tile-body>
                     <cui-tile-item class="cui-tile__top-bordered"
@@ -132,6 +132,15 @@
                                    data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
                                    data-description="ctrl.configuration.data.sslConfiguration.displayName"
                                    data-actions="ctrl.actions.changeCipher"></cui-tile-item>
+                    <cui-tile-item class="cui-tile__top-bordered">
+                        <cui-tile-definitions>
+                            <cui-tile-definition-term data-term="'iplb_home_tile_configuration_private_network' | translate"></cui-tile-definition-term>
+                            <cui-tile-definition-description>
+                                <span data-translate="{{ 'iplb_vrack_box_status_' + ctrl.vrackCreationRules.data.status }}"></span>
+                                <small data-ng-if="ctrl.vrackCreationRules.data.status === 'active'">({{ ctrl.vrackCreationRules.data.displayName }})</small>
+                            </cui-tile-definition-description>
+                        </cui-tile-definitions>
+                    </cui-tile-item>
                     <cui-tile-item class="cui-tile__top-bordered"
                                    data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
                         <cui-tile-definitions>

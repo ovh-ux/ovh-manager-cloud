@@ -1,7 +1,7 @@
 (() => {
     class MetricsDashboardCtrl {
-        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, FeatureAvailabilityService, MetricService, METRICS_ENDPOINTS, RegionService,
-                     SidebarMenu) {
+        constructor ($scope, $stateParams, $q, $translate, CloudMessage, ControllerHelper, FeatureAvailabilityService, MetricService, METRICS_ENDPOINTS,
+                     RegionService, SidebarMenu) {
             this.$scope = $scope;
             this.$stateParams = $stateParams;
             this.$q = $q;
@@ -133,27 +133,23 @@
             return { name: region.microRegion.text, country: region.country, flag: region.icon };
         }
 
-        showEditName (desc) {
-            this.ControllerHelper.modal.showModal({
-                modalConfig: {
-                    templateUrl: "app/dbaas/dbaas-metrics/dashboard/edit/metrics-dashboard-edit.html",
-                    controller: "MetricsDashboardEditCtrl",
-                    controllerAs: "$ctrl",
-                    resolve: {
-                        metricsType: () => "name",
-                        metricsValue: () => desc,
-                        serviceName: () => this.serviceName
-                    }
-                },
-                successHandler: result => {
+        updateName (newDisplayName) {
+            return this.MetricService.setServiceDescription(this.serviceName, newDisplayName)
+                .then(result => {
                     this.configuration.description = result.data.description;
                     this.$scope.$emit("changeDescription", this.configuration.description);
 
                     const menuItem = this.SidebarMenu.getItemById(this.serviceName);
                     menuItem.title = this.configuration.description;
-                }
-            });
+                });
+        }
 
+        showEditName (name) {
+            this.ControllerHelper.modal.showNameChangeModal({
+                serviceName: this.serviceName,
+                displayName: name,
+                onSave: newDisplayName => this.updateName(newDisplayName)
+            });
         }
 
     }

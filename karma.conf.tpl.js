@@ -17,7 +17,6 @@ module.exports = function (config) {
             ...dependencies.dev.js,
 
             "client/app/app.js",
-            "client/{app,components}/**/*.module.js",
             "client/{app,components}/**/*.js",
             "client/{app,components}/**/*.html",
 

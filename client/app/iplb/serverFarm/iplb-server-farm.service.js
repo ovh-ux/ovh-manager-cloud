@@ -27,8 +27,8 @@ class IpLoadBalancerServerFarmService {
             .catch(this.ServiceHelper.errorHandler("iplb_farm_edit_probe_info_error"));
     }
 
-    getServerFarms (serviceName) {
-        return this.IpLoadBalancing.Farm().v6().query({ serviceName })
+    getServerFarms (serviceName, networkId) {
+        return this.Farm.all.query({ serviceName, vrackNetworkId: networkId })
             .$promise
             .then(farms => {
                 const promises = _.map(farms, farm => this.getServerFarm(serviceName, farm.id, farm.type));
