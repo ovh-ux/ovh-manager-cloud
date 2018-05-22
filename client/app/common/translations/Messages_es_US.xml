@@ -18,7 +18,7 @@
    <translation id="common_apply" qtlid="41326">Appliquer</translation>
    <translation id="common_loading" qtlid="58256">Chargement</translation>
    <translation id="common_refresh" qtlid="250030">Actualizar</translation>
-   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}}/ {{nbPages}}</translation>
+   <translation id="common_pagination_page" qtlid="239246">Página {{currentPage}}/{{nbPages}}</translation>
    <translation id="common_pagination_display" qtlid="69353">Afficher</translation>
    <translation id="common_search_placeholder" qtlid="98288">Rechercher...</translation>
    <translation id="common_disk_bootable" qtlid="271348">Disco de arranque </translation>

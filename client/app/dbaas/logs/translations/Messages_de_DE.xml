@@ -132,7 +132,7 @@
    <translation id="logs_home_configuration" qtlid="4406">Konfiguration</translation>
    <translation id="logs_home_account_name" qtlid="3818">Name</translation>
    <translation id="logs_home_tokens" qtlid="421386">Lesetoken</translation>
-   <translation id="logs_home_tokens_tooltip" qtlid="474558">Mit diesen Tokens erhalten Sie Zugriff auf die APIs</translation>
+   <translation id="logs_home_tokens_tooltip" qtlid="474558">Mit diesen Token erhalten Sie Zugriff auf die APIs</translation>
    <translation id="logs_home_password" qtlid="2270">Passwort</translation>
    <translation id="logs_home_ssi_configuration" qtlid="474571">SSI-Konfiguration</translation>
    <translation id="logs_home_collector" qtlid="421217">Datensammler</translation>
@@ -351,7 +351,7 @@
    <translation id="logs_streams_enable_archieve" qtlid="426469">Langzeitarchivierung aktivieren</translation>
    <translation id="logs_streams_enable_archieve_description" qtlid="469504">Archivieren Sie Ihre Logs sicher und jahrelang</translation>
    <translation id="streams_cold_storage_price" qtlid="487626">Diese Funktion kostet {{price}} / Monat je 2 GB</translation>
-   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Sie benötigen das Pro Angebot, um diese Funktion nutzen zu können.</translation>
+   <translation id="logs_streams_storage_basic_offer" qtlid="487639">Sie benötigen das Pro Angebot, um diese Funktion zu verwenden.</translation>
    <translation id="logs_streams_select_archieve_algorithm" qtlid="426495">Komprimierungsalgorithmus</translation>
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Vorhaltezeit der Archive</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Benachrichtigung</translation>
@@ -510,7 +510,7 @@
    <translation id="logs_inputs_logurl_error" qtlid="477184">Beim Laden der URL des Datensammlers ist ein Fehler aufgetreten: {{message}}</translation>
    <translation id="logs_inputs_test_error" qtlid="477197">Beim Testen des Datensammlers ist ein Fehler aufgetreten '{{inputTitle}}': {{message}}</translation>
    <translation id="inputs_title" qtlid="421217">Datensammler</translation>
-   <translation id="inputs_intro_text" qtlid="470167">Datensammler sind Programme, mit deren Hilfe die von Servern oder Anwendungen stammenden Logs zusammengetragen werden können. Sie sind ein effektives Mittel, um Daten zu verarbeiten und in das mit der Logs Data Platform kompatible Datenformat GELF zu konvertieren. So ist es nicht länger notwendig, spezielle Hardware-Ressourcen zu verwenden oder die Verfügbarkeit Ihrer Infrastrukturen zu überprüfen - das übernehmen wir für Sie. Dank dieser Plattform können Sie Datensammler mit Ihren verschiedenen Streams verbinden und erhalten so eine vereinfachte, mit Firewall-Regeln gesicherte Konfiguration.</translation>
+   <translation id="inputs_intro_text" qtlid="470167">Datensammler sind Programme, mit deren Hilfe die von Servern oder Anwendungen stammenden Logs zusammengetragen werden können. Sie sind ein effektives Mittel, um Daten zu verarbeiten und in das mit der Logs Data Platform kompatible Datenformat GELF zu konvertieren. So ist es nicht länger notwendig, spezielle Hardware-Ressourcen zu verwenden oder die Verfügbarkeit Ihrer Infrastrukturen zu überprüfen − das übernehmen wir für Sie. Dank dieser Plattform können Sie Datensammler mit Ihren verschiedenen Streams verbinden und erhalten so eine vereinfachte, mit Firewall-Regeln gesicherte Konfiguration.</translation>
    <translation id="inputs_total_used" qtlid="477210">Datensammler verwendet</translation>
    <translation id="inputs_increase_quota" qtlid="474753">Quota erhöhen</translation>
    <translation id="inputs_add_input" qtlid="423193">Datensammler hinzufügen</translation>
