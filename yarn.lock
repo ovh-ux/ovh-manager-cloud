@@ -330,8 +330,8 @@
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
 "@bower_components/ovh-api-services@ovh-ux/ovh-api-services#^3.0.0":
-  version "3.4.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/dc4e97d9a5f71ed32493ecab86e753d780e31f6d"
+  version "3.8.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-api-services/tar.gz/59b128db420e1fa5149367033d79d2a392121879"
   dependencies:
     grunt-injector "^0.6.0"
 
