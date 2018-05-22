@@ -1,3 +1,22 @@
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.4...v7.3.0) (2018-05-22)
+
+
+### Bug Fixes
+
+* **iplb:** add polling when landing on private network page ([c18c56a](https://github.com/ovh-ux/ovh-manager-cloud/commit/c18c56a))
+* **vps:** change name applied to tile name ([2dad8e1](https://github.com/ovh-ux/ovh-manager-cloud/commit/2dad8e1))
+
+
+### Features
+
+* **cda:** update  modal to oui-modal ([48e1333](https://github.com/ovh-ux/ovh-manager-cloud/commit/48e1333))
+* **metrics:** replace modal by default component in cloud ([056d6f6](https://github.com/ovh-ux/ovh-manager-cloud/commit/056d6f6))
+* **pci:** Add the new VM creation feature ([db8023b](https://github.com/ovh-ux/ovh-manager-cloud/commit/db8023b))
+* **vps:** replace modal by default component in cloud ([b357b0a](https://github.com/ovh-ux/ovh-manager-cloud/commit/b357b0a))
+
+
+
 <a name="7.2.4"></a>
 ## [7.2.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.3...v7.2.4) (2018-05-18)
 
