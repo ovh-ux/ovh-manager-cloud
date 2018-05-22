@@ -2,7 +2,7 @@
     <cui-page-header data-title-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.alias : DeskaasUpgradeCtrl.details.serviceName"
                  data-subtitle-text="DeskaasUpgradeCtrl.details.alias !== 'noAlias' ? DeskaasUpgradeCtrl.details.serviceName :''">
     </cui-page-header>
-    <section class="cui-page__content">
+    <section class="cui-page__content cui-page__content-narrow">
         <oui-back-button
             data-title="{{'vdi_upgrade_title' | translate }}"
             data-on-click="DeskaasUpgradeCtrl.$state.go('deskaas.details')">
@@ -14,20 +14,20 @@
 
         <div data-ng-if="!DeskaasUpgradeCtrl.flags.init">
             <p data-translate="vdi_upgrade_available"></p>
-            <form class="d-md-flex flex-wrap"
-                  name="upgradeForm"
+            <form name="upgradeForm"
                   data-ng-submit="DeskaasUpgradeCtrl.confirmUpgrade()"
                   novalidate>
-                <div class="cui-grid-list-item  cui-grid-cell"
-                     data-ng-repeat="ref in DeskaasUpgradeCtrl.references">
-                    <oui-radio
-                        id="oui-deskaas-{{ ref }}"
-                        name="ref.name"
-                        data-model="DeskaasUpgradeCtrl.deskaasOffer"
-                        data-text="{{ ref.name }}"
-                        data-value="ref"
-                        data-thumbnail="true"
-                        required>
+                <div class="cui-grid-list">
+                    <div class="cui-grid-list-item cui-grid-cell"
+                         data-ng-repeat="ref in DeskaasUpgradeCtrl.references">
+                        <oui-radio
+                            id="oui-deskaas-{{ ref }}"
+                            name="ref.name"
+                            data-model="DeskaasUpgradeCtrl.deskaasOffer"
+                            data-text="{{ ref.name }}"
+                            data-value="ref"
+                            data-thumbnail="true"
+                            required>
                         <span class="oui-radio__section">
                             <span class="d-flex flex-wrap">
                                 <span data-translate="vdi_core"></span>
@@ -46,12 +46,13 @@
                                 <span class="ml-auto" data-ng-bind="ref.gpu"></span>
                             </span>
                         </span>
-                        <span class="oui-radio__section text-right">
+                            <span class="oui-radio__section text-right">
                             <strong class="d-block">
                                 {{ ::'vdi_price' | translate }} {{ ref.priceText }}
                             </strong>
                         </span>
-                    </oui-radio>
+                        </oui-radio>
+                    </div>
                 </div>
 
                 <oui-form-actions

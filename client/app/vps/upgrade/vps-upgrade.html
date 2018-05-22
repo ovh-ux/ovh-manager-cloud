@@ -1,4 +1,4 @@
-<section class="cui-page__content cui-page__content-flex">
+<section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
     <oui-back-button data-title="{{ ::'vps_configuration_upgradevps_title' | translate }}"
         data-on-click="$ctrl.cancel()"></oui-back-button>
 
@@ -9,8 +9,8 @@
             data-loading="$ctrl.loaders.step1"
             data-on-focus="$ctrl.completed.step1 = false"
             data-on-submit="$ctrl.validateStep1()">
-            <div class="d-md-flex flex-wrap">
-                <div class="cui-grid-list-item  cui-grid-cell"
+            <div class="cui-grid-list">
+                <div class="cui-grid-list-item cui-grid-cell"
                      data-ng-repeat="upgrade in $ctrl.upgradesList track by $index"
                      data-ng-if="!$ctrl.completed.step1 || (upgrade.model === $ctrl.selectedModel.model)">
                     <oui-radio
