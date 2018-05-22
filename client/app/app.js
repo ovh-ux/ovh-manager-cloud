@@ -120,8 +120,7 @@ angular.module("managerApp", [
           ouiFieldConfiguration,
           ouiNavbarConfiguration,
           ouiPaginationConfiguration,
-          ouiStepperConfiguration,
-          ouiTableConfiguration) => {
+          ouiStepperConfiguration) => {
         $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {

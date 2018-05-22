@@ -1,11 +1,10 @@
 class NavbarNotificationService {
-    constructor ($interval, $q, $translate, CloudMessage, MANAGER_URLS, OvhApiNotificationAapi, TARGET, UNIVERSE) {
+    constructor ($interval, $q, $translate, CloudMessage, OvhApiNotificationAapi, TARGET, UNIVERSE) {
         this.$interval = $interval;
         this.$q = $q;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.OvhApiNotificationAapi = OvhApiNotificationAapi;
-        this.MANAGER_URLS = MANAGER_URLS;
         this.TARGET = TARGET;
         this.UNIVERSE = UNIVERSE;
 
