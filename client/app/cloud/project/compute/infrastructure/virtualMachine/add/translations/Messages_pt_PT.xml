@@ -36,8 +36,8 @@
    <translation id="cpcivm_add_distribution_windows_server_2016" qtlid="482953">Windows Server 2016</translation>
    <translation id="cpcivm_add_step2_title" qtlid="482966">Selecione uma região e um datacenter</translation>
    <translation id="cpcivm_add_step2_tab_all" qtlid="331319">Todas as regiões</translation>
-   <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Selecionem por mim</translation>
-   <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Quota de instâncias atingida</translation>
+   <translation id="cpcivm_add_step2_choose_auto" qtlid="399047">Sem preferência</translation>
+   <translation id="cpcivm_add_step2_disabled_QUOTA_INSTANCE" qtlid="482979">Quota de instância atingida</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Quota de RAM atingida</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Quota de Core atingida</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Chave SSH indisponível</translation>
@@ -85,7 +85,7 @@
    <translation id="cpcivm_add_step3_flavors_ERROR" qtlid="483499">Não é possível obter a lista das ofertas disponíveis: {{message}}</translation>
    <translation id="cpcivm_add_step4_title" qtlid="483512">Configurar a sua instância</translation>
    <translation id="cpcivm_add_step5_title" qtlid="483525">Selecione um período de faturação</translation>
-   <translation id="cpcivm_add_step5_message" qtlid="483538">O plano mensal é faturado a partir da ativação da instância e permite poupar 50 % do preço dos servidores. Para uma utilização em períodos curtos, recomendamos que escolha a faturação à hora e que mais tarde passe para o plano mensal.</translation>
+   <translation id="cpcivm_add_step5_message" qtlid="483538">O plano mensal é faturado a partir da ativação da instância e permite poupar 50% do preço dos servidores. Para uma utilização em períodos curtos, recomendamos que escolha a faturação à hora e mais tarde migre para o plano mensal caso preferir.</translation>
    <translation id="cpcivm_add_step5_billing_period_hourly" qtlid="281407">Horário</translation>
    <translation id="cpcivm_add_step5_billing_period_monthly" qtlid="60378">Mensal</translation>
    <translation id="cpcivm_add_launch_ERROR" qtlid="483551">Ocorreu um erro durante a criação da sua nova instância: {{message}}</translation>
@@ -94,7 +94,7 @@
    <translation id="cpcivm_add_summary_region" qtlid="32434">Região</translation>
    <translation id="cpcivm_add_summary_instance" qtlid="104482">Instância</translation>
    <translation id="cpcivm_add_summary_name" qtlid="3818">Apelido</translation>
-   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Preço / hora (fora taxas)</translation>
-   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Preço / mês (fora taxas)</translation>
+   <translation id="cpcivm_add_summary_price_hourly" qtlid="483564">Preço/hora (exceto taxas)</translation>
+   <translation id="cpcivm_add_summary_price_monthly" qtlid="483577">Preço/mês (exceto taxas)</translation>
    <translation id="cpcivm_add_summary_undefined" qtlid="483590">Sem informação</translation>
 </translations>

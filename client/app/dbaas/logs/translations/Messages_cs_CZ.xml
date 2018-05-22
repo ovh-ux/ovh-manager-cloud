@@ -6,7 +6,7 @@
    <translation id="logs_notification_title" qtlid="32386">Oznámení</translation>
    <translation id="logs_operation_failed" qtlid="473908">Operace selhala</translation>
    <translation id="logs_operation_error" qtlid="473921">Při operaci došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_streams_title" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_streams_title" qtlid="422452">Datové streamy</translation>
    <translation id="logs_index_title" qtlid="473934">Elasticsearch index</translation>
    <translation id="logs_main_offer" qtlid="424389">Hlavní nabídka</translation>
    <translation id="logs_finish_configuration" qtlid="473947">Dokončit konfiguraci</translation>
@@ -18,10 +18,10 @@
 
 <!-- Dashboard -->
    <translation id="logs_dashboards_title" qtlid="422270">Graylog dashboard</translation>
-   <translation id="logs_dashboards_description" qtlid="470063">Dashboard je grafická reprezentace Vašich logů. Díky nejrůznějším modulům (křivky, koláčové grafy, čítače, statistiky apod.) můžete získat jasnou a syntetickou představu o svých datech. Ke kolika chybám došlo za posledních 24 hodin? Jsou na vzestupu či naopak? Jaká stránka se dnes načítala nejrychleji? Vzrostl počet uživatelů za poslední měsíc? Veškeré informace jsou dostupné okamžitě. Možnost spuštění a správy několika dashboardů najednou umožňuje monitoring dat v závislosti na přesném kontextu a přináší lepší čitelnost informací.</translation>
+   <translation id="logs_dashboards_description" qtlid="470063">Dashboard je grafická reprezentace Vašich logů. Díky velkému počtu modulů (křivky, koláčové grafy, čítače, statistiky apod.) můžete získat jasnou a syntetickou představu o svých datech. Ke kolika chybám došlo za posledních 24 hodin? Jsou na vzestupu či naopak? Jaká stránka se dnes načítala nejrychleji? Vzrostl počet uživatelů za poslední měsíc? Veškeré informace jsou dostupné okamžitě. Spuštění a správa několika dashboardů najednou umožňuje monitoring dat v závislosti na přesném kontextu a přináší lepší čitelnost informací.</translation>
    <translation id="logs_dashboards_add" qtlid="422296">Přidat dashboard</translation>
    <translation id="logs_dashboards_name" qtlid="473986">dashboard</translation>
-   <translation id="logs_dashboards_total_used" qtlid="473999">Používané dashboardy</translation>
+   <translation id="logs_dashboards_total_used" qtlid="473999">používané dashboardy</translation>
    <translation id="logs_dashboards_col_name" qtlid="3818">Název</translation>
    <translation id="logs_dashboards_col_description" qtlid="9238">Popis</translation>
    <translation id="logs_dashboards_col_linked_option" qtlid="426768">Související volby</translation>
@@ -35,8 +35,8 @@
    <translation id="logs_dashboards_duplicate_title" qtlid="470076">Duplikovat dashboard</translation>
    <translation id="logs_dashboards_update_description" qtlid="474051">Pro dashboard <strong>{{ name }}</strong></translation>
    <translation id="logs_dashboards_duplicate_description" qtlid="474051">Pro dashboard <strong>{{ name }}</strong></translation>
-   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Připojit moduly nového dashboardu k následujícímu datovému proudu: </translation>
-   <translation id="logs_dashboards_select_stream" qtlid="474064">Vyberte datový proud</translation>
+   <translation id="logs_dashboards_select_stream_title" qtlid="470102">Připojit moduly nového dashboardu k následujícímu datovému streamu: </translation>
+   <translation id="logs_dashboards_select_stream" qtlid="474064">Vyberte datový stream</translation>
    <translation id="logs_dashboards_create_success" qtlid="474077">Dashboard '{{dashboardName}}' byl úspěšně vytvořen</translation>
    <translation id="logs_dashboards_update_success" qtlid="474090">Dashboard '{{dashboardName}}' byl úspěšně modifikován</translation>
    <translation id="logs_dashboards_delete_success" qtlid="474103">Dashboard '{{dashboardName}}' byl úspěšně odstraněn</translation>
@@ -54,7 +54,7 @@
    <translation id="logs_guides_footer" qtlid="406905">Všechny OVH příručky</translation>
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Domů</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Datové streamy</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Kolektory</translation>
    <translation id="logs_tab_indices" qtlid="426729">Indexy</translation>
@@ -82,7 +82,7 @@
    <translation id="logs_accounts_col_offer_type" qtlid="50254">Typ služby</translation>
    <translation id="logs_accounts_col_status" qtlid="26443">Stav</translation>
    <translation id="logs_accounts_col_entry_point" qtlid="421165">Vstupní bod</translation>
-   <translation id="logs_accounts_col_streams" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_accounts_col_streams" qtlid="422452">Datové streamy</translation>
    <translation id="logs_accounts_col_dashboards" qtlid="474220">Dashboard</translation>
    <translation id="logs_accounts_col_indices" qtlid="426729">Indexy</translation>
    <translation id="logs_accounts_details" qtlid="37527">Detaily</translation>
@@ -98,7 +98,7 @@
 
 <!-- Setup account and change password -->
    <translation id="logs_password_change_title" qtlid="8434">Změna hesla</translation>
-   <translation id="logs_password_get_started_title" qtlid="449453">Začít</translation>
+   <translation id="logs_password_get_started_title" qtlid="449453">Začínáme</translation>
    <translation id="logs_password_new_label" qtlid="17177">Nové heslo</translation>
    <translation id="logs_password_setup_label" qtlid="2270">Heslo</translation>
    <translation id="logs_password_confirm_label" qtlid="9382">Potvrzení hesla</translation>
@@ -120,8 +120,8 @@
    <translation id="logs_home_account_disabled_title" qtlid="474454">Účet deaktivován</translation>
    <translation id="logs_home_account_disabled_message" qtlid="474467">Váš účet byl deaktivován dne {{disabledDate}}. Za účelem jeho reaktivace kontaktujte technickou podporu.</translation>
    <translation id="logs_home_shortcuts" qtlid="403658">Zkratky</translation>
-   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Poslední modifikovaný datový proud</translation>
-   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Zobrazit všechny proudy</translation>
+   <translation id="logs_home_shortcuts_last_stream" qtlid="474480">Poslední modifikovaný datový stream</translation>
+   <translation id="logs_home_shortcuts_all_stream" qtlid="422491">Zobrazit všechny streamy</translation>
    <translation id="logs_home_shortcuts_last_dashboard" qtlid="474493">Poslední modifikovaný dashboard</translation>
    <translation id="logs_home_shortcuts_all_dashboard" qtlid="422517">Zobrazit všechny dashboardy</translation>
    <translation id="logs_home_shortcuts_graylog" qtlid="474506">Graylog</translation>
@@ -137,7 +137,7 @@
    <translation id="logs_home_ssi_configuration" qtlid="474571">Konfigurace SSI</translation>
    <translation id="logs_home_collector" qtlid="421217">Kolektory</translation>
    <translation id="logs_home_formats_and_ports" qtlid="421191">Formát zprávy a dostupné porty</translation>
-   <translation id="logs_home_subscription" qtlid="474584">Registrace</translation>
+   <translation id="logs_home_subscription" qtlid="474584">Předplatné</translation>
    <translation id="logs_home_offer" qtlid="38217">Nabídka</translation>
    <translation id="logs_home_data_volume" qtlid="474597">Objem dat</translation>
    <translation id="logs_home_options" qtlid="23395">Možnosti</translation>
@@ -146,7 +146,7 @@
    <translation id="logs_home_start_date" qtlid="26419">Datum vytvoření</translation>
    <translation id="logs_home_data_received" qtlid="474623">Přijatá data</translation>
    <translation id="logs_home_number_of_documents" qtlid="424662">Počet dokumentů</translation>
-   <translation id="logs_home_no_usage_data" qtlid="89689">Žádná data nejsou dostupná</translation>
+   <translation id="logs_home_no_usage_data" qtlid="89689">Aktuálně nejsou k dispozici žádná data</translation>
    <translation id="logs_home_cold_storage" qtlid="474636">Archivovaný objem</translation>
    <translation id="logs_home_display_name_update_success" qtlid="474649">Název byl úspěšně modifikován</translation>
    <translation id="logs_home_account_details_get_error" qtlid="474662">Při načítání účtu došlo k chybě: {{message}}</translation>
@@ -167,7 +167,7 @@
    <translation id="options_upgradequotalink_increase_quota" qtlid="474753">Navýšit kvótu</translation>
    <translation id="options_upgradequotalink_increase_quota_title" qtlid="474766">Je vyžadována změna nabídky</translation>
    <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">V současné době jste přihlášeni k odběru základní nabídky. Abyste mohli využívat další funkce, musíte přejít na nabídku PRO. Přejete si přejít na nabídku PRO?</translation>
-   <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Změnit nyní</translation>
+   <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Upgradovat</translation>
    <translation id="logs_options_options_loading_error" qtlid="474805">Při načítání funkcí došlo k chybě: {{message}}</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="474818">Při načítání Vašich funkcí došlo k chybě: {{message}}</translation>
    <translation id="logs_options_manage_get_error" qtlid="474805">Při načítání funkcí došlo k chybě: {{message}}</translation>
@@ -175,7 +175,7 @@
    <translation id="log_options_current_offer_title" qtlid="474831">V současné době jste přihlášeni k odběru následující nabídky:</translation>
    <translation id="log_options_pro_offer" qtlid="474844">Nabídka PRO</translation>
    <translation id="log_options_current_title" qtlid="474857">V současné době jste přihlášeni k odběru následujících funkcí:</translation>
-   <translation id="log_options_intro_text" qtlid="469309">Při nákupu datových proudů, aliasů a dashboardů Vám budou nabídnuty uživatelské role (např. 5 proudů = 5 rolí).</translation>
+   <translation id="log_options_intro_text" qtlid="469309">Při nákupu datových streamů, aliasů a dashboardů Vám budou nabídnuty uživatelské role (např. 5 streamů = 5 rolí).</translation>
    <translation id="log_options_type" qtlid="474870">Typ</translation>
    <translation id="log_options_details" qtlid="37527">Detaily</translation>
    <translation id="log_options_add" qtlid="37923">Přidat</translation>
@@ -184,7 +184,7 @@
    <translation id="logs-input-4-type" qtlid="474883">Kolektor</translation>
    <translation id="logs-input-8-type" qtlid="474883">Kolektor</translation>
    <translation id="logs-dashboard-5-type" qtlid="45376">Řídící panel</translation>
-   <translation id="logs-stream-5-type" qtlid="422452">Datové proudy</translation>
+   <translation id="logs-stream-5-type" qtlid="422452">Datové streamy</translation>
    <translation id="logs-kibana-1-type" qtlid="469335">Balíček Kibana</translation>
    <translation id="logs-alias-5-type" qtlid="474896">Alias​Elasticsearch</translation>
    <translation id="logs-index-1-type" qtlid="474909">Elasticsearch Index 25 GiB</translation>
@@ -205,7 +205,7 @@
    <translation id="logs-index-8-detail" qtlid="475078">8 fragmenty</translation>
    <translation id="logs-index-16-detail" qtlid="475091">16 fragmentů</translation>
    <translation id="log_options_basic_no_options" qtlid="475104">V současné době jste přihlášeni k odběru základní nabídky. Abyste mohli využívat další funkce, musíte přejít na nabídku PRO.</translation>
-   <translation id="log_options_basic_no_options_upgrade" qtlid="474792">Změnit nyní</translation>
+   <translation id="log_options_basic_no_options_upgrade" qtlid="474792">Upgradovat</translation>
    <translation id="log_options_pro_no_options" qtlid="475117">V současné době neodebíráte žádnou funkci. Funkce můžete objednat prostřednictvím níže uvedené tabulky.</translation>
    <translation id="log_options_order" qtlid="43558">Objednat</translation>
    <translation id="log_options_cancel" qtlid="37863">Zrušit</translation>
@@ -227,7 +227,7 @@
    <translation id="logs_options_manage_alias" qtlid="9466">Alias</translation>
    <translation id="logs_options_manage_dashboard" qtlid="45376">Řídící panel</translation>
    <translation id="logs_options_manage_index" qtlid="426729">Indexy</translation>
-   <translation id="logs_options_manage_stream" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_options_manage_stream" qtlid="422452">Datové streamy</translation>
    <translation id="logs_options_manage_role" qtlid="427886">Role</translation>
    <translation id="logs_options_manage_input" qtlid="421217">Kolektory</translation>
    <translation id="logs_options_overview_title" qtlid="475182">Informace o funkci</translation>
@@ -246,7 +246,7 @@
 
 <!-- Offer -->
    <translation id="logs_offer_title" qtlid="25783">Upgrade</translation>
-   <translation id="logs_offer_streams" qtlid="475338">proud</translation>
+   <translation id="logs_offer_streams" qtlid="475338">stream(y)</translation>
    <translation id="logs_offer_tables" qtlid="475351">dashboard(y)</translation>
    <translation id="logs_offer_collection_tools" qtlid="475364">kolektor(y)</translation>
    <translation id="logs_offer_limit" qtlid="33562">Limit</translation>
@@ -258,14 +258,14 @@
    <translation id="logs_offer_description_pro" qtlid="475403">V současné době využíváte nabídku {{offer}} PRO: můžete vybírat mezi následujícími nabídkami.</translation>
    <translation id="logs_offer_description_upgrade" qtlid="475416">V současné době využíváte základní nabídku: můžete vybírat mezi následujícími nabídkami.</translation>
    <translation id="logs_offer_description_basic" qtlid="475429">V současné době využíváte základní nabídku.</translation>
-   <translation id="logs_offer_upgrade_pro" qtlid="475442">Přejít na nabídku PRO</translation>
+   <translation id="logs_offer_upgrade_pro" qtlid="475442">Přechod na nabídku PRO</translation>
    <translation id="logs_offer_upgrade_feature" qtlid="475455">Přechodem na nabídku PRO získáte přístup k následujícím funkcím:</translation>
-   <translation id="logs_offer_upgrade_pro_description_1" qtlid="475468">45 denní retence Elasticsearch (2 hodiny v případě základní nabídky)</translation>
+   <translation id="logs_offer_upgrade_pro_description_1" qtlid="475468">45denní retence Elasticsearch (2 hodiny v případě základní nabídky)</translation>
    <translation id="logs_offer_upgrade_pro_description_2" qtlid="475481">Real-Time monitoring Websocket</translation>
    <translation id="logs_offer_upgrade_pro_description_3" qtlid="475494">Správa přístupových práv</translation>
    <translation id="logs_offer_upgrade_pro_description_4" qtlid="475507">Dlouhodobé ukládání (1-10 let)</translation>
    <translation id="logs_offer_upgrade_pro_description_5" qtlid="475520">Konfigurace upozornění</translation>
-   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Odemknout nabídky PRO</translation>
+   <translation id="logs_offer_unlock_pro_button" qtlid="475533">Ukázat nabídky PRO</translation>
    <translation id="logs-basic" qtlid="173333">Základní</translation>
    <translation id="logs-pro-0001" qtlid="475546">1 GB/měsíc</translation>
    <translation id="logs-pro-0015" qtlid="475559">15 GB/měsíc</translation>
@@ -321,30 +321,30 @@
    <translation id="logs_tokens_cluster_get_error" qtlid="475988">Při načítání platforem došlo k chybě: {{message}}</translation>
 
 <!-- Streams -->
-   <translation id="logs_streams_description" qtlid="469465">Proudy umožňují směrovat Vaše logy v reálném čase do specifické kategorie, ihned jakmile dorazí na Logs Data Platform. Pokud máte vícero proudů, můžete rovněž: třídit správy v závislosti na jejich zdroji, aplikaci či původním serveru. V závislosti na proudu můžete vytvářet úrovně důvěrnosti, umožňující distribuci Vašich přístupů mezi autorizované uživatele. Tyto tokeny jsou tokeny pro zápis, umožňující směrovat logy na správný proud. Obecně řečeno, čím více proudů, tím snazší orientace mezi logy - bez potřeby vylučovat výsledky jiných systémů či aplikací.</translation>
-   <translation id="logs_streams_total_used" qtlid="476001">Používané proudy</translation>
+   <translation id="logs_streams_description" qtlid="469465">Streamy umožňují směrovat Vaše logy v reálném čase do specifické kategorie, ihned jakmile dorazí na Logs Data Platform. Pokud máte vícero streamů, můžete rovněž: třídit zprávy v závislosti na jejich zdroji, aplikaci či původním serveru. V závislosti na streamu můžete vytvářet úrovně důvěrnosti, umožňující distribuci Vašich přístupů mezi autorizované uživatele. V tomto kontextu tokeny vystupují jako tokeny pro zápis, umožňující směrovat logy na správný stream. Obecně řečeno, čím více streamů, tím snazší orientace mezi logy - bez potřeby vylučovat výsledky jiných systémů či aplikací.</translation>
+   <translation id="logs_streams_total_used" qtlid="476001">používané streamy</translation>
    <translation id="logs_streams_increase_quota" qtlid="474753">Navýšit kvótu</translation>
-   <translation id="logs_streams_add_data_feed" qtlid="426170">Přidat datový proud</translation>
-   <translation id="logs_streams_name" qtlid="475338">proud</translation>
+   <translation id="logs_streams_add_data_feed" qtlid="426170">Přidat datový stream</translation>
+   <translation id="logs_streams_name" qtlid="475338">stream(y)</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Název</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Popis</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Archivy</translation>
    <translation id="logs_streams_col_actions" qtlid="72809">Akce</translation>
    <translation id="logs_streams_col_notifications" qtlid="72797">Upozornění</translation>
    <translation id="logs_streams_col_linked_option" qtlid="426768">Související volby</translation>
-   <translation id="logs_streams_no_streams" qtlid="476014">Žádný datový proud</translation>
-   <translation id="logs_streams_col_shared" qtlid="476027">Sdílený proud</translation>
+   <translation id="logs_streams_no_streams" qtlid="476014">Žádný datový stream</translation>
+   <translation id="logs_streams_col_shared" qtlid="476027">Sdílený stream</translation>
    <translation id="logs_streams_manage_alerts" qtlid="476040">Spravovat upozornění</translation>
    <translation id="logs_streams_archives" qtlid="469933">Archivy</translation>
    <translation id="logs_streams_follow_live" qtlid="426222">Sledovat v reálném čase</translation>
-   <translation id="logs_streams_follow_description" qtlid="476105">Pro proud <strong>{{ name }}</strong></translation>
+   <translation id="logs_streams_follow_description" qtlid="476105">Pro stream <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Graylog přístup</translation>
    <translation id="logs_streams_copy_token" qtlid="476053">Kopírovat zápisový token</translation>
-   <translation id="logs_stream_delete_title" qtlid="476066">Odstranit proud</translation>
-   <translation id="logs_stream_delete_message" qtlid="476079">Opravdu si přejete odstranit následující proud: <strong>{{stream}}</strong>?</translation>
-   <translation id="logs_streams_add_title" qtlid="426170">Přidat datový proud</translation>
-   <translation id="logs_streams_update_title" qtlid="476092">Upravit proud</translation>
-   <translation id="logs_streams_update_description" qtlid="476105">Pro proud <strong>{{ name }}</strong></translation>
+   <translation id="logs_stream_delete_title" qtlid="476066">Odstranit stream</translation>
+   <translation id="logs_stream_delete_message" qtlid="476079">Opravdu si přejete odstranit následující stream: <strong>{{stream}}</strong>?</translation>
+   <translation id="logs_streams_add_title" qtlid="426170">Přidat datový stream</translation>
+   <translation id="logs_streams_update_title" qtlid="476092">Upravit stream</translation>
+   <translation id="logs_streams_update_description" qtlid="476105">Pro stream <strong>{{ name }}</strong></translation>
    <translation id="logs_streams_select_options_placeholder" qtlid="476118">Zvolit možnost</translation>
    <translation id="logs_streams_enable_websocket" qtlid="426677">Aktivovat difúzi WebSocket</translation>
    <translation id="logs_streams_enable_websocket_description" qtlid="469491">Sledujte příjem svých logů v reálném čase prostřednictvím protokolu WebSocket.</translation>
@@ -356,20 +356,20 @@
    <translation id="logs_streams_select_archieve_duration" qtlid="426560">Doba uchování archivů</translation>
    <translation id="logs_streams_notification_title" qtlid="32386">Oznámení</translation>
    <translation id="logs_streams_notification_detail" qtlid="469530">Přeji si dostat upozornění na dostupnost archivu.</translation>
-   <translation id="logs_stream_create_success" qtlid="476131">Datový proud '{{streamName}}' byl úspěšně vytvořen.</translation>
-   <translation id="logs_stream_update_success" qtlid="476144">Datový proud '{{streamName}}' byl úspěšně upraven.</translation>
-   <translation id="logs_stream_delete_success" qtlid="476157">Datový proud '{{streamName}}' byl úspěšně odstraněn.</translation>
+   <translation id="logs_stream_create_success" qtlid="476131">Datový stream '{{streamName}}' byl úspěšně vytvořen.</translation>
+   <translation id="logs_stream_update_success" qtlid="476144">Datový stream '{{streamName}}' byl úspěšně upraven.</translation>
+   <translation id="logs_stream_delete_success" qtlid="476157">Datový stream '{{streamName}}' byl úspěšně odstraněn.</translation>
    <translation id="logs_streams_copy_token_success" qtlid="476170">Token byl zkopírován do Vaší schránky. Pro vložení zkopírovaného obsahu použijte klávesovou zkratku CTRL+V.</translation>
-   <translation id="logs_streams_get_graylog_url_error" qtlid="476183">URL adresa Greylog nebyla pro datový proud {{stream}} nalezena.</translation>
-   <translation id="logs_stream_delete_error" qtlid="476196">Při odstraňování datového proudu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_stream_update_error" qtlid="476209">Při modifikaci datového proudu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_stream_create_error" qtlid="476222">Při vytváření datového proudu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_stream_get_error" qtlid="476235">Při načítání datového proudu došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_streams_get_error" qtlid="476248">Při načítání datových proudů došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_streams_quota_get_error" qtlid="476261">Při načítání kvóty datového proudu došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_streams_archives_get_error" qtlid="476274">Při načítání upozornění datového proudu došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_streams_find_token_error" qtlid="476287">Token proud datový proud {{stream}} nenalezen.</translation>
-   <translation id="logs_streams_copy_token_error" qtlid="476300">Váš prohlížeč nepodporuje kopírování obsahu do schránky. Aktualizujte prosím svůj webový prohlížeč na nejnovější verzi. Hodnota tokenu pro datový proud {{stream}} je: {{token_value}}</translation>
+   <translation id="logs_streams_get_graylog_url_error" qtlid="476183">URL adresa Greylog nebyla pro datový stream {{stream}} nalezena.</translation>
+   <translation id="logs_stream_delete_error" qtlid="476196">Při odstraňování datového streamu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_stream_update_error" qtlid="476209">Při modifikaci datového streamu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_stream_create_error" qtlid="476222">Při vytváření datového streamu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_stream_get_error" qtlid="476235">Při načítání datového streamu došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_streams_get_error" qtlid="476248">Při načítání datových streamů došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_streams_quota_get_error" qtlid="476261">Při načítání kvóty datového streamu došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_streams_archives_get_error" qtlid="476274">Při načítání upozornění datového streamu došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_streams_find_token_error" qtlid="476287">Token pro datový stream {{stream}} nenalezen.</translation>
+   <translation id="logs_streams_copy_token_error" qtlid="476300">Váš prohlížeč nepodporuje kopírování obsahu do schránky. Aktualizujte prosím svůj webový prohlížeč na nejnovější verzi. Hodnota tokenu pro datový stream {{stream}} je: {{token_value}}</translation>
    <translation id="logs_stream_compression_gzip" qtlid="426508">.gz (zlib)</translation>
    <translation id="logs_stream_compression_zip" qtlid="426521">.zip (deflated)</translation>
    <translation id="logs_stream_compression_lzma" qtlid="426534">.7z (lzma-2)</translation>
@@ -382,9 +382,9 @@
    <translation id="logs_streams_follow_download_client" qtlid="476326">Stáhnout Idp-tail</translation>
    <translation id="logs_streams_follow_close_connection" qtlid="470037">Uzavřít spojení</translation>
    <translation id="logs_streams_follow_open_connection" qtlid="476339">Otevřít spojení</translation>
-   <translation id="logs_streams_follow_test_gelf" qtlid="476352">Otestovat datový proud s Gelf</translation>
-   <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Otestovat datový proud s LTSV</translation>
-   <translation id="logs_streams_follow_test_rfc" qtlid="476378">Otestovat datový proud s RFC 5424</translation>
+   <translation id="logs_streams_follow_test_gelf" qtlid="476352">Otestovat datový stream s Gelf</translation>
+   <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Otestovat datový stream s LTSV</translation>
+   <translation id="logs_streams_follow_test_rfc" qtlid="476378">Otestovat datový stream s RFC 5424</translation>
    <translation id="logs_streams_follow_emergency" qtlid="476391">Emergency</translation>
    <translation id="logs_streams_follow_alert" qtlid="81114">Upozornění</translation>
    <translation id="logs_streams_follow_critical" qtlid="476404">Critical</translation>
@@ -399,9 +399,9 @@
    <translation id="logs_streams_displaying_logs" qtlid="476443">Zobrazení logů</translation>
    <translation id="logs_streams_waiting_for_messages" qtlid="476456">Připojení WebSocket navázáno, čeká se na zprávy...</translation>
    <translation id="logs_streams_follow_connection_error" qtlid="476469">Při pokusu o připojení WebSocket došlo k chybě: {{message}}</translation>
-   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">Adresa WebSocket není pro datový proud {{stream}} k dispozici. Zkuste to prosím později.</translation>
+   <translation id="logs_streams_follow_get_websocket_error" qtlid="476482">Adresa WebSocket není pro datový stream {{stream}} k dispozici. Zkuste to prosím později.</translation>
    <translation id="logs_streams_follow_copy_websocket_success" qtlid="476495">Adresa WebSocket byla úspěšně zkopírována do Vaší schránky. Pro vložení zkopírovaného obsahu použijte klávesovou zkratku CTRL+V.</translation>
-   <translation id="logs_streams_follow_copy_websocket_error" qtlid="476508">Váš prohlížeč nepodporuje kopírování obsahu do schránky. Aktualizujte prosím svůj webový prohlížeč na nejnovější verzi. Adresa WebSocket pro datový proud {{stream}} je: {{url}}</translation>
+   <translation id="logs_streams_follow_copy_websocket_error" qtlid="476508">Váš prohlížeč nepodporuje kopírování obsahu do schránky. Aktualizujte prosím svůj webový prohlížeč na nejnovější verzi. Adresa WebSocket pro datový stream {{stream}} je: {{url}}</translation>
    <translation id="logs_streams_follow_copy_command_success" qtlid="476521">Příkaz ve formátu {{type}} byl zkopírován do Vaší schránky. Můžete ho otestovat pomocí terminálu.</translation>
    <translation id="logs_streams_follow_copy_command_error" qtlid="476534">Váš prohlížeč nepodporuje kopírování obsahu do schránky. Aktualizujte prosím svůj webový prohlížeč na nejnovější verzi. Příkaz ve formátu {{type}} je: "{{command}}". Pro provedení příkazu ho zkopírujte a vložte do terminálu.</translation>
    <translation id="logs_streams_get_command_urls_error" qtlid="476547">Chyba při načítání URL adresy pro příkazy Gelf, LTSV a RFC 5424. Tyto příkazy nebudete moci používat.</translation>
@@ -413,7 +413,7 @@
    <translation id="streams_archives_unfreezing" qtlid="469959">Probíhá rozmrazování archivu {{ name }}. Archiv bude dostupný za {{ time }}.</translation>
    <translation id="streams_archives_preparing_download" qtlid="476625">Příprava stažení souboru {{filename}}. Čekejte prosím...</translation>
    <translation id="streams_archives_title" qtlid="469933">Archivy</translation>
-   <translation id="streams_archives_current_title" qtlid="476638">Správa archivů pro datový proud {{ name }}</translation>
+   <translation id="streams_archives_current_title" qtlid="476638">Správa archivů pro datový stream {{ name }}</translation>
    <translation id="streams_archives_intro_text" qtlid="469946">Po rozmrazení jsou archivy dostupné ke stažení po dobu 24 hodin</translation>
    <translation id="streams_archives_file_name" qtlid="469972">Název souboru</translation>
    <translation id="streams_archives_size" qtlid="7726">Velikost</translation>
@@ -428,8 +428,8 @@
    <translation id="streams_archives_download" qtlid="39286">Stáhnout</translation>
    <translation id="streams_alerts_loading_error" qtlid="476677">Při načítání upozornění došlo k následující chybě: {{message}}</translation>
    <translation id="streams_alerts_ids_loading_error" qtlid="476690">Při načítání upozornění došlo k následující chybě: {{message}}</translation>
-   <translation id="streams_alerts_current_title" qtlid="469543">Správa upozornění pro proud {{ name }}</translation>
-   <translation id="streams_alerts_intro_text" qtlid="469556">Díky podmínečným upozorněním již nemusíte pracně prohledávat své logy - platforma to udělá za Vás. Existuje mnoho případů, pro něž lze upozornění nastavit: absence zpráv ze softwaru po podezřele dlouhou dobu, abnormálně nízký počet prováděných úkolů, vysoký síťový traffic na Vašich webových stránkách nebo detekce specifických klíčových hesel v datovém proudu.</translation>
+   <translation id="streams_alerts_current_title" qtlid="469543">Správa upozornění pro stream {{ name }}</translation>
+   <translation id="streams_alerts_intro_text" qtlid="469556">Díky podmínečným upozorněním již nemusíte pracně prohledávat své logy - platforma to udělá za Vás. Existuje mnoho případů, pro něž lze upozornění nastavit: absence zpráv ze softwaru po podezřele dlouhou dobu, abnormálně nízký počet prováděných úkolů, vysoký síťový traffic na Vašich webových stránkách nebo detekce specifických klíčových hesel v datovém streamu.</translation>
    <translation id="streams_alerts_title" qtlid="72797">Upozornění</translation>
    <translation id="streams_alerts_name" qtlid="3818">Název</translation>
    <translation id="streams_alerts_condition" qtlid="425806">Podmínka</translation>
@@ -510,8 +510,8 @@
    <translation id="logs_inputs_logurl_error" qtlid="477184">Při načítání URL kolektoru došlo k následující chybě: {{message}}</translation>
    <translation id="logs_inputs_test_error" qtlid="477197">Při testování kolektoru '{{inputTitle}}' došlo k následující chybě: {{message}}</translation>
    <translation id="inputs_title" qtlid="421217">Kolektory</translation>
-   <translation id="inputs_intro_text" qtlid="470167">Kolektory umožňují sběr logů odesílaných ze serverů či aplikací. Jedná se o efektivní způsob zpracování a transformace do formátu GELF, kompatibilního s Logs Data Platform. Nyní již nemusíte dedikovat své materiální zdroje a monitorovat dostupnost svých infrastruktur - my to uděláme za Vás. Tato platforma umožňuje za účelem zjednodušené a zabezpečené konfigurace (díky firewallovým pravidlům) připojení těchto nástrojů k Vašim datovým proudům.</translation>
-   <translation id="inputs_total_used" qtlid="477210">Používané kolektory</translation>
+   <translation id="inputs_intro_text" qtlid="470167">Kolektory umožňují sběr logů odesílaných ze serverů či aplikací. Jedná se o efektivní způsob zpracování a transformace do formátu GELF, kompatibilního s Logs Data Platform. Nyní již nemusíte dedikovat své materiální zdroje a monitorovat dostupnost svých infrastruktur - OVH to udělá za Vás. Tato platforma umožňuje připojení těchto nástrojů k Vašim datovým streamům za účelem zjednodušené a zabezpečené konfigurace (díky firewallovým pravidlům).</translation>
+   <translation id="inputs_total_used" qtlid="477210">používané kolektory</translation>
    <translation id="inputs_increase_quota" qtlid="474753">Navýšit kvótu</translation>
    <translation id="inputs_add_input" qtlid="423193">Přidat nový kolektor</translation>
    <translation id="inputs_name" qtlid="477223">Kolektor</translation>
@@ -566,8 +566,8 @@
    <translation id="inputs_logs_edit_description_field" qtlid="9238">Popis</translation>
    <translation id="inputs_logs_edit_software_field" qtlid="423973">Software</translation>
    <translation id="inputs_logs_edit_port_field" qtlid="470271">TCP port pro otevření</translation>
-   <translation id="inputs_logs_edit_stream_field" qtlid="423349">Připojit k datovému proudu</translation>
-   <translation id="inputs_logs_edit_select_stream" qtlid="470583">Vyberte proud</translation>
+   <translation id="inputs_logs_edit_stream_field" qtlid="423349">Připojit k datovému streamu</translation>
+   <translation id="inputs_logs_edit_select_stream" qtlid="470583">Vyberte stream</translation>
    <translation id="inputs_logs_edit_select_software" qtlid="477470">Vybrat software</translation>
    <translation id="inputs_logs_edit_option_field" qtlid="469478">Vyberte jednu z možností</translation>
    <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Unikátní instance</translation>
@@ -623,7 +623,7 @@
 
 <!-- Elasticsearch Indices -->
    <translation id="logs_index_description" qtlid="470414">Logs Data Platform umožňuje vytvářet a hostovat indexy Elasticsearch. Tyto indexy mohou být použity pro konfigurační data instance Kibana, indexaci statistických dat a obohacení či korelaci Vašich logů. Tyto indexy můžete následně používat s většinou nástrojů a aplikací kompatibilních s REST API Elasticsearch.</translation>
-   <translation id="logs_index_total_used" qtlid="477860">Používané indexy</translation>
+   <translation id="logs_index_total_used" qtlid="477860">používané indexy</translation>
    <translation id="logs_index_increase_quota" qtlid="474753">Navýšit kvótu</translation>
    <translation id="logs_index_quota_get_error" qtlid="477873">Při načítání kvóty indexu došlo k následující chybě: {{message}}</translation>
    <translation id="logs_index_add_data_feed" qtlid="423024">Přidat index</translation>
@@ -643,7 +643,7 @@
    <translation id="logs-input-4" qtlid="477990">1 kolektor se 4 instancemi</translation>
    <translation id="logs-input-8" qtlid="478003">1 kolektor s 8 instancemi</translation>
    <translation id="logs-dashboard-5" qtlid="426937">5 dashboardů Graylog</translation>
-   <translation id="logs-stream-5" qtlid="426950">5 datových proudů Graylog</translation>
+   <translation id="logs-stream-5" qtlid="426950">5 datových streamů Graylog</translation>
    <translation id="logs-kibana-1" qtlid="478016">Balíček Kibana: 1 alias a 1 index 500 MB</translation>
    <translation id="logs-alias-5" qtlid="478029">5 aliasů Elasticsearch</translation>
    <translation id="logs_index_modal_add_title" qtlid="423024">Přidat index</translation>
@@ -674,7 +674,7 @@
    <translation id="logs_aliases_col_title" qtlid="3818">Název</translation>
    <translation id="logs_aliases_col_description" qtlid="9238">Popis</translation>
    <translation id="logs_aliases_col_shared" qtlid="478172">Sdílený alias</translation>
-   <translation id="logs_aliases_col_streams" qtlid="478185">Připojené datové proudy</translation>
+   <translation id="logs_aliases_col_streams" qtlid="478185">Připojené datové streamy</translation>
    <translation id="logs_aliases_col_indices" qtlid="478198">Připojené indexy</translation>
    <translation id="logs_aliases_edit" qtlid="37875">Upravit</translation>
    <translation id="logs_aliases_delete" qtlid="2414">Odstranit</translation>
@@ -697,29 +697,29 @@
    <translation id="logs_aliases_get_elasticsearch_url_error" qtlid="478354">Elasticsearch URL nelze pro následující alias nalézt: {{alias}}</translation>
    <translation id="logs_aliases_update_description" qtlid="478367">Pro alias <strong>{{ name }}</strong></translation>
    <translation id="logs_aliases_link_title" qtlid="421672">Připojení obsahu</translation>
-   <translation id="logs_aliases_link_description" qtlid="421789">Alias může být připojen k jednomu či několika datovým proudům Graylog, nebo k jednomu či několika indexům Elasticsearch.</translation>
-   <translation id="logs_aliases_link_available_streams" qtlid="421685">Dostupné proudy</translation>
-   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Připojené datové proudy</translation>
-   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">Všechny datové proudy jsou připojeny</translation>
-   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">Není připojen žádný datový proud</translation>
+   <translation id="logs_aliases_link_description" qtlid="421789">Alias může být připojen k jednomu či několika datovým streamům Graylog, nebo k jednomu či několika indexům Elasticsearch.</translation>
+   <translation id="logs_aliases_link_available_streams" qtlid="421685">Dostupné streamy</translation>
+   <translation id="logs_aliases_link_attached_streams" qtlid="478185">Připojené datové streamy</translation>
+   <translation id="logs_aliases_link_all_streams_attached" qtlid="478380">Všechny datové streamy jsou připojeny</translation>
+   <translation id="logs_aliases_link_no_streams_attached" qtlid="478393">Není připojen žádný datový stream</translation>
    <translation id="logs_aliases_link_available_indexes" qtlid="421815">Dostupné indexy</translation>
    <translation id="logs_aliases_link_attached_indexes" qtlid="478406">Připojené indexy</translation>
    <translation id="logs_aliases_link_all_indexes_attached" qtlid="478419">Všechny indexy jsou připojeny</translation>
    <translation id="logs_aliases_link_no_indexes_attached" qtlid="478432">Není připojen žádný index</translation>
-   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Při připojování k datovému proudu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Chyba při připojování k datovému proudu '{{stream}}': {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_error" qtlid="478471">Při odpojování od datového proudu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Chyba při odpojování od datového proudu '{{stream}}': {{message}}</translation>
+   <translation id="logs_aliases_attach_stream_error" qtlid="478445">Při připojování k datovému streamu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_aliases_attach_stream_fail" qtlid="478458">Chyba při připojování k datovému streamu '{{stream}}': {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_error" qtlid="478471">Při odpojování od datového streamu '{{streamName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_aliases_detach_stream_fail" qtlid="478484">Chyba při odpojování od datového streamu '{{stream}}': {{message}}</translation>
    <translation id="logs_aliases_attach_index_error" qtlid="478497">Při připojování k indexu '{{indexName}}' došlo k následující chybě: {{message}}</translation>
    <translation id="logs_aliases_attach_index_fail" qtlid="478510">Chyba při připojování k indexu '{{index}}': {{message}}</translation>
    <translation id="logs_aliases_detach_index_error" qtlid="478523">Při odpojování od indexu '{{indexName}}' došlo k chybě: {{message}}</translation>
    <translation id="logs_aliases_detach_index_fail" qtlid="478536">Chyba při odpojování od indexu '{{index}}': {{message}}</translation>
-   <translation id="logs_aliases_remove_streams_message" qtlid="478549">K tomuto aliasu jsou připojeny datové proudy. Mohou být připojeny pouze datové proudy nebo indexy elasticsearch. Aby bylo možné přidat index, odpojte nejdříve všechny datové proudy.</translation>
-   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">K tomuto aliasu jsou připojeny indexy Elasticsearch. Mohou být připojeny pouze datové proudy nebo indexy elasticsearch. Aby bylo možné přidat datový proud, odpojte nejdříve všechny indexy.</translation>
+   <translation id="logs_aliases_remove_streams_message" qtlid="478549">K tomuto aliasu jsou připojeny datové streamy. Mohou být připojeny pouze datové streamy nebo indexy elasticsearch. Aby bylo možné přidat index, odpojte nejdříve všechny datové streamy.</translation>
+   <translation id="logs_aliases_remove_indexes_message" qtlid="478562">K tomuto aliasu jsou připojeny indexy Elasticsearch. Mohou být připojeny pouze datové streamy nebo indexy elasticsearch. Aby bylo možné přidat datový stream, odpojte nejdříve všechny indexy.</translation>
 
 <!-- Roles -->
    <translation id="logs_roles_title" qtlid="427886">Role</translation>
-   <translation id="logs_roles_description" qtlid="425130">Vaše logy obsahují důležité informace, které je někdy zapotřebí sdílet s ostatními lidmi. Logs Data Platform Vám nabízí možnost definování přístupových práv (v režimu read-only) k datům obsaženým v určitých proudech, dashboardech, indexech či aliasech.</translation>
+   <translation id="logs_roles_description" qtlid="425130">Vaše logy obsahují důležité informace, které je někdy zapotřebí sdílet s ostatními lidmi. Logs Data Platform Vám nabízí možnost definování přístupových práv (v režimu read-only) k datům obsaženým v určitých streamech, dashboardech, indexech či aliasech.</translation>
    <translation id="logs_roles_total_used" qtlid="478575">používané role</translation>
    <translation id="logs_roles_name" qtlid="478588">role</translation>
    <translation id="logs_roles_add" qtlid="425143">Přidat roli</translation>
@@ -742,7 +742,7 @@
    <translation id="logs_role_modal_name" qtlid="3818">Název</translation>
    <translation id="logs_role_modal_description" qtlid="9238">Popis</translation>
    <translation id="logs_role_modal_option" qtlid="469478">Vyberte jednu z možností</translation>
-   <translation id="logs_roles_tooltip" qtlid="469309">Při nákupu datových proudů, aliasů a dashboardů Vám budou nabídnuty uživatelské role (např. 5 proudů = 5 rolí).</translation>
+   <translation id="logs_roles_tooltip" qtlid="469309">Při nákupu datových streamů, aliasů a dashboardů Vám budou nabídnuty uživatelské role (např. 5 streamů = 5 rolí).</translation>
    <translation id="logs_role_modal_delete_title" qtlid="470752">Odstranit roli</translation>
    <translation id="logs_role_modal_delete_question" qtlid="478614">Opravdu si přejete odstranit následující roli: <strong>{{name}}</strong>?</translation>
    <translation id="logs_role_add_success" qtlid="478627">Role '{{name}}' byla úspěšně vytvořena.</translation>
@@ -759,20 +759,20 @@
    <translation id="logs_role_overview_permissions" qtlid="6946">Práva</translation>
    <translation id="logs_role_overview_members" qtlid="425169">Členové</translation>
    <translation id="logs_role_overview_linked_option" qtlid="426768">Související volby</translation>
-   <translation id="logs_role_overview_stream" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_role_overview_stream" qtlid="422452">Datové streamy</translation>
    <translation id="logs_role_overview_index" qtlid="426729">Indexy</translation>
    <translation id="logs_role_overview_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_overview_dashboard" qtlid="225075">Dashboardy</translation>
    <translation id="logs_roles_edit_permissions_title" qtlid="470687">Upravit oprávnění</translation>
    <translation id="logs_roles_permissions_subtitle" qtlid="478601">Pro roli <strong>{{ role }}</strong></translation>
-   <translation id="logs_roles_permissions_streams" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_roles_permissions_streams" qtlid="422452">Datové streamy</translation>
    <translation id="logs_roles_permissions_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_roles_permissions_indices" qtlid="426729">Indexy</translation>
    <translation id="logs_roles_permissions_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_role_available_stream" qtlid="478731">Dostupné proudy</translation>
-   <translation id="logs_role_selected_stream" qtlid="478744">Vybrané proudy</translation>
-   <translation id="logs_role_empty_stream" qtlid="478757">Byly vybrány všechny proudy</translation>
-   <translation id="logs_role_empty_selected_stream" qtlid="478770">Nebyl vybrán žádný proud</translation>
+   <translation id="logs_role_available_stream" qtlid="478731">Dostupné streamy</translation>
+   <translation id="logs_role_selected_stream" qtlid="478744">Vybrané streamy</translation>
+   <translation id="logs_role_empty_stream" qtlid="478757">Byly vybrány všechny streamy</translation>
+   <translation id="logs_role_empty_selected_stream" qtlid="478770">Nebyl vybrán žádný stream</translation>
    <translation id="logs_role_available_index" qtlid="478783">Dostupné indexy</translation>
    <translation id="logs_role_selected_index" qtlid="478796">Vybrané indexy</translation>
    <translation id="logs_role_empty_index" qtlid="478809">Byly vybrány všechny indexy</translation>
@@ -787,7 +787,7 @@
    <translation id="logs_role_empty_selected_dashboard" qtlid="478926">Nebyl vybrán žádný dashboard</translation>
    <translation id="logs_roles_add_alias_error" qtlid="478939">Při přidávání aliasu k tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
    <translation id="logs_roles_add_dashboard_error" qtlid="478952">Při přidávání dashboardu k tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
-   <translation id="logs_roles_add_stream_error" qtlid="478965">Při přidávání datového proudu k tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
+   <translation id="logs_roles_add_stream_error" qtlid="478965">Při přidávání datového streamu k tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
    <translation id="logs_roles_add_index_error" qtlid="478978">Při přidávání indexu k tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
    <translation id="logs_remove_permission_error" qtlid="478991">Při odebírání tokenu '{{tokenName}}' došlo k následující chybě: {{message}}</translation>
    <translation id="logs_roles_members_title" qtlid="356810">Spravovat členy</translation>
@@ -815,7 +815,7 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Domů</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Datové proudy</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Datové streamy</translation>
    <translation id="logs_tab_dashboards" qtlid="225075">Dashboardy</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Kolektory</translation>
    <translation id="logs_tab_indices" qtlid="426729">Indexy</translation>

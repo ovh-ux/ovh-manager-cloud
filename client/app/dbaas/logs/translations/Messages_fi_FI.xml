@@ -234,7 +234,7 @@
    <translation id="logs_options_modal_reactivate_title" qtlid="475195">Ota lisäpalvelu käyttöön</translation>
    <translation id="logs_options_modal_reactivate_description" qtlid="475208">Ota yhteyttä asiakaspalveluun tämän lisäpalvelun '{{optionType}}' aktivoimiseksi.</translation>
    <translation id="logs_options_manage_terminate_title" qtlid="475221">Poista lisäpalvelu käytöstä</translation>
-   <translation id="logs_options_manage_terminate_question" qtlid="475234">Haluatko varmasti poistaa käytöstä kohteen <strong>{{optionType}}</strong>. Ota yhteyttä asiakaspalveluun tämän lisäpalvelun <strong>{{optionType}}</strong> uudelleenaktivoimiseksi.</translation>
+   <translation id="logs_options_manage_terminate_question" qtlid="475234">Haluatko varmasti poistaa käytöstä kohteen <strong>{{optionType}}</strong>? Huomaa, että tämän lisäpalvelun uudelleenaktivoiminen edellyttää yhteydenottoa asiakaspalveluun.</translation>
    <translation id="logs_options_delete_error" qtlid="475247">Tapahtui virhe poistettaessa käytöstä lisäpalvelua '{{optionType}}': {{message}}</translation>
    <translation id="logs_options_delete_success" qtlid="475260">Lisäpalvelu {{optionType}} poistettiin käytöstä.</translation>
    <translation id="logs_options_description_manage" qtlid="475273">Hallitse lisäpalvelujasi menemällä sivulle</translation>
@@ -533,7 +533,7 @@ tiettyyn kategoriaan heti niiden saavuttua Logs Data Platform -alustalle. Jos si
    <translation id="inputs_start" qtlid="25951">Käynnistä</translation>
    <translation id="inputs_restart" qtlid="33538">Uudelleenkäynnistä</translation>
    <translation id="inputs_stop" qtlid="108480">Stop</translation>
-   <translation id="inputs_standard_output" qtlid="424350">Konsolin tulostus</translation>
+   <translation id="inputs_standard_output" qtlid="424350">Konsolin ulostulo</translation>
    <translation id="inputs_starting" qtlid="477262">Keräystyökalun {{inputTitle}} käynnistys</translation>
    <translation id="inputs_stopping" qtlid="477275">Keräystyökalun {{inputTitle}} pysäytys</translation>
    <translation id="inputs_restarting" qtlid="477288">Keräystyökalun {{inputTitle}} uudelleenkäynnistys</translation>
