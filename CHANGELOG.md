@@ -1,3 +1,23 @@
+<a name="7.2.4"></a>
+## [7.2.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.3...v7.2.4) (2018-05-18)
+
+
+### Bug Fixes
+
+* **logs:** fix PUT or POST ([26c39ac](https://github.com/ovh-ux/ovh-manager-cloud/commit/26c39ac))
+
+
+
+<a name="7.2.3"></a>
+## [7.2.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.2...v7.2.3) (2018-05-18)
+
+
+### Bug Fixes
+
+* remove iplb from action menu in sidebar ([ae5f746](https://github.com/ovh-ux/ovh-manager-cloud/commit/ae5f746))
+
+
+
 <a name="7.2.2"></a>
 ## [7.2.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.1...v7.2.2) (2018-05-18)
 

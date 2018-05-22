@@ -58,7 +58,7 @@ class LogsStreamsAddCtrl {
     }
 
     submit () {
-        if (this.edit) {
+        if (this.isEdit) {
             this.updateStream();
         } else {
             this.createStream();
