@@ -39,6 +39,9 @@ class LogsStreamsAddCtrl {
         this.accountDetails.load().then(() => {
             this.ovhSubsidiary = this.accountDetails.data.me.ovhSubsidiary;
             this.$q.all([this.mainOffer.load(), this.catalog.load()]).then(() => {
+                if (this.mainOffer.data.planCode === this.LogsConstants.basicOffer && !this.isEdit) {
+                    this.stream.data.webSocketEnabled = false;
+                }
                 const selectedCatalog = this.catalog.data.plans.find(plan => plan.planCode === this.mainOffer.data.planCode);
                 const coldstorage = selectedCatalog.addonsFamily.find(addon => addon.family === this.LogsConstants.COLDSTORAGE);
                 this.coldStoragePrice.price = coldstorage.addons[0].plan.details.pricings.default[0].price.text;

@@ -6,7 +6,8 @@ angular.module("managerApp")
                 data-loading="$ctrl.loading"
                 class="h-100">
                 <cui-tile-body>
-                    <cui-tile-item data-ng-if="$ctrl.subscriptionInfo.offer" 
+                    <cui-tile-item class="cui-tile__top-bordered"
+                        data-ng-if="$ctrl.subscriptionInfo.offer" 
                         data-term="'common_tile_subscription_offer' | translate" 
                         data-description="$ctrl.subscriptionInfo.offer"
                         data-actions="$ctrl.offerActions"></cui-tile-item>

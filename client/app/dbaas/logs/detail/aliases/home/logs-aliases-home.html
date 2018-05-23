@@ -17,7 +17,7 @@
                 max-usage="ctrl.quota.data.max"
                 callback="ctrl.add()">
             </logs-add-tool>
-            <oui-spinner data-ng-if="ctrl.quota.loading"></oui-spinner>
+            <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.delete.loading"></oui-spinner>
         </extra-top>
         <oui-column title="::'logs_aliases_col_title' | translate" property="info.name" sortable="asc" type="string" searchable filterable></oui-column>
         <oui-column title="::'logs_aliases_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
