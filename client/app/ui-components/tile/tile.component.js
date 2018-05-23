@@ -195,7 +195,7 @@ angular.module("managerApp")
         template: `
             <div>
                 <button data-ng-if="$ctrl.action.callback || ($ctrl.action.isAvailable && !$ctrl.action.isAvailable())"
-                    class="oui-button oui-button_link cui-tile__button cui-tile__link"
+                    class="oui-button oui-button_link oui-button_full-width cui-tile__button cui-tile__link"
                     data-ng-click="$ctrl.action.callback()"
                     data-ng-class="{ 'cui-tile__link_disabled': $ctrl.disabled }"
                     data-ng-disabled="$ctrl.action.isAvailable && !$ctrl.action.isAvailable()">
@@ -204,7 +204,7 @@ angular.module("managerApp")
                 </button>
                 <a data-ng-if="$ctrl.action.state && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     data-ng-class="{ 'cui-tile__link_disabled': $ctrl.disabled }"
-                    class="oui-button oui-button_link cui-tile__button cui-tile__link"
+                    class="oui-button oui-button_link oui-button_full-width cui-tile__button cui-tile__link"
                     data-ui-sref="{{ $ctrl.action.state + $ctrl.getActionStateParamString() }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
                     <span data-ng-bind="$ctrl.action.text"></span>
@@ -212,7 +212,7 @@ angular.module("managerApp")
                 </a>
                 <a data-ng-if="$ctrl.action.href && (!$ctrl.action.isAvailable || $ctrl.action.isAvailable())"
                     data-ng-class="{ 'cui-tile__link_disabled': $ctrl.disabled }"
-                    class="oui-button oui-button_link cui-tile__button"
+                    class="oui-button oui-button_link oui-button_full-width cui-tile__button"
                     data-at-internet-click="{ name: $ctrl.action.atInternetClickTag }"
                     data-ng-href="{{ $ctrl.action.href }}"
                     ng-attr-target="{{($ctrl.action.isExternal) ? '_blank' : undefined}}">
