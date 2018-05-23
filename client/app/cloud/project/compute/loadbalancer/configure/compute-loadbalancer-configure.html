@@ -36,6 +36,10 @@
         </div>
         <div data-ng-if="$ctrl.loadbalancer.status !== 'custom' && $ctrl.loadbalancer.status !== 'unavailable'">
             <h3 data-translate="cpc_loadbalancer_configure_loadbalancer"></h3>
+            <p data-ng-if="$ctrl.loadbalancer && $ctrl.loadbalancer.displayName">
+                <div class="oui-label" data-translate="cpc_loadbalancer_displayname"></div>
+                <span data-ng-bind="$ctrl.loadbalancer.displayName"></span>
+            </p>
             <oui-field data-label="{{::'cpc_loadbalancer_configure_adresse' | translate}}">
                 <div class="inline-block">
                     <cui-clipboard data-text="$ctrl.loadbalancer.ipv4"
@@ -64,30 +68,19 @@
             <hr />
             <h3 data-translate="cpc_loadbalancer_configure_servers"></h3>
             <p class="oui-box" data-translate="cpc_loadbalancer_configure_servers_condition"></p>
-            <oui-table rows="$ctrl.table.server"
-                data-ng-if="$ctrl.table.server !== null"
-                on-row-click="$ctrl.toggleServer($row.ip)">
-                <column>
-                    <div class="oui-checkbox" data-ng-click="$event.stopPropagation()">
-                        <input class="oui-checkbox__input"
-                            type="checkbox"
-                            name="server{{$row.ip}}"
-                            id="server{{$row.ip}}"
-                            data-ng-model="$ctrl.form.servers[$row.ip]">
-                        <label class="oui-checkbox__label-container" for="server{{$row.ip}}">
-                            <span class="oui-checkbox__label">
-                                <span class="oui-checkbox__icon">
-                                    <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                                    <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                                </span>
-                            </span>
-                        </label>
-                    </div>
-                </column>
-                <column title="'cpc_loadbalancer_configure_server_name' | translate" property="label"></column>
-                <column title="'IP'" property="ip"></column>
-            </oui-table>
+
+            <oui-datagrid rows="$ctrl.table.server">
+                <oui-column>
+                    <oui-checkbox
+                        data-name="server{{$row.ip}}"
+                        data-id="server{{$row.ip}}"
+                        data-model="$ctrl.form.servers[$row.ip]">
+                    </oui-checkbox>
+                </oui-column>
+                <oui-column data-title="'cpc_loadbalancer_configure_server_name' | translate" data-property="label"></oui-column>
+                <oui-column data-title="'IP'" data-property="ip"></oui-column>
+            </oui-datagrid>
+
             <div data-ng-if="!$ctrl.loaders.table.server && !$ctrl.table.server">
                 <i class="fa fa-bug"></i>
                 <span translate="cpc_server_error"></span>

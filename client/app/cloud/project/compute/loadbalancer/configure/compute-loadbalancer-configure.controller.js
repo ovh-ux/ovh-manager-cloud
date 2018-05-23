@@ -84,7 +84,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
     }
 
     back () {
-        this.$state.go("^.loadbalancer");
+        this.$state.go("iaas.pci-project.compute.loadbalancer");
     }
 
     initGuides () {
@@ -225,11 +225,6 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
                 this.CloudMessage.error([this.$translate.instant("cpc_loadbalancer_error"), err.data && err.data.message || ""].join(" "));
             });
     }
-
-    toggleServer (ip) {
-        this.form.servers[ip] = !this.form.servers[ip];
-    }
-
 
     startTaskPolling () {
         this.stopTaskPolling();
