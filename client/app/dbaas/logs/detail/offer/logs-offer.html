@@ -1,12 +1,13 @@
-<div class="cui-page__content">
+<div class="cui-page__content cui-page__content-narrow">
     <oui-back-button data-title="{{ ::'logs_offer_title' | translate }}" data-on-click="ctrl.goToHomePage()"></oui-back-button>
 
-    <div class="pl-4 mb-3" data-ng-if="ctrl.offerDetail.currentOfferType === 'pro'">
-        <span data-translate="logs_offer_description_pro" translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}"></span>
-    </div>
-    <div class="pl-4 mb-3" data-ng-if="ctrl.offerDetail.currentOfferType === 'upgrade'">
-        <span data-translate="logs_offer_description_upgrade"></span>
-    </div>
+    <p data-ng-if="ctrl.offerDetail.currentOfferType === 'pro'"
+       data-translate="logs_offer_description_pro"
+       data-translate-value-offer="{{ctrl.offerDetail.currentOffer | translate}}">
+    </p>
+    <p data-ng-if="ctrl.offerDetail.currentOfferType === 'upgrade'"
+       data-translate="logs_offer_description_upgrade">
+    </p>
     <div data-ng-if="ctrl.offers.loading" class="text-center">
         <oui-spinner data-size="l"></oui-spinner>
     </div>
@@ -25,7 +26,7 @@
     </div>
 
     <oui-radio-group data-model="ctrl.offerDetail.selectedOffer" data-name="offerPlanCode">
-        <div class="cui-grid-list d-md-flex flex-wrap">
+        <div class="cui-grid-list">
             <div class="cui-grid-list-item cui-grid-cell"
                  data-ng-repeat="offer in ctrl.offers.data track by $index"
                  data-ng-if="offer.planCode !== 'logs-basic'">
@@ -57,7 +58,7 @@
             data-ng-click="ctrl.orderPro()"></button>
     </div>
 
-    <div class="pl-4" ng-if="ctrl.offerDetail.currentOfferType !== 'basic'">
+    <div ng-if="ctrl.offerDetail.currentOfferType !== 'basic'">
         <oui-spinner data-ng-show="ctrl.savingOffer.loading"></oui-spinner>
         <div data-ng-hide="ctrl.savingOffer.loading || ctrl.offers.loading">
             <button type="submit"
