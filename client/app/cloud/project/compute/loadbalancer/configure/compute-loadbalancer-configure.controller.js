@@ -1,9 +1,10 @@
 class CloudProjectComputeLoadbalancerConfigureCtrl {
-    constructor ($anchorScroll, $scope, $stateParams, $q, $location, $window, $translate, CloudProjectComputeLoadbalancerService,
+    constructor ($anchorScroll, $scope, $state, $stateParams, $q, $location, $window, $translate, CloudProjectComputeLoadbalancerService,
                  OvhApiIpLoadBalancing, OvhApiCloudProjectIplb, OvhApiCloudProject, ovhDocUrl, CloudMessage, IpLoadBalancerTaskService,
                  ControllerHelper, CloudPoll) {
         this.$anchorScroll = $anchorScroll;
         this.$scope = $scope;
+        this.$state = $state;
         this.$q = $q;
         this.$location = $location;
         this.$window = $window;
@@ -40,6 +41,7 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
 
         this.form = {
             openstack: false,
+            protocole: "HTTP",
             servers: {}
         };
 
@@ -79,6 +81,10 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
 
         this.$scope.$on("$destroy", () => this.stopTaskPolling());
         this.initGuides();
+    }
+
+    back () {
+        this.$state.go("iaas.pci-project.compute.loadbalancer");
     }
 
     initGuides () {
@@ -219,11 +225,6 @@ class CloudProjectComputeLoadbalancerConfigureCtrl {
                 this.CloudMessage.error([this.$translate.instant("cpc_loadbalancer_error"), err.data && err.data.message || ""].join(" "));
             });
     }
-
-    toggleServer (ip) {
-        this.form.servers[ip] = !this.form.servers[ip];
-    }
-
 
     startTaskPolling () {
         this.stopTaskPolling();

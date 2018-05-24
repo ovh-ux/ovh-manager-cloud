@@ -7,7 +7,7 @@ class DeskaasUpgradeCtrl {
         this.ControllerHelper = ControllerHelper;
         this.DeskaasService = DeskaasService;
         this.OvhApiDeskaasService = OvhApiDeskaasService;
-        this.choice = null;
+        this.deskaasOffer = null;
         this.flags = {
             init: true
         };
@@ -40,12 +40,12 @@ class DeskaasUpgradeCtrl {
         this.saving = true;
         return this.ControllerHelper.modal.showConfirmationModal({
             titleText: this.$translate.instant("vdi_btn_popup_upgrade"),
-            text: this.$translate.instant("vdi_confirm_upgrade", { plan: this.choice.name, price: this.choice.priceText })
+            textHtml: this.$translate.instant("vdi_confirm_upgrade", { plan: this.deskaasOffer.name, price: this.deskaasOffer.priceText })
         })
             .then(() => this.OvhApiDeskaasService.v6().upgradeService({
                 serviceName: this.serviceName
             }, {
-                planCode: this.choice.planCode
+                planCode: this.deskaasOffer.planCode
             }))
             .then(taskId => {
                 this.$state.go("deskaas.details", { serviceName: this.serviceName, followTask: taskId });
@@ -53,10 +53,6 @@ class DeskaasUpgradeCtrl {
             .finally(() => {
                 this.saving = false;
             });
-    }
-
-    selectChoice () {
-        this.choice = JSON.parse(this.deskaasOffer);
     }
 }
 
