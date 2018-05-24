@@ -7,7 +7,7 @@ angular.module("managerApp")
                     cloudProjectCompute: {
                         templateUrl: "app/cloud/project/compute/loadbalancer/configure/compute-loadbalancer-configure.html",
                         controller: "CloudProjectComputeLoadbalancerConfigureCtrl",
-                        controllerAs: "CloudProjectComputeLoadbalancerConfigureCtrl"
+                        controllerAs: "$ctrl"
                     }
                 },
                 translations: ["common"]
