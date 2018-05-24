@@ -1,3 +1,21 @@
+<a name="7.3.1"></a>
+## [7.3.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.0...v7.3.1) (2018-05-23)
+
+
+### Bug Fixes
+
+* **error:** fix error handling ([5d023ce](https://github.com/ovh-ux/ovh-manager-cloud/commit/5d023ce))
+* **logs:** add loaders on deletion ([5145fd5](https://github.com/ovh-ux/ovh-manager-cloud/commit/5145fd5))
+* **logs:** disable websocket on basic offer ([269c18b](https://github.com/ovh-ux/ovh-manager-cloud/commit/269c18b))
+* **logs:** fix archive translation ([9ce1ea5](https://github.com/ovh-ux/ovh-manager-cloud/commit/9ce1ea5))
+
+
+### Features
+
+* **pci:** limit volume to 4 Tb ([99d1fbd](https://github.com/ovh-ux/ovh-manager-cloud/commit/99d1fbd))
+
+
+
 <a name="7.3.0"></a>
 # [7.3.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.2.4...v7.3.0) (2018-05-22)
 

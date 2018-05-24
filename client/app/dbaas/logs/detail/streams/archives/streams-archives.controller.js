@@ -156,8 +156,8 @@ class LogsStreamsArchivesCtrl {
         return archive.retrievalState === this.LogsConstants.state.UNSEALING ?
             [this._updateNotification({
                 text: this.$translate.instant("streams_archives_unfreezing", {
-                    filename: archive.filename,
-                    remainingTime: moment.utc(archive.retrievalDelay * 1000).format("HH:mm:ss")
+                    name: archive.filename,
+                    time: moment.utc(archive.retrievalDelay * 1000).format("HH:mm:ss")
                 }),
                 type: "info",
                 archive
