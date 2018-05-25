@@ -57,6 +57,14 @@
 
     <div class="cui-page__content">
         <section>
+            <announcement-message
+                data-preference-name="'CLOUD_VRACK_UPDATE'"
+                data-start-date="'2018-03-26'"
+                data-duration-in-days="31">
+                <span data-translate="vrack_ram_update_announcement_message"></span>
+            </announcement-message>
+        </section>
+        <section>
             <div ng-if="VrackCtrl.description || VrackCtrl.descriptionEditing">
                 <cui-page-content-title data-text="'vrack_description_title' | translate"></cui-page-content-title>
                 <form name="descriptionForm" data-ng-class="{'has-error': descriptionForm.description.$invalid}" ng-submit="VrackCtrl.saveDescription()">
@@ -104,7 +112,7 @@
                 </div>
             </div>
             <div ng-if="!VrackCtrl.description && !VrackCtrl.descriptionEditing">
-                <p class="vrack__text vrack__empty-description-text">
+                <p>
                     <button class="btn-link no-padding"
                             type="button"
                             ng-click="VrackCtrl.editDescription()"

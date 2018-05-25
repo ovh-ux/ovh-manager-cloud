@@ -33,4 +33,5 @@
    <translation id="vrack_move_dialog_choose_vrack_label" qtlid="353595">vRack de destination:</translation>
    <translation id="vrack_move_dialog_choose_vrack_default_option" qtlid="353608">Selectionnez un vRack</translation>
    <translation id="vrack_move_dialog_request_error" qtlid="353621">Oups, l'opération de déplacement du datacenter a échouée.</translation>
+   <translation id="vrack_ram_update_announcement_message">Nouveau ! Le réseau privé vRack passe de 10 à 100 Mbit/s sur les serveurs dédiés concernés, sans surcoût.</translation>
 </translations>
