@@ -96,6 +96,7 @@
         "js": [
             "node_modules/@bower_components/angular-mocks/angular-mocks.js",
             "node_modules/@bower_components/jasmine-expect/dist/jasmine-matchers.js",
+            "node_modules/@bower_components/json3/lib/json3.js",
             "node_modules/@bower_components/karma-read-json/karma-read-json.js"
         ]
     }
