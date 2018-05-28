@@ -41,7 +41,7 @@ class LogsHelperService {
      * @memberof LogsHelperService
      */
     handleError (errorMessage, error, messageData) {
-        return this.ServiceHelper.errorHandler(errorMessage)({ data: _.assign(messageData, error.data) });
+        return this.ServiceHelper.errorHandler({ textToTranslate: errorMessage, translateParams: messageData })(error);
     }
 
     /**
