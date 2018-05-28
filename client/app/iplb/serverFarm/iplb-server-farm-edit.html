@@ -1,10 +1,6 @@
 <div class="cui-page__content">
-    <cui-back-link data-state="network.iplb.detail.server-farm"
-                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
-                   data-text="'iplb_back_home' | translate"></cui-back-link>
-    <h1 data-ng-hide="ctrl.edition" data-translate="iplb_farm_add_title"></h1>
-    <h1 data-ng-show="ctrl.edition" data-translate="iplb_farm_update_title"
-        data-translate-values="{ farmId: ctrl.farm.farmId }"></h1>
+    <oui-back-button data-title="{{ :: (ctrl.edition ? 'iplb_farm_update_title' : 'iplb_farm_add_title') | translate: { farmId: ctrl.farm.farmId } }}">
+    </oui-back-button>
 
     <form novalidate name="ctrl.form">
         <div class="oui-field">
@@ -73,8 +69,8 @@
             </div>
         </div>
 
-        <div data-ng-if="!ctrl.privateNetworks.loading && ctrl.privateNetworks.data.length" 
-            class="oui-field" 
+        <div data-ng-if="!ctrl.privateNetworks.loading && ctrl.privateNetworks.data.length"
+            class="oui-field"
             data-ng-class="{ 'oui-field_error': ctrl.form.$submitted && ctrl.form.vrackNetworkId.$invalid }">
             <label for="vrackNetworkId" class="oui-label" data-translate="iplb_farm_edit_private_network"></label>
             <div class="oui-field__content">

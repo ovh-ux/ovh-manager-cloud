@@ -3,9 +3,7 @@
     <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
 
     <section class="cui-page__content">
-        <cui-back-link data-state="iaas.pci-project.storage" data-text="'storage_add_button_return' |translate"></cui-back-link>
-
-        <cui-page-content-title data-text="contentTitle"></cui-page-content-title>
+        <oui-back-button data-title="{{ :: contentTitle }}"></oui-back-button>
 
         <div data-ng-show="!loaders.init">
 

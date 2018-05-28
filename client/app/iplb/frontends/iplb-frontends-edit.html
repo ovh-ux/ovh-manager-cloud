@@ -1,10 +1,6 @@
 <div class="cui-page__content">
-    <cui-back-link data-state="network.iplb.detail.frontends"
-                   data-state-params="{ serviceName: ctrl.$stateParams.serviceName}"
-                   data-text="'iplb_back_home' | translate"></cui-back-link>
-    <h1 data-ng-hide="ctrl.edition" data-translate="iplb_frontend_add_title"></h1>
-    <h1 data-ng-show="ctrl.edition" data-translate="iplb_frontend_update_title"
-        data-translate-values="{ frontendId: ctrl.frontend.frontendId }"></h1>
+    <oui-back-button data-title="{{ :: (ctrl.edition ? 'iplb_frontend_update_title' : 'iplb_frontend_add_title') | translate: { frontendId: ctrl.frontend.frontendId } }}">
+    </oui-back-button>
 
     <form novalidate name="ctrl.form">
         <div class="oui-field">

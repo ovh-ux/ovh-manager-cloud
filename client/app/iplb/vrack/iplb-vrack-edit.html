@@ -1,9 +1,6 @@
 <section class="cui-page__content">
-    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
-        data-state-params="$ctrl.previousState.stateParams"
-        data-text="'common_back' | translate"></cui-back-link>
-    <cui-page-content-title data-ng-if="!$ctrl.editing()" text="'iplb_vrack_private_network_add_title' | translate"></cui-page-content-title>
-    <cui-page-content-title data-ng-if="$ctrl.editing()" text="'iplb_vrack_private_network_edit_title' | translate"></cui-page-content-title>
+    <oui-back-button data-title="{{ :: ($ctrl.editing() ? 'iplb_vrack_private_network_edit_title' : 'iplb_vrack_private_network_add_title') | translate }}">
+    </oui-back-button>
     <oui-spinner data-ng-if="$ctrl.isLoading()"></oui-spinner>
     <form data-ng-if="!$ctrl.isLoading()" novalidate name="$ctrl.form">
         <oui-field label="{{:: 'iplb_vrack_private_network_add_edit_field_display_name_label' | translate }}"
