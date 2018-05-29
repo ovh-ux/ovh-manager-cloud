@@ -516,7 +516,7 @@ class ManagerNavbarService {
         switch (this.TARGET) {
         case "EU": {
             if (this.locale === "FR") {
-                return ["portal", "web", "dedicated", "cloud", "telecom", "gamma", "partners", "labs"];
+                return ["portal", "web", "dedicated", "cloud", "telecom", "gamma", "partners"];
             }
 
             return ["portal", "web", "dedicated", "cloud", "telecom", "gamma"];

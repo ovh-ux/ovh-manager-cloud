@@ -1,3 +1,17 @@
+<a name="7.3.2"></a>
+## [7.3.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.1...v7.3.2) (2018-05-24)
+
+
+### Features
+
+* **deskaas:** upgrade form standardization ([b143222](https://github.com/ovh-ux/ovh-manager-cloud/commit/b143222))
+* **pci:** infra/loadBalancer configure form standardization ([06160a0](https://github.com/ovh-ux/ovh-manager-cloud/commit/06160a0))
+* **pci-loadbalancer:** transform oui-table into oui-datagrid ([43adac5](https://github.com/ovh-ux/ovh-manager-cloud/commit/43adac5))
+* **vps:** use cui-grid instead of specific less ([6d52305](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d52305))
+* update otrs ([ce49a46](https://github.com/ovh-ux/ovh-manager-cloud/commit/ce49a46))
+
+
+
 <a name="7.3.1"></a>
 ## [7.3.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.0...v7.3.1) (2018-05-23)
 
