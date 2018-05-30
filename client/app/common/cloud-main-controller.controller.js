@@ -1,10 +1,10 @@
 class CloudMainController {
-    constructor ($document, $interval, $rootScope, $translate, OvhApiProducts) {
+    constructor ($document, $interval, $rootScope, $translate, ProductsService) {
         this.$document = $document;
         this.$interval = $interval;
         this.$rootScope = $rootScope;
         this.$translate = $translate;
-        this.OvhApiProducts = OvhApiProducts;
+        this.ProductsService = ProductsService;
     }
 
     $onInit () {
@@ -18,11 +18,8 @@ class CloudMainController {
     }
 
     init () {
-        this.OvhApiProducts.Aapi().get({
-            universe: "cloud",
-            product: "PROJECT"
-        }).$promise
-            .then(results => results.results[0].services)
+        this.ProductsService.getProducts()
+            .then(() => this.ProductsService.getProductsOfType("PROJECT"))
             .then(products => products.filter(product => product.expiration))
             .then(products => {
                 if (products && products.length) {
