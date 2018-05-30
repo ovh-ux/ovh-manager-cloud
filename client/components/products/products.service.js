@@ -1,18 +1,32 @@
 class ProductsService {
-    constructor (OvhApiProducts) {
+    constructor ($q, OvhApiProducts) {
+        this.$q = $q;
         this.OvhApiProducts = OvhApiProducts;
         this.products = {};
+        this.productsDeferred = null;
     }
 
-    getProducts () {
-        return this.OvhApiProducts.Aapi().get({
+    getProducts (force) {
+        if (!_.isEmpty(this.products)) {
+            return this.$q.when(this.products);
+        }
+
+        if (!_.isNull(this.productsDeferred) && !force) {
+            return this.productsDeferred.promise;
+        }
+
+        this.productsDeferred = this.$q.defer();
+
+        this.OvhApiProducts.Aapi().get({
             universe: "cloud"
         })
             .$promise
             .then(products => {
-                this.products = products.results;
-                return products;
+                this.products = products;
+                this.productsDeferred.resolve(this.products);
             });
+
+        return this.productsDeferred.promise;
     }
 
     getProductsOfType (type) {
