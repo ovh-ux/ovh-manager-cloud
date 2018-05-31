@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
-   <translation id="vrack_title" qtlid="323171">Order vRack</translation>
-   <translation id="vrack_subtitle" qtlid="323184">You can order this service for free. Your vRack will be delivered in a few minutes.</translation>
+   <translation id="vrack_title" qtlid="323171">vRack Installation</translation>
+   <translation id="vrack_subtitle" qtlid="323184">You can install this service for free. Your vRack will be delivered in a few minutes.</translation>
    <translation id="vrack_validationPending" qtlid="323197">Please complete your free <a href="{{url}}" target='_blank'>purchase order</a> payment.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Your vRack will be available a few minutes after you have validated your purchase order.</translation>
    <translation id="vrack_order" qtlid="43558">Order</translation>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">Nebyla vybrána žádná výchozí platební metoda. Přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a> a buď některou vyberte, nebo přidejte novou.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">Platnost Vaší výchozí platební metody vypršela. Pro přidání nové platební metody přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">Platnost Vaší výchozí platební metody vyprší za 30 dní. Pro přidání nové platební metody přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">Vaše výchozí platební metoda (bankovní účet) čeká na schválení. Pro více informací přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">Vyskytl se problém s Vaší výchozí platební metodou (platební karta). Pro ověření její platnosti a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">Vyskytl se problém s Vaší výchozí platební metodou (PayPal). Pro ověření její platnosti a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Počet bankovních účtů čekajících na schválení: <strong>{{count}}</strong>. Pro získání detailních informací přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Počet platebních karet s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti karet a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Počet účtů PayPal s chybovým hlášením: <strong>{{count}}</strong>. Pro ověření platnosti účtů a/nebo přidání nových platebních metod přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">Na Vašem účtu evidujeme ke dni {{date | date:'medium'}} dlužnou částku ve výši <strong>{{value}}</strong>. Pro uhrazení částky přejděte prosím do sekce <a href="{{link}}" class="alert-link">Fakturace</a>.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Váš aktuální dluh: <strong>{{value}}</strong>. Pro vyřešení této situace přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Na Vašem účtu evidujeme dlužnou částku ve výši <strong>{{ dueAmount }}</strong> (včetně doposud neuhrazené částky {{ unmaturedAmount }}). Pro vyřešení této situace přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Fakturace"</a>.&#13;
+</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">Váš účet dosáhl Vámi definovaného limitu. Pro více informací přejděte prosím do sekce <a href="{{link}}" class="alert-link">Fakturace</a>.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Počet objednávek čekajících na připojení potřebných dokumentů: <strong>{{count}}</strong>. Pro dokončení objednávek přejděte prosím do <a href="{{link}}" class="alert-link">sekce "Mé objednávky"</a>.</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Počet smluv čekajících na potvrzení: <strong>{{count}}</strong>.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Počet žádostí na změnu kontaktu: <strong>{{count}}</strong>.</translation>
+   <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Nastavte si automatické obnovení <a href="{{ link }}">svých služeb</a>!</translation>
+</translations>
