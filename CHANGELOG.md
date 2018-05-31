@@ -1,3 +1,21 @@
+<a name="7.4.0"></a>
+# [7.4.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.3...v7.4.0) (2018-05-31)
+
+
+### Bug Fixes
+
+* Update Mysql Slow Queries configuration  ([8b86768](https://github.com/ovh-ux/ovh-manager-cloud/commit/8b86768))
+* **clipboard:** change to multiline ([c4c30f5](https://github.com/ovh-ux/ovh-manager-cloud/commit/c4c30f5))
+* **iplb:** fix back-link of private network creation ([2e92883](https://github.com/ovh-ux/ovh-manager-cloud/commit/2e92883))
+* **logs:** fix polling, loading and error message ([9b85252](https://github.com/ovh-ux/ovh-manager-cloud/commit/9b85252))
+
+
+### Features
+
+* **navbar:** add new notifications to the navbar ([8248fae](https://github.com/ovh-ux/ovh-manager-cloud/commit/8248fae))
+
+
+
 <a name="7.3.3"></a>
 ## [7.3.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.2...v7.3.3) (2018-05-30)
 
