@@ -1,23 +1,31 @@
 class ManagerNavbarService {
-    constructor ($q, $translate, $translatePartialLoader, atInternet, FeatureAvailabilityService,
-                    SessionService, ProductsService, OtrsPopupService, ssoAuthentication, TranslateService,
-                    StatusService, LANGUAGES, TARGET, MANAGER_URLS, REDIRECT_URLS, URLS) {
+    constructor ($q,
+                 $translate,
+                 $translatePartialLoader,
+                 atInternet,
+                 FeatureAvailabilityService,
+                 LANGUAGES,
+                 MANAGER_URLS,
+                 NavbarNotificationService,
+                 OtrsPopupService,
+                 ProductsService,
+                 REDIRECT_URLS,
+                 SessionService,
+                 ssoAuthentication,
+                 TARGET,
+                 TranslateService,
+                 URLS) {
         this.$q = $q;
         this.$translate = $translate;
         this.$translatePartialLoader = $translatePartialLoader;
         this.atInternet = atInternet;
         this.featureAvailabilityService = FeatureAvailabilityService;
-        this.sessionService = SessionService;
-        this.productsService = ProductsService;
-        this.statusService = StatusService;
-        this.translateService = TranslateService;
-        this.otrsPopupService = OtrsPopupService;
-        this.ssoAuthentication = ssoAuthentication;
         this.LANGUAGES = LANGUAGES;
         this.MANAGER_URLS = MANAGER_URLS;
+        this.navbarNotificationService = NavbarNotificationService;
+        this.otrsPopupService = OtrsPopupService;
+        this.productsService = ProductsService;
         this.REDIRECT_URLS = REDIRECT_URLS;
-        this.URLS = URLS;
-        this.TARGET = TARGET;
         this.sections = {
             iaas: ["PROJECT", "VPS", "SERVER", "DEDICATED_CLOUD", "HOUSING"],
             paas: ["CEPH", "NAS", "NASHA", "CDN", "VEEAM"],
@@ -26,6 +34,11 @@ class ManagerNavbarService {
             loadBalancer: "LOAD_BALANCER",
             cloudDesktop: "CLOUD_DESKTOP"
         };
+        this.sessionService = SessionService;
+        this.ssoAuthentication = ssoAuthentication;
+        this.TARGET = TARGET;
+        this.translateService = TranslateService;
+        this.URLS = URLS;
     }
 
     getProducts (products) {
@@ -39,7 +52,7 @@ class ManagerNavbarService {
             const services = _.map(section, (serviceType) =>
                 _.map(_.get(_.find(products, { name: serviceType }), "services")));
             return _.zipObject(section, services);
-        }
+        };
 
         return {
             iaas: getServices(this.sections.iaas, products),
@@ -565,7 +578,7 @@ class ManagerNavbarService {
             return {
                 // Set OVH Logo
                 brand: {
-                    title: this.$translate.instant("common_menu_cloud"),
+                    label: this.$translate.instant("common_menu_cloud"),
                     url: managerUrls.cloud,
                     iconAlt: "OVH",
                     iconClass: "navbar-logo",
@@ -583,7 +596,7 @@ class ManagerNavbarService {
         return this.$q.all({
             translate: this.loadTranslations(),
             user: this.sessionService.getUser(),
-            notifications: this.statusService.getNotificationsMenu()
+            notifications: this.navbarNotificationService.getNavbarContent()
         })
             .then(({ user, notifications }) => getBaseNavbar(user, notifications))
             .catch(() => getBaseNavbar());

@@ -1,15 +1,12 @@
 <section class="cui-page__content">
-    <cui-back-link data-state="{{ $ctrl.previousState.state }}"
-                   data-state-params="$ctrl.previousState.stateParams"
-                   data-text="'common_back' | translate"></cui-back-link>
-    <cui-page-content-title text="'iplb_zone_delete_title' | translate"></cui-page-content-title>
-    <p data-ng-if="$ctrl.getDeletableZoneCount() === 1" 
-        data-translate="iplb_zone_delete_intro_text_single" 
+    <oui-back-button data-title="{{ :: 'iplb_zone_delete_title' | translate }}"></oui-back-button>
+    <p data-ng-if="$ctrl.getDeletableZoneCount() === 1"
+        data-translate="iplb_zone_delete_intro_text_single"
         data-translate-values="{ zoneQuantity: $ctrl.getDeletableZoneCount() -1 }"></p>
-    <p data-ng-if="$ctrl.getDeletableZoneCount() > 1" 
+    <p data-ng-if="$ctrl.getDeletableZoneCount() > 1"
         data-translate="iplb_zone_delete_intro_text_plural"
         data-translate-values="{ zoneQuantity: $ctrl.getDeletableZoneCount() -1 }"></p>
-    <p data-ng-if="$ctrl.getDeletableZoneCount() < 1" 
+    <p data-ng-if="$ctrl.getDeletableZoneCount() < 1"
         data-translate="iplb_zone_delete_intro_text_none"></p>
     <form novalidate name="$ctrl.form">
         <iplb-zone-picker data-zones="$ctrl.zones.data"

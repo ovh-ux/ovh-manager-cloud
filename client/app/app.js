@@ -39,7 +39,6 @@ angular.module("managerApp", [
     "ng-slide-down",
     "ovh-angular-jsplumb",
     "tmh.dynamicLocale",
-    "ovh-angular-module-status",
     "ovh-angular-otrs",
     "ovh-api-services",
 
@@ -113,14 +112,18 @@ angular.module("managerApp", [
               </div>
             `);
     })
-    .run(($translate, $translatePartialLoader, $transitions, ouiTableConfiguration,
-          ouiDatagridConfiguration, ouiCriteriaAdderConfiguration, ouiPaginationConfiguration, ouiFieldConfiguration, ouiStepperConfiguration) => {
+    .run(($transitions,
+          $translate,
+          $translatePartialLoader,
+          ouiCriteriaAdderConfiguration,
+          ouiDatagridConfiguration,
+          ouiFieldConfiguration,
+          ouiNavbarConfiguration,
+          ouiPaginationConfiguration,
+          ouiStepperConfiguration) => {
         $translatePartialLoader.addPart("components");
 
         const removeOnSuccessHook = $transitions.onSuccess({}, () => {
-            ouiDatagridConfiguration.translations = {
-                emptyPlaceholder: $translate.instant("common_datagrid_nodata")
-            };
 
             ouiCriteriaAdderConfiguration.translations = {
                 column_label: $translate.instant("common_criteria_adder_column_label"),
@@ -154,15 +157,8 @@ angular.module("managerApp", [
                 submit_label: $translate.instant("common_criteria_adder_submit_label")
             };
 
-            ouiPaginationConfiguration.translations = {
-                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
-                ofNResults: $translate.instant("common_pagination_ofnresults")
-                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
-                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
-                    .replace("CURRENT_PAGE", "{{currentPage}}")
-                    .replace("PAGE_COUNT", "{{pageCount}}"),
-                previousPage: $translate.instant("common_pagination_previous"),
-                nextPage: $translate.instant("common_pagination_next")
+            ouiDatagridConfiguration.translations = {
+                emptyPlaceholder: $translate.instant("common_datagrid_nodata")
             };
 
             ouiFieldConfiguration.translations = {
@@ -176,6 +172,24 @@ angular.module("managerApp", [
                     maxlength: $translate.instant("common_field_error_maxlength", { maxlength: "{{maxlength}}" }),
                     pattern: $translate.instant("common_field_error_pattern")
                 }
+            };
+
+            ouiNavbarConfiguration.translations = {
+                notification: {
+                    markRead: $translate.instant("common_navbar_notification_mark_as_read"),
+                    markUnread: $translate.instant("common_navbar_notification_mark_as_unread")
+                }
+            };
+
+            ouiPaginationConfiguration.translations = {
+                resultsPerPage: $translate.instant("common_pagination_resultsperpage"),
+                ofNResults: $translate.instant("common_pagination_ofnresults")
+                    .replace("TOTAL_ITEMS", "{{totalItems}}"),
+                currentPageOfPageCount: $translate.instant("common_pagination_currentpageofpagecount")
+                    .replace("CURRENT_PAGE", "{{currentPage}}")
+                    .replace("PAGE_COUNT", "{{pageCount}}"),
+                previousPage: $translate.instant("common_pagination_previous"),
+                nextPage: $translate.instant("common_pagination_next")
             };
 
             ouiStepperConfiguration.translations = {

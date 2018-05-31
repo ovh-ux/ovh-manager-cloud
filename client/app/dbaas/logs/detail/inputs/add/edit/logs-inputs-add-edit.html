@@ -27,7 +27,7 @@
 
         <oui-field label="{{ ::'inputs_logs_edit_software_field' | translate }}" size="xl">
             <oui-spinner data-ng-if="ctrl.availableEngines.length === 0"></oui-spinner>
-            <div class="oui-select" data-ng-if="ctrl.availableEngines.length > 0">
+            <div class="oui-select" data-ng-show="ctrl.availableEngines.length > 0">
                 <select class="oui-select__input"
                     name="input_software"
                     id="input_software"
@@ -54,7 +54,7 @@
 
         <oui-field label="{{ ::'inputs_logs_edit_stream_field' | translate }}" size="xl">
             <oui-spinner data-ng-if="ctrl.streams.loading"></oui-spinner>
-            <div class="oui-select" data-ng-if="!ctrl.streams.loading">
+            <div class="oui-select" data-ng-show="!ctrl.streams.loading">
                     <select class="oui-select__input"
                         name="input_stream"
                         id="input_stream"
@@ -70,7 +70,7 @@
 
         <oui-field label="{{ ::'inputs_logs_edit_option_field' | translate }}" size="xl">
             <oui-spinner data-ng-if="ctrl.options.loading"></oui-spinner>
-            <div class="oui-select" data-ng-if="!ctrl.options.loading">
+            <div class="oui-select" data-ng-show="!ctrl.options.loading">
                 <select class="oui-select__input"
                     name="input_option"
                     id="input_option"

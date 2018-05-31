@@ -12,6 +12,11 @@
             };
         }
 
+        $onInit () {
+            if (!this.rows) {
+                this.rows = 1;
+            }
+        }
         $postLink () {
             this.$element.addClass("cui-clipboard");
         }
@@ -49,14 +54,15 @@
         .component("cuiClipboard", {
             template: `
                 <div class="cui-clipboard__input-container">
-                    <input class="cui-clipboard__input text-truncate"
+                    <textarea class="cui-clipboard__input"
                         type="text"
                         id="{{$ctrl.id}}"
                         name="{{$ctrl.name}}"
                         data-ng-focus="$ctrl.onTextFocus($event)"
                         data-ng-value="$ctrl.text"
                         data-ng-model="$ctrl.text"
-                        readonly>
+                        rows="{{ $ctrl.rows }}"
+                        readonly></textarea>
                     <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'initial'"><i class="oui-icon oui-icon-copy-normal aria-hidden="true"></i></span>
                     <span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'success'"><i class="oui-icon oui-icon-copy-success aria-hidden="true"></i></span>
                     <!--<span class="cui-clipboard__icon" data-ng-if="$ctrl.options.status === 'error'"><i class="oui-icon oui-icon-copy-error aria-hidden="true"></i></span>-->
@@ -67,7 +73,8 @@
                 text: "<",
                 label: "<?",
                 id: "@?",
-                name: "@?"
+                name: "@?",
+                rows: "<?"
             }
         });
 })();

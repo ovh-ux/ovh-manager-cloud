@@ -108,7 +108,7 @@ class LogsInputsService {
             .$promise
             .then(operation => {
                 this._resetAllCache();
-                return this._pollOperation(serviceName, operation.data).$promise;
+                return this.LogsHelperService.handleOperation(serviceName, operation.data);
             })
             .catch(err => this.LogsHelperService.handleError("logs_inputs_add_error", err, { inputTitle: input.info.title }));
     }
@@ -366,7 +366,7 @@ class LogsInputsService {
     executeTest (serviceName, input) {
         return this.InputsApiLexiService.test({ serviceName, inputId: input.info.inputId })
             .$promise
-            .then(operation => this._pollOperation(serviceName, operation).$promise)
+            .then(operation => this.LogsHelperService.handleOperation(serviceName, operation))
             .then(() => this.getTestResults(serviceName, input))
             .catch(err => this.LogsHelperService.handleError("logs_inputs_test_error", err, { inputTitle: input.info.title }));
     }

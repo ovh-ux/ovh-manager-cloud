@@ -8,6 +8,7 @@
         (<logs-upgrade-quota-link></logs-upgrade-quota-link>)
     </p>
 
+    <oui-spinner data-ng-if="ctrl.delete.loading"></oui-spinner>
     <oui-datagrid data-ng-if="!(ctrl.inputs.loading || ctrl.delete.loading)" rows="ctrl.inputs.data">
         <extra-top>
             <logs-add-tool
@@ -18,7 +19,7 @@
                 max-usage="ctrl.quota.data.max"
                 callback="ctrl.add()">
             </logs-add-tool>
-            <oui-spinner data-ng-if="ctrl.quota.loading || ctrl.delete.loading"></oui-spinner>
+            <oui-spinner data-ng-if="ctrl.quota.loading"></oui-spinner>
         </extra-top>
         <oui-column title="::'inputs_col_name' | translate" property="info.title" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'inputs_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
