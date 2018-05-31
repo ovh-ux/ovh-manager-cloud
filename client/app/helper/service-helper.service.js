@@ -14,27 +14,57 @@
 
         errorHandler (messageInput, containerName, messageDetailsPath = "data.message") {
             return err => {
-                let messageText = this.$translate.instant(defaultErrorMessage);
-                let messageDetail = _.get(err, messageDetailsPath, _.isString(err.message) ? err.message : "");
-                let message = {
-                    text: null
-                };
+                let errorMessageConfig = {};
+
+                let apiMessage = _.get(err, messageDetailsPath, err.message);
+                if (apiMessage) {
+                    errorMessageConfig.apiMessage = apiMessage;
+                }
 
                 if (_.isString(messageInput)) {
-                    messageText = this.$translate.instant(messageInput);
+                    errorMessageConfig.textToTranslate = messageInput;
+                } else if (_.has(messageInput, "text")) {
+                    errorMessageConfig.text = messageInput.text;
+                } else if (_.has(messageInput, "textHtml")) {
+                    errorMessageConfig.textHtml = messageInput.textHtml;
+                } else if (_.has(messageInput, "translateParams")) {
+                    errorMessageConfig.textToTranslate = messageInput.textToTranslate;
+                    errorMessageConfig.translateParams = messageInput.translateParams;
+                } else {
+                    errorMessageConfig.textToTranslate = defaultErrorMessage;
                 }
 
-                message.text = `${messageText} ${messageDetail}`;
-
-                // Override
-                if (_.has(messageInput, "text") || _.has(messageInput, "textHtml")) {
-                    message = messageInput;
-                }
+                let message = this.buildErrorMessage(errorMessageConfig);
 
                 this.CloudMessage.error(message, containerName);
 
                 return this.$q.reject(err);
             };
+        }
+
+        buildErrorMessage (config) {
+            let message = {
+                text: null,
+                textHtml: null
+            };
+
+            if (config.text) {
+                message.text = config.text;
+            }
+            if (config.textHtml) {
+                message.textHtml = config.textHtml;
+            }
+
+            if (config.translateParams) {
+                message.text = this.$translate.instant(config.textToTranslate, config.translateParams);
+            } else if (config.textToTranslate) {
+                message.text = this.$translate.instant(config.textToTranslate);
+            }
+
+            if (config.apiMessage) {
+                message.text = `${message.text} ${config.apiMessage}`;
+            }
+            return message;
         }
 
         successHandler (message, containerName) {
