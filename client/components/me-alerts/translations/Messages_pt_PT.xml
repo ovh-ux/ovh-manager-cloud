@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_MISSING" qtlid="347327">Não foi selecionado nenhum método de pagamento padrão. Aceda <a href="{{link}}" class="alert-link">à secção de faturação</a> para selecionar um, ou para adicionar um novo método de pagamento.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRED" qtlid="344331">O seu método de pagamento padrão expirou! Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para registar um novo.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_EXPIRE_SOON" qtlid="344344">O seu método de pagamento padrão expira em menos de 30 dias. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para registar um novo.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_BANKACCOUNT_PENDINGVALIDATION" qtlid="344357">O seu método de pagamento padrão (conta bancária) está aguardar validação. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para mais informações.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_CREDITCARD_TOOMANYFAILURES" qtlid="344370">O seu método de pagamento padrão (cartão de crédito) está com erro! Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para efetuar as devidas verificações e/ou adicionar um novo método de pagamento>.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_DEFAULT_PAYPAL_TOOMANYFAILURES" qtlid="344383">O seu método de pagamento padrão (PayPal) está com erro! Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para efetuar as devidas verificações e/ou adicionar um novo método de pagamento>.</translation>
+
+   <translation id="me_alerts_PAYMENTMEAN_BANKACCOUNT_PENDINGVALIDATION" qtlid="344396">Possui <strong>{{count}}</strong> cartão(ões) de credito(s) aguardar validação. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para obter mais informações.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_CREDITCARD_TOOMANYFAILURES" qtlid="344409">Tem <strong>{{count}}</strong> cartão(ões) de credito(s) com erros. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para efetuar as devidas verificações e/ou o registo de um novo método de pagamento.</translation>
+   <translation id="me_alerts_PAYMENTMEAN_PAYPAL_TOOMANYFAILURES" qtlid="344422">Tem <strong>{{count}}</strong> conta(s) PayPal com erros. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para efetuar as devidas verificações e/ou adicionar um novo método de pagamento>.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_DEBT" qtlid="344435">A sua conta OVH tem um saldo negativo de <strong>{{value}}</strong> à data de {{date | date:'medium'}}. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para regularizar a situação.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT" qtlid="344448">Tem uma dívida de <strong>{{value}}</strong>. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para regularizar a situação.</translation>
+   <translation id="me_alerts_DEBTACCOUNT_DEBT_WITH_UNMATURED_AMOUNT" qtlid="369503">Vous avez une dette de <strong>{{ dueAmount }}</strong> (dont un montant de {{ unmaturedAmount }} non échu). Rendez-vous dans <a href="{{ link }}" class="alert-link">la section facturation</a> pour régulariser la situation.</translation>
+
+   <translation id="me_alerts_OVHACCOUNT_ALERTTHRESHOLD" qtlid="354051">A sua conta OVH atingiu o limite definido. Aceda <a href="{{link}}" class="alert-link">à secção Faturação</a> para mais informações.</translation>
+
+   <translation id="me_alerts_ORDERS_DOCUMENTSREQUESTED" qtlid="344461">Tem <strong>{{count}}</strong> encomenda(s) em espera para a qual são necessários documentos adicionais. Aceda <a href="{{link}}" class="alert-link">à secção "As minhas encomendas"</a> para as atualizar.</translation>
+   <translation id="me_alerts_AGREEMENTS_TODO" qtlid="344474">Tem <strong>{{count}}</strong> contratos a validar.</translation>
+   <translation id="me_alerts_CONTACTCHANGE_VALIDATINGBYCUSTOMERS" qtlid="344487">Tem <strong>{{count}}</strong> pedido(s) de alteração de contacto.</translation>
+   <translation id="me_alerts_AUTORENEW_INVITE" qtlid="446401">Selecione agora a renovação automática dos <a href="{{ link }}">seus serviços</a>!</translation>
+</translations>
