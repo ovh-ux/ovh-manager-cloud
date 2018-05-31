@@ -6,8 +6,8 @@
    <translation id="logs_notification_title" qtlid="32386">Notificación</translation>
    <translation id="logs_operation_failed" qtlid="473908">Se ha producido un fallo en la operación {{operation_id}}.</translation>
    <translation id="logs_operation_error" qtlid="473921">Se ha producido un error al realizar la operación: {{message}}</translation>
-   <translation id="logs_streams_title" qtlid="422452">Flujo de datos</translation>
-   <translation id="logs_index_title" qtlid="473934">Índice Elasticsearch</translation>
+   <translation id="logs_streams_title" qtlid="422452">Flujos de datos</translation>
+   <translation id="logs_index_title" qtlid="473934">Índices Elasticsearch</translation>
    <translation id="logs_main_offer" qtlid="424389">Plan principal</translation>
    <translation id="logs_finish_configuration" qtlid="473947">Completar la configuración</translation>
    <translation id="logs_next" qtlid="17743">Siguiente</translation>
@@ -54,10 +54,10 @@
    <translation id="logs_guides_footer" qtlid="406905">Todas las guías de OVH</translation>
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Inicio</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flujo de datos</translation>
-   <translation id="logs_tab_dashboards" qtlid="225075">Panel de control</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Flujos de datos</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Paneles de control</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Recopiladores</translation>
-   <translation id="logs_tab_indices" qtlid="426729">Índice</translation>
+   <translation id="logs_tab_indices" qtlid="426729">Índices</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
    <translation id="logs_tab_roles" qtlid="427886">Roles</translation>
    <translation id="logs_loading_error_configuration" qtlid="469153">Se ha producido un error al cargar la sección «Configuración».</translation>
@@ -82,9 +82,9 @@
    <translation id="logs_accounts_col_offer_type" qtlid="50254">Tipo de producto</translation>
    <translation id="logs_accounts_col_status" qtlid="26443">Estado</translation>
    <translation id="logs_accounts_col_entry_point" qtlid="421165">Punto de entrada</translation>
-   <translation id="logs_accounts_col_streams" qtlid="422452">Flujo de datos</translation>
+   <translation id="logs_accounts_col_streams" qtlid="422452">Flujos de datos</translation>
    <translation id="logs_accounts_col_dashboards" qtlid="474220">Paneles de control</translation>
-   <translation id="logs_accounts_col_indices" qtlid="426729">Índice</translation>
+   <translation id="logs_accounts_col_indices" qtlid="426729">Índices</translation>
    <translation id="logs_accounts_details" qtlid="37527">Detalles</translation>
    <translation id="logs_accounts_offers" qtlid="38217">Producto</translation>
    <translation id="logs_accounts_options" qtlid="23395">Opciones</translation>
@@ -167,7 +167,7 @@
 <!-- Options -->
    <translation id="options_upgradequotalink_increase_quota" qtlid="474753">aumentar el límite</translation>
    <translation id="options_upgradequotalink_increase_quota_title" qtlid="474766">Es necesario cambiar de plan.</translation>
-   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">Actualmente tiene contratado un plan básico. Para poder contratar más opciones, debe cambiar al plan Pro. ¿Quiere cambiar al plan Pro?</translation>
+   <translation id="options_upgradequotalink_increase_quota_message" qtlid="474779">Actualmente tiene contratado un plan básico. Para poder contratar más opciones debe cambiar al plan Pro. ¿Quiere cambiar al plan Pro?</translation>
    <translation id="options_upgradequotalink_increase_quota_upgrade" qtlid="474792">Cambiar de plan ahora</translation>
    <translation id="logs_options_options_loading_error" qtlid="474805">Se ha producido un error al cargar las opciones: {{message}}</translation>
    <translation id="logs_options_current_options_loading_error" qtlid="474818">Se ha producido un error al cargar sus opciones: {{message}}</translation>
@@ -185,7 +185,7 @@
    <translation id="logs-input-4-type" qtlid="474883">Recopilador</translation>
    <translation id="logs-input-8-type" qtlid="474883">Recopilador</translation>
    <translation id="logs-dashboard-5-type" qtlid="45376">Panel de control</translation>
-   <translation id="logs-stream-5-type" qtlid="422452">Flujo de datos</translation>
+   <translation id="logs-stream-5-type" qtlid="422452">Flujos de datos</translation>
    <translation id="logs-kibana-1-type" qtlid="469335">Pack Kibana</translation>
    <translation id="logs-alias-5-type" qtlid="474896">Alias ​​Elasticsearch</translation>
    <translation id="logs-index-1-type" qtlid="474909">Índice Elasticsearch de 25 GiB</translation>
@@ -227,8 +227,8 @@
    <translation id="logs_options_disabled" qtlid="24967">Desactivado</translation>
    <translation id="logs_options_manage_alias" qtlid="9466">Alias</translation>
    <translation id="logs_options_manage_dashboard" qtlid="45376">Panel de control</translation>
-   <translation id="logs_options_manage_index" qtlid="426729">Índice</translation>
-   <translation id="logs_options_manage_stream" qtlid="422452">Flujo de datos</translation>
+   <translation id="logs_options_manage_index" qtlid="426729">Índices</translation>
+   <translation id="logs_options_manage_stream" qtlid="422452">Flujos de datos</translation>
    <translation id="logs_options_manage_role" qtlid="427886">Roles</translation>
    <translation id="logs_options_manage_input" qtlid="421217">Recopiladores</translation>
    <translation id="logs_options_overview_title" qtlid="475182">Resumen de la opción</translation>
@@ -247,7 +247,7 @@
 
 <!-- Offer -->
    <translation id="logs_offer_title" qtlid="25783">Cambiar de plan</translation>
-   <translation id="logs_offer_streams" qtlid="475338">flujo</translation>
+   <translation id="logs_offer_streams" qtlid="475338">flujo(s)</translation>
    <translation id="logs_offer_tables" qtlid="475351">panel(es)</translation>
    <translation id="logs_offer_collection_tools" qtlid="475364">recopilador(es)</translation>
    <translation id="logs_offer_limit" qtlid="33562">Límite</translation>
@@ -322,11 +322,11 @@
    <translation id="logs_tokens_cluster_get_error" qtlid="475988">Se ha producido un error al cargar las plataformas: {{message}}</translation>
 
 <!-- Streams -->
-   <translation id="logs_streams_description" qtlid="469465">Los flujos le permiten dirigir sus logs en tiempo real hacia una categoría determinada desde su llegada a Logs Data Platform. Si dispone de varios flujos, también podrá clasificar fácilmente los mensajes en función de su origen, de la aplicación o del servidor de origen, así como crear niveles de confidencialidad en función de los flujos, de forma que podrá otorgar acceso solo a las personas autorizadas. Los tokens de escritura le permiten dirigir los logs hacia el flujo correcto. En general, poseer diferentes flujos facilita enormemente la búsqueda de sus logs, de forma que ya no tendrá que excluir los resultados de otros sistemas o aplicaciones.</translation>
+   <translation id="logs_streams_description" qtlid="469465">Los flujos le permiten dirigir sus logs en tiempo real hacia una categoría determinada desde su llegada a Logs Data Platform. Si dispone de varios flujos, también podrá clasificar fácilmente los mensajes en función de su origen, de la aplicación o del servidor de origen, así como crear niveles de confidencialidad en función de los flujos, de forma que podrá otorgar acceso solo a las personas autorizadas. Los tokens de escritura le permiten dirigir los logs hacia el flujo correcto. En general, contar con diferentes flujos facilita enormemente la búsqueda de los logs, de forma que ya no tendrá que excluir los resultados de otros sistemas o aplicaciones.</translation>
    <translation id="logs_streams_total_used" qtlid="476001">flujos utilizados</translation>
    <translation id="logs_streams_increase_quota" qtlid="474753">aumentar el límite</translation>
    <translation id="logs_streams_add_data_feed" qtlid="426170">Añadir un flujo de datos</translation>
-   <translation id="logs_streams_name" qtlid="475338">flujo</translation>
+   <translation id="logs_streams_name" qtlid="475338">flujo(s)</translation>
    <translation id="logs_streams_col_title" qtlid="3818">Nombre</translation>
    <translation id="logs_streams_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_streams_col_archives" qtlid="469933">Archivos</translation>
@@ -632,7 +632,7 @@
    <translation id="logs_index_name" qtlid="477886">índice</translation>
    <translation id="logs_index_get_error" qtlid="477899">Se ha producido un error al cargar el índice.</translation>
    <translation id="logs_streams_quota_get_error" qtlid="477912">Se ha producido un error al cargar el límite.</translation>
-   <translation id="logs_index_col_index" qtlid="426729">Índice</translation>
+   <translation id="logs_index_col_index" qtlid="426729">Índices</translation>
    <translation id="logs_index_name_text" qtlid="3818">Nombre</translation>
    <translation id="logs_index_col_description" qtlid="9238">Descripción</translation>
    <translation id="logs_index_col_free_space" qtlid="196608">Espacio disponible</translation>
@@ -760,15 +760,15 @@
    <translation id="logs_role_overview_permissions" qtlid="6946">Permisos</translation>
    <translation id="logs_role_overview_members" qtlid="425169">Miembros</translation>
    <translation id="logs_role_overview_linked_option" qtlid="426768">Opción asociada</translation>
-   <translation id="logs_role_overview_stream" qtlid="422452">Flujo de datos</translation>
-   <translation id="logs_role_overview_index" qtlid="426729">Índice</translation>
+   <translation id="logs_role_overview_stream" qtlid="422452">Flujos de datos</translation>
+   <translation id="logs_role_overview_index" qtlid="426729">Índices</translation>
    <translation id="logs_role_overview_alias" qtlid="9466">Alias</translation>
-   <translation id="logs_role_overview_dashboard" qtlid="225075">Panel de control</translation>
+   <translation id="logs_role_overview_dashboard" qtlid="225075">Paneles de control</translation>
    <translation id="logs_roles_edit_permissions_title" qtlid="470687">Modificar los permisos</translation>
    <translation id="logs_roles_permissions_subtitle" qtlid="478601">Para el rol <strong>{{ role }}</strong></translation>
-   <translation id="logs_roles_permissions_streams" qtlid="422452">Flujo de datos</translation>
-   <translation id="logs_roles_permissions_dashboards" qtlid="225075">Panel de control</translation>
-   <translation id="logs_roles_permissions_indices" qtlid="426729">Índice</translation>
+   <translation id="logs_roles_permissions_streams" qtlid="422452">Flujos de datos</translation>
+   <translation id="logs_roles_permissions_dashboards" qtlid="225075">Paneles de control</translation>
+   <translation id="logs_roles_permissions_indices" qtlid="426729">Índices</translation>
    <translation id="logs_roles_permissions_alias" qtlid="9466">Alias</translation>
    <translation id="logs_role_available_stream" qtlid="478731">Flujo(s) disponible(s)</translation>
    <translation id="logs_role_selected_stream" qtlid="478744">Flujo(s) seleccionado(s)</translation>
@@ -816,10 +816,10 @@
 
    <translation id="logs_title" qtlid="366385">Logs Data Platform</translation>
    <translation id="logs_tab_home" qtlid="27643">Inicio</translation>
-   <translation id="logs_tab_streams" qtlid="422452">Flujo de datos</translation>
-   <translation id="logs_tab_dashboards" qtlid="225075">Panel de control</translation>
+   <translation id="logs_tab_streams" qtlid="422452">Flujos de datos</translation>
+   <translation id="logs_tab_dashboards" qtlid="225075">Paneles de control</translation>
    <translation id="logs_tab_inputs" qtlid="421217">Recopiladores</translation>
-   <translation id="logs_tab_indices" qtlid="426729">Índice</translation>
+   <translation id="logs_tab_indices" qtlid="426729">Índices</translation>
    <translation id="logs_tab_alias" qtlid="9466">Alias</translation>
    <translation id="logs_tab_roles" qtlid="427886">Roles</translation>
 </translations>
