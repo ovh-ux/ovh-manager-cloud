@@ -2,7 +2,7 @@
     <form novalidate name="$ctrl.form">
         <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
         <cui-modal-body data-title=":: 'cpou_rclone_modal_title' | translate">
-            <cui-loader data-ng-if="$ctrl.isModalLoading()"></cui-loader>
+            <oui-spinner data-ng-if="$ctrl.isModalLoading()"></oui-spinner>
             <div data-ng-if="!$ctrl.isModalLoading()">
                 <cui-modal-text>
                     <span data-translate="cpou_rclone_modal_explanation"></span>
