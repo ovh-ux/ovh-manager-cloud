@@ -23,7 +23,13 @@
             <div data-translate="streams_archives_sha256_value" data-translate-values="{{$row}}"></div>
         </oui-column>
         <oui-column title="::'streams_archives_status' | translate" property="retrievalState">
-            <oui-inline-color-alert type="$row.retrievalStateType" label="{{ 'streams_archives_' + $row.retrievalState | translate }}"></oui-inline-color-alert>
+            <span class="oui-status"
+                data-translate="{{'streams_archives_' + $row.retrievalState}}"
+                data-ng-class="{
+                    'oui-status_info': $row.retrievalStateType == 'info',
+                    'oui-status_success': $row.retrievalStateType == 'success',
+                    'oui-status_warning': $row.retrievalStateType == 'warning'}">
+            </span>
         </oui-column>
         <oui-action-menu data-align="end" compact>
             <oui-action-menu-item

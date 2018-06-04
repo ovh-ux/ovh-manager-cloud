@@ -52,11 +52,11 @@ class LogsIndexCtrl {
     storageColor (info) {
         const percentage = parseInt((info.currentStorage * 100) / info.maxSize, 10);
         if (percentage > 80) {
-            return this.LogsConstants.HIGH;
+            return `oui-status_${this.LogsConstants.indexStorage.error}`;
         } else if (percentage < 60) {
-            return this.LogsConstants.LOW;
+            return `oui-status_${this.LogsConstants.indexStorage.success}`;
         } else if (percentage > 60 && percentage < 80) {
-            return this.LogsConstants.MID;
+            return `oui-status_${this.LogsConstants.indexStorage.warning}`;
         }
         return null;
     }

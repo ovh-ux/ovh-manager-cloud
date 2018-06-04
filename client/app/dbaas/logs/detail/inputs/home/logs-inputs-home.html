@@ -31,7 +31,13 @@
             <span data-ng-if="!$row.info.optionId"> - </span>
         </oui-column>
         <oui-column title="::'inputs_state' | translate" property="info.state" type="string" searchable filterable>
-            <oui-inline-color-alert type="$row.info.stateType" label="{{ 'inputs_state_' + $row.info.state | translate }}"></oui-inline-color-alert>
+            <span class="oui-status"
+                data-translate="{{'inputs_state_' + $row.info.state}}"
+                data-ng-class="{
+                    'oui-status_info': $row.info.stateType == 'info',
+                    'oui-status_success': $row.info.stateType == 'success',
+                    'oui-status_warning': $row.info.stateType == 'warning'}">
+            </span>
         </oui-column>
         <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.info.updatedAt | momentFormat:'L'}}
