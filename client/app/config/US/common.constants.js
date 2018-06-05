@@ -39,7 +39,7 @@ angular.module("managerApp")
         vRack: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vrack?landingTo=networks",
         nas: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas?landingTo=networks",
         nasPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas/nas/nas_{nas}?landingTo=networks",
-        ip: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip?landingTo=ip",
+        ip: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip/agoraOrder",
         license: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/license?landingTo=licences",
         housing: "https://www.ovh.com/manager/dedicated/index.html#/configuration/housing/{housing}?landingTo=dedicatedServers",
         dedicatedServers: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=dedicatedServers",
