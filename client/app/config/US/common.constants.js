@@ -90,6 +90,9 @@ angular.module("managerApp")
             cloud_disk_array: {
                 US: "https://ovhcloud.com/cloud/cloud-disk-array/"
             },
+            ip: {
+                US: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip/agoraOrder"
+            },
             veeam: {
             },
             cloud_desktop: {

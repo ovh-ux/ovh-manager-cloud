@@ -95,7 +95,7 @@ angular.module("managerApp").config(function (SidebarMenuProvider) {
         actionsMenuOptions.push({
             title: $translate.instant("cloud_sidebar_actions_menu_ip"),
             icon: "ovh-font ovh-font-ip",
-            href: REDIRECT_URLS.ip,
+            href: _.get(URLS, `website_order.ip[${locale}]`, REDIRECT_URLS.ip),
             target: "_parent"
         });
 
