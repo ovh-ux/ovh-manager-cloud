@@ -1,7 +1,7 @@
 class SidebarOrderService {
     constructor (FeatureAvailabilityService, SidebarMenu, CloudProjectSidebar, VpsSidebar,
                  DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar, NashaSidebar, VeeamSidebar, DBaasTsSidebar,
-                 VrackSidebar, DeskaasSidebar, IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar) {
+                 VrackSidebar, DeskaasSidebar, IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar) {
         this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.SidebarMenu = SidebarMenu;
 
@@ -20,7 +20,8 @@ class SidebarOrderService {
             IpSidebar,
             IplbSidebar,
             LicenseSidebar,
-            CloudDBSidebar
+            CloudDBSidebar,
+            LogsSidebar
         ];
     }
 

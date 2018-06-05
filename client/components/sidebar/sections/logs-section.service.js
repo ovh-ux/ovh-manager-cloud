@@ -5,24 +5,22 @@ class LogsSectionSidebarService {
         this.SidebarService = SidebarService;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
 
-        this.section = [
-            {
-                provider: LogsSidebar,
-                type: "DBAAS_LOGS"
-            }
+        this.sectionName = "logs";
+        this.productTypesInSection = [
+            LogsSidebar
         ];
     }
 
-    fillSection (services) {
+    createSection (logsProducts) {
         const logsMenuSection = this.SidebarMenu.addMenuItem({
             id: "mainLogsItem",
             title: this.$translate.instant("cloud_sidebar_section_logs"),
             allowSubItems: true,
-            loadOnState: "dbaas.logs",
             icon: "fa fa-bar-chart", // "ovh-font ovh-font-logs",
-            allowSearch: this.SidebarService.getNumberOfServicesPerSection(services) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            loadOnState: "dbaas.logs",
+            allowSearch: this.SidebarService.countProductsInSection(logsProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(logsMenuSection, this.section, false, services);
+        this.SidebarService.fillSection(logsMenuSection, this.productTypesInSection, logsProducts);
     }
 }
 

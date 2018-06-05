@@ -4,14 +4,16 @@ angular.module("managerApp")
     })
     .run(($q, $translate, Toast, SidebarMenu, SidebarService, SidebarOrderService, SidebarDataStructureService,
           ProductsService, SessionService, IaasSectionSidebarService, PaasSectionSidebarService,
-          MetricsSectionSidebarService, VrackSectionSidebarService, LoadBalancerSectionSidebarService,
-          CloudDesktopSectionSidebarService, IpSectionSidebarService, LicenseSectionSidebarService) => {
+          MetricsSectionSidebarService, LogsSectionSidebarService, VrackSectionSidebarService,
+          LoadBalancerSectionSidebarService, CloudDesktopSectionSidebarService, IpSectionSidebarService,
+          LicenseSectionSidebarService) => {
 
         // In order of appearance in the menu
         const sections = [
             IaasSectionSidebarService,
             PaasSectionSidebarService,
             MetricsSectionSidebarService,
+            LogsSectionSidebarService,
             LoadBalancerSectionSidebarService,
             IpSectionSidebarService,
             LicenseSectionSidebarService,

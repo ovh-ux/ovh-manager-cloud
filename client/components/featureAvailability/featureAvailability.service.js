@@ -152,11 +152,11 @@
             }
         },
         DBAAS_LOGS: {
-            sidebarOrder: {
+            sidebarMenu: {
                 EU: allEuropeanSubsidiaries,
                 CA: ["CA", "QC"]
             },
-            sidebarMenu: {
+            sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: ["CA", "QC"]
             }
