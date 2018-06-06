@@ -1,8 +1,8 @@
 class MetricsSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, DBaasTsSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
+    constructor ($translate, SidebarMenu, SidebarHelper, DBaasTsSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
+        this.SidebarHelper = SidebarHelper;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH
 
         this.sectionName = "metrics";
@@ -18,9 +18,9 @@ class MetricsSectionSidebarService {
             icon: "ovh-font ovh-font-graph",
             loadOnState: "dbaas.metrics",
             allowSubItems: true,
-            allowSearch: this.SidebarService.countProductsInSection(metricsProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            allowSearch: this.SidebarHelper.countProductsInSection(metricsProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(metricsMenuSection, this.productTypesInSection, metricsProducts);
+        this.SidebarHelper.fillSection(metricsMenuSection, this.productTypesInSection, metricsProducts);
     }
 }
 

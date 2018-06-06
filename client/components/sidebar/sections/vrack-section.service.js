@@ -1,8 +1,8 @@
 class VrackSectionSidebarService {
-    constructor ($q, $translate, SidebarMenu, SidebarService, VrackSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
+    constructor ($q, $translate, SidebarMenu, SidebarHelper, VrackSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
+        this.SidebarHelper = SidebarHelper;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
 
         this.sectionName = "vrack";
@@ -35,9 +35,9 @@ class VrackSectionSidebarService {
             icon: "ovh-font ovh-font-vRack",
             loadOnState: "vrack",
             allowSubItems: true,
-            allowSearch: this.SidebarService.countProductsInSection(vrackProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            allowSearch: this.SidebarHelper.countProductsInSection(vrackProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(vrackMenuSection, this.productTypesInSection, vrackProducts);
+        this.SidebarHelper.fillSection(vrackMenuSection, this.productTypesInSection, vrackProducts);
     }
 }
 

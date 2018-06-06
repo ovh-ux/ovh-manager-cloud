@@ -1,21 +1,9 @@
-class SidebarService {
+class SidebarHelper {
     constructor ($translate, FeatureAvailabilityService, SidebarMenu, MANAGER_URLS) {
         this.$translate = $translate;
         this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.SidebarMenu = SidebarMenu;
         this.MANAGER_URLS = MANAGER_URLS;
-    }
-
-    fillSidebarMenuItems (allProducts, sectionsProviders, locale) {
-        _.forEach(sectionsProviders, section => {
-            if (!this.sectionHasAvailableProduct(section, locale)) {
-                return;
-            }
-            if (this.countProductsInSection(allProducts[section.sectionName]) <= 0) {
-                return;
-            }
-            section.createSection(allProducts[section.sectionName]);
-        });
     }
 
     sectionHasAvailableProduct (section, locale) {
@@ -38,4 +26,4 @@ class SidebarService {
     }
 }
 
-angular.module("managerApp").service("SidebarService", SidebarService);
+angular.module("managerApp").service("SidebarHelper", SidebarHelper);

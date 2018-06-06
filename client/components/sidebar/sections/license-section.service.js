@@ -1,8 +1,7 @@
 class LicenseSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, LicenseSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH, REDIRECT_URLS) {
+    constructor ($translate, SidebarMenu, LicenseSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH, REDIRECT_URLS) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
         this.REDIRECT_URLS = REDIRECT_URLS;
 

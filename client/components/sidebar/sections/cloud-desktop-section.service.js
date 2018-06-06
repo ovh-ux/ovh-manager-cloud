@@ -1,8 +1,8 @@
 class CloudDesktopSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, DeskaasSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH, URLS) {
+    constructor ($translate, SidebarMenu, SidebarHelper, DeskaasSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH, URLS) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
+        this.SidebarHelper = SidebarHelper;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
         this.URLS = URLS;
 
@@ -19,9 +19,9 @@ class CloudDesktopSectionSidebarService {
             icon: "ovh-font ovh-font-cloud-desktop",
             loadOnState: "deskaas",
             allowSubItems: true,
-            allowSearch: this.SidebarService.countProductsInSection(deskaasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            allowSearch: this.SidebarHelper.countProductsInSection(deskaasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(deskaasMenuSection, this.productTypesInSection, deskaasProducts);
+        this.SidebarHelper.fillSection(deskaasMenuSection, this.productTypesInSection, deskaasProducts);
     }
 }
 

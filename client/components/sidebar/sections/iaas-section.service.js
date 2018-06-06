@@ -1,9 +1,9 @@
 class IaasSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, CloudProjectSidebar, VpsSidebar, DedicatedServerSidebar,
+    constructor ($translate, SidebarMenu, SidebarHelper, CloudProjectSidebar, VpsSidebar, DedicatedServerSidebar,
                  DedicatedCloudSidebar, HousingSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
+        this.SidebarHelper = SidebarHelper;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
 
         this.sectionName = "iaas";
@@ -23,9 +23,9 @@ class IaasSectionSidebarService {
             icon: "ovh-font ovh-font-cloud-root",
             loadOnState: "iaas",
             allowSubItems: true,
-            allowSearch: this.SidebarService.countProductsInSection(iaasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            allowSearch: this.SidebarHelper.countProductsInSection(iaasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(iaasMenuSection, this.productTypesInSection, iaasProducts);
+        this.SidebarHelper.fillSection(iaasMenuSection, this.productTypesInSection, iaasProducts);
     }
 }
 

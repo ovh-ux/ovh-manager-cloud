@@ -1,9 +1,9 @@
 class PaasSectionSidebarService {
-    constructor ($translate, SidebarMenu, SidebarService, CdaSidebar, NasSidebar, NashaSidebar,
+    constructor ($translate, SidebarMenu, SidebarHelper, CdaSidebar, NasSidebar, NashaSidebar,
                  CdnSidebar, VeeamSidebar, SIDEBAR_MIN_ITEM_FOR_SEARCH) {
         this.$translate = $translate;
         this.SidebarMenu = SidebarMenu;
-        this.SidebarService = SidebarService;
+        this.SidebarHelper = SidebarHelper;
         this.SIDEBAR_MIN_ITEM_FOR_SEARCH = SIDEBAR_MIN_ITEM_FOR_SEARCH;
 
         this.sectionName = "paas";
@@ -23,9 +23,9 @@ class PaasSectionSidebarService {
             icon: "ovh-font ovh-font-cloud-package",
             loadOnState: "paas",
             allowSubItems: true,
-            allowSearch: this.SidebarService.countProductsInSection(paasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
+            allowSearch: this.SidebarHelper.countProductsInSection(paasProducts) > this.SIDEBAR_MIN_ITEM_FOR_SEARCH
         });
-        this.SidebarService.fillSection(paasMenuSection, this.productTypesInSection, paasProducts);
+        this.SidebarHelper.fillSection(paasMenuSection, this.productTypesInSection, paasProducts);
     }
 }
 

@@ -25,7 +25,7 @@ class SidebarOrderService {
         ];
     }
 
-    fillSidebarMenuActions (locale) {
+    buildSidebarMenuActions (locale) {
         _.forEach(this.productsToOrder, product => {
             if (!this.FeatureAvailabilityService.hasFeature(product.type, "sidebarOrder", locale)) {
                 return;
