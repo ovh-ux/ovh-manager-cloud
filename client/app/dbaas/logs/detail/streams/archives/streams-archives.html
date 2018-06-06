@@ -26,9 +26,9 @@
             <span class="oui-status"
                 data-translate="{{'streams_archives_' + $row.retrievalState}}"
                 data-ng-class="{
-                    'oui-status_info': $row.retrievalStateType == 'info',
-                    'oui-status_success': $row.retrievalStateType == 'success',
-                    'oui-status_warning': $row.retrievalStateType == 'warning'}">
+                    'oui-status_info': $row.retrievalStateType === 'info',
+                    'oui-status_success': $row.retrievalStateType === 'success',
+                    'oui-status_warning': $row.retrievalStateType === 'warning'}">
             </span>
         </oui-column>
         <oui-action-menu data-align="end" compact>

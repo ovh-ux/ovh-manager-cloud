@@ -32,11 +32,11 @@
         </oui-column>
         <oui-column title="::'inputs_state' | translate" property="info.state" type="string" searchable filterable>
             <span class="oui-status"
-                data-translate="{{'inputs_state_' + $row.info.state}}"
+                data-translate="{{ ::'inputs_state_' + $row.info.state }}"
                 data-ng-class="{
-                    'oui-status_info': $row.info.stateType == 'info',
-                    'oui-status_success': $row.info.stateType == 'success',
-                    'oui-status_warning': $row.info.stateType == 'warning'}">
+                    'oui-status_info': $row.info.stateType === 'info',
+                    'oui-status_success': $row.info.stateType === 'success',
+                    'oui-status_warning': $row.info.stateType === 'warning'}">
             </span>
         </oui-column>
         <oui-column title="::'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
