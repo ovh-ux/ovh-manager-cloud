@@ -30,47 +30,8 @@
             return this.ovhDocUrl.getDocUrl("cloud/metrics");
         }
 
-        onSearchText () {
-            this.scope.$broadcast("oui-table:token-table:refresh", {
-                searchText: this.searchText
-            });
-        }
-
         displayRemainingLabels (number) {
             return `+${number}`;
-        }
-
-        labelsTemplate () {
-            return `
-                <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key'" data-ng-if="$index < 2">
-                    <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
-                </span>
-                <cui-dropdown-menu data-ng-if="$row.labels.length > 2">
-                    <cui-dropdown-menu-button>
-                        <div class="token-labels__button-container">
-                            <span class="token-labels token-labels__button" data-ng-bind="MetricsTokenCtrl.displayRemainingLabels($row.labels.length - 2)"></span>
-                        </div>
-                    </cui-dropdown-menu-button>
-                    <cui-dropdown-menu-body class="token-labels-container">
-                        <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key'" data-ng-if="$index >= 2">
-                            <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
-                        </span>
-                    </cui-dropdown-menu-body>
-                </cui-dropdown-menu>
-            `;
-        }
-
-        actionTemplate () {
-            return `
-                <oui-action-menu data-align="end" data-compact>
-                    <oui-action-menu-item data-text="{{'metrics_token_show_preview' | translate}}"
-                                          data-on-click="MetricsTokenCtrl.showPreview($row.id)"></oui-action-menu-item>
-                    <oui-action-menu-item data-text="{{'metrics_token_edit' | translate}}"
-                                          data-on-click="MetricsTokenCtrl.edit($row.id, $row.description)"></oui-action-menu-item>
-                    <oui-action-menu-item data-text="{{'metrics_token_delete' | translate}}"
-                                          data-on-click="MetricsTokenCtrl.delete($row.id)"></oui-action-menu-item>
-                </oui-action-menu>
-            `;
         }
 
         showPreview (tokenID) {
