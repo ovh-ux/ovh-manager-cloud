@@ -9,6 +9,7 @@ class LicenseSidebar {
 
     addOrder () {
         return {
+            id: "order-license",
             title: this.$translate.instant("cloud_sidebar_actions_menu_licence"),
             icon: "ovh-font ovh-font-certificate",
             href: this.REDIRECT_URLS.license,

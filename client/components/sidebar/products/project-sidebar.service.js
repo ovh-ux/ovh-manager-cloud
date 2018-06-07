@@ -34,6 +34,7 @@ class CloudProjectSidebar {
 
     addOrder () {
         return {
+            id: "order-pci-project-new",
             title: this.$translate.instant("cloud_sidebar_actions_menu_cloud_project"),
             icon: "ovh-font ovh-font-public-cloud",
             state: "iaas.pci-project-new"

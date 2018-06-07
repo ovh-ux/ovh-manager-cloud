@@ -11,6 +11,7 @@ class CloudDBSidebar {
             return;
         }
         return {
+            id: "order-clouddb",
             title: this.$translate.instant("cloud_sidebar_actions_menu_clouddb"),
             icon: "ovh-font ovh-font-database",
             href: this.REDIRECT_URLS.orderSql,

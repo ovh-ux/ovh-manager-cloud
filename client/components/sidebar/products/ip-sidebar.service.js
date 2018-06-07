@@ -8,6 +8,7 @@ class IpSidebar {
 
     addOrder () {
         return {
+            id: "order-ip",
             title: this.$translate.instant("cloud_sidebar_actions_menu_ip"),
             icon: "ovh-font ovh-font-ip",
             href: this.REDIRECT_URLS.ip,

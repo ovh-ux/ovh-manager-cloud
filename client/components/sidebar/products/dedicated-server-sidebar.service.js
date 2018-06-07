@@ -35,6 +35,7 @@ class DedicatedServerSidebar {
 
     addOrder () {
         return {
+            id: "order-dedicated-server",
             title: this.$translate.instant("cloud_sidebar_actions_menu_dedicated_server"),
             icon: "ovh-font ovh-font-server",
             href: this.URLS.website_order.dedicated_server[this.locale],
