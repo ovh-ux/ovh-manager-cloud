@@ -94,8 +94,9 @@
     </cui-modal-body>
     <cui-modal-footer>
         <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.dismiss()"></cui-cancel-button>
-        <cui-button data-text="'common_modal_ok' | translate"
-            data-on-click="IpLoadBalancerServerFarmProbeEditCtrl.close()"
-            data-type="primary"></cui-button>
+        <oui-button text="{{'common_modal_ok' | translate}}"
+            on-click="IpLoadBalancerServerFarmProbeEditCtrl.close()"
+            variant="primary">
+        </oui-button>
     </cui-modal-footer>
 </cui-modal>
