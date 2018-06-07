@@ -21,13 +21,13 @@
         <oui-column title=":: 'logs_index_col_description' | translate" property="info.description" sortable type="string" searchable filterable></oui-column>
         <oui-column title="::'logs_index_col_free_space' | translate" type="number">
             <span class="oui-status"
-                data-ng-class="ctrl.storageColor($row.info)">{{$row.info.currentStorage | bytes:2}} / {{$row.info.maxSize |  bytes:2}}</span>
+                data-ng-class="ctrl.storageColor($row.info)" data-ng-bind="($row.info.currentStorage | bytes:2) + '/' + ($row.info.maxSize | bytes:2)"></span>
         </oui-column>
         <oui-column title=":: 'logs_col_last_modified' | translate" property="info.updatedAt" sortable type="date">
             {{ $row.updatedAt | momentFormat:'L'}}
         </oui-column>
         <oui-column title=":: 'logs_index_col_shared' | translate" sortable type="string">
-            <span data-ng-if="!$row.info.isEditable">{{ ::'common_yes' | translate }}</span>
+            <span data-ng-if="!$row.info.isEditable" data-ng-bind="::'common_yes' | translate"></span>
             <span data-ng-if="$row.info.isEditable"> - </span>
         </oui-column>
         <oui-action-menu data-align="end" compact>
