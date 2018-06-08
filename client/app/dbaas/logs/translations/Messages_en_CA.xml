@@ -435,7 +435,7 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Grace period</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Repeat notifications</translation>
-   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Delete the alert (alarm)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Are you sure you want to delete the <strong>{{alert}}</strong> alert?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">An error occurred while deleting the {{alertName}} alert: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">The {{alertName}} alert has been deleted.</translation>
@@ -575,7 +575,7 @@
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
    <translation id="inputs_logs_configure_format" qtlid="477496">Format of your logs</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimiter between each message</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Line (of code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Null</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
