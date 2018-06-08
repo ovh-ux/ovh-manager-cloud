@@ -64,8 +64,8 @@
 
 <!-- Welcome page -->
    <translation id="logs_welcome_title" qtlid="427171">Logs Data Platform is a logs management system designed by OVH</translation>
-   <translation id="logs_welcome_description_1" qtlid="426716">Index and analyse your logs in real time. Receive alerts about any downtime. Share your data with your collaborators.</translation>
-   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This way, you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
+   <translation id="logs_welcome_description_1" qtlid="426716">Index and analyse your logs in real time. Receive alerts about any downtime. Share your data with your employees. </translation>
+   <translation id="logs_welcome_description_2" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This means you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
    <translation id="logs_welcome_try" qtlid="427080">Try it out for free</translation>
    <translation id="logs_welcome_graylog_webui" qtlid="427132">Graylog web interface</translation>
    <translation id="logs_welcome_grafana_saas" qtlid="427145">Grafana SaaS</translation>
@@ -75,7 +75,7 @@
    <translation id="logs_welcome_forum" qtlid="427119">Forum</translation>
 
 <!-- All accounts page -->
-   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This way, you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
+   <translation id="logs_accounts_description" qtlid="474207">Logs Data Platform is a comprehensive platform you can use to manage and analyse your company's logs. You can get an overall view of how well your physical and virtual servers are running. You can also see how well your cloud-based and mobile applications are running. This means you can anticipate potential incidents, and be notified if your resources experience any downtime.</translation>
    <translation id="logs_accounts_order" qtlid="43558">Order</translation>
    <translation id="logs_accounts_add" qtlid="350872">New account</translation>
    <translation id="logs_accounts_col_name" qtlid="3818">Name</translation>
@@ -197,7 +197,7 @@
    <translation id="logs-input-8-detail" qtlid="475000">8 instances</translation>
    <translation id="logs-dashboard-5-detail" qtlid="475013">5-pack</translation>
    <translation id="logs-stream-5-detail" qtlid="475013">5-pack</translation>
-   <translation id="logs-kibana-1-detail" qtlid="475026">1 alias and 1 500 MB index</translation>
+   <translation id="logs-kibana-1-detail" qtlid="475026">1 alias and 1 x 500 MB index</translation>
    <translation id="logs-alias-5-detail" qtlid="475013">5-pack</translation>
    <translation id="logs-index-1-detail" qtlid="475039">1 fragment</translation>
    <translation id="logs-index-2-detail" qtlid="475052">2 fragments</translation>
@@ -298,11 +298,11 @@
    <translation id="logs_offer_conflict_title" qtlid="475793">Solution conflict</translation>
    <translation id="logs_offer_conflict_description" qtlid="475806">You have selected a solution you are already using. Please select another solution.</translation>
    <translation id="logs_order_get_error" qtlid="475819">An error has occurred loading the solutions</translation>
-   <translation id="logs_order_save_order" qtlid="475832">An error has occurred processing your order. Please try again.</translation>
+   <translation id="logs_order_save_order" qtlid="475832">An error has occurred processing your order. Please try again</translation>
 
 <!-- Tokens -->
    <translation id="logs_tokens_title" qtlid="421386">Read tokens</translation>
-   <translation id="logs_tokens_description" qtlid="475845">To grant external applications with access to your logs, and to automate certain tasks, you will need to give them access to the APIs. The most secure way to manage this access is by using authentication tokens. By using this feature, you no longer need to enter your credentials into the configuration files.</translation>
+   <translation id="logs_tokens_description" qtlid="475845">To grant external applications access to your logs, and to automate certain tasks, you will need to give them access to the APIs. The most secure way to manage this access is by using authentication tokens. By using this feature, you no longer need to enter your credentials into the configuration files.</translation>
    <translation id="logs_tokens_add" qtlid="469231">Add a token</translation>
    <translation id="logs_tokens_col_name" qtlid="3818">Name</translation>
    <translation id="logs_tokens_col_token" qtlid="421490">Token</translation>
@@ -339,7 +339,7 @@
    <translation id="logs_streams_follow_live" qtlid="426222">Monitor in real time</translation>
    <translation id="logs_streams_follow_description" qtlid="476105">For the <strong>{{ name }}</strong> data stream</translation>
    <translation id="logs_streams_graylog_access" qtlid="426820">Graylog access</translation>
-   <translation id="logs_streams_copy_token" qtlid="476053">Copy write token</translation>
+   <translation id="logs_streams_copy_token" qtlid="476053">Copy the write token</translation>
    <translation id="logs_stream_delete_title" qtlid="476066">Delete data stream</translation>
    <translation id="logs_stream_delete_message" qtlid="476079">Are you sure you want to delete the <strong>{{stream}}</strong> data stream?</translation>
    <translation id="logs_streams_add_title" qtlid="426170">Add data stream</translation>
@@ -381,7 +381,7 @@
    <translation id="logs_streams_follow_copy_address" qtlid="476313">Copy WebSocket address</translation>
    <translation id="logs_streams_follow_download_client" qtlid="476326">Download ldp-tail</translation>
    <translation id="logs_streams_follow_close_connection" qtlid="470037">Close the connection</translation>
-   <translation id="logs_streams_follow_open_connection" qtlid="476339">Open connection</translation>
+   <translation id="logs_streams_follow_open_connection" qtlid="476339">Open the connection</translation>
    <translation id="logs_streams_follow_test_gelf" qtlid="476352">Test data stream with GELF</translation>
    <translation id="logs_streams_follow_test_ltsv" qtlid="476365">Test data stream with LTSV</translation>
    <translation id="logs_streams_follow_test_rfc" qtlid="476378">Test data stream with RFC 5424</translation>
@@ -435,7 +435,7 @@
    <translation id="streams_alerts_condition" qtlid="425806">Condition</translation>
    <translation id="streams_alerts_grace_period" qtlid="469582">Grace period (minutes)</translation>
    <translation id="streams_alerts_repeat_notification" qtlid="469595">Repeat notifications</translation>
-   <translation id="streams_alerts_delete" qtlid="484819">Supprimer l'alerte (alarme)</translation>
+   <translation id="streams_alerts_delete" qtlid="484819">Delete the alert (alarm)</translation>
    <translation id="streams_alerts_delete_message" qtlid="476703">Are you sure you want to delete the <strong>{{alert}}</strong> alert?</translation>
    <translation id="streams_alerts_delete_error" qtlid="476716">An error has occurred deleting the {{alertName}} alert: {{message}}</translation>
    <translation id="streams_alerts_delete_success" qtlid="476729">The {{alertName}} alert has been deleted.</translation>
@@ -454,17 +454,17 @@
    <translation id="edit_alert_title_field_content_value" qtlid="476833">Modify content field condition</translation>
    <translation id="add_alert_description_message_count" qtlid="469621">This condition is triggered when the number of messages is higher or lower than the defined threshold for a given period.</translation>
    <translation id="add_alert_description_field_value" qtlid="469803">This condition is triggered when the aggregate value for a field is higher or lower than a defined threshold over a given period.</translation>
-   <translation id="add_alert_description_field_content_value" qtlid="469907">This condition is activated when the contents of the messages equal a defined value.</translation>
+   <translation id="add_alert_description_field_content_value" qtlid="469907">This condition is activated when the content of the messages equals a defined value.</translation>
    <translation id="add_alert_name_field" qtlid="3818">Name</translation>
    <translation id="add_alert_title_field_description" qtlid="469634">Title of the alert condition.</translation>
    <translation id="add_alert_time_period_field" qtlid="469647">Time period (minutes)</translation>
    <translation id="add_alert_time_period_field_description" qtlid="469660">Evaluate the condition for all messages received within the given number of minutes.</translation>
    <translation id="add_alert_threshold_type_field" qtlid="469673">Threshold type</translation>
    <translation id="add_alert_threshold_type_more" qtlid="72641">More</translation>
-   <translation id="add_alert_threshold_type_less" qtlid="476846">Less</translation>
+   <translation id="add_alert_threshold_type_less" qtlid="476846">Fewer</translation>
    <translation id="add_alert_threshold_type_lower" qtlid="476859">Lower</translation>
    <translation id="add_alert_threshold_type_higher" qtlid="476872">Higher</translation>
-   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Select the condition that will trigger the alert, e.g. more/less messages than the threshold.</translation>
+   <translation id="add_alert_threshold_type_field_description_message_count" qtlid="469686">Select the condition that will trigger the alert, e.g. more/fewer messages than the threshold.</translation>
    <translation id="add_alert_threshold_type_field_description_field_value" qtlid="469855">Select the condition that will trigger the alert: e.g. when the value is higher/lower than the threshold.</translation>
    <translation id="add_alert_threshold_field" qtlid="469699">Threshold</translation>
    <translation id="add_alert_threshold_field_description" qtlid="469712">The value that triggers the alert if it is exceeded.</translation>
@@ -482,7 +482,7 @@
    <translation id="add_alert_constraint_type_min" qtlid="476885">Minimum</translation>
    <translation id="add_alert_constraint_type_max" qtlid="33826">Maximum</translation>
    <translation id="add_alert_constraint_type_sum" qtlid="476898">Sum</translation>
-   <translation id="add_alert_constraint_type_stddev" qtlid="476911">Threshold-type</translation>
+   <translation id="add_alert_constraint_type_stddev" qtlid="476911">Threshold type</translation>
    <translation id="add_alert_value_field" qtlid="47548">Value</translation>
    <translation id="add_alert_value_field_description" qtlid="469920">The value to be compared against the field's value.</translation>
    <translation id="streams_alerts_add_success" qtlid="476924">The {{alertName}} alert has been created</translation>
@@ -573,9 +573,9 @@
    <translation id="inputs_logs_edit_single_instance_field" qtlid="424311">Single instance</translation>
    <translation id="inputs_logs_edit_single_instance_description" qtlid="470284">Launch only one instance of this type.</translation>
    <translation id="inputs_logs_configure_flowgger_title" qtlid="477483">Flowgger</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format of your logs</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Your log format</translation>
    <translation id="inputs_logs_configure_delimiter" qtlid="423375">Delimiter between each message</translation>
-   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Ligne (de code)</translation>
+   <translation id="inputs_logs_configure_delimiter_line" qtlid="484832">Line (of code)</translation>
    <translation id="inputs_logs_configure_delimiter_nul" qtlid="423388">Null</translation>
    <translation id="inputs_logs_configure_delimiter_syslen" qtlid="423401">Syslen</translation>
    <translation id="inputs_logs_configure_format_gelf" qtlid="477509">Graylog Extended Log Format (GELF)</translation>
@@ -593,9 +593,9 @@
    <translation id="inputs_logs_configure_next" qtlid="17743">Next</translation>
    <translation id="inputs_logs_configure_previous" qtlid="17431">Previous</translation>
    <translation id="inputs_logs_configure_later" qtlid="82305">Later</translation>
-   <translation id="inputs_logs_configure_format" qtlid="477496">Format of your logs</translation>
+   <translation id="inputs_logs_configure_format" qtlid="477496">Your log format</translation>
    <translation id="inputs_logs_configure_logstash_title" qtlid="477639">Logstash</translation>
-   <translation id="inputs_logs_configure_logstash_desc" qtlid="470297">Edit the "input" sections, and filter the "output" section of your Logstash configuration that we wrote.</translation>
+   <translation id="inputs_logs_configure_logstash_desc" qtlid="470297">Edit the "input" sections, and filter the "output" section of the Logstash configuration written by us. </translation>
    <translation id="inputs_logs_configure_logstash_desc_tcp" qtlid="470310">As a reminder, you have chosen to open TCP port 6154 publicly.</translation>
    <translation id="inputs_logs_configure_logstash_desc2" qtlid="470323">Once you have edited these sections, you can test your configuration directly.</translation>
    <translation id="inputs_logs_configure_logstash_wizard" qtlid="477652">Configuration form</translation>
@@ -641,10 +641,10 @@
    <translation id="logs_options_current_options_loading_error" qtlid="477964">An error has occurred changing the options</translation>
    <translation id="logs-input-2" qtlid="477977">1 data-gathering tool with 2 instances</translation>
    <translation id="logs-input-4" qtlid="477990">1 data-gathering tool with 4 instances</translation>
-   <translation id="logs-input-8" qtlid="478003">1 data-gathering tool with 8 instances</translation>
+   <translation id="logs-input-8" qtlid="478003">1 data-gathering tool with eight instances</translation>
    <translation id="logs-dashboard-5" qtlid="426937">5 Graylog dashboards</translation>
    <translation id="logs-stream-5" qtlid="426950">5 Graylog data streams</translation>
-   <translation id="logs-kibana-1" qtlid="478016">Kibana Pack: 1 Alias and 1 500 MiB index</translation>
+   <translation id="logs-kibana-1" qtlid="478016">Kibana Pack: 1 Alias and 1 x 500 MiB index</translation>
    <translation id="logs-alias-5" qtlid="478029">5 Elasticsearch aliases</translation>
    <translation id="logs_index_modal_add_title" qtlid="423024">Add an index</translation>
    <translation id="logs_index_modal_edit_title" qtlid="478042">Modify index</translation>
