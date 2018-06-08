@@ -13,11 +13,11 @@
                     data-translate="metrics_token_add_token"
                     ui-sref="dbaas.metrics.detail.token.add({ serviceName: MetricsTokenCtrl.serviceName })"></button>
             </extra-top>
-            <oui-column title="'metrics_table_name' | translate" sortable="asc" searchable property="description" type="string">
+            <oui-column data-title="'metrics_table_name' | translate" data-sortable="asc" data-searchable data-property="description" data-type="string">
                     <span data-ng-bind="$row.description || '-'"></span>
             </oui-column>
-            <oui-column title="'metrics_token_labels' | translate" type="string" property="labels">
-                <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key'" data-ng-if="$index < 2">
+            <oui-column data-title="'metrics_token_labels' | translate" data-type="string" data-property="labels">
+                <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index < 2">
                     <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
                 </span>
                 <oui-dropdown data-ng-if="$row.labels.length > 2">
@@ -25,22 +25,22 @@
                         <button type="button" class="token-labels token-labels__button" data-ng-bind="MetricsTokenCtrl.displayRemainingLabels($row.labels.length - 2)" oui-dropdown-trigger></button>
                     </div>
                     <oui-dropdown-content class="token-labels-container">
-                        <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key'" data-ng-if="$index >= 2">
+                        <span class="token-labels" data-ng-repeat="label in $row.labels | orderBy : 'key' track by $index" data-ng-if="$index >= 2">
                             <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
                         </span>
                     </oui-dropdown-content>
                 </oui-dropdown>
             </oui-column>
-            <oui-column title="'metrics_token_permission' | translate" filterable searchable property="permission"  type="string">
+            <oui-column data-title="'metrics_token_permission' | translate" data-filterable data-searchable data-property="permission" data-type="string">
                 <span data-ng-bind="'metrics_token_permission_' + $row.permission | translate"></span>
             </oui-column>
-            <oui-column title="'metrics_table_token' | translate">
+            <oui-column data-title="'metrics_table_token' | translate">
                 <cui-clipboard data-text="$row.access"></cui-clipboard>            
             </oui-column>
             <oui-action-menu data-align="end" data-compact>
                 <oui-action-menu-item data-text="{{'metrics_token_show_preview' | translate}}" data-on-click="MetricsTokenCtrl.showPreview($row.id)"></oui-action-menu-item>
                 <oui-action-menu-item data-text="{{'metrics_token_edit' | translate}}" data-on-click="MetricsTokenCtrl.edit($row.id, $row.description)"></oui-action-menu-item>
-                <oui-action-menu-item data-text="{{'metrics_token_delete' | translate}}" data-on-click="MetricsTokenCtrl.delete($row.id)"></oui-action-menu-item>
+                <oui-action-menu-item data-text="{{'metrics_token_delete' | translate}}" data-on-click="MetricsTokenCtrl.delgit ete($row.id)"></oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
     </div>
