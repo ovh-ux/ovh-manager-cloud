@@ -3,8 +3,8 @@
 
     <oui-radio-toggle-group data-model="ctrl.scale"
         data-on-change="ctrl.onScaleChange()">
-        <oui-radio data-ng-repeat="(scale, value) in ctrl.scales"
-            data-text="{{ ('iplb_graph_scape_' + scale) | translate }}"
+        <oui-radio data-ng-repeat="(scale, value) in ctrl.scales track by $index"
+            data-text="{{ ::('iplb_graph_scape_' + scale) | translate }}"
             data-value="scale">
         </oui-radio>
     </oui-radio-toggle-group>

@@ -10,8 +10,8 @@
     <p class="oui-paragraph mb-5" data-translate="logs_aliases_link_description"></p>
     <form novalidate name="ctrl.form" class="ml-1">
         <oui-radio-toggle-group data-model="ctrl.selectedContent">
-            <oui-radio data-ng-repeat="content in ctrl.contents"
-                data-text="{{ content.name | translate }}"
+            <oui-radio data-ng-repeat="content in ctrl.contents track by $index"
+                data-text="{{ ::content.name | translate }}"
                 data-value="content.value">
             </oui-radio>
         </oui-radio-toggle-group>

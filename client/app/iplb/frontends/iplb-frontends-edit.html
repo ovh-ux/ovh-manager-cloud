@@ -17,8 +17,8 @@
             <div class="oui-field__content">
                 <oui-radio-toggle-group data-model="ctrl.protocol"
                     data-on-change="ctrl.onProtocolChange()">
-                    <oui-radio data-ng-repeat="protocol in ctrl.protocols"
-                        data-text="{{ ('iplb_frontend_add_protocol_' + protocol) | translate }}"
+                    <oui-radio data-ng-repeat="protocol in ctrl.protocols track by $index"
+                        data-text="{{ ::('iplb_frontend_add_protocol_' + protocol) | translate }}"
                         data-value="protocol"
                         data-disabled="ctrl.isProtocolDisabled(protocol)">
                     </oui-radio>

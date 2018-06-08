@@ -17,8 +17,8 @@
             <div class="oui-field__content">
                 <oui-radio-toggle-group data-model="ctrl.protocol"
                     data-on-change="ctrl.onProtocolChange()">
-                    <oui-radio data-ng-repeat="protocol in ctrl.protocols"
-                        data-text="{{ ('iplb_farm_protocol_' + protocol) | translate }}"
+                    <oui-radio data-ng-repeat="protocol in ctrl.protocols track by $index"
+                        data-text="{{ ::('iplb_farm_protocol_' + protocol) | translate }}"
                         data-value="protocol"
                         data-disabled="ctrl.isProtocolDisabled(protocol)">
                     </oui-radio>
@@ -101,8 +101,8 @@
                 <label for="balance" class="oui-label" data-translate="iplb_farm_edit_balance"></label>
                 <div class="oui-field__content">
                     <oui-radio-toggle-group data-model="ctrl.farm.balance">
-                        <oui-radio data-ng-repeat="balance in ctrl.balances"
-                            data-text="{{ ('iplb_farm_balance_' + balance) | translate }}"
+                        <oui-radio data-ng-repeat="balance in ctrl.balances track by $index"
+                            data-text="{{ ::('iplb_farm_balance_' + balance) | translate }}"
                             data-value="balance">
                         </oui-radio>
                     </oui-radio-toggle-group>
@@ -113,8 +113,8 @@
                 <label for="stickiness" class="oui-label" data-translate="iplb_farm_edit_stickiness"></label>
                 <div class="oui-field__content">
                     <oui-radio-toggle-group data-model="ctrl.farm.stickiness">
-                        <oui-radio data-ng-repeat="stickiness in ctrl.availableStickinesses"
-                            data-text="{{ ('iplb_farm_stickiness_' + stickiness) | translate }}"
+                        <oui-radio data-ng-repeat="stickiness in ctrl.availableStickinesses track by $index"
+                            data-text="{{ ::('iplb_farm_stickiness_' + stickiness) | translate }}"
                             data-value="stickiness">
                         </oui-radio>
                     </oui-radio-toggle-group>
