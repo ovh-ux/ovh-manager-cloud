@@ -3,6 +3,8 @@ angular.module("managerApp").controller("NashaPartitionAccessCtrl", function ($s
 
     var self = this;
 
+    self.$state = $state;
+
     self.data = {
         nasha: {},
         partition: {},

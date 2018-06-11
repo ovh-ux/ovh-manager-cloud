@@ -11,7 +11,7 @@
    <translation id="dtpds_region_required" qtlid="301019">Vyberte region</translation>
 
    <translation id="dtpds_init_loading_error" qtlid="301032">Nebylo možné nahrát nastavení projektu.</translation>
-   <translation id="dtpds_edit_project" qtlid="49754">Záloha</translation>
+   <translation id="dtpds_edit_project" qtlid="49754">Uložit</translation>
    <translation id="dtpds_project_edit_successful" qtlid="301045">Projekt byl úspěšně změněn</translation>
    <translation id="dtpds_project_edit_error" qtlid="301058">Během úpravy projektu došlo k chybě.</translation>
    <translation id="dtpds_project_created" qtlid="301071">Projekt je aktivní a připraven k použití.</translation>

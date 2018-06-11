@@ -1,64 +1,33 @@
-<div class="oui-modal oui-modal_shadow nasha-partition-update">
-    <form data-ng-submit="NashaPartitionUpdateCtrl.updatePartition()" name="nashaPartitionUpdateForm">
-        <div class="oui-modal__header">
-            <button class="oui-icon oui-icon-close_thin oui-modal__close-button"
-                type="button"
-                aria-label="Exit" data-ng-click="NashaPartitionUpdateCtrl.dismiss()"></button>
-        </div>
+<form data-ng-submit="NashaPartitionUpdateCtrl.updatePartition()" name="nashaPartitionUpdateForm">
+    <oui-modal
+        data-primary-label="{{ ::'common_modify' | translate }}"
+        data-secondary-action="NashaPartitionUpdateCtrl.dismiss()"
+        data-secondary-label="{{ ::'common_cancel' | translate }}"
+        data-on-dismiss="NashaPartitionUpdateCtrl.dismiss()"
+        data-loading="NashaPartitionUpdateCtrl.loading"
+        data-title="{{::'nasha_partitions_action_update' | translate}}">
 
-        <div class="oui-modal__body oui-modal__body_no-icon">
-            <div class="oui-modal__body-text">
-                <h2 class="oui-modal__title" data-translate="nasha_partitions_action_update"></h2>
+        <p>
+            <span data-translate="nasha_partitions_name"></span>
+            <span data-ng-bind="NashaPartitionUpdateCtrl.data.partition.partitionName"></span>
+        </p>
 
-                <div class="oui-field">
-                    <label data-translate="nasha_partitions_name"
-                         class="oui-field__label oui-label"></label>
-                    <div class="oui-field__content">
-                        <p data-ng-bind="NashaPartitionUpdateCtrl.data.partition.partitionName"></p>
-                    </div>
-                </div>
+        <oui-field data-label="{{::'nasha_partitions_size_in_Gb' | translate}}"
+            data-help-text="{{::'nasha_partitions_minimum_size' | translate}}">
+            <oui-numeric
+                id="inputPartitionSize"
+                name="inputPartitionSize"
+                min="10"
+                max="NashaPartitionUpdateCtrl.data.nasha.zpoolSize"
+                data-model="NashaPartitionUpdateCtrl.data.newSize"
+                data-on-change="NashaPartitionAddCtrl.checkSize()">
+            </oui-numeric>
+        </oui-field>
 
-                <div class="oui-field">
-                    <label data-translate="nasha_partitions_size_in_Gb"
-                         class="oui-field__label oui-label"
-                        for="inputPartitionSize"></label>
-                    <div class="oui-field__content">
-                        <div class="oui-field-control oui-field-control_1">
-                            <input type="number"
-                                   class="oui-input"
-                                   id="inputPartitionSize"
-                                   min="10"
-                                   max="{{NashaPartitionUpdateCtrl.data.nasha.zpoolSize}}"
-                                   placeholder="{{'nasha_partitions_size_in_Gb' | translate}}"
-                                   data-ng-change="NashaPartitionAddCtrl.checkSize()"
-                                   data-ng-model="NashaPartitionUpdateCtrl.data.newSize"/>
-                        </div>
-                        <div class="oui-field-helper"
-                            data-translate="nasha_partitions_minimum_size"></div>
-                    </div>
-                </div>
+        <p>
+            <span data-translate="nasha_partitions_protocol"></span>
+            <span data-ng-bind="'nasha_partitions_protocol_' + NashaPartitionUpdateCtrl.data.partition.protocol | translate"></span>
+        </p>
 
-                <div class="oui-field">
-                    <label data-translate="nasha_partitions_protocol"
-                         class="oui-field__label oui-label"></label>
-                    <div class="oui-field__content">
-                        <p data-ng-bind="'nasha_partitions_protocol_' + NashaPartitionUpdateCtrl.data.partition.protocol | translate"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="oui-modal__footer">
-            <button type="reset"
-                class="oui-button oui-button_secondary"
-                data-ng-click="NashaPartitionUpdateCtrl.dismiss()"
-                data-translate="common_cancel">
-            </button>
-            <button type="submit"
-                class="oui-button oui-button_primary"
-                data-ng-disabled="!NashaPartitionUpdateCtrl.isSizeChanged() || !NashaPartitionUpdateCtrl.data.newSize || NashaPartitionUpdateCtrl.data.newSize < 10 || NashaPartitionUpdateCtrl.data.newSize > NashaPartitionUpdateCtrl.data.nasha.zpoolSize || NashaPartitionUpdateCtrl.loading"
-                data-translate="common_modify">
-            </button>
-        </div>
-    </form>
-</div>
+    </oui-modal>
+</form>

@@ -1,3 +1,13 @@
+<a name="7.4.1"></a>
+## [7.4.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.0...v7.4.1) (2018-06-05)
+
+
+### Bug Fixes
+
+* order url for US ([a2b9d06](https://github.com/ovh-ux/ovh-manager-cloud/commit/a2b9d06))
+
+
+
 <a name="7.4.0"></a>
 # [7.4.0](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.3.3...v7.4.0) (2018-05-31)
 
