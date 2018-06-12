@@ -1,16 +1,17 @@
 class IpSidebar {
-    constructor ($translate, REDIRECT_URLS) {
+    constructor ($translate, REDIRECT_URLS, URLS) {
         this.$translate = $translate;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.URLS = URLS;
 
         this.type = "IP";
     }
 
-    addOrder () {
+    addOrder (locale) {
         return {
             title: this.$translate.instant("cloud_sidebar_actions_menu_ip"),
             icon: "ovh-font ovh-font-ip",
-            href: this.REDIRECT_URLS.ip,
+            href: _.get(this.URLS, `website_order.ip[${locale}]`, this.REDIRECT_URLS.ip),
             target: "_parent"
         };
     }

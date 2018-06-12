@@ -30,7 +30,7 @@ class SidebarOrderService {
             if (!this.FeatureAvailabilityService.hasFeature(product.type, "sidebarOrder", locale)) {
                 return;
             }
-            const orderItem = product.addOrder();
+            const orderItem = product.addOrder(locale);
             if (!orderItem) {
                 return;
             }
