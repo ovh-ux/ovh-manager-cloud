@@ -43,6 +43,7 @@ class LogsSidebar {
 
     addOrder () {
         return {
+            id: "order-logs",
             title: this.$translate.instant("cloud_sidebar_section_logs"),
             icon: "fa fa-bar-chart",
             state: "dbaas.logs.welcome"

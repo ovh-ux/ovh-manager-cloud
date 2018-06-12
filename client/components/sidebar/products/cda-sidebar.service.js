@@ -41,6 +41,7 @@ class CdaSidebar {
 
     addOrder () {
         return {
+            id: "order-cda",
             title: this.$translate.instant("cloud_sidebar_actions_menu_paas_cda"),
             icon: "ovh-font ovh-font-cloud-disk-array",
             href: this.URLS.website_order.cloud_disk_array[this.locale],

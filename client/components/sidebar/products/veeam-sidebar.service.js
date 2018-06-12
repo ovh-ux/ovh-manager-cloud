@@ -42,6 +42,7 @@ class VeeamSidebar {
 
     addOrder () {
         return {
+            id: "order-veeam",
             title: this.$translate.instant("cloud_sidebar_actions_menu_paas_veeam"),
             icon: "ovh-font ovh-font-veeam",
             href: this.URLS.website_order.veeam[this.locale],

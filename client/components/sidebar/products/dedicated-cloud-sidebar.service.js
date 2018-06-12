@@ -37,6 +37,7 @@ class DedicatedCloudSidebar {
 
     addOrder () {
         return {
+            id: "order-private-cloud",
             title: this.$translate.instant("cloud_sidebar_actions_menu_dedicated_cloud"),
             icon: "ovh-font ovh-font-dedicatedCloud",
             href: this.URLS.website_order.dedicated_cloud[this.locale],

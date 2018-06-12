@@ -44,6 +44,7 @@ class IplbSidebar {
 
     addOrder () {
         return {
+            id: "order-loadbalancer",
             title: this.$translate.instant("cloud_sidebar_actions_menu_iplb"),
             icon: "ovh-font ovh-font-ip",
             href: this.URLS.website_order.load_balancer[this.locale],

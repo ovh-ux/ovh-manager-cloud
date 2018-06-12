@@ -36,6 +36,7 @@ class DeskaasSidebar {
 
     addOrder () {
         return {
+            id: "order-cloud-desktop",
             title: this.$translate.instant("cloud_sidebar_actions_menu_clouddesktop"),
             icon: "ovh-font ovh-font-cloud-desktop",
             href: this.URLS.website_order.cloud_desktop[this.locale],

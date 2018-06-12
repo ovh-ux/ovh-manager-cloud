@@ -1,9 +1,10 @@
 class SidebarOrderService {
-    constructor (FeatureAvailabilityService, SidebarMenu, CloudProjectSidebar, VpsSidebar,
+    constructor (atInternet, FeatureAvailabilityService, SidebarMenu, CloudProjectSidebar, VpsSidebar,
                  DedicatedServerSidebar, DedicatedCloudSidebar, CdaSidebar, NashaSidebar, VeeamSidebar, DBaasTsSidebar,
                  VrackSidebar, DeskaasSidebar, IpSidebar, IplbSidebar, LicenseSidebar, CloudDBSidebar, LogsSidebar) {
         this.FeatureAvailabilityService = FeatureAvailabilityService;
         this.SidebarMenu = SidebarMenu;
+        this.atInternet = atInternet;
 
         // In order of appearance in the actions menu
         this.productsToOrder = [
@@ -35,6 +36,12 @@ class SidebarOrderService {
                 return;
             }
             this.SidebarMenu.addActionsMenuOption(orderItem);
+        });
+        this.SidebarMenu.addActionsMenuItemClickHandler((id) => {
+            this.atInternet.trackClick({
+                name: id,
+                type: "action"
+            })
         });
     }
 }
