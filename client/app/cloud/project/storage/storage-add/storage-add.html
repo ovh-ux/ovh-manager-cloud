@@ -1,39 +1,37 @@
-<div class="cui-page">
+<section class="cui-page__content">
 
-    <div data-ng-include="'app/cloud/project/storage/storage-header.html'"></div>
+    <cui-message-container data-messages="messages"></cui-message-container>
 
-    <section class="cui-page__content">
-        <oui-back-button data-title="{{ :: contentTitle }}"></oui-back-button>
+    <oui-back-button data-title="{{ :: contentTitle }}"></oui-back-button>
 
-        <div data-ng-show="!loaders.init">
+    <div data-ng-show="!loaders.init">
 
-            <form role="form" name="addForm" novalidate="novalidate">
+        <form role="form" name="addForm" novalidate="novalidate">
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-6 col-lg-4 center add-button-item"
-                         data-ng-repeat="item in items.value"
-                         data-ng-class="{
+                <div class="col-md-6 col-lg-4 center add-button-item"
+                     data-ng-repeat="item in items.value"
+                     data-ng-class="{
+                        'active': addedType.value == item
+                     }">
+
+                    <div class="form-group add-button-container add-button-container-{{item}}"
+                        data-ng-class="{
                             'active': addedType.value == item
-                         }">
-
-                        <div class="form-group add-button-container add-button-container-{{item}}"
-                            data-ng-class="{
-                                'active': addedType.value == item
-                            }">
-                        </div>
-
-                        <a class="btn add-button" data-ng-class="{
-                            'active' : addedType.value == item
-                        }">{{ 'add_' + item | translate}}</a>
+                        }">
                     </div>
+
+                    <a class="btn add-button" data-ng-class="{
+                        'active' : addedType.value == item
+                    }">{{ 'add_' + item | translate}}</a>
                 </div>
+            </div>
 
-                <br/>
+            <br/>
 
-                <div class="block" data-ng-include="'app/cloud/project/storage/storage-add/storage/add-storage.html'"></div>
+            <div class="block" data-ng-include="'app/cloud/project/storage/storage-add/storage/add-storage.html'"></div>
 
-            </form>
-        </div>
-    </section>
-</div>
+        </form>
+    </div>
+</section>
