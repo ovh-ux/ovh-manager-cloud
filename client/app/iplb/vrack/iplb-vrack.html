@@ -30,13 +30,11 @@
         <oui-button data-ng-if="$ctrl.actions.activateVrack.isAvailable()"
             data-text="{{::$ctrl.actions.activateVrack.text}}" 
             data-on-click="$ctrl.actions.activateVrack.callback()"
-            data-disabled="$ctrl.actions.activateVrack.isAvailable && !$ctrl.actions.activateVrack.isAvailable()"
             data-variant="secondary">
         </oui-button>
         <oui-button data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()"
             data-text="{{::$ctrl.actions.deActivateVrack.text}}" 
             data-on-click="$ctrl.actions.deActivateVrack.callback()"
-            data-disabled="$ctrl.actions.deActivateVrack.isAvailable && !$ctrl.actions.deActivateVrack.isAvailable()"
             data-variant="secondary">
         </oui-button>
     </div>
