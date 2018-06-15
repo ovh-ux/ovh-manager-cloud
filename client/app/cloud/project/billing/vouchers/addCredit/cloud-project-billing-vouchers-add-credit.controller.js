@@ -1,5 +1,6 @@
 class CloudProjectBillingVouchersAddcreditCtrl {
-    constructor ($uibModalInstance, ControllerHelper, OvhApiMe) {
+    constructor ($q, $uibModalInstance, ControllerHelper, OvhApiMe) {
+        this.$q = $q;
         this.$uibModalInstance = $uibModalInstance;
         this.ControllerHelper = ControllerHelper;
         this.OvhApiMe = OvhApiMe;
@@ -17,7 +18,10 @@ class CloudProjectBillingVouchersAddcreditCtrl {
     }
 
     addCredit () {
-        this.$uibModalInstance.close(this.credit.amount);
+        if (this.form.$invalid) {
+            return this.$q.reject();
+        }
+        return this.$uibModalInstance.close(this.credit.amount);
     }
 
     cancel () {
