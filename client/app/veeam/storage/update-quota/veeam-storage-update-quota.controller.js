@@ -17,21 +17,16 @@
         }
 
         confirm () {
-            this.saving = true;
-            return this.VeeamService.updateRepositoryQuota(this.serviceName, this.inventoryName, this.newQuota)
-                .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.dismiss(response))
-                .finally(() => {
-                    this.saving = false;
-                });
+            this.updateQuota = this.ControllerHelper.request.getHashLoader({
+                loaderFunction: () => this.VeeamService.updateRepositoryQuota(this.serviceName, this.inventoryName, this.newQuota)
+                    .then(response => this.$uibModalInstance.close(response))
+                    .catch(response => this.$uibModalInstance.dismiss(response))
+            });
+            this.updateQuota.load();
         }
 
         cancel () {
             this.$uibModalInstance.dismiss();
-        }
-
-        isModalLoading () {
-            return this.capabilities.loading || this.saving;
         }
     }
 
