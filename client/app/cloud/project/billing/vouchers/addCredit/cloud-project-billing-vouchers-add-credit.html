@@ -1,32 +1,22 @@
-<form novalidate name="CloudProjectBillingVouchersAddcreditCtrl.form">
+<form novalidate name="form" data-ng-submit="form.$valid && CloudProjectBillingVouchersAddcreditCtrl.addCredit()">
     <oui-modal 
         data-title="{{:: 'cpb_vouchers_add_credit_title' | translate}}"
-        data-primary-action="CloudProjectBillingVouchersAddcreditCtrl.addCredit()"
         data-primary-label="{{ ::'cpb_vouchers_add_credit_valid' | translate }}"
         data-secondary-action="CloudProjectBillingVouchersAddcreditCtrl.cancel()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
         data-on-dismiss="CloudProjectBillingVouchersAddcreditCtrl.cancel()">
             
         <p class="oui-modal__text" data-translate="cpb_vouchers_add_credit_info"></p>
-        <div class="oui-field" data-ng-class="{'oui-field_error': CloudProjectBillingVouchersAddcreditCtrl.form.$submitted && CloudProjectBillingVouchersAddcreditCtrl.form.amount.$invalid}">
-                <label class="oui-label" for="amount" data-translate="cpb_vouchers_add_credit_amount"
-                    translate-values="{currency: CloudProjectBillingVouchersAddcreditCtrl.currency.data.currency.symbol }"></label>
-                <input type="number" class="oui-input"
-                data-ng-class="{'oui-input_error': CloudProjectBillingVouchersAddcreditCtrl.form.$submitted && CloudProjectBillingVouchersAddcreditCtrl.form.amount.$invalid}"
-                    id="amount" name="amount" pattern="^\d{1,8}$"
-                    placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
-                    data-ng-model="CloudProjectBillingVouchersAddcreditCtrl.credit.amount"
-                    autoselect
-                    autofocus
-                    min="1"
-                    required />
-                <div class="oui-field__error" data-ng-if="CloudProjectBillingVouchersAddcreditCtrl.form.$submitted && CloudProjectBillingVouchersAddcreditCtrl.form.amount.$invalid">
-                    <span role="alert">
-                        <i class="oui-icon oui-icon-error" aria-hidden="true"></i>
-                        <span translate="cpb_vouchers_add_credit_required_error"></span>
-                        <span translate="cpb_vouchers_add_credit_max_error"></span>
-                    </span>
-                </div>
-        </div>
+        <oui-field data-label="{{ ::'cpb_vouchers_add_credit_amount' | translate }}">
+            <input type="number" class="oui-input"
+                data-ng-class="{'oui-input_error': form.$submitted && form.amount.$invalid}"
+                id="amount" name="amount" pattern="^\d{1,8}$"
+                placeholder="{{ ::'cpb_vouchers_add_credit_amount' | translate}}"
+                data-ng-model="CloudProjectBillingVouchersAddcreditCtrl.credit.amount"
+                autoselect
+                autofocus
+                min="1"
+                required />
+        </oui-field>
     </oui-modal>
 </form>

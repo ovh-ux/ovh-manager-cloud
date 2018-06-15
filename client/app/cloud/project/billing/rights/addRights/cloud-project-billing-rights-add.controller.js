@@ -1,6 +1,5 @@
 class CloudProjectBillingRightsAddCtrl {
-    constructor ($q, $stateParams, $uibModalInstance, ControllerHelper, CloudMessage, model, OvhApiCloud) {
-        this.$q = $q;
+    constructor ($stateParams, $uibModalInstance, ControllerHelper, CloudMessage, model, OvhApiCloud) {
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
         this.ControllerHelper = ControllerHelper;
@@ -14,9 +13,6 @@ class CloudProjectBillingRightsAddCtrl {
     }
 
     validateAddRight () {
-        if (this.form.$invalid) {
-            return this.$q.reject();
-        }
         this.CloudMessage.flushChildMessage();
         this.loader = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>

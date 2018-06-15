@@ -1,6 +1,5 @@
 class CloudProjectOpenStackUserAddCtrl {
-    constructor ($q, $translate, $uibModalInstance, ControllerHelper, CloudMessage, OpenstackUsersPassword, OvhApiCloud, serviceName) {
-        this.$q = $q;
+    constructor ($translate, $uibModalInstance, ControllerHelper, CloudMessage, OpenstackUsersPassword, OvhApiCloud, serviceName) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.ControllerHelper = ControllerHelper;
@@ -19,9 +18,6 @@ class CloudProjectOpenStackUserAddCtrl {
     }
 
     confirm () {
-        if (this.form.$invalid) {
-            return this.$q.reject();
-        }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>

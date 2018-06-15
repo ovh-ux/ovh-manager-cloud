@@ -1,6 +1,5 @@
 class CloudProjectBillingVoucherAddCtrl {
-    constructor ($q, $translate, $uibModalInstance, ControllerHelper, CloudMessage, OvhApiCloudProjectCredit, serviceName) {
-        this.$q = $q;
+    constructor ($translate, $uibModalInstance, ControllerHelper, CloudMessage, OvhApiCloudProjectCredit, serviceName) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.ControllerHelper = ControllerHelper;
@@ -18,9 +17,6 @@ class CloudProjectBillingVoucherAddCtrl {
     }
 
     confirm () {
-        if (this.form.$invalid) {
-            return this.$q.reject();
-        }
         this.CloudMessage.flushChildMessage();
         this.saving = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () =>
