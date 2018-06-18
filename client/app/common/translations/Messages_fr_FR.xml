@@ -91,8 +91,12 @@
    <translation id="common_navbar_notification_error" qtlid="323434">Oups, nous n'arrivons pas à initialiser le menu !</translation>
    <translation id="common_navbar_notification_error_subject" qtlid="26407">Erreur</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Voir toutes les notifications</translation>
+   <translation id="common_navbar_notification_error_in_notification">Oups, il y a un prolème !</translation>
+   <translation id="common_navbar_notification_error_in_notification_description">Nous n'arrivons pas à initialiser le menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+   <translation id="common_navbar_notification_none">Vous êtes à jour !</translation>
+   <translation id="common_navbar_notification_none_description">Vous n'avez aucune notification.</translation>
 
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
