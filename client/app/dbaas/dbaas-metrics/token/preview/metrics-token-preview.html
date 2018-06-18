@@ -14,7 +14,7 @@
         <dd class="preview-list__definition" data-ng-bind="'metrics_token_permission_' + $ctrl.token.permission | translate"></dd>
         <dt class="preview-list__term" data-translate="metrics_token_labels"></dt>
         <dd class="preview-list__definition">
-            <div class="preview-labels" data-ng-repeat="label in $ctrl.token.labels | orderBy : 'key'">
+            <div class="preview-labels" data-ng-repeat="label in $ctrl.token.labels | orderBy : 'key' track by $index">
                 <span data-ng-bind="label.key"></span>:<span data-ng-bind="label.value"></span>
             </div>
         </dd>
