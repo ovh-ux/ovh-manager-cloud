@@ -1,27 +1,21 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <form name="MetricsTokenEditForm">
-    <cui-modal-body data-title=":: 'metrics_token_edit_title' | translate">
-        <oui-spinner data-ng-show="$ctrl.loading"></oui-spinner>
-        <div data-ng-hide="$ctrl.loading">
-            <div data-ng-if="$ctrl.type == 'name'">
-                <hr>
-                <section>
-                  <h3 data-translate="metrics_token_edit_name"></h3>
-                  <input class="oui-input" type="text" data-ng-model="$ctrl.value">
-                </section>
-                <hr>
-            </div>
-        </div>
-    </cui-modal-body>
-    <cui-modal-footer>
-      <cui-cancel-button
-        data-text="'metrics_token_edit_cancel' | translate"
-        data-ng-click="$ctrl.cancel()"></cui-cancel-button>
-      <cui-submit-button
-        data-text="'metrics_token_edit_confirm' | translate"
-        data-ng-click="$ctrl.confirm()"
-        data-ng-disabled="MetricsTokenEditForm.$invalid || $ctrl.loading"></cui-submit-button>
-    </cui-modal-footer>
-    </form>
-</cui-modal>
+<form id="MetricsTokenEditForm"
+      name="MetricsTokenEditForm"
+      data-ng-submit="MetricsTokenEditForm.$valid && $ctrl.confirm()"
+      novalidate>
+    <oui-modal
+        data-secondary-action="$ctrl.cancel()"
+        data-title="{{ ::'metrics_token_edit_title' | translate }}"        
+        data-secondary-label="{{ ::'metrics_token_edit_cancel' | translate }}"
+        data-primary-label="{{ ::'metrics_token_edit_confirm' | translate}}"
+        data-on-dismiss="$ctrl.cancel()"
+        data-loading="$ctrl.deletToken.loading">
+        <oui-field data-label="{{ ::'metrics_token_edit_name' | translate }}">
+            <input class="oui-input"
+                   type="text"
+                   id="label"
+                   name="name"
+                   data-ng-model="$ctrl.value"
+                   autofocus>
+        </oui-field>
+    </oui-modal>
+</form>
