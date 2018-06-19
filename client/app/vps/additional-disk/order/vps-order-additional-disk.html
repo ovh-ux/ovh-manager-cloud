@@ -18,10 +18,10 @@
                                 <input type="radio"
                                         data-ng-model="$ctrl.model.capacity"
                                         name="capacity"
-                                        data-ng-value="{{capacity.size}}"
+                                        data-ng-value="{{::capacity.size}}"
                                         required>
-                                {{ capacity.type | additionalDiskOptions }} {{ "unit_size_GB" | translate}}
-                                <span class="red" data-translate="vps_order_additional_disk_select_capacity_price_tax_free"
+                                {{ ::capacity.type | additionalDiskOptions }} {{ ::"unit_size_GB" | translate}}
+                                <span data-translate="vps_order_additional_disk_select_capacity_price_tax_free"
                                         data-translate-values="{price: capacity.text}"></span>
                             </label>
                         </div>
@@ -32,15 +32,15 @@
                     data-loading="$ctrl.loaders.offer || $ctrl.loaders.order"
                     data-on-cancel="$ctrl.cancel()"
                     data-on-submit="$ctrl.confirm()">
-                    <dl class="dl-horizontal">
-                        <dt data-translate="vps_order_additional_disk_option"></dt>
-                        <dd data-translate="vps_order_additional_disk_offer_description"
+                    <dl class="vps-dl-horizontal">
+                        <dt class="vps-item-horizontal bold" data-translate="vps_order_additional_disk_option"></dt>
+                        <dd class="vps-item-horizontal" data-translate="vps_order_additional_disk_offer_description"
                             data-translate-values="{size: $ctrl.model.capacity, date: $ctrl.model.duration.split('upto-')[1] }"></dd>
-                        <dt data-translate="vps_order_additional_disk_totalHT"></dt>
-                        <dd class="red bold"
+                        <dt class="vps-item-horizontal bold" data-translate="vps_order_additional_disk_totalHT"></dt>
+                        <dd class="vps-item-horizontal"
                             data-ng-bind="$ctrl.offer.prices.withoutTax.text"></dd>
-                        <dt data-translate="vps_order_additional_disk_totalTTC"></dt>
-                        <dd class="red bold"
+                        <dt class="vps-item-horizontal bold" data-translate="vps_order_additional_disk_totalTTC"></dt>
+                        <dd class="vps-item-horizontal"
                             data-ng-bind="$ctrl.offer.prices.withTax.text"></dd>
                     </dl>
                 </oui-step-form>

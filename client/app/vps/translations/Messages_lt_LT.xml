@@ -238,7 +238,7 @@
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Įjungti atsarginių kopijų saugykloą</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Įjungti atsarginių kopijų saugyklos parinktį</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Užsakyti atsarginių kopijų parinktį VPS serveriui<span class="normal italic">{{ serviceName }}</span>?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Šiai parinkčiai taikomas mėnesinis <span class="red bold">{{ price }} be PVM</span> mokestis</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Šiai parinkčiai taikomas mėnesinis <span class="bold">{{ price }} be PVM</span> mokestis</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Pirmoji sąskaita bus apskaičiuota pagal likusį laiką iki VPS atnaujinimo.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Atsarginių kopijų saugyklą - tai vieta archyvams, į kurią galite perkelti savo failus, klientų duomenis, nustatymus ir atsarginius konfigūracinius failus.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Užsakymo generavimas...</translation>
@@ -316,8 +316,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Užsakyti automatines atsargines kopijas</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Klaida keičiant informaciją</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Pirmoji sąskaita bus apskaičiuota pagal likusį laiką iki VPS atnaujinimo.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Vėliau paslaugai bus taikomas <span class="red bold">{{ price }}</span> mėnesinis mokestis</translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Ar norite užsakyti atsarginių kopijų paslaugą VPS serveriui <span class="italic normal">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Vėliau paslaugai bus taikomas <span class="bold">{{ price }}</span> mėnesinis mokestis</translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Ar norite užsakyti atsarginių kopijų paslaugą VPS serveriui "{{ serviceName }}"?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Jūsų užsakymas bus patvirtintas, kai sutiksite su sutartimis ir spragtelėsite mygtuką "Toliau".</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Kaina be PVM:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Kaina su PVM:</translation>

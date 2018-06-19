@@ -12,8 +12,7 @@
                     data-valid="$ctrl.model.contractsValidated"
                     data-on-cancel="$ctrl.cancel()"
                     data-on-submit="$ctrl.orderOption()">
-                    <p class="red"
-                        data-translate="vps_configuration_activate_snapshot_step1_alert"
+                    <p data-translate="vps_configuration_activate_snapshot_step1_alert"
                         data-translate-values="{ amount: $ctrl.model.optionDetails.unitaryPrice }"></p>
                     <div data-translate="vps_configuration_activate_snapshot_step1_confirmation"></div>
                     <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
@@ -30,26 +29,26 @@
                                 data-ng-bind='contract.name'></a>
                         </li>
                     </ul>
-                    <span class="italic"
-                            data-translate="vps_configuration_veeam_order_step1_info"></span>
+                    <div class="italic mb-4"
+                            data-translate="vps_configuration_veeam_order_step1_info"></div>
                 </oui-step-form>
                 <oui-step-form data-header="{{ ::'vps_configuration_activate_snapshot_step2_title' | translate }}"
                     data-loading="!$ctrl.model.url"
                     data-valid="$ctrl.model.url"
                     data-on-cancel="$ctrl.cancel()"
                     data-on-submit="$ctrl.confirm()">
-                    <dl data-ng-show="$ctrl.model.url" class="dl-horizontal">
-                        <dt class="bold"
+                    <dl data-ng-show="$ctrl.model.url" class="vps-dl-horizontal bold">
+                        <dt class="vps-item-horizontal"
                             data-translate="vps_configuration_activate_snapshot_step2_totalHT"></dt>
-                        <dd class="red bold"
-                            data-ng-bind="$ctrl.model.optionDetails.withoutTax"></dd>
+                        <dd class="vps-item-horizontal"
+                            data-ng-bind="::$ctrl.model.optionDetails.withoutTax"></dd>
 
-                        <dt class="bold"
+                        <dt class="vps-item-horizontal"
                             data-translate="vps_configuration_activate_snapshot_step2_totalTTC"></dt>
-                        <dd class="red bold"
-                            data-ng-bind="$ctrl.model.optionDetails.withTax"></dd>
+                        <dd class="vps-item-horizontal"
+                            data-ng-bind="::$ctrl.model.optionDetails.withTax"></dd>
                     </dl>
-                    <div data-ng-show="$ctrl.model.url" class="row-fluid">
+                    <div data-ng-show="$ctrl.model.url" class="row-fluid mb-4">
                         <span data-translate="vps_configuration_veeam_order_step2_bc"></span>
                         <span class="blue bold"
                                 data-translate="vps_configuration_veeam_order_step2_continue"></span>

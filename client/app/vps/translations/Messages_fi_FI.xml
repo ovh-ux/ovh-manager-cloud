@@ -238,7 +238,7 @@
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Aktivoi Backup Storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Aktivoi Backup Storage -lisäpalvelu</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Backup storage -lisäpalvelun tilaus virtuaalipalvelimelle <span class="normal italic">{{ serviceName }}</span>?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Tästä lisäpalvelusta laskututetaan kuukausihinnan <span class="red bold">{{ price }} ALV0</span> mukaan</translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Tästä lisäpalvelusta laskututetaan kuukausihinnan <span class="bold">{{ price }} ALV0</span> mukaan</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">Ensimmäisen maksun yhteydessä sinua veloitetaan palvelimen uusintapäivämäärään asti.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Varmuuskopiolisäpalvelu on arkistointitila palvelimen eri tiedostoja ja asetuksia varten.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Tilausta luodaan…</translation>
@@ -316,8 +316,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Tilaa automaattinen varmuuskopiointi</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Tapahtui virhe tietojen latauksen aikana</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Ensimmäisen maksun yhteydessä sinua veloitetaan palvelimen uusintapäivämäärään asti.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Tämän jälkeen palvelua laskutetaan kuukausihinnan <span class="red bold">{{ price }}</span> mukaisesti</translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Automatisoitujen varmuuskopioiden tilaus lisäpalveluna virtuaalipalvelimelle <span class="italic normal">{{ serviceName }}</span>?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Tämän jälkeen palvelua laskutetaan kuukausihinnan <span class="bold">{{ price }}</span> mukaisesti</translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Automatisoitujen varmuuskopioiden tilaus lisäpalveluna virtuaalipalvelimelle "{{ serviceName }}"?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Vahvistaaksesi pyyntösi, hyväksy käyttäehdot ja klikkaa ”Seuraava"-painiketta.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Hinta (ALV 0 %)</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Hinta (ALV 24 %)</translation>

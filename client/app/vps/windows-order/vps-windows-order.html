@@ -15,7 +15,7 @@
                     <label class="oui-label"
                         data-translate="vps_order_windows_order_select_duration"></label>
 
-                    <div class="oui-radio" data-ng-repeat="duration in $ctrl.durations.available">
+                    <div class="oui-radio mb-4" data-ng-repeat="duration in $ctrl.durations.available">
                         <input class="oui-radio__input" type="radio" name="durations"
                                 data-ng-model="$ctrl.model.duration" id="{{duration}}"
                                 data-ng-value="duration">
@@ -32,7 +32,7 @@
                     data-valid="$ctrl.model.contractsValidated"
                     data-on-submit="$ctrl.orderOption()"
                     data-on-cancel="$ctrl.cancel()">
-                    <div data-contracts="$ctrl.durations.details[$ctrl.model.duration].contracts"
+                    <div class="mb-4" data-contracts="$ctrl.durations.details[$ctrl.model.duration].contracts"
                         data-contracts-validated="$ctrl.model.contractsValidated"
                         data-full-text="false"></div>
                 </oui-step-form>
@@ -41,18 +41,18 @@
                     data-valid="$ctrl.model.url"
                     data-on-submit="$ctrl.confirm()"
                     data-on-cancel="$ctrl.cancel()">
-                    <dl class="dl-horizontal">
-                        <dt class="bold"
+                    <dl class="vps-dl-horizontal bold">
+                        <dt class="vps-item-horizontal"
                             data-translate="vps_order_windows_order_price_HT"></dt>
-                        <dd class="red bold"
+                        <dd class="vps-item-horizontal"
                             data-ng-bind="$ctrl.durations.details[$ctrl.model.duration].prices.withoutTax.text"></dd>
 
-                        <dt class="bold"
+                        <dt class="vps-item-horizontal"
                             data-translate="vps_order_windows_order_price_TTC"></dt>
-                        <dd class="red bold"
+                        <dd class="vps-item-horizontal"
                             data-ng-bind="$ctrl.durations.details[$ctrl.model.duration].prices.withTax.text"></dd>
                     </dl>
-                    <div class="row-fluid">
+                    <div class="row-fluid mb-4">
                         <p data-translate="vps_order_windows_order_final_txt"></p>
                         <p data-translate="vps_order_windows_order_final_txt2"></p>
                     </div>

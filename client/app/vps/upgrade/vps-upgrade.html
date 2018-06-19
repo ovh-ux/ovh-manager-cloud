@@ -72,24 +72,24 @@
         </oui-step-form>
         <oui-step-form data-header="{{ ::'vps_configuration_upgradevps_step3_title' | translate }}"
             data-submit-text="{{ ::'vps_configuration_upgradevps_order' | translate }}">
-            <dl class="vps-upgrade-dl-horizontal">
-                <dt class="vps-upgrade-item-horizontal"
+            <dl class="vps-dl-horizontal">
+                <dt class="vps-item-horizontal"
                     data-translate="vps_configuration_upgradevps_step2_price1"
                     data-translate-values="{ duration: $ctrl.selectedModelForUpgrade.duration.dateFormatted}"></dt>
-                <dd class="vps-upgrade-item-horizontal">
+                <dd class="vps-item-horizontal">
                     <span data-ng-bind="$ctrl.order.prices.withoutTax.text"></span>
                     <span data-translate="vps_configuration_upgradevps_step1_table_price_monthly"></span>
                 </dd>
-                <dt class="vps-upgrade-item-horizontal"
+                <dt class="vps-item-horizontal"
                     data-translate="vps_configuration_upgradevps_step2_price2"></dt>
-                <dd class="vps-upgrade-item-horizontal">
+                <dd class="vps-item-horizontal">
                     <span data-ng-bind="$ctrl.selectedModelForUpgrade.monthPrice"></span>
                     <span data-translate="vps_configuration_upgradevps_step1_table_price_monthly"></span>
                 </dd>
             </dl>
             <div class="mb-4">
                 <span data-translate="vps_configuration_upgradevps_step2_explication2"></span>
-                <span data-translate="vps_configuration_upgradevps_step2_explication3">></span>
+                <span data-translate="vps_configuration_upgradevps_step2_explication3"></span>
             </div>
         </oui-step-form>
     </oui-stepper>
