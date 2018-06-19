@@ -1,3 +1,15 @@
+<a name="7.4.2"></a>
+## [7.4.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.1...v7.4.2) (2018-06-18)
+
+
+### Bug Fixes
+
+* **vps:upgrade:** Allow to upgrade new models ([02572c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/02572c9))
+* **vrack add:** change copy for us customers ([483dbbf](https://github.com/ovh-ux/ovh-manager-cloud/commit/483dbbf))
+* **vrack add:** display order url for us customers ([5cba48b](https://github.com/ovh-ux/ovh-manager-cloud/commit/5cba48b))
+
+
+
 <a name="7.4.1"></a>
 ## [7.4.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.0...v7.4.1) (2018-06-05)
 
