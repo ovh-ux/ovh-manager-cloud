@@ -158,23 +158,15 @@ angular.module("managerApp")
         },
         guides: {
             home: {
-                ASIA: "http://docs.ovh.ca/en/",
-                AU: "http://docs.ovh.ca/en/",
-                CA: "http://docs.ovh.ca/en/",
-                QC: "http://docs.ovh.ca/fr/",
-                SG: "http://docs.ovh.ca/en/",
-                WE: "http://docs.ovh.ca/en/",
-                WS: "http://docs.ovh.ca/en/"
+                ASIA: "https://docs.ovh.com/ca/en/",
+                AU: "https://docs.ovh.com/ca/en/",
+                CA: "https://docs.ovh.com/ca/en/",
+                QC: "https://docs.ovh.com/ca/fr/",
+                SG: "https://docs.ovh.com/ca/en/",
+                WE: "https://docs.ovh.com/ca/en/",
+                WS: "https://docs.ovh.com/ca/en/"
             },
-            cda: {
-                ASIA: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                AU: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                CA: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                QC: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                SG: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                WE: "https://docs.ovh.com/gb/en/cloud/ceph/",
-                WS: "https://docs.ovh.com/gb/en/cloud/ceph/"
-            },
+            cda: "storage/",
             ip_failover: {
                 ASIA: {
                     debian: "https://www.ovh.com/ca/en/g2042.ip_fail_over_debian",
