@@ -1,14 +1,12 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <cui-modal-body data-title=":: 'vps_dashboard_ips_additional' | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.init">
-            <oui-spinner></oui-spinner>
-        </div>
-        <div data-ng-if="!$ctrl.loader.init">
-            <div data-ng-repeat="ip in $ctrl.ips | orderBy:'type':true | filter: { version: 'v4'}">
-                <label class="oui-label" for="ip-{{ip.ipAddress}}" data-ng-bind="ip.type"></label>
-                <cui-clipboard data-id="ip-{{ip.ipAddress}}" data-text="ip.ipAddress"></cui-clipboard>
-            </div>
-        </div>
-    </cui-modal-body>
-</cui-modal>
+<oui-modal
+    data-title="{{:: 'vps_dashboard_ips_additional' | translate}}"
+    data-secondary-action="$ctrl.cancel()"
+    data-secondary-label="{{ ::'common_close' | translate }}"
+    data-on-dismiss="$ctrl.cancel()"
+    data-loading="$ctrl.ipsLoader.loading">
+
+    <div data-ng-repeat="ip in $ctrl.ips | orderBy:'type':true | filter: { version: 'v4'}">
+        <label class="oui-label" for="ip-{{ip.ipAddress}}" data-ng-bind="ip.type"></label>
+        <cui-clipboard data-id="ip-{{ip.ipAddress}}" data-text="ip.ipAddress"></cui-clipboard>
+    </div>
+</oui-modal>

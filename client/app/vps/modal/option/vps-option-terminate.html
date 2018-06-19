@@ -1,18 +1,14 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="$ctrl.cancel()"></cui-modal-header>
-    <cui-modal-body data-title=":: $ctrl.TITLES[$ctrl.vpsOption] | translate">
-        <div class="text-center" data-ng-if="$ctrl.loader.init || $ctrl.loader.save">
-            <oui-spinner></oui-spinner>
-        </div>
-        <div data-ng-if="!$ctrl.loader.init && !$ctrl.loader.save">
-            <cui-modal-text data-text="'vps_configuration_cancel_option_step1_info' | translate:{ date: ($ctrl.expirationDate | momentFormat:'LL') }"></cui-modal-text>
-            <p class="oui-modal__body-text red" data-translate="vps_configuration_cancel_option_step1_warn"></p>
-        </div>
-    </cui-modal-body>
-    <cui-modal-footer>
-        <cui-cancel-button data-text="'common_cancel' | translate" data-on-click="$ctrl.cancel()"></cui-cancel-button>
-        <cui-submit-button data-text="'common_confirm' | translate"
-            data-on-click="$ctrl.confirm()"
-            data-disabled="$ctrl.loader.init || $ctrl.loader.save"></cui-submit-button>
-    </cui-modal-footer>
-</cui-modal>
+<oui-modal
+    data-title="{{:: $ctrl.TITLES[$ctrl.vpsOption] | translate}}"
+    data-primary-label="{{ ::'common_confirm' | translate }}"
+    data-primary-action="$ctrl.confirm()"
+    data-secondary-action="$ctrl.cancel()"
+    data-secondary-label="{{ ::'common_cancel' | translate }}"
+    data-on-dismiss="$ctrl.cancel()"
+    data-loading="$ctrl.terminate.loading || $ctrl.selectedVps.loading">
+
+    <p class="oui-modal__text" 
+        data-translate="vps_configuration_cancel_option_step1_info"
+        data-translate-values="{ date: ($ctrl.expirationDate | momentFormat:'LL') }"></p>  
+    <p class="oui-modal__text red" data-translate="vps_configuration_cancel_option_step1_warn"></p>  
+</oui-modal>

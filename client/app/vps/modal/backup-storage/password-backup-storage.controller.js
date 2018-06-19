@@ -1,14 +1,11 @@
 class PasswordBackupStorageCtrl {
-    constructor ($translate, $uibModalInstance, CloudMessage, serviceName, VpsService) {
+    constructor ($translate, $uibModalInstance, ControllerHelper, CloudMessage, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.serviceName = serviceName;
         this.CloudMessage = CloudMessage;
         this.VpsService = VpsService;
-
-        this.loader = {
-            save: false
-        };
+        this.ControllerHelper = ControllerHelper;
     }
 
     cancel () {
@@ -16,14 +13,14 @@ class PasswordBackupStorageCtrl {
     }
 
     confirm () {
-        this.loader.save = true;
-        this.VpsService.requestFtpBackupPassword(this.serviceName)
-            .then(() => this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_forgot_password_success")))
-            .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_forgot_password_failure")))
-            .finally(() => {
-                this.loader.save = false;
-                this.$uibModalInstance.close();
-            });
+        this.CloudMessage.flushChildMessage();
+        this.loader = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.VpsService.requestFtpBackupPassword(this.serviceName)
+                .then(() => this.CloudMessage.success(this.$translate.instant("vps_backup_storage_access_forgot_password_success")))
+                .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_forgot_password_failure")))
+                .finally(() => this.$uibModalInstance.close())
+        });
+        this.loader.load();
     }
 }
 

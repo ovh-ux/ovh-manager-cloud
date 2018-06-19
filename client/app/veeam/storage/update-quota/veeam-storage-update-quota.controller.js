@@ -22,7 +22,7 @@
                     .then(response => this.$uibModalInstance.close(response))
                     .catch(response => this.$uibModalInstance.dismiss(response))
             });
-            this.updateQuota.load();
+            return this.updateQuota.load();
         }
 
         cancel () {
