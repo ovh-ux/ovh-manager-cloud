@@ -318,13 +318,13 @@
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">Pour le premier paiement, vous serez facturé au prorata du nombre de jours restant avant la date de renouvellement de votre VPS.</translation>
    <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Ensuite, le service sera facturé mensuellement au prix de <span class="red bold">{{ price }}</span></translation>
    <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Commande de l'option Backups automatisés sur le VPS <span class="italic normal">{{ serviceName }}</span> ?</translation>
-   <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation et cliquer sur le bouton "Suivant" ci-dessous.</translation>
+   <translation id="vps_configuration_veeam_order_step1_id">Afin de confirmer votre demande, veuillez accepter les conditions d'utilisation.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Prix HT :</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Prix TTC :</translation>
    <translation id="vps_configuration_veeam_order_step1_contracts" qtlid="170070">Je reconnais avoir bien pris connaissance des éléments suivants :</translation>
    <translation id="vps_configuration_veeam_order_step2_generation_bc" qtlid="169511">Génération du bon de commande ...</translation>
    <translation id="vps_configuration_veeam_order_step2_bc" qtlid="169524">Le bon de commande a été généré avec succès.</translation>
-   <translation id="vps_configuration_veeam_order_step2_continue" qtlid="169537">Afin de confirmer votre commande, veuillez cliquer sur le bouton "Régler" ci-dessous.</translation>
+   <translation id="vps_configuration_veeam_order_step2_continue">Afin de confirmer votre commande, veuillez cliquer sur le bouton "{{:: 'common_confirm' | translate }}" ci-dessous.</translation>
    <translation id="vps_configuration_veeam_order_step2_explication" qtlid="169225">Veuillez noter qu'un délai d'environ 2 heures à compter de l'acceptation de votre paiement est nécessaire pour que l'activation de l'option soit prise en compte dans votre Espace Client Web.</translation>
    <translation id="vps_configuration_veeam_order_step2_explication2" qtlid="167886">Un nouvel onglet s'ouvrira et vous serez automatiquement redirigé(e) vers l'interface de paiement OVH.</translation>
    <translation id="vps_configuration_veeam_order_fail" qtlid="170083">Une erreur est survenue lors de la demande de souscription à l'option Backups automatiques.</translation>
