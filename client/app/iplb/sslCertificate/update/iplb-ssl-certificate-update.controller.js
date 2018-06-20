@@ -1,6 +1,7 @@
 class IpLoadBalancerSslCertificateUpdateCtrl {
-    constructor ($uibModalInstance, IpLoadBalancerSslCertificateService, serviceName, ssl) {
+    constructor ($uibModalInstance, ControllerHelper, IpLoadBalancerSslCertificateService, serviceName, ssl) {
         this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerSslCertificateService = IpLoadBalancerSslCertificateService;
         this.serviceName = serviceName;
         this.ssl = ssl;
@@ -11,13 +12,12 @@ class IpLoadBalancerSslCertificateUpdateCtrl {
     }
 
     update () {
-        return this.IpLoadBalancerSslCertificateService.update(
-            this.serviceName,
-            this.ssl.id,
-            { displayName: this.displayName }
-        )
-            .then(response => this.$uibModalInstance.close(response))
-            .catch(response => this.$uibModalInstance.dismiss(response));
+        this.updateSsl = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerSslCertificateService.update(this.serviceName, this.ssl.id, { displayName: this.displayName })
+                .then(response => this.$uibModalInstance.close(response))
+                .catch(response => this.$uibModalInstance.dismiss(response))
+        });
+        return this.updateSsl.load();
     }
 }
 

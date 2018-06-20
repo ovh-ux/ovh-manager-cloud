@@ -1,16 +1,16 @@
-<cui-modal>
-    <cui-modal-header data-on-dismiss="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"></cui-modal-header>
-    <cui-modal-body data-title=":: 'iplb_ssl_update_title' | translate">
-        <div class="oui-input-formfield">
-            <input type="text" id="displayName" name="displayName" class="oui-input" data-ng-model="IpLoadBalancerSslCertificateUpdateCtrl.displayName" />
-            <label for="displayName" class="oui-label" data-translate="iplb_ssl_edit_name"></label>
-        </div>
-    </cui-modal-body>
-    <cui-modal-footer>
-        <cui-button data-text="'iplb_ssl_update_cancel' | translate"
-            data-on-click="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"
-            type="secondary"></cui-button>
-        <cui-submit-button data-text="'iplb_ssl_update_confirm' | translate"
-            data-on-click="IpLoadBalancerSslCertificateUpdateCtrl.update()"></cui-submit-button>
-    </cui-modal-footer>
-</cui-modal>
+<oui-modal
+    data-title="{{ ::'iplb_ssl_update_title' | translate }}"
+    data-primary-label="{{ ::'iplb_ssl_update_confirm' | translate }}"
+    data-primary-action="IpLoadBalancerSslCertificateUpdateCtrl.update()"
+    data-secondary-action="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"
+    data-secondary-label="{{ ::'common_cancel' | translate }}"
+    data-on-dismiss="IpLoadBalancerSslCertificateUpdateCtrl.dismiss()"
+    data-loading="IpLoadBalancerSslCertificateUpdateCtrl.updateSsl.loading">
+    <oui-field data-label="{{ ::'iplb_ssl_edit_name' | translate }}">
+        <input class="oui-input"
+               type="text"
+               id="displayName"
+               name="displayName"
+               data-ng-model="IpLoadBalancerSslCertificateUpdateCtrl.displayName">
+    </oui-field>
+</oui-modal>
