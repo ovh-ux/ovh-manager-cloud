@@ -1,7 +1,8 @@
 class IpLoadBalancerFrontendDeleteCtrl {
-    constructor ($stateParams, $uibModalInstance, frontend, IpLoadBalancerFrontendsService) {
+    constructor ($stateParams, $uibModalInstance, ControllerHelper, frontend, IpLoadBalancerFrontendsService) {
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerFrontendsService = IpLoadBalancerFrontendsService;
 
         this.frontend = frontend;
