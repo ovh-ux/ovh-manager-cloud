@@ -8,7 +8,14 @@
            data-ng-bind-html="'homepage_top_guides_header' | translate: { url: $ctrl.guides.all }">
         </p>
     </div>
-    <div class="row d-md-flex">
+    <div
+        data-ng-if="$ctrl.isLoading"
+        class="text-center">
+        <oui-spinner data-size="l"></oui-spinner>
+    </div>
+    <div
+        data-ng-if="!$ctrl.isLoading"
+        class="row d-md-flex">
         <div class="col-md-10 col-lg-8 mx-md-auto">
             <cui-tile data-ng-repeat="section in $ctrl.guides.sections track by $index"
                       data-title="section.title | translate"
@@ -18,8 +25,9 @@
                     <a class="oui-button oui-button_link oui-button_full-width cui-tile__button"
                        data-at-internet-click="{ name: link.atInternetClickTag }"
                        data-ng-href="{{ link.href }}"
-                       ng-attr-target="{{(link.isExternal) ? '_blank' : undefined}}">
-                        <span data-ng-bind="link.text"></span>
+                       data-ng-attr-target="{{(link.isExternal) ? '_blank' : undefined}}"
+                       rel="noopener">
+                        <span data-ng-bind="link.displayText"></span>
                         <span class="oui-icon oui-icon-external_link" data-ng-if="link.isExternal" aria-hidden="true"></span>
                     </a>
                 </div>

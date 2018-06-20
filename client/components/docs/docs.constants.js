@@ -1,10 +1,104 @@
 angular.module("managerApp")
     .constant("DOCS_ALL_GUIDES", {
+        DEFAULT: "https://docs.ovh.com/gb/en/",
+        CZ: "https://docs.ovh.com/cz/cs/",
+        DE: "https://docs.ovh.com/de/",
+        ES: "https://docs.ovh.com/es/",
+        FI: "https://docs.ovh.com/fi/",
         FR: "https://docs.ovh.com/fr/",
-        EN: "https://docs.ovh.com/gb/en/",
+        GB: "https://docs.ovh.com/gb/en/",
+        IE: "https://docs.ovh.com/ie/en/",
+        IT: "https://docs.ovh.com/it/",
+        LT: "https://docs.ovh.com/lt/",
+        MA: "https://docs.ovh.com/gb/en/",
+        NL: "https://docs.ovh.com/nl/",
+        PL: "https://docs.ovh.com/pl/",
+        PT: "https://docs.ovh.com/pt/",
+        SN: "https://docs.ovh.com/gb/en/",
+        TN: "https://docs.ovh.com/gb/en/",
         US: "https://support.ovhcloud.com/hc/en-us"
     })
     .constant("DOCS_HOMEPAGE_GUIDES", {
+        DEFAULT: {
+            PROJECT: {
+                title: "homepage_type_of_guide_pci",
+                list: [{
+                    text: "guide_project_1",
+                    atInternetClickTag: "TopGuide-PublicCloud-1",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/getting_started_with_public_cloud_logging_in_and_creating_a_project/"
+                }, {
+                    text: "guide_project_5",
+                    atInternetClickTag: "TopGuide-PublicCloud-5",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/configure_user_access_to_horizon/"
+                }, {
+                    text: "guide_project_6",
+                    atInternetClickTag: "TopGuide-PublicCloud-6",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/start-a-first-cloud-server-within-3-min/"
+                }, {
+                    text: "guide_project_7",
+                    atInternetClickTag: "TopGuide-PublicCloud-7",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/prepare_the_environment_for_using_the_openstack_api/"
+                }, {
+                    text: "guide_project_8",
+                    atInternetClickTag: "TopGuide-PublicCloud-8",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/create_and_configure_an_additional_disk_on_an_instance/"
+                }, {
+                    text: "guide_project_all",
+                    atInternetClickTag: "TopGuide-PublicCloud-all",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/public-cloud/"
+                }]
+            },
+            VPS: {
+                title: "homepage_type_of_guide_vps",
+                list: [{
+                    text: "guide_vps_1",
+                    atInternetClickTag: "TopGuide-VPS-1",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/getting-started-vps/"
+                }, {
+                    text: "guide_vps_2",
+                    atInternetClickTag: "TopGuide-VPS-2",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/tips-for-securing-a-vps/"
+                }, {
+                    text: "guide_vps_3",
+                    atInternetClickTag: "TopGuide-VPS-3",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/repartitioning-vps-after-upgrade/"
+                }, {
+                    text: "guide_vps_4",
+                    atInternetClickTag: "TopGuide-VPS-4",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/use-kvm-for-vps/"
+                }, {
+                    text: "guide_vps_5",
+                    atInternetClickTag: "TopGuide-VPS-5",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/windows-first-config/"
+                }, {
+                    text: "guide_vps_7",
+                    atInternetClickTag: "TopGuide-VPS-7",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/root-password/"
+                }, {
+                    text: "guide_vps_8",
+                    atInternetClickTag: "TopGuide-VPS-8",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/rescue/"
+                }, {
+                    text: "guide_vps_all",
+                    atInternetClickTag: "TopGuide-VPS-9",
+                    isExternal: true,
+                    href: "https://docs.ovh.com/gb/en/vps/"
+                }]
+            }
+        },
         FR: {
             PROJECT: {
                 title: "homepage_type_of_guide_pci",
