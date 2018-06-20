@@ -5,7 +5,7 @@
         data-secondary-action="VeeamStorageUpdateQuotaCtrl.cancel()"
         data-secondary-label="{{ ::'common_cancel' | translate }}"
         data-on-dismiss="VeeamStorageUpdateQuotaCtrl.cancel()"
-        data-loading="VeeamStorageUpdateQuotaCtrl.capabilities || VeeamStorageUpdateQuotaCtrl.updateQuota">
+        data-loading="VeeamStorageUpdateQuotaCtrl.capabilities.loading || VeeamStorageUpdateQuotaCtrl.updateQuota.loading">
         
         <p class="oui-modal__text" data-translate="veeam_storage_update_quota_information"
         data-translate-values="{maxquota: VeeamStorageUpdateQuotaCtrl.capabilities.data.maxQuota}"></p>
