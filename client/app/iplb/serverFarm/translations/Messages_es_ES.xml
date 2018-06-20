@@ -29,14 +29,14 @@
    <translation id="iplb_farm_protocol_udp" qtlid="141834">UDP</translation>
 
    <translation id="iplb_farm_balance_first" qtlid="437856">First</translation>
-   <translation id="iplb_farm_balance_leastconn" qtlid="437869">LeastConn</translation>
+   <translation id="iplb_farm_balance_leastconn" qtlid="437869">Least</translation>
    <translation id="iplb_farm_balance_roundrobin" qtlid="437882">Round-robin</translation>
-   <translation id="iplb_farm_balance_source" qtlid="97496">Origen</translation>
+   <translation id="iplb_farm_balance_source" qtlid="97496">Source</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
 
    <translation id="iplb_farm_stickiness_none" qtlid="440934">Ninguno</translation>
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">IP de origen</translation>
+   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Source IP</translation>
 
    <translation id="iplb_farm_add_title" qtlid="437726">Añadir una granja de servidores</translation>
    <translation id="iplb_farm_update_title" qtlid="437908">Edición de la granja de servidores {{farmId}}</translation>

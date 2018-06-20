@@ -41,6 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM-kiintiö saavutettu</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core-kiintiö saavutettu</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Ei saatavilla olevaa SSH-avainta</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Valitse konesalisi</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Saatavilla olevien alueiden ja konesalien luettelon haku ei onnistu: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Käytettävissä olevan kiintiön lataaminen ei onnistu: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Valitse instanssi</translation>

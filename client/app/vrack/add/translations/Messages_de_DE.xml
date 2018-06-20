@@ -5,6 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Bitte bestätigen Sie die kostenlose Durchführung Ihres <a href="{{url}}" target='_blank'>Bestellscheins</a>.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Ihr vRack ist wenige Minuten nach der Bestätigung des Bestellscheins verfügbar.</translation>
    <translation id="vrack_order" qtlid="43558">Bestellen</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Jetzt installieren</translation>
    <translation id="vrack_contract_empty" qtlid="245688">Sie haben alle Verträge zu diesem Produkt akzeptiert.</translation>
    <translation id="vrack_error" qtlid="148981">Es ist ein Fehler aufgetreten.</translation>
    <translation id="vrack_error_reason" qtlid="323223">Es ist ein Fehler aufgetreten: {{message}}</translation>
