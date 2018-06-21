@@ -62,6 +62,7 @@ class IpLoadBalancerActionService {
                 templateUrl: "app/iplb/frontends/delete/iplb-frontends-delete.html",
                 controller: "IpLoadBalancerFrontendDeleteCtrl",
                 controllerAs: "IpLoadBalancerFrontendDeleteCtrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => serviceName,
                     frontend: () => frontend
@@ -76,6 +77,7 @@ class IpLoadBalancerActionService {
                 templateUrl: "app/iplb/serverFarm/delete/iplb-server-farm-delete.html",
                 controller: "IpLoadBalancerServerFarmDeleteCtrl",
                 controllerAs: "IpLoadBalancerServerFarmDeleteCtrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => serviceName,
                     farm: () => farm
@@ -90,6 +92,7 @@ class IpLoadBalancerActionService {
                 templateUrl: "app/iplb/server/delete/iplb-server-delete.html",
                 controller: "IpLoadBalancerServerDeleteCtrl",
                 controllerAs: "IpLoadBalancerServerDeleteCtrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => serviceName,
                     farm: () => farm,
@@ -119,6 +122,7 @@ class IpLoadBalancerActionService {
                 templateUrl: "app/iplb/sslCertificate/delete/iplb-ssl-certificate-delete.html",
                 controller: "IpLoadBalancerSslCertificateDeleteCtrl",
                 controllerAs: "IpLoadBalancerSslCertificateDeleteCtrl",
+                backdrop: "static",
                 resolve: {
                     serviceName: () => serviceName,
                     ssl: () => ssl
