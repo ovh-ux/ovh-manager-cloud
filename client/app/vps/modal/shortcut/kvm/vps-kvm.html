@@ -4,7 +4,7 @@
     data-loading="$ctrl.kvmUrlLoader.loading || $ctrl.kvmLoader.loading">
 
     <kvm data-ng-if="$ctrl.noVNC"
-            kvm-data="$ctrl.kvm">
+            data-kvm-data="$ctrl.kvm">
     </kvm>
     <div class="text-center">
         <iframe id="consoleIframe" width="550" height="440" seamless
