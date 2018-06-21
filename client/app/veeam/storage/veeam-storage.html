@@ -9,7 +9,7 @@
         <h3 class="oui-header_3" data-translate="veeam_storage_title"></h3>
     </div>
     <div class="veeam__row">
-        <oui-datagrid rows="VeeamStorageCtrl.storageInfos.data" class="datagrid-without-pagination">
+        <oui-datagrid data-rows="VeeamStorageCtrl.storageInfos.data" class="datagrid-without-pagination">
             <extra-top>
                 <button class="oui-button oui-button_secondary"
                     data-ng-if="!VeeamStorageCtrl.actions.loading"
@@ -30,7 +30,7 @@
                 {{ VeeamStorageCtrl.getRegionText($row.replicationZone) }}
             </oui-column>
             <oui-action-menu data-align="end" data-compact>
-                <oui-action-menu-item data-text="{{ 'veeam_storage_update_title' | translate }}"
+                <oui-action-menu-item data-text="{{ ::'veeam_storage_update_title' | translate }}"
                                       data-on-click="VeeamStorageCtrl.updateQuota(inventoryName)"
                                       data-disabled="(VeeamStorageCtrl.capabilities.data.maxQuota | bytes:0:false:'GB':true) <= (VeeamStorageCtrl.capabilities.data.defaultQuota | bytes:0:false:'GB':true)"
                                       data-ng-if="!VeeamStorageCtrl.capabilities.loading">
