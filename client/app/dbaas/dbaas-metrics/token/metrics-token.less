@@ -48,6 +48,12 @@
     }
 
   }
+  &__row {
+    // TODO: This is a temporary fix, padding breaks oui-datagrid. Need to replace with oui-clipboard once it is available
+    .cui-clipboard__input {
+      padding: 1px 48px 6px 12px;
+    }
+  }
 }
 
 // need to handle change outside of .metrics less class

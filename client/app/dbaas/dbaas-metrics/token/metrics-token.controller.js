@@ -72,6 +72,7 @@
                     templateUrl: "app/dbaas/dbaas-metrics/token/delete/metrics-token-delete.html",
                     controller: "MetricsTokenDeleteCtrl",
                     controllerAs: "$ctrl",
+                    backdrop: "static",
                     resolve: {
                         serviceName: () => this.serviceName,
                         tokenID: () => tokenID
