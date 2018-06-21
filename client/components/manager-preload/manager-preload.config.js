@@ -1,10 +1,13 @@
-angular.module("managerApp").run(($rootScope, $transitions, OvhApiMe) => {
+angular.module("managerApp").run(($q, $rootScope, $transitions, $translate, SessionService, ProductsService) => {
 
     $transitions.onSuccess({}, () => {
-        OvhApiMe.v6().get().$promise
-            .then(() => {
-                $rootScope.managerPreloadHide += " manager-preload-hide";
-            });
+        $q.all({
+            user: SessionService.getUser(),
+            products: ProductsService.getProducts(),
+            translate: $translate.refresh()
+        }).then(() => {
+            $rootScope.managerPreloadHide += " manager-preload-hide";
+        });
     }, {
         priority: -1 // Last to load so we hide as much as possible
     });

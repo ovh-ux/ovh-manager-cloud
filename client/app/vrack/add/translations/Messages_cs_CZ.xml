@@ -5,6 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Dokončete prosím svou <a href="{{url}}" target='_blank'>objednávku zdarma</a>.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Váš vRack bude k dispozici do několika minut po schválení objednávky.</translation>
    <translation id="vrack_order" qtlid="43558">Objednat</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Nainstalovat nyní</translation>
    <translation id="vrack_contract_empty" qtlid="245688">Akceptovali jste veškerá smluvní ujednání týkající se tohoto produktu.</translation>
    <translation id="vrack_error" qtlid="148981">Došlo k chybě.</translation>
    <translation id="vrack_error_reason" qtlid="323223">Objevila se chyba: {{message}}</translation>

@@ -51,7 +51,8 @@ angular.module("managerApp")
         vpsPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vps/{vps}?landingTo=vps",
         networks: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=networks",
         cdnPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
-        renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
+        licensePage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/license/{license}/detail"
     })
 // CA eq to en_CA
 // QC eq to fr_CA
@@ -70,7 +71,7 @@ angular.module("managerApp")
                     `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
             },
             dedicated_server: {
-                US: "https://ovh.us/order/dedicated/#/dedicated/select"
+                US: "https://ovhcloud.com/order/dedicated/#/dedicated/select"
             },
             dedicated_cloud: {
                 US: "https://ovhcloud.com/dedicated-cloud/"
@@ -85,10 +86,13 @@ angular.module("managerApp")
                 US: "https://ovhcloud.com/public-cloud/storage/cloud-archive/"
             },
             vrack: {
-                US: "https://www.ovh.us/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
+                US: "https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'vrack~quantity~1~productId~'vrack))"
             },
             cloud_disk_array: {
                 US: "https://ovhcloud.com/cloud/cloud-disk-array/"
+            },
+            ip: {
+                US: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip/agoraOrder"
             },
             veeam: {
             },

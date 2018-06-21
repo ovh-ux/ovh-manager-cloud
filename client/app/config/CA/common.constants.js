@@ -51,7 +51,8 @@ angular.module("managerApp")
         vpsPage: "https://ca.ovh.com/manager/index.html#/configuration/vps/{vps}?landingTo=vps",
         networks: "https://ca.ovh.com/manager/index.html#/configuration?landingTo=networks",
         cdnPage: "https://ca.ovh.com/manager/index.html#/configuration/cdn/{cdn}?landingTo=networks",
-        renew: "https://ca.ovh.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        renew: "https://ca.ovh.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
+        licensePage: "https://ca.ovh.com/manager/dedicated/index.html#/configuration/license/{license}/detail"
     })
 // CA eq to en_CA
 // QC eq to fr_CA

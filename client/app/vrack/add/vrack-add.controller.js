@@ -1,9 +1,11 @@
 "use strict";
 
 angular.module("managerApp").controller("VrackAddCtrl",
-    function ($q, $translate, $state, $rootScope, CloudMessage, OvhApiOrder) {
+    function ($q, $translate, $state, $rootScope, CloudMessage, VrackService, OvhApiOrder, TARGET) {
 
         var self = this;
+
+        self.TARGET = TARGET;
 
         this.loaders = {
             loading: false,
@@ -43,10 +45,24 @@ angular.module("managerApp").controller("VrackAddCtrl",
 
         function init () {
             self.loaders.loading = true;
-            self.getVrackContract()
-            .finally(function () {
-                self.loaders.loading = false;
-            });
+            self.vrackOrderUrl = null;
+
+            var promise = {
+                vrackOrderUrl: VrackService.getOrderUrl()
+            };
+
+            if (self.TARGET !== "US") {
+                promise.vrackContract = self.getVrackContract();
+            }
+
+            return $q
+                .all(promise)
+                .then(function (results) {
+                    self.vrackOrderUrl = results.vrackOrderUrl;
+                })
+                .finally(function () {
+                    self.loaders.loading = false;
+                });
         }
 
         init();
