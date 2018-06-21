@@ -21,7 +21,7 @@ class DeleteBackupStorageCtrl {
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_delete_failure", { ipBlock: this.access })))
                 .finally(() => this.$uibModalInstance.close())
         });
-        this.delete.load();
+        return this.delete.load();
     }
 }
 

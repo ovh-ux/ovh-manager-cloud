@@ -20,7 +20,7 @@ class PasswordBackupStorageCtrl {
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_forgot_password_failure")))
                 .finally(() => this.$uibModalInstance.close())
         });
-        this.loader.load();
+        return this.loader.load();
     }
 }
 

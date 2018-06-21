@@ -39,7 +39,7 @@ class VpsOptionTerminateCtrl {
                 .catch(err => this.CloudMessage.error(err.message || this.$translate.instant("vps_configuration_cancel_option_cancel_error")))
                 .finally(() => this.$uibModalInstance.close())
         });
-        this.terminate.load();
+        return this.terminate.load();
     }
 }
 

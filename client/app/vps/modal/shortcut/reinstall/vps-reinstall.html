@@ -1,4 +1,4 @@
-<form novalidate name="form" data-ng-submit="form.$valid && $ctrl.confirm()">
+<form novalidate name="form" data-ng-submit="form.$valid && $ctrl.confirm()" class="vps-reinstall">
     <oui-modal 
         data-title="{{:: 'vps_configuration_reinstall_title' | translate}}"
         data-primary-label="{{ ::'common_confirm' | translate }}"
@@ -37,7 +37,7 @@
                             data-ng-class-odd="'odd'"
                             data-ng-class-even="'offset2'"
                             data-ng-repeat="package in $ctrl.template.packages">
-                            {{package.alias}} ({{package.version}})
+                            <span data-ng-bind="package.alias + ' (' + package.version + ')'"></span>
                         </li>
                     </ul>
                 </div>
@@ -64,9 +64,8 @@
                     data-oui-tooltip="{{'vps_configuration_reinstall_step1_select_ssh_key_help' | translate}}"></label>
             <div class="oui-select">
                 <!-- we need style overflow until something is set to handle multiple select-->
-                <select name="sshkey" id="sshKey" class="oui-select__input"
+                <select name="sshkey" id="sshKey" class="oui-select__input ssh-keys"
                         size="8" multiple
-                        style="overflow-y: scroll"
                         data-ng-options="sshKey for sshKey in $ctrl.userSshKeys | orderBy"
                         data-ng-model="$ctrl.template.sshKeys"
                         data-ng-if="$ctrl.userSshKeys.length > 0">

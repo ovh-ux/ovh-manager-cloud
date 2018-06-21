@@ -40,7 +40,7 @@ class AddBackupStorageCtrl {
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_backup_storage_access_add_ip_failure")))
                 .finally(() => { this.loader.init = false; })
         });
-        this.ipBlocks.load();
+        return this.ipBlocks.load();
     }
 
     cancel () {

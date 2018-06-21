@@ -18,9 +18,9 @@
         data-translate="vps_configuration_kvm_cloud_mapping_keyboard_warning"></p> 
     <div class="vps-kvm-link" data-ng-if="$ctrl.consoleUrl">
         <a class="oui-button oui-button_link oui-button_icon-right"
-            data-ng-href="{{$ctrl.consoleUrl}}" target="_blank">
+            data-ng-href="{{$ctrl.consoleUrl}}" target="_blank" rel="noopener">
             <span data-translate="vps_configuration_kvm_new_window"></span>
-            <i class="fa fa-external-link"></i>
+            <i class="fa fa-external-link" aria-hidden="true"></i>
         </a> 
     </div>
 </oui-modal>
