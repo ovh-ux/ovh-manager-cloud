@@ -2,10 +2,6 @@
     data-title="{{ ::'iplb_modal_failover_ip_title' | translate }}"
     data-on-dismiss="IpLoadBalancerFailoverIpDetailCtrl.dismiss()"
     data-loading="IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-    <div data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
         <p class="oui-modal__text" data-translate="iplb_modal_nat_ip_description"></p>
-        <div data-ng-if="!IpLoadBalancerFailoverIpDetailCtrl.isModalLoading()">
-            <cui-clipboard data-text="ip" data-ng-repeat="ip in IpLoadBalancerFailoverIpDetailCtrl.ips.data track by $index"></cui-clipboard>
-        </div>
-    </div>
+        <cui-clipboard data-text="ip" data-ng-repeat="ip in IpLoadBalancerFailoverIpDetailCtrl.ips.data track by $index"></cui-clipboard>
 </oui-modal>

@@ -15,7 +15,7 @@ class IpLoadBalancerFrontendDeleteCtrl {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerFrontendsService.deleteFrontend(this.type, this.$stateParams.serviceName, this.frontendId)
                 .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.dismiss(response))
+                .catch(error => this.$uibModalInstance.dismiss(error))
         });
         return this.delete.load();
     }

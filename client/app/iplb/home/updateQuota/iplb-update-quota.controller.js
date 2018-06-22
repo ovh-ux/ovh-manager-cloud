@@ -16,7 +16,7 @@ class IpLoadBalancerUpdateQuotaCtrl {
         this.update = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerHomeService.updateQuota(this.$stateParams.serviceName, this.quota.zone, this.alert * Math.pow(1000, 3))
                 .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.close(response))
+                .catch(error => this.$uibModalInstance.close(error))
         });
         return this.update.load();
     }

@@ -16,7 +16,7 @@ class IpLoadBalancerServerDeleteCtrl {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerServerService.delete(this.$stateParams.serviceName, this.farmId, this.serverId)
                 .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.dismiss(response))
+                .catch(error => this.$uibModalInstance.dismiss(error))
         });
         return this.delete.load();
     }

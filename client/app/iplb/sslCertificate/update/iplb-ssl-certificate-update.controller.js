@@ -15,7 +15,7 @@ class IpLoadBalancerSslCertificateUpdateCtrl {
         this.updateSsl = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerSslCertificateService.update(this.serviceName, this.ssl.id, { displayName: this.displayName })
                 .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.dismiss(response))
+                .catch(error => this.$uibModalInstance.dismiss(error))
         });
         return this.updateSsl.load();
     }

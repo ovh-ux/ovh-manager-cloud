@@ -1,6 +1,6 @@
 <form id="IplbOfferChangeForm"
       name="IplbOfferChangeForm"
-      data-ng-submit="IplbOfferChangeForm.$valid &&IpLoadBalancerOfferChangeCtrl.confirm()"
+      data-ng-submit="IplbOfferChangeForm.$valid && IpLoadBalancerOfferChangeCtrl.confirm()"
       novalidate>
     <oui-modal
         data-title="{{ ::'iplb_modal_offer_change_title' | translate }}"
@@ -9,10 +9,9 @@
         data-secondary-label="{{ ::'common_cancel' | translate }}"
         data-on-dismiss="IpLoadBalancerOfferChangeCtrl.cancel()"
         data-loading="IpLoadBalancerOfferChangeCtrl.isModalLoading()">
-
-        <div data-ng-if="!IpLoadBalancerOfferChangeCtrl.isModalLoading()">
+        <p class="oui-modal__text">
             Old offer => {{ IpLoadBalancerOfferChangeCtrl.configuration.data.offer }}
-            <p class="oui-modal__text" data-text="'EDIT SOME OFFER HERE'"></p>
-        </div>
+        </p>
+        <p class="oui-modal__text" data-text="'EDIT SOME OFFER HERE'"></p>
     </oui-modal>
 </form>

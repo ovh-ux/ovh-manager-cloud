@@ -2,14 +2,10 @@
     data-title="{{ ::'iplb_modal_nat_ip_title' | translate }}"
     data-on-dismiss="IpLoadBalancerNatIpDetailCtrl.dismiss()"
     data-loading="IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
-    <div data-ng-if="!IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
         <p class="oui-modal__text" data-translate="iplb_modal_nat_ip_description"></p>
-
-        <div data-ng-if="!!IpLoadBalancerNatIpDetailCtrl.isModalLoading()">
-            <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
-                <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
-                <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
-            </div>
+        <div data-ng-repeat="nat in IpLoadBalancerNatIpDetailCtrl.ips.data track by $index">
+            <label class="oui-label" for="ip-{{nat.zone}}" data-ng-bind="nat.zone"></label>
+            <cui-clipboard data-id="ip-{{nat.zone}}" data-text="nat.ip"></cui-clipboard>
         </div>
     </div>
 </oui-modal>

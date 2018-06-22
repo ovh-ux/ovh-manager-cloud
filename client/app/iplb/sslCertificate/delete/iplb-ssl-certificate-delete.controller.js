@@ -14,7 +14,7 @@ class IpLoadBalancerSslCertificateDeleteCtrl {
         this.delete = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.IpLoadBalancerSslCertificateService.delete(this.$stateParams.serviceName, this.sslId)
                 .then(response => this.$uibModalInstance.close(response))
-                .catch(response => this.$uibModalInstance.dismiss(response))
+                .catch(error => this.$uibModalInstance.dismiss(error))
         });
         return this.delete.load();
     }
