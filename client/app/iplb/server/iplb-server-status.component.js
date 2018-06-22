@@ -14,7 +14,9 @@ class IpblServerStatusController {
 
 angular.module("managerApp")
     .component("iplbServerStatus", {
-        template: '<cui-status-icon data-type="{{$ctrl.iconType}}"></cui-status-icon>',
+        template: `
+            <span class="oui-status" ng-class="'oui-status_'+$ctrl.iconType" data-ng-bind="$ctrl.iconType"></span>
+        `,
         controller: IpblServerStatusController,
         bindings: {
             server: "<"
