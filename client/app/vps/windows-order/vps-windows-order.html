@@ -2,9 +2,7 @@
 
     <div class="row d-lg-flex">
         <div class="col-xm-12">
-            <h1 class="oui-header_1">
-                {{ ::'vps_order_windows_title' | translate }}
-            </h1>
+            <h1 class="oui-header_1" data-translate="vps_order_windows_title"></h1>
             <oui-stepper data-on-init="$ctrl.getDurations()">
                 <oui-step-form data-header="{{ ::'vps_order_windows_step1_title' | translate }}"
                     data-description="{{ ::'vps_order_windows_info' | translate }}"
@@ -15,7 +13,7 @@
                     <label class="oui-label"
                         data-translate="vps_order_windows_order_select_duration"></label>
 
-                    <div class="oui-radio mb-4" data-ng-repeat="duration in $ctrl.durations.available">
+                    <div class="oui-radio mb-4" data-ng-repeat="duration in $ctrl.durations.available track by $index">
                         <input class="oui-radio__input" type="radio" name="durations"
                                 data-ng-model="$ctrl.model.duration" id="{{duration}}"
                                 data-ng-value="duration">

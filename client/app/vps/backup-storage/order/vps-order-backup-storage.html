@@ -2,18 +2,15 @@
 
     <div class="row d-lg-flex">
         <div class="col-xm-12">
-            <h2 class="oui-header_2">
-                {{ ::'vps_configuration_activate_ftpbackup_title' | translate }}
-            </h2>
-
-            <h3 class="oui-header_3" data-ng-bind-html="::'vps_configuration_activate_ftpbackup_step1_question' | translate:{ serviceName: $ctrl.serviceName }"></h3>
+            <h2 class="oui-header_2" data-translate="vps_configuration_activate_ftpbackup_title"></h2>
+            <h3 class="oui-header_3" data-translate="vps_configuration_activate_ftpbackup_step1_question" data-translate-values="{ serviceName: $ctrl.serviceName }"></h3>
             <div class="text-center" data-ng-if="!$ctrl.model.optionDetails">
                 <oui-spinner></oui-spinner>
             </div>
             <div data-ng-if="$ctrl.model.optionDetails">
                 <div class="row-fluid">
-                    <p class="oui-paragraph" data-ng-bind="::'vps_configuration_activate_ftpbackup_step1_description' | translate"></p>
-                    <p class="oui-paragraph" data-ng-bind-html="::'vps_configuration_activate_ftpbackup_step1_alert' | translate:{ price: $ctrl.model.optionDetails.unitaryPrice }"></p>
+                    <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_description"></p>
+                    <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_alert" data-translate-values="{ price: $ctrl.model.optionDetails.unitaryPrice }"></p>
                     <div class="oui-box mb-4">
                         <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_confirmation"></p>
                         <p class="bold">

@@ -2,9 +2,7 @@
 
     <div class="row d-lg-flex">
         <div class="col-xm-12">
-            <h1 class="oui-header_1">
-                {{ ::'vps_configuration_veeam_order_title' | translate }}
-            </h1>
+            <h1 class="oui-header_1" data-translate="vps_configuration_veeam_order_title"></h1>
             <oui-stepper data-on-init="$ctrl.loadUpgradesList()">
                 <oui-step-form data-header="{{ ::'vps_configuration_veeam_order_step1_question' | translate:{ serviceName: $ctrl.serviceName } }}"
                     data-loading="!model.vps || !model.optionDetails"
@@ -22,8 +20,7 @@
                     </dl>
 
                     <div data-translate="vps_configuration_veeam_order_step1_info"></div>
-                    <div data-ng-bind-html="'vps_configuration_veeam_order_step1_info2' | translate:{ price: model.optionDetails.unitaryPrice }"></div>
-
+                    <div data-translate="vps_configuration_veeam_order_step1_info2" data-translate-values="{ price: model.optionDetails.unitaryPrice }"></div>
                     <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
                     <oui-checkbox
                         data-text="{{ ::'vps_configuration_veeam_order_step1_contracts' | translate }}"
@@ -32,8 +29,9 @@
                         data-model="model.contractsValidated">
                     </oui-checkbox>
                     <ul class="mb-4">
-                        <li data-ng-repeat="contract in model.optionDetails.contracts">
+                        <li data-ng-repeat="contract in model.optionDetails.contracts track by $index">
                             <a target="_blank"
+                                rel="noopener"
                                 data-ng-href="{{ ::contract.url }}"
                                 data-ng-bind="::contract.name"></a>
                         </li>

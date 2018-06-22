@@ -54,10 +54,11 @@
         <oui-step-form data-header="{{:: 'vps_configuration_upgradevps_step2_title' | translate }}"
             data-loading="$ctrl.loaders.step2"
             data-on-focus="$ctrl.initVpsConditions()">
-            <div data-ng-repeat="contract in $ctrl.order.contracts">
+            <div data-ng-repeat="contract in $ctrl.order.contracts track by $index">
                 <a target="_blank"
-                   class="oui-link oui-link_icon"
-                   data-ng-href="{{ contract.url }}">
+                    rel="noopener"
+                    class="oui-link oui-link_icon"
+                    data-ng-href="{{ contract.url }}">
                     <span data-ng-bind="contract.name"></span>
                     <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
                 </a>
