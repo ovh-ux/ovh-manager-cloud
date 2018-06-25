@@ -32,11 +32,12 @@
                 data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('method')">
                 <label for="probe_method" class="oui-label" data-translate="iplb_farm_edit_probe_method"></label>
                 <div class="oui-field__content">
-                    <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
-                        <cui-radio-bar-item data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods"
-                            data-text="('iplb_farm_edit_probe_method_' + method) | translate"
-                            data-value="method"></cui-radio-bar-item>
-                    </cui-radio-bar>
+                    <oui-radio-toggle-group data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.method">
+                        <oui-radio data-ng-repeat="method in IpLoadBalancerServerFarmProbeEditCtrl.methods track by $index"
+                            data-text="{{ ::('iplb_farm_edit_probe_method_' + method) | translate }}"
+                            data-value="method">
+                        </oui-radio>
+                    </oui-radio-toggle-group>
                 </div>
             </div>
 
@@ -44,12 +45,13 @@
                 data-ng-if="IpLoadBalancerServerFarmProbeEditCtrl.isFieldVisible('match')">
                 <label for="probe_match" class="oui-label" data-translate="iplb_farm_edit_probe_match"></label>
                 <div class="oui-field__content">
-                    <cui-radio-bar data-ng-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
-                        <cui-radio-bar-item data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches()"
+                    <oui-radio-toggle-group data-model="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.match">
+                        <oui-radio data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches() track by $index"
                             data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status'"
-                            data-text="('iplb_farm_edit_probe_match_' + match) | translate"
-                            data-value="match"></cui-radio-bar-item>
-                    </cui-radio-bar>
+                            data-text="{{ ::('iplb_farm_edit_probe_match_' + match) | translate }}"
+                            data-value="match">
+                        </oui-radio>
+                    </oui-radio-toggle-group>
                 </div>
             </div>
 

@@ -9,13 +9,12 @@
     </h6>
     <p class="oui-paragraph mb-5" data-translate="logs_aliases_link_description"></p>
     <form novalidate name="ctrl.form" class="ml-1">
-        <cui-radio-bar data-ng-model="ctrl.selectedContent">
-            <cui-radio-bar-item data-ng-repeat="content in ctrl.contents"
-                data-text="content.name | translate"
+        <oui-radio-toggle-group data-model="ctrl.selectedContent">
+            <oui-radio data-ng-repeat="content in ctrl.contents track by $index"
+                data-text="{{ ::content.name | translate }}"
                 data-value="content.value">
-            </cui-radio-bar-item>
-        </cui-radio-bar>
-
+            </oui-radio>
+        </oui-radio-toggle-group>
         <div data-ng-if="ctrl.selectedContent === ctrl.LogsAliasesService.contentTypeEnum.STREAMS">
             <cui-dual-list data-ng-if="!ctrl.isContentDisabled(ctrl.LogsAliasesService.contentTypeEnum.STREAMS)"
                 source-list-label="{{::'logs_aliases_link_available_streams' | translate}}"
