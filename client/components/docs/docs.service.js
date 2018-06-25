@@ -1,48 +1,51 @@
-class DocsService {
-    constructor ($translate, TranslateService, TARGET, DOCS_ALL_GUIDES, DOCS_HOMEPAGE_GUIDES) {
-        this.$translate = $translate;
-        this.TranslateService = TranslateService;
-        this.TARGET = TARGET;
-        this.DOCS_ALL_GUIDES = DOCS_ALL_GUIDES;
-        this.DOCS_HOMEPAGE_GUIDES = DOCS_HOMEPAGE_GUIDES;
-    }
+{
+    class DocsService {
+        constructor ($translate, OvhApiMe, TranslateService, TARGET, DOCS_ALL_GUIDES, DOCS_HOMEPAGE_GUIDES) {
+            this.$translate = $translate;
 
-    getDomainOfGuides () {
-        if (this.TARGET === "US") {
-            return "US";
+            this.OvhApiMe = OvhApiMe;
+            this.TranslateService = TranslateService;
+
+            this.TARGET = TARGET;
+            this.DOCS_ALL_GUIDES = DOCS_ALL_GUIDES;
+            this.DOCS_HOMEPAGE_GUIDES = DOCS_HOMEPAGE_GUIDES;
         }
-        const locale = this.TranslateService.getGeneralLanguage();
 
-        if (locale === "fr") {
-            return "FR";
+        fetchSubsidiary () {
+            return this.OvhApiMe.v6()
+                .get().$promise
+                .then(me => me.ovhSubsidiary);
         }
-        return "EN";
-    }
 
-    getAllGuidesLink () {
-        const domain = this.getDomainOfGuides();
-        switch (domain) {
-            case "US":
-                return this.DOCS_ALL_GUIDES.US;
-            case "FR":
-                return this.DOCS_ALL_GUIDES.FR;
-            case "EN":
-            default:
-                return this.DOCS_ALL_GUIDES.EN;
+        fetchRootGuidePageLink () {
+            return this.fetchSubsidiary()
+                .then(subsidiaryName => {
+                    const matchingGuide = this.DOCS_ALL_GUIDES[subsidiaryName];
+
+                    return _(matchingGuide).isString() ? matchingGuide : this.DOCS_ALL_GUIDES.DEFAULT;
+                });
+        }
+
+        fetchGuidePageLinkFor (sectionName) {
+            return this.fetchSubsidiary()
+                .then(subsidiaryName => {
+                    const matchingHomepageGuides = this.DOCS_HOMEPAGE_GUIDES[subsidiaryName];
+                    const homepageGuides = _(matchingHomepageGuides).isObject() ? matchingHomepageGuides : this.DOCS_HOMEPAGE_GUIDES.DEFAULT;
+
+                    const matchingSectionGuide = homepageGuides[sectionName];
+
+                    return {
+                        title: matchingSectionGuide.title,
+                        list: _(matchingSectionGuide.list)
+                            .map(originalGuide => {
+                                const guide = _(originalGuide).clone();
+                                guide.displayText = this.$translate.instant(guide.text);
+                                return guide;
+                            }).value()
+                    };
+                });
         }
     }
 
-    getGuidesOfSection (section) {
-        const domain = this.getDomainOfGuides();
-        const sectionContent = this.DOCS_HOMEPAGE_GUIDES[domain][section];
-
-        sectionContent.list = _.map(sectionContent.list, guide => {
-            guide.text = this.$translate.instant(guide.text);
-            return guide;
-        });
-
-        return sectionContent;
-    }
+    angular.module("managerApp").service("DocsService", DocsService);
 }
-
-angular.module("managerApp").service("DocsService", DocsService);

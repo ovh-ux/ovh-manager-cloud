@@ -53,6 +53,22 @@ angular.module("managerApp")
         cdnPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
         renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
     })
+    .constant("DOCS_ALL_GUIDES", {
+        US: "https://support.ovhcloud.com/hc/en-us"
+    })
+    .constant("DOCS_HOMEPAGE_GUIDES", {
+        DEFAULT: {
+            PROJECT: {
+                title: "homepage_type_of_guide_pci",
+                list: [{
+                    text: "guide_project_all",
+                    atInternetClickTag: "TopGuide-PublicCloud-all",
+                    isExternal: true,
+                    href: "https://support.ovhcloud.com/hc/en-us"
+                }]
+            }
+        }
+    })
 // CA eq to en_CA
 // QC eq to fr_CA
 // WS eq to es_US
