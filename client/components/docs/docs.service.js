@@ -20,21 +20,17 @@ class DocsService {
     }
 
     getAllGuidesLink () {
+        const userLocale = this.TranslateService.getUserLocale().toUpperCase();
         const domain = this.getDomainOfGuides();
-        switch (domain) {
-            case "US":
-                return this.DOCS_ALL_GUIDES.US;
-            case "FR":
-                return this.DOCS_ALL_GUIDES.FR;
-            case "EN":
-            default:
-                return this.DOCS_ALL_GUIDES.EN;
-        }
+
+        return _.get(this.DOCS_ALL_GUIDES, userLocale, _.get(this.DOCS_ALL_GUIDES, domain, this.DOCS_ALL_GUIDES.EN));
     }
 
     getGuidesOfSection (section) {
+        const userLocale = this.TranslateService.getUserLocale().toUpperCase();
         const domain = this.getDomainOfGuides();
-        const sectionContent = this.DOCS_HOMEPAGE_GUIDES[domain][section];
+
+        const sectionContent = _.get(this.DOCS_HOMEPAGE_GUIDES, `${userLocale}.${section}`, this.DOCS_HOMEPAGE_GUIDES[domain][section]);
 
         sectionContent.list = _.map(sectionContent.list, guide => {
             guide.text = this.$translate.instant(guide.text);
