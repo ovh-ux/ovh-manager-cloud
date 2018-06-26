@@ -3,5 +3,5 @@
    <translation id="cpcivm_delete_title" qtlid="247950">Suppression d'une instance</translation>
    <translation id="cpcivm_delete_info" qtlid="247963">Le forfait du mois en cours pour ce serveur a déjà été facturé, il sera perdu.</translation>
    <translation id="cpcivm_failover_info" qtlid="269383">Les IPs Failover suivantes seront supprimées définitivement :</translation>
-   <translation id="cpcivm_delete_confirm" qtlid="269396">Êtes vous sûr de vouloir supprimer cette instance ?</translation>
+   <translation id="cpcivm_delete_confirm">Êtes vous sûr de vouloir supprimer l'instance {{instanceName}} ?</translation>
 </translations>

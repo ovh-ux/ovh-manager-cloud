@@ -1,14 +1,12 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function ($uibModalInstance, $stateParams, params, OvhApiCloudProjectIpFailover) {
-        var self = this,
-            serviceName = $stateParams.projectId;
-
-        var vmToDelete = params;
+    .controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function ($uibModalInstance, params) {
+        const self = this;
+        self.vm = params.vm;
 
         self.loaders = {
-            ips : false
+            ips: false
         };
 
         self.routedIpsFo = [];
@@ -24,10 +22,9 @@ angular.module("managerApp")
         };
 
         function init () {
-            self.isMonthlyBilling = vmToDelete.monthlyBilling && vmToDelete.monthlyBilling.status === "ok";
-
+            self.isMonthlyBilling = _(self.vm).get("monthlyBilling.status") === "ok";
         }
 
 
         init();
-  });
+    });

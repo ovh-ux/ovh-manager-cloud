@@ -20,7 +20,11 @@
                     <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
                 </ul>
             </div>
-            <p class="oui-modal__text"><strong data-translate="cpcivm_delete_confirm"></strong></p>
+            <p class="oui-modal__text">
+                <strong
+                    data-translate="cpcivm_delete_confirm"
+                    data-translate-values="{ instanceName: $ctrl.vm.name }"></strong>
+            </p>
         </div>
     </div>
 
