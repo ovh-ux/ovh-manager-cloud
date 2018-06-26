@@ -8,25 +8,23 @@
                 <oui-spinner></oui-spinner>
             </div>
             <div data-ng-if="$ctrl.model.optionDetails">
-                <div class="row-fluid">
-                    <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_description"></p>
-                    <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_alert" data-translate-values="{ price: $ctrl.model.optionDetails.unitaryPrice }"></p>
-                    <div class="oui-box mb-4">
-                        <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_confirmation"></p>
-                        <p class="bold">
-                            <span data-translate="vps_configuration_activate_ftpbackup_step2_totalHT"></span>
-                            <span data-ng-bind="::$ctrl.model.optionDetails.withoutTax"></span>
-                        </p>
-                        <p class="bold">
-                            <span data-translate="vps_configuration_activate_ftpbackup_step2_totalTTC"></span>
-                            <span data-ng-bind="::$ctrl.model.optionDetails.withTax"></span>
-                        </p>
-                    </div>
-                    <div class="bottom-space-p12">
-                        <p class="oui-paragraph bold" data-translate="vps_configuration_activate_ftpbackup_step2_id"></p>
-                        <p class="oui-paragraph fs14" data-translate="vps_configuration_activate_ftpbackup_step2_explication"></p>
-                        <p class="oui-paragraph fs14" data-translate="vps_configuration_activate_ftpbackup_step2_explication2"></p>
-                    </div>
+                <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_description"></p>
+                <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_alert" data-translate-values="{ price: $ctrl.model.optionDetails.unitaryPrice }"></p>
+                <div class="oui-box mb-4">
+                    <p class="oui-paragraph" data-translate="vps_configuration_activate_ftpbackup_step1_confirmation"></p>
+                    <p class="text-bold">
+                        <span data-translate="vps_configuration_activate_ftpbackup_step2_totalHT"></span>
+                        <span data-ng-bind="::$ctrl.model.optionDetails.withoutTax"></span>
+                    </p>
+                    <p class="text-bold">
+                        <span data-translate="vps_configuration_activate_ftpbackup_step2_totalTTC"></span>
+                        <span data-ng-bind="::$ctrl.model.optionDetails.withTax"></span>
+                    </p>
+                </div>
+                <div class="bottom-space-p12">
+                    <p class="oui-paragraph text-bold" data-translate="vps_configuration_activate_ftpbackup_step2_id"></p>
+                    <p class="oui-paragraph fs14" data-translate="vps_configuration_activate_ftpbackup_step2_explication"></p>
+                    <p class="oui-paragraph fs14" data-translate="vps_configuration_activate_ftpbackup_step2_explication2"></p>
                 </div>
                 <div>
                     <oui-button variant="primary"

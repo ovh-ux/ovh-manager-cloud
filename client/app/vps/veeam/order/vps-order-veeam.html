@@ -8,7 +8,7 @@
                     data-loading="!model.vps || !model.optionDetails"
                     data-valid="model.contractsValidated"
                     data-on-cancel="$ctrl.cancel()">
-                    <dl class="vps-dl-horizontal bold">
+                    <dl class="vps-dl-horizontal text-bold">
                         <dt class="vps-item-horizontal"
                             data-translate="vps_configuration_veeam_order_step1_totalHT"></dt>
                         <dd class="vps-item-horizontal"
@@ -21,7 +21,7 @@
 
                     <div data-translate="vps_configuration_veeam_order_step1_info"></div>
                     <div data-translate="vps_configuration_veeam_order_step1_info2" data-translate-values="{ price: model.optionDetails.unitaryPrice }"></div>
-                    <div class="blue bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
+                    <div class="text-bold" data-translate="vps_configuration_veeam_order_step1_id"></div>
                     <oui-checkbox
                         data-text="{{ ::'vps_configuration_veeam_order_step1_contracts' | translate }}"
                         id="contractsValidated"
@@ -32,22 +32,28 @@
                         <li data-ng-repeat="contract in model.optionDetails.contracts track by $index">
                             <a target="_blank"
                                 rel="noopener"
-                                data-ng-href="{{ ::contract.url }}"
-                                data-ng-bind="::contract.name"></a>
+                                class="oui-link oui-link_icon"
+                                title="{{ contract.name + ' (' + ('common_new_window' | translate) + ')' }}"
+                                data-ng-href="{{ ::contract.url }}">
+                                <span data-ng-bind="contract.name"></span>
+                                <span class="oui-icon oui-icon-external_link" aria-hidden="true"></span>
+                            </a>
                         </li>
                     </ul>
                 </oui-step-form>
                 <oui-step-form data-header="{{ ::'vps_configuration_veeam_order_step2_generation_bc' | translate }}"
                     data-on-cancel="$ctrl.cancel()"
                     data-on-submit="$ctrl.orderOption()">
-                    <div class="row-fluid mb-4">
+                    <div class="mb-4">
                         <div class="bottom-space-p12">
                             <div data-translate="vps_configuration_veeam_order_step2_bc"></div>
-                            <div class="blue bold"
+                            <div class="text-bold"
                                     data-translate="vps_configuration_veeam_order_step2_continue"></div>
                             <div data-translate="vps_configuration_veeam_order_step2_explication"></div>
-                            <div class="fs11 lh11 italic"
-                                    data-translate="vps_configuration_veeam_order_step2_explication2"></div>
+                            <div>
+                                <em class="fs11 lh11"
+                                    data-translate="vps_configuration_veeam_order_step2_explication2"></em>
+                            </div>
                         </div>
                     </div>
                 </oui-step-form>
