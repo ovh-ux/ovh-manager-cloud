@@ -48,5 +48,23 @@
 }
 
 .oui-status_help {
-	background-color: @oui-color-info-fade;
+    background-color: @oui-color-info-fade;
+}
+
+.oui-radio-toggle-group {
+    // Overidden to avoid text wrapping in radio component.
+    // This fix should be removed once it is fixed in the oui-radio component.
+    max-width: none;
+
+    .oui-radio-toggle {
+        flex: none;
+    }
+
+    :first-of-type.oui-radio-toggle .oui-radio-toggle__label {
+        border-right-width: 1px;
+    }
+
+    :last-of-type.oui-radio-toggle .oui-radio-toggle__label {
+        border-left-width: 1px;
+    }
 }
