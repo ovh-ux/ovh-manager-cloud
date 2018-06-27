@@ -8,18 +8,18 @@
         <form class="oui-modal__body-text" id="vmDeletionForm" name="vmDeletionForm" novalidate>
             <h3 class="oui-modal__title" data-ng-bind="'cpci_private_network_delete_title' | translate"></h3>
 
-            <div class="oui-modal__text" data-ng-if="!CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
-                <p class="center red" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
-                <div data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo.length">
+            <div class="oui-modal__text" data-ng-if="!cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.loaders.ips">
+                <p class="center red" data-ng-if="cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
+                <div data-ng-if="cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo.length">
                     <p class="center red" data-translate="cpcivm_failover_info"></p>
                     <ul>
-                        <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
+                        <li class="red" data-ng-repeat="ip in cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
                     </ul>
                 </div>
                 <p class="center" data-translate="cpci_private_network_delete_confirm"></p>
             </div>
 
-            <div class="oui-modal__text" data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.loaders.ips">
+            <div class="oui-modal__text" data-ng-if="cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.loaders.ips">
                 <oui-spinner></oui-spinner>
             </div>
 

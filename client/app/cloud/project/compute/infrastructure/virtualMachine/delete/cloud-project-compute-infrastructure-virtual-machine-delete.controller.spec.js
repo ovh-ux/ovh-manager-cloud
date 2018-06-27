@@ -1,26 +1,27 @@
 "use strict";
 
-describe("Controller: CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function () {
+describe("Controller: cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", () => {
 
-  // load the controller"s module
-  beforeEach(module("managerAppMock"));
-    var authentication;
-    beforeEach(inject(function ($injector) {
+    // load the controller"s module
+    beforeEach(module("managerAppMock"));
+    let authentication;
+    beforeEach(inject($injector => {
         authentication = $injector.get("ovh-auth.authentication");
         authentication.setIsLogetIn(true);
     }));
 
-  var CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl, scope;
+    let cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl,
+        scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl = $controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", {
-      $scope: scope
+    // Initialize the controller and a mock scope
+    beforeEach(inject(($controller, $rootScope) => {
+        scope = $rootScope.$new();
+        cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl = $controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", {
+            $scope: scope
+        });
+    }));
+
+    xit("should ...", () => {
+        expect(1).toEqual(1);
     });
-  }));
-
-  xit("should ...", function () {
-    expect(1).toEqual(1);
-  });
 });

@@ -628,7 +628,7 @@
                 this.$uibModal.open({
                     windowTopClass: "cui-modal",
                     templateUrl: "app/cloud/project/compute/infrastructure/virtualMachine/delete/cloud-project-compute-infrastructure-virtual-machine-delete.html",
-                    controller: "CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl",
+                    controller: "cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl",
                     controllerAs: "$ctrl",
                     resolve: {
                         params: () => vm

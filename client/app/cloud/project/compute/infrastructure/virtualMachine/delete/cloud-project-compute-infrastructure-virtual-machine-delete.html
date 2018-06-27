@@ -14,10 +14,10 @@
             <h2 class="oui-modal__title" data-translate="cpcivm_delete_title"></h2>
 
             <p class="oui-modal__text red" data-ng-if="$ctrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
-            <div data-ng-if="CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo.length">
+            <div data-ng-if="cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo.length">
                 <p class="oui-modal__text red" data-translate="cpcivm_failover_info"></p>
                 <ul class="oui-modal__text">
-                    <li class="red" data-ng-repeat="ip in CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
+                    <li class="red" data-ng-repeat="ip in cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
                 </ul>
             </div>
             <p class="oui-modal__text"><strong data-translate="cpcivm_delete_confirm"></strong></p>

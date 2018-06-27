@@ -1,14 +1,14 @@
 "use strict";
 
 angular.module("managerApp")
-  .controller("CloudprojectcomputeinfrastructurevirtualmachinedeleteCtrl", function ($uibModalInstance, $stateParams, params, OvhApiCloudProjectIpFailover) {
-        var self = this,
+    .controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", function ($uibModalInstance, $stateParams, params, OvhApiCloudProjectIpFailover) {
+        let self = this,
             serviceName = $stateParams.projectId;
 
-        var vmToDelete = params;
+        const vmToDelete = params;
 
         self.loaders = {
-            ips : false
+            ips: false
         };
 
         self.routedIpsFo = [];
@@ -30,7 +30,7 @@ angular.module("managerApp")
              * IP Failover are not automatically deleted so we comment the check below.
              */
             // check if the instance is routed to failover IPs
-            /*self.loaders.ips = true;
+            /* self.loaders.ips = true;
             OvhApiCloudProjectIpFailover.v6().query({
                 serviceName : serviceName
             }).$promise.then(function (ips) {
@@ -49,4 +49,4 @@ angular.module("managerApp")
 
 
         init();
-  });
+    });
