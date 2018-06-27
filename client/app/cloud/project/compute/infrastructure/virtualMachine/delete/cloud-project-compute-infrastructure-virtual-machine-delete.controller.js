@@ -1,52 +1,21 @@
-"use strict";
+angular
+    .module("managerApp")
+    .controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", class CloudProjectComputeInfrastructureVirtualMachineDeleteCtrl {
+        constructor ($uibModalInstance, params) {
+            this.$uibModalInstance = $uibModalInstance;
 
-angular.module("managerApp")
-    .controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", function ($uibModalInstance, $stateParams, params, OvhApiCloudProjectIpFailover) {
-        let self = this,
-            serviceName = $stateParams.projectId;
-
-        const vmToDelete = params;
-
-        self.loaders = {
-            ips: false
-        };
-
-        self.routedIpsFo = [];
-
-        self.isMonthlyBilling = false;
-
-        self.backup = function () {
-            $uibModalInstance.close();
-        };
-
-        self.cancel = function () {
-            $uibModalInstance.dismiss();
-        };
-
-        function init () {
-            self.isMonthlyBilling = vmToDelete.monthlyBilling && vmToDelete.monthlyBilling.status === "ok";
-
-            /*
-             * IP Failover are not automatically deleted so we comment the check below.
-             */
-            // check if the instance is routed to failover IPs
-            /* self.loaders.ips = true;
-            OvhApiCloudProjectIpFailover.v6().query({
-                serviceName : serviceName
-            }).$promise.then(function (ips) {
-                if (vmToDelete && vmToDelete.routedTo) {
-                    angular.forEach(vmToDelete.routedTo, function (route) {
-                        var ipfo = _.find(ips, { id : route });
-                        if (ipfo) {
-                            self.routedIpsFo.push(ipfo);
-                        }
-                    });
-                }
-            })["finally"](function () {
-                self.loaders.ips = false;
-            });*/
+            this.vm = params.vm;
         }
 
+        $onInit () {
+            this.isMonthlyBilling = _(this.vm).get("monthlyBilling.status") === "ok";
+        }
 
-        init();
+        backup () {
+            this.$uibModalInstance.close();
+        }
+
+        cancel () {
+            this.$uibModalInstance.dismiss();
+        }
     });
