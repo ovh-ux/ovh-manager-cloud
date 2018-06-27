@@ -25,7 +25,7 @@ class PrivateNetworkListCtrl {
         this.loaders = {
             privateNetworks: {
                 query: false,
-                delete: false,
+                "delete": false,
                 activate: false
             },
             vrack: {
@@ -83,16 +83,26 @@ class PrivateNetworkListCtrl {
 
     fetchVrack () {
         if (this.loaders.vrack.get) {
-            return;
+            return this.$q.when();
         }
+
         this.loaders.vrack.get = true;
 
-        return this.resources.project.vrack({ serviceName: this.serviceName }).$promise
-            .then(vrack => this.models.vrack = vrack)
-            .then(() => this.getVrackId())
-            .then(id => this.models.vrack.id = id)
-            .catch(() => this.models.vrack = null)
-            .finally(() => this.loaders.vrack.get = false);
+        return this.resources.project
+            .vrack({ serviceName: this.serviceName }).$promise
+            .then(vrack => {
+                this.models.vrack = vrack;
+            })
+            .then(() => this.getVrackId())
+            .then(id => {
+                this.models.vrack.id = id;
+            })
+            .catch(() => {
+                this.models.vrack = null;
+            })
+            .finally(() => {
+                this.loaders.vrack.get = false;
+            });
     }
 
 
@@ -119,6 +129,7 @@ class PrivateNetworkListCtrl {
                 if (err === "cancel") {
                     return;
                 }
+
                 this.CloudMessage.error(this.$translate.instant("cpci_private_network_add_vrack_error"));
             })
             .finally(() => {
@@ -131,6 +142,7 @@ class PrivateNetworkListCtrl {
         if (this.collections.privateNetworks.length > 0) {
             hasVlansText += ` ${this.$translate.instant("private_network_deactivate_confirmation_vlans")}`;
         }
+
         this.VrackService.unlinkVrackModal(hasVlansText)
             .then(() => {
                 this.loaders.vrack.unlink = true;
@@ -146,6 +158,7 @@ class PrivateNetworkListCtrl {
                 if (err === "cancel") {
                     return;
                 }
+
                 this.CloudMessage.error(this.$translate.instant("cpci_private_network_remove_vrack_error"));
             })
             .finally(() => {
@@ -179,19 +192,21 @@ class PrivateNetworkListCtrl {
         const modal = this.resources.modal.open({
             windowTopClass: "cui-modal",
             templateUrl: "app/cloud/project/compute/infrastructure/privateNetwork/delete/cloud-project-compute-infrastructure-privateNetwork-delete.html",
-            controller: "CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl",
-            controllerAs: "CloudprojectcomputeinfrastructureprivatenetworkdeleteCtrl",
+            controller: "cloudProjectComputeInfrastructurePrivateNetworkDeleteCtrl",
+            controllerAs: "$ctrl",
             resolve: {
                 params: () => privateNetwork
             }
         });
+
         modal.result
-            .then(() => this.loaders.privateNetworks.delete = true)
+            .then(() => {
+                this.loaders.privateNetworks.delete = true;
+            })
             .finally(() => {
                 this.loaders.privateNetworks.delete = false;
                 this.deletePrivateNetworkFromList(privateNetwork);
-            }
-        );
+            });
     }
 
     deletePrivateNetworkFromList (privateNetwork) {
@@ -202,11 +217,11 @@ class PrivateNetworkListCtrl {
 
     createPrivateNetworks (event, args) {
         this.hideDialog();
-        const subnets =  _.chain(args.subnets)
-                        .values()
-                        .filter(subnet => _.contains(args.privateNetwork.regions, subnet.region))
-                        .map(subnet => _.assign(subnet, { dhcp: args.isDHCPEnabled, network: args.globalNetwork }))
-                        .value();
+        const subnets = _.chain(args.subnets)
+            .values()
+            .filter(subnet => _.contains(args.privateNetwork.regions, subnet.region))
+            .map(subnet => _.assign(subnet, { dhcp: args.isDHCPEnabled, network: args.globalNetwork }))
+            .value();
 
         const onNetworkCreated = function (network) {
             const promises = _.map(subnets, subnet => this.service.saveSubnet(args.projectId, network.id, subnet).$promise, this);
@@ -220,13 +235,14 @@ class PrivateNetworkListCtrl {
         if (this.loaders.privateNetworks.query) {
             return this.$q.when(null);
         }
+
         this.loaders.privateNetworks.query = true;
 
-        return this.resources.privateNetwork.query({
-            serviceName: this.serviceName
-        }).$promise
+        return this.resources.privateNetwork
+            .query({ serviceName: this.serviceName }).$promise
             .then(networks => {
                 this.collections.privateNetworks = networks;
+
                 _.forEach(this.collections.privateNetworks, network => {
                     if (network.id) {
                         network.shortVlanId = _.last(network.id.split("_"));
@@ -235,7 +251,9 @@ class PrivateNetworkListCtrl {
             }).catch(() => {
                 this.collections.privateNetworks = [];
                 this.CloudMessage.error(this.$translate.instant("cpci_private_network_list_private_network_query_error"));
-            }).finally(() => this.loaders.privateNetworks.query = false);
+            }).finally(() => {
+                this.loaders.privateNetworks.query = false;
+            });
     }
 
     getPrivateNetworks () {
@@ -247,38 +265,38 @@ class PrivateNetworkListCtrl {
             return this.models.vrack.name;
         } else if (_.has(this.models.vrack, "id") && !_.isEmpty(this.models.vrack.id)) {
             return this.models.vrack.id;
-        } else {
-            return this.$translate.instant("cpci_private_network_list_vrack_unnamed");
         }
+        return this.$translate.instant("cpci_private_network_list_vrack_unnamed");
+
     }
 
     getVrackId () {
         if (_.has(this.models.vrack, "id") && !_.isEmpty(this.models.vrack.id)) {
             return this.$q.when(this.models.vrack.id);
-        } else {
-            if (_.isEmpty(this.models.vrack.name)) {
-                return this.fetchPrivateNetworks()
-                    .then(() => {
-                        if (_.any(this.collections.privateNetworks)) {
-                            return _.first(_.first(this.collections.privateNetworks).id.split("_"));
-                        } else {
-                            return this.$q.when(null);
-                        }
-                    });
-
-            } else {
-                return this.resources.aapi.query().$promise
-                    .then(vracks => {
-                        const vrack = _.find(vracks, { name: this.models.vrack.name });
-                        return _.get(vrack, "id", null);
-                    })
-                    .catch(() => null);
-            }
         }
+        if (_.isEmpty(this.models.vrack.name)) {
+            return this.fetchPrivateNetworks()
+                .then(() => {
+                    if (_.any(this.collections.privateNetworks)) {
+                        return _.first(_.first(this.collections.privateNetworks).id.split("_"));
+                    }
+                    return this.$q.when(null);
+
+                });
+
+        }
+        return this.resources.aapi.query().$promise
+            .then(vracks => {
+                const vrack = _.find(vracks, { name: this.models.vrack.name });
+                return _.get(vrack, "id", null);
+            })
+            .catch(() => null);
+
+
     }
 
     gotoVrack () {
-        this.getVrackId().then(id => this.$state.go("vrack", { vrackId : id }));
+        this.getVrackId().then(id => this.$state.go("vrack", { vrackId: id }));
     }
 
     canGotoVrack () {
@@ -321,11 +339,12 @@ class PrivateNetworkListCtrl {
     onKeyDown ($event) {
         switch ($event.which) {
             case 27:
-                //Important not to put $event.preventDefault(); before the switch statement since it will catch and prevent default
-                //behavior on keyDown everywhere in the directive, inputs included.
+                // Important not to put $event.preventDefault(); before the switch statement since it will catch and prevent default
+                // behavior on keyDown everywhere in the directive, inputs included.
                 $event.preventDefault();
                 this.hideDialog();
                 break;
+            default:
         }
     }
 }

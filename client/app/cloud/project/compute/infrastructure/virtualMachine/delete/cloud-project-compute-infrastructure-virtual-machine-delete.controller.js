@@ -1,13 +1,13 @@
-angular
-    .module("managerApp")
-    .controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", class CloudProjectComputeInfrastructureVirtualMachineDeleteCtrl {
+{
+    class CloudProjectComputeInfrastructureVirtualMachineDeleteCtrl {
         constructor ($uibModalInstance, params) {
             this.$uibModalInstance = $uibModalInstance;
 
-            this.vm = params.vm;
+            this.params = params;
         }
 
         $onInit () {
+            this.vm = this.params.vm;
             this.isMonthlyBilling = _(this.vm).get("monthlyBilling.status") === "ok";
         }
 
@@ -18,4 +18,10 @@ angular
         cancel () {
             this.$uibModalInstance.dismiss();
         }
-    });
+    }
+
+    angular
+        .module("managerApp")
+        .controller("cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl", CloudProjectComputeInfrastructureVirtualMachineDeleteCtrl);
+}
+

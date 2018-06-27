@@ -4,4 +4,8 @@
    <translation id="cpcivm_delete_info" qtlid="247963">Le forfait du mois en cours pour ce serveur a déjà été facturé, il sera perdu.</translation>
    <translation id="cpcivm_failover_info" qtlid="269383">Les IPs Failover suivantes seront supprimées définitivement :</translation>
    <translation id="cpcivm_delete_confirm" qtlid="269396">Êtes vous sûr de vouloir supprimer cette instance ?</translation>
+   <translation id="cpcivm_instance_name">Nom</translation>
+   <translation id="cpcivm_instance_model">Modèle</translation>
+   <translation id="cpcivm_instance_ipv4">IPv4</translation>
+   <translation id="cpcivm_instance_ipv6">IPv6</translation>
 </translations>

@@ -1,4 +1,4 @@
-<form class="oui-modal oui-modal_shadow">
+<form class="oui-modal oui-modal_shadow" novalidate>
 
         <div class="oui-modal__header">
             <button
@@ -7,17 +7,28 @@
                 class="oui-icon oui-icon-close_thin oui-modal__close-button"
                 data-translate-attr="{ 'aria-label': 'common_cancel' }"></button>
         </div>
-    
+
         <div class="oui-modal__body">
-    
+
             <span class="oui-icon oui-icon-help_circle oui-icon_bicolor" aria-hidden="true"></span>
-    
+
             <div class="oui-modal__body-text">
                 <h2 class="oui-modal__title" data-translate="cpcivm_delete_title"></h2>
-    
+
                 <div class="oui-modal__text">
                     <p data-translate="cpcivm_delete_confirm"></p>
-    
+
+                    <dl>
+                        <dt data-translate="cpcivm_instance_name" data-ng-if="$ctrl.vm.name"></dt>
+                        <dd data-ng-bind=":: $ctrl.vm.name" data-ng-if="$ctrl.vm.name"></dd>
+                        <dt data-translate="cpcivm_instance_model" data-ng-if="$ctrl.vm.flavorTranslated"></dt>
+                        <dd data-ng-bind=":: $ctrl.vm.flavorTranslated" data-ng-if="$ctrl.vm.flavorTranslated"></dd>
+                        <dt data-translate="cpcivm_instance_ipv4" data-ng-if="$ctrl.vm.ipv4"></dt>
+                        <dd data-ng-bind=":: $ctrl.vm.ipv4" data-ng-if="$ctrl.vm.ipv4"></dd>
+                        <dt data-translate="cpcivm_instance_ipv6" data-ng-if="$ctrl.vm.ipv6"></dt>
+                        <dd data-ng-bind=":: $ctrl.vm.ipv6" data-ng-if="$ctrl.vm.ipv6"></dd>
+                    </dl>
+
                     <strong
                         role="alert"
                         data-ng-if="$ctrl.isMonthlyBilling"
@@ -25,7 +36,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="oui-modal__footer">
             <oui-button
                 type="reset"
@@ -43,5 +54,5 @@
                 <span data-translate="common_confirm"></span>
             </button>
         </div>
-    
+
     </form>
