@@ -35,7 +35,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
             const expressOrderPayload = {
                 productId: "cloud",
                 serviceName: self.vmInEdition.serviceName,
-                planCode: "s1-2.monthly",
+                planCode: self.vmInEdition.flavor.planCodes.monthly,
                 duration: "P1M",
                 pricingMode: "default",
                 quantity: 1,

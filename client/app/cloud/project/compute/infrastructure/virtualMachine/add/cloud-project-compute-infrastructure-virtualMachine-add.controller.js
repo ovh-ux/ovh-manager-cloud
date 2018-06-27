@@ -1,12 +1,13 @@
 class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
-    constructor ($q, $state, $stateParams,
+    constructor ($q, $state, $stateParams, $window,
                  CloudFlavorService, CloudImageService, CloudProjectVirtualMachineAddService, CloudRegionService,
                  OvhCloudPriceHelper, OvhApiCloudProjectFlavor, OvhApiCloudProjectImage, OvhApiCloudProjectInstance, OvhApiCloudProjectNetworkPrivate,
                  OvhApiCloudProjectNetworkPublic, OvhApiCloudProjectQuota, OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectSshKey,
-                 CurrencyService, RegionService, ServiceHelper, ovhDocUrl) {
+                 CurrencyService, RegionService, ServiceHelper, ovhDocUrl, TARGET, URLS) {
         this.$q = $q;
         this.$state = $state;
         this.$stateParams = $stateParams;
+        this.$window = $window;
         this.CloudFlavorService = CloudFlavorService;
         this.CloudImageService = CloudImageService;
         this.OvhCloudPriceHelper = OvhCloudPriceHelper;
@@ -25,6 +26,8 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
         this.ServiceHelper = ServiceHelper;
         this.VirtualMachineAddService = CloudProjectVirtualMachineAddService;
         this.ovhDocUrl = ovhDocUrl;
+        this.TARGET = TARGET;
+        this.URLS = URLS;
     }
 
     $onInit () {
@@ -79,7 +82,11 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
     }
 
     confirm () {
-        this.addVirtualMachine();
+        if (this.model.billingPeriod === "monthly" && this.TARGET === "US") {
+            this.orderVirtualMachine();
+        } else {
+            this.addVirtualMachine();
+        }
     }
 
     /*----------------------------------
@@ -420,6 +427,34 @@ class CloudProjectComputeInfrastructureVirtualMachineAddCtrl {
                 this.submitted.step4 = false;
                 this.loaders.adding = false;
             });
+    }
+
+    orderVirtualMachine () {
+        const expressOrderPayload = {
+            productId: "cloud",
+            serviceName: this.serviceName,
+            planCode: this.model.flavor.planCodes[this.model.billingPeriod],
+            duration: "P1M",
+            pricingMode: "default",
+            quantity: this.model.number,
+            configuration: [{
+                label: "region",
+                values: [this.model.region.microRegion.code]
+            }, {
+                label: "instanceParams",
+                values: [JSON.stringify({
+                    flavorId: this.model.flavor.id,
+                    name: this.model.name,
+                    sshKeyName: this.model.sshKey.name,
+                    boot: {
+                        id: this.model.imageId.id,
+                        type: "image"
+                    },
+                    userData: this.model.userData
+                })]
+            }]
+        };
+        this.$window.open(`${this.URLS.website_order.express.US}review?products=${JSURL.stringify([expressOrderPayload])}`);
     }
 }
 

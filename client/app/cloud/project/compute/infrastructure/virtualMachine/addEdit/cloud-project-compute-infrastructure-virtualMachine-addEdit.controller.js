@@ -75,7 +75,7 @@ angular.module("managerApp")
               OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhCloudPriceHelper, OvhApiCloudProjectImage,
               OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
               RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_FLAVOR_SPECIFIC_IMAGE,
-              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
+              OvhApiMe, TARGET, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
 
     var self = this;
     var orderBy = $filter("orderBy");
@@ -795,46 +795,77 @@ angular.module("managerApp")
                 delete self.vmInEdition.networks;
             }
 
-            /**
-             * Create multiple VMs at once
-             */
-            if (self.model.vmCount > 1) {
-                CloudProjectComputeInfrastructureOrchestrator.saveMultipleNewVms(self.vmInEdition, self.model.vmCount).then(function () {
-                    $rootScope.$broadcast("highlighed-element.hide", "compute," + self.vmInEdition.id);
-                    CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
-                    CloudMessage.success($translate.instant("cpcivm_addedit_save_multiple_success"));
-                    atInternet.trackOrder({
-                        name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "iaas::pci-project::compute::infrastructure::order",
-                        priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
-                        quantity : self.model.vmCount,
-                        orderId : self.vmInEdition.id
-                    });
-                }, function (err) {
-                    CloudMessage.error([$translate.instant("cpcivm_addedit_save_multiple_error"), err.data && err.data.message || ""].join(" "));
-                    self.loaders.launch = false;
-                });
-            /**
-             * Create just one VM
-             */
+            if (self.vmInEdition.monthlyBillingBoolean && TARGET === "US") {
+                // We need to use express order in case if billing is done monthly in US
+                // @TODO
+                // const expressOrderPayload = {
+                //     productId: "cloud",
+                //     serviceName: this.serviceName,
+                //     planCode: this.model.flavor.planCodes[this.model.billingPeriod],
+                //     duration: "P1M",
+                //     pricingMode: "default",
+                //     quantity: self.model.vmCount,
+                //     configuration: [{
+                //         label: "region",
+                //         values: [this.model.region.microRegion.code]
+                //     }, {
+                //         label: "instanceParams",
+                //         values: [JSON.stringify({
+                //             flavorId: this.model.flavor.id,
+                //             name: this.model.name,
+                //             sshKeyName: this.model.sshKey.name,
+                //             boot: {
+                //                 id: this.model.imageId.id,
+                //                 type: "image"
+                //             },
+                //             userData: this.model.userData
+                //         })]
+                //     }]
+                // };
+                // this.$window.open(`${this.URLS.website_order.express.US}review?products=${JSURL.stringify([expressOrderPayload])}`);
             } else {
-                CloudProjectComputeInfrastructureOrchestrator.saveNewVm(self.vmInEdition).then(function () {
-                    $rootScope.$broadcast('highlighed-element.hide', 'compute,' + self.vmInEdition.id);
-                    CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
-                    atInternet.trackOrder({
-                        name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
-                        page : "iaas::pci-project::compute::infrastructure::order",
-                        priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
-                        orderId : self.vmInEdition.id
+                /**
+                 * Billing is done hourly so we don't need to use express order
+                 * Create multiple VMs at once
+                 */
+                if (self.model.vmCount > 1) {
+                    CloudProjectComputeInfrastructureOrchestrator.saveMultipleNewVms(self.vmInEdition, self.model.vmCount).then(function () {
+                        $rootScope.$broadcast("highlighed-element.hide", "compute," + self.vmInEdition.id);
+                        CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
+                        CloudMessage.success($translate.instant("cpcivm_addedit_save_multiple_success"));
+                        atInternet.trackOrder({
+                            name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
+                            page : "iaas::pci-project::compute::infrastructure::order",
+                            priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
+                            quantity : self.model.vmCount,
+                            orderId : self.vmInEdition.id
+                        });
+                    }, function (err) {
+                        CloudMessage.error([$translate.instant("cpcivm_addedit_save_multiple_error"), err.data && err.data.message || ""].join(" "));
+                        self.loaders.launch = false;
                     });
-                }, function (err) {
-                    if (err && err.status === 409) {
-                        CloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
-                    } else {
-                        CloudMessage.error( [$translate.instant('cpcivm_edit_vm_post_error'), err.data && err.data.message || ''].join(' '));
-                    }
-                    self.loaders.launch = false;
-                });
+                /**
+                 * Create just one VM
+                 */
+                } else {
+                    CloudProjectComputeInfrastructureOrchestrator.saveNewVm(self.vmInEdition).then(function () {
+                        $rootScope.$broadcast('highlighed-element.hide', 'compute,' + self.vmInEdition.id);
+                        CloudProjectComputeInfrastructureOrchestrator.turnOffVmEdition(false, self.vmInEdition);
+                        atInternet.trackOrder({
+                            name : "[INSTANCE]::" + self.vmInEdition.flavor.name.replace(/[\W_]+/g,"") + "[" + self.vmInEdition.flavor.name + "]",
+                            page : "iaas::pci-project::compute::infrastructure::order",
+                            priceTaxFree : self.vmInEdition.flavor.price.monthlyPrice.value,
+                            orderId : self.vmInEdition.id
+                        });
+                    }, function (err) {
+                        if (err && err.status === 409) {
+                            CloudMessage.error($translate.instant('cpcivm_edit_vm_post_error_overquota'));
+                        } else {
+                            CloudMessage.error( [$translate.instant('cpcivm_edit_vm_post_error'), err.data && err.data.message || ''].join(' '));
+                        }
+                        self.loaders.launch = false;
+                    });
+                }
             }
         } else {
         //PUT
