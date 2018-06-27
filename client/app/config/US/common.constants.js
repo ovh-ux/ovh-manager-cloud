@@ -70,6 +70,9 @@ angular.module("managerApp")
                 US: projectName =>
                     `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
             },
+            express: {
+                US: "https://ovh.us/order/express/#/express/"
+            },
             dedicated_server: {
                 US: "https://ovhcloud.com/order/dedicated/#/dedicated/select"
             },

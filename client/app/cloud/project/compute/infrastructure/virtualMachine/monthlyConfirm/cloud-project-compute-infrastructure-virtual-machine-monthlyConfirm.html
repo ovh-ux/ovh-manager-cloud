@@ -26,9 +26,17 @@
             <span data-translate="common_cancel"></span>
         </button>
         <button type="submit" class="oui-button oui-button_primary"
+            data-ng-if="CPCIVirtualmachineMonthlyConfirm.TARGET !== 'US'"
             data-ng-disabled="CPCIVirtualmachineMonthlyConfirm.loaders.saveVm"
             data-ng-click="CPCIVirtualmachineMonthlyConfirm.confirm()">
             <span data-translate="common_confirm"></span>
         </button>
+        <a class="oui-button oui-button_primary"
+           data-translate="common_confirm"
+           data-ng-if="CPCIVirtualmachineMonthlyConfirm.TARGET === 'US'"
+           data-ng-href="{{ CPCIVirtualmachineMonthlyConfirm.expressOrderUrl }}"
+           target="_blank"
+           rel="noopener">
+        </a>
     </div>
 </div>

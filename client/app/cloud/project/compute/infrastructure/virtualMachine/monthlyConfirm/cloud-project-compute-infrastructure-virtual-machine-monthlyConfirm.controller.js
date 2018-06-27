@@ -1,10 +1,12 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm", function ($uibModalInstance, params, $translate, CloudMessage, CloudProjectComputeInfrastructureOrchestrator) {
+angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtualmachineMonthlyConfirm", function ($uibModalInstance, params, $translate, CloudMessage, CloudProjectComputeInfrastructureOrchestrator, TARGET, URLS) {
 
     var self = this;
 
     self.vmInEdition = params;
+    self.TARGET = TARGET;
+    self.expressOrderUrl = null;
 
     self.loaders = {
         saveVm : false
@@ -27,5 +29,23 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureVirtua
             $uibModalInstance.dismiss();
         });
     };
+
+    self.$onInit = function () {
+        if (self.TARGET === "US") {
+            const expressOrderPayload = {
+                productId: "cloud",
+                serviceName: self.vmInEdition.serviceName,
+                planCode: "s1-2.monthly",
+                duration: "P1M",
+                pricingMode: "default",
+                quantity: 1,
+                configuration: [{
+                    label: "instanceId",
+                    values: [self.vmInEdition.id]
+                }]
+            };
+            self.expressOrderUrl = `${URLS.website_order.express.US}review?products=${JSURL.stringify([expressOrderPayload])}`;
+        }
+    }
 
 });
