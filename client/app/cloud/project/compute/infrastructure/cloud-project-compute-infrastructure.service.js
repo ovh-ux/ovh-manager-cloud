@@ -123,7 +123,7 @@ class CloudProjectComputeInfrastructureService {
             controller: "cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl",
             controllerAs: "$ctrl",
             resolve: {
-                params: () => vm
+                params: () => ({ vm })
             }
         }).result.then(() => this.CloudProjectComputeInfrastructureOrchestrator.deleteVm(vm)
             .catch(this.ServiceHelper.errorHandler("cpci_vm_delete_submit_error"))
