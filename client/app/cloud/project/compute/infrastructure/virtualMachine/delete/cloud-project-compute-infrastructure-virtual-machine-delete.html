@@ -1,41 +1,47 @@
-<form id="vmDeletionForm" name="vmDeletionForm" novalidate class="oui-modal oui-modal_shadow">
-    <div class="oui-modal__header">
-        <button class="oui-icon oui-icon-close_thin oui-modal__close-button" type="button" aria-label="Exit"
-                data-ng-click="$ctrl.cancel()"></button>
-    </div>
-    <div class="oui-modal__body oui-modal__body_no-icon" data-ng-if="$ctrl.loaders.ips">
-        <div class="text-center">
-            <oui-spinner></oui-spinner>
-        </div>
-    </div>
-    <div class="oui-modal__body" data-ng-if="!$ctrl.loaders.ips">
-        <i class="oui-icon oui-icon-help_circle oui-icon_bicolor" aria-hidden="true"></i>
-        <div class="oui-modal__body-text">
-            <h2 class="oui-modal__title" data-translate="cpcivm_delete_title"></h2>
+<form class="oui-modal oui-modal_shadow">
 
-            <p class="oui-modal__text red" data-ng-if="$ctrl.isMonthlyBilling" data-translate="cpcivm_delete_info"></p>
-            <div data-ng-if="cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo.length">
-                <p class="oui-modal__text red" data-translate="cpcivm_failover_info"></p>
-                <ul class="oui-modal__text">
-                    <li class="red" data-ng-repeat="ip in cloudProjectComputeInfrastructureVirtualMachineDeleteCtrl.routedIpsFo track by ip.id">{{ ip.ip }}</li>
-                </ul>
+        <div class="oui-modal__header">
+            <button
+                type="button"
+                data-ng-click="$ctrl.cancel()"
+                class="oui-icon oui-icon-close_thin oui-modal__close-button"
+                data-translate-attr="{ 'aria-label': 'common_cancel' }"></button>
+        </div>
+    
+        <div class="oui-modal__body">
+    
+            <span class="oui-icon oui-icon-help_circle oui-icon_bicolor" aria-hidden="true"></span>
+    
+            <div class="oui-modal__body-text">
+                <h2 class="oui-modal__title" data-translate="cpcivm_delete_title"></h2>
+    
+                <div class="oui-modal__text">
+                    <p data-translate="cpcivm_delete_confirm"></p>
+    
+                    <strong
+                        role="alert"
+                        data-ng-if="$ctrl.isMonthlyBilling"
+                        data-translate="cpcivm_delete_info"></strong>
+                </div>
             </div>
-            <p class="oui-modal__text"><strong data-translate="cpcivm_delete_confirm"></strong></p>
         </div>
-    </div>
-
-    <div class="oui-modal__footer">
-        <button type="reset" class="oui-button oui-button_secondary"
-            data-ng-click="$ctrl.cancel()">
-            <span data-translate="common_cancel"></span>
-        </button>
-        <button type="submit" class="oui-button oui-button_primary"
-            data-ng-click="$ctrl.backup()"
-            data-track-on="click"
-            data-track-name="VM-Delete"
-            data-track-click="action">
-            <span data-translate="common_confirm"></span>
-        </button>
-    </div>
-
-</form>
+    
+        <div class="oui-modal__footer">
+            <oui-button
+                type="reset"
+                data-on-click="$ctrl.cancel()"
+                data-variant="secondary"
+                data-text="{{:: 'common_cancel' | translate }}"
+                class="mr-3"></oui-button>
+            <button
+                type="submit"
+                data-ng-click="$ctrl.backup()"
+                data-track-on="click"
+                data-track-name="VM-Delete"
+                data-track-click="action"
+                class="oui-button oui-button_primary">
+                <span data-translate="common_confirm"></span>
+            </button>
+        </div>
+    
+    </form>
