@@ -7,6 +7,6 @@
 
     <div data-ng-repeat="ip in $ctrl.ips | orderBy:'type':true | filter: { version: 'v4'} track by ip.ipAddress">
         <label class="oui-label" for="ip-{{ip.ipAddress}}" data-ng-bind="ip.type"></label>
-        <cui-clipboard data-id="ip-{{ip.ipAddress}}" data-text="ip.ipAddress"></cui-clipboard>
+        <cui-clipboard id="ip-{{ip.ipAddress}}" data-text="ip.ipAddress"></cui-clipboard>
     </div>
 </oui-modal>

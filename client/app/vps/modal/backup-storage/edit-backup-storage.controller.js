@@ -29,7 +29,7 @@ class EditBackupStorageCtrl {
             loaderFunction: () => this.VpsService.putBackupStorageAccess(this.serviceName, this.row.ipBlock, this.model.ftp, this.model.nfs, this.model.cifs)
                 .then(() => this.CloudMessage.success(this.$translate.instant("vps_tab_backup_storage_set_success", { access: this.row.ipBlock })))
                 .catch(err => {
-                    if (err.data && err.data.message) {
+                    if (_(err).has("data.message")) {
                         this.CloudMessage.error(err.data.message);
                     }
                     this.CloudMessage.error(this.$translate.instant("vps_tab_backup_storage_set_fail", { access: this.row.ipBlock }));

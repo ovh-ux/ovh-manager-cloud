@@ -8,11 +8,9 @@
     data-on-dismiss="$ctrl.cancel()"
     data-loading="$ctrl.selectedVps.loading || $ctrl.save.loading">
 
-    <p class="oui-modal__text" data-ng-if="!$ctrl.preview">
-        <span data-translate="vps_dashboard_monitoring_sla"></span> :
-        <span data-translate="vps_status_enabled" data-ng-if="$ctrl.currentState"></span>
-        <span data-translate="vps_status_disabled" data-ng-if="!$ctrl.currentState"></span>
-    </p>
+    <span data-translate="vps_dashboard_monitoring_sla"></span> :
+    <span data-translate="vps_status_enabled" data-ng-if="$ctrl.currentState"></span>
+    <span data-translate="vps_status_disabled" data-ng-if="!$ctrl.currentState"></span>
 </oui-modal>
 
 <oui-modal

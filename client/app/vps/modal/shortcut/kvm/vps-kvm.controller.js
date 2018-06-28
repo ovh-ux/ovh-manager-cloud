@@ -29,7 +29,7 @@ class VpsKvmCtrl {
                 })
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_kvm_fail")))
         });
-        this.kvmUrlLoader.load();
+        return this.kvmUrlLoader.load();
     }
 
     loadKvm () {
@@ -38,7 +38,7 @@ class VpsKvmCtrl {
                 .then(data => { this.kvm = data; })
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_kvm_fail")))
         });
-        this.kvmLoader.load();
+        return this.kvmLoader.load();
     }
 
     close () {
