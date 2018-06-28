@@ -1,11 +1,11 @@
 (() => {
     class MetricsTokenEditCtrl {
-        constructor ($uibModalInstance, metricsValue, metricsType, serviceName, tokenID, MetricService, ControllerHelper) {
+        constructor ($uibModalInstance, ControllerHelper, metricsValue, metricsType, serviceName, tokenID, MetricService) {
             this.$uibModalInstance = $uibModalInstance;
+            this.ControllerHelper = ControllerHelper;
+            this.MetricService = MetricService;
             this.serviceName = serviceName;
             this.tokenID = tokenID;
-            this.MetricService = MetricService;
-            this.ControllerHelper = ControllerHelper;
             this.type = metricsType;
             this.value = metricsValue;
         }
