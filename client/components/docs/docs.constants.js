@@ -2,7 +2,10 @@ angular.module("managerApp")
     .constant("DOCS_ALL_GUIDES", {
         FR: "https://www.ovh.com/fr/support/knowledge/",
         EN: "https://www.ovh.co.uk/community/knowledge/",
-        US: "https://support.ovhcloud.com/hc/en-us"
+        US: "https://support.ovhcloud.com/hc/en-us",
+        EN_ASIA: "https://docs.ovh.com/asia/en",
+        EN_AU: "https://docs.ovh.com/au/en",
+        EN_SG: "https://docs.ovh.com/sg/en"
     })
     .constant("DOCS_HOMEPAGE_GUIDES", {
         FR: {
@@ -18,11 +21,6 @@ angular.module("managerApp")
                     atInternetClickTag: "TopGuide-PublicCloud-2",
                     isExternal: true,
                     href: "https://docs.ovh.com/fr/public-cloud/information-concernant-le-mode-de-facturation-cloud/"
-                }, {
-                    text: "guide_project_3",
-                    atInternetClickTag: "TopGuide-PublicCloud-3",
-                    isExternal: true,
-                    href: "https://docs.ovh.com/fr/public-cloud/introduction-aux-instances-et-autres-notions-cloud/"
                 }, {
                     text: "guide_project_4",
                     atInternetClickTag: "TopGuide-PublicCloud-4",
@@ -182,6 +180,204 @@ angular.module("managerApp")
                     atInternetClickTag: "TopGuide-VPS-9",
                     isExternal: true,
                     href: "https://docs.ovh.com/gb/en/vps/"
+                }]
+            }
+        },
+        EN_ASIA: {
+            PROJECT: {
+                title: "homepage_type_of_guide_pci",
+                list: [{
+                    text: "guide_project_1",
+                    atInternetClickTag: "TopGuide-PublicCloud-1",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/getting-started-with-public-cloud/"
+                }, {
+                    text: "guide_project_5",
+                    atInternetClickTag: "TopGuide-PublicCloud-5",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/configure-user-access-to-horizon/"
+                }, {
+                    text: "guide_project_6",
+                    atInternetClickTag: "TopGuide-PublicCloud-6",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/start-a-first-cloud-server-within-3-min/"
+                }, {
+                    text: "guide_project_7",
+                    atInternetClickTag: "TopGuide-PublicCloud-7",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/prepare-environment-for-using-openstack-api/"
+                }, {
+                    text: "guide_project_8",
+                    atInternetClickTag: "TopGuide-PublicCloud-8",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/create-and-configure-additional-disk-instance/"
+                }, {
+                    text: "guide_project_all",
+                    atInternetClickTag: "TopGuide-PublicCloud-all",
+                    href: "https://docs.ovh.com/asia/en/public-cloud/"
+                }]
+            },
+            VPS: {
+                title: "homepage_type_of_guide_vps",
+                list: [{
+                    text: "guide_vps_1",
+                    atInternetClickTag: "TopGuide-VPS-1",
+                    href: "https://docs.ovh.com/asia/en/vps/getting-started-vps/"
+                }, {
+                    text: "guide_vps_2",
+                    atInternetClickTag: "TopGuide-VPS-2",
+                    href: "https://docs.ovh.com/asia/en/vps/tips-for-securing-a-vps/"
+                }, {
+                    text: "guide_vps_3",
+                    atInternetClickTag: "TopGuide-VPS-3",
+                    href: "https://docs.ovh.com/asia/en/vps/repartitioning-vps-after-upgrade/"
+                }, {
+                    text: "guide_vps_4",
+                    atInternetClickTag: "TopGuide-VPS-4",
+                    href: "https://docs.ovh.com/asia/en/vps/use-kvm-for-vps/"
+                }, {
+                    text: "guide_vps_5",
+                    atInternetClickTag: "TopGuide-VPS-5",
+                    href: "https://docs.ovh.com/asia/en/vps/windows-first-config/"
+                }, {
+                    text: "guide_vps_7",
+                    atInternetClickTag: "TopGuide-VPS-7",
+                    href: "https://docs.ovh.com/asia/en/vps/root-password/"
+                }, {
+                    text: "guide_vps_8",
+                    atInternetClickTag: "TopGuide-VPS-8",
+                    href: "https://docs.ovh.com/asia/en/vps/rescue/"
+                }, {
+                    text: "guide_vps_all",
+                    atInternetClickTag: "TopGuide-VPS-9",
+                    href: "https://docs.ovh.com/asia/en/vps/"
+                }]
+            }
+        },
+        EN_AU: {
+            PROJECT: {
+                title: "homepage_type_of_guide_pci",
+                list: [{
+                    text: "guide_project_1",
+                    atInternetClickTag: "TopGuide-PublicCloud-1",
+                    href: "https://docs.ovh.com/au/en/public-cloud/getting-started-with-public-cloud/"
+                }, {
+                    text: "guide_project_5",
+                    atInternetClickTag: "TopGuide-PublicCloud-5",
+                    href: "https://docs.ovh.com/au/en/public-cloud/configure-user-access-to-horizon/"
+                }, {
+                    text: "guide_project_6",
+                    atInternetClickTag: "TopGuide-PublicCloud-6",
+                    href: "https://docs.ovh.com/au/en/public-cloud/start-a-first-cloud-server-within-3-min/"
+                }, {
+                    text: "guide_project_7",
+                    atInternetClickTag: "TopGuide-PublicCloud-7",
+                    href: "https://docs.ovh.com/au/en/public-cloud/prepare-environment-for-using-openstack-api/"
+                }, {
+                    text: "guide_project_8",
+                    atInternetClickTag: "TopGuide-PublicCloud-8",
+                    href: "https://docs.ovh.com/au/en/public-cloud/create-and-configure-additional-disk-instance/"
+                }, {
+                    text: "guide_project_all",
+                    atInternetClickTag: "TopGuide-PublicCloud-all",
+                    href: "https://docs.ovh.com/au/en/public-cloud/"
+                }]
+            },
+            VPS: {
+                title: "homepage_type_of_guide_vps",
+                list: [{
+                    text: "guide_vps_1",
+                    atInternetClickTag: "TopGuide-VPS-1",
+                    href: "https://docs.ovh.com/au/en/vps/getting-started-vps/"
+                }, {
+                    text: "guide_vps_2",
+                    atInternetClickTag: "TopGuide-VPS-2",
+                    href: "https://docs.ovh.com/au/en/vps/tips-for-securing-a-vps/"
+                }, {
+                    text: "guide_vps_3",
+                    atInternetClickTag: "TopGuide-VPS-3",
+                    href: "https://docs.ovh.com/au/en/vps/repartitioning-vps-after-upgrade/"
+                }, {
+                    text: "guide_vps_4",
+                    atInternetClickTag: "TopGuide-VPS-4",
+                    href: "https://docs.ovh.com/au/en/vps/use-kvm-for-vps/"
+                }, {
+                    text: "guide_vps_5",
+                    atInternetClickTag: "TopGuide-VPS-5",
+                    href: "https://docs.ovh.com/au/en/vps/windows-first-config/"
+                }, {
+                    text: "guide_vps_7",
+                    atInternetClickTag: "TopGuide-VPS-7",
+                    href: "https://docs.ovh.com/au/en/vps/root-password/"
+                }, {
+                    text: "guide_vps_8",
+                    atInternetClickTag: "TopGuide-VPS-8",
+                    href: "https://docs.ovh.com/au/en/vps/rescue/"
+                }, {
+                    text: "guide_vps_all",
+                    atInternetClickTag: "TopGuide-VPS-9",
+                    href: "https://docs.ovh.com/au/en/vps/"
+                }]
+            }
+        },
+        EN_SG: {
+            PROJECT: {
+                title: "homepage_type_of_guide_pci",
+                list: [{
+                    text: "guide_project_1",
+                    atInternetClickTag: "TopGuide-PublicCloud-1",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/getting-started-with-public-cloud/"
+                }, {
+                    text: "guide_project_5",
+                    atInternetClickTag: "TopGuide-PublicCloud-5",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/configure-user-access-to-horizon/"
+                }, {
+                    text: "guide_project_6",
+                    atInternetClickTag: "TopGuide-PublicCloud-6",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/start-a-first-cloud-server-within-3-min/"
+                }, {
+                    text: "guide_project_7",
+                    atInternetClickTag: "TopGuide-PublicCloud-7",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/prepare-environment-for-using-openstack-api/"
+                }, {
+                    text: "guide_project_8",
+                    atInternetClickTag: "TopGuide-PublicCloud-8",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/create-and-configure-additional-disk-instance/"
+                }, {
+                    text: "guide_project_all",
+                    atInternetClickTag: "TopGuide-PublicCloud-all",
+                    href: "https://docs.ovh.com/sg/en/public-cloud/"
+                }]
+            },
+            VPS: {
+                title: "homepage_type_of_guide_vps",
+                list: [{
+                    text: "guide_vps_1",
+                    atInternetClickTag: "TopGuide-VPS-1",
+                    href: "https://docs.ovh.com/sg/en/vps/getting-started-vps/"
+                }, {
+                    text: "guide_vps_2",
+                    atInternetClickTag: "TopGuide-VPS-2",
+                    href: "https://docs.ovh.com/sg/en/vps/tips-for-securing-a-vps/"
+                }, {
+                    text: "guide_vps_3",
+                    atInternetClickTag: "TopGuide-VPS-3",
+                    href: "https://docs.ovh.com/sg/en/vps/repartitioning-vps-after-upgrade/"
+                }, {
+                    text: "guide_vps_4",
+                    atInternetClickTag: "TopGuide-VPS-4",
+                    href: "https://docs.ovh.com/sg/en/vps/use-kvm-for-vps/"
+                }, {
+                    text: "guide_vps_5",
+                    atInternetClickTag: "TopGuide-VPS-5",
+                    href: "https://docs.ovh.com/sg/en/vps/windows-first-config/"
+                }, {
+                    text: "guide_vps_7",
+                    atInternetClickTag: "TopGuide-VPS-7",
+                    href: "https://docs.ovh.com/sg/en/vps/root-password/"
+                }, {
+                    text: "guide_vps_8",
+                    atInternetClickTag: "TopGuide-VPS-8",
+                    href: "https://docs.ovh.com/sg/en/vps/rescue/"
+                }, {
+                    text: "guide_vps_all",
+                    atInternetClickTag: "TopGuide-VPS-9",
+                    href: "https://docs.ovh.com/sg/en/vps/"
                 }]
             }
         },

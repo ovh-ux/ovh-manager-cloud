@@ -2,7 +2,7 @@
 <translations>
 
    <translation id="cpc_volume_attachedTo" qtlid="252828">Verbonden naar de server</translation>
-   <translation id="cpc_volume_size" qtlid="28159">Diskruimte</translation>
+   <translation id="cpc_volume_size" qtlid="28159">Schijfruimte</translation>
    <translation id="cpc_volume_size1" qtlid="319232">Espace min. (Gio)</translation>
    <translation id="cpc_volume_size2" qtlid="319245">Espace disque min (Gio)</translation>
 

@@ -42,6 +42,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Kvóta RAM byla dosažena</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Kvóta jader byla dosažena</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH klíč není dostupný</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Zvolte datacentrum</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Nepodařilo se načíst seznam dostupných oblastí a datacenter: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Nepodařilo se načíst informace o dostupné kvótě: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Vyberte instanci</translation>

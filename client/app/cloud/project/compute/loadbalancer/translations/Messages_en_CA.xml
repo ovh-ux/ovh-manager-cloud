@@ -7,6 +7,7 @@
    <translation id="cpc_loadbalancer_order" qtlid="447391">Order a Load Balancer</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Back</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">Load Balancing IP</translation>
+   <translation id="cpc_loadbalancer_displayname" qtlid="3818">Name</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">OpenStack</translation>
    <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Yes</translation>
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Expired</translation>

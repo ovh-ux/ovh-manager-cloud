@@ -20,13 +20,13 @@ angular.module("managerApp")
                     <div class="cui-tile__item-main" data-ng-if="$ctrl.term">
                         <cui-tile-definitions data-ng-if="$ctrl.term">
                             <cui-tile-term-status data-term="$ctrl.term"></cui-tile-term-status>
-                            <cui-tile-description-status data-type="{{ $ctrl.type }}" 
+                            <cui-tile-description-status data-type="{{ $ctrl.type }}"
                                 data-description="$ctrl.description"></cui-tile-description-status>
                         </cui-tile-definitions>
                     </div>
                     <div class="cui-tile__item-main" data-ng-if="!$ctrl.term && !$ctrl.description" data-ng-transclude></div>
                     <cui-tile-action-menu data-ng-if="$ctrl.actions" data-actions="$ctrl.actions"></cui-tile-action-menu>
-                </div> 
+                </div>
             </div>`,
         bindToController: {
             term: "<",
@@ -55,12 +55,13 @@ angular.module("managerApp")
         scope: true,
         transclude: true,
         template: `
-            <dd class="cui-tile-item-status__description text-truncate d-flex">
-                <cui-status-icon class="cui-tile-item-status__icon" data-type="{{ $ctrl.type }}"></cui-status-icon>
+            <dd class="text-truncate d-flex">
                 <div class="cui-tile-item-status__detail text-truncate">
-                    <span data-ng-if="$ctrl.description !== null && $ctrl.description !== ''" data-ng-bind="$ctrl.description"></span>
-                    <span data-ng-if="$ctrl.description === null || $ctrl.description === ''" data-ng-bind="'-'"></span>
-                    <ng-transclude></ng-transclude>
+                    <span class="oui-status" data-ng-class="'oui-status_'+$ctrl.type">
+                        <span data-ng-if="$ctrl.description !== null && $ctrl.description !== ''" data-ng-bind="$ctrl.description"></span>
+                        <span data-ng-if="$ctrl.description === null || $ctrl.description === ''" data-ng-bind="'-'"></span>
+                        <ng-transclude></ng-transclude>
+                    </span>
                 </div>
             </dd>`,
         bindToController: {

@@ -7,6 +7,7 @@
    <translation id="cpc_loadbalancer_order" qtlid="447391">Bestel een Load Balancer</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Terug</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">Load Balancing IP</translation>
+   <translation id="cpc_loadbalancer_displayname" qtlid="3818">Naam</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">Openstack</translation>
    <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Ja</translation>
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Vervallen</translation>
