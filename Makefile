@@ -20,6 +20,7 @@ CERTIFICATE_CSR_FILE=server/certificate/server.csr
 CERTIFICATE_CRT_FILE=server/certificate/server.crt
 
 #### FOLDERS ####
+BOWER_DIR=client/bower_components
 NODE_DIR=node_modules
 GRUNT_DEP=$(NODE_DIR)/grunt
 DIST_DIR=dist
@@ -58,6 +59,7 @@ help:
 
 clean:
 	$(DEL) $(NODE_DIR)
+	$(DEL) $(BOWER_DIR)
 	$(DEL) $(DIST_DIR)
 	$(DEL) $(DIST_TAR)
 	$(DEL) $(DIST_EU_DIR)
