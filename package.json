@@ -90,8 +90,8 @@
     "@bower_components/ovh-manager-webfont": "ovh-ux/ovh-manager-webfont#^1.0.1",
     "@bower_components/uri.js": "medialize/URI.js#~1.15.0",
     "@bower_components/validator-js": "chriso/validator.js#~3.37.0",
-    "ovh-ui-angular": "~2.15.0",
-    "ovh-ui-kit": "~2.15.0",
+    "ovh-ui-angular": "~2.16.0",
+    "ovh-ui-kit": "~2.16.0",
     "popper.js": "^1.14.1"
   },
   "devDependencies": {
