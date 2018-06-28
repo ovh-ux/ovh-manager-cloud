@@ -77,16 +77,9 @@ class IpLoadBalancerConfigurationCtrl {
 
     statusTemplate () {
         return `
-            <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
-                <cui-status-icon data-type="success"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes === 1" translate-attr="{ title: 'iplb_configuration_changes_1' }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes > 1" translate-attr="{ title: 'iplb_configuration_changes_count' }"
-                translate-values="{ count: $row.changes }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
+            <span data-ng-if="$row.changes === 0" class="oui-status oui-status_success" data-translate="iplb_configuration_changes_0"></span>
+            <span data-ng-if="$row.changes === 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_1"></span>
+            <span data-ng-if="$row.changes > 1" class="oui-status oui-status_warning" data-translate="iplb_configuration_changes_count" data-translate-values="{ count: $row.changes }"></span>
         `;
     }
 
