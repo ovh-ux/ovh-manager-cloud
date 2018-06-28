@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
-    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, CloudMessage, OtrsPopupService, RegionService, TARGET) {
+    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMe, CloudMessage, OtrsPopupService, RegionService, TARGET) {
 
         //---------VARIABLE DECLARATION---------
 
@@ -63,6 +63,20 @@ angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
 
         //---------INITIALIZATION---------
 
+        function initPaymentMethods () {
+            if (self.TARGET !== "US") {
+                return OvhApiMe.PaymentMean().v6().getDefaultPaymentMean();
+            }
+
+            return OvhApiMe.PaymentMethod().v6().query({
+                status: "VALID"
+            }).$promise.then((paymentMethodIds) => _.map(paymentMethodIds, (paymentMethodId) => $q.all(OvhApiMe.PaymentMethod().v6().get({
+                id: paymentMethodId
+            }).$promise))).then((paymentMethods) => _.find(paymentMethods, {
+                default: true
+            }));
+        }
+
         function init () {
             var initQueue = [];
 
@@ -70,7 +84,7 @@ angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
             self.loader.unleash = false;
 
             // check default payment mean
-            initQueue.push(OvhApiMePaymentMean.v6().getDefaultPaymentMean().then(function (defaultPaymentMean) {
+            initQueue.push(initPaymentMethods().then(function (defaultPaymentMean) {
                 self.datas.defaultPaymentMean = defaultPaymentMean;
             }));
 
