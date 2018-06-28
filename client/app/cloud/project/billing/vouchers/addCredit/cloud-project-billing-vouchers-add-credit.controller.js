@@ -17,7 +17,7 @@ class CloudProjectBillingVouchersAddcreditCtrl {
     }
 
     addCredit () {
-        return this.$uibModalInstance.close(this.credit.amount);
+        this.$uibModalInstance.close(this.credit.amount);
     }
 
     cancel () {

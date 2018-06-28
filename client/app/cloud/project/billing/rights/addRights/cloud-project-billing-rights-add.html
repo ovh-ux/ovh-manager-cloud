@@ -7,7 +7,7 @@
         data-on-dismiss="$ctrl.cancel()"
         data-loading="$ctrl.loader">
          
-        <oui-field data-label="{{ $ctrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate }}">
+        <oui-field data-label="{{ :: $ctrl.model.isUSorCA ? 'cpb_rights_table_email' : 'cpb_rights_table_nichandle' | translate }}">
             <input type="text"
                 id="billingContactInput"
                 name="billingContactInput"
@@ -20,8 +20,8 @@
             <oui-select name="selectRightType" 
                     id="selectRightType"
                     data-model="$ctrl.right.type" 
-                    data-title="{{ ('cpb_rights_table_rights_value_' + type) | translate }}" 
-                    data-placeholder="{{ ('cpb_rights_table_rights_value_' + type) | translate }}" 
+                    data-title="{{ :: ('cpb_rights_table_rights_value_' + type) | translate }}" 
+                    data-placeholder="{{ :: ('cpb_rights_table_rights_value_' + type) | translate }}" 
                     data-items="['readOnly', 'readWrite']" 
                     required 
                     data-align="start">
