@@ -68,7 +68,7 @@ angular.module("managerApp")
         website_order: {
             "cloud-resell-eu": {
                 US: projectName =>
-                    `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project-eu~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
+                    `https://ovhcloud.com/order/express/#/express/review?products=~(~(planCode~'project~productId~'cloud~quantity~1~duration~'P1M~configuration~(~(label~'description~values~(~'${encodeURIComponent(projectName)})))))`
             },
             dedicated_server: {
                 US: "https://ovhcloud.com/order/dedicated/#/dedicated/select"
