@@ -24,10 +24,10 @@
                 <span data-ng-if="!$row.quotaUsed">0 B</span>
             </oui-column>
             <oui-column data-title="::'veeam_quota' | translate">
-                {{ $row.quota.value | bytes:2:false:$row.quota.unit }}
+                <span ng-bind="$row.quota.value | bytes:2:false:$row.quota.unit"></span>
             </oui-column>
             <oui-column data-title="::'veeam_table_datacenter' | translate">
-                {{ VeeamStorageCtrl.getRegionText($row.replicationZone) }}
+                <span ng-bind="VeeamStorageCtrl.getRegionText($row.replicationZone)"></span>
             </oui-column>
             <oui-action-menu data-align="end" data-compact data-ng-if="!VeeamStorageCtrl.capabilities.loading">
                 <oui-action-menu-item data-text="{{ ::'veeam_storage_update_title' | translate }}"
