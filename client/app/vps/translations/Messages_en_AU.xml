@@ -238,7 +238,7 @@
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Activate Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Activate the Backup storage option</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Would you like to order the Backup Storage option on the <span class="normal italic">{{ serviceName }}</span>&#160;VPS?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="bold">{{ price }} ex. GST</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">This option will be billed at a monthly rate of <span class="red bold">{{ price }} ex. GST</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">The Backup storage is an archiving space for transferring your content, data, settings and configurations.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Generating purchase order...</translation>
@@ -316,8 +316,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Subscribe to Automated backups</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">An error has occurred loading the information.</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">For the first payment, you will be invoiced pro rata for the number of days remaining from your VPS renewal date.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">The service will then be billed monthly, at a price of <span class="bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Do you want to order the automated backup option on the "{{ serviceName }}" VPS?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">The service will then be billed monthly, at a price of <span class="red bold">{{ price }}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Do you want to order the automated backup option on the <span class="italic normal">{{ serviceName }}</span> VPS?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">To confirm your request, please accept the terms and conditions and click "Next" below.</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Price ex. GST:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Price incl. GST:</translation>

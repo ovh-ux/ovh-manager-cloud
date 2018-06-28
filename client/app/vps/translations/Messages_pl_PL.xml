@@ -238,7 +238,7 @@
    <translation id="vps_configuration_activate_ftpbackup_title_button" qtlid="209853">Włącz Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_title" qtlid="209866">Włącz opcję Backup storage</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_question" qtlid="452605">Chcesz zamówić opcję Backup storage dla VPS <span class="normal italic">{{ serviceName }}</span>?</translation>
-   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Miesięczna opłata za tę usługę to <span class="bold">{{ price }} HT</span></translation>
+   <translation id="vps_configuration_activate_ftpbackup_step1_alert" qtlid="452618">Miesięczna opłata za tę usługę to <span class="red bold">{{ price }} HT</span></translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_confirmation" qtlid="169329">W przypadku pierwszej płatności wystawiamy zamówienie z proratą za liczbę dni pozostałych do daty odnowienia serwera.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step1_description" qtlid="209892">Backup storage to przestrzeń do archiwizowania danych, parametrów i konfiguracji.</translation>
    <translation id="vps_configuration_activate_ftpbackup_step2_generation_bc" qtlid="169511">Generowanie zamówienia ...</translation>
@@ -316,8 +316,8 @@
    <translation id="vps_configuration_veeam_order_title" qtlid="170018">Zamów zautomatyzowany backup</translation>
    <translation id="vps_configuration_veeam_order_step1_loading_error" qtlid="170031">Wystąpił błąd podczas pobierania informacji</translation>
    <translation id="vps_configuration_veeam_order_step1_info" qtlid="169329">W przypadku pierwszej płatności wystawiamy zamówienie z proratą za liczbę dni pozostałych do daty odnowienia serwera.</translation>
-   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Następnie miesięczna cena usługi będzie wynosiła <span class="bold">{{ price }}</span></translation>
-   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Chcesz zamówić usługę automatycznego tworzenia kopii zapasowych dla VPS "{{ serviceName }}"?</translation>
+   <translation id="vps_configuration_veeam_order_step1_info2" qtlid="452761">Następnie miesięczna cena usługi będzie wynosiła <span class="red bold">{{ price }}</span></translation>
+   <translation id="vps_configuration_veeam_order_step1_question" qtlid="452774">Chcesz zamówić usługę automatycznego tworzenia kopii zapasowych dla VPS <span class="italic normal">{{ serviceName }}</span>?</translation>
    <translation id="vps_configuration_veeam_order_step1_id" qtlid="169472">Aby potwierdzić zlecenie, zaakceptuj warunki korzystania z usługi i kliknij na przycisk "Dalej".</translation>
    <translation id="vps_configuration_veeam_order_step1_totalHT" qtlid="169238">Cena netto:</translation>
    <translation id="vps_configuration_veeam_order_step1_totalTTC" qtlid="169251">Cena brutto:</translation>
