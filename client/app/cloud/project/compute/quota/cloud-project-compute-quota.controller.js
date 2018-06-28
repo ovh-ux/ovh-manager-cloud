@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
-    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, CloudMessage, OtrsPopupService, RegionService) {
+    function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, CloudMessage, OtrsPopupService, RegionService, TARGET) {
 
         //---------VARIABLE DECLARATION---------
 
@@ -24,8 +24,11 @@ angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
 
         // PaymentMean URL (v6 dedicated) with sessionv6
         this.paymentmeanUrl = REDIRECT_URLS.paymentMeans;
+        this.supportUrl = REDIRECT_URLS.support;
 
         self.regionService = RegionService;
+
+        this.TARGET = TARGET;
 
         //---------SUPPORT---------
 

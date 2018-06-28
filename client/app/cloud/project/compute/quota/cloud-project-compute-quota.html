@@ -50,11 +50,28 @@
 
             <button type="button"
                     class="oui-button oui-button_primary"
+                    data-ng-if="CloudProjectComputeQuotaCtrl.TARGET !== 'US'"
                     data-ng-disabled="!CloudProjectComputeQuotaCtrl.datas.quota || (CloudProjectComputeQuotaCtrl.datas.quota && CloudProjectComputeQuotaCtrl.datas.quota.length === 0)"
                     data-ng-click="CloudProjectComputeQuotaCtrl.openSupport()"
                     write-right-required>
                 {{ :: 'cpb_quota_protect_more_btn' | translate }}
             </button>
+
+            <div data-ng-if="CloudProjectComputeQuotaCtrl.TARGET === 'US'"
+                 data-write-right-required>
+                <button type="button"
+                        class="oui-button oui-button_primary no-transition"
+                        data-ng-if="!CloudProjectComputeQuotaCtrl.datas.quota || (CloudProjectComputeQuotaCtrl.datas.quota && CloudProjectComputeQuotaCtrl.datas.quota.length === 0)"
+                        data-ng-disabled="true"
+                        data-translate="cpb_quota_protect_more_btn">
+                </button>
+
+                <a class="oui-button oui-button_primary no-transition"
+                   data-ng-if="CloudProjectComputeQuotaCtrl.TARGET === 'US' && CloudProjectComputeQuotaCtrl.datas.quota.length"
+                   data-ng-href="{{ CloudProjectComputeQuotaCtrl.supportUrl }}"
+                   data-translate="cpb_quota_protect_more_btn">
+                </a>
+            </div>
 
         </div>
 
