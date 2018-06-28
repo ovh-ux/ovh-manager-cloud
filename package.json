@@ -90,12 +90,13 @@
     "@bower_components/ovh-manager-webfont": "ovh-ux/ovh-manager-webfont#^1.0.1",
     "@bower_components/uri.js": "medialize/URI.js#~1.15.0",
     "@bower_components/validator-js": "chriso/validator.js#~3.37.0",
-    "ovh-ui-angular": "~2.15.0",
-    "ovh-ui-kit": "~2.15.0",
-    "popper.js": "^1.14.1"
+    "ovh-ui-angular": "^2.15.0",
+    "ovh-ui-kit": "^2.15.0",
+    "popper.js": "^1.14.1",
+    "serve": "^9.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.0.0",
+    "autoprefixer": "^6.7.7",
     "babel-core": "^6.6.5",
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-class-properties": "^6.6.0",
@@ -118,7 +119,7 @@
     "eslint-config-ovh": "^0.1.1",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
-    "grunt": "~1.0.1",
+    "grunt": "^1.0.3",
     "grunt-angular-templates": "^1.0.3",
     "grunt-babel": "~6.0.0",
     "grunt-concurrent": "^2.0.1",
@@ -183,7 +184,7 @@
     "serve-favicon": "^2.3.0",
     "spdy": "^3.4.7",
     "supertest": "^2.0.1",
-    "time-grunt": "^1.2.1",
+    "time-grunt": "^1.4.0",
     "winston": "^2.2.0"
   },
   "scripts": {
