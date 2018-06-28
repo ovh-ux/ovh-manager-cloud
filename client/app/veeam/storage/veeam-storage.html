@@ -29,11 +29,10 @@
             <oui-column data-title="::'veeam_table_datacenter' | translate">
                 {{ VeeamStorageCtrl.getRegionText($row.replicationZone) }}
             </oui-column>
-            <oui-action-menu data-align="end" data-compact>
+            <oui-action-menu data-align="end" data-compact data-ng-if="!VeeamStorageCtrl.capabilities.loading">
                 <oui-action-menu-item data-text="{{ ::'veeam_storage_update_title' | translate }}"
                                       data-on-click="VeeamStorageCtrl.updateQuota(inventoryName)"
-                                      data-disabled="(VeeamStorageCtrl.capabilities.data.maxQuota | bytes:0:false:'GB':true) <= (VeeamStorageCtrl.capabilities.data.defaultQuota | bytes:0:false:'GB':true)"
-                                      data-ng-if="!VeeamStorageCtrl.capabilities.loading">
+                                      data-disabled="(VeeamStorageCtrl.capabilities.data.maxQuota | bytes:0:false:'GB':true) <= (VeeamStorageCtrl.capabilities.data.defaultQuota | bytes:0:false:'GB':true)">
                 </oui-action-menu-item>
             </oui-action-menu>
         </oui-datagrid>
