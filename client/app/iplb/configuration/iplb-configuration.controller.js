@@ -28,8 +28,15 @@ class IpLoadBalancerConfigurationCtrl {
         this.selectedZones = [];
     }
 
-    onSelectionChange (selection) {
-        this.selectedZones = selection;
+    onSelectionChange (zone) {
+        const index = _.indexOf(this.selectedZones, zone);
+        if (index === -1) {
+            // zone selected
+            this.selectedZones.push(zone);
+        } else {
+            // zone unselected
+            this.selectedZones.splice(index, 1);
+        }
     }
 
     applyChanges (zone) {
@@ -73,41 +80,6 @@ class IpLoadBalancerConfigurationCtrl {
         if (this.poller) {
             this.poller.kill();
         }
-    }
-
-    statusTemplate () {
-        return `
-            <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
-                <cui-status-icon data-type="success"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes === 1" translate-attr="{ title: 'iplb_configuration_changes_1' }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
-            <span data-ng-if="$row.changes > 1" translate-attr="{ title: 'iplb_configuration_changes_count' }"
-                translate-values="{ count: $row.changes }">
-                <cui-status-icon data-type="warning"></cui-status-icon>
-            </span>
-        `;
-    }
-
-    actionTemplate () {
-        return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_configuration_action_apply' | translate"
-                                data-ng-click="ctrl.applyChanges($row.id)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>`;
     }
 }
 
