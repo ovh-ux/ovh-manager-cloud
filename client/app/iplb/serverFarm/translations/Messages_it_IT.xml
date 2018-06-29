@@ -31,7 +31,7 @@
    <translation id="iplb_farm_balance_first" qtlid="437856">First</translation>
    <translation id="iplb_farm_balance_leastconn" qtlid="437869">Least</translation>
    <translation id="iplb_farm_balance_roundrobin" qtlid="437882">Round-robin</translation>
-   <translation id="iplb_farm_balance_source" qtlid="97496">Fonte</translation>
+   <translation id="iplb_farm_balance_source" qtlid="97496">Source</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
 
    <translation id="iplb_farm_stickiness_none" qtlid="440934">Nessuno</translation>

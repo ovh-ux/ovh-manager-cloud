@@ -87,9 +87,16 @@
    <translation id="common_menu_support_email_history" qtlid="260091">Historique des courriels</translation>
    <translation id="common_menu_support_telephony_contact" qtlid="260827">Assistance téléphonique</translation>
 
-
+   <translation id="common_navbar_notification_title" qtlid="33250">Notifications</translation>
+   <translation id="common_navbar_notification_error" qtlid="323434">Oups, nous n'arrivons pas à initialiser le menu !</translation>
+   <translation id="common_navbar_notification_error_subject" qtlid="26407">Erreur</translation>
+   <translation id="common_navbar_notification_see_all" qtlid="401914">Voir toutes les notifications</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oups, il y a un prolème!</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nous n'arrivons pas à initialiser le menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marquer comme lu</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marquer comme non lu</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Vous êtes à jour!</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Vous n'avez aucune notification.</translation>
 
    <translation id="changelog_loading_error" qtlid="298014">L'historique des mises à jour est momentanément indisponible.</translation>
 
@@ -512,7 +519,7 @@
    <translation id="common_term_and_contracts" qtlid="404087">Termes et contrats</translation>
    <translation id="common_term_and_contracts_accept" qtlid="404100">Je certifie avoir lu et accepté les termes et contrats.</translation>
    <translation id="common_login" qtlid="2174">Se connecter</translation>
-   <translation id="common_modal_ok" qtlid="224880">Ok</translation>
+   <translation id="common_modal_ok" qtlid="224880">OK</translation>
    <translation id="common_modal_exit" qtlid="4670">Fermer</translation>
    <translation id="common_modal_cancel" qtlid="37863">Annuler</translation>
 
