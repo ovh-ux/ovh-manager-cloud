@@ -21,9 +21,8 @@
             <img class="storage-details-logo" data-ng-src="assets/images/add/storage/{{ storage.shortcut }}.svg" />
         </div>
         <dl class="container-infos-list" data-ng-class="{ 'container-infos-list_no-icon': !storage.shortcut }">
-                <dd class="container-infos-list-item">
-                    <span class="container-infos-list-item-label" data-translate="storage_nb_objects"></span>{{ objects.length }}
-                </dd>
+                <dt data-translate="storage_nb_objects"></dt>
+                <dd data-ng-bind="objects.length"></dd>
                 <dd class="container-infos-list-item">
                     <span class="container-infos-list-item-label" data-translate="storage_container_size"></span>{{ computeStorageSize() | showByte }}
                 </dd>

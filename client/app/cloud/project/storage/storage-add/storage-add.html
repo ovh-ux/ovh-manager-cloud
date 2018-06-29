@@ -11,20 +11,21 @@
             <div class="row">
 
                 <div class="col-md-6 col-lg-4 center add-button-item"
-                     data-ng-repeat="item in items.value"
+                     data-ng-repeat="item in items.value track by $index"
                      data-ng-class="{
-                        'active': addedType.value == item
+                        'active': addedType.value === item
                      }">
 
                     <div class="form-group add-button-container add-button-container-{{item}}"
                         data-ng-class="{
-                            'active': addedType.value == item
+                            'active': addedType.value === item
                         }">
                     </div>
 
-                    <a class="btn add-button" data-ng-class="{
-                        'active' : addedType.value == item
-                    }">{{ 'add_' + item | translate}}</a>
+                    <a class="btn add-button"
+                       data-ng-class="{ 'active' : addedType.value === item }"
+                       data-translate="'add_' + item">
+                    </a>
                 </div>
             </div>
 
