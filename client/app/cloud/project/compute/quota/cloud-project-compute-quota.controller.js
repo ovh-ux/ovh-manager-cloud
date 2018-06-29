@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("managerApp").controller("CloudProjectBillingQuotaCtrl",
+angular.module("managerApp").controller("CloudProjectComputeQuotaCtrl",
     function ($q, $stateParams, $translate, REDIRECT_URLS, OvhApiCloudProject, OvhApiCloudProjectQuota, OvhApiMePaymentMean, CloudMessage, OtrsPopupService, RegionService) {
 
         //---------VARIABLE DECLARATION---------

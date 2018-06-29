@@ -11,18 +11,19 @@ class CloudProjectSidebar {
             return project.displayName.toUpperCase();
         });
         _.forEach(servicesSorted, project => {
-            const subSection = this.SidebarMenu.addMenuItem({
+            this.SidebarMenu.addMenuItem({
                 id: project.serviceName,
                 title: project.displayName || project.serviceName,
                 icon: "ovh-font ovh-font-cloud-public2",
-                allowSubItems: true,
-                loadOnState: "iaas.pci-project",
+                state: "iaas.pci-project.compute",
+                stateParams: {
+                    projectId: project.serviceName
+                },
+                loadOnState: "iaas.pci-project.compute",
                 loadOnStateParams: {
                     projectId: project.serviceName
                 }
             }, section);
-
-            this.fillCloudProjectSubSection(project, subSection);
         });
     }
 
@@ -64,62 +65,6 @@ class CloudProjectSidebar {
             });
             section.subItems.unshift(projectItem);
         }
-    }
-
-    fillCloudProjectSubSection (project, subSection) {
-        this.addSearchKeys(subSection);
-        this.SidebarMenu.addMenuItem({
-            title: this.$translate.instant("cloud_sidebar_pci_infrastructure"),
-            state: "iaas.pci-project.compute",
-            stateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            loadOnState: "iaas.pci-project.compute",
-            loadOnStateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            category: "action-page",
-            searchable: false
-        }, subSection);
-        this.SidebarMenu.addMenuItem({
-            title: this.$translate.instant("cloud_sidebar_pci_object_storage"),
-            state: "iaas.pci-project.storage",
-            stateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            loadOnState: "iaas.pci-project.storage",
-            loadOnStateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            category: "action-page",
-            searchable: false
-        }, subSection);
-        this.SidebarMenu.addMenuItem({
-            title: this.$translate.instant("cloud_sidebar_pci_manage"),
-            state: "iaas.pci-project.billing",
-            stateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            loadOnState: "iaas.pci-project.billing",
-            loadOnStateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            category: "action-page",
-            searchable: false
-        }, subSection);
-        this.SidebarMenu.addMenuItem({
-            title: this.$translate.instant("cloud_sidebar_pci_openstack"),
-            state: "iaas.pci-project.openstack",
-            stateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            loadOnState: "iaas.pci-project.openstack",
-            loadOnStateParams: {
-                projectId: project.serviceName || project.project_id
-            },
-            category: "action-page",
-            searchable: false
-        }, subSection);
     }
 }
 
