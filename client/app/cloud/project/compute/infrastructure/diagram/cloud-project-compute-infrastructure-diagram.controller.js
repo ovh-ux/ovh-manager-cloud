@@ -1099,7 +1099,11 @@
                         this.OvhApiCloudProjectVolumeSnapshot.v6().query({ serviceName: this.serviceName }).$promise
                             .then(snapshots => {
                                 if (_.find(snapshots, { volumeId: volume.id })) {
-                                    this.CloudMessage.error(this.$translate.instant("cpci_volume_snapshotted_delete_info", { url: this.$state.href("iaas.pci-project.compute.snapshot") }));
+                                    this.CloudMessage.error({
+                                        textHtml: this.$translate.instant("cpci_volume_snapshotted_delete_info", {
+                                            url: this.$state.href("iaas.pci-project.compute.snapshot")
+                                        })
+                                    });
                                 } else {
                                     this.volumeEdit.action = "remove";
                                     this.volumeEdit.volume = volume;
