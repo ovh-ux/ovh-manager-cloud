@@ -31,12 +31,12 @@
    <translation id="iplb_farm_balance_first" qtlid="437856">First</translation>
    <translation id="iplb_farm_balance_leastconn" qtlid="437869">Least</translation>
    <translation id="iplb_farm_balance_roundrobin" qtlid="437882">Round-robin</translation>
-   <translation id="iplb_farm_balance_source" qtlid="97496">Zdroj</translation>
+   <translation id="iplb_farm_balance_source" qtlid="97496">Source</translation>
    <translation id="iplb_farm_balance_uri" qtlid="437895">URI</translation>
 
    <translation id="iplb_farm_stickiness_none" qtlid="440934">Žádný</translation>
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Zdrojová IP</translation>
+   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Source IP</translation>
 
    <translation id="iplb_farm_add_title" qtlid="437726">Přidat farmu serverů</translation>
    <translation id="iplb_farm_update_title" qtlid="437908">Modifikace farmy serverů {{farmId}}</translation>

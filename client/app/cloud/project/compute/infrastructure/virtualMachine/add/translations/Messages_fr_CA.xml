@@ -41,6 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Quota de mémoire vive atteint</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Quota de Coeur atteint</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Clé SSH non disponible</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Choisir votre centre de données</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Impossible de récupérer la liste des régions et des centres de données disponibles : {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Impossible de charger votre quota disponible : {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Sélectionnez votre instance</translation>

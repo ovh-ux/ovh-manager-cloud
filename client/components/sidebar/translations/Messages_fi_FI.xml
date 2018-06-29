@@ -25,6 +25,9 @@
    <translation id="cloud_sidebar_section_cloud_desktop" qtlid="303952">Pilvityöpöytä (Cloud Desktop)</translation>
    <translation id="cloud_sidebar_section_cdn" qtlid="93415">Content Delivery Network</translation>
 
+   <translation id="cloud_sidebar_section_ip_all" qtlid="492120">Kaikki IP-osoitteet</translation>
+   <translation id="cloud_sidebar_section_license_all" qtlid="171656">Kaikki lisenssit</translation>
+
 <!-- PCI -->
    <translation id="cloud_sidebar_pci_infrastructure" qtlid="125552">Infrastruktuuri</translation>
    <translation id="cloud_sidebar_pci_object_storage" qtlid="233733">Storage</translation>

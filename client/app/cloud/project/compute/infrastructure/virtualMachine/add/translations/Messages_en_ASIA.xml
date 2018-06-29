@@ -41,6 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM quota reached</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core quota reached</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH key unavailable</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Choisir votre data center</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Unable to recover list of regions and datacentres available: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Unable to load your quota available: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Choose your instance</translation>

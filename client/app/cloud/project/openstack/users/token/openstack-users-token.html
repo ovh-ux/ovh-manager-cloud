@@ -30,7 +30,8 @@
         <div data-ng-if="CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens">
             <p class="oui-modal__text">
                 <span data-translate="cpou_token_xauthtoken"></span>
-                <strong>{{ CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens['X-Auth-Token'] }}</strong>
+                <strong class="word-wrap"
+                        data-ng-bind="CloudProjectOpenstackUsersTokenCtrl.generateToken.tokens['X-Auth-Token']"></strong>
             </p>
             <p class="oui-modal__text"
                data-ng-if="CloudProjectOpenstackUsersTokenCtrl.tokenGuide.link"

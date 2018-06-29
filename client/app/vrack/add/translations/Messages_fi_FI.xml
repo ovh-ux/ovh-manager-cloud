@@ -5,6 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Ole hyvä ja suorita <a href="{{url}}" target='_blank'>tilausvahvistuksesi</a> ilmainen maksu.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Virtuaaliräkkisi on saatavilla tilauksen hyväksymisen jälkeen muutamassa minuutissa.</translation>
    <translation id="vrack_order" qtlid="43558">Tilaa</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Asenna nyt</translation>
    <translation id="vrack_contract_empty" qtlid="245688">Olet hyväksynyt kaikki palveluun liittyvät sopimusehdot.</translation>
    <translation id="vrack_error" qtlid="148981">Tapahtui virhe</translation>
    <translation id="vrack_error_reason" qtlid="323223">Tapahtui virhe: {{message}}</translation>

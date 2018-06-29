@@ -5,6 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Por favor, complete su <a href="{{url}}" target='_blank'>orden de pedido</a>.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Su vRack estará disponible unos minutos después de validada la orden de pedido.</translation>
    <translation id="vrack_order" qtlid="43558">Contratar</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Instalar ahora</translation>
    <translation id="vrack_contract_empty" qtlid="245688">Usted ha aceptado los contratos asociados a este producto.</translation>
    <translation id="vrack_error" qtlid="148981">Se ha producido un error.</translation>
    <translation id="vrack_error_reason" qtlid="323223">Se ha producido un error: {{message}}</translation>

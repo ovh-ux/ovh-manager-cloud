@@ -3,7 +3,7 @@
    <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Alerte de dépassement</translation>
    <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">Courriel</translation>
    <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Une adresse email est requise pour envoyer l'alerte.</translation>
-   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">L'adresse e-mail n'est pas valide.</translation>
+   <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">L'adresse email n'est pas valide.</translation>
 
    <translation id="cpbea_estimate_alert_add_threshold_label" qtlid="364355">Seuil de déclenchement</translation>
    <translation id="cpbea_estimate_alert_add_threshold_required" qtlid="269071">La consommation maximum à ne pas dépasser est requise.</translation>

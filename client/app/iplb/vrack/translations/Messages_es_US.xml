@@ -14,7 +14,7 @@
 
    <translation id="iplb_vrack_private_network_add" qtlid="331202">Añadir una red privada</translation>
 
-   <translation id="iplb_vrack_list_col_private_network" qtlid="482342">Réseau privé</translation>
+   <translation id="iplb_vrack_list_col_private_network" qtlid="482342">Red privada</translation>
    <translation id="iplb_vrack_list_col_vlan_id" qtlid="482420">VLAN ID</translation>
    <translation id="iplb_vrack_list_col_subnet" qtlid="482433">Subnet</translation>
    <translation id="iplb_vrack_list_col_nat_ip" qtlid="482446">NatIP</translation>
