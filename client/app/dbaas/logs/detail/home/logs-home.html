@@ -14,7 +14,7 @@
             <oui-tile class="oui-tile-h-100"
                 data-heading="{{::'logs_home_shortcuts'|translate}}"
                 data-loading="ctrl.accountDetails.loading || ctrl.account.loading">
-                <oui-tile-definition ng-if="ctrl.accountDetails.loading || ctrl.account.loading">
+                <oui-tile-definition data-ng-if="ctrl.accountDetails.loading || ctrl.account.loading">
                     <oui-tile-description>
                         <oui-skeleton randomized></oui-skeleton>
                         <oui-skeleton randomized></oui-skeleton>
@@ -25,43 +25,42 @@
                         <oui-skeleton randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <div ng-if="!(ctrl.accountDetails.loading || ctrl.account.loading)">
-                    <oui-tile-definition term="{{::'logs_home_shortcuts_last_stream'|translate}}">
+                <div data-ng-if="!(ctrl.accountDetails.loading || ctrl.account.loading)">
+                    <oui-tile-definition data-term="{{::'logs_home_shortcuts_last_stream'|translate}}">
                         <oui-tile-description>
                             <a data-ng-if="ctrl.accountDetails.data.last_stream"
                                 data-ng-href="{{ ctrl.accountDetails.data.last_stream.graylogWebuiUrl }}"
                                 class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                                rel="noopener"
                                 target="_blank">
                                 <span data-ng-bind="ctrl.accountDetails.data.last_stream.info.title"></span>
                                 <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                             </a>
-                            <span data-ng-if="!ctrl.accountDetails.data.last_stream"
-                                data-ng-bind="::'logs-reader-1'|translate">
+                            <span data-ng-if="!ctrl.accountDetails.data.last_stream" data-translate="logs-reader-1">
                             </span>
                             <button type="button"
                                 class="oui-tile__button oui-button oui-button_link oui-button_full-width"
-                                ng-click="ctrl.goToAllStreams()">
-                                <span data-ng-bind="::'logs_home_shortcuts_all_stream'|translate"></span>
+                                data-ng-click="ctrl.goToAllStreams()">
+                                <span data-translate="logs_home_shortcuts_all_stream"></span>
                             </button>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <oui-tile-definition term="{{::'logs_home_shortcuts_last_dashboard'|translate}}">
+                    <oui-tile-definition data-term="{{::'logs_home_shortcuts_last_dashboard'|translate}}">
                         <oui-tile-description>
                             <a data-ng-if="ctrl.accountDetails.data.last_dashboard"
                                 data-ng-href="{{ ctrl.accountDetails.data.last_dashboard.graylogWebuiUrl }}"
                                 class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                                rel="noopener"
                                 target="_blank">
                                 <span data-ng-bind="ctrl.accountDetails.data.last_dashboard.info.title"></span>
                                 <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                             </a>
-                            <span data-ng-if="!ctrl.accountDetails.data.last_dashboard"
-                                data-ng-bind="::'logs-reader-1'|translate">
-                            </span>
+                            <span data-ng-if="!ctrl.accountDetails.data.last_dashboard" data-translate="logs-reader-1"></span>
                             <button
                                 type="button"
                                 class="oui-tile__button oui-button oui-button_link oui-button_full-width"
-                                ng-click="ctrl.goToAllDashboards()">
-                                <span data-ng-bind="::'logs_home_shortcuts_all_dashboard'|translate"></span>
+                                data-ng-click="ctrl.goToAllDashboards()">
+                                <span data-translate="logs_home_shortcuts_all_dashboard"></span>
                             </button>
                         </oui-tile-description>
                     </oui-tile-definition>
@@ -69,14 +68,16 @@
                         <oui-tile-description>
                             <a data-ng-href="{{ ctrl.accountDetails.data.graylogWebuiUrl }}"
                                 class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                                rel="noopener"
                                 target="_blank">
-                                <span data-ng-bind="::'logs_home_shortcuts_graylog'|translate"></span>
+                                <span data-translate="logs_home_shortcuts_graylog"></span>
                                 <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                             </a>
                             <a data-ng-href="{{ ctrl.accountDetails.data.graylogApiUrl }}"
                                 class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                                rel="noopener"
                                 target="_blank">
-                                <span data-ng-bind="::'logs_home_shortcuts_graylog_api'|translate"></span>
+                                <span data-translate="logs_home_shortcuts_graylog_api"></span>
                                 <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                             </a>
                             <div data-ng-if="ctrl.account.data">
@@ -86,8 +87,9 @@
                                         'oui-link_disabled': !(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0),
                                         'oui-button_full-width': (ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)
                                     }"
+                                    rel="noopener"
                                     target="_blank">
-                                    <span data-ng-bind="::'logs_home_shortcuts_elasticsearch'|translate"></span>
+                                    <span data-translate="logs_home_shortcuts_elasticsearch"></span>
                                     <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                                 </a>
                                 <oui-popover data-ng-if="!(ctrl.account.data.total.maxNbIndex > 0 || ctrl.account.data.total.maxNbAlias > 0)">
@@ -104,7 +106,7 @@
             <oui-tile class="h-100 oui-tile-h-100"
                 data-heading="{{::'logs_home_usage'|translate}}"
                 data-loading="ctrl.storageData.loading">
-                <oui-tile-definition ng-if="ctrl.storageData.loading">
+                <oui-tile-definition data-ng-if="ctrl.storageData.loading">
                     <oui-tile-description>
                         <oui-skeleton randomized></oui-skeleton>
                         <oui-skeleton randomized></oui-skeleton>
@@ -115,7 +117,7 @@
                         <oui-skeleton randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <div class="pl-4 pr-4 pb-2" ng-if="!ctrl.storageData.loading">
+                <div class="pl-4 pr-4 pb-2" data-ng-if="!ctrl.storageData.loading">
                     <canvas id="storage-data" class="chart chart-line"
                         data-ng-if="!ctrl.storageData.loading && ctrl.storageData.data.timestamps.length>0"
                         chart-data="ctrl.dataUsageGraphData.data"
@@ -136,7 +138,7 @@
             <oui-tile class="oui-tile-h-100"
                 data-heading="{{::'logs_home_configuration'|translate}}"
                 data-loading="ctrl.accountDetails.loading || ctrl.tokenIds.loading">
-                <oui-tile-definition ng-if="ctrl.accountDetails.loading || ctrl.tokenIds.loading">
+                <oui-tile-definition data-ng-if="ctrl.accountDetails.loading || ctrl.tokenIds.loading">
                     <oui-tile-description>
                         <oui-skeleton randomized></oui-skeleton>
                         <oui-skeleton randomized></oui-skeleton>
@@ -144,23 +146,23 @@
                         <oui-skeleton randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <div ng-if="!(ctrl.accountDetails.loading || ctrl.tokenIds.loading)">
+                <div data-ng-if="!(ctrl.accountDetails.loading || ctrl.tokenIds.loading)">
                     <oui-tile-definition data-term="{{::'logs_home_account_name'|translate}}">
                         <oui-tile-description data-ng-bind="ctrl.accountDetails.data.service.displayName"></oui-tile-description>
-                        <oui-action-menu data-compact align="end">
-                            <oui-action-menu-item text="{{::'common_edit'|translate}}"
-                                aria-label="{{::'common_edit'|translate}}"
-                                on-click="ctrl.changeName()">
+                        <oui-action-menu data-compact data-align="end">
+                            <oui-action-menu-item data-text="{{::'common_edit'|translate}}"
+                                data-aria-label="{{::'common_edit'|translate}}"
+                                data-on-click="ctrl.changeName()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{::'logs_home_tokens'|translate}}"
                         data-term-popover="{{::'logs_home_tokens_tooltip'|translate}}">
                         <oui-tile-description data-ng-bind="ctrl.tokenIds.data.length"></oui-tile-description>
-                        <oui-action-menu data-compact align="end">
-                            <oui-action-menu-item text="{{::'common_edit'|translate}}"
-                                aria-label="{{::'common_edit'|translate}}"
-                                on-click="ctrl.editTokens()">
+                        <oui-action-menu data-compact data-align="end">
+                            <oui-action-menu-item data-text="{{::'common_edit'|translate}}"
+                                data-aria-label="{{::'common_edit'|translate}}"
+                                data-on-click="ctrl.editTokens()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
@@ -168,10 +170,10 @@
                         data-description="{{ctrl.accountDetails.data.service.username}}">
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{::'logs_home_password'|translate}}" data-description="******">
-                        <oui-action-menu data-compact align="end">
-                            <oui-action-menu-item text="{{::'common_edit'|translate}}"
-                                aria-label="{{::'common_edit'|translate}}"
-                                on-click="ctrl.editPassword()">
+                        <oui-action-menu data-compact data-align="end">
+                            <oui-action-menu-item data-text="{{::'common_edit'|translate}}"
+                                data-aria-label="{{::'common_edit'|translate}}"
+                                data-on-click="ctrl.editPassword()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
@@ -182,7 +184,7 @@
             <oui-tile class="oui-tile-h-100"
                 data-heading="{{::'logs_home_ssi_configuration'|translate}}"
                 data-loading="ctrl.defaultCluster.loading || ctrl.accountDetails.loading">
-                <oui-tile-definition ng-if="ctrl.defaultCluster.loading || ctrl.accountDetails.loading">
+                <oui-tile-definition data-ng-if="ctrl.defaultCluster.loading || ctrl.accountDetails.loading">
                     <oui-tile-description>
                         <oui-skeleton randomized></oui-skeleton>
                         <oui-skeleton randomized></oui-skeleton>
@@ -190,7 +192,7 @@
                         <oui-skeleton randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <div ng-if="!(ctrl.defaultCluster.loading || ctrl.accountDetails.loading)">
+                <div data-ng-if="!(ctrl.defaultCluster.loading || ctrl.accountDetails.loading)">
                     <oui-tile-definition data-term="{{ctrl.accountDetails.data.graylogEntryPoint}}">
                         <oui-tile-description>
                             <oui-clipboard id="directInputPEM" data-model="ctrl.defaultCluster.data.directInputPEM"></oui-clipboard>
@@ -205,8 +207,8 @@
                         <oui-tile-description>
                             <button type="button"
                                 class="oui-tile__button oui-button oui-button_link oui-button_full-width"
-                                ng-click="ctrl.openMessagesAndPorts()">
-                                <span data-ng-bind="::'logs_home_formats_and_ports'|translate"></span>
+                                data-ng-click="ctrl.openMessagesAndPorts()">
+                                <span data-translate="logs_home_formats_and_ports"></span>
                             </button>
                         </oui-tile-description>
                     </oui-tile-definition>
@@ -216,7 +218,7 @@
         <div class="col-xm-12 col-md-4">
             <oui-tile class="oui-tile-h-100" data-heading="{{::'logs_home_subscription'|translate}}"
                 data-loading="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading">
-                <oui-tile-definition ng-if="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading">
+                <oui-tile-definition data-ng-if="ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading">
                     <oui-tile-description>
                         <oui-skeleton randomized></oui-skeleton>
                         <oui-skeleton randomized></oui-skeleton>
@@ -224,25 +226,25 @@
                         <oui-skeleton randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <div ng-if="!(ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading)">
+                <div data-ng-if="!(ctrl.account.loading || ctrl.options.loading || ctrl.accountDetails.loading || ctrl.serviceInfos.loading)">
                     <oui-tile-definition data-term="{{::'logs_home_offer'|translate}}">
                         <oui-tile-description data-ng-bind="ctrl.account.data.offer.description"></oui-tile-description>
-                        <oui-action-menu data-ng-if="!ctrl.isAccountDisabled" data-compact align="end">
-                            <oui-action-menu-item text="{{::'common_edit'|translate}}"
-                                aria-label="{{::'common_edit'|translate}}"
-                                on-click="ctrl.goToChangeOffer()">
+                        <oui-action-menu data-ng-if="!ctrl.isAccountDisabled" data-compact data-align="end">
+                            <oui-action-menu-item data-text="{{::'common_edit'|translate}}"
+                                data-aria-label="{{::'common_edit'|translate}}"
+                                data-on-click="ctrl.goToChangeOffer()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition data-term="{{::'logs_home_options'|translate}}">
                         <oui-tile-description>
-                            <div data-ng-if="ctrl.options.data.length === 0" data-ng-bind="::'logs_home_options_empty'|translate"></div>
+                            <div data-ng-if="ctrl.options.data.length === 0" data-translate="logs_home_options_empty"></div>
                             <div data-ng-if="ctrl.options.data.length > 0" data-ng-repeat="option in ctrl.options.data track by $index" data-ng-bind="option.description"></div>
                         </oui-tile-description>
-                        <oui-action-menu data-ng-if="!ctrl.isAccountDisabled" data-compact align="end">
-                            <oui-action-menu-item text="{{::'common_edit'|translate}}"
-                                aria-label="{{::'common_edit'|translate}}"
-                                on-click="ctrl.goToOptionsPage()">
+                        <oui-action-menu data-ng-if="!ctrl.isAccountDisabled" data-compact data-align="end">
+                            <oui-action-menu-item data-text="{{::'common_edit'|translate}}"
+                                data-aria-label="{{::'common_edit'|translate}}"
+                                data-on-click="ctrl.goToOptionsPage()">
                             </oui-action-menu-item>
                         </oui-action-menu>
                     </oui-tile-definition>
