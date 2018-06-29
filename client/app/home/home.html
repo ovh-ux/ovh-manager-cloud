@@ -17,7 +17,7 @@
                             data-at-internet-click="{ name: link.atInternetClickTag }"
                             data-ng-href="{{ link.href }}"
                             ng-attr-target="{{(link.isExternal) ? '_blank' : undefined}}"
-                            ng-attr="{'rel=noopener': link.isExternal}">
+                            ng-attr-rel="{{(link.isExternal) ? 'noopener' : undefined}}">
                             <span data-ng-bind="link.text"></span>
                             <span class="oui-icon oui-icon-external_link" data-ng-if="link.isExternal" aria-hidden="true"></span>
                         </a>
