@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <translations>
    <translation id="cpbea_estimate_alert_add_header_title" qtlid="364329">Nastavení výstrahy</translation>
-   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">E-mailová adresa</translation>
+   <translation id="cpbea_estimate_alert_add_mail_label" qtlid="33598">E-mail</translation>
    <translation id="cpbea_estimate_alert_add_mail_required" qtlid="269045">Pro odeslání výstrahy je nutná e-mailová adresa.</translation>
    <translation id="cpbea_estimate_alert_add_mail_bad_format" qtlid="254778">Neplatná e-mailová adresa.</translation>
 
