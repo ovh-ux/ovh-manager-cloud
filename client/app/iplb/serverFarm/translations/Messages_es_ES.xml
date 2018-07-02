@@ -36,7 +36,7 @@
 
    <translation id="iplb_farm_stickiness_none" qtlid="440934">Ninguno</translation>
    <translation id="iplb_farm_stickiness_cookie" qtlid="223736">Cookie</translation>
-   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">Source IP</translation>
+   <translation id="iplb_farm_stickiness_sourceIp" qtlid="161568">IP de origen</translation>
 
    <translation id="iplb_farm_add_title" qtlid="437726">Añadir una granja de servidores</translation>
    <translation id="iplb_farm_update_title" qtlid="437908">Edición de la granja de servidores {{farmId}}</translation>
