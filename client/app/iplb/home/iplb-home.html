@@ -1,70 +1,93 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <cui-tile data-title="'iplb_home_tile_status' | translate"
-                data-loading="ctrl.iplbStatus.loading"
-                class="h-100">
-                <cui-tile-body class="cui-tile__body-no-grow">
-                    <cui-tile-item-status
-                        data-ng-repeat="statusInfo in ctrl.iplbStatus.data | orderBy: 'weight' track by $index"
-                        data-actions="ctrl[statusInfo.itemName + 'Actions']"
-                        class="cui-tile__top-bordered">
-                        <cui-tile-definitions>
-                            <cui-tile-term-status data-term="statusInfo.displayName"></cui-tile-term-status>
-                            <cui-tile-description-status
+            <oui-tile data-heading="{{ ::'iplb_home_tile_status' | translate }}" class="h-100">
+                <oui-tile-definition data-ng-if="ctrl.iplbStatus.loading">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div ng-if="!ctrl.iplbStatus.loading">
+                    <oui-tile-definition data-term="{{ ::statusInfo.displayName }}" data-ng-repeat="statusInfo in ctrl.iplbStatus.data | orderBy: 'weight' track by $index">
+                        <oui-tile-description data-model="statusTypeInfo.text"
                                 data-ng-repeat="(statusType, statusTypeInfo) in statusInfo.status track by $index"
-                                data-ng-if="statusTypeInfo.number"
-                                data-type="{{ statusTypeInfo.code }}">
-                                {{ statusTypeInfo.text }}
-                            </cui-tile-description-status>
-                        </cui-tile-definitions>
-                    </cui-tile-item-status>
-                </cui-tile-body>
-            </cui-tile>
+                                data-ng-if="statusTypeInfo.number">
+                            <div>
+                                <span class="oui-status" data-translate="{{ ::statusTypeInfo.text }}" data-ng-class="'oui-status_' + statusTypeInfo.code"></span>
+                            </div>
+                        </oui-tile-description>       
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl[statusInfo.itemName + 'Actions'].isAvailable()">
+                            <oui-action-menu-item
+                                data-text="{{ ::ctrl[statusInfo.itemName + 'Actions'].text | translate}}"
+                                data-on-click="ctrl[statusInfo.itemName + 'Actions'].callback()">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                </div>
+            </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-             <div class="cui-tile tile-iplb-usage h-100">
-                <h4 class="oui-header_4 cui-tile__title" data-translate="iplb_home_tile_usage"></h4>
-                <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
-                    <div class="iplb-usage cui-dropdown-menu-container"
-                        data-ng-repeat="quota in (ctrl.usage.data | orderBy:'zone') track by $index">
-                        <div class="iplb-usage__content">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_usage' | translate }}" class="h-100">
+                <oui-tile-definition ng-if="ctrl.usage.loading">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div ng-if="!ctrl.usage.loading">
+                    <oui-tile-definition data-ng-repeat="quota in (ctrl.usage.data | orderBy:'zone') track by $index" >
+                        <oui-tile-description class="iplb-usage__content">
                             <div class="iplb-usage__region">
-                                <i class="flag-icon {{quota.region.icon}} flag flag__icon-sm cui-tile-definition-description-region__flag" data-ng-class="{ 'cui-tile-definition-description-region__flag_last': $last }"></i>
+                                <i class="flag-icon {{quota.region.icon}} flag flag__icon-sm mr-1"></i>
                                 <span class="iplb-usage__region-name"
                                     data-ng-bind="quota.region.microRegion.text"></span>
                             </div>
-                            <div class="iplb-usage__graph">
-                                <iplb-bullet-chart
-                                    data-ng-if="quota.included"
-                                    data-text="(quota.total | bytes:2:false) + ' / ' + (quota.included | bytes:2:false)"
-                                    data-value="100 * quota.total / quota.included"
-                                    data-limit="100 * quota.alert / quota.included"></iplb-bullet-chart>
-                                <iplb-bullet-chart
-                                    data-ng-if="!quota.included"
-                                    data-text="(quota.total | bytes:2:false) + ' / ' + ('iplb_home_tile_configuration_quota_unlimited' | translate)"
-                                    data-value="(!quota.alert || quota.alert > quota.total) ? 0 : 100"
-                                    data-limit="100 * quota.alert / quota.total"></iplb-bullet-chart>
-                            </div>
-                        </div>
-                        <div class="iplb-usage__menu">
-                            <oui-action-menu compact align="end">
-                                <oui-action-menu-item text="{{ 'iplb_utilisation_update_alert' | translate }}"
-                                    on-click="ctrl.updateQuotaAlert(quota)">
-                                </oui-action-menu-item>
-                            </oui-action-menu>
-                        </div>
+                            <iplb-bullet-chart
+                                data-ng-if="quota.included"
+                                data-text="(quota.total | bytes:2:false) + ' / ' + (quota.included | bytes:2:false)"
+                                data-value="100 * quota.total / quota.included"
+                                data-limit="100 * quota.alert / quota.included"></iplb-bullet-chart>
+                            <iplb-bullet-chart
+                                data-ng-if="!quota.included"
+                                data-text="(quota.total | bytes:2:false) + ' / ' + ('iplb_home_tile_configuration_quota_unlimited' | translate)"
+                                data-value="(!quota.alert || quota.alert > quota.total) ? 0 : 100"
+                                data-limit="100 * quota.alert / quota.total"></iplb-bullet-chart>
+                        </oui-tile-description>
+                        <oui-action-menu compact align="end">
+                            <oui-action-menu-item
+                                data-text="{{ ::'iplb_utilisation_update_alert' | translate }}"
+                                data-on-click="ctrl.updateQuotaAlert(quota)">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
                     </div>
-                </div>
-            </div>
+            </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <div class="cui-tile h-100">
-                <h4 class="oui-header_4 cui-tile__title">
-                    <span data-translate="iplb_home_tile_graph"></span>
-                    <oui-spinner class="cui-tile__loader" data-ng-show="ctrl.loadingGraph"></oui-spinner>
-                </h4>
-                <div class="cui-tile__body cui-tile__body_custom cui-tile__body_custom-spaced">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_graph' | translate }}" class="h-100">
+                <oui-tile-definition ng-if="ctrl.loadingGraph">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div ng-if="!ctrl.loadingGraph">
                     <label class="oui-select">
                         <select class="oui-select__input"
                             data-ng-options="metric as ctrl.getGraphTitle(metric) for metric in ctrl.metricsList"
@@ -82,143 +105,183 @@
                         data-ng-hide="ctrl.data"
                         data-translate="iplb_graph_no_data"></div>
                 </div>
-            </div>
+            </oui-tile>
         </div>
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <oui-tile data-heading="{{ ::'iplb_home_tile_infos' | translate }}" data-loading="ctrl.information.loading">
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ipv4' | translate }}">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_infos' | translate }}">
+                <oui-tile-definition data-ng-if="ctrl.information.loading">
                     <oui-tile-description>
-                        <oui-clipboard data-model="ctrl.information.data.ipV4"></oui-clipboard>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ipv6' | translate }}">
-                    <oui-tile-description>
-                        <oui-clipboard data-model="ctrl.information.data.ipV6"></oui-clipboard>
-                    </oui-tile-description>
-                </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ip_failover' | translate }}">
-                    <oui-tile-description>{{ctrl.information.data.failoverIp.length}}</oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.showFailoverIp.isAvailable()">
-                        <oui-action-menu-item data-text="{{ctrl.actions.showFailoverIp.text}}" data-on-click="ctrl.actions.showFailoverIp.callback()"></oui-action-menu-item>
-                    </oui-action-menu>
-                </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ip_outbound' | translate }}">
-                    <oui-tile-description>{{ctrl.information.data.natIp.length}}</oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.showNatIp.isAvailable()">
-                        <oui-action-menu-item data-text="{{ctrl.actions.showNatIp.text}}" data-on-click="ctrl.actions.showNatIp.callback()"></oui-action-menu-item>
-                    </oui-action-menu>
-                </oui-tile-definition>
+                <div ng-if="!ctrl.information.loading">
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ipv4' | translate }}">
+                        <oui-tile-description>
+                            <oui-clipboard data-model="ctrl.information.data.ipV4"></oui-clipboard>
+                        </oui-tile-description>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ipv6' | translate }}">
+                        <oui-tile-description>
+                            <oui-clipboard data-model="ctrl.information.data.ipV6"></oui-clipboard>
+                        </oui-tile-description>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ip_failover' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.information.data.failoverIp.length"></span></oui-tile-description>
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.information.data.failoverIp.length">
+                            <oui-action-menu-item data-text="{{ ::'common_consult' | translate }}" data-on-click="ctrl.actions.showFailoverIp.callback()"></oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_infos_ip_outbound' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.information.data.natIp.length"></span></oui-tile-description>
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.information.data.natIp.length">
+                            <oui-action-menu-item data-text="{{ ::'common_consult' | translate }}" data-on-click="ctrl.actions.showNatIp.callback()"></oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                </div>
             </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <!-- <oui-tile data-heading="{{ ::'iplb_home_tile_configuration' | translate }}" data-loading="ctrl.configuration.loading || ctrl.vrackCreationRules.loading">
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_name' | translate }}">
-                    <oui-tile-description>{{ctrl.configuration.data.displayName}}</oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.changeName.isAvailable()">
-                        <oui-action-menu-item data-text="{{ctrl.actions.changeName.text}}" data-on-click="ctrl.actions.changeName.callback()"></oui-action-menu-item>
-                    </oui-action-menu>
-                </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_quota_cipher' | translate }}">
-                    <oui-tile-description>{{ctrl.configuration.data.sslConfiguration.displayName}}</oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.changeCipher.isAvailable()">
-                        <oui-action-menu-item data-text="{{ctrl.actions.changeCipher.text}}" data-on-click="ctrl.actions.changeCipher.callback()"></oui-action-menu-item>
-                    </oui-action-menu>
-                </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_private_network' | translate }}">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_configuration' | translate }}">
+                <oui-tile-definition data-ng-if="ctrl.configuration.loading || ctrl.vrackCreationRules.loading">
                     <oui-tile-description>
-                        <span data-translate="{{ 'iplb_vrack_box_status_' + ctrl.vrackCreationRules.data.status }}"></span>
-                        <small data-ng-if="ctrl.vrackCreationRules.data.status === 'active'">({{ ctrl.vrackCreationRules.data.displayName }})</small>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
                     </oui-tile-description>
                 </oui-tile-definition>
-                <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_quota_datacenter' | translate }}">
-                    <oui-tile-description data-ng-if="ctrl.actions.addZone.isAvailable()">
-                        <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
-                    </oui-tile-description>
-                    <oui-tile-description data-ng-if="ctrl.actions.deleteZone.isAvailable()">
-                        <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
-                    </oui-tile-description>
-                    <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.showNatIp.isAvailable()">
-                        <oui-action-menu-item data-text="{{ctrl.actions.showNatIp.text}}" data-on-click="ctrl.actions.showNatIp.callback()"></oui-action-menu-item>
-                    </oui-action-menu>
-                </oui-tile-definition>
-            </oui-tile> -->
-           <cui-tile data-title="'iplb_home_tile_configuration' | translate"
-                data-loading="ctrl.configuration.loading || ctrl.vrackCreationRules.loading"
-                class="h-100">
-                <cui-tile-body>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-term="'iplb_home_tile_configuration_name' | translate"
-                                   data-description="ctrl.configuration.data.displayName"
-                                   data-actions="ctrl.actions.changeName"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-term="'iplb_home_tile_configuration_quota_cipher' | translate"
-                                   data-description="ctrl.configuration.data.sslConfiguration.displayName"
-                                   data-actions="ctrl.actions.changeCipher"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'iplb_home_tile_configuration_private_network' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description>
-                                <span data-translate="{{ 'iplb_vrack_box_status_' + ctrl.vrackCreationRules.data.status }}"></span>
-                                <small data-ng-if="ctrl.vrackCreationRules.data.status === 'active'">({{ ctrl.vrackCreationRules.data.displayName }})</small>
-                            </cui-tile-definition-description>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-actions="[ctrl.actions.addZone, ctrl.actions.deleteZone]">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'iplb_home_tile_configuration_quota_datacenter' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description-region data-regions="ctrl.configuration.data.zone"></cui-tile-definition-description-region>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                </cui-tile-body>
-            </cui-tile>
+                <div ng-if="!ctrl.configuration.loading || !ctrl.vrackCreationRules.loading">
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_name' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.configuration.data.displayName"></span></oui-tile-description>
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.changeName.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::ctrl.actions.changeName.text }}" data-on-click="ctrl.actions.changeName.callback()"></oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_quota_cipher' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.configuration.data.sslConfiguration.displayName"></span></oui-tile-description>
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.changeCipher.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::ctrl.actions.changeCipher.text }}" data-on-click="ctrl.actions.changeCipher.callback()"></oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_private_network' | translate }}">
+                        <oui-tile-description>
+                            <span data-translate="{{ 'iplb_vrack_box_status_' + ctrl.vrackCreationRules.data.status }}"></span>
+                            <small data-ng-if="ctrl.vrackCreationRules.data.status === 'active'">({{ ctrl.vrackCreationRules.data.displayName }})</small>
+                        </oui-tile-description>
+                    </oui-tile-definition>
+                    <oui-tile-definition data-term="{{ ::'iplb_home_tile_configuration_quota_datacenter' | translate }}">
+                        <oui-tile-description>
+                            <div data-ng-if="!ctrl.hasMultipleRegions()">
+                                <i class="flag-icon {{ ctrl.detailedRegions[0].icon }} flag flag__icon-sm mr-1"></i>
+                                <span>
+                                    <span data-ng-bind=":: ctrl.detailedRegions[0].microRegion.text"></span> -
+                                    <small data-ng-bind=":: ctrl.detailedRegions[0].country"></small>
+                                </span>
+                            </div>
+                            <div data-ng-if="ctrl.hasMultipleRegions()" data-ng-repeat="(key, regions) in ctrl.regionsGroup track by $index">
+                                <i class="flag-icon {{ regions[0].icon }} flag flag__icon-sm mr-1"></i>
+                                <span>
+                                    <span data-ng-repeat="region in regions track by $index" data-ng-bind=":: region.macroRegion.code + (!$last ? ', ' : '')"></span> -
+                                    <small data-ng-bind=":: key"></small>
+                                </span>
+                            </div>
+                        </oui-tile-description>
+                        <oui-action-menu data-compact data-align="end" data-ng-if="ctrl.actions.addZone.isAvailable() || ctrl.actions.deleteZone.isAvailable()">
+                            <oui-action-menu-item
+                                data-ng-if="ctrl.actions.addZone.isAvailable()"
+                                data-text="{{ ::ctrl.actions.addZone.text }}"
+                                data-on-click="ctrl.actions.addZone.callback()"></oui-action-menu-item>
+                            <oui-action-menu-item
+                                data-ng-if="ctrl.actions.deleteZone.isAvailable()"                        
+                                data-text="{{ ::ctrl.actions.deleteZone.text }}"
+                                data-on-click="ctrl.actions.deleteZone.callback()"></oui-action-menu-item>                        
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                </div>
+            </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <cui-tile-subscription data-loading="ctrl.subscription.loading"
-                data-subscription-info="ctrl.subscription.data"
-                data-offer-actions="ctrl.actions.changeOffer"
-                data-autorenew-actions="ctrl.actions.manageAutorenew"
-                data-contact-actions="ctrl.actions.manageContact"
-                class="h-100"></cui-tile-subscription>
-                <!-- <cui-tile 
-                data-title="'common_tile_subscription' | translate"
-                data-loading="$ctrl.loading"
+            <oui-tile 
+                data-heading="{{ ::'common_tile_subscription' | translate }}"
+                data-loading="ctrl.subscription.loading"
                 class="h-100">
-                <cui-tile-body>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                        data-ng-if="$ctrl.subscriptionInfo.offer" 
-                        data-term="'common_tile_subscription_offer' | translate" 
-                        data-description="$ctrl.subscriptionInfo.offer"
-                        data-actions="$ctrl.offerActions"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-term="$ctrl.hasAutoRenew() ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate" 
-                                   data-description="$ctrl.subscriptionInfo.expiration | momentFormat:'LL'"
-                                   data-actions="$ctrl.autorenewActions"></cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-actions="$ctrl.contactActions">
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="'common_tile_subscription_contact' | translate"></cui-tile-definition-term>
-                            <cui-tile-definition-description>
-                                <span data-ng-bind="$ctrl.subscriptionInfo.contactAdmin"></span>
-                                <small data-translate="common_tile_subscription_contact_admin"></small>
-                            </cui-tile-definition-description>
-                            <cui-tile-definition-description>
-                                <span data-ng-bind="$ctrl.subscriptionInfo.contactBilling"></span>
-                                <small data-translate="common_tile_subscription_contact_billing"></small>
-                            </cui-tile-definition-description>
-                            <cui-tile-definition-description>
-                                <span data-ng-bind="$ctrl.subscriptionInfo.contactTech"></span>
-                                <small data-translate="common_tile_subscription_contact_technical"></small>
-                            </cui-tile-definition-description>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                    <cui-tile-item class="cui-tile__top-bordered"
-                                   data-term="'common_tile_subscription_creation_date' | translate" 
-                                   data-description="$ctrl.subscriptionInfo.creation | momentFormat:'LL'"></cui-tile-item>
-                </cui-tile-body>
-            </cui-tile> -->
+                <oui-tile-definition data-ng-if="ctrl.subscription.loading">
+                    <oui-tile-description>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                        <oui-skeleton data-randomized></oui-skeleton>
+                    </oui-tile-description>
+                </oui-tile-definition>
+                <div ng-if="!ctrl.subscription.loading">
+                    <oui-tile-definition
+                        data-ng-if="ctrl.subscription.data.offer" 
+                        data-term="{{ ::'common_tile_subscription_offer' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.subscription.data.offer"></span></oui-tile-description>
+                        <oui-action-menu data-compact align="end" data-ng-if="ctrl.actions.changeOffer.isAvailable()">
+                            <oui-action-menu-item data-text="{{::ctrl.actions.changeOffer.text}}"
+                                data-aria-label="{{::ctrl.actions.changeOffer.text}}"
+                                data-on-click="ctrl.actions.changeOffer.callback()">
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{(ctrl.subscription.data.renew.forced || ctrl.subscription.data.renew.automatic) ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate}}">
+                        <oui-tile-description data-ng-bind="ctrl.subscription.data.expiration | momentFormat:'LL'"><span></span></oui-tile-description>
+                        <oui-action-menu data-compact align="end" data-ng-if="ctrl.actions.manageAutorenew.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::ctrl.actions.manageAutorenew.text }}"
+                                data-aria-label="{{ ::ctrl.actions.manageAutorenew.text }}"
+                                data-href="{{ ctrl.actions.manageAutorenew.href }}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{::'common_tile_subscription_contact' | translate}}">
+                        <oui-tile-description>
+                            <span data-ng-bind="ctrl.subscription.data.contactAdmin"></span>
+                            <small data-translate="common_tile_subscription_contact_admin"></small>
+                        </oui-tile-description>
+                        <oui-tile-description>
+                            <div>
+                            <span data-ng-bind="ctrl.subscription.data.contactBilling"></span>
+                            <small data-translate="common_tile_subscription_contact_billing"></small>
+                            </div>
+                        </oui-tile-description>
+                        <oui-tile-description>
+                            <div>
+                            <span data-ng-bind="ctrl.subscription.data.contactTech"></span>
+                            <small data-translate="common_tile_subscription_contact_technical"></small>
+                            </div>
+                        </oui-tile-description>
+                        <oui-action-menu data-compact align="end" data-ng-if="ctrl.actions.manageContact.isAvailable()">
+                            <oui-action-menu-item data-text="{{ ::ctrl.actions.manageContact.text }}"
+                                data-aria-label="{{ ::ctrl.actions.manageContact.text }}"
+                                data-href="{{ ::ctrl.actions.manageContact.href }}"
+                                data-external>
+                            </oui-action-menu-item>
+                        </oui-action-menu>
+                    </oui-tile-definition>
+                    <oui-tile-definition
+                        data-term="{{ ::'common_tile_subscription_creation_date' | translate }}">
+                        <oui-tile-description><span data-ng-bind="ctrl.subscription.data.creation | momentFormat:'LL'"></span></oui-tile-description>
+                    </oui-tile-definition>
+                </div>
+            </oui-tile>
         </div>
     </div>
 </section>
