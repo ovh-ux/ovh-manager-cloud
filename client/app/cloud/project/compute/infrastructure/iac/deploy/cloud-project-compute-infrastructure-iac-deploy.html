@@ -1,0 +1,45 @@
+<section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
+<oui-back-button data-title="{{ 'cpciiac_deploy_title' | translate }}"></oui-back-button>
+
+<oui-collapsible data-ng-repeat="section in DeployCtl.guide.sections" heading="{{section.title}}" expanded="$first">
+  <div data-ng-repeat="content in section.content">
+    <div ng-switch="content.type">
+        <p ng-switch-when="p">{{content.content}}</p>
+        <div class="d-md-flex" ng-switch-when="code">
+            <div class="pr-4">
+                <pre class="mb-0">{{content.content}}</pre>
+            </div>
+            <div class="pr-2">
+                <button type="button" class="btn btn-primary mb-0"
+                  data-ng-click="DeployCtl.Service.pasteAction(content.content)"
+                  data-translate="cpciiac_deploy_copy_paste">
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div data-ng-repeat="step in section.steps">
+    <h3>{{step.title}}</h3>
+    <div data-ng-repeat="content in step.content">
+      <div ng-switch="content.type">
+          <p ng-switch-when="p">{{content.content}}</p>
+          <div class="d-md-flex" ng-switch-when="code">
+              <div class="pr-4">
+                  <pre class="mb-0">{{content.content}}</pre>
+              </div>
+              <div class="pr-2">
+                  <button type="button" class="btn btn-primary mb-0"
+                    data-ng-click="DeployCtl.Service.pasteAction(content.content)"
+                    data-translate="cpciiac_deploy_copy_paste">
+                  </button>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</oui-collapsible>
+
+<div class="clearfix"
+data-ng-include="'app/cloud/project/compute/infrastructure/openstackClient/cloud-project-compute-infrastructure-openstack-client.html'">
+</div>
+</section>

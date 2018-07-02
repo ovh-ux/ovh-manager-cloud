@@ -1,4 +1,6 @@
-<div id="openstackClient" data-ng-controller="CloudProjectComputeInfrastructureOpenstackClientCtrl as OpenstackClientCtl" >
+<div id="openstackClient"
+  data-ng-controller="CloudProjectComputeInfrastructureOpenstackClientCtrl as OpenstackClientCtl"
+  data-ng-init="OpenstackClientCtl.initWithConfig(OpenstackClientCtl.$stateParams.hTerm)">
     <div class="margin"></div>
     <div class="openstackClientBody col-md-offset-2 col-sm-offset-3"
         data-ng-class="{ maximized : OpenstackClientCtl.maximized, minimized : OpenstackClientCtl.minimized }">
