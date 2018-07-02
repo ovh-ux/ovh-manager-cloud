@@ -14,18 +14,18 @@
     <div class="row mb-4" data-ng-if="!ctrl.isBasicOffer() && !ctrl.selectedOffer.loading">
         <p class="oui-paragraph col-md-12" data-translate="log_options_current_offer_title"></p>
         <div class="col-xm-12 col-md-4 current-options-tile mb-5">
-            <cui-tile data-loading="ctrl.selectedOffer.loading">
-                <h4 class="oui-header_5 cui-tile__title" data-ng-bind="ctrl.selectedOffer.data.name"></h4>
-                <cui-tile-body class="cui-tile__top-bordered">
-                    <cui-tile-item>
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-term="ctrl.selectedOffer.data.streams"></cui-tile-definition-term>
-                            <cui-tile-definition-term data-term="ctrl.selectedOffer.data.dashboards"></cui-tile-definition-term>
-                            <cui-tile-definition-term data-ng-if="ctrl.selectedOffer.data.maxNbInput > 0" data-term="ctrl.selectedOffer.data.inputs"></cui-tile-definition-term>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                </cui-tile-body>
-            </cui-tile>
+            <div class="oui-tile pt-3 pb-0">
+                <h5 class="oui-header_5 oui-tile__title" data-ng-bind="ctrl.selectedOffer.data.name"></h5>
+                <div class="oui-tile__body">
+                    <div class="oui-tile__item border-bottom-0">
+                        <dl class="oui-tile__definition">
+                            <dd class="oui-tile__term" data-ng-bind="ctrl.selectedOffer.data.streams"></dd>
+                            <dd class="oui-tile__term" data-ng-bind="ctrl.selectedOffer.data.dashboards"></dd>
+                            <dd class="oui-tile__term" data-ng-if="ctrl.selectedOffer.data.maxNbInput > 0" data-ng-bind="ctrl.selectedOffer.data.inputs"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -45,22 +45,20 @@
     </div>
 
     <div class="cui-grid-list mb-5">
-        <div class="cui-grid-list-item cui-grid-cell current-options-tile" data-ng-repeat="option in ctrl.currentOptions.data">
-            <cui-tile data-loading="ctrl.currentOptions.loading">
-                <h4 class="oui-header_5 cui-tile__title" data-ng-bind="option.type+' ('+option.quantity+')'"></h4>
-                <cui-tile-body class="cui-tile__top-bordered">
-                    <cui-tile-item>
-                        <cui-tile-definitions>
-                            <cui-tile-definition-term data-ng-repeat="suboption in option.details">
-                                <span class="cui-tile__description">
-                                    <strong data-ng-bind="suboption.quantity"></strong>
-                                </span>
-                                <span data-ng-bind="suboption.detail"></span>
-                            </cui-tile-definition-term>
-                        </cui-tile-definitions>
-                    </cui-tile-item>
-                </cui-tile-body>
-            </cui-tile>
+        <div class="cui-grid-list-item cui-grid-cell current-options-tile" data-ng-repeat="option in ctrl.currentOptions.data track by $index">
+            <div class="oui-tile pt-3 pb-0">
+                <h5 class="oui-header_5 oui-tile__title" data-ng-bind="option.type+' ('+option.quantity+')'"></h5>
+                <div class="oui-tile__body">
+                    <div class="oui-tile__item border-bottom-0">
+                        <dl class="oui-tile__definition">
+                            <dd class="oui-tile__term" data-ng-repeat="suboption in option.details track by $index">
+                                <strong class="oui-tile__description" data-ng-bind="suboption.quantity"></strong>
+                                <span class="ml-3" data-ng-bind="suboption.detail"></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
