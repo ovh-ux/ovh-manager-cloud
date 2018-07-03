@@ -41,7 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Pasiekta RAM kvota</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Pasiekta Core kvota</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH raktas negalimas</translation>
-   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Choisir votre data center</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Pasirinkti duomenų centrą</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Negalima gauti regionų ir duomenų centrų sąrašo: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Negalima įkrauti galimos kvotos: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Pasirinkite savo instance</translation>

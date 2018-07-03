@@ -91,12 +91,12 @@
    <translation id="common_navbar_notification_error" qtlid="323434">Wystąpił problem z włączeniem menu.</translation>
    <translation id="common_navbar_notification_error_subject" qtlid="26407">Błąd</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Wyświetl wszystkie powiadomienia</translation>
-   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oups, il y a un prolème !</translation>
-   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nous n'arrivons pas à initialiser le menu.</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Wystąpił nieoczekiwany błąd.</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nie można uruchomić menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Oznacz jako przeczytaną</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Oznacz jako nieprzeczytaną</translation>
-   <translation id="common_navbar_notification_none" qtlid="492081">Vous êtes à jour !</translation>
-   <translation id="common_navbar_notification_none_description" qtlid="492094">Vous n'avez aucune notification.</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Używasz aktualnej wersji.</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Nie masz powiadomień.</translation>
 
    <translation id="changelog_loading_error" qtlid="298014">Historia aktualizacji jest chwilowo niedostępna.</translation>
 
@@ -128,7 +128,7 @@
    <translation id="dbaasts_menu_project_num" qtlid="250069">Projekt {{num}}</translation>
 
    <translation id="vrack_menu_title" qtlid="186284">Vrack</translation>
-   <translation id="vrack_menu_add" qtlid="323106">Utwórz vrack</translation>
+   <translation id="vrack_menu_add" qtlid="323106">Utwórz vRack</translation>
    <translation id="vrack_menu_project_num" qtlid="323119">Vrack {{num}}</translation>
    <translation id="vrack_service_type_dedicatedserver" qtlid="101913">Serwer dedykowany</translation>
    <translation id="vrack_service_type_dedicatedcloud" qtlid="20131">Private Cloud</translation>
