@@ -1,3 +1,46 @@
+<a name="7.4.3"></a>
+## [7.4.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.2...v7.4.3) (2018-07-03)
+
+
+### Bug Fixes
+
+* cui-loader removal ([e862c3b](https://github.com/ovh-ux/ovh-manager-cloud/commit/e862c3b))
+* cui-radio-bar removal ([#771](https://github.com/ovh-ux/ovh-manager-cloud/issues/771)) ([2332e65](https://github.com/ovh-ux/ovh-manager-cloud/commit/2332e65))
+* fix for oui-status ([1ef442b](https://github.com/ovh-ux/ovh-manager-cloud/commit/1ef442b))
+* fix for oui-status ([4934529](https://github.com/ovh-ux/ovh-manager-cloud/commit/4934529))
+* fix for oui-status ([a5f64e5](https://github.com/ovh-ux/ovh-manager-cloud/commit/a5f64e5))
+* fix for oui-status ([c2fe014](https://github.com/ovh-ux/ovh-manager-cloud/commit/c2fe014))
+* fix for oui-status ([9d9abd5](https://github.com/ovh-ux/ovh-manager-cloud/commit/9d9abd5))
+* **guides:** update homepage guides urls for ASIA, AU and SG ([0c61aea](https://github.com/ovh-ux/ovh-manager-cloud/commit/0c61aea))
+* **logs:** move logs to new sidebar system ([ef6960a](https://github.com/ovh-ux/ovh-manager-cloud/commit/ef6960a))
+* **openstack:** fix token too long display issues ([9f9eeec](https://github.com/ovh-ux/ovh-manager-cloud/commit/9f9eeec))
+* **order:** set direct ip order url for US ([9fa720c](https://github.com/ovh-ux/ovh-manager-cloud/commit/9fa720c))
+* **oui-stepper:** replace cui-status-icon with oui-status ([#804](https://github.com/ovh-ux/ovh-manager-cloud/issues/804)) ([f2551d8](https://github.com/ovh-ux/ovh-manager-cloud/commit/f2551d8))
+* **pci:** fix vrack loading in infrastructure view ([4546c99](https://github.com/ovh-ux/ovh-manager-cloud/commit/4546c99))
+* **sidebar:** translations ([e0f87ee](https://github.com/ovh-ux/ovh-manager-cloud/commit/e0f87ee))
+
+
+### Features
+
+* **nasha:** updates modals ([6ec9f1c](https://github.com/ovh-ux/ovh-manager-cloud/commit/6ec9f1c))
+* **navbar:** add placeholder translation ([7575ce5](https://github.com/ovh-ux/ovh-manager-cloud/commit/7575ce5))
+* **sidebar:** remove section without products ([e029a0e](https://github.com/ovh-ux/ovh-manager-cloud/commit/e029a0e))
+* **track:** udpate tracking to handle sidebar button order ([bf25310](https://github.com/ovh-ux/ovh-manager-cloud/commit/bf25310))
+
+
+
+<a name="7.4.2"></a>
+## [7.4.2](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.1...v7.4.2) (2018-06-18)
+
+
+### Bug Fixes
+
+* **vps:upgrade:** Allow to upgrade new models ([02572c9](https://github.com/ovh-ux/ovh-manager-cloud/commit/02572c9))
+* **vrack add:** change copy for us customers ([483dbbf](https://github.com/ovh-ux/ovh-manager-cloud/commit/483dbbf))
+* **vrack add:** display order url for us customers ([5cba48b](https://github.com/ovh-ux/ovh-manager-cloud/commit/5cba48b))
+
+
+
 <a name="7.4.1"></a>
 ## [7.4.1](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.0...v7.4.1) (2018-06-05)
 
