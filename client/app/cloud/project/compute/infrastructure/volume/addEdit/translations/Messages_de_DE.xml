@@ -13,7 +13,7 @@
    <translation id="cpci_volume_addedit_type_choose" qtlid="252750">Typ auswählen</translation>
 
    <translation id="cpci_volume_addedit_size_choose" qtlid="252763">Speicherplatz auswählen</translation>
-   <translation id="cpci_volume_addedit_size" qtlid="252776">Speicherplatz der Festplatte:</translation>
+   <translation id="cpci_volume_addedit_size" qtlid="252776">Festplattenkapazität:</translation>
    <translation id="cpci_volume_addedit_info_maxsize" qtlid="364628">Die maximale Größe ist von <a ui-sref="{{ state }}">Ihrem verfügbaren Quota</a> abhängig. </translation>
 
    <translation id="cpci_volume_addedit_region_loading" qtlid="248405">Laden der verfügbaren Zonen.</translation>
