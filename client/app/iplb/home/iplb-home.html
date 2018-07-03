@@ -1,7 +1,7 @@
 <section class="container-fluid cui-page__content cui-page__content-flex">
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <oui-tile data-heading="{{ ::'iplb_home_tile_status' | translate }}" class="h-100">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_status' | translate }}" class="oui-tile-h-100">
                 <oui-tile-definition data-ng-if="ctrl.iplbStatus.loading">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
@@ -33,7 +33,7 @@
             </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <oui-tile data-heading="{{ ::'iplb_home_tile_usage' | translate }}" class="h-100">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_usage' | translate }}" class="oui-tile-h-100">
                 <oui-tile-definition ng-if="ctrl.usage.loading">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
@@ -75,7 +75,7 @@
             </oui-tile>
         </div>
         <div class="col-xm-12 col-md-4">
-            <oui-tile data-heading="{{ ::'iplb_home_tile_graph' | translate }}" class="h-100">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_graph' | translate }}" class="oui-tile-h-100">
                 <oui-tile-definition ng-if="ctrl.loadingGraph">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
@@ -110,7 +110,7 @@
     </div>
     <div class="row d-lg-flex">
         <div class="col-xm-12 col-md-4">
-            <oui-tile data-heading="{{ ::'iplb_home_tile_infos' | translate }}">
+            <oui-tile data-heading="{{ ::'iplb_home_tile_infos' | translate }}" class="oui-tile-h-100">
                 <oui-tile-definition data-ng-if="ctrl.information.loading">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
@@ -150,7 +150,7 @@
         </div>
         <div class="col-xm-12 col-md-4">
             <oui-tile data-heading="{{ ::'iplb_home_tile_configuration' | translate }}">
-                <oui-tile-definition data-ng-if="ctrl.configuration.loading || ctrl.vrackCreationRules.loading">
+                <oui-tile-definition data-ng-if="ctrl.configuration.loading || ctrl.vrackCreationRules.loading" class="oui-tile-h-100">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
                         <oui-skeleton data-randomized></oui-skeleton>
@@ -215,7 +215,7 @@
             <oui-tile 
                 data-heading="{{ ::'common_tile_subscription' | translate }}"
                 data-loading="ctrl.subscription.loading"
-                class="h-100">
+                class="oui-tile-h-100">
                 <oui-tile-definition data-ng-if="ctrl.subscription.loading">
                     <oui-tile-description>
                         <oui-skeleton data-randomized></oui-skeleton>
