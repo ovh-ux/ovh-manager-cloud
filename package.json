@@ -92,7 +92,8 @@
     "@bower_components/validator-js": "chriso/validator.js#~3.37.0",
     "ovh-ui-angular": "~2.15.0",
     "ovh-ui-kit": "~2.15.0",
-    "popper.js": "^1.14.1"
+    "popper.js": "^1.14.1",
+    "xterm": "^3.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.0",
