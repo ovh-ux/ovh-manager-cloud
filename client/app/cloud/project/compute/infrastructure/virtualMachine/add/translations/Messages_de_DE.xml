@@ -41,7 +41,8 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM-Quota erreicht</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core-Quota erreicht</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH-Schlüssel nicht verfügbar</translation>
-   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Die Liste der verfügbaren Regionen und Rechenzentren kann nicht abgerufen werden: {{message}}</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Wählen Sie das Rechenzentrum aus</translation>
+   <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Liste der verfügbaren Regionen und Rechenzentren kann nicht abgerufen werden: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Ihr verfügbares Quota kann nicht geladen werden: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Wählen Sie Ihre Instanz aus</translation>
    <translation id="cpcivm_add_step3_category_balanced" qtlid="483070">Allgemeine Nutzung</translation>

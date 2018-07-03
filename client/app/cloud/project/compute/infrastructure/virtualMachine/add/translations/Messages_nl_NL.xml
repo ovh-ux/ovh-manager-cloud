@@ -41,6 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">RAM-quota bereikt</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Core-quota bereikt</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">SSH-key niet beschikbaar</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Kies uw datacenter</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">De lijst met beschikbare regio's en datacenters kon niet worden geopend: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Uw beschikbare quota kon niet worden geladen: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Selecteer uw instance</translation>

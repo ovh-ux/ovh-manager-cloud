@@ -7,6 +7,7 @@
    <translation id="cpc_loadbalancer_order" qtlid="447391">Tilaa Kuormantasaaja</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Takaisin</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">Kuormantasaus-IP</translation>
+   <translation id="cpc_loadbalancer_displayname" qtlid="3818">Nimi</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">OpenStack</translation>
    <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Kyllä</translation>
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Erääntyi</translation>

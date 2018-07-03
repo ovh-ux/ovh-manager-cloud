@@ -41,6 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Quota de RAM atingida</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Quota de Core atingida</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Chave SSH indisponível</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Escolha o seu centro de dados</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Não é possível obter a lista das regiões e dos datacenters disponíveis: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Não é possível carregar a sua quota disponível: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Selecione a sua instância</translation>

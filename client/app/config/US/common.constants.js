@@ -51,7 +51,8 @@ angular.module("managerApp")
         vpsPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vps/{vps}?landingTo=vps",
         networks: "https://ovhcloud.com/manager/dedicated/index.html#/configuration?landingTo=networks",
         cdnPage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
-        renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}"
+        renew: "https://ovhcloud.com/cgi-bin/order/renew.cgi?domainChooser={serviceName}",
+        licensePage: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/license/{license}/detail"
     })
 // CA eq to en_CA
 // QC eq to fr_CA
@@ -89,6 +90,9 @@ angular.module("managerApp")
             },
             cloud_disk_array: {
                 US: "https://ovhcloud.com/cloud/cloud-disk-array/"
+            },
+            ip: {
+                US: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip/agoraOrder"
             },
             veeam: {
             },

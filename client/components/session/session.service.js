@@ -7,7 +7,7 @@ class SessionService {
     getUser (force) {
         // Check if cached
         if (!!this.user) {
-            return $q.when(this.user);
+            return this.$q.when(this.user);
         }
 
         // Check if already deferred

@@ -6,9 +6,6 @@ angular.module("managerApp").constant("LogsConstants", {
     DISPLAY_NAME_MAX_LENGTH: 255,
     FAILURE: "FAILURE",
     SUCCESS: "SUCCESS",
-    HIGH: "high",
-    MID: "mid",
-    LOW: "low",
     suffixPattern: "^[a-z0-9_-]+$",
     ORDER_URL: "/order/express/#/new/express/resume?products=~(~(planCode~'logs-basic~productId~'logs))",
     LOGS_DOCS_NAME: "logs-data-platform",
@@ -47,6 +44,11 @@ angular.module("managerApp").constant("LogsConstants", {
     BACKLOG_MIN: 1,
     BACKLOG_MAX: 20,
     expirationInSeconds: 86400,
+    indexStorage: {
+        success: "success",
+        error: "error",
+        warning: "warning"
+    },
     alertType: {
         counter: "MESSAGE_COUNT",
         numeric: "FIELD_VALUE",

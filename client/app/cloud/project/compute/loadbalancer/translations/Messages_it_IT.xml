@@ -7,6 +7,7 @@
    <translation id="cpc_loadbalancer_order" qtlid="447391">Ordina un Load Balancer</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Ritorna</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cpc_loadbalancer_displayname" qtlid="3818">Nome</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">OpenStack</translation>
    <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Sì</translation>
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Scaduto</translation>

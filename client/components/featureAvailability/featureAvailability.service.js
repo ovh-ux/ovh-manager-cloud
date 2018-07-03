@@ -4,6 +4,10 @@
     const allCanadianSubsidiaries = ["ASIA", "AU", "CA", "QC", "SG", "WE", "WS"];
     const featuresAvailability = {
         VPS: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
@@ -14,6 +18,11 @@
             }
         },
         SERVER: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+                US: ["US"]
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
@@ -47,33 +56,45 @@
                 CA: allCanadianSubsidiaries
             }
         },
-        ip: {
+        IP: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+                US: ["US"]
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
                 US: ["US"]
-            }
-        },
-        iplb: {
-            sidebarOrder: {
-                EU: allEuropeanSubsidiaries,
-                // CA: allCanadianSubsidiaries, TODO : to remove when iplb order prodded in CA
             }
         },
         LOAD_BALANCER: {
             sidebarMenu: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
+            },
+            sidebarOrder: {
+                EU: allEuropeanSubsidiaries
             }
         },
         VRACK: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+                US: ["US"]
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
                 US: ["US"]
             }
         },
-        licence: {
+        LICENSE: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries,
+                US: ["US"]
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries,
@@ -81,6 +102,10 @@
             }
         },
         NASHA: {
+            sidebarMenu: {
+                EU: allEuropeanSubsidiaries,
+                CA: allCanadianSubsidiaries
+            },
             sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
@@ -89,29 +114,36 @@
         METRICS: {
             sidebarMenu: {
                 EU: allEuropeanSubsidiaries,
-                CA: allCanadianSubsidiaries,
+                CA: allCanadianSubsidiaries
             },
             sidebarOrder: {
                 EU: ["FR"]
             }
         },
         CEPH: {
+            sidebarMenu: {
+                EU: ["FR"],
+                US: ["US"]
+            },
             sidebarOrder: {
                 EU: ["FR"]
             }
         },
         VEEAM: {
+            sidebarMenu: {
+                EU: ["FR"]
+            },
             sidebarOrder: {
                 EU: ["FR"]
             }
         },
         CLOUD_DESKTOP: {
-            sidebarOrder: {
-                EU: allEuropeanSubsidiaries
-            },
             sidebarMenu: {
                 EU: allEuropeanSubsidiaries,
                 CA: allCanadianSubsidiaries
+            },
+            sidebarOrder: {
+                EU: allEuropeanSubsidiaries
             }
         },
         CONTACTS: {
@@ -120,11 +152,11 @@
             }
         },
         DBAAS_LOGS: {
-            sidebarOrder: {
+            sidebarMenu: {
                 EU: allEuropeanSubsidiaries,
                 CA: ["CA", "QC"]
             },
-            sidebarMenu: {
+            sidebarOrder: {
                 EU: allEuropeanSubsidiaries,
                 CA: ["CA", "QC"]
             }

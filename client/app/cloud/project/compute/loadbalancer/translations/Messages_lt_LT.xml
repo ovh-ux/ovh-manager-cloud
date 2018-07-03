@@ -7,6 +7,7 @@
    <translation id="cpc_loadbalancer_order" qtlid="447391">Užsakyti Load Balancer</translation>
    <translation id="cpc_loadbalancer_back" qtlid="4118">Atgal</translation>
    <translation id="cpc_loadbalancer_name" qtlid="323499">IP Load Balancer</translation>
+   <translation id="cpc_loadbalancer_displayname" qtlid="3818">Pavadinimas</translation>
    <translation id="cpc_loadbalancer_openstack_status" qtlid="241586">Openstack</translation>
    <translation id="cpc_loadbalancer_openstack_status_validated" qtlid="34776">Taip</translation>
    <translation id="cpc_loadbalancer_openstack_status_expired" qtlid="58676">Galioja iki</translation>

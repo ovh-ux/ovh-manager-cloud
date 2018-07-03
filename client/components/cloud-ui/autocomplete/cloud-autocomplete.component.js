@@ -324,7 +324,8 @@ angular.module("managerApp").component("cloudAutoComplete", {
     templateUrl: "components/cloud-ui/autocomplete/autocomplete.html",
     controller: AutoCompleteController,
     bindings: {
-        id: "@", //The client ID of the input.  Allows to associate a label with the input.  
+        id: "@", //The client ID of the input.  Allows to associate a label with the input.
+        name: "@?", //The client name of the input.  Allows to associate a label with the input.
         options: "<", //Options to display in the list.
         groupBy: "@", //options will be grouped by this property.  The component support 1 level of grouping only.
         orderBy: "<", //The order in which we want to order options.  Works like the orderBy in ngRepeat.

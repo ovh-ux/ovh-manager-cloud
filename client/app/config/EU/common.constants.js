@@ -56,7 +56,8 @@ angular.module("managerApp")
         vps: "https://www.ovh.com/manager/dedicated/index.html#/configuration?landingTo=vps",
         vpsPage: "https://www.ovh.com/manager/dedicated/index.html#/configuration/vps/{vps}?landingTo=vps",
         cdnPage: "https://www.ovh.com/manager/dedicated/index.html#/configuration/cdn/{cdn}?landingTo=networks",
-        renew: "https://www.ovh.com/manager/dedicated/index.html#/billing/autoRenew?selectedType={serviceType}&searchText={serviceName}"
+        renew: "https://www.ovh.com/manager/dedicated/index.html#/billing/autoRenew?selectedType={serviceType}&searchText={serviceName}",
+        licensePage: "https://www.ovh.com/manager/dedicated/index.html#/configuration/license/{license}/detail"
     })
     .constant("URLS", {
         changeOwner: {
