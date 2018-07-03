@@ -22,7 +22,8 @@ angular.module("managerApp")
                     // true to indicate that we want to display the add VM popover
                     createNewVm: false,
                     editVm: null,
-                    monitorVm: null
+                    monitorVm: null,
+                    hTerm: null
                 },
                 translations: [
                     "common",

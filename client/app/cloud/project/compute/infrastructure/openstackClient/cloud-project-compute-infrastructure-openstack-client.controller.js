@@ -1,6 +1,7 @@
 class CloudProjectComputeInfrastructureOpenstackClientCtrl {
     constructor ($q, $stateParams, $translate, OvhApiCloudProjectOpenstackClient, CloudProjectComputeInfrastructureOpenstackClientService, OvhApiCloudProjectRegion, CloudMessage, ControllerHelper, hterm) {
         this.$q = $q;
+        this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.OvhApiCloudProjectOpenstackClient = OvhApiCloudProjectOpenstackClient;
         this.Service = CloudProjectComputeInfrastructureOpenstackClientService;
@@ -31,6 +32,25 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
         this.initLoaders();
     }
 
+    initWithConfig (config) {
+        this.actions = _.get(config, "actions", this.actions);
+        this.region = _.get(config, "region", this.region);
+        const session = _.get(config, "session");
+        if (session) {
+            this.minimized = false;
+            this.maximized = false;
+            _.set(this.session, "data", this.Service.setSession(session, this.term));
+        }
+
+        this.load();
+    }
+
+
+    initAndMaximizeWithConfig (config) {
+        this.OvhApiCloudProjectOpenstackClient.initWithConfig(config);
+        this.OvhApiCloudProjectOpenstackClient.maximize();
+    }
+
     initLoaders () {
         this.session = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.Service.getSession({ serviceName: this.serviceName, term: this.term })
@@ -43,7 +63,6 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
     $onInit () {
         this.CloudMessage.unSubscribe("iaas.pci-project.compute.openstack-console");
         this.messageHandler = this.CloudMessage.subscribe("iaas.pci-project.compute.openstack-console", { onMessage: () => this.refreshMessages() });
-        this.load();
     }
 
     refreshMessages () {
