@@ -1,12 +1,12 @@
 (() => {
     class VeeamDashboardCtrl {
-        constructor ($stateParams, $translate, VeeamService, ControllerHelper, FeatureAvailabilityService) {
+        constructor ($stateParams, $translate, VeeamService, ControllerHelper, FeatureAvailabilityService, RegionService) {
             this.$stateParams = $stateParams;
             this.$translate = $translate;
             this.VeeamService = VeeamService;
             this.ControllerHelper = ControllerHelper;
             this.FeatureAvailabilityService = FeatureAvailabilityService;
-
+            this.RegionService = RegionService;
             this.serviceName = this.$stateParams.serviceName;
 
             this.initLoaders();
@@ -21,6 +21,7 @@
 
             this.configurationInfos = this.ControllerHelper.request.getHashLoader({
                 loaderFunction: () => this.VeeamService.getConfigurationInfos(this.serviceName),
+                successHandler: () => this.getRegion(this.configurationInfos.data.location.macroRegion.code),
                 errorHandler
             });
 
@@ -135,6 +136,10 @@
                     message: this.actions.data.upgradeOffer.reason
                 });
             }
+        }
+
+        getRegion (region) {
+            this.region = this.RegionService.getRegion(region);
         }
     }
 
