@@ -1,12 +1,13 @@
 (() => {
     class VeeamDashboardCtrl {
-        constructor ($stateParams, $translate, VeeamService, ControllerHelper, FeatureAvailabilityService, RegionService) {
+        constructor ($stateParams, $translate, ControllerHelper, FeatureAvailabilityService, RegionService, VeeamService) {
             this.$stateParams = $stateParams;
             this.$translate = $translate;
-            this.VeeamService = VeeamService;
             this.ControllerHelper = ControllerHelper;
             this.FeatureAvailabilityService = FeatureAvailabilityService;
             this.RegionService = RegionService;
+            this.VeeamService = VeeamService;
+
             this.serviceName = this.$stateParams.serviceName;
 
             this.initLoaders();
