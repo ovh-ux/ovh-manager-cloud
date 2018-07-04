@@ -91,12 +91,12 @@
    <translation id="common_navbar_notification_error" qtlid="323434">Ups, não conseguimos inicializar o menu!</translation>
    <translation id="common_navbar_notification_error_subject" qtlid="26407">Erro</translation>
    <translation id="common_navbar_notification_see_all" qtlid="401914">Consultar todas as notificações</translation>
-   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oups, il y a un prolème !</translation>
-   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nous n'arrivons pas à initialiser le menu.</translation>
+   <translation id="common_navbar_notification_error_in_notification" qtlid="492055">Oops, existe um problema!</translation>
+   <translation id="common_navbar_notification_error_in_notification_description" qtlid="492068">Nós não podemos inicializar o menu.</translation>
    <translation id="common_navbar_notification_mark_as_read" qtlid="70865">Marcar como lida</translation>
    <translation id="common_navbar_notification_mark_as_unread" qtlid="70877">Marcar como não lida</translation>
-   <translation id="common_navbar_notification_none" qtlid="492081">Vous êtes à jour !</translation>
-   <translation id="common_navbar_notification_none_description" qtlid="492094">Vous n'avez aucune notification.</translation>
+   <translation id="common_navbar_notification_none" qtlid="492081">Está atualizado!</translation>
+   <translation id="common_navbar_notification_none_description" qtlid="492094">Você não tem notificação.</translation>
 
    <translation id="changelog_loading_error" qtlid="298014">O histórico das atualizações está momentaneamente indisponível.</translation>
 

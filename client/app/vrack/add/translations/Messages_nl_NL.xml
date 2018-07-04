@@ -5,7 +5,7 @@
    <translation id="vrack_validationPending" qtlid="323197">Veuillez finaliser le paiement gratuit de votre <a href="{{url}}" target='_blank'>bon de commande</a>.</translation>
    <translation id="vrack_order_delay" qtlid="323210">Votre vRack sera disponible quelques minutes après la validation du bon de commande.</translation>
    <translation id="vrack_order" qtlid="43558">Bestellen</translation>
-   <translation id="vrack_order_install_now_label" qtlid="492042">Installer maintenant</translation>
+   <translation id="vrack_order_install_now_label" qtlid="492042">Nu installeren</translation>
    <translation id="vrack_contract_empty" qtlid="245688">U heeft alle contracten aanvaard met betrekking tot dit product.</translation>
    <translation id="vrack_error" qtlid="148981">Er is een fout opgetreden.</translation>
    <translation id="vrack_error_reason" qtlid="323223">Une erreur est survenue: {{message}}</translation>

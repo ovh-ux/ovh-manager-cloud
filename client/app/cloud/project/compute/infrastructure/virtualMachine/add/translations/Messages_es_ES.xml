@@ -41,7 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Límite de RAM alcanzado</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Límite de cores alcanzado</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Llave SSH no disponible</translation>
-   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Choisir votre data center</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Elegir el datacenter</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">No es posible cargar la lista de regiones y datacenters disponibles: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">No es posible cargar la capacidad disponible: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Seleccione su instancia</translation>

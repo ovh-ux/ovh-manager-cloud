@@ -1,7 +1,9 @@
 class CloudProjectBillingRightsAddCtrl {
-    constructor ($stateParams, $uibModalInstance, CloudMessage, model, OvhApiCloud) {
+    constructor ($stateParams, $uibModalInstance, ControllerHelper, CloudMessage, model, OvhApiCloud) {
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
+        this.CloudMessage = CloudMessage;
         this.model = model;
         this.OvhApiCloud = OvhApiCloud;
 
@@ -11,16 +13,19 @@ class CloudProjectBillingRightsAddCtrl {
     }
 
     validateAddRight () {
-        this.loader = true;
-
-        this.$uibModalInstance.close(
-            this.OvhApiCloud.Project().Acl().v6().add({
-                serviceName: this.$stateParams.projectId
-            }, {
-                accountId: CloudProjectBillingRightsAddCtrl.normalizedNic(this.right.contact),
-                type: this.right.type
-            }).$promise
-        );
+        this.CloudMessage.flushChildMessage();
+        this.loader = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () =>
+                this.OvhApiCloud.Project().Acl().v6().add({
+                    serviceName: this.$stateParams.projectId
+                }, {
+                    accountId: CloudProjectBillingRightsAddCtrl.normalizedNic(this.right.contact),
+                    type: this.right.type
+                }).$promise
+                    .then(res => this.$uibModalInstance.close(res))
+                    .catch(res => this.$uibModalInstance.dismiss(res))
+        });
+        return this.loader.load();
     }
 
     cancel () {

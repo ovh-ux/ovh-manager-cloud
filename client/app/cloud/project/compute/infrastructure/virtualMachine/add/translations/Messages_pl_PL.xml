@@ -41,7 +41,7 @@
    <translation id="cpcivm_add_step2_disabled_QUOTA_RAM" qtlid="482992">Limit łącznego rozmiaru RAM został osiągnięty</translation>
    <translation id="cpcivm_add_step2_disabled_QUOTA_VCPUS" qtlid="483005">Limit ilości rdzeni został osiągnięty</translation>
    <translation id="cpcivm_add_step2_disabled_SSH_KEY" qtlid="483018">Klucz SSH jest niedostępny</translation>
-   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Choisir votre data center</translation>
+   <translation id="cpcivm_add_step2_datacenter_choose" qtlid="492107">Wybierz centrum danych</translation>
    <translation id="cpcivm_add_step2_regions_ERROR" qtlid="483031">Nie można pobrać listy dostępnych regionów i centrów danych: {{message}}</translation>
    <translation id="cpcivm_add_step2_quota_ERROR" qtlid="483044">Nie można załadować dostępnego limitu: {{message}}</translation>
    <translation id="cpcivm_add_step3_title" qtlid="483057">Wybierz instancję</translation>
