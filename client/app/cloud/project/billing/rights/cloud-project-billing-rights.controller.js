@@ -140,7 +140,7 @@ angular.module("managerApp")
                 modalConfig: {
                     templateUrl: "app/cloud/project/billing/rights/addRights/cloud-project-billing-rights-add.html",
                     controller: "CloudProjectBillingRightsAddCtrl",
-                    controllerAs: "ctrl",
+                    controllerAs: "$ctrl",
                     resolve: {
                         model: () => self.model
                     }
