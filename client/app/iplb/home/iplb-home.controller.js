@@ -248,7 +248,7 @@ class IpLoadBalancerHomeCtrl {
     }
 
     hasMultipleRegions () {
-        return _(this.detailedRegions).isArray() && !_(this.detailedRegions).isEmpty();
+        return _(this.detailedRegions).isArray() && this.detailedRegions.length > 1;
     }
 }
 
