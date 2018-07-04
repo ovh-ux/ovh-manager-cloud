@@ -43,19 +43,6 @@ class IpLoadBalancerActionService {
         });
     }
 
-    offerChange (serviceName) {
-        this.ControllerHelper.modal.showModal({
-            modalConfig: {
-                templateUrl: "app/iplb/modal/offer/iplb-offer-change.html",
-                controller: "IpLoadBalancerOfferChangeCtrl",
-                controllerAs: "IpLoadBalancerOfferChangeCtrl",
-                resolve: {
-                    serviceName: () => serviceName
-                }
-            }
-        });
-    }
-
     deleteFrontend (serviceName, frontend) {
         return this.ControllerHelper.modal.showModal({
             modalConfig: {

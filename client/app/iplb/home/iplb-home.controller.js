@@ -136,8 +136,8 @@ class IpLoadBalancerHomeCtrl {
                 isAvailable: () => !this.vrackCreationRules.loading && !this.vrackCreationRules.hasErrors && this.vrackCreationRules.data.status === "active"
             },
             changeOffer: {
+                // TODO: Implementation of modal for changing offer
                 text: this.$translate.instant("common_edit"),
-                callback: () => this.IpLoadBalancerActionService.offerChange(this.serviceName),
                 isAvailable: () => false
             },
             manageAutorenew: {
