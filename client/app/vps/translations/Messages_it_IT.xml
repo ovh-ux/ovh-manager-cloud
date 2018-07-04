@@ -43,6 +43,10 @@
    <translation id="vps_monitoring_cpu_sys" qtlid="83733">Sistema</translation>
    <translation id="vps_monitoring_cpu_user" qtlid="7450">Utente</translation>
 
+   <translation id="vps_dashboard_upgrade_1">An update of the infrastructure VPS 2016 & 2018 in area os-gra1-005, os-gra1-006, os-gra1-007, os-gra1-008, os-gra1-009, os-gra1-010 and os-gra1-011 is scheduled on Wednesday 4th July from 9 AM UTC+2 to 5 PM UTC+2.</translation>
+   <translation id="vps_dashboard_upgrade_2">During this upgrade, your VPS will remain available but you won’t be able to request any task like : stop/launch, backup, adding additional disk, creating new VPS.</translation>
+   <translation id="vps_dashboard_upgrade_3">More detail on travaux task (opens a new tab).</translation>
+
    <translation id="vps_dashboard_task" qtlid="195633">Task in corso </translation>
    <translation id="vps_dashboard_task_finish" qtlid="452397">Operazioni in corso completate</translation>
    <translation id="vps_dashboard_task_rebootVm" qtlid="26287">Riavvia</translation>
