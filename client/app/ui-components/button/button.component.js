@@ -1,8 +1,8 @@
 angular.module("managerApp")
     .component("cuiSubmitButton", {
         template: `
-            <oui-button variant="primary"
-                type="submit"
+            <oui-button data-variant="primary"
+                data-type="submit"
                 data-on-click="$ctrl.onClick()"
                 data-disabled="$ctrl.disabled"
                 data-text="{{::$ctrl.text}}"
@@ -22,8 +22,8 @@ angular.module("managerApp")
     })
     .component("cuiCancelButton", {
         template: `
-            <oui-button variant="secondary"
-                type="button"
+            <oui-button data-variant="secondary"
+                data-type="button"
                 data-on-click="$ctrl.onClick()"
                 data-disabled="$ctrl.disabled"
                 data-text="{{::$ctrl.text}}"
