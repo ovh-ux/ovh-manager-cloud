@@ -307,7 +307,6 @@ angular.module("managerApp")
                     categoryObject.flavors = _(categoryObject.flavors).concat(_.filter(cleanFlavors, {
                         type: flavorType,
                         diskType: "ssd",
-                        flex: false,
                         region: self.model.region,
                         osType: self.vmInEdition.image ? self.vmInEdition.image.type : "linux"     // (display linux flavors by default if no image selected)
                     })).value();
@@ -316,9 +315,9 @@ angular.module("managerApp")
                         category: category.id,
                         order: category.order,
                         flavors: _.filter(cleanFlavors, {
+                            available: true,
                             type: flavorType,
                             diskType: "ssd",
-                            flex: false,
                             region: self.model.region,
                             osType: self.vmInEdition.image ? self.vmInEdition.image.type : "linux"     // (display linux flavors by default if no image selected)
                         })
@@ -445,7 +444,7 @@ angular.module("managerApp")
     ===================================================*/
 
     function recalculateFlavor () {
-        var mainAssociatedFlavor = _.find(self.panelsData.flavors, {
+        var mainAssociatedFlavor = _.find(_.flatten(_.map(self.displayData.categories, "flavors")), {
             groupName : self.vmInEdition.flavor && self.vmInEdition.flavor.groupName,
             osType : self.vmInEdition.image ? self.vmInEdition.image.type : 'linux',
             region : self.model.region
@@ -464,7 +463,7 @@ angular.module("managerApp")
     }
 
     function setFallbackFlavor () {
-        var fallbackFlavor = _.find(self.panelsData.flavors, {
+        var fallbackFlavor = _.find(_.flatten(_.map(self.displayData.categories, "flavors")), {
             groupName : CLOUD_INSTANCE_DEFAULT_FALLBACK.flavor,
             osType : self.vmInEdition.image ? self.vmInEdition.image.type : 'linux',
             region : self.model.region
@@ -676,7 +675,7 @@ angular.module("managerApp")
                 realFlavor = flavor;
             }
 
-            if (realFlavor) {
+            if (realFlavor && !realFlavor.disabled) {
                 var category = getCategoryFromFlavor(realFlavor.type);
                 if (category) {
                     self.toggle.accordions.flavors = {};
@@ -1085,7 +1084,6 @@ angular.module("managerApp")
                 self.getImages(),
                 self.getSnapshots()
             ]).then(function () {
-
                 // Operations on flavors:
                 angular.forEach(self.panelsData.flavors, function (flavor) {
                     //add frequency

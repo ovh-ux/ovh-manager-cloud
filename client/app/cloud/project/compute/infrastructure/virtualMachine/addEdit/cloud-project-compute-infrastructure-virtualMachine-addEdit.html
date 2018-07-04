@@ -832,7 +832,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-ng-repeat-start="flavor in categoryObject.flavors track by flavor.id"
+                                                    <tr data-ng-repeat-start="flavor in categoryObject.flavors | filter:{flex: true} track by flavor.id"
                                                         data-ng-click="VmAddEditCtrl.selectFlavor(categoryObject.category, flavor)"
                                                         data-ng-mouseenter="VmAddEditCtrl.onMouseEnterFlavor(categoryObject.category, flavor)"
                                                         data-ng-class="{'disabled opacity5': flavor.disabled || flavor.deprecated || !flavor.available}"
