@@ -1,5 +1,5 @@
 <section class="cui-page__content">
-    <cui-page-content-title text="'iplb_configuration_title' | translate"></cui-page-content-title>
+    <cui-page-content-title data-text="'iplb_configuration_title' | translate"></cui-page-content-title>
     <p data-translate="iplb_configuration_intro"></p>
     <oui-datagrid data-rows="ctrl.zones.data">
         <extra-top>
@@ -11,24 +11,24 @@
         </extra-top>
         <oui-column>
             <oui-checkbox
-                data-name="zones{{$row.id}}"
-                data-id="zones{{$row.id}}"
+                name="zones{{$row.id}}"
+                id="zones{{$row.id}}"
                 data-on-change="ctrl.onSelectionChange($row)">
             </oui-checkbox>
         </oui-column>
-        <oui-column data-title="'iplb_configuration_datacenter' | translate" data-property="name" sortable="asc"></oui-column>
-        <oui-column data-title="'iplb_configuration_progress' | translate" sortable>
+        <oui-column data-title="'iplb_configuration_datacenter' | translate" data-property="name" data-sortable="asc"></oui-column>
+        <oui-column data-title="'iplb_configuration_progress' | translate" data-sortable>
             <cui-task-progress data-ng-show="$row.task" data-task="$row.task"></cui-task-progress>
         </oui-column>
         <oui-column data-title="'iplb_configuration_status' | translate">
-            <span data-ng-if="$row.changes === 0" translate-attr="{ title: 'iplb_configuration_changes_0' }">
+            <span data-ng-if="$row.changes === 0" data-translate-attr="{ title: 'iplb_configuration_changes_0' }">
                 <cui-status-icon data-type="success"></cui-status-icon>
             </span>
-            <span data-ng-if="$row.changes === 1" translate-attr="{ title: 'iplb_configuration_changes_1' }">
+            <span data-ng-if="$row.changes === 1" data-translate-attr="{ title: 'iplb_configuration_changes_1' }">
                 <cui-status-icon data-type="warning"></cui-status-icon>
             </span>
-            <span data-ng-if="$row.changes > 1" translate-attr="{ title: 'iplb_configuration_changes_count' }"
-                translate-values="{ count: $row.changes }">
+            <span data-ng-if="$row.changes > 1" data-translate-attr="{ title: 'iplb_configuration_changes_count' }"
+                data-translate-values="{ count: $row.changes }">
                 <cui-status-icon data-type="warning"></cui-status-icon>
             </span>
         </oui-column>

@@ -29,13 +29,15 @@ class IpLoadBalancerConfigurationCtrl {
     }
 
     onSelectionChange (zone) {
-        const index = _.indexOf(this.selectedZones, zone);
-        if (index === -1) {
-            // zone selected
-            this.selectedZones.push(zone);
+        const contains = _.includes(this.selectedZones, zone);
+        if (contains) {
+            // zone unselected, remove from array
+            this.selectedZones = _.without(this.selectedZones, _.findWhere(this.selectedZones, {
+                id: zone.id
+            }));
         } else {
-            // zone unselected
-            this.selectedZones.splice(index, 1);
+            // zone selected, add it to array
+            this.selectedZones.push(zone);
         }
     }
 
