@@ -36,7 +36,7 @@ class LogsHomeCtrl {
     }
 
     goToAccountSetupPage () {
-        this.gotoState("dbaas.logs.detail.setup");
+        return this.gotoState("dbaas.logs.detail.setup");
     }
 
     /**
@@ -97,19 +97,19 @@ class LogsHomeCtrl {
     }
 
     changeName () {
-        this.gotoState("dbaas.logs.detail.home.account");
+        return this.gotoState("dbaas.logs.detail.home.account");
     }
 
     goToAllStreams () {
-        this.gotoState("dbaas.logs.detail.streams");
+        return this.gotoState("dbaas.logs.detail.streams");
     }
 
     goToAllDashboards () {
-        this.gotoState("dbaas.logs.detail.dashboards");
+        return this.gotoState("dbaas.logs.detail.dashboards");
     }
 
     goToChangeOffer () {
-        this.gotoState("dbaas.logs.detail.offer");
+        return this.gotoState("dbaas.logs.detail.offer");
     }
 
     /**
@@ -117,10 +117,9 @@ class LogsHomeCtrl {
      */
     goToOptionsPage () {
         if (this.LogsHelperService.isBasicOffer(this.account.data)) {
-            this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
-        } else {
-            this.gotoState("dbaas.logs.detail.options");
+            return this.LogsHelperService.showOfferUpgradeModal(this.serviceName);
         }
+        return this.gotoState("dbaas.logs.detail.options");
     }
 
     /**
@@ -129,7 +128,7 @@ class LogsHomeCtrl {
      * @memberof LogsHomeCtrl
      */
     editTokens () {
-        this.gotoState("dbaas.logs.detail.tokens");
+        return this.gotoState("dbaas.logs.detail.tokens");
     }
 
     /**
@@ -142,7 +141,7 @@ class LogsHomeCtrl {
     }
 
     gotoState (state) {
-        this.$state.go(state, {
+        return this.$state.go(state, {
             serviceName: this.serviceName
         });
     }
