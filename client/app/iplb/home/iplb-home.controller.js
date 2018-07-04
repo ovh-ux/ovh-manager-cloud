@@ -249,7 +249,6 @@ class IpLoadBalancerHomeCtrl {
 
     hasMultipleRegions () {
         return _(this.detailedRegions).isArray() && !_(this.detailedRegions).isEmpty();
-        // return this.detailedRegions && this.detailedRegions.length > 1;
     }
 }
 
