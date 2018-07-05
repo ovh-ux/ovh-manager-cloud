@@ -217,9 +217,9 @@
   version "0.1.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-a-disabled/tar.gz/8d8b104dbeb12cde43e643409d2cc0d484409422"
 
-"@bower_components/ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^2.0.0":
-  version "2.0.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/402da0d282702521ea2140046d1d17bb1d01783f"
+"@bower_components/ovh-angular-actions-menu@ovh-ux/ovh-angular-actions-menu#^3.2.0":
+  version "3.2.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-actions-menu/tar.gz/b63ed0d2dbefc915b0bb18dc426ea7b83cc00c50"
 
 "@bower_components/ovh-angular-browser-alert@ovh-ux/ovh-angular-browser-alert#^1.0.0":
   version "1.0.0"
@@ -257,9 +257,9 @@
     angular-mock "^1.0.0"
     less-plugin-remcalc "^0.0.1"
 
-"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.0.1":
-  version "6.1.0"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/0184a7c8c57d0fac614ec7d54d3464e2512febe9"
+"@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1":
+  version "6.1.1"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/8a49021ab3ec36e0a7f5ecc288bbbc0cc5c10da9"
 
 "@bower_components/ovh-angular-pagination-front@ovh-ux/ovh-angular-pagination-front#^5.1.0":
   version "5.0.0"
@@ -287,9 +287,9 @@
   version "4.0.0"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-responsive-tabs/tar.gz/0aa90a9a3b281fc0422b33ba2ba121ab3a69b693"
 
-"@bower_components/ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.0.0":
-  version "7.1.2"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/57fabbf17200c1d6fd47f0a02fce8c7b86e6fac6"
+"@bower_components/ovh-angular-sidebar-menu@ovh-ux/ovh-angular-sidebar-menu#^7.2.0":
+  version "7.2.0"
+  resolved "https://codeload.github.com/ovh-ux/ovh-angular-sidebar-menu/tar.gz/4e8dbb3dd95292d5b38e0c5bd546543d10974b81"
 
 "@bower_components/ovh-angular-slider@ovh-ux/ovh-angular-slider#^0.2.2":
   version "0.2.3"
@@ -6239,14 +6239,14 @@ ovh-protractor-jasmine2-logs-reporter@~0.0.1:
   dependencies:
     q "^1.4.1"
 
-ovh-ui-angular@^2.15.0:
+ovh-ui-angular@~2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.15.0.tgz#a25dea440fa4301fa775df7387b4582e98cbf445"
   dependencies:
     escape-string-regexp "^1.0.5"
     popper.js "^1.12.9"
 
-ovh-ui-kit@^2.15.0:
+ovh-ui-kit@~2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.15.0.tgz#60743f60790d26ffdbf7bcf72ffff6aec53ff3ca"
   dependencies:

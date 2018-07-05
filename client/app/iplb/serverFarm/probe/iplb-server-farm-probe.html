@@ -43,8 +43,8 @@
                 <oui-radio
                     data-text="{{ ::('iplb_farm_edit_probe_match_' + match) | translate }}"
                     data-value="match"
-                    data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches()"
-                    data-ng-hide="IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status'">
+                    data-ng-repeat="match in IpLoadBalancerServerFarmProbeEditCtrl.getMatches() track by $index"
+                    data-ng-if="!(IpLoadBalancerServerFarmProbeEditCtrl.farmProbe.type !== 'http' && match === 'status')">
                 </oui-radio>
             </oui-radio-toggle-group>
         </oui-field>
