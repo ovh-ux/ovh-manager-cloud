@@ -1,3 +1,23 @@
+<a name="7.4.5"></a>
+## [7.4.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.4...v7.4.5) (2018-07-05)
+
+
+
+<a name="7.4.4"></a>
+## [7.4.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.3...v7.4.4) (2018-07-04)
+
+
+### Bug Fixes
+
+* **otrs:** fix otrs component version ([c96ad28](https://github.com/ovh-ux/ovh-manager-cloud/commit/c96ad28))
+
+
+### Features
+
+* **vps.dashboard:** display warning message about upgrade ([d7e8695](https://github.com/ovh-ux/ovh-manager-cloud/commit/d7e8695))
+
+
+
 <a name="7.4.3"></a>
 ## [7.4.3](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.2...v7.4.3) (2018-07-03)
 
