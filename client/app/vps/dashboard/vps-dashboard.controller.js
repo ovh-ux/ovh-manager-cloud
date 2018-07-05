@@ -25,8 +25,6 @@ class VpsDashboardCtrl {
     }
 
     initLoaders () {
-        const zonesToDisplayUpgradeMessageTo = ["os-gra1-005", "os-gra1-006", "os-gra1-007", "os-gra1-008", "os-gra1-009", "os-gra1-010", "os-gra1-011"];
-
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
             successHandler: () => {
@@ -34,8 +32,6 @@ class VpsDashboardCtrl {
                     this.loadIps();
                     this.hasAdditionalDiskOption();
                 }
-
-                this.shouldDisplayUpgradeMessage = _(zonesToDisplayUpgradeMessageTo).includes(this.vps.data.zone);
             }
         });
         this.summary = this.ControllerHelper.request.getHashLoader({
@@ -143,12 +139,12 @@ class VpsDashboardCtrl {
             restore: {
                 text: this.$translate.instant("vps_configuration_snapshot_restore_title_button"),
                 callback: () => this.VpsActionService.restoreSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate && !this.loaders.polling
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate  && !this.loaders.polling
             },
             take: {
                 text: this.$translate.instant("vps_configuration_snapshot_take_title_button"),
                 callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate && !this.loaders.polling
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate  && !this.loaders.polling
             },
             terminate: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
