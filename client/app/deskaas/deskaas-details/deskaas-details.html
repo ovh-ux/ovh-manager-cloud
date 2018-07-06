@@ -9,36 +9,60 @@
         <div class="row d-lg-flex">
             <div class="col-xm-12 col-md-4">
                 <oui-tile data-heading="{{::'common_tile_shortcut' | translate}}" class="h-100 oui-tile-h-100">
-                    <oui-tile-button
-                        data-text="{{::$ctrl.actions.restart.text}}"
-                        data-disabled="!$ctrl.actions.restart.isAvailable()" 
-                        data-on-click="$ctrl.actions.restart.callback()">
-                    </oui-tile-button>
-                    <oui-tile-button
-                        data-text="{{::$ctrl.actions.changePassword.text}}"
-                        data-disabled="!$ctrl.actions.changePassword.isAvailable()" 
-                        data-on-click="$ctrl.actions.changePassword.callback()">
-                    </oui-tile-button>
-                    <oui-tile-button
-                        data-text="{{::$ctrl.actions.accessConsole.text}}"
-                        data-disabled="!$ctrl.actions.accessConsole.isAvailable()" 
-                        data-on-click="$ctrl.actions.accessConsole.callback()">
-                    </oui-tile-button>
-                    <oui-tile-button 
-                        data-text="{{::$ctrl.actions.reinit.text}}"
-                        data-disabled="!$ctrl.actions.reinit.isAvailable()"
-                        data-on-click="$ctrl.actions.reinit.callback()">
-                    </oui-tile-button>
-                    <oui-tile-button 
-                        data-text="{{::$ctrl.actions.changeOffer.text}}" 
-                        data-disabled="!$ctrl.actions.changeOffer.isAvailable()"
-                        data-on-click="$ctrl.actions.changeOffer.callback()">
-                    </oui-tile-button>
-                    <oui-tile-button 
-                        data-text="{{::$ctrl.actions.remove.text}}" 
-                        data-disabled="!$ctrl.actions.remove.isAvailable()"
-                        data-on-click="$ctrl.actions.remove.callback()">
-                    </oui-tile-button>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.restart.isAvailable()"
+                            data-ng-click="$ctrl.actions.restart.callback()">
+                            <span data-ng-bind="::$ctrl.actions.restart.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.restart.text}}"></i>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.changePassword.isAvailable()"
+                            data-ng-click="$ctrl.actions.changePassword.callback()">
+                            <span data-ng-bind="::$ctrl.actions.changePassword.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.changePassword.text}}"></i>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.accessConsole.isAvailable()"
+                            data-ng-click="$ctrl.actions.accessConsole.callback()">
+                            <span data-ng-bind="::$ctrl.actions.accessConsole.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.accessConsole.text}}"></i>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.reinit.isAvailable()"
+                            data-ng-click="$ctrl.actions.reinit.callback()">
+                            <span data-ng-bind="::$ctrl.actions.reinit.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.reinit.text}}"></i>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.changeOffer.isAvailable()"
+                            data-ng-click="$ctrl.actions.changeOffer.callback()">
+                            <span data-ng-bind="::$ctrl.actions.changeOffer.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.changeOffer.text}}"></i>
+                        </button>
+                    </div>
+                    <div class="oui-tile__item oui-tile__item_button">
+                        <button type="button" 
+                            class="oui-tile__button oui-button oui-button_link oui-button_icon-right oui-button_full-width"
+                            data-ng-disabled="!$ctrl.actions.remove.isAvailable()"
+                            data-ng-click="$ctrl.actions.remove.callback()">
+                            <span data-ng-bind="::$ctrl.actions.remove.text"></span>
+                            <i class="oui-icon oui-icon-chevron-right" aria-label="{{::$ctrl.actions.remove.text}}"></i>
+                        </button>
+                    </div>
                 </oui-tile>
             </div>
             <div class="col-xm-12 col-md-4">
