@@ -14,6 +14,7 @@
                 <oui-tile data-heading="{{::section.title | translate}}">
                     <div class="oui-tile__item oui-tile__item_button" data-ng-repeat="link in section.list track by $index">
                         <a class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                           title="{{ (link.isExternal) ? link.text + ' (' + ('common_new_window' | translate) + ')' : link.text }}"
                            data-at-internet-click="{ name: link.atInternetClickTag }"
                            data-ng-href="{{ link.href }}"
                            data-ng-attr-target="{{(link.isExternal) ? '_blank' : undefined}}"
