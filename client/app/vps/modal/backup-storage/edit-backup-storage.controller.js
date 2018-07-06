@@ -1,6 +1,5 @@
 class EditBackupStorageCtrl {
-    constructor ($q, $translate, $uibModalInstance, ControllerHelper, row, CloudMessage, serviceName, VpsService) {
-        this.$q = $q;
+    constructor ($translate, $uibModalInstance, ControllerHelper, row, CloudMessage, serviceName, VpsService) {
         this.$translate = $translate;
         this.$uibModalInstance = $uibModalInstance;
         this.ControllerHelper = ControllerHelper;

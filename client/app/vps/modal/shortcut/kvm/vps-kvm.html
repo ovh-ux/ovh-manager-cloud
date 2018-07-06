@@ -4,18 +4,18 @@
     data-loading="$ctrl.kvmUrlLoader.loading || $ctrl.kvmLoader.loading">
 
     <kvm data-ng-if="$ctrl.noVNC"
-            data-kvm-data="$ctrl.kvm">
+        data-kvm-data="$ctrl.kvm">
     </kvm>
     <div class="text-center">
         <iframe id="consoleIframe" width="550" height="440" seamless
-                autofocus="2000"
-                data-ng-if="$ctrl.consoleUrl"
-                data-ng-src="{{$ctrl.consoleUrl}}">
+            autofocus="2000"
+            data-ng-if="$ctrl.consoleUrl"
+            data-ng-src="{{$ctrl.consoleUrl}}">
         </iframe>
     </div>
     <p class="oui-modal__text"
-        data-ng-if="!$ctrl.noVNC && $ctrl.consoleUrl" 
-        data-translate="vps_configuration_kvm_cloud_mapping_keyboard_warning"></p> 
+        data-ng-if="!$ctrl.noVNC && $ctrl.consoleUrl"
+        data-translate="vps_configuration_kvm_cloud_mapping_keyboard_warning"></p>
     <div class="vps-kvm-link" data-ng-if="$ctrl.consoleUrl">
         <a class="oui-button oui-button_link oui-button_icon-right"
             data-ng-href="{{$ctrl.consoleUrl}}" target="_blank" rel="noopener">
@@ -24,3 +24,4 @@
         </a> 
     </div>
 </oui-modal>
+
