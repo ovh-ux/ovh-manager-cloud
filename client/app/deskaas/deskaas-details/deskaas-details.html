@@ -70,22 +70,22 @@
                     data-heading="{{::'common_tile_subscription' | translate}}"
                     data-loading="$ctrl.flags.init.serviceInfos || $ctrl.flags.init.details"
                     class="h-100 oui-tile-h-100">
-                    <oui-tile-definition ng-if="$ctrl.flags.init.serviceInfos || $ctrl.flags.init.details">
+                    <oui-tile-definition data-ng-if="$ctrl.flags.init.serviceInfos || $ctrl.flags.init.details">
                         <oui-tile-description>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <div ng-if="!($ctrl.flags.init.serviceInfos || $ctrl.flags.init.details)">
+                    <div data-ng-if="!($ctrl.flags.init.serviceInfos || $ctrl.flags.init.details)">
                         <oui-tile-definition
                             data-ng-if="$ctrl.services.offer" 
-                            data-term="{{::'common_tile_subscription_offer' | translate}}">
-                            <oui-tile-description>{{$ctrl.services.offer}}</oui-tile-description>
+                            data-term="{{::'common_tile_subscription_offer' | translate}}"
+                            data-description="{{$ctrl.services.offer}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.changeOffer.isAvailable()">
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.changeOffer.text}}"
                                     data-aria-label="{{::$ctrl.actions.changeOffer.text}}"
@@ -94,13 +94,13 @@
                             </oui-action-menu>
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{($ctrl.services.renew.forced || $ctrl.services.renew.automatic) ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate}}">
-                            <oui-tile-description>{{$ctrl.services.expiration | momentFormat:'LL'}}</oui-tile-description>
+                            data-term="{{($ctrl.services.renew.forced || $ctrl.services.renew.automatic) ? 'common_tile_subscription_autorenew' : 'common_tile_subscription_expiration_date' | translate}}"
+                            data-description="{{$ctrl.services.expiration | momentFormat:'LL'}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.manageAutorenew.isAvailable()">
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.manageAutorenew.text}}"
                                     data-aria-label="{{::$ctrl.actions.manageAutorenew.text}}"
                                     data-href="{{$ctrl.actions.manageAutorenew.href}}"
-                                    external>
+                                    data-external>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </oui-tile-definition>
@@ -126,13 +126,13 @@
                                 <oui-action-menu-item data-text="{{::$ctrl.actions.manageContact.text}}"
                                     data-aria-label="{{::$ctrl.actions.manageContact.text}}"
                                     data-href="{{::$ctrl.actions.manageContact.href}}"
-                                    external>
+                                    data-external>
                                 </oui-action-menu-item>
                             </oui-action-menu>
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'common_tile_subscription_creation_date' | translate}}">
-                            <oui-tile-description>{{$ctrl.services.creation | momentFormat:'LL'}}</oui-tile-description>
+                            data-term="{{::'common_tile_subscription_creation_date' | translate}}"
+                            data-description="{{$ctrl.services.creation | momentFormat:'LL'}}">
                         </oui-tile-definition>
                     </div>
                 </oui-tile>
@@ -142,29 +142,29 @@
                     data-heading="{{::'common_tile_infos' | translate}}"
                     data-loading="$ctrl.flags.initializing()"
                     class="h-100 oui-tile-h-100">
-                    <oui-tile-definition ng-if="$ctrl.flags.initializing()">
+                    <oui-tile-definition data-ng-if="$ctrl.flags.initializing()">
                         <oui-tile-description>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <div ng-if="!($ctrl.flags.initializing())">
+                    <div data-ng-if="!($ctrl.flags.initializing())">
                         <oui-tile-definition
-                            data-term="{{::'common_tile_information_status' | translate}}">
-                            <oui-tile-description>{{$ctrl.services.status}}</oui-tile-description>
+                            data-term="{{::'common_tile_information_status' | translate}}"
+                            data-description="{{$ctrl.services.status}}">
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_username' | translate}}">
-                            <oui-tile-description>{{$ctrl.user.name}}</oui-tile-description>
+                            data-term="{{::'vdi_label_username' | translate}}"
+                            data-description="{{$ctrl.user.name}}">
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_email' | translate}}">
-                            <oui-tile-description>{{$ctrl.user.email}}</oui-tile-description>
+                            data-term="{{::'vdi_label_email' | translate}}"
+                            data-description="{{$ctrl.user.email}}">
                         </oui-tile-definition>
                         <oui-tile-definition
                             data-term="{{::'vdi_label_ip' | translate}}">
@@ -188,21 +188,21 @@
                     data-heading="{{::'common_tile_configuration' | translate}}"
                     data-loading="$ctrl.flags.initializing()"
                     class="h-100 oui-tile-h-100">
-                    <oui-tile-definition ng-if="$ctrl.flags.initializing()">
+                    <oui-tile-definition data-ng-if="$ctrl.flags.initializing()">
                         <oui-tile-description>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
-                            <oui-skeleton randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
+                            <oui-skeleton data-randomized></oui-skeleton>
                         </oui-tile-description>
                     </oui-tile-definition>
-                    <div ng-if="!($ctrl.flags.initializing())">
+                    <div data-ng-if="!($ctrl.flags.initializing())">
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_alias' | translate}}">
-                            <oui-tile-description data-ng-bind="$ctrl.details.displayName"></oui-tile-description>
+                            data-term="{{::'vdi_label_alias' | translate}}"
+                            data-description="{{$ctrl.details.displayName}}">
                             <oui-action-menu data-compact align="end" data-ng-if="$ctrl.actions.changeAlias.isAvailable()">
                                 <oui-action-menu-item data-text="{{$ctrl.actions.changeAlias.text}}"
                                     data-aria-label="{{::$ctrl.actions.changeAlias.text}}"
@@ -211,22 +211,20 @@
                             </oui-action-menu>
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_os' | translate}}">
-                            <oui-tile-description>{{$ctrl.details.os}}</oui-tile-description>
+                            data-term="{{::'vdi_label_os' | translate}}"
+                            data-description="{{$ctrl.details.os}}">
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_vcpu' | translate}}">
-                            <oui-tile-description>{{$ctrl.details.vcpu}}</oui-tile-description>
+                            data-term="{{::'vdi_label_vcpu' | translate}}"
+                            data-description="{{$ctrl.details.vcpu}}">
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_ram' | translate}}">
-                            <oui-tile-description>
-                                <oui-tile-description>{{$ctrl.details.ram.value + ' ' + $ctrl.details.ram.unit}}</oui-tile-description>
-                            </oui-tile-description>
+                            data-term="{{::'vdi_label_ram' | translate}}"
+                            data-description="{{$ctrl.details.ram.value + ' ' + $ctrl.details.ram.unit}}">
                         </oui-tile-definition>
                         <oui-tile-definition
-                            data-term="{{::'vdi_label_data' | translate}}">
-                            <oui-tile-description>{{$ctrl.details.dataDisk.value + ' ' + $ctrl.details.dataDisk.unit}}</oui-tile-description>
+                            data-term="{{::'vdi_label_data' | translate}}"
+                            data-description="{{$ctrl.details.dataDisk.value + ' ' + $ctrl.details.dataDisk.unit}}">
                         </oui-tile-definition>
                     </div>
                 </oui-tile>
@@ -236,10 +234,10 @@
                     data-heading="{{::'vdi_task_current' | translate}}"
                     class="h-100 oui-tile-h-100">
                     <oui-datagrid data-rows="$ctrl.tasksHandler.cleanTasks">
-                        <oui-column data-title="'vdi_task_id' | translate" data-property="taskId" data-sortable="asc"></oui-column>
-                        <oui-column data-title="'vdi_task_name' | translate" data-property="displayName" data-sortable></oui-column>
-                        <oui-column data-title="'vdi_task_state' | translate" data-property="displayState" data-sortable></oui-column>
-                        <oui-column data-title="'vdi_task_modification_date' | translate" data-property="lastModificationDate" data-sortable>
+                        <oui-column data-title="::'vdi_task_id' | translate" data-property="taskId" data-sortable="asc"></oui-column>
+                        <oui-column data-title="::'vdi_task_name' | translate" data-property="displayName" data-sortable></oui-column>
+                        <oui-column data-title="::'vdi_task_state' | translate" data-property="displayState" data-sortable></oui-column>
+                        <oui-column data-title="::'vdi_task_modification_date' | translate" data-property="lastModificationDate" data-sortable>
                             {{ $row.lastModificationDate | momentFormat:'LLL' }}
                         </oui-column>
                         <oui-column data-title="'common_progress' | translate" data-property="progress" data-sortable class="oui-table__cell_component">
