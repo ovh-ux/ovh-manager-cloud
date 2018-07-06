@@ -18,7 +18,7 @@ class VpsPasswordCtrl {
         this.tasks = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getTaskInError(this.serviceName)
                 .then(tasks => {
-                    if (tasks.length) {
+                    if (_(tasks).isArray() && !_(tasks).isEmpty()) {
                         this.CloudMessage.error(this.$translate.instant("vps_configuration_polling_fail"));
                     }
                 })

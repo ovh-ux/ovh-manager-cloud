@@ -23,7 +23,7 @@ class VpsRebootCtrl {
     }
 
     loadVpsRescueMode (tasks) {
-        if (!tasks || !tasks.length) {
+        if (!_(tasks).isArray() || (_(tasks).isArray() && _(tasks).isEmpty())) {
             this.VpsService.getSelectedVps(this.serviceName)
                 .then(data => { this.model = data; })
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_reboot_fail")))

@@ -20,7 +20,7 @@ class AddSecondaryDnsCtrl {
                 .then(data => { this.available = data; })
                 .catch(() => this.CloudMessage.error(this.$translate.instant("vps_configuration_secondarydns_add_fail")))
         });
-        this.availableDns.load();
+        return this.availableDns.load();
     }
 
     cancel () {
@@ -35,7 +35,7 @@ class AddSecondaryDnsCtrl {
                 .catch(err => this.CloudMessage.error(err.message))
                 .finally(() => this.$uibModalInstance.close())
         });
-        this.addDns.load();
+        return this.addDns.load();
     }
 }
 
