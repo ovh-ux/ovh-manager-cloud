@@ -1,5 +1,5 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, SidebarMenu, VpsActionService, VpsService) {
+    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, RegionService, SidebarMenu, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$q = $q;
         this.$scope = $scope;
@@ -8,6 +8,7 @@ class VpsDashboardCtrl {
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.RegionService = RegionService;
         this.serviceName = $stateParams.serviceName;
         this.SidebarMenu = SidebarMenu;
         this.VpsActionService = VpsActionService;
@@ -28,6 +29,7 @@ class VpsDashboardCtrl {
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
             successHandler: () => {
+                this.getRegionsGroup(this.vps.data.location.datacentre);
                 if (!this.vps.data.isExpired) {
                     this.loadIps();
                     this.hasAdditionalDiskOption();
@@ -102,14 +104,12 @@ class VpsDashboardCtrl {
         this.backupStorageActions = {
             manage: {
                 text: this.$translate.instant("common_manage"),
-                state: "iaas.vps.detail.backup-storage",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.backup-storage", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.backup-storage.order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.backup-storage.order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             terminate: {
@@ -132,8 +132,7 @@ class VpsDashboardCtrl {
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.snapshot-order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.snapshot-order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionAvailable
             },
             restore: {
@@ -158,14 +157,12 @@ class VpsDashboardCtrl {
         this.veeamActions = {
             manage: {
                 text: this.$translate.instant("common_manage"),
-                state: "iaas.vps.detail.veeam",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.veeam", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.veeam.order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.veeam.order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             terminate: {
@@ -260,8 +257,7 @@ class VpsDashboardCtrl {
             },
             orderWindows: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.windows-order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.windows-order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.summary.loading && !this.summary.windowsActivated
             },
             reboot: {
@@ -296,14 +292,26 @@ class VpsDashboardCtrl {
             },
             upgrade: {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
-                state: "iaas.vps.detail.upgrade",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.upgrade", { serviceName: this.serviceName }),
                 isAvailable: () => !this.loaders.polling && !this.vps.loading
             }
         };
         this.ControllerHelper.navigation.getConstant("changeOwner").then(url => { this.actions.changeOwner.href = url; });
     }
 
+    getRegionsGroup (regions) {
+        this.regionsGroup = [];
+        if (regions) {
+            this.detailedRegions = !_.isArray(regions) ?
+                [this.RegionService.getRegion(regions)] :
+                _.map(regions, region => this.RegionService.getRegion(region));
+        }
+        this.regionsGroup = _.groupBy(this.detailedRegions, "country");
+    }
+
+    hasMultipleRegions () {
+        return _(this.detailedRegions).isArray() && this.detailedRegions.length > 1;
+    }
 }
 
 angular.module("managerApp").controller("VpsDashboardCtrl", VpsDashboardCtrl);
