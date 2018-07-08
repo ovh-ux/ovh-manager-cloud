@@ -32,13 +32,11 @@
                         <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="oui-tile__item oui-tile__item_button">
-                    <a class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
-                        data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.getActionStateParamString() }}"
-                        rel="noopener">
-                        <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
-                    </a>
-                </div>
+                <oui-tile-button
+                    data-text="{{ ::$ctrl.actions.upgrade.text }}"
+                    data-on-click="$ctrl.actions.upgrade.callback()"
+                    data-ng-if="$ctrl.actions.upgrade.isAvailable()">
+                </oui-tile-button>
             </oui-tile>
         </div>
 
