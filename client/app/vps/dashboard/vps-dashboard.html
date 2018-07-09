@@ -32,11 +32,13 @@
                         <i class="oui-icon oui-icon-external_link" aria-hidden="true"></i>
                     </a>
                 </div>
-                <oui-tile-button
-                    data-text="{{ ::$ctrl.actions.upgrade.text }}"
-                    data-on-click="$ctrl.actions.upgrade.callback()"
-                    data-ng-if="$ctrl.actions.upgrade.isAvailable()">
-                </oui-tile-button>
+                <div class="oui-tile__item oui-tile__item_button">
+                    <a class="oui-tile__button oui-button oui-link_icon oui-button_link oui-button_full-width"
+                        data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
+                        rel="noopener">
+                        <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
+                    </a>
+                </div>
             </oui-tile>
         </div>
 
@@ -413,11 +415,13 @@
                             data-compact
                             data-align="end"
                             data-ng-if="$ctrl.actions.upgrade.isAvailable()">
-                            <oui-action-menu-item data-text="{{ ::$ctrl.actions.upgrade.text }}"
-                                data-aria-label="{{ ::$ctrl.actions.upgrade.text }}"
-                                data-on-click="$ctrl.actions.upgrade.callback()"
-                                data-external>
-                            </oui-action-menu-item>
+                            <div class="oui-dropdown-menu__item">
+                                <a class="oui-dropdown-option"
+                                    data-ui-sref="{{ $ctrl.actions.upgrade.state + $ctrl.getActionStateParamString($ctrl.actions.upgrade.stateParams) }}"
+                                    rel="noopener">
+                                    <span data-ng-bind="::$ctrl.actions.upgrade.text"></span>
+                                </a>
+                            </div>
                         </oui-action-menu>
                     </oui-tile-definition>
                     <oui-tile-definition

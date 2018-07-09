@@ -292,7 +292,8 @@ class VpsDashboardCtrl {
             },
             upgrade: {
                 text: this.$translate.instant("vps_configuration_upgradevps_title_button"),
-                callback: () => this.$state.go("iaas.vps.detail.upgrade", { serviceName: this.serviceName }),
+                state: "iaas.vps.detail.upgrade",
+                stateParams: { serviceName: this.serviceName },
                 isAvailable: () => !this.loaders.polling && !this.vps.loading
             }
         };
@@ -311,6 +312,11 @@ class VpsDashboardCtrl {
 
     hasMultipleRegions () {
         return _(this.detailedRegions).isArray() && this.detailedRegions.length > 1;
+    }
+
+    getActionStateParamString (params) {
+        if (!params) { return ""; }
+        return `(${JSON.stringify(params)})`;
     }
 }
 
