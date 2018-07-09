@@ -85,22 +85,12 @@ class IpLoadBalancerConfigurationCtrl {
 
     actionTemplate () {
         return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_configuration_action_apply' | translate"
-                                data-ng-click="ctrl.applyChanges($row.id)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>`;
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item
+                    data-text="{{'iplb_configuration_action_apply' | translate}}"
+                    data-on-click="ctrl.applyChanges($row.id)">
+                </oui-action-menu-item>
+            </oui-action-menu>`;
     }
 }
 

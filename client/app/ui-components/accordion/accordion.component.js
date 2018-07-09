@@ -10,7 +10,7 @@ angular.module("managerApp")
         template: `
             <div class="cui-accordion cui-accordion-list__item"
                 data-ng-class="{ 'cui-accordion_open': $ctrl.expanded }">
-                <div class="cui-accordion__header cui-dropdown-menu-container">
+                <div class="cui-accordion__header">
                     <div class="cui-accordion__header-text">
                         <h5 role="button" tabindex="0"
                             class="oui-header_5 cui-accordion__header-title"
