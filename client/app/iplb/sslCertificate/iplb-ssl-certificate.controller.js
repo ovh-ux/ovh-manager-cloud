@@ -48,38 +48,21 @@ class IpLoadBalancerSslCertificateCtrl {
 
     actionTemplate () {
         return `
-            <cui-dropdown-menu>
-                <cui-dropdown-menu-button>
-                    <ng-include src="'app/ui-components/icons/button-action.html'"></ng-include>
-                </cui-dropdown-menu-button>
-                <cui-dropdown-menu-body>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_ssl_see' | translate"
-                                data-ng-click="ctrl.preview($row)"></button>
-                        </div>
-                    </div>
-                    <div class="oui-action-menu">
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_ssl_update' | translate"
-                                data-ng-click="ctrl.update($row)"></button>
-                        </div>
-                        <div class="oui-action-menu__item oui-action-menu-item">
-                            <div class="oui-action-menu-item__icon"></div>
-                            <button class="oui-button oui-button_link oui-action-menu-item__label"
-                                type="button"
-                                data-ng-bind="'iplb_ssl_delete' | translate"
-                                data-ng-click="ctrl.delete($row)"></button>
-                        </div>
-                    </div>
-                </cui-dropdown-menu-body>
-            </cui-dropdown-menu>`;
+            <oui-action-menu data-align="end" data-compact>
+                <oui-action-menu-item
+                    data-text="{{'iplb_ssl_see' | translate}}"
+                    data-on-click="ctrl.preview($row)">
+                </oui-action-menu-item>
+                <oui-action-menu-divider></oui-action-menu-divider>
+                <oui-action-menu-item
+                    data-text="{{'iplb_ssl_update' | translate}}"
+                    data-on-click="ctrl.update($row)">
+                </oui-action-menu-item>
+                <oui-action-menu-item
+                    data-text="{{'iplb_ssl_delete' | translate}}"
+                    data-on-click="ctrl.delete($row)">
+                </oui-action-menu-item>
+            </oui-action-menu>`;
     }
 }
 

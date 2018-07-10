@@ -135,44 +135,40 @@ angular.module("managerApp")
         scope: true,
         template: `
             <div>
-                <oui-dropdown class="cui-tile__item-button"
+                <oui-dropdown class="oui-dropdown_action-menu cui-tile__item-button"
                     data-align="end"
-                    arrow
+                    data-arrow
                     data-ng-if="$ctrl.hasAvailableAction()">
                     <button
-                        oui-dropdown-trigger
-                        class="oui-action-menu-button">
+                        class="oui-action-button"
+                        data-oui-dropdown-trigger>
                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="-1 -1 74 74">
-                            <circle class="oui-action-menu-button__foreground" cx="22.27" cy="36" r="4"></circle>
-                            <circle class="oui-action-menu-button__foreground" cx="36.20" cy="36" r="4"></circle>
-                            <circle class="oui-action-menu-button__foreground" cx="50.13" cy="36" r="4"></circle>
+                            <circle cx="22.27" cy="36" r="4"></circle>
+                            <circle cx="36.20" cy="36" r="4"></circle>
+                            <circle cx="50.13" cy="36" r="4"></circle>
                         </svg>
                     </button>
                     <oui-dropdown-content>
-                        <div role="menu" class="oui-action-menu">
-                            <div role="menuitem"
-                                class="oui-action-menu__item"
-                                data-ng-repeat="action in $ctrl.actions track by $index">
-                                <a class="oui-button oui-button_action-menu"
-                                    data-ng-if="action.href"
-                                    href="{{ action.href }}"
-                                    data-ng-disabled="action.isAvailable && !action.isAvailable()"
-                                    target="_blank">
-                                    <span data-ng-bind="action.text"></span>
-                                </a>
-                                <a class="oui-button oui-button_action-menu"
-                                    data-ng-if="action.state"
-                                    data-ui-sref="{{ action.state + '(' + $ctrl.getActionStateParamString(action) + ')' }}"
-                                    data-ng-disabled="action.isAvailable && !action.isAvailable()">
-                                    <span data-ng-bind="action.text"></span>
-                                </a>
-                                <button class="oui-button oui-button_action-menu"
-                                    data-ng-if="action.callback"
-                                    type="button"
-                                    data-ng-disabled="action.isAvailable && !action.isAvailable()"
-                                    data-ng-bind="action.text"
-                                    data-ng-click="action.callback()"></button>
-                            </div>
+                        <div data-ng-repeat="action in $ctrl.actions track by $index">
+                            <oui-dropdown-item
+                                data-ng-if="action.href"
+                                href="{{ ::action.href }}"
+                                disabled="action.isAvailable && !action.isAvailable()"
+                                target="_blank"
+                                data-text="{{ ::action.text }}">
+                            </oui-dropdown-item>
+                            <oui-dropdown-item
+                                data-ng-if="action.state"
+                                data-state="{{action.state}}"
+                                disabled="action.isAvailable && !action.isAvailable()"
+                                data-text="{{ ::action.text }}">
+                            </oui-dropdown-item>
+                            <oui-dropdown-item
+                                data-ng-if="action.callback"
+                                disabled="action.isAvailable && !action.isAvailable()"
+                                data-text="{{ ::action.text }}"
+                                data-on-click="action.callback()">
+                            </oui-dropdown-item>
                         </div>
                     </oui-dropdown-content>
                 </oui-dropdown>

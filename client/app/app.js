@@ -79,7 +79,7 @@ angular.module("managerApp", [
             table: "oui-table oui-table_responsive",
             thead: "oui-table__headers",
             tbody: "oui-table__body",
-            tr: "oui-table__row cui-dropdown-menu-container",
+            tr: "oui-table__row",
             th: "oui-table__header",
             td: "oui-table__cell",
             sortable: "oui-table__cell_sortable oui-table__cell_sortable-asc",

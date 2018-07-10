@@ -3,7 +3,7 @@ class IpLoadBalancerHomeCtrl {
                  IpLoadBalancerActionService, IpLoadBalancerConstant,
                  IpLoadBalancerHomeService, IpLoadBalancerHomeStatusService, IpLoadBalancerMetricsService,
                  IpLoadBalancerZoneAddService, IpLoadBalancerZoneDeleteService,
-                 IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, VrackService) {
+                 IpLoadBalancerVrackHelper, IpLoadBalancerVrackService, REDIRECT_URLS, RegionService, VrackService) {
         this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
@@ -20,6 +20,7 @@ class IpLoadBalancerHomeCtrl {
         this.IpLoadBalancerVrackHelper = IpLoadBalancerVrackHelper;
         this.IpLoadBalancerVrackService = IpLoadBalancerVrackService;
         this.REDIRECT_URLS = REDIRECT_URLS;
+        this.RegionService = RegionService;
         this.VrackService = VrackService;
 
         this.serviceName = this.$stateParams.serviceName;
@@ -43,23 +44,23 @@ class IpLoadBalancerHomeCtrl {
         this.initActions();
         this.initGraph();
 
-        this.serviceActions = [{
+        this.serviceActions = {
             text: this.$translate.instant("iplb_status_apply"),
             callback: () => this.$state.go("network.iplb.detail.configuration"),
             isAvailable: () => true
-        }];
+        };
 
-        this.frontendsActions = [{
+        this.frontendsActions = {
             text: this.$translate.instant("iplb_status_details"),
             callback: () => this.$state.go("network.iplb.detail.frontends"),
             isAvailable: () => true
-        }];
+        };
 
-        this.farmsActions = [{
+        this.farmsActions = {
             text: this.$translate.instant("iplb_status_details"),
             callback: () => this.$state.go("network.iplb.detail.server-farm"),
             isAvailable: () => true
-        }];
+        };
     }
 
     initLoaders () {
@@ -68,7 +69,8 @@ class IpLoadBalancerHomeCtrl {
         });
 
         this.configuration = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.IpLoadBalancerHomeService.getConfiguration(this.serviceName)
+            loaderFunction: () => this.IpLoadBalancerHomeService.getConfiguration(this.serviceName),
+            successHandler: () => this.getRegionsGroup(this.configuration.data.zone)
         });
 
         this.vrackCreationRules = this.ControllerHelper.request.getHashLoader({
@@ -99,14 +101,10 @@ class IpLoadBalancerHomeCtrl {
     initActions () {
         this.actions = {
             showFailoverIp: {
-                text: this.$translate.instant("common_consult"),
-                callback: () => this.IpLoadBalancerActionService.showFailoverIpDetail(this.serviceName),
-                isAvailable: () => !this.information.loading && !this.information.hasErrors && this.information.data.failoverIp.length
+                callback: () => this.IpLoadBalancerActionService.showFailoverIpDetail(this.serviceName)
             },
             showNatIp: {
-                text: this.$translate.instant("common_consult"),
-                callback: () => this.IpLoadBalancerActionService.showNatIpDetail(this.serviceName),
-                isAvailable: () => !this.information.loading && !this.information.hasErrors && this.information.data.natIp.length
+                callback: () => this.IpLoadBalancerActionService.showNatIpDetail(this.serviceName)
             },
             changeName: {
                 text: this.$translate.instant("common_edit"),
@@ -136,8 +134,8 @@ class IpLoadBalancerHomeCtrl {
                 isAvailable: () => !this.vrackCreationRules.loading && !this.vrackCreationRules.hasErrors && this.vrackCreationRules.data.status === "active"
             },
             changeOffer: {
+                // TODO: Implementation of modal for changing offer
                 text: this.$translate.instant("common_edit"),
-                callback: () => this.IpLoadBalancerActionService.offerChange(this.serviceName),
                 isAvailable: () => false
             },
             manageAutorenew: {
@@ -236,6 +234,21 @@ class IpLoadBalancerHomeCtrl {
 
     getGraphTitle (metric) {
         return this.$translate.instant(`iplb_graph_name_${metric}`);
+    }
+
+    getRegionsGroup (regions) {
+        this.regionsGroup = [];
+        if (regions) {
+            this.detailedRegions = !_.isArray(regions) ?
+                [this.RegionService.getRegion(regions)] :
+                _.map(regions, region => this.RegionService.getRegion(region));
+        }
+
+        this.regionsGroup = _.groupBy(this.detailedRegions, "country");
+    }
+
+    hasMultipleRegions () {
+        return _(this.detailedRegions).isArray() && this.detailedRegions.length > 1;
     }
 }
 

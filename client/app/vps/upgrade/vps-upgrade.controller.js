@@ -69,25 +69,32 @@ class VpsUpgradeCtrl {
         this.conditionsAgree = false;
         this.loaders.step2 = true;
         this.order = null;
-        const modelToUpgradeTo = $.grep(this.upgradesList, e => { return e.model === this.selectedModel.model; });
-        if (modelToUpgradeTo.length) {
-            this.selectedModelForUpgrade = modelToUpgradeTo[0];
-            return this.Vps.upgrade(this.serviceName, this.selectedModelForUpgrade.model, this.selectedModelForUpgrade.duration.duration).then(data => {
-                this.conditionsAgree = false;
-                this.selectedModelForUpgrade.duration.dateFormatted = this.$filter("date")(this.selectedModelForUpgrade.duration.date, "dd/MM/yyyy");
-                this.order = data;
-                return data;
-            }).catch(err => {
-                this.$q.reject(err);
-                if (err.message) {
-                    this.CloudMessage.error(err.message);
-                } else {
-                    this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
-                }
-            }).finally(() => {
-                this.loaders.step2 = false;
-            });
+        const modelToUpgradeTo = _.find(this.upgradesList, (e) => {
+            return e.model === _.first(this.selectedModel.model.split(":")) && e.name === this.selectedModel.model.split(":")[1];
+        });
+
+        if (_.isEmpty(modelToUpgradeTo)) {
+            return this.$q.when(true);
         }
+
+        this.selectedModelForUpgrade = modelToUpgradeTo;
+
+        return this.Vps.upgrade(this.serviceName, this.selectedModelForUpgrade.model, this.selectedModelForUpgrade.duration.duration).then(data => {
+            this.conditionsAgree = false;
+            this.selectedModelForUpgrade.duration.dateFormatted = this.$filter("date")(this.selectedModelForUpgrade.duration.date, "dd/MM/yyyy");
+            this.order = data;
+            return data;
+        }).catch(err => {
+            this.$q.reject(err);
+            if (err.message) {
+                this.CloudMessage.error(err.message);
+            } else {
+                this.CloudMessage.error(this.$translate.instant("vps_configuration_upgradevps_fail"));
+            }
+        }).finally(() => {
+            this.loaders.step2 = false;
+        });
+
     }
 
     cancel () {
