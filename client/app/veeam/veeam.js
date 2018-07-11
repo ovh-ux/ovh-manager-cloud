@@ -28,7 +28,7 @@ angular.module("managerApp").config($stateProvider => {
                 veeamContent: {
                     templateUrl: "app/veeam/dashboard/veeam-dashboard.html",
                     controller: "VeeamDashboardCtrl",
-                    controllerAs: "VeeamDashboardCtrl"
+                    controllerAs: "$ctrl"
                 }
             },
             translations: ["common", "veeam", "veeam/dashboard", "veeam/storage/add", "veeam/dashboard/update-offer"]

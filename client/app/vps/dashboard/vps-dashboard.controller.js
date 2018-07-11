@@ -25,7 +25,7 @@ class VpsDashboardCtrl {
     }
 
     initLoaders () {
-        const zonesToDisplayUpgradeMessageTo = ["os-gra1-005", "os-gra1-006", "os-gra1-007", "os-gra1-008", "os-gra1-009", "os-gra1-010", "os-gra1-011"];
+        const zonesToDisplayUpgradeMessageTo = ["os-sbg1-006", "os-sbg1-010", "os-sbg1-011", "os-sbg1-012", "os-sbg1-013"];
 
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
@@ -43,7 +43,7 @@ class VpsDashboardCtrl {
             successHandler: () => this.initOptionsActions()
         });
         this.plan = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.VpsService.getServiceInfos(this.serviceName),
+            loaderFunction: () => this.VpsService.getServiceInfos(this.serviceName)
         });
     }
 
@@ -88,7 +88,7 @@ class VpsDashboardCtrl {
         this.hasAdditionalDisk = true;
         this.VpsService.getDisks(this.serviceName)
             .then(data => {
-                const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(this.serviceName, elem) });
+                const promises = _.map(data, elem => this.VpsService.getDiskInfo(this.serviceName, elem));
                 return this.$q.all(promises)
                     .then(data => {
                         this.additionnalDisks = this.VpsService.showOnlyAdditionalDisk(data);
@@ -99,7 +99,7 @@ class VpsDashboardCtrl {
                 this.CloudMessage.error(error || this.$translate.instant("vps_additional_disk_info_fail"));
                 return this.$q.reject(error);
             })
-            .finally(() => { this.loaders.disk = false });
+            .finally(() => { this.loaders.disk = false; });
     }
 
     initBackupStorageActions () {
@@ -126,10 +126,10 @@ class VpsDashboardCtrl {
 
     initSnapshotActions () {
         this.snapshotDescription = this.summary.data.snapshot.creationDate ?
-            this.$translate.instant("vps_tab_SUMMARY_snapshot_creationdate") + " " + moment(this.summary.data.snapshot.creationDate).format("LLL") :
+            `${this.$translate.instant("vps_tab_SUMMARY_snapshot_creationdate")} ${moment(this.summary.data.snapshot.creationDate).format("LLL")}` :
             this.$translate.instant("vps_status_enabled");
         this.snapshotActions = {
-            delete: {
+            "delete": {
                 text: this.$translate.instant("vps_configuration_delete_snapshot_title_button"),
                 callback: () => this.VpsActionService.deleteSnapshot(this.serviceName),
                 isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate && !this.loaders.polling

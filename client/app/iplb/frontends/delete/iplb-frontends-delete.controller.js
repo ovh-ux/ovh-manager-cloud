@@ -1,7 +1,8 @@
 class IpLoadBalancerFrontendDeleteCtrl {
-    constructor ($stateParams, $uibModalInstance, frontend, IpLoadBalancerFrontendsService) {
+    constructor ($stateParams, $uibModalInstance, ControllerHelper, frontend, IpLoadBalancerFrontendsService) {
         this.$stateParams = $stateParams;
         this.$uibModalInstance = $uibModalInstance;
+        this.ControllerHelper = ControllerHelper;
         this.IpLoadBalancerFrontendsService = IpLoadBalancerFrontendsService;
 
         this.frontend = frontend;
@@ -11,13 +12,12 @@ class IpLoadBalancerFrontendDeleteCtrl {
     }
 
     confirm () {
-        this.saving = true;
-        return this.IpLoadBalancerFrontendsService.deleteFrontend(this.type, this.$stateParams.serviceName, this.frontendId)
-            .then(response => this.$uibModalInstance.close(response))
-            .catch(response => this.$uibModalInstance.dismiss(response))
-            .finally(() => {
-                this.saving = false;
-            });
+        this.delete = this.ControllerHelper.request.getHashLoader({
+            loaderFunction: () => this.IpLoadBalancerFrontendsService.deleteFrontend(this.type, this.$stateParams.serviceName, this.frontendId)
+                .then(response => this.$uibModalInstance.close(response))
+                .catch(error => this.$uibModalInstance.dismiss(error))
+        });
+        return this.delete.load();
     }
 
     cancel () {

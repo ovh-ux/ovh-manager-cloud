@@ -1,3 +1,23 @@
+<a name="7.4.7"></a>
+## [7.4.7](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.6...v7.4.7) (2018-07-10)
+
+
+
+<a name="7.4.6"></a>
+## [7.4.6](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.5...v7.4.6) (2018-07-10)
+
+
+### Bug Fixes
+
+* **vps:** added banner about VPS upgrade until wednesday ([6d95a44](https://github.com/ovh-ux/ovh-manager-cloud/commit/6d95a44))
+
+
+
+<a name="7.4.5"></a>
+## [7.4.5](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.4...v7.4.5) (2018-07-05)
+
+
+
 <a name="7.4.4"></a>
 ## [7.4.4](https://github.com/ovh-ux/ovh-manager-cloud/compare/v7.4.3...v7.4.4) (2018-07-04)
 
