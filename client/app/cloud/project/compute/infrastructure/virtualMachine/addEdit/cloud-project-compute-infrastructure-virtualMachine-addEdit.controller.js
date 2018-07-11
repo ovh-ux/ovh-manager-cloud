@@ -75,7 +75,8 @@ angular.module("managerApp")
               OvhApiCloudProjectSshKey, OvhApiCloudProjectFlavor, OvhCloudPriceHelper, OvhApiCloudProjectImage,
               OvhApiCloudProjectRegion, OvhApiCloudProjectSnapshot, OvhApiCloudProjectQuota, OvhApiCloudProjectNetworkPrivate, OvhApiCloudProjectNetworkPrivateSubnet, OvhApiCloudProjectNetworkPublic,
               RegionService, CloudImageService, CLOUD_FLAVORTYPE_CATEGORY, CLOUD_INSTANCE_CPU_FREQUENCY, CLOUD_FLAVOR_SPECIFIC_IMAGE,
-              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl) {
+              OvhApiMe, URLS, REDIRECT_URLS, atInternet, CLOUD_INSTANCE_HAS_GUARANTEED_RESSOURCES, CLOUD_INSTANCE_DEFAULT_FALLBACK, ovhDocUrl,
+              TARGET) {
 
     var self = this;
     var orderBy = $filter("orderBy");
@@ -638,7 +639,12 @@ angular.module("managerApp")
 
     function initURLs() {
         self.urls.vlansApiGuide = ovhDocUrl.getDocUrl("g2162.public_cloud_et_vrack_-_comment_utiliser_le_vrack_et_les_reseaux_prives_avec_les_instances_public_cloud");
-        self.urls.guidesSshkeyURL= ovhDocUrl.getDocUrl("g1769.creating_ssh_keys");
+
+        if (TARGET === "US") {
+            self.urls.guidesSshkeyURL = URLS.guides.ssh.create.US;
+        } else {
+            self.urls.guidesSshkeyURL = ovhDocUrl.getDocUrl("g1769.creating_ssh_keys");
+        }
     }
 
     function getCategoryFromFlavor (flavor, details) {
