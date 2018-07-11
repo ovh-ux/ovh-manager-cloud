@@ -135,7 +135,7 @@ angular.module("managerApp")
             },
             ssh: {
                 create: {
-                    US: "https://ovhcloud.com/g1769.creating_ssh_keys"
+                    US: "https://support.ovhcloud.com/hc/en-us/articles/115001588250"
                 },
                 add: {
                     US: "https://ovhcloud.com/g1924.configuring_additionnal_ssh_key"
