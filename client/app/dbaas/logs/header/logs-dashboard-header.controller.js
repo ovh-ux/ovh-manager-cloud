@@ -15,7 +15,6 @@ class LogsDashboardHeaderCtrl {
     }
 
     $onInit () {
-        this.title = this.serviceName;
         this.menuItem = this.SidebarMenu.getItemById(this.serviceName);
         //  If the menu is not yet loaded, we fetch IPLB's displayName.  Dirty patch.
         if (!this.menuItem) {
@@ -45,9 +44,14 @@ class LogsDashboardHeaderCtrl {
         this.guides.title = this.$translate.instant("logs_guides");
         this.guides.list = [{
             name: this.$translate.instant("logs_guides_title"),
-            url: this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME)
+            url: this.ovhDocUrl.getDocUrl(this.LogsConstants.LOGS_DOCS_NAME),
+            external: true
         }];
-        this.guides.footer = this.$translate.instant("logs_guides_footer");
+        this.guides.footer = {
+            name: this.$translate.instant("logs_guides_footer"),
+            url: "http://docs.ovh.com/",
+            external: true
+        };
     }
 }
 
