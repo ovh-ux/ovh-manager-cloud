@@ -34,7 +34,7 @@ angular.module("managerApp")
         userSSH: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/ssh",
         userAdvanced: "https://ovhcloud.com/manager/dedicated/index.html#/useraccount/advanced",
         contacts: null, // not yet available to US users
-        horizon: "https://horizon.cloud.ovh.net/openstackdashboard?username={username}",
+        horizon: "https://horizon.cloud.ovh.us/openstackdashboard?username={username}",
         ipAction: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/ip?action={action}&ip={ip}&ipBlock={ipBlock}",
         vRack: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/vrack?landingTo=networks",
         nas: "https://ovhcloud.com/manager/dedicated/index.html#/configuration/nas?landingTo=networks",
