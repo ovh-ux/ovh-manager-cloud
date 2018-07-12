@@ -27,17 +27,23 @@
                 </span>
             </dd>
         </dl>
-        <cui-action-button class="iplb-vrack__box-button"
-            data-ng-if="$ctrl.actions.activateVrack.isAvailable()"
-            data-action="$ctrl.actions.activateVrack"
-            data-type="secondary"></cui-action-button>
-        <cui-action-button class="iplb-vrack__box-button"
-            data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()"
-            data-action="$ctrl.actions.deActivateVrack"
-            data-type="secondary"></cui-action-button>
+        <oui-button data-ng-if="$ctrl.actions.activateVrack.isAvailable()"
+            data-text="{{::$ctrl.actions.activateVrack.text}}" 
+            data-on-click="$ctrl.actions.activateVrack.callback()"
+            data-variant="secondary">
+        </oui-button>
+        <oui-button data-ng-if="$ctrl.actions.deActivateVrack.isAvailable()"
+            data-text="{{::$ctrl.actions.deActivateVrack.text}}" 
+            data-on-click="$ctrl.actions.deActivateVrack.callback()"
+            data-variant="secondary">
+        </oui-button>
     </div>
-    <cui-action-button data-action="$ctrl.actions.addPrivateNetwork"
-            data-type="secondary"></cui-action-button>
+    <oui-button
+        data-text="{{::$ctrl.actions.addPrivateNetwork.text}}" 
+        data-on-click="$ctrl.actions.addPrivateNetwork.callback()"
+        data-disabled="$ctrl.actions.addPrivateNetwork.isAvailable && !$ctrl.actions.addPrivateNetwork.isAvailable()"
+        data-variant="secondary">
+    </oui-button>
     <oui-datagrid data-rows="$ctrl.privateNetworks.data">
         <oui-column data-title="'iplb_vrack_list_col_private_network' | translate" data-property="displayName" data-sortable></oui-column>
         <oui-column data-title="'iplb_vrack_list_col_vlan_id' | translate" data-property="vlan" data-sortable></oui-column>

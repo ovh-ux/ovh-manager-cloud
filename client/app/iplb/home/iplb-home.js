@@ -11,7 +11,7 @@ angular.module("managerApp").config($stateProvider => {
                 iplbContent: {
                     templateUrl: "app/iplb/home/iplb-home.html",
                     controller: "IpLoadBalancerHomeCtrl",
-                    controllerAs: "ctrl"
+                    controllerAs: "$ctrl"
                 }
             },
             translations: ["common", "iplb", "iplb/home", "iplb/zone", "iplb/vrack"]
