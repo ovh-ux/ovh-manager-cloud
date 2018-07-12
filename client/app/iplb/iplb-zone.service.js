@@ -1,6 +1,5 @@
 class IpLoadBalancerZoneService {
-    constructor ($q, $translate, OvhApiIpLoadBalancing, RegionService) {
-        this.$q = $q;
+    constructor ($translate, OvhApiIpLoadBalancing, RegionService) {
         this.$translate = $translate;
         this.IpLoadBalancing = OvhApiIpLoadBalancing;
         this.RegionService = RegionService;
@@ -16,29 +15,17 @@ class IpLoadBalancerZoneService {
             })));
     }
 
-    getZones () {
-        return this.IpLoadBalancing.v6().availableZones().$promise
-            .then(zones => zones.filter(zone => !/private$/.test(zone))
-                .filter(zone => !/^all/.test(zone))
-                .map(zone => ({
-                    id: zone,
-                    name: this.RegionService.getRegion(zone).microRegion.text
-                })));
-    }
-
     getZonesSelectData (serviceName) {
-        return this.$q.all({
-            allZones: this.getZones(),
-            iplbZones: this.getIPLBZones(serviceName)
-        }).then(({ allZones, iplbZones }) => {
-            if (iplbZones.length >= allZones.length || true) {
+        return this
+            .getIPLBZones(serviceName)
+            .then((iplbZones) => {
                 iplbZones.push({
                     id: "all",
                     name: this.$translate.instant("iplb_zone_all")
                 });
-            }
-            return iplbZones;
-        });
+
+                return iplbZones;
+            });
     }
 
     humanizeZone (zone) {
