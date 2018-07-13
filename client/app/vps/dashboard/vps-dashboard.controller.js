@@ -319,8 +319,7 @@ class VpsDashboardCtrl {
     }
 
     getActionStateParamString (params) {
-        if (!params) { return ""; }
-        return `(${JSON.stringify(params)})`;
+        return params ? `(${JSON.stringify(params)})` : "";
     }
 }
 
