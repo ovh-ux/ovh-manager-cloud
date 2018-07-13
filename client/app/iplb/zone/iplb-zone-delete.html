@@ -1,5 +1,5 @@
 <section class="cui-page__content">
-    <oui-back-button data-title="{{ :: 'iplb_zone_delete_title' | translate }}"></oui-back-button>
+    <oui-back-button data-heading="{{ ::'iplb_zone_delete_title' | translate }}"></oui-back-button>
     <p data-ng-if="$ctrl.getDeletableZoneCount() === 1"
         data-translate="iplb_zone_delete_intro_text_single"
         data-translate-values="{ zoneQuantity: $ctrl.getDeletableZoneCount() -1 }"></p>
