@@ -1,5 +1,5 @@
 class CloudProjectComputeInfrastructureService {
-    constructor ($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper) {
+    constructor ($rootScope, $state, $translate, $uibModal, CloudMessage, CloudUserPref, CloudProjectComputeInfrastructureOrchestrator, ControllerHelper, ServiceHelper, TARGET) {
         this.$rootScope = $rootScope;
         this.$state = $state;
         this.$translate = $translate;
@@ -9,15 +9,25 @@ class CloudProjectComputeInfrastructureService {
         this.CloudProjectComputeInfrastructureOrchestrator = CloudProjectComputeInfrastructureOrchestrator;
         this.ControllerHelper = ControllerHelper;
         this.ServiceHelper = ServiceHelper;
+        this.TARGET = TARGET;
     }
 
     buyIpFailOver () {
-        return this.$uibModal.open({
-            windowTopClass: "cui-modal",
-            templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html",
-            controller: "CloudProjectComputeInfrastructureIpFailoverBuyCtrl",
-            controllerAs: "CPCIIpFailoverBuyCtrl"
-        }).result;
+        if (this.TARGET === "US") {
+            return this.$uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy-agora.html",
+                controller: "CloudProjectComputeInfrastructureIpFailoverBuyAgoraCtrl",
+                controllerAs: "$ctrl"
+            }).result;
+        } else {
+            return this.$uibModal.open({
+                windowTopClass: "cui-modal",
+                templateUrl: "app/cloud/project/compute/infrastructure/ip/failover/buy/cloud-project-compute-infrastructure-ip-failover-buy.html",
+                controller: "CloudProjectComputeInfrastructureIpFailoverBuyCtrl",
+                controllerAs: "CPCIIpFailoverBuyCtrl"
+            }).result;
+        }
     }
 
     importIpFailOver (pendingImportIps) {
