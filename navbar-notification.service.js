@@ -27,16 +27,7 @@ class NavbarNotificationService {
     getSubLinks () {
         return this.getMessages().then(messages => {
             return messages.map(message => this.convertSubLink(message));
-        }).catch(error => {
-            return [{
-                id: "0",
-                date: moment(),
-                time: this._formatTime(moment()),
-                level: "error",
-                subject: this.$translate.instant("common_navbar_notification_error_subject"),
-                description: this.$translate.instant("common_navbar_notification_error")
-            }];
-        });
+        }).catch(() => undefined);
     }
 
     _formatTime (dateTime) {
