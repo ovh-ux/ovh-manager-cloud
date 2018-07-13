@@ -1,9 +1,8 @@
 <div class="cui-page__content log-streams-follow">
     <oui-back-button data-state="dbaas.logs.detail.streams"
-        class="back_button_inline_text"
+        data-heading="{{ ::'logs_streams_follow_live' | translate }}"
         data-state-params="{ serviceName: ctrl.serviceName}">
     </oui-back-button>
-    <span class="oui-header_3" data-translate="logs_streams_follow_live"></span>
     <p data-translate="logs_streams_follow_description"
        data-translate-values="{name:ctrl.stream.data.info.title}"></p>
 
