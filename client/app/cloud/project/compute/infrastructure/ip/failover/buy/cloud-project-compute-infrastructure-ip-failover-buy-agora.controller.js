@@ -30,7 +30,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFail
             }
         }).then((result) => {
             if (result.status !== 200) {
-                return $q.reject(resut);
+                return $q.reject(result);
             }
             return _.filter(_.get(result, "data.plans"), (offer) => {
                 return /failover/.test(offer.planCode);
