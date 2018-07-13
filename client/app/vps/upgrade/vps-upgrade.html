@@ -1,6 +1,7 @@
 <section class="cui-page__content cui-page__content-flex cui-page__content-narrow">
-    <oui-back-button data-title="{{ ::'vps_configuration_upgradevps_title' | translate }}"
-        data-on-click="$ctrl.cancel()"></oui-back-button>
+    <oui-back-button data-heading="{{ ::'vps_configuration_upgradevps_title' | translate }}"
+                     data-on-click="$ctrl.cancel()">
+    </oui-back-button>
 
     <oui-stepper data-linear
         data-on-init="$ctrl.loadUpgradesList()"
