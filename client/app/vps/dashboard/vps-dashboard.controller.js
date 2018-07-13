@@ -26,8 +26,6 @@ class VpsDashboardCtrl {
     }
 
     initLoaders () {
-        const zonesToDisplayUpgradeMessageTo = ["os-sbg1-006", "os-sbg1-010", "os-sbg1-011", "os-sbg1-012", "os-sbg1-013"];
-
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
             successHandler: () => {
@@ -36,8 +34,6 @@ class VpsDashboardCtrl {
                     this.loadIps();
                     this.hasAdditionalDiskOption();
                 }
-
-                this.shouldDisplayUpgradeMessage = _(zonesToDisplayUpgradeMessageTo).includes(this.vps.data.zone);
             }
         });
         this.summary = this.ControllerHelper.request.getHashLoader({
