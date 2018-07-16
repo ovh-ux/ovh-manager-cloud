@@ -38,7 +38,7 @@ angular.module("managerApp").controller("CloudProjectComputeInfrastructureIpFail
         });
     }
 
-    self.getPrice  = (product) => {
+    self.getPrice = (product) => {
         return _.chain(product)
                 .get("details.pricings.default")
                 .filter((p) => p.capacities.indexOf("installation") >= 0)

@@ -69,13 +69,13 @@
     <div class="oui-modal__footer">
         <button type="reset"
                 class="oui-button oui-button_secondary"
-                data-ng-click="$ctrl.cancel()">
-            <span data-translate="common_cancel"></span>
+                data-ng-click="$ctrl.cancel()"
+                data-translate="common_cancel">
         </button>
         <button type="submit"
                 class="oui-button oui-button_primary"
-                data-ng-disabled="!$ctrl.product || !$ctrl.quantity || !$ctrl.country">
-            <span data-translate="cpciif_buy_button_generate_bc"></span>
+                data-ng-disabled="!$ctrl.product || !$ctrl.quantity || !$ctrl.country"
+                data-translate="cpciif_buy_button_generate_bc">
         </button>
     </div>
 </form>
