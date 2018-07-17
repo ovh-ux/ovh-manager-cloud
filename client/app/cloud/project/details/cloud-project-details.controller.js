@@ -2,13 +2,15 @@
 
 angular.module("managerApp").controller("CloudProjectDetailsCtrl",
     function ($stateParams, $q, $state, $rootScope, $scope, $timeout, ControllerModalHelper,
-        OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate, $filter) {
+        OvhApiCloudProject, Poller, OvhApiMeOrder, CloudMessage, $translate, $filter, REDIRECT_URLS) {
 
         var _self = this;
 
         this.projectId = $stateParams.projectId;
         this.project = null;
         this.order = null;
+
+        this.supportUrl = REDIRECT_URLS.support;
 
         _self.loaders = {
             cancelCreation: false,
