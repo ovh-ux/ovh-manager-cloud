@@ -144,17 +144,10 @@ tar-test-reports:
 #############
 
 # Dependencies of the project
-deps: $(GRUNT_DEP) submodule
+deps: $(GRUNT_DEP)
 
 $(NODE_DIR)/%:
 	$(MAKE) install
-
-submodule:
-	$(GIT) submodule init
-	$(GIT) submodule update
-	# $(GIT) submodule foreach $(GIT) checkout master
-	# $(GIT) submodule foreach $(GIT) fetch -p origin
-	# $(GIT) submodule foreach $(GIT) pull origin master
 
 clean-dist: $(GRUNT_DEP)
 	$(GRUNT) clean
