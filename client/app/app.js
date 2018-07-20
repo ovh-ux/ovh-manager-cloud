@@ -176,8 +176,12 @@ angular.module("managerApp", [
 
             ouiNavbarConfiguration.translations = {
                 notification: {
+                    errorInNotification: $translate.instant("common_navbar_notification_error_in_notification"),
+                    errorInNotificationDescription: $translate.instant("common_navbar_notification_error_in_notification_description"),
                     markRead: $translate.instant("common_navbar_notification_mark_as_read"),
-                    markUnread: $translate.instant("common_navbar_notification_mark_as_unread")
+                    markUnread: $translate.instant("common_navbar_notification_mark_as_unread"),
+                    noNotification: $translate.instant("common_navbar_notification_none"),
+                    noNotificationDescription: $translate.instant("common_navbar_notification_none_description")
                 }
             };
 

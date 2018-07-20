@@ -1,5 +1,5 @@
 class VpsDashboardCtrl {
-    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, SidebarMenu, VpsActionService, VpsService) {
+    constructor ($filter, $q, $scope, $state, $stateParams, $translate, CloudMessage, ControllerHelper, RegionService, SidebarMenu, VpsActionService, VpsService) {
         this.$filter = $filter;
         this.$q = $q;
         this.$scope = $scope;
@@ -8,6 +8,7 @@ class VpsDashboardCtrl {
         this.$translate = $translate;
         this.ControllerHelper = ControllerHelper;
         this.CloudMessage = CloudMessage;
+        this.RegionService = RegionService;
         this.serviceName = $stateParams.serviceName;
         this.SidebarMenu = SidebarMenu;
         this.VpsActionService = VpsActionService;
@@ -28,6 +29,7 @@ class VpsDashboardCtrl {
         this.vps = this.ControllerHelper.request.getHashLoader({
             loaderFunction: () => this.VpsService.getSelectedVps(this.serviceName),
             successHandler: () => {
+                this.getRegionsGroup(this.vps.data.location.datacentre);
                 if (!this.vps.data.isExpired) {
                     this.loadIps();
                     this.hasAdditionalDiskOption();
@@ -39,7 +41,7 @@ class VpsDashboardCtrl {
             successHandler: () => this.initOptionsActions()
         });
         this.plan = this.ControllerHelper.request.getHashLoader({
-            loaderFunction: () => this.VpsService.getServiceInfos(this.serviceName),
+            loaderFunction: () => this.VpsService.getServiceInfos(this.serviceName)
         });
     }
 
@@ -84,7 +86,7 @@ class VpsDashboardCtrl {
         this.hasAdditionalDisk = true;
         this.VpsService.getDisks(this.serviceName)
             .then(data => {
-                const promises = _.map(data, elem => { return this.VpsService.getDiskInfo(this.serviceName, elem) });
+                const promises = _.map(data, elem => this.VpsService.getDiskInfo(this.serviceName, elem));
                 return this.$q.all(promises)
                     .then(data => {
                         this.additionnalDisks = this.VpsService.showOnlyAdditionalDisk(data);
@@ -95,21 +97,19 @@ class VpsDashboardCtrl {
                 this.CloudMessage.error(error || this.$translate.instant("vps_additional_disk_info_fail"));
                 return this.$q.reject(error);
             })
-            .finally(() => { this.loaders.disk = false });
+            .finally(() => { this.loaders.disk = false; });
     }
 
     initBackupStorageActions () {
         this.backupStorageActions = {
             manage: {
                 text: this.$translate.instant("common_manage"),
-                state: "iaas.vps.detail.backup-storage",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.backup-storage", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.backup-storage.order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.backup-storage.order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             terminate: {
@@ -122,29 +122,28 @@ class VpsDashboardCtrl {
 
     initSnapshotActions () {
         this.snapshotDescription = this.summary.data.snapshot.creationDate ?
-            this.$translate.instant("vps_tab_SUMMARY_snapshot_creationdate") + " " + moment(this.summary.data.snapshot.creationDate).format("LLL") :
+            `${this.$translate.instant("vps_tab_SUMMARY_snapshot_creationdate")} ${moment(this.summary.data.snapshot.creationDate).format("LLL")}` :
             this.$translate.instant("vps_status_enabled");
         this.snapshotActions = {
-            delete: {
+            "delete": {
                 text: this.$translate.instant("vps_configuration_delete_snapshot_title_button"),
                 callback: () => this.VpsActionService.deleteSnapshot(this.serviceName),
                 isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate && !this.loaders.polling
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.snapshot-order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.snapshot-order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionAvailable
             },
             restore: {
                 text: this.$translate.instant("vps_configuration_snapshot_restore_title_button"),
                 callback: () => this.VpsActionService.restoreSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate  && !this.loaders.polling
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.creationDate && !this.loaders.polling
             },
             take: {
                 text: this.$translate.instant("vps_configuration_snapshot_take_title_button"),
                 callback: () => this.VpsActionService.takeSnapshot(this.serviceName),
-                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate  && !this.loaders.polling
+                isAvailable: () => !this.summary.loading && this.summary.data.snapshot.optionActivated && !this.summary.data.snapshot.creationDate && !this.loaders.polling
             },
             terminate: {
                 text: this.$translate.instant("vps_configuration_desactivate_option"),
@@ -158,14 +157,12 @@ class VpsDashboardCtrl {
         this.veeamActions = {
             manage: {
                 text: this.$translate.instant("common_manage"),
-                state: "iaas.vps.detail.veeam",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.veeam", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             order: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.veeam.order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.veeam.order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.vps.loading
             },
             terminate: {
@@ -260,8 +257,7 @@ class VpsDashboardCtrl {
             },
             orderWindows: {
                 text: this.$translate.instant("common_order"),
-                state: "iaas.vps.detail.windows-order",
-                stateParams: { serviceName: this.serviceName },
+                callback: () => this.$state.go("iaas.vps.detail.windows-order", { serviceName: this.serviceName }),
                 isAvailable: () => !this.summary.loading && !this.summary.windowsActivated
             },
             reboot: {
@@ -304,6 +300,23 @@ class VpsDashboardCtrl {
         this.ControllerHelper.navigation.getConstant("changeOwner").then(url => { this.actions.changeOwner.href = url; });
     }
 
+    getRegionsGroup (regions) {
+        this.regionsGroup = [];
+        if (regions) {
+            this.detailedRegions = !_.isArray(regions) ?
+                [this.RegionService.getRegion(regions)] :
+                _.map(regions, region => this.RegionService.getRegion(region));
+        }
+        this.regionsGroup = _.groupBy(this.detailedRegions, "country");
+    }
+
+    hasMultipleRegions () {
+        return _(this.detailedRegions).isArray() && this.detailedRegions.length > 1;
+    }
+
+    getActionStateParamString (params) {
+        return params ? `(${JSON.stringify(params)})` : "";
+    }
 }
 
 angular.module("managerApp").controller("VpsDashboardCtrl", VpsDashboardCtrl);

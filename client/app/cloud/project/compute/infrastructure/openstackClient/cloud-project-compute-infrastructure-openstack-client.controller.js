@@ -24,9 +24,9 @@ class CloudProjectComputeInfrastructureOpenstackClientCtrl {
             volume: "openstack volume list",
             network: "openstack network list",
             subnet: "openstack subnet list",
-            "create server": "create-server.sh"
+            "create server": "create-server.sh",
+            "bigdata platform": "bigdata-platform-cli"
         };
-
 
         this.initLoaders();
     }
